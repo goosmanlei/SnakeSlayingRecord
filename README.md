@@ -20,7 +20,7 @@
 git clone https://github.com/goosmanlei/story-review-desk.git
 git clone https://github.com/goosmanlei/SnakeSlayingRecord.git
 cd story-review-desk
-git checkout 440b6237038d416a387646904ff0856565633783
+git checkout 55dec71a2f17e4960bbe4cc6600755fdd9b55950
 PYTHONPATH=. python3 -m review_desk --instance ../SnakeSlayingRecord restore
 PYTHONPATH=. python3 -m review_desk --instance ../SnakeSlayingRecord serve --port 8765
 ```
