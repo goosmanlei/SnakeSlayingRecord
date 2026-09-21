@@ -39,7 +39,7 @@
 
 ## V1 已核实的实施事实
 
-- 全新 Python 审阅台源码位于本机 `/Users/bytedance/codex-path/1007.creative/story-review-desk-python`，系统提交 `894e9e7d639a53e266b180bb27f0b28a9ff25f4c` 已推送公开 `goosmanlei/story-review-desk`；未改动有未提交内容的旧审阅台工作树。
+- 全新 Python 审阅台源码位于本机 `/Users/bytedance/codex-path/1007.creative/story-review-desk-python`，系统提交 `5c2dc3f638dfc84d6b751d6b25cd6829785dd938` 已推送公开 `goosmanlei/story-review-desk`；未改动有未提交内容的旧审阅台工作树。
 - 故事实例 `config/instance.json` 锁定上述系统提交；`.runtime/` 是本机 SQLite 运行库，不公开；`export/` Schema 2 以 SHA-256 清单覆盖资料、评论、对象修订与依赖、公开配置与事件、被引用素材。运行密钥仅本机保留。信息来源：本次代码、`config/instance.json` 与本机验证。
 - V1 资料分别是《搜神记》卷十九通行整理本、四库本异文和本项目白话直译/词语说明；第三份不是独立古籍见证或故事改编。出处及采集日期见 `export/materials.json`。
 - 图片为本项目据两种可追溯原文制作的异文对照图，不是古籍书影；收录于 `export/assets/edition-comparison.svg`。
