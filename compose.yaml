@@ -5,6 +5,7 @@ services:
     restart: unless-stopped
     environment:
       OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      REVIEW_PUBLIC_ENTRY: http://127.0.0.1:3000/
     volumes:
       - ./:/instance
     expose:
