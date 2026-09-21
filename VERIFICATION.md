@@ -16,5 +16,6 @@
 | 公开同步及干净恢复 | 在 `/tmp/snake-review-restore.oxw5zm/` 重新克隆两仓，`restore` 清单校验通过，`check` 为 3/1/4。浏览器打开 `:8766` 显示 3 份资料、评论原句和正文高亮；图片 `naturalWidth=1000,naturalHeight=660`。恢复实例再次 `export` 后 `git diff --exit-code -- export` 为零。 |
 | 自动测试 | 公开克隆中的 `python3 -m unittest discover -s desk/tests -v`：2 项通过，覆盖跨块 Unicode 锚点、创建/编辑/关闭/重开、并发拒绝、完整恢复及篡改校验。 |
 | 浏览器错误 | 主实例及恢复实例浏览器的 error 级日志均为空。 |
+| 最终公开版本复核 | 两仓 GitHub `visibility=PUBLIC`，本地 `HEAD` 与 `origin/main` 一致且工作树干净。再次从 HTTPS 克隆到 `story-final`/`desk-final`，故事 `review_desk_commit` 与公开系统 `HEAD` 同为 `55dec71a2f17e4960bbe4cc6600755fdd9b55950`；恢复和再次导出无差异。 |
 
 测试评论是与真实版本差异相关的审阅提示，明确不是用户意见；当前作为 V1 验证与后续核对输入保留。后续用户评论同样会公开同步。
