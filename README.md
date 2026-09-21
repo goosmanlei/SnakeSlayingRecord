@@ -1,12 +1,12 @@
 # 李寄斩蛇 · 故事采编实例
 
-本仓库是公开故事实例，不包含审阅台系统代码。系统代码及后续系统迭代在 [story-review-desk](https://github.com/goosmanlei/story-review-desk)；精确版本固定于 [config/instance.json](config/instance.json) 的 `review_desk_commit`。系统从第一版就采用完整创作框架，目前只开放故事采编和“系统管理 → 系统配置”；漫剧改编留待后续任务。
+本仓库是公开故事实例，不包含审阅台系统代码。系统代码及后续系统迭代在 [story-review-desk](https://github.com/goosmanlei/story-review-desk)；精确版本固定于 [config/instance.json](config/instance.json) 的 `review_desk_commit`。系统从第一版就采用完整创作框架，目前只开放故事采编和“系统管理 → 系统配置”；三个漫剧扩写候选留在故事采编并列审阅，尚未选定最终方向或进入成片制作。
 
 ## 资料与出处
 
-当前保留本项目写作的[白话直译与词语说明](export/materials.json)，原文出处仍链接至《搜神记》卷十九。它是现代整理材料，不是古籍底本或改编。两份文言资料、陈峰福州评话外链索引及共用异文图已按任务要求从当前实例清除；Git 历史仍可回溯。民间艺术演绎、民间故事素材及完整扩写方向正在采编，未达到任务数量和验证门槛前不计为交付完成。
+当前保留本项目写作的[白话直译与词语说明](export/materials.json)，原文出处仍链接至《搜神记》卷十九。它是现代整理材料，不是古籍底本或改编。两份文言资料、陈峰福州评话外链索引及共用异文图已按任务要求从当前实例清除；Git 历史仍可回溯。故事采编另收录 32 则通俗白话情节素材（其中缇萦为历史叙事、木兰为叙事歌谣，已明确标注）和 3 个并列的原创完整扩写方向。演绎媒体与转写子项已由用户允许取消，不计入本轮交付；任务是否完成仍待用户审阅确认。
 
-通用审阅台支持对 `folk-tales`、`expansion-directions` 分类的独立二级菜单，数据须由故事实例逐项导入。分类为空时页面不会显示空的占位分组。
+通用审阅台支持对 `folk-tales`、`expansion-directions` 分类的独立二级菜单；本实例的分类、正文与出处分别保存在 `export/materials.json`，采编输入见 `imports/`。两组默认收起且可独立展开。桌面页面滑至顶栏后，左侧目录与右侧正文各自滚动；切换资料不会把整页拉回顶部，窄屏目录也可内部滚动。
 
 ## 从公开仓库启动
 
@@ -16,7 +16,7 @@
 git clone https://github.com/goosmanlei/story-review-desk.git
 git clone https://github.com/goosmanlei/SnakeSlayingRecord.git
 cd story-review-desk
-git checkout 2e7e0b1cdb9113a2faf6c4178a2d93461d6a3e8a
+git checkout 1e8be502249752eed82dd8415582cc01d9d4e65b
 PYTHONPATH=. python3 -m review_desk --instance ../SnakeSlayingRecord restore
 cd ../SnakeSlayingRecord
 docker compose up -d --build
