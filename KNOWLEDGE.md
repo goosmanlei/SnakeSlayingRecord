@@ -43,7 +43,7 @@
 - 故事实例 `config/instance.json` 锁定上述系统提交；`.runtime/` 是本机 SQLite 运行库，不公开；`export/` Schema 3 以 SHA-256 清单覆盖资料、对象修订级评论、对象修订与依赖、公开配置与事件、被引用素材。运行密钥仅本机保留。信息来源：本次代码、`config/instance.json` 与本机验证。
 - V1 资料分别是《搜神记》卷十九通行整理本、四库本异文和本项目白话直译/词语说明；第三份不是独立古籍见证或故事改编。出处及采集日期见 `export/materials.json`。
 - 图片为本项目据两种可追溯原文制作的异文对照图，不是古籍书影；收录于 `export/assets/edition-comparison.svg`。
-- 2026-09-21 Schema 2 公开恢复曾在 `/tmp/snake-review-final-VfOb0W/` 验证。其后评论账本升级为对象修订级、导出 Schema 3；最终公开恢复应以最新 `VERIFICATION.md` 为准。
+- 2026-09-21 最终 Schema 3 公开恢复核验：在 `/tmp/snake-review-v3-Dz2FNT/` 从双公开仓库干净克隆，恢复 3 资料、1 评论、4 评论事件、3 对象/修订、2 配置；浏览器确认图片 1000×660、评论高亮与配置；对象修订关联及外键检查通过，复导出与公开快照无差异。详细记录见 `VERIFICATION.md`。该路径仅为一次性核验目录。
 
 ## 任务管理系统的设计要求
 

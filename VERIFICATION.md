@@ -12,8 +12,9 @@
 | Docker 入口 | `docker compose ps` 中 Python 服务健康、Nginx 绑定 `127.0.0.1:3000`；两服务均设 `restart: unless-stopped`。执行 `docker compose restart` 后浏览器重载仍见 3 份资料和 1 条评论，`/api/comments/context` 返回原句与资料修订哈希。容器使用故事目录绑定卷保存 SQLite；证书校验未关闭。 |
 | 自动测试 | `python3 -m unittest discover -s tests -v`：4 项通过，覆盖 Unicode/跨块/并发、旧评论迁移、配置和 AI 请求内容、对象修订评论跨版本关联、完整导出恢复/复导出一致性及篡改拒绝。`node --check` 和 `git diff --check` 通过。 |
 | 导出内容 | Schema 3 manifest 计数：3 资料、1 评论、4 评论事件、3 对象/修订、2 配置及事件；`materials.json`、`comments.json`、`objects.json`、`configurations.json`、SVG 均有 SHA-256。 |
-| 双仓公开同步 | `gh repo view` 回读 `goosmanlei/story-review-desk`、`goosmanlei/SnakeSlayingRecord` 均为 `PUBLIC`；系统仓库已推送 `d0bec7f`，故事仓库正在同步 Schema 3 快照。 |
-| Schema 3 公开干净恢复 | 待从双公开仓库最新提交重新克隆、恢复及复导出验证。此前 Schema 2 快照在 `/tmp/snake-review-final-VfOb0W/` 验证通过，不能替代本次 Schema 3 验收。 |
+| 双仓公开同步 | `gh repo view` 回读 `goosmanlei/story-review-desk`、`goosmanlei/SnakeSlayingRecord` 均为 `PUBLIC`；系统提交 `d0bec7f`、故事数据提交 `fbd07db` 已推送，故事实例锁定值与公开系统 HEAD 一致。 |
+| Schema 3 公开干净恢复 | 在 `/tmp/snake-review-v3-Dz2FNT/` 从双仓 GitHub HTTPS 地址新克隆，空实例 `restore` 校验全部 5 个文件 SHA-256；得到 3 份资料、1 条评论、4 条事件、3 对象/修订、2 配置。评论关联 `soushenji-19-common` 的精确修订 `7740273c…`，原句仍为“东越闽中，有”，`foreign_key_check` 为零错误。再次 `export` 后 `git diff --exit-code -- export` 无差异，版本锁等于系统公开 HEAD。 |
+| 恢复实例浏览器 | 从最终 Schema 3 干净实例在 `127.0.0.1:8766` 打开，见 3 份资料、1 条正文高亮及评论原句，SVG `naturalWidth=1000,naturalHeight=660`；系统配置版本 1、项目配置版本 2、故事/创作背景与当前阶段完整。临时服务验收后已停止，长期入口仍为 Nginx 3000。 |
 
 验收边界：长期运行状态和浏览器效果在本机核验；公开同步验证到 GitHub 的仓库可见性与提交，未部署到公网。测试评论是验证数据，不能当作用户意见。
 
