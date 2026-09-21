@@ -20,7 +20,9 @@
 
 ### 公开同步与干净恢复
 
-待本轮故事仓库提交并从双公开仓库重新克隆后补充验证结果。
+- `gh repo view` 回读 `goosmanlei/story-review-desk`、`goosmanlei/SnakeSlayingRecord` 均为 `PUBLIC`、默认分支 `main`。从两个 GitHub HTTPS 地址重新克隆到 `/tmp/snake-task3-restore-EqCRDu/`：通用系统 HEAD 与故事实例版本锁均为 `215d663c1f24fd7c565091987db9062074dad28c`；故事仓库提交为 `32cfc075e6c7dd1a49f9601f6a16ad60aad7a0a6`。
+- 空 `.runtime` 上执行 `restore`，Schema 3 清单验证并恢复 36 资料、1 评论、1 事件、36 对象／修订、2 配置。四份主文件 SHA-256：`materials.json` 为 `5877a884…`，`comments.json` 为 `2ad0c694…`，`objects.json` 为 `d689b03c…`，`configurations.json` 为 `57e25bf6…`。复导出返回同一清单，`git diff --exit-code -- export` 为零，故事仓库 `git status --short` 为空。
+- 干净恢复的 `structure-get` 返回 `selection:null`、0 结构修订、0 确认；`script-input` 因没有已确认版本而拒绝交接。临时恢复服务 `127.0.0.1:8774` 的故事结构入口 HTTP 200、评论 API 为 1 条、结构 API 仍为空；核对后临时服务已停止。正式 3000 入口仍由 Docker 提供。
 
 ## 2026-09-22 评论浮窗关闭交互补充
 
