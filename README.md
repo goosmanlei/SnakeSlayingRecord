@@ -20,7 +20,7 @@
 git clone https://github.com/goosmanlei/story-review-desk.git
 git clone https://github.com/goosmanlei/SnakeSlayingRecord.git
 cd story-review-desk
-git checkout 5c2dc3f638dfc84d6b751d6b25cd6829785dd938
+git checkout d0bec7f7da2bff27527b3e48b701bd814373c4f6
 PYTHONPATH=. python3 -m review_desk --instance ../SnakeSlayingRecord restore
 cd ../SnakeSlayingRecord
 docker compose up -d --build
@@ -46,6 +46,6 @@ git commit -m "Sync story review data"
 git push origin main
 ```
 
-公开推送前须审阅评论内容；推送意味着评论也会公开。`export/` 含资料、素材、评论及事件、对象修订/依赖、公开配置及事件，运行凭据与 SQLite 本机库不入仓。以后创作稿也由同一业务账本和导出/校验/同步/恢复协议覆盖，不能仅留在本地运行库。
+公开推送前须审阅评论内容；推送意味着评论也会公开。`export/` 含资料、素材、评论及事件、对象修订/依赖、公开配置及事件，运行凭据与 SQLite 本机库不入仓。评论已锚定稳定对象与精确修订，资料评论仍可用 `source_id` 访问；后续创作稿沿同一账本和导出/校验/同步/恢复协议，不能仅留在本地运行库。
 
 验收记录见 [VERIFICATION.md](VERIFICATION.md)。
