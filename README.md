@@ -37,7 +37,7 @@ PYTHONPATH=. python3 -m review_desk --instance ../SnakeSlayingRecord comments
 添加资料时准备 JSON 数组并运行 `import-sources /path/to/sources.json`；字段与 API 契约见[系统说明](https://github.com/goosmanlei/story-review-desk#数据访问与公开同步)。配置可通过“系统管理 → 系统配置”修改；`config-get` 和 `objects` 命令可读版本与精确依赖。每次资料、评论、配置或未来创作稿变化后，从系统仓库执行 `PYTHONPATH=. python3 -m review_desk --instance ../SnakeSlayingRecord export`，再进入故事仓库执行：
 
 ```bash
-git add config/instance.json compose.yaml export
+git add config/instance.json compose.yaml export imports
 git commit -m "Sync story review data"
 git push origin main
 ```
