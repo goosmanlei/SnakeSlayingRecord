@@ -39,11 +39,11 @@
 
 ## V1 已核实的实施事实
 
-- 全新 Python 审阅台源码位于本机 `/Users/bytedance/codex-path/1007.creative/story-review-desk-python`，当前系统提交 `af73e1909c5df225203801dbb35e6700e64c3b1d` 已推送公开 `goosmanlei/story-review-desk`；Python 与 Nginx 系统代码均归此仓库，未改动有未提交内容的旧审阅台工作树。旧版已提交源码在隔离 UI fixture 中实际启动供视觉对照；fixture 已停止。
+- 全新 Python 审阅台源码位于本机 `/Users/bytedance/codex-path/1007.creative/story-review-desk-python`，当前系统提交 `8e95a3a2f55a2630796b9c6331361a48753aefb3` 已推送公开 `goosmanlei/story-review-desk`；Python 与 Nginx 系统代码均归此仓库，未改动有未提交内容的旧审阅台工作树。旧版已提交源码在隔离 UI fixture 中实际启动供视觉对照；fixture 已停止。
 - 故事实例 `config/instance.json` 锁定上述系统提交；`.runtime/` 是本机 SQLite 运行库，不公开；`export/` Schema 3 以 SHA-256 清单覆盖资料、对象修订级评论、对象修订与依赖、公开配置与事件、被引用素材。运行密钥仅本机保留。信息来源：本次代码、`config/instance.json` 与本机验证。
 - V1 资料分别是《搜神记》卷十九通行整理本、四库本异文和本项目白话直译/词语说明；第三份不是独立古籍见证或故事改编。出处及采集日期见 `export/materials.json`。
 - 图片为本项目据两种可追溯原文制作的异文对照图，不是古籍书影；收录于 `export/assets/edition-comparison.svg`。
-- 2026-09-21 当前 Schema 3 公开恢复核验：在 `/private/tmp/snake-review-final-0VnVAN/` 从双公开仓库干净克隆，系统 `af73e190`、故事版本锁提交 `9189dd3f`；恢复 3 资料、1 评论、4 评论事件、3 对象/修订、2 配置。浏览器确认图片 1000×660、评论高亮与配置；复导出与公开快照无差异。详细记录见 `VERIFICATION.md`。
+- 2026-09-21 当前 Schema 3 公开恢复核验：在 `/private/tmp/snake-review-final-draft-iYwG2U/` 从双公开仓库干净克隆，系统 `8e95a3a2`、故事版本锁提交 `bc60d6ab`；恢复 3 资料、1 评论、4 评论事件、3 对象/修订、2 配置。浏览器确认图片 1000×660、评论高亮与关联；复导出与公开快照无差异。详细记录见 `VERIFICATION.md`。
 
 ## 任务管理系统的设计要求
 
