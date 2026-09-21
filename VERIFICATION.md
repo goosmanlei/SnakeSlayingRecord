@@ -14,3 +14,9 @@
 | 8. 干净恢复 | 在 `/private/tmp/snake-review-restore-Us9nqW/` 从两仓 GitHub HTTPS 地址新克隆，系统提交与故事锁定版本均为 `bc87ed4`。空实例 `restore` 校验 5 个文件 SHA-256，得到 4 资料、1 评论、5 事件、4 对象/修订、2 配置；`comments` 仍返回“东越闽中，有”及精确修订 `7740273c…`。复导出后 `git diff --exit-code -- export` 为零，`git status` 无已跟踪差异，`docker compose config --quiet` 通过。临时恢复服务 `127.0.0.1:8771` 浏览器显示 4 项资料、原文高亮、SVG `naturalWidth=1000`、福州评话外链及 Schema 2 的 `gpt-5.6-sol / medium`；验收后已停止临时服务，3000 入口保持运行。 |
 
 自动测试：`python3 -m unittest discover -s tests -v` 通过 5 项，覆盖评论锚点/生命周期、迁移、配置 Schema 2 与模型强度校验、外部媒体 URL 校验、AI 请求体和导出恢复完整性；`node --check`、`git diff --check` 通过。浏览器演出资料不声称已逐句听辨，后续改编须回原视频核对。
+
+## 系统配置调整（2026-09-21）
+
+- 新系统提交 `6af3eb89b3c9839bf2af104a414688b5872144c2`：工作区可用性只由框架内部的 `implemented` 标记决定，SYSTEM Schema 3 不再提供“已启用工作区”；旧 Schema 1/2 配置仍能读取并迁移。
+- “系统配置”侧栏只保留“故事项目”“系统与 AI”，不再展示“本机运行”。“系统与 AI”增加“润色 API Key 环境变量名”，当前为 `OPENAI_API_KEY`。浏览器在本机 3000 入口核验配置页显示、保存和刷新后 Schema 3/版本 4；密钥值未进入配置 API 与公开导出。
+- 新代码的 6 项自动测试、JS 语法检查和 diff 检查通过；自定义环境变量名的模拟请求证实读取指定变量，容器内默认变量存在（只检验布尔值，不打印密钥）。本机导出仍为 4 资料、1 评论、5 评论事件、4 对象/修订、2 配置；另增一条 SYSTEM 配置事件。历史配置事件保留旧字段作为审计记录，当前配置记录已移除。
