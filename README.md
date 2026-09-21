@@ -16,7 +16,7 @@
 git clone https://github.com/goosmanlei/story-review-desk.git
 git clone https://github.com/goosmanlei/SnakeSlayingRecord.git
 cd story-review-desk
-git checkout 215d663c1f24fd7c565091987db9062074dad28c
+git checkout 1201b801b070d7a640c4a7b272bf84b78cd92d95
 PYTHONPATH=. python3 -m review_desk --instance ../SnakeSlayingRecord restore
 cd ../SnakeSlayingRecord
 docker compose up -d --build
@@ -34,7 +34,7 @@ docker compose up -d --build
 PYTHONPATH=. python3 -m review_desk --instance ../SnakeSlayingRecord comments
 ```
 
-添加资料时准备 JSON 数组并运行 `import-sources /path/to/sources.json`；字段与 API 契约见[系统说明](https://github.com/goosmanlei/story-review-desk#数据访问与公开同步)。用户可在故事结构页选择方向；Codex 通过 `structure-get`、`structure-review` 读取方向与意见，并以 `structure-import complete.json --expected-version N` 导入完整图文稿。用户确认具体版本后，`script-input` 交接至剧本创作。完整格式、版本和图文评论约束见[故事结构接口说明](https://github.com/goosmanlei/story-review-desk/blob/main/docs/story-structure.md)。配置可通过“系统管理 → 系统配置”修改；`config-get` 和 `objects` 命令可读版本与精确依赖。每次资料、评论、配置或创作稿变化后，从系统仓库执行 `PYTHONPATH=. python3 -m review_desk --instance ../SnakeSlayingRecord export`，再进入故事仓库执行：
+添加资料时准备 JSON 数组并运行 `import-sources /path/to/sources.json`；字段与 API 契约见[系统说明](https://github.com/goosmanlei/story-review-desk#数据访问与公开同步)。故事结构是“故事创作”下的子页：初始页直接比较、回看和选用扩写方向；Codex 通过 `structure-get`、`structure-review` 读取方向与意见，并以 `structure-import complete.json --expected-version N` 导入完整图文稿。用户确认具体版本后，`script-input` 交接至剧本创作。完整格式、版本和图文评论约束见[故事结构接口说明](https://github.com/goosmanlei/story-review-desk/blob/main/docs/story-structure.md)。配置可通过“系统管理 → 系统配置”修改；`config-get` 和 `objects` 命令可读版本与精确依赖。每次资料、评论、配置或创作稿变化后，从系统仓库执行 `PYTHONPATH=. python3 -m review_desk --instance ../SnakeSlayingRecord export`，再进入故事仓库执行：
 
 ```bash
 git add config/instance.json compose.yaml export imports
