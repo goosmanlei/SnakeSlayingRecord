@@ -1,17 +1,12 @@
-# 李寄斩蛇 · 原始资料审阅实例
+# 李寄斩蛇 · 故事采编实例
 
 本仓库是公开故事实例，不包含审阅台系统代码。系统代码及后续系统迭代在 [story-review-desk](https://github.com/goosmanlei/story-review-desk)；精确版本固定于 [config/instance.json](config/instance.json) 的 `review_desk_commit`。系统从第一版就采用完整创作框架，目前只开放故事采编和“系统管理 → 系统配置”；漫剧改编留待后续任务。
 
 ## 资料与出处
 
-实例目前有三份可独立审阅的文本，另有一份说书演出资料索引；全部文本、元数据和外链在 [export/materials.json](export/materials.json)：
+当前保留本项目写作的[白话直译与词语说明](export/materials.json)，原文出处仍链接至《搜神记》卷十九。它是现代整理材料，不是古籍底本或改编。两份文言资料、陈峰福州评话外链索引及共用异文图已按任务要求从当前实例清除；Git 历史仍可回溯。民间艺术演绎、民间故事素材及完整扩写方向正在采编，未达到任务数量和验证门槛前不计为交付完成。
 
-1. 《搜神记》卷十九通行整理本原文：完整收录李寄一则，[维基文库来源](https://zh.wikisource.org/zh-hans/%E6%90%9C%E7%A5%9E%E8%A8%98/%E7%AC%AC19%E5%8D%B7)。
-2. 《钦定四库全书》本《搜神记》卷十九：保留转录原字及异文，[维基文库来源](https://zh.wikisource.org/wiki/%E6%90%9C%E7%A5%9E%E8%A8%98_%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29/%E5%8D%B719)。它和通行本的“东域／东越”“斫／研”“拜其父／指其父”等差异可对照；不把繁简转换或同文转载计作另一份资料。
-3. 本项目独立写作的完整白话直译与词语说明：译注是现代整理材料，不是第三个古籍底本，也不是漫剧改编。
-4. 福州评话《李寄斩蛇》陈峰演绎资料：[2018 年上传的哔哩哔哩视频页](https://www.bilibili.com/video/BV1fs41137q5/)及其列出的优酷来源线索；[福建师范大学实践队报道](https://www.dxsyb.com/paper/2025/0203/677157.html)另将此篇列为早期传统评话剧目并采访陈峰。此对象是可审阅的演出线索，非演出逐字稿或第四个古籍底本；录制时间、原始制作方与转载授权未核实。实例只提供外链，不公开复制视频或音频。
-
-[版本对照图](export/assets/edition-comparison.svg)由本项目据前两页原文制作并附来源，非古籍书影。图不计入文本或演出资料。采集日期、版本类型、原文与整理说明在每份资料中明确标注。现存《搜神记》文本为后世辑本，版本字句仍可讨论。
+通用审阅台支持对 `folk-tales`、`expansion-directions` 分类的独立二级菜单，数据须由故事实例逐项导入。分类为空时页面不会显示空的占位分组。
 
 ## 从公开仓库启动
 
@@ -21,7 +16,7 @@
 git clone https://github.com/goosmanlei/story-review-desk.git
 git clone https://github.com/goosmanlei/SnakeSlayingRecord.git
 cd story-review-desk
-git checkout 6af3eb89b3c9839bf2af104a414688b5872144c2
+git checkout 2e7e0b1cdb9113a2faf6c4178a2d93461d6a3e8a
 PYTHONPATH=. python3 -m review_desk --instance ../SnakeSlayingRecord restore
 cd ../SnakeSlayingRecord
 docker compose up -d --build
