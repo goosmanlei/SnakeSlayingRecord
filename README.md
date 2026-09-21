@@ -1,6 +1,6 @@
 # 李寄斩蛇 · 故事采编实例
 
-本仓库是公开故事实例，不包含审阅台系统代码。系统代码及后续系统迭代在 [story-review-desk](https://github.com/goosmanlei/story-review-desk)；精确版本固定于 [config/instance.json](config/instance.json) 的 `review_desk_commit`。系统从第一版就采用完整创作框架，目前只开放故事采编和“系统管理 → 系统配置”；三个漫剧扩写候选留在故事采编并列审阅，尚未选定最终方向或进入成片制作。
+本仓库是公开故事实例，不包含审阅台系统代码。系统代码及后续系统迭代在 [story-review-desk](https://github.com/goosmanlei/story-review-desk)；精确版本固定于 [config/instance.json](config/instance.json) 的 `review_desk_commit`。系统已开放故事采编、故事结构阅读审阅和“系统管理 → 系统配置”。三个漫剧扩写候选留在故事采编并列审阅；**本实例尚未选定真实改编方向，也没有真实结构稿或创作确认**。
 
 ## 资料与出处
 
@@ -16,7 +16,7 @@
 git clone https://github.com/goosmanlei/story-review-desk.git
 git clone https://github.com/goosmanlei/SnakeSlayingRecord.git
 cd story-review-desk
-git checkout 6b1f253ef1e6e49d0bff6bfa4dbd18934f078040
+git checkout 215d663c1f24fd7c565091987db9062074dad28c
 PYTHONPATH=. python3 -m review_desk --instance ../SnakeSlayingRecord restore
 cd ../SnakeSlayingRecord
 docker compose up -d --build
@@ -34,7 +34,7 @@ docker compose up -d --build
 PYTHONPATH=. python3 -m review_desk --instance ../SnakeSlayingRecord comments
 ```
 
-添加资料时准备 JSON 数组并运行 `import-sources /path/to/sources.json`；字段与 API 契约见[系统说明](https://github.com/goosmanlei/story-review-desk#数据访问与公开同步)。配置可通过“系统管理 → 系统配置”修改；`config-get` 和 `objects` 命令可读版本与精确依赖。每次资料、评论、配置或未来创作稿变化后，从系统仓库执行 `PYTHONPATH=. python3 -m review_desk --instance ../SnakeSlayingRecord export`，再进入故事仓库执行：
+添加资料时准备 JSON 数组并运行 `import-sources /path/to/sources.json`；字段与 API 契约见[系统说明](https://github.com/goosmanlei/story-review-desk#数据访问与公开同步)。用户可在故事结构页选择方向；Codex 通过 `structure-get`、`structure-review` 读取方向与意见，并以 `structure-import complete.json --expected-version N` 导入完整图文稿。用户确认具体版本后，`script-input` 交接至剧本创作。完整格式、版本和图文评论约束见[故事结构接口说明](https://github.com/goosmanlei/story-review-desk/blob/main/docs/story-structure.md)。配置可通过“系统管理 → 系统配置”修改；`config-get` 和 `objects` 命令可读版本与精确依赖。每次资料、评论、配置或创作稿变化后，从系统仓库执行 `PYTHONPATH=. python3 -m review_desk --instance ../SnakeSlayingRecord export`，再进入故事仓库执行：
 
 ```bash
 git add config/instance.json compose.yaml export imports
