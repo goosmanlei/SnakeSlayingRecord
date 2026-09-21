@@ -9,10 +9,13 @@
 | 评论闭环 | 历史浏览器验收过圈选、保存、编辑、关闭、重开、草稿保留；当前保留 1 条验证用途评论，锚定“东越闽中，有”，刷新和重启后仍显示正文高亮。评论及事件由 Schema 2 导出。 |
 | 系统配置 | 浏览器“系统管理 → 系统配置”显示 SYSTEM/PROJECT/LOCAL；PROJECT 创作背景通过页面保存，版本由 1 升至 2，刷新后保留；SYSTEM 版本 1，LOCAL 仅展示 AI 密钥是否配置，不展示密钥。 |
 | AI 润色上下文 | 浏览器先展示故事/创作背景、故事采编阶段、圈选及相邻段落、3 份资料全文和上下文哈希，才启用真实 AI 请求。容器通过本机 CA 只读挂载完成 TLS 校验，真实请求返回“尚未保存”建议，原评论未改；模型建议含额外想法，未替用户采用。 |
-| Docker 入口 | `docker compose ps` 中 Python 服务健康、Nginx 绑定 `127.0.0.1:3000`；两服务均设 `restart: unless-stopped`。容器使用故事目录绑定卷保存 SQLite；证书校验未关闭。 |
+| Docker 入口 | `docker compose ps` 中 Python 服务健康、Nginx 绑定 `127.0.0.1:3000`；两服务均设 `restart: unless-stopped`。执行 `docker compose restart` 后浏览器重载仍见 3 份资料和 1 条评论，`/api/comments/context` 返回原句与资料修订哈希。容器使用故事目录绑定卷保存 SQLite；证书校验未关闭。 |
 | 自动测试 | `python3 -m unittest discover -s tests -v`：3 项通过，覆盖评论 Unicode/跨块/并发、配置版本与 AI 请求内容、对象依赖、完整导出恢复/复导出一致性及篡改拒绝。`node --check` 和 `git diff --check` 通过。 |
 | 导出内容 | Schema 2 manifest 计数：3 资料、1 评论、4 评论事件、3 对象/修订、2 配置及事件；`materials.json`、`comments.json`、`objects.json`、`configurations.json`、SVG 均有 SHA-256。 |
+| 双仓公开同步 | `gh repo view` 回读 `goosmanlei/story-review-desk`、`goosmanlei/SnakeSlayingRecord` 均为 `PUBLIC`；两仓 `main` 已推送，最终故事实例锁定系统提交 `5c2dc3f638dfc84d6b751d6b25cd6829785dd938`。 |
+| 最终公开干净恢复 | 在 `/tmp/snake-review-final-VfOb0W/` 从两仓 GitHub HTTPS 地址新克隆：系统 `5c2dc3f`、故事数据提交 `c7a47fb`，锁定值等于公开系统 HEAD。空实例 `restore` 校验全部 5 个文件哈希，得到 3 资料、1 评论、4 评论事件、3 对象/修订、2 配置。再次 `export` 后 `git diff --exit-code -- export` 与公开快照完全一致，故事工作树无业务数据差异。 |
+| 恢复实例浏览器 | 在 `127.0.0.1:8766` 打开上述干净恢复实例，见 3 份资料、正文评论高亮，SVG `naturalWidth=1000,naturalHeight=660`；系统配置版本 1、项目配置版本 2、故事/创作背景及当前阶段完整。该端口只用于本轮验收，长期入口仍为 Nginx 3000。 |
 
-首次版本的公开克隆恢复曾通过（旧系统提交 `55dec71a`、Schema 1），本次新增框架、配置和 Docker 后，需要用最新公开快照重新完成“公开同步 → 干净恢复 → 复导出无差异”核验。本文件在该步骤完成后更新。
+验收边界：长期运行状态和浏览器效果在本机核验；公开同步验证到 GitHub 的仓库可见性与提交，未部署到公网。测试评论是验证数据，不能当作用户意见。
 
-测试评论是与真实版本差异相关的审阅提示，明确不是用户意见；后续用户评论公开同步前应审阅正文。
+后续用户评论公开同步前应审阅正文；AI 建议可能偏离原意，只在用户手动采用并保存后进入业务数据。
