@@ -20,13 +20,13 @@
 git clone https://github.com/goosmanlei/story-review-desk.git
 git clone https://github.com/goosmanlei/SnakeSlayingRecord.git
 cd story-review-desk
-git checkout d0bec7f7da2bff27527b3e48b701bd814373c4f6
+git checkout 0668bdb8cc179aaf53fe20e3df894465dc30d2bc
 PYTHONPATH=. python3 -m review_desk --instance ../SnakeSlayingRecord restore
 cd ../SnakeSlayingRecord
 docker compose up -d --build
 ```
 
-打开 [本机审阅台](http://127.0.0.1:3000/)：Nginx 长期运行在 Docker 容器 3000 端口并代理容器内 Python 服务，主机仅绑定 `127.0.0.1:3000`。`docker compose ps` 检查状态，`docker compose restart` 重启；`restart: unless-stopped` 保证 Docker 恢复时服务随之恢复。已有 `.runtime/review.sqlite3` 时跳过 `restore`。本机当前系统源码目录名是 `story-review-desk-python`，若在此目录运行，构建命令需加 `REVIEW_DESK_BUILD_CONTEXT=../story-review-desk-python`；公开克隆默认目录名为 `story-review-desk`，无需该变量。不要把 3000 端口转发到公网，本服务没有公网鉴权。
+打开 [本机审阅台](http://127.0.0.1:3000/)：Nginx 长期运行在 Docker 容器 3000 端口并代理容器内 Python 服务；Nginx 镜像与通用代理规则由审阅台仓库维护，故事仓库只保留实例 Compose 配置。主机仅绑定 `127.0.0.1:3000`。`docker compose ps` 检查状态，`docker compose restart` 重启；`restart: unless-stopped` 保证 Docker 恢复时服务随之恢复。已有 `.runtime/review.sqlite3` 时跳过 `restore`。本机当前系统源码目录名是 `story-review-desk-python`，若在此目录运行，构建命令需加 `REVIEW_DESK_BUILD_CONTEXT=../story-review-desk-python`；公开克隆默认目录名为 `story-review-desk`，无需该变量。不要把 3000 端口转发到公网，本服务没有公网鉴权。
 
 `OPENAI_API_KEY` 只在本机启动 Compose 的环境中提供，不提交到仓库；无密钥时其他审阅功能不受影响。若本机网络需要私有可信 CA，可建立本地、不入库的 `compose.override.yaml`，只读挂载 CA 并设置容器 `SSL_CERT_FILE`，不可关闭 TLS 校验。AI 润色先展示草稿、圈选、故事/创作背景、创作阶段、原文上下文及各版本资料，再由用户发起请求；建议必须手动采用、保存。
 
@@ -41,7 +41,7 @@ PYTHONPATH=. python3 -m review_desk --instance ../SnakeSlayingRecord comments
 添加资料时准备 JSON 数组并运行 `import-sources /path/to/sources.json`；字段与 API 契约见[系统说明](https://github.com/goosmanlei/story-review-desk#数据访问与公开同步)。配置可通过“系统管理 → 系统配置”修改；`config-get` 和 `objects` 命令可读版本与精确依赖。每次资料、评论、配置或未来创作稿变化后，从系统仓库执行 `PYTHONPATH=. python3 -m review_desk --instance ../SnakeSlayingRecord export`，再进入故事仓库执行：
 
 ```bash
-git add config/instance.json compose.yaml nginx export
+git add config/instance.json compose.yaml export
 git commit -m "Sync story review data"
 git push origin main
 ```
