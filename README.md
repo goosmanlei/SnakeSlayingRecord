@@ -20,7 +20,7 @@
 git clone https://github.com/goosmanlei/story-review-desk.git
 git clone https://github.com/goosmanlei/SnakeSlayingRecord.git
 cd story-review-desk
-git checkout 0668bdb8cc179aaf53fe20e3df894465dc30d2bc
+git checkout 6e82a6a20c4676861817e6b0d4328101fe862750
 PYTHONPATH=. python3 -m review_desk --instance ../SnakeSlayingRecord restore
 cd ../SnakeSlayingRecord
 docker compose up -d --build
