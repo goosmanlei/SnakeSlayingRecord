@@ -1,6 +1,6 @@
 # 李寄斩蛇 · 原始资料审阅实例
 
-本仓库是公开故事实例，不包含审阅台系统代码。系统代码及后续系统迭代在 [story-review-desk](https://github.com/goosmanlei/story-review-desk)；精确版本固定于 [config/instance.json](config/instance.json) 的 `review_desk_commit`。本仓库当前只处理资料审阅；漫剧改编不在 V1 范围。
+本仓库是公开故事实例，不包含审阅台系统代码。系统代码及后续系统迭代在 [story-review-desk](https://github.com/goosmanlei/story-review-desk)；精确版本固定于 [config/instance.json](config/instance.json) 的 `review_desk_commit`。系统从第一版就采用完整创作框架，目前只开放资料采编和“系统管理 → 系统配置”；漫剧改编留待后续任务。
 
 ## 资料与出处
 
@@ -14,18 +14,21 @@
 
 ## 从公开仓库启动
 
-需要 Python 3.9+。克隆两个仓库，把审阅台切到本实例锁定提交：
+需要 Docker Compose。克隆两个仓库为同级目录，把审阅台切到本实例锁定提交并恢复业务数据：
 
 ```bash
 git clone https://github.com/goosmanlei/story-review-desk.git
 git clone https://github.com/goosmanlei/SnakeSlayingRecord.git
 cd story-review-desk
-git checkout 55dec71a2f17e4960bbe4cc6600755fdd9b55950
+git checkout 894e9e7d639a53e266b180bb27f0b28a9ff25f4c
 PYTHONPATH=. python3 -m review_desk --instance ../SnakeSlayingRecord restore
-PYTHONPATH=. python3 -m review_desk --instance ../SnakeSlayingRecord serve --port 8765
+cd ../SnakeSlayingRecord
+docker compose up -d --build
 ```
 
-打开 `http://127.0.0.1:8765/`。已有 `.runtime/review.sqlite3` 时跳过 `restore`，直接启动；服务器只监听本机。`OPENAI_API_KEY` 仅在本机环境中设置，用于可选 AI 润色；未配置时其他审阅功能不受影响。润色只传送圈选内容和当前草稿，建议先预览、手动采用后才会改变草稿。
+打开 [本机审阅台](http://127.0.0.1:3000/)：Nginx 长期运行在 Docker 容器 3000 端口并代理容器内 Python 服务，主机仅绑定 `127.0.0.1:3000`。`docker compose ps` 检查状态，`docker compose restart` 重启；`restart: unless-stopped` 保证 Docker 恢复时服务随之恢复。已有 `.runtime/review.sqlite3` 时跳过 `restore`。本机当前系统源码目录名是 `story-review-desk-python`，若在此目录运行，构建命令需加 `REVIEW_DESK_BUILD_CONTEXT=../story-review-desk-python`；公开克隆默认目录名为 `story-review-desk`，无需该变量。不要把 3000 端口转发到公网，本服务没有公网鉴权。
+
+`OPENAI_API_KEY` 只在本机启动 Compose 的环境中提供，不提交到仓库；无密钥时其他审阅功能不受影响。若本机网络需要私有可信 CA，可建立本地、不入库的 `compose.override.yaml`，只读挂载 CA 并设置容器 `SSL_CERT_FILE`，不可关闭 TLS 校验。AI 润色先展示草稿、圈选、故事/创作背景、创作阶段、原文上下文及各版本资料，再由用户发起请求；建议必须手动采用、保存。
 
 ## Codex 读取与公开同步
 
@@ -35,14 +38,14 @@ PYTHONPATH=. python3 -m review_desk --instance ../SnakeSlayingRecord serve --por
 PYTHONPATH=. python3 -m review_desk --instance ../SnakeSlayingRecord comments
 ```
 
-添加资料时准备 JSON 数组并运行 `import-sources /path/to/sources.json`；字段与 API 契约见[系统说明](https://github.com/goosmanlei/story-review-desk#数据访问与公开同步)。每次评论或资料变化后，从系统仓库执行 `PYTHONPATH=. python3 -m review_desk --instance ../SnakeSlayingRecord export`，再进入故事仓库执行：
+添加资料时准备 JSON 数组并运行 `import-sources /path/to/sources.json`；字段与 API 契约见[系统说明](https://github.com/goosmanlei/story-review-desk#数据访问与公开同步)。配置可通过“系统管理 → 系统配置”修改；`config-get` 和 `objects` 命令可读版本与精确依赖。每次资料、评论、配置或未来创作稿变化后，从系统仓库执行 `PYTHONPATH=. python3 -m review_desk --instance ../SnakeSlayingRecord export`，再进入故事仓库执行：
 
 ```bash
-git add config/instance.json export/materials.json export/comments.json export/manifest.json export/assets
+git add config/instance.json compose.yaml nginx export
 git commit -m "Sync story review data"
 git push origin main
 ```
 
-公开推送前须审阅评论内容；推送意味着评论也会公开。素材、资料、评论和审计事件均在快照中，运行凭据与 SQLite 本机库不入仓。以后创作稿进入实例时，必须扩展同一导出、清单校验、公开同步与恢复协议，不能仅留在本地运行库。
+公开推送前须审阅评论内容；推送意味着评论也会公开。`export/` 含资料、素材、评论及事件、对象修订/依赖、公开配置及事件，运行凭据与 SQLite 本机库不入仓。以后创作稿也由同一业务账本和导出/校验/同步/恢复协议覆盖，不能仅留在本地运行库。
 
 验收记录见 [VERIFICATION.md](VERIFICATION.md)。
