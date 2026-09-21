@@ -1,0 +1,26 @@
+services:
+  app:
+    build:
+      context: ${REVIEW_DESK_BUILD_CONTEXT:-../story-review-desk}
+    restart: unless-stopped
+    environment:
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+    volumes:
+      - ./:/instance
+    expose:
+      - "8765"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8765/api/instance', timeout=3)"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+  nginx:
+    image: nginx:1.27-alpine
+    restart: unless-stopped
+    depends_on:
+      app:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:3000:3000"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
