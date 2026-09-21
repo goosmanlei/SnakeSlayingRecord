@@ -9,9 +9,11 @@
 - 正式 Docker app 重建后为 `healthy`，Nginx 仍监听 `127.0.0.1:3000`。Chrome 重新打开正式结构入口，看到同一页头、选中的结构子页标签和三张候选卡；无确认前未显示评论入口。API 回读 `selection:null`、0 结构修订、0 确认、原采编评论仍为 1 条。正式实例复导出仍为 36 资料、1 评论、1 事件、36 对象／修订，四份主文件 SHA-256 与修正前相同。
 - `node --check` 两个 JS 文件、`git diff --check` 与系统 12 项单元测试通过。两个公开仓库从 GitHub HTTPS 地址重新克隆到 `/tmp/snake-task3-ui-restore-4JlXof/`：系统 HEAD 和故事实例版本锁均为 `1201b801b070d7a640c4a7b272bf84b78cd92d95`，故事内容提交 `199c946c3fd31c83039c8eda6136b655c776d1b9`。空库 `restore` 后复导出仍是 36 资料、1 评论、1 事件、36 对象／修订，四份主文件哈希未变；`git diff --exit-code -- export` 零差异、恢复仓库无改动。`structure-get` 仍为空选择、空稿件、空确认。临时恢复服务 `127.0.0.1:8777` 的 Chrome 页面显示共享页头、选中的结构标签和三张方向卡；核对后临时服务已停止。
 
-## task-20260921-0003 验收（2026-09-22，待用户确认完成）
+## task-20260921-0003 验收（2026-09-22，用户已确认完成）
 
-实现依据为通用审阅台仓库 `design/story-structure/dist/index.html` 及其 `README.md`。通用系统提交 `215d663c1f24fd7c565091987db9062074dad28c`；接口和完整稿件格式见系统仓库 `docs/story-structure.md`。下述方向 A/B、结构 v1/v2/v3、评论和确认均为 `/tmp/story-structure-acceptance` 中明确标注的**隔离示例**。正式《李寄斩蛇》实例没有选定真实方向，没有导入真实结构稿，也没有创作确认。
+逐项验收及结构子页交互修正后，用户在当前会话明确回复“确认完成”。随后执行指定 `codex.project task _complete -g '1007.creative' -p 'SnakeSlayingRecord' --task task-20260921-0003`，返回“已完成任务：task-20260921-0003”；本机 `.codex-project/tasks.json` 回读 `status=completed`、`attempts=1`、`completed_at=2026-09-22T02:11:36.599088+08:00`。任务完成仅代表本节开发验收；正式故事的真实改编方向和结构稿仍待用户选择、审阅。
+
+实现依据为通用审阅台仓库 `design/story-structure/dist/index.html` 及其 `README.md`。通用系统验收时提交 `215d663c1f24fd7c565091987db9062074dad28c`，交互修正后为 `1201b801b070d7a640c4a7b272bf84b78cd92d95`；接口和完整稿件格式见系统仓库 `docs/story-structure.md`。下述方向 A/B、结构 v1/v2/v3、评论和确认均为 `/tmp/story-structure-acceptance` 中明确标注的**隔离示例**。正式《李寄斩蛇》实例没有选定真实方向，没有导入真实结构稿，也没有创作确认。
 
 | 标准 | 核对结果与证据 |
 | --- | --- |
