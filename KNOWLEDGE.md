@@ -22,7 +22,7 @@
 
 ## 仓库职责与故事实例
 
-- 两个公开 GitHub 仓库：`goosmanlei/SnakeSlayingRecord`（本故事实例）和 `goosmanlei/story-review-desk`（通用审阅台）。2026-09-21 任务执行中分别创建；审阅台已由 GitHub 回读确认 `PUBLIC`，故事仓库仍待最终推送/回读。
+- 两个公开 GitHub 仓库：`goosmanlei/SnakeSlayingRecord`（本故事实例）和 `goosmanlei/story-review-desk`（通用审阅台）。2026-09-21 已创建并推送；从 GitHub HTTPS 地址干净克隆两仓成功。
 - 所有系统代码及未来系统迭代统一归属通用审阅台项目。
 - 本故事基于通用审阅台创建独立运行实例，所有创作推进均通过该实例进行；原始资料、素材、评论和后续创作稿均作为实例数据管理。
 - 故事仓库保存实例配置、明确的审阅台版本引用及实例数据导出。全部故事业务数据及素材纳入公开同步，运行凭据留在本机。
@@ -41,6 +41,7 @@
 - 故事实例 `config/instance.json` 锁定上述系统提交；`.runtime/` 是本机 SQLite 运行库，不公开；`export/` 以 SHA-256 清单覆盖资料、评论、事件和被引用素材。信息来源：本次代码、`config/instance.json` 与本机验证。
 - V1 资料分别是《搜神记》卷十九通行整理本、四库本异文和本项目白话直译/词语说明；第三份不是独立古籍见证或故事改编。出处及采集日期见 `export/materials.json`。
 - 图片为本项目据两种可追溯原文制作的异文对照图，不是古籍书影；收录于 `export/assets/edition-comparison.svg`。
+- 2026-09-21 公开克隆恢复核验：在 `/tmp/snake-review-restore.oxw5zm/` 新克隆两仓，`restore` 得到 3 份资料、1 条评论、4 条事件；浏览器打开恢复实例时图像加载为 1000×660，评论锚点与正文高亮完整；再次导出与公开 `export/` 无差异。详细记录见 `VERIFICATION.md`。该路径是一次性核验目录，不是长期实例位置。
 
 ## 任务管理系统的设计要求
 
