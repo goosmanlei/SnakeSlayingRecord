@@ -14,7 +14,7 @@
 
 ## 从公开仓库启动
 
-需要 Docker Compose。克隆两个仓库为同级目录，把审阅台切到本实例锁定提交并恢复业务数据：
+需要 Docker Compose 和 Python 3.9+（Python 只用于首次恢复与数据 CLI）。克隆两个仓库为同级目录，把审阅台切到本实例锁定提交并恢复业务数据：
 
 ```bash
 git clone https://github.com/goosmanlei/story-review-desk.git
