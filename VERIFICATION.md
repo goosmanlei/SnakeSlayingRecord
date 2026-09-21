@@ -14,6 +14,8 @@
 
 评论 ID 为 `task-20260922-0002-review-01` 至 `-13`；总评是 `-01`、`-06`、`-10`。可用 `GET /api/comments?source_id=direction-01-nine-names`、`direction-02-mountain-water`、`direction-03-lantern-troupe` 回读各自原文锚点；系统仓库 `PYTHONPATH=. python3 -m review_desk --instance ../SnakeSlayingRecord comments` 可回读评论与原修订上下文。时长属于分镜前估算，未声称已制成 25 分钟漫剧。
 
+公开同步：故事仓库提交 `ba71bf2` 已推送至 `origin/main`；通用系统代码未改，故事版本锁仍为 `1201b801b070d7a640c4a7b272bf84b78cd92d95`。从两个 GitHub HTTPS 仓库重新克隆，系统 HEAD 与实例版本锁一致；空运行库 `restore` 核验清单，恢复 36 资料、13 评论、13 事件、36 对象／修订、2 配置。随后 `export` 四份主文件 SHA-256 与公开快照一致，`git diff --exit-code -- export` 为零，恢复仓库工作树无改动。任务尚待用户明确确认，不以公开同步代替任务完成确认。
+
 ## task-20260922-0001：三个扩写方向白话优化（用户已确认完成）
 
 用户阅读三篇及验收证据后在当前会话明确回复“确认完成”；随后执行指定的 `codex.project task _complete`，返回“已完成任务：task-20260922-0001”。`.codex-project/tasks.json` 回读为 `status=completed`、`attempts=1`、`completed_at=2026-09-22T02:58:03.227610+08:00`。此确认仅针对三篇候选文字，不是选定改编方向。
