@@ -35,6 +35,7 @@
 - 用户主要通过自由圈选页面中的文字、图片和图示留下评论，由 Codex 结合意见进行改编并交回审阅，最后由用户明确确认。用户不希望依赖大量输入框填写结构。
 - 本次故事结构页面先在任务发布阶段制作独立 HTML 演示；用户已于 2026-09-21 明确确认当前阅读式设计符合预期，并授权按此方案发布开发任务。设计依据为通用审阅台仓库的 `design/story-structure/dist/index.html` 及同目录上一级 `README.md`。页面设计确认不代表 demo 的示例故事、人物设定或时长安排成为已确认的真实改编方案。
 - 故事结构审阅须与当前系统复用、整合为同一套评论能力，只是应用场景不同；在现有通用评论组件、数据模型、API 和事件历史上扩展图文圈选，保留既有评论与 AI 润色行为。
+- 故事采编与故事结构是“故事创作”下连续的子页。扩写方向的比较、回看和选用应作为故事结构子页的初始状态能力；切换子页时共同页头与标签保持稳定。来源：用户 2026-09-22 对已交付 UI 的明确修正意见。
 - 来源：用户在 2026-09-21 本次故事结构页面任务澄清会话中的明确说明。
 
 ## 仓库职责与故事实例
@@ -56,7 +57,7 @@
 
 ## 已核实的实施事实
 
-- 全新 Python 审阅台源码位于本机 `/Users/bytedance/codex-path/1007.creative/story-review-desk-python`，2026-09-22 系统提交 `215d663c1f24fd7c565091987db9062074dad28c` 已推送公开 `goosmanlei/story-review-desk`；Python 与 Nginx 系统代码及故事结构设计资料均归此仓库，未改动有未提交内容的旧审阅台工作树。来源：通用仓库 Git HEAD、公开远端及故事实例版本锁。
+- 全新 Python 审阅台源码位于本机 `/Users/bytedance/codex-path/1007.creative/story-review-desk-python`，2026-09-22 系统提交 `1201b801b070d7a640c4a7b272bf84b78cd92d95` 已推送公开 `goosmanlei/story-review-desk`；Python 与 Nginx 系统代码及故事结构设计资料均归此仓库，未改动有未提交内容的旧审阅台工作树。来源：通用仓库 Git HEAD、公开远端及故事实例版本锁。
 - 故事实例 `config/instance.json` 锁定上述系统提交；`.runtime/` 是本机 SQLite 运行库，不公开；`export/` Schema 3 以 SHA-256 清单覆盖资料、对象修订级评论、对象修订与依赖、公开配置与事件、被引用素材。运行密钥仅本机保留。评论浮窗支持 Esc、点窗外及关闭按钮收起；收起不提交或清空编辑内容，重新打开仍可继续编辑。信息来源：代码、`config/instance.json` 与本机浏览器验证。
 - 故事结构的已实现接口为 `structure-get`、`structure-review`、`structure-import`、`script-input` 及对应 `/api/story-structure` 路由。方向选择、完整稿件、意见说明和确认记录进入统一对象/不可变修订账本；文字、整体、整图及图像/图示区域评论进入共用评论账本。完整结构稿须有六章并明确引用当前方向选择修订，调整稿须提交完整新版本；正式稿的图意与正文语义一致性仍需人审。来源：系统仓库 `docs/story-structure.md`、`review_desk/structure.py`、隔离实例读写及浏览器验证，详见 `VERIFICATION.md` 的 `task-20260921-0003` 节。
 - 2026-09-22 正式故事实例仍有 36 资料和 1 条采编评论；没有选定真实改编方向、没有真实结构稿及用户创作确认。故事结构设计稿中的人物和节奏仍只是示例。来源：正式实例 `/api/story-structure`、`/api/sources`、`/api/comments` 回读及 `VERIFICATION.md`。
