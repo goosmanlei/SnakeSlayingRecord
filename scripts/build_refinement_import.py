@@ -1,4 +1,4 @@
-"""Build the review-desk import for the first clean story refinement."""
+"""Build the existing refinement import from its clean, complete novel."""
 
 import json
 import re
@@ -12,31 +12,29 @@ IMPORT_PATH = ROOT / "imports" / "story-refinement-01.json"
 
 def blocks_from_markdown(text):
     chunks = re.split(r"^## (.+)$", text, flags=re.M)
-    headings = 11
-    if len(chunks) != 1 + headings * 2:
-        raise ValueError(f"expected {headings} sections, got {(len(chunks) - 1) // 2}")
-    identifiers = ["overview", *(f"s{i}" for i in range(1, 9)), "characters", "plan"]
+    if chunks[0].strip() != "# 把灯带回家" or len(chunks) < 3:
+        raise ValueError("expected the novel title and chapter headings")
     blocks = []
-    for index, block_id in enumerate(identifiers):
+    for index in range((len(chunks) - 1) // 2):
         heading, body = chunks[1 + 2 * index], chunks[2 + 2 * index]
-        paragraphs = [part.strip().replace("\n", "") for part in body.strip().split("\n\n")]
-        if not all(paragraphs):
-            raise ValueError("empty paragraph")
-        blocks.append({"id": f"r01-{block_id}", "text": heading + "\n" + "\n\n".join(paragraphs)})
+        if not re.fullmatch(r"第[一二三四五六七八九十百零两\d]+章 .+", heading) or not body.strip():
+            raise ValueError("expected a named chapter with non-empty prose")
+        blocks.append({"id": f"novel-c{index + 1:02d}", "text": heading + "\n\n" + body.strip()})
     return blocks
 
 
 document = {
     "id": "refinement-01-lantern-home-v1",
     "title": "故事精修一：《把灯带回家》第一版",
-    "version_type": "本项目原创·故事精修第一版",
+    "version_type": "本项目原创·完本小说",
     "origin": "基于扩写方向三《把灯带回家》及截至2026-09-23的十条当前审阅评论独立重构",
     "source_url": "https://github.com/goosmanlei/SnakeSlayingRecord",
     "collected_at": "2026-09-23",
-    "notes": "独立、完整、无修订痕迹的第一版精修稿；不覆盖扩写方向三原稿，供下一轮审阅。",
+    "notes": "基于原故事精修逐片段创作并完成全稿修订的小说。正文为完整干净稿，供审阅。",
+    "edition": "小说完本稿",
     "group": "story-refinements",
     "order": 1,
-    "text_heading": "故事精修第一版 · 把灯带回家",
+    "text_heading": "把灯带回家 · 小说全文",
     "blocks": blocks_from_markdown(MARKDOWN_PATH.read_text()),
     "assets": [],
 }

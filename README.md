@@ -1,12 +1,14 @@
 # 李寄斩蛇 · 故事采编实例
 
-本仓库是公开故事实例，不包含审阅台系统代码。系统代码及后续系统迭代在 [story-review-desk](https://github.com/goosmanlei/story-review-desk)；精确版本固定于 [config/instance.json](config/instance.json) 的 `review_desk_commit`。系统已开放故事采编、故事结构阅读审阅和“系统管理 → 系统配置”。三个漫剧扩写候选留在故事采编并列审阅；**本实例尚未选定真实改编方向，也没有真实结构稿或创作确认**。
+本仓库是公开故事实例，不包含审阅台系统代码。系统代码及后续系统迭代在 [story-review-desk](https://github.com/goosmanlei/story-review-desk)；精确版本固定于 [config/instance.json](config/instance.json) 的 `review_desk_commit`。系统已开放故事采编、故事结构阅读审阅和“系统管理 → 系统配置”。三个漫剧扩写候选留在故事采编并列审阅；本实例已记录选择方向三《把灯带回家》，尚无真实结构稿及其确认。“故事精修一”已原地更新为完本小说，等待用户审阅。
 
 ## 资料与出处
 
 当前保留本项目写作的[白话直译与词语说明](export/materials.json)，原文出处仍链接至《搜神记》卷十九。它是现代整理材料，不是古籍底本或改编。两份文言资料、陈峰福州评话外链索引及共用异文图已按任务要求从当前实例清除；Git 历史仍可回溯。故事采编另收录 32 则通俗白话情节素材（其中缇萦为历史叙事、木兰为叙事歌谣，已明确标注）和 3 个并列的原创完整扩写方向。演绎媒体与转写子项已由用户允许取消，不计入本轮交付；用户已于 2026-09-22 确认该任务按调整后的范围完成。
 
-三篇扩写的当前干净正文可单独阅读：[九女有名](imports/direction-01-clean.md)、[山心水](imports/direction-02-clean.md)、[把灯带回家](imports/direction-03-clean.md)。它们已导入正式审阅台，均为七场连续故事和 25 分钟制作估算；用户已于 2026-09-22 确认本轮文字优化完成，但尚未选定最终方向。方向一、二的评论已于 2026-09-23 全部关闭；方向三原稿及其评论保持不变。基于方向三十条当前评论重构的独立干净稿见[故事精修一：《把灯带回家》第一版](imports/story-refinement-01-clean.md)，它位于审阅台“故事精修”二级菜单，供下一轮审阅。用户允许通过删除旧资料替换，因此旧《山心水》的一条评论及旧修订不再在当前实例中；历史内容仍可从 Git 记录追溯。
+三篇扩写的当前干净正文可单独阅读：[九女有名](imports/direction-01-clean.md)、[山心水](imports/direction-02-clean.md)、[把灯带回家](imports/direction-03-clean.md)。它们已导入正式审阅台，均为七场连续故事和 25 分钟制作估算；用户已于 2026-09-22 确认本轮文字优化完成。方向一、二的评论已于 2026-09-23 全部关闭；方向三原稿及其评论保持不变。基于方向三的十条评论形成的精修梗概，现已逐片段创作并完成全稿修订，原地更新为[故事精修一：《把灯带回家》完本小说](imports/story-refinement-01-clean.md)：十二章，正文 33,517 字符（含标点和换行，不含章名）。审阅台仍使用原资料 ID、标题、菜单与链接，不另建条目。小说独立阅读，不把原梗概的 25 分钟估算当作完本小说的成片时长。此前用户允许通过删除旧资料替换三份扩写，因此旧《山心水》的一条评论及旧修订不再在当前实例中；本次小说发布未删除或改变现有任何评论，历史内容仍可从 Git 记录追溯。
+
+本轮使用[逐步创作方案](planning/novel-creation-plan.md)与[后台执行流程](planning/incremental-writing-workflow.md)：正文、构想、候选与回修检查点保存在本机独立工作库，前台只接收最终干净小说。后台工作数据不随公开仓库或业务导出同步。当前正式阅读入口为[故事精修一](http://127.0.0.1:3000/?workspace=story.sources&source=refinement-01-lantern-home-v1)。
 
 通用审阅台支持对 `folk-tales`、`expansion-directions`、`story-refinements` 分类的独立二级菜单；本实例的分类、正文与出处分别保存在 `export/materials.json`，采编输入见 `imports/`。三组默认收起且可独立展开。桌面页面滑至顶栏后，左侧目录与右侧正文各自滚动；切换资料不会把整页拉回顶部，窄屏目录也可内部滚动。评论浮窗可按 Esc、点击窗外或点关闭按钮收起；重新打开时未保存的编辑状态仍在。
 
@@ -18,7 +20,7 @@
 git clone https://github.com/goosmanlei/story-review-desk.git
 git clone https://github.com/goosmanlei/SnakeSlayingRecord.git
 cd story-review-desk
-git checkout 779f3323137ff82d5b29bb29f3de8b508dab9c44
+git checkout 90ff4de457a7b9149747b856366e799e50d7fd6a
 PYTHONPATH=. python3 -m review_desk --instance ../SnakeSlayingRecord restore
 cd ../SnakeSlayingRecord
 docker compose up -d --build
