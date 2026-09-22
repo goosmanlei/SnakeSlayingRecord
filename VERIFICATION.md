@@ -2,7 +2,7 @@
 
 ## task-20260922-0002：三个扩写方向的独立编剧审阅（等待用户确认）
 
-本轮只审阅，不改三篇正文或选择方向。正式审阅台入口：`http://127.0.0.1:3000/?workspace=story.sources`；所有编剧意见均在系统评论中，本文只记录验收证据。任务账本为 `running`、执行次数 1，未调用 `_complete`。
+本轮只审阅，不改三篇正文或选择方向。正式审阅台入口：`http://127.0.0.1:3000/?workspace=story.sources`；所有编剧意见均在系统评论中，本文只记录验收证据。同一运行标识重复触发后，任务账本仍为 `running`、执行次数 3，未调用 `_complete`；固定评论 ID 保证重试后仍为 13 条，没有重复创建。
 
 | 验收项 | 回读证据 |
 | --- | --- |
@@ -15,6 +15,8 @@
 评论 ID 为 `task-20260922-0002-review-01` 至 `-13`；总评是 `-01`、`-06`、`-10`。可用 `GET /api/comments?source_id=direction-01-nine-names`、`direction-02-mountain-water`、`direction-03-lantern-troupe` 回读各自原文锚点；系统仓库 `PYTHONPATH=. python3 -m review_desk --instance ../SnakeSlayingRecord comments` 可回读评论与原修订上下文。时长属于分镜前估算，未声称已制成 25 分钟漫剧。
 
 公开同步：故事仓库提交 `ba71bf2` 已推送至 `origin/main`；通用系统代码未改，故事版本锁仍为 `1201b801b070d7a640c4a7b272bf84b78cd92d95`。从两个 GitHub HTTPS 仓库重新克隆，系统 HEAD 与实例版本锁一致；空运行库 `restore` 核验清单，恢复 36 资料、13 评论、13 事件、36 对象／修订、2 配置。随后 `export` 四份主文件 SHA-256 与公开快照一致，`git diff --exit-code -- export` 为零，恢复仓库工作树无改动。任务尚待用户明确确认，不以公开同步代替任务完成确认。
+
+重复触发后的现场复核：Docker Desktop 一度未运行，正式入口返回 502；启动 Docker 并执行 Compose 后，`app` 恢复 `healthy`、Nginx 继续绑定 `127.0.0.1:3000`。接口回读仍为 13 条评论，三篇分别 5／4／4，三个总评各 1 条，全部 `OPEN`、版本 1、锚点有效。Chrome 刷新正式页面后，《九女有名》评论面板显示 5 条原文关联评论及总评全文；切换《山心水》《把灯带回家》分别显示 4 条。此恢复未改变评论、正文或导出快照。
 
 ## task-20260922-0001：三个扩写方向白话优化（用户已确认完成）
 
