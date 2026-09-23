@@ -9,7 +9,7 @@
 | 1. 润色参考展开策略 | `AI 润色修改意见` 成功返回时将 `previewExpanded` 置为 `false`，因此“本次润色参考 · 可核对”默认折叠，原生标题可反复展开／收起；单独“查看润色参考”将其置为 `true`。隔离浏览器实际点击后，辅助树显示该标题为 `expanded`，并显示创作阶段、上下文、图像／图示和 SHA-256。当前正式实例没有为本轮发送外部 AI 请求，故不将未调用的远端建议冒充真实结果。 |
 | 2. 临时高亮 | 新评论锚点在草稿存在且未提交时以 `draft-mark` 渲染文本；跨段锚点逐块延展，结构稿与故事采编共用该逻辑。图像区域加 `review-region draft` 多边形，整图加 `draft-visual` 外框。隔离结构稿浏览器点击“评论整图”后，页面可见“添加新评论”，DOM 回读当前结构图为 `draft-visual`；关闭评论浮窗不改变草稿锚点。已有评论继续沿原 `comment-mark`／`review-region` 渲染。 |
 | 3. 收起、取消和提交 | 隔离浏览器填写整图草稿后点击“收起草稿”，提示“草稿已留在本机”；重新点击“评论整图”回读同一文本。点击“取消本次评论”后提示明确，DOM 的 `.draft-mark,.review-region.draft,.draft-visual` 为 0，隔离 API `/api/comments` 为 0，没有创建评论。再次填写并提交后，页面显示“评论已保存”、本稿待处理评论为 1，隔离 API 为 1；验证了取消和提交的边界。 |
-| 4. 工程、同步和重建 | `node --check review_desk/static/{app,structure}.js`、审阅台 20 项 Python 测试、`git diff --check` 均通过。正式 Docker 使用 `REVIEW_DESK_BUILD_CONTEXT=../story-review-desk-python docker compose up -d --build` 重建，app healthy，3000 返回的新 `app.js` 含 `newDraftAnchor`、`previewExpanded` 与“取消本次评论”。系统提交及实例版本锁将在本节更新后同步；用户确认前不调用项目任务 `_complete`。 |
+| 4. 工程、同步和重建 | `node --check review_desk/static/{app,structure}.js`、审阅台 20 项 Python 测试、`git diff --check` 均通过。正式 Docker 使用 `REVIEW_DESK_BUILD_CONTEXT=../story-review-desk-python docker compose up -d --build` 重建，app healthy，3000 返回的新 `app.js` 含 `newDraftAnchor`、`previewExpanded` 与“取消本次评论”。系统提交 `6916f697db9229fedeac3a621536bc82cdfba7eb` 与实例版本锁已同步，故事提交 `926ad5b` 已推送；用户确认前不调用项目任务 `_complete`。 |
 
 隔离夹具仅位于本机临时目录，含一份结构稿、两段正文和一张 SVG；不属于故事实例，不导出或同步。
 
