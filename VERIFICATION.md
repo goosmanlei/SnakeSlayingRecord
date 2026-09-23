@@ -1,8 +1,8 @@
 # 验证记录
 
-## task-20260923-0002：《把灯带回家》完本小说审阅（等待用户确认）
+## task-20260923-0002：《把灯带回家》完本小说审阅（用户已确认完成）
 
-本轮只审阅当前“故事精修一”十二章完本小说，不修改正文，不进行剧本或分镜改编。正式入口为 `http://127.0.0.1:3000/?workspace=story.sources&source=refinement-01-lantern-home-v1`。任务仍为 `running`，尚未调用 `_complete`；以下交付需用户查看后明确确认。
+本轮只审阅当前“故事精修一”十二章完本小说，不修改正文，不进行剧本或分镜改编。正式入口为 `http://127.0.0.1:3000/?workspace=story.sources&source=refinement-01-lantern-home-v1`。用户查看以下交付与逐项验证证据后，于 2026-09-23 明确回复“标记完成”。随后执行指定 `_complete` 命令，返回“已完成任务：task-20260923-0002”。
 
 | 完成标准 | 已核实证据 |
 | --- | --- |
@@ -14,7 +14,7 @@
 
 评论锚点分布为：第一章 2 条、第五章 1 条、第六章 1 条、第七章 1 条、第八章 1 条、第十章 1 条、第十一章 1 条、第十二章 3 条；这不是按章凑数，而是以一条全篇总评覆盖十二章，再只在需要支持判断的位置留下局部意见。总体判断为“成立但需针对性精修”：最高优先处理行动规则边界、反派高潮决策和制度责任；动作空间、旧伤解释方式及尾声时间层级其次。正文、导入资料、故事结构选择和既有评论均未编辑。
 
-工程与恢复验证：故事项目 10 项、审阅台 20 项单元测试全部通过，`git diff --check` 通过；审阅台仓库无改动。故事提交 `2bab1259f3a8f0eab4ed931a4e2da7e55658a9f2` 已推送 `origin/main`。从两个 GitHub HTTPS 仓库重新克隆到 `/tmp/lantern-review-public.cJO7su/`，故事 HEAD 为上述提交，系统 HEAD 与实例锁均为 `171f966bfd06eafaea93b99f2b03f7b9885c9ef2`。空运行库 `restore` 校验并恢复 37 资料、30 评论、40 事件、38 对象／修订、2 配置；CLI 回读本任务固定 ID `-01` 至 `-11` 全部 `OPEN`、版本 1、锚点有效且共同指向修订 `82e89a31…`。复导出文件哈希为 `materials.json=a2b25ea0…`、`comments.json=a0f19d9f…`、`objects.json=9759e420…`、`configurations.json=57e25bf6…`，`git diff --exit-code -- export` 为零。任务账本现场回读仍为 `running`、执行次数 1、完成时间为空；没有调用 `_complete`。
+工程与恢复验证：故事项目 10 项、审阅台 20 项单元测试全部通过，`git diff --check` 通过；审阅台仓库无改动。故事提交 `2bab1259f3a8f0eab4ed931a4e2da7e55658a9f2` 已推送 `origin/main`。从两个 GitHub HTTPS 仓库重新克隆到 `/tmp/lantern-review-public.cJO7su/`，故事 HEAD 为上述提交，系统 HEAD 与实例锁均为 `171f966bfd06eafaea93b99f2b03f7b9885c9ef2`。空运行库 `restore` 校验并恢复 37 资料、30 评论、40 事件、38 对象／修订、2 配置；CLI 回读本任务固定 ID `-01` 至 `-11` 全部 `OPEN`、版本 1、锚点有效且共同指向修订 `82e89a31…`。复导出文件哈希为 `materials.json=a2b25ea0…`、`comments.json=a0f19d9f…`、`objects.json=9759e420…`、`configurations.json=57e25bf6…`，`git diff --exit-code -- export` 为零。完成命令执行后，CLI 与任务账本均回读为 `status=completed`、`revision=2`、`attempts=1`、`lease=null`，完成时间 `2026-09-23T20:52:54.978098+08:00`，执行标记仍为 `bc60b33e-da8e-4889-9d91-78ae71321924`。
 
 ## 2026-09-23：后台创作工具移回故事项目
 
