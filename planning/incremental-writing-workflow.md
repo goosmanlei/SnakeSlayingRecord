@@ -92,33 +92,35 @@ flowchart TD
 
 ## 7. 已落地的最小实现
 
-通用代码位于系统仓库的 `review_desk/writing.py`、`review_desk/store.py` 和 CLI 入口，系统版本由本实例 `config/instance.json` 精确锁定。可执行契约详见系统 `docs/incremental-writing.md`。
+本故事的后台工具位于本仓库 `scripts/novel_writing.py`，仅依赖 Python 标准库；测试位于 `tests/test_novel_writing.py`。不导入审阅台模块，也不需要相邻系统 checkout。创作流程是本故事的工作方式，不是审阅台的通用功能；审阅台不提供写作命令或过程页面，仅保留独立的内容管理与发布接口。此职责边界由用户于 2026-09-23 确认调整。
 
 - 当前会话是唯一写作者，串行决定和执行 WRITE、REVISE 或 REFLECT；程序不调用模型、不读取 API 密钥，也不在会话停止后自动续写。
 - 工作状态位于本实例 `.runtime/novel-writing/lantern-home/work.sqlite3`，独立于正式审阅库和公开 export。正文、事实、构想、待办在同一事务内采用为不可变检查点；候选先保存，再通过独立命令重读，才允许采用。
 - 阶段为 DRAFTING → FULL_DRAFT → REVISING → READY_TO_PUBLISH → PUBLISHED。只有全稿已读、全部片段核查完成、完整性/因果/连续性/语言/干净稿五项作者审校声明通过且无阻塞问题，才能达到 READY。
-- `bundle` 从冻结检查点生成完整 `publication.json` 和 `clean.md`，不修改正式资料。书名来自实例种子，通用系统不写入具体人物或故事设定。
+- `bundle` 从冻结检查点生成完整 `publication.json` 和 `clean.md`，不修改正式资料。书名来自实例种子，具体人物、正文与构想仍属于故事数据。
+- 本地工具只在 `init` 和 `published` 中通过 SQLite `mode=ro` 读取正式库：前者固定 `sources`、`comments`、`comment_events` 的一致快照，后者核对最终源哈希。这是当前实例的只读适配，不引入系统代码依赖；若未来正式数据格式变化，仅调整故事侧适配。所有创作写入均限于独立工作库。
+- 迁移保留原工作库路径、表结构、检查点序列化和哈希算法；无需转换、复制或重建既有创作记录。`status` 可直接读取原有 PUBLISHED 检查点；误写 run 名称会报错，不会创建空工作库。
 
 ### 受控原地发布
 
 用户明确要求保留同一精修一，发布前现场核验为零评论、零依赖、单一 SOURCE 修订。本轮没有新建 STORY 对象或另一小说入口，也没有先删除再导入。
 
-`replace-source-content publication.json --expected-revision 原SOURCE哈希` 在同一 SQLite 写事务内检查：目标已存在且是故事精修；原哈希匹配；评论数和依赖数为零；只有一个 SOURCE 修订。满足条件才更新该条资料及其无引用的修订记录。保留原 ID、分类、排序和链接；相同内容重试不再写入。异常回滚，新评论、依赖或用户改动使覆盖拒绝。普通 `import-sources` 继续保持旧 ID 内容不可变。
+审阅台独立命令 `replace-source-content publication.json --expected-revision 原SOURCE哈希` 在同一 SQLite 写事务内检查：目标已存在且是故事精修；原哈希匹配；评论数和依赖数为零；只有一个 SOURCE 修订。满足条件才更新该条资料及其无引用的修订记录。保留原 ID、分类、排序和链接；相同内容重试不再写入。异常回滚，新评论、依赖或用户改动使覆盖拒绝。普通 `import-sources` 继续保持旧 ID 内容不可变。接口并不要求调用本地写作工具，详见[系统原地替换说明](https://github.com/goosmanlei/story-review-desk/blob/main/docs/source-replacement.md)。
 
 目标原稿本就没有评论，不存在需要迁移的精修一锚点；其他资料、既有评论、状态及精确修订全部保持。此原地通道不适用于已经产生评论的后续稿件，不能在用户审阅后直接沿用本次零评论假设。
 
-正式发布后，`writing published` 只读核对正式哈希，再记录后台 PUBLISHED。发布成功但确认写回中断时，重试确认即可，不重新创作或覆盖。随后更新现有干净稿与导入文件，执行常规 export、双仓同步和干净恢复。本机候选、创作笔记与检查点不纳入公开同步；正式正文是完整干净稿，不另存旧稿文件，Git 历史不重写。
+正式发布后，本地工具的 `published` 只读核对正式哈希，再记录后台 PUBLISHED。发布成功但确认写回中断时，重试确认即可，不重新创作或覆盖。随后更新现有干净稿与导入文件，执行常规 export、双仓同步和干净恢复。本机候选、创作笔记与检查点不纳入公开同步；正式正文是完整干净稿，不另存旧稿文件，Git 历史不重写。
 
 ## 8. 实际步骤契约与恢复
 
-本项目命令前缀（从系统目录执行）：
+从本故事项目目录执行（无需审阅台源码或 Python 包）：
 
 ```bash
-PYTHONPATH=. python3 -m review_desk --instance ../SnakeSlayingRecord writing --run lantern-home status
-PYTHONPATH=. python3 -m review_desk --instance ../SnakeSlayingRecord writing --run lantern-home context
+python3 scripts/novel_writing.py --run lantern-home status
+python3 scripts/novel_writing.py --run lantern-home context
 ```
 
-本轮 run 为 `lantern-home`，不能省略；通用 CLI 缺省名称是 `default`。一次 WRITE 的输入示例：
+本轮 run 为 `lantern-home`，不能省略；CLI 缺省名称仍为 `default`。实例目录默认为脚本所在仓库，隔离测试可显式传 `--instance /path/to/test-instance`。旧审阅台 `writing` 入口已移除，不保留转发入口，避免再次混淆职责。一次 WRITE 的输入示例：
 
 ```json
 {
@@ -144,6 +146,8 @@ PYTHONPATH=. python3 -m review_desk --instance ../SnakeSlayingRecord writing --r
 - 作者笔记必须与采用的正文一致。程序能检查范围、顺序、版本和引用，不能自动判断作者是否认真阅读、人物是否可信或作品是否动人。
 
 ## 9. 过程验证与完本判定
+
+故事工具独立测试：`PYTHONPATH=. python3 -m unittest discover -s tests -v`。审阅台在自己的仓库运行同一测试命令，两边测试不互相导入；原地替换的保护和导出恢复由审阅台 `tests/test_source_replacement.py` 验证。
 
 本轮验证项（具体证据见 `VERIFICATION.md`）：
 
