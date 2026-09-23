@@ -61,8 +61,8 @@
 
 ## 已核实的实施事实
 
-- 全新 Python 审阅台源码位于本机 `/Users/bytedance/codex-path/creative/story-review-desk-python`，2026-09-23 系统提交 `171f966bfd06eafaea93b99f2b03f7b9885c9ef2` 已推送公开 `goosmanlei/story-review-desk`，已移除写作模块与命令组，保留独立的精修原地发布支持；Python 与 Nginx 系统代码及故事结构设计资料均归此仓库，未改动有未提交内容的旧审阅台工作树。来源：通用仓库 Git HEAD、公开远端及故事实例版本锁。
-- 故事实例 `config/instance.json` 锁定上述系统提交；`.runtime/` 是本机 SQLite 运行库，不公开；`export/` Schema 3 以 SHA-256 清单覆盖资料、对象修订级评论、对象修订与依赖、公开配置与事件、被引用素材。运行密钥仅本机保留。评论浮窗支持 Esc、点窗外及关闭按钮收起；收起不提交或清空编辑内容，重新打开仍可继续编辑。信息来源：代码、`config/instance.json` 与本机浏览器验证。
+- 全新 Python 审阅台源码位于本机 `/Users/bytedance/codex-path/creative/story-review-desk-python`，2026-09-23 系统提交 `6916f697db9229fedeac3a621536bc82cdfba7eb` 已推送公开 `goosmanlei/story-review-desk`，已移除写作模块与命令组，保留独立的精修原地发布支持；Python 与 Nginx 系统代码及故事结构设计资料均归此仓库，未改动有未提交内容的旧审阅台工作树。来源：通用仓库 Git HEAD、公开远端及故事实例版本锁。
+- 故事实例 `config/instance.json` 锁定上述系统提交；`.runtime/` 是本机 SQLite 运行库，不公开；`export/` Schema 3 以 SHA-256 清单覆盖资料、对象修订级评论、对象修订与依赖、公开配置与事件、被引用素材。运行密钥仅本机保留。评论浮窗支持 Esc、点窗外及关闭按钮收起；关闭浮窗时临时圈选高亮仍保留。新评论可收起草稿并在相同圈选重新打开，或用“取消本次评论”清除本机草稿和临时高亮而不创建评论；提交后才写入评论账本。AI 润色建议的可核对参考在自动润色后默认收起，单独查看时直接展开。信息来源：代码、`config/instance.json` 与本机浏览器验证。
 - 故事结构的已实现接口为 `structure-get`、`structure-review`、`structure-import`、`script-input` 及对应 `/api/story-structure` 路由。方向选择、完整稿件、意见说明和确认记录进入统一对象/不可变修订账本；文字、整体、整图及图像/图示区域评论进入共用评论账本。完整结构稿须有六章并明确引用当前方向选择修订，调整稿须提交完整新版本；正式稿的图意与正文语义一致性仍需人审。来源：系统仓库 `docs/story-structure.md`、`review_desk/structure.py`、隔离实例读写及浏览器验证，详见 `VERIFICATION.md` 的 `task-20260921-0003` 节。
 - 在故事结构开发验收时，正式实例为 36 资料、0 条采编评论，方向选择与结构稿均为空；此为当时快照。2026-09-23 接口回读已记录选择扩写方向三 `direction-03-lantern-troupe`（选择版本 1），结构修订与确认记录仍均为 0；故事结构设计稿中的示例不因此成为真实创作稿。来源：正式实例 `/api/story-structure` 与 `VERIFICATION.md`；当前运行状态另见 `STATE.md`。
 - 用户在 2026-09-22 逐项验收并核对结构子页交互修正后明确确认 `task-20260921-0003` 完成；指定 `_complete` 命令执行成功，本机任务账本回读为 `completed`、执行次数 1。此为开发任务确认，不是正式故事的方向选择或结构稿确认。来源：用户当前会话确认、`.codex-project/tasks.json` 回读与 `VERIFICATION.md`。
