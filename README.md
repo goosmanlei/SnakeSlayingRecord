@@ -8,7 +8,9 @@
 
 三篇扩写的当前干净正文可单独阅读：[九女有名](imports/direction-01-clean.md)、[山心水](imports/direction-02-clean.md)、[把灯带回家](imports/direction-03-clean.md)。它们已导入正式审阅台，均为七场连续故事和 25 分钟制作估算；用户已于 2026-09-22 确认本轮文字优化完成。方向一、二的评论已于 2026-09-23 全部关闭；方向三原稿及其评论保持不变。基于方向三的十条评论形成的精修梗概，现已逐片段创作并完成全稿修订，原地更新为[故事精修一：《把灯带回家》完本小说](imports/story-refinement-01-clean.md)：十二章，正文 33,517 字符（含标点和换行，不含章名）。审阅台仍使用原资料 ID、标题、菜单与链接，不另建条目。小说独立阅读，不把原梗概的 25 分钟估算当作完本小说的成片时长。此前用户允许通过删除旧资料替换三份扩写，因此旧《山心水》的一条评论及旧修订不再在当前实例中；本次小说发布未删除或改变现有任何评论，历史内容仍可从 Git 记录追溯。
 
-本轮使用[逐步创作方案](planning/novel-creation-plan.md)与[后台执行流程](planning/incremental-writing-workflow.md)：正文、构想、候选与回修检查点保存在本机独立工作库，前台只接收最终干净小说。后台工作数据不随公开仓库或业务导出同步。当前正式阅读入口为[故事精修一](http://127.0.0.1:3000/?workspace=story.sources&source=refinement-01-lantern-home-v1)。
+本轮使用[逐步创作方案](planning/novel-creation-plan.md)与[后台执行流程](planning/incremental-writing-workflow.md)：本故事的创作工具是 [scripts/novel_writing.py](scripts/novel_writing.py)，只依赖 Python 标准库，不属于审阅台系统。正文、构想、候选与回修检查点保存在本机独立工作库，前台只接收最终干净小说。后台工作数据不随公开仓库或业务导出同步。当前正式阅读入口为[故事精修一](http://127.0.0.1:3000/?workspace=story.sources&source=refinement-01-lantern-home-v1)。
+
+本机恢复状态：在本仓库执行 `python3 scripts/novel_writing.py --run lantern-home status`。原工作库无需迁移；缺少私有工作库的公开克隆仍可恢复最终小说，但不会恢复未公开的创作过程。工具独立测试为 `PYTHONPATH=. python3 -m unittest discover -s tests -v`。受控原地更新正文仍由审阅台独立的 `replace-source-content` 接口处理，不依赖本故事的写作工具。
 
 通用审阅台支持对 `folk-tales`、`expansion-directions`、`story-refinements` 分类的独立二级菜单；本实例的分类、正文与出处分别保存在 `export/materials.json`，采编输入见 `imports/`。三组默认收起且可独立展开。桌面页面滑至顶栏后，左侧目录与右侧正文各自滚动；切换资料不会把整页拉回顶部，窄屏目录也可内部滚动。评论浮窗可按 Esc、点击窗外或点关闭按钮收起；重新打开时未保存的编辑状态仍在。
 
@@ -20,7 +22,7 @@
 git clone https://github.com/goosmanlei/story-review-desk.git
 git clone https://github.com/goosmanlei/SnakeSlayingRecord.git
 cd story-review-desk
-git checkout 90ff4de457a7b9149747b856366e799e50d7fd6a
+git checkout 171f966bfd06eafaea93b99f2b03f7b9885c9ef2
 PYTHONPATH=. python3 -m review_desk --instance ../SnakeSlayingRecord restore
 cd ../SnakeSlayingRecord
 docker compose up -d --build
