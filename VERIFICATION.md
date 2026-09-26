@@ -22,6 +22,8 @@
 | 导出和空库恢复 | 最新 Schema 3 为 40 资料、51 评论、61 事件、42 对象／修订、2 依赖、2 配置、8 配置事件。仅复制 `config/instance.json` 与 `export/` 到独立空实例恢复，再导出；清单和 10 份受管文件（4 JSON、6 SVG）共 11 个文件逐字节一致，不依赖私有写作库。 |
 | 范围 | 没有改通用系统、写作工具或数据库结构；未重跑无关代码测试，实际执行了全文与图文检查、基线和 API 核验、浏览器评论定位、空库恢复。更新既有创作方案、README、AGENTS、KNOWLEDGE 与 STATE，统一双轨规则；系统工作树既有评论拖选补丁仍未提交或推送。 |
 
+公开同步：正式成果、最新评论与双轨文档已随故事仓库提交 `9980e5cdb944e6a259f13f6629f83d1a4ab33f4a` 推送至 `origin/main`，远端提交回读一致。新增导出的 4 条评论均为小说内容意见；私有工作库和隔离测试材料未入库。`git diff --check`、项目 context v1 检查及六份文档的本地链接核验通过。
+
 正式文件为 `imports/story-structure-01.json`、`imports/story-structure-01-clean.md`、`imports/story-refinement-04.json`、`imports/story-refinement-04-clean.md` 及 `export/assets/lantern-structure-v1-*.svg`。本机证据在 `.runtime/novel-writing/lantern-home-v4/` 的 `publication-verification.json`、`restore-verification.json`、`structure-comment-check.json`、`formal-api-*.json` 与工作库；这些过程材料不公开。
 
 ## 2026-09-26：评论拖选按钮修复
