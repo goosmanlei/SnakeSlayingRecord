@@ -1,6 +1,6 @@
 # 李寄斩蛇 · 故事采编实例
 
-本仓库是公开故事实例，不包含审阅台系统代码。系统代码及后续系统迭代在 [story-review-desk](https://github.com/goosmanlei/story-review-desk)；精确版本固定于 [config/instance.json](config/instance.json) 的 `review_desk_commit`。系统已开放故事采编、故事结构阅读审阅和“系统管理 → 系统配置”。本实例已选择方向三《把灯带回家》，尚无真实结构稿及确认。当前待审作品为[故事精修三](http://127.0.0.1:3000/?workspace=story.sources&source=refinement-03-lantern-home-v3)，精修一、精修二及原评论均保留。
+本仓库是公开故事实例，不包含审阅台系统代码。系统代码及后续系统迭代在 [story-review-desk](https://github.com/goosmanlei/story-review-desk)；精确版本固定于 [config/instance.json](config/instance.json) 的 `review_desk_commit`。系统已开放故事采编、故事结构阅读审阅和“系统管理 → 系统配置”。本实例已选择方向三《把灯带回家》，当前双轨交付为[故事结构第一稿](http://127.0.0.1:3000/?workspace=story.outline)与[故事精修四](http://127.0.0.1:3000/?workspace=story.sources&source=refinement-04-lantern-home-v4)。两份作品均待审阅，尚未确认进入剧本创作；精修一至三及原评论均保留。
 
 ## 资料与出处
 
@@ -8,11 +8,13 @@
 
 三篇扩写的干净正文可单独阅读：[九女有名](imports/direction-01-clean.md)、[山心水](imports/direction-02-clean.md)、[把灯带回家](imports/direction-03-clean.md)。它们均为七场连续故事和 25 分钟制作估算，用户已于 2026-09-22 确认文字优化完成。方向一、二的评论已关闭，方向三原稿及评论保留。小说独立阅读，不把原梗概的 25 分钟估算当作小说的成片时长；历史清理与验收见 [VERIFICATION.md](VERIFICATION.md)。
 
-[故事精修三：《把灯带回家》第三版](imports/story-refinement-03-clean.md)于 2026-09-26 根据精修二的 12 条当前评论完成十二章修订，正文 31,014 字符（含标点和换行，不含章名）。本版重点重写父亲在报名、保护女儿和救援中的责任，以及李寄最后出手的具体原因，并联动修改米债、工钱、人物知情范围、行动位置和结局衔接。完整干净稿以独立条目 `refinement-03-lantern-home-v3` 发布，尚待用户审阅。[精修一](imports/story-refinement-01-clean.md)、[精修二](imports/story-refinement-02-clean.md)及其分别 16 条、12 条评论原位保留，未代用户关闭评论。
+[故事结构第一稿](imports/story-structure-01-clean.md)于 2026-09-26 发布，包含方向与主题、人物塑造、人物关系、空间关系、故事线、时间线六部分，以及六张可圈选评论的图示。它明确李寄与阿蘅是从小亲近、姐妹般的旧友，将人物的稳定性格、关系变化和行动动机作为精修四的共同依据。结构稿是正式阶段成果，可以先从全局审阅，再对照小说中的具体场景。
 
-本故事沿用[逐步创作方案](planning/novel-creation-plan.md)与[后台执行流程](planning/incremental-writing-workflow.md)：创作工具 [scripts/novel_writing.py](scripts/novel_writing.py)只依赖 Python 标准库，不属于审阅台系统。正文、构想、候选与回修检查点保存在本机独立工作库，前台只接收最终干净小说。后台工作数据不随公开仓库或业务导出同步。
+[故事精修四：《把灯带回家》第四版](imports/story-refinement-04-clean.md)依据该结构稿与精修三的 4 条评论，完成十二章、29 个片段的逐段修订。正文 33,761 字符（含标点和章内换行，不含章名）。重点补清对白归属及必要神态，贯通两位女孩从亲近、失信到互救和共同规划以后的关系，并前置李诞、孙六参与救援的交情、顾虑与责任。完整干净稿以独立条目 `refinement-04-lantern-home-v4` 发布。前三版及其分别 16 条、12 条、4 条评论原位保留，未代用户关闭评论。
 
-第三版本机恢复状态：在本仓库执行 `python3 scripts/novel_writing.py --run lantern-home-v3 status`；前两版批次分别为 `lantern-home`、`lantern-home-v2`。第三版以已发布的第二版为修订基线，逐章保存、回读和采用修改。缺少私有工作库的公开克隆仍可恢复最终小说，但不会恢复未公开的创作过程。工具独立测试为 `PYTHONPATH=. python3 -m unittest discover -s tests -v`。本次新增第三版使用普通 `import-sources`，未使用受控原地更新接口 `replace-source-content`。
+本故事沿用[小说创作方案](planning/novel-creation-plan.md)与[后台执行流程](planning/incremental-writing-workflow.md)：先整理并发布可审阅的结构图文稿，再依据其具体版本逐段修小说；发现设计与正文冲突时，联动回修。创作工具 [scripts/novel_writing.py](scripts/novel_writing.py)只依赖 Python 标准库，不属于审阅台系统。未完成正文、候选、构想和检查点仅保存在本机工作库；小说只发布完本干净稿，结构稿作为独立阶段成果供审阅。
+
+第四版本机恢复状态：在本仓库执行 `python3 scripts/novel_writing.py --run lantern-home-v4 status`。它以精修三的 29 片段建立基线，再逐段保存、独立回读和采用修订；当前为 `PUBLISHED`。前三版批次分别为 `lantern-home`、`lantern-home-v2`、`lantern-home-v3`。公开克隆可恢复全部正式作品与评论，不恢复私有创作过程。工具独立测试为 `PYTHONPATH=. python3 -m unittest discover -s tests -v`。精修四使用普通 `import-sources` 新增，未使用原地替换接口覆盖旧稿。
 
 通用审阅台支持对 `folk-tales`、`expansion-directions`、`story-refinements` 分类的独立二级菜单；本实例的分类、正文与出处分别保存在 `export/materials.json`，采编输入见 `imports/`。三组默认收起且可独立展开。桌面页面滑至顶栏后，左侧目录与右侧正文各自滚动；切换资料不会把整页拉回顶部，窄屏目录也可内部滚动。评论浮窗可按 Esc、点击窗外或点关闭按钮收起；重新打开时未保存的编辑状态仍在。
 
