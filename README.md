@@ -1,6 +1,6 @@
 # 李寄斩蛇 · 故事采编实例
 
-本仓库是公开故事实例，不包含审阅台系统代码。系统代码及后续系统迭代在 [story-review-desk](https://github.com/goosmanlei/story-review-desk)；精确版本固定于 [config/instance.json](config/instance.json) 的 `review_desk_commit`。系统已开放故事采编、故事结构阅读审阅和“系统管理 → 系统配置”。本实例已选择方向三《把灯带回家》，当前双轨交付为[故事结构第一稿](http://127.0.0.1:3000/?workspace=story.outline)与[故事精修四](http://127.0.0.1:3000/?workspace=story.sources&source=refinement-04-lantern-home-v4)。两份作品均待审阅，尚未确认进入剧本创作；精修一至三及原评论均保留。
+本仓库是公开故事实例，不包含审阅台系统代码。系统代码及后续迭代在 [story-review-desk](https://github.com/goosmanlei/story-review-desk)；公开版本固定于 [config/instance.json](config/instance.json)。已选方向三《把灯带回家》，当前交付为[故事结构第十稿](http://127.0.0.1:3000/?workspace=story.outline)与[故事精修九 · 定稿候选](http://127.0.0.1:3000/?workspace=story.sources&source=refinement-09-lantern-home-v9)。本轮先完整独立审阅精修八，再由独立写作者逐章修订；补清求援、主动试刀与停手条件，保留完整友情与斩蛇主线。精修一至八及全部旧评论保留，作品待用户审阅确认。
 
 ## 资料与出处
 
@@ -8,15 +8,19 @@
 
 三篇扩写的干净正文可单独阅读：[九女有名](imports/direction-01-clean.md)、[山心水](imports/direction-02-clean.md)、[把灯带回家](imports/direction-03-clean.md)。它们均为七场连续故事和 25 分钟制作估算，用户已于 2026-09-22 确认文字优化完成。方向一、二的评论已关闭，方向三原稿及评论保留。小说独立阅读，不把原梗概的 25 分钟估算当作小说的成片时长；历史清理与验收见 [VERIFICATION.md](VERIFICATION.md)。
 
-[故事结构第一稿](imports/story-structure-01-clean.md)于 2026-09-26 发布，包含方向与主题、人物塑造、人物关系、空间关系、故事线、时间线六部分，以及六张可圈选评论的图示。它明确李寄与阿蘅是从小亲近、姐妹般的旧友，将人物的稳定性格、关系变化和行动动机作为精修四的共同依据。结构稿是正式阶段成果，可以先从全局审阅，再对照小说中的具体场景。
+[故事结构](imports/story-structure-01-clean.md)当前为修订 10，包含主题、人物、关系、空间、故事线和时间线六部分，21 段说明与九张图。三张原生 4K 图片沿用已经核对的庙院、短石道剖视和八人站位；六张示意图中更新人物变化、机关与因果三张，其余沿用。人物关系与场所未改，求援和停止尝试仍可选择，李寄在成人确认隔离条件后主动试刀。旧结构修订、旧图及 11 条结构评论保持原位。
 
-[故事精修四：《把灯带回家》第四版](imports/story-refinement-04-clean.md)依据该结构稿与精修三的 4 条评论，完成十二章、29 个片段的逐段修订。正文 33,761 字符（含标点和章内换行，不含章名）。重点补清对白归属及必要神态，贯通两位女孩从亲近、失信到互救和共同规划以后的关系，并前置李诞、孙六参与救援的交情、顾虑与责任。完整干净稿以独立条目 `refinement-04-lantern-home-v4` 发布。前三版及其分别 16 条、12 条、4 条评论原位保留，未代用户关闭评论。
+[故事精修九：《把灯带回家》· 定稿候选](imports/story-refinement-09-clean.md)是完整、独立可读的十章干净稿，正文 29,046 字符（含标点和章内换行，不含章名）、622 个正文自然段。前半保留毁本、失约、生计与父辈承担；后半补实际求援、李寄主动请试、父亲核看和可停手的过程，继续写足惊惧、失手与疲劳。十章串行保存、另次回读后采用，全稿复核跨章因果、人物、对白、时空和照应。原有 44 份资料、136 条评论及 154 条评论事件未变，新增两条精修八审阅评论仍保留在原文。
 
 本故事沿用[小说创作方案](planning/novel-creation-plan.md)与[后台执行流程](planning/incremental-writing-workflow.md)：先整理并发布可审阅的结构图文稿，再依据其具体版本逐段修小说；发现设计与正文冲突时，联动回修。创作工具 [scripts/novel_writing.py](scripts/novel_writing.py)只依赖 Python 标准库，不属于审阅台系统。未完成正文、候选、构想和检查点仅保存在本机工作库；小说只发布完本干净稿，结构稿作为独立阶段成果供审阅。
 
-第四版本机恢复状态：在本仓库执行 `python3 scripts/novel_writing.py --run lantern-home-v4 status`。它以精修三的 29 片段建立基线，再逐段保存、独立回读和采用修订；当前为 `PUBLISHED`。前三版批次分别为 `lantern-home`、`lantern-home-v2`、`lantern-home-v3`。公开克隆可恢复全部正式作品与评论，不恢复私有创作过程。工具独立测试为 `PYTHONPATH=. python3 -m unittest discover -s tests -v`。精修四使用普通 `import-sources` 新增，未使用原地替换接口覆盖旧稿。
+精修六已完成[独立逐段审阅](planning/reader-review-workflow.md)：每次只向独立模型开放一个自然段，明确问题直接评论到精修六。按用户 2026-09-28 的费用调整要求，从第 314 段起每 20 段汇总一次，后续携带短摘要、本组已读原文和问题记录，并有限回看已读原文核对评论；前 313 段原始请求保留。它不继承作者背景，也不使用会自动附带整稿的 AI 润色接口。全部 1,032 段及文末步骤已完成，共挂 4 条评论：2 条仍建议澄清，1 条后文已解释，1 条摘要误读已撤回，正文未改。程序为 [scripts/reader_review.py](scripts/reader_review.py)，批次 `refinement-06-cold-reader` 的报告、检查点与费用证据位于本机 `.runtime/reader-review/`。完整审计、49 项测试及导出恢复通过；摘要模式调用用量折算约 17.55 美元，费用口径与该批次最终状态见 [VERIFICATION.md](VERIFICATION.md)。
 
-通用审阅台支持对 `folk-tales`、`expansion-directions`、`story-refinements` 分类的独立二级菜单；本实例的分类、正文与出处分别保存在 `export/materials.json`，采编输入见 `imports/`。三组默认收起且可独立展开。桌面页面滑至顶栏后，左侧目录与右侧正文各自滚动；切换资料不会把整页拉回顶部，窄屏目录也可内部滚动。评论浮窗可按 Esc、点击窗外或点关闭按钮收起；重新打开时未保存的编辑状态仍在。
+当前交付证据在本机 `.runtime/task-20260929-0001/`：严格隔离审阅十章、604 段，实际输入只含截至当前章的原文和读者自己的先前判断。最初子代理获自动记忆，其结果仅作补充，不计冷读验收；重新完成的 API 冷读提出 1 条时间指代问题，补充审阅另有 1 条人手调度观点，两者在正式评论中区分。`writer/comment-handling.json` 保存逐条决定与新稿精确引用；`evidence/` 保存覆盖、全稿、浏览器、数据一致性和空库恢复证明。API、导入、干净稿与导出一致，恢复再导出的 56 个文件逐字节相同。`.runtime/refinement-08/` 等旧批次仅作历史证据，不可重放覆盖当前作品。作者审校不等于用户接受；本次公开提交包含故事实例的正式作品、评论、结构素材与创作工具，运行边界见 [STATE.md](STATE.md)。
+
+通用审阅台支持对 `folk-tales`、`expansion-directions`、`story-refinements` 分类的独立二级菜单；本实例的分类、正文与出处分别保存在 `export/materials.json`，采编输入见 `imports/`。三组默认收起且可独立展开。资料条目只显示标题，版本类型与来源在右侧详情查看。精修一至九的菜单标题省略重复的“第N版”，各版本下另有可展开的章节三级菜单：前五版各 12 章，精修六 15 章，精修七、八、九各 10 章，共 105 个入口。点击章名跳到章首，目录随正文滚动高亮，收起章节不改变阅读位置；故事结构目录也随阅读位置高亮。桌面页面滑至顶栏后，左侧目录与右侧正文各自滚动；切换资料不会把整页拉回顶部，窄屏目录也可内部滚动。评论浮窗可按 Esc、点击窗外或点关闭按钮收起；重新打开时未保存的编辑状态仍在。
+
+已有高清图片统一在 OpenArt 独立项目“李寄斩蛇 · 把灯带回家”创作，项目 ID、CLI 优先及原生 4K 参数见 [config/openart.json](config/openart.json)。精修八生成时 CLI 登录请求超时，使用已连接的 OpenArt 连接器生成；沿用的三张正式 PNG 分别为 5056×3392、5056×3392、5504×3072。用户已将相关图片移入新项目，列表回读核实全部 11 个生成记录。页面整图随阅读栏等比缩放，保留高清原文件与准确的圈选边界。结构中的全部图片和图示可点击在当前页面放大，按 Esc 或右上角关闭按钮退出。
 
 ## 从公开仓库启动
 
@@ -32,6 +36,8 @@ cd ../SnakeSlayingRecord
 docker compose up -d --build
 ```
 
+当前本机页面还包含未提交的系统改进，已同步到运行容器。上述公开锁定提交不含这些改进；本机重建应使用当前 `../story-review-desk-python` 工作树，具体范围见 [STATE.md](STATE.md)。
+
 打开 [本机审阅台](http://127.0.0.1:3000/)：Nginx 长期运行在 Docker 容器 3000 端口并代理容器内 Python 服务；Nginx 镜像与通用代理规则由审阅台仓库维护，故事仓库只保留实例 Compose 配置。主机仅绑定 `127.0.0.1:3000`。`docker compose ps` 检查状态，`docker compose restart` 重启；`restart: unless-stopped` 保证 Docker 恢复时服务随之恢复。已有 `.runtime/review.sqlite3` 时跳过 `restore`。本机当前系统源码目录名是 `story-review-desk-python`，若在此目录运行，构建命令需加 `REVIEW_DESK_BUILD_CONTEXT=../story-review-desk-python`；公开克隆默认目录名为 `story-review-desk`，无需该变量。不要把 3000 端口转发到公网，本服务没有公网鉴权。
 
 `OPENAI_API_KEY` 默认只在本机启动 Compose 的环境中提供，不提交到仓库；无密钥时其他审阅功能不受影响。系统配置“系统与 AI”可选择评论润色模型、推理强度，并设置润色 API Key 的环境变量名（只保存名称，绝不保存密钥值）。若使用自定义名称，必须用本机、不入库的 `compose.override.yaml` 将同名环境变量透传给 `app` 容器；改页面配置不会自动透传宿主机变量。若本机网络需要私有可信 CA，也可在该覆盖文件中只读挂载 CA 并设置容器 `SSL_CERT_FILE`，不可关闭 TLS 校验。新建或编辑评论有文字即可点 AI 润色，系统自动生成并核验草稿、圈选、故事/创作背景、创作阶段、原文上下文及各版本资料的参考快照；也可单独点击“查看润色参考”。建议必须手动采用、保存。
@@ -44,7 +50,7 @@ docker compose up -d --build
 PYTHONPATH=. python3 -m review_desk --instance ../SnakeSlayingRecord comments
 ```
 
-添加资料时准备 JSON 数组并运行 `import-sources /path/to/sources.json`；字段与 API 契约见[系统说明](https://github.com/goosmanlei/story-review-desk#数据访问与公开同步)。故事结构是“故事创作”下的子页：初始页直接比较、回看和选用扩写方向；Codex 通过 `structure-get`、`structure-review` 读取方向与意见，并以 `structure-import complete.json --expected-version N` 导入完整图文稿。用户确认具体版本后，`script-input` 交接至剧本创作。完整格式、版本和图文评论约束见[故事结构接口说明](https://github.com/goosmanlei/story-review-desk/blob/main/docs/story-structure.md)。配置可通过“系统管理 → 系统配置”修改；`config-get` 和 `objects` 命令可读版本与精确依赖。每次资料、评论、配置或创作稿变化后，从系统仓库执行 `PYTHONPATH=. python3 -m review_desk --instance ../SnakeSlayingRecord export`，再进入故事仓库执行：
+添加资料时准备 JSON 数组并运行 `import-sources /path/to/sources.json`；字段与 API 契约见[系统说明](https://github.com/goosmanlei/story-review-desk#数据访问与公开同步)。故事结构是“故事创作”下的子页：未选方向时提供初始方向选择；已有结构的阅读页保留版本、章节、图文圈选与浮动评论入口，移除方向回看／重选、顶部重复评论按钮和底部版本确认控件。Codex 通过 `structure-get`、`structure-review` 读取方向与意见，以 `structure-import complete.json --expected-version N` 导入完整图文稿；历史确认及 `script-input` 接口保留兼容，页面精简不自动创建确认。格式见[故事结构接口说明](https://github.com/goosmanlei/story-review-desk/blob/main/docs/story-structure.md)。每次资料、评论、配置或创作稿变化后，从系统仓库执行 `PYTHONPATH=. python3 -m review_desk --instance ../SnakeSlayingRecord export`。公开同步须按用户授权审阅全部变更后执行，例如：
 
 ```bash
 git add config/instance.json compose.yaml export imports
