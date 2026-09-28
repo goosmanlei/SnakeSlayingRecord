@@ -36,7 +36,7 @@ cd ../SnakeSlayingRecord
 docker compose up -d --build
 ```
 
-当前本机页面还包含未提交的系统改进，已同步到运行容器。上述公开锁定提交不含这些改进；本机重建应使用当前 `../story-review-desk-python` 工作树，具体范围见 [STATE.md](STATE.md)。
+当前实例固定系统提交 `0a4e3cdbda844a779e9d1998a335699978733cde`，已公开推送；包含章节导航、评论圈选与精确定位、结构页精简和图片页内放大。正式入口的五个静态文件与该提交一致，公开克隆按上述版本锁可复现这些改进；具体证据见 [STATE.md](STATE.md)。
 
 打开 [本机审阅台](http://127.0.0.1:3000/)：Nginx 长期运行在 Docker 容器 3000 端口并代理容器内 Python 服务；Nginx 镜像与通用代理规则由审阅台仓库维护，故事仓库只保留实例 Compose 配置。主机仅绑定 `127.0.0.1:3000`。`docker compose ps` 检查状态，`docker compose restart` 重启；`restart: unless-stopped` 保证 Docker 恢复时服务随之恢复。已有 `.runtime/review.sqlite3` 时跳过 `restore`。本机当前系统源码目录名是 `story-review-desk-python`，若在此目录运行，构建命令需加 `REVIEW_DESK_BUILD_CONTEXT=../story-review-desk-python`；公开克隆默认目录名为 `story-review-desk`，无需该变量。不要把 3000 端口转发到公网，本服务没有公网鉴权。
 

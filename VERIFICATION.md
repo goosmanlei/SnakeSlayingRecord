@@ -1,12 +1,13 @@
 # 验证记录
 
-## 2026-09-29：故事仓库提交范围与提交前核验
+## 2026-09-29：两仓提交与版本联动核验
 
-按用户明确调用 `git-commit`，本次提交故事实例积累的 76 个文件：精修四的既有调整、精修五至九、结构修订与素材、138 条评论及相关正式导出、独立读者工具和测试、OpenArt 项目配置与项目记录。相邻通用审阅台是独立仓库，其未提交代码保留；系统版本锁没有变化。
+用户明确调用 `git-commit` 并追加通用审阅台一并提交。故事实例提交 `ec0ec935d5b12b82c96b75b2b0a50056d4cc5891` 包含 76 个文件：精修四既有调整、精修五至九、结构修订与素材、138 条评论及正式导出、独立读者工具和测试、OpenArt 配置与项目记录。通用审阅台提交 `0a4e3cdbda844a779e9d1998a335699978733cde` 包含 11 个文件，涵盖章节导航、评论圈选与精确定位、结构页精简、图片放大及回归夹具；已推送 `origin/main`。故事实例另同步 `config/instance.json` 引用该系统提交，并收敛 README、STATE、KNOWLEDGE 中的当前运行说明。
 
-- `PYTHONPATH=. /opt/homebrew/bin/python3 -m unittest discover -s tests -q`：49 项通过，含隔离 HTTP 评论与导出恢复测试；未向正式实例写测试数据。
+- 故事仓库 49 项测试通过，含隔离 HTTP 评论与导出恢复；系统仓库 20 项测试及两份 JavaScript 语法检查通过。未向正式实例写测试数据。
 - 正式导出清单的 55 个受管文件全部通过 SHA-256 校验（加 manifest 共 56 文件）；24 个 JSON 可解析，暂存差异检查通过。
-- 暂存清单确认 `.runtime/`、`.codex-project/` 和本机覆盖配置未入仓；当前无子模块，分支为 `main`，推送目标为既有 `origin/main`。实际提交和推送回读另保存在本机 `.runtime/task-20260929-0001/evidence/git-publication.json`。
+- 正式入口的 `app.js`、`structure.js`、`structure.css`、`workspace.css`、`index.html` 与系统提交逐字节一致。此前 14 项浏览器回归的两份 JS 哈希仍相同，本次未重复浏览器交互验收，无重启或镜像重建。
+- `.runtime/`、`.codex-project/` 和本机覆盖配置未入仓，两仓均无子模块。提交及远端最终回读保存在本机 `.runtime/task-20260929-0001/evidence/git-publication.json`；静态文件回读为同目录 `git-system-static.json`。
 
 ## 2026-09-29：精修八独立逐章审阅与精修九定稿候选
 
