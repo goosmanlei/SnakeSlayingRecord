@@ -1,6 +1,12 @@
 # 李寄斩蛇 · 故事采编实例
 
-本仓库是公开故事实例，不包含审阅台系统代码。系统代码及后续迭代在 [story-review-desk](https://github.com/goosmanlei/story-review-desk)；公开版本固定于 [config/instance.json](config/instance.json)。已选方向三《把灯带回家》，当前交付为[故事结构第十稿](http://127.0.0.1:3000/?workspace=story.outline)与[故事精修九 · 定稿候选](http://127.0.0.1:3000/?workspace=story.sources&source=refinement-09-lantern-home-v9)。本轮先完整独立审阅精修八，再由独立写作者逐章修订；补清求援、主动试刀与停手条件，保留完整友情与斩蛇主线。精修一至八及全部旧评论保留，作品待用户审阅确认。
+本仓库是公开故事实例，不包含审阅台系统代码。系统代码及后续迭代在 [story-review-desk](https://github.com/goosmanlei/story-review-desk)；所需系统版本固定于 [config/instance.json](config/instance.json)，本分支新增的制作思路候选尚未推送。已选方向三《把灯带回家》，当前交付为[故事结构第十稿](http://127.0.0.1:3000/?workspace=story.outline)与[故事精修九 · 定稿候选](http://127.0.0.1:3000/?workspace=story.sources&source=refinement-09-lantern-home-v9)。本轮先完整独立审阅精修八，再由独立写作者逐章修订；补清求援、主动试刀与停手条件，保留完整友情与斩蛇主线。精修一至八及全部旧评论保留，作品待用户审阅确认。
+
+## 制作思路候选
+
+本任务分支以“制作思路”替换旧首页，提供“故事创作”“素材生产”两个 Tab；旧 `workspace=current` 链接兼容进入新页。方法正文在 [content/production-approach.json](content/production-approach.json)，随实例 Git 保存；系统负责只读展示，没有新增工作统计、任务账本或素材执行引擎。完整素材生产仍为方案，小说及结构仍保留待审阅的性质。
+
+[隔离预览](http://127.0.0.1:8794/)已完成桌面、窄屏和数据恢复验收，正式 3000 服务尚未发布这次候选。清理范围、输入版本、验证结果和集成步骤见[候选交付记录](planning/production-approach-delivery.md)。恢复实例时同时保留 `config/`、`content/` 与 `export/`；方法文档不写业务数据库，无数据迁移。
 
 ## 资料与出处
 
@@ -22,21 +28,21 @@
 
 已有高清图片统一在 OpenArt 独立项目“李寄斩蛇 · 把灯带回家”创作，项目 ID、CLI 优先及原生 4K 参数见 [config/openart.json](config/openart.json)。精修八生成时 CLI 登录请求超时，使用已连接的 OpenArt 连接器生成；沿用的三张正式 PNG 分别为 5056×3392、5056×3392、5504×3072。用户已将相关图片移入新项目，列表回读核实全部 11 个生成记录。页面整图随阅读栏等比缩放，保留高清原文件与准确的圈选边界。结构中的全部图片和图示可点击在当前页面放大，按 Esc 或右上角关闭按钮退出。
 
-## 从公开仓库启动
+## 准备两仓并启动
 
-需要 Docker Compose 和 Python 3.9+（Python 只用于首次恢复与数据 CLI）。克隆两个仓库为同级目录，把审阅台切到本实例锁定提交并恢复业务数据：
+需要 Docker Compose 和 Python 3.9+（Python 只用于首次恢复与数据 CLI）。两个仓库放在同级目录。本分支锁定的系统候选尚未推送，以下检出步骤要求本地系统仓库已取得该提交；仅公开克隆时暂不可复现新页。准备好所需提交后，切到版本锁并恢复业务数据：
 
 ```bash
 git clone https://github.com/goosmanlei/story-review-desk.git
 git clone https://github.com/goosmanlei/SnakeSlayingRecord.git
 cd story-review-desk
-git checkout 6916f697db9229fedeac3a621536bc82cdfba7eb
+git checkout 406714697a0476a168809ecf1f0f5288a014ef62
 PYTHONPATH=. python3 -m review_desk --instance ../SnakeSlayingRecord restore
 cd ../SnakeSlayingRecord
 docker compose up -d --build
 ```
 
-当前实例固定系统提交 `0a4e3cdbda844a779e9d1998a335699978733cde`，已公开推送；包含章节导航、评论圈选与精确定位、结构页精简和图片页内放大。正式入口的五个静态文件与该提交一致，公开克隆按上述版本锁可复现这些改进；具体证据见 [STATE.md](STATE.md)。
+本分支固定系统候选 `406714697a0476a168809ecf1f0f5288a014ef62`，当前只存在本地任务分支；在候选未公开前，仅凭公开克隆不能检出它，须使用已取得该提交的本地系统仓库。正式服务最近核验的公开基线仍为 `0a4e3cdbda844a779e9d1998a335699978733cde`，包含章节导航、评论圈选与精确定位、结构页精简和图片页内放大。候选发布与正式状态见 [STATE.md](STATE.md)。
 
 打开 [本机审阅台](http://127.0.0.1:3000/)：Nginx 长期运行在 Docker 容器 3000 端口并代理容器内 Python 服务；Nginx 镜像与通用代理规则由审阅台仓库维护，故事仓库只保留实例 Compose 配置。主机仅绑定 `127.0.0.1:3000`。`docker compose ps` 检查状态，`docker compose restart` 重启；`restart: unless-stopped` 保证 Docker 恢复时服务随之恢复。已有 `.runtime/review.sqlite3` 时跳过 `restore`。本机当前系统源码目录名是 `story-review-desk-python`，若在此目录运行，构建命令需加 `REVIEW_DESK_BUILD_CONTEXT=../story-review-desk-python`；公开克隆默认目录名为 `story-review-desk`，无需该变量。不要把 3000 端口转发到公网，本服务没有公网鉴权。
 

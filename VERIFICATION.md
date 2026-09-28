@@ -600,3 +600,12 @@ README、KNOWLEDGE、STATE、小说方案和后台流程已同步；context v1 �
 - 系统仓库 `main` 已推送 `2e7e0b1cdb9113a2faf6c4178a2d93461d6a3e8a`，故事仓库 `main` 已推送 `60a47ea0706c0d7226f782202e54d54c8b8c45f4`；`config/instance.json` 锁定系统提交。系统仓库先前未跟踪的 `design/` 目录未暂存或提交。
 - 从两个 GitHub HTTPS 地址克隆到 `/tmp/snake-task2-restore-2p9XK1/`；系统 HEAD 与实例版本锁精确一致。空实例 `restore` 校验 4 个 JSON 文件哈希，得到 1 资料、0 评论、0 事件、1 对象/修订、2 配置；复导出后 `git diff --exit-code -- export` 为零且无已跟踪差异，`comments` 返回空数组。此证据只针对当前清理快照，不验证尚未采编的音视频或 30/3 条目。
 - 主实例按新系统源码重建容器后 `app` 健康，Nginx 持续在 `127.0.0.1:3000`；实时 `/api/sources` 唯一 ID 为 `soushenji-literal-translation-v1`，`/api/comments/context` 为 0。Chrome 在 3000 的故事采编页只见白话译注 6 段，无已删除资料和共用图片；旧 SVG 路径为 404。
+
+
+## 制作思路页候选（task-20260929-0004，2026-09-29）
+
+旧“当前工作”专用页面、统计与样式已在独立系统分支删除，首页改为“制作思路”两个 Tab，保留 current 链接兼容。方法正文归实例 `content/production-approach.json`，无数据库迁移；公共 current_stage、资料、评论、修订和配置保留。
+
+系统候选 `406714697a0476a168809ecf1f0f5288a014ef62`：23 项系统测试、17 项 Chrome 回归通过；实际核验首页、Tab 直达／刷新／前进后退、旧链接、1280×900 和 390×844 排版、精修九与结构第十稿及九图。隔离评论创建／编辑／关闭／重开通过，故事与结构润色参考保留阶段。45 资料、138 评论、156 事件、47 对象、56 修订的快照恢复再导出，56 文件逐字节一致，方法文档亦一致。正式数据库未写入。
+
+清理明细、来源、准确输入修订、证据和后续集成要求见 [候选交付记录](planning/production-approach-delivery.md)，通用实现说明见系统仓库 `docs/production-approach.md`。本段是隔离候选验收，正式 3000 发布及正式浏览器回读仍待用户确认后完成；未标记任务完成，未推送。
