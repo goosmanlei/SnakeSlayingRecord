@@ -4,6 +4,8 @@
 
 ## 资料与出处
 
+当前任务另已完成[分集影视剧本第一版](imports/screenplay-01-clean.md)：17 集、51 场，每集预计正片 3 分 50 秒至 5 分钟，总计 72 分 20 秒，均非成片实测。它精确依据精修九与结构第十稿，保留待审阅性质。[独立预览](http://127.0.0.1:8792/?workspace=story.script)已可阅读全文、按“版本 → 分集”切换并使用原有评论。两仓候选已在隔离工作区实现，正式 3000 服务的发布仍须按本次 mrun 流程确认集成。改编覆盖、人物与机关核对及 138 条评论处理见[剧本审校](planning/screenplay-01-review.md)。
+
 当前保留本项目写作的[白话直译与词语说明](export/materials.json)，原文出处仍链接至《搜神记》卷十九。它是现代整理材料，不是古籍底本或改编。两份文言资料、陈峰福州评话外链索引及共用异文图已按任务要求从当前实例清除；Git 历史仍可回溯。故事采编另收录 32 则通俗白话情节素材（其中缇萦为历史叙事、木兰为叙事歌谣，已明确标注）和 3 个并列的原创完整扩写方向。演绎媒体与转写子项已由用户允许取消，不计入本轮交付；用户已于 2026-09-22 确认该任务按调整后的范围完成。
 
 三篇扩写的干净正文可单独阅读：[九女有名](imports/direction-01-clean.md)、[山心水](imports/direction-02-clean.md)、[把灯带回家](imports/direction-03-clean.md)。它们均为七场连续故事和 25 分钟制作估算，用户已于 2026-09-22 确认文字优化完成。方向一、二的评论已关闭，方向三原稿及评论保留。小说独立阅读，不把原梗概的 25 分钟估算当作小说的成片时长；历史清理与验收见 [VERIFICATION.md](VERIFICATION.md)。
@@ -24,19 +26,19 @@
 
 ## 从公开仓库启动
 
-需要 Docker Compose 和 Python 3.9+（Python 只用于首次恢复与数据 CLI）。克隆两个仓库为同级目录，把审阅台切到本实例锁定提交并恢复业务数据：
+需要 Docker Compose 和 Python 3.9+（Python 只用于首次恢复与数据 CLI）。以下为已公开的故事审阅基线；本任务的剧本系统候选尚未推送，完整剧本页面须使用本机任务系统工作区及 `config/instance.json` 锁定提交，不能假定公开远端已有该提交。克隆两个仓库为同级目录后恢复：
 
 ```bash
 git clone https://github.com/goosmanlei/story-review-desk.git
 git clone https://github.com/goosmanlei/SnakeSlayingRecord.git
 cd story-review-desk
-git checkout 6916f697db9229fedeac3a621536bc82cdfba7eb
+git checkout 0a4e3cdbda844a779e9d1998a335699978733cde
 PYTHONPATH=. python3 -m review_desk --instance ../SnakeSlayingRecord restore
 cd ../SnakeSlayingRecord
 docker compose up -d --build
 ```
 
-当前实例固定系统提交 `0a4e3cdbda844a779e9d1998a335699978733cde`，已公开推送；包含章节导航、评论圈选与精确定位、结构页精简和图片页内放大。正式入口的五个静态文件与该提交一致，公开克隆按上述版本锁可复现这些改进；具体证据见 [STATE.md](STATE.md)。
+正式服务的系统基线仍为 `0a4e3cdbda844a779e9d1998a335699978733cde`；包含章节导航、评论圈选与精确定位、结构页精简和图片页内放大。本任务分支的版本锁为剧本候选 `fc5092c`，仅本地提交，尚未改变正式服务。完整提交与集成边界见 [STATE.md](STATE.md)。
 
 打开 [本机审阅台](http://127.0.0.1:3000/)：Nginx 长期运行在 Docker 容器 3000 端口并代理容器内 Python 服务；Nginx 镜像与通用代理规则由审阅台仓库维护，故事仓库只保留实例 Compose 配置。主机仅绑定 `127.0.0.1:3000`。`docker compose ps` 检查状态，`docker compose restart` 重启；`restart: unless-stopped` 保证 Docker 恢复时服务随之恢复。已有 `.runtime/review.sqlite3` 时跳过 `restore`。本机当前系统源码目录名是 `story-review-desk-python`，若在此目录运行，构建命令需加 `REVIEW_DESK_BUILD_CONTEXT=../story-review-desk-python`；公开克隆默认目录名为 `story-review-desk`，无需该变量。不要把 3000 端口转发到公网，本服务没有公网鉴权。
 
