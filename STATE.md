@@ -34,7 +34,8 @@
 
 ## 任务与确认边界
 
-- 用户确认两份完整任务说明后，已正式发布两项独立任务：①`task-20260929-0003` [制作设定与整片素材管理系统设计](.runtime/task-publication/production-planning-20260929/system-design.md)；②`task-20260929-0004` [以“制作思路”替换“当前工作”页面](.runtime/task-publication/production-planning-20260929/production-approach.md)。均为 P1、gpt-6-astra / max，依现有任务系统映射登记为极复杂，无硬依赖；状态 published、执行次数 0，尚未执行。第一项交付设计与验证方案，第二项实施页面替换及专用追踪清理。正式目标与验收标准已逐项回读一致，原有九项任务未改变；发布凭据在同目录 publication-receipt.json。下一步按所选任务启动执行，发布本身不代表系统功能已经交付。
+- 用户确认两份完整任务说明后，已正式发布两项独立任务：①`task-20260929-0003` [制作设定与整片素材管理系统设计](.runtime/task-publication/production-planning-20260929/system-design.md)；②`task-20260929-0004` [以“制作思路”替换“当前工作”页面](.runtime/task-publication/production-planning-20260929/production-approach.md)。均为 P1、gpt-6-astra / max，依现有任务系统映射登记为极复杂，无硬依赖；状态 published、执行次数 0，尚未执行。第一项交付设计与验证方案，第二项实施页面替换及专用追踪清理。首次发布凭据在同目录 publication-receipt.json；当前并行配置与回读结果见下条。发布本身不代表系统功能已经交付。
+- 当前尚未执行的任务共三项，还包括 `task-20260929-0002`（剧本页面与完整分集影视剧本，P1、gpt-6-astra / xhigh，前置任务 `task-20260921-0003` 已完成）。用户确认本轮并行方案后，已通过 `codex.project task _modify` 将三项均设为允许并行，分别填写理由，并在目标中补充两个仓库独立工作区、明确输入版本、隔离验收实例及按序集成／正式发布的要求。三项回读均为 published、执行次数 0、记录版本 2；原业务目标、验收标准、依赖、优先级、模型与推理强度保持，其他八项任务未变。本次未启动任务。修改与核验凭据见 `.runtime/task-publication/parallel-review-20260929.json`，两份任务说明已与新记录同步；长期并行原则见 `AGENTS.md` 的“任务并行与集成”。下一步可按所选任务分别启动 `task mrun`；启动前须满足主工作区干净的条件，跨仓库集成与正式发布继续按已确认要求协调。
 - `task-20260929-0001` 已依据本对话“确认完成”成功登记：`completed`、记录版本 2、执行次数 2、完成时间 `2026-09-29T03:44:39.748834+08:00`，租约已清除。CLI 与账本回读一致；仅完成任务登记，作品保留定稿候选标记。证据：`.runtime/task-20260929-0001/evidence/task-completion-receipt.json`。
 - 历次已完成任务的确认保留在 `KNOWLEDGE.md`、`VERIFICATION.md` 与本机任务账本；本次完成登记与用户确认均已记录。
 - `task-20260923-0002` 的十二章审阅交付已获确认，只针对该次审阅，不等于接受小说或后续版本。
