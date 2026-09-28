@@ -83,7 +83,7 @@
 ## 已核实的实施事实
 
 - 文字圈选评论由通用审阅台共用处理，覆盖故事采编与故事结构。2026-09-26 已在本机修复正文外松手漏触发、未变化的评论刷新重建正文导致选区丢失，以及长选区按钮定位；原文引用继续按正文块和 Unicode 字符偏移校验。实现位于系统 `review_desk/static/app.js` 与 `structure.js`，隔离回归入口为 `tests/selection_server.py`。当前运行补丁和公开版本锁的区别见 `STATE.md`，复现与验证见 `VERIFICATION.md` 的“评论拖选按钮修复”。
-- 全新 Python 审阅台源码位于本机 `../story-review-desk-python`，2026-09-23 系统提交 `6916f697db9229fedeac3a621536bc82cdfba7eb` 已推送公开 `goosmanlei/story-review-desk`，已移除写作模块与命令组，保留独立的精修原地发布支持；Python 与 Nginx 系统代码及故事结构设计资料均归此仓库，未改动有未提交内容的旧审阅台工作树。来源：通用仓库 Git HEAD、公开远端及故事实例版本锁。
+- 全新 Python 审阅台源码位于本机 `../story-review-desk-python`，当前系统提交 `0a4e3cdbda844a779e9d1998a335699978733cde` 已推送公开 `goosmanlei/story-review-desk`，故事实例版本锁同步引用。保留独立的精修原地发布支持，不包含故事写作模块；新增章节导航、文字圈选与精确定位、结构页精简及图片页内放大。Python 与 Nginx 系统代码及故事结构设计资料均归此仓库，旧审阅台工作树不在本次提交范围。来源：2026-09-29 通用仓库 HEAD、推送回读、正式 HTTP 静态文件与实例版本锁。
 - 故事实例 `config/instance.json` 锁定上述系统提交；`.runtime/` 是本机 SQLite 运行库，不公开；`export/` Schema 3 以 SHA-256 清单覆盖资料、对象修订级评论、对象修订与依赖、公开配置与事件、被引用素材。运行密钥仅本机保留。评论浮窗支持 Esc、点窗外及关闭按钮收起；关闭浮窗时临时圈选高亮仍保留。新评论可收起草稿并在相同圈选重新打开，或用“取消本次评论”清除本机草稿和临时高亮而不创建评论；提交后才写入评论账本。AI 润色建议的可核对参考在自动润色后默认收起，单独查看时直接展开。信息来源：代码、`config/instance.json` 与本机浏览器验证。
 - 故事结构的已实现接口为 `structure-get`、`structure-review`、`structure-import`、`script-input` 及对应 `/api/story-structure` 路由。方向选择、完整稿件、意见说明和确认记录进入统一对象/不可变修订账本；文字、整体、整图及图像/图示区域评论进入共用评论账本。完整结构稿须有六章并明确引用当前方向选择修订，调整稿须提交完整新版本；正式稿的图意与正文语义一致性仍需人审。来源：系统仓库 `docs/story-structure.md`、`review_desk/structure.py`、隔离实例读写及浏览器验证，详见 `VERIFICATION.md` 的 `task-20260921-0003` 节。
 - 在故事结构开发验收时，正式实例为 36 资料、0 条采编评论，方向选择与结构稿均为空；此为当时快照。2026-09-23 接口回读已记录选择扩写方向三 `direction-03-lantern-troupe`（选择版本 1），结构修订与确认记录仍均为 0；故事结构设计稿中的示例不因此成为真实创作稿。来源：正式实例 `/api/story-structure` 与 `VERIFICATION.md`；当前运行状态另见 `STATE.md`。
