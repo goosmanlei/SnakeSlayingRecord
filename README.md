@@ -42,13 +42,13 @@
 git clone https://github.com/goosmanlei/story-review-desk.git
 git clone https://github.com/goosmanlei/SnakeSlayingRecord.git
 cd story-review-desk
-git checkout 26f87064334c2db336ca259f4afc85607f804427
+git checkout fcfeb481d8cff9468ccfc8657b2ff76a4526ef50
 PYTHONPATH=. python3 -m review_desk --instance ../SnakeSlayingRecord restore
 cd ../SnakeSlayingRecord
 docker compose up -d --build
 ```
 
-本提交锁定系统候选 `26f87064334c2db336ca259f4afc85607f804427`，在原有制作思路与剧本能力上加入横向版本／分集、单场阅读、跨场评论定位、草稿恢复和按修订读取的摘要。上述克隆与启动命令须待系统提交实际发布后使用；当前正式服务仍运行原版本。实例恢复时同时保留本仓库跟踪的 `content/`，数据库导出包不含摘要。系统提交、实例分支与正式服务的集成状态分别核对；实际运行状态见 [STATE.md](STATE.md)。
+本提交锁定系统候选 `fcfeb481d8cff9468ccfc8657b2ff76a4526ef50`，在原有制作思路与剧本能力上加入横向版本／分集、单场阅读、跨场评论定位、草稿恢复和按修订读取的摘要。上述克隆与启动命令须待系统提交实际发布后使用；当前正式服务仍运行原版本。实例恢复时同时保留本仓库跟踪的 `content/`，数据库导出包不含摘要。系统提交、实例分支与正式服务的集成状态分别核对；实际运行状态见 [STATE.md](STATE.md)。
 
 打开 [本机审阅台](http://127.0.0.1:3000/)：Nginx 长期运行在 Docker 容器 3000 端口并代理容器内 Python 服务；Nginx 镜像与通用代理规则由审阅台仓库维护，故事仓库只保留实例 Compose 配置。主机仅绑定 `127.0.0.1:3000`。`docker compose ps` 检查状态，`docker compose restart` 重启；`restart: unless-stopped` 保证 Docker 恢复时服务随之恢复。已有 `.runtime/review.sqlite3` 时跳过 `restore`。本机当前系统源码目录名是 `story-review-desk-python`，若在此目录运行，构建命令需加 `REVIEW_DESK_BUILD_CONTEXT=../story-review-desk-python`；公开克隆默认目录名为 `story-review-desk`，无需该变量。不要把 3000 端口转发到公网，本服务没有公网鉴权。
 
