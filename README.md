@@ -8,7 +8,11 @@
 
 [隔离预览](http://127.0.0.1:8794/)已完成桌面、窄屏和数据恢复验收，正式 3000 服务尚未发布这次候选。清理范围、输入版本、验证结果和集成步骤见[候选交付记录](planning/production-approach-delivery.md)。恢复实例时同时保留 `config/`、`content/` 与 `export/`；方法文档不写业务数据库，无数据迁移。
 
+两个方法 Tab 的章节目录在桌面常驻左侧，沿用故事创作页的浅色阅读栏与章节高亮；点击可定位，滚动时更新当前章。窄屏目录常驻正文上方、可横向滚动，章节链接支持刷新与浏览器前进／后退。
+
 ## 资料与出处
+
+现已发布[分集影视剧本第一版](imports/screenplay-01-clean.md)：17 集、51 场，每集预计正片 3 分 50 秒至 5 分钟，总计 72 分 20 秒，均非成片实测。它精确依据精修九与结构第十稿，保留待审阅性质。[正式剧本入口](http://127.0.0.1:3000/?workspace=story.script)可阅读全文、按“版本 → 分集”切换并使用原有评论。制作思路候选已吸收该模块，保留原有作品和审阅能力。改编覆盖、人物与机关核对及 138 条评论处理见[剧本审校](planning/screenplay-01-review.md)。
 
 当前保留本项目写作的[白话直译与词语说明](export/materials.json)，原文出处仍链接至《搜神记》卷十九。它是现代整理材料，不是古籍底本或改编。两份文言资料、陈峰福州评话外链索引及共用异文图已按任务要求从当前实例清除；Git 历史仍可回溯。故事采编另收录 32 则通俗白话情节素材（其中缇萦为历史叙事、木兰为叙事歌谣，已明确标注）和 3 个并列的原创完整扩写方向。演绎媒体与转写子项已由用户允许取消，不计入本轮交付；用户已于 2026-09-22 确认该任务按调整后的范围完成。
 
@@ -36,13 +40,13 @@
 git clone https://github.com/goosmanlei/story-review-desk.git
 git clone https://github.com/goosmanlei/SnakeSlayingRecord.git
 cd story-review-desk
-git checkout 406714697a0476a168809ecf1f0f5288a014ef62
+git checkout bc040cba73ee02d08c7a0ae95de147a34d842cd8
 PYTHONPATH=. python3 -m review_desk --instance ../SnakeSlayingRecord restore
 cd ../SnakeSlayingRecord
 docker compose up -d --build
 ```
 
-本分支固定系统候选 `406714697a0476a168809ecf1f0f5288a014ef62`，当前只存在本地任务分支；在候选未公开前，仅凭公开克隆不能检出它，须使用已取得该提交的本地系统仓库。正式服务最近核验的公开基线仍为 `0a4e3cdbda844a779e9d1998a335699978733cde`，包含章节导航、评论圈选与精确定位、结构页精简和图片页内放大。候选发布与正式状态见 [STATE.md](STATE.md)。
+本分支固定系统候选 `bc040cba73ee02d08c7a0ae95de147a34d842cd8`，包含制作思路与已集成的剧本模块，仅本地提交；在候选未公开前，仅凭公开克隆不能检出它，须使用已取得该提交的本地系统仓库。正式服务本轮回读为剧本系统 `fc5092c9f606b3713d922505cb2edf41c0e8938a`，尚未发布本任务的制作思路页。候选发布与正式状态见 [STATE.md](STATE.md)。
 
 打开 [本机审阅台](http://127.0.0.1:3000/)：Nginx 长期运行在 Docker 容器 3000 端口并代理容器内 Python 服务；Nginx 镜像与通用代理规则由审阅台仓库维护，故事仓库只保留实例 Compose 配置。主机仅绑定 `127.0.0.1:3000`。`docker compose ps` 检查状态，`docker compose restart` 重启；`restart: unless-stopped` 保证 Docker 恢复时服务随之恢复。已有 `.runtime/review.sqlite3` 时跳过 `restore`。本机当前系统源码目录名是 `story-review-desk-python`，若在此目录运行，构建命令需加 `REVIEW_DESK_BUILD_CONTEXT=../story-review-desk-python`；公开克隆默认目录名为 `story-review-desk`，无需该变量。不要把 3000 端口转发到公网，本服务没有公网鉴权。
 
