@@ -4,13 +4,13 @@
 
 ## 制作思路候选
 
-本任务分支以“制作思路”替换旧首页，提供“故事创作”“素材生产”两个 Tab；旧 `workspace=current` 链接兼容进入新页。方法正文在 [content/production-approach.json](content/production-approach.json)，随实例 Git 保存；系统负责只读展示，没有新增工作统计、任务账本或素材执行引擎。完整素材生产仍为方案，小说及结构仍保留待审阅的性质。
+本任务分支以“制作思路”替换旧首页，提供“故事创作”“生产制作”两个 Tab；旧 `workspace=current` 链接兼容进入新页。方法正文在 [content/production-approach.json](content/production-approach.json)，随实例 Git 保存；系统负责只读展示，没有新增工作统计、任务账本或素材执行引擎。完整素材生产仍为方案，小说及结构仍保留待审阅的性质。
 
 [隔离预览](http://127.0.0.1:8794/)已完成桌面、窄屏和数据恢复验收，正式 3000 服务尚未发布这次候选。清理范围、输入版本、验证结果和集成步骤见[候选交付记录](planning/production-approach-delivery.md)。恢复实例时同时保留 `config/`、`content/` 与 `export/`；方法文档不写业务数据库，无数据迁移。
 
 两个方法 Tab 的章节目录在桌面常驻左侧，沿用故事创作页的浅色阅读栏与章节高亮；点击可定位，滚动时更新当前章。窄屏目录常驻正文上方、可横向滚动，章节链接支持刷新与浏览器前进／后退。
 
-方法正文按两个用途组织：故事创作沉淀资料、结构、逐步写作、审阅回修和剧本改编的实际经验；素材生产展开剧本之后的六步，以第十四集短段推演需求、基准、关键画面、动作候选、审阅采用和组合交付，并说明各系统页面应展示什么、支持什么决定。推演未生成媒体，详细接口仍由独立系统设计负责。
+方法正文按两个用途组织：故事创作沉淀资料、结构、逐步写作、审阅回修和剧本改编的实际经验；生产制作展开剧本之后的六步，以第十四集短段推演需求、基准、关键画面、动作候选、审阅采用和组合交付，并说明各系统页面应展示什么、支持什么决定。推演未生成媒体，详细接口仍由独立系统设计负责。
 
 ## 资料与出处
 
@@ -42,13 +42,13 @@
 git clone https://github.com/goosmanlei/story-review-desk.git
 git clone https://github.com/goosmanlei/SnakeSlayingRecord.git
 cd story-review-desk
-git checkout bc040cba73ee02d08c7a0ae95de147a34d842cd8
+git checkout 5f66f9762a235ff9318057db8431b927773fcb14
 PYTHONPATH=. python3 -m review_desk --instance ../SnakeSlayingRecord restore
 cd ../SnakeSlayingRecord
 docker compose up -d --build
 ```
 
-本分支固定系统候选 `bc040cba73ee02d08c7a0ae95de147a34d842cd8`，包含制作思路与已集成的剧本模块，仅本地提交；在候选未公开前，仅凭公开克隆不能检出它，须使用已取得该提交的本地系统仓库。正式服务本轮回读为剧本系统 `fc5092c9f606b3713d922505cb2edf41c0e8938a`，尚未发布本任务的制作思路页。候选发布与正式状态见 [STATE.md](STATE.md)。
+本分支固定系统候选 `5f66f9762a235ff9318057db8431b927773fcb14`，包含制作思路与已集成的剧本模块，仅本地提交；在候选未公开前，仅凭公开克隆不能检出它，须使用已取得该提交的本地系统仓库。正式服务本轮回读为剧本系统 `fc5092c9f606b3713d922505cb2edf41c0e8938a`，尚未发布本任务的制作思路页。候选发布与正式状态见 [STATE.md](STATE.md)。
 
 打开 [本机审阅台](http://127.0.0.1:3000/)：Nginx 长期运行在 Docker 容器 3000 端口并代理容器内 Python 服务；Nginx 镜像与通用代理规则由审阅台仓库维护，故事仓库只保留实例 Compose 配置。主机仅绑定 `127.0.0.1:3000`。`docker compose ps` 检查状态，`docker compose restart` 重启；`restart: unless-stopped` 保证 Docker 恢复时服务随之恢复。已有 `.runtime/review.sqlite3` 时跳过 `restore`。本机当前系统源码目录名是 `story-review-desk-python`，若在此目录运行，构建命令需加 `REVIEW_DESK_BUILD_CONTEXT=../story-review-desk-python`；公开克隆默认目录名为 `story-review-desk`，无需该变量。不要把 3000 端口转发到公网，本服务没有公网鉴权。
 
