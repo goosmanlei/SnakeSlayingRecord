@@ -1,6 +1,10 @@
 # 李寄斩蛇 · 故事采编实例
 
-本仓库是公开故事实例，不包含审阅台系统代码。系统代码及后续迭代在 [story-review-desk](https://github.com/goosmanlei/story-review-desk)；所需系统版本固定于 [config/instance.json](config/instance.json)；本任务的集场阅读实现与正式运行状态分别见 [验证记录](VERIFICATION.md) 和 [当前状态](STATE.md)。已选方向三《把灯带回家》，当前作品包括[故事结构第十稿](http://127.0.0.1:3000/?workspace=story.outline)、[故事精修九 · 定稿候选](http://127.0.0.1:3000/?workspace=story.sources&source=refinement-09-lantern-home-v9)和[剧本版本二](http://127.0.0.1:3000/?workspace=story.script&script=screenplay-02-lantern-home&episode=screenplay-02-lantern-home-e01)。旧版本及评论保留，作品待用户审阅确认。
+本仓库是公开故事实例，不包含审阅台系统代码。系统代码及后续迭代在 [story-review-desk](https://github.com/goosmanlei/story-review-desk)；所需系统版本固定于 [config/instance.json](config/instance.json)；本实例的集场阅读、评论快捷键与正式运行状态分别见 [验证记录](VERIFICATION.md) 和 [当前状态](STATE.md)。已选方向三《把灯带回家》，当前作品包括[故事结构第十稿](http://127.0.0.1:3000/?workspace=story.outline)、[故事精修九 · 定稿候选](http://127.0.0.1:3000/?workspace=story.sources&source=refinement-09-lantern-home-v9)和[剧本版本二](http://127.0.0.1:3000/?workspace=story.script&script=screenplay-02-lantern-home&episode=screenplay-02-lantern-home-e01)。旧版本及评论保留，作品待用户审阅确认。
+
+## 评论输入
+
+故事采编、故事结构和剧本分集共用评论输入框。聚焦输入框时按 ⌘+Enter 提交或保存修改，按 Esc 取消并放弃本次未提交内容，已保存评论不变；普通 Enter 换行。输入框外 Esc 仍收起面板并保留草稿。中文输入法组合期间不触发快捷操作，保存中不能重复提交。实现、验证与本次待确认的集成范围见[快捷键交付说明](planning/comment-shortcuts-delivery.md)。
 
 ## 制作思路
 
@@ -14,7 +18,7 @@
 
 ## 资料与出处
 
-现已发布[分集影视剧本版本二](imports/screenplay-02-clean.md)：21 集、47 场，每集预计正片 3 分 35 秒至 4 分 55 秒，总计 93 分 25 秒，均非成片实测。依据精修九、结构第十稿及版本一首场六条评论逐场重构，完本后另做弹性描写密度审校并原地回修。[正式版本二入口](http://127.0.0.1:3000/?workspace=story.script&script=screenplay-02-lantern-home&episode=screenplay-02-lantern-home-e01)可阅读全文并评论。待集成的集场界面与采编、结构共用顶部页签，版本栏只显示版号；横向分集与左侧场次均显示各自评论数，选集自动打开第一场，常驻本集概览，右侧阅读该场完整正文；[两版逐集摘要](content/screenplay-summaries.json)按分集精确修订匹配，不修改已发布正文与评论。旧“剧本一”仅显示为“版本一”，其 17 集、51 场及全部原评论保留。集场候选在隔离实例验证，正式页面尚未安装；详见[验证记录](VERIFICATION.md)。创作过程、逐条处理和估时见[版本二审校](planning/screenplay-02-review.md)，版本一的历史审校仍见[原记录](planning/screenplay-01-review.md)。两版均供用户审阅。
+现已发布[分集影视剧本版本二](imports/screenplay-02-clean.md)：21 集、47 场，每集预计正片 3 分 35 秒至 4 分 55 秒，总计 93 分 25 秒，均非成片实测。依据精修九、结构第十稿及版本一首场六条评论逐场重构，完本后另做弹性描写密度审校并原地回修。[正式版本二入口](http://127.0.0.1:3000/?workspace=story.script&script=screenplay-02-lantern-home&episode=screenplay-02-lantern-home-e01)可阅读全文并评论。正式集场界面与采编、结构共用顶部页签，版本栏只显示版号；横向分集与左侧场次均显示各自评论数，选集自动打开第一场，常驻本集概览，右侧阅读该场完整正文；[两版逐集摘要](content/screenplay-summaries.json)按分集精确修订匹配，不修改已发布正文与评论。旧“剧本一”仅显示为“版本一”，其 17 集、51 场及全部原评论保留。集场界面已集成发布，评论快捷键也已在正式入口更新；本次快捷键任务仍待用户确认分支集成；详见[验证记录](VERIFICATION.md)。创作过程、逐条处理和估时见[版本二审校](planning/screenplay-02-review.md)，版本一的历史审校仍见[原记录](planning/screenplay-01-review.md)。两版均供用户审阅。
 
 当前保留本项目写作的[白话直译与词语说明](export/materials.json)，原文出处仍链接至《搜神记》卷十九。它是现代整理材料，不是古籍底本或改编。两份文言资料、陈峰福州评话外链索引及共用异文图已按任务要求从当前实例清除；Git 历史仍可回溯。故事采编另收录 32 则通俗白话情节素材（其中缇萦为历史叙事、木兰为叙事歌谣，已明确标注）和 3 个并列的原创完整扩写方向。演绎媒体与转写子项已由用户允许取消，不计入本轮交付；用户已于 2026-09-22 确认该任务按调整后的范围完成。
 
