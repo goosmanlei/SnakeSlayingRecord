@@ -14,7 +14,7 @@
 
 ## 资料与出处
 
-现已发布[分集影视剧本版本二](imports/screenplay-02-clean.md)：21 集、47 场，每集预计正片 3 分 35 秒至 4 分 55 秒，总计 93 分 25 秒，均非成片实测。依据精修九、结构第十稿及版本一首场六条评论逐场重构，完本后另做弹性描写密度审校并原地回修。[正式版本二入口](http://127.0.0.1:3000/?workspace=story.script&script=screenplay-02-lantern-home&episode=screenplay-02-lantern-home-e01)可阅读全文并评论。待集成的集场界面将横排版本与分集、常驻本集概览，左侧选场，右侧阅读该场完整正文；[两版逐集摘要](content/screenplay-summaries.json)按分集精确修订匹配，不修改已发布正文与评论。旧“剧本一”仅显示为“版本一”，其 17 集、51 场及全部原评论保留。集场候选在隔离实例验证，正式页面尚未安装；详见[验证记录](VERIFICATION.md)。创作过程、逐条处理和估时见[版本二审校](planning/screenplay-02-review.md)，版本一的历史审校仍见[原记录](planning/screenplay-01-review.md)。两版均供用户审阅。
+现已发布[分集影视剧本版本二](imports/screenplay-02-clean.md)：21 集、47 场，每集预计正片 3 分 35 秒至 4 分 55 秒，总计 93 分 25 秒，均非成片实测。依据精修九、结构第十稿及版本一首场六条评论逐场重构，完本后另做弹性描写密度审校并原地回修。[正式版本二入口](http://127.0.0.1:3000/?workspace=story.script&script=screenplay-02-lantern-home&episode=screenplay-02-lantern-home-e01)可阅读全文并评论。待集成的集场界面与采编、结构共用顶部页签，版本栏只显示版号；横向分集与左侧场次均显示各自评论数，选集自动打开第一场，常驻本集概览，右侧阅读该场完整正文；[两版逐集摘要](content/screenplay-summaries.json)按分集精确修订匹配，不修改已发布正文与评论。旧“剧本一”仅显示为“版本一”，其 17 集、51 场及全部原评论保留。集场候选在隔离实例验证，正式页面尚未安装；详见[验证记录](VERIFICATION.md)。创作过程、逐条处理和估时见[版本二审校](planning/screenplay-02-review.md)，版本一的历史审校仍见[原记录](planning/screenplay-01-review.md)。两版均供用户审阅。
 
 当前保留本项目写作的[白话直译与词语说明](export/materials.json)，原文出处仍链接至《搜神记》卷十九。它是现代整理材料，不是古籍底本或改编。两份文言资料、陈峰福州评话外链索引及共用异文图已按任务要求从当前实例清除；Git 历史仍可回溯。故事采编另收录 32 则通俗白话情节素材（其中缇萦为历史叙事、木兰为叙事歌谣，已明确标注）和 3 个并列的原创完整扩写方向。演绎媒体与转写子项已由用户允许取消，不计入本轮交付；用户已于 2026-09-22 确认该任务按调整后的范围完成。
 
@@ -42,13 +42,13 @@
 git clone https://github.com/goosmanlei/story-review-desk.git
 git clone https://github.com/goosmanlei/SnakeSlayingRecord.git
 cd story-review-desk
-git checkout fcfeb481d8cff9468ccfc8657b2ff76a4526ef50
+git checkout 1c86fb9990afd42dd10bed54eff3d74a52eaf48f
 PYTHONPATH=. python3 -m review_desk --instance ../SnakeSlayingRecord restore
 cd ../SnakeSlayingRecord
 docker compose up -d --build
 ```
 
-本提交锁定系统候选 `fcfeb481d8cff9468ccfc8657b2ff76a4526ef50`，在原有制作思路与剧本能力上加入横向版本／分集、单场阅读、跨场评论定位、草稿恢复和按修订读取的摘要。上述克隆与启动命令须待系统提交实际发布后使用；当前正式服务仍运行原版本。实例恢复时同时保留本仓库跟踪的 `content/`，数据库导出包不含摘要。系统提交、实例分支与正式服务的集成状态分别核对；实际运行状态见 [STATE.md](STATE.md)。
+本提交锁定系统候选 `1c86fb9990afd42dd10bed54eff3d74a52eaf48f`，在原有制作思路与剧本能力上加入横向版本／分集、单场阅读、跨场评论定位、草稿恢复和按修订读取的摘要。上述克隆与启动命令须待系统提交实际发布后使用；当前正式服务仍运行原版本。实例恢复时同时保留本仓库跟踪的 `content/`，数据库导出包不含摘要。系统提交、实例分支与正式服务的集成状态分别核对；实际运行状态见 [STATE.md](STATE.md)。
 
 打开 [本机审阅台](http://127.0.0.1:3000/)：Nginx 长期运行在 Docker 容器 3000 端口并代理容器内 Python 服务；Nginx 镜像与通用代理规则由审阅台仓库维护，故事仓库只保留实例 Compose 配置。主机仅绑定 `127.0.0.1:3000`。`docker compose ps` 检查状态，`docker compose restart` 重启；`restart: unless-stopped` 保证 Docker 恢复时服务随之恢复。已有 `.runtime/review.sqlite3` 时跳过 `restore`。本机当前系统源码目录名是 `story-review-desk-python`，若在此目录运行，构建命令需加 `REVIEW_DESK_BUILD_CONTEXT=../story-review-desk-python`；公开克隆默认目录名为 `story-review-desk`，无需该变量。不要把 3000 端口转发到公网，本服务没有公网鉴权。
 
