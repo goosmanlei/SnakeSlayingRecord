@@ -2,6 +2,10 @@
 
 本仓库是公开故事实例，不包含审阅台系统代码。系统代码及后续迭代在 [story-review-desk](https://github.com/goosmanlei/story-review-desk)；所需系统版本固定于 [config/instance.json](config/instance.json)；本实例的集场阅读、评论与正式运行状态分别见 [验证记录](VERIFICATION.md) 和 [当前状态](STATE.md)。已选方向三《把灯带回家》，当前作品包括[故事结构第十稿](http://127.0.0.1:3000/?workspace=story.outline)、[故事精修九 · 定稿候选](http://127.0.0.1:3000/?workspace=story.sources&source=refinement-09-lantern-home-v9)和[剧本版本三](http://127.0.0.1:3000/?workspace=story.script&script=screenplay-03-lantern-home&episode=screenplay-03-lantern-home-e01)。旧版本及评论保留，作品待用户审阅确认。
 
+## 评论输入
+
+故事采编、故事结构和剧本分集共用评论输入框。聚焦输入框时按 ⌘+Enter 提交或保存修改，按 Esc 取消并放弃本次未提交内容，已保存评论不变；普通 Enter 换行。输入框外 Esc 仍收起面板并保留草稿。中文输入法组合期间不触发快捷操作，保存中不能重复提交。实现、验证与验收范围见[快捷键交付说明](planning/comment-shortcuts-delivery.md)。
+
 ## 制作思路
 
 首页以“制作思路”替换旧“当前工作”，提供“故事创作”“生产制作”两个 Tab；旧 `workspace=current` 链接兼容进入新页。方法正文在 [content/production-approach.json](content/production-approach.json)，随实例 Git 保存；系统负责只读展示，没有新增工作统计、任务账本或素材执行引擎。完整素材生产仍为方案，小说及结构仍保留待审阅的性质。
