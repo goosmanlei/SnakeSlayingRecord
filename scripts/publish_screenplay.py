@@ -13,8 +13,8 @@ from review_desk.screenplay import import_screenplay
 from review_desk.store import Store
 
 
-def prepare(candidate, target):
-    document = json.loads((candidate / 'imports/screenplay-01.json').read_text())
+def prepare(candidate, target, document_path='imports/screenplay-01.json'):
+    document = json.loads((candidate / document_path).read_text())
     bundle = json.loads((candidate / 'export/objects.json').read_text())
     ids = {document['id'], *(e['id'] for e in document['episodes'])}
     records = {table: [row for row in bundle[table] if row['id' if table == 'objects' else 'object_id'] in ids]
@@ -57,8 +57,8 @@ def assert_current_basis(store, document):
         raise ValueError('a newer published story exists; review before publication')
 
 
-def publish(candidate, target, apply=False):
-    document, records, receipt, exists = prepare(candidate, target)
+def publish(candidate, target, apply=False, document_path='imports/screenplay-01.json'):
+    document, records, receipt, exists = prepare(candidate, target, document_path)
     result = {'dry_run': not apply, 'screenplay_id': document['id'], 'revision': receipt['revision'],
               'already_present': exists, 'objects': len(records['objects']),
               'revisions': len(records['revisions']), 'dependencies': len(records['dependencies'])}
@@ -89,5 +89,6 @@ if __name__ == '__main__':
     parser.add_argument('--candidate', type=Path, default=Path('.'))
     parser.add_argument('--target', type=Path, required=True)
     parser.add_argument('--apply', action='store_true')
+    parser.add_argument('--document', default='imports/screenplay-01.json', help='Path relative to candidate root')
     args = parser.parse_args()
-    print(json.dumps(publish(args.candidate.resolve(), args.target.resolve(), args.apply), ensure_ascii=False, indent=2))
+    print(json.dumps(publish(args.candidate.resolve(), args.target.resolve(), args.apply, args.document), ensure_ascii=False, indent=2))
