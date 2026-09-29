@@ -16,4 +16,4 @@ uv pip install --python .runtime/favicon/render-env/bin/python pillow cairosvg
 DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/lib .runtime/favicon/render-env/bin/python scripts/render_favicon.py
 ```
 
-修改母版后重新渲染、检查小尺寸并保存配置；公开同步同时更新图标清单。通用操作规则见[系统说明](https://github.com/goosmanlei/story-review-desk/blob/main/docs/favicon.md)，本次实际验证与限制见[交付记录](../../planning/favicon-delivery.md)。
+修改母版后重新渲染、检查小尺寸并保存配置；公开同步同时更新图标清单。通用操作规则由系统仓库 `docs/favicon.md` 维护，随系统候选发布后可从该仓库读取；本次实际验证与限制见[交付记录](../../planning/favicon-delivery.md)。
