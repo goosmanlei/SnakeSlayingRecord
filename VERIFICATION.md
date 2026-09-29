@@ -1,5 +1,27 @@
 # 验证记录
 
+## 2026-09-30：task-20260929-0005 版本三研究、重构与本机发布
+
+交付 [John August 方法研究](planning/john-august-screenwriting-research.md)、[完整版本三](imports/screenplay-03-clean.md)、[导入数据](imports/screenplay-03.json)及[独立审校说明](planning/screenplay-03-review.md)。正式 [版本三入口](http://127.0.0.1:3000/?workspace=story.script&script=screenplay-03-lantern-home&episode=screenplay-03-lantern-home-e01)为 17 集、42 场、1,134 正文块，整版修订 `3110548d5fa53b349085f4a3fb459df746da5011df95dc9d0b8968d24575adf4`；预计正片 4,450 秒（74:10），单集 232—293 秒，尚非排演或成片实测。
+
+| 验证项 | 实际结果 |
+| --- | --- |
+| 启动输入 | 用户明确已提交前五场全部评论；正式版本二及 21 分集、精修九、结构十、47 条意见及圈选逐项采集。03:35 发布前重查，22 个版本二修订及评论内容不变；C44 同文编辑升到 r2 已纳入，全部保持 OPEN |
+| 研究及文学审校 | 原始文章、官方逐字稿、四部公开剧本的完整场面及前后稿／修订便笺，归因与资料限制单列；47 条意见、47 场旧稿诊断、17 集体验及 42 场表演容量均可追溯。没有声称观看完整电影或获取付费材料 |
+| 真实逐场过程 | 42 场首次采用按序；53 次保存与另步回读，8 次采用前退回，最终全篇复读后 3 场回修；209 事件、47 检查点，17 集审校，无待采用候选。事件只证明顺序和内容，不替代作品判断 |
+| 正式增量发布 | 原八类业务表逐行保留，新增 18 对象、18 修订、53 依赖。正式库为 45 资料、191 评论、214 评论事件、105 对象、114 修订、202 依赖、2 配置、16 配置事件。未恢复旧库、关闭意见、标记接受或重启服务 |
+| 正文一致性 | 42 场最终采用稿与导入 JSON、干净稿一致；正式 API 三版本及各分集与候选完全一致；正式库与候选八类表相等 |
+| 实际 Chrome | 逐集点击全部 17 集、42 场，可见正文逐场逐字一致；末场 URL 刷新正确。旧版本一 6 条评论、版本二 19／23／5 条意见从页面回读，内容和原归属不变 |
+| 新评论与草稿 | 隔离 8805 实例圈选对白，草稿切到旧版不串位、切回新版恢复，⌘+Enter 提交后仅 E01／S01 加 1，从 S02 定位返回 S01；评论准确锚定新版分集修订。新测试评论经空库恢复保留，正式库未写测试评论或编辑用户草稿 |
+| 空库恢复 | 使用已核实部署的系统 `a22b1e408767b1f4ea05363f40fd5d7fa71552dd`，57 文件恢复再导出逐字节相同，191 个原锚点有效；另验证含 1 条新版测试评论的隔离包，192 个锚点有效 |
+| 工具回归 | `PYTHONPATH=.runtime/screenplay-03/system python3 -m unittest discover -s tests -p '*screenplay*' -v`：11 项通过。复用现有写作、发布和验证工具，没有代码改动或新增通用系统能力 |
+| 系统版本与素材 | 旧锁 39ff95e 只支持配置 schema 3，第一次恢复明确失败；正式服务已用 favicon schema 4。核对容器 13 份 Python 文件与 a22b1e4 一致，保存现有服务实际使用的 SVG，再导出恢复通过。本任务仅保留该并行成果，不设计新图标或代办另一任务集成 |
+
+本机证据根为当前任务 worktree 的 `.runtime/screenplay-03/`，详见 `publication-final-input-check.json`、`publication-receipt.json`、`formal-db-equality.json`、`formal-verification.json`、`formal-browser-verification.json`、`ui-comment-check.json`、`ui-comment-restore.json`、`runtime-system-verification.json`、`writing-audit.json`。完整正式页面截图为 `version-three-formal.png`。工作检查点和输入快照不入 Git；公开交付中保留准确输入修订、评论 UUID 和采用决定。
+
+版本三定制摘要在隔离页面验证，55 条摘要保留旧 38 条并追加新 17 条；主目录摘要与当前恢复包随受控集成生效。正式正文与评论已经可用。最终候选经 `_prepare_integration` 返回后另行复验，回执保存在本机 `integration-verification.json`；任务账本是完成状态唯一权威。作品发布不代表任务已确认完成，也不代表用户接受，任务只做本地集成、不自动推送。
+
+
 ## 2026-09-30：task-20260929-0006 集场阅读新版候选
 
 用户补充两轮页面结构图，并选择“根据本集正文补写简短摘要”。本轮在故事任务 worktree 与经授权的通用审阅台独立 worktree 修改；系统过程提交为 `94266602dc5638b385c93887ebcc8f1be5b95b94`、`26f87064334c2db336ca259f4afc85607f804427`、`fcfeb481d8cff9468ccfc8657b2ff76a4526ef50`、`1c86fb9990afd42dd10bed54eff3d74a52eaf48f`。故事实例通过 `config/instance.json` 锁定最后一提交。以下验证针对隔离候选；正式 `127.0.0.1:3000` 仍运行原系统 `ea3ca89e077bd636011a5bd6d41af7bc005506b8`，没有发布新版、改动正式数据库或用旧快照覆盖数据。
