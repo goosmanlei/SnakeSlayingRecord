@@ -16,14 +16,14 @@ from review_desk.screenplay import snapshot, validate_document
 from review_desk.store import Store
 
 
-def verify(root, baseline, url=None):
-    document = json.loads((root / "imports/screenplay-01.json").read_text())
+def verify(root, baseline, url=None, document_path='imports/screenplay-01.json'):
+    document = json.loads((root / document_path).read_text())
     store = Store(root / ".runtime/review.sqlite3")
     try:
         validate_document(store, document)
         versions = snapshot(store)["versions"]
         version = next(v for v in versions if v["object_id"] == document["id"])
-        assert len(version["episodes"]) == len(document["episodes"]) == 17
+        assert len(version["episodes"]) == len(document["episodes"])
         chapters, seconds, scenes = set(), 0, 0
         for episode, actual in zip(document["episodes"], version["episodes"]):
             assert all(actual["payload"][key] == value for key, value in episode.items())
@@ -67,8 +67,8 @@ def verify(root, baseline, url=None):
             with urlopen(url.rstrip("/") + "/api/screenplays") as response:
                 assert json.load(response) == snapshot(store)
         return {"passed": True, "screenplay_id": document["id"], "revision": version["id"],
-                "input_sha256": hashlib.sha256((root / "imports/screenplay-01.json").read_bytes()).hexdigest(),
-                "episodes": 17, "scenes": scenes, "estimated_seconds": seconds,
+                "input_sha256": hashlib.sha256((root / document_path).read_bytes()).hexdigest(),
+                "episodes": len(document['episodes']), "scenes": scenes, "estimated_seconds": seconds,
                 "duration_is_measured": False, "covered_chapters": sorted(chapters),
                 "baseline_rows_preserved": kept, "restored_files_equal": len(files),
                 "comments_with_valid_anchors": len(store.comments()), "api_equal": bool(url),
@@ -83,8 +83,9 @@ if __name__ == "__main__":
     parser.add_argument("--baseline", type=Path, required=True)
     parser.add_argument("--url")
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--document", default="imports/screenplay-01.json", help="Path relative to instance root")
     args = parser.parse_args()
-    result = verify(args.instance.resolve(), args.baseline.resolve(), args.url)
+    result = verify(args.instance.resolve(), args.baseline.resolve(), args.url, args.document)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n")
     print(json.dumps(result, ensure_ascii=False, indent=2))
