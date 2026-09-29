@@ -1,6 +1,6 @@
 # 李寄斩蛇 · 故事采编实例
 
-本仓库是公开故事实例，不包含审阅台系统代码。系统代码及后续迭代在 [story-review-desk](https://github.com/goosmanlei/story-review-desk)；所需系统版本固定于 [config/instance.json](config/instance.json)，当前制作思路与剧本显示调整所需系统提交已推送。已选方向三《把灯带回家》，当前作品包括[故事结构第十稿](http://127.0.0.1:3000/?workspace=story.outline)、[故事精修九 · 定稿候选](http://127.0.0.1:3000/?workspace=story.sources&source=refinement-09-lantern-home-v9)和[剧本版本二](http://127.0.0.1:3000/?workspace=story.script&script=screenplay-02-lantern-home&episode=screenplay-02-lantern-home-e01)。旧版本及评论保留，作品待用户审阅确认。
+本仓库是公开故事实例，不包含审阅台系统代码。系统代码及后续迭代在 [story-review-desk](https://github.com/goosmanlei/story-review-desk)；所需系统版本固定于 [config/instance.json](config/instance.json)；本任务的集场阅读实现与正式运行状态分别见 [验证记录](VERIFICATION.md) 和 [当前状态](STATE.md)。已选方向三《把灯带回家》，当前作品包括[故事结构第十稿](http://127.0.0.1:3000/?workspace=story.outline)、[故事精修九 · 定稿候选](http://127.0.0.1:3000/?workspace=story.sources&source=refinement-09-lantern-home-v9)和[剧本版本二](http://127.0.0.1:3000/?workspace=story.script&script=screenplay-02-lantern-home&episode=screenplay-02-lantern-home-e01)。旧版本及评论保留，作品待用户审阅确认。
 
 ## 制作思路
 
@@ -14,7 +14,7 @@
 
 ## 资料与出处
 
-现已发布[分集影视剧本版本二](imports/screenplay-02-clean.md)：21 集、47 场，每集预计正片 3 分 35 秒至 4 分 55 秒，总计 93 分 25 秒，均非成片实测。依据精修九、结构第十稿及版本一首场六条评论逐场重构，完本后另做弹性描写密度审校并原地回修。[正式版本二入口](http://127.0.0.1:3000/?workspace=story.script&script=screenplay-02-lantern-home&episode=screenplay-02-lantern-home-e01)可阅读全文并评论。左侧旧“剧本一”显示为“版本一”，其 17 集、51 场及全部原评论保留；正文未原地替换。创作过程、逐条处理、估时与验证见[版本二审校](planning/screenplay-02-review.md)，版本一的历史审校仍见[原记录](planning/screenplay-01-review.md)。两版均供用户审阅。
+现已发布[分集影视剧本版本二](imports/screenplay-02-clean.md)：21 集、47 场，每集预计正片 3 分 35 秒至 4 分 55 秒，总计 93 分 25 秒，均非成片实测。依据精修九、结构第十稿及版本一首场六条评论逐场重构，完本后另做弹性描写密度审校并原地回修。[正式版本二入口](http://127.0.0.1:3000/?workspace=story.script&script=screenplay-02-lantern-home&episode=screenplay-02-lantern-home-e01)可阅读全文并评论。剧本创作的集场阅读从现有分集修订生成目录；选集先看概览，选场只看该场完整正文，评论仍归属原分集修订。左侧旧“剧本一”显示为“版本一”，其 17 集、51 场及全部原评论保留；正文未原地替换。创作过程、逐条处理、估时与验证见[版本二审校](planning/screenplay-02-review.md)，版本一的历史审校仍见[原记录](planning/screenplay-01-review.md)。两版均供用户审阅。
 
 当前保留本项目写作的[白话直译与词语说明](export/materials.json)，原文出处仍链接至《搜神记》卷十九。它是现代整理材料，不是古籍底本或改编。两份文言资料、陈峰福州评话外链索引及共用异文图已按任务要求从当前实例清除；Git 历史仍可回溯。故事采编另收录 32 则通俗白话情节素材（其中缇萦为历史叙事、木兰为叙事歌谣，已明确标注）和 3 个并列的原创完整扩写方向。演绎媒体与转写子项已由用户允许取消，不计入本轮交付；用户已于 2026-09-22 确认该任务按调整后的范围完成。
 
@@ -36,19 +36,19 @@
 
 ## 准备两仓并启动
 
-需要 Docker Compose 和 Python 3.9+（Python 只用于首次恢复与数据 CLI）。两个仓库放在同级目录。系统版本已推送；公开克隆后切到版本锁并恢复业务数据：
+需要 Docker Compose 和 Python 3.9+（Python 只用于首次恢复与数据 CLI）。两个仓库放在同级目录。确认版本锁指向的系统提交已发布后，公开克隆并恢复业务数据：
 
 ```bash
 git clone https://github.com/goosmanlei/story-review-desk.git
 git clone https://github.com/goosmanlei/SnakeSlayingRecord.git
 cd story-review-desk
-git checkout ea3ca89e077bd636011a5bd6d41af7bc005506b8
+git checkout 94266602dc5638b385c93887ebcc8f1be5b95b94
 PYTHONPATH=. python3 -m review_desk --instance ../SnakeSlayingRecord restore
 cd ../SnakeSlayingRecord
 docker compose up -d --build
 ```
 
-本分支固定系统版本 `ea3ca89e077bd636011a5bd6d41af7bc005506b8`，包含制作思路、剧本模块与版本显示调整。该提交已推送到系统仓库 `main`；正式服务本轮回读与该版本一致。实际运行状态见 [STATE.md](STATE.md)。
+本提交锁定系统版本 `94266602dc5638b385c93887ebcc8f1be5b95b94`，在原有制作思路与剧本能力上加入按集选场、单场阅读、跨场评论定位和草稿恢复。系统提交、实例分支与正式服务的集成状态分别核对；实际运行状态见 [STATE.md](STATE.md)。
 
 打开 [本机审阅台](http://127.0.0.1:3000/)：Nginx 长期运行在 Docker 容器 3000 端口并代理容器内 Python 服务；Nginx 镜像与通用代理规则由审阅台仓库维护，故事仓库只保留实例 Compose 配置。主机仅绑定 `127.0.0.1:3000`。`docker compose ps` 检查状态，`docker compose restart` 重启；`restart: unless-stopped` 保证 Docker 恢复时服务随之恢复。已有 `.runtime/review.sqlite3` 时跳过 `restore`。本机当前系统源码目录名是 `story-review-desk-python`，若在此目录运行，构建命令需加 `REVIEW_DESK_BUILD_CONTEXT=../story-review-desk-python`；公开克隆默认目录名为 `story-review-desk`，无需该变量。不要把 3000 端口转发到公网，本服务没有公网鉴权。
 
