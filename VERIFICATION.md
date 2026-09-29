@@ -19,7 +19,9 @@
 
 本机证据根为当前任务 worktree 的 `.runtime/screenplay-03/`，详见 `publication-final-input-check.json`、`publication-receipt.json`、`formal-db-equality.json`、`formal-verification.json`、`formal-browser-verification.json`、`ui-comment-check.json`、`ui-comment-restore.json`、`runtime-system-verification.json`、`writing-audit.json`。完整正式页面截图为 `version-three-formal.png`。工作检查点和输入快照不入 Git；公开交付中保留准确输入修订、评论 UUID 和采用决定。
 
-版本三定制摘要在隔离页面验证，55 条摘要保留旧 38 条并追加新 17 条；主目录摘要与当前恢复包随受控集成生效。正式正文与评论已经可用。最终候选经 `_prepare_integration` 返回后另行复验，回执保存在本机 `integration-verification.json`；任务账本是完成状态唯一权威。作品发布不代表任务已确认完成，也不代表用户接受，任务只做本地集成、不自动推送。
+版本三定制摘要已在隔离页面逐集点击并回读，17 条可见摘要与按修订保存的交付数据一致，证据为 `isolated-browser-summaries.json`；55 条摘要保留旧 38 条并追加新 17 条。主目录摘要与当前恢复包随受控集成生效，正式正文与评论已经可用。
+
+集成准备已合并本地 `main` 的集场与快捷键成果，解决入口文档和系统版本锁冲突，保留双方有效内容；正文、导入数据和工具无合并冲突。合并后 11 项测试、三版本正式 API、191 个原锚点和 57 文件空库恢复复验通过。最终准备回执及与其候选提交绑定的结果保存在本机 `integration-preparation.txt`、`integration-verification.json`。任务账本是完成状态唯一权威，仍待用户明确确认后运行 `_complete`。作品发布不代表任务已确认完成，也不代表用户接受；任务只做本地集成，不自动推送。
 
 
 ## 2026-09-30：task-20260930-0001 评论输入快捷键

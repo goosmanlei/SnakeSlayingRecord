@@ -10,7 +10,7 @@
 - 42 场由单写作者串行保存、另步回读、采用；17 集体验检查、全篇按序复读及 3 场连续性回修完成。最终创作检查点 `e3c897be2bce62a510e7d2a18595ae910891d5b216403ddb6c6a84c1f5152510`，无待采用候选。恢复创作先读取 `python3 scripts/screenplay_writing.py --run .runtime/screenplay-03 context --full`，不能用旧工作稿覆盖已发布作品。
 - 正式发布仅在事务内追加 18 对象、18 修订和 53 依赖。原 45 资料、191 评论、214 评论事件、87 对象、96 修订、149 依赖、2 配置、16 配置事件全部保留；191 个锚点有效。正式 API、库快照、交付 JSON、干净稿一致。Chrome 已逐集回读全部 42 场及旧两版评论；测试评论只在隔离实例。
 - 57 文件空库恢复再导出逐字节一致，包含正式已配置的站点图标；11 项既有创作／发布测试通过。证据见 `VERIFICATION.md` 与 `.runtime/screenplay-03/` 下的 `writing-audit.json`、`formal-verification.json`、`formal-browser-verification.json`、`ui-comment-restore.json`。
-- `task-20260929-0005` 在独立 worktree 执行，任务账本仍为执行中；完成状态以主项目 `.codex-project` 账本为唯一权威。完整交付已提交；集成准备已合并目标分支的集场与快捷键文档。下一步对准备命令返回的候选复验，再向用户展示具体提交并确认是否完成及本地集成。未经该确认不运行 `_complete`，不推送。完成后保留分支与 worktree，正常退出会话才释放运行锁。
+- `task-20260929-0005` 在独立 worktree 执行，任务账本仍为执行中；完成状态以主项目 `.codex-project` 账本为唯一权威。完整交付已提交，集成准备已合并本地 `main` 的集场与快捷键文档；合并后的 11 项测试、正式 API 和 57 文件空库恢复复验通过。具体候选与目标提交、验证结果见任务准备回执及本机 `integration-verification.json`。下一步由用户确认是否完成及本地集成；未经该确认不运行 `_complete`，不推送。完成后保留分支与 worktree，正常退出会话才释放运行锁。
 - 55 集的按修订摘要已保存在 `content/screenplay-summaries.json`，版本三摘要在隔离页面核对；主目录摘要文件及新的可恢复导出随受控集成生效。正式剧本正文与评论已可用，作品发布不等于用户接受。
 
 ## 当前正式运行与其他任务

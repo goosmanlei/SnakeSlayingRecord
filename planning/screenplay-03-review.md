@@ -80,7 +80,7 @@
 
 11 项既有创作检查点／发布测试通过；正式 API 与候选三版全文相同，57 文件空库恢复再导出逐字节一致。55 集按修订摘要中的旧 38 条不变，新 17 条在隔离页面可读；正式主目录内容文件及新的导出包随任务受控集成生效，当前正式版本三的完整正文和评论已可用。证据为本机 `formal-verification.json`、`formal-db-equality.json`、`formal-browser-scenes.json`、`formal-browser-old-comments.json`、`ui-comment-check.json` 和 `ui-comment-restore.json`。
 
-任务仍须对 `_prepare_integration` 返回的具体候选执行复验，并取得用户明确确认后才受控集成到本地 `main`；准备回执不代表确认。没有推送。作品发布、系统校验、任务受控集成和用户接受作品分别记录。
+集成准备已合并本地 `main` 的集场与快捷键成果，保留双方有效文档及实测系统版本锁；合并后 11 项测试、正式 API 和 57 文件空库恢复复验通过。17 条新版摘要逐集页面回读一致，见 `isolated-browser-summaries.json`。具体候选及对应复验结果绑定在本机 `integration-preparation.txt` 与 `integration-verification.json`，仍须取得用户明确确认才受控集成到本地 `main`；准备回执不代表确认。没有推送。作品发布、系统校验、任务受控集成和用户接受作品分别记录。
 
 ## 47 条评论逐条处理
 
