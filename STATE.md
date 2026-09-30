@@ -2,7 +2,11 @@
 
 更新日期：2026-09-30。
 
-## 版本三已发布，任务待集成确认
+## 本次 UI／UX 统一任务入口
+
+- 任务范围、评论数量口径、验收与并行边界见 [故事创作界面统一说明](planning/story-creation-ui-unification-task.md)。本会话只澄清并发布任务，未修改系统界面或正式运行资源。发布、执行和完成状态只以主项目 `.codex-project` 任务账本为准。
+
+## 版本三已发布，作品待审阅
 
 - [版本三正式入口](http://127.0.0.1:3000/?workspace=story.script&script=screenplay-03-lantern-home&episode=screenplay-03-lantern-home-e01)已可阅读完整 17 集、42 场、1,134 个正文块；单集预计正片 3:52—4:53，总计 74:10，均非成片实测。整版修订 `3110548d5fa53b349085f4a3fb459df746da5011df95dc9d0b8968d24575adf4`。干净稿与导入文档在 `imports/screenplay-03-clean.md`、`imports/screenplay-03.json`。
 - 用户已明确“已全部提交，以前五场评论推进全剧重构”。正式版本二及全部分集、S01—S05 的 47 条评论、精修九与结构十完成核对后才开始写作；先归纳评论共性，再检查全剧同类问题。发布前吸收 C44 同文编辑后的记录版本 2，未覆盖任何评论。输入与逐场记录仅在本机 `.runtime/screenplay-03/`。
@@ -10,14 +14,14 @@
 - 42 场由单写作者串行保存、另步回读、采用；17 集体验检查、全篇按序复读及 3 场连续性回修完成。最终创作检查点 `e3c897be2bce62a510e7d2a18595ae910891d5b216403ddb6c6a84c1f5152510`，无待采用候选。恢复创作先读取 `python3 scripts/screenplay_writing.py --run .runtime/screenplay-03 context --full`，不能用旧工作稿覆盖已发布作品。
 - 正式发布仅在事务内追加 18 对象、18 修订和 53 依赖。原 45 资料、191 评论、214 评论事件、87 对象、96 修订、149 依赖、2 配置、16 配置事件全部保留；191 个锚点有效。正式 API、库快照、交付 JSON、干净稿一致。Chrome 已逐集回读全部 42 场及旧两版评论；测试评论只在隔离实例。
 - 57 文件空库恢复再导出逐字节一致，包含正式已配置的站点图标；11 项既有创作／发布测试通过。证据见 `VERIFICATION.md` 与 `.runtime/screenplay-03/` 下的 `writing-audit.json`、`formal-verification.json`、`formal-browser-verification.json`、`ui-comment-restore.json`。
-- `task-20260929-0005` 在独立 worktree 执行，任务账本仍为执行中；完成状态以主项目 `.codex-project` 账本为唯一权威。完整交付已提交，集成准备已合并本地 `main` 的集场与快捷键文档；合并后的 11 项测试、正式 API 和 57 文件空库恢复复验通过。具体候选与目标提交、验证结果见任务准备回执及本机 `integration-verification.json`。下一步由用户确认是否完成及本地集成；未经该确认不运行 `_complete`，不推送。完成后保留分支与 worktree，正常退出会话才释放运行锁。
+- 版本三交付与相关集成验证见任务准备回执及本机 `integration-verification.json`。任务状态以主项目 `.codex-project` 账本为唯一权威；本次澄清只读核对其他任务，不领取或关闭它们。作品发布与任务完成不等于用户接受作品。
 - 55 集的按修订摘要已保存在 `content/screenplay-summaries.json`，版本三摘要在隔离页面核对；主目录摘要文件及新的可恢复导出随受控集成生效。正式剧本正文与评论已可用，作品发布不等于用户接受。
 
 ## 当前正式运行与其他任务
 
 - 正式服务 `http://127.0.0.1:3000` 实际运行系统 `a22b1e408767b1f4ea05363f40fd5d7fa71552dd`，含集场阅读、评论快捷键及站点图标配置。本任务从实际容器核对 13 份 Python 文件，并将实例版本锁同步到该提交；没有重启服务或修改通用系统代码。
 - 系统配置已为 schema 4，现有图标由 favicon 任务工作区挂载。版本三恢复验证保留其原始 SVG 与配置，未另作图标设计；旧 schema 3 系统不能恢复当前配置。本任务不替 favicon 任务执行双仓集成，其状态以 `task-20260930-0002` 账本为准。
-- 2026-09-30 现场账本：集场阅读 `task-20260929-0006`、评论快捷键 `task-20260930-0001`、制作思路 `task-20260929-0004` 均已 completed；favicon 任务仍 running，制作体系设计 `task-20260929-0003` 为 published。本会话不领取或关闭其他任务。
+- 其他任务的当前发布、执行与完成状态从主项目任务账本读取，不在本文件重复维护。并行开发与共享正式资源的互斥约束见本次任务说明。
 - 制作思路保留“故事创作”“生产制作”双 Tab；方法正文在 `content/production-approach.json`。评论框聚焦时 ⌘+Enter 提交／保存，Esc 放弃本次未提交内容；框外 Esc 收起并保留草稿。旧链接、修订锚点与用户草稿仍按现有接口使用。快捷键和制作思路的完整操作／既有验证分别见 `planning/comment-shortcuts-delivery.md`、`planning/production-approach-delivery.md`，历史记录继续保留。
 
 ## 有效故事与恢复入口
