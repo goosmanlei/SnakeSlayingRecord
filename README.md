@@ -46,13 +46,13 @@
 git clone https://github.com/goosmanlei/story-review-desk.git
 git clone https://github.com/goosmanlei/SnakeSlayingRecord.git
 cd story-review-desk
-git checkout a22b1e408767b1f4ea05363f40fd5d7fa71552dd
+git checkout d7646d86a4b389b347e0ce959612e6e1da2e3acb
 PYTHONPATH=. python3 -m review_desk --instance ../SnakeSlayingRecord restore
 cd ../SnakeSlayingRecord
 docker compose up -d --build
 ```
 
-本提交锁定系统候选 `a22b1e408767b1f4ea05363f40fd5d7fa71552dd`，包含剧本集场阅读、评论快捷键及可持久化的站点图标配置。上述克隆与启动命令须待系统提交实际发布后使用；本机 3000 已应用图标候选，双仓集成仍待确认。实例恢复时同时保留本仓库跟踪的 `content/`，数据库导出包不含摘要。系统提交、实例分支与正式服务的集成状态分别核对；实际运行状态见 [STATE.md](STATE.md)。
+本提交锁定系统候选 `d7646d86a4b389b347e0ce959612e6e1da2e3acb`，包含剧本集场阅读、评论快捷键及可持久化的站点图标配置。上述克隆与启动命令须待系统提交实际发布后使用；本机 3000 已应用图标候选，双仓集成仍待确认。实例恢复时同时保留本仓库跟踪的 `content/`，数据库导出包不含摘要。系统提交、实例分支与正式服务的集成状态分别核对；实际运行状态见 [STATE.md](STATE.md)。
 
 打开 [本机审阅台](http://127.0.0.1:3000/)：Nginx 长期运行在 Docker 容器 3000 端口并代理容器内 Python 服务；Nginx 镜像与通用代理规则由审阅台仓库维护，故事仓库只保留实例 Compose 配置。主机仅绑定 `127.0.0.1:3000`。`docker compose ps` 检查状态，`docker compose restart` 重启；`restart: unless-stopped` 保证 Docker 恢复时服务随之恢复。已有 `.runtime/review.sqlite3` 时跳过 `restore`。本机当前系统源码目录名是 `story-review-desk-python`，若在此目录运行，构建命令需加 `REVIEW_DESK_BUILD_CONTEXT=../story-review-desk-python`；公开克隆默认目录名为 `story-review-desk`，无需该变量。不要把 3000 端口转发到公网，本服务没有公网鉴权。
 
@@ -60,7 +60,7 @@ docker compose up -d --build
 
 ## 站点图标
 
-“系统管理 → 系统配置 → 系统与 AI”可上传、选择和替换图标；点“清空，恢复默认”并保存可恢复书页图标。当前设计为屋檐护着灯火，源 SVG、ICO 和 PNG 在 `export/assets/`，16／32 像素深浅背景预览在[图标设计](design/favicon/README.md)。配置与当前源 SVG 随清单校验和空库恢复；Git 另保留派生文件与渲染脚本。图样尚待用户审阅，配置生效不表示接受。操作、候选应用与浏览器限制见[交付记录](planning/favicon-delivery.md)。
+“系统管理 → 系统配置 → 系统与 AI”可上传、选择和替换图标；点“清空，恢复默认”并保存可恢复书页图标。当前设计为屋檐护着灯火，源 SVG、ICO 和 PNG 在 `export/assets/`，16／32 像素深浅背景预览在[图标设计](design/favicon/README.md)。配置与当前源 SVG 随清单校验和空库恢复；Git 另保留派生文件与渲染脚本。图样已于 2026-09-30 获用户认可。操作、候选应用与浏览器限制见[交付记录](planning/favicon-delivery.md)。
 
 ## Codex 读取与公开同步
 
