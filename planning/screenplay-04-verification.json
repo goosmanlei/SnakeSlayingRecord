@@ -1,0 +1,147 @@
+{
+  "at": "2026-09-30T14:43:33.941849+00:00",
+  "literary_checkpoint": "31e5d05cb9b96cebf66bb3a5d779bbb98213e60ca6e339a67dc845f1c1590901",
+  "edition_revision": "7287b25a34d4b0db242ec5688f33349fa6d449874a3c6acb30033e2260cd2686",
+  "process": {
+    "events": 350,
+    "saves": 53,
+    "independent_reads": 56,
+    "adoptions": 45,
+    "rejections": 8,
+    "episode_reviews": 17,
+    "pending": false,
+    "ordered_first_adoptions": [
+      "s001",
+      "s002",
+      "s003",
+      "s004",
+      "s005",
+      "s006",
+      "s007",
+      "s008",
+      "s009",
+      "s010",
+      "s011",
+      "s012",
+      "s013",
+      "s014",
+      "s015",
+      "s016",
+      "s017",
+      "s018",
+      "s019",
+      "s020",
+      "s021",
+      "s022",
+      "s023",
+      "s024",
+      "s025",
+      "s026",
+      "s027",
+      "s028",
+      "s029",
+      "s030",
+      "s031",
+      "s032",
+      "s033",
+      "s034",
+      "s035",
+      "s036",
+      "s037",
+      "s038",
+      "s039",
+      "s040",
+      "s041",
+      "s042"
+    ]
+  },
+  "baseline_checks": 336,
+  "final_checks": 336,
+  "resolved_baseline_issues": 94,
+  "comment_mappings": 73,
+  "new_quote_references": 117,
+  "episodes": 17,
+  "scenes": 42,
+  "blocks": 1114,
+  "estimated_seconds": 4392,
+  "measured": false,
+  "browser": {
+    "formal_scenes_exact": 42,
+    "formal_episode_summaries_exact": 17,
+    "formal_old_comments_exact": 73,
+    "preview_scenes_exact": 42,
+    "isolated_comment_test": {
+      "passed": true,
+      "instance_port": 8875,
+      "test_comment_id": "019d4fce-1731-49c4-99b4-4aff6d175efa",
+      "test_comment_version": 2,
+      "test_comment_body": "隔离验收：版本四评论与草稿；编辑回读通过。",
+      "comments": 265,
+      "events": 293,
+      "all_anchors_valid": true,
+      "restore_equal": true,
+      "browser_checks": [
+        "圈选新稿",
+        "切场后保留草稿",
+        "Enter换行",
+        "Cmd+Enter提交",
+        "编辑保存",
+        "定位原圈选"
+      ]
+    }
+  },
+  "formal_delta": {
+    "old_rows_preserved": {
+      "sources": 45,
+      "objects": 105,
+      "revisions": 114,
+      "dependencies": 202,
+      "configurations": 2,
+      "configuration_events": 16,
+      "comment_events": 291
+    },
+    "all264_comment_bodies_anchors_statuses_preserved": true,
+    "exception": {
+      "label": "C40",
+      "id": "f7d4ca02-6ae9-4497-b5ea-736488b289a2",
+      "record_version_before": 1,
+      "record_version_after": 3,
+      "added_events": [
+        {
+          "id": 299,
+          "comment_id": "f7d4ca02-6ae9-4497-b5ea-736488b289a2",
+          "action": "CLOSE",
+          "body": "去掉这句",
+          "at": "2026-09-30T14:36:54+00:00"
+        },
+        {
+          "id": 300,
+          "comment_id": "f7d4ca02-6ae9-4497-b5ea-736488b289a2",
+          "action": "REOPEN",
+          "body": "去掉这句",
+          "at": "2026-09-30T14:38:03+00:00"
+        }
+      ],
+      "reason": "浏览器验收误关闭后立即恢复未关闭；保留真实审计历史。"
+    },
+    "new_objects": 18,
+    "new_revisions": 18,
+    "new_dependencies": 53
+  },
+  "recovery": {
+    "export_files_equal": 57,
+    "comments": 264,
+    "comment_events": 293,
+    "valid_anchors": 264
+  },
+  "tests": {
+    "passed": 60,
+    "skipped": 0
+  },
+  "limitations": [
+    "时长为创作估算，不是成片实测。",
+    "作品待用户审阅；技术交付不表示作品接受。",
+    "正式页只读验收存在C40误操作例外，已恢复状态并保留两条审计历史。",
+    "集成前正式分集摘要使用任务工作区文件的临时只读挂载；确认时撤去，再由受控集成落入主目录。"
+  ]
+}
