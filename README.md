@@ -24,7 +24,9 @@
 
 ## 资料与出处
 
-已新增[分集影视剧本版本三](imports/screenplay-03-clean.md)：17 集、42 场，单集预计正片 3:52—4:53，总计 74:10，均非成片实测。[正式入口](http://127.0.0.1:3000/?workspace=story.script&script=screenplay-03-lantern-home&episode=screenplay-03-lantern-home-e01)可逐集、逐场阅读和评论。先归纳版本二前五场 47 条评论的共性，再结合[John August 原始资料研究](planning/john-august-screenwriting-research.md)重构全剧；[审校说明](planning/screenplay-03-review.md)列明全部评论处理、版本二全场诊断、结构调整与具体表演估时。版本一、二及旧评论均保留。55 集的[按修订摘要](content/screenplay-summaries.json)已在隔离及正式实例验证并进入主实例；正文已正式发布。作品发布与任务集成、用户接受分别记录。
+最新交付为[《把灯带回家》版本四](imports/screenplay-04-clean.md)：17 集、42 场，单集预计正片 3:50—4:55，总计 73:12，非成片实测。[正式入口](http://127.0.0.1:3000/?workspace=story.script&script=screenplay-04-lantern-home&episode=screenplay-04-lantern-home-e01)可逐集逐场阅读和评论。全部 73 条意见已映射到新稿，旧稿和最终稿各有 336 项检查；[审校说明](planning/screenplay-04-review.md)集中列出三条联动修改、真实逐场过程、表演估时与验证边界。旧三版保留，作品待用户审阅。正式浏览器验收中 C40 曾被误关闭并已恢复，其记录版本与两条审计历史如实保留，详见[输入差异](planning/screenplay-04-input-diff.json)。集成前摘要使用任务工作区的临时只读挂载，撤去及受控集成步骤见 [当前状态](STATE.md)；不把运行中的候选当作 Git 已完成集成。
+
+此前发布的[分集影视剧本版本三](imports/screenplay-03-clean.md)：17 集、42 场，单集预计正片 3:52—4:53，总计 74:10，均非成片实测。[版本三入口](http://127.0.0.1:3000/?workspace=story.script&script=screenplay-03-lantern-home&episode=screenplay-03-lantern-home-e01)可逐集、逐场阅读和评论。先归纳版本二前五场 47 条评论的共性，再结合[John August 原始资料研究](planning/john-august-screenwriting-research.md)重构全剧；[历史审校说明](planning/screenplay-03-review.md)列明该版全部评论处理、版本二全场诊断、结构调整与具体表演估时。版本一、二及旧评论均保留。作品发布与任务集成、用户接受分别记录。
 
 此前发布的[分集影视剧本版本二](imports/screenplay-02-clean.md)：21 集、47 场，每集预计正片 3 分 35 秒至 4 分 55 秒，总计 93 分 25 秒，均非成片实测。依据精修九、结构第十稿及版本一首场六条评论逐场重构，完本后另做弹性描写密度审校并原地回修。[正式版本二入口](http://127.0.0.1:3000/?workspace=story.script&script=screenplay-02-lantern-home&episode=screenplay-02-lantern-home-e01)可阅读全文并评论。正式集场界面与采编、结构共用顶部页签，版本栏只显示版号；横向分集与左侧场次均显示各自评论数，选集自动打开第一场，常驻本集概览，右侧阅读该场完整正文；[两版逐集摘要](content/screenplay-summaries.json)按分集精确修订匹配，不修改已发布正文与评论。旧“剧本一”仅显示为“版本一”，其 17 集、51 场及全部原评论保留。集场界面及评论快捷键已正式可用；详见[验证记录](VERIFICATION.md)。创作过程、逐条处理和估时见[版本二审校](planning/screenplay-02-review.md)，版本一的历史审校仍见[原记录](planning/screenplay-01-review.md)。各版均保留供用户审阅。
 
