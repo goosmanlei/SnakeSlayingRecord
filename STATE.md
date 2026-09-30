@@ -6,6 +6,11 @@
 
 - 本任务已在独立系统工作区实现，候选系统 `bbc9c2c177a4f145ea24332d27f81732c530b663`；范围与口径见 [任务说明](planning/story-creation-ui-unification-task.md)。隔离 Chrome 界面统一 78 项、快捷键 76 项、剧本 42 项、圈选 17 项通过；完整数据桌面／390 像素窄屏及真实鼠标／键盘已核对。正式候选应用、最新主线合并复验及用户完成／集成确认待执行。任务状态仅以主项目账本为准。
 
+## 站点图标已集成
+
+- favicon 任务已获用户确认并完成双仓本地集成，2026-09-30 账本回读为 completed。屋檐灯火图样获认可，设计和验收见 [图标设计](design/favicon/README.md)、[交付记录](planning/favicon-delivery.md)。
+- 正式配置为版本 5／Schema 4，图标 `lantern-home-favicon.svg`；目前从主项目正常 `/instance` 挂载读取，原临时素材覆盖已撤去。测试与恢复证据保留，不沿用文档历史段落中的待确认状态。
+
 ## 版本三已发布，作品待审阅
 
 - [版本三正式入口](http://127.0.0.1:3000/?workspace=story.script&script=screenplay-03-lantern-home&episode=screenplay-03-lantern-home-e01)已可阅读完整 17 集、42 场、1,134 个正文块；单集预计正片 3:52—4:53，总计 74:10，均非成片实测。整版修订 `3110548d5fa53b349085f4a3fb459df746da5011df95dc9d0b8968d24575adf4`。干净稿与导入文档在 `imports/screenplay-03-clean.md`、`imports/screenplay-03.json`。
@@ -19,8 +24,8 @@
 
 ## 当前正式运行与其他任务
 
-- 正式服务 `http://127.0.0.1:3000` 实际运行系统 `a22b1e408767b1f4ea05363f40fd5d7fa71552dd`，含集场阅读、评论快捷键及站点图标配置。本任务从实际容器核对 13 份 Python 文件，并将实例版本锁同步到该提交；没有重启服务或修改通用系统代码。
-- 系统配置已为 schema 4，现有图标由 favicon 任务工作区挂载。版本三恢复验证保留其原始 SVG 与配置，未另作图标设计；旧 schema 3 系统不能恢复当前配置。本任务不替 favicon 任务执行双仓集成，其状态以 `task-20260930-0002` 账本为准。
+- 正式服务 `http://127.0.0.1:3000` 实际运行系统 `d7646d86a4b389b347e0ce959612e6e1da2e3acb`，含集场阅读、评论快捷键及站点图标配置。此为执行开始时正式运行版本，当前任务候选尚待应用。
+- 系统配置已为 schema 4，现有图标由主项目正常目录挂载。版本三恢复验证保留其原始 SVG 与配置，未另作图标设计；旧 schema 3 系统不能恢复当前配置。本任务不替 favicon 任务执行双仓集成，其状态以 `task-20260930-0002` 账本为准。
 - 其他任务的当前发布、执行与完成状态从主项目任务账本读取，不在本文件重复维护。并行开发与共享正式资源的互斥约束见本次任务说明。
 - 制作思路保留“故事创作”“生产制作”双 Tab；方法正文在 `content/production-approach.json`。评论框聚焦时 ⌘+Enter 提交／保存，Esc 放弃本次未提交内容；框外 Esc 收起并保留草稿。旧链接、修订锚点与用户草稿仍按现有接口使用。快捷键和制作思路的完整操作／既有验证分别见 `planning/comment-shortcuts-delivery.md`、`planning/production-approach-delivery.md`，历史记录继续保留。
 
