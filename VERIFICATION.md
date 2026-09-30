@@ -1,5 +1,29 @@
 # 验证记录
 
+## 2026-09-30：task-20260929-0005 版本三研究、重构与本机发布
+
+交付 [John August 方法研究](planning/john-august-screenwriting-research.md)、[完整版本三](imports/screenplay-03-clean.md)、[导入数据](imports/screenplay-03.json)及[独立审校说明](planning/screenplay-03-review.md)。正式 [版本三入口](http://127.0.0.1:3000/?workspace=story.script&script=screenplay-03-lantern-home&episode=screenplay-03-lantern-home-e01)为 17 集、42 场、1,134 正文块，整版修订 `3110548d5fa53b349085f4a3fb459df746da5011df95dc9d0b8968d24575adf4`；预计正片 4,450 秒（74:10），单集 232—293 秒，尚非排演或成片实测。
+
+| 验证项 | 实际结果 |
+| --- | --- |
+| 启动输入 | 用户明确已提交前五场全部评论；正式版本二及 21 分集、精修九、结构十、47 条意见及圈选逐项采集。03:35 发布前重查，22 个版本二修订及评论内容不变；C44 同文编辑升到 r2 已纳入，全部保持 OPEN |
+| 研究及文学审校 | 原始文章、官方逐字稿、四部公开剧本的完整场面及前后稿／修订便笺，归因与资料限制单列；47 条意见、47 场旧稿诊断、17 集体验及 42 场表演容量均可追溯。没有声称观看完整电影或获取付费材料 |
+| 真实逐场过程 | 42 场首次采用按序；53 次保存与另步回读，8 次采用前退回，最终全篇复读后 3 场回修；209 事件、47 检查点，17 集审校，无待采用候选。事件只证明顺序和内容，不替代作品判断 |
+| 正式增量发布 | 原八类业务表逐行保留，新增 18 对象、18 修订、53 依赖。正式库为 45 资料、191 评论、214 评论事件、105 对象、114 修订、202 依赖、2 配置、16 配置事件。未恢复旧库、关闭意见、标记接受或重启服务 |
+| 正文一致性 | 42 场最终采用稿与导入 JSON、干净稿一致；正式 API 三版本及各分集与候选完全一致；正式库与候选八类表相等 |
+| 实际 Chrome | 逐集点击全部 17 集、42 场，可见正文逐场逐字一致；末场 URL 刷新正确。旧版本一 6 条评论、版本二 19／23／5 条意见从页面回读，内容和原归属不变 |
+| 新评论与草稿 | 隔离 8805 实例圈选对白，草稿切到旧版不串位、切回新版恢复，⌘+Enter 提交后仅 E01／S01 加 1，从 S02 定位返回 S01；评论准确锚定新版分集修订。新测试评论经空库恢复保留，正式库未写测试评论或编辑用户草稿 |
+| 空库恢复 | 使用已核实部署的系统 `a22b1e408767b1f4ea05363f40fd5d7fa71552dd`，57 文件恢复再导出逐字节相同，191 个原锚点有效；另验证含 1 条新版测试评论的隔离包，192 个锚点有效 |
+| 工具回归 | `PYTHONPATH=.runtime/screenplay-03/system python3 -m unittest discover -s tests -p '*screenplay*' -v`：11 项通过。复用现有写作、发布和验证工具，没有代码改动或新增通用系统能力 |
+| 系统版本与素材 | 旧锁 39ff95e 只支持配置 schema 3，第一次恢复明确失败；正式服务已用 favicon schema 4。核对容器 13 份 Python 文件与 a22b1e4 一致，保存现有服务实际使用的 SVG，再导出恢复通过。本任务仅保留该并行成果，不设计新图标或代办另一任务集成 |
+
+本机证据根为当前任务 worktree 的 `.runtime/screenplay-03/`，详见 `publication-final-input-check.json`、`publication-receipt.json`、`formal-db-equality.json`、`formal-verification.json`、`formal-browser-verification.json`、`ui-comment-check.json`、`ui-comment-restore.json`、`runtime-system-verification.json`、`writing-audit.json`。完整正式页面截图为 `version-three-formal.png`。工作检查点和输入快照不入 Git；公开交付中保留准确输入修订、评论 UUID 和采用决定。
+
+版本三定制摘要已在隔离页面逐集点击并回读，17 条可见摘要与按修订保存的交付数据一致，证据为 `isolated-browser-summaries.json`；55 条摘要保留旧 38 条并追加新 17 条。主目录摘要与当前恢复包随受控集成生效，正式正文与评论已经可用。
+
+集成准备已合并本地 `main` 的集场与快捷键成果，解决入口文档和系统版本锁冲突，保留双方有效内容；正文、导入数据和工具无合并冲突。合并后 11 项测试、三版本正式 API、191 个原锚点和 57 文件空库恢复复验通过。最终准备回执及与其候选提交绑定的结果保存在本机 `integration-preparation.txt`、`integration-verification.json`。任务账本是完成状态唯一权威，仍待用户明确确认后运行 `_complete`。作品发布不代表任务已确认完成，也不代表用户接受；任务只做本地集成，不自动推送。
+
+
 ## 2026-09-30：task-20260930-0001 评论输入快捷键
 
 本轮从故事项目根定位 `../story-review-desk-python`，系统 main 为 `1c86fb9990afd42dd10bed54eff3d74a52eaf48f`。现场任务账本确认 `task-20260929-0006` 已完成并集成，正式页面的集场静态版本匹配该提交；不从历史 `../story-review-desk` 继承实现。系统独立 worktree 在本任务 `.runtime/review-desk-worktree/`，分支 `codex/task-20260930-0001-comment-shortcuts`，过程提交 `1107f70`、最终提交 `39ff95ef7d2b2dea6bb4fd62fb88fc64b7a01a6e`。实例版本锁指向最终提交。
@@ -715,3 +739,5 @@ README、KNOWLEDGE、STATE、小说方案和后台流程已同步；context v1 �
 用户已于 2026-09-30 回复“认可”，接受屋檐灯火图样。原生 Chrome 新标签页验证隔离五页面真实图标；原生文件选择完成 ICO 上传与采用，清空恢复书页、重新采用 SVG、刷新及服务重启实显通过。曾观察到清空后重新设置再重启残留默认图标，已改为具体素材地址加内容校验值并替换图标节点；修正后重复实显检查通过。恢复实例 8799 及正式 3000 的版本 5／Schema 4 图标也实际显示正确，资源为 200／image/svg+xml，哈希与母版相同。扩展徽标与文件 URL 权限限制通过原生操作解决，没有将接口或页面内预览替代标签栏验收。
 
 最新正式导出保留并行任务已发布的版本三，45 资料、191 评论、105 对象、114 修订、202 依赖；空库恢复再导出 56 个清单文件逐字节一致。最新候选更新前后六类业务表逐行哈希与数量一致；正式库未被旧快照覆盖，本任务未写测试业务数据。当前双仓仍待明确集成确认，3000 使用临时候选素材目录挂载。证据、操作和受控完成顺序见[交付记录](planning/favicon-delivery.md)。
+
+吸收故事 main `ae3c781c365c8661d2b1b43fe4b1694ed201c056` 后，保留版本三的正文、研究和 55 集摘要，解决 README、STATE 与系统版本引用冲突，系统锁定 `d7646d8`。合并后重新运行系统 34 项、故事 60 项（无跳过）、Chrome 快捷键 76 项与剧本集场 42 项，全部通过；空库恢复再导出 56 文件逐字节一致，最新正式六类业务表未变、摘要与 main 一致、图标资源正常。本机证据为 `.runtime/favicon/evidence/postmerge-{system-tests.txt,story-tests.txt,shortcut.json,joint.json,restore.json}`。用户本轮授权推送；新的准备候选仍须依指定流程确认后集成。
