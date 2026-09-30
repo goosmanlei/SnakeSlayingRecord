@@ -2,6 +2,13 @@
   "project_id": "8K6WcbrPLghSBJXBtWAE",
   "project_name": "李寄斩蛇 · 把灯带回家",
   "preferred_client": "openart cli",
+  "preferred_model": "gpt-image-2-5-sunburst",
+  "model_label": "GPT Image 2.5 Sunburst",
+  "image_quality": "high",
   "image_resolution": "4K",
-  "reference_policy": "以干净母版锚定；连续以生成结果为唯一参考最多两次，仍未达标回母版。"
+  "aspect_ratio_policy": "按素材用途选择；第一集动态分镜输出为16:9横屏。",
+  "credit_exhausted_fallback": "OpenArt Credit用完后使用Codex内置GPT IMG 2.5；以工具实际暴露的模型及输出尺寸记录结果，不另开按量付费API。",
+  "i2i_preferred_max_generations": 1,
+  "i2i_absolute_max_generations": 2,
+  "reference_policy": "以干净母版锚定；多参考取最深谱系计算I2I代数，换文件名或加入母版不重置。超过两代或出现风格与纹理漂移时回干净母版，采用局部修改与固定轮廓、配色、线条约束。"
 }
