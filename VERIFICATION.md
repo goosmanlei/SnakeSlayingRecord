@@ -1,5 +1,38 @@
 # 验证记录
 
+## 2026-09-30：task-20260930-0004 剧本四
+
+[正式版本四](http://127.0.0.1:3000/?workspace=story.script&script=screenplay-04-lantern-home&episode=screenplay-04-lantern-home-e01)已追加发布：17 集、42 场、1,114 块，修订 `7287b25a34d4b0db242ec5688f33349fa6d449874a3c6acb30033e2260cd2686`。单集预计正片 230—295 秒，总计 4,392 秒，非成片实测。完整文学审校、估时、输入与技术边界见 [版本四审校](planning/screenplay-04-review.md)，可核对汇总见 [验证数据](planning/screenplay-04-verification.json)。
+
+| 范围 | 实际验证 |
+| --- | --- |
+| 输入与意见 | 启动及发布前核对正式剧本三整版、全部分集和 73 条当前评论；无用户新增、编辑或删除。73 条意见含两条已关闭，均关联精确新稿引用；编辑历史不计新评论 |
+| 文学覆盖 | 旧 42 场 × 8 项、最终 42 场 × 8 项；94 个发现项有原文、影响、实际决定、引用与回读，涵盖第十七集。评论对应 117 处新稿引用 |
+| 真实过程 | 350 事件；53 保存、56 候选阅读、8 退回、45 采用；42 场首次采用串行，17 集连读，全稿顺序复读及 3 次后续回修，无待采用候选。最终检查点 `31e5d05cb9b96cebf66bb3a5d779bbb98213e60ca6e339a67dc845f1c1590901` |
+| 自动检查 | 显式配置实际系统源码路径后，完整 60 项故事测试通过、无跳过；本次没有修改工具或通用界面代码 |
+| 独立页面 | Chrome 8874 逐集逐场回读 42 场全文；另用 8875 隔离库验证圈选、跨场草稿保留、Enter 换行、⌘+Enter 提交、编辑和定位；测试评论版本 2、锚点与事件恢复一致 |
+| 正式页面 | Chrome 3000 逐场回读 42 场、1,114 块和 17 条摘要，与最终稿一致；逐集回读全部 73 条旧评论的原话及完整圈选，原圈选可回定位 |
+| 增量与保留 | 追加 18 对象、18 修订、53 依赖；旧三版正文及不可变修订、原 45 资料、2 配置、16 配置事件及原 291 评论事件保留。264 评论的正文、锚点、归属和最终状态保持；C40 的审计例外见下段 |
+| 最新恢复 | 正式当前 264 评论、293 评论事件、123 对象、132 修订、255 依赖；57 文件空库恢复再导出逐字节相同，264 个锚点有效；导入、干净稿、正式 API、导出一致 |
+
+**正式只读验收有一次未满足原要求的例外：** C40 在快速切集时被误关闭，随后立即恢复 OPEN，记录版本 1 → 3；新增 CLOSE／REOPEN 两条真实审计事件，未修改内容、圈选或最终状态，未回滚数据库或删除历史。此后先关闭侧栏再切集、每步确认状态，全部 73 条已重新回读，未再变更。完整前后值及时间见 [输入差异](planning/screenplay-04-input-diff.json)。不能将这次验收表述为正式库完全只读；需随交付明确告知用户。
+
+主目录受跟踪文件未提前改写；正式摘要暂时只读挂载任务工作区的文件，原实例、可信 CA、镜像、命令和凭据保留。用户确认后先撤临时挂载，再由受控集成将同一摘要及文档落入 `main` 并推送 `origin/refs/heads/main`。任务状态仅由主项目账本确认，作品接受另行表达。
+
+本机原始证据在任务 worktree 的 `.runtime/screenplay-04/`：`work.sqlite3`、`final-context.json`、`final-scan.json`、`story-tests.log`、`formal-verification.json`、`formal-browser.json`、`formal-old-comments-browser-safe.json`、`ui-comment-verification.json`、`publication-receipt.json` 和截图。`formal-verification.json` 验证恢复后的最新快照；相对于发布前原始快照的严格逐行差异另在 `planning/screenplay-04-verification.json`，没有通过换基线隐藏 C40 的变化。
+
+复验时先将 `REVIEW_DESK_SYSTEM_PATH` 指向主项目根目录旁实际的 `story-review-desk-python` 源码目录，不从嵌套 worktree 的父目录推算。然后在任务根目录执行：
+
+```bash
+PYTHONPATH="$REVIEW_DESK_SYSTEM_PATH" python3 -m unittest discover -s tests -v
+PYTHONPATH="$REVIEW_DESK_SYSTEM_PATH" python3 scripts/verify_screenplay.py \
+  --instance . --baseline .runtime/screenplay-04/post-incident \
+  --url http://127.0.0.1:3000 --document imports/screenplay-04.json \
+  --output .runtime/screenplay-04/formal-verification.json
+```
+
+下文是此前各任务的历史验收窗口，不代表版本四的当前数据量或集成状态。
+
 ## 故事创作三子页统一（2026-09-30）
 
 系统候选 `e48218947a6cf74e48bad7a0b4909ae334562a81` 已应用至正式 3000，双仓 Git 本地集成待最终候选确认。采编右上资料总数已按用户追加要求移除，相关更新／显隐引用已清理，桌面和窄屏均已回查。35 项系统、60 项故事测试全部通过、无跳过；Chrome 界面统一 78 项、快捷键 76 项、剧本集场 42 项、圈选／定位与阅读状态 17 项全部通过。完整最新实例桌面与 390 像素窄屏、真实正文外松手、Enter 换行、⌘+Enter 保存、Esc 取消编辑均已核验；输入法组合保护是事件模拟，未新增操作系统输入法实测。
