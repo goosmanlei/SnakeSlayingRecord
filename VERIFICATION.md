@@ -1,5 +1,9 @@
 # 验证记录
 
+## task-20260929-0003：制作准备阶段
+
+全剧抽取、第一集镜头设计、制作系统、首批真实图像／音频及两种隔离恢复的证据统一见 [production/verification.md](production/verification.md)。系统 50 项、故事工具 64 项测试通过；真实 Chrome 操作范围、上传权限阻断、4K 未达标和听辨限制均在该记录中明确。当前未完成两轮作品审阅、完整动态分镜及工程，不表示任务完成或第一集就绪。
+
 ## 2026-09-30：task-20260930-0004 剧本四
 
 [正式版本四](http://127.0.0.1:3000/?workspace=story.script&script=screenplay-04-lantern-home&episode=screenplay-04-lantern-home-e01)已追加发布：17 集、42 场、1,114 块，修订 `7287b25a34d4b0db242ec5688f33349fa6d449874a3c6acb30033e2260cd2686`。单集预计正片 230—295 秒，总计 4,392 秒，非成片实测。完整文学审校、估时、输入与技术边界见 [版本四审校](planning/screenplay-04-review.md)，可核对汇总见 [验证数据](planning/screenplay-04-verification.json)。
