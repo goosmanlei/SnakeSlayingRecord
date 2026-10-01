@@ -8,8 +8,8 @@
 - 本任务终点为第一集正式镜头生成前的生产准备，包括全剧抽取、制作系统、实际素材、逐镜包及 16:9 有声动态分镜；正式镜头视频、最终成片另行完成。主视觉为二维人物＋轻手绘背景，具体母版和声音仍需用户审阅。成果与命令入口见 [production/README.md](production/README.md)。
 - 按用户最新完整状态规则，133 个实体形成 267 个完整状态，覆盖 618 次实际场内实体使用与第一集 206 次镜内使用，共 824 次校验无状态缺失、错属或缺少转换依据。每个实体均有状态；两名仅被提及对象没有媒体义务，其余登记 265 项整体参考。旧 86 个局部状态及历史引用保留，不计入完整状态数量。
 - 第一集两场为 33 镜、37 个对白／演唱单元、预计 227 秒。320 项镜头用途加 41 项共用整体参考，共 361 项必要输入尚未采用；后续 40 场登记 786 项有效需求。4 项不适用旧需求以撤回修订保留理由。数据与可读清单见 `production/inventory.*`、`production/episode01/`、`production/scene-requirements.*`。
-- 通用系统独立分支 `6bca5a8b89600a1f5d40187d85cbc0978607b985` 已运行于任务实例。制作设定直接读取当前实体、完整状态与关联素材；基础信息常驻，默认基础状态，用户评论后由 Codex 修订，没有送审步骤或内容编辑入口。“采纳当前版本”可选，采纳后仍可评论，新内容不继承旧采纳，历史版本可追溯。契约在系统 `docs/production.md`。
-- 此前 133 份旧送审记录只保留历史和恢复，不显示于状态选项或实体数量；初始化脚本已退役。真实任务库未新增采纳、媒体或采用。未映射完整状态的旧候选直接显示为实体参考，不推断其覆盖与就绪。
+- 通用系统独立分支 `dac4c46c6b21a0ca3692029de9ac52d166607e2c` 已运行于任务实例。制作设定直接读取当前实体、完整状态与关联素材；基础信息常驻，默认基础状态，用户评论后由 Codex 修订，没有送审步骤或内容编辑入口。“采纳当前版本”可选，采纳后仍可评论，新内容不继承旧采纳，历史版本可追溯。契约在系统 `docs/production.md`。
+- 此前 133 份旧送审记录只保留历史和恢复，不显示于状态选项或实体数量；初始化脚本已退役。真实任务库未新增采纳、媒体或采用。状态区只显示明确对应当前状态准确修订的素材，并显示各状态的素材数量；未关联候选集中于独立折叠区，历史图像及时间段评论仍定位原版本。旧候选未自动配给基础状态或其他状态。
 
 ## 候选与待确认事项
 
@@ -21,10 +21,10 @@
 
 ## 验证与运行
 
-- 本轮系统 66 项 Python、故事工具 71 项、前端 16 项测试通过。Chrome 实际验证直接评论、采纳后继续评论、新内容与历史意见；共用圈选 17 项和快捷键 76 项回归通过。旧标签页及用户草稿未操作。具体范围和未验证项见 [production/verification.md](production/verification.md)。
+- 本轮系统 68 项 Python、前端 22 项测试通过，Chrome 共用圈选 17 项通过；39117 实际验证按状态显示 2／1／0 份素材、未关联素材独立审阅、重复文件组成的时间段定位和历史图像圈选隔离。上一轮故事工具 71 项、快捷键 76 项及直接采纳流程验证仍保留；本轮未重复。旧标签页及用户草稿未操作。具体范围和未验证项见 [production/verification.md](production/verification.md)。
 - 部署前后 8 张数据库表一致：2,262 个总对象、3,614 个修订、266 条评论与 295 条事件。完整库和技术采纳历史均完成空实例恢复，70 个清单文件校验通过；真实生产重放有 2,139 个对象、3,482 个修订和 14 个文件。详见 `production/evidence/direct-entity-review-recovery.json`。
 - 实际服务为 [39103 制作设定](http://127.0.0.1:39103/?workspace=settings.workspace)，容器 `snakeslayingrecord-production-task-0003`，实例 `.runtime/production/review-instance`；32 个运行文件与固定系统提交一致。Docker 后台服务保留两秒连接空闲超时，数据库操作仍同线程。旧容器已停止并保留，不与新容器同时启动；页面不可用先排查服务，不重新导入数据。
-- 真实重放与完整恢复分别在 `.runtime/production/recovered-direct-review-final`、`.runtime/production/bundle-direct-review-real`。39113 的 `direct-review-test` 含三条技术评论、一条采纳及两项修订，仅供验证，不是真实制作决定。39113—39116 临时服务已停止，39103 继续运行。页面与运行证据见 `production/evidence/direct-entity-review-workspace.json`、`direct-entity-review-runtime.json`。
+- 真实重放与完整恢复分别在 `.runtime/production/recovered-direct-review-final`、`.runtime/production/bundle-direct-review-real`。39113 的 `direct-review-test` 含三条技术评论、一条采纳及两项修订，仅供验证，不是真实制作决定。39113—39118 临时验证服务完成后停止，39103 继续运行。39117 的 `.runtime/production/state-media-test` 仅含技术关联与一条新增技术评论，不导入真实任务库；本轮页面与运行证据见 `production/evidence/state-media-workspace.json`、`state-media-runtime.json`。
 - 浏览器文件上传仍被扩展本地文件 URL 权限限制，系统文件窗口替代也报 `cgWindowNotFound`；没有修改权限，也没有以 HTTP 上传通过替代页面上传验收。
 - 本任务的“制作思路”已吸收完整状态、整体参考、整实体审阅与 Codex 按意见修订的方法，说明版本采纳、素材采用与首轮基准接受的区别，明确直接评论、无送审及采纳后仍可审阅；正式入口尚未更新。
 
