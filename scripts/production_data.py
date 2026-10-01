@@ -58,6 +58,30 @@ def exact_replay(store, production):
         if previous:
             parents[row['id']].add(previous)
         per_object[row['object_id']] = row['id']
+    # Review submission/acceptance checks the *whole current state collection*.
+    # Ordinary dependency sorting can replay a later, unrelated new state first.
+    # Preserve that temporal boundary even after a bundle reordered table rows.
+    payloads = {rid: json.loads(row['payload']) for rid, row in revisions.items()}
+    for rid, payload in payloads.items():
+        target = payload
+        if payload.get('format') == 'production-judgment-v1' and payload.get('verdict') == 'accepted':
+            target = payloads.get(payload['target']['revision_id'], {})
+        if target.get('review_model') != 'entity-review-v1':
+            continue
+        entity_ref = target['entities'][0]
+        included = {r['object_id']: r['revision_id'] for r in [entity_ref, *target['states']]}
+        for later_id, later in revisions.items():
+            if later['object_id'] in included:
+                if later['version'] > revisions[included[later['object_id']]]['version']:
+                    parents[later_id].add(rid)
+            elif (object_kinds[later['object_id']] == 'STATE' and payloads[later_id].get('state_model') == 'complete-v1' and
+                  payloads[later_id]['entity']['object_id'] == entity_ref['object_id']):
+                parents[later_id].add(rid)
+        if payload.get('format') == 'production-judgment-v1':
+            submission = revisions[payload['target']['revision_id']]
+            for later_id, later in revisions.items():
+                if later['object_id'] == submission['object_id'] and later['version'] > submission['version']:
+                    parents[later_id].add(rid)
     batches, batch, batch_ids, done = [], [], set(), set()
     while len(done) < len(revisions):
         available = sorted((r for r in revisions.values() if r['id'] not in done and parents[r['id']] <= done),
