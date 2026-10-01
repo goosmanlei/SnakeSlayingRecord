@@ -72,8 +72,7 @@ def main():
     store = Store(destination / '.runtime/review.sqlite3')
     try:
         restore(store, destination / 'export')
-        for batch in data['batches']:
-            production.import_records(store, batch)
+        production.restore_records(store, data['batches'])
         recovered = exact_replay(store, production)
         if recovered['heads'] != data['heads'] or recovered['revisions'] != data['revisions']:
             raise ValueError('recovered exact revisions or selected heads differ')
