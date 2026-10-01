@@ -29,14 +29,14 @@ CATALOG = r"""
 li-ji|李寄|character||1-20,22-23,26-34,36-42|李诞的女儿、李绡的妹妹；第一集手有干浆糊、头发跑松、肩有挑水红印。|李寄
 a-heng|阿蘅|character||1-10,15-20,22,26-34,36-42|以唱曲和劳动补贴家用；第一集清瘦，穿洗旧青衣，袖口整齐，脚下能稳稳打拍。|阿蘅
 li-xiao|李绡|character|五姐|3,5-6,7-9,14-18,20,22-24,26-34,41-42|李寄的五姐，戏班做道具、布置台口并照顾妹妹；动作利落。|李绡,五姐
-li-dan|李诞|character|李寄父亲|14-15,17-27,28-34,36-37,41|李寄父亲，码头做工；参与停祭、准备和压闸，给李寄示范沿缝下刀。|李诞,父亲,李家几人
+li-dan|李诞|character|李寄父亲|14-34,36-37,41|李寄父亲，码头做工；参与停祭、准备和压闸，给李寄示范沿缝下刀。|李诞,父亲,李家几人
 li-mother|李寄母亲|character||14,16,26-27,34,41|接济阿蘅一家、照看病人，备饭等众人回来，递出补过灯罩的旧灯。第一集阿蘅所说的“婶婶”指她；第四集同称呼指邻妇，不设全局同名别名。|李寄母亲,婶婶,母亲
 heng-mother|阿蘅母亲|character|阿蘅的娘|7,10,15-16,26-27,34,38,40-42|患病需照护，曾逐句哼曲让女儿抄歌本；借粮时只同意借还粮，没有同意献祭。|阿蘅母亲,阿蘅的娘,她娘,我娘,母亲
 zhou|周掌柜|character|周叔|1,4,17,20,28,36|米铺掌柜，安排许家唱活并预付米；后提交早于点名日期的备粮证据。|周掌柜,周叔,掌柜
 zhao|赵执事|character||2,6,9,12,17-19,21-22,28,30,36-37|第一集褐衣、腰挂钥匙；以领唱邀阿蘅进庙，后被查出篡改借据并参与献祭。|赵执事
 mo-er|墨耳|character||2-3,7,16,26-27,41-42|瘦黄狗，左耳尖缺一角；斩蛇当天留在李家，未带去后院。|墨耳,瘦黄狗
 tao|陶伯|character||2,14,25,28,35-37|阿禾的父亲，编削竹器；第一集身旁有空小凳，听到女儿名字停刀。|陶伯,老人
-a-he|阿禾|character|阿禾姐姐|14|陶伯之女，前年被强迫献祭；第六集父亲回忆中被押走并回头叫父亲。|阿禾
+a-he|阿禾|character|阿禾姐姐|14|陶伯之女，前年被强迫献祭；第六集李诞回忆中回头在围观人群找到李诞，该画面没有阿禾台词。“她回头叫我”来自第十五集陶伯当堂证词。|阿禾
 xiao-man|小满|character|下湾的小满||去年被强迫献祭；本剧以被提及、案卷和遗物追溯，没有安排其活人出镜。|小满
 sun-liu|孙六|character||8-9,15,17-19,23-27,29-34,41-42|戏班鼓手，出力接病人、装杠和压闸；有小腰鼓和缝补两层的宽布背带。|孙六
 priest|巫祝|character||8-9,17,24,28,30,36-37|穿祭衣、声称梦示祭名，阻拦查册；最终因强迫献祭等罪被押赴郡狱。|巫祝
@@ -54,7 +54,7 @@ ticket-child|领粮妇人的孩子|character||8,28,37|被母亲抱着，庙会�
 woodcutter|挑柴老汉|character|老汉|1|在米铺外听阿蘅唱曲，扁担立腿边，发现她跳过两道滩后打趣。|挑柴老汉,老汉
 rice-listeners|米铺听客|character||1|米铺门口数名听客笑、提米袋、进铺；其中一人说“下回补上”。|听客,下回补上,量米
 street-passers|河街路人|character||2|第一集有人向赵执事打招呼；不与米铺老汉或陶伯合并身份。|有人经过,打招呼
-neighbor-woman|邻妇|character|邻居妇人|7,15,41|帮阿蘅母亲照看药罐、搬褥子和照路，散戏后陪病人先回家；其他未具名邻居不自动合并为她。|邻妇,邻居妇人
+neighbor-woman|邻妇|character|邻居妇人|7,15,34,41|帮阿蘅母亲照看药罐、搬褥子和照路，归家饭桌端菜，散戏后陪病人先回家；其他未具名邻居不自动合并为她。|邻妇,邻居妇人
 boatman|船家|character||11|渡口船家担心庙里扣货，拒绝载女孩出走。|船家
 old-woman|庙仓老妇人|character||12|在庙仓带着瘦女孩，担心自家孩子被替补点名。|老妇人,妇人
 thin-girl|庙仓瘦女孩|character||12|与老妇人同行，手中捏碎纸；与阿蘅、小满和领粮妇人的孩子分别登记。|女孩,纸
@@ -120,14 +120,14 @@ name-plaque|阿蘅祭名木牌|prop|祭名牌|8-9|用红绳缠着、边沿刮过
 red-rope|戏台借出的红绳|prop|红绳|8-9|瘦高庙工借来缠祭牌，打双圈结；有剪断与李寄抢扯状态。|红绳,双圈,绳
 debt-note|阿蘅家借据|prop|借据|6,22,26,36|母亲按手印的借粮凭据；原约本息六斗，贴纸篡为七斗并添供奉字样。第二十八场已交差役，只口头举证，阿蘅出示的是收单凭记。|借据,手印
 debt-overlay|借据篡改贴纸|prop|贴纸|6,22,26,36|贴在原借据手印前，揭开后与原据分别留证。|贴纸,新纸,贴,七斗
-work-ledger|阿蘅唱工记录|prop|唱工记录|6-7,26,28,37|阿蘅记录唱两天、每天两升的工钱，用于清债核对。|炭,两升,唱工,四升,记录
+work-ledger|阿蘅唱工记录|prop|唱工记录|6-7,16-17,26,37|阿蘅记录唱两天、每天两升的工钱，用于清债核对；第二十八场口头举证，实际出示的是收单凭记。|炭,两升,唱工,四升,记录,工钱纸,记工钱
 grain-ticket|领粮票|prop|粮票|8,17,28,37|乡民领粮凭票，停祭后接济仍照发。|粮票,票号,窄纸
-stop-order|停祭与除蛇文书|prop|免祭文书|13,17,21-22,26,28|从应募期间停送、阿蘅免祭，到第九集补明除蛇成败都不得向任何户索人；具体文字绑定各场。|文书,暂停送人,免祭,任何一户,白纸
+stop-order|停祭与除蛇文书|prop|免祭文书|17,21-22,26,28|从应募期间停送、阿蘅免祭，到第九集补明除蛇成败都不得向任何户索人；具体文字绑定各场；第十三场的停送规则在应募告示上，尚无本次文书实物。|文书,暂停送人,免祭,任何一户,白纸
 volunteer-notice|照壁应募告示|prop|应募榜|13|旧告示招人除蛇，并写明应募时暂停送人入洞。|告示,应募,暂停送人
 old-lantern|李家旧灯|prop|旧灯|16,27-29,33-34,41-42|灯罩裂缝补着窄纸；白天未点也带着，最终点亮照回家的路。|旧灯,灯罩,灯芯,提着灯,灯
 bandage|李寄裹手与额角布|prop|裹手布|5,9,13-14,23,31-34|手掌和额角的伤口包布需区分位置，斩蛇后手重新包扎。|裹,布,伤,包
 wood-knife|家用柴刀|prop|柴刀|5,16|用于劈柴和磨刀；与县里借的厚背刀不是同一件。|柴刀,劈柴,磨
-heavy-blade|县库厚背刀|prop|厚背刀|17,23-24,26-27,29,31-34|从县库领取，有刀套，沿石盖窄缝下刀；事后收回待交库。|厚背刀,刀套,刀,刃
+heavy-blade|县库厚背刀|prop|厚背刀|23-24,26-27,29-33|从县库领取，有刀套，沿石盖窄缝下刀；第十七场口头请留刀，第三十四场只由程差役报告已收回待交库，不据此要求刀出镜。|厚背刀,刀套,刀,刃
 carrying-strap|孙六宽布背带|prop|宽布背带|15|有两层补缝，用于背病人；不是压闸的麻绳。|背带,布带,两层
 medicine-pot|煎药罐与药渣|prop|药罐|15-16,26|照顾阿蘅母亲时携带、煎药或倒药渣的生活道具。|药罐,药锅,药渣,药
 rice-urn|阿蘅家米缸|prop|米缸|38|债清后灶边已有小半缸粮；不夸大成富足，不凭家境虚构前期空缸镜头。|米缸
@@ -145,7 +145,7 @@ grain-copy|备粮抄单|prop|抄单|20-22|李诞照原单抄日期内容，先�
 shop-ledger|周掌柜底账|prop|底账,店账|20,28,36|米铺记录收到备粮单的日期，掌柜公开提交作证。|底账,店账,账本,账
 evidence-chest|封存账箱|prop|账箱|22,28|仓院查借据用的账箱和封册时装箱的位置分别依来源呈现；同一件箱子并非剧本明确，制作时分设箱组件。|账箱,箱,封存
 sacrificial-registers|三年原祭册|prop|祭册|17,28,36|前年阿禾、去年小满、当年阿蘅三本，年份和名字分别可读；第二十四场柜内只提及未开柜。三册是并存的组成，不是同一册的三个候选版本。|祭册,三本,册子,旧册
-approval-orders|前两次准祭批文|prop|准祭批文|36-37|县丞签押与本次停祭文书为同一个名字，后有抄件公开；两年两份与公开抄件分别登记组成。|准祭批文,批文,签押
+approval-orders|前两次准祭批文|prop|准祭批文|21,36-37|县丞签押与本次停祭文书为同一个名字，后有抄件公开；两年两份与公开抄件分别登记组成。|准祭批文,批文,签押
 evidence-receipt|阿蘅收单凭记|prop|收单凭记|26,28|梁书吏收借据和唱工记录后出具，阿蘅拿它公开说明证据已交。|凭记
 hairpin|阿禾竹簪|prop|竹簪|35-36|从洞内清出，簪尾浅纹刻歪，陶伯据此认领。|竹簪,簪
 broken-comb|小满断梳|prop|断梳|35-36|洞中清出的半把梳子，小满母亲认领并握着申诉。|断梳,梳齿
@@ -156,7 +156,7 @@ copied-pages|补抄歌页与装订线|prop|补抄新纸|5,38-40|最初缺半行�
 writing-board|补词夹板与笔|prop|夹板|39-40|李寄记词、歌娘核字，李寄手疤绷紧后把笔交给阿蘅。|夹板,笔,写
 family-meal|归家饭食与桌凳|prop||27,34,42|饼、炖肉、炒蛋和汤，板桌与借来的凳子容纳帮忙乡亲；最后留温饭和净碗。|饼,肉,鸡蛋,炒蛋,汤,碗,凳,板
 boat-song|舟行曲（未具名）|song||1|第一集阿蘅跳过两道滩直唱归家句；剧本仅给两句歌词，曲名及被省两段原文未知。|一道险滩,船靠岸,两段
-blue-awning-song|送青篷|song||3-4,38-41|作品内容与演唱状态分开：先会前段，歌本受损缺末词，歌娘补全后终于唱完。|送青篷,青篷,柳影,莫怕,归来认旧桥,隔水灯
+blue-awning-song|送青篷|song||3-5,38-41|作品内容与演唱状态分开：先会前段，歌本受损缺末词，歌娘补全后终于唱完；第五场阿蘅也哼到断句处。|送青篷,青篷,柳影,莫怕,归来认旧桥,隔水灯
 snake-welcome-song|迎蛇领唱调|song||7|赵执事旧词有“米饵奉蛇神，四邻得安宁。”；阿蘅在前殿做两天领唱。|迎蛇,米饵奉蛇神,领唱
 blessing-stage-song|祈福戏唱段|song||10|第五集庙中远远传来“米饵献上，明月还乡——”；未明确它与迎蛇领唱调为同一作品，不强行合并。|米饵献上,明月还乡,祈福戏
 """
@@ -280,12 +280,13 @@ def compile_inventory():
                 mode = 'voice'
             mode = MODE_OVERRIDES.get((key,sn), mode)
             appearances[sn].append({'entity':ref(oid),'states':[], 'mode':mode,'evidence':[source(sn,evidence)]})
-    # States are separately authored below; candidate versions never add states.
-    add_states(records, appearances, entries, source, ref, record, scene_map)
+    # Full snapshots and explicit transitions are authored after all-scene review.
+    from production_forms import compile_forms
+    compile_forms(records, appearances, entries, source, ref, record, scene_map)
     for sn,(number,ep,scene,blocks) in scene_map.items():
         records.append(record(f'preparation-s{sn:03d}','PREPARATION',scene['heading'],
             f'已按版本四完整检查本场 {len(blocks)} 个正文块。画面、声音与仅提及分别登记；未指定造型作为制作选择审阅。',
-            source=source(sn), occurrences=appearances[sn], checked=True,
+            source=source(sn), occurrences=appearances[sn], checked=True, state_model='complete-v1',
             notes='人物称谓只在有同人依据时合并；空间实体不等同于剧情场次。'))
     return {'format':'production-import-v1','records':records}
 
@@ -315,10 +316,8 @@ def add_states(records, appearances, entries, source, ref, record, scene_map):
                 raise ValueError(f'state {key} appears without its entity in scene {s}')
 
 
-# id, stable entity, state label, independent dimensions, scene occurrences,
-# The full title uses the entity name above; do not introduce a separate alias.
-# evidence scene, evidence words, screenplay fact. Coexisting dimensions are
-# intentional (for example a bandaged hand and a forehead injury).
+# Legacy partial-state schedule, retained only for migration correspondence and
+# exact historical replay. New compilation uses production_forms.py snapshots.
 STATES = [
     ('liji-paste','li-ji','手有干浆糊',{'hands':'dry_paste'},'1-2',1,'干浆糊','手沾干浆糊，第一场不能接歌本；第二场从指缝搓出羊毛。'),
     ('liji-clean','li-ji','双手已擦净',{'hands':'clean'},'2',2,'擦净手','擦净手后才接住歌本；清洁动作与书的转手有因果。'),
@@ -447,11 +446,12 @@ def readable_inventory(document):
              f"本清单依据用户已确认的剧本版本四，整版修订 `{lock['screenplay']['revision_id']}`。逐场检查覆盖 17 集、42 场、1,114 个正文块，整理出 {len(entities)} 个实体记录和 {len(states)} 个必要状态。实体记录包括实名对象、匿名角色类别与必要环境物件，数量不等于演员或媒体文件数。", '',
              '画面为二维人物＋轻手绘背景，主画幅 16:9；本任务媒体生产聚焦第一集，交付终点是正式镜头生成前的生产准备。此清单是第一轮审阅材料，尚未获得用户对具体造型、声线、旋律和状态设计的接受。', '',
              '## 使用方法与边界', '',
-             '- 稳定实体回答“是谁／是什么”；实体状态回答“此时怎样”，统一命名为“实体完整名称·状态说明”。干净、浸湿、修补可属于同一物件，候选图的版本不另造状态。',
+             '- 稳定实体回答“是谁／是什么”；实体状态定义一个实体在某一时刻的完整形态，统一命名为“实体完整名称·完整形态说明”。衣着、伤势、疲劳等同时存在的特征已经合在同一状态里；候选图的版本、素材数量和普通动作不另造状态。',
              '- 出现分为画面、声音、画面与声音、仅提及。只被提及的阿禾、小满等不因此要求第一集生成角色图或声线。阿禾的回忆出镜另在第十四场登记。',
              '- 表中 E 表示分集，s 表示全剧场次编号，b 表示该场正文块。精确分集修订和全部定位在同目录 inventory.json 与 source-lock.json，可由系统批量解析、校验及导入。',
              '- 剧本事实与制作选择、未知分开。跨场连续性是依据前后文提出的制作安排，状态说明明确标出；没有写出的伤势、服装更换、歌词和曲名不补成事实。',
-             '- 同场可同时经过几个状态，例如先有浆糊后擦净，先接工米再接预付米。状态并存不表示同一时刻同时发生，镜头设计负责确定动作先后。',
+             '- 一次实际呈现或发声至少引用一个完整状态。同场经过多个状态时，按发生顺序逐对登记转换、动作与准确正文依据；关门→开门→关门可以复用先前形态。',
+             '- 需要呈现的状态通常采用一份整体参考，允许多个角度、局部或声音补充；整体参考缺失时，细节不能使状态就绪。仅提及的小满和许家女儿保留已知事实，不由此生成媒体要求。当前整体参考均待制作、审阅和显式采用。',
              '- “婶婶”“书吏”“庙工”等称呼按所在场次识别，不作全剧无条件别名；未明确同一人的角色保留独立身份或明确的群演类别。', '',
              '## 第一集制作边界', '',
              '第一集包含米铺门口与河街邀请两场。需要李寄、阿蘅、周掌柜、赵执事、挑柴老汉、米铺听客、河街路人、陶伯和墨耳；包括舟行曲、道具屋试鼓、米粮与木斗、歌本及旧词纸、竹篮和河石、水壶与布巾、半块饼、钥匙、削竹刀与竹篮、空小凳、衣裳与幕布。画外鼓手身份未知，声音按项目需求登记。', '',
@@ -465,12 +465,13 @@ def readable_inventory(document):
             lines.extend([f"#### {p['title']}",'',f"稳定 ID：`{oid}`。" + ('别名：'+ '、'.join(p['aliases'])+'。' if p['aliases'] else ''),'', *p['facts'],''])
             for label2,key in [('制作选择','choices'),('待确认','unknowns')]:
                 for item in p[key]: lines.append(f'- {label2}：{item}')
-            lines.extend([f"呈现／发声：{'、'.join(occurrence_scenes(oid,'shown')) or '无'}。",f"仅提及：{'、'.join(occurrence_scenes(oid,'mention')) or '无'}。",''])
+            lines.extend(['',f"呈现／发声：{'、'.join(occurrence_scenes(oid,'shown')) or '无'}。",f"仅提及：{'、'.join(occurrence_scenes(oid,'mention')) or '无'}。",''])
             associated = [s for s in states if s['payload']['entity']['object_id']==oid]
+            associated.sort(key=lambda s: (s['payload']['sources'][0]['scene_id'], s['payload']['sources'][0]['block_ids'][0], s['object_id']))
             if associated:
-                lines.extend(['| 状态 | 剧本事实与连续性 | 来源 |','| --- | --- | --- |'])
+                lines.extend(['| 完整状态 | 完整形态描述（含明确的待审细节） | 来源 |','| --- | --- | --- |'])
                 for state in associated:
-                    sp = state['payload']; note = ' '.join(sp['facts']+sp['choices'])
+                    sp = state['payload']; note = sp['blocks'][0]['text'].replace('\n','<br>')
                     lines.append(f"| {sp['title']} (`{state['object_id']}`) | {note} | {evidence(sp['sources'][0])} |")
                 lines.append('')
             if p.get('lyrics'):
@@ -486,6 +487,10 @@ def readable_inventory(document):
         for mode,label in modes.items():
             names = [title(o['entity']) for o in p['occurrences'] if o['mode']==mode]
             if names: lines.append(f"- {label}：{'、'.join(names)}。")
+        lines.extend(['','| 实体 | 完整状态顺序 | 转换依据 |','| --- | --- | --- |'])
+        for occurrence in p['occurrences']:
+            if occurrence['mode']=='mention':continue
+            lines.append('| '+title(occurrence['entity'])+' | '+' → '.join(title(s) for s in occurrence['states'])+' | '+('；'.join(evidence(t['source']) for t in occurrence['transitions']) or '本场完整形态不变')+' |')
         lines.append('')
     return '\n'.join(lines).rstrip()+'\n'
 

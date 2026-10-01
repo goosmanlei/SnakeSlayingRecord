@@ -225,6 +225,26 @@ def numbers(value):
     return result
 
 
+def complete_states_for_blocks(occurrence, block_ids):
+    """Select the full initial form and only transitions actually shown here."""
+    first = min(int(b.rsplit('b',1)[1]) for b in block_ids)
+    last = max(int(b.rsplit('b',1)[1]) for b in block_ids)
+    active = occurrence['states'][0]
+    selected, transitions = [], []
+    for transition in occurrence.get('transitions', []):
+        change_at = min(int(b.rsplit('b',1)[1]) for b in transition['source']['block_ids'])
+        if change_at < first:
+            active = transition['to']
+        elif change_at <= last:
+            if not set(transition['source']['block_ids']) <= set(block_ids):
+                raise ValueError('shot must cover its complete state transition evidence')
+            if not selected:
+                selected.append(active)
+            selected.append(transition['to'])
+            transitions.append(transition)
+    return selected or [active], transitions
+
+
 def compile_shots(store, production):
     lock=json.loads((ROOT/'production/source-lock.json').read_text())
     source_bytes=(ROOT/'imports/screenplay-04.json').read_bytes()
@@ -243,6 +263,8 @@ def compile_shots(store, production):
     def source(scene,ids):
         return {**episode_ref,'scene_id':f's{scene:03d}','block_ids':[f"screenplay-04-lantern-home-s{scene:03d}-b{b:03d}" for b in ids]}
     records=[]; covered=set(); all_cues=[]; total_frames=0
+    occurrences = {sn: {o['entity']['object_id']: o for o in production.record(store, f'preparation-s{sn:03d}')['payload']['occurrences']}
+                   for sn in (1,2)}
     voices={'李寄':'li-ji','阿蘅':'a-heng','周掌柜':'zhou','赵执事':'zhao','老汉':'woodcutter'}
     for index,item in enumerate(SHOTS,1):
         (scene,ids,seconds,title,purpose,framing,spatial,start,end,continuity,entities,states,props,motion,fx)=item
@@ -277,25 +299,33 @@ def compile_shots(store, production):
         actor_keys=[v for v in entities.split(',') if v]
         prop_keys=[v for v in props.split(',') if v]
         sound_entity_keys=['boat-song'] if index in (1,3) else ['stage-drum'] if index==32 else []
-        state_refs=[ref('state-'+v) for v in states.split(',') if v]
+        state_refs, state_transitions, first_states, last_states = [], [], [], []
+        for key in dict.fromkeys(actor_keys+prop_keys+sound_entity_keys):
+            occurrence = occurrences[scene].get('entity-'+key)
+            if not occurrence or occurrence['mode']=='mention':
+                raise ValueError('shot entity has no actual scene occurrence: '+key)
+            full, changes = complete_states_for_blocks(occurrence, block_ids)
+            state_refs.extend(full); state_transitions.extend(changes)
+            first_states.append(full[0]); last_states.append(full[-1])
         shot=record(oid,'SHOT_DESIGN',f'E01-{index:03d} {title}',purpose,
                     episode=episode_ref,scene_id=f's{scene:03d}',source=source(scene,numbers(ids)),number=index,
                     purpose=purpose,framing=framing,spatial=spatial,action_start=start,action_end=end,
                     continuity=continuity,duration_frames=seconds*24,fps=24,sound=sound,
                     entities=[ref('entity-'+v) for v in dict.fromkeys(actor_keys+prop_keys+sound_entity_keys)],states=state_refs,
+                    state_model='complete-v1',state_transitions=state_transitions,
                     motion=motion,planned_start_frame=total_frames,visual_status='尚未生成分镜画面')
         records.append(shot);total_frames+=seconds*24
         scope={'object_id':oid,'revision_id':'@'+oid}
-        def need(slot,title,purpose,media,usage,entity_keys=(),required=True,spec=None):
+        def need(slot,title,purpose,media,usage,entity_keys=(),required=True,spec=None,forms=None):
             needed_entity_ids={'entity-'+key for key in entity_keys}
-            relevant_states=[s for s in state_refs if production.record(store,s['object_id'])['payload']['entity']['object_id'] in needed_entity_ids] if media=='image' else []
+            relevant_states=[s for s in (forms if forms is not None else state_refs) if production.record(store,s['object_id'])['payload']['entity']['object_id'] in needed_entity_ids]
             records.append(record('need-'+oid+'-'+slot,'REQUIREMENT',f'E01-{index:03d} · {title}',purpose,
                 scope=scope,slot=slot,purpose=purpose,media_type=media,usage=usage,required=required,
                 entities=[ref('entity-'+key) for key in entity_keys],states=relevant_states,
                 specification=spec or {}))
         image_spec={'minimum_long_edge':3840,'native_4k':True}
         need('composition','构图／关键画面','按本镜空间、景别和动作起点形成 16:9 构图图；关键手部接触不得被背景遮挡。','image','generation_input',actor_keys+prop_keys,
-             spec={**image_spec,'minimum_width':3840,'minimum_height':2160})
+             spec={**image_spec,'minimum_width':3840,'minimum_height':2160},forms=first_states)
         for key in actor_keys:
             entity=production.record(store,'entity-'+key)['payload']
             if entity['entity_type']=='character':
@@ -306,13 +336,15 @@ def compile_shots(store, production):
             entity=production.record(store,'entity-'+key)['payload']
             need('prop-'+key,entity['title']+'参考','可用独立原件或经审阅的组合图局部；采用须绑定具体文件与必要裁切。','image','generation_input',[key],spec=image_spec)
         for n,cue in enumerate(dialogue,1):
+            cue_keys=[cue['entity']['object_id'].removeprefix('entity-')]+(['boat-song'] if cue['type']=='singing' else [])
+            cue_states=[s for key in cue_keys for s in complete_states_for_blocks(occurrences[scene]['entity-'+key],cue['source']['block_ids'])[0]]
             need(f'voice-{n:02d}',cue['speaker']+('演唱' if cue['type']=='singing' else '对白'),cue['text'],
-                 'audio','post_audio',[cue['entity']['object_id'].removeprefix('entity-')]+(['boat-song'] if cue['type']=='singing' else []),
+                 'audio','post_audio',cue_keys,forms=cue_states,
                  spec={'minimum_sample_rate':48000,'exact_text':cue['text'],'cue_id':cue['id'],
                  'planned_start_frame':cue['planned_start_frame'],'planned_end_frame':cue['planned_end_frame'],'fps':24})
         need('soundscape','环境与动作声',fx,'audio','post_audio',['stage-drum'] if index==32 else [],spec={'minimum_sample_rate':48000})
         if index in (2,7,9,12,14,16,17,18,19,23,24,25,30,32):
-            need('end-keyframe','动作结束与下一镜承接图','同时标明交接后的手、书、袋、纸或人物位置，供关键动作生成和下一镜连续性参考。','image','generation_input',actor_keys+prop_keys,spec=image_spec)
+            need('end-keyframe','动作结束与下一镜承接图','同时标明交接后的手、书、袋、纸或人物位置，供关键动作生成和下一镜连续性参考。','image','generation_input',actor_keys+prop_keys,spec=image_spec,forms=last_states)
     expected={b['id'] for b in script['blocks']}
     if covered!=expected:raise ValueError('episode block coverage mismatch: '+str(expected-covered))
     dialogue_ids=[c['source']['block_ids'][0] for c in all_cues]
@@ -342,7 +374,8 @@ def render(document,cues,frames,names):
         for cue in p['sound']:
             lines.append('- '+(f"{cue['id']} · {cue['speaker']}（{'唱' if cue['type']=='singing' else '说'}）：{cue['text']}" if 'text' in cue else cue['description']))
         lines.extend(['','出场或发声实体：'+'、'.join(names[r['object_id']] for r in p['entities'])+'。','',
-                      '剧情状态：'+('、'.join(names[r['object_id']] for r in p['states']) or '沿用实体常态')+'。','',
+                      '完整状态（同一实体按动作顺序列出）：'+'、'.join(names[r['object_id']] for r in p['states'])+'。','',
+                      '状态转换：'+('；'.join(names[t['from']['object_id']]+' → '+names[t['to']['object_id']]+'，依据 '+','.join(b.rsplit('-',1)[-1] for b in t['source']['block_ids']) for t in p['state_transitions']) or '本镜完整形态不变，动作与位置变化见上文')+'。','',
                       '必要素材：',''])
         shot_id=next(r['object_id'] for r in document['records'] if r['payload'] is p)
         needs=[r['payload'] for r in document['records'] if r['kind']=='REQUIREMENT' and r['payload']['scope']['object_id']==shot_id]

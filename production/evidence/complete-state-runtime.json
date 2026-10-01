@@ -1,0 +1,90 @@
+{
+  "system_commit": "66578a5a84da0e3ea1cbd6dd25d20674878d1d59",
+  "migration": {
+    "changed_records": 1723,
+    "changed_by_kind": {
+      "ENTITY": 6,
+      "STATE": 267,
+      "REQUIREMENT": 1375,
+      "PREPARATION": 42,
+      "SHOT_DESIGN": 33
+    },
+    "entities": 133,
+    "complete_states": 267,
+    "legacy_states_preserved": 86,
+    "checked_entity_uses": 824,
+    "state_coverage_issues": [],
+    "withdrawn_needs": [
+      "need-preparation-s013-visual-entity-stop-order",
+      "need-preparation-s017-visual-entity-heavy-blade",
+      "need-preparation-s028-visual-entity-work-ledger",
+      "need-preparation-s034-visual-entity-heavy-blade"
+    ],
+    "protected_heads_digest": "397828c6c3adbbba2e006826b4cad307fee60a01d352afa0f5b04315b0480d4b",
+    "idempotent_replan_changed_records": 0
+  },
+  "preservation": {
+    "sources": true,
+    "comments": true,
+    "comment_events": true,
+    "configurations": true,
+    "configuration_events": true,
+    "all_old_revisions_unchanged": true,
+    "all_expected_new_heads": true,
+    "no_creative_adoptions": true,
+    "all_preservation_checks": true
+  },
+  "old_revisions_retained": 1758,
+  "current_production_objects": 2006,
+  "complete_state_count": 267,
+  "overall_requirements": 265,
+  "e1": {
+    "required_count": 361,
+    "missing_count": 361,
+    "unique_states": 41,
+    "ready": false,
+    "coverage_issues": []
+  },
+  "runtime": {
+    "container_id": "de3699e6cbe9c2c98666cebec70429b7e24204c01c048c3e4b8a4ea99e8f12cf",
+    "image_id": "sha256:e114c6cb3c0c35bc3c0273c3313d545beae969c59168ed4f3f1d31f1defc5909",
+    "restart": {
+      "Name": "unless-stopped",
+      "MaximumRetryCount": 0
+    },
+    "ports": {
+      "8765/tcp": [
+        {
+          "HostIp": "127.0.0.1",
+          "HostPort": "39103"
+        }
+      ]
+    },
+    "matched_source_files": 30,
+    "http": {
+      "/?workspace=settings.workspace": {
+        "status": 200,
+        "bytes": 8036
+      },
+      "/?workspace=materials.workspace": {
+        "status": 200,
+        "bytes": 8036
+      },
+      "/?workspace=production.workspace": {
+        "status": 200,
+        "bytes": 8036
+      },
+      "/api/production": {
+        "status": 200,
+        "bytes": 4536283
+      }
+    }
+  },
+  "tests": {
+    "story_python": 70,
+    "system_python": 58,
+    "navigation_node": 5,
+    "skipped": 0
+  },
+  "formal_3000_changed": false
+}

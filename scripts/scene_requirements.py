@@ -47,9 +47,7 @@ def compile_needs(store, production):
                     'image', refs, occurrence['states'], occurrence['evidence'])
                 image_count += 1
             if occurrence['mode'] in ('voice', 'visual_voice'):
-                sound_states = [state for state in occurrence['states']
-                                if {'voice', 'performance', 'emotion', 'health', 'fatigue'} &
-                                production.ref_record(store, state, {'STATE'})['payload']['dimensions'].keys()]
+                sound_states = occurrence['states']
                 add('sound-' + entity['object_id'], ep['title'] + '实际声音',
                     '按本场定稿正文保留实际对白、演唱或声音事件；原歌词不改写，未写出的歌词不补唱。具体句段在后续逐镜拆解时锁定。',
                     'audio', refs, sound_states, occurrence['evidence'])
@@ -84,7 +82,7 @@ def main():
         lines = ['# 全剧集场需求登记', '',
                  '版本四的 42 场均已完成实体检查。第一集两场细化到 33 镜，见 [逐镜设计](episode01/shots.md)；此表登记其余 40 场实际呈现／发声所需的素材，不要求本任务生产后续各集媒体。', '',
                  '一项需求表示一个使用位置，不等于必须新造一个文件。同一素材可服务多个场或多个实体；同场不同剧情状态保留独立状态引用。仅提及的人和物不据此要求画面；每场环境与动作声可以按需要复用、分层或裁切。', '',
-                 '声音需求只关联嗓音、演唱方式、情绪、健康或疲劳等会影响表演的状态，不把服装、掌心痕迹等纯外观状态作为录音条件。', '',
+                 '画面与声音均引用完整状态；声音素材可以登记为该完整状态的声音补充，按声音用途核对音色、演唱方式、健康与疲劳，不要求声音文件解释衣着。一个状态保留整体参考，再按需要关联细节、角度和声音。', '',
                  '表中数量是计划槽位数，不是已经制作的素材数。需求仍需在后续镜头设计时确定角度、时段与具体版本；没有用图像提示词、平台链接或占位声充作实际媒体。', '',
                  '| 集 | 场 | 场次 | 画面参考槽位 | 声音槽位 |',
                  '| --- | --- | --- | ---: | ---: |']
