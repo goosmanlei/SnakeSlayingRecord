@@ -1,0 +1,362 @@
+{
+  "date": "2026-10-01",
+  "browser": "Chrome (connected browser 1)",
+  "isolated_test": "http://127.0.0.1:39106/",
+  "delivered_url": "http://127.0.0.1:39103/?workspace=settings.workspace&production_object=state-bag-advance&production_revision=8ba1c5a0fcd85444094827c55424a62523097d0501dd6673f8eb3e6de0868203&production_entity=entity-rice-bag",
+  "checks": [
+    {
+      "check": "entity-only index and counts",
+      "children": [
+        {
+          "id": "state-bag-advance",
+          "selected": "false",
+          "text": "工米与许家预付米同袋"
+        },
+        {
+          "id": "state-bag-refund",
+          "selected": "false",
+          "text": "清账退粮入袋"
+        },
+        {
+          "id": "state-bag-returned",
+          "selected": "false",
+          "text": "预付米已退还、袋口扎紧"
+        },
+        {
+          "id": "state-bag-wages",
+          "selected": "false",
+          "text": "装有当日工米"
+        }
+      ],
+      "entity": "道具 · 阿蘅米袋",
+      "filters": [
+        {
+          "label": "内容分类：全部实体，133 个实体",
+          "selected": "true"
+        },
+        {
+          "label": "内容分类：角色，51 个实体",
+          "selected": "false"
+        },
+        {
+          "label": "内容分类：场景，16 个实体",
+          "selected": "false"
+        },
+        {
+          "label": "内容分类：道具，62 个实体",
+          "selected": "false"
+        },
+        {
+          "label": "内容分类：歌曲，4 个实体",
+          "selected": "false"
+        }
+      ],
+      "rows": [
+        {
+          "active": true,
+          "id": "entity-rice-bag",
+          "text": "阿蘅米袋4 个状态道具"
+        }
+      ],
+      "summary": "当前结果：133 个实体",
+      "title": "阿蘅米袋",
+      "url": "http://127.0.0.1:39106/?workspace=settings.workspace&production_object=entity-rice-bag&production_revision=d263ed71c5aa09fe03c631a72450c016e57a418059994777817db12892f4cca2",
+      "version": "版本 1 · d263ed71c5aa09fe03c631a72450c016e57a418059994777817db12892f4cca2 · 当前版本",
+      "passed": true,
+      "row_count": 133
+    },
+    {
+      "check": "flat prop facet counts entities",
+      "rows": 62,
+      "passed": true
+    },
+    {
+      "check": "bag appears once with four states",
+      "children": [
+        {
+          "id": "state-bag-advance",
+          "selected": "false",
+          "text": "工米与许家预付米同袋"
+        },
+        {
+          "id": "state-bag-refund",
+          "selected": "false",
+          "text": "清账退粮入袋"
+        },
+        {
+          "id": "state-bag-returned",
+          "selected": "false",
+          "text": "预付米已退还、袋口扎紧"
+        },
+        {
+          "id": "state-bag-wages",
+          "selected": "false",
+          "text": "装有当日工米"
+        }
+      ],
+      "entity": "道具 · 阿蘅米袋",
+      "filters": [
+        {
+          "label": "内容分类：全部实体，1 个实体",
+          "selected": "false"
+        },
+        {
+          "label": "内容分类：角色，0 个实体",
+          "selected": "false"
+        },
+        {
+          "label": "内容分类：场景，0 个实体",
+          "selected": "false"
+        },
+        {
+          "label": "内容分类：道具，1 个实体",
+          "selected": "true"
+        },
+        {
+          "label": "内容分类：歌曲，0 个实体",
+          "selected": "false"
+        }
+      ],
+      "rows": [
+        {
+          "active": true,
+          "id": "entity-rice-bag",
+          "text": "阿蘅米袋4 个状态道具"
+        }
+      ],
+      "summary": "当前结果：1 个实体",
+      "title": "阿蘅米袋",
+      "url": "http://127.0.0.1:39106/?workspace=settings.workspace&production_object=entity-rice-bag&production_revision=d263ed71c5aa09fe03c631a72450c016e57a418059994777817db12892f4cca2",
+      "version": "版本 1 · d263ed71c5aa09fe03c631a72450c016e57a418059994777817db12892f4cca2 · 当前版本",
+      "passed": true
+    },
+    {
+      "check": "state selection retains entity highlight",
+      "title": "阿蘅米袋·工米与许家预付米同袋",
+      "url": "http://127.0.0.1:39106/?workspace=settings.workspace&production_object=state-bag-advance&production_revision=8ba1c5a0fcd85444094827c55424a62523097d0501dd6673f8eb3e6de0868203&production_entity=entity-rice-bag",
+      "passed": true
+    },
+    {
+      "check": "historical state revision stays exact inside entity",
+      "children": [
+        {
+          "id": "state-bag-advance",
+          "selected": "true",
+          "text": "米袋·追加许家预付米"
+        },
+        {
+          "id": "state-bag-refund",
+          "selected": "false",
+          "text": "清账退粮入袋"
+        },
+        {
+          "id": "state-bag-returned",
+          "selected": "false",
+          "text": "预付米已退还、袋口扎紧"
+        },
+        {
+          "id": "state-bag-wages",
+          "selected": "false",
+          "text": "装有当日工米"
+        }
+      ],
+      "entity": "道具 · 阿蘅米袋",
+      "filters": [
+        {
+          "label": "内容分类：全部实体，1 个实体",
+          "selected": "false"
+        },
+        {
+          "label": "内容分类：角色，0 个实体",
+          "selected": "false"
+        },
+        {
+          "label": "内容分类：场景，0 个实体",
+          "selected": "false"
+        },
+        {
+          "label": "内容分类：道具，1 个实体",
+          "selected": "true"
+        },
+        {
+          "label": "内容分类：歌曲，0 个实体",
+          "selected": "false"
+        }
+      ],
+      "rows": [
+        {
+          "active": true,
+          "id": "entity-rice-bag",
+          "text": "阿蘅米袋4 个状态道具"
+        }
+      ],
+      "summary": "当前结果：1 个实体",
+      "title": "米袋·追加许家预付米",
+      "url": "http://127.0.0.1:39106/?workspace=settings.workspace&production_object=state-bag-advance&production_revision=fd5c09a0cae7ccfdbf7c852ad12901a8138ae200c6614c6e990ba0c5afc990e8&production_entity=entity-rice-bag",
+      "version": "版本 1 · fd5c09a0cae7ccfdbf7c852ad12901a8138ae200c6614c6e990ba0c5afc990e8 · 历史版本",
+      "passed": true
+    },
+    {
+      "check": "historical deep link survives reload",
+      "title": "米袋·追加许家预付米",
+      "version": "版本 1 · fd5c09a0cae7ccfdbf7c852ad12901a8138ae200c6614c6e990ba0c5afc990e8 · 历史版本",
+      "passed": true
+    },
+    {
+      "check": "state content search returns owner once and preserves exact reader/draft",
+      "rows": [
+        {
+          "active": true,
+          "id": "entity-rice-bag",
+          "text": "阿蘅米袋4 个状态道具"
+        },
+        {
+          "active": false,
+          "id": "entity-zhou",
+          "text": "周掌柜2 个状态角色"
+        }
+      ],
+      "title": "米袋·追加许家预付米",
+      "draft": true,
+      "passed": true
+    },
+    {
+      "check": "historical state draft restores after entity navigation",
+      "passed": true
+    },
+    {
+      "check": "state source opens precise screenplay revision",
+      "text": "第01集 两份米 · 01-01 米铺门口\n\n引用修订 8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e · 当前修订\n\nscreenplay-04-lantern-home-s001-b023\n\n周掌柜回到柜边，另外抓来一小把米。他示意阿蘅重新撑开袋口，把米添进去。\n\n关闭来源",
+      "passed": true
+    },
+    {
+      "check": "state usage opens exact shot",
+      "stateRefs": [
+        {
+          "text": "阿蘅米袋·工米与许家预付米同袋",
+          "title": "state-bag-advance · fd5c09a0cae7ccfdbf7c852ad12901a8138ae200c6614c6e990ba0c5afc990e8"
+        }
+      ],
+      "title": "E01-012 另外预付的一小把",
+      "url": "http://127.0.0.1:39106/?workspace=production.workspace&production_object=shot-e01-012&production_revision=06f4959ee076175f81aa584e010eed9ef3a9fdcbf0633cbe2e00fc1023f70ae9",
+      "passed": true
+    },
+    {
+      "check": "shot state reference opens historical version inside owner entity",
+      "title": "米袋·追加许家预付米",
+      "version": "版本 1 · fd5c09a0cae7ccfdbf7c852ad12901a8138ae200c6614c6e990ba0c5afc990e8 · 历史版本",
+      "entity": "道具 · 阿蘅米袋",
+      "passed": true
+    },
+    {
+      "check": "internal state: 装有当日工米",
+      "title": "阿蘅米袋·装有当日工米",
+      "url": "http://127.0.0.1:39106/?workspace=settings.workspace&production_object=state-bag-wages&production_revision=9e22326be8d01826941791a98854978b3b7531461ecbce70d51e76c441dd6899&production_entity=entity-rice-bag",
+      "passed": true
+    },
+    {
+      "check": "internal state: 预付米已退还、袋口扎紧",
+      "title": "阿蘅米袋·预付米已退还、袋口扎紧",
+      "url": "http://127.0.0.1:39106/?workspace=settings.workspace&production_object=state-bag-returned&production_revision=9d6a19e98fde07cce5e738dae62c0fdd3434f2974b8d763b7822c884dd5270c1&production_entity=entity-rice-bag",
+      "passed": true
+    },
+    {
+      "check": "internal state: 清账退粮入袋",
+      "title": "阿蘅米袋·清账退粮入袋",
+      "url": "http://127.0.0.1:39106/?workspace=settings.workspace&production_object=state-bag-refund&production_revision=ccbe88e6375fa19b6f42f752324a0cbfb64a9210d005d68d9b5064d156f7bb14&production_entity=entity-rice-bag",
+      "passed": true
+    },
+    {
+      "check": "entity without states remains accessible",
+      "title": "阿禾",
+      "children": [],
+      "passed": true
+    },
+    {
+      "check": "39103 deployed entity hierarchy and counts",
+      "children": [
+        {
+          "id": "state-bag-advance",
+          "selected": "false",
+          "text": "工米与许家预付米同袋"
+        },
+        {
+          "id": "state-bag-refund",
+          "selected": "false",
+          "text": "清账退粮入袋"
+        },
+        {
+          "id": "state-bag-returned",
+          "selected": "false",
+          "text": "预付米已退还、袋口扎紧"
+        },
+        {
+          "id": "state-bag-wages",
+          "selected": "false",
+          "text": "装有当日工米"
+        }
+      ],
+      "entity": "道具 · 阿蘅米袋",
+      "filters": [
+        {
+          "label": "内容分类：全部实体，133 个实体",
+          "selected": "true"
+        },
+        {
+          "label": "内容分类：角色，51 个实体",
+          "selected": "false"
+        },
+        {
+          "label": "内容分类：场景，16 个实体",
+          "selected": "false"
+        },
+        {
+          "label": "内容分类：道具，62 个实体",
+          "selected": "false"
+        },
+        {
+          "label": "内容分类：歌曲，4 个实体",
+          "selected": "false"
+        }
+      ],
+      "rows": [
+        {
+          "active": true,
+          "id": "entity-rice-bag",
+          "text": "阿蘅米袋4 个状态道具"
+        }
+      ],
+      "summary": "当前结果：133 个实体",
+      "title": "阿蘅米袋",
+      "url": "http://127.0.0.1:39103/?workspace=settings.workspace&production_object=entity-rice-bag&production_revision=d263ed71c5aa09fe03c631a72450c016e57a418059994777817db12892f4cca2",
+      "version": "版本 1 · d263ed71c5aa09fe03c631a72450c016e57a418059994777817db12892f4cca2 · 当前版本",
+      "count": 133,
+      "passed": true
+    },
+    {
+      "check": "39103 materials workspace regression",
+      "heading": "素材管理",
+      "media": 1,
+      "title": "阿蘅舟行曲演唱候选",
+      "passed": true
+    },
+    {
+      "check": "39103 production workspace regression",
+      "basis": "剧本依据：版本四 · 已确认 · 17 集",
+      "rows": 33,
+      "title": "E01-001 河街唱曲开场",
+      "passed": true
+    },
+    {
+      "check": "39103 state detail keeps entity context",
+      "title": "阿蘅米袋·工米与许家预付米同袋",
+      "url": "http://127.0.0.1:39103/?workspace=settings.workspace&production_object=state-bag-advance&production_revision=8ba1c5a0fcd85444094827c55424a62523097d0501dd6673f8eb3e6de0868203&production_entity=entity-rice-bag",
+      "passed": true
+    }
+  ],
+  "screenshot": "entity-hierarchy.jpg",
+  "limits": [
+    "No new production data or review decisions were written. The isolated draft was cancelled.",
+    "Current production data has no REPRESENTATION objects; multi-entity and project setting ownership was covered by navigation unit tests, not real creative settings."
+  ]
+}
