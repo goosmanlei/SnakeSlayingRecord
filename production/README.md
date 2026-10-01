@@ -13,7 +13,7 @@
 | 后续各集计划需求 | [集场需求](scene-requirements.md)，其余 40 场登记 786 项；不要求本任务生产后续集媒体 |
 | 第一集动作、空间与声音 | [33 镜设计](episode01/shots.md)、[精确数据及 320 个必要槽位](episode01/shots.json)、[37 个对白／演唱单元](episode01/dialogue-cues.json) |
 | 实际提示词、输入与调用结果 | [requests](requests/)、[receipts](receipts/)和[登记批次](baseline-records/)；均区分计划与实际制作 |
-| 完整生产修订历史及文件清单 | [replay.json](replay.json)，包含 2,139 个生产对象、3,482 个修订、14 个实际文件组成；保留 86 个历史局部状态、此前命名复核及 133 份实体送审 |
+| 完整生产修订历史及文件清单 | [replay.json](replay.json)，包含 2,139 个生产对象、3,482 个修订、14 个实际文件组成；保留 86 个历史局部状态、此前命名复核及 133 份旧送审记录（仅历史追溯） |
 | 系统设计、关系图及 API／CLI | 本任务独立通用系统工作区的 [docs/production.md](../.runtime/review-desk-worktree/docs/production.md)，代码版本以本故事 [config/instance.json](../config/instance.json)为准；未集成到正式系统 |
 | 已执行验证与具体限制 | [verification.md](verification.md) |
 
@@ -21,9 +21,9 @@
 
 制作设定按实体浏览，筛选区平铺全部 133 个实体及角色 51、场景 16、道具 62、歌曲 4。列表每个实体只出现一次，并标出完整状态数；例如“阿蘅米袋 · 5 个完整状态”。打开实体即显示上方的身份、别名、基础说明和其他基础信息，下方平铺状态及制作设定；默认选择按剧情来源排序的首个完整状态并标为“基础状态”，切换时上方信息保持显示。搜索别名、状态或设定描述也能找到所属实体。分类数量保留搜索条件后计算，不重复累计历史版本，零数量项仍可见；“清除筛选”同时清除搜索与分类。状态的旧链接、准确版本与评论保留，镜头引用仍打开当时指定的状态版本。
 
-实体卡直接完成审阅：状态左侧展示明确送审的整体／细节媒体，右侧展示完整描述，窄屏上下排列；无媒体时显示简短缺项说明。用户可以评论基础信息、状态、媒体区域／时间段或整个实体，评论面板汇总本份送审的所有相关意见。页面不提供内容编辑、需求维护或“需修改”按钮，Codex 根据评论通过工具修订并重新送审。
+实体卡常驻基础信息，下方平铺完整状态并默认基础状态；关联参考素材和完整描述并列展示。用户直接评论 AI 的当前产出，Codex 根据准确版本的意见修订，保存后即可继续审阅，无送审步骤。页面没有内容修改入口。
 
-“认可整个实体”覆盖同一份送审中的基础信息、全部完整状态和明确提交的媒体版本，不随当前选中状态改变。当前 133 份初始送审只有文字范围、零项媒体，均待用户认可；旧素材适配核对后才能显式加入新送审。新增状态或内容修订使旧送审待更新，历史认可继续可查；新增评论和未送入的候选不改写旧认可。认可不表示素材采用、首轮基准全部通过或第一集就绪。
+“采纳当前版本”可选，覆盖当前基础信息、全部完整状态和关联素材；采纳后仍可评论。新内容不继承旧采纳，历史意见与采纳保留。李寄、阿蘅等已有图像／声音候选直接显示；尚未核对具体完整状态的素材标为实体参考，不算满足状态要求。此前 133 份旧送审记录仅保留历史，不显示于状态选项或实体筛选，不再生成新记录。本次没有代替用户采纳真实内容。
 
 “正式输入”不列入制作设定；267 个完整状态在所属实体内部展示，不计入实体数量。全剧制作顶部只显示“剧本依据：版本四 · 已确认 · 17 集”，没有确认说明入口；底层记录与历史引用保留。默认打开第一集 33 镜，切换分集和场次后可点击“检查本集／本场素材缺项”，每页最多显示 20 项。单镜详情显示该镜需求，进入页面不自动展开全剧缺项。这里的剧本确认不代表制作基准或第一集素材已被接受。
 
@@ -63,13 +63,13 @@ docker start snakeslayingrecord-production-task-0003
 docker logs --tail 40 snakeslayingrecord-production-task-0003
 ```
 
-只有该容器尚不存在时，才从故事任务工作区根目录执行以下创建命令。先确认实例数据库已经存在，并核对本地镜像版本。当前镜像的 32 个系统文件与 `34f33b4c989de1d7f8e08c5e3c0bb01f920a8e00` 一致，镜像摘要及本次更新验证见 [entity-review-runtime.json](evidence/entity-review-runtime.json)。服务设有两秒套接字空闲超时，避免浏览器空预连接无限阻塞页面；业务操作仍在同一数据库线程执行。这一步只启动现有实例，不初始化或覆盖数据。
+只有该容器尚不存在时，才从故事任务工作区根目录执行以下创建命令。先确认实例数据库已经存在，并核对本地镜像版本。当前镜像的 32 个系统文件与 `6bca5a8b89600a1f5d40187d85cbc0978607b985` 一致，镜像摘要及本次更新验证见 [direct-entity-review-runtime.json](evidence/direct-entity-review-runtime.json)。服务设有两秒套接字空闲超时，避免浏览器空预连接无限阻塞页面；业务操作仍在同一数据库线程执行。这一步只启动现有实例，不初始化或覆盖数据。
 
 ```bash
 test -f .runtime/production/review-instance/.runtime/review.sqlite3 && \
 docker run -d --name snakeslayingrecord-production-task-0003 \
  --restart unless-stopped --label codex.task=task-20260929-0003 \
-  --label codex.system-revision=34f33b4c989de1d7f8e08c5e3c0bb01f920a8e00 \
+  --label codex.system-revision=6bca5a8b89600a1f5d40187d85cbc0978607b985 \
   -p 127.0.0.1:39103:8765 \
   --mount "type=bind,source=$PWD/.runtime/production/review-instance,target=/instance" \
   story-review-desk:task-20260929-0003-production
@@ -102,19 +102,19 @@ PYTHONPATH="$production_system" python3 -m review_desk \
 
 整理完成后，从真实制作实例执行 `production_review.py ... snapshot --instance ...` 保存新的精确重放；不要从操作测试实例保存。正式发布前仍须读取最新正式数据与代码，合并候选后复验，不以本次启动快照覆盖用户新增评论。
 
-## 实体送审与后续修订
+## 直接审阅与后续修订
 
-首次送审使用 `scripts/prepare_entity_reviews.py`。默认从真实实例读取实体及全部完整状态，只准备和校验尚无送审记录的实体；不会自动送入旧素材，也不会覆盖已经存在或已经过时的送审。当前 133 份已导入，重复准备应返回零新增；[初始批次](entity-review-submissions.json)仅作追溯，不重复导入。
+内容由 AI 通过共用业务接口新增修订，用户打开实体即可审阅。读取整份实体内容：
 
 ```bash
-python3 scripts/prepare_entity_reviews.py --system "$production_system" \
+PYTHONPATH="$production_system" python3 -m review_desk \
   --instance .runtime/production/review-instance \
-  --output .runtime/production/entity-review-next.json
+  production-entity-review entity-li-ji
 ```
 
-新增实体的初始批次回读无误后，可在同一命令追加 `--import-records`。已有实体修订则读取当前送审，通过共用 `production-import` 提交送审新版本：携带 `expected_version` 与 `expected_heads`，包含全部完整状态的准确版本，媒体显式列出素材修订、文件组成、整体／细节角色及范围。具体契约见系统 `docs/production.md`。用户在页面点击“认可整个实体”后，后台才记录对应送审的认可；Codex 不代替用户点击。
+HTTP 对应 `/api/production/entity-review?entity_id=entity-li-ji`，查询不写数据库。读取过去采纳的准确内容时，CLI 追加 `--revision 采纳判断的修订`，HTTP 追加 `revision_id`。无需执行初始化或准备送审；原初始化脚本已退役，历史批次 `entity-review-submissions.json` 只供追溯，不重复导入。
 
-读取同一审阅聚合使用 `production-entity-review ENTITY_ID`，历史送审追加 `--revision SHA`；HTTP 对应 `/api/production/entity-review?entity_id=ENTITY_ID&revision_id=SHA`。新送审保留旧范围、旧评论和旧认可；上游变化时先核对影响，再决定具体返工与重新送审内容。
+Codex 读取意见后，通过 `production-import` 新建相应 ENTITY、STATE 或 ASSET 修订，带上 `expected_version` 及必要的 `expected_heads`，不得覆盖原稿与历史锚点。用户点击“采纳当前版本”才记录具体内容范围，Codex 不代替用户操作；新评论不改变已有采纳。详细字段、并发和恢复契约见系统 `docs/production.md`。
 
 ## 完整状态整理与迁移
 
@@ -136,7 +136,7 @@ python3 scripts/migrate_complete_states.py apply \
 
 提交在同一事务中检查所有读取依赖和每项记录版本；并发变化会使整批回滚，应重新预演和核对。相同源数据重新预演返回零变化。迁移不改旧局部状态、素材、实际调用、采用或审阅结论；不再适用的计划需求以撤回修订保留理由。当前批次已完成，不需再次导入初始 JSON；后续整理同样通过受控增量修订与快照交接。
 
-本轮已分别完成包含实体送审的生产重放与完整库恢复。重放目录 `.runtime/production/recovered-entity-review-final` 含 2,139 个生产对象、3,482 个生产修订及基础故事的 264 条评论；完整库目录 `.runtime/production/bundle-entity-review-final` 含 2,262 个总对象、3,614 个总修订、任务实例全部 266 条评论、295 条评论事件及 70 个清单文件。后者包括本任务此前两条图像／声音技术锚点意见；不能混称为正式作品决定。详情见 [恢复证据](evidence/entity-review-recovery.json)。39109 的 `.runtime/production/entity-review-test` 含本轮技术评论、认可与新送审，不作为真实制作导出。运行实例、恢复副本和正式 3000 数据相互独立，不能用恢复副本覆盖最新运行数据。
+本轮真实生产重放在 `.runtime/production/recovered-direct-review-final`，含 2,139 个生产对象、3,482 个修订、14 个文件组成与基础故事 264 条评论；完整库恢复在 `.runtime/production/bundle-direct-review-real`，含 2,262 个总对象、3,614 个修订、266 条评论、295 条评论事件和 70 个清单文件，8 张表逐项一致。已有 133 份旧送审记录只供历史恢复，正常页面直接读取实体内容。另用 `.runtime/production/direct-review-test` 验证采纳后继续评论、新修订及历史定位，并分别完成完整库与生产重放恢复；这些技术决定与三条新测试意见没有进入真实任务库。详见 [恢复证据](evidence/direct-entity-review-recovery.json)。恢复副本不覆盖最新运行数据。
 
 ## 下一次制作交接
 
