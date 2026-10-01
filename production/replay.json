@@ -86301,6 +86301,351 @@
           }
         },
         {
+          "object_id": "asset-aheng-voice-01",
+          "kind": "ASSET",
+          "expected_version": 1,
+          "payload": {
+            "blocks": [
+              {
+                "id": "description",
+                "text": "第一轮声线或演唱候选，真实 48 kHz WAV 原件；已核文件和返回字幕，尚未完成实际听审或用户接受。"
+              },
+              {
+                "id": "state-association",
+                "text": "所属实体：阿蘅。\n阿蘅·日常洗旧青衣：阿蘅日常声线候选：第一场向老汉解释、对李寄打趣；同一完整状态延续到第二场询问“会前两段。要唱几天？”。不覆盖后续连唱嗓哑、哭声或劳累状态。\n本次只明确候选归属与审阅范围，未生成新文件、未记录用户采纳或镜头采用。音频范围依据实际调用和平台返回字幕；尚未实际听辨，不作为最终剪辑点。"
+              }
+            ],
+            "components": [
+              {
+                "bytes": 3264044,
+                "channels": 2,
+                "duration_seconds": 17.0,
+                "file": "a041a61f5f37de8086eba7de160804c785587d1ae1ce024ef67246f846c69e84.wav",
+                "has_audio": true,
+                "id": "original",
+                "mime": "audio/wav",
+                "role": "original",
+                "sample_rate": 48000,
+                "sha256": "a041a61f5f37de8086eba7de160804c785587d1ae1ce024ef67246f846c69e84"
+              },
+              {
+                "bytes": 9020,
+                "file": "19762d45dcc6b1d293c653a474bb0261229bc7e6337875c13e66158ddaf6bd45.json",
+                "id": "receipt",
+                "mime": "application/json",
+                "role": "metadata",
+                "sha256": "19762d45dcc6b1d293c653a474bb0261229bc7e6337875c13e66158ddaf6bd45"
+              }
+            ],
+            "format": "production-asset-v1",
+            "lineage": {},
+            "media_type": "audio",
+            "placeholder": false,
+            "production": {
+              "object_id": "call-aheng-voice-01",
+              "revision_id": "7d3ed726cc17d4537c687cea7719b2af73d9a6bbbebd0e2ca8663f9cb372f44f"
+            },
+            "state_coverage": [
+              {
+                "component_id": "original",
+                "detail": "阿蘅日常声线候选：第一场向老汉解释、对李寄打趣；同一完整状态延续到第二场询问“会前两段。要唱几天？”。不覆盖后续连唱嗓哑、哭声或劳累状态。",
+                "range": {
+                  "end_seconds": 17,
+                  "start_seconds": 0
+                },
+                "role": "detail",
+                "state": {
+                  "object_id": "form-a-heng-blue",
+                  "revision_id": "302d4abd3abe057c98a86db6125514b32597a5b9123fd37b85587fc940946a21"
+                }
+              }
+            ],
+            "states": [
+              {
+                "object_id": "form-a-heng-blue",
+                "revision_id": "302d4abd3abe057c98a86db6125514b32597a5b9123fd37b85587fc940946a21"
+              }
+            ],
+            "subjects": [
+              {
+                "object_id": "entity-a-heng",
+                "revision_id": "c431d8382100c6eb6b88e84ce092de3fd7074f554fe1c7f362dcb25a9a90fe2c"
+              }
+            ],
+            "title": "阿蘅对白声线候选",
+            "verification": {
+              "file_inspected": true,
+              "listened": false,
+              "native_4k_passed": null,
+              "user_accepted": false,
+              "visually_inspected": false
+            }
+          }
+        },
+        {
+          "object_id": "asset-liji-voice-01",
+          "kind": "ASSET",
+          "expected_version": 1,
+          "payload": {
+            "blocks": [
+              {
+                "id": "description",
+                "text": "第一轮声线或演唱候选，真实 48 kHz WAV 原件；已核文件和返回字幕，尚未完成实际听审或用户接受。"
+              },
+              {
+                "id": "state-association",
+                "text": "所属实体：李寄。\n李寄·劳作后未擦手：第一场两句日常打趣对白的声线候选。字幕发声区间为 0.12–3.96 秒，审阅范围保留前后空白至 4.40 秒。仅说明声音，不替代完整视觉参考。\n李寄·已擦净双手：擦净手后制止与担心的两句对白候选。字幕从 4.88 秒“不会”至 12.28 秒末句；审阅范围取 4.40 秒至原件结尾。不是其他受伤或力竭状态的声线确认。\n本次只明确候选归属与审阅范围，未生成新文件、未记录用户采纳或镜头采用。音频范围依据实际调用和平台返回字幕；尚未实际听辨，不作为最终剪辑点。"
+              }
+            ],
+            "components": [
+              {
+                "bytes": 2377004,
+                "channels": 2,
+                "duration_seconds": 12.38,
+                "file": "90227903269315a0fde6b66cdcb91698d0c7737c2e1f6dddf593e6fe7fc8f014.wav",
+                "has_audio": true,
+                "id": "original",
+                "mime": "audio/wav",
+                "role": "original",
+                "sample_rate": 48000,
+                "sha256": "90227903269315a0fde6b66cdcb91698d0c7737c2e1f6dddf593e6fe7fc8f014"
+              },
+              {
+                "bytes": 7202,
+                "file": "96f92975c37b651d859cfeab8fb6144ba4d1de88e8a3da4121553d75570531df.json",
+                "id": "receipt",
+                "mime": "application/json",
+                "role": "metadata",
+                "sha256": "96f92975c37b651d859cfeab8fb6144ba4d1de88e8a3da4121553d75570531df"
+              }
+            ],
+            "format": "production-asset-v1",
+            "lineage": {},
+            "media_type": "audio",
+            "placeholder": false,
+            "production": {
+              "object_id": "call-liji-voice-01",
+              "revision_id": "ea8b407c347318ca4ad1eab24baba1a47d3a92a6809ff6780ba4052afb37c324"
+            },
+            "state_coverage": [
+              {
+                "component_id": "original",
+                "detail": "第一场两句日常打趣对白的声线候选。字幕发声区间为 0.12–3.96 秒，审阅范围保留前后空白至 4.40 秒。仅说明声音，不替代完整视觉参考。",
+                "range": {
+                  "end_seconds": 4.4,
+                  "start_seconds": 0
+                },
+                "role": "detail",
+                "state": {
+                  "object_id": "form-li-ji-paste",
+                  "revision_id": "d6f7001a09b36925a8baa68e9d403a5c482c35eb6893815f8b76c3958eb494e4"
+                }
+              },
+              {
+                "component_id": "original",
+                "detail": "擦净手后制止与担心的两句对白候选。字幕从 4.88 秒“不会”至 12.28 秒末句；审阅范围取 4.40 秒至原件结尾。不是其他受伤或力竭状态的声线确认。",
+                "range": {
+                  "end_seconds": 12.38,
+                  "start_seconds": 4.4
+                },
+                "role": "detail",
+                "state": {
+                  "object_id": "form-li-ji-clean",
+                  "revision_id": "bfb55043ef4662a4f0568c25f3e48d85a03cb6c13f6e01a12284fe1e076c9978"
+                }
+              }
+            ],
+            "states": [
+              {
+                "object_id": "form-li-ji-paste",
+                "revision_id": "d6f7001a09b36925a8baa68e9d403a5c482c35eb6893815f8b76c3958eb494e4"
+              },
+              {
+                "object_id": "form-li-ji-clean",
+                "revision_id": "bfb55043ef4662a4f0568c25f3e48d85a03cb6c13f6e01a12284fe1e076c9978"
+              }
+            ],
+            "subjects": [
+              {
+                "object_id": "entity-li-ji",
+                "revision_id": "28fdb4862c3820c89ef2a6eed1d9b36c9548a73055c894325180e07ad04d737f"
+              }
+            ],
+            "title": "李寄对白声线候选",
+            "verification": {
+              "file_inspected": true,
+              "listened": false,
+              "native_4k_passed": null,
+              "user_accepted": false,
+              "visually_inspected": false
+            }
+          }
+        },
+        {
+          "object_id": "asset-zhao-voice-01",
+          "kind": "ASSET",
+          "expected_version": 1,
+          "payload": {
+            "blocks": [
+              {
+                "id": "description",
+                "text": "第一轮声线或演唱候选，真实 48 kHz WAV 原件；已核文件和返回字幕，尚未完成实际听审或用户接受。"
+              },
+              {
+                "id": "state-association",
+                "text": "所属实体：赵执事。\n赵执事·基准完整形态：第二场腰挂钥匙的赵执事询问、招领唱及交词纸的三句对白候选。不自动关联钥匙被收走或押解时的形态。\n本次只明确候选归属与审阅范围，未生成新文件、未记录用户采纳或镜头采用。音频范围依据实际调用和平台返回字幕；尚未实际听辨，不作为最终剪辑点。"
+              }
+            ],
+            "components": [
+              {
+                "bytes": 2208044,
+                "channels": 2,
+                "duration_seconds": 11.5,
+                "file": "842ecea98a028fa105e0f30a4f5a6085d412d3c40aecf24516f5a7a10b19ab92.wav",
+                "has_audio": true,
+                "id": "original",
+                "mime": "audio/wav",
+                "role": "original",
+                "sample_rate": 48000,
+                "sha256": "842ecea98a028fa105e0f30a4f5a6085d412d3c40aecf24516f5a7a10b19ab92"
+              },
+              {
+                "bytes": 7204,
+                "file": "5dadc8320d6c19adeb312c88aae368173e86a256711220bb656151e4ee358cd5.json",
+                "id": "receipt",
+                "mime": "application/json",
+                "role": "metadata",
+                "sha256": "5dadc8320d6c19adeb312c88aae368173e86a256711220bb656151e4ee358cd5"
+              }
+            ],
+            "format": "production-asset-v1",
+            "lineage": {},
+            "media_type": "audio",
+            "placeholder": false,
+            "production": {
+              "object_id": "call-zhao-voice-01",
+              "revision_id": "2b03baf5f9bc6b39fed7ade754af340c5aa50f49c5748e74de7a5af28b5c6560"
+            },
+            "state_coverage": [
+              {
+                "component_id": "original",
+                "detail": "第二场腰挂钥匙的赵执事询问、招领唱及交词纸的三句对白候选。不自动关联钥匙被收走或押解时的形态。",
+                "range": {
+                  "end_seconds": 11.5,
+                  "start_seconds": 0
+                },
+                "role": "detail",
+                "state": {
+                  "object_id": "form-zhao-base",
+                  "revision_id": "ca96526f45695aeccc0e89c1a3c57718500a370a10790d3d5baddb21048cc12b"
+                }
+              }
+            ],
+            "states": [
+              {
+                "object_id": "form-zhao-base",
+                "revision_id": "ca96526f45695aeccc0e89c1a3c57718500a370a10790d3d5baddb21048cc12b"
+              }
+            ],
+            "subjects": [
+              {
+                "object_id": "entity-zhao",
+                "revision_id": "df59d6eb8f8942301fc5ccaf44da0fe05a7ee9f89698d2d9fca77a4838dbbc75"
+              }
+            ],
+            "title": "赵执事对白声线候选",
+            "verification": {
+              "file_inspected": true,
+              "listened": false,
+              "native_4k_passed": null,
+              "user_accepted": false,
+              "visually_inspected": false
+            }
+          }
+        },
+        {
+          "object_id": "asset-zhou-voice-01",
+          "kind": "ASSET",
+          "expected_version": 1,
+          "payload": {
+            "blocks": [
+              {
+                "id": "description",
+                "text": "第一轮声线或演唱候选，真实 48 kHz WAV 原件；已核文件和返回字幕，尚未完成实际听审或用户接受。"
+              },
+              {
+                "id": "state-association",
+                "text": "所属实体：周掌柜。\n周掌柜·基准完整形态：店前量米和交代唱工时的两句对白候选，属于有米粉围裙的店内基准形态。被提及的婚事或歌曲不因此成为录音里的出场对象。\n本次只明确候选归属与审阅范围，未生成新文件、未记录用户采纳或镜头采用。音频范围依据实际调用和平台返回字幕；尚未实际听辨，不作为最终剪辑点。"
+              }
+            ],
+            "components": [
+              {
+                "bytes": 3264044,
+                "channels": 2,
+                "duration_seconds": 17.0,
+                "file": "d242aeb9c0b0069f18a252f62a6a2aedc4625522033aa92c5a5ab03f8da1f76f.wav",
+                "has_audio": true,
+                "id": "original",
+                "mime": "audio/wav",
+                "role": "original",
+                "sample_rate": 48000,
+                "sha256": "d242aeb9c0b0069f18a252f62a6a2aedc4625522033aa92c5a5ab03f8da1f76f"
+              },
+              {
+                "bytes": 8333,
+                "file": "6c25720150548a47ea2465f6e5f353c7f5d0e98726d765fe6bf82431950152a3.json",
+                "id": "receipt",
+                "mime": "application/json",
+                "role": "metadata",
+                "sha256": "6c25720150548a47ea2465f6e5f353c7f5d0e98726d765fe6bf82431950152a3"
+              }
+            ],
+            "format": "production-asset-v1",
+            "lineage": {},
+            "media_type": "audio",
+            "placeholder": false,
+            "production": {
+              "object_id": "call-zhou-voice-01",
+              "revision_id": "1f97e57ffa1780735bc6875d4af35ce3469a0471a9c9611f77e910a9aa328f19"
+            },
+            "state_coverage": [
+              {
+                "component_id": "original",
+                "detail": "店前量米和交代唱工时的两句对白候选，属于有米粉围裙的店内基准形态。被提及的婚事或歌曲不因此成为录音里的出场对象。",
+                "range": {
+                  "end_seconds": 17,
+                  "start_seconds": 0
+                },
+                "role": "detail",
+                "state": {
+                  "object_id": "form-zhou-base",
+                  "revision_id": "1d4a9629a677b75029be4db4b94d0bb5011357ea679ead34522a4cf77642711b"
+                }
+              }
+            ],
+            "states": [
+              {
+                "object_id": "form-zhou-base",
+                "revision_id": "1d4a9629a677b75029be4db4b94d0bb5011357ea679ead34522a4cf77642711b"
+              }
+            ],
+            "subjects": [
+              {
+                "object_id": "entity-zhou",
+                "revision_id": "a983783f1095d60f2c8339167c0b22287ff50d51b49e28b4818146adfe532d4b"
+              }
+            ],
+            "title": "周掌柜对白声线候选",
+            "verification": {
+              "file_inspected": true,
+              "listened": false,
+              "native_4k_passed": null,
+              "user_accepted": false,
+              "visually_inspected": false
+            }
+          }
+        },
+        {
           "object_id": "preparation-s004",
           "kind": "PREPARATION",
           "expected_version": 0,
@@ -141129,6 +141474,85 @@
               "尚无本场完整逐镜设计与实际媒体就绪结论。"
             ],
             "usage": "generation_input"
+          }
+        },
+        {
+          "object_id": "asset-liji-image",
+          "kind": "ASSET",
+          "expected_version": 2,
+          "payload": {
+            "blocks": [
+              {
+                "id": "description",
+                "text": "文字生成候选，实际 2016×2688；请求 high/4K，但未达到原生 4K 要求。未经用户选为母版。"
+              },
+              {
+                "id": "state-association",
+                "text": "所属实体：李寄。\n李寄·劳作后未擦手：全身造型候选：散发、肩侧红印、双手干白浆糊及日常衣裤对应劳作后未擦手。原图已回看；指缝羊毛未清晰表达，肩印位置与颜色、造型及原生 4K 仍待审。不能用于已擦净、湿衣、包布或伤后形态。\n本次只明确候选归属与审阅范围，未生成新文件、未记录用户采纳或镜头采用。原件及历史版本保留，未补画状态中缺失的细节。"
+              }
+            ],
+            "components": [
+              {
+                "bytes": 3493361,
+                "file": "cd50ecc53c05dd06c2f592adf164b12f2711ef44538479cd3b55a711590dae33.png",
+                "height": 2688,
+                "id": "original",
+                "mime": "image/png",
+                "role": "original",
+                "sha256": "cd50ecc53c05dd06c2f592adf164b12f2711ef44538479cd3b55a711590dae33",
+                "width": 2016
+              },
+              {
+                "bytes": 1318,
+                "file": "41ab8c99769e9b300bb40e4176a501e373323cbe3a462d4a83233e7d28249935.json",
+                "id": "receipt",
+                "mime": "application/json",
+                "role": "metadata",
+                "sha256": "41ab8c99769e9b300bb40e4176a501e373323cbe3a462d4a83233e7d28249935"
+              }
+            ],
+            "format": "production-asset-v1",
+            "lineage": {
+              "i2i_depth": 0,
+              "references": []
+            },
+            "media_type": "image",
+            "placeholder": false,
+            "production": {
+              "object_id": "call-liji-baseline-02",
+              "revision_id": "6d65d6edf83674568ff0fcf051f1d1b72acffcf677a6f54483d647e47d077e4d"
+            },
+            "state_coverage": [
+              {
+                "component_id": "original",
+                "detail": "全身造型候选：散发、肩侧红印、双手干白浆糊及日常衣裤对应劳作后未擦手。原图已回看；指缝羊毛未清晰表达，肩印位置与颜色、造型及原生 4K 仍待审。不能用于已擦净、湿衣、包布或伤后形态。",
+                "role": "overall",
+                "state": {
+                  "object_id": "form-li-ji-paste",
+                  "revision_id": "d6f7001a09b36925a8baa68e9d403a5c482c35eb6893815f8b76c3958eb494e4"
+                }
+              }
+            ],
+            "states": [
+              {
+                "object_id": "form-li-ji-paste",
+                "revision_id": "d6f7001a09b36925a8baa68e9d403a5c482c35eb6893815f8b76c3958eb494e4"
+              }
+            ],
+            "subjects": [
+              {
+                "object_id": "entity-li-ji",
+                "revision_id": "28fdb4862c3820c89ef2a6eed1d9b36c9548a73055c894325180e07ad04d737f"
+              }
+            ],
+            "title": "李寄造型候选",
+            "verification": {
+              "file_inspected": true,
+              "listened": false,
+              "native_4k_passed": false,
+              "user_accepted": false,
+              "visually_inspected": true
+            }
           }
         },
         {
@@ -198468,6 +198892,109 @@
           }
         },
         {
+          "object_id": "asset-aheng-song-01",
+          "kind": "ASSET",
+          "expected_version": 1,
+          "payload": {
+            "blocks": [
+              {
+                "id": "description",
+                "text": "第一轮声线或演唱候选，真实 48 kHz WAV 原件；已核文件和返回字幕，尚未完成实际听审或用户接受。"
+              },
+              {
+                "id": "state-association",
+                "text": "所属实体：舟行曲（未具名）、阿蘅。\n阿蘅·日常洗旧青衣：阿蘅日常状态的清唱声线候选，与对白候选用于首轮声音协调；只覆盖声音表现，不替代人物整体图像。\n舟行曲（未具名）·省段清唱归家句：作品《舟行曲（未具名）》的省段清唱候选，按原文从一道险滩转到归家句；整段录音作为此歌曲呈现状态的整体声音参考，歌词、旋律和演唱仍待实际听审。\n本次只明确候选归属与审阅范围，未生成新文件、未记录用户采纳或镜头采用。音频范围依据实际调用和平台返回字幕；尚未实际听辨，不作为最终剪辑点。"
+              }
+            ],
+            "components": [
+              {
+                "bytes": 3274300,
+                "channels": 2,
+                "duration_seconds": 17.053417,
+                "file": "9edcf64a1d34914d1d406a01aff9617f3759eb51ed699e1380fde6f96993c953.wav",
+                "has_audio": true,
+                "id": "original",
+                "mime": "audio/wav",
+                "role": "original",
+                "sample_rate": 48000,
+                "sha256": "9edcf64a1d34914d1d406a01aff9617f3759eb51ed699e1380fde6f96993c953"
+              },
+              {
+                "bytes": 6113,
+                "file": "d06b4c3d373e92e505aa7b17c34ef2790d363ce40aecafcf48b2f46b5f81ed35.json",
+                "id": "receipt",
+                "mime": "application/json",
+                "role": "metadata",
+                "sha256": "d06b4c3d373e92e505aa7b17c34ef2790d363ce40aecafcf48b2f46b5f81ed35"
+              }
+            ],
+            "format": "production-asset-v1",
+            "lineage": {},
+            "media_type": "audio",
+            "placeholder": false,
+            "production": {
+              "object_id": "call-aheng-song-01",
+              "revision_id": "1600edfe10f4b1eb9c805c9a0e374a65469d28264cbce5f69802b6d91a5d4994"
+            },
+            "state_coverage": [
+              {
+                "component_id": "original",
+                "detail": "阿蘅日常状态的清唱声线候选，与对白候选用于首轮声音协调；只覆盖声音表现，不替代人物整体图像。",
+                "range": {
+                  "end_seconds": 17.053417,
+                  "start_seconds": 0
+                },
+                "role": "detail",
+                "state": {
+                  "object_id": "form-a-heng-blue",
+                  "revision_id": "302d4abd3abe057c98a86db6125514b32597a5b9123fd37b85587fc940946a21"
+                }
+              },
+              {
+                "component_id": "original",
+                "detail": "作品《舟行曲（未具名）》的省段清唱候选，按原文从一道险滩转到归家句；整段录音作为此歌曲呈现状态的整体声音参考，歌词、旋律和演唱仍待实际听审。",
+                "range": {
+                  "end_seconds": 17.053417,
+                  "start_seconds": 0
+                },
+                "role": "overall",
+                "state": {
+                  "object_id": "form-boat-song-short",
+                  "revision_id": "d25cd83eab8379d82f5729c9f3400c20cc771ce8d52dbe133d60ed5d31d34fac"
+                }
+              }
+            ],
+            "states": [
+              {
+                "object_id": "form-a-heng-blue",
+                "revision_id": "302d4abd3abe057c98a86db6125514b32597a5b9123fd37b85587fc940946a21"
+              },
+              {
+                "object_id": "form-boat-song-short",
+                "revision_id": "d25cd83eab8379d82f5729c9f3400c20cc771ce8d52dbe133d60ed5d31d34fac"
+              }
+            ],
+            "subjects": [
+              {
+                "object_id": "entity-boat-song",
+                "revision_id": "4063cb7a613c2b2b7dda389253e30006aa7593eea5d38ccf6a51a39d9d524b43"
+              },
+              {
+                "object_id": "entity-a-heng",
+                "revision_id": "c431d8382100c6eb6b88e84ce092de3fd7074f554fe1c7f362dcb25a9a90fe2c"
+              }
+            ],
+            "title": "阿蘅舟行曲演唱候选",
+            "verification": {
+              "file_inspected": true,
+              "listened": false,
+              "native_4k_passed": null,
+              "user_accepted": false,
+              "visually_inspected": false
+            }
+          }
+        },
+        {
           "object_id": "preparation-s040",
           "kind": "PREPARATION",
           "expected_version": 0,
@@ -240645,6 +241172,7 @@
     "957d6549f2c927fc956967ae1bb8cb7cfd47bb54dadef01b5499d7f7f811287b",
     "9595c3037b9515591fa95465baa37c773a7f3685b1ec7e8fc04a328451d0bcd6",
     "959a78984c204e4cd3e114c53b258c2041ce9dda60f6a8132354171e1e5e9e0f",
+    "959ae058abe50402c35b29d279b4e771ec51ca78f96af33a156321a7a2bc488d",
     "95a4dd5df0f57810401bb06354b0c806eaa2cada22d04130430524b7b48b4191",
     "95a7a5dcd439fddd9def6f3d0a09a3e5037d3b2f17f972fe8baa733d9667fcb3",
     "95b09f68aad306efea26225f2b40c98f9adf2b412a38c4b5505caea314336200",
@@ -240698,6 +241226,7 @@
     "98f9245b90e002f13a0fdf03cb676ddb5bb7e32f1aec57740d5c538ce31f275e",
     "98fdf5216c6838ec60cc1158caa4f915d8483c8e006a19af5b9a39a8d33e627c",
     "9907e35bd498c161018849cb70010fe8cdc53b6a3a08ec14c7ed51064f5d6186",
+    "99150b20b507bffcd3026fb724d8216d25e305750ebf40a723a1c2fc904f20d1",
     "991ec3fc7dc64b1b5627be39590e71ef4a427b133b2536c765809a0ccd93b0b6",
     "9925a858ff60dfef1bd636160ca70acb34b5aca0a2d6a5c25835045075cc1776",
     "993e0b8b916cdf0d4d434aae2cad2afe27cc3be6e5e82e0a2fe9560509fa086f",
@@ -241100,6 +241629,7 @@
     "b6cd5c7055692068e488c0a480694075e12b38c001e47422ae6c0f6e651419fd",
     "b71945536de5e6be377e83e0f5f18efcec66baf5ae9ff50b865e044437927478",
     "b719a0a5a1b6a2dd54ff433a24c3b1bc129942f3b08227cf8b3abe4bcbba4331",
+    "b735232027cebbaeda88c96b21742539034fb5c244d3576e9095450b2b56df50",
     "b74ce0662f338499b96fdadd8df3508afc6491418e2ed79507cdbc0c11feda90",
     "b78228480ddd4d439926749897d4502d0a9c5705a86700c78529b67ffbe06289",
     "b7880f1573f1bd09c0258e5c46d77c15d6a2eed95682931bf82e27794f260a0a",
@@ -241196,6 +241726,7 @@
     "bda91a96681a0a868dac8f22310c43b39fe167a54a8650dceb781d6ac7184932",
     "bdd3c1259defce1a0b10cf1d1da187899d1e0d34947c260c67f8c975aaa66ef0",
     "bde1874f06016a1436beb932cbbb7ee40f3ca8628cd0d141bfc66e117b67c4fb",
+    "be00f551710266ad7fbbe88255d30cd97f5f9d8b56764761009f079ac020dbd3",
     "be0d0e4f5c447054ab3553c1574d542b4b1fde12c6f6069e3cd0c051092a797d",
     "be26bf391491eff66a2dbab270e82acc6663030b10ab45e250323f522b722411",
     "be286668c64e49550b9a6604d5025d4aa3bb314dd4d77ece22c07486b3692ae2",
@@ -241829,6 +242360,7 @@
     "ea76e4e7a7cf452c7043b599e969233a8e5329f4ff1b6dbef96760cbb09c148b",
     "ea82f84367407c88abc2595b97282ec5063493ed9d1027be23186b74f3a87d21",
     "ea8b407c347318ca4ad1eab24baba1a47d3a92a6809ff6780ba4052afb37c324",
+    "ea9d952f21f5942136786c5fa66701891098ba87c6efbc9a708aec373cac72da",
     "ea9f13c772a1440e15cd4c3ed34638095f5a675d804aadd3cfab3a6ef367396a",
     "eaab227f952fe1f6e962670479638a43fabecdeb9cdf5420b75b13a7ce4e8d9a",
     "eab211876f277c4de7131ad2cbf6e7d8b86592a5a2b5a2186ba9d6fa70ba8b61",
@@ -241869,6 +242401,7 @@
     "ecc6e6b354d3faf9feb199d7c8798a4007bedb1754f57099b9269ad5288fc3d6",
     "ecc7b2d0b66e08b916ea99e13964e66c3b7034ce88aa5601b362955034a49911",
     "ecd05f7f10bedb20959ef0bf571e9fa9ed975a76015613b70b719f294c14ac58",
+    "ece1129863daf615e67720e53f08714c45e33472c5e4cc15c6c40df27da82703",
     "ed2247d8bca49a677e0a739e444edf499891ec7cfd351f674542800da0b952a2",
     "ed25f8e945a74a8fc3a9d2606fbbf7247939cef7725fd2ce75bab629834c0be4",
     "ed601036c30d431bdb6e816ab7bdee2cb13083b5d14320c48d5eb549afd83bcf",
@@ -242146,12 +242679,12 @@
     "fff92c6952cfc60fbb2e35fa9e572b85ded94da8f0f3e71081adfc470b3ba142"
   ],
   "heads": {
-    "asset-aheng-song-01": "8c147c51ab76a286bcbb96f789e3ea4fe72676197d4532f80b9af41569ef4f8d",
-    "asset-aheng-voice-01": "d4ca874bc9cd326fea61d92d5cbd4e05d80903de4827f6e5c7312e9b9120c4ef",
-    "asset-liji-image": "79dca6a288e1a9d6671845f4f52779020bc30b135dcead205c42cb9fcf9c4c9e",
-    "asset-liji-voice-01": "62ad84f264f85d34592cec657037f39f7c79ea2a0540d9b12ce0590d73f4a7fa",
-    "asset-zhao-voice-01": "7e2022fe18f314d278db03d8e8e8197ff9e708baf989f6c612a17d3f740423bc",
-    "asset-zhou-voice-01": "902dcc4327b18aae99ffa3d20524cfc807c875ec067569958755eff3812c5cd7",
+    "asset-aheng-song-01": "be00f551710266ad7fbbe88255d30cd97f5f9d8b56764761009f079ac020dbd3",
+    "asset-aheng-voice-01": "b735232027cebbaeda88c96b21742539034fb5c244d3576e9095450b2b56df50",
+    "asset-liji-image": "959ae058abe50402c35b29d279b4e771ec51ca78f96af33a156321a7a2bc488d",
+    "asset-liji-voice-01": "ea9d952f21f5942136786c5fa66701891098ba87c6efbc9a708aec373cac72da",
+    "asset-zhao-voice-01": "ece1129863daf615e67720e53f08714c45e33472c5e4cc15c6c40df27da82703",
+    "asset-zhou-voice-01": "99150b20b507bffcd3026fb724d8216d25e305750ebf40a723a1c2fc904f20d1",
     "call-aheng-song-01": "f93f91943c53f6466e0fe1ae20c931517dadcfc11945955476dd54495328e7c9",
     "call-aheng-voice-01": "95c77a3545af0da5549fc8d77a7d3f40c473367b4f0f5a05ad8a93999db4f4a9",
     "call-liji-baseline-01": "72536418cbc119e9a52d045607332b0f4b4ade4c35668ba7eef0a6a8ea9c769f",
