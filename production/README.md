@@ -9,21 +9,27 @@
 | 要核对什么 | 实际材料 |
 | --- | --- |
 | 用户确认、剧本与结构依据 | [输入锁定](source-lock.json)，保留整版、17 个分集、42 场和 1,114 个正文块的准确版本 |
-| 全剧身份、别名、状态与出场 | [可读清单](inventory.md)和[完整数据](inventory.json)：133 个实体、86 个必要状态，42 场均有检查记录 |
-| 后续各集计划需求 | [集场需求](scene-requirements.md)，其余 40 场登记 782 项；不要求本任务生产后续集媒体 |
+| 全剧身份、别名、状态与出场 | [可读清单](inventory.md)和[完整数据](inventory.json)：133 个实体、267 个完整状态，42 场均有检查记录 |
+| 后续各集计划需求 | [集场需求](scene-requirements.md)，其余 40 场登记 786 项；不要求本任务生产后续集媒体 |
 | 第一集动作、空间与声音 | [33 镜设计](episode01/shots.md)、[精确数据及 320 个必要槽位](episode01/shots.json)、[37 个对白／演唱单元](episode01/dialogue-cues.json) |
 | 实际提示词、输入与调用结果 | [requests](requests/)、[receipts](receipts/)和[登记批次](baseline-records/)；均区分计划与实际制作 |
-| 完整生产修订历史及文件清单 | [replay.json](replay.json)，包含 1,466 个生产对象、1,626 个修订、14 个实际文件组成；包括本轮 49 个技术命名复核对象 |
+| 完整生产修订历史及文件清单 | [replay.json](replay.json)，包含 2,006 个生产对象、3,349 个修订、14 个实际文件组成；保留 86 个历史局部状态及此前命名复核 |
 | 系统设计、关系图及 API／CLI | 本任务独立通用系统工作区的 [docs/production.md](../.runtime/review-desk-worktree/docs/production.md)，代码版本以本故事 [config/instance.json](../config/instance.json)为准；未集成到正式系统 |
 | 已执行验证与具体限制 | [verification.md](verification.md) |
 
 本机隔离审阅入口为 [制作设定](http://127.0.0.1:39103/?workspace=settings.workspace)、[素材管理](http://127.0.0.1:39103/?workspace=materials.workspace)、[全剧制作](http://127.0.0.1:39103/?workspace=production.workspace)。39103 由独立 Docker 后台容器运行，不依赖代理会话；需要本机 Docker 保持运行。正式 3000 服务、正式数据库和导出未被替换。39104 是操作测试曾使用的端口，当前未启动；其恢复实例中的技术审阅和采用不属于真实制作决定，不应作为交付数据导出。
 
-制作设定按实体浏览，筛选区平铺全部 133 个实体及角色 51、场景 16、道具 62、歌曲 4。列表每个实体只出现一次，并标出状态数；例如“阿蘅米袋 · 4 个状态”。打开实体后，在详情内切换实体概览、各个状态和制作设定；搜索别名、状态或设定描述也能找到所属实体。分类数量保留搜索条件后计算，不重复累计历史版本，零数量项仍可见；“清除筛选”同时清除搜索与分类。状态的旧链接、准确版本与评论保留，镜头引用仍打开当时指定的状态版本。
+制作设定按实体浏览，筛选区平铺全部 133 个实体及角色 51、场景 16、道具 62、歌曲 4。列表每个实体只出现一次，并标出完整状态数；例如“阿蘅米袋 · 5 个完整状态”。打开实体后，在详情内切换实体概览、各个状态和制作设定；搜索别名、状态或设定描述也能找到所属实体。分类数量保留搜索条件后计算，不重复累计历史版本，零数量项仍可见；“清除筛选”同时清除搜索与分类。状态的旧链接、准确版本与评论保留，镜头引用仍打开当时指定的状态版本。
 
-“正式输入”不列入制作设定；86 个状态在所属实体内部展示，不计入实体数量。全剧制作顶部只显示“剧本依据：版本四 · 已确认 · 17 集”，没有确认说明入口；底层记录与历史引用保留。默认打开第一集 33 镜，切换分集和场次后可点击“检查本集／本场素材缺项”，每页最多显示 20 项。单镜详情显示该镜需求，进入页面不再自动展开全剧 1,102 项。这里的剧本确认不代表制作基准或第一集素材已被接受。
+“正式输入”不列入制作设定；267 个完整状态在所属实体内部展示，不计入实体数量。全剧制作顶部只显示“剧本依据：版本四 · 已确认 · 17 集”，没有确认说明入口；底层记录与历史引用保留。默认打开第一集 33 镜，切换分集和场次后可点击“检查本集／本场素材缺项”，每页最多显示 20 项。单镜详情显示该镜需求，进入页面不自动展开全剧缺项。这里的剧本确认不代表制作基准或第一集素材已被接受。
 
-实体状态统一命名为“实体完整名称·状态说明”，例如“阿蘅米袋·装有当日工米”。状态的所属实体、剧情内容和素材版本分别管理；同一实体可以有多个状态，不因此必须制作同样数量的图像。当前 86 个状态均有所属实体，本轮优化其中 49 个标题；旧版本名称与精确引用保留，技术命名复核不代表用户接受制作内容。
+状态表示实体在某一时刻的完整形态。李寄的衣着、掌心包布和额角旧伤同时成立时，在一个状态内完整说明；阿蘅米袋从空袋、工米入袋、追加预付米到退米后扎袋、清账接退粮，共五种形态。阿禾和船家各有一个完整状态；普通走动、表情变化或素材候选换版不额外制造状态。
+
+每次实际呈现或发声都绑定准确状态，同场、同镜的变化有先后顺序、动作和正文依据。全剧 618 次场内实体使用与第一集 206 次镜内使用均已检查，没有缺失或错属。小满、许家女儿仅被提及，保留已知事实状态，不要求生产媒体。
+
+每个需要呈现的状态保留一项整体参考，再按需增加局部、角度或声音；当前共 265 项整体参考需求。状态页可增加补充需求，素材页可把同一文件组成关联多个准确状态，并说明整体或细节覆盖。新增关联保存为素材的新候选修订，实际调用和已有采用不改写。未选整体参考时，细节不能使状态就绪。当前候选尚未完成与新状态的逐份适配核对，也未获用户接受。
+
+旧 86 个局部状态不计入当前完整状态数量，仍保留修订、来源、评论及实际制作引用。完整状态的对应与影响清单见 [迁移核对](evidence/complete-state-migration.json)；它仅供复核，不代表旧素材自动兼容或已经换版。技术验证见 [verification.md](verification.md)。
 
 ## 当前实际候选
 
@@ -53,7 +59,7 @@ docker start snakeslayingrecord-production-task-0003
 docker logs --tail 40 snakeslayingrecord-production-task-0003
 ```
 
-只有该容器尚不存在时，才从故事任务工作区根目录执行以下创建命令。先确认实例数据库已经存在，并核对本地镜像版本。当前镜像的 29 个系统文件与 `9b1c00f8f1351b0feb2bbdafaf3f9f14a1eb3d47` 一致，镜像摘要及本次更新验证见 [entity-hierarchy-runtime.json](evidence/entity-hierarchy-runtime.json)，此前跨会话服务修复见 [service-restored.json](evidence/service-restored.json)。这一步只启动现有实例，不初始化或覆盖数据。
+只有该容器尚不存在时，才从故事任务工作区根目录执行以下创建命令。先确认实例数据库已经存在，并核对本地镜像版本。当前镜像的 30 个系统文件与 `66578a5a84da0e3ea1cbd6dd25d20674878d1d59` 一致，镜像摘要及本次更新验证见 [complete-state-runtime.json](evidence/complete-state-runtime.json)，此前跨会话服务修复见 [service-restored.json](evidence/service-restored.json)。这一步只启动现有实例，不初始化或覆盖数据。
 
 ```bash
 test -f .runtime/production/review-instance/.runtime/review.sqlite3 && \
@@ -83,15 +89,35 @@ PYTHONPATH="$production_system" python3 -m review_desk \
   --instance .runtime/production/review-instance production-ready shot-e01-001
 ```
 
-当前实际制作实例没有正式素材采用，第一集 320 个必要槽位均未就绪。`production-package ID --output directory` 只有在必要输入满足时才复制精确文件目录；页面下载的是同一清单。当前不把缺项清单冒充可执行生成包。
+当前实际制作实例没有正式素材采用，第一集 320 项镜头用途与 41 项共用状态整体参考，合计 361 项必要输入均未就绪。`production-package ID --output directory` 只有在必要输入满足时才复制精确文件目录；页面下载的是同一清单。当前不把缺项清单冒充可执行生成包。
 
 继续整理时，`scripts/episode01_shots.py` 与 `scripts/scene_requirements.py` 接受 `--system`、`--instance`，默认只比较并校验，显式 `--import-records` 才写入变化。`production/inventory.json` 是抽取的当前编写数据，历史恢复必须使用 `replay.json`，不能重复按初始版本导入或用编写数据覆盖真实审阅。`scripts/register_production_candidates.py` 用于本轮真实调用首次登记，不应对已有对象重复执行。
 
 新调用音频前，用 `python3 scripts/seed_audio.py production/requests/aheng-song-01.json` 这类具体单个请求文件检查参数；默认只输出预览，不提交。`--submit --quota <最新额度记录>` 才调用服务；使用已有 `VOLCENGINE_SPEECH_API_KEY` 环境变量。未知结果按最长 120 秒保留额度，不自动重复调用。新增请求应使用新 ID，保留旧回执及原件。
 
-整理完成后，从真实制作实例执行 `production_review.py ... snapshot --instance ...` 保存新的精确重放；不要从 39104 的操作测试实例保存。正式发布前仍须读取最新正式数据与代码，合并候选后复验，不以本次启动快照覆盖用户新增评论。
+整理完成后，从真实制作实例执行 `production_review.py ... snapshot --instance ...` 保存新的精确重放；不要从 39104 或 39106 的操作测试实例保存。正式发布前仍须读取最新正式数据与代码，合并候选后复验，不以本次启动快照覆盖用户新增评论。
 
-仅优化状态名称时，在 `scripts/production_inventory.py` 的状态说明中维护短名，实体前缀自动取自实体清单；重新生成 `inventory.json` 与 `inventory.md` 后，运行 `python3 scripts/rename_state_titles.py --system "$production_system" --instance .runtime/production/review-instance` 预演。工具要求除名称和编写数据的引用占位符外，现有状态内容与清单一致，先列出影响范围，再准备准确的新修订及命名复核；显式 `--apply` 才原子写入，版本冲突则拒绝。镜头、需求、实际制作输入和旧素材引用保持原值，随后按上文保存重放。当前已完成此批更新，重复运行会返回无需改名。
+## 完整状态整理与迁移
+
+`scripts/production_forms.py` 维护完整形态及按剧情发生的顺序；`scripts/production_inventory.py` 维护实体与逐场检查；镜头与需求工具从准确场次状态取用。状态的未知细节仍需审阅，编写数据不是用户已接受的母版。先核对源数据与页面的新编辑，再在任务实例预演；以下路径均相对故事工作区根目录：
+
+```bash
+python3 scripts/migrate_complete_states.py plan \
+  --system "$production_system" --instance .runtime/production/review-instance \
+  --file .runtime/production/next-state-plan.json --write-artifacts
+```
+
+计划文件含准确旧记录头、拟新增修订、旧状态对应、受影响位置及内容校验值。回读差异，确认没有覆盖页面上的新编辑，才执行同一文件：
+
+```bash
+python3 scripts/migrate_complete_states.py apply \
+  --system "$production_system" --instance .runtime/production/review-instance \
+  --file .runtime/production/next-state-plan.json
+```
+
+提交在同一事务中检查所有读取依赖和每项记录版本；并发变化会使整批回滚，应重新预演和核对。相同源数据重新预演返回零变化。迁移不改旧局部状态、素材、实际调用、采用或审阅结论；不再适用的计划需求以撤回修订保留理由。当前批次已完成，不需再次导入初始 JSON；后续整理同样通过受控增量修订与快照交接。
+
+本轮已分别完成生产重放与完整库恢复。重放目录 `.runtime/production/recovered-complete-states-final` 含基础故事的 264 条评论；完整库目录 `.runtime/production/bundle-complete-states-final` 含任务实例全部 266 条评论、295 条评论事件及 70 个清单文件。后者包括本任务此前两条图像／声音技术锚点意见；不能混称为正式作品决定。详情见 [恢复证据](evidence/complete-state-recovery.json)。运行中的任务实例、两个恢复实例和正式 3000 数据相互独立，不能用恢复副本覆盖最新运行数据。
 
 ## 下一次制作交接
 
