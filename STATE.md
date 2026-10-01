@@ -22,11 +22,12 @@
 - 通用系统 50 项、故事工具 64 项自动测试通过，无跳过。Chrome 已实际操作三个制作入口、图像区域及音频时间评论、精确来源、一材多用、通过未采用、显式换版和上游复核；回归采编、结构历史、V4 剧本、制作思路及草稿切页保留。证据与范围见 [production/verification.md](production/verification.md)。
 - 浏览器文件上传受扩展本地文件 URL 权限限制，系统文件窗口替代也报 `cgWindowNotFound`；已告知用户，未改权限，未将 HTTP 上传通过当作浏览器上传通过。该项仍待补验。
 - 生产重放恢复核对 1,417 个对象、1,528 个修订和 14 个文件组成；完整数据库导出恢复对对象、修订、依赖、评论和事件逐项一致。恢复实例的实际音频可播放。动态分镜和工程尚未形成，不声称它们的恢复通过。
-- 当前审阅服务为 [39103](http://127.0.0.1:39103/?workspace=production.workspace&production_object=shot-e01-001)，实例 `.runtime/production/review-instance`。39104 为 `.runtime/production/recovered-instance-01` 的操作测试服务，含明确标注的技术审阅和采用，不得当作真实决定导出。最新干净恢复为 `.runtime/production/recovered-instance-02`，完整库恢复为 `.runtime/production/bundle-restored-02`。
+- 当前审阅服务为 [39103](http://127.0.0.1:39103/?workspace=production.workspace&production_object=shot-e01-001)，实例 `.runtime/production/review-instance`。现已使用独立后台容器 `snakeslayingrecord-production-task-0003` 和 `unless-stopped` 重启策略，不依赖代理会话；需要 Docker 保持运行。重启前后 1,417 个生产对象的接口响应摘要一致，三个制作入口已在 Chrome 打开。启动与排查命令见 `production/README.md`。
+- 39104 当前未启动；对应 `.runtime/production/recovered-instance-01` 是操作测试实例，含明确标注的技术审阅和采用，不得当作真实决定导出。最新干净恢复为 `.runtime/production/recovered-instance-02`，完整库恢复为 `.runtime/production/bundle-restored-02`。
 - 制作思路已在本任务 `content/production-approach.json` 吸收 V4 定稿、真实抽取、首批候选及系统经验，明确未完成的作品验证，已在隔离页回读。正式入口尚未更新。
 
 ## 仓库、运行与交接边界
 
 - 故事仅在当前任务 worktree 修改，已吸收主线 V4 提交 `363469d81e53f2389e6ac3385b864d93a4edba30`。通用系统 worktree 为 `.runtime/review-desk-worktree`，分支 `codex/task-20260929-0003-production`，起始提交 `e48218947a6cf74e48bad7a0b4909ae334562a81`。系统设计和通用代码不放入故事仓库。
-- 本任务未写正式数据库、正式导出或 3000 服务；不以启动快照覆盖正式用户新增内容。正式系统基线仍为 `e48218947a6cf74e48bad7a0b4909ae334562a81`。候选 Docker 镜像已构建并验证媒体探测，未切换正式容器。
+- 本任务未写正式数据库、正式导出或 3000 服务；不以启动快照覆盖正式用户新增内容。正式系统基线仍为 `e48218947a6cf74e48bad7a0b4909ae334562a81`。候选 Docker 镜像已运行于 39103 隔离入口，未切换正式容器。
 - 主项目 `.codex-project` 是唯一任务存储，状态仅经内部命令更新。当前保留过程提交，尚未准备最终合并候选或请求任务完成。达到全部标准后再 `_prepare_integration`、复验并展示双仓候选，用户明确确认才 `_complete`；本任务只做本地集成，不推送。正常退出会话后才释放运行锁，保留 worktree 与分支。

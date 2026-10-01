@@ -17,7 +17,7 @@
 | 系统设计、关系图及 API／CLI | 本任务独立通用系统工作区的 [docs/production.md](../.runtime/review-desk-worktree/docs/production.md)，代码版本以本故事 [config/instance.json](../config/instance.json)为准；未集成到正式系统 |
 | 已执行验证与具体限制 | [verification.md](verification.md) |
 
-本机隔离审阅入口为 [制作设定](http://127.0.0.1:39103/?workspace=settings.workspace)、[素材管理](http://127.0.0.1:39103/?workspace=materials.workspace)、[全剧制作](http://127.0.0.1:39103/?workspace=production.workspace)。正式 3000 服务、正式数据库和导出未被替换。39104 是操作测试的恢复实例，其中技术审阅和采用不属于真实制作决定，不应作为交付数据导出。
+本机隔离审阅入口为 [制作设定](http://127.0.0.1:39103/?workspace=settings.workspace)、[素材管理](http://127.0.0.1:39103/?workspace=materials.workspace)、[全剧制作](http://127.0.0.1:39103/?workspace=production.workspace)。39103 由独立 Docker 后台容器运行，不依赖代理会话；需要本机 Docker 保持运行。正式 3000 服务、正式数据库和导出未被替换。39104 是操作测试曾使用的端口，当前未启动；其恢复实例中的技术审阅和采用不属于真实制作决定，不应作为交付数据导出。
 
 ## 当前实际候选
 
@@ -40,7 +40,25 @@ OpenArt CLI 0.1.1 没有暴露所需质量及分辨率参数，两次实际改�
 
 ## 隔离恢复与运行
 
-以下命令从故事任务工作区根目录执行。Python、FFmpeg／ffprobe 和对应版本通用系统需先可用；不复制 `.env` 或凭据。当前系统工作区仅是本机路径，重新检出时可用通用仓库中 `config/instance.json` 固定的提交替代它。
+日常审阅使用现有后台容器 `snakeslayingrecord-production-task-0003`，挂载本任务 `.runtime/production/review-instance` 中的现有数据，仅监听 `127.0.0.1:39103`。容器采用 `unless-stopped` 重启策略；退出代理会话不会停止它，手工停止后可用以下命令恢复。不要为页面打不开重新恢复或导入数据库。
+
+```bash
+docker start snakeslayingrecord-production-task-0003
+docker logs --tail 40 snakeslayingrecord-production-task-0003
+```
+
+只有该容器尚不存在时，才从故事任务工作区根目录执行以下创建命令。先确认实例数据库已经存在，并核对本地镜像版本。当前镜像的 29 个系统文件与 `dfa84e66bcf1eb8419955223cdc4eaa01378c3bd` 一致，镜像摘要及重启验证见 [service-restored.json](evidence/service-restored.json)。这一步只启动现有实例，不初始化或覆盖数据。
+
+```bash
+test -f .runtime/production/review-instance/.runtime/review.sqlite3 && \
+docker run -d --name snakeslayingrecord-production-task-0003 \
+  --restart unless-stopped --label codex.task=task-20260929-0003 \
+  -p 127.0.0.1:39103:8765 \
+  --mount "type=bind,source=$PWD/.runtime/production/review-instance,target=/instance" \
+  story-review-desk:task-20260929-0003-production
+```
+
+以下空实例恢复命令也从故事任务工作区根目录执行。Python、FFmpeg／ffprobe 和对应版本通用系统需先可用；不复制 `.env` 或凭据。当前系统工作区仅是本机路径，重新检出时可用通用仓库中 `config/instance.json` 固定的提交替代它。最后的 Python 命令是前台临时检查服务，不能作为需要跨会话保留的交付入口。
 
 ```bash
 production_system=.runtime/review-desk-worktree
