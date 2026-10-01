@@ -19,6 +19,8 @@
 
 本机隔离审阅入口为 [制作设定](http://127.0.0.1:39103/?workspace=settings.workspace)、[素材管理](http://127.0.0.1:39103/?workspace=materials.workspace)、[全剧制作](http://127.0.0.1:39103/?workspace=production.workspace)。39103 由独立 Docker 后台容器运行，不依赖代理会话；需要本机 Docker 保持运行。正式 3000 服务、正式数据库和导出未被替换。39104 是操作测试曾使用的端口，当前未启动；其恢复实例中的技术审阅和采用不属于真实制作决定，不应作为交付数据导出。
 
+制作设定按“记录类型”和“内容分类”平铺选项，每项直接显示数量。先选“实体”可查看角色 51、场景 16、道具 62、歌曲 4；选“剧情状态”则查看状态数。每项数量保留其他筛选和搜索条件后计算，不重复累计历史版本；零数量项仍可见。再次点选已选项可取消该组限制，“清除筛选”同时清除搜索和筛选。
+
 ## 当前实际候选
 
 下面列的是候选原件，不是已经接受的基准。精确修订、SHA-256、制作调用与歌词依据可在素材详情及重放清单核对。
@@ -47,7 +49,7 @@ docker start snakeslayingrecord-production-task-0003
 docker logs --tail 40 snakeslayingrecord-production-task-0003
 ```
 
-只有该容器尚不存在时，才从故事任务工作区根目录执行以下创建命令。先确认实例数据库已经存在，并核对本地镜像版本。当前镜像的 29 个系统文件与 `dfa84e66bcf1eb8419955223cdc4eaa01378c3bd` 一致，镜像摘要及重启验证见 [service-restored.json](evidence/service-restored.json)。这一步只启动现有实例，不初始化或覆盖数据。
+只有该容器尚不存在时，才从故事任务工作区根目录执行以下创建命令。先确认实例数据库已经存在，并核对本地镜像版本。当前镜像的 29 个系统文件与 `1b83c2d59fd07b84252cadc306e25c3c147a1c40` 一致，镜像摘要及本次更新验证见 [settings-filters-runtime.json](evidence/settings-filters-runtime.json)，此前跨会话服务修复见 [service-restored.json](evidence/service-restored.json)。这一步只启动现有实例，不初始化或覆盖数据。
 
 ```bash
 test -f .runtime/production/review-instance/.runtime/review.sqlite3 && \
