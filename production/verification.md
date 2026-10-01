@@ -4,7 +4,7 @@
 
 ## 自动检查与实际数据
 
-通用系统最新测试 52 项通过，故事工具此前测试 64 项通过，无跳过。系统测试涵盖批量事务和并发、源修订及引用、别名冲突、状态并存、一材多用、审阅与采用分离、显式换版、变更与命名复核、媒体范围、I2I 深度、文件校验及导出恢复；HTTP 用例实际上传 WAV，读取 Range，创建时间评论，并验证旧 expected_version 返回 409。夹具文件不计作真实媒体。
+通用系统最新 52 项 Python 测试及 4 项前端导航测试通过，故事工具此前测试 64 项通过，无跳过。系统测试涵盖批量事务和并发、源修订及引用、别名冲突、状态并存、一材多用、审阅与采用分离、显式换版、变更与命名复核、媒体范围、I2I 深度、文件校验及导出恢复；HTTP 用例实际上传 WAV，读取 Range，创建时间评论，并验证旧 expected_version 返回 409。夹具文件不计作真实媒体。
 
 从故事工作区执行故事测试：
 
@@ -15,7 +15,7 @@ NO_PROXY=127.0.0.1,localhost \
 python3 -m unittest discover -s tests -v
 ```
 
-从独立系统工作区运行 `python3 -m unittest discover -s tests -v`。初次故事测试因缺少系统模块路径失败；补全上述环境后通过。仅设置 PYTHONPATH 曾跳过一个相邻系统集成用例，显式设置 REVIEW_DESK_SYSTEM_PATH 后已实际执行。最新本机日志为 `.runtime/production/story-tests.log`、`.runtime/production/system-tests.log`。
+从独立系统工作区运行 `NO_PROXY=127.0.0.1,localhost no_proxy=127.0.0.1,localhost PYTHONPATH=. python3 -m unittest discover -s tests -v` 及 `node --test tests/production_navigation.test.cjs`。初次故事测试因缺少系统模块路径失败；补全上述环境后通过。仅设置 PYTHONPATH 曾跳过一个相邻系统集成用例，显式设置 REVIEW_DESK_SYSTEM_PATH 后已实际执行。此前整体验证日志为 `.runtime/production/story-tests.log`、`.runtime/production/system-tests.log`；本轮命令及结果见 `evidence/entity-hierarchy-runtime.json`。
 
 真实数据经通用业务操作导入、校验并恢复：133 个实体、86 个状态、42 场完整检查；第一集 33 镜、320 个必要槽位，其他 40 场 782 个需求。正文与歌词定位使用 V4 的精确分集、场与正文块，第一集 64 个正文块全部覆盖，37 个对白／演唱单元保留原文。镜头时长 227 秒仍是待视听回看验证的设计值。
 
@@ -29,13 +29,23 @@ Chrome 旧标签页刷新出现 CDP 超时，同一浏览器的新标签页实�
 
 ## Chrome 实际操作
 
+### 实体作为制作设定入口
+
+2026-10-01 按用户确认，将制作设定组织为“实体 → 内部状态／制作设定”。筛选与主目录只统计 133 个实体，角色 51、场景 16、道具 62、歌曲 4；86 个状态在所属实体内浏览。阿蘅米袋只占一条，标出四个状态。搜索状态或设定内容仍返回所属实体，零数量选项保留；旧状态链接及镜头引用保持准确版本。
+
+Chrome 在干净恢复实例 39106 与更新后的 39103 完成 19 项实际检查：实体数量、分类、米袋唯一条目及四个内部状态、无状态实体、状态描述搜索、历史旧名称与版本、深链刷新、准确剧本来源、镜头往返和历史评论草稿保留。技术草稿在隔离实例取消，未提交评论。更新后的三个制作入口均回读成功，证据见 [entity-hierarchy-browser.json](evidence/entity-hierarchy-browser.json)及[页面截图](evidence/entity-hierarchy.jpg)。
+
+系统提交 `9b1c00f8f1351b0feb2bbdafaf3f9f14a1eb3d47` 的 29 个运行文件与 39103 镜像逐一一致。更新前后 1,466 个生产对象响应及全部八张业务表摘要相同，包含 266 条评论；没有数据迁移、改写采用或变更正式服务。52 项 Python 测试与四项前端导航测试通过；新增测试覆盖一项设定关联多个实体、仅关联状态、项目共用设定、历史状态归属和异步切换不覆盖新选择。当前真实生产数据没有独立制作设定对象，这部分归属逻辑以自动测试验证，不据此宣称创作基准完成。运行证据见 [entity-hierarchy-runtime.json](evidence/entity-hierarchy-runtime.json)。
+
+以下各节记录此前阶段的验证范围，旧截图中的并列状态筛选已由上述实体层级替代。
+
 ### 剧本依据与按范围检查
 
 2026-10-01 按用户确认，将 `INPUT_LOCK` 从制作设定的筛选与目录移出。全剧制作顶部只显示“剧本依据：版本四 · 已确认 · 17 集”，没有确认说明入口；原对象、精确引用和历史保留。无指定记录时默认第一集 33 镜，打开第一镜只检查该镜 13 项；本集与本场检查由用户主动触发，每页最多显示 20 项，旧正式输入链接兼容进入全剧制作。
 
 Chrome 在 `.runtime/production/recovered-instance-03` 及更新后的 39103 完成 14 项回读，见 [script-basis-browser.json](evidence/script-basis-browser.json)：顶部无交互控件；第一集 320 项和第二场 182 项检查、分页、切换范围清理；第二集精确链接；制作设定 219 条与实体分类数量；实际制作记录中的简洁剧本依据。全剧各集视图不触发全量缺项检查。更新后导航曾遇到 `Page.navigate` 与 `Emulation.setFocusEmulationEnabled` 超时，未更换浏览器；标签清单随后显示加载完成，复用同一 Chrome 验证标签读取真实 DOM 并保存[当前页面截图](evidence/script-basis.jpg)。
 
-系统 52 项自动测试、JavaScript 语法及 Git 空白检查通过。首次 HTTP 测试被系统代理转发并返回 502，设置本次测试进程的本机 `NO_PROXY` 后全部通过，没有为此修改系统网络配置。39103 当前镜像与系统提交 `aa1b48b441b3acf4dfaea23295d087968e45e9e0` 的 29 个文件逐一一致；更新前后 1,466 个生产对象响应及全部业务表摘要相同，含 266 条评论和 7 条实际制作记录的原引用。证据见 [script-basis-runtime.json](evidence/script-basis-runtime.json)。本轮只有展示层变化，没有数据迁移，沿用已有恢复结果；不据此扩大作品验收范围。
+系统 52 项自动测试、JavaScript 语法及 Git 空白检查通过。首次 HTTP 测试被系统代理转发并返回 502，设置本次测试进程的本机 `NO_PROXY` 后全部通过，没有为此修改系统网络配置。该次 39103 镜像与系统提交 `aa1b48b441b3acf4dfaea23295d087968e45e9e0` 的 29 个文件逐一一致；更新前后 1,466 个生产对象响应及全部业务表摘要相同，含 266 条评论和 7 条实际制作记录的原引用。证据见 [script-basis-runtime.json](evidence/script-basis-runtime.json)。本轮只有展示层变化，没有数据迁移，沿用已有恢复结果；不据此扩大作品验收范围。
 
 ### 实体状态命名
 
