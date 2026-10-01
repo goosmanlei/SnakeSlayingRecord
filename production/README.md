@@ -13,13 +13,15 @@
 | 后续各集计划需求 | [集场需求](scene-requirements.md)，其余 40 场登记 782 项；不要求本任务生产后续集媒体 |
 | 第一集动作、空间与声音 | [33 镜设计](episode01/shots.md)、[精确数据及 320 个必要槽位](episode01/shots.json)、[37 个对白／演唱单元](episode01/dialogue-cues.json) |
 | 实际提示词、输入与调用结果 | [requests](requests/)、[receipts](receipts/)和[登记批次](baseline-records/)；均区分计划与实际制作 |
-| 完整生产修订历史及文件清单 | [replay.json](replay.json)，包含 1,417 个生产对象、1,528 个修订、14 个实际文件组成 |
+| 完整生产修订历史及文件清单 | [replay.json](replay.json)，包含 1,466 个生产对象、1,626 个修订、14 个实际文件组成；包括本轮 49 个技术命名复核对象 |
 | 系统设计、关系图及 API／CLI | 本任务独立通用系统工作区的 [docs/production.md](../.runtime/review-desk-worktree/docs/production.md)，代码版本以本故事 [config/instance.json](../config/instance.json)为准；未集成到正式系统 |
 | 已执行验证与具体限制 | [verification.md](verification.md) |
 
 本机隔离审阅入口为 [制作设定](http://127.0.0.1:39103/?workspace=settings.workspace)、[素材管理](http://127.0.0.1:39103/?workspace=materials.workspace)、[全剧制作](http://127.0.0.1:39103/?workspace=production.workspace)。39103 由独立 Docker 后台容器运行，不依赖代理会话；需要本机 Docker 保持运行。正式 3000 服务、正式数据库和导出未被替换。39104 是操作测试曾使用的端口，当前未启动；其恢复实例中的技术审阅和采用不属于真实制作决定，不应作为交付数据导出。
 
-制作设定按“记录类型”和“内容分类”平铺选项，每项直接显示数量。先选“实体”可查看角色 51、场景 16、道具 62、歌曲 4；选“剧情状态”则查看状态数。每项数量保留其他筛选和搜索条件后计算，不重复累计历史版本；零数量项仍可见。再次点选已选项可取消该组限制，“清除筛选”同时清除搜索和筛选。
+制作设定按“记录类型”和“内容分类”平铺选项，每项直接显示数量。先选“实体”可查看角色 51、场景 16、道具 62、歌曲 4；选“实体状态”则查看状态数。每项数量保留其他筛选和搜索条件后计算，不重复累计历史版本；零数量项仍可见。再次点选已选项可取消该组限制，“清除筛选”同时清除搜索和筛选。
+
+实体状态统一命名为“实体完整名称·状态说明”，例如“阿蘅米袋·装有当日工米”。状态的所属实体、剧情内容和素材版本分别管理；同一实体可以有多个状态，不因此必须制作同样数量的图像。当前 86 个状态均有所属实体，本轮优化其中 49 个标题；旧版本名称与精确引用保留，技术命名复核不代表用户接受制作内容。
 
 ## 当前实际候选
 
@@ -49,7 +51,7 @@ docker start snakeslayingrecord-production-task-0003
 docker logs --tail 40 snakeslayingrecord-production-task-0003
 ```
 
-只有该容器尚不存在时，才从故事任务工作区根目录执行以下创建命令。先确认实例数据库已经存在，并核对本地镜像版本。当前镜像的 29 个系统文件与 `1b83c2d59fd07b84252cadc306e25c3c147a1c40` 一致，镜像摘要及本次更新验证见 [settings-filters-runtime.json](evidence/settings-filters-runtime.json)，此前跨会话服务修复见 [service-restored.json](evidence/service-restored.json)。这一步只启动现有实例，不初始化或覆盖数据。
+只有该容器尚不存在时，才从故事任务工作区根目录执行以下创建命令。先确认实例数据库已经存在，并核对本地镜像版本。当前镜像的 29 个系统文件与 `392dead589cca5ac5e49f88d9dce04d64c100ca1` 一致，镜像摘要及本次更新验证见 [state-naming.json](evidence/state-naming.json)，此前跨会话服务修复见 [service-restored.json](evidence/service-restored.json)。这一步只启动现有实例，不初始化或覆盖数据。
 
 ```bash
 test -f .runtime/production/review-instance/.runtime/review.sqlite3 && \
@@ -86,6 +88,8 @@ PYTHONPATH="$production_system" python3 -m review_desk \
 新调用音频前，用 `python3 scripts/seed_audio.py production/requests/aheng-song-01.json` 这类具体单个请求文件检查参数；默认只输出预览，不提交。`--submit --quota <最新额度记录>` 才调用服务；使用已有 `VOLCENGINE_SPEECH_API_KEY` 环境变量。未知结果按最长 120 秒保留额度，不自动重复调用。新增请求应使用新 ID，保留旧回执及原件。
 
 整理完成后，从真实制作实例执行 `production_review.py ... snapshot --instance ...` 保存新的精确重放；不要从 39104 的操作测试实例保存。正式发布前仍须读取最新正式数据与代码，合并候选后复验，不以本次启动快照覆盖用户新增评论。
+
+仅优化状态名称时，在 `scripts/production_inventory.py` 的状态说明中维护短名，实体前缀自动取自实体清单；重新生成 `inventory.json` 与 `inventory.md` 后，运行 `python3 scripts/rename_state_titles.py --system "$production_system" --instance .runtime/production/review-instance` 预演。工具要求除名称和编写数据的引用占位符外，现有状态内容与清单一致，先列出影响范围，再准备准确的新修订及命名复核；显式 `--apply` 才原子写入，版本冲突则拒绝。镜头、需求、实际制作输入和旧素材引用保持原值，随后按上文保存重放。当前已完成此批更新，重复运行会返回无需改名。
 
 ## 下一次制作交接
 
