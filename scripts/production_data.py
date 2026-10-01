@@ -27,6 +27,8 @@ def refresh_drafts(store, production, document, apply=False):
                 current = production.record(clone, source['object_id'])
             except KeyError:
                 current = None
+            if current and current['payload'].get('production_description') and not payload.get('production_description'):
+                raise ValueError('已有具体制作描述，旧抽取批次不能覆盖：'+source['object_id']+'；请基于当前修订更新生成方案')
             if current and current['payload'] == payload:
                 resolved[source['object_id']] = current['id']
                 continue
