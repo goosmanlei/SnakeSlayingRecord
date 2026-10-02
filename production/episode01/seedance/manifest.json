@@ -1,0 +1,4154 @@
+{
+  "format": "seedance-episode-plan-v1",
+  "config": {
+    "format": "seedance-preparation-v1",
+    "model": "doubao-seedance-2-0-260128",
+    "ratio": "16:9",
+    "resolution": "1080p",
+    "generate_audio": true,
+    "duration_min": 4,
+    "duration_max": 15,
+    "reference_audio_max_count": 3,
+    "reference_audio_min_seconds": 2,
+    "reference_audio_total_seconds": 15,
+    "reference_images_max_count": 9,
+    "execution_platform": null,
+    "quota_verified": false,
+    "sources": [
+      "https://docs.volcengine.com/docs/ark/create-video-generation-task-api?lang=zh",
+      "https://docs.volcengine.com/docs/ark/seedance-2-0-prompt-guide?lang=zh"
+    ]
+  },
+  "shots": [
+    {
+      "format": "seedance-shot-plan-v1",
+      "shot": {
+        "object_id": "shot-e01-001",
+        "revision_id": "1bc361874bb44107909401defc0ce45109bbdd58725b22a9fae41c887a8a89f0"
+      },
+      "source": {
+        "block_ids": [
+          "screenplay-04-lantern-home-s001-b001",
+          "screenplay-04-lantern-home-s001-b002"
+        ],
+        "object_id": "screenplay-04-lantern-home-e01",
+        "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+        "scene_id": "s001"
+      },
+      "previous_shot": null,
+      "next_shot": {
+        "object_id": "shot-e01-002",
+        "revision_id": "c355aca19d406a4f7bf2ebe0e3d7dfecb442ef99725ab83191177997bf9e6704"
+      },
+      "model": "doubao-seedance-2-0-260128",
+      "parameters": {
+        "ratio": "16:9",
+        "resolution": "1080p",
+        "duration": 9.0,
+        "generate_audio": true
+      },
+      "editorial": {
+        "fps": 24,
+        "planned_start_frame": 0,
+        "duration_frames": 216,
+        "trim_generated_range_seconds": [
+          0,
+          9.0
+        ]
+      },
+      "prompt": "二维人物＋轻手绘背景；正常身体比例，干净线条与平涂色块，避免纸纹和过度风格化。\n制作有声视听预演，画幅16:9。建立唱曲换米的生活场面与阿蘅的稳当\n构图：16:9 中全景，阿蘅偏右，米铺门与量米柜在后，听客从左侧入画；歌本与倒扣竹篮在腰下前景\n空间：机位在街道河侧朝铺面；行进到道具屋的方向统一为画面右侧。阿蘅朝街，听客在她左前\n动作开始：歌本已摊开压河石；阿蘅吸气，脚尖准备拍子\n动作结束：第一句唱完，脚下拍子稳定，听客注意着她\n承接：首镜不先给山庙或危险符号。门内量米与门外唱曲同属一条街\n@音频1 仅参考阿蘅·日常洗旧青衣 · 阿蘅 · 日常声线母版的说话人的基础音色，不要复述参考样本内容。\n@音频2 仅参考舟行曲（未具名）·省段清唱归家句 · 舟行曲两句清唱母版的旋律、节奏与演唱方式，不要复述参考样本内容。\n0.50–8.50秒预计窗口：阿蘅唱：“一道险滩水急，船头慢慢行——”\n同步环境与动作声：近处歌声；轻河风、远水与米铺轻动静，音乐不盖清唱\n对白和歌词逐字保持；自然停顿与口型、动作协同。时间为表演目标，不能为卡点吞字。无新增旁白、台词或歌词；除指定演唱外不加配乐。",
+      "image_requirements": [
+        {
+          "object_id": "need-shot-e01-001-character-a-heng",
+          "revision_id": "3035080c1743937a998b8c27de4e4065378b506f6037f3fcf92b7198559beb2e"
+        },
+        {
+          "object_id": "need-shot-e01-001-character-rice-listeners",
+          "revision_id": "a42d4609421f7700e6442c36df7b66435d502153ddc94c7746ae9097f23224c7"
+        },
+        {
+          "object_id": "need-shot-e01-001-character-woodcutter",
+          "revision_id": "4f96b97ad577a2c5e21b4d72e349c6acf7d41d95523169906802a1d18566f7a1"
+        },
+        {
+          "object_id": "need-shot-e01-001-composition",
+          "revision_id": "743d6de89f694d3ec83fa8d7aa79405a9a40e00b326812001807bc184debab9e"
+        },
+        {
+          "object_id": "need-shot-e01-001-prop-book-basket",
+          "revision_id": "9ee87e18fe586f379469a6d157e490448ef531e505e18624a23a8e2d47995742"
+        },
+        {
+          "object_id": "need-shot-e01-001-prop-carrying-pole",
+          "revision_id": "ec5c7d3aebb44333812877b95a0b270bdcc1c4f01830cbcf1f47d65bdbec8ea6"
+        },
+        {
+          "object_id": "need-shot-e01-001-prop-grain",
+          "revision_id": "c381cb72b1a3750c76c3b74707552304bfec197ea218b9344f6fb7d7fc332b73"
+        },
+        {
+          "object_id": "need-shot-e01-001-prop-river-stone",
+          "revision_id": "96f2132623ffcc16c5c5a295b53f12d3659a7b6315804a555e4f76f65284752d"
+        },
+        {
+          "object_id": "need-shot-e01-001-prop-songbook",
+          "revision_id": "b7f814fbb7db1f2adee18839bc31e85ded41b313206694d7ad784c88272b97f8"
+        },
+        {
+          "object_id": "need-shot-e01-001-space-rice-shop",
+          "revision_id": "4b11ee3e6d6e3b84f81c23b1d9ae36935296713c31b620df3f981ba96ec43d47"
+        },
+        {
+          "object_id": "need-shot-e01-001-space-river-street",
+          "revision_id": "96167bcde513d997d33d669199adafe65ffd87cce008da3fd8d9d31e3f850ad8"
+        }
+      ],
+      "audio_templates": [
+        {
+          "requirement": {
+            "object_id": "need-form-a-heng-blue-voice",
+            "revision_id": "703bb070f8618a4c10d24a998a3bbc4f85fc2b9d1fd16d0bb7247fb7a55cdb76"
+          },
+          "role": "voice_reference",
+          "selection": null,
+          "clip_status": "待听审并显式选择准确短片段"
+        },
+        {
+          "requirement": {
+            "object_id": "need-form-boat-song-short-overall",
+            "revision_id": "495ec86b893670d03392ccae375fc1ff5923007e7d2d2e8b4c2ac1727ea1f390"
+          },
+          "role": "melody_reference",
+          "selection": null,
+          "clip_status": "待听审并显式选择准确短片段"
+        }
+      ],
+      "dialogue_and_lyrics": [
+        {
+          "type": "singing",
+          "speaker": "阿蘅",
+          "entity": {
+            "object_id": "entity-a-heng",
+            "revision_id": "be76284a262dd11d562410a15e3fefcf6cbedb152eb5dad4c4d94b854619d663"
+          },
+          "text": "一道险滩水急，船头慢慢行——",
+          "source": {
+            "object_id": "screenplay-04-lantern-home-e01",
+            "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+            "scene_id": "s001",
+            "block_ids": [
+              "screenplay-04-lantern-home-s001-b002"
+            ]
+          },
+          "id": "e01-line-001",
+          "shot_id": "shot-e01-001",
+          "planned_start_frame": 12,
+          "planned_end_frame": 204,
+          "fps": 24,
+          "timing_status": "镜内预计窗口，随画面生成后实际观看与听辨复核",
+          "delivery": "native_audio"
+        }
+      ],
+      "ready": false,
+      "executed": false,
+      "missing": [
+        "镜头所需图像须显式采用准确原件",
+        "音色／旋律须听审并选定准确短片段，按输入上限组织",
+        "实际执行平台和现有可用额度须核对"
+      ],
+      "review": [
+        "逐字听辨台词与歌词，复核说话人、音色、旋律",
+        "回看动作、空间、表演与镜间连续性",
+        "实测声音时机，调整预计窗口或重新生成；不另造独立台词音轨"
+      ]
+    },
+    {
+      "format": "seedance-shot-plan-v1",
+      "shot": {
+        "object_id": "shot-e01-002",
+        "revision_id": "c355aca19d406a4f7bf2ebe0e3d7dfecb442ef99725ab83191177997bf9e6704"
+      },
+      "source": {
+        "block_ids": [
+          "screenplay-04-lantern-home-s001-b003"
+        ],
+        "object_id": "screenplay-04-lantern-home-e01",
+        "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+        "scene_id": "s001"
+      },
+      "previous_shot": {
+        "object_id": "shot-e01-001",
+        "revision_id": "1bc361874bb44107909401defc0ce45109bbdd58725b22a9fae41c887a8a89f0"
+      },
+      "next_shot": {
+        "object_id": "shot-e01-003",
+        "revision_id": "bb0bec4ff696c1e491e88b4c8fd4d00e62cbadac636914308c522b40495044b0"
+      },
+      "model": "doubao-seedance-2-0-260128",
+      "parameters": {
+        "ratio": "16:9",
+        "resolution": "1080p",
+        "duration": 4,
+        "generate_audio": true
+      },
+      "editorial": {
+        "fps": 24,
+        "planned_start_frame": 216,
+        "duration_frames": 72,
+        "trim_generated_range_seconds": [
+          0,
+          3.0
+        ]
+      },
+      "prompt": "二维人物＋轻手绘背景；正常身体比例，干净线条与平涂色块，避免纸纹和过度风格化。\n制作有声视听预演，画幅16:9。让观众先察觉阿蘅跳段，保留轻松的趣味\n构图：中近景，老汉与竖在腿边的扁担占左半，右前景能见阿蘅翻页的手\n空间：沿用河侧机位，老汉望画面右上方阿蘅，书篮位置不挪\n动作开始：老汉正随前一句点头，手扶扁担\n动作结束：阿蘅翻过两页，老汉的点头迟疑一下\n承接：上一镜歌曲句尾留完后翻页；翻页前后河石位置一致，不压住正在翻的页\n同步环境与动作声：纸页声和呼吸，上一句尾音自然落下\n对白和歌词逐字保持；自然停顿与口型、动作协同。时间为表演目标，不能为卡点吞字。无新增旁白、台词或歌词；除指定演唱外不加配乐。\n动作在前3秒完成，尾部保持至4秒，供剪辑裁掉多余保持；不要增加剧情。",
+      "image_requirements": [
+        {
+          "object_id": "need-shot-e01-002-character-a-heng",
+          "revision_id": "a65c92505467b6605e2fc1c2efafc0a5b357de568f9f9d54ce9797aeb3d6511e"
+        },
+        {
+          "object_id": "need-shot-e01-002-character-woodcutter",
+          "revision_id": "b22d9086cbf498def6ee3c398d8618f42e7d059b23f9ab519aaf668cbba3b586"
+        },
+        {
+          "object_id": "need-shot-e01-002-composition",
+          "revision_id": "725ae0d7bd4400c189c1ee9c43ec6218b7434443b3286d2a756a54ec07acfb2c"
+        },
+        {
+          "object_id": "need-shot-e01-002-end-keyframe",
+          "revision_id": "f654adab8c4dc52cf8e6d9a730f2c22ed398d9db5170f3e04c2a6c6b01c56ac3"
+        },
+        {
+          "object_id": "need-shot-e01-002-prop-book-basket",
+          "revision_id": "d11d7c6f49b276e17b3109d5f6722b8a23570eede6b346d4afa924696e704e7e"
+        },
+        {
+          "object_id": "need-shot-e01-002-prop-carrying-pole",
+          "revision_id": "1e2cdbf17fc6b7d60aa24af08d47d7a2693311e6255531484b85f136142d544e"
+        },
+        {
+          "object_id": "need-shot-e01-002-prop-river-stone",
+          "revision_id": "3b002c067b9474bbd99a0f58f7d2faad7078f8616caa1e618a3675ef2979cb2e"
+        },
+        {
+          "object_id": "need-shot-e01-002-prop-songbook",
+          "revision_id": "59f02eb95ab07ce3deea253fdedc255724daf43f00121cca5b1a73adf959ca8f"
+        },
+        {
+          "object_id": "need-shot-e01-002-space-rice-shop",
+          "revision_id": "847d8a4b12ca1182409fd821935e20157333339c60e49b84ee515c362db288ce"
+        }
+      ],
+      "audio_templates": [],
+      "dialogue_and_lyrics": [],
+      "ready": false,
+      "executed": false,
+      "missing": [
+        "镜头所需图像须显式采用准确原件",
+        "音色／旋律须听审并选定准确短片段，按输入上限组织",
+        "实际执行平台和现有可用额度须核对"
+      ],
+      "review": [
+        "逐字听辨台词与歌词，复核说话人、音色、旋律",
+        "回看动作、空间、表演与镜间连续性",
+        "实测声音时机，调整预计窗口或重新生成；不另造独立台词音轨"
+      ]
+    },
+    {
+      "format": "seedance-shot-plan-v1",
+      "shot": {
+        "object_id": "shot-e01-003",
+        "revision_id": "bb0bec4ff696c1e491e88b4c8fd4d00e62cbadac636914308c522b40495044b0"
+      },
+      "source": {
+        "block_ids": [
+          "screenplay-04-lantern-home-s001-b004",
+          "screenplay-04-lantern-home-s001-b006"
+        ],
+        "object_id": "screenplay-04-lantern-home-e01",
+        "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+        "scene_id": "s001"
+      },
+      "previous_shot": {
+        "object_id": "shot-e01-002",
+        "revision_id": "c355aca19d406a4f7bf2ebe0e3d7dfecb442ef99725ab83191177997bf9e6704"
+      },
+      "next_shot": {
+        "object_id": "shot-e01-004",
+        "revision_id": "697c616112dc9a77ce13b1e6b2b65fa334b459550ab2b672293d5d8646b6fd61"
+      },
+      "model": "doubao-seedance-2-0-260128",
+      "parameters": {
+        "ratio": "16:9",
+        "resolution": "1080p",
+        "duration": 10.0,
+        "generate_audio": true
+      },
+      "editorial": {
+        "fps": 24,
+        "planned_start_frame": 288,
+        "duration_frames": 240,
+        "trim_generated_range_seconds": [
+          0,
+          10.0
+        ]
+      },
+      "prompt": "二维人物＋轻手绘背景；正常身体比例，干净线条与平涂色块，避免纸纹和过度风格化。\n制作有声视听预演，画幅16:9。把归家歌词唱清，并表现阿蘅忍笑\n构图：阿蘅胸上近景，视线略偏左对着老汉，画面下缘留歌本边\n空间：机位仍在同一侧；老汉在画外左，阿蘅脚拍虽不见仍连续\n动作开始：翻页后重新接上调子\n动作结束：归家句尾腔收住，嘴角要笑又忍住\n承接：镜头 4 老汉的“二道——哎，到了？”可在此镜末尾接入，归家歌词保持完整，不互相盖字\n@音频1 仅参考阿蘅·日常洗旧青衣 · 阿蘅 · 日常声线母版的说话人的基础音色，不要复述参考样本内容。\n@音频2 仅参考舟行曲（未具名）·省段清唱归家句 · 舟行曲两句清唱母版的旋律、节奏与演唱方式，不要复述参考样本内容。\n0.50–9.50秒预计窗口：阿蘅唱：“船靠岸，灯来迎，家里人等到如今——”\n同步环境与动作声：完整第二句清唱；老汉插话的入点在后续声音排练中细调\n对白和歌词逐字保持；自然停顿与口型、动作协同。时间为表演目标，不能为卡点吞字。无新增旁白、台词或歌词；除指定演唱外不加配乐。",
+      "image_requirements": [
+        {
+          "object_id": "need-shot-e01-003-character-a-heng",
+          "revision_id": "d4c7ae0842a9df1ea688f85060594972ffc87ef5e3dd5e5044fa24e8fc5886b0"
+        },
+        {
+          "object_id": "need-shot-e01-003-composition",
+          "revision_id": "56f78c401ae6a1688f73d50532c8d5b170efbcec921786461bb617bc7f0c7b52"
+        },
+        {
+          "object_id": "need-shot-e01-003-prop-songbook",
+          "revision_id": "e0aca124e7aaa72e0acbb8b6d104546d416775dcd5e5a5638180537a7abb44a4"
+        },
+        {
+          "object_id": "need-shot-e01-003-space-rice-shop",
+          "revision_id": "d3eb2a072ae56660eab10c510de38e45627856ae3631d59a890a6fee01df83da"
+        }
+      ],
+      "audio_templates": [
+        {
+          "requirement": {
+            "object_id": "need-form-a-heng-blue-voice",
+            "revision_id": "703bb070f8618a4c10d24a998a3bbc4f85fc2b9d1fd16d0bb7247fb7a55cdb76"
+          },
+          "role": "voice_reference",
+          "selection": null,
+          "clip_status": "待听审并显式选择准确短片段"
+        },
+        {
+          "requirement": {
+            "object_id": "need-form-boat-song-short-overall",
+            "revision_id": "495ec86b893670d03392ccae375fc1ff5923007e7d2d2e8b4c2ac1727ea1f390"
+          },
+          "role": "melody_reference",
+          "selection": null,
+          "clip_status": "待听审并显式选择准确短片段"
+        }
+      ],
+      "dialogue_and_lyrics": [
+        {
+          "type": "singing",
+          "speaker": "阿蘅",
+          "entity": {
+            "object_id": "entity-a-heng",
+            "revision_id": "be76284a262dd11d562410a15e3fefcf6cbedb152eb5dad4c4d94b854619d663"
+          },
+          "text": "船靠岸，灯来迎，家里人等到如今——",
+          "source": {
+            "object_id": "screenplay-04-lantern-home-e01",
+            "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+            "scene_id": "s001",
+            "block_ids": [
+              "screenplay-04-lantern-home-s001-b004"
+            ]
+          },
+          "id": "e01-line-002",
+          "shot_id": "shot-e01-003",
+          "planned_start_frame": 12,
+          "planned_end_frame": 228,
+          "fps": 24,
+          "timing_status": "镜内预计窗口，随画面生成后实际观看与听辨复核",
+          "delivery": "native_audio"
+        }
+      ],
+      "ready": false,
+      "executed": false,
+      "missing": [
+        "镜头所需图像须显式采用准确原件",
+        "音色／旋律须听审并选定准确短片段，按输入上限组织",
+        "实际执行平台和现有可用额度须核对"
+      ],
+      "review": [
+        "逐字听辨台词与歌词，复核说话人、音色、旋律",
+        "回看动作、空间、表演与镜间连续性",
+        "实测声音时机，调整预计窗口或重新生成；不另造独立台词音轨"
+      ]
+    },
+    {
+      "format": "seedance-shot-plan-v1",
+      "shot": {
+        "object_id": "shot-e01-004",
+        "revision_id": "697c616112dc9a77ce13b1e6b2b65fa334b459550ab2b672293d5d8646b6fd61"
+      },
+      "source": {
+        "block_ids": [
+          "screenplay-04-lantern-home-s001-b005",
+          "screenplay-04-lantern-home-s001-b006",
+          "screenplay-04-lantern-home-s001-b007"
+        ],
+        "object_id": "screenplay-04-lantern-home-e01",
+        "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+        "scene_id": "s001"
+      },
+      "previous_shot": {
+        "object_id": "shot-e01-003",
+        "revision_id": "bb0bec4ff696c1e491e88b4c8fd4d00e62cbadac636914308c522b40495044b0"
+      },
+      "next_shot": {
+        "object_id": "shot-e01-005",
+        "revision_id": "5b6b24f342954750ad03ae58169796f3c5a59055d3be3084806f203475b0bdd2"
+      },
+      "model": "doubao-seedance-2-0-260128",
+      "parameters": {
+        "ratio": "16:9",
+        "resolution": "1080p",
+        "duration": 7.0,
+        "generate_audio": true
+      },
+      "editorial": {
+        "fps": 24,
+        "planned_start_frame": 528,
+        "duration_frames": 168,
+        "trim_generated_range_seconds": [
+          0,
+          7.0
+        ]
+      },
+      "prompt": "二维人物＋轻手绘背景；正常身体比例，干净线条与平涂色块，避免纸纹和过度风格化。\n制作有声视听预演，画幅16:9。明确这次省唱是人物间熟悉的玩笑\n构图：老汉腰上中景，扬下巴看阿蘅，身后两位听客听着\n空间：老汉看右，阿蘅在画外右；扁担始终竖腿旁，不在切镜后换手换边\n动作开始：老汉顺嘴数到第二道滩\n动作结束：打趣完扬下巴，等阿蘅回答\n承接：不重唱镜头 3 的歌词。上一镜尾腔可少量跨切；两句老汉台词顺序不变\n@音频1 仅参考挑柴老汉·基准完整形态 · 挑柴老汉 · 日常声线母版的说话人的基础音色，不要复述参考样本内容。\n0.50–1.79秒预计窗口：老汉说：“二道——哎，到了？”\n1.79–6.50秒预计窗口：老汉说：“昨天还得过三道滩，走大半天呢，今天这么快？”\n同步环境与动作声：老汉对白，听客轻笑尚未齐起\n对白和歌词逐字保持；自然停顿与口型、动作协同。时间为表演目标，不能为卡点吞字。无新增旁白、台词或歌词；除指定演唱外不加配乐。",
+      "image_requirements": [
+        {
+          "object_id": "need-shot-e01-004-character-rice-listeners",
+          "revision_id": "2ac460f784d4854b168adce35e0a3d6949369e198715f2e93c0fc638e7dd6a17"
+        },
+        {
+          "object_id": "need-shot-e01-004-character-woodcutter",
+          "revision_id": "5affa36986f6e0507517de950f591b5d8ad64f2188e31d8fa103d2b95ea629ae"
+        },
+        {
+          "object_id": "need-shot-e01-004-composition",
+          "revision_id": "ac1f67ef8e7bac5d5e3f3575a64c84f6324c76ac71a74a74e0e4f0e29eadd681"
+        },
+        {
+          "object_id": "need-shot-e01-004-prop-carrying-pole",
+          "revision_id": "2b9155279ee127d0464be1c1330a07fd963169342bbfc0f9bd5b7ebf9e613412"
+        },
+        {
+          "object_id": "need-shot-e01-004-space-rice-shop",
+          "revision_id": "cbe4d4f8013ab81328966c3a6a21de53ff1f343a9b60611c52f12353cbd6c75a"
+        }
+      ],
+      "audio_templates": [
+        {
+          "requirement": {
+            "object_id": "need-form-woodcutter-base-voice",
+            "revision_id": "69178124c6130904b57273d63338539da28ec1907d3857b822cf1f44f9e1070b"
+          },
+          "role": "voice_reference",
+          "selection": null,
+          "clip_status": "待听审并显式选择准确短片段"
+        }
+      ],
+      "dialogue_and_lyrics": [
+        {
+          "type": "dialogue",
+          "speaker": "老汉",
+          "entity": {
+            "object_id": "entity-woodcutter",
+            "revision_id": "73c5acfd7c1bd30905468d561b0bb0258983fb517e173adb9679ad3ec2d34168"
+          },
+          "text": "二道——哎，到了？",
+          "source": {
+            "object_id": "screenplay-04-lantern-home-e01",
+            "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+            "scene_id": "s001",
+            "block_ids": [
+              "screenplay-04-lantern-home-s001-b005"
+            ]
+          },
+          "id": "e01-line-003",
+          "shot_id": "shot-e01-004",
+          "planned_start_frame": 12,
+          "planned_end_frame": 43,
+          "fps": 24,
+          "timing_status": "镜内预计窗口，随画面生成后实际观看与听辨复核",
+          "delivery": "native_audio"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "老汉",
+          "entity": {
+            "object_id": "entity-woodcutter",
+            "revision_id": "73c5acfd7c1bd30905468d561b0bb0258983fb517e173adb9679ad3ec2d34168"
+          },
+          "text": "昨天还得过三道滩，走大半天呢，今天这么快？",
+          "source": {
+            "object_id": "screenplay-04-lantern-home-e01",
+            "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+            "scene_id": "s001",
+            "block_ids": [
+              "screenplay-04-lantern-home-s001-b007"
+            ]
+          },
+          "id": "e01-line-004",
+          "shot_id": "shot-e01-004",
+          "planned_start_frame": 43,
+          "planned_end_frame": 156,
+          "fps": 24,
+          "timing_status": "镜内预计窗口，随画面生成后实际观看与听辨复核",
+          "delivery": "native_audio"
+        }
+      ],
+      "ready": false,
+      "executed": false,
+      "missing": [
+        "镜头所需图像须显式采用准确原件",
+        "音色／旋律须听审并选定准确短片段，按输入上限组织",
+        "实际执行平台和现有可用额度须核对"
+      ],
+      "review": [
+        "逐字听辨台词与歌词，复核说话人、音色、旋律",
+        "回看动作、空间、表演与镜间连续性",
+        "实测声音时机，调整预计窗口或重新生成；不另造独立台词音轨"
+      ]
+    },
+    {
+      "format": "seedance-shot-plan-v1",
+      "shot": {
+        "object_id": "shot-e01-005",
+        "revision_id": "5b6b24f342954750ad03ae58169796f3c5a59055d3be3084806f203475b0bdd2"
+      },
+      "source": {
+        "block_ids": [
+          "screenplay-04-lantern-home-s001-b008"
+        ],
+        "object_id": "screenplay-04-lantern-home-e01",
+        "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+        "scene_id": "s001"
+      },
+      "previous_shot": {
+        "object_id": "shot-e01-004",
+        "revision_id": "697c616112dc9a77ce13b1e6b2b65fa334b459550ab2b672293d5d8646b6fd61"
+      },
+      "next_shot": {
+        "object_id": "shot-e01-006",
+        "revision_id": "5993c75960c72a7bff1953436243f8299ea52bc4649b950d05642f1fc4e41e51"
+      },
+      "model": "doubao-seedance-2-0-260128",
+      "parameters": {
+        "ratio": "16:9",
+        "resolution": "1080p",
+        "duration": 8.0,
+        "generate_audio": true
+      },
+      "editorial": {
+        "fps": 24,
+        "planned_start_frame": 696,
+        "duration_frames": 192,
+        "trim_generated_range_seconds": [
+          0,
+          8.0
+        ]
+      },
+      "prompt": "二维人物＋轻手绘背景；正常身体比例，干净线条与平涂色块，避免纸纹和过度风格化。\n制作有声视听预演，画幅16:9。建立阿蘅机灵又体贴的说话方式\n构图：回阿蘅中近景，书篮下沿可见，正对老汉说话\n空间：保留画面左的老汉肩缘，阿蘅仍望左，不跨越两人轴线\n动作开始：尾腔刚收住，阿蘅带笑吸气\n动作结束：话说完欠一点身，等听客的反应\n承接：对白语气由唱腔回到自然口语，同一人声线协调，不做播音式旁白\n@音频1 仅参考阿蘅·日常洗旧青衣 · 阿蘅 · 日常声线母版的说话人的基础音色，不要复述参考样本内容。\n0.50–7.50秒预计窗口：阿蘅说：“您昨天都陪他走了一路啦。今天让他早些到家，您也少站一会儿。”\n同步环境与动作声：阿蘅对白完整；环境比歌段稍回升\n对白和歌词逐字保持；自然停顿与口型、动作协同。时间为表演目标，不能为卡点吞字。无新增旁白、台词或歌词；除指定演唱外不加配乐。",
+      "image_requirements": [
+        {
+          "object_id": "need-shot-e01-005-character-a-heng",
+          "revision_id": "a59560da2443469a231c0572da293285092cef3b532ab68abc8697086a322c76"
+        },
+        {
+          "object_id": "need-shot-e01-005-character-woodcutter",
+          "revision_id": "b5c6dcb8e75d615e93b13b3e23f6aef7141fac31d7d8180b180625898c1ae548"
+        },
+        {
+          "object_id": "need-shot-e01-005-composition",
+          "revision_id": "bab7b8f1d2050c89ec87a5369b12df586ccf23fe1686459374640bb9f0e58812"
+        },
+        {
+          "object_id": "need-shot-e01-005-prop-book-basket",
+          "revision_id": "ce6bc09f9430c600e387963f67459beee68d3851b42eb12f019d2cfae40151f5"
+        },
+        {
+          "object_id": "need-shot-e01-005-prop-songbook",
+          "revision_id": "45960f428c6955b9d464f3216c803cbdbf8680d9e30ea9b3d6db64e070c38134"
+        },
+        {
+          "object_id": "need-shot-e01-005-space-rice-shop",
+          "revision_id": "b7ef2d75b5e0f05b8e3f2f5537b9276ddc34af954260db47bfaf3e979871568f"
+        }
+      ],
+      "audio_templates": [
+        {
+          "requirement": {
+            "object_id": "need-form-a-heng-blue-voice",
+            "revision_id": "703bb070f8618a4c10d24a998a3bbc4f85fc2b9d1fd16d0bb7247fb7a55cdb76"
+          },
+          "role": "voice_reference",
+          "selection": null,
+          "clip_status": "待听审并显式选择准确短片段"
+        }
+      ],
+      "dialogue_and_lyrics": [
+        {
+          "type": "dialogue",
+          "speaker": "阿蘅",
+          "entity": {
+            "object_id": "entity-a-heng",
+            "revision_id": "be76284a262dd11d562410a15e3fefcf6cbedb152eb5dad4c4d94b854619d663"
+          },
+          "text": "您昨天都陪他走了一路啦。今天让他早些到家，您也少站一会儿。",
+          "source": {
+            "object_id": "screenplay-04-lantern-home-e01",
+            "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+            "scene_id": "s001",
+            "block_ids": [
+              "screenplay-04-lantern-home-s001-b008"
+            ]
+          },
+          "id": "e01-line-005",
+          "shot_id": "shot-e01-005",
+          "planned_start_frame": 12,
+          "planned_end_frame": 180,
+          "fps": 24,
+          "timing_status": "镜内预计窗口，随画面生成后实际观看与听辨复核",
+          "delivery": "native_audio"
+        }
+      ],
+      "ready": false,
+      "executed": false,
+      "missing": [
+        "镜头所需图像须显式采用准确原件",
+        "音色／旋律须听审并选定准确短片段，按输入上限组织",
+        "实际执行平台和现有可用额度须核对"
+      ],
+      "review": [
+        "逐字听辨台词与歌词，复核说话人、音色、旋律",
+        "回看动作、空间、表演与镜间连续性",
+        "实测声音时机，调整预计窗口或重新生成；不另造独立台词音轨"
+      ]
+    },
+    {
+      "format": "seedance-shot-plan-v1",
+      "shot": {
+        "object_id": "shot-e01-006",
+        "revision_id": "5993c75960c72a7bff1953436243f8299ea52bc4649b950d05642f1fc4e41e51"
+      },
+      "source": {
+        "block_ids": [
+          "screenplay-04-lantern-home-s001-b009"
+        ],
+        "object_id": "screenplay-04-lantern-home-e01",
+        "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+        "scene_id": "s001"
+      },
+      "previous_shot": {
+        "object_id": "shot-e01-005",
+        "revision_id": "5b6b24f342954750ad03ae58169796f3c5a59055d3be3084806f203475b0bdd2"
+      },
+      "next_shot": {
+        "object_id": "shot-e01-007",
+        "revision_id": "8e2ec2924f75a64ad6489b480d3e74567366738bab9bf66d7b89dc8684e8f928"
+      },
+      "model": "doubao-seedance-2-0-260128",
+      "parameters": {
+        "ratio": "16:9",
+        "resolution": "1080p",
+        "duration": 4,
+        "generate_audio": true
+      },
+      "editorial": {
+        "fps": 24,
+        "planned_start_frame": 888,
+        "duration_frames": 96,
+        "trim_generated_range_seconds": [
+          0,
+          4.0
+        ]
+      },
+      "prompt": "二维人物＋轻手绘背景；正常身体比例，干净线条与平涂色块，避免纸纹和过度风格化。\n制作有声视听预演，画幅16:9。表现唱曲融在真实生计里，并给李寄留出入场通道\n构图：恢复中全景，听客笑着提袋，另两人从后方进店\n空间：门在阿蘅后侧，听客只沿门前空地进出；李寄稍后从左侧挤进\n动作开始：听客围在篮前\n动作结束：前方出现空隙，阿蘅欠身回应\n承接：袋、扁担与人的路径互不穿透；群众“下回补上”只一人说，其余笑声轻\n@音频1 仅参考米铺听客·基准完整形态 · 米铺听客 · 日常声线母版的说话人的基础音色，不要复述参考样本内容。\n0.50–3.50秒预计窗口：一位听客说：“下回补上”\n同步环境与动作声：听客一句“下回补上”、轻笑、米袋摩擦与脚步\n对白和歌词逐字保持；自然停顿与口型、动作协同。时间为表演目标，不能为卡点吞字。无新增旁白、台词或歌词；除指定演唱外不加配乐。",
+      "image_requirements": [
+        {
+          "object_id": "need-shot-e01-006-character-a-heng",
+          "revision_id": "8612384fb2432bed1f58094d94114fb730dfee9df6acc71ee5c2cfe4b19062d2"
+        },
+        {
+          "object_id": "need-shot-e01-006-character-rice-listeners",
+          "revision_id": "cd2b26e3cc1e25275cc306dc67258e0f2bcdb8b113ab5a116c9eae5559c8ea0f"
+        },
+        {
+          "object_id": "need-shot-e01-006-character-woodcutter",
+          "revision_id": "354f0ef3f4106b77fcd8f8d88ecb16a8119f7a536fb403629449166a96b28f14"
+        },
+        {
+          "object_id": "need-shot-e01-006-composition",
+          "revision_id": "054725e1a30488af6f492ab034d73619e3ffd3fe56166be679e64419d7c240d2"
+        },
+        {
+          "object_id": "need-shot-e01-006-prop-book-basket",
+          "revision_id": "f0f10fd89a9ddf46daa8c3a526e96c20e10e6d9345a7a545b197ba296f82ccf0"
+        },
+        {
+          "object_id": "need-shot-e01-006-prop-carrying-pole",
+          "revision_id": "2cc4e5f323f6b671585824b06252c8961fb8bceaf7fae6612d46e100ba75a810"
+        },
+        {
+          "object_id": "need-shot-e01-006-prop-grain",
+          "revision_id": "f6e0693244152a789b101fdc5c34cbc89ab01b9192baa205560279d646201dc5"
+        },
+        {
+          "object_id": "need-shot-e01-006-prop-songbook",
+          "revision_id": "e12c3cdb25ef5283c63e07a4bec3a362f32880071168fe014a4ad8081d7a91cd"
+        },
+        {
+          "object_id": "need-shot-e01-006-space-rice-shop",
+          "revision_id": "22e552b33f15c0a45dbb82902ad139f83b2b1a32e59b74b2f27e854fc45f1dea"
+        },
+        {
+          "object_id": "need-shot-e01-006-space-river-street",
+          "revision_id": "001dc8af679f904003d62d0c98bcc642f136b522a5d88c526737a4882a6f31ff"
+        }
+      ],
+      "audio_templates": [
+        {
+          "requirement": {
+            "object_id": "need-form-rice-listeners-base-voice",
+            "revision_id": "489abfef704f8d0baa7107b35363e09419e9e5c9b157f158d349d3cbb2ab6695"
+          },
+          "role": "voice_reference",
+          "selection": null,
+          "clip_status": "待听审并显式选择准确短片段"
+        }
+      ],
+      "dialogue_and_lyrics": [
+        {
+          "type": "dialogue",
+          "speaker": "一位听客",
+          "entity": {
+            "object_id": "entity-rice-listeners",
+            "revision_id": "70f5d22bb86006e8ee8fead87dd43d6eafaa6872b23769bfef65f74e47f0a592"
+          },
+          "text": "下回补上",
+          "source": {
+            "object_id": "screenplay-04-lantern-home-e01",
+            "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+            "scene_id": "s001",
+            "block_ids": [
+              "screenplay-04-lantern-home-s001-b009"
+            ]
+          },
+          "id": "e01-line-006",
+          "shot_id": "shot-e01-006",
+          "planned_start_frame": 12,
+          "planned_end_frame": 84,
+          "fps": 24,
+          "timing_status": "镜内预计窗口，随画面生成后实际观看与听辨复核",
+          "delivery": "native_audio"
+        }
+      ],
+      "ready": false,
+      "executed": false,
+      "missing": [
+        "镜头所需图像须显式采用准确原件",
+        "音色／旋律须听审并选定准确短片段，按输入上限组织",
+        "实际执行平台和现有可用额度须核对"
+      ],
+      "review": [
+        "逐字听辨台词与歌词，复核说话人、音色、旋律",
+        "回看动作、空间、表演与镜间连续性",
+        "实测声音时机，调整预计窗口或重新生成；不另造独立台词音轨"
+      ]
+    },
+    {
+      "format": "seedance-shot-plan-v1",
+      "shot": {
+        "object_id": "shot-e01-007",
+        "revision_id": "8e2ec2924f75a64ad6489b480d3e74567366738bab9bf66d7b89dc8684e8f928"
+      },
+      "source": {
+        "block_ids": [
+          "screenplay-04-lantern-home-s001-b010",
+          "screenplay-04-lantern-home-s001-b011"
+        ],
+        "object_id": "screenplay-04-lantern-home-e01",
+        "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+        "scene_id": "s001"
+      },
+      "previous_shot": {
+        "object_id": "shot-e01-006",
+        "revision_id": "5993c75960c72a7bff1953436243f8299ea52bc4649b950d05642f1fc4e41e51"
+      },
+      "next_shot": {
+        "object_id": "shot-e01-008",
+        "revision_id": "1fa166521f8101acaf0a8ac6d66bba369e1dda1fe4dadd8adb72d20dc1f4b711"
+      },
+      "model": "doubao-seedance-2-0-260128",
+      "parameters": {
+        "ratio": "16:9",
+        "resolution": "1080p",
+        "duration": 5.0,
+        "generate_audio": true
+      },
+      "editorial": {
+        "fps": 24,
+        "planned_start_frame": 984,
+        "duration_frames": 120,
+        "trim_generated_range_seconds": [
+          0,
+          5.0
+        ]
+      },
+      "prompt": "二维人物＋轻手绘背景；正常身体比例，干净线条与平涂色块，避免纸纹和过度风格化。\n制作有声视听预演，画幅16:9。以动作引入李寄的急性子和手部状态\n构图：歌本与手的近景起，轻抬至李寄半身；肩领边能读出红印\n空间：李寄从画面左入，站阿蘅左侧并肩向书篮，阿蘅在右\n动作开始：河风掀页，李寄手刚伸入画\n动作结束：手压页边，她尚未站稳已找到跳过的页\n承接：干浆糊少量可见；不能画成白手套、血或伤口。书始终在阿蘅一侧掌握\n同步环境与动作声：纸页拍动、轻脚步；不加夸张出场音效\n对白和歌词逐字保持；自然停顿与口型、动作协同。时间为表演目标，不能为卡点吞字。无新增旁白、台词或歌词；除指定演唱外不加配乐。",
+      "image_requirements": [
+        {
+          "object_id": "need-shot-e01-007-character-a-heng",
+          "revision_id": "36f503bfd2037f722fc3a1b8f2b85529aac6b49cddbdd7531fca67b69f9eb29f"
+        },
+        {
+          "object_id": "need-shot-e01-007-character-li-ji",
+          "revision_id": "5e50e8edb061a9d37ca5e959f390c70ed3ed0ddef6d8a11f4d46b3d4a5789d17"
+        },
+        {
+          "object_id": "need-shot-e01-007-composition",
+          "revision_id": "c5e97a43392cf49a5eba4781945d6f646f04136a3024aa4040c6491ad3ce9354"
+        },
+        {
+          "object_id": "need-shot-e01-007-end-keyframe",
+          "revision_id": "9395ee2bcee7bf08fe846cc55143493c76f3069e8028ef55d086781cc574edc1"
+        },
+        {
+          "object_id": "need-shot-e01-007-prop-book-basket",
+          "revision_id": "c4f47c6d0d36746b316bc303f782afefdbab22ba063d6d3d1962e354f328be54"
+        },
+        {
+          "object_id": "need-shot-e01-007-prop-paste-wool",
+          "revision_id": "bfac81e5fc4102e53aff6a5eff2172d4a18a4a02c9cf3fbf05247625e0af3608"
+        },
+        {
+          "object_id": "need-shot-e01-007-prop-river-stone",
+          "revision_id": "49f565d322724206166583cedf0aa0a49edd4e49ae8eb86f21786e88c9fd4627"
+        },
+        {
+          "object_id": "need-shot-e01-007-prop-songbook",
+          "revision_id": "2b954bb4ecdda5cc3825f68404b1e66b58c08ea5380cfa2d2964ad9f640ec5f4"
+        },
+        {
+          "object_id": "need-shot-e01-007-space-rice-shop",
+          "revision_id": "020db5722cdcec5e7627740debf346fc14f199166e8db611416f44d4356dc4aa"
+        }
+      ],
+      "audio_templates": [],
+      "dialogue_and_lyrics": [],
+      "ready": false,
+      "executed": false,
+      "missing": [
+        "镜头所需图像须显式采用准确原件",
+        "音色／旋律须听审并选定准确短片段，按输入上限组织",
+        "实际执行平台和现有可用额度须核对"
+      ],
+      "review": [
+        "逐字听辨台词与歌词，复核说话人、音色、旋律",
+        "回看动作、空间、表演与镜间连续性",
+        "实测声音时机，调整预计窗口或重新生成；不另造独立台词音轨"
+      ]
+    },
+    {
+      "format": "seedance-shot-plan-v1",
+      "shot": {
+        "object_id": "shot-e01-008",
+        "revision_id": "1fa166521f8101acaf0a8ac6d66bba369e1dda1fe4dadd8adb72d20dc1f4b711"
+      },
+      "source": {
+        "block_ids": [
+          "screenplay-04-lantern-home-s001-b012",
+          "screenplay-04-lantern-home-s001-b013",
+          "screenplay-04-lantern-home-s001-b014",
+          "screenplay-04-lantern-home-s001-b015",
+          "screenplay-04-lantern-home-s001-b016"
+        ],
+        "object_id": "screenplay-04-lantern-home-e01",
+        "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+        "scene_id": "s001"
+      },
+      "previous_shot": {
+        "object_id": "shot-e01-007",
+        "revision_id": "8e2ec2924f75a64ad6489b480d3e74567366738bab9bf66d7b89dc8684e8f928"
+      },
+      "next_shot": {
+        "object_id": "shot-e01-009",
+        "revision_id": "874541b7205e59ddff2a69317083c282ae48c430f464487e0ae18513d91bd718"
+      },
+      "model": "doubao-seedance-2-0-260128",
+      "parameters": {
+        "ratio": "16:9",
+        "resolution": "1080p",
+        "duration": 12.0,
+        "generate_audio": true
+      },
+      "editorial": {
+        "fps": 24,
+        "planned_start_frame": 1104,
+        "duration_frames": 288,
+        "trim_generated_range_seconds": [
+          0,
+          12.0
+        ]
+      },
+      "prompt": "二维人物＋轻手绘背景；正常身体比例，干净线条与平涂色块，避免纸纹和过度风格化。\n制作有声视听预演，画幅16:9。建立亲密关系与李寄不装客气的口吻\n构图：固定双人腰上中景，李寄左、阿蘅右；歌本位于两人之间\n空间：两人距离一臂以内，李寄看书再看阿蘅；阿蘅用手边书角轻碰她\n动作开始：李寄指向被省的页\n动作结束：阿蘅说少一句不许跑，李寄接住玩笑\n承接：书角轻碰手臂的触点明确；此处还没正式交书，阿蘅仍控制本子\n@音频1 仅参考李寄·劳作后未擦手 · 李寄 · 日常声线母版的说话人的基础音色，不要复述参考样本内容。\n@音频2 仅参考阿蘅·日常洗旧青衣 · 阿蘅 · 日常声线母版的说话人的基础音色，不要复述参考样本内容。\n0.50–3.17秒预计窗口：李寄说：“这两段，练熟了没有？”\n3.17–5.50秒预计窗口：阿蘅说：“留着下回唱给你。”\n5.50–7.17秒预计窗口：李寄说：“我又不给米。”\n7.17–11.50秒预计窗口：阿蘅说：“所以你得听全，少一句都不许跑。”\n同步环境与动作声：两人四句对白，背景河街保持低电平\n对白和歌词逐字保持；自然停顿与口型、动作协同。时间为表演目标，不能为卡点吞字。无新增旁白、台词或歌词；除指定演唱外不加配乐。",
+      "image_requirements": [
+        {
+          "object_id": "need-shot-e01-008-character-a-heng",
+          "revision_id": "29f07a7f594713befa02ecb7d04e1692ae1d30dbecc5168188646951ed562bea"
+        },
+        {
+          "object_id": "need-shot-e01-008-character-li-ji",
+          "revision_id": "3b3de8c7fc3a9c1b0d52ac1ef1136b27840f7ef43b9f98181a2715a956062eca"
+        },
+        {
+          "object_id": "need-shot-e01-008-composition",
+          "revision_id": "fc3291db70b5dfd762291dca8b713ce24c02dc48622f7b2cd1bbc03ee71570ae"
+        },
+        {
+          "object_id": "need-shot-e01-008-prop-songbook",
+          "revision_id": "fea57ac1719d33de9c5269236e02ac356faded1de62729a7190b782c40da28b3"
+        },
+        {
+          "object_id": "need-shot-e01-008-space-rice-shop",
+          "revision_id": "4a850088529a24ad1905ed6d784534284febef3afd8d62860f000289eac44850"
+        }
+      ],
+      "audio_templates": [
+        {
+          "requirement": {
+            "object_id": "need-form-li-ji-paste-voice",
+            "revision_id": "bd22574490a81e9a2b8d0ba139a095c95f6cdfd41580025b3f1f0243aa40e7d0"
+          },
+          "role": "voice_reference",
+          "selection": null,
+          "clip_status": "待听审并显式选择准确短片段"
+        },
+        {
+          "requirement": {
+            "object_id": "need-form-a-heng-blue-voice",
+            "revision_id": "703bb070f8618a4c10d24a998a3bbc4f85fc2b9d1fd16d0bb7247fb7a55cdb76"
+          },
+          "role": "voice_reference",
+          "selection": null,
+          "clip_status": "待听审并显式选择准确短片段"
+        }
+      ],
+      "dialogue_and_lyrics": [
+        {
+          "type": "dialogue",
+          "speaker": "李寄",
+          "entity": {
+            "object_id": "entity-li-ji",
+            "revision_id": "42af4494af12312922e3aa58ce011f67346ede435ef75b7b24a97827d999ec9b"
+          },
+          "text": "这两段，练熟了没有？",
+          "source": {
+            "object_id": "screenplay-04-lantern-home-e01",
+            "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+            "scene_id": "s001",
+            "block_ids": [
+              "screenplay-04-lantern-home-s001-b012"
+            ]
+          },
+          "id": "e01-line-007",
+          "shot_id": "shot-e01-008",
+          "planned_start_frame": 12,
+          "planned_end_frame": 76,
+          "fps": 24,
+          "timing_status": "镜内预计窗口，随画面生成后实际观看与听辨复核",
+          "delivery": "native_audio"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "阿蘅",
+          "entity": {
+            "object_id": "entity-a-heng",
+            "revision_id": "be76284a262dd11d562410a15e3fefcf6cbedb152eb5dad4c4d94b854619d663"
+          },
+          "text": "留着下回唱给你。",
+          "source": {
+            "object_id": "screenplay-04-lantern-home-e01",
+            "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+            "scene_id": "s001",
+            "block_ids": [
+              "screenplay-04-lantern-home-s001-b013"
+            ]
+          },
+          "id": "e01-line-008",
+          "shot_id": "shot-e01-008",
+          "planned_start_frame": 76,
+          "planned_end_frame": 132,
+          "fps": 24,
+          "timing_status": "镜内预计窗口，随画面生成后实际观看与听辨复核",
+          "delivery": "native_audio"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "李寄",
+          "entity": {
+            "object_id": "entity-li-ji",
+            "revision_id": "42af4494af12312922e3aa58ce011f67346ede435ef75b7b24a97827d999ec9b"
+          },
+          "text": "我又不给米。",
+          "source": {
+            "object_id": "screenplay-04-lantern-home-e01",
+            "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+            "scene_id": "s001",
+            "block_ids": [
+              "screenplay-04-lantern-home-s001-b014"
+            ]
+          },
+          "id": "e01-line-009",
+          "shot_id": "shot-e01-008",
+          "planned_start_frame": 132,
+          "planned_end_frame": 172,
+          "fps": 24,
+          "timing_status": "镜内预计窗口，随画面生成后实际观看与听辨复核",
+          "delivery": "native_audio"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "阿蘅",
+          "entity": {
+            "object_id": "entity-a-heng",
+            "revision_id": "be76284a262dd11d562410a15e3fefcf6cbedb152eb5dad4c4d94b854619d663"
+          },
+          "text": "所以你得听全，少一句都不许跑。",
+          "source": {
+            "object_id": "screenplay-04-lantern-home-e01",
+            "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+            "scene_id": "s001",
+            "block_ids": [
+              "screenplay-04-lantern-home-s001-b016"
+            ]
+          },
+          "id": "e01-line-010",
+          "shot_id": "shot-e01-008",
+          "planned_start_frame": 172,
+          "planned_end_frame": 276,
+          "fps": 24,
+          "timing_status": "镜内预计窗口，随画面生成后实际观看与听辨复核",
+          "delivery": "native_audio"
+        }
+      ],
+      "ready": false,
+      "executed": false,
+      "missing": [
+        "镜头所需图像须显式采用准确原件",
+        "音色／旋律须听审并选定准确短片段，按输入上限组织",
+        "实际执行平台和现有可用额度须核对"
+      ],
+      "review": [
+        "逐字听辨台词与歌词，复核说话人、音色、旋律",
+        "回看动作、空间、表演与镜间连续性",
+        "实测声音时机，调整预计窗口或重新生成；不另造独立台词音轨"
+      ]
+    },
+    {
+      "format": "seedance-shot-plan-v1",
+      "shot": {
+        "object_id": "shot-e01-009",
+        "revision_id": "874541b7205e59ddff2a69317083c282ae48c430f464487e0ae18513d91bd718"
+      },
+      "source": {
+        "block_ids": [
+          "screenplay-04-lantern-home-s001-b017",
+          "screenplay-04-lantern-home-s001-b018",
+          "screenplay-04-lantern-home-s001-b019"
+        ],
+        "object_id": "screenplay-04-lantern-home-e01",
+        "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+        "scene_id": "s001"
+      },
+      "previous_shot": {
+        "object_id": "shot-e01-008",
+        "revision_id": "1fa166521f8101acaf0a8ac6d66bba369e1dda1fe4dadd8adb72d20dc1f4b711"
+      },
+      "next_shot": {
+        "object_id": "shot-e01-010",
+        "revision_id": "8859de82cd3c6c6be86824d3a10c8941c29e9dfacfb5ac8ac75c1cab4257497e"
+      },
+      "model": "doubao-seedance-2-0-260128",
+      "parameters": {
+        "ratio": "16:9",
+        "resolution": "1080p",
+        "duration": 7.0,
+        "generate_audio": true
+      },
+      "editorial": {
+        "fps": 24,
+        "planned_start_frame": 1392,
+        "duration_frames": 168,
+        "trim_generated_range_seconds": [
+          0,
+          7.0
+        ]
+      },
+      "prompt": "二维人物＋轻手绘背景；正常身体比例，干净线条与平涂色块，避免纸纹和过度风格化。\n制作有声视听预演，画幅16:9。让观众看清第一份米是当天所得\n构图：三人中景转手部近景，木斗、袋口和倒米动作完整入框\n空间：周掌柜由店门向前，阿蘅右侧撑袋，李寄靠左看书；木斗从上方对袋口\n动作开始：掌柜出门把木斗的米刮平，阿蘅袋口尚未撑开\n动作结束：木斗倒尽，阿蘅将要系袋，掌柜出声留住\n承接：先等袋撑稳再倒；米流结束后木斗退出，不与下一把预付米剪成同一次倒米\n@音频1 仅参考周掌柜·基准完整形态 · 周掌柜 · 日常声线母版的说话人的基础音色，不要复述参考样本内容。\n0.50–6.50秒预计窗口：周掌柜说：“这是今天的。”\n同步环境与动作声：“这是今天的。”米粒落袋、木斗刮平、布口摩擦\n对白和歌词逐字保持；自然停顿与口型、动作协同。时间为表演目标，不能为卡点吞字。无新增旁白、台词或歌词；除指定演唱外不加配乐。",
+      "image_requirements": [
+        {
+          "object_id": "need-shot-e01-009-character-a-heng",
+          "revision_id": "9fe18bfb8ebb558e15dfe2328e26fd51ac2a222e560c6cec0bdc7123cc1ad244"
+        },
+        {
+          "object_id": "need-shot-e01-009-character-li-ji",
+          "revision_id": "31fe59445a6a491ee90958f0515e4184ccf89a76d0c7ff221d930f9b4ba4fcc1"
+        },
+        {
+          "object_id": "need-shot-e01-009-character-zhou",
+          "revision_id": "2771129a1d01241e3f3e5f7a2c4b0253631882236e06416ee32646cfdaa0ba95"
+        },
+        {
+          "object_id": "need-shot-e01-009-composition",
+          "revision_id": "c9c0649fb88c3b73ca726134e99f572ff313a269d6547f17d435bb7072d2d87f"
+        },
+        {
+          "object_id": "need-shot-e01-009-end-keyframe",
+          "revision_id": "1b572c715f5d7aaff057ed4c926d6c212d2e0a3b46e50cf240af0c015622daa1"
+        },
+        {
+          "object_id": "need-shot-e01-009-prop-grain",
+          "revision_id": "00a4a3de83e2e84083cfaa1c4bde0c0f4f82f96ba82c9e555caebb1205842638"
+        },
+        {
+          "object_id": "need-shot-e01-009-prop-rice-bag",
+          "revision_id": "ba3c99b5e379ce72ab95a4a13bc53b0d649c3688f71a4e91e141a56585e7e38e"
+        },
+        {
+          "object_id": "need-shot-e01-009-prop-rice-measure",
+          "revision_id": "e8cdbb50074c24874883513217375d46b55bc5087bebc940d76479a714a9d3ad"
+        },
+        {
+          "object_id": "need-shot-e01-009-prop-songbook",
+          "revision_id": "d34c4096c669002bcfa4ea1894b193c7029d683ba3cb0c5e940f3aa79ed6f6b1"
+        },
+        {
+          "object_id": "need-shot-e01-009-space-rice-shop",
+          "revision_id": "899ed385bf07092a00dc79198f5ed52e9e698b23106486d1f0b7b22f1b65a5c8"
+        }
+      ],
+      "audio_templates": [
+        {
+          "requirement": {
+            "object_id": "need-form-zhou-base-voice",
+            "revision_id": "eedd18bc2f9e0aca9764310dc77047501e1146bcc2a91bcea0d27a5aa733b23e"
+          },
+          "role": "voice_reference",
+          "selection": null,
+          "clip_status": "待听审并显式选择准确短片段"
+        }
+      ],
+      "dialogue_and_lyrics": [
+        {
+          "type": "dialogue",
+          "speaker": "周掌柜",
+          "entity": {
+            "object_id": "entity-zhou",
+            "revision_id": "b5bd34aad27efc3242b5ca4e724214a7ea727339c670f5168bed6a2ad42a62f4"
+          },
+          "text": "这是今天的。",
+          "source": {
+            "object_id": "screenplay-04-lantern-home-e01",
+            "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+            "scene_id": "s001",
+            "block_ids": [
+              "screenplay-04-lantern-home-s001-b018"
+            ]
+          },
+          "id": "e01-line-011",
+          "shot_id": "shot-e01-009",
+          "planned_start_frame": 12,
+          "planned_end_frame": 156,
+          "fps": 24,
+          "timing_status": "镜内预计窗口，随画面生成后实际观看与听辨复核",
+          "delivery": "native_audio"
+        }
+      ],
+      "ready": false,
+      "executed": false,
+      "missing": [
+        "镜头所需图像须显式采用准确原件",
+        "音色／旋律须听审并选定准确短片段，按输入上限组织",
+        "实际执行平台和现有可用额度须核对"
+      ],
+      "review": [
+        "逐字听辨台词与歌词，复核说话人、音色、旋律",
+        "回看动作、空间、表演与镜间连续性",
+        "实测声音时机，调整预计窗口或重新生成；不另造独立台词音轨"
+      ]
+    },
+    {
+      "format": "seedance-shot-plan-v1",
+      "shot": {
+        "object_id": "shot-e01-010",
+        "revision_id": "8859de82cd3c6c6be86824d3a10c8941c29e9dfacfb5ac8ac75c1cab4257497e"
+      },
+      "source": {
+        "block_ids": [
+          "screenplay-04-lantern-home-s001-b020"
+        ],
+        "object_id": "screenplay-04-lantern-home-e01",
+        "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+        "scene_id": "s001"
+      },
+      "previous_shot": {
+        "object_id": "shot-e01-009",
+        "revision_id": "874541b7205e59ddff2a69317083c282ae48c430f464487e0ae18513d91bd718"
+      },
+      "next_shot": {
+        "object_id": "shot-e01-011",
+        "revision_id": "923f384407917e0bb5c34497caa089af8d901ab476b985a7ed6af9747a76eb57"
+      },
+      "model": "doubao-seedance-2-0-260128",
+      "parameters": {
+        "ratio": "16:9",
+        "resolution": "1080p",
+        "duration": 14.0,
+        "generate_audio": true
+      },
+      "editorial": {
+        "fps": 24,
+        "planned_start_frame": 1560,
+        "duration_frames": 336,
+        "trim_generated_range_seconds": [
+          0,
+          14.0
+        ]
+      },
+      "prompt": "二维人物＋轻手绘背景；正常身体比例，干净线条与平涂色块，避免纸纹和过度风格化。\n制作有声视听预演，画幅16:9。说明阿蘅下一份收入与需要练好的曲子\n构图：周掌柜中近景，阿蘅半侧背在前景；镜头稳定留完整口语节奏\n空间：掌柜在门口面朝街，两女孩面朝店；李寄仍在阿蘅左边翻歌本\n动作开始：掌柜叫住正系袋的阿蘅\n动作结束：把明天唱活和傍晚先唱一遍交代完\n承接：《送青篷》此处只被提及，不能在镜头里插播尚未学会的完整歌段或许家婚礼\n@音频1 仅参考周掌柜·基准完整形态 · 周掌柜 · 日常声线母版的说话人的基础音色，不要复述参考样本内容。\n0.50–13.50秒预计窗口：周掌柜说：“明天许家嫁女儿，要唱《送青篷》。你娘说你能唱，我替你应下了。傍晚先来唱一遍，可不能也省两段。”\n同步环境与动作声：周掌柜整段对白，明确“明天”和“傍晚”\n对白和歌词逐字保持；自然停顿与口型、动作协同。时间为表演目标，不能为卡点吞字。无新增旁白、台词或歌词；除指定演唱外不加配乐。",
+      "image_requirements": [
+        {
+          "object_id": "need-shot-e01-010-character-a-heng",
+          "revision_id": "8dd242bce10f59c3c8797433445dba5130c09283984462acde1544d42280d0a0"
+        },
+        {
+          "object_id": "need-shot-e01-010-character-li-ji",
+          "revision_id": "fa62a43014b0a4e5910de9505c916da6fa671c24bf82067681717d6cb0dd54a4"
+        },
+        {
+          "object_id": "need-shot-e01-010-character-zhou",
+          "revision_id": "c5b1695640698cfe185cc8676a9a6dc22012a4c8beabde3b8e575a8ca754e6c8"
+        },
+        {
+          "object_id": "need-shot-e01-010-composition",
+          "revision_id": "27262fbea6627bfc7d02b57bf8ca17de09d1043848b95c99830bb57c825ec594"
+        },
+        {
+          "object_id": "need-shot-e01-010-prop-rice-bag",
+          "revision_id": "16954fde1a78fff6e51babb26e520c0017eedd17082ed6c148a1b4beca552d84"
+        },
+        {
+          "object_id": "need-shot-e01-010-prop-rice-measure",
+          "revision_id": "0a4c8afcc8661c30905d02eb6565707664b96835e28f18caba14777ff0cae3bf"
+        },
+        {
+          "object_id": "need-shot-e01-010-prop-songbook",
+          "revision_id": "eb1383b713bcad5a02f3b0755e2af3d2ef0cbcd45373e156c42d4ba216aa9cfe"
+        },
+        {
+          "object_id": "need-shot-e01-010-space-rice-shop",
+          "revision_id": "11a98d3f445ca53e46928f718ca44cb72288414bc5e0d956875832c6e189fe8d"
+        }
+      ],
+      "audio_templates": [
+        {
+          "requirement": {
+            "object_id": "need-form-zhou-base-voice",
+            "revision_id": "eedd18bc2f9e0aca9764310dc77047501e1146bcc2a91bcea0d27a5aa733b23e"
+          },
+          "role": "voice_reference",
+          "selection": null,
+          "clip_status": "待听审并显式选择准确短片段"
+        }
+      ],
+      "dialogue_and_lyrics": [
+        {
+          "type": "dialogue",
+          "speaker": "周掌柜",
+          "entity": {
+            "object_id": "entity-zhou",
+            "revision_id": "b5bd34aad27efc3242b5ca4e724214a7ea727339c670f5168bed6a2ad42a62f4"
+          },
+          "text": "明天许家嫁女儿，要唱《送青篷》。你娘说你能唱，我替你应下了。傍晚先来唱一遍，可不能也省两段。",
+          "source": {
+            "object_id": "screenplay-04-lantern-home-e01",
+            "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+            "scene_id": "s001",
+            "block_ids": [
+              "screenplay-04-lantern-home-s001-b020"
+            ]
+          },
+          "id": "e01-line-012",
+          "shot_id": "shot-e01-010",
+          "planned_start_frame": 12,
+          "planned_end_frame": 324,
+          "fps": 24,
+          "timing_status": "镜内预计窗口，随画面生成后实际观看与听辨复核",
+          "delivery": "native_audio"
+        }
+      ],
+      "ready": false,
+      "executed": false,
+      "missing": [
+        "镜头所需图像须显式采用准确原件",
+        "音色／旋律须听审并选定准确短片段，按输入上限组织",
+        "实际执行平台和现有可用额度须核对"
+      ],
+      "review": [
+        "逐字听辨台词与歌词，复核说话人、音色、旋律",
+        "回看动作、空间、表演与镜间连续性",
+        "实测声音时机，调整预计窗口或重新生成；不另造独立台词音轨"
+      ]
+    },
+    {
+      "format": "seedance-shot-plan-v1",
+      "shot": {
+        "object_id": "shot-e01-011",
+        "revision_id": "923f384407917e0bb5c34497caa089af8d901ab476b985a7ed6af9747a76eb57"
+      },
+      "source": {
+        "block_ids": [
+          "screenplay-04-lantern-home-s001-b021",
+          "screenplay-04-lantern-home-s001-b022"
+        ],
+        "object_id": "screenplay-04-lantern-home-e01",
+        "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+        "scene_id": "s001"
+      },
+      "previous_shot": {
+        "object_id": "shot-e01-010",
+        "revision_id": "8859de82cd3c6c6be86824d3a10c8941c29e9dfacfb5ac8ac75c1cab4257497e"
+      },
+      "next_shot": {
+        "object_id": "shot-e01-012",
+        "revision_id": "3fcfea2177967f02e0aebead2e371d43ccbab269356613a56c027e8daf010de4"
+      },
+      "model": "doubao-seedance-2-0-260128",
+      "parameters": {
+        "ratio": "16:9",
+        "resolution": "1080p",
+        "duration": 4,
+        "generate_audio": true
+      },
+      "editorial": {
+        "fps": 24,
+        "planned_start_frame": 1896,
+        "duration_frames": 96,
+        "trim_generated_range_seconds": [
+          0,
+          4.0
+        ]
+      },
+      "prompt": "二维人物＋轻手绘背景；正常身体比例，干净线条与平涂色块，避免纸纹和过度风格化。\n制作有声视听预演，画幅16:9。留下阿蘅其实仍需看词的可见依据\n构图：手与末页特写，几处生字圈清楚；上缘见阿蘅收住笑的下半脸\n空间：李寄手从左翻页，阿蘅手从右压住，纸角不跳位置\n动作开始：末页被翻开，圈字露出来\n动作结束：阿蘅压页并向掌柜保证这回不省\n承接：整页歌词不擅写未公布内容；实际可读字只取定稿已给的《送青篷》原文\n@音频1 仅参考阿蘅·日常洗旧青衣 · 阿蘅 · 日常声线母版的说话人的基础音色，不要复述参考样本内容。\n0.50–3.50秒预计窗口：阿蘅说：“这回不省。您放心。”\n同步环境与动作声：阿蘅保证的对白，纸页轻响\n对白和歌词逐字保持；自然停顿与口型、动作协同。时间为表演目标，不能为卡点吞字。无新增旁白、台词或歌词；除指定演唱外不加配乐。",
+      "image_requirements": [
+        {
+          "object_id": "need-shot-e01-011-character-a-heng",
+          "revision_id": "400a558cd169ff385c60bb06439c4e7c63d8f379221938b838b03299b58103a8"
+        },
+        {
+          "object_id": "need-shot-e01-011-character-li-ji",
+          "revision_id": "969b723afe36a9ccfd0ccef744f0e198947ab254526d12ab11d7f55c862928ff"
+        },
+        {
+          "object_id": "need-shot-e01-011-composition",
+          "revision_id": "7cbcc3a82ebdec5db701039b62ab86a1289b99b3f603526af1bb6f0d846e22ed"
+        },
+        {
+          "object_id": "need-shot-e01-011-prop-songbook",
+          "revision_id": "ef427e4cf0f2882bbaf49aaa943d3aae66b6aff91126c171bc2510fb8e73403f"
+        },
+        {
+          "object_id": "need-shot-e01-011-space-rice-shop",
+          "revision_id": "d62855ebf58949d256779d3e95695fb4ac491d5f166817a3f3eaef844b0a29ca"
+        }
+      ],
+      "audio_templates": [
+        {
+          "requirement": {
+            "object_id": "need-form-a-heng-blue-voice",
+            "revision_id": "703bb070f8618a4c10d24a998a3bbc4f85fc2b9d1fd16d0bb7247fb7a55cdb76"
+          },
+          "role": "voice_reference",
+          "selection": null,
+          "clip_status": "待听审并显式选择准确短片段"
+        }
+      ],
+      "dialogue_and_lyrics": [
+        {
+          "type": "dialogue",
+          "speaker": "阿蘅",
+          "entity": {
+            "object_id": "entity-a-heng",
+            "revision_id": "be76284a262dd11d562410a15e3fefcf6cbedb152eb5dad4c4d94b854619d663"
+          },
+          "text": "这回不省。您放心。",
+          "source": {
+            "object_id": "screenplay-04-lantern-home-e01",
+            "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+            "scene_id": "s001",
+            "block_ids": [
+              "screenplay-04-lantern-home-s001-b022"
+            ]
+          },
+          "id": "e01-line-013",
+          "shot_id": "shot-e01-011",
+          "planned_start_frame": 12,
+          "planned_end_frame": 84,
+          "fps": 24,
+          "timing_status": "镜内预计窗口，随画面生成后实际观看与听辨复核",
+          "delivery": "native_audio"
+        }
+      ],
+      "ready": false,
+      "executed": false,
+      "missing": [
+        "镜头所需图像须显式采用准确原件",
+        "音色／旋律须听审并选定准确短片段，按输入上限组织",
+        "实际执行平台和现有可用额度须核对"
+      ],
+      "review": [
+        "逐字听辨台词与歌词，复核说话人、音色、旋律",
+        "回看动作、空间、表演与镜间连续性",
+        "实测声音时机，调整预计窗口或重新生成；不另造独立台词音轨"
+      ]
+    },
+    {
+      "format": "seedance-shot-plan-v1",
+      "shot": {
+        "object_id": "shot-e01-012",
+        "revision_id": "3fcfea2177967f02e0aebead2e371d43ccbab269356613a56c027e8daf010de4"
+      },
+      "source": {
+        "block_ids": [
+          "screenplay-04-lantern-home-s001-b023",
+          "screenplay-04-lantern-home-s001-b024",
+          "screenplay-04-lantern-home-s001-b025"
+        ],
+        "object_id": "screenplay-04-lantern-home-e01",
+        "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+        "scene_id": "s001"
+      },
+      "previous_shot": {
+        "object_id": "shot-e01-011",
+        "revision_id": "923f384407917e0bb5c34497caa089af8d901ab476b985a7ed6af9747a76eb57"
+      },
+      "next_shot": {
+        "object_id": "shot-e01-013",
+        "revision_id": "993e5c4bbf4ad2056c12750608d5a8304e628a2dcaae15c29339333013adc6a2"
+      },
+      "model": "doubao-seedance-2-0-260128",
+      "parameters": {
+        "ratio": "16:9",
+        "resolution": "1080p",
+        "duration": 10.0,
+        "generate_audio": true
+      },
+      "editorial": {
+        "fps": 24,
+        "planned_start_frame": 1992,
+        "duration_frames": 240,
+        "trim_generated_range_seconds": [
+          0,
+          10.0
+        ]
+      },
+      "prompt": "二维人物＋轻手绘背景；正常身体比例，干净线条与平涂色块，避免纸纹和过度风格化。\n制作有声视听预演，画幅16:9。区分第二份米的用途，为退米一场建立依据\n构图：稍宽三人景，保留掌柜回柜再过来的完整方向；添米时近景不跳过撑袋\n空间：柜在掌柜后侧，阿蘅原地重新开袋，李寄让出倒米位置\n动作开始：第一份已入袋，掌柜转回柜边\n动作结束：额外一把米添完，阿蘅道谢，掌柜手离开袋口\n承接：第二份必须是一小把手抓，不能又倒一整斗；两次支付声音和动作分段可辨\n@音频1 仅参考周掌柜·基准完整形态 · 周掌柜 · 日常声线母版的说话人的基础音色，不要复述参考样本内容。\n@音频2 仅参考阿蘅·日常洗旧青衣 · 阿蘅 · 日常声线母版的说话人的基础音色，不要复述参考样本内容。\n0.50–6.62秒预计窗口：周掌柜说：“这把先付你。唱成了，明天的报酬够你家吃几天。”\n6.62–9.50秒预计窗口：阿蘅说：“谢谢周叔。我傍晚就来。”\n同步环境与动作声：掌柜预付说明与阿蘅道谢；少量米落布袋\n对白和歌词逐字保持；自然停顿与口型、动作协同。时间为表演目标，不能为卡点吞字。无新增旁白、台词或歌词；除指定演唱外不加配乐。",
+      "image_requirements": [
+        {
+          "object_id": "need-shot-e01-012-character-a-heng",
+          "revision_id": "ffe2212606e1f294f4d85df937a51034650b572bf37acbaba11305c6170f9cbf"
+        },
+        {
+          "object_id": "need-shot-e01-012-character-li-ji",
+          "revision_id": "40627201dff3bac5a2d373cde0be2f5c06ac9067a7a8491e8dbcee3432e4ffb5"
+        },
+        {
+          "object_id": "need-shot-e01-012-character-zhou",
+          "revision_id": "b48f374bc44ec7986b19887cd250dc66578cd9e791ed6e69b16b9470c0ce738e"
+        },
+        {
+          "object_id": "need-shot-e01-012-composition",
+          "revision_id": "cbaa7da4063d0f70ed9eca25d1697456fbb0bf84e3c00638fd16f0494340b33e"
+        },
+        {
+          "object_id": "need-shot-e01-012-end-keyframe",
+          "revision_id": "484602329f32041c016334aa39cfc961e46a588bfef55d9560fb2658a6230318"
+        },
+        {
+          "object_id": "need-shot-e01-012-prop-grain",
+          "revision_id": "ff63044927eca651efb6bf5d5f18776c65b90681e6b95341aad5a3fe404e839b"
+        },
+        {
+          "object_id": "need-shot-e01-012-prop-rice-bag",
+          "revision_id": "d6749614f20f14745a43d7416dcfa19f8a849753dfd0a8e34f609fbd6e9a427e"
+        },
+        {
+          "object_id": "need-shot-e01-012-prop-songbook",
+          "revision_id": "3b7727094fdbe31bafdad89c2df3fa20763749653614d87725b2f3c0681902c0"
+        },
+        {
+          "object_id": "need-shot-e01-012-space-rice-shop",
+          "revision_id": "645051e00454a03597ac6c7bd2be96b1b868b51c2a5f5cf8aaaeff7124cc3589"
+        }
+      ],
+      "audio_templates": [
+        {
+          "requirement": {
+            "object_id": "need-form-zhou-base-voice",
+            "revision_id": "eedd18bc2f9e0aca9764310dc77047501e1146bcc2a91bcea0d27a5aa733b23e"
+          },
+          "role": "voice_reference",
+          "selection": null,
+          "clip_status": "待听审并显式选择准确短片段"
+        },
+        {
+          "requirement": {
+            "object_id": "need-form-a-heng-blue-voice",
+            "revision_id": "703bb070f8618a4c10d24a998a3bbc4f85fc2b9d1fd16d0bb7247fb7a55cdb76"
+          },
+          "role": "voice_reference",
+          "selection": null,
+          "clip_status": "待听审并显式选择准确短片段"
+        }
+      ],
+      "dialogue_and_lyrics": [
+        {
+          "type": "dialogue",
+          "speaker": "周掌柜",
+          "entity": {
+            "object_id": "entity-zhou",
+            "revision_id": "b5bd34aad27efc3242b5ca4e724214a7ea727339c670f5168bed6a2ad42a62f4"
+          },
+          "text": "这把先付你。唱成了，明天的报酬够你家吃几天。",
+          "source": {
+            "object_id": "screenplay-04-lantern-home-e01",
+            "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+            "scene_id": "s001",
+            "block_ids": [
+              "screenplay-04-lantern-home-s001-b024"
+            ]
+          },
+          "id": "e01-line-014",
+          "shot_id": "shot-e01-012",
+          "planned_start_frame": 12,
+          "planned_end_frame": 159,
+          "fps": 24,
+          "timing_status": "镜内预计窗口，随画面生成后实际观看与听辨复核",
+          "delivery": "native_audio"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "阿蘅",
+          "entity": {
+            "object_id": "entity-a-heng",
+            "revision_id": "be76284a262dd11d562410a15e3fefcf6cbedb152eb5dad4c4d94b854619d663"
+          },
+          "text": "谢谢周叔。我傍晚就来。",
+          "source": {
+            "object_id": "screenplay-04-lantern-home-e01",
+            "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+            "scene_id": "s001",
+            "block_ids": [
+              "screenplay-04-lantern-home-s001-b025"
+            ]
+          },
+          "id": "e01-line-015",
+          "shot_id": "shot-e01-012",
+          "planned_start_frame": 159,
+          "planned_end_frame": 228,
+          "fps": 24,
+          "timing_status": "镜内预计窗口，随画面生成后实际观看与听辨复核",
+          "delivery": "native_audio"
+        }
+      ],
+      "ready": false,
+      "executed": false,
+      "missing": [
+        "镜头所需图像须显式采用准确原件",
+        "音色／旋律须听审并选定准确短片段，按输入上限组织",
+        "实际执行平台和现有可用额度须核对"
+      ],
+      "review": [
+        "逐字听辨台词与歌词，复核说话人、音色、旋律",
+        "回看动作、空间、表演与镜间连续性",
+        "实测声音时机，调整预计窗口或重新生成；不另造独立台词音轨"
+      ]
+    },
+    {
+      "format": "seedance-shot-plan-v1",
+      "shot": {
+        "object_id": "shot-e01-013",
+        "revision_id": "993e5c4bbf4ad2056c12750608d5a8304e628a2dcaae15c29339333013adc6a2"
+      },
+      "source": {
+        "block_ids": [
+          "screenplay-04-lantern-home-s001-b026",
+          "screenplay-04-lantern-home-s001-b027",
+          "screenplay-04-lantern-home-s001-b028",
+          "screenplay-04-lantern-home-s001-b029"
+        ],
+        "object_id": "screenplay-04-lantern-home-e01",
+        "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+        "scene_id": "s001"
+      },
+      "previous_shot": {
+        "object_id": "shot-e01-012",
+        "revision_id": "3fcfea2177967f02e0aebead2e371d43ccbab269356613a56c027e8daf010de4"
+      },
+      "next_shot": {
+        "object_id": "shot-e01-014",
+        "revision_id": "1a54bf714ff22e936101bf37aeaf8fb3f91f774e3f60dea0fdc6cf3fee46aa2a"
+      },
+      "model": "doubao-seedance-2-0-260128",
+      "parameters": {
+        "ratio": "16:9",
+        "resolution": "1080p",
+        "duration": 7.0,
+        "generate_audio": true
+      },
+      "editorial": {
+        "fps": 24,
+        "planned_start_frame": 2232,
+        "duration_frames": 168,
+        "trim_generated_range_seconds": [
+          0,
+          7.0
+        ]
+      },
+      "prompt": "二维人物＋轻手绘背景；正常身体比例，干净线条与平涂色块，避免纸纹和过度风格化。\n制作有声视听预演，画幅16:9。从掌柜的生计安排回到女孩间的小约定\n构图：檐外双人中景，米袋结在画面下部，李寄凑近书页\n空间：两人侧移半步让出店门，阿蘅右手侧留袋，李寄仍在左\n动作开始：阿蘅扎袋，两人让到檐外\n动作结束：李寄答应晚些陪练，视线从书页抬回阿蘅\n承接：这一承诺仍是日常小事，不提前表现第二集扔书后的歉疚\n@音频1 仅参考李寄·劳作后未擦手 · 李寄 · 日常声线母版的说话人的基础音色，不要复述参考样本内容。\n@音频2 仅参考阿蘅·日常洗旧青衣 · 阿蘅 · 日常声线母版的说话人的基础音色，不要复述参考样本内容。\n0.50–3.50秒预计窗口：李寄说：“最后那段，你还得看词呢。”\n3.50–5.92秒预计窗口：阿蘅说：“晚些你陪我一起练。”\n5.92–6.50秒预计窗口：李寄说：“好啊。”\n同步环境与动作声：三句对白、布袋打结\n对白和歌词逐字保持；自然停顿与口型、动作协同。时间为表演目标，不能为卡点吞字。无新增旁白、台词或歌词；除指定演唱外不加配乐。",
+      "image_requirements": [
+        {
+          "object_id": "need-shot-e01-013-character-a-heng",
+          "revision_id": "bd9738dec5ec6ad6764cddd2abc27614ef2d3d8ddf7569f7367eafaad6c876ab"
+        },
+        {
+          "object_id": "need-shot-e01-013-character-li-ji",
+          "revision_id": "ff9c7d6bb3f63eca5d1cdefc2d79baec590d878b42b3f760ce9f9ff35f4f71ee"
+        },
+        {
+          "object_id": "need-shot-e01-013-composition",
+          "revision_id": "2ff16d30f9ae1aed9b4ee416643491c5607e37cbe44b79bab614f3b2399c56c8"
+        },
+        {
+          "object_id": "need-shot-e01-013-prop-rice-bag",
+          "revision_id": "11405e17b6b2df83038df2b8944d928ae8bcf6b4bc7e3d0f9cfdaa7c7493eced"
+        },
+        {
+          "object_id": "need-shot-e01-013-prop-songbook",
+          "revision_id": "c24479ce0d35347d910df18a81d71b58f20fe01ad00781de0ccf7af2937dcf71"
+        },
+        {
+          "object_id": "need-shot-e01-013-space-rice-shop",
+          "revision_id": "46ae359a70099d976d4e08d32cd3638bebd9ef0221204bfa9d0a239d1714b12e"
+        }
+      ],
+      "audio_templates": [
+        {
+          "requirement": {
+            "object_id": "need-form-li-ji-paste-voice",
+            "revision_id": "bd22574490a81e9a2b8d0ba139a095c95f6cdfd41580025b3f1f0243aa40e7d0"
+          },
+          "role": "voice_reference",
+          "selection": null,
+          "clip_status": "待听审并显式选择准确短片段"
+        },
+        {
+          "requirement": {
+            "object_id": "need-form-a-heng-blue-voice",
+            "revision_id": "703bb070f8618a4c10d24a998a3bbc4f85fc2b9d1fd16d0bb7247fb7a55cdb76"
+          },
+          "role": "voice_reference",
+          "selection": null,
+          "clip_status": "待听审并显式选择准确短片段"
+        }
+      ],
+      "dialogue_and_lyrics": [
+        {
+          "type": "dialogue",
+          "speaker": "李寄",
+          "entity": {
+            "object_id": "entity-li-ji",
+            "revision_id": "42af4494af12312922e3aa58ce011f67346ede435ef75b7b24a97827d999ec9b"
+          },
+          "text": "最后那段，你还得看词呢。",
+          "source": {
+            "object_id": "screenplay-04-lantern-home-e01",
+            "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+            "scene_id": "s001",
+            "block_ids": [
+              "screenplay-04-lantern-home-s001-b027"
+            ]
+          },
+          "id": "e01-line-016",
+          "shot_id": "shot-e01-013",
+          "planned_start_frame": 12,
+          "planned_end_frame": 84,
+          "fps": 24,
+          "timing_status": "镜内预计窗口，随画面生成后实际观看与听辨复核",
+          "delivery": "native_audio"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "阿蘅",
+          "entity": {
+            "object_id": "entity-a-heng",
+            "revision_id": "be76284a262dd11d562410a15e3fefcf6cbedb152eb5dad4c4d94b854619d663"
+          },
+          "text": "晚些你陪我一起练。",
+          "source": {
+            "object_id": "screenplay-04-lantern-home-e01",
+            "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+            "scene_id": "s001",
+            "block_ids": [
+              "screenplay-04-lantern-home-s001-b028"
+            ]
+          },
+          "id": "e01-line-017",
+          "shot_id": "shot-e01-013",
+          "planned_start_frame": 84,
+          "planned_end_frame": 142,
+          "fps": 24,
+          "timing_status": "镜内预计窗口，随画面生成后实际观看与听辨复核",
+          "delivery": "native_audio"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "李寄",
+          "entity": {
+            "object_id": "entity-li-ji",
+            "revision_id": "42af4494af12312922e3aa58ce011f67346ede435ef75b7b24a97827d999ec9b"
+          },
+          "text": "好啊。",
+          "source": {
+            "object_id": "screenplay-04-lantern-home-e01",
+            "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+            "scene_id": "s001",
+            "block_ids": [
+              "screenplay-04-lantern-home-s001-b029"
+            ]
+          },
+          "id": "e01-line-018",
+          "shot_id": "shot-e01-013",
+          "planned_start_frame": 142,
+          "planned_end_frame": 156,
+          "fps": 24,
+          "timing_status": "镜内预计窗口，随画面生成后实际观看与听辨复核",
+          "delivery": "native_audio"
+        }
+      ],
+      "ready": false,
+      "executed": false,
+      "missing": [
+        "镜头所需图像须显式采用准确原件",
+        "音色／旋律须听审并选定准确短片段，按输入上限组织",
+        "实际执行平台和现有可用额度须核对"
+      ],
+      "review": [
+        "逐字听辨台词与歌词，复核说话人、音色、旋律",
+        "回看动作、空间、表演与镜间连续性",
+        "实测声音时机，调整预计窗口或重新生成；不另造独立台词音轨"
+      ]
+    },
+    {
+      "format": "seedance-shot-plan-v1",
+      "shot": {
+        "object_id": "shot-e01-014",
+        "revision_id": "1a54bf714ff22e936101bf37aeaf8fb3f91f774e3f60dea0fdc6cf3fee46aa2a"
+      },
+      "source": {
+        "block_ids": [
+          "screenplay-04-lantern-home-s001-b030",
+          "screenplay-04-lantern-home-s001-b031",
+          "screenplay-04-lantern-home-s001-b032"
+        ],
+        "object_id": "screenplay-04-lantern-home-e01",
+        "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+        "scene_id": "s001"
+      },
+      "previous_shot": {
+        "object_id": "shot-e01-013",
+        "revision_id": "993e5c4bbf4ad2056c12750608d5a8304e628a2dcaae15c29339333013adc6a2"
+      },
+      "next_shot": {
+        "object_id": "shot-e01-015",
+        "revision_id": "0b6cf9d404295f557421b3a4713a01c5543ecabb734d02b50059eeefbd557299"
+      },
+      "model": "doubao-seedance-2-0-260128",
+      "parameters": {
+        "ratio": "16:9",
+        "resolution": "1080p",
+        "duration": 9.0,
+        "generate_audio": true
+      },
+      "editorial": {
+        "fps": 24,
+        "planned_start_frame": 2400,
+        "duration_frames": 216,
+        "trim_generated_range_seconds": [
+          0,
+          9.0
+        ]
+      },
+      "prompt": "二维人物＋轻手绘背景；正常身体比例，干净线条与平涂色块，避免纸纹和过度风格化。\n制作有声视听预演，画幅16:9。由阿蘅的体贴转入擦手的自然理由\n构图：双人半身景保留手、肩领和米袋；末尾落在李寄摊手笑\n空间：李寄伸向下方米袋，阿蘅把袋留在自己一侧，另一手递书到两人之间\n动作开始：李寄想提米袋\n动作结束：阿蘅看红印留袋，递书发现浆糊收回；李寄双手摊开\n承接：书没有交成，袋也没换主人；下一场由此开始擦手，不应凭切镜完成交换\n@音频1 仅参考阿蘅·日常洗旧青衣 · 阿蘅 · 日常声线母版的说话人的基础音色，不要复述参考样本内容。\n0.50–8.50秒预计窗口：阿蘅说：“你先把手给我看看。”\n同步环境与动作声：“你先把手给我看看。”衣布轻响，保留微笑呼吸\n对白和歌词逐字保持；自然停顿与口型、动作协同。时间为表演目标，不能为卡点吞字。无新增旁白、台词或歌词；除指定演唱外不加配乐。",
+      "image_requirements": [
+        {
+          "object_id": "need-shot-e01-014-character-a-heng",
+          "revision_id": "ba443aedeb64b1166890d9785adf8f42308f017faffe6d41b71cad3e586b183e"
+        },
+        {
+          "object_id": "need-shot-e01-014-character-li-ji",
+          "revision_id": "217605ede47d487dd14c0af720fb09a9c4af48f8d50cae52c15691221cabc01d"
+        },
+        {
+          "object_id": "need-shot-e01-014-composition",
+          "revision_id": "fbfd6eea915c13e2c784cfc78dd7723ac7586f04b215f8fbbad546558c8e1bd1"
+        },
+        {
+          "object_id": "need-shot-e01-014-end-keyframe",
+          "revision_id": "7b602dc8a258202e0bb60d32608a9b123d93e897034adfbd420f1f6a9b012991"
+        },
+        {
+          "object_id": "need-shot-e01-014-prop-paste-wool",
+          "revision_id": "9e86eb518b4f934672fa83aead77814278ae6816340c393f1f5fce7c649bb72b"
+        },
+        {
+          "object_id": "need-shot-e01-014-prop-rice-bag",
+          "revision_id": "ce31d9ff75bab073b2315133b87a88da02a3dfe1501111b639682485889f6f1c"
+        },
+        {
+          "object_id": "need-shot-e01-014-prop-songbook",
+          "revision_id": "b3dae96f3ace5003bb3c1cf9eb9b0a0d0aad49b90fcc300c48096c34a85bc052"
+        },
+        {
+          "object_id": "need-shot-e01-014-space-rice-shop",
+          "revision_id": "78911bc432c43cba3359346d5d77a52b13047adf6cbd160c5441ae73d76c463f"
+        }
+      ],
+      "audio_templates": [
+        {
+          "requirement": {
+            "object_id": "need-form-a-heng-blue-voice",
+            "revision_id": "703bb070f8618a4c10d24a998a3bbc4f85fc2b9d1fd16d0bb7247fb7a55cdb76"
+          },
+          "role": "voice_reference",
+          "selection": null,
+          "clip_status": "待听审并显式选择准确短片段"
+        }
+      ],
+      "dialogue_and_lyrics": [
+        {
+          "type": "dialogue",
+          "speaker": "阿蘅",
+          "entity": {
+            "object_id": "entity-a-heng",
+            "revision_id": "be76284a262dd11d562410a15e3fefcf6cbedb152eb5dad4c4d94b854619d663"
+          },
+          "text": "你先把手给我看看。",
+          "source": {
+            "object_id": "screenplay-04-lantern-home-e01",
+            "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+            "scene_id": "s001",
+            "block_ids": [
+              "screenplay-04-lantern-home-s001-b031"
+            ]
+          },
+          "id": "e01-line-019",
+          "shot_id": "shot-e01-014",
+          "planned_start_frame": 12,
+          "planned_end_frame": 204,
+          "fps": 24,
+          "timing_status": "镜内预计窗口，随画面生成后实际观看与听辨复核",
+          "delivery": "native_audio"
+        }
+      ],
+      "ready": false,
+      "executed": false,
+      "missing": [
+        "镜头所需图像须显式采用准确原件",
+        "音色／旋律须听审并选定准确短片段，按输入上限组织",
+        "实际执行平台和现有可用额度须核对"
+      ],
+      "review": [
+        "逐字听辨台词与歌词，复核说话人、音色、旋律",
+        "回看动作、空间、表演与镜间连续性",
+        "实测声音时机，调整预计窗口或重新生成；不另造独立台词音轨"
+      ]
+    },
+    {
+      "format": "seedance-shot-plan-v1",
+      "shot": {
+        "object_id": "shot-e01-015",
+        "revision_id": "0b6cf9d404295f557421b3a4713a01c5543ecabb734d02b50059eeefbd557299"
+      },
+      "source": {
+        "block_ids": [
+          "screenplay-04-lantern-home-s002-b001"
+        ],
+        "object_id": "screenplay-04-lantern-home-e01",
+        "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+        "scene_id": "s002"
+      },
+      "previous_shot": {
+        "object_id": "shot-e01-014",
+        "revision_id": "1a54bf714ff22e936101bf37aeaf8fb3f91f774e3f60dea0fdc6cf3fee46aa2a"
+      },
+      "next_shot": {
+        "object_id": "shot-e01-016",
+        "revision_id": "5c78249481f0669b469776a945cfaf3c6adbd9411890f225ba3c83a2572735ab"
+      },
+      "model": "doubao-seedance-2-0-260128",
+      "parameters": {
+        "ratio": "16:9",
+        "resolution": "1080p",
+        "duration": 4,
+        "generate_audio": true
+      },
+      "editorial": {
+        "fps": 24,
+        "planned_start_frame": 2616,
+        "duration_frames": 96,
+        "trim_generated_range_seconds": [
+          0,
+          4.0
+        ]
+      },
+      "prompt": "二维人物＋轻手绘背景；正常身体比例，干净线条与平涂色块，避免纸纹和过度风格化。\n制作有声视听预演，画幅16:9。建立道具屋与对街竹器摊的位置，给后面的反应镜头落地\n构图：沿街中远景，米铺留左后，道具屋幕布在右前，河面仅作侧后景\n空间：女孩由米铺向画面右侧走出少许，在街角停；陶伯摊位在她们对街，不能隔一条河\n动作开始：从檐外向道具屋方向接镜\n动作结束：女孩在街角停住，阿蘅准备取水壶\n承接：相邻两场仍是同一日连续时刻；衣色、发髻、袋结、书的主人延续镜头 14\n同步环境与动作声：河水、轻风、衣裳布响与远处民居动静\n对白和歌词逐字保持；自然停顿与口型、动作协同。时间为表演目标，不能为卡点吞字。无新增旁白、台词或歌词；除指定演唱外不加配乐。",
+      "image_requirements": [
+        {
+          "object_id": "need-shot-e01-015-character-a-heng",
+          "revision_id": "58757b3651bf12af59e44a1108c69558607a7a7c23c0954531434d8096c60cb7"
+        },
+        {
+          "object_id": "need-shot-e01-015-character-li-ji",
+          "revision_id": "7c56322b88dd10023a53a5cdcd7c9a170875c17b73c46f315aeaa6f00a164e1a"
+        },
+        {
+          "object_id": "need-shot-e01-015-composition",
+          "revision_id": "636e5ecdca0c72d5d2e2951e39f7053072cd6ac7aea8d00bbf58a9d2ade9d3b3"
+        },
+        {
+          "object_id": "need-shot-e01-015-prop-curtain",
+          "revision_id": "f2c36a5d4836f638eec1fd60df28ae4daedc643a51c1967468b909e9ed280e20"
+        },
+        {
+          "object_id": "need-shot-e01-015-prop-rice-bag",
+          "revision_id": "e174131d25dbb75d68179c6cafc7d0684e57f9a1b738bd2d6805a11dfad66ab5"
+        },
+        {
+          "object_id": "need-shot-e01-015-prop-songbook",
+          "revision_id": "ceb8ab6b60faa5a45f17cbef16a93a9ab4ab7c0fe46010a4559409476bb8325a"
+        },
+        {
+          "object_id": "need-shot-e01-015-prop-street-laundry",
+          "revision_id": "105380c729c0893d18c71fb1092c3ea3749ec21d8f61417d7d3db1ef401d2ddb"
+        },
+        {
+          "object_id": "need-shot-e01-015-space-bamboo-stall",
+          "revision_id": "32177af446ec3dc93a468debf1b2e4c910061ba3138026aa0a1fc5e334cce6b0"
+        },
+        {
+          "object_id": "need-shot-e01-015-space-prop-house",
+          "revision_id": "29059b222ef60867fa2361e1b69230d87da029e9ab81cf10c929952e8416dc27"
+        },
+        {
+          "object_id": "need-shot-e01-015-space-rice-shop",
+          "revision_id": "a8b5abebffcf30a378c2241b3802911c47f901030126aab445820f150c5d965a"
+        },
+        {
+          "object_id": "need-shot-e01-015-space-river-street",
+          "revision_id": "048b46d5381e5d796f116760caf3779586462aecae05c4d3d40e56dd3328b2d9"
+        }
+      ],
+      "audio_templates": [],
+      "dialogue_and_lyrics": [],
+      "ready": false,
+      "executed": false,
+      "missing": [
+        "镜头所需图像须显式采用准确原件",
+        "音色／旋律须听审并选定准确短片段，按输入上限组织",
+        "实际执行平台和现有可用额度须核对"
+      ],
+      "review": [
+        "逐字听辨台词与歌词，复核说话人、音色、旋律",
+        "回看动作、空间、表演与镜间连续性",
+        "实测声音时机，调整预计窗口或重新生成；不另造独立台词音轨"
+      ]
+    },
+    {
+      "format": "seedance-shot-plan-v1",
+      "shot": {
+        "object_id": "shot-e01-016",
+        "revision_id": "5c78249481f0669b469776a945cfaf3c6adbd9411890f225ba3c83a2572735ab"
+      },
+      "source": {
+        "block_ids": [
+          "screenplay-04-lantern-home-s002-b002",
+          "screenplay-04-lantern-home-s002-b003",
+          "screenplay-04-lantern-home-s002-b004"
+        ],
+        "object_id": "screenplay-04-lantern-home-e01",
+        "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+        "scene_id": "s002"
+      },
+      "previous_shot": {
+        "object_id": "shot-e01-015",
+        "revision_id": "0b6cf9d404295f557421b3a4713a01c5543ecabb734d02b50059eeefbd557299"
+      },
+      "next_shot": {
+        "object_id": "shot-e01-017",
+        "revision_id": "b31d52a6ffae214dd04d348be97358d7edb0fddd46243b3b4aeb9371bb5ff35e"
+      },
+      "model": "doubao-seedance-2-0-260128",
+      "parameters": {
+        "ratio": "16:9",
+        "resolution": "1080p",
+        "duration": 10.0,
+        "generate_audio": true
+      },
+      "editorial": {
+        "fps": 24,
+        "planned_start_frame": 2712,
+        "duration_frames": 240,
+        "trim_generated_range_seconds": [
+          0,
+          10.0
+        ]
+      },
+      "prompt": "二维人物＋轻手绘背景；正常身体比例，干净线条与平涂色块，避免纸纹和过度风格化。\n制作有声视听预演，画幅16:9。通过珍惜歌本的话建立物件价值\n构图：双人腰上中景，水壶口、布巾和李寄双手在同一画面\n空间：阿蘅右、李寄左；米袋先搁两人脚旁可見，歌本夹在阿蘅前臂与身侧\n动作开始：阿蘅倒少量水蘸巾\n动作结束：李寄接巾，一边辩称早干一边摊手给看\n承接：手忙时书和米袋有可见落点。将米袋短暂放脚边属于制作走位选择，不改对白\n@音频1 仅参考阿蘅·日常洗旧青衣 · 阿蘅 · 日常声线母版的说话人的基础音色，不要复述参考样本内容。\n@音频2 仅参考李寄·劳作后未擦手 · 李寄 · 日常声线母版的说话人的基础音色，不要复述参考样本内容。\n0.50–7.88秒预计窗口：阿蘅说：“我娘一句一句哼的，抄了七个晚上呢。别叫你一把粘走了。”\n7.88–9.50秒预计窗口：李寄说：“早干啦。你看——”\n同步环境与动作声：两人对白，少量倒水与湿布声\n对白和歌词逐字保持；自然停顿与口型、动作协同。时间为表演目标，不能为卡点吞字。无新增旁白、台词或歌词；除指定演唱外不加配乐。",
+      "image_requirements": [
+        {
+          "object_id": "need-shot-e01-016-character-a-heng",
+          "revision_id": "db1f0a657153fb3032b46536be88dbc9ca8f66d148a46ea12aaaac55351e2bad"
+        },
+        {
+          "object_id": "need-shot-e01-016-character-li-ji",
+          "revision_id": "704d4cfc28a970c8e2a335003103493c4dc39f7db916ad2408233806f2804991"
+        },
+        {
+          "object_id": "need-shot-e01-016-composition",
+          "revision_id": "9a0fe6d05bffe55b8056bf7e6ad5d60f3bff3996ba95776385bcbfaa189253bd"
+        },
+        {
+          "object_id": "need-shot-e01-016-end-keyframe",
+          "revision_id": "6987cb2640252069efa333e1c9f937a2aeb66e38a5df06fe126db03371971c92"
+        },
+        {
+          "object_id": "need-shot-e01-016-prop-cloth",
+          "revision_id": "e507c74ad58b2bea3d8250b27a0a40aa44fba235c29d21ff8f69a74fbb4b4618"
+        },
+        {
+          "object_id": "need-shot-e01-016-prop-rice-bag",
+          "revision_id": "9bab126414f5ce4653f88212d621a707183afa41ebee26eb6b0dada3701dd4c3"
+        },
+        {
+          "object_id": "need-shot-e01-016-prop-songbook",
+          "revision_id": "2357f3db30d7d68fd0b81373b14a37f8519f6b923428d253c950e1da6266fc40"
+        },
+        {
+          "object_id": "need-shot-e01-016-prop-water-flask",
+          "revision_id": "5626c0f4b3af21c90567bab51258aba32f73f32692f48748eced2ea00666908b"
+        },
+        {
+          "object_id": "need-shot-e01-016-space-river-street",
+          "revision_id": "3abb7e096f92fe20c64d5b451dbc5f90d89771f08d242aa01721c191b22ecc1e"
+        }
+      ],
+      "audio_templates": [
+        {
+          "requirement": {
+            "object_id": "need-form-a-heng-blue-voice",
+            "revision_id": "703bb070f8618a4c10d24a998a3bbc4f85fc2b9d1fd16d0bb7247fb7a55cdb76"
+          },
+          "role": "voice_reference",
+          "selection": null,
+          "clip_status": "待听审并显式选择准确短片段"
+        },
+        {
+          "requirement": {
+            "object_id": "need-form-li-ji-paste-voice",
+            "revision_id": "bd22574490a81e9a2b8d0ba139a095c95f6cdfd41580025b3f1f0243aa40e7d0"
+          },
+          "role": "voice_reference",
+          "selection": null,
+          "clip_status": "待听审并显式选择准确短片段"
+        }
+      ],
+      "dialogue_and_lyrics": [
+        {
+          "type": "dialogue",
+          "speaker": "阿蘅",
+          "entity": {
+            "object_id": "entity-a-heng",
+            "revision_id": "be76284a262dd11d562410a15e3fefcf6cbedb152eb5dad4c4d94b854619d663"
+          },
+          "text": "我娘一句一句哼的，抄了七个晚上呢。别叫你一把粘走了。",
+          "source": {
+            "object_id": "screenplay-04-lantern-home-e01",
+            "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+            "scene_id": "s002",
+            "block_ids": [
+              "screenplay-04-lantern-home-s002-b003"
+            ]
+          },
+          "id": "e01-line-020",
+          "shot_id": "shot-e01-016",
+          "planned_start_frame": 12,
+          "planned_end_frame": 189,
+          "fps": 24,
+          "timing_status": "镜内预计窗口，随画面生成后实际观看与听辨复核",
+          "delivery": "native_audio"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "李寄",
+          "entity": {
+            "object_id": "entity-li-ji",
+            "revision_id": "42af4494af12312922e3aa58ce011f67346ede435ef75b7b24a97827d999ec9b"
+          },
+          "text": "早干啦。你看——",
+          "source": {
+            "object_id": "screenplay-04-lantern-home-e01",
+            "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+            "scene_id": "s002",
+            "block_ids": [
+              "screenplay-04-lantern-home-s002-b004"
+            ]
+          },
+          "id": "e01-line-021",
+          "shot_id": "shot-e01-016",
+          "planned_start_frame": 189,
+          "planned_end_frame": 228,
+          "fps": 24,
+          "timing_status": "镜内预计窗口，随画面生成后实际观看与听辨复核",
+          "delivery": "native_audio"
+        }
+      ],
+      "ready": false,
+      "executed": false,
+      "missing": [
+        "镜头所需图像须显式采用准确原件",
+        "音色／旋律须听审并选定准确短片段，按输入上限组织",
+        "实际执行平台和现有可用额度须核对"
+      ],
+      "review": [
+        "逐字听辨台词与歌词，复核说话人、音色、旋律",
+        "回看动作、空间、表演与镜间连续性",
+        "实测声音时机，调整预计窗口或重新生成；不另造独立台词音轨"
+      ]
+    },
+    {
+      "format": "seedance-shot-plan-v1",
+      "shot": {
+        "object_id": "shot-e01-017",
+        "revision_id": "b31d52a6ffae214dd04d348be97358d7edb0fddd46243b3b4aeb9371bb5ff35e"
+      },
+      "source": {
+        "block_ids": [
+          "screenplay-04-lantern-home-s002-b005",
+          "screenplay-04-lantern-home-s002-b006"
+        ],
+        "object_id": "screenplay-04-lantern-home-e01",
+        "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+        "scene_id": "s002"
+      },
+      "previous_shot": {
+        "object_id": "shot-e01-016",
+        "revision_id": "5c78249481f0669b469776a945cfaf3c6adbd9411890f225ba3c83a2572735ab"
+      },
+      "next_shot": {
+        "object_id": "shot-e01-018",
+        "revision_id": "251cc0532a44af109c48fb79c88a1326abd1bce38af4ef5f20606d5fdc94d2f7"
+      },
+      "model": "doubao-seedance-2-0-260128",
+      "parameters": {
+        "ratio": "16:9",
+        "resolution": "1080p",
+        "duration": 5.0,
+        "generate_audio": true
+      },
+      "editorial": {
+        "fps": 24,
+        "planned_start_frame": 2952,
+        "duration_frames": 120,
+        "trim_generated_range_seconds": [
+          0,
+          5.0
+        ]
+      },
+      "prompt": "二维人物＋轻手绘背景；正常身体比例，干净线条与平涂色块，避免纸纹和过度风格化。\n制作有声视听预演，画幅16:9。做清洁动作的结果，让歌本第一次真正转手\n构图：手部近景，羊毛掉落可见，略拉宽保留交书与接书\n空间：李寄手在左前，阿蘅右侧翻巾后再把歌本递到李寄两掌上\n动作开始：李寄搓手落下一撮羊毛\n动作结束：布巾翻面后擦净，李寄双手接稳歌本\n承接：本镜由脏手转换为净手；后续近景不得继续出现同一团白浆糊\n同步环境与动作声：轻搓、巾布、纸本接手，无新增对白\n对白和歌词逐字保持；自然停顿与口型、动作协同。时间为表演目标，不能为卡点吞字。无新增旁白、台词或歌词；除指定演唱外不加配乐。",
+      "image_requirements": [
+        {
+          "object_id": "need-shot-e01-017-character-a-heng",
+          "revision_id": "242d9767bf68dd507433645f8c1d70f970357fa4e2d351e07db8bcd8871360f7"
+        },
+        {
+          "object_id": "need-shot-e01-017-character-li-ji",
+          "revision_id": "9ea82548025b00e4721980c6aa9c7449bbe4c22040a53a55c7df3c0e27720676"
+        },
+        {
+          "object_id": "need-shot-e01-017-composition",
+          "revision_id": "3b7bbdaddf942fce519041aad2394d3254552dd30e83afd879fa32b65c2293a0"
+        },
+        {
+          "object_id": "need-shot-e01-017-end-keyframe",
+          "revision_id": "20c719cf09c9ae9000bb63ef1542985984e7af62fcca27811b93ae1acee2823a"
+        },
+        {
+          "object_id": "need-shot-e01-017-prop-cloth",
+          "revision_id": "b2b1865200d90b0782152a8a7b441e716089bd52130ece2202498ffa88ef8c40"
+        },
+        {
+          "object_id": "need-shot-e01-017-prop-paste-wool",
+          "revision_id": "d918b6d4c4b868ca22344dd5565736ee7f8cacd09ebbdda0803cc9b601374200"
+        },
+        {
+          "object_id": "need-shot-e01-017-prop-songbook",
+          "revision_id": "722d3ebbfe00613e075d879f212adb8a451a2f7f1098870fdcf663009fae7e49"
+        },
+        {
+          "object_id": "need-shot-e01-017-space-river-street",
+          "revision_id": "ee5deaf03fe1eae9af368dcd33d7e61c02b4e52213573c2a3a2b3d24dc7cb208"
+        }
+      ],
+      "audio_templates": [],
+      "dialogue_and_lyrics": [],
+      "ready": false,
+      "executed": false,
+      "missing": [
+        "镜头所需图像须显式采用准确原件",
+        "音色／旋律须听审并选定准确短片段，按输入上限组织",
+        "实际执行平台和现有可用额度须核对"
+      ],
+      "review": [
+        "逐字听辨台词与歌词，复核说话人、音色、旋律",
+        "回看动作、空间、表演与镜间连续性",
+        "实测声音时机，调整预计窗口或重新生成；不另造独立台词音轨"
+      ]
+    },
+    {
+      "format": "seedance-shot-plan-v1",
+      "shot": {
+        "object_id": "shot-e01-018",
+        "revision_id": "251cc0532a44af109c48fb79c88a1326abd1bce38af4ef5f20606d5fdc94d2f7"
+      },
+      "source": {
+        "block_ids": [
+          "screenplay-04-lantern-home-s002-b006",
+          "screenplay-04-lantern-home-s002-b007"
+        ],
+        "object_id": "screenplay-04-lantern-home-e01",
+        "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+        "scene_id": "s002"
+      },
+      "previous_shot": {
+        "object_id": "shot-e01-017",
+        "revision_id": "b31d52a6ffae214dd04d348be97358d7edb0fddd46243b3b4aeb9371bb5ff35e"
+      },
+      "next_shot": {
+        "object_id": "shot-e01-019",
+        "revision_id": "98791146facb5a7ce700500bab365e50d96df5c97b067ad43b4fe4a12bd5d53f"
+      },
+      "model": "doubao-seedance-2-0-260128",
+      "parameters": {
+        "ratio": "16:9",
+        "resolution": "1080p",
+        "duration": 5.0,
+        "generate_audio": true
+      },
+      "editorial": {
+        "fps": 24,
+        "planned_start_frame": 3072,
+        "duration_frames": 120,
+        "trim_generated_range_seconds": [
+          0,
+          5.0
+        ]
+      },
+      "prompt": "二维人物＋轻手绘背景；正常身体比例，干净线条与平涂色块，避免纸纹和过度风格化。\n制作有声视听预演，画幅16:9。以固定耳尖特征建立狗的身份\n构图：低机位中景，街角卧狗在右前，李寄在左蹲下招手\n空间：墨耳距女孩两三步，朝李寄抬头；缺口在狗的左耳，反打也不镜像换边\n动作开始：墨耳卧着，李寄抱书蹲下\n动作结束：听见呼唤后墨耳起身欲跑来\n承接：歌本由李寄一臂抱稳；蹲下不把书放到脏地上。猫狗声不擅加大声吠叫\n@音频1 仅参考李寄·劳作后未擦手 · 李寄 · 日常声线母版的说话人的基础音色，不要复述参考样本内容。\n0.50–4.50秒预计窗口：李寄说：“墨耳，过来。”\n同步环境与动作声：“墨耳，过来。”轻爪步、呼吸，环境不变\n对白和歌词逐字保持；自然停顿与口型、动作协同。时间为表演目标，不能为卡点吞字。无新增旁白、台词或歌词；除指定演唱外不加配乐。",
+      "image_requirements": [
+        {
+          "object_id": "need-shot-e01-018-character-a-heng",
+          "revision_id": "c88882133c5560a0c9405b172a4459434bf6dd23475ebe1c6b009597457eb171"
+        },
+        {
+          "object_id": "need-shot-e01-018-character-li-ji",
+          "revision_id": "d96baf86d7c305f3e718ce8f772319ec8fcce56fe2dcde5867f9519b5afafcda"
+        },
+        {
+          "object_id": "need-shot-e01-018-character-mo-er",
+          "revision_id": "ffd0d2c8ed39f90506864533aa1d087762ecdaee304fd4af046247855b9f30d8"
+        },
+        {
+          "object_id": "need-shot-e01-018-composition",
+          "revision_id": "3b3357a233bb24f708295e86e334af1e8908e167a47a3354f3ef0843e2f7edbe"
+        },
+        {
+          "object_id": "need-shot-e01-018-end-keyframe",
+          "revision_id": "9cf61ed59d72d3fa473940835d6a2de135499572fd1b0578a559eeda86d06230"
+        },
+        {
+          "object_id": "need-shot-e01-018-prop-rice-bag",
+          "revision_id": "9d9335eb63c6770b7cd0492db6b13a494437df0558c4b13ef0bbd78aef4679ad"
+        },
+        {
+          "object_id": "need-shot-e01-018-prop-songbook",
+          "revision_id": "ec35b355a3f6fe94ed4bd1c629d3e6d69ee3e136a4251d0a1b63d308eb267a1b"
+        },
+        {
+          "object_id": "need-shot-e01-018-space-river-street",
+          "revision_id": "c1d474aa0e99238a5837faae29e85042f0756c553ee29a9ae4f2ac4ae8c88421"
+        }
+      ],
+      "audio_templates": [
+        {
+          "requirement": {
+            "object_id": "need-form-li-ji-paste-voice",
+            "revision_id": "bd22574490a81e9a2b8d0ba139a095c95f6cdfd41580025b3f1f0243aa40e7d0"
+          },
+          "role": "voice_reference",
+          "selection": null,
+          "clip_status": "待听审并显式选择准确短片段"
+        }
+      ],
+      "dialogue_and_lyrics": [
+        {
+          "type": "dialogue",
+          "speaker": "李寄",
+          "entity": {
+            "object_id": "entity-li-ji",
+            "revision_id": "42af4494af12312922e3aa58ce011f67346ede435ef75b7b24a97827d999ec9b"
+          },
+          "text": "墨耳，过来。",
+          "source": {
+            "object_id": "screenplay-04-lantern-home-e01",
+            "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+            "scene_id": "s002",
+            "block_ids": [
+              "screenplay-04-lantern-home-s002-b007"
+            ]
+          },
+          "id": "e01-line-022",
+          "shot_id": "shot-e01-018",
+          "planned_start_frame": 12,
+          "planned_end_frame": 108,
+          "fps": 24,
+          "timing_status": "镜内预计窗口，随画面生成后实际观看与听辨复核",
+          "delivery": "native_audio"
+        }
+      ],
+      "ready": false,
+      "executed": false,
+      "missing": [
+        "镜头所需图像须显式采用准确原件",
+        "音色／旋律须听审并选定准确短片段，按输入上限组织",
+        "实际执行平台和现有可用额度须核对"
+      ],
+      "review": [
+        "逐字听辨台词与歌词，复核说话人、音色、旋律",
+        "回看动作、空间、表演与镜间连续性",
+        "实测声音时机，调整预计窗口或重新生成；不另造独立台词音轨"
+      ]
+    },
+    {
+      "format": "seedance-shot-plan-v1",
+      "shot": {
+        "object_id": "shot-e01-019",
+        "revision_id": "98791146facb5a7ce700500bab365e50d96df5c97b067ad43b4fe4a12bd5d53f"
+      },
+      "source": {
+        "block_ids": [
+          "screenplay-04-lantern-home-s002-b008",
+          "screenplay-04-lantern-home-s002-b009",
+          "screenplay-04-lantern-home-s002-b010"
+        ],
+        "object_id": "screenplay-04-lantern-home-e01",
+        "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+        "scene_id": "s002"
+      },
+      "previous_shot": {
+        "object_id": "shot-e01-018",
+        "revision_id": "251cc0532a44af109c48fb79c88a1326abd1bce38af4ef5f20606d5fdc94d2f7"
+      },
+      "next_shot": {
+        "object_id": "shot-e01-020",
+        "revision_id": "a59ba87dd14f8157f5a0b19850072dd29a38c3e7d5f7781b1239772b7f6b74a4"
+      },
+      "model": "doubao-seedance-2-0-260128",
+      "parameters": {
+        "ratio": "16:9",
+        "resolution": "1080p",
+        "duration": 8.0,
+        "generate_audio": true
+      },
+      "editorial": {
+        "fps": 24,
+        "planned_start_frame": 3192,
+        "duration_frames": 192,
+        "trim_generated_range_seconds": [
+          0,
+          8.0
+        ]
+      },
+      "prompt": "二维人物＋轻手绘背景；正常身体比例，干净线条与平涂色块，避免纸纹和过度风格化。\n制作有声视听预演，画幅16:9。恢复两人的轻松与阿蘅对李寄的小了解\n构图：低些的双人中景，狗与递饼的手都入框\n空间：李寄左、阿蘅右，墨耳在两人前方偏右；视线先落在狗再相互看\n动作开始：墨耳摇尾跑到脚边\n动作结束：李寄半句话没说完，注意忽然移到米铺方向\n承接：半块饼先交阿蘅，再掰小角喂；未喂完部分留在阿蘅手里／收好，不能凭空整块吃掉\n@音频1 仅参考阿蘅·日常洗旧青衣 · 阿蘅 · 日常声线母版的说话人的基础音色，不要复述参考样本内容。\n@音频2 仅参考李寄·劳作后未擦手 · 李寄 · 日常声线母版的说话人的基础音色，不要复述参考样本内容。\n0.50–5.83秒预计窗口：阿蘅说：“真给墨耳留着了。我以为你半路就吃了。”\n5.83–7.50秒预计窗口：李寄说：“我有那么馋——”\n同步环境与动作声：女孩两句对白、轻爪步和咀嚼声\n对白和歌词逐字保持；自然停顿与口型、动作协同。时间为表演目标，不能为卡点吞字。无新增旁白、台词或歌词；除指定演唱外不加配乐。",
+      "image_requirements": [
+        {
+          "object_id": "need-shot-e01-019-character-a-heng",
+          "revision_id": "c66b31d76fa9f0a00edef87a2bfcdff5e07feb98c9aaba8a912a5f311e60199a"
+        },
+        {
+          "object_id": "need-shot-e01-019-character-li-ji",
+          "revision_id": "80bcd5de185a0438f501484e68d03e6e0e4297fc4f8531e2bd1263bf40968643"
+        },
+        {
+          "object_id": "need-shot-e01-019-character-mo-er",
+          "revision_id": "3bc70d5a828049123f687897eb0ffa329e35c73b6a84c20dcea4dc89a8bdafeb"
+        },
+        {
+          "object_id": "need-shot-e01-019-composition",
+          "revision_id": "15c27b298ad0a65c20dd3d04e4a57bc69b58f9b869657b4c0a100578813b7aab"
+        },
+        {
+          "object_id": "need-shot-e01-019-end-keyframe",
+          "revision_id": "e7a80289c5a99e274d710bad03b926b4e666ac3946aa53bc1d48bcf67af4d609"
+        },
+        {
+          "object_id": "need-shot-e01-019-prop-cake",
+          "revision_id": "2292db9d49cbc8e0416980b7742a5bbb1b9347c1c18203e5e4d2ffa1584ef5a1"
+        },
+        {
+          "object_id": "need-shot-e01-019-prop-rice-bag",
+          "revision_id": "84fa3f89760f1bfba8b664d971f14199670379ba2146c0433ba2d213483d05de"
+        },
+        {
+          "object_id": "need-shot-e01-019-prop-songbook",
+          "revision_id": "f2b79fba7e78d191c7f1186a9f16b560a09b4eb3ca182f996a710d6e1a866b25"
+        },
+        {
+          "object_id": "need-shot-e01-019-space-river-street",
+          "revision_id": "b6be17ccd5259d16fab8ab3d8ef73c44f2977a8fc82b0bf6b2f11e3f10535315"
+        }
+      ],
+      "audio_templates": [
+        {
+          "requirement": {
+            "object_id": "need-form-a-heng-blue-voice",
+            "revision_id": "703bb070f8618a4c10d24a998a3bbc4f85fc2b9d1fd16d0bb7247fb7a55cdb76"
+          },
+          "role": "voice_reference",
+          "selection": null,
+          "clip_status": "待听审并显式选择准确短片段"
+        },
+        {
+          "requirement": {
+            "object_id": "need-form-li-ji-paste-voice",
+            "revision_id": "bd22574490a81e9a2b8d0ba139a095c95f6cdfd41580025b3f1f0243aa40e7d0"
+          },
+          "role": "voice_reference",
+          "selection": null,
+          "clip_status": "待听审并显式选择准确短片段"
+        }
+      ],
+      "dialogue_and_lyrics": [
+        {
+          "type": "dialogue",
+          "speaker": "阿蘅",
+          "entity": {
+            "object_id": "entity-a-heng",
+            "revision_id": "be76284a262dd11d562410a15e3fefcf6cbedb152eb5dad4c4d94b854619d663"
+          },
+          "text": "真给墨耳留着了。我以为你半路就吃了。",
+          "source": {
+            "object_id": "screenplay-04-lantern-home-e01",
+            "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+            "scene_id": "s002",
+            "block_ids": [
+              "screenplay-04-lantern-home-s002-b009"
+            ]
+          },
+          "id": "e01-line-023",
+          "shot_id": "shot-e01-019",
+          "planned_start_frame": 12,
+          "planned_end_frame": 140,
+          "fps": 24,
+          "timing_status": "镜内预计窗口，随画面生成后实际观看与听辨复核",
+          "delivery": "native_audio"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "李寄",
+          "entity": {
+            "object_id": "entity-li-ji",
+            "revision_id": "42af4494af12312922e3aa58ce011f67346ede435ef75b7b24a97827d999ec9b"
+          },
+          "text": "我有那么馋——",
+          "source": {
+            "object_id": "screenplay-04-lantern-home-e01",
+            "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+            "scene_id": "s002",
+            "block_ids": [
+              "screenplay-04-lantern-home-s002-b010"
+            ]
+          },
+          "id": "e01-line-024",
+          "shot_id": "shot-e01-019",
+          "planned_start_frame": 140,
+          "planned_end_frame": 180,
+          "fps": 24,
+          "timing_status": "镜内预计窗口，随画面生成后实际观看与听辨复核",
+          "delivery": "native_audio"
+        }
+      ],
+      "ready": false,
+      "executed": false,
+      "missing": [
+        "镜头所需图像须显式采用准确原件",
+        "音色／旋律须听审并选定准确短片段，按输入上限组织",
+        "实际执行平台和现有可用额度须核对"
+      ],
+      "review": [
+        "逐字听辨台词与歌词，复核说话人、音色、旋律",
+        "回看动作、空间、表演与镜间连续性",
+        "实测声音时机，调整预计窗口或重新生成；不另造独立台词音轨"
+      ]
+    },
+    {
+      "format": "seedance-shot-plan-v1",
+      "shot": {
+        "object_id": "shot-e01-020",
+        "revision_id": "a59ba87dd14f8157f5a0b19850072dd29a38c3e7d5f7781b1239772b7f6b74a4"
+      },
+      "source": {
+        "block_ids": [
+          "screenplay-04-lantern-home-s002-b011",
+          "screenplay-04-lantern-home-s002-b012"
+        ],
+        "object_id": "screenplay-04-lantern-home-e01",
+        "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+        "scene_id": "s002"
+      },
+      "previous_shot": {
+        "object_id": "shot-e01-019",
+        "revision_id": "98791146facb5a7ce700500bab365e50d96df5c97b067ad43b4fe4a12bd5d53f"
+      },
+      "next_shot": {
+        "object_id": "shot-e01-021",
+        "revision_id": "94a62e4dd1094ed0f4e1f8ce91b511d7f0cfca92e4cdc43b2d9e49962a437b54"
+      },
+      "model": "doubao-seedance-2-0-260128",
+      "parameters": {
+        "ratio": "16:9",
+        "resolution": "1080p",
+        "duration": 6.0,
+        "generate_audio": true
+      },
+      "editorial": {
+        "fps": 24,
+        "planned_start_frame": 3384,
+        "duration_frames": 144,
+        "trim_generated_range_seconds": [
+          0,
+          6.0
+        ]
+      },
+      "prompt": "二维人物＋轻手绘背景；正常身体比例，干净线条与平涂色块，避免纸纹和过度风格化。\n制作有声视听预演，画幅16:9。先让观众通过李寄注意到赵执事的存在\n构图：由李寄收笑切到中景赵执事，褐衣、钥匙在腰侧，路人从前景经过\n空间：赵执事站米铺檐下，在女孩左后方；他望画面右向阿蘅\n动作开始：李寄停下话，赵执事一直看阿蘅\n动作结束：路人招呼，他略点头后离檐\n承接：不加恶人俯拍、阴影变脸或威胁配乐；危险感来自注视与女孩停顿\n@音频1 仅参考河街路人·基准完整形态 · 河街路人 · 日常声线母版的说话人的基础音色，不要复述参考样本内容。\n0.50–5.50秒预计窗口：河街路人说：“赵执事”\n同步环境与动作声：路人“赵执事”，细小钥匙碰声，街声短暂留空\n对白和歌词逐字保持；自然停顿与口型、动作协同。时间为表演目标，不能为卡点吞字。无新增旁白、台词或歌词；除指定演唱外不加配乐。",
+      "image_requirements": [
+        {
+          "object_id": "need-shot-e01-020-character-li-ji",
+          "revision_id": "c6cc568c7a293941b52cb02cd5be47397e34f9c736631219d481b20e187f5e32"
+        },
+        {
+          "object_id": "need-shot-e01-020-character-street-passers",
+          "revision_id": "6dcbad62db5dc078df15b4356e7f87513fda900bbb78e179753638397c909f16"
+        },
+        {
+          "object_id": "need-shot-e01-020-character-zhao",
+          "revision_id": "c59d97d8ba1b8e08fff2726f6addd1693e222e1d1a832162a637b7bcd4c84179"
+        },
+        {
+          "object_id": "need-shot-e01-020-composition",
+          "revision_id": "21a6f6f9504559ab2322e7414687471d83a31a27c16ac2675ebbc2675f69fcab"
+        },
+        {
+          "object_id": "need-shot-e01-020-prop-keys",
+          "revision_id": "5db28b2931f150af29cb308c79721db031d78db46afa705c89cbf179f65ba614"
+        },
+        {
+          "object_id": "need-shot-e01-020-space-rice-shop",
+          "revision_id": "93e69f27d43a4c5650e75b56bd251c7a0e3abad7504fa8649e4271e4fd237b0c"
+        },
+        {
+          "object_id": "need-shot-e01-020-space-river-street",
+          "revision_id": "9d0ac158ab22c78109acc3834c5052d4208c0f459792533f8d8aa95d0da41b38"
+        }
+      ],
+      "audio_templates": [
+        {
+          "requirement": {
+            "object_id": "need-form-street-passers-base-voice",
+            "revision_id": "3e9f952e95d548dd412b53daf46f166ca39b2c9a8c0e3380a90a426a9a5357b2"
+          },
+          "role": "voice_reference",
+          "selection": null,
+          "clip_status": "待听审并显式选择准确短片段"
+        }
+      ],
+      "dialogue_and_lyrics": [
+        {
+          "type": "dialogue",
+          "speaker": "河街路人",
+          "entity": {
+            "object_id": "entity-street-passers",
+            "revision_id": "47658107e12e7a3b20bad00930146b12f6b857fe2f92b9e932af2db097ceeddf"
+          },
+          "text": "赵执事",
+          "source": {
+            "object_id": "screenplay-04-lantern-home-e01",
+            "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+            "scene_id": "s002",
+            "block_ids": [
+              "screenplay-04-lantern-home-s002-b012"
+            ]
+          },
+          "id": "e01-line-025",
+          "shot_id": "shot-e01-020",
+          "planned_start_frame": 12,
+          "planned_end_frame": 132,
+          "fps": 24,
+          "timing_status": "镜内预计窗口，随画面生成后实际观看与听辨复核",
+          "delivery": "native_audio"
+        }
+      ],
+      "ready": false,
+      "executed": false,
+      "missing": [
+        "镜头所需图像须显式采用准确原件",
+        "音色／旋律须听审并选定准确短片段，按输入上限组织",
+        "实际执行平台和现有可用额度须核对"
+      ],
+      "review": [
+        "逐字听辨台词与歌词，复核说话人、音色、旋律",
+        "回看动作、空间、表演与镜间连续性",
+        "实测声音时机，调整预计窗口或重新生成；不另造独立台词音轨"
+      ]
+    },
+    {
+      "format": "seedance-shot-plan-v1",
+      "shot": {
+        "object_id": "shot-e01-021",
+        "revision_id": "94a62e4dd1094ed0f4e1f8ce91b511d7f0cfca92e4cdc43b2d9e49962a437b54"
+      },
+      "source": {
+        "block_ids": [
+          "screenplay-04-lantern-home-s002-b013",
+          "screenplay-04-lantern-home-s002-b014",
+          "screenplay-04-lantern-home-s002-b015"
+        ],
+        "object_id": "screenplay-04-lantern-home-e01",
+        "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+        "scene_id": "s002"
+      },
+      "previous_shot": {
+        "object_id": "shot-e01-020",
+        "revision_id": "a59ba87dd14f8157f5a0b19850072dd29a38c3e7d5f7781b1239772b7f6b74a4"
+      },
+      "next_shot": {
+        "object_id": "shot-e01-022",
+        "revision_id": "690708b2ed4dbf27896c88ea83e3e09c0303cb14b37be0d1dc1ab0f403af0c7f"
+      },
+      "model": "doubao-seedance-2-0-260128",
+      "parameters": {
+        "ratio": "16:9",
+        "resolution": "1080p",
+        "duration": 6.0,
+        "generate_audio": true
+      },
+      "editorial": {
+        "fps": 24,
+        "planned_start_frame": 3528,
+        "duration_frames": 144,
+        "trim_generated_range_seconds": [
+          0,
+          6.0
+        ]
+      },
+      "prompt": "二维人物＋轻手绘背景；正常身体比例，干净线条与平涂色块，避免纸纹和过度风格化。\n制作有声视听预演，画幅16:9。显示邀约从阿蘅的现实难处切入\n构图：三人中景，赵执事左、阿蘅右、李寄中后半步\n空间：沿街的原轴线不反转；赵向右走来停在一臂半之外，不围住女孩\n动作开始：赵执事走近压低声音\n动作结束：阿蘅回答还得养，李寄盯着他\n承接：李寄仍拿歌本；阿蘅空手回答，米袋留脚旁以便之后提起\n@音频1 仅参考赵执事·基准完整形态 · 赵执事 · 日常声线母版的说话人的基础音色，不要复述参考样本内容。\n@音频2 仅参考阿蘅·日常洗旧青衣 · 阿蘅 · 日常声线母版的说话人的基础音色，不要复述参考样本内容。\n0.50–4.25秒预计窗口：赵执事说：“你娘的身体还没养好？”\n4.25–5.50秒预计窗口：阿蘅说：“还得养。”\n同步环境与动作声：赵执事与阿蘅两句对白，声音不高但字清楚\n对白和歌词逐字保持；自然停顿与口型、动作协同。时间为表演目标，不能为卡点吞字。无新增旁白、台词或歌词；除指定演唱外不加配乐。",
+      "image_requirements": [
+        {
+          "object_id": "need-shot-e01-021-character-a-heng",
+          "revision_id": "8b4c34fb3a67f3838c4e179c00fa127f0c73edb7ad54f023e78b93938db0b25f"
+        },
+        {
+          "object_id": "need-shot-e01-021-character-li-ji",
+          "revision_id": "9c00a4e45ac20208fd501333cd9bac242b3e517be951db7272263ba670e2feb8"
+        },
+        {
+          "object_id": "need-shot-e01-021-character-zhao",
+          "revision_id": "3410f350a9dfad958fc7ee6895d018a687d2bf7dd12871826d16e60652ec2d19"
+        },
+        {
+          "object_id": "need-shot-e01-021-composition",
+          "revision_id": "b658d701a51623b04a29be1273862be2fb978bf970940e02272596eb7087defb"
+        },
+        {
+          "object_id": "need-shot-e01-021-prop-keys",
+          "revision_id": "b41fc04562a33fbecf018b3eec4391ffbb11bc187f09956266eda8a43647a7b8"
+        },
+        {
+          "object_id": "need-shot-e01-021-prop-rice-bag",
+          "revision_id": "429631b63bb331cad6eb052a5829394b45ba6a8ec9e2b113fe8af686368192df"
+        },
+        {
+          "object_id": "need-shot-e01-021-prop-songbook",
+          "revision_id": "ea7e15424d4a6ca90faaf8bb4c777d7ab7a9d7e0e9dad8f181e7f7137067a7b0"
+        },
+        {
+          "object_id": "need-shot-e01-021-space-river-street",
+          "revision_id": "cfcd6d13f5301a4910d6ca9b0e1b95a25ebde49754f6aee803dab56aa266f839"
+        }
+      ],
+      "audio_templates": [
+        {
+          "requirement": {
+            "object_id": "need-form-zhao-base-voice",
+            "revision_id": "0ef09d7b8a9b9578c526459dc8251d8a6522c26a383da75100dff8a015cd1b19"
+          },
+          "role": "voice_reference",
+          "selection": null,
+          "clip_status": "待听审并显式选择准确短片段"
+        },
+        {
+          "requirement": {
+            "object_id": "need-form-a-heng-blue-voice",
+            "revision_id": "703bb070f8618a4c10d24a998a3bbc4f85fc2b9d1fd16d0bb7247fb7a55cdb76"
+          },
+          "role": "voice_reference",
+          "selection": null,
+          "clip_status": "待听审并显式选择准确短片段"
+        }
+      ],
+      "dialogue_and_lyrics": [
+        {
+          "type": "dialogue",
+          "speaker": "赵执事",
+          "entity": {
+            "object_id": "entity-zhao",
+            "revision_id": "10782097784d8939bdcf74e885a976266fa85637451ecd5d52a73f1dd45e2c49"
+          },
+          "text": "你娘的身体还没养好？",
+          "source": {
+            "object_id": "screenplay-04-lantern-home-e01",
+            "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+            "scene_id": "s002",
+            "block_ids": [
+              "screenplay-04-lantern-home-s002-b014"
+            ]
+          },
+          "id": "e01-line-026",
+          "shot_id": "shot-e01-021",
+          "planned_start_frame": 12,
+          "planned_end_frame": 102,
+          "fps": 24,
+          "timing_status": "镜内预计窗口，随画面生成后实际观看与听辨复核",
+          "delivery": "native_audio"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "阿蘅",
+          "entity": {
+            "object_id": "entity-a-heng",
+            "revision_id": "be76284a262dd11d562410a15e3fefcf6cbedb152eb5dad4c4d94b854619d663"
+          },
+          "text": "还得养。",
+          "source": {
+            "object_id": "screenplay-04-lantern-home-e01",
+            "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+            "scene_id": "s002",
+            "block_ids": [
+              "screenplay-04-lantern-home-s002-b015"
+            ]
+          },
+          "id": "e01-line-027",
+          "shot_id": "shot-e01-021",
+          "planned_start_frame": 102,
+          "planned_end_frame": 132,
+          "fps": 24,
+          "timing_status": "镜内预计窗口，随画面生成后实际观看与听辨复核",
+          "delivery": "native_audio"
+        }
+      ],
+      "ready": false,
+      "executed": false,
+      "missing": [
+        "镜头所需图像须显式采用准确原件",
+        "音色／旋律须听审并选定准确短片段，按输入上限组织",
+        "实际执行平台和现有可用额度须核对"
+      ],
+      "review": [
+        "逐字听辨台词与歌词，复核说话人、音色、旋律",
+        "回看动作、空间、表演与镜间连续性",
+        "实测声音时机，调整预计窗口或重新生成；不另造独立台词音轨"
+      ]
+    },
+    {
+      "format": "seedance-shot-plan-v1",
+      "shot": {
+        "object_id": "shot-e01-022",
+        "revision_id": "690708b2ed4dbf27896c88ea83e3e09c0303cb14b37be0d1dc1ab0f403af0c7f"
+      },
+      "source": {
+        "block_ids": [
+          "screenplay-04-lantern-home-s002-b016",
+          "screenplay-04-lantern-home-s002-b017"
+        ],
+        "object_id": "screenplay-04-lantern-home-e01",
+        "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+        "scene_id": "s002"
+      },
+      "previous_shot": {
+        "object_id": "shot-e01-021",
+        "revision_id": "94a62e4dd1094ed0f4e1f8ce91b511d7f0cfca92e4cdc43b2d9e49962a437b54"
+      },
+      "next_shot": {
+        "object_id": "shot-e01-023",
+        "revision_id": "98a14ba242fd63e57bd652be1804384a6d87fa409c320e551f80caace399b98e"
+      },
+      "model": "doubao-seedance-2-0-260128",
+      "parameters": {
+        "ratio": "16:9",
+        "resolution": "1080p",
+        "duration": 5.0,
+        "generate_audio": true
+      },
+      "editorial": {
+        "fps": 24,
+        "planned_start_frame": 3672,
+        "duration_frames": 120,
+        "trim_generated_range_seconds": [
+          0,
+          5.0
+        ]
+      },
+      "prompt": "二维人物＋轻手绘背景；正常身体比例，干净线条与平涂色块，避免纸纹和过度风格化。\n制作有声视听预演，画幅16:9。把保护欲和越俎代庖落在一句打断上\n构图：三人较紧中景，赵执事问阿蘅，李寄从中间抢一句\n空间：李寄未跨到赵执事身前，视线从他转向阿蘅，轴线维持\n动作开始：赵执事还在等阿蘅的回答\n动作结束：李寄抢答，阿蘅转眼看她\n承接：台词“不会”清楚而短，不演成歇斯底里吵架，便于下一镜阿蘅自己回答\n@音频1 仅参考赵执事·基准完整形态 · 赵执事 · 日常声线母版的说话人的基础音色，不要复述参考样本内容。\n@音频2 仅参考李寄·劳作后未擦手 · 李寄 · 日常声线母版的说话人的基础音色，不要复述参考样本内容。\n0.50–4.00秒预计窗口：赵执事说：“庙里缺领唱的。迎蛇的调子，会不会？”\n4.00–4.50秒预计窗口：李寄说：“不会。”\n同步环境与动作声：赵执事提迎蛇调、李寄“不会”，不重叠盖住问句\n对白和歌词逐字保持；自然停顿与口型、动作协同。时间为表演目标，不能为卡点吞字。无新增旁白、台词或歌词；除指定演唱外不加配乐。",
+      "image_requirements": [
+        {
+          "object_id": "need-shot-e01-022-character-a-heng",
+          "revision_id": "ca116395dc5aaa67f7e7257c076276b5577f97295b029a0a3a2c8f3f7883d1cb"
+        },
+        {
+          "object_id": "need-shot-e01-022-character-li-ji",
+          "revision_id": "4529b02c651a11cfe36c7322cdb582e1a7f0ac31ad292fc03accc42512f802d4"
+        },
+        {
+          "object_id": "need-shot-e01-022-character-zhao",
+          "revision_id": "bfe21110d813b2efe527d288f56668459e410922f03f23b3072f979d10217849"
+        },
+        {
+          "object_id": "need-shot-e01-022-composition",
+          "revision_id": "0398dbe7e755a6b3828825c7ca058fc8b32991aaa577e7106e952f61bfae8f35"
+        },
+        {
+          "object_id": "need-shot-e01-022-prop-keys",
+          "revision_id": "f53ccd8f3a304a81ae15095f6bc1090203f80870c64493d1d1af2a3b28934eae"
+        },
+        {
+          "object_id": "need-shot-e01-022-prop-songbook",
+          "revision_id": "875bc848c8c9a3032a77fa94abf76760965239d25c3fe5d5f9c54ea8fb95ee80"
+        },
+        {
+          "object_id": "need-shot-e01-022-space-river-street",
+          "revision_id": "e04e637acddd8c03feed914365447d219a8fbab70d938bf06cedfafe40857d33"
+        }
+      ],
+      "audio_templates": [
+        {
+          "requirement": {
+            "object_id": "need-form-zhao-base-voice",
+            "revision_id": "0ef09d7b8a9b9578c526459dc8251d8a6522c26a383da75100dff8a015cd1b19"
+          },
+          "role": "voice_reference",
+          "selection": null,
+          "clip_status": "待听审并显式选择准确短片段"
+        },
+        {
+          "requirement": {
+            "object_id": "need-form-li-ji-paste-voice",
+            "revision_id": "bd22574490a81e9a2b8d0ba139a095c95f6cdfd41580025b3f1f0243aa40e7d0"
+          },
+          "role": "voice_reference",
+          "selection": null,
+          "clip_status": "待听审并显式选择准确短片段"
+        }
+      ],
+      "dialogue_and_lyrics": [
+        {
+          "type": "dialogue",
+          "speaker": "赵执事",
+          "entity": {
+            "object_id": "entity-zhao",
+            "revision_id": "10782097784d8939bdcf74e885a976266fa85637451ecd5d52a73f1dd45e2c49"
+          },
+          "text": "庙里缺领唱的。迎蛇的调子，会不会？",
+          "source": {
+            "object_id": "screenplay-04-lantern-home-e01",
+            "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+            "scene_id": "s002",
+            "block_ids": [
+              "screenplay-04-lantern-home-s002-b016"
+            ]
+          },
+          "id": "e01-line-028",
+          "shot_id": "shot-e01-022",
+          "planned_start_frame": 12,
+          "planned_end_frame": 96,
+          "fps": 24,
+          "timing_status": "镜内预计窗口，随画面生成后实际观看与听辨复核",
+          "delivery": "native_audio"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "李寄",
+          "entity": {
+            "object_id": "entity-li-ji",
+            "revision_id": "42af4494af12312922e3aa58ce011f67346ede435ef75b7b24a97827d999ec9b"
+          },
+          "text": "不会。",
+          "source": {
+            "object_id": "screenplay-04-lantern-home-e01",
+            "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+            "scene_id": "s002",
+            "block_ids": [
+              "screenplay-04-lantern-home-s002-b017"
+            ]
+          },
+          "id": "e01-line-029",
+          "shot_id": "shot-e01-022",
+          "planned_start_frame": 96,
+          "planned_end_frame": 108,
+          "fps": 24,
+          "timing_status": "镜内预计窗口，随画面生成后实际观看与听辨复核",
+          "delivery": "native_audio"
+        }
+      ],
+      "ready": false,
+      "executed": false,
+      "missing": [
+        "镜头所需图像须显式采用准确原件",
+        "音色／旋律须听审并选定准确短片段，按输入上限组织",
+        "实际执行平台和现有可用额度须核对"
+      ],
+      "review": [
+        "逐字听辨台词与歌词，复核说话人、音色、旋律",
+        "回看动作、空间、表演与镜间连续性",
+        "实测声音时机，调整预计窗口或重新生成；不另造独立台词音轨"
+      ]
+    },
+    {
+      "format": "seedance-shot-plan-v1",
+      "shot": {
+        "object_id": "shot-e01-023",
+        "revision_id": "98a14ba242fd63e57bd652be1804384a6d87fa409c320e551f80caace399b98e"
+      },
+      "source": {
+        "block_ids": [
+          "screenplay-04-lantern-home-s002-b018",
+          "screenplay-04-lantern-home-s002-b019"
+        ],
+        "object_id": "screenplay-04-lantern-home-e01",
+        "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+        "scene_id": "s002"
+      },
+      "previous_shot": {
+        "object_id": "shot-e01-022",
+        "revision_id": "690708b2ed4dbf27896c88ea83e3e09c0303cb14b37be0d1dc1ab0f403af0c7f"
+      },
+      "next_shot": {
+        "object_id": "shot-e01-024",
+        "revision_id": "8094a0adc6b530392a30db4fa094fc509be0187c995b8d785a03d3091daa5805"
+      },
+      "model": "doubao-seedance-2-0-260128",
+      "parameters": {
+        "ratio": "16:9",
+        "resolution": "1080p",
+        "duration": 6.0,
+        "generate_audio": true
+      },
+      "editorial": {
+        "fps": 24,
+        "planned_start_frame": 3792,
+        "duration_frames": 144,
+        "trim_generated_range_seconds": [
+          0,
+          6.0
+        ]
+      },
+      "prompt": "二维人物＋轻手绘背景；正常身体比例，干净线条与平涂色块，避免纸纹和过度风格化。\n制作有声视听预演，画幅16:9。让阿蘅自己决定问清工作条件\n构图：阿蘅半身近景，画面左下看见歌本从李寄手中交来\n空间：阿蘅先看左侧李寄，再向更左前方赵执事抬眼，两个视线落点有区别\n动作开始：李寄手里抱书，阿蘅伸手\n动作结束：歌本回阿蘅手里，她问会前两段、唱几天\n承接：李寄自然松手，不争抢；书封朝向延续镜头 17 的接书结果\n@音频1 仅参考阿蘅·日常洗旧青衣 · 阿蘅 · 日常声线母版的说话人的基础音色，不要复述参考样本内容。\n0.50–5.50秒预计窗口：阿蘅说：“会前两段。要唱几天？”\n同步环境与动作声：阿蘅问句、纸本摩擦，留短停顿\n对白和歌词逐字保持；自然停顿与口型、动作协同。时间为表演目标，不能为卡点吞字。无新增旁白、台词或歌词；除指定演唱外不加配乐。",
+      "image_requirements": [
+        {
+          "object_id": "need-shot-e01-023-character-a-heng",
+          "revision_id": "2d136aecfa6fbd0de0545d1aec7bb85ecf04b0a7c912666d04b6af8385e8b5a1"
+        },
+        {
+          "object_id": "need-shot-e01-023-character-li-ji",
+          "revision_id": "60336a98ab87f311e9a9f1e1bb013669551cb7c9571257f42e81f396453865ea"
+        },
+        {
+          "object_id": "need-shot-e01-023-character-zhao",
+          "revision_id": "bd7b71623aa5c34608827c43aff4748b4aa0162ae933452b1cc2cea95071cc2e"
+        },
+        {
+          "object_id": "need-shot-e01-023-composition",
+          "revision_id": "03522506e95d632843548422ea3debf48b91fad03047d9ebdd31283e6db3de1f"
+        },
+        {
+          "object_id": "need-shot-e01-023-end-keyframe",
+          "revision_id": "78330fa65df6d0d9371f979b590999ba8a33418952391335cca5b4353daa321a"
+        },
+        {
+          "object_id": "need-shot-e01-023-prop-songbook",
+          "revision_id": "9ffe52180fb556b96344367588a8f604f01660e79d89c68abb81c1845a034c6b"
+        },
+        {
+          "object_id": "need-shot-e01-023-space-river-street",
+          "revision_id": "e6baa41b5501d82f899c2903cb21855ff9e189e8949a31422b98b5f5598868b8"
+        }
+      ],
+      "audio_templates": [
+        {
+          "requirement": {
+            "object_id": "need-form-a-heng-blue-voice",
+            "revision_id": "703bb070f8618a4c10d24a998a3bbc4f85fc2b9d1fd16d0bb7247fb7a55cdb76"
+          },
+          "role": "voice_reference",
+          "selection": null,
+          "clip_status": "待听审并显式选择准确短片段"
+        }
+      ],
+      "dialogue_and_lyrics": [
+        {
+          "type": "dialogue",
+          "speaker": "阿蘅",
+          "entity": {
+            "object_id": "entity-a-heng",
+            "revision_id": "be76284a262dd11d562410a15e3fefcf6cbedb152eb5dad4c4d94b854619d663"
+          },
+          "text": "会前两段。要唱几天？",
+          "source": {
+            "object_id": "screenplay-04-lantern-home-e01",
+            "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+            "scene_id": "s002",
+            "block_ids": [
+              "screenplay-04-lantern-home-s002-b019"
+            ]
+          },
+          "id": "e01-line-030",
+          "shot_id": "shot-e01-023",
+          "planned_start_frame": 12,
+          "planned_end_frame": 132,
+          "fps": 24,
+          "timing_status": "镜内预计窗口，随画面生成后实际观看与听辨复核",
+          "delivery": "native_audio"
+        }
+      ],
+      "ready": false,
+      "executed": false,
+      "missing": [
+        "镜头所需图像须显式采用准确原件",
+        "音色／旋律须听审并选定准确短片段，按输入上限组织",
+        "实际执行平台和现有可用额度须核对"
+      ],
+      "review": [
+        "逐字听辨台词与歌词，复核说话人、音色、旋律",
+        "回看动作、空间、表演与镜间连续性",
+        "实测声音时机，调整预计窗口或重新生成；不另造独立台词音轨"
+      ]
+    },
+    {
+      "format": "seedance-shot-plan-v1",
+      "shot": {
+        "object_id": "shot-e01-024",
+        "revision_id": "8094a0adc6b530392a30db4fa094fc509be0187c995b8d785a03d3091daa5805"
+      },
+      "source": {
+        "block_ids": [
+          "screenplay-04-lantern-home-s002-b020",
+          "screenplay-04-lantern-home-s002-b021"
+        ],
+        "object_id": "screenplay-04-lantern-home-e01",
+        "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+        "scene_id": "s002"
+      },
+      "previous_shot": {
+        "object_id": "shot-e01-023",
+        "revision_id": "98a14ba242fd63e57bd652be1804384a6d87fa409c320e551f80caace399b98e"
+      },
+      "next_shot": {
+        "object_id": "shot-e01-025",
+        "revision_id": "8aa2ebac2ff7b0ba7f8b6873f705e3bf950312de82be4601b5186914d08cdd18"
+      },
+      "model": "doubao-seedance-2-0-260128",
+      "parameters": {
+        "ratio": "16:9",
+        "resolution": "1080p",
+        "duration": 6.0,
+        "generate_audio": true
+      },
+      "editorial": {
+        "fps": 24,
+        "planned_start_frame": 3936,
+        "duration_frames": 144,
+        "trim_generated_range_seconds": [
+          0,
+          6.0
+        ]
+      },
+      "prompt": "二维人物＋轻手绘背景；正常身体比例，干净线条与平涂色块，避免纸纹和过度风格化。\n制作有声视听预演，画幅16:9。把可追溯的工作邀约物件交到阿蘅手里\n构图：赵执事袖与阿蘅托书的手部中近景，上半脸可见\n空间：旧纸从画面左袖内抽出，平放到右侧歌本上；两人不同时握住同一纸角\n动作开始：赵执事从袖内取出几张旧纸\n动作结束：纸已放稳，他交代学会来找便收手\n承接：纸张是旧领唱词，正式可读歌词以 s003 已给原文为限；第一集无需硬推文字特写\n@音频1 仅参考赵执事·基准完整形态 · 赵执事 · 日常声线母版的说话人的基础音色，不要复述参考样本内容。\n0.50–5.50秒预计窗口：赵执事说：“领唱的词在这儿。学会了来找我。”\n同步环境与动作声：赵执事“领唱的词在这儿。学会了来找我。”与纸声\n对白和歌词逐字保持；自然停顿与口型、动作协同。时间为表演目标，不能为卡点吞字。无新增旁白、台词或歌词；除指定演唱外不加配乐。",
+      "image_requirements": [
+        {
+          "object_id": "need-shot-e01-024-character-a-heng",
+          "revision_id": "c36f75e3522e272d7df22bc26bc5d2a3e59541e03788db11030d7f0f7bccdeda"
+        },
+        {
+          "object_id": "need-shot-e01-024-character-li-ji",
+          "revision_id": "ca7a57bfad48bb4abea2a7ae0b9c72660e5831ff081797696dad2bb4cb0eef9a"
+        },
+        {
+          "object_id": "need-shot-e01-024-character-zhao",
+          "revision_id": "8f571908aabf97b5ec81acc170bc19c6971aab096cd32ca9df635690e5204851"
+        },
+        {
+          "object_id": "need-shot-e01-024-composition",
+          "revision_id": "ee6e25f6b4b330cace50007e2dac99994f845660db5f49ceb618ae563bae0bb2"
+        },
+        {
+          "object_id": "need-shot-e01-024-end-keyframe",
+          "revision_id": "0527a5ee938d60ca1c3a9a77f8f82639e2b902fdbf713d6560c9efab14ef8022"
+        },
+        {
+          "object_id": "need-shot-e01-024-prop-keys",
+          "revision_id": "48c5b9a5806874db6bd536a838c9acce58a738c3ecc7b305e95fe671783eb8fd"
+        },
+        {
+          "object_id": "need-shot-e01-024-prop-lead-lyrics",
+          "revision_id": "84844a4f8f7ad69aee27b012dc997943949142d51f9f9af5ad2d8365aafcd487"
+        },
+        {
+          "object_id": "need-shot-e01-024-prop-songbook",
+          "revision_id": "e4191a885f5bf3f50f4516063c1ee31101954625d310dbeeec1415dc4c308588"
+        },
+        {
+          "object_id": "need-shot-e01-024-space-river-street",
+          "revision_id": "5b92b5d543868203bd6d64f8a07cfd79f0bdc812f1a9021adae15df22b1fe9aa"
+        }
+      ],
+      "audio_templates": [
+        {
+          "requirement": {
+            "object_id": "need-form-zhao-base-voice",
+            "revision_id": "0ef09d7b8a9b9578c526459dc8251d8a6522c26a383da75100dff8a015cd1b19"
+          },
+          "role": "voice_reference",
+          "selection": null,
+          "clip_status": "待听审并显式选择准确短片段"
+        }
+      ],
+      "dialogue_and_lyrics": [
+        {
+          "type": "dialogue",
+          "speaker": "赵执事",
+          "entity": {
+            "object_id": "entity-zhao",
+            "revision_id": "10782097784d8939bdcf74e885a976266fa85637451ecd5d52a73f1dd45e2c49"
+          },
+          "text": "领唱的词在这儿。学会了来找我。",
+          "source": {
+            "object_id": "screenplay-04-lantern-home-e01",
+            "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+            "scene_id": "s002",
+            "block_ids": [
+              "screenplay-04-lantern-home-s002-b021"
+            ]
+          },
+          "id": "e01-line-031",
+          "shot_id": "shot-e01-024",
+          "planned_start_frame": 12,
+          "planned_end_frame": 132,
+          "fps": 24,
+          "timing_status": "镜内预计窗口，随画面生成后实际观看与听辨复核",
+          "delivery": "native_audio"
+        }
+      ],
+      "ready": false,
+      "executed": false,
+      "missing": [
+        "镜头所需图像须显式采用准确原件",
+        "音色／旋律须听审并选定准确短片段，按输入上限组织",
+        "实际执行平台和现有可用额度须核对"
+      ],
+      "review": [
+        "逐字听辨台词与歌词，复核说话人、音色、旋律",
+        "回看动作、空间、表演与镜间连续性",
+        "实测声音时机，调整预计窗口或重新生成；不另造独立台词音轨"
+      ]
+    },
+    {
+      "format": "seedance-shot-plan-v1",
+      "shot": {
+        "object_id": "shot-e01-025",
+        "revision_id": "8aa2ebac2ff7b0ba7f8b6873f705e3bf950312de82be4601b5186914d08cdd18"
+      },
+      "source": {
+        "block_ids": [
+          "screenplay-04-lantern-home-s002-b022"
+        ],
+        "object_id": "screenplay-04-lantern-home-e01",
+        "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+        "scene_id": "s002"
+      },
+      "previous_shot": {
+        "object_id": "shot-e01-024",
+        "revision_id": "8094a0adc6b530392a30db4fa094fc509be0187c995b8d785a03d3091daa5805"
+      },
+      "next_shot": {
+        "object_id": "shot-e01-026",
+        "revision_id": "cb59b2d668c6f62d4ea4931673d71876ce8e2c317a3afa56b91e4bcc7ef49b4f"
+      },
+      "model": "doubao-seedance-2-0-260128",
+      "parameters": {
+        "ratio": "16:9",
+        "resolution": "1080p",
+        "duration": 5.0,
+        "generate_audio": true
+      },
+      "editorial": {
+        "fps": 24,
+        "planned_start_frame": 4080,
+        "duration_frames": 120,
+        "trim_generated_range_seconds": [
+          0,
+          5.0
+        ]
+      },
+      "prompt": "二维人物＋轻手绘背景；正常身体比例，干净线条与平涂色块，避免纸纹和过度风格化。\n制作有声视听预演，画幅16:9。让阿蘅保留这份邀约，李寄欲取纸未果\n构图：三人中远景，赵执事沿街转向上山岔口，女孩留前景\n空间：上山方向是已标出的远侧岔口，不穿过陶伯的摊位或河面；两人视线追他的背影\n动作开始：旧纸摊在歌本上，赵转身\n动作结束：李寄伸手前阿蘅合上歌本，纸收在内\n承接：纸不留在赵袖里，也不掉地；阿蘅合书不是新撕书动作\n同步环境与动作声：脚步和钥匙远去、合书声；给下一句留安静\n对白和歌词逐字保持；自然停顿与口型、动作协同。时间为表演目标，不能为卡点吞字。无新增旁白、台词或歌词；除指定演唱外不加配乐。",
+      "image_requirements": [
+        {
+          "object_id": "need-shot-e01-025-character-a-heng",
+          "revision_id": "0a5876aee7a22714e43eb22c31ceadb983236de828670dfffc068c9362e45f42"
+        },
+        {
+          "object_id": "need-shot-e01-025-character-li-ji",
+          "revision_id": "4aedb48f4be2c2d1a48b0e74a5c9d66b58ba89cd6316ca8d18561d3b5aa755da"
+        },
+        {
+          "object_id": "need-shot-e01-025-character-zhao",
+          "revision_id": "58f9c6533baffc2acffe7f2a371115a802357fc68a1733a0606ae326bc17e0a2"
+        },
+        {
+          "object_id": "need-shot-e01-025-composition",
+          "revision_id": "36a9aa874b71480f591e141d8fa2b29a32594a62155c5272944e6fd96bd96c2d"
+        },
+        {
+          "object_id": "need-shot-e01-025-end-keyframe",
+          "revision_id": "840ef006a546acd88aad671fa7c7cc65eea662a2a07c6a644875844b5f4068f3"
+        },
+        {
+          "object_id": "need-shot-e01-025-prop-lead-lyrics",
+          "revision_id": "9195d3ee6b23e34ce82e8d06cfbd55568164e8a751c620bfde95645c03acaa83"
+        },
+        {
+          "object_id": "need-shot-e01-025-prop-songbook",
+          "revision_id": "09e451644ace9b150ab7dd2ed01bda85d2efe1a4d78f3844f3870b6d296c00c5"
+        },
+        {
+          "object_id": "need-shot-e01-025-space-river-street",
+          "revision_id": "169d7c621ab8a697272920b066c3e70725ad86ddfbff12cabc51fc2259610988"
+        }
+      ],
+      "audio_templates": [],
+      "dialogue_and_lyrics": [],
+      "ready": false,
+      "executed": false,
+      "missing": [
+        "镜头所需图像须显式采用准确原件",
+        "音色／旋律须听审并选定准确短片段，按输入上限组织",
+        "实际执行平台和现有可用额度须核对"
+      ],
+      "review": [
+        "逐字听辨台词与歌词，复核说话人、音色、旋律",
+        "回看动作、空间、表演与镜间连续性",
+        "实测声音时机，调整预计窗口或重新生成；不另造独立台词音轨"
+      ]
+    },
+    {
+      "format": "seedance-shot-plan-v1",
+      "shot": {
+        "object_id": "shot-e01-026",
+        "revision_id": "cb59b2d668c6f62d4ea4931673d71876ce8e2c317a3afa56b91e4bcc7ef49b4f"
+      },
+      "source": {
+        "block_ids": [
+          "screenplay-04-lantern-home-s002-b023"
+        ],
+        "object_id": "screenplay-04-lantern-home-e01",
+        "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+        "scene_id": "s002"
+      },
+      "previous_shot": {
+        "object_id": "shot-e01-025",
+        "revision_id": "8aa2ebac2ff7b0ba7f8b6873f705e3bf950312de82be4601b5186914d08cdd18"
+      },
+      "next_shot": {
+        "object_id": "shot-e01-027",
+        "revision_id": "92ed73708c1ef4dceea50be52bb8221a99156ad46a8b4f8213b9d6f5196e64c0"
+      },
+      "model": "doubao-seedance-2-0-260128",
+      "parameters": {
+        "ratio": "16:9",
+        "resolution": "1080p",
+        "duration": 6.0,
+        "generate_audio": true
+      },
+      "editorial": {
+        "fps": 24,
+        "planned_start_frame": 4200,
+        "duration_frames": 144,
+        "trim_generated_range_seconds": [
+          0,
+          6.0
+        ]
+      },
+      "prompt": "二维人物＋轻手绘背景；正常身体比例，干净线条与平涂色块，避免纸纹和过度风格化。\n制作有声视听预演，画幅16:9。第一次把这份唱工同失踪女孩连起来\n构图：李寄中近景，身后能辨对街摊位的方向；阿蘅肩缘在右前\n空间：李寄看阿蘅后短暂望向对街，视线给镜头 27 的陶伯反应导向\n动作开始：李寄伸出的手停在书前\n动作结束：说出阿禾名字，目光扫向摊位\n承接：不插阿禾牺牲回忆，第一集只是名字与陶伯的现实反应\n@音频1 仅参考李寄·劳作后未擦手 · 李寄 · 日常声线母版的说话人的基础音色，不要复述参考样本内容。\n0.50–5.50秒预计窗口：李寄说：“你真要去？陶伯家的阿禾姐姐，起先也是去唱歌。”\n同步环境与动作声：李寄完整问句，削竹声先在背景细细存在\n对白和歌词逐字保持；自然停顿与口型、动作协同。时间为表演目标，不能为卡点吞字。无新增旁白、台词或歌词；除指定演唱外不加配乐。",
+      "image_requirements": [
+        {
+          "object_id": "need-shot-e01-026-character-a-heng",
+          "revision_id": "8d79a2077864a94a6622ff42e964d287f0c39d4c390ec2168298799773cc9c3e"
+        },
+        {
+          "object_id": "need-shot-e01-026-character-li-ji",
+          "revision_id": "997fee2d68ff1d927eab39015952ed697a9d7aa72ffb8fa5a1b6f689b175b8e4"
+        },
+        {
+          "object_id": "need-shot-e01-026-composition",
+          "revision_id": "b0d096c57ea86b164e7451ac98074cb3d1eff10a169d308fccad335da4f7fb1c"
+        },
+        {
+          "object_id": "need-shot-e01-026-prop-songbook",
+          "revision_id": "8cb36abac68ee21473a9fa60e5639c65d81432552dd2501974fb222829daa264"
+        },
+        {
+          "object_id": "need-shot-e01-026-space-river-street",
+          "revision_id": "13675e4844f1a24f233d3d251f77baf22b30a3e0b478b8227b056572804252b0"
+        }
+      ],
+      "audio_templates": [
+        {
+          "requirement": {
+            "object_id": "need-form-li-ji-paste-voice",
+            "revision_id": "bd22574490a81e9a2b8d0ba139a095c95f6cdfd41580025b3f1f0243aa40e7d0"
+          },
+          "role": "voice_reference",
+          "selection": null,
+          "clip_status": "待听审并显式选择准确短片段"
+        }
+      ],
+      "dialogue_and_lyrics": [
+        {
+          "type": "dialogue",
+          "speaker": "李寄",
+          "entity": {
+            "object_id": "entity-li-ji",
+            "revision_id": "42af4494af12312922e3aa58ce011f67346ede435ef75b7b24a97827d999ec9b"
+          },
+          "text": "你真要去？陶伯家的阿禾姐姐，起先也是去唱歌。",
+          "source": {
+            "object_id": "screenplay-04-lantern-home-e01",
+            "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+            "scene_id": "s002",
+            "block_ids": [
+              "screenplay-04-lantern-home-s002-b023"
+            ]
+          },
+          "id": "e01-line-032",
+          "shot_id": "shot-e01-026",
+          "planned_start_frame": 12,
+          "planned_end_frame": 132,
+          "fps": 24,
+          "timing_status": "镜内预计窗口，随画面生成后实际观看与听辨复核",
+          "delivery": "native_audio"
+        }
+      ],
+      "ready": false,
+      "executed": false,
+      "missing": [
+        "镜头所需图像须显式采用准确原件",
+        "音色／旋律须听审并选定准确短片段，按输入上限组织",
+        "实际执行平台和现有可用额度须核对"
+      ],
+      "review": [
+        "逐字听辨台词与歌词，复核说话人、音色、旋律",
+        "回看动作、空间、表演与镜间连续性",
+        "实测声音时机，调整预计窗口或重新生成；不另造独立台词音轨"
+      ]
+    },
+    {
+      "format": "seedance-shot-plan-v1",
+      "shot": {
+        "object_id": "shot-e01-027",
+        "revision_id": "92ed73708c1ef4dceea50be52bb8221a99156ad46a8b4f8213b9d6f5196e64c0"
+      },
+      "source": {
+        "block_ids": [
+          "screenplay-04-lantern-home-s002-b024"
+        ],
+        "object_id": "screenplay-04-lantern-home-e01",
+        "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+        "scene_id": "s002"
+      },
+      "previous_shot": {
+        "object_id": "shot-e01-026",
+        "revision_id": "cb59b2d668c6f62d4ea4931673d71876ce8e2c317a3afa56b91e4bcc7ef49b4f"
+      },
+      "next_shot": {
+        "object_id": "shot-e01-028",
+        "revision_id": "3ac3601757e98bfe0b1023cc564ebaa2654942140ce6cc1ad5e5b9da949a026e"
+      },
+      "model": "doubao-seedance-2-0-260128",
+      "parameters": {
+        "ratio": "16:9",
+        "resolution": "1080p",
+        "duration": 4,
+        "generate_audio": true
+      },
+      "editorial": {
+        "fps": 24,
+        "planned_start_frame": 4344,
+        "duration_frames": 96,
+        "trim_generated_range_seconds": [
+          0,
+          4.0
+        ]
+      },
+      "prompt": "二维人物＋轻手绘背景；正常身体比例，干净线条与平涂色块，避免纸纹和过度风格化。\n制作有声视听预演，画幅16:9。用手的停顿和空位呈现损失\n构图：陶伯与身旁空小凳的中景，削篮口的手在下部清楚，脸不抬\n空间：反打到对街靠河一边；女孩在画外对面，陶伯听得见普通说话，河不是两边之间的障碍\n动作开始：陶伯正削篮口\n动作结束：听见名字刀停住，空凳无人，头仍低着\n承接：反打前有镜头 26 的视线；不放大到只见刀而看不到空凳\n同步环境与动作声：刮竹声由有到无，街声仍在但轻；无新增悲情音乐\n对白和歌词逐字保持；自然停顿与口型、动作协同。时间为表演目标，不能为卡点吞字。无新增旁白、台词或歌词；除指定演唱外不加配乐。",
+      "image_requirements": [
+        {
+          "object_id": "need-shot-e01-027-character-tao",
+          "revision_id": "1e9bca043338faf32ea4177495ab8853d7f6633455ffbe2a6985953cdf356e74"
+        },
+        {
+          "object_id": "need-shot-e01-027-composition",
+          "revision_id": "7d97b431f7842cceaf0b001cdefc4bc96efe3bde0a43b5239af958944ec60ca1"
+        },
+        {
+          "object_id": "need-shot-e01-027-prop-bamboo-basket",
+          "revision_id": "dea370de614f365d797846b280f78f06b2bc24be637860d54590362c97e5c38a"
+        },
+        {
+          "object_id": "need-shot-e01-027-prop-empty-stool",
+          "revision_id": "af8d9333a17578c53b93c03ed61bb7559a0cdbfa686d2e9c74f28512e3ea0131"
+        },
+        {
+          "object_id": "need-shot-e01-027-prop-shaving-knife",
+          "revision_id": "d075d20d14a2225fdd16625df860578f1008ecefa5615e3feb78d9aecd727a4d"
+        },
+        {
+          "object_id": "need-shot-e01-027-space-bamboo-stall",
+          "revision_id": "dcfb3b5c1155c2cca0413fd56720d10c29fb6cdf63dd9f805182e7a4ac89e10d"
+        },
+        {
+          "object_id": "need-shot-e01-027-space-river-street",
+          "revision_id": "ff25ea20097a95fc18d4b7817a825e55e6836ed45da0c4f4a0d500ca9f30095e"
+        }
+      ],
+      "audio_templates": [],
+      "dialogue_and_lyrics": [],
+      "ready": false,
+      "executed": false,
+      "missing": [
+        "镜头所需图像须显式采用准确原件",
+        "音色／旋律须听审并选定准确短片段，按输入上限组织",
+        "实际执行平台和现有可用额度须核对"
+      ],
+      "review": [
+        "逐字听辨台词与歌词，复核说话人、音色、旋律",
+        "回看动作、空间、表演与镜间连续性",
+        "实测声音时机，调整预计窗口或重新生成；不另造独立台词音轨"
+      ]
+    },
+    {
+      "format": "seedance-shot-plan-v1",
+      "shot": {
+        "object_id": "shot-e01-028",
+        "revision_id": "3ac3601757e98bfe0b1023cc564ebaa2654942140ce6cc1ad5e5b9da949a026e"
+      },
+      "source": {
+        "block_ids": [
+          "screenplay-04-lantern-home-s002-b025"
+        ],
+        "object_id": "screenplay-04-lantern-home-e01",
+        "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+        "scene_id": "s002"
+      },
+      "previous_shot": {
+        "object_id": "shot-e01-027",
+        "revision_id": "92ed73708c1ef4dceea50be52bb8221a99156ad46a8b4f8213b9d6f5196e64c0"
+      },
+      "next_shot": {
+        "object_id": "shot-e01-029",
+        "revision_id": "edc93041c05122ba277f224091cbf523fa7ff393fdc2bdbe6eb9860acdf1c621"
+      },
+      "model": "doubao-seedance-2-0-260128",
+      "parameters": {
+        "ratio": "16:9",
+        "resolution": "1080p",
+        "duration": 4,
+        "generate_audio": true
+      },
+      "editorial": {
+        "fps": 24,
+        "planned_start_frame": 4440,
+        "duration_frames": 96,
+        "trim_generated_range_seconds": [
+          0,
+          4.0
+        ]
+      },
+      "prompt": "二维人物＋轻手绘背景；正常身体比例，干净线条与平涂色块，避免纸纹和过度风格化。\n制作有声视听预演，画幅16:9。让阿禾有过具体的生活关系\n构图：保持陶伯与空凳少许，再回阿蘅看向对街的近景\n空间：阿蘅视线向对街陶伯，低声说，不把人叫过来\n动作开始：对街削竹声停着\n动作结束：阿蘅说完，嘴唇合住，目光仍留在对街\n承接：只用画外／切回对白，不新增阿禾活人、花绳或追忆画面\n@音频1 仅参考阿蘅·日常洗旧青衣 · 阿蘅 · 日常声线母版的说话人的基础音色，不要复述参考样本内容。\n0.50–3.50秒预计窗口：阿蘅说：“她还教过我翻花绳。”\n同步环境与动作声：阿蘅“她还教过我翻花绳。”\n对白和歌词逐字保持；自然停顿与口型、动作协同。时间为表演目标，不能为卡点吞字。无新增旁白、台词或歌词；除指定演唱外不加配乐。",
+      "image_requirements": [
+        {
+          "object_id": "need-shot-e01-028-character-a-heng",
+          "revision_id": "0bf969f28762587b7841dde0791e743be0be36617c7a65c2506f776a88c7c6be"
+        },
+        {
+          "object_id": "need-shot-e01-028-character-tao",
+          "revision_id": "6b86dc61dc2daeb8f40315137dddfabd0c69a575fe86b60f192b4ca99f686a30"
+        },
+        {
+          "object_id": "need-shot-e01-028-composition",
+          "revision_id": "166f095cc5ef8c4feb2284cd6908ea2c0c18a9b18f6b8f93bdc7ac26c78f9b06"
+        },
+        {
+          "object_id": "need-shot-e01-028-prop-empty-stool",
+          "revision_id": "2a0681a63ba661f9fee33817d02459d8d7fd0875ef9244b7b4a0b78d91b44968"
+        },
+        {
+          "object_id": "need-shot-e01-028-prop-songbook",
+          "revision_id": "b88a97795a3b0383656feba480dd26404dee543b3879805c3a1b6e8206346001"
+        },
+        {
+          "object_id": "need-shot-e01-028-space-bamboo-stall",
+          "revision_id": "6cbd0b19916da4ea496dcd9963f19b602247da7c7a328a2660341730e9421d84"
+        },
+        {
+          "object_id": "need-shot-e01-028-space-river-street",
+          "revision_id": "af911f75bb075316020cd1500f58fd99012da50df6589e65a06c6ba9cad94b4c"
+        }
+      ],
+      "audio_templates": [
+        {
+          "requirement": {
+            "object_id": "need-form-a-heng-blue-voice",
+            "revision_id": "703bb070f8618a4c10d24a998a3bbc4f85fc2b9d1fd16d0bb7247fb7a55cdb76"
+          },
+          "role": "voice_reference",
+          "selection": null,
+          "clip_status": "待听审并显式选择准确短片段"
+        }
+      ],
+      "dialogue_and_lyrics": [
+        {
+          "type": "dialogue",
+          "speaker": "阿蘅",
+          "entity": {
+            "object_id": "entity-a-heng",
+            "revision_id": "be76284a262dd11d562410a15e3fefcf6cbedb152eb5dad4c4d94b854619d663"
+          },
+          "text": "她还教过我翻花绳。",
+          "source": {
+            "object_id": "screenplay-04-lantern-home-e01",
+            "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+            "scene_id": "s002",
+            "block_ids": [
+              "screenplay-04-lantern-home-s002-b025"
+            ]
+          },
+          "id": "e01-line-033",
+          "shot_id": "shot-e01-028",
+          "planned_start_frame": 12,
+          "planned_end_frame": 84,
+          "fps": 24,
+          "timing_status": "镜内预计窗口，随画面生成后实际观看与听辨复核",
+          "delivery": "native_audio"
+        }
+      ],
+      "ready": false,
+      "executed": false,
+      "missing": [
+        "镜头所需图像须显式采用准确原件",
+        "音色／旋律须听审并选定准确短片段，按输入上限组织",
+        "实际执行平台和现有可用额度须核对"
+      ],
+      "review": [
+        "逐字听辨台词与歌词，复核说话人、音色、旋律",
+        "回看动作、空间、表演与镜间连续性",
+        "实测声音时机，调整预计窗口或重新生成；不另造独立台词音轨"
+      ]
+    },
+    {
+      "format": "seedance-shot-plan-v1",
+      "shot": {
+        "object_id": "shot-e01-029",
+        "revision_id": "edc93041c05122ba277f224091cbf523fa7ff393fdc2bdbe6eb9860acdf1c621"
+      },
+      "source": {
+        "block_ids": [
+          "screenplay-04-lantern-home-s002-b026"
+        ],
+        "object_id": "screenplay-04-lantern-home-e01",
+        "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+        "scene_id": "s002"
+      },
+      "previous_shot": {
+        "object_id": "shot-e01-028",
+        "revision_id": "3ac3601757e98bfe0b1023cc564ebaa2654942140ce6cc1ad5e5b9da949a026e"
+      },
+      "next_shot": {
+        "object_id": "shot-e01-030",
+        "revision_id": "35a99f4d86e21c54d0066c2d4bd8498351ec0b72b3e2c32734126a87c52eb1fe"
+      },
+      "model": "doubao-seedance-2-0-260128",
+      "parameters": {
+        "ratio": "16:9",
+        "resolution": "1080p",
+        "duration": 8.0,
+        "generate_audio": true
+      },
+      "editorial": {
+        "fps": 24,
+        "planned_start_frame": 4536,
+        "duration_frames": 192,
+        "trim_generated_range_seconds": [
+          0,
+          8.0
+        ]
+      },
+      "prompt": "二维人物＋轻手绘背景；正常身体比例，干净线条与平涂色块，避免纸纹和过度风格化。\n制作有声视听预演，画幅16:9。交代祭蛇的重复与今年迫近的危险\n构图：两女孩胸上双人景，李寄左、阿蘅右，远处摊位边缘作空间线索\n空间：李寄转回阿蘅，阿蘅仍望对街后慢慢收目光\n动作开始：阿蘅刚说完旧事\n动作结束：李寄说今年又要点名字，等她回答\n承接：年份、阿禾和小满名字一字不改；不展示剧本没有安排的尸体或蛇袭画面\n@音频1 仅参考李寄·劳作后未擦手 · 李寄 · 日常声线母版的说话人的基础音色，不要复述参考样本内容。\n0.50–7.50秒预计窗口：李寄说：“前年阿禾，去年下湾的小满，送去祭蛇，都没回来。今年又要点名字了。”\n同步环境与动作声：李寄完整台词，减少杂声但保留河街空间\n对白和歌词逐字保持；自然停顿与口型、动作协同。时间为表演目标，不能为卡点吞字。无新增旁白、台词或歌词；除指定演唱外不加配乐。",
+      "image_requirements": [
+        {
+          "object_id": "need-shot-e01-029-character-a-heng",
+          "revision_id": "164d87db82463d3ccc5bdfa94c732bfca0c86186cad0289aa6c47056a4083b33"
+        },
+        {
+          "object_id": "need-shot-e01-029-character-li-ji",
+          "revision_id": "374456bc2865bb8d8cfd3ee9f6fcb2bb400841f7b3264fb8e9cfc513411053a0"
+        },
+        {
+          "object_id": "need-shot-e01-029-composition",
+          "revision_id": "424b3af3559a9a000c714d0e5bc3b7250529d7b28510d9d4336ccdf0723933f1"
+        },
+        {
+          "object_id": "need-shot-e01-029-prop-songbook",
+          "revision_id": "9ddca819e78ba2c8d77fe4734dc12e051b7fb47f6552e7047586687db0e8bf56"
+        },
+        {
+          "object_id": "need-shot-e01-029-space-river-street",
+          "revision_id": "3c62654be5899ff5adb4c02052cded0db2958d6adc72b54b214f49662c044a6c"
+        }
+      ],
+      "audio_templates": [
+        {
+          "requirement": {
+            "object_id": "need-form-li-ji-paste-voice",
+            "revision_id": "bd22574490a81e9a2b8d0ba139a095c95f6cdfd41580025b3f1f0243aa40e7d0"
+          },
+          "role": "voice_reference",
+          "selection": null,
+          "clip_status": "待听审并显式选择准确短片段"
+        }
+      ],
+      "dialogue_and_lyrics": [
+        {
+          "type": "dialogue",
+          "speaker": "李寄",
+          "entity": {
+            "object_id": "entity-li-ji",
+            "revision_id": "42af4494af12312922e3aa58ce011f67346ede435ef75b7b24a97827d999ec9b"
+          },
+          "text": "前年阿禾，去年下湾的小满，送去祭蛇，都没回来。今年又要点名字了。",
+          "source": {
+            "object_id": "screenplay-04-lantern-home-e01",
+            "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+            "scene_id": "s002",
+            "block_ids": [
+              "screenplay-04-lantern-home-s002-b026"
+            ]
+          },
+          "id": "e01-line-034",
+          "shot_id": "shot-e01-029",
+          "planned_start_frame": 12,
+          "planned_end_frame": 180,
+          "fps": 24,
+          "timing_status": "镜内预计窗口，随画面生成后实际观看与听辨复核",
+          "delivery": "native_audio"
+        }
+      ],
+      "ready": false,
+      "executed": false,
+      "missing": [
+        "镜头所需图像须显式采用准确原件",
+        "音色／旋律须听审并选定准确短片段，按输入上限组织",
+        "实际执行平台和现有可用额度须核对"
+      ],
+      "review": [
+        "逐字听辨台词与歌词，复核说话人、音色、旋律",
+        "回看动作、空间、表演与镜间连续性",
+        "实测声音时机，调整预计窗口或重新生成；不另造独立台词音轨"
+      ]
+    },
+    {
+      "format": "seedance-shot-plan-v1",
+      "shot": {
+        "object_id": "shot-e01-030",
+        "revision_id": "35a99f4d86e21c54d0066c2d4bd8498351ec0b72b3e2c32734126a87c52eb1fe"
+      },
+      "source": {
+        "block_ids": [
+          "screenplay-04-lantern-home-s002-b027",
+          "screenplay-04-lantern-home-s002-b028"
+        ],
+        "object_id": "screenplay-04-lantern-home-e01",
+        "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+        "scene_id": "s002"
+      },
+      "previous_shot": {
+        "object_id": "shot-e01-029",
+        "revision_id": "edc93041c05122ba277f224091cbf523fa7ff393fdc2bdbe6eb9860acdf1c621"
+      },
+      "next_shot": {
+        "object_id": "shot-e01-031",
+        "revision_id": "7b922cc19f038a4e9db1e953b2adb1622357232fa6d790599076fc4244105d66"
+      },
+      "model": "doubao-seedance-2-0-260128",
+      "parameters": {
+        "ratio": "16:9",
+        "resolution": "1080p",
+        "duration": 11.0,
+        "generate_audio": true
+      },
+      "editorial": {
+        "fps": 24,
+        "planned_start_frame": 4728,
+        "duration_frames": 264,
+        "trim_generated_range_seconds": [
+          0,
+          11.0
+        ]
+      },
+      "prompt": "二维人物＋轻手绘背景；正常身体比例，干净线条与平涂色块，避免纸纹和过度风格化。\n制作有声视听预演，画幅16:9。阿蘅同时承认害怕和生计需要\n构图：双人中景，阿蘅从对街收回目光，俯身提起脚旁米袋再说话\n空间：米袋落点沿用镜头 16／21，书夹左臂、空右手提袋；李寄让半步\n动作开始：两人沉默，阿蘅看竹器摊\n动作结束：米袋已提稳，她说要问清楚再唱与以后怎么办\n承接：提米动作先于生计问句，不能用旁白说明贫困；袋中仍有当天工米和预付\n@音频1 仅参考阿蘅·日常洗旧青衣 · 阿蘅 · 日常声线母版的说话人的基础音色，不要复述参考样本内容。\n0.50–10.50秒预计窗口：阿蘅说：“我也怕。得跟赵执事问清楚再唱。许家的活够吃几天，以后呢？”\n同步环境与动作声：布袋提起和阿蘅完整台词，留一口思索的气\n对白和歌词逐字保持；自然停顿与口型、动作协同。时间为表演目标，不能为卡点吞字。无新增旁白、台词或歌词；除指定演唱外不加配乐。",
+      "image_requirements": [
+        {
+          "object_id": "need-shot-e01-030-character-a-heng",
+          "revision_id": "2a6714ce4d3605a4ce7f26535438a14ddf61808be516dbf3433449d29a1b204c"
+        },
+        {
+          "object_id": "need-shot-e01-030-character-li-ji",
+          "revision_id": "91018880b15b7e0243d0e975c4ff4cce10628a2eaa0110c6aee560bdcd9549a6"
+        },
+        {
+          "object_id": "need-shot-e01-030-composition",
+          "revision_id": "3f92db067ee3a986c67f0ef54d46f55ae2da96371be2daba98946b00a87009c3"
+        },
+        {
+          "object_id": "need-shot-e01-030-end-keyframe",
+          "revision_id": "5a398f7890dd723307d6f21036da6701662d5b40b84ad87693720687f236dddf"
+        },
+        {
+          "object_id": "need-shot-e01-030-prop-rice-bag",
+          "revision_id": "3d8c6866ac3c7bec16dbf6a050f77067bfdbb34add2c13c2ab9f7aae55236f8f"
+        },
+        {
+          "object_id": "need-shot-e01-030-prop-songbook",
+          "revision_id": "0647d9351a9c0fb4a0ad827435e0178752c59822a80d48739377fe7e2faf328b"
+        },
+        {
+          "object_id": "need-shot-e01-030-space-river-street",
+          "revision_id": "8c41f4f4e9b2431293439ade94f656d7e7e205c00febf517fb670ea58e2d935d"
+        }
+      ],
+      "audio_templates": [
+        {
+          "requirement": {
+            "object_id": "need-form-a-heng-blue-voice",
+            "revision_id": "703bb070f8618a4c10d24a998a3bbc4f85fc2b9d1fd16d0bb7247fb7a55cdb76"
+          },
+          "role": "voice_reference",
+          "selection": null,
+          "clip_status": "待听审并显式选择准确短片段"
+        }
+      ],
+      "dialogue_and_lyrics": [
+        {
+          "type": "dialogue",
+          "speaker": "阿蘅",
+          "entity": {
+            "object_id": "entity-a-heng",
+            "revision_id": "be76284a262dd11d562410a15e3fefcf6cbedb152eb5dad4c4d94b854619d663"
+          },
+          "text": "我也怕。得跟赵执事问清楚再唱。许家的活够吃几天，以后呢？",
+          "source": {
+            "object_id": "screenplay-04-lantern-home-e01",
+            "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+            "scene_id": "s002",
+            "block_ids": [
+              "screenplay-04-lantern-home-s002-b028"
+            ]
+          },
+          "id": "e01-line-035",
+          "shot_id": "shot-e01-030",
+          "planned_start_frame": 12,
+          "planned_end_frame": 252,
+          "fps": 24,
+          "timing_status": "镜内预计窗口，随画面生成后实际观看与听辨复核",
+          "delivery": "native_audio"
+        }
+      ],
+      "ready": false,
+      "executed": false,
+      "missing": [
+        "镜头所需图像须显式采用准确原件",
+        "音色／旋律须听审并选定准确短片段，按输入上限组织",
+        "实际执行平台和现有可用额度须核对"
+      ],
+      "review": [
+        "逐字听辨台词与歌词，复核说话人、音色、旋律",
+        "回看动作、空间、表演与镜间连续性",
+        "实测声音时机，调整预计窗口或重新生成；不另造独立台词音轨"
+      ]
+    },
+    {
+      "format": "seedance-shot-plan-v1",
+      "shot": {
+        "object_id": "shot-e01-031",
+        "revision_id": "7b922cc19f038a4e9db1e953b2adb1622357232fa6d790599076fc4244105d66"
+      },
+      "source": {
+        "block_ids": [
+          "screenplay-04-lantern-home-s002-b029",
+          "screenplay-04-lantern-home-s002-b030"
+        ],
+        "object_id": "screenplay-04-lantern-home-e01",
+        "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+        "scene_id": "s002"
+      },
+      "previous_shot": {
+        "object_id": "shot-e01-030",
+        "revision_id": "35a99f4d86e21c54d0066c2d4bd8498351ec0b72b3e2c32734126a87c52eb1fe"
+      },
+      "next_shot": {
+        "object_id": "shot-e01-032",
+        "revision_id": "efb288de81d446a110faffc266d03a184346d03360bdf162f2e505f073e3f27f"
+      },
+      "model": "doubao-seedance-2-0-260128",
+      "parameters": {
+        "ratio": "16:9",
+        "resolution": "1080p",
+        "duration": 8.0,
+        "generate_audio": true
+      },
+      "editorial": {
+        "fps": 24,
+        "planned_start_frame": 4992,
+        "duration_frames": 192,
+        "trim_generated_range_seconds": [
+          0,
+          8.0
+        ]
+      },
+      "prompt": "二维人物＋轻手绘背景；正常身体比例，干净线条与平涂色块，避免纸纹和过度风格化。\n制作有声视听预演，画幅16:9。让帮助与现实限制都被听见\n构图：近些的双人侧面中景，李寄向阿蘅靠一点，阿蘅轻声回应\n空间：两人仍处同一侧轴线；目光回到对方，手中的袋和书不交换\n动作开始：李寄急着提供自家粮\n动作结束：阿蘅说已受过照顾，两人短暂停着\n承接：语气不责备李寄母亲，不追加家人贫困闪回；“婶婶”在本场指李寄母亲\n@音频1 仅参考李寄·劳作后未擦手 · 李寄 · 日常声线母版的说话人的基础音色，不要复述参考样本内容。\n@音频2 仅参考阿蘅·日常洗旧青衣 · 阿蘅 · 日常声线母版的说话人的基础音色，不要复述参考样本内容。\n0.50–2.04秒预计窗口：李寄说：“我家还有粮。”\n2.04–7.50秒预计窗口：阿蘅说：“上个月婶婶才给我们送过米。你家也不宽裕。”\n同步环境与动作声：两人两句对白，鼓声在结束后才进入\n对白和歌词逐字保持；自然停顿与口型、动作协同。时间为表演目标，不能为卡点吞字。无新增旁白、台词或歌词；除指定演唱外不加配乐。",
+      "image_requirements": [
+        {
+          "object_id": "need-shot-e01-031-character-a-heng",
+          "revision_id": "29ded22ff867badd5fcd06e53cd2a8b759855ab75eac22d2d815516947359ab9"
+        },
+        {
+          "object_id": "need-shot-e01-031-character-li-ji",
+          "revision_id": "73b81ae27d0c220c50bbe297e85566be3212f7cfc7ea5ccce5ba087e2cf233ef"
+        },
+        {
+          "object_id": "need-shot-e01-031-composition",
+          "revision_id": "71d5eec4fcfccef4061cc80a2932886177088b5c3863bee1b82984c0a4f13219"
+        },
+        {
+          "object_id": "need-shot-e01-031-prop-rice-bag",
+          "revision_id": "88b585d7a3eb14fbc099f5336292aeea8de75ea7737352c790045fbf6e34571e"
+        },
+        {
+          "object_id": "need-shot-e01-031-prop-songbook",
+          "revision_id": "6dd20c5b5580e46e32753933f1600543c91265c5e2d872d7503dae65e54e41df"
+        },
+        {
+          "object_id": "need-shot-e01-031-space-river-street",
+          "revision_id": "0a1b4a292ddf56d84a037064fbab916e7de8c2e005b2ca69960aeb10ff808d13"
+        }
+      ],
+      "audio_templates": [
+        {
+          "requirement": {
+            "object_id": "need-form-li-ji-paste-voice",
+            "revision_id": "bd22574490a81e9a2b8d0ba139a095c95f6cdfd41580025b3f1f0243aa40e7d0"
+          },
+          "role": "voice_reference",
+          "selection": null,
+          "clip_status": "待听审并显式选择准确短片段"
+        },
+        {
+          "requirement": {
+            "object_id": "need-form-a-heng-blue-voice",
+            "revision_id": "703bb070f8618a4c10d24a998a3bbc4f85fc2b9d1fd16d0bb7247fb7a55cdb76"
+          },
+          "role": "voice_reference",
+          "selection": null,
+          "clip_status": "待听审并显式选择准确短片段"
+        }
+      ],
+      "dialogue_and_lyrics": [
+        {
+          "type": "dialogue",
+          "speaker": "李寄",
+          "entity": {
+            "object_id": "entity-li-ji",
+            "revision_id": "42af4494af12312922e3aa58ce011f67346ede435ef75b7b24a97827d999ec9b"
+          },
+          "text": "我家还有粮。",
+          "source": {
+            "object_id": "screenplay-04-lantern-home-e01",
+            "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+            "scene_id": "s002",
+            "block_ids": [
+              "screenplay-04-lantern-home-s002-b029"
+            ]
+          },
+          "id": "e01-line-036",
+          "shot_id": "shot-e01-031",
+          "planned_start_frame": 12,
+          "planned_end_frame": 49,
+          "fps": 24,
+          "timing_status": "镜内预计窗口，随画面生成后实际观看与听辨复核",
+          "delivery": "native_audio"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "阿蘅",
+          "entity": {
+            "object_id": "entity-a-heng",
+            "revision_id": "be76284a262dd11d562410a15e3fefcf6cbedb152eb5dad4c4d94b854619d663"
+          },
+          "text": "上个月婶婶才给我们送过米。你家也不宽裕。",
+          "source": {
+            "object_id": "screenplay-04-lantern-home-e01",
+            "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+            "scene_id": "s002",
+            "block_ids": [
+              "screenplay-04-lantern-home-s002-b030"
+            ]
+          },
+          "id": "e01-line-037",
+          "shot_id": "shot-e01-031",
+          "planned_start_frame": 49,
+          "planned_end_frame": 180,
+          "fps": 24,
+          "timing_status": "镜内预计窗口，随画面生成后实际观看与听辨复核",
+          "delivery": "native_audio"
+        }
+      ],
+      "ready": false,
+      "executed": false,
+      "missing": [
+        "镜头所需图像须显式采用准确原件",
+        "音色／旋律须听审并选定准确短片段，按输入上限组织",
+        "实际执行平台和现有可用额度须核对"
+      ],
+      "review": [
+        "逐字听辨台词与歌词，复核说话人、音色、旋律",
+        "回看动作、空间、表演与镜间连续性",
+        "实测声音时机，调整预计窗口或重新生成；不另造独立台词音轨"
+      ]
+    },
+    {
+      "format": "seedance-shot-plan-v1",
+      "shot": {
+        "object_id": "shot-e01-032",
+        "revision_id": "efb288de81d446a110faffc266d03a184346d03360bdf162f2e505f073e3f27f"
+      },
+      "source": {
+        "block_ids": [
+          "screenplay-04-lantern-home-s002-b031"
+        ],
+        "object_id": "screenplay-04-lantern-home-e01",
+        "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+        "scene_id": "s002"
+      },
+      "previous_shot": {
+        "object_id": "shot-e01-031",
+        "revision_id": "7b922cc19f038a4e9db1e953b2adb1622357232fa6d790599076fc4244105d66"
+      },
+      "next_shot": {
+        "object_id": "shot-e01-033",
+        "revision_id": "4d77a5f788347d389e8ab9dc5a3c11aecbc7c124ffcb0ba3f356dfeeb1e2bc08"
+      },
+      "model": "doubao-seedance-2-0-260128",
+      "parameters": {
+        "ratio": "16:9",
+        "resolution": "1080p",
+        "duration": 8.0,
+        "generate_audio": true
+      },
+      "editorial": {
+        "fps": 24,
+        "planned_start_frame": 5184,
+        "duration_frames": 192,
+        "trim_generated_range_seconds": [
+          0,
+          8.0
+        ]
+      },
+      "prompt": "二维人物＋轻手绘背景；正常身体比例，干净线条与平涂色块，避免纸纹和过度风格化。\n制作有声视听预演，画幅16:9。以行动结束讨论，关系仍同行\n构图：沿街中远景，阿蘅先朝右前道具屋走，李寄看一眼米袋再带墨耳跟上\n空间：沿用镜头 15 的街轴；墨耳在李寄脚边，不穿过阿蘅或米袋\n动作开始：鼓声从右前道具屋传来，三者还在原处\n动作结束：女孩与狗沿右前方向离开画面，间距自然收拢\n承接：“牵起墨耳”按轻招手并扶狗颈引走处理，为待审动作选择；本稿不凭空增加未写的牵绳\n同步环境与动作声：道具屋方向试鼓两三下、步声、狗轻爪步，鼓手身份不作指定\n对白和歌词逐字保持；自然停顿与口型、动作协同。时间为表演目标，不能为卡点吞字。无新增旁白、台词或歌词；除指定演唱外不加配乐。",
+      "image_requirements": [
+        {
+          "object_id": "need-shot-e01-032-character-a-heng",
+          "revision_id": "752c3451c6d7e12caca7e5431f5d0d441f0a0fda80f16c5af4e89ba2ce239391"
+        },
+        {
+          "object_id": "need-shot-e01-032-character-li-ji",
+          "revision_id": "35f46c4aa7ea7f4531dd6e6b5557900904a7b3b53a7105ef14cba1f8aa7ed85c"
+        },
+        {
+          "object_id": "need-shot-e01-032-character-mo-er",
+          "revision_id": "83c9de0067388ce6b606f2ae7260594f1fd5b260d22504dac911089223746504"
+        },
+        {
+          "object_id": "need-shot-e01-032-composition",
+          "revision_id": "1b733316fefc8f25137ec526e889f439da01e30739c8bef31d4ec940acf4a369"
+        },
+        {
+          "object_id": "need-shot-e01-032-end-keyframe",
+          "revision_id": "fabb5db938ea656a844a8a89010a12f567be6176c42822ecabcef72d0a4bc408"
+        },
+        {
+          "object_id": "need-shot-e01-032-prop-curtain",
+          "revision_id": "453248e3348d5f327d71c1b00eb4e1562e36f1d3d5083ca95ae78dc896a916a0"
+        },
+        {
+          "object_id": "need-shot-e01-032-prop-rice-bag",
+          "revision_id": "beaa324a1faf5943db05503e2ba44408a25b70a4509f4179d95c2b533c371120"
+        },
+        {
+          "object_id": "need-shot-e01-032-prop-songbook",
+          "revision_id": "2d89257c0277078bca884bbdce4896f2353641dde878f8ff38dab04e42d99f58"
+        },
+        {
+          "object_id": "need-shot-e01-032-prop-street-laundry",
+          "revision_id": "7f829d5e6fa1b366b28130abc6a77fdc7d07a2a4665652fcea4968286762117e"
+        },
+        {
+          "object_id": "need-shot-e01-032-space-prop-house",
+          "revision_id": "d3c1bd72b30e8b62cc063b6f42beb2931cc5cc9b1e97a0a9b5ec0711588c0e13"
+        },
+        {
+          "object_id": "need-shot-e01-032-space-river-street",
+          "revision_id": "9185b33e0ccc6424910d99bb98ddceff1ca4b21bb7b2cf7a37a2b6f981a30843"
+        }
+      ],
+      "audio_templates": [],
+      "dialogue_and_lyrics": [],
+      "ready": false,
+      "executed": false,
+      "missing": [
+        "镜头所需图像须显式采用准确原件",
+        "音色／旋律须听审并选定准确短片段，按输入上限组织",
+        "实际执行平台和现有可用额度须核对"
+      ],
+      "review": [
+        "逐字听辨台词与歌词，复核说话人、音色、旋律",
+        "回看动作、空间、表演与镜间连续性",
+        "实测声音时机，调整预计窗口或重新生成；不另造独立台词音轨"
+      ]
+    },
+    {
+      "format": "seedance-shot-plan-v1",
+      "shot": {
+        "object_id": "shot-e01-033",
+        "revision_id": "4d77a5f788347d389e8ab9dc5a3c11aecbc7c124ffcb0ba3f356dfeeb1e2bc08"
+      },
+      "source": {
+        "block_ids": [
+          "screenplay-04-lantern-home-s002-b032"
+        ],
+        "object_id": "screenplay-04-lantern-home-e01",
+        "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+        "scene_id": "s002"
+      },
+      "previous_shot": {
+        "object_id": "shot-e01-032",
+        "revision_id": "efb288de81d446a110faffc266d03a184346d03360bdf162f2e505f073e3f27f"
+      },
+      "next_shot": null,
+      "model": "doubao-seedance-2-0-260128",
+      "parameters": {
+        "ratio": "16:9",
+        "resolution": "1080p",
+        "duration": 4,
+        "generate_audio": true
+      },
+      "editorial": {
+        "fps": 24,
+        "planned_start_frame": 5376,
+        "duration_frames": 72,
+        "trim_generated_range_seconds": [
+          0,
+          3.0
+        ]
+      },
+      "prompt": "二维人物＋轻手绘背景；正常身体比例，干净线条与平涂色块，避免纸纹和过度风格化。\n制作有声视听预演，画幅16:9。让日常继续，保留未解决的危险和失去\n构图：回陶伯手与篮口中近景，空凳保留一角\n空间：与镜头 27 同侧同机位略近，刀、篮口和空凳关系不变\n动作开始：削竹刀仍停在原处\n动作结束：刀重新缓缓刮过篮口，画面结束\n承接：不新增陶伯抬头长叹或哭；声桥可接下一集生活声，但本集成段收尾\n同步环境与动作声：刮竹声重新响起，鼓声远去；不增加旁白\n对白和歌词逐字保持；自然停顿与口型、动作协同。时间为表演目标，不能为卡点吞字。无新增旁白、台词或歌词；除指定演唱外不加配乐。\n动作在前3秒完成，尾部保持至4秒，供剪辑裁掉多余保持；不要增加剧情。",
+      "image_requirements": [
+        {
+          "object_id": "need-shot-e01-033-character-tao",
+          "revision_id": "1bb9ca53da8def2f9108dbaae089c80ffc4d6359c5c6d9da18927780fe447dc9"
+        },
+        {
+          "object_id": "need-shot-e01-033-composition",
+          "revision_id": "885c69ba33816827afd5d292b2e93312affc2a74ba2ea819425ae955cde198b1"
+        },
+        {
+          "object_id": "need-shot-e01-033-prop-bamboo-basket",
+          "revision_id": "f543e06d393dca499366da9f69059d1b958bdccf3cc7e4580219b4e6ac143235"
+        },
+        {
+          "object_id": "need-shot-e01-033-prop-empty-stool",
+          "revision_id": "42b8384a675dc2eb4634291f5eb71b395932f77befb40e2da9e2d6adc1fcacf5"
+        },
+        {
+          "object_id": "need-shot-e01-033-prop-shaving-knife",
+          "revision_id": "f317cf870e7e4703cc11e20a5c0f3cd78997d8b7d4a3977ecf56676855a6f4ad"
+        },
+        {
+          "object_id": "need-shot-e01-033-space-bamboo-stall",
+          "revision_id": "730ab5583b5a93a897dc766b7fe3b8781e68a31268674092e95a184e23261d78"
+        }
+      ],
+      "audio_templates": [],
+      "dialogue_and_lyrics": [],
+      "ready": false,
+      "executed": false,
+      "missing": [
+        "镜头所需图像须显式采用准确原件",
+        "音色／旋律须听审并选定准确短片段，按输入上限组织",
+        "实际执行平台和现有可用额度须核对"
+      ],
+      "review": [
+        "逐字听辨台词与歌词，复核说话人、音色、旋律",
+        "回看动作、空间、表演与镜间连续性",
+        "实测声音时机，调整预计窗口或重新生成；不另造独立台词音轨"
+      ]
+    }
+  ],
+  "ready": false,
+  "executed": false
+}

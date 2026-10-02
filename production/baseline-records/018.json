@@ -1,0 +1,63 @@
+{
+  "format": "production-import-v1",
+  "records": [
+    {
+      "object_id": "asset-zhou-voice-01",
+      "kind": "ASSET",
+      "expected_version": 0,
+      "payload": {
+        "format": "production-asset-v1",
+        "title": "周掌柜对白声线候选",
+        "blocks": [
+          {
+            "id": "description",
+            "text": "第一轮声线或演唱候选，真实 48 kHz WAV 原件；已核文件和返回字幕，尚未完成实际听审或用户接受。"
+          }
+        ],
+        "media_type": "audio",
+        "subjects": [
+          {
+            "object_id": "entity-zhou",
+            "revision_id": "a983783f1095d60f2c8339167c0b22287ff50d51b49e28b4818146adfe532d4b"
+          }
+        ],
+        "states": [],
+        "components": [
+          {
+            "id": "original",
+            "role": "original",
+            "file": "d242aeb9c0b0069f18a252f62a6a2aedc4625522033aa92c5a5ab03f8da1f76f.wav",
+            "sha256": "d242aeb9c0b0069f18a252f62a6a2aedc4625522033aa92c5a5ab03f8da1f76f",
+            "bytes": 3264044,
+            "mime": "audio/wav",
+            "duration_seconds": 17.0,
+            "has_audio": true,
+            "sample_rate": 48000,
+            "channels": 2
+          },
+          {
+            "id": "receipt",
+            "role": "metadata",
+            "file": "6c25720150548a47ea2465f6e5f353c7f5d0e98726d765fe6bf82431950152a3.json",
+            "sha256": "6c25720150548a47ea2465f6e5f353c7f5d0e98726d765fe6bf82431950152a3",
+            "bytes": 8333,
+            "mime": "application/json"
+          }
+        ],
+        "production": {
+          "object_id": "call-zhou-voice-01",
+          "revision_id": "1f97e57ffa1780735bc6875d4af35ce3469a0471a9c9611f77e910a9aa328f19"
+        },
+        "lineage": {},
+        "placeholder": false,
+        "verification": {
+          "file_inspected": true,
+          "visually_inspected": false,
+          "listened": false,
+          "native_4k_passed": null,
+          "user_accepted": false
+        }
+      }
+    }
+  ]
+}

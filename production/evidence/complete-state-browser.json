@@ -1,0 +1,130 @@
+{
+  "date": "2026-10-01",
+  "browser": "connected Chrome (browser 1)",
+  "system_commit": "66578a5a84da0e3ea1cbd6dd25d20674878d1d59",
+  "passed_checks": [
+    {
+      "id": "settings_entity_counts",
+      "instance_port": "39103",
+      "observed": "133 个实体，51 角色、16 场景、62 道具、4 歌曲；完整状态总数 267，零状态实体为 0。"
+    },
+    {
+      "id": "full_snapshot_liji",
+      "instance_port": "39106/39103",
+      "observed": "掌心包布与额角旧伤在同一完整状态，服装、伤势、健康、疲劳和声音说明同时可读。"
+    },
+    {
+      "id": "state_navigation_order",
+      "instance_port": "39106/39103",
+      "observed": "李寄 13 个状态按剧情来源顺序显示，阿禾与船家各有 1 个状态，墨耳 1 个状态。"
+    },
+    {
+      "id": "legacy_state_link",
+      "instance_port": "39107",
+      "observed": "从原图像候选打开 state-liji-paste 精确修订，显示历史局部状态提示，不计入 13 个完整状态。"
+    },
+    {
+      "id": "exact_version_switch",
+      "instance_port": "39106",
+      "observed": "完整状态的历史版本 1 与当前版本 2 均可读取；历史版本不展示当前采用编辑。"
+    },
+    {
+      "id": "optional_detail_requirement",
+      "instance_port": "39106",
+      "observed": "添加技术掌心特写后，补充需求为可选，整体参考仍为必需；整体缺项时下载禁用。"
+    },
+    {
+      "id": "asset_multiple_state_coverage",
+      "instance_port": "39106",
+      "observed": "图像候选从版本 2 新增版本 3，分别声明一个完整状态的整体和另一个状态的细节；实际原件及旧调用仍引用原版本。"
+    },
+    {
+      "id": "state_revision_impact",
+      "instance_port": "39106",
+      "observed": "船家服装编辑保存为完整状态新修订，旧整体需求保持旧引用，当前状态显示覆盖缺项及需求待复核。"
+    },
+    {
+      "id": "shot_state_transitions",
+      "instance_port": "39106",
+      "observed": "E01-017 有李寄未擦手到擦净、浆糊羊毛移除的准确转换正文；6 次实体使用、8 个状态、17 项必要输入。"
+    },
+    {
+      "id": "not_ready_package_blocked",
+      "instance_port": "39106/39103",
+      "observed": "缺少素材时下载逐镜输入清单和状态参考清单禁用。"
+    },
+    {
+      "id": "source_page_regression",
+      "instance_port": "39106",
+      "observed": "故事采编白话译文完整显示。"
+    },
+    {
+      "id": "structure_page_regression",
+      "instance_port": "39106",
+      "observed": "结构第十稿的人物、空间、时间线和图像／结构图入口显示。"
+    },
+    {
+      "id": "screenplay_four",
+      "instance_port": "39106",
+      "observed": "版本四第一集两场、定稿歌词与正文显示。"
+    },
+    {
+      "id": "historic_comment",
+      "instance_port": "39106",
+      "observed": "版本三既有“庙门钥匙”意见及准确场次、定位原圈选入口可读。"
+    },
+    {
+      "id": "draft_retained",
+      "instance_port": "39106",
+      "observed": "完整状态整体意见的未提交草稿在分类筛选后重新打开仍保留，随后 Esc 取消；没有提交评论。"
+    },
+    {
+      "id": "approach_tabs",
+      "instance_port": "39106",
+      "observed": "制作思路的故事创作与生产制作双页签及章节可读。"
+    },
+    {
+      "id": "restored_complete_state",
+      "instance_port": "39107",
+      "observed": "最新完整库恢复后，李寄整合状态、原文来源、整体参考需求和准确修订可读。"
+    },
+    {
+      "id": "restored_original",
+      "instance_port": "39107",
+      "observed": "真实李寄图像原件成功加载，naturalWidth=2016、naturalHeight=2688。"
+    },
+    {
+      "id": "live_materials",
+      "instance_port": "39103",
+      "observed": "仍为 6 个实际素材对象和 7 条实际制作；没有写入 39106 的技术关联。"
+    },
+    {
+      "id": "live_episode_navigation",
+      "instance_port": "39103",
+      "observed": "剧本依据顶部为版本四已确认17集，默认第一集33镜；第一镜24项输入仍缺失、分页正常。"
+    },
+    {
+      "id": "updated_method",
+      "instance_port": "39103",
+      "observed": "制作思路已显示267个完整状态、完整快照规则，以及320镜头用途加41共用整体参考，共361项。"
+    },
+    {
+      "id": "deliverable_tab",
+      "instance_port": "39103",
+      "observed": "交付标签页停留李寄掌心包布、额角旧伤；实际截图包含实体分类、13个状态和整体参考区。"
+    }
+  ],
+  "operation_instance": ".runtime/production/complete-state-test",
+  "restoration_instance": ".runtime/production/bundle-complete-states-final",
+  "live_instance": ".runtime/production/review-instance",
+  "technical_writes_not_delivered": true,
+  "test_comments_submitted": 0,
+  "test_draft_cancelled": true,
+  "existing_user_draft_tab_untouched": "2044182735",
+  "screenshot": "complete-state.jpg",
+  "navigation_recovery": "两次 Page.navigate 报 CDP 超时后，列表和实际页面确认已导航成功；关闭重复测试标签页，后续使用同一 Chrome 的可访问性控件完成回读。没有将接口通过代替页面验证。",
+  "limitations": [
+    "未重验浏览器文件上传权限阻断。",
+    "未新增媒体，未作声音或动态分镜作品验收。"
+  ]
+}

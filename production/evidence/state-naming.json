@@ -1,0 +1,501 @@
+{
+  "verified_at": "2026-10-01T02:27:13.389093+00:00",
+  "system_commit": "392dead589cca5ac5e49f88d9dce04d64c100ca1",
+  "image_id": "sha256:40457d8667b104de297895b35c8a22c9f04a2ef8e37d560500e6ab85234e6066",
+  "instance": ".runtime/production/review-instance",
+  "system_tests_passed": 52,
+  "renamed_states": 49,
+  "states": 86,
+  "entities": 133,
+  "entity_owners_of_states": 35,
+  "unchanged_existing_records": 1368,
+  "old_production_revisions_preserved": 1528,
+  "comments_unchanged": 266,
+  "comments_sha256": "50f5564bea9a3218cc29517755a80daf154ec3af4037487a62a80ff0620a1b31",
+  "title_only_review_records": 49,
+  "renaming_pending_changes": [],
+  "runtime_files_verified": 29,
+  "formal_service_changed": false,
+  "renames": [
+    {
+      "object_id": "state-liji-clean",
+      "old_revision": "1cd11dc6bf3b65492c3bf275353428cc76720f4a7e280d67b03e3cb15ae74a14",
+      "old_title": "李寄·擦净双手",
+      "new_title": "李寄·双手已擦净",
+      "new_revision": "dd46c400ebb81e7d5bc5ed80776762c48034f098859da916f5861c0dd58f414f",
+      "review_object": "review-state-title-c41e22839a4e0c5ce94e730f",
+      "affected_object_count": 137
+    },
+    {
+      "object_id": "state-liji-abrasion",
+      "old_revision": "1837ed3c3e364b3a0eeea3afc83f87eac9241d7cd5131005f5e0f4a857ba2ad6",
+      "old_title": "李寄·劈柴磨破掌心",
+      "new_title": "李寄·劈柴后掌心磨破",
+      "new_revision": "d3c84bc7f6732b252ad690770731f8f100a9c6e135523c7d92f123f2eaeafe26",
+      "review_object": "review-state-title-3b49c7d74c5afeeb26b514fb",
+      "affected_object_count": 530
+    },
+    {
+      "object_id": "state-liji-rewrapped",
+      "old_revision": "aaa663a749661bab23802bd06f6389085b4fd9c6349537e1a24ff56ad60a440f",
+      "old_title": "李寄·归家重新包手",
+      "new_title": "李寄·归家后手掌重新包扎",
+      "new_revision": "bfd23634208c37ca0c9b948966bd1e395194f3f41ff6cadb49fe5019d75c6cf8",
+      "review_object": "review-state-title-05e854c1935c00cd31b404e2",
+      "affected_object_count": 37
+    },
+    {
+      "object_id": "state-mother-ill",
+      "old_revision": "3153bf522743bc5605073dbc15dfeb406de4d32c86d408b0dd73e3dd394307ba",
+      "old_title": "阿蘅母亲·病中照护",
+      "new_title": "阿蘅母亲·病中需照护",
+      "new_revision": "b1447edd33ceab28df4e35d715bf5b7e332005ebd57ec471f17b7c8f326249bb",
+      "review_object": "review-state-title-588bc58b959c7dc16b2b847e",
+      "affected_object_count": 216
+    },
+    {
+      "object_id": "state-book-intact",
+      "old_revision": "eee0d6aeae4fdde2d9543747274dd880936500d1c9106e86570a40c71e1243f5",
+      "old_title": "歌本·完整而有生字圈",
+      "new_title": "阿蘅歌本·完整而有生字圈",
+      "new_revision": "aa0a9861e9c8dbf37f97357a7b9ca820384d07a1a0d933bfd976f76766269b5a",
+      "review_object": "review-state-title-23b4c5a9c9db4055cadcffac",
+      "affected_object_count": 419
+    },
+    {
+      "object_id": "state-book-wet-torn",
+      "old_revision": "5f9fa4b8f465a10be7405f14202778d8a9e013ba029dd407a17fd01d7fb47177",
+      "old_title": "歌本·浸水裂页失词",
+      "new_title": "阿蘅歌本·浸水裂页失词",
+      "new_revision": "71ea1e79698f9a3e37bf1f37561a005d710210c3dafeb2800c084cf44ed081ca",
+      "review_object": "review-state-title-ab1f5b1f31d1d90ef269ac8a",
+      "affected_object_count": 290
+    },
+    {
+      "object_id": "state-book-dry-gap",
+      "old_revision": "b3e1924f85725c6f0f05dc531019214741f1660afdd75a9b65905ed3271508ee",
+      "old_title": "歌本·晒干残页夹半行新纸",
+      "new_title": "阿蘅歌本·晒干残页夹半行新纸",
+      "new_revision": "a5e4e574ea65d67bb1dafb3511382499d9c147eae8c5cea4be522d2539e8c4f3",
+      "review_object": "review-state-title-186d8aec081fbd0656a656cc",
+      "affected_object_count": 254
+    },
+    {
+      "object_id": "state-book-receipt",
+      "old_revision": "93059f1eb42aa884cec32ed8da0076cd07acb61661d070f41c6c021b66b7481d",
+      "old_title": "歌本·夹清账凭据",
+      "new_title": "阿蘅歌本·夹有清账凭据",
+      "new_revision": "374427d64951a0e1deddcde7508d0891a811b4a476f4b3384406ea98618d14ae",
+      "review_object": "review-state-title-a3303d5a56ab64e4e899c026",
+      "affected_object_count": 45
+    },
+    {
+      "object_id": "state-book-repaired",
+      "old_revision": "a97b123accb9ad1d27b4708137139ccb57a0e09b537d59de3a1e8f9235d4fc4a",
+      "old_title": "歌本·补词订牢保留旧页",
+      "new_title": "阿蘅歌本·补词订牢保留旧页",
+      "new_revision": "ae6437ccf570f199e23c41eea6c3afeecfaa697733cfea85b90e6f72fa38496f",
+      "review_object": "review-state-title-6a1b9fd5bbbcd3d543a57a77",
+      "affected_object_count": 57
+    },
+    {
+      "object_id": "state-bag-wages",
+      "old_revision": "b8668d27972151f785a1e373d806b622625ee97c73b7c1c6d234dc986eecb4e3",
+      "old_title": "米袋·装当日工米",
+      "new_title": "阿蘅米袋·装有当日工米",
+      "new_revision": "9e22326be8d01826941791a98854978b3b7531461ecbce70d51e76c441dd6899",
+      "review_object": "review-state-title-e3338878fde322eee5d9832c",
+      "affected_object_count": 120
+    },
+    {
+      "object_id": "state-bag-advance",
+      "old_revision": "fd5c09a0cae7ccfdbf7c852ad12901a8138ae200c6614c6e990ba0c5afc990e8",
+      "old_title": "米袋·追加许家预付米",
+      "new_title": "阿蘅米袋·工米与许家预付米同袋",
+      "new_revision": "8ba1c5a0fcd85444094827c55424a62523097d0501dd6673f8eb3e6de0868203",
+      "review_object": "review-state-title-85668d218855e9d435b6502b",
+      "affected_object_count": 106
+    },
+    {
+      "object_id": "state-bag-returned",
+      "old_revision": "4725dd6d1952f177237c1d5bee7ac76074d5c0db6cba4f33f132a26483be99f4",
+      "old_title": "米袋·退还预付后扎紧",
+      "new_title": "阿蘅米袋·预付米已退还、袋口扎紧",
+      "new_revision": "9d6a19e98fde07cce5e738dae62c0fdd3434f2974b8d763b7822c884dd5270c1",
+      "review_object": "review-state-title-7301537fca44e56c3e41cc49",
+      "affected_object_count": 14
+    },
+    {
+      "object_id": "state-bag-refund",
+      "old_revision": "51a0a05f265cd35fd92ec39cd9c44dd9d9169e356e9f025a3f24b1698cf28ba1",
+      "old_title": "米袋·接清账退粮",
+      "new_title": "阿蘅米袋·清账退粮入袋",
+      "new_revision": "ccbe88e6375fa19b6f42f752324a0cbfb64a9210d005d68d9b5064d156f7bb14",
+      "review_object": "review-state-title-918072484b95e7bde268c5ba",
+      "affected_object_count": 30
+    },
+    {
+      "object_id": "state-cloth-damp",
+      "old_revision": "6ae1c98a1e4d7c072845692922de0df527b4914ec28caf1d0434c62680230824",
+      "old_title": "布巾·蘸水翻面",
+      "new_title": "擦手布巾·蘸水翻面",
+      "new_revision": "50a0f42db2258bc5ea75c378150a98761fbbbab6f9fbd283e7efc0a53afd5f20",
+      "review_object": "review-state-title-2c7b71b8bc2b9316572dbb38",
+      "affected_object_count": 24
+    },
+    {
+      "object_id": "state-cake-corner",
+      "old_revision": "73de7bd0366af40646091b064c8b9ff1f954cf71ea02bd0759ee7a1de708a6e2",
+      "old_title": "饼·掰出小角",
+      "new_title": "半块饼·已掰下一小角",
+      "new_revision": "dfda32d3c89b199624ebfc4e39d11586ae43f6d7802973109374f949ed587968",
+      "review_object": "review-state-title-67b18667dc79c99f3b4e7ce8",
+      "affected_object_count": 14
+    },
+    {
+      "object_id": "state-keys-seized",
+      "old_revision": "55ec479493e73466a2451d2ff25a74dfbe95e3f1207dc4567b00569b2d7f991a",
+      "old_title": "钥匙·由程差役收管",
+      "new_title": "庙院钥匙串·由程差役收管",
+      "new_revision": "54ddb60c18fb081c82b323a57969d2f9800f8accc56617992bfac951310d4e23",
+      "review_object": "review-state-title-4b5b26d245b15dfe21790f30",
+      "affected_object_count": 52
+    },
+    {
+      "object_id": "state-paper-moon-held",
+      "old_revision": "25add88f674046b117cf9f24fc0903387bddd0f6d67ed132dfdbe5f42655ab93",
+      "old_title": "纸月亮·卡在蛇嘴",
+      "new_title": "戏班纸月亮·卡在蛇嘴",
+      "new_revision": "a915f6064bf46a8f0fa201beca1fc19d68c0835ddd91c931ce65ea6eca89dbae",
+      "review_object": "review-state-title-9355fd9d2b8bf373ebdc809c",
+      "affected_object_count": 55
+    },
+    {
+      "object_id": "state-plaque-shaved",
+      "old_revision": "d3707c38bbcfe05fc9ce00e1179e9a0f09308df7390daf877dea9d0f7259f7ce",
+      "old_title": "祭名木牌·新刮边与红绳",
+      "new_title": "阿蘅祭名木牌·新刮边与红绳",
+      "new_revision": "f53eefe9da1cab0c241c75c9290e179abbcac9a9f5289601d74402cdf63fe3e5",
+      "review_object": "review-state-title-66b6ad55b220b25a4ddeb22d",
+      "affected_object_count": 55
+    },
+    {
+      "object_id": "state-debt-covered",
+      "old_revision": "c92ae701a8e942ce4029c6ca3ee32f3dadeb29a5eff9ca764f7525c7f5475a71",
+      "old_title": "借据·贴纸遮改为七斗",
+      "new_title": "阿蘅家借据·贴纸遮改为七斗",
+      "new_revision": "c4317721ec39ad76c6557ae780c0effe11ed1ffd0861fa29723a5bb6d98f5b1c",
+      "review_object": "review-state-title-80af3ec0426bd947b22da734",
+      "affected_object_count": 109
+    },
+    {
+      "object_id": "state-debt-uncovered",
+      "old_revision": "fcd53d0b8ddfa1b8092be7235d122a69ba2eb272354a421f99c8b1af748bfdd2",
+      "old_title": "借据·原约六斗露出",
+      "new_title": "阿蘅家借据·原约六斗露出",
+      "new_revision": "c2ea5aa2bdffa90f47bd8cde4a6f0b527202b76430db15905550793328b4cc8c",
+      "review_object": "review-state-title-d819aa11b6e4a68828285621",
+      "affected_object_count": 90
+    },
+    {
+      "object_id": "state-overlay-removed",
+      "old_revision": "7ac9f4166dbcd7e814d3bd363961688dc02e300d9d00bab14ad96ee8456a99c7",
+      "old_title": "贴纸·湿揭分离留证",
+      "new_title": "借据篡改贴纸·湿揭分离留证",
+      "new_revision": "25b22d3b2462c6296a7b15970f177b9c61e13ecb93a0c32ecc6d0125e3cb0a78",
+      "review_object": "review-state-title-90b323cc9d0aa59ac931575a",
+      "affected_object_count": 90
+    },
+    {
+      "object_id": "state-ledger-one-day",
+      "old_revision": "d1cc4962f5616b5ad6f37c9c37a9268c935cd79cd61cf7b9d244d7635003521c",
+      "old_title": "唱工记录·第一日两升",
+      "new_title": "阿蘅唱工记录·第一日两升",
+      "new_revision": "e6335946b5be061a2291be688904b9fa5584d751f0f92585a0e9369ed446d8c0",
+      "review_object": "review-state-title-271de0a81057b9b53162827f",
+      "affected_object_count": 80
+    },
+    {
+      "object_id": "state-ledger-two-days",
+      "old_revision": "b5d7e69fa0c82b879971c15a26aeb4bbef86c0bfacd688aa1952aed7371a8562",
+      "old_title": "唱工记录·两日四升",
+      "new_title": "阿蘅唱工记录·两日四升",
+      "new_revision": "713e1d8d78fcfe52844447e522add6f57cdfe5ee025b5f66b18449a4e8192ec4",
+      "review_object": "review-state-title-81ab80ac4b877ae5a613c4a1",
+      "affected_object_count": 79
+    },
+    {
+      "object_id": "state-order-first",
+      "old_revision": "e7a006c3ea21ae8aae80dac314a27bc6573ce5cd902afed1d08e9be030a17631",
+      "old_title": "文书·暂停送祭与阿蘅免祭",
+      "new_title": "停祭与除蛇文书·暂停送祭与阿蘅免祭",
+      "new_revision": "738c62434875191013c1d5d6ca9c9f623eeae2a8d0d47b67afbb49a84f2dca73",
+      "review_object": "review-state-title-006c524e3db9c323c5c4dc2a",
+      "affected_object_count": 101
+    },
+    {
+      "object_id": "state-order-all",
+      "old_revision": "717d64e4dc3f36cd78eb7cc59ae3922f4b458897553ddbf92e3d37299fe4fd7a",
+      "old_title": "文书·任何户均不得索人",
+      "new_title": "停祭与除蛇文书·任何户均不得索人",
+      "new_revision": "6da729033012def1ac4c44d40020be07d721707efabc921a21caa9aa6cdf571a",
+      "review_object": "review-state-title-1f4fa0ed6a34881a43bb2ba0",
+      "affected_object_count": 68
+    },
+    {
+      "object_id": "state-lamp-lit",
+      "old_revision": "f5ca45a9835b1b8039f24caa8e360b368c6b664c24925098d19d1a918a296172",
+      "old_title": "旧灯·补纸透暖光",
+      "new_title": "李家旧灯·补纸透暖光",
+      "new_revision": "46a80e79e3ed35f7eae09da9169e22bcdf22b9e2795a79e731ff2d1f9b3eb860",
+      "review_object": "review-state-title-182c9312e6e7ecbb0a659437",
+      "affected_object_count": 60
+    },
+    {
+      "object_id": "state-lamp-unlit",
+      "old_revision": "353b4428071ff15a86df739fe2598755745e05011e6da52ea0ce9c718d282a65",
+      "old_title": "旧灯·天亮仍带未点灯",
+      "new_title": "李家旧灯·天亮仍带未点灯",
+      "new_revision": "113955a5e5358be8bc342836f1549b416073cfee000ea70429be06d8658cdecb",
+      "review_object": "review-state-title-cfe802d5ee49a14a85d16af3",
+      "affected_object_count": 129
+    },
+    {
+      "object_id": "state-blade-sheathed",
+      "old_revision": "380f8b9652fd770c8d60803716b661c8e5dd21d584f9fc8d4bdd6aadc2ca6248",
+      "old_title": "厚背刀·入套携带",
+      "new_title": "县库厚背刀·入套携带",
+      "new_revision": "bd933c64242482f075dd7dd69d074302c233a551f5d381f764b9eb3f8e6c6a4e",
+      "review_object": "review-state-title-0952480745687b039bd4db0c",
+      "affected_object_count": 102
+    },
+    {
+      "object_id": "state-blade-cutting",
+      "old_revision": "7a97a2f340091018f243aee141cd6f42bba5b5bd6b53d4981b36c783f765c65f",
+      "old_title": "厚背刀·同一刀缝直落",
+      "new_title": "县库厚背刀·同一刀缝直落",
+      "new_revision": "05c50759cc431634696360545150b0dea5dd656d9a904aef5d457774df3af1e8",
+      "review_object": "review-state-title-e6f1e6c38e6cc711995f9e24",
+      "affected_object_count": 93
+    },
+    {
+      "object_id": "state-channel-original",
+      "old_revision": "0e45285a50c0ddec2628854a521aecd4ba2ac2ce5986a4a00a6876633afbe81c",
+      "old_title": "短石道·原盖石封顶",
+      "new_title": "短石道与盖石·原盖石封顶",
+      "new_revision": "9754adaceacc3c64490e7b11e75197aeb1e8379f30c501989daf0079243ead00",
+      "review_object": "review-state-title-d26bea60a14d7e220936af54",
+      "affected_object_count": 221
+    },
+    {
+      "object_id": "state-channel-cut",
+      "old_revision": "a43c5f5f3048ca83961264aa19c34892547dbe15e6db2842d9fbd5d1d70ec7bb",
+      "old_title": "短石道·新增窄刀缝",
+      "new_title": "短石道与盖石·新增窄刀缝",
+      "new_revision": "3ad17d4f36893d11b730efe0c94fe183f34e4807b7a250f62dee10fdfd4c06fc",
+      "review_object": "review-state-title-991233d7e7bf39109db500e2",
+      "affected_object_count": 168
+    },
+    {
+      "object_id": "state-channel-covered",
+      "old_revision": "62bdbf2d632b3fbf4bfa8f2a67abefbc882e6de2feb51249273e704ef8cf1a48",
+      "old_title": "刀缝·木条暂盖",
+      "new_title": "短石道与盖石·木条暂盖",
+      "new_revision": "cac7cc972b77021c1e764503e4857037bee1c5a3cd04861a109a6271a41cecea",
+      "review_object": "review-state-title-7caa15284720e7500f7e95d1",
+      "affected_object_count": 46
+    },
+    {
+      "object_id": "state-door-open",
+      "old_revision": "342d0cd3c98cc8dfb0f4d13f8df37f46daef87d07c02201ee92aff02d3002a95",
+      "old_title": "南门·后闸落底时开启",
+      "new_title": "南端投食木门·后闸落底时开启",
+      "new_revision": "2cf29cd7377674cd36d9623f1eddb5f87a4a45b933c2792d1403366104a2bc2c",
+      "review_object": "review-state-title-b70279f167e8f7235d73a38a",
+      "affected_object_count": 79
+    },
+    {
+      "object_id": "state-door-barred",
+      "old_revision": "1c8b97c792f1451cf14c244216e1b46723dd2df65df1c1d9cb6cf82f0b3f2cca",
+      "old_title": "南门·关门横闩卡稳",
+      "new_title": "南端投食木门·关门横闩卡稳",
+      "new_revision": "8a7ba4ef13d0de98c9f405a3653a1f608899b397e40b122bf8ce2a55ea9f542e",
+      "review_object": "review-state-title-c604cdd62f24c3400f1caccd",
+      "affected_object_count": 219
+    },
+    {
+      "object_id": "state-gate-down",
+      "old_revision": "ca3cbef180669ea6b078af851c0d5532c34235d04596f760383aae3558b3c5f8",
+      "old_title": "北闸·落底插栓",
+      "new_title": "北端洞闸·落底插栓",
+      "new_revision": "b65dcf0a2000d3af1804250a3fe1221f3e85eedfdcefbf9345742d18cb479a77",
+      "review_object": "review-state-title-e87cf32d3952c66f28a3774b",
+      "affected_object_count": 221
+    },
+    {
+      "object_id": "state-gate-up",
+      "old_revision": "1eb506d7fe9515018c06a0a2f1f93f286449a402dc8ff4aa0d759ee8633fa908",
+      "old_title": "北闸·抽栓提起",
+      "new_title": "北端洞闸·抽栓提起",
+      "new_revision": "52d186e5adf583def004cc132a974e191d7081972dc417ef171bb0df484a3de3",
+      "review_object": "review-state-title-e26298790fdf00338104b8fe",
+      "affected_object_count": 151
+    },
+    {
+      "object_id": "state-gate-loaded",
+      "old_revision": "afc733fb986a4ce84298e4cbb6d722f7a341a23616237d80b669c140fcacc547",
+      "old_title": "北闸·压蛇未到底不能插栓",
+      "new_title": "北端洞闸·压蛇未到底不能插栓",
+      "new_revision": "94b425c141fc8d710cc7227db067c170aca14069d3f1524b328554dac1c18c9b",
+      "review_object": "review-state-title-d1c829e94a324198f1c1651b",
+      "affected_object_count": 96
+    },
+    {
+      "object_id": "state-beam-installed",
+      "old_revision": "b483f0bdc2093b5308d30346280924f943eef9330655415ac7b4b65047dc766a",
+      "old_title": "横杠·绑接并试牢",
+      "new_title": "压闸长横杠·绑接并试牢",
+      "new_revision": "16acec11b189e02125b58c69a73ccfc26ceabcdf253b4ce498fbeda7102bee38",
+      "review_object": "review-state-title-848aeb447fc45658bf7eaba8",
+      "affected_object_count": 169
+    },
+    {
+      "object_id": "state-beam-seven",
+      "old_revision": "fbe74fc10dcd86f50e040781fb4462e3ab7b3b0a5f2ade98fc30600d39e93b9b",
+      "old_title": "横杠·七人承重",
+      "new_title": "压闸长横杠·七人承重",
+      "new_revision": "290553f3f886777f230c531d4896de6642add65ff9bef4dade7d9adf67361772",
+      "review_object": "review-state-title-612fd18b410bcc9391e0bf11",
+      "affected_object_count": 124
+    },
+    {
+      "object_id": "state-beam-eight",
+      "old_revision": "3a414c491020e523b420305142abc8cd08b27d28248fe747c366cb7082b602ea",
+      "old_title": "横杠·两侧各四人",
+      "new_title": "压闸长横杠·两侧各四人",
+      "new_revision": "620fe4a9832072a20a991eb428aa295a14ff6686511e0ba0dd22530f718f28f4",
+      "review_object": "review-state-title-322916ad6f9a31c755438f78",
+      "affected_object_count": 96
+    },
+    {
+      "object_id": "state-rope-pad",
+      "old_revision": "a853bcb94cef5d3a96bccf871e80084c63247d59cbb01237b1743f5105850e0f",
+      "old_title": "麻绳·石角有旧布护垫",
+      "new_title": "陶伯麻绳与护垫·石角有旧布护垫",
+      "new_revision": "47cccbcf1cac60810008cd3c0c9b7840934fec3b8fa26598fdf18bc65626b30b",
+      "review_object": "review-state-title-70c6432a374a001658aca183",
+      "affected_object_count": 99
+    },
+    {
+      "object_id": "state-bait-empty",
+      "old_revision": "ffbd0a1df273647b0d4768778ae185cfb58d3517c22516116d3b9bb45df3d1f5",
+      "old_title": "饵盆·空盆试位",
+      "new_title": "蛇饵盆·空盆试位",
+      "new_revision": "1b76e0a856f878f861080f2eb2263df64b91769068c481e2f30ccb80bb6d21d9",
+      "review_object": "review-state-title-216666a9e415ada6b833288a",
+      "affected_object_count": 25
+    },
+    {
+      "object_id": "state-bait-filled",
+      "old_revision": "c40bd60707f45324855adacadec79e04f0246fed6e0527b1cd3a6779580ebebe",
+      "old_title": "饵盆·肉米饵过刀缝以南",
+      "new_title": "蛇饵盆·肉米饵过刀缝以南",
+      "new_revision": "3f9509aaa7c0b17658455feb987cc3ca53c4a869421736784a88aa0dc0686dca",
+      "review_object": "review-state-title-3d060b2908e57d4edafa4866",
+      "affected_object_count": 27
+    },
+    {
+      "object_id": "state-rice-shop-day",
+      "old_revision": "4e1df25d98aafd0c69629f16f11bcc54ca3f47a3c0906b9f4279b9d2d76add4f",
+      "old_title": "米铺·日间营业",
+      "new_title": "周家米铺·日间营业",
+      "new_revision": "f78069440c89ec9a1ff0c765202e1ae34552abf904d457d4e349ac0ca527039e",
+      "review_object": "review-state-title-4159efce9aad10c7ebcf8efc",
+      "affected_object_count": 30
+    },
+    {
+      "object_id": "state-rice-shop-closing",
+      "old_revision": "9b4738b5fad814dade7229bd1a0aae7633a038bd26e1d465a8067b8789939183",
+      "old_title": "米铺·油灯与最后门板",
+      "new_title": "周家米铺·油灯与最后门板",
+      "new_revision": "e6d6692d4fbfa5d4d0a023bf84cead1e89c3d3ed282c56452a053088e7440bf7",
+      "review_object": "review-state-title-9429df5505c73df678cb19d6",
+      "affected_object_count": 14
+    },
+    {
+      "object_id": "state-li-home-hospitality",
+      "old_revision": "66dd287f8a70758a7715ee3f53ab13a1a28e808c265f224d86dcb92832b8ee63",
+      "old_title": "李家·接病人铺床",
+      "new_title": "李家·已为病人铺床",
+      "new_revision": "452bab4b70d5a413c3db9bbdd97f9cb763238235e57f4ec812859fbc9f18d339",
+      "review_object": "review-state-title-e9e9881889bd3c984733caf4",
+      "affected_object_count": 128
+    },
+    {
+      "object_id": "state-boat-song-short",
+      "old_revision": "201349d5b380a2c63d33d8fffb03602302108d6d6f6dc9ddb18d5a0238a41167",
+      "old_title": "舟行曲·略两段唱归家",
+      "new_title": "舟行曲（未具名）·略两段唱归家",
+      "new_revision": "40914ad05623e94d7aa5f77e97893f614e52e14a752c132600e40087cc37f945",
+      "review_object": "review-state-title-15e4a6b53eacfa2d3cdfde00",
+      "affected_object_count": 1
+    },
+    {
+      "object_id": "state-welcome-lead",
+      "old_revision": "615b131a4725ea3b94e9afc3738c6ce789f29ced9f5f07cd0467254459846269",
+      "old_title": "迎蛇调·前殿集体领唱",
+      "new_title": "迎蛇领唱调·前殿集体领唱",
+      "new_revision": "cf99e7bf885196878fe0817a4074a983388b4faade2890154a64a763c2ca1c99",
+      "review_object": "review-state-title-c234e529a1b1d7759ed21a5a",
+      "affected_object_count": 19
+    },
+    {
+      "object_id": "state-blessing-distant",
+      "old_revision": "0607eb7e5cda4efdddce5508ac64d88605087fbd10deb30561070d412ba40286",
+      "old_title": "祈福戏·远处传入家中",
+      "new_title": "祈福戏唱段·远处传入家中",
+      "new_revision": "89a6db653adaa6a28626ce710652f591ba0c5630ef95cbddc028fb747fa09ed9",
+      "review_object": "review-state-title-3ba21595c3a929f49cdc18cc",
+      "affected_object_count": 11
+    }
+  ],
+  "browser": {
+    "name": "Chrome",
+    "url": "http://127.0.0.1:39103/?workspace=settings.workspace&production_object=entity-rice-bag&production_revision=d263ed71c5aa09fe03c631a72450c016e57a418059994777817db12892f4cca2",
+    "verified_at": "2026-10-01T02:29:43.970Z",
+    "current": {
+      "entity": "阿蘅米袋",
+      "results": [
+        "阿蘅米袋道具 版本 1",
+        "阿蘅米袋·工米与许家预付米同袋 版本 2",
+        "阿蘅米袋·清账退粮入袋 版本 2",
+        "阿蘅米袋·预付米已退还、袋口扎紧 版本 2",
+        "阿蘅米袋·装有当日工米 版本 2"
+      ],
+      "states": [
+        "实体状态 · 阿蘅米袋·工米与许家预付米同袋",
+        "实体状态 · 阿蘅米袋·清账退粮入袋",
+        "实体状态 · 阿蘅米袋·预付米已退还、袋口扎紧",
+        "实体状态 · 阿蘅米袋·装有当日工米"
+      ],
+      "summary": "当前结果：5 条记录（实体 1 · 实体状态 4）"
+    },
+    "isolated_checks": {
+      "state_filter_results": 4,
+      "current_title": "阿蘅米袋·装有当日工米",
+      "current_version": 2,
+      "historical_title": "米袋·装当日工米",
+      "historical_version": 1,
+      "parent_link": "所属实体：阿蘅米袋",
+      "parent_link_destination": "阿蘅米袋"
+    },
+    "screenshot": "state-naming.jpg"
+  },
+  "recovery": {
+    "instance": ".runtime/production/recovered-instance-03",
+    "objects": 1466,
+    "revisions": 1626,
+    "files": 14,
+    "heads_and_revisions_equal": true
+  }
+}

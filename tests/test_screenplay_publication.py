@@ -1,4 +1,5 @@
 import json
+import shutil
 import tempfile
 import unittest
 from pathlib import Path
@@ -19,7 +20,9 @@ class ScreenplayPublicationTest(unittest.TestCase):
         self.target = Path(self.temp.name) / 'target'
         (self.candidate / 'imports').mkdir(parents=True)
         (self.candidate / 'export').mkdir()
-        (self.candidate / 'export/assets').symlink_to(root / 'export/assets', target_is_directory=True)
+        # Production originals must be inside the restored instance; a directory
+        # symlink is deliberately rejected by the managed-media validator.
+        shutil.copytree(root / 'export/assets', self.candidate / 'export/assets')
         self.document = json.loads((root / self.document_path).read_text())
         ids = [self.document['id']] + [e['id'] for e in self.document['episodes']]
         (self.candidate / self.document_path).write_text(json.dumps(self.document, ensure_ascii=False))
@@ -43,7 +46,7 @@ class ScreenplayPublicationTest(unittest.TestCase):
             prepared.close()
         self.target.mkdir()
         out = self.target / 'export'; out.mkdir()
-        (out / 'assets').symlink_to(self.candidate / 'export/assets', target_is_directory=True)
+        shutil.copytree(self.candidate / 'export/assets', out / 'assets')
         self.store = Store(self.target / '.runtime/review.sqlite3')
         restore(self.store, self.candidate / 'export')
         # Only this disposable restored fixture is reduced to the prepublication state.
