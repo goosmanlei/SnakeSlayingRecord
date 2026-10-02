@@ -2,7 +2,7 @@
 
 《把灯带回家》版本四已获用户确认，17 集、42 场、1,114 个正文块；主视觉为二维人物与轻手绘背景，16:9。当前完成全剧实体／状态抽取、第一集 33 镜设计、逐素材方案及首批实际候选。基准尚未全部补齐或接受，第一集未就绪；完整素材、有声动态分镜、成片和工程在后续制作范围。
 
-本轮制作审阅改进已承接完成的 `task-20261002-0001`，系统 `15822ae7` 吸收其最终 `7331690`，并与 33 条关系修订串行发布正式 3000。正式库保留评论、原件、实际调用、采用和素材轮次历史；用户已确认本轮完成并授权双仓集成和推送；实际完成以账本及 Git 回读为准。当前版本和证据见 [STATE.md](../STATE.md)和[本轮验证](review-ui-verification.md)。本任务不生成媒体；双仓推送已获用户追加授权。
+此前 `task-20261002-0002` 的制作审阅改进承接 `task-20261002-0001`，系统 `15822ae7` 与 33 条关系修订已发布正式 3000。其完成确认与双仓推送授权仅属于该任务。当前 `task-20261002-0003` 已登记全剧 255 个图像状态方案、76 个音色状态方案和六份新代表候选，正等待母版审阅，尚未完成或取得集成／推送确认。具体范围、原件、缺口与恢复入口见 [全剧首轮生成交接](full-generation/README.md)和 [STATE.md](../STATE.md)；此前界面验证见 [制作审阅验证](review-ui-verification.md)。
 
 ## 内容入口
 
@@ -13,8 +13,9 @@
 | 直接关系、集场原文和修正范围 | [entity-relationships.md](entity-relationships.md)、[准确增量与全部证据](entity-relationships.json)、[33 条修正前后对应](relationship-review.md) |
 | 第一集镜头、空间和定稿声音 | [33 镜设计](episode01/shots.md)、[准确数据](episode01/shots.json)、[37 个对白／演唱单元](episode01/dialogue-cues.json) |
 | 实体描述与生成方案 | [generation-preparation.md](generation-preparation.md)：33 个实体的 77 个状态、122 项方案，区分计划与实际调用 |
+| 全剧非歌曲首轮方案与新原件 | [交接与审阅入口](full-generation/README.md)、[255 图像及音色逐项方案](full-generation/recipes.json)、[音色范围](full-generation/voice-scope.md)，包含待绑定输入与两处待确认漏项 |
 | 素材轮次、历史对应及 0001 验证 | [material-rounds.md](material-rounds.md)、[准确对应](material-round-mapping.json)与[编制工具](../scripts/material_round_audit.py) |
-| 后续各集计划需求 | [scene-requirements.md](scene-requirements.md)：其余 40 场 566 项图像需求，本轮不生产媒体 |
+| 后续各集计划需求 | [scene-requirements.md](scene-requirements.md)：其余 40 场 566 项镜头用途需求，不等于本轮 255 个完整状态生成目标 |
 | 现有候选的实体与状态归属 | [baseline-associations.md](baseline-associations.md)、[requests](requests/)、[receipts](receipts/)及[baseline-records](baseline-records/) |
 | 原生有声预演计划 | [声音契约](native-audio-workflow.md)、[33 镜计划](episode01/seedance/manifest.json)，尚未执行 |
 | 完整恢复与历史 | 最新正式 `export/` 与匹配的 [replay.json](replay.json)；历史制作准备验证见 [verification.md](verification.md) |
@@ -46,7 +47,7 @@
 | [赵执事对白](../export/assets/842ecea98a028fa105e0f30a4f5a6085d412d3c40aecf24516f5a7a10b19ab92.wav) | 11.5 秒，同规格 |
 | [阿蘅舟行曲](../export/assets/9edcf64a1d34914d1d406a01aff9617f3759eb51ed699e1380fde6f96993c953.wav) | 17.0534 秒，实际引用阿蘅对白作声线参考 |
 
-仍为 6 个素材身份、7 次实际调用、两张图和五份 WAV；播放器验证不代替声音听审。第一集 250 项镜头用途与 67 项状态必要需求合计 317 项均未明确采用。原生尺寸、代表背景／道具／人物基准、准确声音和平台额度须在后续制作解决；227 秒为设计估时，非成片实测。之前观察的账户额度不是当前余额，执行前重新查询。
+上表为既有 6 个素材身份、7 次实际调用、两张图和五份 WAV，全部保留。本轮另增四张图、两份 WAV 和六次真实调用，正式库合计 12 个素材身份、13 次调用，历史准确原件共六张图、七份 WAV；新原件与自检见 [本轮交接](full-generation/README.md)。播放器验证不代替声音听审。第一集 250 项镜头用途与 67 项状态必要需求合计 317 项均未明确采用；227 秒为设计估时。继续生成前重新查询额度、核对准确输入和母版认可。
 
 ## Codex 后台维护与恢复
 
@@ -63,7 +64,7 @@ PYTHONPATH="$production_system" python3 -m review_desk --instance . production-r
 
 维护使用 `production-import FILE --validate-only` 预演，再用相同批次导入；携带 `expected_version` 和必要的 `expected_heads`，保留原稿与历史锚点。真实文件先用 `production-file FILE` 导入原件，再通过 `production-import FILE.json` 登记其准确 CALL、ASSET 与需求／状态关联；文件入库本身不创建采用。准确采用沿用系统仓库的 `docs/production.md` 契约。关系在本故事 [编制工具](../scripts/entity_relationships.py)中维护，先 `plan` 后 `apply`，正式写前重新准备。
 
-`production_forms.py`、`production_inventory.py`、`episode01_shots.py` 和 `scene_requirements.py` 保存本故事规则；不要重复运行初始批次覆盖已审内容。`register_production_candidates.py` 只用于真实新调用首次登记，不重复登记已有对象。新媒体请求先检查单个请求、最新额度与准确输入，再按当次授权执行；本任务不调用生成。
+`production_forms.py`、`production_inventory.py`、`episode01_shots.py` 和 `scene_requirements.py` 保存本故事规则；不要重复运行初始批次覆盖已审内容。`register_production_candidates.py` 只用于真实新调用首次登记，不重复登记已有对象。本轮全剧方案与六份代表项使用 `prepare_full_generation.py`、`register_full_generation.py`、`publish_full_generation.py`，这些工具不代发模型请求；已经发布的批次不得盲重跑。新媒体请求先检查单个请求、最新额度与准确输入，再按当次授权执行。
 
 恢复只接受新的隔离目录，先准备 Python、FFmpeg／ffprobe 和固定版本系统：
 
@@ -87,7 +88,7 @@ PYTHONPATH="$production_system" python3 -m review_desk \
 双仓修改、说明与证据在本任务工作区提交，故事通过 `_prepare_integration` 生成候选并复验。展示最终候选及实际验证后，由用户明确确认完成并集成，再运行 `_complete`；准备命令不是通过验收。本任务不自动推送，完成后停止写文件与提交，保留工作区与分支。
 
 
-正式增量检查使用故事工具，只读比较发布前后的一致性备份；批次限定为逐条审阅的实体关系，不允许其他对象、旧修订、评论、轮次或采用发生变化：
+此前 `0002` 的关系发布复核使用故事工具，只读比较其保留工作区中的发布前后备份；批次限定为逐条审阅的实体关系，不允许其他对象、旧修订、评论、轮次或采用发生变化：
 
 ```bash
 python3 scripts/verify_production_review.py \
@@ -97,4 +98,4 @@ python3 scripts/verify_production_review.py \
   --report .runtime/review-ui/formal-publication/rechecked.json
 ```
 
-这些路径相对本任务工作区，仅用于复核本轮真实发布，不作为后续发布输入。下一次修改必须重新读取正式当前版本并准备增量。
+上述 `.runtime/review-ui/` 路径相对保留的 `task-20261002-0002` 工作区，仅用于复核该次关系发布。本任务的方案／原件发布使用 `verify_full_generation.py`，准确命令见 [本轮交接](full-generation/README.md)。下一次修改必须重新读取正式当前版本并准备增量。
