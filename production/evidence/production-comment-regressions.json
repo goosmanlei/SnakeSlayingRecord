@@ -1,0 +1,179 @@
+{
+  "selection": {
+    "title": "PASS — 文本圈选回归测试",
+    "text": "PASS 正文内松手与已有高亮内选词\nPASS 拖到正文外松手仍显示按钮\nPASS 仅 selectionchange 也能更新按钮\nPASS 评论未变化时后台刷新不打断正在拖选的正文\nPASS 清除选区后立即移除旧按钮\nPASS 反向跨段及 Unicode 引用准确\nPASS 选区端点落在正文容器边界\nPASS 拖选中不出现遮挡鼠标的按钮\nPASS 点击评论按钮保留引用并打开编辑器\nPASS 长选区跨过滚动容器顶部时按钮仍可见\nPASS 非正文选区与切换资料不保留旧按钮\nPASS 结构稿也支持正文外松手与跨块引用\nPASS 正文评论定位到长块末尾的原圈选\nPASS 结构稿评论定位到长块末尾的原圈选\nPASS 制作思路往返保留正文阅读位置\nPASS 制作思路往返不删除未保存的评论草稿\nPASS 制作思路 Tab 与浏览器历史同步"
+  },
+  "screenplay": {
+    "passed": 42,
+    "checks": [
+      {
+        "name": "默认选择最新可用版本",
+        "passed": true
+      },
+      {
+        "name": "直达分集概览及有序场次",
+        "passed": true
+      },
+      {
+        "name": "可选版本保留原顺序",
+        "passed": true
+      },
+      {
+        "name": "统一顶栏与纯版号版本标签",
+        "passed": true
+      },
+      {
+        "name": "分集双行显示编号、场次与标题",
+        "passed": true
+      },
+      {
+        "name": "选集默认首场且概览不重复正文",
+        "passed": true
+      },
+      {
+        "name": "分集与场次显示初始评论数",
+        "passed": true
+      },
+      {
+        "name": "单场正文与时空",
+        "passed": true
+      },
+      {
+        "name": "正文区直接显示单场原文",
+        "passed": true
+      },
+      {
+        "name": "场 ID 写入直达链接",
+        "passed": true
+      },
+      {
+        "name": "换场只展示目标场正文",
+        "passed": true
+      },
+      {
+        "name": "场名时空与预计时长",
+        "passed": true
+      },
+      {
+        "name": "浏览器后退恢复场次",
+        "passed": true
+      },
+      {
+        "name": "换场保留本集评论草稿",
+        "passed": true
+      },
+      {
+        "name": "返回原场保留草稿",
+        "passed": true
+      },
+      {
+        "name": "收起后原圈选恢复草稿",
+        "passed": true
+      },
+      {
+        "name": "另一集草稿不串位",
+        "passed": true
+      },
+      {
+        "name": "另一版本草稿不串位",
+        "passed": true
+      },
+      {
+        "name": "返回原集自动恢复草稿",
+        "passed": true
+      },
+      {
+        "name": "刷新恢复未保存草稿",
+        "passed": true
+      },
+      {
+        "name": "AI 润色参考含准确分集与创作依据",
+        "passed": true
+      },
+      {
+        "name": "评论提交与原修订归属",
+        "passed": true
+      },
+      {
+        "name": "新增评论即时更新集场计数",
+        "passed": true
+      },
+      {
+        "name": "切换分集评论隔离",
+        "passed": true
+      },
+      {
+        "name": "编辑评论",
+        "passed": true
+      },
+      {
+        "name": "集场计数包含已关闭评论",
+        "passed": true
+      },
+      {
+        "name": "关闭及历史查看",
+        "passed": true
+      },
+      {
+        "name": "重新打开",
+        "passed": true
+      },
+      {
+        "name": "跨场评论仍由原分集修订接受",
+        "passed": true
+      },
+      {
+        "name": "跨场完整引用与场次范围",
+        "passed": true
+      },
+      {
+        "name": "跨场引用计入覆盖场次而不重复计入分集",
+        "passed": true
+      },
+      {
+        "name": "跨场引用定位开头",
+        "passed": true
+      },
+      {
+        "name": "跨场引用定位结尾",
+        "passed": true
+      },
+      {
+        "name": "长块末尾精确定位",
+        "passed": true
+      },
+      {
+        "name": "刷新恢复场次与评论",
+        "passed": true
+      },
+      {
+        "name": "无效场链接回到本集首场",
+        "passed": true
+      },
+      {
+        "name": "窄屏场次目录可阅读",
+        "passed": true
+      },
+      {
+        "name": "隔离实例可按现有契约新增版本",
+        "passed": true
+      },
+      {
+        "name": "新增版本自动显示集场目录",
+        "passed": true
+      },
+      {
+        "name": "故事采编仍可用",
+        "passed": true
+      },
+      {
+        "name": "故事结构仍可用",
+        "passed": true
+      },
+      {
+        "name": "返回剧本保留本集概览",
+        "passed": true
+      }
+    ]
+  }
+}
