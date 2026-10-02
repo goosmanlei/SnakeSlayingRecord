@@ -13441,6 +13441,8 @@
           "performers": "阿蘅；第三十八场母亲先哼、阿蘅接唱。"
         },
         "reference_media": "audio",
+        "reference_mode": "description",
+        "production_description": "歌词范围：“青篷过河湾，柳影到船边——”后无法接词；不是作品原本结尾。\n演唱方式：唱或哼到缺词处停下；第五场哼而摇头，第三十八场母女同停。\n演唱者：阿蘅；第三十八场母亲先哼、阿蘅接唱。",
         "facts": [
           "阿蘅（唱）：青篷过河湾，柳影到船边——",
           "她低头找下一行。柜上的拍子又响两下，独自停了。",
@@ -13513,6 +13515,8 @@
           "performers": "阿蘅。"
         },
         "reference_media": "audio",
+        "reference_mode": "description",
+        "production_description": "歌词范围：《送青篷》已会片段，原文未唱出的段落不补写。\n演唱方式：阿蘅洗布时低声练《送青篷》，未给出的句段不补写。\n演唱者：阿蘅。",
         "facts": [
           "河边，阿蘅抖开湿幕布，低声练着《送青篷》。李寄望着她，又低头看那行庙歌。"
         ],
@@ -13565,6 +13569,8 @@
           "performers": "阿蘅、母亲。"
         },
         "reference_media": "audio",
+        "reference_mode": "description",
+        "production_description": "歌词范围：已核全第二段，含“莫怕远山高，隔水灯相照”和末句。\n演唱方式：阿蘅低唱，母亲轻轻哼完末句；曲调与台前版同源。\n演唱者：阿蘅、母亲。",
         "facts": [
           "李寄替她翻到前页，阿蘅从熟悉的地方低声起唱。唱到“柳影到船边”，李寄先抬起眼。",
           "阿蘅（唱）：莫怕远山高，隔水灯相照——",
@@ -13623,6 +13629,8 @@
           "performers": "阿蘅与歌娘。"
         },
         "reference_media": "audio",
+        "reference_mode": "description",
+        "production_description": "歌词范围：第二段从船边接到“莫怕远山高，隔水灯相照。明年春水暖，归来认旧桥——”。\n演唱方式：歌娘慢唱核“认”字，阿蘅跟唱并自行连上；不改歌词。\n演唱者：阿蘅与歌娘。",
         "facts": [
           "阿蘅（唱）：青篷过河湾，柳影到船边——",
           "歌娘（唱）：莫怕远山高，隔水灯相照。明年春水暖，归来认旧桥——",
@@ -28181,6 +28189,8 @@
           "placement": "持有者与位置依本场引用和动作起止；普通转手不另拆状态。"
         },
         "reference_media": "audio",
+        "reference_mode": "description",
+        "production_description": "完整形态：戏班台鼓的画外声音，第一集从道具屋方向传来，鼓体不要求出镜；实际鼓型和敲击音色待审。\n状况：完整形态如上；材质、颜色及未写磨损细节待审。\n组成与内容：组成与内容以上述描述及引用正文为准；未写内容不补造。\n使用位置：持有者与位置依本场引用和动作起止；普通转手不另拆状态。",
         "facts": [
           "道具屋那边传来试鼓声。阿蘅抱着歌本先走了。李寄看着她手里那只小米袋，牵起墨耳跟上。"
         ],
@@ -33153,7 +33163,7 @@
         "required": true,
         "purpose": "完整状态整体参考",
         "media_type": "audio",
-        "usage": "post_audio",
+        "usage": "generation_input",
         "entities": [
           {
             "object_id": "entity-blessing-stage-song",
@@ -33193,7 +33203,7 @@
         "required": true,
         "purpose": "完整状态整体参考",
         "media_type": "audio",
-        "usage": "post_audio",
+        "usage": "generation_input",
         "entities": [
           {
             "object_id": "entity-blue-awning-song",
@@ -33204,166 +33214,6 @@
           {
             "object_id": "form-blue-awning-song-complete",
             "revision_id": "@form-blue-awning-song-complete"
-          }
-        ],
-        "specification": {
-          "reference_role": "overall",
-          "minimum_sample_rate": 48000
-        }
-      }
-    },
-    {
-      "object_id": "need-form-blue-awning-song-missing-overall",
-      "kind": "REQUIREMENT",
-      "expected_version": 0,
-      "payload": {
-        "format": "production-requirement-v1",
-        "title": "送青篷·缺词处停下·整体参考",
-        "blocks": [
-          {
-            "id": "description",
-            "text": "说明该实体此时的完整形态；细节、角度和声音补充不能代替整体参考。候选须明确审阅并显式采用。"
-          }
-        ],
-        "scope": {
-          "object_id": "form-blue-awning-song-missing",
-          "revision_id": "@form-blue-awning-song-missing"
-        },
-        "slot": "overall",
-        "required": true,
-        "purpose": "完整状态整体参考",
-        "media_type": "audio",
-        "usage": "post_audio",
-        "entities": [
-          {
-            "object_id": "entity-blue-awning-song",
-            "revision_id": "@entity-blue-awning-song"
-          }
-        ],
-        "states": [
-          {
-            "object_id": "form-blue-awning-song-missing",
-            "revision_id": "@form-blue-awning-song-missing"
-          }
-        ],
-        "specification": {
-          "reference_role": "overall",
-          "minimum_sample_rate": 48000
-        }
-      }
-    },
-    {
-      "object_id": "need-form-blue-awning-song-practice-overall",
-      "kind": "REQUIREMENT",
-      "expected_version": 0,
-      "payload": {
-        "format": "production-requirement-v1",
-        "title": "送青篷·受损前低声练曲·整体参考",
-        "blocks": [
-          {
-            "id": "description",
-            "text": "说明该实体此时的完整形态；细节、角度和声音补充不能代替整体参考。候选须明确审阅并显式采用。"
-          }
-        ],
-        "scope": {
-          "object_id": "form-blue-awning-song-practice",
-          "revision_id": "@form-blue-awning-song-practice"
-        },
-        "slot": "overall",
-        "required": true,
-        "purpose": "完整状态整体参考",
-        "media_type": "audio",
-        "usage": "post_audio",
-        "entities": [
-          {
-            "object_id": "entity-blue-awning-song",
-            "revision_id": "@entity-blue-awning-song"
-          }
-        ],
-        "states": [
-          {
-            "object_id": "form-blue-awning-song-practice",
-            "revision_id": "@form-blue-awning-song-practice"
-          }
-        ],
-        "specification": {
-          "reference_role": "overall",
-          "minimum_sample_rate": 48000
-        }
-      }
-    },
-    {
-      "object_id": "need-form-blue-awning-song-soft-overall",
-      "kind": "REQUIREMENT",
-      "expected_version": 0,
-      "payload": {
-        "format": "production-requirement-v1",
-        "title": "送青篷·补抄时低唱轻哼·整体参考",
-        "blocks": [
-          {
-            "id": "description",
-            "text": "说明该实体此时的完整形态；细节、角度和声音补充不能代替整体参考。候选须明确审阅并显式采用。"
-          }
-        ],
-        "scope": {
-          "object_id": "form-blue-awning-song-soft",
-          "revision_id": "@form-blue-awning-song-soft"
-        },
-        "slot": "overall",
-        "required": true,
-        "purpose": "完整状态整体参考",
-        "media_type": "audio",
-        "usage": "post_audio",
-        "entities": [
-          {
-            "object_id": "entity-blue-awning-song",
-            "revision_id": "@entity-blue-awning-song"
-          }
-        ],
-        "states": [
-          {
-            "object_id": "form-blue-awning-song-soft",
-            "revision_id": "@form-blue-awning-song-soft"
-          }
-        ],
-        "specification": {
-          "reference_role": "overall",
-          "minimum_sample_rate": 48000
-        }
-      }
-    },
-    {
-      "object_id": "need-form-blue-awning-song-teaching-overall",
-      "kind": "REQUIREMENT",
-      "expected_version": 0,
-      "payload": {
-        "format": "production-requirement-v1",
-        "title": "送青篷·歌娘核词接全·整体参考",
-        "blocks": [
-          {
-            "id": "description",
-            "text": "说明该实体此时的完整形态；细节、角度和声音补充不能代替整体参考。候选须明确审阅并显式采用。"
-          }
-        ],
-        "scope": {
-          "object_id": "form-blue-awning-song-teaching",
-          "revision_id": "@form-blue-awning-song-teaching"
-        },
-        "slot": "overall",
-        "required": true,
-        "purpose": "完整状态整体参考",
-        "media_type": "audio",
-        "usage": "post_audio",
-        "entities": [
-          {
-            "object_id": "entity-blue-awning-song",
-            "revision_id": "@entity-blue-awning-song"
-          }
-        ],
-        "states": [
-          {
-            "object_id": "form-blue-awning-song-teaching",
-            "revision_id": "@form-blue-awning-song-teaching"
           }
         ],
         "specification": {
@@ -33393,7 +33243,7 @@
         "required": true,
         "purpose": "完整状态整体参考",
         "media_type": "audio",
-        "usage": "post_audio",
+        "usage": "generation_input",
         "entities": [
           {
             "object_id": "entity-boat-song",
@@ -38599,7 +38449,7 @@
         "required": true,
         "purpose": "完整状态整体参考",
         "media_type": "audio",
-        "usage": "post_audio",
+        "usage": "generation_input",
         "entities": [
           {
             "object_id": "entity-offscreen-caller",
@@ -40689,7 +40539,7 @@
         "required": true,
         "purpose": "完整状态整体参考",
         "media_type": "audio",
-        "usage": "post_audio",
+        "usage": "generation_input",
         "entities": [
           {
             "object_id": "entity-snake-welcome-song",
@@ -41033,46 +40883,6 @@
           "reference_role": "overall",
           "minimum_long_edge": 3840,
           "native_4k": true
-        }
-      }
-    },
-    {
-      "object_id": "need-form-stage-drum-audible-overall",
-      "kind": "REQUIREMENT",
-      "expected_version": 0,
-      "payload": {
-        "format": "production-requirement-v1",
-        "title": "戏班台鼓·画外试鼓与起鼓·整体参考",
-        "blocks": [
-          {
-            "id": "description",
-            "text": "说明该实体此时的完整形态；细节、角度和声音补充不能代替整体参考。候选须明确审阅并显式采用。"
-          }
-        ],
-        "scope": {
-          "object_id": "form-stage-drum-audible",
-          "revision_id": "@form-stage-drum-audible"
-        },
-        "slot": "overall",
-        "required": true,
-        "purpose": "完整状态整体参考",
-        "media_type": "audio",
-        "usage": "post_audio",
-        "entities": [
-          {
-            "object_id": "entity-stage-drum",
-            "revision_id": "@entity-stage-drum"
-          }
-        ],
-        "states": [
-          {
-            "object_id": "form-stage-drum-audible",
-            "revision_id": "@form-stage-drum-audible"
-          }
-        ],
-        "specification": {
-          "reference_role": "overall",
-          "minimum_sample_rate": 48000
         }
       }
     },

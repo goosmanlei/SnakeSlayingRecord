@@ -514,19 +514,21 @@ def compile_forms(records, appearances, entries, source, ref, record, scene_map)
         primary = sources[0]
         facts = [b['text'] for b in scene_map[int(primary['scene_id'][1:])][3] if b['id'] in primary['block_ids']]
         unknowns = [v for v in dimensions.values() if any(w in v for w in ('待审','未明'))]
+        description_only=oid in {'form-stage-drum-audible','form-blue-awning-song-missing','form-blue-awning-song-practice','form-blue-awning-song-soft','form-blue-awning-song-teaching'}
         records.append(record(oid,'STATE',entry['name']+'·'+label,text, state_model=MODEL,
             entity=ref(entry['id']), dimensions=dimensions, reference_media=medium,
+            **({'reference_mode':'description','production_description':text} if description_only else {}),
             facts=facts, choices=['同一完整形态跨场复用；未写换装、湿痕消退、伤愈程度的衔接属于待审连续性安排，不冒充新增剧本事实。'],
             unknowns=unknowns, sources=sources))
     # References need every form to exist before occurrences and requirements.
     for (key, form_key), oid in sorted(used.items()):
         row = next(r for r in records if r['object_id'] == oid)
         p = row['payload']
-        if p['reference_media'] == 'none':
+        if p['reference_media'] == 'none' or p.get('reference_mode')=='description':
             continue
         records.append(record('need-'+oid+'-overall','REQUIREMENT',p['title']+'·整体参考',
             '说明该实体此时的完整形态；细节、角度和声音补充不能代替整体参考。候选须明确审阅并显式采用。',
             scope=ref(oid),slot='overall',required=True,purpose='完整状态整体参考',media_type=p['reference_media'],
-            usage='generation_input' if p['reference_media']=='image' else 'post_audio',
+            usage='generation_input',
             entities=[ref(entries[key]['id'])],states=[ref(oid)],
             specification={'reference_role':'overall', **({'minimum_long_edge':3840,'native_4k':True} if p['reference_media']=='image' else {'minimum_sample_rate':48000})}))
