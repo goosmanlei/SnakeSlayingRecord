@@ -293,9 +293,10 @@ def compile_shots(store, production):
             duration=round(cue_frames*weight/cue_weight)
             cue.update(shot_id=oid,planned_start_frame=cue_start,planned_end_frame=cue_start+duration,fps=24)
             cue_start+=duration
-            cue['timing_status']='镜内按字数暂分的排练窗口，非实测；实际录音与表演审阅后修订'
+            cue['timing_status']='镜内预计窗口，随画面生成后实际观看与听辨复核'
+            cue['delivery']='native_audio'
             all_cues.append(cue)
-        sound=dialogue+[{'type':'environment_and_action','description':fx,'timing_status':'待制作与排练'}]
+        sound=dialogue+[{'type':'environment_and_action','description':fx,'timing_status':'镜内预计窗口，随画面生成后实际观看与听辨复核','delivery':'native_audio'}]
         actor_keys=[v for v in entities.split(',') if v]
         prop_keys=[v for v in props.split(',') if v]
         sound_entity_keys=['boat-song'] if index in (1,3) else ['stage-drum'] if index==32 else []
@@ -313,6 +314,7 @@ def compile_shots(store, production):
                     continuity=continuity,duration_frames=seconds*24,fps=24,sound=sound,
                     entities=[ref('entity-'+v) for v in dict.fromkeys(actor_keys+prop_keys+sound_entity_keys)],states=state_refs,
                     state_model='complete-v1',state_transitions=state_transitions,
+                    audio_delivery='seedance-native-audio-v1',animatic_method='Seedance 2.0 有声视听预演；不是正式镜头交付',
                     motion=motion,planned_start_frame=total_frames,visual_status='尚未生成分镜画面')
         records.append(shot);total_frames+=seconds*24
         scope={'object_id':oid,'revision_id':'@'+oid}
@@ -335,14 +337,6 @@ def compile_shots(store, production):
         for key in prop_keys:
             entity=production.record(store,'entity-'+key)['payload']
             need('prop-'+key,entity['title']+'参考','可用独立原件或经审阅的组合图局部；采用须绑定具体文件与必要裁切。','image','generation_input',[key],spec=image_spec)
-        for n,cue in enumerate(dialogue,1):
-            cue_keys=[cue['entity']['object_id'].removeprefix('entity-')]+(['boat-song'] if cue['type']=='singing' else [])
-            cue_states=[s for key in cue_keys for s in complete_states_for_blocks(occurrences[scene]['entity-'+key],cue['source']['block_ids'])[0]]
-            need(f'voice-{n:02d}',cue['speaker']+('演唱' if cue['type']=='singing' else '对白'),cue['text'],
-                 'audio','post_audio',cue_keys,forms=cue_states,
-                 spec={'minimum_sample_rate':48000,'exact_text':cue['text'],'cue_id':cue['id'],
-                 'planned_start_frame':cue['planned_start_frame'],'planned_end_frame':cue['planned_end_frame'],'fps':24})
-        need('soundscape','环境与动作声',fx,'audio','post_audio',['stage-drum'] if index==32 else [],spec={'minimum_sample_rate':48000})
         if index in (2,7,9,12,14,16,17,18,19,23,24,25,30,32):
             need('end-keyframe','动作结束与下一镜承接图','同时标明交接后的手、书、袋、纸或人物位置，供关键动作生成和下一镜连续性参考。','image','generation_input',actor_keys+prop_keys,spec=image_spec,forms=last_states)
     expected={b['id'] for b in script['blocks']}
@@ -358,7 +352,7 @@ def render(document,cues,frames,names):
     shots=[r['payload'] for r in document['records'] if r['kind']=='SHOT_DESIGN']
     lines=['# 第一集逐镜设计与素材需求','',
            f'正式依据为版本四第 1 集《两份米》，两场、64 个正文块。此设计分为 {len(shots)} 镜，预计 {frames/24:.0f} 秒；24 fps、16:9、1080p 动态分镜及 48 kHz 声音为首轮待审制作规格。时长来自本稿排练安排，尚未由完整实际声音和动态分镜回看验证。','',
-           '本稿不改剧情或对白。所有已发表对白与演唱均逐句引用，声音共 '+str(len(cues))+' 个台词／演唱单元（包含正文中写出的听客与路人招呼）。必要画面、身份状态、背景、道具、结束关键帧与声音均为待满足槽位，提示词和占位声不算完成。','',
+           '本稿不改剧情或对白。所有已发表对白与演唱均逐句引用，声音共 '+str(len(cues))+' 个台词／演唱单元（包含正文中写出的听客与路人招呼）。画面参考是待满足的素材槽位，声音保留原句、说话人及预计时间，随画面生成，提示词和占位声不算完成。','',
            '## 共用空间与连续性','',
            '机位以沿河街道为共同参照。主轴从米铺向道具屋，起初画面右侧为前进方向；陶伯在对街而非河对岸，赵执事先在米铺檐下，离开时转向远侧上山岔口。河侧朝米铺的主机位与对街反打之间，先给人物视线或较宽镜头交代方向。这个具体布局是待审制作选择，不是剧本额外地理事实。','',
            '第一场歌本保持由阿蘅掌握，李寄可以翻看但两次递书均未正式交接；第二场擦净手后才交李寄，面对赵执事时阿蘅接回。旧领唱纸落在歌本上，阿蘅合书保留。米袋始终属于阿蘅，第一份工米与第二份预付米分别表现。第二场擦手需要腾手，设计让米袋暂置脚旁，之后按剧本提起。墨耳左耳缺口不随反打镜像。','',
@@ -383,8 +377,8 @@ def render(document,cues,frames,names):
             labels=[n['title'].split(' · ',1)[1] for n in needs if n['usage']==usage]
             if labels:lines.append('- '+label+'：'+'；'.join(labels)+'。')
         lines.extend(['','每个台词的镜内排练窗口见 `dialogue-cues.json`；窗口按字数暂分，并非声音实测。实体、状态及素材槽位的精确修订依赖见 `shots.json`。',''])
-    lines.extend(['## 逐镜输入与后期声音','',
-                  '图像槽位是后续镜头生成的必要输入，按实体／状态可复用同一精确素材版本；后期声音单独标为 post_audio，除非实际视频生成工具需要，不把计划后配录音写成已执行的模型输入。每镜的文字设计、预计帧数与前后承接进入逐镜清单。所有必要槽位实际满足并经复核后才导出可执行媒体包。','',
+    lines.extend(['## 逐镜视听预演输入','',
+                  '图像按实体／状态复用准确素材版本。音频仅输入选定角色音色与歌曲旋律参考；对白、演唱、环境和动作声通过 Seedance 2.0 提示词随画面生成。逐镜计划见 seedance/manifest.json，包含预计时间与承接，缺原件或准确采用时不能宣称可执行或已生成。','',
                   '原生 4K 当前存在工具输出差异：OpenArt 两次 high/4K 请求均返回 2016×2688，尚未取得规格调整确认。因此本文保留要求，未把现有图像候选记为达标原件。'])
     return '\n'.join(lines)+'\n'
 

@@ -1,0 +1,1153 @@
+{
+  "format": "entity-relationship-layout-v1",
+  "entities": {
+    "entity-li-dan": {
+      "primary": [
+        "relationship-li-dan-li-ji-personal",
+        "relationship-li-dan-li-xiao-personal",
+        "relationship-li-dan-sun-liu-personal",
+        "relationship-li-dan-li-home-spatial"
+      ],
+      "order": [
+        "relationship-li-dan-li-ji-personal",
+        "relationship-li-dan-li-xiao-personal",
+        "relationship-li-dan-sun-liu-personal",
+        "relationship-li-dan-li-home-spatial",
+        "relationship-li-dan-heavy-blade-use",
+        "relationship-li-dan-carrying-strap-use",
+        "relationship-li-dan-crossbeam-use",
+        "relationship-li-dan-channel-plan-use",
+        "relationship-li-dan-grain-copy-use"
+      ]
+    },
+    "entity-li-ji": {
+      "primary": [
+        "relationship-li-ji-a-heng-personal",
+        "relationship-li-dan-li-ji-personal",
+        "relationship-li-mother-li-ji-personal",
+        "relationship-li-xiao-li-ji-personal",
+        "relationship-li-ji-mo-er-personal",
+        "relationship-li-ji-snake-use"
+      ],
+      "order": [
+        "relationship-li-ji-a-heng-personal",
+        "relationship-li-dan-li-ji-personal",
+        "relationship-li-mother-li-ji-personal",
+        "relationship-li-xiao-li-ji-personal",
+        "relationship-li-ji-mo-er-personal",
+        "relationship-li-ji-snake-use",
+        "relationship-offscreen-caller-li-ji-personal",
+        "relationship-li-ji-li-home-spatial",
+        "relationship-li-ji-cloth-use",
+        "relationship-li-ji-paste-wool-use",
+        "relationship-li-ji-paper-moon-use",
+        "relationship-li-ji-name-plaque-use",
+        "relationship-li-ji-old-lantern-use",
+        "relationship-li-ji-bandage-use",
+        "relationship-li-ji-wood-knife-use",
+        "relationship-li-ji-heavy-blade-use",
+        "relationship-li-ji-writing-board-use"
+      ]
+    },
+    "entity-li-mother": {
+      "primary": [
+        "relationship-li-mother-li-ji-personal",
+        "relationship-li-mother-heng-mother-personal",
+        "relationship-li-mother-li-home-spatial"
+      ],
+      "order": [
+        "relationship-li-mother-li-ji-personal",
+        "relationship-li-mother-heng-mother-personal",
+        "relationship-li-mother-li-home-spatial",
+        "relationship-li-mother-old-lantern-use"
+      ]
+    },
+    "entity-li-xiao": {
+      "primary": [
+        "relationship-li-xiao-li-ji-personal",
+        "relationship-li-dan-li-xiao-personal",
+        "relationship-li-xiao-a-heng-personal",
+        "relationship-li-xiao-troupe-workers-personal",
+        "relationship-li-xiao-li-home-spatial"
+      ],
+      "order": [
+        "relationship-li-xiao-li-ji-personal",
+        "relationship-li-dan-li-xiao-personal",
+        "relationship-li-xiao-a-heng-personal",
+        "relationship-li-xiao-troupe-workers-personal",
+        "relationship-li-xiao-li-home-spatial",
+        "relationship-li-xiao-crossbeam-use",
+        "relationship-li-xiao-channel-plan-use"
+      ]
+    },
+    "entity-heng-mother": {
+      "primary": [
+        "relationship-heng-mother-a-heng-personal",
+        "relationship-li-mother-heng-mother-personal",
+        "relationship-neighbor-woman-heng-mother-personal",
+        "relationship-heng-mother-heng-home-spatial",
+        "relationship-heng-mother-li-home-spatial"
+      ],
+      "order": [
+        "relationship-heng-mother-a-heng-personal",
+        "relationship-li-mother-heng-mother-personal",
+        "relationship-neighbor-woman-heng-mother-personal",
+        "relationship-heng-mother-heng-home-spatial",
+        "relationship-heng-mother-li-home-spatial",
+        "relationship-heng-mother-songbook-performance",
+        "relationship-heng-mother-debt-note-use",
+        "relationship-heng-mother-medicine-pot-use"
+      ]
+    },
+    "entity-a-heng": {
+      "primary": [
+        "relationship-heng-mother-a-heng-personal",
+        "relationship-li-ji-a-heng-personal",
+        "relationship-zhao-a-heng-personal",
+        "relationship-a-heng-songbook-ownership",
+        "relationship-a-heng-boat-song-performance",
+        "relationship-a-heng-blue-awning-song-performance"
+      ],
+      "order": [
+        "relationship-heng-mother-a-heng-personal",
+        "relationship-li-ji-a-heng-personal",
+        "relationship-zhao-a-heng-personal",
+        "relationship-a-heng-songbook-ownership",
+        "relationship-a-heng-boat-song-performance",
+        "relationship-a-heng-blue-awning-song-performance",
+        "relationship-a-he-a-heng-personal",
+        "relationship-sun-liu-a-heng-personal",
+        "relationship-li-xiao-a-heng-personal",
+        "relationship-singer-teacher-a-heng-personal",
+        "relationship-zhou-a-heng-personal",
+        "relationship-priest-a-heng-personal",
+        "relationship-boatman-a-heng-personal",
+        "relationship-a-heng-snake-welcome-song-performance",
+        "relationship-a-heng-rice-bag-ownership",
+        "relationship-a-heng-mo-er-use",
+        "relationship-a-heng-heng-home-spatial",
+        "relationship-a-heng-li-home-spatial",
+        "relationship-rice-listeners-a-heng-performance",
+        "relationship-woodcutter-a-heng-performance",
+        "relationship-a-heng-water-flask-use",
+        "relationship-name-plaque-a-heng-use",
+        "relationship-a-heng-work-ledger-use",
+        "relationship-a-heng-evidence-receipt-use",
+        "relationship-sacrificial-registers-a-heng-use",
+        "relationship-public-verdict-a-heng-use",
+        "relationship-a-heng-cleared-debt-receipt-use"
+      ]
+    },
+    "entity-tao": {
+      "primary": [
+        "relationship-tao-a-he-personal",
+        "relationship-tao-bamboo-stall-ownership",
+        "relationship-tao-hemp-rope-ownership"
+      ],
+      "order": [
+        "relationship-tao-a-he-personal",
+        "relationship-tao-bamboo-stall-ownership",
+        "relationship-tao-hemp-rope-ownership",
+        "relationship-tao-bamboo-basket-use",
+        "relationship-tao-shaving-knife-use",
+        "relationship-tao-petition-use"
+      ]
+    },
+    "entity-a-he": {
+      "primary": [
+        "relationship-tao-a-he-personal",
+        "relationship-a-he-a-heng-personal",
+        "relationship-a-he-hairpin-ownership"
+      ],
+      "order": [
+        "relationship-tao-a-he-personal",
+        "relationship-a-he-a-heng-personal",
+        "relationship-a-he-hairpin-ownership",
+        "relationship-sacrificial-registers-a-he-use",
+        "relationship-public-verdict-a-he-use"
+      ]
+    },
+    "entity-xiaoman-mother": {
+      "primary": [
+        "relationship-xiaoman-mother-xiao-man-personal"
+      ],
+      "order": [
+        "relationship-xiaoman-mother-xiao-man-personal"
+      ]
+    },
+    "entity-xiao-man": {
+      "primary": [
+        "relationship-xiaoman-mother-xiao-man-personal",
+        "relationship-xiao-man-broken-comb-ownership"
+      ],
+      "order": [
+        "relationship-xiaoman-mother-xiao-man-personal",
+        "relationship-xiao-man-broken-comb-ownership",
+        "relationship-sacrificial-registers-xiao-man-use",
+        "relationship-public-verdict-xiao-man-use"
+      ]
+    },
+    "entity-ticket-woman": {
+      "primary": [
+        "relationship-ticket-woman-ticket-child-personal"
+      ],
+      "order": [
+        "relationship-ticket-woman-ticket-child-personal",
+        "relationship-ticket-woman-grain-ticket-use"
+      ]
+    },
+    "entity-ticket-child": {
+      "primary": [
+        "relationship-ticket-woman-ticket-child-personal"
+      ],
+      "order": [
+        "relationship-ticket-woman-ticket-child-personal"
+      ]
+    },
+    "entity-sun-liu": {
+      "primary": [
+        "relationship-sun-liu-a-heng-personal",
+        "relationship-li-dan-sun-liu-personal",
+        "relationship-sun-liu-troupe-workers-personal",
+        "relationship-sun-liu-carrying-strap-ownership"
+      ],
+      "order": [
+        "relationship-sun-liu-a-heng-personal",
+        "relationship-li-dan-sun-liu-personal",
+        "relationship-sun-liu-troupe-workers-personal",
+        "relationship-sun-liu-carrying-strap-ownership",
+        "relationship-sun-liu-stage-drum-performance",
+        "relationship-sun-liu-waist-drum-use",
+        "relationship-sun-liu-hemp-rope-use",
+        "relationship-sun-liu-crossbeam-use"
+      ]
+    },
+    "entity-mo-er": {
+      "primary": [
+        "relationship-li-ji-mo-er-personal"
+      ],
+      "order": [
+        "relationship-li-ji-mo-er-personal",
+        "relationship-a-heng-mo-er-use",
+        "relationship-mo-er-cake-use"
+      ]
+    },
+    "entity-neighbor-woman": {
+      "primary": [
+        "relationship-neighbor-woman-heng-mother-personal"
+      ],
+      "order": [
+        "relationship-neighbor-woman-heng-mother-personal"
+      ]
+    },
+    "entity-singer-teacher": {
+      "primary": [
+        "relationship-singer-teacher-a-heng-personal",
+        "relationship-singer-teacher-singer-yard-spatial",
+        "relationship-singer-teacher-blue-awning-song-performance"
+      ],
+      "order": [
+        "relationship-singer-teacher-a-heng-personal",
+        "relationship-singer-teacher-singer-yard-spatial",
+        "relationship-singer-teacher-blue-awning-song-performance"
+      ]
+    },
+    "entity-zhou": {
+      "primary": [
+        "relationship-zhou-a-heng-personal",
+        "relationship-zhou-rice-shop-ownership",
+        "relationship-zhou-shop-ledger-ownership"
+      ],
+      "order": [
+        "relationship-zhou-a-heng-personal",
+        "relationship-zhou-rice-shop-ownership",
+        "relationship-zhou-shop-ledger-ownership",
+        "relationship-zhou-rice-measure-use",
+        "relationship-zhou-grain-order-use"
+      ]
+    },
+    "entity-zhao": {
+      "primary": [
+        "relationship-zhao-a-heng-personal",
+        "relationship-zhao-keys-ownership"
+      ],
+      "order": [
+        "relationship-zhao-a-heng-personal",
+        "relationship-zhao-keys-ownership",
+        "relationship-zhao-lead-lyrics-use",
+        "relationship-zhao-debt-overlay-use"
+      ]
+    },
+    "entity-priest": {
+      "primary": [
+        "relationship-priest-a-heng-personal"
+      ],
+      "order": [
+        "relationship-priest-a-heng-personal"
+      ]
+    },
+    "entity-boatman": {
+      "primary": [
+        "relationship-boatman-a-heng-personal",
+        "relationship-boatman-ferry-spatial"
+      ],
+      "order": [
+        "relationship-boatman-a-heng-personal",
+        "relationship-boatman-ferry-spatial"
+      ]
+    },
+    "entity-old-woman": {
+      "primary": [
+        "relationship-old-woman-thin-girl-personal"
+      ],
+      "order": [
+        "relationship-old-woman-thin-girl-personal"
+      ]
+    },
+    "entity-thin-girl": {
+      "primary": [
+        "relationship-old-woman-thin-girl-personal"
+      ],
+      "order": [
+        "relationship-old-woman-thin-girl-personal"
+      ]
+    },
+    "entity-offscreen-caller": {
+      "primary": [
+        "relationship-offscreen-caller-li-ji-personal"
+      ],
+      "order": [
+        "relationship-offscreen-caller-li-ji-personal"
+      ]
+    },
+    "entity-troupe-workers": {
+      "primary": [
+        "relationship-li-xiao-troupe-workers-personal",
+        "relationship-sun-liu-troupe-workers-personal",
+        "relationship-troupe-workers-blessing-stage-song-performance"
+      ],
+      "order": [
+        "relationship-li-xiao-troupe-workers-personal",
+        "relationship-sun-liu-troupe-workers-personal",
+        "relationship-troupe-workers-blessing-stage-song-performance",
+        "relationship-troupe-workers-prop-house-use",
+        "relationship-troupe-workers-village-yard-performance",
+        "relationship-troupe-workers-paper-snake-use",
+        "relationship-troupe-workers-stage-tools-use"
+      ]
+    },
+    "entity-li-home": {
+      "primary": [
+        "relationship-li-dan-li-home-spatial",
+        "relationship-li-mother-li-home-spatial",
+        "relationship-li-ji-li-home-spatial",
+        "relationship-li-xiao-li-home-spatial",
+        "relationship-a-heng-li-home-spatial",
+        "relationship-heng-mother-li-home-spatial",
+        "relationship-li-home-family-meal-spatial"
+      ],
+      "order": [
+        "relationship-li-dan-li-home-spatial",
+        "relationship-li-mother-li-home-spatial",
+        "relationship-li-ji-li-home-spatial",
+        "relationship-li-xiao-li-home-spatial",
+        "relationship-a-heng-li-home-spatial",
+        "relationship-heng-mother-li-home-spatial",
+        "relationship-li-home-family-meal-spatial"
+      ]
+    },
+    "entity-heng-home": {
+      "primary": [
+        "relationship-a-heng-heng-home-spatial",
+        "relationship-heng-mother-heng-home-spatial",
+        "relationship-heng-home-rice-urn-spatial"
+      ],
+      "order": [
+        "relationship-a-heng-heng-home-spatial",
+        "relationship-heng-mother-heng-home-spatial",
+        "relationship-heng-home-rice-urn-spatial"
+      ]
+    },
+    "entity-rice-shop": {
+      "primary": [
+        "relationship-zhou-rice-shop-ownership",
+        "relationship-rice-shop-river-street-spatial"
+      ],
+      "order": [
+        "relationship-zhou-rice-shop-ownership",
+        "relationship-rice-shop-river-street-spatial"
+      ]
+    },
+    "entity-bamboo-stall": {
+      "primary": [
+        "relationship-tao-bamboo-stall-ownership",
+        "relationship-bamboo-stall-river-street-spatial",
+        "relationship-bamboo-stall-empty-stool-spatial"
+      ],
+      "order": [
+        "relationship-tao-bamboo-stall-ownership",
+        "relationship-bamboo-stall-river-street-spatial",
+        "relationship-bamboo-stall-empty-stool-spatial"
+      ]
+    },
+    "entity-singer-yard": {
+      "primary": [
+        "relationship-singer-teacher-singer-yard-spatial"
+      ],
+      "order": [
+        "relationship-singer-teacher-singer-yard-spatial"
+      ]
+    },
+    "entity-ferry": {
+      "primary": [
+        "relationship-boatman-ferry-spatial"
+      ],
+      "order": [
+        "relationship-boatman-ferry-spatial"
+      ]
+    },
+    "entity-river-street": {
+      "primary": [
+        "relationship-rice-shop-river-street-spatial",
+        "relationship-bamboo-stall-river-street-spatial",
+        "relationship-river-street-street-laundry-spatial"
+      ],
+      "order": [
+        "relationship-rice-shop-river-street-spatial",
+        "relationship-bamboo-stall-river-street-spatial",
+        "relationship-river-street-street-laundry-spatial"
+      ]
+    },
+    "entity-prop-house": {
+      "primary": [
+        "relationship-prop-house-shallows-spatial",
+        "relationship-prop-house-drying-area-spatial",
+        "relationship-prop-house-curtain-spatial"
+      ],
+      "order": [
+        "relationship-prop-house-shallows-spatial",
+        "relationship-prop-house-drying-area-spatial",
+        "relationship-prop-house-curtain-spatial",
+        "relationship-troupe-workers-prop-house-use"
+      ]
+    },
+    "entity-shallows": {
+      "primary": [
+        "relationship-prop-house-shallows-spatial"
+      ],
+      "order": [
+        "relationship-prop-house-shallows-spatial"
+      ]
+    },
+    "entity-drying-area": {
+      "primary": [
+        "relationship-prop-house-drying-area-spatial"
+      ],
+      "order": [
+        "relationship-prop-house-drying-area-spatial"
+      ]
+    },
+    "entity-temple-front": {
+      "primary": [
+        "relationship-temple-front-temple-grain-spatial",
+        "relationship-temple-front-hill-steps-spatial"
+      ],
+      "order": [
+        "relationship-temple-front-temple-grain-spatial",
+        "relationship-temple-front-hill-steps-spatial"
+      ]
+    },
+    "entity-temple-grain": {
+      "primary": [
+        "relationship-temple-front-temple-grain-spatial"
+      ],
+      "order": [
+        "relationship-temple-front-temple-grain-spatial"
+      ]
+    },
+    "entity-temple-back": {
+      "primary": [
+        "relationship-temple-back-feeding-channel-spatial"
+      ],
+      "order": [
+        "relationship-temple-back-feeding-channel-spatial",
+        "relationship-elders-two-temple-back-use"
+      ]
+    },
+    "entity-feeding-channel": {
+      "primary": [
+        "relationship-temple-back-feeding-channel-spatial",
+        "relationship-feeding-channel-feeding-door-spatial",
+        "relationship-feeding-channel-cave-gate-spatial",
+        "relationship-bait-basin-feeding-channel-spatial"
+      ],
+      "order": [
+        "relationship-temple-back-feeding-channel-spatial",
+        "relationship-feeding-channel-feeding-door-spatial",
+        "relationship-feeding-channel-cave-gate-spatial",
+        "relationship-bait-basin-feeding-channel-spatial",
+        "relationship-stonemason-feeding-channel-use"
+      ]
+    },
+    "entity-feeding-door": {
+      "primary": [
+        "relationship-feeding-channel-feeding-door-spatial"
+      ],
+      "order": [
+        "relationship-feeding-channel-feeding-door-spatial"
+      ]
+    },
+    "entity-cave-gate": {
+      "primary": [
+        "relationship-feeding-channel-cave-gate-spatial"
+      ],
+      "order": [
+        "relationship-feeding-channel-cave-gate-spatial",
+        "relationship-gate-pin-cave-gate-use",
+        "relationship-crossbeam-cave-gate-use"
+      ]
+    },
+    "entity-hill-steps": {
+      "primary": [
+        "relationship-temple-front-hill-steps-spatial"
+      ],
+      "order": [
+        "relationship-temple-front-hill-steps-spatial"
+      ]
+    },
+    "entity-village-yard": {
+      "primary": [],
+      "order": [
+        "relationship-troupe-workers-village-yard-performance",
+        "relationship-yard-audience-village-yard-performance"
+      ]
+    },
+    "entity-yard-audience": {
+      "primary": [],
+      "order": [
+        "relationship-yard-audience-village-yard-performance"
+      ]
+    },
+    "entity-rice-listeners": {
+      "primary": [],
+      "order": [
+        "relationship-rice-listeners-a-heng-performance"
+      ]
+    },
+    "entity-woodcutter": {
+      "primary": [],
+      "order": [
+        "relationship-woodcutter-a-heng-performance",
+        "relationship-woodcutter-carrying-pole-use"
+      ]
+    },
+    "entity-temple-children": {
+      "primary": [],
+      "order": [
+        "relationship-temple-children-paper-snake-performance"
+      ]
+    },
+    "entity-paper-snake": {
+      "primary": [],
+      "order": [
+        "relationship-temple-children-paper-snake-performance",
+        "relationship-troupe-workers-paper-snake-use",
+        "relationship-paper-snake-paper-moon-use"
+      ]
+    },
+    "entity-lead-chorus": {
+      "primary": [
+        "relationship-lead-chorus-snake-welcome-song-performance"
+      ],
+      "order": [
+        "relationship-lead-chorus-snake-welcome-song-performance"
+      ]
+    },
+    "entity-snake-welcome-song": {
+      "primary": [
+        "relationship-lead-chorus-snake-welcome-song-performance",
+        "relationship-a-heng-snake-welcome-song-performance"
+      ],
+      "order": [
+        "relationship-lead-chorus-snake-welcome-song-performance",
+        "relationship-a-heng-snake-welcome-song-performance",
+        "relationship-snake-welcome-song-lead-lyrics-use"
+      ]
+    },
+    "entity-boat-song": {
+      "primary": [
+        "relationship-a-heng-boat-song-performance"
+      ],
+      "order": [
+        "relationship-a-heng-boat-song-performance"
+      ]
+    },
+    "entity-blue-awning-song": {
+      "primary": [
+        "relationship-a-heng-blue-awning-song-performance",
+        "relationship-singer-teacher-blue-awning-song-performance",
+        "relationship-blue-awning-song-xu-bride-performance"
+      ],
+      "order": [
+        "relationship-a-heng-blue-awning-song-performance",
+        "relationship-singer-teacher-blue-awning-song-performance",
+        "relationship-blue-awning-song-xu-bride-performance",
+        "relationship-blue-awning-song-songbook-use"
+      ]
+    },
+    "entity-songbook": {
+      "primary": [
+        "relationship-heng-mother-songbook-performance",
+        "relationship-a-heng-songbook-ownership",
+        "relationship-songbook-book-basket-spatial",
+        "relationship-cleared-debt-receipt-songbook-spatial"
+      ],
+      "order": [
+        "relationship-heng-mother-songbook-performance",
+        "relationship-a-heng-songbook-ownership",
+        "relationship-songbook-book-basket-spatial",
+        "relationship-cleared-debt-receipt-songbook-spatial",
+        "relationship-blue-awning-song-songbook-use",
+        "relationship-river-stone-songbook-use",
+        "relationship-copied-pages-songbook-use"
+      ]
+    },
+    "entity-lead-lyrics": {
+      "primary": [],
+      "order": [
+        "relationship-snake-welcome-song-lead-lyrics-use",
+        "relationship-zhao-lead-lyrics-use"
+      ]
+    },
+    "entity-blessing-stage-song": {
+      "primary": [
+        "relationship-troupe-workers-blessing-stage-song-performance"
+      ],
+      "order": [
+        "relationship-troupe-workers-blessing-stage-song-performance"
+      ]
+    },
+    "entity-xu-bride": {
+      "primary": [],
+      "order": [
+        "relationship-blue-awning-song-xu-bride-performance"
+      ]
+    },
+    "entity-rice-bag": {
+      "primary": [
+        "relationship-a-heng-rice-bag-ownership"
+      ],
+      "order": [
+        "relationship-a-heng-rice-bag-ownership",
+        "relationship-rice-bag-grain-use"
+      ]
+    },
+    "entity-rice-measure": {
+      "primary": [],
+      "order": [
+        "relationship-zhou-rice-measure-use",
+        "relationship-rice-measure-grain-use"
+      ]
+    },
+    "entity-grain": {
+      "primary": [],
+      "order": [
+        "relationship-rice-measure-grain-use",
+        "relationship-rice-bag-grain-use"
+      ]
+    },
+    "entity-book-basket": {
+      "primary": [
+        "relationship-songbook-book-basket-spatial"
+      ],
+      "order": [
+        "relationship-songbook-book-basket-spatial"
+      ]
+    },
+    "entity-river-stone": {
+      "primary": [],
+      "order": [
+        "relationship-river-stone-songbook-use"
+      ]
+    },
+    "entity-carrying-pole": {
+      "primary": [],
+      "order": [
+        "relationship-woodcutter-carrying-pole-use"
+      ]
+    },
+    "entity-water-flask": {
+      "primary": [],
+      "order": [
+        "relationship-a-heng-water-flask-use",
+        "relationship-water-flask-cloth-use"
+      ]
+    },
+    "entity-cloth": {
+      "primary": [],
+      "order": [
+        "relationship-water-flask-cloth-use",
+        "relationship-li-ji-cloth-use"
+      ]
+    },
+    "entity-paste-wool": {
+      "primary": [],
+      "order": [
+        "relationship-li-ji-paste-wool-use"
+      ]
+    },
+    "entity-cake": {
+      "primary": [],
+      "order": [
+        "relationship-mo-er-cake-use"
+      ]
+    },
+    "entity-keys": {
+      "primary": [
+        "relationship-zhao-keys-ownership",
+        "relationship-officer-cheng-keys-ownership"
+      ],
+      "order": [
+        "relationship-zhao-keys-ownership",
+        "relationship-officer-cheng-keys-ownership"
+      ]
+    },
+    "entity-officer-cheng": {
+      "primary": [
+        "relationship-officer-cheng-keys-ownership"
+      ],
+      "order": [
+        "relationship-officer-cheng-keys-ownership",
+        "relationship-officer-cheng-stop-order-use",
+        "relationship-officer-cheng-crossbeam-use"
+      ]
+    },
+    "entity-bamboo-basket": {
+      "primary": [],
+      "order": [
+        "relationship-tao-bamboo-basket-use"
+      ]
+    },
+    "entity-shaving-knife": {
+      "primary": [],
+      "order": [
+        "relationship-tao-shaving-knife-use"
+      ]
+    },
+    "entity-empty-stool": {
+      "primary": [
+        "relationship-bamboo-stall-empty-stool-spatial"
+      ],
+      "order": [
+        "relationship-bamboo-stall-empty-stool-spatial"
+      ]
+    },
+    "entity-street-laundry": {
+      "primary": [
+        "relationship-river-street-street-laundry-spatial"
+      ],
+      "order": [
+        "relationship-river-street-street-laundry-spatial"
+      ]
+    },
+    "entity-curtain": {
+      "primary": [
+        "relationship-prop-house-curtain-spatial"
+      ],
+      "order": [
+        "relationship-prop-house-curtain-spatial"
+      ]
+    },
+    "entity-stage-drum": {
+      "primary": [],
+      "order": [
+        "relationship-sun-liu-stage-drum-performance"
+      ]
+    },
+    "entity-waist-drum": {
+      "primary": [],
+      "order": [
+        "relationship-sun-liu-waist-drum-use"
+      ]
+    },
+    "entity-paper-moon": {
+      "primary": [],
+      "order": [
+        "relationship-paper-snake-paper-moon-use",
+        "relationship-li-ji-paper-moon-use"
+      ]
+    },
+    "entity-stage-tools": {
+      "primary": [],
+      "order": [
+        "relationship-troupe-workers-stage-tools-use"
+      ]
+    },
+    "entity-temple-tall": {
+      "primary": [],
+      "order": [
+        "relationship-temple-tall-red-rope-use"
+      ]
+    },
+    "entity-red-rope": {
+      "primary": [],
+      "order": [
+        "relationship-temple-tall-red-rope-use",
+        "relationship-red-rope-name-plaque-use"
+      ]
+    },
+    "entity-name-plaque": {
+      "primary": [],
+      "order": [
+        "relationship-red-rope-name-plaque-use",
+        "relationship-name-plaque-a-heng-use",
+        "relationship-li-ji-name-plaque-use"
+      ]
+    },
+    "entity-debt-note": {
+      "primary": [
+        "relationship-debt-overlay-debt-note-spatial"
+      ],
+      "order": [
+        "relationship-debt-overlay-debt-note-spatial",
+        "relationship-heng-mother-debt-note-use"
+      ]
+    },
+    "entity-debt-overlay": {
+      "primary": [
+        "relationship-debt-overlay-debt-note-spatial"
+      ],
+      "order": [
+        "relationship-debt-overlay-debt-note-spatial",
+        "relationship-zhao-debt-overlay-use"
+      ]
+    },
+    "entity-work-ledger": {
+      "primary": [],
+      "order": [
+        "relationship-a-heng-work-ledger-use"
+      ]
+    },
+    "entity-clerk-liang": {
+      "primary": [],
+      "order": [
+        "relationship-clerk-liang-evidence-receipt-use"
+      ]
+    },
+    "entity-evidence-receipt": {
+      "primary": [],
+      "order": [
+        "relationship-clerk-liang-evidence-receipt-use",
+        "relationship-a-heng-evidence-receipt-use"
+      ]
+    },
+    "entity-grain-ticket": {
+      "primary": [],
+      "order": [
+        "relationship-ticket-woman-grain-ticket-use",
+        "relationship-ticket-elder-grain-ticket-use"
+      ]
+    },
+    "entity-ticket-elder": {
+      "primary": [],
+      "order": [
+        "relationship-ticket-elder-grain-ticket-use"
+      ]
+    },
+    "entity-magistrate": {
+      "primary": [],
+      "order": [
+        "relationship-magistrate-stop-order-use",
+        "relationship-magistrate-approval-orders-use"
+      ]
+    },
+    "entity-stop-order": {
+      "primary": [],
+      "order": [
+        "relationship-magistrate-stop-order-use",
+        "relationship-officer-cheng-stop-order-use"
+      ]
+    },
+    "entity-county-office": {
+      "primary": [
+        "relationship-county-office-volunteer-notice-spatial"
+      ],
+      "order": [
+        "relationship-county-office-volunteer-notice-spatial"
+      ]
+    },
+    "entity-volunteer-notice": {
+      "primary": [
+        "relationship-county-office-volunteer-notice-spatial"
+      ],
+      "order": [
+        "relationship-county-office-volunteer-notice-spatial",
+        "relationship-clerk-notice-volunteer-notice-use"
+      ]
+    },
+    "entity-clerk-notice": {
+      "primary": [],
+      "order": [
+        "relationship-clerk-notice-volunteer-notice-use"
+      ]
+    },
+    "entity-old-lantern": {
+      "primary": [],
+      "order": [
+        "relationship-li-ji-old-lantern-use",
+        "relationship-li-mother-old-lantern-use"
+      ]
+    },
+    "entity-bandage": {
+      "primary": [],
+      "order": [
+        "relationship-li-ji-bandage-use"
+      ]
+    },
+    "entity-wood-knife": {
+      "primary": [],
+      "order": [
+        "relationship-li-ji-wood-knife-use"
+      ]
+    },
+    "entity-heavy-blade": {
+      "primary": [],
+      "order": [
+        "relationship-li-ji-heavy-blade-use",
+        "relationship-li-dan-heavy-blade-use"
+      ]
+    },
+    "entity-carrying-strap": {
+      "primary": [
+        "relationship-sun-liu-carrying-strap-ownership"
+      ],
+      "order": [
+        "relationship-sun-liu-carrying-strap-ownership",
+        "relationship-li-dan-carrying-strap-use"
+      ]
+    },
+    "entity-medicine-pot": {
+      "primary": [],
+      "order": [
+        "relationship-heng-mother-medicine-pot-use"
+      ]
+    },
+    "entity-rice-urn": {
+      "primary": [
+        "relationship-heng-home-rice-urn-spatial"
+      ],
+      "order": [
+        "relationship-heng-home-rice-urn-spatial"
+      ]
+    },
+    "entity-stonemason": {
+      "primary": [],
+      "order": [
+        "relationship-stonemason-feeding-channel-use"
+      ]
+    },
+    "entity-gate-pin": {
+      "primary": [],
+      "order": [
+        "relationship-gate-pin-cave-gate-use"
+      ]
+    },
+    "entity-crossbeam": {
+      "primary": [],
+      "order": [
+        "relationship-crossbeam-cave-gate-use",
+        "relationship-hemp-rope-crossbeam-use",
+        "relationship-helpers-four-crossbeam-use",
+        "relationship-sun-liu-crossbeam-use",
+        "relationship-li-xiao-crossbeam-use",
+        "relationship-officer-cheng-crossbeam-use",
+        "relationship-li-dan-crossbeam-use"
+      ]
+    },
+    "entity-hemp-rope": {
+      "primary": [
+        "relationship-tao-hemp-rope-ownership"
+      ],
+      "order": [
+        "relationship-tao-hemp-rope-ownership",
+        "relationship-sun-liu-hemp-rope-use",
+        "relationship-hemp-rope-crossbeam-use"
+      ]
+    },
+    "entity-helpers-four": {
+      "primary": [],
+      "order": [
+        "relationship-helpers-four-crossbeam-use"
+      ]
+    },
+    "entity-elders-two": {
+      "primary": [],
+      "order": [
+        "relationship-elders-two-temple-back-use"
+      ]
+    },
+    "entity-meat-rice-bait": {
+      "primary": [],
+      "order": [
+        "relationship-meat-rice-bait-bait-basin-use",
+        "relationship-snake-meat-rice-bait-use"
+      ]
+    },
+    "entity-bait-basin": {
+      "primary": [
+        "relationship-bait-basin-feeding-channel-spatial"
+      ],
+      "order": [
+        "relationship-bait-basin-feeding-channel-spatial",
+        "relationship-meat-rice-bait-bait-basin-use"
+      ]
+    },
+    "entity-snake": {
+      "primary": [],
+      "order": [
+        "relationship-snake-meat-rice-bait-use",
+        "relationship-li-ji-snake-use"
+      ]
+    },
+    "entity-channel-plan": {
+      "primary": [],
+      "order": [
+        "relationship-li-dan-channel-plan-use",
+        "relationship-li-xiao-channel-plan-use"
+      ]
+    },
+    "entity-grain-order": {
+      "primary": [],
+      "order": [
+        "relationship-zhou-grain-order-use",
+        "relationship-delivery-worker-grain-order-use",
+        "relationship-order-writer-grain-order-use"
+      ]
+    },
+    "entity-delivery-worker": {
+      "primary": [],
+      "order": [
+        "relationship-delivery-worker-grain-order-use"
+      ]
+    },
+    "entity-order-writer": {
+      "primary": [],
+      "order": [
+        "relationship-order-writer-grain-order-use"
+      ]
+    },
+    "entity-grain-copy": {
+      "primary": [],
+      "order": [
+        "relationship-li-dan-grain-copy-use"
+      ]
+    },
+    "entity-shop-ledger": {
+      "primary": [
+        "relationship-zhou-shop-ledger-ownership"
+      ],
+      "order": [
+        "relationship-zhou-shop-ledger-ownership"
+      ]
+    },
+    "entity-officer-second": {
+      "primary": [],
+      "order": [
+        "relationship-officer-second-evidence-chest-use"
+      ]
+    },
+    "entity-evidence-chest": {
+      "primary": [],
+      "order": [
+        "relationship-officer-second-evidence-chest-use"
+      ]
+    },
+    "entity-sacrificial-registers": {
+      "primary": [],
+      "order": [
+        "relationship-sacrificial-registers-a-he-use",
+        "relationship-sacrificial-registers-xiao-man-use",
+        "relationship-sacrificial-registers-a-heng-use"
+      ]
+    },
+    "entity-approval-orders": {
+      "primary": [],
+      "order": [
+        "relationship-magistrate-approval-orders-use"
+      ]
+    },
+    "entity-hairpin": {
+      "primary": [
+        "relationship-a-he-hairpin-ownership"
+      ],
+      "order": [
+        "relationship-a-he-hairpin-ownership"
+      ]
+    },
+    "entity-broken-comb": {
+      "primary": [
+        "relationship-xiao-man-broken-comb-ownership"
+      ],
+      "order": [
+        "relationship-xiao-man-broken-comb-ownership"
+      ]
+    },
+    "entity-petition": {
+      "primary": [],
+      "order": [
+        "relationship-tao-petition-use"
+      ]
+    },
+    "entity-clerk-proclamation": {
+      "primary": [],
+      "order": [
+        "relationship-clerk-proclamation-public-verdict-use"
+      ]
+    },
+    "entity-public-verdict": {
+      "primary": [],
+      "order": [
+        "relationship-clerk-proclamation-public-verdict-use",
+        "relationship-public-verdict-a-he-use",
+        "relationship-public-verdict-xiao-man-use",
+        "relationship-public-verdict-a-heng-use"
+      ]
+    },
+    "entity-new-steward": {
+      "primary": [],
+      "order": [
+        "relationship-new-steward-cleared-debt-receipt-use"
+      ]
+    },
+    "entity-cleared-debt-receipt": {
+      "primary": [
+        "relationship-cleared-debt-receipt-songbook-spatial"
+      ],
+      "order": [
+        "relationship-cleared-debt-receipt-songbook-spatial",
+        "relationship-new-steward-cleared-debt-receipt-use",
+        "relationship-a-heng-cleared-debt-receipt-use"
+      ]
+    },
+    "entity-copied-pages": {
+      "primary": [],
+      "order": [
+        "relationship-copied-pages-songbook-use"
+      ]
+    },
+    "entity-writing-board": {
+      "primary": [],
+      "order": [
+        "relationship-li-ji-writing-board-use"
+      ]
+    },
+    "entity-family-meal": {
+      "primary": [
+        "relationship-li-home-family-meal-spatial"
+      ],
+      "order": [
+        "relationship-li-home-family-meal-spatial"
+      ]
+    }
+  }
+}

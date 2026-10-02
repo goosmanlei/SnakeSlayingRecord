@@ -70,7 +70,7 @@ def prepare(store,p):
     def input_for(need,use):return {'reference':ref(need),'use':use}
     def audio_plan(key,text,name,description,inputs=(),reuse=False):
         prompt=(('参考'+('、'.join('@音频'+str(i+1) for i in range(len(inputs))))+'，只锁定说话人音色与自然发声方式，按下文完成新的内容；不要照搬原录音台词。\n') if inputs and not reuse else '')
-        prompt+=ENTITIES[key][2]+'\n'+description+'\n'+text+'\n保留自然短停顿，开头结尾各留半秒安静；无字幕朗读、角色名、说明词、额外说话声；原件为干净独立声音，环境与音乐另轨。'
+        prompt+=ENTITIES[key][2]+'\n'+description+'\n'+text+'\n保留自然短停顿，开头结尾各留半秒安静；无字幕朗读、角色名、说明词、额外说话声；原件为干净独立声音，不生成环境或伴奏；该音频仅作音色／旋律参考。'
         if reuse:prompt='复用前置需求明确采用的完整原件与范围，不重新生成：'+description
         if len(prompt)>3000:raise ValueError('audio prompt too long')
         return {'format':g.PLAN,'method':'reuse' if reuse else 'generate','model':'seed-audio-1.0',
@@ -80,7 +80,7 @@ def prepare(store,p):
         old=by.get(oid)
         payload=update_refs(deepcopy(old['payload'])) if old else {'format':'production-requirement-v1'}
         output=plan['output'];payload.update(title=state['payload']['title']+' · '+output['name'],blocks=[{'id':'purpose','text':output['description']}],
-           scope=ref(state),slot=slot,required=True,purpose=output['description'],media_type=media,usage='generation_input' if media=='image' else 'post_audio',
+           scope=ref(state),slot=slot,required=True,purpose=output['description'],media_type=media,usage='generation_input',
            entities=[state['payload']['entity']],states=[ref(state)],generation=plan,
            sources=source or state['payload']['sources'],planned_shots=shots or [],
            specification=({'native_4k':True} if media=='image' else {'minimum_sample_rate':48000})|{'reference_role':role})
@@ -99,6 +99,7 @@ def prepare(store,p):
             payload['production_description']=description;payload['blocks']=[{'id':'description','text':description}]
             payload['choices']=['本状态的具体湿痕、伤侧、色彩和衔接安排属于制作选择，剧本事实列在下方。']
             payload['unknowns']=[]
+            if sid=='stage-drum-audible':payload['reference_mode']='description'
             if key=='songbook' and sid.endswith('wet'):payload['unknowns']=['领唱旧纸入水后去向原文未明确；本方案不展示它完整露出，如镜头需要，应先回剧本核对。']
             dims=payload['dimensions'];primary=next(k for k in ('appearance','layout','structure','lyrics_scope') if k in dims)
             dims[primary]=ENTITIES[key][1]
@@ -114,6 +115,8 @@ def prepare(store,p):
         for row in original:
             if row['kind']=='REQUIREMENT' and row['payload'].get('status')!='withdrawn':
                 payload=update_refs(deepcopy(row['payload']))
+                from native_audio_workflow import obsolete
+                if obsolete(row):continue
                 if row['payload']['scope']['object_id'] not in {f['object_id'] for f in forms}:put(row['object_id'],'REQUIREMENT',payload)
         # Root image references are generated from text, state derivations use only
         # that root, and optional angle/detail drawings are at most one level deeper.
@@ -143,32 +146,10 @@ def prepare(store,p):
                 if row['payload']['entity']['object_id']!='entity-'+key or row['object_id']==bases[key]['object_id']:continue
                 state=resolved[row['object_id']];sid=state['object_id'].removeprefix('form-');changed=any(word in sid for word in ('hoarse','wet-shoes','tears','spent','blood','rewrapped'))
                 text=next(c['text'] for c in cues if c['type']=='dialogue' and c['entity']['object_id']=='entity-'+key)
-                description=('作为状态声线样本，以第一集已有短句核对发声，不将其当作此场对白。状态表演：'+STATES[sid]) if changed else '此状态没有持续改变的声线；复用日常声线母版作为音色参考，实际镜内对白仍单独录制。'
+                description=('作为状态声线样本，以第一集已有短句核对发声，不将其当作此场对白。状态表演：'+STATES[sid]) if changed else '此状态没有持续改变的声线；复用日常声线母版作为音色参考，实际镜内对白随画面生成。'
                 need(state,'voice','audio',audio_plan(key,'只说原句：“'+text+'”',state['payload']['title'].split('·')[-1]+' · 声线参考',description,[input_for(voices[key],'固定同一说话人的音色')],reuse=not changed))
         song_plan=audio_plan('boat-song','只唱以下两句，不加词：“一道险滩水急，船头慢慢行——”“船靠岸，灯来迎，家里人等到如今——”。','舟行曲两句清唱母版',ENTITIES['boat-song'][2],[input_for(voices['a-heng'],'@音频1 锁定阿蘅说话与演唱的同一声线；不沿用样本中的对白词')])
         song=need(bases['boat-song'],'overall','audio',song_plan,'overall',original_need='need-form-boat-song-short-overall')
-        for key,description in [('mo-er','约8秒：犬爪在石路小跑三四步后停下，轻呼吸和吃小饼角的两次咀嚼；各动作之间留一秒，无吠叫。'),('stage-drum','约8秒：两下疏落轻鼓试敲，相隔约一秒，停两秒，再一记中强击自然衰减；无伴奏无连续节拍。')]:
-            slot='overall' if key=='stage-drum' else 'action-sound';need(bases[key],slot,'audio',audio_plan(key,'只生成描述中的声音，不朗读说明。',entity(key)['payload']['title']+' · 第一集动作声',description),'overall' if key=='stage-drum' else 'detail',original_need='need-form-stage-drum-audible-overall' if key=='stage-drum' else None)
-        for key,description in [('river-street','约20秒平稳河水与微风底声，无可辨对白；远近层次松，首尾留重叠余量供淡化，不能声称已无缝循环。'),('shaving-knife','约10秒近距削竹：三个短刮削动作，停3秒，再两下慢刮；含极轻竹屑落下，无配乐。'),('grain','约8秒：一小木斗米连续倒入布袋后停，再一小把米加入；两段中间留两秒安静，米粒颗粒清楚而不刺耳。'),('cloth','约8秒：手搓干浆糊，湿薄布巾擦掌两下，翻面后再擦；低音量近距，无台词。')]:
-            need(bases[key],'action-sound','audio',audio_plan(key,'只生成描述中的声音，不朗读说明。',entity(key)['payload']['title']+' · 第一集声音分轨',description))
-        # First-episode spoken/sung lines have individual, exact scripts and timing,
-        # not placeholders or a vague intention to record them later.
-        for cue in cues:
-            key=cue['entity']['object_id'].removeprefix('entity-');shot=p.record(clone,cue['shot_id']);formref=next((r for r in shot['payload']['states'] if p.ref_record(clone,r)['payload']['entity']['object_id']==cue['entity']['object_id']),None)
-            if not formref:raise ValueError('cue has no exact state')
-            # A shot can include both sides of a transition. The spoken line
-            # follows the exact screenplay block, not the first state in a list.
-            for transition in shot['payload'].get('state_transitions',[]):
-                if p.ref_record(clone,transition['to'])['payload']['entity']['object_id']==cue['entity']['object_id'] and max(transition['source']['block_ids'])<=min(cue['source']['block_ids']):
-                    formref=transition['to']
-            state=p.ref_record(clone,formref)
-            is_song=cue['type']=='singing'
-            if is_song:state=bases['boat-song'];key='boat-song'
-            upstream=song if is_song else voices[key]
-            duration=(cue['planned_end_frame']-cue['planned_start_frame'])/cue['fps']
-            description=f"第1集第{shot['payload']['number']}镜 · {shot['payload']['title'].split(' ',1)[-1]}。{cue['speaker']}{'演唱' if is_song else '对白'}预计 {duration:.2f} 秒；镜内暂排 {cue['planned_start_frame']/cue['fps']:.2f}–{cue['planned_end_frame']/cue['fps']:.2f} 秒，实录后复核节奏。"
-            plan=audio_plan(key,('只唱' if is_song else '只说')+'以下原句，不改字、不加词：“'+cue['text']+'”。保留自然表演，不机械变速。',cue['speaker']+' · '+cue['text'][:18]+('…' if len(cue['text'])>18 else ''),description,[input_for(upstream,'锁定已选声线'+('和旋律；只演唱本句' if is_song else '；只说本条原句'))])
-            need(state,cue['id'],'audio',plan,source=[cue['source']],shots=[ref(shot)])
         # Useful angle/space references, independent of any final shot generation.
         for key in ('li-ji','a-heng','zhou','zhao','mo-er','woodcutter','tao','rice-listeners','street-passers'):
             state=bases[key];description='同一状态的正面、侧面、背面比例与衣饰承接；三视图等高分列，不加文字标签；'+STATES[state['object_id'].removeprefix('form-')]
@@ -218,15 +199,29 @@ def prepare(store,p):
     finally:clone.close()
 
 
+def snapshot(store,p):
+    """Readable exact heads from the instance; never reconstruct or write plans."""
+    rows=p.current_records(store);ids={'entity-'+key for key in ENTITIES}
+    entities=[r for r in rows if r['object_id'] in ids]
+    forms=[r for r in rows if r['kind']=='STATE' and r['payload'].get('state_model')=='complete-v1' and r['payload']['entity']['object_id'] in ids]
+    form_ids={r['object_id'] for r in forms}
+    needs=[r for r in rows if r['kind']=='REQUIREMENT' and r['payload']['scope']['object_id'] in form_ids]
+    return {'format':'generation-preparation-snapshot-v1','entities':entities,'states':forms,'requirements':needs,
+            'summary':{'entities':len(entities),'states':len(forms),'plans':len(needs),
+                       'image':sum(n['payload']['media_type']=='image' for n in needs),
+                       'audio':sum(n['payload']['media_type']=='audio' for n in needs)}}
+
+
 def main():
-    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('command',choices=['plan','apply']);parser.add_argument('--system',type=Path,required=True);parser.add_argument('--instance',type=Path,required=True);parser.add_argument('--file',type=Path,required=True);args=parser.parse_args()
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('command',choices=['plan','apply','snapshot']);parser.add_argument('--system',type=Path,required=True);parser.add_argument('--instance',type=Path,required=True);parser.add_argument('--file',type=Path,required=True);args=parser.parse_args()
     sys.path.insert(0,str(args.system.resolve()))
     from review_desk.store import Store
     from review_desk import production as p
     store=Store(args.instance.resolve()/'.runtime/review.sqlite3')
     try:
-        if args.command=='plan':
-            value=prepare(store,p);args.file.parent.mkdir(parents=True,exist_ok=True);args.file.write_text(json.dumps(value,ensure_ascii=False,indent=2)+'\n');print(json.dumps(value['summary'],ensure_ascii=False))
+        if args.command in ('plan','snapshot'):
+            value=prepare(store,p) if args.command=='plan' else snapshot(store,p)
+            args.file.parent.mkdir(parents=True,exist_ok=True);args.file.write_text(json.dumps(value,ensure_ascii=False,indent=2)+'\n');print(json.dumps(value['summary'],ensure_ascii=False))
         else:
             value=json.loads(args.file.read_text())
             if value['document_sha256']!=digest(value['document']):raise ValueError('batch checksum changed')
