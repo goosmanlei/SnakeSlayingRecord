@@ -1,0 +1,104 @@
+{
+  "system_commit": "aa1b48b441b3acf4dfaea23295d087968e45e9e0",
+  "tests": {
+    "passed": 52,
+    "initial_failure": "System proxy intercepted local urllib HTTP tests (502); rerun with NO_PROXY=127.0.0.1,localhost passed.",
+    "command": "NO_PROXY=127.0.0.1,localhost no_proxy=127.0.0.1,localhost PYTHONPATH=. python3 -m unittest discover -s tests -v"
+  },
+  "business_data_unchanged": true,
+  "before": {
+    "production_objects": 1466,
+    "api_sha256": "27a8152aad4c6d614e963a46f03985a4f8505e26c70bc07910b6cba7378f7c50",
+    "database": {
+      "sources": {
+        "count": 45,
+        "sha256": "d7d6ae8b61508c45e8434e21b0b943373461b89aa4a473e40d40d272bf963452"
+      },
+      "comments": {
+        "count": 266,
+        "sha256": "6e8b6dbcf13206a5e0b9d4e9dbf5a8b9be9e006babdeb3e4e311c7745f8551c5"
+      },
+      "comment_events": {
+        "count": 295,
+        "sha256": "70f720962350f03606026cadf115165e21e6bac0ef26848ab6feb8e1b49ffa2d"
+      },
+      "objects": {
+        "count": 1589,
+        "sha256": "7bce90bee69a7caaf4d1004e801033d6725efdd327c9803389b08e21fea94d3c"
+      },
+      "revisions": {
+        "count": 1758,
+        "sha256": "063f5e3a752790110a313d5514bcc139a593b7a66adb100015625a614d0a13f7"
+      },
+      "dependencies": {
+        "count": 7609,
+        "sha256": "ce31b8b4351d356ea658bb6d758b62dcc81aa1d278da8c8e478b05620b9ac50a"
+      },
+      "configurations": {
+        "count": 2,
+        "sha256": "38d8a35c2a8510517304ebc6bae19af40adb96d163f13b8bc035d1d75e5f8c5e"
+      },
+      "configuration_events": {
+        "count": 16,
+        "sha256": "986b537a7cb147164be88ee3b118072f59226a5ac2dabf8727ae77fdae30d698"
+      }
+    }
+  },
+  "after": {
+    "production_objects": 1466,
+    "api_sha256": "27a8152aad4c6d614e963a46f03985a4f8505e26c70bc07910b6cba7378f7c50",
+    "database": {
+      "sources": {
+        "count": 45,
+        "sha256": "d7d6ae8b61508c45e8434e21b0b943373461b89aa4a473e40d40d272bf963452"
+      },
+      "comments": {
+        "count": 266,
+        "sha256": "6e8b6dbcf13206a5e0b9d4e9dbf5a8b9be9e006babdeb3e4e311c7745f8551c5"
+      },
+      "comment_events": {
+        "count": 295,
+        "sha256": "70f720962350f03606026cadf115165e21e6bac0ef26848ab6feb8e1b49ffa2d"
+      },
+      "objects": {
+        "count": 1589,
+        "sha256": "7bce90bee69a7caaf4d1004e801033d6725efdd327c9803389b08e21fea94d3c"
+      },
+      "revisions": {
+        "count": 1758,
+        "sha256": "063f5e3a752790110a313d5514bcc139a593b7a66adb100015625a614d0a13f7"
+      },
+      "dependencies": {
+        "count": 7609,
+        "sha256": "ce31b8b4351d356ea658bb6d758b62dcc81aa1d278da8c8e478b05620b9ac50a"
+      },
+      "configurations": {
+        "count": 2,
+        "sha256": "38d8a35c2a8510517304ebc6bae19af40adb96d163f13b8bc035d1d75e5f8c5e"
+      },
+      "configuration_events": {
+        "count": 16,
+        "sha256": "986b537a7cb147164be88ee3b118072f59226a5ac2dabf8727ae77fdae30d698"
+      }
+    }
+  },
+  "runtime": {
+    "container_id": "599ed7e7197e7e277c7d729950dd2f271fa762d769b20a1c9f8e547691fe892b",
+    "image_id": "sha256:c259e7c9d207e808bd231de85db86a73d20a48a212e70582837498099d017ed3",
+    "revision": "aa1b48b441b3acf4dfaea23295d087968e45e9e0",
+    "ports": {
+      "8765/tcp": [
+        {
+          "HostIp": "127.0.0.1",
+          "HostPort": "39103"
+        }
+      ]
+    },
+    "restart": {
+      "Name": "unless-stopped",
+      "MaximumRetryCount": 0
+    },
+    "matched_source_files": 29
+  },
+  "scope": "Only isolated task service 39103. Formal service, database and export unchanged."
+}

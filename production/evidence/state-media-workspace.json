@@ -1,0 +1,138 @@
+{
+  "date": "2026-10-01",
+  "system_commit": "dac4c46c6b21a0ca3692029de9ac52d166607e2c",
+  "automated": {
+    "system_python": {
+      "passed": 68,
+      "log": ".runtime/production/state-media-system-full-tests.log",
+      "sha256": "e644305babf363bcbacef14942d1872e9c95788d88fd9d9d1895e0f908a04571"
+    },
+    "targeted_state_contracts": {
+      "passed": 15,
+      "log": ".runtime/production/state-media-system-tests.log",
+      "sha256": "f98891f89307947be4a7d6099626c30b132210cb1fe0aade28bb7b06caa7ac4b"
+    },
+    "node": {
+      "passed": 22,
+      "log": ".runtime/production/state-media-node-tests.log",
+      "sha256": "0669dcf5653fbb11cbc456afc0b0f953bd683828e8d5ce5d11b15595692bfc9e"
+    }
+  },
+  "browser": {
+    "browser": "Chrome 1 via cua_repl",
+    "technical_instance": ".runtime/production/state-media-test",
+    "technical_port": 39117,
+    "production_port": 39103,
+    "operations": [
+      "Technical first three states show 2, 1 and 0 exact-state assets respectively",
+      "One explicitly shared audio appears in the first two states only",
+      "Unassigned image and audio remain in their own collapsed review area",
+      "An unassigned audio time opinion is created in the technical copy; its player locates 1.20 seconds while the separate state player stays at 0 seconds",
+      "Historical image revision 2 shows its region comment; current revision 3 shows no region from that comment",
+      "Actual task entry: all 13 Li Ji states clicked; each has zero state previews, with two unassigned candidates retained separately",
+      "Task entry console: no errors; user tabs and drafts left intact"
+    ],
+    "media_quality_scope": "File display and comment anchors verified; no listening or creative acceptance inferred",
+    "selection_regression_passed": 17,
+    "technical_additions": {
+      "asset_revisions": 2,
+      "unassigned_asset_objects": 2,
+      "comments": 1,
+      "acceptances": 0
+    },
+    "screenshot": "production/evidence/state-media-workspace.jpg",
+    "unassigned_screenshot": "production/evidence/state-media-unassigned.jpg",
+    "actual_state_checks": [
+      {
+        "state": "基础状态 · 劳作后未擦手",
+        "media": "此状态尚无关联素材，可先审阅状态描述。",
+        "previewCount": 0
+      },
+      {
+        "state": "已擦净双手",
+        "media": "此状态尚无关联素材，可先审阅状态描述。",
+        "previewCount": 0
+      },
+      {
+        "state": "捞书后衣裤湿",
+        "media": "此状态尚无关联素材，可先审阅状态描述。",
+        "previewCount": 0
+      },
+      {
+        "state": "劈柴掌心磨破",
+        "media": "此状态尚无关联素材，可先审阅状态描述。",
+        "previewCount": 0
+      },
+      {
+        "state": "掌心包布、额角未伤",
+        "media": "此状态尚无关联素材，可先审阅状态描述。",
+        "previewCount": 0
+      },
+      {
+        "state": "掌心包布、裤脚溅湿",
+        "media": "此状态尚无关联素材，可先审阅状态描述。",
+        "previewCount": 0
+      },
+      {
+        "state": "掌心包布、额角流血",
+        "media": "此状态尚无关联素材，可先审阅状态描述。",
+        "previewCount": 0
+      },
+      {
+        "state": "掌心包布、额角压布",
+        "media": "此状态尚无关联素材，可先审阅状态描述。",
+        "previewCount": 0
+      },
+      {
+        "state": "掌心包布、额角旧伤",
+        "media": "此状态尚无关联素材，可先审阅状态描述。",
+        "previewCount": 0
+      },
+      {
+        "state": "裹手布渗血、额角旧伤",
+        "media": "此状态尚无关联素材，可先审阅状态描述。",
+        "previewCount": 0
+      },
+      {
+        "state": "斩击力竭、手布渗血",
+        "media": "此状态尚无关联素材，可先审阅状态描述。",
+        "previewCount": 0
+      },
+      {
+        "state": "归家重新包手",
+        "media": "此状态尚无关联素材，可先审阅状态描述。",
+        "previewCount": 0
+      },
+      {
+        "state": "掌心新疤",
+        "media": "此状态尚无关联素材，可先审阅状态描述。",
+        "previewCount": 0
+      }
+    ],
+    "selection": [
+      "PASS 正文内松手与已有高亮内选词",
+      "PASS 拖到正文外松手仍显示按钮",
+      "PASS 仅 selectionchange 也能更新按钮",
+      "PASS 评论未变化时后台刷新不打断正在拖选的正文",
+      "PASS 清除选区后立即移除旧按钮",
+      "PASS 反向跨段及 Unicode 引用准确",
+      "PASS 选区端点落在正文容器边界",
+      "PASS 拖选中不出现遮挡鼠标的按钮",
+      "PASS 点击评论按钮保留引用并打开编辑器",
+      "PASS 长选区跨过滚动容器顶部时按钮仍可见",
+      "PASS 非正文选区与切换资料不保留旧按钮",
+      "PASS 结构稿也支持正文外松手与跨块引用",
+      "PASS 正文评论定位到长块末尾的原圈选",
+      "PASS 结构稿评论定位到长块末尾的原圈选",
+      "PASS 制作思路往返保留正文阅读位置",
+      "PASS 制作思路往返不删除未保存的评论草稿",
+      "PASS 制作思路 Tab 与浏览器历史同步"
+    ]
+  },
+  "database": "No production data changes; per-table hashes in state-media-runtime.json",
+  "not_repeated": [
+    "Story tool tests: previous 71 passed",
+    "Comment shortcut tests: previous 76 passed",
+    "Full actual bundle restore and narrow screen layout: previous evidence retained"
+  ]
+}

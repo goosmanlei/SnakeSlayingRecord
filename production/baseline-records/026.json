@@ -1,0 +1,67 @@
+{
+  "format": "production-import-v1",
+  "records": [
+    {
+      "object_id": "asset-aheng-song-01",
+      "kind": "ASSET",
+      "expected_version": 0,
+      "payload": {
+        "format": "production-asset-v1",
+        "title": "阿蘅舟行曲演唱候选",
+        "blocks": [
+          {
+            "id": "description",
+            "text": "第一轮声线或演唱候选，真实 48 kHz WAV 原件；已核文件和返回字幕，尚未完成实际听审或用户接受。"
+          }
+        ],
+        "media_type": "audio",
+        "subjects": [
+          {
+            "object_id": "entity-boat-song",
+            "revision_id": "4063cb7a613c2b2b7dda389253e30006aa7593eea5d38ccf6a51a39d9d524b43"
+          },
+          {
+            "object_id": "entity-a-heng",
+            "revision_id": "c431d8382100c6eb6b88e84ce092de3fd7074f554fe1c7f362dcb25a9a90fe2c"
+          }
+        ],
+        "states": [],
+        "components": [
+          {
+            "id": "original",
+            "role": "original",
+            "file": "9edcf64a1d34914d1d406a01aff9617f3759eb51ed699e1380fde6f96993c953.wav",
+            "sha256": "9edcf64a1d34914d1d406a01aff9617f3759eb51ed699e1380fde6f96993c953",
+            "bytes": 3274300,
+            "mime": "audio/wav",
+            "duration_seconds": 17.053417,
+            "has_audio": true,
+            "sample_rate": 48000,
+            "channels": 2
+          },
+          {
+            "id": "receipt",
+            "role": "metadata",
+            "file": "d06b4c3d373e92e505aa7b17c34ef2790d363ce40aecafcf48b2f46b5f81ed35.json",
+            "sha256": "d06b4c3d373e92e505aa7b17c34ef2790d363ce40aecafcf48b2f46b5f81ed35",
+            "bytes": 6113,
+            "mime": "application/json"
+          }
+        ],
+        "production": {
+          "object_id": "call-aheng-song-01",
+          "revision_id": "1600edfe10f4b1eb9c805c9a0e374a65469d28264cbce5f69802b6d91a5d4994"
+        },
+        "lineage": {},
+        "placeholder": false,
+        "verification": {
+          "file_inspected": true,
+          "visually_inspected": false,
+          "listened": false,
+          "native_4k_passed": null,
+          "user_accepted": false
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,399 @@
+{
+  "system_commit": "34f33b4c989de1d7f8e08c5e3c0bb01f920a8e00",
+  "entity_review_commit": "42eef5fa3af8f4ce0edb37ec9f2dfe7ad6956cc1",
+  "date": "2026-10-01",
+  "automated": {
+    "system_python": {
+      "passed": 63,
+      "skipped": 0,
+      "log": ".runtime/production/entity-review-tests-final.log",
+      "sha256": "5a9dcc0a684fe676293bb08bf1f771aabc0a1a4e146b20827d556b6f7ed5f432"
+    },
+    "story_python": {
+      "passed": 72,
+      "skipped": 0,
+      "log": ".runtime/production/entity-review-story-tests-final.log",
+      "sha256": "5347238fd5bfe924083f7c4fd318fcb05f19872273223a3686b291e10fce6a6c"
+    },
+    "node": {
+      "passed": 13,
+      "failed": 0,
+      "log": ".runtime/production/entity-review-node-tests.log",
+      "sha256": "7b65715770b158eadeff5d3c15abe3e495323ad0d0216b265c4e506fdea15740"
+    }
+  },
+  "browser": {
+    "browser": "Chrome 1 via cua_repl",
+    "technical_instance": ".runtime/production/entity-review-test",
+    "technical_port": 39109,
+    "operations": [
+      "Persistent basics; chronological default state; no content editor",
+      "Image zoom and region comment on exact submitted asset",
+      "Audio playback, time-range comment, locate to 1 second after metadata loads",
+      "State text comment with Unicode offsets; four comments aggregate across states",
+      "Independent entity and state drafts",
+      "Accept while another state is selected: all 13 states and 2 explicit media items",
+      "Submission 3 pending after entity update; accepted submission 2 still readable",
+      "760 and 390 pixel viewports: no horizontal overflow"
+    ],
+    "selection_checks": [
+      "PASS 正文内松手与已有高亮内选词",
+      "PASS 拖到正文外松手仍显示按钮",
+      "PASS 仅 selectionchange 也能更新按钮",
+      "PASS 评论未变化时后台刷新不打断正在拖选的正文",
+      "PASS 清除选区后立即移除旧按钮",
+      "PASS 反向跨段及 Unicode 引用准确",
+      "PASS 选区端点落在正文容器边界",
+      "PASS 拖选中不出现遮挡鼠标的按钮",
+      "PASS 点击评论按钮保留引用并打开编辑器",
+      "PASS 长选区跨过滚动容器顶部时按钮仍可见",
+      "PASS 非正文选区与切换资料不保留旧按钮",
+      "PASS 结构稿也支持正文外松手与跨块引用",
+      "PASS 正文评论定位到长块末尾的原圈选",
+      "PASS 结构稿评论定位到长块末尾的原圈选",
+      "PASS 制作思路往返保留正文阅读位置",
+      "PASS 制作思路往返不删除未保存的评论草稿",
+      "PASS 制作思路 Tab 与浏览器历史同步"
+    ],
+    "shortcut_checks": {
+      "passed": 76,
+      "checks": [
+        {
+          "name": "采编：空内容按钮禁用",
+          "passed": true
+        },
+        {
+          "name": "采编：空内容快捷键不提交",
+          "passed": true
+        },
+        {
+          "name": "采编：普通 Enter 保留浏览器换行",
+          "passed": true
+        },
+        {
+          "name": "采编：其他组合及按住重复不提交",
+          "passed": true
+        },
+        {
+          "name": "采编：composition 输入法不误提交或关闭",
+          "passed": true
+        },
+        {
+          "name": "采编：isComposing 输入法不误提交或关闭",
+          "passed": true
+        },
+        {
+          "name": "采编：229 输入法不误提交或关闭",
+          "passed": true
+        },
+        {
+          "name": "采编：只读输入不执行快捷操作",
+          "passed": true
+        },
+        {
+          "name": "采编：禁用输入不执行快捷操作",
+          "passed": true
+        },
+        {
+          "name": "采编：Esc 取消新评论且不先关闭面板",
+          "passed": true
+        },
+        {
+          "name": "采编：取消删除草稿且已保存评论不变",
+          "passed": true
+        },
+        {
+          "name": "采编：同锚点重新打开无被取消内容",
+          "passed": true
+        },
+        {
+          "name": "采编：输入框外 Esc 沿用面板收起",
+          "passed": true
+        },
+        {
+          "name": "采编：收起后草稿保留",
+          "passed": true
+        },
+        {
+          "name": "采编：⌘+Enter 新增且正文与点击相同地去首尾空白",
+          "passed": true
+        },
+        {
+          "name": "采编：按钮与快捷键归属和锚点一致",
+          "passed": true
+        },
+        {
+          "name": "采编：Esc 取消编辑保持面板打开",
+          "passed": true
+        },
+        {
+          "name": "采编：取消编辑不改变正式正文与版本",
+          "passed": true
+        },
+        {
+          "name": "采编：重开编辑恢复已保存正文",
+          "passed": true
+        },
+        {
+          "name": "采编：⌘+Enter 编辑保存",
+          "passed": true
+        },
+        {
+          "name": "采编：提交中按键与按钮共用限制且只发一次请求",
+          "passed": true
+        },
+        {
+          "name": "采编：连续快捷键只产生一次编辑",
+          "passed": true
+        },
+        {
+          "name": "采编：提交失败保留草稿并解除限制",
+          "passed": true
+        },
+        {
+          "name": "采编：原有关闭与重开可用",
+          "passed": true
+        },
+        {
+          "name": "结构：空内容按钮禁用",
+          "passed": true
+        },
+        {
+          "name": "结构：空内容快捷键不提交",
+          "passed": true
+        },
+        {
+          "name": "结构：普通 Enter 保留浏览器换行",
+          "passed": true
+        },
+        {
+          "name": "结构：其他组合及按住重复不提交",
+          "passed": true
+        },
+        {
+          "name": "结构：composition 输入法不误提交或关闭",
+          "passed": true
+        },
+        {
+          "name": "结构：isComposing 输入法不误提交或关闭",
+          "passed": true
+        },
+        {
+          "name": "结构：229 输入法不误提交或关闭",
+          "passed": true
+        },
+        {
+          "name": "结构：只读输入不执行快捷操作",
+          "passed": true
+        },
+        {
+          "name": "结构：禁用输入不执行快捷操作",
+          "passed": true
+        },
+        {
+          "name": "结构：Esc 取消新评论且不先关闭面板",
+          "passed": true
+        },
+        {
+          "name": "结构：取消删除草稿且已保存评论不变",
+          "passed": true
+        },
+        {
+          "name": "结构：同锚点重新打开无被取消内容",
+          "passed": true
+        },
+        {
+          "name": "结构：输入框外 Esc 沿用面板收起",
+          "passed": true
+        },
+        {
+          "name": "结构：收起后草稿保留",
+          "passed": true
+        },
+        {
+          "name": "结构：⌘+Enter 新增且正文与点击相同地去首尾空白",
+          "passed": true
+        },
+        {
+          "name": "结构：按钮与快捷键归属和锚点一致",
+          "passed": true
+        },
+        {
+          "name": "结构：Esc 取消编辑保持面板打开",
+          "passed": true
+        },
+        {
+          "name": "结构：取消编辑不改变正式正文与版本",
+          "passed": true
+        },
+        {
+          "name": "结构：重开编辑恢复已保存正文",
+          "passed": true
+        },
+        {
+          "name": "结构：⌘+Enter 编辑保存",
+          "passed": true
+        },
+        {
+          "name": "结构：提交中按键与按钮共用限制且只发一次请求",
+          "passed": true
+        },
+        {
+          "name": "结构：连续快捷键只产生一次编辑",
+          "passed": true
+        },
+        {
+          "name": "结构：提交失败保留草稿并解除限制",
+          "passed": true
+        },
+        {
+          "name": "结构：原有关闭与重开可用",
+          "passed": true
+        },
+        {
+          "name": "剧本：空内容按钮禁用",
+          "passed": true
+        },
+        {
+          "name": "剧本：空内容快捷键不提交",
+          "passed": true
+        },
+        {
+          "name": "剧本：普通 Enter 保留浏览器换行",
+          "passed": true
+        },
+        {
+          "name": "剧本：其他组合及按住重复不提交",
+          "passed": true
+        },
+        {
+          "name": "剧本：composition 输入法不误提交或关闭",
+          "passed": true
+        },
+        {
+          "name": "剧本：isComposing 输入法不误提交或关闭",
+          "passed": true
+        },
+        {
+          "name": "剧本：229 输入法不误提交或关闭",
+          "passed": true
+        },
+        {
+          "name": "剧本：只读输入不执行快捷操作",
+          "passed": true
+        },
+        {
+          "name": "剧本：禁用输入不执行快捷操作",
+          "passed": true
+        },
+        {
+          "name": "剧本：Esc 取消新评论且不先关闭面板",
+          "passed": true
+        },
+        {
+          "name": "剧本：取消删除草稿且已保存评论不变",
+          "passed": true
+        },
+        {
+          "name": "剧本：同锚点重新打开无被取消内容",
+          "passed": true
+        },
+        {
+          "name": "剧本：输入框外 Esc 沿用面板收起",
+          "passed": true
+        },
+        {
+          "name": "剧本：收起后草稿保留",
+          "passed": true
+        },
+        {
+          "name": "剧本：⌘+Enter 新增且正文与点击相同地去首尾空白",
+          "passed": true
+        },
+        {
+          "name": "剧本：按钮与快捷键归属和锚点一致",
+          "passed": true
+        },
+        {
+          "name": "剧本：Esc 取消编辑保持面板打开",
+          "passed": true
+        },
+        {
+          "name": "剧本：取消编辑不改变正式正文与版本",
+          "passed": true
+        },
+        {
+          "name": "剧本：重开编辑恢复已保存正文",
+          "passed": true
+        },
+        {
+          "name": "剧本：⌘+Enter 编辑保存",
+          "passed": true
+        },
+        {
+          "name": "剧本：提交中按键与按钮共用限制且只发一次请求",
+          "passed": true
+        },
+        {
+          "name": "剧本：连续快捷键只产生一次编辑",
+          "passed": true
+        },
+        {
+          "name": "剧本：提交失败保留草稿并解除限制",
+          "passed": true
+        },
+        {
+          "name": "剧本：原有关闭与重开可用",
+          "passed": true
+        },
+        {
+          "name": "未来独立评论输入复用同一绑定",
+          "passed": true
+        },
+        {
+          "name": "复用机制遵循两个按钮各自禁用状态",
+          "passed": true
+        },
+        {
+          "name": "普通输入框不触发评论提交",
+          "passed": true
+        },
+        {
+          "name": "大图 Esc 只关闭图像且保留原草稿",
+          "passed": true
+        }
+      ]
+    },
+    "delivery_port": 39103,
+    "delivery_checks": [
+      "133 entities with flat category counts",
+      "A He single base state and persistent basics",
+      "A Heng wet-state switch keeps basics and approval scope of all 6 states",
+      "Zero media, pending submission; no real approval or adoption performed"
+    ],
+    "restored_port": 39112,
+    "restored_checks": [
+      "Entity review and precise references readable",
+      "Original WAV readyState 4, duration 17.053417",
+      "Episode 1 has 33 shots and exact input references",
+      "Production approach displays updated entity review and adoption explanation"
+    ],
+    "console_errors": [],
+    "user_existing_draft_tab_untouched": true,
+    "screenshot": "entity-review-workspace.jpg"
+  },
+  "technical_history_replay": {
+    "technical_replay_revisions": 3488,
+    "history_accepted": 2,
+    "current_submission": 3
+  },
+  "data_evidence": "entity-review-data.json",
+  "recovery_evidence": "entity-review-recovery.json",
+  "runtime_evidence": "entity-review-runtime.json",
+  "limitations": [
+    "Playback is not artistic listening review",
+    "No baseline media approved; no complete animatic or editable project exists",
+    "Existing browser file-upload permission limitation unchanged",
+    "Formal service, data and main branches untouched; no integration or push"
+  ]
+}

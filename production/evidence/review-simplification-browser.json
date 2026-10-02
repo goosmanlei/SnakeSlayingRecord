@@ -1,0 +1,94 @@
+{
+  "format": "review-browser-evidence-v1",
+  "system_commit": "663c905bcc51088682d7a7edd32f91126fdf0e55",
+  "browser": "connected Chrome",
+  "checks": [
+    {
+      "name": "取消旧采纳",
+      "instance": "technical:39133",
+      "result": "阿禾取消后显示采纳；任务库原采纳保留"
+    },
+    {
+      "name": "历史声线素材",
+      "instance": "technical:39133; task:39103",
+      "result": "4→3→2→1→4；任务页4→2→4；原卡片与四项版本选择保留"
+    },
+    {
+      "name": "关系层次",
+      "instance": "task:39103",
+      "result": "阿蘅六条主要关系；其余关系可滚动查看；节点不跳转，无图下重复说明"
+    },
+    {
+      "name": "关系评论",
+      "instance": "technical:39133",
+      "result": "圈选相互照应中的照应，绑定原关系修订及正文偏移；仅隔离库保存"
+    },
+    {
+      "name": "弹窗与草稿",
+      "instance": "technical:39133",
+      "result": "计划参考准确版本；Esc后阅读位置、评论对象和未提交草稿保留"
+    },
+    {
+      "name": "实际参考",
+      "instance": "validated:39134",
+      "result": "阿蘅演唱输入指向声线版本1，弹窗原件17秒可播放；素材管理共用入口"
+    },
+    {
+      "name": "图像生成信息",
+      "instance": "task:39103",
+      "result": "李寄基础状态显示实际CALL模型、4K请求与提示词；不混用当前方案"
+    },
+    {
+      "name": "窄屏",
+      "instance": "restored:39137",
+      "result": {
+        "viewport": 390,
+        "document": 390,
+        "card": 336,
+        "graph_container": 336,
+        "graph_scroll_content": 1000
+      }
+    },
+    {
+      "name": "恢复原件",
+      "instance": "restored:39137",
+      "result": {
+        "duration_seconds": 17.053417,
+        "ready_state": 4,
+        "play_and_pause": true,
+        "listening_acceptance": false
+      }
+    },
+    {
+      "name": "全剧制作",
+      "instance": "task:39103",
+      "result": "默认第一集33镜；必要输入317项，缺项或待复核317项"
+    },
+    {
+      "name": "制作思路",
+      "instance": "task:39103",
+      "result": "新声音方案、250镜头用途、67状态需求、566后续场级图像需求一致"
+    },
+    {
+      "name": "控制台",
+      "instance": "task:39103",
+      "result": "未观察到error"
+    }
+  ],
+  "regressions": {
+    "shared_selection": {
+      "passed": 17,
+      "failed": 0
+    },
+    "screenplay": {
+      "passed": 42
+    }
+  },
+  "screenshot": "review-simplification-relations.png",
+  "not_verified": [
+    "实际声音听辨",
+    "原生4K",
+    "Seedance预演生成与效果",
+    "最终工程及整集恢复"
+  ]
+}
