@@ -103,6 +103,8 @@ PYTHONPATH="$production_system" python3 -m review_desk \
 
 ## 直接审阅与后续修订
 
+素材现按修订轮次承接方案与结果，历史对应、评论意图、迁移演练和恢复操作见 [素材轮次说明](material-rounds.md)。根部 Schema 4 导出已包含本任务隔离承接的轮次索引；正式应用状态以 `STATE.md` 为准，不能直接把它覆盖到活库。
+
 内容由 AI 通过共用业务接口新增修订，用户打开实体即可审阅。读取整份实体内容：
 
 ```bash
