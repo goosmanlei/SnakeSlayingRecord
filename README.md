@@ -14,7 +14,7 @@
 
 ## 制作思路
 
-首页以“制作思路”替换旧“当前工作”，提供“故事创作”“生产制作”两个 Tab；旧 `workspace=current` 链接兼容进入新页。方法正文在 [content/production-approach.json](content/production-approach.json)，随实例 Git 保存；系统负责只读展示，没有新增工作统计、任务账本或素材执行引擎。制作准备已按确认的版本四启动，首批候选与系统只在任务工作区的隔离入口；完整素材及动态分镜仍待制作和两轮创作审阅。
+首页以“制作思路”替换旧“当前工作”，提供“故事创作”“生产制作”两个 Tab；旧 `workspace=current` 链接兼容进入新页。方法正文在 [content/production-approach.json](content/production-approach.json)，随实例 Git 保存；系统负责只读展示，没有新增工作统计、任务账本或素材执行引擎。制作准备已按确认的版本四交付系统、全剧抽取、第一集设计与首批候选，用户确认本阶段结项。制作入口为 [39103](http://127.0.0.1:39103/?workspace=settings.workspace)；完整素材、基准接受和动态分镜由后续任务推进，第一集尚未就绪。
 
 [正式入口](http://127.0.0.1:3000/)已完成首页、旧链接、双 Tab、桌面与窄屏回读；[隔离预览](http://127.0.0.1:8794/)及数据恢复证据保留。清理范围、输入版本、验证结果和发布说明见[交付记录](planning/production-approach-delivery.md)。恢复实例时同时保留 `config/`、`content/` 与 `export/`；方法文档不写业务数据库，无数据迁移。
 
@@ -56,13 +56,13 @@
 git clone https://github.com/goosmanlei/story-review-desk.git
 git clone https://github.com/goosmanlei/SnakeSlayingRecord.git
 cd story-review-desk
-git checkout d7646d86a4b389b347e0ce959612e6e1da2e3acb
+git checkout 4c0cc62bcf4e5477a1fd2ff22b29ecce3ba44ac1
 PYTHONPATH=. python3 -m review_desk --instance ../SnakeSlayingRecord restore
 cd ../SnakeSlayingRecord
 docker compose up -d --build
 ```
 
-本提交锁定系统候选 `d7646d86a4b389b347e0ce959612e6e1da2e3acb`，包含剧本集场阅读、评论快捷键及可持久化的站点图标配置。上述克隆与启动命令须待系统提交实际发布后使用；本机 3000 已应用图标候选，双仓集成仍待新候选确认，用户已授权推送。实例恢复时同时保留本仓库跟踪的 `content/`，数据库导出包不含摘要。系统提交、实例分支与正式服务的集成状态分别核对；实际运行状态见 [STATE.md](STATE.md)。
+本提交锁定系统 `4c0cc62bcf4e5477a1fd2ff22b29ecce3ba44ac1`，包含故事创作、共用评论、图标配置及制作系统。当前仅办理本地集成，不推送；远程克隆需等待该提交另行发布，本机恢复使用已有系统检出。`export/` 包含故事与制作数据、264 条评论及原件清单，恢复时同时保留 `config/` 与 `content/`。已有运行数据库不可用该快照覆盖。制作成果继续从 39103 使用，3000 保持既有服务；运行与集成边界见 [STATE.md](STATE.md)。
 
 打开 [本机审阅台](http://127.0.0.1:3000/)：Nginx 长期运行在 Docker 容器 3000 端口并代理容器内 Python 服务；Nginx 镜像与通用代理规则由审阅台仓库维护，故事仓库只保留实例 Compose 配置。主机仅绑定 `127.0.0.1:3000`。`docker compose ps` 检查状态，`docker compose restart` 重启；`restart: unless-stopped` 保证 Docker 恢复时服务随之恢复。已有 `.runtime/review.sqlite3` 时跳过 `restore`。本机当前系统源码目录名是 `story-review-desk-python`，若在此目录运行，构建命令需加 `REVIEW_DESK_BUILD_CONTEXT=../story-review-desk-python`；公开克隆默认目录名为 `story-review-desk`，无需该变量。不要把 3000 端口转发到公网，本服务没有公网鉴权。
 

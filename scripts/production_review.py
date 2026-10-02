@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Save exact production revisions or recover a fresh, isolated review instance.
 
-The formal story export stays authoritative for its existing objects/comments.
-This task's production replay adds real records through the shared import API;
-it does not replace a live database or copy any credentials.
+The complete export preserves story and production records, comments and events.
+Older story-only exports can add production records through the shared import API;
+neither path replaces a live database or copies any credentials.
 """
 import argparse
 import hashlib
@@ -72,7 +72,11 @@ def main():
     store = Store(destination / '.runtime/review.sqlite3')
     try:
         restore(store, destination / 'export')
-        production.restore_records(store, data['batches'])
+        # Complete exports already contain production history and its comments.
+        # Replay only a story-only base; an inconsistent populated base must fail
+        # the exact comparison below, never be silently amended or overwritten.
+        if not exact_replay(store, production)['heads']:
+            production.restore_records(store, data['batches'])
         recovered = exact_replay(store, production)
         if recovered['heads'] != data['heads'] or recovered['revisions'] != data['revisions']:
             raise ValueError('recovered exact revisions or selected heads differ')
