@@ -1,130 +1,100 @@
-# 版本四制作准备
+# 版本四制作准备与审阅
 
-本目录保存《把灯带回家》从定稿剧本走向第一集生产的实际材料。用户已确认版本四为本任务终稿；主视觉为二维人物＋轻手绘背景，主画幅 16:9。原制作目标包括能够开始正式镜头生成的输入、素材和有声动态分镜。用户于 2026-10-02 确认按当前成果结项，后续修改另行发布任务。
+《把灯带回家》版本四已获用户确认，17 集、42 场、1,114 个正文块；主视觉为二维人物与轻手绘背景，16:9。当前完成全剧实体／状态抽取、第一集 33 镜设计、逐素材方案及首批实际候选。基准尚未全部补齐或接受，第一集未就绪；完整素材、有声动态分镜、成片和工程在后续制作范围。
 
-当前已完成全剧抽取、第一集逐镜设计、通用系统最小实现和首批实际候选；基准补齐与接受、完整素材、动态分镜及工程转入后续任务，第一集尚未就绪。此处是成果与操作入口，任务执行及完成状态仍只由主项目任务账本管理。
+本轮制作审阅改进已承接完成的 `task-20261002-0001`，系统 `15822ae7` 吸收其最终 `7331690`，并与 33 条关系修订串行发布正式 3000。正式库保留评论、原件、实际调用、采用和素材轮次历史；用户已确认本轮完成并授权双仓集成和推送；实际完成以账本及 Git 回读为准。当前版本和证据见 [STATE.md](../STATE.md)和[本轮验证](review-ui-verification.md)。本任务不生成媒体；双仓推送已获用户追加授权。
 
-## 阅读与审阅入口
+## 内容入口
 
-| 要核对什么 | 实际材料 |
+| 要核对什么 | 材料 |
 | --- | --- |
-| 用户确认、剧本与结构依据 | [输入锁定](source-lock.json)，保留整版、17 个分集、42 场和 1,114 个正文块的准确版本 |
-| 全剧身份、别名、状态与出场 | [可读清单](inventory.md)和[完整数据](inventory.json)：133 个实体、267 个完整状态，42 场均有检查记录 |
-| 全剧直接关系与正文依据 | [关系清单](entity-relationships.md)及[准确批次](entity-relationships.json)：157 条关系、133 个实体检查 |
-| 后续各集计划需求 | [集场需求](scene-requirements.md)，其余 40 场登记 566 项图像需求；不要求本任务生产后续集媒体 |
-| 原生有声预演方式及执行边界 | [声音契约](native-audio-workflow.md)、[33 镜计划](episode01/seedance/manifest.json)，尚未执行 |
-| 第一集动作、空间与声音 | [33 镜设计](episode01/shots.md)、[精确数据及 250 个镜头素材槽位](episode01/shots.json)、[37 个对白／演唱单元](episode01/dialogue-cues.json) |
-| 实体完整描述与逐素材方案 | [制作方案](generation-preparation.md)及[只读准确快照](generation-preparation.json)：第一集 33 个实体的全部 77 个状态、122 项方案（94 图像、28 音色／旋律），含模型、参数、提示词、参考和用途；未执行新生成 |
-| 现有候选属于哪个实体和状态 | [关联清单](baseline-associations.md)：6 个条目、5 个实体、6 个状态；含具体声音范围与依据 |
-| 实际提示词、输入与调用结果 | [requests](requests/)、[receipts](receipts/)和[登记批次](baseline-records/)；均区分计划与实际制作 |
-| 完整生产修订历史及文件清单 | [replay.json](replay.json)，包含 2,048 个生产对象、4,503 个修订、14 个实际文件组成；保留 86 个历史局部状态、此前命名复核及 133 份旧送审记录（仅历史追溯） |
-| 系统设计、关系图及 API／CLI | 通用系统 [docs/production.md](https://github.com/goosmanlei/story-review-desk/blob/4c0cc62bcf4e5477a1fd2ff22b29ecce3ba44ac1/docs/production.md)，代码版本以本故事 [config/instance.json](../config/instance.json)为准；已集成并推送系统 `main`，实际运行入口为 3000 |
-| 已执行验证与具体限制 | [verification.md](verification.md) |
+| 定稿、用户确认与准确来源 | [source-lock.json](source-lock.json) |
+| 全剧身份、别名、完整状态和出场 | [inventory.md](inventory.md)及[inventory.json](inventory.json)：133 个实体、267 个完整状态 |
+| 直接关系、集场原文和修正范围 | [entity-relationships.md](entity-relationships.md)、[准确增量与全部证据](entity-relationships.json)、[33 条修正前后对应](relationship-review.md) |
+| 第一集镜头、空间和定稿声音 | [33 镜设计](episode01/shots.md)、[准确数据](episode01/shots.json)、[37 个对白／演唱单元](episode01/dialogue-cues.json) |
+| 实体描述与生成方案 | [generation-preparation.md](generation-preparation.md)：33 个实体的 77 个状态、122 项方案，区分计划与实际调用 |
+| 素材轮次、历史对应及 0001 验证 | [material-rounds.md](material-rounds.md)、[准确对应](material-round-mapping.json)与[编制工具](../scripts/material_round_audit.py) |
+| 后续各集计划需求 | [scene-requirements.md](scene-requirements.md)：其余 40 场 566 项图像需求，本轮不生产媒体 |
+| 现有候选的实体与状态归属 | [baseline-associations.md](baseline-associations.md)、[requests](requests/)、[receipts](receipts/)及[baseline-records](baseline-records/) |
+| 原生有声预演计划 | [声音契约](native-audio-workflow.md)、[33 镜计划](episode01/seedance/manifest.json)，尚未执行 |
+| 完整恢复与历史 | 最新正式 `export/` 与匹配的 [replay.json](replay.json)；历史制作准备验证见 [verification.md](verification.md) |
 
-本机统一审阅入口为 [制作设定](http://127.0.0.1:3000/?workspace=settings.workspace)、[素材管理](http://127.0.0.1:3000/?workspace=materials.workspace)、[全剧制作](http://127.0.0.1:3000/?workspace=production.workspace)。3000 由 Docker 与 Nginx 后台运行，不依赖代理会话。用户最终明确授权双仓集成、推送和正式切换；正式库已增量加入制作记录，原有剧本、配置和 264 条评论完整保留。`export/` 是包含制作数据、评论和原件的完整恢复快照。旧 39103 预览已停止，旧实例与技术测试库仅供追溯，不能继续作为制作和导出来源。
+## 用户如何审阅
 
-制作设定按实体浏览，筛选区平铺全部 133 个实体及角色 51、场景 16、道具 62、歌曲 4。列表每个实体只出现一次，并标出完整状态数；例如“阿蘅米袋 · 5 个完整状态”。打开实体即显示上方的身份、别名、基础说明和其他基础信息，下方平铺完整状态；默认选择按剧情来源排序的首个完整状态并标为“基础状态”，切换时上方信息保持显示。搜索别名、状态或设定描述也能找到所属实体。分类数量保留搜索条件后计算，不重复累计历史版本，零数量项仍可见；“清除筛选”同时清除搜索与分类。状态的旧链接、准确版本与评论保留，镜头引用仍打开当时指定的状态版本。
+长期入口为 [制作设定](http://127.0.0.1:3000/?workspace=settings.workspace)、[素材管理](http://127.0.0.1:3000/?workspace=materials.workspace)与[全剧制作](http://127.0.0.1:3000/?workspace=production.workspace)。主导航与标题提供定位，全剧制作保留必要的“剧本依据：版本四 · 已确认 · 17 集”摘要。
 
-实体基础信息常驻，关系图优先展示主要关系，再列其他关系；节点不跳转，连线文字直接圈选评论，来源在页内弹窗打开，下方选择完整状态。描述后每份素材固定两列展示（阅读区不足 720 像素时单列），模型、参数、提示词和参考输入默认展开，参考在当前页弹窗打开准确版本，保留阅读位置与评论草稿。制作设定与素材管理使用同一素材卡，原生成信息读取准确实际调用；工具在执行时决定。可评论区域用统一轻边线和图标提示；待确认直接展开。版本只在相应内容旁切换，不另显示采纳时间、历史提示或返回当前按钮。真实音频使用波形播放器，可选段、精调、试听和评论，不显示人物封面；图像占位和缺音频条只对应明确列出的缺失素材。
+制作设定按实体浏览。基础信息常驻，主要关系先排列，再选择完整状态；关系节点不跳转，连线文字可圈选评论，来源弹窗显示准确剧本版本、集场和原文。关系、状态及素材版本在各自控件旁切换，评论始终绑定当时修订；旧内容与旧引用保留。
 
-“采纳”认可当前基础信息、直接关系、所有完整状态及逐素材生成方案，允许推进素材生成；采纳后变为“取消采纳”，评论始终开放。新候选不影响认可，内容、关系或方案变化需重新采纳；实际执行仍需准确采用前置原件并核对额度。现有 6 个素材保持明确状态归属，以新修订对应本轮需求；原件和实际调用不改写。旧送审记录仅保留历史，Codex 没有代替用户采纳。
+“采纳”认可当前基础信息、关系、全部完整状态和生成方案，通过完整准备校验才允许推进生成；仍可取消和评论。旧内容采纳取消后，原实体／状态／素材范围仍完全一致时可重新认可，页面说明其不授予生成许可。内容修订、真实缺项、历史阅读或版本冲突不会靠启用按钮绕过；Codex 不代替用户采纳。
 
-独立逐句、演唱段及环境动作声的 337 项需求和 987 个修订已清理，实际原件与调用保留。全剧现有 32 项音频需求用于角色音色或歌曲旋律参考；台词、歌词与预计时间保存在镜头设计中。新声音方式见 [视听预演契约](native-audio-workflow.md)，不能把计划当作已生成预演。
+素材管理使用平铺的记录类型与内容分类按钮，可组合搜索，数量随搜索与另一组条件联动。按当前列表对象计数，历史修订不重复累计；真实未生成的需求单独计为需求，不计为实际素材或就绪。全部类别包括零结果均可选择，清除同时重置搜索与筛选。筛选不改变正在阅读的准确版本。
 
-“正式输入”不列入制作设定；267 个完整状态在所属实体内部展示，不计入实体数量。全剧制作顶部只显示“剧本依据：版本四 · 已确认 · 17 集”，没有确认说明入口；底层记录与历史引用保留。默认打开第一集 33 镜，切换分集和场次后可点击“检查本集／本场素材缺项”，每页最多显示 20 项。单镜详情显示该镜需求，进入页面不自动展开全剧缺项。这里的剧本确认不代表制作基准或第一集素材已被接受。
+制作设定和素材管理复用素材卡。未生成时显示真实需求对应的图像、声音或其他媒体占位；声音不借人物封面充当原件。已有准确结果时预览真实文件。模型、参数、提示词和参考输入分别来自方案与实际调用，不互相补写；参考在页内弹窗查看，可继续放大原图。关闭、Esc 和键盘返回保留版本、阅读上下文、焦点与未提交评论草稿。图像完整显示，真实音频可播放、选段、试听和评论。
 
-状态表示实体在某一时刻的完整形态。李寄的衣着、掌心包布和额角旧伤同时成立时，在一个状态内完整说明；阿蘅米袋从空袋、工米入袋、追加预付米到退米后扎袋、清账接退粮，共五种形态。阿禾和船家各有一个完整状态；普通走动、表情变化或素材候选换版不额外制造状态。
+每项具体需求从建立、方案到首次调用及结果同属版本一；产出后的明确修订意见启动下一轮，同轮多条意见、方案修改与生成不再加版。一般讨论、评论状态、元数据或关联补全不加版；内部准确修订不代表生成次数。待产轮次只显示该需求占位，旧结果保留在历史轮次；同轮可以有多次真实调用和候选。跨状态复用按实际关联需求轮次显示。阿蘅四条旧素材修订仍对应一个真实 CALL 与一个 WAV，归为版本一；旧评论保留原锚点，不补造当时未知的轮次范围。完整历史与证据见 [素材轮次说明](material-rounds.md)。
 
-每次实际呈现或发声都绑定准确状态，同场、同镜的变化有先后顺序、动作和正文依据。全剧 618 次场内实体使用与第一集 206 次镜内使用均已检查，没有缺失或错属。小满、许家女儿仅被提及，保留已知事实状态，不要求生产媒体。
+三个制作页面没有批量导入、登记原件、编辑说明、添加需求及维护关联的专用表单；内容调整通过评论交给 Codex。准确素材采用、审阅结论、评论、版本、预览及缺项检查仍可用。全剧制作默认第一集 33 镜，按分集／场次筛选后检查缺项，每页最多 20 项；单镜详情展示该镜需求。
 
-需要独立媒体的状态保留一项整体参考，再按需增加局部、角度或声音；当前共 260 项整体参考需求。仅需文字随镜发声的状态保留完整描述，不另要求录音。Codex 按审阅意见通过工具增加补充需求；素材管理可把同一文件组成关联多个准确状态，并说明整体或细节覆盖。新增关联保存为素材的新候选修订，实际调用和已有采用不改写。未选整体参考时，细节不能使状态就绪。当前首批候选已明确状态归属和审阅范围，质量缺口及未获用户接受的状态保留。
+## 现有候选与实际限制
 
-旧 86 个局部状态不计入当前完整状态数量，仍保留修订、来源、评论及实际制作引用。完整状态的对应与影响清单见 [迁移核对](evidence/complete-state-migration.json)；它仅供复核，不代表旧素材自动兼容或已经换版。技术验证见 [verification.md](verification.md)。
+| 原件 | 实际情况 |
+| --- | --- |
+| [李寄第一张](../export/assets/82a51fcd631931e43bc0ed5535a1c80827a072fb37dd9a2e8b366d5d13258458.png)、[第二张](../export/assets/cd50ecc53c05dd06c2f592adf164b12f2711ef44538479cd3b55a711590dae33.png) | 两次文字生成根候选，2016×2688，未达原生 4K，未接受母版；同一素材身份的旧准确原件保留 |
+| [阿蘅对白](../export/assets/a041a61f5f37de8086eba7de160804c785587d1ae1ce024ef67246f846c69e84.wav) | 17 秒，48 kHz、双声道、PCM 16-bit |
+| [李寄对白](../export/assets/90227903269315a0fde6b66cdcb91698d0c7737c2e1f6dddf593e6fe7fc8f014.wav) | 12.38 秒，同规格 |
+| [周掌柜对白](../export/assets/d242aeb9c0b0069f18a252f62a6a2aedc4625522033aa92c5a5ab03f8da1f76f.wav) | 17 秒，同规格 |
+| [赵执事对白](../export/assets/842ecea98a028fa105e0f30a4f5a6085d412d3c40aecf24516f5a7a10b19ab92.wav) | 11.5 秒，同规格 |
+| [阿蘅舟行曲](../export/assets/9edcf64a1d34914d1d406a01aff9617f3759eb51ed699e1380fde6f96993c953.wav) | 17.0534 秒，实际引用阿蘅对白作声线参考 |
 
-## 当前实际候选
+仍为 6 个素材身份、7 次实际调用、两张图和五份 WAV；播放器验证不代替声音听审。第一集 250 项镜头用途与 67 项状态必要需求合计 317 项均未明确采用。原生尺寸、代表背景／道具／人物基准、准确声音和平台额度须在后续制作解决；227 秒为设计估时，非成片实测。之前观察的账户额度不是当前余额，执行前重新查询。
 
-下面列的是候选原件，不是已经接受的基准。精确修订、SHA-256、制作调用与歌词依据可在素材详情及重放清单核对。
+## Codex 后台维护与恢复
 
-| 素材 | 版本／原件 | 核查结果 |
-| --- | --- | --- |
-| 李寄造型 | `asset-liji-image` 版本 1、2 保存两张原图；版本 3 补充第二张的状态关联，当前版本 4 对应本轮准确状态和需求；[第一张](../export/assets/82a51fcd631931e43bc0ed5535a1c80827a072fb37dd9a2e8b366d5d13258458.png)、[第二张](../export/assets/cd50ecc53c05dd06c2f592adf164b12f2711ef44538479cd3b55a711590dae33.png) | 均为文字生成根候选，2016×2688，未达到原生 4K；已回看，尚未接受母版 |
-| 阿蘅对白 | [17 秒 WAV](../export/assets/a041a61f5f37de8086eba7de160804c785587d1ae1ce024ef67246f846c69e84.wav) | 48 kHz、双声道、PCM 16-bit，待实际听审 |
-| 李寄对白 | [12.38 秒 WAV](../export/assets/90227903269315a0fde6b66cdcb91698d0c7737c2e1f6dddf593e6fe7fc8f014.wav) | 同上，待实际听审 |
-| 周掌柜对白 | [17 秒 WAV](../export/assets/d242aeb9c0b0069f18a252f62a6a2aedc4625522033aa92c5a5ab03f8da1f76f.wav) | 同上，待实际听审 |
-| 赵执事对白 | [11.5 秒 WAV](../export/assets/842ecea98a028fa105e0f30a4f5a6085d412d3c40aecf24516f5a7a10b19ab92.wav) | 同上，待实际听审 |
-| 阿蘅舟行曲 | [17.0534 秒 WAV](../export/assets/9edcf64a1d34914d1d406a01aff9617f3759eb51ed699e1380fde6f96993c953.wav) | 实际引用上述阿蘅对白作为声线参考；原歌词未另写，录音是否准确仍需听辨 |
-
-OpenArt CLI 0.1.1 没有暴露所需质量及分辨率参数，两次实际改由 OpenArt 连接器提交明确项目 `8K6WcbrPLghSBJXBtWAE`、GPT Image 2.5、high、4K。第二次还指定 3072×4096，原件仍为 2016×2688。两次共用 500 Credit，最后回读 9,979；没有重复提交相同失败设置。保持 4K、接受该模型实际尺寸或改用其他模型的取舍仍待用户决定，不能将这两张候选标记达标。
-
-豆包音频使用 `seed-audio-1.0`。控制台核对时剩余免费量 45.06 分钟（2,703.6 秒），五次调用共计费 74.9334 秒。该观察值减去本任务调用得到 2,628.6666 秒的本任务保守余量，不代表账户其他会话未发生消费；下次付费制作前应重新核对。模型在当前会话不能直接听辨音频，字幕核查和播放器计时推进均不能代替实际听审。没有充值或新增购买。
-
-首轮基准审阅还缺其他必要人物、代表背景与道具等视觉材料，以及实际声线／演唱听辨。完整基准获得用户对确切版本的认可后才批量派生。24 fps、1080p 动态分镜及 48 kHz 声音是待审制作规格；227 秒是镜头设计估时，不是成片实测。
-
-## 隔离恢复与运行
-
-以下日常命令以故事主项目根目录为工作目录，正式业务库为 `.runtime/review.sqlite3`。通用系统本机目录为同级 `story-review-desk-python`；新克隆可按根 [README](../README.md#准备两仓并启动)恢复，使用 `config/instance.json` 固定的提交。不要新建任务账本、复制凭据或用旧导出覆盖已有运行库。
-
-日常审阅由 `snakeslayingrecord-app-1` 与 `snakeslayingrecord-nginx-1` 提供，仅监听 `127.0.0.1:3000`，采用 `unless-stopped` 重启策略。正式容器使用主项目根目录；凭据和可信 CA 沿用本机已有配置。查看与重启：
-
-```bash
-docker compose ps
-docker compose restart
-docker logs --tail 40 snakeslayingrecord-app-1
-```
-
-重建时沿用本机现有凭据与 CA 配置，系统构建路径用 `REVIEW_DESK_BUILD_CONTEXT=../story-review-desk-python`。不要为页面打不开而重新恢复或覆盖数据库。当前镜像为 `story-review-desk:task-20260929-0003-reference-popup`，40 个系统文件与固定提交一致。旧 `snakeslayingrecord-production-task-0003` 容器保持停止；切换时移除已停止的 3000 旧容器，保留镜像和全部挂载数据，避免 Compose 误启动多个正式库写入者。新任务只操作正式库。
-
-以下为空实例恢复，不启动或修改正式服务。Python、FFmpeg／ffprobe 与固定版本通用系统需先可用；最后一条为前台临时验证服务，核对后关闭：
+日常命令以真实故事根目录为工作目录；正式业务库始终为 `.runtime/review.sqlite3`。通用系统位于同级 `story-review-desk-python`，按根 [README](../README.md)核对 [config/instance.json](../config/instance.json)指定版本；新克隆先取得并核对该指定提交。当前任务工作区使用 `.runtime/review-desk-worktree`，下列 `production_system` 变量相应替换。不要复制密钥、建立第二份任务账本或把旧快照覆盖到活库。
 
 ```bash
 production_system=../story-review-desk-python
+PYTHONPATH="$production_system" python3 -m review_desk --instance . production-entity-review entity-li-ji
+PYTHONPATH="$production_system" python3 -m review_desk --instance . production-get --object asset-liji-image
+PYTHONPATH="$production_system" python3 -m review_desk --instance . production-ready shot-e01-001
+```
+
+读取历史采纳时，`production-entity-review` 追加 `--revision 准确采纳修订`；读取素材历史时 `production-get` 追加 `--revision 准确修订`。HTTP 对应 `/api/production/entity-review`、`/api/production` 与准确来源的 `/api/production/source`，读取不写内容。
+
+维护使用 `production-import FILE --validate-only` 预演，再用相同批次导入；携带 `expected_version` 和必要的 `expected_heads`，保留原稿与历史锚点。真实文件先用 `production-file FILE` 导入原件，再通过 `production-import FILE.json` 登记其准确 CALL、ASSET 与需求／状态关联；文件入库本身不创建采用。准确采用沿用系统仓库的 `docs/production.md` 契约。关系在本故事 [编制工具](../scripts/entity_relationships.py)中维护，先 `plan` 后 `apply`，正式写前重新准备。
+
+`production_forms.py`、`production_inventory.py`、`episode01_shots.py` 和 `scene_requirements.py` 保存本故事规则；不要重复运行初始批次覆盖已审内容。`register_production_candidates.py` 只用于真实新调用首次登记，不重复登记已有对象。新媒体请求先检查单个请求、最新额度与准确输入，再按当次授权执行；本任务不调用生成。
+
+恢复只接受新的隔离目录，先准备 Python、FFmpeg／ffprobe 和固定版本系统：
+
+```bash
 python3 scripts/production_review.py --system "$production_system" recover \
   --destination .runtime/production/fresh-review
 PYTHONPATH="$production_system" python3 -m review_desk \
   --instance .runtime/production/fresh-review serve --port 39105
 ```
 
-目标必须是当前检出目录 `.runtime/` 内尚不存在的目录。当前 `export/` 是完整交付快照，包含故事与制作记录、264 条评论及 293 条事件，清单校验 71 个文件；两条明确标为“隔离验证”的素材意见仅留在本机原库与备份，不计入交付数据。工具核对导出摘要和 14 个生产文件组成，恢复完整库后比较全部生产修订与当前版本，不重复导入已有生产数据。兼容旧的纯故事导出时，才通过共用业务操作重放生产修订；已有生产数据与快照不一致则报错。不会覆盖已有数据库，失败目标保留供检查，换新的空目录重试。
+完整 `export/` 校验全部资料、对象与修订、依赖、评论／事件、公开配置及原件；恢复后比较准确版本与文件校验，不重复导入已有生产数据。`production-package ID --output directory` 仅在必要输入满足时复制执行文件；缺项清单不作为可执行包。
 
-后续任务使用现有正式库，不重新恢复。查看实际缺项：
+每次收尾从最新正式库的一致性备份导出完整 `export/`，再执行 `production_review.py ... snapshot --instance ...` 保存与导出匹配的重放。测试意见和测试采纳不得进入正式导出。正式发布增量应用，不用启动快照替换数据库；恢复失败保留隔离目标供检查，不覆盖已有实例。
 
-```bash
-PYTHONPATH="$production_system" python3 -m review_desk \
-  --instance . production-ready shot-e01-001
-```
+## 正式运行和集成
 
-当前实际制作实例没有正式素材采用，第一集 250 项镜头用途与 67 项状态素材需求（含 40 项整体参考），合计 317 项必要输入均未就绪。`production-package ID --output directory` 只有在必要输入满足时才复制精确文件目录；页面下载的是同一清单。当前不把缺项清单冒充可执行生成包。
+3000 由 `snakeslayingrecord-app-1` 与 `snakeslayingrecord-nginx-1` 提供，仅监听本机，使用 `unless-stopped`。凭据和可信 CA 沿用现有配置；重建使用 `REVIEW_DESK_BUILD_CONTEXT=../story-review-desk-python`。查看／重启用 `docker compose ps`、`docker compose restart`，不要因页面故障重新恢复数据库。
 
-继续整理时，`scripts/episode01_shots.py` 与 `scripts/scene_requirements.py` 接受 `--system`、`--instance`，默认只比较并校验，显式 `--import-records` 才写入变化。`production/inventory.json` 是抽取的当前编写数据，历史恢复必须使用 `replay.json`，不能重复按初始版本导入或用编写数据覆盖真实审阅。`scripts/register_production_candidates.py` 用于本轮真实调用首次登记，不应对已有对象重复执行。
+共享正式库、公开导出、系统集成和 3000 部署必须串行。发布前核对最新正式数据与两仓基线，备份并增量应用，再回读三个页面和关键样例。旧容器与旧库保留追溯；共享同一正式库的旧容器不得同时启动，回滚代码前先导出最新数据，不用旧库覆盖新增评论或决定。
 
-新调用音频前，用 `python3 scripts/seed_audio.py production/requests/aheng-song-01.json` 这类具体单个请求文件检查参数；默认只输出预览，不提交。`--submit --quota <最新额度记录>` 才调用服务；使用已有 `VOLCENGINE_SPEECH_API_KEY` 环境变量。未知结果按最长 120 秒保留额度，不自动重复调用。新增请求应使用新 ID，保留旧回执及原件。
+双仓修改、说明与证据在本任务工作区提交，故事通过 `_prepare_integration` 生成候选并复验。展示最终候选及实际验证后，由用户明确确认完成并集成，再运行 `_complete`；准备命令不是通过验收。本任务不自动推送，完成后停止写文件与提交，保留工作区与分支。
 
-后续任务整理完成后，先从真实制作实例一致性备份导出完整 `export/`，再执行 `production_review.py ... snapshot --instance ...` 保存与该导出匹配的精确重放；不要从操作测试实例保存。正式发布前仍须读取最新正式数据与代码，合并候选后复验，不以本次启动快照覆盖用户新增评论。
 
-## 直接审阅与后续修订
-
-内容由 AI 通过共用业务接口新增修订，用户打开实体即可审阅。读取整份实体内容：
+正式增量检查使用故事工具，只读比较发布前后的一致性备份；批次限定为逐条审阅的实体关系，不允许其他对象、旧修订、评论、轮次或采用发生变化：
 
 ```bash
-PYTHONPATH="$production_system" python3 -m review_desk \
-  --instance . \
-  production-entity-review entity-li-ji
+python3 scripts/verify_production_review.py \
+  --before .runtime/review-ui/formal-publication/write-window-before.sqlite3 \
+  --after .runtime/review-ui/formal-publication/after-all-browser.sqlite3 \
+  --batch .runtime/review-ui/formal-publication/published-batch.json \
+  --report .runtime/review-ui/formal-publication/rechecked.json
 ```
 
-HTTP 对应 `/api/production/entity-review?entity_id=entity-li-ji`，查询不写数据库。读取过去采纳的准确内容时，CLI 追加 `--revision 采纳判断的修订`，HTTP 追加 `revision_id`。无需执行初始化或准备送审；原初始化脚本已退役，历史批次 `entity-review-submissions.json` 只供追溯，不重复导入。
-
-Codex 读取意见后，通过 `production-import` 新建相应 ENTITY、STATE 或 ASSET 修订，带上 `expected_version` 及必要的 `expected_heads`，不得覆盖原稿与历史锚点。用户点击“采纳”才记录基础信息、关系、全部完整状态及生成方案的范围，Codex 不代替用户操作；新评论不改变已有采纳。详细字段、并发和恢复契约见系统 `docs/production.md`。
-
-## 状态与生成方案维护
-
-`production_forms.py` 和 `production_inventory.py` 保存抽取规则；初始完整状态迁移已完成，不重复运行初始批次覆盖当前制作描述。今后按用户评论修改准确当前版本，生成方案维护使用 [本轮操作说明](generation-preparation.md#维护与恢复)中的预演、增量应用与重新快照流程。
-
-以下路径均相对于保留的任务工作区 `.codex-project/worktrees/task-20260929-0003`。本轮生产重放恢复在 `.runtime/production/review-simplification/replayed`：2,048 个生产对象、4,503 个修订、14 个文件组成和基础故事 264 条评论。完整库恢复在同目录 `task-restored`：2,171 个对象、4,635 个修订、266 条评论、295 条评论事件，8 张表一致、71 个清单文件通过；关系显示配置也由清单恢复。`technical` 中的测试意见和取消采纳不属于真实制作决定，不导入任务库。最新恢复证据见 [验证说明](verification.md)。
-
-正式发布前的最新正式库备份在 `.runtime/production/closeout/formal-before-publication.sqlite3`，发布后完整复导出在同目录 `formal-export/`；8 张表与交付恢复实例一致，全部旧行保持。发布时临时只读挂载候选 `config/`、`content/`、`export/` 供正式回读，受控集成前撤掉这些挂载，最终仅使用主项目根目录。
-
-数据迁移前任务快照在 `.runtime/production/review-simplification/before`。最新剧情依据弹窗修复没有数据迁移；更新前容器为 `snakeslayingrecord-production-task-0003-before-reference-popup`。它与更早的 `-before-simplification`、`-before-materials`、`-before-region-scale` 等旧容器保持停止；旧版与当前容器共享数据库路径，不能同时启动，也不能直接用快照覆盖用户后来新增的数据。需要回滚时先停服务并重新导出最新库，核对代码对新增关系契约的兼容性；数据回退须逐项设计增量，不把旧快照作为恢复活库的捷径。
-
-## 下一次制作交接
-
-先解决图像实际尺寸与要求的冲突，补齐首轮代表基准并完成实际听审。基准获认可后，按 33 镜需求生产和选用图像、音色与旋律参考，核对 Seedance 2.0 执行平台和现有额度。对白、演唱与环境动作声随画面生成有声视听预演，再剪辑为 16:9 动态分镜，保存逐镜实际输入与可编辑工程。第二轮审阅意见处理后，再在空实例打开工程、播放完整动态分镜并核对全部依赖。以上未完成制作工作由用户另行发布任务。本任务仅按当前成果结项；用户已明确授权双仓主干集成、推送及 3000 切换，后续任务从正式库与新主干继续。任务完成、技术验证、正式发布和作品接受分别记录。
+这些路径相对本任务工作区，仅用于复核本轮真实发布，不作为后续发布输入。下一次修改必须重新读取正式当前版本并准备增量。
