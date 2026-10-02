@@ -13,6 +13,8 @@
 | 直接关系、集场原文和修正范围 | [entity-relationships.md](entity-relationships.md)、[准确增量与全部证据](entity-relationships.json)、[33 条修正前后对应](relationship-review.md) |
 | 第一集镜头、空间和定稿声音 | [33 镜设计](episode01/shots.md)、[准确数据](episode01/shots.json)、[37 个对白／演唱单元](episode01/dialogue-cues.json) |
 | 实体描述与生成方案 | [generation-preparation.md](generation-preparation.md)：33 个实体的 77 个状态、122 项方案，区分计划与实际调用 |
+| 素材轮次、历史对应及 0001 验证 | [material-rounds.md](material-rounds.md)、[准确对应](material-round-mapping.json)与[编制工具](../scripts/material_round_audit.py) |
+| 后续各集计划需求 | [scene-requirements.md](scene-requirements.md)：其余 40 场 566 项图像需求，本轮不生产媒体 |
 | 现有候选的实体与状态归属 | [baseline-associations.md](baseline-associations.md)、[requests](requests/)、[receipts](receipts/)及[baseline-records](baseline-records/) |
 | 原生有声预演计划 | [声音契约](native-audio-workflow.md)、[33 镜计划](episode01/seedance/manifest.json)，尚未执行 |
 | 完整恢复与历史 | 最新正式 `export/` 与匹配的 [replay.json](replay.json)；历史制作准备验证见 [verification.md](verification.md) |
@@ -29,7 +31,7 @@
 
 制作设定和素材管理复用素材卡。未生成时显示真实需求对应的图像、声音或其他媒体占位；声音不借人物封面充当原件。已有准确结果时预览真实文件。模型、参数、提示词和参考输入分别来自方案与实际调用，不互相补写；参考在页内弹窗查看，可继续放大原图。关闭、Esc 和键盘返回保留版本、阅读上下文、焦点与未提交评论草稿。图像完整显示，真实音频可播放、选段、试听和评论。
 
-素材版本按修订轮次选择，内部记录修订号不代表生成次数。待产轮次只显示该需求占位，旧结果保留在历史轮次中；同一轮次可以有多次真实调用和候选。跨状态复用按实际关联需求的轮次显示，不从实体身份推断原件适用范围。
+每项具体需求从建立、方案到首次调用及结果同属版本一；产出后的明确修订意见启动下一轮，同轮多条意见、方案修改与生成不再加版。一般讨论、评论状态、元数据或关联补全不加版；内部准确修订不代表生成次数。待产轮次只显示该需求占位，旧结果保留在历史轮次；同轮可以有多次真实调用和候选。跨状态复用按实际关联需求轮次显示。阿蘅四条旧素材修订仍对应一个真实 CALL 与一个 WAV，归为版本一；旧评论保留原锚点，不补造当时未知的轮次范围。完整历史与证据见 [素材轮次说明](material-rounds.md)。
 
 三个制作页面没有批量导入、登记原件、编辑说明、添加需求及维护关联的专用表单；内容调整通过评论交给 Codex。准确素材采用、审阅结论、评论、版本、预览及缺项检查仍可用。全剧制作默认第一集 33 镜，按分集／场次筛选后检查缺项，每页最多 20 项；单镜详情展示该镜需求。
 
