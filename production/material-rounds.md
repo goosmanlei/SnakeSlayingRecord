@@ -57,7 +57,9 @@
 - Chrome：横／竖／方图的桌面框均为 548×300，430 像素窄屏均为 322×300，图幅保持原比例、页面无横向溢出；键盘放大关闭、圈选归一化、同块开放／关闭评论、历史轮次、零评论、新增／关闭／重开和三层参考弹窗返回及草稿保留已操作。音频波形、播放、静音与键盘选段已操作；切版后旧结果不重复成卡，回到历史版本恢复原图及未提交草稿、焦点。全剧制作的准确剧情依据与需求弹窗关闭后回到触发按钮。观察与截图见 [浏览器记录](evidence/material-browser-observations.json)；这不代表实际听审。
 - 共用创作回归：采编／结构圈选 17 项、剧本集场与评论 42 项、创作导航与评论 78 项通过。原始结果保存于 `evidence/material-*-browser.json`。
 
-正式 3000 已应用系统 `4a8d18b`，42 个文件与提交一致；原八张业务表逐行不变，十二张表恢复及 71 文件核验通过。阿蘅单层素材版本、舟行曲原始声线输入及共享轮次、评论空列表、图片放大和全剧剧情依据已在 Chrome 回读，正式库没有测试写入。见 [迁移证据](evidence/material-formal-publication.json)、[运行版本](evidence/material-formal-system.json)和 [正式浏览器记录](evidence/material-formal-browser.json)。
+正式 3000 已应用系统 `7331690`，42 个文件与提交一致；原八张业务表逐行不变，十二张表恢复及 71 文件核验通过。阿蘅单层素材版本、舟行曲原始声线输入及共享轮次、评论空列表、图片放大和全剧剧情依据已在 Chrome 回读，正式库没有测试写入。见 [迁移证据](evidence/material-formal-publication.json)、[运行版本](evidence/material-formal-system.json)和 [正式浏览器记录](evidence/material-formal-browser.json)。
+
+基础信息、关系、状态和素材区的评论图标已统一为完整 16×16 像素，桌面及 430 像素窄屏回读通过；正式阿禾的块评论点击入口正常，采编、结构与剧本的共用图标也已回归。见 [图标修复证据](evidence/material-cue-browser.json)与 [正式截图](evidence/material-cue-fixed-detail.jpg)。此次样式更新没有修改十二张数据库表。
 
 当前正式数据库仍在主项目，候选 config/content/export 只读挂载自任务工作区。用户确认最终候选后，先核对双仓目标，撤除候选挂载，再按受控流程集成；不自动推送。主干和任务完成状态见 `STATE.md` 及主项目账本，媒体内容接受、4K 基准及动态分镜仍由后续制作任务完成。
 
