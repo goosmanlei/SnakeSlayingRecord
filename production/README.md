@@ -18,10 +18,10 @@
 | 现有候选属于哪个实体和状态 | [关联清单](baseline-associations.md)：6 个条目、5 个实体、6 个状态；含具体声音范围与依据 |
 | 实际提示词、输入与调用结果 | [requests](requests/)、[receipts](receipts/)和[登记批次](baseline-records/)；均区分计划与实际制作 |
 | 完整生产修订历史及文件清单 | [replay.json](replay.json)，包含 2,048 个生产对象、4,503 个修订、14 个实际文件组成；保留 86 个历史局部状态、此前命名复核及 133 份旧送审记录（仅历史追溯） |
-| 系统设计、关系图及 API／CLI | 本任务独立通用系统工作区的 [docs/production.md](../.runtime/review-desk-worktree/docs/production.md)，代码版本以本故事 [config/instance.json](../config/instance.json)为准；本地集成目标为系统 `main`，实际运行入口为 39103 |
+| 系统设计、关系图及 API／CLI | 通用系统 [docs/production.md](https://github.com/goosmanlei/story-review-desk/blob/4c0cc62bcf4e5477a1fd2ff22b29ecce3ba44ac1/docs/production.md)，代码版本以本故事 [config/instance.json](../config/instance.json)为准；已集成并推送系统 `main`，实际运行入口为 3000 |
 | 已执行验证与具体限制 | [verification.md](verification.md) |
 
-本机制作审阅入口为 [制作设定](http://127.0.0.1:39103/?workspace=settings.workspace)、[素材管理](http://127.0.0.1:39103/?workspace=materials.workspace)、[全剧制作](http://127.0.0.1:39103/?workspace=production.workspace)。39103 由独立 Docker 后台容器运行，不依赖代理会话；需要本机 Docker 保持运行。正式 3000 服务和运行数据库仍保持原有故事实例；本仓库 `export/` 已整理为包含制作数据与评论的完整恢复快照。39104 是操作测试曾使用的端口，当前未启动；其恢复实例中的技术审阅和采用不属于真实制作决定，不应作为交付数据导出。
+本机统一审阅入口为 [制作设定](http://127.0.0.1:3000/?workspace=settings.workspace)、[素材管理](http://127.0.0.1:3000/?workspace=materials.workspace)、[全剧制作](http://127.0.0.1:3000/?workspace=production.workspace)。3000 由 Docker 与 Nginx 后台运行，不依赖代理会话。用户最终明确授权双仓集成、推送和正式切换；正式库已增量加入制作记录，原有剧本、配置和 264 条评论完整保留。`export/` 是包含制作数据、评论和原件的完整恢复快照。旧 39103 预览已停止，旧实例与技术测试库仅供追溯，不能继续作为制作和导出来源。
 
 制作设定按实体浏览，筛选区平铺全部 133 个实体及角色 51、场景 16、道具 62、歌曲 4。列表每个实体只出现一次，并标出完整状态数；例如“阿蘅米袋 · 5 个完整状态”。打开实体即显示上方的身份、别名、基础说明和其他基础信息，下方平铺完整状态；默认选择按剧情来源排序的首个完整状态并标为“基础状态”，切换时上方信息保持显示。搜索别名、状态或设定描述也能找到所属实体。分类数量保留搜索条件后计算，不重复累计历史版本，零数量项仍可见；“清除筛选”同时清除搜索与分类。状态的旧链接、准确版本与评论保留，镜头引用仍打开当时指定的状态版本。
 
@@ -62,31 +62,22 @@ OpenArt CLI 0.1.1 没有暴露所需质量及分辨率参数，两次实际改�
 
 ## 隔离恢复与运行
 
-以下维护命令以保留的任务工作区为工作目录。从主项目进入时先执行 `cd .codex-project/worktrees/task-20260929-0003`。其他新检出需要将 `production_system` 改为本机通用系统仓库路径，并使用 `config/instance.json` 固定的提交；不要新建任务账本或复制凭据。
+以下日常命令以故事主项目根目录为工作目录，正式业务库为 `.runtime/review.sqlite3`。通用系统本机目录为同级 `story-review-desk-python`；新克隆可按根 [README](../README.md#准备两仓并启动)恢复，使用 `config/instance.json` 固定的提交。不要新建任务账本、复制凭据或用旧导出覆盖已有运行库。
 
-日常审阅使用现有后台容器 `snakeslayingrecord-production-task-0003`，挂载本任务 `.runtime/production/review-instance` 中的现有数据，仅监听 `127.0.0.1:39103`。容器采用 `unless-stopped` 重启策略；退出代理会话不会停止它，手工停止后可用以下命令恢复。不要为页面打不开重新恢复或导入数据库。
+日常审阅由 `snakeslayingrecord-app-1` 与 `snakeslayingrecord-nginx-1` 提供，仅监听 `127.0.0.1:3000`，采用 `unless-stopped` 重启策略。正式容器使用主项目根目录；凭据和可信 CA 沿用本机已有配置。查看与重启：
 
 ```bash
-docker start snakeslayingrecord-production-task-0003
-docker logs --tail 40 snakeslayingrecord-production-task-0003
+docker compose ps
+docker compose restart
+docker logs --tail 40 snakeslayingrecord-app-1
 ```
 
-只有该容器尚不存在时，才从故事任务工作区根目录执行以下创建命令。先确认实例数据库已经存在，并核对本地镜像版本。当前镜像的 40 个系统文件与 `4c0cc62bcf4e5477a1fd2ff22b29ecce3ba44ac1` 一致，镜像摘要及本次更新验证见 [relationship-source-popup.json](evidence/relationship-source-popup.json)。服务设有两秒套接字空闲超时，避免浏览器空预连接无限阻塞页面；业务操作仍在同一数据库线程执行。这一步只启动现有实例，不初始化或覆盖数据。
+重建时沿用本机现有凭据与 CA 配置，系统构建路径用 `REVIEW_DESK_BUILD_CONTEXT=../story-review-desk-python`。不要为页面打不开而重新恢复或覆盖数据库。当前镜像为 `story-review-desk:task-20260929-0003-reference-popup`，40 个系统文件与固定提交一致。旧 `snakeslayingrecord-production-task-0003` 容器保持停止；切换时移除已停止的 3000 旧容器，保留镜像和全部挂载数据，避免 Compose 误启动多个正式库写入者。新任务只操作正式库。
+
+以下为空实例恢复，不启动或修改正式服务。Python、FFmpeg／ffprobe 与固定版本通用系统需先可用；最后一条为前台临时验证服务，核对后关闭：
 
 ```bash
-test -f .runtime/production/review-instance/.runtime/review.sqlite3 && \
-docker run -d --name snakeslayingrecord-production-task-0003 \
- --restart unless-stopped --label codex.task=task-20260929-0003 \
-  --label codex.system-revision=4c0cc62bcf4e5477a1fd2ff22b29ecce3ba44ac1 \
-  -p 127.0.0.1:39103:8765 \
-  --mount "type=bind,source=$PWD/.runtime/production/review-instance,target=/instance" \
-  story-review-desk:task-20260929-0003-reference-popup
-```
-
-以下空实例恢复命令也从故事任务工作区根目录执行。Python、FFmpeg／ffprobe 和对应版本通用系统需先可用；不复制 `.env` 或凭据。当前系统工作区仅是本机路径，重新检出时可用通用仓库中 `config/instance.json` 固定的提交替代它。最后的 Python 命令是前台临时检查服务，不能作为需要跨会话保留的交付入口。
-
-```bash
-production_system=.runtime/review-desk-worktree
+production_system=../story-review-desk-python
 python3 scripts/production_review.py --system "$production_system" recover \
   --destination .runtime/production/fresh-review
 PYTHONPATH="$production_system" python3 -m review_desk \
@@ -95,11 +86,11 @@ PYTHONPATH="$production_system" python3 -m review_desk \
 
 目标必须是当前检出目录 `.runtime/` 内尚不存在的目录。当前 `export/` 是完整交付快照，包含故事与制作记录、264 条评论及 293 条事件，清单校验 71 个文件；两条明确标为“隔离验证”的素材意见仅留在本机原库与备份，不计入交付数据。工具核对导出摘要和 14 个生产文件组成，恢复完整库后比较全部生产修订与当前版本，不重复导入已有生产数据。兼容旧的纯故事导出时，才通过共用业务操作重放生产修订；已有生产数据与快照不一致则报错。不会覆盖已有数据库，失败目标保留供检查，换新的空目录重试。
 
-仅使用现有 39103 实例继续工作时不要重新恢复。查看实际缺项：
+后续任务使用现有正式库，不重新恢复。查看实际缺项：
 
 ```bash
 PYTHONPATH="$production_system" python3 -m review_desk \
-  --instance .runtime/production/review-instance production-ready shot-e01-001
+  --instance . production-ready shot-e01-001
 ```
 
 当前实际制作实例没有正式素材采用，第一集 250 项镜头用途与 67 项状态素材需求（含 40 项整体参考），合计 317 项必要输入均未就绪。`production-package ID --output directory` 只有在必要输入满足时才复制精确文件目录；页面下载的是同一清单。当前不把缺项清单冒充可执行生成包。
@@ -116,7 +107,7 @@ PYTHONPATH="$production_system" python3 -m review_desk \
 
 ```bash
 PYTHONPATH="$production_system" python3 -m review_desk \
-  --instance .runtime/production/review-instance \
+  --instance . \
   production-entity-review entity-li-ji
 ```
 
@@ -128,10 +119,12 @@ Codex 读取意见后，通过 `production-import` 新建相应 ENTITY、STATE �
 
 `production_forms.py` 和 `production_inventory.py` 保存抽取规则；初始完整状态迁移已完成，不重复运行初始批次覆盖当前制作描述。今后按用户评论修改准确当前版本，生成方案维护使用 [本轮操作说明](generation-preparation.md#维护与恢复)中的预演、增量应用与重新快照流程。
 
-本轮生产重放恢复在 `.runtime/production/review-simplification/replayed`：2,048 个生产对象、4,503 个修订、14 个文件组成和基础故事 264 条评论。完整库恢复在同目录 `task-restored`：2,171 个对象、4,635 个修订、266 条评论、295 条评论事件，8 张表一致、71 个清单文件通过；关系显示配置也由清单恢复。`technical` 中的测试意见和取消采纳不属于真实制作决定，不导入任务库。最新恢复证据见 [验证说明](verification.md)。
+以下路径均相对于保留的任务工作区 `.codex-project/worktrees/task-20260929-0003`。本轮生产重放恢复在 `.runtime/production/review-simplification/replayed`：2,048 个生产对象、4,503 个修订、14 个文件组成和基础故事 264 条评论。完整库恢复在同目录 `task-restored`：2,171 个对象、4,635 个修订、266 条评论、295 条评论事件，8 张表一致、71 个清单文件通过；关系显示配置也由清单恢复。`technical` 中的测试意见和取消采纳不属于真实制作决定，不导入任务库。最新恢复证据见 [验证说明](verification.md)。
 
-数据迁移前任务快照在同目录 `before`。最新剧情依据弹窗修复没有数据迁移；更新前容器为 `snakeslayingrecord-production-task-0003-before-reference-popup`。它与更早的 `-before-simplification`、`-before-materials`、`-before-region-scale` 等旧容器保持停止；旧版与当前容器共享数据库路径，不能同时启动，也不能直接用快照覆盖用户后来新增的数据。需要回滚时先停服务并重新导出最新库，核对代码对新增关系契约的兼容性；数据回退须逐项设计增量，不把旧快照作为恢复活库的捷径。
+正式发布前的最新正式库备份在 `.runtime/production/closeout/formal-before-publication.sqlite3`，发布后完整复导出在同目录 `formal-export/`；8 张表与交付恢复实例一致，全部旧行保持。发布时临时只读挂载候选 `config/`、`content/`、`export/` 供正式回读，受控集成前撤掉这些挂载，最终仅使用主项目根目录。
+
+数据迁移前任务快照在 `.runtime/production/review-simplification/before`。最新剧情依据弹窗修复没有数据迁移；更新前容器为 `snakeslayingrecord-production-task-0003-before-reference-popup`。它与更早的 `-before-simplification`、`-before-materials`、`-before-region-scale` 等旧容器保持停止；旧版与当前容器共享数据库路径，不能同时启动，也不能直接用快照覆盖用户后来新增的数据。需要回滚时先停服务并重新导出最新库，核对代码对新增关系契约的兼容性；数据回退须逐项设计增量，不把旧快照作为恢复活库的捷径。
 
 ## 下一次制作交接
 
-先解决图像实际尺寸与要求的冲突，补齐首轮代表基准并完成实际听审。基准获认可后，按 33 镜需求生产和选用图像、音色与旋律参考，核对 Seedance 2.0 执行平台和现有额度。对白、演唱与环境动作声随画面生成有声视听预演，再剪辑为 16:9 动态分镜，保存逐镜实际输入与可编辑工程。第二轮审阅意见处理后，再在空实例打开工程、播放完整动态分镜并核对全部依赖。以上未完成制作工作由用户另行发布任务。本任务仅按当前成果结项；任务完成、双仓本地集成和作品接受分别记录，不自动推送或切换 3000 服务。
+先解决图像实际尺寸与要求的冲突，补齐首轮代表基准并完成实际听审。基准获认可后，按 33 镜需求生产和选用图像、音色与旋律参考，核对 Seedance 2.0 执行平台和现有额度。对白、演唱与环境动作声随画面生成有声视听预演，再剪辑为 16:9 动态分镜，保存逐镜实际输入与可编辑工程。第二轮审阅意见处理后，再在空实例打开工程、播放完整动态分镜并核对全部依赖。以上未完成制作工作由用户另行发布任务。本任务仅按当前成果结项；用户已明确授权双仓主干集成、推送及 3000 切换，后续任务从正式库与新主干继续。任务完成、技术验证、正式发布和作品接受分别记录。
