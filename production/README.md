@@ -69,16 +69,16 @@ docker start snakeslayingrecord-production-task-0003
 docker logs --tail 40 snakeslayingrecord-production-task-0003
 ```
 
-只有该容器尚不存在时，才从故事任务工作区根目录执行以下创建命令。先确认实例数据库已经存在，并核对本地镜像版本。当前镜像的 40 个系统文件与 `663c905bcc51088682d7a7edd32f91126fdf0e55` 一致，镜像摘要及本次更新验证见 [review-simplification-runtime.json](evidence/review-simplification-runtime.json)。服务设有两秒套接字空闲超时，避免浏览器空预连接无限阻塞页面；业务操作仍在同一数据库线程执行。这一步只启动现有实例，不初始化或覆盖数据。
+只有该容器尚不存在时，才从故事任务工作区根目录执行以下创建命令。先确认实例数据库已经存在，并核对本地镜像版本。当前镜像的 40 个系统文件与 `4c0cc62bcf4e5477a1fd2ff22b29ecce3ba44ac1` 一致，镜像摘要及本次更新验证见 [relationship-source-popup.json](evidence/relationship-source-popup.json)。服务设有两秒套接字空闲超时，避免浏览器空预连接无限阻塞页面；业务操作仍在同一数据库线程执行。这一步只启动现有实例，不初始化或覆盖数据。
 
 ```bash
 test -f .runtime/production/review-instance/.runtime/review.sqlite3 && \
 docker run -d --name snakeslayingrecord-production-task-0003 \
  --restart unless-stopped --label codex.task=task-20260929-0003 \
-  --label codex.system-revision=663c905bcc51088682d7a7edd32f91126fdf0e55 \
+  --label codex.system-revision=4c0cc62bcf4e5477a1fd2ff22b29ecce3ba44ac1 \
   -p 127.0.0.1:39103:8765 \
   --mount "type=bind,source=$PWD/.runtime/production/review-instance,target=/instance" \
-  story-review-desk:task-20260929-0003-native-audio
+  story-review-desk:task-20260929-0003-reference-popup
 ```
 
 以下空实例恢复命令也从故事任务工作区根目录执行。Python、FFmpeg／ffprobe 和对应版本通用系统需先可用；不复制 `.env` 或凭据。当前系统工作区仅是本机路径，重新检出时可用通用仓库中 `config/instance.json` 固定的提交替代它。最后的 Python 命令是前台临时检查服务，不能作为需要跨会话保留的交付入口。
@@ -128,7 +128,7 @@ Codex 读取意见后，通过 `production-import` 新建相应 ENTITY、STATE �
 
 本轮生产重放恢复在 `.runtime/production/review-simplification/replayed`：2,048 个生产对象、4,503 个修订、14 个文件组成和基础故事 264 条评论。完整库恢复在同目录 `task-restored`：2,171 个对象、4,635 个修订、266 条评论、295 条评论事件，8 张表一致、71 个清单文件通过；关系显示配置也由清单恢复。`technical` 中的测试意见和取消采纳不属于真实制作决定，不导入任务库。最新恢复证据见 [验证说明](verification.md)。
 
-更新前任务快照在同目录 `before`。旧容器 `snakeslayingrecord-production-task-0003-before-simplification`、`snakeslayingrecord-production-task-0003-before-materials` 和 `snakeslayingrecord-production-task-0003-before-region-scale` 保持停止；旧版与当前容器共享数据库路径，不能同时启动，也不能直接用快照覆盖用户后来新增的数据。需要回滚时先停服务并重新导出最新库，核对代码对新增关系契约的兼容性；数据回退须逐项设计增量，不把旧快照作为恢复活库的捷径。
+数据迁移前任务快照在同目录 `before`。最新剧情依据弹窗修复没有数据迁移；更新前容器为 `snakeslayingrecord-production-task-0003-before-reference-popup`。它与更早的 `-before-simplification`、`-before-materials`、`-before-region-scale` 等旧容器保持停止；旧版与当前容器共享数据库路径，不能同时启动，也不能直接用快照覆盖用户后来新增的数据。需要回滚时先停服务并重新导出最新库，核对代码对新增关系契约的兼容性；数据回退须逐项设计增量，不把旧快照作为恢复活库的捷径。
 
 ## 下一次制作交接
 

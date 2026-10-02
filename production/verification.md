@@ -1,6 +1,16 @@
 # 制作准备阶段验证
 
-当前任务预览运行系统 `663c905bcc51088682d7a7edd32f91126fdf0e55`，入口为 39103。本轮完成审阅页面精简、关系主次、历史素材定位、参考弹窗及原生有声预演的数据准备。没有新增生成、代替用户采纳或交付预演；整体任务仍待首轮基准、完整素材与动态分镜。
+当前任务预览运行系统 `4c0cc62bcf4e5477a1fd2ff22b29ecce3ba44ac1`，入口为 39103。最新修复关系“剧情依据”误用制作对象详情接口的问题；此前审阅页面精简、关系主次、历史素材定位、参考弹窗及原生有声预演的数据准备继续保留。没有新增生成、代替用户采纳或交付预演；整体任务仍待首轮基准、完整素材与动态分镜。
+
+## 剧情依据弹窗修复
+
+阿蘅与母亲的关系引用版本四第五集 s010 的五个正文块。旧弹窗把剧本当作制作对象读取，返回 `not a production object`；来源本身存在。现在使用已有来源接口，保留准确修订、场次和正文范围，显示“剧情依据”、分集与场名；素材仍使用准确媒体版本预览。
+
+- 自动验证：33 项前端、16 项制作业务及 1 项 HTTP 测试通过，包含历史修订和来源定位；157 条关系涉及的 121 份不同来源全部通过正文范围核对。
+- 实际 Chrome：隔离 39138 打开母女关系的第五集 05-02 场原文、李寄关系的第十五集限定正文，以及准确版本的阿蘅声音参考；关闭后实体和 URL 保持。更新 39103 后再次点击母女关系，标题与五个正文块正确显示。
+- 更新前后任务数据库 8 张表逐项一致，没有数据迁移；40 个运行文件与提交一致。临时 39138 服务已停止，隔离数据保留。本次未重跑下列完整回归及恢复流程，其证据对应此前系统 `663c905`。
+
+证据见 [弹窗截图](evidence/relationship-source-popup.png)和[核验记录](evidence/relationship-source-popup.json)。日志为 `.runtime/production/reference-popup-node-tests.log`、`.runtime/production/reference-popup/production-tests.log`、`api-tests.log`；来源核对为同目录 `source-audit.json`。自动测试在系统工作区执行 `node --test tests/*.test.cjs`、`PYTHONPATH=. python3 -m unittest discover -s tests -p test_production.py -v` 和同方式的 `test_production_api.py`。
 
 ## 页面实际操作
 
@@ -53,7 +63,7 @@ NO_PROXY=127.0.0.1,localhost no_proxy=127.0.0.1,localhost \
 
 目录均在 `.runtime/production/`。完整数据证据见 [review-simplification-data.json](evidence/review-simplification-data.json)。生产重放不含任务后来新增的全部意见，不能代替完整库备份。旧备份和 Git 历史保留供追溯，不是当前恢复入口。
 
-39103 Docker 镜像为 `story-review-desk:task-20260929-0003-native-audio`，40 个系统文件与固定提交逐一相符，重启策略 `unless-stopped`；摘要见 [运行核验](evidence/review-simplification-runtime.json)。更新前备份在 `review-simplification/before`。旧容器均保持停止，禁止同时访问共享实例目录，也不得用启动前快照覆盖用户新意见。
+39103 Docker 镜像为 `story-review-desk:task-20260929-0003-reference-popup`，40 个系统文件与固定提交逐一相符，重启策略 `unless-stopped`；摘要见 [运行核验](evidence/relationship-source-popup.json)。数据迁移前备份在 `review-simplification/before`；最新弹窗修复未迁移数据，更新前后表摘要在 `reference-popup/before-database.json` 和上述核验记录。旧容器均保持停止，禁止同时访问共享实例目录，也不得用启动前快照覆盖用户新意见。
 
 ## 尚未验证或交付
 
