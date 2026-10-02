@@ -1,0 +1,101 @@
+"""Speaking identities and audition directions, not a per-line dubbing plan."""
+
+# Each entry is a production casting choice. Scene-specific alias resolution is
+# performed separately; it must never merge the three different clerks.
+VOICES = {
+    'a-heng': ('阿蘅', '少女自然中高女声，清亮而不尖细，声带轻、气息稳；语调灵活，亲近时轻笑意，遇成年人压低音量，不撒娇、不播报'),
+    'li-ji': ('李寄', '少女自然中音女声，比阿蘅结实、胸声稍多，字头清楚、尾音收得快；急切仍听清原句，不用英雄宣言腔'),
+    'zhou': ('周掌柜', '中年中低男声，温厚、略有忙碌气息，辅音清楚，句尾放松；谈唱工平实，提醒时略加重，不刻意慈祥'),
+    'zhao': ('赵执事', '中年中低男声，音量不高、吐字平稳，句间停顿有控制感；说差事的日常语气，不压成阴森气声或恶人笑'),
+    'woodcutter': ('挑柴老汉', '偏高的老年男声，轻微砂质和鼻腔共鸣，气息尚足；发现省段后笑着打趣，不唱、不咳嗽，不用戏曲念白'),
+    'li-xiao': ('李绡', '年轻成年女声，中音偏实，句头利落，发声位置稳定；安排活计干脆，照顾妹妹时语气软下来，身份不变'),
+    'heng-mother': ('阿蘅母亲', '中年偏低女声，轻薄气弱但每字清楚，短句之间需要喘口气；病弱克制，不长串咳嗽，不哭喊；后期轻声仍复用同人'),
+    'sun-liu': ('孙六', '中年宽厚男中音，胸腔共鸣较多、语调有节拍感，轻松时带一点笑；不用夸张豪爽或吼叫，保留普通劳作者口语'),
+    'ticket-woman': ('领粮妇人', '年轻至中年自然女中音，稍靠前的清楚字头，语速略快；询问时真实着急但不哭腔，抱孩子的忙碌不改变身份'),
+    'priest': ('巫祝', '中年男中低音，共鸣厚、咬字缓而端正，公开讲话有投射力；对峙时压紧尾音，不用鬼神混响、咒语或戏腔'),
+    'boatman': ('船家', '中年偏沙的男中音，气息干，拒载时为难、压低音量；制作选为男性声线，不把未明确性别写成剧本事实'),
+    'old-woman': ('庙仓老妇人', '年长女声，中音偏低、略干涩，句子轻而细，担心时收住音量；不用抖得听不清的极老声'),
+    'clerk-notice': ('照壁前书吏', '中年男中音，音色圆、字头清楚，说明条件简洁平直，临关衙不耐烦只在停顿体现；与梁书吏不同人'),
+    'li-dan': ('李诞', '中年低男声，胸声厚而不轰，略有劳作后的气息粗糙感；问女儿时压着急，拒绝时短而实，不用武将腔'),
+    'li-mother': ('李寄母亲', '中年自然女中低音，声音有支撑、尾音稳，担忧时句间紧一些；关切有分量，不依靠尖叫或长哭'),
+    'temple-guards-guard-a': ('守院庙工中发话者', '成年男中音略扁，短句有硬边，按差事拦人；不带瘦高庙工的高窄鼻音，不补造另一守院者对白'),
+    'neighbor-woman': ('邻妇', '中年女中音稍明亮，字头软而清楚，帮抬病人时提醒平实、轻而稳；与李寄母亲的低厚声区别'),
+    'clerk-liang': ('梁书吏', '青年至中年男声，中高一点、共鸣较薄，惯于平读公文；被质问时停顿不稳但不口吃，不与其他书吏共用母版'),
+    'magistrate': ('县丞', '中年男中低音，音色圆厚，慢于书吏，解释和追问时有权威感；受责时防御不变粗吼，避免戏剧播音腔'),
+    'officer-cheng': ('程差役', '中老年男中低音，略沙但气息扎实，短指令清楚、有执行感；不装凶、不加回声，重要停止词落稳'),
+    'temple-tall': ('瘦高庙工', '成年偏高男中音，鼻腔稍窄、声音轻，解释门闸时一条条说清；紧张通过短停顿，不给所有庙工同一声线'),
+    'helpers-four-dock-a': ('四名压杠乡亲中的报名码头工', '壮年男中音，音色结实而稍粗，承认退缩时迟疑、决定帮忙时收得实；其余三名成员不因此生成独立声音'),
+    'officer-second': ('另一名差役', '较年轻成年男中音，声线偏明，口齿清楚，报告看守事项直接；与程差役的白鬓老声区别'),
+    'tao': ('陶伯', '老年男中低音，窄而干、带轻微砂质，话慢但有确定力度，提到女儿时停一拍；不靠持续哭腔，不沿用挑柴老汉的轻快高音'),
+    'elders-two-speaker': ('两位乡老中求援与报信者', '年长男中音，声音薄而亮，平时慢，求援时提起气息使字传远；此母版只给明确发话位置，另一乡老不补独立声线'),
+    'temple-crowd-refuser': ('拒绝帮忙的抬粮汉子', '壮年低男声，粗重、呼吸急，拒绝时畏惧而非凶恶，末句短促；同群其他成员不自动复用这个身份'),
+    'xiaoman-mother': ('小满母亲', '中年略低女声，干哑边缘但仍清楚，申诉时气息绷紧，末句可哽住半拍；不长哭抢走原句，不模仿真人'),
+    'new-steward': ('新管事', '中年温平男中音，清晰、耐心，逐项核账语速稍慢，数字各自分开；不沿用赵执事压迫式停顿'),
+    'singer-teacher': ('邻村歌娘', '成熟女中音，温润、有稳定发声支撑，口语咬字明晰，教词时轻而准；本录音只说话、不演唱，歌曲另行处理'),
+    'clerk-proclamation': ('宣读告示书吏', '较年轻男中音，明亮、平正，公开读文时气息远送、断句准确；干净近录不加扩声或空间混响，与另两名书吏不同'),
+    'rice-listeners-speaker': ('米铺听客中说下回补上者', '瘦中年男子的自然中音，轻松带笑，随口回应熟悉歌者；一句口语不扩为群体齐喊，不带其他笑声'),
+    'street-passers-greeter': ('河街路人中招呼赵执事者', '年轻成年男子中高音，短促自然、熟人招呼口吻，不停步攀谈；一句呼唤不复制为所有路人的声线'),
+    'troupe-workers-caller': ('屋后提醒台架歪的伙计', '青年男中音偏亮，能穿过屋墙的日常工作呼唤，字不拖长；干净近录，不加入倒架和敲击声'),
+    'temple-crowd-whisperer': ('对家人说总算不是咱家者', '制作选为中年女中音，贴近的低声说话，庆幸夹着不安；仍有有声发音，不作难辨气音，性别是选角而非原文事实'),
+    'temple-workers-year-witness': ('封册时说明经手年份的庙工', '中年男中音稍低平，说明年份时谨慎、短停顿，字清楚；与送单者、瘦高者保持独立声音，未明身份不合并'),
+    'delivery-worker': ('送单庙工', '中年男声偏低、略闷，指认日期时短句停顿，谨慎但可听清；声音不同于瘦高庙工'),
+    'order-writer': ('备粮单经手人', '中年男中音稍细、偏干，认下笔迹时迟缓，字尾收紧；与送单庙工独立'),
+    'temple-crowd-urging': ('门旁催同伴离开者', '制作选为成年女中低音，低声而急，亲近距离催促；不尖叫、不制造额外逃跑对白，性别属制作选择'),
+    'temple-crowd-enquirer': ('前院询问消息者', '制作选为中年男中高音，远处询问要传得出去，但仍是自然口语；与拒援汉子分开，不把未明身份认作同一人'),
+    'offscreen-caller': ('窗外唤李寄归家的人', '制作选为中年女性自然中音，轻声招呼熟悉孩子回家，音色温平；姓名和亲属身份仍未明，不把声音认作李寄母亲'),
+}
+
+GROUP_ENTITIES = {
+    'temple-guards-guard-a':'temple-guards','helpers-four-dock-a':'helpers-four',
+    'elders-two-speaker':'elders-two','temple-crowd-refuser':'temple-crowd',
+    'rice-listeners-speaker':'rice-listeners','street-passers-greeter':'street-passers',
+    'troupe-workers-caller':'troupe-workers','temple-crowd-whisperer':'temple-crowd',
+    'temple-workers-year-witness':'temple-workers','temple-crowd-urging':'temple-crowd',
+    'temple-crowd-enquirer':'temple-crowd',
+}
+
+LABELS = {'老汉':'woodcutter','阿蘅':'a-heng','李寄':'li-ji','周掌柜':'zhou','赵执事':'zhao',
+    '李绡':'li-xiao','阿蘅母亲':'heng-mother','孙六':'sun-liu','妇人':'ticket-woman','巫祝':'priest',
+    '船家':'boatman','老妇人':'old-woman','李诞':'li-dan','母亲':'li-mother','李寄母亲':'li-mother',
+    '庙工':'temple-guards-guard-a','邻妇':'neighbor-woman','梁书吏':'clerk-liang','县丞':'magistrate',
+    '程差役':'officer-cheng','瘦高庙工':'temple-tall','码头工':'helpers-four-dock-a','差役':'officer-second',
+    '陶伯':'tao','乡老':'elders-two-speaker','汉子':'temple-crowd-refuser','小满母亲':'xiaoman-mother',
+    '新管事':'new-steward','歌娘':'singer-teacher'}
+
+# (scene, block, exact spoken span). A missing span means the screenplay states
+# speech occurred without prescribing its wording; audition borrowing is explicit.
+EMBEDDED = {
+    'rice-listeners-speaker':(1,9,'下回补上'),
+    'street-passers-greeter':(2,12,'赵执事'),
+    'troupe-workers-caller':(3,13,None),
+    'temple-crowd-whisperer':(9,24,'总算不是咱家。'),
+    'temple-workers-year-witness':(28,40,None),
+    'delivery-worker':(36,12,None),
+    'order-writer':(36,12,None),
+    'temple-crowd-urging':(30,29,None),
+    'temple-crowd-enquirer':(33,25,None),
+    'offscreen-caller':(40,18,None),
+}
+
+# These samples test a timbre only. The borrowed speaker/source remains visible;
+# no borrowed words are attached to the unidentified role as screenplay dialogue.
+BORROWED = {
+    'troupe-workers-caller':('li-xiao',3,3),
+    'temple-workers-year-witness':('clerk-liang',17,23),
+    'delivery-worker':('clerk-liang',17,23),
+    'order-writer':('clerk-liang',17,23),
+    'temple-crowd-urging':('clerk-notice',13,9),
+    'temple-crowd-enquirer':('li-mother',14,19),
+    'offscreen-caller':('li-mother',26,23),
+}
+
+SUPPLEMENTS = {
+    'a-heng-hoarse': {'identity':'a-heng','states':['form-a-heng-hoarse','form-a-heng-wet-shoes'],
+        'direction':'保持阿蘅母版年龄、音高范围、咬字和本人身份，只加连唱两日后的轻微沙哑、气息不够和较短句尾；不是发热重病，不低八度，不改成老年声。',
+        'sample_scene':8,'sample_blocks':[10,16],
+        'reason':'定稿 s007-b004 明写唱哑嗓子；s008 庙会对白沿用残余疲劳。'},
+    'a-heng-tears': {'identity':'a-heng','states':['form-a-heng-tears'],
+        'direction':'保持阿蘅母版的音高、轻亮共鸣与咬字；确认安全后极轻问话，末尾一次短促吸气和克制哽咽，哭声不能盖住原句。不创建第二个说话身份。',
+        'sample_scene':33,'sample_blocks':[21],
+        'reason':'定稿 s033-b024 明写额抵李绡肩哭出声，是同人声音状态补充，非新固定声线。'},
+}

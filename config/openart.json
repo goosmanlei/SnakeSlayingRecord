@@ -10,5 +10,11 @@
   "credit_exhausted_fallback": "OpenArt Credit用完后使用Codex内置GPT IMG 2.5；以工具实际暴露的模型及输出尺寸记录结果，不另开按量付费API。",
   "i2i_preferred_max_generations": 1,
   "i2i_absolute_max_generations": 2,
-  "reference_policy": "以干净母版锚定；多参考取最深谱系计算I2I代数，换文件名或加入母版不重置。超过两代或出现风格与纹理漂移时回干净母版，采用局部修改与固定轮廓、配色、线条约束。"
+  "reference_policy": "以干净母版锚定；多参考取最深谱系计算I2I代数，换文件名或加入母版不重置。超过两代或出现风格与纹理漂移时回干净母版，采用局部修改与固定轮廓、配色、线条约束。",
+  "native_resolution_acceptance": {
+    "task": "task-20261002-0003",
+    "policy": "highest_provider_native",
+    "upscaling_counts_as_native": false,
+    "source": "用户2026-10-02明确接受指定模型实际最高原生尺寸；旧图原尺寸及旧要求结论不改写。"
+  }
 }
