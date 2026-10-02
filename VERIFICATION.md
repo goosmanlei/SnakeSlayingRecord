@@ -4,6 +4,8 @@
 
 用户于 2026-10-02 确认按当前成果结项，后续修改另行发布任务。全剧抽取、第一集镜头设计、制作系统、首批真实图像／音频、准确引用与完整恢复证据统一见 [production/verification.md](production/verification.md)。具体测试版本与数量以该记录为准。基准补齐、完整动态分镜及工程转后续工作，任务结项不表示第一集已就绪或媒体已获接受。
 
+用户最终确认双仓集成至各自 `main`，并追加授权推送与切换 3000。系统 `4c0cc62` 已集成推送，正式库仅追加 2,048 个生产对象、4,503 个修订及 27,221 条依赖，原 264 条评论和全部旧数据逐行保留。3000 的三项制作入口、剧情依据弹窗、素材历史版本和 WAV 播放通过 Chrome 回读；正式复导出与已验证恢复的 71 文件快照一致。具体证据见 [formal-release.json](production/evidence/formal-release.json)。故事最终提交与完成状态以主项目任务账本为准；39103 已停止，后续使用正式入口。
+
 ## 2026-09-30：task-20260930-0004 剧本四
 
 [正式版本四](http://127.0.0.1:3000/?workspace=story.script&script=screenplay-04-lantern-home&episode=screenplay-04-lantern-home-e01)已追加发布：17 集、42 场、1,114 块，修订 `7287b25a34d4b0db242ec5688f33349fa6d449874a3c6acb30033e2260cd2686`。单集预计正片 230—295 秒，总计 4,392 秒，非成片实测。完整文学审校、估时、输入与技术边界见 [版本四审校](planning/screenplay-04-review.md)，可核对汇总见 [验证数据](planning/screenplay-04-verification.json)。
