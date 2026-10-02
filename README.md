@@ -62,7 +62,7 @@ cd ../SnakeSlayingRecord
 docker compose up -d --build
 ```
 
-本提交锁定系统 `4c0cc62bcf4e5477a1fd2ff22b29ecce3ba44ac1`，包含故事创作、共用评论、图标配置及制作系统。用户已明确授权本次双仓主干集成、推送和正式服务切换；该系统提交已发布到远端 `main`。`export/` 包含故事与制作数据、264 条评论及原件清单，恢复时同时保留 `config/` 与 `content/`。已有运行数据库不可用该快照覆盖。制作成果统一从 3000 使用，旧 39103 预览停止；运行与集成边界见 [STATE.md](STATE.md)。
+本实例当前锁定系统 `4c0cc62bcf4e5477a1fd2ff22b29ecce3ba44ac1`，包含故事创作、共用评论、图标配置及制作系统。此前制作准备任务已按用户确认完成双仓集成、推送和正式服务切换；本轮[制作审阅候选](production/review-ui-verification.md)仍在独立工作区验证，尚未正式发布或完成集成，本轮不自动推送。`export/` 包含此前正式故事与制作数据、264 条评论及原件清单，恢复时同时保留 `config/` 与 `content/`。已有运行数据库不可用该快照覆盖。制作成果统一从 3000 使用，旧 39103 预览停止；运行版本、最新数据和集成边界见 [STATE.md](STATE.md)。
 
 打开 [本机审阅台](http://127.0.0.1:3000/)：Nginx 长期运行在 Docker 容器 3000 端口并代理容器内 Python 服务；Nginx 镜像与通用代理规则由审阅台仓库维护，故事仓库只保留实例 Compose 配置。主机仅绑定 `127.0.0.1:3000`。`docker compose ps` 检查状态，`docker compose restart` 重启；`restart: unless-stopped` 保证 Docker 恢复时服务随之恢复。已有 `.runtime/review.sqlite3` 时跳过 `restore`。本机当前系统源码目录名是 `story-review-desk-python`，若在此目录运行，构建命令需加 `REVIEW_DESK_BUILD_CONTEXT=../story-review-desk-python`；公开克隆默认目录名为 `story-review-desk`，无需该变量。不要把 3000 端口转发到公网，本服务没有公网鉴权。
 

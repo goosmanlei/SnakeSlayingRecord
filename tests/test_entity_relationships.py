@@ -41,5 +41,24 @@ class EntityRelationshipsTest(unittest.TestCase):
     def test_new_script_revision_requires_rechecking_the_locked_input(self):
         with self.assertRaisesRegex(ValueError,'locked episode has a newer revision'):self.compile(changed_episode=True)
 
+    def test_mutual_care_uses_both_actions_and_keeps_the_old_return_scene_as_context(self):
+        value,_=self.compile()
+        evidence=next(r for r in value['evidence'] if r['id']=='relationship-li-ji-a-heng-personal')
+        self.assertEqual([s['scene_id'] for s in evidence['sources']],['s005','s040','s036'])
+        self.assertIn('李寄：来，我给你撑着。',evidence['excerpts'][0]['text'])
+        self.assertIn('阿蘅：拿这儿。别扯伤口。',evidence['excerpts'][0]['text'])
+        self.assertIn('两个人各撑一端',evidence['excerpts'][0]['text'])
+        self.assertIn('李寄掌心的新疤绷紧',evidence['excerpts'][1]['text'])
+        self.assertIn('阿蘅：这一页我来。你念，慢一点。',evidence['excerpts'][1]['text'])
+        self.assertIn('李寄看看没写完的半页，将笔交过去。',evidence['excerpts'][1]['text'])
+        self.assertGreater(len(evidence['sources'][0]['block_ids']),1)
+
+    def test_labels_follow_the_direction_and_do_not_claim_unwritten_performances(self):
+        value,_=self.compile();rows={r['object_id']:r['payload'] for r in value['document']['records']}
+        self.assertEqual(rows['relationship-meat-rice-bait-bait-basin-use']['label'],'盛在饵盆内')
+        self.assertEqual(rows['relationship-troupe-workers-village-yard-performance']['label'],'参与搭台与散戏')
+        self.assertEqual(rows['relationship-officer-cheng-stop-order-use']['label'],'持文书索取原祭册')
+        self.assertEqual(rows['relationship-songbook-book-basket-spatial']['label'],'搁在倒扣竹篮上')
+
 
 if __name__=='__main__':unittest.main()
