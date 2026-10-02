@@ -1,17 +1,17 @@
-test_instance_document_round_trip_and_reload (test_approach.ApproachTest) ... 127.0.0.1 - - [02/Oct/2026 19:03:14] "GET /api/production-approach HTTP/1.1" 200 -
-127.0.0.1 - - [02/Oct/2026 19:03:14] "GET /api/production-approach HTTP/1.1" 200 -
-127.0.0.1 - - [02/Oct/2026 19:03:14] "GET /api/comments HTTP/1.1" 200 -
+test_instance_document_round_trip_and_reload (test_approach.ApproachTest) ... 127.0.0.1 - - [02/Oct/2026 21:36:11] "GET /api/production-approach HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 21:36:11] "GET /api/production-approach HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 21:36:11] "GET /api/comments HTTP/1.1" 200 -
 ok
-test_invalid_document_is_reported_without_breaking_other_pages (test_approach.ApproachTest) ... 127.0.0.1 - - [02/Oct/2026 19:03:14] "GET /api/production-approach HTTP/1.1" 503 -
-127.0.0.1 - - [02/Oct/2026 19:03:14] "GET /api/sources HTTP/1.1" 200 -
-127.0.0.1 - - [02/Oct/2026 19:03:14] "GET /api/production-approach HTTP/1.1" 503 -
-127.0.0.1 - - [02/Oct/2026 19:03:14] "GET /api/sources HTTP/1.1" 200 -
-127.0.0.1 - - [02/Oct/2026 19:03:14] "GET /api/production-approach HTTP/1.1" 503 -
-127.0.0.1 - - [02/Oct/2026 19:03:14] "GET /api/sources HTTP/1.1" 200 -
+test_invalid_document_is_reported_without_breaking_other_pages (test_approach.ApproachTest) ... 127.0.0.1 - - [02/Oct/2026 21:36:11] "GET /api/production-approach HTTP/1.1" 503 -
+127.0.0.1 - - [02/Oct/2026 21:36:11] "GET /api/sources HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 21:36:11] "GET /api/production-approach HTTP/1.1" 503 -
+127.0.0.1 - - [02/Oct/2026 21:36:11] "GET /api/sources HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 21:36:11] "GET /api/production-approach HTTP/1.1" 503 -
+127.0.0.1 - - [02/Oct/2026 21:36:11] "GET /api/sources HTTP/1.1" 200 -
 ok
-test_optional_document_and_no_ledger (test_approach.ApproachTest) ... 127.0.0.1 - - [02/Oct/2026 19:03:14] "GET /api/production-approach HTTP/1.1" 200 -
-127.0.0.1 - - [02/Oct/2026 19:03:14] "GET /api/sources HTTP/1.1" 200 -
-127.0.0.1 - - [02/Oct/2026 19:03:14] "GET /api/framework HTTP/1.1" 200 -
+test_optional_document_and_no_ledger (test_approach.ApproachTest) ... 127.0.0.1 - - [02/Oct/2026 21:36:11] "GET /api/production-approach HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 21:36:11] "GET /api/sources HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 21:36:11] "GET /api/framework HTTP/1.1" 200 -
 ok
 test_complete_dimensions_and_required_overall_contract (test_complete_states.CompleteStatesTest) ... ok
 test_detail_cannot_replace_overall_and_passed_does_not_adopt (test_complete_states.CompleteStatesTest) ... ok
@@ -30,18 +30,18 @@ test_related_candidates_visible_without_inventing_state_coverage (test_entity_re
 test_stale_collection_identity_media_and_forgery_reject_atomically (test_entity_review.EntityReviewTest) ... ok
 test_state_revision_update_does_not_transfer_media_or_acceptance (test_entity_review.EntityReviewTest) ... ok
 test_unmapped_component_stays_separate_from_explicit_state_coverage (test_entity_review.EntityReviewTest) ... ok
-test_upload_save_conflict_missing_and_mime (test_favicon.FaviconHTTPTests) ... 127.0.0.1 - - [02/Oct/2026 19:03:17] "POST /api/favicon HTTP/1.1" 201 -
-127.0.0.1 - - [02/Oct/2026 19:03:17] "PATCH /api/configurations/SYSTEM HTTP/1.1" 200 -
-127.0.0.1 - - [02/Oct/2026 19:03:17] "GET /api/configurations HTTP/1.1" 200 -
-127.0.0.1 - - [02/Oct/2026 19:03:17] "GET /assets/favicon-0e77cd07fe2e2b33aebddfc080c15295d1c20e7e8e2d1b76b3e5a11c533573b6.svg?v=0e77cd07fe2e2b33aebddfc080c15295d1c20e7e8e2d1b76b3e5a11c533573b6 HTTP/1.1" 200 -
-127.0.0.1 - - [02/Oct/2026 19:03:17] "GET /favicon.ico?v=old HTTP/1.1" 200 -
-127.0.0.1 - - [02/Oct/2026 19:03:17] "PATCH /api/configurations/SYSTEM HTTP/1.1" 409 -
-127.0.0.1 - - [02/Oct/2026 19:03:17] "POST /api/favicon HTTP/1.1" 400 -
-127.0.0.1 - - [02/Oct/2026 19:03:17] "GET /favicon.ico HTTP/1.1" 503 -
-127.0.0.1 - - [02/Oct/2026 19:03:17] "PATCH /api/configurations/SYSTEM HTTP/1.1" 200 -
-127.0.0.1 - - [02/Oct/2026 19:03:17] "GET /api/configurations HTTP/1.1" 200 -
-127.0.0.1 - - [02/Oct/2026 19:03:17] "GET /default-favicon.svg?v=b58aa2423929b1970c03192b4b767f40724602096ba7eecdca496db74a4c2b99 HTTP/1.1" 200 -
-127.0.0.1 - - [02/Oct/2026 19:03:17] "GET /favicon.ico HTTP/1.1" 200 -
+test_upload_save_conflict_missing_and_mime (test_favicon.FaviconHTTPTests) ... 127.0.0.1 - - [02/Oct/2026 21:36:13] "POST /api/favicon HTTP/1.1" 201 -
+127.0.0.1 - - [02/Oct/2026 21:36:13] "PATCH /api/configurations/SYSTEM HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 21:36:13] "GET /api/configurations HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 21:36:13] "GET /assets/favicon-0e77cd07fe2e2b33aebddfc080c15295d1c20e7e8e2d1b76b3e5a11c533573b6.svg?v=0e77cd07fe2e2b33aebddfc080c15295d1c20e7e8e2d1b76b3e5a11c533573b6 HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 21:36:13] "GET /favicon.ico?v=old HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 21:36:13] "PATCH /api/configurations/SYSTEM HTTP/1.1" 409 -
+127.0.0.1 - - [02/Oct/2026 21:36:13] "POST /api/favicon HTTP/1.1" 400 -
+127.0.0.1 - - [02/Oct/2026 21:36:13] "GET /favicon.ico HTTP/1.1" 503 -
+127.0.0.1 - - [02/Oct/2026 21:36:13] "PATCH /api/configurations/SYSTEM HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 21:36:13] "GET /api/configurations HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 21:36:13] "GET /default-favicon.svg?v=b58aa2423929b1970c03192b4b767f40724602096ba7eecdca496db74a4c2b99 HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 21:36:13] "GET /favicon.ico HTTP/1.1" 200 -
 ok
 test_bad_references_and_upload_leave_configuration_unchanged (test_favicon.FaviconTests) ... ok
 test_export_restore_checksum_and_manifest_membership (test_favicon.FaviconTests) ... ok
@@ -67,6 +67,7 @@ test_failed_batch_and_validate_only_do_not_create_round_members (test_material_v
 test_invalid_round_recovery_rolls_back_all_destination_rows (test_material_versions.MaterialVersionsTest) ... ok
 test_migration_guard_idempotence_and_export_recovery (test_material_versions.MaterialVersionsTest) ... ok
 test_round_lifecycle_metadata_and_exact_history (test_material_versions.MaterialVersionsTest) ... ok
+test_shared_result_reads_original_round_and_comments_on_other_entity_without_expanding_acceptance (test_material_versions.MaterialVersionsTest) ... ok
 test_stale_feedback_rolls_back_comment_and_event_and_retry_is_idempotent (test_material_versions.MaterialVersionsTest) ... ok
 test_workspace_keeps_entity_revision_options_separate_from_rounds (test_material_versions.MaterialVersionsTest) ... ok
 test_actual_image_inputs_cannot_be_omitted_to_reset_lineage (test_production.ProductionTest) ... ok
@@ -85,14 +86,14 @@ test_selected_asset_must_cover_required_identity_and_state (test_production.Prod
 test_source_excerpt_preserves_historical_text_and_anchor (test_production.ProductionTest) ... ok
 test_state_rename_review_cannot_exempt_content_changes_or_wrong_target (test_production.ProductionTest) ... ok
 test_time_comments_exact_components_ranges_and_restore (test_production.ProductionTest) ... ok
-test_file_range_batch_conflict_exact_source_and_time_comment (test_production_api.ProductionApiTest) ... 127.0.0.1 - - [02/Oct/2026 19:03:20] "PUT /api/production/files/voice.wav HTTP/1.1" 201 -
-127.0.0.1 - - [02/Oct/2026 19:03:20] "POST /api/production/import HTTP/1.1" 201 -
-127.0.0.1 - - [02/Oct/2026 19:03:20] "GET /api/production/files/0a8f76d89c709043814cb74f331a4578d17ff61256303bd0019a263d053f86e8.wav HTTP/1.1" 206 -
-127.0.0.1 - - [02/Oct/2026 19:03:20] "GET /api/production/source?object_id=episode&revision_id=e61098a46c6dbb0014e70f9f0a024c9914664b576ad6bca1910cde5e31d5e688&scene_id=s1&block_ids=a HTTP/1.1" 200 -
-127.0.0.1 - - [02/Oct/2026 19:03:20] "POST /api/comments HTTP/1.1" 201 -
-127.0.0.1 - - [02/Oct/2026 19:03:20] "POST /api/production/import HTTP/1.1" 409 -
-127.0.0.1 - - [02/Oct/2026 19:03:20] "GET /api/production?object_id=voice HTTP/1.1" 200 -
-127.0.0.1 - - [02/Oct/2026 19:03:20] "GET /api/production/readiness?scope=voice HTTP/1.1" 200 -
+test_file_range_batch_conflict_exact_source_and_time_comment (test_production_api.ProductionApiTest) ... 127.0.0.1 - - [02/Oct/2026 21:36:16] "PUT /api/production/files/voice.wav HTTP/1.1" 201 -
+127.0.0.1 - - [02/Oct/2026 21:36:16] "POST /api/production/import HTTP/1.1" 201 -
+127.0.0.1 - - [02/Oct/2026 21:36:16] "GET /api/production/files/0a8f76d89c709043814cb74f331a4578d17ff61256303bd0019a263d053f86e8.wav HTTP/1.1" 206 -
+127.0.0.1 - - [02/Oct/2026 21:36:16] "GET /api/production/source?object_id=episode&revision_id=e61098a46c6dbb0014e70f9f0a024c9914664b576ad6bca1910cde5e31d5e688&scene_id=s1&block_ids=a HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 21:36:16] "POST /api/comments HTTP/1.1" 201 -
+127.0.0.1 - - [02/Oct/2026 21:36:16] "POST /api/production/import HTTP/1.1" 409 -
+127.0.0.1 - - [02/Oct/2026 21:36:16] "GET /api/production?object_id=voice HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 21:36:16] "GET /api/production/readiness?scope=voice HTTP/1.1" 200 -
 ok
 test_delete_history_dry_run_and_comment_guard (test_requirement_cleanup.RequirementCleanupTest) ... ok
 test_description_state_still_checks_real_presentation (test_requirement_cleanup.RequirementCleanupTest) ... ok
@@ -113,27 +114,27 @@ test_comment_isolation_unicode_history_and_restore (test_screenplay.ScreenplayTe
 test_immutable_idempotent_and_atomic (test_screenplay.ScreenplayTest) ... ok
 test_invalid_contracts_do_not_write (test_screenplay.ScreenplayTest) ... ok
 test_polish_uses_exact_episode_and_original_basis_after_new_structure (test_screenplay.ScreenplayTest) ... ok
-test_invalid_or_duplicate_summaries_do_not_break_script_api (test_screenplay_summaries.ScreenplaySummariesTest) ... 127.0.0.1 - - [02/Oct/2026 19:03:21] "GET /api/screenplay-summaries HTTP/1.1" 503 -
-127.0.0.1 - - [02/Oct/2026 19:03:21] "GET /api/screenplays HTTP/1.1" 200 -
-127.0.0.1 - - [02/Oct/2026 19:03:21] "GET /api/screenplay-summaries HTTP/1.1" 503 -
-127.0.0.1 - - [02/Oct/2026 19:03:21] "GET /api/screenplays HTTP/1.1" 200 -
-127.0.0.1 - - [02/Oct/2026 19:03:21] "GET /api/screenplay-summaries HTTP/1.1" 503 -
-127.0.0.1 - - [02/Oct/2026 19:03:21] "GET /api/screenplays HTTP/1.1" 200 -
-127.0.0.1 - - [02/Oct/2026 19:03:21] "GET /api/screenplay-summaries HTTP/1.1" 503 -
-127.0.0.1 - - [02/Oct/2026 19:03:21] "GET /api/screenplays HTTP/1.1" 200 -
+test_invalid_or_duplicate_summaries_do_not_break_script_api (test_screenplay_summaries.ScreenplaySummariesTest) ... 127.0.0.1 - - [02/Oct/2026 21:36:17] "GET /api/screenplay-summaries HTTP/1.1" 503 -
+127.0.0.1 - - [02/Oct/2026 21:36:17] "GET /api/screenplays HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 21:36:17] "GET /api/screenplay-summaries HTTP/1.1" 503 -
+127.0.0.1 - - [02/Oct/2026 21:36:17] "GET /api/screenplays HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 21:36:17] "GET /api/screenplay-summaries HTTP/1.1" 503 -
+127.0.0.1 - - [02/Oct/2026 21:36:17] "GET /api/screenplays HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 21:36:17] "GET /api/screenplay-summaries HTTP/1.1" 503 -
+127.0.0.1 - - [02/Oct/2026 21:36:17] "GET /api/screenplays HTTP/1.1" 200 -
 ok
-test_optional_revision_bound_summaries_reload_without_ledger_changes (test_screenplay_summaries.ScreenplaySummariesTest) ... 127.0.0.1 - - [02/Oct/2026 19:03:21] "GET /api/screenplay-summaries HTTP/1.1" 200 -
-127.0.0.1 - - [02/Oct/2026 19:03:21] "GET /api/screenplay-summaries HTTP/1.1" 200 -
-127.0.0.1 - - [02/Oct/2026 19:03:21] "GET /api/screenplay-summaries HTTP/1.1" 200 -
-127.0.0.1 - - [02/Oct/2026 19:03:21] "GET /api/screenplays HTTP/1.1" 200 -
-127.0.0.1 - - [02/Oct/2026 19:03:21] "GET /api/comments HTTP/1.1" 200 -
+test_optional_revision_bound_summaries_reload_without_ledger_changes (test_screenplay_summaries.ScreenplaySummariesTest) ... 127.0.0.1 - - [02/Oct/2026 21:36:17] "GET /api/screenplay-summaries HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 21:36:17] "GET /api/screenplay-summaries HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 21:36:17] "GET /api/screenplay-summaries HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 21:36:17] "GET /api/screenplays HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 21:36:17] "GET /api/comments HTTP/1.1" 200 -
 ok
-test_current_revision_metadata_is_read_only_and_targets_comments (test_source_api.SourceApiTest) ... 127.0.0.1 - - [02/Oct/2026 19:03:21] "GET /api/sources?with_revision=1 HTTP/1.1" 200 -
-127.0.0.1 - - [02/Oct/2026 19:03:21] "GET /api/sources HTTP/1.1" 200 -
-127.0.0.1 - - [02/Oct/2026 19:03:21] "POST /api/comments HTTP/1.1" 201 -
+test_current_revision_metadata_is_read_only_and_targets_comments (test_source_api.SourceApiTest) ... 127.0.0.1 - - [02/Oct/2026 21:36:17] "GET /api/sources?with_revision=1 HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 21:36:17] "GET /api/sources HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 21:36:17] "POST /api/comments HTTP/1.1" 201 -
 ok
-test_idle_browser_preconnect_does_not_block_another_request (test_source_api.SourceApiTest) ... 127.0.0.1 - - [02/Oct/2026 19:03:23] Request timed out: timeout('timed out')
-127.0.0.1 - - [02/Oct/2026 19:03:23] "GET /api/instance HTTP/1.1" 200 -
+test_idle_browser_preconnect_does_not_block_another_request (test_source_api.SourceApiTest) ... 127.0.0.1 - - [02/Oct/2026 21:36:19] Request timed out: timeout('timed out')
+127.0.0.1 - - [02/Oct/2026 21:36:19] "GET /api/instance HTTP/1.1" 200 -
 ok
 test_cli_keeps_publisher_but_has_no_authoring_commands (test_source_replacement.SourceReplacementTest) ... ok
 test_in_place_identity_idempotency_and_export_restore (test_source_replacement.SourceReplacementTest) ... ok
@@ -147,6 +148,6 @@ test_review_revision_and_script_handoff (test_structure.StructureTest) ... ok
 test_source_image_and_explicit_broken_reference (test_structure.StructureTest) ... ok
 
 ----------------------------------------------------------------------
-Ran 97 tests in 8.841s
+Ran 98 tests in 8.128s
 
 OK

@@ -1,0 +1,51 @@
+{
+  "system_commit": "4a8d18b41fb8a4c621f1679d161a4fa817c04e85",
+  "image_id": "sha256:0c3e021050fc8b7f8af0d68cfd746167eebebb90a6ab85b95f9b085d0efd48b6",
+  "system_files_equal": true,
+  "files": 42,
+  "restart_policy": "unless-stopped",
+  "health": "healthy",
+  "mounts": [
+    {
+      "Source": "/Users/bytedance/codex-path/creative/SnakeSlayingRecord",
+      "Destination": "/instance",
+      "RW": true
+    },
+    {
+      "Source": "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0001/config",
+      "Destination": "/instance/config",
+      "RW": false
+    },
+    {
+      "Source": "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0001/content",
+      "Destination": "/instance/content",
+      "RW": false
+    },
+    {
+      "Source": "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0001/export",
+      "Destination": "/instance/export",
+      "RW": false
+    },
+    {
+      "Source": "/Users/bytedance/.local/share/mamba-proxyman/cacert.pem",
+      "Destination": "/run/local-ca/cacert.pem",
+      "RW": false
+    }
+  ],
+  "legacy_stopped_container_cleanup": "Compose removed 9 already-stopped app containers with matching service labels. Images and mounted data were preserved.",
+  "database_tables_unchanged_after_code_update": [
+    "sources",
+    "comment_events",
+    "objects",
+    "revisions",
+    "dependencies",
+    "configurations",
+    "configuration_events",
+    "comments",
+    "material_rounds",
+    "material_members",
+    "material_feedback",
+    "material_comment_scopes"
+  ],
+  "final_switch": "Replaced only snakeslayingrecord-app-1 by exact name; restarted nginx. No additional archived containers removed."
+}
