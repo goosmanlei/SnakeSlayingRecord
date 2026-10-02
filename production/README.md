@@ -72,7 +72,7 @@ docker compose restart
 docker logs --tail 40 snakeslayingrecord-app-1
 ```
 
-重建时沿用本机现有凭据与 CA 配置，系统构建路径用 `REVIEW_DESK_BUILD_CONTEXT=../story-review-desk-python`。不要为页面打不开而重新恢复或覆盖数据库。当前镜像为 `story-review-desk:task-20261002-0001-material-rounds`，42 个系统文件与 `4a8d18b` 一致。重建须使用实例锁定的系统提交；确认集成前仍有任务候选的只读挂载，不能直接用默认 Compose 配置重建而回退版本。旧 `snakeslayingrecord-production-task-0003` 容器保持停止；切换按准确容器名称操作，保留镜像和挂载数据，不批量清理归档容器，避免多个正式库写入者。新任务只操作正式库。
+重建时沿用本机现有凭据与 CA 配置，系统构建路径用 `REVIEW_DESK_BUILD_CONTEXT=../story-review-desk-python`。不要为页面打不开而重新恢复或覆盖数据库。当前镜像为 `story-review-desk:task-20261002-0001-material-rounds`，42 个系统文件与 `7331690` 一致。重建须使用实例锁定的系统提交；确认集成前仍有任务候选的只读挂载，不能直接用默认 Compose 配置重建而回退版本。旧 `snakeslayingrecord-production-task-0003` 容器保持停止；切换按准确容器名称操作，保留镜像和挂载数据，不批量清理归档容器，避免多个正式库写入者。新任务只操作正式库。
 
 以下为空实例恢复，不启动或修改正式服务。Python、FFmpeg／ffprobe 与固定版本通用系统需先可用；最后一条为前台临时验证服务，核对后关闭：
 
