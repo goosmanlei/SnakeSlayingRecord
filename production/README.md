@@ -2,7 +2,7 @@
 
 《把灯带回家》版本四已获用户确认，17 集、42 场、1,114 个正文块；主视觉为二维人物与轻手绘背景，16:9。当前完成全剧实体／状态抽取、第一集 33 镜设计、逐素材方案及首批实际候选。基准尚未全部补齐或接受，第一集未就绪；完整素材、有声动态分镜、成片和工程在后续制作范围。
 
-本轮制作审阅改进已承接完成的 `task-20261002-0001`，系统 `15822ae7` 吸收其最终 `7331690`，并与 33 条关系修订串行发布正式 3000。正式库保留评论、原件、实际调用、采用和素材轮次历史；本轮双仓本地集成仍待最终确认。当前版本和证据见 [STATE.md](../STATE.md)和[本轮验证](review-ui-verification.md)。本任务不生成媒体、不自动推送。
+本轮制作审阅改进已承接完成的 `task-20261002-0001`，系统 `15822ae7` 吸收其最终 `7331690`，并与 33 条关系修订串行发布正式 3000。正式库保留评论、原件、实际调用、采用和素材轮次历史；用户已确认本轮完成并授权双仓集成和推送；实际完成以账本及 Git 回读为准。当前版本和证据见 [STATE.md](../STATE.md)和[本轮验证](review-ui-verification.md)。本任务不生成媒体；双仓推送已获用户追加授权。
 
 ## 内容入口
 
@@ -50,7 +50,7 @@
 
 ## Codex 后台维护与恢复
 
-日常命令以真实故事根目录为工作目录；正式业务库始终为 `.runtime/review.sqlite3`。通用系统位于同级 `story-review-desk-python`，按根 [README](../README.md)核对 [config/instance.json](../config/instance.json)指定版本；本轮提交尚未推送，公开克隆不能保证可用。当前任务工作区使用 `.runtime/review-desk-worktree`，下列 `production_system` 变量相应替换。不要复制密钥、建立第二份任务账本或把旧快照覆盖到活库。
+日常命令以真实故事根目录为工作目录；正式业务库始终为 `.runtime/review.sqlite3`。通用系统位于同级 `story-review-desk-python`，按根 [README](../README.md)核对 [config/instance.json](../config/instance.json)指定版本；新克隆先取得并核对该指定提交。当前任务工作区使用 `.runtime/review-desk-worktree`，下列 `production_system` 变量相应替换。不要复制密钥、建立第二份任务账本或把旧快照覆盖到活库。
 
 ```bash
 production_system=../story-review-desk-python

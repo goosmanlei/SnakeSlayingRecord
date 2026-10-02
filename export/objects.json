@@ -27121,6 +27121,26 @@
       "to_revision": "f379d26deb15b4f4bdefa5292d6badc4499fb0bf81e61858f0a64724fc6de59e"
     },
     {
+      "from_revision": "30f4c85a95db44b7443ab9cac8ebc172638832ce2308b18c868aabc12fcbed94",
+      "role": "payload.acceptance_scope.entity",
+      "to_revision": "22283c0e6836ce7ae8e7256eed749e05f6212b2442db9f5fdeb653779584dd20"
+    },
+    {
+      "from_revision": "30f4c85a95db44b7443ab9cac8ebc172638832ce2308b18c868aabc12fcbed94",
+      "role": "payload.target",
+      "to_revision": "22283c0e6836ce7ae8e7256eed749e05f6212b2442db9f5fdeb653779584dd20"
+    },
+    {
+      "from_revision": "30f4c85a95db44b7443ab9cac8ebc172638832ce2308b18c868aabc12fcbed94",
+      "role": "payload.acceptance_scope.states.0",
+      "to_revision": "827b9213281d5fb256d9754ee6821a19041560ca3e423d2868018f7c3111e29f"
+    },
+    {
+      "from_revision": "30f4c85a95db44b7443ab9cac8ebc172638832ce2308b18c868aabc12fcbed94",
+      "role": "payload.previous_decision",
+      "to_revision": "c97540bb0d60dbda61489338230a975eaf205a9b28f1986f2fa441ea6f7143cb"
+    },
+    {
       "from_revision": "30f8472f26df71c6828820d750a9d319a3c8b17605c129cf4875a7ddfdc71f7a",
       "role": "payload.scope",
       "to_revision": "623bb231f3593c3a1117120855240d86924bc4900788fb2a9d4044636e827eb9"
@@ -126441,6 +126461,26 @@
       "to_revision": "e382282edb451d9d3c19961805572c6511eb738d026b6f006108ef6fcf970b4d"
     },
     {
+      "from_revision": "e978a864a64ee4cf50842be21da6731017703a676c8cd1b85295cc3eb01b9a60",
+      "role": "payload.acceptance_scope.entity",
+      "to_revision": "22283c0e6836ce7ae8e7256eed749e05f6212b2442db9f5fdeb653779584dd20"
+    },
+    {
+      "from_revision": "e978a864a64ee4cf50842be21da6731017703a676c8cd1b85295cc3eb01b9a60",
+      "role": "payload.target",
+      "to_revision": "22283c0e6836ce7ae8e7256eed749e05f6212b2442db9f5fdeb653779584dd20"
+    },
+    {
+      "from_revision": "e978a864a64ee4cf50842be21da6731017703a676c8cd1b85295cc3eb01b9a60",
+      "role": "payload.previous_decision",
+      "to_revision": "30f4c85a95db44b7443ab9cac8ebc172638832ce2308b18c868aabc12fcbed94"
+    },
+    {
+      "from_revision": "e978a864a64ee4cf50842be21da6731017703a676c8cd1b85295cc3eb01b9a60",
+      "role": "payload.acceptance_scope.states.0",
+      "to_revision": "827b9213281d5fb256d9754ee6821a19041560ca3e423d2868018f7c3111e29f"
+    },
+    {
       "from_revision": "e98cf6a07c452bc1f6c5e6a437338459ca7bf66d8419ce74d606f0cf81d64b4d",
       "role": "payload.states.0",
       "to_revision": "1c1682ea45d00e0d6dece7dcb4637320ab32e92fc55130485c90d55a321957e6"
@@ -168155,11 +168195,11 @@
     },
     {
       "created_at": "2026-10-02T09:36:32+00:00",
-      "current_revision": "c97540bb0d60dbda61489338230a975eaf205a9b28f1986f2fa441ea6f7143cb",
+      "current_revision": "e978a864a64ee4cf50842be21da6731017703a676c8cd1b85295cc3eb01b9a60",
       "id": "entity-generation-1181e199daa0c26d6a45995a89199163",
       "kind": "JUDGMENT",
-      "updated_at": "2026-10-02T09:36:32+00:00",
-      "version": 1
+      "updated_at": "2026-10-02T15:11:23+00:00",
+      "version": 3
     },
     {
       "created_at": "2026-09-30T16:46:00+00:00",
@@ -185738,6 +185778,20 @@
       "object_id": "entity-generation-1181e199daa0c26d6a45995a89199163",
       "payload": "{\"acceptance_model\":\"entity-generation-v1\",\"acceptance_scope\":{\"entity\":{\"object_id\":\"entity-a-he\",\"revision_id\":\"22283c0e6836ce7ae8e7256eed749e05f6212b2442db9f5fdeb653779584dd20\"},\"media\":[],\"states\":[{\"object_id\":\"form-a-he-base\",\"revision_id\":\"827b9213281d5fb256d9754ee6821a19041560ca3e423d2868018f7c3111e29f\"}]},\"actor\":\"用户\",\"blocks\":[{\"id\":\"decision\",\"text\":\"取消当前采纳，保留历史制作与意见。\"}],\"format\":\"production-judgment-v1\",\"previous_decision\":{\"object_id\":\"entity-accept-63992f25b6ad7e0374dd65c18f8938088fe159d26cb06b466ec719d078b186ea\",\"revision_id\":\"8deee6f3a401a43472d9e19a9e98c31f8cc6385533a641148fccd3bbc7d8defd\"},\"reason\":\"取消当前采纳，保留历史制作与意见。\",\"target\":{\"object_id\":\"entity-a-he\",\"revision_id\":\"22283c0e6836ce7ae8e7256eed749e05f6212b2442db9f5fdeb653779584dd20\"},\"title\":\"阿禾 · 取消采纳\",\"verdict\":\"revoked\"}",
       "version": 1
+    },
+    {
+      "created_at": "2026-10-02T15:11:22+00:00",
+      "id": "30f4c85a95db44b7443ab9cac8ebc172638832ce2308b18c868aabc12fcbed94",
+      "object_id": "entity-generation-1181e199daa0c26d6a45995a89199163",
+      "payload": "{\"acceptance_model\":\"entity-content-v1\",\"acceptance_scope\":{\"entity\":{\"object_id\":\"entity-a-he\",\"revision_id\":\"22283c0e6836ce7ae8e7256eed749e05f6212b2442db9f5fdeb653779584dd20\"},\"media\":[],\"states\":[{\"object_id\":\"form-a-he-base\",\"revision_id\":\"827b9213281d5fb256d9754ee6821a19041560ca3e423d2868018f7c3111e29f\"}]},\"actor\":\"用户\",\"blocks\":[{\"id\":\"decision\",\"text\":\"重新认可原基础信息、完整状态与关联素材；不授予生成许可。\"}],\"format\":\"production-judgment-v1\",\"previous_decision\":{\"object_id\":\"entity-generation-1181e199daa0c26d6a45995a89199163\",\"revision_id\":\"c97540bb0d60dbda61489338230a975eaf205a9b28f1986f2fa441ea6f7143cb\"},\"reason\":\"重新认可原基础信息、完整状态与关联素材；不授予生成许可。\",\"target\":{\"object_id\":\"entity-a-he\",\"revision_id\":\"22283c0e6836ce7ae8e7256eed749e05f6212b2442db9f5fdeb653779584dd20\"},\"title\":\"阿禾 · 重新认可原内容\",\"verdict\":\"accepted\"}",
+      "version": 2
+    },
+    {
+      "created_at": "2026-10-02T15:11:23+00:00",
+      "id": "e978a864a64ee4cf50842be21da6731017703a676c8cd1b85295cc3eb01b9a60",
+      "object_id": "entity-generation-1181e199daa0c26d6a45995a89199163",
+      "payload": "{\"acceptance_model\":\"entity-content-v1\",\"acceptance_scope\":{\"entity\":{\"object_id\":\"entity-a-he\",\"revision_id\":\"22283c0e6836ce7ae8e7256eed749e05f6212b2442db9f5fdeb653779584dd20\"},\"media\":[],\"states\":[{\"object_id\":\"form-a-he-base\",\"revision_id\":\"827b9213281d5fb256d9754ee6821a19041560ca3e423d2868018f7c3111e29f\"}]},\"actor\":\"用户\",\"blocks\":[{\"id\":\"decision\",\"text\":\"取消当前采纳，保留历史制作与意见。\"}],\"format\":\"production-judgment-v1\",\"previous_decision\":{\"object_id\":\"entity-generation-1181e199daa0c26d6a45995a89199163\",\"revision_id\":\"30f4c85a95db44b7443ab9cac8ebc172638832ce2308b18c868aabc12fcbed94\"},\"reason\":\"取消当前采纳，保留历史制作与意见。\",\"target\":{\"object_id\":\"entity-a-he\",\"revision_id\":\"22283c0e6836ce7ae8e7256eed749e05f6212b2442db9f5fdeb653779584dd20\"},\"title\":\"阿禾 · 取消内容认可\",\"verdict\":\"revoked\"}",
+      "version": 3
     },
     {
       "created_at": "2026-09-30T16:46:00+00:00",

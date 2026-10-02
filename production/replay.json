@@ -216886,6 +216886,46 @@
           }
         },
         {
+          "object_id": "entity-generation-1181e199daa0c26d6a45995a89199163",
+          "kind": "JUDGMENT",
+          "expected_version": 1,
+          "payload": {
+            "acceptance_model": "entity-content-v1",
+            "acceptance_scope": {
+              "entity": {
+                "object_id": "entity-a-he",
+                "revision_id": "22283c0e6836ce7ae8e7256eed749e05f6212b2442db9f5fdeb653779584dd20"
+              },
+              "media": [],
+              "states": [
+                {
+                  "object_id": "form-a-he-base",
+                  "revision_id": "827b9213281d5fb256d9754ee6821a19041560ca3e423d2868018f7c3111e29f"
+                }
+              ]
+            },
+            "actor": "用户",
+            "blocks": [
+              {
+                "id": "decision",
+                "text": "重新认可原基础信息、完整状态与关联素材；不授予生成许可。"
+              }
+            ],
+            "format": "production-judgment-v1",
+            "previous_decision": {
+              "object_id": "entity-generation-1181e199daa0c26d6a45995a89199163",
+              "revision_id": "c97540bb0d60dbda61489338230a975eaf205a9b28f1986f2fa441ea6f7143cb"
+            },
+            "reason": "重新认可原基础信息、完整状态与关联素材；不授予生成许可。",
+            "target": {
+              "object_id": "entity-a-he",
+              "revision_id": "22283c0e6836ce7ae8e7256eed749e05f6212b2442db9f5fdeb653779584dd20"
+            },
+            "title": "阿禾 · 重新认可原内容",
+            "verdict": "accepted"
+          }
+        },
+        {
           "object_id": "preparation-s040",
           "kind": "PREPARATION",
           "expected_version": 0,
@@ -294120,6 +294160,46 @@
           }
         },
         {
+          "object_id": "entity-generation-1181e199daa0c26d6a45995a89199163",
+          "kind": "JUDGMENT",
+          "expected_version": 2,
+          "payload": {
+            "acceptance_model": "entity-content-v1",
+            "acceptance_scope": {
+              "entity": {
+                "object_id": "entity-a-he",
+                "revision_id": "22283c0e6836ce7ae8e7256eed749e05f6212b2442db9f5fdeb653779584dd20"
+              },
+              "media": [],
+              "states": [
+                {
+                  "object_id": "form-a-he-base",
+                  "revision_id": "827b9213281d5fb256d9754ee6821a19041560ca3e423d2868018f7c3111e29f"
+                }
+              ]
+            },
+            "actor": "用户",
+            "blocks": [
+              {
+                "id": "decision",
+                "text": "取消当前采纳，保留历史制作与意见。"
+              }
+            ],
+            "format": "production-judgment-v1",
+            "previous_decision": {
+              "object_id": "entity-generation-1181e199daa0c26d6a45995a89199163",
+              "revision_id": "30f4c85a95db44b7443ab9cac8ebc172638832ce2308b18c868aabc12fcbed94"
+            },
+            "reason": "取消当前采纳，保留历史制作与意见。",
+            "target": {
+              "object_id": "entity-a-he",
+              "revision_id": "22283c0e6836ce7ae8e7256eed749e05f6212b2442db9f5fdeb653779584dd20"
+            },
+            "title": "阿禾 · 取消内容认可",
+            "verdict": "revoked"
+          }
+        },
+        {
           "object_id": "need-preparation-s040-visual-entity-a-heng",
           "kind": "REQUIREMENT",
           "expected_version": 0,
@@ -345305,6 +345385,7 @@
     "30c3f7ad3cd26b36c8065b9528fb673558c2e1b4abfe56a5190e8223acf6baad",
     "30c66e9df3807c82e9db79c441dffce2615aeedb6c96e8a87a1f80edc44c3c1c",
     "30e2ec25407e31da235555500c1d5f97d43cd64e89237e66889a2849be3c4115",
+    "30f4c85a95db44b7443ab9cac8ebc172638832ce2308b18c868aabc12fcbed94",
     "30f8472f26df71c6828820d750a9d319a3c8b17605c129cf4875a7ddfdc71f7a",
     "3103af3ea8be946f35279fe382ff85263821ec0e872dd73c25adaca060c26bf9",
     "310dc5d741c872fa04169e4aa3deecc9e7fa2ba521508710757e73baffb61f7e",
@@ -348557,6 +348638,7 @@
     "e94c9eea7350a5bd3184265ea4a93361d0e3fd2d0716952ad56f929c300cf880",
     "e950f3405a7063d87dde51e8c63157458132a82115d0f83b2a4228a812afead1",
     "e95b825d42806604435423e42179acdbf9e84aaa5d0216284417e8553a525cd8",
+    "e978a864a64ee4cf50842be21da6731017703a676c8cd1b85295cc3eb01b9a60",
     "e98cf6a07c452bc1f6c5e6a437338459ca7bf66d8419ce74d606f0cf81d64b4d",
     "e9996a2c927b4da572544a10977fe5badc4142aa752e7dfdcce6d5e6cdebc4fb",
     "e99ea2f7de3dea425650cb7d5cca03bedf99a942ffb8bcf5545dd3803b6c3ca5",
@@ -349032,7 +349114,7 @@
     "entity-feeding-door": "84625e0451deeb0b6b28223b51e3452c77837661ba41f05c3fb3158f903a91ca",
     "entity-ferry": "d6344f350ab47de20c482e262c33a86b785fcbad3aa2d4b67ab6741e5111095e",
     "entity-gate-pin": "398a7d0df296df968e598792ccd0a3d85aebff625e9b8035a3aada84c0c223e1",
-    "entity-generation-1181e199daa0c26d6a45995a89199163": "c97540bb0d60dbda61489338230a975eaf205a9b28f1986f2fa441ea6f7143cb",
+    "entity-generation-1181e199daa0c26d6a45995a89199163": "e978a864a64ee4cf50842be21da6731017703a676c8cd1b85295cc3eb01b9a60",
     "entity-grain": "aae5fbc2821d67977b62e01c0cea48854587e578902a6c08ef444f4508fefdcf",
     "entity-grain-copy": "810a9227cd38e3e17d273031e54bd132865990e053200b486d77144f297a223f",
     "entity-grain-order": "ec80d37e80fe102cdba8d2380b4105de3f1a599841e18c9ce3b921dcb5f212a1",
@@ -351043,5 +351125,5 @@
     "export/assets/9edcf64a1d34914d1d406a01aff9617f3759eb51ed699e1380fde6f96993c953.wav": "9edcf64a1d34914d1d406a01aff9617f3759eb51ed699e1380fde6f96993c953",
     "export/assets/d06b4c3d373e92e505aa7b17c34ef2790d363ce40aecafcf48b2f46b5f81ed35.json": "d06b4c3d373e92e505aa7b17c34ef2790d363ce40aecafcf48b2f46b5f81ed35"
   },
-  "base_manifest_sha256": "3a9aa326ce58676ede5feef3c0528a4edc6197a2f19d1278c7154e219d5d404f"
+  "base_manifest_sha256": "fbbafc9cbbc0afc8a80f3956bdc96d2961df96aa96d02588fe3ac9d05960b2ce"
 }
