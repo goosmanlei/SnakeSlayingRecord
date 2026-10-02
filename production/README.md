@@ -62,6 +62,8 @@ OpenArt CLI 0.1.1 没有暴露所需质量及分辨率参数，两次实际改�
 
 ## 隔离恢复与运行
 
+以下维护命令以保留的任务工作区为工作目录。从主项目进入时先执行 `cd .codex-project/worktrees/task-20260929-0003`。其他新检出需要将 `production_system` 改为本机通用系统仓库路径，并使用 `config/instance.json` 固定的提交；不要新建任务账本或复制凭据。
+
 日常审阅使用现有后台容器 `snakeslayingrecord-production-task-0003`，挂载本任务 `.runtime/production/review-instance` 中的现有数据，仅监听 `127.0.0.1:39103`。容器采用 `unless-stopped` 重启策略；退出代理会话不会停止它，手工停止后可用以下命令恢复。不要为页面打不开重新恢复或导入数据库。
 
 ```bash
