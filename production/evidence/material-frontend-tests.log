@@ -1,0 +1,47 @@
+✔ review notes keep exact text and field index without mutating immutable payloads (2.130833ms)
+✔ generation parameters retain server numeric spelling for exact comment offsets (0.301625ms)
+✔ switching one version back to current cannot accept another still historical section (0.2945ms)
+✔ whole-entity content remains constant when selecting a different form or comment target (5.547417ms)
+✔ an explicit historical state stays exact and flags the card; normal refresh follows current content (0.483917ms)
+✔ comments aggregate exact references and switching focus does not narrow them (0.685084ms)
+✔ a delayed aggregate cannot overwrite a newer selection (0.280084ms)
+✔ old workflow URLs return to current content without a separate state option (0.274916ms)
+✔ earlier revision opinions remain in the entity panel (0.392417ms)
+✔ locating a current opinion resets an earlier historical state context (0.563834ms)
+✔ state media excludes entity-only candidates, other states and other revisions (0.278917ms)
+✔ several materials can describe one state and reuse requires explicit coverage for each state (0.233208ms)
+✔ unassigned media comments open their separate area without changing the selected state (0.340875ms)
+✔ mapped media comments select their state; historical unlinked media stays separate (0.308375ms)
+✔ a time opinion outside current coverage opens its original file separately (0.268833ms)
+✔ time comment location scopes a repeated component id to the exact asset revision (0.277916ms)
+✔ refreshing a media comment keeps the explicitly selected state (0.2475ms)
+✔ cards preserve exact plan candidates and do not attach an old candidate to a new recipe (0.45275ms)
+✔ audio and image remain individual material cards without media-type columns (0.06825ms)
+✔ CALL review uses server numeric spelling and omits only a duplicate prompt parameter (0.126458ms)
+✔ older asset versions keep their card using placement context without rewriting history (0.056042ms)
+✔ relationship labels changed independently of prose still have an exact anchor (0.058708ms)
+✔ story references use the exact source reader and preserve scene and block limits (0.126291ms)
+✔ material references retain their exact media reader; explicit evidence can cite an entity (0.052917ms)
+✔ block scope aggregates all live statuses and anchor kinds, excludes other blocks and versions, deduplicates (0.377417ms)
+✔ effective inputs retain source order and type numbering, ignore storyline context (0.200917ms)
+✔ carried text revisions keep comments inside the selected material round (0.096583ms)
+✔ an exact historical candidate does not replace other real calls in the same material round (0.345833ms)
+✔ a pending material round keeps earlier results inside history instead of creating duplicate cards (0.160167ms)
+✔ legacy audio requirements do not inherit an unrelated image card through display sorting (0.056084ms)
+✔ shared and state-only settings appear under each owner exactly once; project settings stay unowned (1.546458ms)
+✔ old state links keep exact state and entity identity, without replacing the selected target with the entity (0.617417ms)
+✔ historical representation resolves the referenced state, not its newer parent (0.463709ms)
+✔ a slow historical ownership lookup cannot replace a newer selection (0.366375ms)
+✔ legacy fragments do not count as current complete forms but keep their owner (0.241375ms)
+✔ opening an entity shows its basic information and defaults to the earliest complete state (5.24825ms)
+✔ entity history and review focus keep the selected state and separate exact comment targets (0.447167ms)
+✔ a slow entity overview lookup cannot overwrite a newer entity and its default state (0.378083ms)
+✔ an entity with only historical partial states stays readable without inventing a default form (0.296458ms)
+ℹ tests 39
+ℹ suites 0
+ℹ pass 39
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 69.92975

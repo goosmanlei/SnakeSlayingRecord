@@ -1,0 +1,152 @@
+test_instance_document_round_trip_and_reload (test_approach.ApproachTest) ... 127.0.0.1 - - [02/Oct/2026 19:03:14] "GET /api/production-approach HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 19:03:14] "GET /api/production-approach HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 19:03:14] "GET /api/comments HTTP/1.1" 200 -
+ok
+test_invalid_document_is_reported_without_breaking_other_pages (test_approach.ApproachTest) ... 127.0.0.1 - - [02/Oct/2026 19:03:14] "GET /api/production-approach HTTP/1.1" 503 -
+127.0.0.1 - - [02/Oct/2026 19:03:14] "GET /api/sources HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 19:03:14] "GET /api/production-approach HTTP/1.1" 503 -
+127.0.0.1 - - [02/Oct/2026 19:03:14] "GET /api/sources HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 19:03:14] "GET /api/production-approach HTTP/1.1" 503 -
+127.0.0.1 - - [02/Oct/2026 19:03:14] "GET /api/sources HTTP/1.1" 200 -
+ok
+test_optional_document_and_no_ledger (test_approach.ApproachTest) ... 127.0.0.1 - - [02/Oct/2026 19:03:14] "GET /api/production-approach HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 19:03:14] "GET /api/sources HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 19:03:14] "GET /api/framework HTTP/1.1" 200 -
+ok
+test_complete_dimensions_and_required_overall_contract (test_complete_states.CompleteStatesTest) ... ok
+test_detail_cannot_replace_overall_and_passed_does_not_adopt (test_complete_states.CompleteStatesTest) ... ok
+test_guarded_import_detects_changed_read_dependencies (test_complete_states.CompleteStatesTest) ... ok
+test_invalid_asset_mapping_and_atomic_concurrent_import (test_complete_states.CompleteStatesTest) ... ok
+test_missing_wrong_owner_legacy_and_transition_block_export (test_complete_states.CompleteStatesTest) ... ok
+test_one_asset_many_states_optional_details_exact_ranges_and_versions (test_complete_states.CompleteStatesTest) ... ok
+test_acceptance_allows_comments_and_new_candidate_does_not_inherit_it (test_entity_review.EntityReviewTest) ... ok
+test_bundle_restores_historical_acceptance_and_cli_reads_same_aggregate (test_entity_review.EntityReviewTest) ... ok
+test_current_content_needs_no_workflow_and_query_is_read_only (test_entity_review.EntityReviewTest) ... ok
+test_legacy_records_and_historical_comments_do_not_gate_current_content (test_entity_review.EntityReviewTest) ... ok
+test_note_comments_bind_exact_entity_and_state_fields_and_survive_restore (test_entity_review.EntityReviewTest) ... ok
+test_note_projection_preserves_original_blocks_and_avoids_id_collisions (test_entity_review.EntityReviewTest) ... ok
+test_production_recovery_is_empty_only_and_preserves_old_acceptance (test_entity_review.EntityReviewTest) ... ok
+test_related_candidates_visible_without_inventing_state_coverage (test_entity_review.EntityReviewTest) ... ok
+test_stale_collection_identity_media_and_forgery_reject_atomically (test_entity_review.EntityReviewTest) ... ok
+test_state_revision_update_does_not_transfer_media_or_acceptance (test_entity_review.EntityReviewTest) ... ok
+test_unmapped_component_stays_separate_from_explicit_state_coverage (test_entity_review.EntityReviewTest) ... ok
+test_upload_save_conflict_missing_and_mime (test_favicon.FaviconHTTPTests) ... 127.0.0.1 - - [02/Oct/2026 19:03:17] "POST /api/favicon HTTP/1.1" 201 -
+127.0.0.1 - - [02/Oct/2026 19:03:17] "PATCH /api/configurations/SYSTEM HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 19:03:17] "GET /api/configurations HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 19:03:17] "GET /assets/favicon-0e77cd07fe2e2b33aebddfc080c15295d1c20e7e8e2d1b76b3e5a11c533573b6.svg?v=0e77cd07fe2e2b33aebddfc080c15295d1c20e7e8e2d1b76b3e5a11c533573b6 HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 19:03:17] "GET /favicon.ico?v=old HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 19:03:17] "PATCH /api/configurations/SYSTEM HTTP/1.1" 409 -
+127.0.0.1 - - [02/Oct/2026 19:03:17] "POST /api/favicon HTTP/1.1" 400 -
+127.0.0.1 - - [02/Oct/2026 19:03:17] "GET /favicon.ico HTTP/1.1" 503 -
+127.0.0.1 - - [02/Oct/2026 19:03:17] "PATCH /api/configurations/SYSTEM HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 19:03:17] "GET /api/configurations HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 19:03:17] "GET /default-favicon.svg?v=b58aa2423929b1970c03192b4b767f40724602096ba7eecdca496db74a4c2b99 HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 19:03:17] "GET /favicon.ico HTTP/1.1" 200 -
+ok
+test_bad_references_and_upload_leave_configuration_unchanged (test_favicon.FaviconTests) ... ok
+test_export_restore_checksum_and_manifest_membership (test_favicon.FaviconTests) ... ok
+test_migration_default_and_versioned_persistence (test_favicon.FaviconTests) ... ok
+test_png_ico_and_corruption (test_favicon.FaviconTests) ... ok
+test_accept_revoke_reaccept_and_comments_do_not_depend_on_candidates (test_generation.GenerationTest) ... ok
+test_candidate_association_is_not_generation_or_adoption (test_generation.GenerationTest) ... ok
+test_changes_reject_stale_acceptance_atomically_and_require_every_plan (test_generation.GenerationTest) ... ok
+test_exact_plan_comments_cli_and_recovery (test_generation.GenerationTest) ... ok
+test_execution_call_checks_current_decision_and_exact_inputs (test_generation.GenerationTest) ... ok
+test_pending_master_can_be_accepted_but_execution_requires_exact_adoption (test_generation.GenerationTest) ... ok
+test_mixed_seedance_labels_and_missing_or_phantom_reference (test_input_contracts.InputContractsTest) ... ok
+test_multi_image_order_natural_language_and_no_magic_alias (test_input_contracts.InputContractsTest) ... ok
+test_seed_audio_order_limits_unknown_model_and_text_only (test_input_contracts.InputContractsTest) ... ok
+test_changed_relationship_invalidates_generation_but_keeps_cancel_and_media_adoption (test_material_relationships.MaterialRelationshipsTest) ... ok
+test_invalid_relationship_reference_is_rejected (test_material_relationships.MaterialRelationshipsTest) ... ok
+test_legacy_acceptance_can_be_cancelled_without_a_complete_plan_and_never_reappears (test_material_relationships.MaterialRelationshipsTest) ... ok
+test_material_provenance_stays_on_exact_call_and_fields_are_commentable (test_material_relationships.MaterialRelationshipsTest) ... ok
+test_comments_on_carried_plan_remain_scoped_to_selected_round (test_material_versions.MaterialVersionsTest) ... ok
+test_concurrent_first_feedback_creates_one_round_without_orphans (test_material_versions.MaterialVersionsTest) ... ok
+test_delayed_first_submission_uses_active_round_and_input_history_is_frozen (test_material_versions.MaterialVersionsTest) ... ok
+test_failed_batch_and_validate_only_do_not_create_round_members (test_material_versions.MaterialVersionsTest) ... ok
+test_invalid_round_recovery_rolls_back_all_destination_rows (test_material_versions.MaterialVersionsTest) ... ok
+test_migration_guard_idempotence_and_export_recovery (test_material_versions.MaterialVersionsTest) ... ok
+test_round_lifecycle_metadata_and_exact_history (test_material_versions.MaterialVersionsTest) ... ok
+test_stale_feedback_rolls_back_comment_and_event_and_retry_is_idempotent (test_material_versions.MaterialVersionsTest) ... ok
+test_workspace_keeps_entity_revision_options_separate_from_rounds (test_material_versions.MaterialVersionsTest) ... ok
+test_actual_image_inputs_cannot_be_omitted_to_reset_lineage (test_production.ProductionTest) ... ok
+test_assembly_rejects_uncovered_frames (test_production.ProductionTest) ... ok
+test_atomic_validation_aliases_exact_sources_and_state_coexistence (test_production.ProductionTest) ... ok
+test_batch_refs_and_concurrent_writers (test_production.ProductionTest) ... ok
+test_completed_call_cannot_claim_an_unrelated_output (test_production.ProductionTest) ... ok
+test_file_tampering_and_unknown_image_ancestry_are_rejected (test_production.ProductionTest) ... ok
+test_native_resolution_needs_actual_pixels_and_provenance (test_production.ProductionTest) ... ok
+test_one_asset_multiple_scopes_and_change_requires_review (test_production.ProductionTest) ... ok
+test_optional_slots_and_wrong_original_type_are_not_ready (test_production.ProductionTest) ... ok
+test_passed_is_not_adopted_and_new_candidate_does_not_replace (test_production.ProductionTest) ... ok
+test_reviewed_state_rename_keeps_exact_inputs_and_expires_on_later_change (test_production.ProductionTest) ... ok
+test_revision_history_is_retained_without_false_change_alarm (test_production.ProductionTest) ... ok
+test_selected_asset_must_cover_required_identity_and_state (test_production.ProductionTest) ... ok
+test_source_excerpt_preserves_historical_text_and_anchor (test_production.ProductionTest) ... ok
+test_state_rename_review_cannot_exempt_content_changes_or_wrong_target (test_production.ProductionTest) ... ok
+test_time_comments_exact_components_ranges_and_restore (test_production.ProductionTest) ... ok
+test_file_range_batch_conflict_exact_source_and_time_comment (test_production_api.ProductionApiTest) ... 127.0.0.1 - - [02/Oct/2026 19:03:20] "PUT /api/production/files/voice.wav HTTP/1.1" 201 -
+127.0.0.1 - - [02/Oct/2026 19:03:20] "POST /api/production/import HTTP/1.1" 201 -
+127.0.0.1 - - [02/Oct/2026 19:03:20] "GET /api/production/files/0a8f76d89c709043814cb74f331a4578d17ff61256303bd0019a263d053f86e8.wav HTTP/1.1" 206 -
+127.0.0.1 - - [02/Oct/2026 19:03:20] "GET /api/production/source?object_id=episode&revision_id=e61098a46c6dbb0014e70f9f0a024c9914664b576ad6bca1910cde5e31d5e688&scene_id=s1&block_ids=a HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 19:03:20] "POST /api/comments HTTP/1.1" 201 -
+127.0.0.1 - - [02/Oct/2026 19:03:20] "POST /api/production/import HTTP/1.1" 409 -
+127.0.0.1 - - [02/Oct/2026 19:03:20] "GET /api/production?object_id=voice HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 19:03:20] "GET /api/production/readiness?scope=voice HTTP/1.1" 200 -
+ok
+test_delete_history_dry_run_and_comment_guard (test_requirement_cleanup.RequirementCleanupTest) ... ok
+test_description_state_still_checks_real_presentation (test_requirement_cleanup.RequirementCleanupTest) ... ok
+test_history_dependencies_and_atomic_rollback (test_requirement_cleanup.RequirementCleanupTest) ... ok
+test_layout_round_trip_does_not_change_acceptance (test_requirement_cleanup.RequirementCleanupTest) ... ok
+test_successful_removal_and_invalid_update_rolls_back (test_requirement_cleanup.RequirementCleanupTest) ... ok
+test_anchor_comment_lifecycle (test_review.ReviewTest) ... ok
+test_api_key_environment_name_not_secret (test_review.ReviewTest) ... ok
+test_configuration_and_ai_context (test_review.ReviewTest) ... ok
+test_export_restore_and_integrity (test_review.ReviewTest) ... ok
+test_external_performance_source (test_review.ReviewTest) ... ok
+test_legacy_comment_migration (test_review.ReviewTest) ... ok
+test_local_media_is_hashed_and_required_on_restore (test_review.ReviewTest) ... ok
+test_remove_sources_cleans_exclusive_records_and_rejects_external_dependency (test_review.ReviewTest) ... ok
+test_replace_source_metadata_preserves_text_and_restore (test_review.ReviewTest) ... ok
+test_story_refinement_group_is_supported (test_review.ReviewTest) ... ok
+test_comment_isolation_unicode_history_and_restore (test_screenplay.ScreenplayTest) ... ok
+test_immutable_idempotent_and_atomic (test_screenplay.ScreenplayTest) ... ok
+test_invalid_contracts_do_not_write (test_screenplay.ScreenplayTest) ... ok
+test_polish_uses_exact_episode_and_original_basis_after_new_structure (test_screenplay.ScreenplayTest) ... ok
+test_invalid_or_duplicate_summaries_do_not_break_script_api (test_screenplay_summaries.ScreenplaySummariesTest) ... 127.0.0.1 - - [02/Oct/2026 19:03:21] "GET /api/screenplay-summaries HTTP/1.1" 503 -
+127.0.0.1 - - [02/Oct/2026 19:03:21] "GET /api/screenplays HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 19:03:21] "GET /api/screenplay-summaries HTTP/1.1" 503 -
+127.0.0.1 - - [02/Oct/2026 19:03:21] "GET /api/screenplays HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 19:03:21] "GET /api/screenplay-summaries HTTP/1.1" 503 -
+127.0.0.1 - - [02/Oct/2026 19:03:21] "GET /api/screenplays HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 19:03:21] "GET /api/screenplay-summaries HTTP/1.1" 503 -
+127.0.0.1 - - [02/Oct/2026 19:03:21] "GET /api/screenplays HTTP/1.1" 200 -
+ok
+test_optional_revision_bound_summaries_reload_without_ledger_changes (test_screenplay_summaries.ScreenplaySummariesTest) ... 127.0.0.1 - - [02/Oct/2026 19:03:21] "GET /api/screenplay-summaries HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 19:03:21] "GET /api/screenplay-summaries HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 19:03:21] "GET /api/screenplay-summaries HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 19:03:21] "GET /api/screenplays HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 19:03:21] "GET /api/comments HTTP/1.1" 200 -
+ok
+test_current_revision_metadata_is_read_only_and_targets_comments (test_source_api.SourceApiTest) ... 127.0.0.1 - - [02/Oct/2026 19:03:21] "GET /api/sources?with_revision=1 HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 19:03:21] "GET /api/sources HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 19:03:21] "POST /api/comments HTTP/1.1" 201 -
+ok
+test_idle_browser_preconnect_does_not_block_another_request (test_source_api.SourceApiTest) ... 127.0.0.1 - - [02/Oct/2026 19:03:23] Request timed out: timeout('timed out')
+127.0.0.1 - - [02/Oct/2026 19:03:23] "GET /api/instance HTTP/1.1" 200 -
+ok
+test_cli_keeps_publisher_but_has_no_authoring_commands (test_source_replacement.SourceReplacementTest) ... ok
+test_in_place_identity_idempotency_and_export_restore (test_source_replacement.SourceReplacementTest) ... ok
+test_incoming_and_outgoing_dependencies_reject (test_source_replacement.SourceReplacementTest) ... ok
+test_new_comments_and_stale_revision_reject (test_source_replacement.SourceReplacementTest) ... ok
+test_replacement_failure_rolls_back_all_rows (test_source_replacement.SourceReplacementTest) ... ok
+test_single_revision_refinement_and_identity_guards (test_source_replacement.SourceReplacementTest) ... ok
+test_unrelated_comments_untouched_and_normal_import_immutable (test_source_replacement.SourceReplacementTest) ... ok
+test_invalid_anchors_and_direction_change (test_structure.StructureTest) ... ok
+test_review_revision_and_script_handoff (test_structure.StructureTest) ... ok
+test_source_image_and_explicit_broken_reference (test_structure.StructureTest) ... ok
+
+----------------------------------------------------------------------
+Ran 97 tests in 8.841s
+
+OK
