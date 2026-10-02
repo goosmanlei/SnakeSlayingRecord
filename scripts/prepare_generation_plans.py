@@ -63,7 +63,7 @@ def prepare(store,p):
         elif typ=='space':composition='画面为可理解的空间全景，水平视线、前中后景清楚，不画人物和临时镜头动作。'
         else:composition='主体完整入画，三分之四视角，平视、柔和中性光与浅暖灰纯底；清楚保留手脚、轮廓及关键细节。'
         prompt+='\n'+composition+'不加水印、装饰版框或未经指定的文字。'
-        return {'format':g.PLAN,'method':'generate','tool':'OpenArt CLI（参数不足时使用同项目 OpenArt 连接器）','model':config['preferred_model'],
+        return {'format':g.PLAN,'method':'generate','model':config['preferred_model'],
                 'parameters':{'project_id':config['project_id'],'quality':config['image_quality'],'resolution':config['image_resolution'],'aspect_ratio':ratio,'n':1},
                 'prompt':prompt,'inputs':list(inputs),'output':{'name':name,'description':description,'review_criteria':IMAGE_CHECK},
                 'blockers':['当前 GPT Image 2.5 两次请求原生 4K 均返回 2016×2688；正式调用前须解决原生尺寸及 CLI 参数支持，未达标不能计作素材齐备。']}
@@ -73,7 +73,7 @@ def prepare(store,p):
         prompt+=ENTITIES[key][2]+'\n'+description+'\n'+text+'\n保留自然短停顿，开头结尾各留半秒安静；无字幕朗读、角色名、说明词、额外说话声；原件为干净独立声音，环境与音乐另轨。'
         if reuse:prompt='复用前置需求明确采用的完整原件与范围，不重新生成：'+description
         if len(prompt)>3000:raise ValueError('audio prompt too long')
-        return {'format':g.PLAN,'method':'reuse' if reuse else 'generate','tool':'精确原件复用' if reuse else 'scripts/seed_audio.py · 豆包语音','model':'seed-audio-1.0',
+        return {'format':g.PLAN,'method':'reuse' if reuse else 'generate','model':'seed-audio-1.0',
                 'parameters':deepcopy(AUDIO),'prompt':prompt,'inputs':list(inputs),'output':{'name':name,'description':description,'review_criteria':AUDIO_CHECK},'blockers':[]}
     def need(state,slot,media,plan,role='detail',source=None,shots=None,original_need=None):
         oid=original_need or 'need-'+state['object_id']+'-'+slot
