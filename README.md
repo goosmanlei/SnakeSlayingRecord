@@ -20,7 +20,7 @@
 
 两个方法 Tab 的章节目录在桌面常驻左侧，沿用故事创作页的浅色阅读栏与章节高亮；点击可定位，滚动时更新当前章。窄屏目录常驻正文上方、可横向滚动，章节链接支持刷新与浏览器前进／后退。
 
-方法正文按两个用途组织：故事创作沉淀资料、结构、逐步写作、审阅回修和剧本改编的实际经验；生产制作以版本四全剧抽取、第一集 33 镜、实际候选及精确采用为依据，说明已实践能力与后续素材、动态分镜、工程审阅安排。完整成果、设计契约、隔离审阅入口及恢复操作见 [production/README.md](production/README.md)。当前任务要求的系统提交已固定在实例配置，正式服务尚未切换。
+方法正文按两个用途组织：故事创作沉淀资料、结构、逐步写作、审阅回修和剧本改编的实际经验；生产制作以版本四全剧抽取、第一集 33 镜、实际候选及精确采用为依据，说明已实践能力与后续素材、动态分镜、工程审阅安排。完整成果、设计契约、隔离审阅入口及恢复操作见 [production/README.md](production/README.md)。当前制作审阅改进已发布正式 3000，系统提交固定于实例配置；本轮本地集成仍须最终确认，见 [制作审阅验证](production/review-ui-verification.md)。
 
 ## 资料与出处
 
@@ -50,19 +50,19 @@
 
 ## 准备两仓并启动
 
-需要 Docker Compose 和 Python 3.9+（Python 只用于首次恢复与数据 CLI）。两个仓库放在同级目录。确认版本锁指向的系统提交已发布后，公开克隆并恢复业务数据：
+需要 Docker Compose、Python 3.9+ 和 FFmpeg／ffprobe。两个仓库放在同级目录；系统目录的提交必须与 [config/instance.json](config/instance.json) 一致。本轮系统锁定 `15822ae77d9b6c3851852555a677d11d7adc7c10`，已经在本机任务系统工作区保存并运行于正式 3000，尚待最终本地集成，不自动推送。公开远端不保证包含此提交，不能仅靠公开克隆恢复本轮版本。
+
+完成本地集成后，以故事根目录为工作目录，核对同级系统版本，再对空实例恢复和启动：
 
 ```bash
-git clone https://github.com/goosmanlei/story-review-desk.git
-git clone https://github.com/goosmanlei/SnakeSlayingRecord.git
-cd story-review-desk
-git checkout 4c0cc62bcf4e5477a1fd2ff22b29ecce3ba44ac1
-PYTHONPATH=. python3 -m review_desk --instance ../SnakeSlayingRecord restore
-cd ../SnakeSlayingRecord
-docker compose up -d --build
+production_system=../story-review-desk-python
+required_system=$(python3 -c 'import json; print(json.load(open("config/instance.json"))["review_desk_commit"])')
+test "$(git -C "$production_system" rev-parse HEAD)" = "$required_system"
+PYTHONPATH="$production_system" python3 -m review_desk --instance . restore
+REVIEW_DESK_BUILD_CONTEXT="$production_system" docker compose up -d --build
 ```
 
-本实例当前锁定系统 `4c0cc62bcf4e5477a1fd2ff22b29ecce3ba44ac1`，包含故事创作、共用评论、图标配置及制作系统。此前制作准备任务已按用户确认完成双仓集成、推送和正式服务切换；本轮[制作审阅候选](production/review-ui-verification.md)仍在独立工作区验证，尚未正式发布或完成集成，本轮不自动推送。`export/` 包含此前正式故事与制作数据、264 条评论及原件清单，恢复时同时保留 `config/` 与 `content/`。已有运行数据库不可用该快照覆盖。制作成果统一从 3000 使用，旧 39103 预览停止；运行版本、最新数据和集成边界见 [STATE.md](STATE.md)。
+已有运行数据库时跳过 `restore`，不可用快照覆盖活库。本任务工作区的系统目录为 `.runtime/review-desk-worktree`；当前恢复验证在新的隔离目录执行，操作见 [production/README.md](production/README.md)。`export/` 是本轮发布后最新正式一致性快照，Schema 4 保存素材轮次、全部旧修订、264 条评论及原件清单；迁移实例同时保留 `config/` 与 `content/`。当前运行、恢复证据和本地集成边界见 [STATE.md](STATE.md)。
 
 打开 [本机审阅台](http://127.0.0.1:3000/)：Nginx 长期运行在 Docker 容器 3000 端口并代理容器内 Python 服务；Nginx 镜像与通用代理规则由审阅台仓库维护，故事仓库只保留实例 Compose 配置。主机仅绑定 `127.0.0.1:3000`。`docker compose ps` 检查状态，`docker compose restart` 重启；`restart: unless-stopped` 保证 Docker 恢复时服务随之恢复。已有 `.runtime/review.sqlite3` 时跳过 `restore`。本机当前系统源码目录名是 `story-review-desk-python`，若在此目录运行，构建命令需加 `REVIEW_DESK_BUILD_CONTEXT=../story-review-desk-python`；公开克隆默认目录名为 `story-review-desk`，无需该变量。不要把 3000 端口转发到公网，本服务没有公网鉴权。
 

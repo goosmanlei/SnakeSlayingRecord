@@ -2,7 +2,7 @@
 
 《把灯带回家》版本四已获用户确认，17 集、42 场、1,114 个正文块；主视觉为二维人物与轻手绘背景，16:9。当前完成全剧实体／状态抽取、第一集 33 镜设计、逐素材方案及首批实际候选。基准尚未全部补齐或接受，第一集未就绪；完整素材、有声动态分镜、成片和工程在后续制作范围。
 
-本轮制作审阅改进已在隔离实例联合验证，系统候选 `131eb81` 已吸收并行素材轮次任务 `8cf4852`；正式发布顺序仍待协调。正式 3000 当前保留原系统 `4c0cc62` 和真实业务库；下述新交互指本轮候选，正式版本与最终验证以 [STATE.md](../STATE.md)和[本轮验证](review-ui-verification.md)为准。本任务不生成媒体、不自动推送。
+本轮制作审阅改进已承接完成的 `task-20261002-0001`，系统 `15822ae7` 吸收其最终 `7331690`，并与 33 条关系修订串行发布正式 3000。正式库保留评论、原件、实际调用、采用和素材轮次历史；本轮双仓本地集成仍待最终确认。当前版本和证据见 [STATE.md](../STATE.md)和[本轮验证](review-ui-verification.md)。本任务不生成媒体、不自动推送。
 
 ## 内容入口
 
@@ -48,7 +48,7 @@
 
 ## Codex 后台维护与恢复
 
-日常命令以真实故事根目录为工作目录；正式业务库始终为 `.runtime/review.sqlite3`。通用系统位于同级 `story-review-desk-python`，新克隆按根 [README](../README.md)准备，并使用 [config/instance.json](../config/instance.json)指定版本。任务工作区改用该任务的隔离系统目录。不要复制密钥、建立第二份任务账本或把旧快照覆盖到活库。
+日常命令以真实故事根目录为工作目录；正式业务库始终为 `.runtime/review.sqlite3`。通用系统位于同级 `story-review-desk-python`，按根 [README](../README.md)核对 [config/instance.json](../config/instance.json)指定版本；本轮提交尚未推送，公开克隆不能保证可用。当前任务工作区使用 `.runtime/review-desk-worktree`，下列 `production_system` 变量相应替换。不要复制密钥、建立第二份任务账本或把旧快照覆盖到活库。
 
 ```bash
 production_system=../story-review-desk-python
@@ -83,3 +83,16 @@ PYTHONPATH="$production_system" python3 -m review_desk \
 共享正式库、公开导出、系统集成和 3000 部署必须串行。发布前核对最新正式数据与两仓基线，备份并增量应用，再回读三个页面和关键样例。旧容器与旧库保留追溯；共享同一正式库的旧容器不得同时启动，回滚代码前先导出最新数据，不用旧库覆盖新增评论或决定。
 
 双仓修改、说明与证据在本任务工作区提交，故事通过 `_prepare_integration` 生成候选并复验。展示最终候选及实际验证后，由用户明确确认完成并集成，再运行 `_complete`；准备命令不是通过验收。本任务不自动推送，完成后停止写文件与提交，保留工作区与分支。
+
+
+正式增量检查使用故事工具，只读比较发布前后的一致性备份；批次限定为逐条审阅的实体关系，不允许其他对象、旧修订、评论、轮次或采用发生变化：
+
+```bash
+python3 scripts/verify_production_review.py \
+  --before .runtime/review-ui/formal-publication/write-window-before.sqlite3 \
+  --after .runtime/review-ui/formal-publication/after-all-browser.sqlite3 \
+  --batch .runtime/review-ui/formal-publication/published-batch.json \
+  --report .runtime/review-ui/formal-publication/rechecked.json
+```
+
+这些路径相对本任务工作区，仅用于复核本轮真实发布，不作为后续发布输入。下一次修改必须重新读取正式当前版本并准备增量。
