@@ -135,7 +135,7 @@
 ## 已核实的实施事实
 
 - 制作页面以采纳／取消、评论、准确版本、筛选、预览和缺项检查推进审阅；导入、登记原件、修改说明与需求、维护关联由 Codex 通过后台 CLI／接口完成。旧 `entity-current-v1` 认可只绑定原实体、状态和素材范围：取消后范围仍完全一致时可重新认可，使用 `entity-content-v1` 保留历史链，不授予生成许可；真实内容修订后不走此兼容路径。生成许可单独核对当前关系、全部完整状态、需求、依赖和准备完整性。来源：本轮系统候选 `generation.py`、`test_material_relationships.py` 与隔离 Chrome 采纳循环；正式运行版本以 STATE.md 为准。
-- 直接关系的事实和证据选择归故事仓库：`scripts/entity_relationships.py` 维护端点、标签与方向，`production/relationship-evidence-selection.json` 为每条关系显式选择锁定版本四的场次和正文块。工具不再取第一个关键词附近的窗口；通用系统只读取准确引用，不补造关系或改写剧本。157 条的逐项核查、33 条候选修正及原问题截图见 `production/relationship-review.md`，旧关系修订和评论保留。来源：编制工具、锁定剧本、自动验证与隔离弹窗回读。
+- 直接关系的事实和证据选择归故事仓库：`scripts/entity_relationships.py` 维护端点、标签与方向，`production/relationship-evidence-selection.json` 为每条关系显式选择锁定版本四的场次和正文块。工具不再取第一个关键词附近的窗口；通用系统只读取准确引用，不补造关系或改写剧本。157 条的逐项核查、33 条修正及原问题截图见 `production/relationship-review.md`，旧关系修订和评论保留。来源：编制工具、锁定剧本、自动验证与隔离／正式弹窗回读。
 
 - 故事采编、结构和剧本分集复用通用系统 `app.js` 的评论编辑器；聚焦输入框时 ⌘+Enter 提交／保存，Esc 取消，普通 Enter 换行，组合输入期间不执行快捷操作。未来评论区复用 `bindCommentEditorShortcuts(textarea, {submit, cancel})` 并传实际按钮，沿用相同限制；保存请求期间输入框只读、按钮禁用并防重复提交。来源：系统代码、隔离浏览器和真实键盘验证，复现入口为系统 `docs/comment-checklist.md` 和本项目 `VERIFICATION.md`。
 - 文字圈选评论由通用审阅台共用处理，覆盖故事采编与故事结构。2026-09-26 已在本机修复正文外松手漏触发、未变化的评论刷新重建正文导致选区丢失，以及长选区按钮定位；原文引用继续按正文块和 Unicode 字符偏移校验。实现位于系统 `review_desk/static/app.js` 与 `structure.js`，隔离回归入口为 `tests/selection_server.py`。当前运行补丁和公开版本锁的区别见 `STATE.md`，复现与验证见 `VERIFICATION.md` 的“评论拖选按钮修复”。
