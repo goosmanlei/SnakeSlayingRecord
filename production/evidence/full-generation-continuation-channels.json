@@ -1,0 +1,96 @@
+{
+  "task": "task-20261002-0003",
+  "openart": {
+    "actual_channel": "OpenArt connector",
+    "project_id": "8K6WcbrPLghSBJXBtWAE",
+    "model": "gpt-image-2-5-sunburst",
+    "quality": "high",
+    "resolutionTier": "4k",
+    "original_sizes": [
+      [
+        2016,
+        2688
+      ],
+      [
+        2688,
+        2016
+      ],
+      [
+        3584,
+        2016
+      ]
+    ],
+    "task_completed_image_calls": 14,
+    "starting_credits": 9979,
+    "remaining_credits_observed": 6168,
+    "observed_delta": 3811,
+    "continuation_batches": [
+      {
+        "calls": 6,
+        "before": 8914,
+        "after": 7372,
+        "delta": 1542
+      },
+      {
+        "calls": 2,
+        "before": 7372,
+        "after": 6807,
+        "delta": 565
+      },
+      {
+        "calls": 1,
+        "before": 6807,
+        "after": 6492,
+        "delta": 315
+      },
+      {
+        "calls": 1,
+        "before": 6492,
+        "after": 6168,
+        "delta": 324
+      }
+    ],
+    "shared_call_lock": "main .runtime/production/openart.lock",
+    "locks_released": true,
+    "cli_query_error": "error: not authenticated — run openart login",
+    "query_recovery": "same history IDs queried through existing OpenArt connector; no duplicate generation",
+    "upscale_calls": 0,
+    "new_purchases": 0
+  },
+  "doubao": {
+    "model": "seed-audio-1.0",
+    "new_task_calls": 4,
+    "task_original_seconds": 48.74,
+    "new_supplement_seconds": 14.46,
+    "original_format": {
+      "sample_rate": 48000,
+      "channels": 2,
+      "codec": "pcm_s16le",
+      "bits_per_sample": 16
+    },
+    "before_supplements": {
+      "minutes": 43.24,
+      "source": ".runtime/full-generation/approved-masters/quota.json"
+    },
+    "latest_console_observation": {
+      "remaining_minutes_displayed": 33.95,
+      "source": "Doubao Speech audio generation console",
+      "observed_at": "2026-10-03T03:49:39.131Z"
+    },
+    "shared_task_usage_context": {
+      "task": "task-20261002-0004",
+      "source": "sibling task worktree STATE.md, read-only observation",
+      "calls_reported": 6,
+      "seconds_reported": 542.686975,
+      "note": "other task reports; not registered or counted as task-0003 media"
+    },
+    "quota_reconciliation": {
+      "displayed_decrease_minutes": 9.29,
+      "known_combined_seconds": 557.146975,
+      "known_combined_minutes": 9.285782916666667,
+      "conclusion": "matches display rounding; displayed balance is shared, not per-task consumption"
+    },
+    "shared_call_lock": "main .runtime/production/seed-audio.lock; later runs must also verify other task lock state",
+    "new_purchases": 0
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "id": "fg3-aheng-wet-image-01",
+  "recipe_id": "form-a-heng-wet",
+  "entity": {
+    "object_id": "entity-a-heng",
+    "revision_id": "be76284a262dd11d562410a15e3fefcf6cbedb152eb5dad4c4d94b854619d663"
+  },
+  "state": {
+    "object_id": "form-a-heng-wet",
+    "revision_id": "06beed59c469ca00946b49887a4ec9ef799ad64fcf4924701f211d4679b958f1"
+  },
+  "requirement": {
+    "object_id": "need-form-a-heng-wet-overall",
+    "revision_id": "12c96d1922a55b57afb960f0afafc751321f8abc78cc93044eb719bdd8ed4989"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "master_approval": {
+    "object_id": "review-master-fg3-aheng-image-01",
+    "revision_id": "a75edf8549c47e302844162ab250ba38545ffa05d537472c18a0a3e5bf45f24f"
+  },
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-aheng-image-01",
+        "revision_id": "e0e3e576207967838b531d30c69e5aa2841d44b7312818bc107c8f06d1ee7145"
+      },
+      "component_id": "original",
+      "sha256": "6f9cb6a1cabddd8ce34630709e0993ef66c69a66429a330f7cf943107b6c890f",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：用户认可的干净根母版完整原图；固定身份、轮廓、配色、笔触与构图，仅改变本状态明确部位。"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-fg3-aheng-image-01",
+        "revision_id": "e0e3e576207967838b531d30c69e5aa2841d44b7312818bc107c8f06d1ee7145"
+      }
+    ]
+  },
+  "request": {
+    "projectId": "8K6WcbrPLghSBJXBtWAE",
+    "model": "gpt-image-2-5-sunburst",
+    "mode": "image2image",
+    "params": {
+      "imageCount": 1,
+      "aspectRatio": "3:4",
+      "resolutionTier": "4k",
+      "quality": "high",
+      "lockAspectRatio": true,
+      "outputFormat": "png",
+      "autoEnhancePrompt": false,
+      "variant": "sunburst",
+      "prompt": "二维人物＋轻手绘背景。正常身体比例，面部与衣饰简化，以外轮廓、姿态和少量大色块识别；柔和而清楚的线条，平涂为主，背景轻薄手绘笔触。以参考图1已获用户认可的轻水彩质感为准；不加重纸纹、颗粒、锐化或衣料细纹，高质量用于稳定身份与比例。\n用途：全剧非歌曲实体的完整状态整体参考，不是分镜画面或多状态拼图。\n实体：阿蘅。\n固定身份与制作造型：清瘦女孩，稍长的脸型、清楚的下颌，眉眼柔和；黑发整齐低髻，额边少量碎发。洗旧青绿交领衣、浅灰内衫、深青裙裤、灰布鞋，袖口平整挽两折。身形不与李寄等宽；唱曲时脚下稳稳打拍，护书时手臂贴身。\n与基准“阿蘅·日常洗旧青衣”相比，本张改为“阿蘅·捞书后湿衣袖”；完整差异及仍须并存的特征如下。未列明改变的身份轮廓、配色与结构保持基准。\n本张完整形态：保持同一青衣和发式；捞书滑跪后两袖至肘、膝下与裙裤下摆明显湿深，贴腿处形成大块深青。湿袖可粘少量米粒，脸无新增伤。衣袖未换干前不得自动恢复浅色。\n实际参考图片按提交顺序编号：参考图1是本实体已认可的基准整体原件，使用整幅。严格保留其身份、身体/器物比例、轮廓、颜色、线条与空间方向，只按下述完整状态改变已明确部位；不要加重纸纹、颗粒或锐化。\n画幅 3:4。单一人物全身、三分之四视角，头至鞋完整入画，手掌和关键伤布可看清，浅暖灰简底、柔和中性光。状态需要承重或坐姿时保留全身和必要支撑，不强改为站姿。\n不要添加水印、装饰边框或状态标题。必要道具文字只使用已指定的原句；其余用不可辨稀疏笔迹或留白，不补造歌词、日期、人物姓名或新剧情。\n保留怀中同一本捞起的书；取消米袋。把两袖放至手腕使湿深色范围可辨，肘以下、膝下及下摆湿深，脸和发型保持基准，不画整身落水、发烧或新伤。",
+      "visualReferences": [
+        {
+          "type": "image",
+          "id": "mPaJqzTxIJBucPn10CyA",
+          "url": "https://cdn.openart.ai/openart-ai/production/2026-10/create-image/user_3E6ibhdvk1OmnOqEu3lD0Lcnjv4/gpt-image-2.5-sunburst-1_1790959432431_05b8bdf1.png",
+          "label": "参考图1"
+        }
+      ]
+    }
+  }
+}

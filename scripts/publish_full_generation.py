@@ -9,6 +9,7 @@ import fcntl
 import hashlib
 import json
 from pathlib import Path
+import re
 import sqlite3
 import sys
 
@@ -26,17 +27,23 @@ def main():
     parser.add_argument('--system',type=Path,required=True)
     parser.add_argument('--instance',type=Path,required=True)
     parser.add_argument('--apply',action='store_true')
+    parser.add_argument('--registration',type=Path,default=ROOT/'production/full-generation/registration.json')
+    parser.add_argument('--run-name',default='publication')
     args=parser.parse_args();target=args.instance.resolve()
+    if not re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*',args.run_name):
+        parser.error('run-name must be a safe, unique runtime directory name')
     if target==ROOT or target==Path('/') or not (target/'.runtime/review.sqlite3').is_file():
         parser.error('explicit existing formal instance required; no task checkout or empty instance')
-    source=ROOT/'production/full-generation/registration.json'
+    source=args.registration.resolve()
+    if ROOT/'production/full-generation' not in source.parents:
+        parser.error('registration must be a reviewed package within production/full-generation')
     document=json.loads(source.read_text());batches=document['batches']
     sys.path.insert(0,str(args.system.resolve()))
     from review_desk import production as p
     from review_desk.production_media import ingest,validate_component
     from review_desk.store import Store
     from verify_full_generation import verify
-    runtime=ROOT/'.runtime/full-generation/publication';runtime.mkdir(parents=True,exist_ok=True)
+    runtime=ROOT/'.runtime/full-generation'/args.run_name;runtime.mkdir(parents=True,exist_ok=True)
     receipt=runtime/'applied.json'
     if receipt.exists():parser.error('publication already has a receipt; inspect and do not blindly replay')
     with (target/'.runtime/publication.lock').open('a') as lock:
@@ -69,7 +76,8 @@ def main():
         evidence.update(registration_sha256=hashlib.sha256(source.read_bytes()).hexdigest(),new_files={k:v['sha256'] for k,v in components.items()},
                         publication_lock='main .runtime/publication.lock',provider_calls_during_publication=0)
         receipt.write_text(json.dumps(evidence,ensure_ascii=False,indent=2)+'\n')
-        (ROOT/'production/evidence/full-generation-formal-publication.json').write_text(json.dumps(evidence,ensure_ascii=False,indent=2)+'\n')
+        evidence_name='full-generation-formal-publication.json' if args.run_name=='publication' else 'full-generation-'+args.run_name+'.json'
+        (ROOT/'production/evidence'/evidence_name).write_text(json.dumps(evidence,ensure_ascii=False,indent=2)+'\n')
         print(json.dumps({k:v for k,v in evidence.items() if k not in ('changed_objects','new_files')},ensure_ascii=False))
 
 

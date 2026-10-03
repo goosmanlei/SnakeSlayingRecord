@@ -2,7 +2,7 @@
 
 《把灯带回家》版本四已获用户确认，17 集、42 场、1,114 个正文块；主视觉为二维人物与轻手绘背景，16:9。当前完成全剧实体／状态抽取、第一集 33 镜设计、逐素材方案及首批实际候选。基准尚未全部补齐或接受，第一集未就绪；完整素材、有声动态分镜、成片和工程在后续制作范围。
 
-此前 `task-20261002-0002` 的制作审阅改进承接 `task-20261002-0001`，系统 `15822ae7` 与 33 条关系修订已发布正式 3000。其完成确认与双仓推送授权仅属于该任务。当前 `task-20261002-0003` 已登记全剧 255 个图像状态方案、76 个音色状态方案和六份新代表候选，正等待母版审阅，尚未完成或取得集成／推送确认。具体范围、原件、缺口与恢复入口见 [全剧首轮生成交接](full-generation/README.md)和 [STATE.md](../STATE.md)；此前界面验证见 [制作审阅验证](review-ui-verification.md)。
+此前 `task-20261002-0002` 的制作审阅改进承接 `task-20261002-0001`，系统 `15822ae7` 与 33 条关系修订已发布正式 3000。其完成确认与双仓推送授权仅属于该任务。当前 `task-20261002-0003` 已登记全剧 255 个图像状态方案、76 个音色状态方案和 18 份新原件／调用；10 个图像状态已有合格新原件，四份新声音均获用户听审认可。河街浅滩与李寄返工图待母版审阅，任务尚未完成，也未取得本任务集成／推送确认。具体范围、原件、缺口与恢复入口见 [全剧首轮生成交接](full-generation/README.md)和 [STATE.md](../STATE.md)；此前界面验证见 [制作审阅验证](review-ui-verification.md)。
 
 ## 内容入口
 
@@ -13,7 +13,7 @@
 | 直接关系、集场原文和修正范围 | [entity-relationships.md](entity-relationships.md)、[准确增量与全部证据](entity-relationships.json)、[33 条修正前后对应](relationship-review.md) |
 | 第一集镜头、空间和定稿声音 | [33 镜设计](episode01/shots.md)、[准确数据](episode01/shots.json)、[37 个对白／演唱单元](episode01/dialogue-cues.json) |
 | 实体描述与生成方案 | [generation-preparation.md](generation-preparation.md)：33 个实体的 77 个状态、122 项方案，区分计划与实际调用 |
-| 全剧非歌曲首轮方案与新原件 | [交接与审阅入口](full-generation/README.md)、[255 图像及音色逐项方案](full-generation/recipes.json)、[音色范围](full-generation/voice-scope.md)，包含待绑定输入与两处待确认漏项 |
+| 全剧非歌曲首轮方案与新原件 | [交接与审阅入口](full-generation/README.md)、[255 图像及音色逐项方案](full-generation/recipes.json)、[音色范围](full-generation/voice-scope.md)，包含准确方案、待绑定输入和用户锁定的 40 基础＋2 变化音色范围 |
 | 素材轮次、历史对应及 0001 验证 | [material-rounds.md](material-rounds.md)、[准确对应](material-round-mapping.json)与[编制工具](../scripts/material_round_audit.py) |
 | 后续各集计划需求 | [scene-requirements.md](scene-requirements.md)：其余 40 场 566 项镜头用途需求，不等于本轮 255 个完整状态生成目标 |
 | 现有候选的实体与状态归属 | [baseline-associations.md](baseline-associations.md)、[requests](requests/)、[receipts](receipts/)及[baseline-records](baseline-records/) |
@@ -47,7 +47,7 @@
 | [赵执事对白](../export/assets/842ecea98a028fa105e0f30a4f5a6085d412d3c40aecf24516f5a7a10b19ab92.wav) | 11.5 秒，同规格 |
 | [阿蘅舟行曲](../export/assets/9edcf64a1d34914d1d406a01aff9617f3759eb51ed699e1380fde6f96993c953.wav) | 17.0534 秒，实际引用阿蘅对白作声线参考 |
 
-上表为既有 6 个素材身份、7 次实际调用、两张图和五份 WAV，全部保留。本轮另增四张图、两份 WAV 和六次真实调用，正式库合计 12 个素材身份、13 次调用，历史准确原件共六张图、七份 WAV；新原件与自检见 [本轮交接](full-generation/README.md)。播放器验证不代替声音听审。第一集 250 项镜头用途与 67 项状态必要需求合计 317 项均未明确采用；227 秒为设计估时。继续生成前重新查询额度、核对准确输入和母版认可。
+上表为既有 6 个素材身份、7 次实际调用、两张图和五份 WAV，全部保留。本轮另增 14 张图、4 份 WAV 和 18 次真实调用，正式库合计 24 个素材身份、25 次调用，历史准确原件共 16 张图、9 份 WAV；新原件与自检见 [本轮交接](full-generation/README.md)。播放器验证不代替声音听审。第一集 250 项镜头用途与 67 项状态必要需求合计 317 项均未明确采用；227 秒为设计估时。继续生成前重新查询额度、核对准确输入和母版认可。
 
 ## Codex 后台维护与恢复
 
@@ -64,7 +64,7 @@ PYTHONPATH="$production_system" python3 -m review_desk --instance . production-r
 
 维护使用 `production-import FILE --validate-only` 预演，再用相同批次导入；携带 `expected_version` 和必要的 `expected_heads`，保留原稿与历史锚点。真实文件先用 `production-file FILE` 导入原件，再通过 `production-import FILE.json` 登记其准确 CALL、ASSET 与需求／状态关联；文件入库本身不创建采用。准确采用沿用系统仓库的 `docs/production.md` 契约。关系在本故事 [编制工具](../scripts/entity_relationships.py)中维护，先 `plan` 后 `apply`，正式写前重新准备。
 
-`production_forms.py`、`production_inventory.py`、`episode01_shots.py` 和 `scene_requirements.py` 保存本故事规则；不要重复运行初始批次覆盖已审内容。`register_production_candidates.py` 只用于真实新调用首次登记，不重复登记已有对象。本轮全剧方案与六份代表项使用 `prepare_full_generation.py`、`register_full_generation.py`、`publish_full_generation.py`，这些工具不代发模型请求；已经发布的批次不得盲重跑。新媒体请求先检查单个请求、最新额度与准确输入，再按当次授权执行。
+`production_forms.py`、`production_inventory.py`、`episode01_shots.py` 和 `scene_requirements.py` 保存本故事规则；不要重复运行初始批次覆盖已审内容。`register_production_candidates.py` 只用于真实新调用首次登记，不重复登记已有对象。本轮全剧方案与首批代表项使用 `prepare_full_generation.py`、`register_full_generation.py`，后续真实增量使用 `register_generation_batch.py` 和带准确批次参数的 `publish_full_generation.py`；这些工具不代发模型请求；已经发布的批次不得盲重跑。新媒体请求先检查单个请求、最新额度与准确输入，再按当次授权执行。
 
 恢复只接受新的隔离目录，先准备 Python、FFmpeg／ffprobe 和固定版本系统：
 

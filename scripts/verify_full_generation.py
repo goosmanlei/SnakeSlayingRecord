@@ -12,7 +12,15 @@ def verify(before, after, registration):
     if old.keys()!=new.keys(): raise ValueError('unexpected schema change')
     records=[r for b in registration['batches'] for r in b['records']]
     allowed={r['object_id'] for r in records}
-    if any(r['kind'] not in ('REQUIREMENT','CALL','ASSET') for r in records): raise ValueError('unexpected record kind')
+    decisions=set(registration.get('user_master_decisions',[]))
+    for record in records:
+        if record['kind'] in ('REQUIREMENT','CALL','ASSET'): continue
+        payload=record['payload']
+        if (record['kind']!='JUDGMENT' or record['object_id'] not in decisions
+                or record['expected_version']!=0 or payload.get('actor')!='user'
+                or payload.get('review_type')!='generation_master' or payload.get('verdict')!='accepted'
+                or payload.get('evidence',{}).get('source')!='user_conversation'):
+            raise ValueError('unexpected record kind or ungrounded master decision')
     old_objects={r[0]:r for r in old['objects']};new_objects={r[0]:r for r in new['objects']}
     if old_objects.keys()-new_objects.keys(): raise ValueError('existing identity disappeared')
     changed={oid for oid in new_objects if new_objects[oid]!=old_objects.get(oid)}
@@ -40,9 +48,14 @@ def verify(before, after, registration):
         actual=revisions[spec['object_id'],spec['expected_version']+1]
         if json.loads(actual[3])!=payload: raise ValueError('payload mismatch: '+spec['object_id'])
     before_rounds={(r[0],r[1]):r for r in old['material_rounds']};after_rounds={(r[0],r[1]):r for r in new['material_rounds']}
+    produced_requirements={n['object_id'] for spec in records if spec['kind']=='ASSET'
+                           for n in spec['payload'].get('candidate_requirements',[])}
     for key,row in before_rounds.items():
         other=after_rounds.get(key)
-        if not other or row[3]!=other[3] or (row!=other and row[0] not in allowed):raise ValueError('old material round changed unexpectedly')
+        expected_production=(other and row[0] in produced_requirements and row[2]=='preparing'
+                             and other[2]=='produced' and row[:2]==other[:2] and row[3:]==other[3:])
+        if not other or row[3]!=other[3] or (row!=other and row[0] not in allowed and not expected_production):
+            raise ValueError('old material round changed unexpectedly')
     # First-round generation cannot fabricate revision feedback or another round.
     if any(r[1]!=1 for k,r in after_rounds.items() if k not in before_rounds):raise ValueError('unexpected new material round')
     return {'old_objects_preserved':len(old_objects),'new_objects':len(new_objects)-len(old_objects),
