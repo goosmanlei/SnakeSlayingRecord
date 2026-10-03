@@ -1,0 +1,41 @@
+{
+  "image_scope": 255,
+  "unique_image_states": 255,
+  "registered_plan_revision_matches": 255,
+  "new_voice_items": 42,
+  "voice_state_requirement_matches": 76,
+  "user_accepted_audio_originals": 4,
+  "new_originals": 18,
+  "new_components_sha_verified": 54,
+  "manifest_files_sha_verified": 125,
+  "local_link_documents_checked": [
+    "STATE.md",
+    "KNOWLEDGE.md",
+    "production/README.md",
+    "production/full-generation/README.md",
+    "production/full-generation/voice-scope.md",
+    "planning/full-entity-generation-task.md"
+  ],
+  "submitted_image_prompts_match_receipts": 14,
+  "task_complete": false,
+  "validation": {
+    "tests": [
+      {
+        "command": "python3 -m unittest discover -s tests -p 'test_full_generation*.py'",
+        "passed": 8
+      },
+      {
+        "command": "python3 -m unittest discover -s tests -p 'test_generation_reference_guard.py'",
+        "passed": 3
+      }
+    ],
+    "system_tests_reused": {
+      "commit": "a6a9e9bbfa2cae97b27dd23b5e49398c69e24a70",
+      "passed": 18,
+      "reason": "unchanged system code; no full rerun"
+    },
+    "staged_whitespace_check": "passed",
+    "credential_fields_found": 0,
+    "runtime_or_secret_files_staged": false
+  }
+}

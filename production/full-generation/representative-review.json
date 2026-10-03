@@ -26,9 +26,15 @@
       "height": 2688,
       "quoted_credits": 250,
       "self_review_status": "ready_for_user_review",
-      "review": "全身、青衣、整齐袖口、书与小米袋可辨。保留轻水彩布纹，是否符合二维人物/轻背景目标交用户审阅；无明显肢体异常。尚未认可为母版。",
+      "review": "原图完整形态已经目视核对，用户认可该准确原件及其现有纹理作为基准母版；后续派生保持身份、比例、笔触与纹理强度。",
       "visual_reviewer": "Codex",
-      "user_accepted": false
+      "user_accepted": true,
+      "user_review": {
+        "actor": "user",
+        "reply": "1. 认可",
+        "source": "本任务会话，针对四份准确原件的母版审阅请求",
+        "verdict": "accepted"
+      }
     },
     {
       "id": "fg3-lantern-image-01",
@@ -40,9 +46,15 @@
       "height": 2016,
       "quoted_credits": 250,
       "self_review_status": "ready_for_user_review",
-      "review": "完整轮廓、提梁、未点灯芯与补纸可辨。纸罩纹理偏明显，待用户决定是否进一步简化；未经用户母版认可。",
+      "review": "原图完整形态已经目视核对，用户认可该准确原件及其现有纹理作为基准母版；后续派生保持身份、比例、笔触与纹理强度。",
       "visual_reviewer": "Codex",
-      "user_accepted": false
+      "user_accepted": true,
+      "user_review": {
+        "actor": "user",
+        "reply": "1. 认可",
+        "source": "本任务会话，针对四份准确原件的母版审阅请求",
+        "verdict": "accepted"
+      }
     },
     {
       "id": "fg3-river-image-01",
@@ -70,10 +82,17 @@
       "codec": "pcm_s16le",
       "bits_per_sample": 16,
       "subtitle_text_matches": true,
-      "self_review_status": "listening_pending",
-      "review": "原件为48 kHz、双声道、PCM 16-bit WAV；返回字幕与定稿试读原句一致。这不证明音色、实际发音或内容通过听辨。实际听辨者尚无，须由用户听审后记录结论；不是已认可母版。",
-      "listener": null,
-      "user_accepted": false
+      "self_review_status": "user_listened_and_accepted",
+      "review": "文件规格与字幕原句已核对；用户在本会话认可此准确音色为基础母版。Codex未独立听辨。",
+      "listener": "user",
+      "user_accepted": true,
+      "user_review": {
+        "actor": "user",
+        "reply": "1. 认可",
+        "source": "本任务会话，针对四份准确原件的母版审阅请求",
+        "verdict": "accepted"
+      },
+      "listening_evidence": "用户针对听审请求回复认可；Codex未独立听辨，未声称观察到用户播放过程。"
     },
     {
       "id": "fg3-zhou-voice-01",
@@ -87,15 +106,355 @@
       "codec": "pcm_s16le",
       "bits_per_sample": 16,
       "subtitle_text_matches": true,
-      "self_review_status": "listening_pending",
-      "review": "原件为48 kHz、双声道、PCM 16-bit WAV；返回字幕与定稿试读原句一致。这不证明音色、实际发音或内容通过听辨。实际听辨者尚无，须由用户听审后记录结论；不是已认可母版。",
-      "listener": null,
-      "user_accepted": false
+      "self_review_status": "user_listened_and_accepted",
+      "review": "文件规格与字幕原句已核对；用户在本会话认可此准确音色为基础母版。Codex未独立听辨。",
+      "listener": "user",
+      "user_accepted": true,
+      "user_review": {
+        "actor": "user",
+        "reply": "1. 认可",
+        "source": "本任务会话，针对四份准确原件的母版审阅请求",
+        "verdict": "accepted"
+      },
+      "listening_evidence": "用户针对听审请求回复认可；Codex未独立听辨，未声称观察到用户播放过程。"
+    },
+    {
+      "id": "fg3-aheng-later-image-01",
+      "file": "export/assets/b085f4f67c782c286fec7132b2b8bc1bcac71d5a72cdffdeed625caa36bd8cb1.png",
+      "sha256": "b085f4f67c782c286fec7132b2b8bc1bcac71d5a72cdffdeed625caa36bd8cb1",
+      "width": 2016,
+      "height": 2688,
+      "history_id": "ntaVSXN8Nso5EdpqbQ3H",
+      "title": "阿蘅·点名后日常形态 · 首轮派生候选",
+      "media_type": "image",
+      "self_review_status": "passed",
+      "visual_reviewer": "Codex",
+      "user_accepted": false,
+      "review": "与认可母版对照身份、发式和衣着稳定；衣鞋干燥，双手收拢、肩颈谨慎，无额外伤痕；全身完整。图像自检通过，待用户后续选用。",
+      "usage": {
+        "quoted_credits": 257,
+        "actual_batch_credit_delta": 1542,
+        "batch_before": 8914,
+        "batch_after": 7372,
+        "allocation": "single-call quote; actual batch delta from account observations"
+      },
+      "lineage": {
+        "i2i_depth": 1,
+        "references": [
+          {
+            "object_id": "asset-fg3-aheng-image-01",
+            "revision_id": "e0e3e576207967838b531d30c69e5aa2841d44b7312818bc107c8f06d1ee7145"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fg3-aheng-tears-image-01",
+      "file": "export/assets/e1653843a7351431574c6192617c3d9d440488ec1b7513d624d5b4f1b060426f.png",
+      "sha256": "e1653843a7351431574c6192617c3d9d440488ec1b7513d624d5b4f1b060426f",
+      "width": 2016,
+      "height": 2688,
+      "history_id": "CRCDUDF72OZeexOQmGjx",
+      "title": "阿蘅·确认安全后泪痕 · 首轮派生候选",
+      "media_type": "image",
+      "self_review_status": "passed",
+      "visual_reviewer": "Codex",
+      "user_accepted": false,
+      "review": "同一五官、发髻和干青衣，两颊泪线及鼻尖泛红可辨，身体侧倾、情绪克制；李绡留在画外，未补造未认可的第二个人物形象。全身完整、无新增伤，自检通过。",
+      "usage": {
+        "quoted_credits": 257,
+        "actual_batch_credit_delta": 1542,
+        "batch_before": 8914,
+        "batch_after": 7372,
+        "allocation": "single-call quote; actual batch delta from account observations"
+      },
+      "lineage": {
+        "i2i_depth": 1,
+        "references": [
+          {
+            "object_id": "asset-fg3-aheng-image-01",
+            "revision_id": "e0e3e576207967838b531d30c69e5aa2841d44b7312818bc107c8f06d1ee7145"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fg3-aheng-hoarse-image-01",
+      "file": "export/assets/229dfb5ed8bf32dd70d02fc952cb36c06d05e28c11151cec314dfa13fd27a5fb.png",
+      "sha256": "229dfb5ed8bf32dd70d02fc952cb36c06d05e28c11151cec314dfa13fd27a5fb",
+      "width": 2016,
+      "height": 2688,
+      "history_id": "3XiJerPhLD12gASEIBbK",
+      "title": "阿蘅·连唱后嗓哑 · 首轮派生候选",
+      "media_type": "image",
+      "self_review_status": "passed",
+      "visual_reviewer": "Codex",
+      "user_accepted": false,
+      "review": "与认可母版对照，五官、发髻、青衣和比例稳定；衣鞋干燥，轻扶喉部表达用嗓劳累，未画成重病或伤口；全身完整。图像自检通过，不代表声音已听审或用户已认可此派生。",
+      "usage": {
+        "quoted_credits": 257,
+        "actual_batch_credit_delta": 1542,
+        "batch_before": 8914,
+        "batch_after": 7372,
+        "allocation": "single-call quote; actual batch delta from account observations"
+      },
+      "lineage": {
+        "i2i_depth": 1,
+        "references": [
+          {
+            "object_id": "asset-fg3-aheng-image-01",
+            "revision_id": "e0e3e576207967838b531d30c69e5aa2841d44b7312818bc107c8f06d1ee7145"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fg3-aheng-wet-image-01",
+      "file": "export/assets/916c48f5155467dadc9e499ab1b24ae42b315047b7f282dc531e56223a77cc80.png",
+      "sha256": "916c48f5155467dadc9e499ab1b24ae42b315047b7f282dc531e56223a77cc80",
+      "width": 2016,
+      "height": 2688,
+      "history_id": "sbt33OggcEwx6Bpi4R3w",
+      "title": "阿蘅·捞书后湿衣袖 · 首轮派生候选",
+      "media_type": "image",
+      "self_review_status": "passed",
+      "visual_reviewer": "Codex",
+      "user_accepted": false,
+      "review": "同一人物和书本，湿袖至肘、膝下及裙摆湿深色清楚，去掉米袋，头发未散、脸无新伤；湿痕与基准布纹可区分，无身份或整体比例漂移。完整状态自检通过。",
+      "usage": {
+        "quoted_credits": 257,
+        "actual_batch_credit_delta": 1542,
+        "batch_before": 8914,
+        "batch_after": 7372,
+        "allocation": "single-call quote; actual batch delta from account observations"
+      },
+      "lineage": {
+        "i2i_depth": 1,
+        "references": [
+          {
+            "object_id": "asset-fg3-aheng-image-01",
+            "revision_id": "e0e3e576207967838b531d30c69e5aa2841d44b7312818bc107c8f06d1ee7145"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fg3-aheng-wet-shoes-image-01",
+      "file": "export/assets/3939dc02b8655492ff2f33de944e0ee9a83d66970c3a0d3c21e97ff5703482dd.png",
+      "sha256": "3939dc02b8655492ff2f33de944e0ee9a83d66970c3a0d3c21e97ff5703482dd",
+      "width": 2016,
+      "height": 2688,
+      "history_id": "nD3chsJUlRInBdbWq5rB",
+      "title": "阿蘅·嗓音劳累、鞋被水浸 · 首轮派生候选",
+      "media_type": "image",
+      "self_review_status": "passed",
+      "visual_reviewer": "Codex",
+      "user_accepted": false,
+      "review": "与认可母版对照身份、发式和衣着一致，双鞋湿深且裙摆仅靠鞋一圈湿痕，袖口干燥；没有套用捞书后的整片湿衣形态。全身完整，自检通过。",
+      "usage": {
+        "quoted_credits": 257,
+        "actual_batch_credit_delta": 1542,
+        "batch_before": 8914,
+        "batch_after": 7372,
+        "allocation": "single-call quote; actual batch delta from account observations"
+      },
+      "lineage": {
+        "i2i_depth": 1,
+        "references": [
+          {
+            "object_id": "asset-fg3-aheng-image-01",
+            "revision_id": "e0e3e576207967838b531d30c69e5aa2841d44b7312818bc107c8f06d1ee7145"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fg3-lantern-lit-image-01",
+      "file": "export/assets/c114ef48af896b63524b4d1caab8990ee00f78e2c87a0a9fc9f1b0ac0a8baca9.png",
+      "sha256": "c114ef48af896b63524b4d1caab8990ee00f78e2c87a0a9fc9f1b0ac0a8baca9",
+      "width": 2688,
+      "height": 2016,
+      "history_id": "KFeMEVrZi8uB4EyDc5fx",
+      "title": "李家旧灯·裂缝补纸透暖光 · 首轮派生候选",
+      "media_type": "image",
+      "self_review_status": "passed",
+      "visual_reviewer": "Codex",
+      "user_accepted": false,
+      "review": "与认可根母版对照提梁、木柄、骨架、裂缝与补纸位置一致，灯芯点亮并透出暖黄光；未改变形体或加重纹理，完整道具入画。自检通过。",
+      "usage": {
+        "quoted_credits": 257,
+        "actual_batch_credit_delta": 1542,
+        "batch_before": 8914,
+        "batch_after": 7372,
+        "allocation": "single-call quote; actual batch delta from account observations"
+      },
+      "lineage": {
+        "i2i_depth": 1,
+        "references": [
+          {
+            "object_id": "asset-fg3-lantern-image-01",
+            "revision_id": "c04b3877a5421432067f5bb24be40d19bf1af4b1e2325462de2f884df4e2c3af"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fg3-a-heng-hoarse-voice-01",
+      "title": "阿蘅 · 嗓哑补充 · 首轮候选",
+      "media_type": "audio",
+      "file": "export/assets/1c03d8d5efa4320e75086932bd28489ec714c8eaaa87bbe84daf57c6aafb1c16.wav",
+      "sha256": "1c03d8d5efa4320e75086932bd28489ec714c8eaaa87bbe84daf57c6aafb1c16",
+      "duration_seconds": 9.88,
+      "sample_rate": 48000,
+      "channels": 2,
+      "codec": "pcm_s16le",
+      "bits_per_sample": 16,
+      "subtitle_text_matches": true,
+      "self_review_status": "user_listened_and_accepted",
+      "listener": "user",
+      "user_accepted": true,
+      "review": "文件规格及字幕原句已核对；用户已实际听审请求答复认可该补充声线。Codex未独立听辨。",
+      "listening_evidence": "用户针对准确9.88秒嗓哑、4.58秒泪后哽咽听审请求回复两份均认可；Codex未独立听辨",
+      "user_review": {
+        "actor": "user",
+        "reply": "两份均认可",
+        "source": "本会话准确原件听审请求",
+        "verdict": "accepted"
+      }
+    },
+    {
+      "id": "fg3-a-heng-tears-voice-01",
+      "title": "阿蘅 · 泪后哽咽补充 · 首轮候选",
+      "media_type": "audio",
+      "file": "export/assets/190e628c7cac1e564192f5afe87227585d18a9af88d7aaea923bfc7b1c37856d.wav",
+      "sha256": "190e628c7cac1e564192f5afe87227585d18a9af88d7aaea923bfc7b1c37856d",
+      "duration_seconds": 4.58,
+      "sample_rate": 48000,
+      "channels": 2,
+      "codec": "pcm_s16le",
+      "bits_per_sample": 16,
+      "subtitle_text_matches": true,
+      "self_review_status": "user_listened_and_accepted",
+      "listener": "user",
+      "user_accepted": true,
+      "review": "文件规格及字幕原句已核对；用户已实际听审请求答复认可该补充声线。Codex未独立听辨。",
+      "listening_evidence": "用户针对准确9.88秒嗓哑、4.58秒泪后哽咽听审请求回复两份均认可；Codex未独立听辨",
+      "user_review": {
+        "actor": "user",
+        "reply": "两份均认可",
+        "source": "本会话准确原件听审请求",
+        "verdict": "accepted"
+      }
+    },
+    {
+      "id": "fg3-liji-image-02",
+      "title": "李寄 · 整体返工候选二",
+      "media_type": "image",
+      "file": "export/assets/b84208dd362f2bf0d5668384b5104da3de348619efa3b64e75ffcf3dd7ccb8cd.png",
+      "sha256": "b84208dd362f2bf0d5668384b5104da3de348619efa3b64e75ffcf3dd7ccb8cd",
+      "width": 2016,
+      "height": 2688,
+      "history_id": "P12WuFGBGsbLjBgBlHKS",
+      "self_review_status": "passed",
+      "review": "全身完整，赭衣灰蓝裤、人物脸型与原方向一致；双手只有薄层干浆糊与少量细纤维，肩颈处红印可辨，无桌桶纸堆等额外道具。目视自检通过，尚待用户确认此新身份母版。",
+      "visual_reviewer": "Codex",
+      "user_accepted": false,
+      "usage": {
+        "quoted_credits": 250,
+        "actual_batch_credit_delta": 565,
+        "batch_before": 7372,
+        "batch_after": 6807,
+        "allocation": "single-call quote; actual batch delta from account observations"
+      },
+      "lineage": {
+        "i2i_depth": 0,
+        "references": []
+      }
+    },
+    {
+      "id": "fg3-river-image-02",
+      "title": "河街 · 整体返工候选二（未通过）",
+      "media_type": "image",
+      "file": "export/assets/1739bb33039ebaa9185334fa14c0bc5850c243f6e8d4bc78beda49796f652aa5.png",
+      "sha256": "1739bb33039ebaa9185334fa14c0bc5850c243f6e8d4bc78beda49796f652aa5",
+      "width": 3584,
+      "height": 2016,
+      "history_id": "fgmlwqxiD7kxQl7vvhet",
+      "self_review_status": "changes_requested",
+      "review": "门朝河与无字招牌已改善，但仍画成高石岸和宽深水河道，缺少门前可涉水的连续浅滩；背景瓦片、墙面纹理仍偏密。用户补充明确要求浅滩；此调用在补充前已提交，原提示词未含足够水深约束。保留原件，不计合格，不作为派生母版。",
+      "visual_reviewer": "Codex",
+      "user_accepted": false,
+      "usage": {
+        "quoted_credits": 315,
+        "actual_batch_credit_delta": 565,
+        "batch_before": 7372,
+        "batch_after": 6807,
+        "allocation": "single-call quote; actual batch delta from account observations"
+      },
+      "lineage": {
+        "i2i_depth": 0,
+        "references": []
+      }
+    },
+    {
+      "id": "fg3-river-image-03",
+      "file": "export/assets/00dd40059c4ccfeded650c9ae000352cc7235980b8cef0436044b9a7c7e93e05.png",
+      "sha256": "00dd40059c4ccfeded650c9ae000352cc7235980b8cef0436044b9a7c7e93e05",
+      "width": 3584,
+      "height": 2016,
+      "title": "河街 · 浅滩修订候选（竹摊位置待修）",
+      "media_type": "image",
+      "self_review_status": "changes_requested",
+      "visual_reviewer": "Codex",
+      "user_accepted": false,
+      "history_id": "AQZ6x6GIEckVpQoh5wed",
+      "review": "门前已呈现连续浅滩、可辨河床和低缓岸坡，水深要求通过；河右街左、道具屋门朝河可辨。竹器摊却落在米铺同侧，违背第2场第24块“对街”的位置要求；仅为此具体问题继续一次局部返工，不计完整状态合格，也不能供其他状态派生。",
+      "usage": {
+        "quoted_credits": 315,
+        "actual_batch_credit_delta": 315,
+        "batch_before": 6807,
+        "batch_after": 6492,
+        "allocation": "single completed job, account observations"
+      },
+      "lineage": {
+        "i2i_depth": 0,
+        "references": []
+      }
+    },
+    {
+      "id": "fg3-river-image-04",
+      "file": "export/assets/c4ce81f63a44f3cf2880a41661d07fd614021455239d9555c918ab805c8e924d.png",
+      "sha256": "c4ce81f63a44f3cf2880a41661d07fd614021455239d9555c918ab805c8e924d",
+      "width": 3584,
+      "height": 2016,
+      "title": "河街 · 浅滩与对街竹摊修订候选",
+      "media_type": "image",
+      "self_review_status": "passed",
+      "visual_reviewer": "Codex",
+      "user_accepted": false,
+      "history_id": "LUTCCYK4Ha6RBuoEyLjo",
+      "review": "与第三次原图对照：仅将竹器摊从米铺旁移到对街靠河的干燥岸地，保留一座竹棚，街道可通行。透明浅水、河床、低缓岸坡与露出水面的石头保持；道具屋门朝河，局部石缝暗水未扩成深河。完整状态目视自检通过，尚待用户认可此准确空间母版；参考谱系深度1。",
+      "usage": {
+        "quoted_credits": 324,
+        "actual_batch_credit_delta": 324,
+        "batch_before": 6492,
+        "batch_after": 6168,
+        "allocation": "single completed job, account observations"
+      },
+      "lineage": {
+        "i2i_depth": 1,
+        "references": [
+          {
+            "object_id": "asset-fg3-river-image-03",
+            "revision_id": "b1715d567d0ac8a66000bb27ee57e26308eafd429d606bbdcacb662905baa1d1"
+          }
+        ]
+      }
     }
   ],
-  "image_qualified_completion_count": 0,
-  "qualification_note": "两张需修订、两张待用户母版审阅；不将调用成功计为完成255目标。",
-  "audio_seconds": 34.28,
-  "openart_observed_credit_delta": 1065,
-  "openart_after": 8914
+  "image_qualified_completion_count": 10,
+  "qualification_note": "255个状态中10个已有合格新原件：2个基础获用户认可，6个派生及李寄、河街返工共8个通过目视自检待后续审阅；245个状态未调用。14次图像调用中4张失败自检的旧尝试保留但不计完成。",
+  "audio_seconds": 48.74,
+  "openart_observed_credit_delta": 3811,
+  "openart_after": 6168
 }
