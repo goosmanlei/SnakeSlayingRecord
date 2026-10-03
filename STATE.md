@@ -2,6 +2,10 @@
 
 更新日期：2026-10-04。
 
+## 自主优化实验恢复入口
+
+- 后续执行先读 [任务说明](planning/autonomous-optimization-task.md) 与 [运行工具说明](planning/autonomous-optimization-runtime.md)；首次 `mrun` 建立基线和计时，按 [报告规范](planning/autonomous-optimization-report-template.md) 持续记录。本轮未启动优化。
+
 ## 当前执行任务
 
 - 用户已取消拆分方案，继续完成本任务全部范围，不发布新任务。
