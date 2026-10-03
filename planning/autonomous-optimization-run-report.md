@@ -1,14 +1,14 @@
 # 审阅台自主优化运行报告
 
-任务：`task-20261004-0002`。本报告持续更新，当前为第八批阅读连续性修复与保存入口走查的完整检查点，尚未达到收敛标准、结束优化或准备最终集成。最后复核时间为 **2026-10-04 05:52:46 +08:00**。
+任务：`task-20261004-0002`。本报告持续更新，当前为第九批资料图圈选与配置保存验收的完整检查点，尚未达到收敛标准、结束优化或准备最终集成。最后复核时间为 **2026-10-04 06:26:16 +0800**。
 
 ## 当前结论与计时
 
 候选已修复准确候选和素材轮次显示、历史方案采纳保护、结构与章节导航、分轮评论草稿、评论与采用的断流恢复，以及完整导出／恢复的失败处理。长出处窄屏换行、可选或历史原件缺失时的下载限制也已通过相应真实页面与独立审查。项目背景仅在隔离预览更新；3000 正式服务仍是原有版本。
 
-空态入口、区域草稿收起、结构回应面板和资料旧图定位已完成局部修复。根协调实际 Chrome 已验证：没有可评论对象时隐藏入口、有对象但零评论仍可用；旧红图自由圈选的文字和几何范围收起后原样重开；资料图定位回到准确原件。结构回应已通过独立审查，其余三项独立审查仍在进行。保存入口走查新增配置迟到刷新丢输入、素材审阅同操作重复提交，以及资料圈选误取结构图片三个 P1，正在修复。相反变更复核的归并规则仍等待用户选择。
+空态入口、区域草稿收起、结构回应面板、资料旧图定位和准确资料圈选已完成修复及独立审查；实际 Chrome 覆盖正常新建、收起重开和定位。配置迟到回包、跨分组刷新及断线恢复也已通过 Chrome 和持久化核对。素材审阅保存的详情刷新失败边界正在补验；润色覆盖未保存文字、历史资料上下文错版已实现，等待独立及页面验收。另发现资料图留白使圈选随屏宽偏移，局部样式修复已过真实横竖方图检查，独立审查中。相反变更复核的归并规则仍等待用户选择。
 
-连续墙钟起点为 **2026-10-04 01:58:21 +08:00**，来自首次 mrun 输入所在轮次的服务端开始时间。六小时下限为 **07:58:21**，九小时收尾为 **10:58:21**，十小时硬截止为 **11:58:21**，均为同日北京时间。等待、暂停和离线均计入，恢复不重置。截至本检查点经过约 234 分钟，未触发九小时收尾，没有停止回执。一致快照采集于 **02:02:52 +08:00**，晚于起点约 4 分 32 秒；它是启动阶段的可复核基准，不能说成 T0 同一秒的现场快照。
+连续墙钟起点为 **2026-10-04 01:58:21 +08:00**，来自首次 mrun 输入所在轮次的服务端开始时间。六小时下限为 **07:58:21**，九小时收尾为 **10:58:21**，十小时硬截止为 **11:58:21**，均为同日北京时间。等待、暂停和离线均计入，恢复不重置。截至本检查点经过约 267 分钟，未触发九小时收尾，没有停止回执。一致快照采集于 **02:02:52 +08:00**，晚于起点约 4 分 32 秒；它是启动阶段的可复核基准，不能说成 T0 同一秒的现场快照。
 
 监督进程已通过锁与心跳核对，三个真实后代均已登记父子关系，登记后才授权调查。主协调、历史意见调查、系统清单和独立启动审查分工并行；未对其他任务实施监督。十小时远程停止尚未发生，不能用当前监督正常推断未来停止必定成功。
 
@@ -70,15 +70,19 @@
 | AO-025 变更复核迟到保存打断阅读 | 保存后全量重载会关闭后来打开的集级检查；提交中还可再次保存不同内容 | P1，已修复并独立审查／Chrome 通过：在途锁定，迟到 A 成功后 B 集全场检查完全保留；另一保存落库后断流且回查 503，原样重试回读准确结果。已保存后的检查失败明确提示并禁止重复提交，重新检查恢复。真实合计 2 POST、2 判断各 1 修订，原采用及历史不变。请求只属于当前表单，不承诺跨刷新恢复。见 [迟到页面](../.runtime/autonomous-optimization/change-browser/late-save-browser.json)、[恢复页面](../.runtime/autonomous-optimization/change-browser/recovery-browser.json)、[持久化核对](../.runtime/autonomous-optimization/change-browser/browser-persistence-check.json)、[独立审查](../.runtime/autonomous-optimization/independent-change-save-review.md) |
 | AO-026 相反变更复核仍放行 | 同一对象及准确旧→新变化，先继续沿用再需要重做可形成两份判断；任一沿用仍使其就绪 | P1，未修改、等待规则：现有契约没有多份相反判断的归并规则，已向用户提出“一个可修订结论”或“并列意见、冲突待复核”的具体选择。提交防重入由 AO-025 处理，但不能代替跨窗口业务规则。未答复前保留行为与历史，列为未解决风险。见 [契约核对](../.runtime/autonomous-optimization/production-flow-audit/decision-contract-review.md) |
 | AO-027 集级清单误写本场 | 分集快照无 kind，原按钮落入本场默认分支；真实请求和内容范围未错 | P2，已修复并独立／Chrome 通过：按检查接口的准确 scope.kind 显示本集，保留旧响应兼容；技术实例本集、本场标签正确，逐镜与状态由四类渲染检查覆盖。见 [范围证据](../.runtime/autonomous-optimization/production-scope-label-evidence.json) |
-| AO-028 无内容时仍出现无效动作 | 空资料、空剧本可打开无目标评论；无候选仍提示选择，已选无稿有空版本行 | P2，已实现，Chrome 通过、独立审查中。三空页无入口，技术候选仍可选择；已选无稿准确说明等待，有资料但零评论仍保留入口。见 [页面](../.runtime/autonomous-optimization/reading-empty-fixed-browser.json)、[实现边界](../.runtime/autonomous-optimization/reading-context-implementation.md) |
-| AO-029 区域草稿收起后难以找回 | 自由圈选后收起会清空锚点，精确几何键难以手工重画命中 | P1，已实现，Chrome 通过、独立审查中。复用既有关闭面板，旧红图新草稿的文字及多边形坐标收起／重开完全一致；取消仍有效，没有提交。独立审查另发现本机存储失败时重开仍读旧缓存覆盖当前输入，正补同草稿保护；尚未全部通过。旧已丢入口的本机草稿不宣称恢复。见 [页面](../.runtime/autonomous-optimization/region-draft-collapse-fixed-browser.json) |
+| AO-028 无内容时仍出现无效动作 | 空资料、空剧本可打开无目标评论；无候选仍提示选择，已选无稿有空版本行 | P2，已实现，Chrome 与独立审查通过。三空页无入口，技术候选仍可选择；已选无稿准确说明等待，有资料但零评论仍保留入口。见 [页面](../.runtime/autonomous-optimization/reading-empty-fixed-browser.json)、[实现边界](../.runtime/autonomous-optimization/reading-context-implementation.md) |
+| AO-029 区域草稿收起后难以找回 | 自由圈选后收起会清空锚点，精确几何键难以手工重画命中 | P1，已实现，Chrome 与独立审查通过。复用既有面板，旧红图草稿文字和多边形收起／重开一致；关系正文选段亦保持。独立追加的存储失败旧缓存覆盖已按同草稿身份保护修复，通过函数故障检查，未声称真实浏览器禁写已验。取消仍有效，不宣称恢复旧已丢入口草稿。见 [页面](../.runtime/autonomous-optimization/region-draft-collapse-fixed-browser.json)、[独审](../.runtime/autonomous-optimization/independent-reading-context-review.md) |
 | AO-030 结构回应未展示原意见 | 查看原稿意见回到准确旧稿和图，但评论面板仍关闭 | P2，已实现、独立与 Chrome 通过：复用同一评论面板，准确旧红图与指定意见卡片同时可见；未新增弹层或改历史。见 [页面](../.runtime/autonomous-optimization/structure-response-fixed-browser.json)、[实现](../.runtime/autonomous-optimization/structure-response-implementation.md) |
-| AO-031 有效资料图评论误报失效 | 原字节恢复且服务端有效，点击仍按文字块查找而报失效 | P1，已实现，Chrome 通过、独立审查中。限定当前资料及修订、visual_id 和 asset_file，页面定位到准确 old-red.png，选中原评论且无失效提示；没有借结构同名图。区域新建另列 AO-034。见 [页面](../.runtime/autonomous-optimization/source-image-location-fixed-browser.json) |
-| AO-032 配置迟到保存覆盖新输入 | 保存后的全量 GET 重建表单，实际回调复现三条新输入损失路径 | P1，实施中。保留输入并只合并已确认版本与缓存；已保存和刷新失败分开。已有同表单禁用和后端版本保护有效，不泛化重写。见 [审计与证据](../.runtime/autonomous-optimization/writing-callback-audit/report.md)、[设计](../.runtime/autonomous-optimization/writing-callback-audit/fix-design.md) |
-| AO-033 素材审阅同操作重复提交 | 在途可改结果再保存，每次生成新 ID；真实 Store 接受两条，取消后旧成功仍整体刷新 | P1，实施中。固定准确素材修订和请求身份，未知结果按 ID 回查，在途锁定且迟到结果不接管新页；不限制不同用户或不同操作的独立结论。见 [审计](../.runtime/autonomous-optimization/writing-callback-audit/report.md) |
-| AO-034 资料圈选误取结构原件 | 实际圈选回调在无结构或不同图时报错；同 visual_id 时更可能绑定另一原件 | P1，实施中。按当前资料的准确图片建立区域，保留原几何算法并拒绝失去当前上下文的操作。SOURCE 分支已修且函数通过；独立审查发现反向结构→资料迟到圈选仍混入新页，正补统一上下文所有权。Chrome 新圈选待验。见 [反例](../.runtime/autonomous-optimization/source-region-audit/results.json) |
+| AO-031 有效资料图评论误报失效 | 原字节恢复且服务端有效，点击仍按文字块查找而报失效 | P1，已实现，Chrome 与独立审查通过。限定当前资料及修订、visual_id 和 asset_file，页面定位到准确 old-red.png，选中原评论且无失效提示；没有借结构同名图。区域新建另列 AO-034。见 [页面](../.runtime/autonomous-optimization/source-image-location-fixed-browser.json) |
+| AO-032 配置迟到保存覆盖新输入 | 保存后的全量 GET 重建表单，实际回调复现三条新输入损失路径 | P1，已修复，独立函数及 Chrome 通过：保存回包前继续输入、刷新期间切另一组输入均保留；落库后断流并回查 503，原样重试读回同次结果；已保存而刷新失败明确区分并禁重复保存。技术库 PROJECT 1→5 共四次有意保存，新增四事件，SYSTEM v1 及两条初始历史不变。见 [迟到页面](../.runtime/autonomous-optimization/writer-browser/config-delay-chrome.json)、[恢复](../.runtime/autonomous-optimization/writer-browser/config-recovery-chrome.json)、[持久化](../.runtime/autonomous-optimization/writer-browser/config-browser-persistence-check.json) |
+| AO-033 素材审阅同操作重复提交 | 在途可改结果再保存，每次生成新 ID；真实 Store 接受两条，取消后旧成功仍整体刷新 | P1，主体已实现，独立补验中。固定准确修订和请求身份，未知结果按 ID 回查，在途锁定且迟到结果不接管新页；独审发现实际 load/open 两层刷新失败被吞，正按调用归属补回执。Chrome 尚未完成，不限制不同用户或不同操作的独立结论。见 [实现](../.runtime/autonomous-optimization/writing-callback-fix/implementation.md) |
+| AO-034 资料圈选误取结构原件 | 实际圈选回调在无结构或不同图时报错；同 visual_id 时可能绑定另一原件 | P1，已修复，独立与 Chrome 通过。准确资料修订和原件创建区域；统一手势归属，独审反向结构→资料迟到手势已修并通过函数测试。60751 实际新建技术评论绑定 old-red.png 和资料原修订，旧两评论保留。原生工具不能持鼠标跨页，跨页在途手势不冒充 Chrome 已验；留白坐标另列 AO-039。见 [持久化](../.runtime/autonomous-optimization/source-region-persisted.json)、[页面](../.runtime/autonomous-optimization/source-region-browser.json) |
 | AO-035 实体采纳保存后读取失败表意不清 | POST 成功但 GET 失败只报读取错误，还再读一次；旧失败可能出现在新实体页 | P2，未修改。真实后端旧版本重放被拒绝，未发现错误实体采纳或新输入丢失；先处理三个 P1，再评估局部结果反馈。不能将该反馈缺口写成数据丢失。见 [回调和后端边界](../.runtime/autonomous-optimization/writing-callback-audit/report.md) |
 | AO-036 方向已保存却仍停留确认窗 | POST 成功而 GET 失败只报错误，取消后的旧成功还会渲染结构 | P2，未修改。准确版本保护有效，无自由正文输入丢失或误选其他方向证据；P1 后单独修正已保存／未刷新与迟到归属。见 [回调和后端边界](../.runtime/autonomous-optimization/writing-callback-audit/report.md) |
+
+| AO-037 润色返回覆盖未保存文字 | 本机存储写失败时，润色成功或失败重绘读取旧缓存，覆盖唯一 DOM 输入 | P1，已修复，作者 11 项新检查通过；同草稿身份保留当前输入，不把晚到建议自动采用。独立和实际技术模拟页面待验，尚无真实模型调用或文案质量结论。见 [实现及检查](../.runtime/autonomous-optimization/polish-implementation.md) |
+| AO-038 历史资料润色上下文取新头 | 显式旧 SOURCE 修订失效后，参考仍返回新头标题；目标校验却拒绝旧修订 | P1，已修复，三个真实 HTTP 检查通过；显式修订按准确版本校验，未提供修订的旧入口兼容。独立及旧页面检查待验，不生成或修改故事。见 [接口证据](../.runtime/autonomous-optimization/polish-fix-evidence.json) |
+| AO-039 资料圈选随画布留白偏移 | 图片 contain 留白被计入归一化范围，换屏宽后指向不同原图位置 | P1，局部 CSS 已修，Chrome 通过、独审中。仅资料图画布贴合图像，横竖方图在 2192／900／390 像素不溢出；竖图保存和横图 345→266 像素缩放后的原图比例一致。无锚点迁移；正式基准 271 评论中无 SOURCE 区域评论，不能据此承诺恢复其他实例旧错误坐标。见 [尺寸](../.runtime/autonomous-optimization/source-geometry-fixed-browser.json)、[缩放](../.runtime/autonomous-optimization/source-geometry-scaled-browser.json)、[历史范围](../.runtime/autonomous-optimization/source-region-baseline-history.json) |
 
 
 AO-010／011／012 的 [独立复现报告](../.runtime/autonomous-optimization/independent-interaction-reproduction.md)明确区分真实函数／HTTP 与浏览器，数据只存在一次性夹具中，不改变正式评论、采用或用户接受。独立审查还发现评论实现的四条回归：本机存储失败丢文字、切换卡片遗留无锚点编辑器、首次失败未及时显示恢复说明，以及幂等重试成功但评论列表未变时编辑器未清理；均已按实际渲染反例修复并独立复审，后三条实际页面路径通过。浏览器存储禁写仍以真实渲染函数故障探针验证，未冒充浏览器存储环境验证，见 [独立复审](../.runtime/autonomous-optimization/independent-comment-persistence-review.md)。
@@ -97,7 +101,8 @@ AO-010／011／012 的 [独立复现报告](../.runtime/autonomous-optimization/
 - 全剧制作真实基线的第一镜 33 项按 20／13 分页，第十七集 78 项按 20／20／20／18 分页，末页下一页禁用；从集级末页切 s040 后得到该场 20 项并清除旧范围。没有选择采用或记录判断，见 [集场分页页面](../.runtime/autonomous-optimization/production-scope-pagination-browser.json)。
 - 空态及失效原件使用独立技术实例分阶段验收。候选全文、真实选择技术方向、已选无稿、两稿回应、方向变化保留原依据、旧红图缺失与原字节恢复均有记录；两稿两评论及数据库指纹保留。结构图恢复后可正确定位，资料图误报失效单列 AO-031；没有把尚未修复路径写为通过，见 [分阶段页面](../.runtime/autonomous-optimization/reading-state-browser-evidence.json)。
 - 素材实际记录筛选为 417 份，其中图像 370、声音 47；“李寄”关键词叠加图像为 31、声音为 5，搜索包含关联内容，不能解释为同名角色数量。零结果可明确识别，清除恢复 1,059 条全部记录。实际图像候选放大加载 2016×2688 原件、Esc 返回触发位置；实际 WAV 静音播放进度从 0.19 到 6.05 秒，Home、方向键、I／O 选出 0.1–0.2 秒。这里只验证播放和操作，没有声音质量听审或认可。见 [媒体验证](../.runtime/autonomous-optimization/media-filter-playback-browser.json)。
-- 新建独立空库补验三类阅读空态、无实体、无素材和无剧本依据的生产页；有效零评论资料仍可打开评论。只在技术库选择一次技术方向 A，无评论、素材或正式写入。见 [阅读空态](../.runtime/autonomous-optimization/reading-empty-fixed-browser.json)、[生产空态](../.runtime/autonomous-optimization/production-empty-browser.json)。
+- 新建独立空库补验三类阅读空态、无实体、无素材和无剧本依据的生产页；有效零评论资料仍可打开评论。空态阶段只在技术库选择一次技术方向 A，无评论或素材写入；后续为 AO-039 正常新增一份技术网格资料及两条区域评论，均非正式素材或创作意见。见 [阅读空态](../.runtime/autonomous-optimization/reading-empty-fixed-browser.json)、[生产空态](../.runtime/autonomous-optimization/production-empty-browser.json)。
+- 制作思路缺失和损坏 503 均有实际页面错误表达，其他导航仍可读，故障已恢复；主预览关系选段的收起重开保留正文与引用。主预览在这些阅读操作后 11 张业务表与启动备份一致，仅既述三条配置事件不同。见 [故障页面](../.runtime/autonomous-optimization/approach-failure-browser.json)、[关系草稿](../.runtime/autonomous-optimization/relationship-comment-browser.json)、[只读核对](../.runtime/autonomous-optimization/main-preview-after-reading-integrity.json)。
 - 历史意见与八个既有工作区的清单已建立，覆盖尚未完成，最终独立综合审查尚未执行；当前无最终候选、集成或正式部署收益。
 
 ## 恢复与后续交付
