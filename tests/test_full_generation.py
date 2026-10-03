@@ -23,12 +23,16 @@ class FullGenerationTest(unittest.TestCase):
 
     def test_scope_and_reference_dependencies_exclude_non_image_states(self):
         images, states = prep.image_plans(self.rows, self.by)
-        self.assertEqual(len(images), 255)
-        self.assertEqual(len({i['state']['object_id'] for i in images}), 255)
-        self.assertEqual(sum(i['is_baseline'] for i in images), 126)
+        self.assertEqual(len(images), 251)
+        self.assertEqual(len({i['state']['object_id'] for i in images}), 251)
+        self.assertEqual(sum(i['is_baseline'] for i in images), 125)
         excluded = {s['id'] for s in states} - {i['id'] for i in images}
-        self.assertEqual(len(excluded), 12)
+        self.assertEqual(len(excluded), 16)
         self.assertTrue({'form-offscreen-caller-base','form-stage-drum-audible','form-xiao-man-base','form-xu-bride-base'} <= excluded)
+        self.assertTrue({'form-bandage-base','form-bandage-head','form-bandage-blood','form-bandage-new'} <= excluded)
+        original,_=prep.image_plans(self.rows,self.by,apply_scope_amendment=False)
+        self.assertEqual({i['id'] for i in original}-{i['id'] for i in images},
+                         {'form-bandage-base','form-bandage-head','form-bandage-blood','form-bandage-new'})
         for i in images:
             self.assertEqual(bool(i['generation']['inputs']), not i['is_baseline'])
             if not i['is_baseline']:

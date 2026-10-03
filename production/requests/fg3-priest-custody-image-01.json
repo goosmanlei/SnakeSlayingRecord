@@ -1,0 +1,57 @@
+{
+  "id": "fg3-priest-custody-image-01",
+  "recipe_id": "form-priest-custody",
+  "entity": {
+    "object_id": "entity-priest",
+    "revision_id": "9ecfb0b547e3ad6f73dbf103f15159d72b89a53516f55b048e11f1201117271d"
+  },
+  "state": {
+    "object_id": "form-priest-custody",
+    "revision_id": "3bff9bc6fcdbe24d29d91324520e0628a236c7117a5c880cccf5398d084041eb"
+  },
+  "requirement": {
+    "object_id": "need-form-priest-custody-overall",
+    "revision_id": "513429f722f5b8bce2d8c5ddcb659b3d238f2c5c00b325123dc6617f90391d27"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "master_approval": {
+    "object_id": "review-master-fg3-priest-base-image-01",
+    "revision_id": "bf6f95414141f472469f0899d20916c1aa5fb05c6af7a9944f4da543c6ce1fbb"
+  },
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-priest-base-image-01",
+        "revision_id": "2fc26f088b7cde3355cdb9dffe6ba7a9a13712eef62b9a77af90b8931981cda3"
+      },
+      "component_id": "original",
+      "sha256": "86d4f4d0a0a170582f31bd8cd2cf3ceb5476a7fe6c0bd3d344214b4a5aa1b33c",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：用户认可的本实体完整原件，固定人物身份、比例、款色与画风；只改变本状态明示内容。"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-fg3-priest-base-image-01",
+        "revision_id": "2fc26f088b7cde3355cdb9dffe6ba7a9a13712eef62b9a77af90b8931981cda3"
+      }
+    ]
+  },
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具未暴露底层型号、质量、像素选项；实际原生输出另验。",
+  "request": {
+    "prompt": "参考图1是已认可的巫祝本人。严格保留长额、细眼、短须、束顶发式、素深帽、深炭灰祭服及暗赭窄滚边，正常成年比例与同一二维线色。本张是被差役押解下山状态整体参考：巫祝身体微向前倾、低头、神情紧绷而收敛，两臂被向后侧约束但手仍可见，迈一小步。左右画边各伸入一只素灰袖的无身份扶押手，只握其上臂表示押解，不画差役的头脸或完整身体。巫祝本人从帽顶到两鞋完整可见。不得换囚服，不加铁镣、枷、绳、血伤或符咒；背景淡暖灰无具体山路，3:4单一整体参考，不加重纹理或锐化。最高原生输出，不放大。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/86d4f4d0a0a170582f31bd8cd2cf3ceb5476a7fe6c0bd3d344214b4a5aa1b33c.png"
+    ]
+  }
+}

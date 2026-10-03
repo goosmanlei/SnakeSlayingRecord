@@ -7,7 +7,7 @@ from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
-from verify_full_generation import verify
+from verify_full_generation import verify, scope_changes
 
 
 class GenerationIncrementTest(unittest.TestCase):
@@ -54,6 +54,25 @@ class GenerationIncrementTest(unittest.TestCase):
         self.registration['user_master_decisions'] = ['asset-new']
         with self.assertRaisesRegex(ValueError, 'ungrounded master decision'):
             self.check()
+
+    def test_scope_consolidation_cannot_change_facts_or_drop_unrelated_occurrences(self):
+        old={'facts':['original fact']};occ={'entity':{'object_id':'kept'},'states':[{'object_id':'kept-state'}]}
+        prior={'occurrences':[{'entity':{'object_id':'duplicate'},'states':[]},occ],'source':'exact-script'}
+        before={'objects':[('duplicate','ENTITY','r1'),('scene','PREPARATION','r2')],
+                'revisions':[('r1','duplicate',1,json.dumps(old)),('r2','scene',1,json.dumps(prior))]}
+        change={'approval':{'actor':'user','reply':'merge','question_item_id':'question'},'withdrawn_entity':'duplicate',
+                'withdrawn_objects':['duplicate'],'changed_preparations':['scene'],'reason':'duplicate states',
+                'replacements':{'duplicate':[{'object_id':'kept','revision_id':'kept-rev'}]}}
+        payload={**old,'status':'withdrawn','withdrawal_reason':change['reason'],'merged_into':change['replacements']['duplicate']}
+        doc={'scope_amendment':change,'batches':[{'records':[
+            {'object_id':'duplicate','kind':'ENTITY','payload':payload},
+            {'object_id':'scene','kind':'PREPARATION','payload':{**prior,'occurrences':[occ]}}]}]}
+        self.assertEqual(scope_changes(before,doc),{'duplicate','scene'})
+        doc['batches'][0]['records'][1]['payload']['occurrences']=[]
+        with self.assertRaisesRegex(ValueError,'duplicate occurrence'):scope_changes(before,doc)
+        doc['batches'][0]['records'][1]['payload']['occurrences']=[occ]
+        payload['facts']=['rewritten story']
+        with self.assertRaisesRegex(ValueError,'unrelated content'):scope_changes(before,doc)
 
 
 if __name__ == '__main__': unittest.main()

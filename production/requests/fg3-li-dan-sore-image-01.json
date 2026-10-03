@@ -1,0 +1,57 @@
+{
+  "id": "fg3-li-dan-sore-image-01",
+  "recipe_id": "form-li-dan-sore",
+  "entity": {
+    "object_id": "entity-li-dan",
+    "revision_id": "346b9410d08ae0ce046ac6a4d5f64b7bca3d080df2db9830fe34094ff3dc8e50"
+  },
+  "state": {
+    "object_id": "form-li-dan-sore",
+    "revision_id": "d371d9407a90ad0163d7ae1f84a812ba9fb4bd79e619f631d743ec53b2c016f0"
+  },
+  "requirement": {
+    "object_id": "need-form-li-dan-sore-overall",
+    "revision_id": "7715a5079d51328d3a5de8d67bcd481e2ae45239e38305aca6321b5677eb244a"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "master_approval": {
+    "object_id": "review-master-fg3-li-dan-work-image-02",
+    "revision_id": "b71141445dfca5a455c0939edef37ada19e3d5dea451ec5b4d5e1303ada4d23a"
+  },
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-li-dan-work-image-02",
+        "revision_id": "9403379950cc6c3c2751bcd40f932e4b53b49013a61018f606ed2554423da672"
+      },
+      "component_id": "original",
+      "sha256": "0bf4cf4f59ec83dc60852ddc627c92bf8f7479568cb29bc15c14a8bafece11c4",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：用户认可的本实体完整原件，固定人物身份、比例、款色与画风；只改变本状态明示内容。"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 2,
+    "references": [
+      {
+        "object_id": "asset-fg3-li-dan-work-image-02",
+        "revision_id": "9403379950cc6c3c2751bcd40f932e4b53b49013a61018f606ed2554423da672"
+      }
+    ]
+  },
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具未暴露底层型号、质量、像素选项；实际原生输出另验。",
+  "request": {
+    "prompt": "参考图1固定同一李诞的方脸、宽鼻短须、黑灰脑后发束、宽肩厚背、土褐内衣、暗蓝灰裤、原腰布和旧布鞋。生成刚卸杠后肩痛的完整状态：加素深灰蓝交领宽松长外衫，下摆到小腿中段、袖子垂到腕部、原土褐内领少量露出，外衫肩背有简洁深汗片。肩垫已磨落，肩上完全没有布垫或白巾。李诞身体微侧，一肩略缩低，抬右臂到腰际便迟疑停住，另一手轻护疼痛的肩上缘；面部疲惫但克制、双脚仍站稳，无骨折姿态、无血伤。完整头到鞋3:4，纯淡暖灰底，不画横杠、其他人物、刀或家具。保持原身份比例和二维线色，衣纹从简、不增加噪点或锐化，最高原生输出不放大。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/0bf4cf4f59ec83dc60852ddc627c92bf8f7479568cb29bc15c14a8bafece11c4.png"
+    ]
+  }
+}

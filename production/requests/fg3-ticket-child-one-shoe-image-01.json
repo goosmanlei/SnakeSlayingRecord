@@ -1,0 +1,57 @@
+{
+  "id": "fg3-ticket-child-one-shoe-image-01",
+  "recipe_id": "form-ticket-child-one-shoe",
+  "entity": {
+    "object_id": "entity-ticket-child",
+    "revision_id": "ea610ce3f6c288b875e1427b88049647e889a1b7407a5988783d6b4dda36b057"
+  },
+  "state": {
+    "object_id": "form-ticket-child-one-shoe",
+    "revision_id": "4a187ff97aa32bbbe9c687239381b01b88aa74d755619d733fc84c48be420a55"
+  },
+  "requirement": {
+    "object_id": "need-form-ticket-child-one-shoe-overall",
+    "revision_id": "89f6f04d558026c4fc34bcd45ec1a6c1840cf97438f252cebd81c66e9bf4f628"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "master_approval": {
+    "object_id": "review-master-fg3-ticket-child-base-image-01",
+    "revision_id": "d94abd5468008e6bd6c9c58529abdaa77087e50ffe323a1276aa24f26ea076a8"
+  },
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-ticket-child-base-image-01",
+        "revision_id": "7c81c96c544fd6395d9ddb03ca4115c93a7f4d1919c7afcfb22c65f4f71d35a1"
+      },
+      "component_id": "original",
+      "sha256": "ec1df61175bd5621dfc331939261181472c6260b92ad84dc49b71c2004003a98",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：用户认可的本实体完整原件，固定人物身份、比例、款色与画风；只改变本状态明示内容。"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-fg3-ticket-child-base-image-01",
+        "revision_id": "7c81c96c544fd6395d9ddb03ca4115c93a7f4d1919c7afcfb22c65f4f71d35a1"
+      }
+    ]
+  },
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具未暴露底层型号、质量、像素选项；实际原生输出另验。",
+  "request": {
+    "prompt": "参考图1是用户认可的领粮妇人孩子完整原件。只画同一个孩子，保留圆脸短黑发、约三岁身量、浅灰绿交领小衣、深灰短裤、原麻灰软鞋、原干净二维线色和淡暖灰底。完整头到脚、3:4单幅整体参考。本状态只改变掉一只鞋：孩子自己的右脚即画面左侧的脚完全赤足，左脚仍穿原鞋；掉落的右鞋平放在右脚旁地面，鞋头与原鞋形状一致。双脚都完整可见，足趾自然，不加袜子、不换衣、不加伤，不画母亲或其他人物。保持原神情与全身比例，不放大头部，不叠加纹理；工具最高可用原生输出，不放大。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/ec1df61175bd5621dfc331939261181472c6260b92ad84dc49b71c2004003a98.png"
+    ]
+  }
+}

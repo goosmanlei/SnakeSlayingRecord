@@ -1,0 +1,60 @@
+{
+  "id": "fg3-heavy-blade-base-image-03",
+  "recipe_id": "form-heavy-blade-base",
+  "entity": {
+    "object_id": "entity-heavy-blade",
+    "revision_id": "0a563a4a34d720a647c36556c290eb589039003f61ec7fed5cdd68267642ace4"
+  },
+  "state": {
+    "object_id": "form-heavy-blade-base",
+    "revision_id": "2691825138a53363ebf8efefdeb10ea9e32c5f3c0dc6f6033a2ddf5af7f2845f"
+  },
+  "requirement": {
+    "object_id": "need-form-heavy-blade-base-overall",
+    "revision_id": "927531b1a0e265932f4ec41fa005de5c3b24ab710a7a1f6d863f29d4e97e5c65"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-heavy-blade-base-image-02",
+        "revision_id": "ad8174965051e08a6ada39400b1cb74b8e753d5ae94ae3cd28c350a620198d22"
+      },
+      "component_id": "original",
+      "sha256": "215a2db4eb451827d21fec0f67cebcebc93245509b0323414b9c131ce4095bed",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：完整原件，固定身份与画风，仅修改所列状态或自检问题。"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-fg3-heavy-blade-base-image-02",
+        "revision_id": "ad8174965051e08a6ada39400b1cb74b8e753d5ae94ae3cd28c350a620198d22"
+      }
+    ]
+  },
+  "same_state_repair": {
+    "source": {
+      "object_id": "asset-fg3-heavy-blade-base-image-02",
+      "revision_id": "ad8174965051e08a6ada39400b1cb74b8e753d5ae94ae3cd28c350a620198d22"
+    },
+    "reason": "参考图1为本状态未合格候选，只修正刀、柄与刀套的几何比例，不改成另一种器械。保留直厚背、深铁灰单刃、素木柄灰布与灰褐硬皮刀套，维持干净二维平涂和浅暖灰底。刀身保持目前从柄根到刀尖的绝对图像长度；把木柄总长缩短为现在的四分之三，新的刀身/木柄长度比必须3.1比1。将刀身横向加宽约三分之一，保持直线刀背；木柄只加宽少许以适合双手握持，仍比刃窄。右侧刀套缩短，开口顶部与左侧刀身起点精确在同一条水平线上，刀套尖端与刀尖在同一条水平线上，套内只能套住刀身，不能比刀身长。两件垂直平行摆放、全件完整入画，上下左右各留至少5%空白；不用数字、尺子、标注或多角度。刀柄不伸入石道的绘图配合仍采用刀身62、柄20，盖石顶到道底40，有22刀身余量留在盖石上方；这些数字仅控制造型，不在画面显示。不得增加护手、金属饰物、木纹皮纹或噪点；同状态针对性修正，保持原生输出，不放大。"
+  },
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具未暴露底层模型ID、质量及像素选择；实际输出单独检测。",
+  "request": {
+    "prompt": "参考图1为本状态未合格候选，只修正刀、柄与刀套的几何比例，不改成另一种器械。保留直厚背、深铁灰单刃、素木柄灰布与灰褐硬皮刀套，维持干净二维平涂和浅暖灰底。刀身保持目前从柄根到刀尖的绝对图像长度；把木柄总长缩短为现在的四分之三，新的刀身/木柄长度比必须3.1比1。将刀身横向加宽约三分之一，保持直线刀背；木柄只加宽少许以适合双手握持，仍比刃窄。右侧刀套缩短，开口顶部与左侧刀身起点精确在同一条水平线上，刀套尖端与刀尖在同一条水平线上，套内只能套住刀身，不能比刀身长。两件垂直平行摆放、全件完整入画，上下左右各留至少5%空白；不用数字、尺子、标注或多角度。刀柄不伸入石道的绘图配合仍采用刀身62、柄20，盖石顶到道底40，有22刀身余量留在盖石上方；这些数字仅控制造型，不在画面显示。不得增加护手、金属饰物、木纹皮纹或噪点；同状态针对性修正，保持原生输出，不放大。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/215a2db4eb451827d21fec0f67cebcebc93245509b0323414b9c131ce4095bed.png"
+    ]
+  }
+}

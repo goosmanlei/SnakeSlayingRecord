@@ -1,0 +1,57 @@
+{
+  "id": "fg3-li-dan-coat-image-01",
+  "recipe_id": "form-li-dan-coat",
+  "entity": {
+    "object_id": "entity-li-dan",
+    "revision_id": "346b9410d08ae0ce046ac6a4d5f64b7bca3d080df2db9830fe34094ff3dc8e50"
+  },
+  "state": {
+    "object_id": "form-li-dan-coat",
+    "revision_id": "1a856b41a21bf8e4dac8bf8c28ec770272c7555118fb2c25da55299a7b45a708"
+  },
+  "requirement": {
+    "object_id": "need-form-li-dan-coat-overall",
+    "revision_id": "7622d6d4811a7074d75eebeea5f577caba34a469aa8d58737a94cf758b3ba7f3"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "master_approval": {
+    "object_id": "review-master-fg3-li-dan-work-image-02",
+    "revision_id": "b71141445dfca5a455c0939edef37ada19e3d5dea451ec5b4d5e1303ada4d23a"
+  },
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-li-dan-work-image-02",
+        "revision_id": "9403379950cc6c3c2751bcd40f932e4b53b49013a61018f606ed2554423da672"
+      },
+      "component_id": "original",
+      "sha256": "0bf4cf4f59ec83dc60852ddc627c92bf8f7479568cb29bc15c14a8bafece11c4",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：用户认可的本实体完整原件，固定人物身份、比例、款色与画风；只改变本状态明示内容。"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 2,
+    "references": [
+      {
+        "object_id": "asset-fg3-li-dan-work-image-02",
+        "revision_id": "9403379950cc6c3c2751bcd40f932e4b53b49013a61018f606ed2554423da672"
+      }
+    ]
+  },
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具未暴露底层型号、质量、像素选项；实际原生输出另验。",
+  "request": {
+    "prompt": "参考图1是用户已认可的李诞码头短衣汗印原件。保持同一方脸、宽鼻、黑灰短须、脑后短发束、宽肩厚背、土褐工作短衣、暗蓝灰裤、旧布鞋和深灰腰布。只增加出门外衣：一件素深灰蓝交领宽松长外衫，直下摆到小腿中段、衣襟自然半合，袖子放下到腕部，露出少量原土褐内领；外衫无绣纹、无新腰饰，不把原肩汗印穿透画到新外衫上。神情平稳、双手自然垂下，完整头到鞋3:4单人。浅暖灰空底、原轻二维线色与身体比例，不增加肩巾、工具、刀、背包或新伤，不增加噪点与锐化。作为码头衣加外衣的完整状态整体参考，最高原生输出、不放大。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/0bf4cf4f59ec83dc60852ddc627c92bf8f7479568cb29bc15c14a8bafece11c4.png"
+    ]
+  }
+}

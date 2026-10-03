@@ -1,6 +1,6 @@
 # 全剧非歌曲素材：当前交付与继续执行
 
-本轮已正式登记 94 张新图、42 份新录音和 136 次真实调用。合格新图覆盖 66/255 个状态；184 个状态尚未调用，另 5 个已调用状态需返工。声音 40 个基础身份加 2 项变化已全部生成，共 411.68 秒；其中 4 份获用户听审认可，其余 38 份待听审。任务尚未完成。
+本轮已正式登记 148 张新图、42 份新录音和 190 次真实调用。合格新图覆盖 109/251 个状态；140 个状态尚未调用，另 2 个已调用状态需返工。声音 40 个基础身份加 2 项变化已全部生成，共 411.68 秒；其中 4 份获用户听审认可，其余 38 份待听审。任务尚未完成。
 
 用户“没有问题，继续推进全部待生成”已记录为李寄第二次候选与河街浅滩第四次候选的准确母版认可，并已完成对应的 14 项派生首次生成及必要返工。此前阿蘅与旧灯图、阿蘅与周掌柜基础音色、阿蘅两份变化音色的认可继续有效。各项准确结论见 [最初母版](master-approvals.json)、[补充音色](supplement-approvals.json)和[本次继续认可](continued-approvals.json)。认可不自动扩展到其他身份或镜头采用。 用户随后针对李绡、赵执事和孙六的准确基准回复“三份均认可”，结论见 [第二批人物认可](second-masters-approvals.json)；对应六项派生已调用，李绡与孙六的压杠状态仍需修正肩与杠的接触。
 
@@ -8,7 +8,7 @@
 
 以下是已正式登记、经目视自检可供审阅的新独立基准。对应派生在用户认可准确原件后继续；阿禾背景人影不作为其他人物身份，蛇饵盆背景不作为门或石道的空间母版。批文与后续停祭文书的签押连续性尚待准确引用后核对。
 
-当前以下 35 份为自检通过、待用户认可的独立基准；表中列出的是送审候选，不是已采用版本。此次询问的准确范围固定在 [第三批母版审阅集](third-masters-review.json)，后续新增原件不自动加入此认可范围。
+用户回复“个别有问题的增加了评论，请按评论修改，其他可以继续推进后续素材生成”后，原 35 份中的 34 份已记录准确母版认可，见 [第三批准确认可](third-masters-approvals.json)。剩余包布对象已按用户确认归入现有李寄状态，不再作为独立生成目标。下表保留 34 份已认可候选入口；原始询问范围仍保存在 [第三批母版审阅集](third-masters-review.json)，不改写历史。
 
 | 准确候选 | 正式入口 | 原生原件 |
 | --- | --- | --- |
@@ -21,7 +21,6 @@
 | 李诞·码头短衣汗印 | [审阅准确候选](http://127.0.0.1:3000/?workspace=materials.workspace&production_object=need-form-li-dan-work-overall&material_target=9403379950cc6c3c2751bcd40f932e4b53b49013a61018f606ed2554423da672&material_round=1) | [1086×1448 PNG](../../export/assets/0bf4cf4f59ec83dc60852ddc627c92bf8f7479568cb29bc15c14a8bafece11c4.png) |
 | 李寄母亲·基准完整形态 | [审阅准确候选](http://127.0.0.1:3000/?workspace=materials.workspace&production_object=need-form-li-mother-base-overall&material_target=3758da1a0ec7ecccd805caffa64e91c8dc0ecc71ec2ccc47c4b7f3f4e0ebc97d&material_round=1) | [1086×1448 PNG](../../export/assets/aad85b359f748e50823ba324d8466c26525c75b762294699b2e95e60b9c4b9d5.png) |
 | 陶伯在编的竹篮·基准完整形态 | [审阅准确候选](http://127.0.0.1:3000/?workspace=materials.workspace&production_object=need-form-bamboo-basket-base-overall&material_target=807fd5045b3ac87372493bd6d22f8d0217a4bf2a46490e652703bb38d0f622b9&material_round=1) | [1448×1086 PNG](../../export/assets/f07125818b0f8db6ecd4edeb7e5412e8892320cb6fb84d0d24fe66e4ee12a3ef.png) |
-| 李寄裹手与额角布·基准完整形态 | [审阅准确候选](http://127.0.0.1:3000/?workspace=materials.workspace&production_object=need-form-bandage-base-overall&material_target=6ea87ff56dc91ba92ee2c31c3d05d94fef31eea323f861f038c9416cec14b9f6&material_round=1) | [1448×1086 PNG](../../export/assets/4e1542c4b0f21735ba3e0d27b47c690c01d4ac16e9be6e01b2b36538d83a1acb.png) |
 | 船家·基准完整形态 | [审阅准确候选](http://127.0.0.1:3000/?workspace=materials.workspace&production_object=need-form-boatman-base-overall&material_target=e7297846ea3424086dcb9c804396b4127a88dc210e8ce2aadb7e9204cf1dbc7a&material_round=1) | [1086×1448 PNG](../../export/assets/9f3ee3a89a9f1f14ace33b1625bfbbfcef3d446833ceea3da79ea0236bb0e527.png) |
 | 梁书吏·基准完整形态 | [审阅准确候选](http://127.0.0.1:3000/?workspace=materials.workspace&production_object=need-form-clerk-liang-base-overall&material_target=bf6834c0c88210ab6fc31d6b8139b3a63a7be2adef354290c32bd84ba56d2a5a&material_round=1) | [1086×1448 PNG](../../export/assets/45e33342962176f20d8ed8adb5d6d2c0094c80cb962ac09e7b03e2f8d82a8c71.png) |
 | 照壁前书吏·基准完整形态 | [审阅准确候选](http://127.0.0.1:3000/?workspace=materials.workspace&production_object=need-form-clerk-notice-base-overall&material_target=39dd011fe142235ad477e78917a97ad11585199a672ceaa1766a2f8c21936264&material_round=1) | [1086×1448 PNG](../../export/assets/6b63bed57d3dcfef27ea4fbe46be119bfd4d880b02382761e356b7d355213b79.png) |
@@ -47,6 +46,49 @@
 | 瘦高庙工·基准完整形态 | [审阅准确候选](http://127.0.0.1:3000/?workspace=materials.workspace&production_object=need-form-temple-tall-base-overall&material_target=6714108a1e1ae48f942659373bb553815f2874b8c7a45e20fd76aa63b43cdd56&material_round=1) | [1086×1448 PNG](../../export/assets/19ed7663d54be4a33594b5d0c950d9de8b17677f78a8eed96293caf2e7399179.png) |
 | 守院庙工二人·基准完整形态 | [审阅准确候选](http://127.0.0.1:3000/?workspace=materials.workspace&production_object=need-form-temple-guards-base-overall&material_target=a7931c0f02bded795e639b0a0946dc282dcf6241ff5e59cbec3e949f97c165c1&material_round=1) | [1448×1086 PNG](../../export/assets/c1d2a020d68edf69107524460da4c27c85c6a01338bf82830fd6dd9b37890743.png) |
 | 未具名庙工·基准完整形态 | [审阅准确候选](http://127.0.0.1:3000/?workspace=materials.workspace&production_object=need-form-temple-workers-base-overall&material_target=0ebf46e3c2b77f6c5afb3ae5048e733a59df5590daacb038b17d9f0667d55def&material_round=1) | [1448×1086 PNG](../../export/assets/fdbf8978a16e7f5e63de132645648adea0dba3a9fa38f10d520e629c6cbec251.png) |
+
+### 后续新基准
+
+用户已对以下固定 36 份新基准回复“36 份均认可”，准确结论见 [第四批准确认可](fourth-masters-approvals.json)；原询问范围保留在 [第四批母版审阅集](fourth-masters-review.json)。厚背刀选择第二轮的修正版，按膝高短石道重新定比例；旧原件与用户评论继续保留。
+
+| 准确候选 | 正式入口 | 原生原件 |
+| --- | --- | --- |
+| 告示前持票老人·基准完整形态 | [审阅准确候选](http://127.0.0.1:3000/?workspace=materials.workspace&production_object=need-form-ticket-elder-base-overall&material_target=918da13f44879e0ee5a2bff10653881c94266b6fd061f5138287016e5f118d3d&material_round=1) | [1086×1448 PNG](../../export/assets/e008137bc12f5f747879c7147209e345df8939010c87cda386be7d751b2fc7ab.png) |
+| 戏班伙计与台上演员·基准完整形态 | [审阅准确候选](http://127.0.0.1:3000/?workspace=materials.workspace&production_object=need-form-troupe-workers-base-overall&material_target=f165690f7d3e8f3ec9489faaff1cae347d08897752065c1ee8779deef645585d&material_round=1) | [1448×1086 PNG](../../export/assets/08cd68fa15e4d3d362dcf713029a0e9667594a25a75dbbb37660541d75d1ffb6.png) |
+| 庙会儿童与家长·基准完整形态 | [审阅准确候选](http://127.0.0.1:3000/?workspace=materials.workspace&production_object=need-form-temple-children-base-overall&material_target=5b47b25004ca9def1ee98cfdb2639dd200abc443be2202e3be7f2be84978e322&material_round=1) | [1448×1086 PNG](../../export/assets/5990c5d5fe058d6c06e29f899c390ff93c5df127c394446cf33e2c7a5b02cb29.png) |
+| 墨耳·基准完整形态 | [审阅准确候选](http://127.0.0.1:3000/?workspace=materials.workspace&production_object=need-form-mo-er-base-overall&material_target=a36a3ec74eb19bf28ac3cdf9dba3040233db82ab95081eb73b00c2833d94f2c2&material_round=1) | [1448×1086 PNG](../../export/assets/fa43beaa43cd3870877e26e4e2bdb69c1eb7321e3ad6d4e1d7af87d29b71705f.png) |
+| 河街路人·基准完整形态 | [审阅准确候选](http://127.0.0.1:3000/?workspace=materials.workspace&production_object=need-form-street-passers-base-overall&material_target=fcf9d5b43a9cda33f5d0a1d690c148a34e5d079948b73fb7e1e916061225eb2b&material_round=1) | [1448×1086 PNG](../../export/assets/59994e718f5b491d40221c03145ab5fb80b9c4df912a0aa5fa85d65f47bbc025.png) |
+| 米铺听客·基准完整形态 | [审阅准确候选](http://127.0.0.1:3000/?workspace=materials.workspace&production_object=need-form-rice-listeners-base-overall&material_target=5828a04ceeebbc10d61ef6d0620146339883db52d88644623554f696983af0f6&material_round=1) | [1448×1086 PNG](../../export/assets/9ff4fa7c4ac56866c62e55d45bc0f321aa2673e231f749c3b213619a4c851484.png) |
+| 晒场观众·基准完整形态 | [审阅准确候选](http://127.0.0.1:3000/?workspace=materials.workspace&production_object=need-form-yard-audience-base-overall&material_target=3ccd5e8b3d760f354152d7a7491e74e29bc24071ce9bb0e91b49c652a252405f&material_round=1) | [1448×1086 PNG](../../export/assets/5ce8df9a02de4529b73ef480a65e271918a6f512ed43457d5e8d8f3a597e0875.png) |
+| 大蛇·基准完整形态 | [审阅准确候选](http://127.0.0.1:3000/?workspace=materials.workspace&production_object=need-form-snake-base-overall&material_target=4d7c6f872a13ca84e80e9925bc481caae780dd556bc97247686f82190f4887c6&material_round=1) | [1672×941 PNG](../../export/assets/28d8542d9f7d6061820f30a0edaba641a25e177108bdc8cf3d5c9405e1b02525.png) |
+| 阿禾祭队与围观者·基准完整形态 | [审阅准确候选](http://127.0.0.1:3000/?workspace=materials.workspace&production_object=need-form-procession-crowd-base-overall&material_target=0e9e9e736d9cc60304b008b95364f376f56087e7f6b8c1d3ff2785cb859857b7&material_round=1) | [1672×941 PNG](../../export/assets/cccd3b036318069d5ef7173d3fd2048b640e662d025e101827613d8fd5a8794b.png) |
+| 庙前乡民·基准完整形态 | [审阅准确候选](http://127.0.0.1:3000/?workspace=materials.workspace&production_object=need-form-temple-crowd-base-overall&material_target=87b1ad35c0c03485530e31cb5b9d16ec73a2c415b5d300e3afb2470f6e350565&material_round=1) | [1672×941 PNG](../../export/assets/8d47ae8729bdf4085d0567f1c290f31bf87d7bcc56d0910216836a1e29187f7f.png) |
+| 垫歌本竹篮·基准完整形态 | [审阅准确候选](http://127.0.0.1:3000/?workspace=materials.workspace&production_object=need-form-book-basket-base-overall&material_target=4ee118b7902d06408740eb279e96845fe4e53776cb3ae6d518602705560dd3ba&material_round=1) | [1448×1086 PNG](../../export/assets/4ed29944eafa2cf42adc564fdfec7e400fab0071479eb290c341d9d5530e6936.png) |
+| 小满断梳·基准完整形态 | [审阅准确候选](http://127.0.0.1:3000/?workspace=materials.workspace&production_object=need-form-broken-comb-base-overall&material_target=92fcc7a58a2c0013b5d067f86d7e1a12f69dfd91ef56fced44b9771e1d535aee&material_round=1) | [1448×1086 PNG](../../export/assets/77aaf2836dfda878d34e1f3754caf13ba1ee2dc452612b50074c3716314a56df.png) |
+| 半块饼·基准完整形态 | [审阅准确候选](http://127.0.0.1:3000/?workspace=materials.workspace&production_object=need-form-cake-base-overall&material_target=b432e2df57965b74c88350f7f35f74610bce696d784d0912adbf60a4fb4d1f0a&material_round=1) | [1448×1086 PNG](../../export/assets/90594d154afbd4cced24b5dcf31d0e78e9c52aa1fa69796f1518f4752c88d537.png) |
+| 挑柴扁担·基准完整形态 | [审阅准确候选](http://127.0.0.1:3000/?workspace=materials.workspace&production_object=need-form-carrying-pole-base-overall&material_target=f2b075ba25d086f18dfa7b4b47da4d55cd6e93b4d8f80306da72af588464595f&material_round=1) | [1086×1448 PNG](../../export/assets/30a875a17dd40e5362ef812f7f9402c12e5fdc566ce180aa304f214bd854fbca.png) |
+| 孙六宽布背带·基准完整形态 | [审阅准确候选](http://127.0.0.1:3000/?workspace=materials.workspace&production_object=need-form-carrying-strap-base-overall&material_target=2109c45d25aa79d1609f900ea7dbda40e4618ca6eecee57f57a34ba9a82ef0ba&material_round=1) | [1448×1086 PNG](../../export/assets/05ec396e69ef3c747a76f3e8b46793683747f87dcd2c65bea1a14d3ee5d62134.png) |
+| 擦手布巾·基准完整形态 | [审阅准确候选](http://127.0.0.1:3000/?workspace=materials.workspace&production_object=need-form-cloth-base-overall&material_target=bfb7c493237458dc583e9b687e97122c2d0266d949a9f5949faa4b08888d5ce5&material_round=1) | [1448×1086 PNG](../../export/assets/f8f825f78fb1996f041ce32b37935abc4eca5bed4ff7e51a02e8112de4835d3f.png) |
+| 阿禾竹簪·基准完整形态 | [审阅准确候选](http://127.0.0.1:3000/?workspace=materials.workspace&production_object=need-form-hairpin-base-overall&material_target=d76fbafabf6cedf308396e093c7aa67b3f21b61e2bfc6d0a0b398b52364402e3&material_round=1) | [1448×1086 PNG](../../export/assets/cad5bf9326fb2db40cb0c249bd88a01b84c4b8286508cbbabb30bcb80a4c0096.png) |
+| 压页河石·基准完整形态 | [审阅准确候选](http://127.0.0.1:3000/?workspace=materials.workspace&production_object=need-form-river-stone-base-overall&material_target=0eb16c871f56dc038c00331d5bc7664baa37f70e4af2beaa75b84551f94fbe6c&material_round=1) | [1448×1086 PNG](../../export/assets/3889e51aa3ca6862edd5d747e9e01f1d948214f002949b9835298104f19e17b2.png) |
+| 阿蘅水壶·基准完整形态 | [审阅准确候选](http://127.0.0.1:3000/?workspace=materials.workspace&production_object=need-form-water-flask-base-overall&material_target=c3ae63a407490a8a773f6916703af278d64ee16a3638acb1a3892657bcfcf02e&material_round=1) | [1448×1086 PNG](../../export/assets/fa593b7ab081f0c00ce10a71d305c63a5c871d28d655fd9f9604e59181cb62a1.png) |
+| 米粮·基准完整形态 | [审阅准确候选](http://127.0.0.1:3000/?workspace=materials.workspace&production_object=need-form-grain-base-overall&material_target=7ac93818e024d3b5b6b94cafbd7859f615048c9220090bf9a5cf98577c6d19a9&material_round=1) | [1448×1086 PNG](../../export/assets/d03ca03f8db472e6e083a3849f3abd90d7107cc633c39585ff84db2951a2e0e5.png) |
+| 前殿领唱众人·基准完整形态 | [审阅准确候选](http://127.0.0.1:3000/?workspace=materials.workspace&production_object=need-form-lead-chorus-base-overall&material_target=df9201032426697680b5dbe9421e38ae70413f04dc8a0e77d25abcbb64e24331&material_round=1) | [1672×941 PNG](../../export/assets/3b26373c77647179f39a4e799a0a0d6cb4c4f0b004da65f78419b2b40400379b.png) |
+| 竹器摊空小凳·基准完整形态 | [审阅准确候选](http://127.0.0.1:3000/?workspace=materials.workspace&production_object=need-form-empty-stool-base-overall&material_target=63cc0b1b1d9edc9f4f96fd80d78e7c768a578ab684e23433d228f3b4499944c6&material_round=1) | [1448×1086 PNG](../../export/assets/0739a7bc0388aa7eee93b1d878f0a143e7360979813d02c8db019dae8151fcc7.png) |
+| 家用柴刀·基准完整形态 | [审阅准确候选](http://127.0.0.1:3000/?workspace=materials.workspace&production_object=need-form-wood-knife-base-overall&material_target=0665f4daa95520dff29261cd19e5132f1e76ee18d9bd40d6cafafcb6dcef097e&material_round=1) | [1448×1086 PNG](../../export/assets/74462d63adc6b415f15e47832e53bd93251c2db239fbaa63d130d78222a0a218.png) |
+| 陶伯削竹刀·基准完整形态 | [审阅准确候选](http://127.0.0.1:3000/?workspace=materials.workspace&production_object=need-form-shaving-knife-base-overall&material_target=1de93e74d140652e7083bec79fc9adf1a5139fb6b2d38b7df8ef37cabc486626&material_round=1) | [1448×1086 PNG](../../export/assets/b7f1ce61eba9be823a16a0002cdec5a3215008b9bda5a3e88ba6d22b1936ef6b.png) |
+| 陶伯麻绳与护垫·基准完整形态 | [审阅准确候选](http://127.0.0.1:3000/?workspace=materials.workspace&production_object=need-form-hemp-rope-base-overall&material_target=d90c654f129e94d7c1b4ff25393785e6b4fca642b3a0ce10691f5ce6ac7786df&material_round=1) | [1448×1086 PNG](../../export/assets/268bbe42897d3393389a33262265173bf9e55b34f2f5c8218a4d499c1ebd8b11.png) |
+| 拌肉米饵·基准完整形态 | [审阅准确候选](http://127.0.0.1:3000/?workspace=materials.workspace&production_object=need-form-meat-rice-bait-base-overall&material_target=99cbfebcddcd34ddc31e72995a30db68e4493db374372e4bbd7a5e50e288bd99&material_round=1) | [1448×1086 PNG](../../export/assets/b912c3783262ee25d2c19634f7f43234b21b5bca889c057fece69d19540902c6.png) |
+| 煎药罐与药渣·基准完整形态 | [审阅准确候选](http://127.0.0.1:3000/?workspace=materials.workspace&production_object=need-form-medicine-pot-base-overall&material_target=bea9933ffd269644741717aee5155c210dc6dcc822ec81ea3ec0876fcb548c9d&material_round=1) | [1448×1086 PNG](../../export/assets/000cc62bb7e88207e121ca0c43e9fb1f99bb4fa06e7616072ef92945c88a993b.png) |
+| 戏班纸月亮·基准完整形态 | [审阅准确候选](http://127.0.0.1:3000/?workspace=materials.workspace&production_object=need-form-paper-moon-base-overall&material_target=22671ce2995635581428c870f53b1358f6288f7cf5c97614f119a1ec30d1991e&material_round=1) | [1448×1086 PNG](../../export/assets/2cdb5c59f092292c16f61cecbcae0e582ba88ee6df1c1ee476134d7751c9585c.png) |
+| 阿蘅米袋·基准完整形态 | [审阅准确候选](http://127.0.0.1:3000/?workspace=materials.workspace&production_object=need-form-rice-bag-base-overall&material_target=f24831308bc5324aaa55163b3e78b7fc83c394405a0b923d0fc6b52625fa436e&material_round=1) | [1448×1086 PNG](../../export/assets/20f7ac2fb86c63ba67da4dec7e8ac99ca88b49b20c2953d7611ba688dcfff41d.png) |
+| 米铺小木斗·基准完整形态 | [审阅准确候选](http://127.0.0.1:3000/?workspace=materials.workspace&production_object=need-form-rice-measure-base-overall&material_target=6922ef094c434c326a7c395a194f411a9a8e16bd50c21a43c12d98b0178987d1&material_round=1) | [1448×1086 PNG](../../export/assets/78f7ed95c09eaece3defee972ca1188b16983784ef9ede0aef6b67a3891160cb.png) |
+| 补词夹板与笔·基准完整形态 | [审阅准确候选](http://127.0.0.1:3000/?workspace=materials.workspace&production_object=need-form-writing-board-base-overall&material_target=433ad6f06c1451a44bdb35106d145827165f2a116e801fc93f3059f21cc88793&material_round=1) | [1448×1086 PNG](../../export/assets/8a5283dddf05c941b550a256c69587917a2b740b0393312cc9d7b541580667c2.png) |
+| 戏班幕布·基准完整形态 | [审阅准确候选](http://127.0.0.1:3000/?workspace=materials.workspace&production_object=need-form-curtain-base-overall&material_target=60d24702d374bcd32359f32e5a54e9d50901028e742041bf7df63e55532a2805&material_round=1) | [1448×1086 PNG](../../export/assets/09cad1de453fbd4b2d4bdf6a5332d5a9c688fb2d183e27cf3234f214a5ee2365.png) |
+| 戏班竹竿与工具箱·基准完整形态 | [审阅准确候选](http://127.0.0.1:3000/?workspace=materials.workspace&production_object=need-form-stage-tools-base-overall&material_target=d45c0fd5bd1e5ac13c6f710744df0b0f0641c3b62a7c3c38dcb4557eecbf0383&material_round=1) | [1448×1086 PNG](../../export/assets/cecc4e50717683233e5dbf1de21f86026cd6b853372f3180492aa4a7168c14e4.png) |
+| 戏班纸蛇·基准完整形态 | [审阅准确候选](http://127.0.0.1:3000/?workspace=materials.workspace&production_object=need-form-paper-snake-base-overall&material_target=b007c0a52631a72411696b07e39c2a7a02a79f10e896c0646613609cc7269282&material_round=1) | [1448×1086 PNG](../../export/assets/d9266ece62068ba17f2b51426bce60d5303ac5b5be0014f2615470f68d8f80ab.png) |
+| 县库厚背刀·基准完整形态 | [审阅准确候选](http://127.0.0.1:3000/?workspace=materials.workspace&production_object=need-form-heavy-blade-base-overall&material_target=cbeeb636859d121ba3bcaaf1caeff98df8350c5c887af0fd96d02ac939546b5e&material_round=2) | [1086×1448 PNG](../../export/assets/bdc77f0680ffc30cf027f6ad3a94c1018bbc83d6e1ec773a107a97804b4a3149.png) |
+| 短石道与盖石·基准完整形态 | [审阅准确候选](http://127.0.0.1:3000/?workspace=materials.workspace&production_object=need-form-feeding-channel-base-overall&material_target=40c463e5d080aca4387023e158cb95a75c6dc42c7de734d8d87eb3a30485e8e4&material_round=1) | [1448×1086 PNG](../../export/assets/3bc99507444a691fb933dad0a7503343b3be448ad98732b1b0b39c1b0bd044a4.png) |
 
 正式系统“实际素材”入口仍有同轮不同候选串用调用上下文的缺陷；本页使用已核对的“需求”入口和准确素材修订。修复已在隔离系统提交 a6a9e9bbfa2cae97b27dd23b5e49398c69e24a70，尚未切换正式服务。同一素材版本可以有多个真实候选，不以排序或“最新”推定采用。
 
@@ -99,9 +141,9 @@
 
 ## 原件自检与准确范围
 
-[逐原件自检](representative-review.json)保存全部生成原件、SHA-256、规格、问题及认可来源。当前五个缺口为：李绡压杠、孙六持续压杠、持票老人、戏班伙计与演员、庙会儿童与家长。前两项仍缺清楚的肩部下压接触；后三项须去除额外告示架、箱包肩巾或戏场背景。失败和返工均保留真实调用，不以调用次数填充合格状态数。此前李寄新鲜伤、周掌柜、竹篮、裹手布、李诞、李寄母亲及四项人物局部返工已取得自检通过原件。
+[逐原件自检](representative-review.json)保存全部生成原件、SHA-256、规格、问题及认可来源。当前两个已调用缺口为李绡压杠、孙六持续压杠：第三次图仍偏胸颈贴杠，缺少清楚的肩部下压接触，已到 D2，后续须回已认可 D0 改侧向姿态，不能继续叠改。持票老人、戏班和儿童群组、八人群像、大蛇鳞线及小凳横撑均已取得自检合格修正版。失败与返工均保留真实调用，不以调用次数填充合格状态数。
 
-[输入锁](source-lock.json)保存准确剧本、对象头、评论及排除项。版本四为 7287b25a34d4b0db242ec5688f33349fa6d449874a3c6acb30033e2260cd2686，17 集、42 场、1,114 块。133 实体、267 状态排除四首歌的八个状态，以及两项仅声音、两项仅提及状态，得到 255 个图像目标：126 个基础状态、129 个派生状态。基础状态同时覆盖实体，不重复另生实体图。声音锁定 40 基础＋2 变化，76 条状态关联、34 条复用；用户明确不补问月亮的孩子与屋内唤程差役者。
+[输入锁](source-lock.json)保存准确剧本、对象头、评论及排除项。版本四为 7287b25a34d4b0db242ec5688f33349fa6d449874a3c6acb30033e2260cd2686，17 集、42 场、1,114 块。当前有效范围为 132 实体、263 完整状态；排除四首歌的八个状态，以及两项仅声音、两项仅提及状态，得到 251 个图像目标：125 个基础状态、126 个派生状态。原抽取 133 实体、267 状态及其修订保留，四个包布重复状态已按用户“按此归并，调整为 251 项”撤回并准确指向既有李寄状态，见 [范围归并](scope-amendment.json)。基础状态同时覆盖实体，不重复另生实体图。声音锁定 40 基础＋2 变化，76 条状态关联、34 条复用；用户明确不补问月亮的孩子与屋内唤程差役者。
 
 [recipes.json](recipes.json)包含逐项身份、完整形态、差异、构图、制作选择、来源与实际渠道参数。尚未生成或认可的必需参考保持待绑定；独立文字母版明确没有参考。调用时输入必须与准确方案一致。已调用请求和输入锁不可因后来修订而重写；修订后的真实新调用另存请求。
 
@@ -111,23 +153,27 @@
 
 OpenArt CLI 0.1.1 拒绝 --quality（unknown flag: --quality），已使用同一账户、同一故事项目 8K6WcbrPLghSBJXBtWAE 的连接器提交 high，模型 gpt-image-2-5-sunburst。37 次图片调用后余额 9,979→77，独占窗口累计差值 9,902 credits；不足继续同配置生成。历史查询认证失败已按原调用 ID 恢复回执，没有重复扣费。原生输出 2016×2688、2688×2016 或 3584×2016，保存原件，未放大冒充 4K。
 
-后续按用户预授权切换 Codex 内置 image_gen.imagegen。该工具仅暴露 GPT Image 名称和 prompt、透明背景、可选参考路径；不暴露底层型号、质量档、尺寸参数、服务端调用 ID 或计费用量。登记真实工具表面及返回的原件路径，未知字段明确留空，不把产物文件 ID 当服务端调用 ID，不声称底层为 GPT IMG 2.5。当前直接输出 1086×1448 或 1448×1086，没有放大。未充值、购买或新开按量渠道。
+后续按用户预授权切换 Codex 内置 image_gen.imagegen。该工具仅暴露 GPT Image 名称和 prompt、透明背景、可选参考路径；不暴露底层型号、质量档、尺寸参数、服务端调用 ID 或计费用量。登记真实工具表面及返回的原件路径，未知字段明确留空，不把产物文件 ID 当服务端调用 ID，不声称底层为 GPT IMG 2.5。当前直接输出 1086×1448、1448×1086、1672×941 或 1672×940，没有放大。未充值、购买或新开按量渠道。
 
 豆包沿用 seed-audio-1.0，剩余 38 份调用前已在登录后的控制台核对免费余量 33.95 分钟，完成后 27.91 分钟；新录音实际 362.94 秒，与两位小数页面变化相符。全部本任务录音共 411.68 秒。生成期间协调并持有共享额度锁；完成后已释放，没有在途或结果未知调用。凭据未复制或回显。参见 [文件与字幕核对](../evidence/full-generation-remaining-voices-file-check.json)及 [余量截图](../evidence/full-generation-remaining-voices-quota-after.png)。
 
 ## 正式登记、页面与恢复
 
-全部增量先在本任务隔离库登记核对，再通过主项目 publication.lock 重读最新对象头并增量发布。旧原件、修订、评论、采用及关系保留。本次检查点正式库有 2,503 对象、5,725 修订；原 264 条评论与新增浅滩真实意见共 265 条，294 条评论事件和 1,175 素材轮次保留。数字仅是当时快照，不能据此覆盖活库。各 *-publication 的 applied.json 表明已执行，不得盲重跑。
+全部增量先在本任务隔离库登记核对，再通过主项目 publication.lock 重读最新对象头并增量发布。旧原件、修订、评论、采用及关系保留。第四批准确认可后正式库有 2,681 对象、6,040 修订；原 264 条评论与新增浅滩、包布和厚背刀真实意见共 267 条，296 条评论事件和 1,177 素材轮次保留。数字仅是当时快照，不能据此覆盖活库。各 *-publication 的 applied.json 表明已执行，不得盲重跑。
 
 Chrome 已实际放大核对李绡、赵执事和孙六本轮原图，核对了实际渠道参数；李寄新 WAV 在正确候选播放器完整播放至 8.50 秒。此前的派生、浅滩版本切换、意见、阿蘅两项补充播放及湿鞋复用证据继续保留。这些页面核对不替代用户听审或基准认可。
 
-当前 export/ 与 production/replay.json 已同步本次 136 原件检查点。完整清单 479 个文件全部校验；制作回放含 2,380 对象、5,593 修订和 422 个受管文件。新空实例恢复后，全部业务表内容与快照相同，136 次调用与原件关联、57 次内置图片的准确方案及授权谱系、42 份 WAV 的实际规格均通过核对。见 [导出证据](../evidence/full-generation-checkpoint-136-export.json)、[恢复证据](../evidence/full-generation-checkpoint-136-recovery.json)。Chrome 已在恢复实例放大孩子基准原图并播放李寄新音色至 8.50 秒结束，也已核对正式页面的同一孩子原件，见 [页面证据](../evidence/full-generation-checkpoint-136-browser.json)。后续新增调用后须更新检查点，不能将本次范围外原件记为已恢复验证。
+export/ 与 production/replay.json 已完整同步为 190 原件及第四批 36 份认可检查点。完整清单 641 个文件全部校验；制作回放含 2,558 对象、5,908 修订和 584 个受管文件。空实例恢复后全部业务表与快照相同，190 次调用与原件关联、111 次内置图片的准确方案及授权谱系、42 份 WAV 的实际规格均通过核对。见 [导出证据](../evidence/full-generation-checkpoint-190-approved-export.json)、[恢复证据](../evidence/full-generation-checkpoint-190-approved-recovery.json)。
+
+Chrome 已实际核对正式厚背刀第二轮修正版、切回第一轮并打开用户原评论；恢复实例放大短石道新原件、播放李寄新音色至 8.50 秒结束。恢复实例的当前实体列表为 132 项，不再列出包布实体，李寄仍有 13 个完整状态，见 [页面证据](../evidence/full-generation-checkpoint-190-browser.json)。这些是页面与原件可用性验证，声音身份及表演仍由用户听审。
+
+撤回实体与状态的当前列表／生成范围兼容修复已在隔离系统提交 `335168e03382d4c3601373cbf5431ea4fb1d7e10`，包括此前实际调用上下文修复；正式 3000 仍未切换，因此正式当前列表的隐藏行为尚未发布。正式数据归并与历史保留已经增量登记，不能将未部署界面写成已经切换。
 
 ## 执行与恢复入口
 
 路径以本任务 worktree 为基准。正式业务库是故事主项目 .runtime/review.sqlite3；唯一任务账本是主项目 .codex-project。通用系统从故事主项目定位同级 story-review-desk-python；隔离系统为 .runtime/review-desk-worktree，正式 3000 仍为 15822ae77d9b6c3851852555a677d11d7adc7c10。
 
-- .runtime/full-generation/checkpoint-136-restored：本次空实例恢复，独立端口 64397；仅用于验收，不是正式审阅入口。
+- .runtime/full-generation/checkpoint-190-approved-restored：最新完整包空实例恢复，含第四批 36 份认可。此前同一批原件及归并数据在 checkpoint-190-restored 的 64398 端口完成页面验收；新增认可未改变图片、音频或页面输入，复用这部分已通过检查。隔离实例只用于验收，不是正式审阅入口。
 - .runtime/full-generation/all-pending/review：本批隔离登记库。现有请求、输出回执与进程日志均可恢复；已存在完成回执的调用不能重复提交。
 - [record_builtin_image.py](../../scripts/record_builtin_image.py)：从真实工具返回路径复制原生文件，保存 SHA、规格与未暴露字段；不生成或改图。
 - [register_generation_batch.py](../../scripts/register_generation_batch.py)：核对准确方案、输入、参考认可或同状态返工依据、谱系与 SHA，登记已经完成的真实调用；不发模型请求。
