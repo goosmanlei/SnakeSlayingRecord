@@ -145,6 +145,8 @@
 
 ## 已核实的实施事实
 
+- 生成工作区由故事工具 `scripts/generation_workspace.py` 统一校验；生成、登记、恢复和导出只写独立 worktree。`generation_review.py` 从正式库一致性备份建立任务审阅实例，保留初始化基线，已有实例不重置；预览端口自动选择，标题标明任务预览。账号互斥仍共享，Seed Audio 跨 worktree 汇总并去重配额回执。来源：`production/generation-workspaces.md`、对应脚本与离线／浏览器验收证据。
+- 正式生成数据通过 `publish_generation.py` 或兼容的歌曲／全剧批次入口显式发布。包与原件须已随指定提交合入主目录 `main`，正式写入不补拷素材；数据库增量事务校验当前头和准确依赖，保留无关并发数据及旧历史。同事务的 `generation_publications` 执行记录使回执丢失后的原包重跑不重复入库；该表不属于公开业务导出。来源：`scripts/generation_publication.py`、`scripts/publish_generation.py` 与 `production/evidence/generation-workspace-verification.json`。
 - 制作页面以采纳／取消、评论、准确版本、筛选、预览和缺项检查推进审阅；导入、登记原件、修改说明与需求、维护关联由 Codex 通过后台 CLI／接口完成。旧 `entity-current-v1` 认可只绑定原实体、状态和素材范围：取消后范围仍完全一致时可重新认可，使用 `entity-content-v1` 保留历史链，不授予生成许可；真实内容修订后不走此兼容路径。生成许可单独核对当前关系、全部完整状态、需求、依赖和准备完整性。来源：本轮系统候选 `generation.py`、`test_material_relationships.py` 与隔离 Chrome 采纳循环；正式运行版本以 STATE.md 为准。
 - 直接关系的事实和证据选择归故事仓库：`scripts/entity_relationships.py` 维护端点、标签与方向，`production/relationship-evidence-selection.json` 为每条关系显式选择锁定版本四的场次和正文块。工具不再取第一个关键词附近的窗口；通用系统只读取准确引用，不补造关系或改写剧本。157 条的逐项核查、33 条修正及原问题截图见 `production/relationship-review.md`，旧关系修订和评论保留。来源：编制工具、锁定剧本、自动验证与隔离／正式弹窗回读。
 - 素材按一轮修订计版：需求建立、方案准备、首次实际调用及结果登记同属版本一；产出后明确修订意见启动下一轮，同轮多条意见、方案修改和生成不再加素材版。一般讨论、评论状态、元数据与关联补全不加版；内部准确修订、调用和采用继续保存。来源：用户发布的 `planning/material-review-optimization-task.md`、系统 `docs/material-versions.md` 及本任务隔离生命周期／并发验证。

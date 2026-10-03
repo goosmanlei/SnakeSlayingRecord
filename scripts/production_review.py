@@ -10,13 +10,20 @@ import hashlib
 import json
 from pathlib import Path
 import shutil
+import tempfile
 import sys
 from production_data import exact_replay
+
+try:
+    from .generation_workspace import generation_root, contained, isolated_instance
+except ImportError:
+    from generation_workspace import generation_root, contained, isolated_instance
 
 ROOT = Path(__file__).resolve().parents[1]
 
 
 def main():
+    global ROOT
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--system', type=Path, required=True)
     commands = parser.add_subparsers(dest='command', required=True)
@@ -24,15 +31,27 @@ def main():
     save.add_argument('--instance', type=Path, required=True)
     recover = commands.add_parser('recover')
     recover.add_argument('--destination', type=Path, required=True)
+    parser.add_argument('--workspace', type=Path, default=ROOT)
     args = parser.parse_args()
+    ROOT = generation_root(args.workspace)
     sys.path.insert(0, str(args.system.resolve()))
     from review_desk import production
     from review_desk.store import Store
     from review_desk.bundle import restore
     from review_desk.production_media import file_hash, validate_component
-    replay_path = ROOT / 'production/replay.json'
+    replay_path = contained(ROOT, 'production/replay.json')
     if args.command == 'snapshot':
-        store = Store(args.instance.resolve() / '.runtime/review.sqlite3')
+        # Store initialization may migrate; run it only on our private snapshot.
+        try:
+            from .generation_publication import backup
+        except ImportError:
+            from generation_publication import backup
+        runtime = contained(ROOT, '.runtime/generation/snapshots')
+        runtime.mkdir(parents=True, exist_ok=True)
+        snapshot = Path(tempfile.mkdtemp(dir=runtime)) / 'review.sqlite3'
+        source = args.instance if args.instance.is_absolute() else ROOT / args.instance
+        backup(source.resolve() / '.runtime/review.sqlite3', snapshot)
+        store = Store(snapshot)
         try:
             data = exact_replay(store, production)
             files = {}
@@ -43,13 +62,14 @@ def main():
                         files['export/assets/' + component['file']] = component['sha256']
             data['files'] = files
             data['base_manifest_sha256'] = file_hash(ROOT / 'export/manifest.json')
+            replay_path.parent.mkdir(parents=True, exist_ok=True)
             replay_path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n')
             print(json.dumps({'objects': len(data['heads']), 'revisions': len(data['revisions']),
                               'batches': len(data['batches']), 'files': len(files)}))
         finally:
             store.close()
         return
-    destination = args.destination.resolve()
+    destination = isolated_instance(ROOT, args.destination)
     if destination.exists():
         parser.error('recovery requires a new destination; no existing instance will be overwritten')
     if ROOT not in destination.parents or '.runtime' not in destination.relative_to(ROOT).parts:

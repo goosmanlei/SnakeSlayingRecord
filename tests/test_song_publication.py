@@ -92,8 +92,7 @@ class SongPublicationTest(unittest.TestCase):
     def test_repeated_apply_does_not_duplicate_history(self):
         apply(self.db, self.plan)
         before = self.dump()
-        with self.assertRaises(ValueError):
-            apply(self.db, self.plan)
+        self.assertTrue(apply(self.db, self.plan)['already_published'])
         self.assertEqual(self.dump(), before)
 
     def test_non_song_scope_refused(self):

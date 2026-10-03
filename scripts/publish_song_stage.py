@@ -15,6 +15,13 @@ import re
 import shutil
 import sqlite3
 
+try:
+    from .generation_publication import journal, publication_id
+    from .publish_generation import run_publication
+except ImportError:
+    from generation_publication import journal, publication_id
+    from publish_generation import run_publication
+
 ROOT = Path(__file__).resolve().parents[1]
 KEYS = {'objects': ('id',), 'revisions': ('id',), 'dependencies': ('from_revision', 'to_revision', 'role'), 'comments': ('id',), 'material_rounds': ('material_id', 'number'), 'material_members': ('material_id', 'number', 'revision_id'), 'material_feedback': ('comment_id',), 'material_comment_scopes': ('comment_id', 'material_id')}
 ENTITIES = {'entity-boat-song', 'entity-blue-awning-song', 'entity-snake-welcome-song', 'entity-blessing-stage-song'}
@@ -85,8 +92,7 @@ def apply(db, plan):
     if not all((r['comment_id'] in new_cids for r in plan['comment_events'])):
         raise ValueError('invalid song publication data')
     event_map = []
-    with db:
-        db.execute('BEGIN IMMEDIATE')
+    def mutate():
         for (oid, expected) in plan['expected_heads'].items():
             row = db.execute('SELECT * FROM objects WHERE id=?', (oid,)).fetchone()
             if (dict(row) if row else None) != expected:
@@ -109,7 +115,8 @@ def apply(db, plan):
             event_map.append({'source_id': row['id'], 'published_id': result.lastrowid, 'comment_id': row['comment_id']})
         if db.execute('PRAGMA foreign_key_check').fetchall():
             raise ValueError('foreign key validation failed')
-    return {'objects': len(plan['objects']), 'new_objects': sum((x is None for x in plan['expected_heads'].values())), 'inserted': {t: len(rs) for (t, rs) in plan['insert'].items()}, 'comment_events': event_map, 'audio_quality_accepted': False, 'screenplay_changed': False}
+        return {'objects': len(plan['objects']), 'new_objects': sum((x is None for x in plan['expected_heads'].values())), 'inserted': {t: len(rs) for (t, rs) in plan['insert'].items()}, 'comment_events': event_map, 'audio_quality_accepted': False, 'screenplay_changed': False}
+    return journal(db, publication_id(plan), mutate)
 
 def verify_preservation(before_path, after_path, plan):
     (before, after) = (connect(before_path), connect(after_path))
@@ -145,59 +152,16 @@ def backup(source, destination):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--workspace', type=Path, default=ROOT)
     parser.add_argument('--instance', type=Path, required=True)
     parser.add_argument('--run-name', required=True)
+    parser.add_argument('--source-commit')
     parser.add_argument('--apply', action='store_true')
     args = parser.parse_args()
-    if not re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', args.run_name):
-        parser.error('run-name must be a safe, unique runtime directory name')
-    target = args.instance.resolve()
-    db_path = target / '.runtime/review.sqlite3'
-    if target == ROOT or not db_path.is_file():
-        parser.error('explicit existing instance required; never restore over a task checkout')
-    plan_path = ROOT / 'production/song-stage/publication-plan.json'
-    plan = json.loads(plan_path.read_text())
-    run = ROOT / '.runtime/songs/current-state-closeout/publication' / args.run_name
-    run.mkdir(parents=True, exist_ok=False)
-    with (target / '.runtime/publication.lock').open('a') as lock:
-        fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
-        before = run / 'before.sqlite3'
-        backup(db_path, before)
-        rehearsal = run / 'rehearsal.sqlite3'
-        shutil.copyfile(before, rehearsal)
-        db = connect(rehearsal, readonly=False)
-        try:
-            simulated = apply(db, plan)
-        finally:
-            db.close()
-        preserved = verify_preservation(before, rehearsal, plan)
-        # Verify source bytes even in dry-run mode. Stage them only in this run.
-        copied = copy_media(plan, ROOT / 'export/assets', run / 'assets')
-        result = {'plan_sha256': sha(plan_path), 'scope': simulated,
-                  'preserved_tables': preserved, 'verified_media_files': copied,
-                  'applied': False, 'audio_quality_accepted': False,
-                  'exported': False, 'deployed': False}
-        save(run / 'preflight.json', result)
-        if args.apply:
-            # A concurrent non-cooperating song writer is rejected again inside
-            # the transaction. Unreferenced copied files are safe to retain.
-            copy_media(plan, ROOT / 'export/assets', target / 'export/assets')
-            db = connect(db_path, readonly=False)
-            try:
-                result['scope'] = apply(db, plan)
-            finally:
-                db.close()
-            # Write the transaction receipt before post-commit verification so a
-            # failed later check cannot be mistaken for a safe-to-repeat call.
-            save(run / 'transaction.json', result['scope'])
-            after = run / 'after.sqlite3'
-            backup(db_path, after)
-            result.update(applied=True,
-                          preserved_tables=verify_preservation(before, after, plan))
-            save(run / 'applied.json', result)
-        print(json.dumps({'applied': result['applied'], 'objects': len(plan['scope']),
-                          'media_files': len(plan['media']),
-                          'receipt': str(run.relative_to(ROOT))}, ensure_ascii=False))
+    result = run_publication(args.workspace, args.instance,
+        'production/song-stage/publication-plan.json', args.run_name,
+        apply=args.apply, source_commit=args.source_commit, apply_fn=apply)
+    print(json.dumps(result, ensure_ascii=False))
 
 
 if __name__ == '__main__':

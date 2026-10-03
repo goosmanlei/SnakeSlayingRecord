@@ -24,6 +24,11 @@ MODEL = "lyria-3.5"
 ESTIMATED_USD = decimal.Decimal("0.08")
 
 
+try:
+    from .generation_workspace import generation_root, contained
+except ImportError:
+    from generation_workspace import generation_root, contained
+
 def now():
     return datetime.datetime.now(datetime.timezone.utc).isoformat()
 
@@ -256,6 +261,7 @@ def finish(run, response, receipt):
 
 
 def submit(payload, metadata, workspace, max_cost, timeout, proxy=None, proxy_user=None):
+    workspace = generation_root(workspace)
     key = os.environ.get("GOOGLE_API_KEY", "").strip()
     if not key:
         raise ValueError("GOOGLE_API_KEY is not available in this process")
@@ -312,7 +318,7 @@ def submit(payload, metadata, workspace, max_cost, timeout, proxy=None, proxy_us
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("spec", type=Path, nargs="?")
-    parser.add_argument("--workspace", type=Path, default=Path.cwd(),
+    parser.add_argument("--workspace", type=Path, default=Path(__file__).resolve().parents[1],
                         help="task worktree root; outputs stay in its .runtime/lyria")
     action = parser.add_mutually_exclusive_group()
     action.add_argument("--submit", action="store_true")
@@ -354,7 +360,8 @@ def main(argv=None):
             print(dump(checks), end="")
             return 0
         if args.recover:
-            run = args.recover.resolve(strict=True)
+            args.workspace = generation_root(args.workspace)
+            run = contained(args.workspace, args.recover).resolve(strict=True)
             root = private_runtime(args.workspace)
             if run.parent != root.resolve() or not run.is_dir():
                 raise ValueError("recover must name an attempt in this workspace's .runtime/lyria")

@@ -21,11 +21,18 @@ import urllib.error
 import urllib.request
 import uuid
 
+try:
+    from .generation_workspace import generation_root, contained, primary_root, git
+except ImportError:
+    from generation_workspace import generation_root, contained, primary_root, git
+
 ROOT = Path(__file__).resolve().parents[1]
 API_URL = "https://openspeech.bytedance.com/api/v3/tts/create"
 
 
 def json_write(path, value):
+    path = contained(generation_root(ROOT), path)
+    contained(ROOT, path.with_suffix(path.suffix + ".tmp"))
     path.parent.mkdir(parents=True, exist_ok=True)
     temp = path.with_suffix(path.suffix + ".tmp")
     temp.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n")
@@ -74,20 +81,38 @@ def remaining_allowance(quota, receipts):
     remaining = quota['remaining_seconds']
     if type(remaining) not in (int, float) or not math.isfinite(remaining) or remaining < 0:
         raise ValueError('invalid observed remaining allowance')
-    for old in receipts:
+    charges = {}
+    for index, old in enumerate(receipts):
         if old.get('quota_id') != quota['id']:
             continue
         status = old.get('status')
         duration = old.get('original_duration', 120) if status == 'completed' else 0 if status == 'rejected' else 120
         if type(duration) not in (int, float) or not math.isfinite(duration) or duration < 0 or status == 'completed' and duration == 0:
             raise ValueError('invalid billing duration; allowance cannot be safely calculated')
-        remaining -= duration
-    return remaining
+        # Git copies of one receipt represent one call. If one copy is still
+        # pending, retain the larger reservation until that copy is reconciled.
+        identity = old.get('request_id') or ('legacy', index)
+        charges[identity] = max(charges.get(identity, 0), duration)
+    return remaining - sum(charges.values())
+
+
+def quota_receipts(workspace):
+    receipts = []
+    for entry in git(workspace, 'worktree', 'list', '--porcelain', '-z').split(b'\0'):
+        if not entry.startswith(b'worktree '):
+            continue
+        root = Path(os.fsdecode(entry[9:]))
+        if not root.is_dir():
+            continue
+        folder = contained(root, 'production/receipts')
+        for path in folder.glob('seed-*.json'):
+            receipts.append(json.loads(contained(root, path).read_text()))
+    return receipts
 
 
 def save_original(audio):
     sha = hashlib.sha256(audio).hexdigest()
-    folder = ROOT / 'export/assets'
+    folder = contained(generation_root(ROOT), 'export/assets')
     if folder.is_symlink() or folder.parent.is_symlink():
         raise ValueError('managed originals directory cannot be a symlink')
     folder.mkdir(parents=True, exist_ok=True)
@@ -110,11 +135,15 @@ def save_original(audio):
 
 
 def main():
+    global ROOT
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("spec", type=Path)
     parser.add_argument("--submit", action="store_true")
-    parser.add_argument("--quota", type=Path, default=ROOT / "production/receipts/seed-quota-20261001.json")
+    parser.add_argument("--quota", type=Path)
+    parser.add_argument('--workspace', type=Path, default=ROOT)
     args = parser.parse_args()
+    ROOT = generation_root(args.workspace) if args.submit else args.workspace.resolve()
+    args.quota = args.quota or ROOT / "production/receipts/seed-quota-20261001.json"
     spec = json.loads(args.spec.read_text())
     payload, refs = payload_for(spec)
     display = {k:v for k,v in payload.items() if k != "references"}
@@ -129,14 +158,19 @@ def main():
     if not label or any(c not in "abcdefghijklmnopqrstuvwxyz0123456789-" for c in label):
         parser.error("spec id must be a lowercase filename-safe identifier")
     receipt_path = ROOT / "production/receipts" / ("seed-" + label + ".json")
-    run_folder = ROOT / ".runtime/production"
+    # Only account coordination is shared. Originals and call receipts remain
+    # in the selected worktree, including requests with uncertain billing.
+    account_root = primary_root(ROOT)
+    run_folder = contained(account_root, '.runtime/production')
+    contained(ROOT, receipt_path)
+    contained(account_root, run_folder / "seed-audio.lock")
     run_folder.mkdir(parents=True, exist_ok=True)
     with (run_folder / "seed-audio.lock").open("a") as lock:
         fcntl.flock(lock.fileno(), fcntl.LOCK_EX)
         if receipt_path.exists():
             parser.error("this attempt already has a receipt; do not resubmit it")
         quota = json.loads(args.quota.read_text())
-        remaining = remaining_allowance(quota, [json.loads(path.read_text()) for path in receipt_path.parent.glob('seed-*.json')])
+        remaining = remaining_allowance(quota, quota_receipts(ROOT))
         if remaining < 120:
             parser.error("remaining verified allowance is below a worst-case 120-second request")
         request_id = str(uuid.uuid4())

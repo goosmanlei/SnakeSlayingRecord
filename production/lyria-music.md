@@ -60,7 +60,7 @@ python3 scripts/lyria_music.py .runtime/songs/requests/boat-lyria-v1-a04.json \
   --proxy http://127.0.0.1:7897
 ```
 
-`--workspace` 默认当前工作目录，必须指向歌曲 task worktree 根目录；即使程序从主项目调用，输出也在该工作区的 `.runtime/lyria/<id>/`。各 worktree 通过共同 Git 仓库下的 `.runtime/lyria/account.lock` 串行提交；占用时直接退出，不等待或抢占。
+`--workspace` 默认脚本所在仓库根目录；实际提交和恢复要求独立任务 worktree，拒绝主目录、`main` 分支及越界路径。即使程序从其他目录调用，输出也在选定工作区的 `.runtime/lyria/<id>/`。各 worktree 通过共同 Git 仓库下的 `.runtime/lyria/account.lock` 串行提交；占用时直接退出，不等待或抢占。独立审阅、准确包和合并后发布按[生成工作区流程](generation-workspaces.md)办理。上文主目录内的 a01—a03 是改造前的历史调用，不作为新生成的输出示例。
 
 `--max-cost-usd` 必须明确提供，至少覆盖本工具按 2026-10-03 官方价格记录的每请求 $0.08 估算。它只是本次单请求的预检查，不是平台侧硬限额或批次累计预算；实际价格、账单及总尝试次数由执行会话核对。歌曲任务先获四首重制授权，完成四次；首曲格式不符后获补充 MP3 授权。之后用户另行授权一次《三道滩》重生成，已完成 `songs-boat-lyria-diction-v2-a01`。首批四次与追加一次都已用完，不据此继续尝试。当前四首、准确原件及待听审项见 [整曲交接](songs-review.md)。
 
