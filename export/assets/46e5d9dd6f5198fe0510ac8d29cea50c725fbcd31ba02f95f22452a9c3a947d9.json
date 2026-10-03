@@ -1,0 +1,115 @@
+{
+  "id": "songs-boat-lyria-diction-pilot-v1",
+  "status": "completed",
+  "request_id": "90816c0e-d755-49d9-a408-942638a8b314",
+  "quota_id": "songs-quota-songs-boat-lyria-diction-pilot-v1",
+  "submitted_at": "2026-10-03T08:54:58.229437+00:00",
+  "endpoint": "https://openspeech.bytedance.com/api/v3/tts/create",
+  "input": {
+    "model": "seed-audio-1.0",
+    "text_prompt": "参考@音频1中女声的旋律走向、节拍、句长与自然民歌唱腔，用清楚准确的普通话重新演唱下面两句。参考只提供这段既有曲调和演唱感觉；每个汉字要清楚，纠正参考里模糊或多余的音节。\n只唱：\n一道险滩水急，\n船头慢慢行。\n\n“水急”读 shui ji，“船头”读 chuan tou，“行”读 xing。每个汉字只对应它自己的字音，可以在“急”和“行”的同一个元音上延长、转音，不把延音变成额外的字或“呀、啊、兮”等衬词。不朗读拼音、曲名、指令，不增加第三句。保持参考的两句旋律和正常速度，一人干净清唱，头尾留少量自然呼吸和尾音；约12秒，以两个完整乐句和准确吐字为准。不要伴奏、和声、掌声、环境声和旁白。",
+    "audio_config": {
+      "format": "wav",
+      "sample_rate": 48000,
+      "pitch_rate": 0,
+      "speech_rate": 0,
+      "loudness_rate": 0,
+      "enable_subtitle": true
+    },
+    "watermark": {},
+    "references": [
+      {
+        "file": "export/assets/79cb75b0bd2d5232974ac1074bbde86a390fb876fa4fca03f7739e6232de07db.wav",
+        "sha256": "79cb75b0bd2d5232974ac1074bbde86a390fb876fa4fca03f7739e6232de07db",
+        "duration_seconds": 11.0,
+        "reference_number": 1
+      }
+    ]
+  },
+  "input_sha256": "1010417e9dbfd2d52cd760b919d3b980730d550cc9f7b1429e4164d808518f1d",
+  "remaining_before_seconds": 1020,
+  "reserved_seconds": 120,
+  "log_id": "2026100316545802C0803A5F0C77AE7508",
+  "original_duration": 12,
+  "duration": 12,
+  "subtitle": {
+    "sentences": [
+      {
+        "end_time": 9720,
+        "start_time": 0,
+        "text": "一道险滩水急，船头慢慢行。",
+        "words": [
+          {
+            "end_time": 0,
+            "start_time": 0,
+            "text": "一"
+          },
+          {
+            "end_time": 40,
+            "start_time": 0,
+            "text": "道"
+          },
+          {
+            "end_time": 5160,
+            "start_time": 40,
+            "text": "险"
+          },
+          {
+            "end_time": 5280,
+            "start_time": 5240,
+            "text": "滩"
+          },
+          {
+            "end_time": 5640,
+            "start_time": 5600,
+            "text": "水"
+          },
+          {
+            "end_time": 6040,
+            "start_time": 5640,
+            "text": "急"
+          },
+          {
+            "end_time": 6040,
+            "start_time": 6040,
+            "text": "，"
+          },
+          {
+            "end_time": 7080,
+            "start_time": 6360,
+            "text": "船"
+          },
+          {
+            "end_time": 7560,
+            "start_time": 7200,
+            "text": "头"
+          },
+          {
+            "end_time": 8160,
+            "start_time": 7760,
+            "text": "慢"
+          },
+          {
+            "end_time": 8320,
+            "start_time": 8280,
+            "text": "慢"
+          },
+          {
+            "end_time": 9720,
+            "start_time": 8320,
+            "text": "行"
+          },
+          {
+            "end_time": 9720,
+            "start_time": 9720,
+            "text": "。"
+          }
+        ]
+      }
+    ],
+    "text": "一道险滩水急，船头慢慢行。"
+  },
+  "file": "export/assets/ba18bdd6a65bf798f84a08e17890ca68789fb6bf0e4f8552e2e7328738285abb.wav",
+  "sha256": "ba18bdd6a65bf798f84a08e17890ca68789fb6bf0e4f8552e2e7328738285abb",
+  "bytes": 2304044
+}
