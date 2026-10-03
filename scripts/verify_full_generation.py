@@ -4,7 +4,10 @@ import argparse
 from collections import Counter
 import json
 from pathlib import Path
-from verify_production_review import read_tables
+try:
+    from .verify_production_review import read_tables
+except ImportError:
+    from verify_production_review import read_tables
 
 
 def scope_changes(before, registration):

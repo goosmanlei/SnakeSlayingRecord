@@ -8,14 +8,22 @@ import re
 import shutil
 import subprocess
 
+try:
+    from .generation_workspace import generation_root, contained
+except ImportError:
+    from generation_workspace import generation_root, contained
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
 def main():
+    global ROOT
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--id', required=True)
     parser.add_argument('--response-metadata', required=True, type=Path)
+    parser.add_argument('--workspace', type=Path, default=ROOT)
     args = parser.parse_args()
+    ROOT = generation_root(args.workspace)
     if not re.fullmatch(r'[a-z0-9-]+', args.id):
         parser.error('invalid call label')
     request_path = ROOT / 'production/requests' / (args.id + '.json')
@@ -30,9 +38,11 @@ def main():
     managed = Path.home() / '.codex/generated_images'
     assert source.is_file() and not source.is_symlink() and managed.resolve() in source.resolve().parents
     sha = hashlib.sha256(source.read_bytes()).hexdigest()
-    destination = ROOT / 'export/assets' / (sha + '.png')
+    destination = contained(ROOT, ROOT / 'export/assets' / (sha + '.png'))
+    destination.parent.mkdir(parents=True, exist_ok=True)
     assert not destination.is_symlink() and not destination.parent.is_symlink()
-    receipt_path = ROOT / 'production/receipts' / (args.id + '-builtin-complete.json')
+    receipt_path = contained(ROOT, ROOT / 'production/receipts' / (args.id + '-builtin-complete.json'))
+    receipt_path.parent.mkdir(parents=True, exist_ok=True)
     assert not receipt_path.exists(), 'do not overwrite a real tool receipt'
     if destination.exists():
         assert hashlib.sha256(destination.read_bytes()).hexdigest() == sha

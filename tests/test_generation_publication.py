@@ -1,0 +1,210 @@
+import copy
+import json
+from pathlib import Path
+import sqlite3
+import tempfile
+import unittest
+from unittest.mock import patch
+from review_desk.store import Store
+
+from generation_fixtures import make_worktree, git
+import test_song_publication as song_tests
+from scripts import generation_publication as publication
+from scripts import publish_generation as runner
+from scripts.generation_review import initialize, export_review
+
+
+class GenerationPublicationTest(unittest.TestCase):
+    def setUp(self):
+        self.temp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        self.main, self.task = make_worktree(self.temp.name)
+        self.fixture = song_tests.SongPublicationTest()
+        self.fixture.setUp()
+        self.addCleanup(self.fixture.tearDown)
+        (self.main / '.runtime').mkdir()
+        (self.main / 'export/assets').mkdir(parents=True)
+        self.formal = self.main / '.runtime/review.sqlite3'
+        publication.backup(self.fixture.store.db_path, self.formal)
+        self.baseline = Path(self.temp.name) / 'baseline.sqlite3'
+        publication.backup(self.formal, self.baseline)
+        song_tests.apply(self.fixture.db, self.fixture.plan)
+        self.delta = publication.build_plan(self.baseline, self.fixture.store.db_path)
+
+    def db(self):
+        db = publication.connect(self.formal, readonly=False)
+        self.addCleanup(db.close)
+        return db
+
+    def test_preserves_concurrent_unrelated_rows_and_retries_without_duplicates(self):
+        db = self.db()
+        with db:
+            db.execute("UPDATE comments SET body='new formal feedback' WHERE id='history'")
+        result = publication.apply_plan(db, self.delta)
+        self.assertFalse(result['already_published'])
+        self.assertEqual(db.execute("SELECT body FROM comments WHERE id='history'").fetchone()[0], 'new formal feedback')
+        self.assertEqual(db.execute('SELECT COUNT(*) FROM comment_events').fetchone()[0], 2)
+        before = '\n'.join(db.iterdump())
+        self.assertTrue(publication.apply_plan(db, self.delta)['already_published'])
+        self.assertEqual('\n'.join(db.iterdump()), before)
+
+    def test_concurrent_same_object_is_rejected_without_journal_or_mutation(self):
+        db = self.db()
+        with db:
+            db.execute("UPDATE objects SET updated_at='concurrent' WHERE id='entity-boat-song'")
+        before = '\n'.join(db.iterdump())
+        with self.assertRaisesRegex(ValueError, 'object changed'):
+            publication.apply_plan(db, self.delta)
+        self.assertEqual('\n'.join(db.iterdump()), before)
+
+    def test_concurrent_unrelated_revisions_and_decisions_are_preserved(self):
+        store = Store(self.formal)
+        try:
+            store.put_object('entity-unrelated','ENTITY',{'title':'concurrent revision'},expected_version=1)
+            store.put_object('judgment-unrelated','JUDGMENT',{'verdict':'accepted','actor':'fixture'},expected_version=0)
+        finally:
+            store.close()
+        before = publication.tables(self.formal)
+        publication.apply_plan(self.db(),self.delta)
+        after = publication.tables(self.formal)
+        ids = {'entity-unrelated','judgment-unrelated'}
+        for table, column in (('objects','id'),('revisions','object_id')):
+            self.assertEqual([r for r in after[table] if r[column] in ids],
+                             [r for r in before[table] if r[column] in ids])
+
+    def test_current_input_drift_is_rejected_even_when_old_revision_still_exists(self):
+        new_id = self.delta['changes']['revisions'][0]['after']['id']
+        with self.fixture.db:
+            self.fixture.db.execute('INSERT INTO dependencies VALUES (?,?,?)',(new_id,'other','input'))
+        plan = publication.build_plan(self.baseline,self.fixture.store.db_path)
+        store = Store(self.formal)
+        try:
+            store.put_object('entity-unrelated','ENTITY',{'title':'new input'},expected_version=1)
+        finally:
+            store.close()
+        before = publication.tables(self.formal)
+        with self.assertRaisesRegex(ValueError,'input changed'):
+            publication.apply_plan(self.db(),plan)
+        self.assertEqual(publication.tables(self.formal),before)
+
+    def test_missing_reference_rolls_back_the_entire_increment(self):
+        db = self.db()
+        plan = copy.deepcopy(self.delta)
+        plan['changes']['dependencies'][0]['after']['to_revision'] = 'missing'
+        before = '\n'.join(db.iterdump())
+        with self.assertRaises((sqlite3.IntegrityError, ValueError)):
+            publication.apply_plan(db, plan)
+        self.assertEqual('\n'.join(db.iterdump()), before)
+
+    def test_preserves_comment_edit_history_and_detects_concurrent_edit(self):
+        # A review may edit a pre-existing comment. Its exact previous row is a guard.
+        db = self.fixture.db
+        with db:
+            db.execute("UPDATE comments SET body='task edit',version=2 WHERE id='history'")
+            db.execute("INSERT INTO comment_events(comment_id,action,body,at) VALUES ('history','EDIT','task edit','after')")
+        delta = publication.build_plan(self.baseline, self.fixture.store.db_path)
+        formal = self.db()
+        with formal:
+            formal.execute("UPDATE comments SET body='formal edit' WHERE id='history'")
+        before = '\n'.join(formal.iterdump())
+        with self.assertRaisesRegex(ValueError, 'row changed: comments'):
+            publication.apply_plan(formal, delta)
+        self.assertEqual('\n'.join(formal.iterdump()), before)
+        with formal:
+            formal.execute("UPDATE comments SET body='actual feedback' WHERE id='history'")
+        publication.apply_plan(formal, delta)
+        self.assertEqual(formal.execute("SELECT body FROM comments WHERE id='history'").fetchone()[0], 'task edit')
+        self.assertEqual(formal.execute("SELECT COUNT(*) FROM comment_events WHERE comment_id='history'").fetchone()[0], 2)
+
+    def test_deleted_history_and_nonproduction_data_cannot_be_frozen(self):
+        db = self.fixture.db
+        with db:
+            db.execute("UPDATE comment_events SET body='rewrite' WHERE id=1")
+        with self.assertRaisesRegex(ValueError, 'events changed'):
+            publication.build_plan(self.baseline, self.fixture.store.db_path)
+        with db:
+            db.execute("UPDATE comment_events SET body='old opinion' WHERE id=1")
+            db.execute("UPDATE objects SET kind='SOURCE' WHERE id='entity-boat-song'")
+        with self.assertRaisesRegex(ValueError, 'story or system'):
+            publication.build_plan(self.baseline, self.fixture.store.db_path)
+
+    def commit_package(self):
+        path = self.task / 'release.json'
+        path.write_text(json.dumps(self.delta))
+        git(self.task, 'add', 'release.json')
+        git(self.task, 'commit', '-qm', 'reviewed increment')
+        return path, git(self.task, 'rev-parse', 'HEAD')
+
+    def test_preflight_is_readonly_and_main_apply_requires_integrated_commit(self):
+        path, commit = self.commit_package()
+        before = publication.tables(self.formal)
+        result = runner.run_publication(self.task, self.main, path, 'preflight')
+        self.assertFalse(result['applied'])
+        self.assertEqual(publication.tables(self.formal), before)
+        with self.assertRaisesRegex(ValueError, 'not been integrated'):
+            runner.run_publication(self.task, self.main, path, 'early', apply=True, source_commit=commit)
+        self.assertEqual(publication.tables(self.formal), before)
+        git(self.main, 'merge', '--ff-only', commit)
+        self.assertTrue(runner.run_publication(self.task, self.main, path, 'published', apply=True, source_commit=commit)['applied'])
+
+    def test_committed_transaction_survives_missing_external_receipt(self):
+        path, commit = self.commit_package()
+        git(self.main, 'merge', '--ff-only', commit)
+        real_write = runner.write_json
+        def fail_receipt(root, target, value):
+            if Path(target).name == 'transaction.json':
+                raise OSError('simulated disk failure after commit')
+            return real_write(root, target, value)
+        with patch.object(runner, 'write_json', side_effect=fail_receipt):
+            with self.assertRaisesRegex(OSError, 'disk failure'):
+                runner.run_publication(self.task, self.main, path, 'interrupted', apply=True, source_commit=commit)
+        before = publication.tables(self.formal)
+        result = runner.run_publication(self.task, self.main, path, 'recovered', apply=True, source_commit=commit)
+        self.assertTrue(result['already_published'])
+        self.assertEqual(publication.tables(self.formal), before)
+        self.assertTrue((self.task / '.runtime/generation/publications/recovered/applied.json').is_file())
+
+    def test_duplicate_plan_rows_cannot_overwrite_data(self):
+        plan = copy.deepcopy(self.delta)
+        plan['changes']['comments'].append(plan['changes']['comments'][0])
+        db = self.db()
+        before = '\n'.join(db.iterdump())
+        with self.assertRaisesRegex(ValueError, 'duplicate'):
+            publication.apply_plan(db, plan)
+        self.assertEqual('\n'.join(db.iterdump()), before)
+
+    def test_media_manifest_cannot_omit_a_published_component(self):
+        plan = copy.deepcopy(self.delta)
+        row = plan['changes']['revisions'][0]['after']
+        payload = json.loads(row['payload'])
+        payload['components'] = [{'file':'0'*64+'.wav','sha256':'0'*64,'bytes':1}]
+        row['payload'] = json.dumps(payload)
+        db = self.db()
+        before = '\n'.join(db.iterdump())
+        with self.assertRaisesRegex(ValueError,'media manifest differs'):
+            publication.apply_plan(db,plan)
+        self.assertEqual('\n'.join(db.iterdump()),before)
+
+    def test_json_key_order_does_not_change_foreign_key_application_order(self):
+        plan = json.loads(json.dumps(self.delta, sort_keys=True))
+        self.assertFalse(publication.apply_plan(self.db(), plan)['already_published'])
+
+    def test_missing_review_cannot_create_an_empty_export_or_database(self):
+        with self.assertRaisesRegex(ValueError, 'database missing'):
+            export_review(self.task, '.runtime/missing')
+        self.assertFalse((self.task / '.runtime/missing').exists())
+
+    def test_initialization_preserves_main_and_refuses_to_reset_review(self):
+        (self.task / 'config').mkdir()
+        (self.task / 'content').mkdir()
+        (self.task / 'config/instance.json').write_text(json.dumps({'id': 'test', 'title': 'Review'}))
+        before = publication.tables(self.formal)
+        instance = initialize(self.task, '.runtime/review')
+        self.assertEqual(publication.tables(instance / '.runtime/review.sqlite3'), before)
+        with self.assertRaisesRegex(ValueError, 'already exists'):
+            initialize(self.task, '.runtime/review')
+        self.assertEqual(publication.tables(self.formal), before)
+
+
+if __name__ == '__main__':
+    unittest.main()
