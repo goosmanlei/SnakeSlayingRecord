@@ -18,6 +18,7 @@
 | 现有候选的实体与状态归属 | [baseline-associations.md](baseline-associations.md)、[requests](requests/)、[receipts](receipts/)及[baseline-records](baseline-records/) |
 | 原生有声预演计划 | [声音契约](native-audio-workflow.md)、[33 镜计划](episode01/seedance/manifest.json)，尚未执行 |
 | 完整恢复与历史 | 最新正式 `export/` 与匹配的 [replay.json](replay.json)；历史制作准备验证见 [verification.md](verification.md) |
+| 生成、独立预览与合并后发布 | [任务工作区流程](generation-workspaces.md)：所有新产物先留在任务分支，正式库显式增量发布 |
 
 ## 用户如何审阅
 
@@ -50,7 +51,7 @@
 
 ## Codex 后台维护与恢复
 
-日常命令以真实故事根目录为工作目录；正式业务库始终为 `.runtime/review.sqlite3`。通用系统位于同级 `story-review-desk-python`，按根 [README](../README.md)核对 [config/instance.json](../config/instance.json)指定版本；新克隆先取得并核对该指定提交。当前任务工作区使用 `.runtime/review-desk-worktree`，下列 `production_system` 变量相应替换。不要复制密钥、建立第二份任务账本或把旧快照覆盖到活库。
+以下三条只读命令可在真实故事根目录执行；正式业务库为主目录 `.runtime/review.sqlite3`。生成、登记、恢复和导出改在独立任务 worktree 执行，实例选择与变量设置见[任务工作区流程](generation-workspaces.md)。通用系统位于主项目同级 `story-review-desk-python`，按根 [README](../README.md)核对 [config/instance.json](../config/instance.json)指定版本；任务可选择自己的兼容系统工作区。不要复制密钥、建立第二份任务账本或把旧快照覆盖到活库。
 
 ```bash
 production_system=../story-review-desk-python
@@ -61,11 +62,11 @@ PYTHONPATH="$production_system" python3 -m review_desk --instance . production-r
 
 读取历史采纳时，`production-entity-review` 追加 `--revision 准确采纳修订`；读取素材历史时 `production-get` 追加 `--revision 准确修订`。HTTP 对应 `/api/production/entity-review`、`/api/production` 与准确来源的 `/api/production/source`，读取不写内容。
 
-维护使用 `production-import FILE --validate-only` 预演，再用相同批次导入；携带 `expected_version` 和必要的 `expected_heads`，保留原稿与历史锚点。真实文件先用 `production-file FILE` 导入原件，再通过 `production-import FILE.json` 登记其准确 CALL、ASSET 与需求／状态关联；文件入库本身不创建采用。准确采用沿用系统仓库的 `docs/production.md` 契约。关系在本故事 [编制工具](../scripts/entity_relationships.py)中维护，先 `plan` 后 `apply`，正式写前重新准备。
+生成任务维护使用 `production-import FILE --validate-only` 预演，再用相同批次导入自己的隔离实例；携带 `expected_version` 和必要的 `expected_heads`，保留原稿与历史锚点。真实文件先用 `production-file FILE` 导入该实例，再通过 `production-import FILE.json` 登记其准确 CALL、ASSET 与需求／状态关联；文件入库本身不创建采用。准确采用沿用系统仓库的 `docs/production.md` 契约。正式生成数据统一经准确包、Git 合并及显式发布处理。关系在本故事 [编制工具](../scripts/entity_relationships.py)中维护，先 `plan` 后 `apply`，正式写前重新准备。
 
 `production_forms.py`、`production_inventory.py`、`episode01_shots.py` 和 `scene_requirements.py` 保存本故事规则；不要重复运行初始批次覆盖已审内容。`register_production_candidates.py` 只用于真实新调用首次登记，不重复登记已有对象。新媒体请求先检查单个请求、最新额度与准确输入，再按当次授权执行；本任务不调用生成。
 
-恢复只接受新的隔离目录，先准备 Python、FFmpeg／ffprobe 和固定版本系统：
+恢复只接受任务 worktree 内新的隔离目录，先准备 Python、FFmpeg／ffprobe 和固定版本系统；以下命令均在任务 worktree 根目录执行，`production_system` 指向实际通用系统目录：
 
 ```bash
 python3 scripts/production_review.py --system "$production_system" recover \

@@ -11,13 +11,14 @@ from unittest.mock import patch
 import wave
 
 from scripts import lyria_music as lyria
+from generation_fixtures import make_worktree
 
 
 class LyriaMusicTest(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
-        self.root = Path(self.temp.name)
+        self.primary, self.root = make_worktree(self.temp.name)
         self.spec = self.root / "spec.json"
         (self.root / "lyrics.txt").write_text("[Verse]\n船靠岸，灯来迎", encoding="utf-8")
         (self.root / "directions.txt").write_text("中文女声，2/4拍，76 BPM。", encoding="utf-8")
@@ -140,14 +141,7 @@ class LyriaMusicTest(unittest.TestCase):
             lyria.save_original(path, b"different")
 
     def test_task_worktree_and_main_share_repository_lock_root(self):
-        subprocess.run(["git", "init", "-q", str(self.root)], check=True)
-        subprocess.run(["git", "-C", str(self.root), "-c", "user.name=Test", "-c",
-                        "user.email=test@example.invalid", "commit", "--allow-empty", "-qm", "test"],
-                       check=True)
-        worktree = self.root / "task"
-        subprocess.run(["git", "-C", str(self.root), "worktree", "add", "-qb", "task", str(worktree)],
-                       check=True, capture_output=True)
-        self.assertEqual(lyria.shared_root(self.root), lyria.shared_root(worktree))
+        self.assertEqual(lyria.shared_root(self.primary), lyria.shared_root(self.root))
 
     def test_explicit_clash_proxy_and_credential_redaction(self):
         self.assertEqual(lyria.validate_proxy("http://127.0.0.1:7897"), "http://127.0.0.1:7897")

@@ -50,8 +50,8 @@
    python3 scripts/publish_song_stage.py --instance "$SONG_TARGET_INSTANCE" --run-name preflight-02
    ```
 
-3. 正式写入、导出和服务切换必须由一个会话按序协调。明确写入窗口后，在同一命令追加 `--apply` 并改用新的 `--run-name`。脚本持有目标 `.runtime/publication.lock`，先备份和演练，再追加歌曲记录及缺少的原件；不替换数据库，不改剧本，不调用生成平台，不接受音频。回执只写本任务 `.runtime/songs/current-state-closeout/publication/<运行名>/`。
+3. 正式写入、导出和服务切换必须由一个会话按序协调。后续发布任务先按[生成工作区流程](../generation-workspaces.md)将准确包及原件提交并合入 `main`；从独立 worktree 执行上述命令，追加 `--source-commit 完整提交SHA --apply` 并改用新的 `--run-name`。主目录必须干净，脚本核对包与原件均已合并，不再补拷缺少的原件。持有目标 `.runtime/publication.lock` 后先备份和演练，再原子追加歌曲记录；不替换数据库、不改剧本、不调用生成平台、不接受音频。新执行回执保存到该 worktree 的 `.runtime/generation/publications/<运行名>/`；原 `.runtime/songs/current-state-closeout/publication/` 保留为历史证据。
 4. 用当时已集成的兼容系统导出最新正式数据到后续任务隔离目录；空实例恢复并回读四首、片段、全部真实评论及准确引用。将正式导出增量纳入该次交付的候选；公开导出与服务切换由单一会话操作，不能用本包内旧快照覆盖正式库。后续入库须另行准备、验证和交付，不在本歌曲任务完成后补交文件。
-5. 部分失败先读 `transaction.json`、`applied.json` 和前后数据库备份。存在事务回执时禁止盲目重发；逐个核对对象头和评论事件映射，已发布历史保留。不得将 `before.sqlite3` 整库复制回活跃库，因为那会丢失其他任务的新数据。
+5. 部分失败先读 `transaction.json`、`applied.json` 和前后数据库备份。新发布器在同一数据库事务保存包的执行记录；外部回执缺失时，可保持准确包不变、换用新的运行名重跑以恢复回执，已提交事务不重复追加。输入冲突须核对并重建候选。不得将 `before.sqlite3` 整库复制回活跃库，因为那会丢失其他任务的新数据。
 
 五次 Lyria 和一次豆包纠词短样授权均已用完。后续纠词、无损母版、角色表演和剧本换版须作为后续工作安排，不因恢复或集成再次扣用生成额度。本包未执行外部上架。

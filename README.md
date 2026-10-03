@@ -14,6 +14,8 @@
 
 ## 制作思路
 
+图像、音色和歌曲任务的生成、登记及审阅均在各自 worktree；原件随任务分支合并，正式库随后显式增量发布。初始化、预览、提交、发布和恢复命令见[生成工作区流程](production/generation-workspaces.md)。
+
 首页以“制作思路”替换旧“当前工作”，提供“故事创作”“生产制作”两个 Tab；旧 `workspace=current` 链接兼容进入新页。方法正文在 [content/production-approach.json](content/production-approach.json)，随实例 Git 保存；系统负责只读展示，没有新增工作统计、任务账本或素材执行引擎。制作准备已按确认的版本四交付系统、全剧抽取、第一集设计与首批候选，用户确认本阶段结项。制作入口为 [正式 3000](http://127.0.0.1:3000/?workspace=settings.workspace)；完整素材、基准接受和动态分镜由后续任务推进，第一集尚未就绪。
 
 [正式入口](http://127.0.0.1:3000/)已完成首页、旧链接、双 Tab、桌面与窄屏回读；[隔离预览](http://127.0.0.1:8794/)及数据恢复证据保留。清理范围、输入版本、验证结果和发布说明见[交付记录](planning/production-approach-delivery.md)。恢复实例时同时保留 `config/`、`content/` 与 `export/`；方法文档不写业务数据库，无数据迁移。
