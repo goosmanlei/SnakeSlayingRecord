@@ -1,0 +1,107 @@
+{
+  "id": "fg3-temple-back-modified-image-01",
+  "recipe_id": "form-temple-back-modified",
+  "entity": {
+    "object_id": "entity-temple-back",
+    "revision_id": "98363978173ad313598b5654d827c2a1d84e37b967fca65445206785d5f27ec3"
+  },
+  "state": {
+    "object_id": "form-temple-back-modified",
+    "revision_id": "586545c282f95e5039e26b96538b16bd7f8f6c0b60a5ed3b5e4a994c8849c0e0"
+  },
+  "requirement": {
+    "object_id": "need-form-temple-back-modified-overall",
+    "revision_id": "e687445e9766b273bf7c6e31e02dfabe18ca629ab2150fe1c1687bc3b3cd4cf7"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-temple-back-original-image-06",
+        "revision_id": "2f1fffaf541f82cbbcb8d9d08cb8b657b59e15ab5d8f03275c69fccce4900aa6"
+      },
+      "component_id": "original",
+      "sha256": "c44c03328f19433f02a7660b7768f06d0d1123e32e2074a60ed1d5ab256286e6",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：已认可庙后院第六原件；固定高墙、唯一南后门、北岩根与短石道的尺度和空间位置"
+    },
+    {
+      "reference": {
+        "object_id": "asset-fg3-feeding-channel-base-image-02",
+        "revision_id": "40c463e5d080aca4387023e158cb95a75c6dc42c7de734d8d87eb3a30485e8e4"
+      },
+      "component_id": "original",
+      "sha256": "3bc99507444a691fb933dad0a7503343b3be448ad98732b1b0b39c1b0bd044a4",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图2：已认可完整短石道：两块平盖石、南投食门、连续矮石墙、北闸后封顶短段和岩根；保留同一实体，不能断开、拉长或改为敞口"
+    },
+    {
+      "reference": {
+        "object_id": "asset-fg3-crossbeam-base-image-01",
+        "revision_id": "94e9b74b04de561706b0c7aa2b5caf24b6a812493bc168c69555bd8f7f2d1e70"
+      },
+      "component_id": "original",
+      "sha256": "9ff476bb5d123bb9459100eb6667f542cbfb2e7ee2e17961bcfcb9777f7acf4f",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图3：已认可完整灰褐长圆木；保持轮廓、颜色，一根不断开的横杠"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 2,
+    "references": [
+      {
+        "object_id": "asset-fg3-temple-back-original-image-06",
+        "revision_id": "2f1fffaf541f82cbbcb8d9d08cb8b657b59e15ab5d8f03275c69fccce4900aa6"
+      },
+      {
+        "object_id": "asset-fg3-feeding-channel-base-image-02",
+        "revision_id": "40c463e5d080aca4387023e158cb95a75c6dc42c7de734d8d87eb3a30485e8e4"
+      },
+      {
+        "object_id": "asset-fg3-crossbeam-base-image-01",
+        "revision_id": "94e9b74b04de561706b0c7aa2b5caf24b6a812493bc168c69555bd8f7f2d1e70"
+      }
+    ]
+  },
+  "master_approvals": [
+    {
+      "object_id": "review-master-fg3-temple-back-original-image-06",
+      "revision_id": "4e1d958cc656281e920e347e9d0d7157db2dfa6265f1763f8dda54417ab32806"
+    },
+    {
+      "object_id": "review-master-fg3-feeding-channel-base-image-02",
+      "revision_id": "ff13d6f38af207c59864fe82d88c40ffccf68c329b7ba466d9559954e149915c"
+    },
+    {
+      "object_id": "review-master-fg3-crossbeam-base-image-01",
+      "revision_id": "a385bcc1ca6f26edd57cb9a9cd218e8e0b76155725a956cc187743bd5d0ca050"
+    }
+  ],
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "Edit IMAGE 1 into a NEW overall setting reference for “庙后封闭小院·已开刀缝和绑杠”, at the end of the second day's work. Keep the exact high walls, unique human SOUTH back door at lower-left, north rock face, SHORT compact passage near the rock, clear earthen yard and subdued flat hand-painted style. IMAGE 2 supplies the continuous stone details only, not a larger relative scale; IMAGE 3 supplies the beam identity. The long beam is a SINGLE continuous grey-brown round log, placed across the FRONT of the MOVING northern gate panel, entirely in front of both fixed posts. A small short horizontal cleat is fixed to the moving panel, its ends well inside the posts. Exactly two compact tight hemp-rope loops hug BOTH this cleat and the long beam together near the centre; no suspension ropes, no rope to fixed posts or to the locking pin. The wooden panel and posts may extend upwards to leave usable space above the knee-high stone lid; do not raise stone walls. All stone components remain connected: southern small barred wooden door, two front stone lids, gate position, roofed short segment behind the gate and rock root. Both beam ends extend over clear open ground. This is a dry covered stone snake passage, never a water canal or open trench.\nThis gate remains fully CLOSED at the bottom, long locking pin inserted through both posts with its ends visible; pin is entirely bare and NOT tied to the beam. Only the two compact rope loops tie beam to the short moving cleat. Both beam ends over clear ground above the low lids.\nThe newly cut narrow transverse blade-slot in the front/outer cover is now COVERED by one loose, plain narrow wooden strip lying flat across the slot. Clearly show this slim grey-brown strip, not a broad plywood board or new roof. The rest of both stone lids and rear roofed segment stay complete. All mallets, leftover rope and straw have been collected; no obstacles on the route from human doorway to stone passage. The south small feeding door is shut and barred; the unique human back door in foreground is shut and locked. No people remain in view.\nTime: early dusk, gentle low-saturation grey-blue ambient sky light, architecture still fully readable, no invented electric light or bonfire. This is one moment, not a day/night montage. Keep the whole courtyard, compact passage, beam and unique exit within a 16:9 landscape frame. No inset, labels, added building or extra opening; highest available native resolution.",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/c44c03328f19433f02a7660b7768f06d0d1123e32e2074a60ed1d5ab256286e6.png",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/3bc99507444a691fb933dad0a7503343b3be448ad98732b1b0b39c1b0bd044a4.png",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/9ff476bb5d123bb9459100eb6667f542cbfb2e7ee2e17961bcfcb9777f7acf4f.png"
+    ]
+  }
+}

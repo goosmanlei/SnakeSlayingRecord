@@ -18,7 +18,7 @@
 ## 已确认的制作系统方向
 
 - 用户要求多份待审材料以表格、分栏或逐行列表提供，每份有独立可点击的链接，不把多个材料和链接揉在单行文字中。提供准确原件和修改点后，再单独询问认可范围。来源：本任务用户 2026-10-03 对审阅交接格式的明确要求。
-- 用户第九批评论要求石道保持短而连续，长横杠高于石盖并给两端成年人留出下压空间；横杠安装图还须沿用已认可石道本体，保留闸后封顶短段与岩根，不另造分离的机关。准确意见见 [首批反馈](production/full-generation/ninth-masters-feedback-registration.json)、[修正版反馈](production/full-generation/ninth-revised-feedback-registration.json)。南投食门及庙后院第六候选随后获用户“另外两张认可，继续修横杠”确认，绑定 [两份准确原件](production/full-generation/ninth-revised-masters-approvals.json)，不含横杠候选。
+- 用户第九批评论要求石道保持短而连续，长横杠高于石盖并给两端成年人留出下压空间；横杠安装图还须沿用已认可石道本体，保留闸后封顶短段与岩根，不另造分离的机关。准确意见见 [首批反馈](production/full-generation/ninth-masters-feedback-registration.json)、[修正版反馈](production/full-generation/ninth-revised-feedback-registration.json)。南投食门及庙后院第六候选随后获用户“另外两张认可，继续修横杠”确认，绑定 [两份准确原件](production/full-generation/ninth-revised-masters-approvals.json)，不含当时的横杠候选。横杠第八候选随后获用户“认可，继续剩余生成”确认，见 [准确横杠认可](production/full-generation/crossbeam-continuity-approvals.json)；它为 D2，后续直接用相同认可石道 D1 与长杠 D0，不以认可重置谱系。
 - 用户对第八批固定 7 份回复“7 份均认可”，包括草图、洞闸、渡口、石阶、晾衣、唱工记录及米铺干净母版；具体原件与原代数见 [第八批准确认可](production/full-generation/eighth-masters-approvals.json)。
 - 用户对迁移后的第七批固定 18 份回复“18 份均认可”；准确结论仅登记本任务独立实例，后续派生引用对应原件与原有代数。来源：[第七批准确认可](production/full-generation/seventh-masters-approvals.json)。
 - 用户于 2026-10-03 要求全部本任务生成成果迁入 worktree，后续也只在 worktree 生成，并明确选择独立审阅入口、主项目恢复任务前素材范围。本任务后续不再逐批登记主库；素材、真实调用、认可和用户意见在同一既有审阅台的独立实例保留，最终集成仍需展示准确范围并确认。来源：[迁移授权与核验](production/evidence/full-generation-worktree-migration.json)。用户已取消拆分剩余任务的想法，继续完成原 251 项目标。

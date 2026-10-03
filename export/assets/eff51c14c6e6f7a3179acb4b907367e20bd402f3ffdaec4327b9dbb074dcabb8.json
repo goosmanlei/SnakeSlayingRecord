@@ -1,0 +1,83 @@
+{
+  "id": "fg3-crossbeam-eight-image-04",
+  "recipe_id": "form-crossbeam-eight",
+  "entity": {
+    "object_id": "entity-crossbeam",
+    "revision_id": "115731814d24b6b4b99e325d0f9286435df91fc1582e838690e44edf150b599c"
+  },
+  "state": {
+    "object_id": "form-crossbeam-eight",
+    "revision_id": "8a7f693c532aa2cb8ff04bbd1ca060ba0a1416dae97cd0310dd1152b9de88db9"
+  },
+  "requirement": {
+    "object_id": "need-form-crossbeam-eight-overall",
+    "revision_id": "431fcf12191e9728d0fa11c9d91d4fc1e25740cda224c99ac360151ec11e9640"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-feeding-channel-base-image-02",
+        "revision_id": "40c463e5d080aca4387023e158cb95a75c6dc42c7de734d8d87eb3a30485e8e4"
+      },
+      "component_id": "original",
+      "sha256": "3bc99507444a691fb933dad0a7503343b3be448ad98732b1b0b39c1b0bd044a4",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：已认可完整短石道：两块平盖石、南投食门、连续矮石墙、北闸后封顶短段和岩根；保留同一实体，不能断开、拉长或改为敞口"
+    },
+    {
+      "reference": {
+        "object_id": "asset-fg3-crossbeam-base-image-01",
+        "revision_id": "94e9b74b04de561706b0c7aa2b5caf24b6a812493bc168c69555bd8f7f2d1e70"
+      },
+      "component_id": "original",
+      "sha256": "9ff476bb5d123bb9459100eb6667f542cbfb2e7ee2e17961bcfcb9777f7acf4f",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图2：已认可完整灰褐长圆木；保持轮廓、颜色，一根不断开的横杠"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 2,
+    "references": [
+      {
+        "object_id": "asset-fg3-feeding-channel-base-image-02",
+        "revision_id": "40c463e5d080aca4387023e158cb95a75c6dc42c7de734d8d87eb3a30485e8e4"
+      },
+      {
+        "object_id": "asset-fg3-crossbeam-base-image-01",
+        "revision_id": "94e9b74b04de561706b0c7aa2b5caf24b6a812493bc168c69555bd8f7f2d1e70"
+      }
+    ]
+  },
+  "master_approvals": [
+    {
+      "object_id": "review-master-fg3-feeding-channel-base-image-02",
+      "revision_id": "ff13d6f38af207c59864fe82d88c40ffccf68c329b7ba466d9559954e149915c"
+    },
+    {
+      "object_id": "review-master-fg3-crossbeam-base-image-01",
+      "revision_id": "a385bcc1ca6f26edd57cb9a9cd218e8e0b76155725a956cc187743bd5d0ca050"
+    }
+  ],
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "Make a clean 16:9 prop illustration, “八人持续压杠”, using IMAGE 1 stone identity and IMAGE 2 long timber. FIRST keep the whole stone structure from IMAGE 1: south small barred feeding door, two broad flat covers, continuous low stone sides, north gate, rear covered short segment and rock. Widen blank background only. Raise/extend ONLY THE TOPS of both wooden posts AND the moving wooden panel, giving the upper wooden assembly ample height above the knee-high stone lids.\nSECOND remove the original little through-post locking rod completely, including its two protruding round ends. Leave no pegs sticking out of either post. Do NOT draw circular holes on the long beam.\nTHIRD fix one SHORT horizontal cleat onto the FRONT surface of the MOVING panel, above stone-lid height; both ends stop WELL INSIDE the two posts.\nFOURTH add the long grey-brown round beam from IMAGE 2 AGAINST THE FRONT FACE of the cleat. This long beam is CLOSEST TO THE VIEWER, IN FRONT OF BOTH posts. Draw its visible silhouette crossing over and HIDING the middle strips of both posts. At each intersection the LOG HIDES THE POST, NEVER the reverse. The log is uninterrupted from left tip to right tip; it never passes through a post hole.\nFIFTH add exactly two short tight rope loops clamping the touching long beam and short cleat together at the moving panel centre, well away from the fixed posts. No hanging rope, no post bindings. Leave a visible gap between log and stone lid. South feeding door retains its FULL horizontal wooden bar. All roofed stone parts and rock remain connected.\nThe gate is partly lowered under load, not seated at bottom; its snake contact is hidden inside the closed stone covers. No transparency or snake drawing is needed for this prop's crowd-position view.\nDraw EXACTLY EIGHT grey schematic adults: FOUR on the LEFT free half of the log and FOUR on the RIGHT free half. Eight separate heads, eight torsos, sixteen feet. Left group heads labelled small 1,2,3,4; right group heads labelled small 5,6,7,8. Place 5 just outside right post, 6 next, 7 next, and 8 nearest right timber tip. Do not omit person 8. Single evenly spaced row on each free half; no people behind the row or behind the gate. These are anonymous load-position figures, not character portraits.\nAll eight lean forward across the timber so chest/front shoulders bear DOWNWARD on it; heads and upper torsos above it, arms hang over towards camera, bent knees, feet on flat ground outside the stone passage. Eight count must be visibly correct, labels are only counting assistance. Wide symmetrical composition with enough empty space for all four people on EACH side. Keep every beam end and the whole stone body in frame. Same restrained two-dimensional grey/brown line-and-paint style, off-white background, highest native size.",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/3bc99507444a691fb933dad0a7503343b3be448ad98732b1b0b39c1b0bd044a4.png",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/9ff476bb5d123bb9459100eb6667f542cbfb2e7ee2e17961bcfcb9777f7acf4f.png"
+    ]
+  }
+}
