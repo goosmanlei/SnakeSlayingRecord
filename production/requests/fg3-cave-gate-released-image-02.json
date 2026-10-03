@@ -1,0 +1,60 @@
+{
+  "id": "fg3-cave-gate-released-image-02",
+  "recipe_id": "form-cave-gate-released",
+  "entity": {
+    "object_id": "entity-cave-gate",
+    "revision_id": "ed76d5b1efb108994ffe0ec7deaf09f5146f1d637a4d7b4d736f215012a7656c"
+  },
+  "state": {
+    "object_id": "form-cave-gate-released",
+    "revision_id": "478a0220ef6bb74560601e1b6c2d2dbe7148ec78cd8401f35196e25fb7db7dad"
+  },
+  "requirement": {
+    "object_id": "need-form-cave-gate-released-overall",
+    "revision_id": "871384d6173943c99f6f271295a95c8ba0c5f7cdf9f72f63d851205e0342d701"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-cave-gate-released-image-01",
+        "revision_id": "5007b9d729586f34686c25e34d690c36a7dd985aa1f310a1a3b893a3386739d9"
+      },
+      "component_id": "original",
+      "sha256": "99310e6315a8b9be02fc90d511ce40bc1257ebc7d775bcf02d3636983973fc11",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：同一状态的待修原件，全图；仅纠正长杠穿柱和短销长度"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 2,
+    "references": [
+      {
+        "object_id": "asset-fg3-cave-gate-released-image-01",
+        "revision_id": "5007b9d729586f34686c25e34d690c36a7dd985aa1f310a1a3b893a3386739d9"
+      }
+    ]
+  },
+  "same_state_repair": {
+    "source": {
+      "object_id": "asset-fg3-cave-gate-released-image-01",
+      "revision_id": "5007b9d729586f34686c25e34d690c36a7dd985aa1f310a1a3b893a3386739d9"
+    },
+    "reason": "长杠错误穿固定立柱孔，须移到立柱前、门板中部，只绑活动闸板；孔中留空。"
+  },
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "对参考图1同一洞闸状态作局部结构修订，重新生成完整4:3整体参考。人物没有入画、蛇已静止、闸下仍压着细小蛇段、无人托杠，灰木石台和背景保持；不是改成新的场景。\n把参考图横穿两立柱的长木杠整体向观察者平移到两个柱子前方，再向下平移至活动闸板的中央高度。新位置必须使一整根长杠完全遮在两根立柱前表面之前，可看到柱子在它后面继续竖直；杆身不穿柱孔、不被柱子切断。用两组短麻绳将杠中央绑在门板上的短横木，两组结都在两柱内侧的门板范围，不在柱子上。原来穿杠高度的左右柱孔现在完全空，显示两个黑暗空孔，孔内没有任何木杆。地左原短销须加长为约两柱内宽那么长，独立横放地上，不能只剩小木头。保持闸板未上顶、未开门、未插销；蛇只露原底边小弧面，没有新增伤处。全闸和长杠两端保留边缘，保持原图简洁线色，不加粗糙纸纹，不添标题。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/99310e6315a8b9be02fc90d511ce40bc1257ebc7d775bcf02d3636983973fc11.png"
+    ]
+  }
+}

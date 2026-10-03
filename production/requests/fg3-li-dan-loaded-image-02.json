@@ -1,0 +1,83 @@
+{
+  "id": "fg3-li-dan-loaded-image-02",
+  "recipe_id": "form-li-dan-loaded",
+  "entity": {
+    "object_id": "entity-li-dan",
+    "revision_id": "346b9410d08ae0ce046ac6a4d5f64b7bca3d080df2db9830fe34094ff3dc8e50"
+  },
+  "state": {
+    "object_id": "form-li-dan-loaded",
+    "revision_id": "28930abe75c531b5a35bf5a53b4892f48d620ee271527f566998c1dd75171ad9"
+  },
+  "requirement": {
+    "object_id": "need-form-li-dan-loaded-overall",
+    "revision_id": "7ee153a4a54cc01f48f5b3102eeca93e724d65c83d03865b90ea8ec59de5028a"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-li-dan-work-image-02",
+        "revision_id": "9403379950cc6c3c2751bcd40f932e4b53b49013a61018f606ed2554423da672"
+      },
+      "component_id": "original",
+      "sha256": "0bf4cf4f59ec83dc60852ddc627c92bf8f7479568cb29bc15c14a8bafece11c4",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：李诞原工作短衣、宽厚体格、脸和发髻"
+    },
+    {
+      "reference": {
+        "object_id": "asset-fg3-crossbeam-base-image-01",
+        "revision_id": "94e9b74b04de561706b0c7aa2b5caf24b6a812493bc168c69555bd8f7f2d1e70"
+      },
+      "component_id": "original",
+      "sha256": "9ff476bb5d123bb9459100eb6667f542cbfb2e7ee2e17961bcfcb9777f7acf4f",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图2：整根灰褐圆木杠颜色、直径和两端"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 2,
+    "references": [
+      {
+        "object_id": "asset-fg3-li-dan-work-image-02",
+        "revision_id": "9403379950cc6c3c2751bcd40f932e4b53b49013a61018f606ed2554423da672"
+      },
+      {
+        "object_id": "asset-fg3-crossbeam-base-image-01",
+        "revision_id": "94e9b74b04de561706b0c7aa2b5caf24b6a812493bc168c69555bd8f7f2d1e70"
+      }
+    ]
+  },
+  "master_approvals": [
+    {
+      "object_id": "review-master-fg3-li-dan-work-image-02",
+      "revision_id": "b71141445dfca5a455c0939edef37ada19e3d5dea451ec5b4d5e1303ada4d23a"
+    },
+    {
+      "object_id": "review-master-fg3-crossbeam-base-image-01",
+      "revision_id": "a385bcc1ca6f26edd57cb9a9cd218e8e0b76155725a956cc187743bd5d0ca050"
+    }
+  ],
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "制作一张新的完整状态整体参考，二维人物配轻手绘背景，低饱和平涂、柔和干净线条，保持参考身份、颜色与比例。轻薄背景，不增纸纹、噪点、浮雕或锐化。单幅完整形态，不拼贴、裁切或放大；工具最高原生输出，无水印或装饰标题。\n参考顺序：图1为李诞原工作短衣、宽厚体格、脸和发髻；图2为整根灰褐圆木杠颜色、直径和两端。\n4:3横幅，侧面略偏前，全人物头脚与木杠两端留边入画。人物双脚前后错开踩牢地面、膝深弯，腰完全前折，上身几乎水平，胸近膝；背和肩胛高于横杠，头低于肩。身体跨伏在木杠上，杠的上表面顶住肩前端锁骨下的位置，重量从上往下压，绝不是把杠往上扛。两臂跨过杠向远侧下垂，手不托杠底，木杠不夹两腋，肩前端与杠上表面贴紧可见。Lean the torso forward OVER the beam, front of shoulder on TOP of beam, head and forearms lower on far side, feet firmly grounded. Never a barbell curl or carrying on the back of the neck. 李诞保持图1土褐短衣和灰蓝裤、布鞋，宽肩厚背短须，不添外长衫。肩前与杠之间垫一块折厚旧灰布，整块仍稳贴肩上没有滑落。汗浸领口和肩胸，额汗、咬牙喘息，面孔疲惫但未添新伤。两手越杠后各扣着远侧边缘以稳住，手掌不从下方抬杠；肩持续接触承重，不能直立或坐下。浅暖灰简底，无刀、钥匙及新人物，只有理解接触的淡地面。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/0bf4cf4f59ec83dc60852ddc627c92bf8f7479568cb29bc15c14a8bafece11c4.png",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/9ff476bb5d123bb9459100eb6667f542cbfb2e7ee2e17961bcfcb9777f7acf4f.png"
+    ]
+  }
+}

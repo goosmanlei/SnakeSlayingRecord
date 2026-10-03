@@ -1,0 +1,83 @@
+{
+  "id": "fg3-li-xiao-loaded-image-06",
+  "recipe_id": "form-li-xiao-loaded",
+  "entity": {
+    "object_id": "entity-li-xiao",
+    "revision_id": "8b80c3b9f85054a8742a12bd090328b7be42eaf3891a64efe377c26c630e0071"
+  },
+  "state": {
+    "object_id": "form-li-xiao-loaded",
+    "revision_id": "08e06dcdf0be41af66e6f809b93776e209b39214640686c7cbd54b0992f7d0e1"
+  },
+  "requirement": {
+    "object_id": "need-form-li-xiao-loaded-overall",
+    "revision_id": "327615bdf60ef7578bf10284107d1d8105f9571fdb3b334734182000c4a72c78"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-li-xiao-base-image-01",
+        "revision_id": "59847b2311391f9fad4a943823ad53309f67f9049a92ab126ed3c70efc740844"
+      },
+      "component_id": "original",
+      "sha256": "0afdf77eca72f0dc52218123211a2a6a2571875103d0d3275a32f3e10c738950",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：全幅，李绡唯一人物身份、脸、发髻、灰蓝扎袖短衣及深灰直裤"
+    },
+    {
+      "reference": {
+        "object_id": "asset-fg3-crossbeam-base-image-01",
+        "revision_id": "94e9b74b04de561706b0c7aa2b5caf24b6a812493bc168c69555bd8f7f2d1e70"
+      },
+      "component_id": "original",
+      "sha256": "9ff476bb5d123bb9459100eb6667f542cbfb2e7ee2e17961bcfcb9777f7acf4f",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图2：全幅，仅锁定灰褐圆木杠直径、颜色和端头"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-fg3-li-xiao-base-image-01",
+        "revision_id": "59847b2311391f9fad4a943823ad53309f67f9049a92ab126ed3c70efc740844"
+      },
+      {
+        "object_id": "asset-fg3-crossbeam-base-image-01",
+        "revision_id": "94e9b74b04de561706b0c7aa2b5caf24b6a812493bc168c69555bd8f7f2d1e70"
+      }
+    ]
+  },
+  "master_approvals": [
+    {
+      "object_id": "review-master-fg3-li-xiao-base-image-01",
+      "revision_id": "7c9dcd26b8ea01574a2898c1d7ddd45b0a760125f080ba5ef60771acfb36e2f2"
+    },
+    {
+      "object_id": "review-master-fg3-crossbeam-base-image-01",
+      "revision_id": "a385bcc1ca6f26edd57cb9a9cd218e8e0b76155725a956cc187743bd5d0ca050"
+    }
+  ],
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "制作一张新的完整状态整体参考，二维清楚人物与轻手绘背景，细而干净的线条、低饱和平涂，保留参考的比例与颜色，减少纸纹和颗粒。不是照片、分镜拼图、旧图裁切或放大。原生最高可用输出，无水印、无装饰标题。\n4:3横幅，全身李绡与两端可见的一根水平木杠，浅暖灰简底。准确保留图1女子身份和服色，不能改裙。改为持续肩压：双脚前后撑地、双膝大幅屈曲，腰完全折向前，上身近乎水平；肩胛与上背高于横杠，头低于肩。身体跨伏在杠上，杠的上表面直接托住左锁骨下方的肩前端，胸口在杠下方，肩的重量从上往下压杠。两臂跨过杠后向下垂，双手在杠远侧朝地；手腕不托杠底，杠不在两腋之间。清楚画出肩前端与杠上表面的贴紧接触，低头咬牙，额汗沿脸流下，袖扎紧。英文动作约束：lean her torso forward OVER the beam; front of the left shoulder rests on TOP of the beam; head and relaxed forearms hang lower than the shoulder on the far side; feet stay on the ground. Show downward body weight, never a barbell curl, never holding the beam under both armpits. 完整头脚不裁切，杠可略短作支点示意；背景不新增机关或人物。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/0afdf77eca72f0dc52218123211a2a6a2571875103d0d3275a32f3e10c738950.png",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/9ff476bb5d123bb9459100eb6667f542cbfb2e7ee2e17961bcfcb9777f7acf4f.png"
+    ]
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "id": "fg3-crossbeam-installed-image-07",
+  "recipe_id": "form-crossbeam-installed",
+  "entity": {
+    "object_id": "entity-crossbeam",
+    "revision_id": "115731814d24b6b4b99e325d0f9286435df91fc1582e838690e44edf150b599c"
+  },
+  "state": {
+    "object_id": "form-crossbeam-installed",
+    "revision_id": "6aebcb9068b8679ec0831705ee267b417a819f5cbbb4a93a656ab52cfd5953db"
+  },
+  "requirement": {
+    "object_id": "need-form-crossbeam-installed-overall",
+    "revision_id": "161d9819b1de659662415f6f197a0e5ec92ab7bfbd9311000632cf41331e6e66"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-feeding-channel-base-image-02",
+        "revision_id": "40c463e5d080aca4387023e158cb95a75c6dc42c7de734d8d87eb3a30485e8e4"
+      },
+      "component_id": "original",
+      "sha256": "3bc99507444a691fb933dad0a7503343b3be448ad98732b1b0b39c1b0bd044a4",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：已认可完整短石道本体：南投食门、前后两块盖石、连续矮石侧墙、北闸后的封顶短段与岩根，原形和连接必须完整保留"
+    },
+    {
+      "reference": {
+        "object_id": "asset-fg3-crossbeam-base-image-01",
+        "revision_id": "94e9b74b04de561706b0c7aa2b5caf24b6a812493bc168c69555bd8f7f2d1e70"
+      },
+      "component_id": "original",
+      "sha256": "9ff476bb5d123bb9459100eb6667f542cbfb2e7ee2e17961bcfcb9777f7acf4f",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图2：已认可灰褐长圆木的完整形状和颜色，仅作为加装长横杠"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 2,
+    "references": [
+      {
+        "object_id": "asset-fg3-feeding-channel-base-image-02",
+        "revision_id": "40c463e5d080aca4387023e158cb95a75c6dc42c7de734d8d87eb3a30485e8e4"
+      },
+      {
+        "object_id": "asset-fg3-crossbeam-base-image-01",
+        "revision_id": "94e9b74b04de561706b0c7aa2b5caf24b6a812493bc168c69555bd8f7f2d1e70"
+      }
+    ]
+  },
+  "master_approvals": [
+    {
+      "object_id": "review-master-fg3-feeding-channel-base-image-02",
+      "revision_id": "ff13d6f38af207c59864fe82d88c40ffccf68c329b7ba466d9559954e149915c"
+    },
+    {
+      "object_id": "review-master-fg3-crossbeam-base-image-01",
+      "revision_id": "a385bcc1ca6f26edd57cb9a9cd218e8e0b76155725a956cc187743bd5d0ca050"
+    }
+  ],
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "Generate one 16:9 clean 2D prop reference of THE EXACT COMPLETE STONE PASSAGE IN IMAGE 1, now with the long beam from image 2 tied to its sliding wooden gate. Image 1 is the primary structural reference. Keep its stonework, large simple grey slabs, near southern feeding door, two transverse top lids, the northern wooden gate, the short fully roofed stone section BEHIND the gate, and the ROCK ROOT at the far end. Preserve the original continuous stone body all the way from the feeding door to the rock. Do not rebuild it as a different small box, detach it from the cave, remove the rear covered section, or change the slab arrangement. Keep the same south-west three-quarter viewing angle, widening the canvas only to include the entire beam and empty ground to both sides.\nModify only the wooden gate mechanism and add the beam: extend the TOP of the existing moving vertical board and its two existing fixed posts upward, in their exact original positions. Keep the panel bottom closed on the original threshold, not detached or floating. This upward extension gives a high attachment point ABOVE the knee-high stone lids. Add a short horizontal cleat in the centre of the MOVING board. Tie the long beam to this short cleat with TWO rope bands near the middle of the board; the bands are entirely between the posts, separated from the posts by clear gaps. Both fixed posts must remain completely free of rope. The long beam must have a visible forearm-height vertical air gap ABOVE the stone lids, and long free ends over the original open flat ground for adults to lean downward. No lateral stone walls or new supports under the ends.\nThe original closed-gate locking pin remains one horizontal wooden cylinder passing fully through BOTH fixed posts, with both ends protruding, separate from and above the rope-bound cleat. Preserve the complete SOUTH feeding door from image 1, CLOSED with its original full-width bar held in both stone slots. Keep the FRONT-BACK pair of stone cover slabs with their transverse normal seam; no cutting slot yet. The rear covered stone segment must run continuously from the far side of the wooden gate to the SAME rock root visible in image 1. All stone parts, all timber ends and rock root in frame. No people, snakes, labels or diagram arrows. Keep image 1's clean low-detail hand-painted grey stone and image 2's muted grey-brown wood, no noise or photographic texture. 最重要：图1完整石道本体一块不丢，后端封顶短段仍接岩根；只提高原木闸上部以加绑图2长杠，绝不另造一套石道。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/3bc99507444a691fb933dad0a7503343b3be448ad98732b1b0b39c1b0bd044a4.png",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/9ff476bb5d123bb9459100eb6667f542cbfb2e7ee2e17961bcfcb9777f7acf4f.png"
+    ]
+  }
+}

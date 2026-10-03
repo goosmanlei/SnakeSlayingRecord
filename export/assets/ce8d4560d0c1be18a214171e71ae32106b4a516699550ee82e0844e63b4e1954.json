@@ -1,0 +1,60 @@
+{
+  "id": "fg3-crossbeam-seven-image-02",
+  "recipe_id": "form-crossbeam-seven",
+  "entity": {
+    "object_id": "entity-crossbeam",
+    "revision_id": "115731814d24b6b4b99e325d0f9286435df91fc1582e838690e44edf150b599c"
+  },
+  "state": {
+    "object_id": "form-crossbeam-seven",
+    "revision_id": "b3f1b2b4531afa86e04fc9def10c0227654aac4e0cbccdd9237cd665356c6a44"
+  },
+  "requirement": {
+    "object_id": "need-form-crossbeam-seven-overall",
+    "revision_id": "b9b797a03086fce651bdaf10888131473b26206687ffd1721f7d7942490e05ae"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-crossbeam-seven-image-01",
+        "revision_id": "4c062a916eea7a037453aa2bd24371d3dbe758c7ae453239b27f027c60faf6c3"
+      },
+      "component_id": "original",
+      "sha256": "ae8f5edf0bd02140b423ae0693ade8ec4db1d60c3cd3e7245d8ae6bf37f1f3d5",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：同一七人提闸状态待修图，修正人数与长杠相对固定柱的位置"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 2,
+    "references": [
+      {
+        "object_id": "asset-fg3-crossbeam-seven-image-01",
+        "revision_id": "4c062a916eea7a037453aa2bd24371d3dbe758c7ae453239b27f027c60faf6c3"
+      }
+    ]
+  },
+  "same_state_repair": {
+    "source": {
+      "object_id": "asset-fg3-crossbeam-seven-image-01",
+      "revision_id": "4c062a916eea7a037453aa2bd24371d3dbe758c7ae453239b27f027c60faf6c3"
+    },
+    "reason": "实际只有六人且长杠穿柱，需补足左四右三并把长杠置于柱前绑定活动板。"
+  },
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "对参考图1生成同一状态的完整16:9修订，灰色简化人形只是数量和受力示意。保留北端灰木双柱、半提闸板、岩壁与灰石道配色。两项明确更改。\n第一，当前左边只有三个灰人，必须在最左再加一个，与原左三个并列且相互留空，总计左边四个完整头身腿，从左往右可数1、2、3、4；右侧仍原三个完整人，从左到右5、6、7。不用标签冒充人，不重叠遮藏，不加第八个。画面适当加宽让七人和整杠留边，左组下“西四”、右组下“东三”可保留。选一起抬闸时点，七人双手握杠向上提，脚在地面。\n第二，把长压杠整体平移到两固定立柱面前，杆身必须遮住柱子前面，不能穿柱孔，也不能在柱后被挡断。两组中央麻绳只缠活动门板的短横木，结位于两柱内侧，绳不绕柱。原穿销位置在杆上方露空孔，抽出的原短销完整长约两柱距离，搁后方墙边。北闸随杠提起，门下间隙保持。两立柱不能随杆移动。干净二维示意，无新增道具或照片肌理。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/ae8f5edf0bd02140b423ae0693ade8ec4db1d60c3cd3e7245d8ae6bf37f1f3d5.png"
+    ]
+  }
+}

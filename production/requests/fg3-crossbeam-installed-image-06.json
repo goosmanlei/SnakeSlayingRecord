@@ -1,0 +1,57 @@
+{
+  "id": "fg3-crossbeam-installed-image-06",
+  "recipe_id": "form-crossbeam-installed",
+  "entity": {
+    "object_id": "entity-crossbeam",
+    "revision_id": "115731814d24b6b4b99e325d0f9286435df91fc1582e838690e44edf150b599c"
+  },
+  "state": {
+    "object_id": "form-crossbeam-installed",
+    "revision_id": "6aebcb9068b8679ec0831705ee267b417a819f5cbbb4a93a656ab52cfd5953db"
+  },
+  "requirement": {
+    "object_id": "need-form-crossbeam-installed-overall",
+    "revision_id": "95c5ca888ae3ed550facad401af84f0dd734e9f74f8a7b7ede8afd4c38f07f39"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-crossbeam-base-image-01",
+        "revision_id": "94e9b74b04de561706b0c7aa2b5caf24b6a812493bc168c69555bd8f7f2d1e70"
+      },
+      "component_id": "original",
+      "sha256": "9ff476bb5d123bb9459100eb6667f542cbfb2e7ee2e17961bcfcb9777f7acf4f",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：准确认可干净 D0 圆木的外形、颜色和端部；只作为长杠身份参考"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-fg3-crossbeam-base-image-01",
+        "revision_id": "94e9b74b04de561706b0c7aa2b5caf24b6a812493bc168c69555bd8f7f2d1e70"
+      }
+    ]
+  },
+  "master_approval": {
+    "object_id": "review-master-fg3-crossbeam-base-image-01",
+    "revision_id": "a385bcc1ca6f26edd57cb9a9cd218e8e0b76155725a956cc187743bd5d0ca050"
+  },
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "Create one clean 16:9 2D animation prop reference in the same restrained brown-grey flat-painted style as image 1. Use the exact long timber in image 1 as the pressure beam. Three-quarter view from above and in front. Show the complete timber ends, small stone enclosure, wooden sliding gate and open level ground on both sides. No figures, text or arrows. Keep exactly the horizontal timber shapes described: the very long pressure beam across the foreground, the small middle cleat attached to the moving panel, and the full-width locking pin above them.\nMechanism: a SMALL LOW stone box, knee-high, only slightly longer than wide. Two flat stone lids are placed FRONT then BACK with one transverse seam across the box width (not a longitudinal seam). Near end: a CLOSED small thick wooden feeding door in a stone frame, left hinges, a full-width bar in both stone jamb sockets. Far end: one TALL vertical sliding wooden gate panel between TWO FIXED wooden posts. Panel top is about chest high while the stone lids are knee high. A single cylindrical locking PIN, slightly longer than the entire distance between the two fixed posts, runs HORIZONTALLY all the way from the OUTER LEFT side of the left post through the left post, visibly ACROSS the WHOLE gate panel, and through the right post to the OUTER RIGHT side. Position it above the cleat. Show its entire central horizontal shaft exposed in FRONT of the gate panel, with protruding ends on BOTH outside edges of the fixed posts. This is one continuous thick wood pin, not a metal latch, tiny handle, or a right-hand door bolt. The closed gate cannot rise until this full-width pin is pulled out. No high lateral stone walls; the stone sides terminate at the box corners. The low box and gate form one continuous enclosure.\nMost important visible detail: a short horizontal wooden CLEAT is fixed to the MIDDLE of the MOVING gate panel. It ends well INSIDE the posts. The long pressure beam is IN FRONT OF this cleat, bound to that cleat by exactly TWO tight rope bands very close to the CENTRE of the panel. Put these rope bands at one-third and two-thirds of PANEL width. Leave a CLEAR VISIBLE GAP between each rope band and the nearest fixed post. Both fixed posts have completely bare wood with NO ROPE ON THEM. The rope goes around the short cleat and long beam only, so that lifting or pressing the long beam moves the panel vertically. It is not attached to any fixed part.\nThe long beam sits at an adult's waist height, well ABOVE the stone lids, with a forearm-height air gap below the beam. Its ends extend far out over flat unobstructed ground, each end long enough for four adults. Nothing blocks a person's torso leaning forward onto the top of the beam. No uprights or supports beneath the beam ends. Keep the entire stone box short, closed, grey, and simple. 核心视觉：绳结在门板中央的活动短横木上，远离两侧固定立柱；长杠比矮石顶高一截；两端下方都是空地。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/9ff476bb5d123bb9459100eb6667f542cbfb2e7ee2e17961bcfcb9777f7acf4f.png"
+    ]
+  }
+}

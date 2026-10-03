@@ -1,0 +1,107 @@
+{
+  "id": "fg3-county-office-register-image-01",
+  "recipe_id": "form-county-office-register",
+  "entity": {
+    "object_id": "entity-county-office",
+    "revision_id": "9ac4243e97a3fd5301ea29edc304ae01b43bfab7e444699b5a8954523d4dec51"
+  },
+  "state": {
+    "object_id": "form-county-office-register",
+    "revision_id": "0f794ec395a4fd3930820ba6d9e07f39c89592284cf406799cafe63d44ebc899"
+  },
+  "requirement": {
+    "object_id": "need-form-county-office-register-overall",
+    "revision_id": "18ec89b6bb734772e98219f40709c8f543f6031fc1090538599c36b7070a03ad"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-county-office-notice-image-01",
+        "revision_id": "765ab5e95b7c4a3160520e1184837e5dce4ae658998dd3328c273cf2c39506f3"
+      },
+      "component_id": "original",
+      "sha256": "4be212c63da8daa0c44a0adca126575de519f34eac7c62c9d9f58cbb63c3ba07",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：县衙整体布局与左廊、右照壁、前堂方向"
+    },
+    {
+      "reference": {
+        "object_id": "asset-fg3-li-dan-work-image-02",
+        "revision_id": "9403379950cc6c3c2751bcd40f932e4b53b49013a61018f606ed2554423da672"
+      },
+      "component_id": "original",
+      "sha256": "0bf4cf4f59ec83dc60852ddc627c92bf8f7479568cb29bc15c14a8bafece11c4",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图2：李诞面容体形与褐短衣灰裤，去掉扁担"
+    },
+    {
+      "reference": {
+        "object_id": "asset-fg3-clerk-notice-base-image-01",
+        "revision_id": "39dd011fe142235ad477e78917a97ad11585199a672ceaa1766a2f8c21936264"
+      },
+      "component_id": "original",
+      "sha256": "6b63bed57d3dcfef27ea4fbe46be119bfd4d880b02382761e356b7d355213b79",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图3：登记书吏的脸与衣帽"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 2,
+    "references": [
+      {
+        "object_id": "asset-fg3-county-office-notice-image-01",
+        "revision_id": "765ab5e95b7c4a3160520e1184837e5dce4ae658998dd3328c273cf2c39506f3"
+      },
+      {
+        "object_id": "asset-fg3-li-dan-work-image-02",
+        "revision_id": "9403379950cc6c3c2751bcd40f932e4b53b49013a61018f606ed2554423da672"
+      },
+      {
+        "object_id": "asset-fg3-clerk-notice-base-image-01",
+        "revision_id": "39dd011fe142235ad477e78917a97ad11585199a672ceaa1766a2f8c21936264"
+      }
+    ]
+  },
+  "master_approvals": [
+    {
+      "object_id": "review-master-fg3-county-office-notice-image-01",
+      "revision_id": "57c0bf399b4008332752d6ca317cd13e2731a60c1c61d01ab71f3434e0756e86"
+    },
+    {
+      "object_id": "review-master-fg3-li-dan-work-image-02",
+      "revision_id": "b71141445dfca5a455c0939edef37ada19e3d5dea451ec5b4d5e1303ada4d23a"
+    },
+    {
+      "object_id": "review-master-fg3-clerk-notice-base-image-01",
+      "revision_id": "1f08cb77b7457ae8156b7931a64f5f569b41eca624225e4814030490803e5315"
+    }
+  ],
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "生成一张全剧素材的完整状态整体参考。二维人物配轻手绘空间，低饱和自然色、清楚轮廓、平涂为主，保留已认可母版的建筑方向、器物比例、人物身份和衣色。干净边缘，轻背景笔触，无纸纹噪点、过锐、摄影皮肤或厚重肌理。单幅单时刻，不做分镜拼接；不新增剧情。输出模型可提供的最高原生画面，无水印、装饰边框。\n输入按顺序使用完整原件：图1：县衙整体布局与左廊、右照壁、前堂方向；图2：李诞面容体形与褐短衣灰裤，去掉扁担；图3：登记书吏的脸与衣帽。\n16:9日间整体场景，摄像机沿图1入口方向稍靠左，左檐廊下登记桌为前景，右照壁仍在右方，正前两级台阶和堂案在后方，三个区域互相连通且不叠在一起。日影从柱旁移过。李诞全身站到登记桌前，双手自然垂放，不拿扁担不受伤；书吏坐桌后登记。桌上整齐摆当天薄册、少量文书与平展空白背面图纸，关键不是伪造可读内容。不保留基准的临关门夜色，不画审讯罪人、刑具、武器或人群堵塞走道。完整桌椅、两人和空间方向入画。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/4be212c63da8daa0c44a0adca126575de519f34eac7c62c9d9f58cbb63c3ba07.png",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/0bf4cf4f59ec83dc60852ddc627c92bf8f7479568cb29bc15c14a8bafece11c4.png",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/6b63bed57d3dcfef27ea4fbe46be119bfd4d880b02382761e356b7d355213b79.png"
+    ]
+  }
+}

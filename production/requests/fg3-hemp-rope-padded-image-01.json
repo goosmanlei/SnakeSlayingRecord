@@ -1,0 +1,83 @@
+{
+  "id": "fg3-hemp-rope-padded-image-01",
+  "recipe_id": "form-hemp-rope-padded",
+  "entity": {
+    "object_id": "entity-hemp-rope",
+    "revision_id": "265d6af888cefdc67e8cabdd5a40928d56a9802e749d93e9b7f6c66a9a0c348f"
+  },
+  "state": {
+    "object_id": "form-hemp-rope-padded",
+    "revision_id": "4ed850c4272c1000cb60c6f0ba41a6445b1e953b5d383ae4637b6aa5a7aac71a"
+  },
+  "requirement": {
+    "object_id": "need-form-hemp-rope-padded-overall",
+    "revision_id": "1b6796fa3497c1b8b42e80207c9b6f41db0a27e030560f01af752b62cdd223fe"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-hemp-rope-base-image-01",
+        "revision_id": "d90c654f129e94d7c1b4ff25393785e6b4fca642b3a0ce10691f5ce6ac7786df"
+      },
+      "component_id": "original",
+      "sha256": "268bbe42897d3393389a33262265173bf9e55b34f2f5c8218a4d499c1ebd8b11",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：用户已认可的准确母版；只改变本提示指定状态，保持身份、服色与二维轮廓。"
+    },
+    {
+      "reference": {
+        "object_id": "asset-fg3-crossbeam-base-image-01",
+        "revision_id": "94e9b74b04de561706b0c7aa2b5caf24b6a812493bc168c69555bd8f7f2d1e70"
+      },
+      "component_id": "original",
+      "sha256": "9ff476bb5d123bb9459100eb6667f542cbfb2e7ee2e17961bcfcb9777f7acf4f",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图2：已认可长横杠的粗细、灰褐木色与圆截面，保持单根，不增加分叉。"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-fg3-hemp-rope-base-image-01",
+        "revision_id": "d90c654f129e94d7c1b4ff25393785e6b4fca642b3a0ce10691f5ce6ac7786df"
+      },
+      {
+        "object_id": "asset-fg3-crossbeam-base-image-01",
+        "revision_id": "94e9b74b04de561706b0c7aa2b5caf24b6a812493bc168c69555bd8f7f2d1e70"
+      }
+    ]
+  },
+  "master_approvals": [
+    {
+      "object_id": "review-master-fg3-hemp-rope-base-image-01",
+      "revision_id": "0399171c38045eeb93bf618f789ca89d15da22dcb43e799bfa8ee82ea8a2b3cb"
+    },
+    {
+      "object_id": "review-master-fg3-crossbeam-base-image-01",
+      "revision_id": "a385bcc1ca6f26edd57cb9a9cd218e8e0b76155725a956cc187743bd5d0ca050"
+    }
+  ],
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "生成一张完整形态的整体参考原件，单幅、单视点，不拼贴、不分格、不加标题或标注。二维动画手绘轮廓，低饱和色面，每面最多两级简洁阴影；场景用稀疏轻手绘背景，避免摄影、三维渲染、密纹、颗粒、厚纸纹和锐化。主体及道具端部全部留边入画。输出工具实际最高原生图，不放大。4:3横幅，浅暖灰空底，柔和均匀光。参考图1固定灰黄粗麻绳和两块旧灰布护垫，图2固定长横杠木色与截面。两块旧布分别垫在绳可能擦到的两处灰石角，绳从石角绕过与单根木杠绑紧形成加固连接，绳与布边都清楚可辨。麻绳绷直但没有断丝；只展示这一组连接的整体，长横杠整体都在画内，远端顺透视伸远收小，保持原物长度与粗细，绳所有端部收在结旁，全组留边。灰石只是两块低支点，不建新门道，无手、人、红绳或金属索。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/268bbe42897d3393389a33262265173bf9e55b34f2f5c8218a4d499c1ebd8b11.png",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/9ff476bb5d123bb9459100eb6667f542cbfb2e7ee2e17961bcfcb9777f7acf4f.png"
+    ]
+  }
+}

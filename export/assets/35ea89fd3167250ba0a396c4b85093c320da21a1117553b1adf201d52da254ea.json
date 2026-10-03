@@ -1,0 +1,83 @@
+{
+  "id": "fg3-keys-cheng-image-01",
+  "recipe_id": "form-keys-cheng",
+  "entity": {
+    "object_id": "entity-keys",
+    "revision_id": "5374ca5bdb5bfc4bf730df642372be82a7cf6d11db0dffc7a594a618138369d5"
+  },
+  "state": {
+    "object_id": "form-keys-cheng",
+    "revision_id": "b53bd40a5f15f691e6e7e0e5f0aa6ca0c217359acca4afcfef2fca955c9e46be"
+  },
+  "requirement": {
+    "object_id": "need-form-keys-cheng-overall",
+    "revision_id": "62ac2bce05bc09095c86e50412246342a686ec6f4f94ce65c003923fee667a7c"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-keys-base-image-01",
+        "revision_id": "11694990a09ee9df5717b6ab893c3e58e7d302697237dfc34a706c1d0621c2b8"
+      },
+      "component_id": "original",
+      "sha256": "6fb3a6cbdddbd55a96ee8845c1e954478fd36bdf4742c3e1d92a8aa33f668ea4",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：只取同一串三把钥匙及铁环布系，持有人改程差役。"
+    },
+    {
+      "reference": {
+        "object_id": "asset-fg3-officer-cheng-base-image-01",
+        "revision_id": "d68e8bbee32ee723a47184982a1f97c984991c812ecd37cefc7ede5f31d27edc"
+      },
+      "component_id": "original",
+      "sha256": "70b4e575b65a9e0941f9b92e0bc1a8912fd164e2d67bfbacbde6d190f8b082d9",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图2：用户已认可的准确母版；只改变本提示指定状态，保持身份、服色与二维轮廓。"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 2,
+    "references": [
+      {
+        "object_id": "asset-fg3-keys-base-image-01",
+        "revision_id": "11694990a09ee9df5717b6ab893c3e58e7d302697237dfc34a706c1d0621c2b8"
+      },
+      {
+        "object_id": "asset-fg3-officer-cheng-base-image-01",
+        "revision_id": "d68e8bbee32ee723a47184982a1f97c984991c812ecd37cefc7ede5f31d27edc"
+      }
+    ]
+  },
+  "master_approvals": [
+    {
+      "object_id": "review-master-fg3-keys-base-image-01",
+      "revision_id": "8c85e64d5a3efed3d501dd64eae46a6f474c0cbe40ddffc2d2570946d50510aa"
+    },
+    {
+      "object_id": "review-master-fg3-officer-cheng-base-image-01",
+      "revision_id": "628257ee04e136f961de3cd9de52124abdd57cac322ee5629093837f55826e3c"
+    }
+  ],
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "生成一张完整形态的整体参考原件，单幅、单视点，不拼贴、不分格、不加标题或标注。二维动画手绘轮廓，低饱和色面，每面最多两级简洁阴影；场景用稀疏轻手绘背景，避免摄影、三维渲染、密纹、颗粒、厚纸纹和锐化。主体及道具端部全部留边入画。输出工具实际最高原生图，不放大。3:4竖幅浅灰底。图1固定钥匙三把的长短、每把齿形、暗铁环与布系绳；图2固定程差役灰蓝衣、护腕及花白鬓角。程差役全身站着，一手在腰前拿着同一铁环，三把钥匙自然向下分开可辨，最长在下，另一手平放；脸和衣不变。原属于赵执事的褐衣灰带不再出现，不画第二串钥匙。本图说明收管同一串钥匙，背景不新增后院门的身份。所有手脚、钥匙齿和环都入画。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/6fb3a6cbdddbd55a96ee8845c1e954478fd36bdf4742c3e1d92a8aa33f668ea4.png",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/70b4e575b65a9e0941f9b92e0bc1a8912fd164e2d67bfbacbde6d190f8b082d9.png"
+    ]
+  }
+}

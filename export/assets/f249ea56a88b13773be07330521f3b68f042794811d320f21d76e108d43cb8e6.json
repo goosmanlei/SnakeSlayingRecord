@@ -1,0 +1,83 @@
+{
+  "id": "fg3-snake-deep-image-01",
+  "recipe_id": "form-snake-deep",
+  "entity": {
+    "object_id": "entity-snake",
+    "revision_id": "0e731db9b7526cfaf43a3fd567dfd3d1528083acd1f1d764e75a5ca7d2002cfb"
+  },
+  "state": {
+    "object_id": "form-snake-deep",
+    "revision_id": "81669554f04c09042bfa0ad02ab7dc156a6daef896b4a6bb4ea411e5ff5b6b91"
+  },
+  "requirement": {
+    "object_id": "need-form-snake-deep-overall",
+    "revision_id": "804dd3afd22453ad6e15b8544a496d4d3b184a0a3950a735fd592633b100da9b"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-snake-base-image-02",
+        "revision_id": "4d7c6f872a13ca84e80e9925bc481caae780dd556bc97247686f82190f4887c6"
+      },
+      "component_id": "original",
+      "sha256": "28d8542d9f7d6061820f30a0edaba641a25e177108bdc8cf3d5c9405e1b02525",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：大蛇完整自然头身尾，橄榄灰底、深褐横斑和灰米腹鳞，不能换蛇种或加龙角"
+    },
+    {
+      "reference": {
+        "object_id": "asset-fg3-feeding-channel-base-image-02",
+        "revision_id": "40c463e5d080aca4387023e158cb95a75c6dc42c7de734d8d87eb3a30485e8e4"
+      },
+      "component_id": "original",
+      "sha256": "3bc99507444a691fb933dad0a7503343b3be448ad98732b1b0b39c1b0bd044a4",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图2：南厚门、双盖石、北木柱滑闸与闸后封顶短段，实际封顶不变"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 2,
+    "references": [
+      {
+        "object_id": "asset-fg3-snake-base-image-02",
+        "revision_id": "4d7c6f872a13ca84e80e9925bc481caae780dd556bc97247686f82190f4887c6"
+      },
+      {
+        "object_id": "asset-fg3-feeding-channel-base-image-02",
+        "revision_id": "40c463e5d080aca4387023e158cb95a75c6dc42c7de734d8d87eb3a30485e8e4"
+      }
+    ]
+  },
+  "master_approvals": [
+    {
+      "object_id": "review-master-fg3-snake-base-image-02",
+      "revision_id": "e06bdeda97bb763a3b6a353f1b9fed9792c4d5045b12d0e2320f26bb92a9faf1"
+    },
+    {
+      "object_id": "review-master-fg3-feeding-channel-base-image-02",
+      "revision_id": "ff13d6f38af207c59864fe82d88c40ffccf68c329b7ba466d9559954e149915c"
+    }
+  ],
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "新生成单幅完整状态整体参考，二维人物与清洁轻手绘背景，柔和清楚线条、低饱和平涂，保留准确参考的身份、轮廓、颜色和建筑方向。背景轻笔触，不加纸纹、脏颗粒、浮雕、锐化。不是多时刻拼图、照片或旧图放大；使用模型最高原生输出。\n完整原件按顺序输入：图1：大蛇完整自然头身尾，橄榄灰底、深褐横斑和灰米腹鳞，不能换蛇种或加龙角；图2：南厚门、双盖石、北木柱滑闸与闸后封顶短段，实际封顶不变。\n16:9横幅，动物完整状态的单幅清楚侧剖示意；画面左前为南投食门，右后为北洞，前方侧壁仅在图示中透明，角落小字“剖视示意”。石道上方的两块盖石仍完整盖着，只有二石横向中缝的一道极窄刀缝，画的是侧透视不是实际敞顶。蛇头在南门里面、蛇颈经过盖石刀缝并被更北的木闸压住，长身体与尾全部盘在北洞内；北洞岩壁也作薄轮廓透视，以便从头到尾完整入画。蛇全身始终在石道与洞内，不盘在院子地上或盖石上。南门关闭有横闩，北闸木栓已经抽出，木闸受外力下压，但不额外画人或凭空再插栓。角色身份按图1，体粗与低矮石道适配，不怪兽巨蟒化。无刀手或人的伤害画面，无血腥特写，线条和伤势只为状态辨识。\n本张为重复同处斩击后伤口加深：刀缝下、闸以南的同一处颈部出现比浅痕明显更深的一道暗红褐切口，但颈下方连续组织仍把头身连成一体，绝无分离间隙，头和北洞身体仍紧绷。用简洁平面切线说明深度，少量暗色，无外翻组织、喷溅或第二处刀伤。不是新部位受伤；全形清楚。身份汇总未伤旧前缀不适用于此时点。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/28d8542d9f7d6061820f30a0edaba641a25e177108bdc8cf3d5c9405e1b02525.png",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/3bc99507444a691fb933dad0a7503343b3be448ad98732b1b0b39c1b0bd044a4.png"
+    ]
+  }
+}

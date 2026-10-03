@@ -1,0 +1,57 @@
+{
+  "id": "fg3-paste-wool-removed-image-01",
+  "recipe_id": "form-paste-wool-removed",
+  "entity": {
+    "object_id": "entity-paste-wool",
+    "revision_id": "927ff6078a5409caa11e97d67bd6bda8369ed952e561225097592e1be3e7629b"
+  },
+  "state": {
+    "object_id": "form-paste-wool-removed",
+    "revision_id": "63f9b72c4894b50c7f2f50fc442b2633c8d6207ccab31e69b7cc451c9c3e1f6c"
+  },
+  "requirement": {
+    "object_id": "need-form-paste-wool-removed-overall",
+    "revision_id": "d07a8fdb7d128ab53da5acf2bc090fa9e6a351d605a68fd4f4f2047eac98fe61"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-paste-wool-base-image-02",
+        "revision_id": "10c4a7acf015b0cdf55e79bf7edd74db55cf80904cf962472ad77fbdb17c2ff2"
+      },
+      "component_id": "original",
+      "sha256": "628b736b63798d7dfd1a87ee6ee5c09100253c3c7539cc2a35a5d913e53265fb",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：用户已认可的准确母版；只改变本提示指定状态，保持身份、服色与二维轮廓。"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-fg3-paste-wool-base-image-02",
+        "revision_id": "10c4a7acf015b0cdf55e79bf7edd74db55cf80904cf962472ad77fbdb17c2ff2"
+      }
+    ]
+  },
+  "master_approval": {
+    "object_id": "review-master-fg3-paste-wool-base-image-02",
+    "revision_id": "b05dc1a1a02478ffa4341cce175753e75544e6088d436ea1a8ef05601a050923"
+  },
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "生成一张完整形态的整体参考原件，单幅、单视点，不拼贴、不分格、不加标题或标注。二维动画手绘轮廓，低饱和色面，每面最多两级简洁阴影；场景用稀疏轻手绘背景，避免摄影、三维渲染、密纹、颗粒、厚纸纹和锐化。主体及道具端部全部留边入画。输出工具实际最高原生图，不放大。4:3横幅，透明底。图1的无身份灰色二维双手轮廓、十指和掌纹保持，双掌所有干浆糊和指缝羊毛完全擦除，掌面净灰，指缝清空。旁边一小块旧灰布巾污面朝上，零星原乳白残屑与三小撮羊毛只在布上，不贴皮肤。两只手、腕口、布角均留边，依然是材料位置对照，不生成真人手、不替代李寄人物母版。",
+    "transparent_background": true,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/628b736b63798d7dfd1a87ee6ee5c09100253c3c7539cc2a35a5d913e53265fb.png"
+    ]
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "id": "fg3-crossbeam-seven-image-03",
+  "recipe_id": "form-crossbeam-seven",
+  "entity": {
+    "object_id": "entity-crossbeam",
+    "revision_id": "115731814d24b6b4b99e325d0f9286435df91fc1582e838690e44edf150b599c"
+  },
+  "state": {
+    "object_id": "form-crossbeam-seven",
+    "revision_id": "b3f1b2b4531afa86e04fc9def10c0227654aac4e0cbccdd9237cd665356c6a44"
+  },
+  "requirement": {
+    "object_id": "need-form-crossbeam-seven-overall",
+    "revision_id": "6b257a1930fed92f78c2eeefa82c6a293200adfd1d33b9de44e4303c4ee96dcf"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-crossbeam-base-image-01",
+        "revision_id": "94e9b74b04de561706b0c7aa2b5caf24b6a812493bc168c69555bd8f7f2d1e70"
+      },
+      "component_id": "original",
+      "sha256": "9ff476bb5d123bb9459100eb6667f542cbfb2e7ee2e17961bcfcb9777f7acf4f",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：长灰褐圆木杠；重新生成七人站位，不用失败六人图"
+    },
+    {
+      "reference": {
+        "object_id": "asset-fg3-cave-gate-base-image-02",
+        "revision_id": "9f2dd5a25d3a9b294892313fcfc40dc380f838125ebdb5a2133b7f551a7e9bfe"
+      },
+      "component_id": "original",
+      "sha256": "1ebb9619a864ff72087147b6aa6d188d911a6a71a4a81968df78e997f9da0374",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图2：洞闸固定双柱和活动门板造型"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-fg3-crossbeam-base-image-01",
+        "revision_id": "94e9b74b04de561706b0c7aa2b5caf24b6a812493bc168c69555bd8f7f2d1e70"
+      },
+      {
+        "object_id": "asset-fg3-cave-gate-base-image-02",
+        "revision_id": "9f2dd5a25d3a9b294892313fcfc40dc380f838125ebdb5a2133b7f551a7e9bfe"
+      }
+    ]
+  },
+  "master_approvals": [
+    {
+      "object_id": "review-master-fg3-crossbeam-base-image-01",
+      "revision_id": "a385bcc1ca6f26edd57cb9a9cd218e8e0b76155725a956cc187743bd5d0ca050"
+    },
+    {
+      "object_id": "review-master-fg3-cave-gate-base-image-02",
+      "revision_id": "c5929ad614df03fae2f0b615752fc7eb7425bc0c29b75d76d7b40effc9a77e2a"
+    }
+  ],
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "制作16:9整体器物用力示意图，图1的整根灰褐长圆杠中央绑至图2厚木闸活动门板的短横木。长杠在两根固定立柱的正前方，两组绳只绕活动板短横木与长杠，不绑柱、不穿柱孔。简化灰色站立人形表示受力位置，并非新角色。最重要：一共正好七个完整独立人，左侧四个人，右侧三个人；每个人必须各有一个头、一个躯干、两条腿。请重新安排画面宽度，别复制六人图。左四人头的横坐标约占画宽8%、19%、30%、41%；右三人头位约65%、78%、91%。中央闸和两柱在44%至59%之间。四个左侧人都全身可见并各留缝，最靠左也不能被裁；右侧三人同样不重叠。七人双手各握杠向上合力抬，脚各着地，闸下留可通过蛇的间隙；没有第八人。角色用浅灰无脸细节人形，不添加服色或身份。原栓已抽出放画外墙边，两个柱孔空着，画内不放短木棒。杆中段从柱前遮过，不被柱截断。背景只有低矮完整封顶灰石道和岩壁，不能改为露天沟。所有人脚和整杠端头都留白边；不要写西四东三或任何数字文字，必须用真实七个人形证明人数。二维清洁线色，轻手绘灰石，非三维、无纸纹。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/9ff476bb5d123bb9459100eb6667f542cbfb2e7ee2e17961bcfcb9777f7acf4f.png",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/1ebb9619a864ff72087147b6aa6d188d911a6a71a4a81968df78e997f9da0374.png"
+    ]
+  }
+}

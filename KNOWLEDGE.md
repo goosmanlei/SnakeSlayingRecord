@@ -17,6 +17,9 @@
 
 ## 已确认的制作系统方向
 
+- 用户要求多份待审材料以表格、分栏或逐行列表提供，每份有独立可点击的链接，不把多个材料和链接揉在单行文字中。提供准确原件和修改点后，再单独询问认可范围。来源：本任务用户 2026-10-03 对审阅交接格式的明确要求。
+- 用户第九批评论要求石道保持短而连续，长横杠高于石盖并给两端成年人留出下压空间；横杠安装图还须沿用已认可石道本体，保留闸后封顶短段与岩根，不另造分离的机关。准确意见见 [首批反馈](production/full-generation/ninth-masters-feedback-registration.json)、[修正版反馈](production/full-generation/ninth-revised-feedback-registration.json)。南投食门及庙后院第六候选随后获用户“另外两张认可，继续修横杠”确认，绑定 [两份准确原件](production/full-generation/ninth-revised-masters-approvals.json)，不含横杠候选。
+- 用户对第八批固定 7 份回复“7 份均认可”，包括草图、洞闸、渡口、石阶、晾衣、唱工记录及米铺干净母版；具体原件与原代数见 [第八批准确认可](production/full-generation/eighth-masters-approvals.json)。
 - 用户对迁移后的第七批固定 18 份回复“18 份均认可”；准确结论仅登记本任务独立实例，后续派生引用对应原件与原有代数。来源：[第七批准确认可](production/full-generation/seventh-masters-approvals.json)。
 - 用户于 2026-10-03 要求全部本任务生成成果迁入 worktree，后续也只在 worktree 生成，并明确选择独立审阅入口、主项目恢复任务前素材范围。本任务后续不再逐批登记主库；素材、真实调用、认可和用户意见在同一既有审阅台的独立实例保留，最终集成仍需展示准确范围并确认。来源：[迁移授权与核验](production/evidence/full-generation-worktree-migration.json)。用户已取消拆分剩余任务的想法，继续完成原 251 项目标。
 - 用户对第六批固定 9 份回复“认可；剩余全部待生成项，以最大并发速度进行生成”。认可仅绑定该准确集合，不推定随后新基准已认可，且并发不绕过必需参考认可或两代谱系上限。来源：[第六批准确认可](production/full-generation/sixth-masters-approvals.json)。
@@ -33,6 +36,7 @@
 
 - OpenArt CLI v0.1.1（`85fa0ad`）的图片生成命令不接受 `--quality`，实际返回 `unknown flag: --quality`。本轮已说明并使用同一 OpenArt 账户和故事项目的连接器提交 `quality=high`，没有改用其他收费平台。`resolutionTier=4k` 是请求档位；原件实际尺寸须单独检测。四份代表图的请求、完成回执及原件见 [首轮生成交接](production/full-generation/README.md)，后续工具升级须重查能力。
 - 当前 Codex 内置 `image_gen.imagegen` 只暴露 GPT Image 工具名称，没有可选择的底层型号、质量档或像素尺寸参数，也未返回服务端调用 ID 与计费用量。本轮直接保留工具返回路径的 PNG，记录原生像素、文件 SHA 和回执；未暴露字段明确未知，不把产物文件 ID 写成调用 ID，不把用户所称 GPT IMG 2.5 写成已核实底层型号。来源：`production/requests/*`、`production/receipts/*-builtin-complete.json` 与 `scripts/record_builtin_image.py`；工具能力变化时重查。
+- 当前内置图像工具每次最多接收 5 条 `referenced_image_paths`，超限返回输入校验错误，未产出图片。本轮四次真实拒绝请求及错误已登记，不改写成适配后请求，不把未知用量写成零。后续准备与登记均校验此上限。来源：[四次输入拒绝登记](production/full-generation/authored-08-input-failures.json)及 `tests/test_generation_reference_guard.py`；渠道能力变化须重查。
 - 全剧生成的图像／音色方案、真实调用、候选原件、用户母版认可和镜头采用分开保存。`production/full-generation/registration.json` 保留准确增量，正式写入沿用 `production-import-v1` 的修订与冲突检查；没有用户认可证据或采用记录就不推断接受。已提交调用引用的旧输入锁不得因后续范围核对而改写。来源：本任务要求、正式增量验证及 `scripts/register_full_generation.py`。
 - 用户于 2026-10-02 确认全剧非歌曲首轮素材生成：需图像的完整状态各新生成一张整体参考图，范围经 2026-10-03 归并确认为 251 项，基础状态同时覆盖实体；仅声音及仅提及状态不补造图像。补齐全剧实际说话角色音色，声音明显变化的状态另生成，同声线状态复用准确母版；歌曲、动物声和环境动作声不纳入本轮。先审阅代表母版，再批量生成。本轮接受指定模型实际最高原生尺寸，如实记录，不放大冒充 4K；图片先用 OpenArt CLI credits，用完后切换 Codex 内置 GPT Image，音色沿用豆包语音。来源：本澄清会话五项选择；具体范围与验收见 [全剧首轮生成说明](planning/full-entity-generation-task.md)。此为制作要求确认，不表示已生成、登记或接受素材。
 - 用户于 2026-10-02 提出后续制作审阅优化：采纳与取消采纳须形成有效循环；关系表述须有语义充分、准确的剧情依据；素材管理沿用制作设定的平铺筛选，类型有图标，未生成素材有对应占位。用户确认制作页面一并移除批量导入、登记实际原件、编辑说明与设定、添加细节或声音需求、维护整体与细节关联等手工录入入口，内容维护由 Codex 通过后台工具推进，保留采纳／取消、评论、筛选、预览和缺项检查。用户明确选择删除三个制作页面左上的流程导航，沿用现有主导航，不增加图形替代。具体范围与验收见 [制作审阅体验任务说明](planning/production-review-ui-task.md)；实现与实际验证见 `production/review-ui-verification.md`。来源：本次任务澄清的五项问题、关系弹窗截图、导航选项及手工入口范围答复。

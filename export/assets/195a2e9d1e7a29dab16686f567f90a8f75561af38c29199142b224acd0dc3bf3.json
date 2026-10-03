@@ -1,0 +1,83 @@
+{
+  "id": "fg3-li-home-open-image-01",
+  "recipe_id": "form-li-home-open",
+  "entity": {
+    "object_id": "entity-li-home",
+    "revision_id": "41307f92c058e08d6f440e76fa8ae41ed80d4fcd814ea18c1776805a4cbc578a"
+  },
+  "state": {
+    "object_id": "form-li-home-open",
+    "revision_id": "dc422868dd076a487f4d671388defb3c5df8d6765e6e0081a580adac5dea83c7"
+  },
+  "requirement": {
+    "object_id": "need-form-li-home-open-overall",
+    "revision_id": "341a6696e965a0ff18f89a6e3a7036bd7eac281403bce064881ec30878fe60e6"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-li-home-dinner-image-01",
+        "revision_id": "789bdf6b50b33625e54d00cec8a3a5de4b3d2cdff0196e1f11f9ec8efd9eb2d0"
+      },
+      "component_id": "original",
+      "sha256": "2495e4f4210b4e82a64da5c99ff06604c9cd47d154fd4b8e1e74b45dfc380071",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：李家原有家具建筑门与闩的位置"
+    },
+    {
+      "reference": {
+        "object_id": "asset-fg3-lantern-image-01",
+        "revision_id": "c04b3877a5421432067f5bb24be40d19bf1af4b1e2325462de2f884df4e2c3af"
+      },
+      "component_id": "original",
+      "sha256": "db9bd8e4707d2533180622e8d44c50b16c171c3518b9da6772247861666e4b26",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图2：同一旧灯外形，夜间暖光"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 2,
+    "references": [
+      {
+        "object_id": "asset-fg3-li-home-dinner-image-01",
+        "revision_id": "789bdf6b50b33625e54d00cec8a3a5de4b3d2cdff0196e1f11f9ec8efd9eb2d0"
+      },
+      {
+        "object_id": "asset-fg3-lantern-image-01",
+        "revision_id": "c04b3877a5421432067f5bb24be40d19bf1af4b1e2325462de2f884df4e2c3af"
+      }
+    ]
+  },
+  "master_approvals": [
+    {
+      "object_id": "review-master-fg3-li-home-dinner-image-01",
+      "revision_id": "2c3e9779068017537bf57801a01dc68c3d3a0df9033faf0d83f43f7e7f07a90b"
+    },
+    {
+      "object_id": "review-master-fg3-lantern-image-01",
+      "revision_id": "cfa293a74f1370e9c334d1414baef64a26926e852fa7abb93c12888b0065a8ec"
+    }
+  ],
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "生成一张全剧素材的完整状态整体参考。二维人物配轻手绘空间，低饱和自然色、清楚轮廓、平涂为主，保留已认可母版的建筑方向、器物比例、人物身份和衣色。干净边缘，轻背景笔触，无纸纹噪点、过锐、摄影皮肤或厚重肌理。单幅单时刻，不做分镜拼接；不新增剧情。输出模型可提供的最高原生画面，无水印、装饰边框。\n输入按顺序使用完整原件：图1：李家原有家具建筑门与闩的位置；图2：同一旧灯外形，夜间暖光。\n16:9夜归李家，视线在前院微偏门侧，主门扇半开、门闩退出未闩，灯光越过完整门槛落在门外地面。屋里方桌仍左中，桌上只留一只干净空碗，原桌角的图2旧灯点亮；右后灶温着饭，锅盖微掀透一点热气。左后里屋门在原处，里面不展示病人或客用铺位，堂屋右侧临时睡铺已收整。这是后段夜归状态，不保留先前病人在李家和众人宴席，不加新家具；暖光克制，院里低饱和夜色但门闩可辨。完整入口、桌、灶与通路一镜可见。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/2495e4f4210b4e82a64da5c99ff06604c9cd47d154fd4b8e1e74b45dfc380071.png",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/db9bd8e4707d2533180622e8d44c50b16c171c3518b9da6772247861666e4b26.png"
+    ]
+  }
+}

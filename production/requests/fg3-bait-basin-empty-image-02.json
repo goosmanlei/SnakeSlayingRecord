@@ -1,0 +1,83 @@
+{
+  "id": "fg3-bait-basin-empty-image-02",
+  "recipe_id": "form-bait-basin-empty",
+  "entity": {
+    "object_id": "entity-bait-basin",
+    "revision_id": "caeaf73c829ca323876c1391f39b21dc4347da49c0654046ab363bb0a3b9a467"
+  },
+  "state": {
+    "object_id": "form-bait-basin-empty",
+    "revision_id": "54f89d00f484426928fa713f84e1e51bcebb8d6d53800c9c2f0d74c5a27bdb90"
+  },
+  "requirement": {
+    "object_id": "need-form-bait-basin-empty-overall",
+    "revision_id": "737ccf115a739fd1009525329ed11e95c9c19ccf2dc6369397638de039f9ffda"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-bait-basin-base-image-01",
+        "revision_id": "9dce1957bde5a5009fd2098256705765af44be44b53d8f130197ca5f8462d4ef"
+      },
+      "component_id": "original",
+      "sha256": "38736d34664cf46ef9339ce33cca6e81138aa0ea96e2cabf05f50d220694e721",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：盆的深浅大小、两耳及灰陶材质"
+    },
+    {
+      "reference": {
+        "object_id": "asset-fg3-feeding-channel-base-image-02",
+        "revision_id": "40c463e5d080aca4387023e158cb95a75c6dc42c7de734d8d87eb3a30485e8e4"
+      },
+      "component_id": "original",
+      "sha256": "3bc99507444a691fb933dad0a7503343b3be448ad98732b1b0b39c1b0bd044a4",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图2：南石框投食门在近处、北木柱滑闸在远处的不可倒置结构"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 2,
+    "references": [
+      {
+        "object_id": "asset-fg3-bait-basin-base-image-01",
+        "revision_id": "9dce1957bde5a5009fd2098256705765af44be44b53d8f130197ca5f8462d4ef"
+      },
+      {
+        "object_id": "asset-fg3-feeding-channel-base-image-02",
+        "revision_id": "40c463e5d080aca4387023e158cb95a75c6dc42c7de734d8d87eb3a30485e8e4"
+      }
+    ]
+  },
+  "master_approvals": [
+    {
+      "object_id": "review-master-fg3-bait-basin-base-image-01",
+      "revision_id": "6cff9af686bbfd06d71791044e7b78f870e993be9314b5090997dadd5ef9a392"
+    },
+    {
+      "object_id": "review-master-fg3-feeding-channel-base-image-02",
+      "revision_id": "ff13d6f38af207c59864fe82d88c40ffccf68c329b7ba466d9559954e149915c"
+    }
+  ],
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "制作一张新的完整状态整体参考，二维人物配轻手绘背景，低饱和平涂、柔和干净线条，保持参考身份、颜色与比例。轻薄背景，不增纸纹、噪点、浮雕或锐化。单幅完整形态，不拼贴、裁切或放大；工具最高原生输出，无水印或装饰标题。\n参考顺序：图1为盆的深浅大小、两耳及灰陶材质；图2为南石框投食门在近处、北木柱滑闸在远处的不可倒置结构。\n4:3从南偏西略俯看整盆与短石道。确认断蛇后的取看状态：图2最前方南端整石框木门向画面左外侧打开，粗横闩放旁边；远北端必须仍是两根深褐木立柱夹竖滑木闸，闭合，不能把前后门材料交换。南段一块盖石揭起斜靠旁边，仅揭这一块；中后盖石与闸后短顶继续盖严。完整空盆在已揭盖的南段里面，两耳完整，盆内只有少量残米黏痕、没有肉块堆或满饭。原盆比例不缩成小碗，不重造敞口石渠；全南门与远木柱及全盆同幅可辨，无人物与额外蛇头。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/38736d34664cf46ef9339ce33cca6e81138aa0ea96e2cabf05f50d220694e721.png",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/3bc99507444a691fb933dad0a7503343b3be448ad98732b1b0b39c1b0bd044a4.png"
+    ]
+  }
+}

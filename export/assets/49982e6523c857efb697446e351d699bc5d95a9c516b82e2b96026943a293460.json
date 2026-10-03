@@ -1,0 +1,64 @@
+{
+  "id": "fg3-temple-back-original-image-06",
+  "recipe_id": "form-temple-back-original",
+  "entity": {
+    "object_id": "entity-temple-back",
+    "revision_id": "98363978173ad313598b5654d827c2a1d84e37b967fca65445206785d5f27ec3"
+  },
+  "state": {
+    "object_id": "form-temple-back-original",
+    "revision_id": "1b6b57d6eb4e268f2d7bfbc70a89463e7d1dc723fcebb40b08e3833a082e5594"
+  },
+  "requirement": {
+    "object_id": "need-form-temple-back-original-overall",
+    "revision_id": "c3dfcbbff4b87a6b34f633f5cf9918c8b048c42b7a59926b25338a6152ff4d6f"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-temple-back-original-image-05",
+        "revision_id": "cb6f64472d0884f7b002297ba5eefd10c79d7dbb6c88c98f10296cfe0bc23d86"
+      },
+      "component_id": "original",
+      "sha256": "343d8a4e6de2d0b88e29e789927bab426fa2ed1483023210900e39292272ce98",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：同一后院原件，只按用户意见缩短过长石道"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-fg3-temple-back-original-image-05",
+        "revision_id": "cb6f64472d0884f7b002297ba5eefd10c79d7dbb6c88c98f10296cfe0bc23d86"
+      }
+    ]
+  },
+  "same_state_repair": {
+    "source": {
+      "object_id": "asset-fg3-temple-back-original-image-05",
+      "revision_id": "cb6f64472d0884f7b002297ba5eefd10c79d7dbb6c88c98f10296cfe0bc23d86"
+    },
+    "reason": "用户评论当前石道看起来过长，改为膝高且南门到北闸一步以内的紧凑短箱。",
+    "feedback": {
+      "object_id": "review-ninth-feedback-fg3-temple-back-original-image-05",
+      "revision_id": "681b97fb0d4274825b1ec224e920fd478cf1c9e4e39d252b71908ae14e2f994c"
+    }
+  },
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "以参考图1作局部几何修订，生成新的16:9完整后院。保留四周院墙、左下唯一锁门、北岩檐、土色、光线和宽阔空院地，院墙不要移动。只把院中央那条过长石道显著缩短：北端木闸保持原地，把最前面的南投食小门整体向后移近北闸，直到南投食门至北木闸的距离只略长于石道自身宽，约宽的1.2倍。它应像一个膝高的紧凑石箱，不是纵贯院子的石板路。二者之间仅两片很短且横跨全宽的平盖石，盖石连续封顶、两侧矮墙和底座严密接合。南门仍关闭横闩，北木闸仍落底插栓；原两木立柱与竖拼厚木闸板保留，闸后短封顶段也明显短。缩掉的南部石道位置全部恢复成与周围一致的空院地，不能留下旧门、旧底座、碎石轨迹或任何第二石道。人行院门与投食门仍独立且之间大段空地，东西留充裕站位；没有长杠、刀缝、人物、蛇或额外门洞。保持干净二维轻手绘背景，不增加纸纹锐化。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/343d8a4e6de2d0b88e29e789927bab426fa2ed1483023210900e39292272ce98.png"
+    ]
+  }
+}

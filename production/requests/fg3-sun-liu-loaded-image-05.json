@@ -1,0 +1,83 @@
+{
+  "id": "fg3-sun-liu-loaded-image-05",
+  "recipe_id": "form-sun-liu-loaded",
+  "entity": {
+    "object_id": "entity-sun-liu",
+    "revision_id": "4b2ec689619f74ff7f54d1815afee52943c5d2f1eafe94d321ca7fbe16a8fda8"
+  },
+  "state": {
+    "object_id": "form-sun-liu-loaded",
+    "revision_id": "8fc2631bf0a023c1355fa6853b724508cae326f085cb0d2c3d99422ab533a366"
+  },
+  "requirement": {
+    "object_id": "need-form-sun-liu-loaded-overall",
+    "revision_id": "5e1b4cb1219411d8348b3cc5ef30c168757fd098c04b8567cf32245714a7f871"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-sun-liu-base-image-01",
+        "revision_id": "859396d6c1d139499dd1d90b9ceefbe7692c4a8e7aefcb60e5b9787a0bef5a6d"
+      },
+      "component_id": "original",
+      "sha256": "6c2a968d077e3fe1c34eb951ace6884529268c8300a2ed9dc48a2918dd0e47e1",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：用户已认可的准确母版；只改变本提示指定状态，保持身份、服色与二维轮廓。"
+    },
+    {
+      "reference": {
+        "object_id": "asset-fg3-crossbeam-base-image-01",
+        "revision_id": "94e9b74b04de561706b0c7aa2b5caf24b6a812493bc168c69555bd8f7f2d1e70"
+      },
+      "component_id": "original",
+      "sha256": "9ff476bb5d123bb9459100eb6667f542cbfb2e7ee2e17961bcfcb9777f7acf4f",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图2：已认可长横杠的粗细、灰褐木色与圆截面，保持单根，不增加分叉。"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-fg3-sun-liu-base-image-01",
+        "revision_id": "859396d6c1d139499dd1d90b9ceefbe7692c4a8e7aefcb60e5b9787a0bef5a6d"
+      },
+      {
+        "object_id": "asset-fg3-crossbeam-base-image-01",
+        "revision_id": "94e9b74b04de561706b0c7aa2b5caf24b6a812493bc168c69555bd8f7f2d1e70"
+      }
+    ]
+  },
+  "master_approvals": [
+    {
+      "object_id": "review-master-fg3-sun-liu-base-image-01",
+      "revision_id": "2620e6a456aff05ed0249f69f1603e06b947ff86cdaa9ef63f59c3da576b16bd"
+    },
+    {
+      "object_id": "review-master-fg3-crossbeam-base-image-01",
+      "revision_id": "a385bcc1ca6f26edd57cb9a9cd218e8e0b76155725a956cc187743bd5d0ca050"
+    }
+  ],
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "生成一张完整形态的整体参考原件，单幅、单视点，不拼贴、不分格、不加标题或标注。二维动画手绘轮廓，低饱和色面，每面最多两级简洁阴影；场景用稀疏轻手绘背景，避免摄影、三维渲染、密纹、颗粒、厚纸纹和锐化。主体及道具端部全部留边入画。输出工具实际最高原生图，不放大。16:9横幅，完整空间与动作关系一眼可读。人物朝画面右侧，采用几乎纯侧面的全身动作参考，脸侧面仍可认。双膝深屈、臀部稍高、上身向前下方折，胸接近膝，颈自然向下低头；人用体重压住低杠。接触关系必须是人物靠观者一侧的肩尖从上面压在木杠顶面，肩肉在上、木杠在下；杠在胸侧外方、远离脖子，绝不可放到肩上或横在颈前。两前臂在杠下方握住稳位，不向上举杠，双脚落平。整人、手脚、短展示范围内完整横杠两端都入画，杠只作本动作局部承托，不展示机关全院。参考图1固定孙六面貌、头发、短衣裤和腰带，保持母版无腰鼓，不跨场新增道具；图2固定木杠。孙六双手握牢、臂腿紧绷、肩不离杠，额有细汗，嘴稍张喘气；用屈膝腿线和绷紧的手指表现持续吃力，不画抖动多重残影。无新伤，无其他人。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/6c2a968d077e3fe1c34eb951ace6884529268c8300a2ed9dc48a2918dd0e47e1.png",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/9ff476bb5d123bb9459100eb6667f542cbfb2e7ee2e17961bcfcb9777f7acf4f.png"
+    ]
+  }
+}

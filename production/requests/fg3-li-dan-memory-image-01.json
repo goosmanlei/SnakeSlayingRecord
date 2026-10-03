@@ -1,0 +1,57 @@
+{
+  "id": "fg3-li-dan-memory-image-01",
+  "recipe_id": "form-li-dan-memory",
+  "entity": {
+    "object_id": "entity-li-dan",
+    "revision_id": "346b9410d08ae0ce046ac6a4d5f64b7bca3d080df2db9830fe34094ff3dc8e50"
+  },
+  "state": {
+    "object_id": "form-li-dan-memory",
+    "revision_id": "ccaac59deeb0c28f6add53724b254d9031c2e09a1b38a2ecd685abb797a5b220"
+  },
+  "requirement": {
+    "object_id": "need-form-li-dan-memory-overall",
+    "revision_id": "a1d38f7986c399253625be1bbaf7b36a5fbd758b30d19fdc2cb59e0bf609f355"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-li-dan-work-image-02",
+        "revision_id": "9403379950cc6c3c2751bcd40f932e4b53b49013a61018f606ed2554423da672"
+      },
+      "component_id": "original",
+      "sha256": "0bf4cf4f59ec83dc60852ddc627c92bf8f7479568cb29bc15c14a8bafece11c4",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：用户已认可的准确母版；只改变本提示指定状态，保持身份、服色与二维轮廓。"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 2,
+    "references": [
+      {
+        "object_id": "asset-fg3-li-dan-work-image-02",
+        "revision_id": "9403379950cc6c3c2751bcd40f932e4b53b49013a61018f606ed2554423da672"
+      }
+    ]
+  },
+  "master_approval": {
+    "object_id": "review-master-fg3-li-dan-work-image-02",
+    "revision_id": "b71141445dfca5a455c0939edef37ada19e3d5dea451ec5b4d5e1303ada4d23a"
+  },
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "生成一张完整形态的整体参考原件，单幅、单视点，不拼贴、不分格、不加标题或标注。二维动画手绘轮廓，低饱和色面，每面最多两级简洁阴影；场景用稀疏轻手绘背景，避免摄影、三维渲染、密纹、颗粒、厚纸纹和锐化。主体及道具端部全部留边入画。输出工具实际最高原生图，不放大。3:4竖幅浅暖灰底。参考图1保持李诞宽肩、发髻、胡茬、褐短衣、灰裤与黑布鞋。前年祭队旁的一瞬：同样日常码头短衣但干燥，无当晚新鲜汗斑；他站定未迈步，两手低低握一根朴素灰木挑货扁担，扁担斜垂身旁、两端全见，不肩扛、不画载物。脸朝画外祭队方向，欲动又停，嘴抿住。整个人从髻到鞋入画，无新伤、盔甲、文字、祭队或他人背景。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/0bf4cf4f59ec83dc60852ddc627c92bf8f7479568cb29bc15c14a8bafece11c4.png"
+    ]
+  }
+}

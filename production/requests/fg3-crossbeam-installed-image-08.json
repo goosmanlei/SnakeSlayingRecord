@@ -1,0 +1,83 @@
+{
+  "id": "fg3-crossbeam-installed-image-08",
+  "recipe_id": "form-crossbeam-installed",
+  "entity": {
+    "object_id": "entity-crossbeam",
+    "revision_id": "115731814d24b6b4b99e325d0f9286435df91fc1582e838690e44edf150b599c"
+  },
+  "state": {
+    "object_id": "form-crossbeam-installed",
+    "revision_id": "6aebcb9068b8679ec0831705ee267b417a819f5cbbb4a93a656ab52cfd5953db"
+  },
+  "requirement": {
+    "object_id": "need-form-crossbeam-installed-overall",
+    "revision_id": "3d892722f79033e0939a0c757b5d047a9373a96a7e2cff97c8566971526263e5"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-feeding-channel-base-image-02",
+        "revision_id": "40c463e5d080aca4387023e158cb95a75c6dc42c7de734d8d87eb3a30485e8e4"
+      },
+      "component_id": "original",
+      "sha256": "3bc99507444a691fb933dad0a7503343b3be448ad98732b1b0b39c1b0bd044a4",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：已认可完整短石道本体：南投食门、前后两块盖石、连续矮石侧墙、北闸后的封顶短段与岩根，原形和连接必须完整保留"
+    },
+    {
+      "reference": {
+        "object_id": "asset-fg3-crossbeam-base-image-01",
+        "revision_id": "94e9b74b04de561706b0c7aa2b5caf24b6a812493bc168c69555bd8f7f2d1e70"
+      },
+      "component_id": "original",
+      "sha256": "9ff476bb5d123bb9459100eb6667f542cbfb2e7ee2e17961bcfcb9777f7acf4f",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图2：已认可灰褐长圆木的完整形状和颜色，仅作为加装长横杠"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 2,
+    "references": [
+      {
+        "object_id": "asset-fg3-feeding-channel-base-image-02",
+        "revision_id": "40c463e5d080aca4387023e158cb95a75c6dc42c7de734d8d87eb3a30485e8e4"
+      },
+      {
+        "object_id": "asset-fg3-crossbeam-base-image-01",
+        "revision_id": "94e9b74b04de561706b0c7aa2b5caf24b6a812493bc168c69555bd8f7f2d1e70"
+      }
+    ]
+  },
+  "master_approvals": [
+    {
+      "object_id": "review-master-fg3-feeding-channel-base-image-02",
+      "revision_id": "ff13d6f38af207c59864fe82d88c40ffccf68c329b7ba466d9559954e149915c"
+    },
+    {
+      "object_id": "review-master-fg3-crossbeam-base-image-01",
+      "revision_id": "a385bcc1ca6f26edd57cb9a9cd218e8e0b76155725a956cc187743bd5d0ca050"
+    }
+  ],
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "Edit IMAGE 1 into a new complete 16:9 prop view. Preserve the ENTIRE original short stone passage, both cover slabs, southern small barred door, northern wooden sliding gate, roofed segment behind the gate and the rock root. Same viewpoint and clean flat-painted stonework. Widen only the blank background to fit the long timber from IMAGE 2. Do not replace or disconnect any stone parts.\nAdd this precise assembly to the original gate:\n1. Extend only the TOP of the wooden moving panel and both fixed posts upward, keeping the gate bottom closed and all original positions. The original locking pin remains through both posts near their top, with both ends visible. This TOP PIN HAS NO ROPE AT ALL.\n2. A small short wooden cleat is fixed centrally to the moving panel, well below the top pin but ABOVE the stone cover. Its ends stop well inside the two posts.\n3. Place the long beam from image 2 directly against the FRONT face of that cleat. The long beam is ONE CONTINUOUS SOLID LOG running all the way across IN FRONT OF both fixed posts. Its uninterrupted central surface must visibly cover the middle part of the short cleat. Never run the beam through a post hole or behind either post.\n4. Only TWO short tight rope loops hold the long beam and the short cleat together, like band clamps hugging two touching parallel logs. Put them near the CENTRE of the moving panel, far from both posts. There is NO vertical suspension rope, no rope up to the top pin, no ropes on the fixed posts. The top locking pin is visibly bare.\nThe long beam is well above the knee-high stone lids with a clear forearm-height gap. Both long ends hang freely over open flat ground. All ends and the complete stone body including rear roofed section and rock remain visible. Southern feeding door stays shut and barred. No figures, snake, arrows, labels or extra hardware. 本次只增加正确绑接：最上面的穿柱木栓完全无绳；长杠中央不断开、不穿柱、不退到后面；只有两圈短紧绳把前方整根长杠和其背后的活动短横木抱紧。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/3bc99507444a691fb933dad0a7503343b3be448ad98732b1b0b39c1b0bd044a4.png",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/9ff476bb5d123bb9459100eb6667f542cbfb2e7ee2e17961bcfcb9777f7acf4f.png"
+    ]
+  }
+}

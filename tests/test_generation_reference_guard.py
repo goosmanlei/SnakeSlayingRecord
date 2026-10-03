@@ -40,6 +40,26 @@ class ReferenceGuardTests(unittest.TestCase):
         with self.assertRaises(AssertionError):
             self.validate()
 
+    def test_later_user_feedback_can_repair_exact_candidate_without_rewriting_original_qa(self):
+        self.payload['verification']['self_review_status'] = 'self_pass'
+        feedback = {'object_id': 'user-feedback', 'revision_id': 'feedback-revision'}
+        self.request['same_state_repair']['feedback'] = feedback
+        decision = {'actor': 'user', 'verdict': 'changes_requested', 'target': self.asset}
+        def resolve(reference, kinds):
+            if kinds == {'JUDGMENT'}:
+                self.assertEqual(reference, feedback)
+                return {'payload': decision}
+            return {'payload': self.payload}
+        def check(state=None):
+            validate_reference_authorization(resolve, self.request, [self.asset], [state or self.state], self.entity, 'image')
+        check()
+        with self.assertRaisesRegex(AssertionError, 'cannot change'):
+            check({'object_id': 'different-state', 'revision_id': 'another'})
+        decision['target'] = {'object_id': 'other', 'revision_id': 'wrong'}
+        with self.assertRaisesRegex(AssertionError, 'another candidate'):
+            check()
+        self.assertEqual(self.payload['verification']['self_review_status'], 'self_pass')
+
     def test_user_approval_does_not_reset_or_extend_image_lineage(self):
         judgment = {'object_id': 'review-source', 'revision_id': 'review-revision'}
         self.payload['lineage']['i2i_depth'] = 2
@@ -118,6 +138,17 @@ class BuiltinPlanTests(unittest.TestCase):
         self.plan['blockers'] = ['child master approval required']
         with self.assertRaisesRegex(AssertionError, 'not executable'):
             validate_builtin_plan(self.plan, self.request)
+
+    def test_reference_limit_is_checked_before_a_new_call(self):
+        for count in (5, 6):
+            paths = [f'/managed/original-{i}.png' for i in range(count)]
+            self.request['request']['referenced_image_paths'] = paths
+            self.plan['parameters']['referenced_image_paths'] = paths
+            if count == 5:
+                validate_builtin_plan(self.plan, self.request)
+            else:
+                with self.assertRaisesRegex(AssertionError, 'at most 5'):
+                    validate_builtin_plan(self.plan, self.request)
 
 
 if __name__ == '__main__': unittest.main()

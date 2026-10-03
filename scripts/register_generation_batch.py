@@ -51,7 +51,13 @@ def validate_reference_authorization(resolve, request, references, states, entit
     assert repair.get('source') == source_ref
     source = image_sources[0]
     assert source['media_type'] == 'image' and source['states'] == states and source['subjects'] == [entity], 'repair cannot change identity/state'
-    assert source.get('verification', {}).get('self_review_status') == 'changes_requested'
+    feedback = repair.get('feedback')
+    if feedback:
+        decision = resolve(feedback, {'JUDGMENT'})['payload']
+        assert decision.get('actor') == 'user' and decision.get('verdict') == 'changes_requested', 'exact user repair feedback required'
+        assert decision.get('target') == source_ref, 'repair feedback targets another candidate'
+    else:
+        assert source.get('verification', {}).get('self_review_status') == 'changes_requested'
     lineage = request['lineage']
     assert lineage['references'] == [source_ref]
     assert lineage['i2i_depth'] == source['lineage']['i2i_depth'] + 1 <= 2
@@ -60,6 +66,7 @@ def validate_reference_authorization(resolve, request, references, states, entit
 def validate_builtin_plan(plan, request):
     actual = request['request']
     assert set(actual) <= {'prompt', 'transparent_background', 'referenced_image_paths'}, 'unsupported built-in parameter'
+    assert len(actual.get('referenced_image_paths', [])) <= 5, 'built-in tool accepts at most 5 reference images'
     assert plan['method'] == 'generate' and not plan.get('blockers'), 'prepared plan is not executable'
     assert request['model'] == plan['model'] == 'GPT Image', 'built-in model must match the exposed tool surface'
     assert actual['prompt'] == plan['prompt'], 'submitted prompt differs from its immutable prepared plan'

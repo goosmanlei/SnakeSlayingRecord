@@ -1,0 +1,57 @@
+{
+  "id": "fg3-cave-gate-up-image-01",
+  "recipe_id": "form-cave-gate-up",
+  "entity": {
+    "object_id": "entity-cave-gate",
+    "revision_id": "ed76d5b1efb108994ffe0ec7deaf09f5146f1d637a4d7b4d736f215012a7656c"
+  },
+  "state": {
+    "object_id": "form-cave-gate-up",
+    "revision_id": "25ec6ef4b2dba8fd4dc9b9ebb44a352638282ed08cb91d1128ae947564ee6fb3"
+  },
+  "requirement": {
+    "object_id": "need-form-cave-gate-up-overall",
+    "revision_id": "5e724e6a70e2d3aadf406097325fc7a13ce70815475b4bc8363935edbc55dcba"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-cave-gate-base-image-02",
+        "revision_id": "9f2dd5a25d3a9b294892313fcfc40dc380f838125ebdb5a2133b7f551a7e9bfe"
+      },
+      "component_id": "original",
+      "sha256": "1ebb9619a864ff72087147b6aa6d188d911a6a71a4a81968df78e997f9da0374",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：北端厚木滑闸、两木立柱与短锁销的干净母版"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-fg3-cave-gate-base-image-02",
+        "revision_id": "9f2dd5a25d3a9b294892313fcfc40dc380f838125ebdb5a2133b7f551a7e9bfe"
+      }
+    ]
+  },
+  "master_approval": {
+    "object_id": "review-master-fg3-cave-gate-base-image-02",
+    "revision_id": "c5929ad614df03fae2f0b615752fc7eb7425bc0c29b75d76d7b40effc9a77e2a"
+  },
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "生成一张新的完整状态整体参考，二维人物与轻手绘背景，低饱和自然色、清楚干净轮廓、平涂为主；保持准确母版身份、比例、配色与空间方向。不要摄影皮肤、纸纹噪点、厚肌理或过锐边缘。单幅单时刻，不是分镜拼图、裁切或放大。输出工具最高原生画面，无水印和装饰标题。\n完整原件按实际顺序输入：图1：北端厚木滑闸、两木立柱与短锁销的干净母版。\n4:3北端洞闸完整器物状态，正面略偏侧，全门两柱底石留边。唯一变化是厚闸板沿两木柱内槽竖直提起，板底离开底石，敞开低矮洞道；不是向侧面开扇。短圆木锁销已抽出，独立平放左侧墙根，柱孔全部空。厚板两侧仍卡在原导槽，不能悬空或换铁铰链。向南延伸的封顶短石道只作为简淡剖视方向背景，最远南门牢闩，不把它画成敞口渠；主体为整闸。图示承托不新增演员，勿给洞闸加长压杠，选择剧本早先赵执事与庙工提闸时点的器物状态。中性日光，无蛇体出院。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/1ebb9619a864ff72087147b6aa6d188d911a6a71a4a81968df78e997f9da0374.png"
+    ]
+  }
+}

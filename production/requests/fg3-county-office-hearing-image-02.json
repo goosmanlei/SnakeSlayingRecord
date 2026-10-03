@@ -1,0 +1,155 @@
+{
+  "id": "fg3-county-office-hearing-image-02",
+  "recipe_id": "form-county-office-hearing",
+  "entity": {
+    "object_id": "entity-county-office",
+    "revision_id": "9ac4243e97a3fd5301ea29edc304ae01b43bfab7e444699b5a8954523d4dec51"
+  },
+  "state": {
+    "object_id": "form-county-office-hearing",
+    "revision_id": "79ad1339f8c0e9f6553c1ac497650c07367e9fdb3d768846a7d80cc55f72b036"
+  },
+  "requirement": {
+    "object_id": "need-form-county-office-hearing-overall",
+    "revision_id": "1d55441338b18197a94b053ee2d0d6e112049a1f2f786334902f49179743a2f0"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-county-office-notice-image-01",
+        "revision_id": "765ab5e95b7c4a3160520e1184837e5dce4ae658998dd3328c273cf2c39506f3"
+      },
+      "component_id": "original",
+      "sha256": "4be212c63da8daa0c44a0adca126575de519f34eac7c62c9d9f58cbb63c3ba07",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：县衙三向空间和正堂案桌"
+    },
+    {
+      "reference": {
+        "object_id": "asset-fg3-sacrificial-registers-base-image-01",
+        "revision_id": "e3f11bc143d63f5d0d1cadbe063b8698e1ef30e65a56027856dad3cac67be322"
+      },
+      "component_id": "original",
+      "sha256": "9c02181bc0d74398f521f49b25172813f9444a04139e4d5b65bcc5aee1dd6fd5",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图2：准确三本祭册的封色大小和装订"
+    },
+    {
+      "reference": {
+        "object_id": "asset-fg3-debt-overlay-base-image-01",
+        "revision_id": "408d56a1d2c17cbe24b69eb1fd2cd52a0b002754e44c575b15af97c92053f0da"
+      },
+      "component_id": "original",
+      "sha256": "0d065828e859c5256997da967a358ffce3c277ced6fb886646556332edd24fe4",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图3：借据及已揭下的篡改贴纸"
+    },
+    {
+      "reference": {
+        "object_id": "asset-fg3-shop-ledger-base-image-01",
+        "revision_id": "6a8c5bbbbec2b541832d68122bc1e130742449856768650bf85e65f09d48c311"
+      },
+      "component_id": "original",
+      "sha256": "e5f3c33d27b9f5fe995c7582883b95752278506c7d371c35656e6221bb4ae5d2",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图4：底账开本和账页"
+    },
+    {
+      "reference": {
+        "object_id": "asset-fg3-approval-orders-base-image-01",
+        "revision_id": "8a24310783d55726b5c27d7458042983029ff1ace2f7ef373828a2fa9a559d4f"
+      },
+      "component_id": "original",
+      "sha256": "0fe50e1a1476fb2a63aa967d9690157a000bfb3304fa11ec6c0c8a59380baade",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图5：两份旧准祭批文和末尾相同签押"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 2,
+    "references": [
+      {
+        "object_id": "asset-fg3-county-office-notice-image-01",
+        "revision_id": "765ab5e95b7c4a3160520e1184837e5dce4ae658998dd3328c273cf2c39506f3"
+      },
+      {
+        "object_id": "asset-fg3-sacrificial-registers-base-image-01",
+        "revision_id": "e3f11bc143d63f5d0d1cadbe063b8698e1ef30e65a56027856dad3cac67be322"
+      },
+      {
+        "object_id": "asset-fg3-debt-overlay-base-image-01",
+        "revision_id": "408d56a1d2c17cbe24b69eb1fd2cd52a0b002754e44c575b15af97c92053f0da"
+      },
+      {
+        "object_id": "asset-fg3-shop-ledger-base-image-01",
+        "revision_id": "6a8c5bbbbec2b541832d68122bc1e130742449856768650bf85e65f09d48c311"
+      },
+      {
+        "object_id": "asset-fg3-approval-orders-base-image-01",
+        "revision_id": "8a24310783d55726b5c27d7458042983029ff1ace2f7ef373828a2fa9a559d4f"
+      }
+    ]
+  },
+  "master_approvals": [
+    {
+      "object_id": "review-master-fg3-county-office-notice-image-01",
+      "revision_id": "57c0bf399b4008332752d6ca317cd13e2731a60c1c61d01ab71f3434e0756e86"
+    },
+    {
+      "object_id": "review-master-fg3-sacrificial-registers-base-image-01",
+      "revision_id": "66260f24880ad0d86d2167cee3b3dbb8c9208d93a2e758dc635d8dc911566dbd"
+    },
+    {
+      "object_id": "review-master-fg3-debt-overlay-base-image-01",
+      "revision_id": "603e36b51c7aa4109d6e30652a1cab795685d5715179658efba17994dbc2bd51"
+    },
+    {
+      "object_id": "review-master-fg3-shop-ledger-base-image-01",
+      "revision_id": "862153727c4f07eeec67ff21e05623257836e79a6d8081cdbff3e11a0dfa8684"
+    },
+    {
+      "object_id": "review-master-fg3-approval-orders-base-image-01",
+      "revision_id": "60afb88b6d6e34f7fd3cf3e303f58fad609d388afa6620618e8888b6fa4d925a"
+    }
+  ],
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "生成一张新的完整状态整体参考，二维人物与轻手绘背景，低饱和自然色、清楚干净轮廓、平涂为主；保持准确母版身份、比例、配色与空间方向。不要摄影皮肤、纸纹噪点、厚肌理或过锐边缘。单幅单时刻，不是分镜拼图、裁切或放大。输出工具最高原生画面，无水印和装饰标题。\n完整原件按实际顺序输入：图1：县衙三向空间和正堂案桌；图2：准确三本祭册的封色大小和装订；图3：借据及已揭下的篡改贴纸；图4：底账开本和账页；图5：两份旧准祭批文和末尾相同签押。\n16:9日间县衙堂前证据整体布置，略俯视正堂大案。三本祭册后排，旧褐、灰蓝、米白三册恰好三个。前左旧借据与揭下贴纸分开放压，原纸揭贴处“本息共六斗”，小贴纸“七斗”“愿入庙供奉”；前右打开底账，旁放长窄浅米白折纸原单，原单上“祭户米两斗”。两份旧准祭批文并列在册旁；另有完整浅米白折纸诉状独立压好，题“诉状”。原单与诉状此轮只按锁定文字造型描述，未作为图片参考输入，勿借它们改变其他文书形状。每组有空隙，不融合文书。桌后素屏不变，左侧廊下登记桌、右前照壁方向可辨，同一县衙。空间与证据为主体，不设新官员、刑具或现代物。所有册纸完整入画，小字可稀疏不可读但不编新姓名日期。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/4be212c63da8daa0c44a0adca126575de519f34eac7c62c9d9f58cbb63c3ba07.png",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/9c02181bc0d74398f521f49b25172813f9444a04139e4d5b65bcc5aee1dd6fd5.png",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/0d065828e859c5256997da967a358ffce3c277ced6fb886646556332edd24fe4.png",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/e5f3c33d27b9f5fe995c7582883b95752278506c7d371c35656e6221bb4ae5d2.png",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/0fe50e1a1476fb2a63aa967d9690157a000bfb3304fa11ec6c0c8a59380baade.png"
+    ]
+  }
+}

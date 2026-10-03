@@ -1,0 +1,83 @@
+{
+  "id": "fg3-li-home-guest-image-01",
+  "recipe_id": "form-li-home-guest",
+  "entity": {
+    "object_id": "entity-li-home",
+    "revision_id": "41307f92c058e08d6f440e76fa8ae41ed80d4fcd814ea18c1776805a4cbc578a"
+  },
+  "state": {
+    "object_id": "form-li-home-guest",
+    "revision_id": "87c29eefa2a1862ae1b4af168c84ba3e0cea13beed6c9244d924f8840d48ec4c"
+  },
+  "requirement": {
+    "object_id": "need-form-li-home-guest-overall",
+    "revision_id": "e4f1f23e914f97f329292cb450f12d9f0c9f746f7b9a6693e4e997ce0e126d73"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-li-home-dinner-image-01",
+        "revision_id": "789bdf6b50b33625e54d00cec8a3a5de4b3d2cdff0196e1f11f9ec8efd9eb2d0"
+      },
+      "component_id": "original",
+      "sha256": "2495e4f4210b4e82a64da5c99ff06604c9cd47d154fd4b8e1e74b45dfc380071",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：李家整屋准确方桌、右后灶、左后里屋门、前门闩"
+    },
+    {
+      "reference": {
+        "object_id": "asset-fg3-lantern-image-01",
+        "revision_id": "c04b3877a5421432067f5bb24be40d19bf1af4b1e2325462de2f884df4e2c3af"
+      },
+      "component_id": "original",
+      "sha256": "db9bd8e4707d2533180622e8d44c50b16c171c3518b9da6772247861666e4b26",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图2：旧灯造型及提梁"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 2,
+    "references": [
+      {
+        "object_id": "asset-fg3-li-home-dinner-image-01",
+        "revision_id": "789bdf6b50b33625e54d00cec8a3a5de4b3d2cdff0196e1f11f9ec8efd9eb2d0"
+      },
+      {
+        "object_id": "asset-fg3-lantern-image-01",
+        "revision_id": "c04b3877a5421432067f5bb24be40d19bf1af4b1e2325462de2f884df4e2c3af"
+      }
+    ]
+  },
+  "master_approvals": [
+    {
+      "object_id": "review-master-fg3-li-home-dinner-image-01",
+      "revision_id": "2c3e9779068017537bf57801a01dc68c3d3a0df9033faf0d83f43f7e7f07a90b"
+    },
+    {
+      "object_id": "review-master-fg3-lantern-image-01",
+      "revision_id": "cfa293a74f1370e9c334d1414baef64a26926e852fa7abb93c12888b0065a8ec"
+    }
+  ],
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "生成一张全剧素材的完整状态整体参考。二维人物配轻手绘空间，低饱和自然色、清楚轮廓、平涂为主，保留已认可母版的建筑方向、器物比例、人物身份和衣色。干净边缘，轻背景笔触，无纸纹噪点、过锐、摄影皮肤或厚重肌理。单幅单时刻，不做分镜拼接；不新增剧情。输出模型可提供的最高原生画面，无水印、装饰边框。\n输入按顺序使用完整原件：图1：李家整屋准确方桌、右后灶、左后里屋门、前门闩；图2：旧灯造型及提梁。\n16:9夜间病人留宿安排的整体空间，沿图1同一镜头和家具位置，方饭桌居中偏左，左后里屋门打开可看见铺好干净褥子的床，堂屋右地面另铺一套简单临时睡铺。前门打开，门内横闩从槽退出放在门侧，路完全畅通，右后灶仍在。桌面收整，旧灯放桌上点亮、弱暖色覆盖床边，院里蓝灰。选留床已安排好的布置，不把家人全变成病人，不画病床占饭桌位置，不新增另一卧室；本张以完整房间和铺位为主体，无演员，基准内站坐的人移除。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/2495e4f4210b4e82a64da5c99ff06604c9cd47d154fd4b8e1e74b45dfc380071.png",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/db9bd8e4707d2533180622e8d44c50b16c171c3518b9da6772247861666e4b26.png"
+    ]
+  }
+}

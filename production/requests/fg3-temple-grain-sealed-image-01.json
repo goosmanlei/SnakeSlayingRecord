@@ -1,0 +1,155 @@
+{
+  "id": "fg3-temple-grain-sealed-image-01",
+  "recipe_id": "form-temple-grain-sealed",
+  "entity": {
+    "object_id": "entity-temple-grain",
+    "revision_id": "f446689d9dd82639ba2e1ef2dc217e33ccb6b49906fcd8c623abb2829fcf9c17"
+  },
+  "state": {
+    "object_id": "form-temple-grain-sealed",
+    "revision_id": "7aa727603cf8679b1327b374be237377c28ac10db3502bb244a39aa995a421c8"
+  },
+  "requirement": {
+    "object_id": "need-form-temple-grain-sealed-overall",
+    "revision_id": "7c6b3ba312411f32e543720f87e8031a1074d5374525b6f0062ea85113758143"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-temple-grain-stock-image-01",
+        "revision_id": "4019b1b947a63b65da6c6e226324e50a6e0f69de004720ba11bf409738c78018"
+      },
+      "component_id": "original",
+      "sha256": "5012c41213bd74360c3b76d98c1fd70af660a06a1d59fae972c84e4f75b4463f",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：同一仓院两桌、门、堆粮位置，去除旧赵执事"
+    },
+    {
+      "reference": {
+        "object_id": "asset-fg3-evidence-chest-base-image-01",
+        "revision_id": "43672cbbc90a6e03c95bd59d751b637c140405724f87e6695fe73e23ab7fd17d"
+      },
+      "component_id": "original",
+      "sha256": "ab117265a6297feaed4b0f4c53b0819c0380ca9b529f0a3c6cc6d16c49103a85",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图2：木账箱与封条锁扣"
+    },
+    {
+      "reference": {
+        "object_id": "asset-fg3-officer-second-base-image-01",
+        "revision_id": "86d6bbd5390ac908776f03ff4cb82ad3cbe7de8578e179988c8901c2c2a30e3f"
+      },
+      "component_id": "original",
+      "sha256": "5e0c46f3b46096af90eb0ed06fe72fbae791074084b3616d7367084c4a7c0089",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图3：守箱的另一名差役"
+    },
+    {
+      "reference": {
+        "object_id": "asset-fg3-grain-order-base-image-01",
+        "revision_id": "95782b97244d55a4ad8a5df69aa934c7a6173fe65b329a92b4a1fc1ff434d62c"
+      },
+      "component_id": "original",
+      "sha256": "7e8a84507903c9dfdeab3e462ff778be2d0ae2aad43e0fe7b153e4d5b5c786fb",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图4：备粮原单"
+    },
+    {
+      "reference": {
+        "object_id": "asset-fg3-debt-note-base-image-01",
+        "revision_id": "de7edca26bd02cde34aadf1165b0a3541adf1b8c81442b61699ba3e0893347d8"
+      },
+      "component_id": "original",
+      "sha256": "b474a3b8eb37db5f4ea3b677112609ee3b9599f8207c0282b4b163b466237ca8",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图5：带手印贴纸的借据，此时尚未湿揭"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 2,
+    "references": [
+      {
+        "object_id": "asset-fg3-temple-grain-stock-image-01",
+        "revision_id": "4019b1b947a63b65da6c6e226324e50a6e0f69de004720ba11bf409738c78018"
+      },
+      {
+        "object_id": "asset-fg3-evidence-chest-base-image-01",
+        "revision_id": "43672cbbc90a6e03c95bd59d751b637c140405724f87e6695fe73e23ab7fd17d"
+      },
+      {
+        "object_id": "asset-fg3-officer-second-base-image-01",
+        "revision_id": "86d6bbd5390ac908776f03ff4cb82ad3cbe7de8578e179988c8901c2c2a30e3f"
+      },
+      {
+        "object_id": "asset-fg3-grain-order-base-image-01",
+        "revision_id": "95782b97244d55a4ad8a5df69aa934c7a6173fe65b329a92b4a1fc1ff434d62c"
+      },
+      {
+        "object_id": "asset-fg3-debt-note-base-image-01",
+        "revision_id": "de7edca26bd02cde34aadf1165b0a3541adf1b8c81442b61699ba3e0893347d8"
+      }
+    ]
+  },
+  "master_approvals": [
+    {
+      "object_id": "review-master-fg3-temple-grain-stock-image-01",
+      "revision_id": "c6796c3f7ebdcc0504977ff674483be4f15a30a6c2d39e2e4b5397946741c0c1"
+    },
+    {
+      "object_id": "review-master-fg3-evidence-chest-base-image-01",
+      "revision_id": "ef312c7a4088739de9813b4455437dc87ee1ce702a3ade31dc97e12ddda3efa4"
+    },
+    {
+      "object_id": "review-master-fg3-officer-second-base-image-01",
+      "revision_id": "c014edb8ee891a1e40a4d3b002e79ae710726f0b7f0e3ffd38c2d69f86a77867"
+    },
+    {
+      "object_id": "review-master-fg3-grain-order-base-image-01",
+      "revision_id": "902b60770c0ee7a5ea736d03794a17feb956cd8109360066cc8c7b7793eb8426"
+    },
+    {
+      "object_id": "review-master-fg3-debt-note-base-image-01",
+      "revision_id": "22526f71586233db943ddef0e8230f5d8193fcc0767b8221d3c5cdedd95a49b6"
+    }
+  ],
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "新生成单幅完整状态整体参考，二维人物与清洁轻手绘背景，柔和清楚线条、低饱和平涂，保留准确参考的身份、轮廓、颜色和建筑方向。背景轻笔触，不加纸纹、脏颗粒、浮雕、锐化。不是多时刻拼图、照片或旧图放大；使用模型最高原生输出。\n完整原件按顺序输入：图1：同一仓院两桌、门、堆粮位置，去除旧赵执事；图2：木账箱与封条锁扣；图3：守箱的另一名差役；图4：备粮原单；图5：带手印贴纸的借据，此时尚未湿揭。\n16:9白日仓院封账查验，保持图1建筑布局，原赵执事撤去，东檐下桌旁图2账箱合盖封条完好，图3差役已验封站在箱边，目光看封口。桌面新接收文书与图4备粮原单、图5原借据平放，纸张相互分离，书写不新增数字日期，手印与篡改贴纸仍在。选原据陈列、守封的完整布置，不同时画后续湿揭贴纸、搬箱下山。北东粮袋两层、南侧量粮桌和左西门通路保持开放；这是仓院，不出现后院洞闸、高崖或祭坛。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/5012c41213bd74360c3b76d98c1fd70af660a06a1d59fae972c84e4f75b4463f.png",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/ab117265a6297feaed4b0f4c53b0819c0380ca9b529f0a3c6cc6d16c49103a85.png",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/5e0c46f3b46096af90eb0ed06fe72fbae791074084b3616d7367084c4a7c0089.png",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/7e8a84507903c9dfdeab3e462ff778be2d0ae2aad43e0fe7b153e4d5b5c786fb.png",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/b474a3b8eb37db5f4ea3b677112609ee3b9599f8207c0282b4b163b466237ca8.png"
+    ]
+  }
+}
