@@ -1,14 +1,14 @@
 # 审阅台自主优化运行报告
 
-任务：`task-20261004-0002`。本报告持续更新，当前为第十一批保存反馈、候选名称与发布演练的完整检查点，尚未达到收敛标准、结束优化或准备最终集成。最后复核时间为 **2026-10-04 07:10:54 +0800**。
+任务：`task-20261004-0002`。本报告持续更新，当前为第十二批历史引用、裁切采用与并发冲突的完整检查点，尚未达到收敛标准、结束优化或准备最终集成。最后复核时间为 **2026-10-04 07:43:39 +0800**。
 
 ## 当前结论与计时
 
 候选已修复准确候选和素材轮次显示、历史方案采纳保护、结构与章节导航、分轮评论草稿、评论与采用的断流恢复，以及完整导出／恢复的失败处理。长出处窄屏换行、可选或历史原件缺失时的下载限制也已通过相应真实页面与独立审查。项目背景仅在隔离预览更新；3000 正式服务仍是原有版本。
 
-配置与素材审阅保存的迟到回包、未知结果和保存后读取失败，已完成真实 Chrome 及历史核对；资料圈选、润色草稿和准确修订校验也已过独立与相应页面验收。共用原件的 A／B 资产另触发准确候选入口回退错误，已修复并以真实 A 提交核对。实体采纳、方向保存及列表失败的反馈已完成独立与真实页面验证；历史第二候选图片名称已校正，已撤回实体及素材计划的表达仍在补齐。发布隔离演练发现固定镜像 ID 的实际构建写法失败，尚待修复。相反变更复核的归并规则仍等待用户选择。
+配置与素材审阅保存的迟到回包、未知结果和保存后读取失败，已完成真实 Chrome 及历史核对；资料圈选、润色草稿和准确修订校验也已过独立与相应页面验收。共用原件的 A／B 资产另触发准确候选入口回退错误，已修复并以真实 A 提交核对。实体采纳、方向保存及列表失败的反馈已完成独立与真实页面验证；历史第二候选图片名称、已撤回实体及素材计划的表达已通过真实页面。发布封装的基础镜像构建失败已修复，并完成隔离 Docker 构建、切换与回滚；正式实例未动。剧本元数据存储异常已通过独立函数及正常 Chrome 路径；评论与配置的明确冲突反馈仍在修正。相反变更复核的归并规则仍等待用户选择。
 
-连续墙钟起点为 **2026-10-04 01:58:21 +08:00**，来自首次 mrun 输入所在轮次的服务端开始时间。六小时下限为 **07:58:21**，九小时收尾为 **10:58:21**，十小时硬截止为 **11:58:21**，均为同日北京时间。等待、暂停和离线均计入，恢复不重置。截至本检查点经过约 312 分钟，未触发九小时收尾，没有停止回执。一致快照采集于 **02:02:52 +08:00**，晚于起点约 4 分 32 秒；它是启动阶段的可复核基准，不能说成 T0 同一秒的现场快照。
+连续墙钟起点为 **2026-10-04 01:58:21 +08:00**，来自首次 mrun 输入所在轮次的服务端开始时间。六小时下限为 **07:58:21**，九小时收尾为 **10:58:21**，十小时硬截止为 **11:58:21**，均为同日北京时间。等待、暂停和离线均计入，恢复不重置。截至本检查点经过约 345 分钟，未触发九小时收尾，没有停止回执。一致快照采集于 **02:02:52 +08:00**，晚于起点约 4 分 32 秒；它是启动阶段的可复核基准，不能说成 T0 同一秒的现场快照。
 
 监督进程已通过锁与心跳核对，三个真实后代均已登记父子关系，登记后才授权调查。主协调、历史意见调查、系统清单和独立启动审查分工并行；未对其他任务实施监督。十小时远程停止尚未发生，不能用当前监督正常推断未来停止必定成功。
 
@@ -48,7 +48,7 @@
 
 ## 发现与处置
 
-已实现的修改及通过范围见上一节；下面列仍在处理、受阻或经调查未修改的发现。准确状态持续记录在本机 [findings.json](../.runtime/autonomous-optimization/findings.json)。
+已实现的修改及通过范围见上一节；下面按发现编号列出后续批次及处置状态，包含已完成、仍在处理和经调查未修改的发现；完整交付版将归并到实际改动与保留限制。准确状态持续记录在本机 [findings.json](../.runtime/autonomous-optimization/findings.json)。
 
 | ID／场景 | 证据与影响 | 当前处置及下一步 |
 | --- | --- | --- |
@@ -87,10 +87,13 @@
 
 | AO-040 共用原件的准确候选回退 | 同 CALL＋原件哈希去重代表项为 B，A 当前轮成员虽存在却回退到 B，所看标题与审阅目标不一 | P1，已修复，独立与 Chrome 通过。仅按当前轮真实成员和相同制作身份替换展示代表项，后端去重、候选数和轮次不变；不同 CALL 或不属当前轮不借回。真实从 B 切 A 后，A 原件、正文目标、路由和保存请求均为准确 A；原有显式 B 选择不被强清。见 [独审](../.runtime/autonomous-optimization/independent-exact-member-review.md)、[实际请求](../.runtime/autonomous-optimization/writer-browser/chrome-judgment-pending.json) |
 | AO-041 列表失败后假装仍在读取 | 保存成功后的列表 GET 503 永久留下“正在读取制作记录”；现在只由当前读取请求显示明确错误，并沿原导航恢复 | P2，已修复，独立与 Chrome 通过。真实第 5 次技术结论提交后列表 503，页面没有残留 loading，原素材导航恢复 8 条记录／5 条结论；5 POST 对应 5 判断且各仅 v1，0 采用／评论。反馈改为“当前页面尚未完整更新”，同时涵盖详情读取失败。见 [修后页面](../.runtime/autonomous-optimization/writer-browser/list-failure-fixed-chrome.json)、[真实保存](../.runtime/autonomous-optimization/writer-browser/list-failure-final-persistence.json) |
-| AO-042 已撤回实体旧链接误导待完善 | 包布实体及状态已撤回并归并李寄，旧链接仍显示状态0／描述待完善，缺少撤回依据 | P2，实体层已实现，准确归并、旧版本边界与素材卡撤回说明仍在复核，尚不算完成。旧内容、原件和评论保留；当前撤回不能回写成旧版本当时已撤回。见 [原页面](../.runtime/autonomous-optimization/withdrawn-link-before-browser.json)、[依据与边界](../.runtime/autonomous-optimization/withdrawn-context-design.md) |
+| AO-042 已撤回实体旧链接误导待完善 | 包布实体及状态已撤回并归并李寄，旧链接仍显示状态0／描述待完善，缺少撤回依据；现按当前准确记录说明撤回原因和归并去向，旧版本明确为“当前已撤回” | P2，已修复、独立与 Chrome 通过。准确跳到李寄包扎状态；旧实体 v1、两张历史原件及原评论保留；撤回的空方案不再提示未生成／待完善。未回写旧历史为当时撤回。见 [真实页面](../.runtime/autonomous-optimization/withdrawn-context-audit/current-state-chrome.json)、[旧评论](../.runtime/autonomous-optimization/withdrawn-context-audit/old-media-comments-chrome.json)、[独审](../.runtime/autonomous-optimization/independent-withdrawn-context-review.md) |
 | AO-043 历史第二候选放大图错名 | 同轮多个候选复制第一展示项名称，第二图仍叫首轮基准；现按每个准确修订选择其自身名称，保留准确的显式用途名 | P2，已修复，独立与 Chrome 通过。包布历史第二图灯箱正确显示“内置渠道返工”，仍加载原 4e1542…png 并指向第二 ASSET。没有改原件、去重、轮次或评论。见 [原错标](../.runtime/autonomous-optimization/withdrawn-second-image-modal-before.json)、[修后灯箱](../.runtime/autonomous-optimization/material-title-fix/chrome-after.json)、[独审](../.runtime/autonomous-optimization/independent-material-title-review.md) |
-| AO-044 发布基础镜像构建失败 | 本机 Docker 将 FROM sha256:imageID 解释为远端镜像名，真实构建失败，正式服务未变 | P1，确认后待修。正在隔离验证唯一本地基础标签及前后 ID 核对，不把离线发布检查写成 Docker 可执行。见 [实际失败](../.runtime/autonomous-optimization/docker-rehearsal/build-results.json) |
-
+| AO-044 发布基础镜像构建失败 | 本机 Docker 将 FROM sha256:imageID 解释为远端镜像名；现用任务唯一的本地标签，构建前后核对原镜像 ID、标签所有权与包文件 | P1，隔离修复通过。实际封装 build、纯 compose 生成的隔离双服务切换与回滚、42 个包文件哈希及两份新旧技术评论保留均已核对；8 条独立标签边界检查通过。没有执行完整正式 apply 或改 3000／64401。见 [真实构建](../.runtime/autonomous-optimization/docker-rehearsal/wrapper-build-results.json)、[切换回滚](../.runtime/autonomous-optimization/docker-rehearsal/compose-results.json)、[限制](../.runtime/autonomous-optimization/docker-rehearsal/report.md) |
+| AO-045 剧本定位元数据失败中断阅读 | 本机存储配额失败会使圈选后编辑器不打开；权限失败会让跨集目标已切换而正文未切换。现局部捕获定位元数据读写／清除异常，继续准确阅读并说明限制 | P1，已实现，9 条作者检查及 3 条独立真实回调检查通过；正文和请求 ID 的提交前持久化门槛保留。Chrome 正常圈选、Unicode 输入、刷新和原引用恢复通过，未提交评论。故障注入是函数层，未当作浏览器存储禁用验收。见 [独审](../.runtime/autonomous-optimization/independent-script-storage-review.md)、[正常页面](../.runtime/autonomous-optimization/script-storage-audit/normal-chrome.json) |
+| AO-046 素材轮冲突误报未知 | B 已推进新轮，A 旧轮真实 POST 409 明确拒绝，却提示原样重试确认保存；原输入及范围仍保留 | P2，修复中。独审挡住拒绝反馈被存储读取错误遮蔽、跨标签同 UUID 新尝试仍显示旧拒绝两项回归，当前候选尚未通过。需保持原准确载荷并按发送尝试区分结果，之后补同一旧轮 Chrome。见 [原页面](../.runtime/autonomous-optimization/round-conflict-before-feedback-fix.json)、[独审](../.runtime/autonomous-optimization/independent-comment-rejection-review.md) |
+| AO-047 取消草稿遇存储拒绝无反馈 | 共用取消函数首个 removeItem 失败使操作中断，未发现输入丢失 | P3，保留判断中：优先解决准确目标与明确冲突问题；拟只补失败反馈，不建立第二套存储，也不能假称已放弃内容。故障仅真实函数复现，见 [原检查](../.runtime/autonomous-optimization/script-storage-audit/results.json) |
+| AO-048 配置冲突与未知表达混杂 | 两窗口持 PROJECT v5，A 保存为 v6，B 的实际 PATCH 409 后独立输入仍保留，但同时说版本变化和结果待确认 | P2，窄修中：明确拒绝、未知结果和保存后读取失败分开；不自动提高版本或覆盖另一窗口结果。实际保护未失效，尚不能说修复通过。见 [真实冲突](../.runtime/autonomous-optimization/writer-browser/config-conflict-chrome.json) |
 
 AO-010／011／012 的 [独立复现报告](../.runtime/autonomous-optimization/independent-interaction-reproduction.md)明确区分真实函数／HTTP 与浏览器，数据只存在一次性夹具中，不改变正式评论、采用或用户接受。独立审查还发现评论实现的四条回归：本机存储失败丢文字、切换卡片遗留无锚点编辑器、首次失败未及时显示恢复说明，以及幂等重试成功但评论列表未变时编辑器未清理；均已按实际渲染反例修复并独立复审，后三条实际页面路径通过。浏览器存储禁写仍以真实渲染函数故障探针验证，未冒充浏览器存储环境验证，见 [独立复审](../.runtime/autonomous-optimization/independent-comment-persistence-review.md)。
 
@@ -110,12 +113,14 @@ AO-010／011／012 的 [独立复现报告](../.runtime/autonomous-optimization/
 - 素材实际记录筛选为 417 份，其中图像 370、声音 47；“李寄”关键词叠加图像为 31、声音为 5，搜索包含关联内容，不能解释为同名角色数量。零结果可明确识别，清除恢复 1,059 条全部记录。实际图像候选放大加载 2016×2688 原件、Esc 返回触发位置；实际 WAV 静音播放进度从 0.19 到 6.05 秒，Home、方向键、I／O 选出 0.1–0.2 秒。这里只验证播放和操作，没有声音质量听审或认可。见 [媒体验证](../.runtime/autonomous-optimization/media-filter-playback-browser.json)。
 - 新建独立空库补验三类阅读空态、无实体、无素材和无剧本依据的生产页；有效零评论资料仍可打开评论。空态阶段只在技术库选择一次技术方向 A，无评论或素材写入；后续为 AO-039 正常新增一份技术网格资料及两条区域评论，均非正式素材或创作意见。见 [阅读空态](../.runtime/autonomous-optimization/reading-empty-fixed-browser.json)、[生产空态](../.runtime/autonomous-optimization/production-empty-browser.json)。
 - 制作思路缺失和损坏 503 均有实际页面错误表达，其他导航仍可读，故障已恢复；主预览关系选段的收起重开保留正文与引用。主预览在这些阅读操作后 11 张业务表与启动备份一致，仅既述三条配置事件不同。见 [故障页面](../.runtime/autonomous-optimization/approach-failure-browser.json)、[关系草稿](../.runtime/autonomous-optimization/relationship-comment-browser.json)、[只读核对](../.runtime/autonomous-optimization/main-preview-after-reading-integrity.json)。
+- 60751 技术旧结构的新增整体评论在新旧稿切换、定位和刷新后仍归于旧稿 v1；当前稿仍为 0 评论。只读核对评论／事件均 3→4，旧评论和修订保留，见 [页面](../.runtime/autonomous-optimization/structure-global-comment-after-refresh.json)、[准确历史](../.runtime/autonomous-optimization/structure-global-comment-persisted.json)。
+- 52105 技术图像通过真实界面采用旧蓝图准确修订及 x=0.1、y=0.2、宽=0.3、高=0.4。随后正常导入新绿色 B v2，旧采用未变；真实弹窗仍打开旧蓝图，640×360 显示中的裁切框为 192×144、偏移64×72，与保存比例一致。没有自动换版或新增审阅结论；见 [正常导入回执](../.runtime/autonomous-optimization/crop-browser/append-b-receipt.json)、[页面与几何](../.runtime/autonomous-optimization/crop-browser/old-blue-crop-geometry.json)。
 - 历史意见与八个既有工作区的清单已建立，覆盖尚未完成，最终独立综合审查尚未执行；当前无最终候选、集成或正式部署收益。
 
 ## 恢复与后续交付
 
 恢复时先运行时间工具 `check` 和 `status`，读取本报告及 `.runtime/autonomous-optimization/` 下的基准与检查点。原 T0 和备份不得重建。若已到截止，只整理已有结果和回执。
 
-本批系统过程提交为 `10a11aa`，其后局部反馈修复仍在任务工作区；主预览 Python 服务仍为先前加载版本，静态资源按实际请求文件核对，不能用该提交号概括全部当前运行态。
+本批系统过程提交为 `d14ba39`，包含 AO-035／036／041／042／043；其后局部存储和冲突反馈修复仍在任务工作区；主预览 Python 服务仍为先前加载版本，静态资源按实际请求文件核对，不能用该提交号概括全部当前运行态。
 
 固定报告入口就是本文件。计时状态在 [state.json](../.runtime/autonomous-optimization/state.json)；结束后停止回执将保存在 `.runtime/autonomous-optimization/stop-receipt.json`，届时核对报告最后检查点与回执时间差。最终报告、双仓候选、真实验证和可执行交付顺序准备好后，等待用户明确确认，再按原任务流程集成／推送／切换服务。
