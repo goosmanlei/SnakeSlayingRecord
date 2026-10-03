@@ -1,0 +1,38 @@
+{
+  "id": "fg3-river-image-01",
+  "recipe_id": "form-river-street-day",
+  "entity": {
+    "object_id": "entity-river-street",
+    "revision_id": "c945ccd3987cf8c89d3e7803e0cf94ca64830769527dd7a4fdf668f240a61a2d"
+  },
+  "state": {
+    "object_id": "form-river-street-day",
+    "revision_id": "8ce38bbdc56e1cbcb95dd5839105d9aa06ee99c95347c0e643dfd4c7ea6fbaac"
+  },
+  "requirement": {
+    "object_id": "need-form-river-street-day-overall",
+    "revision_id": "2db28173e87b5cc04a4247145586a9c88892e84f92ee4d7a0ab279cb69defd69"
+  },
+  "request": {
+    "model": "gpt-image-2-5-sunburst",
+    "mode": "text2image",
+    "params": {
+      "imageCount": 1,
+      "aspectRatio": "16:9",
+      "resolutionTier": "4k",
+      "quality": "high",
+      "lockAspectRatio": true,
+      "outputFormat": "png",
+      "autoEnhancePrompt": false,
+      "variant": "sunburst",
+      "prompt": "二维人物＋轻手绘背景。正常身体比例，面部与衣饰简化，以外轮廓、姿态和少量大色块识别；柔和而清楚的线条，平涂为主，背景轻薄手绘笔触。无纸张颗粒、脏噪点、浮雕肌理、过锐边缘、密集纹理或摄影皮肤；高质量用于干净边缘与稳定比例。\n用途：全剧非歌曲实体的完整状态整体参考，不是分镜画面或多状态拼图。\n实体：河街。\n固定身份与制作造型：沿河一条窄街：以从米铺望向道具屋为正向，河在画面右侧，左侧是民居；米铺靠左岸街面，竹器摊位于其对街偏前、靠河一侧，道具屋再向前、门朝河。路宽约三人并行，留门槛、河岸石边与下浅滩台阶。瓦灰屋顶、土白墙、灰褐路面；远景轻笔概括，近景有明确行走边界。\n基础状态，同时覆盖实体身份；本任务不另外为实体再生成一张。\n本张完整形态：街、河、米铺与对街摊位位置按基础布局；衣绳上有三组稀疏衣物，道具屋外暗红幕布。低对比日光，米铺檐下和屋内较暗；不额外增加节庆旗灯。\n画面时刻选择所述状态中最早已成立的完整布置；日间用柔和自然光，暮色用低饱和灰蓝天光，夜间只保留所述灯源暖光，不在一张图拼接多时刻。\n本张为独立文字生成的干净基准，没有提交参考图片，不声称使用旧候选。\n画幅 16:9。单幅可理解的空间全景，轻微俯视而不压扁高度，前中后景和出入口清楚，主要通道完整入画；保留状态规定的固定布置，不用人物遮住空间，不新增剧情动作。\n不要添加水印、装饰边框或状态标题。必要道具文字只使用已指定的原句；其余用不可辨稀疏笔迹或留白，不补造歌词、日期、人物姓名或新剧情。"
+    },
+    "projectId": "8K6WcbrPLghSBJXBtWAE"
+  },
+  "input_files": [],
+  "authorization": "本任务用户指令：先生成代表母版供审阅；未代为采纳",
+  "lineage": {
+    "method": "text2image",
+    "i2i_depth": 0
+  }
+}
