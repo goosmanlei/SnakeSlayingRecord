@@ -1,0 +1,60 @@
+{
+  "id": "fg3-old-woman-base-image-02",
+  "recipe_id": "form-old-woman-base",
+  "entity": {
+    "object_id": "entity-old-woman",
+    "revision_id": "d3a6261e262372f3c2b39dce1fb01729f9e4b15d99807ccd7372a58c8d338310"
+  },
+  "state": {
+    "object_id": "form-old-woman-base",
+    "revision_id": "62686dff900a71e8c04150ec1dbaada4a7ad67d8029792e9be4b88c2565c8210"
+  },
+  "requirement": {
+    "object_id": "need-form-old-woman-base-overall",
+    "revision_id": "35bc37b38aff62917ad54c4d8314ca6b4f6d55a6a9674b6c1e2f3834b8808980"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-old-woman-base-image-01",
+        "revision_id": "853832b9ecb61a63612a17055c8597fdca6236695fea03e0b66cb03708a09dc2"
+      },
+      "component_id": "original",
+      "sha256": "a05fb5da0f3f699cdef3ab86c7cf6d16344425f81556380a12ed0ef113d6d7dc",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：完整原件，固定身份与画风，仅修改所列状态或自检问题。"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-fg3-old-woman-base-image-01",
+        "revision_id": "853832b9ecb61a63612a17055c8597fdca6236695fea03e0b66cb03708a09dc2"
+      }
+    ]
+  },
+  "same_state_repair": {
+    "source": {
+      "object_id": "asset-fg3-old-woman-base-image-01",
+      "revision_id": "853832b9ecb61a63612a17055c8597fdca6236695fea03e0b66cb03708a09dc2"
+    },
+    "reason": "参考图1只保留右侧老妇人，完整保留她的灰白发低髻、头巾、瘦脸、担忧神情、灰蓝旧衣、深褐裙裤、双脚鞋与身体姿态。彻底删除左侧女孩及其影子，原来牵孩子的手松开，自然略向前下方垂放，手的五指完整。画面只剩老妇人一个人，不增加人影、局部儿童手或布娃娃，不改变衣纹和画风。将单人适度居中，3:4头至鞋完整，纯浅暖灰底。"
+  },
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具未暴露底层模型ID、质量及像素选择；实际输出单独检测。",
+  "request": {
+    "prompt": "参考图1只保留右侧老妇人，完整保留她的灰白发低髻、头巾、瘦脸、担忧神情、灰蓝旧衣、深褐裙裤、双脚鞋与身体姿态。彻底删除左侧女孩及其影子，原来牵孩子的手松开，自然略向前下方垂放，手的五指完整。画面只剩老妇人一个人，不增加人影、局部儿童手或布娃娃，不改变衣纹和画风。将单人适度居中，3:4头至鞋完整，纯浅暖灰底。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/a05fb5da0f3f699cdef3ab86c7cf6d16344425f81556380a12ed0ef113d6d7dc.png"
+    ]
+  }
+}

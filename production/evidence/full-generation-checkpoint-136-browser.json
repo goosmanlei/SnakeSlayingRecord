@@ -1,0 +1,16 @@
+{
+  "browser": "Chrome / connected extension / browser 1",
+  "date": "2026-10-03",
+  "restored_instance": ".runtime/full-generation/checkpoint-136-restored",
+  "restored_port": 64397,
+  "restored_system_commit": "a6a9e9bbfa2cae97b27dd23b5e49398c69e24a70",
+  "checks": [
+    {"surface":"restored image","target_revision":"7c81c96c544fd6395d9ddb03ca4115c93a7f4d1919c7afcfb22c65f4f71d35a1","action":"opened exact requirement candidate, clicked image enlargement","original_sha256":"ec1df61175bd5621dfc331939261181472c6260b92ad84dc49b71c2004003a98","natural_width":1086,"natural_height":1448,"complete":true,"actual_model_label":"GPT Image","actual_parameters":{"transparent_background":false},"evidence":"production/evidence/full-generation-checkpoint-136-restored-image.png"},
+    {"surface":"restored audio","target_revision":"4780bf06e1124ebac048ac6fe5f36322def8b0b30a1fb13ddf75f18c2c266677","action":"clicked new candidate play button; observed playing then ended","original_sha256":"5e487073db461f41c2391ecf8e73b2c1731e9a61a43849a5ad95034a36ba84d4","duration":8.5,"current_time":8.5,"ended":true,"old_candidate_duration":12.38,"old_candidate_current_time":0,"new_and_old_call_prompts_distinct":true,"evidence":"production/evidence/full-generation-checkpoint-136-restored-audio.png"},
+    {"surface":"formal 3000 image","target_revision":"7c81c96c544fd6395d9ddb03ca4115c93a7f4d1919c7afcfb22c65f4f71d35a1","action":"opened exact requirement candidate, clicked image enlargement","original_sha256":"ec1df61175bd5621dfc331939261181472c6260b92ad84dc49b71c2004003a98","natural_width":1086,"natural_height":1448,"complete":true,"evidence":"production/evidence/full-generation-checkpoint-136-formal-child.png"}
+  ],
+  "formal_test_comments": 0,
+  "user_adoption_actions": 0,
+  "independent_auditory_review_by_codex": false,
+  "limit": "Image opening and audio playback were actually operated. These checks do not establish user acceptance, auditory identity quality, or validation of the ungenerated states. Earlier verified rounds, comment behavior and voice reuse are retained as their original scoped evidence."
+}

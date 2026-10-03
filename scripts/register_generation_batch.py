@@ -19,6 +19,14 @@ def ref(row):
 
 
 def validate_reference_authorization(resolve, request, references, states, entity, media):
+    image_sources = []
+    if media == 'image':
+        parents = [{k: r[k] for k in ('object_id', 'revision_id')} for r in references]
+        image_sources = [resolve(r, {'ASSET'})['payload'] for r in parents]
+        lineage = request.get('lineage', {'i2i_depth': 0, 'references': []})
+        expected_depth = max((a['lineage']['i2i_depth'] for a in image_sources), default=-1) + 1
+        assert lineage['references'] == parents, 'lineage must name every submitted reference'
+        assert lineage['i2i_depth'] == expected_depth <= 2, 'image lineage exceeds or resets the two-generation limit'
     if not references:
         return
     approval = request.get('master_approval')
@@ -33,12 +41,21 @@ def validate_reference_authorization(resolve, request, references, states, entit
     assert media == 'image' and len(references) == 1 and repair.get('reason'), 'approved master required'
     source_ref = {k: references[0][k] for k in ('object_id', 'revision_id')}
     assert repair.get('source') == source_ref
-    source = resolve(source_ref, {'ASSET'})['payload']
+    source = image_sources[0]
     assert source['media_type'] == 'image' and source['states'] == states and source['subjects'] == [entity], 'repair cannot change identity/state'
     assert source.get('verification', {}).get('self_review_status') == 'changes_requested'
     lineage = request['lineage']
     assert lineage['references'] == [source_ref]
     assert lineage['i2i_depth'] == source['lineage']['i2i_depth'] + 1 <= 2
+
+
+def validate_builtin_plan(plan, request):
+    actual = request['request']
+    assert set(actual) <= {'prompt', 'transparent_background', 'referenced_image_paths'}, 'unsupported built-in parameter'
+    assert plan['method'] == 'generate' and not plan.get('blockers'), 'prepared plan is not executable'
+    assert request['model'] == plan['model'] == 'GPT Image', 'built-in model must match the exposed tool surface'
+    assert actual['prompt'] == plan['prompt'], 'submitted prompt differs from its immutable prepared plan'
+    assert {k: v for k, v in actual.items() if k != 'prompt'} == plan['parameters'], 'submitted parameters differ from prepared plan'
 
 
 def main():
@@ -68,7 +85,33 @@ def main():
             request = read(request_path); media = item['media_type']; actual_references = []
             if 'call-' + label in heads or 'asset-' + label in heads:
                 raise ValueError('already registered call: ' + label)
-            if media == 'image':
+            if media == 'image' and request.get('tool') == 'image_gen.imagegen':
+                receipt_path = ROOT / 'production/receipts' / (label + '-builtin-complete.json')
+                receipt = read(receipt_path)
+                assert receipt['status'] == 'COMPLETED' and receipt['tool'] == 'image_gen.imagegen'
+                assert receipt['request_file_sha256'] == hashlib.sha256(request_path.read_bytes()).hexdigest()
+                assert receipt['sha256'] == item['sha256'] and receipt['file'] == item['file']
+                assert receipt['underlying_model_id'] is None, 'do not invent a hidden built-in model ID'
+                assert request['model'] == 'GPT Image'
+                prompt = request['request']['prompt']; model = request['model']
+                params = {k: v for k, v in request['request'].items() if k != 'prompt'}
+                assert set(params) <= {'transparent_background', 'referenced_image_paths', 'num_last_images_to_include'}
+                needs = [request['requirement']]; states = [request['state']]; entity = request['entity']
+                lineage = request['lineage']
+                for selection in request.get('references', []):
+                    actual_references.append({**selection['reference'], 'component_id': selection['component_id'],
+                        **{k: selection[k] for k in ('crop', 'range') if k in selection}})
+                # Local original inputs must exactly match the files actually submitted.
+                expected_paths = []
+                for selection in request.get('references', []):
+                    selected = p.ref_record(store, selection['reference'], {'ASSET'})['payload']
+                    component = next(c for c in selected['components'] if c['id'] == selection['component_id'])
+                    assert component['sha256'] == selection['sha256']
+                    expected_paths.append(str((ROOT / 'export/assets' / component['file']).resolve()))
+                assert params.get('referenced_image_paths', []) == expected_paths
+                assert not params.get('num_last_images_to_include'), 'managed calls must use exact local originals'
+                usage = item['usage']
+            elif media == 'image':
                 receipt_path = ROOT / 'production/receipts' / (label + '-connector-complete.json')
                 receipt = read(receipt_path)
                 assert receipt['status'] == 'COMPLETED'
@@ -96,6 +139,8 @@ def main():
                          'billing': 'provider output duration; live remaining balance is recorded separately'}
             for need in needs:
                 assert p.record(store, need['object_id'])['id'] == need['revision_id'], 'prepared plan changed'
+            if media == 'image' and request.get('tool') == 'image_gen.imagegen':
+                validate_builtin_plan(p.ref_record(store, needs[0], {'REQUIREMENT'})['payload']['generation'], request)
             approval = request.get('master_approval')
             validate_reference_authorization(lambda reference, kinds: p.ref_record(store, reference, kinds),
                 request, actual_references, states, entity, media)
@@ -108,7 +153,7 @@ def main():
             call_id, asset_id = 'call-' + label, 'asset-' + label
             call_payload = {'format': 'production-call-v1', 'title': item['title'] + ' · 实际输入',
                 'blocks': [{'id': 'description', 'text': '按任务授权执行；派生引用认可母版，同状态返工引用明确记录的待修候选，独立文字生成无媒体参考。真实输入、请求及回执保存，不推定新结果已被用户接受。'}],
-                'method': 'generation', 'tool': 'OpenArt connector' if media == 'image' else 'Doubao Speech HTTP',
+                'method': 'generation', 'tool': request.get('tool', 'OpenArt connector') if media == 'image' else 'Doubao Speech HTTP',
                 'status': 'submitted', 'model': model, 'prompt': prompt, 'parameters': params,
                 'inputs': [entity, *states, *actual_references], 'outputs': [], 'prepared_plan': needs[0],
                 'master_approval': approval, 'request_file_sha256': hashlib.sha256(request_path.read_bytes()).hexdigest(),

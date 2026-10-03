@@ -1,0 +1,60 @@
+{
+  "id": "fg3-woodcutter-base-image-02",
+  "recipe_id": "form-woodcutter-base",
+  "entity": {
+    "object_id": "entity-woodcutter",
+    "revision_id": "73c5acfd7c1bd30905468d561b0bb0258983fb517e173adb9679ad3ec2d34168"
+  },
+  "state": {
+    "object_id": "form-woodcutter-base",
+    "revision_id": "86b26f7e4f6f27c44c17f58de30d1793d4b31184ff1f1edab35fa285ab1375c6"
+  },
+  "requirement": {
+    "object_id": "need-form-woodcutter-base-overall",
+    "revision_id": "30b442d7aaa0d5c78541c86792f720f5fa302b924a514b655977fed539ec3c49"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-woodcutter-base-image-01",
+        "revision_id": "22310fec936018ee4379b8262d982afa287d09da3d12ba46e5837d95c76d9a86"
+      },
+      "component_id": "original",
+      "sha256": "6f9d79c6bd24284ff8e6ea29c0de0c245a9c758666079f67f880be28b96ee432",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：完整原件，固定身份与画风，仅修改所列状态或自检问题。"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-fg3-woodcutter-base-image-01",
+        "revision_id": "22310fec936018ee4379b8262d982afa287d09da3d12ba46e5837d95c76d9a86"
+      }
+    ]
+  },
+  "same_state_repair": {
+    "source": {
+      "object_id": "asset-fg3-woodcutter-base-image-01",
+      "revision_id": "22310fec936018ee4379b8262d982afa287d09da3d12ba46e5837d95c76d9a86"
+    },
+    "reason": "参考图1只修正当前卸担听曲状态的物件。保持老汉脸、灰白短须、松发髻、抬下巴笑的表情、浅土灰短褂、深褐裤、草鞋、全身站姿和原线色。删除背上全部柴捆、所有背负绳带，肩背恢复同一短衣。将右手旁竖在腿边的圆手杖改为一根卸下的扁担：朴素浅褐扁长木条，窄扁长方截面，两头轻薄圆润，中段略厚，一端落地，另一端约到肩高；无绳、无拐杖把、无叉枝。仍只一人，3:4完整头脚及扁担，浅暖灰底，不另加柴、篮或背景。"
+  },
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具未暴露底层模型ID、质量及像素选择；实际输出单独检测。",
+  "request": {
+    "prompt": "参考图1只修正当前卸担听曲状态的物件。保持老汉脸、灰白短须、松发髻、抬下巴笑的表情、浅土灰短褂、深褐裤、草鞋、全身站姿和原线色。删除背上全部柴捆、所有背负绳带，肩背恢复同一短衣。将右手旁竖在腿边的圆手杖改为一根卸下的扁担：朴素浅褐扁长木条，窄扁长方截面，两头轻薄圆润，中段略厚，一端落地，另一端约到肩高；无绳、无拐杖把、无叉枝。仍只一人，3:4完整头脚及扁担，浅暖灰底，不另加柴、篮或背景。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/6f9d79c6bd24284ff8e6ea29c0de0c245a9c758666079f67f880be28b96ee432.png"
+    ]
+  }
+}

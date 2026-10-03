@@ -1,0 +1,74 @@
+{
+  "id": "fg3-li-ji-healing-image-02",
+  "recipe_id": "form-li-ji-healing",
+  "entity": {
+    "object_id": "entity-li-ji",
+    "revision_id": "42af4494af12312922e3aa58ce011f67346ede435ef75b7b24a97827d999ec9b"
+  },
+  "state": {
+    "object_id": "form-li-ji-healing",
+    "revision_id": "258550b287f58d09196470efc058aab0747959777980fe63e32c99f4f0c6683d"
+  },
+  "requirement": {
+    "object_id": "need-form-li-ji-healing-overall",
+    "revision_id": "766c0134f12baa6d6da7135bcb07b27476479ec6ebac1b31c3456576d0c6016e"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-li-ji-healing-image-01",
+        "revision_id": "efc76226bb1fb9f19ab95febd475d1081ad029a7206845f80d76fcc78f8f6d94"
+      },
+      "component_id": "original",
+      "sha256": "f6d4362a4af291bca7304dacabac970f94e6c80886447114632b49b890285ab6",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "图片1：本准确完整状态的待修候选，只修已指出部位，不能作为另一状态母版。"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 2,
+    "references": [
+      {
+        "object_id": "asset-fg3-li-ji-healing-image-01",
+        "revision_id": "efc76226bb1fb9f19ab95febd475d1081ad029a7206845f80d76fcc78f8f6d94"
+      }
+    ]
+  },
+  "same_state_repair": {
+    "source": {
+      "object_id": "asset-fg3-li-ji-healing-image-01",
+      "revision_id": "efc76226bb1fb9f19ab95febd475d1081ad029a7206845f80d76fcc78f8f6d94"
+    },
+    "reason": "把现在偏画面右侧的额上旧痂完全移除，还原干净皮肤；在画面左侧眉梢外端上方、紧靠左发际的额角（人物自己的右额角）画同样大小的暗红短旧痂，没有新流血。不要放在眉心、额中央或画面右侧。左掌包布、衣服、发型、全身姿势都保持不变。"
+  },
+  "request": {
+    "model": "gpt-image-2-5-sunburst",
+    "mode": "image2image",
+    "projectId": "8K6WcbrPLghSBJXBtWAE",
+    "params": {
+      "imageCount": 1,
+      "aspectRatio": "3:4",
+      "resolutionTier": "4k",
+      "quality": "high",
+      "lockAspectRatio": true,
+      "outputFormat": "png",
+      "autoEnhancePrompt": false,
+      "variant": "sunburst",
+      "prompt": "以图片1为唯一参考，对这张李寄的同一完整状态做局部修正。输出3:4头到鞋完整原构图。严格保持脸、发式、身体比例、衣服颜色、线条、纸面质感和光照，不加纹理或锐化。\n把现在偏画面右侧的额上旧痂完全移除，还原干净皮肤；在画面左侧眉梢外端上方、紧靠左发际的额角（人物自己的右额角）画同样大小的暗红短旧痂，没有新流血。不要放在眉心、额中央或画面右侧。左掌包布、衣服、发型、全身姿势都保持不变。\n保持二维人物＋轻手绘背景，不增加标题、文字、箭头、标线或新物件。",
+      "visualReferences": [
+        {
+          "type": "image",
+          "id": "O9N7IaOY3TC47ro7RbzC",
+          "url": "https://cdn.openart.ai/openart-ai/production/2026-10/create-image/user_3E6ibhdvk1OmnOqEu3lD0Lcnjv4/gpt-image-2.5-sunburst-edit-1_1791003750585_3b516ac7.png",
+          "label": "图片1"
+        }
+      ]
+    }
+  }
+}
