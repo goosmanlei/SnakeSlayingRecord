@@ -17,6 +17,12 @@
 
 ## 已确认的制作系统方向
 
+- 用户于 2026-10-02 明确要求四个现有歌曲实体分别创作为可独立发布的完整作品，交付完整歌词、旋律、完整演唱成品音频及剧中可复用片段。用户后续明确允许歌曲创作需要时修改剧本已有歌词，不以原词一字不改为约束；改词需同步剧中对应唱词并保留历史。未定曲名可拟正式曲名；完整作品与剧中省段、缺词、哼唱等呈现分开，保留其剧情作用；新增或调整的词曲是本次原创制作内容，不冒充原剧本已经写出的事实。来源：本任务澄清会话用户原始说明、音频交付选项答复及随后放开原词修改的明确说明；具体范围见 `planning/complete-songs-task.md`。
+- 用户此前回复“好，继续整曲创作”，确认《三道滩》《送青篷》《四邻安》《明月还乡》的第一轮完整词稿、音乐方向及同步范围，允许进入整曲制作；这不构成音频接受或任务完成确认。唯一已确认正文扩写为 E17/s041 b009，母亲以《送青篷》起句无词旋律哼唱属于制作选择。准确词稿、旧实体修订及文件校验见本任务 `.runtime/songs/lyrics-approval.json`，持续交接见 `production/songs-review.md`。
+- 用户于 2026-10-03 先确认没有其他音乐生成平台订阅，随后完成 Lyria 接入并要求用它重制四首歌曲，回复“Implement the plan.”。本轮沿既有歌词和方向调用 Lyria，至多四次、当前估价合计 $0.32，不自动追加重试；不以另有 Suno／Udio 订阅为前提，不新增购买或充值。首曲 WAV 请求实际返回 MP3 后，用户明确同意“先完成四首 MP3 试听，WAV 母版保持待解决”；不撤销原生无损要求，也不表示已接受音频。来源：账户问题答复、Lyria 重制计划确认及格式问题补充答复。
+- 用户在试听本轮 Lyria 四首后，认为唱腔曲调更好听，同时明确四首约每一两句都有词音不对应，希望可读歌词与实际演唱相符。曲调方向的好评不构成歌词准确或整曲接受；生成接口返回歌词也不能代替实际录音核对。随后仅授权《三道滩》开头两句的一次豆包参考纠词试唱，并在实际听审后明确“曲调是保留的，但是发音仍然是不准的”；这份 12 秒短样未达到纠词目标，单次授权已用完，不等于授权四首再次重制。来源：歌曲任务会话实际听审意见、补充答复及单次短样授权；准确录音与意见见 `production/songs-review.md`。
+- 用户在两句纠词短样仍发音不准后，另行要求“先追加生成一首试一下”，并明确选择“继续用 Lyria 重生成《三道滩》”。这一授权仅覆盖一次新的整曲试唱，保留已确认歌词，不扩为另外三首或自动重试；MP3 试听与原生 WAV、实际听审接受继续分开。来源：歌曲任务会话新指令及方法选项答复，准确授权在 `.runtime/songs/lyria-boat-diction-v2/authorization.json`。
+- 用户在 2026-10-03 试听追加《三道滩》后仍指出唱词不准，明确要求按四首当前制作状态提交、集成并结束任务。现状交付不代表音频质量接受；纠词、Lyria 原生 WAV、逐句定位及新曲调片段、全部角色演法和正式剧本同步留待后续工作。当前阶段成果及原话分别在 `production/song-stage/README.md`、`production/song-stage/user-closeout-instruction.json`；任务完成与集成结果只读任务账本和受控回执。
 - 用户要求多份待审材料以表格、分栏或逐行列表提供，每份有独立可点击的链接，不把多个材料和链接揉在单行文字中。提供准确原件和修改点后，再单独询问认可范围。来源：本任务用户 2026-10-03 对审阅交接格式的明确要求。
 - 用户第九批评论要求石道保持短而连续，长横杠高于石盖并给两端成年人留出下压空间；横杠安装图还须沿用已认可石道本体，保留闸后封顶短段与岩根，不另造分离的机关。准确意见见 [首批反馈](production/full-generation/ninth-masters-feedback-registration.json)、[修正版反馈](production/full-generation/ninth-revised-feedback-registration.json)。南投食门及庙后院第六候选随后获用户“另外两张认可，继续修横杠”确认，绑定 [两份准确原件](production/full-generation/ninth-revised-masters-approvals.json)，不含当时的横杠候选。横杠第八候选随后获用户“认可，继续剩余生成”确认，见 [准确横杠认可](production/full-generation/crossbeam-continuity-approvals.json)；它为 D2，后续直接用相同认可石道 D1 与长杠 D0，不以认可重置谱系。
 - 用户对第八批固定 7 份回复“7 份均认可”，包括草图、洞闸、渡口、石阶、晾衣、唱工记录及米铺干净母版；具体原件与原代数见 [第八批准确认可](production/full-generation/eighth-masters-approvals.json)。
@@ -45,7 +51,7 @@
 
 - 用户于 2026-10-02 明确要求结束 `task-20260929-0003`，后续修改另行发布任务。本次按现有制作系统、全剧抽取、第一集镜头／方案和候选成果结项；未完成的基准、全套素材、动态分镜与工程保留为后续工作，不据此记录第一集就绪或媒体接受。来源：用户“好的，确认本任务完成吧，后续有其他修改我单独发布任务”；交付边界见 `planning/production-preparation-task.md`。
 - 产品界面的每项信息、控件与交互先说明它帮助用户理解、判断或完成什么动作；已有表达足够时不新增重复说明或替代入口。技术执行日志不默认进入创作审阅页，精简展示须保留准确数据、校验与追溯。用户于 2026-10-02 要求将“如无必要，勿增实体”作为全局规则，已写入本机有效 `~/.codex/AGENTS.md`。
-- 用户确认以 Seedance 2.0 原生有声视听预演组织第一集动态分镜。独立音频保留角色音色与歌曲旋律基准，定稿台词、歌词、说话人与时间写入逐镜计划，动物／环境／动作声随镜生成；不另制逐句台词轨。整段母版与用于生成的准确短片段分别管理。旧独立音轨需求按显式版本保护清理，实际原件、调用、评论与保留历史不改写。来源：本轮已确认计划，`production/native-audio-workflow.md` 和 `production/evidence/review-simplification-data.json`。
+- 用户确认以 Seedance 2.0 原生有声视听预演组织第一集动态分镜。独立音频保留角色音色与歌曲母版；歌曲现按上述新要求创作完整词曲与演唱成品，再准备剧中参考或合成所需片段。定稿台词、歌词、说话人与时间写入逐镜计划，动物／环境／动作声随镜生成；不另制逐句台词轨。整段母版与用于生成的准确短片段分别管理。旧独立音轨需求按显式版本保护清理，实际原件、调用、评论与保留历史不改写。来源：本轮已确认计划、歌曲创作选项答复，`production/native-audio-workflow.md` 和 `production/evidence/review-simplification-data.json`。
 - 素材参考在当前页弹窗查看准确版本、图像或声音范围，关闭后保留阅读位置与评论草稿。关系的剧情依据显示所引剧本修订中的具体集场与正文块，使用来源读取接口，不能把剧本当作制作对象读取。历史素材留在原卡片切换，浏览位置不伪造旧版素材与新需求的采用关系。技术阻断保留在工具校验和操作文档，不在卡片重复展示。来源：用户本轮八项优化要求、系统 `docs/materials-and-relationships.md` 和 `production/evidence/relationship-source-popup.json`。
 
 - 用户明确系统没有送审流程：AI 生成／修订，用户直接审阅并评论，Codex 按意见推进。实体基础信息常驻，下方选择完整状态且默认基础形态；完整描述后按每份素材固定两列列出素材与方案，阅读区不足 720 像素时单列。页面不提供内容编辑功能。来源：本任务实体卡讨论与后续实施要求。
@@ -70,6 +76,8 @@
 
 ## 制作数据与恢复约定
 
+- `scripts/lyria_music.py` 使用本机环境 `GOOGLE_API_KEY`，默认离线预览，显式 `--submit --max-cost-usd` 才提交单次 Lyria 请求；`--proxy` 支持 HTTP 代理，认证通过 `--proxy-user-env` 指定私有环境变量，不把凭据放入 URL 或项目。默认请求 MP3，省略通用 `response_format`；显式 WAV 使用音乐专用文档的 `response_format={"type":"audio"}`，本次四首重制的首曲实际仍返回 MP3，并保存 `completed_format_mismatch` 回执；不采用已被真实接口拒绝的通用 MIME／delivery 字段。输出留在指定歌曲工作区 `.runtime/lyria/`，跨 worktree 使用共同 Git 仓库下的账户锁。保存实际请求、原始响应与真实编码，不自动重试、转码、接受或正式登记；操作与恢复见 `production/lyria-music.md`。来源：用户 2026-10-03 指令、Google 音乐生成文档、实际拒绝回执、脚本及 `tests/test_lyria_music.py` 验证；实际网络可用性归 STATE。
+- 版本四歌曲来源核对：E01/s002 b019“会前两段。要唱几天？”回答的是迎蛇调，不能归入舟行曲；E03/s005 b014 是抄写的歌页，阿蘅实际哼唱在 b017。E04/s007 b006 只写母亲想跟哼后咳断，没有指定曲目；后续选曲须标为制作选择。来源：`imports/screenplay-04.json` 对应完整场次，整版准确依据见 `production/source-lock.json`；歌曲阶段候选尚不构成正式库修正完成，状态见 `production/songs-review.md`。
 - 用户于 2026-10-02 最终授权 task-20260929-0003 的故事和系统候选集成到各自 `main`、推送主干并切换 3000；后续任务基于这一新基准推进。正式业务库仍为主项目 `.runtime/review.sqlite3`，3000 是统一审阅入口；旧 39103 库保留作历史，不继续写入或导出。发布只追加制作对象、修订及引用，已有 264 条评论、293 条事件和原有正文、配置逐行保留。技术结项不等于首轮基准、全套媒体或动态分镜接受。来源：用户最终确认、`production/evidence/formal-release.json`。
 
 - 正式制作输入由 `production/source-lock.json` 保存。全剧可读抽取与来源在 `production/inventory.md`、`inventory.json`，第一集逐镜动作、状态及声音在 `production/episode01/`；事实、制作选择和未知分别记录。来源：版本四逐场检查与通用业务校验。
@@ -159,6 +167,8 @@
 
 ## 已核实的实施事实
 
+- 正式生成数据通过 `publish_generation.py` 或兼容的歌曲／全剧批次入口显式发布。包与原件须已随指定提交合入主目录 `main`，正式写入不补拷素材；数据库增量事务校验当前头和准确依赖，保留无关并发数据及旧历史。同事务的 `generation_publications` 执行记录使回执丢失后的原包重跑不重复入库；该表不属于公开业务导出。来源：`scripts/generation_publication.py`、`scripts/publish_generation.py` 与 `production/evidence/generation-workspace-verification.json`。
+- 生成工作区由故事工具 `scripts/generation_workspace.py` 统一校验；生成、登记、恢复和导出只写独立 worktree。`generation_review.py` 从正式库一致性备份建立任务审阅实例，保留初始化基线，已有实例不重置；预览端口自动选择，标题标明任务预览。账号互斥仍共享，Seed Audio 跨 worktree 汇总并去重配额回执。来源：`production/generation-workspaces.md`、对应脚本与离线／浏览器验收证据。
 - 制作页面以采纳／取消、评论、准确版本、筛选、预览和缺项检查推进审阅；导入、登记原件、修改说明与需求、维护关联由 Codex 通过后台 CLI／接口完成。旧 `entity-current-v1` 认可只绑定原实体、状态和素材范围：取消后范围仍完全一致时可重新认可，使用 `entity-content-v1` 保留历史链，不授予生成许可；真实内容修订后不走此兼容路径。生成许可单独核对当前关系、全部完整状态、需求、依赖和准备完整性。来源：本轮系统候选 `generation.py`、`test_material_relationships.py` 与隔离 Chrome 采纳循环；正式运行版本以 STATE.md 为准。
 - 直接关系的事实和证据选择归故事仓库：`scripts/entity_relationships.py` 维护端点、标签与方向，`production/relationship-evidence-selection.json` 为每条关系显式选择锁定版本四的场次和正文块。工具不再取第一个关键词附近的窗口；通用系统只读取准确引用，不补造关系或改写剧本。157 条的逐项核查、33 条修正及原问题截图见 `production/relationship-review.md`，旧关系修订和评论保留。来源：编制工具、锁定剧本、自动验证与隔离／正式弹窗回读。
 - 素材按一轮修订计版：需求建立、方案准备、首次实际调用及结果登记同属版本一；产出后明确修订意见启动下一轮，同轮多条意见、方案修改和生成不再加素材版。一般讨论、评论状态、元数据与关联补全不加版；内部准确修订、调用和采用继续保存。来源：用户发布的 `planning/material-review-optimization-task.md`、系统 `docs/material-versions.md` 及本任务隔离生命周期／并发验证。

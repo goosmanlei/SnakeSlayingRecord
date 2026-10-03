@@ -11,23 +11,31 @@ import json
 from pathlib import Path
 import sys
 
+try:
+    from .generation_workspace import generation_root, contained, isolated_instance
+except ImportError:
+    from generation_workspace import generation_root, contained, isolated_instance
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
 def main():
+    global ROOT
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--system', type=Path, required=True)
     parser.add_argument('--instance', type=Path, required=True)
+    parser.add_argument('--workspace', type=Path, default=ROOT)
     args = parser.parse_args()
+    ROOT = generation_root(args.workspace)
     sys.path.insert(0, str(args.system.resolve()))
     from review_desk import production as p
     from review_desk.production_media import ingest
     from review_desk.store import Store
-    instance = args.instance.resolve()
+    instance = isolated_instance(ROOT, args.instance)
     if instance == ROOT or instance == ROOT.parents[2]:
         parser.error('use an isolated instance, not either story checkout')
     store = Store(instance / '.runtime/review.sqlite3')
-    out = ROOT / 'production/baseline-records'
+    out = contained(ROOT, 'production/baseline-records')
     out.mkdir(parents=True, exist_ok=True)
     sequence = 0
 
@@ -48,7 +56,7 @@ def main():
         document = {'format': 'production-import-v1', 'records': records}
         result = p.import_records(store, document)
         sequence += 1
-        (out / f'{sequence:03d}.json').write_text(json.dumps(document, ensure_ascii=False, indent=2) + '\n')
+        contained(ROOT, out / f'{sequence:03d}.json').write_text(json.dumps(document, ensure_ascii=False, indent=2) + '\n')
         return result
 
     def component(path, role='original', cid='original'):

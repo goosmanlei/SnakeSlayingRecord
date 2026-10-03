@@ -11,6 +11,11 @@ import json
 from pathlib import Path
 import sys
 
+try:
+    from .generation_workspace import generation_root, contained, isolated_instance
+except ImportError:
+    from generation_workspace import generation_root, contained, isolated_instance
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -19,6 +24,7 @@ def read(path):
 
 
 def write(path, value):
+    path = contained(ROOT, path)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n')
 
@@ -37,11 +43,14 @@ def image_spec(old):
 
 
 def main():
+    global ROOT
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--system', type=Path, required=True)
     parser.add_argument('--instance', type=Path, required=True)
+    parser.add_argument('--workspace', type=Path, default=ROOT)
     args = parser.parse_args()
-    instance = args.instance.resolve()
+    ROOT = generation_root(args.workspace)
+    instance = isolated_instance(ROOT, args.instance)
     if ROOT not in instance.parents or '.runtime' not in instance.relative_to(ROOT).parts:
         parser.error('registration preparation requires an isolated instance under this worktree .runtime')
     sys.path.insert(0, str(args.system.resolve()))

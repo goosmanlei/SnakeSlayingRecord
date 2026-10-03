@@ -7,6 +7,11 @@ import json
 from pathlib import Path
 import sys
 
+try:
+    from .generation_workspace import generation_root, contained, isolated_instance
+except ImportError:
+    from generation_workspace import generation_root, contained, isolated_instance
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -74,14 +79,19 @@ def validate_builtin_plan(plan, request):
 
 
 def main():
+    global ROOT
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--system', type=Path, required=True)
     parser.add_argument('--instance', type=Path, required=True)
     parser.add_argument('--ids', nargs='+', required=True)
     parser.add_argument('--output', type=Path, required=True)
-    args = parser.parse_args(); instance = args.instance.resolve()
+    parser.add_argument('--workspace', type=Path, default=ROOT)
+    args = parser.parse_args()
+    ROOT = generation_root(args.workspace)
+    instance = isolated_instance(ROOT, args.instance)
     if ROOT / '.runtime' not in instance.parents:
         parser.error('use an isolated instance within this task worktree .runtime')
+    args.output = contained(ROOT, args.output)
     if args.output.exists():
         parser.error('this exact batch already exists; inspect before recovery')
     sys.path.insert(0, str(args.system.resolve()))
