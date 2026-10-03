@@ -1,38 +1,48 @@
 # 四首歌曲：整曲试听与恢复
 
-本轮已按用户要求用 Lyria 重制四首独立歌曲，交付原生 MP3 试听。用户在首曲请求 WAV 却返回 MP3 后明确回复：“先完成四首 MP3 试听，WAV 母版保持待解决”。四次调用额度已用完；没有追加重试、充值或自动接受音频。完整任务范围见[任务说明](../planning/complete-songs-task.md)。
+已按用户要求用 Lyria 重制四首独立歌曲，交付原生 MP3 试听；用户报告频繁词音不对应后，另行授权追加一次《三道滩》。最新 113.13625 秒录音已保存，待实际听审，不能记为纠词成功。首批四次和这次单独授权都已用完，没有自动重试、充值或接受音频。用户此前明确“先完成四首 MP3 试听，WAV 母版保持待解决”，原生无损要求仍有效。完整任务范围见[任务说明](../planning/complete-songs-task.md)。
 
 ## 当前试听
 
-打开[隔离歌曲审阅台](http://127.0.0.1:39114/?workspace=settings.workspace&production_entity=entity-boat-song)，选择歌曲的“独立整曲演唱”和“素材版本 2 · 当前”。作品基础信息保留已确认完整歌词与音乐方向；版本一中的 Seed Audio 候选及旧评论仍可查。独立歌手的演唱不自动代表阿蘅、母亲或歌娘。
+打开[隔离歌曲审阅台](http://127.0.0.1:39114/?workspace=settings.workspace&production_entity=entity-boat-song)，选择歌曲的“独立整曲演唱”。《三道滩》当前为素材版本 3，另外三首仍为素材版本 2。作品基础信息保留已确认完整歌词与音乐方向；旧录音及评论仍可切换查看。独立歌手的演唱不自动代表阿蘅、母亲或歌娘。
 
 以下路径以本任务 worktree 根目录为基准。四份原件位于 `.runtime/lyria/<尝试 ID>/audio-01.mp3`：
 
 | 歌曲／稳定实体 | 尝试 ID | 实际时长 | 原件 SHA-256 |
 | --- | --- | --- | --- |
-| 三道滩 `entity-boat-song` | `songs-boat-lyria-wav-v1-a01` | 123.533 秒 | `47a045195be06b3769197529fbd5d36bbfb017f12e0570215f4143b37dfe6f0a` |
+| 三道滩 `entity-boat-song` | `songs-boat-lyria-diction-v2-a01` | 113.13625 秒 | `eb62372ddfc872fdc4d5210ceb13dc7f3aaa9674be92727328880623b980eede` |
 | 送青篷 `entity-blue-awning-song` | `songs-blue-awning-lyria-mp3-v1-a01` | 144.065250 秒 | `c72e629b2268ab48893c7df6e5e097c5e58e4da066f5d1ee2bbcf64bdd0ad703` |
 | 四邻安 `entity-snake-welcome-song` | `songs-welcome-lyria-mp3-v1-a01` | 113.005667 秒 | `1523befb2c386401d7689a091f9a54476835e39c85387055a921050c7a0db64d` |
 | 明月还乡 `entity-blessing-stage-song` | `songs-blessing-lyria-mp3-v1-a01` | 170.370542 秒 | `ebad1c3e2a0c104397d072cf725c5d117675f7fae1ec6368115b7ce8c72058d0` |
 
-四首均为接口原始返回的 44.1 kHz、双声道 MP3，合计 13,247,699 字节；没有转码或升采样。首曲 ID 中的 `wav` 表示当时的请求，其回执仍为 `completed_format_mismatch`，实际格式未改写。其余三首按补充授权请求 MP3，回执为 `completed`。
+四首均为接口原始返回的 44.1 kHz、双声道 MP3，没有转码或升采样。最新《三道滩》为 2,721,348 字节、`completed`。版本 2 的 `songs-boat-lyria-wav-v1-a01` 仍是 123.533 秒 MP3，SHA-256 `47a045195be06b3769197529fbd5d36bbfb017f12e0570215f4143b37dfe6f0a`；其 ID 中的 `wav` 表示当时请求，`completed_format_mismatch` 历史回执不改。
 
-独立试听包为 `.runtime/songs/song-lyria-review-v1.zip`，含四首 MP3、完整干净歌词、音乐方案、原文同步范围、30 项剧中用法、四次原始请求／响应／回执、逐行文本核对与校验清单。准确文件数、大小和 SHA-256 保存在 `.runtime/songs/lyria-review/packet-receipt.json`。候选及制作过程留在 `.runtime/`，未放入公开 `export/` 或 Git。
+最新单曲包为 `.runtime/songs/boat-lyria-diction-v2-review.zip`：26 个文件、5,635,602 字节，SHA-256 `a46508831be885764b6d343b899a4b567051175b57c76f58eccefff4446ba292`。包含新 MP3、未修改的干净歌词、实际输入／响应／回执、用法表、核验及页面证据。原四首包 `.runtime/songs/song-lyria-review-v1.zip` 保留首批录音、完整词稿、音乐方案及同步清单，其中舟行曲仍是版本 2；旧包不覆盖。候选及制作过程留在 `.runtime/`，未放入公开 `export/` 或 Git。
+
+## 本次追加《三道滩》
+
+用户要求“先追加生成一首试一下”，并明确选择“继续用 Lyria 重生成《三道滩》”。本次仅提交一次 `lyria-3.5`，请求 MP3，估价 $0.08，账单未查询；不是继续豆包参考短样，也未安装本地歌声合成工具。歌曲任务共五次 Lyria 请求，估价合计 $0.40。
+
+十六行汉字歌词与获确认输入完全相同，文件 SHA-256 `9f3e10128adfd633a09fd63b13bc878ff65876532bcab264d481d414d59690bc`。音乐指令增加逐句拼音、明确声母韵母、减少拖腔、一字一个主要音符的要求，保留四段行船归家结构及原音乐方向。没有音频参考输入；这是重新作曲与演唱，不能保证保留旧曲调。
+
+返回文本第九行是“三道滩暮色深”，比原稿“三道险滩暮色深”少了“险”；其余十五行文字按原序返回。只对新音频运行一次已有本地 Whisper，不提供目标歌词，转写仍有多处差异。它既不能证明演唱合格，也不是可直接采用的新歌词；本会话未直接听辨，吐字是否改善以及新曲调、音色是否合用均待用户听审。
+
+阶段目录为 `.runtime/songs/lyria-boat-diction-v2/`。`authorization.json`、`pronunciation-map.json`、`technical-checks.json`、`whisper-turbo.json` 保存授权、字音对应与检查；`registration/receipt.json` 锁定准确素材修订 `72894b94e4ae68720ae08df802fa0c13843dfafa07fc8c2d0ab400fe0fb94ced`。沿现有 `asset-songs-boat-full` 和素材版本 3 追加，上一版整曲意见、两句短样失败意见及另外三首均保留；没有自动采用或继承旧版认可。
 
 ## 听审重点与未完成项
 
-**用户已实际试听，反馈四首唱腔曲调更好听，但约每一两句就有词音不对应；四首均未接受。** 本会话不能直接听辨这些音频。文件解码、播放器自然到达结尾和返回文本核对，只证明相应技术事实，不能证明中文咬字、音准、节奏、声线、情绪、噪声或自然收尾合格。音乐方案中的调式、节拍、音域与编配是生成输入，实际旋律由录音承载，尚无听辨核定的曲谱。
+**用户对首批四首的实际听审是唱腔曲调更好听，但约每一两句就有词音不对应；均未接受。最新追加《三道滩》尚待听审。** 本会话不能直接听辨这些音频。文件解码、播放器自然到达结尾和返回文本核对，只证明相应技术事实，不能证明中文咬字、音准、节奏、声线、情绪、噪声或自然收尾合格。音乐方案中的调式、节拍、音域与编配是生成输入，实际旋律由录音承载，尚无听辨核定的曲谱。
 
-- 《三道滩》和《明月还乡》：返回歌词文本与确认词稿的逐行顺序一致，实际演唱待核。
+- 首批《三道滩》和《明月还乡》：返回歌词文本与确认词稿的逐行顺序一致，实际演唱仍有用户反馈的问题。新《三道滩》另有上述漏字，不能继承旧文本核验。
 - 《送青篷》：返回文本覆盖全部 14 行，但把全词顺序重复两遍；与输入要求的两段自然收束不同，是否可用须听审，不能仅因时长完整而通过。
 - 《四邻安》：返回文本覆盖全部 14 行，开头额外有“啊”的衬声；领唱与众声应和是否实际成立、衬声是否合适待听审。庙方祈安是人物说辞，不是故事的客观事实。
 - 四首原生无损 WAV 仍缺。旧 Seed WAV 属于不同录音，不能补作本轮 Lyria 母版；MP3 解码为 WAV 也不满足原生无损要求。
 
-本批请求数已到四次，估价合计 $0.32，实际账单未查询。本批不再追加调用。随后获得并用完一次豆包短样纠词授权，具体见下一节；没有四首再次重制或最终任务完成确认。
+首批四次、豆包短样一次及另行授权的本次 Lyria 一次均已用完；没有继续重试、重制另外三首或最终任务完成确认。
 
 ## 词音核对与两句纠词短样
 
-四次 Lyria 真实请求均完整保留已确认词稿，未修改歌词。用户报告的频繁不对应已分别锚定四首准确素材，作品与审阅判断以新修订记录；原 ASSET、原件、旧评论和创作词稿未改。输入核验、意见登记和逐份自动转写在 `.runtime/songs/lyric-alignment/`。
+首批四次 Lyria 真实请求均完整保留已确认词稿，未修改歌词。用户报告的频繁不对应已分别锚定四首准确素材，作品与审阅判断以新修订记录；原 ASSET、原件、旧评论和创作词稿未改。输入核验、意见登记和逐份自动转写在 `.runtime/songs/lyric-alignment/`。
 
 对全部四首运行两轮本地 Whisper 和一轮已开通的豆包录音识别 2.0，均未输入原词或生成返回歌词。识别结果大量偏离原稿，部分彼此不一致或不成句，不能采纳为完整演唱歌词。结合用户实际听审，当前需处理演唱字音和歌词遵循问题，不能仅调整分行、延音记号或重复顺序后宣称一致。
 
@@ -40,21 +50,21 @@
 
 短样位于原歌曲“独立整曲演唱”下的“两句纠词短样（12秒）”素材卡，参考按钮可试听原 11 秒。用户实际对比后明确反馈：“曲调是保留的，但是发音仍然是不准的”。这份短样保住了曲调，但未达到纠词目标，未接受；不再要求用户重听同一版本。真实意见与 `changes_requested` 判断锚定短样修订 `e0641f6c5abaf2782d4e93369fd24587ac13b65dff22f587a8316026fc49677d`，恢复入口为 `.runtime/songs/lyric-alignment/pilot-feedback/receipt.json`。一次生成授权已用完，不自动追加或扩为四首重制。
 
-### 后续纠词方法
+### 已核查的备选纠词方法
 
 此次提示词已经给出目标汉字、部分拼音，并要求只参考曲调；实际听审仍未通过。参考音频可能同时带入原有字音，但这只是对失败原因的推测。已知结论仅是这次参考重唱没有修准发音，不能把接口字幕或提示词中的拼音当作精确发音控制。
 
 当前项目的 Lyria 与 Seed Audio 接口没有暴露逐音符、逐音素编辑参数；[Lyria 官方文档](https://ai.google.dev/gemini-api/docs/music-generation#limitations)也明确当前版本不支持对生成歌曲进行多轮编辑。因此不继续用同样参考及提示词扩做四首。
 
-下一条待验证路线是先把这两句旋律整理成音符与时值，将“一道险滩水急／船头慢慢行”逐字对应，延音只延长该字的韵母，再用可编辑字音的歌声合成引擎重唱。[OpenUtau 的 DiffSinger 支持](https://github.com/openutau/OpenUtau/wiki/DiffSinger-support)和[中文声库的音符／音素控制说明](https://github.com/yqzhishen/qixuan-diffsinger/blob/main/multilingual_usage_guidance/Multilingual_Usage_Guidance.zh-CN.md)证明有这种控制方式；不代表本机已完成部署或这两句已修好。
+另一条待验证路线是先把这两句旋律整理成音符与时值，将“一道险滩水急／船头慢慢行”逐字对应，延音只延长该字的韵母，再用可编辑字音的歌声合成引擎重唱。[OpenUtau 的 DiffSinger 支持](https://github.com/openutau/OpenUtau/wiki/DiffSinger-support)和[中文声库的音符／音素控制说明](https://github.com/yqzhishen/qixuan-diffsinger/blob/main/multilingual_usage_guidance/Multilingual_Usage_Guidance.zh-CN.md)证明有这种控制方式；不代表本机已完成部署或这两句已修好。本次用户选择继续 Lyria，未执行这条备选路线。
 
-本机应用目录未发现已安装的 OpenUtau 或 Synthesizer V。尚须准备准确曲谱、选择与角色相符的声库，核对实际组件许可，再验证字音、旋律和自然度。已查“绮萱”声库允许按条款发布合成作品，但对题材、署名和再利用另有约束；不能仅凭“免费”认定适合本剧所有歌曲。[声库使用条款](https://github.com/yqzhishen/qixuan-diffsinger/blob/main/terms_of_use/Terms_of_Use.zh-CN.md) 此路线会更换歌声音色，仍需另定试唱范围；本轮只核查方法，没有安装声库或发起新生成。
+此前核查时本机应用目录未发现已安装的 OpenUtau 或 Synthesizer V。尚须准备准确曲谱、选择与角色相符的声库，核对实际组件许可，再验证字音、旋律和自然度。已查“绮萱”声库允许按条款发布合成作品，但对题材、署名和再利用另有约束；不能仅凭“免费”认定适合本剧所有歌曲。[声库使用条款](https://github.com/yqzhishen/qixuan-diffsinger/blob/main/terms_of_use/Terms_of_Use.zh-CN.md) 此路线会更换歌声音色，仍需另定试唱范围；没有据此安装声库或执行合成。
 
 [本轮核对说明](../.runtime/songs/lyric-alignment/核对说明.md)列出原段、短样 WAV／MP3、真实授权、实际调用及校验清单。原 11 秒由 MP3 解码裁切，不能称原生无损母版；12 秒另演 WAV 也不补足四首整曲 WAV 要求。原四首试听包保持原样，本轮补充包为 `.runtime/songs/lyric-alignment-review-v1.zip`，文件清单和校验值见 `.runtime/songs/lyric-alignment/packet-receipt.json`。
 
 ## 剧中用法与片段
 
-`.runtime/songs/lyria-review/uses-with-audio.json` 保留全部 30 项准确原文用法：20 项发声呈现、10 项提及或可见歌页等非音频事项。每项指向准确 Lyria 整曲修订和原件，保留角色、唱法、歌词行及既有镜头。接口没有返回逐句时间戳，当前逐句范围为空，新旋律的短参考、角色另演与片段尚未产出。不能把旧时间或旧阿蘅清唱套到新旋律。
+当前 `.runtime/songs/lyria-boat-diction-v2/uses-with-audio.json` 保留全部 30 项准确原文用法：20 项发声呈现、10 项提及或可见歌页等非音频事项。本次只更新 `use-01`、`use-02`、`use-03` 的独立歌曲参考到新《三道滩》，其余 27 项不变，前一份 Lyria 表与旧准确引用保留。接口没有返回逐句时间戳，当前逐句范围为空，新旋律的短参考、角色另演与片段尚未产出。不能把旧时间或旧阿蘅清唱套到新旋律。
 
 第一集仍只对接既有 `shot-e01-001 / e01-line-001` 与 `shot-e01-003 / e01-line-002`，分别为舟行起句和省去中间两滩后的归家句；其他集按准确场次交接。缺词停唱、歌娘核字、母亲哼唱、集体领唱和庙戏需要相应表演，不能由同一独立歌手混音强行代替。
 
@@ -86,9 +96,13 @@
 
 词音反馈与短样登记后另在 `.runtime/songs/lyric-alignment/pilot-restored-review/` 从空库恢复，12 张表、154 个清单文件一致；272 条评论及既有事件保留，四份原整曲素材未变。增量证据为 `pilot-verification.json`；Chrome 已实际打开新增短样、原唱参考及真实用户意见，两段自然播放到尾，见同目录 `browser-verification.json`。播放验证不证明字音修正或保曲调成功。
 
-随后登记用户对短样的实际听审，评论增至 273 条。新的 `pilot-feedback-restored-review/` 空实例与活跃库的 12 张表、154 个清单文件一致；旧评论、事件、原件和实际调用保留。证据为 `pilot-feedback-verification.json`；Chrome 已实际回读短样标题下的意见与当前作品结论，见 `pilot-feedback/browser-verification.json`。本次只补验听审反馈变化，没有重复音频识别、播放测试或调用生成。既有试听 ZIP 保留其交付时快照，最新意见以活跃实例及上述回执为准。
+随后登记用户对短样的实际听审，评论增至 273 条。当时的 `pilot-feedback-restored-review/` 空实例与活跃库的 12 张表、154 个清单文件一致；旧评论、事件、原件和实际调用保留。证据为 `pilot-feedback-verification.json`；Chrome 回读短样标题下的意见与作品结论，见 `pilot-feedback/browser-verification.json`。该阶段只补验听审反馈变化，没有重复生成。既有试听 ZIP 保留交付时快照。
 
-真实 Chrome 验证结果见 `.runtime/songs/lyria-review/browser-verification-four-songs.json`。四首当前 MP3 的播放器读取、从头自然到尾与新旧版本切换有实际页面证据；此为静音传输验证，不是听审。既有时间段评论、参考预览机制的验证保留于 `.runtime/songs/audio-review/browser-verification.json`，输入为旧版 WAV，不扩大为新录音的歌词定位或新片段验收。
+本次追加整曲的原始字节、完整解码、准确录音引用及已确认词稿不变均核对通过。`.runtime/songs/lyria-boat-diction-v2/restored-review/` 从空库恢复，12 张表、163 个清单文件与活跃实例一致；274 条评论包含一条本次真实追加指令，旧评论与事件逐行保留。另外三首和短样的准确修订未变。证据为同阶段 `verification.json`。
+
+本次 Chrome 实际核验新整曲从头自然播放到 113.13625 秒、素材版本 3／2 切换、完整歌词和真实历史意见，见 `browser-verification.json` 与 `browser.png`。这是静音传输验证，不是听审；没有重跑无变化的另外三首或评论／参考机制回归。
+
+首批四首 Chrome 验证结果见 `.runtime/songs/lyria-review/browser-verification-four-songs.json`。其 MP3 播放器读取、从头自然到尾与新旧版本切换有实际页面证据；此为静音传输验证，不是听审。既有时间段评论、参考预览机制的验证保留于 `.runtime/songs/audio-review/browser-verification.json`，输入为旧版 WAV，不扩大为新录音的歌词定位或新片段验收。
 
 当前活跃库为 `.runtime/songs/review-instance/.runtime/review.sqlite3`，39114 端口。服务停止时先确认端口空闲、通用系统仍为 `config/instance.json` 锁定的 `15822ae77d9b6c3851852555a677d11d7adc7c10`，再从 worktree 根目录启动：
 
@@ -97,8 +111,8 @@ PYTHONPATH="$HOME/codex-path/creative/story-review-desk-python" \
   python3 -m review_desk --instance .runtime/songs/review-instance serve --port 39114
 ```
 
-继续前先读活跃实例最新评论及准确接受记录。不要重跑 `prepare_review.py`、`register_audio_review.py` 或恢复脚本覆盖活库。本轮登记已全部完成，批次和回执在 `.runtime/songs/lyria-review/registration/`；新修改用新修订，旧 CALL 输入和旧素材原件不变。
+继续前先读活跃实例最新评论及准确接受记录。不要重跑准备、登记或恢复脚本覆盖活库。首批登记在 `.runtime/songs/lyria-review/registration/`，本次追加在 `.runtime/songs/lyria-boat-diction-v2/registration/`；两者均已完成。新修改用新修订，旧 CALL 输入和旧素材原件不变。
 
 旧 Seed 阶段独立包 `.runtime/songs/song-audio-review-v1.zip` 保留 64 个文件及十个片段，SHA-256 为 `6d5e891db94fea10b1233a68263d7f7b712f549b6e5f5069c2b78df10a75b096`。首曲格式停点包 `.runtime/songs/lyria-first-attempt-review.zip` 也保留为历史，不作为四首当前交付。旧记录不能继承为 Lyria 的接受或母版证明。
 
-下一步核定逐字配唱路线的实际工具、声库及两句音符对应，再确定新的试唱范围；已失败的短样保留为历史，不扩用同一方法。随后解决完整实唱歌词、WAV、逐句定位、角色演法与片段，再准备正式增量发布和验收。最终候选与交付流程齐备后才请用户确认完成并集成，然后执行 `_complete`。当前没有正式发布、推送或任务完成。保留 worktree 和分支，正常退出会话后才释放运行锁。
+下一步听审新《三道滩》，据实际吐字和音乐表现决定后续；原两句失败短样保留，不要求用户重复听同一版本。随后解决完整实唱歌词、WAV、逐句定位、角色演法与片段，再准备正式增量发布和验收。最终候选与交付流程齐备后才请用户确认完成并集成，然后执行 `_complete`。当前没有正式发布、推送或任务完成。保留 worktree 和分支，正常退出会话后才释放运行锁。
