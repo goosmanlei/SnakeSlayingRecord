@@ -11,24 +11,73 @@
   },
   "requirement": {
     "object_id": "need-form-county-office-notice-overall",
-    "revision_id": "df01cdb20e1058a005199fcda46b7483fcecbebc40f44fafc6b93204ddd0519c"
+    "revision_id": "548a414018bc36a2a95051eb020b5f22699cc8b3d6a9923eba6b4ed80525ed39"
   },
   "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
-  "references": [],
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-clerk-notice-base-image-01",
+        "revision_id": "39dd011fe142235ad477e78917a97ad11585199a672ceaa1766a2f8c21936264"
+      },
+      "component_id": "original",
+      "sha256": "6b63bed57d3dcfef27ea4fbe46be119bfd4d880b02382761e356b7d355213b79",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：抱文书书吏的已认可身份。"
+    },
+    {
+      "reference": {
+        "object_id": "asset-fg3-volunteer-notice-base-image-01",
+        "revision_id": "aa1a58afb7d5e595a5aa2e6e52faac12aff8446c279140649be8dbb231c72a8c"
+      },
+      "component_id": "original",
+      "sha256": "f57717fc87ade188bb29ada335571c290b5dff462ec25320fe15b9834ebd4583",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图2：照壁应募木牌和底部窄木条的准确形态与文字。"
+    }
+  ],
   "lineage": {
-    "i2i_depth": 0,
-    "references": []
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-fg3-clerk-notice-base-image-01",
+        "revision_id": "39dd011fe142235ad477e78917a97ad11585199a672ceaa1766a2f8c21936264"
+      },
+      {
+        "object_id": "asset-fg3-volunteer-notice-base-image-01",
+        "revision_id": "aa1a58afb7d5e595a5aa2e6e52faac12aff8446c279140649be8dbb231c72a8c"
+      }
+    ]
   },
+  "master_approvals": [
+    {
+      "object_id": "review-master-fg3-clerk-notice-base-image-01",
+      "revision_id": "1f08cb77b7457ae8156b7931a64f5f569b41eca624225e4814030490803e5315"
+    },
+    {
+      "object_id": "review-master-fg3-volunteer-notice-base-image-01",
+      "revision_id": "6e3cdf24821129e08291317cb4bd4083644f82f7d37a570b7734e452ba1f5f3d"
+    }
+  ],
   "tool": "image_gen.imagegen",
   "model": "GPT Image",
-  "model_identity_note": "image_gen.imagegen工具表面名称GPT Image；未暴露底层型号、分辨率和quality参数。",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
   "request": {
-    "prompt": "二维人物＋轻手绘背景。正常身体比例，面部与衣饰简化，以外轮廓、姿态和少量大色块识别；柔和而清楚的线条，平涂为主，背景轻薄手绘笔触。无纸张颗粒、脏噪点、浮雕肌理、过锐边缘、密集纹理或摄影皮肤；高质量用于干净边缘与稳定比例。\n用途：全剧非歌曲实体的完整状态整体参考，不是分镜画面或多状态拼图。\n实体：县衙。\n固定身份与制作造型：县衙面向内院：入口照壁在近处右侧，左檐廊下设登记桌，正前方两级台阶进入堂前案桌，桌后素屏。灰墙、暗木柱、褐木桌，各区域以同一院地连通；选定状态聚焦相应区域仍保留方向线索，不把三处叠成同一背景。\n基础状态，同时覆盖实体身份；本任务不另外为实体再生成一张。\n本张完整形态：场景布置：旧应募木牌与窄木条，抱文书的书吏将离开。\n空间布局：县衙照壁、廊下登记桌和堂前案桌各有位置；不合成无方向的单一背景。\n画面时刻选择所述状态中最早已成立的完整布置；日间用柔和自然光，暮色用低饱和灰蓝天光，夜间只保留所述灯源暖光，不在一张图拼接多时刻。\n本张为独立文字生成的干净基准，没有提交参考图片，不声称使用旧候选。\n画幅 16:9。单幅可理解的空间全景，轻微俯视而不压扁高度，前中后景和出入口清楚，主要通道完整入画；保留状态规定的固定布置，不用人物遮住空间，不新增剧情动作。\n不要添加水印、装饰边框或状态标题。必要道具文字只使用已指定的原句；其余用不可辨稀疏笔迹或留白，不补造歌词、日期、人物姓名或新剧情。\n本张采用Codex内置GPT Image独立文字生成，无上传参考图片。保留上述16:9画幅与完整入画要求，使用工具实际可提供的最高原生尺寸，不放大、不拼图。不增加纸纹、噪点、锐化、雕花或无依据的跨场道具；保留干净二维线色和轻手绘底。",
-    "transparent_background": false
-  },
-  "channel_switch": {
-    "from": "OpenArt connector",
-    "remaining_credits": 77,
-    "reason": "用户预授权余额不足时使用内置渠道，无充值、购买或新开计费渠道。"
+    "prompt": "单幅完整整体参考，不分格、不拼贴、不画标题、水印、箭头或尺寸标注。干净二维动画线条与低饱和平涂，背景轻手绘、大块柔和明暗；不要写实摄影、三维建模、厚纸纹、颗粒、锐化、繁密装饰。主要对象全部入画并留边。输出工具可提供的最高原生图，不放大。画幅16:9，清楚的宽景空间参考，平视略高的自然三分之二视角。建筑、出入口和所述功能区关系要一眼看懂。人物如有仅按指定参考出现，不新增身份或剧情。县衙近关门时的整体空间基准。入口前右侧是土白照壁，照壁上挂参考图2的完整旧木应募牌：上“应募除蛇”，底部另钉窄木片“暂停送人入洞”，保持牌形和位置，不增假官文。由照壁左边绕入同一院子，左边檐廊下设空登记桌，正前方两级矮阶通堂前案桌和素屏。灰墙、暗木柱、灰瓦、素褐桌，空间朴素规模小，无宏伟宫殿。参考图1的同一抱卷书吏在左廊收文书准备离开，脸、冠和灰衣不变，人物占幅小。门将关尚有暮前余光，不作深夜。清楚显示三处区域的连通关系，照壁不挡住全部内院。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/6b63bed57d3dcfef27ea4fbe46be119bfd4d880b02382761e356b7d355213b79.png",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/f57717fc87ade188bb29ada335571c290b5dff462ec25320fe15b9834ebd4583.png"
+    ]
   }
 }

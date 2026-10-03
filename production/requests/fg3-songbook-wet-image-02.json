@@ -1,0 +1,57 @@
+{
+  "id": "fg3-songbook-wet-image-02",
+  "recipe_id": "form-songbook-wet",
+  "entity": {
+    "object_id": "entity-songbook",
+    "revision_id": "6e88c28d85f24f7a841e0bcf77c88a230cd44441500e99a122658a68e802df44"
+  },
+  "state": {
+    "object_id": "form-songbook-wet",
+    "revision_id": "e8361952aeaa869a1a3493dfff40bd9a67be4b62c0787df0c6b687b0a8e90f59"
+  },
+  "requirement": {
+    "object_id": "need-form-songbook-wet-overall",
+    "revision_id": "be89e0388d1e40724cb6d2d77221ba67f09596ab4a180acc22aa24a8cd941338"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-songbook-base-image-03",
+        "revision_id": "9445e15dfd4469422b88020d616029c829e7559253f639561a412c440edac731"
+      },
+      "component_id": "original",
+      "sha256": "9d2780553a4d35649e2ed7b4d7e15642a1c4be2d42110a7c3fdc9b412afe26ce",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：固定用户认可歌本身份；从此干净母版直接生成浸水半页残缺，不使用上次 D2 结果。"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 2,
+    "references": [
+      {
+        "object_id": "asset-fg3-songbook-base-image-03",
+        "revision_id": "9445e15dfd4469422b88020d616029c829e7559253f639561a412c440edac731"
+      }
+    ]
+  },
+  "master_approval": {
+    "object_id": "review-master-fg3-songbook-base-image-03",
+    "revision_id": "539524c25886e84ba049d4831ddbf1ed17178ae1d6bd5023b855ddaabf62559d"
+  },
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "单幅完整整体参考，不分格、不拼贴、不画标题、水印、箭头或尺寸标注。干净二维动画线条与低饱和平涂，背景轻手绘、大块柔和明暗；不要写实摄影、三维建模、厚纸纹、颗粒、锐化、繁密装饰。主要对象全部入画并留边。输出工具可提供的最高原生图，不放大。画幅4:3，浅暖灰无纹理底，柔和中性光，物件完整参考。参考图1固定阿蘅灰青素封皮、左脊三孔麻线的歌本身份，改成浸水裂页后的残本。书完整敞放于画面中央，书脊朝左，封皮被浸深但灰青色仍可认。左脊麻线松开、几张湿米黄页散离，纸有大皱折和水痕。必须非常明确：右侧最后一张页的下半截已经撕失，只有上半页还贴在书内；下半部分露出背后的灰青封底，破口参差。残存半页上的墨混成一团，无法读出整段。另两张缺页已漂走，不在画面补齐；不能把完整整页仅画湿。不展示领唱旧纸，也不放新补抄纸。全书和两三片幸存湿页完整留边。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/9d2780553a4d35649e2ed7b4d7e15642a1c4be2d42110a7c3fdc9b412afe26ce.png"
+    ]
+  }
+}

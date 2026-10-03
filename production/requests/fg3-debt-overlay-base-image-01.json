@@ -11,24 +11,47 @@
   },
   "requirement": {
     "object_id": "need-form-debt-overlay-base-overall",
-    "revision_id": "bee4f725071e6d3ebbee8fe954d9dd7dc7007d6168649eb25d7ee6d194e56cdb"
+    "revision_id": "599a5bfef712e6585d606237ae4a0ba4a57ad48cd24e086b34b8ecb7675cfc57"
   },
   "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
-  "references": [],
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-debt-note-base-image-01",
+        "revision_id": "de7edca26bd02cde34aadf1165b0a3541adf1b8c81442b61699ba3e0893347d8"
+      },
+      "component_id": "original",
+      "sha256": "b474a3b8eb37db5f4ea3b677112609ee3b9599f8207c0282b4b163b466237ca8",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：准确认可原件；按提示词中参考图1的用途保持身份与结构，使用完整原件。"
+    }
+  ],
   "lineage": {
-    "i2i_depth": 0,
-    "references": []
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-fg3-debt-note-base-image-01",
+        "revision_id": "de7edca26bd02cde34aadf1165b0a3541adf1b8c81442b61699ba3e0893347d8"
+      }
+    ]
+  },
+  "master_approval": {
+    "object_id": "review-master-fg3-debt-note-base-image-01",
+    "revision_id": "22526f71586233db943ddef0e8230f5d8193fcc0767b8221d3c5cdedd95a49b6"
   },
   "tool": "image_gen.imagegen",
   "model": "GPT Image",
-  "model_identity_note": "image_gen.imagegen工具表面名称GPT Image；未暴露底层型号、分辨率和quality参数。",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
   "request": {
-    "prompt": "严格的单幅道具设定图，画面只呈现下面指定物件及其全部必要组成。不要人物、脸、头、半身或全身，不要分格、多角度拼图、示意箭头或文字标签。人名、转手、使用地点只说明物件归属与用途，不代表要画出使用者或完整使用场景；如物件必须附着才能看懂，只用无身份的素灰手模或承托局部。物件不能被裁切，以干净暖灰背景隔离。\n二维人物＋轻手绘背景。正常身体比例，面部与衣饰简化，以外轮廓、姿态和少量大色块识别；柔和而清楚的线条，平涂为主，背景轻薄手绘笔触。无纸张颗粒、脏噪点、浮雕肌理、过锐边缘、密集纹理或摄影皮肤；高质量用于干净边缘与稳定比例。\n用途：全剧非歌曲实体的完整状态整体参考，不是分镜画面或多状态拼图。\n实体：借据篡改贴纸。\n固定身份与制作造型：一小片浅米白窄纸，宽约借据三分之一，墨色新于底纸；可读“七斗”与“愿入庙供奉”，其余处留疏淡不可辨笔迹。粘贴与湿揭状态保持相同大小、纸角和墨迹，不撕碎销毁。\n基础状态，同时覆盖实体身份；本任务不另外为实体再生成一张。\n本张完整形态：使用位置：普通转手不另拆状态。\n完整形态：盖在借据手印前的新贴纸，写添粮条款及“愿入庙供奉”，与原纸相接。\n本张为独立文字生成的干净基准，没有提交参考图片，不声称使用旧候选。\n画幅 4:3。完整道具或该状态全部组成作为单幅整体参考，三分之四视角，轮廓清楚、比例可辨，浅暖灰简底、柔和中性光。必要承托部位仅帮助理解附着和受力，不能用细节裁切替代全部形态。\n不要添加水印、装饰边框或状态标题。必要道具文字只使用已指定的原句；其余用不可辨稀疏笔迹或留白，不补造歌词、日期、人物姓名或新剧情。\n本张采用Codex内置GPT Image独立文字生成，无上传参考图片。保留上述4:3画幅与完整入画要求，使用工具实际可提供的最高原生尺寸，不放大、不拼图。不增加纸纹、噪点、锐化、雕花或无依据的跨场道具；保留干净二维线色和轻手绘底。",
-    "transparent_background": false
-  },
-  "channel_switch": {
-    "from": "OpenArt connector",
-    "remaining_credits": 77,
-    "reason": "用户预授权余额不足时使用内置渠道，无充值、购买或新开计费渠道。"
+    "prompt": "单幅完整道具参考图，干净二维线条、低饱和大色块，柔和中性光，浅暖灰空底。全部指定组成完整留边；不用分格、箭头、标题、水印、人物或额外故事场景。无纸纹噪点、锐化及写实浮雕。保持参考的物件身份与配色，仅修改指定状态。使用工具最高原生输出，不放大。3:4。本图目标是借据上那条篡改贴纸的完整贴附状态。参考图1固定同一旧黄借据、左下红手印和中央细长较白新贴纸。全部旧借据仍完整入画作承托，突出贴纸边缘、底部略翘小角及较浅纸色。贴纸竖写“七斗 愿入庙供奉”，覆盖底下原字；此时尚未湿揭，不露出六斗，不画分离的第二纸条、手或水布。整体风格色彩保持参考，纸面不再增加纹理。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/b474a3b8eb37db5f4ea3b677112609ee3b9599f8207c0282b4b163b466237ca8.png"
+    ]
   }
 }

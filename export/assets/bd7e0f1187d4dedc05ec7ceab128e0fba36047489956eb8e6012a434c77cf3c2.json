@@ -1,0 +1,57 @@
+{
+  "id": "fg3-feeding-channel-cut-image-01",
+  "recipe_id": "form-feeding-channel-cut",
+  "entity": {
+    "object_id": "entity-feeding-channel",
+    "revision_id": "f84493b316778af2c0eae5d30d17fbd6d0b04edc5dc8b80e9a7d01872df720e8"
+  },
+  "state": {
+    "object_id": "form-feeding-channel-cut",
+    "revision_id": "d36d5d382b72f6696a8d21070d373fa30fa57f86f864feafbc21b79508a8e352"
+  },
+  "requirement": {
+    "object_id": "need-form-feeding-channel-cut-overall",
+    "revision_id": "1250df92429b13386273a946ba59e311861cbf185c255a78a0fb95ec80027c54"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-feeding-channel-base-image-02",
+        "revision_id": "40c463e5d080aca4387023e158cb95a75c6dc42c7de734d8d87eb3a30485e8e4"
+      },
+      "component_id": "original",
+      "sha256": "3bc99507444a691fb933dad0a7503343b3be448ad98732b1b0b39c1b0bd044a4",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：用户认可的短石道：固定短长度、两块盖石、北木闸及南门，改变接缝处指定局部。"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 2,
+    "references": [
+      {
+        "object_id": "asset-fg3-feeding-channel-base-image-02",
+        "revision_id": "40c463e5d080aca4387023e158cb95a75c6dc42c7de734d8d87eb3a30485e8e4"
+      }
+    ]
+  },
+  "master_approval": {
+    "object_id": "review-master-fg3-feeding-channel-base-image-02",
+    "revision_id": "ff13d6f38af207c59864fe82d88c40ffccf68c329b7ba466d9559954e149915c"
+  },
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "单幅完整整体参考，不分格、不拼贴、不画标题、水印、箭头或尺寸标注。干净二维动画线条与低饱和平涂，背景轻手绘、大块柔和明暗；不要写实摄影、三维建模、厚纸纹、颗粒、锐化、繁密装饰。主要对象全部入画并留边。输出工具可提供的最高原生图，不放大。画幅4:3，浅暖灰无纹理底，柔和中性光，物件完整参考。参考图1中的全部结构、朝向、比例及颜色逐一保持：画面后方北侧是岩洞与落底木闸，前方南侧是关闭且上横闩的小投食门，主石道仅一小步长、两块厚盖石，北闸后更短一截盖石接岩洞。唯一变化是主石道两块盖石的接边新凿一条细窄横缝，横过通道全宽，宽度只够刀身厚度通过。两盖石都已归位，除细线般狭缝外全部严密封顶。用缝边略新的浅灰石色提示凿痕，不扩大成槽或洞。不插刀、不放人、不加长横杠、不放木条；整组结构完整入画。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/3bc99507444a691fb933dad0a7503343b3be448ad98732b1b0b39c1b0bd044a4.png"
+    ]
+  }
+}
