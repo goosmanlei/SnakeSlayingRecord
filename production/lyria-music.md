@@ -14,17 +14,17 @@
 
 本机通过 Clash 调用不需要额外代理认证。若直接使用认证代理，用户名与密码通过私有环境变量 `LYRIA_PROXY_USER`，值为 `用户名:密码`，再用 `--proxy-user-env LYRIA_PROXY_USER` 选择它；不要把值放在命令行、规格或回执中。本会话只曾临时注入直接代理检查进程，未永久配置或写入项目。本工具不设置全局代理。
 
-本工具按当前官方 `lyria-3.5` 与 Interactions API 契约准备，默认 MP3 已真实生成验证；WAV 请求按音乐文档只设置 `response_format={"type":"audio"}`，其实际支持仍待验证，不添加被实测拒绝的通用 MIME／delivery 字段。真实费用尚待核账。官方入口：[音乐生成](https://ai.google.dev/gemini-api/docs/music-generation)、[接口字段](https://ai.google.dev/api/interactions-api)、[价格](https://ai.google.dev/gemini-api/docs/pricing)。
+本工具按当前官方 `lyria-3.5` 与 Interactions API 契约准备，默认 MP3 已真实生成验证；WAV 请求按音乐文档只设置 `response_format={"type":"audio"}`，歌曲任务本轮首曲按此参数实际返回 MP3，回执为 `completed_format_mismatch`，原生 WAV 尚未取得；不添加被实测拒绝的通用 MIME／delivery 字段。真实费用尚待核账。官方入口：[音乐生成](https://ai.google.dev/gemini-api/docs/music-generation)、[接口字段](https://ai.google.dev/api/interactions-api)、[价格](https://ai.google.dev/gemini-api/docs/pricing)。
 
 ## 工作区与输入
 
-以下命令默认从实际歌曲任务 worktree 根目录执行。程序尚在主项目时，可通过相对路径复用：
+以下命令从已合入工具的歌曲任务 worktree 根目录执行：
 
 ```bash
-python3 ../../../scripts/lyria_music.py --check
-python3 ../../../scripts/lyria_music.py --check-api --proxy http://127.0.0.1:7897
+python3 scripts/lyria_music.py --check
+python3 scripts/lyria_music.py --check-api --proxy http://127.0.0.1:7897
 # 已验证的认证代理；LYRIA_PROXY_USER 必须已在执行进程中配置。
-python3 ../../../scripts/lyria_music.py --check-api \
+python3 scripts/lyria_music.py --check-api \
   --proxy http://brd.superproxy.io:44445 --proxy-user-env LYRIA_PROXY_USER
 ```
 
@@ -52,17 +52,17 @@ python3 ../../../scripts/lyria_music.py --check-api \
 
 ```bash
 # 默认离线预览完整输入，不创建调用目录，不读取 Key，不联网。
-python3 ../../../scripts/lyria_music.py .runtime/songs/requests/boat-lyria-v1-a04.json
+python3 scripts/lyria_music.py .runtime/songs/requests/boat-lyria-v1-a04.json
 
 # 只有实际生成范围和预算已明确时，才执行这一条。
-python3 ../../../scripts/lyria_music.py .runtime/songs/requests/boat-lyria-v1-a04.json \
+python3 scripts/lyria_music.py .runtime/songs/requests/boat-lyria-v1-a04.json \
   --submit --max-cost-usd 0.08 \
   --proxy http://127.0.0.1:7897
 ```
 
 `--workspace` 默认当前工作目录，必须指向歌曲 task worktree 根目录；即使程序从主项目调用，输出也在该工作区的 `.runtime/lyria/<id>/`。各 worktree 通过共同 Git 仓库下的 `.runtime/lyria/account.lock` 串行提交；占用时直接退出，不等待或抢占。
 
-`--max-cost-usd` 必须明确提供，至少覆盖本工具按 2026-10-03 官方价格记录的每请求 $0.08 估算。它只是本次单请求的预检查，不是平台侧硬限额或批次累计预算；实际价格、账单及总尝试次数由执行会话核对。用户已授权本轮经 Clash 的一首试生成；这不等于自动授权全部歌曲或不限次数尝试。
+`--max-cost-usd` 必须明确提供，至少覆盖本工具按 2026-10-03 官方价格记录的每请求 $0.08 估算。它只是本次单请求的预检查，不是平台侧硬限额或批次累计预算；实际价格、账单及总尝试次数由执行会话核对。歌曲任务后来获得四首重制授权，已完成四次调用；首曲格式不符后又获补充 MP3 授权。此批额度已用完，不据此追加尝试。当前四首、准确原件及待听审项见 [整曲交接](songs-review.md)。
 
 每次只 POST 一次，不做自动重试，也不自动换模型。尝试目录已存在时拒绝再次提交；超时、连接中断或不确定服务错误记录 `unknown`，不能通过删除目录或换 ID 自动重发。先核对服务端／账单和已有结果，再决定是否另开尝试。
 
@@ -79,7 +79,7 @@ python3 ../../../scripts/lyria_music.py .runtime/songs/requests/boat-lyria-v1-a0
 服务端成功但本地解码／探测失败时，可在原响应仍在的条件下离线恢复，不再次计费：
 
 ```bash
-python3 ../../../scripts/lyria_music.py \
+python3 scripts/lyria_music.py \
   --recover .runtime/lyria/boat-lyria-v1-a03
 ```
 

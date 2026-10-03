@@ -1,36 +1,27 @@
-# 给歌曲创作会话的交接话术
+# Lyria 歌曲任务恢复入口
 
-目标会话：`01a0fd62-c36c-73a0-bed8-9cb2fdc66d67`，歌曲任务 `task-20261002-0004`。下面正文可直接复制给该会话。本轮准备程序并经 Clash 实际试生成，没有自动发送消息。
+歌曲任务 `task-20261002-0004` 已合入主干 `ebda293d674410b1d483e7fdaae1781c181662e1` 的 Lyria 工具，并在自己的工作区完成四首 MP3 重制候选。当前交付、准确版本及恢复步骤以 [四首歌曲交接](../production/songs-review.md) 和 [STATE](../STATE.md) 为准；不能按早期单曲接入话术重新发起生成。
 
----
+## 当前材料
 
-本项目已准备好 Lyria 完整歌曲调用程序，并经 Clash 成功生成一首《三道滩》候选。请在当前四首歌曲任务中承接准确原件并继续听审。Key 从本机环境变量 `GOOGLE_API_KEY` 读取，不要询问或回显 Key，也不要写入项目文件。
+以歌曲任务 worktree 根目录为基准：
 
-程序、操作说明和测试位于主项目。以你的歌曲 task worktree 根目录为基准，入口是：
+- 工具及使用方法：`scripts/lyria_music.py`、`production/lyria-music.md`；12 条 Lyria 与 4 条 Seed Audio 回归在合并后的代码通过。
+- 四次真实调用：`.runtime/lyria/songs-boat-lyria-wav-v1-a01/`，以及 `songs-blue-awning-lyria-mp3-v1-a01/`、`songs-welcome-lyria-mp3-v1-a01/`、`songs-blessing-lyria-mp3-v1-a01/`。
+- 授权快照、原件核验、登记修订、空实例恢复和浏览器证据：`.runtime/songs/lyria-review/`。
+- 可独立试听的交付包：`.runtime/songs/song-lyria-review-v1.zip`。
+- 活跃隔离库：`.runtime/songs/review-instance/.runtime/review.sqlite3`，39114 端口。不要用恢复实例或旧导出覆盖活跃库；继续前先读取新评论。
 
-- `../../../scripts/lyria_music.py`
-- `../../../production/lyria-music.md`
-- `../../../tests/test_lyria_music.py`
+用户已确认词稿、曲名、音乐方向及局部剧本同步范围，随后授权四次 Lyria 重制。首曲请求 WAV 却返回 MP3 后，用户确认“先完成四首 MP3 试听，WAV 母版保持待解决”。本批已完成四次，估价 $0.32，账单未查询，无追加重试授权。四首均待听审，原生 WAV 与新旋律对应的剧中片段仍未完成。
 
-先回读当前歌词、音乐方案、最新评论及 `.runtime/songs/lyrics-approval.json`，沿用已经取得的歌词／方向确认，不重复索要该确认。该工具没有修改你的歌词、方案或候选库。主项目 `../../../.runtime/lyria-preparation/boat-v1-mp3-a03.json` 引用了获确认的《三道滩》歌词及哈希，是成功候选的准确规格；a01、a02 对应此前拒绝的尝试，a03 已成功，均不得复用 ID。
+## 工具与保护边界
 
-本机能读到 `GOOGLE_API_KEY`，`ffprobe` 可用。2026-10-03 用户完成 VPS 路由配置后，经 Clash `http://127.0.0.1:7897` 的模型查询及《三道滩》整曲生成均成功。原件为主项目 `../../../.runtime/lyria/boat-lyria-v1-a03/audio-01.mp3`：108.695458 秒（约 1 分 49 秒）、44.1 kHz、双声道，2,614,769 字节。SHA-256 为 `b60925b5e5d07d52eaca435c688838463dc7026c3475ff3475cffc9b5eea6df9`，已回读原件确认与回执一致。
+本机环境读取 `GOOGLE_API_KEY`，不询问、回显或写入 Key。沿用户已经准备的 Clash `http://127.0.0.1:7897` 调用，不改全局节点、VPS 路由或代理配置。模型为 `lyria-3.5`；只读 `--check-api` 成功不能代替真实生成证据。
 
-同目录保留 `request.json`、`response.json`、`receipt.json`、`provider-text.txt` 和 `text-comparison.json`。服务端返回的 16 行歌词与已确认输入逐行一致；这是文本核对，不代表实际演唱准确。当前 `audio_accepted=false`、歌词听辨与听审均 pending；账单未查询。先承接此准确候选，不重发请求或无故重生成。
+每个尝试 ID 唯一。保留完整请求、原始响应、真实文件编码、歌词文本和回执；不删除目录或换 ID 自动重试。跨 worktree 共用账户锁。服务端已返回而本地处理失败才考虑工具的离线 `--recover`，本轮四首均已保存完整原件，无须恢复或重发。
 
-链路为 Clash → 香港 VPS → Xray → 后续代理，香港节点本身不代表最终出口。SSH 回读 `vps` 的运行中 Xray 配置已含 `domain:googleapis.com` → `brightdata-isp-claude`，服务已重启且 active；不要再应用准备会话的旧候选，它已失效并删除。本会话没有改运行配置。直接通过 Clash 调用，不需要额外认证参数。运行：
+主项目早期试曲 `../../../.runtime/lyria/boat-lyria-v1-a03/audio-01.mp3` 为另一准确录音：108.695458 秒，SHA-256 `b60925b5e5d07d52eaca435c688838463dc7026c3475ff3475cffc9b5eea6df9`；此前 a01、a02 是被拒请求。以上历史不改写、不复用 ID，也不与本轮 123.533 秒《三道滩》混淆。
 
-```bash
-python3 ../../../scripts/lyria_music.py --check
-python3 ../../../scripts/lyria_music.py --check-api --proxy http://127.0.0.1:7897
-```
+Lyria 本工作流不支持人物音频参考或同一录音多轮编辑。原生 MP3 不转为 WAV 冒充无损；旧 Seed WAV 不替代新曲母版；返回歌词不是实际音频转写，更不能代替听审。当前《送青篷》返回文本重复全词两遍，《四邻安》多开头衬声，须随实际录音审阅。
 
-只读查询不生成歌曲；本次生成成功的证据是 a03 的真实响应和原件。不回显凭据，也不擅自改变全局 Clash 节点。继续核对当前歌词、方案及准确输入。
-
-用户已授权本轮经 Clash 的一首试生成，已成功产出；不据此扩大为全部歌曲或不限次数尝试。模型为 `lyria-3.5`，默认 MP3、省略通用 `response_format` 已实测通过；显式 WAV 按音乐专用文档仅设置 `{"type":"audio"}`，实际支持仍待验证。后续确有授权范围内的新请求时，将规格放在你的 `.runtime/songs/requests/`，另开唯一 ID（例如 `boat-lyria-v1-a04`），默认运行只预览；实际提交需要 `--submit --max-cost-usd 0.08 --proxy http://127.0.0.1:7897`。$0.08 是截至 2026-10-03 的每请求官方估价，参数仅做单次成本预检查，不是平台硬限额或总预算。
-
-候选自动保存到运行工作区 `.runtime/lyria/<id>/`，保留实际请求、原始响应、真实音频和回执。每个尝试 ID 唯一，不自动重试；超时／不确定结果先核账和查结果，禁止删除目录或换 ID 自动重发。服务端已返回但本地处理失败，可用 `--recover` 离线恢复。主项目与歌曲 worktree 共用账户锁。
-
-Lyria API 当前只接收文字／图片，不接收阿蘅声音参考，也不支持对已有曲目多轮编辑。完整歌手版与阿蘅、歌娘、母亲等剧中演法分开，固定旋律换声线需另行验证。程序保留真实原件；显式请求 WAV 但收到其他格式时报告格式不符，不把 MP3 转码冒充无损母版。歌词准确、声音质量和用户接受仍需实际听审；该程序不自动登记正式素材、改剧本、生成镜头或完成歌曲任务。
-
-12 条 Lyria 测试及 4 条 Seed Audio 回归通过；经 Clash 的 MP3 整曲生成已成功，实际账单、实际演唱和歌曲听感仍待核验。详见 `production/lyria-music.md`。承接准确候选后按既有流程听审、处理采用；该试生成不代表四首歌已完成或正式素材已接受。如需将工具纳入任务提交，只承接上述脚本、测试和说明及必要交接，保留你工作区现有修改；不要复制主项目 STATE 或覆写歌曲任务状态。
+先完成听审与准确旋律确认，解决无损母版和逐句定位，再处理各角色演法、短参考及剧本／制作依赖同步。正式库、公开导出、3000 服务与最终集成仍需串行协调；当前阶段不写正式数据、不推送、不运行 `_complete`。
