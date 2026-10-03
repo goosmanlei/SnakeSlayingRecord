@@ -1,0 +1,107 @@
+{
+  "id": "fg3-cave-gate-released-image-05",
+  "recipe_id": "form-cave-gate-released",
+  "entity": {
+    "object_id": "entity-cave-gate",
+    "revision_id": "ed76d5b1efb108994ffe0ec7deaf09f5146f1d637a4d7b4d736f215012a7656c"
+  },
+  "state": {
+    "object_id": "form-cave-gate-released",
+    "revision_id": "478a0220ef6bb74560601e1b6c2d2dbe7148ec78cd8401f35196e25fb7db7dad"
+  },
+  "requirement": {
+    "object_id": "need-form-cave-gate-released-overall",
+    "revision_id": "473c7c9439946236bca3052eb52cb80e047c3494a38cfe75f63037770c87ba82"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-feeding-channel-base-image-02",
+        "revision_id": "40c463e5d080aca4387023e158cb95a75c6dc42c7de734d8d87eb3a30485e8e4"
+      },
+      "component_id": "original",
+      "sha256": "3bc99507444a691fb933dad0a7503343b3be448ad98732b1b0b39c1b0bd044a4",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：已认可完整短石道：两块平盖石、南投食门、连续矮石墙、北闸后封顶短段和岩根；保留同一实体，不能断开、拉长或改为敞口"
+    },
+    {
+      "reference": {
+        "object_id": "asset-fg3-crossbeam-base-image-01",
+        "revision_id": "94e9b74b04de561706b0c7aa2b5caf24b6a812493bc168c69555bd8f7f2d1e70"
+      },
+      "component_id": "original",
+      "sha256": "9ff476bb5d123bb9459100eb6667f542cbfb2e7ee2e17961bcfcb9777f7acf4f",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图2：已认可完整灰褐长圆木；保持轮廓、颜色，一根不断开的横杠"
+    },
+    {
+      "reference": {
+        "object_id": "asset-fg3-snake-base-image-02",
+        "revision_id": "4d7c6f872a13ca84e80e9925bc481caae780dd556bc97247686f82190f4887c6"
+      },
+      "component_id": "original",
+      "sha256": "28d8542d9f7d6061820f30a0edaba641a25e177108bdc8cf3d5c9405e1b02525",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图3：已认可大蛇灰橄榄褐体色、深褐宽纹与浅腹；仅在洞闸底部局部示意蛇身，不出现院外蛇头或新动物"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 2,
+    "references": [
+      {
+        "object_id": "asset-fg3-feeding-channel-base-image-02",
+        "revision_id": "40c463e5d080aca4387023e158cb95a75c6dc42c7de734d8d87eb3a30485e8e4"
+      },
+      {
+        "object_id": "asset-fg3-crossbeam-base-image-01",
+        "revision_id": "94e9b74b04de561706b0c7aa2b5caf24b6a812493bc168c69555bd8f7f2d1e70"
+      },
+      {
+        "object_id": "asset-fg3-snake-base-image-02",
+        "revision_id": "4d7c6f872a13ca84e80e9925bc481caae780dd556bc97247686f82190f4887c6"
+      }
+    ]
+  },
+  "master_approvals": [
+    {
+      "object_id": "review-master-fg3-feeding-channel-base-image-02",
+      "revision_id": "ff13d6f38af207c59864fe82d88c40ffccf68c329b7ba466d9559954e149915c"
+    },
+    {
+      "object_id": "review-master-fg3-crossbeam-base-image-01",
+      "revision_id": "a385bcc1ca6f26edd57cb9a9cd218e8e0b76155725a956cc187743bd5d0ca050"
+    },
+    {
+      "object_id": "review-master-fg3-snake-base-image-02",
+      "revision_id": "e06bdeda97bb763a3b6a353f1b9fed9792c4d5045b12d0e2320f26bb92a9faf1"
+    }
+  ],
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "Create a new complete reference of “北端洞闸卸力后静止、仍封闭”. Use IMAGE 1 for connected stone passage, IMAGE 2 for long timber and IMAGE 3 only for the retained snake body's muted colour and broad bands. The whole stone body from IMAGE 1 remains connected and intact: two flat front roof slabs, barred southern small door, northern sliding panel, rear roofed short section and rock. The long round grey-brown beam from IMAGE 2 crosses IN FRONT of both posts as one uninterrupted log. A SINGLE SHORT HORIZONTAL CLEAT, fixed to the MOVING panel and ending well inside the posts, is directly behind the beam. TWO tight short hemp loops hug the beam AND this cleat at the centre. Nothing is tied to either fixed post. Keep stone lids knee-high and wood beam above them. No extra braces, separate rope anchor blocks, hanging ropes or high stone side walls. CRITICAL visible change to IMAGE 1: completely DELETE the original locking rod, INCLUDING BOTH little round cylindrical ends protruding outside the two posts. There must be NO wooden dowel or round stub at the outside edge of either post. Show an EMPTY dark circular bore on the visible outer side of the right post; the left post's outer contour is straight and clean with no protrusion. No round wooden plug inside a hole. Remove the whole rod, not just its centre.\nThe severing was confirmed and the helpers gradually removed their weight; the gate no longer pushes up. Show the wood panel stationary just above bottom, resting on the inert snake segment. The script does NOT confirm fully dropping to bottom or reinserting the pin, so neither event is drawn. Do not prop up the log with a new support. No people, force arrows, hands or weight bags remain on it. The long beam is still firmly bound to the moving short cleat.\nA small clearly ghosted technical patch adjacent to the north gate reveals its bottom edge touching the snake within the covered passage. Thin dotted roof and side contours retain the actual closed stone shape, caption “内部示意”. This is an explanatory transparency, no actual hole or removed slab. Snake stays inside, no gore, severed ends or protruding head. SOUTH feeding door still shut and barred.\nVisually verify that no little round wood end remains beyond the LEFT post; its outline is flat, just as the RIGHT empty bore contains no wood. Optional small caption “卸力后静止，未插栓”. One complete 16:9 landscape overall prop reference, same muted grey/brown line-and-flat-paint style, restrained texture and pale ground. All beam ends, full stone outline and rock visible. South in foreground, north at rear; no photograph, clutter, gore or decoration. Highest native output only.",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/3bc99507444a691fb933dad0a7503343b3be448ad98732b1b0b39c1b0bd044a4.png",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/9ff476bb5d123bb9459100eb6667f542cbfb2e7ee2e17961bcfcb9777f7acf4f.png",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/28d8542d9f7d6061820f30a0edaba641a25e177108bdc8cf3d5c9405e1b02525.png"
+    ]
+  }
+}

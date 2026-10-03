@@ -1,0 +1,53 @@
+{
+  "format": "user-master-approvals-v1",
+  "task": "task-20261002-0003",
+  "user_reply": "认可，继续剩余生成",
+  "question_item_id": "[\"request_user_input_async\",\"call_fehNSNndNXTQXlNockCWXr1h\",0]",
+  "recorded_at": "2026-10-03T15:56:38.255671+00:00",
+  "review_set": "production/full-generation/crossbeam-continuity-review.json",
+  "masters": [
+    {
+      "asset": {
+        "object_id": "asset-fg3-crossbeam-installed-image-08",
+        "revision_id": "b7954799418c488c46562a38322e77da1f4494e5c3770accd3e380197a13edbe"
+      },
+      "file": "export/assets/72572d45a2a815dd2a6a0adeed0f794df1bbf5d2325df366835d129639cb5cb8.png",
+      "sha256": "72572d45a2a815dd2a6a0adeed0f794df1bbf5d2325df366835d129639cb5cb8",
+      "recipe_id": "form-crossbeam-installed",
+      "judgment_id": "review-master-fg3-crossbeam-installed-image-08",
+      "i2i_depth": 2,
+      "judgment": {
+        "object_id": "review-master-fg3-crossbeam-installed-image-08",
+        "revision_id": "798a79d193a896b0b56a0e7e7898c8fe9f24645a6f3cb0bd862a3c8c39d8fedd"
+      }
+    }
+  ],
+  "excluded": [],
+  "comments_at_decision": [
+    {
+      "id": "771b5a50-1457-4f5f-8c62-1e333c09a0ba",
+      "source_id": null,
+      "target_object_id": "asset-fg3-heavy-blade-base-image-01",
+      "target_revision_id": "e7b8f50809906685034df75aea1cdf6d8d8bdaf3c91aed000d79f4e8e0e88cf0",
+      "anchor": "{\"asset_file\":\"9e269a6815ebd86626d1c33b3be855b47e2f529f2f340edb223406532dc893c0.png\",\"type\":\"visual\",\"visual_id\":\"original\"}",
+      "body": "刀要根据石道高度来定长短，要能够伸进去轻松看到石洞底，以便能够砍死蛇",
+      "status": "OPEN",
+      "version": 1,
+      "created_at": "2026-10-03T08:18:34+00:00",
+      "updated_at": "2026-10-03T08:18:34+00:00"
+    },
+    {
+      "id": "cb74bb19-cd7a-4843-a9bd-0a37444f310a",
+      "source_id": null,
+      "target_object_id": "asset-fg3-bandage-base-image-01",
+      "target_revision_id": "76a7d6ad4317d580b36439e24765e3c432e0cc15e67045cb7fead3e555a50294",
+      "anchor": "{\"asset_file\":\"8b4c0ffcaddf48b79af1d9d3df3ec74dff37c90a145e927dacfdd6d3936e2288.png\",\"type\":\"visual\",\"visual_id\":\"original\"}",
+      "body": "图中任务形象没有参考李寄的角色",
+      "status": "OPEN",
+      "version": 1,
+      "created_at": "2026-10-03T08:16:13+00:00",
+      "updated_at": "2026-10-03T08:16:13+00:00"
+    }
+  ],
+  "scope_note": "只处理横杠安装第八候选的准确认可，不重置 D2 谱系；剩余七状态使用已认可的共同输入直接生成。"
+}

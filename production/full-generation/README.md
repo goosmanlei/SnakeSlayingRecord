@@ -1,6 +1,6 @@
-# 全剧非歌曲素材：当前交付与继续执行
+# 全剧非歌曲素材：生成交付与审阅
 
-本轮已登记 354 张新图、42 份新录音，共 396 次有原件的真实调用，另保留 4 次工具输入校验拒绝记录。合格新图覆盖 244/251 个状态；3 个状态尚无新原件，另 4 个已有原件状态需返工。声音 40 个基础身份加 2 项变化已全部生成，共 411.68 秒；其中 4 份获用户听审认可，其余 38 份待听审。任务尚未完成。
+本轮已登记 369 张新图、42 份新录音，共 411 次有原件的真实调用，另保留 4 次工具输入校验拒绝记录。合格新图覆盖 251/251 个状态；0 个状态尚无新原件，另 0 个已有原件状态需返工。声音 40 个基础身份加 2 项变化已全部生成，共 411.68 秒；其中 4 份获用户听审认可，其余 38 份待听审。任务尚未完成。
 
 用户“没有问题，继续推进全部待生成”已记录为李寄第二次候选与河街浅滩第四次候选的准确母版认可，并已完成对应的 14 项派生首次生成及必要返工。此前阿蘅与旧灯图、阿蘅与周掌柜基础音色、阿蘅两份变化音色的认可继续有效。各项准确结论见 [最初母版](master-approvals.json)、[补充音色](supplement-approvals.json)和[本次继续认可](continued-approvals.json)。认可不自动扩展到其他身份或镜头采用。 用户随后针对李绡、赵执事和孙六的准确基准回复“三份均认可”，结论见 [第二批人物认可](second-masters-approvals.json)；对应六项派生已调用；李绡与孙六压杠修正版已完成肩部接触和下压力向自检。
 
@@ -134,13 +134,27 @@
 | 压闸长横杠·横杠绑接试牢 | [审阅本次修正版](http://127.0.0.1:64401/?workspace=materials.workspace&production_object=need-form-crossbeam-installed-overall&material_target=c7274363dbd639019b18d638ec5a507b7866b031a91acfac26086df8cfc954e4&material_round=2) | [1672×941 PNG](../../export/assets/cb2733b5d0151e0cd189ef1f4f11702c1acc3c5cc457012d45369370dbb47383.png) |
 | 庙后封闭小院·原盖石、未绑长杠 | [审阅本次修正版](http://127.0.0.1:64401/?workspace=materials.workspace&production_object=need-form-temple-back-original-overall&material_target=2f1fffaf541f82cbbcb8d9d08cb8b657b59e15ab5d8f03275c69fccce4900aa6&material_round=2) | [1672×941 PNG](../../export/assets/c44c03328f19433f02a7660b7768f06d0d1123e32e2074a60ed1d5ab256286e6.png) |
 
-### 横杠与完整石道连续性修正版（当前待审）
+### 横杠与完整石道连续性修正版（已认可）
 
-保留认可石道本体、闸后封顶段与岩根，仅加装活动短横木、绳结和高于石盖的长杠。已自检，尚待用户认可。此图是 D2，后续状态回到同一认可石道 D1 与长杠 D0 直接生成，不使用本结果继续叠代。准确范围见 [固定原件](crossbeam-continuity-review.json)。
+保留认可石道本体、闸后封顶段与岩根，仅加装活动短横木、绳结和高于石盖的长杠。用户已回复“认可，继续剩余生成”，[准确认可](crossbeam-continuity-approvals.json)已登记。此图是 D2，后续状态回到同一认可石道 D1 与长杠 D0 直接生成，不使用本结果继续叠代。准确范围见 [固定原件](crossbeam-continuity-review.json)。
 
 | 材料 | 本次修正 | 审阅链接 |
 | --- | --- | --- |
 | 横杠安装第八候选 | 完整石道连续、绳不绑固定柱或木栓 | [打开本次原件](http://127.0.0.1:64401/?workspace=materials.workspace&production_object=need-form-crossbeam-installed-overall&material_target=b7954799418c488c46562a38322e77da1f4494e5c3770accd3e380197a13edbe&material_round=3) |
+
+### 末批七个完整状态
+
+以下新原件已逐张自检并登记，覆盖最后七个完整状态；自检不代替用户认可或镜头采用。固定版本见 [末批原件清单](final-state-review.json)。
+
+| 完整状态 | 独立审阅入口 | 原生原件 |
+| --- | --- | --- |
+| 压闸长横杠·七人持杠承重 | [查看准确原件](http://127.0.0.1:64401/?workspace=materials.workspace&production_object=need-form-crossbeam-seven-overall&material_target=1f73bf8ec77c5140b917474451fc254a88446c9a803128dfe7704caf658a4bf4&material_round=1) | [1672×941 PNG](../../export/assets/5053b2d35bb573d25de4436e41336a5275babc3a2e1835bdaa4f75ac9e461d6e.png) |
+| 压闸长横杠·八人持续压杠 | [查看准确原件](http://127.0.0.1:64401/?workspace=materials.workspace&production_object=need-form-crossbeam-eight-overall&material_target=2ccaa3a630d81b9729277ae9131c7801889031c65e64c3318bf5f123b6ade660&material_round=1) | [1672×941 PNG](../../export/assets/217b292ac24cde829ca03c2e00de44a5184c7880fffa9533ae6572be5cf8c2d4.png) |
+| 北端洞闸·压蛇半落、不能插栓 | [查看准确原件](http://127.0.0.1:64401/?workspace=materials.workspace&production_object=need-form-cave-gate-loaded-overall&material_target=6eaad07780974cad825d6c6f681f37a821b474b82b8f18aee66c0d4a249bc9f0&material_round=1) | [1672×941 PNG](../../export/assets/8bc0c23a657c86eb5eb70edd3ad22a3e119034070f0b3a176663eedfa06c4427.png) |
+| 北端洞闸·断蛇确认后卸力仍封闭 | [查看准确原件](http://127.0.0.1:64401/?workspace=materials.workspace&production_object=need-form-cave-gate-released-overall&material_target=d8f5b5099a5ea574434dc87ba8948ccc607c73ec4263243b53228b9652022cf3&material_round=1) | [1672×941 PNG](../../export/assets/497eae9cadebb51545b49cfb1686617c828d18e762b213892dba66cb16d5003d.png) |
+| 庙后封闭小院·长杠已绑、刀缝待盖 | [查看准确原件](http://127.0.0.1:64401/?workspace=materials.workspace&production_object=need-form-temple-back-bound-overall&material_target=6e2ea07f2ea9109ea6c9e0a0a9ac165167f91627098d0f7f5dac9ddd55cd7c3b&material_round=1) | [1672×941 PNG](../../export/assets/c99734e9f175743cff0b0b2d48ff6f480709da0d99666e1531c6cb2b7ec91d39.png) |
+| 庙后封闭小院·已开刀缝和绑杠 | [查看准确原件](http://127.0.0.1:64401/?workspace=materials.workspace&production_object=need-form-temple-back-modified-overall&material_target=f4d7b7d9a529e7d6cd46bc6c901f44af41ee1d846326b2d4fdefd2d15780eecc&material_round=1) | [1672×941 PNG](../../export/assets/7a84ae182cf05df4243f20440ee133056715310304cc24c42215f495e2adb020.png) |
+| 庙后封闭小院·祭日绳垫与空门道 | [查看准确原件](http://127.0.0.1:64401/?workspace=materials.workspace&production_object=need-form-temple-back-battle-overall&material_target=b34fc35b7a32f675d33384e116cf38b48d50a8601d73afd77e88bd178657b794&material_round=1) | [1672×941 PNG](../../export/assets/2f2dae667e4a72ff1de71cb2a1443e38c7962f4363ff626323e94b874753bc80.png) |
 
 独立入口打开固定链接时只显示指定原件；同轮有多次尝试时，通过“本轮候选”切换其他图。原件、实际输入、提示词及评论锚点一起切换，素材版本仍按用户修订轮次区分。本页链接固定需求、原件修订与素材轮次；显示或切换均不表示用户采纳或镜头采用。
 
@@ -193,11 +207,11 @@
 
 ## 原件自检与准确范围
 
-[逐原件自检](representative-review.json)保存每次真实原件、SHA-256、规格和目视结论。剩余工作集中在同一石道机关：三个后院布置首次生成，以及七人／八人承重、洞闸压蛇／卸力四项连续性修正；横杠安装第八候选待用户审阅。南门开启和后院刀缝已开长杠待绑状态已生成并自检通过。人物肩部接触、船体入框、石阶、晾衣、账册文字和阿蘅归家米量等旧缺口已修正。按具体原件逐项核对，不用旧成功调用或不合格原件填数；后来的用户意见保留原自检历史并登记新的结论。
+[逐原件自检](representative-review.json)保存每次真实原件、SHA-256、规格和目视结论。251 个图像状态均已有本轮自检合格原件。末批三个后院布置，以及七人／八人承重、洞闸压蛇／卸力四项已完成；探索与返工原件如实保留，不另计状态覆盖。南门开启和后院刀缝已开长杠待绑状态已生成并自检通过。人物肩部接触、船体入框、石阶、晾衣、账册文字和阿蘅归家米量等旧缺口已修正。按具体原件逐项核对，不用旧成功调用或不合格原件填数；后来的用户意见保留原自检历史并登记新的结论。
 
 [输入锁](source-lock.json)保存准确剧本、对象头、评论及排除项。版本四为 7287b25a34d4b0db242ec5688f33349fa6d449874a3c6acb30033e2260cd2686，17 集、42 场、1,114 块。当前有效范围为 132 实体、263 完整状态；排除四首歌的八个状态，以及两项仅声音、两项仅提及状态，得到 251 个图像目标：125 个基础状态、126 个派生状态。原抽取 133 实体、267 状态及其修订保留，四个包布重复状态已按用户“按此归并，调整为 251 项”撤回并准确指向既有李寄状态，见 [范围归并](scope-amendment.json)。基础状态同时覆盖实体，不重复另生实体图。声音锁定 40 基础＋2 变化，76 条状态关联、34 条复用；用户明确不补问月亮的孩子与屋内唤程差役者。
 
-[recipes.json](recipes.json)包含逐项身份、完整形态、差异、构图、制作选择、来源与实际渠道参数。尚未生成或认可的必需参考保持待绑定；独立文字母版明确没有参考。调用时输入必须与准确方案一致。已调用请求和输入锁不可因后来修订而重写；修订后的真实新调用另存请求。
+[recipes.json](recipes.json)包含逐项身份、完整形态、差异、构图、制作选择、来源与实际渠道参数。本轮实际调用的必需参考均已绑定准确输入及相应认可；独立文字母版明确没有参考。调用输入与不可变方案逐项核对。已调用请求和输入锁不可因后来修订而重写；修订后的真实新调用另存请求。
 
 图生图按最深输入谱系累计、最多两代，不因认可或换名重置。河街第四张浅滩母版为 D1，其清晨与夜间派生为 D2。浅水河床、低缓岸坡与对街竹摊保持连续，局部下游暗水不扩大成深河；[用户浅滩意见](river-feedback.json)及正式评论保留。歌曲、动物／环境／动作声、逐句台词轨、视频、动态分镜与成片不在本轮范围。
 
@@ -217,7 +231,7 @@ OpenArt CLI 0.1.1 拒绝 --quality（unknown flag: --quality），已使用同�
 
 Chrome 已在独立入口放大新原件、播放李寄新音色至 8.50 秒，并打开厚背刀旧评论，见 [迁移页面证据](../evidence/full-generation-worktree-browser.json)。隔离系统本地提交为 `5b7de33e77b08c3b9e738d2a140118a333b131c2`，修复固定链接混显多个候选；21 项前端检查以及实际候选／素材轮次切换、原评论定位通过，见 [准确候选页面证据](../evidence/full-generation-exact-candidate-browser.json)。主项目 3000 系统代码仍为 `15822ae77d9b6c3851852555a677d11d7adc7c10`。页面播放仅验证文件和播放器可用，不代替实际听辨。
 
-最近完整导出与空恢复检查点为 392 原件：1,255 个清单文件、1,198 个制作文件 SHA 均通过，所有业务表、392 个成功调用／原件关联、4 个工具输入拒绝、313 个内置调用的准确方案和授权谱系、42 份 WAV 规格均通过。原 264 评论全部保留，快照共 270 评论、299 事件；见 [导出证据](../evidence/full-generation-checkpoint-392-export.json)、[恢复证据](../evidence/full-generation-checkpoint-392-recovery.json)。之后到达的横杠新意见、两份母版认可及新调用以准确增量保留，下一检查点纳入。392 空恢复的投食门原件已实际放大，见 [本批页面证据](../evidence/full-generation-checkpoint-392-browser.json)；未变的声音复用 382 空恢复实例的李寄实播证据。历史 3000 证据只对应迁移前范围，不代表当前主库。
+最近完整导出与空恢复检查点为 411 原件：1,312 个清单文件、1,255 个制作文件 SHA 均通过，完整业务表、411 个成功调用／原件关联、4 个输入拒绝、332 个内置调用准确方案和认可谱系、42 份 WAV 规格均核对。原 264 评论全部保留，快照共 271 评论、300 事件；见 [导出证据](../evidence/full-generation-checkpoint-411-export.json)、[完整核验](../evidence/full-generation-delivery-verification.json)。Chrome 已在 64405 空恢复入口放大八人第四原件及后院第三原件，核对候选和引用，并实际点击播放李寄声音至 8.50 秒结束；见 [最终恢复页面](../evidence/full-generation-checkpoint-411-browser.json)。未变的轮次切换与原评论定位复用已有实际页面证据。历史 3000 证据仅对应迁移前范围。
 
 ## 执行与恢复入口
 
@@ -225,10 +239,10 @@ Chrome 已在独立入口放大新原件、播放李寄新音色至 8.50 秒，�
 
 - `.runtime/full-generation/all-pending/review`：当前生成登记与用户审阅实例，端口 64401；保留本机运行库，现有完成回执不能重复提交。
 - `.runtime/full-generation/worktree-migration/main-before.sqlite3`：迁移前全量保全；`main-after.sqlite3` 是主库恢复结果。它们用于核对与恢复，不得覆盖继续变化的主库。
-- `.runtime/full-generation/checkpoint-392-restored`：392 原件空恢复证据实例，验收端口 64404；不是日常用户审阅入口。此前 382 空恢复入口为 64403。
+- `.runtime/full-generation/checkpoint-411-restored`：411 原件空恢复证据实例，验收端口 64405；不是日常用户审阅入口。
 - [record_builtin_image.py](../../scripts/record_builtin_image.py)：从真实工具返回路径复制原生文件，保存 SHA、规格与未知字段；不生成或改图。
 - [register_generation_batch.py](../../scripts/register_generation_batch.py)：核对准确方案、逐输入认可／同状态返工、谱系和 SHA，登记真实调用。`--instance` 必须指向上述工作区实例。
 - [publish_full_generation.py](../../scripts/publish_full_generation.py)：历史主库增量发布工具；当前不执行。已存在 `applied.json` 的历史批次不得重跑。
 - [verify_full_generation.py](../../scripts/verify_full_generation.py)：只读检查增量、旧内容保护和文件组成。
 
-继续完成本任务全部 251 项，不拆分新任务。认可母版按准确版本派生；未认可基准先审阅。最终完整交付包、文档、恢复和页面验收备齐后，再准备双仓最终候选，并明确展示正式增量发布或维持独立入口的具体范围；经用户确认才受控集成。本任务尚未 `_complete`、未推送，正常退出后释放任务运行锁并保留工作区和分支。
+251 个图像状态及 42 份新音色均已生成、登记并随完整包交付；38 份声音仍按用户要求待系统听审。最终本地集成及恢复步骤见 [操作说明](operations.md)，包括系统准确快进、故事受控完成、保持独立入口和不导入主库。故事 Git 集成会将原件归档纳入主分支工作目录，此影响须与最终候选一起明确确认。本任务尚未 `_complete`、未推送，正常退出后释放任务运行锁并保留工作区和分支。
