@@ -1,0 +1,57 @@
+{
+  "id": "fg3-evidence-chest-open-image-01",
+  "recipe_id": "form-evidence-chest-open",
+  "entity": {
+    "object_id": "entity-evidence-chest",
+    "revision_id": "df3e2b240e5d1eee7026eb7b0b7fb0319aa2e9cc725bd1f98b5a2aa2f3e38c62"
+  },
+  "state": {
+    "object_id": "form-evidence-chest-open",
+    "revision_id": "d1a6f6630348150992701ca9b032478d421691476488782e85265f6202ff9431"
+  },
+  "requirement": {
+    "object_id": "need-form-evidence-chest-open-overall",
+    "revision_id": "ba9ef1cb238e15e19d288f340f4b4df3a51e1a984f95508c224b9c56fd2cfd34"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-evidence-chest-base-image-01",
+        "revision_id": "43672cbbc90a6e03c95bd59d751b637c140405724f87e6695fe73e23ab7fd17d"
+      },
+      "component_id": "original",
+      "sha256": "ab117265a6297feaed4b0f4c53b0819c0380ca9b529f0a3c6cc6d16c49103a85",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：准确认可原件，固定本物的身份、比例、配色和结构，仅变化所述状态。"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-fg3-evidence-chest-base-image-01",
+        "revision_id": "43672cbbc90a6e03c95bd59d751b637c140405724f87e6695fe73e23ab7fd17d"
+      }
+    ]
+  },
+  "master_approval": {
+    "object_id": "review-master-fg3-evidence-chest-base-image-01",
+    "revision_id": "ef312c7a4088739de9813b4455437dc87ee1ce702a3ade31dc97e12ddda3efa4"
+  },
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "单幅整体参考，全部组成完整留边。沿用参考的二维清楚线条、低饱和色块，浅暖灰空底，不加纹理、噪点、文字标题、人物或分格。最高原生输出，不放大。4:3。参考图1同一仓院低长灰褐箱保持全部尺寸、铁扣、旧木色。把平盖向后掀开到约100度，箱内少数平整米黄账纸叠放且不露可读字；前面原窄封纸在盖缝处已经分开，两段仍各贴盖和箱面，铁扣打开。整体箱盖和箱底完整，内部足够容纸本。只呈现正在查验的开箱形态，无借据特写、人物、桌子或祭册另箱。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/ab117265a6297feaed4b0f4c53b0819c0380ca9b529f0a3c6cc6d16c49103a85.png"
+    ]
+  }
+}

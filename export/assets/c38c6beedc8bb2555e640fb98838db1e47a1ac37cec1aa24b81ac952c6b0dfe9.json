@@ -1,0 +1,57 @@
+{
+  "id": "fg3-paper-snake-boxed-image-01",
+  "recipe_id": "form-paper-snake-boxed",
+  "entity": {
+    "object_id": "entity-paper-snake",
+    "revision_id": "f43d96a818cd415fca1b5b808f838cce2ce907d7a05c1a7167354f52faa9d1e3"
+  },
+  "state": {
+    "object_id": "form-paper-snake-boxed",
+    "revision_id": "1ca3c875e4b1629bb244470c63460882a88971a1c20345be8155e8fc9003dda1"
+  },
+  "requirement": {
+    "object_id": "need-form-paper-snake-boxed-overall",
+    "revision_id": "dcc6234f6a53c487442919fe7e52a05e9e41248b84bc19bdbc8e78f3c94e57b7"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-paper-snake-base-image-02",
+        "revision_id": "b007c0a52631a72411696b07e39c2a7a02a79f10e896c0646613609cc7269282"
+      },
+      "component_id": "original",
+      "sha256": "d9266ece62068ba17f2b51426bce60d5303ac5b5be0014f2615470f68d8f80ab",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：准确认可原件，固定本物的身份、比例、配色和结构，仅变化所述状态。"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 2,
+    "references": [
+      {
+        "object_id": "asset-fg3-paper-snake-base-image-02",
+        "revision_id": "b007c0a52631a72411696b07e39c2a7a02a79f10e896c0646613609cc7269282"
+      }
+    ]
+  },
+  "master_approval": {
+    "object_id": "review-master-fg3-paper-snake-base-image-02",
+    "revision_id": "d0618464101c6cf861f2b7eaa7100bde8a5757e3b18fbed62ce1e1b65e3cfb87"
+  },
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "单幅整体参考，全部组成完整留边。沿用参考的二维清楚线条、低饱和色块，浅暖灰空底，不加纹理、噪点、文字标题、人物或分格。最高原生输出，不放大。4:3。参考图1同一纸蛇头身保持纸皮色斑和竹圈，竹条已装到下颌、不另散放。画一只朴素长灰褐戏箱打开，纸蛇沿竹骨节轻折收纳在里面，头和闭到半合的米白下颌朝左上可见，纸身不被切断，尾口完整收在箱右。箱盖向后开，整个箱外轮廓、纸蛇所有可见部分入画；无月亮、人物或封条，不把纸蛇挤成碎纸。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/d9266ece62068ba17f2b51426bce60d5303ac5b5be0014f2615470f68d8f80ab.png"
+    ]
+  }
+}

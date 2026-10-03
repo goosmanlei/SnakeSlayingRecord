@@ -1,0 +1,57 @@
+{
+  "id": "fg3-rice-bag-wages-image-02",
+  "recipe_id": "form-rice-bag-wages",
+  "entity": {
+    "object_id": "entity-rice-bag",
+    "revision_id": "1cb00ca0a1f05b3cdc6970e615d5ce291412af9572c348bfe4024844d282ddb6"
+  },
+  "state": {
+    "object_id": "form-rice-bag-wages",
+    "revision_id": "6cfab8519bd8f4c47c0c7c8765ddb67ebdc8bde4ca1ea6817b80a770c6f9160a"
+  },
+  "requirement": {
+    "object_id": "need-form-rice-bag-wages-overall",
+    "revision_id": "a28ddef1e38510a22a76e6a081ae04b992a41ffb33a84dfb8946ef1b9fa420fc"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-rice-bag-base-image-01",
+        "revision_id": "f24831308bc5324aaa55163b3e78b7fc83c394405a0b923d0fc6b52625fa436e"
+      },
+      "component_id": "original",
+      "sha256": "20f7ac2fb86c63ba67da4dec7e8ac99ca88b49b20c2953d7611ba688dcfff41d",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：仅固定袋布颜色、补丁、口绳与身份；本次主动改变软塌轮廓和低装量。"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-fg3-rice-bag-base-image-01",
+        "revision_id": "f24831308bc5324aaa55163b3e78b7fc83c394405a0b923d0fc6b52625fa436e"
+      }
+    ]
+  },
+  "master_approval": {
+    "object_id": "review-master-fg3-rice-bag-base-image-01",
+    "revision_id": "97431a5cffcce01304e33116b9edad3961604fffe13d67d616f63fee365bb376"
+  },
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "整体参考原件，二维手绘动画道具，清楚线条、低饱和简洁平涂，不添加细纸纹、噪点、锐化或摄影微纹。浅暖灰空底，单一视点，主体完整留边，无人物、标注、多格，最高原生输出不放大。4:3。参考图1仅提供同一袋的米灰颜色、褐绳、右下方补丁，必须改变直立的空袋轮廓：袋子里面只有一小木斗工米，重量在底部形成低低的扁圆小鼓包；整个上半截布完全失去支撑，向左塌下来，层层折叠靠在鼓包上。画成很低矮的软袋，宽约高两倍，不能仍直立成高圆桶。袋口松开朝左上斜俯，口里仅露低处一点米，米面比口沿低得多；双绳尾自然躺地。补丁仍在右下鼓包侧。不要手、木斗、第二袋、撒米。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/20f7ac2fb86c63ba67da4dec7e8ac99ca88b49b20c2953d7611ba688dcfff41d.png"
+    ]
+  }
+}

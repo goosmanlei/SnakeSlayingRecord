@@ -1,0 +1,57 @@
+{
+  "id": "fg3-sacrificial-registers-copies-image-01",
+  "recipe_id": "form-sacrificial-registers-copies",
+  "entity": {
+    "object_id": "entity-sacrificial-registers",
+    "revision_id": "c0788e14041481927fb3efcd6d4bd2c4713dd2e3cec991c967ef563edbbd302f"
+  },
+  "state": {
+    "object_id": "form-sacrificial-registers-copies",
+    "revision_id": "140de1ce1e955c9a7cdcfe579c4527e5e0bbcc70f137f0defe77abc428f86b00"
+  },
+  "requirement": {
+    "object_id": "need-form-sacrificial-registers-copies-overall",
+    "revision_id": "24016d3c091e56ab4fb8719e56749fbb453fdeae5127e2d2259c1c5d02b3d285"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-sacrificial-registers-base-image-01",
+        "revision_id": "e3f11bc143d63f5d0d1cadbe063b8698e1ef30e65a56027856dad3cac67be322"
+      },
+      "component_id": "original",
+      "sha256": "9c02181bc0d74398f521f49b25172813f9444a04139e4d5b65bcc5aee1dd6fd5",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：固定三册对应姓名、颜色关系和线装结构，区别县衙报送抄本与后续取出的原件。"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-fg3-sacrificial-registers-base-image-01",
+        "revision_id": "e3f11bc143d63f5d0d1cadbe063b8698e1ef30e65a56027856dad3cac67be322"
+      }
+    ]
+  },
+  "master_approval": {
+    "object_id": "review-master-fg3-sacrificial-registers-base-image-01",
+    "revision_id": "66260f24880ad0d86d2167cee3b3dbb8c9208d93a2e758dc635d8dc911566dbd"
+  },
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "单幅整体参考，全部组成完整留边。沿用参考的二维清楚线条、低饱和色块，浅暖灰空底，不加纹理、噪点、文字标题、人物或分格。最高原生输出，不放大。4:3。参考图1固定三本的对应姓名及线装身份，本次生成县衙留存的报送抄本。三册从左到右阿禾、小满、阿蘅，前两册换较新的浅灰褐和浅灰蓝纸，第三册新米灰，全部左侧线装完整。阿禾及小满两本轻打开对应姓名页，每页清楚写对应名字及“自愿入祀”四字，第三本闭合写阿蘅。这是原文记载的虚报字样，不改成非自愿；不增可读年号日期。不要原件霉旧斑和红印，不画封箱。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/9c02181bc0d74398f521f49b25172813f9444a04139e4d5b65bcc5aee1dd6fd5.png"
+    ]
+  }
+}

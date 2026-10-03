@@ -1,0 +1,83 @@
+{
+  "id": "fg3-paper-snake-moon-image-01",
+  "recipe_id": "form-paper-snake-moon",
+  "entity": {
+    "object_id": "entity-paper-snake",
+    "revision_id": "f43d96a818cd415fca1b5b808f838cce2ce907d7a05c1a7167354f52faa9d1e3"
+  },
+  "state": {
+    "object_id": "form-paper-snake-moon",
+    "revision_id": "aa27a3d196175061012ac2933a4b95325b10e70b61baab8399d1fc86accab861"
+  },
+  "requirement": {
+    "object_id": "need-form-paper-snake-moon-overall",
+    "revision_id": "65dbcd83e421e9440f80fcd67ec09f655cabe3d74ee2de74f1a9a870e73eeca6"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-paper-snake-base-image-02",
+        "revision_id": "b007c0a52631a72411696b07e39c2a7a02a79f10e896c0646613609cc7269282"
+      },
+      "component_id": "original",
+      "sha256": "d9266ece62068ba17f2b51426bce60d5303ac5b5be0014f2615470f68d8f80ab",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：准确认可原件，固定本物的身份、比例、配色和结构，仅变化所述状态。"
+    },
+    {
+      "reference": {
+        "object_id": "asset-fg3-paper-moon-base-image-01",
+        "revision_id": "22671ce2995635581428c870f53b1358f6288f7cf5c97614f119a1ec30d1991e"
+      },
+      "component_id": "original",
+      "sha256": "2cdb5c59f092292c16f61cecbcae0e582ba88ee6df1c1ee476134d7751c9585c",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图2：准确认可原件，固定本物的身份、比例、配色和结构，仅变化所述状态。"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 2,
+    "references": [
+      {
+        "object_id": "asset-fg3-paper-snake-base-image-02",
+        "revision_id": "b007c0a52631a72411696b07e39c2a7a02a79f10e896c0646613609cc7269282"
+      },
+      {
+        "object_id": "asset-fg3-paper-moon-base-image-01",
+        "revision_id": "22671ce2995635581428c870f53b1358f6288f7cf5c97614f119a1ec30d1991e"
+      }
+    ]
+  },
+  "master_approvals": [
+    {
+      "object_id": "review-master-fg3-paper-snake-base-image-02",
+      "revision_id": "d0618464101c6cf861f2b7eaa7100bde8a5757e3b18fbed62ce1e1b65e3cfb87"
+    },
+    {
+      "object_id": "review-master-fg3-paper-moon-base-image-01",
+      "revision_id": "b7e71b3e889d567f31ac8a882be72889f7216c9348fa2bf301e26bee8da74958"
+    }
+  ],
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "单幅整体参考，全部组成完整留边。沿用参考的二维清楚线条、低饱和色块，浅暖灰空底，不加纹理、噪点、文字标题、人物或分格。最高原生输出，不放大。4:3。参考图1固定整只纸蛇、参考图2固定淡黄圆纸月亮。画完整灰青暗赭纸蛇，竹条已装好下颌，嘴半张；参考图2同一完整圆纸月亮卡在上下颌之间，月亮大半圆面向观者可辨、直径适配蛇口，上沿细灰牵线向上松停，月亮无五官。所有蛇身和尾口均完整留边，地上没有散竹条，只有一蛇一月，非真蛇，不用发光特效。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/d9266ece62068ba17f2b51426bce60d5303ac5b5be0014f2615470f68d8f80ab.png",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/2cdb5c59f092292c16f61cecbcae0e582ba88ee6df1c1ee476134d7751c9585c.png"
+    ]
+  }
+}

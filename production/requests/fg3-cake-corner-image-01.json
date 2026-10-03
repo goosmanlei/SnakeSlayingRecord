@@ -1,0 +1,57 @@
+{
+  "id": "fg3-cake-corner-image-01",
+  "recipe_id": "form-cake-corner",
+  "entity": {
+    "object_id": "entity-cake",
+    "revision_id": "cbf1b422e89a299ce278354672c94a377c34e9dc452b84fc84f68c372a85ca52"
+  },
+  "state": {
+    "object_id": "form-cake-corner",
+    "revision_id": "5d68f1e1322a8935527bbd4e2f6cef04872bcdbb8c14f0511c0ff38068ddbba2"
+  },
+  "requirement": {
+    "object_id": "need-form-cake-corner-overall",
+    "revision_id": "42f644274ece0c3e3ab0d90184192b1ec3ea56cb825a64a3a98519cd8f91941d"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-cake-base-image-01",
+        "revision_id": "b432e2df57965b74c88350f7f35f74610bce696d784d0912adbf60a4fb4d1f0a"
+      },
+      "component_id": "original",
+      "sha256": "90594d154afbd4cced24b5dcf31d0e78e9c52aa1fa69796f1518f4752c88d537",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：用户认可的完整基准原件；固定身份、整体造型、比例、配色与线条，仅改变本状态明示差异。"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-fg3-cake-base-image-01",
+        "revision_id": "b432e2df57965b74c88350f7f35f74610bce696d784d0912adbf60a4fb4d1f0a"
+      }
+    ]
+  },
+  "master_approval": {
+    "object_id": "review-master-fg3-cake-base-image-01",
+    "revision_id": "7d84bb3e7442ca36cf7c51c19a0eb8ee7e3a110085276e311e3961a6c678b0fd"
+  },
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "参考图1是认可的半块薄饼。保持半圆外形、米黄色、烘烤大色块、厚度与同一视点。在原半饼画面右上弧边只掰去一小角，留下一个清楚但很小的不规则缺口；把对应小角放在旁边，两者不相接，缺角约主体的二十分之一。不要从半饼切掉一大块，也不要多块或咬痕。保持参考图1的二维清楚轮廓、简化平涂及浅暖灰底。单幅整体参考，全部主体完整入画并留边，不画多格、标签、人物或新背景；不增加纸纹噪点、写实微纹或锐化。4:3，最高原生输出，不放大。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/90594d154afbd4cced24b5dcf31d0e78e9c52aa1fa69796f1518f4752c88d537.png"
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "id": "fg3-approval-orders-copies-image-01",
+  "recipe_id": "form-approval-orders-copies",
+  "entity": {
+    "object_id": "entity-approval-orders",
+    "revision_id": "7b29364c523a62dea444e77368e4caa7be14c9d91e976e11c6919c5f918fc4db"
+  },
+  "state": {
+    "object_id": "form-approval-orders-copies",
+    "revision_id": "8972addcc6ae37da940cbe3664b27d7196685c8c0aee666277382bf444855f4f"
+  },
+  "requirement": {
+    "object_id": "need-form-approval-orders-copies-overall",
+    "revision_id": "16dadffc487ebac74d72173cabc058b52cea0c8da7fd36899178aa5820d35ba3"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-approval-orders-base-image-01",
+        "revision_id": "8a24310783d55726b5c27d7458042983029ff1ace2f7ef373828a2fa9a559d4f"
+      },
+      "component_id": "original",
+      "sha256": "0fe50e1a1476fb2a63aa967d9690157a000bfb3304fa11ec6c0c8a59380baade",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：准确两份旧批文及签押，转为公开抄件，不能冒充原纸。"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-fg3-approval-orders-base-image-01",
+        "revision_id": "8a24310783d55726b5c27d7458042983029ff1ace2f7ef373828a2fa9a559d4f"
+      }
+    ]
+  },
+  "master_approval": {
+    "object_id": "review-master-fg3-approval-orders-base-image-01",
+    "revision_id": "60afb88b6d6e34f7fd3cf3e303f58fad609d388afa6620618e8888b6fa4d925a"
+  },
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "单幅整体参考，全部组成完整留边。沿用参考的二维清楚线条、低饱和色块，浅暖灰空底，不加纹理、噪点、文字标题、人物或分格。最高原生输出，不放大。4:3。参考图1有两份旧准祭批文。本次重新画两张较新米白纸的公开抄件，仍完整左右并排，每张标题“准祭批文”，其余正文用与各自原件对应的细淡墨迹。保留两份末尾同一签押的笔势，红印形制只能用淡墨摹录轮廓、不能把抄件伪造成盖原印的旧纸。移除泛黄旧折痕，纸边平整，略透出背后平淡墙面说明贴告示旁，不画新告示或额外第三张。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/0fe50e1a1476fb2a63aa967d9690157a000bfb3304fa11ec6c0c8a59380baade.png"
+    ]
+  }
+}

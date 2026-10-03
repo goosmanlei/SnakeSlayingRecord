@@ -1,0 +1,57 @@
+{
+  "id": "fg3-paper-snake-assembled-image-01",
+  "recipe_id": "form-paper-snake-assembled",
+  "entity": {
+    "object_id": "entity-paper-snake",
+    "revision_id": "f43d96a818cd415fca1b5b808f838cce2ce907d7a05c1a7167354f52faa9d1e3"
+  },
+  "state": {
+    "object_id": "form-paper-snake-assembled",
+    "revision_id": "226114153e3518d68d9aa77d7363782e182671b37d4c7e9ff54454c307c41acf"
+  },
+  "requirement": {
+    "object_id": "need-form-paper-snake-assembled-overall",
+    "revision_id": "fa7007c546553c23dd959fc6920b819b6912862baabcb4fd3f0037abf2117531"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-paper-snake-base-image-02",
+        "revision_id": "b007c0a52631a72411696b07e39c2a7a02a79f10e896c0646613609cc7269282"
+      },
+      "component_id": "original",
+      "sha256": "d9266ece62068ba17f2b51426bce60d5303ac5b5be0014f2615470f68d8f80ab",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：准确认可原件，固定本物的身份、比例、配色和结构，仅变化所述状态。"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 2,
+    "references": [
+      {
+        "object_id": "asset-fg3-paper-snake-base-image-02",
+        "revision_id": "b007c0a52631a72411696b07e39c2a7a02a79f10e896c0646613609cc7269282"
+      }
+    ]
+  },
+  "master_approval": {
+    "object_id": "review-master-fg3-paper-snake-base-image-02",
+    "revision_id": "d0618464101c6cf861f2b7eaa7100bde8a5757e3b18fbed62ce1e1b65e3cfb87"
+  },
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "单幅整体参考，全部组成完整留边。沿用参考的二维清楚线条、低饱和色块，浅暖灰空底，不加纹理、噪点、文字标题、人物或分格。最高原生输出，不放大。4:3。参考图1同一灰青纸蛇头身和暗赭大斑、米白下颌、竹骨三圈，全部轮廓及配色不变。只把图前散放的弯竹条移入下颌内侧并绑牢，使下颌对正头部、纸嘴开到半张且可活动，控制细线沿下颌一侧可辨。地上不再有散竹条，纸蛇仍空心道具、尾口结构完整，不能变真蛇或加蛇信毒牙。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/d9266ece62068ba17f2b51426bce60d5303ac5b5be0014f2615470f68d8f80ab.png"
+    ]
+  }
+}
