@@ -1,0 +1,60 @@
+{
+  "id": "fg3-feeding-door-base-image-06",
+  "recipe_id": "form-feeding-door-base",
+  "entity": {
+    "object_id": "entity-feeding-door",
+    "revision_id": "84625e0451deeb0b6b28223b51e3452c77837661ba41f05c3fb3158f903a91ca"
+  },
+  "state": {
+    "object_id": "form-feeding-door-base",
+    "revision_id": "b02254a89f5f3268c0c0a9294283d1d8b26dfed83a213074ebe9331d89cee159"
+  },
+  "requirement": {
+    "object_id": "need-form-feeding-door-base-overall",
+    "revision_id": "5b2a06728da5910bdb9af08d8766f4379161023e536fa5ed629abe1572ad7715"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-feeding-door-base-image-05",
+        "revision_id": "a5ee7bd08dccf30f382915c75b8cc6146a4bc36e91b32302214f44c86f57c821"
+      },
+      "component_id": "original",
+      "sha256": "110e7b2c5920cb305091fd4e44b70ece6e228faee28ad5b117c503eb8f963f58",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：同一连续石箱，仅缩短纵深并把南门横闩改为完整跨门石槽"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-fg3-feeding-door-base-image-05",
+        "revision_id": "a5ee7bd08dccf30f382915c75b8cc6146a4bc36e91b32302214f44c86f57c821"
+      }
+    ]
+  },
+  "same_state_repair": {
+    "source": {
+      "object_id": "asset-fg3-feeding-door-base-image-05",
+      "revision_id": "a5ee7bd08dccf30f382915c75b8cc6146a4bc36e91b32302214f44c86f57c821"
+    },
+    "reason": "南门横闩仅从门中到右边，不符合准确方案的双侧石槽；缩短纵深以与后院紧凑短箱一致。"
+  },
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "在图1原件上做两处局部修正，其余全部保留，输出4:3完整二维器物图。\n一、南边近处厚木小门前的木闩必须是一整根水平粗木，从左石框的矩形卡槽连续跨过整个门面，穿入右石框的矩形卡槽，两端都看得见且横跨门面全宽；不要只留门中到右端的半截。小门仍是单扇竖拼木门，左边两个金属铰链，保持关闭。\n二、把南门和整个前半石箱一起向北闸靠近一点，使两者距离约石箱宽的1.2倍。只压缩纵向距离，保留同一整块底座、连续侧墙、前后两片完整封顶石、横向中缝、后端原木闸和双柱、原画幅内完整器物。缩短后前门底座与两边侧石、盖石必须严密相接，绝无断面或断裂。左右平地保持，后木闸保持原状，无人、长杠、绳或刀缝。不改颜色、材质、背景笔触，不增加纹理。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/110e7b2c5920cb305091fd4e44b70ece6e228faee28ad5b117c503eb8f963f58.png"
+    ]
+  }
+}

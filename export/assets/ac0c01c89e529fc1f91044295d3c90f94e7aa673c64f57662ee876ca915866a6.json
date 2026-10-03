@@ -1,0 +1,83 @@
+{
+  "id": "fg3-sun-liu-loaded-image-06",
+  "recipe_id": "form-sun-liu-loaded",
+  "entity": {
+    "object_id": "entity-sun-liu",
+    "revision_id": "4b2ec689619f74ff7f54d1815afee52943c5d2f1eafe94d321ca7fbe16a8fda8"
+  },
+  "state": {
+    "object_id": "form-sun-liu-loaded",
+    "revision_id": "8fc2631bf0a023c1355fa6853b724508cae326f085cb0d2c3d99422ab533a366"
+  },
+  "requirement": {
+    "object_id": "need-form-sun-liu-loaded-overall",
+    "revision_id": "254d66affdfe6aae9f0361b51de9f72813a67346571bc809dff294f8d25abd5b"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-sun-liu-base-image-01",
+        "revision_id": "859396d6c1d139499dd1d90b9ceefbe7692c4a8e7aefcb60e5b9787a0bef5a6d"
+      },
+      "component_id": "original",
+      "sha256": "6c2a968d077e3fe1c34eb951ace6884529268c8300a2ed9dc48a2918dd0e47e1",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：孙六宽短脸、短须高髻、灰绿无袖外褂及卷袖粗臂"
+    },
+    {
+      "reference": {
+        "object_id": "asset-fg3-crossbeam-base-image-01",
+        "revision_id": "94e9b74b04de561706b0c7aa2b5caf24b6a812493bc168c69555bd8f7f2d1e70"
+      },
+      "component_id": "original",
+      "sha256": "9ff476bb5d123bb9459100eb6667f542cbfb2e7ee2e17961bcfcb9777f7acf4f",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图2：整根灰褐圆木杠颜色、直径和两端"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-fg3-sun-liu-base-image-01",
+        "revision_id": "859396d6c1d139499dd1d90b9ceefbe7692c4a8e7aefcb60e5b9787a0bef5a6d"
+      },
+      {
+        "object_id": "asset-fg3-crossbeam-base-image-01",
+        "revision_id": "94e9b74b04de561706b0c7aa2b5caf24b6a812493bc168c69555bd8f7f2d1e70"
+      }
+    ]
+  },
+  "master_approvals": [
+    {
+      "object_id": "review-master-fg3-sun-liu-base-image-01",
+      "revision_id": "2620e6a456aff05ed0249f69f1603e06b947ff86cdaa9ef63f59c3da576b16bd"
+    },
+    {
+      "object_id": "review-master-fg3-crossbeam-base-image-01",
+      "revision_id": "a385bcc1ca6f26edd57cb9a9cd218e8e0b76155725a956cc187743bd5d0ca050"
+    }
+  ],
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "制作一张新的完整状态整体参考，二维人物配轻手绘背景，低饱和平涂、柔和干净线条，保持参考身份、颜色与比例。轻薄背景，不增纸纹、噪点、浮雕或锐化。单幅完整形态，不拼贴、裁切或放大；工具最高原生输出，无水印或装饰标题。\n参考顺序：图1为孙六宽短脸、短须高髻、灰绿无袖外褂及卷袖粗臂；图2为整根灰褐圆木杠颜色、直径和两端。\n4:3横幅，侧面略偏前，全人物头脚与木杠两端留边入画。人物双脚前后错开踩牢地面、膝深弯，腰完全前折，上身几乎水平，胸近膝；背和肩胛高于横杠，头低于肩。身体跨伏在木杠上，杠的上表面顶住肩前端锁骨下的位置，重量从上往下压，绝不是把杠往上扛。两臂跨过杠向远侧下垂，手不托杠底，木杠不夹两腋，肩前端与杠上表面贴紧可见。Lean the torso forward OVER the beam, front of shoulder on TOP of beam, head and forearms lower on far side, feet firmly grounded. Never a barbell curl or carrying on the back of the neck. 孙六图1灰绿外褂、浅麻卷袖露粗臂、深褐裤和裹腿布鞋保持；换咬牙疲劳表情，不能仍轻松笑。两肩沉低、额汗，向旁边工友的方向略侧头，但本张不增加第二个人。胳膊跨杠下垂，手扣远侧边缘，仅稳住，不向上托举。腰间不画鼓或鼓槌。不能坐地、脱肩或把杠扛在后颈。背景简淡，两脚与整根杠可见。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/6c2a968d077e3fe1c34eb951ace6884529268c8300a2ed9dc48a2918dd0e47e1.png",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/9ff476bb5d123bb9459100eb6667f542cbfb2e7ee2e17961bcfcb9777f7acf4f.png"
+    ]
+  }
+}

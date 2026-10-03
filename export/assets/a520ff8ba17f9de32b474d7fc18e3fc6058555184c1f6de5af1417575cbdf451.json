@@ -1,0 +1,57 @@
+{
+  "id": "fg3-feeding-door-base-image-04",
+  "recipe_id": "form-feeding-door-base",
+  "entity": {
+    "object_id": "entity-feeding-door",
+    "revision_id": "84625e0451deeb0b6b28223b51e3452c77837661ba41f05c3fb3158f903a91ca"
+  },
+  "state": {
+    "object_id": "form-feeding-door-base",
+    "revision_id": "b02254a89f5f3268c0c0a9294283d1d8b26dfed83a213074ebe9331d89cee159"
+  },
+  "requirement": {
+    "object_id": "need-form-feeding-door-base-overall",
+    "revision_id": "7d9f8de8402fd4c7708e479497e1238db904aa1102060c10a34be106ce7b8272"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-cave-gate-base-image-02",
+        "revision_id": "9f2dd5a25d3a9b294892313fcfc40dc380f838125ebdb5a2133b7f551a7e9bfe"
+      },
+      "component_id": "original",
+      "sha256": "1ebb9619a864ff72087147b6aa6d188d911a6a71a4a81968df78e997f9da0374",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：干净北闸，只作为同一组合的后方木柱滑闸结构锚定"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-fg3-cave-gate-base-image-02",
+        "revision_id": "9f2dd5a25d3a9b294892313fcfc40dc380f838125ebdb5a2133b7f551a7e9bfe"
+      }
+    ]
+  },
+  "master_approval": {
+    "object_id": "review-master-fg3-cave-gate-base-image-02",
+    "revision_id": "c5929ad614df03fae2f0b615752fc7eb7425bc0c29b75d76d7b40effc9a77e2a"
+  },
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "生成一张新的完整状态整体参考，二维人物与轻手绘背景，低饱和自然色、清楚干净轮廓、平涂为主；保持准确母版身份、比例、配色与空间方向。不要摄影皮肤、纸纹噪点、厚肌理或过锐边缘。单幅单时刻，不是分镜拼图、裁切或放大。输出工具最高原生画面，无水印和装饰标题。\n完整原件按实际顺序输入：图1：干净北闸，只作为同一组合的后方木柱滑闸结构锚定。\n4:3南投食门完整基准，单一低矮器物组合，从南偏西向北看。重新按锁定设计绘制南端整石框：一扇暗灰褐厚木小门闭合，左门轴可向外转，粗木横闩卡在整石框两侧凸石槽；门、闩和全石框占近景主体，大小只能伸手推盆，不能人行。往后短石道由前后两块平石盖全封，盖高约成人膝；后端是图1原样两根灰褐木柱夹竖拼滑闸，北闸落底、圆木栓穿过柱孔，闸后另有短段封顶石道接岩根。全组合没有刀缝或长杠、无人物蛇。此轮只输入干净北闸图，不用此前D2投食门图反复迁移；整石框、前门、后方木柱保持不同材料与功能。浅暖灰简底，全部边缘留空。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/1ebb9619a864ff72087147b6aa6d188d911a6a71a4a81968df78e997f9da0374.png"
+    ]
+  }
+}

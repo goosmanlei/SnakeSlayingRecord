@@ -1,0 +1,83 @@
+{
+  "id": "fg3-li-xiao-loaded-image-05",
+  "recipe_id": "form-li-xiao-loaded",
+  "entity": {
+    "object_id": "entity-li-xiao",
+    "revision_id": "8b80c3b9f85054a8742a12bd090328b7be42eaf3891a64efe377c26c630e0071"
+  },
+  "state": {
+    "object_id": "form-li-xiao-loaded",
+    "revision_id": "08e06dcdf0be41af66e6f809b93776e209b39214640686c7cbd54b0992f7d0e1"
+  },
+  "requirement": {
+    "object_id": "need-form-li-xiao-loaded-overall",
+    "revision_id": "0e6a0319253e628f81524f81ad390c47c806140d3ca8f1ac4a98d7d21797d336"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-li-xiao-base-image-01",
+        "revision_id": "59847b2311391f9fad4a943823ad53309f67f9049a92ab126ed3c70efc740844"
+      },
+      "component_id": "original",
+      "sha256": "0afdf77eca72f0dc52218123211a2a6a2571875103d0d3275a32f3e10c738950",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：用户已认可的准确母版；只改变本提示指定状态，保持身份、服色与二维轮廓。"
+    },
+    {
+      "reference": {
+        "object_id": "asset-fg3-crossbeam-base-image-01",
+        "revision_id": "94e9b74b04de561706b0c7aa2b5caf24b6a812493bc168c69555bd8f7f2d1e70"
+      },
+      "component_id": "original",
+      "sha256": "9ff476bb5d123bb9459100eb6667f542cbfb2e7ee2e17961bcfcb9777f7acf4f",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图2：已认可长横杠的粗细、灰褐木色与圆截面，保持单根，不增加分叉。"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-fg3-li-xiao-base-image-01",
+        "revision_id": "59847b2311391f9fad4a943823ad53309f67f9049a92ab126ed3c70efc740844"
+      },
+      {
+        "object_id": "asset-fg3-crossbeam-base-image-01",
+        "revision_id": "94e9b74b04de561706b0c7aa2b5caf24b6a812493bc168c69555bd8f7f2d1e70"
+      }
+    ]
+  },
+  "master_approvals": [
+    {
+      "object_id": "review-master-fg3-li-xiao-base-image-01",
+      "revision_id": "7c9dcd26b8ea01574a2898c1d7ddd45b0a760125f080ba5ef60771acfb36e2f2"
+    },
+    {
+      "object_id": "review-master-fg3-crossbeam-base-image-01",
+      "revision_id": "a385bcc1ca6f26edd57cb9a9cd218e8e0b76155725a956cc187743bd5d0ca050"
+    }
+  ],
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "生成一张完整形态的整体参考原件，单幅、单视点，不拼贴、不分格、不加标题或标注。二维动画手绘轮廓，低饱和色面，每面最多两级简洁阴影；场景用稀疏轻手绘背景，避免摄影、三维渲染、密纹、颗粒、厚纸纹和锐化。主体及道具端部全部留边入画。输出工具实际最高原生图，不放大。16:9横幅，完整空间与动作关系一眼可读。人物朝画面右侧，采用几乎纯侧面的全身动作参考，脸侧面仍可认。双膝深屈、臀部稍高、上身向前下方折，胸接近膝，颈自然向下低头；人用体重压住低杠。接触关系必须是人物靠观者一侧的肩尖从上面压在木杠顶面，肩肉在上、木杠在下；杠在胸侧外方、远离脖子，绝不可放到肩上或横在颈前。两前臂在杠下方握住稳位，不向上举杠，双脚落平。整人、手脚、短展示范围内完整横杠两端都入画，杠只作本动作局部承托，不展示机关全院。参考图1固定李绡发式、脸、衣裤及鞋；参考图2固定木杠。李绡额汗流近眼角，眼微眯，耳后及颈侧有细汗，蹲屈持续向下压；一只膝贴近灰石基座边，表情吃力但清醒，衣着完整无撕裂，不新增伤。浅灰背景，只有她一人。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/0afdf77eca72f0dc52218123211a2a6a2571875103d0d3275a32f3e10c738950.png",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/9ff476bb5d123bb9459100eb6667f542cbfb2e7ee2e17961bcfcb9777f7acf4f.png"
+    ]
+  }
+}

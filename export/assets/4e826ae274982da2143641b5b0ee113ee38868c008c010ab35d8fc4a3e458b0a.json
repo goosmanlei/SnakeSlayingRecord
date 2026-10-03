@@ -1,0 +1,131 @@
+{
+  "id": "fg3-rice-shop-closing-image-01",
+  "recipe_id": "form-rice-shop-closing",
+  "entity": {
+    "object_id": "entity-rice-shop",
+    "revision_id": "febc054f3519aa2ff902ad0f1f51f11643de98cb716b2990db699b7f95637f63"
+  },
+  "state": {
+    "object_id": "form-rice-shop-closing",
+    "revision_id": "33cafd4a0661b94f35c013b865d0bff81c24b9063758789d8edb0cc372ce48f7"
+  },
+  "requirement": {
+    "object_id": "need-form-rice-shop-closing-overall",
+    "revision_id": "db1e629661bf2e2d8d44471cecb6c888c30d53b1f566d217bf529428811397cb"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-rice-shop-day-image-02",
+        "revision_id": "d5d473443014523f18552d013062731c9314a68cba3df596a9271a49756aa1c8"
+      },
+      "component_id": "original",
+      "sha256": "0fb36948e70303bf7b14c7adb42cc713c68106a16e9914fae024255a6bee33ce",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：干净米铺准确右柜后缸左粮位与门板布局"
+    },
+    {
+      "reference": {
+        "object_id": "asset-fg3-zhou-base-image-02",
+        "revision_id": "23e8da1b8fe6d12afb7449fa1877ece4b1466fd240117e844331cce5bc406867"
+      },
+      "component_id": "original",
+      "sha256": "641cc8163f4ecf05977f9acf908dcba2b85f27bdd5112a9fd574ec10f0dfbbe2",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图2：周掌柜面貌服色"
+    },
+    {
+      "reference": {
+        "object_id": "asset-fg3-aheng-image-01",
+        "revision_id": "e0e3e576207967838b531d30c69e5aa2841d44b7312818bc107c8f06d1ee7145"
+      },
+      "component_id": "original",
+      "sha256": "6f9cb6a1cabddd8ce34630709e0993ef66c69a66429a330f7cf943107b6c890f",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图3：阿蘅青灰衣裙身份"
+    },
+    {
+      "reference": {
+        "object_id": "asset-fg3-lead-lyrics-base-image-01",
+        "revision_id": "ddf500437f0e69df7fd105e90c23ee61690bac60e6b1d08a69a086881b74c081"
+      },
+      "component_id": "original",
+      "sha256": "cfa22c5ac103574a4c4796d6f53918583fb654a59b15d8cc9d4e0d82680fc06a",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图4：台面铺开的破旧歌词纸外形，保留残破而不补新字"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 2,
+    "references": [
+      {
+        "object_id": "asset-fg3-rice-shop-day-image-02",
+        "revision_id": "d5d473443014523f18552d013062731c9314a68cba3df596a9271a49756aa1c8"
+      },
+      {
+        "object_id": "asset-fg3-zhou-base-image-02",
+        "revision_id": "23e8da1b8fe6d12afb7449fa1877ece4b1466fd240117e844331cce5bc406867"
+      },
+      {
+        "object_id": "asset-fg3-aheng-image-01",
+        "revision_id": "e0e3e576207967838b531d30c69e5aa2841d44b7312818bc107c8f06d1ee7145"
+      },
+      {
+        "object_id": "asset-fg3-lead-lyrics-base-image-01",
+        "revision_id": "ddf500437f0e69df7fd105e90c23ee61690bac60e6b1d08a69a086881b74c081"
+      }
+    ]
+  },
+  "master_approvals": [
+    {
+      "object_id": "review-master-fg3-rice-shop-day-image-02",
+      "revision_id": "f7f32a6950ef70ed68fd0e1d5d7787ed542de4d4d5329bbc870d4892b35ea249"
+    },
+    {
+      "object_id": "review-master-fg3-zhou-base-image-02",
+      "revision_id": "d5a172477d98414ddff912f2aded6b5de659c2024c70aaa66d7749a88f821d56"
+    },
+    {
+      "object_id": "review-master-fg3-aheng-image-01",
+      "revision_id": "a75edf8549c47e302844162ab250ba38545ffa05d537472c18a0a3e5bf45f24f"
+    },
+    {
+      "object_id": "review-master-fg3-lead-lyrics-base-image-01",
+      "revision_id": "757db770f543a07f4ee254421e002ad00ece9d34f52070c50054c09e4e561b06"
+    }
+  ],
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "生成一张新的完整状态整体参考，二维人物与轻手绘背景，低饱和自然色、清楚干净轮廓、平涂为主；保持准确母版身份、比例、配色与空间方向。不要摄影皮肤、纸纹噪点、厚肌理或过锐边缘。单幅单时刻，不是分镜拼图、裁切或放大。输出工具最高原生画面，无水印和装饰标题。\n完整原件按实际顺序输入：图1：干净米铺准确右柜后缸左粮位与门板布局；图2：周掌柜面貌服色；图3：阿蘅青灰衣裙身份；图4：台面铺开的破旧歌词纸外形，保留残破而不补新字。\n16:9暮色将夜同一米铺，从门外略侧看向右柜，略调整视点以看清留缝。图1宽门大部分由原靠左的竖木门板逐片装上，只剩最后一块板宽的开口未封；不能仍敞开两大间。通过留口看到右柜、后缸和左货架位置不换。掌柜在柜后把算盘挪向里面，阿蘅站柜前，台面为图4残页留出空净平面。唯一小陶盏油灯在柜边发暖光，外街蓝灰，旧灯笼不入场。全门檐、柜台和两人动作足够可辨，不新增窗洞或拆门板扩大视线。左倒扣竹篮仍在门外，门前河水浅而可见卵石河床，不改成深渠。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/0fb36948e70303bf7b14c7adb42cc713c68106a16e9914fae024255a6bee33ce.png",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/641cc8163f4ecf05977f9acf908dcba2b85f27bdd5112a9fd574ec10f0dfbbe2.png",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/6f9cb6a1cabddd8ce34630709e0993ef66c69a66429a330f7cf943107b6c890f.png",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/cfa22c5ac103574a4c4796d6f53918583fb654a59b15d8cc9d4e0d82680fc06a.png"
+    ]
+  }
+}
