@@ -30,6 +30,14 @@ def validate_reference_authorization(resolve, request, references, states, entit
     if not references:
         return
     approval = request.get('master_approval')
+    approvals = request.get('master_approvals')
+    if approvals is not None:
+        assert not approval and isinstance(approvals, list) and len(approvals) == len(references), 'one ordered approval per reference required'
+        for selected, judgment in zip(references, approvals):
+            decision = resolve(judgment, {'JUDGMENT'})['payload']
+            assert decision['actor'] == 'user' and decision['verdict'] == 'accepted', 'user acceptance required'
+            assert decision['target'] == {k: selected[k] for k in ('object_id', 'revision_id')}, 'approval does not match ordered reference'
+        return
     if approval:
         decision = resolve(approval, {'JUDGMENT'})['payload']
         assert decision['actor'] == 'user' and decision['verdict'] == 'accepted'
@@ -160,6 +168,8 @@ def main():
                 'receipt': receipt, 'usage': usage, 'lineage': lineage,
                 'same_state_repair': request.get('same_state_repair'),
                 'authorization': '用户任务执行指令；对应状态派生须获准确母版认可，未认可候选仅用于其自身明确问题的返工。'}
+            if 'master_approvals' in request:
+                call_payload['master_approvals'] = deepcopy(request['master_approvals'])
             asset_payload = {'format': 'production-asset-v1', 'title': item['title'],
                 'blocks': [{'id': 'description', 'text': item['review']}], 'media_type': media,
                 'subjects': [entity], 'states': states, 'components': components,

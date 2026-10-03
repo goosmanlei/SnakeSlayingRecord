@@ -1,0 +1,60 @@
+{
+  "id": "fg3-public-verdict-base-image-02",
+  "recipe_id": "form-public-verdict-base",
+  "entity": {
+    "object_id": "entity-public-verdict",
+    "revision_id": "e5ee981c04f51a280197facb6f2c23bccfe71bb1d6e2d4f7040e95cdc582c424"
+  },
+  "state": {
+    "object_id": "form-public-verdict-base",
+    "revision_id": "0a174e3e83c6ee9f4a97a949a6ad650030dbc1085935653da38a4c17a52083a1"
+  },
+  "requirement": {
+    "object_id": "need-form-public-verdict-base-overall",
+    "revision_id": "14e6ade10ff278dd44482358ff2ad4749782db02833241aa7d197e74271e1c46"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-public-verdict-base-image-01",
+        "revision_id": "e11629bc29e4b19eaf4fe37f5d3f56b610b7c516be0a40c5e9fbc8b496cbde92"
+      },
+      "component_id": "original",
+      "sha256": "d45273dc11efa2225b8aeed3c4086d9bc2ec1b70b789ce657ab5e2f4bd54b8f9",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：同状态待修原件，保留已核对全文，只修四角与并列姓名。"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-fg3-public-verdict-base-image-01",
+        "revision_id": "e11629bc29e4b19eaf4fe37f5d3f56b610b7c516be0a40c5e9fbc8b496cbde92"
+      }
+    ]
+  },
+  "same_state_repair": {
+    "source": {
+      "object_id": "asset-fg3-public-verdict-base-image-01",
+      "revision_id": "e11629bc29e4b19eaf4fe37f5d3f56b610b7c516be0a40c5e9fbc8b496cbde92"
+    },
+    "reason": "去除现代胶带；下区阿禾和小满并列，不改原文。"
+  },
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "单幅整体参考，全部组成完整留边。沿用参考的二维清楚线条、低饱和色块，浅暖灰空底，不加纹理、噪点、文字标题、人物或分格。最高原生输出，不放大。3:4，仅局部修改参考图1的四角：删除四块斜贴的胶带，露出同一张完整纸的干净四角，表现浆糊在纸背粘贴而非任何可见贴条；浅暖灰底与原纸比例不变。其他所有文字逐字原样保留，任何刑罚、句子或人名都不能改。下半部右侧的“阿禾、小满”改为阿禾和小满各一竖列、左右并排，两列下面共享原句“皆非自愿入祀”。其余栏位顺序、文字和清爽线色不动，不增纹理。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/d45273dc11efa2225b8aeed3c4086d9bc2ec1b70b789ce657ab5e2f4bd54b8f9.png"
+    ]
+  }
+}

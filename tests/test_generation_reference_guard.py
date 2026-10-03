@@ -54,6 +54,46 @@ class ReferenceGuardTests(unittest.TestCase):
                 validate_reference_authorization(resolve, request, [self.asset], [self.state], self.entity, 'image')
 
 
+class MultipleMasterTests(unittest.TestCase):
+    def setUp(self):
+        self.refs = [{'object_id': 'asset-'+str(i), 'revision_id': 'rev-'+str(i)} for i in range(2)]
+        self.decisions = [{'object_id': 'review-'+str(i), 'revision_id': 'accepted-'+str(i)} for i in range(2)]
+        self.depths = [0, 1]
+        self.request = {'master_approvals': self.decisions, 'lineage': {'i2i_depth': 2, 'references': self.refs}}
+
+    def validate(self):
+        def resolve(ref, kinds):
+            if kinds == {'ASSET'}:
+                return {'payload': {'lineage': {'i2i_depth': self.depths[self.refs.index(ref)]}}}
+            i = self.decisions.index(ref)
+            return {'payload': {'actor': 'user', 'verdict': 'accepted', 'target': self.refs[i]}}
+        validate_reference_authorization(resolve, self.request, self.refs, [], {}, 'image')
+
+    def test_each_submitted_reference_requires_its_own_exact_acceptance(self):
+        self.validate()
+        self.request['master_approvals'] = self.decisions[:1]
+        with self.assertRaisesRegex(AssertionError, 'one ordered approval'):
+            self.validate()
+
+    def test_reordered_or_borrowed_acceptance_cannot_authorize_inputs(self):
+        for approvals in [list(reversed(self.decisions)), [self.decisions[0]] * 2]:
+            self.request['master_approvals'] = approvals
+            with self.assertRaisesRegex(AssertionError, 'ordered reference'):
+                self.validate()
+
+    def test_mixed_singular_and_plural_acceptance_is_rejected(self):
+        self.request['master_approval'] = self.decisions[0]
+        with self.assertRaisesRegex(AssertionError, 'one ordered approval'):
+            self.validate()
+
+    def test_clean_master_does_not_reset_deepest_reference(self):
+        self.depths[1] = 2
+        for claimed in (1, 2, 3):
+            self.request['lineage']['i2i_depth'] = claimed
+            with self.assertRaisesRegex(AssertionError, 'two-generation limit'):
+                self.validate()
+
+
 class BuiltinPlanTests(unittest.TestCase):
     def setUp(self):
         self.plan = {'method': 'generate', 'model': 'GPT Image', 'prompt': 'Only the exact character',
