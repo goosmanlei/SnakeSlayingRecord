@@ -7,13 +7,43 @@ from pathlib import Path
 from verify_production_review import read_tables
 
 
+def scope_changes(before, registration):
+    """Allow only an explicitly confirmed consolidation, retaining old payloads."""
+    change=registration.get('scope_amendment')
+    if not change:return set()
+    evidence=change.get('approval',{})
+    if evidence.get('actor')!='user' or not evidence.get('reply') or not evidence.get('question_item_id'):
+        raise ValueError('scope consolidation requires exact user evidence')
+    old_objects={r[0]:r for r in before['objects']}
+    old_revisions={r[0]:r for r in before['revisions']}
+    withdrawals=set(change['withdrawn_objects']);preparations=set(change['changed_preparations']);allowed=withdrawals|preparations
+    records={r['object_id']:r for b in registration['batches'] for r in b['records']}
+    if set(records)!=allowed:raise ValueError('scope consolidation changes unexpected objects')
+    for oid,spec in records.items():
+        prior=json.loads(old_revisions[old_objects[oid][2]][3]);payload=spec['payload'];kind=spec['kind']
+        if oid in preparations:
+            expected={**prior,'occurrences':[o for o in prior['occurrences'] if o['entity']['object_id']!=change['withdrawn_entity']]}
+            if kind!='PREPARATION' or expected==prior or payload!=expected:
+                raise ValueError('consolidation must only remove the duplicate occurrence')
+        else:
+            if kind not in ('ENTITY','STATE','REQUIREMENT','RELATION','REPRESENTATION'):
+                raise ValueError('consolidation cannot change actual media, calls or decisions')
+            expected={**prior,'status':'withdrawn','withdrawal_reason':change['reason'],'merged_into':change['replacements'][oid]}
+            if kind=='REQUIREMENT':
+                expected['required']=False;expected.pop('generation',None)
+            if payload!=expected:raise ValueError('withdrawal changed unrelated content: '+oid)
+    return allowed
+
+
 def verify(before, after, registration):
     old,new=read_tables(before),read_tables(after)
     if old.keys()!=new.keys(): raise ValueError('unexpected schema change')
     records=[r for b in registration['batches'] for r in b['records']]
     allowed={r['object_id'] for r in records}
     decisions=set(registration.get('user_master_decisions',[]))
+    consolidated=scope_changes(old,registration)
     for record in records:
+        if record['object_id'] in consolidated:continue
         if record['kind'] in ('REQUIREMENT','CALL','ASSET'): continue
         payload=record['payload']
         if (record['kind']!='JUDGMENT' or record['object_id'] not in decisions

@@ -1,0 +1,57 @@
+{
+  "id": "fg3-zhou-plain-image-01",
+  "recipe_id": "form-zhou-plain",
+  "entity": {
+    "object_id": "entity-zhou",
+    "revision_id": "b5bd34aad27efc3242b5ca4e724214a7ea727339c670f5168bed6a2ad42a62f4"
+  },
+  "state": {
+    "object_id": "form-zhou-plain",
+    "revision_id": "6839732844b316166096376162a0fc642084b6f2216a73799f9062b2dbe11eca"
+  },
+  "requirement": {
+    "object_id": "need-form-zhou-plain-overall",
+    "revision_id": "77a203ef187330476631506434c59e8ee9cafb8e064092152ddb4dfd68aa4af3"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "master_approval": {
+    "object_id": "review-master-fg3-zhou-base-image-02",
+    "revision_id": "d5a172477d98414ddff912f2aded6b5de659c2024c70aaa66d7749a88f821d56"
+  },
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-zhou-base-image-02",
+        "revision_id": "23e8da1b8fe6d12afb7449fa1877ece4b1466fd240117e844331cce5bc406867"
+      },
+      "component_id": "original",
+      "sha256": "641cc8163f4ecf05977f9acf908dcba2b85f27bdd5112a9fd574ec10f0dfbbe2",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：用户认可的本实体完整原件，固定人物身份、比例、款色与画风；只改变本状态明示内容。"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 2,
+    "references": [
+      {
+        "object_id": "asset-fg3-zhou-base-image-02",
+        "revision_id": "23e8da1b8fe6d12afb7449fa1877ece4b1466fd240117e844331cce5bc406867"
+      }
+    ]
+  },
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具未暴露底层型号、质量、像素选项；实际原生输出另验。",
+  "request": {
+    "prompt": "参考图1为已认可的同一周掌柜基准。保持宽圆脸、短眉、发髻、略厚肩背、浅灰褐交领衣、原裤和灰鞋，原二维轮廓和平涂风格。本状态为出门未穿围裙：把整块深褐围裙、围裙系带以及粉白擦痕全部去掉，恢复浅灰褐上衣腰腹的正常下摆，不留深色围裙轮廓。右手轻触自己的衣襟作习惯擦手姿势，左手放松，脸仍温和。只画一个完整头到鞋的人，3:4、浅暖灰空底、同母版中性光；不加米斗、袋子、白巾、店铺或新饰物，不增加纹理、噪点或锐化。最高可用原生输出，不放大。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/641cc8163f4ecf05977f9acf908dcba2b85f27bdd5112a9fd574ec10f0dfbbe2.png"
+    ]
+  }
+}

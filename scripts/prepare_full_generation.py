@@ -75,13 +75,24 @@ def concrete_dimensions(payload):
     return '\n'.join(out)
 
 
-def image_plans(rows, by):
+def image_plans(rows, by, apply_scope_amendment=True):
     states = [r for r in rows if r['kind'] == 'STATE' and r['payload'].get('state_model') == 'complete-v1']
     targets = [r for r in states if r['payload']['reference_media'] == 'image'
                and by[r['payload']['entity']['object_id']]['payload']['entity_type'] != 'song']
     assert len(states) == 267 and len(targets) == 255, 'scope changed; review differences before proceeding'
+    baseline_count=126
+    amendment_path=ROOT/'production/full-generation/scope-amendment.json'
+    if apply_scope_amendment and amendment_path.exists():
+        amendment=json.loads(amendment_path.read_text())
+        assert amendment['approval']['actor']=='user' and amendment['approval']['reply'], 'scope amendment lacks user confirmation'
+        excluded={item['old']['object_id'] for item in amendment['state_mapping']}
+        assert excluded <= {r['id'] for r in targets}, 'scope amendment does not match inventory'
+        assert len(targets)==amendment['before_image_count'], 'scope changed before amendment'
+        targets=[r for r in targets if r['id'] not in excluded]
+        assert len(targets)==amendment['after_image_count'], 'scope changed after amendment'
+        baseline_count=amendment['after_image_baselines']
     keys = {s['payload']['entity']['object_id'][7:] for s in targets}
-    assert len(keys) == 126 and keys <= DESIGN.keys()
+    assert len(keys) == baseline_count and keys <= DESIGN.keys()
     out = []
     for state in targets:
         p = state['payload']; entity = by[p['entity']['object_id']]; ep = entity['payload']

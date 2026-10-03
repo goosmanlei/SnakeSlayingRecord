@@ -1,0 +1,60 @@
+{
+  "id": "fg3-sun-liu-loaded-image-03",
+  "recipe_id": "form-sun-liu-loaded",
+  "entity": {
+    "object_id": "entity-sun-liu",
+    "revision_id": "4b2ec689619f74ff7f54d1815afee52943c5d2f1eafe94d321ca7fbe16a8fda8"
+  },
+  "state": {
+    "object_id": "form-sun-liu-loaded",
+    "revision_id": "8fc2631bf0a023c1355fa6853b724508cae326f085cb0d2c3d99422ab533a366"
+  },
+  "requirement": {
+    "object_id": "need-form-sun-liu-loaded-overall",
+    "revision_id": "0611aab5d8ebe834cd12117d6a2f680a6b1b12df212f42852660ed8303984c71"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-sun-liu-loaded-image-02",
+        "revision_id": "8262c4a5876726c110d75e949e9600735cb31dd07e433e4025b9be58d5b84bc9"
+      },
+      "component_id": "original",
+      "sha256": "ee3035113b275dd54ed4d88d0da76e42eaf6ee92327e577dbe82759c80437882",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：完整原件，固定身份与画风，仅修改所列状态或自检问题。"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 2,
+    "references": [
+      {
+        "object_id": "asset-fg3-sun-liu-loaded-image-02",
+        "revision_id": "8262c4a5876726c110d75e949e9600735cb31dd07e433e4025b9be58d5b84bc9"
+      }
+    ]
+  },
+  "same_state_repair": {
+    "source": {
+      "object_id": "asset-fg3-sun-liu-loaded-image-02",
+      "revision_id": "8262c4a5876726c110d75e949e9600735cb31dd07e433e4025b9be58d5b84bc9"
+    },
+    "reason": "修正参考图1同一个孙六的受力姿势。保持准确脸、发髻、胡须、壮体形、米白卷袖衣和灰绿外褂、褐裤、绑腿、布鞋、咬牙表情及汗。原来木杠只在腹前，改为身体从腰部深深前俯，背部接近水平，屈膝踏稳；将木杠抬到肩膀前下方，肩部从上面压住木杠，肩尖衣布与木杠上缘出现清楚贴合的接触折痕，木与肩没有空隙。脸在杠的旁侧可见，不被木挡住。手掌在肩部接触点的两侧扶稳，不以伸直手臂承担全部动作。用身体重量把横木向下压，不是双手压在腰高栏杆、不是扛木向上举或坐下休息。3:4单人完整头到双鞋、全肢体留边，只一段横木与浅暖灰空底；保持原二维线色，减少细碎布纹、汗点不过量，无额外人物或闸装置。"
+  },
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具未暴露底层模型ID、质量及像素选择；实际输出单独检测。",
+  "request": {
+    "prompt": "修正参考图1同一个孙六的受力姿势。保持准确脸、发髻、胡须、壮体形、米白卷袖衣和灰绿外褂、褐裤、绑腿、布鞋、咬牙表情及汗。原来木杠只在腹前，改为身体从腰部深深前俯，背部接近水平，屈膝踏稳；将木杠抬到肩膀前下方，肩部从上面压住木杠，肩尖衣布与木杠上缘出现清楚贴合的接触折痕，木与肩没有空隙。脸在杠的旁侧可见，不被木挡住。手掌在肩部接触点的两侧扶稳，不以伸直手臂承担全部动作。用身体重量把横木向下压，不是双手压在腰高栏杆、不是扛木向上举或坐下休息。3:4单人完整头到双鞋、全肢体留边，只一段横木与浅暖灰空底；保持原二维线色，减少细碎布纹、汗点不过量，无额外人物或闸装置。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/ee3035113b275dd54ed4d88d0da76e42eaf6ee92327e577dbe82759c80437882.png"
+    ]
+  }
+}
