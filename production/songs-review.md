@@ -1,64 +1,78 @@
 # 四首歌曲：整曲试听与恢复
 
-用户已回复“好，继续整曲创作”，确认上一轮完整歌词、曲名、音乐方向及局部剧本同步范围。本轮已制作四首整曲候选、八个旋律短参考，以及阿蘅声线另演的第一集两段清唱。当前交付用于听审，尚不是已接受的发行终版；完整任务范围以[任务说明](../planning/complete-songs-task.md)为准。
+本轮已按用户要求用 Lyria 重制四首独立歌曲，交付原生 MP3 试听。用户在首曲请求 WAV 却返回 MP3 后明确回复：“先完成四首 MP3 试听，WAV 母版保持待解决”。四次调用额度已用完；没有追加重试、充值或自动接受音频。完整任务范围见[任务说明](../planning/complete-songs-task.md)。
 
-## 试听与准确版本
+## 当前试听
 
-在[隔离歌曲审阅台](http://127.0.0.1:39114/?workspace=settings.workspace&production_entity=entity-boat-song)选择歌曲，再选“独立整曲演唱”。歌词在作品基础信息中；播放器可选段评论。独立歌手不自动代表阿蘅、母亲或歌娘。《送青篷》同轮保留两次真实结果，本轮请听 **90 秒第二稿**；118 秒第一稿的返回字幕缺四行，未作为完整试听版本。
+打开[隔离歌曲审阅台](http://127.0.0.1:39114/?workspace=settings.workspace&production_entity=entity-boat-song)，选择歌曲的“独立整曲演唱”和“素材版本 2 · 当前”。作品基础信息保留已确认完整歌词与音乐方向；版本一中的 Seed Audio 候选及旧评论仍可查。独立歌手的演唱不自动代表阿蘅、母亲或歌娘。
 
-| 稳定实体 | 曲名／本轮录音 | 实际时长 | 原始 WAV SHA-256 |
+以下路径以本任务 worktree 根目录为基准。四份原件位于 `.runtime/lyria/<尝试 ID>/audio-01.mp3`：
+
+| 歌曲／稳定实体 | 尝试 ID | 实际时长 | 原件 SHA-256 |
 | --- | --- | --- | --- |
-| `entity-boat-song` | 三道滩 · full-v1 | 115 秒 | `4b46af94ab4760d03c1b3acc56708fcc107cfcbfa1141a8077fa57879dec6b07` |
-| `entity-blue-awning-song` | 送青篷 · full-v2 | 90 秒 | `e2c298a4a82b42114389032374abd0f108746efef898e40fe13f83d5ecc261fe` |
-| `entity-snake-welcome-song` | 四邻安 · full-v1 | 88 秒 | `2fdccee2ac168192522ad56ddc3d95f63bb0aa350a9f30bfdefbdd4f976817bd` |
-| `entity-blessing-stage-song` | 明月还乡 · full-v1 | 114 秒 | `627f35f9e98206fb6a34a1d96a437bfeca724cab92fad2bddfb3560f00145fe7` |
+| 三道滩 `entity-boat-song` | `songs-boat-lyria-wav-v1-a01` | 123.533 秒 | `47a045195be06b3769197529fbd5d36bbfb017f12e0570215f4143b37dfe6f0a` |
+| 送青篷 `entity-blue-awning-song` | `songs-blue-awning-lyria-mp3-v1-a01` | 144.065250 秒 | `c72e629b2268ab48893c7df6e5e097c5e58e4da066f5d1ee2bbcf64bdd0ad703` |
+| 四邻安 `entity-snake-welcome-song` | `songs-welcome-lyria-mp3-v1-a01` | 113.005667 秒 | `1523befb2c386401d7689a091f9a54476835e39c85387055a921050c7a0db64d` |
+| 明月还乡 `entity-blessing-stage-song` | `songs-blessing-lyria-mp3-v1-a01` | 170.370542 秒 | `ebad1c3e2a0c104397d072cf725c5d117675f7fae1ec6368115b7ce8c72058d0` |
 
-四份母文件均为接口原始返回的 48 kHz、双声道、PCM 16-bit WAV，未本地转码或升采样；另有 256 kbps MP3 试听副本。旋律目前由录音承载，尚无经听辨核定的曲谱。音乐方案中的调式、节拍、音域及编配是实际生成输入，不能反过来证明输出准确遵从。
+四首均为接口原始返回的 44.1 kHz、双声道 MP3，合计 13,247,699 字节；没有转码或升采样。首曲 ID 中的 `wav` 表示当时的请求，其回执仍为 `completed_format_mismatch`，实际格式未改写。其余三首按补充授权请求 MP3，回执为 `completed`。
 
-以下路径以本任务 worktree 根目录为基准。完整试听包为 `.runtime/songs/song-audio-review-v1.zip`，64 个文件，118,793,905 字节，SHA-256 为 `6d5e891db94fea10b1233a68263d7f7b712f549b6e5f5069c2b78df10a75b096`。包内含四首 WAV／MP3、完整歌词、原文同步提案、实际请求与回执、角色另演、十个片段及校验清单；旧缺词候选单独保存在 `history/`。候选与过程只存 `.runtime/`，不会随文档提交上传 Git。
+独立试听包为 `.runtime/songs/song-lyria-review-v1.zip`，含四首 MP3、完整干净歌词、音乐方案、原文同步范围、30 项剧中用法、四次原始请求／响应／回执、逐行文本核对与校验清单。准确文件数、大小和 SHA-256 保存在 `.runtime/songs/lyria-review/packet-receipt.json`。候选及制作过程留在 `.runtime/`，未放入公开 `export/` 或 Git。
 
-## 剧中片段与待补演法
+## 听审重点与未完成项
 
-- 八个旋律参考为 6.82—11.74 秒，分别覆盖舟行起句／归家、《送青篷》开头／断句／相照／认旧桥、领唱应和及庙戏“米饵献上，明月还乡”。文件真实存在、可定位到准确母版，但仍含独立版伴奏，不能冒充干净角色配音。
-- 阿蘅清唱另演原件为 17.686979 秒，SHA-256 `dcd331048e40bb4bf5ed6b4aaa96e86852f80339094ce4bc6512c57d03476e4c`。实际引用用户已认可的阿蘅基础音色 `a7d678681c2e490de0a7dc8aca163131f68e196ceda703dc9c9282418c589272`，认可原记录为 `review-master-fg3-aheng-voice-01 / 144216df3855deb325e7663a78a5a43dbce23e1d43a0498193b726236f1a5305`；此次清唱不继承该认可。
-- 两段清唱片段长 6.96 秒与 10.026979 秒，分别对应 E01/s001 b002、b004，既有 `shot-e01-001 / e01-line-001` 与 `shot-e01-003 / e01-line-002`。按返回时间标记，字音范围落在原预计唱词窗口内；归家片段完整尾部比原 10 秒镜头多约 0.027 秒，听审尾腔后再决定剪尾或延镜，未抢词变速或自动采用。
-- 其余《送青篷》角色清唱、两次缺词停唱、阿蘅和母亲哼唱、歌娘核字慢唱、集体及庙戏场面演法尚未全部制作。后续须沿准确听审意见修订曲调，再引用相应已认可角色声线另演，保留母亲、歌娘与阿蘅的身份差别。没有声源分轨产出，不把混音片段称为分轨。
+**本会话不能直接听辨这些音频，四首均未获用户音频接受。** 文件解码、播放器自然到达结尾和返回文本核对，只证明相应技术事实，不能证明中文咬字、音准、节奏、声线、情绪、噪声或自然收尾合格。音乐方案中的调式、节拍、音域与编配是生成输入，实际旋律由录音承载，尚无听辨核定的曲谱。
 
-`.runtime/songs/audio-review/uses-with-audio.json` 保留 30 项全剧用法的准确版本四原文、完整歌曲逐行时间、片段关系、角色及未完成项；提及和可见歌页不算音频义务。时间来自接口逐字标记加裁切余量，实际拖腔与边界仍待听审。八个参考文件都符合 Seedance 2.0 单段 2—15 秒的长度范围；同一请求多段音频总长仍不得超过 15 秒，不能把两个合规文件直接当成合规组合。接口依据见[视频生成接口](https://docs.volcengine.com/docs/ark/create-video-generation-task-api?lang=zh)。
+- 《三道滩》和《明月还乡》：返回歌词文本与确认词稿的逐行顺序一致，实际演唱待核。
+- 《送青篷》：返回文本覆盖全部 14 行，但把全词顺序重复两遍；与输入要求的两段自然收束不同，是否可用须听审，不能仅因时长完整而通过。
+- 《四邻安》：返回文本覆盖全部 14 行，开头额外有“啊”的衬声；领唱与众声应和是否实际成立、衬声是否合适待听审。庙方祈安是人物说辞，不是故事的客观事实。
+- 四首原生无损 WAV 仍缺。旧 Seed WAV 属于不同录音，不能补作本轮 Lyria 母版；MP3 解码为 WAV 也不满足原生无损要求。
 
-## 已确认的歌词与剧情边界
+本批请求数已到四次，估价合计 $0.32，实际账单未查询。收到具体听审意见后才能确定修订范围；当前没有额外生成授权，也没有最终任务完成确认。
 
-基线仍是版本四 `7287b25a34d4b0db242ec5688f33349fa6d449874a3c6acb30033e2260cd2686`，17 集、42 场、1,114 个正文块。`.runtime/songs/lyrics-approval.json` 锁定上一轮四个实体修订、全部词稿／方案校验值及用户原话。四首共 60 行；原唱词全部保留。第一轮文字包 SHA-256 `6d8675161b00b90bdec513d6a1cc70b0754b7e3646401dc8509953f02d4c538e` 保持原样。
+## 剧中用法与片段
 
-唯一已确认正文扩写为 E17/s041 b009 的《送青篷》第一段，新增衣物叮咛与隔水相望四行。完整改后场次在 `.runtime/songs/s041-proposed.md`；其余 21 块不改。第二段受损位置、“过／认旧桥”核字对白、舟行曲省掉两道滩仍成立。E04/s007 母亲选用《送青篷》起句无词旋律是已确认的制作选择，原文没有指定曲名的事实保留。
+`.runtime/songs/lyria-review/uses-with-audio.json` 保留全部 30 项准确原文用法：20 项发声呈现、10 项提及或可见歌页等非音频事项。每项指向准确 Lyria 整曲修订和原件，保留角色、唱法、歌词行及既有镜头。接口没有返回逐句时间戳，当前逐句范围为空，新旋律的短参考、角色另演与片段尚未产出。不能把旧时间或旧阿蘅清唱套到新旋律。
 
-正式剧本、输入锁定及镜头计划尚未换版。现行接口须新增完整版本五及分集旧新引用对照；歌词同步范围认可不等于新版正式制作输入已发布。后续在最新正式数据上增量同步，不能用启动快照覆盖并行任务已登记的方案、母版或评论。
+第一集仍只对接既有 `shot-e01-001 / e01-line-001` 与 `shot-e01-003 / e01-line-002`，分别为舟行起句和省去中间两滩后的归家句；其他集按准确场次交接。缺词停唱、歌娘核字、母亲哼唱、集体领唱和庙戏需要相应表演，不能由同一独立歌手混音强行代替。
 
-## 工具、额度与用途依据
+历史 Seed Audio 阶段保留八个 6.82—11.74 秒旋律参考、阿蘅 17.686979 秒另演及两段 6.96／10.026979 秒清唱。全部旧片段仅绑定原 Seed 母版，历史用法表为 `.runtime/songs/audio-review/uses-with-audio.json`。阿蘅基础声线引用已获认可原件 `a7d678681c2e490de0a7dc8aca163131f68e196ceda703dc9c9282418c589272`；新演唱不继承认可。未产出人声／伴奏分轨，不把含伴奏片段称为干净配音。
 
-实际使用现有 `scripts/seed_audio.py` 的 Seed Audio 1.0 HTTP 客户端，通过任务内适配器将全部文件写入 `.runtime/songs/audio-production/`。六次调用均有 completed 回执：四首本轮候选、《送青篷》第一次缺词候选、阿蘅省段清唱；回执计费时长合计 542.686975 秒。无新增购买或充值，也没有使用其他音乐平台订阅。
+后续先核定新曲调与逐句边界，再裁切短参考，必要时按角色声线另演。Seedance 2.0 已核对的音频参考限制为单段 2—15 秒、同次请求总长不超过 15 秒；制作时还需回查目标平台当前限制。[视频生成接口](https://docs.volcengine.com/docs/ark/create-video-generation-task-api?lang=zh)
 
-调用前现场核对开通状态和剩余额度；任务适配器同时获取已发现的各 worktree 调用锁，按 request ID 去重既有回执，扣除观察后用量，为未知请求按 120 秒预留，并另外保留 600 秒供并行任务。遇到其他调用占锁时未提交；金额／额度不采用旧快照推断当前余额。实际请求、模型参数、参考校验、平台日志号与扣减记录见 `.runtime/songs/audio-production/production/receipts/`；声线认可原记录及七条依赖修订只读引入隔离实例，正式库未写。
+## 歌词与剧情依据
 
-[音频生成接口](https://docs.volcengine.com/docs/DoubaoVoice/audio-generation-http?lang=zh)支持单次最长 120 秒、最多三份各不超过 30 秒／10 MB 的参考；这些是接口限制，不能代替歌曲质量核验。[生成模型服务专用条款](https://docs.volcengine.com/docs/DoubaoVoice/Generativemodelservicespecificterms-1?lang=zh)第 3.5 条规定生成内容的合法使用及演唱作品授权，第 3.9、3.11 条约束合成标识。交付保留原始返回字节并注明 AI 生成；不宣称作品排他性或适用于其他产品条款。核验摘要在 `.runtime/songs/audio-use-basis.json`，平台整页文档没有放入交付包。
+用户“好，继续整曲创作”已确认四首曲名、完整词稿、音乐方向与局部剧本同步范围；准确输入在 `.runtime/songs/lyrics-approval.json`。四首共 60 行，原唱词全部保留。此次 Lyria 请求没有改词，独立作品与剧情呈现分别管理。
 
-## 已验与未验
+基线仍为版本四 `7287b25a34d4b0db242ec5688f33349fa6d449874a3c6acb30033e2260cd2686`，17 集、42 场、1,114 个正文块。唯一已确认正文扩写是 E17/s041 b009《送青篷》第一段末新增衣物叮咛与隔水相望四行，完整改后场次在 `.runtime/songs/s041-proposed.md`，其余 21 块不改。第二段受损位置、“过／认旧桥”核字对白、舟行曲省掉两道滩仍成立。E04/s007 母亲选用《送青篷》起句无词旋律属于已确认制作选择，原文未指明曲名的事实保留。
 
-`.runtime/songs/audio-review/verification.json` 已核对四首选定候选的真实格式、MP3 解码、全部 60 行的返回时间标记、十个片段与母版的逐样本一致性，以及试听包全部校验值。历史修订、264 条评论、293 条评论事件和既有采用保留；只追加新记录及四个实体的头修订。此轮调用登记与最终听审接受分别保存。
+正式剧本版本五、输入锁定及镜头计划尚未发布。歌词同步范围认可不代表新版正式制作输入已发布，原版本四认可不自动转给新版。正式发布须读取最新数据增量同步，不能覆盖并行任务的新方案、母版或评论。
 
-隔离实例导出后在 `.runtime/songs/audio-restored/` 空实例恢复，12 张业务表、120 个清单文件一致。恢复范围包含歌词、音频、片段、旧意见、原实际调用和准确引用。真实 Chrome 的播放、时间评论、参考预览证据另存 `.runtime/songs/audio-review/browser-verification.json`；测试评论只写 `.runtime/songs/audio-browser-qa/`，不进入用户审阅库、干净恢复实例或正式库。
+## 实际调用与用途依据
 
-**本会话没有直接听辨这些音频。** 字幕覆盖、零满幅样本或播放器到达结尾，不能证明实际咬字、音准、节奏、音色、乐句连贯、情绪、噪声或尾腔合格。四首整曲与全部片段都保持待真实听审、待用户接受；没有完成判定或镜头自动采用。
+本轮使用 `scripts/lyria_music.py`、Google Gemini Interactions API 的 `lyria-3.5`，从本机环境读取 `GOOGLE_API_KEY`，经既有 Clash `http://127.0.0.1:7897` 串行调用；未改代理配置。工具、前提及离线恢复见 [Lyria 操作说明](lyria-music.md)。每次保留完整 prompt、模型、参数、原始响应、返回文本、文件规格和使用量；凭据不入包。四首无音频参考输入，不冒充已接受人物声线。
 
-## 恢复与下一步
+首曲按[官方音乐文档](https://ai.google.dev/gemini-api/docs/music-generation)设置 `response_format={"type":"audio"}` 仍返回 MP3，停止后才取得用户补充授权。初始批次快照在 `.runtime/songs/lyria-review/batch.json`，补充决定在 `mp3-continuation.json`；保留初始未提交规格，不改写为已调用。当前[官方价格](https://ai.google.dev/gemini-api/docs/pricing)是每首 $0.08，工具的单次预算预检查不代表平台硬限额。
 
-活跃审阅库是 `.runtime/songs/review-instance/.runtime/review.sqlite3`，39114 端口。恢复副本及浏览器测试库不得作为发布输入。服务停止时先确认端口空闲、系统提交仍为 `config/instance.json` 所锁定的 `15822ae77d9b6c3851852555a677d11d7adc7c10`，再从 worktree 根目录启动：
+[Gemini API 条款](https://ai.google.dev/gemini-api/terms)说明 Google 不主张生成内容所有权；使用者仍须遵守合法使用及适用署名要求，输出可能与他人相似，不保证排他性。包注明 AI 生成，原始字节及其中的 SynthID 保留。核验摘要为 `.runtime/songs/lyria-review/use-basis.json`。未代用户向外部平台上架。
+
+## 技术验证与恢复
+
+`.runtime/songs/lyria-review/four-songs-verification.json` 核对四份文件与响应内音频逐字节一致、SHA-256、完整解码、登记原件和历史保存。旧修订、原 264 条评论及 293 条评论事件全部保留；四首各追加一条真实用户重制指令，未伪造听审或接受，也没有自动采用到镜头。
+
+隔离实例导出后，在 `.runtime/songs/lyria-restored-four-songs/` 从空库恢复并复导出，12 张业务表、146 个清单文件完全一致，包含新旧歌曲、完整歌词、旧片段、评论及准确引用。该副本只用于恢复验证，不能覆盖活跃库。
+
+真实 Chrome 验证结果见 `.runtime/songs/lyria-review/browser-verification-four-songs.json`。四首当前 MP3 的播放器读取、从头自然到尾与新旧版本切换有实际页面证据；此为静音传输验证，不是听审。既有时间段评论、参考预览机制的验证保留于 `.runtime/songs/audio-review/browser-verification.json`，输入为旧版 WAV，不扩大为新录音的歌词定位或新片段验收。
+
+当前活跃库为 `.runtime/songs/review-instance/.runtime/review.sqlite3`，39114 端口。服务停止时先确认端口空闲、通用系统仍为 `config/instance.json` 锁定的 `15822ae77d9b6c3851852555a677d11d7adc7c10`，再从 worktree 根目录启动：
 
 ```bash
 PYTHONPATH="$HOME/codex-path/creative/story-review-desk-python" \
   python3 -m review_desk --instance .runtime/songs/review-instance serve --port 39114
 ```
 
-继续时先读活跃实例最新评论及准确接受记录。不要重跑 `prepare_review.py`、`register_audio_review.py` 或恢复脚本覆盖活跃实例；`.runtime/songs/audio-review/registration/` 保存本轮批次与回执，登记完成。新的歌词或音频修改使用新修订，实际旧 CALL 输入不变。
+继续前先读活跃实例最新评论及准确接受记录。不要重跑 `prepare_review.py`、`register_audio_review.py` 或恢复脚本覆盖活库。本轮登记已全部完成，批次和回执在 `.runtime/songs/lyria-review/registration/`；新修改用新修订，旧 CALL 输入和旧素材原件不变。
 
-先收集四首整曲、短参考与阿蘅清唱的实际听审意见，修订到准确版本获认可；再完成其余角色演法、场面处理、剧本版本五和全部引用同步，准备正式增量发布包。最终候选、部署顺序、目标分支和实际验收证据齐备后再请用户确认完成并集成，随后才运行 `_complete`。当前没有正式发布、推送或任务完成确认。冲突恢复提交为 `1e75c514091538fda2bf09d5739b05788fbab8aa`；后续候选以重新 `_prepare_integration` 的回执为准。保留 worktree 和分支，正常退出会话后才释放运行锁。
+旧 Seed 阶段独立包 `.runtime/songs/song-audio-review-v1.zip` 保留 64 个文件及十个片段，SHA-256 为 `6d5e891db94fea10b1233a68263d7f7b712f549b6e5f5069c2b78df10a75b096`。首曲格式停点包 `.runtime/songs/lyria-first-attempt-review.zip` 也保留为历史，不作为四首当前交付。旧记录不能继承为 Lyria 的接受或母版证明。
+
+下一步是逐首听审并明确准确版本，解决 WAV、歌词时间定位、剧中角色演法与短参考，再准备正式增量发布、剧本及依赖同步和正式验收。最终候选与交付流程齐备后才请用户确认完成并集成，然后执行 `_complete`。当前没有正式发布、推送或任务完成。保留 worktree 和分支，正常退出会话后才释放运行锁。
