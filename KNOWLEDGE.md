@@ -54,6 +54,7 @@
 - 生产素材与调用沿用稳定对象、不可变修订、乐观版本和共用评论；原件、预览与工程组成使用受管文件及 SHA-256。时间段评论同时锁定素材修订、文件组成及秒数范围；采用绑定精确版本，审阅通过不自动采用。契约归通用仓库 `docs/production.md`，故事操作归 `production/README.md`。
 - `scripts/prepare_generation_plans.py` 按锁定剧本、明确制作选择和当前对象版本生成增量方案；`plan` 不写业务数据，`apply` 原子检查批次、剧本及读取依赖。旧抽取批次不得覆盖已有 `production_description`；准确恢复仍使用生产重放与完整导出。来源：工具、零变化预演及 `production/generation-preparation.md`。
 - `scripts/seed_audio.py` 默认只预览，明确 `--submit` 才生成；凭据来自已有环境，原件保存到 `export/assets/`。额度检查对未知请求保留最长生成量，回执与实际参考不可静默覆盖。参考音频按 SHA、路径和时长验证。来源：脚本及 `tests/test_seed_audio.py`。
+- `scripts/lyria_music.py` 使用本机环境 `GOOGLE_API_KEY`，默认离线预览，显式 `--submit --max-cost-usd` 才提交单次 Lyria 请求；`--proxy` 支持 HTTP 代理，认证通过 `--proxy-user-env` 指定私有环境变量，不把凭据放入 URL 或项目。默认请求 MP3，省略通用 `response_format`；显式 WAV 使用音乐专用文档的 `response_format={"type":"audio"}`，实际支持待验证，不采用已被真实接口拒绝的通用 MIME／delivery 字段。输出留在指定歌曲工作区 `.runtime/lyria/`，跨 worktree 使用共同 Git 仓库下的账户锁。保存实际请求、原始响应与真实编码，不自动重试、转码、接受或正式登记；操作与恢复见 `production/lyria-music.md`。来源：用户 2026-10-03 指令、Google 音乐生成文档、实际拒绝回执、脚本及 `tests/test_lyria_music.py` 验证；实际网络可用性归 STATE。
 - `production/replay.json` 保存本任务准确生产修订和原件清单，`scripts/production_review.py` 只能在当前检出目录的新 `.runtime/` 目录恢复，不覆盖活跃实例。结项 `export/` 包含故事、制作数据、评论与事件；完整恢复后核对生产历史，不重复重放已有记录。旧纯故事导出才追加生产重放。历史引用与采纳按当时准确版本恢复，不以后来内容反向否定旧决定；生产重放只允许空的生产对象集合。旧送审记录只保留追溯，不再创建或参与正常浏览。测试实例的技术认可和采用不得重放为真实制作决定。来源：隔离恢复及 `production/verification.md`。
 
 ## 创作目标与推进方式
