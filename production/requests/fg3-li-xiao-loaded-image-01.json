@@ -1,0 +1,57 @@
+{
+  "id": "fg3-li-xiao-loaded-image-01",
+  "recipe_id": "form-li-xiao-loaded",
+  "entity": {
+    "object_id": "entity-li-xiao",
+    "revision_id": "8b80c3b9f85054a8742a12bd090328b7be42eaf3891a64efe377c26c630e0071"
+  },
+  "state": {
+    "object_id": "form-li-xiao-loaded",
+    "revision_id": "08e06dcdf0be41af66e6f809b93776e209b39214640686c7cbd54b0992f7d0e1"
+  },
+  "requirement": {
+    "object_id": "need-form-li-xiao-loaded-overall",
+    "revision_id": "53487d44c51d5ab93febecde1841cc3e368b4f82e1588d5cb86d5c20238f240a"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "master_approval": {
+    "object_id": "review-master-fg3-li-xiao-base-image-01",
+    "revision_id": "7c9dcd26b8ea01574a2898c1d7ddd45b0a760125f080ba5ef60771acfb36e2f2"
+  },
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-li-xiao-base-image-01",
+        "revision_id": "59847b2311391f9fad4a943823ad53309f67f9049a92ab126ed3c70efc740844"
+      },
+      "component_id": "original",
+      "sha256": "0afdf77eca72f0dc52218123211a2a6a2571875103d0d3275a32f3e10c738950",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：用户认可的对应人物完整基准，固定身份、身体比例、衣着轮廓、配色和线条。"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-fg3-li-xiao-base-image-01",
+        "revision_id": "59847b2311391f9fad4a943823ad53309f67f9049a92ab126ed3c70efc740844"
+      }
+    ]
+  },
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具仅暴露GPT Image名称，未提供底层型号、质量、像素选择或计费用量。",
+  "request": {
+    "prompt": "只以实际提交的参考图1为人物身份和画风依据，生成同一人物的一个完整状态整体参考。3:4单人完整头到鞋，不拼图，不增加其他可辨身份。严格保留脸、发型、年龄、身体比例、衣物版型与配色、外轮廓线和已认可的轻手绘质感；不加重纸纹、噪点或锐化。\n实体：李绡。\n准确完整状态：整体外观：李寄五姐李绡，比两个女孩高一头，袖子扎紧，戏班劳作时动作利落。\n随身物：不跨场凭空携带。\n疲劳：肩不离杠，汗流眼中只以袖擦；仍持续承重。\n与基准的具体差异和构图：肩紧抵一根朴素灰褐直横杠下方，双腿微屈稳撑、双手扶杠，仍持续向上承重；汗从额侧进入眼旁，仅以袖擦汗的姿势可辨。横杠只画能解释受力的中性局部，不另画其他压杠人，不提前坐下卸力。\n背景用基准的浅暖灰，必要受力支撑仅为功能示意，不作为其他实体母版。瞬时动作不新增剧情或状态。使用工具直接返回的最高可用原生输出，不放大、不加标题或装饰。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/0afdf77eca72f0dc52218123211a2a6a2571875103d0d3275a32f3e10c738950.png"
+    ]
+  }
+}

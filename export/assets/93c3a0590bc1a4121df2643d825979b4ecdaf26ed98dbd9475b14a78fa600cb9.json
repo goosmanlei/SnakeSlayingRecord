@@ -1,0 +1,57 @@
+{
+  "id": "fg3-sun-liu-loaded-image-01",
+  "recipe_id": "form-sun-liu-loaded",
+  "entity": {
+    "object_id": "entity-sun-liu",
+    "revision_id": "4b2ec689619f74ff7f54d1815afee52943c5d2f1eafe94d321ca7fbe16a8fda8"
+  },
+  "state": {
+    "object_id": "form-sun-liu-loaded",
+    "revision_id": "8fc2631bf0a023c1355fa6853b724508cae326f085cb0d2c3d99422ab533a366"
+  },
+  "requirement": {
+    "object_id": "need-form-sun-liu-loaded-overall",
+    "revision_id": "d610230cc96280c2c66ac4295895e8700e07b86a513724a5a57123147dad99d2"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "master_approval": {
+    "object_id": "review-master-fg3-sun-liu-base-image-01",
+    "revision_id": "2620e6a456aff05ed0249f69f1603e06b947ff86cdaa9ef63f59c3da576b16bd"
+  },
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-sun-liu-base-image-01",
+        "revision_id": "859396d6c1d139499dd1d90b9ceefbe7692c4a8e7aefcb60e5b9787a0bef5a6d"
+      },
+      "component_id": "original",
+      "sha256": "6c2a968d077e3fe1c34eb951ace6884529268c8300a2ed9dc48a2918dd0e47e1",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：用户认可的对应人物完整基准，固定身份、身体比例、衣着轮廓、配色和线条。"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-fg3-sun-liu-base-image-01",
+        "revision_id": "859396d6c1d139499dd1d90b9ceefbe7692c4a8e7aefcb60e5b9787a0bef5a6d"
+      }
+    ]
+  },
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具仅暴露GPT Image名称，未提供底层型号、质量、像素选择或计费用量。",
+  "request": {
+    "prompt": "只以实际提交的参考图1为人物身份和画风依据，生成同一人物的一个完整状态整体参考。3:4单人完整头到鞋，不拼图，不增加其他可辨身份。严格保留脸、发型、年龄、身体比例、衣物版型与配色、外轮廓线和已认可的轻手绘质感；不加重纸纹、噪点或锐化。\n实体：孙六。\n准确完整状态：整体外观：孙六，戏班鼓手，粗壮胳膊裸露；\n随身物：不跨场凭空携带。\n疲劳：持续肩压横杠，仍在承重，不能提前坐下卸力。\n与基准的具体差异和构图：孙六双脚牢靠踩地、两膝微屈，肩仍抵住一根朴素灰褐直横杠下方，粗壮胳膊扶稳杠；汗湿额侧与衣领，必须还在持续承重，不画坐姿、不卸力，不带鼓。横杠为解释受力的中性局部，不另画其他人。\n背景用基准的浅暖灰，必要受力支撑仅为功能示意，不作为其他实体母版。瞬时动作不新增剧情或状态。使用工具直接返回的最高可用原生输出，不放大、不加标题或装饰。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/6c2a968d077e3fe1c34eb951ace6884529268c8300a2ed9dc48a2918dd0e47e1.png"
+    ]
+  }
+}

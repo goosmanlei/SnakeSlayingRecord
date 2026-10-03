@@ -1,0 +1,74 @@
+{
+  "id": "fg3-li-ji-spent-image-02",
+  "recipe_id": "form-li-ji-spent",
+  "entity": {
+    "object_id": "entity-li-ji",
+    "revision_id": "42af4494af12312922e3aa58ce011f67346ede435ef75b7b24a97827d999ec9b"
+  },
+  "state": {
+    "object_id": "form-li-ji-spent",
+    "revision_id": "a83bf9da5dac7ecc216e4d93c1170fd5f5f549a6663b8914f7a55582a66f665a"
+  },
+  "requirement": {
+    "object_id": "need-form-li-ji-spent-overall",
+    "revision_id": "48fcf19f9276348202e885dda7ad8d38f102695191e76bab21c565e118c6dea9"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-li-ji-spent-image-01",
+        "revision_id": "49a7a5402ac120f7106fb810141cfcef67cbc6509c7bcf7f2257334be3dcc4b0"
+      },
+      "component_id": "original",
+      "sha256": "444f0bbd34d54f74f25d1dc53a4b07a79bbdce13b10227a1b87297e9c9fd4c84",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "图片1：本准确完整状态的待修候选，只修已指出部位，不能作为另一状态母版。"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 2,
+    "references": [
+      {
+        "object_id": "asset-fg3-li-ji-spent-image-01",
+        "revision_id": "49a7a5402ac120f7106fb810141cfcef67cbc6509c7bcf7f2257334be3dcc4b0"
+      }
+    ]
+  },
+  "same_state_repair": {
+    "source": {
+      "object_id": "asset-fg3-li-ji-spent-image-01",
+      "revision_id": "49a7a5402ac120f7106fb810141cfcef67cbc6509c7bcf7f2257334be3dcc4b0"
+    },
+    "reason": "只清理额外血污：将画面左侧没有包布的右手及手腕全部还原成干净完整皮肤，无红斑、无血、无伤；将画面右侧左手裸露手指和指尖上的血全部去掉，只在已有左掌包布中间留两小片暗红渗血，不扩散。右额角改为一条短暗红旧痂被汗轻润，没有大片新红、没有鲜血流下。原来膝软、扶持双手、下垂肩臂、汗湿和全身姿态均保留。"
+  },
+  "request": {
+    "model": "gpt-image-2-5-sunburst",
+    "mode": "image2image",
+    "projectId": "8K6WcbrPLghSBJXBtWAE",
+    "params": {
+      "imageCount": 1,
+      "aspectRatio": "3:4",
+      "resolutionTier": "4k",
+      "quality": "high",
+      "lockAspectRatio": true,
+      "outputFormat": "png",
+      "autoEnhancePrompt": false,
+      "variant": "sunburst",
+      "prompt": "以图片1为唯一参考，对这张李寄的同一完整状态做局部修正。输出3:4头到鞋完整原构图。严格保持脸、发式、身体比例、衣服颜色、线条、纸面质感和光照，不加纹理或锐化。\n只清理额外血污：将画面左侧没有包布的右手及手腕全部还原成干净完整皮肤，无红斑、无血、无伤；将画面右侧左手裸露手指和指尖上的血全部去掉，只在已有左掌包布中间留两小片暗红渗血，不扩散。右额角改为一条短暗红旧痂被汗轻润，没有大片新红、没有鲜血流下。原来膝软、扶持双手、下垂肩臂、汗湿和全身姿态均保留。\n保持二维人物＋轻手绘背景，不增加标题、文字、箭头、标线或新物件。",
+      "visualReferences": [
+        {
+          "type": "image",
+          "id": "6zWwRN3j2KCVmbPh75HT",
+          "url": "https://cdn.openart.ai/openart-ai/production/2026-10/create-image/user_3E6ibhdvk1OmnOqEu3lD0Lcnjv4/gpt-image-2.5-sunburst-edit-1_1791003767048_b6d6320f.png",
+          "label": "图片1"
+        }
+      ]
+    }
+  }
+}

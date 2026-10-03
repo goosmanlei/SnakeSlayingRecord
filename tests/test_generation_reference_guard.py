@@ -4,7 +4,7 @@ import sys
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
-from register_generation_batch import validate_reference_authorization
+from register_generation_batch import validate_builtin_plan, validate_reference_authorization
 
 
 class ReferenceGuardTests(unittest.TestCase):
@@ -39,6 +39,45 @@ class ReferenceGuardTests(unittest.TestCase):
         self.request['lineage']['i2i_depth'] = 3
         with self.assertRaises(AssertionError):
             self.validate()
+
+    def test_user_approval_does_not_reset_or_extend_image_lineage(self):
+        judgment = {'object_id': 'review-source', 'revision_id': 'review-revision'}
+        self.payload['lineage']['i2i_depth'] = 2
+        request = {'master_approval': judgment, 'lineage': {'i2i_depth': 1, 'references': [self.asset]}}
+        def resolve(reference, kinds):
+            if kinds == {'JUDGMENT'}:
+                return {'payload': {'actor': 'user', 'verdict': 'accepted', 'target': self.asset}}
+            return {'payload': self.payload}
+        for depth in (1, 3):
+            request['lineage']['i2i_depth'] = depth
+            with self.assertRaisesRegex(AssertionError, 'two-generation limit'):
+                validate_reference_authorization(resolve, request, [self.asset], [self.state], self.entity, 'image')
+
+
+class BuiltinPlanTests(unittest.TestCase):
+    def setUp(self):
+        self.plan = {'method': 'generate', 'model': 'GPT Image', 'prompt': 'Only the exact character',
+                     'parameters': {'transparent_background': False}, 'blockers': []}
+        self.request = {'model': 'GPT Image', 'request': {'prompt': self.plan['prompt'], 'transparent_background': False}}
+
+    def test_call_must_match_immutable_plan_text_and_actual_parameters(self):
+        validate_builtin_plan(self.plan, self.request)
+        self.request['request']['prompt'] += ' and a second person'
+        with self.assertRaisesRegex(AssertionError, 'submitted prompt differs'):
+            validate_builtin_plan(self.plan, self.request)
+        self.request['request']['prompt'] = self.plan['prompt']
+        self.request['request']['transparent_background'] = True
+        with self.assertRaisesRegex(AssertionError, 'submitted parameters differ'):
+            validate_builtin_plan(self.plan, self.request)
+
+    def test_unexposed_size_and_unbound_required_inputs_cannot_be_registered(self):
+        self.request['request']['size'] = '4K'
+        with self.assertRaisesRegex(AssertionError, 'unsupported built-in parameter'):
+            validate_builtin_plan(self.plan, self.request)
+        self.request['request'].pop('size')
+        self.plan['blockers'] = ['child master approval required']
+        with self.assertRaisesRegex(AssertionError, 'not executable'):
+            validate_builtin_plan(self.plan, self.request)
 
 
 if __name__ == '__main__': unittest.main()
