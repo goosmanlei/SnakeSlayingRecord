@@ -54,7 +54,7 @@
 
 ## 准备两仓并启动
 
-需要 Docker Compose、Python 3.9+ 和 FFmpeg／ffprobe。两个仓库放在同级目录；系统目录的提交必须与 [config/instance.json](config/instance.json) 一致。当前文件固定资产清理系统候选 `709ae260dc84c0b9f2818a44010a7ebc0fc10c42`，尚待本轮最终确认后应用；执行基线的正式源码与前置系统版本 `236433072b1629c197e3685cb5b7e305b53e3285` 一致，见 [当前状态](STATE.md)。候选目前保存在本地任务分支，新克隆须取得所需准确系统提交；正式运行版本还需核对镜像源码及实例挂载，不能只由配置文件推断。
+需要 Docker Compose、Python 3.9+ 和 FFmpeg／ffprobe。两个仓库放在同级目录；系统目录的提交必须与 [config/instance.json](config/instance.json) 一致。当前文件固定实体采纳修复系统 `d6fe329de5b335b0a9afd2084987b09d0fa72e6a`；隔离验证已通过，正式切换状态见 [当前状态](STATE.md)。正式运行版本需同时核对镜像源码与实例挂载，不能只由配置文件推断。
 
 完成本地集成后，以故事根目录为工作目录，核对同级系统版本，再对空实例恢复和启动：
 
