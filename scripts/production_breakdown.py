@@ -307,7 +307,7 @@ def render(shots, coverage, options, output):
                 '正文与声音依据（'+v['scene_id']+'，准确集修订 '+v['episode']['revision_id']+'）：','']
             lines += ['- '+f['source']['block_ids'][0].rsplit('-',1)[-1]+'：'+f['text'] for f in v['facts']]
             lines+=['','素材输入：'+s['blocking_requirement']+'（场级调度）、need-'+s['object_id']+'-composition（起始画面）、'+s['sound_reference']+'（声音参考选段）；准确实体状态需求 '+', '.join(r['object_id'] for r in s['reference_requirements'])+'。','','视频提示词：','',g['prompt'],'']
-    (output/'shots.md').write_text('\n'.join(lines)+'\n')
+    (output/'shots.md').write_text('\n'.join(lines).rstrip()+'\n')
 
 
 def main():
