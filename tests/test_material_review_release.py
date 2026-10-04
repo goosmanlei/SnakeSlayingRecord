@@ -1,6 +1,9 @@
 """Release guards and preservation checks; no formal Docker/DB writes."""
 import argparse
+import contextlib
 import importlib.util
+import io
+import json
 from pathlib import Path
 import shutil
 import sqlite3
@@ -45,6 +48,72 @@ class ReleaseTest(unittest.TestCase):
         with patch.object(r,'inspect') as inspect:
             with self.assertRaisesRegex(ValueError,'not this release'):r.restart(argparse.Namespace(apply=True,release=self.root))
             inspect.assert_not_called()
+
+    def test_release_names_keep_task_identity_and_old_default(self):
+        self.assertEqual(r.release_name(r.TASK,'a'*40,'b'*40), 'materials-20261004-0004-'+'a'*12+'-'+'b'*12)
+        self.assertEqual(r.release_name('task-20261004-0005','a'*40,'b'*40), 'asset-cleanup-20261004-0005-'+'a'*12+'-'+'b'*12)
+        with self.assertRaisesRegex(ValueError,'unsupported release task'):
+            r.release_name('../foreign','a'*40,'b'*40)
+
+    def test_changed_task_in_bundle_stops_before_hash_or_docker(self):
+        r.save(self.root/'manifest.json',{'format':'material-review-release-v1','task':'task-20261004-0005','push':False,'story_candidate':'a'*40,'system_candidate':'b'*40,'release_name':'materials-20261004-0004-'+'a'*12+'-'+'b'*12})
+        with patch.object(r,'inspect') as inspect:
+            with self.assertRaisesRegex(ValueError,'task or name differs'):
+                r.load_bundle(self.root)
+            inspect.assert_not_called()
+
+    def test_prepare_bundle_keeps_task_name_and_loads_for_old_and_new_tasks(self):
+        root = self.root.resolve()
+        story, system = root / 'story', root / 'system'
+        story_main, system_main = root / 'story-main', root / 'system-main'
+        for root in (story, system, story_main, system_main):
+            root.mkdir()
+        for root in (story, story_main):
+            (root / 'config').mkdir(); (root / 'content').mkdir()
+            (root / 'config/instance.json').write_text(json.dumps({'review_desk_commit': 'b' * 40}))
+            (root / 'content/production-approach.json').write_text('{}')
+        (story / 'scripts').mkdir()
+        for name in ('material_review_release.py', 'autonomous_optimization_release.py',
+                     'integrate_generation_review_system.py'):
+            shutil.copyfile(Path(r.__file__).parent / name, story / 'scripts' / name)
+        (system / 'review_desk').mkdir()
+        (system / 'review_desk/z.py').write_text('# last source filename must not become release name\n')
+        compose, ca = self.root / 'compose.json', self.root / 'test-ca.pem'
+        compose.write_text('{}'); ca.write_text('offline fixture')
+        config = {'Cmd': ['fixture'], 'Entrypoint': None, 'WorkingDir': '/app', 'User': '',
+                  'Env': [], 'Labels': {'com.docker.compose.project.config_files': str(compose),
+                  'com.docker.compose.project.working_dir': str(story_main)}}
+        app = {'Image': 'sha256:' + 'c' * 64, 'Config': config,
+               'State': {'Running': True, 'Health': {'Status': 'healthy'}},
+               'HostConfig': {'RestartPolicy': {'Name': 'unless-stopped', 'MaximumRetryCount': 0},
+                              'PortBindings': {}}, 'Mounts': [
+                   {'Type': 'bind', 'Source': str(story_main), 'Destination': '/instance', 'RW': True},
+                   *({'Type': 'bind', 'Source': str(story_main / name),
+                      'Destination': '/instance/' + name, 'RW': False} for name in r.base.INSTANCE_FILES),
+                   {'Type': 'bind', 'Source': str(ca), 'Destination': '/run/local-ca/cacert.pem', 'RW': False}]}
+        nginx = {**app, 'Mounts': [], 'HostConfig': {**app['HostConfig'], 'PortBindings': r.base.PORTS}}
+        def inspect(name, image=False):
+            return {'Config': config} if image else app if name == r.base.APP else nginx
+        def primary(path):
+            return story_main if path == story else system_main
+        with patch.object(r, 'inspect', side_effect=inspect), \
+             patch.object(r.base, 'primary', side_effect=primary), \
+             patch.object(r.base, 'repo_check'), \
+             patch.object(r.base, 'git_file', side_effect=lambda repo, commit, name: (repo / name).read_bytes()), \
+             patch.object(r, 'git', return_value='100644 blob fixture\treview_desk/z.py'), \
+             contextlib.redirect_stdout(io.StringIO()):
+            for task in (r.TASK, 'task-20261004-0005', 'entity-acceptance-20261004'):
+                args = argparse.Namespace(story_worktree=story, system_worktree=system,
+                    story_candidate='a' * 40, system_candidate='b' * 40,
+                    story_target='d' * 40, system_target='e' * 40,
+                    bundle=story / '.runtime' / task)
+                if task != r.TASK:
+                    args.task = task
+                r.prepare(args)
+                _, manifest = r.load_bundle(args.bundle)
+                self.assertEqual(manifest['task'], task)
+                self.assertEqual(manifest['release_name'], r.release_name(task, 'a' * 40, 'b' * 40))
+                self.assertEqual(r.read(args.bundle / 'system-delivery.json')['task'], task)
 
     def test_replacing_round_member_at_same_row_count_is_rejected(self):
         for path in (self.before,self.after):

@@ -15,10 +15,19 @@ import time
 import autonomous_optimization_release as base
 
 TASK='task-20261004-0004'
+RELEASE_PREFIXES={TASK:'materials-20261004-0004', 'task-20261004-0005':'asset-cleanup-20261004-0005',
+                  'entity-acceptance-20261004':'entity-acceptance-20261004'}
 require,sha,read,save,run,git,inspect=base.require,base.sha,base.read,base.save,base.run,base.git,base.inspect
 
 
+def release_name(task, story_candidate, system_candidate):
+    require(task in RELEASE_PREFIXES, 'unsupported release task')
+    return RELEASE_PREFIXES[task]+'-'+story_candidate[:12]+'-'+system_candidate[:12]
+
+
 def prepare(a):
+    task=getattr(a,'task',TASK)
+    release_id=release_name(task,a.story_candidate,a.system_candidate)
     story,system=a.story_worktree.resolve(),a.system_worktree.resolve()
     sm,gm=base.primary(story),base.primary(system)
     base.repo_check(story,sm,a.story_candidate,a.story_target)
@@ -55,14 +64,15 @@ def prepare(a):
     for helper in ('material_review_release.py','autonomous_optimization_release.py','integrate_generation_review_system.py'):
         raw=base.git_file(story,a.story_candidate,'scripts/'+helper);require(raw==(story/'scripts'/helper).read_bytes(),'helper differs from committed candidate');put('helpers/'+helper,raw)
     files=old['config_files'].split(',');require(files==proxy['config_files'].split(','),'compose sets differ')
-    plan={'format':'generation-system-delivery-v1','task':TASK,'push':False,'system_main_from_story_main':os.path.relpath(gm,sm),'system_worktree':os.path.relpath(system,story),'expected_target':a.system_target,'candidate':a.system_candidate}
+    plan={'format':'generation-system-delivery-v1','task':task,'push':False,'system_main_from_story_main':os.path.relpath(gm,sm),'system_worktree':os.path.relpath(system,story),'expected_target':a.system_target,'candidate':a.system_candidate}
     put('system-delivery.json',json.dumps(plan,ensure_ascii=False,indent=2).encode()+b'\n')
-    m={'format':'material-review-release-v1','task':TASK,'push':False,'story_worktree':str(story),'system_worktree':str(system),'story_main':str(sm),'system_main':str(gm),'story_candidate':a.story_candidate,'story_target':a.story_target,'system_candidate':a.system_candidate,'system_target':a.system_target,'release_name':'materials-20261004-0004-'+a.story_candidate[:12]+'-'+a.system_candidate[:12],'hashes':hashes,'source_hashes':source,'base_image_tag':tag,'previous_app':old,'previous_nginx':proxy,'previous_compose_hashes':{f:sha(Path(f).read_bytes()) for f in files},'previous_instance_hashes':current_files,'ca_sha256':sha(Path(mounts['/run/local-ca/cacert.pem']['Source']).read_bytes()),'prepared_at':datetime.now(timezone.utc).isoformat()}
+    m={'format':'material-review-release-v1','task':task,'push':False,'story_worktree':str(story),'system_worktree':str(system),'story_main':str(sm),'system_main':str(gm),'story_candidate':a.story_candidate,'story_target':a.story_target,'system_candidate':a.system_candidate,'system_target':a.system_target,'release_name':release_id,'hashes':hashes,'source_hashes':source,'base_image_tag':tag,'previous_app':old,'previous_nginx':proxy,'previous_compose_hashes':{f:sha(Path(f).read_bytes()) for f in files},'previous_instance_hashes':current_files,'ca_sha256':sha(Path(mounts['/run/local-ca/cacert.pem']['Source']).read_bytes()),'prepared_at':datetime.now(timezone.utc).isoformat()}
     save(root/'manifest.json',m);print(json.dumps({'bundle':str(root),'manifest_sha256':sha((root/'manifest.json').read_bytes()),'formal_writes':False,'business_delta':0}))
 
 
 def load_bundle(path):
-    root=path.resolve();m=read(root/'manifest.json');require(m.get('format')=='material-review-release-v1' and m.get('task')==TASK and m.get('push') is False,'wrong bundle')
+    root=path.resolve();m=read(root/'manifest.json');require(m.get('format')=='material-review-release-v1' and m.get('task') in RELEASE_PREFIXES and m.get('push') is False,'wrong bundle')
+    require(m.get('release_name')==release_name(m['task'],m['story_candidate'],m['system_candidate']),'release task or name differs')
     for rel,value in m['hashes'].items():
         require(not Path(rel).is_absolute() and '..' not in Path(rel).parts,'invalid package path');require(sha((root/rel).read_bytes())==value,'bundle changed: '+rel)
     require(sha(Path(__file__).read_bytes())==m['hashes']['helpers/material_review_release.py'],'wrapper changed')
@@ -187,6 +197,7 @@ def restart(a):
 def main():
     p=argparse.ArgumentParser(description=__doc__);sub=p.add_subparsers(dest='command',required=True)
     q=sub.add_parser('prepare');q.add_argument('--story-worktree',type=Path,default=Path(__file__).resolve().parents[1]);q.add_argument('--system-worktree',type=Path,required=True);q.add_argument('--bundle',type=Path,required=True)
+    q.add_argument('--task',choices=sorted(RELEASE_PREFIXES),default=TASK)
     for name in ('story-candidate','system-candidate','story-target','system-target'):q.add_argument('--'+name,required=True)
     for cmd in ('build','preflight','apply','recover'):
         q=sub.add_parser(cmd);q.add_argument('--bundle',type=Path,required=True)
