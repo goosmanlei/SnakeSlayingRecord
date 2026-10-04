@@ -1,0 +1,211 @@
+{
+  "format": "production-import-v1",
+  "records": [
+    {
+      "object_id": "entity-granary-rice-measure",
+      "kind": "ENTITY",
+      "payload": {
+        "format": "production-entity-v1",
+        "title": "仓院量米木斗",
+        "blocks": [
+          {
+            "id": "description",
+            "text": "仓院发还米的木制量器，近方斗口、自然木色、清楚倒口。造型为制作选择；保持可量米、可倒米和手部承重关系。"
+          }
+        ],
+        "entity_type": "prop",
+        "subtype": "measuring_vessel",
+        "aliases": [],
+        "sources": [
+          {
+            "object_id": "screenplay-04-lantern-home-e16",
+            "revision_id": "94ca5b3b1fa8e9acc7a25d7918904c8a8147cdd572c879b6c894ad4f517412d2",
+            "scene_id": "s037",
+            "block_ids": [
+              "screenplay-04-lantern-home-s037-b021",
+              "screenplay-04-lantern-home-s037-b026"
+            ]
+          }
+        ],
+        "facts": [
+          "仓院发还米时用木斗倒米；两名女孩共同撑住米袋。"
+        ],
+        "choices": [
+          "本稿按仓院器具独立制作和追踪，不补写从米铺搬来的剧情。"
+        ],
+        "unknowns": [
+          "原文未说明是否与米铺小木斗同一实物，不建立同一身份。"
+        ],
+        "production_description": "仓院发还米的木制量器，近方斗口、自然木色、清楚倒口。造型为制作选择；保持可量米、可倒米和手部承重关系。"
+      }
+    },
+    {
+      "object_id": "form-granary-rice-measure-base",
+      "kind": "STATE",
+      "payload": {
+        "format": "production-state-v1",
+        "title": "仓院量米木斗·发还米时",
+        "blocks": [
+          {
+            "id": "description",
+            "text": "仓院量米木斗完整形态：木色近方斗口，完整无破损，盛米时可清楚看见米面，倒米时接触袋口上方。位置为仓院发米处。"
+          }
+        ],
+        "entity": {
+          "object_id": "entity-granary-rice-measure",
+          "revision_id": "@entity-granary-rice-measure"
+        },
+        "state_model": "complete-v1",
+        "dimensions": {
+          "structure": "近方斗口木制量器；造型为制作选择",
+          "condition": "可完整持握、沿口无破损",
+          "contents": "盛米并按动作倒入共撑的袋口",
+          "placement": "仓院台阶发米处，由发米者持握"
+        },
+        "sources": [
+          {
+            "object_id": "screenplay-04-lantern-home-e16",
+            "revision_id": "94ca5b3b1fa8e9acc7a25d7918904c8a8147cdd572c879b6c894ad4f517412d2",
+            "scene_id": "s037",
+            "block_ids": [
+              "screenplay-04-lantern-home-s037-b021",
+              "screenplay-04-lantern-home-s037-b026"
+            ]
+          }
+        ],
+        "facts": [
+          "发米动作见准确正文。"
+        ],
+        "choices": [
+          "独立于米铺道具维护，倒米前后内容变化在单镜动作中呈现。"
+        ],
+        "unknowns": [],
+        "reference_media": "image",
+        "production_description": "仓院量米木斗完整形态：木色近方斗口，完整无破损，盛米时可清楚看见米面，倒米时接触袋口上方。位置为仓院发米处。"
+      }
+    },
+    {
+      "object_id": "need-granary-rice-measure-overall",
+      "kind": "REQUIREMENT",
+      "payload": {
+        "format": "production-requirement-v1",
+        "title": "仓院量米木斗·发还米时·整体参考",
+        "blocks": [
+          {
+            "id": "description",
+            "text": "明确仓院量米器具，不借同名假定米铺道具发生转移"
+          }
+        ],
+        "scope": {
+          "object_id": "form-granary-rice-measure-base",
+          "revision_id": "@form-granary-rice-measure-base"
+        },
+        "slot": "overall",
+        "media_type": "image",
+        "purpose": "明确仓院量米器具，不借同名假定米铺道具发生转移",
+        "required": true,
+        "usage": "generation_input",
+        "entities": [
+          {
+            "object_id": "entity-granary-rice-measure",
+            "revision_id": "@entity-granary-rice-measure"
+          }
+        ],
+        "states": [
+          {
+            "object_id": "form-granary-rice-measure-base",
+            "revision_id": "@form-granary-rice-measure-base"
+          }
+        ],
+        "specification": {
+          "reference_role": "overall"
+        },
+        "generation": {
+          "format": "generation-plan-v1",
+          "method": "generate",
+          "model": "gpt-image-2-5-sunburst",
+          "parameters": {
+            "aspectRatio": "16:9",
+            "quality": "high",
+            "resolutionTier": "4k",
+            "outputFormat": "png",
+            "imageCount": 1,
+            "autoEnhancePrompt": false
+          },
+          "randomization": {
+            "mode": "random"
+          },
+          "prompt": "二维人物与轻手绘背景；轮廓清楚、平涂大色块、正常身体比例，背景薄而干净。不加纸纹、噪点、摄影皮肤和密集织物纹理。\n仓院量米木斗完整形态：木色近方斗口，完整无破损，盛米时可清楚看见米面，倒米时接触袋口上方。位置为仓院发米处。",
+          "inputs": [
+            {
+              "reference": {
+                "object_id": "need-production-style",
+                "revision_id": "@need-production-style"
+              },
+              "use": "全剧风格，准确原件待采用"
+            }
+          ],
+          "blockers": [
+            "新道具需求，未生成或采用原件"
+          ],
+          "output": {
+            "name": "仓院量米木斗整体参考",
+            "description": "待生成并审阅的仓院量米木斗整体参考",
+            "review_criteria": [
+              "人物身份、完整状态、空间方位与本镜依据一致",
+              "交接与动作起止完整，前后镜承接可还原",
+              "台词歌词逐字核对，画面可读文字由后期准确排版",
+              "保存直接返回的原件和真实调用，不把方案记为产物"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "object_id": "form-blue-awning-song-recited",
+      "kind": "STATE",
+      "payload": {
+        "format": "production-state-v1",
+        "title": "送青篷·李寄逐句念写",
+        "blocks": [
+          {
+            "id": "description",
+            "text": "李寄用自己的日常声线念“莫怕远山高”，停等阿蘅写完，再念“隔水灯相照”。这是念读，不唱旋律。"
+          }
+        ],
+        "entity": {
+          "object_id": "entity-blue-awning-song",
+          "revision_id": "046430a4ef17fbbd50c2ec041cd4f4f346baf0676f694eb6f3b4d81ee418bfd0"
+        },
+        "state_model": "complete-v1",
+        "dimensions": {
+          "lyrics_scope": "莫怕远山高。隔水灯相照。",
+          "rendition": "李寄逐句念读，等阿蘅写完再念下一句；不唱",
+          "performers": "李寄"
+        },
+        "sources": [
+          {
+            "object_id": "screenplay-04-lantern-home-e17",
+            "revision_id": "86472299d571ceb960315b77be5e782e2153575aa4bfe44dead0c3fcc1818fd8",
+            "scene_id": "s040",
+            "block_ids": [
+              "screenplay-04-lantern-home-s040-b006",
+              "screenplay-04-lantern-home-s040-b008"
+            ]
+          }
+        ],
+        "facts": [
+          "两句由李寄念给阿蘅抄写；随后才翻前页唱。"
+        ],
+        "choices": [
+          "念读保持日常声线与书写停顿，不用低唱状态替代。"
+        ],
+        "unknowns": [],
+        "reference_media": "audio",
+        "reference_mode": "description",
+        "production_description": "李寄用自己的日常声线念“莫怕远山高”，停等阿蘅写完，再念“隔水灯相照”。这是念读，不唱旋律。",
+        "sound_delivery": "随本镜声音参考与视频方案制作，不要求独立歌曲录音。"
+      }
+    }
+  ]
+}

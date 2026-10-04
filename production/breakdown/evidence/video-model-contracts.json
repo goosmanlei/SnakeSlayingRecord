@@ -1,0 +1,621 @@
+{
+  "seedance-fast-model.json": {
+    "fetched_at": "2026-10-04T08:52:00.104476Z",
+    "model": {
+      "abbreviated_name": "SD 2.0 Fast VIP",
+      "benefit_map_by_combination": {
+        "seedance2.0_fast_vision": {
+          "resource_type": "aigc",
+          "resource_id": "cc_biz_video_agent_seedance2_fast",
+          "benefit_type": "cc_biz_video_agent_seedance2_fast_vision"
+        },
+        "seedance2.0_fast_vision&480p": {
+          "resource_type": "aigc",
+          "resource_id": "cc_biz_video_agent_seedance2_fast_480p",
+          "benefit_type": "cc_biz_video_agent_seedance2_fast_480p"
+        },
+        "seedance2.0_fast_vision&720p": {
+          "resource_type": "aigc",
+          "resource_id": "cc_biz_video_agent_seedance2_fast",
+          "benefit_type": "cc_biz_video_agent_seedance2_fast_vision"
+        }
+      },
+      "benefit_template": {
+        "paid_mode_template_map": {
+          "limit_count_use": "可消耗积分<highlight>试用{quota_left_count}次</highlight>，试用后需开会员使用",
+          "limited_time_free": "<highlight>可试用{quota_left_count}次</highlight>，试用后需消耗积分使用",
+          "user_credit": "<highlight>视频每秒消耗{estimated_consumption}积分</highlight>，实际消耗与最终输出的视频时长相关"
+        }
+      },
+      "benefit_tuple": {
+        "resource_type": "aigc",
+        "resource_id": "cc_biz_video_agent_seedance2_fast",
+        "benefit_type": "cc_biz_video_agent_seedance2_fast_vision"
+      },
+      "default_accent_code": "recommend",
+      "default_language_code": "zh",
+      "description": "极速推理，会员专属通道，积分消耗5.5折",
+      "duration": {
+        "default": 10,
+        "description": "选择生成内容的时长（秒）",
+        "label": "时长",
+        "max": 15,
+        "min": 4,
+        "required_field": true,
+        "step": 1,
+        "unit": "seconds"
+      },
+      "estimation_participant_keys": [
+        "selectedModelKey",
+        "resolution"
+      ],
+      "hidden_resolution": false,
+      "icon_url": "https://lf-xiaoyunque.jianying.com/obj/pippit-app-buz/pippit_cms/c8b2792fbf1479d0838b167f94386e9b.png",
+      "image_audit_key": "pippit_seedance2_0_fast_user_input_image",
+      "image_material_accepted_extensions": [
+        "jpg",
+        "jpeg",
+        "png",
+        "webp",
+        "bmp",
+        "gif"
+      ],
+      "image_material_accepted_mime_types": [
+        "image/jpeg",
+        "image/png",
+        "image/webp",
+        "image/bmp",
+        "image/gif"
+      ],
+      "image_material_max_aspect_ratio": 2.5,
+      "image_material_max_side_length": 6000,
+      "image_material_min_aspect_ratio": 0.4,
+      "image_material_min_side_length": 300,
+      "is_support_character": true,
+      "is_support_extend_result": true,
+      "is_support_first_frame_image": true,
+      "is_support_generate_mode_selection": true,
+      "is_support_imitate_video": true,
+      "is_support_last_frame_image": true,
+      "is_support_mention_material": true,
+      "is_support_ordered_material": true,
+      "is_support_result_as_reference": true,
+      "key": "seedance2.0_fast_vision",
+      "kind": "video",
+      "material_limits": {
+        "audio_total_limit": 3,
+        "image_total_limit": 9,
+        "max_image_size_bytes": 31457280,
+        "max_total_video_duration_ms": 15500,
+        "max_video_duration_ms": 15500,
+        "min_video_duration_ms": 2000,
+        "video_total_limit": 3
+      },
+      "max_audio_duration": 15000,
+      "max_imitate_video_duration": 30000,
+      "max_output_duration": 15000,
+      "max_prompt_length": 5000,
+      "max_total_audio_duration": 15200,
+      "min_audio_duration": 2000,
+      "name": "Seedance 2.0 Fast VIP",
+      "parameter_config": {
+        "default_combination": {
+          "resolution": "720p",
+          "seed": "random"
+        },
+        "dimensions": [
+          {
+            "key": "seed",
+            "label": "Seed",
+            "description": "随机种子，用于控制模型生成内容的随机性。",
+            "priority": 30,
+            "required_field": false,
+            "default_value": "random",
+            "option_list": [
+              {
+                "label": "随机生成",
+                "value": "random",
+                "disabled": false
+              },
+              {
+                "label": "自定义生成",
+                "value": "fixed",
+                "disabled": false
+              }
+            ]
+          }
+        ],
+        "need_available_combinations": false
+      },
+      "placeholder": "输入灵感，一键成片",
+      "pricing_rule": {
+        "content": "按秒计价，此模型输入参考视频时长计入总时长"
+      },
+      "ratio": {
+        "default": "adaptive",
+        "options": [
+          "adaptive",
+          "16:9",
+          "21:9",
+          "9:16",
+          "4:3",
+          "3:4",
+          "1:1"
+        ]
+      },
+      "report_name": "seedance_2_fast_v",
+      "resolution": {
+        "default": "720p",
+        "description": "选择生成视频的分辨率",
+        "label": "清晰度",
+        "options": [
+          "480p",
+          "720p"
+        ],
+        "required_field": true
+      },
+      "supported_accent": {
+        "zh": [
+          {
+            "code": "recommend",
+            "name": "智能推荐"
+          },
+          {
+            "code": "pu_tong_hua",
+            "name": "普通话"
+          },
+          {
+            "code": "dong_bei_hua",
+            "name": "东北话"
+          },
+          {
+            "code": "he_nan_hua",
+            "name": "河南话"
+          },
+          {
+            "code": "gang_tai_qiang",
+            "name": "港台腔"
+          },
+          {
+            "code": "shan_xi_hua",
+            "name": "陕西话"
+          },
+          {
+            "code": "yue_yu",
+            "name": "粤语"
+          },
+          {
+            "code": "si_chuan_hua",
+            "name": "四川话"
+          }
+        ]
+      },
+      "supported_language": [
+        {
+          "code": "zh",
+          "name": "中文"
+        },
+        {
+          "code": "en",
+          "name": "英文"
+        }
+      ],
+      "tag_background_color": "#C4F078",
+      "tag_foreground_color": "#3C5C05",
+      "tag_icon_type": "vip",
+      "tag_list": [
+        {
+          "tag_icon_type": "vip"
+        },
+        {
+          "tag_name": "限时优惠"
+        }
+      ],
+      "tag_name": "",
+      "text_audit_key": "pippit_seedance2_0_fast_user_input_text",
+      "video_audit_key": "pippit_seedance2_0_fast_user_input_video",
+      "video_material_max_aspect_ratio": 2.5,
+      "video_material_max_fps": 60,
+      "video_material_max_pixel_count": 8295044,
+      "video_material_max_side_length": 6000,
+      "video_material_min_aspect_ratio": 0.4,
+      "video_material_min_fps": 24,
+      "video_material_min_pixel_count": 409600,
+      "video_material_min_side_length": 300,
+      "video_replica_placeholder": "粘贴视频链接在这里，小云雀将解析爆点，参考文案/主题/画风等，解析后可添加你的想法，再次创作"
+    }
+  },
+  "seedance25-model.json": {
+    "fetched_at": "2026-10-04T08:52:00.104476Z",
+    "model": {
+      "abbreviated_name": "SD 2.5",
+      "benefit_map_by_combination": {
+        "Seedance_2.5": {
+          "resource_type": "aigc",
+          "resource_id": "cc_biz_video_agent_seedance25_720p",
+          "benefit_type": "cc_biz_video_agent_seedance25_720p"
+        },
+        "Seedance_2.5&1080p": {
+          "resource_type": "aigc",
+          "resource_id": "cc_biz_video_agent_seedance25_1080p",
+          "benefit_type": "cc_biz_video_agent_seedance25_1080p"
+        },
+        "Seedance_2.5&1080p&withReference": {
+          "resource_type": "aigc",
+          "resource_id": "cc_biz_video_agent_seedance25_1080p",
+          "benefit_type": "cc_biz_video_agent_seedance25_1080p_with_reference"
+        },
+        "Seedance_2.5&480p": {
+          "resource_type": "aigc",
+          "resource_id": "cc_biz_video_agent_seedance25_480p",
+          "benefit_type": "cc_biz_video_agent_seedance25_480p"
+        },
+        "Seedance_2.5&480p&withReference": {
+          "resource_type": "aigc",
+          "resource_id": "cc_biz_video_agent_seedance25_480p",
+          "benefit_type": "cc_biz_video_agent_seedance25_480p_with_reference"
+        },
+        "Seedance_2.5&720p": {
+          "resource_type": "aigc",
+          "resource_id": "cc_biz_video_agent_seedance25_720p",
+          "benefit_type": "cc_biz_video_agent_seedance25_720p"
+        },
+        "Seedance_2.5&720p&withReference": {
+          "resource_type": "aigc",
+          "resource_id": "cc_biz_video_agent_seedance25_720p",
+          "benefit_type": "cc_biz_video_agent_seedance25_720p_with_reference"
+        },
+        "Seedance_2.5&withReference": {
+          "resource_type": "aigc",
+          "resource_id": "cc_biz_video_agent_seedance25_720p",
+          "benefit_type": "cc_biz_video_agent_seedance25_720p"
+        }
+      },
+      "benefit_template": {
+        "paid_mode_template_map": {
+          "limit_count_use": "可消耗积分<highlight>试用{quota_left_count}次</highlight>，试用后需开会员使用",
+          "limited_time_free": "<highlight>可试用{quota_left_count}次</highlight>，试用后需消耗积分使用",
+          "user_credit": "<highlight>视频每秒消耗{estimated_consumption}积分</highlight>，实际消耗与最终输出的视频时长相关"
+        }
+      },
+      "benefit_tuple": {
+        "resource_type": "aigc",
+        "resource_id": "cc_biz_video_agent_seedance25_720p",
+        "benefit_type": "cc_biz_video_agent_seedance25_720p"
+      },
+      "creation_mode_config": {
+        "default_mode": "reference_generation",
+        "guide_tip": {
+          "guide_id": "seedance_2_5_creation_mode_v1",
+          "text": "选择一个创作模式开始创作吧",
+          "show_policy": "once_per_guide_id",
+          "duration_ms": 5000,
+          "dismiss_on_mode_click": true
+        },
+        "schema_version": 1
+      },
+      "creation_modes": [
+        {
+          "duration_policy": "inherit",
+          "enabled": true,
+          "generate_type": 0,
+          "imitate_video_policy": {
+            "enabled": true
+          },
+          "key": "reference_generation",
+          "name": "参考生成",
+          "placeholder": "说说你的创作想法，也可以上传你想要参考的图片或视频进行生成",
+          "ratio": {
+            "default": "adaptive",
+            "options": [
+              "adaptive",
+              "16:9",
+              "21:9",
+              "9:16",
+              "4:3",
+              "3:4",
+              "1:1"
+            ]
+          },
+          "ratio_policy": {
+            "selection": "inherit",
+            "value_mode": "inherit"
+          },
+          "task_type": "reference",
+          "validation_policy": {
+            "required_video_count": 0,
+            "accepted_video_sources": [
+              "material",
+              "imitation"
+            ],
+            "include_imitation_duration_in_total": false
+          }
+        },
+        {
+          "duration_policy": "smart_disabled",
+          "enabled": true,
+          "imitate_video_policy": {
+            "enabled": true
+          },
+          "key": "video_edit",
+          "name": "视频编辑",
+          "placeholder": "描述你的编辑想法，帮你P视频，比如视频换脸、修改元素等",
+          "ratio": {
+            "default": "adaptive",
+            "options": [
+              "adaptive"
+            ]
+          },
+          "ratio_policy": {
+            "selection": "recommended_only",
+            "value_mode": "smart",
+            "blocked_click_toast": "视频编辑下暂不支持设置比例"
+          },
+          "task_type": "edit",
+          "validation_policy": {
+            "required_video_count": 1,
+            "accepted_video_sources": [
+              "material",
+              "imitation"
+            ],
+            "include_imitation_duration_in_total": true
+          }
+        },
+        {
+          "duration_policy": "inherit",
+          "enabled": true,
+          "imitate_video_policy": {
+            "enabled": false
+          },
+          "key": "video_extend",
+          "name": "视频延长",
+          "placeholder": "支持向前/向后延长视频，你可以说说希望视频接下来发生什么",
+          "ratio": {
+            "default": "adaptive",
+            "options": [
+              "adaptive"
+            ]
+          },
+          "ratio_policy": {
+            "selection": "recommended_only",
+            "value_mode": "smart",
+            "blocked_click_toast": "视频延长下暂不支持设置比例"
+          },
+          "task_type": "extend",
+          "validation_policy": {
+            "required_video_count": 1,
+            "accepted_video_sources": [
+              "material"
+            ],
+            "forbidden_input_types": [
+              "imitation"
+            ],
+            "include_imitation_duration_in_total": false
+          }
+        },
+        {
+          "duration_policy": "inherit",
+          "enabled": true,
+          "generate_type": 1,
+          "imitate_video_policy": {
+            "enabled": false
+          },
+          "key": "first_last_frame",
+          "name": "首尾帧模式",
+          "placeholder": "上传首帧和尾帧图片，并描述你想生成的视频内容",
+          "ratio": {
+            "default": "adaptive",
+            "options": [
+              "adaptive"
+            ]
+          },
+          "ratio_policy": {
+            "selection": "recommended_only",
+            "value_mode": "smart",
+            "blocked_click_toast": "首尾帧模式下暂不支持设置比例"
+          },
+          "validation_policy": {
+            "required_video_count": 0,
+            "forbidden_input_types": [
+              "imitation",
+              "audio",
+              "document"
+            ],
+            "include_imitation_duration_in_total": false
+          }
+        }
+      ],
+      "default_accent_code": "recommend",
+      "default_language_code": "zh",
+      "description": "带参考视频 720P 成片限时 4.7 折，最高再送25条生成",
+      "disabled": false,
+      "duration": {
+        "default": 10,
+        "description": "选择生成内容的时长（秒）",
+        "label": "时长",
+        "max": 30,
+        "min": 4,
+        "required_field": true,
+        "step": 1,
+        "unit": "seconds"
+      },
+      "estimation_participant_keys": [
+        "selectedModelKey",
+        "resolution",
+        "withReference"
+      ],
+      "hidden_resolution": false,
+      "icon_url": "https://lf-xiaoyunque.jianying.com/obj/pippit-app-buz/pippit_cms/c8b2792fbf1479d0838b167f94386e9b.png",
+      "image_audit_key": "pippit_seedance2_0_user_input_image",
+      "image_material_accepted_extensions": [
+        "jpg",
+        "jpeg",
+        "png",
+        "webp",
+        "bmp",
+        "gif"
+      ],
+      "image_material_accepted_mime_types": [
+        "image/jpeg",
+        "image/png",
+        "image/webp",
+        "image/bmp",
+        "image/gif"
+      ],
+      "image_material_max_aspect_ratio": 2.5,
+      "image_material_max_side_length": 6000,
+      "image_material_min_aspect_ratio": 0.4,
+      "image_material_min_side_length": 300,
+      "is_support_character": true,
+      "is_support_extend_result": true,
+      "is_support_first_frame_image": true,
+      "is_support_generate_mode_selection": true,
+      "is_support_imitate_video": true,
+      "is_support_last_frame_image": true,
+      "is_support_mention_material": true,
+      "is_support_ordered_material": true,
+      "is_support_result_as_reference": true,
+      "key": "Seedance_2.5",
+      "kind": "video",
+      "material_limits": {
+        "audio_total_limit": 10,
+        "image_total_limit": 30,
+        "max_image_size_bytes": 31457280,
+        "max_total_video_duration_ms": 30200,
+        "max_video_duration_ms": 30200,
+        "min_video_duration_ms": 2000,
+        "total_limit": 50,
+        "video_total_limit": 10
+      },
+      "max_audio_duration": 30000,
+      "max_imitate_video_duration": 30000,
+      "max_output_duration": 30000,
+      "max_prompt_length": 15000,
+      "max_total_audio_duration": 30200,
+      "min_audio_duration": 2000,
+      "name": "Seedance 2.5",
+      "parameter_config": {
+        "default_combination": {
+          "resolution": "720p",
+          "seed": "random"
+        },
+        "dimensions": [
+          {
+            "key": "seed",
+            "label": "Seed",
+            "description": "随机种子，用于控制模型生成内容的随机性。",
+            "priority": 30,
+            "required_field": false,
+            "default_value": "random",
+            "option_list": [
+              {
+                "label": "随机生成",
+                "value": "random",
+                "disabled": false
+              },
+              {
+                "label": "自定义生成",
+                "value": "fixed",
+                "disabled": false
+              }
+            ]
+          }
+        ],
+        "need_available_combinations": false
+      },
+      "placeholder": "输入灵感，一键成片",
+      "pricing_rule": {
+        "content": "按秒计价，此模型输入参考视频时长计入总时长"
+      },
+      "ratio": {
+        "default": "adaptive",
+        "options": [
+          "adaptive",
+          "16:9",
+          "21:9",
+          "9:16",
+          "4:3",
+          "3:4",
+          "1:1"
+        ]
+      },
+      "report_name": "seedance_2_5",
+      "resolution": {
+        "default": "720p",
+        "description": "选择生成视频的分辨率",
+        "label": "清晰度",
+        "options": [
+          "480p",
+          "720p",
+          "1080p"
+        ],
+        "required_field": true
+      },
+      "supported_accent": {
+        "zh": [
+          {
+            "code": "recommend",
+            "name": "智能推荐"
+          },
+          {
+            "code": "pu_tong_hua",
+            "name": "普通话"
+          },
+          {
+            "code": "dong_bei_hua",
+            "name": "东北话"
+          },
+          {
+            "code": "he_nan_hua",
+            "name": "河南话"
+          },
+          {
+            "code": "gang_tai_qiang",
+            "name": "港台腔"
+          },
+          {
+            "code": "shan_xi_hua",
+            "name": "陕西话"
+          },
+          {
+            "code": "yue_yu",
+            "name": "粤语"
+          },
+          {
+            "code": "si_chuan_hua",
+            "name": "四川话"
+          }
+        ]
+      },
+      "supported_language": [
+        {
+          "code": "zh",
+          "name": "中文"
+        },
+        {
+          "code": "en",
+          "name": "英文"
+        }
+      ],
+      "tag_list": [
+        {
+          "tag_icon_type": "vip"
+        },
+        {
+          "tag_name": "限时优惠"
+        }
+      ],
+      "text_audit_key": "pippit_seedance2_0_user_input_text",
+      "video_audit_key": "pippit_seedance2_0_user_input_video",
+      "video_material_max_aspect_ratio": 2.5,
+      "video_material_max_fps": 60,
+      "video_material_max_pixel_count": 8295044,
+      "video_material_max_side_length": 6000,
+      "video_material_min_aspect_ratio": 0.4,
+      "video_material_min_fps": 24,
+      "video_material_min_pixel_count": 409600,
+      "video_material_min_side_length": 300,
+      "video_replica_placeholder": "粘贴视频链接在这里，小云雀将解析爆点，参考文案/主题/画风等，解析后可添加你的想法，再次创作"
+    }
+  }
+}

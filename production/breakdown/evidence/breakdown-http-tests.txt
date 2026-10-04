@@ -1,0 +1,18 @@
+test_applicability_is_neither_occurrence_nor_actual_input (test_production_breakdown.BreakdownTest) ... ok
+test_direct_parent_and_exact_historical_context_survive_reorder (test_production_breakdown.BreakdownTest) ... ok
+test_historical_parent_chain_does_not_follow_the_current_input_lock (test_production_breakdown.BreakdownTest) ... ok
+test_migration_preserves_concurrent_comment_and_rejects_corrupt_batch (test_production_breakdown.BreakdownTest) ... ok
+test_parent_revision_and_occurrence_validation_are_atomic (test_production_breakdown.BreakdownTest) ... ok
+test_scoped_http_and_migration_envelope (test_production_breakdown.BreakdownTest) ... 127.0.0.1 - - [04/Oct/2026 19:04:33] "GET /api/production/breakdown?episode=episode HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 19:04:33] "GET /api/production/context?object_id=shot HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 19:04:33] "GET /api/production/materials?episode=episode&scene=scene&offset=0 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 19:04:33] "GET /api/production/materials?episode=other HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 19:04:33] "GET /api/production/material-plan-map HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 19:04:33] "POST /api/production/material-plan-migrate HTTP/1.1" 201 -
+127.0.0.1 - - [04/Oct/2026 19:04:33] "GET /api/production/material-plan-map HTTP/1.1" 200 -
+ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.310s
+
+OK
