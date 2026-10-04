@@ -1,0 +1,144 @@
+{
+  "format": "material-streamlining-validation-v1",
+  "task": "task-20261004-0004",
+  "system_candidate": "236433072b1629c197e3685cb5b7e305b53e3285",
+  "performance_and_restore_code": "7bd951f113fa02e03c43b017a776da3542f72045",
+  "reuse_reason": "Final patch changes only frontend historical-call navigation and its test; backend and export files are unchanged.",
+  "formal_applied": false,
+  "formal_browser_acceptance": "pending final confirmation and application",
+  "push": false,
+  "business_data_delta": 0,
+  "creative_acceptance": false,
+  "paid_generation_calls": 0,
+  "automated_checks": [
+    {
+      "scope": "system Python",
+      "command": "NO_PROXY=127.0.0.1,localhost no_proxy=127.0.0.1,localhost PYTHONPATH=. python3 -m unittest discover -s tests -v",
+      "passed": 151,
+      "failed": 0,
+      "log": ".runtime/material-streamlining/python-tests-final.log"
+    },
+    {
+      "scope": "system frontend",
+      "command": "node --test tests/*.test.cjs",
+      "passed": 388,
+      "failed": 0,
+      "log": ".runtime/material-streamlining/node-tests-final.log"
+    },
+    {
+      "scope": "story release guards",
+      "command": "python3 -m unittest discover -s tests -p test_material_review_release.py -v",
+      "passed": 5,
+      "failed": 0,
+      "log": ".runtime/material-streamlining/release-tests-final.log"
+    }
+  ],
+  "browser": {
+    "browser": "Connected Chrome",
+    "formal_writes": false,
+    "instances": {
+      "story_copy": "http://127.0.0.1:62604/",
+      "disposable": "http://127.0.0.1:62606/",
+      "decode_failure": "http://127.0.0.1:62607/"
+    },
+    "observations": [
+      {
+        "scope": "generated / pending / history / candidates",
+        "result": "One corresponding generation content; exact call model/parameters/prompt/inputs per candidate; retained plan and checks; old rounds preserved."
+      },
+      {
+        "scope": "sample reference",
+        "object": "asset-aheng-song-01",
+        "asset_revision": "4be31a852debec3b150c9d7dafa673f700f03574c233a83bdc247beaaa6bba71",
+        "call_revision": "1600edfe10f4b1eb9c805c9a0e374a65469d28264cbce5f69802b6d91a5d4994",
+        "input_revision": "d4ca874bc9cd326fea61d92d5cbd4e05d80903de4827f6e5c7312e9b9120c4ef",
+        "input_file": "a041a61f5f37de8086eba7de160804c785587d1ae1ce024ef67246f846c69e84.wav",
+        "result": "Actual original opened and counted its own comment; plan history remains different and pending."
+      },
+      {
+        "scope": "multi-reference and legacy gaps",
+        "result": "Exact image1/image2 crop; image/audio numbering and 0.1-0.8s clip; missing exact component and missing call explained with no latest substitution."
+      },
+      {
+        "scope": "comment counts",
+        "result": "Historical image 3 vs current 1; audio 2 incl closed; new/edit/close/reopen count1 and exact0.10-1.10s; zero retains icon; Enter opens matching list; disposable deletion plus refresh3->2."
+      },
+      {
+        "scope": "filters",
+        "all": 1159,
+        "pending": 829,
+        "generated": 330,
+        "image": 1079,
+        "audio": 80,
+        "generated_audio": 77,
+        "result": "Combined search zero keeps categories; clear restores all; real project/document fixture accessible; legacy CALL URL readable."
+      },
+      {
+        "scope": "audio lifecycle",
+        "result": "Shared play/pause/mute/seek/select/preview and exact production comments; material17.053417s and entity1s ended/paused true; source clip paused at1.1s; decode failure still plays/selects/comments."
+      },
+      {
+        "scope": "modal sessions",
+        "result": "Close/Esc/nested return preserve outer version, position, focus and drafts; detached/closed media pause."
+      },
+      {
+        "scope": "narrow viewport",
+        "width": 390,
+        "height": 844,
+        "document_width": 390,
+        "pages": [
+          "materials",
+          "settings"
+        ],
+        "result": "Filters accessible without horizontal overflow; temporary override reset."
+      },
+      {
+        "scope": "regressions",
+        "pages": [
+          "story.sources plain translation",
+          "story.outline structure10",
+          "story.script E01/s001",
+          "production.workspace E01-001",
+          "settings entity-li-ji / entity-a-heng"
+        ],
+        "result": "Rendered real content and comment cues; entity switch completes; missing-shot inputs remain explicit."
+      }
+    ],
+    "limits": [
+      "Formal data currently has no source audio; source player validated using an existing MP3 copied without modification into a disposable instance.",
+      "Generic comparison/rendering helpers were audited and automatically checked; they are not independent browser-verified pages.",
+      "No deletion UI was added; deletion-refresh check used only the named disposable fixture."
+    ]
+  },
+  "evidence_files": [
+    "production/evidence/material-streamlining-performance-before.json",
+    "production/evidence/material-streamlining-performance-after.json",
+    "production/evidence/material-streamlining-data-integrity.json",
+    "production/evidence/material-streamlining-restore.json"
+  ],
+  "screenshots": [
+    "production/evidence/material-streamlining/actual-reference-audio.png",
+    "production/evidence/material-streamlining/materials-narrow.png",
+    "production/evidence/material-streamlining/settings-narrow.png",
+    "production/evidence/material-streamlining/source-audio.png",
+    "production/evidence/material-streamlining/waveform-fallback.png"
+  ],
+  "usage_and_release": "planning/material-review-streamlining-delivery.md",
+  "unchanged_backend_files": 24,
+  "log_sha256": {
+    ".runtime/material-streamlining/python-tests-final.log": "4e4a27242acf7b2de8ee82bdc1b280916be92e75ed16769f5623627ff43d13aa",
+    ".runtime/material-streamlining/node-tests-final.log": "6c28809d9007a1b22261a14d02ef5d246e42a407f477e1df1b1eb0272c049efc",
+    ".runtime/material-streamlining/release-tests-final.log": "45313cd8113c279ddb51335a2a4fe3035cd1cb5fb1d3852a9e84018df37ba17f"
+  },
+  "artifact_sha256": {
+    "production/evidence/material-streamlining-performance-before.json": "875e52dff0175897810a09c10b1dda813c774a940bc3543b1a02318035148c1e",
+    "production/evidence/material-streamlining-performance-after.json": "db8be0b340a34476b54d0a712c23e1e1f51c49abd865af8ca1cefe290558401f",
+    "production/evidence/material-streamlining-data-integrity.json": "6d828d7dc96ce8eb1b5ed94acced2cc866d5bb8f584dec920aa5ba039f2fb23b",
+    "production/evidence/material-streamlining-restore.json": "4bcf200b223a0c83254abb569c50560a0b587686877ef13a275991d70b9a7463",
+    "production/evidence/material-streamlining/actual-reference-audio.png": "b5ee3c631190068feea2b568c2a2da682d39d271a17abd3ee7d59f6bee498d0a",
+    "production/evidence/material-streamlining/materials-narrow.png": "c3c50d2795891484a085915d6023d2e4d227f2455d9390d59e362d31ec7e9234",
+    "production/evidence/material-streamlining/settings-narrow.png": "36557fdc0377c2002f941cf455c7a07b616c288f4052144885a1be546705c31b",
+    "production/evidence/material-streamlining/source-audio.png": "24fe39a64b316e72277665b9ea3eeee815fb8a14bb261d3a1358a115ebdf7f18",
+    "production/evidence/material-streamlining/waveform-fallback.png": "f1b345b29b2846a07e26f356ae3a2a0226b7798561da8eb267c9634ff2323e08"
+  }
+}
