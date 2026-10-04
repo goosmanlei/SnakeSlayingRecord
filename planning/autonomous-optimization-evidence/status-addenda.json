@@ -1,5 +1,5 @@
 {
-  "snapshot_generated_at": "2026-10-04T00:12:43.909757+00:00",
+  "snapshot_generated_at": "2026-10-04T01:21:37.909684+00:00",
   "not_final": true,
   "authority": [
     {
@@ -60,7 +60,7 @@
     },
     {
       "scope": "release wrapper",
-      "current": "REL01/02/03已修，REL04本地镜像标签修正亦经独立8边界与真实wrapper build通过；技术system10a11aa/story5e016a包，42文件一致。生成compose的隔离双服务切换/回滚保留2条评论，非wrapper完整apply；正式未动。已提升scripts/autonomous_optimization_release.py，准确字节c4ddc127…，两字段包在production/autonomous-optimization-release/project-context/。",
+      "current": "REL01/02/03已修，REL04本地镜像标签修正亦经独立8边界与真实wrapper build通过；技术system10a11aa/story5e016a包，42文件一致。生成compose的隔离双服务切换/回滚保留2条评论，非wrapper完整apply；正式未动。c4ddc127…是当批两字段脚本；当前受管脚本按用户阶段选择只扩展第三字段，准确字节见release-entrypoints，新范围已另做真实HTTP独审。原Docker机制证据不冒称新候选正式apply。",
       "review": "reviews/release-review.md"
     },
     {
@@ -94,7 +94,52 @@
     },
     {
       "scope": "AO026、最终候选、收敛/停止",
-      "current": "相反复核语义未决；本包未生成最终候选绑定、最终综合审查或真实结束回执，不补造。"
+      "current": "AO026已收到用户规则选择，发现索引已记录作者实现与定向检查通过；本包尚未收录该候选实现证据，独审及Chrome仍待验，终版需定向刷新。本包未生成最终候选绑定、最终综合审查或真实结束回执，不补造。"
+    },
+    {
+      "scope": "AO049",
+      "current": "原基线准确旧素材刷新丢上下文已修；共享第二卡及空当前轮展开两项独审反例均关闭。根旧原件直链、刷新、原评论定位和空轮当前撤回卡展开已验；空轮不借旧结果。",
+      "review": "reviews/ao049.md",
+      "browser_sources": [
+        "entity-history-route-audit/fixed-comment-locate-chrome.json",
+        "entity-history-route-audit/current-empty-round-fixed-chrome.json"
+      ]
+    },
+    {
+      "scope": "AO050/051",
+      "current": "准确依赖名称投影与单一版本控件独审及根 v1/v2/弹窗/完整历史页面已验；投影只读，不改保存的引用、素材或历史。",
+      "reviews": [
+        "reviews/ao050.md",
+        "reviews/ao051.md"
+      ]
+    },
+    {
+      "scope": "PROJECT 阶段选择与正式候选",
+      "current": "用户明确选择素材准备；受管正式候选在原PROJECT v14一次更新三字段到v15。21项作者检查、独立原wrapper真实HTTP增量/补偿/冲突护栏通过；主预览仅阶段v15→16并与最终expected-body全等。正式仍未写，两个版本序列不可混用。",
+      "review": "reviews/project-stage-release.md",
+      "browser_sources": [
+        "project-stage-chrome.json",
+        "project-stage-history-check.json"
+      ]
+    },
+    {
+      "scope": "组合与输出 v1/v2及恢复",
+      "current": "根准确新旧组合/输出、技术视频播放和文件下载有实际证据；恢复包12业务表精确保留、7受管资产（2图/1静音/2视频/2配方ZIP）与4业务JSON共11成员哈希匹配。技术库评论/配置/判断为空，不扩称非空评论恢复；配方包未在原生剪辑软件打开。v1镜头清单随后已取得实际下载JSON，补核一当时的未落盘结论仅属历史时点。",
+      "review": "reviews/assembly-recovery.md",
+      "browser_sources": [
+        "assembly-output-browser/v1-downloaded-manifest-readback.json",
+        "output-v2-play-download-chrome.json"
+      ]
+    },
+    {
+      "scope": "准确旧采纳",
+      "current": "阿禾准确旧采纳直链可读且禁止误操作；数据库另一三修订链保留。无可见历史选择/逐条旧结论链展示证据，保持部分覆盖。",
+      "review": "reviews/legacy-adoption-and-output-v1.md"
+    },
+    {
+      "scope": "启动模型与监督",
+      "current": "独审核对实际启动与三个后代均继承Astra ultra及首次计时/服务基准；只证明该审查时点，不替代真实结束回执。",
+      "review": "reviews/startup-model.md"
     }
   ],
   "historical_screenshots": "截图来自对应验证当时版本；例如AO007还可见后来AO008移除的待开放入口，AO011/017截图列表版本在后续AO024修正。均只证明对应当时操作，不代表最终全页截图。"

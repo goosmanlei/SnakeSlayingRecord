@@ -1,4 +1,4 @@
-> 证据出处：`coverage-reconciliation.md`；原始 SHA-256：`253adf1c3e9fdf2502e53164b2ec633cec95993c108b697bf60406b18b7d831e`。正文保留该批次当时结论；当前去向见 [状态补充](../status-addenda.json) 与 [发现索引](../finding-index.json)。正文内未作为链接的 runtime 路径是本机留存证据，不承诺随包交付。
+> 证据出处：`coverage-reconciliation.md`；原始 SHA-256：`6643657bf234726d3936f717e68b166bb13cae21e4d0746f53bcf5a01f7b6c75`。正文保留该批次当时结论；当前去向见 [状态补充](../status-addenda.json) 与 [发现索引](../finding-index.json)。正文内未作为链接的 runtime 路径是本机留存证据，不承诺随包交付。
 
 # 八工作区覆盖与证据对账
 
@@ -18,8 +18,10 @@
 | COV-04 剧本 | 真实第三/四版阅读，技术跨场两端/Unicode末尾/摘要故障；正常草稿刷新与取消/新建/编辑。 | 存储拒绝只函数；SCRIPT迟到润色未Chrome，无真实IME/模型。 | comment-cleanup-audit/normal-browser-persistence.json（本机原证据：comment-cleanup-audit/normal-browser-persistence.json；按 source-index.json 查询是否收入） |
 | COV-05 制作设定 | 准确方案采纳循环、迟到保存；撤回事实/归并去向与旧原件评论可读。 | 纯实体GET乱序、旧entity-current-v1格式及部分旧状态未专项。 | withdrawn-context-audit/current-state-chrome.json（本机原证据：withdrawn-context-audit/current-state-chrome.json；按 source-index.json 查询是否收入） |
 | COV-06 素材审阅 | 轮次/历史、准确成员、候选名称；旧轮同请求409明确拒绝且无历史写入。 | 异步CALL挂起未Chrome；标题/裁切部分在共享组件入口验，047初稿的046证据范围受限。 | round-conflict-fixed-persistence.json（本机原证据：round-conflict-fixed-persistence.json；按 source-index.json 查询是否收入） |
-| COV-07 全剧制作 | 准确采用/裁切与新候选后旧采用、检查分页、纯GET迟到成功、包文件可用性。 | 基准0采用/COMPOSITION/OUTPUT；技术库补正向，AO026规则待判断。 | readiness-order-browser/browser-order-readback.json（本机原证据：readiness-order-browser/browser-order-readback.json；按 source-index.json 查询是否收入） |
+| COV-07 全剧制作 | 准确采用/裁切与新候选后旧采用、检查分页、纯GET迟到成功、包文件可用性。 | 基准0采用/ASSEMBLY/DELIVERABLE；技术库补正向，AO026规则待判断。 | readiness-order-browser/browser-order-readback.json（本机原证据：readiness-order-browser/browser-order-readback.json；按 source-index.json 查询是否收入） |
 | COV-08 系统管理 | 配置在途/未知/已保存读取失败分层；PROJECT真实双窗口409保持唯一输入与旧版本。 | 上传受工具权限阻挡；SYSTEM双窗口/上传后冲突及迁移未专项Chrome。 | configuration-conflict-fix/browser-persistence.json（本机原证据：configuration-conflict-fix/browser-persistence.json；按 source-index.json 查询是否收入） |
+
+类型口径更正：此处使用后端真实类型 `ASSEMBLY`（动态分镜组合）与 `DELIVERABLE`（输出与工程）；启动基准的两类实际记录均为0。此前简称已更正，原113个ID和验收分类没有因此变化，正向技术夹具尚待实际验证。
 
 ## 如何解释证据
 
@@ -34,7 +36,7 @@
 
 图像裁切在制作工作区共享原件弹窗验收：旧蓝图640×360，裁切框相对64/72/192/144像素；后台正常追加B新版后，原准确采用与裁切不变。纯readiness GET的A迟到成功由真实网络代理控制，B先显示后再释放A，B范围/需求/URL不变，源技术库未写。迟到失败仍是函数证据。
 
-AO046实际旧轮409重试发生于北京时间07:49:07，保持同UUID、完整payload与轮次2，8评论/13事件/7轮/3反馈/12范围不变。该次加载app为1b8dbeda…，含未冻结AO047初稿，结论只限明确拒绝路径。AO047另由根在新冻结app6772939e…完成正常取消/刷新/创建/编辑；异常清理与存储权限边界仍由独立函数反例承担。
+AO046实际旧轮409重试发生于北京时间07:49:07，保持同UUID、完整payload与轮次2，8评论/13事件/7轮/3反馈/12范围不变。该次加载 app 为 8c5c001c…（作者记录的 root_loaded_initial_sha256），含未冻结AO047初稿，结论只限明确拒绝路径。1b8dbeda… 来自独立函数复验采样，不能充当该次浏览器输入。AO047另由根在新冻结app6772939e…完成正常取消/刷新/创建/编辑；异常清理与存储权限边界仍由独立函数反例承担。
 
 AO048真实双窗口先复现PROJECT v5→6/旧v5拒绝，再以修后v6→7/旧v6拒绝复验；两次拒绝均没有配置事件，原6事件保留，SYSTEM仍v1。writer技术库最新5条判断各v1，评论/采用为0；此前4条是当时批次切片，不作为当前总数。
 
@@ -44,7 +46,7 @@ AO048真实双窗口先复现PROJECT v5→6/旧v5拒绝，再以修后v6→7/旧
 
 - 运行时间以持久化guard/截止回执为准；本矩阵更新不构成最终候选验收、停止回执或质量目标完成。
 - AO026 相反变更复核意见的业务语义待用户判断；正式集成/发布尚未执行。
-- 启动基准采用/COMPOSITION/OUTPUT为空，正向采用与恢复由技术夹具补充，不虚构既有成片/输出或故事认可。
+- 启动基准采用/ASSEMBLY/DELIVERABLE为空，正向采用与恢复由技术夹具补充，不虚构既有成片/输出或故事认可。
 - 真实图标上传受工具文件权限阻挡；上传后冲突未验。真实IME与真实模型调用/质量未验。
 - 存储QuotaExceeded/SecurityError、特定异步竞态及旧schema缺成员兼容仍主要为实际函数/API，不变成Chrome通过。
 - 异步CALL请求挂起未实际Chrome；旧CALL已在模型中的0GET复用是有效已验路径，二者不能混称。
@@ -140,11 +142,11 @@ AO048真实双窗口先复现PROJECT v5→6/旧v5拒绝，再以修后v6→7/旧
 | COV-06-S6 | 跨实体状态复用 | not_verified | 未找到此条目的可复用精确证据。 | 未逐一实测的组合不算通过。 | 无精确证据 |
 | COV-06-S7 | 开放/关闭/历史轮评论 | partial_browser | 沿用原覆盖表已记录的具体操作；不能扩大到标题内未实际执行的分支。 | 未逐一实测的组合不算通过。 | history-material-browser.json（本机原证据：history-material-browser.json；按 source-index.json 查询是否收入） |
 | COV-06-S8 | 非媒体组成/嵌套弹窗 | not_verified | 未找到此条目的可复用精确证据。 | 未逐一实测的组合不算通过。 | 无精确证据 |
-| COV-06-S9 | 过期轮提交409 | partial_browser | 真实旧轮新修订提交收到 409；修后原 UUID/完整 payload/round2 原样重试仍 409，显示明确拒绝而不称结果未知，原文字与修订选择保留。实际重试北京时间07:49:07；8评论/13事件/7轮/3反馈/12范围全部未变。 | 该次 Chrome 加载 app SHA 1b8dbeda…，包含尚未冻结的 AO047 初稿，只支持 AO046 明确拒绝路径，不作为 AO047 或整个最终 app 验收。异常本机存储仍是函数反例。 | comment-persistence-browser.json（本机原证据：comment-persistence-browser.json；按 source-index.json 查询是否收入）；round-conflict-fixed-chrome.json（本机原证据：round-conflict-fixed-chrome.json；按 source-index.json 查询是否收入）；round-conflict-fixed-persistence.json（本机原证据：round-conflict-fixed-persistence.json；按 source-index.json 查询是否收入）；independent-comment-rejection-review.md（本机原证据：independent-comment-rejection-review.md；按 source-index.json 查询是否收入） |
+| COV-06-S9 | 过期轮提交409 | partial_browser | 真实旧轮新修订提交收到 409；修后原 UUID/完整 payload/round2 原样重试仍 409，显示明确拒绝而不称结果未知，原文字与修订选择保留。实际重试北京时间07:49:07；8评论/13事件/7轮/3反馈/12范围全部未变。 | 该次 Chrome 加载 app SHA 8c5c001c…（作者记录的 root_loaded_initial_sha256），包含尚未冻结的 AO047 初稿，只支持 AO046 明确拒绝路径，不作为 AO047 或整个最终 app 验收。异常本机存储仍是函数反例。 | comment-persistence-browser.json（本机原证据：comment-persistence-browser.json；按 source-index.json 查询是否收入）；round-conflict-fixed-chrome.json（本机原证据：round-conflict-fixed-chrome.json；按 source-index.json 查询是否收入）；round-conflict-fixed-persistence.json（本机原证据：round-conflict-fixed-persistence.json；按 source-index.json 查询是否收入）；independent-comment-rejection-review.md（本机原证据：independent-comment-rejection-review.md；按 source-index.json 查询是否收入） |
 | COV-06-S10 | 不同文件同 component_id | not_verified | 未找到此条目的可复用精确证据。 | 未逐一实测的组合不算通过。 | 无精确证据 |
 | COV-07-B0 | 查看剧本依据 | partial_browser | 第4版镜头和第17集/场准确标题与范围显示。 | 未记录点击剧本依据后的完整回跳。 | production-scope-pagination-browser.json（本机原证据：production-scope-pagination-browser.json；按 source-index.json 查询是否收入） |
-| COV-07-B1 | 按集/场/镜浏览镜头和组合 | partial_browser | 基准第一集33镜头与第17集集场需求，正常集/场切换。 | 基准0 COMPOSITION/OUTPUT，不可声称组合/输出审阅已验；历史镜头仍未验。 | production-scope-pagination-browser.json（本机原证据：production-scope-pagination-browser.json；按 source-index.json 查询是否收入）；production-flow-audit/baseline-inventory.json（本机原证据：production-flow-audit/baseline-inventory.json；按 source-index.json 查询是否收入） |
-| COV-07-B2 | 主动检查范围缺项及分页 | partial_browser | 真实镜头33条分页20/13，第17集范围78条分页20/20/20/18，末页禁用并切场20条；主动检查准确范围。 | COMPOSITION/OUTPUT 在基准为空；检查不能当作这些对象已有真实成果。 | production-scope-pagination-browser.json（本机原证据：production-scope-pagination-browser.json；按 source-index.json 查询是否收入） |
+| COV-07-B1 | 按集/场/镜浏览镜头和组合 | partial_browser | 基准第一集33镜头与第17集集场需求，正常集/场切换。 | 基准0 ASSEMBLY/DELIVERABLE，不可声称组合/输出审阅已验；历史镜头仍未验。 | production-scope-pagination-browser.json（本机原证据：production-scope-pagination-browser.json；按 source-index.json 查询是否收入）；production-flow-audit/baseline-inventory.json（本机原证据：production-flow-audit/baseline-inventory.json；按 source-index.json 查询是否收入） |
+| COV-07-B2 | 主动检查范围缺项及分页 | partial_browser | 真实镜头33条分页20/13，第17集范围78条分页20/20/20/18，末页禁用并切场20条；主动检查准确范围。 | ASSEMBLY/DELIVERABLE 在基准为空；检查不能当作这些对象已有真实成果。 | production-scope-pagination-browser.json（本机原证据：production-scope-pagination-browser.json；按 source-index.json 查询是否收入） |
 | COV-07-B3 | 准确来源和变更影响 | partial_browser | 准确 target/old/new 的变化复核，已保存/未知/刷新失败分支，不自动替换采用。 | 相反 keep/rework 同准确变化的 AO026 业务裁决仍未定；不能以一个 keep 成功称冲突已解决。 | change-browser/recovery-browser.json（本机原证据：change-browser/recovery-browser.json；按 source-index.json 查询是否收入）；change-browser/late-save-browser.json（本机原证据：change-browser/late-save-browser.json；按 source-index.json 查询是否收入） |
 | COV-07-B4 | 显式采用/换版和变更复核 | partial_browser | B先回/A后回、失败禁用、取消重开、准确B时段采用及落库断响应准确回读已有 Chrome；新增准确旧蓝图 B 裁切采用与导入 B 新版后旧采用保留。准确变更 keep 恢复另有 Chrome。 | AO026 相反复核意见规则仍待判断；rework/replace 的其余 UI 分支未全验。技术采用不等于认可故事作品。 | adoption-browser-verification.json（本机原证据：adoption-browser-verification.json；按 source-index.json 查询是否收入）；adoption-recovery-browser.json（本机原证据：adoption-recovery-browser.json；按 source-index.json 查询是否收入）；change-browser/recovery-browser.json（本机原证据：change-browser/recovery-browser.json；按 source-index.json 查询是否收入）；crop-browser/saved-crop-chrome.json（本机原证据：crop-browser/saved-crop-chrome.json；按 source-index.json 查询是否收入）；crop-browser/after-new-version-chrome.json（本机原证据：crop-browser/after-new-version-chrome.json；按 source-index.json 查询是否收入）；crop-browser/old-blue-crop-chrome.json（本机原证据：crop-browser/old-blue-crop-chrome.json；按 source-index.json 查询是否收入）；crop-browser/old-blue-crop-geometry.json（本机原证据：crop-browser/old-blue-crop-geometry.json；按 source-index.json 查询是否收入）；crop-browser/append-b-receipt.json（本机原证据：crop-browser/append-b-receipt.json；按 source-index.json 查询是否收入） |
 | COV-07-B5 | 下载输入清单 | browser_verified | 真实下载3原件的完整 manifest，落地文件 SHA 与原清单一致；工具下载事件等待超时已由实际文件核对补证据。 | 这是清单下载；完整含原件目录包由既有 CLI 测试，不能说浏览器下载了目录包。 | package-browser/browser-evidence.json（本机原证据：package-browser/browser-evidence.json；按 source-index.json 查询是否收入） |

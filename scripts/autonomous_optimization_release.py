@@ -29,7 +29,7 @@ TASK = 'task-20261004-0002'
 PROJECT = 'snakeslayingrecord'
 APP = PROJECT + '-app-1'
 NGINX = PROJECT + '-nginx-1'
-FIELDS = {'story_background', 'creative_background'}
+FIELDS = {'story_background', 'creative_background', 'current_stage'}
 INSTANCE_FILES = ('config/instance.json', 'content/production-approach.json')
 PORTS = {'3000/tcp': [{'HostIp': '127.0.0.1', 'HostPort': '3000'},
                       {'HostIp': '127.0.0.1', 'HostPort': '64401'}]}
@@ -144,7 +144,8 @@ def update_package(root):
     request, before, after, manifest = (read(root / name) for name in (
         'request.json', 'before-project.json', 'expected-body.json', 'manifest.json'))
     require(set(request) == {'expected_version', 'updates'} and set(request['updates']) == FIELDS,
-            'PROJECT request must contain only the two authorized fields')
+            'PROJECT request must contain only the three authorized fields')
+    require(request['updates']['current_stage'] == 'MATERIAL_PREPARATION', 'PROJECT stage differs from user decision')
     guard, candidate = manifest['guard'], manifest['candidate']
     require(before['scope'] == 'PROJECT', 'wrong configuration scope')
     require(request['expected_version'] == before['version'] == guard['expected_version'] == 14,
