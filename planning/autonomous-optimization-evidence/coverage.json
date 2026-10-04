@@ -1,0 +1,4884 @@
+{
+  "source_sha256": "c209dc53cc0c4235560d954370be1731008053eceefdd9ee70ed6c3fd2103e4a",
+  "snapshot": {
+    "updated_at": "2026-10-04T01:48:24.283115+00:00",
+    "baseline": "baseline.json",
+    "coverage": [
+      {
+        "id": "COV-01",
+        "workspace": "production.approach",
+        "label": "制作思路",
+        "entry": "real_chrome_opened",
+        "browser_checks": [
+          {
+            "action": "故事创作/生产制作 Tab",
+            "status": "browser_verified",
+            "evidence": [
+              "approach-navigation-browser.json",
+              "approach-arrow-browser.json"
+            ],
+            "status_before_reconciliation": "passed_baseline",
+            "evidence_before_reconciliation": [
+              "Chrome 62603 initial two tabs observed"
+            ],
+            "reconciliation_id": "COV-01-B0",
+            "verified_scope": "实际 Tab、目录、滚动、刷新/历史、左右/Home/End 与窄屏目录；左右补证据晚于覆盖表。",
+            "remaining": "",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "approach-navigation-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "approach-arrow-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              }
+            ]
+          },
+          {
+            "action": "目录定位及滚动高亮",
+            "status": "browser_verified",
+            "evidence": [
+              "approach-navigation-browser.json",
+              "approach-arrow-browser.json"
+            ],
+            "status_before_reconciliation": "passed_candidate",
+            "evidence_before_reconciliation": [
+              "approach-navigation-browser.json"
+            ],
+            "reconciliation_id": "COV-01-B1",
+            "verified_scope": "实际 Tab、目录、滚动、刷新/历史、左右/Home/End 与窄屏目录；左右补证据晚于覆盖表。",
+            "remaining": "",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "approach-navigation-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "approach-arrow-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              }
+            ]
+          },
+          {
+            "action": "章节链接、刷新及前进后退",
+            "status": "browser_verified",
+            "evidence": [
+              "approach-navigation-browser.json",
+              "approach-arrow-browser.json"
+            ],
+            "status_before_reconciliation": "passed_candidate",
+            "evidence_before_reconciliation": [
+              "approach-navigation-browser.json"
+            ],
+            "reconciliation_id": "COV-01-B2",
+            "verified_scope": "实际 Tab、目录、滚动、刷新/历史、左右/Home/End 与窄屏目录；左右补证据晚于覆盖表。",
+            "remaining": "",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "approach-navigation-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "approach-arrow-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              }
+            ]
+          },
+          {
+            "action": "键盘左右/Home/End、窄屏目录",
+            "status": "browser_verified",
+            "evidence": [
+              "approach-navigation-browser.json",
+              "approach-arrow-browser.json"
+            ],
+            "status_before_reconciliation": "partial_candidate",
+            "evidence_before_reconciliation": [
+              "approach-navigation-browser.json: Home/End and narrow passed; arrows pending"
+            ],
+            "reconciliation_id": "COV-01-B3",
+            "verified_scope": "实际 Tab、目录、滚动、刷新/历史、左右/Home/End 与窄屏目录；左右补证据晚于覆盖表。",
+            "remaining": "",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "approach-navigation-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "approach-arrow-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              }
+            ]
+          }
+        ],
+        "important_states": [
+          {
+            "state": "方法文件缺失",
+            "status": "browser_verified",
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-01-S0",
+            "evidence": [
+              "approach-failure-browser.json"
+            ],
+            "verified_scope": "独立实例文件不存在、坏 JSON/503、恢复不存在；故障时资料阅读可继续，未写业务库。",
+            "remaining": "",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "approach-failure-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              }
+            ]
+          },
+          {
+            "state": "有效双 Tab 文档",
+            "status": "browser_verified",
+            "status_before_reconciliation": "passed_candidate_browser",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-01-S1",
+            "evidence": [
+              "approach-navigation-browser.json",
+              "approach-arrow-browser.json"
+            ],
+            "verified_scope": "实际 Tab、目录、滚动、刷新/历史、左右/Home/End 与窄屏目录；左右补证据晚于覆盖表。",
+            "remaining": "",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "approach-navigation-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "approach-arrow-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              }
+            ]
+          },
+          {
+            "state": "格式错误/503",
+            "status": "browser_verified",
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-01-S2",
+            "evidence": [
+              "approach-failure-browser.json"
+            ],
+            "verified_scope": "独立实例文件不存在、坏 JSON/503、恢复不存在；故障时资料阅读可继续，未写业务库。",
+            "remaining": "",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "approach-failure-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              }
+            ]
+          },
+          {
+            "state": "旧 workspace=current 链接",
+            "status": "browser_verified",
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-01-S3",
+            "evidence": [
+              "approach-arrow-browser.json"
+            ],
+            "verified_scope": "旧 workspace=current 真实打开制作思路及故事创作 Tab。",
+            "remaining": "",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "approach-arrow-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              }
+            ]
+          },
+          {
+            "state": "携正文位置与未保存评论草稿往返",
+            "status": "partial_browser",
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-01-S4",
+            "evidence": [
+              "source-comment-continuity-browser.json"
+            ],
+            "verified_scope": "资料→方法→浏览器返回保留 scroll38、重新选同段恢复草稿。",
+            "remaining": "这是评论改动前基准操作；后续同目标保留函数和区域浏览器有补验，未重做同一跨页 Unicode 文本全链。",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "source-comment-continuity-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "COV-02",
+        "workspace": "story.sources",
+        "label": "资料采编与精修阅读",
+        "entry": "real_chrome_opened",
+        "browser_checks": [
+          {
+            "action": "选择来源分组和资料",
+            "status": "partial_browser",
+            "evidence": [
+              "source-comment-continuity-browser.json",
+              "source-history-browser.json"
+            ],
+            "status_before_reconciliation": "passed_representative_browser",
+            "evidence_before_reconciliation": [
+              "source-comment-continuity-browser.json",
+              "source-history-browser.json"
+            ],
+            "reconciliation_id": "COV-02-B0",
+            "verified_scope": "沿用原覆盖表已记录的具体操作；不能扩大到标题内未实际执行的分支。",
+            "remaining": "未逐一实测的组合不算通过。",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "source-comment-continuity-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "source-history-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              }
+            ]
+          },
+          {
+            "action": "精修章节定位",
+            "status": "partial_browser",
+            "evidence": [
+              "source-chapter-browser.json",
+              "source-narrow-overflow-browser.json"
+            ],
+            "status_before_reconciliation": "passed_candidate_browser",
+            "evidence_before_reconciliation": [
+              "source-chapter-browser.json"
+            ],
+            "reconciliation_id": "COV-02-B1",
+            "verified_scope": "精修九第十章实际目录选择、刷新、前进/后退恢复；同源第一章草稿在切第十章和返回时保留。跨资料清除章节参数；无效章回正文开头。390px 使用页面滚动定位章节；后续 AO023 在 390/700/701/760/761/1400 宽度消除长引用横向溢出。",
+            "remaining": "范围限记录中的精修九/精修八；章节迟到帧、未知 source 等完整组合由独立函数反例覆盖，不冒充每种来源都经 Chrome。",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "Root actual Chrome receipts; this child reconciled existing evidence and performed named mode=ro DB readbacks, without repeating UI/product checks.",
+            "evidence_details": [
+              {
+                "file": "source-chapter-browser.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "source-narrow-overflow-browser.json",
+                "level": [
+                  "Chrome"
+                ]
+              }
+            ]
+          },
+          {
+            "action": "文字/图片/本地媒体阅读",
+            "status": "partial_browser",
+            "evidence": [
+              "source-comment-continuity-browser.json",
+              "source-image-location-fixed-browser.json",
+              "source-geometry-fixed-browser.json",
+              "source-geometry-saved-browser.json",
+              "source-geometry-scaled-browser.json"
+            ],
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-02-B2",
+            "verified_scope": "资料文字、整图评论定位、缺图恢复，以及准确原件上的区域评论创建/保存已有 Chrome；后续按两种屏宽测得同一原图区域的比例保持。旧错误截图作为发现保留，以 fixed/scaled 回执为修后结果。",
+            "remaining": "来源详情、外部线索及本地非图片媒体未专项；跨页在途 pointer 手势只有实际函数反例。不承诺修复其他实例已经写入的错误区域坐标。",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "Root actual Chrome receipts; this child reconciled existing evidence and performed named mode=ro DB readbacks, without repeating UI/product checks.",
+            "evidence_details": [
+              {
+                "file": "source-comment-continuity-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "source-image-location-fixed-browser.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "source-geometry-fixed-browser.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "source-geometry-saved-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "source-geometry-scaled-browser.json",
+                "level": [
+                  "Chrome"
+                ]
+              }
+            ]
+          },
+          {
+            "action": "文字/整图/区域评论、来源详情",
+            "status": "partial_browser",
+            "evidence": [
+              "source-comment-continuity-browser.json",
+              "source-image-location-fixed-browser.json",
+              "source-geometry-fixed-browser.json",
+              "source-geometry-saved-browser.json",
+              "source-geometry-scaled-browser.json"
+            ],
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-02-B3",
+            "verified_scope": "资料文字、整图评论定位、缺图恢复，以及准确原件上的区域评论创建/保存已有 Chrome；后续按两种屏宽测得同一原图区域的比例保持。旧错误截图作为发现保留，以 fixed/scaled 回执为修后结果。",
+            "remaining": "来源详情、外部线索及本地非图片媒体未专项；跨页在途 pointer 手势只有实际函数反例。不承诺修复其他实例已经写入的错误区域坐标。",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "Root actual Chrome receipts; this child reconciled existing evidence and performed named mode=ro DB readbacks, without repeating UI/product checks.",
+            "evidence_details": [
+              {
+                "file": "source-comment-continuity-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "source-image-location-fixed-browser.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "source-geometry-fixed-browser.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "source-geometry-saved-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "source-geometry-scaled-browser.json",
+                "level": [
+                  "Chrome"
+                ]
+              }
+            ]
+          }
+        ],
+        "important_states": [
+          {
+            "state": "无资料",
+            "status": "browser_verified",
+            "evidence": [
+              "reading-empty-fixed-browser.json"
+            ],
+            "status_before_reconciliation": "passed_candidate_browser_independent_pending",
+            "evidence_before_reconciliation": [
+              "reading-empty-fixed-browser.json"
+            ],
+            "reconciliation_id": "COV-02-S0",
+            "verified_scope": "无资料隐藏无对象入口；有准确目标且0评论仍可打开面板。",
+            "remaining": "",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "reading-empty-fixed-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              }
+            ]
+          },
+          {
+            "state": "普通来源/外部线索/本地媒体",
+            "status": "partial_browser",
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-02-S1",
+            "evidence": [
+              "source-comment-continuity-browser.json",
+              "source-image-location-fixed-browser.json"
+            ],
+            "verified_scope": "普通资料和本地图片。",
+            "remaining": "外部线索与其他本地媒体未专项 Chrome。",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "source-comment-continuity-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "source-image-location-fixed-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              }
+            ]
+          },
+          {
+            "state": "长正文多章节",
+            "status": "partial_browser",
+            "evidence": [
+              "source-chapter-browser.json",
+              "source-narrow-overflow-browser.json"
+            ],
+            "status_before_reconciliation": "passed_candidate_browser",
+            "evidence_before_reconciliation": [
+              "source-chapter-browser.json",
+              "source-narrow-overflow-browser.json"
+            ],
+            "reconciliation_id": "COV-02-S2",
+            "verified_scope": "精修九第十章实际目录选择、刷新、前进/后退恢复；同源第一章草稿在切第十章和返回时保留。跨资料清除章节参数；无效章回正文开头。390px 使用页面滚动定位章节；后续 AO023 在 390/700/701/760/761/1400 宽度消除长引用横向溢出。",
+            "remaining": "范围限记录中的精修九/精修八；章节迟到帧、未知 source 等完整组合由独立函数反例覆盖，不冒充每种来源都经 Chrome。",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "Root actual Chrome receipts; this child reconciled existing evidence and performed named mode=ro DB readbacks, without repeating UI/product checks.",
+            "evidence_details": [
+              {
+                "file": "source-chapter-browser.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "source-narrow-overflow-browser.json",
+                "level": [
+                  "Chrome"
+                ]
+              }
+            ]
+          },
+          {
+            "state": "零评论/开放/关闭评论",
+            "status": "partial_browser",
+            "evidence": [
+              "reading-empty-fixed-browser.json",
+              "source-history-browser.json"
+            ],
+            "status_before_reconciliation": "passed_representative_browser",
+            "evidence_before_reconciliation": [
+              "reading-empty-fixed-browser.json",
+              "source-history-browser.json"
+            ],
+            "reconciliation_id": "COV-02-S3",
+            "verified_scope": "准确目标0评论，现存开放与关闭评论阅读。",
+            "remaining": "源资料完整 create/edit/close/reopen/409 未逐项重复；共享评论函数与素材实例已验不能冒充来源专属全链。",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "reading-empty-fixed-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "source-history-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              }
+            ]
+          },
+          {
+            "state": "Unicode 跨块选区",
+            "status": "partial_browser",
+            "evidence": [
+              "source-comment-continuity-browser.json",
+              "region-draft-collapse-fixed-browser.json",
+              "independent-reading-context-review.md"
+            ],
+            "status_before_reconciliation": "passed_baseline_browser_recheck_after_comment_changes",
+            "evidence_before_reconciliation": [
+              "source-comment-continuity-browser.json"
+            ],
+            "reconciliation_id": "COV-02-S4",
+            "verified_scope": "基准 Unicode 跨块文字/位置；候选区域与同准确目标草稿保留有 Chrome 和真实 renderer 独审。",
+            "remaining": "未做真实 IME；存储失败只实际函数复验，不能标 Chrome。",
+            "evidence_levels": [
+              "Chrome",
+              "real_function"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "source-comment-continuity-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "region-draft-collapse-fixed-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "independent-reading-context-review.md",
+                "level": [
+                  "real_function_or_HTTP_as_recorded"
+                ]
+              }
+            ]
+          },
+          {
+            "state": "失效锚点",
+            "status": "browser_verified",
+            "evidence": [
+              "reading-state-browser-evidence.json",
+              "source-image-location-fixed-browser.json"
+            ],
+            "status_before_reconciliation": "missing_preserved_restored_valid_located_browser",
+            "evidence_before_reconciliation": [
+              "reading-state-browser-evidence.json",
+              "source-image-location-fixed-browser.json"
+            ],
+            "reconciliation_id": "COV-02-S5",
+            "verified_scope": "缺图保留原意见，恢复后有效图像实际定位；原失败证据保留，由 fixed 证据关闭。",
+            "remaining": "",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "reading-state-browser-evidence.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "source-image-location-fixed-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              }
+            ]
+          },
+          {
+            "state": "返回时阅读位置与草稿",
+            "status": "partial_browser",
+            "evidence": [
+              "source-comment-continuity-browser.json",
+              "region-draft-collapse-fixed-browser.json",
+              "independent-reading-context-review.md",
+              "source-chapter-browser.json",
+              "source-narrow-overflow-browser.json"
+            ],
+            "status_before_reconciliation": "passed_baseline_browser_recheck_after_comment_changes",
+            "evidence_before_reconciliation": [
+              "source-comment-continuity-browser.json"
+            ],
+            "reconciliation_id": "COV-02-S6",
+            "verified_scope": "资料→方法→返回的基准位置/草稿、同准确目标区域草稿收起重开，以及章节目录/历史跳转不重建同源草稿均有实际 Chrome。",
+            "remaining": "未做真实 IME；存储配额/权限拒绝和迟到手势归属只实际函数验证，不能标 Chrome。",
+            "evidence_levels": [
+              "Chrome",
+              "real_function"
+            ],
+            "evidence_origin": "Root actual Chrome receipts; this child reconciled existing evidence and performed named mode=ro DB readbacks, without repeating UI/product checks.",
+            "evidence_details": [
+              {
+                "file": "source-comment-continuity-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "region-draft-collapse-fixed-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "independent-reading-context-review.md",
+                "level": [
+                  "real_function_or_HTTP_as_recorded"
+                ]
+              },
+              {
+                "file": "source-chapter-browser.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "source-narrow-overflow-browser.json",
+                "level": [
+                  "Chrome"
+                ]
+              }
+            ]
+          }
+        ],
+        "batch_evidence": [
+          {
+            "checkpoint": 5,
+            "status": "wide_narrow_common_tabs_passed",
+            "evidence": "story-shell-browser.json"
+          },
+          {
+            "checkpoint": 6,
+            "status": "scope_as_evidence",
+            "evidence": "source-narrow-overflow-browser.json"
+          }
+        ]
+      },
+      {
+        "id": "COV-03",
+        "workspace": "story.outline",
+        "label": "故事结构",
+        "entry": "real_chrome_opened",
+        "browser_checks": [
+          {
+            "action": "首次选择方向",
+            "status": "partial_browser",
+            "evidence": [
+              "reading-state-browser-evidence.json",
+              "decision-browser/direction-saved-read-failure-chrome.json",
+              "decision-browser/direction-unknown-chrome.json",
+              "decision-browser/direction-late-chrome.json",
+              "decision-browser/chrome-persistence-check.json"
+            ],
+            "status_before_reconciliation": "passed_synthetic_browser",
+            "evidence_before_reconciliation": [
+              "reading-state-browser-evidence.json"
+            ],
+            "reconciliation_id": "COV-03-B0",
+            "verified_scope": "技术方向首次选择与无稿空态已有 Chrome；保存已落库但读取失败、结果未知保留原请求、取消/另开方向后旧响应不接管新框分别有 Chrome，数据库回读与确切方向 v1 一致。",
+            "remaining": "使用合法隔离技术方向，不代表认可或改变故事方向；不把未知结果提示称已证明保存。",
+            "evidence_levels": [
+              "Chrome",
+              "database"
+            ],
+            "evidence_origin": "Root actual Chrome receipts; this child reconciled existing evidence and performed named mode=ro DB readbacks, without repeating UI/product checks.",
+            "evidence_details": [
+              {
+                "file": "reading-state-browser-evidence.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "decision-browser/direction-saved-read-failure-chrome.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "decision-browser/direction-unknown-chrome.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "decision-browser/direction-late-chrome.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "decision-browser/chrome-persistence-check.json",
+                "level": [
+                  "database"
+                ]
+              }
+            ]
+          },
+          {
+            "action": "切换完整结构稿",
+            "status": "partial_browser",
+            "evidence": [
+              "structure-route-browser.json",
+              "structure-response-fixed-browser.json"
+            ],
+            "status_before_reconciliation": "passed_candidate_browser",
+            "evidence_before_reconciliation": [
+              "structure-route-browser.json"
+            ],
+            "reconciliation_id": "COV-03-B1",
+            "verified_scope": "基准完整结构第八稿与第十稿切换，历史修订 URL、刷新/前进/后退恢复已有实际 Chrome；技术第二稿回应又准确返回第一稿旧图及原评论。",
+            "remaining": "不是逐稿穷举；缺原稿和失效锚点的保护仍按专用函数证据限定。",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "Root actual Chrome receipts; this child reconciled existing evidence and performed named mode=ro DB readbacks, without repeating UI/product checks.",
+            "evidence_details": [
+              {
+                "file": "structure-route-browser.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "structure-response-fixed-browser.json",
+                "level": [
+                  "Chrome"
+                ]
+              }
+            ]
+          },
+          {
+            "action": "目录/图文阅读及原图放大",
+            "status": "partial_browser",
+            "evidence": [
+              "structure-reading-browser.json"
+            ],
+            "status_before_reconciliation": "passed_representative_candidate_browser",
+            "evidence_before_reconciliation": [
+              "structure-reading-browser.json"
+            ],
+            "reconciliation_id": "COV-03-B2",
+            "verified_scope": "沿用原覆盖表已记录的具体操作；不能扩大到标题内未实际执行的分支。",
+            "remaining": "未逐一实测的组合不算通过。",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "structure-reading-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              }
+            ]
+          },
+          {
+            "action": "文字/区域/整体评论",
+            "status": "partial_browser",
+            "evidence": [
+              "reading-state-browser-evidence.json",
+              "region-draft-collapse-fixed-browser.json",
+              "structure-global-comment-before-refresh.json",
+              "structure-global-comment-after-refresh.json",
+              "structure-global-comment-persisted.json"
+            ],
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-03-B3",
+            "verified_scope": "旧红图区域评论定位、新区域草稿收起重开已有 Chrome；新增整体意见真实提交至旧结构 fc84b5f… v1，刷新后仍在该稿。回读仅新增 e6a1e375… 一条评论/一条 CREATE，原评论保留范围在回执逐项说明。",
+            "remaining": "结构文字新建/编辑/关闭的完整提交链未专项 Chrome；技术整体意见不代表故事质量认可。",
+            "evidence_levels": [
+              "Chrome",
+              "database"
+            ],
+            "evidence_origin": "Root actual Chrome receipts; this child reconciled existing evidence and performed named mode=ro DB readbacks, without repeating UI/product checks.",
+            "evidence_details": [
+              {
+                "file": "reading-state-browser-evidence.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "region-draft-collapse-fixed-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "structure-global-comment-before-refresh.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "structure-global-comment-after-refresh.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "structure-global-comment-persisted.json",
+                "level": [
+                  "database"
+                ]
+              }
+            ]
+          },
+          {
+            "action": "修订回应定位原意见",
+            "status": "partial_browser",
+            "evidence": [
+              "structure-response-fixed-browser.json",
+              "structure-global-comment-before-refresh.json",
+              "structure-global-comment-after-refresh.json",
+              "structure-global-comment-persisted.json"
+            ],
+            "status_before_reconciliation": "passed_candidate_browser_independent",
+            "evidence_before_reconciliation": [
+              "structure-response-fixed-browser.json"
+            ],
+            "reconciliation_id": "COV-03-B4",
+            "verified_scope": "第二稿回应入口准确回到第一稿旧红图，展开评论面板并展示同 ID 原意见；新增旧稿整体意见刷新后可读且保持原准确修订。",
+            "remaining": "缺原稿、坏锚点提示由真实函数反例复验，未在 Chrome 制造每一故障。",
+            "evidence_levels": [
+              "Chrome",
+              "database"
+            ],
+            "evidence_origin": "Root actual Chrome receipts; this child reconciled existing evidence and performed named mode=ro DB readbacks, without repeating UI/product checks.",
+            "evidence_details": [
+              {
+                "file": "structure-response-fixed-browser.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "structure-global-comment-before-refresh.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "structure-global-comment-after-refresh.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "structure-global-comment-persisted.json",
+                "level": [
+                  "database"
+                ]
+              }
+            ]
+          }
+        ],
+        "important_states": [
+          {
+            "state": "无方向候选",
+            "status": "browser_verified",
+            "evidence": [
+              "reading-empty-fixed-browser.json"
+            ],
+            "status_before_reconciliation": "passed_candidate_browser_independent_pending",
+            "evidence_before_reconciliation": [
+              "reading-empty-fixed-browser.json"
+            ],
+            "reconciliation_id": "COV-03-S0",
+            "verified_scope": "无候选、有候选未选、原生选择技术方向后无稿；准确方向名及等待文案，无无效评论按钮。",
+            "remaining": "",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "reading-empty-fixed-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              }
+            ]
+          },
+          {
+            "state": "有候选未选择",
+            "status": "browser_verified",
+            "evidence": [
+              "reading-empty-fixed-browser.json"
+            ],
+            "status_before_reconciliation": "passed_synthetic_browser",
+            "evidence_before_reconciliation": [
+              "reading-state-browser-evidence.json"
+            ],
+            "reconciliation_id": "COV-03-S1",
+            "verified_scope": "无候选、有候选未选、原生选择技术方向后无稿；准确方向名及等待文案，无无效评论按钮。",
+            "remaining": "",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "reading-empty-fixed-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              }
+            ]
+          },
+          {
+            "state": "已选但无结构",
+            "status": "browser_verified",
+            "evidence": [
+              "reading-empty-fixed-browser.json"
+            ],
+            "status_before_reconciliation": "passed_candidate_browser_independent_pending",
+            "evidence_before_reconciliation": [
+              "reading-empty-fixed-browser.json"
+            ],
+            "reconciliation_id": "COV-03-S2",
+            "verified_scope": "无候选、有候选未选、原生选择技术方向后无稿；准确方向名及等待文案，无无效评论按钮。",
+            "remaining": "",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "reading-empty-fixed-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              }
+            ]
+          },
+          {
+            "state": "当前/历史结构",
+            "status": "partial_browser",
+            "evidence": [
+              "structure-route-browser.json",
+              "structure-response-fixed-browser.json"
+            ],
+            "status_before_reconciliation": "passed_candidate_browser",
+            "evidence_before_reconciliation": [
+              "structure-route-browser.json"
+            ],
+            "reconciliation_id": "COV-03-S3",
+            "verified_scope": "基准完整结构第八稿与第十稿切换，历史修订 URL、刷新/前进/后退恢复已有实际 Chrome；技术第二稿回应又准确返回第一稿旧图及原评论。",
+            "remaining": "不是逐稿穷举；缺原稿和失效锚点的保护仍按专用函数证据限定。",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "Root actual Chrome receipts; this child reconciled existing evidence and performed named mode=ro DB readbacks, without repeating UI/product checks.",
+            "evidence_details": [
+              {
+                "file": "structure-route-browser.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "structure-response-fixed-browser.json",
+                "level": [
+                  "Chrome"
+                ]
+              }
+            ]
+          },
+          {
+            "state": "方向变化与旧结构",
+            "status": "partial_browser",
+            "evidence": [
+              "reading-state-browser-evidence.json"
+            ],
+            "status_before_reconciliation": "passed_synthetic_browser",
+            "evidence_before_reconciliation": [
+              "reading-state-browser-evidence.json"
+            ],
+            "reconciliation_id": "COV-03-S4",
+            "verified_scope": "沿用原覆盖表已记录的具体操作；不能扩大到标题内未实际执行的分支。",
+            "remaining": "未逐一实测的组合不算通过。",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "reading-state-browser-evidence.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              }
+            ]
+          },
+          {
+            "state": "历史未决评论",
+            "status": "browser_verified",
+            "status_before_reconciliation": "passed_representative_history_read_and_locate",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-03-S5",
+            "evidence": [
+              "structure-response-fixed-browser.json",
+              "reading-state-browser-evidence.json",
+              "structure-global-comment-before-refresh.json",
+              "structure-global-comment-after-refresh.json",
+              "structure-global-comment-persisted.json"
+            ],
+            "verified_scope": "第二稿回应入口准确回到第一稿旧红图，展开评论面板并展示同 ID 原意见；新增旧稿整体意见刷新后可读且保持原准确修订。",
+            "remaining": "缺原稿、坏锚点提示由真实函数反例复验，未在 Chrome 制造每一故障。",
+            "evidence_levels": [
+              "Chrome",
+              "database"
+            ],
+            "evidence_origin": "Root actual Chrome receipts; this child reconciled existing evidence and performed named mode=ro DB readbacks, without repeating UI/product checks.",
+            "evidence_details": [
+              {
+                "file": "structure-response-fixed-browser.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "reading-state-browser-evidence.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "structure-global-comment-before-refresh.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "structure-global-comment-after-refresh.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "structure-global-comment-persisted.json",
+                "level": [
+                  "database"
+                ]
+              }
+            ]
+          },
+          {
+            "state": "长图/窄屏",
+            "status": "partial_browser",
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-03-S6",
+            "evidence": [
+              "structure-reading-browser.json"
+            ],
+            "verified_scope": "已阅读图文并原图放大。",
+            "remaining": "没有长图与窄屏结构完整组合记录。",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "structure-reading-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              }
+            ]
+          },
+          {
+            "state": "失效锚点与缺失图片",
+            "status": "partial_browser",
+            "evidence": [
+              "reading-state-browser-evidence.json"
+            ],
+            "status_before_reconciliation": "passed_synthetic_browser",
+            "evidence_before_reconciliation": [
+              "reading-state-browser-evidence.json"
+            ],
+            "reconciliation_id": "COV-03-S7",
+            "verified_scope": "沿用原覆盖表已记录的具体操作；不能扩大到标题内未实际执行的分支。",
+            "remaining": "未逐一实测的组合不算通过。",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "reading-state-browser-evidence.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              }
+            ]
+          },
+          {
+            "state": "取消与收起草稿",
+            "status": "partial_browser",
+            "evidence": [
+              "region-draft-collapse-fixed-browser.json",
+              "independent-reading-context-review.md"
+            ],
+            "status_before_reconciliation": "passed_region_candidate_browser_independent_pending",
+            "evidence_before_reconciliation": [
+              "region-draft-collapse-fixed-browser.json"
+            ],
+            "reconciliation_id": "COV-03-S8",
+            "verified_scope": "区域草稿收起及重开保留准确范围、正文；独审存储失败/同范围 DOM。",
+            "remaining": "旧已收起且清除锚点的历史草稿没有被恢复；异常存储为函数验证。",
+            "evidence_levels": [
+              "Chrome",
+              "real_function"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "region-draft-collapse-fixed-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "independent-reading-context-review.md",
+                "level": [
+                  "real_function_or_HTTP_as_recorded"
+                ]
+              }
+            ]
+          }
+        ],
+        "batch_evidence": [
+          {
+            "checkpoint": 4,
+            "status": "partial_scope_explicit_in_evidence",
+            "evidence": "structure-route-browser.json"
+          },
+          {
+            "checkpoint": 5,
+            "status": "wide_narrow_common_tabs_passed",
+            "evidence": "story-shell-browser.json"
+          }
+        ]
+      },
+      {
+        "id": "COV-04",
+        "workspace": "story.script",
+        "label": "剧本创作",
+        "entry": "real_chrome_opened",
+        "browser_checks": [
+          {
+            "action": "按版本/集/场阅读",
+            "status": "partial_browser",
+            "evidence": [
+              "script-reading-browser.json",
+              "script-comment-continuity-browser.json",
+              "script-cross-scene-browser.json"
+            ],
+            "status_before_reconciliation": "passed_current_version_representative_browser",
+            "evidence_before_reconciliation": [
+              "script-reading-browser.json"
+            ],
+            "reconciliation_id": "COV-04-B0",
+            "verified_scope": "真实基准显示四个版本，实际阅读第四版第17集各场及第三版第一集旧评论；独立技术实例一个版本、一个分集、两场可读。",
+            "remaining": "未逐一 Chrome 阅读所有旧版本/17集；技术实例只补单版本状态。",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "Root actual Chrome receipts; this child reconciled existing evidence and performed named mode=ro DB readbacks, without repeating UI/product checks.",
+            "evidence_details": [
+              {
+                "file": "script-reading-browser.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "script-comment-continuity-browser.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "script-cross-scene-browser.json",
+                "level": [
+                  "Chrome"
+                ]
+              }
+            ]
+          },
+          {
+            "action": "本集概览和单场完整正文",
+            "status": "browser_verified",
+            "evidence": [
+              "script-reading-browser.json",
+              "script-cross-scene-browser.json"
+            ],
+            "status_before_reconciliation": "passed_current_version_representative_browser",
+            "evidence_before_reconciliation": [
+              "script-reading-browser.json"
+            ],
+            "reconciliation_id": "COV-04-B1",
+            "verified_scope": "真实集概览和单场正文可读；技术实例摘要有效、缺失、损坏三种状态均实际 Chrome 检查，同一场完整正文一致，摘要文件已恢复。",
+            "remaining": "技术摘要故障不代表所有历史数据格式均已穷举；没有改写剧本。",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "Root actual Chrome receipts; this child reconciled existing evidence and performed named mode=ro DB readbacks, without repeating UI/product checks.",
+            "evidence_details": [
+              {
+                "file": "script-reading-browser.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "script-cross-scene-browser.json",
+                "level": [
+                  "Chrome"
+                ]
+              }
+            ]
+          },
+          {
+            "action": "直达、刷新及前进后退",
+            "status": "partial_browser",
+            "evidence": [
+              "script-reading-browser.json",
+              "script-comment-continuity-browser.json",
+              "script-invalid-route-browser.json"
+            ],
+            "status_before_reconciliation": "passed_current_version_representative_browser",
+            "evidence_before_reconciliation": [
+              "script-reading-browser.json"
+            ],
+            "reconciliation_id": "COV-04-B2",
+            "verified_scope": "第四版第17集 S42 直达/刷新、后退 S40、前进 S42；第三版旧集评论定位和单版本技术夹具路由已实际读取。",
+            "remaining": "无效 URL 的参数仍保留原输入，页面安全显示首个合法版本/集/场，不能声称 URL 自动修正。",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "Root actual Chrome receipts; this child reconciled existing evidence and performed named mode=ro DB readbacks, without repeating UI/product checks.",
+            "evidence_details": [
+              {
+                "file": "script-reading-browser.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "script-comment-continuity-browser.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "script-invalid-route-browser.json",
+                "level": [
+                  "Chrome"
+                ]
+              }
+            ]
+          },
+          {
+            "action": "跨场评论两端定位",
+            "status": "browser_verified",
+            "evidence": [
+              "script-cross-scene-browser.json",
+              "comment-cleanup-audit/normal-browser-persistence.json"
+            ],
+            "status_before_reconciliation": "passed_synthetic_browser",
+            "evidence_before_reconciliation": [
+              "script-cross-scene-browser.json"
+            ],
+            "reconciliation_id": "COV-04-B3",
+            "verified_scope": "单条同集跨场评论能从第一场准确“🌙”定位到第二场准确“长段”；场次评论计数覆盖两场。原跨场评论与 Unicode 评论后来逐字段回读保持。",
+            "remaining": "技术夹具的两端定位是 Chrome；并非所有历史跨场范围均已穷举。",
+            "evidence_levels": [
+              "Chrome",
+              "database"
+            ],
+            "evidence_origin": "Root actual Chrome receipts; this child reconciled existing evidence and performed named mode=ro DB readbacks, without repeating UI/product checks.",
+            "evidence_details": [
+              {
+                "file": "script-cross-scene-browser.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "comment-cleanup-audit/normal-browser-persistence.json",
+                "level": [
+                  "database"
+                ]
+              }
+            ]
+          },
+          {
+            "action": "切场草稿与润色参考",
+            "status": "partial_browser",
+            "evidence": [
+              "script-comment-continuity-browser.json",
+              "polish-fix-evidence.json",
+              "script-reading-browser.json",
+              "script-storage-audit/normal-chrome.json",
+              "independent-script-storage-review.md",
+              "comment-cleanup-audit/normal-cancel-chrome.json",
+              "comment-cleanup-audit/normal-cancel-refreshed-chrome.json",
+              "comment-cleanup-audit/normal-create-edit-chrome.json",
+              "comment-cleanup-audit/normal-browser-persistence.json",
+              "independent-comment-cleanup-review.md"
+            ],
+            "status_before_reconciliation": "partial_draft_passed_polish_reference_pending",
+            "evidence_before_reconciliation": [
+              "script-comment-continuity-browser.json"
+            ],
+            "reconciliation_id": "COV-04-B4",
+            "verified_scope": "同集切场后准确草稿恢复；正常存储下 AO045 草稿刷新保留原引用/正文。AO047 新冻结 app 的正常取消后刷新无编辑器，再新建并编辑同一评论 ID 后均显示已保存、收起编辑器，3评论/4事件符合只增一评论两事件。润色同 draft/target/revision 的保护另有函数/HTTP。",
+            "remaining": "SCRIPT 专属润色参考、迟到建议未实际 Chrome；QuotaExceeded/SecurityError、取消/清理异常只有函数注入，正常 Unicode 不等于真实 IME。",
+            "evidence_levels": [
+              "Chrome",
+              "real_function",
+              "HTTP",
+              "independent_review",
+              "database"
+            ],
+            "evidence_origin": "Root actual Chrome receipts; this child reconciled existing evidence and performed named mode=ro DB readbacks, without repeating UI/product checks.",
+            "evidence_details": [
+              {
+                "file": "script-comment-continuity-browser.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "polish-fix-evidence.json",
+                "level": [
+                  "real_function_or_HTTP_as_recorded"
+                ]
+              },
+              {
+                "file": "script-reading-browser.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "script-storage-audit/normal-chrome.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "independent-script-storage-review.md",
+                "level": [
+                  "real_function",
+                  "independent_review"
+                ]
+              },
+              {
+                "file": "comment-cleanup-audit/normal-cancel-chrome.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "comment-cleanup-audit/normal-cancel-refreshed-chrome.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "comment-cleanup-audit/normal-create-edit-chrome.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "comment-cleanup-audit/normal-browser-persistence.json",
+                "level": [
+                  "database"
+                ]
+              },
+              {
+                "file": "independent-comment-cleanup-review.md",
+                "level": [
+                  "real_function",
+                  "independent_review"
+                ]
+              }
+            ]
+          }
+        ],
+        "important_states": [
+          {
+            "state": "无剧本",
+            "status": "partial_browser",
+            "evidence": [
+              "reading-empty-fixed-browser.json"
+            ],
+            "status_before_reconciliation": "passed_candidate_browser_independent_pending",
+            "evidence_before_reconciliation": [
+              "reading-empty-fixed-browser.json"
+            ],
+            "reconciliation_id": "COV-04-S0",
+            "verified_scope": "沿用原覆盖表已记录的具体操作；不能扩大到标题内未实际执行的分支。",
+            "remaining": "未逐一实测的组合不算通过。",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "reading-empty-fixed-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              }
+            ]
+          },
+          {
+            "state": "一个/多个版本",
+            "status": "partial_browser",
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-04-S1",
+            "evidence": [
+              "script-reading-browser.json",
+              "script-comment-continuity-browser.json",
+              "script-cross-scene-browser.json"
+            ],
+            "verified_scope": "真实基准显示四个版本，实际阅读第四版第17集各场及第三版第一集旧评论；独立技术实例一个版本、一个分集、两场可读。",
+            "remaining": "未逐一 Chrome 阅读所有旧版本/17集；技术实例只补单版本状态。",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "Root actual Chrome receipts; this child reconciled existing evidence and performed named mode=ro DB readbacks, without repeating UI/product checks.",
+            "evidence_details": [
+              {
+                "file": "script-reading-browser.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "script-comment-continuity-browser.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "script-cross-scene-browser.json",
+                "level": [
+                  "Chrome"
+                ]
+              }
+            ]
+          },
+          {
+            "state": "无效 URL 版本/集/场",
+            "status": "partial_browser",
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-04-S2",
+            "evidence": [
+              "script-invalid-route-browser.json"
+            ],
+            "verified_scope": "真实 Chrome 同时给不存在的版本/集/场参数，选中项与正文安全回到合法技术版本的第一集 S01，正文与选择一致。",
+            "remaining": "原无效参数仍在 URL；没有分别穷举所有混合有效/无效参数组合。",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "Root actual Chrome receipts; this child reconciled existing evidence and performed named mode=ro DB readbacks, without repeating UI/product checks.",
+            "evidence_details": [
+              {
+                "file": "script-invalid-route-browser.json",
+                "level": [
+                  "Chrome"
+                ]
+              }
+            ]
+          },
+          {
+            "state": "摘要有效/缺失/损坏",
+            "status": "browser_verified",
+            "evidence": [
+              "script-cross-scene-browser.json"
+            ],
+            "status_before_reconciliation": "passed_synthetic_browser",
+            "evidence_before_reconciliation": [
+              "script-cross-scene-browser.json"
+            ],
+            "reconciliation_id": "COV-04-S3",
+            "verified_scope": "真实集概览和单场正文可读；技术实例摘要有效、缺失、损坏三种状态均实际 Chrome 检查，同一场完整正文一致，摘要文件已恢复。",
+            "remaining": "技术摘要故障不代表所有历史数据格式均已穷举；没有改写剧本。",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "Root actual Chrome receipts; this child reconciled existing evidence and performed named mode=ro DB readbacks, without repeating UI/product checks.",
+            "evidence_details": [
+              {
+                "file": "script-cross-scene-browser.json",
+                "level": [
+                  "Chrome"
+                ]
+              }
+            ]
+          },
+          {
+            "state": "同集跨场评论",
+            "status": "browser_verified",
+            "evidence": [
+              "script-cross-scene-browser.json",
+              "comment-cleanup-audit/normal-browser-persistence.json"
+            ],
+            "status_before_reconciliation": "passed_synthetic_browser",
+            "evidence_before_reconciliation": [
+              "script-cross-scene-browser.json"
+            ],
+            "reconciliation_id": "COV-04-S4",
+            "verified_scope": "单条同集跨场评论能从第一场准确“🌙”定位到第二场准确“长段”；场次评论计数覆盖两场。原跨场评论与 Unicode 评论后来逐字段回读保持。",
+            "remaining": "技术夹具的两端定位是 Chrome；并非所有历史跨场范围均已穷举。",
+            "evidence_levels": [
+              "Chrome",
+              "database"
+            ],
+            "evidence_origin": "Root actual Chrome receipts; this child reconciled existing evidence and performed named mode=ro DB readbacks, without repeating UI/product checks.",
+            "evidence_details": [
+              {
+                "file": "script-cross-scene-browser.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "comment-cleanup-audit/normal-browser-persistence.json",
+                "level": [
+                  "database"
+                ]
+              }
+            ]
+          },
+          {
+            "state": "旧集评论",
+            "status": "partial_browser",
+            "evidence": [
+              "script-comment-continuity-browser.json"
+            ],
+            "status_before_reconciliation": "passed_representative_browser",
+            "evidence_before_reconciliation": [
+              "script-comment-continuity-browser.json"
+            ],
+            "reconciliation_id": "COV-04-S5",
+            "verified_scope": "真实第三版第一集旧意见 1b5f… 定位准确“腰间挂着庙门钥匙”，S001/S002 切场仍可恢复未提交草稿。",
+            "remaining": "未逐一验完所有旧集评论；没有提交故事意见。",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "Root actual Chrome receipts; this child reconciled existing evidence and performed named mode=ro DB readbacks, without repeating UI/product checks.",
+            "evidence_details": [
+              {
+                "file": "script-comment-continuity-browser.json",
+                "level": [
+                  "Chrome"
+                ]
+              }
+            ]
+          },
+          {
+            "state": "Unicode 长块末尾",
+            "status": "browser_verified",
+            "evidence": [
+              "script-cross-scene-browser.json"
+            ],
+            "status_before_reconciliation": "passed_synthetic_browser",
+            "evidence_before_reconciliation": [
+              "script-cross-scene-browser.json"
+            ],
+            "reconciliation_id": "COV-04-S6",
+            "verified_scope": "实际 Chrome 定位技术长块末尾完整“末尾定位目标：🌙🧵𠮷é。”，高亮位于可视范围；按 Unicode 码点而非 UTF-16 单元计数的夹具保留。",
+            "remaining": "正常文本与引用定位不等于真实 IME 组合输入。",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "Root actual Chrome receipts; this child reconciled existing evidence and performed named mode=ro DB readbacks, without repeating UI/product checks.",
+            "evidence_details": [
+              {
+                "file": "script-cross-scene-browser.json",
+                "level": [
+                  "Chrome"
+                ]
+              }
+            ]
+          },
+          {
+            "state": "迟到润色建议",
+            "status": "function_api_only",
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-04-S7",
+            "evidence": [
+              "polish-fix-evidence.json"
+            ],
+            "verified_scope": "延迟 context/suggestion 同草稿、准确目标与修订守卫；本机保存失败输入保护。",
+            "remaining": "暂无 SCRIPT 真实迟到建议证据；禁止将技术 stub 称实际模型质量。",
+            "evidence_levels": [
+              "real_function",
+              "HTTP"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "polish-fix-evidence.json",
+                "level": [
+                  "real_function_or_HTTP_as_recorded"
+                ]
+              }
+            ]
+          },
+          {
+            "state": "窄屏导航",
+            "status": "partial_browser",
+            "evidence": [
+              "script-reading-browser.json"
+            ],
+            "status_before_reconciliation": "passed_representative_candidate_browser",
+            "evidence_before_reconciliation": [
+              "script-reading-browser.json"
+            ],
+            "reconciliation_id": "COV-04-S8",
+            "verified_scope": "390×844 真实第四版剧本导航无页面横向溢出，并实际切到 S41。",
+            "remaining": "仅记录尺寸和场次，不推广全部设备或每个长标题组合。",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "Root actual Chrome receipts; this child reconciled existing evidence and performed named mode=ro DB readbacks, without repeating UI/product checks.",
+            "evidence_details": [
+              {
+                "file": "script-reading-browser.json",
+                "level": [
+                  "Chrome"
+                ]
+              }
+            ]
+          }
+        ],
+        "batch_evidence": [
+          {
+            "checkpoint": 4,
+            "status": "partial_scope_explicit_in_evidence",
+            "evidence": "script-reading-browser.json"
+          },
+          {
+            "checkpoint": 5,
+            "status": "wide_narrow_common_tabs_passed",
+            "evidence": "story-shell-browser.json"
+          }
+        ]
+      },
+      {
+        "id": "COV-05",
+        "workspace": "settings.workspace",
+        "label": "制作设定",
+        "entry": "real_chrome_opened",
+        "browser_checks": [
+          {
+            "action": "实体分类与搜索",
+            "status": "partial_browser",
+            "evidence": [
+              "entity-relationship-browser.json",
+              "production-empty-browser.json"
+            ],
+            "status_before_reconciliation": "partial_category_search_passed_empty_pending",
+            "evidence_before_reconciliation": [
+              "entity-relationship-browser.json"
+            ],
+            "reconciliation_id": "COV-05-B0",
+            "verified_scope": "分类搜索与完全无实体状态真实页面。",
+            "remaining": "有数据但无匹配搜索未专项。",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "entity-relationship-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "production-empty-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              }
+            ]
+          },
+          {
+            "action": "基础信息/完整状态切换",
+            "status": "partial_browser",
+            "evidence": [
+              "entity-acceptance-browser.json"
+            ],
+            "status_before_reconciliation": "passed_fixture_browser",
+            "evidence_before_reconciliation": [
+              "entity-acceptance-browser.json"
+            ],
+            "reconciliation_id": "COV-05-B1",
+            "verified_scope": "沿用原覆盖表已记录的具体操作；不能扩大到标题内未实际执行的分支。",
+            "remaining": "未逐一实测的组合不算通过。",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "entity-acceptance-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              }
+            ]
+          },
+          {
+            "action": "关系图直接评论与剧情依据弹窗",
+            "status": "browser_verified",
+            "evidence": [
+              "entity-relationship-browser.json",
+              "relationship-comment-browser.json"
+            ],
+            "status_before_reconciliation": "partial_exact_evidence_history_passed_direct_comment_pending",
+            "evidence_before_reconciliation": [
+              "entity-relationship-browser.json"
+            ],
+            "reconciliation_id": "COV-05-B2",
+            "verified_scope": "关系依据弹窗准确引用；原生圈选关系文本打开准确目标草稿，收起重开保留；未提交故事评论。",
+            "remaining": "",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "entity-relationship-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "relationship-comment-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              }
+            ]
+          },
+          {
+            "action": "基础/状态/方案/素材历史选择",
+            "status": "partial_browser",
+            "evidence": [
+              "entity-acceptance-browser.json",
+              "comment-persistence-browser.json",
+              "withdrawn-context-audit/current-state-chrome.json",
+              "withdrawn-context-audit/old-entity-current-withdrawal-chrome.json",
+              "withdrawn-context-audit/merged-state-chrome.json",
+              "withdrawn-context-audit/old-media-comments-chrome.json",
+              "withdrawn-context-audit/withdrawn-material-chrome.json",
+              "entity-history-route-audit/fixed-chrome.json",
+              "entity-history-route-audit/fixed-comment-locate-chrome.json",
+              "entity-history-route-audit/current-empty-round-fixed-chrome.json",
+              "entity-history-route-audit/old-round-final-chrome.json",
+              "independent-entity-history-route-review.md"
+            ],
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-05-B3",
+            "verified_scope": "基础/完整状态、方案历史与不同素材卡焦点切换；撤回实体旧链接、归并去向、旧素材和评论可读，准确历史仍保留。 AO049在实体工作区保留准确旧素材URL并刷新、定位旧评论；当前空轮仍空，切旧轮才显示旧原件。",
+            "remaining": "只有历史局部状态及全部基础/状态历史组合未专项。旧 entity-current-v1 认可格式不等于旧实体修订，不能混用证据。",
+            "evidence_levels": [
+              "Chrome",
+              "real_function",
+              "independent_review"
+            ],
+            "evidence_origin": "Root actual Chrome receipts; this child reconciled existing evidence and performed named mode=ro DB readbacks, without repeating UI/product checks.",
+            "evidence_details": [
+              {
+                "file": "entity-acceptance-browser.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "comment-persistence-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "withdrawn-context-audit/current-state-chrome.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "withdrawn-context-audit/old-entity-current-withdrawal-chrome.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "withdrawn-context-audit/merged-state-chrome.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "withdrawn-context-audit/old-media-comments-chrome.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "withdrawn-context-audit/withdrawn-material-chrome.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "entity-history-route-audit/fixed-chrome.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              },
+              {
+                "file": "entity-history-route-audit/fixed-comment-locate-chrome.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              },
+              {
+                "file": "entity-history-route-audit/current-empty-round-fixed-chrome.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              },
+              {
+                "file": "entity-history-route-audit/old-round-final-chrome.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              },
+              {
+                "file": "independent-entity-history-route-review.md",
+                "level": [
+                  "independent_review",
+                  "real_function_or_backend_as_recorded"
+                ]
+              }
+            ]
+          },
+          {
+            "action": "图像声音预览与评论",
+            "status": "partial_browser",
+            "evidence": [
+              "comment-persistence-browser.json",
+              "relationship-comment-browser.json"
+            ],
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-05-B4",
+            "verified_scope": "实体内素材方案文字评论、卡之间切换、关系文字草稿。",
+            "remaining": "实体内图像和音频直接评论未全部专项；素材页媒体测试不可冒充此工作区。",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "comment-persistence-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "relationship-comment-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              }
+            ]
+          },
+          {
+            "action": "采纳/取消/再次采纳",
+            "status": "partial_browser",
+            "evidence": [
+              "entity-acceptance-browser.json",
+              "entity-browser/ao021-independent-history-check.json",
+              "decision-browser/entity-saved-read-failure-chrome.json",
+              "decision-browser/entity-saved-reopen-chrome.json",
+              "decision-browser/entity-unknown-chrome.json",
+              "decision-browser/entity-unknown-reopen-chrome.json",
+              "decision-browser/entity-late-chrome.json",
+              "decision-browser/chrome-persistence-check.json",
+              "legacy-exact-adoption-chrome.json"
+            ],
+            "status_before_reconciliation": "passed_fixture_browser",
+            "evidence_before_reconciliation": [
+              "entity-acceptance-browser.json",
+              "entity-browser/ao021-independent-history-check.json"
+            ],
+            "reconciliation_id": "COV-05-B5",
+            "verified_scope": "实体采纳→取消→再次采纳及准确历史有真实 Chrome/数据库；不同旧方案修订不能以当前范围采纳，同一准确方案跨轮兼容。另验证已保存但读取失败、未知结果、导航后旧响应不接管新页。",
+            "remaining": "采纳写入均为隔离技术数据；内容改变后的全部组合未穷举。旧 entity-current-v1 只另验准确直链读取，未写入或迁移，不改变实体采纳规则。",
+            "evidence_levels": [
+              "Chrome",
+              "database"
+            ],
+            "evidence_origin": "Root actual Chrome receipts; this child reconciled existing evidence and performed named mode=ro DB readbacks, without repeating UI/product checks.",
+            "evidence_details": [
+              {
+                "file": "entity-acceptance-browser.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "entity-browser/ao021-independent-history-check.json",
+                "level": [
+                  "database_or_HTTP_readback"
+                ]
+              },
+              {
+                "file": "decision-browser/entity-saved-read-failure-chrome.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "decision-browser/entity-saved-reopen-chrome.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "decision-browser/entity-unknown-chrome.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "decision-browser/entity-unknown-reopen-chrome.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "decision-browser/entity-late-chrome.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "decision-browser/chrome-persistence-check.json",
+                "level": [
+                  "database"
+                ]
+              },
+              {
+                "file": "legacy-exact-adoption-chrome.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              }
+            ]
+          },
+          {
+            "action": "历史采纳读取",
+            "status": "partial_browser",
+            "evidence": [
+              "entity-browser/ao021-independent-history-check.json",
+              "legacy-exact-adoption-chrome.json"
+            ],
+            "status_before_reconciliation": "passed_readonly_exact_scope_history",
+            "evidence_before_reconciliation": [
+              "entity-browser/ao021-independent-history-check.json"
+            ],
+            "reconciliation_id": "COV-05-B6",
+            "verified_scope": "隔离3次采纳/取消/再采纳准确范围历史已有只读DB复核。只读打开阿禾 entity-a-he 的旧 entity-current-v1 准确认可直链（entity_acceptance=8deee6f3…、form-a-he-base@827b9213…），呈现历史范围且不能当当前版本再次采纳。",
+            "remaining": "没有证明可见的历史认可列表/按钮；技术采纳历史和基准旧格式直链是两种证据，不代表全部历史面板已验。",
+            "evidence_levels": [
+              "Chrome",
+              "database"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "entity-browser/ao021-independent-history-check.json",
+                "level": [
+                  "database_or_HTTP_readback"
+                ]
+              },
+              {
+                "file": "legacy-exact-adoption-chrome.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              }
+            ]
+          }
+        ],
+        "important_states": [
+          {
+            "state": "无实体",
+            "status": "partial_browser",
+            "evidence": [
+              "production-empty-browser.json"
+            ],
+            "status_before_reconciliation": "passed_synthetic_browser",
+            "evidence_before_reconciliation": [
+              "production-empty-browser.json"
+            ],
+            "reconciliation_id": "COV-05-S0",
+            "verified_scope": "沿用原覆盖表已记录的具体操作；不能扩大到标题内未实际执行的分支。",
+            "remaining": "未逐一实测的组合不算通过。",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "production-empty-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              }
+            ]
+          },
+          {
+            "state": "无主实体的共用设定",
+            "status": "not_verified",
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-05-S1",
+            "evidence": [],
+            "verified_scope": "未找到此条目的可复用精确证据。",
+            "remaining": "未逐一实测的组合不算通过。",
+            "evidence_levels": [],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": []
+          },
+          {
+            "state": "只有历史局部状态",
+            "status": "not_verified",
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-05-S2",
+            "evidence": [],
+            "verified_scope": "未找到此条目的可复用精确证据。",
+            "remaining": "未逐一实测的组合不算通过。",
+            "evidence_levels": [],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": []
+          },
+          {
+            "state": "当前完整状态/撤回状态/旧链接",
+            "status": "partial_browser",
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-05-S3",
+            "evidence": [
+              "entity-acceptance-browser.json",
+              "entity-browser/ao021-independent-history-check.json",
+              "withdrawn-context-audit/current-state-chrome.json",
+              "withdrawn-context-audit/old-entity-current-withdrawal-chrome.json",
+              "withdrawn-context-audit/merged-state-chrome.json",
+              "withdrawn-context-audit/old-media-comments-chrome.json",
+              "withdrawn-context-audit/withdrawn-material-chrome.json",
+              "entity-history-route-audit/fixed-chrome.json",
+              "entity-history-route-audit/fixed-comment-locate-chrome.json",
+              "entity-history-route-audit/current-empty-round-fixed-chrome.json",
+              "entity-history-route-audit/old-round-final-chrome.json",
+              "independent-entity-history-route-review.md"
+            ],
+            "verified_scope": "当前完整状态与旧方案保护已有 Chrome；基准 form-bandage-base 当前撤回、旧实体修订入口、归并到李寄的去向均显示准确事实，旧原件/轮次/评论保留且不再误导成待完善任务。 AO049准确旧素材链接刷新/评论定位保持原件与轮次，当前无结果轮次不借旧图填充。",
+            "remaining": "只读取原撤回事实，没有新撤回或新认可；并非穷举所有跨实体归并组合。",
+            "evidence_levels": [
+              "Chrome",
+              "database",
+              "real_function",
+              "independent_review"
+            ],
+            "evidence_origin": "Root actual Chrome receipts; this child reconciled existing evidence and performed named mode=ro DB readbacks, without repeating UI/product checks.",
+            "evidence_details": [
+              {
+                "file": "entity-acceptance-browser.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "entity-browser/ao021-independent-history-check.json",
+                "level": [
+                  "database_or_HTTP_readback"
+                ]
+              },
+              {
+                "file": "withdrawn-context-audit/current-state-chrome.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "withdrawn-context-audit/old-entity-current-withdrawal-chrome.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "withdrawn-context-audit/merged-state-chrome.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "withdrawn-context-audit/old-media-comments-chrome.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "withdrawn-context-audit/withdrawn-material-chrome.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "entity-history-route-audit/fixed-chrome.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              },
+              {
+                "file": "entity-history-route-audit/fixed-comment-locate-chrome.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              },
+              {
+                "file": "entity-history-route-audit/current-empty-round-fixed-chrome.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              },
+              {
+                "file": "entity-history-route-audit/old-round-final-chrome.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              },
+              {
+                "file": "independent-entity-history-route-review.md",
+                "level": [
+                  "independent_review",
+                  "real_function_or_backend_as_recorded"
+                ]
+              }
+            ]
+          },
+          {
+            "state": "方案不完整",
+            "status": "not_verified",
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-05-S4",
+            "evidence": [],
+            "verified_scope": "未找到此条目的可复用精确证据。",
+            "remaining": "未逐一实测的组合不算通过。",
+            "evidence_levels": [],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": []
+          },
+          {
+            "state": "已认可/已取消/内容变更",
+            "status": "partial_browser",
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-05-S5",
+            "evidence": [
+              "entity-acceptance-browser.json",
+              "entity-browser/ao021-independent-history-check.json",
+              "decision-browser/entity-saved-read-failure-chrome.json",
+              "decision-browser/entity-saved-reopen-chrome.json",
+              "decision-browser/entity-unknown-chrome.json",
+              "decision-browser/entity-unknown-reopen-chrome.json",
+              "decision-browser/entity-late-chrome.json",
+              "decision-browser/chrome-persistence-check.json",
+              "legacy-exact-adoption-chrome.json"
+            ],
+            "verified_scope": "实体采纳→取消→再次采纳及准确历史有真实 Chrome/数据库；不同旧方案修订不能以当前范围采纳，同一准确方案跨轮兼容。另验证已保存但读取失败、未知结果、导航后旧响应不接管新页。",
+            "remaining": "采纳写入均为隔离技术数据；内容改变后的全部组合未穷举。旧 entity-current-v1 只另验准确直链读取，未写入或迁移，不改变实体采纳规则。",
+            "evidence_levels": [
+              "Chrome",
+              "database"
+            ],
+            "evidence_origin": "Root actual Chrome receipts; this child reconciled existing evidence and performed named mode=ro DB readbacks, without repeating UI/product checks.",
+            "evidence_details": [
+              {
+                "file": "entity-acceptance-browser.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "entity-browser/ao021-independent-history-check.json",
+                "level": [
+                  "database_or_HTTP_readback"
+                ]
+              },
+              {
+                "file": "decision-browser/entity-saved-read-failure-chrome.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "decision-browser/entity-saved-reopen-chrome.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "decision-browser/entity-unknown-chrome.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "decision-browser/entity-unknown-reopen-chrome.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "decision-browser/entity-late-chrome.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "decision-browser/chrome-persistence-check.json",
+                "level": [
+                  "database"
+                ]
+              },
+              {
+                "file": "legacy-exact-adoption-chrome.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              }
+            ]
+          },
+          {
+            "state": "旧 entity-current-v1 认可",
+            "status": "partial_browser",
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-05-S6",
+            "evidence": [
+              "legacy-exact-adoption-chrome.json"
+            ],
+            "verified_scope": "只读打开阿禾 entity-a-he 的旧 entity-current-v1 准确认可直链（entity_acceptance=8deee6f3…、form-a-he-base@827b9213…），呈现历史范围且不能当当前版本再次采纳。",
+            "remaining": "仅准确历史直链读取；未操作旧格式写入、迁移或可见历史选择入口。不是阿蘅当前状态页面。",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "legacy-exact-adoption-chrome.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              }
+            ]
+          },
+          {
+            "state": "同素材复用多个状态",
+            "status": "not_verified",
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-05-S7",
+            "evidence": [],
+            "verified_scope": "未找到此条目的可复用精确证据。",
+            "remaining": "未逐一实测的组合不算通过。",
+            "evidence_levels": [],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": []
+          },
+          {
+            "state": "混合历史版本不可采纳",
+            "status": "partial_browser",
+            "evidence": [
+              "entity-acceptance-browser.json"
+            ],
+            "status_before_reconciliation": "passed_fixture_browser",
+            "evidence_before_reconciliation": [
+              "entity-acceptance-browser.json"
+            ],
+            "reconciliation_id": "COV-05-S8",
+            "verified_scope": "沿用原覆盖表已记录的具体操作；不能扩大到标题内未实际执行的分支。",
+            "remaining": "未逐一实测的组合不算通过。",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "entity-acceptance-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              }
+            ]
+          },
+          {
+            "state": "解码失败",
+            "status": "not_verified",
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-05-S9",
+            "evidence": [],
+            "verified_scope": "未找到此条目的可复用精确证据。",
+            "remaining": "未逐一实测的组合不算通过。",
+            "evidence_levels": [],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": []
+          },
+          {
+            "state": "异步换实体迟到响应",
+            "status": "partial_browser",
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-05-S10",
+            "evidence": [
+              "decision-browser/entity-late-chrome.json",
+              "decision-browser/chrome-persistence-check.json"
+            ],
+            "verified_scope": "实体采纳提交在途切换目标后，迟到旧保存结果不接管新目标/工作区；实际 Chrome 与只读确切决定回执一致。",
+            "remaining": "这是保存后的迟到回调；纯实体详情 GET A/B 乱序没有单独 Chrome，不能由此代替。",
+            "evidence_levels": [
+              "Chrome",
+              "database"
+            ],
+            "evidence_origin": "Root actual Chrome receipts; this child reconciled existing evidence and performed named mode=ro DB readbacks, without repeating UI/product checks.",
+            "evidence_details": [
+              {
+                "file": "decision-browser/entity-late-chrome.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "decision-browser/chrome-persistence-check.json",
+                "level": [
+                  "database"
+                ]
+              }
+            ]
+          }
+        ],
+        "batch_evidence": [
+          {
+            "checkpoint": 4,
+            "status": "partial_scope_explicit_in_evidence",
+            "evidence": "comment-location-browser.json"
+          },
+          {
+            "checkpoint": 6,
+            "status": "scope_as_evidence",
+            "evidence": "entity-acceptance-browser.json"
+          }
+        ]
+      },
+      {
+        "id": "COV-06",
+        "workspace": "materials.workspace",
+        "label": "素材管理",
+        "entry": "real_chrome_opened",
+        "browser_checks": [
+          {
+            "action": "记录类型/媒体筛选和搜索",
+            "status": "partial_browser",
+            "evidence": [
+              "media-filter-playback-browser.json"
+            ],
+            "status_before_reconciliation": "passed_real_baseline_browser",
+            "evidence_before_reconciliation": [
+              "media-filter-playback-browser.json"
+            ],
+            "reconciliation_id": "COV-06-B0",
+            "verified_scope": "沿用原覆盖表已记录的具体操作；不能扩大到标题内未实际执行的分支。",
+            "remaining": "未逐一实测的组合不算通过。",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "media-filter-playback-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              }
+            ]
+          },
+          {
+            "action": "固定链接精确打开一份候选",
+            "status": "partial_browser",
+            "evidence": [
+              "material-exact-candidate-browser.json",
+              "writer-browser/judgment-late-chrome.json",
+              "writer-browser/judgment-browser-persistence-check.json",
+              "independent-exact-member-review.md"
+            ],
+            "status_before_reconciliation": "passed_candidate_browser",
+            "evidence_before_reconciliation": [
+              "material-exact-candidate-browser.json"
+            ],
+            "reconciliation_id": "COV-06-B1",
+            "verified_scope": "准确素材入口/旧候选链接已有 Chrome；本轮成员 A 与 B 共享同 CALL 和原件时，真正切换到 A 入口后显示与最终审阅 POST target 保持准确 A。",
+            "remaining": "同对象再次点击保留既有显式候选；不能把重载旧 B 参数称重新选择 A。此补验用技术素材，非故事认可。",
+            "evidence_levels": [
+              "Chrome",
+              "database",
+              "real_function",
+              "independent_review"
+            ],
+            "evidence_origin": "Root actual Chrome receipts; this child reconciled existing evidence and performed named mode=ro DB readbacks, without repeating UI/product checks.",
+            "evidence_details": [
+              {
+                "file": "material-exact-candidate-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "writer-browser/judgment-late-chrome.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "writer-browser/judgment-browser-persistence-check.json",
+                "level": [
+                  "database"
+                ]
+              },
+              {
+                "file": "independent-exact-member-review.md",
+                "level": [
+                  "real_function",
+                  "independent_review"
+                ]
+              }
+            ]
+          },
+          {
+            "action": "素材轮次/本轮候选/原件组成切换",
+            "status": "partial_browser",
+            "evidence": [
+              "history-material-browser.json",
+              "material-exact-candidate-browser.json",
+              "material-title-fix/chrome-after.json",
+              "independent-material-title-review.md"
+            ],
+            "status_before_reconciliation": "partial_round_candidate_passed_nonmedia_component_pending",
+            "evidence_before_reconciliation": [
+              "media-filter-playback-browser.json",
+              "material-exact-candidate-browser.json"
+            ],
+            "reconciliation_id": "COV-06-B2",
+            "verified_scope": "同轮 A/B 候选、跨轮和准确旧 ASSET 匹配已有 Chrome；制作设定内共享素材卡的历史第二候选，放大图标题/aria 与准确返工候选和原件相符。",
+            "remaining": "标题补验发生在制作设定的共享素材卡，不能称专门素材页所有分支全验；同轮多个实际 CALL 与非媒体组成的完整切换仍未专项 Chrome。",
+            "evidence_levels": [
+              "Chrome",
+              "real_function",
+              "independent_review"
+            ],
+            "evidence_origin": "Root actual Chrome receipts; this child reconciled existing evidence and performed named mode=ro DB readbacks, without repeating UI/product checks.",
+            "evidence_details": [
+              {
+                "file": "history-material-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "material-exact-candidate-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "material-title-fix/chrome-after.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "independent-material-title-review.md",
+                "level": [
+                  "real_function",
+                  "independent_review"
+                ]
+              }
+            ]
+          },
+          {
+            "action": "准确实际调用与当前方案",
+            "status": "partial_browser",
+            "evidence": [
+              "history-material-browser.json"
+            ],
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-06-B3",
+            "verified_scope": "旧 CALL 已在准确轮模型中，编辑直接使用准确 CALL/round1；不需要强造 GET。",
+            "remaining": "挂起实际 CALL 的异步载入分支只有函数反例，未 Chrome；不要沿 README 旧预期说已完成。",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "history-material-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              }
+            ]
+          },
+          {
+            "action": "参考原件、裁切和片段",
+            "status": "partial_browser",
+            "evidence": [
+              "media-filter-playback-browser.json",
+              "adoption-browser-verification.json",
+              "crop-browser/saved-crop-chrome.json",
+              "crop-browser/after-new-version-chrome.json",
+              "crop-browser/old-blue-crop-chrome.json",
+              "crop-browser/old-blue-crop-geometry.json",
+              "crop-browser/append-b-receipt.json"
+            ],
+            "status_before_reconciliation": "partial_reference_version_audio_keyboard_passed_crop_pending",
+            "evidence_before_reconciliation": [
+              "media-filter-playback-browser.json",
+              "adoption-browser-verification.json"
+            ],
+            "reconciliation_id": "COV-06-B4",
+            "verified_scope": "准确参考弹窗、音频键盘时段和 B 准确时段采用已有 Chrome；制作工作区共享原件弹窗新增图像裁切补验：旧蓝图 B 640×360 上范围 x=.1/y=.2/w=.3/h=.4 显示为相对 64/72/192/144 像素，导入 B 新版仍引用旧原件。",
+            "remaining": "裁切属于制作工作区共享原件弹窗，未据此声称素材页每种入口已验；音频静音技术播放不代表听感。",
+            "evidence_levels": [
+              "Chrome",
+              "database"
+            ],
+            "evidence_origin": "Root actual Chrome receipts; this child reconciled existing evidence and performed named mode=ro DB readbacks, without repeating UI/product checks.",
+            "evidence_details": [
+              {
+                "file": "media-filter-playback-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "adoption-browser-verification.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "crop-browser/saved-crop-chrome.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "crop-browser/after-new-version-chrome.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "crop-browser/old-blue-crop-chrome.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "crop-browser/old-blue-crop-geometry.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "crop-browser/append-b-receipt.json",
+                "level": [
+                  "database"
+                ]
+              }
+            ]
+          },
+          {
+            "action": "图像/时间/文字评论",
+            "status": "partial_browser",
+            "evidence": [
+              "comment-persistence-browser.json",
+              "history-material-browser.json"
+            ],
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-06-B5",
+            "verified_scope": "真实文本评论创建/编辑/关闭/重开/冲突；历史时段评论准确定位。",
+            "remaining": "新时间评论、图像评论各自提交链未全部 Chrome。",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "comment-persistence-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "history-material-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              }
+            ]
+          },
+          {
+            "action": "讨论或修订意见",
+            "status": "browser_verified",
+            "evidence": [
+              "comment-persistence-browser.json",
+              "legacy-draft-browser.json"
+            ],
+            "status_before_reconciliation": "passed_fixture_browser_create_retry_conflict",
+            "evidence_before_reconciliation": [
+              "comment-persistence-browser.json",
+              "legacy-draft-browser.json"
+            ],
+            "reconciliation_id": "COV-06-B6",
+            "verified_scope": "普通/修订落库断响应，刷新同请求重试无重复 CREATE；旧无轮次草稿明确迁移不覆盖新草稿；CR04 重试编辑器已收起。",
+            "remaining": "",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "comment-persistence-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "legacy-draft-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              }
+            ]
+          }
+        ],
+        "important_states": [
+          {
+            "state": "无记录/筛选零结果",
+            "status": "partial_browser",
+            "evidence": [
+              "production-empty-browser.json",
+              "media-filter-playback-browser.json"
+            ],
+            "status_before_reconciliation": "passed_synthetic_browser",
+            "evidence_before_reconciliation": [
+              "production-empty-browser.json",
+              "media-filter-playback-browser.json"
+            ],
+            "reconciliation_id": "COV-06-S0",
+            "verified_scope": "沿用原覆盖表已记录的具体操作；不能扩大到标题内未实际执行的分支。",
+            "remaining": "未逐一实测的组合不算通过。",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "production-empty-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "media-filter-playback-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              }
+            ]
+          },
+          {
+            "state": "真实未生成需求/有原件",
+            "status": "partial_browser",
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-06-S1",
+            "evidence": [
+              "media-filter-playback-browser.json"
+            ],
+            "verified_scope": "基准1059记录含417原件及26未生成需求，筛选不冒充实际原件；实际图像和音频加载。",
+            "remaining": "尚无单条未生成需求空态的完整实测记录。",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "media-filter-playback-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              }
+            ]
+          },
+          {
+            "state": "当前准备轮无结果而历史有结果",
+            "status": "partial_browser",
+            "evidence": [
+              "comment-persistence-browser.json",
+              "legacy-draft-browser.json"
+            ],
+            "status_before_reconciliation": "passed_fixture_browser",
+            "evidence_before_reconciliation": [
+              "comment-persistence-browser.json",
+              "legacy-draft-browser.json"
+            ],
+            "reconciliation_id": "COV-06-S2",
+            "verified_scope": "沿用原覆盖表已记录的具体操作；不能扩大到标题内未实际执行的分支。",
+            "remaining": "未逐一实测的组合不算通过。",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "comment-persistence-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "legacy-draft-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              }
+            ]
+          },
+          {
+            "state": "同轮多调用多候选",
+            "status": "partial_browser",
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-06-S3",
+            "evidence": [
+              "history-material-browser.json",
+              "material-exact-candidate-browser.json",
+              "material-title-fix/chrome-after.json",
+              "independent-material-title-review.md"
+            ],
+            "verified_scope": "同轮 A/B 候选、跨轮和准确旧 ASSET 匹配已有 Chrome；制作设定内共享素材卡的历史第二候选，放大图标题/aria 与准确返工候选和原件相符。",
+            "remaining": "标题补验发生在制作设定的共享素材卡，不能称专门素材页所有分支全验；同轮多个实际 CALL 与非媒体组成的完整切换仍未专项 Chrome。",
+            "evidence_levels": [
+              "Chrome",
+              "real_function",
+              "independent_review"
+            ],
+            "evidence_origin": "Root actual Chrome receipts; this child reconciled existing evidence and performed named mode=ro DB readbacks, without repeating UI/product checks.",
+            "evidence_details": [
+              {
+                "file": "history-material-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "material-exact-candidate-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "material-title-fix/chrome-after.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "independent-material-title-review.md",
+                "level": [
+                  "real_function",
+                  "independent_review"
+                ]
+              }
+            ]
+          },
+          {
+            "state": "ASSET 元数据更新但同原件",
+            "status": "not_verified",
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-06-S4",
+            "evidence": [],
+            "verified_scope": "未找到此条目的可复用精确证据。",
+            "remaining": "未逐一实测的组合不算通过。",
+            "evidence_levels": [],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": []
+          },
+          {
+            "state": "CALL 评论直达",
+            "status": "partial_browser",
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-06-S5",
+            "evidence": [
+              "history-material-browser.json"
+            ],
+            "verified_scope": "旧 CALL 已在准确轮模型中，编辑直接使用准确 CALL/round1；不需要强造 GET。",
+            "remaining": "挂起实际 CALL 的异步载入分支只有函数反例，未 Chrome；不要沿 README 旧预期说已完成。",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "history-material-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              }
+            ]
+          },
+          {
+            "state": "跨实体状态复用",
+            "status": "not_verified",
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-06-S6",
+            "evidence": [],
+            "verified_scope": "未找到此条目的可复用精确证据。",
+            "remaining": "未逐一实测的组合不算通过。",
+            "evidence_levels": [],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": []
+          },
+          {
+            "state": "开放/关闭/历史轮评论",
+            "status": "partial_browser",
+            "evidence": [
+              "history-material-browser.json"
+            ],
+            "status_before_reconciliation": "passed_scoped_ASSET_and_direct_CALL_not_async_CALL",
+            "evidence_before_reconciliation": [
+              "history-material-browser.json"
+            ],
+            "reconciliation_id": "COV-06-S7",
+            "verified_scope": "沿用原覆盖表已记录的具体操作；不能扩大到标题内未实际执行的分支。",
+            "remaining": "未逐一实测的组合不算通过。",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "history-material-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              }
+            ]
+          },
+          {
+            "state": "非媒体组成/嵌套弹窗",
+            "status": "not_verified",
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-06-S8",
+            "evidence": [],
+            "verified_scope": "未找到此条目的可复用精确证据。",
+            "remaining": "未逐一实测的组合不算通过。",
+            "evidence_levels": [],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": []
+          },
+          {
+            "state": "过期轮提交409",
+            "status": "partial_browser",
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-06-S9",
+            "evidence": [
+              "comment-persistence-browser.json",
+              "round-conflict-fixed-chrome.json",
+              "round-conflict-fixed-persistence.json",
+              "independent-comment-rejection-review.md"
+            ],
+            "verified_scope": "真实旧轮新修订提交收到 409；修后原 UUID/完整 payload/round2 原样重试仍 409，显示明确拒绝而不称结果未知，原文字与修订选择保留。实际重试北京时间07:49:07；8评论/13事件/7轮/3反馈/12范围全部未变。",
+            "remaining": "该次 Chrome 加载 app SHA 8c5c001c…（作者记录的 root_loaded_initial_sha256），包含尚未冻结的 AO047 初稿，只支持 AO046 明确拒绝路径，不作为 AO047 或整个最终 app 验收。异常本机存储仍是函数反例。",
+            "evidence_levels": [
+              "Chrome",
+              "database",
+              "HTTP_log",
+              "real_function",
+              "independent_review"
+            ],
+            "evidence_origin": "Root actual Chrome receipts; this child reconciled existing evidence and performed named mode=ro DB readbacks, without repeating UI/product checks.",
+            "evidence_details": [
+              {
+                "file": "comment-persistence-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "round-conflict-fixed-chrome.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "round-conflict-fixed-persistence.json",
+                "level": [
+                  "database",
+                  "HTTP_log"
+                ]
+              },
+              {
+                "file": "independent-comment-rejection-review.md",
+                "level": [
+                  "real_function",
+                  "independent_review"
+                ]
+              }
+            ]
+          },
+          {
+            "state": "不同文件同 component_id",
+            "status": "not_verified",
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-06-S10",
+            "evidence": [],
+            "verified_scope": "未找到此条目的可复用精确证据。",
+            "remaining": "未逐一实测的组合不算通过。",
+            "evidence_levels": [],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": []
+          }
+        ],
+        "batch_evidence": [
+          {
+            "checkpoint": 4,
+            "status": "partial_scope_explicit_in_evidence",
+            "evidence": "comment-persistence-browser.json"
+          },
+          {
+            "checkpoint": 6,
+            "status": "scope_as_evidence",
+            "evidence": "material-exact-candidate-browser.json"
+          }
+        ]
+      },
+      {
+        "id": "COV-07",
+        "workspace": "production.workspace",
+        "label": "全剧制作",
+        "entry": "real_chrome_opened",
+        "browser_checks": [
+          {
+            "action": "查看剧本依据",
+            "status": "partial_browser",
+            "evidence": [
+              "production-scope-pagination-browser.json"
+            ],
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-07-B0",
+            "verified_scope": "第4版镜头和第17集/场准确标题与范围显示。",
+            "remaining": "未记录点击剧本依据后的完整回跳。",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "production-scope-pagination-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              }
+            ]
+          },
+          {
+            "action": "按集/场/镜浏览镜头和组合",
+            "status": "partial_browser",
+            "evidence": [
+              "production-scope-pagination-browser.json",
+              "production-flow-audit/baseline-inventory.json",
+              "assembly-v1-reference-chrome.jpg",
+              "assembly-v1-shot-chrome.json",
+              "assembly-v2-chrome.json",
+              "output-v1-chrome.json",
+              "output-v1-downloaded-files.json",
+              "output-v2-play-download-chrome.json",
+              "assembly-output-browser/append-v2-receipt.json",
+              "assembly-output-browser/recovery-evidence.json",
+              "independent-assembly-recovery-review.json",
+              "output-reference-fixed-v1-chrome.json",
+              "output-reference-fixed-popup-chrome.json",
+              "output-reference-fixed-v2-chrome.json",
+              "record-version-full-history-chrome.json",
+              "independent-reference-names-review.md",
+              "independent-record-version-display-review.md"
+            ],
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-07-B1",
+            "verified_scope": "基准第一集33镜头与第17集集场需求、正常集/场切换。独立技术 ASSEMBLY 两版均3轨、48帧/2秒；DELIVERABLE 两版实际播放到结束并下载MP4，v1工程ZIP实际点击下载后5成员及文件SHA核对。v1/v2准确名称、旧依赖弹窗、既有版本控件与完整记录保留追溯。空库恢复12表及7受管原件/工程一致，3准确采用保持v1。",
+            "remaining": "启动基准 ASSEMBLY/DELIVERABLE 仍各0；新增仅几何图与静音技术夹具，不是故事成片认可或原生编辑器工程验收。历史 SHOT_DESIGN 没有专项 Chrome；后端恢复不是页面操作。",
+            "evidence_levels": [
+              "Chrome",
+              "downloaded_file",
+              "database",
+              "bundle_restore",
+              "independent_review"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "production-scope-pagination-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "production-flow-audit/baseline-inventory.json",
+                "level": [
+                  "recorded_audit"
+                ]
+              },
+              {
+                "file": "assembly-v1-reference-chrome.jpg",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              },
+              {
+                "file": "assembly-v1-shot-chrome.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              },
+              {
+                "file": "assembly-v2-chrome.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              },
+              {
+                "file": "output-v1-chrome.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              },
+              {
+                "file": "output-v1-downloaded-files.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              },
+              {
+                "file": "output-v2-play-download-chrome.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              },
+              {
+                "file": "assembly-output-browser/append-v2-receipt.json",
+                "level": [
+                  "database_or_export_restore"
+                ]
+              },
+              {
+                "file": "assembly-output-browser/recovery-evidence.json",
+                "level": [
+                  "database_or_export_restore"
+                ]
+              },
+              {
+                "file": "independent-assembly-recovery-review.json",
+                "level": [
+                  "independent_review",
+                  "real_function_or_backend_as_recorded"
+                ]
+              },
+              {
+                "file": "output-reference-fixed-v1-chrome.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              },
+              {
+                "file": "output-reference-fixed-popup-chrome.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              },
+              {
+                "file": "output-reference-fixed-v2-chrome.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              },
+              {
+                "file": "record-version-full-history-chrome.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              },
+              {
+                "file": "independent-reference-names-review.md",
+                "level": [
+                  "independent_review",
+                  "real_function_or_backend_as_recorded"
+                ]
+              },
+              {
+                "file": "independent-record-version-display-review.md",
+                "level": [
+                  "independent_review",
+                  "real_function_or_backend_as_recorded"
+                ]
+              }
+            ]
+          },
+          {
+            "action": "主动检查范围缺项及分页",
+            "status": "partial_browser",
+            "evidence": [
+              "production-scope-pagination-browser.json"
+            ],
+            "status_before_reconciliation": "passed_real_baseline_browser",
+            "evidence_before_reconciliation": [
+              "production-scope-pagination-browser.json"
+            ],
+            "reconciliation_id": "COV-07-B2",
+            "verified_scope": "真实镜头33条分页20/13，第17集范围78条分页20/20/20/18，末页禁用并切场20条；主动检查准确范围。",
+            "remaining": "启动基准 ASSEMBLY/DELIVERABLE 为空；B1的非空两版技术夹具另有阅读证据，不能算基准已有成果或穷举各类检查分页。",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "Root actual Chrome receipts; this child reconciled existing evidence and performed named mode=ro DB readbacks, without repeating UI/product checks.",
+            "evidence_details": [
+              {
+                "file": "production-scope-pagination-browser.json",
+                "level": [
+                  "Chrome"
+                ]
+              }
+            ]
+          },
+          {
+            "action": "准确来源和变更影响",
+            "status": "partial_browser",
+            "evidence": [
+              "change-browser/recovery-browser.json",
+              "change-browser/late-save-browser.json",
+              "output-reference-fixed-v1-chrome.json",
+              "output-reference-fixed-popup-chrome.json",
+              "output-reference-fixed-v2-chrome.json",
+              "record-version-full-history-chrome.json",
+              "independent-reference-names-review.md",
+              "independent-record-version-display-review.md",
+              "change-decision-contract/chrome-first-create-conflict.json",
+              "change-decision-contract/chrome-revision-conflict.json",
+              "change-decision-contract/chrome-identical-payload-conflict-final.json",
+              "change-decision-contract/chrome-history-final.json",
+              "change-decision-contract/chrome-unified-response-recovery-final.json",
+              "change-decision-contract/chrome-legacy-originals-after-unified.json",
+              "change-decision-contract/chrome-final-code-receipt.json",
+              "change-decision-contract/chrome-final-history-receipt.json",
+              "independent-change-single-review.md",
+              "independent-change-single-review.json"
+            ],
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-07-B3",
+            "verified_scope": "准确 target/old/new 的复核与未知/已保存后刷新失败已有Chrome。AO050旧输出的来源/依赖名称按准确修订读取，点击旧引用仍指旧原件，缺投影回退只在针对函数验。用户明确选择单一可修订结论、旧窗口冲突和历史保留。技术实例真实首次两窗冲突、同ID keep→rework→keep→rework，已放行可改回返工；相同载荷的旧窗口仍409且再点击不降为未知。显式引用全部旧头统一相反记录，统一结论再修订v2丢响应后准确回读；原两头可读，既有版本控件可看v4返工与v1保留。10次POST为6次成功、4次拒绝，只增两个判断对象/6修订；原4判断与2采用保持，评论/事件0。",
+            "remaining": "replace成功表单及全部scope/目标组合未逐一Chrome；并发连接、导入原子回滚、49基准改名结论/67下游兼容和非空评论恢复是独立后端证据。技术判断不等于故事认可；正式发布未执行。旧代码回退不执行新单一结论规则，不能以数据仍在承诺语义不变。",
+            "evidence_levels": [
+              "Chrome",
+              "HTTP_log",
+              "database",
+              "real_function",
+              "independent_review"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "change-browser/recovery-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "change-browser/late-save-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "output-reference-fixed-v1-chrome.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              },
+              {
+                "file": "output-reference-fixed-popup-chrome.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              },
+              {
+                "file": "output-reference-fixed-v2-chrome.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              },
+              {
+                "file": "record-version-full-history-chrome.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              },
+              {
+                "file": "independent-reference-names-review.md",
+                "level": [
+                  "independent_review",
+                  "real_function_or_backend_as_recorded"
+                ]
+              },
+              {
+                "file": "independent-record-version-display-review.md",
+                "level": [
+                  "independent_review",
+                  "real_function_or_backend_as_recorded"
+                ]
+              },
+              {
+                "file": "change-decision-contract/chrome-first-create-conflict.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              },
+              {
+                "file": "change-decision-contract/chrome-revision-conflict.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              },
+              {
+                "file": "change-decision-contract/chrome-identical-payload-conflict-final.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              },
+              {
+                "file": "change-decision-contract/chrome-history-final.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              },
+              {
+                "file": "change-decision-contract/chrome-unified-response-recovery-final.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              },
+              {
+                "file": "change-decision-contract/chrome-legacy-originals-after-unified.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              },
+              {
+                "file": "change-decision-contract/chrome-final-code-receipt.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              },
+              {
+                "file": "change-decision-contract/chrome-final-history-receipt.json",
+                "level": [
+                  "database_or_export_restore"
+                ]
+              },
+              {
+                "file": "independent-change-single-review.md",
+                "level": [
+                  "independent_review",
+                  "real_function_or_backend_as_recorded"
+                ]
+              },
+              {
+                "file": "independent-change-single-review.json",
+                "level": [
+                  "independent_review",
+                  "real_function_or_backend_as_recorded"
+                ]
+              }
+            ]
+          },
+          {
+            "action": "显式采用/换版和变更复核",
+            "status": "partial_browser",
+            "evidence": [
+              "adoption-browser-verification.json",
+              "adoption-recovery-browser.json",
+              "change-browser/recovery-browser.json",
+              "crop-browser/saved-crop-chrome.json",
+              "crop-browser/after-new-version-chrome.json",
+              "crop-browser/old-blue-crop-chrome.json",
+              "crop-browser/old-blue-crop-geometry.json",
+              "crop-browser/append-b-receipt.json",
+              "change-decision-contract/chrome-first-create-conflict.json",
+              "change-decision-contract/chrome-revision-conflict.json",
+              "change-decision-contract/chrome-identical-payload-conflict-final.json",
+              "change-decision-contract/chrome-history-final.json",
+              "change-decision-contract/chrome-unified-response-recovery-final.json",
+              "change-decision-contract/chrome-legacy-originals-after-unified.json",
+              "change-decision-contract/chrome-final-code-receipt.json",
+              "change-decision-contract/chrome-final-history-receipt.json",
+              "independent-change-single-review.md",
+              "independent-change-single-review.json"
+            ],
+            "status_before_reconciliation": "partial_create_update_lost_response_passed_change_review_pending",
+            "evidence_before_reconciliation": [
+              "adoption-browser-verification.json",
+              "adoption-recovery-browser.json"
+            ],
+            "reconciliation_id": "COV-07-B4",
+            "verified_scope": "B先回/A后回、失败禁用、取消重开、准确B时段采用及落库断响应准确回读已有 Chrome；新增准确旧蓝图 B 裁切采用与导入 B 新版后旧采用保留。准确变更 keep 恢复另有 Chrome。 用户明确选择单一可修订结论、旧窗口冲突和历史保留。技术实例真实首次两窗冲突、同ID keep→rework→keep→rework，已放行可改回返工；相同载荷的旧窗口仍409且再点击不降为未知。显式引用全部旧头统一相反记录，统一结论再修订v2丢响应后准确回读；原两头可读，既有版本控件可看v4返工与v1保留。10次POST为6次成功、4次拒绝，只增两个判断对象/6修订；原4判断与2采用保持，评论/事件0。",
+            "remaining": "replace成功表单及全部scope/目标组合未逐一Chrome；并发连接、导入原子回滚、49基准改名结论/67下游兼容和非空评论恢复是独立后端证据。技术判断不等于故事认可；正式发布未执行。旧代码回退不执行新单一结论规则，不能以数据仍在承诺语义不变。",
+            "evidence_levels": [
+              "Chrome",
+              "HTTP_log",
+              "database",
+              "real_function",
+              "independent_review"
+            ],
+            "evidence_origin": "Root actual Chrome receipts; this child reconciled existing evidence and performed named mode=ro DB readbacks, without repeating UI/product checks.",
+            "evidence_details": [
+              {
+                "file": "adoption-browser-verification.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "adoption-recovery-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "change-browser/recovery-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "crop-browser/saved-crop-chrome.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "crop-browser/after-new-version-chrome.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "crop-browser/old-blue-crop-chrome.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "crop-browser/old-blue-crop-geometry.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "crop-browser/append-b-receipt.json",
+                "level": [
+                  "database"
+                ]
+              },
+              {
+                "file": "change-decision-contract/chrome-first-create-conflict.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              },
+              {
+                "file": "change-decision-contract/chrome-revision-conflict.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              },
+              {
+                "file": "change-decision-contract/chrome-identical-payload-conflict-final.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              },
+              {
+                "file": "change-decision-contract/chrome-history-final.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              },
+              {
+                "file": "change-decision-contract/chrome-unified-response-recovery-final.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              },
+              {
+                "file": "change-decision-contract/chrome-legacy-originals-after-unified.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              },
+              {
+                "file": "change-decision-contract/chrome-final-code-receipt.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              },
+              {
+                "file": "change-decision-contract/chrome-final-history-receipt.json",
+                "level": [
+                  "database_or_export_restore"
+                ]
+              },
+              {
+                "file": "independent-change-single-review.md",
+                "level": [
+                  "independent_review",
+                  "real_function_or_backend_as_recorded"
+                ]
+              },
+              {
+                "file": "independent-change-single-review.json",
+                "level": [
+                  "independent_review",
+                  "real_function_or_backend_as_recorded"
+                ]
+              }
+            ]
+          },
+          {
+            "action": "下载输入清单",
+            "status": "browser_verified",
+            "evidence": [
+              "package-browser/browser-evidence.json",
+              "assembly-v1-shot-chrome.json",
+              "assembly-output-browser/v1-downloaded-manifest-readback.json"
+            ],
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-07-B5",
+            "verified_scope": "真实下载3原件的完整 manifest，落地文件 SHA 与原清单一致；工具下载事件等待超时已由实际文件核对补证据。 新组合夹具沿输出→组合→镜头显示3必要/0缺项，点击清单有HTTP200及下载提示。",
+            "remaining": "这是清单下载；完整含原件目录包由既有 CLI 测试，不能说浏览器下载了目录包。 新ao-assembly-shot清单没有在Downloads找到匹配落地文件，该次不列为文件哈希通过；前述已通过落盘核验属于原package夹具。",
+            "evidence_levels": [
+              "Chrome",
+              "HTTP_log",
+              "downloaded_file"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "package-browser/browser-evidence.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "assembly-v1-shot-chrome.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              },
+              {
+                "file": "assembly-output-browser/v1-downloaded-manifest-readback.json",
+                "level": [
+                  "database_or_export_restore"
+                ]
+              }
+            ]
+          }
+        ],
+        "important_states": [
+          {
+            "state": "无剧本依据",
+            "status": "partial_browser",
+            "evidence": [
+              "production-empty-browser.json"
+            ],
+            "status_before_reconciliation": "passed_synthetic_browser",
+            "evidence_before_reconciliation": [
+              "production-empty-browser.json"
+            ],
+            "reconciliation_id": "COV-07-S0",
+            "verified_scope": "沿用原覆盖表已记录的具体操作；不能扩大到标题内未实际执行的分支。",
+            "remaining": "未逐一实测的组合不算通过。",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "production-empty-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              }
+            ]
+          },
+          {
+            "state": "首集有/无镜头",
+            "status": "partial_browser",
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-07-S1",
+            "evidence": [
+              "production-scope-pagination-browser.json"
+            ],
+            "verified_scope": "第一集镜头和第17集无该现成镜头集场状态。",
+            "remaining": "首集无镜头专门实例未验。",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "production-scope-pagination-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              }
+            ]
+          },
+          {
+            "state": "无必要槽位",
+            "status": "not_verified",
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-07-S2",
+            "evidence": [],
+            "verified_scope": "未找到此条目的可复用精确证据。",
+            "remaining": "未逐一实测的组合不算通过。",
+            "evidence_levels": [],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": []
+          },
+          {
+            "state": "未采用/占位/规格不足",
+            "status": "partial_browser",
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-07-S3",
+            "evidence": [
+              "production-scope-pagination-browser.json",
+              "package-browser/browser-evidence.json"
+            ],
+            "verified_scope": "尚未采用缺项可见；可选未采用不阻断完整包。",
+            "remaining": "占位/规格不足精确分支没有逐一 Chrome。",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "production-scope-pagination-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "package-browser/browser-evidence.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              }
+            ]
+          },
+          {
+            "state": "部分输入/全部技术就绪",
+            "status": "browser_verified",
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-07-S4",
+            "evidence": [
+              "change-browser/recovery-browser.json",
+              "package-browser/browser-evidence.json",
+              "change-decision-contract/chrome-revision-conflict.json",
+              "change-decision-contract/chrome-stale-download-rejected.json",
+              "change-decision-contract/chrome-final-history-receipt.json",
+              "assembly-v1-shot-chrome.json"
+            ],
+            "verified_scope": "部分必需未采用与必需已齐技术就绪独立实例；已采用可选缺原件保持必要齐全但禁下载。 AO026同一结论从保留改返工后缺项0→1；旧窗口旧就绪显示不绕过服务端下载校验。技术组合镜头3必要/0缺项。",
+            "remaining": "",
+            "evidence_levels": [
+              "Chrome",
+              "HTTP_log",
+              "database"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "change-browser/recovery-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "package-browser/browser-evidence.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "change-decision-contract/chrome-revision-conflict.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              },
+              {
+                "file": "change-decision-contract/chrome-stale-download-rejected.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              },
+              {
+                "file": "change-decision-contract/chrome-final-history-receipt.json",
+                "level": [
+                  "database_or_export_restore"
+                ]
+              },
+              {
+                "file": "assembly-v1-shot-chrome.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              }
+            ]
+          },
+          {
+            "state": "上游变化待复核",
+            "status": "partial_browser",
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-07-S5",
+            "evidence": [
+              "change-browser/recovery-browser.json",
+              "change-browser/late-save-browser.json",
+              "change-decision-contract/chrome-first-create-conflict.json",
+              "change-decision-contract/chrome-revision-conflict.json",
+              "change-decision-contract/chrome-identical-payload-conflict-final.json",
+              "change-decision-contract/chrome-history-final.json",
+              "change-decision-contract/chrome-unified-response-recovery-final.json",
+              "change-decision-contract/chrome-legacy-originals-after-unified.json",
+              "change-decision-contract/chrome-final-code-receipt.json",
+              "change-decision-contract/chrome-final-history-receipt.json",
+              "independent-change-single-review.md",
+              "independent-change-single-review.json"
+            ],
+            "verified_scope": "用户明确选择单一可修订结论、旧窗口冲突和历史保留。技术实例真实首次两窗冲突、同ID keep→rework→keep→rework，已放行可改回返工；相同载荷的旧窗口仍409且再点击不降为未知。显式引用全部旧头统一相反记录，统一结论再修订v2丢响应后准确回读；原两头可读，既有版本控件可看v4返工与v1保留。10次POST为6次成功、4次拒绝，只增两个判断对象/6修订；原4判断与2采用保持，评论/事件0。",
+            "remaining": "replace成功表单及全部scope/目标组合未逐一Chrome；并发连接、导入原子回滚、49基准改名结论/67下游兼容和非空评论恢复是独立后端证据。技术判断不等于故事认可；正式发布未执行。旧代码回退不执行新单一结论规则，不能以数据仍在承诺语义不变。",
+            "evidence_levels": [
+              "Chrome",
+              "HTTP_log",
+              "database",
+              "real_function",
+              "independent_review"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "change-browser/recovery-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "change-browser/late-save-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "change-decision-contract/chrome-first-create-conflict.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              },
+              {
+                "file": "change-decision-contract/chrome-revision-conflict.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              },
+              {
+                "file": "change-decision-contract/chrome-identical-payload-conflict-final.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              },
+              {
+                "file": "change-decision-contract/chrome-history-final.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              },
+              {
+                "file": "change-decision-contract/chrome-unified-response-recovery-final.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              },
+              {
+                "file": "change-decision-contract/chrome-legacy-originals-after-unified.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              },
+              {
+                "file": "change-decision-contract/chrome-final-code-receipt.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              },
+              {
+                "file": "change-decision-contract/chrome-final-history-receipt.json",
+                "level": [
+                  "database_or_export_restore"
+                ]
+              },
+              {
+                "file": "independent-change-single-review.md",
+                "level": [
+                  "independent_review",
+                  "real_function_or_backend_as_recorded"
+                ]
+              },
+              {
+                "file": "independent-change-single-review.json",
+                "level": [
+                  "independent_review",
+                  "real_function_or_backend_as_recorded"
+                ]
+              }
+            ]
+          },
+          {
+            "state": "当前/历史镜头",
+            "status": "partial_browser",
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-07-S6",
+            "evidence": [
+              "assembly-v1-shot-chrome.json"
+            ],
+            "verified_scope": "沿技术输出→准确组合→当前 ao-assembly-shot 的真实Chrome读取，3项必需输入/0缺项；组合和输出两版阅读另外归B1。",
+            "remaining": "未专项验历史 SHOT_DESIGN 版本切换/刷新；组合和输出的两版历史不能替代历史镜头验收。",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "assembly-v1-shot-chrome.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              }
+            ]
+          },
+          {
+            "state": "原件缺失/谱系未知",
+            "status": "partial_browser",
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-07-S7",
+            "evidence": [
+              "package-browser/browser-evidence.json"
+            ],
+            "verified_scope": "已采用可选原件缺失/恢复，准确历史 CALL 依赖缺失/恢复；不静默省文件。",
+            "remaining": "未知谱系对应浏览器状态没有专项。",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "package-browser/browser-evidence.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              }
+            ]
+          },
+          {
+            "state": "旧采用后出现新候选",
+            "status": "browser_verified",
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-07-S8",
+            "evidence": [
+              "production-flow-audit/contract-results.json",
+              "crop-browser/saved-crop-chrome.json",
+              "crop-browser/after-new-version-chrome.json",
+              "crop-browser/old-blue-crop-chrome.json",
+              "crop-browser/old-blue-crop-geometry.json",
+              "crop-browser/append-b-receipt.json"
+            ],
+            "verified_scope": "根在技术实例实际采用旧蓝图 B 的准确修订与裁切，随后按正常后台路径追加新版 B；再次真实打开仍显示旧蓝图和原裁切，数据库证明所有既有采用记录不变。",
+            "remaining": "正常后台导入加 Chrome 回读；不是用户认可正式素材。仅该准确原件/裁切链，不推广所有媒体。",
+            "evidence_levels": [
+              "database",
+              "Chrome"
+            ],
+            "evidence_origin": "Root actual Chrome receipts; this child reconciled existing evidence and performed named mode=ro DB readbacks, without repeating UI/product checks.",
+            "evidence_details": [
+              {
+                "file": "production-flow-audit/contract-results.json",
+                "level": [
+                  "database_or_HTTP_readback"
+                ]
+              },
+              {
+                "file": "crop-browser/saved-crop-chrome.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "crop-browser/after-new-version-chrome.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "crop-browser/old-blue-crop-chrome.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "crop-browser/old-blue-crop-geometry.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "crop-browser/append-b-receipt.json",
+                "level": [
+                  "database"
+                ]
+              }
+            ]
+          },
+          {
+            "state": "快速换范围迟到结果",
+            "status": "partial_browser",
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-07-S9",
+            "evidence": [
+              "change-browser/late-save-browser.json",
+              "production-flow-audit/scope-results.json",
+              "readiness-order-browser/b-before-a-release.json",
+              "readiness-order-browser/b-after-a-release.json",
+              "readiness-order-browser/browser-order-readback.json"
+            ],
+            "verified_scope": "复核保存 A 迟到不改变 B 集已有 Chrome；后续纯 readiness GET 在真实 Chrome 由代理持有 A、让 B 先返回、再释放 A，B 范围/2项需求/URL 均保留。ticket2 事件顺序与原63108数据库未变由只读回执确认。",
+            "remaining": "纯 GET 迟到成功已 Chrome；迟到失败和其余集→场组合仍只有函数反例，不能混成相同故障。",
+            "evidence_levels": [
+              "Chrome",
+              "real_function",
+              "HTTP_log",
+              "database"
+            ],
+            "evidence_origin": "Root actual Chrome receipts; this child reconciled existing evidence and performed named mode=ro DB readbacks, without repeating UI/product checks.",
+            "evidence_details": [
+              {
+                "file": "change-browser/late-save-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "production-flow-audit/scope-results.json",
+                "level": [
+                  "real_function_or_HTTP_as_recorded"
+                ]
+              },
+              {
+                "file": "readiness-order-browser/b-before-a-release.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "readiness-order-browser/b-after-a-release.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "readiness-order-browser/browser-order-readback.json",
+                "level": [
+                  "HTTP_log",
+                  "database"
+                ]
+              }
+            ]
+          },
+          {
+            "state": "多页缺项",
+            "status": "browser_verified",
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-07-S10",
+            "evidence": [
+              "production-scope-pagination-browser.json"
+            ],
+            "verified_scope": "真实基准镜头33条20/13，第17集78条20/20/20/18，末页禁用再切场20条。",
+            "remaining": "",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "production-scope-pagination-browser.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              }
+            ]
+          }
+        ],
+        "batch_evidence": [
+          {
+            "checkpoint": 4,
+            "status": "partial_scope_explicit_in_evidence",
+            "evidence": "adoption-recovery-browser.json"
+          },
+          {
+            "checkpoint": 6,
+            "status": "scope_as_evidence",
+            "evidence": "package-browser/browser-evidence.json"
+          },
+          {
+            "checkpoint": 7,
+            "status": "late_save_and_unknown_result_recovery_passed",
+            "evidence": "change-browser/recovery-browser.json"
+          }
+        ]
+      },
+      {
+        "id": "COV-08",
+        "workspace": "project.configuration",
+        "label": "系统配置",
+        "entry": "real_chrome_opened",
+        "browser_checks": [
+          {
+            "action": "SYSTEM/PROJECT 保存",
+            "status": "browser_verified",
+            "evidence": [
+              "favicon-browser-evidence.json",
+              "writer-browser/config-delay-chrome.json",
+              "writer-browser/config-recovery-chrome.json",
+              "writer-browser/config-refresh-failure-chrome.json",
+              "configuration-conflict-fix/chrome-after.json",
+              "configuration-conflict-fix/browser-persistence.json",
+              "independent-configuration-conflict-review.md"
+            ],
+            "status_before_reconciliation": "partial_SYSTEM_browser_PROJECT_http",
+            "evidence_before_reconciliation": [
+              "favicon-browser-evidence.json",
+              "project-context-preview-apply.json"
+            ],
+            "reconciliation_id": "COV-08-B0",
+            "verified_scope": "SYSTEM 图标与 PROJECT 正常保存、在途改输入/切组、未知结果准确回读、已保存但刷新失败已有 Chrome；双窗口相同 PROJECT v6 时 A 保存v7、B旧v6明确409，唯一输入与v6门槛保留，不误称待确认。",
+            "remaining": "仅隔离技术实例写入；正式配置未发布。SYSTEM 版本冲突未另做双窗口 Chrome。",
+            "evidence_levels": [
+              "Chrome",
+              "database",
+              "HTTP_log",
+              "real_function",
+              "independent_review"
+            ],
+            "evidence_origin": "Root actual Chrome receipts; this child reconciled existing evidence and performed named mode=ro DB readbacks, without repeating UI/product checks.",
+            "evidence_details": [
+              {
+                "file": "favicon-browser-evidence.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "writer-browser/config-delay-chrome.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "writer-browser/config-recovery-chrome.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "writer-browser/config-refresh-failure-chrome.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              },
+              {
+                "file": "configuration-conflict-fix/chrome-after.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "configuration-conflict-fix/browser-persistence.json",
+                "level": [
+                  "database",
+                  "HTTP_log"
+                ]
+              },
+              {
+                "file": "independent-configuration-conflict-review.md",
+                "level": [
+                  "real_function",
+                  "independent_review"
+                ]
+              }
+            ]
+          },
+          {
+            "action": "模型及适用推理强度",
+            "status": "partial_browser",
+            "evidence": [
+              "configuration-navigation-browser.json"
+            ],
+            "status_before_reconciliation": "passed_candidate_browser",
+            "evidence_before_reconciliation": [
+              "configuration-navigation-browser.json"
+            ],
+            "reconciliation_id": "COV-08-B1",
+            "verified_scope": "实际 PROJECT/SYSTEM 切换、390px无横向溢出；gpt-4.1-mini 时强度不适用，切回 gpt-5.6-sol 后强度恢复，未保存该模型变更。",
+            "remaining": "未穷举全部模型/强度组合，未触发模型调用。",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "Root actual Chrome receipts; this child reconciled existing evidence and performed named mode=ro DB readbacks, without repeating UI/product checks.",
+            "evidence_details": [
+              {
+                "file": "configuration-navigation-browser.json",
+                "level": [
+                  "Chrome"
+                ]
+              }
+            ]
+          },
+          {
+            "action": "密钥环境变量名",
+            "status": "partial_browser",
+            "evidence": [
+              "writer-browser/config-delay-chrome.json"
+            ],
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-08-B2",
+            "verified_scope": "SYSTEM 可见环境变量名输入 OPENAI_API_KEY；未读真实秘密。",
+            "remaining": "只观察字段，未实际保存其他合法/非法变量名；不能称该动作全验。",
+            "evidence_levels": [
+              "Chrome"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "writer-browser/config-delay-chrome.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              }
+            ]
+          },
+          {
+            "action": "图标上传/选择/清空",
+            "status": "partial_browser",
+            "evidence": [
+              "favicon-browser-evidence.json"
+            ],
+            "status_before_reconciliation": "partial_upload_blocked",
+            "evidence_before_reconciliation": [
+              "favicon-browser-evidence.json"
+            ],
+            "reconciliation_id": "COV-08-B3",
+            "verified_scope": "有效/缺失、选择和清空实际页面；损坏格式API；上传动作被扩展本地文件许可阻挡。",
+            "remaining": "真实图标上传未完成，不能把HTTP成功算Chrome。",
+            "evidence_levels": [
+              "Chrome",
+              "HTTP"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "favicon-browser-evidence.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              }
+            ]
+          },
+          {
+            "action": "阶段及故事/创作背景",
+            "status": "partial_browser",
+            "evidence": [
+              "project-context-browser.json",
+              "project-stage-chrome.json",
+              "project-stage-history-check.json",
+              "independent-stage-release-review.md"
+            ],
+            "status_before_reconciliation": "passed_read_background_context_stage_unchanged",
+            "evidence_before_reconciliation": [
+              "project-context-browser.json"
+            ],
+            "reconciliation_id": "COV-08-B4",
+            "verified_scope": "预览PROJECT故事背景/创作背景两字段按确认事实更新，页面及润色上下文可读。用户随后明确手动阶段为素材准备，真实页面PATCH v15→16并刷新确认MATERIAL_PREPARATION；只增1配置事件，原19事件保留，271评论/300事件/6998修订未变。",
+            "remaining": "正式三字段（两背景+手动阶段）候选以正式v14→15准备，尚未发布；不据技术预览自动推断故事内容完成，也未改变故事设定。",
+            "evidence_levels": [
+              "Chrome",
+              "database",
+              "independent_review"
+            ],
+            "evidence_origin": "Root actual Chrome receipts; this child reconciled existing evidence and performed named mode=ro DB readbacks, without repeating UI/product checks.",
+            "evidence_details": [
+              {
+                "file": "project-context-browser.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "project-stage-chrome.json",
+                "level": [
+                  "root_actual_Chrome"
+                ]
+              },
+              {
+                "file": "project-stage-history-check.json",
+                "level": [
+                  "database_or_export_restore"
+                ]
+              },
+              {
+                "file": "independent-stage-release-review.md",
+                "level": [
+                  "independent_review",
+                  "real_function_or_backend_as_recorded"
+                ]
+              }
+            ]
+          }
+        ],
+        "important_states": [
+          {
+            "state": "默认/现有配置",
+            "status": "not_verified",
+            "status_before_reconciliation": "passed_candidate_browser",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-08-S0",
+            "evidence": [],
+            "verified_scope": "未找到此条目的可复用精确证据。",
+            "remaining": "未逐一实测的组合不算通过。",
+            "evidence_levels": [],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": []
+          },
+          {
+            "state": "Schema1-3 迁移",
+            "status": "not_verified",
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-08-S1",
+            "evidence": [],
+            "verified_scope": "未找到此条目的可复用精确证据。",
+            "remaining": "未逐一实测的组合不算通过。",
+            "evidence_levels": [],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": []
+          },
+          {
+            "state": "非法字段/模型组合",
+            "status": "not_verified",
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-08-S2",
+            "evidence": [],
+            "verified_scope": "未找到此条目的可复用精确证据。",
+            "remaining": "未逐一实测的组合不算通过。",
+            "evidence_levels": [],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": []
+          },
+          {
+            "state": "版本冲突409",
+            "status": "browser_verified",
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-08-S3",
+            "evidence": [
+              "configuration-conflict-fix/chrome-after.json",
+              "configuration-conflict-fix/browser-persistence.json",
+              "independent-configuration-conflict-review.md"
+            ],
+            "verified_scope": "根在55832两窗口实测：旧候选v5→6与B409作为发现；修后双方v6，A→7，B携v6得到409且明确“本次保存未完成”，唯一输入/原版本保留。两次拒绝0配置事件，原6事件完整保留；SYSTEM仍v1。",
+            "remaining": "实际 Chrome 为 PROJECT 分支；SYSTEM 双窗口冲突和上传后冲突不是本次覆盖。未知网络结果恢复仍独立保留，不以409替代。",
+            "evidence_levels": [
+              "Chrome",
+              "database",
+              "HTTP_log",
+              "real_function",
+              "independent_review"
+            ],
+            "evidence_origin": "Root actual Chrome receipts; this child reconciled existing evidence and performed named mode=ro DB readbacks, without repeating UI/product checks.",
+            "evidence_details": [
+              {
+                "file": "configuration-conflict-fix/chrome-after.json",
+                "level": [
+                  "Chrome"
+                ]
+              },
+              {
+                "file": "configuration-conflict-fix/browser-persistence.json",
+                "level": [
+                  "database",
+                  "HTTP_log"
+                ]
+              },
+              {
+                "file": "independent-configuration-conflict-review.md",
+                "level": [
+                  "real_function",
+                  "independent_review"
+                ]
+              }
+            ]
+          },
+          {
+            "state": "有效/缺失/损坏图标",
+            "status": "partial_browser",
+            "status_before_reconciliation": "partial_valid_and_missing_browser_corrupt_http",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-08-S4",
+            "evidence": [
+              "favicon-browser-evidence.json"
+            ],
+            "verified_scope": "有效/缺失、选择和清空实际页面；损坏格式API；上传动作被扩展本地文件许可阻挡。",
+            "remaining": "真实图标上传未完成，不能把HTTP成功算Chrome。",
+            "evidence_levels": [
+              "Chrome",
+              "HTTP"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "favicon-browser-evidence.json",
+                "level": [
+                  "Chrome",
+                  "readback_if_recorded"
+                ]
+              }
+            ]
+          },
+          {
+            "state": "无密钥润色错误",
+            "status": "function_api_only",
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-08-S5",
+            "evidence": [
+              "polish-fix-evidence.json"
+            ],
+            "verified_scope": "润色失败使用明确技术 stub，错误请求被真实接口验证。",
+            "remaining": "未查真实密钥、不触发模型；无密钥环境配置的真实失败UI未专项。",
+            "evidence_levels": [
+              "real_function",
+              "HTTP"
+            ],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": [
+              {
+                "file": "polish-fix-evidence.json",
+                "level": [
+                  "real_function_or_HTTP_as_recorded"
+                ]
+              }
+            ]
+          },
+          {
+            "state": "上传后配置保存冲突",
+            "status": "not_verified",
+            "status_before_reconciliation": "not_yet_verified",
+            "evidence_before_reconciliation": [],
+            "reconciliation_id": "COV-08-S6",
+            "evidence": [],
+            "verified_scope": "未找到此条目的可复用精确证据。",
+            "remaining": "未逐一实测的组合不算通过。",
+            "evidence_levels": [],
+            "evidence_origin": "root actual Chrome receipts and named reviewer/API evidence; independently reconciled, not rerun",
+            "evidence_details": []
+          }
+        ],
+        "batch_evidence": [
+          {
+            "checkpoint": 4,
+            "status": "partial_scope_explicit_in_evidence",
+            "evidence": "project-context-browser.json"
+          }
+        ]
+      }
+    ],
+    "reconciliation": {
+      "source_snapshot_sha256": "4658a72441ba682ba60b7834cfd9429286dd79eabd9a6111a60255f4511c8093",
+      "source_updated_at": "2026-10-03T21:52:46.572226+00:00",
+      "artifact": "coverage-reconciliation.json",
+      "scope": "113 original items retained; classifications are not a pass rate",
+      "prior_status_preserved": true,
+      "browser_provenance": "Root actual Chrome; child only existing receipt reconciliation and explicitly named read-only database checks.",
+      "last_evidence_update": {
+        "at": "2026-10-04T00:09:33.222510+00:00",
+        "thread": "system_audit",
+        "mode": "Root-authorized update of the same 113 COV items; actual UI receipts belong to root. No product test, UI, model or business request rerun.",
+        "previous_files_sha256": {
+          "coverage.json": "cf31f3d2d1a6fa468b98a9d9642a00d57047532b41ffb4a972395b6837a2646f",
+          "coverage-reconciliation.json": "f632273aeb5e1c4256384451c8fdf4895f1908825a6efda02544ff4fe35f2c2c",
+          "coverage-reconciliation.md": "9a5f4ced17d36721a4359bb0d333b626646c54ab1cfe6d5a966142577d8cf162"
+        },
+        "cutoff": "Includes named AO035–048 receipts through AO047 normal CREATE/EDIT at UTC23:59:30/23:59:51; later unlisted work is not automatically certified.",
+        "guard": {
+          "t0": 1791050301,
+          "deadlines": {
+            "closeout": 1791082701,
+            "deadline": 1791086301,
+            "floor": 1791071901
+          },
+          "phase": "armed"
+        },
+        "changed_ids": [
+          "COV-02-B1",
+          "COV-02-B2",
+          "COV-02-B3",
+          "COV-02-S2",
+          "COV-02-S6",
+          "COV-03-B0",
+          "COV-03-B1",
+          "COV-03-B3",
+          "COV-03-B4",
+          "COV-03-S3",
+          "COV-03-S5",
+          "COV-04-B0",
+          "COV-04-B1",
+          "COV-04-B2",
+          "COV-04-B3",
+          "COV-04-B4",
+          "COV-04-S1",
+          "COV-04-S2",
+          "COV-04-S3",
+          "COV-04-S4",
+          "COV-04-S5",
+          "COV-04-S6",
+          "COV-04-S8",
+          "COV-05-B3",
+          "COV-05-B5",
+          "COV-05-S3",
+          "COV-05-S5",
+          "COV-05-S10",
+          "COV-06-B1",
+          "COV-06-B2",
+          "COV-06-B4",
+          "COV-06-S3",
+          "COV-06-S9",
+          "COV-07-B2",
+          "COV-07-B4",
+          "COV-07-S8",
+          "COV-07-S9",
+          "COV-08-B0",
+          "COV-08-B1",
+          "COV-08-B4",
+          "COV-08-S3"
+        ]
+      },
+      "kind_name_correction": {
+        "at": "2026-10-04T00:21:52.843341+00:00",
+        "actual_kind_names": [
+          "ASSEMBLY",
+          "DELIVERABLE"
+        ],
+        "baseline_counts": {
+          "ASSEMBLY": 0,
+          "DELIVERABLE": 0
+        },
+        "baseline_snapshot_sha256": "ab8cdbbe79c51d59e3ff5ffbc89b90c4a3bce27dd87aacab52d693c186f216d7",
+        "scope": "Correct previous informal names to actual production kinds; original 113 IDs and all verification classifications retained; no new positive UI coverage.",
+        "previous_sha256": {
+          "coverage.json": "3e9c973f4c5056562557f8a55db6de7f4911629e08c5e50336c250642a0ea53f",
+          "coverage-reconciliation.json": "e383ab53f0526c600237688e6d2fbc82d7753fbddad2ee84806817c46422623f",
+          "coverage-reconciliation.md": "253adf1c3e9fdf2502e53164b2ec633cec95993c108b697bf60406b18b7d831e"
+        }
+      },
+      "browser_hash_provenance_correction": {
+        "at": "2026-10-04T00:55:18.493712+00:00",
+        "scope": "Only AO046 browser versus independent-function input provenance; no verification status, IDs or evidence claim upgraded.",
+        "root_browser_initial_app_sha256": "8c5c001c99299757b71bfff52f1b1f71f7fc4c78c153a129c17d2c283037a323",
+        "independent_function_sample_app_sha256": "1b8dbedaeb4b9a2aa5474e3887a6d9c457e45e2b8856759ce94b2c8039bfb489",
+        "root_final_AO047_app_sha256": "6772939e187e82921f8f739b73fc0b1be731443b7735f6677d8da9e898ea5fe1",
+        "sources": {
+          "comment-cleanup-audit/fix-evidence.json": "61d1957f95339515bbfe597ea91b45b7e99871d90aaaf0fc6c1f997fc4a317a0",
+          "independent-comment-rejection/followup-source-hashes.json": "e490479fe4d068ffcf45612f02e2251076790afde27b163941b1e69ea71c3fab"
+        },
+        "previous_files_sha256": {
+          "coverage.json": "86d8d8f01cbf25abe80ab220e2d803bc0718731122be9d814f3004c9339f1f0f",
+          "coverage-reconciliation.json": "1524ce7edf98f9a5fab59be17b908d8dc6cd2cd5627e9e2b13ea113b15f78ecf",
+          "coverage-reconciliation.md": "c8b949393e9289833c70e34a463c64e959fca043770f88907aab486527287022"
+        }
+      },
+      "final_evidence_update": {
+        "at": "2026-10-04T01:48:24.283115+00:00",
+        "thread": "system_audit",
+        "mode": "Root-authorized evidence-only update; original 113 IDs/order/source_status retained; no tests/browser/business writes rerun. Not an independent final review.",
+        "previous_files_sha256": {
+          "coverage.json": "d9569acb5268797716a451ada7e5fd4c2567baeb669b34f510602c07a0798396",
+          "coverage-reconciliation.json": "b242d2dc2b08d56efdf7d7b10776ccf557a838dce0dd6c1adf1120ecc90efd5c",
+          "coverage-reconciliation.md": "6643657bf234726d3936f717e68b166bb13cae21e4d0746f53bcf5a01f7b6c75"
+        },
+        "changed_ids": [
+          "COV-05-B3",
+          "COV-05-B5",
+          "COV-05-B6",
+          "COV-05-S3",
+          "COV-05-S5",
+          "COV-05-S6",
+          "COV-07-B1",
+          "COV-07-B2",
+          "COV-07-B3",
+          "COV-07-B4",
+          "COV-07-B5",
+          "COV-07-S4",
+          "COV-07-S5",
+          "COV-07-S6",
+          "COV-08-B4"
+        ],
+        "cutoff": "Named AO049/050/051, nonempty two-version ASSEMBLY/DELIVERABLE restore, confirmed manual stage, and AO026 final root receipts through 2026-10-04T01:36:17Z.",
+        "observed_system_candidate": "c1da4cdce8c98bd52beafed1dc0a7b70887d8653",
+        "existing_evidence_files_updated_since_prior_snapshot": {}
+      }
+    },
+    "crosscutting_evidence": [
+      {
+        "area": "SOURCE comment polish",
+        "status": "real_chrome_technical_stub",
+        "evidence": [
+          "polish-browser/normal-apply-chrome.json",
+          "polish-browser/late-edit-chrome.json",
+          "polish-browser/context-switch-chrome.json",
+          "polish-browser/failure-chrome.json",
+          "polish-browser/stale-revision-readable-chrome.json",
+          "polish-browser/current-revision-chrome.json",
+          "independent-polish-review.md"
+        ],
+        "levels": [
+          "Chrome",
+          "real_function",
+          "HTTP"
+        ],
+        "scope": "SOURCE技术资料的明确建议采用、在途改正文/切来源、失败保留、显式旧修订拒绝和新修订准确参考",
+        "limits": "无真实模型调用；不推广为SCRIPT/STRUCTURE所有页面分支已验。存储异常仅实际函数。"
+      },
+      {
+        "area": "AO040 exact material member",
+        "status": "independent_function_and_root_chrome_verified",
+        "evidence": [
+          "exact-member-fix/evidence.json",
+          "exact-member-fix/snapshot-results.json",
+          "independent-exact-member-review.md",
+          "writer-browser/judgment-late-chrome.json",
+          "writer-browser/judgment-browser-persistence-check.json"
+        ],
+        "levels": [
+          "Chrome",
+          "real_function",
+          "database"
+        ],
+        "scope": "本轮真实成员A与去重代表B共享原件/调用，实际显示与判断目标仍A",
+        "limits": "当时4判断各v1为该批切片；随后 AO041 正常追加第5条判断，当前5条各v1见最新只读回执。仅技术数据，不自动认可故事成果。"
+      },
+      {
+        "area": "AO033 judgment persistence",
+        "status": "root_chrome_with_database_readback",
+        "evidence": [
+          "writer-browser/judgment-late-chrome.json",
+          "writer-browser/judgment-recovery-chrome.json",
+          "writer-browser/judgment-list-failure-chrome.json",
+          "writer-browser/judgment-detail-failure-chrome.json",
+          "writer-browser/judgment-browser-persistence-check.json",
+          "writer-browser/list-failure-fixed-chrome.json",
+          "writer-browser/list-failure-final-persistence.json",
+          "configuration-conflict-fix/browser-persistence.json"
+        ],
+        "levels": [
+          "Chrome",
+          "database"
+        ],
+        "scope": "迟到保存保留B新输入，断响应准确原请求回读，已保存与列表/详情读取失败分开；AO041后列表失败退出永久加载并可沿既有导航重试。最新5条技术判断各v1，旧原件与判断保留，评论/采用为0。",
+        "limits": "列表和详情失败分开验收；提示准确为当前页面尚未完整更新。5条为截止本回执的技术库总量，不代表故事结论或所有页面通过。"
+      },
+      {
+        "area": "AO045/AO047 Script draft persistence",
+        "status": "normal_chrome_and_fault_function_separated",
+        "evidence": [
+          "script-storage-audit/normal-chrome.json",
+          "independent-script-storage-review.md",
+          "comment-cleanup-audit/normal-cancel-chrome.json",
+          "comment-cleanup-audit/normal-cancel-refreshed-chrome.json",
+          "comment-cleanup-audit/normal-create-edit-chrome.json",
+          "comment-cleanup-audit/normal-browser-persistence.json",
+          "independent-comment-cleanup-review.md"
+        ],
+        "levels": [
+          "Chrome",
+          "database",
+          "real_function",
+          "independent_review"
+        ],
+        "scope": "AO045正常草稿刷新保留；AO047根在新冻结app6772939e…取消后刷新无编辑器，随后正常新建/编辑同ID，原2评论完整保留，只增1评论v2及CREATE/EDIT各1。",
+        "limits": "元数据/UUID/正文存储拒绝、取消及清理失败为作者与独立实际函数，不是Chrome权限注入；事件初始原始表未独立快照，旧CREATE按初始API快照的action/body/time核对。"
+      },
+      {
+        "area": "AO046 explicit round rejection",
+        "status": "scoped_root_chrome_and_readonly_history",
+        "evidence": [
+          "round-conflict-fixed-chrome.json",
+          "round-conflict-fixed-persistence.json",
+          "independent-comment-rejection-review.md"
+        ],
+        "levels": [
+          "Chrome",
+          "HTTP_log",
+          "database",
+          "real_function",
+          "independent_review"
+        ],
+        "scope": "旧轮提交同UUID/完整payload两次真实409，无新增评论/轮次/反馈；页面区分明确拒绝与未知结果。",
+        "limits": "该次 Chrome 加载 app SHA 8c5c001c…（作者记录的 root_loaded_initial_sha256），包含尚未冻结的 AO047 初稿，只支持 AO046 明确拒绝路径，不作为 AO047 或整个最终 app 验收。异常本机存储仍是函数反例。"
+      },
+      {
+        "area": "AO048 configuration conflict",
+        "status": "root_chrome_and_readonly_history",
+        "evidence": [
+          "configuration-conflict-fix/chrome-after.json",
+          "configuration-conflict-fix/browser-persistence.json",
+          "independent-configuration-conflict-review.md"
+        ],
+        "levels": [
+          "Chrome",
+          "HTTP_log",
+          "database",
+          "real_function",
+          "independent_review"
+        ],
+        "scope": "PROJECT两窗口准确版本冲突；v5→6→7只追加两事件、两次B409零写，原6配置事件保留、SYSTEMv1、5判断v1不变。",
+        "limits": "PROJECT技术实例，不扩大为SYSTEM双窗口、上传后冲突或正式配置发布。"
+      },
+      {
+        "area": "AO049–051 accurate history and nonempty ASSEMBLY/DELIVERABLE",
+        "status": "root_chrome_and_independent_restore",
+        "evidence": [
+          "assembly-v1-reference-chrome.jpg",
+          "assembly-v1-shot-chrome.json",
+          "assembly-v2-chrome.json",
+          "output-v1-chrome.json",
+          "output-v1-downloaded-files.json",
+          "output-v2-play-download-chrome.json",
+          "assembly-output-browser/append-v2-receipt.json",
+          "assembly-output-browser/recovery-evidence.json",
+          "independent-assembly-recovery-review.json",
+          "output-reference-fixed-v1-chrome.json",
+          "output-reference-fixed-popup-chrome.json",
+          "output-reference-fixed-v2-chrome.json",
+          "record-version-full-history-chrome.json",
+          "independent-reference-names-review.md",
+          "independent-record-version-display-review.md"
+        ],
+        "levels": [
+          "Chrome",
+          "downloaded_file",
+          "database",
+          "bundle_restore",
+          "independent_review"
+        ],
+        "scope": "两版技术组合/输出、旧依赖名称和既有版本控件；12表、7受管文件（manifest另含4核心JSON）恢复，3采用v1保留。",
+        "limits": "基准两类各0；不含历史镜头/原生编辑器/作品认可。作者重建与导出恢复、独审只读复核既有副本、根Chrome各自归属。"
+      },
+      {
+        "area": "AO026 single revisable change decision",
+        "status": "user_rule_implemented_root_chrome_independent_review",
+        "evidence": [
+          "change-decision-contract/chrome-first-create-conflict.json",
+          "change-decision-contract/chrome-revision-conflict.json",
+          "change-decision-contract/chrome-identical-payload-conflict-final.json",
+          "change-decision-contract/chrome-history-final.json",
+          "change-decision-contract/chrome-unified-response-recovery-final.json",
+          "change-decision-contract/chrome-legacy-originals-after-unified.json",
+          "change-decision-contract/chrome-final-code-receipt.json",
+          "change-decision-contract/chrome-final-history-receipt.json",
+          "independent-change-single-review.md",
+          "independent-change-single-review.json"
+        ],
+        "levels": [
+          "Chrome",
+          "HTTP_log",
+          "database",
+          "real_function",
+          "independent_review"
+        ],
+        "scope": "用户明确选择单一可修订结论、旧窗口冲突和历史保留。技术实例真实首次两窗冲突、同ID keep→rework→keep→rework，已放行可改回返工；相同载荷的旧窗口仍409且再点击不降为未知。显式引用全部旧头统一相反记录，统一结论再修订v2丢响应后准确回读；原两头可读，既有版本控件可看v4返工与v1保留。10次POST为6次成功、4次拒绝，只增两个判断对象/6修订；原4判断与2采用保持，评论/事件0。",
+        "limits": "replace成功表单及全部scope/目标组合未逐一Chrome；并发连接、导入原子回滚、49基准改名结论/67下游兼容和非空评论恢复是独立后端证据。技术判断不等于故事认可；正式发布未执行。旧代码回退不执行新单一结论规则，不能以数据仍在承诺语义不变。"
+      },
+      {
+        "area": "PROJECT confirmed manual stage",
+        "status": "root_chrome_and_readonly_history",
+        "evidence": [
+          "project-stage-chrome.json",
+          "project-stage-history-check.json",
+          "independent-stage-release-review.md"
+        ],
+        "levels": [
+          "Chrome",
+          "database",
+          "independent_review"
+        ],
+        "scope": "预览手动素材准备v15→16与两背景形成三字段发布候选；旧配置事件保留。",
+        "limits": "正式v14→15候选尚待确认和发布，阶段是用户手动选择，不是作品自动认可。"
+      }
+    ]
+  },
+  "pack_captured_at": "2026-10-04T01:56:43.646399+00:00",
+  "authority_note": "原文件内部更新时间和分类标签照留，SHA识别本次复制内容；覆盖行并未因打包重标。AO026与AO049–051、阶段、组合输出及旧采纳证据边界见status-addenda.json。属于报告冻结时点；其后准确交付与停止回执单独保留，不回写受管快照。"
+}
