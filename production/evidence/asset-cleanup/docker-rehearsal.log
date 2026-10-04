@@ -72,7 +72,7 @@ Dockerfile:1
 --------------------
    1 | >>> FROM sha256:2112d9a46b4db54eb1657fc8403b717ed2d7be3d26f6de77767c39345e6ea4e8
    2 |     COPY review_desk /app/review_desk
-   3 |     
+   3 |
 --------------------
 ERROR: failed to build: failed to solve: sha256:2112d9a46b4db54eb1657fc8403b717ed2d7be3d26f6de77767c39345e6ea4e8: failed to resolve source metadata for docker.io/library/sha256:2112d9a46b4db54eb1657fc8403b717ed2d7be3d26f6de77767c39345e6ea4e8: pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed
 
@@ -415,4 +415,3 @@ be6fb1300af045dba2804681c85eafd5982feb1418a0b19b72062c7308e31ad7
 
 {"operation": ["docker", "inspect", "--type"], "returncode": 0, "seconds": 0.02}
 {"id":"ab0c87b08f974bc5a049cb204dda1aecd625a19cb9a4f5af103be4daff8f7d8c","name":"/snakeslayingrecord-nginx-1","image":"sha256:009d73a160564cce886ee8a8538c4d18f0ea9b961f03db9df410e45b0fdf29b2","state":"running","started":"2026-10-04T05:48:09.396927167Z","health":null,"mounts":[],"ports":{"3000/tcp":[{"HostIp":"127.0.0.1","HostPort":"3000"},{"HostIp":"127.0.0.1","HostPort":"64401"}]},"restart":{"MaximumRetryCount":0,"Name":"unless-stopped"}}
-
