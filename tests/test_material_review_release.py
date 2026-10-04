@@ -52,8 +52,28 @@ class ReleaseTest(unittest.TestCase):
     def test_release_names_keep_task_identity_and_old_default(self):
         self.assertEqual(r.release_name(r.TASK,'a'*40,'b'*40), 'materials-20261004-0004-'+'a'*12+'-'+'b'*12)
         self.assertEqual(r.release_name('task-20261004-0005','a'*40,'b'*40), 'asset-cleanup-20261004-0005-'+'a'*12+'-'+'b'*12)
+        self.assertEqual(r.release_name('task-20261004-0008','a'*40,'b'*40), 'ui-unification-20261004-0008-'+'a'*12+'-'+'b'*12)
         with self.assertRaisesRegex(ValueError,'unsupported release task'):
             r.release_name('../foreign','a'*40,'b'*40)
+
+    def test_ui_release_rejects_story_already_integrated_before_any_service_check(self):
+        story, main = self.root / 'story', self.root / 'story-main'
+        candidate, target = 'a' * 40, 'd' * 40
+        manifest = {'task': 'task-20261004-0008', 'story_worktree': story,
+                    'story_main': main, 'story_candidate': candidate, 'story_target': target}
+        def git(repo, *args):
+            if args == ('rev-parse', 'HEAD'):
+                return candidate  # The story target has already advanced.
+            if args == ('branch', '--show-current'):
+                return 'main'
+            self.fail('unexpected Git read after the story target guard: ' + repr(args))
+        with patch.object(r.base, 'primary', return_value=main.resolve()), \
+             patch.object(r.base, 'git', side_effect=git), \
+             patch.object(r.base, 'run') as run, patch.object(r, 'inspect') as inspect:
+            with self.assertRaisesRegex(ValueError, 'target changed or story already completed'):
+                r.checks(self.root, manifest)
+            run.assert_not_called()
+            inspect.assert_not_called()
 
     def test_changed_task_in_bundle_stops_before_hash_or_docker(self):
         r.save(self.root/'manifest.json',{'format':'material-review-release-v1','task':'task-20261004-0005','push':False,'story_candidate':'a'*40,'system_candidate':'b'*40,'release_name':'materials-20261004-0004-'+'a'*12+'-'+'b'*12})
@@ -102,7 +122,8 @@ class ReleaseTest(unittest.TestCase):
              patch.object(r.base, 'git_file', side_effect=lambda repo, commit, name: (repo / name).read_bytes()), \
              patch.object(r, 'git', return_value='100644 blob fixture\treview_desk/z.py'), \
              contextlib.redirect_stdout(io.StringIO()):
-            for task in (r.TASK, 'task-20261004-0005', 'entity-acceptance-20261004','task-20261004-0007'):
+            for task in (r.TASK, 'task-20261004-0005', 'entity-acceptance-20261004',
+                         'task-20261004-0007', 'task-20261004-0008'):
                 args = argparse.Namespace(story_worktree=story, system_worktree=system,
                     story_candidate='a' * 40, system_candidate='b' * 40,
                     story_target='d' * 40, system_target='e' * 40,

@@ -1,0 +1,1591 @@
+{
+  "schema": "system-ui-unification-requirements-review-v1",
+  "task_id": "task-20261004-0008",
+  "reviewer": "/root/requirements_audit",
+  "reviewed_at_utc": "2026-10-04T14:46:16.844674+00:00",
+  "status": "independent_review_complete_formal_delivery_pending",
+  "basis": "planning/system-ui-unification-task.md",
+  "original_checks": 36,
+  "ultra_checks": 4,
+  "candidate": {
+    "system_worktree": ".runtime/ui-unification/system",
+    "system_base_head": "9a1e68507b0be4219c119efb59076f59fd4bca24",
+    "system_candidate_commit": "dab027e9725d36828d3ee77098db355eb94d5033",
+    "working_tree_uncommitted": false,
+    "sha256": {
+      "review_desk/store.py": "092eb707264a130996967f0064a4f98496226d0868c6f0859c647788bf6876cb",
+      "review_desk/configuration.py": "9bb89d7592acd3b38440a17bda53e4b2f97e3905e4a7f49e592e493eacf1b179",
+      "review_desk/bundle.py": "95fd1d7b0e368ff807fac85a92f4f132c5b6b996e9e3bc224ef3c16784f13f95",
+      "review_desk/server.py": "dfec7332103b0685aaa6d773a7f0dc83c0c2075ac4af942795c2429212fc3d9d",
+      "review_desk/generation.py": "331a960ed0d30a784393e8493c768ce115cc27bbd76ebf9f61128a62f0920bce",
+      "review_desk/screenplay_summaries.py": "386b31ffa504fa47ea4039e7cced4b9bede87306f6e90f2fc506335b682ddda7",
+      "review_desk/review_text.py": "63858dda62397f2568ff9eeefb14e8e2d886c0a304bc1d64c2c1688f0f01da8f",
+      "review_desk/screenplay.py": "3239df072744217043b8910a67d64604b79a410e1630325aa5e26dc5f64ed32e",
+      "review_desk/production_changes.py": "7894ba6d1297796a96909b6ff77f701b4391e733cbd3d67ddc3a028ff938dce1",
+      "review_desk/framework.py": "8d8d9212cde9f8fbbead9ceb861682e56aeb495efcb1509ee629ce3c66176199",
+      "review_desk/material_plans.py": "64a314ca19bdec73b8c9c86a070e4547e8a7572ddcec1d33f105674d95a9a5af",
+      "review_desk/favicon.py": "050151dea87a19726c1c8751876b7016f64489a1529960748f13da83685bcb65",
+      "review_desk/__init__.py": "a3b6c7eaa0d3f9aaa834a16ab2559e04bf2fba56a73d0e0089565527ec02d754",
+      "review_desk/input_contracts.py": "a2a1928837c59637e5eddbc1b94fb4dd79b0ab9d569b72b2dbbc94caa7054c74",
+      "review_desk/entity_review.py": "f1eccb23ad5e099650a4b038471ca7b1d317998e50aaaa3ea5626c34e09d6ebb",
+      "review_desk/approach.py": "bf577012cdd2f5c1f839ac6149dad7e1ddf10d1ccb1ac5d29ef00beff2febbaa",
+      "review_desk/production_states.py": "93bdd1f96e62296f6fce574b021cb1f8daa355b08c6bb0080c6f715be6c6a9c3",
+      "review_desk/material_versions.py": "0ac1199623dc53792306e09d409152657a05aa0e94fadd12dab5c6ca7547412b",
+      "review_desk/production_media.py": "d41d579e1750a745424d2da5d87ea2c8ee82d65ed008987445db0555fe84cb7c",
+      "review_desk/entity_relations.py": "35ffcdd66989d7ce3a85f369a480f35c72dcc5737ba7c9540b80bf51e67561b5",
+      "review_desk/structure.py": "3741f0ed949ee49327eecebd6a4709cddcf0d1e83afc37e4f449a006d70e2921",
+      "review_desk/material_review.py": "feffceb6d46b23241cc50b436fea86b976f81a7be8f6b6fdc9f2e007df4dfff9",
+      "review_desk/ui_projection.py": "ae98af6def5a1549061e545a3c5213a88cca0d950c8d4508faef47e98bfbca18",
+      "review_desk/polish.py": "3cb2c403eb78f074afb22d6583bc93cf9c5bb37b778018bd95867bed541f527a",
+      "review_desk/__main__.py": "013ad97e3c555c59c612df2b40c25f990a6c218a40324cbb8a262cbe6e794fc2",
+      "review_desk/production_breakdown.py": "b179f6df75eafe4aa03456723aed34520f8ad939582d39d3a20edfb9dd3289b1",
+      "review_desk/production.py": "31c87e2716c9fb3a11309e95475c9460531937b85dd45888a8abf23b9d7b82c1",
+      "review_desk/static/entity-review.js": "3f1e4d4f432db269cdea1471152e42c7cf71e1a0390e1ef09fe69dbd441b4e74",
+      "review_desk/static/unified-cards.js": "87c9c96cc3f415b24ee5febee03146910ac00e39d665315a04bec8b17a70653d",
+      "review_desk/static/screenplay.js": "fbbf21b5a21ad4b14c8b52e4d1813fb57ac68fc6ace16bd28d22c1630e49989a",
+      "review_desk/static/approach.js": "67cc3f989828eca1ea853310b39a3c7b1e20bd5cfde0e62652a234efda7207c9",
+      "review_desk/static/approach.css": "97c02f49c13e13a137deb35ac827115adb1170f73f71ac6988ceda61e6ea9f5b",
+      "review_desk/static/index.html": "b5c95320c7a8a2d770f6ff922d41e17039493e4dba500efce127a6b41e845581",
+      "review_desk/static/entity-relations.js": "92455e0329ac761d59fc63a7d74c87b22521c92bd0194bf59f60f96667945e1b",
+      "review_desk/static/unified-review.css": "edb8be5b7f81d279e882a12cfd19061efecdc4d449f088b291a81557e68c1b12",
+      "review_desk/static/review-ui.js": "f827e4fb5d995633e8f52d5e25420234c46d6735a6364518a827dfb21cd088d1",
+      "review_desk/static/production-breakdown.js": "958522286179e66112cefe5393fec710f7450a10e7c88756eecaa471453dcae8",
+      "review_desk/static/screenplay.css": "e8ec9559c95ee47d0348d32b7ae19744d2d4b21315c573b5436bbd392768a562",
+      "review_desk/static/style.css": "eb2fb8a271414bd8cd87fb98bf13d4baeabf0cebf17d93425fb60365dd16b711",
+      "review_desk/static/material-review.js": "effacfc31a97286a2e7e942b0045007407c6b7319566c61ce726eb24fc2f6d2c",
+      "review_desk/static/production.js": "dc03f0a6d8e9428b9de67f956aecd9d1283240cfc2199b86adc86ce31a475c8a",
+      "review_desk/static/structure.css": "bda84f7d8dd587e4499714daf95b25a672331f4132fc8375608da383a5dd2bcf",
+      "review_desk/static/workspace.css": "5d440c8cff4ea771fea569ef8a2889753b22274017e77a6951aec3a5ee8bf627",
+      "review_desk/static/structure.js": "7ba586a012adbdbca76e7e31136c28b8a74a201a82a3bd90fcef9e30cff60424",
+      "review_desk/static/production.css": "516ca67196a15d56948ecc1a1c95922ebc2ba5b5b634020158b3412a02c687cc",
+      "review_desk/static/app.js": "03d0fbd93b2629546f82b4b01f30090ffbcd21094d91bf97ff59ed3580cf5278",
+      "review_desk/static/favicon.svg": "b58aa2423929b1970c03192b4b767f40724602096ba7eecdca496db74a4c2b99",
+      "review_desk/static/review-ui.css": "b1d049634db9c838edc8a62c89cea9a04e6407361036bfbf76ee83e0cf8afa20",
+      "review_desk/static/polish.css": "bb32e29e19c3b4e34125fc1f7deb22397df9b96d2c7d2376acae96bf83caae76",
+      "tests/ui_unification_requirements.test.cjs": "442aee4717c9b3c40e3cba45a4190b0e2a9506ce2f6e6fd3ea4eb89df8251bb1",
+      "tests/test_ui_projection_requirements.py": "94aa5e1513f5f4afe40026aa5128629e8751d1b70db844e72986d136cf2375b0"
+    }
+  },
+  "boundaries": {
+    "production_code_modified_by_reviewer": false,
+    "browser_operated_by_reviewer": false,
+    "formal_resources_written_by_reviewer": false,
+    "earlier_task_acceptance_reused": false,
+    "ui_or_user_acceptance_claimed": false,
+    "technical_fixture_written_by_reviewer": true,
+    "technical_fixture_write_scope": "Only ui-fixture-entity-acceptance creation and actual description revision after root browser acceptance; no baseline/formal DB or export writes."
+  },
+  "runs": [
+    {
+      "command": "node --test tests/ui_unification_requirements.test.cjs",
+      "cwd": "system repository",
+      "test_file": "tests/ui_unification_requirements.test.cjs",
+      "tests": 18,
+      "passed": 18,
+      "failed": 0,
+      "exit_code": 0,
+      "reported_duration_ms": 85.584792
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=. python3 -m unittest discover -s tests -p test_ui_projection_requirements.py -v",
+      "cwd": "system repository",
+      "test_file": "tests/test_ui_projection_requirements.py",
+      "tests": 11,
+      "passed": 11,
+      "failed": 0,
+      "exit_code": 0,
+      "reported_duration_seconds": 1.508
+    }
+  ],
+  "findings": [
+    {
+      "id": "R1",
+      "requirements": [
+        "5.3",
+        "5.8"
+      ],
+      "problem": "展开未关联素材分组会覆盖当前状态素材的右侧详情，并留下不一致的左侧选中态。",
+      "resolution": "先收集左侧各分组，统一解析选择并只渲染一次右侧；展开分组不再替用户改选。",
+      "tests": [
+        "5.3/5.8 expanding a second left group retains one selected material and paints the right once"
+      ],
+      "status": "fixed_and_automatically_reverified",
+      "browser_status": "broader_feature_evidence_reviewed_specific_regression_automatic",
+      "discovered_by": "/root/requirements_audit",
+      "fixed_by": "/root",
+      "automatically_reverified_by": "/root/requirements_audit",
+      "browser_evidence": "production/ui-unification/evidence/browser-review.md"
+    },
+    {
+      "id": "R2",
+      "requirements": [
+        "5.4",
+        "5.8"
+      ],
+      "problem": "实体路径的候选投影缺少 components，原件与预览组成控件不出现。",
+      "resolution": "实体素材候选保留全部文件组成，统一渲染器可使用明确选择的组成。",
+      "tests": [
+        "5.4 entity material exposes all files and renders the explicitly chosen component"
+      ],
+      "status": "fixed_and_automatically_reverified",
+      "browser_status": "root_representative_browser_record_and_screenshot_reviewed",
+      "discovered_by": "/root/requirements_audit",
+      "fixed_by": "/root",
+      "automatically_reverified_by": "/root/requirements_audit",
+      "browser_evidence": "production/ui-unification/evidence/browser-review.md"
+    },
+    {
+      "id": "R3",
+      "requirements": [
+        "5.6",
+        "C.3"
+      ],
+      "problem": "旧 CALL 链接被当成 ASSET 渲染，读取不存在的 components.find 而失败。",
+      "resolution": "CALL、JUDGMENT 保持准确通用阅读路径，不强制进入素材媒体阅读器。",
+      "tests": [
+        "5.6/C.3 historical CALL keeps its generic exact reader rather than becoming an asset",
+        "5.6/C.3 historical JUDGMENT keeps its generic exact reader rather than becoming an asset"
+      ],
+      "status": "fixed_and_automatically_reverified",
+      "browser_status": "specific_edge_covered_by_independent_automatic_test_only",
+      "discovered_by": "/root/requirements_audit",
+      "fixed_by": "/root",
+      "automatically_reverified_by": "/root/requirements_audit",
+      "browser_evidence": null
+    },
+    {
+      "id": "R4",
+      "requirements": [
+        "10.2",
+        "10.4"
+      ],
+      "problem": "镜头正文始终展示当前方案，已有历史候选的真实调用与输入未随选择展示。",
+      "resolution": "正文按版本和候选读取真实调用；缺调用如实留缺口；当前空版本继续显示方案；右侧卡片使用同一准确版本和候选。",
+      "tests": [
+        "10.2/10.4 selected generated video renders actual prompt and exact references without changing text",
+        "10.4 candidate without a real call reports the gap and never fills it from the plan",
+        "5.7/10.4 empty current video version stays empty until the user selects the historical version",
+        "10.1/10.4 row material opens the exact video version and candidate chosen beside its prompt"
+      ],
+      "status": "fixed_and_automatically_reverified",
+      "browser_status": "root_representative_browser_record_and_screenshot_reviewed",
+      "discovered_by": "/root/requirements_audit",
+      "fixed_by": "/root",
+      "automatically_reverified_by": "/root/requirements_audit",
+      "browser_evidence": "production/ui-unification/evidence/browser-review.md"
+    },
+    {
+      "id": "R5",
+      "requirements": [
+        "6.5"
+      ],
+      "problem": "场内出现状态被推成场级共用素材，再与镜头的明确适用素材重复展示。",
+      "resolution": "出现记录不再自动扩成场级共用素材；使用准确挂载和适用关系投影。STORY 与 INPUT_LOCK 的全剧素材合组由主代理实现；全剧／集／场集中展示及镜筛选已有主代理实页记录。",
+      "tests": [
+        "test_scene_occurrence_does_not_duplicate_explicit_shot_material_in_shared_area"
+      ],
+      "status": "fixed_and_automatically_reverified",
+      "browser_status": "broader_feature_evidence_reviewed_specific_regression_automatic",
+      "discovered_by": "/root/requirements_audit",
+      "fixed_by": "/root",
+      "automatically_reverified_by": "/root/requirements_audit",
+      "browser_evidence": "production/ui-unification/evidence/browser-review.md"
+    },
+    {
+      "id": "R6",
+      "requirements": [
+        "8.2",
+        "C.2"
+      ],
+      "problem": "自动打开素材时未选中左侧卡片；第一次修复仍遗漏历史候选链接与持续需求 ID 不同的情况。",
+      "resolution": "默认打开、准确需求链接与历史候选所属需求均同步左侧选中态；保留准确候选读取。",
+      "tests": [
+        "8.2 automatic first material and direct demand links set the visible list selection",
+        "8.2/C.2 historical candidate link selects its owning material in the list"
+      ],
+      "status": "fixed_and_automatically_reverified",
+      "browser_status": "root_representative_browser_record_and_screenshot_reviewed",
+      "discovered_by": "/root/requirements_audit",
+      "fixed_by": "/root",
+      "automatically_reverified_by": "/root/requirements_audit",
+      "browser_evidence": "production/ui-unification/evidence/browser-review.md"
+    },
+    {
+      "id": "R7",
+      "requirements": [
+        "6.5"
+      ],
+      "problem": "契约允许 ENTITY/STATE 作为 applicability subject，但这些明确适用关系未提供对应素材。",
+      "resolution": "将明确适用实体或完整状态的需求加入对应位置；不制造实际采用。",
+      "tests": [
+        "test_explicit_entity_and_state_applicability_expose_material_without_inventing_adoption"
+      ],
+      "status": "fixed_and_automatically_reverified",
+      "browser_status": "specific_edge_covered_by_independent_automatic_test_only",
+      "discovered_by": "/root/requirements_audit",
+      "fixed_by": "/root",
+      "automatically_reverified_by": "/root/requirements_audit",
+      "browser_evidence": null
+    },
+    {
+      "id": "R8",
+      "requirements": [
+        "5.6"
+      ],
+      "problem": "仅通过 subjects 关联单一实体的合法历史原件，列表可计入实体，大卡却显示无实体归属。",
+      "resolution": "大卡恢复合法 subject 指向的准确实体上下文。",
+      "tests": [
+        "test_subject_only_legacy_asset_card_restores_its_known_entity",
+        "test_subject_only_legacy_asset_counts_once_for_its_entity"
+      ],
+      "status": "fixed_and_automatically_reverified",
+      "browser_status": "specific_edge_covered_by_independent_automatic_test_only",
+      "discovered_by": "/root/requirements_audit",
+      "fixed_by": "/root",
+      "automatically_reverified_by": "/root/requirements_audit",
+      "browser_evidence": null
+    },
+    {
+      "id": "R9",
+      "requirements": [
+        "7.3",
+        "C.2"
+      ],
+      "problem": "主代理在真实浏览器发现：初次实体请求尚未返回时选择零结果采纳筛选，迟到响应仍把已被过滤的实体大卡画回。",
+      "resolution": "实体列表记录当前可见实体；零结果清选择并使旧读取失效；实体响应提交前复核可见归属；筛选恢复有结果时重新打开首项。独立确定性异步测试覆盖零结果、恢复筛选和改选另一实体。",
+      "tests": [
+        "7.3/C.2 pending entity response cannot repopulate a filter with zero matches",
+        "7.3/C.2 clearing an empty filter opens a fresh first entity and ignores the older pending response",
+        "7.3/C.2 a nonempty filter excludes a pending owner before its response can replace the new owner"
+      ],
+      "discovered_by": "/root",
+      "discovery_evidence": "Root actual-browser finding; final browser record reviewed independently together with deterministic pending-response tests. Reviewer did not operate browser.",
+      "fixed_by": "/root",
+      "automatically_reverified_by": "/root/requirements_audit",
+      "status": "fixed_and_automatically_reverified",
+      "browser_status": "root_discovery_and_lifecycle_record_reviewed_race_deterministically_retested",
+      "browser_evidence": "production/ui-unification/evidence/browser-review.md"
+    },
+    {
+      "id": "R10",
+      "requirements": [
+        "7.3",
+        "C.2"
+      ],
+      "problem": "新增实体可见性守卫把零结果筛选遗留到制作拆解页；在大卡采纳或撤销后的刷新路径，准确实体响应会被旧空集合拦下。",
+      "resolution": "制作拆解与素材列表入口清除实体列表可见集合和刷新回调；弹窗根存在时不施加实体列表守卫。独立回归先复现失败，再在主代理修复后通过。",
+      "tests": [
+        "7.3/C.2 a previous empty entity filter does not suppress card refreshes on the breakdown page"
+      ],
+      "discovered_by": "/root/requirements_audit",
+      "discovery_evidence": "production-code inspection and failing executable asynchronous regression; not a browser observation",
+      "fixed_by": "/root",
+      "automatically_reverified_by": "/root/requirements_audit",
+      "status": "fixed_and_automatically_reverified",
+      "browser_status": "specific_edge_covered_by_independent_automatic_test_only",
+      "browser_evidence": null
+    },
+    {
+      "id": "R11",
+      "requirements": [
+        "5.6",
+        "8.2",
+        "C.2"
+      ],
+      "problem": "准确素材或历史候选所属需求不在首 40 项时，右侧准确内容可读取，但左侧没有选中项；此前 total=1 的候选归属测试未覆盖分页。",
+      "resolution": "初始准确链接向列表接口传 focus；后端解析候选所属需求并定位筛选集合中的页；前端使用响应 offset。目标在筛选外时单列当前链接卡，不计入筛选数量，零结果仍读取准确链接。",
+      "tests": [
+        "8.2/C.2 exact historical links beyond the first 40 materials focus the owning page and keep the old candidate",
+        "8.2 focused material page uses the server offset for later ordinary pagination",
+        "5.6/8.2/C.2 a linked old candidate outside filters remains selected without changing filtered counts",
+        "test_focused_material_and_old_candidate_locate_item_41_without_changing_exact_card",
+        "test_filter_excluded_focus_does_not_inflate_zero_or_nonzero_results",
+        "test_http_material_focus_and_empty_filter_keep_the_exact_historical_card"
+      ],
+      "discovered_by": "root raised the boundary; requirements reviewer independently reproduced it after compatibility reviewer requested inspection",
+      "discovery_evidence": "Before the fix, executed actual loadProductionMaterials with 41 material entries: only offset 0 requested, exact right-hand revision retained, 40 left cards and no selected card.",
+      "fixed_by": "/root",
+      "automatically_reverified_by": "/root/requirements_audit",
+      "status": "fixed_and_automatically_reverified",
+      "browser_status": "root_representative_browser_record_and_screenshot_reviewed",
+      "browser_evidence": "production/ui-unification/evidence/browser-review.md"
+    },
+    {
+      "id": "R12",
+      "requirements": [
+        "5.6"
+      ],
+      "problem": "合法生成原件仅经其真实 CALL.generation_requirement 关联需求时，准确原件大卡丢失已知实体与状态；列表和版本投影已有正确需求归属。",
+      "resolution": "大卡在原件显式候选需求之后，使用真实调用记录上的准确 generation_requirement 引用恢复 scope；不从当前方案补历史。",
+      "tests": [
+        "test_exact_generated_asset_recovers_owner_from_its_actual_call_requirement"
+      ],
+      "discovered_by": "/root/requirements_audit",
+      "discovery_evidence": "Disposable store built through existing generation/import functions; exact historical asset had valid actual call and material-plan membership but entity_review was None. Explicit regression failed before root fix and passed afterward.",
+      "fixed_by": "/root",
+      "automatically_reverified_by": "/root/requirements_audit",
+      "status": "fixed_and_automatically_reverified",
+      "browser_status": "specific_edge_covered_by_independent_automatic_test_only",
+      "browser_evidence": null
+    },
+    {
+      "id": "R13",
+      "requirements": [
+        "6.4",
+        "C.4"
+      ],
+      "problem": "主代理真实窄屏发现：旧.breakdown-body的65vh高度限制与新overflow:visible叠加，页脚覆盖场内后续镜头。",
+      "resolution": "主代理移除高度上限并修正移动场标题位置；真实390页面正文高度22858，页脚位于整场内容之后，14镜保留且无横溢。",
+      "tests": [],
+      "discovered_by": "/root",
+      "fixed_by": "/root",
+      "status": "fixed_and_browser_evidence_independently_reviewed",
+      "browser_status": "root_browser_record_and_updated_screenshot_reviewed",
+      "browser_evidence": "production/ui-unification/evidence/browser-review.md",
+      "screenshots_reviewed": [
+        "production/ui-unification/evidence/screenshots/narrow-breakdown.jpg"
+      ],
+      "reviewed_by": "/root/requirements_audit",
+      "automatic_test_claimed": false
+    },
+    {
+      "id": "R14",
+      "requirements": [
+        "2.2",
+        "C.4"
+      ],
+      "problem": "独立查看窄屏结构截图发现目录遮住版本条，当前第十稿也未横向揭示；主代理现场确认旧导航z-index叠层。",
+      "resolution": "导航代理将目录z-index设为auto，并只调整版本条scrollLeft揭示当前版本；两项独立于页面的滚动断言随全套通过，root真实390复验版本条top122、第十稿可见可点，审查者查看更新截图。",
+      "tests": [
+        "structure_scroll.test.cjs: current version is revealed horizontally without moving the reader or its page",
+        "structure_scroll.test.cjs: a hidden or empty version strip does not change any reading position"
+      ],
+      "discovered_by": "/root/requirements_audit",
+      "confirmed_in_browser_by": "/root",
+      "fixed_by": "/root/navigation",
+      "status": "fixed_and_browser_evidence_independently_reviewed",
+      "browser_status": "root_browser_record_and_updated_screenshot_reviewed",
+      "browser_evidence": "production/ui-unification/evidence/browser-review.md",
+      "screenshots_reviewed": [
+        "production/ui-unification/evidence/screenshots/narrow-structure.jpg"
+      ],
+      "reviewed_by": "/root/requirements_audit",
+      "test_author": "/root/navigation"
+    },
+    {
+      "id": "R15",
+      "requirements": [
+        "1.2",
+        "C.4"
+      ],
+      "problem": "独立复审发现窄屏采编仅证明无横溢，实际仍由外层滚动且标题离开视口，不能支持没有窄屏例外的1.2。",
+      "resolution": "主代理只在max-width700限制采编阅读区高度、sticky top122及正文内部滚动，并移除该窄屏shell底部padding；实际外层555、标题top122.59不变而正文96→940。审查者核对限定样式与更新截图；桌面仍为外层0、正文664。",
+      "tests": [],
+      "discovered_by": "/root/requirements_audit",
+      "confirmed_in_browser_by": "/root",
+      "fixed_by": "/root",
+      "status": "fixed_and_browser_evidence_independently_reviewed",
+      "browser_status": "root_browser_record_and_updated_screenshot_reviewed",
+      "browser_evidence": "production/ui-unification/evidence/browser-review.md",
+      "screenshots_reviewed": [
+        "production/ui-unification/evidence/screenshots/narrow-source.jpg"
+      ],
+      "reviewed_by": "/root/requirements_audit",
+      "automatic_test_claimed": false
+    }
+  ],
+  "additional_coverage": [
+    {
+      "requirements": [
+        "5.2"
+      ],
+      "test": "test_candidates_and_new_plan_versions_do_not_inflate_entity_material_counts"
+    },
+    {
+      "requirements": [
+        "8.1"
+      ],
+      "test": "test_combined_facets_count_materials_and_retain_categories_for_zero_results"
+    },
+    {
+      "requirements": [
+        "C.3"
+      ],
+      "test": "test_historical_scene_keeps_its_old_shot_after_current_shot_moves"
+    },
+    {
+      "requirements": [
+        "5.6",
+        "7.3"
+      ],
+      "test": "5.6/7.3 exact entity material link and clearing a still-visible filter retain the requested old candidate"
+    }
+  ],
+  "checklist": [
+    {
+      "id": "1.1",
+      "status": "pass",
+      "automatic_findings": [],
+      "additional_tests": [],
+      "overall_pass": true,
+      "title": "采编作为视觉基准",
+      "criterion": "记录采编左侧大标题、多级菜单、正文大标题与正文的实际页面；其他页面按同一标题层次、字体、配色、留白和选中态对照，保留用户满意的结构。",
+      "assessment": "采编截图记录左标题、多级目录、正文标题与纸色正文；结构、剧本和制作页采用相同深色标题、金色选中和浅色阅读面。",
+      "browser_record": "production/ui-unification/evidence/browser-review.md",
+      "screenshots_reviewed": [
+        "production/ui-unification/evidence/screenshots/desktop-source.jpg",
+        "production/ui-unification/evidence/screenshots/desktop-structure.jpg",
+        "production/ui-unification/evidence/screenshots/desktop-screenplay.jpg",
+        "production/ui-unification/evidence/screenshots/desktop-breakdown.jpg"
+      ],
+      "code_refs": [
+        "structure.css",
+        "screenplay.css",
+        "unified-review.css"
+      ],
+      "test_refs": [
+        "source_navigation.test.cjs",
+        "structure_navigation.test.cjs"
+      ]
+    },
+    {
+      "id": "1.2",
+      "status": "pass",
+      "automatic_findings": [],
+      "additional_tests": [],
+      "overall_pass": true,
+      "title": "大标题到顶后的阅读滚动",
+      "criterion": "从页首向下阅读至正文大标题到顶，继续滚动正文区；外层页面不继续上移，目录可按原规则独立滚动，切换内容不意外拉回页首。",
+      "assessment": "桌面采编正文滚动664而外层0，结构外层129后正文7423→7963。窄屏修后外层555及标题top122.59保持，正文内部96→940；实际查看更新截图并核对仅max-width700的固定阅读区与内部overflow样式。",
+      "browser_record": "production/ui-unification/evidence/browser-review.md",
+      "screenshots_reviewed": [
+        "production/ui-unification/evidence/screenshots/narrow-source.jpg",
+        "production/ui-unification/evidence/screenshots/desktop-source.jpg",
+        "production/ui-unification/evidence/screenshots/desktop-structure.jpg"
+      ],
+      "code_refs": [
+        "workspace.css",
+        "structure.css",
+        "screenplay.css",
+        "unified-review.css narrow source reader rules"
+      ],
+      "test_refs": [
+        "source_navigation.test.cjs",
+        "structure_scroll.test.cjs"
+      ],
+      "review_findings": [
+        "R15"
+      ]
+    },
+    {
+      "id": "2.1",
+      "status": "pass",
+      "automatic_findings": [],
+      "additional_tests": [],
+      "overall_pass": true,
+      "title": "结构页版本与目录风格",
+      "criterion": "对照采编检查结构页的版本控件与左侧目录，明确当前版本和目录选中项；切换版本后正文及评论属于该准确版本。",
+      "assessment": "结构第十稿六章目录、选中章节与正文一致；第九稿区域评论后切十稿，本稿评论不串入。",
+      "browser_record": "production/ui-unification/evidence/browser-review.md",
+      "screenshots_reviewed": [
+        "production/ui-unification/evidence/screenshots/desktop-structure.jpg",
+        "production/ui-unification/evidence/screenshots/structure-modal-draft.jpg"
+      ],
+      "code_refs": [
+        "structure.js renderStructure/chooseStructureRevision"
+      ],
+      "test_refs": [
+        "structure_navigation.test.cjs",
+        "structure_response.test.cjs"
+      ]
+    },
+    {
+      "id": "2.2",
+      "status": "pass",
+      "automatic_findings": [],
+      "additional_tests": [],
+      "overall_pass": true,
+      "title": "结构页版本常驻",
+      "criterion": "向下阅读长结构稿时顶部版本选择持续可见、可操作；切换目录或收起弹窗保留阅读上下文和评论草稿。",
+      "assessment": "桌面版本栏保持y=70，结构草稿经弹窗关闭与切章后保留。窄屏遮挡及当前版本不可见经独立截图发现、root现场确认、导航代理补修；修后390视口版本栏top122，第十稿可见可点，更新截图已实际复核。",
+      "browser_record": "production/ui-unification/evidence/browser-review.md",
+      "screenshots_reviewed": [
+        "production/ui-unification/evidence/screenshots/desktop-structure.jpg",
+        "production/ui-unification/evidence/screenshots/narrow-structure.jpg",
+        "production/ui-unification/evidence/screenshots/structure-modal-draft.jpg"
+      ],
+      "code_refs": [
+        "structure.css #structure-status",
+        "structure.js version reveal"
+      ],
+      "test_refs": [
+        "structure_scroll.test.cjs",
+        "structure_navigation.test.cjs"
+      ],
+      "review_findings": [
+        "R14"
+      ]
+    },
+    {
+      "id": "3.1",
+      "status": "pass",
+      "automatic_findings": [],
+      "additional_tests": [],
+      "overall_pass": true,
+      "title": "剧本菜单保留与视觉统一",
+      "criterion": "依次切换版本、集、场，原有组织方式和功能可用；视觉与采编协调，正确展示所选正文及其评论。",
+      "assessment": "桌面版本三→四、第2集与窄屏S04切换准确，版本→集→概览→场结构保留，正文显示02-02还回去的米；评论准确版本有自动回归。",
+      "browser_record": "production/ui-unification/evidence/browser-review.md",
+      "screenshots_reviewed": [
+        "production/ui-unification/evidence/screenshots/desktop-screenplay.jpg",
+        "production/ui-unification/evidence/screenshots/narrow-screenplay.jpg"
+      ],
+      "code_refs": [
+        "screenplay.js",
+        "screenplay.css"
+      ],
+      "test_refs": [
+        "test_screenplay.py",
+        "screenplay.html"
+      ]
+    },
+    {
+      "id": "4.1",
+      "status": "pass",
+      "automatic_findings": [],
+      "additional_tests": [],
+      "overall_pass": true,
+      "title": "制作设定三个子页页签",
+      "criterion": "在制作拆解、实体管理、素材管理间切换，页签使用故事创作的同一形式，主导航与子页选中态一致；直接链接及刷新仍正确。",
+      "assessment": "制作拆解、实体、素材三页签逐一点击及刷新，主导航保持制作设定；准确素材直接链接仍选中素材页。",
+      "browser_record": "production/ui-unification/evidence/browser-review.md",
+      "screenshots_reviewed": [
+        "production/ui-unification/evidence/screenshots/desktop-breakdown.jpg",
+        "production/ui-unification/evidence/screenshots/desktop-material-filters.jpg",
+        "production/ui-unification/evidence/screenshots/exact-historical-candidate.jpg"
+      ],
+      "code_refs": [
+        "production-breakdown.js productionTabs",
+        "app.js workspace routing"
+      ],
+      "test_refs": [
+        "ui_unification_requirements.test.cjs",
+        "entity_material_navigation.test.cjs"
+      ]
+    },
+    {
+      "id": "5.1",
+      "status": "pass",
+      "automatic_findings": [],
+      "additional_tests": [],
+      "overall_pass": true,
+      "title": "素材小卡",
+      "criterion": "检查未生成与已有原件的不同媒体素材，能辨识素材类型、媒体类型和制作状态；真实图片展示图片，音频等使用对应识别元素和真实预览。",
+      "assessment": "未生成图像占位、已生成真实图片、声音和视频识别均有实页样本，状态未把技术样本或方案标为真实交付。",
+      "browser_record": "production/ui-unification/evidence/browser-review.md",
+      "screenshots_reviewed": [
+        "production/ui-unification/evidence/screenshots/desktop-breakdown.jpg",
+        "production/ui-unification/evidence/screenshots/exact-historical-shot.jpg",
+        "production/ui-unification/evidence/screenshots/audio-range-comment.jpg",
+        "production/ui-unification/evidence/screenshots/exact-historical-candidate.jpg"
+      ],
+      "code_refs": [
+        "unified-cards.js materialSmallCard/modelSmallItem"
+      ],
+      "test_refs": [
+        "ui_unification_requirements.test.cjs",
+        "test_ui_projection_requirements.py"
+      ]
+    },
+    {
+      "id": "5.2",
+      "status": "pass",
+      "automatic_findings": [],
+      "additional_tests": [
+        "test_candidates_and_new_plan_versions_do_not_inflate_entity_material_counts"
+      ],
+      "overall_pass": true,
+      "title": "实体小卡与素材数量",
+      "criterion": "对含多媒体、多版本、同版多候选的实体检查类型及各媒体素材数；同需求换版或增加候选不增加素材项数，无需求关联的历史原件仍可访问。",
+      "assessment": "实体小卡显示类型及图像/声音需求数；版本、候选及元数据修订不增加需求数，subject关联的无需求历史原件仍计入并可读取。",
+      "browser_record": "production/ui-unification/evidence/browser-review.md",
+      "screenshots_reviewed": [
+        "production/ui-unification/evidence/screenshots/desktop-entity-history.jpg",
+        "production/ui-unification/evidence/screenshots/wide-entity-two-columns.jpg"
+      ],
+      "code_refs": [
+        "production.js entity list",
+        "ui_projection.py material_entries/entity_summaries"
+      ],
+      "test_refs": [
+        "test_ui_projection_requirements.py",
+        "test_ui_projection.py"
+      ]
+    },
+    {
+      "id": "5.3",
+      "status": "pass",
+      "automatic_findings": [
+        "R1"
+      ],
+      "additional_tests": [],
+      "overall_pass": true,
+      "title": "大卡左侧信息与右侧切换",
+      "criterion": "同一实体下切换完整状态和素材小卡，左侧保留实体基础信息与关系，状态下列对应素材；右侧切换到所选素材，不能串到其他状态或实体。",
+      "assessment": "阿蘅基础青衣与捞书后湿衣袖切换后状态与右侧需求同步，基础信息和关系保留；跨分组、跨实体和迟到请求有独立断言。",
+      "browser_record": "production/ui-unification/evidence/browser-review.md",
+      "screenshots_reviewed": [
+        "production/ui-unification/evidence/screenshots/desktop-entity-history.jpg",
+        "production/ui-unification/evidence/screenshots/wide-entity-two-columns.jpg"
+      ],
+      "code_refs": [
+        "unified-cards.js renderUnifiedModels/renderUnifiedSelected",
+        "entity-review.js renderEntityReview"
+      ],
+      "test_refs": [
+        "ui_unification_requirements.test.cjs",
+        "ui_unification_compatibility.test.cjs"
+      ]
+    },
+    {
+      "id": "5.4",
+      "status": "pass",
+      "automatic_findings": [
+        "R2"
+      ],
+      "additional_tests": [],
+      "overall_pass": true,
+      "title": "大卡媒体、版本、候选与生成信息",
+      "criterion": "已生成素材的媒体在右侧顶部；切换不同版本、同版候选及必要文件组成后，媒体、提示词、参数、参考输入和真实调用均来自所选结果。",
+      "assessment": "真实图片位于右侧顶部，原件→receipt→原件切换可读；技术视频两版各两候选切换时文件、实际CALL、提示词和采用范围同步。",
+      "browser_record": "production/ui-unification/evidence/browser-review.md",
+      "screenshots_reviewed": [
+        "production/ui-unification/evidence/screenshots/desktop-entity-history.jpg",
+        "production/ui-unification/evidence/screenshots/exact-historical-candidate.jpg",
+        "production/ui-unification/evidence/screenshots/video-range-comment.jpg"
+      ],
+      "code_refs": [
+        "material-review.js renderMaterialCard/renderActualGeneration",
+        "unified-cards.js materialDefaultCandidate"
+      ],
+      "test_refs": [
+        "ui_unification_requirements.test.cjs",
+        "ui_unification_compatibility.test.cjs"
+      ]
+    },
+    {
+      "id": "5.5",
+      "status": "pass",
+      "automatic_findings": [],
+      "additional_tests": [],
+      "overall_pass": true,
+      "title": "大卡可评论内容",
+      "criterion": "实体和素材可评论信息保留共同的视觉提示、圈选和评论入口；切换内容后评论及其锚点仍绑定实际展示的准确修订。",
+      "assessment": "正文圈选、图像区域、音视频范围与共同评论面板可用；真实提交读回准确CALL/原件/修订，跨版评论和草稿不串入。",
+      "browser_record": "production/ui-unification/evidence/browser-review.md",
+      "screenshots_reviewed": [
+        "production/ui-unification/evidence/screenshots/prompt-text-comment.jpg",
+        "production/ui-unification/evidence/screenshots/image-region-comment.jpg",
+        "production/ui-unification/evidence/screenshots/audio-range-comment.jpg",
+        "production/ui-unification/evidence/screenshots/video-range-comment.jpg"
+      ],
+      "code_refs": [
+        "review-ui.js",
+        "material-review.js materialTextSurface",
+        "structure.js drawing"
+      ],
+      "test_refs": [
+        "ui_unification_compatibility.test.cjs",
+        "production_image_region.test.cjs"
+      ]
+    },
+    {
+      "id": "5.6",
+      "status": "pass",
+      "automatic_findings": [
+        "R3",
+        "R8",
+        "R11",
+        "R12"
+      ],
+      "additional_tests": [
+        "5.6/7.3 exact entity material link and clearing a still-visible filter retain the requested old candidate"
+      ],
+      "overall_pass": true,
+      "title": "素材 ID 与无实体归属",
+      "criterion": "从素材 ID 和准确历史链接打开大卡：有实体时还原实体信息，直接挂在剧／集／场／镜时展示相应位置；历史链接不被默认最新选择覆盖。",
+      "assessment": "素材准确旧候选保持版本1；实体原件还原实体，剧/集/场/镜挂载显示位置。历史CALL、subject-only及actual-call归属、第41项定位和筛选外目标由独立回归补齐。",
+      "browser_record": "production/ui-unification/evidence/browser-review.md",
+      "screenshots_reviewed": [
+        "production/ui-unification/evidence/screenshots/exact-historical-candidate.jpg",
+        "production/ui-unification/evidence/screenshots/modal-image-region-comment.jpg",
+        "production/ui-unification/evidence/screenshots/scene-level-selection.jpg"
+      ],
+      "code_refs": [
+        "ui_projection.py card/material_list",
+        "unified-cards.js readUnifiedCard/validateUnifiedReference"
+      ],
+      "test_refs": [
+        "ui_unification_requirements.test.cjs",
+        "test_ui_projection_requirements.py",
+        "ui_unification_compatibility.test.cjs"
+      ]
+    },
+    {
+      "id": "5.7",
+      "status": "pass",
+      "automatic_findings": [],
+      "additional_tests": [],
+      "overall_pass": true,
+      "title": "实体 ID 默认素材",
+      "criterion": "从实体 ID 打开基础状态，优先整体图像与当前方案版本，该版本明确采用的候选优先，否则最新候选；无图像才选其他媒体，当前版本未生成不跳到旧版结果。",
+      "assessment": "实体入口阿蘅默认基础青衣整体图像当前版2且显示未生成；采用优先、否则最新、没有图像再选其他媒体由共用选择器及独立断言验证，不借用旧版。",
+      "browser_record": "production/ui-unification/evidence/browser-review.md",
+      "screenshots_reviewed": [
+        "production/ui-unification/evidence/screenshots/wide-entity-two-columns.jpg",
+        "production/ui-unification/evidence/screenshots/desktop-entity-history.jpg"
+      ],
+      "code_refs": [
+        "production.js productionStateOrder",
+        "unified-cards.js unifiedModelSelection/materialDefaultCandidate"
+      ],
+      "test_refs": [
+        "ui_unification_compatibility.test.cjs",
+        "production_navigation.test.cjs"
+      ]
+    },
+    {
+      "id": "5.8",
+      "status": "pass",
+      "automatic_findings": [
+        "R1",
+        "R2"
+      ],
+      "additional_tests": [],
+      "overall_pass": true,
+      "title": "大卡正文与弹窗一致",
+      "criterion": "对同一准确素材分别从列表正文与弹窗打开，比较信息、媒体、版本候选、圈选和评论操作；两种入口使用同一大卡，关闭弹窗停止其媒体。",
+      "assessment": "同一挑柴老汉原件22310fec…9a86在弹窗与正文均为版本1、同文件6f9d79c6…e432及同区域评论；媒体关闭停止、共用renderer及外层草稿恢复有页面记录和独立回归。",
+      "browser_record": "production/ui-unification/evidence/browser-review.md",
+      "screenshots_reviewed": [
+        "production/ui-unification/evidence/screenshots/modal-image-region-comment.jpg",
+        "production/ui-unification/evidence/screenshots/same-exact-card-embedded.jpg"
+      ],
+      "code_refs": [
+        "unified-cards.js renderUnifiedCard/openUnifiedMaterial",
+        "production.js renderProductionReader"
+      ],
+      "test_refs": [
+        "ui_unification_compatibility.test.cjs",
+        "ui_unification_requirements.test.cjs"
+      ]
+    },
+    {
+      "id": "6.1",
+      "status": "pass",
+      "automatic_findings": [],
+      "additional_tests": [],
+      "overall_pass": true,
+      "title": "制作拆解顶部选集",
+      "criterion": "顶部集导航沿用剧本创作的形式；切集后左侧只列该集场次，正文与素材归属同步变化。",
+      "assessment": "集导航采用同形式卡片；第2集→第1集后场列表、正文与素材回到本集。",
+      "browser_record": "production/ui-unification/evidence/browser-review.md",
+      "screenshots_reviewed": [
+        "production/ui-unification/evidence/screenshots/desktop-breakdown.jpg",
+        "production/ui-unification/evidence/screenshots/desktop-screenplay.jpg"
+      ],
+      "code_refs": [
+        "production-breakdown.js loadProductionBreakdown"
+      ],
+      "test_refs": [
+        "test_production_breakdown.py",
+        "ui_unification_compatibility.test.cjs"
+      ]
+    },
+    {
+      "id": "6.2",
+      "status": "pass",
+      "automatic_findings": [],
+      "additional_tests": [],
+      "overall_pass": true,
+      "title": "左侧选场与场信息",
+      "criterion": "选择一场，正文顶部展示该场必要场地和场次信息，随后按顺序列出该场全部镜头；切场后不残留上一场内容。",
+      "assessment": "场标题和场地/日夜信息在正文顶部，选场后列全部镜头；快速第2场→第1场后无前场残留。",
+      "browser_record": "production/ui-unification/evidence/browser-review.md",
+      "screenshots_reviewed": [
+        "production/ui-unification/evidence/screenshots/desktop-breakdown.jpg",
+        "production/ui-unification/evidence/screenshots/exact-historical-shot.jpg"
+      ],
+      "code_refs": [
+        "production-breakdown.js showBreakdownScene",
+        "ui_projection.py scene"
+      ],
+      "test_refs": [
+        "test_ui_projection_requirements.py",
+        "ui_unification_compatibility.test.cjs"
+      ]
+    },
+    {
+      "id": "6.3",
+      "status": "pass",
+      "automatic_findings": [],
+      "additional_tests": [],
+      "overall_pass": true,
+      "title": "选择整场与单镜",
+      "criterion": "点击场卡可见边缘能够选中整场，点击镜卡能够选中单镜；高亮范围准确，文字圈选和评论不误触选择动作。",
+      "assessment": "实际边缘点击(554,430)选整场；单镜高亮只包该镜，场内16镜保留；跨提示词链接圈选成功未误切选择。",
+      "browser_record": "production/ui-unification/evidence/browser-review.md",
+      "screenshots_reviewed": [
+        "production/ui-unification/evidence/screenshots/scene-level-selection.jpg",
+        "production/ui-unification/evidence/screenshots/desktop-shot-production.jpg",
+        "production/ui-unification/evidence/screenshots/prompt-text-comment.jpg"
+      ],
+      "code_refs": [
+        "production-breakdown.js breakdownSelect/showBreakdownScene handlers"
+      ],
+      "test_refs": [
+        "ui_unification_compatibility.test.cjs",
+        "production_image_region.test.cjs"
+      ]
+    },
+    {
+      "id": "6.4",
+      "status": "pass",
+      "automatic_findings": [],
+      "additional_tests": [],
+      "overall_pass": true,
+      "title": "按镜分行、镜内左右排列",
+      "criterion": "查看包含多个镜头的一场，每镜先组成一行，再在行内区分镜头正文和素材；不同镜头归属清晰。选择场／镜后整场镜行持续显示，只突出对应范围。",
+      "assessment": "桌面逐镜行内左正文右素材，选择场/镜不隐藏其他镜行；窄屏对应镜内上下排列且整场保留。",
+      "browser_record": "production/ui-unification/evidence/browser-review.md",
+      "screenshots_reviewed": [
+        "production/ui-unification/evidence/screenshots/desktop-shot-production.jpg",
+        "production/ui-unification/evidence/screenshots/exact-historical-shot.jpg",
+        "production/ui-unification/evidence/screenshots/narrow-breakdown.jpg"
+      ],
+      "code_refs": [
+        "production-breakdown.js showBreakdownScene",
+        "unified-review.css .breakdown-row"
+      ],
+      "test_refs": [
+        "ui_unification_requirements.test.cjs",
+        "ui_unification_compatibility.test.cjs"
+      ],
+      "review_findings": [
+        "R13"
+      ]
+    },
+    {
+      "id": "6.5",
+      "status": "pass",
+      "automatic_findings": [
+        "R5",
+        "R7"
+      ],
+      "additional_tests": [],
+      "overall_pass": true,
+      "title": "层级筛选与共用素材",
+      "criterion": "剧／集／场／镜筛选位于素材区顶部、所有镜行共用，可多选且默认全选。逐项切换后只保留所选层级及适用归属；剧／集／场共用素材分别集中展示一次，镜素材放在对应镜行。",
+      "assessment": "四层级默认全选；取消镜后仅隐藏镜素材，取消场+镜后仍有16镜并只剩本集视频。共用素材按层级集中一次，明确适用不等于实际采用。",
+      "browser_record": "production/ui-unification/evidence/browser-review.md",
+      "screenshots_reviewed": [
+        "production/ui-unification/evidence/screenshots/desktop-breakdown.jpg",
+        "production/ui-unification/evidence/screenshots/scene-level-selection.jpg",
+        "production/ui-unification/evidence/screenshots/narrow-shot-production.jpg"
+      ],
+      "code_refs": [
+        "production-breakdown.js breakdownScopeFilters/renderMaterials",
+        "ui_projection.py context"
+      ],
+      "test_refs": [
+        "test_ui_projection_requirements.py",
+        "test_production_breakdown.py"
+      ]
+    },
+    {
+      "id": "6.6",
+      "status": "pass",
+      "automatic_findings": [],
+      "additional_tests": [],
+      "overall_pass": true,
+      "title": "素材小卡打开弹窗",
+      "criterion": "在制作拆解点击素材小卡，于当前页打开对应大卡；关闭、Esc 或返回后保留所选集场镜、外层阅读位置和评论草稿。",
+      "assessment": "素材小卡在本页打开共用大卡，关闭按钮/Esc/浏览器返回均实操；外层集场镜、URL、阅读位置、焦点和提示词编辑草稿保持。",
+      "browser_record": "production/ui-unification/evidence/browser-review.md",
+      "screenshots_reviewed": [
+        "production/ui-unification/evidence/screenshots/modal-image-region-comment.jpg",
+        "production/ui-unification/evidence/screenshots/prompt-text-comment.jpg"
+      ],
+      "code_refs": [
+        "unified-cards.js openUnifiedMaterial",
+        "review-ui.js openReviewDialog"
+      ],
+      "test_refs": [
+        "ui_unification_compatibility.test.cjs"
+      ]
+    },
+    {
+      "id": "6.7",
+      "status": "pass",
+      "automatic_findings": [],
+      "additional_tests": [],
+      "overall_pass": true,
+      "title": "被替代的按钮移除",
+      "criterion": "页面不再显示“全剧共用”“本集共用”“全剧风格参考”等旧按钮；通过层级筛选和准确归属仍能访问其有效内容与历史引用。",
+      "assessment": "新页使用层级checkbox和归属分组；旧全剧共用、本集共用、全剧风格参考按钮不再存在，原风格和场调度需求通过小卡可读。",
+      "browser_record": "production/ui-unification/evidence/browser-review.md",
+      "screenshots_reviewed": [
+        "production/ui-unification/evidence/screenshots/desktop-breakdown.jpg",
+        "production/ui-unification/evidence/screenshots/scene-level-selection.jpg"
+      ],
+      "code_refs": [
+        "production-breakdown.js renderMaterials/productionTabs"
+      ],
+      "test_refs": [
+        "test_ui_projection_requirements.py",
+        "test_production_breakdown.py"
+      ]
+    },
+    {
+      "id": "7.1",
+      "status": "pass",
+      "automatic_findings": [],
+      "additional_tests": [],
+      "overall_pass": true,
+      "title": "实体详情嵌入大卡",
+      "criterion": "实体管理右侧直接嵌入共用大卡，呈现与弹窗一致，包含左侧实体／状态／素材及右侧选中素材信息，不另做一套详情。",
+      "assessment": "实体页右侧直接渲染共同实体/素材大卡，基础信息、状态、素材与右详情共用；与弹窗使用同一renderUnifiedCard。",
+      "browser_record": "production/ui-unification/evidence/browser-review.md",
+      "screenshots_reviewed": [
+        "production/ui-unification/evidence/screenshots/desktop-entity-history.jpg",
+        "production/ui-unification/evidence/screenshots/wide-entity-two-columns.jpg",
+        "production/ui-unification/evidence/screenshots/modal-image-region-comment.jpg"
+      ],
+      "code_refs": [
+        "production.js renderProductionReader",
+        "unified-cards.js renderUnifiedCard"
+      ],
+      "test_refs": [
+        "ui_unification_requirements.test.cjs",
+        "ui_unification_compatibility.test.cjs"
+      ]
+    },
+    {
+      "id": "7.2",
+      "status": "pass",
+      "automatic_findings": [],
+      "additional_tests": [],
+      "overall_pass": true,
+      "title": "实体分类与列表宽度",
+      "criterion": "左侧按实体类型分类列小卡；右侧正文保持可读，空间充足时左侧可排两列，窄屏下列表和详情仍可使用。",
+      "assessment": "左侧按类型列卡；1920宽度实际两列各158像素、右正文1216像素；390下列表260高、卡364宽且无横溢。",
+      "browser_record": "production/ui-unification/evidence/browser-review.md",
+      "screenshots_reviewed": [
+        "production/ui-unification/evidence/screenshots/wide-entity-two-columns.jpg",
+        "production/ui-unification/evidence/screenshots/narrow-entities.jpg"
+      ],
+      "code_refs": [
+        "production.js entity category list",
+        "unified-review.css responsive grids"
+      ],
+      "test_refs": [
+        "test_ui_projection_requirements.py"
+      ]
+    },
+    {
+      "id": "7.3",
+      "status": "pass",
+      "automatic_findings": [
+        "R9",
+        "R10"
+      ],
+      "additional_tests": [
+        "5.6/7.3 exact entity material link and clearing a still-visible filter retain the requested old candidate"
+      ],
+      "overall_pass": true,
+      "title": "采纳状态筛选",
+      "criterion": "切换全部／已采纳／未采纳，再执行采纳、取消、再次采纳和内容修订后的读取；列表及数量反映当前有效采纳状态，失效历史采纳不算当前已采纳。",
+      "assessment": "真实采纳→取消→清空→再次采纳链完成；技术实体UI采纳后由审查者合法修改描述为v2，旧决策保留，页面已采纳0且结果0，过滤迟到和准确撤回历史分开受保护。",
+      "browser_record": "production/ui-unification/evidence/browser-review.md",
+      "screenshots_reviewed": [
+        "production/ui-unification/evidence/screenshots/acceptance-after-content-revision.jpg",
+        "production/ui-unification/evidence/screenshots/narrow-entities.jpg"
+      ],
+      "code_refs": [
+        "production.js entity filters",
+        "entity-review.js openEntityReview",
+        "generation.py snapshot"
+      ],
+      "test_refs": [
+        "ui_unification_requirements.test.cjs",
+        "ui_unification_compatibility.test.cjs",
+        "test_ui_projection.py"
+      ]
+    },
+    {
+      "id": "8.1",
+      "status": "pass",
+      "automatic_findings": [],
+      "additional_tests": [
+        "test_combined_facets_count_materials_and_retain_categories_for_zero_results"
+      ],
+      "overall_pass": true,
+      "title": "素材筛选样式与计数",
+      "criterion": "素材管理筛选平铺、样式与实体管理一致，各选项显示素材项数量；组合筛选、清除和零结果时计数口径一致，已有类别不会错误消失。",
+      "assessment": "媒体/生成状态/集/场筛选平铺有计数；视频297+已生成=0，清除恢复2071；窄屏搜索仍有各类别，计数按需求并保留其他筛选。",
+      "browser_record": "production/ui-unification/evidence/browser-review.md",
+      "screenshots_reviewed": [
+        "production/ui-unification/evidence/screenshots/desktop-material-filters.jpg",
+        "production/ui-unification/evidence/screenshots/narrow-material-filters.jpg"
+      ],
+      "code_refs": [
+        "production-breakdown.js flatFilterGroup/loadProductionMaterials",
+        "ui_projection.py material_list"
+      ],
+      "test_refs": [
+        "test_ui_projection_requirements.py",
+        "test_ui_projection.py"
+      ]
+    },
+    {
+      "id": "8.2",
+      "status": "pass",
+      "automatic_findings": [
+        "R6",
+        "R11"
+      ],
+      "additional_tests": [],
+      "overall_pass": true,
+      "title": "素材列表与正文大卡",
+      "criterion": "左侧分类列素材小卡、右侧嵌入共用大卡，切换列表项、版本候选与返回行为沿用实体管理，准确历史入口可用。",
+      "assessment": "分类小卡与嵌入大卡共用交互；准确旧候选定位所属需求所在页并保留版本，普通翻页与筛选外零结果场景有前后端及HTTP独立回归。",
+      "browser_record": "production/ui-unification/evidence/browser-review.md",
+      "screenshots_reviewed": [
+        "production/ui-unification/evidence/screenshots/exact-historical-candidate.jpg",
+        "production/ui-unification/evidence/screenshots/same-exact-card-embedded.jpg"
+      ],
+      "code_refs": [
+        "production-breakdown.js loadProductionMaterials/openBreakdownMaterial"
+      ],
+      "test_refs": [
+        "ui_unification_requirements.test.cjs",
+        "test_ui_projection_requirements.py"
+      ]
+    },
+    {
+      "id": "9.1",
+      "status": "pass",
+      "automatic_findings": [],
+      "additional_tests": [],
+      "overall_pass": true,
+      "title": "全剧制作子页页签",
+      "criterion": "遍历现有全剧制作子页，使用故事创作的页签形式；点击、直接链接、刷新及前进后退时选中态与实际页面一致。",
+      "assessment": "镜头制作与组合历史页签同故事形式；主代理补验history直接URL→刷新→shots→Back history→Forward shots，三次选中态与页面一致。",
+      "browser_record": "production/ui-unification/evidence/browser-review.md",
+      "screenshots_reviewed": [
+        "production/ui-unification/evidence/screenshots/desktop-shot-production.jpg"
+      ],
+      "code_refs": [
+        "production-breakdown.js productionTab/productionTabs",
+        "app.js route"
+      ],
+      "test_refs": [
+        "entity_material_navigation.test.cjs",
+        "material_navigation.test.cjs"
+      ]
+    },
+    {
+      "id": "10.1",
+      "status": "pass",
+      "automatic_findings": [],
+      "additional_tests": [],
+      "overall_pass": true,
+      "title": "镜头制作导航与逐镜布局",
+      "criterion": "顶部集列表、左侧场列表、场选择和逐镜左右排列与制作拆解一致；共用层级筛选和选中规则，快速切换不串集、场或镜。",
+      "assessment": "镜头制作复用顶部集、左场、整场逐镜布局及层级过滤；快速切集场和准确旧镜还原均有页面记录。",
+      "browser_record": "production/ui-unification/evidence/browser-review.md",
+      "screenshots_reviewed": [
+        "production/ui-unification/evidence/screenshots/desktop-shot-production.jpg",
+        "production/ui-unification/evidence/screenshots/exact-historical-shot.jpg",
+        "production/ui-unification/evidence/screenshots/narrow-shot-production.jpg"
+      ],
+      "code_refs": [
+        "production-breakdown.js loadProductionBreakdown/showBreakdownScene"
+      ],
+      "test_refs": [
+        "ui_unification_compatibility.test.cjs",
+        "test_ui_projection_requirements.py"
+      ]
+    },
+    {
+      "id": "10.2",
+      "status": "pass",
+      "automatic_findings": [
+        "R4"
+      ],
+      "additional_tests": [],
+      "overall_pass": true,
+      "title": "提示词与准确参考输入",
+      "criterion": "正文展示该镜视频生成提示词，其上列准确参考输入；提示词中的对应标记可点击打开同一准确引用。提示词可圈选评论，链接不改变原文或字符偏移。",
+      "assessment": "提示词上方和内联图片1打开同一准确引用；跨链接拖选提交绑定真实CALL ce1da328…a94b，字符[39,56)与原文quote相等，独立只读回算通过。",
+      "browser_record": "production/ui-unification/evidence/browser-review.md",
+      "screenshots_reviewed": [
+        "production/ui-unification/evidence/screenshots/prompt-text-comment.jpg"
+      ],
+      "code_refs": [
+        "production-breakdown.js renderLinkedPrompt/breakdownPrompt",
+        "material-review.js renderMaterialInputs"
+      ],
+      "test_refs": [
+        "ui_unification_requirements.test.cjs",
+        "test_ui_projection_requirements.py"
+      ]
+    },
+    {
+      "id": "10.3",
+      "status": "pass",
+      "automatic_findings": [],
+      "additional_tests": [],
+      "overall_pass": true,
+      "title": "视频素材与挂载位置",
+      "criterion": "右侧仅显示视频类素材；镜头视频、场级和集级合成视频作为素材挂到相应镜／场／集，能通过共用卡片、层级筛选、版本和候选机制审阅。",
+      "assessment": "所有镜头制作素材小卡均为视频；技术集/场视频各显示一次、镜视频在对应镜行，可用共用版本候选切换与层级筛选。",
+      "browser_record": "production/ui-unification/evidence/browser-review.md",
+      "screenshots_reviewed": [
+        "production/ui-unification/evidence/screenshots/scene-level-selection.jpg",
+        "production/ui-unification/evidence/screenshots/exact-historical-candidate.jpg",
+        "production/ui-unification/evidence/screenshots/desktop-shot-production.jpg"
+      ],
+      "code_refs": [
+        "production-breakdown.js cards/renderMaterials"
+      ],
+      "test_refs": [
+        "ui_unification_requirements.test.cjs",
+        "ui_unification_compatibility.test.cjs"
+      ]
+    },
+    {
+      "id": "10.4",
+      "status": "pass",
+      "automatic_findings": [
+        "R4"
+      ],
+      "additional_tests": [],
+      "overall_pass": true,
+      "title": "围绕视频生成的审阅",
+      "criterion": "对未生成与已有结果分别检查：前者展示现有方案和真实缺项，后者展示所选结果真实内容。保留参考、提示词评论、预览和候选选择，页面不增加生成提交与进度操作。",
+      "assessment": "未生成镜显示计划和真实缺项；已有候选显示真实调用、准确输入与提示词；旧版/空版不由当前方案补历史；页面无生成提交或进度操作。",
+      "browser_record": "production/ui-unification/evidence/browser-review.md",
+      "screenshots_reviewed": [
+        "production/ui-unification/evidence/screenshots/desktop-shot-production.jpg",
+        "production/ui-unification/evidence/screenshots/prompt-text-comment.jpg",
+        "production/ui-unification/evidence/screenshots/exact-historical-candidate.jpg"
+      ],
+      "code_refs": [
+        "production-breakdown.js breakdownPrompt",
+        "material-review.js renderActualGeneration"
+      ],
+      "test_refs": [
+        "ui_unification_requirements.test.cjs",
+        "ui_unification_compatibility.test.cjs"
+      ]
+    },
+    {
+      "id": "C.1",
+      "status": "pass",
+      "automatic_findings": [],
+      "additional_tests": [],
+      "overall_pass": true,
+      "title": "全部评论交互回归",
+      "criterion": "核对新增、定位、编辑、关闭／重开、草稿与快捷键，以及文字圈选、图像区域和音视频时间范围；同一对象通过不同入口打开仍定位到准确内容。",
+      "assessment": "新增、定位、编辑、关闭/重开、草稿、Esc/⌘Enter、文本/图像/音视频圈选均有实际操作，准确评论记录与同素材跨入口回读对应。",
+      "browser_record": "production/ui-unification/evidence/browser-review.md",
+      "screenshots_reviewed": [
+        "production/ui-unification/evidence/screenshots/prompt-text-comment.jpg",
+        "production/ui-unification/evidence/screenshots/image-region-comment.jpg",
+        "production/ui-unification/evidence/screenshots/modal-image-region-comment.jpg",
+        "production/ui-unification/evidence/screenshots/audio-range-comment.jpg",
+        "production/ui-unification/evidence/screenshots/video-range-comment.jpg",
+        "production/ui-unification/evidence/screenshots/structure-modal-draft.jpg"
+      ],
+      "code_refs": [
+        "review-ui.js",
+        "structure.js drawing",
+        "material-review.js comment scope"
+      ],
+      "test_refs": [
+        "ui_unification_compatibility.test.cjs",
+        "production_image_region.test.cjs",
+        "source_region.test.cjs"
+      ]
+    },
+    {
+      "id": "C.2",
+      "status": "pass",
+      "automatic_findings": [
+        "R6",
+        "R9",
+        "R10",
+        "R11"
+      ],
+      "additional_tests": [],
+      "overall_pass": true,
+      "title": "导航、返回与切换竞态",
+      "criterion": "连续快速切换集场镜、素材、版本和候选，再返回或关闭弹窗；页面内容、选中态、阅读位置、焦点和草稿正确，旧请求结果不覆盖新选择。",
+      "assessment": "实页快速集场、弹窗关闭与返回保持上下文；独立异步用例覆盖实体版本乱序、过滤清空、失效弹窗、文件/版本草稿及撤回实体准确历史，原断言保留。",
+      "browser_record": "production/ui-unification/evidence/browser-review.md",
+      "screenshots_reviewed": [
+        "production/ui-unification/evidence/screenshots/structure-modal-draft.jpg",
+        "production/ui-unification/evidence/screenshots/exact-historical-candidate.jpg",
+        "production/ui-unification/evidence/screenshots/acceptance-after-content-revision.jpg"
+      ],
+      "code_refs": [
+        "production.js epochs",
+        "entity-review.js",
+        "unified-cards.js modal ownership",
+        "production-breakdown.js"
+      ],
+      "test_refs": [
+        "ui_unification_requirements.test.cjs",
+        "ui_unification_compatibility.test.cjs",
+        "entity_material_navigation.test.cjs"
+      ]
+    },
+    {
+      "id": "C.3",
+      "status": "pass",
+      "automatic_findings": [
+        "R3"
+      ],
+      "additional_tests": [
+        "test_historical_scene_keeps_its_old_shot_after_current_shot_moves"
+      ],
+      "overall_pass": true,
+      "title": "数据与历史保护",
+      "criterion": "核对现有正文、剧情依据、完整状态、关系、原件哈希、真实调用、评论、采纳、采用及历史链接；新增候选不自动改变采用。修改数据契约或导出格式时，完成导出至空实例恢复核对。",
+      "assessment": "独立只读比较技术夹具基线与当前13历史表，原记录无缺失/改写；1247原文件SHA均一致，准确CALL/评论/采纳历史保留；本轮不改持久Schema/导出格式，既有恢复回归已执行。",
+      "browser_record": "production/ui-unification/evidence/browser-review.md",
+      "screenshots_reviewed": [
+        "production/ui-unification/evidence/screenshots/exact-historical-shot.jpg",
+        "production/ui-unification/evidence/screenshots/exact-historical-candidate.jpg",
+        "production/ui-unification/evidence/screenshots/acceptance-after-content-revision.jpg"
+      ],
+      "code_refs": [
+        "ui_projection.py read-only projection",
+        "material_review.py context"
+      ],
+      "test_refs": [
+        "test_ui_projection_requirements.py",
+        "test_bundle_integrity.py",
+        "test_material_plans.py"
+      ]
+    },
+    {
+      "id": "C.4",
+      "status": "pass",
+      "automatic_findings": [],
+      "additional_tests": [],
+      "overall_pass": true,
+      "title": "验证环境与证据",
+      "criterion": "在真实浏览器完成桌面与窄屏检查，并按实际改动补必要自动回归；说明样本、视口和未验项，静态或接口检查不替代页面结论。",
+      "assessment": "审查者实际查看26张关键截图；浏览器由root独占，含1440×900、390×844、1920×1080。29项独立需求测试、全套456Node/185Python日志及49源码哈希已核对；两处窄屏补修另有真实操作和更新截图，不用自动测试代替。",
+      "browser_record": "production/ui-unification/evidence/browser-review.md",
+      "screenshots_reviewed": [
+        "production/ui-unification/evidence/screenshots/desktop-source.jpg",
+        "production/ui-unification/evidence/screenshots/narrow-source.jpg",
+        "production/ui-unification/evidence/screenshots/narrow-breakdown.jpg",
+        "production/ui-unification/evidence/screenshots/wide-entity-two-columns.jpg"
+      ],
+      "code_refs": [
+        "evidence/automated-checks.json source hashes"
+      ],
+      "test_refs": [
+        "ui_unification_requirements.test.cjs",
+        "test_ui_projection_requirements.py"
+      ]
+    },
+    {
+      "id": "C.5",
+      "status": "pending_final_confirmation",
+      "automatic_findings": [],
+      "additional_tests": [],
+      "overall_pass": false,
+      "title": "候选确认与正式交付",
+      "criterion": "展示双仓准确提交、必要数据变化、依赖、逐项证据及正式应用方案；最终确认后串行集成、正式应用和推送，再回读本地／远端提交、运行版本及重点页面。",
+      "assessment": "系统候选已固定dab027e9725d36828d3ee77098db355eb94d5033，正式应用说明和双仓边界已审阅；故事最终提交待主代理固定，最终确认、3000应用、集成推送及正式重点回读尚未执行，不预签。",
+      "browser_record": null,
+      "screenshots_reviewed": [],
+      "code_refs": [
+        "operations.md",
+        "scripts/material_review_release.py"
+      ],
+      "test_refs": [
+        "tests/test_material_review_release.py"
+      ]
+    }
+  ],
+  "delegation": {
+    "input": "Original ten requirements, Q1-Q7, effective ultra choice, first core implementation, root fixes",
+    "reviewer_outputs": [
+      "tests/ui_unification_requirements.test.cjs",
+      "tests/test_ui_projection_requirements.py",
+      "production/ui-unification/evidence/requirements-review.md",
+      "production/ui-unification/evidence/requirements-review.json",
+      "production/ui-unification/acceptance.md"
+    ],
+    "implementation_owner": "/root",
+    "coordination": "Reviewer wrote only assigned tests and report; root retained production-code ownership. Fix notification preceded independent reruns. No write conflict observed in this review scope.",
+    "reviewer_fixture_corrections": "Completed scene block_ids, awaited the shared asynchronous button action, and corrected a test fixture delimiter; these were test authoring errors, not product defects. Pagination fixtures also needed unique scope/slot combinations. After an asset metadata update, the old exact revision is asserted in version members rather than the deduplicated results array. These expectation corrections are not product defects.",
+    "waiting_duration": "UNKNOWN",
+    "reviewer_token_usage": "UNKNOWN",
+    "max_comparison_available": false,
+    "performance_or_quality_improvement_ratio_claimed": false,
+    "discovery_attribution": {
+      "reviewer_findings": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8",
+        "R10",
+        "R12",
+        "R14",
+        "R15"
+      ],
+      "root_real_browser_finding": [
+        "R9",
+        "R13"
+      ],
+      "implementation_owner": "/root",
+      "independent_automatic_reverification_owner": "/root/requirements_audit",
+      "root_raised_reviewer_reproduced": [
+        "R11"
+      ],
+      "cross_agent_inspection_request": {
+        "R11": "/root/compatibility_audit"
+      },
+      "implementation_exceptions": {
+        "R14": "/root/navigation; root performed actual browser verification"
+      }
+    },
+    "asynchronous_test_method": "Held API promises deterministically release pending responses before or after filter changes. Tests call actual load, filter, entity-read and card-refresh functions; memory DOM and fixtures do not establish browser acceptance.",
+    "http_test_boundary": "A disposable local ReviewServer verifies focus query forwarding and exact card responses; this is HTTP evidence, not browser evidence."
+  },
+  "next_step": "Root fixes the final story commit and presents both exact candidates for user confirmation; C.5 remains pending confirmation, serialized formal application, pushes and formal page readback. Reviewer writes are finished.",
+  "ultra_checklist": [
+    {
+      "id": "U.1",
+      "title": "实际委派与边界",
+      "criterion": "交付记录能对应实际委派的输入、职责、交付和收敛结果；共用状态与接口、文件写入和浏览器操作均有明确负责人及协调记录，争用后能调整安排。",
+      "status": "pass",
+      "overall_pass": true,
+      "assessment": "实际采用root+navigation+requirements+compatibility；root负责共享状态/浏览器/正式资源，授权限定文件并在发现问题后协调修复；本审查者仅测试、报告及获批技术实体夹具写入。",
+      "browser_record": null,
+      "screenshots_reviewed": [],
+      "code_refs": [
+        "delegation.md",
+        "planning/system-ui-unification-task.md"
+      ],
+      "test_refs": [
+        "role handoff and reports"
+      ]
+    },
+    {
+      "id": "U.2",
+      "title": "独立需求核对",
+      "criterion": "需求审查者依据原始十项要求、七项初轮答复与本轮选择，对原有 36 项结果和证据逐项复核；偏差、修复及复验可追溯，不能只接受实施者的概括。",
+      "status": "pass",
+      "overall_pass": true,
+      "assessment": "本矩阵逐条保留原36标准及U4要求；核对原文十项、Q1–Q7与ultra替代max，直接查看截图发现窄屏版本栏和采编内层滚动缺口，均经root实页复验与更新截图闭合；未自签生产实现。",
+      "browser_record": null,
+      "screenshots_reviewed": [],
+      "code_refs": [
+        "requirements-review.md/json",
+        "acceptance.md"
+      ],
+      "test_refs": [
+        "independent 29 requirements tests"
+      ]
+    },
+    {
+      "id": "U.3",
+      "title": "独立兼容性复核",
+      "criterion": "兼容性审查者针对准确版本、候选、评论、历史链接、采纳和快速切换给出复核证据；关键问题有复现、处理及复验，复核者独立于同项实施者。",
+      "status": "pass",
+      "overall_pass": true,
+      "assessment": "兼容性审查者独立于root及导航实施者，保留版本/候选/评论/历史/采纳/竞态失败断言并复验；最新限定67项和32项专项、各轮hash分开记录，不把旧全套结果冒充最终。",
+      "browser_record": null,
+      "screenshots_reviewed": [],
+      "code_refs": [
+        "compatibility-review.md/json"
+      ],
+      "test_refs": [
+        "ui_unification_compatibility.test.cjs",
+        "test_ui_projection.py"
+      ]
+    },
+    {
+      "id": "U.4",
+      "title": "收益与协调成本",
+      "criterion": "报告已核实的贡献、实际并行部分、等待、冲突与返工；可取得的耗时或用量如实列出，未知项标明。没有对照实测不写固定提速或质量提升，不以代理数量或缺陷数量充当质量结论。",
+      "status": "pass",
+      "overall_pass": true,
+      "assessment": "委派文档与两份审查报告记录有效发现和归属、并行实施、共享接口传递、浏览器等待、夹具维护和返工；总耗时/token/费用UNKNOWN，无max对照、不报告固定改善比例。",
+      "browser_record": null,
+      "screenshots_reviewed": [],
+      "code_refs": [
+        "delegation.md",
+        "requirements-review.md",
+        "compatibility-review.md"
+      ],
+      "test_refs": [
+        "actual test log durations only"
+      ]
+    }
+  ],
+  "independent_automatic_snapshot": {
+    "reviewed_at_utc": "2026-10-04T14:17:44Z",
+    "candidate": {
+      "system_worktree": ".runtime/ui-unification/system",
+      "system_base_head": "9a1e68507b0be4219c119efb59076f59fd4bca24",
+      "working_tree_uncommitted": true,
+      "sha256": {
+        "review_desk/static/unified-cards.js": "87c9c96cc3f415b24ee5febee03146910ac00e39d665315a04bec8b17a70653d",
+        "review_desk/static/production-breakdown.js": "958522286179e66112cefe5393fec710f7450a10e7c88756eecaa471453dcae8",
+        "review_desk/static/material-review.js": "effacfc31a97286a2e7e942b0045007407c6b7319566c61ce726eb24fc2f6d2c",
+        "review_desk/static/entity-review.js": "c256a223f5d28f5e3f880fc4b4c7ac858dd5eafe67c7830c5b85cf646e86673c",
+        "review_desk/ui_projection.py": "ae98af6def5a1549061e545a3c5213a88cca0d950c8d4508faef47e98bfbca18",
+        "review_desk/generation.py": "331a960ed0d30a784393e8493c768ce115cc27bbd76ebf9f61128a62f0920bce",
+        "review_desk/production_breakdown.py": "b179f6df75eafe4aa03456723aed34520f8ad939582d39d3a20edfb9dd3289b1",
+        "tests/ui_unification_requirements.test.cjs": "442aee4717c9b3c40e3cba45a4190b0e2a9506ce2f6e6fd3ea4eb89df8251bb1",
+        "tests/test_ui_projection_requirements.py": "94aa5e1513f5f4afe40026aa5128629e8751d1b70db844e72986d136cf2375b0",
+        "review_desk/static/production.js": "dc03f0a6d8e9428b9de67f956aecd9d1283240cfc2199b86adc86ce31a475c8a",
+        "review_desk/server.py": "dfec7332103b0685aaa6d773a7f0dc83c0c2075ac4af942795c2429212fc3d9d",
+        "review_desk/material_review.py": "feffceb6d46b23241cc50b436fea86b976f81a7be8f6b6fdc9f2e007df4dfff9"
+      }
+    },
+    "runs": [
+      {
+        "command": "node --test tests/ui_unification_requirements.test.cjs",
+        "cwd": "system repository",
+        "test_file": "tests/ui_unification_requirements.test.cjs",
+        "tests": 18,
+        "passed": 18,
+        "failed": 0,
+        "exit_code": 0,
+        "reported_duration_ms": 85.584792
+      },
+      {
+        "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=. python3 -m unittest discover -s tests -p test_ui_projection_requirements.py -v",
+        "cwd": "system repository",
+        "test_file": "tests/test_ui_projection_requirements.py",
+        "tests": 11,
+        "passed": 11,
+        "failed": 0,
+        "exit_code": 0,
+        "reported_duration_seconds": 1.508
+      }
+    ]
+  },
+  "final_suite_evidence": {
+    "path": "production/ui-unification/evidence/automated-checks.json",
+    "captured_at": "2026-10-04T14:41:06.667699+00:00",
+    "root_node_passed": 456,
+    "root_python_passed": 185,
+    "logs_read_by_reviewer": true,
+    "node_log": ".runtime/ui-unification/node-final-456.log",
+    "python_log": ".runtime/python-final-no-proxy.log",
+    "source_hashes_independently_matched_at_review": 49,
+    "source_hash_mismatches": [],
+    "system_candidate_commit": "dab027e9725d36828d3ee77098db355eb94d5033",
+    "later_navigation_changes_require_updated_hashes": false,
+    "performed_by": "/root",
+    "reviewed_by": "/root/requirements_audit",
+    "scope": "Full runs belong to root; reviewer read their logs and independently matched current source hashes. Reviewer own 29-test execution remains separately timestamped."
+  },
+  "independent_integrity_reverification": {
+    "scope": "technical browser fixture only, SQLite URI mode=ro",
+    "baseline": ".runtime/ui-unification/browser-fixture/.runtime/generation-base.sqlite3",
+    "current": ".runtime/ui-unification/browser-fixture/.runtime/review.sqlite3",
+    "immutable_tables": 13,
+    "missing_or_changed_baseline_rows": 0,
+    "original_files_hashed": 1247,
+    "file_errors": 0,
+    "prompt_quote_start": 39,
+    "prompt_quote_end": 56,
+    "prompt_quote_matches": true
+  },
+  "original_and_clarification_mapping": {
+    "original_requirements": "1-10 map to identically prefixed checks; C checks protect cross-page behavior",
+    "Q1": [
+      "7.3"
+    ],
+    "Q2": [
+      "6.5",
+      "10.1"
+    ],
+    "Q3": [
+      "6.3",
+      "6.4",
+      "6.5"
+    ],
+    "Q4": [
+      "10.4"
+    ],
+    "Q5": [
+      "5.7"
+    ],
+    "Q6": "max superseded by explicit ultra adjustment; U1-U4 apply",
+    "Q7": [
+      "C.5"
+    ]
+  },
+  "result_counts": {
+    "original_total": 36,
+    "original_pass": 35,
+    "original_pending_final_confirmation": 1,
+    "ultra_total": 4,
+    "ultra_pass": 4,
+    "unresolved_known_implementation_findings": 0
+  },
+  "screenshot_review": {
+    "method": "tools.view_image; actual local image review, no browser operation",
+    "count": 26,
+    "sha256": {
+      "evidence/screenshots/desktop-source.jpg": "d767268bf2ac903afb97e38876a562216fe4f3be15ff70b9710d96f5de1113f2",
+      "evidence/screenshots/desktop-structure.jpg": "28cb2fad4613f2a9d6c2c1b5587af043b6be2e205e829a296fd0a6b32d955d53",
+      "evidence/screenshots/desktop-screenplay.jpg": "d0bb1aa84a3ba55ed45ee9d25451696626d23cf2455073ff5678df21eccde5c8",
+      "evidence/screenshots/desktop-breakdown.jpg": "4f9b05dd6c4b728dbbc85d3ddfdb0871e4345bc643462856315adfc80b7d2a2b",
+      "evidence/screenshots/desktop-entity-history.jpg": "48a55e5a79412f36df917d9db5fd2ef4b5231b37b5890581bac82d946d27e966",
+      "evidence/screenshots/desktop-material-filters.jpg": "8290274c143dc0d2d983da0badedbcae47b69a934676f665f8f92471d481ba63",
+      "evidence/screenshots/desktop-shot-production.jpg": "a18eb8d761e8923c5ba637b524c61c07d2cd9b0d49fff855f9764d2447a43e77",
+      "evidence/screenshots/exact-historical-candidate.jpg": "acf58d8d4a333ec763f646ead4187563b48b2a717685d9097f49ea8d3c7f3b22",
+      "evidence/screenshots/exact-historical-shot.jpg": "a8f45270db73eb3644a57c0042cf9e70c8bb760039713b4049c2f34072aafd33",
+      "evidence/screenshots/scene-level-selection.jpg": "a63789dad4c038bb8054f24c2fae1d5dd07345cf7c27e164a48ea913a90df007",
+      "evidence/screenshots/prompt-text-comment.jpg": "19ed53473125791c983a3fb89c7c92de0ff7d5408f94f8dd3369596371d51f35",
+      "evidence/screenshots/wide-entity-two-columns.jpg": "c29d1d753450ff92ec392717133f57a5020bb5e931eea10a40130c07fc346cbf",
+      "evidence/screenshots/narrow-structure.jpg": "658c33da90ff4a5a9b7e00d80cefe539349f23dde6652c93f9e491e7b21d29ac",
+      "evidence/screenshots/narrow-screenplay.jpg": "c9c94cc4488dd16108ac5186d469d986c225f224ed4a838c2cfc7129769e4d85",
+      "evidence/screenshots/narrow-breakdown.jpg": "386e3d923d8d66d6e6b08810aa2d1e80f8525967aa909d3e86cb9d1ca85a864d",
+      "evidence/screenshots/narrow-entities.jpg": "76406102bf9c7a3c318a561b10c7c89cf31cba472f19664dc2b9130c73054077",
+      "evidence/screenshots/narrow-material-filters.jpg": "2eb347ecb97073adf05f1c4683dfc7058a5632c741fa94222ed4bdac7d6b1eb7",
+      "evidence/screenshots/narrow-shot-production.jpg": "a176e2e7347f89abe3f88586be7b80b41440ecebef113a87913e1fa49a1fe8aa",
+      "evidence/screenshots/image-region-comment.jpg": "c7c7fa46982ad32bf33a86125a269314527d2dddbb713c1de57aef8a36e74641",
+      "evidence/screenshots/modal-image-region-comment.jpg": "3fc49edfa3c704605681e61768c4993b6f0a80b69918380229bebbd1ac14a424",
+      "evidence/screenshots/audio-range-comment.jpg": "fd878c53d4f6ace7fa1a5f5eccb712ada5caa7eff26774f79f5e160c9d702bd6",
+      "evidence/screenshots/video-range-comment.jpg": "9a3d54c7cc8116dea125d59cf6593d57067c5e4b5b7835b3b85218fed8e8b925",
+      "evidence/screenshots/acceptance-after-content-revision.jpg": "cb752efe7be9225bcd4b31f8f74d06cee6c261490e37d66c380e5152ca60e497",
+      "evidence/screenshots/narrow-source.jpg": "ce9787331a4633fc42e079b05cfe7189879c38dc5b3f5d3d7d356c7d85efbbcc",
+      "evidence/screenshots/structure-modal-draft.jpg": "a236c62487af2ee0c5600e536866cb2b803536abb600f10444fe857bcbf76546",
+      "evidence/screenshots/same-exact-card-embedded.jpg": "cfc24bd207a50d4981c869f3cecb3759d88db35b4c7b743672b559165070b793"
+    },
+    "updated_images_reviewed_again": [
+      "narrow-structure.jpg",
+      "narrow-source.jpg"
+    ],
+    "scope": "Screenshots and root actual-action records jointly support their mapped samples; not every screenshot was captured after the last source change, and unrelated earlier screenshots do not independently prove final runtime bytes."
+  }
+}
