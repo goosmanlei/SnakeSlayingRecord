@@ -1,0 +1,51 @@
+{
+  "format": "material-model-test-executions-v1",
+  "formal_writes": false,
+  "runs": {
+    "system_python_full_after_restore_lock_fix": {
+      "log": ".runtime/ui-material-model/restore-fix-full-python.log",
+      "sha256": "82f2b2b14b4aa955c1257631d9d69da449bef304a34377a37426271d16f2837d",
+      "count": 216,
+      "elapsed_seconds": 24.557,
+      "passed": true,
+      "final_summary": "OK"
+    },
+    "original_json_and_version_focused": {
+      "log": ".runtime/ui-material-model/restore-original-json-tests.log",
+      "sha256": "29d27f30b06854838cdc01ad9299957183e24f848ccf2276b30bc0542698aa37",
+      "count": 18,
+      "elapsed_seconds": 2.711,
+      "passed": true,
+      "final_summary": "OK"
+    },
+    "story_actual_packaged_readers": {
+      "log": ".runtime/ui-material-model/story-packaged-tests.log",
+      "sha256": "5d0fe7b09fc528cf975b5eafdd2c1ddbe2076b599165f073fb7ffb2f050386b5",
+      "count": 31,
+      "elapsed_seconds": 14.304,
+      "passed": true,
+      "final_summary": "OK"
+    },
+    "original_story_full_run": {
+      "log": ".runtime/ui-material-model/story-tests-final.log",
+      "sha256": "cdc2c542897cae798f8bc7ca04e07b75e4c1a6f6b86283641734ef4111e6e052",
+      "count": 255,
+      "elapsed_seconds": 866.999,
+      "passed": false,
+      "final_summary": "FAILED (failures=2, skipped=1)"
+    },
+    "historical_scope_fix": {
+      "log": ".runtime/ui-material-model/story-full-generation-scope-final.log",
+      "sha256": "479adcfa347a9b074dcbcef91ac34e5ff46ce3aeb5db63b7f06ef22d6bd48301",
+      "count": 5,
+      "elapsed_seconds": 1.617,
+      "passed": true,
+      "final_summary": "OK"
+    }
+  },
+  "notes": [
+    "Full system discovery preceded the independently added archive-scope and Schema5 tests; independent report records 22 separately passed tests.",
+    "The 255-test story run had two failures and one missing-sibling-fixture skip; both failures were fixed and the affected 31-test packaged-reader set passed without rerunning all 255.",
+    "No test run is claimed to be a browser or formal-service acceptance."
+  ]
+}

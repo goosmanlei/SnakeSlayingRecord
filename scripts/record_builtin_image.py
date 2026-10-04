@@ -13,6 +13,11 @@ try:
 except ImportError:
     from generation_workspace import generation_root, contained
 
+try:
+    from .material_model_io import read_json as material_read_json, read_bytes as material_read_bytes, sqlite_compatibility
+except ImportError:
+    from material_model_io import read_json as material_read_json, read_bytes as material_read_bytes, sqlite_compatibility
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -27,7 +32,7 @@ def main():
     if not re.fullmatch(r'[a-z0-9-]+', args.id):
         parser.error('invalid call label')
     request_path = ROOT / 'production/requests' / (args.id + '.json')
-    request = json.loads(request_path.read_text())
+    request = material_read_json(request_path)
     assert request['id'] == args.id and request['tool'] == 'image_gen.imagegen'
     metadata = json.loads(args.response_metadata.read_text())
     assert metadata['response_keys'] == ['image_url', 'output_hint']
@@ -57,7 +62,7 @@ def main():
         'response_artifact_id': source.stem, 'source_file': str(source),
         'file': destination.relative_to(ROOT).as_posix(), 'sha256': sha,
         'width': stream['width'], 'height': stream['height'], 'codec': stream['codec_name'],
-        'request_file_sha256': hashlib.sha256(request_path.read_bytes()).hexdigest(),
+        'request_file_sha256': hashlib.sha256(material_read_bytes(request_path)).hexdigest(),
         'billing_usage': None, 'native_size_note': '工具直接返回的原生像素；未暴露尺寸设置或底层型号，不声称4K或已核实隐藏上限。',
         'response_keys': metadata['response_keys'], 'output_hint': metadata['output_hint']}
     receipt_path.write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + '\n')

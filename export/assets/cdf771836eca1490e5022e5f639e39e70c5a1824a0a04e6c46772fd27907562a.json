@@ -1,57 +1,6 @@
 {
-  "id": "fg3-stop-order-all-image-01",
-  "recipe_id": "form-stop-order-all",
-  "entity": {
-    "object_id": "entity-stop-order",
-    "revision_id": "bc98fd047cd3bbd21b00c012deb6a7a20287e6977d0ab47564428ce0a45a0fe5"
-  },
-  "state": {
-    "object_id": "form-stop-order-all",
-    "revision_id": "6a9f16e6dde0b6c0c34df82bc642f4a1d42db2d344b3e2938eabd916c02174a8"
-  },
-  "requirement": {
-    "object_id": "need-form-stop-order-all-overall",
-    "revision_id": "a27c568aed031476b362913b1a14890e8d774576ac4e4eb17314e22122e234a4"
-  },
-  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
-  "references": [
-    {
-      "reference": {
-        "object_id": "asset-fg3-stop-order-base-image-01",
-        "revision_id": "779469fa23f2e17822dadcf62a2d898e5ebfce2b141d1a75a175b1c2b35e20d8"
-      },
-      "component_id": "original",
-      "sha256": "3e83f8cd4e9063b6d64d8071b25c6de340ca77aa5d8342f6189a2b169e1618dc",
-      "crop": {
-        "x": 0,
-        "y": 0,
-        "width": 1,
-        "height": 1
-      },
-      "use": "参考图1：准确认可原件；按提示词中参考图1的用途保持身份与结构，使用完整原件。"
-    }
-  ],
-  "lineage": {
-    "i2i_depth": 2,
-    "references": [
-      {
-        "object_id": "asset-fg3-stop-order-base-image-01",
-        "revision_id": "779469fa23f2e17822dadcf62a2d898e5ebfce2b141d1a75a175b1c2b35e20d8"
-      }
-    ]
-  },
-  "master_approval": {
-    "object_id": "review-master-fg3-stop-order-base-image-01",
-    "revision_id": "da6eb301e4bdfc8b8b592aa4b96da04c58352a3b51449c939c99af60a2d06126"
-  },
-  "tool": "image_gen.imagegen",
-  "model": "GPT Image",
-  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
-  "request": {
-    "prompt": "单幅完整道具参考图，干净二维线条、低饱和大色块，柔和中性光，浅暖灰空底。全部指定组成完整留边；不用分格、箭头、标题、水印、人物或额外故事场景。无纸纹噪点、锐化及写实浮雕。保持参考的物件身份与配色，仅修改指定状态。使用工具最高原生输出，不放大。3:4。参考图1固定县衙文书纸形、落款笔势与红方印样式。书吏换一张新的同形米白纸誊清：右起竖写“已经有人应募，即刻暂停送祭。”，第二列“阿蘅此次免祭，留在家里，不得强留庙中，也不准抓别人补数。”，第三列“照票发。不准借停祭扣粮。”，第四列新增“除蛇成不成，都不准再向任何一户索人。”；最左下保留同式不可辨签押与一枚红方印。此次重新换纸，不复制原七枚手印和“本人非自愿”笔记。正文四列布局不压印，不新增日期姓名或现代印刷章，整张纸边入画。",
-    "transparent_background": false,
-    "referenced_image_paths": [
-      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/3e83f8cd4e9063b6d64d8071b25c6de340ca77aa5d8342f6189a2b169e1618dc.png"
-    ]
-  }
+  "bytes": 3075,
+  "format": "material-archive-reference-v1",
+  "recipe": "e1c87576d82f6e1438a896fd3c9f48ba9396ea6e730ed1628240e0b3c186e788",
+  "sha256": "cdf771836eca1490e5022e5f639e39e70c5a1824a0a04e6c46772fd27907562a"
 }

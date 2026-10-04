@@ -7,6 +7,12 @@ import re
 import subprocess
 
 
+try:
+    from .material_model_io import logical_file_hash, logical_size
+except ImportError:
+    from material_model_io import logical_file_hash, logical_size
+
+
 def git(root, *args):
     result = subprocess.run(['git', '-C', str(root), *args], capture_output=True)
     if result.returncode:
@@ -103,11 +109,11 @@ def verify_media(root, entries):
     entries = list(entries)
     for name, digest in media_entries(entries).items():
         path = contained(root, Path('export/assets') / name)
-        if not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest() != digest:
+        if not path.is_file() or logical_file_hash(path) != digest:
             raise ValueError('missing or changed original: ' + name)
     for entry in entries:
         if (type(entry.get('bytes')) is not int or entry['bytes'] < 0
-                or (root / 'export/assets' / entry['file']).stat().st_size != entry['bytes']):
+                or logical_size(root / 'export/assets' / entry['file']) != entry['bytes']):
             raise ValueError('original byte count differs: ' + entry['file'])
 
 

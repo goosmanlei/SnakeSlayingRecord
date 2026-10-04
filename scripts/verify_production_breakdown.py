@@ -14,6 +14,11 @@ import shutil
 import sys
 import time
 
+try:
+    from .material_model_io import read_json as material_read_json
+except ImportError:
+    from material_model_io import read_json as material_read_json
+
 ROOT=Path(__file__).resolve().parents[1]
 
 
@@ -42,7 +47,7 @@ def verify(system,instance,run):
         a,b=Counter(map(canonical,rows)),Counter(map(canonical,after[table]))
         if a-b:raise ValueError('original row lost or rewritten: '+table)
         protected[table]={'before':len(rows),'after':len(after[table]),'all_original_rows_preserved':True}
-    delta=json.loads((ROOT/'production/breakdown/publication.json').read_text())
+    delta=material_read_json(ROOT/'production/breakdown/publication.json')
     if delta!=build_plan(baseline,candidate):raise ValueError('publication differs from isolated candidate')
     replay=run/'replay.sqlite3';backup(baseline,replay)
     db=connect(replay,readonly=False)

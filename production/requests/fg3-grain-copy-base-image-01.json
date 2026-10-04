@@ -1,57 +1,6 @@
 {
-  "id": "fg3-grain-copy-base-image-01",
-  "recipe_id": "form-grain-copy-base",
-  "entity": {
-    "object_id": "entity-grain-copy",
-    "revision_id": "810a9227cd38e3e17d273031e54bd132865990e053200b486d77144f297a223f"
-  },
-  "state": {
-    "object_id": "form-grain-copy-base",
-    "revision_id": "d457d89c411e4fdef1c6842f1675f3ea544bf3c338329f7630ca9a15628d5004"
-  },
-  "requirement": {
-    "object_id": "need-form-grain-copy-base-overall",
-    "revision_id": "3e9dd91a7270b5f15189161c681f7b7247aa3faeedfac649314607b26f36be0f"
-  },
-  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
-  "references": [
-    {
-      "reference": {
-        "object_id": "asset-fg3-grain-order-base-image-01",
-        "revision_id": "95782b97244d55a4ad8a5df69aa934c7a6173fe65b329a92b4a1fc1ff434d62c"
-      },
-      "component_id": "original",
-      "sha256": "7e8a84507903c9dfdeab3e462ff778be2d0ae2aad43e0fe7b153e4d5b5c786fb",
-      "crop": {
-        "x": 0,
-        "y": 0,
-        "width": 1,
-        "height": 1
-      },
-      "use": "参考图1：仅对应原单内容和版面；本次是新纸手抄件，删除原戳、旧纸色与折损。"
-    }
-  ],
-  "lineage": {
-    "i2i_depth": 1,
-    "references": [
-      {
-        "object_id": "asset-fg3-grain-order-base-image-01",
-        "revision_id": "95782b97244d55a4ad8a5df69aa934c7a6173fe65b329a92b4a1fc1ff434d62c"
-      }
-    ]
-  },
-  "master_approval": {
-    "object_id": "review-master-fg3-grain-order-base-image-01",
-    "revision_id": "902b60770c0ee7a5ea736d03794a17feb956cd8109360066cc8c7b7793eb8426"
-  },
-  "tool": "image_gen.imagegen",
-  "model": "GPT Image",
-  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
-  "request": {
-    "prompt": "单幅整体参考，全部组成完整留边。沿用参考的二维清楚线条、低饱和色块，浅暖灰空底，不加纹理、噪点、文字标题、人物或分格。最高原生输出，不放大。3:4。参考图1是备粮原单，本次画李诞照单抄写的新纸副本，单张米白窄纸、幅宽略大、无旧折痕或破口。准确抄“祭户米两斗”，住处日期的淡墨位置与内容保持对应而不可辨，不编新值。删去原单下角庙仓图形印记，抄件绝不冒作盖原戳的原单，笔画简朴，纸完整，不画旁边原单或通道图。",
-    "transparent_background": false,
-    "referenced_image_paths": [
-      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/7e8a84507903c9dfdeab3e462ff778be2d0ae2aad43e0fe7b153e4d5b5c786fb.png"
-    ]
-  }
+  "bytes": 2667,
+  "format": "material-archive-reference-v1",
+  "recipe": "ee67576619ea9b614c9acfb9e5756594fe2b39404c96f94b1fe342e775a07f9b",
+  "sha256": "a8b829068568d05c828d12c3a1a0e281a2e2c838e015d312158cf9dae658d608"
 }

@@ -1,60 +1,6 @@
 {
-  "id": "fg3-procession-crowd-base-image-02",
-  "recipe_id": "form-procession-crowd-base",
-  "entity": {
-    "object_id": "entity-procession-crowd",
-    "revision_id": "22d866b1479a844a93e82d278790042a3525e1bfee5848b07373bed2fed1c314"
-  },
-  "state": {
-    "object_id": "form-procession-crowd-base",
-    "revision_id": "afc390fb0043570357735970c439a7f4ba794d7966fad4629ac4dfbe6aa8d6af"
-  },
-  "requirement": {
-    "object_id": "need-form-procession-crowd-base-overall",
-    "revision_id": "922472276570a4509916f96bc68fe91d4d665ce3fb46373803e02cce29602e9a"
-  },
-  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
-  "references": [
-    {
-      "reference": {
-        "object_id": "asset-fg3-procession-crowd-base-image-01",
-        "revision_id": "f57a162c1a54d1d1937432ad27b753f40af5de8be63e1242ece0208eb2afc140"
-      },
-      "component_id": "original",
-      "sha256": "ffe7d7ff36dbdede65cc5ecd7ac5cd3f55b38d944dbee2420fc955f12802c1f0",
-      "crop": {
-        "x": 0,
-        "y": 0,
-        "width": 1,
-        "height": 1
-      },
-      "use": "参考图1：完整原件，固定身份与画风，仅修改所列状态或自检问题。"
-    }
-  ],
-  "lineage": {
-    "i2i_depth": 1,
-    "references": [
-      {
-        "object_id": "asset-fg3-procession-crowd-base-image-01",
-        "revision_id": "f57a162c1a54d1d1937432ad27b753f40af5de8be63e1242ece0208eb2afc140"
-      }
-    ]
-  },
-  "same_state_repair": {
-    "source": {
-      "object_id": "asset-fg3-procession-crowd-base-image-01",
-      "revision_id": "f57a162c1a54d1d1937432ad27b753f40af5de8be63e1242ece0208eb2afc140"
-    },
-    "reason": "修正参考图1群组的完整入画。严格保留原来八个人的脸、年龄、性别、发髻、衣服配色、两名庙工与六名围观者身份及中央空通道。改为16:9更宽单幅画面，将八人整体缩小并向画心收拢，画面四边都至少留5%空白，最左与最右人的双臂、衣角、鞋都完整，不能贴边裁切。原来每侧四人可轻错位，但任何人的脸、身体与双脚都不被其他人遮挡；不要新增或删除人。仅额外删除左侧前方灰衣庙工肩上的整条浅灰巾，他保持空手和原衣服。统一浅暖灰空底，清淡二维线色，背景无物无字无纸纹。不另画祭队女孩或主要人物。"
-  },
-  "tool": "image_gen.imagegen",
-  "model": "GPT Image",
-  "model_identity_note": "工具未暴露底层模型ID、质量及像素选择；实际输出单独检测。",
-  "request": {
-    "prompt": "修正参考图1群组的完整入画。严格保留原来八个人的脸、年龄、性别、发髻、衣服配色、两名庙工与六名围观者身份及中央空通道。改为16:9更宽单幅画面，将八人整体缩小并向画心收拢，画面四边都至少留5%空白，最左与最右人的双臂、衣角、鞋都完整，不能贴边裁切。原来每侧四人可轻错位，但任何人的脸、身体与双脚都不被其他人遮挡；不要新增或删除人。仅额外删除左侧前方灰衣庙工肩上的整条浅灰巾，他保持空手和原衣服。统一浅暖灰空底，清淡二维线色，背景无物无字无纸纹。不另画祭队女孩或主要人物。",
-    "transparent_background": false,
-    "referenced_image_paths": [
-      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/ffe7d7ff36dbdede65cc5ecd7ac5cd3f55b38d944dbee2420fc955f12802c1f0.png"
-    ]
-  }
+  "bytes": 3510,
+  "format": "material-archive-reference-v1",
+  "recipe": "73b28c49d3789477f33ddecb505c6bbecbaec472d2a93ab886fce37cc0bf93e7",
+  "sha256": "00239fd2716e1edfe2d566f5a84d756f6c0665e6b10c8d9aedae7a9b6676cf3e"
 }

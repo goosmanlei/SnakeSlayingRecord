@@ -1,60 +1,6 @@
 {
-  "id": "fg3-cave-gate-loaded-image-03",
-  "recipe_id": "form-cave-gate-loaded",
-  "entity": {
-    "object_id": "entity-cave-gate",
-    "revision_id": "ed76d5b1efb108994ffe0ec7deaf09f5146f1d637a4d7b4d736f215012a7656c"
-  },
-  "state": {
-    "object_id": "form-cave-gate-loaded",
-    "revision_id": "f8e5d07aa17003cca1177c9d8668e8ad2e90caeeb238cf3019fc460e8fb7e07f"
-  },
-  "requirement": {
-    "object_id": "need-form-cave-gate-loaded-overall",
-    "revision_id": "15e2499c487e9ec0df44944ca6d63770815b8224087fd955e6f510c7f85f812a"
-  },
-  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
-  "references": [
-    {
-      "reference": {
-        "object_id": "asset-fg3-cave-gate-loaded-image-02",
-        "revision_id": "4a0fd46f10c5c41954633fc608a5009cb3227cac2b8abf81e2ef693a97cd4e13"
-      },
-      "component_id": "original",
-      "sha256": "3469ada3752630ae620804c7ed4fecd1dbbe6527b408c983fb315bad528d98e7",
-      "crop": {
-        "x": 0,
-        "y": 0,
-        "width": 1,
-        "height": 1
-      },
-      "use": "参考图1：同状态完整候选，只移除错误短栓"
-    }
-  ],
-  "lineage": {
-    "i2i_depth": 2,
-    "references": [
-      {
-        "object_id": "asset-fg3-cave-gate-loaded-image-02",
-        "revision_id": "4a0fd46f10c5c41954633fc608a5009cb3227cac2b8abf81e2ef693a97cd4e13"
-      }
-    ]
-  },
-  "same_state_repair": {
-    "source": {
-      "object_id": "asset-fg3-cave-gate-loaded-image-02",
-      "revision_id": "4a0fd46f10c5c41954633fc608a5009cb3227cac2b8abf81e2ef693a97cd4e13"
-    },
-    "reason": "左下短栓长度不可能跨两柱；移出画面，保持抽栓状态。"
-  },
-  "tool": "image_gen.imagegen",
-  "model": "GPT Image",
-  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
-  "request": {
-    "prompt": "极小局部修改参考图1，输出完整4:3全图。只擦去左下角地面那根短木块，把其位置还原为干净浅灰地面。原木栓已抽出并放在画外墙边，不再在画内任何位置画销、短棒或栓。其他所有像素语义保持：灰木双柱和黑色空槽孔、整厚闸、门底压住的窄小蛇鳞弧面、完整封顶石道、长杠整体在柱前的关系、中央两组麻绳、两个下压箭头、浅灰背景。不要改变长杠长度，不加人、不改机位、不开石盖；这是去掉错误小木物的一次新整体生成。保持干净二维平涂和轻手绘石色。",
-    "transparent_background": false,
-    "referenced_image_paths": [
-      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/3469ada3752630ae620804c7ed4fecd1dbbe6527b408c983fb315bad528d98e7.png"
-    ]
-  }
+  "bytes": 2759,
+  "format": "material-archive-reference-v1",
+  "recipe": "9c6c0e49071abbb6515f7ef31bef82f2bc3843fb189b853030c6394e7be4d083",
+  "sha256": "14d29cf47e4eba6969a1b1766ba79389de5ad399844ed77856120be3cbe90d62"
 }

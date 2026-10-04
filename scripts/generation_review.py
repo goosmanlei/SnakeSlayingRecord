@@ -16,6 +16,11 @@ except ImportError:
     from generation_publication import backup, build_plan, tables
     from publish_generation import copy_media
 
+try:
+    from .material_model_io import read_bytes as material_read_bytes
+except ImportError:
+    from material_model_io import read_bytes as material_read_bytes
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -68,7 +73,7 @@ def export_review(root, instance):
         target = contained(root, Path('export') / name)
         source = contained(root, instance / 'export' / name)
         target.parent.mkdir(parents=True, exist_ok=True)
-        if name.startswith('assets/') and target.exists() and target.read_bytes() != source.read_bytes():
+        if name.startswith('assets/') and target.exists() and material_read_bytes(target) != material_read_bytes(source):
             raise ValueError('existing managed original differs')
         shutil.copyfile(source, target)
     return manifest

@@ -1,60 +1,6 @@
 {
-  "id": "fg3-zhou-base-image-02",
-  "recipe_id": "form-zhou-base",
-  "entity": {
-    "object_id": "entity-zhou",
-    "revision_id": "b5bd34aad27efc3242b5ca4e724214a7ea727339c670f5168bed6a2ad42a62f4"
-  },
-  "state": {
-    "object_id": "form-zhou-base",
-    "revision_id": "d76726da0de2c31c624bc2484ca6781bd6668d98e4b873211fe8f6697fe7ae81"
-  },
-  "requirement": {
-    "object_id": "need-form-zhou-base-overall",
-    "revision_id": "99bf29c2442abc2c1628ab94b13dcac296a0f1f74aa6e6997a28e2a39448b752"
-  },
-  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
-  "references": [
-    {
-      "reference": {
-        "object_id": "asset-fg3-zhou-base-image-01",
-        "revision_id": "c8c3c005cf53060ce67a0f6b1a58b5a5d284e223fafd19c3b00ac73746e80c50"
-      },
-      "component_id": "original",
-      "sha256": "8fb44b9708d8897902ffda08d09742e2494f913674757b171ab6bdb0a14ac00c",
-      "crop": {
-        "x": 0,
-        "y": 0,
-        "width": 1,
-        "height": 1
-      },
-      "use": "参考图1：完整原件，固定身份与画风，仅修改所列状态或自检问题。"
-    }
-  ],
-  "lineage": {
-    "i2i_depth": 1,
-    "references": [
-      {
-        "object_id": "asset-fg3-zhou-base-image-01",
-        "revision_id": "c8c3c005cf53060ce67a0f6b1a58b5a5d284e223fafd19c3b00ac73746e80c50"
-      }
-    ]
-  },
-  "same_state_repair": {
-    "source": {
-      "object_id": "asset-fg3-zhou-base-image-01",
-      "revision_id": "c8c3c005cf53060ce67a0f6b1a58b5a5d284e223fafd19c3b00ac73746e80c50"
-    },
-    "reason": "仅修正参考图1中同一个周掌柜的基准状态。保持宽圆脸、短眉、发髻、年龄、体形和浅灰褐长衣、灰布鞋及原二维线色。移除双手木斗，双手自然松垂且只有少许米粉；移除腰间白巾。深褐围裙系腰，只到膝盖上方，露出完整小腿；米粉只留在下腹小块常擦区域，清除裙面大片白粉。背景改成无物件的浅暖灰；删除米袋、柜架、招幡、秤和所有米铺陈设。只有一人，完整头到鞋，干净3:4基准图，不增加新饰物、文字或纹理。"
-  },
-  "tool": "image_gen.imagegen",
-  "model": "GPT Image",
-  "model_identity_note": "工具未暴露底层模型ID、质量及像素选择；实际输出单独检测。",
-  "request": {
-    "prompt": "仅修正参考图1中同一个周掌柜的基准状态。保持宽圆脸、短眉、发髻、年龄、体形和浅灰褐长衣、灰布鞋及原二维线色。移除双手木斗，双手自然松垂且只有少许米粉；移除腰间白巾。深褐围裙系腰，只到膝盖上方，露出完整小腿；米粉只留在下腹小块常擦区域，清除裙面大片白粉。背景改成无物件的浅暖灰；删除米袋、柜架、招幡、秤和所有米铺陈设。只有一人，完整头到鞋，干净3:4基准图，不增加新饰物、文字或纹理。",
-    "transparent_background": false,
-    "referenced_image_paths": [
-      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/8fb44b9708d8897902ffda08d09742e2494f913674757b171ab6bdb0a14ac00c.png"
-    ]
-  }
+  "bytes": 3162,
+  "format": "material-archive-reference-v1",
+  "recipe": "7daf0cc052c717f1fc0f9a6b4e5a1508e162df10eb6690d8df7261cd8797bb1d",
+  "sha256": "354fa5230020a977c511e4fb59a1e8e1039562fff776b122552ea3286760f81b"
 }

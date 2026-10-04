@@ -1,57 +1,6 @@
 {
-  "id": "fg3-debt-overlay-base-image-01",
-  "recipe_id": "form-debt-overlay-base",
-  "entity": {
-    "object_id": "entity-debt-overlay",
-    "revision_id": "7f517fabc20db4c33e36ae117eb8e14ed079bf0806fdee835787b0abe2b09dbd"
-  },
-  "state": {
-    "object_id": "form-debt-overlay-base",
-    "revision_id": "c5886635fcea7c0bad47c78fe2361451f2f77961e49898d9d9822d70e5eb8eeb"
-  },
-  "requirement": {
-    "object_id": "need-form-debt-overlay-base-overall",
-    "revision_id": "599a5bfef712e6585d606237ae4a0ba4a57ad48cd24e086b34b8ecb7675cfc57"
-  },
-  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
-  "references": [
-    {
-      "reference": {
-        "object_id": "asset-fg3-debt-note-base-image-01",
-        "revision_id": "de7edca26bd02cde34aadf1165b0a3541adf1b8c81442b61699ba3e0893347d8"
-      },
-      "component_id": "original",
-      "sha256": "b474a3b8eb37db5f4ea3b677112609ee3b9599f8207c0282b4b163b466237ca8",
-      "crop": {
-        "x": 0,
-        "y": 0,
-        "width": 1,
-        "height": 1
-      },
-      "use": "参考图1：准确认可原件；按提示词中参考图1的用途保持身份与结构，使用完整原件。"
-    }
-  ],
-  "lineage": {
-    "i2i_depth": 1,
-    "references": [
-      {
-        "object_id": "asset-fg3-debt-note-base-image-01",
-        "revision_id": "de7edca26bd02cde34aadf1165b0a3541adf1b8c81442b61699ba3e0893347d8"
-      }
-    ]
-  },
-  "master_approval": {
-    "object_id": "review-master-fg3-debt-note-base-image-01",
-    "revision_id": "22526f71586233db943ddef0e8230f5d8193fcc0767b8221d3c5cdedd95a49b6"
-  },
-  "tool": "image_gen.imagegen",
-  "model": "GPT Image",
-  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
-  "request": {
-    "prompt": "单幅完整道具参考图，干净二维线条、低饱和大色块，柔和中性光，浅暖灰空底。全部指定组成完整留边；不用分格、箭头、标题、水印、人物或额外故事场景。无纸纹噪点、锐化及写实浮雕。保持参考的物件身份与配色，仅修改指定状态。使用工具最高原生输出，不放大。3:4。本图目标是借据上那条篡改贴纸的完整贴附状态。参考图1固定同一旧黄借据、左下红手印和中央细长较白新贴纸。全部旧借据仍完整入画作承托，突出贴纸边缘、底部略翘小角及较浅纸色。贴纸竖写“七斗 愿入庙供奉”，覆盖底下原字；此时尚未湿揭，不露出六斗，不画分离的第二纸条、手或水布。整体风格色彩保持参考，纸面不再增加纹理。",
-    "transparent_background": false,
-    "referenced_image_paths": [
-      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/b474a3b8eb37db5f4ea3b677112609ee3b9599f8207c0282b4b163b466237ca8.png"
-    ]
-  }
+  "bytes": 2904,
+  "format": "material-archive-reference-v1",
+  "recipe": "ceb1afea76dcf48ad7c5e2880059c0399dd5e7be9f050b7aa97980d55ca44483",
+  "sha256": "beee34ddda2020de8a6d623de26d03f83c8dae98d4d8bf358867bc01c566ad24"
 }

@@ -1,60 +1,6 @@
 {
-  "id": "fg3-cave-gate-up-image-02",
-  "recipe_id": "form-cave-gate-up",
-  "entity": {
-    "object_id": "entity-cave-gate",
-    "revision_id": "ed76d5b1efb108994ffe0ec7deaf09f5146f1d637a4d7b4d736f215012a7656c"
-  },
-  "state": {
-    "object_id": "form-cave-gate-up",
-    "revision_id": "25ec6ef4b2dba8fd4dc9b9ebb44a352638282ed08cb91d1128ae947564ee6fb3"
-  },
-  "requirement": {
-    "object_id": "need-form-cave-gate-up-overall",
-    "revision_id": "d5562f1d535386ad4d8ab833dda51d88813bda78c37ab72ed60911f77f2f95a5"
-  },
-  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
-  "references": [
-    {
-      "reference": {
-        "object_id": "asset-fg3-cave-gate-up-image-01",
-        "revision_id": "9b4f7f6aacc62506f9825a776134c773dc6849f542f93fc60370686ebb462b90"
-      },
-      "component_id": "original",
-      "sha256": "347509a81a13fbcf0a89caacdff67d1aa353cee3d0fa20356ffdb6049006eab1",
-      "crop": {
-        "x": 0,
-        "y": 0,
-        "width": 1,
-        "height": 1
-      },
-      "use": "参考图1：同一抬闸状态原件，仅修复地面短栓尺寸"
-    }
-  ],
-  "lineage": {
-    "i2i_depth": 2,
-    "references": [
-      {
-        "object_id": "asset-fg3-cave-gate-up-image-01",
-        "revision_id": "9b4f7f6aacc62506f9825a776134c773dc6849f542f93fc60370686ebb462b90"
-      }
-    ]
-  },
-  "same_state_repair": {
-    "source": {
-      "object_id": "asset-fg3-cave-gate-up-image-01",
-      "revision_id": "9b4f7f6aacc62506f9825a776134c773dc6849f542f93fc60370686ebb462b90"
-    },
-    "reason": "抽出的木栓缩短到无法横跨两柱，必须恢复与原闸匹配的长度。"
-  },
-  "tool": "image_gen.imagegen",
-  "model": "GPT Image",
-  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
-  "request": {
-    "prompt": "以参考图1作极小局部修订，新生成完整4:3整体图。所有厚闸板提起高度、左右灰木立柱、空孔、底石、封顶通道、远端关闭南门、机位和颜色完全保留，不新增人或长杠。只修改左下地面那根被抽出的圆木锁销：将它沿地面水平向画面左下和右下延长，完整长度等于两根立柱外侧之间的距离，直径保持原销粗细。整根销全部在地面，两个圆端都留边；它不是小木块，不能只长半个门宽。可以略拉宽画面留空间放全销，但不得裁掉整闸。保持干净二维线色和轻手绘石色，没有纸纹、说明文字或水印。",
-    "transparent_background": false,
-    "referenced_image_paths": [
-      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/347509a81a13fbcf0a89caacdff67d1aa353cee3d0fa20356ffdb6049006eab1.png"
-    ]
-  }
+  "bytes": 2788,
+  "format": "material-archive-reference-v1",
+  "recipe": "dc994565567a430c1fd4c9b490d2992e78b8a5f603699bd7d2eb87c91c0511c1",
+  "sha256": "29b8f7c6e2b069f70e812fc0ab0745f4aab58f0e71d31a79c13722bcc11afac2"
 }

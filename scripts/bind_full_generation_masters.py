@@ -11,11 +11,16 @@ import json
 from pathlib import Path
 import sys
 
+try:
+    from .material_model_io import read_json as material_read_json, read_bytes as material_read_bytes, sqlite_compatibility
+except ImportError:
+    from material_model_io import read_json as material_read_json, read_bytes as material_read_bytes, sqlite_compatibility
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
 def read(path):
-    return json.loads(Path(path).read_text())
+    return material_read_json(path)
 
 
 def write(path, value):
@@ -39,6 +44,7 @@ def main():
     output = folder / 'binding-registration.json'
     if output.exists():
         parser.error('binding already prepared; inspect its exact revisions before continuing')
+    sys.path.insert(0, str(args.system.resolve()))
     decision = read(folder / 'master-approvals.json')
     assert decision['user_reply'] == '1. 认可\n2. 不补'
     assert decision['voice_scope']['new_generation_count'] == 42

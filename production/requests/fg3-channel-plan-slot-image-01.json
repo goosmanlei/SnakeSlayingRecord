@@ -1,57 +1,6 @@
 {
-  "id": "fg3-channel-plan-slot-image-01",
-  "recipe_id": "form-channel-plan-slot",
-  "entity": {
-    "object_id": "entity-channel-plan",
-    "revision_id": "8c7dc4dff24acf479db256e23d40cfb061318e61a998656b27f8e6bdc0b22a70"
-  },
-  "state": {
-    "object_id": "form-channel-plan-slot",
-    "revision_id": "8ffccc36c11a1fe42020115704086a26756211c982d405e8bcb46605607caab0"
-  },
-  "requirement": {
-    "object_id": "need-form-channel-plan-slot-overall",
-    "revision_id": "d6b09036ab9a73b7f4d314c95aadd1d3d429523e660432507c26ae043709440d"
-  },
-  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
-  "references": [
-    {
-      "reference": {
-        "object_id": "asset-fg3-channel-plan-base-image-03",
-        "revision_id": "e9323747cf48ed17f2f24ff251b22094d092eaa3f8c1d08399e7a6554954f306"
-      },
-      "component_id": "original",
-      "sha256": "1360cdaa22a028ccd4c58a237051cd90b75d102a887157d52f0f58f1e5650f96",
-      "crop": {
-        "x": 0,
-        "y": 0,
-        "width": 1,
-        "height": 1
-      },
-      "use": "参考图1：整张纸及上北下南的通道俯视草图"
-    }
-  ],
-  "lineage": {
-    "i2i_depth": 1,
-    "references": [
-      {
-        "object_id": "asset-fg3-channel-plan-base-image-03",
-        "revision_id": "e9323747cf48ed17f2f24ff251b22094d092eaa3f8c1d08399e7a6554954f306"
-      }
-    ]
-  },
-  "master_approval": {
-    "object_id": "review-master-fg3-channel-plan-base-image-03",
-    "revision_id": "59bcaddb5f43d798f9e1cd6b5269af37532bc986952ed80571ed57147eed55ee"
-  },
-  "tool": "image_gen.imagegen",
-  "model": "GPT Image",
-  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
-  "request": {
-    "prompt": "生成一张新的完整状态整体参考，二维人物与轻手绘背景，低饱和自然色、清楚干净轮廓、平涂为主；保持准确母版身份、比例、配色与空间方向。不要摄影皮肤、纸纹噪点、厚肌理或过锐边缘。单幅单时刻，不是分镜拼图、裁切或放大。输出工具最高原生画面，无水印和装饰标题。\n完整原件按实际顺序输入：图1：整张纸及上北下南的通道俯视草图。\n4:3完整浅米白图纸平摊木桌俯视。保留图1唯一北洞、上方北闸、两块盖石接缝、下方南门以及“北”“南”字位置。只在靠南的外段盖石上新增一道很窄东西横短线作为刀缝，不把北闸或盖石接缝误改为刀缝。一只空浅陶碗压在南门内侧饵位，碗内无饭；一根细木筷横放在北闸外横木示长压杠，两端伸向东西空位。整纸四角、空碗与整筷都可见。不加第三门、第二北洞、数字或新标题，不把草图变三维石道，炭线仍粗简。",
-    "transparent_background": false,
-    "referenced_image_paths": [
-      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/1360cdaa22a028ccd4c58a237051cd90b75d102a887157d52f0f58f1e5650f96.png"
-    ]
-  }
+  "bytes": 3063,
+  "format": "material-archive-reference-v1",
+  "recipe": "f226e55d0faa9a613d70d3fde3248302bc15221f5b4fdd04ec7a4ea3760c8454",
+  "sha256": "50607b8f229c9a8b2dfe656fdff8e97b44bde3f65881a48b63f7fb79b3f069c6"
 }
