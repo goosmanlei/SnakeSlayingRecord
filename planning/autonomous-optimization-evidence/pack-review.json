@@ -1,21 +1,21 @@
 {
-  "status": "refreshed_candidate_for_root_review_not_final",
-  "source_files": 313,
-  "delivered_files_excluding_this_review": 91,
-  "bytes_excluding_this_review": 6205709,
-  "screenshots": 27,
-  "screenshot_bytes": 4190150,
+  "status": "report_freeze_product_evidence_not_formal_delivery",
+  "source_files": 346,
+  "delivered_files_excluding_this_review": 95,
+  "bytes_excluding_this_review": 7014690,
+  "screenshots": 28,
+  "screenshot_bytes": 4346236,
   "normalizations": {
-    "thread_ids_replaced_by_roles": 19,
-    "known_root_references": 13,
+    "thread_ids_replaced_by_roles": 21,
+    "known_root_references": 16,
     "other_local_paths": 2,
-    "private_metadata_fields_removed": 10,
+    "private_metadata_fields_removed": 12,
     "raw_logs_omitted": 3,
-    "large_arrays_summarized": 2
+    "large_arrays_summarized": 3
   },
   "privacy_scan_hits": [],
   "source_sha_retained": true,
-  "screenshot_review": "27 selected screenshots individually viewed; exact JPEG bytes preserved; no EXIF/XMP/IPTC/COM metadata segments found",
+  "screenshot_review": "28 selected screenshots individually viewed; exact JPEG bytes preserved; no EXIF/XMP/IPTC/COM metadata segments found",
   "omitted_screenshots": [
     {
       "source": "browser/stage-config-retained.jpg",
@@ -69,14 +69,12 @@
     "active guard state and lease/message/session IDs",
     "raw complete HTTP event streams",
     "large raw logs",
-    "final candidate-binding (not yet real)",
-    "final overall independent review (not yet complete)",
-    "run-stop receipt (run ongoing)"
+    "post-freeze exact candidate/build/preflight/stop receipts (retained in runtime only)"
   ],
   "next": [
-    "root review refreshed candidate and link map",
-    "final candidate-specific checks and final independent convergence review",
-    "actual stop receipt only when issued"
+    "root freeze story candidate with this report-time evidence",
+    "prepare/build/preflight and actual stop receipts remain independent runtime outputs",
+    "explicit final user confirmation before shared writes; no push by default"
   ],
   "screenshot_metadata_containers_checked": true,
   "screenshot_personal_metadata_containers": 0,
@@ -96,6 +94,12 @@
       "path": "scripts/autonomous_optimization_release.py",
       "sha256": "05fd5a0b53d2dd79222f486eeddaee8344414240bbfbacab40a844c184fe0637",
       "bytes": 41340,
+      "included_elsewhere_in_task_branch": true
+    },
+    {
+      "path": "production/autonomous-optimization-release/README.md",
+      "sha256": "7257e4b3af4987e3e339ec10deea8802af309728879933eaca030b12afec18cb",
+      "bytes": 10902,
       "included_elsewhere_in_task_branch": true
     },
     {

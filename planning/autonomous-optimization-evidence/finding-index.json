@@ -1,7 +1,7 @@
 {
-  "source_sha256": "c61aaa5fbd271718208f1393a0c2af6604279bebc9df00b46e6a7713a4143a78",
+  "source_sha256": "47dddbecb10fa4d50cf9f655e7c815f94ee41310634e131412613b1e05262ce8",
   "snapshot": {
-    "updated_at": "2026-10-04T09:21:29.722387+08:00",
+    "updated_at": "2026-10-04T01:44:26.458083+00:00",
     "findings": [
       {
         "id": "AO-001",
@@ -221,7 +221,7 @@
         "scenario": "项目配置及AI评论参考当前创作阶段/背景",
         "current": "PROJECT版本14仍写故事梗概、精修九候选、未确认进入剧本创作及旧原生4K要求；这些字段由polish.py直接加入AI上下文",
         "expected": "可证实的现况与已确认剧本/原生尺寸授权一致；手动阶段语义由用户判断而非自动猜测",
-        "status": "user_stage_applied_preview_pending_release_independent_review",
+        "status": "implemented_independent_browser_verified_formal_apply_pending",
         "priority": "P1",
         "evidence": [
           "Chrome configuration view",
@@ -233,9 +233,10 @@
           "independent-project-context-review.md",
           "project-stage-history-check.json",
           "project-stage-chrome.json",
-          "release-stage-author-tests.log"
+          "release-stage-author-tests.log",
+          "independent-stage-release-review.md"
         ],
-        "next": "Complete independent final follow-up and bind the final candidate; formal delivery awaits explicit confirmation.",
+        "next": "Three-field candidate and compensation independently verified; formal apply awaits final confirmation.",
         "formal_writes": false
       },
       {
@@ -456,17 +457,22 @@
         "current": "同target+old+new不同ID先keep后rework，任一keep即放行；现有契约未定义相反意见归并",
         "expected": "同一准确target/old/new/scope一个可修订结论；旧窗口409；原判断与修订完整保留",
         "priority": "P1",
-        "status": "implemented_targeted_checks_passed_independent_and_browser_pending",
+        "status": "implemented_independent_browser_verified",
         "evidence": [
           "production-flow-audit/decision-contract-review.md",
           "production-flow-audit/contract-results.json",
           "change-decision-contract/design.md",
           "change-decision-contract/fix-evidence.json",
           "change-decision-contract/http-results.json",
-          "change-decision-contract/browser-initial-receipt.json"
+          "change-decision-contract/browser-initial-receipt.json",
+          "independent-change-single-review.json",
+          "change-decision-contract/chrome-final-code-receipt.json",
+          "change-decision-contract/chrome-final-history-receipt.json",
+          "change-decision-contract/chrome-history-final.json",
+          "change-decision-contract/chrome-legacy-originals-after-unified.json"
         ],
         "reason": "用户09:04明确选择一个可修订结论。普通结论沿同ID乐观版本修订；旧多ID不猜赢家，明确归并须引用全部准确旧头。",
-        "next": "独立反例审查与root Chrome：同时新建、keep→rework→keep、旧多ID归并及旧窗口冲突"
+        "next": "Bind final candidate; formal writes await explicit confirmation."
       },
       {
         "id": "AO-027",
@@ -848,7 +854,7 @@
       {
         "id": "AO-049",
         "category": "阅读评论连续性与数据历史",
-        "status": "browser_verified_empty_round_followup_independent_pending",
+        "status": "implemented_independent_browser_verified",
         "scenario": "旧素材刷新丢失准确上下文",
         "current": "实体内旧素材刷新被工作区过滤，退回实体当前页；基线已有相同逻辑。",
         "expected": "保持已选素材卡、轮次和准确修订，拒绝错归属链接，不偷偷改投。",
@@ -866,7 +872,7 @@
         ],
         "impact": "历史阅读判断受影响；原件和历史数据仍保留。",
         "priority": "P2",
-        "next": "Complete independent final follow-up and bind the final candidate; formal delivery awaits explicit confirmation."
+        "next": "Bind unchanged reviewed code and browser inputs to final delivery."
       },
       {
         "id": "AO-050",
@@ -912,6 +918,6 @@
       }
     ]
   },
-  "pack_captured_at": "2026-10-04T01:21:37.664035+00:00",
-  "authority_note": "原文件内部更新时间和分类标签照留，SHA识别本次复制内容；覆盖行并未因打包重标。AO049–051、阶段、组合输出与旧采纳新增证据及已验/未验边界见status-addenda.json。非最终收敛；AO026待终版定向刷新。"
+  "pack_captured_at": "2026-10-04T01:56:43.630000+00:00",
+  "authority_note": "原文件内部更新时间和分类标签照留，SHA识别本次复制内容；覆盖行并未因打包重标。AO026与AO049–051、阶段、组合输出及旧采纳证据边界见status-addenda.json。属于报告冻结时点；其后准确交付与停止回执单独保留，不回写受管快照。"
 }

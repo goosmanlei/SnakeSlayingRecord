@@ -1,6 +1,6 @@
 {
   "format": "autonomous-evidence-candidate-v1",
-  "generated_at": "2026-10-04T01:21:38.166632+00:00",
+  "generated_at": "2026-10-04T01:56:44.286470+00:00",
   "sources": [
     {
       "source": "baseline.json",
@@ -54,23 +54,23 @@
     },
     {
       "source": "findings.json",
-      "source_sha256": "c61aaa5fbd271718208f1393a0c2af6604279bebc9df00b46e6a7713a4143a78",
-      "source_bytes": 44160,
+      "source_sha256": "47dddbecb10fa4d50cf9f655e7c815f94ee41310634e131412613b1e05262ce8",
+      "source_bytes": 44394,
       "target": "finding-index.json",
       "purpose": "完整当前发现或原覆盖ID保留",
       "handling": "summary",
-      "target_sha256": "e42d49ea49bcaa78baee770364de64f5fb8d7e08a40336cd3bfcb614ada5f077",
-      "target_bytes": 46436
+      "target_sha256": "5f8392dbe684c2aae948acd2c66b4d0ff8c317ab43b7b94a2ff6582769db3fad",
+      "target_bytes": 46720
     },
     {
       "source": "coverage.json",
-      "source_sha256": "d9569acb5268797716a451ada7e5fd4c2567baeb669b34f510602c07a0798396",
-      "source_bytes": 166641,
+      "source_sha256": "c209dc53cc0c4235560d954370be1731008053eceefdd9ee70ed6c3fd2103e4a",
+      "source_bytes": 196003,
       "target": "coverage.json",
       "purpose": "完整当前发现或原覆盖ID保留",
       "handling": "summary",
-      "target_sha256": "6fe70ba37d6a90f1dabb25a83c343fddf9e92875900f279776586df403385e26",
-      "target_bytes": 175481
+      "target_sha256": "b2ed80790a64327785cdf77f1fffc9fe1a8afd65252262b0c3dee3e18a5bfa87",
+      "target_bytes": 206203
     },
     {
       "source": "approach-independent-review.json",
@@ -464,13 +464,13 @@
     },
     {
       "source": "coverage-reconciliation.md",
-      "source_sha256": "6643657bf234726d3936f717e68b166bb13cae21e4d0746f53bcf5a01f7b6c75",
-      "source_bytes": 58384,
+      "source_sha256": "d7990e75550a9d64bf5e268901f75f2b95e90a4d405223306e8ea4c95a6f7f34",
+      "source_bytes": 71608,
       "target": "reviews/coverage-reconciliation.md",
       "purpose": "完整独立实质审查或准确发布输入",
       "handling": "normalized_review",
-      "target_sha256": "26449c0dbc2dd56faad3fd7f149ff3e420ce28de72f4b0a17c5054ff697544dc",
-      "target_bytes": 74621
+      "target_sha256": "d00a133e74f106d6f187b5991ef6714c2590f9c042afd7d389a3be5e19c406f2",
+      "target_bytes": 92570
     },
     {
       "source": "independent-startup-review.md",
@@ -543,6 +543,36 @@
       "target_bytes": 3922
     },
     {
+      "source": "independent-change-single-review.md",
+      "source_sha256": "6e1fc20ac78e1782cb729b171f6e888e9f91c14ee143d3630f920c7a57bc6cb6",
+      "source_bytes": 5890,
+      "target": "reviews/ao026.md",
+      "purpose": "完整独立实质审查或准确发布输入",
+      "handling": "normalized_review",
+      "target_sha256": "4f6884ca32482121809b49031704670d65153ef7ce995d67a845cce8ee8ebc64",
+      "target_bytes": 6575
+    },
+    {
+      "source": "final-independent-review.md",
+      "source_sha256": "8387ab9865490122fac2160c9afd3d7e34ad391b1bd5964dc3117a95348910c7",
+      "source_bytes": 9868,
+      "target": "reviews/final-independent.md",
+      "purpose": "完整独立实质审查或准确发布输入",
+      "handling": "normalized_review",
+      "target_sha256": "ae194dd8e5a7862ea51e6c43ff0a4e846f1f80cbc7578244288734c1daa23eed",
+      "target_bytes": 10734
+    },
+    {
+      "source": "final-diff-inventory.md",
+      "source_sha256": "555ad1513262bba33b6db8d266eafd8ae6abd94e13962113a324fe7f42171523",
+      "source_bytes": 3769,
+      "target": "reviews/final-diff-inventory.md",
+      "purpose": "完整独立实质审查或准确发布输入",
+      "handling": "normalized_review",
+      "target_sha256": "ecda2d228edbfff3c520098fbe544eef448103358ad7de382fd31b1dd8dd1c4a",
+      "target_bytes": 4442
+    },
+    {
       "source": "evidence-pack-current-project/request.json",
       "source_sha256": "b5e14243b40a2b60eecc356f106e7a7d5579e7d5f5a3e2ea9a183f9c6ed08807",
       "source_bytes": 3252,
@@ -569,8 +599,8 @@
       "target": "test-evidence.json",
       "purpose": "归并原故障/针对验证命令、结果、准确代码输入与限制；不复制整段日志、不叠加重叠数量",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "bundle-fix-evidence.json",
@@ -579,8 +609,8 @@
       "target": "test-evidence.json",
       "purpose": "归并原故障/针对验证命令、结果、准确代码输入与限制；不复制整段日志、不叠加重叠数量",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "bundle-full-recovery-evidence.json",
@@ -589,8 +619,8 @@
       "target": "test-evidence.json",
       "purpose": "归并原故障/针对验证命令、结果、准确代码输入与限制；不复制整段日志、不叠加重叠数量",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "independent-bundle/probe-results.json",
@@ -599,8 +629,8 @@
       "target": "test-evidence.json",
       "purpose": "归并原故障/针对验证命令、结果、准确代码输入与限制；不复制整段日志、不叠加重叠数量",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "favicon-review-support/same-file-upload-recheck.json",
@@ -609,8 +639,8 @@
       "target": "test-evidence.json",
       "purpose": "归并原故障/针对验证命令、结果、准确代码输入与限制；不复制整段日志、不叠加重叠数量",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "favicon-choice-diagnostic.json",
@@ -619,8 +649,8 @@
       "target": "test-evidence.json",
       "purpose": "归并原故障/针对验证命令、结果、准确代码输入与限制；不复制整段日志、不叠加重叠数量",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "favicon-limit-fix-evidence.json",
@@ -629,8 +659,8 @@
       "target": "test-evidence.json",
       "purpose": "归并原故障/针对验证命令、结果、准确代码输入与限制；不复制整段日志、不叠加重叠数量",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "comment-persistence-fix-evidence.json",
@@ -639,8 +669,8 @@
       "target": "test-evidence.json",
       "purpose": "归并原故障/针对验证命令、结果、准确代码输入与限制；不复制整段日志、不叠加重叠数量",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "comment-storage-failure-fix-evidence.json",
@@ -649,8 +679,8 @@
       "target": "test-evidence.json",
       "purpose": "归并原故障/针对验证命令、结果、准确代码输入与限制；不复制整段日志、不叠加重叠数量",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "comment-editor-followup-evidence.json",
@@ -659,8 +689,8 @@
       "target": "test-evidence.json",
       "purpose": "归并原故障/针对验证命令、结果、准确代码输入与限制；不复制整段日志、不叠加重叠数量",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "comment-success-noop-fix-evidence.json",
@@ -669,8 +699,8 @@
       "target": "test-evidence.json",
       "purpose": "归并原故障/针对验证命令、结果、准确代码输入与限制；不复制整段日志、不叠加重叠数量",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "adoption-fix-evidence.json",
@@ -679,8 +709,8 @@
       "target": "test-evidence.json",
       "purpose": "归并原故障/针对验证命令、结果、准确代码输入与限制；不复制整段日志、不叠加重叠数量",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "adoption-recovery-evidence.json",
@@ -689,8 +719,8 @@
       "target": "test-evidence.json",
       "purpose": "归并原故障/针对验证命令、结果、准确代码输入与限制；不复制整段日志、不叠加重叠数量",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "structure-route-fix-evidence.json",
@@ -699,8 +729,8 @@
       "target": "test-evidence.json",
       "purpose": "归并原故障/针对验证命令、结果、准确代码输入与限制；不复制整段日志、不叠加重叠数量",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "ao017-implementation-evidence.json",
@@ -709,8 +739,8 @@
       "target": "test-evidence.json",
       "purpose": "归并原故障/针对验证命令、结果、准确代码输入与限制；不复制整段日志、不叠加重叠数量",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "package-availability-fix-evidence.json",
@@ -719,8 +749,8 @@
       "target": "test-evidence.json",
       "purpose": "归并原故障/针对验证命令、结果、准确代码输入与限制；不复制整段日志、不叠加重叠数量",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "story-shell-implementation-evidence.json",
@@ -729,8 +759,8 @@
       "target": "test-evidence.json",
       "purpose": "归并原故障/针对验证命令、结果、准确代码输入与限制；不复制整段日志、不叠加重叠数量",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "source-chapter-fix-evidence.json",
@@ -739,8 +769,8 @@
       "target": "test-evidence.json",
       "purpose": "归并原故障/针对验证命令、结果、准确代码输入与限制；不复制整段日志、不叠加重叠数量",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "entity-acceptance-fix-evidence.json",
@@ -749,8 +779,8 @@
       "target": "test-evidence.json",
       "purpose": "归并原故障/针对验证命令、结果、准确代码输入与限制；不复制整段日志、不叠加重叠数量",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "ao022-fix-evidence.json",
@@ -759,8 +789,8 @@
       "target": "test-evidence.json",
       "purpose": "归并原故障/针对验证命令、结果、准确代码输入与限制；不复制整段日志、不叠加重叠数量",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "source-narrow-overflow-fix-evidence.json",
@@ -769,8 +799,8 @@
       "target": "test-evidence.json",
       "purpose": "归并原故障/针对验证命令、结果、准确代码输入与限制；不复制整段日志、不叠加重叠数量",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "ao024-fix-evidence.json",
@@ -779,8 +809,8 @@
       "target": "test-evidence.json",
       "purpose": "3后端及1前端旧反例失败口径；准确列表投影/无轮证据兼容",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "production-flow-audit/contract-results.json",
@@ -789,8 +819,8 @@
       "target": "test-evidence.json",
       "purpose": "归并原故障/针对验证命令、结果、准确代码输入与限制；不复制整段日志、不叠加重叠数量",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "independent-ao024/projection-results.json",
@@ -799,8 +829,8 @@
       "target": "test-evidence.json",
       "purpose": "独立417当前ASSET投影和3实际snapshot核对",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "independent-change-save/result.json",
@@ -809,8 +839,8 @@
       "target": "test-evidence.json",
       "purpose": "独立6反例/作者19检查及准确输入hash，不重复计数",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "change-save-fix-evidence.json",
@@ -819,8 +849,8 @@
       "target": "test-evidence.json",
       "purpose": "作者实际函数和HTTP恢复结果，脱离绝对实例路径",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "change-browser/http-results.json",
@@ -829,8 +859,8 @@
       "target": "test-evidence.json",
       "purpose": "真实HTTP落库断流/GET503，各一次提交且采用历史不变",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "production-scope-label-evidence.json",
@@ -839,8 +869,8 @@
       "target": "test-evidence.json",
       "purpose": "无kind分集快照与服务端类别匹配",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "independent-structure-response/result.json",
@@ -849,8 +879,8 @@
       "target": "test-evidence.json",
       "purpose": "独立3反例与作者13检查输入，说明最小DOM限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "structure-response-fix-evidence.json",
@@ -859,8 +889,8 @@
       "target": "test-evidence.json",
       "purpose": "局部入口候选和准确app验证输入",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "independent-reading-context/result.json",
@@ -869,8 +899,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "independent-writing-callback/result.json",
@@ -879,8 +909,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "writing-callback-fix/evidence.json",
@@ -889,8 +919,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "writing-callback-fix/http-results.json",
@@ -899,8 +929,8 @@
       "target": "test-evidence.json",
       "purpose": "吸收准确故障反例／修复结果／输入哈希，重叠测试不重复计数",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "independent-polish/result.json",
@@ -909,8 +939,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "independent-polish/context-drift-result.json",
@@ -919,8 +949,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "polish-fix-evidence.json",
@@ -929,8 +959,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "independent-source-geometry-result.json",
@@ -939,8 +969,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "independent-exact-member/result.json",
@@ -949,8 +979,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "exact-member-fix/evidence.json",
@@ -959,8 +989,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "exact-member-fix/snapshot-results.json",
@@ -969,8 +999,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "source-region-baseline-history.json",
@@ -979,8 +1009,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "withdrawn-context-audit/baseline-summary.json",
@@ -989,8 +1019,8 @@
       "target": "test-evidence.json",
       "purpose": "AO042准确撤回字段与归并引用；当前头和历史接受快照边界",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "withdrawn-context-audit/material-rounds.json",
@@ -999,8 +1029,8 @@
       "target": "test-evidence.json",
       "purpose": "AO042撤回空轮与旧轮方案原件的准确事实",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "withdrawn-context-audit/fix-evidence.json",
@@ -1009,8 +1039,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "independent-withdrawn-context/results.json",
@@ -1019,8 +1049,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "reading-context-fix-evidence.json",
@@ -1029,8 +1059,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "source-region-fix-evidence.json",
@@ -1039,8 +1069,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "independent-release/results.json",
@@ -1049,8 +1079,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "independent-release/recheck-results.json",
@@ -1059,8 +1089,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "decision-browser/fix-evidence.json",
@@ -1069,8 +1099,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "independent-decision-feedback/results.json",
@@ -1079,8 +1109,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "independent-withdrawn-context/material-results.json",
@@ -1089,8 +1119,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "material-title-fix/evidence.json",
@@ -1099,8 +1129,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "independent-material-title/results.json",
@@ -1109,8 +1139,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "script-storage-audit/fix-evidence.json",
@@ -1119,8 +1149,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "independent-script-storage/results.json",
@@ -1129,8 +1159,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "comment-rejection-audit/fix-evidence.json",
@@ -1139,8 +1169,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "independent-comment-rejection/results.json",
@@ -1149,8 +1179,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "independent-comment-rejection/followup-results.json",
@@ -1159,8 +1189,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "configuration-conflict-fix/evidence.json",
@@ -1169,8 +1199,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "independent-configuration-conflict/results.json",
@@ -1179,8 +1209,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "independent-release/base-tag-results.json",
@@ -1189,8 +1219,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "docker-rehearsal/build-results.json",
@@ -1199,8 +1229,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "docker-rehearsal/wrapper-build-results.json",
@@ -1209,8 +1239,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "docker-rehearsal/compose-results.json",
@@ -1219,8 +1249,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "docker-rehearsal/structural-differences.json",
@@ -1229,8 +1259,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "release-promotion.json",
@@ -1239,8 +1269,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "evidence-image-metadata-check.json",
@@ -1249,8 +1279,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "evidence-source-secret-key-scan.json",
@@ -1259,18 +1289,18 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "coverage-reconciliation.json",
-      "source_sha256": "b242d2dc2b08d56efdf7d7b10776ccf557a838dce0dd6c1adf1120ecc90efd5c",
-      "source_bytes": 96044,
+      "source_sha256": "5ad6071a1f74bf8b0f2f289c20990bf031470779b9edde99c4f02d30dd0ed34a",
+      "source_bytes": 112905,
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "comment-cleanup-audit/results.json",
@@ -1279,8 +1309,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "comment-cleanup-audit/fix-evidence.json",
@@ -1289,8 +1319,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "independent-comment-cleanup/results.json",
@@ -1299,8 +1329,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "entity-history-route-audit/implementation.md",
@@ -1309,8 +1339,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "entity-history-route-audit/fix-evidence.json",
@@ -1319,8 +1349,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "entity-history-route-audit/baseline-results.json",
@@ -1329,8 +1359,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "entity-history-route-audit/real-snapshot-results.json",
@@ -1339,8 +1369,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "entity-history-route-audit/snapshot-receipt.json",
@@ -1349,8 +1379,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "independent-entity-history-route-review.json",
@@ -1359,8 +1389,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "independent-entity-history-route/first-results.json",
@@ -1369,8 +1399,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "independent-entity-history-route/shared-renderer-final-results.json",
@@ -1379,8 +1409,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "independent-entity-history-route/additional-results.json",
@@ -1389,8 +1419,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "independent-entity-history-route/exact-original-recheck.json",
@@ -1399,8 +1429,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "independent-entity-history-route/empty-round-followup-results.json",
@@ -1409,8 +1439,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "exact-reference-label-audit/report.md",
@@ -1419,8 +1449,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "exact-reference-label-audit/results.json",
@@ -1429,8 +1459,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "exact-reference-label-audit/fix-evidence.json",
@@ -1439,8 +1469,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "exact-reference-label-audit/projection-check.json",
@@ -1449,8 +1479,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "independent-reference-names-review.json",
@@ -1459,8 +1489,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "independent-reference-names/frontend-results.json",
@@ -1469,8 +1499,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "independent-reference-names/backend-results.json",
@@ -1479,8 +1509,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "record-version-display-fix.json",
@@ -1489,8 +1519,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "independent-record-version-display-review.json",
@@ -1499,8 +1529,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "independent-stage-release/results.json",
@@ -1509,8 +1539,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "evidence-pack-current-project/capture.json",
@@ -1519,8 +1549,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "assembly-output-browser/v1-technical-evidence.json",
@@ -1529,8 +1559,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "assembly-output-browser/v1-render.json",
@@ -1539,8 +1569,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "assembly-output-browser/v2-preflight.json",
@@ -1549,8 +1579,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "assembly-output-browser/append-v2-receipt.json",
@@ -1559,8 +1589,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "assembly-output-browser/recovery-evidence.json",
@@ -1569,8 +1599,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "independent-assembly-recovery-review.json",
@@ -1579,8 +1609,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "independent-assembly-recovery/results.json",
@@ -1589,8 +1619,8 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "independent-closeout-addendum-01.json",
@@ -1599,8 +1629,118 @@
       "target": "test-evidence.json",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "handling": "summary",
-      "target_sha256": "2d9ddc38d935be1db0ed923507f34afe1d513cf46a4a54a71e1f95ff7efdbfe5",
-      "target_bytes": 388044
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
+    },
+    {
+      "source": "change-decision-contract/design.md",
+      "source_sha256": "28e497b4b3c73808d9769f426cc49960fbb55a3893a8952c41522e37f5e4706b",
+      "source_bytes": 6266,
+      "target": "test-evidence.json",
+      "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
+      "handling": "summary",
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
+    },
+    {
+      "source": "change-decision-contract/fix-evidence.json",
+      "source_sha256": "e18f553a4d98ccd44164fe13cffb84b1e8d5ca93013af71d27ba1de6c54ae663",
+      "source_bytes": 2320,
+      "target": "test-evidence.json",
+      "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
+      "handling": "summary",
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
+    },
+    {
+      "source": "change-decision-contract/http-results.json",
+      "source_sha256": "00073382de6f3d2fdbedddc3a0720ffd1af5bdbe2364b7c47fa7d9254cfa1c31",
+      "source_bytes": 21336,
+      "target": "test-evidence.json",
+      "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
+      "handling": "summary",
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
+    },
+    {
+      "source": "independent-change-single-review.json",
+      "source_sha256": "548ac5842d0f62bbad6c8a7a3e05c836447aa0233b07e8c0b538b50ce9d31a3f",
+      "source_bytes": 6871,
+      "target": "test-evidence.json",
+      "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
+      "handling": "summary",
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
+    },
+    {
+      "source": "independent-change-single-review/backend-summary.json",
+      "source_sha256": "9677e20f5dfcada49464d0a089136f541084ed5c5258c8381dfab4503791ec11",
+      "source_bytes": 3682,
+      "target": "test-evidence.json",
+      "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
+      "handling": "summary",
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
+    },
+    {
+      "source": "independent-change-single-review/frontend-results.json",
+      "source_sha256": "d071199143de4e75d7af96d5144b1ace7d1f7c9f26945d4c2e45f0f67c307ba1",
+      "source_bytes": 2321,
+      "target": "test-evidence.json",
+      "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
+      "handling": "summary",
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
+    },
+    {
+      "source": "independent-change-single-review/frontend-recheck-results.json",
+      "source_sha256": "fc86a0dace03b5990d6a1ad9f6cb0ce8d3c9052a5b3bc37add811f5935c4b0d7",
+      "source_bytes": 2737,
+      "target": "test-evidence.json",
+      "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
+      "handling": "summary",
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
+    },
+    {
+      "source": "final-independent-review.json",
+      "source_sha256": "2b7c1e7bde02929e6501db3b4fd4c713596a26d6644898ea6afde355389e7c10",
+      "source_bytes": 51445,
+      "target": "test-evidence.json",
+      "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
+      "handling": "summary",
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
+    },
+    {
+      "source": "final-diff-inventory.json",
+      "source_sha256": "5074e2d1c24c47079156f576b06bee508e5cd41251e9c02c08266d251cbc1a97",
+      "source_bytes": 133160,
+      "target": "test-evidence.json",
+      "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
+      "handling": "summary",
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
+    },
+    {
+      "source": "formal-final-readonly-check.json",
+      "source_sha256": "c6ae670ff786b1409e29532b94abfbd08de0e39dd1c2b44f43134bd7692929df",
+      "source_bytes": 4282,
+      "target": "test-evidence.json",
+      "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
+      "handling": "summary",
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
+    },
+    {
+      "source": "coverage-update-validation.json",
+      "source_sha256": "3de6a71948086ac29675ada71120b4a0f1515e6ff0d529502ac9a1a1ca812182",
+      "source_bytes": 4199,
+      "target": "test-evidence.json",
+      "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
+      "handling": "summary",
+      "target_sha256": "3fec93738985f6451acd37fbff68b469373729325e2832c8b42a51b65fe5139b",
+      "target_bytes": 753847
     },
     {
       "source": "approach-navigation-browser.json",
@@ -1609,8 +1749,8 @@
       "target": "browser-evidence.json",
       "purpose": "提取真实操作、页面范围/视口/准确对象或修订、读回/写入数与限制；长正文仅存SHA及必要短摘录",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "favicon-browser-evidence.json",
@@ -1619,8 +1759,8 @@
       "target": "browser-evidence.json",
       "purpose": "提取真实操作、页面范围/视口/准确对象或修订、读回/写入数与限制；长正文仅存SHA及必要短摘录",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "configuration-navigation-browser.json",
@@ -1629,8 +1769,8 @@
       "target": "browser-evidence.json",
       "purpose": "提取真实操作、页面范围/视口/准确对象或修订、读回/写入数与限制；长正文仅存SHA及必要短摘录",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "comment-persistence-browser.json",
@@ -1639,8 +1779,8 @@
       "target": "browser-evidence.json",
       "purpose": "提取真实操作、页面范围/视口/准确对象或修订、读回/写入数与限制；长正文仅存SHA及必要短摘录",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "legacy-draft-browser.json",
@@ -1649,8 +1789,8 @@
       "target": "browser-evidence.json",
       "purpose": "提取真实操作、页面范围/视口/准确对象或修订、读回/写入数与限制；长正文仅存SHA及必要短摘录",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "adoption-browser-verification.json",
@@ -1659,8 +1799,8 @@
       "target": "browser-evidence.json",
       "purpose": "提取真实操作、页面范围/视口/准确对象或修订、读回/写入数与限制；长正文仅存SHA及必要短摘录",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "project-context-browser.json",
@@ -1669,8 +1809,8 @@
       "target": "browser-evidence.json",
       "purpose": "提取真实操作、页面范围/视口/准确对象或修订、读回/写入数与限制；长正文仅存SHA及必要短摘录",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "adoption-recovery-browser.json",
@@ -1679,8 +1819,8 @@
       "target": "browser-evidence.json",
       "purpose": "提取真实操作、页面范围/视口/准确对象或修订、读回/写入数与限制；长正文仅存SHA及必要短摘录",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "structure-route-browser.json",
@@ -1689,8 +1829,8 @@
       "target": "browser-evidence.json",
       "purpose": "提取真实操作、页面范围/视口/准确对象或修订、读回/写入数与限制；长正文仅存SHA及必要短摘录",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "history-material-browser.json",
@@ -1699,8 +1839,8 @@
       "target": "browser-evidence.json",
       "purpose": "提取真实操作、页面范围/视口/准确对象或修订、读回/写入数与限制；长正文仅存SHA及必要短摘录",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "package-browser/browser-evidence.json",
@@ -1709,8 +1849,8 @@
       "target": "browser-evidence.json",
       "purpose": "提取真实操作、页面范围/视口/准确对象或修订、读回/写入数与限制；长正文仅存SHA及必要短摘录",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "story-shell-browser.json",
@@ -1719,8 +1859,8 @@
       "target": "browser-evidence.json",
       "purpose": "提取真实操作、页面范围/视口/准确对象或修订、读回/写入数与限制；长正文仅存SHA及必要短摘录",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "source-chapter-browser.json",
@@ -1729,8 +1869,8 @@
       "target": "browser-evidence.json",
       "purpose": "提取真实操作、页面范围/视口/准确对象或修订、读回/写入数与限制；长正文仅存SHA及必要短摘录",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "entity-acceptance-browser.json",
@@ -1739,8 +1879,8 @@
       "target": "browser-evidence.json",
       "purpose": "提取真实操作、页面范围/视口/准确对象或修订、读回/写入数与限制；长正文仅存SHA及必要短摘录",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "entity-browser/ao021-independent-history-check.json",
@@ -1749,8 +1889,8 @@
       "target": "browser-evidence.json",
       "purpose": "提取真实操作、页面范围/视口/准确对象或修订、读回/写入数与限制；长正文仅存SHA及必要短摘录",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "material-exact-candidate-browser.json",
@@ -1759,8 +1899,8 @@
       "target": "browser-evidence.json",
       "purpose": "提取真实操作、页面范围/视口/准确对象或修订、读回/写入数与限制；长正文仅存SHA及必要短摘录",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "source-narrow-overflow-browser.json",
@@ -1769,8 +1909,8 @@
       "target": "browser-evidence.json",
       "purpose": "提取真实操作、页面范围/视口/准确对象或修订、读回/写入数与限制；长正文仅存SHA及必要短摘录",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "script-cross-scene-browser.json",
@@ -1779,8 +1919,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "script-comment-continuity-browser.json",
@@ -1789,8 +1929,8 @@
       "target": "browser-evidence.json",
       "purpose": "提取真实操作、页面范围/视口/准确对象或修订、读回/写入数与限制；长正文仅存SHA及必要短摘录",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "source-history-browser.json",
@@ -1799,8 +1939,8 @@
       "target": "browser-evidence.json",
       "purpose": "提取真实操作、页面范围/视口/准确对象或修订、读回/写入数与限制；长正文仅存SHA及必要短摘录",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "entity-relationship-browser.json",
@@ -1809,8 +1949,8 @@
       "target": "browser-evidence.json",
       "purpose": "提取真实操作、页面范围/视口/准确对象或修订、读回/写入数与限制；长正文仅存SHA及必要短摘录",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "production-scope-pagination-browser.json",
@@ -1819,8 +1959,8 @@
       "target": "browser-evidence.json",
       "purpose": "提取真实操作、页面范围/视口/准确对象或修订、读回/写入数与限制；长正文仅存SHA及必要短摘录",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "asset-list-version-browser.json",
@@ -1829,8 +1969,8 @@
       "target": "browser-evidence.json",
       "purpose": "列表第1轮与实际默认原件一致的Chrome验收",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "change-browser/late-save-browser.json",
@@ -1839,8 +1979,8 @@
       "target": "browser-evidence.json",
       "purpose": "保存迟到不覆盖B集上下文与真实本集名称",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "change-browser/recovery-browser.json",
@@ -1849,8 +1989,8 @@
       "target": "browser-evidence.json",
       "purpose": "不明结果回读、局部刷新失败与恢复真实页面",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "change-browser/browser-persistence-check.json",
@@ -1859,8 +1999,8 @@
       "target": "browser-evidence.json",
       "purpose": "2真实POST/2首修订与采用历史保留；排除controls实例路径",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "reading-empty-browser.json",
@@ -1869,8 +2009,8 @@
       "target": "browser-evidence.json",
       "purpose": "空资料/结构/剧本准确现场及当前问题，不预填修复通过",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "reading-state-browser-evidence.json",
@@ -1879,8 +2019,8 @@
       "target": "browser-evidence.json",
       "purpose": "候选/选定无稿/方向变更/旧图缺失恢复真实Chrome观察",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "region-draft-collapse-reproduction.json",
@@ -1889,8 +2029,8 @@
       "target": "browser-evidence.json",
       "purpose": "区域草稿收起失去锚点的真实复现，仅原问题证据",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "source-image-location-reproduction.json",
@@ -1899,8 +2039,8 @@
       "target": "browser-evidence.json",
       "purpose": "有效资料原图定位误报失效的真实复现，仅原问题证据",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "structure-response-browser.json",
@@ -1909,8 +2049,8 @@
       "target": "browser-evidence.json",
       "purpose": "准确回旧稿但评论面板仍关闭的真实复现",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "reading-empty-fixed-browser.json",
@@ -1919,8 +2059,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "region-draft-collapse-fixed-browser.json",
@@ -1929,8 +2069,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "source-image-location-fixed-browser.json",
@@ -1939,8 +2079,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "source-region-persisted.json",
@@ -1949,8 +2089,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "structure-response-fixed-browser.json",
@@ -1959,8 +2099,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "source-geometry-fixed-browser.json",
@@ -1969,8 +2109,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "source-geometry-saved-browser.json",
@@ -1979,8 +2119,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "source-geometry-scaled-browser.json",
@@ -1989,8 +2129,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "writer-browser/config-delay-chrome.json",
@@ -1999,8 +2139,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "writer-browser/config-recovery-chrome.json",
@@ -2009,8 +2149,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "writer-browser/config-refresh-failure-chrome.json",
@@ -2019,8 +2159,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "writer-browser/config-browser-persistence-check.json",
@@ -2029,8 +2169,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "writer-browser/judgment-list-failure-chrome.json",
@@ -2039,8 +2179,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "writer-browser/judgment-late-chrome.json",
@@ -2049,8 +2189,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "writer-browser/judgment-recovery-chrome.json",
@@ -2059,8 +2199,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "polish-browser/normal-apply-chrome.json",
@@ -2069,8 +2209,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "polish-browser/late-edit-chrome.json",
@@ -2079,8 +2219,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "polish-browser/context-switch-chrome.json",
@@ -2089,8 +2229,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "polish-browser/failure-chrome.json",
@@ -2099,8 +2239,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "polish-browser/stale-revision-readable-chrome.json",
@@ -2109,8 +2249,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "polish-browser/current-revision-chrome.json",
@@ -2119,8 +2259,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "approach-arrow-browser.json",
@@ -2129,8 +2269,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "approach-failure-browser.json",
@@ -2139,8 +2279,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "relationship-comment-browser.json",
@@ -2149,8 +2289,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "media-filter-playback-browser.json",
@@ -2159,8 +2299,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "production-empty-browser.json",
@@ -2169,8 +2309,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "source-region-browser.json",
@@ -2179,8 +2319,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "source-comment-continuity-browser.json",
@@ -2189,8 +2329,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "script-reading-browser.json",
@@ -2199,8 +2339,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "writer-browser/judgment-detail-failure-chrome.json",
@@ -2209,8 +2349,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "writer-browser/judgment-browser-persistence-check.json",
@@ -2219,8 +2359,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "polish-browser/final-browser-state.json",
@@ -2229,8 +2369,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "decision-browser/chrome-persistence-check.json",
@@ -2239,8 +2379,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "decision-browser/entity-saved-read-failure-chrome.json",
@@ -2249,8 +2389,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "decision-browser/entity-unknown-chrome.json",
@@ -2259,8 +2399,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "decision-browser/entity-unknown-reopen-chrome.json",
@@ -2269,8 +2409,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "decision-browser/entity-late-chrome.json",
@@ -2279,8 +2419,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "decision-browser/direction-saved-read-failure-chrome.json",
@@ -2289,8 +2429,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "decision-browser/direction-unknown-chrome.json",
@@ -2299,8 +2439,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "decision-browser/direction-late-chrome.json",
@@ -2309,8 +2449,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "writer-browser/list-failure-fixed-chrome.json",
@@ -2319,8 +2459,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "writer-browser/list-failure-final-persistence.json",
@@ -2329,8 +2469,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "writer-browser/chrome-judgment-pending.json",
@@ -2339,8 +2479,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "withdrawn-context-audit/current-state-chrome.json",
@@ -2349,8 +2489,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "withdrawn-context-audit/merged-state-chrome.json",
@@ -2359,8 +2499,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "withdrawn-context-audit/old-entity-current-withdrawal-chrome.json",
@@ -2369,8 +2509,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "withdrawn-context-audit/old-media-comments-chrome.json",
@@ -2379,8 +2519,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "withdrawn-context-audit/withdrawn-material-chrome.json",
@@ -2389,8 +2529,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "material-title-fix/chrome-after.json",
@@ -2399,8 +2539,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "withdrawn-second-image-modal-before.json",
@@ -2409,8 +2549,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "script-storage-audit/normal-chrome.json",
@@ -2419,8 +2559,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "script-invalid-route-browser.json",
@@ -2429,8 +2569,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "round-conflict-before-feedback-fix.json",
@@ -2439,8 +2579,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "round-conflict-persistence.json",
@@ -2449,8 +2589,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "round-conflict-fixed-chrome.json",
@@ -2459,8 +2599,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "round-conflict-fixed-persistence.json",
@@ -2469,8 +2609,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "writer-browser/config-conflict-chrome.json",
@@ -2479,8 +2619,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "configuration-conflict-fix/chrome-after.json",
@@ -2489,8 +2629,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "configuration-conflict-fix/browser-persistence.json",
@@ -2499,8 +2639,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "readiness-order-browser/b-after-a-release.json",
@@ -2509,8 +2649,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "readiness-order-browser/browser-order-readback.json",
@@ -2519,8 +2659,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "readiness-order-browser/transport-evidence.json",
@@ -2529,8 +2669,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "structure-global-comment-after-refresh.json",
@@ -2539,8 +2679,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "structure-global-comment-persisted.json",
@@ -2549,8 +2689,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "crop-browser/saved-crop-chrome.json",
@@ -2559,8 +2699,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "crop-browser/append-b-receipt.json",
@@ -2569,8 +2709,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "crop-browser/after-new-version-chrome.json",
@@ -2579,8 +2719,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "crop-browser/old-blue-crop-geometry.json",
@@ -2589,8 +2729,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "main-preview-after-reading-integrity.json",
@@ -2599,8 +2739,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "comment-cleanup-audit/normal-cancel-chrome.json",
@@ -2609,8 +2749,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "comment-cleanup-audit/normal-cancel-refreshed-chrome.json",
@@ -2619,8 +2759,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "comment-cleanup-audit/normal-create-edit-chrome.json",
@@ -2629,8 +2769,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "comment-cleanup-audit/normal-browser-persistence.json",
@@ -2639,8 +2779,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "round-conflict-frozen-restored-chrome.json",
@@ -2649,8 +2789,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "withdrawn-history-route-before-refresh.json",
@@ -2659,8 +2799,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "withdrawn-history-route-after-refresh.json",
@@ -2669,8 +2809,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "entity-history-route-audit/fixed-chrome.json",
@@ -2679,8 +2819,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "entity-history-route-audit/fixed-comment-locate-chrome.json",
@@ -2689,8 +2829,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "entity-history-route-audit/current-round-refresh-failure.json",
@@ -2699,8 +2839,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "entity-history-route-audit/current-empty-round-fixed-chrome.json",
@@ -2709,8 +2849,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "entity-history-route-audit/old-round-final-chrome.json",
@@ -2719,8 +2859,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "output-v1-after-v2-chrome.json",
@@ -2729,8 +2869,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "output-reference-fixed-v1-chrome.json",
@@ -2739,8 +2879,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "output-reference-fixed-popup-chrome.json",
@@ -2749,8 +2889,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "output-reference-fixed-v2-chrome.json",
@@ -2759,8 +2899,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "record-version-full-history-chrome.json",
@@ -2769,8 +2909,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "project-stage-chrome.json",
@@ -2779,8 +2919,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "project-stage-history-check.json",
@@ -2789,8 +2929,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "assembly-v1-shot-chrome.json",
@@ -2799,8 +2939,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "output-v1-chrome.json",
@@ -2809,8 +2949,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "assembly-v2-chrome.json",
@@ -2819,8 +2959,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "legacy-exact-adoption-chrome.json",
@@ -2829,8 +2969,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "legacy-entity-adoption-chrome.json",
@@ -2839,8 +2979,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "assembly-output-browser/v1-downloaded-manifest-readback.json",
@@ -2849,8 +2989,8 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "output-v2-play-download-chrome.json",
@@ -2859,8 +2999,188 @@
       "target": "browser-evidence.json",
       "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
       "handling": "summary",
-      "target_sha256": "aed14b370d9cb9d760b5edce440c856cdaf3a74df8463f6361563b9fe1e81653",
-      "target_bytes": 697121
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
+    },
+    {
+      "source": "change-decision-contract/browser-initial-receipt.json",
+      "source_sha256": "e97c7eb2383b09fbd44114fa119ec12bf5d7118091936f3d3f2f24cc7b794a2f",
+      "source_bytes": 3825,
+      "target": "browser-evidence.json",
+      "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
+      "handling": "summary",
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
+    },
+    {
+      "source": "change-decision-contract/chrome-first-create-conflict.json",
+      "source_sha256": "8dff2dc6cc0bc0787fcc0e87c3245dde0ffc6034b7df981ac9a367f7634f9a4a",
+      "source_bytes": 9975,
+      "target": "browser-evidence.json",
+      "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
+      "handling": "summary",
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
+    },
+    {
+      "source": "change-decision-contract/chrome-revision-conflict.json",
+      "source_sha256": "68a7bb79c54f1f5767231f664588a9d5ff03ec2caf3504afe9cdb576a03ee4b4",
+      "source_bytes": 10076,
+      "target": "browser-evidence.json",
+      "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
+      "handling": "summary",
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
+    },
+    {
+      "source": "change-decision-contract/chrome-update-response-unknown.json",
+      "source_sha256": "0316f24db5d563d8d33e0575a6ceee33775ef401a6583efef9f13300fe6cadd3",
+      "source_bytes": 5555,
+      "target": "browser-evidence.json",
+      "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
+      "handling": "summary",
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
+    },
+    {
+      "source": "change-decision-contract/chrome-update-response-recovered.json",
+      "source_sha256": "f1f1cce0a87fffea80af97544348763539a262f1327773a99b859326e4fb0670",
+      "source_bytes": 4375,
+      "target": "browser-evidence.json",
+      "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
+      "handling": "summary",
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
+    },
+    {
+      "source": "change-decision-contract/chrome-stale-download-rejected.json",
+      "source_sha256": "400f7194cec98ba294013c0eaa6f2e5c13546492de3b4314d8cce7eb0051d366",
+      "source_bytes": 5584,
+      "target": "browser-evidence.json",
+      "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
+      "handling": "summary",
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
+    },
+    {
+      "source": "change-decision-contract/chrome-legacy-conflict-before.json",
+      "source_sha256": "dfd864a06ac64ece853314839215077aad3d4be6ccf66662a25df06ef09773b2",
+      "source_bytes": 5868,
+      "target": "browser-evidence.json",
+      "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
+      "handling": "summary",
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
+    },
+    {
+      "source": "change-decision-contract/chrome-legacy-unified-conflict.json",
+      "source_sha256": "797b45a6ee9b6ac02a9b87e72a14ac55a8f3e7f431ed12575fe0d3a30a2785d0",
+      "source_bytes": 10346,
+      "target": "browser-evidence.json",
+      "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
+      "handling": "summary",
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
+    },
+    {
+      "source": "change-decision-contract/chrome-history-button-gap.json",
+      "source_sha256": "a8bccf08eb4f4a867366be1e4385285a4582c8896788be163737c3be8b6b2cb6",
+      "source_bytes": 5199,
+      "target": "browser-evidence.json",
+      "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
+      "handling": "summary",
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
+    },
+    {
+      "source": "change-decision-contract/chrome-history-open-fixed-label-gap.json",
+      "source_sha256": "328debb57b32454eef6a67bf6f4294ae287243d2f40762204eb84113f1085a82",
+      "source_bytes": 6210,
+      "target": "browser-evidence.json",
+      "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
+      "handling": "summary",
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
+    },
+    {
+      "source": "change-decision-contract/chrome-history-final.json",
+      "source_sha256": "1dc0af01dac78ecdb17c08b8a072d446430e4a606ca70aeaf14c4d4a8c201e84",
+      "source_bytes": 12650,
+      "target": "browser-evidence.json",
+      "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
+      "handling": "summary",
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
+    },
+    {
+      "source": "change-decision-contract/chrome-identical-payload-conflict-final.json",
+      "source_sha256": "33a913cda8c281d17f302dfef0f4b9d3b8074a6121e2b6d483b714a4c5d0b49d",
+      "source_bytes": 10121,
+      "target": "browser-evidence.json",
+      "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
+      "handling": "summary",
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
+    },
+    {
+      "source": "change-decision-contract/chrome-unified-response-recovery-final.json",
+      "source_sha256": "a48abffa80170c140ed50e5899c81586b4e91cd0fac92d475fc86d81525ade15",
+      "source_bytes": 9996,
+      "target": "browser-evidence.json",
+      "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
+      "handling": "summary",
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
+    },
+    {
+      "source": "change-decision-contract/chrome-legacy-originals-after-unified.json",
+      "source_sha256": "eaef324f1e22397d064e3952759de51b3e644fc559a8d441415fa89d3f3fca76",
+      "source_bytes": 12527,
+      "target": "browser-evidence.json",
+      "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
+      "handling": "summary",
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
+    },
+    {
+      "source": "change-decision-contract/chrome-final-code-receipt.json",
+      "source_sha256": "4b8a74f711f3bca6f905ddb772bb1779de0a1ddec7024a48aad5ccb2e659d0d3",
+      "source_bytes": 1022,
+      "target": "browser-evidence.json",
+      "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
+      "handling": "summary",
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
+    },
+    {
+      "source": "change-decision-contract/chrome-final-history-receipt.json",
+      "source_sha256": "57530a95dd01baa685aaf4ecdefdf1bf796a0fc9faf1547421e89706286c73de",
+      "source_bytes": 4801,
+      "target": "browser-evidence.json",
+      "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
+      "handling": "summary",
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
+    },
+    {
+      "source": "final-candidate-main-chrome.json",
+      "source_sha256": "abf89e1955a84adf5bba58318099c60f652776976d433b159601ec0348dbe9ed",
+      "source_bytes": 38653,
+      "target": "browser-evidence.json",
+      "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
+      "handling": "summary",
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
+    },
+    {
+      "source": "main-preview-final-readback.json",
+      "source_sha256": "90da352a92b7082d210a6e946cbb62c63baf46fe7ffdd38db51d87ed94dc5eea",
+      "source_bytes": 7562,
+      "target": "browser-evidence.json",
+      "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
+      "handling": "summary",
+      "target_sha256": "dd2af094a4a783e5a2accaed1d07d6fde0f17300c1c3a4f86898424f4061a905",
+      "target_bytes": 870995
     },
     {
       "source": "browser/approach-current-results.jpg",
@@ -3158,6 +3478,17 @@
       "visual_privacy_review": "opened individually with view_image; visible product/story or explicit technical data only; no secret values or machine path observed; no edit",
       "target_sha256": "da28ad4ba5a4fec895a92cf518f75c1b49febd9330efff231991b27f45e3f38a",
       "target_bytes": 158880
+    },
+    {
+      "source": "change-decision-contract/chrome-history-final.jpg",
+      "source_sha256": "a1dbafb958e11b9be0f8a6bb922c1ac4e4cd8ec208ea14b855c31c37035fff60",
+      "source_bytes": 156086,
+      "target": "screenshots/ao026-accurate-conclusion-history.jpg",
+      "purpose": "代表画面，须结合对应浏览器操作及时间；截图自身不证明持久化",
+      "handling": "visually_reviewed_copy",
+      "visual_privacy_review": "opened individually with view_image; visible product/story or explicit technical data only; no secret values or machine path observed; no edit",
+      "target_sha256": "a1dbafb958e11b9be0f8a6bb922c1ac4e4cd8ec208ea14b855c31c37035fff60",
+      "target_bytes": 156086
     }
   ],
   "omitted_screenshots": [
@@ -3211,6 +3542,12 @@
       "path": "scripts/autonomous_optimization_release.py",
       "sha256": "05fd5a0b53d2dd79222f486eeddaee8344414240bbfbacab40a844c184fe0637",
       "bytes": 41340,
+      "included_elsewhere_in_task_branch": true
+    },
+    {
+      "path": "production/autonomous-optimization-release/README.md",
+      "sha256": "7257e4b3af4987e3e339ec10deea8802af309728879933eaca030b12afec18cb",
+      "bytes": 10902,
       "included_elsewhere_in_task_branch": true
     },
     {

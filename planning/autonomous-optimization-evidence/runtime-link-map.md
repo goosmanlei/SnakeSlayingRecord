@@ -12,6 +12,27 @@
 | `assembly-output-browser/v2-preflight.json` | `autonomous-optimization-evidence/test-evidence.json` | `source=assembly-output-browser/v2-preflight.json` |
 | `assembly-v1-shot-chrome.json` | `autonomous-optimization-evidence/browser-evidence.json` | `source=assembly-v1-shot-chrome.json` |
 | `assembly-v2-chrome.json` | `autonomous-optimization-evidence/browser-evidence.json` | `source=assembly-v2-chrome.json` |
+| `change-decision-contract/browser-initial-receipt.json` | `autonomous-optimization-evidence/browser-evidence.json` | `source=change-decision-contract/browser-initial-receipt.json` |
+| `change-decision-contract/chrome-final-code-receipt.json` | `autonomous-optimization-evidence/browser-evidence.json` | `source=change-decision-contract/chrome-final-code-receipt.json` |
+| `change-decision-contract/chrome-final-history-receipt.json` | `autonomous-optimization-evidence/browser-evidence.json` | `source=change-decision-contract/chrome-final-history-receipt.json` |
+| `change-decision-contract/chrome-first-create-conflict.json` | `autonomous-optimization-evidence/browser-evidence.json` | `source=change-decision-contract/chrome-first-create-conflict.json` |
+| `change-decision-contract/chrome-history-button-gap.json` | `autonomous-optimization-evidence/browser-evidence.json` | `source=change-decision-contract/chrome-history-button-gap.json` |
+| `change-decision-contract/chrome-history-final.jpg` | `autonomous-optimization-evidence/screenshots/ao026-accurate-conclusion-history.jpg` | `完整文件／摘要的 source` |
+| `change-decision-contract/chrome-history-final.json` | `autonomous-optimization-evidence/browser-evidence.json` | `source=change-decision-contract/chrome-history-final.json` |
+| `change-decision-contract/chrome-history-open-fixed-label-gap.json` | `autonomous-optimization-evidence/browser-evidence.json` | `source=change-decision-contract/chrome-history-open-fixed-label-gap.json` |
+| `change-decision-contract/chrome-identical-payload-conflict-final.json` | `autonomous-optimization-evidence/browser-evidence.json` | `source=change-decision-contract/chrome-identical-payload-conflict-final.json` |
+| `change-decision-contract/chrome-legacy-conflict-before.json` | `autonomous-optimization-evidence/browser-evidence.json` | `source=change-decision-contract/chrome-legacy-conflict-before.json` |
+| `change-decision-contract/chrome-legacy-originals-after-unified.json` | `autonomous-optimization-evidence/browser-evidence.json` | `source=change-decision-contract/chrome-legacy-originals-after-unified.json` |
+| `change-decision-contract/chrome-legacy-unified-conflict.json` | `autonomous-optimization-evidence/browser-evidence.json` | `source=change-decision-contract/chrome-legacy-unified-conflict.json` |
+| `change-decision-contract/chrome-revision-conflict.json` | `autonomous-optimization-evidence/browser-evidence.json` | `source=change-decision-contract/chrome-revision-conflict.json` |
+| `change-decision-contract/chrome-stale-download-rejected.json` | `autonomous-optimization-evidence/browser-evidence.json` | `source=change-decision-contract/chrome-stale-download-rejected.json` |
+| `change-decision-contract/chrome-unified-response-recovery-final.json` | `autonomous-optimization-evidence/browser-evidence.json` | `source=change-decision-contract/chrome-unified-response-recovery-final.json` |
+| `change-decision-contract/chrome-update-response-recovered.json` | `autonomous-optimization-evidence/browser-evidence.json` | `source=change-decision-contract/chrome-update-response-recovered.json` |
+| `change-decision-contract/chrome-update-response-unknown.json` | `autonomous-optimization-evidence/browser-evidence.json` | `source=change-decision-contract/chrome-update-response-unknown.json` |
+| `change-decision-contract/design.md` | `autonomous-optimization-evidence/test-evidence.json` | `source=change-decision-contract/design.md` |
+| `change-decision-contract/fix-evidence.json` | `autonomous-optimization-evidence/test-evidence.json` | `source=change-decision-contract/fix-evidence.json` |
+| `change-decision-contract/http-results.json` | `autonomous-optimization-evidence/test-evidence.json` | `source=change-decision-contract/http-results.json` |
+| `coverage-update-validation.json` | `autonomous-optimization-evidence/test-evidence.json` | `source=coverage-update-validation.json` |
 | `coverage.json` | `autonomous-optimization-evidence/coverage.json` | `完整文件／摘要的 source` |
 | `entity-history-route-audit/baseline-results.json` | `autonomous-optimization-evidence/test-evidence.json` | `source=entity-history-route-audit/baseline-results.json` |
 | `entity-history-route-audit/current-empty-round-fixed-chrome.json` | `autonomous-optimization-evidence/browser-evidence.json` | `source=entity-history-route-audit/current-empty-round-fixed-chrome.json` |
@@ -31,10 +52,21 @@
 | `exact-reference-label-audit/projection-check.json` | `autonomous-optimization-evidence/test-evidence.json` | `source=exact-reference-label-audit/projection-check.json` |
 | `exact-reference-label-audit/report.md` | `autonomous-optimization-evidence/test-evidence.json` | `source=exact-reference-label-audit/report.md` |
 | `exact-reference-label-audit/results.json` | `autonomous-optimization-evidence/test-evidence.json` | `source=exact-reference-label-audit/results.json` |
+| `final-candidate-main-chrome.json` | `autonomous-optimization-evidence/browser-evidence.json` | `source=final-candidate-main-chrome.json` |
+| `final-diff-inventory.json` | `autonomous-optimization-evidence/test-evidence.json` | `source=final-diff-inventory.json` |
+| `final-diff-inventory.md` | `autonomous-optimization-evidence/reviews/final-diff-inventory.md` | `完整文件／摘要的 source` |
+| `final-independent-review.json` | `autonomous-optimization-evidence/test-evidence.json` | `source=final-independent-review.json` |
+| `final-independent-review.md` | `autonomous-optimization-evidence/reviews/final-independent.md` | `完整文件／摘要的 source` |
 | `findings.json` | `autonomous-optimization-evidence/finding-index.json` | `完整文件／摘要的 source` |
+| `formal-final-readonly-check.json` | `autonomous-optimization-evidence/test-evidence.json` | `source=formal-final-readonly-check.json` |
 | `independent-assembly-recovery-review.json` | `autonomous-optimization-evidence/test-evidence.json` | `source=independent-assembly-recovery-review.json` |
 | `independent-assembly-recovery-review.md` | `autonomous-optimization-evidence/reviews/assembly-recovery.md` | `完整文件／摘要的 source` |
 | `independent-assembly-recovery/results.json` | `autonomous-optimization-evidence/test-evidence.json` | `source=independent-assembly-recovery/results.json` |
+| `independent-change-single-review.json` | `autonomous-optimization-evidence/test-evidence.json` | `source=independent-change-single-review.json` |
+| `independent-change-single-review.md` | `autonomous-optimization-evidence/reviews/ao026.md` | `完整文件／摘要的 source` |
+| `independent-change-single-review/backend-summary.json` | `autonomous-optimization-evidence/test-evidence.json` | `source=independent-change-single-review/backend-summary.json` |
+| `independent-change-single-review/frontend-recheck-results.json` | `autonomous-optimization-evidence/test-evidence.json` | `source=independent-change-single-review/frontend-recheck-results.json` |
+| `independent-change-single-review/frontend-results.json` | `autonomous-optimization-evidence/test-evidence.json` | `source=independent-change-single-review/frontend-results.json` |
 | `independent-closeout-addendum-01.json` | `autonomous-optimization-evidence/test-evidence.json` | `source=independent-closeout-addendum-01.json` |
 | `independent-closeout-addendum-01.md` | `autonomous-optimization-evidence/reviews/legacy-adoption-and-output-v1.md` | `完整文件／摘要的 source` |
 | `independent-entity-history-route-review.json` | `autonomous-optimization-evidence/test-evidence.json` | `source=independent-entity-history-route-review.json` |
@@ -55,6 +87,7 @@
 | `independent-startup-review.md` | `autonomous-optimization-evidence/reviews/startup-model.md` | `完整文件／摘要的 source` |
 | `legacy-entity-adoption-chrome.json` | `autonomous-optimization-evidence/browser-evidence.json` | `source=legacy-entity-adoption-chrome.json` |
 | `legacy-exact-adoption-chrome.json` | `autonomous-optimization-evidence/browser-evidence.json` | `source=legacy-exact-adoption-chrome.json` |
+| `main-preview-final-readback.json` | `autonomous-optimization-evidence/browser-evidence.json` | `source=main-preview-final-readback.json` |
 | `output-reference-fixed-popup-chrome.json` | `autonomous-optimization-evidence/browser-evidence.json` | `source=output-reference-fixed-popup-chrome.json` |
 | `output-reference-fixed-v1-chrome.json` | `autonomous-optimization-evidence/browser-evidence.json` | `source=output-reference-fixed-v1-chrome.json` |
 | `output-reference-fixed-v2-chrome.jpg` | `autonomous-optimization-evidence/screenshots/ao050-051-accurate-output-version.jpg` | `完整文件／摘要的 source` |

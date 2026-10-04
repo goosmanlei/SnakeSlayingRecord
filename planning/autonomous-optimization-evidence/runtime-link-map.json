@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-04T01:23:42.229821+00:00",
-  "report_source_sha256": "41ccd7a03b28f3169e98a0a4be52d6e12aaf8686d4bf1200145a6bc8a8c6bab6",
+  "at": "2026-10-04T01:56:44.636134+00:00",
+  "report_source_sha256": "162325b7d2e55a63d1c802d1caf05586412b2dbca137c1b6c898f4305177b237",
   "path_base": "运行报告位于 planning/；portable_from_planning 可直接作其 Markdown 链接",
   "mappings": [
     {
@@ -42,14 +42,14 @@
       "runtime_source": ".runtime/autonomous-optimization/findings.json",
       "portable_from_planning": "autonomous-optimization-evidence/finding-index.json",
       "portable_from_repository": "planning/autonomous-optimization-evidence/finding-index.json",
-      "source_sha256": "c61aaa5fbd271718208f1393a0c2af6604279bebc9df00b46e6a7713a4143a78",
+      "source_sha256": "47dddbecb10fa4d50cf9f655e7c815f94ee41310634e131412613b1e05262ce8",
       "selector": null
     },
     {
       "runtime_source": ".runtime/autonomous-optimization/coverage.json",
       "portable_from_planning": "autonomous-optimization-evidence/coverage.json",
       "portable_from_repository": "planning/autonomous-optimization-evidence/coverage.json",
-      "source_sha256": "d9569acb5268797716a451ada7e5fd4c2567baeb669b34f510602c07a0798396",
+      "source_sha256": "c209dc53cc0c4235560d954370be1731008053eceefdd9ee70ed6c3fd2103e4a",
       "selector": null
     },
     {
@@ -329,7 +329,7 @@
       "runtime_source": ".runtime/autonomous-optimization/coverage-reconciliation.md",
       "portable_from_planning": "autonomous-optimization-evidence/reviews/coverage-reconciliation.md",
       "portable_from_repository": "planning/autonomous-optimization-evidence/reviews/coverage-reconciliation.md",
-      "source_sha256": "6643657bf234726d3936f717e68b166bb13cae21e4d0746f53bcf5a01f7b6c75",
+      "source_sha256": "d7990e75550a9d64bf5e268901f75f2b95e90a4d405223306e8ea4c95a6f7f34",
       "selector": null
     },
     {
@@ -379,6 +379,27 @@
       "portable_from_planning": "autonomous-optimization-evidence/reviews/legacy-adoption-and-output-v1.md",
       "portable_from_repository": "planning/autonomous-optimization-evidence/reviews/legacy-adoption-and-output-v1.md",
       "source_sha256": "85652db1329348a5076de32be0cc933a0b01a1bf086ec48599716ed673589b52",
+      "selector": null
+    },
+    {
+      "runtime_source": ".runtime/autonomous-optimization/independent-change-single-review.md",
+      "portable_from_planning": "autonomous-optimization-evidence/reviews/ao026.md",
+      "portable_from_repository": "planning/autonomous-optimization-evidence/reviews/ao026.md",
+      "source_sha256": "6e1fc20ac78e1782cb729b171f6e888e9f91c14ee143d3630f920c7a57bc6cb6",
+      "selector": null
+    },
+    {
+      "runtime_source": ".runtime/autonomous-optimization/final-independent-review.md",
+      "portable_from_planning": "autonomous-optimization-evidence/reviews/final-independent.md",
+      "portable_from_repository": "planning/autonomous-optimization-evidence/reviews/final-independent.md",
+      "source_sha256": "8387ab9865490122fac2160c9afd3d7e34ad391b1bd5964dc3117a95348910c7",
+      "selector": null
+    },
+    {
+      "runtime_source": ".runtime/autonomous-optimization/final-diff-inventory.md",
+      "portable_from_planning": "autonomous-optimization-evidence/reviews/final-diff-inventory.md",
+      "portable_from_repository": "planning/autonomous-optimization-evidence/reviews/final-diff-inventory.md",
+      "source_sha256": "555ad1513262bba33b6db8d266eafd8ae6abd94e13962113a324fe7f42171523",
       "selector": null
     },
     {
@@ -889,7 +910,7 @@
       "runtime_source": ".runtime/autonomous-optimization/coverage-reconciliation.json",
       "portable_from_planning": "autonomous-optimization-evidence/test-evidence.json",
       "portable_from_repository": "planning/autonomous-optimization-evidence/test-evidence.json",
-      "source_sha256": "b242d2dc2b08d56efdf7d7b10776ccf557a838dce0dd6c1adf1120ecc90efd5c",
+      "source_sha256": "5ad6071a1f74bf8b0f2f289c20990bf031470779b9edde99c4f02d30dd0ed34a",
       "selector": "records[source=coverage-reconciliation.json]"
     },
     {
@@ -1122,6 +1143,83 @@
       "portable_from_repository": "planning/autonomous-optimization-evidence/test-evidence.json",
       "source_sha256": "a1be510f0ca532a1bf2fc7846dbe65cc589db4b344566235e4d792153825296a",
       "selector": "records[source=independent-closeout-addendum-01.json]"
+    },
+    {
+      "runtime_source": ".runtime/autonomous-optimization/change-decision-contract/design.md",
+      "portable_from_planning": "autonomous-optimization-evidence/test-evidence.json",
+      "portable_from_repository": "planning/autonomous-optimization-evidence/test-evidence.json",
+      "source_sha256": "28e497b4b3c73808d9769f426cc49960fbb55a3893a8952c41522e37f5e4706b",
+      "selector": "records[source=change-decision-contract/design.md]"
+    },
+    {
+      "runtime_source": ".runtime/autonomous-optimization/change-decision-contract/fix-evidence.json",
+      "portable_from_planning": "autonomous-optimization-evidence/test-evidence.json",
+      "portable_from_repository": "planning/autonomous-optimization-evidence/test-evidence.json",
+      "source_sha256": "e18f553a4d98ccd44164fe13cffb84b1e8d5ca93013af71d27ba1de6c54ae663",
+      "selector": "records[source=change-decision-contract/fix-evidence.json]"
+    },
+    {
+      "runtime_source": ".runtime/autonomous-optimization/change-decision-contract/http-results.json",
+      "portable_from_planning": "autonomous-optimization-evidence/test-evidence.json",
+      "portable_from_repository": "planning/autonomous-optimization-evidence/test-evidence.json",
+      "source_sha256": "00073382de6f3d2fdbedddc3a0720ffd1af5bdbe2364b7c47fa7d9254cfa1c31",
+      "selector": "records[source=change-decision-contract/http-results.json]"
+    },
+    {
+      "runtime_source": ".runtime/autonomous-optimization/independent-change-single-review.json",
+      "portable_from_planning": "autonomous-optimization-evidence/test-evidence.json",
+      "portable_from_repository": "planning/autonomous-optimization-evidence/test-evidence.json",
+      "source_sha256": "548ac5842d0f62bbad6c8a7a3e05c836447aa0233b07e8c0b538b50ce9d31a3f",
+      "selector": "records[source=independent-change-single-review.json]"
+    },
+    {
+      "runtime_source": ".runtime/autonomous-optimization/independent-change-single-review/backend-summary.json",
+      "portable_from_planning": "autonomous-optimization-evidence/test-evidence.json",
+      "portable_from_repository": "planning/autonomous-optimization-evidence/test-evidence.json",
+      "source_sha256": "9677e20f5dfcada49464d0a089136f541084ed5c5258c8381dfab4503791ec11",
+      "selector": "records[source=independent-change-single-review/backend-summary.json]"
+    },
+    {
+      "runtime_source": ".runtime/autonomous-optimization/independent-change-single-review/frontend-results.json",
+      "portable_from_planning": "autonomous-optimization-evidence/test-evidence.json",
+      "portable_from_repository": "planning/autonomous-optimization-evidence/test-evidence.json",
+      "source_sha256": "d071199143de4e75d7af96d5144b1ace7d1f7c9f26945d4c2e45f0f67c307ba1",
+      "selector": "records[source=independent-change-single-review/frontend-results.json]"
+    },
+    {
+      "runtime_source": ".runtime/autonomous-optimization/independent-change-single-review/frontend-recheck-results.json",
+      "portable_from_planning": "autonomous-optimization-evidence/test-evidence.json",
+      "portable_from_repository": "planning/autonomous-optimization-evidence/test-evidence.json",
+      "source_sha256": "fc86a0dace03b5990d6a1ad9f6cb0ce8d3c9052a5b3bc37add811f5935c4b0d7",
+      "selector": "records[source=independent-change-single-review/frontend-recheck-results.json]"
+    },
+    {
+      "runtime_source": ".runtime/autonomous-optimization/final-independent-review.json",
+      "portable_from_planning": "autonomous-optimization-evidence/test-evidence.json",
+      "portable_from_repository": "planning/autonomous-optimization-evidence/test-evidence.json",
+      "source_sha256": "2b7c1e7bde02929e6501db3b4fd4c713596a26d6644898ea6afde355389e7c10",
+      "selector": "records[source=final-independent-review.json]"
+    },
+    {
+      "runtime_source": ".runtime/autonomous-optimization/final-diff-inventory.json",
+      "portable_from_planning": "autonomous-optimization-evidence/test-evidence.json",
+      "portable_from_repository": "planning/autonomous-optimization-evidence/test-evidence.json",
+      "source_sha256": "5074e2d1c24c47079156f576b06bee508e5cd41251e9c02c08266d251cbc1a97",
+      "selector": "records[source=final-diff-inventory.json]"
+    },
+    {
+      "runtime_source": ".runtime/autonomous-optimization/formal-final-readonly-check.json",
+      "portable_from_planning": "autonomous-optimization-evidence/test-evidence.json",
+      "portable_from_repository": "planning/autonomous-optimization-evidence/test-evidence.json",
+      "source_sha256": "c6ae670ff786b1409e29532b94abfbd08de0e39dd1c2b44f43134bd7692929df",
+      "selector": "records[source=formal-final-readonly-check.json]"
+    },
+    {
+      "runtime_source": ".runtime/autonomous-optimization/coverage-update-validation.json",
+      "portable_from_planning": "autonomous-optimization-evidence/test-evidence.json",
+      "portable_from_repository": "planning/autonomous-optimization-evidence/test-evidence.json",
+      "source_sha256": "3de6a71948086ac29675ada71120b4a0f1515e6ff0d529502ac9a1a1ca812182",
+      "selector": "records[source=coverage-update-validation.json]"
     },
     {
       "runtime_source": ".runtime/autonomous-optimization/approach-navigation-browser.json",
@@ -2006,6 +2104,132 @@
       "selector": "records[source=output-v2-play-download-chrome.json]"
     },
     {
+      "runtime_source": ".runtime/autonomous-optimization/change-decision-contract/browser-initial-receipt.json",
+      "portable_from_planning": "autonomous-optimization-evidence/browser-evidence.json",
+      "portable_from_repository": "planning/autonomous-optimization-evidence/browser-evidence.json",
+      "source_sha256": "e97c7eb2383b09fbd44114fa119ec12bf5d7118091936f3d3f2f24cc7b794a2f",
+      "selector": "records[source=change-decision-contract/browser-initial-receipt.json]"
+    },
+    {
+      "runtime_source": ".runtime/autonomous-optimization/change-decision-contract/chrome-first-create-conflict.json",
+      "portable_from_planning": "autonomous-optimization-evidence/browser-evidence.json",
+      "portable_from_repository": "planning/autonomous-optimization-evidence/browser-evidence.json",
+      "source_sha256": "8dff2dc6cc0bc0787fcc0e87c3245dde0ffc6034b7df981ac9a367f7634f9a4a",
+      "selector": "records[source=change-decision-contract/chrome-first-create-conflict.json]"
+    },
+    {
+      "runtime_source": ".runtime/autonomous-optimization/change-decision-contract/chrome-revision-conflict.json",
+      "portable_from_planning": "autonomous-optimization-evidence/browser-evidence.json",
+      "portable_from_repository": "planning/autonomous-optimization-evidence/browser-evidence.json",
+      "source_sha256": "68a7bb79c54f1f5767231f664588a9d5ff03ec2caf3504afe9cdb576a03ee4b4",
+      "selector": "records[source=change-decision-contract/chrome-revision-conflict.json]"
+    },
+    {
+      "runtime_source": ".runtime/autonomous-optimization/change-decision-contract/chrome-update-response-unknown.json",
+      "portable_from_planning": "autonomous-optimization-evidence/browser-evidence.json",
+      "portable_from_repository": "planning/autonomous-optimization-evidence/browser-evidence.json",
+      "source_sha256": "0316f24db5d563d8d33e0575a6ceee33775ef401a6583efef9f13300fe6cadd3",
+      "selector": "records[source=change-decision-contract/chrome-update-response-unknown.json]"
+    },
+    {
+      "runtime_source": ".runtime/autonomous-optimization/change-decision-contract/chrome-update-response-recovered.json",
+      "portable_from_planning": "autonomous-optimization-evidence/browser-evidence.json",
+      "portable_from_repository": "planning/autonomous-optimization-evidence/browser-evidence.json",
+      "source_sha256": "f1f1cce0a87fffea80af97544348763539a262f1327773a99b859326e4fb0670",
+      "selector": "records[source=change-decision-contract/chrome-update-response-recovered.json]"
+    },
+    {
+      "runtime_source": ".runtime/autonomous-optimization/change-decision-contract/chrome-stale-download-rejected.json",
+      "portable_from_planning": "autonomous-optimization-evidence/browser-evidence.json",
+      "portable_from_repository": "planning/autonomous-optimization-evidence/browser-evidence.json",
+      "source_sha256": "400f7194cec98ba294013c0eaa6f2e5c13546492de3b4314d8cce7eb0051d366",
+      "selector": "records[source=change-decision-contract/chrome-stale-download-rejected.json]"
+    },
+    {
+      "runtime_source": ".runtime/autonomous-optimization/change-decision-contract/chrome-legacy-conflict-before.json",
+      "portable_from_planning": "autonomous-optimization-evidence/browser-evidence.json",
+      "portable_from_repository": "planning/autonomous-optimization-evidence/browser-evidence.json",
+      "source_sha256": "dfd864a06ac64ece853314839215077aad3d4be6ccf66662a25df06ef09773b2",
+      "selector": "records[source=change-decision-contract/chrome-legacy-conflict-before.json]"
+    },
+    {
+      "runtime_source": ".runtime/autonomous-optimization/change-decision-contract/chrome-legacy-unified-conflict.json",
+      "portable_from_planning": "autonomous-optimization-evidence/browser-evidence.json",
+      "portable_from_repository": "planning/autonomous-optimization-evidence/browser-evidence.json",
+      "source_sha256": "797b45a6ee9b6ac02a9b87e72a14ac55a8f3e7f431ed12575fe0d3a30a2785d0",
+      "selector": "records[source=change-decision-contract/chrome-legacy-unified-conflict.json]"
+    },
+    {
+      "runtime_source": ".runtime/autonomous-optimization/change-decision-contract/chrome-history-button-gap.json",
+      "portable_from_planning": "autonomous-optimization-evidence/browser-evidence.json",
+      "portable_from_repository": "planning/autonomous-optimization-evidence/browser-evidence.json",
+      "source_sha256": "a8bccf08eb4f4a867366be1e4385285a4582c8896788be163737c3be8b6b2cb6",
+      "selector": "records[source=change-decision-contract/chrome-history-button-gap.json]"
+    },
+    {
+      "runtime_source": ".runtime/autonomous-optimization/change-decision-contract/chrome-history-open-fixed-label-gap.json",
+      "portable_from_planning": "autonomous-optimization-evidence/browser-evidence.json",
+      "portable_from_repository": "planning/autonomous-optimization-evidence/browser-evidence.json",
+      "source_sha256": "328debb57b32454eef6a67bf6f4294ae287243d2f40762204eb84113f1085a82",
+      "selector": "records[source=change-decision-contract/chrome-history-open-fixed-label-gap.json]"
+    },
+    {
+      "runtime_source": ".runtime/autonomous-optimization/change-decision-contract/chrome-history-final.json",
+      "portable_from_planning": "autonomous-optimization-evidence/browser-evidence.json",
+      "portable_from_repository": "planning/autonomous-optimization-evidence/browser-evidence.json",
+      "source_sha256": "1dc0af01dac78ecdb17c08b8a072d446430e4a606ca70aeaf14c4d4a8c201e84",
+      "selector": "records[source=change-decision-contract/chrome-history-final.json]"
+    },
+    {
+      "runtime_source": ".runtime/autonomous-optimization/change-decision-contract/chrome-identical-payload-conflict-final.json",
+      "portable_from_planning": "autonomous-optimization-evidence/browser-evidence.json",
+      "portable_from_repository": "planning/autonomous-optimization-evidence/browser-evidence.json",
+      "source_sha256": "33a913cda8c281d17f302dfef0f4b9d3b8074a6121e2b6d483b714a4c5d0b49d",
+      "selector": "records[source=change-decision-contract/chrome-identical-payload-conflict-final.json]"
+    },
+    {
+      "runtime_source": ".runtime/autonomous-optimization/change-decision-contract/chrome-unified-response-recovery-final.json",
+      "portable_from_planning": "autonomous-optimization-evidence/browser-evidence.json",
+      "portable_from_repository": "planning/autonomous-optimization-evidence/browser-evidence.json",
+      "source_sha256": "a48abffa80170c140ed50e5899c81586b4e91cd0fac92d475fc86d81525ade15",
+      "selector": "records[source=change-decision-contract/chrome-unified-response-recovery-final.json]"
+    },
+    {
+      "runtime_source": ".runtime/autonomous-optimization/change-decision-contract/chrome-legacy-originals-after-unified.json",
+      "portable_from_planning": "autonomous-optimization-evidence/browser-evidence.json",
+      "portable_from_repository": "planning/autonomous-optimization-evidence/browser-evidence.json",
+      "source_sha256": "eaef324f1e22397d064e3952759de51b3e644fc559a8d441415fa89d3f3fca76",
+      "selector": "records[source=change-decision-contract/chrome-legacy-originals-after-unified.json]"
+    },
+    {
+      "runtime_source": ".runtime/autonomous-optimization/change-decision-contract/chrome-final-code-receipt.json",
+      "portable_from_planning": "autonomous-optimization-evidence/browser-evidence.json",
+      "portable_from_repository": "planning/autonomous-optimization-evidence/browser-evidence.json",
+      "source_sha256": "4b8a74f711f3bca6f905ddb772bb1779de0a1ddec7024a48aad5ccb2e659d0d3",
+      "selector": "records[source=change-decision-contract/chrome-final-code-receipt.json]"
+    },
+    {
+      "runtime_source": ".runtime/autonomous-optimization/change-decision-contract/chrome-final-history-receipt.json",
+      "portable_from_planning": "autonomous-optimization-evidence/browser-evidence.json",
+      "portable_from_repository": "planning/autonomous-optimization-evidence/browser-evidence.json",
+      "source_sha256": "57530a95dd01baa685aaf4ecdefdf1bf796a0fc9faf1547421e89706286c73de",
+      "selector": "records[source=change-decision-contract/chrome-final-history-receipt.json]"
+    },
+    {
+      "runtime_source": ".runtime/autonomous-optimization/final-candidate-main-chrome.json",
+      "portable_from_planning": "autonomous-optimization-evidence/browser-evidence.json",
+      "portable_from_repository": "planning/autonomous-optimization-evidence/browser-evidence.json",
+      "source_sha256": "abf89e1955a84adf5bba58318099c60f652776976d433b159601ec0348dbe9ed",
+      "selector": "records[source=final-candidate-main-chrome.json]"
+    },
+    {
+      "runtime_source": ".runtime/autonomous-optimization/main-preview-final-readback.json",
+      "portable_from_planning": "autonomous-optimization-evidence/browser-evidence.json",
+      "portable_from_repository": "planning/autonomous-optimization-evidence/browser-evidence.json",
+      "source_sha256": "90da352a92b7082d210a6e946cbb62c63baf46fe7ffdd38db51d87ed94dc5eea",
+      "selector": "records[source=main-preview-final-readback.json]"
+    },
+    {
       "runtime_source": ".runtime/autonomous-optimization/browser/approach-current-results.jpg",
       "portable_from_planning": "autonomous-optimization-evidence/screenshots/ao001-current-results.jpg",
       "portable_from_repository": "planning/autonomous-optimization-evidence/screenshots/ao001-current-results.jpg",
@@ -2192,6 +2416,13 @@
       "portable_from_planning": "autonomous-optimization-evidence/screenshots/ao050-051-accurate-output-version.jpg",
       "portable_from_repository": "planning/autonomous-optimization-evidence/screenshots/ao050-051-accurate-output-version.jpg",
       "source_sha256": "da28ad4ba5a4fec895a92cf518f75c1b49febd9330efff231991b27f45e3f38a",
+      "selector": null
+    },
+    {
+      "runtime_source": ".runtime/autonomous-optimization/change-decision-contract/chrome-history-final.jpg",
+      "portable_from_planning": "autonomous-optimization-evidence/screenshots/ao026-accurate-conclusion-history.jpg",
+      "portable_from_repository": "planning/autonomous-optimization-evidence/screenshots/ao026-accurate-conclusion-history.jpg",
+      "source_sha256": "a1dbafb958e11b9be0f8a6bb922c1ac4e4cd8ec208ea14b855c31c37035fff60",
       "selector": null
     }
   ],
