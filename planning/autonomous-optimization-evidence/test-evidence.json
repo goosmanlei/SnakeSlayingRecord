@@ -5000,7 +5000,7 @@
     },
     {
       "source": "coverage-reconciliation.json",
-      "source_sha256": "e383ab53f0526c600237688e6d2fbc82d7753fbddad2ee84806817c46422623f",
+      "source_sha256": "b242d2dc2b08d56efdf7d7b10776ccf557a838dce0dd6c1adf1120ecc90efd5c",
       "level": "recorded_test_or_audit",
       "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
       "result": {
@@ -5084,6 +5084,40 @@
               "COV-08-B4",
               "COV-08-S3"
             ]
+          },
+          "kind_name_correction": {
+            "at": "2026-10-04T00:21:52.843341+00:00",
+            "actual_kind_names": [
+              "ASSEMBLY",
+              "DELIVERABLE"
+            ],
+            "baseline_counts": {
+              "ASSEMBLY": 0,
+              "DELIVERABLE": 0
+            },
+            "baseline_snapshot_sha256": "ab8cdbbe79c51d59e3ff5ffbc89b90c4a3bce27dd87aacab52d693c186f216d7",
+            "scope": "Correct previous informal names to actual production kinds; original 113 IDs and all verification classifications retained; no new positive UI coverage.",
+            "previous_sha256": {
+              "coverage.json": "3e9c973f4c5056562557f8a55db6de7f4911629e08c5e50336c250642a0ea53f",
+              "coverage-reconciliation.json": "e383ab53f0526c600237688e6d2fbc82d7753fbddad2ee84806817c46422623f",
+              "coverage-reconciliation.md": "253adf1c3e9fdf2502e53164b2ec633cec95993c108b697bf60406b18b7d831e"
+            }
+          },
+          "browser_hash_provenance_correction": {
+            "at": "2026-10-04T00:55:18.493712+00:00",
+            "scope": "Only AO046 browser versus independent-function input provenance; no verification status, IDs or evidence claim upgraded.",
+            "root_browser_initial_app_sha256": "8c5c001c99299757b71bfff52f1b1f71f7fc4c78c153a129c17d2c283037a323",
+            "independent_function_sample_app_sha256": "1b8dbedaeb4b9a2aa5474e3887a6d9c457e45e2b8856759ce94b2c8039bfb489",
+            "root_final_AO047_app_sha256": "6772939e187e82921f8f739b73fc0b1be731443b7735f6677d8da9e898ea5fe1",
+            "sources": {
+              "comment-cleanup-audit/fix-evidence.json": "61d1957f95339515bbfe597ea91b45b7e99871d90aaaf0fc6c1f997fc4a317a0",
+              "independent-comment-rejection/followup-source-hashes.json": "e490479fe4d068ffcf45612f02e2251076790afde27b163941b1e69ea71c3fab"
+            },
+            "previous_files_sha256": {
+              "coverage.json": "86d8d8f01cbf25abe80ab220e2d803bc0718731122be9d814f3004c9339f1f0f",
+              "coverage-reconciliation.json": "1524ce7edf98f9a5fab59be17b908d8dc6cd2cd5627e9e2b13ea113b15f78ecf",
+              "coverage-reconciliation.md": "c8b949393e9289833c70e34a463c64e959fca043770f88907aab486527287022"
+            }
           }
         },
         "counts": {
@@ -5096,7 +5130,7 @@
         "rows": {
           "summary_only": true,
           "items": 113,
-          "source_canonical_sha256": "cecd21f6d6a79cbf437050cccd3d6b2e562daace650f304106073bbd5945d987",
+          "source_canonical_sha256": "a29b66a37439d1d7323d6eefa625ee588693f78636071ba24f6acc9d50fc86e9",
           "reason": "逐行明细留本机；本包保留源SHA和上层结果，不截取后伪装完整。"
         },
         "evidence_manifest": {
@@ -5524,7 +5558,7 @@
         "global_limits": [
           "运行时间以持久化guard/截止回执为准；本矩阵更新不构成最终候选验收、停止回执或质量目标完成。",
           "AO026 相反变更复核意见的业务语义待用户判断；正式集成/发布尚未执行。",
-          "启动基准采用/COMPOSITION/OUTPUT为空，正向采用与恢复由技术夹具补充，不虚构既有成片/输出或故事认可。",
+          "启动基准采用/ASSEMBLY/DELIVERABLE为空，正向采用与恢复由技术夹具补充，不虚构既有成片/输出或故事认可。",
           "真实图标上传受工具文件权限阻挡；上传后冲突未验。真实IME与真实模型调用/质量未验。",
           "存储QuotaExceeded/SecurityError、特定异步竞态及旧schema缺成员兼容仍主要为实际函数/API，不变成Chrome通过。",
           "异步CALL请求挂起未实际Chrome；旧CALL已在模型中的0GET复用是有效已验路径，二者不能混称。",
@@ -5732,6 +5766,2206 @@
             }
           }
         ]
+      }
+    },
+    {
+      "source": "entity-history-route-audit/implementation.md",
+      "source_sha256": "1f1a8183ac7c94c73253f08d700845219d7ca4ef2679767897d0eecf8ce57627",
+      "level": "recorded_test_or_audit",
+      "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
+      "result": "# AO049：实体内素材历史链接恢复\n\n已修复既有路由丢失，等待独立审查与根代理真实浏览器验收。根已有 Chrome 复现：撤回实体展开保留素材，切到第 1 轮后显示两份 1448×1086 旧原件；刷新却回到实体当前页并收起素材。准确原件及历史本身未丢失，优先级 P2。\n\n`5b7de33` 与修复前候选的真实 `loadProductionWorkspace`、`openProductionRecord`、`openEntityReview`、`switchMaterialRound` 均复现同一缺口，见 `baseline-results.json`：settings 的列表分组排除 ASSET，初始化因此退回实体；单独详情入口也拒绝该类型；实体焦点又移除素材 revision，切轮未保存轮次。不是 AO042 撤回说明带来的回归。\n\n修改仅包括：\n\n- `production.js` 的 load/open/focus：列表分组保持原值；明确带实体上下文的 ASSET、REQUIREMENT、CALL 可进入实体读取，但由实体快照再核对准确对象和修订。保留素材修订，写入真实卡 `material_id` 与既有 `material_round`，回到实体或状态清除旧卡上下文。\n- `entity-review.js`：使用该实体已有准确成员恢复卡、轮次、生成方案及原件；素材属于保留区时展开原区。旧链接没有卡参数时按准确成员及状态选择既有卡，旧数据无轮次时只恢复准确记录，不编造轮次。显式错误卡／轮次／实体在改 URL 前拒绝，迟到读取仍受原 epoch 保护。\n- 共用实体素材映射保持准确旧原件，不继承较新修订的裁切／片段；素材别名仍遵循准确版本。没有改采纳、评论、原件、数据结构、接口或分组列表。`material-review.js` 未修改。\n- 新增 17 个真实路由函数用例。既有“刷新素材评论保留状态”测试原先提供完全未属于实体的虚构原件，现在补足合法媒体投影；原断言保留。\n- `docs/material-versions.md` 既有文档加入该路由契约一段。\n\n12 个新例在修前 10 失败、2 通过；受影响 125 项通过。随后只补不存在实体的拒绝分支，并定向重验 12 项全部通过。原始日志分开保存，未重跑无关全套。真实基准 SQLite 以 `mode=ro` 调用 `generation.snapshot` 与 `production.snapshot`；实际前端路由／素材 renderer 以该投影恢复轮 1 和两份准确旧图，再次 load 后 URL 与焦点不变。数据库 SHA 前后相等。该步骤的 DOM 是有限夹具，媒体绘制为替身，不是浏览器验收。\n\n根代理可直接重新加载预览：此批只有 static JS 与文档，不要求服务器重启。先使用原旧 URL（无新卡参数也应恢复），确认保留素材已展开、两张旧图及轮 1；再从控件切当前／旧轮并刷新；定位已有旧评论后检查准确原件与轮次。`production.js` 同时由 AO050 修改名称区，因此按 `fix-evidence.json` 的 load/open/focus 三段 SHA 核对本批边界。\n\n未扩展任意外组导航，也没有为不存在的旧状态修订构造数据。`entity_state` 沿用既有状态身份，历史整实体采纳仍由 `entity_acceptance` 指定；不会从卡参数推定新的接受范围。无源码发布、正式数据库写入或浏览器操作。\n\n\n独立审查补修：共享同一原件的多个保留素材卡，URL 与内存虽然选第二卡，原 renderer 却仍按首卡绘制，可能只显示首卡空轮。已在实体素材模型入口优先经核验的既有卡：必须同一快照、当前准确焦点属于该选择轮、现有媒体确属该卡的真实历史成员。只调整原模型读取顺序，不增加卡或轮次；所选新轮只有方案时仍保持无结果。实际 `renderEntityReviewMedia` 与 `renderMaterialCard` 新例覆盖第二卡有结果／首卡空和反向第二卡仅方案空轮／首卡有结果，以及外页与错误成员选择不得接管。另补旧 schema 中实际媒体上下文的准确 CALL 校验与评论目标，仍不虚构轮次。最新 15 项新例及 39 项实体／撤回／采纳相关检查共 54 项通过，其余未受影响检查沿用初轮结果。\n\n\n根 Chrome 后续确认：旧原件／轮 1 刷新及原评论准确定位已通过；切到撤回的当前轮 2 后刷新仍保留正确 URL、轮次与准确方案，但保留素材区收起，导致已选卡不可见。此处不属于轮次或原件混用。已仅修展开判定：经过准确卡验证后，若保留区现有原件确属该卡任一真实历史轮，恢复该卡时展开原保留区；本轮没有结果仍显示空轮，不把历史结果加入当前轮。新的正向场景在旧候选失败（展开状态 undefined），无关保留素材反例通过；修后全部 17 个本项函数测试通过，根待定向真实刷新复验。局部差异为 `empty-round-followup.diff`，无 production.js 追加改动。\n"
+    },
+    {
+      "source": "entity-history-route-audit/fix-evidence.json",
+      "source_sha256": "a8d9d634519cbd95c6c0fae44481c127c6a9e035ce46763f318ad74e8d6883de",
+      "level": "recorded_test_or_audit",
+      "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
+      "result": {
+        "finding": "AO-049",
+        "source_sha256": {
+          "review_desk/static/production.js": "674bf2ce6ab69b63ef7c97e1c6a04e480634a338eb8eec1d92a160cd980b5c6d",
+          "review_desk/static/entity-review.js": "6303532c5b08fb08ac6bfb2ce66311a6717d314acf885c7d8e77cef3b4728176",
+          "tests/entity_material_navigation.test.cjs": "fdc08295488368b242d48bc2ba62d4f9c815ef8e359e6b37c304dff4983319a3",
+          "tests/entity_review.test.cjs": "bcd2ab3797da73991ca4e7295f3efd113496e71053a0219b75f859a336bfd3a7",
+          "docs/material-versions.md": "42d23a93d903fa2c0c39b704c3c5423ab3c572a99f0a16758b3f0ac4b0f16af9"
+        },
+        "route_function_sha256": {
+          "load": "cc2e2102e642dd4fee7a992b75bd445efbc3b84d18adc97f6d6b6e9e5596353e",
+          "open": "186578e1b5c573b86cb358247353c0058b22f9a03ef49b85a6af048206842106",
+          "focus": "934c63c19adc5f198efff630e281462b7ac40e3c81e325dae572eba2dc95e3ea"
+        },
+        "tests": {
+          "new": 12,
+          "new_before_failed": 10,
+          "new_before_passed": 2,
+          "affected_total": 125,
+          "affected_passed": 125,
+          "log": "candidate-tests.log",
+          "final_narrow_followup": "Only added missing-owner rejection; all 12 new cases passed again in final-targeted-tests.log. Unaffected previous checks reused.",
+          "followup": {
+            "new_tests_total": 15,
+            "latest_run": 54,
+            "latest_pass": 54,
+            "log": "followup-tests.log",
+            "reason": "Independent shared-card renderer counterexample plus exact legacy context target; unrelated initial checks reused"
+          },
+          "empty_round_followup": {
+            "before_cases": 2,
+            "before_pass": 1,
+            "before_fail": 1,
+            "before_failure": "unassignedOpen was undefined for real empty current material round; correct selected round and target already retained",
+            "after_cases": 17,
+            "after_pass": 17,
+            "command": "node --test tests/entity_material_navigation.test.cjs",
+            "changes": "Two-line expansion decision uses exact retained media membership in the verified material card history; does not change selected round/results",
+            "browser": "root current-round-refresh-failure.json before; final UI pending"
+          }
+        },
+        "real_snapshot": "real-snapshot-results.json",
+        "database_unchanged": "snapshot-receipt.json",
+        "independent_review": "pending",
+        "browser": "root old asset/round1 route and comment passed; current empty round expansion fix pending targeted Chrome",
+        "scope": "production.js only load/open/focus; entity-review.js only route and material exact render helpers; no material-review.js changes; productionName may be changed separately by AO050",
+        "independent_fix": "Shared unassigned media honors the verified same-data card only when focused exact member belongs to selected round and shown media belongs to real rounds of that card; plan-only current empty round remains empty."
+      }
+    },
+    {
+      "source": "entity-history-route-audit/baseline-results.json",
+      "source_sha256": "6c4537fc95a4423f144bbb968caa6a496ede0c91bc83ee90c7e92bfc5d5e41fc",
+      "level": "recorded_test_or_audit",
+      "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
+      "result": {
+        "baseline": {
+          "load": {
+            "initial": "http://fixture/?workspace=settings.workspace&production_object=asset&production_entity=entity&entity_state=state&production_revision=asset-r1",
+            "final": "http://fixture/?workspace=settings.workspace&production_object=state&production_entity=entity&entity_state=state",
+            "requests": [
+              "/api/production",
+              "/api/production?object_id=entity",
+              "/api/production/entity-review?entity_id=entity"
+            ],
+            "selected": "state"
+          },
+          "direct": {
+            "selected": null,
+            "requests": [
+              "/api/production?object_id=asset&revision_id=asset-r1"
+            ]
+          },
+          "round": {
+            "url": "http://fixture/?workspace=settings.workspace&production_object=asset&production_entity=entity&entity_state=state",
+            "selected": "asset-r1",
+            "round": 1,
+            "afterReload": {
+              "url": "http://fixture/?workspace=settings.workspace&production_object=state&production_entity=entity&entity_state=state",
+              "selected": "state-r1",
+              "round": null
+            }
+          }
+        },
+        "before": {
+          "load": {
+            "initial": "http://fixture/?workspace=settings.workspace&production_object=asset&production_entity=entity&entity_state=state&production_revision=asset-r1",
+            "final": "http://fixture/?workspace=settings.workspace&production_object=state&production_entity=entity&entity_state=state",
+            "requests": [
+              "/api/production",
+              "/api/production?object_id=entity",
+              "/api/production/entity-review?entity_id=entity"
+            ],
+            "selected": "state"
+          },
+          "direct": {
+            "selected": null,
+            "requests": [
+              "/api/production?object_id=asset&revision_id=asset-r1"
+            ]
+          },
+          "round": {
+            "url": "http://fixture/?workspace=settings.workspace&production_object=asset&production_entity=entity&entity_state=state",
+            "selected": "asset-r1",
+            "round": 1,
+            "afterReload": {
+              "url": "http://fixture/?workspace=settings.workspace&production_object=state&production_entity=entity&entity_state=state",
+              "selected": "state-r1",
+              "round": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "source": "entity-history-route-audit/real-snapshot-results.json",
+      "source_sha256": "ceaed295551eefdc0a03a681d12d2d3e3155529e60ec1a545180614c236eaf6c",
+      "level": "recorded_test_or_audit",
+      "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
+      "result": {
+        "passed": true,
+        "first": {
+          "url": "http://fixture/?workspace=settings.workspace&production_entity=entity-bandage&entity_state=form-bandage-base&production_object=asset-fg3-bandage-base-image-01&production_revision=76a7d6ad4317d580b36439e24765e3c432e0cc15e67045cb7fead3e555a50294&material_id=need-form-bandage-base-overall&material_round=1",
+          "selected": "76a7d6ad4317d580b36439e24765e3c432e0cc15e67045cb7fead3e555a50294",
+          "child": "616729c8c9a278f7f60fbf55d48685b484ac3c5d5b4a0e3866b5c9f67b966e31",
+          "unassigned_open": true,
+          "rounds": {
+            "need-form-bandage-base-overall": 1
+          },
+          "shown": [
+            {
+              "id": "76a7d6ad4317d580b36439e24765e3c432e0cc15e67045cb7fead3e555a50294",
+              "object_id": "asset-fg3-bandage-base-image-01",
+              "width": 1448,
+              "height": 1086,
+              "sha256": "8b4c0ffcaddf48b79af1d9d3df3ec74dff37c90a145e927dacfdd6d3936e2288"
+            },
+            {
+              "id": "6ea87ff56dc91ba92ee2c31c3d05d94fef31eea323f861f038c9416cec14b9f6",
+              "object_id": "asset-fg3-bandage-base-image-02",
+              "width": 1448,
+              "height": 1086,
+              "sha256": "4e1542c4b0f21735ba3e0d27b47c690c01d4ac16e9be6e01b2b36538d83a1acb"
+            }
+          ]
+        },
+        "after_reload": {
+          "url": "http://fixture/?workspace=settings.workspace&production_entity=entity-bandage&entity_state=form-bandage-base&production_object=asset-fg3-bandage-base-image-01&production_revision=76a7d6ad4317d580b36439e24765e3c432e0cc15e67045cb7fead3e555a50294&material_id=need-form-bandage-base-overall&material_round=1",
+          "selected": "76a7d6ad4317d580b36439e24765e3c432e0cc15e67045cb7fead3e555a50294"
+        }
+      }
+    },
+    {
+      "source": "entity-history-route-audit/snapshot-receipt.json",
+      "source_sha256": "a0e1416081e090532edd2619b85faa1998b0ac1cfef4631dc7b1ec4c44d7068c",
+      "level": "recorded_test_or_audit",
+      "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
+      "result": {
+        "readonly": true,
+        "before_sha256": "ab8cdbbe79c51d59e3ff5ffbc89b90c4a3bce27dd87aacab52d693c186f216d7",
+        "after_sha256": "ab8cdbbe79c51d59e3ff5ffbc89b90c4a3bce27dd87aacab52d693c186f216d7",
+        "entity": "entity-bandage",
+        "asset": "asset-fg3-bandage-base-image-01",
+        "revision": "76a7d6ad4317d580b36439e24765e3c432e0cc15e67045cb7fead3e555a50294",
+        "states": 0,
+        "media": 2,
+        "method": "real generation.snapshot and production.snapshot over mode=ro baseline SQLite"
+      }
+    },
+    {
+      "source": "independent-entity-history-route-review.json",
+      "source_sha256": "6bc80df9c075f4899285a155068b4085c6a3046dd42496a144bd136b9bf261c4",
+      "level": "recorded_test_or_audit",
+      "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
+      "result": {
+        "at": "2026-10-04T00:51:59.224325+00:00",
+        "finding": "AO-049",
+        "verdict": "independent_scoped_pass_with_empty_round_followup_and_root_chrome",
+        "source_sha256": {
+          "review_desk/static/entity-review.js": "9afaa740c2e40fa4defc6bbc6010f35b4eec90affb96f308cf8ff7d3585da182",
+          "review_desk/static/material-review.js": "b9f7f9d28c05a4db52ec65d590c7b64736154bf482d0ec02e2f7d5931f901af6",
+          "tests/entity_material_navigation.test.cjs": "fac62db2a74e5b4b18595a4fb3b30475471cd72ab932213a3947c5ea4d7ad00c"
+        },
+        "production_function_scope": {
+          "load": {
+            "sha256": "cc2e2102e642dd4fee7a992b75bd445efbc3b84d18adc97f6d6b6e9e5596353e",
+            "text_present_in_current_production": true
+          },
+          "open": {
+            "sha256": "186578e1b5c573b86cb358247353c0058b22f9a03ef49b85a6af048206842106",
+            "text_present_in_current_production": true
+          },
+          "focus": {
+            "sha256": "934c63c19adc5f198efff630e281462b7ac40e3c81e325dae572eba2dc95e3ea",
+            "text_present_in_current_production": true
+          }
+        },
+        "initial_finding": {
+          "severity": "P2",
+          "status": "fixed_and_rechecked",
+          "symptom": "Explicit second shared card/round was restored in state but actual unassigned renderer still produced first card and no requested original.",
+          "initial_evidence": "independent-entity-history-route/first-results.json",
+          "initial_evidence_provenance": "First result filename was accidentally reused by a later test; original observed values restored from tool output/root-author messages, explicitly labelled in file. Exact initial probe separately rerun against fixed code.",
+          "recheck": "independent-entity-history-route/exact-original-recheck.json"
+        },
+        "tests": {
+          "harness": "Existing author E/VM loader reused; new independently selected fixture modifications and assertions; actual load/open/focus/entity renderer + material-card renderer with only media leaf stubs.",
+          "shared_withdrawn": [
+            {
+              "name": "explicit second shared material in unassigned/withdrawn surface",
+              "actual": {
+                "url": "http://fixture/?workspace=settings.workspace&production_object=asset&production_entity=entity&entity_state=state&production_revision=asset-r1&material_id=second-need&material_round=3",
+                "selected": "asset-r1",
+                "chosenCard": "second-need",
+                "renderedCardKeys": [
+                  "second-need"
+                ],
+                "renderedAssets": [
+                  {
+                    "id": "asset-r1",
+                    "original": "old-bytes"
+                  }
+                ]
+              },
+              "pass": true
+            }
+          ],
+          "additional": [
+            {
+              "name": "legacy CALL without rounds keeps exact actual-call text and no fabricated round",
+              "pass": true,
+              "detail": {
+                "rendered": [
+                  "legacy-call-r1"
+                ],
+                "selected": "legacy-call-r1"
+              }
+            },
+            {
+              "name": "existing foreign entity and same-object fake revision reject before altering current comments",
+              "pass": true,
+              "detail": [
+                "foreign",
+                "fake-revision"
+              ]
+            },
+            {
+              "name": "real subsequent entity navigation defeats delayed exact-member route without clearing new draft",
+              "pass": true,
+              "detail": {
+                "selected": "entity-b-r1",
+                "owner": "entity-b"
+              }
+            },
+            {
+              "name": "legacy URL without material id chooses exact membership and state-scoped card, never newer candidate",
+              "pass": true,
+              "detail": {
+                "card": "second-need",
+                "round": 4,
+                "asset": "asset-r1"
+              }
+            },
+            {
+              "name": "legacy CALL known only through material context adds exact comment target; wrong call revision rejects",
+              "pass": true,
+              "detail": [
+                "exact legacy call and target preserved",
+                "wrong revision rejected"
+              ]
+            }
+          ],
+          "exact_original_counterexample": [
+            {
+              "name": "explicit second shared material in unassigned/withdrawn surface",
+              "actual": {
+                "url": "http://fixture/?workspace=settings.workspace&production_object=asset&production_entity=entity&entity_state=state&production_revision=asset-r1&material_id=second-need&material_round=3",
+                "selected": "asset-r1",
+                "chosenCard": "second-need",
+                "renderedCardKeys": [
+                  "second-need"
+                ],
+                "renderedAssets": [
+                  {
+                    "id": "asset-r1",
+                    "original": "old-bytes"
+                  }
+                ]
+              },
+              "pass": true
+            }
+          ],
+          "group_count": 6,
+          "branch_count": 8,
+          "extra_original_recheck": 1
+        },
+        "limits": [
+          "No Chrome or native browser performed by reviewer.",
+          "No service/API/business writes; VM fake API responses only.",
+          "Author 54 related checks not rerun wholesale.",
+          "AO050 productionName/backend reference titles are outside this pass.",
+          "No restoration of unknown/unregistered links and no invented round membership; explicit invalid ownership/round rejects."
+        ],
+        "followup_empty_round": {
+          "at": "2026-10-04T01:16:20.410061+00:00",
+          "verdict": "pass_scoped",
+          "candidate_entity_sha256": "6303532c5b08fb08ac6bfb2ce66311a6717d314acf885c7d8e77cef3b4728176",
+          "independent_function_evidence": {
+            "path": "independent-entity-history-route/empty-round-followup-results.json",
+            "sha256": "fd60a76a013a46b8d6632d0da892d72b297a35c30df069ceb7704efc4ebde7e5"
+          },
+          "checks": "Four branches: exact old member opens retained group; same object wrong revision, different card only, associated old member do not. Exact current round and empty results retained; actual renderer shows selected card with zero prior assets.",
+          "harness_note": "Initial assertion rejected equivalent cross-VM Array prototypes; normalized array comparison only. Original diagnostic retained as empty-round-followup-harness-first.json; no product change.",
+          "root_chrome": {
+            "path": "entity-history-route-audit/current-empty-round-fixed-chrome.json",
+            "sha256": "325cd60e2dae0c057112e14310762d06f54aee81610288825d890cc50172a2f8"
+          },
+          "root_chrome_review": "Accurate need-form-bandage-base-overall/r2 URL; visible material version2 current, withdrawn notice and no generation plan, no old image in retained card. Root operated Chrome, reviewer read saved DOM only.",
+          "not_repeated": "Previous AO049 full route review remains bound to initial candidate and local function hashes; no unrelated suite rerun."
+        }
+      }
+    },
+    {
+      "source": "independent-entity-history-route/first-results.json",
+      "source_sha256": "19bc54fe59c237c3ecc531ee28fff9617c1e2be27d91601bd34b20637527a44d",
+      "level": "recorded_test_or_audit",
+      "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
+      "result": {
+        "provenance": "Original first tool run output preserved here after later probe accidentally reused this filename; values are from the observed run and root/history messages, not rerun against fixed code.",
+        "results": [
+          {
+            "name": "explicit second shared material in unassigned/withdrawn surface",
+            "actual": {
+              "url": "http://fixture/?workspace=settings.workspace&production_object=asset&production_entity=entity&entity_state=state&production_revision=asset-r1&material_id=second-need&material_round=3",
+              "selected": "asset-r1",
+              "chosenCard": "second-need",
+              "renderedCardKeys": [
+                "need"
+              ],
+              "renderedAssets": []
+            },
+            "pass": false
+          }
+        ]
+      }
+    },
+    {
+      "source": "independent-entity-history-route/shared-renderer-final-results.json",
+      "source_sha256": "1cf289ecc8e3826f1901ed2c908454c6336773b7e11f726a42c5794f4a623b14",
+      "level": "recorded_test_or_audit",
+      "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
+      "result": [
+        {
+          "name": "explicit second shared material in unassigned/withdrawn surface",
+          "actual": {
+            "url": "http://fixture/?workspace=settings.workspace&production_object=asset&production_entity=entity&entity_state=state&production_revision=asset-r1&material_id=second-need&material_round=3",
+            "selected": "asset-r1",
+            "chosenCard": "second-need",
+            "renderedCardKeys": [
+              "second-need"
+            ],
+            "renderedAssets": [
+              {
+                "id": "asset-r1",
+                "original": "old-bytes"
+              }
+            ]
+          },
+          "pass": true
+        }
+      ]
+    },
+    {
+      "source": "independent-entity-history-route/additional-results.json",
+      "source_sha256": "068c0e3c4e4edb117d7820b1b910bd3c6d505968887a96ab49ce54947f5bda2d",
+      "level": "recorded_test_or_audit",
+      "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
+      "result": {
+        "at": "2026-10-04T00:49:57.764Z",
+        "source_sha256": {
+          "production.js": "674bf2ce6ab69b63ef7c97e1c6a04e480634a338eb8eec1d92a160cd980b5c6d",
+          "entity-review.js": "9afaa740c2e40fa4defc6bbc6010f35b4eec90affb96f308cf8ff7d3585da182",
+          "material-review.js": "b9f7f9d28c05a4db52ec65d590c7b64736154bf482d0ec02e2f7d5931f901af6"
+        },
+        "results": [
+          {
+            "name": "legacy CALL without rounds keeps exact actual-call text and no fabricated round",
+            "pass": true,
+            "detail": {
+              "rendered": [
+                "legacy-call-r1"
+              ],
+              "selected": "legacy-call-r1"
+            }
+          },
+          {
+            "name": "existing foreign entity and same-object fake revision reject before altering current comments",
+            "pass": true,
+            "detail": [
+              "foreign",
+              "fake-revision"
+            ]
+          },
+          {
+            "name": "real subsequent entity navigation defeats delayed exact-member route without clearing new draft",
+            "pass": true,
+            "detail": {
+              "selected": "entity-b-r1",
+              "owner": "entity-b"
+            }
+          },
+          {
+            "name": "legacy URL without material id chooses exact membership and state-scoped card, never newer candidate",
+            "pass": true,
+            "detail": {
+              "card": "second-need",
+              "round": 4,
+              "asset": "asset-r1"
+            }
+          },
+          {
+            "name": "legacy CALL known only through material context adds exact comment target; wrong call revision rejects",
+            "pass": true,
+            "detail": [
+              "exact legacy call and target preserved",
+              "wrong revision rejected"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "source": "independent-entity-history-route/exact-original-recheck.json",
+      "source_sha256": "1cf289ecc8e3826f1901ed2c908454c6336773b7e11f726a42c5794f4a623b14",
+      "level": "recorded_test_or_audit",
+      "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
+      "result": [
+        {
+          "name": "explicit second shared material in unassigned/withdrawn surface",
+          "actual": {
+            "url": "http://fixture/?workspace=settings.workspace&production_object=asset&production_entity=entity&entity_state=state&production_revision=asset-r1&material_id=second-need&material_round=3",
+            "selected": "asset-r1",
+            "chosenCard": "second-need",
+            "renderedCardKeys": [
+              "second-need"
+            ],
+            "renderedAssets": [
+              {
+                "id": "asset-r1",
+                "original": "old-bytes"
+              }
+            ]
+          },
+          "pass": true
+        }
+      ]
+    },
+    {
+      "source": "independent-entity-history-route/empty-round-followup-results.json",
+      "source_sha256": "fd60a76a013a46b8d6632d0da892d72b297a35c30df069ceb7704efc4ebde7e5",
+      "level": "recorded_test_or_audit",
+      "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
+      "result": {
+        "at": "2026-10-04T01:15:29.597Z",
+        "kind": "independent VM actual load/restore/renderer; no browser or HTTP writes",
+        "entity_sha256": "6303532c5b08fb08ac6bfb2ce66311a6717d314acf885c7d8e77cef3b4728176",
+        "results": [
+          {
+            "mode": "exact-old-member",
+            "pass": true,
+            "unassigned_open": true,
+            "selected_revision": "need-r2",
+            "round": 2,
+            "shown": []
+          },
+          {
+            "mode": "same-object-wrong-revision",
+            "pass": true,
+            "unassigned_open": false,
+            "selected_revision": "need-r2",
+            "round": 2,
+            "shown": []
+          },
+          {
+            "mode": "different-card-only",
+            "pass": true,
+            "unassigned_open": false,
+            "selected_revision": "need-r2",
+            "round": 2,
+            "shown": []
+          },
+          {
+            "mode": "associated-old-member",
+            "pass": true,
+            "unassigned_open": false,
+            "selected_revision": "need-r2",
+            "round": 2,
+            "shown": []
+          }
+        ]
+      }
+    },
+    {
+      "source": "exact-reference-label-audit/report.md",
+      "source_sha256": "73fc2a6762a452e673951baaf52aaf80e30f5b3cdc14f2257b38ef0690e203b0",
+      "level": "recorded_test_or_audit",
+      "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
+      "result": "# AO050：历史依赖名称与准确修订一致\n\n已完成最小修复，等待主协调真实浏览器复验和独立审查。修改解决“旧输出仍指向旧组合、旧视频，页面却显示新版名称”的问题；准确依赖、媒体和点击落点本来正确，本次不改它们。\n\n根在真实 Chrome 的输出 v1 中看到“组合 · 蓝后红／技术输出视频 v2”，点击后却进入旧组合红后蓝 v1 和旧视频 v1。独立执行原 `productionName` 函数也复现两条错误名称，见 [原反例](results.json)。该函数在启动基线 `5b7de33` 与修复前逐字相同，只按对象 ID 查当前列表，没有检查修订 ID，因此属于基准已有缺陷。\n\n| 旧输出保存的准确依赖 | 正确名称 | 修复前页面名称 |\n| --- | --- | --- |\n| ao-assembly / 64ff5bd9… | 技术动态组合 · 红后蓝 | 技术动态组合 · 蓝后红 |\n| ao-render-video / eadd6d56… | 技术输出视频 v1 | 技术输出视频 v2 |\n\n后端详情现在附带直接依赖的三个只读字段：对象 ID、修订 ID 和该修订的标题。一次 SQL 读取现有不可变依赖与修订，不增加表、不返回整个依赖内容。来源资料的标题保存在资料文档中，因此还须核对资料内容指纹与目标修订吻合；无法证明时不借当前标题。\n\n前端详情的“来源与依赖”和时间线使用这份投影；名称必须同时匹配对象和修订。旧服务未提供投影时，只取已加载且准确匹配的记录标题，找不到便显示对象 ID。未携带修订的既有稳定对象命名保持原语义。显式链接说明、组件、裁切、片段和点击路由保留。\n\n针对性验证已完成：\n\n- 3 个实际 Store／导入／导出检查覆盖改名、同对象多个准确修订、来源资料与旧分集。读取前后数据库逻辑内容、导出 manifest 和保存 payload 一致，投影不进入导出文件。\n- 8 个实际 JavaScript 函数检查覆盖历史详情与时间线、准确点击、错误归属、旧服务回退、显式文案、SOURCE／分集／整版路由以及不同详情之间不借名。这些使用小 DOM 和无关操作替身，不作为 Chrome 验收。\n- 对已有导出恢复技术实例以 SQLite 只读连接查询 4 份真实详情，旧输出返回旧标题，新输出返回新标题；数据库字节哈希前后一致，见 [只读回执](projection-check.json)。\n\n前两组首次执行暴露的是测试夹具自身遗漏（错误的 Store 方法名、缺少无关 openPanel 替身）；修正夹具后上述 11 项通过，没有据此扩改产品。已有完整恢复的 12 表、7 原件与工程重建证据继续复用，不重复执行全量检查。\n\n[冻结回执](fix-evidence.json)列出四个修改文件、局部函数哈希和检查入口；[前端局部差异](production.names.diff)排除并行 AO049 路由改动，[后端差异](production.snapshot.diff)仅为只读投影。主协调后续 AO051 会独立调整同一详情的重复版本行，不能把它计入本项实现或验证。\n\n浏览器待验：重启技术服务加载新 Python 后，在输出 v1 刷新，核对旧组合与旧视频名称并点击其准确旧落点；再查看 v2 的新名称。原服务脚本选择空闲端口，重启须读取 service.json 的新 origin，保留原实例和精确 revision 参数。未重建库、未自动认可作品、未调用模型、未提交代码或改共享发现清单。\n"
+    },
+    {
+      "source": "exact-reference-label-audit/results.json",
+      "source_sha256": "2d0d03cc772c8262d696896b58f77e7c4c3e43752ec4e0b8383590b1e4684ee4",
+      "level": "recorded_test_or_audit",
+      "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
+      "result": {
+        "method": "Actual frozen productionName function with real read-only old-output API references and current-list API data; not Chrome.",
+        "baseline_function_equal": true,
+        "function_sha256": "615536db3eccd39f718de15abf458b300545025b2693b8520d0e98bba96277c9",
+        "old_output_version": 1,
+        "old_output_revision": "8e689e0b9ead4f7f88b16ab072f0312c0d37887a000fa2eb0663b2325e873a2b",
+        "cases": [
+          {
+            "reference": {
+              "object_id": "ao-assembly",
+              "revision_id": "64ff5bd960bb1f200bdaa53077d14f232472c93ab55514a2470f33ee1d6e7db0"
+            },
+            "exact_title": "技术动态组合 · 红后蓝",
+            "exact_version": 1,
+            "current_title": "技术动态组合 · 蓝后红",
+            "current_version": 2,
+            "current_revision": "af6219dbf0fbfbb402078875fe57cfd82fb3aad633073248e39ea441dad4e64f",
+            "actual_label": "技术动态组合 · 蓝后红",
+            "defect_reproduced": true
+          },
+          {
+            "reference": {
+              "object_id": "ao-render-video",
+              "revision_id": "eadd6d56f649afd4785d5bee0eb01405d717a10a6dff5f9694cde43a2449f3f6"
+            },
+            "exact_title": "技术输出视频 v1",
+            "exact_version": 1,
+            "current_title": "技术输出视频 v2",
+            "current_version": 2,
+            "current_revision": "82ebf67adc23aaff950850aabe0e43e30ced6dc30e72b4b4c83f80ec788a0137",
+            "actual_label": "技术输出视频 v2",
+            "defect_reproduced": true
+          }
+        ],
+        "limits": "Accurate references and file identities remain old. This diagnoses visible name selection only, not data/history corruption."
+      }
+    },
+    {
+      "source": "exact-reference-label-audit/fix-evidence.json",
+      "source_sha256": "b175f9197d078fc8e6e5a9771f17be4f7081fa17535e3ddc07ba321821a3c35d",
+      "level": "recorded_test_or_audit",
+      "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
+      "result": {
+        "at": "2026-10-04T00:53:53.891410+00:00",
+        "finding": "AO050",
+        "state": "implementation frozen; root Chrome and independent review pending",
+        "files": {
+          "review_desk/production.py": "75742acea6b340fbbef500455c75ab34585d1980ff71cfd5bd3febf506c7b1a2",
+          "review_desk/static/production.js": "674bf2ce6ab69b63ef7c97e1c6a04e480634a338eb8eec1d92a160cd980b5c6d",
+          "tests/test_production_reference_names.py": "632cc91a70bde3a978d88bf58d3cdb921fa030a5b73e6df415f2e2d546e0f212",
+          "tests/production_reference_names.test.cjs": "ea67169348de1ea300c23e464de1ad83ffa34ba66c76bb5a6c8506a72c355fa2"
+        },
+        "javascript_owned_sections": {
+          "function productionName(": {
+            "sha256": "d00d74f07429bae4f9fa7b63254da8f34ef90a588e1248315eb1a449a763d90e",
+            "bytes": 953
+          },
+          "function productionRefLink(": {
+            "sha256": "cd6cc7c5176b1a31df6ef790b9365d3faf709f31f5c8cbd4201da15c377fe130",
+            "bytes": 2016
+          },
+          "function renderProductionRecord(": {
+            "sha256": "ceda13a873673b67e436d5b91081d70d3759288a899799d49cba0b438699eb3c",
+            "bytes": 9654
+          }
+        },
+        "scope": "readonly exact-reference name projection and exact name resolution; no stored payload, dependency, export, media or route mutation",
+        "parallel_scope_excluded": "AO049 loadProductionWorkspace/openProductionRecord/focusProductionReview; root upcoming AO051 detail meta row",
+        "checks": [
+          {
+            "command": "PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -p test_production_reference_names.py -v",
+            "passed": 3,
+            "level": "actual Store/import/export temporary databases",
+            "note": "Initial author fixture referenced nonexistent Store.object; corrected fixture; final 3 passed."
+          },
+          {
+            "command": "node --test tests/production_reference_names.test.cjs",
+            "passed": 8,
+            "level": "actual JavaScript functions with small DOM and unrelated operation stubs; not Chrome",
+            "note": "Initial author fixture omitted openPanel; corrected fixture; final 8 passed."
+          },
+          {
+            "command": "PYTHONDONTWRITEBYTECODE=1 python3 exact-reference-label-audit/check_projection.py",
+            "passed": 4,
+            "level": "readonly recovered real technical fixture details",
+            "evidence": "projection-check.json"
+          }
+        ],
+        "reused_evidence": [
+          "../assembly-output-browser/recovery-evidence.json",
+          "../output-v1-after-v2-chrome.json",
+          "../output-v1-dependency-popup.json"
+        ],
+        "no_repeated_full_suite": true,
+        "services_restarted": false
+      }
+    },
+    {
+      "source": "exact-reference-label-audit/projection-check.json",
+      "source_sha256": "9d5f5f345dde1454e76f7acde1058e5dadb027598b2ba0dec133135d39dec163",
+      "level": "recorded_test_or_audit",
+      "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
+      "result": {
+        "at": "2026-10-04T00:52:38.039413+00:00",
+        "mode": "readonly retained isolated restore; no HTTP or Chrome",
+        "database_relative": "assembly-output-browser/recovery-check/restored/.runtime/review.sqlite3",
+        "database_sha256": "60912fcea16247ed6291f87aaa3b53e4ab64fc5303d6900c2e7956447bd150c3",
+        "database_byte_unchanged": true,
+        "details": {
+          "ao-output": [
+            {
+              "version": 1,
+              "revision_id": "8e689e0b9ead4f7f88b16ab072f0312c0d37887a000fa2eb0663b2325e873a2b",
+              "title": "技术输出与工程 · 红后蓝",
+              "reference_titles": [
+                {
+                  "object_id": "ao-assembly",
+                  "revision_id": "64ff5bd960bb1f200bdaa53077d14f232472c93ab55514a2470f33ee1d6e7db0",
+                  "title": "技术动态组合 · 红后蓝"
+                },
+                {
+                  "object_id": "ao-render-video",
+                  "revision_id": "eadd6d56f649afd4785d5bee0eb01405d717a10a6dff5f9694cde43a2449f3f6",
+                  "title": "技术输出视频 v1"
+                }
+              ]
+            },
+            {
+              "version": 2,
+              "revision_id": "82ff7d41fa29be9d298443d2ccb722ec0dde5246a6c232449726397d3e108fb3",
+              "title": "技术输出与工程 · 蓝后红",
+              "reference_titles": [
+                {
+                  "object_id": "ao-assembly",
+                  "revision_id": "af6219dbf0fbfbb402078875fe57cfd82fb3aad633073248e39ea441dad4e64f",
+                  "title": "技术动态组合 · 蓝后红"
+                },
+                {
+                  "object_id": "ao-render-video",
+                  "revision_id": "82ebf67adc23aaff950850aabe0e43e30ced6dc30e72b4b4c83f80ec788a0137",
+                  "title": "技术输出视频 v2"
+                }
+              ]
+            }
+          ],
+          "ao-assembly": [
+            {
+              "version": 1,
+              "revision_id": "64ff5bd960bb1f200bdaa53077d14f232472c93ab55514a2470f33ee1d6e7db0",
+              "title": "技术动态组合 · 红后蓝",
+              "reference_titles": [
+                {
+                  "object_id": "ao-assembly-shot",
+                  "revision_id": "f9d483f815e436d2d8d35e77be83588a20d2cdf412347d1ebec1c06f58bd5e7e",
+                  "title": "两秒几何组合技术镜头"
+                },
+                {
+                  "object_id": "ao-input-a",
+                  "revision_id": "f78b29da2c0491632fbf51844ad459a284e7ddcf981d91e854282d4dfd6b4af8",
+                  "title": "技术图 A · 红网格"
+                },
+                {
+                  "object_id": "ao-input-b",
+                  "revision_id": "9ab10cc3c5c24c335771203bb7da82784857c60358923f00cfe03750de950e2e",
+                  "title": "技术图 B · 蓝网格"
+                },
+                {
+                  "object_id": "ao-input-silence",
+                  "revision_id": "70bba9c5bcce58701e52f19ebc41ff107b5fab42900162cdd0ba085ccc564b59",
+                  "title": "两秒合成静音 · 技术输入"
+                }
+              ]
+            },
+            {
+              "version": 2,
+              "revision_id": "af6219dbf0fbfbb402078875fe57cfd82fb3aad633073248e39ea441dad4e64f",
+              "title": "技术动态组合 · 蓝后红",
+              "reference_titles": [
+                {
+                  "object_id": "ao-assembly-shot",
+                  "revision_id": "f9d483f815e436d2d8d35e77be83588a20d2cdf412347d1ebec1c06f58bd5e7e",
+                  "title": "两秒几何组合技术镜头"
+                },
+                {
+                  "object_id": "ao-input-a",
+                  "revision_id": "f78b29da2c0491632fbf51844ad459a284e7ddcf981d91e854282d4dfd6b4af8",
+                  "title": "技术图 A · 红网格"
+                },
+                {
+                  "object_id": "ao-input-b",
+                  "revision_id": "9ab10cc3c5c24c335771203bb7da82784857c60358923f00cfe03750de950e2e",
+                  "title": "技术图 B · 蓝网格"
+                },
+                {
+                  "object_id": "ao-input-silence",
+                  "revision_id": "70bba9c5bcce58701e52f19ebc41ff107b5fab42900162cdd0ba085ccc564b59",
+                  "title": "两秒合成静音 · 技术输入"
+                }
+              ]
+            }
+          ]
+        },
+        "production_py_sha256": "75742acea6b340fbbef500455c75ab34585d1980ff71cfd5bd3febf506c7b1a2"
+      }
+    },
+    {
+      "source": "independent-reference-names-review.json",
+      "source_sha256": "8f489498f69c77d83d34ec2e79f4c8f39fa68b8df9cfe66b0191f9d4fb00bbae",
+      "level": "recorded_test_or_audit",
+      "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
+      "result": {
+        "finding": "AO050",
+        "verdict": "pass_with_browser_pending",
+        "author_files": {
+          "review_desk/production.py": "75742acea6b340fbbef500455c75ab34585d1980ff71cfd5bd3febf506c7b1a2",
+          "review_desk/static/production.js": "674bf2ce6ab69b63ef7c97e1c6a04e480634a338eb8eec1d92a160cd980b5c6d",
+          "tests/test_production_reference_names.py": "632cc91a70bde3a978d88bf58d3cdb921fa030a5b73e6df415f2e2d546e0f212",
+          "tests/production_reference_names.test.cjs": "ea67169348de1ea300c23e464de1ad83ffa34ba66c76bb5a6c8506a72c355fa2"
+        },
+        "actual_files": {
+          "review_desk/production.py": "75742acea6b340fbbef500455c75ab34585d1980ff71cfd5bd3febf506c7b1a2",
+          "review_desk/static/production.js": "674bf2ce6ab69b63ef7c97e1c6a04e480634a338eb8eec1d92a160cd980b5c6d",
+          "tests/test_production_reference_names.py": "632cc91a70bde3a978d88bf58d3cdb921fa030a5b73e6df415f2e2d546e0f212",
+          "tests/production_reference_names.test.cjs": "ea67169348de1ea300c23e464de1ad83ffa34ba66c76bb5a6c8506a72c355fa2"
+        },
+        "matching_files": {
+          "review_desk/production.py": true,
+          "review_desk/static/production.js": true,
+          "tests/test_production_reference_names.py": true,
+          "tests/production_reference_names.test.cjs": true
+        },
+        "javascript_scopes": {
+          "function productionName(": {
+            "sha256": "d00d74f07429bae4f9fa7b63254da8f34ef90a588e1248315eb1a449a763d90e",
+            "author_sha256": "d00d74f07429bae4f9fa7b63254da8f34ef90a588e1248315eb1a449a763d90e",
+            "match": true
+          },
+          "function productionRefLink(": {
+            "sha256": "cd6cc7c5176b1a31df6ef790b9365d3faf709f31f5c8cbd4201da15c377fe130",
+            "author_sha256": "cd6cc7c5176b1a31df6ef790b9365d3faf709f31f5c8cbd4201da15c377fe130",
+            "match": true
+          },
+          "function renderProductionRecord(": {
+            "sha256": "ceda13a873673b67e436d5b91081d70d3759288a899799d49cba0b438699eb3c",
+            "author_sha256": "ceda13a873673b67e436d5b91081d70d3759288a899799d49cba0b438699eb3c",
+            "match": true
+          }
+        },
+        "independent_checks": {
+          "frontend_groups": 4,
+          "frontend_pass": 4,
+          "backend_mode": "normal imported temporary data; mode=ro real snapshot",
+          "backend_pass": true,
+          "browser": "not performed by this reviewer; root pending",
+          "author_tests": "read, not rerun",
+          "source_guard": "SOURCE SQL requires exact source_revision fingerprint; missing/mismatching title front-end fallback independently checked; did not corrupt production or fixture DB to fabricate mismatch"
+        }
+      }
+    },
+    {
+      "source": "independent-reference-names/frontend-results.json",
+      "source_sha256": "7a79411ed5829eb76395fb8b8900e7a2ff0eff6a501149116e38fb3167d5ec48",
+      "level": "recorded_test_or_audit",
+      "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
+      "result": [
+        {
+          "name": "old server: mixed exact revisions of one object render ID, never newest title, and keep both immutable targets",
+          "pass": true
+        },
+        {
+          "name": "old episode absent from cached screenplays stays on exact reference reader with old projected name",
+          "pass": true
+        },
+        {
+          "name": "missing SOURCE projection plus current cached title cannot disguise an old or mismatched exact source",
+          "pass": true
+        },
+        {
+          "name": "a single timeline can name two historical revisions without rewriting references or consulting current head",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "source": "independent-reference-names/backend-results.json",
+      "source_sha256": "0fac23c4f6491357740eecb3ef3d0a761e19cc7679296f3d906c60397f2ffe46",
+      "level": "recorded_test_or_audit",
+      "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
+      "result": {
+        "pass": true,
+        "method": "normal Store and production.import_records in a new temporary instance; snapshot read through SQLite mode=ro",
+        "db_hash_unchanged": true,
+        "read_projection_rows": 4,
+        "same_object_exact_revisions": 2,
+        "source_document_title": true,
+        "old_episode_title": true,
+        "duplicate_dependency_deduplication": true,
+        "payload_original_refs_unchanged": true,
+        "requests_or_formal_db": false
+      }
+    },
+    {
+      "source": "record-version-display-fix.json",
+      "source_sha256": "87fd6354e492054fba8ab6e9fdf157240534cdc6701429c10af00461136dc737",
+      "level": "recorded_test_or_audit",
+      "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
+      "result": {
+        "at": "2026-10-04T08:55:17.697649+08:00",
+        "finding": "AO-051",
+        "author": "root",
+        "changed": "Only remove the redundant record version/hash paragraph and express the current head in the existing version options; accurate IDs, timestamps and full records remain unchanged.",
+        "source_sha256": "629950eb2bffc721522f3ce9ffcd8e21b1c84f5b002ae1a0166e0ed4320cecd0",
+        "syntax_check": true,
+        "new_tests": "None: reversible display-only change, verify actual old/current controls and preserved record details in Chrome plus independent diff review.",
+        "browser": "pending",
+        "independent": "pending"
+      }
+    },
+    {
+      "source": "independent-record-version-display-review.json",
+      "source_sha256": "0b1bbef51fd3b1dbc3b29f1445980e0b41c490e206d3a8425dd35734c7f87ba2",
+      "level": "recorded_test_or_audit",
+      "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
+      "result": {
+        "at": "2026-10-04T00:59:04.481271+00:00",
+        "finding": "AO-051",
+        "verdict": "independent_diff_review_pass_root_output_chrome_verified",
+        "scope": "Low-impact reversible display change; no new implementation-mirroring tests or browser simulation.",
+        "source_sha256": "629950eb2bffc721522f3ce9ffcd8e21b1c84f5b002ae1a0166e0ed4320cecd0",
+        "display_scope_sha256": "ea8fca33710168f810acd254b3cf4d5a75c0df13386bf80b8c94bc9abeac9681",
+        "checks": [
+          {
+            "item": "Remove duplicate default paragraph",
+            "result": "pass",
+            "evidence": "Only standalone type/version/64-character ID/current-or-historical metadata paragraph removed; heading/title kept."
+          },
+          {
+            "item": "Current/historical controls",
+            "result": "pass",
+            "evidence": "Current suffix uses immutable option id == selected record current_revision; old selected options have no Current suffix. Order and loop over detail.history remain."
+          },
+          {
+            "item": "Accurate event target",
+            "result": "unchanged",
+            "evidence": "Option value stays v.id, initial value r.id, onchange openProductionRecord(r.object_id, versions.value) and error toast unchanged."
+          },
+          {
+            "item": "Accessible control name",
+            "result": "unchanged",
+            "evidence": "Native select kept with aria-label 选择实体版本 / 选择精确版本; no extra control or renamed event."
+          },
+          {
+            "item": "Kinds and terminology",
+            "result": "pass",
+            "evidence": "ASSET/REQUIREMENT/CALL remain 记录修订, other kinds 版本; material round is not conflated."
+          },
+          {
+            "item": "Timestamp and exact metadata retention",
+            "result": "pass_scoped",
+            "evidence": "Each option title receives v.created_at; complete-record details still JSON.stringify({record:r,uses:detail.uses}) with selected record exact id and created_at. Native option tooltip support is not assumed; full record is the durable visible fallback."
+          }
+        ],
+        "not_in_scope": [
+          "Concurrent AO049 entity/material routing",
+          "Concurrent AO050 accurate reference titles, independently reviewed by another worker"
+        ],
+        "browser": "Root actual output v1/v2/expanded accurate record evidence reviewed; see root_browser_followup. Other kind control event preservation remains code review, not extra Chrome.",
+        "root_browser_followup": {
+          "at": "2026-10-04T01:16:20.412362+00:00",
+          "evidence": [
+            {
+              "path": "output-reference-fixed-v1-chrome.json",
+              "sha256": "81eae5c38ebd5b9d832b9dd0e70d3d3078c55c296700ce14adadd21dfc90bc02"
+            },
+            {
+              "path": "output-reference-fixed-v2-chrome.json",
+              "sha256": "03abff4083b91d863df5f2c6e85174e3c490bd8edeefd940800cdfa33ada3f5e"
+            },
+            {
+              "path": "record-version-full-history-chrome.json",
+              "sha256": "53d66493c1ab6ca163127d2f315da8d95f3c2fdd216c561ba16604111ffbc161"
+            }
+          ],
+          "observed": [
+            "Old DELIVERABLE selected exact 8e689e0b… and URL agree; current option 82ff7d41… has current suffix while old option does not.",
+            "Current DELIVERABLE selected version2/current at 82ff7d41…; old version remains reachable.",
+            "Option title contains exact timestamps for both revisions. Expanded full-record DOM retains old exact id, version1, created_at, accurate dependencies and current_revision."
+          ],
+          "limits": [
+            "Chrome was operated by root; reviewer read original saved DOM/options only.",
+            "These named receipts cover output v1/v2; no separately named shot or assembly AO051 receipt is promoted here.",
+            "Native option tooltip visibility is not assumed; expanded full record is verified fallback."
+          ]
+        }
+      }
+    },
+    {
+      "source": "independent-stage-release/results.json",
+      "source_sha256": "29340d49255be60ddc8079fe9ba609be0c4d7a3fd25609044d8f54fbd436ebc7",
+      "level": "recorded_test_or_audit",
+      "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
+      "result": {
+        "pass": true,
+        "isolated_origin": "http://127.0.0.1:52030",
+        "transport": "original release update_package/update_project/http/verify_history; only Request URL redirected from formal port to independent random loopback",
+        "before_version": 14,
+        "apply_version": 15,
+        "compensate_version": 16,
+        "changed_fields": [
+          "creative_background",
+          "current_stage",
+          "story_background"
+        ],
+        "expected_stage": "MATERIAL_PREPARATION",
+        "compensated_stage": "STORY_OUTLINE",
+        "old_project_record_unchanged": true,
+        "creative_story_prefix_chars_unchanged": 630,
+        "wrong_candidate_stage_rejected_before_http": true,
+        "stale_expected14_status": 409,
+        "forward_idempotent_no_patch": true,
+        "compensation_idempotent_no_patch": true,
+        "advanced_version_refused_before_patch": true,
+        "history_events_before": 16,
+        "history_events_after": 18,
+        "all_original_events_retained": true,
+        "unchanged_business_tables": [
+          "comment_events",
+          "comments",
+          "dependencies",
+          "generation_publications",
+          "material_comment_scopes",
+          "material_feedback",
+          "material_members",
+          "material_rounds",
+          "objects",
+          "revisions",
+          "sources"
+        ],
+        "contexts": {
+          "source": {
+            "project_stage": "MATERIAL_PREPARATION",
+            "creative_stage": "MATERIAL_PREPARATION",
+            "model_called": false
+          },
+          "structure": {
+            "project_stage": "MATERIAL_PREPARATION",
+            "creative_stage": "MATERIAL_PREPARATION",
+            "model_called": false
+          },
+          "screenplay": {
+            "project_stage": "MATERIAL_PREPARATION",
+            "creative_stage": "SCRIPT_DRAFT",
+            "model_called": false
+          }
+        },
+        "http_calls": [
+          {
+            "kind": "wrapper",
+            "method": "GET",
+            "path": "/api/configurations"
+          },
+          {
+            "kind": "wrapper",
+            "method": "PATCH",
+            "path": "/api/configurations/PROJECT"
+          },
+          {
+            "kind": "wrapper",
+            "method": "GET",
+            "path": "/api/configurations"
+          },
+          {
+            "kind": "direct",
+            "method": "PATCH",
+            "path": "/api/configurations/PROJECT",
+            "status": 409
+          },
+          {
+            "kind": "wrapper",
+            "method": "GET",
+            "path": "/api/configurations"
+          },
+          {
+            "kind": "direct",
+            "method": "POST",
+            "path": "/api/comments/polish-context",
+            "status": 200
+          },
+          {
+            "kind": "direct",
+            "method": "POST",
+            "path": "/api/comments/polish-context",
+            "status": 200
+          },
+          {
+            "kind": "direct",
+            "method": "POST",
+            "path": "/api/comments/polish-context",
+            "status": 200
+          },
+          {
+            "kind": "wrapper",
+            "method": "GET",
+            "path": "/api/configurations"
+          },
+          {
+            "kind": "wrapper",
+            "method": "PATCH",
+            "path": "/api/configurations/PROJECT"
+          },
+          {
+            "kind": "wrapper",
+            "method": "GET",
+            "path": "/api/configurations"
+          },
+          {
+            "kind": "wrapper",
+            "method": "GET",
+            "path": "/api/configurations"
+          },
+          {
+            "kind": "wrapper",
+            "method": "GET",
+            "path": "/api/configurations"
+          }
+        ],
+        "history_check15": {
+          "sources": {
+            "before": 45,
+            "after": 45,
+            "old_rows_preserved": true
+          },
+          "comment_events": {
+            "before": 300,
+            "after": 300,
+            "old_rows_preserved": true
+          },
+          "objects": {
+            "before": 3182,
+            "after": 3182,
+            "old_rows_preserved": true
+          },
+          "revisions": {
+            "before": 6998,
+            "after": 6998,
+            "old_rows_preserved": true
+          },
+          "dependencies": {
+            "before": 41170,
+            "after": 41170,
+            "old_rows_preserved": true
+          },
+          "configurations": {
+            "before": 1,
+            "after": 1,
+            "old_rows_preserved": true
+          },
+          "configuration_events": {
+            "before": 16,
+            "after": 17,
+            "old_rows_preserved": true
+          },
+          "comments": {
+            "before": 271,
+            "after": 271,
+            "old_rows_preserved": true
+          },
+          "material_rounds": {
+            "before": 1181,
+            "after": 1181,
+            "old_rows_preserved": true
+          },
+          "material_members": {
+            "before": 5515,
+            "after": 5515,
+            "old_rows_preserved": true
+          },
+          "material_feedback": {
+            "before": 7,
+            "after": 7,
+            "old_rows_preserved": true
+          },
+          "material_comment_scopes": {
+            "before": 7,
+            "after": 7,
+            "old_rows_preserved": true
+          },
+          "generation_publications": {
+            "before": 1,
+            "after": 1,
+            "old_rows_preserved": true
+          }
+        },
+        "history_check16": {
+          "sources": {
+            "before": 45,
+            "after": 45,
+            "old_rows_preserved": true
+          },
+          "comment_events": {
+            "before": 300,
+            "after": 300,
+            "old_rows_preserved": true
+          },
+          "objects": {
+            "before": 3182,
+            "after": 3182,
+            "old_rows_preserved": true
+          },
+          "revisions": {
+            "before": 6998,
+            "after": 6998,
+            "old_rows_preserved": true
+          },
+          "dependencies": {
+            "before": 41170,
+            "after": 41170,
+            "old_rows_preserved": true
+          },
+          "configurations": {
+            "before": 1,
+            "after": 1,
+            "old_rows_preserved": true
+          },
+          "configuration_events": {
+            "before": 16,
+            "after": 18,
+            "old_rows_preserved": true
+          },
+          "comments": {
+            "before": 271,
+            "after": 271,
+            "old_rows_preserved": true
+          },
+          "material_rounds": {
+            "before": 1181,
+            "after": 1181,
+            "old_rows_preserved": true
+          },
+          "material_members": {
+            "before": 5515,
+            "after": 5515,
+            "old_rows_preserved": true
+          },
+          "material_feedback": {
+            "before": 7,
+            "after": 7,
+            "old_rows_preserved": true
+          },
+          "material_comment_scopes": {
+            "before": 7,
+            "after": 7,
+            "old_rows_preserved": true
+          },
+          "generation_publications": {
+            "before": 1,
+            "after": 1,
+            "old_rows_preserved": true
+          }
+        },
+        "server_stopped": true,
+        "model_calls": 0,
+        "production_written": false,
+        "baseline_file_unchanged": true,
+        "temporary_instance_removed": true,
+        "files": {
+          "scripts/autonomous_optimization_release.py": "05fd5a0b53d2dd79222f486eeddaee8344414240bbfbacab40a844c184fe0637",
+          "tests/test_autonomous_optimization_release.py": "28f6a4fe70da44366875bb157ae0db87054d72c3f7b9acececa881e79f6db61f",
+          "production/autonomous-optimization-release/README.md": "eab695978660582555879912c11b7cdbabed1abcd8fb8e7d510a7bb860fdcb31",
+          "production/autonomous-optimization-release/project-context/before-project.json": "53a5be2c3c5f021aea1e941925175f0c4a24ec5751da0ae8b25170774f4f494a",
+          "production/autonomous-optimization-release/project-context/edits.json": "bd1c3626bc397cbcde9749b89842a0ccfde36405827e44f58da4a64d4564695b",
+          "production/autonomous-optimization-release/project-context/expected-body.json": "29de1c638f31e2358da4a360f66da8663b585077fddef26d6d4527fcaad80150",
+          "production/autonomous-optimization-release/project-context/manifest.json": "4d6675e09eb35fd0d2e67844c27462ac9a27d2514d1a618b09fe6a42341204eb",
+          "production/autonomous-optimization-release/project-context/request.json": "b5e14243b40a2b60eecc356f106e7a7d5579e7d5f5a3e2ea9a183f9c6ed08807",
+          "production/autonomous-optimization-release/project-context/updates.json": "4548ca3b5db294f7478f400f9af2e77abb87700632a2b0d0fbdb98c57c832746"
+        }
+      }
+    },
+    {
+      "source": "evidence-pack-current-project/capture.json",
+      "source_sha256": "ba4e8c2ade922ee223feec74692606ab617b6001f0b889d4e7909b59a32b6e12",
+      "level": "recorded_test_or_audit",
+      "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
+      "result": {
+        "captured_at": "2026-10-04T01:20:44.593071+00:00",
+        "kind": "existing author result readback; not a new test run",
+        "tests": 21,
+        "seconds": 0.309,
+        "result": "OK",
+        "log_source": "release-stage-author-tests.log",
+        "log_sha256": "6f97ee3bd86c914b1de294ac7f873d56b12149686fa6f610433827263273999c",
+        "log_bytes": 2504,
+        "current_wrapper_sha256": "05fd5a0b53d2dd79222f486eeddaee8344414240bbfbacab40a844c184fe0637",
+        "fields": [
+          "story_background",
+          "creative_background",
+          "current_stage"
+        ],
+        "stage": "MATERIAL_PREPARATION",
+        "files": [
+          {
+            "path": "production/autonomous-optimization-release/project-context/before-project.json",
+            "sha256": "53a5be2c3c5f021aea1e941925175f0c4a24ec5751da0ae8b25170774f4f494a",
+            "bytes": 3009
+          },
+          {
+            "path": "production/autonomous-optimization-release/project-context/edits.json",
+            "sha256": "bd1c3626bc397cbcde9749b89842a0ccfde36405827e44f58da4a64d4564695b",
+            "bytes": 1970
+          },
+          {
+            "path": "production/autonomous-optimization-release/project-context/expected-body.json",
+            "sha256": "29de1c638f31e2358da4a360f66da8663b585077fddef26d6d4527fcaad80150",
+            "bytes": 3320
+          },
+          {
+            "path": "production/autonomous-optimization-release/project-context/manifest.json",
+            "sha256": "4d6675e09eb35fd0d2e67844c27462ac9a27d2514d1a618b09fe6a42341204eb",
+            "bytes": 5076
+          },
+          {
+            "path": "production/autonomous-optimization-release/project-context/request.json",
+            "sha256": "b5e14243b40a2b60eecc356f106e7a7d5579e7d5f5a3e2ea9a183f9c6ed08807",
+            "bytes": 3252
+          },
+          {
+            "path": "production/autonomous-optimization-release/project-context/updates.json",
+            "sha256": "4548ca3b5db294f7478f400f9af2e77abb87700632a2b0d0fbdb98c57c832746",
+            "bytes": 3201
+          }
+        ],
+        "limits": "User stage decision permits this candidate field; formal apply and final integration still require root delivery authorization. Original two-field Docker evidence remains historical; no new Docker rehearsal is asserted."
+      }
+    },
+    {
+      "source": "assembly-output-browser/v1-technical-evidence.json",
+      "source_sha256": "a39a481a47518ca2e7e64a5785e846c0360ac3466a34b669cbae4ff2cb27f25e",
+      "level": "recorded_test_or_audit",
+      "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
+      "result": {
+        "at": "2026-10-04T00:29:42.357555+00:00",
+        "scope": "Existing real backend GET/file Range and local project rebuild, not browser verification.",
+        "service": {
+          "url": "http://127.0.0.1:61584"
+        },
+        "requests": [
+          {
+            "path": "/",
+            "status": 200,
+            "bytes": 7892,
+            "sha256": "544f843e8e0173fa5fd98c472289c8a9df6b74e63e9e071da70fd9be33808ff2",
+            "content_range": null
+          },
+          {
+            "path": "/api/instance",
+            "status": 200,
+            "bytes": 92,
+            "sha256": "f76a4b68b057a8f325f998f2e4352d64e52052016d1495f36ae114ea9faa49bc",
+            "content_range": null
+          },
+          {
+            "path": "/api/production",
+            "status": 200,
+            "bytes": 17840,
+            "sha256": "3bda4da145993df4293af8bec9ccb4ef712318aca568e7505af2ee8f793c9587",
+            "content_range": null
+          },
+          {
+            "path": "/api/production?object_id=ao-assembly",
+            "status": 200,
+            "bytes": 4173,
+            "sha256": "9a3364fb34e3aaf2382b0e35f956b348232f9668ffbf3ef3338b87d96d017ac8",
+            "content_range": null
+          },
+          {
+            "path": "/api/production?object_id=ao-output",
+            "status": 200,
+            "bytes": 3458,
+            "sha256": "f587c794b5873f0eef105ac431cfbf9e6d241b90d6f573b0ca982285eb1624e0",
+            "content_range": null
+          },
+          {
+            "path": "/api/production?object_id=ao-assembly-shot",
+            "status": 200,
+            "bytes": 4168,
+            "sha256": "4fdd8f2993dacc059fc3fa32ea8a6d6302c2d15be86dd8183b6d31bdcf00595f",
+            "content_range": null
+          },
+          {
+            "path": "/api/production/readiness?scope=ao-assembly-shot",
+            "status": 200,
+            "bytes": 10038,
+            "sha256": "960d79de30cb12eb9a82f113eb7d5b4a8b4e70dc89c22728db65fdf423dc44f4",
+            "content_range": null
+          },
+          {
+            "path": "/api/production/package?scope=ao-assembly-shot",
+            "status": 200,
+            "bytes": 23998,
+            "sha256": "07ee306db4b440cef1ca42bab8b355c0fb635dfc216aa05d696e0ed3bfedddf1",
+            "content_range": null
+          },
+          {
+            "path": "/api/production/files/25d7f24bcc05e014860cab48e72df7d0d09693e314c878a8eb62599a379d24c4.mp4",
+            "status": 200,
+            "bytes": 14000,
+            "sha256": "25d7f24bcc05e014860cab48e72df7d0d09693e314c878a8eb62599a379d24c4",
+            "content_range": null
+          },
+          {
+            "path": "/api/production/files/37fcb7a9c715c228b96e10e3da45ae77d2035901b4348133948040b20f017c46.zip",
+            "status": 200,
+            "bytes": 3812,
+            "sha256": "37fcb7a9c715c228b96e10e3da45ae77d2035901b4348133948040b20f017c46",
+            "content_range": null
+          },
+          {
+            "path": "/api/production/files/25d7f24bcc05e014860cab48e72df7d0d09693e314c878a8eb62599a379d24c4.mp4",
+            "status": 206,
+            "bytes": 128,
+            "sha256": "b0b71aebbf4a422cda534d9b182e2544a4ecff46c75deb324e0389ef6b818600",
+            "content_range": "bytes 0-127/14000"
+          }
+        ],
+        "readonly_database_dump_before": "163808e3668b2231931cc6c1a33a951363f11f8212b3dec55034e8affa3babe9",
+        "readonly_database_dump_after": "163808e3668b2231931cc6c1a33a951363f11f8212b3dec55034e8affa3babe9",
+        "database_unchanged_by_gets": true,
+        "manifest_matches_initial": true,
+        "exact_v1_history_only": true,
+        "project_members": [
+          "assets/3a12d7367fbf84b4c115d24b24e3d0c49b65cad68cd241fe824eaf5342e4cf19.png",
+          "assets/c73183e22b19cba00f11da189d550db7efb5328575c1b1bdb6701a3abf1c96b2.png",
+          "assets/e294409b36a8ac1893b23336eeab5202d3e84ce4f66c7572aa1589c43d43c1ff.wav",
+          "rebuild.py",
+          "timeline.json"
+        ],
+        "project_all_relative_inputs_hash_match": true,
+        "rebuilt_output_sha256": "25d7f24bcc05e014860cab48e72df7d0d09693e314c878a8eb62599a379d24c4",
+        "rebuilt_output_byte_identical": true,
+        "decoded_video_frame_count": 48,
+        "decoded_first_frame_md5": "78e9c4a6be71e9e3f8cc2c4ff58b374f",
+        "decoded_frame_at_one_second_md5": "41f828d9f731f83d8f973c87bf22c682",
+        "first_and_second_second_differ": true,
+        "root_chrome": "pending",
+        "limits": [
+          "Only deterministic technical geometry and synthesized silence.",
+          "No model, paid service, native editing application, or creative acceptance.",
+          "ASSEMBLY/DELIVERABLE v2 not applied."
+        ]
+      }
+    },
+    {
+      "source": "assembly-output-browser/v1-render.json",
+      "source_sha256": "83093820d3ad576571a02cc5a50b45b508f5fc076751ed1485dcab021ae9dab2",
+      "level": "recorded_test_or_audit",
+      "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
+      "result": {
+        "at": "2026-10-04T00:26:49.978496+00:00",
+        "elapsed_seconds": 0.29853995899999997,
+        "order": [
+          "a",
+          "b"
+        ],
+        "recipe": {
+          "format": "isolated-technical-rebuild-v1",
+          "purpose": "技术配方，不是原生剪辑工程或故事认可",
+          "width": 640,
+          "height": 360,
+          "fps": 24,
+          "duration_frames": 48,
+          "images": [
+            "assets/c73183e22b19cba00f11da189d550db7efb5328575c1b1bdb6701a3abf1c96b2.png",
+            "assets/3a12d7367fbf84b4c115d24b24e3d0c49b65cad68cd241fe824eaf5342e4cf19.png"
+          ],
+          "audio": "assets/e294409b36a8ac1893b23336eeab5202d3e84ce4f66c7572aa1589c43d43c1ff.wav",
+          "image_seconds_each": 1,
+          "version": 1,
+          "input_references": {
+            "a": {
+              "object_id": "ao-input-a",
+              "revision_id": "f78b29da2c0491632fbf51844ad459a284e7ddcf981d91e854282d4dfd6b4af8"
+            },
+            "b": {
+              "object_id": "ao-input-b",
+              "revision_id": "9ab10cc3c5c24c335771203bb7da82784857c60358923f00cfe03750de950e2e"
+            },
+            "silence": {
+              "object_id": "ao-input-silence",
+              "revision_id": "70bba9c5bcce58701e52f19ebc41ff107b5fab42900162cdd0ba085ccc564b59"
+            }
+          }
+        },
+        "actual_video": {
+          "codec_name": "h264",
+          "width": 640,
+          "height": 360,
+          "r_frame_rate": "24/1",
+          "nb_read_frames": "48"
+        },
+        "actual_duration_seconds": 2.0,
+        "audio": {
+          "codec_name": "aac",
+          "sample_rate": "48000",
+          "channels": 1
+        },
+        "components": [
+          {
+            "id": "original",
+            "role": "original",
+            "file": "25d7f24bcc05e014860cab48e72df7d0d09693e314c878a8eb62599a379d24c4.mp4",
+            "sha256": "25d7f24bcc05e014860cab48e72df7d0d09693e314c878a8eb62599a379d24c4",
+            "bytes": 14000,
+            "mime": "video/mp4",
+            "width": 640,
+            "height": 360,
+            "duration_seconds": 2.0,
+            "has_audio": true,
+            "sample_rate": 48000,
+            "channels": 1
+          },
+          {
+            "id": "project",
+            "role": "project",
+            "file": "37fcb7a9c715c228b96e10e3da45ae77d2035901b4348133948040b20f017c46.zip",
+            "sha256": "37fcb7a9c715c228b96e10e3da45ae77d2035901b4348133948040b20f017c46",
+            "bytes": 3812,
+            "mime": "application/zip"
+          }
+        ],
+        "source_script_sha256": "1239298407dca6cf4ea5aa367a440e340288a6adcd0b0c4967476813caee3b72",
+        "project_boundary": "A relative-path JSON recipe, Python rebuild command, and exact raw inputs. Not a native editor project or creative acceptance."
+      }
+    },
+    {
+      "source": "assembly-output-browser/v2-preflight.json",
+      "source_sha256": "06e6f409388d150f13f74bc3d36eb62a10c5aeb81e3d646c9e89772b1e40ccd1",
+      "level": "recorded_test_or_audit",
+      "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
+      "result": {
+        "mode": "performed read-only append-v2 preflight; not applied",
+        "old_assembly": {
+          "object_id": "ao-assembly",
+          "revision_id": "64ff5bd960bb1f200bdaa53077d14f232472c93ab55514a2470f33ee1d6e7db0"
+        },
+        "old_output": {
+          "object_id": "ao-output",
+          "revision_id": "8e689e0b9ead4f7f88b16ab072f0312c0d37887a000fa2eb0663b2325e873a2b"
+        },
+        "no_writes": true
+      }
+    },
+    {
+      "source": "assembly-output-browser/append-v2-receipt.json",
+      "source_sha256": "e99e3f5de78621db7400f9018a318e0a81238158341d84f9b891301728311e42",
+      "level": "recorded_test_or_audit",
+      "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
+      "result": {
+        "at": "2026-10-04T00:33:09.778466+00:00",
+        "response": {
+          "validated_only": false,
+          "records": [
+            {
+              "id": "ao-assembly",
+              "kind": "ASSEMBLY",
+              "revision": "af6219dbf0fbfbb402078875fe57cfd82fb3aad633073248e39ea441dad4e64f",
+              "version": 2
+            },
+            {
+              "id": "ao-render-call-v2",
+              "kind": "CALL",
+              "revision": "02678531d4efff9870c86c8e899d55d459ed0d83ce6ef64e387e44ed20602067",
+              "version": 1
+            },
+            {
+              "id": "ao-render-video",
+              "kind": "ASSET",
+              "revision": "82ebf67adc23aaff950850aabe0e43e30ced6dc30e72b4b4c83f80ec788a0137",
+              "version": 2
+            },
+            {
+              "id": "ao-output",
+              "kind": "DELIVERABLE",
+              "revision": "82ff7d41fa29be9d298443d2ccb722ec0dde5246a6c232449726397d3e108fb3",
+              "version": 2
+            }
+          ],
+          "removed": []
+        },
+        "call_completion": {
+          "validated_only": false,
+          "records": [
+            {
+              "id": "ao-render-call-v2",
+              "kind": "CALL",
+              "revision": "3882d131aa63c02a25600106109b552d4a1c8bd25368624831ca51dc7b8ac8f9",
+              "version": 2
+            }
+          ],
+          "removed": []
+        },
+        "old_output_exact_payload_preserved": true,
+        "all_adoptions_unchanged": true,
+        "old_files_hashes_preserved": true,
+        "render": {
+          "at": "2026-10-04T00:33:09.644906+00:00",
+          "elapsed_seconds": 0.17935104200000002,
+          "order": [
+            "b",
+            "a"
+          ],
+          "recipe": {
+            "format": "isolated-technical-rebuild-v1",
+            "purpose": "技术配方，不是原生剪辑工程或故事认可",
+            "width": 640,
+            "height": 360,
+            "fps": 24,
+            "duration_frames": 48,
+            "images": [
+              "assets/3a12d7367fbf84b4c115d24b24e3d0c49b65cad68cd241fe824eaf5342e4cf19.png",
+              "assets/c73183e22b19cba00f11da189d550db7efb5328575c1b1bdb6701a3abf1c96b2.png"
+            ],
+            "audio": "assets/e294409b36a8ac1893b23336eeab5202d3e84ce4f66c7572aa1589c43d43c1ff.wav",
+            "image_seconds_each": 1,
+            "version": 2,
+            "input_references": {
+              "a": {
+                "object_id": "ao-input-a",
+                "revision_id": "f78b29da2c0491632fbf51844ad459a284e7ddcf981d91e854282d4dfd6b4af8"
+              },
+              "b": {
+                "object_id": "ao-input-b",
+                "revision_id": "9ab10cc3c5c24c335771203bb7da82784857c60358923f00cfe03750de950e2e"
+              },
+              "silence": {
+                "object_id": "ao-input-silence",
+                "revision_id": "70bba9c5bcce58701e52f19ebc41ff107b5fab42900162cdd0ba085ccc564b59"
+              }
+            }
+          },
+          "actual_video": {
+            "codec_name": "h264",
+            "width": 640,
+            "height": 360,
+            "r_frame_rate": "24/1",
+            "nb_read_frames": "48"
+          },
+          "actual_duration_seconds": 2.0,
+          "audio": {
+            "codec_name": "aac",
+            "sample_rate": "48000",
+            "channels": 1
+          },
+          "components": [
+            {
+              "id": "original",
+              "role": "original",
+              "file": "abce3e78a1de319a80265334f49b866cd9ea5db5a4ab2a82cf4959b0a87804a0.mp4",
+              "sha256": "abce3e78a1de319a80265334f49b866cd9ea5db5a4ab2a82cf4959b0a87804a0",
+              "bytes": 14527,
+              "mime": "video/mp4",
+              "width": 640,
+              "height": 360,
+              "duration_seconds": 2.0,
+              "has_audio": true,
+              "sample_rate": 48000,
+              "channels": 1
+            },
+            {
+              "id": "project",
+              "role": "project",
+              "file": "6d113f3c21aca1c037ffff876d738f49710c176aa49806599005920ec592cd5b.zip",
+              "sha256": "6d113f3c21aca1c037ffff876d738f49710c176aa49806599005920ec592cd5b",
+              "bytes": 3814,
+              "mime": "application/zip"
+            }
+          ],
+          "source_script_sha256": "1239298407dca6cf4ea5aa367a440e340288a6adcd0b0c4967476813caee3b72",
+          "project_boundary": "A relative-path JSON recipe, Python rebuild command, and exact raw inputs. Not a native editor project or creative acceptance."
+        },
+        "current": {
+          "ao-assembly": {
+            "id": "af6219dbf0fbfbb402078875fe57cfd82fb3aad633073248e39ea441dad4e64f",
+            "version": 2
+          },
+          "ao-output": {
+            "id": "82ff7d41fa29be9d298443d2ccb722ec0dde5246a6c232449726397d3e108fb3",
+            "version": 2
+          },
+          "ao-render-video": {
+            "id": "82ebf67adc23aaff950850aabe0e43e30ced6dc30e72b4b4c83f80ec788a0137",
+            "version": 2
+          }
+        },
+        "scope": "Normal local render and production import only. No judgment, comment, UI operation or formal data."
+      }
+    },
+    {
+      "source": "assembly-output-browser/recovery-evidence.json",
+      "source_sha256": "e6f3c4b99171d4eb0920a1410b57fe89e1f7fec99694d86c9d19463b87889423",
+      "level": "recorded_test_or_audit",
+      "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
+      "result": {
+        "at": "2026-10-04T00:35:30.414531+00:00",
+        "elapsed_seconds": 0.434566292,
+        "scope": "Read-only backup of our live technical instance; normal bundle.export/restore/write_package operate only on fresh recovery-check/source and restored copies.",
+        "live_tables_unchanged": true,
+        "live_logical_sha256": "32f8b26ef51aed18aadb39dd6af7e1e4283dd56d1ba700e144a07420ec18312a",
+        "tables": {
+          "comment_events": {
+            "rows": 0,
+            "equal": true,
+            "logical_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+          },
+          "comments": {
+            "rows": 0,
+            "equal": true,
+            "logical_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+          },
+          "configuration_events": {
+            "rows": 0,
+            "equal": true,
+            "logical_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+          },
+          "configurations": {
+            "rows": 0,
+            "equal": true,
+            "logical_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+          },
+          "dependencies": {
+            "rows": 41,
+            "equal": true,
+            "logical_sha256": "5a79224f7958cfdc149580d57e1eff13d86afa70671360557cfad5d2c0154019"
+          },
+          "material_comment_scopes": {
+            "rows": 0,
+            "equal": true,
+            "logical_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+          },
+          "material_feedback": {
+            "rows": 0,
+            "equal": true,
+            "logical_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+          },
+          "material_members": {
+            "rows": 18,
+            "equal": true,
+            "logical_sha256": "acc21d46c277798609cdfd2799d68ff11a277f5a8d2864ea0373120290875471"
+          },
+          "material_rounds": {
+            "rows": 7,
+            "equal": true,
+            "logical_sha256": "f7595f0cacbd2658b5d56ce2f3387bb6443de8888ff7b973ce008ce0f4c1f319"
+          },
+          "objects": {
+            "rows": 19,
+            "equal": true,
+            "logical_sha256": "a0a894cd7aadcca2f366402d331ed9a41423e8880cc3109151f85321149211e6"
+          },
+          "revisions": {
+            "rows": 27,
+            "equal": true,
+            "logical_sha256": "c352c3fe8b973c488eb8f6ba6d725d77ddb03b83657483f7095a9c79bb4429e8"
+          },
+          "sources": {
+            "rows": 0,
+            "equal": true,
+            "logical_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+          }
+        },
+        "production_snapshot_equal": true,
+        "histories": {
+          "ao-assembly": [
+            {
+              "version": 2,
+              "revision_id": "af6219dbf0fbfbb402078875fe57cfd82fb3aad633073248e39ea441dad4e64f"
+            },
+            {
+              "version": 1,
+              "revision_id": "64ff5bd960bb1f200bdaa53077d14f232472c93ab55514a2470f33ee1d6e7db0"
+            }
+          ],
+          "ao-output": [
+            {
+              "version": 2,
+              "revision_id": "82ff7d41fa29be9d298443d2ccb722ec0dde5246a6c232449726397d3e108fb3"
+            },
+            {
+              "version": 1,
+              "revision_id": "8e689e0b9ead4f7f88b16ab072f0312c0d37887a000fa2eb0663b2325e873a2b"
+            }
+          ],
+          "ao-render-video": [
+            {
+              "version": 2,
+              "revision_id": "82ebf67adc23aaff950850aabe0e43e30ced6dc30e72b4b4c83f80ec788a0137"
+            },
+            {
+              "version": 1,
+              "revision_id": "eadd6d56f649afd4785d5bee0eb01405d717a10a6dff5f9694cde43a2449f3f6"
+            }
+          ]
+        },
+        "old_output_exact_assembly": {
+          "object_id": "ao-assembly",
+          "revision_id": "64ff5bd960bb1f200bdaa53077d14f232472c93ab55514a2470f33ee1d6e7db0"
+        },
+        "new_output_exact_assembly": {
+          "object_id": "ao-assembly",
+          "revision_id": "af6219dbf0fbfbb402078875fe57cfd82fb3aad633073248e39ea441dad4e64f"
+        },
+        "old_output_dependency_count": 12,
+        "new_output_dependency_count": 12,
+        "old_output_does_not_reference_new_assembly": true,
+        "all_three_original_inputs_preserved_in_both": true,
+        "adoptions": [
+          {
+            "object_id": "ao-use-a",
+            "revision_id": "ceb376a5f94ec88f77d3faf3f120384baf5748ea5fe61ee1ffe8180454712cc2",
+            "version": 1,
+            "asset": {
+              "object_id": "ao-input-a",
+              "revision_id": "f78b29da2c0491632fbf51844ad459a284e7ddcf981d91e854282d4dfd6b4af8"
+            },
+            "range": null
+          },
+          {
+            "object_id": "ao-use-b",
+            "revision_id": "79048e774ab22e43895eb7adfaa6892c53e5d72870025836a67dcd6b5e68a425",
+            "version": 1,
+            "asset": {
+              "object_id": "ao-input-b",
+              "revision_id": "9ab10cc3c5c24c335771203bb7da82784857c60358923f00cfe03750de950e2e"
+            },
+            "range": null
+          },
+          {
+            "object_id": "ao-use-silence",
+            "revision_id": "592bee07f4239bb722137289b445b584245bc2c844e013ef6bb99440aed27d32",
+            "version": 1,
+            "asset": {
+              "object_id": "ao-input-silence",
+              "revision_id": "70bba9c5bcce58701e52f19ebc41ff107b5fab42900162cdd0ba085ccc564b59"
+            },
+            "range": {
+              "end_seconds": 2,
+              "start_seconds": 0
+            }
+          }
+        ],
+        "adoptions_remain_v1": true,
+        "comments": 0,
+        "judgments": 0,
+        "manifest_equal_after_restore_reexport": true,
+        "manifest_schema_version": 4,
+        "files": {
+          "materials.json": {
+            "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+            "source_equal_restored": true
+          },
+          "comments.json": {
+            "sha256": "ca1c63a5e193e7845961e2688ec45b49958eaad595d2db729b950b8634ce3232",
+            "source_equal_restored": true
+          },
+          "objects.json": {
+            "sha256": "d142144eff6f9ddc91b02236d6bcf95268056f70b9adc9f4c9433ba9d2eb922b",
+            "source_equal_restored": true
+          },
+          "configurations.json": {
+            "sha256": "4056b7447969cefff34c19039a259cb2886b1a384a4ab44052405ee785a86f68",
+            "source_equal_restored": true
+          },
+          "assets/25d7f24bcc05e014860cab48e72df7d0d09693e314c878a8eb62599a379d24c4.mp4": {
+            "sha256": "25d7f24bcc05e014860cab48e72df7d0d09693e314c878a8eb62599a379d24c4",
+            "source_equal_restored": true
+          },
+          "assets/37fcb7a9c715c228b96e10e3da45ae77d2035901b4348133948040b20f017c46.zip": {
+            "sha256": "37fcb7a9c715c228b96e10e3da45ae77d2035901b4348133948040b20f017c46",
+            "source_equal_restored": true
+          },
+          "assets/3a12d7367fbf84b4c115d24b24e3d0c49b65cad68cd241fe824eaf5342e4cf19.png": {
+            "sha256": "3a12d7367fbf84b4c115d24b24e3d0c49b65cad68cd241fe824eaf5342e4cf19",
+            "source_equal_restored": true
+          },
+          "assets/6d113f3c21aca1c037ffff876d738f49710c176aa49806599005920ec592cd5b.zip": {
+            "sha256": "6d113f3c21aca1c037ffff876d738f49710c176aa49806599005920ec592cd5b",
+            "source_equal_restored": true
+          },
+          "assets/abce3e78a1de319a80265334f49b866cd9ea5db5a4ab2a82cf4959b0a87804a0.mp4": {
+            "sha256": "abce3e78a1de319a80265334f49b866cd9ea5db5a4ab2a82cf4959b0a87804a0",
+            "source_equal_restored": true
+          },
+          "assets/c73183e22b19cba00f11da189d550db7efb5328575c1b1bdb6701a3abf1c96b2.png": {
+            "sha256": "c73183e22b19cba00f11da189d550db7efb5328575c1b1bdb6701a3abf1c96b2",
+            "source_equal_restored": true
+          },
+          "assets/e294409b36a8ac1893b23336eeab5202d3e84ce4f66c7572aa1589c43d43c1ff.wav": {
+            "sha256": "e294409b36a8ac1893b23336eeab5202d3e84ce4f66c7572aa1589c43d43c1ff",
+            "source_equal_restored": true
+          }
+        },
+        "managed_assets": 7,
+        "restored_input_package_files": 3,
+        "restored_package_equal_v1": true,
+        "v2_project_rebuilt_sha256": "abce3e78a1de319a80265334f49b866cd9ea5db5a4ab2a82cf4959b0a87804a0",
+        "v2_project_rebuilt_byte_identical": true,
+        "v1_rebuild_evidence_reused": "v1-technical-evidence.json; v1 project/input bytes equal after restore",
+        "source_hashes": {
+          "review_desk/bundle.py": "38b678cf27ea88a2376eea6fd73340687a099e5da81648eceb750138906040d1",
+          "review_desk/production.py": "95e04df0d1e33bbfefab3c65705eed3f4da2b78fe5a109e43b0c3ae27efa01d6"
+        },
+        "limits": [
+          "No Chrome operation in this check; root UI evidence remains separate.",
+          "Technical geometry/silence and JSON rebuild package, not native editor acceptance or story delivery.",
+          "No formal/live business database write; only this explicitly scoped technical instance was read."
+        ]
+      }
+    },
+    {
+      "source": "independent-assembly-recovery-review.json",
+      "source_sha256": "26089f2770b783305ebb7383c69a96d0eab0c58da29649b2ef695244182a3ec7",
+      "level": "recorded_test_or_audit",
+      "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
+      "result": {
+        "at": "2026-10-04T00:59:04.481271+00:00",
+        "verdict": "independent_readonly_copy_verification_pass",
+        "evidence": "independent-assembly-recovery/results.json",
+        "evidence_sha256": "2e2e2b955bcc1f770f232e0301792fd5e56f7ff49cb9bb1081e756d54f518c5e",
+        "verified": {
+          "tables": 12,
+          "managed_files": 7,
+          "manifest_members": 11,
+          "manifest_identical": true,
+          "old_and_new_exact_refs": true
+        },
+        "not_rerun": [
+          "full export/restore",
+          "project rebuild",
+          "browser",
+          "live DB snapshot"
+        ],
+        "limits": [
+          "Zero comments/judgments in this technical fixture; cannot prove nonempty comment history here.",
+          "Seven files means managed originals/output/project artifacts; manifest has 11 members including 4 JSON data files.",
+          "Rebuild and pre/post live-table equality are existing author evidence reviewed, not rerun by independent reviewer.",
+          "Native editor project/creative acceptance not tested."
+        ]
+      }
+    },
+    {
+      "source": "independent-assembly-recovery/results.json",
+      "source_sha256": "2e2e2b955bcc1f770f232e0301792fd5e56f7ff49cb9bb1081e756d54f518c5e",
+      "level": "recorded_test_or_audit",
+      "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
+      "result": {
+        "at": "2026-10-04T00:57:37.684911+00:00",
+        "method": "Read-only immutable SQLite connections to pre-existing source/restored copies; direct row comparison and file bytes/hash. No Store constructor, restore, export, live service or render invoked.",
+        "tables": {
+          "comment_events": {
+            "rows": 0,
+            "copies_equal": true,
+            "matches_existing_receipt": true
+          },
+          "comments": {
+            "rows": 0,
+            "copies_equal": true,
+            "matches_existing_receipt": true
+          },
+          "configuration_events": {
+            "rows": 0,
+            "copies_equal": true,
+            "matches_existing_receipt": true
+          },
+          "configurations": {
+            "rows": 0,
+            "copies_equal": true,
+            "matches_existing_receipt": true
+          },
+          "dependencies": {
+            "rows": 41,
+            "copies_equal": true,
+            "matches_existing_receipt": true
+          },
+          "material_comment_scopes": {
+            "rows": 0,
+            "copies_equal": true,
+            "matches_existing_receipt": true
+          },
+          "material_feedback": {
+            "rows": 0,
+            "copies_equal": true,
+            "matches_existing_receipt": true
+          },
+          "material_members": {
+            "rows": 18,
+            "copies_equal": true,
+            "matches_existing_receipt": true
+          },
+          "material_rounds": {
+            "rows": 7,
+            "copies_equal": true,
+            "matches_existing_receipt": true
+          },
+          "objects": {
+            "rows": 19,
+            "copies_equal": true,
+            "matches_existing_receipt": true
+          },
+          "revisions": {
+            "rows": 27,
+            "copies_equal": true,
+            "matches_existing_receipt": true
+          },
+          "sources": {
+            "rows": 0,
+            "copies_equal": true,
+            "matches_existing_receipt": true
+          }
+        },
+        "managed_asset_count": 7,
+        "manifest_member_count": 11,
+        "files": {
+          "materials.json": {
+            "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+            "both_equal_receipt": true
+          },
+          "comments.json": {
+            "sha256": "ca1c63a5e193e7845961e2688ec45b49958eaad595d2db729b950b8634ce3232",
+            "both_equal_receipt": true
+          },
+          "objects.json": {
+            "sha256": "d142144eff6f9ddc91b02236d6bcf95268056f70b9adc9f4c9433ba9d2eb922b",
+            "both_equal_receipt": true
+          },
+          "configurations.json": {
+            "sha256": "4056b7447969cefff34c19039a259cb2886b1a384a4ab44052405ee785a86f68",
+            "both_equal_receipt": true
+          },
+          "assets/25d7f24bcc05e014860cab48e72df7d0d09693e314c878a8eb62599a379d24c4.mp4": {
+            "sha256": "25d7f24bcc05e014860cab48e72df7d0d09693e314c878a8eb62599a379d24c4",
+            "both_equal_receipt": true
+          },
+          "assets/37fcb7a9c715c228b96e10e3da45ae77d2035901b4348133948040b20f017c46.zip": {
+            "sha256": "37fcb7a9c715c228b96e10e3da45ae77d2035901b4348133948040b20f017c46",
+            "both_equal_receipt": true
+          },
+          "assets/3a12d7367fbf84b4c115d24b24e3d0c49b65cad68cd241fe824eaf5342e4cf19.png": {
+            "sha256": "3a12d7367fbf84b4c115d24b24e3d0c49b65cad68cd241fe824eaf5342e4cf19",
+            "both_equal_receipt": true
+          },
+          "assets/6d113f3c21aca1c037ffff876d738f49710c176aa49806599005920ec592cd5b.zip": {
+            "sha256": "6d113f3c21aca1c037ffff876d738f49710c176aa49806599005920ec592cd5b",
+            "both_equal_receipt": true
+          },
+          "assets/abce3e78a1de319a80265334f49b866cd9ea5db5a4ab2a82cf4959b0a87804a0.mp4": {
+            "sha256": "abce3e78a1de319a80265334f49b866cd9ea5db5a4ab2a82cf4959b0a87804a0",
+            "both_equal_receipt": true
+          },
+          "assets/c73183e22b19cba00f11da189d550db7efb5328575c1b1bdb6701a3abf1c96b2.png": {
+            "sha256": "c73183e22b19cba00f11da189d550db7efb5328575c1b1bdb6701a3abf1c96b2",
+            "both_equal_receipt": true
+          },
+          "assets/e294409b36a8ac1893b23336eeab5202d3e84ce4f66c7572aa1589c43d43c1ff.wav": {
+            "sha256": "e294409b36a8ac1893b23336eeab5202d3e84ce4f66c7572aa1589c43d43c1ff",
+            "both_equal_receipt": true
+          }
+        },
+        "manifest_byte_identical": true,
+        "histories": {
+          "ao-assembly": [
+            {
+              "id": "64ff5bd960bb1f200bdaa53077d14f232472c93ab55514a2470f33ee1d6e7db0",
+              "version": 1
+            },
+            {
+              "id": "af6219dbf0fbfbb402078875fe57cfd82fb3aad633073248e39ea441dad4e64f",
+              "version": 2
+            }
+          ],
+          "ao-output": [
+            {
+              "id": "8e689e0b9ead4f7f88b16ab072f0312c0d37887a000fa2eb0663b2325e873a2b",
+              "version": 1
+            },
+            {
+              "id": "82ff7d41fa29be9d298443d2ccb722ec0dde5246a6c232449726397d3e108fb3",
+              "version": 2
+            }
+          ],
+          "ao-render-video": [
+            {
+              "id": "eadd6d56f649afd4785d5bee0eb01405d717a10a6dff5f9694cde43a2449f3f6",
+              "version": 1
+            },
+            {
+              "id": "82ebf67adc23aaff950850aabe0e43e30ced6dc30e72b4b4c83f80ec788a0137",
+              "version": 2
+            }
+          ]
+        },
+        "old_output_exact_assembly": {
+          "object_id": "ao-assembly",
+          "revision_id": "64ff5bd960bb1f200bdaa53077d14f232472c93ab55514a2470f33ee1d6e7db0"
+        },
+        "new_output_exact_assembly": {
+          "object_id": "ao-assembly",
+          "revision_id": "af6219dbf0fbfbb402078875fe57cfd82fb3aad633073248e39ea441dad4e64f"
+        },
+        "source_receipt_sha256": "e6f3c4b99171d4eb0920a1410b57fe89e1f7fec99694d86c9d19463b87889423",
+        "source_script_sha256": "e7a29317eda086da60e4d03506976f719e0de2459c7e0b6f59340adbca12262c",
+        "limits": [
+          "Zero comments/judgments in this technical fixture; cannot prove nonempty comment history here.",
+          "Seven files means managed originals/output/project artifacts; manifest has 11 members including 4 JSON data files.",
+          "Rebuild and pre/post live-table equality are existing author evidence reviewed, not rerun by independent reviewer.",
+          "Native editor project/creative acceptance not tested."
+        ]
+      }
+    },
+    {
+      "source": "independent-closeout-addendum-01.json",
+      "source_sha256": "a1be510f0ca532a1bf2fc7846dbe65cc589db4b344566235e4d792153825296a",
+      "level": "recorded_test_or_audit",
+      "purpose": "后续准确候选、反例及独审结果；保留测试层级与限制",
+      "result": {
+        "observed_at": "2026-10-04T00:36:23.531522+00:00",
+        "scope": "Read-only review of root Chrome receipts, exact baseline decisions and actual v1 downloads; no UI/model/API mutations or repeated render.",
+        "legacy": {
+          "decision": {
+            "object_id": "entity-accept-63992f25b6ad7e0374dd65c18f8938088fe159d26cb06b466ec719d078b186ea",
+            "revision_id": "8deee6f3a401a43472d9e19a9e98c31f8cc6385533a641148fccd3bbc7d8defd",
+            "version": 1,
+            "is_current": true,
+            "model": "entity-current-v1",
+            "verdict": "accepted",
+            "target": {
+              "object_id": "entity-a-he",
+              "revision_id": "22283c0e6836ce7ae8e7256eed749e05f6212b2442db9f5fdeb653779584dd20"
+            },
+            "title": "阿禾 · 版本采纳"
+          },
+          "browser_url": "http://127.0.0.1:62603/?workspace=settings.workspace&production_object=form-a-he-base&production_entity=entity-a-he&entity_acceptance=8deee6f3a401a43472d9e19a9e98c31f8cc6385533a641148fccd3bbc7d8defd&entity_state=form-a-he-base&production_revision=827b9213281d5fb256d9754ee6821a19041560ca3e423d2868018f7c3111e29f",
+          "exact_entity_and_state_match": true,
+          "disabled_historical_acceptance_observed": true,
+          "visible_acceptance_history_entry": false,
+          "visible_old_verdict_or_three_revision_chain": false,
+          "baseline_three_revision_chain": [
+            {
+              "object_id": "entity-generation-1181e199daa0c26d6a45995a89199163",
+              "revision_id": "c97540bb0d60dbda61489338230a975eaf205a9b28f1986f2fa441ea6f7143cb",
+              "version": 1,
+              "is_current": false,
+              "model": "entity-generation-v1",
+              "verdict": "revoked",
+              "target": {
+                "object_id": "entity-a-he",
+                "revision_id": "22283c0e6836ce7ae8e7256eed749e05f6212b2442db9f5fdeb653779584dd20"
+              },
+              "title": "阿禾 · 取消采纳"
+            },
+            {
+              "object_id": "entity-generation-1181e199daa0c26d6a45995a89199163",
+              "revision_id": "30f4c85a95db44b7443ab9cac8ebc172638832ce2308b18c868aabc12fcbed94",
+              "version": 2,
+              "is_current": false,
+              "model": "entity-content-v1",
+              "verdict": "accepted",
+              "target": {
+                "object_id": "entity-a-he",
+                "revision_id": "22283c0e6836ce7ae8e7256eed749e05f6212b2442db9f5fdeb653779584dd20"
+              },
+              "title": "阿禾 · 重新认可原内容"
+            },
+            {
+              "object_id": "entity-generation-1181e199daa0c26d6a45995a89199163",
+              "revision_id": "e978a864a64ee4cf50842be21da6731017703a676c8cd1b85295cc3eb01b9a60",
+              "version": 3,
+              "is_current": true,
+              "model": "entity-content-v1",
+              "verdict": "revoked",
+              "target": {
+                "object_id": "entity-a-he",
+                "revision_id": "22283c0e6836ce7ae8e7256eed749e05f6212b2442db9f5fdeb653779584dd20"
+              },
+              "title": "阿禾 · 取消内容认可"
+            }
+          ],
+          "coverage_recommendation": "COV-05-S6 partial: actual Chrome exact legacy deep-link read-only protection; independent SQLite old decision chain. No visible history entry/chain assertion."
+        },
+        "assembly_output_v1": {
+          "exact_fixture_refs": {
+            "shot": {
+              "object_id": "ao-assembly-shot",
+              "revision_id": "f9d483f815e436d2d8d35e77be83588a20d2cdf412347d1ebec1c06f58bd5e7e"
+            },
+            "assembly": {
+              "object_id": "ao-assembly",
+              "revision_id": "64ff5bd960bb1f200bdaa53077d14f232472c93ab55514a2470f33ee1d6e7db0"
+            },
+            "output": {
+              "object_id": "ao-output",
+              "revision_id": "8e689e0b9ead4f7f88b16ab072f0312c0d37887a000fa2eb0663b2325e873a2b"
+            },
+            "render_asset": {
+              "object_id": "ao-render-video",
+              "revision_id": "eadd6d56f649afd4785d5bee0eb01405d717a10a6dff5f9694cde43a2449f3f6"
+            }
+          },
+          "reference_screenshot_independently_viewed": true,
+          "reference_seen": "Technical image A red grid, v1, reached from assembly; not a new UI entry.",
+          "output_browser_video": {
+            "currentTime": 2,
+            "duration": 2,
+            "ended": true,
+            "muted": true,
+            "paused": true,
+            "src": "http://127.0.0.1:61584/api/production/files/25d7f24bcc05e014860cab48e72df7d0d09693e314c878a8eb62599a379d24c4.mp4",
+            "videoHeight": 360,
+            "videoWidth": 640
+          },
+          "download_files_independently_read": [
+            {
+              "name": "25d7f24bcc05e014860cab48e72df7d0d09693e314c878a8eb62599a379d24c4.mp4",
+              "bytes": 14000,
+              "sha256": "25d7f24bcc05e014860cab48e72df7d0d09693e314c878a8eb62599a379d24c4",
+              "matches_receipt": true
+            },
+            {
+              "name": "37fcb7a9c715c228b96e10e3da45ae77d2035901b4348133948040b20f017c46.zip",
+              "bytes": 3812,
+              "sha256": "37fcb7a9c715c228b96e10e3da45ae77d2035901b4348133948040b20f017c46",
+              "matches_receipt": true
+            }
+          ],
+          "zip_members": [
+            "assets/3a12d7367fbf84b4c115d24b24e3d0c49b65cad68cd241fe824eaf5342e4cf19.png",
+            "assets/c73183e22b19cba00f11da189d550db7efb5328575c1b1bdb6701a3abf1c96b2.png",
+            "assets/e294409b36a8ac1893b23336eeab5202d3e84ce4f66c7572aa1589c43d43c1ff.wav",
+            "rebuild.py",
+            "timeline.json"
+          ],
+          "zip_inputs_match_registered_hashes": {
+            "c73183e22b19cba00f11da189d550db7efb5328575c1b1bdb6701a3abf1c96b2.png": true,
+            "3a12d7367fbf84b4c115d24b24e3d0c49b65cad68cd241fe824eaf5342e4cf19.png": true,
+            "e294409b36a8ac1893b23336eeab5202d3e84ce4f66c7572aa1589c43d43c1ff.wav": true
+          },
+          "timeline_matches_registered_recipe": true,
+          "technical_http_11_gets_and_range": 11,
+          "existing_http_before_after_db_unchanged": true,
+          "existing_rebuild_evidence_byte_identical": true,
+          "reviewer_reran_rebuild": false,
+          "v1_observed_event_cutoff": "2026-10-04T00:32:29.609Z",
+          "v1_http_mutations_observed": [],
+          "shot_manifest_browser_scope": "Actual button click and success toast plus backend package GET200; no matching downloaded JSON found/claimed. Prior AO018 actual manifest download is a different fixture.",
+          "not_claimed": [
+            "Native editable project opened in an editor",
+            "Creative approval or story output",
+            "Actual audio listening quality; video was muted",
+            "Browser directory-package download",
+            "Assembly/output v2 historical switching or restore: separate later evidence",
+            "The entire fixture never changed: v2 later had two authorized imports outside the v1 window"
+          ]
+        },
+        "source_sha256": {
+          "legacy-exact-adoption-chrome.json": "d636e9bcd277d0005655b7e1a8fff95ea5c6f679488877005204693f5b39f7c5",
+          "final-independent-review/baseline-legacy-counts.json": "16145a85ccf642a1dc39c2168d2cf3a87a325d28825b37e8011c5cdead0eed99",
+          "assembly-v1-reference-chrome.jpg": "6ec50c90edac37add1a0f90de81c37f79e606210ed9d519dad5fd2feddea23f2",
+          "output-v1-chrome.json": "cfc542e00c9dfdf4ab124609728b66f753e5274720335bde592cf31501fb06fe",
+          "output-v1-chrome.jpg": "8513e7314ea1fb6fcaef901458ce55bddec55530993670652879e905347eb3d7",
+          "output-v1-downloaded-files.json": "f26f3a5d76460be2a3e4f628422eb5ee1fde6da1eecc4dd7cc347e1ce8ce510c",
+          "assembly-v1-shot-chrome.json": "b956ef7f745190af0d47e6a45bc7d2ec5021af9979c55b9d56646a968d7f9874",
+          "assembly-output-browser/fixture.json": "69e8fcbeebe9faf1c4cfb4b4b78e72eff888935739b956ccadb8696478b31736",
+          "assembly-output-browser/v1-technical-evidence.json": "a39a481a47518ca2e7e64a5785e846c0360ac3466a34b669cbae4ff2cb27f25e",
+          "assembly-output-browser/check_v1.py": "8f578067e296e4572ae14be2ba0d75ba6e471205c29cc48b7f79188427d88aff"
+        }
       }
     }
   ]

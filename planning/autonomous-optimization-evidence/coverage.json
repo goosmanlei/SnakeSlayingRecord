@@ -1,5 +1,5 @@
 {
-  "source_sha256": "3e9c973f4c5056562557f8a55db6de7f4911629e08c5e50336c250642a0ea53f",
+  "source_sha256": "d9569acb5268797716a451ada7e5fd4c2567baeb669b34f510602c07a0798396",
   "snapshot": {
     "updated_at": "2026-10-04T00:09:33.222510+00:00",
     "baseline": "baseline.json",
@@ -2975,7 +2975,7 @@
               "independent-comment-rejection-review.md"
             ],
             "verified_scope": "真实旧轮新修订提交收到 409；修后原 UUID/完整 payload/round2 原样重试仍 409，显示明确拒绝而不称结果未知，原文字与修订选择保留。实际重试北京时间07:49:07；8评论/13事件/7轮/3反馈/12范围全部未变。",
-            "remaining": "该次 Chrome 加载 app SHA 1b8dbeda…，包含尚未冻结的 AO047 初稿，只支持 AO046 明确拒绝路径，不作为 AO047 或整个最终 app 验收。异常本机存储仍是函数反例。",
+            "remaining": "该次 Chrome 加载 app SHA 8c5c001c…（作者记录的 root_loaded_initial_sha256），包含尚未冻结的 AO047 初稿，只支持 AO046 明确拒绝路径，不作为 AO047 或整个最终 app 验收。异常本机存储仍是函数反例。",
             "evidence_levels": [
               "Chrome",
               "database",
@@ -3083,7 +3083,7 @@
             "evidence_before_reconciliation": [],
             "reconciliation_id": "COV-07-B1",
             "verified_scope": "基准第一集33镜头与第17集集场需求，正常集/场切换。",
-            "remaining": "基准0 COMPOSITION/OUTPUT，不可声称组合/输出审阅已验；历史镜头仍未验。",
+            "remaining": "基准0 ASSEMBLY/DELIVERABLE，不可声称组合/输出审阅已验；历史镜头仍未验。",
             "evidence_levels": [
               "Chrome",
               "database"
@@ -3117,7 +3117,7 @@
             ],
             "reconciliation_id": "COV-07-B2",
             "verified_scope": "真实镜头33条分页20/13，第17集范围78条分页20/20/20/18，末页禁用并切场20条；主动检查准确范围。",
-            "remaining": "COMPOSITION/OUTPUT 在基准为空；检查不能当作这些对象已有真实成果。",
+            "remaining": "ASSEMBLY/DELIVERABLE 在基准为空；检查不能当作这些对象已有真实成果。",
             "evidence_levels": [
               "Chrome"
             ],
@@ -4052,6 +4052,40 @@
           "COV-08-B4",
           "COV-08-S3"
         ]
+      },
+      "kind_name_correction": {
+        "at": "2026-10-04T00:21:52.843341+00:00",
+        "actual_kind_names": [
+          "ASSEMBLY",
+          "DELIVERABLE"
+        ],
+        "baseline_counts": {
+          "ASSEMBLY": 0,
+          "DELIVERABLE": 0
+        },
+        "baseline_snapshot_sha256": "ab8cdbbe79c51d59e3ff5ffbc89b90c4a3bce27dd87aacab52d693c186f216d7",
+        "scope": "Correct previous informal names to actual production kinds; original 113 IDs and all verification classifications retained; no new positive UI coverage.",
+        "previous_sha256": {
+          "coverage.json": "3e9c973f4c5056562557f8a55db6de7f4911629e08c5e50336c250642a0ea53f",
+          "coverage-reconciliation.json": "e383ab53f0526c600237688e6d2fbc82d7753fbddad2ee84806817c46422623f",
+          "coverage-reconciliation.md": "253adf1c3e9fdf2502e53164b2ec633cec95993c108b697bf60406b18b7d831e"
+        }
+      },
+      "browser_hash_provenance_correction": {
+        "at": "2026-10-04T00:55:18.493712+00:00",
+        "scope": "Only AO046 browser versus independent-function input provenance; no verification status, IDs or evidence claim upgraded.",
+        "root_browser_initial_app_sha256": "8c5c001c99299757b71bfff52f1b1f71f7fc4c78c153a129c17d2c283037a323",
+        "independent_function_sample_app_sha256": "1b8dbedaeb4b9a2aa5474e3887a6d9c457e45e2b8856759ce94b2c8039bfb489",
+        "root_final_AO047_app_sha256": "6772939e187e82921f8f739b73fc0b1be731443b7735f6677d8da9e898ea5fe1",
+        "sources": {
+          "comment-cleanup-audit/fix-evidence.json": "61d1957f95339515bbfe597ea91b45b7e99871d90aaaf0fc6c1f997fc4a317a0",
+          "independent-comment-rejection/followup-source-hashes.json": "e490479fe4d068ffcf45612f02e2251076790afde27b163941b1e69ea71c3fab"
+        },
+        "previous_files_sha256": {
+          "coverage.json": "86d8d8f01cbf25abe80ab220e2d803bc0718731122be9d814f3004c9339f1f0f",
+          "coverage-reconciliation.json": "1524ce7edf98f9a5fab59be17b908d8dc6cd2cd5627e9e2b13ea113b15f78ecf",
+          "coverage-reconciliation.md": "c8b949393e9289833c70e34a463c64e959fca043770f88907aab486527287022"
+        }
       }
     },
     "crosscutting_evidence": [
@@ -4150,7 +4184,7 @@
           "independent_review"
         ],
         "scope": "旧轮提交同UUID/完整payload两次真实409，无新增评论/轮次/反馈；页面区分明确拒绝与未知结果。",
-        "limits": "该次 Chrome 加载 app SHA 1b8dbeda…，包含尚未冻结的 AO047 初稿，只支持 AO046 明确拒绝路径，不作为 AO047 或整个最终 app 验收。异常本机存储仍是函数反例。"
+        "limits": "该次 Chrome 加载 app SHA 8c5c001c…（作者记录的 root_loaded_initial_sha256），包含尚未冻结的 AO047 初稿，只支持 AO046 明确拒绝路径，不作为 AO047 或整个最终 app 验收。异常本机存储仍是函数反例。"
       },
       {
         "area": "AO048 configuration conflict",
@@ -4172,5 +4206,6 @@
       }
     ]
   },
-  "authority_note": "这是复制时点摘要，非最终收敛；后续补证据见README与status-addenda，原历史状态不改写。"
+  "pack_captured_at": "2026-10-04T01:21:37.675188+00:00",
+  "authority_note": "原文件内部更新时间和分类标签照留，SHA识别本次复制内容；覆盖行并未因打包重标。AO049–051、阶段、组合输出与旧采纳新增证据及已验/未验边界见status-addenda.json。非最终收敛；AO026待终版定向刷新。"
 }

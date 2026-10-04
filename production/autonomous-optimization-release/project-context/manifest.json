@@ -21,7 +21,6 @@
     "canonicalization": "UTF-8 JSON; ensure_ascii=False; sort_keys=True; separators=(comma,colon); no trailing newline",
     "required_unchanged_fields": {
       "audience": "抖音、快手等短视频平台用户",
-      "current_stage": "STORY_OUTLINE",
       "style": "传统复古叙事",
       "target_medium": "漫剧"
     },
@@ -30,13 +29,14 @@
   "candidate": {
     "changed_fields": [
       "creative_background",
+      "current_stage",
       "story_background"
     ],
     "expected_next_version": 15,
     "writer_configuration_schema_version": 4,
-    "expected_body_sha256": "2c01b6a394ed89363a20e1622b5c9dbc8e8173e91c00914c4c3c438bf54f9833",
+    "expected_body_sha256": "e52aed62645085bc6aaae208051f87e385d46e0e2d1b877d6f84f49ef5490965",
     "preserved_creative_story_prefix_chars": 630,
-    "updates_sha256": "257f06cdec9857c9e5a97fea54999212a109e018fb209cfb6f95f63a7c083dbd"
+    "updates_sha256": "c043ae9fe85a7b0d093b81566239d8cf885063fa795995432777743e3dbe5b38"
   },
   "publication": {
     "existing_http_method": "PATCH",
@@ -57,7 +57,7 @@
     "new_images": 369,
     "new_audio": 42,
     "new_originals": 411,
-    "current_stage": "STORY_OUTLINE"
+    "current_stage": "MATERIAL_PREPARATION"
   },
   "sources": [
     {
@@ -100,5 +100,11 @@
       "sha256": "bbc65b296e332e2bc2f1069f366097b063c2830a63182a3ca5c9c54982e130bf",
       "locator": "applied, publication_id, source_commit"
     }
-  ]
+  ],
+  "revised_at": "2026-10-04T01:04:33+00:00",
+  "user_stage_decision": {
+    "received_at": "2026-10-04T01:04:33+00:00",
+    "choice": "保留手动阶段，改为“素材准备”（推荐）",
+    "effect": "Only the reviewed candidate gains current_stage=MATERIAL_PREPARATION; formal apply remains pending final integration confirmation."
+  }
 }

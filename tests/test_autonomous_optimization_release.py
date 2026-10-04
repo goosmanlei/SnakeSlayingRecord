@@ -23,11 +23,17 @@ class DraftChecks(unittest.TestCase):
     def current(self, version=15, body=None):
         return {**self.before, 'schema_version': 4, 'version': version, 'body': self.after if body is None else body, 'updated_at': 'technical timestamp'}
 
-    def test_package_only_two_fields_and_old_full_record(self):
+    def test_package_only_three_fields_and_old_full_record(self):
         path = self.root / 'project-update/request.json'
-        value = json.loads(path.read_text());value['updates']['current_stage'] = 'anything'
+        value = json.loads(path.read_text());value['updates']['audience'] = 'anything'
         path.write_text(json.dumps(value))
-        with self.assertRaisesRegex(ValueError, 'only the two'): r.update_package(path.parent)
+        with self.assertRaisesRegex(ValueError, 'only the three'): r.update_package(path.parent)
+
+    def test_stage_must_match_explicit_user_choice(self):
+        path = self.root / 'project-update/request.json'
+        value = json.loads(path.read_text());value['updates']['current_stage'] = 'STORY_OUTLINE'
+        path.write_text(json.dumps(value))
+        with self.assertRaisesRegex(ValueError, 'stage differs'): r.update_package(path.parent)
 
     def test_old_record_timestamp_drift_stops_before_patch(self):
         calls = []
@@ -56,7 +62,7 @@ class DraftChecks(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'original PROJECT'): r.update_project(self.root)
             write.assert_not_called()
 
-    def test_compensation_changes_only_two_fields_with_exact_next_version(self):
+    def test_compensation_changes_only_three_fields_with_exact_next_version(self):
         with patch.object(r, 'project', side_effect=[self.current(), self.current(16, self.before['body'])]), patch.object(r, 'http', return_value={}) as write:
             r.update_project(self.root, compensate=True)
         self.assertEqual(write.call_args.args[1], {'expected_version': 15, 'updates': {k: self.before['body'][k] for k in r.FIELDS}})

@@ -6,11 +6,11 @@
 
 ## 配置内容及保护
 
-[两个更新字段](project-context/updates.json) 是可直接阅读的完整新正文；[精确改动](project-context/edits.json) 说明替换范围。更新吸收已确认的版本四、17 集／42 场、411 份已发布非歌曲原件及歌曲仅阶段归档等事实。创作背景的 630 字故事设定前缀保持，原生尺寸例外仅按已有明确授权表述，不改变故事设定或认可作品。
+[三个更新字段](project-context/updates.json) 是可直接阅读的完整新正文；[精确改动](project-context/edits.json) 说明替换范围。更新吸收已确认的版本四、17 集／42 场、411 份已发布非歌曲原件及歌曲仅阶段归档等事实。创作背景的 630 字故事设定前缀保持，原生尺寸例外仅按已有明确授权表述，不改变故事设定或认可作品。
 
-[原记录](project-context/before-project.json)、[请求](project-context/request.json)、[预期完整字段](project-context/expected-body.json) 与 [来源及校验清单](project-context/manifest.json) 一起受管。仅修改 `story_background`、`creative_background`；`current_stage`、受众、风格、目标载体均保留。原 PROJECT 是版本 14、存储格式 3；正常保存将成为版本 15、存储格式 4，后者是既有系统能力，不是本轮新增迁移。阶段判断尚未答复，不能据新背景自行改变阶段。 清单中的执行状态保留最初准备时记录，后续预览验证以运行报告为准。
+[原记录](project-context/before-project.json)、[请求](project-context/request.json)、[预期完整字段](project-context/expected-body.json) 与 [来源及校验清单](project-context/manifest.json) 一起受管。仅修改 `story_background`、`creative_background`、`current_stage`；受众、风格和目标载体均保留。原 PROJECT 是版本 14、存储格式 3；正常保存将成为版本 15、存储格式 4，后者是既有系统能力，不是本轮新增迁移。用户在本任务明确选择保留手动阶段，并将其改为“素材准备”（`MATERIAL_PREPARATION`）。 清单中的执行状态保留最初准备时记录，后续预览验证以运行报告为准。
 
-封装会检查原完整记录（含更新时间）、原字段值和准确请求，不自动提高 `expected_version`。正式记录已变时应停止，核对差异并重新准备。只发一次 PATCH；响应丢失后核对准确版本、完整正文和事件，不盲目重试。预览中已完成两字段更新与历史保留验收，正式库未应用。
+封装会检查原完整记录（含更新时间）、原字段值和准确请求，不自动提高 `expected_version`。正式记录已变时应停止，核对差异并重新准备。只发一次 PATCH；响应丢失后核对准确版本、完整正文和事件，不盲目重试。预览中此前已完成两段背景更新与历史保留验收；阶段选择后的三字段候选另做增量验收，正式库未应用。
 
 ## 确认前准备
 
@@ -68,7 +68,7 @@ codex.project task _complete -g creative -p SnakeSlayingRecord \
 | 候选、目标、正式服务或 PROJECT 漂移 | 停止相关写入；核对差异，必要时重新准备、补验并确认，不能抬版本绕过冲突 |
 | 系统已快进，故事未完成 | 保留真实双仓状态；同准确候选可恢复原流程，不 reset 系统 main |
 | 服务切换失败或部分完成 | `_complete` 前可执行同包 `recover --action service`。逐服务核对所有权，拒绝其他发布；用旧 app 和 Nginx 的固定镜像 ID 恢复，保留最新正式数据库 |
-| 配置已准确应用但需补偿 | 仅在无人改动的准确 v15 下用 `recover --action config` 形成 v16 的两字段补偿事件；保留 v15/v16 历史。若先前已完成准确补偿，核对完整事件链后只回读，不再写一次 |
+| 配置已准确应用但需补偿 | 仅在无人改动的准确 v15 下用 `recover --action config` 形成 v16 的三字段补偿事件；保留 v15/v16 历史。若先前已完成准确补偿，核对完整事件链后只回读，不再写一次 |
 | 配置结果未知或与预期不符 | 停止完成；读准确记录和事件，不盲重试，不用快照覆盖 |
 | `_complete` 失败 | 保持任务未完成及已有真实服务状态，按工具返回原因恢复。是否回退服务按已确认的方案判断，不补造用户确认 |
 | `_complete` 成功后发现问题 | 只读记录并报告；新的修改另行准备、验证、交付 |
