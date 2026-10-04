@@ -15,6 +15,11 @@ except ImportError:
                                       verify_integrated, verify_media, write_json)
     from generation_publication import apply_plan, backup, connect, publication_id, receipt
 
+try:
+    from .material_model_io import read_json as material_read_json, read_bytes as material_read_bytes, sqlite_compatibility
+except ImportError:
+    from material_model_io import read_json as material_read_json, read_bytes as material_read_bytes, sqlite_compatibility
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -26,18 +31,18 @@ def copy_media(root, target, entries):
         path.parent.mkdir(parents=True, exist_ok=True)
         source = contained(root, Path('export/assets') / entry['file'])
         if path.exists():
-            if path.read_bytes() != source.read_bytes():
+            if material_read_bytes(path) != material_read_bytes(source):
                 raise ValueError('existing original differs')
         else:
             with path.open('xb') as stream:
-                stream.write(source.read_bytes())
+                stream.write(material_read_bytes(source))
 
 
 def run_publication(root, target, package, run_name, *, apply=False, source_commit=None,
                     apply_fn=apply_plan, prepare_fn=None, entries=None):
     root = generation_root(root)
     package = contained(root, package)
-    document = json.loads(package.read_text())
+    document = material_read_json(package)
     target, formal = publication_target(root, target)
     db_path = target / '.runtime/review.sqlite3'
     if not db_path.is_file():

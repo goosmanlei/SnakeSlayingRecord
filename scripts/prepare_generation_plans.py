@@ -19,6 +19,11 @@ AUDIO={'audio_config':{'format':'wav','sample_rate':48000,'pitch_rate':0,'speech
 IMAGE_CHECK=['正常比例与稳定轮廓；无额外肢体或身份漂移','只呈现所述完整状态，伤势、湿痕和手持物不串场','线条干净、色块清楚，无新增纸纹、颗粒或写实皮肤','核对原件真实像素、原生尺寸回执及全部参考谱系']
 AUDIO_CHECK=['逐字听辨原词，不能只依字幕判断','单一角色音色连续；无新增台词、旁白或伴奏','听清呼吸和停顿，原件无削波、突切与异常噪声','48 kHz WAV 原件及精确时长；候选通过后再明确采用']
 
+try:
+    from .material_model_io import read_json as material_read_json, read_bytes as material_read_bytes, sqlite_compatibility
+except ImportError:
+    from material_model_io import read_json as material_read_json, read_bytes as material_read_bytes, sqlite_compatibility
+
 
 def ref(row):return {'object_id':row['object_id'],'revision_id':row['id']}
 
@@ -223,7 +228,7 @@ def main():
             value=prepare(store,p) if args.command=='plan' else snapshot(store,p)
             args.file.parent.mkdir(parents=True,exist_ok=True);args.file.write_text(json.dumps(value,ensure_ascii=False,indent=2)+'\n');print(json.dumps(value['summary'],ensure_ascii=False))
         else:
-            value=json.loads(args.file.read_text())
+            value=material_read_json(args.file)
             if value['document_sha256']!=digest(value['document']):raise ValueError('batch checksum changed')
             if value['source_sha256']!=hashlib.sha256((ROOT/'imports/screenplay-04.json').read_bytes()).hexdigest():raise ValueError('screenplay changed')
             result=p.import_records(store,value['document']);print(json.dumps({'applied_records':len(result['records'])}))

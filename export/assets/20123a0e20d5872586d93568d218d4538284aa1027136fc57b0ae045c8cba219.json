@@ -1,60 +1,6 @@
 {
-  "id": "fg3-clerk-proclamation-base-image-02",
-  "recipe_id": "form-clerk-proclamation-base",
-  "entity": {
-    "object_id": "entity-clerk-proclamation",
-    "revision_id": "420b57490835b02a74a198397532502fbb77dd6d8695b7a322bb5717d8fe3f32"
-  },
-  "state": {
-    "object_id": "form-clerk-proclamation-base",
-    "revision_id": "b084511932b7e08255b099994edd5ced4d864e1237d9cc8ef7bcf466a00c2866"
-  },
-  "requirement": {
-    "object_id": "need-form-clerk-proclamation-base-overall",
-    "revision_id": "21ef38c79c7726ef63e25a23051423c0c1248b2b9071b96391c4d0f135a41b7e"
-  },
-  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
-  "references": [
-    {
-      "reference": {
-        "object_id": "asset-fg3-clerk-proclamation-base-image-01",
-        "revision_id": "518155747a80dbf3a2adbb5b1becaa1f9941ab772b70c2ee2eeeaee40850a26a"
-      },
-      "component_id": "original",
-      "sha256": "e2e9002179250b7b12da0e63577519d304010f9dc25d66c89f44b86bee4aca7e",
-      "crop": {
-        "x": 0,
-        "y": 0,
-        "width": 1,
-        "height": 1
-      },
-      "use": "参考图1：完整原件，固定身份与画风，仅修改所列状态或自检问题。"
-    }
-  ],
-  "lineage": {
-    "i2i_depth": 1,
-    "references": [
-      {
-        "object_id": "asset-fg3-clerk-proclamation-base-image-01",
-        "revision_id": "518155747a80dbf3a2adbb5b1becaa1f9941ab772b70c2ee2eeeaee40850a26a"
-      }
-    ]
-  },
-  "same_state_repair": {
-    "source": {
-      "object_id": "asset-fg3-clerk-proclamation-base-image-01",
-      "revision_id": "518155747a80dbf3a2adbb5b1becaa1f9941ab772b70c2ee2eeeaee40850a26a"
-    },
-    "reason": "对参考图1作精确局部修正：保持同一个年轻宣读书吏的方长脸、眉骨、黑发素帽、黛蓝长衣、浅灰腰带、灰鞋、完整全身位置、线色与光照。只删除手中的整张双轴卷纸，包括两根卷轴和所有纸面；恢复原衣袖遮挡处，两手自然松开垂在身前，空手。宣读的告示在实际剧情里贴墙，本张只做单人身份基准，不画墙、告示或其他人。3:4、浅暖灰底、完整头脚、不增纹理和饰物。"
-  },
-  "tool": "image_gen.imagegen",
-  "model": "GPT Image",
-  "model_identity_note": "工具未暴露底层模型ID、质量及像素选择；实际输出单独检测。",
-  "request": {
-    "prompt": "对参考图1作精确局部修正：保持同一个年轻宣读书吏的方长脸、眉骨、黑发素帽、黛蓝长衣、浅灰腰带、灰鞋、完整全身位置、线色与光照。只删除手中的整张双轴卷纸，包括两根卷轴和所有纸面；恢复原衣袖遮挡处，两手自然松开垂在身前，空手。宣读的告示在实际剧情里贴墙，本张只做单人身份基准，不画墙、告示或其他人。3:4、浅暖灰底、完整头脚、不增纹理和饰物。",
-    "transparent_background": false,
-    "referenced_image_paths": [
-      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/e2e9002179250b7b12da0e63577519d304010f9dc25d66c89f44b86bee4aca7e.png"
-    ]
-  }
+  "bytes": 3142,
+  "format": "material-archive-reference-v1",
+  "recipe": "443958ba00eb85bbc67651627e631ada08fbdb4ee549eaba95da02aa61ed145f",
+  "sha256": "20123a0e20d5872586d93568d218d4538284aa1027136fc57b0ae045c8cba219"
 }

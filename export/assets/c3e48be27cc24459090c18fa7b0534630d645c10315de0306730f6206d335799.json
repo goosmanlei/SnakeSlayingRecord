@@ -1,60 +1,6 @@
 {
-  "id": "fg3-ticket-elder-base-image-02",
-  "recipe_id": "form-ticket-elder-base",
-  "entity": {
-    "object_id": "entity-ticket-elder",
-    "revision_id": "c948defa1edc7450ca88bd7003e67737339552a1a3a4dba49a0c3103ccbe0655"
-  },
-  "state": {
-    "object_id": "form-ticket-elder-base",
-    "revision_id": "40ca6ee364b7cee6f2b462feb7bbd7c4ae68dc374c5c54887d2a7a815642c3aa"
-  },
-  "requirement": {
-    "object_id": "need-form-ticket-elder-base-overall",
-    "revision_id": "8e80045966c9d53834fa3891fa69cfdc5f26bc7ee1df23e0a94892a88c8329ba"
-  },
-  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
-  "references": [
-    {
-      "reference": {
-        "object_id": "asset-fg3-ticket-elder-base-image-01",
-        "revision_id": "57c8c59acd3ea4ee08975f4cb07bffa515a138b7711a07475f6cd96c2144a43d"
-      },
-      "component_id": "original",
-      "sha256": "642f2b8270478377c01b836090503614d72bbe0026a090ab190d5abe0cbd4b2a",
-      "crop": {
-        "x": 0,
-        "y": 0,
-        "width": 1,
-        "height": 1
-      },
-      "use": "参考图1：完整原件，固定身份与画风，仅修改所列状态或自检问题。"
-    }
-  ],
-  "lineage": {
-    "i2i_depth": 1,
-    "references": [
-      {
-        "object_id": "asset-fg3-ticket-elder-base-image-01",
-        "revision_id": "57c8c59acd3ea4ee08975f4cb07bffa515a138b7711a07475f6cd96c2144a43d"
-      }
-    ]
-  },
-  "same_state_repair": {
-    "source": {
-      "object_id": "asset-fg3-ticket-elder-base-image-01",
-      "revision_id": "57c8c59acd3ea4ee08975f4cb07bffa515a138b7711a07475f6cd96c2144a43d"
-    },
-    "reason": "只修正参考图1同一持票老人的基准图。保持老人长脸、稀疏灰发、灰眉短灰须、旧灰褐长衣、黑裤黑布鞋、完整头到鞋、弯腰侧耳和一手贴耳的姿势。另一只手仍拿唯一的小张揉皱粮票，票面仅“粮票”二字。删除画面右侧全部大告示纸、木板、横梁、支柱和它们的阴影，填回与左侧同样的浅暖灰空背景。不增加其他物品、人物或文字。3:4单一全身人物参考，脸和身形不变，保持原二维清楚线条与低纹理色块，不加纸纹、噪点或锐化。"
-  },
-  "tool": "image_gen.imagegen",
-  "model": "GPT Image",
-  "model_identity_note": "工具未暴露底层模型ID、质量及像素选择；实际输出单独检测。",
-  "request": {
-    "prompt": "只修正参考图1同一持票老人的基准图。保持老人长脸、稀疏灰发、灰眉短灰须、旧灰褐长衣、黑裤黑布鞋、完整头到鞋、弯腰侧耳和一手贴耳的姿势。另一只手仍拿唯一的小张揉皱粮票，票面仅“粮票”二字。删除画面右侧全部大告示纸、木板、横梁、支柱和它们的阴影，填回与左侧同样的浅暖灰空背景。不增加其他物品、人物或文字。3:4单一全身人物参考，脸和身形不变，保持原二维清楚线条与低纹理色块，不加纸纹、噪点或锐化。",
-    "transparent_background": false,
-    "referenced_image_paths": [
-      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/642f2b8270478377c01b836090503614d72bbe0026a090ab190d5abe0cbd4b2a.png"
-    ]
-  }
+  "bytes": 3256,
+  "format": "material-archive-reference-v1",
+  "recipe": "f488357f51e26f9a516c7cd9e10c7bc0ac084475dc1f7f137cb6d82eb01e8132",
+  "sha256": "c3e48be27cc24459090c18fa7b0534630d645c10315de0306730f6206d335799"
 }

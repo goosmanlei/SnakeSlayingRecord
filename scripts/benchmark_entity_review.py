@@ -5,12 +5,18 @@ from pathlib import Path
 from urllib.parse import urlencode
 from urllib.request import build_opener, ProxyHandler
 
+try:
+    from .material_model_io import read_json as material_read_json, read_bytes as material_read_bytes, sqlite_compatibility
+except ImportError:
+    from material_model_io import read_json as material_read_json, read_bytes as material_read_bytes, sqlite_compatibility
+
 
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--url',required=True);ap.add_argument('--database',type=Path,required=True);ap.add_argument('--system-commit',required=True);ap.add_argument('--output',type=Path,required=True);ap.add_argument('--compare',type=Path);ap.add_argument('--samples',type=int,default=50)
     a=ap.parse_args()
     if a.samples<50:ap.error('at least 50 warmed samples per class are required')
     db=sqlite3.connect(a.database);db.row_factory=sqlite3.Row
+    sqlite_compatibility(db,hydrate=True)
     historical=db.execute("SELECT json_extract(r.payload,'$.target.object_id') entity,r.id FROM revisions r JOIN objects o ON o.id=r.object_id WHERE o.kind='JUDGMENT' AND json_extract(r.payload,'$.acceptance_model')='entity-generation-v1' ORDER BY r.created_at LIMIT 1").fetchone()
     rows=[(r['id'],r['kind'],json.loads(r['payload'])) for r in db.execute('SELECT o.id,o.kind,r.payload FROM objects o JOIN revisions r ON r.id=o.current_revision')]
     counts={oid:sum(kind=='ASSET' and any(x['object_id']==oid for x in p.get('subjects',[])) for _,kind,p in rows) for oid,kind,p in rows if kind=='ENTITY'}

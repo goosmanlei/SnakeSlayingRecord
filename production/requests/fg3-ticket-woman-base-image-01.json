@@ -1,57 +1,6 @@
 {
-  "id": "fg3-ticket-woman-base-image-01",
-  "recipe_id": "form-ticket-woman-base",
-  "entity": {
-    "object_id": "entity-ticket-woman",
-    "revision_id": "6dc16560bb7ea86cf0230d687ee27ba68865f4ba52f3bfa281559dd18821d24d"
-  },
-  "state": {
-    "object_id": "form-ticket-woman-base",
-    "revision_id": "79794c75c4649095e51dfe12db81af963ba1a5b07c2839707747d9c0a56f6b2c"
-  },
-  "requirement": {
-    "object_id": "need-form-ticket-woman-base-overall",
-    "revision_id": "1948036283c2366ff48ed9cbd092ee44f0a8f65565095b9d1b11ce845a8e1de8"
-  },
-  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
-  "references": [
-    {
-      "reference": {
-        "object_id": "asset-fg3-ticket-child-base-image-01",
-        "revision_id": "7c81c96c544fd6395d9ddb03ca4115c93a7f4d1919c7afcfb22c65f4f71d35a1"
-      },
-      "component_id": "original",
-      "sha256": "ec1df61175bd5621dfc331939261181472c6260b92ad84dc49b71c2004003a98",
-      "crop": {
-        "x": 0,
-        "y": 0,
-        "width": 1,
-        "height": 1
-      },
-      "use": "参考图1：完整孩子认可原件，只固定被抱孩子身份、衣着和比例；妇人身份本次新生成，尚待另行认可。"
-    }
-  ],
-  "lineage": {
-    "i2i_depth": 1,
-    "references": [
-      {
-        "object_id": "asset-fg3-ticket-child-base-image-01",
-        "revision_id": "7c81c96c544fd6395d9ddb03ca4115c93a7f4d1919c7afcfb22c65f4f71d35a1"
-      }
-    ]
-  },
-  "master_approval": {
-    "object_id": "review-master-fg3-ticket-child-base-image-01",
-    "revision_id": "d94abd5468008e6bd6c9c58529abdaa77087e50ffe323a1276aa24f26ea076a8"
-  },
-  "tool": "image_gen.imagegen",
-  "model": "GPT Image",
-  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
-  "request": {
-    "prompt": "参考图1只固定领粮妇人的孩子身份：同一幼童的圆脸、短黑发、灰绿短衣、深灰短裤、灰布鞋和年龄比例，严禁画成另一孩子。新创建母亲的完整基准：年轻至中年圆脸妇人，眉稍扬、紧低髻，土黄灰交领衣、灰蓝宽裙裤、灰布鞋、腰侧小布袋。母亲左臂稳稳抱该孩子于左髋，左手托腿，孩子两脚都穿鞋；右手拿一张窄米白纸票，只见稀疏不可辨笔迹。只有母子两人，全体头到母亲鞋及孩子两只脚完整留边，3:4单幅暖灰空底，母亲身形正常而非少女。二维清楚线条、简化平涂，保持孩子参考线色，不加家具、其他亲属、布纹颗粒、文字标题或分格，最高原生输出。不把孩子原图当作母亲已有母版。",
-    "transparent_background": false,
-    "referenced_image_paths": [
-      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/ec1df61175bd5621dfc331939261181472c6260b92ad84dc49b71c2004003a98.png"
-    ]
-  }
+  "bytes": 2911,
+  "format": "material-archive-reference-v1",
+  "recipe": "38b405729f10ab74336b241c35d8963bf756ecc16ca233f208df137512ebce8e",
+  "sha256": "ed71846008635989771f609047c089b7173204db10df8b369c1e52ef6127f8fe"
 }

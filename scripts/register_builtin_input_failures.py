@@ -7,6 +7,11 @@ import json
 from pathlib import Path
 import sys
 
+try:
+    from .material_model_io import read_json as material_read_json, read_bytes as material_read_bytes, sqlite_compatibility
+except ImportError:
+    from material_model_io import read_json as material_read_json, read_bytes as material_read_bytes, sqlite_compatibility
+
 ROOT = Path(__file__).resolve().parents[1]
 ERROR = "`referenced_image_paths` must contain at most 5 paths"
 
@@ -30,7 +35,7 @@ def main():
         records = []
         for label in args.ids:
             request_path = ROOT / "production/requests" / (label + ".json")
-            request_bytes = request_path.read_bytes()
+            request_bytes = material_read_bytes(request_path)
             q = json.loads(request_bytes)
             attempt = json.loads((ROOT / ".runtime/full-generation/all-pending" / (label + "-attempt.json")).read_text())
             outcome = json.loads((ROOT / ".runtime/full-generation/all-pending" / (label + "-tool-error.json")).read_text())

@@ -1,60 +1,6 @@
 {
-  "id": "fg3-snake-base-image-02",
-  "recipe_id": "form-snake-base",
-  "entity": {
-    "object_id": "entity-snake",
-    "revision_id": "0e731db9b7526cfaf43a3fd567dfd3d1528083acd1f1d764e75a5ca7d2002cfb"
-  },
-  "state": {
-    "object_id": "form-snake-base",
-    "revision_id": "b322519079401088b7b8b6b22a10f5874d110fdfce527296169d5d444475e607"
-  },
-  "requirement": {
-    "object_id": "need-form-snake-base-overall",
-    "revision_id": "7edaf20f1d637fd01f891c5240af0dd0b2ab630d9bf427ec21ee199748ec4529"
-  },
-  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
-  "references": [
-    {
-      "reference": {
-        "object_id": "asset-fg3-snake-base-image-01",
-        "revision_id": "2d4f4b005f2e9c84078bcd06d6c8c8b593e5c08e7731e889ce50f16a1e92197e"
-      },
-      "component_id": "original",
-      "sha256": "25a0cf4f5f19fb3725a442d748d024df0306261248b7157de474a7d2f2701083",
-      "crop": {
-        "x": 0,
-        "y": 0,
-        "width": 1,
-        "height": 1
-      },
-      "use": "参考图1：完整原件，固定身份与画风，仅修改所列状态或自检问题。"
-    }
-  ],
-  "lineage": {
-    "i2i_depth": 1,
-    "references": [
-      {
-        "object_id": "asset-fg3-snake-base-image-01",
-        "revision_id": "2d4f4b005f2e9c84078bcd06d6c8c8b593e5c08e7731e889ce50f16a1e92197e"
-      }
-    ]
-  },
-  "same_state_repair": {
-    "source": {
-      "object_id": "asset-fg3-snake-base-image-01",
-      "revision_id": "2d4f4b005f2e9c84078bcd06d6c8c8b593e5c08e7731e889ce50f16a1e92197e"
-    },
-    "reason": "只降低参考图1的体表纹理密度，严格保留同一条蛇的头部、眼睛、细分叉舌、S形轮廓、粗细、头尾位置、暗橄榄灰底、所有深褐横斑的位置及灰米腹色。将背部和侧面的成片密集鳞片边界线去掉至少八成，使大片颜色平整，只在转折处和头颈局部留三五条短弧线暗示鳞片，腹侧大腹鳞可疏略保留；不画连续六角格网，不增加细噪点、细毛、纸纹、锐化或立体凹凸。仍是清楚二维动物完整参考，16:9全头到尾尖，浅暖灰空底；不改变花纹轮廓，不新增身体重叠、物件或文字。"
-  },
-  "tool": "image_gen.imagegen",
-  "model": "GPT Image",
-  "model_identity_note": "工具未暴露底层模型ID、质量及像素选择；实际输出单独检测。",
-  "request": {
-    "prompt": "只降低参考图1的体表纹理密度，严格保留同一条蛇的头部、眼睛、细分叉舌、S形轮廓、粗细、头尾位置、暗橄榄灰底、所有深褐横斑的位置及灰米腹色。将背部和侧面的成片密集鳞片边界线去掉至少八成，使大片颜色平整，只在转折处和头颈局部留三五条短弧线暗示鳞片，腹侧大腹鳞可疏略保留；不画连续六角格网，不增加细噪点、细毛、纸纹、锐化或立体凹凸。仍是清楚二维动物完整参考，16:9全头到尾尖，浅暖灰空底；不改变花纹轮廓，不新增身体重叠、物件或文字。",
-    "transparent_background": false,
-    "referenced_image_paths": [
-      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/25a0cf4f5f19fb3725a442d748d024df0306261248b7157de474a7d2f2701083.png"
-    ]
-  }
+  "bytes": 3300,
+  "format": "material-archive-reference-v1",
+  "recipe": "0b421417910ba4649a51bfcf669aef33f40738884fbafe65541496aef9b3a202",
+  "sha256": "01350e8b365efa4bed703dbafb6ac2f75918ced282771057da0bae6b2bbe0984"
 }

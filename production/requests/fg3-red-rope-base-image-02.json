@@ -1,60 +1,6 @@
 {
-  "id": "fg3-red-rope-base-image-02",
-  "recipe_id": "form-red-rope-base",
-  "entity": {
-    "object_id": "entity-red-rope",
-    "revision_id": "1ff0fc93c0fc1c4b18863acb6add3ddf89bc1c615376959721231f853e2bd1c9"
-  },
-  "state": {
-    "object_id": "form-red-rope-base",
-    "revision_id": "4bb325730695ffae62f44fc73126dc65c71bd4723a0b652457f3410db9266388"
-  },
-  "requirement": {
-    "object_id": "need-form-red-rope-base-overall",
-    "revision_id": "28cf03ef4b58e1e6671302fe50623500bfa4b443cf3548a13e6d7a51cba0f168"
-  },
-  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
-  "references": [
-    {
-      "reference": {
-        "object_id": "asset-fg3-red-rope-base-image-01",
-        "revision_id": "ad30bc0ef7ffecda4f2aaee88129497793a31f90d99c3050ecd41353e197217f"
-      },
-      "component_id": "original",
-      "sha256": "23de9ba45448e9bff60cb09f7831b5662c2b8c5f09db9edb0ade8a692c342a97",
-      "crop": {
-        "x": 0,
-        "y": 0,
-        "width": 1,
-        "height": 1
-      },
-      "use": "参考图1：同状态失败候选，仅取红绳颜色与双回结形态；重构为完整绕箱、两端均入画。"
-    }
-  ],
-  "lineage": {
-    "i2i_depth": 1,
-    "references": [
-      {
-        "object_id": "asset-fg3-red-rope-base-image-01",
-        "revision_id": "ad30bc0ef7ffecda4f2aaee88129497793a31f90d99c3050ecd41353e197217f"
-      }
-    ]
-  },
-  "same_state_repair": {
-    "source": {
-      "object_id": "asset-fg3-red-rope-base-image-01",
-      "revision_id": "ad30bc0ef7ffecda4f2aaee88129497793a31f90d99c3050ecd41353e197217f"
-    },
-    "reason": "上次红绳两端超出左右边界，不能作为完整整体参考；保留绳色和双回结，改为整箱和闭合绕绳全入画。"
-  },
-  "tool": "image_gen.imagegen",
-  "model": "GPT Image",
-  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
-  "request": {
-    "prompt": "单幅完整整体参考，不分格、不拼贴、不画标题、水印、箭头或尺寸标注。干净二维动画线条与低饱和平涂，背景轻手绘、大块柔和明暗；不要写实摄影、三维建模、厚纸纹、颗粒、锐化、繁密装饰。主要对象全部入画并留边。输出工具可提供的最高原生图，不放大。画幅4:3，浅暖灰无纹理底，柔和中性光，物件完整参考。参考图1只保留暗朱红粗棉绳的颜色、少量扭线及紧实双回结，重新把视角拉远，展示整只朴素灰褐长戏箱与绕在它周围的完整同一根绳。箱子平放，红绳环绕箱体一整圈，在前侧左上箱角系紧同一个双回结；两根短绳尾都紧贴箱角向下，在画内结束。绳子不能伸出画面任一边；箱子四角和整个结、绳尾必须留白入画。还未剪借，没有剪口、木牌或剪刀；箱体只作承托，红绳和双回结为视觉重点。",
-    "transparent_background": false,
-    "referenced_image_paths": [
-      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/23de9ba45448e9bff60cb09f7831b5662c2b8c5f09db9edb0ade8a692c342a97.png"
-    ]
-  }
+  "bytes": 3190,
+  "format": "material-archive-reference-v1",
+  "recipe": "6b5757d38a964f1385b4807d88d2bf0dc7d3e376f3842056778cd1462d54bef6",
+  "sha256": "d68da1b3ff4100b1bf5da8895e84821eb77757afcd0bfe9e9e8355daea41a7e2"
 }
