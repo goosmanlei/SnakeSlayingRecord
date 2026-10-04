@@ -120,6 +120,56 @@ class DraftChecks(unittest.TestCase):
             with self.assertRaises(RuntimeError) as found:r.run(['docker','inspect','technical'])
         self.assertNotIn('technical-secret',str(found.exception))
 
+    def prepare_process_guard(self, container_overrides=None, image_overrides=None, service='app'):
+        import copy
+        defaults = {'Cmd': ['serve'], 'Entrypoint': ['/entrypoint'], 'User': '', 'WorkingDir': '/app'}
+        containers = {name: {'Image': 'image-' + name, 'Config': dict(defaults),
+                            'HostConfig': {'RestartPolicy': {'Name': 'unless-stopped', 'MaximumRetryCount': 0}}}
+                      for name in ('app', 'nginx')}
+        images = {name: {'Config': dict(defaults)} for name in containers}
+        containers[service]['Config'].update(container_overrides or {})
+        images[service]['Config'].update(image_overrides or {})
+        original = copy.deepcopy((containers, images))
+        args = type('Args', (), {'story_worktree': self.root, 'system_worktree': self.root,
+                                'story_candidate': 'a' * 40, 'story_target': 'b' * 40,
+                                'system_candidate': 'c' * 40, 'system_target': 'd' * 40,
+                                'output': self.root / '.runtime' / 'prepared',
+                                'project_update': self.root / 'project-update'})()
+        def inspect(name, image=False):
+            return images[name.removeprefix('image-')] if image else containers['app' if name == r.APP else 'nginx']
+        with patch.object(r, 'primary', return_value=self.root), patch.object(r, 'repo_check'), \
+             patch.object(r, 'git_file', return_value=json.dumps({'review_desk_commit': args.system_candidate}).encode()), \
+             patch.object(r, 'inspect', side_effect=inspect), patch.object(r, 'safe_container', return_value={}), \
+             patch.object(r, 'env_values', side_effect=ValueError('process guards passed')) as after_process, \
+             patch.object(r, 'run') as command:
+            with self.assertRaises(ValueError) as found:
+                r.prepare(args)
+            command.assert_not_called()
+        self.assertEqual((containers, images), original)
+        self.assertFalse(args.output.exists())
+        return str(found.exception), after_process.call_count
+
+    def test_prepare_accepts_only_unspecified_user_representation_difference(self):
+        for service in ('app', 'nginx'):
+            for current, base in [('', None), (None, ''), (None, None), ('1000:1000', '1000:1000')]:
+                with self.subTest(service=service, current=current, base=base):
+                    result, calls = self.prepare_process_guard({'User': current}, {'User': base}, service)
+                    self.assertEqual(result, 'process guards passed');self.assertEqual(calls, 1)
+
+    def test_prepare_rejects_nonempty_user_difference_for_either_service(self):
+        for service in ('app', 'nginx'):
+            for current, base in [('root', None), ('', '1000'), ('1000:1000', '1000:1001'), (' ', '')]:
+                with self.subTest(service=service, current=current, base=base):
+                    result, calls = self.prepare_process_guard({'User': current}, {'User': base}, service)
+                    self.assertIn('nondefault service process', result);self.assertEqual(calls, 0)
+
+    def test_prepare_keeps_command_entrypoint_and_workdir_exact(self):
+        for service in ('app', 'nginx'):
+            for key, value in [('Cmd', ['different']), ('Entrypoint', []), ('WorkingDir', '')]:
+                with self.subTest(service=service, key=key):
+                    result, calls = self.prepare_process_guard({'User': ''}, {'User': None, key: value}, service)
+                    self.assertIn('nondefault service process', result);self.assertEqual(calls, 0)
+
     def test_exact_compensated_state_can_finish_without_another_patch(self):
         with patch.object(r, 'project', return_value=self.current(16, self.before['body'])), patch.object(r, 'http') as write:
             result = r.update_project(self.root, compensate=True)

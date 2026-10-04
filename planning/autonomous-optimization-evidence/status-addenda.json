@@ -181,6 +181,14 @@
       "scope": "差异清单与生成包的时点",
       "current": "逐文件差异清单在受管包本次生成前冻结，系统61/故事113文件对应其准确时点；本次新增的证据包装文件按source-index与pack-review逐项记录最新SHA，不能用先前清单哈希代替本包最终文件哈希。",
       "review": "reviews/final-diff-inventory.md"
+    },
+    {
+      "scope": "AO044 首次最终prepare护栏补正",
+      "at": "2026-10-04T02:13:53.298589+00:00",
+      "current": "首次真实只读prepare因容器User空串/镜像User null等价误判拒绝；错误在stderr，stdout为空，外层cat exit0不是prepare成功。未生成包、未写正式。窄修只在复制的四键白名单内将User None转空串，其他字段严格比较且原快照不改。作者24项、独立actual prepare替身边界38分支通过；修后真实prepare/build/preflight仍须由根按新故事候选执行。系统c1da4cd、51发现及113覆盖不变，不新增发现ID。",
+      "review": "reviews/release-process-normalization.md",
+      "current_script_sha256": "b7f437bfddb864f4d347046c38a74e75e1d4ec21c30a0f786e3176e69c5224df",
+      "supersedes": "仅接续05fd脚本在该比较处的字节绑定；既有三字段、build/apply/recover护栏和产品综合终审不变。"
     }
   ],
   "historical_screenshots": "截图来自对应验证当时版本；例如AO007还可见后来AO008移除的待开放入口，AO011/017截图列表版本在后续AO024修正。均只证明对应当时操作，不代表最终全页截图。"

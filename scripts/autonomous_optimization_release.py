@@ -187,7 +187,14 @@ def prepare(args):
     app_safe, nginx_safe = safe_container(app), safe_container(nginx)
     for current in (app, nginx):
         base = inspect(current['Image'], image=True)
-        require(all(current['Config'].get(key) == base['Config'].get(key) for key in ('Cmd', 'Entrypoint', 'User', 'WorkingDir')), 'nondefault service process configuration; revise plan')
+        process_keys = ('Cmd', 'Entrypoint', 'User', 'WorkingDir')
+        process, base_process = ({key: config.get(key) for key in process_keys}
+                                 for config in (current['Config'], base['Config']))
+        # Docker reports an unspecified user as either null or an empty string.
+        for config in (process, base_process):
+            if config['User'] is None:
+                config['User'] = ''
+        require(process == base_process, 'nondefault service process configuration; revise plan')
         require(current['HostConfig']['RestartPolicy'] == {'Name': 'unless-stopped', 'MaximumRetryCount': 0}, 'restart policy changed')
     require(env_values(nginx) == env_values(inspect(nginx['Image'], image=True)), 'nginx custom environment requires explicit plan')
     require(not nginx['Mounts'], 'nginx custom mounts require explicit plan')

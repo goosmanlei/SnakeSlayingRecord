@@ -110,3 +110,16 @@
 | `state.json` | 活动监督状态和租约不得提交；只保留 run-baseline 的历史观测，停止回执尚未真实产生。 |
 
 正式发布入口已在任务分支：`scripts/autonomous_optimization_release.py`；三字段包在 `production/autonomous-optimization-release/project-context/`。准确 SHA 见 `release-entrypoints.json`，并非需要另外复制一套发布程序。
+
+## AO044 最终准备护栏补正
+
+仅新增此白名单，不重写原证据。首次prepare失败与修后离线补验分开，实际prepare/build结果随后独立留runtime。
+
+| 原 runtime 路径 | 可携带相对路径 | 聚合查询 |
+| --- | --- | --- |
+| `final-release-process-normalization-review.md` | `autonomous-optimization-evidence/reviews/release-process-normalization.md` | `完整独审` |
+| `final-release-prepare-first-failure.json` | `autonomous-optimization-evidence/test-evidence.json` | `source=final-release-prepare-first-failure.json` |
+| `final-release-prepare-process-difference.json` | `autonomous-optimization-evidence/test-evidence.json` | `source=final-release-prepare-process-difference.json` |
+| `final-release-user-normalization-evidence.json` | `autonomous-optimization-evidence/test-evidence.json` | `source=final-release-user-normalization-evidence.json` |
+| `final-release-process-normalization-review.json` | `autonomous-optimization-evidence/test-evidence.json` | `source=final-release-process-normalization-review.json` |
+| `final-release-process-normalization-review/after-results.json` | `autonomous-optimization-evidence/test-evidence.json` | `source=final-release-process-normalization-review/after-results.json` |

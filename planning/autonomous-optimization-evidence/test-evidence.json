@@ -15754,6 +15754,484 @@
           "174 diff file current hashes and all independent evidence paths"
         ]
       }
+    },
+    {
+      "source": "final-release-prepare-first-failure.json",
+      "source_sha256": "2ccf03cbdddf3b1290434b57796c186ca361eaadc0a168f1f31c1c1226e86883",
+      "level": "recorded_test_or_audit",
+      "purpose": "AO044实际首次准备失败、只读字段差异与仅User规范化的作者/独立验证；不宣称修后真实准备成功",
+      "result": {
+        "source": "root tool output from first prepare, before process normalization",
+        "candidate": "b0adea43117c05fdb3422f2f0df9df5f9d260016",
+        "stderr": {
+          "ok": false,
+          "type": "ValueError",
+          "error": "nondefault service process configuration; revise plan"
+        },
+        "stdout_file": "final-release-prepare.json",
+        "stdout_bytes": 0,
+        "bundle_created": false,
+        "formal_writes": false,
+        "note": "Shell subsequently ran cat, so outer exit code 0 was not prepare success; failure was JSON on stderr."
+      }
+    },
+    {
+      "source": "final-release-prepare-process-difference.json",
+      "source_sha256": "17835fc715b9d97d3e3d72108ee408cc959703e3806b0d75588a723400bb1ac8",
+      "level": "recorded_test_or_audit",
+      "purpose": "AO044实际首次准备失败、只读字段差异与仅User规范化的作者/独立验证；不宣称修后真实准备成功",
+      "result": {
+        "read_only": true,
+        "services": [
+          {
+            "service": "snakeslayingrecord-app-1",
+            "image": "sha256:2ea67ae30f93796f1ca85ab7e549552e585273d8f95bd0a26a0285ae89fbdeeb",
+            "differences": {
+              "User": {
+                "container": "",
+                "image": null
+              }
+            }
+          },
+          {
+            "service": "snakeslayingrecord-nginx-1",
+            "image": "sha256:009d73a160564cce886ee8a8538c4d18f0ea9b961f03db9df410e45b0fdf29b2",
+            "differences": {
+              "User": {
+                "container": "",
+                "image": null
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "source": "final-release-user-normalization-evidence.json",
+      "source_sha256": "41e5741eb5bced0f40a45efdec6731ce5310133d41181353f062d6f3b405c32b",
+      "level": "recorded_test_or_audit",
+      "purpose": "AO044实际首次准备失败、只读字段差异与仅User规范化的作者/独立验证；不宣称修后真实准备成功",
+      "result": {
+        "at": "2026-10-04T02:07:49.002369+00:00",
+        "finding": "AO-044",
+        "scope": "prepare process comparison only: User None is normalized to empty string in copied whitelist dictionaries. Original inspection snapshots and all other fields remain exact.",
+        "files_sha256": {
+          "scripts/autonomous_optimization_release.py": "b7f437bfddb864f4d347046c38a74e75e1d4ec21c30a0f786e3176e69c5224df",
+          "tests/test_autonomous_optimization_release.py": "f5bf657873c4b765782f76507976e9274db9cbd55b405c281cb36eaa46459b6f"
+        },
+        "failure_evidence": [
+          "final-release-prepare-first-failure.json",
+          "final-release-prepare-process-difference.json"
+        ],
+        "verification": {
+          "command": "PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -p 'test_autonomous_optimization_release.py' -v",
+          "result": "passed",
+          "tests": 24,
+          "new_test_groups": 3,
+          "new_subcases": 22,
+          "elapsed_seconds_from_unittest": 0.233,
+          "additional_checks": [
+            "Both changed files compile from source without pycache",
+            "No trailing whitespace"
+          ],
+          "properties": [
+            "app and nginx each accept None/empty user in both directions",
+            "Nonempty differing users and whitespace remain rejected",
+            "Cmd/Entrypoint/WorkingDir remain exact despite equivalent User",
+            "Original inspection objects unchanged",
+            "No Docker/HTTP/subprocess or output bundle mutation in prepare tests"
+          ]
+        },
+        "limits": [
+          "Offline real prepare function with mocked prerequisite inspection; does not claim real final prepare/build/preflight passed.",
+          "No apply, formal database, service/browser, Git, report or evidence pack write."
+        ],
+        "independent_review": "pending"
+      }
+    },
+    {
+      "source": "final-release-process-normalization-review.json",
+      "source_sha256": "5f7ec688be3100886be0892ef631d8e7b9d92ba7d8790564f4f807c54082dbfc",
+      "level": "recorded_test_or_audit",
+      "purpose": "AO044实际首次准备失败、只读字段差异与仅User规范化的作者/独立验证；不宣称修后真实准备成功",
+      "result": {
+        "finding": "AO-044",
+        "at": "2026-10-04T02:09:12.282126+00:00",
+        "verdict": "passed_scoped_independent_review",
+        "blocking_findings": [],
+        "scope": "Final release prepare process comparison. System product candidate c1da4cdce8c98bd52beafed1dc0a7b70887d8653 is unchanged.",
+        "script_sha256": "b7f437bfddb864f4d347046c38a74e75e1d4ec21c30a0f786e3176e69c5224df",
+        "author_tests_sha256": "f5bf657873c4b765782f76507976e9274db9cbd55b405c281cb36eaa46459b6f",
+        "prior_script_sha256": "05fd5a0b53d2dd79222f486eeddaee8344414240bbfbacab40a844c184fe0637",
+        "original_actual_failure": {
+          "candidate": "b0adea43117c05fdb3422f2f0df9df5f9d260016",
+          "error": "nondefault service process configuration; revise plan",
+          "bundle_created": false,
+          "formal_writes": false,
+          "outer_shell_zero_is_not_prepare_success": true
+        },
+        "delta": "Only copied Cmd/Entrypoint/User/WorkingDir dictionaries are compared after User is None becomes empty string. No other field normalized. Original inspect data and safe_container snapshots retain raw values.",
+        "independent_verification": {
+          "actual_function": "prepare",
+          "mocked_boundaries": [
+            "Git prerequisites",
+            "image/container inspect records"
+          ],
+          "stop_point": "Second nginx image inspection, after both process guard iterations and before formal HTTP or bundle writing",
+          "cases": 38,
+          "passed": 38,
+          "old_baseline_expected_allow_cases_rejected": 10,
+          "old_baseline_difference_rejections_preserved": 28,
+          "original_inspect_and_safe_container_values_preserved": true,
+          "external_calls": 0,
+          "formal_writes": 0,
+          "git_mutations": 0
+        },
+        "accepted": [
+          "User None/empty in both directions on app and nginx",
+          "Both None or both empty",
+          "Same explicit nonempty image/container User, preserving original image-default contract"
+        ],
+        "rejected": [
+          "Changed User root, numeric root string 0, UID:GID, different explicit user, whitespace",
+          "Container default versus image explicit nonempty User",
+          "Malformed False or numeric 0 versus unspecified image User",
+          "Cmd changed or removed",
+          "Entrypoint None versus list or empty list",
+          "WorkingDir changed or emptied"
+        ],
+        "unchanged_guards": [
+          "RestartPolicy",
+          "nginx environment equality",
+          "nginx mount restriction",
+          "formal ports and exact mounts/CA",
+          "PROJECT version/body guard",
+          "Git candidates and source pin",
+          "build/apply/recover"
+        ],
+        "limits": [
+          "Offline actual function with synthetic process metadata, not a real Docker prepare/build/preflight or apply. Root must rerun final immutable prepare/build/preflight against new story candidate.",
+          "No product, formal service, database, Git or browser operations by this reviewer.",
+          "This supplemental receipt does not rewrite frozen comprehensive review; it supersedes only the release-script 05fd binding for this narrow normalization."
+        ],
+        "evidence": [
+          {
+            "file": "final-release-prepare-first-failure.json",
+            "sha256": "2ccf03cbdddf3b1290434b57796c186ca361eaadc0a168f1f31c1c1226e86883",
+            "bytes": 510
+          },
+          {
+            "file": "final-release-prepare-process-difference.json",
+            "sha256": "17835fc715b9d97d3e3d72108ee408cc959703e3806b0d75588a723400bb1ac8",
+            "bytes": 562
+          },
+          {
+            "file": "final-release-user-normalization-evidence.json",
+            "sha256": "41e5741eb5bced0f40a45efdec6731ce5310133d41181353f062d6f3b405c32b",
+            "bytes": 1696
+          },
+          {
+            "file": "final-release-process-normalization-review/before-results.json",
+            "sha256": "ddf5dfb7017a652379f797894761472319e071481b92618dc35fc477b78602ca",
+            "bytes": 8641
+          },
+          {
+            "file": "final-release-process-normalization-review/after-results.json",
+            "sha256": "e2b735e3710d86a1d1582db1d09a67dd0e5c9c6a7ead25aa31895e6fecb16a92",
+            "bytes": 8617
+          },
+          {
+            "file": "final-release-process-normalization-review/probe.py",
+            "sha256": "ba161b9c8b690fc653fa22880d53b02de6095a614fdd2486dc89cf7f7fe0bf74",
+            "bytes": 6102
+          }
+        ]
+      }
+    },
+    {
+      "source": "final-release-process-normalization-review/after-results.json",
+      "source_sha256": "e2b735e3710d86a1d1582db1d09a67dd0e5c9c6a7ead25aa31895e6fecb16a92",
+      "level": "recorded_test_or_audit",
+      "purpose": "AO044实际首次准备失败、只读字段差异与仅User规范化的作者/独立验证；不宣称修后真实准备成功",
+      "result": {
+        "source": "TASK_WORKTREE/scripts/autonomous_optimization_release.py",
+        "source_sha256": "b7f437bfddb864f4d347046c38a74e75e1d4ec21c30a0f786e3176e69c5224df",
+        "mode": "Actual prepare Python function; mocked Git/image/container inputs. Stops after both process guards, before live HTTP and all bundle writes.",
+        "cases": [
+          {
+            "service": "snakeslayingrecord-app-1",
+            "case": "image_null_container_empty",
+            "expected": "accepted_process_guards",
+            "actual": "accepted_process_guards",
+            "passed": true
+          },
+          {
+            "service": "snakeslayingrecord-app-1",
+            "case": "image_empty_container_null",
+            "expected": "accepted_process_guards",
+            "actual": "accepted_process_guards",
+            "passed": true
+          },
+          {
+            "service": "snakeslayingrecord-app-1",
+            "case": "both_null",
+            "expected": "accepted_process_guards",
+            "actual": "accepted_process_guards",
+            "passed": true
+          },
+          {
+            "service": "snakeslayingrecord-app-1",
+            "case": "both_empty",
+            "expected": "accepted_process_guards",
+            "actual": "accepted_process_guards",
+            "passed": true
+          },
+          {
+            "service": "snakeslayingrecord-app-1",
+            "case": "explicit_root",
+            "expected": "rejected_process_difference",
+            "actual": "rejected_process_difference",
+            "passed": true
+          },
+          {
+            "service": "snakeslayingrecord-app-1",
+            "case": "explicit_numeric_root",
+            "expected": "rejected_process_difference",
+            "actual": "rejected_process_difference",
+            "passed": true
+          },
+          {
+            "service": "snakeslayingrecord-app-1",
+            "case": "explicit_uid_gid",
+            "expected": "rejected_process_difference",
+            "actual": "rejected_process_difference",
+            "passed": true
+          },
+          {
+            "service": "snakeslayingrecord-app-1",
+            "case": "whitespace_is_not_default",
+            "expected": "rejected_process_difference",
+            "actual": "rejected_process_difference",
+            "passed": true
+          },
+          {
+            "service": "snakeslayingrecord-app-1",
+            "case": "container_default_image_nonempty",
+            "expected": "rejected_process_difference",
+            "actual": "rejected_process_difference",
+            "passed": true
+          },
+          {
+            "service": "snakeslayingrecord-app-1",
+            "case": "same_explicit_image_user",
+            "expected": "accepted_process_guards",
+            "actual": "accepted_process_guards",
+            "passed": true
+          },
+          {
+            "service": "snakeslayingrecord-app-1",
+            "case": "different_explicit_user",
+            "expected": "rejected_process_difference",
+            "actual": "rejected_process_difference",
+            "passed": true
+          },
+          {
+            "service": "snakeslayingrecord-app-1",
+            "case": "invalid_false_not_empty",
+            "expected": "rejected_process_difference",
+            "actual": "rejected_process_difference",
+            "passed": true
+          },
+          {
+            "service": "snakeslayingrecord-app-1",
+            "case": "invalid_zero_not_empty",
+            "expected": "rejected_process_difference",
+            "actual": "rejected_process_difference",
+            "passed": true
+          },
+          {
+            "service": "snakeslayingrecord-app-1",
+            "case": "Cmd_['python', 'other.py']",
+            "expected": "rejected_process_difference",
+            "actual": "rejected_process_difference",
+            "passed": true
+          },
+          {
+            "service": "snakeslayingrecord-app-1",
+            "case": "Cmd_None",
+            "expected": "rejected_process_difference",
+            "actual": "rejected_process_difference",
+            "passed": true
+          },
+          {
+            "service": "snakeslayingrecord-app-1",
+            "case": "Entrypoint_['/bin/sh']",
+            "expected": "rejected_process_difference",
+            "actual": "rejected_process_difference",
+            "passed": true
+          },
+          {
+            "service": "snakeslayingrecord-app-1",
+            "case": "Entrypoint_[]",
+            "expected": "rejected_process_difference",
+            "actual": "rejected_process_difference",
+            "passed": true
+          },
+          {
+            "service": "snakeslayingrecord-app-1",
+            "case": "WorkingDir_/other",
+            "expected": "rejected_process_difference",
+            "actual": "rejected_process_difference",
+            "passed": true
+          },
+          {
+            "service": "snakeslayingrecord-app-1",
+            "case": "WorkingDir_",
+            "expected": "rejected_process_difference",
+            "actual": "rejected_process_difference",
+            "passed": true
+          },
+          {
+            "service": "snakeslayingrecord-nginx-1",
+            "case": "image_null_container_empty",
+            "expected": "accepted_process_guards",
+            "actual": "accepted_process_guards",
+            "passed": true
+          },
+          {
+            "service": "snakeslayingrecord-nginx-1",
+            "case": "image_empty_container_null",
+            "expected": "accepted_process_guards",
+            "actual": "accepted_process_guards",
+            "passed": true
+          },
+          {
+            "service": "snakeslayingrecord-nginx-1",
+            "case": "both_null",
+            "expected": "accepted_process_guards",
+            "actual": "accepted_process_guards",
+            "passed": true
+          },
+          {
+            "service": "snakeslayingrecord-nginx-1",
+            "case": "both_empty",
+            "expected": "accepted_process_guards",
+            "actual": "accepted_process_guards",
+            "passed": true
+          },
+          {
+            "service": "snakeslayingrecord-nginx-1",
+            "case": "explicit_root",
+            "expected": "rejected_process_difference",
+            "actual": "rejected_process_difference",
+            "passed": true
+          },
+          {
+            "service": "snakeslayingrecord-nginx-1",
+            "case": "explicit_numeric_root",
+            "expected": "rejected_process_difference",
+            "actual": "rejected_process_difference",
+            "passed": true
+          },
+          {
+            "service": "snakeslayingrecord-nginx-1",
+            "case": "explicit_uid_gid",
+            "expected": "rejected_process_difference",
+            "actual": "rejected_process_difference",
+            "passed": true
+          },
+          {
+            "service": "snakeslayingrecord-nginx-1",
+            "case": "whitespace_is_not_default",
+            "expected": "rejected_process_difference",
+            "actual": "rejected_process_difference",
+            "passed": true
+          },
+          {
+            "service": "snakeslayingrecord-nginx-1",
+            "case": "container_default_image_nonempty",
+            "expected": "rejected_process_difference",
+            "actual": "rejected_process_difference",
+            "passed": true
+          },
+          {
+            "service": "snakeslayingrecord-nginx-1",
+            "case": "same_explicit_image_user",
+            "expected": "accepted_process_guards",
+            "actual": "accepted_process_guards",
+            "passed": true
+          },
+          {
+            "service": "snakeslayingrecord-nginx-1",
+            "case": "different_explicit_user",
+            "expected": "rejected_process_difference",
+            "actual": "rejected_process_difference",
+            "passed": true
+          },
+          {
+            "service": "snakeslayingrecord-nginx-1",
+            "case": "invalid_false_not_empty",
+            "expected": "rejected_process_difference",
+            "actual": "rejected_process_difference",
+            "passed": true
+          },
+          {
+            "service": "snakeslayingrecord-nginx-1",
+            "case": "invalid_zero_not_empty",
+            "expected": "rejected_process_difference",
+            "actual": "rejected_process_difference",
+            "passed": true
+          },
+          {
+            "service": "snakeslayingrecord-nginx-1",
+            "case": "Cmd_['python', 'other.py']",
+            "expected": "rejected_process_difference",
+            "actual": "rejected_process_difference",
+            "passed": true
+          },
+          {
+            "service": "snakeslayingrecord-nginx-1",
+            "case": "Cmd_None",
+            "expected": "rejected_process_difference",
+            "actual": "rejected_process_difference",
+            "passed": true
+          },
+          {
+            "service": "snakeslayingrecord-nginx-1",
+            "case": "Entrypoint_['/bin/sh']",
+            "expected": "rejected_process_difference",
+            "actual": "rejected_process_difference",
+            "passed": true
+          },
+          {
+            "service": "snakeslayingrecord-nginx-1",
+            "case": "Entrypoint_[]",
+            "expected": "rejected_process_difference",
+            "actual": "rejected_process_difference",
+            "passed": true
+          },
+          {
+            "service": "snakeslayingrecord-nginx-1",
+            "case": "WorkingDir_/other",
+            "expected": "rejected_process_difference",
+            "actual": "rejected_process_difference",
+            "passed": true
+          },
+          {
+            "service": "snakeslayingrecord-nginx-1",
+            "case": "WorkingDir_",
+            "expected": "rejected_process_difference",
+            "actual": "rejected_process_difference",
+            "passed": true
+          }
+        ],
+        "passed": 38,
+        "total": 38,
+        "original_inspect_and_safe_container_user_values_preserved": true,
+        "docker_or_http_calls": 0,
+        "formal_writes": 0,
+        "git_mutations": 0
+      }
     }
   ]
 }
