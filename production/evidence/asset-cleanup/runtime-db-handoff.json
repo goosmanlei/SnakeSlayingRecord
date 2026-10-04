@@ -1,0 +1,63 @@
+{
+  "recorded_at": "2026-10-04T06:39:20.140479+00:00",
+  "status": "completed audit and safety implementation; formal application awaits final user approval",
+  "code_commit": "6ac77db",
+  "code_paths": [
+    "scripts/asset_cleanup_runtime.py",
+    "tests/test_asset_cleanup_runtime.py"
+  ],
+  "automated_runtime_tests": 14,
+  "independent_review": "system_audit: passed; runtime-cleanup-independent-tests.log",
+  "formal_baseline": {
+    "story_commit": "fd08a2cefe80a723950dbfcb5d9ac8bc09775116",
+    "system_commit": "236433072b1629c197e3685cb5b7e305b53e3285",
+    "running_source_files_matching": 43,
+    "nginx_config_matches": true,
+    "database_snapshot": "baseline/formal-review.sqlite3",
+    "database_snapshot_sha256": "bf09386e9bd1c7b04fc262ad39a811b37c0246af1b9849d5deb8f7aa179ba4d1",
+    "database_rows_fingerprinted": 58698,
+    "revision_hashes_checked": 6998,
+    "exact_payload_references_checked": 41139,
+    "comments_anchors_checked": 271,
+    "historically_referenced_files_hashed": 1307,
+    "historically_referenced_bytes": 1036571531,
+    "errors": []
+  },
+  "database_scope": {
+    "database_files": 113,
+    "schema_groups": 10,
+    "errors": [],
+    "files": "db-all-instances.json",
+    "structures": "db-schema-groups.json"
+  },
+  "runtime_scope": {
+    "containers": 21,
+    "project_images": 29,
+    "shared_base_images": 1,
+    "networks": 1,
+    "named_volumes": 0,
+    "decisions": "runtime-decisions.json",
+    "directories": "runtime-directory-decisions.json",
+    "processes": "runtime-processes-schedulers.json",
+    "build_cache": "runtime-build-cache.json",
+    "current_task_rehearsal_containers_created_then_removed": 4,
+    "current_task_rehearsal_port": 62616,
+    "current_task_rehearsal_port_released": true
+  },
+  "formal_cleanup_candidate": {
+    "manifest": "runtime-cleanup-manifest.json",
+    "manifest_sha256": "58f125142f3bb6514657555d29e6da4ede690e27afc3a326d8d4c8e111803168",
+    "candidate_count": 4,
+    "retained_stopped_count": 15,
+    "live_preflight_passed": 4,
+    "applied": false,
+    "no_image_volume_or_database_delete": true
+  },
+  "probe_side_effect": "runtime-probe-side-effect-recovery.json: Docker cp created an absent bind path; exact four newly created empty directories removed with rmdir after proving task cleaned and path unregistered; current missing state restored. No further docker cp in cleanup script.",
+  "limits": [
+    "Historical exact images missing for 15 retired previews: preserve their rootfs/containers; Config.Image labels are not exact recovery images.",
+    "Build cache can be shared; all 207 observed cache entries retained, no prune.",
+    "One unreadable Microsoft Teams launchd plist is outside project scope.",
+    "Snapshot comparison and formal source hashes are technical evidence, not user media/story acceptance."
+  ]
+}
