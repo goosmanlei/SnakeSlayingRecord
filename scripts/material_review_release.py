@@ -16,6 +16,7 @@ import autonomous_optimization_release as base
 
 TASK='task-20261004-0004'
 RELEASE_PREFIXES={TASK:'materials-20261004-0004', 'task-20261004-0005':'asset-cleanup-20261004-0005',
+                  'task-20261004-0007':'breakdown-20261004-0007',
                   'entity-acceptance-20261004':'entity-acceptance-20261004'}
 require,sha,read,save,run,git,inspect=base.require,base.sha,base.read,base.save,base.run,base.git,base.inspect
 
@@ -91,7 +92,9 @@ def build(a):
 
 
 def checks(root,m,live=True):
-    base.repo_check(m['story_worktree'],m['story_main'],m['story_candidate'],m['story_target'])
+    # The breakdown release has an explicitly approved two-stage integration:
+    # code first, data/service next, task completion after formal page acceptance.
+    base.repo_check(m['story_worktree'],m['story_main'],m['story_candidate'],m['story_target'],system=m['task']=='task-20261004-0007')
     base.repo_check(m['system_worktree'],m['system_main'],m['system_candidate'],m['system_target'],system=True)
     for path,value in m['previous_compose_hashes'].items():require(sha(Path(path).read_bytes())==value,'compose input drifted')
     ca=next(x['Source'] for x in m['previous_app']['mounts'] if x['Destination']=='/run/local-ca/cacert.pem');require(sha(Path(ca).read_bytes())==m['ca_sha256'],'CA drifted')

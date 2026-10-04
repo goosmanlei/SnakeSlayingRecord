@@ -102,7 +102,7 @@ class ReleaseTest(unittest.TestCase):
              patch.object(r.base, 'git_file', side_effect=lambda repo, commit, name: (repo / name).read_bytes()), \
              patch.object(r, 'git', return_value='100644 blob fixture\treview_desk/z.py'), \
              contextlib.redirect_stdout(io.StringIO()):
-            for task in (r.TASK, 'task-20261004-0005', 'entity-acceptance-20261004'):
+            for task in (r.TASK, 'task-20261004-0005', 'entity-acceptance-20261004','task-20261004-0007'):
                 args = argparse.Namespace(story_worktree=story, system_worktree=system,
                     story_candidate='a' * 40, system_candidate='b' * 40,
                     story_target='d' * 40, system_target='e' * 40,

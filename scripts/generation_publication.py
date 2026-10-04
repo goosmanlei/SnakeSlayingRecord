@@ -15,8 +15,13 @@ KEYS = {
     'material_members': ('material_id', 'number', 'revision_id'),
     'material_feedback': ('comment_id',),
     'material_comment_scopes': ('comment_id', 'material_id'),
+    'material_plan_versions': ('material_id','number'),
+    'material_plan_members': ('material_id','revision_id'),
+    'material_candidate_members': ('candidate_id','revision_id'),
+    'material_plan_comments': ('comment_id','material_id'),
 }
-MUTABLE = {'objects', 'comments', 'material_rounds'}
+PLAN_TABLES={'material_plan_versions','material_plan_members','material_candidate_members','material_plan_comments'}
+MUTABLE = {'objects', 'comments', 'material_rounds','material_plan_versions'}
 PRODUCTION_KINDS = {'ENTITY', 'STATE', 'REPRESENTATION', 'REQUIREMENT', 'CALL',
                     'ASSET', 'JUDGMENT', 'RELATION', 'PREPARATION',
                     'ASSEMBLY', 'DELIVERABLE', 'SHOT_DESIGN', 'INPUT_LOCK'}
@@ -78,6 +83,8 @@ def revision_media(changes):
 
 def build_plan(before_path, after_path):
     before, after = tables(before_path), tables(after_path)
+    for table in PLAN_TABLES:
+        before.setdefault(table,[]);after.setdefault(table,[])
     if set(before) != set(after):
         raise ValueError('review schema changed; migrate and validate before preparing publication')
     changes = {table: [] for table in KEYS}
@@ -108,7 +115,7 @@ def build_plan(before_path, after_path):
     old_objects = {r['id']: r for r in before['objects']}
     scope = {c['after']['id'] for c in changes['objects']}
     scope.update(c['after']['target_object_id'] for c in changes['comments'])
-    scope.update(c['after']['material_id'] for t in KEYS if t.startswith('material_') for c in changes[t])
+    scope.update(c['after']['material_id'] for t in KEYS if t.startswith('material_') for c in changes[t] if 'material_id' in c['after'])
     if any(objects[oid]['kind'] not in PRODUCTION_KINDS for oid in scope):
         raise ValueError('generation publication cannot change story or system objects')
     new_revisions = {c['after']['id'] for c in changes['revisions']}
@@ -156,20 +163,28 @@ def journal(db, pid, callback):
 
 
 def apply_plan(db, plan, *, identity=None):
-    if plan.get('format') != 'generation-publication-v1' or set(plan.get('changes', {})) != set(KEYS):
+    active_keys={k:v for k,v in KEYS.items() if k in plan.get('changes',{})}
+    if plan.get('format') != 'generation-publication-v1' or set(plan.get('changes',{})) != set(active_keys) or set(active_keys) not in (set(KEYS),set(KEYS)-PLAN_TABLES):
         raise ValueError('invalid generation publication package')
     if sorted(plan['media'], key=lambda row: row['file']) != revision_media(plan['changes']['revisions']):
         raise ValueError('media manifest differs from published revisions')
     scope = set(plan['scope'])
     if scope != set(plan['expected_heads']):
         raise ValueError('publication scope differs from expected heads')
-    columns = {t: {r[1] for r in db.execute('PRAGMA table_info(' + t + ')')} for t in KEYS}
 
     def current(table, row):
         result = db.execute('SELECT * FROM ' + table + ' WHERE ' + ' AND '.join(k + '=?' for k in KEYS[table]), key(table, row)).fetchone()
         return dict(result) if result else None
 
     def mutate():
+        if PLAN_TABLES <= set(active_keys):
+            from review_desk.material_plans import SCHEMA
+            # Additive schema and data belong to the same transaction. executescript
+            # would commit the caller's transaction before running its statements.
+            for statement in SCHEMA.split(';'):
+                if statement.strip():
+                    db.execute(statement)
+        columns = {t: {r[1] for r in db.execute('PRAGMA table_info(' + t + ')')} for t in active_keys}
         for oid, expected in plan['expected_heads'].items():
             if current('objects', {'id': oid}) != expected:
                 raise ValueError('formal object changed: ' + oid)
@@ -182,7 +197,7 @@ def apply_plan(db, plan, *, identity=None):
                 raise ValueError('exact dependency changed or missing: ' + rid)
         changed_revisions = {c['after']['id'] for c in plan['changes']['revisions']}
         changed_comments = {c['after']['id'] for c in plan['changes']['comments']}
-        for table in KEYS:
+        for table in active_keys:
             changes = plan['changes'][table]
             seen = set()
             for change in changes:
@@ -210,7 +225,7 @@ def apply_plan(db, plan, *, identity=None):
                     raise ValueError('immutable identity or comment anchor changed')
                 if current(table, new) != old:
                     raise ValueError('formal row changed: ' + table)
-        for table in KEYS:
+        for table in active_keys:
             changes = plan['changes'][table]
             for change in changes:
                 row = change['after']
@@ -234,6 +249,10 @@ def apply_plan(db, plan, *, identity=None):
             result = db.execute('INSERT INTO comment_events(comment_id,action,body,at) VALUES (?,?,?,?)',
                                 tuple(row[k] for k in ('comment_id', 'action', 'body', 'at')))
             events.append({'source_id': row['id'], 'published_id': result.lastrowid, 'comment_id': row['comment_id']})
+        if PLAN_TABLES <= set(active_keys):
+            from review_desk.material_plans import validate
+            from types import SimpleNamespace
+            validate(SimpleNamespace(db=db,comment=lambda cid:dict(db.execute('SELECT * FROM comments WHERE id=?',(cid,)).fetchone())))
         return {'changed_rows': {t: len(c) for t, c in plan['changes'].items()}, 'comment_events': events}
 
     return journal(db, identity or publication_id(plan), mutate)
