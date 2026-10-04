@@ -5,14 +5,14 @@
   "story_inputs": {
     "imports/screenplay-04.json": "c428946554029be05f119eae0ecefeb5bbc6501115db5d096c007ebe0af12f3d",
     "production/source-lock.json": "713a5307157df405f434e3a5da3f02aa05b1c540bd6cb84629051cf94bbb7519",
-    "production/breakdown/design.tsv": "e7643152c92de3d1e6e5f5b4ff9bc6cc1192fd46536cf0d6162020e93b513cb0",
+    "production/breakdown/design.tsv": "f7549b02d6ca5f0a23c47c7a88362040e846f8f76e3f4ba43bfc1f2cebc5a55d",
     "production/breakdown/additional-records.json": "7236fbf40188f68b046d67c77634a6690a5eee7390a69ae75772afab4cfe1b3e",
     "production/breakdown/occurrence-review.json": "35cb9bf09f64f7fa85d41eaf60ecfb2fc246190d247e314833b4555c847abc57",
     "production/breakdown/publication.json": "9319ef2d4a1893d3880bfd91d16d991c2baf407eb144b1e25046fe457ee0fcc7",
     "export/manifest.json": "fd89c64c3d7d475bd380648e9126a4c78c8e679df8aa3538b1fec983fb177ef1",
     "export/objects.json": "a09d5aaa286fdc283e01c115c699a9565e4c8fd368d5b207708b7929c9e30f9e",
     "export/comments.json": "46766832bd4bec2e989a4299c2452267d1762b038f9c67af2180929e9445bd1b",
-    "scripts/production_breakdown.py": "ef396f70353ab4723732bbf3c7922f5cca2fb2563f7e691f73944a9fec4faff4",
+    "scripts/production_breakdown.py": "1bbaa41f484a241c0795f72e9b137fbf6c8d57214c673113e53faba66a095315",
     "scripts/generation_publication.py": "0198ea63ef9583f6366991f85e683f4c292b1c7c5322bc42b62836f95905c09e",
     "scripts/verify_production_breakdown.py": "e64381131f1dcef6af25e6e59a27afaf4f294694cf8c78a3438916511f4b086c"
   },
@@ -63,5 +63,6 @@
     "review_desk/static/workspace.css": "5d440c8cff4ea771fea569ef8a2889753b22274017e77a6951aec3a5ee8bf627",
     "review_desk/store.py": "092eb707264a130996967f0064a4f98496226d0868c6f0859c647788bf6876cb",
     "review_desk/structure.py": "3741f0ed949ee49327eecebd6a4709cddcf0d1e83afc37e4f449a006d70e2921"
-  }
+  },
+  "formatting_followup": "Empty final TSV fields are quoted; csv.DictReader records compare equal. Renderer trims the final blank line; compiled database and publication unchanged."
 }
