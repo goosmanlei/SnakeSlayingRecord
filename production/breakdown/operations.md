@@ -18,7 +18,7 @@ python3 scripts/material_review_release.py build --bundle .runtime/breakdown/rel
 python3 scripts/production_breakdown_release.py preflight --bundle .runtime/breakdown/release
 ```
 
-`STORY_*`、`SYSTEM_*` 为参数占位，不是可直接执行的提交名。发布包固定两仓提交、正式运行基线、配置和制作思路挂载、CA 哈希、准确增量、全部原件哈希、脚本及任务运行器源码哈希。构建回执另固定镜像内容与镜像回执哈希。最终展示这些候选与回执，再请求用户确认。
+`STORY_*`、`SYSTEM_*` 为参数占位，不是可直接执行的提交名。发布包固定两仓提交、正式运行基线、配置和制作思路挂载、CA 哈希、准确增量、全部原件哈希、脚本及任务运行器源码哈希。全部受管文件按导出清单核对路径、SHA-256 和字节数，保留历史结构图的可读文件名；新生成素材仍遵循原有哈希命名约束。构建回执另固定镜像内容与镜像回执哈希。最终展示这些候选与回执，再请求用户确认。
 
 ## 需要明确确认的一处分阶段例外
 
