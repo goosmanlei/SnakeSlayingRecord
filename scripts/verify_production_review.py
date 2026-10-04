@@ -11,9 +11,15 @@ import json
 from pathlib import Path
 import sqlite3
 
+try:
+    from .material_model_io import read_json as material_read_json, read_bytes as material_read_bytes, sqlite_compatibility
+except ImportError:
+    from material_model_io import read_json as material_read_json, read_bytes as material_read_bytes, sqlite_compatibility
+
 
 def read_tables(path):
     db = sqlite3.connect(path.resolve().as_uri() + '?mode=ro', uri=True)
+    sqlite_compatibility(db,hydrate=True)
     try:
         names = [r[0] for r in db.execute("SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%'")]
         return {name: [tuple(r) for r in db.execute('SELECT * FROM ' + name)] for name in names}
@@ -72,7 +78,7 @@ def main():
     for name in ('before', 'after', 'batch', 'report'):
         parser.add_argument('--' + name, required=True, type=Path)
     args = parser.parse_args()
-    result = verify(args.before, args.after, json.loads(args.batch.read_text()))
+    result = verify(args.before, args.after, material_read_json(args.batch))
     args.report.parent.mkdir(parents=True, exist_ok=True)
     args.report.write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n')
     print(json.dumps({k: v for k, v in result.items() if k != 'changed_objects'}, ensure_ascii=False))

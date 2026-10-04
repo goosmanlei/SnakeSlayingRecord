@@ -10,6 +10,11 @@ try:
 except ImportError:
     from verify_production_review import read_tables
 
+try:
+    from .material_model_io import read_json as material_read_json, read_bytes as material_read_bytes, sqlite_compatibility
+except ImportError:
+    from material_model_io import read_json as material_read_json, read_bytes as material_read_bytes, sqlite_compatibility
+
 
 def scope_changes(before, registration):
     """Allow only an explicitly confirmed consolidation, retaining old payloads."""
@@ -60,12 +65,13 @@ def verify(before, after, registration):
     changed={oid for oid in new_objects if new_objects[oid]!=old_objects.get(oid)}
     if changed!=allowed: raise ValueError('changed heads differ from registration')
     protected={}
+    model_tables={'material_content','material_definitions','material_aliases','material_definition_versions','material_archive_files'}
     plan_tables={'material_plan_versions','material_plan_members','material_candidate_members'}
-    for table in old.keys()-{'objects','revisions','dependencies','material_rounds','material_members'}-plan_tables:
+    for table in old.keys()-{'objects','revisions','dependencies','material_rounds','material_members'}-plan_tables-model_tables:
         if Counter(old[table])!=Counter(new[table]): raise ValueError('protected table changed: '+table)
         protected[table]=len(old[table])
-    for table in ('revisions','dependencies','material_members'):
-        if Counter(old[table])-Counter(new[table]): raise ValueError('old history changed: '+table)
+    for table in ('revisions','dependencies','material_members','material_content','material_definitions'):
+        if Counter(old.get(table,[]))-Counter(new.get(table,[])): raise ValueError('old history changed: '+table)
     added=list((Counter(new['revisions'])-Counter(old['revisions'])).elements())
     if len(added)!=len(records) or {r[1] for r in added}!=allowed: raise ValueError('unexpected revisions')
     revisions={(r[1],r[2]):r for r in new['revisions']}
@@ -99,17 +105,20 @@ def verify(before, after, registration):
         from review_desk import material_plans as mp, production as production
         from types import SimpleNamespace
         source_db=sqlite3.connect(Path(after).resolve().as_uri()+'?mode=ro',uri=True)
-        replay=sqlite3.connect(':memory:');source_db.backup(replay);source_db.close();replay.row_factory=sqlite3.Row
+        replay=sqlite3.connect(':memory:');source_db.backup(replay);source_db.close();replay.row_factory=sqlite3.Row;sqlite_compatibility(replay,hydrate=True)
         try:
-            for table in ('material_candidate_members','material_plan_members','material_plan_versions'):
+            for table in ('material_definition_versions','material_aliases','material_archive_files','material_candidate_members','material_plan_members','material_plan_versions'):
                 replay.execute('DELETE FROM '+table)
-            for table in ('material_plan_versions','material_plan_members','material_candidate_members'):
+            for table in ('material_plan_versions','material_plan_members','material_candidate_members','material_definition_versions','material_aliases','material_archive_files'):
                 columns=len(replay.execute('PRAGMA table_info('+table+')').fetchall())
                 replay.executemany('INSERT INTO '+table+' VALUES ('+','.join('?' for _ in range(columns))+')',old[table])
             proxy=SimpleNamespace(db=replay)
             for spec in records:
-                mp.register(proxy,production.record(proxy,revision_id=revisions[spec['object_id'],spec['expected_version']+1][0]))
-            for table in plan_tables:
+                row=production.record(proxy,revision_id=revisions[spec['object_id'],spec['expected_version']+1][0])
+                from review_desk.material_model import refresh_identity
+                if row['kind']=='REQUIREMENT':refresh_identity(proxy,row)
+                mp.register(proxy,row)
+            for table in plan_tables|{'material_aliases','material_definition_versions','material_archive_files'}:
                 if Counter(tuple(row) for row in replay.execute('SELECT * FROM '+table))!=Counter(new[table]):
                     raise ValueError('material plan index differs from exact registration: '+table)
         finally:replay.close()
@@ -123,6 +132,6 @@ def verify(before, after, registration):
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
     for name in ('before','after','registration','report'):parser.add_argument('--'+name,type=Path,required=True)
-    args=parser.parse_args();r=verify(args.before,args.after,json.loads(args.registration.read_text()))
+    args=parser.parse_args();r=verify(args.before,args.after,material_read_json(args.registration))
     args.report.parent.mkdir(parents=True,exist_ok=True);args.report.write_text(json.dumps(r,ensure_ascii=False,indent=2)+'\n')
     print(json.dumps({k:v for k,v in r.items() if k!='changed_objects'},ensure_ascii=False))

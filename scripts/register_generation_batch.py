@@ -12,11 +12,16 @@ try:
 except ImportError:
     from generation_workspace import generation_root, contained, isolated_instance
 
+try:
+    from .material_model_io import read_json as material_read_json, read_bytes as material_read_bytes, sqlite_compatibility, open_bytes as material_open_bytes
+except ImportError:
+    from material_model_io import read_json as material_read_json, read_bytes as material_read_bytes, sqlite_compatibility, open_bytes as material_open_bytes
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
 def read(path):
-    return json.loads(Path(path).read_text())
+    return material_read_json(path)
 
 
 def ref(row):
@@ -114,7 +119,7 @@ def main():
                 receipt_path = ROOT / 'production/receipts' / (label + '-builtin-complete.json')
                 receipt = read(receipt_path)
                 assert receipt['status'] == 'COMPLETED' and receipt['tool'] == 'image_gen.imagegen'
-                assert receipt['request_file_sha256'] == hashlib.sha256(request_path.read_bytes()).hexdigest()
+                assert receipt['request_file_sha256'] == hashlib.sha256(material_read_bytes(request_path)).hexdigest()
                 assert receipt['sha256'] == item['sha256'] and receipt['file'] == item['file']
                 assert receipt['underlying_model_id'] is None, 'do not invent a hidden built-in model ID'
                 assert request['model'] == 'GPT Image'
@@ -171,8 +176,8 @@ def main():
                 request, actual_references, states, entity, media)
             components = []
             for cid, path, role in [('original', ROOT / item['file'], 'original'), ('receipt', receipt_path, 'metadata'), ('request', request_path, 'metadata')]:
-                with path.open('rb') as stream: component = ingest(instance, stream, path.name)
-                with path.open('rb') as stream: assert ingest(ROOT, stream, path.name)['sha256'] == component['sha256']
+                with material_open_bytes(path) as stream: component = ingest(instance, stream, path.name)
+                with material_open_bytes(path) as stream: assert ingest(ROOT, stream, path.name)['sha256'] == component['sha256']
                 components.append({**component, 'id': cid, 'role': role})
             assert components[0]['sha256'] == item['sha256']
             call_id, asset_id = 'call-' + label, 'asset-' + label
@@ -181,7 +186,7 @@ def main():
                 'method': 'generation', 'tool': request.get('tool', 'OpenArt connector') if media == 'image' else 'Doubao Speech HTTP',
                 'status': 'submitted', 'model': model, 'prompt': prompt, 'parameters': params,
                 'inputs': [entity, *states, *actual_references], 'outputs': [], 'prepared_plan': needs[0],
-                'master_approval': approval, 'request_file_sha256': hashlib.sha256(request_path.read_bytes()).hexdigest(),
+                'master_approval': approval, 'request_file_sha256': hashlib.sha256(material_read_bytes(request_path)).hexdigest(),
                 'receipt': receipt, 'usage': usage, 'lineage': lineage,
                 'same_state_repair': request.get('same_state_repair'),
                 'authorization': '用户任务执行指令；对应状态派生须获准确母版认可，未认可候选仅用于其自身明确问题的返工。'}

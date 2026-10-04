@@ -16,6 +16,11 @@ try:
 except ImportError:
     from generation_workspace import generation_root, contained, isolated_instance
 
+try:
+    from .material_model_io import read_json as material_read_json, read_bytes as material_read_bytes, sqlite_compatibility
+except ImportError:
+    from material_model_io import read_json as material_read_json, read_bytes as material_read_bytes, sqlite_compatibility
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -40,7 +45,7 @@ def main():
     sequence = 0
 
     def read(path):
-        return json.loads((ROOT / path).read_text())
+        return material_read_json(ROOT / path)
 
     def ref(oid):
         value = p.record(store, oid)

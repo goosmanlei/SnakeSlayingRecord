@@ -13,6 +13,11 @@ from full_generation_design import BASE_KEYS, DESIGN, STATE_CHOICES, STYLE
 from full_generation_voice_design import BORROWED, EMBEDDED, GROUP_ENTITIES, LABELS, SUPPLEMENTS, VOICES
 from production_forms import DIMENSION_LABELS
 
+try:
+    from .material_model_io import read_json as material_read_json, read_bytes as material_read_bytes, sqlite_compatibility
+except ImportError:
+    from material_model_io import read_json as material_read_json, read_bytes as material_read_bytes, sqlite_compatibility
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -32,6 +37,7 @@ def write(path, value):
 def load_snapshot(path):
     db = sqlite3.connect(path.resolve().as_uri() + '?mode=ro', uri=True)
     db.row_factory = sqlite3.Row
+    sqlite_compatibility(db,hydrate=True)
     rows = [{**dict(r), 'payload': json.loads(r['payload'])} for r in db.execute(
         'select o.*,r.payload from objects o join revisions r on r.id=o.current_revision order by o.id')]
     comments = [dict(r) for r in db.execute('select * from comments order by id')]

@@ -8,7 +8,13 @@ import json
 from pathlib import Path
 import sqlite3
 
+try:
+    from .material_model_io import sqlite_compatibility
+except ImportError:
+    from material_model_io import sqlite_compatibility
+
 KEYS = {
+    "material_content": ("id",), "material_definitions": ("id",), "material_archive_files": ("path",),
     'objects': ('id',), 'revisions': ('id',),
     'dependencies': ('from_revision', 'to_revision', 'role'),
     'comments': ('id',), 'material_rounds': ('material_id', 'number'),
@@ -19,9 +25,12 @@ KEYS = {
     'material_plan_members': ('material_id','revision_id'),
     'material_candidate_members': ('candidate_id','revision_id'),
     'material_plan_comments': ('comment_id','material_id'),
+    'material_aliases': ('alias_id',),
+    'material_definition_versions': ('material_id','number'),
 }
 PLAN_TABLES={'material_plan_versions','material_plan_members','material_candidate_members','material_plan_comments'}
-MUTABLE = {'objects', 'comments', 'material_rounds','material_plan_versions'}
+MODEL_TABLES={'material_content','material_definitions','material_aliases','material_definition_versions','material_archive_files'}
+MUTABLE = {'objects', 'comments', 'material_rounds','material_plan_versions','material_aliases','material_definition_versions','material_archive_files'}
 PRODUCTION_KINDS = {'ENTITY', 'STATE', 'REPRESENTATION', 'REQUIREMENT', 'CALL',
                     'ASSET', 'JUDGMENT', 'RELATION', 'PREPARATION',
                     'ASSEMBLY', 'DELIVERABLE', 'SHOT_DESIGN', 'INPUT_LOCK'}
@@ -39,6 +48,7 @@ def connect(path, *, readonly=True):
     db = sqlite3.connect(Path(path).resolve().as_uri() + ('?mode=ro' if readonly else '?mode=rw'), uri=True)
     db.row_factory = sqlite3.Row
     db.execute('PRAGMA foreign_keys=ON')
+    sqlite_compatibility(db)
     return db
 
 
@@ -83,7 +93,7 @@ def revision_media(changes):
 
 def build_plan(before_path, after_path):
     before, after = tables(before_path), tables(after_path)
-    for table in PLAN_TABLES:
+    for table in PLAN_TABLES|MODEL_TABLES:
         before.setdefault(table,[]);after.setdefault(table,[])
     if set(before) != set(after):
         raise ValueError('review schema changed; migrate and validate before preparing publication')
@@ -98,7 +108,8 @@ def build_plan(before_path, after_path):
         old = {key(table, r): r for r in before[table]}
         new = {key(table, r): r for r in after[table]}
         if old.keys() - new.keys():
-            raise ValueError('generation publication cannot delete history: ' + table)
+            if table!='material_aliases':raise ValueError('generation publication cannot delete history: ' + table)
+            changes[table].extend({'before':old[pk],'after':None} for pk in old.keys()-new.keys())
         for pk, row in new.items():
             previous = old.get(pk)
             if row == previous:
@@ -115,7 +126,8 @@ def build_plan(before_path, after_path):
     old_objects = {r['id']: r for r in before['objects']}
     scope = {c['after']['id'] for c in changes['objects']}
     scope.update(c['after']['target_object_id'] for c in changes['comments'])
-    scope.update(c['after']['material_id'] for t in KEYS if t.startswith('material_') for c in changes[t] if 'material_id' in c['after'])
+    scope.update((c['after'] or c['before'])['material_id'] for t in KEYS if t.startswith('material_') for c in changes[t] if 'material_id' in (c['after'] or c['before']))
+    scope.update((c['after'] or c['before'])['alias_id'] for c in changes['material_aliases'])
     if any(objects[oid]['kind'] not in PRODUCTION_KINDS for oid in scope):
         raise ValueError('generation publication cannot change story or system objects')
     new_revisions = {c['after']['id'] for c in changes['revisions']}
@@ -164,7 +176,7 @@ def journal(db, pid, callback):
 
 def apply_plan(db, plan, *, identity=None):
     active_keys={k:v for k,v in KEYS.items() if k in plan.get('changes',{})}
-    if plan.get('format') != 'generation-publication-v1' or set(plan.get('changes',{})) != set(active_keys) or set(active_keys) not in (set(KEYS),set(KEYS)-PLAN_TABLES):
+    if plan.get('format') != 'generation-publication-v1' or set(plan.get('changes',{})) != set(active_keys) or set(active_keys) not in (set(KEYS),set(KEYS)-MODEL_TABLES,set(KEYS)-PLAN_TABLES-MODEL_TABLES):
         raise ValueError('invalid generation publication package')
     if sorted(plan['media'], key=lambda row: row['file']) != revision_media(plan['changes']['revisions']):
         raise ValueError('media manifest differs from published revisions')
@@ -184,6 +196,14 @@ def apply_plan(db, plan, *, identity=None):
             for statement in SCHEMA.split(';'):
                 if statement.strip():
                     db.execute(statement)
+        if MODEL_TABLES <= set(active_keys):
+            from review_desk.material_storage import SCHEMA as MODEL_SCHEMA
+            statement=''
+            for line in MODEL_SCHEMA.splitlines(keepends=True):
+                statement+=line
+                if sqlite3.complete_statement(statement):
+                    db.execute(statement);statement=''
+            sqlite_compatibility(db)
         columns = {t: {r[1] for r in db.execute('PRAGMA table_info(' + t + ')')} for t in active_keys}
         for oid, expected in plan['expected_heads'].items():
             if current('objects', {'id': oid}) != expected:
@@ -202,6 +222,10 @@ def apply_plan(db, plan, *, identity=None):
             seen = set()
             for change in changes:
                 old, new = change['before'], change['after']
+                if new is None:
+                    if table!='material_aliases' or old is None or current(table,old)!=old:raise ValueError('invalid material alias removal')
+                    if old['alias_id'] not in scope:raise ValueError('alias removal outside publication scope')
+                    continue
                 if set(new) != columns[table] or old is not None and set(old) != columns[table]:
                     raise ValueError('publication columns differ from database schema')
                 pk = key(table, new)
@@ -212,6 +236,11 @@ def apply_plan(db, plan, *, identity=None):
                          new.get('target_object_id') or new.get('material_id'))
                 if owner and owner not in scope:
                     raise ValueError('row outside publication scope')
+                if table=='material_archive_files':
+                    media={"export/assets/"+item['file']:item for item in plan['media']}
+                    expected=media.get(new['path']);container=json.loads(new['container'])
+                    if not expected or container.get('sha256')!=expected['sha256'] or container.get('bytes')!=expected['bytes']:
+                        raise ValueError('archive catalog outside registered metadata')
                 if table == 'objects' and new['kind'] not in PRODUCTION_KINDS:
                     raise ValueError('non-production object')
                 if table == 'dependencies' and new['from_revision'] not in changed_revisions:
@@ -223,13 +252,23 @@ def apply_plan(db, plan, *, identity=None):
                              'material_rounds': ('material_id', 'number', 'created_at')}
                 if old and any(old[k] != new[k] for k in protected.get(table, ())):
                     raise ValueError('immutable identity or comment anchor changed')
-                if current(table, new) != old:
+                if old and table=='material_plan_versions' and old['frozen'] and (new['fingerprint']!=old['fingerprint'] or not new['frozen']):
+                    raise ValueError('frozen complete material definition cannot change')
+                if old and table=='material_definition_versions' and new!=old:
+                    version=current('material_plan_versions',old)
+                    if version and version['frozen']:raise ValueError('frozen material provenance cannot change')
+                actual=current(table,new)
+                shared_content=old is None and table in {'material_content','material_definitions'} and actual==new
+                if actual != old and not shared_content:
                     raise ValueError('formal row changed: ' + table)
         for table in active_keys:
             changes = plan['changes'][table]
             for change in changes:
                 row = change['after']
+                if row is None:
+                    old=change['before'];db.execute('DELETE FROM '+table+' WHERE '+' AND '.join(k+'=?' for k in KEYS[table]),key(table,old));continue
                 if change['before'] is None:
+                    if table in {'material_content','material_definitions'} and current(table,row)==row:continue
                     names = list(row)
                     db.execute('INSERT INTO ' + table + ' (' + ','.join(names) + ') VALUES (' + ','.join('?' for _ in names) + ')', tuple(row.values()))
                 else:
@@ -252,7 +291,17 @@ def apply_plan(db, plan, *, identity=None):
         if PLAN_TABLES <= set(active_keys):
             from review_desk.material_plans import validate
             from types import SimpleNamespace
-            validate(SimpleNamespace(db=db,comment=lambda cid:dict(db.execute('SELECT * FROM comments WHERE id=?',(cid,)).fetchone())))
+            original_factory=db.row_factory
+            try:
+                sqlite_compatibility(db,hydrate=True)
+                context=SimpleNamespace(db=db,comment=lambda cid:dict(db.execute('SELECT * FROM comments WHERE id=?',(cid,)).fetchone()))
+                validate(context)
+                if MODEL_TABLES<=set(active_keys):
+                    from review_desk.material_model import verify
+                    from review_desk.store import Store
+                    context.revisions=lambda:[r for r in Store.revisions(context) if r["id"] in changed_revisions and json.loads(r["payload"]).get("format", "").startswith("production-")]
+                    verify(context)
+            finally:db.row_factory=original_factory
         return {'changed_rows': {t: len(c) for t, c in plan['changes'].items()}, 'comment_events': events}
 
     return journal(db, identity or publication_id(plan), mutate)

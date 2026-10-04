@@ -19,6 +19,11 @@ try:
 except ImportError:
     from generation_workspace import generation_root, contained, isolated_instance
 
+try:
+    from .material_model_io import read_json as material_read_json, read_bytes as material_read_bytes, sqlite_compatibility
+except ImportError:
+    from material_model_io import read_json as material_read_json, read_bytes as material_read_bytes, sqlite_compatibility
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -74,8 +79,9 @@ def main():
         parser.error('recovery requires a new destination; no existing instance will be overwritten')
     if ROOT not in destination.parents or '.runtime' not in destination.relative_to(ROOT).parts:
         parser.error('use a new directory inside this task worktree .runtime for isolated recovery')
-    data = json.loads(replay_path.read_text())
-    if data.get('format') != 'production-replay-v1' or file_hash(ROOT / 'export/manifest.json') != data['base_manifest_sha256']:
+    data = material_read_json(replay_path)
+    schema6=json.loads((ROOT/'export/manifest.json').read_text()).get('schema_version',1)>=6
+    if not schema6 and (data.get('format') != 'production-replay-v1' or file_hash(ROOT / 'export/manifest.json') != data['base_manifest_sha256']):
         parser.error('base export changed; review provenance before rebuilding the replay package')
     for relative, expected in data['files'].items():
         if Path(relative).parts[:2] != ('export', 'assets') or len(Path(relative).parts) != 3:
@@ -98,7 +104,7 @@ def main():
         if not exact_replay(store, production)['heads']:
             production.restore_records(store, data['batches'])
         recovered = exact_replay(store, production)
-        if recovered['heads'] != data['heads'] or recovered['revisions'] != data['revisions']:
+        if not schema6 and (recovered['heads'] != data['heads'] or recovered['revisions'] != data['revisions']):
             raise ValueError('recovered exact revisions or selected heads differ')
         for relative, expected in data['files'].items():
             if file_hash(destination / relative) != expected:

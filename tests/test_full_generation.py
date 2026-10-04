@@ -8,11 +8,12 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 import prepare_full_generation as prep
+from material_model_io import read_framework,read_json,read_bytes
 from register_full_generation import image_spec
 
 
 def current_rows():
-    data = json.loads((ROOT / 'export/objects.json').read_text())
+    data = read_framework(ROOT / 'export/objects.json')
     revisions = {r['id']: r for r in data['revisions']}
     return [{**o, 'payload': json.loads(revisions[o['current_revision']]['payload'])} for o in data['objects']]
 
@@ -22,7 +23,17 @@ class FullGenerationTest(unittest.TestCase):
         self.rows = current_rows(); self.by = {r['id']: r for r in self.rows}
 
     def test_scope_and_reference_dependencies_exclude_non_image_states(self):
-        images, states = prep.image_plans(self.rows, self.by)
+        # This planner intentionally guards the approved task-20261002-0003
+        # scope. Replay its exact saved heads; newer story states are not an
+        # authorization to expand that historical generation batch.
+        data = read_framework(ROOT / 'export/objects.json')
+        revisions = {r['id']: r for r in data['revisions']}
+        heads = read_json(ROOT / 'production/full-generation/source-lock.json')['formal_heads']
+        rows = [{**self.by[h['object_id']], 'current_revision':h['revision_id'],
+                 'current_version':h['version'], 'payload':json.loads(revisions[h['revision_id']]['payload'])}
+                for h in heads]
+        by = {r['id']: r for r in rows}
+        images, states = prep.image_plans(rows, by)
         self.assertEqual(len(images), 251)
         self.assertEqual(len({i['state']['object_id'] for i in images}), 251)
         self.assertEqual(sum(i['is_baseline'] for i in images), 125)
@@ -30,7 +41,7 @@ class FullGenerationTest(unittest.TestCase):
         self.assertEqual(len(excluded), 16)
         self.assertTrue({'form-offscreen-caller-base','form-stage-drum-audible','form-xiao-man-base','form-xu-bride-base'} <= excluded)
         self.assertTrue({'form-bandage-base','form-bandage-head','form-bandage-blood','form-bandage-new'} <= excluded)
-        original,_=prep.image_plans(self.rows,self.by,apply_scope_amendment=False)
+        original,_=prep.image_plans(rows,by,apply_scope_amendment=False)
         self.assertEqual({i['id'] for i in original}-{i['id'] for i in images},
                          {'form-bandage-base','form-bandage-head','form-bandage-blood','form-bandage-new'})
         for i in images:
@@ -41,6 +52,13 @@ class FullGenerationTest(unittest.TestCase):
                 self.assertEqual(i['generation']['inputs'][0]['reference']['object_id'], 'need-'+i['baseline_state']['object_id']+'-overall')
 
     def test_scope_or_screenplay_drift_fails_before_generation(self):
+        locked = read_json(ROOT / 'production/full-generation/source-lock.json')
+        old_ids = {r['object_id'] for r in locked['formal_heads']}
+        added_states = {r['id'] for r in self.rows if r['kind']=='STATE'
+                        and r['payload'].get('state_model')=='complete-v1' and r['id'] not in old_ids}
+        self.assertTrue({'form-blue-awning-song-recited','form-granary-rice-measure-base'} <= added_states)
+        with self.assertRaisesRegex(AssertionError, 'scope changed'):
+            prep.image_plans(self.rows, self.by)
         rows = copy.deepcopy(self.rows)
         rows.append({**next(r for r in rows if r['id']=='form-li-ji-paste'), 'id':'form-unreviewed'})
         with self.assertRaisesRegex(AssertionError, 'scope changed'):
@@ -77,9 +95,9 @@ class FullGenerationTest(unittest.TestCase):
         directory=ROOT/'production/full-generation'
         locked=json.loads((directory/'call-input-lock.json').read_text())
         digest=hashlib.sha256(json.dumps(locked,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode()).hexdigest()
-        request=json.loads((ROOT/'production/requests/fg3-liji-image-01.json').read_text())
+        request=read_json(ROOT/'production/requests/fg3-liji-image-01.json')
         self.assertEqual(request['source_lock_sha256'],digest)
-        registration=json.loads((directory/'registration.json').read_text())
+        registration=read_json(directory/'registration.json')
         records=[r for batch in registration['batches'] for r in batch['records']]
         calls={r['object_id']:r['payload'] for r in records if r['kind']=='CALL' and r['expected_version']==0}
         assets=[r['payload'] for r in records if r['kind']=='ASSET']
@@ -88,9 +106,9 @@ class FullGenerationTest(unittest.TestCase):
             call=calls[asset['production']['object_id']]
             components={c['id']:c for c in asset['components']}
             for component in components.values():
-                content=(ROOT/'export/assets'/component['file']).read_bytes()
+                content=read_bytes(ROOT/'export/assets'/component['file'])
                 self.assertEqual(hashlib.sha256(content).hexdigest(),component['sha256'])
-            actual=json.loads((ROOT/'export/assets'/components['request']['file']).read_text())
+            actual=read_json(ROOT/'export/assets'/components['request']['file'])
             submitted=actual['request']['params']['prompt'] if asset['media_type']=='image' else actual['text_prompt']
             self.assertEqual(call['prompt'],submitted)
             self.assertEqual(call['request_file_sha256'],components['request']['sha256'])
