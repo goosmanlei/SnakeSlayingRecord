@@ -2424,6 +2424,48 @@
       "portable_from_repository": "planning/autonomous-optimization-evidence/screenshots/ao026-accurate-conclusion-history.jpg",
       "source_sha256": "a1dbafb958e11b9be0f8a6bb922c1ac4e4cd8ec208ea14b855c31c37035fff60",
       "selector": null
+    },
+    {
+      "runtime_source": ".runtime/autonomous-optimization/final-release-process-normalization-review.md",
+      "portable_from_planning": "autonomous-optimization-evidence/reviews/release-process-normalization.md",
+      "portable_from_repository": "planning/autonomous-optimization-evidence/reviews/release-process-normalization.md",
+      "source_sha256": "22cc8f26892491c75352f5c028b22c3d223dc3ae27821a8c6c0ed0999f57454a",
+      "selector": null
+    },
+    {
+      "runtime_source": ".runtime/autonomous-optimization/final-release-prepare-first-failure.json",
+      "portable_from_planning": "autonomous-optimization-evidence/test-evidence.json",
+      "portable_from_repository": "planning/autonomous-optimization-evidence/test-evidence.json",
+      "source_sha256": "2ccf03cbdddf3b1290434b57796c186ca361eaadc0a168f1f31c1c1226e86883",
+      "selector": "records[source=final-release-prepare-first-failure.json]"
+    },
+    {
+      "runtime_source": ".runtime/autonomous-optimization/final-release-prepare-process-difference.json",
+      "portable_from_planning": "autonomous-optimization-evidence/test-evidence.json",
+      "portable_from_repository": "planning/autonomous-optimization-evidence/test-evidence.json",
+      "source_sha256": "17835fc715b9d97d3e3d72108ee408cc959703e3806b0d75588a723400bb1ac8",
+      "selector": "records[source=final-release-prepare-process-difference.json]"
+    },
+    {
+      "runtime_source": ".runtime/autonomous-optimization/final-release-user-normalization-evidence.json",
+      "portable_from_planning": "autonomous-optimization-evidence/test-evidence.json",
+      "portable_from_repository": "planning/autonomous-optimization-evidence/test-evidence.json",
+      "source_sha256": "41e5741eb5bced0f40a45efdec6731ce5310133d41181353f062d6f3b405c32b",
+      "selector": "records[source=final-release-user-normalization-evidence.json]"
+    },
+    {
+      "runtime_source": ".runtime/autonomous-optimization/final-release-process-normalization-review.json",
+      "portable_from_planning": "autonomous-optimization-evidence/test-evidence.json",
+      "portable_from_repository": "planning/autonomous-optimization-evidence/test-evidence.json",
+      "source_sha256": "5f7ec688be3100886be0892ef631d8e7b9d92ba7d8790564f4f807c54082dbfc",
+      "selector": "records[source=final-release-process-normalization-review.json]"
+    },
+    {
+      "runtime_source": ".runtime/autonomous-optimization/final-release-process-normalization-review/after-results.json",
+      "portable_from_planning": "autonomous-optimization-evidence/test-evidence.json",
+      "portable_from_repository": "planning/autonomous-optimization-evidence/test-evidence.json",
+      "source_sha256": "e2b735e3710d86a1d1582db1d09a67dd0e5c9c6a7ead25aa31895e6fecb16a92",
+      "selector": "records[source=final-release-process-normalization-review/after-results.json]"
     }
   ],
   "report_references_retained_only_locally": [
@@ -2433,5 +2475,11 @@
       "source_exists": true
     }
   ],
-  "local_link_policy": "未收入的附加诊断可继续标为本机 runtime 链接；正文不能仅依赖该链接解释结论。"
+  "local_link_policy": "未收入的附加诊断可继续标为本机 runtime 链接；正文不能仅依赖该链接解释结论。",
+  "scoped_amendments": [
+    {
+      "at": "2026-10-04T02:13:53.298589+00:00",
+      "finding": "AO-044"
+    }
+  ]
 }
