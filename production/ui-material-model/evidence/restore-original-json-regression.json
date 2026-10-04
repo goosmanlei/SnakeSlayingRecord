@@ -1,0 +1,25 @@
+{
+  "format": "material-model-original-json-regression-v1",
+  "discovery": "implementation agent exact-byte roundtrip audit after real-data restore lock fix",
+  "before_system_head": "ff475e494a337f0e41038431d21c10382358fefa",
+  "fixture_original_bytes": 1441,
+  "fixture_restored_bytes_before_fix": 945,
+  "logical_json_equal_before_fix": true,
+  "original_json_bytes_equal_before_fix": false,
+  "cause": "restore decoded validated Schema6 payload then re-encoded canonical JSON, losing original JSON lexical layout",
+  "fix": "insert verified Schema6 physical payload unchanged; retain verified old Schema1–5 payload strings unchanged",
+  "regression": "test_material_model.MaterialModelTest.test_original_json_layout_and_checksum_survive_physical_encoding",
+  "focused_tests": {
+    "count": 18,
+    "seconds": 2.711,
+    "passed": true
+  },
+  "real_story_delta_changed": false,
+  "formal_writes": false,
+  "fixed_system_head": "b874b959af9c918a482e8488dc25cb0204ab5772",
+  "independent_schema5_original_bytes_and_tamper_checks": {
+    "suite_count": 22,
+    "seconds": 0.918,
+    "passed": true
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "format": "independent-final-candidate-evidence-reuse-v1",
+  "prior_full_check": "production/ui-material-model/evidence/independent-full-data-check.json",
+  "prior_full_check_sha256": "3a2f87aef19914e4afc0ab5f0a5e65bfdb98db9b66bdb593c11a93711e57d5be",
+  "prior_instance": ".runtime/ui-material-model/data-model-final",
+  "final_instance": ".runtime/ui-material-model/data-model-final-package",
+  "prior_system_head": "5b350c9ebe98adeb1f80bcd5ed790e780552ba2a",
+  "final_system_head": "b874b959af9c918a482e8488dc25cb0204ab5772",
+  "prior_migration_id": "daa7241e070a269e51dc398d44b9989880c6f0f037178fef49ea977455f738ec",
+  "final_migration_id": "6524a50b2af2747c9a1fd2a123edd5831e76ec026dc5e7ec487c1159efe0f03c",
+  "source_changes": [
+    "review_desk/bundle.py",
+    "review_desk/material_archives.py",
+    "review_desk/static/production.js",
+    "tests/production_navigation.test.cjs",
+    "tests/test_material_model.py",
+    "tests/test_ui_material_independent.py"
+  ],
+  "data_code_changed": true,
+  "migration_change_fields": [
+    "system_head",
+    "id"
+  ],
+  "objects_export_change_tables": [
+    "material_model_migrations"
+  ],
+  "unchanged_signatures": {
+    "objects_without_migration_log_sha256": "afa3e0ccf28e21832e8ea7f2035e099210ba899a2fee33b0a776f69627435344",
+    "material_content_sha256": "00800c0fe1119e8268342f2d814dafd0dad1dfb5d8ade90fe7732f38e8e10584",
+    "comments_sha256": "46766832bd4bec2e989a4299c2452267d1762b038f9c67af2180929e9445bd1b",
+    "migration_without_head_and_id_sha256": "eeb403d02626439574f72ad4fbf30022a7d395c5eaf00a3fb3d4e827e51b996f"
+  },
+  "final_input_hashes": {
+    ".runtime/ui-material-model/data-model-final-package/migration.json": "df73053c2b0aa2bcef1f4e48e2098ac74e1a98a58ce8cbcd7c2f9a5ba273e9b2",
+    ".runtime/ui-material-model/data-model-final-package/export/objects.json": "413c9b32f0a571c75addc77d421d1ffa979a461446c334311d2f3a1382c591da",
+    ".runtime/ui-material-model/data-model-final-package/export/material-content.json": "00800c0fe1119e8268342f2d814dafd0dad1dfb5d8ade90fe7732f38e8e10584",
+    ".runtime/ui-material-model/data-model-final-package/export/comments.json": "46766832bd4bec2e989a4299c2452267d1762b038f9c67af2180929e9445bd1b"
+  },
+  "archive_container_files_byte_equal": 1855,
+  "archive_catalog_equal": true,
+  "media_files_byte_equal": 511,
+  "ordinary_json_files_byte_equal": 50,
+  "final_db_physical_revisions_equal_export": 10160,
+  "final_db_content_equal_export": 78889,
+  "final_db_model_tables_equal_export": [
+    "material_aliases",
+    "material_definitions",
+    "material_definition_versions",
+    "material_archive_files",
+    "material_plan_versions",
+    "material_plan_members",
+    "material_candidate_members"
+  ],
+  "reuse_reason": "最终候选包含恢复同连接及原JSON字节保留修复，另有历史筛选变化。实际迁移除提交与其身份外完全相等，最终内容图、旧逻辑数据、归档容器和媒体原字节与此前独立全量检查输入一致，因此复用原解码及历史身份结果，不把旧执行标为新执行。恢复代码另由22项独立边界及实际全量恢复证据核验。",
+  "actual_full_restore_reuse": {
+    "evidence": "production/ui-material-model/restore-evidence.json",
+    "evidence_sha256": "961e7a59e3e716188df0072359469d45f4c9800e18bd86e49379649212eda7b0",
+    "execution_system_head": "ff475e494a337f0e41038431d21c10382358fefa",
+    "execution_migration_id": "e08255344127dfc5b0eaed3f5052a7b2400ac083ac32af187536bd69fdea69b5",
+    "source_instance": ".runtime/ui-material-model/data-model-delivery",
+    "final_data_equal_except_migration_log": true,
+    "changed_export_tables": [
+      "material_model_migrations"
+    ],
+    "graph_comments_sources_configurations_bytes_equal": true,
+    "archive_containers_equal": 1855,
+    "all_asset_files_bytes_equal": 1398,
+    "actual_elapsed_seconds": 397.746,
+    "tables_equal": {
+      "sources": 45,
+      "comment_events": 300,
+      "sqlite_sequence": 2,
+      "objects": 6236,
+      "revisions": 10160,
+      "dependencies": 72650,
+      "configurations": 2,
+      "configuration_events": 17,
+      "comments": 271,
+      "material_rounds": 1181,
+      "material_members": 5515,
+      "material_feedback": 7,
+      "material_comment_scopes": 7,
+      "material_plan_versions": 2547,
+      "material_plan_members": 6465,
+      "material_candidate_members": 435,
+      "material_plan_comments": 0,
+      "material_content": 78889,
+      "material_definitions": 2312,
+      "material_aliases": 30,
+      "material_definition_versions": 2547,
+      "material_archive_files": 1855,
+      "material_model_migrations": 1
+    },
+    "scope_note": "全量空实例恢复由数据代理在ff475实际完成；最终b874只补原JSON词法保存，真实数据均规范字节且输入内容相等。该修复另外以Schema6及独立Schema5非规范字节真恢复回归验证，不伪称在b874重跑过397.746秒全量恢复。"
+  }
+}

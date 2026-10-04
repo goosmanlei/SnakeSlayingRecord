@@ -1,57 +1,6 @@
 {
-  "id": "fg3-zhao-custody-image-01",
-  "recipe_id": "form-zhao-custody",
-  "entity": {
-    "object_id": "entity-zhao",
-    "revision_id": "10782097784d8939bdcf74e885a976266fa85637451ecd5d52a73f1dd45e2c49"
-  },
-  "state": {
-    "object_id": "form-zhao-custody",
-    "revision_id": "dd4a1a9882b7e9874222fecaa77bfa0f94f32f556c03fd8850fc400bc70e667b"
-  },
-  "requirement": {
-    "object_id": "need-form-zhao-custody-overall",
-    "revision_id": "3faf00a98e495d002282dc0be588449db8efaffe2e42bc3dec82bb90f84c4abd"
-  },
-  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
-  "master_approval": {
-    "object_id": "review-master-fg3-zhao-base-image-01",
-    "revision_id": "aefacc4f81b091264327adb0cdb79b6ab1ef7a71cfb2450dc73d781a0c9610ef"
-  },
-  "references": [
-    {
-      "reference": {
-        "object_id": "asset-fg3-zhao-base-image-01",
-        "revision_id": "5149c9140574ad02f6eb55b50acab8005cd5ebeb8189884eb7c774c6ea7a7bb8"
-      },
-      "component_id": "original",
-      "sha256": "83fde0a79733a287b62b901b8fbf7c106cbad79d5659b0bb63deb1832fa9da3f",
-      "crop": {
-        "x": 0,
-        "y": 0,
-        "width": 1,
-        "height": 1
-      },
-      "use": "参考图1：用户认可的对应人物完整基准，固定身份、身体比例、衣着轮廓、配色和线条。"
-    }
-  ],
-  "lineage": {
-    "i2i_depth": 1,
-    "references": [
-      {
-        "object_id": "asset-fg3-zhao-base-image-01",
-        "revision_id": "5149c9140574ad02f6eb55b50acab8005cd5ebeb8189884eb7c774c6ea7a7bb8"
-      }
-    ]
-  },
-  "tool": "image_gen.imagegen",
-  "model": "GPT Image",
-  "model_identity_note": "工具仅暴露GPT Image名称，未提供底层型号、质量、像素选择或计费用量。",
-  "request": {
-    "prompt": "只以实际提交的参考图1为人物身份和画风依据，生成同一人物的一个完整状态整体参考。3:4单人完整头到鞋，不拼图，不增加其他可辨身份。严格保留脸、发型、年龄、身体比例、衣物版型与配色、外轮廓线和已认可的轻手绘质感；不加重纸纹、噪点或锐化。\n实体：赵执事。\n准确完整状态：原褐衣与无钥匙腰侧，双臂自然被差役控制，肩稍垂，目光收敛；未写囚服、镣铐或新伤，不添加这些物件。\n与基准的具体差异和构图：腰右铁环与全部钥匙已拿走，褐衣仍是原衣，无镣铐、囚服或伤。赵执事肩略垂、目光收敛，两上臂分别被来自左右画外的中性无身份控制手握住；不画其他人的脸、身体和服装，不增加捆绳。完整头到鞋。\n背景用基准的浅暖灰，必要受力支撑仅为功能示意，不作为其他实体母版。瞬时动作不新增剧情或状态。使用工具直接返回的最高可用原生输出，不放大、不加标题或装饰。",
-    "transparent_background": false,
-    "referenced_image_paths": [
-      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/83fde0a79733a287b62b901b8fbf7c106cbad79d5659b0bb63deb1832fa9da3f.png"
-    ]
-  }
+  "bytes": 3120,
+  "format": "material-archive-reference-v1",
+  "recipe": "fa7d4ef47fffc42d27c18aa60dc87a9b9525208f35bdd2dcb5b93573ce9c8c41",
+  "sha256": "cb616b94e4fbd8cb0e6cf0236d59b2ce1a87f3cd9d64d17eb8db5a49d29d6aea"
 }
