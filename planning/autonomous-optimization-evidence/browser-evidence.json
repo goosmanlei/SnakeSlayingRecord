@@ -6361,6 +6361,642 @@
           "expected_bytes_matches": true
         }
       }
+    },
+    {
+      "source": "change-decision-contract/browser-initial-receipt.json",
+      "source_sha256": "e97c7eb2383b09fbd44114fa119ec12bf5d7118091936f3d3f2f24cc7b794a2f",
+      "level": "database_or_HTTP_readback",
+      "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
+      "result": {
+        "at": "2026-10-04T01:21:29.719701+00:00",
+        "counts": {
+          "objects": 23,
+          "revisions": 25,
+          "dependencies": 41,
+          "comments": 0,
+          "comment_events": 0,
+          "configurations": 0,
+          "configuration_events": 0,
+          "material_rounds": 5,
+          "material_feedback": 0
+        },
+        "judgment_heads": [
+          {
+            "object_id": "legacy-keep",
+            "revision_id": "5c93c121503acdb5e40ea3fb26126296e17cc4ca3d47758f8006365f553006ce",
+            "version": 1,
+            "action": "keep",
+            "target": {
+              "object_id": "ao026-need-ao026-prep-a-b",
+              "revision_id": "cb7566a191a3b4ee041a143933a10df3cdab46c8ae5d020f405b918cd25d78d0"
+            }
+          },
+          {
+            "object_id": "legacy-rework",
+            "revision_id": "3f1770b06709c9682b05e7be427bd38c79cba2b0b55ae2ad89ea5efd7b4075c8",
+            "version": 1,
+            "action": "rework",
+            "target": {
+              "object_id": "ao026-need-ao026-prep-a-b",
+              "revision_id": "cb7566a191a3b4ee041a143933a10df3cdab46c8ae5d020f405b918cd25d78d0"
+            }
+          },
+          {
+            "object_id": "seed-ao026-use",
+            "revision_id": "39517b39c363dfab8e897b896b7a46de91451f80cd85de50902ad3b73fe13b54",
+            "version": 1,
+            "action": "keep",
+            "target": {
+              "object_id": "ao026-use",
+              "revision_id": "60f1efbac0041e6f8c7bb4bbb1a18099459ce70c2a5d4f7c1b9f4f93ba246e4d"
+            }
+          },
+          {
+            "object_id": "seed-ao026-use-legacy",
+            "revision_id": "8c577bf36547dc1a4b554d96ccd40b87a6a2b7cea88e7dde7cb4dab46e9ca0eb",
+            "version": 1,
+            "action": "keep",
+            "target": {
+              "object_id": "ao026-use-legacy",
+              "revision_id": "df71ddb916e3baa0fbc328a58eb738637ed88163ea0b215a956bfb7541fd2d06"
+            }
+          }
+        ],
+        "adoptions": [
+          {
+            "object_id": "ao026-use",
+            "revision_id": "60f1efbac0041e6f8c7bb4bbb1a18099459ce70c2a5d4f7c1b9f4f93ba246e4d",
+            "version": 1,
+            "payload": {
+              "asset": {
+                "object_id": "voice",
+                "revision_id": "544ec883a926490af9ef5b25568ca21725585481fb9842005556ae0036e89a9b"
+              },
+              "blocks": [
+                {
+                  "id": "notes",
+                  "text": "ao026-use的说明"
+                }
+              ],
+              "component_id": "original",
+              "format": "production-relation-v1",
+              "range": {
+                "end_seconds": 0.9,
+                "start_seconds": 0.1
+              },
+              "reason": "人工选择",
+              "relation_type": "adoption",
+              "scope": {
+                "object_id": "ao026-prep-a-a",
+                "revision_id": "ed1a10bb13dbf8a2b90f77b6fa1414b262a8f3a4aa3548e54cedb4854ddfd0c7"
+              },
+              "slot": "dialogue",
+              "title": "ao026-use",
+              "usage": "post_audio"
+            }
+          },
+          {
+            "object_id": "ao026-use-legacy",
+            "revision_id": "df71ddb916e3baa0fbc328a58eb738637ed88163ea0b215a956bfb7541fd2d06",
+            "version": 1,
+            "payload": {
+              "asset": {
+                "object_id": "voice",
+                "revision_id": "544ec883a926490af9ef5b25568ca21725585481fb9842005556ae0036e89a9b"
+              },
+              "blocks": [
+                {
+                  "id": "notes",
+                  "text": "ao026-use-legacy的说明"
+                }
+              ],
+              "component_id": "original",
+              "format": "production-relation-v1",
+              "range": {
+                "end_seconds": 0.9,
+                "start_seconds": 0.1
+              },
+              "reason": "人工选择",
+              "relation_type": "adoption",
+              "scope": {
+                "object_id": "ao026-prep-a-b",
+                "revision_id": "b9f569f1a5f78e4bb2258516cfff2cac4d7f921b20c025d11299c4ffe1edb8cc"
+              },
+              "slot": "dialogue",
+              "title": "ao026-use-legacy",
+              "usage": "post_audio"
+            }
+          }
+        ],
+        "database_sha256": "892332c85b3f5cdfe3255d03d386ad199b6e2f21306644a68ee4c1e62d56bc57",
+        "matches_fixture_bytes": true,
+        "mode": "SQLite mode=ro; author HTTP verification used discarded copy"
+      }
+    },
+    {
+      "source": "change-decision-contract/chrome-first-create-conflict.json",
+      "source_sha256": "8dff2dc6cc0bc0787fcc0e87c3245dde0ffc6034b7df981ac9a367f7634f9a4a",
+      "level": "Chrome_receipt_with_readback_where_recorded",
+      "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
+      "result": {
+        "A": {
+          "url": "http://127.0.0.1:52844/?workspace=production.workspace&production_object=ao026-prep-a-a&production_revision=ed1a10bb13dbf8a2b90f77b6fa1414b262a8f3a4aa3548e54cedb4854ddfd0c7",
+          "dom": "- complementary \"工作区导航\":\n  - button \"返回网站首页\":\n    - generic: 阅\n    - generic: 故事审阅台\n    - generic: LOCAL PRODUCTION DESK\n  - navigation \"系统工作区\":\n    - button \"思路 制作思路 故事创作与生产制作方法\":\n      - generic: 思路\n      - generic: 制作思路\n      - generic: 故事创作与生产制作方法\n    - button \"故事 故事创作 故事采编、故事结构与分集剧本\":\n      - generic: 故事\n      - generic: 故事创作\n      - generic: 故事采编、故事结构与分集剧本\n    - button \"设定 制作设定 主体、空间与实体关系\":\n      - generic: 设定\n      - generic: 制作设定\n      - generic: 主体、空间与实体关系\n    - button \"素材 素材管理 需求、制作与素材审阅\":\n      - generic: 素材\n      - generic: 素材管理\n      - generic: 需求、制作与素材审阅\n    - button \"制作 全剧制作 镜头、场景与分集成片\":\n      - generic: 制作\n      - generic: 全剧制作\n      - generic: 镜头、场景与分集成片\n    - button \"管理 系统管理 故事项目与系统配置\":\n      - generic: 管理\n      - generic: 系统管理\n      - generic: 故事项目与系统配置\n  - generic: AO026 变更复核 · 隔离技术验收\n  - generic: 本机独立实例 · 业务数据可公开同步\n- main:\n  - generic: 制\n  - generic: 当前视图\n  - generic: 全剧制作\n  - heading \"全剧制作\" [level=1]\n  - paragraph: 按集场查看镜头与输入，检查素材缺项及准确采用版本。\n  - generic \"剧本依据\":\n    - paragraph: 剧本依据：尚未登记\n  - searchbox \"搜索制作记录\"\n  - combobox \"记录类型\":\n    - option \"全部类型\"\n    - option \"集场检查\" [selected]\n    - option \"镜头设计\"\n    - option \"素材需求\"\n    - option \"动态分镜组合\"\n    - option \"输出与工程\"\n  - combobox \"制作分集\":\n    - option \"全剧各集\"\n    - option \"AO026 A 集 · 技术验收\" [selected]\n    - option \"AO026 B 集 · 技术验收\"\n  - combobox \"制作场次\":\n    - option \"全部场次\"\n    - option \"scene-a\" [selected]\n    - option \"scene-b\"\n  - button \"检查本场素材缺项\"\n  - navigation \"制作记录\":\n    - heading \"集场检查 · 1\" [level=3]\n    - button \"A 集 a 场 · 技术准备 scene-a 修订 1\":\n      - text: A 集 a 场 · 技术准备\n      - generic: scene-a 修订 1\n  - article:\n    - generic: 集场检查\n    - heading \"A 集 a 场 · 技术准备\" [level=2]\n    - combobox \"选择精确版本\":\n      - option \"版本 1 · 当前\" [selected]\n    - button \"整体意见\"\n    - button \"查看评论\"\n    - button \"查看所选修订的影响\"\n    - button \"查看此块全部评论\":\n    - paragraph: ao026-prep-a-a的说明\n    - heading \"来源与依赖\" [level=3]\n    - button \"剧情依据：AO026 A 集 · 技术验收\"\n    - heading \"全场出场检查 · 0 项\" [level=3]\n    - heading \"出场与当前使用\" [level=3]\n    - button \"素材需求 · ao026-need-ao026-prep-a-a\"\n    - button \"明确采用 · ao026-use\"\n    - generic \"完整记录与历史引用\"\n    - region \"素材缺项检查\":\n      - heading \"必要输入：1 项，缺项或待复核 0 项\" [level=3]\n      - paragraph: 必要输入齐备；作品是否接受单独记录。\n      - paragraph: 完整状态：检查 0 次实体使用，引用 0 个准确状态版本。\n      - button \"下载本场输入清单\"\n      - strong: ao026-need-ao026-prep-a-a\n      - paragraph: 后期对白 · 后期声音 · 必需\n      - button \"已采用：voice · 版本 1\"\n      - generic \"准确版本变更 · 2 项\"\n      - button \"显式换版\"\n  - generic: 阅\n  - generic: 故事审阅台\n  - generic: 故事创作与制作审阅\n  - paragraph: 故事资料、创作配置与审阅意见以当前实例为准；本机运行凭据不会公开同步。\n- button \"查看评论 · 0\"\n- status: 「ao026-upstream」的复核结论已保存；实际采用没有自动换版\n- document"
+        },
+        "B": {
+          "url": "http://127.0.0.1:52844/?workspace=production.workspace&production_object=ao026-prep-a-a&production_revision=ed1a10bb13dbf8a2b90f77b6fa1414b262a8f3a4aa3548e54cedb4854ddfd0c7",
+          "dom": "- complementary \"工作区导航\":\n  - button \"返回网站首页\":\n    - generic: 阅\n    - generic: 故事审阅台\n    - generic: LOCAL PRODUCTION DESK\n  - navigation \"系统工作区\":\n    - button \"思路 制作思路 故事创作与生产制作方法\":\n      - generic: 思路\n      - generic: 制作思路\n      - generic: 故事创作与生产制作方法\n    - button \"故事 故事创作 故事采编、故事结构与分集剧本\":\n      - generic: 故事\n      - generic: 故事创作\n      - generic: 故事采编、故事结构与分集剧本\n    - button \"设定 制作设定 主体、空间与实体关系\":\n      - generic: 设定\n      - generic: 制作设定\n      - generic: 主体、空间与实体关系\n    - button \"素材 素材管理 需求、制作与素材审阅\":\n      - generic: 素材\n      - generic: 素材管理\n      - generic: 需求、制作与素材审阅\n    - button \"制作 全剧制作 镜头、场景与分集成片\":\n      - generic: 制作\n      - generic: 全剧制作\n      - generic: 镜头、场景与分集成片\n    - button \"管理 系统管理 故事项目与系统配置\":\n      - generic: 管理\n      - generic: 系统管理\n      - generic: 故事项目与系统配置\n  - generic: AO026 变更复核 · 隔离技术验收\n  - generic: 本机独立实例 · 业务数据可公开同步\n- main:\n  - generic: 制\n  - generic: 当前视图\n  - generic: 全剧制作\n  - heading \"全剧制作\" [level=1]\n  - paragraph: 按集场查看镜头与输入，检查素材缺项及准确采用版本。\n  - generic \"剧本依据\":\n    - paragraph: 剧本依据：尚未登记\n  - searchbox \"搜索制作记录\"\n  - combobox \"记录类型\":\n    - option \"全部类型\"\n    - option \"集场检查\" [selected]\n    - option \"镜头设计\"\n    - option \"素材需求\"\n    - option \"动态分镜组合\"\n    - option \"输出与工程\"\n  - combobox \"制作分集\":\n    - option \"全剧各集\"\n    - option \"AO026 A 集 · 技术验收\" [selected]\n    - option \"AO026 B 集 · 技术验收\"\n  - combobox \"制作场次\":\n    - option \"全部场次\"\n    - option \"scene-a\" [selected]\n    - option \"scene-b\"\n  - button \"检查本场素材缺项\"\n  - navigation \"制作记录\":\n    - heading \"集场检查 · 1\" [level=3]\n    - button \"A 集 a 场 · 技术准备 scene-a 修订 1\":\n      - text: A 集 a 场 · 技术准备\n      - generic: scene-a 修订 1\n  - article:\n    - generic: 集场检查\n    - heading \"A 集 a 场 · 技术准备\" [level=2]\n    - combobox \"选择精确版本\":\n      - option \"版本 1 · 当前\" [selected]\n    - button \"整体意见\"\n    - button \"查看评论\"\n    - button \"查看所选修订的影响\"\n    - button \"查看此块全部评论\":\n    - paragraph: ao026-prep-a-a的说明\n    - heading \"来源与依赖\" [level=3]\n    - button \"剧情依据：AO026 A 集 · 技术验收\"\n    - heading \"全场出场检查 · 0 项\" [level=3]\n    - heading \"出场与当前使用\" [level=3]\n    - button \"素材需求 · ao026-need-ao026-prep-a-a\"\n    - button \"明确采用 · ao026-use\"\n    - generic \"完整记录与历史引用\"\n    - region \"素材缺项检查\":\n      - heading \"必要输入：1 项，缺项或待复核 1 项\" [level=3]\n      - paragraph: 必要槽位尚未全部就绪。\n      - paragraph: 完整状态：检查 0 次实体使用，引用 0 个准确状态版本。\n      - button \"下载本场输入清单\" [disabled]\n      - strong: ao026-need-ao026-prep-a-a\n      - paragraph: 后期对白 · 后期声音 · 必需\n      - button \"已采用：voice · 版本 1\"\n      - generic: 需求待复核\n      - generic \"准确版本变更 · 2 项\"\n      - paragraph: ao026-upstream · 采用依据\n      - button \"当时采用的上游版本\"\n      - button \"上游当前版本\"\n      - paragraph: 已复核：保留原引用\n      - button \"查看处理历史\"\n      - button \"修改变更处理\"\n      - paragraph: ao026-upstream · 需求依据\n      - button \"当时采用的上游版本\"\n      - button \"上游当前版本\"\n      - button \"记录变更处理\"\n      - combobox \"变更处理\":\n        - option \"保留原引用，无需返工\"\n        - option \"需要返工，保持待处理\" [selected]\n        - option \"需要替换，另行选择新版本\"\n      - textbox \"复核者\": 根协调技术验收\n      - textbox \"复核依据\":\n        - /placeholder: 说明这次变化对当前需求或采用的实际影响\n        - text: AO026 页面 B：旧窗口独立文字，应保留而不覆盖 A。\n      - status: 复核结论已有不同内容或版本变化，本次保存未完成且未覆盖现有判断；请保留输入并重新检查\n      - button \"保存变更处理\"\n      - button \"取消\"\n      - button \"显式换版\"\n  - generic: 阅\n  - generic: 故事审阅台\n  - generic: 故事创作与制作审阅\n  - paragraph: 故事资料、创作配置与审阅意见以当前实例为准；本机运行凭据不会公开同步。\n- button \"查看评论 · 0\"\n- status: 复核结论已有不同内容或版本变化，本次保存未完成且未覆盖现有判断；请保留输入并重新检查\n- document"
+        }
+      }
+    },
+    {
+      "source": "change-decision-contract/chrome-revision-conflict.json",
+      "source_sha256": "68a7bb79c54f1f5767231f664588a9d5ff03ec2caf3504afe9cdb576a03ee4b4",
+      "level": "Chrome_receipt_with_readback_where_recorded",
+      "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
+      "result": {
+        "A": {
+          "url": "http://127.0.0.1:52844/?workspace=production.workspace&production_object=ao026-prep-a-a&production_revision=ed1a10bb13dbf8a2b90f77b6fa1414b262a8f3a4aa3548e54cedb4854ddfd0c7",
+          "dom": "- complementary \"工作区导航\":\n  - button \"返回网站首页\":\n    - generic: 阅\n    - generic: 故事审阅台\n    - generic: LOCAL PRODUCTION DESK\n  - navigation \"系统工作区\":\n    - button \"思路 制作思路 故事创作与生产制作方法\":\n      - generic: 思路\n      - generic: 制作思路\n      - generic: 故事创作与生产制作方法\n    - button \"故事 故事创作 故事采编、故事结构与分集剧本\":\n      - generic: 故事\n      - generic: 故事创作\n      - generic: 故事采编、故事结构与分集剧本\n    - button \"设定 制作设定 主体、空间与实体关系\":\n      - generic: 设定\n      - generic: 制作设定\n      - generic: 主体、空间与实体关系\n    - button \"素材 素材管理 需求、制作与素材审阅\":\n      - generic: 素材\n      - generic: 素材管理\n      - generic: 需求、制作与素材审阅\n    - button \"制作 全剧制作 镜头、场景与分集成片\":\n      - generic: 制作\n      - generic: 全剧制作\n      - generic: 镜头、场景与分集成片\n    - button \"管理 系统管理 故事项目与系统配置\":\n      - generic: 管理\n      - generic: 系统管理\n      - generic: 故事项目与系统配置\n  - generic: AO026 变更复核 · 隔离技术验收\n  - generic: 本机独立实例 · 业务数据可公开同步\n- main:\n  - generic: 制\n  - generic: 当前视图\n  - generic: 全剧制作\n  - heading \"全剧制作\" [level=1]\n  - paragraph: 按集场查看镜头与输入，检查素材缺项及准确采用版本。\n  - generic \"剧本依据\":\n    - paragraph: 剧本依据：尚未登记\n  - searchbox \"搜索制作记录\"\n  - combobox \"记录类型\":\n    - option \"全部类型\"\n    - option \"集场检查\" [selected]\n    - option \"镜头设计\"\n    - option \"素材需求\"\n    - option \"动态分镜组合\"\n    - option \"输出与工程\"\n  - combobox \"制作分集\":\n    - option \"全剧各集\"\n    - option \"AO026 A 集 · 技术验收\" [selected]\n    - option \"AO026 B 集 · 技术验收\"\n  - combobox \"制作场次\":\n    - option \"全部场次\"\n    - option \"scene-a\" [selected]\n    - option \"scene-b\"\n  - button \"检查本场素材缺项\"\n  - navigation \"制作记录\":\n    - heading \"集场检查 · 1\" [level=3]\n    - button \"A 集 a 场 · 技术准备 scene-a 修订 1\":\n      - text: A 集 a 场 · 技术准备\n      - generic: scene-a 修订 1\n  - article:\n    - generic: 集场检查\n    - heading \"A 集 a 场 · 技术准备\" [level=2]\n    - combobox \"选择精确版本\":\n      - option \"版本 1 · 当前\" [selected]\n    - button \"整体意见\"\n    - button \"查看评论\"\n    - button \"查看所选修订的影响\"\n    - button \"查看此块全部评论\":\n    - paragraph: ao026-prep-a-a的说明\n    - heading \"来源与依赖\" [level=3]\n    - button \"剧情依据：AO026 A 集 · 技术验收\"\n    - heading \"全场出场检查 · 0 项\" [level=3]\n    - heading \"出场与当前使用\" [level=3]\n    - button \"素材需求 · ao026-need-ao026-prep-a-a\"\n    - button \"明确采用 · ao026-use\"\n    - generic \"完整记录与历史引用\"\n    - region \"素材缺项检查\":\n      - heading \"必要输入：1 项，缺项或待复核 1 项\" [level=3]\n      - paragraph: 必要槽位尚未全部就绪。\n      - paragraph: 完整状态：检查 0 次实体使用，引用 0 个准确状态版本。\n      - button \"下载本场输入清单\" [disabled]\n      - strong: ao026-need-ao026-prep-a-a\n      - paragraph: 后期对白 · 后期声音 · 必需\n      - button \"已采用：voice · 版本 1\"\n      - generic: 需求待复核\n      - generic \"准确版本变更 · 2 项\"\n      - button \"显式换版\"\n  - generic: 阅\n  - generic: 故事审阅台\n  - generic: 故事创作与制作审阅\n  - paragraph: 故事资料、创作配置与审阅意见以当前实例为准；本机运行凭据不会公开同步。\n- button \"查看评论 · 0\"\n- status: 「ao026-upstream」的复核结论已保存；实际采用没有自动换版\n- document"
+        },
+        "B": {
+          "url": "http://127.0.0.1:52844/?workspace=production.workspace&production_object=ao026-prep-a-a&production_revision=ed1a10bb13dbf8a2b90f77b6fa1414b262a8f3a4aa3548e54cedb4854ddfd0c7",
+          "dom": "- complementary \"工作区导航\":\n  - button \"返回网站首页\":\n    - generic: 阅\n    - generic: 故事审阅台\n    - generic: LOCAL PRODUCTION DESK\n  - navigation \"系统工作区\":\n    - button \"思路 制作思路 故事创作与生产制作方法\":\n      - generic: 思路\n      - generic: 制作思路\n      - generic: 故事创作与生产制作方法\n    - button \"故事 故事创作 故事采编、故事结构与分集剧本\":\n      - generic: 故事\n      - generic: 故事创作\n      - generic: 故事采编、故事结构与分集剧本\n    - button \"设定 制作设定 主体、空间与实体关系\":\n      - generic: 设定\n      - generic: 制作设定\n      - generic: 主体、空间与实体关系\n    - button \"素材 素材管理 需求、制作与素材审阅\":\n      - generic: 素材\n      - generic: 素材管理\n      - generic: 需求、制作与素材审阅\n    - button \"制作 全剧制作 镜头、场景与分集成片\":\n      - generic: 制作\n      - generic: 全剧制作\n      - generic: 镜头、场景与分集成片\n    - button \"管理 系统管理 故事项目与系统配置\":\n      - generic: 管理\n      - generic: 系统管理\n      - generic: 故事项目与系统配置\n  - generic: AO026 变更复核 · 隔离技术验收\n  - generic: 本机独立实例 · 业务数据可公开同步\n- main:\n  - generic: 制\n  - generic: 当前视图\n  - generic: 全剧制作\n  - heading \"全剧制作\" [level=1]\n  - paragraph: 按集场查看镜头与输入，检查素材缺项及准确采用版本。\n  - generic \"剧本依据\":\n    - paragraph: 剧本依据：尚未登记\n  - searchbox \"搜索制作记录\"\n  - combobox \"记录类型\":\n    - option \"全部类型\"\n    - option \"集场检查\" [selected]\n    - option \"镜头设计\"\n    - option \"素材需求\"\n    - option \"动态分镜组合\"\n    - option \"输出与工程\"\n  - combobox \"制作分集\":\n    - option \"全剧各集\"\n    - option \"AO026 A 集 · 技术验收\" [selected]\n    - option \"AO026 B 集 · 技术验收\"\n  - combobox \"制作场次\":\n    - option \"全部场次\"\n    - option \"scene-a\" [selected]\n    - option \"scene-b\"\n  - button \"检查本场素材缺项\"\n  - navigation \"制作记录\":\n    - heading \"集场检查 · 1\" [level=3]\n    - button \"A 集 a 场 · 技术准备 scene-a 修订 1\":\n      - text: A 集 a 场 · 技术准备\n      - generic: scene-a 修订 1\n  - article:\n    - generic: 集场检查\n    - heading \"A 集 a 场 · 技术准备\" [level=2]\n    - combobox \"选择精确版本\":\n      - option \"版本 1 · 当前\" [selected]\n    - button \"整体意见\"\n    - button \"查看评论\"\n    - button \"查看所选修订的影响\"\n    - button \"查看此块全部评论\":\n    - paragraph: ao026-prep-a-a的说明\n    - heading \"来源与依赖\" [level=3]\n    - button \"剧情依据：AO026 A 集 · 技术验收\"\n    - heading \"全场出场检查 · 0 项\" [level=3]\n    - heading \"出场与当前使用\" [level=3]\n    - button \"素材需求 · ao026-need-ao026-prep-a-a\"\n    - button \"明确采用 · ao026-use\"\n    - generic \"完整记录与历史引用\"\n    - region \"素材缺项检查\":\n      - heading \"必要输入：1 项，缺项或待复核 0 项\" [level=3]\n      - paragraph: 必要输入齐备；作品是否接受单独记录。\n      - paragraph: 完整状态：检查 0 次实体使用，引用 0 个准确状态版本。\n      - button \"下载本场输入清单\"\n      - strong: ao026-need-ao026-prep-a-a\n      - paragraph: 后期对白 · 后期声音 · 必需\n      - button \"已采用：voice · 版本 1\"\n      - generic \"准确版本变更 · 2 项\"\n      - paragraph: ao026-upstream · 采用依据\n      - button \"当时采用的上游版本\"\n      - button \"上游当前版本\"\n      - paragraph: 已复核：保留原引用\n      - button \"查看处理历史\"\n      - button \"修改变更处理\"\n      - paragraph: ao026-upstream · 需求依据\n      - button \"当时采用的上游版本\"\n      - button \"上游当前版本\"\n      - paragraph: 已复核：保留原引用\n      - button \"查看处理历史\"\n      - button \"修改变更处理\"\n      - combobox \"变更处理\":\n        - option \"保留原引用，无需返工\" [selected]\n        - option \"需要返工，保持待处理\"\n        - option \"需要替换，另行选择新版本\"\n      - textbox \"复核者\": 根协调技术验收\n      - textbox \"复核依据\":\n        - /placeholder: 说明这次变化对当前需求或采用的实际影响\n        - text: AO026 页面 B 旧版修订：保留此独立文字，不覆盖 A 的新结论。\n      - status: 复核结论已有不同内容或版本变化，本次保存未完成且未覆盖现有判断；请保留输入并重新检查\n      - button \"保存变更处理\"\n      - button \"取消\"\n      - button \"显式换版\"\n  - generic: 阅\n  - generic: 故事审阅台\n  - generic: 故事创作与制作审阅\n  - paragraph: 故事资料、创作配置与审阅意见以当前实例为准；本机运行凭据不会公开同步。\n- button \"查看评论 · 0\"\n- status: 复核结论已有不同内容或版本变化，本次保存未完成且未覆盖现有判断；请保留输入并重新检查\n- document"
+        }
+      }
+    },
+    {
+      "source": "change-decision-contract/chrome-update-response-unknown.json",
+      "source_sha256": "0316f24db5d563d8d33e0575a6ceee33775ef401a6583efef9f13300fe6cadd3",
+      "level": "Chrome_receipt_with_readback_where_recorded",
+      "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
+      "result": {
+        "url": "http://127.0.0.1:52844/?workspace=production.workspace&production_object=ao026-prep-a-a&production_revision=ed1a10bb13dbf8a2b90f77b6fa1414b262a8f3a4aa3548e54cedb4854ddfd0c7",
+        "dom": "- complementary \"工作区导航\":\n  - button \"返回网站首页\":\n    - generic: 阅\n    - generic: 故事审阅台\n    - generic: LOCAL PRODUCTION DESK\n  - navigation \"系统工作区\":\n    - button \"思路 制作思路 故事创作与生产制作方法\":\n      - generic: 思路\n      - generic: 制作思路\n      - generic: 故事创作与生产制作方法\n    - button \"故事 故事创作 故事采编、故事结构与分集剧本\":\n      - generic: 故事\n      - generic: 故事创作\n      - generic: 故事采编、故事结构与分集剧本\n    - button \"设定 制作设定 主体、空间与实体关系\":\n      - generic: 设定\n      - generic: 制作设定\n      - generic: 主体、空间与实体关系\n    - button \"素材 素材管理 需求、制作与素材审阅\":\n      - generic: 素材\n      - generic: 素材管理\n      - generic: 需求、制作与素材审阅\n    - button \"制作 全剧制作 镜头、场景与分集成片\":\n      - generic: 制作\n      - generic: 全剧制作\n      - generic: 镜头、场景与分集成片\n    - button \"管理 系统管理 故事项目与系统配置\":\n      - generic: 管理\n      - generic: 系统管理\n      - generic: 故事项目与系统配置\n  - generic: AO026 变更复核 · 隔离技术验收\n  - generic: 本机独立实例 · 业务数据可公开同步\n- main:\n  - generic: 制\n  - generic: 当前视图\n  - generic: 全剧制作\n  - heading \"全剧制作\" [level=1]\n  - paragraph: 按集场查看镜头与输入，检查素材缺项及准确采用版本。\n  - generic \"剧本依据\":\n    - paragraph: 剧本依据：尚未登记\n  - searchbox \"搜索制作记录\"\n  - combobox \"记录类型\":\n    - option \"全部类型\"\n    - option \"集场检查\" [selected]\n    - option \"镜头设计\"\n    - option \"素材需求\"\n    - option \"动态分镜组合\"\n    - option \"输出与工程\"\n  - combobox \"制作分集\":\n    - option \"全剧各集\"\n    - option \"AO026 A 集 · 技术验收\" [selected]\n    - option \"AO026 B 集 · 技术验收\"\n  - combobox \"制作场次\":\n    - option \"全部场次\"\n    - option \"scene-a\" [selected]\n    - option \"scene-b\"\n  - button \"检查本场素材缺项\"\n  - navigation \"制作记录\":\n    - heading \"集场检查 · 1\" [level=3]\n    - button \"A 集 a 场 · 技术准备 scene-a 修订 1\":\n      - text: A 集 a 场 · 技术准备\n      - generic: scene-a 修订 1\n  - article:\n    - generic: 集场检查\n    - heading \"A 集 a 场 · 技术准备\" [level=2]\n    - combobox \"选择精确版本\":\n      - option \"版本 1 · 当前\" [selected]\n    - button \"整体意见\"\n    - button \"查看评论\"\n    - button \"查看所选修订的影响\"\n    - button \"查看此块全部评论\":\n    - paragraph: ao026-prep-a-a的说明\n    - heading \"来源与依赖\" [level=3]\n    - button \"剧情依据：AO026 A 集 · 技术验收\"\n    - heading \"全场出场检查 · 0 项\" [level=3]\n    - heading \"出场与当前使用\" [level=3]\n    - button \"素材需求 · ao026-need-ao026-prep-a-a\"\n    - button \"明确采用 · ao026-use\"\n    - generic \"完整记录与历史引用\"\n    - region \"素材缺项检查\":\n      - heading \"必要输入：1 项，缺项或待复核 1 项\" [level=3]\n      - paragraph: 必要槽位尚未全部就绪。\n      - paragraph: 完整状态：检查 0 次实体使用，引用 0 个准确状态版本。\n      - button \"下载本场输入清单\" [disabled]\n      - strong: ao026-need-ao026-prep-a-a\n      - paragraph: 后期对白 · 后期声音 · 必需\n      - button \"已采用：voice · 版本 1\"\n      - generic: 需求待复核\n      - generic \"准确版本变更 · 2 项\"\n      - paragraph: ao026-upstream · 采用依据\n      - button \"当时采用的上游版本\"\n      - button \"上游当前版本\"\n      - paragraph: 已复核：保留原引用\n      - button \"查看处理历史\"\n      - button \"修改变更处理\"\n      - paragraph: ao026-upstream · 需求依据\n      - button \"当时采用的上游版本\"\n      - button \"上游当前版本\"\n      - paragraph: 已复核：需要返工\n      - button \"查看处理历史\"\n      - button \"修改变更处理\"\n      - combobox \"变更处理\":\n        - option \"保留原引用，无需返工\" [selected]\n        - option \"需要返工，保持待处理\"\n        - option \"需要替换，另行选择新版本\"\n      - textbox \"复核者\": 根协调技术验收\n      - textbox \"复核依据\":\n        - /placeholder: 说明这次变化对当前需求或采用的实际影响\n        - text: AO026 第三修订：恢复保留原引用，验证已提交断响应后的准确回读。\n      - status: 复核结果待确认，请原样重试核对；尚未再次发送\n      - button \"保存变更处理\"\n      - button \"取消\"\n      - button \"显式换版\"\n  - generic: 阅\n  - generic: 故事审阅台\n  - generic: 故事创作与制作审阅\n  - paragraph: 故事资料、创作配置与审阅意见以当前实例为准；本机运行凭据不会公开同步。\n- button \"查看评论 · 0\"\n- status: 复核结果待确认，请原样重试核对；尚未再次发送\n- document"
+      }
+    },
+    {
+      "source": "change-decision-contract/chrome-update-response-recovered.json",
+      "source_sha256": "f1f1cce0a87fffea80af97544348763539a262f1327773a99b859326e4fb0670",
+      "level": "Chrome_receipt_with_readback_where_recorded",
+      "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
+      "result": {
+        "url": "http://127.0.0.1:52844/?workspace=production.workspace&production_object=ao026-prep-a-a&production_revision=ed1a10bb13dbf8a2b90f77b6fa1414b262a8f3a4aa3548e54cedb4854ddfd0c7",
+        "dom": "- complementary \"工作区导航\":\n  - button \"返回网站首页\":\n    - generic: 阅\n    - generic: 故事审阅台\n    - generic: LOCAL PRODUCTION DESK\n  - navigation \"系统工作区\":\n    - button \"思路 制作思路 故事创作与生产制作方法\":\n      - generic: 思路\n      - generic: 制作思路\n      - generic: 故事创作与生产制作方法\n    - button \"故事 故事创作 故事采编、故事结构与分集剧本\":\n      - generic: 故事\n      - generic: 故事创作\n      - generic: 故事采编、故事结构与分集剧本\n    - button \"设定 制作设定 主体、空间与实体关系\":\n      - generic: 设定\n      - generic: 制作设定\n      - generic: 主体、空间与实体关系\n    - button \"素材 素材管理 需求、制作与素材审阅\":\n      - generic: 素材\n      - generic: 素材管理\n      - generic: 需求、制作与素材审阅\n    - button \"制作 全剧制作 镜头、场景与分集成片\":\n      - generic: 制作\n      - generic: 全剧制作\n      - generic: 镜头、场景与分集成片\n    - button \"管理 系统管理 故事项目与系统配置\":\n      - generic: 管理\n      - generic: 系统管理\n      - generic: 故事项目与系统配置\n  - generic: AO026 变更复核 · 隔离技术验收\n  - generic: 本机独立实例 · 业务数据可公开同步\n- main:\n  - generic: 制\n  - generic: 当前视图\n  - generic: 全剧制作\n  - heading \"全剧制作\" [level=1]\n  - paragraph: 按集场查看镜头与输入，检查素材缺项及准确采用版本。\n  - generic \"剧本依据\":\n    - paragraph: 剧本依据：尚未登记\n  - searchbox \"搜索制作记录\"\n  - combobox \"记录类型\":\n    - option \"全部类型\"\n    - option \"集场检查\" [selected]\n    - option \"镜头设计\"\n    - option \"素材需求\"\n    - option \"动态分镜组合\"\n    - option \"输出与工程\"\n  - combobox \"制作分集\":\n    - option \"全剧各集\"\n    - option \"AO026 A 集 · 技术验收\" [selected]\n    - option \"AO026 B 集 · 技术验收\"\n  - combobox \"制作场次\":\n    - option \"全部场次\"\n    - option \"scene-a\" [selected]\n    - option \"scene-b\"\n  - button \"检查本场素材缺项\"\n  - navigation \"制作记录\":\n    - heading \"集场检查 · 1\" [level=3]\n    - button \"A 集 a 场 · 技术准备 scene-a 修订 1\":\n      - text: A 集 a 场 · 技术准备\n      - generic: scene-a 修订 1\n  - article:\n    - generic: 集场检查\n    - heading \"A 集 a 场 · 技术准备\" [level=2]\n    - combobox \"选择精确版本\":\n      - option \"版本 1 · 当前\" [selected]\n    - button \"整体意见\"\n    - button \"查看评论\"\n    - button \"查看所选修订的影响\"\n    - button \"查看此块全部评论\":\n    - paragraph: ao026-prep-a-a的说明\n    - heading \"来源与依赖\" [level=3]\n    - button \"剧情依据：AO026 A 集 · 技术验收\"\n    - heading \"全场出场检查 · 0 项\" [level=3]\n    - heading \"出场与当前使用\" [level=3]\n    - button \"素材需求 · ao026-need-ao026-prep-a-a\"\n    - button \"明确采用 · ao026-use\"\n    - generic \"完整记录与历史引用\"\n    - region \"素材缺项检查\":\n      - heading \"必要输入：1 项，缺项或待复核 0 项\" [level=3]\n      - paragraph: 必要输入齐备；作品是否接受单独记录。\n      - paragraph: 完整状态：检查 0 次实体使用，引用 0 个准确状态版本。\n      - button \"下载本场输入清单\"\n      - strong: ao026-need-ao026-prep-a-a\n      - paragraph: 后期对白 · 后期声音 · 必需\n      - button \"已采用：voice · 版本 1\"\n      - generic \"准确版本变更 · 2 项\"\n      - button \"显式换版\"\n  - generic: 阅\n  - generic: 故事审阅台\n  - generic: 故事创作与制作审阅\n  - paragraph: 故事资料、创作配置与审阅意见以当前实例为准；本机运行凭据不会公开同步。\n- button \"查看评论 · 0\"\n- status: 「ao026-upstream」的复核结论已保存；实际采用没有自动换版\n- document"
+      }
+    },
+    {
+      "source": "change-decision-contract/chrome-stale-download-rejected.json",
+      "source_sha256": "400f7194cec98ba294013c0eaa6f2e5c13546492de3b4314d8cce7eb0051d366",
+      "level": "Chrome_receipt_with_readback_where_recorded",
+      "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
+      "result": {
+        "url": "http://127.0.0.1:52844/?workspace=production.workspace&production_object=ao026-prep-a-a&production_revision=ed1a10bb13dbf8a2b90f77b6fa1414b262a8f3a4aa3548e54cedb4854ddfd0c7",
+        "dom": "- complementary \"工作区导航\":\n  - button \"返回网站首页\":\n    - generic: 阅\n    - generic: 故事审阅台\n    - generic: LOCAL PRODUCTION DESK\n  - navigation \"系统工作区\":\n    - button \"思路 制作思路 故事创作与生产制作方法\":\n      - generic: 思路\n      - generic: 制作思路\n      - generic: 故事创作与生产制作方法\n    - button \"故事 故事创作 故事采编、故事结构与分集剧本\":\n      - generic: 故事\n      - generic: 故事创作\n      - generic: 故事采编、故事结构与分集剧本\n    - button \"设定 制作设定 主体、空间与实体关系\":\n      - generic: 设定\n      - generic: 制作设定\n      - generic: 主体、空间与实体关系\n    - button \"素材 素材管理 需求、制作与素材审阅\":\n      - generic: 素材\n      - generic: 素材管理\n      - generic: 需求、制作与素材审阅\n    - button \"制作 全剧制作 镜头、场景与分集成片\":\n      - generic: 制作\n      - generic: 全剧制作\n      - generic: 镜头、场景与分集成片\n    - button \"管理 系统管理 故事项目与系统配置\":\n      - generic: 管理\n      - generic: 系统管理\n      - generic: 故事项目与系统配置\n  - generic: AO026 变更复核 · 隔离技术验收\n  - generic: 本机独立实例 · 业务数据可公开同步\n- main:\n  - generic: 制\n  - generic: 当前视图\n  - generic: 全剧制作\n  - heading \"全剧制作\" [level=1]\n  - paragraph: 按集场查看镜头与输入，检查素材缺项及准确采用版本。\n  - generic \"剧本依据\":\n    - paragraph: 剧本依据：尚未登记\n  - searchbox \"搜索制作记录\"\n  - combobox \"记录类型\":\n    - option \"全部类型\"\n    - option \"集场检查\" [selected]\n    - option \"镜头设计\"\n    - option \"素材需求\"\n    - option \"动态分镜组合\"\n    - option \"输出与工程\"\n  - combobox \"制作分集\":\n    - option \"全剧各集\"\n    - option \"AO026 A 集 · 技术验收\" [selected]\n    - option \"AO026 B 集 · 技术验收\"\n  - combobox \"制作场次\":\n    - option \"全部场次\"\n    - option \"scene-a\" [selected]\n    - option \"scene-b\"\n  - button \"检查本场素材缺项\"\n  - navigation \"制作记录\":\n    - heading \"集场检查 · 1\" [level=3]\n    - button \"A 集 a 场 · 技术准备 scene-a 修订 1\":\n      - text: A 集 a 场 · 技术准备\n      - generic: scene-a 修订 1\n  - article:\n    - generic: 集场检查\n    - heading \"A 集 a 场 · 技术准备\" [level=2]\n    - combobox \"选择精确版本\":\n      - option \"版本 1 · 当前\" [selected]\n    - button \"整体意见\"\n    - button \"查看评论\"\n    - button \"查看所选修订的影响\"\n    - button \"查看此块全部评论\":\n    - paragraph: ao026-prep-a-a的说明\n    - heading \"来源与依赖\" [level=3]\n    - button \"剧情依据：AO026 A 集 · 技术验收\"\n    - heading \"全场出场检查 · 0 项\" [level=3]\n    - heading \"出场与当前使用\" [level=3]\n    - button \"素材需求 · ao026-need-ao026-prep-a-a\"\n    - button \"明确采用 · ao026-use\"\n    - generic \"完整记录与历史引用\"\n    - region \"素材缺项检查\":\n      - heading \"必要输入：1 项，缺项或待复核 0 项\" [level=3]\n      - paragraph: 必要输入齐备；作品是否接受单独记录。\n      - paragraph: 完整状态：检查 0 次实体使用，引用 0 个准确状态版本。\n      - button \"下载本场输入清单\" [active]\n      - strong: ao026-need-ao026-prep-a-a\n      - paragraph: 后期对白 · 后期声音 · 必需\n      - button \"已采用：voice · 版本 1\"\n      - generic \"准确版本变更 · 2 项\"\n      - paragraph: ao026-upstream · 采用依据\n      - button \"当时采用的上游版本\"\n      - button \"上游当前版本\"\n      - paragraph: 已复核：保留原引用\n      - button \"查看处理历史\"\n      - button \"修改变更处理\"\n      - paragraph: ao026-upstream · 需求依据\n      - button \"当时采用的上游版本\"\n      - button \"上游当前版本\"\n      - paragraph: 已复核：保留原引用\n      - button \"查看处理历史\"\n      - button \"修改变更处理\"\n      - combobox \"变更处理\":\n        - option \"保留原引用，无需返工\" [selected]\n        - option \"需要返工，保持待处理\"\n        - option \"需要替换，另行选择新版本\"\n      - textbox \"复核者\": 根协调技术验收\n      - textbox \"复核依据\":\n        - /placeholder: 说明这次变化对当前需求或采用的实际影响\n        - text: AO026 页面 B 旧版修订：保留此独立文字，不覆盖 A 的新结论。\n      - status: 复核结论已有不同内容或版本变化，本次保存未完成且未覆盖现有判断；请保留输入并重新检查\n      - button \"保存变更处理\"\n      - button \"取消\"\n      - button \"显式换版\"\n  - generic: 阅\n  - generic: 故事审阅台\n  - generic: 故事创作与制作审阅\n  - paragraph: 故事资料、创作配置与审阅意见以当前实例为准；本机运行凭据不会公开同步。\n- button \"查看评论 · 0\"\n- status: required production inputs are incomplete or need review\n- document"
+      }
+    },
+    {
+      "source": "change-decision-contract/chrome-legacy-conflict-before.json",
+      "source_sha256": "dfd864a06ac64ece853314839215077aad3d4be6ccf66662a25df06ef09773b2",
+      "level": "Chrome_receipt_with_readback_where_recorded",
+      "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
+      "result": {
+        "url": "http://127.0.0.1:52844/?workspace=production.workspace&production_object=ao026-prep-a-b&production_revision=b9f569f1a5f78e4bb2258516cfff2cac4d7f921b20c025d11299c4ffe1edb8cc",
+        "dom": "- complementary \"工作区导航\":\n  - button \"返回网站首页\":\n    - generic: 阅\n    - generic: 故事审阅台\n    - generic: LOCAL PRODUCTION DESK\n  - navigation \"系统工作区\":\n    - button \"思路 制作思路 故事创作与生产制作方法\":\n      - generic: 思路\n      - generic: 制作思路\n      - generic: 故事创作与生产制作方法\n    - button \"故事 故事创作 故事采编、故事结构与分集剧本\":\n      - generic: 故事\n      - generic: 故事创作\n      - generic: 故事采编、故事结构与分集剧本\n    - button \"设定 制作设定 主体、空间与实体关系\":\n      - generic: 设定\n      - generic: 制作设定\n      - generic: 主体、空间与实体关系\n    - button \"素材 素材管理 需求、制作与素材审阅\":\n      - generic: 素材\n      - generic: 素材管理\n      - generic: 需求、制作与素材审阅\n    - button \"制作 全剧制作 镜头、场景与分集成片\":\n      - generic: 制作\n      - generic: 全剧制作\n      - generic: 镜头、场景与分集成片\n    - button \"管理 系统管理 故事项目与系统配置\":\n      - generic: 管理\n      - generic: 系统管理\n      - generic: 故事项目与系统配置\n  - generic: AO026 变更复核 · 隔离技术验收\n  - generic: 本机独立实例 · 业务数据可公开同步\n- main:\n  - generic: 制\n  - generic: 当前视图\n  - generic: 全剧制作\n  - heading \"全剧制作\" [level=1]\n  - paragraph: 按集场查看镜头与输入，检查素材缺项及准确采用版本。\n  - generic \"剧本依据\":\n    - paragraph: 剧本依据：尚未登记\n  - searchbox \"搜索制作记录\"\n  - combobox \"记录类型\":\n    - option \"全部类型\"\n    - option \"集场检查\" [selected]\n    - option \"镜头设计\"\n    - option \"素材需求\"\n    - option \"动态分镜组合\"\n    - option \"输出与工程\"\n  - combobox \"制作分集\":\n    - option \"全剧各集\"\n    - option \"AO026 A 集 · 技术验收\" [selected]\n    - option \"AO026 B 集 · 技术验收\"\n  - combobox \"制作场次\":\n    - option \"全部场次\"\n    - option \"scene-a\"\n    - option \"scene-b\" [selected]\n  - button \"检查本场素材缺项\"\n  - navigation \"制作记录\":\n    - heading \"集场检查 · 1\" [level=3]\n    - button \"A 集 b 场 · 技术准备 scene-b 修订 1\":\n      - text: A 集 b 场 · 技术准备\n      - generic: scene-b 修订 1\n  - article:\n    - generic: 集场检查\n    - heading \"A 集 b 场 · 技术准备\" [level=2]\n    - combobox \"选择精确版本\":\n      - option \"版本 1 · 当前\" [selected]\n    - button \"整体意见\"\n    - button \"查看评论\"\n    - button \"查看所选修订的影响\"\n    - button \"查看此块全部评论\":\n    - paragraph: ao026-prep-a-b的说明\n    - heading \"来源与依赖\" [level=3]\n    - button \"剧情依据：AO026 A 集 · 技术验收\"\n    - heading \"全场出场检查 · 0 项\" [level=3]\n    - heading \"出场与当前使用\" [level=3]\n    - button \"素材需求 · ao026-need-ao026-prep-a-b\"\n    - button \"明确采用 · ao026-use-legacy\"\n    - generic \"完整记录与历史引用\"\n    - region \"素材缺项检查\":\n      - heading \"必要输入：1 项，缺项或待复核 1 项\" [level=3]\n      - paragraph: 必要槽位尚未全部就绪。\n      - paragraph: 完整状态：检查 0 次实体使用，引用 0 个准确状态版本。\n      - button \"下载本场输入清单\" [disabled]\n      - strong: ao026-need-ao026-prep-a-b\n      - paragraph: 后期对白 · 后期声音 · 必需\n      - button \"已采用：voice · 版本 1\"\n      - generic: 需求待复核\n      - generic \"准确版本变更 · 2 项\"\n      - paragraph: ao026-upstream · 采用依据\n      - button \"当时采用的上游版本\"\n      - button \"上游当前版本\"\n      - paragraph: 已复核：保留原引用\n      - button \"查看处理历史\"\n      - button \"修改变更处理\"\n      - paragraph: ao026-upstream · 需求依据\n      - button \"当时采用的上游版本\"\n      - button \"上游当前版本\"\n      - button \"记录变更处理\"\n      - combobox \"变更处理\":\n        - option \"保留原引用，无需返工\" [selected]\n        - option \"需要返工，保持待处理\"\n        - option \"需要替换，另行选择新版本\"\n      - textbox \"复核者\"\n      - textbox \"复核依据\":\n        - /placeholder: 说明这次变化对当前需求或采用的实际影响\n      - paragraph: 同一准确变化留有多份旧结论。请逐项核对后保存一个统一结论；原记录与历史全部保留。\n      - generic \"保留原引用 · 记录中的复核者：技术夹具记录者（非用户身份推断）\"\n      - paragraph: 隔离技术数据：复核上游变化契约，不代表故事质量认可。\n      - button \"查看这份旧记录与历史\"\n      - generic \"需要返工 · 记录中的复核者：技术夹具记录者（非用户身份推断）\" [active]\n      - paragraph: 隔离技术数据：复核上游变化契约，不代表故事质量认可。\n      - button \"查看这份旧记录与历史\"\n      - button \"保存统一结论\"\n      - button \"取消\"\n      - button \"显式换版\"\n  - generic: 阅\n  - generic: 故事审阅台\n  - generic: 故事创作与制作审阅\n  - paragraph: 故事资料、创作配置与审阅意见以当前实例为准；本机运行凭据不会公开同步。\n- button \"查看评论 · 0\"\n- status\n- document"
+      }
+    },
+    {
+      "source": "change-decision-contract/chrome-legacy-unified-conflict.json",
+      "source_sha256": "797b45a6ee9b6ac02a9b87e72a14ac55a8f3e7f431ed12575fe0d3a30a2785d0",
+      "level": "Chrome_receipt_with_readback_where_recorded",
+      "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
+      "result": {
+        "A": {
+          "url": "http://127.0.0.1:52844/?workspace=production.workspace&production_object=ao026-prep-a-b&production_revision=b9f569f1a5f78e4bb2258516cfff2cac4d7f921b20c025d11299c4ffe1edb8cc",
+          "dom": "- complementary \"工作区导航\":\n  - button \"返回网站首页\":\n    - generic: 阅\n    - generic: 故事审阅台\n    - generic: LOCAL PRODUCTION DESK\n  - navigation \"系统工作区\":\n    - button \"思路 制作思路 故事创作与生产制作方法\":\n      - generic: 思路\n      - generic: 制作思路\n      - generic: 故事创作与生产制作方法\n    - button \"故事 故事创作 故事采编、故事结构与分集剧本\":\n      - generic: 故事\n      - generic: 故事创作\n      - generic: 故事采编、故事结构与分集剧本\n    - button \"设定 制作设定 主体、空间与实体关系\":\n      - generic: 设定\n      - generic: 制作设定\n      - generic: 主体、空间与实体关系\n    - button \"素材 素材管理 需求、制作与素材审阅\":\n      - generic: 素材\n      - generic: 素材管理\n      - generic: 需求、制作与素材审阅\n    - button \"制作 全剧制作 镜头、场景与分集成片\":\n      - generic: 制作\n      - generic: 全剧制作\n      - generic: 镜头、场景与分集成片\n    - button \"管理 系统管理 故事项目与系统配置\":\n      - generic: 管理\n      - generic: 系统管理\n      - generic: 故事项目与系统配置\n  - generic: AO026 变更复核 · 隔离技术验收\n  - generic: 本机独立实例 · 业务数据可公开同步\n- main:\n  - generic: 制\n  - generic: 当前视图\n  - generic: 全剧制作\n  - heading \"全剧制作\" [level=1]\n  - paragraph: 按集场查看镜头与输入，检查素材缺项及准确采用版本。\n  - generic \"剧本依据\":\n    - paragraph: 剧本依据：尚未登记\n  - searchbox \"搜索制作记录\"\n  - combobox \"记录类型\":\n    - option \"全部类型\"\n    - option \"集场检查\" [selected]\n    - option \"镜头设计\"\n    - option \"素材需求\"\n    - option \"动态分镜组合\"\n    - option \"输出与工程\"\n  - combobox \"制作分集\":\n    - option \"全剧各集\"\n    - option \"AO026 A 集 · 技术验收\" [selected]\n    - option \"AO026 B 集 · 技术验收\"\n  - combobox \"制作场次\":\n    - option \"全部场次\"\n    - option \"scene-a\"\n    - option \"scene-b\" [selected]\n  - button \"检查本场素材缺项\"\n  - navigation \"制作记录\":\n    - heading \"集场检查 · 1\" [level=3]\n    - button \"A 集 b 场 · 技术准备 scene-b 修订 1\":\n      - text: A 集 b 场 · 技术准备\n      - generic: scene-b 修订 1\n  - article:\n    - generic: 集场检查\n    - heading \"A 集 b 场 · 技术准备\" [level=2]\n    - combobox \"选择精确版本\":\n      - option \"版本 1 · 当前\" [selected]\n    - button \"整体意见\"\n    - button \"查看评论\"\n    - button \"查看所选修订的影响\"\n    - button \"查看此块全部评论\":\n    - paragraph: ao026-prep-a-b的说明\n    - heading \"来源与依赖\" [level=3]\n    - button \"剧情依据：AO026 A 集 · 技术验收\"\n    - heading \"全场出场检查 · 0 项\" [level=3]\n    - heading \"出场与当前使用\" [level=3]\n    - button \"素材需求 · ao026-need-ao026-prep-a-b\"\n    - button \"明确采用 · ao026-use-legacy\"\n    - generic \"完整记录与历史引用\"\n    - region \"素材缺项检查\":\n      - heading \"必要输入：1 项，缺项或待复核 0 项\" [level=3]\n      - paragraph: 必要输入齐备；作品是否接受单独记录。\n      - paragraph: 完整状态：检查 0 次实体使用，引用 0 个准确状态版本。\n      - button \"下载本场输入清单\"\n      - strong: ao026-need-ao026-prep-a-b\n      - paragraph: 后期对白 · 后期声音 · 必需\n      - button \"已采用：voice · 版本 1\"\n      - generic \"准确版本变更 · 2 项\"\n      - button \"显式换版\"\n  - generic: 阅\n  - generic: 故事审阅台\n  - generic: 故事创作与制作审阅\n  - paragraph: 故事资料、创作配置与审阅意见以当前实例为准；本机运行凭据不会公开同步。\n- button \"查看评论 · 0\"\n- status: 「ao026-upstream」的复核结论已保存；实际采用没有自动换版\n- document"
+        },
+        "B": {
+          "url": "http://127.0.0.1:52844/?workspace=production.workspace&production_object=ao026-prep-a-b&production_revision=b9f569f1a5f78e4bb2258516cfff2cac4d7f921b20c025d11299c4ffe1edb8cc",
+          "dom": "- complementary \"工作区导航\":\n  - button \"返回网站首页\":\n    - generic: 阅\n    - generic: 故事审阅台\n    - generic: LOCAL PRODUCTION DESK\n  - navigation \"系统工作区\":\n    - button \"思路 制作思路 故事创作与生产制作方法\":\n      - generic: 思路\n      - generic: 制作思路\n      - generic: 故事创作与生产制作方法\n    - button \"故事 故事创作 故事采编、故事结构与分集剧本\":\n      - generic: 故事\n      - generic: 故事创作\n      - generic: 故事采编、故事结构与分集剧本\n    - button \"设定 制作设定 主体、空间与实体关系\":\n      - generic: 设定\n      - generic: 制作设定\n      - generic: 主体、空间与实体关系\n    - button \"素材 素材管理 需求、制作与素材审阅\":\n      - generic: 素材\n      - generic: 素材管理\n      - generic: 需求、制作与素材审阅\n    - button \"制作 全剧制作 镜头、场景与分集成片\":\n      - generic: 制作\n      - generic: 全剧制作\n      - generic: 镜头、场景与分集成片\n    - button \"管理 系统管理 故事项目与系统配置\":\n      - generic: 管理\n      - generic: 系统管理\n      - generic: 故事项目与系统配置\n  - generic: AO026 变更复核 · 隔离技术验收\n  - generic: 本机独立实例 · 业务数据可公开同步\n- main:\n  - generic: 制\n  - generic: 当前视图\n  - generic: 全剧制作\n  - heading \"全剧制作\" [level=1]\n  - paragraph: 按集场查看镜头与输入，检查素材缺项及准确采用版本。\n  - generic \"剧本依据\":\n    - paragraph: 剧本依据：尚未登记\n  - searchbox \"搜索制作记录\"\n  - combobox \"记录类型\":\n    - option \"全部类型\"\n    - option \"集场检查\" [selected]\n    - option \"镜头设计\"\n    - option \"素材需求\"\n    - option \"动态分镜组合\"\n    - option \"输出与工程\"\n  - combobox \"制作分集\":\n    - option \"全剧各集\"\n    - option \"AO026 A 集 · 技术验收\" [selected]\n    - option \"AO026 B 集 · 技术验收\"\n  - combobox \"制作场次\":\n    - option \"全部场次\"\n    - option \"scene-a\"\n    - option \"scene-b\" [selected]\n  - button \"检查本场素材缺项\"\n  - navigation \"制作记录\":\n    - heading \"集场检查 · 1\" [level=3]\n    - button \"A 集 b 场 · 技术准备 scene-b 修订 1\":\n      - text: A 集 b 场 · 技术准备\n      - generic: scene-b 修订 1\n  - article:\n    - generic: 集场检查\n    - heading \"A 集 b 场 · 技术准备\" [level=2]\n    - combobox \"选择精确版本\":\n      - option \"版本 1 · 当前\" [selected]\n    - button \"整体意见\"\n    - button \"查看评论\"\n    - button \"查看所选修订的影响\"\n    - button \"查看此块全部评论\":\n    - paragraph: ao026-prep-a-b的说明\n    - heading \"来源与依赖\" [level=3]\n    - button \"剧情依据：AO026 A 集 · 技术验收\"\n    - heading \"全场出场检查 · 0 项\" [level=3]\n    - heading \"出场与当前使用\" [level=3]\n    - button \"素材需求 · ao026-need-ao026-prep-a-b\"\n    - button \"明确采用 · ao026-use-legacy\"\n    - generic \"完整记录与历史引用\"\n    - region \"素材缺项检查\":\n      - heading \"必要输入：1 项，缺项或待复核 1 项\" [level=3]\n      - paragraph: 必要槽位尚未全部就绪。\n      - paragraph: 完整状态：检查 0 次实体使用，引用 0 个准确状态版本。\n      - button \"下载本场输入清单\" [disabled]\n      - strong: ao026-need-ao026-prep-a-b\n      - paragraph: 后期对白 · 后期声音 · 必需\n      - button \"已采用：voice · 版本 1\"\n      - generic: 需求待复核\n      - generic \"准确版本变更 · 2 项\"\n      - paragraph: ao026-upstream · 采用依据\n      - button \"当时采用的上游版本\"\n      - button \"上游当前版本\"\n      - paragraph: 已复核：保留原引用\n      - button \"查看处理历史\"\n      - button \"修改变更处理\"\n      - paragraph: ao026-upstream · 需求依据\n      - button \"当时采用的上游版本\"\n      - button \"上游当前版本\"\n      - button \"记录变更处理\"\n      - combobox \"变更处理\":\n        - option \"保留原引用，无需返工\"\n        - option \"需要返工，保持待处理\" [selected]\n        - option \"需要替换，另行选择新版本\"\n      - textbox \"复核者\": 根协调技术验收\n      - textbox \"复核依据\":\n        - /placeholder: 说明这次变化对当前需求或采用的实际影响\n        - text: AO026 旧归并窗口的独立依据，应冲突且保留。\n      - paragraph: 同一准确变化留有多份旧结论。请逐项核对后保存一个统一结论；原记录与历史全部保留。\n      - generic \"保留原引用 · 记录中的复核者：技术夹具记录者（非用户身份推断）\"\n      - generic \"需要返工 · 记录中的复核者：技术夹具记录者（非用户身份推断）\"\n      - status: 复核结论已有不同内容或版本变化，本次保存未完成且未覆盖现有判断；请保留输入并重新检查\n      - button \"保存统一结论\"\n      - button \"取消\"\n      - button \"显式换版\"\n  - generic: 阅\n  - generic: 故事审阅台\n  - generic: 故事创作与制作审阅\n  - paragraph: 故事资料、创作配置与审阅意见以当前实例为准；本机运行凭据不会公开同步。\n- button \"查看评论 · 0\"\n- status: 复核结论已有不同内容或版本变化，本次保存未完成且未覆盖现有判断；请保留输入并重新检查\n- document"
+        }
+      }
+    },
+    {
+      "source": "change-decision-contract/chrome-history-button-gap.json",
+      "source_sha256": "a8bccf08eb4f4a867366be1e4385285a4582c8896788be163737c3be8b6b2cb6",
+      "level": "Chrome_receipt_with_readback_where_recorded",
+      "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
+      "result": {
+        "url": "http://127.0.0.1:52844/?workspace=production.workspace&production_object=ao026-prep-a-a&production_revision=ed1a10bb13dbf8a2b90f77b6fa1414b262a8f3a4aa3548e54cedb4854ddfd0c7",
+        "dom": "- complementary \"工作区导航\":\n  - button \"返回网站首页\":\n    - generic: 阅\n    - generic: 故事审阅台\n    - generic: LOCAL PRODUCTION DESK\n  - navigation \"系统工作区\":\n    - button \"思路 制作思路 故事创作与生产制作方法\":\n      - generic: 思路\n      - generic: 制作思路\n      - generic: 故事创作与生产制作方法\n    - button \"故事 故事创作 故事采编、故事结构与分集剧本\":\n      - generic: 故事\n      - generic: 故事创作\n      - generic: 故事采编、故事结构与分集剧本\n    - button \"设定 制作设定 主体、空间与实体关系\":\n      - generic: 设定\n      - generic: 制作设定\n      - generic: 主体、空间与实体关系\n    - button \"素材 素材管理 需求、制作与素材审阅\":\n      - generic: 素材\n      - generic: 素材管理\n      - generic: 需求、制作与素材审阅\n    - button \"制作 全剧制作 镜头、场景与分集成片\":\n      - generic: 制作\n      - generic: 全剧制作\n      - generic: 镜头、场景与分集成片\n    - button \"管理 系统管理 故事项目与系统配置\":\n      - generic: 管理\n      - generic: 系统管理\n      - generic: 故事项目与系统配置\n  - generic: AO026 变更复核 · 隔离技术验收\n  - generic: 本机独立实例 · 业务数据可公开同步\n- main:\n  - generic: 制\n  - generic: 当前视图\n  - generic: 全剧制作\n  - heading \"全剧制作\" [level=1]\n  - paragraph: 按集场查看镜头与输入，检查素材缺项及准确采用版本。\n  - generic \"剧本依据\":\n    - paragraph: 剧本依据：尚未登记\n  - searchbox \"搜索制作记录\"\n  - combobox \"记录类型\":\n    - option \"全部类型\"\n    - option \"集场检查\" [selected]\n    - option \"镜头设计\"\n    - option \"素材需求\"\n    - option \"动态分镜组合\"\n    - option \"输出与工程\"\n  - combobox \"制作分集\":\n    - option \"全剧各集\"\n    - option \"AO026 A 集 · 技术验收\" [selected]\n    - option \"AO026 B 集 · 技术验收\"\n  - combobox \"制作场次\":\n    - option \"全部场次\"\n    - option \"scene-a\" [selected]\n    - option \"scene-b\"\n  - button \"检查本场素材缺项\"\n  - navigation \"制作记录\":\n    - heading \"集场检查 · 1\" [level=3]\n    - button \"A 集 a 场 · 技术准备 scene-a 修订 1\":\n      - text: A 集 a 场 · 技术准备\n      - generic: scene-a 修订 1\n  - article:\n    - generic: 集场检查\n    - heading \"A 集 a 场 · 技术准备\" [level=2]\n    - combobox \"选择精确版本\":\n      - option \"版本 1 · 当前\" [selected]\n    - button \"整体意见\"\n    - button \"查看评论\"\n    - button \"查看所选修订的影响\"\n    - button \"查看此块全部评论\":\n    - paragraph: ao026-prep-a-a的说明\n    - heading \"来源与依赖\" [level=3]\n    - button \"剧情依据：AO026 A 集 · 技术验收\"\n    - heading \"全场出场检查 · 0 项\" [level=3]\n    - heading \"出场与当前使用\" [level=3]\n    - button \"素材需求 · ao026-need-ao026-prep-a-a\"\n    - button \"明确采用 · ao026-use\"\n    - generic \"完整记录与历史引用\"\n    - region \"素材缺项检查\":\n      - heading \"必要输入：1 项，缺项或待复核 1 项\" [level=3]\n      - paragraph: 必要槽位尚未全部就绪。\n      - paragraph: 完整状态：检查 0 次实体使用，引用 0 个准确状态版本。\n      - button \"下载本场输入清单\" [disabled]\n      - strong: ao026-need-ao026-prep-a-a\n      - paragraph: 后期对白 · 后期声音 · 必需\n      - button \"已采用：voice · 版本 1\"\n      - generic: 需求待复核\n      - generic \"准确版本变更 · 2 项\"\n      - paragraph: ao026-upstream · 采用依据\n      - button \"当时采用的上游版本\"\n      - button \"上游当前版本\"\n      - paragraph: 已复核：保留原引用\n      - button \"查看处理历史\"\n      - button \"修改变更处理\"\n      - paragraph: ao026-upstream · 需求依据\n      - button \"当时采用的上游版本\"\n      - button \"上游当前版本\"\n      - paragraph: 已复核：需要返工\n      - button \"查看处理历史\"\n      - button \"修改变更处理\"\n      - button \"显式换版\"\n  - generic: 阅\n  - generic: 故事审阅台\n  - generic: 故事创作与制作审阅\n  - paragraph: 故事资料、创作配置与审阅意见以当前实例为准；本机运行凭据不会公开同步。\n- button \"查看评论 · 0\"\n- status: 「ao026-upstream」的复核结论已保存；实际采用没有自动换版\n- document\n- dialog \"剧情依据 · ao026-upstream · 变更复核\":\n  - banner:\n    - heading \"剧情依据 · ao026-upstream · 变更复核\" [level=2]\n    - button \"关闭\" [active]: ×\n  - paragraph: AO026 页面 A 修订：现在需要返工，保留原 keep 历史。"
+      }
+    },
+    {
+      "source": "change-decision-contract/chrome-history-open-fixed-label-gap.json",
+      "source_sha256": "328debb57b32454eef6a67bf6f4294ae287243d2f40762204eb84113f1085a82",
+      "level": "Chrome_receipt_with_readback_where_recorded",
+      "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
+      "result": {
+        "url": "http://127.0.0.1:52844/?workspace=materials.workspace&production_object=change-db977acc-3ab7-4ec4-8e84-6f0b30c0f0b2&production_revision=39842b2028d74cb7117217ba3036ac4067f94746ac171aed81a850648e382ca7",
+        "dom": "- complementary \"工作区导航\":\n  - button \"返回网站首页\":\n    - generic: 阅\n    - generic: 故事审阅台\n    - generic: LOCAL PRODUCTION DESK\n  - navigation \"系统工作区\":\n    - button \"思路 制作思路 故事创作与生产制作方法\":\n      - generic: 思路\n      - generic: 制作思路\n      - generic: 故事创作与生产制作方法\n    - button \"故事 故事创作 故事采编、故事结构与分集剧本\":\n      - generic: 故事\n      - generic: 故事创作\n      - generic: 故事采编、故事结构与分集剧本\n    - button \"设定 制作设定 主体、空间与实体关系\":\n      - generic: 设定\n      - generic: 制作设定\n      - generic: 主体、空间与实体关系\n    - button \"素材 素材管理 需求、制作与素材审阅\":\n      - generic: 素材\n      - generic: 素材管理\n      - generic: 需求、制作与素材审阅\n    - button \"制作 全剧制作 镜头、场景与分集成片\":\n      - generic: 制作\n      - generic: 全剧制作\n      - generic: 镜头、场景与分集成片\n    - button \"管理 系统管理 故事项目与系统配置\":\n      - generic: 管理\n      - generic: 系统管理\n      - generic: 故事项目与系统配置\n  - generic: AO026 变更复核 · 隔离技术验收\n  - generic: 本机独立实例 · 业务数据可公开同步\n- main:\n  - generic: 素\n  - generic: 当前视图\n  - generic: 素材管理\n  - heading \"素材管理\" [level=1]\n  - paragraph: 查看原件、候选和实际制作记录；审阅结论与具体采用分别保存。\n  - region \"素材管理筛选\":\n    - generic: 搜索素材记录\n    - searchbox \"搜索制作记录\"\n    - button \"清除筛选\" [disabled]\n    - paragraph: 按当前列表记录计数，每个对象只计一次；素材需求的占位不计为实际素材，历史修订不重复计数。\n    - group \"记录类型\":\n      - generic: 记录类型\n      - button \"记录类型：全部类型，10 条记录\" [pressed]:\n        - generic: 全部类型\n        - generic: \"10\"\n      - button \"记录类型：实际素材，1 条记录\":\n        - generic: 实际素材\n        - generic: \"1\"\n      - button \"记录类型：素材需求，0 条记录\":\n        - generic: 素材需求\n        - generic: \"0\"\n      - button \"记录类型：实际制作，1 条记录\":\n        - generic: 实际制作\n        - generic: \"1\"\n      - button \"记录类型：审阅结论，6 条记录\":\n        - generic: 审阅结论\n        - generic: \"6\"\n      - button \"记录类型：明确采用，2 条记录\":\n        - generic: 明确采用\n        - generic: \"2\"\n    - group \"内容分类\":\n      - generic: 内容分类\n      - button \"内容分类：全部内容，10 条记录\" [pressed]:\n        - generic: 全部内容\n        - generic: \"10\"\n      - button \"内容分类：图像，0 条记录\":\n        - generic: 图像\n        - generic: \"0\"\n      - button \"内容分类：声音，9 条记录\":\n        - generic: 声音\n        - generic: \"9\"\n      - button \"内容分类：视频，0 条记录\":\n        - generic: 视频\n        - generic: \"0\"\n      - button \"内容分类：工程，0 条记录\":\n        - generic: 工程\n        - generic: \"0\"\n      - button \"内容分类：说明文件，0 条记录\":\n        - generic: 说明文件\n        - generic: \"0\"\n    - status: 当前结果：10 条记录，其中实际素材 1 份、未生成需求 0 项\n  - navigation \"制作记录\":\n    - heading \"实际素材 · 1\" [level=3]\n    - button \"voice 版本 1\":\n      - text: voice\n      - generic: 版本 1\n    - heading \"实际制作 · 1\" [level=3]\n    - button \"recording 修订 1\":\n      - text: recording\n      - generic: 修订 1\n    - heading \"审阅结论 · 6\" [level=3]\n    - button \"ao026-upstream · 变更复核 修订 1\":\n      - text: ao026-upstream · 变更复核\n      - generic: 修订 1\n    - button \"ao026-upstream · 变更复核 修订 2\":\n      - text: ao026-upstream · 变更复核\n      - generic: 修订 2\n    - button \"legacy-keep 修订 1\":\n      - text: legacy-keep\n      - generic: 修订 1\n    - button \"legacy-rework 修订 1\":\n      - text: legacy-rework\n      - generic: 修订 1\n    - button \"seed-ao026-use 修订 1\":\n      - text: seed-ao026-use\n      - generic: 修订 1\n    - button \"seed-ao026-use-legacy 修订 1\":\n      - text: seed-ao026-use-legacy\n      - generic: 修订 1\n    - heading \"明确采用 · 2\" [level=3]\n    - button \"ao026-use scene-a 修订 1\":\n      - text: ao026-use\n      - generic: scene-a 修订 1\n    - button \"ao026-use-legacy scene-b 修订 1\":\n      - text: ao026-use-legacy\n      - generic: scene-b 修订 1\n  - article:\n    - generic: 审阅结论\n    - heading \"ao026-upstream · 变更复核\" [level=2]\n    - combobox \"选择精确版本\":\n      - option \"版本 2 · 当前\" [selected]\n      - option \"版本 1\"\n    - button \"整体意见\"\n    - button \"查看评论\"\n    - button \"查看所选修订的影响\"\n    - button \"查看此块全部评论\":\n    - paragraph: AO026 页面 A 修订：现在需要返工，保留原 keep 历史。\n    - term: 审阅结论\n    - definition: 影响已处理\n    - term: 审阅者\n    - definition: 根协调技术验收\n    - term: 说明\n    - definition: AO026 页面 A 修订：现在需要返工，保留原 keep 历史。\n    - heading \"来源与依赖\" [level=3]\n    - button \"审阅对象：ao026-need-ao026-prep-a-a\"\n    - generic \"完整记录与历史引用\"\n  - generic: 阅\n  - generic: 故事审阅台\n  - generic: 故事创作与制作审阅\n  - paragraph: 故事资料、创作配置与审阅意见以当前实例为准；本机运行凭据不会公开同步。\n- button \"查看评论 · 0\"\n- status\n- document"
+      }
+    },
+    {
+      "source": "change-decision-contract/chrome-history-final.json",
+      "source_sha256": "1dc0af01dac78ecdb17c08b8a072d446430e4a606ca70aeaf14c4d4a8c201e84",
+      "level": "Chrome_receipt_with_readback_where_recorded",
+      "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
+      "result": {
+        "v4": {
+          "url": "http://127.0.0.1:52844/?workspace=materials.workspace&production_object=change-db977acc-3ab7-4ec4-8e84-6f0b30c0f0b2&production_revision=bb9ee5d25e44f34bfe7b4cdd074a83c640ecf5373b15f5d8207dbf065fbb8c49",
+          "dom": "- complementary \"工作区导航\":\n  - button \"返回网站首页\":\n    - generic: 阅\n    - generic: 故事审阅台\n    - generic: LOCAL PRODUCTION DESK\n  - navigation \"系统工作区\":\n    - button \"思路 制作思路 故事创作与生产制作方法\":\n      - generic: 思路\n      - generic: 制作思路\n      - generic: 故事创作与生产制作方法\n    - button \"故事 故事创作 故事采编、故事结构与分集剧本\":\n      - generic: 故事\n      - generic: 故事创作\n      - generic: 故事采编、故事结构与分集剧本\n    - button \"设定 制作设定 主体、空间与实体关系\":\n      - generic: 设定\n      - generic: 制作设定\n      - generic: 主体、空间与实体关系\n    - button \"素材 素材管理 需求、制作与素材审阅\":\n      - generic: 素材\n      - generic: 素材管理\n      - generic: 需求、制作与素材审阅\n    - button \"制作 全剧制作 镜头、场景与分集成片\":\n      - generic: 制作\n      - generic: 全剧制作\n      - generic: 镜头、场景与分集成片\n    - button \"管理 系统管理 故事项目与系统配置\":\n      - generic: 管理\n      - generic: 系统管理\n      - generic: 故事项目与系统配置\n  - generic: AO026 变更复核 · 隔离技术验收\n  - generic: 本机独立实例 · 业务数据可公开同步\n- main:\n  - generic: 素\n  - generic: 当前视图\n  - generic: 素材管理\n  - heading \"素材管理\" [level=1]\n  - paragraph: 查看原件、候选和实际制作记录；审阅结论与具体采用分别保存。\n  - region \"素材管理筛选\":\n    - generic: 搜索素材记录\n    - searchbox \"搜索制作记录\"\n    - button \"清除筛选\" [disabled]\n    - paragraph: 按当前列表记录计数，每个对象只计一次；素材需求的占位不计为实际素材，历史修订不重复计数。\n    - group \"记录类型\":\n      - generic: 记录类型\n      - button \"记录类型：全部类型，10 条记录\" [pressed]:\n        - generic: 全部类型\n        - generic: \"10\"\n      - button \"记录类型：实际素材，1 条记录\":\n        - generic: 实际素材\n        - generic: \"1\"\n      - button \"记录类型：素材需求，0 条记录\":\n        - generic: 素材需求\n        - generic: \"0\"\n      - button \"记录类型：实际制作，1 条记录\":\n        - generic: 实际制作\n        - generic: \"1\"\n      - button \"记录类型：审阅结论，6 条记录\":\n        - generic: 审阅结论\n        - generic: \"6\"\n      - button \"记录类型：明确采用，2 条记录\":\n        - generic: 明确采用\n        - generic: \"2\"\n    - group \"内容分类\":\n      - generic: 内容分类\n      - button \"内容分类：全部内容，10 条记录\" [pressed]:\n        - generic: 全部内容\n        - generic: \"10\"\n      - button \"内容分类：图像，0 条记录\":\n        - generic: 图像\n        - generic: \"0\"\n      - button \"内容分类：声音，9 条记录\":\n        - generic: 声音\n        - generic: \"9\"\n      - button \"内容分类：视频，0 条记录\":\n        - generic: 视频\n        - generic: \"0\"\n      - button \"内容分类：工程，0 条记录\":\n        - generic: 工程\n        - generic: \"0\"\n      - button \"内容分类：说明文件，0 条记录\":\n        - generic: 说明文件\n        - generic: \"0\"\n    - status: 当前结果：10 条记录，其中实际素材 1 份、未生成需求 0 项\n  - navigation \"制作记录\":\n    - heading \"实际素材 · 1\" [level=3]\n    - button \"voice 版本 1\":\n      - text: voice\n      - generic: 版本 1\n    - heading \"实际制作 · 1\" [level=3]\n    - button \"recording 修订 1\":\n      - text: recording\n      - generic: 修订 1\n    - heading \"审阅结论 · 6\" [level=3]\n    - button \"ao026-upstream · 变更复核 修订 1\":\n      - text: ao026-upstream · 变更复核\n      - generic: 修订 1\n    - button \"ao026-upstream · 变更复核 修订 4\":\n      - text: ao026-upstream · 变更复核\n      - generic: 修订 4\n    - button \"legacy-keep 修订 1\":\n      - text: legacy-keep\n      - generic: 修订 1\n    - button \"legacy-rework 修订 1\":\n      - text: legacy-rework\n      - generic: 修订 1\n    - button \"seed-ao026-use 修订 1\":\n      - text: seed-ao026-use\n      - generic: 修订 1\n    - button \"seed-ao026-use-legacy 修订 1\":\n      - text: seed-ao026-use-legacy\n      - generic: 修订 1\n    - heading \"明确采用 · 2\" [level=3]\n    - button \"ao026-use scene-a 修订 1\":\n      - text: ao026-use\n      - generic: scene-a 修订 1\n    - button \"ao026-use-legacy scene-b 修订 1\":\n      - text: ao026-use-legacy\n      - generic: scene-b 修订 1\n  - article:\n    - generic: 审阅结论\n    - heading \"ao026-upstream · 变更复核\" [level=2]\n    - combobox \"选择精确版本\":\n      - option \"版本 4 · 当前\" [selected]\n      - option \"版本 3\"\n      - option \"版本 2\"\n      - option \"版本 1\"\n    - button \"整体意见\"\n    - button \"查看评论\"\n    - button \"查看所选修订的影响\"\n    - button \"查看此块全部评论\":\n    - paragraph: AO026 相同载荷并发：第四修订需要返工，旧窗口仍须明确冲突。\n    - term: 审阅结论\n    - definition: 需要返工\n    - term: 审阅者\n    - definition: 根协调技术验收\n    - term: 说明\n    - definition: AO026 相同载荷并发：第四修订需要返工，旧窗口仍须明确冲突。\n    - heading \"来源与依赖\" [level=3]\n    - button \"审阅对象：ao026-need-ao026-prep-a-a\"\n    - generic \"完整记录与历史引用\"\n  - generic: 阅\n  - generic: 故事审阅台\n  - generic: 故事创作与制作审阅\n  - paragraph: 故事资料、创作配置与审阅意见以当前实例为准；本机运行凭据不会公开同步。\n- button \"查看评论 · 0\"\n- status: 「ao026-upstream」的复核结论已保存；实际采用没有自动换版\n- document"
+        },
+        "v1": {
+          "url": "http://127.0.0.1:52844/?workspace=materials.workspace&production_object=change-db977acc-3ab7-4ec4-8e84-6f0b30c0f0b2&production_revision=5bc9b1cb531e31bc300fb2d2508a0cbdbd6cf904fd377b9a0549ba085ffcd7ff",
+          "dom": "- complementary \"工作区导航\":\n  - button \"返回网站首页\":\n    - generic: 阅\n    - generic: 故事审阅台\n    - generic: LOCAL PRODUCTION DESK\n  - navigation \"系统工作区\":\n    - button \"思路 制作思路 故事创作与生产制作方法\":\n      - generic: 思路\n      - generic: 制作思路\n      - generic: 故事创作与生产制作方法\n    - button \"故事 故事创作 故事采编、故事结构与分集剧本\":\n      - generic: 故事\n      - generic: 故事创作\n      - generic: 故事采编、故事结构与分集剧本\n    - button \"设定 制作设定 主体、空间与实体关系\":\n      - generic: 设定\n      - generic: 制作设定\n      - generic: 主体、空间与实体关系\n    - button \"素材 素材管理 需求、制作与素材审阅\":\n      - generic: 素材\n      - generic: 素材管理\n      - generic: 需求、制作与素材审阅\n    - button \"制作 全剧制作 镜头、场景与分集成片\":\n      - generic: 制作\n      - generic: 全剧制作\n      - generic: 镜头、场景与分集成片\n    - button \"管理 系统管理 故事项目与系统配置\":\n      - generic: 管理\n      - generic: 系统管理\n      - generic: 故事项目与系统配置\n  - generic: AO026 变更复核 · 隔离技术验收\n  - generic: 本机独立实例 · 业务数据可公开同步\n- main:\n  - generic: 素\n  - generic: 当前视图\n  - generic: 素材管理\n  - heading \"素材管理\" [level=1]\n  - paragraph: 查看原件、候选和实际制作记录；审阅结论与具体采用分别保存。\n  - region \"素材管理筛选\":\n    - generic: 搜索素材记录\n    - searchbox \"搜索制作记录\"\n    - button \"清除筛选\" [disabled]\n    - paragraph: 按当前列表记录计数，每个对象只计一次；素材需求的占位不计为实际素材，历史修订不重复计数。\n    - group \"记录类型\":\n      - generic: 记录类型\n      - button \"记录类型：全部类型，10 条记录\" [pressed]:\n        - generic: 全部类型\n        - generic: \"10\"\n      - button \"记录类型：实际素材，1 条记录\":\n        - generic: 实际素材\n        - generic: \"1\"\n      - button \"记录类型：素材需求，0 条记录\":\n        - generic: 素材需求\n        - generic: \"0\"\n      - button \"记录类型：实际制作，1 条记录\":\n        - generic: 实际制作\n        - generic: \"1\"\n      - button \"记录类型：审阅结论，6 条记录\":\n        - generic: 审阅结论\n        - generic: \"6\"\n      - button \"记录类型：明确采用，2 条记录\":\n        - generic: 明确采用\n        - generic: \"2\"\n    - group \"内容分类\":\n      - generic: 内容分类\n      - button \"内容分类：全部内容，10 条记录\" [pressed]:\n        - generic: 全部内容\n        - generic: \"10\"\n      - button \"内容分类：图像，0 条记录\":\n        - generic: 图像\n        - generic: \"0\"\n      - button \"内容分类：声音，9 条记录\":\n        - generic: 声音\n        - generic: \"9\"\n      - button \"内容分类：视频，0 条记录\":\n        - generic: 视频\n        - generic: \"0\"\n      - button \"内容分类：工程，0 条记录\":\n        - generic: 工程\n        - generic: \"0\"\n      - button \"内容分类：说明文件，0 条记录\":\n        - generic: 说明文件\n        - generic: \"0\"\n    - status: 当前结果：10 条记录，其中实际素材 1 份、未生成需求 0 项\n  - navigation \"制作记录\":\n    - heading \"实际素材 · 1\" [level=3]\n    - button \"voice 版本 1\":\n      - text: voice\n      - generic: 版本 1\n    - heading \"实际制作 · 1\" [level=3]\n    - button \"recording 修订 1\":\n      - text: recording\n      - generic: 修订 1\n    - heading \"审阅结论 · 6\" [level=3]\n    - button \"ao026-upstream · 变更复核 修订 1\":\n      - text: ao026-upstream · 变更复核\n      - generic: 修订 1\n    - button \"ao026-upstream · 变更复核 修订 4\":\n      - text: ao026-upstream · 变更复核\n      - generic: 修订 4\n    - button \"legacy-keep 修订 1\":\n      - text: legacy-keep\n      - generic: 修订 1\n    - button \"legacy-rework 修订 1\":\n      - text: legacy-rework\n      - generic: 修订 1\n    - button \"seed-ao026-use 修订 1\":\n      - text: seed-ao026-use\n      - generic: 修订 1\n    - button \"seed-ao026-use-legacy 修订 1\":\n      - text: seed-ao026-use-legacy\n      - generic: 修订 1\n    - heading \"明确采用 · 2\" [level=3]\n    - button \"ao026-use scene-a 修订 1\":\n      - text: ao026-use\n      - generic: scene-a 修订 1\n    - button \"ao026-use-legacy scene-b 修订 1\":\n      - text: ao026-use-legacy\n      - generic: scene-b 修订 1\n  - article:\n    - generic: 审阅结论\n    - heading \"ao026-upstream · 变更复核\" [level=2]\n    - combobox \"选择精确版本\":\n      - option \"版本 4 · 当前\"\n      - option \"版本 3\"\n      - option \"版本 2\"\n      - option \"版本 1\" [selected]\n    - button \"整体意见\"\n    - button \"查看评论\"\n    - button \"查看所选修订的影响\"\n    - button \"查看此块全部评论\":\n    - paragraph: AO026 页面 A：保持原引用，验证单一结论。\n    - term: 审阅结论\n    - definition: 保留原引用\n    - term: 审阅者\n    - definition: 根协调技术验收\n    - term: 说明\n    - definition: AO026 页面 A：保持原引用，验证单一结论。\n    - heading \"来源与依赖\" [level=3]\n    - button \"审阅对象：ao026-need-ao026-prep-a-a\"\n    - generic \"完整记录与历史引用\"\n  - generic: 阅\n  - generic: 故事审阅台\n  - generic: 故事创作与制作审阅\n  - paragraph: 故事资料、创作配置与审阅意见以当前实例为准；本机运行凭据不会公开同步。\n- button \"查看评论 · 0\"\n- status\n- document"
+        }
+      }
+    },
+    {
+      "source": "change-decision-contract/chrome-identical-payload-conflict-final.json",
+      "source_sha256": "33a913cda8c281d17f302dfef0f4b9d3b8074a6121e2b6d483b714a4c5d0b49d",
+      "level": "Chrome_receipt_with_readback_where_recorded",
+      "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
+      "result": {
+        "A": {
+          "url": "http://127.0.0.1:52844/?workspace=production.workspace&production_object=ao026-prep-a-a&production_revision=ed1a10bb13dbf8a2b90f77b6fa1414b262a8f3a4aa3548e54cedb4854ddfd0c7",
+          "dom": "- complementary \"工作区导航\":\n  - button \"返回网站首页\":\n    - generic: 阅\n    - generic: 故事审阅台\n    - generic: LOCAL PRODUCTION DESK\n  - navigation \"系统工作区\":\n    - button \"思路 制作思路 故事创作与生产制作方法\":\n      - generic: 思路\n      - generic: 制作思路\n      - generic: 故事创作与生产制作方法\n    - button \"故事 故事创作 故事采编、故事结构与分集剧本\":\n      - generic: 故事\n      - generic: 故事创作\n      - generic: 故事采编、故事结构与分集剧本\n    - button \"设定 制作设定 主体、空间与实体关系\":\n      - generic: 设定\n      - generic: 制作设定\n      - generic: 主体、空间与实体关系\n    - button \"素材 素材管理 需求、制作与素材审阅\":\n      - generic: 素材\n      - generic: 素材管理\n      - generic: 需求、制作与素材审阅\n    - button \"制作 全剧制作 镜头、场景与分集成片\":\n      - generic: 制作\n      - generic: 全剧制作\n      - generic: 镜头、场景与分集成片\n    - button \"管理 系统管理 故事项目与系统配置\":\n      - generic: 管理\n      - generic: 系统管理\n      - generic: 故事项目与系统配置\n  - generic: AO026 变更复核 · 隔离技术验收\n  - generic: 本机独立实例 · 业务数据可公开同步\n- main:\n  - generic: 制\n  - generic: 当前视图\n  - generic: 全剧制作\n  - heading \"全剧制作\" [level=1]\n  - paragraph: 按集场查看镜头与输入，检查素材缺项及准确采用版本。\n  - generic \"剧本依据\":\n    - paragraph: 剧本依据：尚未登记\n  - searchbox \"搜索制作记录\"\n  - combobox \"记录类型\":\n    - option \"全部类型\"\n    - option \"集场检查\" [selected]\n    - option \"镜头设计\"\n    - option \"素材需求\"\n    - option \"动态分镜组合\"\n    - option \"输出与工程\"\n  - combobox \"制作分集\":\n    - option \"全剧各集\"\n    - option \"AO026 A 集 · 技术验收\" [selected]\n    - option \"AO026 B 集 · 技术验收\"\n  - combobox \"制作场次\":\n    - option \"全部场次\"\n    - option \"scene-a\" [selected]\n    - option \"scene-b\"\n  - button \"检查本场素材缺项\"\n  - navigation \"制作记录\":\n    - heading \"集场检查 · 1\" [level=3]\n    - button \"A 集 a 场 · 技术准备 scene-a 修订 1\":\n      - text: A 集 a 场 · 技术准备\n      - generic: scene-a 修订 1\n  - article:\n    - generic: 集场检查\n    - heading \"A 集 a 场 · 技术准备\" [level=2]\n    - combobox \"选择精确版本\":\n      - option \"版本 1 · 当前\" [selected]\n    - button \"整体意见\"\n    - button \"查看评论\"\n    - button \"查看所选修订的影响\"\n    - button \"查看此块全部评论\":\n    - paragraph: ao026-prep-a-a的说明\n    - heading \"来源与依赖\" [level=3]\n    - button \"剧情依据：AO026 A 集 · 技术验收\"\n    - heading \"全场出场检查 · 0 项\" [level=3]\n    - heading \"出场与当前使用\" [level=3]\n    - button \"素材需求 · ao026-need-ao026-prep-a-a\"\n    - button \"明确采用 · ao026-use\"\n    - generic \"完整记录与历史引用\"\n    - region \"素材缺项检查\":\n      - heading \"必要输入：1 项，缺项或待复核 1 项\" [level=3]\n      - paragraph: 必要槽位尚未全部就绪。\n      - paragraph: 完整状态：检查 0 次实体使用，引用 0 个准确状态版本。\n      - button \"下载本场输入清单\" [disabled]\n      - strong: ao026-need-ao026-prep-a-a\n      - paragraph: 后期对白 · 后期声音 · 必需\n      - button \"已采用：voice · 版本 1\"\n      - generic: 需求待复核\n      - generic \"准确版本变更 · 2 项\"\n      - button \"显式换版\"\n  - generic: 阅\n  - generic: 故事审阅台\n  - generic: 故事创作与制作审阅\n  - paragraph: 故事资料、创作配置与审阅意见以当前实例为准；本机运行凭据不会公开同步。\n- button \"查看评论 · 0\"\n- status: 「ao026-upstream」的复核结论已保存；实际采用没有自动换版\n- document"
+        },
+        "B": {
+          "url": "http://127.0.0.1:52844/?workspace=production.workspace&production_object=ao026-prep-a-a&production_revision=ed1a10bb13dbf8a2b90f77b6fa1414b262a8f3a4aa3548e54cedb4854ddfd0c7",
+          "dom": "- complementary \"工作区导航\":\n  - button \"返回网站首页\":\n    - generic: 阅\n    - generic: 故事审阅台\n    - generic: LOCAL PRODUCTION DESK\n  - navigation \"系统工作区\":\n    - button \"思路 制作思路 故事创作与生产制作方法\":\n      - generic: 思路\n      - generic: 制作思路\n      - generic: 故事创作与生产制作方法\n    - button \"故事 故事创作 故事采编、故事结构与分集剧本\":\n      - generic: 故事\n      - generic: 故事创作\n      - generic: 故事采编、故事结构与分集剧本\n    - button \"设定 制作设定 主体、空间与实体关系\":\n      - generic: 设定\n      - generic: 制作设定\n      - generic: 主体、空间与实体关系\n    - button \"素材 素材管理 需求、制作与素材审阅\":\n      - generic: 素材\n      - generic: 素材管理\n      - generic: 需求、制作与素材审阅\n    - button \"制作 全剧制作 镜头、场景与分集成片\":\n      - generic: 制作\n      - generic: 全剧制作\n      - generic: 镜头、场景与分集成片\n    - button \"管理 系统管理 故事项目与系统配置\":\n      - generic: 管理\n      - generic: 系统管理\n      - generic: 故事项目与系统配置\n  - generic: AO026 变更复核 · 隔离技术验收\n  - generic: 本机独立实例 · 业务数据可公开同步\n- main:\n  - generic: 制\n  - generic: 当前视图\n  - generic: 全剧制作\n  - heading \"全剧制作\" [level=1]\n  - paragraph: 按集场查看镜头与输入，检查素材缺项及准确采用版本。\n  - generic \"剧本依据\":\n    - paragraph: 剧本依据：尚未登记\n  - searchbox \"搜索制作记录\"\n  - combobox \"记录类型\":\n    - option \"全部类型\"\n    - option \"集场检查\" [selected]\n    - option \"镜头设计\"\n    - option \"素材需求\"\n    - option \"动态分镜组合\"\n    - option \"输出与工程\"\n  - combobox \"制作分集\":\n    - option \"全剧各集\"\n    - option \"AO026 A 集 · 技术验收\" [selected]\n    - option \"AO026 B 集 · 技术验收\"\n  - combobox \"制作场次\":\n    - option \"全部场次\"\n    - option \"scene-a\" [selected]\n    - option \"scene-b\"\n  - button \"检查本场素材缺项\"\n  - navigation \"制作记录\":\n    - heading \"集场检查 · 1\" [level=3]\n    - button \"A 集 a 场 · 技术准备 scene-a 修订 1\":\n      - text: A 集 a 场 · 技术准备\n      - generic: scene-a 修订 1\n  - article:\n    - generic: 集场检查\n    - heading \"A 集 a 场 · 技术准备\" [level=2]\n    - combobox \"选择精确版本\":\n      - option \"版本 1 · 当前\" [selected]\n    - button \"整体意见\"\n    - button \"查看评论\"\n    - button \"查看所选修订的影响\"\n    - button \"查看此块全部评论\":\n    - paragraph: ao026-prep-a-a的说明\n    - heading \"来源与依赖\" [level=3]\n    - button \"剧情依据：AO026 A 集 · 技术验收\"\n    - heading \"全场出场检查 · 0 项\" [level=3]\n    - heading \"出场与当前使用\" [level=3]\n    - button \"素材需求 · ao026-need-ao026-prep-a-a\"\n    - button \"明确采用 · ao026-use\"\n    - generic \"完整记录与历史引用\"\n    - region \"素材缺项检查\":\n      - heading \"必要输入：1 项，缺项或待复核 0 项\" [level=3]\n      - paragraph: 必要输入齐备；作品是否接受单独记录。\n      - paragraph: 完整状态：检查 0 次实体使用，引用 0 个准确状态版本。\n      - button \"下载本场输入清单\"\n      - strong: ao026-need-ao026-prep-a-a\n      - paragraph: 后期对白 · 后期声音 · 必需\n      - button \"已采用：voice · 版本 1\"\n      - generic \"准确版本变更 · 2 项\"\n      - paragraph: ao026-upstream · 采用依据\n      - button \"当时采用的上游版本\"\n      - button \"上游当前版本\"\n      - paragraph: 已复核：保留原引用\n      - button \"查看处理历史\"\n      - button \"修改变更处理\"\n      - paragraph: ao026-upstream · 需求依据\n      - button \"当时采用的上游版本\"\n      - button \"上游当前版本\"\n      - paragraph: 已复核：保留原引用\n      - button \"查看处理历史\"\n      - button \"修改变更处理\"\n      - combobox \"变更处理\":\n        - option \"保留原引用，无需返工\"\n        - option \"需要返工，保持待处理\" [selected]\n        - option \"需要替换，另行选择新版本\"\n      - textbox \"复核者\": 根协调技术验收\n      - textbox \"复核依据\":\n        - /placeholder: 说明这次变化对当前需求或采用的实际影响\n        - text: AO026 相同载荷并发：第四修订需要返工，旧窗口仍须明确冲突。\n      - status: 复核结论已有不同内容或版本变化，本次保存未完成且未覆盖现有判断；请保留输入并重新检查\n      - button \"保存变更处理\" [active]\n      - button \"取消\"\n      - button \"显式换版\"\n  - generic: 阅\n  - generic: 故事审阅台\n  - generic: 故事创作与制作审阅\n  - paragraph: 故事资料、创作配置与审阅意见以当前实例为准；本机运行凭据不会公开同步。\n- button \"查看评论 · 0\"\n- status: 复核结论已有不同内容或版本变化，本次保存未完成且未覆盖现有判断；请保留输入并重新检查\n- document"
+        },
+        "repeat_click_executed": true
+      }
+    },
+    {
+      "source": "change-decision-contract/chrome-unified-response-recovery-final.json",
+      "source_sha256": "a48abffa80170c140ed50e5899c81586b4e91cd0fac92d475fc86d81525ade15",
+      "level": "Chrome_receipt_with_readback_where_recorded",
+      "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
+      "result": {
+        "unknown": {
+          "url": "http://127.0.0.1:52844/?workspace=production.workspace&production_object=ao026-prep-a-b&production_revision=b9f569f1a5f78e4bb2258516cfff2cac4d7f921b20c025d11299c4ffe1edb8cc",
+          "dom": "- complementary \"工作区导航\":\n  - button \"返回网站首页\":\n    - generic: 阅\n    - generic: 故事审阅台\n    - generic: LOCAL PRODUCTION DESK\n  - navigation \"系统工作区\":\n    - button \"思路 制作思路 故事创作与生产制作方法\":\n      - generic: 思路\n      - generic: 制作思路\n      - generic: 故事创作与生产制作方法\n    - button \"故事 故事创作 故事采编、故事结构与分集剧本\":\n      - generic: 故事\n      - generic: 故事创作\n      - generic: 故事采编、故事结构与分集剧本\n    - button \"设定 制作设定 主体、空间与实体关系\":\n      - generic: 设定\n      - generic: 制作设定\n      - generic: 主体、空间与实体关系\n    - button \"素材 素材管理 需求、制作与素材审阅\":\n      - generic: 素材\n      - generic: 素材管理\n      - generic: 需求、制作与素材审阅\n    - button \"制作 全剧制作 镜头、场景与分集成片\":\n      - generic: 制作\n      - generic: 全剧制作\n      - generic: 镜头、场景与分集成片\n    - button \"管理 系统管理 故事项目与系统配置\":\n      - generic: 管理\n      - generic: 系统管理\n      - generic: 故事项目与系统配置\n  - generic: AO026 变更复核 · 隔离技术验收\n  - generic: 本机独立实例 · 业务数据可公开同步\n- main:\n  - generic: 制\n  - generic: 当前视图\n  - generic: 全剧制作\n  - heading \"全剧制作\" [level=1]\n  - paragraph: 按集场查看镜头与输入，检查素材缺项及准确采用版本。\n  - generic \"剧本依据\":\n    - paragraph: 剧本依据：尚未登记\n  - searchbox \"搜索制作记录\"\n  - combobox \"记录类型\":\n    - option \"全部类型\"\n    - option \"集场检查\" [selected]\n    - option \"镜头设计\"\n    - option \"素材需求\"\n    - option \"动态分镜组合\"\n    - option \"输出与工程\"\n  - combobox \"制作分集\":\n    - option \"全剧各集\"\n    - option \"AO026 A 集 · 技术验收\" [selected]\n    - option \"AO026 B 集 · 技术验收\"\n  - combobox \"制作场次\":\n    - option \"全部场次\"\n    - option \"scene-a\"\n    - option \"scene-b\" [selected]\n  - button \"检查本场素材缺项\"\n  - navigation \"制作记录\":\n    - heading \"集场检查 · 1\" [level=3]\n    - button \"A 集 b 场 · 技术准备 scene-b 修订 1\":\n      - text: A 集 b 场 · 技术准备\n      - generic: scene-b 修订 1\n  - article:\n    - generic: 集场检查\n    - heading \"A 集 b 场 · 技术准备\" [level=2]\n    - combobox \"选择精确版本\":\n      - option \"版本 1 · 当前\" [selected]\n    - button \"整体意见\"\n    - button \"查看评论\"\n    - button \"查看所选修订的影响\"\n    - button \"查看此块全部评论\":\n    - paragraph: ao026-prep-a-b的说明\n    - heading \"来源与依赖\" [level=3]\n    - button \"剧情依据：AO026 A 集 · 技术验收\"\n    - heading \"全场出场检查 · 0 项\" [level=3]\n    - heading \"出场与当前使用\" [level=3]\n    - button \"素材需求 · ao026-need-ao026-prep-a-b\"\n    - button \"明确采用 · ao026-use-legacy\"\n    - generic \"完整记录与历史引用\"\n    - region \"素材缺项检查\":\n      - heading \"必要输入：1 项，缺项或待复核 0 项\" [level=3]\n      - paragraph: 必要输入齐备；作品是否接受单独记录。\n      - paragraph: 完整状态：检查 0 次实体使用，引用 0 个准确状态版本。\n      - button \"下载本场输入清单\"\n      - strong: ao026-need-ao026-prep-a-b\n      - paragraph: 后期对白 · 后期声音 · 必需\n      - button \"已采用：voice · 版本 1\"\n      - generic \"准确版本变更 · 2 项\"\n      - paragraph: ao026-upstream · 采用依据\n      - button \"当时采用的上游版本\"\n      - button \"上游当前版本\"\n      - paragraph: 已复核：保留原引用\n      - button \"查看处理历史\"\n      - button \"修改变更处理\"\n      - paragraph: ao026-upstream · 需求依据\n      - button \"当时采用的上游版本\"\n      - button \"上游当前版本\"\n      - paragraph: 已复核：保留原引用\n      - button \"查看处理历史\"\n      - button \"修改变更处理\"\n      - combobox \"变更处理\":\n        - option \"保留原引用，无需返工\"\n        - option \"需要返工，保持待处理\" [selected]\n        - option \"需要替换，另行选择新版本\"\n      - textbox \"复核者\": 根协调技术验收\n      - textbox \"复核依据\":\n        - /placeholder: 说明这次变化对当前需求或采用的实际影响\n        - text: AO026 统一结论第二修订：需要返工，断响应后准确回读且两旧头保持。\n      - status: 复核结果待确认，请原样重试核对；尚未再次发送\n      - button \"保存变更处理\"\n      - button \"取消\"\n      - button \"显式换版\"\n  - generic: 阅\n  - generic: 故事审阅台\n  - generic: 故事创作与制作审阅\n  - paragraph: 故事资料、创作配置与审阅意见以当前实例为准；本机运行凭据不会公开同步。\n- button \"查看评论 · 0\"\n- status: 复核结果待确认，请原样重试核对；尚未再次发送\n- document"
+        },
+        "recovered": {
+          "url": "http://127.0.0.1:52844/?workspace=production.workspace&production_object=ao026-prep-a-b&production_revision=b9f569f1a5f78e4bb2258516cfff2cac4d7f921b20c025d11299c4ffe1edb8cc",
+          "dom": "- complementary \"工作区导航\":\n  - button \"返回网站首页\":\n    - generic: 阅\n    - generic: 故事审阅台\n    - generic: LOCAL PRODUCTION DESK\n  - navigation \"系统工作区\":\n    - button \"思路 制作思路 故事创作与生产制作方法\":\n      - generic: 思路\n      - generic: 制作思路\n      - generic: 故事创作与生产制作方法\n    - button \"故事 故事创作 故事采编、故事结构与分集剧本\":\n      - generic: 故事\n      - generic: 故事创作\n      - generic: 故事采编、故事结构与分集剧本\n    - button \"设定 制作设定 主体、空间与实体关系\":\n      - generic: 设定\n      - generic: 制作设定\n      - generic: 主体、空间与实体关系\n    - button \"素材 素材管理 需求、制作与素材审阅\":\n      - generic: 素材\n      - generic: 素材管理\n      - generic: 需求、制作与素材审阅\n    - button \"制作 全剧制作 镜头、场景与分集成片\":\n      - generic: 制作\n      - generic: 全剧制作\n      - generic: 镜头、场景与分集成片\n    - button \"管理 系统管理 故事项目与系统配置\":\n      - generic: 管理\n      - generic: 系统管理\n      - generic: 故事项目与系统配置\n  - generic: AO026 变更复核 · 隔离技术验收\n  - generic: 本机独立实例 · 业务数据可公开同步\n- main:\n  - generic: 制\n  - generic: 当前视图\n  - generic: 全剧制作\n  - heading \"全剧制作\" [level=1]\n  - paragraph: 按集场查看镜头与输入，检查素材缺项及准确采用版本。\n  - generic \"剧本依据\":\n    - paragraph: 剧本依据：尚未登记\n  - searchbox \"搜索制作记录\"\n  - combobox \"记录类型\":\n    - option \"全部类型\"\n    - option \"集场检查\" [selected]\n    - option \"镜头设计\"\n    - option \"素材需求\"\n    - option \"动态分镜组合\"\n    - option \"输出与工程\"\n  - combobox \"制作分集\":\n    - option \"全剧各集\"\n    - option \"AO026 A 集 · 技术验收\" [selected]\n    - option \"AO026 B 集 · 技术验收\"\n  - combobox \"制作场次\":\n    - option \"全部场次\"\n    - option \"scene-a\"\n    - option \"scene-b\" [selected]\n  - button \"检查本场素材缺项\"\n  - navigation \"制作记录\":\n    - heading \"集场检查 · 1\" [level=3]\n    - button \"A 集 b 场 · 技术准备 scene-b 修订 1\":\n      - text: A 集 b 场 · 技术准备\n      - generic: scene-b 修订 1\n  - article:\n    - generic: 集场检查\n    - heading \"A 集 b 场 · 技术准备\" [level=2]\n    - combobox \"选择精确版本\":\n      - option \"版本 1 · 当前\" [selected]\n    - button \"整体意见\"\n    - button \"查看评论\"\n    - button \"查看所选修订的影响\"\n    - button \"查看此块全部评论\":\n    - paragraph: ao026-prep-a-b的说明\n    - heading \"来源与依赖\" [level=3]\n    - button \"剧情依据：AO026 A 集 · 技术验收\"\n    - heading \"全场出场检查 · 0 项\" [level=3]\n    - heading \"出场与当前使用\" [level=3]\n    - button \"素材需求 · ao026-need-ao026-prep-a-b\"\n    - button \"明确采用 · ao026-use-legacy\"\n    - generic \"完整记录与历史引用\"\n    - region \"素材缺项检查\":\n      - heading \"必要输入：1 项，缺项或待复核 1 项\" [level=3]\n      - paragraph: 必要槽位尚未全部就绪。\n      - paragraph: 完整状态：检查 0 次实体使用，引用 0 个准确状态版本。\n      - button \"下载本场输入清单\" [disabled]\n      - strong: ao026-need-ao026-prep-a-b\n      - paragraph: 后期对白 · 后期声音 · 必需\n      - button \"已采用：voice · 版本 1\"\n      - generic: 需求待复核\n      - generic \"准确版本变更 · 2 项\"\n      - button \"显式换版\"\n  - generic: 阅\n  - generic: 故事审阅台\n  - generic: 故事创作与制作审阅\n  - paragraph: 故事资料、创作配置与审阅意见以当前实例为准；本机运行凭据不会公开同步。\n- button \"查看评论 · 0\"\n- status: 「ao026-upstream」的复核结论已保存；实际采用没有自动换版\n- document"
+        }
+      }
+    },
+    {
+      "source": "change-decision-contract/chrome-legacy-originals-after-unified.json",
+      "source_sha256": "eaef324f1e22397d064e3952759de51b3e644fc559a8d441415fa89d3f3fca76",
+      "level": "Chrome_receipt_with_readback_where_recorded",
+      "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
+      "result": {
+        "keep": {
+          "url": "http://127.0.0.1:52844/?workspace=materials.workspace&production_object=legacy-keep&production_revision=5c93c121503acdb5e40ea3fb26126296e17cc4ca3d47758f8006365f553006ce",
+          "dom": "- complementary \"工作区导航\":\n  - button \"返回网站首页\":\n    - generic: 阅\n    - generic: 故事审阅台\n    - generic: LOCAL PRODUCTION DESK\n  - navigation \"系统工作区\":\n    - button \"思路 制作思路 故事创作与生产制作方法\":\n      - generic: 思路\n      - generic: 制作思路\n      - generic: 故事创作与生产制作方法\n    - button \"故事 故事创作 故事采编、故事结构与分集剧本\":\n      - generic: 故事\n      - generic: 故事创作\n      - generic: 故事采编、故事结构与分集剧本\n    - button \"设定 制作设定 主体、空间与实体关系\":\n      - generic: 设定\n      - generic: 制作设定\n      - generic: 主体、空间与实体关系\n    - button \"素材 素材管理 需求、制作与素材审阅\":\n      - generic: 素材\n      - generic: 素材管理\n      - generic: 需求、制作与素材审阅\n    - button \"制作 全剧制作 镜头、场景与分集成片\":\n      - generic: 制作\n      - generic: 全剧制作\n      - generic: 镜头、场景与分集成片\n    - button \"管理 系统管理 故事项目与系统配置\":\n      - generic: 管理\n      - generic: 系统管理\n      - generic: 故事项目与系统配置\n  - generic: AO026 变更复核 · 隔离技术验收\n  - generic: 本机独立实例 · 业务数据可公开同步\n- main:\n  - generic: 素\n  - generic: 当前视图\n  - generic: 素材管理\n  - heading \"素材管理\" [level=1]\n  - paragraph: 查看原件、候选和实际制作记录；审阅结论与具体采用分别保存。\n  - region \"素材管理筛选\":\n    - generic: 搜索素材记录\n    - searchbox \"搜索制作记录\"\n    - button \"清除筛选\" [disabled]\n    - paragraph: 按当前列表记录计数，每个对象只计一次；素材需求的占位不计为实际素材，历史修订不重复计数。\n    - group \"记录类型\":\n      - generic: 记录类型\n      - button \"记录类型：全部类型，10 条记录\" [pressed]:\n        - generic: 全部类型\n        - generic: \"10\"\n      - button \"记录类型：实际素材，1 条记录\":\n        - generic: 实际素材\n        - generic: \"1\"\n      - button \"记录类型：素材需求，0 条记录\":\n        - generic: 素材需求\n        - generic: \"0\"\n      - button \"记录类型：实际制作，1 条记录\":\n        - generic: 实际制作\n        - generic: \"1\"\n      - button \"记录类型：审阅结论，6 条记录\":\n        - generic: 审阅结论\n        - generic: \"6\"\n      - button \"记录类型：明确采用，2 条记录\":\n        - generic: 明确采用\n        - generic: \"2\"\n    - group \"内容分类\":\n      - generic: 内容分类\n      - button \"内容分类：全部内容，10 条记录\" [pressed]:\n        - generic: 全部内容\n        - generic: \"10\"\n      - button \"内容分类：图像，0 条记录\":\n        - generic: 图像\n        - generic: \"0\"\n      - button \"内容分类：声音，9 条记录\":\n        - generic: 声音\n        - generic: \"9\"\n      - button \"内容分类：视频，0 条记录\":\n        - generic: 视频\n        - generic: \"0\"\n      - button \"内容分类：工程，0 条记录\":\n        - generic: 工程\n        - generic: \"0\"\n      - button \"内容分类：说明文件，0 条记录\":\n        - generic: 说明文件\n        - generic: \"0\"\n    - status: 当前结果：10 条记录，其中实际素材 1 份、未生成需求 0 项\n  - navigation \"制作记录\":\n    - heading \"实际素材 · 1\" [level=3]\n    - button \"voice 版本 1\":\n      - text: voice\n      - generic: 版本 1\n    - heading \"实际制作 · 1\" [level=3]\n    - button \"recording 修订 1\":\n      - text: recording\n      - generic: 修订 1\n    - heading \"审阅结论 · 6\" [level=3]\n    - button \"ao026-upstream · 变更复核 修订 1\":\n      - text: ao026-upstream · 变更复核\n      - generic: 修订 1\n    - button \"ao026-upstream · 变更复核 修订 4\":\n      - text: ao026-upstream · 变更复核\n      - generic: 修订 4\n    - button \"legacy-keep 修订 1\" [active]:\n      - text: legacy-keep\n      - generic: 修订 1\n    - button \"legacy-rework 修订 1\":\n      - text: legacy-rework\n      - generic: 修订 1\n    - button \"seed-ao026-use 修订 1\":\n      - text: seed-ao026-use\n      - generic: 修订 1\n    - button \"seed-ao026-use-legacy 修订 1\":\n      - text: seed-ao026-use-legacy\n      - generic: 修订 1\n    - heading \"明确采用 · 2\" [level=3]\n    - button \"ao026-use scene-a 修订 1\":\n      - text: ao026-use\n      - generic: scene-a 修订 1\n    - button \"ao026-use-legacy scene-b 修订 1\":\n      - text: ao026-use-legacy\n      - generic: scene-b 修订 1\n  - article:\n    - generic: 审阅结论\n    - heading \"legacy-keep\" [level=2]\n    - combobox \"选择精确版本\":\n      - option \"版本 1 · 当前\" [selected]\n    - button \"整体意见\"\n    - button \"查看评论\"\n    - button \"查看所选修订的影响\"\n    - button \"查看此块全部评论\":\n    - paragraph: legacy-keep的说明\n    - term: 审阅结论\n    - definition: 保留原引用\n    - term: 审阅者\n    - definition: 技术夹具记录者（非用户身份推断）\n    - term: 说明\n    - definition: 隔离技术数据：复核上游变化契约，不代表故事质量认可。\n    - heading \"来源与依赖\" [level=3]\n    - button \"审阅对象：ao026-need-ao026-prep-a-b\"\n    - heading \"出场与当前使用\" [level=3]\n    - button \"审阅结论 · ao026-upstream · 变更复核\"\n    - generic \"完整记录与历史引用\"\n  - generic: 阅\n  - generic: 故事审阅台\n  - generic: 故事创作与制作审阅\n  - paragraph: 故事资料、创作配置与审阅意见以当前实例为准；本机运行凭据不会公开同步。\n- button \"查看评论 · 0\"\n- status\n- document"
+        },
+        "rework": {
+          "url": "http://127.0.0.1:52844/?workspace=materials.workspace&production_object=legacy-rework&production_revision=3f1770b06709c9682b05e7be427bd38c79cba2b0b55ae2ad89ea5efd7b4075c8",
+          "dom": "- complementary \"工作区导航\":\n  - button \"返回网站首页\":\n    - generic: 阅\n    - generic: 故事审阅台\n    - generic: LOCAL PRODUCTION DESK\n  - navigation \"系统工作区\":\n    - button \"思路 制作思路 故事创作与生产制作方法\":\n      - generic: 思路\n      - generic: 制作思路\n      - generic: 故事创作与生产制作方法\n    - button \"故事 故事创作 故事采编、故事结构与分集剧本\":\n      - generic: 故事\n      - generic: 故事创作\n      - generic: 故事采编、故事结构与分集剧本\n    - button \"设定 制作设定 主体、空间与实体关系\":\n      - generic: 设定\n      - generic: 制作设定\n      - generic: 主体、空间与实体关系\n    - button \"素材 素材管理 需求、制作与素材审阅\":\n      - generic: 素材\n      - generic: 素材管理\n      - generic: 需求、制作与素材审阅\n    - button \"制作 全剧制作 镜头、场景与分集成片\":\n      - generic: 制作\n      - generic: 全剧制作\n      - generic: 镜头、场景与分集成片\n    - button \"管理 系统管理 故事项目与系统配置\":\n      - generic: 管理\n      - generic: 系统管理\n      - generic: 故事项目与系统配置\n  - generic: AO026 变更复核 · 隔离技术验收\n  - generic: 本机独立实例 · 业务数据可公开同步\n- main:\n  - generic: 素\n  - generic: 当前视图\n  - generic: 素材管理\n  - heading \"素材管理\" [level=1]\n  - paragraph: 查看原件、候选和实际制作记录；审阅结论与具体采用分别保存。\n  - region \"素材管理筛选\":\n    - generic: 搜索素材记录\n    - searchbox \"搜索制作记录\"\n    - button \"清除筛选\" [disabled]\n    - paragraph: 按当前列表记录计数，每个对象只计一次；素材需求的占位不计为实际素材，历史修订不重复计数。\n    - group \"记录类型\":\n      - generic: 记录类型\n      - button \"记录类型：全部类型，10 条记录\" [pressed]:\n        - generic: 全部类型\n        - generic: \"10\"\n      - button \"记录类型：实际素材，1 条记录\":\n        - generic: 实际素材\n        - generic: \"1\"\n      - button \"记录类型：素材需求，0 条记录\":\n        - generic: 素材需求\n        - generic: \"0\"\n      - button \"记录类型：实际制作，1 条记录\":\n        - generic: 实际制作\n        - generic: \"1\"\n      - button \"记录类型：审阅结论，6 条记录\":\n        - generic: 审阅结论\n        - generic: \"6\"\n      - button \"记录类型：明确采用，2 条记录\":\n        - generic: 明确采用\n        - generic: \"2\"\n    - group \"内容分类\":\n      - generic: 内容分类\n      - button \"内容分类：全部内容，10 条记录\" [pressed]:\n        - generic: 全部内容\n        - generic: \"10\"\n      - button \"内容分类：图像，0 条记录\":\n        - generic: 图像\n        - generic: \"0\"\n      - button \"内容分类：声音，9 条记录\":\n        - generic: 声音\n        - generic: \"9\"\n      - button \"内容分类：视频，0 条记录\":\n        - generic: 视频\n        - generic: \"0\"\n      - button \"内容分类：工程，0 条记录\":\n        - generic: 工程\n        - generic: \"0\"\n      - button \"内容分类：说明文件，0 条记录\":\n        - generic: 说明文件\n        - generic: \"0\"\n    - status: 当前结果：10 条记录，其中实际素材 1 份、未生成需求 0 项\n  - navigation \"制作记录\":\n    - heading \"实际素材 · 1\" [level=3]\n    - button \"voice 版本 1\":\n      - text: voice\n      - generic: 版本 1\n    - heading \"实际制作 · 1\" [level=3]\n    - button \"recording 修订 1\":\n      - text: recording\n      - generic: 修订 1\n    - heading \"审阅结论 · 6\" [level=3]\n    - button \"ao026-upstream · 变更复核 修订 1\":\n      - text: ao026-upstream · 变更复核\n      - generic: 修订 1\n    - button \"ao026-upstream · 变更复核 修订 4\":\n      - text: ao026-upstream · 变更复核\n      - generic: 修订 4\n    - button \"legacy-keep 修订 1\":\n      - text: legacy-keep\n      - generic: 修订 1\n    - button \"legacy-rework 修订 1\" [active]:\n      - text: legacy-rework\n      - generic: 修订 1\n    - button \"seed-ao026-use 修订 1\":\n      - text: seed-ao026-use\n      - generic: 修订 1\n    - button \"seed-ao026-use-legacy 修订 1\":\n      - text: seed-ao026-use-legacy\n      - generic: 修订 1\n    - heading \"明确采用 · 2\" [level=3]\n    - button \"ao026-use scene-a 修订 1\":\n      - text: ao026-use\n      - generic: scene-a 修订 1\n    - button \"ao026-use-legacy scene-b 修订 1\":\n      - text: ao026-use-legacy\n      - generic: scene-b 修订 1\n  - article:\n    - generic: 审阅结论\n    - heading \"legacy-rework\" [level=2]\n    - combobox \"选择精确版本\":\n      - option \"版本 1 · 当前\" [selected]\n    - button \"整体意见\"\n    - button \"查看评论\"\n    - button \"查看所选修订的影响\"\n    - button \"查看此块全部评论\":\n    - paragraph: legacy-rework的说明\n    - term: 审阅结论\n    - definition: 需要返工\n    - term: 审阅者\n    - definition: 技术夹具记录者（非用户身份推断）\n    - term: 说明\n    - definition: 隔离技术数据：复核上游变化契约，不代表故事质量认可。\n    - heading \"来源与依赖\" [level=3]\n    - button \"审阅对象：ao026-need-ao026-prep-a-b\"\n    - heading \"出场与当前使用\" [level=3]\n    - button \"审阅结论 · ao026-upstream · 变更复核\"\n    - generic \"完整记录与历史引用\"\n  - generic: 阅\n  - generic: 故事审阅台\n  - generic: 故事创作与制作审阅\n  - paragraph: 故事资料、创作配置与审阅意见以当前实例为准；本机运行凭据不会公开同步。\n- button \"查看评论 · 0\"\n- status\n- document"
+        }
+      }
+    },
+    {
+      "source": "change-decision-contract/chrome-final-code-receipt.json",
+      "source_sha256": "4b8a74f711f3bca6f905ddb772bb1779de0a1ddec7024a48aad5ccb2e659d0d3",
+      "level": "database_or_HTTP_readback",
+      "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
+      "result": {
+        "at": "2026-10-04T01:36:17.635201+00:00",
+        "files": {
+          "review_desk/static/production.js": "e19023f82ed1cd759ffab7c37d5c873b81f83ce82f526fdc09472655e4a150ff",
+          "review_desk/static/entity-review.js": "6303532c5b08fb08ac6bfb2ce66311a6717d314acf885c7d8e77cef3b4728176",
+          "review_desk/production.py": "aa88558f4922113915909b4ec5106fa94061dbb956d9a05d115b79a9263275be",
+          "review_desk/production_changes.py": "7894ba6d1297796a96909b6ff77f701b4391e733cbd3d67ddc3a028ff938dce1"
+        },
+        "browser_fixture_served_js": "e19023f82ed1cd759ffab7c37d5c873b81f83ce82f526fdc09472655e4a150ff",
+        "browser_final_evidence": [
+          "chrome-identical-payload-conflict-final.json",
+          "chrome-history-final.json",
+          "chrome-unified-response-recovery-final.json",
+          "chrome-legacy-originals-after-unified.json",
+          "chrome-final-history-receipt.json"
+        ],
+        "limitation": "Earlier initial-create and original legacy-consolidation browser checks predate the final feedback/history-only JS fix; underlying backend unchanged."
+      }
+    },
+    {
+      "source": "change-decision-contract/chrome-final-history-receipt.json",
+      "source_sha256": "57530a95dd01baa685aaf4ecdefdf1bf796a0fc9faf1547421e89706286c73de",
+      "level": "database_or_HTTP_readback",
+      "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
+      "result": {
+        "at": "2026-10-04T01:35:33.257330+00:00",
+        "counts": {
+          "objects": 25,
+          "revisions": 31,
+          "dependencies": 63,
+          "comments": 0,
+          "comment_events": 0,
+          "configurations": 0,
+          "configuration_events": 0,
+          "material_rounds": 5,
+          "material_feedback": 0
+        },
+        "successful_writes": 6,
+        "rejected_posts": 4,
+        "total_posts": 10,
+        "new_revisions": [
+          {
+            "object_id": "change-13f90b12-02ff-4640-b6db-1d79f373eeaa",
+            "revision_id": "b2f9f1e466cb6d40be28872fa3425d6b261d28139da1ba68f18a4edae23905ed",
+            "version": 1,
+            "action": "keep",
+            "reason": "AO026 显式统一两个旧头：保留原引用，原 keep/rework 均保留。",
+            "resolves": [
+              {
+                "object_id": "legacy-keep",
+                "revision_id": "5c93c121503acdb5e40ea3fb26126296e17cc4ca3d47758f8006365f553006ce"
+              },
+              {
+                "object_id": "legacy-rework",
+                "revision_id": "3f1770b06709c9682b05e7be427bd38c79cba2b0b55ae2ad89ea5efd7b4075c8"
+              }
+            ]
+          },
+          {
+            "object_id": "change-13f90b12-02ff-4640-b6db-1d79f373eeaa",
+            "revision_id": "51d3162c15d70026c76a4d33607fb5ac2b384ee4d2d079e67f12269943151c89",
+            "version": 2,
+            "action": "rework",
+            "reason": "AO026 统一结论第二修订：需要返工，断响应后准确回读且两旧头保持。",
+            "resolves": [
+              {
+                "object_id": "legacy-keep",
+                "revision_id": "5c93c121503acdb5e40ea3fb26126296e17cc4ca3d47758f8006365f553006ce"
+              },
+              {
+                "object_id": "legacy-rework",
+                "revision_id": "3f1770b06709c9682b05e7be427bd38c79cba2b0b55ae2ad89ea5efd7b4075c8"
+              }
+            ]
+          },
+          {
+            "object_id": "change-db977acc-3ab7-4ec4-8e84-6f0b30c0f0b2",
+            "revision_id": "5bc9b1cb531e31bc300fb2d2508a0cbdbd6cf904fd377b9a0549ba085ffcd7ff",
+            "version": 1,
+            "action": "keep",
+            "reason": "AO026 页面 A：保持原引用，验证单一结论。",
+            "resolves": []
+          },
+          {
+            "object_id": "change-db977acc-3ab7-4ec4-8e84-6f0b30c0f0b2",
+            "revision_id": "39842b2028d74cb7117217ba3036ac4067f94746ac171aed81a850648e382ca7",
+            "version": 2,
+            "action": "rework",
+            "reason": "AO026 页面 A 修订：现在需要返工，保留原 keep 历史。",
+            "resolves": []
+          },
+          {
+            "object_id": "change-db977acc-3ab7-4ec4-8e84-6f0b30c0f0b2",
+            "revision_id": "c1149de7a819cfdd1930898d262ea745249ef311e498b36bedfa4235cbc07dbf",
+            "version": 3,
+            "action": "keep",
+            "reason": "AO026 第三修订：恢复保留原引用，验证已提交断响应后的准确回读。",
+            "resolves": []
+          },
+          {
+            "object_id": "change-db977acc-3ab7-4ec4-8e84-6f0b30c0f0b2",
+            "revision_id": "bb9ee5d25e44f34bfe7b4cdd074a83c640ecf5373b15f5d8207dbf065fbb8c49",
+            "version": 4,
+            "action": "rework",
+            "reason": "AO026 相同载荷并发：第四修订需要返工，旧窗口仍须明确冲突。",
+            "resolves": []
+          }
+        ],
+        "original_judgments": [
+          {
+            "object_id": "legacy-keep",
+            "revision_id": "5c93c121503acdb5e40ea3fb26126296e17cc4ca3d47758f8006365f553006ce",
+            "history_count": 1,
+            "payload_equals_initial_readiness": true
+          },
+          {
+            "object_id": "legacy-rework",
+            "revision_id": "3f1770b06709c9682b05e7be427bd38c79cba2b0b55ae2ad89ea5efd7b4075c8",
+            "history_count": 1,
+            "payload_equals_initial_readiness": true
+          },
+          {
+            "object_id": "seed-ao026-use",
+            "revision_id": "39517b39c363dfab8e897b896b7a46de91451f80cd85de50902ad3b73fe13b54",
+            "history_count": 1,
+            "payload_equals_initial_readiness": true
+          },
+          {
+            "object_id": "seed-ao026-use-legacy",
+            "revision_id": "8c577bf36547dc1a4b554d96ccd40b87a6a2b7cea88e7dde7cb4dab46e9ca0eb",
+            "history_count": 1,
+            "payload_equals_initial_readiness": true
+          }
+        ],
+        "original_two_adoptions_exact_payloads_and_revisions_preserved": true,
+        "identical_payload_two_windows_actual_201_then_409": true,
+        "both_response_loss_retries_no_extra_POST": true,
+        "comments_and_comment_events": 0,
+        "formal_writes": false,
+        "original_judgment_payload_comparison_source": "initial-readiness.json and fixture.json; not an original whole-table byte comparison",
+        "browser_source": [
+          "chrome-first-create-conflict.json",
+          "chrome-history-button-gap.json",
+          "chrome-history-final.json",
+          "chrome-history-open-fixed-label-gap.json",
+          "chrome-identical-payload-conflict-final.json",
+          "chrome-legacy-conflict-before.json",
+          "chrome-legacy-unified-conflict.json",
+          "chrome-revision-conflict.json",
+          "chrome-stale-download-rejected.json",
+          "chrome-unified-response-recovery-final.json",
+          "chrome-update-response-recovered.json",
+          "chrome-update-response-unknown.json"
+        ]
+      }
+    },
+    {
+      "source": "final-candidate-main-chrome.json",
+      "source_sha256": "abf89e1955a84adf5bba58318099c60f652776976d433b159601ec0348dbe9ed",
+      "level": "Chrome_receipt_with_readback_where_recorded",
+      "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
+      "result": {
+        "system_candidate": "c1da4cdce8c98bd52beafed1dc0a7b70887d8653",
+        "stage": {
+          "url": "http://127.0.0.1:62603/?workspace=project.configuration&production_entity=entity-li-ji&entity_state=form-li-ji-paste&production_object=relationship-li-ji-a-heng-personal",
+          "dom": "- complementary \"工作区导航\":\n  - button \"返回网站首页\":\n    - generic: 阅\n    - generic: 故事审阅台\n    - generic: LOCAL PRODUCTION DESK\n  - navigation \"系统工作区\":\n    - button \"思路 制作思路 故事创作与生产制作方法\":\n      - generic: 思路\n      - generic: 制作思路\n      - generic: 故事创作与生产制作方法\n    - button \"故事 故事创作 故事采编、故事结构与分集剧本\":\n      - generic: 故事\n      - generic: 故事创作\n      - generic: 故事采编、故事结构与分集剧本\n    - button \"设定 制作设定 主体、空间与实体关系\":\n      - generic: 设定\n      - generic: 制作设定\n      - generic: 主体、空间与实体关系\n    - button \"素材 素材管理 需求、制作与素材审阅\":\n      - generic: 素材\n      - generic: 素材管理\n      - generic: 需求、制作与素材审阅\n    - button \"制作 全剧制作 镜头、场景与分集成片\":\n      - generic: 制作\n      - generic: 全剧制作\n      - generic: 镜头、场景与分集成片\n    - button \"管理 系统管理 故事项目与系统配置\":\n      - generic: 管理\n      - generic: 系统管理\n      - generic: 故事项目与系统配置\n  - generic: 李寄斩蛇 · 故事采编 · 任务预览\n  - generic: 本机独立实例 · 业务数据可公开同步\n- main:\n  - generic: 管\n  - generic: 当前视图\n  - generic: 系统管理\n  - heading \"系统管理\" [level=1]\n  - paragraph: 当前故事实例 · 系统与故事项目配置\n  - navigation \"系统配置分组\":\n    - button \"故事项目\"\n    - button \"系统与 AI\"\n  - article:\n    - heading \"故事项目配置\" [level=2]\n    - paragraph: 当前故事实例的创作阶段与背景，仅影响本实例。\n    - paragraph: 配置版本 16 · Schema 4\n    - generic: 当前创作阶段\n    - combobox \"当前创作阶段\":\n      - option \"故事采编\"\n      - option \"故事梗概\"\n      - option \"剧本创作\"\n      - option \"制作设定\"\n      - option \"素材准备\" [selected]\n      - option \"全剧制作\"\n    - generic: 故事背景\n    - textbox \"故事背景\": 本实例保留《李寄斩蛇》白话直译与出处、32则通俗白话情节素材、3个原创扩写方向及历版小说。已选方向三《把灯带回家》。故事结构修订10与十章小说精修九定稿候选仍作为既有成果保留；当前正式制作依据为用户已确认的剧本版本四《把灯带回家》，共17集、42场。结构先发布，小说引用该具体修订；旧版本与原评论完整保留。全剧非歌曲首轮新增369张图像、42份录音，共411份原件，已增量发布到当前审阅台。四首歌曲的词稿与现有MP3按阶段归档，尚未进入当前审阅台，录音均未获音频质量认可。作品确认、素材认可与镜头采用按各自准确版本分别记录，生成或登记不表示接受。来源、整理文本与原创设定以各自正文和版本为准。\n    - generic: 创作背景\n    - textbox \"创作背景\": 以《李寄斩蛇》为原型推进漫剧，保留李寄主动应募、亲手斩蛇。现代白话，背景与因果清楚；篇幅服从理解需要。李寄、阿蘅是从小亲近的旧友，两家隔着几户且临河；李诞、孙六和阿蘅已故父亲是故交，晚辈叫孙六叔。李寄从冲动毁歌本走向询问和共同补救；孙六主动承担。庙会和祈福戏早于人祭；献人始于前年阿禾、去年小满，今年阿蘅为第三个祭童。去年质疑被神罚恐吓、县里准祭与封锁查验压住。大庙院中央戏台面南，观众在南，北为正殿、两侧殿房供奉佛像；高墙接山，荆棘与岩檐藏住蛇洞，唯一庙后门常锁，不设绕行或寻路支线。差役持文书开后门，众人查清蛇始终受洞穴和封闭石道困住。日常先关洞闸再开投食门，放饵后关实心厚木门上闩，再提洞闸；蛇退净再关闸。闸外石道不足一步，只容头颈；洞闸通过封闭短接段外移，两侧有操作空间。四名壮实乡亲在准备阶段加入。孙六、李绡、程差役和四乡亲先压长杠，李诞执刀；蛇猛挣迫使李诞加入，八成人两侧各四人持续压杠。他先抛刀到外侧空地并加入压闸。阿蘅在后门内侧实际传话请援；压稳后，李寄主动请试，父亲核对门闩、石盖和刀位，允许她从已练过的外侧位置下刀，握不稳或看不清便停。求援与停止尝试的退路仍在，不制造只能让孩子救命的困局。李寄克服害怕和疲劳，反复下刀才斩首；成人持续承力，确认蛇死才卸闸。墨耳在家。蛇死后以惩奸除恶为善后重点，简短表现两家默然悲伤；追责、停祭与退粮交代结果。母亲提前备丰盛庆功饭，孙六同席。结尾集中补齐《送青篷》、简短复演和提灯归家，无下游学唱与照护安排。图片优先OpenArt CLI，独立项目见config/openart.json。原制作要求为原生4K；全剧非歌曲首轮已按用户授权调整为指定模型实际最高原生尺寸，保存未经放大原件并记录实际像素，不追改旧图规格。剧本版本四已确认用于制作；具体素材的认可和镜头采用分别记录，尚未制作成片。\n    - generic: 目标载体\n    - textbox \"目标载体\": 漫剧\n    - generic: 目标受众\n    - textbox \"目标受众\": 抖音、快手等短视频平台用户\n    - generic: 风格\n    - textbox \"风格\": 传统复古叙事\n    - button \"保存配置\"\n  - generic: 阅\n  - generic: 故事审阅台\n  - generic: 故事创作与制作审阅\n  - paragraph: 故事资料、创作配置与审阅意见以当前实例为准；本机运行凭据不会公开同步。\n- status\n- document"
+        },
+        "history": {
+          "url": "http://127.0.0.1:62603/?workspace=settings.workspace&production_object=asset-fg3-bandage-base-image-01&production_entity=entity-bandage&entity_state=form-bandage-base&production_revision=76a7d6ad4317d580b36439e24765e3c432e0cc15e67045cb7fead3e555a50294&material_id=need-form-bandage-base-overall&material_round=1",
+          "dom": "- complementary \"工作区导航\":\n  - button \"返回网站首页\":\n    - generic: 阅\n    - generic: 故事审阅台\n    - generic: LOCAL PRODUCTION DESK\n  - navigation \"系统工作区\":\n    - button \"思路 制作思路 故事创作与生产制作方法\":\n      - generic: 思路\n      - generic: 制作思路\n      - generic: 故事创作与生产制作方法\n    - button \"故事 故事创作 故事采编、故事结构与分集剧本\":\n      - generic: 故事\n      - generic: 故事创作\n      - generic: 故事采编、故事结构与分集剧本\n    - button \"设定 制作设定 主体、空间与实体关系\":\n      - generic: 设定\n      - generic: 制作设定\n      - generic: 主体、空间与实体关系\n    - button \"素材 素材管理 需求、制作与素材审阅\":\n      - generic: 素材\n      - generic: 素材管理\n      - generic: 需求、制作与素材审阅\n    - button \"制作 全剧制作 镜头、场景与分集成片\":\n      - generic: 制作\n      - generic: 全剧制作\n      - generic: 镜头、场景与分集成片\n    - button \"管理 系统管理 故事项目与系统配置\":\n      - generic: 管理\n      - generic: 系统管理\n      - generic: 故事项目与系统配置\n  - generic: 李寄斩蛇 · 故事采编 · 任务预览\n  - generic: 本机独立实例 · 业务数据可公开同步\n- main:\n  - generic: 设\n  - generic: 当前视图\n  - generic: 制作设定\n  - heading \"制作设定\" [level=1]\n  - paragraph: 直接审阅实体、完整状态和关联素材，通过评论提出意见，也可采纳当前版本。\n  - region \"制作设定筛选\":\n    - generic: 搜索设定\n    - searchbox \"搜索制作记录\"\n    - button \"清除筛选\" [disabled]\n    - paragraph: 按实体计数，状态与制作设定在实体内查看；搜索也包含状态和设定内容。\n    - group \"内容分类\":\n      - generic: 内容分类\n      - button \"内容分类：全部实体，132 个实体\" [pressed]:\n        - generic: 全部实体\n        - generic: \"132\"\n      - button \"内容分类：角色，51 个实体\":\n        - generic: 角色\n        - generic: \"51\"\n      - button \"内容分类：场景，16 个实体\":\n        - generic: 场景\n        - generic: \"16\"\n      - button \"内容分类：道具，61 个实体\":\n        - generic: 道具\n        - generic: \"61\"\n      - button \"内容分类：歌曲，4 个实体\":\n        - generic: 歌曲\n        - generic: \"4\"\n    - status: 当前结果：132 个实体\n  - navigation \"制作实体\":\n    - heading \"实体 · 132\" [level=3]\n    - button \"阿禾 1 个完整状态 角色\":\n      - text: 阿禾\n      - generic: 1 个完整状态\n      - generic: 角色\n    - button \"阿蘅 6 个完整状态 角色\":\n      - text: 阿蘅\n      - generic: 6 个完整状态\n      - generic: 角色\n    - button \"前两次准祭批文 2 个完整状态 道具\":\n      - text: 前两次准祭批文\n      - generic: 2 个完整状态\n      - generic: 道具\n    - button \"蛇饵盆 3 个完整状态 道具\":\n      - text: 蛇饵盆\n      - generic: 3 个完整状态\n      - generic: 道具\n    - button \"陶伯在编的竹篮 1 个完整状态 道具\":\n      - text: 陶伯在编的竹篮\n      - generic: 1 个完整状态\n      - generic: 道具\n    - button \"陶伯竹器摊 1 个完整状态 场景\":\n      - text: 陶伯竹器摊\n      - generic: 1 个完整状态\n      - generic: 场景\n    - button \"祈福戏唱段 1 个完整状态 歌曲\":\n      - text: 祈福戏唱段\n      - generic: 1 个完整状态\n      - generic: 歌曲\n    - button \"送青篷 5 个完整状态 歌曲\":\n      - text: 送青篷\n      - generic: 5 个完整状态\n      - generic: 歌曲\n    - button \"舟行曲（未具名） 1 个完整状态 歌曲\":\n      - text: 舟行曲（未具名）\n      - generic: 1 个完整状态\n      - generic: 歌曲\n    - button \"船家 1 个完整状态 角色\":\n      - text: 船家\n      - generic: 1 个完整状态\n      - generic: 角色\n    - button \"垫歌本竹篮 1 个完整状态 道具\":\n      - text: 垫歌本竹篮\n      - generic: 1 个完整状态\n      - generic: 道具\n    - button \"小满断梳 1 个完整状态 道具\":\n      - text: 小满断梳\n      - generic: 1 个完整状态\n      - generic: 道具\n    - button \"半块饼 2 个完整状态 道具\":\n      - text: 半块饼\n      - generic: 2 个完整状态\n      - generic: 道具\n    - button \"挑柴扁担 1 个完整状态 道具\":\n      - text: 挑柴扁担\n      - generic: 1 个完整状态\n      - generic: 道具\n    - button \"孙六宽布背带 1 个完整状态 道具\":\n      - text: 孙六宽布背带\n      - generic: 1 个完整状态\n      - generic: 道具\n    - button \"北端洞闸 4 个完整状态 道具\":\n      - text: 北端洞闸\n      - generic: 4 个完整状态\n      - generic: 道具\n    - button \"李诞通道图 2 个完整状态 道具\":\n      - text: 李诞通道图\n      - generic: 2 个完整状态\n      - generic: 道具\n    - button \"清账退粮凭据 1 个完整状态 道具\":\n      - text: 清账退粮凭据\n      - generic: 1 个完整状态\n      - generic: 道具\n    - button \"梁书吏 1 个完整状态 角色\":\n      - text: 梁书吏\n      - generic: 1 个完整状态\n      - generic: 角色\n    - button \"照壁前书吏 1 个完整状态 角色\":\n      - text: 照壁前书吏\n      - generic: 1 个完整状态\n      - generic: 角色\n    - button \"宣读告示书吏 1 个完整状态 角色\":\n      - text: 宣读告示书吏\n      - generic: 1 个完整状态\n      - generic: 角色\n    - button \"其他书吏 1 个完整状态 角色\":\n      - text: 其他书吏\n      - generic: 1 个完整状态\n      - generic: 角色\n    - button \"擦手布巾 2 个完整状态 道具\":\n      - text: 擦手布巾\n      - generic: 2 个完整状态\n      - generic: 道具\n    - button \"补抄歌页与装订线 3 个完整状态 道具\":\n      - text: 补抄歌页与装订线\n      - generic: 3 个完整状态\n      - generic: 道具\n    - button \"县衙 4 个完整状态 场景\":\n      - text: 县衙\n      - generic: 4 个完整状态\n      - generic: 场景\n    - button \"压闸长横杠 4 个完整状态 道具\":\n      - text: 压闸长横杠\n      - generic: 4 个完整状态\n      - generic: 道具\n    - button \"戏班幕布 4 个完整状态 道具\":\n      - text: 戏班幕布\n      - generic: 4 个完整状态\n      - generic: 道具\n    - button \"阿蘅家借据 2 个完整状态 道具\":\n      - text: 阿蘅家借据\n      - generic: 2 个完整状态\n      - generic: 道具\n    - button \"借据篡改贴纸 2 个完整状态 道具\":\n      - text: 借据篡改贴纸\n      - generic: 2 个完整状态\n      - generic: 道具\n    - button \"送单庙工 1 个完整状态 角色\":\n      - text: 送单庙工\n      - generic: 1 个完整状态\n      - generic: 角色\n    - button \"晾布处 1 个完整状态 场景\":\n      - text: 晾布处\n      - generic: 1 个完整状态\n      - generic: 场景\n    - button \"两位乡老 1 个完整状态 角色\":\n      - text: 两位乡老\n      - generic: 1 个完整状态\n      - generic: 角色\n    - button \"竹器摊空小凳 1 个完整状态 道具\":\n      - text: 竹器摊空小凳\n      - generic: 1 个完整状态\n      - generic: 道具\n    - button \"封存账箱 3 个完整状态 道具\":\n      - text: 封存账箱\n      - generic: 3 个完整状态\n      - generic: 道具\n    - button \"阿蘅收单凭记 1 个完整状态 道具\":\n      - text: 阿蘅收单凭记\n      - generic: 1 个完整状态\n      - generic: 道具\n    - button \"归家饭食与桌凳 3 个完整状态 道具\":\n      - text: 归家饭食与桌凳\n      - generic: 3 个完整状态\n      - generic: 道具\n    - button \"短石道与盖石 3 个完整状态 道具\":\n      - text: 短石道与盖石\n      - generic: 3 个完整状态\n      - generic: 道具\n    - button \"南端投食木门 2 个完整状态 道具\":\n      - text: 南端投食木门\n      - generic: 2 个完整状态\n      - generic: 道具\n    - button \"渡口 2 个完整状态 场景\":\n      - text: 渡口\n      - generic: 2 个完整状态\n      - generic: 场景\n    - button \"洞闸木栓 2 个完整状态 道具\":\n      - text: 洞闸木栓\n      - generic: 2 个完整状态\n      - generic: 道具\n    - button \"米粮 1 个完整状态 道具\":\n      - text: 米粮\n      - generic: 1 个完整状态\n      - generic: 道具\n    - button \"备粮抄单 1 个完整状态 道具\":\n      - text: 备粮抄单\n      - generic: 1 个完整状态\n      - generic: 道具\n    - button \"提前备粮原单 1 个完整状态 道具\":\n      - text: 提前备粮原单\n      - generic: 1 个完整状态\n      - generic: 道具\n    - button \"领粮票 1 个完整状态 道具\":\n      - text: 领粮票\n      - generic: 1 个完整状态\n      - generic: 道具\n    - button \"阿禾竹簪 1 个完整状态 道具\":\n      - text: 阿禾竹簪\n      - generic: 1 个完整状态\n      - generic: 道具\n    - button \"县库厚背刀 3 个完整状态 道具\":\n      - text: 县库厚背刀\n      - generic: 3 个完整状态\n      - generic: 道具\n    - button \"四名压杠乡亲 3 个完整状态 角色\":\n      - text: 四名压杠乡亲\n      - generic: 3 个完整状态\n      - generic: 角色\n    - button \"陶伯麻绳与护垫 2 个完整状态 道具\":\n      - text: 陶伯麻绳与护垫\n      - generic: 2 个完整状态\n      - generic: 道具\n    - button \"阿蘅家 4 个完整状态 场景\":\n      - text: 阿蘅家\n      - generic: 4 个完整状态\n      - generic: 场景\n    - button \"阿蘅母亲 2 个完整状态 角色\":\n      - text: 阿蘅母亲\n      - generic: 2 个完整状态\n      - generic: 角色\n    - button \"下山石阶 2 个完整状态 场景\":\n      - text: 下山石阶\n      - generic: 2 个完整状态\n      - generic: 场景\n    - button \"庙院钥匙串 2 个完整状态 道具\":\n      - text: 庙院钥匙串\n      - generic: 2 个完整状态\n      - generic: 道具\n    - button \"前殿领唱众人 1 个完整状态 角色\":\n      - text: 前殿领唱众人\n      - generic: 1 个完整状态\n      - generic: 角色\n    - button \"迎蛇领唱旧纸 1 个完整状态 道具\":\n      - text: 迎蛇领唱旧纸\n      - generic: 1 个完整状态\n      - generic: 道具\n    - button \"李诞 8 个完整状态 角色\":\n      - text: 李诞\n      - generic: 8 个完整状态\n      - generic: 角色\n    - button \"李家 5 个完整状态 场景\":\n      - text: 李家\n      - generic: 5 个完整状态\n      - generic: 场景\n    - button \"李寄 13 个完整状态 角色\":\n      - text: 李寄\n      - generic: 13 个完整状态\n      - generic: 角色\n    - button \"李寄母亲 1 个完整状态 角色\":\n      - text: 李寄母亲\n      - generic: 1 个完整状态\n      - generic: 角色\n    - button \"李绡 3 个完整状态 角色\":\n      - text: 李绡\n      - generic: 3 个完整状态\n      - generic: 角色\n    - button \"县丞 1 个完整状态 角色\":\n      - text: 县丞\n      - generic: 1 个完整状态\n      - generic: 角色\n    - button \"拌肉米饵 1 个完整状态 道具\":\n      - text: 拌肉米饵\n      - generic: 1 个完整状态\n      - generic: 道具\n    - button \"煎药罐与药渣 1 个完整状态 道具\":\n      - text: 煎药罐与药渣\n      - generic: 1 个完整状态\n      - generic: 道具\n    - button \"墨耳 1 个完整状态 角色\":\n      - text: 墨耳\n      - generic: 1 个完整状态\n      - generic: 角色\n    - button \"阿蘅祭名木牌 2 个完整状态 道具\":\n      - text: 阿蘅祭名木牌\n      - generic: 2 个完整状态\n      - generic: 道具\n    - button \"邻妇 1 个完整状态 角色\":\n      - text: 邻妇\n      - generic: 1 个完整状态\n      - generic: 角色\n    - button \"新管事 1 个完整状态 角色\":\n      - text: 新管事\n      - generic: 1 个完整状态\n      - generic: 角色\n    - button \"程差役 3 个完整状态 角色\":\n      - text: 程差役\n      - generic: 3 个完整状态\n      - generic: 角色\n    - button \"另一名差役 1 个完整状态 角色\":\n      - text: 另一名差役\n      - generic: 1 个完整状态\n      - generic: 角色\n    - button \"窗外唤李寄归家的人 1 个完整状态 角色\":\n      - text: 窗外唤李寄归家的人\n      - generic: 1 个完整状态\n      - generic: 角色\n    - button \"李家旧灯 2 个完整状态 道具\":\n      - text: 李家旧灯\n      - generic: 2 个完整状态\n      - generic: 道具\n    - button \"庙仓老妇人 1 个完整状态 角色\":\n      - text: 庙仓老妇人\n      - generic: 1 个完整状态\n      - generic: 角色\n    - button \"备粮单经手人 1 个完整状态 角色\":\n      - text: 备粮单经手人\n      - generic: 1 个完整状态\n      - generic: 角色\n    - button \"戏班纸月亮 2 个完整状态 道具\":\n      - text: 戏班纸月亮\n      - generic: 2 个完整状态\n      - generic: 道具\n    - button \"戏班纸蛇 4 个完整状态 道具\":\n      - text: 戏班纸蛇\n      - generic: 4 个完整状态\n      - generic: 道具\n    - button \"干浆糊与羊毛 3 个完整状态 道具\":\n      - text: 干浆糊与羊毛\n      - generic: 3 个完整状态\n      - generic: 道具\n    - button \"陶伯诉状 1 个完整状态 道具\":\n      - text: 陶伯诉状\n      - generic: 1 个完整状态\n      - generic: 道具\n    - button \"巫祝 2 个完整状态 角色\":\n      - text: 巫祝\n      - generic: 2 个完整状态\n      - generic: 角色\n    - button \"阿禾祭队与围观者 1 个完整状态 角色\":\n      - text: 阿禾祭队与围观者\n      - generic: 1 个完整状态\n      - generic: 角色\n    - button \"道具屋 2 个完整状态 场景\":\n      - text: 道具屋\n      - generic: 2 个完整状态\n      - generic: 场景\n    - button \"郡复查告示 1 个完整状态 道具\":\n      - text: 郡复查告示\n      - generic: 1 个完整状态\n      - generic: 道具\n    - button \"戏台借出的红绳 2 个完整状态 道具\":\n      - text: 戏台借出的红绳\n      - generic: 2 个完整状态\n      - generic: 道具\n    - button \"阿蘅米袋 5 个完整状态 道具\":\n      - text: 阿蘅米袋\n      - generic: 5 个完整状态\n      - generic: 道具\n    - button \"米铺听客 1 个完整状态 角色\":\n      - text: 米铺听客\n      - generic: 1 个完整状态\n      - generic: 角色\n    - button \"米铺小木斗 1 个完整状态 道具\":\n      - text: 米铺小木斗\n      - generic: 1 个完整状态\n      - generic: 道具\n    - button \"周家米铺 2 个完整状态 场景\":\n      - text: 周家米铺\n      - generic: 2 个完整状态\n      - generic: 场景\n    - button \"阿蘅家米缸 1 个完整状态 道具\":\n      - text: 阿蘅家米缸\n      - generic: 1 个完整状态\n      - generic: 道具\n    - button \"压页河石 1 个完整状态 道具\":\n      - text: 压页河石\n      - generic: 1 个完整状态\n      - generic: 道具\n    - button \"河街 3 个完整状态 场景\":\n      - text: 河街\n      - generic: 3 个完整状态\n      - generic: 场景\n    - button \"三年原祭册 2 个完整状态 道具\":\n      - text: 三年原祭册\n      - generic: 2 个完整状态\n      - generic: 道具\n    - button \"道具屋外浅滩 2 个完整状态 场景\":\n      - text: 道具屋外浅滩\n      - generic: 2 个完整状态\n      - generic: 场景\n    - button \"陶伯削竹刀 1 个完整状态 道具\":\n      - text: 陶伯削竹刀\n      - generic: 1 个完整状态\n      - generic: 道具\n    - button \"周掌柜底账 1 个完整状态 道具\":\n      - text: 周掌柜底账\n      - generic: 1 个完整状态\n      - generic: 道具\n    - button \"邻村歌娘 1 个完整状态 角色\":\n      - text: 邻村歌娘\n      - generic: 1 个完整状态\n      - generic: 角色\n    - button \"邻村歌娘院子 1 个完整状态 场景\":\n      - text: 邻村歌娘院子\n      - generic: 1 个完整状态\n      - generic: 场景\n    - button \"大蛇 6 个完整状态 角色\":\n      - text: 大蛇\n      - generic: 6 个完整状态\n      - generic: 角色\n    - button \"迎蛇领唱调 1 个完整状态 歌曲\":\n      - text: 迎蛇领唱调\n      - generic: 1 个完整状态\n      - generic: 歌曲\n    - button \"阿蘅歌本 8 个完整状态 道具\":\n      - text: 阿蘅歌本\n      - generic: 8 个完整状态\n      - generic: 道具\n    - button \"戏班台鼓 2 个完整状态 道具\":\n      - text: 戏班台鼓\n      - generic: 2 个完整状态\n      - generic: 道具\n    - button \"戏班竹竿与工具箱 1 个完整状态 道具\":\n      - text: 戏班竹竿与工具箱\n      - generic: 1 个完整状态\n      - generic: 道具\n    - button \"石匠 1 个完整状态 角色\":\n      - text: 石匠\n      - generic: 1 个完整状态\n      - generic: 角色\n    - button \"停祭与除蛇文书 2 个完整状态 道具\":\n      - text: 停祭与除蛇文书\n      - generic: 2 个完整状态\n      - generic: 道具\n    - button \"河街晾衣 1 个完整状态 道具\":\n      - text: 河街晾衣\n      - generic: 1 个完整状态\n      - generic: 道具\n    - button \"河街路人 1 个完整状态 角色\":\n      - text: 河街路人\n      - generic: 1 个完整状态\n      - generic: 角色\n    - button \"孙六 3 个完整状态 角色\":\n      - text: 孙六\n      - generic: 3 个完整状态\n      - generic: 角色\n    - button \"陶伯 1 个完整状态 角色\":\n      - text: 陶伯\n      - generic: 1 个完整状态\n      - generic: 角色\n    - button \"庙后封闭小院 5 个完整状态 场景\":\n      - text: 庙后封闭小院\n      - generic: 5 个完整状态\n      - generic: 场景\n    - button \"庙会儿童与家长 1 个完整状态 角色\":\n      - text: 庙会儿童与家长\n      - generic: 1 个完整状态\n      - generic: 角色\n    - button \"庙前乡民 1 个完整状态 角色\":\n      - text: 庙前乡民\n      - generic: 1 个完整状态\n      - generic: 角色\n    - button \"山庙前殿与台前 5 个完整状态 场景\":\n      - text: 山庙前殿与台前\n      - generic: 5 个完整状态\n      - generic: 场景\n    - button \"山庙仓院 3 个完整状态 场景\":\n      - text: 山庙仓院\n      - generic: 3 个完整状态\n      - generic: 场景\n    - button \"守院庙工二人 1 个完整状态 角色\":\n      - text: 守院庙工二人\n      - generic: 1 个完整状态\n      - generic: 角色\n    - button \"瘦高庙工 1 个完整状态 角色\":\n      - text: 瘦高庙工\n      - generic: 1 个完整状态\n      - generic: 角色\n    - button \"未具名庙工 1 个完整状态 角色\":\n      - text: 未具名庙工\n      - generic: 1 个完整状态\n      - generic: 角色\n    - button \"庙仓瘦女孩 1 个完整状态 角色\":\n      - text: 庙仓瘦女孩\n      - generic: 1 个完整状态\n      - generic: 角色\n    - button \"领粮妇人的孩子 2 个完整状态 角色\":\n      - text: 领粮妇人的孩子\n      - generic: 2 个完整状态\n      - generic: 角色\n    - button \"告示前持票老人 1 个完整状态 角色\":\n      - text: 告示前持票老人\n      - generic: 1 个完整状态\n      - generic: 角色\n    - button \"领粮妇人 1 个完整状态 角色\":\n      - text: 领粮妇人\n      - generic: 1 个完整状态\n      - generic: 角色\n    - button \"戏班伙计与台上演员 1 个完整状态 角色\":\n      - text: 戏班伙计与台上演员\n      - generic: 1 个完整状态\n      - generic: 角色\n    - button \"村中晒场 2 个完整状态 场景\":\n      - text: 村中晒场\n      - generic: 2 个完整状态\n      - generic: 场景\n    - button \"照壁应募告示 1 个完整状态 道具\":\n      - text: 照壁应募告示\n      - generic: 1 个完整状态\n      - generic: 道具\n    - button \"孙六小腰鼓 1 个完整状态 道具\":\n      - text: 孙六小腰鼓\n      - generic: 1 个完整状态\n      - generic: 道具\n    - button \"阿蘅水壶 1 个完整状态 道具\":\n      - text: 阿蘅水壶\n      - generic: 1 个完整状态\n      - generic: 道具\n    - button \"家用柴刀 1 个完整状态 道具\":\n      - text: 家用柴刀\n      - generic: 1 个完整状态\n      - generic: 道具\n    - button \"挑柴老汉 1 个完整状态 角色\":\n      - text: 挑柴老汉\n      - generic: 1 个完整状态\n      - generic: 角色\n    - button \"阿蘅唱工记录 3 个完整状态 道具\":\n      - text: 阿蘅唱工记录\n      - generic: 3 个完整状态\n      - generic: 道具\n    - button \"补词夹板与笔 1 个完整状态 道具\":\n      - text: 补词夹板与笔\n      - generic: 1 个完整状态\n      - generic: 道具\n    - button \"小满 1 个完整状态 角色\":\n      - text: 小满\n      - generic: 1 个完整状态\n      - generic: 角色\n    - button \"小满母亲 1 个完整状态 角色\":\n      - text: 小满母亲\n      - generic: 1 个完整状态\n      - generic: 角色\n    - button \"许家女儿 1 个完整状态 角色\":\n      - text: 许家女儿\n      - generic: 1 个完整状态\n      - generic: 角色\n    - button \"晒场观众 1 个完整状态 角色\":\n      - text: 晒场观众\n      - generic: 1 个完整状态\n      - generic: 角色\n    - button \"赵执事 3 个完整状态 角色\":\n      - text: 赵执事\n      - generic: 3 个完整状态\n      - generic: 角色\n    - button \"周掌柜 2 个完整状态 角色\":\n      - text: 周掌柜\n      - generic: 2 个完整状态\n      - generic: 角色\n  - article:\n    - generic: 道具\n    - heading \"李寄裹手与额角布\" [level=2]\n    - button \"采纳\" [disabled]\n    - region \"撤回说明\":\n      - paragraph: 此实体已撤回\n      - paragraph: 用户确认四项包布状态归入现有李寄完整状态，取消重复图像目标，255项调整为251项。旧原件、调用及评论保留。\n      - generic: 实体归并至：\n      - button \"李寄\"\n      - paragraph: 此状态已撤回\n      - generic: 状态归并至：\n      - button \"李寄·掌心包布、额角未伤\"\n      - button \"李寄·掌心包布、额角旧伤\"\n    - region \"实体基础信息\":\n      - heading \"基础信息\" [level=3]\n      - combobox \"李寄裹手与额角布的版本\":\n        - option \"版本 2 · 当前\" [selected]\n        - option \"版本 1\"\n      - paragraph: 别名：裹手布\n      - button \"查看此块全部评论\":\n      - paragraph: 手掌和额角的伤口包布需区分位置，斩蛇后手重新包扎。\n      - generic \"剧情依据 · 9 场 ▾\"\n    - region \"实体关系\":\n      - heading \"关系\" [level=3]\n      - paragraph: 暂无已登记的直接关系\n    - heading \"基准完整形态\" [level=3]\n    - region \"完整状态描述\":\n      - button \"查看此块全部评论\":\n      - paragraph: 完整形态：李寄掌心包布，位置与额角布区分；未渗血时形态，具体布色待审。\n      - paragraph: 状况：维持上述完整形态，未明确的材质、色泽与磨损细节待审。\n      - paragraph: 组成与内容：组成与内容以上述描述及引用正文为准；未写内容不补造。\n      - paragraph: 使用位置：持有者与位置依本场引用和动作起止；普通转手不另拆状态。\n      - region \"剧本事实\":\n        - heading \"剧本事实\" [level=4]\n        - paragraph: 李绡拉出她藏着的手，掌心已经磨破，沾着木屑。她取湿布，替妹妹一点点拈掉。\n        - paragraph: 李寄：咱家匀一点。阿蘅也能接着洗幕布。\n        - paragraph: 李寄望向晒着的幕布。李绡手里的布碰到伤处，她缩了一下。\n        - paragraph: 阿蘅提着洗好的幕布进门。李寄站起，将新纸递过去。\n        - paragraph: 李绡数出洗布的工钱。\n        - paragraph: 阿蘅收好钱，抱着湿布去找晾绳。布太宽，一端落到地上。\n        - paragraph: 阿蘅看了一眼她裹着的手，把干净的布边递过去。\n        - paragraph: 阿蘅：拿这儿。别扯伤口。\n        - paragraph: 两个人各撑一端，慢慢将幕布挂起。湿布挡住她们的脸，李寄抬高一点，等阿蘅把皱起的地方抚平。\n      - region \"制作选择\":\n        - heading \"制作选择\" [level=4]\n        - paragraph: 同一完整形态跨场复用；未写换装、湿痕消退、伤愈程度的衔接属于待审连续性安排，不冒充新增剧本事实。\n      - generic \"剧情依据 · 4 场 ▾\"\n    - group \"保留的历史素材\":\n      - generic \"保留素材 · 2 份候选\"\n      - article:\n        - heading \"完整状态整体参考\" [level=3]\n        - combobox \"素材版本\":\n          - option \"版本 2 · 当前\"\n          - option \"版本 1\" [selected]\n        - heading \"李寄裹手与额角布·基准完整形态 · 内置渠道首轮基准\" [level=4]\n        - combobox \"原件与预览组成\":\n          - option \"original · original\" [selected]\n          - option \"metadata · receipt\"\n          - option \"metadata · request\"\n        - figure \"1448 × 1086\":\n          - button \"查看此块全部评论\":\n          - button \"放大查看：李寄裹手与额角布·基准完整形态 · 内置渠道首轮基准\"\n          - generic: 1448 × 1086\n          - button \"圈选评论\"\n          - button \"评论整图\"\n        - link \"下载原文件\":\n          - /url: /api/production/files/8b4c0ffcaddf48b79af1d9d3df3ec74dff37c90a145e927dacfdd6d3936e2288.png\n        - heading \"本素材实际生成信息\" [level=3]\n        - button \"查看此块全部评论\":\n        - heading \"参数 · GPT Image\" [level=4]\n        - generic: \"{ \\\"transparent_background\\\": false }\"\n        - heading \"提示词\" [level=4]\n        - generic: 二维人物＋轻手绘背景。正常身体比例，面部与衣饰简化，以外轮廓、姿态和少量大色块识别；柔和而清楚的线条，平涂为主，背景轻薄手绘笔触。无纸张颗粒、脏噪点、浮雕肌理、过锐边缘、密集纹理或摄影皮肤；高质量用于干净边缘与稳定比例。 用途：全剧非歌曲实体的完整状态整体参考，不是分镜画面或多状态拼图。 实体：李寄裹手与额角布。 固定身份与制作造型：浅麻白薄窄布，交叠裹住左掌与虎口而五指能动；额角布是另外一块浅白方布，只用于右额角。整体参考以中性手掌或头部局部承托必要部件，清楚展示全部布件；承托部位是尺寸示意，不另造人物身份。 基础状态，同时覆盖实体身份；本任务不另外为实体再生成一张。 本张完整形态：使用位置：普通转手不另拆状态。 完整形态：李寄掌心包布，位置与额角布区分； 本张为独立文字生成的干净基准，没有提交参考图片，不声称使用旧候选。 画幅 4:3。完整道具或该状态全部组成作为单幅整体参考，三分之四视角，轮廓清楚、比例可辨，浅暖灰简底、柔和中性光。必要承托部位仅帮助理解附着和受力，不能用细节裁切替代全部形态。 不要添加水印、装饰边框或状态标题。必要道具文字只使用已指定的原句；其余用不可辨稀疏笔迹或留白，不补造歌词、日期、人物姓名或新剧情。 本张采用Codex内置GPT Image独立文字生成，无上传参考图片。保留上述4:3画幅与完整入画要求，使用工具实际可提供的最高原生尺寸，不放大、不拼图。不增加纸纹、噪点、锐化、雕花或无依据的跨场道具；保留干净二维线色和轻手绘底。\n        - heading \"李寄裹手与额角布·基准完整形态 · 内置渠道返工\" [level=4]\n        - figure \"1448 × 1086\":\n          - button \"查看此块全部评论\":\n          - button \"放大查看：李寄裹手与额角布·基准完整形态 · 内置渠道返工\"\n          - generic: 1448 × 1086\n          - button \"圈选评论\"\n          - button \"评论整图\"\n        - link \"下载原文件\":\n          - /url: /api/production/files/4e1542c4b0f21735ba3e0d27b47c690c01d4ac16e9be6e01b2b36538d83a1acb.png\n        - heading \"本素材实际生成信息\" [level=3]\n        - button \"查看此块全部评论\":\n        - heading \"参数 · GPT Image\" [level=4]\n        - generic: \"{ \\\"transparent_background\\\": false }\"\n        - heading \"提示词\" [level=4]\n        - generic: 一张4:3道具整体参考，唯一主体是浅麻白薄窄裹手布，在同一连续空间中用一只无身份的浅灰左手模型承托：掌心朝向观者，窄布交叠裹住掌心与虎口，完整五指露出并可动，所有包布边缘入画，无血。旁边平放一块独立浅白方布，用于区分额角布与掌布；方布是完整单片，不贴到任何人头上。模型只露手和很短手腕，无袖子、身体、脸、头、发型或人物身份。不得画李寄、不得人物三视图、不得特写拼图、不得多格或文字标签。同一个轻俯视视点同时看清全部布件，简洁二维线条与低纹理平涂，纯浅暖灰背景，不加纸纹噪点。使用工具直接原生最高可用输出，不放大。没有提交参考图片，是重新文字生成。\n        - heading \"生成方案\" [level=3]\n        - button \"查看此块全部评论\":\n        - paragraph: 李寄裹手与额角布·基准完整形态：使用位置：普通转手不另拆状态。 完整形态：李寄掌心包布，位置与额角布区分；\n        - heading \"参数 · GPT Image\" [level=4]\n        - generic: \"{ \\\"transparent_background\\\": false }\"\n        - heading \"提示词\" [level=4]\n        - generic: 一张4:3道具整体参考，唯一主体是浅麻白薄窄裹手布，在同一连续空间中用一只无身份的浅灰左手模型承托：掌心朝向观者，窄布交叠裹住掌心与虎口，完整五指露出并可动，所有包布边缘入画，无血。旁边平放一块独立浅白方布，用于区分额角布与掌布；方布是完整单片，不贴到任何人头上。模型只露手和很短手腕，无袖子、身体、脸、头、发型或人物身份。不得画李寄、不得人物三视图、不得特写拼图、不得多格或文字标签。同一个轻俯视视点同时看清全部布件，简洁二维线条与低纹理平涂，纯浅暖灰背景，不加纸纹噪点。使用工具直接原生最高可用输出，不放大。没有提交参考图片，是重新文字生成。\n        - heading \"检查要点\" [level=4]\n        - paragraph: 完整形态与定稿及本轮制作选择相符 身份、比例、线条、配色与所绑母版一致 记录工具实际原生尺寸，未暴露底层型号和尺寸选项，不声称4K。 整体入画，无纸纹噪点漂移；图生图最深谱系不超过两代\n  - generic: 阅\n  - generic: 故事审阅台\n  - generic: 故事创作与制作审阅\n  - paragraph: 故事资料、创作配置与审阅意见以当前实例为准；本机运行凭据不会公开同步。\n- button \"查看评论 · 1\"\n- status\n- document"
+        }
+      }
+    },
+    {
+      "source": "main-preview-final-readback.json",
+      "source_sha256": "90da352a92b7082d210a6e946cbb62c63baf46fe7ffdd38db51d87ed94dc5eea",
+      "level": "database_or_HTTP_readback",
+      "purpose": "后续实际页面操作或准确持久化回读；技术实例不代表故事认可",
+      "result": {
+        "at": "2026-10-04T01:41:46.839441+00:00",
+        "system_candidate": "c1da4cdce8c98bd52beafed1dc0a7b70887d8653",
+        "process": "PID STARTED                      COMMAND\n79673 Sun Oct  4 09:38:52 2026     /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python scripts/generation_review.py --system .runtime/autonomous-optimization/system-worktree --instance .runtime/autonomous-optimization/preview serve --port 62603",
+        "verification": "fresh process in task cwd uses clean committed system tree; all 43 package file hashes bound; six actual served static responses match",
+        "runtime_package_files": {
+          "review_desk/__init__.py": "a3b6c7eaa0d3f9aaa834a16ab2559e04bf2fba56a73d0e0089565527ec02d754",
+          "review_desk/__main__.py": "7ea53361ac558885c1e8cc6943f4dff9c4d895a7485a0970db51e6be8fc5134a",
+          "review_desk/approach.py": "bf577012cdd2f5c1f839ac6149dad7e1ddf10d1ccb1ac5d29ef00beff2febbaa",
+          "review_desk/bundle.py": "38b678cf27ea88a2376eea6fd73340687a099e5da81648eceb750138906040d1",
+          "review_desk/configuration.py": "9bb89d7592acd3b38440a17bda53e4b2f97e3905e4a7f49e592e493eacf1b179",
+          "review_desk/entity_relations.py": "35ffcdd66989d7ce3a85f369a480f35c72dcc5737ba7c9540b80bf51e67561b5",
+          "review_desk/entity_review.py": "4363ed536dcd9d0970da1d561f35d4d777bb4455462c9593ab20b1ad61541c63",
+          "review_desk/favicon.py": "050151dea87a19726c1c8751876b7016f64489a1529960748f13da83685bcb65",
+          "review_desk/framework.py": "8d8d9212cde9f8fbbead9ceb861682e56aeb495efcb1509ee629ce3c66176199",
+          "review_desk/generation.py": "aee0b5b3131547db882a7625b275bde9d9230da93990a98ec37be0617d79d87a",
+          "review_desk/input_contracts.py": "dfb95b53f09bea087c3c3cecc8ad8b0cdc825efbb33c599a5f12cf2437da2f54",
+          "review_desk/material_review.py": "feffceb6d46b23241cc50b436fea86b976f81a7be8f6b6fdc9f2e007df4dfff9",
+          "review_desk/material_versions.py": "0ac1199623dc53792306e09d409152657a05aa0e94fadd12dab5c6ca7547412b",
+          "review_desk/polish.py": "3cb2c403eb78f074afb22d6583bc93cf9c5bb37b778018bd95867bed541f527a",
+          "review_desk/production.py": "aa88558f4922113915909b4ec5106fa94061dbb956d9a05d115b79a9263275be",
+          "review_desk/production_changes.py": "7894ba6d1297796a96909b6ff77f701b4391e733cbd3d67ddc3a028ff938dce1",
+          "review_desk/production_media.py": "c223f476b6e4db1e2d5df6e6654af3ea4c1a655a8a215b8ba53037a4ff902283",
+          "review_desk/production_states.py": "86b8961dd304ef937d56d9d7b18deb4c0c3c507763279942c8a6ee0ffe5bedb4",
+          "review_desk/review_text.py": "9cf109d8086b3c64e9d368a5696e88aef989660a60e7162b618f531822c1138d",
+          "review_desk/screenplay.py": "3239df072744217043b8910a67d64604b79a410e1630325aa5e26dc5f64ed32e",
+          "review_desk/screenplay_summaries.py": "386b31ffa504fa47ea4039e7cced4b9bede87306f6e90f2fc506335b682ddda7",
+          "review_desk/server.py": "aeb456c269777a33a91e5d1137bd22866a2f4da6dbb1cf646d42fa4fa947ce6f",
+          "review_desk/static/app.js": "6772939e187e82921f8f739b73fc0b1be731443b7735f6677d8da9e898ea5fe1",
+          "review_desk/static/approach.css": "97c02f49c13e13a137deb35ac827115adb1170f73f71ac6988ceda61e6ea9f5b",
+          "review_desk/static/approach.js": "67cc3f989828eca1ea853310b39a3c7b1e20bd5cfde0e62652a234efda7207c9",
+          "review_desk/static/entity-relations.js": "92455e0329ac761d59fc63a7d74c87b22521c92bd0194bf59f60f96667945e1b",
+          "review_desk/static/entity-review.js": "6303532c5b08fb08ac6bfb2ce66311a6717d314acf885c7d8e77cef3b4728176",
+          "review_desk/static/favicon.svg": "b58aa2423929b1970c03192b4b767f40724602096ba7eecdca496db74a4c2b99",
+          "review_desk/static/index.html": "544f843e8e0173fa5fd98c472289c8a9df6b74e63e9e071da70fd9be33808ff2",
+          "review_desk/static/material-review.js": "b9f7f9d28c05a4db52ec65d590c7b64736154bf482d0ec02e2f7d5931f901af6",
+          "review_desk/static/polish.css": "bb32e29e19c3b4e34125fc1f7deb22397df9b96d2c7d2376acae96bf83caae76",
+          "review_desk/static/production.css": "b92276c968a62798d9b2db3664fb72766b502900b5537515a652d3e86bd4a2c5",
+          "review_desk/static/production.js": "e19023f82ed1cd759ffab7c37d5c873b81f83ce82f526fdc09472655e4a150ff",
+          "review_desk/static/review-ui.css": "eb823386e85577a08757ea378160b6a70dda8ea7c0f039d9b7e6afdbee6ff8b0",
+          "review_desk/static/review-ui.js": "4d3da3c84df802590c5895894366b03e0a462b70cb6eb95fd7447085b7abd3ab",
+          "review_desk/static/screenplay.css": "363ecf89ad136eefa57cd37503abdbeecd8b3f9fd6c4ec951ba24615a453534f",
+          "review_desk/static/screenplay.js": "61d91ee2b8d8dc61b9ca7b65a7c6b71275e7519e2fd36805601686b458b05b14",
+          "review_desk/static/structure.css": "2f9c802f833382e757c1e41bc978f9d4160180d6a09101198fe81e31cc9ba21b",
+          "review_desk/static/structure.js": "3ea86af929bc906a3d086c82fdcf1941b7a632fde48d9c174a45423b099c3020",
+          "review_desk/static/style.css": "13d2a6800230b7fa6ad6fc4a725fc6af338a81677729d1bed6f569ed24abd0b3",
+          "review_desk/static/workspace.css": "fb372feb12bd463b3e131da2e91c717fe0701536fd38066301b0759a8ff8487b",
+          "review_desk/store.py": "af7f7dea4117a4eb291d153bc921bbf25a6e9f86d660f537fe292a8783fd6e49",
+          "review_desk/structure.py": "3741f0ed949ee49327eecebd6a4709cddcf0d1e83afc37e4f449a006d70e2921"
+        },
+        "served_static": {
+          "app.js": "6772939e187e82921f8f739b73fc0b1be731443b7735f6677d8da9e898ea5fe1",
+          "production.js": "e19023f82ed1cd759ffab7c37d5c873b81f83ce82f526fdc09472655e4a150ff",
+          "entity-review.js": "6303532c5b08fb08ac6bfb2ce66311a6717d314acf885c7d8e77cef3b4728176",
+          "screenplay.js": "61d91ee2b8d8dc61b9ca7b65a7c6b71275e7519e2fd36805601686b458b05b14",
+          "material-review.js": "b9f7f9d28c05a4db52ec65d590c7b64736154bf482d0ec02e2f7d5931f901af6",
+          "style.css": "13d2a6800230b7fa6ad6fc4a725fc6af338a81677729d1bed6f569ed24abd0b3"
+        },
+        "tables_vs_initial_snapshot": {
+          "comment_events": {
+            "before": 300,
+            "after": 300,
+            "unchanged": true
+          },
+          "comments": {
+            "before": 271,
+            "after": 271,
+            "unchanged": true
+          },
+          "configuration_events": {
+            "before": 16,
+            "after": 20,
+            "unchanged": false,
+            "old_rows_preserved": true
+          },
+          "configurations": {
+            "before": 2,
+            "after": 2,
+            "unchanged": false
+          },
+          "dependencies": {
+            "before": 41170,
+            "after": 41170,
+            "unchanged": true
+          },
+          "generation_publications": {
+            "before": 1,
+            "after": 1,
+            "unchanged": true
+          },
+          "material_comment_scopes": {
+            "before": 7,
+            "after": 7,
+            "unchanged": true
+          },
+          "material_feedback": {
+            "before": 7,
+            "after": 7,
+            "unchanged": true
+          },
+          "material_members": {
+            "before": 5515,
+            "after": 5515,
+            "unchanged": true
+          },
+          "material_rounds": {
+            "before": 1181,
+            "after": 1181,
+            "unchanged": true
+          },
+          "objects": {
+            "before": 3182,
+            "after": 3182,
+            "unchanged": true
+          },
+          "revisions": {
+            "before": 6998,
+            "after": 6998,
+            "unchanged": true
+          },
+          "sources": {
+            "before": 45,
+            "after": 45,
+            "unchanged": true
+          },
+          "sqlite_sequence": {
+            "before": 2,
+            "after": 2,
+            "unchanged": false
+          }
+        },
+        "configuration_events_delta": 4,
+        "system_versions": [
+          5,
+          7
+        ],
+        "project_versions": [
+          14,
+          16
+        ],
+        "preview_config_pin": "c1da4cdce8c98bd52beafed1dc0a7b70887d8653",
+        "formal_writes": false,
+        "initial_readback_attempt": {
+          "incorrect_resource": "/styles.css",
+          "status": 404,
+          "correction": "DOM link element identified actual /style.css; no product defect"
+        }
+      }
     }
   ]
 }

@@ -1,6 +1,8 @@
 {
-  "snapshot_generated_at": "2026-10-04T01:21:37.909684+00:00",
-  "not_final": true,
+  "snapshot_generated_at": "2026-10-04T01:56:44.029724+00:00",
+  "not_final_delivery": true,
+  "snapshot_kind": "report_freeze_product_evidence",
+  "later_receipts": "准确故事提交、prepare/build/preflight与停止回执在报告冻结后产生，仅留.runtime并由最终交付引用；不再回写此包以改变已冻结候选。",
   "authority": [
     {
       "scope": "AO028/029/031/034",
@@ -94,7 +96,7 @@
     },
     {
       "scope": "AO026、最终候选、收敛/停止",
-      "current": "AO026已收到用户规则选择，发现索引已记录作者实现与定向检查通过；本包尚未收录该候选实现证据，独审及Chrome仍待验，终版需定向刷新。本包未生成最终候选绑定、最终综合审查或真实结束回执，不补造。"
+      "current": "AO026按用户选择实现，独立后台8组与修后前端8组通过，根真实Chrome及10POST回读另列。核心终审绑定系统c1da4cd；最终故事提交、准备/构建及停止回执在报告冻结后单独留.runtime，不在此预造或回写。"
     },
     {
       "scope": "AO049",
@@ -124,7 +126,7 @@
     },
     {
       "scope": "组合与输出 v1/v2及恢复",
-      "current": "根准确新旧组合/输出、技术视频播放和文件下载有实际证据；恢复包12业务表精确保留、7受管资产（2图/1静音/2视频/2配方ZIP）与4业务JSON共11成员哈希匹配。技术库评论/配置/判断为空，不扩称非空评论恢复；配方包未在原生剪辑软件打开。v1镜头清单随后已取得实际下载JSON，补核一当时的未落盘结论仅属历史时点。",
+      "current": "根准确新旧组合/输出、技术视频播放和文件下载有实际证据；恢复包12业务表精确保留、7受管资产（2图/1静音/2视频/2配方ZIP）与4业务JSON共11成员哈希匹配。技术库评论/配置/判断为空，不扩称非空评论恢复；配方包未在原生剪辑软件打开。v1镜头输入清单只有真实点击、下载提示与后台200；精确Downloads检查未找到对应JSON，不声明实际落盘，不借另一AO018实例扩大结论。",
       "review": "reviews/assembly-recovery.md",
       "browser_sources": [
         "assembly-output-browser/v1-downloaded-manifest-readback.json",
@@ -140,6 +142,45 @@
       "scope": "启动模型与监督",
       "current": "独审核对实际启动与三个后代均继承Astra ultra及首次计时/服务基准；只证明该审查时点，不替代真实结束回执。",
       "review": "reviews/startup-model.md"
+    },
+    {
+      "scope": "AO026 实现与两次页面缺口",
+      "current": "用户明确选择一个可修订结论；同准确变化事务约束、旧窗口冲突、旧多头显式归并。独立后台8组与修后真实回调8组通过；初审明确409被误写未知的失败保留。根另外发现历史按钮只开摘要及返工标签泛化，两次窄修后以最终e19023f8静态身份和真实页面回执验证。",
+      "review": "reviews/ao026.md",
+      "browser_sources": [
+        "change-decision-contract/chrome-history-button-gap.json",
+        "change-decision-contract/chrome-history-open-fixed-label-gap.json",
+        "change-decision-contract/chrome-history-final.json",
+        "change-decision-contract/chrome-identical-payload-conflict-final.json"
+      ]
+    },
+    {
+      "scope": "AO026 实际持久化边界",
+      "current": "本技术Chrome实例10POST=6成功+4拒；普通新ID保留4修订、统一新ID2修订。原4判断准确载荷与2采用准确载荷/修订保留，0评论/事件；这是初始readiness/fixture逐项比对，不声明完整初始表字节相等。两次断响应恢复没有追加POST。",
+      "sources": [
+        "change-decision-contract/chrome-final-code-receipt.json",
+        "change-decision-contract/chrome-final-history-receipt.json"
+      ]
+    },
+    {
+      "scope": "报告冻结时点的独立终审与覆盖",
+      "current": "独立综合终审绑定系统c1da4cd，核心原则及主要流程具备收敛依据，无未解释高影响缺口；51发现逐项处置，113覆盖ID保留并补15项，分类不是通过率。AO007同图重传真浏览器、组合清单实际落盘及其他明确未验边界保留。故事最终提交/交付准备/停止回执随后独立留runtime，不回写已冻结包。",
+      "review": "reviews/final-independent.md",
+      "coverage_review": "reviews/coverage-reconciliation.md"
+    },
+    {
+      "scope": "最终预览与正式实例分开",
+      "current": "根完整候选预览c1da4cd记录43包文件和6实际静态响应，11业务表与启动基准相同，只多4配置事件且原16事件保留。正式只读核对仍42包文件/5b7de33、完整PROJECT v14与before相同，未正式写入或切换。初次探测styles.css的404为入口拼写错误，按DOM改style.css后核对，不归产品故障。",
+      "browser_sources": [
+        "final-candidate-main-chrome.json",
+        "main-preview-final-readback.json"
+      ],
+      "audit_source": "formal-final-readonly-check.json"
+    },
+    {
+      "scope": "差异清单与生成包的时点",
+      "current": "逐文件差异清单在受管包本次生成前冻结，系统61/故事113文件对应其准确时点；本次新增的证据包装文件按source-index与pack-review逐项记录最新SHA，不能用先前清单哈希代替本包最终文件哈希。",
+      "review": "reviews/final-diff-inventory.md"
     }
   ],
   "historical_screenshots": "截图来自对应验证当时版本；例如AO007还可见后来AO008移除的待开放入口，AO011/017截图列表版本在后续AO024修正。均只证明对应当时操作，不代表最终全页截图。"
