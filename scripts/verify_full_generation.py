@@ -4,6 +4,7 @@ import argparse
 from collections import Counter
 import json
 from pathlib import Path
+import sqlite3
 try:
     from .verify_production_review import read_tables
 except ImportError:
@@ -59,7 +60,8 @@ def verify(before, after, registration):
     changed={oid for oid in new_objects if new_objects[oid]!=old_objects.get(oid)}
     if changed!=allowed: raise ValueError('changed heads differ from registration')
     protected={}
-    for table in old.keys()-{'objects','revisions','dependencies','material_rounds','material_members'}:
+    plan_tables={'material_plan_versions','material_plan_members','material_candidate_members'}
+    for table in old.keys()-{'objects','revisions','dependencies','material_rounds','material_members'}-plan_tables:
         if Counter(old[table])!=Counter(new[table]): raise ValueError('protected table changed: '+table)
         protected[table]=len(old[table])
     for table in ('revisions','dependencies','material_members'):
@@ -91,6 +93,26 @@ def verify(before, after, registration):
             raise ValueError('old material round changed unexpectedly')
     # First-round generation cannot fabricate revision feedback or another round.
     if any(r[1]!=1 for k,r in after_rounds.items() if k not in before_rounds):raise ValueError('unexpected new material round')
+    if plan_tables<=old.keys():
+        # Rebuild only the derived indices from their previous state plus this
+        # exact registration. Unrelated version/candidate changes are rejected.
+        from review_desk import material_plans as mp, production as production
+        from types import SimpleNamespace
+        source_db=sqlite3.connect(Path(after).resolve().as_uri()+'?mode=ro',uri=True)
+        replay=sqlite3.connect(':memory:');source_db.backup(replay);source_db.close();replay.row_factory=sqlite3.Row
+        try:
+            for table in ('material_candidate_members','material_plan_members','material_plan_versions'):
+                replay.execute('DELETE FROM '+table)
+            for table in ('material_plan_versions','material_plan_members','material_candidate_members'):
+                columns=len(replay.execute('PRAGMA table_info('+table+')').fetchall())
+                replay.executemany('INSERT INTO '+table+' VALUES ('+','.join('?' for _ in range(columns))+')',old[table])
+            proxy=SimpleNamespace(db=replay)
+            for spec in records:
+                mp.register(proxy,production.record(proxy,revision_id=revisions[spec['object_id'],spec['expected_version']+1][0]))
+            for table in plan_tables:
+                if Counter(tuple(row) for row in replay.execute('SELECT * FROM '+table))!=Counter(new[table]):
+                    raise ValueError('material plan index differs from exact registration: '+table)
+        finally:replay.close()
     return {'old_objects_preserved':len(old_objects),'new_objects':len(new_objects)-len(old_objects),
         'old_revisions_preserved':len(old['revisions']),'added_revisions':len(added),
         'old_dependencies_preserved':len(old['dependencies']),'old_material_members_preserved':len(old['material_members']),
