@@ -1,0 +1,923 @@
+{
+  "source_sha256": "47dddbecb10fa4d50cf9f655e7c815f94ee41310634e131412613b1e05262ce8",
+  "snapshot": {
+    "updated_at": "2026-10-04T01:44:26.458083+00:00",
+    "findings": [
+      {
+        "id": "AO-001",
+        "category": "表达依据与真实成果",
+        "status": "implemented_independent_content_and_browser_verified",
+        "scenario": "读制作思路了解当前素材准备",
+        "current": "生产制作正文仍说133实体267状态、准备首轮基准、两张李寄4K规格待确认；现场132实体，历史已确认按模型原生最高尺寸并完成411新原件。",
+        "expected": "方法正文区分当时实践案例与当前有效要求，既有成果不写成未开始，方案不写成实际接受。",
+        "evidence": [
+          "content/production-approach.json",
+          "baseline.json",
+          "history-audit.json",
+          "approach-content-audit.md",
+          "browser/approach-current-results.jpg"
+        ],
+        "impact": "误导用户判断当前已有成果与未决规格",
+        "priority": "P1",
+        "next": "继续整体功能覆盖与最终综合审阅"
+      },
+      {
+        "id": "AO-002",
+        "category": "数据历史",
+        "status": "implemented_verified_independently",
+        "scenario": "从导出恢复评论与配置",
+        "current": "源码仅校验manifest列出的文件，再无条件读取核心JSON，疑似遗漏必需清单成员",
+        "expected": "所有恢复输入都必须在清单校验范围内，旧schema按自身必需集兼容",
+        "evidence": [
+          "system-worktree/review_desk/bundle.py:84-105",
+          "bundle-fix-evidence.json",
+          "independent-bundle-review.md",
+          "bundle-full-recovery-evidence.json"
+        ],
+        "priority": "P1",
+        "next": "复用准确输入检查，等待整体候选验收",
+        "commit": "71c8c36e1fc0770adb83f94637308d7232b94e46"
+      },
+      {
+        "id": "AO-003",
+        "category": "数据历史",
+        "status": "implemented_verified_independently",
+        "scenario": "恢复关系布局文件写入失败",
+        "current": "源码在DB提交后写布局，疑似返回失败但DB已写入",
+        "expected": "可预期失败不留下无法重试的部分恢复；明确跨文件与DB的边界",
+        "evidence": [
+          "system-worktree/review_desk/bundle.py:201-254",
+          "bundle-fix-evidence.json",
+          "independent-bundle-review.md",
+          "bundle-full-recovery-evidence.json"
+        ],
+        "priority": "P1",
+        "next": "复用准确输入检查，等待整体候选验收",
+        "commit": "71c8c36e1fc0770adb83f94637308d7232b94e46"
+      },
+      {
+        "id": "AO-004",
+        "category": "数据历史",
+        "status": "implemented_verified_independently",
+        "scenario": "已有导出遇到无效关系布局",
+        "current": "源码先改核心JSON再校验布局，可能破坏上次可恢复包",
+        "expected": "输入验证失败保留上次完整导出，必要失败可恢复",
+        "evidence": [
+          "system-worktree/review_desk/bundle.py:55-77",
+          "bundle-fix-evidence.json",
+          "independent-bundle-review.md",
+          "bundle-full-recovery-evidence.json"
+        ],
+        "priority": "P1",
+        "next": "复用准确输入检查，等待整体候选验收",
+        "commit": "71c8c36e1fc0770adb83f94637308d7232b94e46"
+      },
+      {
+        "id": "AO-005",
+        "category": "用户目的与必要性",
+        "status": "implemented_verified_independently",
+        "scenario": "任意页面左栏理解当前进度",
+        "current": "固定侧栏显示当前阶段·故事梗概；首页正文明确已确认剧本进入制作且素材页有新原件",
+        "expected": "显示的信息有准确依据，不用旧手工配置暗示实际进度；阶段配置与实际成果各自保留语义",
+        "evidence": [
+          "Chrome 62603 sidebar screenshot",
+          "system-worktree/review_desk/static/app.js:151",
+          "PROJECT.current_stage",
+          "independent-batch-01.md",
+          "browser/stage-config-retained.jpg"
+        ],
+        "priority": "P2",
+        "next": "Follow broader page baseline and final combined review",
+        "commit": "93fed1a"
+      },
+      {
+        "id": "AO-006",
+        "category": "表达依据",
+        "status": "implemented_verified_independently",
+        "scenario": "后台从系统架构文档判断已开放功能",
+        "current": "docs/architecture.md首段称制作类待开放，与README/framework及真实页面冲突",
+        "expected": "契约描述现有功能",
+        "evidence": [
+          "system-worktree/docs/architecture.md",
+          "system-inventory.json pending",
+          "ao-006-independent-review.json"
+        ],
+        "priority": "P2",
+        "next": "继续核心路径覆盖，最终按准确差异合并复核",
+        "commit": "bff05be"
+      },
+      {
+        "id": "AO-007",
+        "category": "阅读连续性",
+        "status": "implemented_independent_review_passed_browser_upload_blocked",
+        "scenario": "已配置图标原件缺失时仍应打开审阅与配置修复入口",
+        "current": "源码current_favicon抛错导致configurations 503，init Promise.all疑似全站失败",
+        "expected": "图标故障不阻断内容阅读与配置修复，保留错误及原配置，不静默改业务值",
+        "evidence": [
+          "system-inventory.json INV-S04",
+          "favicon-failure-api.json",
+          "browser/favicon-missing-before.jpg",
+          "browser/favicon-missing-after.jpg",
+          "favicon-browser-evidence.json",
+          "independent-favicon-review.md",
+          "favicon-review-support/same-file-upload-recheck.json"
+        ],
+        "priority": "P1",
+        "next": "Chrome文件上传权限可用时补同名重传真实路径；已验缺失读文、清空和恢复选择不重复跑"
+      },
+      {
+        "id": "AO-008",
+        "category": "必要性与交互一致性",
+        "scenario": "系统管理模块导航",
+        "current": "三个禁用待开放按钮和一个无动作当前按钮，占据一整行；导航描述承诺未开放数据运行",
+        "expected": "移除无功能重复模块行，保留真正分组，准确描述入口",
+        "priority": "P2",
+        "evidence": [
+          "system-worktree/review_desk/static/app.js",
+          "Chrome project.configuration",
+          "configuration-navigation-browser.json",
+          "independent-configuration-navigation-review.md"
+        ],
+        "status": "implemented_verified_independently",
+        "next": "继续核心路径覆盖，最终按准确差异合并复核",
+        "commit": "97f0735"
+      },
+      {
+        "id": "AO-009",
+        "category": "阅读连续性",
+        "scenario": "页面初始化获取配置",
+        "current": "一次HTTP配置请求读取424次共940719170字节资产，377超限PNG占940382694字节，最终1候选",
+        "expected": "读前拒绝超限文件、最多读上限加1字节，保持校验和候选语义",
+        "priority": "P1",
+        "evidence": [
+          "favicon-choice-diagnostic.json",
+          "favicon-limit-fix-evidence.json",
+          "ao-009-independent-review.json"
+        ],
+        "status": "implemented_verified_independently",
+        "next": "继续核心路径覆盖，最终按准确差异合并复核",
+        "commit": "1199f83"
+      },
+      {
+        "id": "AO-010",
+        "category": "阅读评论连续性",
+        "scenario": "同方案修订出现在不同素材轮次时写评论草稿",
+        "current": "草稿键含revision+anchor而无material_context，可能串用或覆盖",
+        "expected": "准确素材轮次范围内保存和恢复草稿，兼容旧草稿",
+        "priority": "P1",
+        "evidence": [
+          "coverage-gap-review.md",
+          "independent-interaction-reproduction.md",
+          "interaction-probes/results.json",
+          "interaction-probes/http-events.json",
+          "comment-persistence-browser.json",
+          "legacy-draft-browser.json"
+        ],
+        "status": "implemented_independent_browser_verified",
+        "next": "完成全部已确认草稿路径，继续综合审查"
+      },
+      {
+        "id": "AO-011",
+        "category": "数据历史",
+        "scenario": "评论已落库但响应丢失后重试",
+        "current": "每次点击生成新ID，后端同ID幂等可能无法保护重试",
+        "expected": "确认失败重试不重复建评论且不丢用户正文",
+        "priority": "P1",
+        "evidence": [
+          "coverage-gap-review.md",
+          "independent-interaction-reproduction.md",
+          "interaction-probes/results.json",
+          "interaction-probes/http-events.json",
+          "comment-persistence-browser.json",
+          "independent-cr04-review.md"
+        ],
+        "status": "implemented_independent_browser_verified",
+        "next": "保留CR04修复前反例及修复后证据；继续整体覆盖",
+        "commit": "de230c5"
+      },
+      {
+        "id": "AO-012",
+        "category": "准确采用与异步一致性",
+        "scenario": "采用弹窗快速切换素材",
+        "current": "history请求无序号校验，迟到A可能覆盖已选B的版本组成并提交A",
+        "expected": "素材选择与版本组成提交始终指向同一准确来源",
+        "priority": "P1",
+        "evidence": [
+          "coverage-gap-review.md",
+          "independent-interaction-reproduction.md",
+          "interaction-probes/results.json",
+          "interaction-probes/http-events.json",
+          "adoption-fix-evidence.json",
+          "independent-adoption-review.md",
+          "adoption-browser-verification.json"
+        ],
+        "status": "implemented_verified_independently",
+        "next": "保留准确采用回读证据，既有响应丢失恢复边界另列AO-015",
+        "commit": "6a2e439"
+      },
+      {
+        "id": "AO-013",
+        "category": "表达依据与后台上下文",
+        "scenario": "项目配置及AI评论参考当前创作阶段/背景",
+        "current": "PROJECT版本14仍写故事梗概、精修九候选、未确认进入剧本创作及旧原生4K要求；这些字段由polish.py直接加入AI上下文",
+        "expected": "可证实的现况与已确认剧本/原生尺寸授权一致；手动阶段语义由用户判断而非自动猜测",
+        "status": "implemented_independent_browser_verified_formal_apply_pending",
+        "priority": "P1",
+        "evidence": [
+          "Chrome configuration view",
+          "system-worktree/review_desk/polish.py:42-44,61-67,84-102",
+          "baseline.json",
+          "approach-content-audit.md",
+          "project-context-preview-apply.json",
+          "project-context-browser.json",
+          "independent-project-context-review.md",
+          "project-stage-history-check.json",
+          "project-stage-chrome.json",
+          "release-stage-author-tests.log",
+          "independent-stage-release-review.md"
+        ],
+        "next": "Three-field candidate and compensation independently verified; formal apply awaits final confirmation.",
+        "formal_writes": false
+      },
+      {
+        "id": "AO-014",
+        "category": "交互一致性",
+        "scenario": "窄屏制作思路目录定位",
+        "current": "自动定位屏外横向目录项时点击未改变章节；随后可见项真实指针与键盘均正确",
+        "expected": "目录可定位正确章节，保留浏览历史和刷新位置",
+        "status": "not_changed_no_user_path_defect_reproduced",
+        "priority": "P3",
+        "evidence": [
+          "approach-navigation-browser.json"
+        ],
+        "reason": "真实横向滚动后点击、键盘、可见项点击及前进后退/刷新均通过；仅自动定位屏外项失败，不足以归因产品",
+        "next": "最终代表路径复核时复用本证据，若后续出现用户实际操作失败再调查"
+      },
+      {
+        "id": "AO-015",
+        "category": "准确采用与结果恢复",
+        "scenario": "采用已落库但响应丢失后原框重试",
+        "current": "新ID重试触发槽位已有采用冲突；沿用ID仍有expected_version过期，现有实现需刷新恢复",
+        "expected": "失败后准确回读区分本次已保存与并发变化，不重复采用、不自动提升版本或覆盖其他判断",
+        "priority": "P2",
+        "status": "implemented_independent_browser_verified",
+        "evidence": [
+          "independent-adoption-review.md",
+          "independent-adoption/postcommit-retry-boundary.json",
+          "adoption-recovery-browser.json",
+          "independent-adoption-recovery-review.md"
+        ],
+        "next": "复用准确候选证据，继续整体覆盖",
+        "commit": "0c3d494"
+      },
+      {
+        "id": "AO-016",
+        "category": "阅读评论连续性",
+        "scenario": "阅读历史结构稿后刷新",
+        "current": "Chrome选第8稿并定位原评论，刷新回第10稿；URL没有结构版本，旧阅读上下文不能复现",
+        "expected": "明确所读历史稿可在刷新和浏览历史中保持，不误回最新稿；沿用已有版本选择而不新增入口",
+        "priority": "P2",
+        "status": "implemented_independent_browser_verified",
+        "evidence": [
+          "structure-reading-browser.json",
+          "system-worktree/review_desk/static/structure.js:129",
+          "structure-route-browser.json",
+          "independent-structure-route-review.md"
+        ],
+        "next": "保留准确范围证据，继续整体覆盖",
+        "commit": "0612108"
+      },
+      {
+        "id": "AO-017",
+        "category": "准确历史与评论定位",
+        "scenario": "编辑旧轮评论的方案修订同时属于新旧两轮",
+        "current": "Chrome在need-full-overall轮1编辑comment-9a3eaf39-b5bb-4b3b-b582-35093f150f52，素材选择跳到当前轮2；comment.material_scopes明确为轮1",
+        "expected": "定位/编辑历史评论恢复其准确素材轮次，无法判定时保持不猜测；编辑不会显示不同轮次当作原上下文",
+        "priority": "P2",
+        "status": "implemented_independent_browser_verified_scoped",
+        "evidence": [
+          "comment-persistence-browser.json",
+          "system-worktree/review_desk/static/material-review.js:locateMaterialComment",
+          "ao017-implementation.md",
+          "comment-location-browser.json",
+          "independent-ao017-followup/multi-scope-reproduction.json",
+          "history-material-browser.json",
+          "independent-ao017-followup-review.md",
+          "interaction-probes/README-ao017-history.md"
+        ],
+        "next": "保留准确范围证据，继续整体覆盖",
+        "priority_reason": "confirmed reader/edit context mismatch, no server scope tampering or durable draft loss established",
+        "commit": "0612108",
+        "limit": "旧CALL准确轮模型直接定位合法且0额外GET；不宣称异步CALL等待分支已用Chrome验收。ASSET详情聚合相关需求评论属于既有契约，不做减损过滤。"
+      },
+      {
+        "id": "AO-018",
+        "category": "准确输入与导出一致性",
+        "scenario": "必要输入齐备但已采用可选输入或实际调用历史依赖缺文件",
+        "current": "必要ready为真但包拒绝，下载仍启用",
+        "expected": "保留必要输入语义，完整包不可用时下载前给出具体原因，不静默丢已采用输入",
+        "priority": "P2",
+        "status": "implemented_independent_browser_verified",
+        "evidence": [
+          "production-readiness-review.md",
+          "production-readiness-audit/probe-result.json",
+          "package-availability-fix-evidence.json",
+          "independent-package-availability-review.md",
+          "package-browser/browser-evidence.json"
+        ],
+        "next": "保留准确范围证据，继续整体覆盖",
+        "commit": "8b9abcb"
+      },
+      {
+        "id": "AO-019",
+        "category": "必要性与阅读成本",
+        "scenario": "故事三个子页共同巨型流程说明和重复结构页头",
+        "current": "共同泛说明与结构静态页头重复主导航/Tab；2192x1359当前结构稿首个章节标题top928.78px",
+        "expected": "保留Tab/版本/出处与正文标题，减少不帮助当前阅读判断的重复说明",
+        "priority": "P2",
+        "status": "implemented_root_independent_diff_and_browser_verified",
+        "evidence": [
+          "story-shell-before.json",
+          "browser/story-shell-before.jpg",
+          "story-shell-browser.json",
+          "story-shell-implementation.md"
+        ],
+        "next": "复用两宽度页面证据，继续整体覆盖",
+        "commit": "51c28c6"
+      },
+      {
+        "id": "AO-020",
+        "category": "阅读连续性与交互一致性",
+        "scenario": "精修小说选择末章后刷新或浏览历史",
+        "current": "Chrome选择精修九第十章，章标题到阅读区top182；URL只含source而无章节；刷新重新显示第1章，末章位于内部全文约51577px处。源码jumpSourceChapter只滚动，chooseSource仅replace source",
+        "expected": "明确点击的长篇章节可在刷新和浏览历史中恢复，复用现有章节菜单，不新增入口或改变正文",
+        "priority": "P2",
+        "status": "implemented_independent_browser_verified",
+        "evidence": [
+          "source-chapter-browser-reproduction.json",
+          "system-worktree/review_desk/static/app.js:jumpSourceChapter/chooseSource/init",
+          "source-chapter-browser.json",
+          "independent-source-chapter-review.md"
+        ],
+        "next": "保留准确范围证据，继续整体覆盖",
+        "commit": "0612108"
+      },
+      {
+        "id": "AO-021",
+        "category": "准确采纳与历史范围",
+        "scenario": "旧轮方案显示与提交采纳范围不一致",
+        "current": "独立实际函数反例：旧plan显示时采纳仍enabled且scope引用新plan",
+        "expected": "阅读到的范围与可提交范围一致，同plan跨轮兼容保留",
+        "priority": "P1",
+        "status": "implemented_independent_browser_verified",
+        "evidence": [
+          "entity-acceptance-audit/README.md",
+          "entity-acceptance-browser.json",
+          "entity-browser/ao021-independent-history-check.json",
+          "independent-entity-acceptance-review.md"
+        ],
+        "next": "保留准确范围证据，继续整体覆盖",
+        "commit": "0612108"
+      },
+      {
+        "id": "AO-022",
+        "category": "准确成果呈现",
+        "scenario": "点击准确原件后被当前轮其他原件替代",
+        "current": "Chrome voice-b/d94准确入口实际显示voice/9aae当前轮原件，选择后material_target也变为voice",
+        "expected": "准确对象入口显示准确原件，不以同轮候选替代",
+        "priority": "P1",
+        "status": "implemented_independent_browser_verified",
+        "evidence": [
+          "history-material-browser.json",
+          "material-exact-candidate-browser.json",
+          "independent-ao022-review.md"
+        ],
+        "next": "保留准确范围证据，继续整体覆盖",
+        "commit": "0612108"
+      },
+      {
+        "id": "AO-023",
+        "category": "阅读连续性与表达依据",
+        "scenario": "窄屏阅读长版本出处",
+        "current": "390像素视口中长哈希使页头与出处容器撑宽到522像素，文字截断",
+        "expected": "保留完整出处并在现有容器内换行",
+        "priority": "P2",
+        "status": "implemented_independent_browser_verified",
+        "commit": "0612108",
+        "evidence": [
+          "source-narrow-overflow-review.md",
+          "independent-source-overflow-review.md",
+          "source-narrow-overflow-browser.json",
+          "source-narrow-overflow-after.jpg"
+        ],
+        "next": "复用390及相邻断点和宽屏证据，继续覆盖"
+      },
+      {
+        "id": "AO-024",
+        "category": "准确历史与数据概念",
+        "scenario": "原件列表素材版本标签",
+        "current": "B只属于第1轮，但列表取所属需求全局最新轮显示版本2，与默认打开的准确候选不一致",
+        "expected": "按准确修订真实成员取与默认首卡一致的轮，无证据不推定1",
+        "priority": "P2",
+        "status": "implemented_independent_browser_verified",
+        "evidence": [
+          "asset-list-version-design.md",
+          "ao024-implementation.md",
+          "ao024-fix-evidence.json",
+          "asset-list-version-browser.json",
+          "independent-ao024-review.md"
+        ],
+        "next": "复用准确候选证据，继续整体覆盖",
+        "commit": "349d720"
+      },
+      {
+        "id": "AO-025",
+        "category": "交互一致性与结果恢复",
+        "scenario": "变更复核保存迟到或结果未知",
+        "current": "保存返回后全量重载制作工作区，清空后打开的集级检查；提交中可再次保存不同内容并生成新ID",
+        "expected": "保护当前阅读上下文；准确请求保存与回读，禁止在途重入，不用未知结果生成第二份判断",
+        "priority": "P1",
+        "status": "implemented_independent_browser_verified",
+        "evidence": [
+          "production-flow-audit/report.md",
+          "production-flow-audit/scope-results.json",
+          "production-flow-audit/decision-ui-results.json",
+          "change-browser/late-save-browser.json",
+          "change-browser/recovery-browser.json",
+          "change-browser/browser-persistence-check.json",
+          "independent-change-save-review.md"
+        ],
+        "next": "复用准确候选证据，继续整体覆盖",
+        "commit": "349d720"
+      },
+      {
+        "id": "AO-026",
+        "category": "数据概念与历史判断",
+        "scenario": "同一准确变化存在相反复核结论",
+        "current": "同target+old+new不同ID先keep后rework，任一keep即放行；现有契约未定义相反意见归并",
+        "expected": "同一准确target/old/new/scope一个可修订结论；旧窗口409；原判断与修订完整保留",
+        "priority": "P1",
+        "status": "implemented_independent_browser_verified",
+        "evidence": [
+          "production-flow-audit/decision-contract-review.md",
+          "production-flow-audit/contract-results.json",
+          "change-decision-contract/design.md",
+          "change-decision-contract/fix-evidence.json",
+          "change-decision-contract/http-results.json",
+          "change-decision-contract/browser-initial-receipt.json",
+          "independent-change-single-review.json",
+          "change-decision-contract/chrome-final-code-receipt.json",
+          "change-decision-contract/chrome-final-history-receipt.json",
+          "change-decision-contract/chrome-history-final.json",
+          "change-decision-contract/chrome-legacy-originals-after-unified.json"
+        ],
+        "reason": "用户09:04明确选择一个可修订结论。普通结论沿同ID乐观版本修订；旧多ID不猜赢家，明确归并须引用全部准确旧头。",
+        "next": "Bind final candidate; formal writes await explicit confirmation."
+      },
+      {
+        "id": "AO-027",
+        "category": "表达依据",
+        "scenario": "集级输入清单按钮称本场",
+        "current": "真实分集snapshot缺kind，label未读取readiness.scope.kind，误称本场；内容范围仍正确",
+        "expected": "按准确服务端范围显示本集、本场、逐镜或状态",
+        "priority": "P2",
+        "status": "implemented_independent_browser_verified",
+        "evidence": [
+          "production-scope-pagination-browser.json",
+          "production-scope-label-evidence.json",
+          "change-browser/late-save-browser.json"
+        ],
+        "next": "已提交349d720；复用集级与场级真实页面证据"
+      },
+      {
+        "id": "AO-028",
+        "category": "必要性与表达依据",
+        "scenario": "无内容时仍显示无效操作",
+        "current": "空资料/剧本仍有0评论空面板入口，空方向仍提示选择候选，已选无稿仍画无意义版本行",
+        "expected": "基于准确可评论目标显示入口；无候选/无稿时说明后台准备，不隐藏有效零评论对象",
+        "priority": "P2",
+        "status": "implemented_independent_and_browser_verified",
+        "evidence": [
+          "reading-empty-browser.json",
+          "reading-state-browser-evidence.json",
+          "reading-context-implementation.md",
+          "reading-context-fix-evidence.json",
+          "reading-empty-fixed-browser.json"
+        ],
+        "next": "准确候选综合核对；未验边界见运行报告"
+      },
+      {
+        "id": "AO-029",
+        "category": "阅读评论连续性",
+        "scenario": "区域评论收起后难以找回",
+        "current": "Chrome自由圈选草稿收起后锚点清空；提示重新圈选相同内容，准确几何键难以手工重现",
+        "expected": "复用关闭面板保留当前锚点和编辑器，取消仍清除；不另建草稿系统",
+        "priority": "P1",
+        "status": "implemented_independent_and_browser_verified",
+        "evidence": [
+          "region-draft-collapse-reproduction.json",
+          "reading-context-implementation.md",
+          "reading-context-fix-evidence.json",
+          "region-draft-collapse-fixed-browser.json",
+          "independent-reading-context/probe.cjs",
+          "independent-reading-context/probe.log"
+        ],
+        "next": "准确候选综合核对；未验边界见运行报告"
+      },
+      {
+        "id": "AO-030",
+        "category": "阅读评论连续性",
+        "scenario": "回应入口定位原稿但不展示意见",
+        "current": "第二稿查看原稿意见返回准确第一稿红图，评论面板仍关闭",
+        "expected": "准确定位后打开既有评论面板及同ID意见，无新弹窗",
+        "priority": "P2",
+        "status": "implemented_independent_browser_verified",
+        "evidence": [
+          "structure-response-browser.json",
+          "structure-response-implementation.md",
+          "structure-response-fix-evidence.json",
+          "structure-response-fixed-browser.json",
+          "structure-response-fixed.jpg"
+        ],
+        "next": "与相邻阅读改动一起冻结提交"
+      },
+      {
+        "id": "AO-031",
+        "category": "准确历史与评论定位",
+        "scenario": "有效资料图片评论无法定位",
+        "current": "恢复准确原图且anchor valid后，Chrome定位整图仍误报失效；源码仅查文字block_id",
+        "expected": "资料visual/region在准确资料及修订内定位对应原件，不误借别处同名图",
+        "priority": "P1",
+        "status": "implemented_independent_and_browser_verified",
+        "evidence": [
+          "source-image-location-reproduction.json",
+          "reading-state-browser-evidence.json",
+          "reading-context-implementation.md",
+          "reading-context-fix-evidence.json",
+          "source-image-location-fixed-browser.json"
+        ],
+        "next": "准确候选综合核对；未验边界见运行报告"
+      },
+      {
+        "id": "AO-032",
+        "category": "阅读编辑连续性",
+        "scenario": "配置迟到保存覆盖新输入",
+        "current": "PROJECT保存后继续编辑、切SYSTEM写新值或离开重返，旧GET整体重建表单覆盖新输入",
+        "expected": "保存响应只更新准确版本和缓存，不重建正在编辑的表单；已保存与刷新失败分开",
+        "priority": "P1",
+        "status": "implemented_independent_and_browser_verified",
+        "evidence": [
+          "writing-callback-audit/report.md",
+          "writing-callback-audit/results.json",
+          "writing-callback-audit/fix-design.md"
+        ],
+        "next": "准确候选综合核对；未验边界见运行报告"
+      },
+      {
+        "id": "AO-033",
+        "category": "准确历史与阅读连续性",
+        "scenario": "素材审阅结论重复提交与迟到刷新",
+        "current": "同表单在途可改结果再次保存，真实Store接受两个UUID；断响应重试亦换ID；导航后旧成功仍触发整体加载",
+        "expected": "同一操作固定准确修订与请求身份，在途锁定，结果未知回查原ID，导航后不接管新页",
+        "priority": "P1",
+        "status": "implemented_independent_and_browser_verified",
+        "evidence": [
+          "writing-callback-audit/report.md",
+          "writing-callback-audit/results.json",
+          "writing-callback-audit/backend-results.json",
+          "writing-callback-audit/fix-design.md"
+        ],
+        "next": "按报告保留特殊边界，最终候选综合核对"
+      },
+      {
+        "id": "AO-034",
+        "category": "准确历史与评论定位",
+        "scenario": "资料图片圈选误取结构图片",
+        "current": "实际pointerup在无结构稿/不同图时抛错，同visual_id不同文件时把source目标绑定到structure-other.png",
+        "expected": "只从当前资料与准确原件建立区域；离开或图片身份改变不猜测关联",
+        "priority": "P1",
+        "status": "implemented_independent_and_browser_verified",
+        "evidence": [
+          "source-region-audit/probe.cjs",
+          "source-region-audit/results.json",
+          "source-region-implementation.md",
+          "source-region-fix-evidence.json",
+          "independent-source-region/probe.cjs"
+        ],
+        "next": "准确候选综合核对；未验边界见运行报告"
+      },
+      {
+        "id": "AO-035",
+        "category": "保存结果表达",
+        "scenario": "实体采纳成功后刷新失败只报读取错误",
+        "current": "真实回调POST成功后GET失败仅报错误且再读一次；旧失败可在新页提示。后端旧expected_version仍拒绝重放",
+        "expected": "说明已保存与未刷新，不误导重复操作，迟到错误关联原对象",
+        "priority": "P2",
+        "status": "implemented_independent_and_browser_verified",
+        "evidence": [
+          "writing-callback-audit/remaining-results.json",
+          "writing-callback-audit/backend-results.json",
+          "writing-callback-audit/report.md",
+          "decision-browser/chrome-persistence-check.json",
+          "independent-decision-feedback-review.md"
+        ],
+        "next": "最终候选核对；不把技术夹具决定解释为用户认可"
+      },
+      {
+        "id": "AO-036",
+        "category": "保存结果表达",
+        "scenario": "方向选择成功后刷新失败仍留确认窗",
+        "current": "真实回调POST成功后GET失败只报GET错误且弹窗仍开；取消后旧成功仍渲染。准确expected_version阻止同版本重放",
+        "expected": "已保存状态准确反馈、旧弹窗不接管新上下文",
+        "priority": "P2",
+        "status": "implemented_independent_and_browser_verified",
+        "evidence": [
+          "writing-callback-audit/remaining-results.json",
+          "writing-callback-audit/backend-results.json",
+          "writing-callback-audit/report.md",
+          "decision-browser/chrome-persistence-check.json",
+          "independent-decision-feedback-review.md"
+        ],
+        "next": "最终候选核对；不把技术夹具决定解释为用户认可"
+      },
+      {
+        "id": "AO-037",
+        "category": "阅读评论连续性与准确历史",
+        "scenario": "润色返回覆盖未保存文字",
+        "current": "润色返回覆盖未保存文字",
+        "expected": "当前输入与准确引用持续对应用户所看内容",
+        "impact": "可能丢失意见或把修改指向错误资料位置",
+        "priority": "P1",
+        "status": "implemented_independent_and_browser_verified",
+        "evidence": [
+          "polish-audit/results.json",
+          "polish-implementation.md"
+        ],
+        "next": "按报告保留特殊边界，最终候选综合核对"
+      },
+      {
+        "id": "AO-038",
+        "category": "阅读评论连续性与准确历史",
+        "scenario": "显式历史资料润色上下文取新头",
+        "current": "显式历史资料润色上下文取新头",
+        "expected": "当前输入与准确引用持续对应用户所看内容",
+        "impact": "可能丢失意见或把修改指向错误资料位置",
+        "priority": "P1",
+        "status": "implemented_independent_and_browser_verified",
+        "evidence": [
+          "polish-audit/context-results.json",
+          "polish-fix-evidence.json"
+        ],
+        "next": "按报告保留特殊边界，最终候选综合核对"
+      },
+      {
+        "id": "AO-039",
+        "category": "阅读评论连续性与准确历史",
+        "scenario": "资料图画布留白使圈选随屏宽偏移",
+        "current": "资料图画布留白使圈选随屏宽偏移",
+        "expected": "当前输入与准确引用持续对应用户所看内容",
+        "impact": "可能丢失意见或把修改指向错误资料位置",
+        "priority": "P1",
+        "status": "implemented_independent_and_browser_verified",
+        "evidence": [
+          "source-geometry-fixed-browser.json",
+          "source-geometry-scaled-browser.json"
+        ],
+        "next": "按报告保留特殊边界，最终候选综合核对"
+      },
+      {
+        "id": "AO-040",
+        "category": "准确成果与数据语义",
+        "priority": "P1",
+        "scenario": "从素材 A 的准确入口记录审阅",
+        "current": "同 CALL 与原件哈希的不同 ASSET 合法共用去重代表项，A 精确成员被 results 的 B 代替，页面标题 A 而表单绑定 B。",
+        "expected": "保留候选去重，同时按所选轮真实成员引用准确资产，所看与所判一致。",
+        "impact": "审阅结论可能记录到另一准确资产",
+        "status": "implemented_independent_and_browser_verified",
+        "evidence": [
+          "writer-browser/shared-original-target-before.json",
+          "writer-browser/shared-original-target-before.jpg",
+          "writer-browser/initial.json"
+        ],
+        "next": "按报告保留特殊边界，最终候选综合核对"
+      },
+      {
+        "id": "AO-041",
+        "category": "阅读连续性",
+        "priority": "P2",
+        "scenario": "制作列表读取失败后仍显示正在读取",
+        "current": "制作列表读取失败后仍显示正在读取",
+        "expected": "明确当前失败或撤回事实，保留准确历史与既有恢复动作",
+        "impact": "用户可能等待不会完成的读取，或把已撤回对象当作新的补全任务",
+        "status": "implemented_independent_and_browser_verified",
+        "evidence": [
+          "writer-browser/judgment-list-failure-chrome.json",
+          "writer-browser/list-failure-fixed-chrome.json",
+          "writer-browser/list-failure-final-persistence.json",
+          "independent-decision-feedback-review.md"
+        ],
+        "next": "最终候选核对；不把技术夹具决定解释为用户认可"
+      },
+      {
+        "id": "AO-042",
+        "category": "表达依据与数据历史",
+        "priority": "P2",
+        "scenario": "已撤回实体旧链接误导为待完善任务",
+        "current": "已撤回实体旧链接误导为待完善任务",
+        "expected": "明确当前失败或撤回事实，保留准确历史与既有恢复动作",
+        "impact": "用户可能等待不会完成的读取，或把已撤回对象当作新的补全任务",
+        "status": "implemented_independent_and_browser_verified",
+        "evidence": [
+          "withdrawn-link-before-browser.json",
+          "withdrawn-context-audit/current-state-chrome.json",
+          "withdrawn-context-audit/old-entity-current-withdrawal-chrome.json",
+          "withdrawn-context-audit/withdrawn-material-chrome.json",
+          "withdrawn-context-audit/old-media-comments-chrome.json"
+        ],
+        "next": "保留原历史语义，随最终候选交付"
+      },
+      {
+        "id": "AO-043",
+        "category": "准确成果与表达依据",
+        "priority": "P2",
+        "scenario": "历史同轮第二候选放大图错用第一候选名",
+        "current": "准确第二原件和目标未错，但复制第一placement的label使标题、alt和入口名称错标",
+        "expected": "每个候选使用自己准确修订的展示名；显式用途名仅沿其准确placement保留",
+        "impact": "阅读者可能误认候选和返工成果",
+        "status": "implemented_independent_and_browser_verified",
+        "evidence": [
+          "withdrawn-second-image-modal-before.json",
+          "material-title-fix/chrome-after.json",
+          "independent-material-title-review.md"
+        ],
+        "next": "随最终候选交付；不改原件、轮次、评论或去重"
+      },
+      {
+        "id": "AO-044",
+        "category": "交付可执行性",
+        "priority": "P1",
+        "scenario": "固定基础镜像ID在本机Docker构建失败",
+        "current": "FROM sha256:imageID被BuildKit解释为registry镜像名，实际构建失败",
+        "expected": "使用可验证且不漂移的本地基础镜像完成隔离候选构建",
+        "impact": "现发布封装尚不能完成实际部署准备",
+        "status": "implemented_independent_and_isolated_docker_verified",
+        "evidence": [
+          "docker-rehearsal/build-results.json",
+          "docker-rehearsal/build.log",
+          "docker-rehearsal/wrapper-build-results.json",
+          "docker-rehearsal/compose-results.json"
+        ],
+        "next": "移入受管目录后准备最终准确候选包及preflight；正式apply等待用户确认"
+      },
+      {
+        "id": "AO-045",
+        "category": "阅读评论连续性与准确目标",
+        "priority": "P1",
+        "scenario": "剧本本机元数据存储失败中断阅读切换",
+        "current": "Quota失败使圈选后编辑器未打开；SecurityError使跨集目标已切B但正文仍A",
+        "expected": "局部草稿元数据失败不中断阅读与准确评论目标，明确持久化限制",
+        "impact": "可能误读当前集或无法创建意见",
+        "status": "implemented_independent_and_normal_browser_verified",
+        "evidence": [
+          "script-storage-audit/results.json",
+          "script-storage-audit/fix-evidence.json",
+          "independent-script-storage-review.md",
+          "script-storage-audit/normal-chrome.json"
+        ],
+        "next": "故障条件为真实函数注入；Chrome仅正常圈选、输入、刷新与恢复，不宣称浏览器禁存储已验",
+        "commit": "9522896"
+      },
+      {
+        "id": "AO-046",
+        "category": "表达依据与阅读连续性",
+        "priority": "P2",
+        "scenario": "旧素材轮明确409拒绝却提示上次提交尚未确认",
+        "current": "B推进round3后A旧round2 POST409未入库，唯一输入/原目标保留；页面另附原样重试可确认保存的未知提示",
+        "expected": "明确拒绝和网络结果未知分开，保留原UUID/payload/草稿，不自动改投新轮",
+        "impact": "用户可能反复重试被明确拒绝的操作或误判已保存",
+        "status": "implemented_independent_and_scoped_browser_verified",
+        "evidence": [
+          "round-conflict-before-feedback-fix.json",
+          "round-conflict-persistence.json",
+          "independent-comment-rejection/followup-results.json",
+          "round-conflict-fixed-chrome.json",
+          "round-conflict-fixed-persistence.json",
+          "round-conflict-frozen-restored-chrome.json"
+        ],
+        "next": "最终候选总体审查；存储故障按函数证据限定，正常页面与真实409按具体路径已验",
+        "independent_findings": [
+          "RJ02",
+          "RJ03",
+          "RJ04"
+        ],
+        "commit": "7fcd01a"
+      },
+      {
+        "id": "AO-047",
+        "category": "阅读评论连续性",
+        "priority": "P2",
+        "scenario": "取消与已保存后的本机草稿清理失败",
+        "current": "取消remove失败中断无反馈；已收到201后remove失败也被误说成未知，多个键可能部分删除",
+        "expected": "不能清除草稿时明确告知，避免假称已经放弃",
+        "impact": "异常浏览器权限下取消操作无反馈；未发现输入丢失",
+        "status": "implemented_independent_and_scoped_browser_verified",
+        "evidence": [
+          "script-storage-audit/results.json",
+          "comment-cleanup-audit/design.md",
+          "comment-cleanup-audit/results.json",
+          "independent-comment-cleanup-review.md",
+          "comment-cleanup-audit/normal-create-edit-chrome.json",
+          "comment-cleanup-audit/normal-browser-persistence.json"
+        ],
+        "next": "最终候选总体审查；存储故障按函数证据限定，正常页面与真实409按具体路径已验",
+        "commit": "7fcd01a"
+      },
+      {
+        "id": "AO-048",
+        "category": "保存结果表达",
+        "priority": "P2",
+        "scenario": "真实配置版本冲突同时显示保存结果未知",
+        "current": "两窗口均v5；A保存v6，B携v5 PATCH409后输入仍保留，但明确冲突后附保存结果待确认",
+        "expected": "明确拒绝与网络未知分开，保留输入和原版本门槛，不擅自提高版本覆盖",
+        "impact": "用户无法判断是否保存、可能无意义重复尝试；实际保护未失效",
+        "status": "implemented_independent_and_scoped_browser_verified",
+        "evidence": [
+          "writer-browser/config-conflict-chrome.json",
+          "writer-browser/config-conflict-chrome.jpg",
+          "independent-configuration-conflict-review.md",
+          "configuration-conflict-fix/chrome-after.json",
+          "configuration-conflict-fix/browser-persistence.json"
+        ],
+        "next": "最终候选总体审查；存储故障按函数证据限定，正常页面与真实409按具体路径已验",
+        "commit": "7fcd01a"
+      },
+      {
+        "id": "AO-049",
+        "category": "阅读评论连续性与数据历史",
+        "status": "implemented_independent_browser_verified",
+        "scenario": "旧素材刷新丢失准确上下文",
+        "current": "实体内旧素材刷新被工作区过滤，退回实体当前页；基线已有相同逻辑。",
+        "expected": "保持已选素材卡、轮次和准确修订，拒绝错归属链接，不偷偷改投。",
+        "evidence": [
+          "withdrawn-history-route-before-refresh.json",
+          "withdrawn-history-route-after-refresh.json",
+          "entity-history-route-audit/baseline-results.json",
+          "entity-history-route-audit/fix-evidence.json",
+          "entity-history-route-audit/real-snapshot-results.json",
+          "independent-entity-history-route-review.json",
+          "entity-history-route-audit/fixed-chrome.json",
+          "entity-history-route-audit/fixed-comment-locate-chrome.json",
+          "entity-history-route-audit/current-empty-round-fixed-chrome.json",
+          "entity-history-route-audit/old-round-final-chrome.json"
+        ],
+        "impact": "历史阅读判断受影响；原件和历史数据仍保留。",
+        "priority": "P2",
+        "next": "Bind unchanged reviewed code and browser inputs to final delivery."
+      },
+      {
+        "id": "AO-050",
+        "category": "准确表达与数据历史",
+        "status": "implemented_independent_browser_verified",
+        "scenario": "历史输出依赖借用新版名称",
+        "current": "命名忽略revision_id，旧输出引用显示当前标题；点击落点、原件和存储关系仍为旧版。",
+        "expected": "按准确引用取名称；缺少投影时只用准确已知名或ID。",
+        "evidence": [
+          "output-v1-after-v2-chrome.json",
+          "output-v1-after-v2-chrome.jpg",
+          "output-v1-dependency-popup.json",
+          "exact-reference-label-audit/results.json",
+          "assembly-output-browser/recovery-evidence.json",
+          "independent-reference-names-review.json",
+          "output-reference-fixed-v1-chrome.json",
+          "output-reference-fixed-popup-chrome.json",
+          "output-reference-fixed-v2-chrome.json"
+        ],
+        "impact": "历史阅读判断受影响；原件和历史数据仍保留。",
+        "priority": "P2",
+        "next": "Complete independent final follow-up and bind the final candidate; formal delivery awaits explicit confirmation."
+      },
+      {
+        "id": "AO-051",
+        "category": "必要性与交互一致性",
+        "status": "implemented_independent_browser_verified",
+        "scenario": "阅读镜头、组合或输出并选择准确版本",
+        "current": "标题后默认显示版本、64位修订hash及历史/当前状态，紧接版本选择器又显示同一版本和原始时间。",
+        "expected": "由既有版本控件统一显示当前/历史选择；准确ID及时间保留在原完整记录中，不增加入口。",
+        "evidence": [
+          "output-v1-after-v2-chrome.jpg",
+          "system-worktree/review_desk/static/production.js",
+          "AGENTS.md:产品界面的用户价值",
+          "independent-record-version-display-review.json",
+          "output-reference-fixed-v1-chrome.json",
+          "output-reference-fixed-v2-chrome.json",
+          "record-version-full-history-chrome.json"
+        ],
+        "impact": "重复版本与技术hash抢占阅读位置，既有控件已能承担同一判断。",
+        "priority": "P3",
+        "next": "Complete independent final follow-up and bind the final candidate; formal delivery awaits explicit confirmation."
+      }
+    ]
+  },
+  "pack_captured_at": "2026-10-04T01:56:43.630000+00:00",
+  "authority_note": "原文件内部更新时间和分类标签照留，SHA识别本次复制内容；覆盖行并未因打包重标。AO026与AO049–051、阶段、组合输出及旧采纳证据边界见status-addenda.json。属于报告冻结时点；其后准确交付与停止回执单独保留，不回写受管快照。"
+}
