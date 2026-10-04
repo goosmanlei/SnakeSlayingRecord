@@ -19,7 +19,9 @@
 
 ## 逐镜计划与执行限制
 
-`config/seedance.json` 指定 `doubao-seedance-2-0-260128`、16:9、1080p、原生声音；实际执行平台和额度尚未核实。平台接入能力可能不同，调用前重新核对，不能自动使用额外按量付费渠道。官方接口当前支持单次 4–15 秒，最多 3 段参考音频、每段 2–15 秒且总长不超过 15 秒；图片最多 9 张。[接口说明](https://docs.volcengine.com/docs/ark/create-video-generation-task-api?lang=zh)
+视频生成选型按 `../AGENTS.md` 的约定：可以通过 `pippit-tool-cli` 调用 Seedance，默认 Seedance 2.0 Fast、720p；镜头需要较长视频时长时，可以采用 Seedance 2.5、720p。16:9 横屏与原生有声视听方向继续沿用。
+
+`../config/seedance.json` 和现有逐镜清单仍保存此前的 Seedance 2.0、1080p 待执行配置。下次准备实际调用时，应先按新约定更新配置并重新导出待执行计划，再核对 CLI 的实际模型标识、参数、时长限制、参考支持与额度。2026-10-04 已通过 CLI 的 `model list` 与 `model describe` 核对：默认模型标识为 `seedance2.0_fast_vision`，支持 4–15 秒；较长镜头采用 `Seedance_2.5`，支持 4–30 秒；两者均支持 `--resolution 720p`。这些是当前服务配置，执行时应重新核对。尚未提交生成或查询额度。既有准备工具按 4–15 秒、最多 3 段参考音频、每段 2–15 秒且总长不超过 15 秒、最多 9 张图片组织输入；这些旧接口约束不能直接视为 pippit-tool-cli 或 Seedance 2.5 的当前能力。[原接口依据](https://docs.volcengine.com/docs/ark/create-video-generation-task-api?lang=zh)
 
 原生音画联合生成支持以音频参考声音特征，具体身份、语气和本镜内容仍需在提示词中说明；参考不会保证每次生成的台词、音色或时点完全准确。[提示词指南](https://docs.volcengine.com/docs/ark/seedance-2-0-prompt-guide?lang=zh)
 

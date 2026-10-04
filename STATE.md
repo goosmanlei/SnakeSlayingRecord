@@ -34,6 +34,7 @@ E17/s041 b009 的拟扩写随歌曲档案保留，版本五、制作锁和关联
 
 ## 接续与交付边界
 
+- 后续视频生成可使用 pippit-tool-cli：默认 Seedance 2.0 Fast、720p，镜头需要较长视频时长时可用 Seedance 2.5、720p。本机 `pippit-tool-cli` 已可运行，模型查询确认 `seedance2.0_fast_vision` 支持 4–15 秒、`Seedance_2.5` 支持 4–30 秒，均支持 720p；当前额度尚未查询。既有第一集 1080p 待执行配置与逐镜计划须先按新约定更新，见 [视听预演操作说明](production/native-audio-workflow.md)。本轮仅补充制作约定，未提交视频生成。
 - 本次技术修复与正式验证已完成；故事 main 合并推送和本次两个 worktree 清理的最终结果以主项目 `.runtime/service-releases/entity-acceptance-20261004-dafb0d91db50-d6fe329de5b3/final-receipt.json` 回读为准。
 - 正式发布目录为上条同名 `.runtime/service-releases/` 目录；镜像、配置挂载、发布包和核验日志独立于临时 worktree。恢复现有容器可在发布目录执行 `python3 material_review_release.py restart --release . --apply`；不恢复数据库或重放测试采纳。
 - 作品、声音与歌曲的后续范围沿用上文。此前任务的历史 worktree、分支与恢复资料不在本次清理范围。
