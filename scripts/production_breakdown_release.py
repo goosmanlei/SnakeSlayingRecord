@@ -8,18 +8,44 @@ delivery notes. It never invokes _complete, pushes, or restores a live snapshot.
 import argparse
 from datetime import datetime, timezone
 import json
-from pathlib import Path
+from pathlib import Path, PurePosixPath
+import re
 import sys
 import time
 import material_review_release as service
 import publish_generation as publication
-from generation_workspace import verify_media
+from generation_workspace import contained
 
 base=service.base
 TASK='task-20261004-0007'
 ROOT=Path(__file__).resolve().parents[1]
 HELPERS=('production_breakdown_release.py','material_review_release.py','autonomous_optimization_release.py',
          'integrate_generation_review_system.py','publish_generation.py','generation_publication.py','generation_workspace.py')
+
+
+def verify_originals(root, entries):
+    """Verify the whole export, including named legacy structure illustrations.
+
+    This is separate from generation publication's content-addressed media rule.
+    Paths, hashes and byte counts remain exact; no legacy file is renamed.
+    """
+    assets=contained(root,'export/assets');seen=set()
+    for entry in entries:
+        name,digest=entry['file'],entry['sha256']
+        base.require(isinstance(name,str) and bool(name) and '\\' not in name and
+                     not PurePosixPath(name).is_absolute() and
+                     all(part not in ('','.','..') for part in name.split('/')),
+                     'unsafe original path')
+        base.require(name not in seen,'duplicate original path')
+        seen.add(name)
+        base.require(isinstance(digest,str) and re.fullmatch(r'[a-f0-9]{64}',digest),
+                     'invalid original hash')
+        path=contained(assets,name)
+        base.require(path.is_file(),'missing original: '+name)
+        raw=path.read_bytes()
+        base.require(base.sha(raw)==digest,'changed original: '+name)
+        base.require(type(entry.get('bytes')) is int and entry['bytes']==len(raw),
+                     'original byte count differs: '+name)
 
 
 def prepare(a):
@@ -38,7 +64,7 @@ def prepare(a):
     manifest=json.loads(base.git_file(ROOT,a.story_candidate,'export/manifest.json'))
     originals=[{'file':n[len('assets/'):],'sha256':v,'bytes':(ROOT/'export'/n).stat().st_size}
                for n,v in manifest['files'].items() if n.startswith('assets/')]
-    verify_media(ROOT,originals)
+    verify_originals(ROOT,originals)
     api=a.task_api.resolve()
     base.require((api/'codex_project.py').is_file() and (api/'task_worktree.py').is_file(),'task API not found')
     outer={'format':'production-breakdown-release-v1','task':TASK,'service_manifest_sha256':base.sha((root/'service/manifest.json').read_bytes()),
@@ -67,8 +93,8 @@ def load(path):
 
 
 def originals(m,s):
-    verify_media(ROOT,m['originals'])
-    verify_media(Path(s['story_main']),m['originals'])
+    verify_originals(ROOT,m['originals'])
+    verify_originals(Path(s['story_main']),m['originals'])
     return len(m['originals'])
 
 

@@ -9,7 +9,7 @@
 | 系统 Python | [169 项通过](evidence/python-tests.txt)，含版本／种子／调用状态、重复登记、评论不建版、采用不漂移、完整状态、父级、导出恢复与读事务。localhost 测试使用进程局部 `NO_PROXY=127.0.0.1,localhost,::1`；首次遗漏该变量造成的代理 502 已隔离重跑。 |
 | 系统前端 | [390 项通过](evidence/node-tests.txt)，覆盖共用素材卡、版本候选、准确采用、评论、播放器、阅读位置及迟到请求。 |
 | 新 HTTP 与准确父级 | [6 项通过](evidence/breakdown-http-tests.txt)，最后的历史目录依据修复后补验。含所选集场、镜头上下文、素材范围、迁移写入封装及只校验回滚。 |
-| 故事工具 | [受影响 15 项通过](evidence/story-affected-tests.txt)；[发布相关 36 项通过](evidence/release-tests.txt)，包括批准哈希变化、未授权执行、外来运行态拒绝与串行顺序。 |
+| 故事工具 | [受影响 15 项通过](evidence/story-affected-tests.txt)；[发布相关 38 项通过](evidence/release-tests.txt)，包括批准哈希变化、未授权执行、外来运行态拒绝、串行顺序，以及历史命名原件的哈希、字节数和路径边界。 |
 | 完整数据 | [最终核验](evidence/data-verification.json)：297 镜／42 场／1114 块；准确增量重放相等；重复执行不增数据；并发评论保留；冲突连同表结构回滚；完整导出→空实例逐表相等；1307 个受管文件逐一 SHA-256 相等；重新编制无变更。 |
 
 旧 Schema 读取由系统恢复测试覆盖，本故事的实际全量空实例恢复使用 Schema 5。新方案调用、媒体候选、用户认可及可直接执行方案均为零。对来源逐块覆盖后另做 [内容自审](continuity.md)，没有把字段非空或块数相等当作叙事验收。

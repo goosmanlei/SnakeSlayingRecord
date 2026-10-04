@@ -13,6 +13,32 @@ import production_breakdown_release as r
 
 
 class BreakdownReleaseTest(unittest.TestCase):
+    def test_named_legacy_original_is_verified_without_renaming(self):
+        with tempfile.TemporaryDirectory() as name:
+            root=Path(name);assets=root/'export/assets';assets.mkdir(parents=True)
+            raw=b'<svg>legacy structure illustration</svg>'
+            (assets/'structure-overview.svg').write_bytes(raw)
+            entry={'file':'structure-overview.svg','sha256':r.base.sha(raw),'bytes':len(raw)}
+            r.verify_originals(root,[entry])
+            self.assertEqual((assets/'structure-overview.svg').read_bytes(),raw)
+            with self.assertRaisesRegex(ValueError,'byte count differs'):
+                r.verify_originals(root,[{**entry,'bytes':len(raw)+1}])
+            (assets/'structure-overview.svg').write_bytes(b'changed')
+            with self.assertRaisesRegex(ValueError,'changed original'):
+                r.verify_originals(root,[entry])
+
+    def test_original_paths_cannot_escape_assets_or_follow_symlinks(self):
+        with tempfile.TemporaryDirectory() as name:
+            root=Path(name);assets=root/'export/assets';assets.mkdir(parents=True)
+            (root/'outside.svg').write_bytes(b'outside')
+            entry={'sha256':r.base.sha(b'outside'),'bytes':7}
+            for path in ('../outside.svg','/outside.svg','a/../../outside.svg','a//b.svg','a\\b.svg'):
+                with self.subTest(path=path),self.assertRaisesRegex(ValueError,'unsafe original path'):
+                    r.verify_originals(root,[{**entry,'file':path}])
+            (assets/'linked.svg').symlink_to(root/'outside.svg')
+            with self.assertRaisesRegex(ValueError,'symlink'):
+                r.verify_originals(root,[{**entry,'file':'linked.svg'}])
+
     def test_both_apply_and_explicit_phase_exception_are_required(self):
         for apply,exception in ((False,False),(True,False),(False,True)):
             with patch.object(r,'load') as load:
