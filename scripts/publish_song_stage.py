@@ -6,69 +6,22 @@ writer lock, exact song heads and references, and the validated media bytes.
 Does not export, deploy a service, generate audio, accept audio or complete a task.
 """
 import argparse
-from collections import Counter
-import fcntl
-import hashlib
 import json
 from pathlib import Path
-import re
-import shutil
-import sqlite3
 
 try:
-    from .generation_publication import journal, publication_id
+    from .generation_publication import KEYS, journal, publication_id
     from .publish_generation import run_publication
 except ImportError:
-    from generation_publication import journal, publication_id
+    from generation_publication import KEYS, journal, publication_id
     from publish_generation import run_publication
 
 ROOT = Path(__file__).resolve().parents[1]
-KEYS = {'objects': ('id',), 'revisions': ('id',), 'dependencies': ('from_revision', 'to_revision', 'role'), 'comments': ('id',), 'material_rounds': ('material_id', 'number'), 'material_members': ('material_id', 'number', 'revision_id'), 'material_feedback': ('comment_id',), 'material_comment_scopes': ('comment_id', 'material_id')}
 ENTITIES = {'entity-boat-song', 'entity-blue-awning-song', 'entity-snake-welcome-song', 'entity-blessing-stage-song'}
 STEMS = ('boat', 'blue-awning', 'snake-welcome', 'blessing-stage', 'welcome', 'blessing')
 
 def allowed(oid):
     return oid in ENTITIES or oid.startswith(('call-songs-', 'asset-songs-', 'review-songs-')) or any((oid.startswith(prefix + stem + '-song-') for prefix in ('form-', 'need-form-') for stem in STEMS))
-
-def connect(path, readonly=True):
-    db = sqlite3.connect(path.resolve().as_uri() + ('?mode=ro' if readonly else '?mode=rw'), uri=True)
-    db.row_factory = sqlite3.Row
-    db.execute('PRAGMA foreign_keys=ON')
-    return db
-
-def rows(db, table):
-    return [dict(r) for r in db.execute('SELECT * FROM ' + table)]
-
-def save(path, value):
-    if path.exists():
-        raise ValueError('preserve earlier evidence: ' + str(path))
-    path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n')
-
-def sha(path):
-    return hashlib.sha256(path.read_bytes()).hexdigest()
-
-def copy_media(plan, source_dir, destination_dir):
-    for entry in plan['media']:
-        if not re.fullmatch(r'[a-f0-9]{64}\.[a-z0-9]+', entry['file']):
-            raise ValueError('media must use a content-addressed basename')
-        source = source_dir / entry['file']
-        if not (source.is_file() and source.stat().st_size == entry['bytes'] and (sha(source) == entry['sha256'])):
-            raise ValueError('invalid song publication data')
-        target = destination_dir / entry['file']
-        if target.exists():
-            if not (target.is_file() and sha(target) == entry['sha256']):
-                raise ValueError('existing file conflict')
-    destination_dir.mkdir(parents=True, exist_ok=True)
-    added = 0
-    for entry in plan['media']:
-        target = destination_dir / entry['file']
-        if not target.exists():
-            with target.open('xb') as stream, (source_dir / entry['file']).open('rb') as source:
-                shutil.copyfileobj(source, stream)
-            if not sha(target) == entry['sha256']:
-                raise ValueError('invalid song publication data')
-            added += 1
-    return added
 
 def apply(db, plan):
     if not plan['format'] == 'songs-current-stage-publication-v1':
@@ -117,38 +70,6 @@ def apply(db, plan):
             raise ValueError('foreign key validation failed')
         return {'objects': len(plan['objects']), 'new_objects': sum((x is None for x in plan['expected_heads'].values())), 'inserted': {t: len(rs) for (t, rs) in plan['insert'].items()}, 'comment_events': event_map, 'audio_quality_accepted': False, 'screenplay_changed': False}
     return journal(db, publication_id(plan), mutate)
-
-def verify_preservation(before_path, after_path, plan):
-    (before, after) = (connect(before_path), connect(after_path))
-    try:
-        names = [r[0] for r in before.execute("SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%'")]
-        report = {}
-        for table in names:
-            old = [tuple(r) for r in before.execute('SELECT * FROM ' + table)]
-            new = [tuple(r) for r in after.execute('SELECT * FROM ' + table)]
-            removed = list((Counter(old) - Counter(new)).elements())
-            if table == 'objects':
-                if not {r[0] for r in removed} == {k for (k, v) in plan['expected_heads'].items() if v is not None}:
-                    raise ValueError('invalid song publication data')
-            elif removed:
-                raise ValueError('protected row changed: ' + table)
-            report[table] = {'before': len(old), 'after': len(new), 'removed_or_updated': len(removed)}
-        return report
-    finally:
-        before.close()
-        after.close()
-
-
-def backup(source, destination):
-    if destination.exists():
-        raise ValueError('preserve previous attempt: ' + str(destination))
-    src, dst = connect(source), sqlite3.connect(destination)
-    try:
-        src.backup(dst)
-    finally:
-        src.close()
-        dst.close()
-
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
