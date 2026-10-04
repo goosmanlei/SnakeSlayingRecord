@@ -26,6 +26,11 @@ try:
 except ImportError:
     from generation_workspace import generation_root, contained, primary_root, git
 
+try:
+    from .material_model_io import read_json as material_read_json, read_bytes as material_read_bytes, sqlite_compatibility
+except ImportError:
+    from material_model_io import read_json as material_read_json, read_bytes as material_read_bytes, sqlite_compatibility
+
 ROOT = Path(__file__).resolve().parents[1]
 API_URL = "https://openspeech.bytedance.com/api/v3/tts/create"
 
@@ -106,7 +111,7 @@ def quota_receipts(workspace):
             continue
         folder = contained(root, 'production/receipts')
         for path in folder.glob('seed-*.json'):
-            receipts.append(json.loads(contained(root, path).read_text()))
+            receipts.append(material_read_json(contained(root,path)))
     return receipts
 
 
@@ -144,7 +149,7 @@ def main():
     args = parser.parse_args()
     ROOT = generation_root(args.workspace) if args.submit else args.workspace.resolve()
     args.quota = args.quota or ROOT / "production/receipts/seed-quota-20261001.json"
-    spec = json.loads(args.spec.read_text())
+    spec = material_read_json(args.spec)
     payload, refs = payload_for(spec)
     display = {k:v for k,v in payload.items() if k != "references"}
     display["references"] = refs

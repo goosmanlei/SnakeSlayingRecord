@@ -16,6 +16,11 @@ import sys
 from episode01_shots import complete_states_for_blocks, numbers
 from production_data import refresh_drafts
 
+try:
+    from .material_model_io import read_json as material_read_json, read_bytes as material_read_bytes, sqlite_compatibility
+except ImportError:
+    from material_model_io import read_json as material_read_json, read_bytes as material_read_bytes, sqlite_compatibility
+
 ROOT = Path(__file__).resolve().parents[1]
 STYLE = '二维人物与轻手绘背景；轮廓清楚、平涂大色块、正常身体比例，背景薄而干净。不加纸纹、噪点、摄影皮肤和密集织物纹理。'
 AUDIBLE = '唱|哼|声|响|咳|叫|答|喊|念|说|问|提醒|开口|嘀咕'
@@ -78,7 +83,7 @@ def compile_design(store, p):
         recipe('gpt-image-2-5-sunburst',image_params,STYLE+'\n一张无文字风格板，表现河街日光、屋内油灯、后院冷石三种光线；不拼接剧情或造人物关系。',[], '全剧风格参考',['本任务只交付方案；待审阅风格与实际原件尺寸'])))
     # Authored additions distinguish narrative identity and performance states
     # that the earlier scene-level inventory had conflated.
-    extra=json.loads((ROOT/'production/breakdown/additional-records.json').read_text())['records']
+    extra=material_read_json(ROOT/'production/breakdown/additional-records.json')['records']
     records.extend(extra)
     for item in extra:
         heads[item['object_id']]={**item,'id':'@'+item['object_id']}

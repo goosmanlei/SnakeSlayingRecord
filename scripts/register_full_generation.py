@@ -16,11 +16,16 @@ try:
 except ImportError:
     from generation_workspace import generation_root, contained, isolated_instance
 
+try:
+    from .material_model_io import read_json as material_read_json, read_bytes as material_read_bytes, sqlite_compatibility, open_bytes as material_open_bytes
+except ImportError:
+    from material_model_io import read_json as material_read_json, read_bytes as material_read_bytes, sqlite_compatibility, open_bytes as material_open_bytes
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
 def read(path):
-    return json.loads(Path(path).read_text())
+    return material_read_json(path)
 
 
 def write(path, value):
@@ -131,9 +136,9 @@ def main():
         media_records=[]
         def actual_ref(oid): return reference(p.record(store,oid))
         def media_component(path,cid,role):
-            with path.open('rb') as f: component=ingest(instance,f,path.name)
+            with material_open_bytes(path) as f: component=ingest(instance,f,path.name)
             component.update(id=cid,role=role)
-            with path.open('rb') as f: assert ingest(ROOT,f,path.name)['sha256']==component['sha256']
+            with material_open_bytes(path) as f: assert ingest(ROOT,f,path.name)['sha256']==component['sha256']
             return component
         def record(oid,kind,payload,version=0):
             return {'object_id':oid,'kind':kind,'expected_version':version,'payload':{'format':'production-'+p.KINDS[kind]+'-v1',**payload}}
@@ -159,7 +164,7 @@ def main():
             call=record(call_id,'CALL',{'title':item['title']+' · 实际输入','blocks':[{'id':'description','text':'依据用户本任务授权生成代表候选。尚未获得用户母版认可；本次登记不创建采纳或镜头采用。'}],
                 'method':'generation','tool':'OpenArt connector' if media=='image' else 'Doubao Speech HTTP', 'status':'submitted',
                 'model':model,'prompt':prompt,'parameters':params,'inputs':[entity,*states], 'outputs':[],
-                'prepared_plan':needs[0],'request_file_sha256':hashlib.sha256((ROOT/('production/requests/'+label+'.json')).read_bytes()).hexdigest(),
+                'prepared_plan':needs[0],'request_file_sha256':hashlib.sha256(material_read_bytes(ROOT/('production/requests/'+label+'.json'))).hexdigest(),
                 'receipt':receipt,'usage':usage,'lineage':lineage,'authorization':'用户 task-20261002-0003 执行指令；不是页面采纳记录。'})
             components=[media_component(original,'original','original'), media_component(receipt_path,'receipt','metadata'),
                         media_component(ROOT/('production/requests/'+label+'.json'),'request','metadata')]

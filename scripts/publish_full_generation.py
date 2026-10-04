@@ -15,6 +15,11 @@ except ImportError:
     from generation_publication import backup, build_plan, apply_plan, publication_id, connect
     from publish_generation import run_publication, copy_media
 
+try:
+    from .material_model_io import read_json as material_read_json, read_bytes as material_read_bytes, sqlite_compatibility
+except ImportError:
+    from material_model_io import read_json as material_read_json, read_bytes as material_read_bytes, sqlite_compatibility
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -31,7 +36,8 @@ def main():
     root = generation_root(args.workspace)
     target, _ = publication_target(root, args.instance)
     source = contained(root, args.registration)
-    document = json.loads(source.read_text())
+    sys.path.insert(0, str(args.system.resolve(strict=True)))
+    document = material_read_json(source)
     entries = [c for b in document['batches'] for r in b['records']
                for c in r['payload'].get('components', [])]
     sys.path.insert(0, str(args.system.resolve(strict=True)))

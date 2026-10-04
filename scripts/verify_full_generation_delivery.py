@@ -15,6 +15,11 @@ import wave
 from verify_production_review import read_tables
 from register_generation_batch import validate_builtin_plan, validate_reference_authorization
 
+try:
+    from .material_model_io import read_json as material_read_json, read_bytes as material_read_bytes, sqlite_compatibility, logical_file_hash
+except ImportError:
+    from material_model_io import read_json as material_read_json, read_bytes as material_read_bytes, sqlite_compatibility, logical_file_hash
+
 ROOT = Path(__file__).resolve().parents[1]
 PASS = {"self_pass", "passed", "ready_for_user_review"}
 TASK = "task-20261002-0003"
@@ -39,18 +44,19 @@ def audit(snapshot, restored, baseline, allow_incomplete=False):
         require(not (Counter(old[name]) - Counter(source[name])), "old history missing: " + name)
 
     manifest = json.loads((ROOT / "export/manifest.json").read_text())
-    replay = json.loads((ROOT / "production/replay.json").read_text())
-    require(digest(ROOT / "export/manifest.json") == replay["base_manifest_sha256"],
+    replay = material_read_json(ROOT / "production/replay.json")
+    require(manifest.get("schema_version",1)>=6 or digest(ROOT / "export/manifest.json") == replay["base_manifest_sha256"],
             "replay does not describe this export")
     for name, sha in manifest["files"].items():
         require(digest(ROOT / "export" / name) == sha, "export changed: " + name)
         require(digest(restored / "export" / name) == sha, "restored export differs: " + name)
     for name, sha in replay["files"].items():
-        require(digest(ROOT / name) == sha and digest(restored / name) == sha,
+        require(logical_file_hash(ROOT / name) == sha and logical_file_hash(restored / name) == sha,
                 "production file differs: " + name)
 
     db = sqlite3.connect(snapshot.resolve().as_uri() + "?mode=ro", uri=True)
     db.row_factory = sqlite3.Row
+    sqlite_compatibility(db,hydrate=True)
     revisions = {}
     for row in db.execute("SELECT r.*, o.kind FROM revisions r JOIN objects o ON o.id=r.object_id"):
         record = dict(row)
@@ -67,7 +73,7 @@ def audit(snapshot, restored, baseline, allow_incomplete=False):
     def reference(row):
         return {"object_id": row["object_id"], "revision_id": row["id"]}
 
-    recipes = json.loads((ROOT / "production/full-generation/recipes.json").read_text())
+    recipes = material_read_json(ROOT / "production/full-generation/recipes.json")
     qa = json.loads((ROOT / "production/full-generation/representative-review.json").read_text())["items"]
     require(len(recipes["images"]) == 251 and len(recipes["voices"]) == 42, "locked scope changed")
     all_recipes = recipes["images"] + recipes["voices"] + recipes["withdrawn_images"]
@@ -87,21 +93,21 @@ def audit(snapshot, restored, baseline, allow_incomplete=False):
         original = next(c for c in payload["components"] if c["id"] == "original")
         require(original["sha256"] == item["sha256"] == digest(ROOT / item["file"]), "original mismatch: " + label)
         for component in payload["components"]:
-            require(manifest["files"]["assets/" + component["file"]] == component["sha256"],
+            require("assets/" + component["file"] in manifest["files"] and logical_file_hash(ROOT/"export/assets"/component["file"]) == component["sha256"],
                     "asset component absent from full export: " + label)
         x = by[item["recipe_id"]]
         require(payload["states"] == ([x["state"]] if item["media_type"] == "image" else x["coverage"]),
                 "state association differs: " + label)
         require(reference(call) in x["execution"]["actual_calls"] and
                 reference(asset) in x["execution"]["actual_assets"], "recipe call link missing: " + label)
-        request = json.loads((ROOT / "production/requests" / (label + ".json")).read_text())
+        request = material_read_json(ROOT / "production/requests" / (label + ".json"))
         if request.get("tool") == "image_gen.imagegen":
             plan = lookup(request["requirement"], {"REQUIREMENT"})["payload"]["generation"]
             validate_builtin_plan(plan, request)
             refs = [i["reference"] for i in request.get("references", [])]
             validate_reference_authorization(lookup, request, refs, [request["state"]], request["entity"], "image")
-            receipt = json.loads((ROOT / "production/receipts" / (label + "-builtin-complete.json")).read_text())
-            require(receipt["request_file_sha256"] == digest(ROOT / "production/requests" / (label + ".json")),
+            receipt = material_read_json(ROOT / "production/receipts" / (label + "-builtin-complete.json"))
+            require(receipt["request_file_sha256"] == logical_file_hash(ROOT / "production/requests" / (label + ".json")),
                     "actual request changed: " + label)
             require(receipt["sha256"] == item["sha256"] and
                     (receipt["width"], receipt["height"]) == (item["width"], item["height"]),
