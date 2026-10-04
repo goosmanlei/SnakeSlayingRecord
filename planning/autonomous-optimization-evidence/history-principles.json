@@ -1,0 +1,1355 @@
+{
+  "source_sha256": "520b53485f0716825a0577f5abd9e9a766d63f662f5f1d2bd5cdc48c59c2ed87",
+  "history": {
+    "format": "autonomous-optimization-history-audit-v1",
+    "task_id": "task-20261004-0002",
+    "created_at": "2026-10-03T18:08:25.962403+00:00",
+    "evidence_rules": [
+      "任务说明记载用户确认的需求，不等于当时或当前已实现。",
+      "历史交付验证只说明当时版本；根协调的首次运行基准才决定当前运行事实。",
+      "C01—C73 为报告索引；原始评论记录没有作者身份字段，不自行推断作者。",
+      "旧意见没有明确撤销时继续作为原则，但是否有现存缺陷一律待复现。",
+      "关闭评论本身不表示撤销要求；旧接受不转授新录音、新候选或其他范围。"
+    ],
+    "source_registry": [
+      {
+        "file": "AGENTS.md",
+        "sha256": "149910cced2d188f89d0fc5012c17ddd553db074873cf7be5f403195ca4e270c",
+        "line_count": 48,
+        "read_kind": "本轮只读历史材料；不是当前运行验收"
+      },
+      {
+        "file": "KNOWLEDGE.md",
+        "sha256": "3ac68220e66241eff8e0b2d28f8866a25ea6aa5fe3012b59143bfbcfee67ab7d",
+        "line_count": 218,
+        "read_kind": "本轮只读历史材料；不是当前运行验收"
+      },
+      {
+        "file": "STATE.md",
+        "sha256": "0c4514ed1d3b221efcc03673b94b62e9838e885a42f007fb3408473ff7847a73",
+        "line_count": 51,
+        "read_kind": "本轮只读历史材料；不是当前运行验收"
+      },
+      {
+        "file": "planning/autonomous-optimization-focus.md",
+        "sha256": "f36890c7c1c1b72e5257dbef1b533f57d3e7f89c4869f8effc37928aaf0b7446",
+        "line_count": 18,
+        "read_kind": "本轮只读历史材料；不是当前运行验收"
+      },
+      {
+        "file": "planning/autonomous-optimization-task.md",
+        "sha256": "54f22c0f8862941861c98acdbabb1d20a026522a44e19627cb594e57dc431ca4",
+        "line_count": 62,
+        "read_kind": "本轮只读历史材料；不是当前运行验收"
+      },
+      {
+        "file": "planning/material-review-optimization-task.md",
+        "sha256": "21a9dcf5fa0c23eb8d7534133354b78e43b2d9c625a6b67be85723fd3b476921",
+        "line_count": 71,
+        "read_kind": "本轮只读历史材料；不是当前运行验收"
+      },
+      {
+        "file": "planning/production-review-ui-task.md",
+        "sha256": "6ad1c3d23a7c1c8614376d542ccf98a8b6bd3a58a493548f8babab208ec7b8ab",
+        "line_count": 53,
+        "read_kind": "本轮只读历史材料；不是当前运行验收"
+      },
+      {
+        "file": "planning/screenplay-03-comments.json",
+        "sha256": "8e33f2292a321cf3479989931d3f09f61c6ba63a64e411468beec86e7c0aad19",
+        "line_count": 2067,
+        "read_kind": "本轮只读历史材料；不是当前运行验收"
+      },
+      {
+        "file": "planning/screenplay-04-comment-summary.md",
+        "sha256": "e525b0c6468aaae8cdadd21d41f751c81ca430183009bd7f591aefec54c36373",
+        "line_count": 214,
+        "read_kind": "本轮只读历史材料；不是当前运行验收"
+      },
+      {
+        "file": "planning/story-creation-ui-unification-delivery.md",
+        "sha256": "69925838d4934deafec00c3f889681ff5969078666a002e71b328a5623dcc10c",
+        "line_count": 61,
+        "read_kind": "本轮只读历史材料；不是当前运行验收"
+      },
+      {
+        "file": "planning/story-creation-ui-unification-task.md",
+        "sha256": "2cbe2d0bbf77cbbe1c278ec5ddef97fc52aa2310c259c1a65addb00be5959409",
+        "line_count": 45,
+        "read_kind": "本轮只读历史材料；不是当前运行验收"
+      },
+      {
+        "file": "production/evidence/full-generation-exact-candidate-browser.json",
+        "sha256": "d0e3db68500fcd0e8e99c9fe5be218bdc8dad3d18983ebf6ef0aeae2172cf9ce",
+        "line_count": 46,
+        "read_kind": "本轮只读历史材料；不是当前运行验收"
+      },
+      {
+        "file": "production/generation-workspaces.md",
+        "sha256": "8ab8bd2951de4854258266053449fe063ed6648409bb5820528bd9173cdb9195",
+        "line_count": 113,
+        "read_kind": "本轮只读历史材料；不是当前运行验收"
+      },
+      {
+        "file": "production/material-rounds.md",
+        "sha256": "a475e41ba441e09c3d84b000a57f7ad5e2ddc77ef456ccc7f2a9fd9ec9054e36",
+        "line_count": 66,
+        "read_kind": "本轮只读历史材料；不是当前运行验收"
+      },
+      {
+        "file": "production/relationship-review.md",
+        "sha256": "8835f771dd9f961f6f3ffd265b2438d5f054ea311a97148830f83400bc1f1689",
+        "line_count": 55,
+        "read_kind": "本轮只读历史材料；不是当前运行验收"
+      },
+      {
+        "file": "production/review-ui-verification.md",
+        "sha256": "4878c8c9ea127014ba32dd6405cc74180c77e45bc75d75fdce153354ee9aa6a3",
+        "line_count": 69,
+        "read_kind": "本轮只读历史材料；不是当前运行验收"
+      },
+      {
+        "file": "production/song-stage/README.md",
+        "sha256": "da275b490da99620c6cb016fc559e7d2630320c6a50214f97e3b31da23de0c0f",
+        "line_count": 57,
+        "read_kind": "本轮只读历史材料；不是当前运行验收"
+      }
+    ],
+    "opinions": [
+      {
+        "opinion_id": "HIST-001",
+        "title": "用户审阅判断、后台维护数据",
+        "categories": [
+          "必要性",
+          "数据历史"
+        ],
+        "original_meaning": "制作设定、素材管理、全剧制作移除手工导入／登记／编辑／添加需求／维护关联及旧流程导航；用户继续采纳、评论、筛选、查看准确版本、预览及缺项，Codex 使用后台接口维护。不得因精简删除能力或历史。",
+        "sources": [
+          {
+            "file": "planning/production-review-ui-task.md",
+            "lines": [
+              9,
+              17
+            ],
+            "section": "任务目标"
+          },
+          {
+            "file": "AGENTS.md",
+            "lines": [
+              10,
+              22
+            ],
+            "section": "仓库职责边界／任务并行与集成"
+          },
+          {
+            "file": "KNOWLEDGE.md",
+            "lines": [
+              143,
+              146
+            ],
+            "section": "故事结构的协作与任务发布方式"
+          }
+        ],
+        "current_validity": {
+          "requirement": "有效",
+          "basis": "本工作区已确认任务说明／稳定知识，无发现明确撤销",
+          "current_defect": "UNKNOWN：本调查未操作页面、接口或数据库",
+          "historical_status": "production/review-ui-verification.md:18,26 记录已清理前台入口且后台保留；当前复查不把原任务目标当现存缺陷。"
+        },
+        "proposed_scenario_ids": [
+          "SCENE-01"
+        ],
+        "live_verification_needed": [
+          "主页面、关联详情和空态均无旧手工录入入口或替代流程导航。",
+          "检查当前任何新增信息的用户目的，后台接口／导出能力不因前台删除丢失。"
+        ],
+        "issue_ids": []
+      },
+      {
+        "opinion_id": "HIST-002",
+        "title": "故事创作导航与不重复入口",
+        "categories": [
+          "必要性",
+          "交互一致性"
+        ],
+        "original_meaning": "采编、结构、剧本共同选中一级故事创作；子页准确选中。移除采编搜索、正文重复审阅意见按钮和右上资料总数，保留共用评论及左侧资料／评论统计。",
+        "sources": [
+          {
+            "file": "planning/story-creation-ui-unification-task.md",
+            "lines": [
+              7,
+              15
+            ],
+            "section": "目标与范围"
+          },
+          {
+            "file": "planning/story-creation-ui-unification-task.md",
+            "lines": [
+              27,
+              29
+            ],
+            "section": "本次执行的追加要求"
+          }
+        ],
+        "current_validity": {
+          "requirement": "有效",
+          "basis": "本工作区已确认任务说明／稳定知识，无发现明确撤销",
+          "current_defect": "UNKNOWN：本调查未操作页面、接口或数据库",
+          "historical_status": "planning/story-creation-ui-unification-delivery.md:3,23-27 记录已部署及历史验证；其集成待确认说明不代表当前生命周期。"
+        },
+        "proposed_scenario_ids": [
+          "SCENE-02"
+        ],
+        "live_verification_needed": [
+          "直接链接、刷新、Tab、前进后退和窄屏导航。",
+          "不能以历史“列表只显示标题”删除后续明确要求的评论数。"
+        ],
+        "issue_ids": []
+      },
+      {
+        "opinion_id": "HIST-003",
+        "title": "评论数统计当前评论，不统计事件",
+        "categories": [
+          "表达依据",
+          "阅读评论连续性",
+          "数据历史"
+        ],
+        "original_meaning": "评论总数包含现存未关闭和已关闭评论，排除删除记录及编辑／状态事件；每条一次。资料绑定展示内容的准确修订，结构绑定稿修订，分类为所属资料之和；新增加一，编辑或关闭／重开不加。",
+        "sources": [
+          {
+            "file": "planning/story-creation-ui-unification-task.md",
+            "lines": [
+              10,
+              15
+            ],
+            "section": "目标与范围"
+          },
+          {
+            "file": "planning/story-creation-ui-unification-task.md",
+            "lines": [
+              21,
+              23
+            ],
+            "section": "可验证的完成标准"
+          }
+        ],
+        "current_validity": {
+          "requirement": "有效",
+          "basis": "本工作区已确认任务说明／稳定知识，无发现明确撤销",
+          "current_defect": "UNKNOWN：本调查未操作页面、接口或数据库",
+          "historical_status": "已有历史 Chrome 与数据库逐一计数证据，现基准数据可能增加，不能复用旧数量作为当前正确值。"
+        },
+        "proposed_scenario_ids": [
+          "SCENE-03"
+        ],
+        "live_verification_needed": [
+          "当前、历史、零评论、多评论、已关闭及编辑事件的区分。",
+          "整体／文本／图像区域评论均入对应结构稿，总数与实际面板一致。"
+        ],
+        "issue_ids": []
+      },
+      {
+        "opinion_id": "HIST-004",
+        "title": "表达所指、原因与证据让读者直接理解",
+        "categories": [
+          "表达依据",
+          "必要性"
+        ],
+        "original_meaning": "读者不能靠作者未展示的背景理解对象、动作目的或关系标签；保留理解所需主语、目的和因果。精简不等于一律缩字，标签不能替代可见证据。这是从已认可评论归纳迁移出的阅读原则，不是新的系统功能或剧情改写授权。",
+        "sources": [
+          {
+            "file": "planning/screenplay-04-comment-summary.md",
+            "lines": [
+              7,
+              20
+            ],
+            "section": "来源与范围／可以推广到全剧的八类问题"
+          },
+          {
+            "file": "planning/screenplay-04-comment-summary.md",
+            "lines": [
+              42,
+              86
+            ],
+            "section": "C01、C02、C04、C07、C08、C13、C14、C16、C20"
+          },
+          {
+            "file": "planning/screenplay-03-comments.json",
+            "json_pointer": "/comments",
+            "comment_ids": [
+              "1b5fdeed-ca4c-458e-b580-d5570eb92857",
+              "af9137fc-17b9-4732-8511-6df2f4d2b780",
+              "ba4bc533-991c-4d03-93f2-302898b4aae6",
+              "e36bbb55-3a9b-4ac0-8a79-5c3208ec97bc",
+              "93fe5fef-59de-499f-9baf-dcd666282383",
+              "0da20246-86bc-42c1-b463-eb8fbdc45741",
+              "babf3355-b2c9-41b9-b5ae-cf1c5e6e4986",
+              "8b48ba5b-e416-466a-adf0-e2c3ca8ed03b",
+              "1431c37a-1d60-4781-b53a-6fa7b97caaf4"
+            ]
+          },
+          {
+            "file": "planning/autonomous-optimization-focus.md",
+            "lines": [
+              8,
+              8
+            ],
+            "section": "表达清楚且有依据"
+          }
+        ],
+        "current_validity": {
+          "requirement": "有效",
+          "basis": "本工作区已确认任务说明／稳定知识，无发现明确撤销",
+          "current_defect": "UNKNOWN：本调查未操作页面、接口或数据库",
+          "historical_status": "这些原评论针对剧本三，剧本后续已修订；本任务只迁移通用阅读原则，不认定旧内容缺陷仍存在。"
+        },
+        "proposed_scenario_ids": [
+          "SCENE-04"
+        ],
+        "live_verification_needed": [
+          "页面术语、计数、缺项和状态是否明确对象、原因、后果。",
+          "评论原始记录没有作者字段；Cxx 是归纳索引，不是系统评论 ID。"
+        ],
+        "issue_ids": []
+      },
+      {
+        "opinion_id": "HIST-005",
+        "title": "关系标签与准确剧情依据一致",
+        "categories": [
+          "表达依据",
+          "数据历史"
+        ],
+        "original_meaning": "关系有方向、明确端点、事实／制作选择与适用范围；准确版本／集场／正文须充分支撑标签，不能同场或单关键词即推导。阿蘅和李寄的双向相互照应需双向行动依据；不修改定稿来迎合标签。",
+        "sources": [
+          {
+            "file": "planning/production-review-ui-task.md",
+            "lines": [
+              12,
+              13
+            ],
+            "section": "任务目标"
+          },
+          {
+            "file": "production/relationship-review.md",
+            "lines": [
+              3,
+              9
+            ],
+            "section": "当前核查与依据"
+          },
+          {
+            "file": "production/relationship-review.md",
+            "lines": [
+              17,
+              17
+            ],
+            "section": "李寄 · 相互照应 · 阿蘅"
+          },
+          {
+            "file": "KNOWLEDGE.md",
+            "lines": [
+              63,
+              63
+            ],
+            "section": "已确认的制作系统方向"
+          }
+        ],
+        "current_validity": {
+          "requirement": "有效",
+          "basis": "本工作区已确认任务说明／稳定知识，无发现明确撤销",
+          "current_defect": "UNKNOWN：本调查未操作页面、接口或数据库",
+          "historical_status": "157 条关系曾核查、33 条修订；阿蘅／李寄已有 s005 撑布护伤、s040 接替抄写、s036 补充的修复依据。仅回归准确展示，不重复宣称发现。"
+        },
+        "proposed_scenario_ids": [
+          "SCENE-05"
+        ],
+        "live_verification_needed": [
+          "当前与历史关系引用是否按准确修订打开，弹窗文本完整。",
+          "选中版本、方向、焦点和旧评论定位；任何新语义缺陷需单独证据。"
+        ],
+        "issue_ids": []
+      },
+      {
+        "opinion_id": "HIST-006",
+        "title": "采纳循环与许可范围分别准确",
+        "categories": [
+          "阅读评论连续性",
+          "数据历史"
+        ],
+        "original_meaning": "同一有效范围可采纳→取消→再次采纳；旧认可可对原范围重认可，但不授予新方案生成许可。新完整实体方案采纳认可基础信息、直接关系、全状态及方案，允许推进生成；实际执行仍需准确原件、范围和额度。历史只读、真实缺项及内容修订保护不能被按钮启用绕过。",
+        "sources": [
+          {
+            "file": "planning/production-review-ui-task.md",
+            "lines": [
+              11,
+              11
+            ],
+            "section": "任务目标"
+          },
+          {
+            "file": "planning/production-review-ui-task.md",
+            "lines": [
+              23,
+              23
+            ],
+            "section": "可验证的完成标准"
+          },
+          {
+            "file": "KNOWLEDGE.md",
+            "lines": [
+              65,
+              65
+            ],
+            "section": "已确认的制作系统方向"
+          },
+          {
+            "file": "KNOWLEDGE.md",
+            "lines": [
+              176,
+              176
+            ],
+            "section": "已核实的实施事实"
+          }
+        ],
+        "current_validity": {
+          "requirement": "有效",
+          "basis": "本工作区已确认任务说明／稳定知识，无发现明确撤销",
+          "current_defect": "UNKNOWN：本调查未操作页面、接口或数据库",
+          "historical_status": "production/review-ui-verification.md:11-12,67 已记录阿禾旧认可和阿蘅新方案隔离循环、最终真实阿禾历史保留；不推定再次故障。"
+        },
+        "proposed_scenario_ids": [
+          "SCENE-06"
+        ],
+        "live_verification_needed": [
+          "阿禾旧内容和新完整方案分别走完整循环，刷新、重入一致。",
+          "取消保留历史并阻止新生成；新候选不撤销方案采纳，但实体／关系／状态／方案修订需要重新认可。"
+        ],
+        "issue_ids": []
+      },
+      {
+        "opinion_id": "HIST-007",
+        "title": "共用评论编辑与草稿连续性",
+        "categories": [
+          "交互一致性",
+          "阅读评论连续性"
+        ],
+        "original_meaning": "文字圈选、编辑、定位、关闭／重开与快捷键共用；输入框内 ⌘+Enter 提交、普通 Enter 换行、Esc 取消清草稿，组合输入不触发。输入框外 Esc／点窗外／关闭是收起，保留草稿和临时圈选；保存失败不丢稿，请求中防重复。",
+        "sources": [
+          {
+            "file": "KNOWLEDGE.md",
+            "lines": [
+              182,
+              185
+            ],
+            "section": "已核实的实施事实"
+          },
+          {
+            "file": "KNOWLEDGE.md",
+            "lines": [
+              203,
+              203
+            ],
+            "section": "已核实的实施事实"
+          },
+          {
+            "file": "planning/material-review-optimization-task.md",
+            "lines": [
+              24,
+              24
+            ],
+            "section": "目标"
+          }
+        ],
+        "current_validity": {
+          "requirement": "有效",
+          "basis": "本工作区已确认任务说明／稳定知识，无发现明确撤销",
+          "current_defect": "UNKNOWN：本调查未操作页面、接口或数据库",
+          "historical_status": "过去拖选松手、未变刷新丢选区、长选区定位及快捷键已有修复；历史自动/合成事件证据不代替本轮真实操作。"
+        },
+        "proposed_scenario_ids": [
+          "SCENE-07"
+        ],
+        "live_verification_needed": [
+          "正文外松手、长章原圈选定位、浮层收起／重开。",
+          "真实键盘和输入法边界分别记录，模拟 composition 不能写为真实中文输入法通过。",
+          "切版后回原版草稿与选区恢复，不跨内容串用。"
+        ],
+        "issue_ids": []
+      },
+      {
+        "opinion_id": "HIST-008",
+        "title": "块评论只看该块准确版本的全部评论",
+        "categories": [
+          "交互一致性",
+          "阅读评论连续性",
+          "数据历史"
+        ],
+        "original_meaning": "可评论块图标鼠标及键盘打开既有评论区；聚合该块文本／整块／图像区域／音视频时段等全部现存开放和关闭评论并去重，不混其他块、版本或素材轮次。零评论是真空列表，不能另造评论系统。",
+        "sources": [
+          {
+            "file": "planning/material-review-optimization-task.md",
+            "lines": [
+              24,
+              27
+            ],
+            "section": "目标"
+          },
+          {
+            "file": "planning/material-review-optimization-task.md",
+            "lines": [
+              42,
+              44
+            ],
+            "section": "可验证的完成标准"
+          },
+          {
+            "file": "KNOWLEDGE.md",
+            "lines": [
+              179,
+              179
+            ],
+            "section": "已核实的实施事实"
+          }
+        ],
+        "current_validity": {
+          "requirement": "有效",
+          "basis": "本工作区已确认任务说明／稳定知识，无发现明确撤销",
+          "current_defect": "UNKNOWN：本调查未操作页面、接口或数据库",
+          "historical_status": "production/material-rounds.md:57-58,62 记录相关块评论与图标修复；新轮复用同方案时仍必须按选中轮次区分评论。"
+        },
+        "proposed_scenario_ids": [
+          "SCENE-08"
+        ],
+        "live_verification_needed": [
+          "同块多锚点、关闭评论、零评论、两轮复用同底层方案。",
+          "图标、圈选和图片放大互不误触，旧模型／输入评论仍可定位。"
+        ],
+        "issue_ids": []
+      },
+      {
+        "opinion_id": "HIST-009",
+        "title": "完整媒体与嵌套预览连续",
+        "categories": [
+          "交互一致性",
+          "真实成果呈现",
+          "阅读评论连续性"
+        ],
+        "original_meaning": "横竖方图统一预览框、等比完整显示，不裁切拉伸；图像圈选不能选留白。大图在当前页打开，嵌套弹窗逐层返回并保持阅读、版本、焦点与草稿。音频保留真实播放、波形、时段评论，移除前台下载入口但保留受管原件及后台导出。",
+        "sources": [
+          {
+            "file": "planning/material-review-optimization-task.md",
+            "lines": [
+              22,
+              22
+            ],
+            "section": "目标"
+          },
+          {
+            "file": "planning/material-review-optimization-task.md",
+            "lines": [
+              29,
+              32
+            ],
+            "section": "目标"
+          },
+          {
+            "file": "planning/material-review-optimization-task.md",
+            "lines": [
+              40,
+              47
+            ],
+            "section": "可验证的完成标准"
+          },
+          {
+            "file": "KNOWLEDGE.md",
+            "lines": [
+              200,
+              200
+            ],
+            "section": "已核实的实施事实"
+          }
+        ],
+        "current_validity": {
+          "requirement": "有效",
+          "basis": "本工作区已确认任务说明／稳定知识，无发现明确撤销",
+          "current_defect": "UNKNOWN：本调查未操作页面、接口或数据库",
+          "historical_status": "旧浏览器证据覆盖桌面/窄屏、横竖方和三层弹窗，不自动证明当前代码同样可用。"
+        },
+        "proposed_scenario_ids": [
+          "SCENE-09"
+        ],
+        "live_verification_needed": [
+          "真实鼠标圈选与键盘开关；Esc 返回正确层，关闭后焦点仍在原触发器。",
+          "声音不能用人物图伪装原件；页面播放通过不等于听审。"
+        ],
+        "issue_ids": []
+      },
+      {
+        "opinion_id": "HIST-010",
+        "title": "实际参考与提示词按真实调用呈现",
+        "categories": [
+          "真实成果呈现",
+          "数据历史",
+          "必要性"
+        ],
+        "original_meaning": "参考输入按实际提交顺序置于提示词前，按媒体类型编号，准确原件、片段／裁切和用途可查看。剧情来源不是媒体输入；无输入不造空编号。模型合并进参数标题，移除底部重复实际输入。实际内容从 ASSET 对应准确 CALL 读取，历史原始提示词、输入和顺序不能用最新方案补写。",
+        "sources": [
+          {
+            "file": "planning/material-review-optimization-task.md",
+            "lines": [
+              23,
+              23
+            ],
+            "section": "目标"
+          },
+          {
+            "file": "planning/material-review-optimization-task.md",
+            "lines": [
+              30,
+              32
+            ],
+            "section": "目标"
+          },
+          {
+            "file": "KNOWLEDGE.md",
+            "lines": [
+              62,
+              62
+            ],
+            "section": "已确认的制作系统方向"
+          },
+          {
+            "file": "production/material-rounds.md",
+            "lines": [
+              56,
+              56
+            ],
+            "section": "已完成验证与边界"
+          }
+        ],
+        "current_validity": {
+          "requirement": "有效",
+          "basis": "本工作区已确认任务说明／稳定知识，无发现明确撤销",
+          "current_defect": "UNKNOWN：本调查未操作页面、接口或数据库",
+          "historical_status": "已有 GPT Image 双图、Seedance 混合参考隔离契约与准确 CALL 修复；原模型约定只按该实际历史输入核验，不进行付费生成或新模型调研。"
+        },
+        "proposed_scenario_ids": [
+          "SCENE-10"
+        ],
+        "live_verification_needed": [
+          "无参考、单参考、多图及图／音频混排的序号与真实顺序。",
+          "最新方案变更不影响历史实际输入，旧模型评论能回看。"
+        ],
+        "issue_ids": []
+      },
+      {
+        "opinion_id": "HIST-011",
+        "title": "素材版本代表修订轮，不代表记录次数",
+        "categories": [
+          "数据历史",
+          "表达依据"
+        ],
+        "original_meaning": "每项具体需求只呈现一层素材版号。建立需求、方案与首轮结果同属一版；产出后明确修订意见启动下一轮，同轮评论/改方案/多次生成不各自加版。一般讨论、元数据、状态关联及调用状态变化不增版。内部不可变记录、真实调用及准确采用仍留存。",
+        "sources": [
+          {
+            "file": "planning/material-review-optimization-task.md",
+            "lines": [
+              25,
+              27
+            ],
+            "section": "目标"
+          },
+          {
+            "file": "planning/material-review-optimization-task.md",
+            "lines": [
+              60,
+              60
+            ],
+            "section": "源码与数据依据"
+          },
+          {
+            "file": "production/material-rounds.md",
+            "lines": [
+              3,
+              7
+            ],
+            "section": "素材轮次承接与验证"
+          },
+          {
+            "file": "production/material-rounds.md",
+            "lines": [
+              50,
+              50
+            ],
+            "section": "操作与恢复"
+          }
+        ],
+        "current_validity": {
+          "requirement": "有效",
+          "basis": "本工作区已确认任务说明／稳定知识，无发现明确撤销",
+          "current_defect": "UNKNOWN：本调查未操作页面、接口或数据库",
+          "historical_status": "旧 6 份素材 24 修订已映射；阿蘅 4 个旧素材修订同一 CALL／WAV 属版本一。文档旧“无正式素材评论”仅当时快照，当前不得照抄。"
+        },
+        "proposed_scenario_ids": [
+          "SCENE-11"
+        ],
+        "live_verification_needed": [
+          "阿蘅历史链接、同轮多个候选、未生成新轮与旧结果。",
+          "必要隔离生命周期证明同轮不增版，冲突回滚和导出恢复不丢精确归属。"
+        ],
+        "issue_ids": []
+      },
+      {
+        "opinion_id": "HIST-012",
+        "title": "实体、状态和筛选数量各有统计对象",
+        "categories": [
+          "表达依据",
+          "数据历史",
+          "交互一致性"
+        ],
+        "original_meaning": "制作设定以实体入口；状态不与实体并列，基础信息常驻，默认基础状态，状态有独立修订和评论。平铺类型/分类筛选与搜索联动，零数量选项保留，状态描述可搜所属实体。素材列表数量不把历史修订或占位计成实际素材；缺项占位绑定真实需求与轮次。",
+        "sources": [
+          {
+            "file": "KNOWLEDGE.md",
+            "lines": [
+              69,
+              71
+            ],
+            "section": "已确认的制作系统方向"
+          },
+          {
+            "file": "planning/production-review-ui-task.md",
+            "lines": [
+              14,
+              14
+            ],
+            "section": "任务目标"
+          },
+          {
+            "file": "planning/production-review-ui-task.md",
+            "lines": [
+              26,
+              27
+            ],
+            "section": "可验证的完成标准"
+          }
+        ],
+        "current_validity": {
+          "requirement": "有效",
+          "basis": "本工作区已确认任务说明／稳定知识，无发现明确撤销",
+          "current_defect": "UNKNOWN：本调查未操作页面、接口或数据库",
+          "historical_status": "实体层级与平铺筛选已有历史交付；旧正式列表 370、6 实际素材等只作历史说明，需当前一致快照计算。"
+        },
+        "proposed_scenario_ids": [
+          "SCENE-12"
+        ],
+        "live_verification_needed": [
+          "全部／单类／组合／搜索／清除／零结果；统计名称与分子对象对应。",
+          "未生成占位按媒体类型，真实结果替换后不重复计数；全剧必要剧本依据留在顶部。"
+        ],
+        "issue_ids": []
+      },
+      {
+        "opinion_id": "HIST-013",
+        "title": "成果、生成、接受和采用不混同",
+        "categories": [
+          "真实成果呈现",
+          "数据历史",
+          "表达依据"
+        ],
+        "original_meaning": "方案不冒充实际调用，占位不冒充成果，生成不等于内容质量接受或镜头采用。接受范围绑定准确原件，旧版本接受不转授新版本。歌曲歌词确认、方向好评和任务现状结束都不代表录音质量接受；歌词文件也不是实唱转写。",
+        "sources": [
+          {
+            "file": "production/song-stage/README.md",
+            "lines": [
+              3,
+              3
+            ],
+            "section": "四首歌曲制作阶段交付"
+          },
+          {
+            "file": "production/song-stage/README.md",
+            "lines": [
+              18,
+              28
+            ],
+            "section": "下游制作须保留的缺口"
+          },
+          {
+            "file": "KNOWLEDGE.md",
+            "lines": [
+              50,
+              50
+            ],
+            "section": "已确认的制作系统方向"
+          },
+          {
+            "file": "KNOWLEDGE.md",
+            "lines": [
+              75,
+              75
+            ],
+            "section": "已确认的制作系统方向"
+          }
+        ],
+        "current_validity": {
+          "requirement": "有效",
+          "basis": "本工作区已确认任务说明／稳定知识，无发现明确撤销",
+          "current_defect": "UNKNOWN：本调查未操作页面、接口或数据库",
+          "historical_status": "歌曲归档文件与正式库入库分开；该材料的正式发布缺依赖记录是历史状态，本子调查未核实当前是否已入库。"
+        },
+        "proposed_scenario_ids": [
+          "SCENE-13"
+        ],
+        "live_verification_needed": [
+          "当前真实数据中有录音但未接受、方案待产、已采用和旧认可样例的状态表达。",
+          "音频实际播放、质量听审与元数据验证分别记录；本实验不听审冒认或生成媒体。"
+        ],
+        "issue_ids": []
+      },
+      {
+        "opinion_id": "HIST-014",
+        "title": "准确链接锁定原件，候选切换同步调用和评论",
+        "categories": [
+          "阅读评论连续性",
+          "真实成果呈现",
+          "数据历史"
+        ],
+        "original_meaning": "同一轮允许多个真实候选。准确审阅链接默认展示所指原件，切本轮候选时同步实际提示词、参考和评论；回到旧轮保留选中原件，旧链接不得静默转向最新结果。",
+        "sources": [
+          {
+            "file": "planning/material-review-optimization-task.md",
+            "lines": [
+              27,
+              27
+            ],
+            "section": "目标"
+          },
+          {
+            "file": "production/evidence/full-generation-exact-candidate-browser.json",
+            "json_pointer": "/fixed_link"
+          },
+          {
+            "file": "production/evidence/full-generation-exact-candidate-browser.json",
+            "json_pointer": "/candidate_switch"
+          },
+          {
+            "file": "production/evidence/full-generation-exact-candidate-browser.json",
+            "json_pointer": "/round_switch"
+          },
+          {
+            "file": "STATE.md",
+            "lines": [
+              33,
+              33
+            ],
+            "section": "正式库、渠道与页面"
+          }
+        ],
+        "current_validity": {
+          "requirement": "有效",
+          "basis": "本工作区已确认任务说明／稳定知识，无发现明确撤销",
+          "current_defect": "UNKNOWN：本调查未操作页面、接口或数据库",
+          "historical_status": "根协调本轮已核实实际服务全部 review_desk 文件匹配 5b7de33，故此修复按已承接回归；STATE 中仍运行 15822ae 的描述过期。子代理未自行核验服务。"
+        },
+        "proposed_scenario_ids": [
+          "SCENE-11"
+        ],
+        "live_verification_needed": [
+          "带准确 target 的旧链接、同轮 3/5 候选切换、两轮往返、旧评论精确定位。"
+        ],
+        "issue_ids": []
+      },
+      {
+        "opinion_id": "HIST-015",
+        "title": "历史与活库保护，导出可恢复",
+        "categories": [
+          "数据历史"
+        ],
+        "original_meaning": "原件、旧评论、修订、调用与准确采用不可被快照或当前方案覆盖。独立工作区实例用一致性备份建立并保留基线；正式发布须合入准确包后在共享窗口增量应用，不能把任务导出当正式当前库。数据接口调整需检查现有调用方和必要空实例恢复。",
+        "sources": [
+          {
+            "file": "production/generation-workspaces.md",
+            "lines": [
+              3,
+              5
+            ],
+            "section": "在任务工作区生成和审阅，合并后发布"
+          },
+          {
+            "file": "production/generation-workspaces.md",
+            "lines": [
+              39,
+              41
+            ],
+            "section": "初始化与恢复审阅"
+          },
+          {
+            "file": "production/generation-workspaces.md",
+            "lines": [
+              90,
+              111
+            ],
+            "section": "发布后的导出与失败恢复"
+          },
+          {
+            "file": "production/material-rounds.md",
+            "lines": [
+              44,
+              50
+            ],
+            "section": "操作与恢复"
+          },
+          {
+            "file": "STATE.md",
+            "lines": [
+              50,
+              50
+            ],
+            "section": "合并承接的隔离规则与歌曲阶段"
+          }
+        ],
+        "current_validity": {
+          "requirement": "有效",
+          "basis": "本工作区已确认任务说明／稳定知识，无发现明确撤销",
+          "current_defect": "UNKNOWN：本调查未操作页面、接口或数据库",
+          "historical_status": "当前根 export 是独立全剧任务交付快照，不能拿其 411 原件数量推定正式库现状。正式基准由根协调本轮一致备份决定。"
+        },
+        "proposed_scenario_ids": [
+          "SCENE-14"
+        ],
+        "live_verification_needed": [
+          "新旧接口与精确历史链接，必要导出→空库恢复→再导出对比。",
+          "测试评论与采纳只在隔离库；不取消后台功能、不改正式服务。"
+        ],
+        "issue_ids": []
+      }
+    ],
+    "scenarios": [
+      {
+        "scenario_id": "SCENE-01",
+        "name": "从首页到三个制作页与空态，核对用户操作目的",
+        "opinion_ids": [
+          "HIST-001"
+        ],
+        "required_observation": "找得到阅读、评论、判断与缺项路径，后台维护入口和重复流程图不再占用界面；检查精简是否保留有效能力。",
+        "status": "待根协调安排现场核验",
+        "issue_ids": []
+      },
+      {
+        "scenario_id": "SCENE-02",
+        "name": "故事创作三页的直接链接与导航往返",
+        "opinion_ids": [
+          "HIST-002"
+        ],
+        "required_observation": "桌面／窄屏直接进入、刷新、Tab、前进后退；一级和子页选中一致，没有旧搜索条件或重复入口。",
+        "status": "待根协调安排现场核验",
+        "issue_ids": []
+      },
+      {
+        "scenario_id": "SCENE-03",
+        "name": "资料／结构版本的评论计数和生命周期",
+        "opinion_ids": [
+          "HIST-003"
+        ],
+        "required_observation": "隔离库零／多／已关闭／删除与编辑事件；版本隔离、分类合计、新增加一、关闭重开不改变总数。",
+        "status": "待根协调安排现场核验",
+        "issue_ids": []
+      },
+      {
+        "scenario_id": "SCENE-04",
+        "name": "首次进入页面时解释状态、数量及缺项",
+        "opinion_ids": [
+          "HIST-004",
+          "HIST-012"
+        ],
+        "required_observation": "用户不依赖聊天背景即可理解统计对象、未完成原因和下一步；不能为精简删掉必要条件或新增冗余说明。",
+        "status": "待根协调安排现场核验",
+        "issue_ids": []
+      },
+      {
+        "scenario_id": "SCENE-05",
+        "name": "阿蘅／李寄关系当前与旧版依据弹窗",
+        "opinion_ids": [
+          "HIST-005"
+        ],
+        "required_observation": "当前 s005/s040/s036 支撑双向关系，历史版本仍打开原 s036；准确版号、文本、焦点、评论和关闭返回一致。",
+        "status": "待根协调安排现场核验",
+        "issue_ids": []
+      },
+      {
+        "scenario_id": "SCENE-06",
+        "name": "旧内容重认可与新方案采纳的两条循环",
+        "opinion_ids": [
+          "HIST-006"
+        ],
+        "required_observation": "阿禾旧范围取消→再认可→取消；完整新方案采纳→取消→采纳。刷新重入、版本冲突、真实缺项和历史只读分别验证，生成权限不混。",
+        "status": "待根协调安排现场核验",
+        "issue_ids": []
+      },
+      {
+        "scenario_id": "SCENE-07",
+        "name": "长文圈选、评论草稿及真实键盘",
+        "opinion_ids": [
+          "HIST-007"
+        ],
+        "required_observation": "正文外松手、长圈选定位；面板外 Esc 收起保留与输入框内 Esc 取消清除；⌘+Enter、换行、保存失败/重复提交和切版往返。",
+        "status": "待根协调安排现场核验",
+        "issue_ids": []
+      },
+      {
+        "scenario_id": "SCENE-08",
+        "name": "评论图标打开块内全部现存评论",
+        "opinion_ids": [
+          "HIST-008"
+        ],
+        "required_observation": "同块文字/整块/区域/时段聚合且去重，含关闭；历史版与新轮复用方案时不串评论，零项可读。",
+        "status": "待根协调安排现场核验",
+        "issue_ids": []
+      },
+      {
+        "scenario_id": "SCENE-09",
+        "name": "完整图像、音频和三层预览弹窗",
+        "opinion_ids": [
+          "HIST-009"
+        ],
+        "required_observation": "横竖方等比完整预览；留白不能圈选。实际媒体开关、Esc 返回上一层、焦点及草稿；音频播放/波形/时间段可用。",
+        "status": "待根协调安排现场核验",
+        "issue_ids": []
+      },
+      {
+        "scenario_id": "SCENE-10",
+        "name": "混合媒体参考及历史实际 CALL",
+        "opinion_ids": [
+          "HIST-010"
+        ],
+        "required_observation": "无／单／多参考与音频混排，顺序编号与原提交相符，准确原件/片段可预览；新方案不回写旧调用。",
+        "status": "待根协调安排现场核验",
+        "issue_ids": []
+      },
+      {
+        "scenario_id": "SCENE-11",
+        "name": "素材版本、同轮候选与准确旧链接",
+        "opinion_ids": [
+          "HIST-011",
+          "HIST-014"
+        ],
+        "required_observation": "阿蘅四内部修订仍一轮；准确链接只显示目标，候选切换同步调用和评论；未生成新轮不借旧产物假装完成，往返保留选中。",
+        "status": "待根协调安排现场核验",
+        "issue_ids": []
+      },
+      {
+        "scenario_id": "SCENE-12",
+        "name": "实体状态层级与素材组合筛选",
+        "opinion_ids": [
+          "HIST-012"
+        ],
+        "required_observation": "实体基础常驻／默认基础状态；全部、类型、组合、状态搜索、清除和零结果，数量不把需求占位或内部修订当素材。",
+        "status": "待根协调安排现场核验",
+        "issue_ids": []
+      },
+      {
+        "scenario_id": "SCENE-13",
+        "name": "已有音频但未被接受、已生成但未被采用",
+        "opinion_ids": [
+          "HIST-013"
+        ],
+        "required_observation": "挑当前基准确实存在的记录；结果、录音接受、方案认可、片段与镜头采用不混，未知缺口如实。",
+        "status": "待根协调安排现场核验",
+        "issue_ids": []
+      },
+      {
+        "scenario_id": "SCENE-14",
+        "name": "兼容历史与必要空实例恢复",
+        "opinion_ids": [
+          "HIST-015",
+          "HIST-008",
+          "HIST-010",
+          "HIST-011"
+        ],
+        "required_observation": "仅对实际变化覆盖后台调用方、原件哈希、准确 CALL、旧评论和轮次/采用引用；一致性快照对比，正式活库不变。",
+        "status": "待根协调安排现场核验",
+        "issue_ids": []
+      }
+    ],
+    "supersession_and_scope_rules": [
+      {
+        "id": "SUPER-01",
+        "earlier": {
+          "file": "KNOWLEDGE.md",
+          "lines": [
+            131,
+            131
+          ]
+        },
+        "later": {
+          "file": "planning/story-creation-ui-unification-task.md",
+          "lines": [
+            10,
+            15
+          ]
+        },
+        "relationship": "补充，不是全面撤销",
+        "effective_rule": "早期列表只显示标题要求去掉类型/来源小字；后续明确添加评论数，保留标题主行和精简元信息，不能以旧规则删除评论数。"
+      },
+      {
+        "id": "SUPER-02",
+        "earlier": {
+          "file": "planning/material-review-optimization-task.md",
+          "lines": [
+            27,
+            27
+          ]
+        },
+        "later": {
+          "file": "production/material-rounds.md",
+          "lines": [
+            3,
+            7
+          ]
+        },
+        "relationship": "用户规则落地后的历史核实",
+        "effective_rule": "两层数据库版号改为一层修订轮次；阿蘅四条记录不是四轮或四次生成。轮次和内部不可变修订并存但不竞争展示。"
+      },
+      {
+        "id": "SUPER-03",
+        "earlier": {
+          "file": "KNOWLEDGE.md",
+          "lines": [
+            65,
+            65
+          ]
+        },
+        "later": {
+          "file": "KNOWLEDGE.md",
+          "lines": [
+            176,
+            176
+          ]
+        },
+        "relationship": "不同认可契约并存，兼容范围澄清",
+        "effective_rule": "新完整方案采纳允许推进生成但仍需执行校验；旧内容范围重认可不授予新生成许可，不能泛化成所有采纳均有或均无生成意义。"
+      },
+      {
+        "id": "SUPER-04",
+        "earlier": {
+          "file": "production/material-rounds.md",
+          "lines": [
+            7,
+            7
+          ]
+        },
+        "later": {
+          "file": "AGENTS.md",
+          "lines": [
+            26,
+            26
+          ]
+        },
+        "relationship": "task-20261002-0003 的明确规格例外",
+        "effective_rule": "该生成任务接受指定模型最高原生尺寸，不将所有旧低于 4K 图改成原生 4K，也不把实际像素未知写成请求 4K。当前 UI 必须按原件事实显示。"
+      },
+      {
+        "id": "SUPER-05",
+        "earlier": {
+          "file": "STATE.md",
+          "lines": [
+            33,
+            33
+          ]
+        },
+        "later": {
+          "source": "根协调当前运行 SHA 核实消息",
+          "expected_evidence": ".runtime/autonomous-optimization/baseline.json"
+        },
+        "relationship": "当前现场证据替代旧运行快照",
+        "effective_rule": "5b7de33 的准确候选修复已在当前服务，不提出重复实现；旧 STATE 的 15822ae 仅标过期。"
+      },
+      {
+        "id": "SUPER-06",
+        "earlier": {
+          "file": "production/song-stage/README.md",
+          "lines": [
+            18,
+            18
+          ]
+        },
+        "later": {
+          "file": "production/song-stage/README.md",
+          "lines": [
+            22,
+            28
+          ]
+        },
+        "relationship": "认可对象不同，不互相转授",
+        "effective_rule": "词稿确认和曲调方向好评不等于实际录音准确或终版接受；现状任务结束也不等于音频质量认可。"
+      },
+      {
+        "id": "SUPER-07",
+        "earlier": {
+          "file": "production/material-rounds.md",
+          "lines": [
+            3,
+            3
+          ]
+        },
+        "later": {
+          "source": "根协调当前运行一致快照",
+          "expected_evidence": ".runtime/autonomous-optimization/baseline.json"
+        },
+        "relationship": "历史数量不外推当前",
+        "effective_rule": "6 素材／24 修订／无正式素材评论等数字仅为轮次迁移时快照，现况按本轮一致基准重新统计。"
+      }
+    ],
+    "comment_provenance": {
+      "file": "planning/screenplay-03-comments.json",
+      "captured_at": "2026-09-30T10:28:40.112324+00:00",
+      "edition_revision_id": "3110548d5fa53b349085f4a3fb459df746da5011df95dc9d0b8968d24575adf4",
+      "author_identity": "UNKNOWN：原接口无作者字段；按已认可归纳的范围使用，不添加身份判断",
+      "selected_comments": [
+        {
+          "review_label": "C01",
+          "id": "1b5fdeed-ca4c-458e-b580-d5570eb92857",
+          "target_object_id": "screenplay-03-lantern-home-e01",
+          "target_revision_id": "8a096ce9ca72974c1e9624b8e53e242cb7cec67e565bc70ad13dead5047d865a",
+          "anchor": {
+            "block_id": "screenplay-03-lantern-home-s002-b012",
+            "end": 20,
+            "end_block_id": "screenplay-03-lantern-home-s002-b012",
+            "quote": "腰间挂着庙门钥匙",
+            "start": 12
+          },
+          "body": "这里没办法知道是庙门的钥匙，应该只是钥匙",
+          "status": "OPEN"
+        },
+        {
+          "review_label": "C02",
+          "id": "af9137fc-17b9-4732-8511-6df2f4d2b780",
+          "target_object_id": "screenplay-03-lantern-home-e02",
+          "target_revision_id": "907409c5e694f2a480dfdf1c6a950215f9001013b1096221aa51cda8acc675a5",
+          "anchor": {
+            "block_id": "screenplay-03-lantern-home-s003-b002",
+            "end": 66,
+            "end_block_id": "screenplay-03-lantern-home-s003-b002",
+            "quote": "屋里有人抬出幕杆，她头也不抬，伸手指向空地。",
+            "start": 44
+          },
+          "body": "这里表达的太过含蓄了，伸手指向空地代表什么，观众没法直接理解",
+          "status": "CLOSED"
+        },
+        {
+          "review_label": "C04",
+          "id": "ba4bc533-991c-4d03-93f2-302898b4aae6",
+          "target_object_id": "screenplay-03-lantern-home-e03",
+          "target_revision_id": "d4bb6326e84e3b19ea3c88bc0a2789be8474134ed012f6293ba7a403322d44a6",
+          "anchor": {
+            "block_id": "screenplay-03-lantern-home-s006-b009",
+            "end": 8,
+            "end_block_id": "screenplay-03-lantern-home-s006-b009",
+            "quote": "先抵利息",
+            "start": 4
+          },
+          "body": "改为：还的先抵利息",
+          "status": "OPEN"
+        },
+        {
+          "review_label": "C07",
+          "id": "e36bbb55-3a9b-4ac0-8a79-5c3208ec97bc",
+          "target_object_id": "screenplay-03-lantern-home-e05",
+          "target_revision_id": "c9b896501fb008c44de4277f978f377e1376b32d9c52523d4532bf31b77a7407",
+          "anchor": {
+            "block_id": "screenplay-03-lantern-home-s009-b034",
+            "end": 11,
+            "end_block_id": "screenplay-03-lantern-home-s009-b034",
+            "quote": "那先记住，别再抢",
+            "start": 3
+          },
+          "body": "这里是在和阿蘅对话，别再抢是抢什么？这里逻辑有问题",
+          "status": "OPEN"
+        },
+        {
+          "review_label": "C08",
+          "id": "93fe5fef-59de-499f-9baf-dcd666282383",
+          "target_object_id": "screenplay-03-lantern-home-e05",
+          "target_revision_id": "c9b896501fb008c44de4277f978f377e1376b32d9c52523d4532bf31b77a7407",
+          "anchor": {
+            "block_id": "screenplay-03-lantern-home-s010-b013",
+            "end": 21,
+            "end_block_id": "screenplay-03-lantern-home-s010-b013",
+            "quote": "李寄：我去渡口看看。问到了，就回来告诉你。",
+            "start": 0
+          },
+          "body": "这里去问什么，观众此刻是不理解的",
+          "status": "OPEN"
+        },
+        {
+          "review_label": "C13",
+          "id": "0da20246-86bc-42c1-b463-eb8fbdc45741",
+          "target_object_id": "screenplay-03-lantern-home-e06",
+          "target_revision_id": "efdc20cdc459df5b6b9d310820b8bbb3879d91cb21632a9a2284087b0dcfefd9",
+          "anchor": {
+            "block_id": "screenplay-03-lantern-home-s014-b004",
+            "end": 15,
+            "end_block_id": "screenplay-03-lantern-home-s014-b004",
+            "quote": "庙里点了阿蘅，我去抢牌了",
+            "start": 3
+          },
+          "body": "改为：庙里点了阿蘅，我去抢祭牌被祭牌砸到了",
+          "status": "OPEN"
+        },
+        {
+          "review_label": "C14",
+          "id": "babf3355-b2c9-41b9-b5ae-cf1c5e6e4986",
+          "target_object_id": "screenplay-03-lantern-home-e06",
+          "target_revision_id": "efdc20cdc459df5b6b9d310820b8bbb3879d91cb21632a9a2284087b0dcfefd9",
+          "anchor": {
+            "block_id": "screenplay-03-lantern-home-s014-b004",
+            "end": 32,
+            "end_block_id": "screenplay-03-lantern-home-s014-b004",
+            "quote": "船不肯载她们，还清欠粮也不能免祭",
+            "start": 16
+          },
+          "body": "改为：我去渡口找船想送她们走，摆渡的人害怕庙里找他麻烦不敢应承，我去庙里也问了还清欠粮都不能免祭，真是气死我了",
+          "status": "OPEN"
+        },
+        {
+          "review_label": "C16",
+          "id": "8b48ba5b-e416-466a-adf0-e2c3ca8ed03b",
+          "target_object_id": "screenplay-03-lantern-home-e06",
+          "target_revision_id": "efdc20cdc459df5b6b9d310820b8bbb3879d91cb21632a9a2284087b0dcfefd9",
+          "anchor": {
+            "block_id": "screenplay-03-lantern-home-s014-b013",
+            "end": 7,
+            "end_block_id": "screenplay-03-lantern-home-s014-b013",
+            "quote": "短暂的旧日画面",
+            "start": 0
+          },
+          "body": "这里要强调是李诞回忆中的短暂画面",
+          "status": "OPEN"
+        },
+        {
+          "review_label": "C20",
+          "id": "1431c37a-1d60-4781-b53a-6fa7b97caaf4",
+          "target_object_id": "screenplay-03-lantern-home-e06",
+          "target_revision_id": "efdc20cdc459df5b6b9d310820b8bbb3879d91cb21632a9a2284087b0dcfefd9",
+          "anchor": {
+            "block_id": "screenplay-03-lantern-home-s014-b033",
+            "end": 2,
+            "end_block_id": "screenplay-03-lantern-home-s014-b033",
+            "quote": "李诞",
+            "start": 0
+          },
+          "body": "这里要表达李诞只是随口应承",
+          "status": "OPEN"
+        }
+      ]
+    },
+    "open_limitations": [
+      "本轮没有浏览器、API 或数据库验收；所有场景状态仍为待根协调安排。",
+      "除原始评论 JSON 外，用户意图依据已确认任务说明和 KNOWLEDGE 的原来源表述；未读取原会话，未将文档归纳冒充用户逐字原话。",
+      "旧交付文档中的任务生命周期与服务地址只作历史来源，当前可用性与任务状态未由本代理验证。",
+      "不将故事内容评论直接转换为新系统功能；必要的清楚表达原则才可推广。"
+    ]
+  },
+  "current_scope_note": "历史调查当时current_defect=UNKNOWN保留；当前缺陷与验证去向请对照finding-index和coverage，不把旧已修问题重新当现存。"
+}
