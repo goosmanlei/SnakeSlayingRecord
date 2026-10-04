@@ -1,0 +1,47 @@
+{
+  "system_commit": "d6fe329de5b335b0a9afd2084987b09d0fa72e6a",
+  "baseline": {
+    "entity-a-he": {
+      "can_accept": false,
+      "can_revoke": false,
+      "reasons": [
+        "description_missing"
+      ]
+    },
+    "entity-a-heng": {
+      "can_accept": false,
+      "can_revoke": false,
+      "reasons": [
+        "dependency_changed"
+      ]
+    }
+  },
+  "isolated_browser": {
+    "browser": "Chrome",
+    "port": 39504,
+    "entities": [
+      "entity-a-he",
+      "entity-a-heng"
+    ],
+    "verified": [
+      "accept",
+      "revoke",
+      "reaccept",
+      "reload_persistence",
+      "switch_entity_persistence",
+      "historical_entity_read_only",
+      "return_current_action_enabled"
+    ],
+    "production_test_writes": 0
+  },
+  "automated": {
+    "python_tests": 156,
+    "node_tests": 389,
+    "release_tests": 8,
+    "active_entities_read": 132,
+    "entities_without_action": 0,
+    "content_mode_entities": 113
+  },
+  "generation_permission": "incomplete content acknowledgements remain blocked",
+  "formal_status": "pending"
+}

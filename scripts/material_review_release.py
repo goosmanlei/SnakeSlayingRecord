@@ -15,7 +15,8 @@ import time
 import autonomous_optimization_release as base
 
 TASK='task-20261004-0004'
-RELEASE_PREFIXES={TASK:'materials-20261004-0004', 'task-20261004-0005':'asset-cleanup-20261004-0005'}
+RELEASE_PREFIXES={TASK:'materials-20261004-0004', 'task-20261004-0005':'asset-cleanup-20261004-0005',
+                  'entity-acceptance-20261004':'entity-acceptance-20261004'}
 require,sha,read,save,run,git,inspect=base.require,base.sha,base.read,base.save,base.run,base.git,base.inspect
 
 
