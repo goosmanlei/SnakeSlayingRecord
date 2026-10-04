@@ -1,60 +1,6 @@
 {
-  "id": "fg3-troupe-workers-base-image-02",
-  "recipe_id": "form-troupe-workers-base",
-  "entity": {
-    "object_id": "entity-troupe-workers",
-    "revision_id": "86b7c5b9916ab92c8082537daa6a3fa0961dca51d9e5df64ade8811fc18483f4"
-  },
-  "state": {
-    "object_id": "form-troupe-workers-base",
-    "revision_id": "4df5fcf5cc3a424c7027dc4b648e6718ba1fbfa6f262ea7ea41ac5ed3c2f7f22"
-  },
-  "requirement": {
-    "object_id": "need-form-troupe-workers-base-overall",
-    "revision_id": "3a90a61e5873e84ab0f93d265baf3b9568a21dfec08859c4774a504acedd9342"
-  },
-  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
-  "references": [
-    {
-      "reference": {
-        "object_id": "asset-fg3-troupe-workers-base-image-01",
-        "revision_id": "79fc99590e45e1edfa8a16eaa05b1b9382fd10617dac2aafa51a1d313c5ac053"
-      },
-      "component_id": "original",
-      "sha256": "bf9b58452ef53ccdea81e08a4225da14d2de81d92470bace1687be3e052cf50d",
-      "crop": {
-        "x": 0,
-        "y": 0,
-        "width": 1,
-        "height": 1
-      },
-      "use": "参考图1：完整原件，固定身份与画风，仅修改所列状态或自检问题。"
-    }
-  ],
-  "lineage": {
-    "i2i_depth": 1,
-    "references": [
-      {
-        "object_id": "asset-fg3-troupe-workers-base-image-01",
-        "revision_id": "79fc99590e45e1edfa8a16eaa05b1b9382fd10617dac2aafa51a1d313c5ac053"
-      }
-    ]
-  },
-  "same_state_repair": {
-    "source": {
-      "object_id": "asset-fg3-troupe-workers-base-image-01",
-      "revision_id": "79fc99590e45e1edfa8a16eaa05b1b9382fd10617dac2aafa51a1d313c5ac053"
-    },
-    "reason": "仅修正参考图1四人基准的多余携带物。完整保留从左至右四个人的脸、年龄、身高、发髻、服装色彩和排列：窄脸蓝灰短衫伙计、圆脸灰褐短衫伙计、赭褐长衣演员、灰绿长衣演员。只删除最左伙计肩上的白巾、左侧吊挂的整个木箱及背带，最左者仍一手张开招呼，另一手自然空垂；删除第二人胸腹前的整包布包及绑绳，让他的双手自然空垂，露出原短衫腰带。右侧两位演员原有白色长袖口是服装，必须保留。四人完整头到鞋，4:3同一浅暖灰空底，不添背景、装备、人物或文字，不换脸、不换发型，不增加纹理。"
-  },
-  "tool": "image_gen.imagegen",
-  "model": "GPT Image",
-  "model_identity_note": "工具未暴露底层模型ID、质量及像素选择；实际输出单独检测。",
-  "request": {
-    "prompt": "仅修正参考图1四人基准的多余携带物。完整保留从左至右四个人的脸、年龄、身高、发髻、服装色彩和排列：窄脸蓝灰短衫伙计、圆脸灰褐短衫伙计、赭褐长衣演员、灰绿长衣演员。只删除最左伙计肩上的白巾、左侧吊挂的整个木箱及背带，最左者仍一手张开招呼，另一手自然空垂；删除第二人胸腹前的整包布包及绑绳，让他的双手自然空垂，露出原短衫腰带。右侧两位演员原有白色长袖口是服装，必须保留。四人完整头到鞋，4:3同一浅暖灰空底，不添背景、装备、人物或文字，不换脸、不换发型，不增加纹理。",
-    "transparent_background": false,
-    "referenced_image_paths": [
-      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/bf9b58452ef53ccdea81e08a4225da14d2de81d92470bace1687be3e052cf50d.png"
-    ]
-  }
+  "bytes": 3482,
+  "format": "material-archive-reference-v1",
+  "recipe": "5ba25b7a57b484da4eff8b6e1764d6e02455319cac9a846d527fcc7d877fc773",
+  "sha256": "06e4b8bf6dc59e75113cde39b8d3a74e81321c8d82265edc0cb5f99acc14e8cc"
 }

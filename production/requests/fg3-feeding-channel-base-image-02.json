@@ -1,60 +1,6 @@
 {
-  "id": "fg3-feeding-channel-base-image-02",
-  "recipe_id": "form-feeding-channel-base",
-  "entity": {
-    "object_id": "entity-feeding-channel",
-    "revision_id": "f84493b316778af2c0eae5d30d17fbd6d0b04edc5dc8b80e9a7d01872df720e8"
-  },
-  "state": {
-    "object_id": "form-feeding-channel-base",
-    "revision_id": "74bb4dc23f53856eb2e6180d4c5521b7ae5efa71c77b897874c7f707be7dd3d6"
-  },
-  "requirement": {
-    "object_id": "need-form-feeding-channel-base-overall",
-    "revision_id": "17a98cabc0d0217b09f6b8f9356a8f24f7934268d783af78e79cf22c458ce91e"
-  },
-  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
-  "references": [
-    {
-      "reference": {
-        "object_id": "asset-fg3-feeding-channel-base-image-01",
-        "revision_id": "a37e41065d4af43e582f528b074a65017186ba394d49d0b9fbba8f187b1ad062"
-      },
-      "component_id": "original",
-      "sha256": "d26bfd3d1b9ad9c941008ee6e8f7f2f31216bb020adfc95c0b4d84f628a04666",
-      "crop": {
-        "x": 0,
-        "y": 0,
-        "width": 1,
-        "height": 1
-      },
-      "use": "参考图1：完整原件，固定身份与画风，仅修改所列状态或自检问题。"
-    }
-  ],
-  "lineage": {
-    "i2i_depth": 1,
-    "references": [
-      {
-        "object_id": "asset-fg3-feeding-channel-base-image-01",
-        "revision_id": "a37e41065d4af43e582f528b074a65017186ba394d49d0b9fbba8f187b1ad062"
-      }
-    ]
-  },
-  "same_state_repair": {
-    "source": {
-      "object_id": "asset-fg3-feeding-channel-base-image-01",
-      "revision_id": "a37e41065d4af43e582f528b074a65017186ba394d49d0b9fbba8f187b1ad062"
-    },
-    "reason": "参考图1是未合格的石道基准。保留石道低矮、封顶、南前门有横闩、北端闸板在两根木立柱间落底、闸后短封顶段接岩根这些结构和二维线色，只大幅压短南北纵向，不能保留长廊。把南木门到北闸之间的整段长度缩为参考图当前的二分之一，正面门宽保持不变；完成后的南段几乎是一个低矮方盒，俯视顶面长宽比约1.2比1，整个石道含闸后短段的长宽比不超过1.8比1。闸后北段长度只为南段的三分之一，岩根缩成小块并完全留在画幅内。门闸间只够成人不足一步，盖石顶只到膝边，南前门是手递盆的小门而非人门。顶盖仍两块、接缝极细、完全封顶，基准尚无下刀口。不要画长石廊、多重拱门、第二条道或多于一个洞口。单幅4:3、同一三分之四视角，所有必要木柱、石基与小岩根完整留边；全体居中、约占画面七成。不要加人物、蛇、字、尺寸线、分格、写实纹理或额外细碎石纹，减少参考已有的斑驳，保持大灰块和清楚轮廓。最高原生输出，不放大。"
-  },
-  "tool": "image_gen.imagegen",
-  "model": "GPT Image",
-  "model_identity_note": "工具未暴露底层模型ID、质量及像素选择；实际输出单独检测。",
-  "request": {
-    "prompt": "参考图1是未合格的石道基准。保留石道低矮、封顶、南前门有横闩、北端闸板在两根木立柱间落底、闸后短封顶段接岩根这些结构和二维线色，只大幅压短南北纵向，不能保留长廊。把南木门到北闸之间的整段长度缩为参考图当前的二分之一，正面门宽保持不变；完成后的南段几乎是一个低矮方盒，俯视顶面长宽比约1.2比1，整个石道含闸后短段的长宽比不超过1.8比1。闸后北段长度只为南段的三分之一，岩根缩成小块并完全留在画幅内。门闸间只够成人不足一步，盖石顶只到膝边，南前门是手递盆的小门而非人门。顶盖仍两块、接缝极细、完全封顶，基准尚无下刀口。不要画长石廊、多重拱门、第二条道或多于一个洞口。单幅4:3、同一三分之四视角，所有必要木柱、石基与小岩根完整留边；全体居中、约占画面七成。不要加人物、蛇、字、尺寸线、分格、写实纹理或额外细碎石纹，减少参考已有的斑驳，保持大灰块和清楚轮廓。最高原生输出，不放大。",
-    "transparent_background": false,
-    "referenced_image_paths": [
-      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/d26bfd3d1b9ad9c941008ee6e8f7f2f31216bb020adfc95c0b4d84f628a04666.png"
-    ]
-  }
+  "bytes": 4406,
+  "format": "material-archive-reference-v1",
+  "recipe": "d69f833b67839edbb3ce21338e06f71f0300ad0b83cd56b5b2289898c5465036",
+  "sha256": "7b5569a92414a12afe61bdec38584d143ab9eab3c38e4763973ec270d26ed138"
 }

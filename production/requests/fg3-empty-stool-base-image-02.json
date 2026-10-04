@@ -1,60 +1,6 @@
 {
-  "id": "fg3-empty-stool-base-image-02",
-  "recipe_id": "form-empty-stool-base",
-  "entity": {
-    "object_id": "entity-empty-stool",
-    "revision_id": "98677087ff8ae7709fd0a0f35e69db2de980170473af44bd01b0b2403fb08d97"
-  },
-  "state": {
-    "object_id": "form-empty-stool-base",
-    "revision_id": "ea98eebb6baf92572ffec92b146984bb8545d61dfb8ed31d7ce689c1d1633e82"
-  },
-  "requirement": {
-    "object_id": "need-form-empty-stool-base-overall",
-    "revision_id": "d28874d65eddd213035dd42d34d53b18586c8fe36e67a5fc2cd457de4480f00b"
-  },
-  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
-  "references": [
-    {
-      "reference": {
-        "object_id": "asset-fg3-empty-stool-base-image-01",
-        "revision_id": "0cd2f063c1eda108d4d1efd1595582d7525c39f395043d201d5db0e107144131"
-      },
-      "component_id": "original",
-      "sha256": "80351a867e03238f6d2d2e9fc7be10d269ca1a3e6fd2770ef7fa8135c0e3f256",
-      "crop": {
-        "x": 0,
-        "y": 0,
-        "width": 1,
-        "height": 1
-      },
-      "use": "参考图1：完整原件，固定身份与画风，仅修改所列状态或自检问题。"
-    }
-  ],
-  "lineage": {
-    "i2i_depth": 1,
-    "references": [
-      {
-        "object_id": "asset-fg3-empty-stool-base-image-01",
-        "revision_id": "0cd2f063c1eda108d4d1efd1595582d7525c39f395043d201d5db0e107144131"
-      }
-    ]
-  },
-  "same_state_repair": {
-    "source": {
-      "object_id": "asset-fg3-empty-stool-base-image-01",
-      "revision_id": "0cd2f063c1eda108d4d1efd1595582d7525c39f395043d201d5db0e107144131"
-    },
-    "reason": "仅修正参考图1这张小凳。保持原方座、四条短腿、尺寸比例、视角、灰褐色和空座面。删除左侧连接前后腿的斜向侧撑、右侧连接前后腿的斜向侧撑，只留下画面前方连接左右前腿的一根水平横撑；删除部分填回干净背景，不影响四腿完整落地。把木材表面的细碎纹理减少为每个平面两三条浅长纹，二维大色块和清楚轮廓为主，不强化浮雕与颗粒。4:3完整原小凳，背景不变，无其他物件。"
-  },
-  "tool": "image_gen.imagegen",
-  "model": "GPT Image",
-  "model_identity_note": "工具未暴露底层模型ID、质量及像素选择；实际输出单独检测。",
-  "request": {
-    "prompt": "仅修正参考图1这张小凳。保持原方座、四条短腿、尺寸比例、视角、灰褐色和空座面。删除左侧连接前后腿的斜向侧撑、右侧连接前后腿的斜向侧撑，只留下画面前方连接左右前腿的一根水平横撑；删除部分填回干净背景，不影响四腿完整落地。把木材表面的细碎纹理减少为每个平面两三条浅长纹，二维大色块和清楚轮廓为主，不强化浮雕与颗粒。4:3完整原小凳，背景不变，无其他物件。",
-    "transparent_background": false,
-    "referenced_image_paths": [
-      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/80351a867e03238f6d2d2e9fc7be10d269ca1a3e6fd2770ef7fa8135c0e3f256.png"
-    ]
-  }
+  "bytes": 3122,
+  "format": "material-archive-reference-v1",
+  "recipe": "41f5425eec614e9b78f26c2afb22384cbea133e8b20383496e392faccb4678da",
+  "sha256": "e2aecb0839ba2255a3927680b6d999e5a6e648e183cb8c75f82bc6c9653224c5"
 }
