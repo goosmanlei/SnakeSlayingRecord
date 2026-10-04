@@ -212,6 +212,12 @@
 - 原系统由 Codex 自身驱动，任务管理确定性较低，任务阻塞、需要授权等状态不能可靠地通知用户。
 - 后续任务管理系统应采用传统工程方式构建，使任务管理、任务调度、任务监督和关键状态通知形成更可靠的体系，不照搬《九头案》中的任务管理系统。
 
+## 资产清理与恢复证据
+
+- `generation_publications` 是本机增量发布的幂等/恢复回执表，按现有公开导出契约不导出；表为空或未出现在export不能作为删除依据。Schema 4完整恢复须同时保留Git中的 `config/`、`content/` 和原件；来源：`production/evidence/asset-cleanup/db-audit.json`、`current-restore.json`。
+- 歌曲阶段原 `files.json` 中脚本/测试哈希对应 `df0bbcd` 归档版本；后续入口复用 `publish_generation`，公共校验由 `generation_publication` 承接，保留原档案哈希并按Git追溯实现演进，不回写真实调用或旧清单。来源：`production/song-stage/README.md`、`planning/asset-necessity-cleanup-report.md`。
+- 本机Docker Desktop对停止容器执行 `docker cp` 也可能创建已消失的宿主bind源目录。失效挂载审计应使用已记录身份、镜像和可写层信息，避免该副作用；外部探测导致的新空目录只能在确认来源/创建时间/为空后精确 `rmdir` 恢复。来源：`production/evidence/asset-cleanup/runtime-probe-side-effect-recovery.json`。
+
 ## 来源
 
 - 项目标识和初始项目方向来自用户在项目首次 Codex 会话中提供的项目说明（2026-09-17）。

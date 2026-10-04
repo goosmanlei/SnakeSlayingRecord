@@ -1,0 +1,70 @@
+{
+  "reason": "Docker cp against stopped containers recreated the missing bind source and its missing parents during this audit. Restore only these four newly created empty directories.",
+  "original_evidence": "runtime-stopped-containers.json mounts[].source_exists false; directory birthtime 2026-10-04 14:08:45 local; task ledger cleaned 2026-10-04 11:21:07; no registered worktree at path",
+  "task": {
+    "id": "task-20260929-0003",
+    "status": "completed",
+    "worktree": {
+      "base_commit": "1d732a034b610e5ee8932131cb52860b89a47a23",
+      "branch": "codex-project/task-5d617876a40f/task-20260929-0003",
+      "cleaned_at": "2026-10-04T11:21:07.390042+08:00",
+      "cleanup_commit": "b450b5c71b5754bb9cc1f0458154ca11c60bf53b",
+      "context_inputs": {},
+      "git_dev": 16777230,
+      "git_ino": 58860792,
+      "lifecycle": true,
+      "path": ".codex-project/worktrees/task-20260929-0003",
+      "project_subdir": ".",
+      "repository": ".",
+      "state": "cleaned",
+      "target_branch": "main"
+    }
+  },
+  "before": [
+    {
+      "path": ".codex-project/worktrees/task-20260929-0003",
+      "inode": 65464010,
+      "device": 16777230,
+      "birthtime": 1791094125.6353645,
+      "mtime": 1791094125.6359491,
+      "children": [
+        ".codex-project/worktrees/task-20260929-0003/.runtime"
+      ]
+    },
+    {
+      "path": ".codex-project/worktrees/task-20260929-0003/.runtime",
+      "inode": 65464011,
+      "device": 16777230,
+      "birthtime": 1791094125.635946,
+      "mtime": 1791094125.636473,
+      "children": [
+        ".codex-project/worktrees/task-20260929-0003/.runtime/production"
+      ]
+    },
+    {
+      "path": ".codex-project/worktrees/task-20260929-0003/.runtime/production",
+      "inode": 65464012,
+      "device": 16777230,
+      "birthtime": 1791094125.6364703,
+      "mtime": 1791094125.6370645,
+      "children": [
+        ".codex-project/worktrees/task-20260929-0003/.runtime/production/review-instance"
+      ]
+    },
+    {
+      "path": ".codex-project/worktrees/task-20260929-0003/.runtime/production/review-instance",
+      "inode": 65464013,
+      "device": 16777230,
+      "birthtime": 1791094125.6370618,
+      "mtime": 1791094125.6370618,
+      "children": []
+    }
+  ],
+  "removed": [
+    ".codex-project/worktrees/task-20260929-0003/.runtime/production/review-instance",
+    ".codex-project/worktrees/task-20260929-0003/.runtime/production",
+    ".codex-project/worktrees/task-20260929-0003/.runtime",
+    ".codex-project/worktrees/task-20260929-0003"
+  ],
+  "restored_missing": true
+}
