@@ -43,5 +43,39 @@
     "content_mode_entities": 113
   },
   "generation_permission": "incomplete content acknowledgements remain blocked",
-  "formal_status": "pending"
+  "formal_status": "applied",
+  "formal": {
+    "ports": [
+      3000,
+      64401
+    ],
+    "chrome": {
+      "entity-a-he": {
+        "accept_button_enabled": true
+      },
+      "entity-a-heng": {
+        "accept_button_enabled": true
+      }
+    },
+    "test_writes": 0,
+    "source_tree_equal": true,
+    "instance_files_equal": true,
+    "all_business_rows_equal": {
+      "sources": true,
+      "comment_events": true,
+      "objects": true,
+      "revisions": true,
+      "dependencies": true,
+      "configurations": true,
+      "configuration_events": true,
+      "comments": true,
+      "material_rounds": true,
+      "material_members": true,
+      "material_feedback": true,
+      "material_comment_scopes": true,
+      "generation_publications": true
+    },
+    "system_commit": "d6fe329de5b335b0a9afd2084987b09d0fa72e6a",
+    "release_name": "entity-acceptance-20261004-dafb0d91db50-d6fe329de5b3"
+  }
 }

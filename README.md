@@ -54,7 +54,7 @@
 
 ## 准备两仓并启动
 
-需要 Docker Compose、Python 3.9+ 和 FFmpeg／ffprobe。两个仓库放在同级目录；系统目录的提交必须与 [config/instance.json](config/instance.json) 一致。当前文件固定实体采纳修复系统 `d6fe329de5b335b0a9afd2084987b09d0fa72e6a`；隔离验证已通过，正式切换状态见 [当前状态](STATE.md)。正式运行版本需同时核对镜像源码与实例挂载，不能只由配置文件推断。
+需要 Docker Compose、Python 3.9+ 和 FFmpeg／ffprobe。两个仓库放在同级目录；系统目录的提交必须与 [config/instance.json](config/instance.json) 一致。当前文件固定实体采纳修复系统 `d6fe329de5b335b0a9afd2084987b09d0fa72e6a`；隔离验证和正式切换已完成，运行状态见 [当前状态](STATE.md)。正式运行版本需同时核对镜像源码与实例挂载，不能只由配置文件推断。
 
 完成本地集成后，以故事根目录为工作目录，核对同级系统版本，再对空实例恢复和启动：
 
