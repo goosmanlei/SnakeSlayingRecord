@@ -8,7 +8,7 @@
 
 采编每份资料和精修版本显示当前修订的“评论 N”，分类分别显示资料项数与评论合计；结构每个“第 N 稿”显示该稿评论总数。总数包含已关闭评论，不计删除记录或编辑／状态历史；新增后增加，编辑、关闭和重开不改变。共用面板继续显示未关闭／历史待决，不应把两种数字当作相同口径。使用、验证和本机候选版本见 [界面统一交付](planning/story-creation-ui-unification-delivery.md)。
 
-本轮素材与实体优化的块评论数、生成内容、筛选、共用音频、性能证据和受控应用命令见 [素材审阅交付说明](planning/material-review-streamlining-delivery.md)。候选已完成隔离验证，正式应用与双仓本地集成须最终确认；本轮不含推送或素材接受。
+前置素材审阅任务已完成集成和正式应用，其块评论数、生成内容、筛选、共用音频和性能证据见 [素材审阅交付说明](planning/material-review-streamlining-delivery.md)。本轮资产审视合并内部重复实现并保留有效历史，覆盖清单、实际清理、双仓候选和正式操作见 [资产必要性报告](planning/asset-necessity-cleanup-report.md)。正式集成、推送、服务切换及 4 个旧预览容器清理仍待本轮最终确认。
 
 ## 评论输入
 
@@ -54,7 +54,7 @@
 
 ## 准备两仓并启动
 
-需要 Docker Compose、Python 3.9+ 和 FFmpeg／ffprobe。两个仓库放在同级目录；系统目录的提交必须与 [config/instance.json](config/instance.json) 一致。当前文件固定素材审阅系统候选 `236433072b1629c197e3685cb5b7e305b53e3285`，尚待最终确认后应用，正式服务仍沿前序永久发布运行，见 [当前状态](STATE.md)。候选目前保存在本地任务分支，新克隆须取得所需准确系统提交；正式运行版本还需核对镜像源码及实例挂载，不能只由配置文件推断。
+需要 Docker Compose、Python 3.9+ 和 FFmpeg／ffprobe。两个仓库放在同级目录；系统目录的提交必须与 [config/instance.json](config/instance.json) 一致。当前文件固定实体采纳修复系统 `d6fe329de5b335b0a9afd2084987b09d0fa72e6a`；隔离验证和正式切换已完成，运行状态见 [当前状态](STATE.md)。正式运行版本需同时核对镜像源码与实例挂载，不能只由配置文件推断。
 
 完成本地集成后，以故事根目录为工作目录，核对同级系统版本，再对空实例恢复和启动：
 
@@ -66,7 +66,7 @@ PYTHONPATH="$production_system" python3 -m review_desk --instance . restore
 REVIEW_DESK_BUILD_CONTEXT="$production_system" docker compose up -d --build
 ```
 
-已有运行数据库时跳过 `restore`，不可用快照覆盖活库。本任务系统工作区为 `.runtime/material-streamlining/system`；隔离恢复操作与完整证据见 [素材审阅交付说明](planning/material-review-streamlining-delivery.md)。`export/` 是受管交付快照，不保证随正式数据库自动更新；Schema 4 保留素材轮次、旧修订、评论与原件清单。迁移实例同时保留 `config/` 与 `content/`；当前活库、永久挂载和本地集成边界见 [STATE.md](STATE.md)。当前已运行的正式容器恢复／重启使用对应永久发布入口，本轮切换使用上述交付脚本，避免用普通构建覆盖仍生效的准确挂载。
+已有运行数据库时跳过 `restore`，不可用快照覆盖活库。前置 `task-20261004-0004` 的系统工作区为该任务目录下的 `.runtime/material-streamlining/system`；隔离恢复操作与完整证据见 [素材审阅交付说明](planning/material-review-streamlining-delivery.md)。`export/` 是受管交付快照，不保证随正式数据库自动更新；Schema 4 保留素材轮次、旧修订、评论与原件清单。迁移实例同时保留 `config/` 与 `content/`；当前活库、永久挂载和本地集成边界见 [STATE.md](STATE.md)。当前已运行的正式容器恢复／重启使用对应永久发布入口，新交付按其已确认发布包切换，避免用普通构建覆盖仍生效的准确挂载。
 
 打开 [本机审阅台](http://127.0.0.1:3000/)：Nginx 长期运行在 Docker 容器 3000 端口并代理容器内 Python 服务；Nginx 镜像与通用代理规则由审阅台仓库维护，故事仓库只保留实例 Compose 配置。主机仅绑定 `127.0.0.1:3000`。`docker compose ps` 检查状态，`docker compose restart` 重启；`restart: unless-stopped` 保证 Docker 恢复时服务随之恢复。已有 `.runtime/review.sqlite3` 时跳过 `restore`。本机当前系统源码目录名是 `story-review-desk-python`，若在此目录运行，构建命令需加 `REVIEW_DESK_BUILD_CONTEXT=../story-review-desk-python`；公开克隆默认目录名为 `story-review-desk`，无需该变量。不要把 3000 端口转发到公网，本服务没有公网鉴权。
 

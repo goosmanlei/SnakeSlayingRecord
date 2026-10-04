@@ -3,11 +3,15 @@ import hashlib
 import json
 from pathlib import Path
 import sqlite3
+import subprocess
+import sys
 import tempfile
 import unittest
 
 from review_desk.store import Store
-from scripts.publish_song_stage import KEYS, apply, copy_media
+from scripts.publish_song_stage import KEYS, apply
+from scripts.publish_generation import copy_media
+from generation_fixtures import make_worktree
 
 
 class SongPublicationTest(unittest.TestCase):
@@ -105,15 +109,59 @@ class SongPublicationTest(unittest.TestCase):
 
     def test_existing_original_never_overwritten(self):
         source, target = self.root / 'source', self.root / 'target'
-        source.mkdir(); target.mkdir()
+        (source / 'export/assets').mkdir(parents=True); (target / 'export/assets').mkdir(parents=True)
         digest = hashlib.sha256(b'original').hexdigest()
         name = digest + '.mp3'
-        (source / name).write_bytes(b'original')
-        (target / name).write_bytes(b'different-existing-original')
+        (source / 'export/assets' / name).write_bytes(b'original')
+        (target / 'export/assets' / name).write_bytes(b'different-existing-original')
         plan = {'media': [dict(file=name, bytes=8, sha256=digest)]}
-        with self.assertRaisesRegex(ValueError, 'existing file conflict'):
-            copy_media(plan, source, target)
-        self.assertEqual((target / name).read_bytes(), b'different-existing-original')
+        with self.assertRaisesRegex(ValueError, 'existing original differs'):
+            copy_media(source, target, plan['media'])
+        self.assertEqual((target / 'export/assets' / name).read_bytes(), b'different-existing-original')
+
+    def test_real_cli_preflight_apply_and_retry_preserve_history(self):
+        main, task = make_worktree(self.root / 'workspace')
+        target = task / '.runtime/target'
+        database = target / '.runtime/review.sqlite3'
+        database.parent.mkdir(parents=True)
+        with sqlite3.connect(database) as destination:
+            self.db.backup(destination)
+        package = task / 'production/song-stage/publication-plan.json'
+        package.parent.mkdir(parents=True)
+        package.write_text(json.dumps(self.plan))
+        (task / 'export/assets').mkdir(parents=True)
+        script = Path(__file__).resolve().parents[1] / 'scripts/publish_song_stage.py'
+
+        def cli(name, apply=False):
+            command = [sys.executable, str(script), '--workspace', str(task),
+                       '--instance', '.runtime/target', '--run-name', name]
+            if apply:
+                command.append('--apply')
+            result = subprocess.run(command, cwd=self.root, capture_output=True,
+                                    text=True, timeout=30)
+            self.assertEqual(result.returncode, 0, result.stderr)
+            return json.loads(result.stdout)
+
+        def dump():
+            with sqlite3.connect(database) as db:
+                return '\n'.join(db.iterdump())
+
+        before = dump()
+        self.assertFalse(cli('preflight')['applied'])
+        self.assertEqual(dump(), before)
+        applied = cli('apply', apply=True)
+        self.assertTrue(applied['applied'])
+        self.assertEqual(applied['scope']['comment_events'][0]['published_id'], 2)
+        with sqlite3.connect(database) as db:
+            self.assertEqual(db.execute("SELECT body FROM comment_events WHERE id=1").fetchone()[0],
+                             'old opinion')
+            self.assertEqual(db.execute("SELECT current_revision FROM objects WHERE id='entity-unrelated'").fetchone()[0],
+                             'other')
+            self.assertEqual(db.execute('SELECT COUNT(*) FROM revisions').fetchone()[0], 3)
+        after = dump()
+        self.assertTrue(cli('retry', apply=True)['already_published'])
+        self.assertEqual(dump(), after)
+        self.assertFalse((main / 'export').exists())
 
 
 if __name__ == '__main__':
