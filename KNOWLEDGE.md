@@ -228,8 +228,12 @@
 - 原系统由 Codex 自身驱动，任务管理确定性较低，任务阻塞、需要授权等状态不能可靠地通知用户。
 - 后续任务管理系统应采用传统工程方式构建，使任务管理、任务调度、任务监督和关键状态通知形成更可靠的体系，不照搬《九头案》中的任务管理系统。
 
+- 2026-10-05 已将四首歌曲阶段成果按完整素材版本结构增量发布正式3000，共保留10份独立整曲录音：《三道滩》素材版本1—3、《送青篷》1—3、《四邻安》1—2、《明月还乡》1—2；对应最新草稿4／4／3／3未生成，与真实调用版本分开。旧ASSET修订编号不等同于完整素材版本编号。实体管理选择歌曲、独立整曲演唱状态后可切换录音；不表示纠词或音频质量已接受。来源：`production/song-publication/applied.json`、`formal-verification.json`、`browser-verification.json`。
+- 本次Schema 6歌曲导出包含两条旧WAV调用的结束时间舍入差，当前系统普通恢复器严格比较时长会拒绝；故事专用 `scripts/recover_song_publication.py` 按原件哈希、实际PCM帧数、准确输入及完整历史payload，仅对这两条记录的校验视图兼容。数据与系统代码不修改；恢复后22张业务表一致。来源：`production/song-publication/recovery-verification.json`及对应脚本。
+
 ## 资产清理与恢复证据
 
+- 用户于 2026-10-05 要求每个任务完成后清理全部无效过程资源，范围包括镜像、容器、临时数据、文件、代码与文档。有效成果及必要追溯、恢复资料不属于无效过程数据；具体结项边界与顺序统一见 `AGENTS.md` 的“任务结项清理”和 `production/generation-workspaces.md`。来源：本会话明确指令。
 - `generation_publications` 是本机增量发布的幂等/恢复回执表，按现有公开导出契约不导出；表为空或未出现在export不能作为删除依据。Schema 4完整恢复须同时保留Git中的 `config/`、`content/` 和原件；来源：`production/evidence/asset-cleanup/db-audit.json`、`current-restore.json`。
 - 歌曲阶段原 `files.json` 中脚本/测试哈希对应 `df0bbcd` 归档版本；后续入口复用 `publish_generation`，公共校验由 `generation_publication` 承接，保留原档案哈希并按Git追溯实现演进，不回写真实调用或旧清单。来源：`production/song-stage/README.md`、`planning/asset-necessity-cleanup-report.md`。
 - 本机Docker Desktop对停止容器执行 `docker cp` 也可能创建已消失的宿主bind源目录。失效挂载审计应使用已记录身份、镜像和可写层信息，避免该副作用；外部探测导致的新空目录只能在确认来源/创建时间/为空后精确 `rmdir` 恢复。来源：`production/evidence/asset-cleanup/runtime-probe-side-effect-recovery.json`。
