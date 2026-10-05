@@ -222,6 +222,7 @@
 
 ## 资产清理与恢复证据
 
+- 用户于 2026-10-05 要求每个任务完成后清理全部无效过程资源，范围包括镜像、容器、临时数据、文件、代码与文档。有效成果及必要追溯、恢复资料不属于无效过程数据；具体结项边界与顺序统一见 `AGENTS.md` 的“任务结项清理”和 `production/generation-workspaces.md`。来源：本会话明确指令。
 - `generation_publications` 是本机增量发布的幂等/恢复回执表，按现有公开导出契约不导出；表为空或未出现在export不能作为删除依据。Schema 4完整恢复须同时保留Git中的 `config/`、`content/` 和原件；来源：`production/evidence/asset-cleanup/db-audit.json`、`current-restore.json`。
 - 歌曲阶段原 `files.json` 中脚本/测试哈希对应 `df0bbcd` 归档版本；后续入口复用 `publish_generation`，公共校验由 `generation_publication` 承接，保留原档案哈希并按Git追溯实现演进，不回写真实调用或旧清单。来源：`production/song-stage/README.md`、`planning/asset-necessity-cleanup-report.md`。
 - 本机Docker Desktop对停止容器执行 `docker cp` 也可能创建已消失的宿主bind源目录。失效挂载审计应使用已记录身份、镜像和可写层信息，避免该副作用；外部探测导致的新空目录只能在确认来源/创建时间/为空后精确 `rmdir` 恢复。来源：`production/evidence/asset-cleanup/runtime-probe-side-effect-recovery.json`。
