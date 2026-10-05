@@ -61,6 +61,15 @@ def readers(path, directory=False):
     return [{'pid':h['pid'],'read_only_handles':len(h['access'])} for h in holders]
 
 
+def tree_hashes(path):
+    values={}
+    for p in sorted(path.rglob('*')):
+        base.require(not p.is_symlink(), 'task cleanup tree contains a symbolic link')
+        if p.is_file() and not p.name.endswith(('.sqlite3-wal','.sqlite3-shm')):
+            values[p.relative_to(path).as_posix()]=base.sha(p.read_bytes())
+    return values
+
+
 def api(m):
     sys.path.insert(0, str(Path(m['system_worktree'])))
     from review_desk.store import Store
@@ -98,6 +107,9 @@ def prepare(a):
                 'service_manifest_sha256':base.sha((root / 'manifest.json').read_bytes()),
                 'before':guard, 'after':after, 'package':PACKAGE,
                 'old_task_copies':old_copies,
+                'retired_task_trees':[{ 'path':'.runtime/entity-material/'+name,
+                                        'files':tree_hashes(story/'.runtime/entity-material'/name)}
+                                       for name in ('review','delivery')],
                 'archives':'candidate export enters main through task _complete after formal browser acceptance',
                 'recovery':'resume sanitized database with this candidate reader; never restore old explanations'}
     if a.push_system:
@@ -200,6 +212,24 @@ def purge(a):
     base.require((root/'run/sanitized-recovery/export/manifest.json').is_file(), 'sanitized recovery missing')
     story = Path(m['story_worktree'])
     removed = [];cached=[]
+    trees=[]
+    for item in c['retired_task_trees']:
+        path=story/item['path']
+        base.require(path in (story/'.runtime/entity-material/review',story/'.runtime/entity-material/delivery'), 'unsafe retired task tree')
+        if not path.exists():continue
+        base.require(path.is_dir() and not path.is_symlink(), 'retired task tree changed')
+        actual=tree_hashes(path)
+        # The individual old copies may already have been purged on a retry.
+        known_old={x['path'] for x in c['old_task_copies']}
+        expected={name:sha for name,sha in item['files'].items()
+                  if (path/name).exists() or (path/name).relative_to(story).as_posix() not in known_old}
+        base.require(actual==expected, 'retired task tree changed; inspect before deleting')
+        cached.extend(readers(path,directory=True));trees.append(path)
+    containers=base.run([base.DOCKER,'ps','-aq']).splitlines()
+    for container in containers:
+        for mount in base.inspect(container)['Mounts']:
+            source=Path(mount['Source'])
+            base.require(not any(source==p or p in source.parents for p in trees), 'retired task tree is explicitly mounted')
     for item in c['old_task_copies']:
         path = story/item['path']
         base.require(path.resolve().is_relative_to(story/'.runtime/entity-material'), 'unsafe old copy path')
@@ -212,7 +242,13 @@ def purge(a):
         for suffix in ('','-wal','-shm') if path.suffix == '.sqlite3' else ('',):
             target = Path(str(path)+suffix)
             if target.exists():target.unlink();removed.append(str(target.relative_to(story)))
+    retired=[]
+    for path in trees:
+        count=sum(p.is_file() for p in path.rglob('*'))
+        shutil.rmtree(path)
+        retired.append({'path':path.relative_to(story).as_posix(),'files':count,'absent':not path.exists()})
     result = {'removed_files':removed,'count':len(removed),'all_listed_old_copies_absent':all(not (story/x['path']).exists() for x in c['old_task_copies']),
+              'retired_task_trees':retired,'total_removed_files':len(removed)+sum(t['files'] for t in retired),
               'read_only_platform_handles':cached,'shared_vm_stopped':False}
     base.save(root/'run/old-task-copies-purged.json',result)
     print(json.dumps(result))
