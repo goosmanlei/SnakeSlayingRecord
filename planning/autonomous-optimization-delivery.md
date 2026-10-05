@@ -25,6 +25,50 @@
 4. 最后运行 `codex.project task _complete -g creative -p SnakeSlayingRecord --task task-20261005-0001 --note '<实际验证与发布回执>'`。该命令受控集成故事main、推送原upstream并回读；成功回执是最终依据，不手工合并故事主目录。若仅待推送可按回执重试，内容或目标变化须重新准备和确认。
 5. `_complete`成功后仅回读；不再补写代码、报告或STATE/KNOWLEDGE，不新增提交。运行回执留在任务账本或本机未跟踪运行目录。保留工作区与分支，不领取下一任务；正常退出会话才释放运行锁。
 
+## 便携证据的阅读与校验
+
+本轮证据目标目录为 `planning/autonomous-optimization-evidence/task-20261005-0001/`，与上一轮证据分开。正式交付前才构建和核验最终版本；目录存在或脚本测试通过不代表真实成包已经验收，实际状态以运行报告为准。
+
+包由三部分组成：`browser-records.tar.gz`保存实际页面动作、DOM、截图和探针原件；`backend-records.tar.gz`保存服务身份、HTTP原值、分析和异常；`supporting-records.tar.gz`保存独审、覆盖矩阵、技术数据历史检查、计时快照及取证脚本。`manifest.json`逐文件记录来源路径、原始SHA和交付字节SHA，并列明真正发生的脱敏变换。数据库、SQLite旁路文件、依赖目录、凭据文件和重复的全量恢复媒体树不入包；必要原件的哈希与验证结果保留。交付包是审计证据，不是可覆盖正式库的恢复备份。
+
+先读主运行报告和包内`readable/`下的独审说明。JSON和截图保存在压缩包中；需要逐项核验时，先校验，再解压到新目录。以下命令以故事仓库根目录为基准，只检查交付包，不读取正式库：
+
+```bash
+python3 - <<'PY'
+import hashlib, json, tarfile
+from pathlib import Path, PurePosixPath
+root = Path('planning/autonomous-optimization-evidence/task-20261005-0001')
+manifest = json.loads((root / 'manifest.json').read_text())
+expected = {item['path']: item for item in manifest['files']}
+seen = set()
+for archive in manifest['archives']:
+    path = root / archive['path']
+    assert path.stat().st_size == archive['bytes'], path
+    assert hashlib.sha256(path.read_bytes()).hexdigest() == archive['sha256'], path
+    with tarfile.open(path, 'r:gz') as bundle:
+        for item in bundle:
+            name = PurePosixPath(item.name)
+            assert item.isfile() and not name.is_absolute() and '..' not in name.parts
+            assert item.name not in seen
+            row = expected[item.name]
+            assert row['archive'] == archive['path'] and row['bytes'] == item.size
+            assert hashlib.sha256(bundle.extractfile(item).read()).hexdigest() == row['sha256']
+            seen.add(item.name)
+assert seen == set(expected)
+print('verified files:', len(seen))
+PY
+
+review_evidence_view=$(mktemp -d "${TMPDIR:-/tmp}/review-evidence.XXXXXX")
+for archive in browser-records backend-records supporting-records; do
+  tar -xzf "planning/autonomous-optimization-evidence/task-20261005-0001/$archive.tar.gz" -C "$review_evidence_view"
+done
+printf '%s\n' "$review_evidence_view"
+```
+
+解压后`browser/`、`backend-investigation/`、`reviews/`等恢复原相对结构；计时快照在`clock/`。原始记录中的本机绝对路径、历史端口、当时文案和失败断言是当时事实，保留不重写；使用manifest的来源映射定位，不将历史服务地址视为当前在线预览。取证脚本记录方法，不承诺脱离原实例、准确提交及必要本机环境即可重跑全部实验。
+
+最终打包从全新暂存目录生成、逐条校验后整体替换，避免新旧文件混杂。普通失败保留最近完整包；若进程恰在目录替换中被强制停止，先核对同级`.task-20261005-0001.previous-*`目录的manifest与压缩包，恢复已核验的完整旧目录，不拼接两轮条目。构建器不承担正式数据库恢复，不改变用户确认、集成或发布权限。
+
 ## 失败与恢复
 
 发布包保存旧app/nginx准确镜像ID、旧Compose和只读配置挂载文件哈希、CA身份、候选镜像及完整源码指纹。确认前检查旧镜像和旧挂载仍存在；不要清理。环境秘密不写报告、包或日志，现有执行器仅从当前容器内存透传。
