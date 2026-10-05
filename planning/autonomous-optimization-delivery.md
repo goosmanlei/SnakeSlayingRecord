@@ -29,11 +29,11 @@
 
 ## 便携证据的阅读与校验
 
-本轮证据目标目录为 `planning/autonomous-optimization-evidence/task-20261005-0001/`，与上一轮证据分开。正式交付前才构建和核验最终版本；目录存在或脚本测试通过不代表真实成包已经验收，实际状态以运行报告为准。
+本轮证据在 [固定入口](autonomous-optimization-evidence/task-20261005-0001/README.md)，与上一轮证据分开。三包3060项已经独立逐项核验；真实浏览器原件、失败记录、准确数据与源码身份均保留。预备内容候选的镜像与54个源文件、preflight也已核验；最终故事提交的不可变发布包仍按准确候选重新准备，最终回执随确认请求展示。
 
 包由三部分组成：`browser-records.tar.gz`保存实际页面动作、DOM、截图和探针原件；`backend-records.tar.gz`保存服务身份、HTTP原值、分析和异常；`supporting-records.tar.gz`保存独审、覆盖矩阵、技术数据历史检查、计时快照及取证脚本。`manifest.json`逐文件记录来源路径、原始SHA和交付字节SHA，并列明真正发生的脱敏变换。数据库、SQLite旁路文件、依赖目录、凭据文件和重复的全量恢复媒体树不入包；必要原件的哈希与验证结果保留。交付包是审计证据，不是可覆盖正式库的恢复备份。
 
-先读主运行报告和包内`readable/`下的独审说明。JSON和截图保存在压缩包中；需要逐项核验时，先校验，再解压到新目录。以下命令以故事仓库根目录为基准，只检查交付包，不读取正式库：
+先读主运行报告和包内`readable/`下的独审说明。JSON和截图保存在压缩包中；需要逐项核验时，先校验，再解压到新目录。旧窗口报告及历史提案保留原工作区链接，须按来源映射或仓库文档定位。归档冻结后的最终审查、清理及停止回执单独追加在`closing-receipts/`，以该目录的manifest记录原始／交付SHA；没有用缺少已清理源文件的新包覆盖原三包。它们是优化收尾回执，不是用户确认、任务_complete或正式发布回执。以下命令以故事仓库根目录为基准，只检查交付包，不读取正式库：
 
 ```bash
 python3 - <<'PY'
@@ -58,6 +58,15 @@ for archive in manifest['archives']:
             seen.add(item.name)
 assert seen == set(expected)
 print('verified files:', len(seen))
+closing = json.loads((root / 'closing-receipts/manifest.json').read_text())
+assert closing['archive_manifest_sha256'] == hashlib.sha256((root / 'manifest.json').read_bytes()).hexdigest()
+for row in closing['files']:
+    name = PurePosixPath(row['path'])
+    assert not name.is_absolute() and '..' not in name.parts and name.parts[0] == 'closing-receipts'
+    path = root / row['path']
+    assert path.stat().st_size == row['bytes']
+    assert hashlib.sha256(path.read_bytes()).hexdigest() == row['sha256']
+print('verified closing receipts:', len(closing['files']))
 PY
 
 review_evidence_view=$(mktemp -d "${TMPDIR:-/tmp}/review-evidence.XXXXXX")
@@ -67,7 +76,7 @@ done
 printf '%s\n' "$review_evidence_view"
 ```
 
-解压后`browser/`、`backend-investigation/`、`reviews/`等恢复原相对结构；计时快照在`clock/`。原始记录中的本机绝对路径、历史端口、当时文案和失败断言是当时事实，保留不重写；使用manifest的来源映射定位，不将历史服务地址视为当前在线预览。取证脚本记录方法，不承诺脱离原实例、准确提交及必要本机环境即可重跑全部实验。
+解压后`browser/`、`backend-investigation/`、`reviews/`等恢复原相对结构；归档时的计时快照在`clock/`，实际结束状态以额外收尾回执为准。原始记录中的本机绝对路径、历史端口、当时文案和失败断言是当时事实，保留不重写；使用manifest的来源映射定位，不将历史服务地址视为当前在线预览。取证脚本记录方法，不承诺脱离原实例、准确提交及必要本机环境即可重跑全部实验。
 
 最终打包从全新暂存目录生成、逐条校验后整体替换，避免新旧文件混杂。普通失败保留最近完整包；若进程恰在目录替换中被强制停止，先核对同级`.task-20261005-0001.previous-*`目录的manifest与压缩包，恢复已核验的完整旧目录，不拼接两轮条目。构建器不承担正式数据库恢复，不改变用户确认、集成或发布权限。
 
