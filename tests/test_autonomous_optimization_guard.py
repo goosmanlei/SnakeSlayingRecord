@@ -115,8 +115,8 @@ class GuardTests(unittest.TestCase):
                            execution_directory=lambda project, record: self.worktree,
                            active_run=lambda project, record: self.active_checks.append(record["lease"]))
 
-    def execution_turn(self, marker, started, task=None):
-        content = (f"CODEX_PROJECT_TASK_RUN:{marker}\n\n通过 task mrun 执行项目任务。\n\n"
+    def execution_turn(self, marker, started, task=None, mode="mrun"):
+        content = (f"CODEX_PROJECT_TASK_RUN:{marker}\n\n通过 task {mode} 执行项目任务。\n\n"
                    + "任务内容：" + json.dumps({"id": task or self.task}, ensure_ascii=False))
         return {"id": uid(), "startedAt": started, "status": "inProgress",
                 "items": [{"type": "userMessage", "content": [{"type": "text", "text": content}]}]}
@@ -170,6 +170,101 @@ class GuardTests(unittest.TestCase):
         self.rpc.threads[self.root]["historyMode"] = "paginated"
         state = self.start()
         self.assertEqual((state["t0"], state["first_run_marker"]), (self.t0, old_marker))
+
+    def test_isolated_run_recovers_first_execution_and_enforces_deadline(self):
+        self.record.update(execution_mode="run", worktree={"path": "worktree"})
+        old_marker = uid()
+        self.rpc.threads[self.root]["turns"] = [
+            self.execution_turn(old_marker, self.t0, mode="run"),
+            self.execution_turn(self.marker, self.t0 + 20000, mode="run")]
+        self.rpc.page_size = 1
+        self.now = self.t0 + 21000
+        self.env.pop("CODEX_PROJECT_TASK_LEASE")
+        state = self.start()
+        self.assertEqual((state["t0"], state["first_run_marker"], state["execution_mode"]),
+                         (self.t0, old_marker, "run"))
+        self.assertEqual(self.active_checks, [self.lease])
+        child = self.child()
+        self.guard.register(child)
+        self.now = self.t0 + 36000
+        stopped = self.guard.check()
+        self.assertEqual(stopped["phase"], "finished")
+        self.assertEqual(stopped["stop"]["reason"], "deadline")
+        for thread in [self.root, child]:
+            self.assertEqual(self.rpc.goals[thread]["status"], "paused")
+            self.assertEqual(self.rpc.threads[thread]["status"]["type"], "idle")
+
+    def test_run_requires_isolation_and_matching_execution_input(self):
+        self.record["execution_mode"] = "run"
+        with self.assertRaisesRegex(GuardError, "隔离 worktree"):
+            self.start()
+        self.record["worktree"] = {"path": "worktree"}
+        with self.assertRaisesRegex(GuardError, "对应入口证据"):
+            self.start()
+        self.assertFalse(self.guard.state_path.exists())
+        self.assertEqual(self.rpc.mutations(), [])
+
+    def test_mode_drift_never_rearms_or_stops_another_execution(self):
+        state = self.start()
+        self.record.update(execution_mode="run", worktree={"path": "worktree"})
+        with self.assertRaisesRegex(GuardError, "恢复入口"):
+            self.start()
+        self.now = self.t0 + 36000
+        self.rpc.calls.clear()
+        result = self.guard.check()
+        self.assertEqual(result["phase"], "stopping")
+        self.assertEqual(result["t0"], state["t0"])
+        self.assertFalse(result["stop"]["complete"])
+        self.assertEqual(self.rpc.calls, [])
+
+    def test_legacy_mrun_state_without_mode_remains_resumable(self):
+        state = self.start()
+        del state["execution_mode"]
+        self.guard.save(state)
+        self.now = self.t0 + 1000
+        self.assertEqual(self.start()["t0"], self.t0)
+
+    def test_register_at_deadline_latches_without_registering_or_reading_child(self):
+        self.start()
+        child = self.child()
+        self.now = self.t0 + 36000
+        self.rpc.calls.clear()
+        with self.assertRaisesRegex(GuardError, "硬截止"):
+            self.guard.register(child)
+        state = self.guard.load()
+        self.assertEqual(state["children"], {})
+        self.assertEqual(state["phase"], "stopping")
+        self.assertEqual(state["stop"]["reason"], "deadline")
+        self.assertEqual(self.rpc.calls, [])
+
+    def test_register_while_stopping_preserves_scope_and_reason(self):
+        state = self.start()
+        self.guard.request_stop(state, "user_stop", self.now)
+        self.rpc.calls.clear()
+        with self.assertRaisesRegex(GuardError, "正在停止"):
+            self.guard.register(self.child())
+        state = self.guard.load()
+        self.assertEqual(state["children"], {})
+        self.assertEqual(state["stop"]["reason"], "user_stop")
+        self.assertEqual(self.rpc.calls, [])
+
+    def test_registration_crossing_deadline_does_not_commit_new_scope(self):
+        self.start()
+        child = self.child()
+        self.now = self.t0 + 35999
+        call = self.rpc.call
+        def advance_on_read(method, params):
+            result = call(method, params)
+            if method == "thread/read":
+                self.now = self.t0 + 36000
+            return result
+        with patch.object(self.rpc, "call", side_effect=advance_on_read):
+            with self.assertRaisesRegex(GuardError, "硬截止"):
+                self.guard.register(child)
+        state = self.guard.load()
+        self.assertEqual(state["children"], {})
+        self.assertEqual(state["stop"]["reason"], "deadline")
+        self.assertEqual(self.rpc.mutations(), [])
 
     def test_resume_does_not_reset_time_or_reminder(self):
         state = self.start()

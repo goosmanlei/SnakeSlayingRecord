@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Task-local wall-clock guard. See planning/autonomous-optimization-runtime.md.
 
-start/register/finish authenticate the root mrun; check/watch use its verified scope.
+start/register/finish authenticate the root task run/mrun; check/watch use its verified scope.
 No command creates/resumes a thread, starts a Goal, or edits the task ledger.
 """
 from __future__ import annotations
@@ -143,10 +143,10 @@ def parent_id(thread):
     return valid_uuid(result) if result else None
 
 
-def first_execution(thread, task_id, current_marker, now):
+def first_execution(thread, task_id, current_marker, now, execution_mode="mrun"):
     """Recover execution time, including when initialization was delayed on resume.
 
-    A task draft can precede mrun in the same retained thread. Its creation time,
+    A task draft can precede execution in the same retained thread. Its creation time,
     earlier turns, and the task's publication time must never become T0.
     """
     if thread.get("historyMode", "legacy") != "legacy":
@@ -171,8 +171,10 @@ def first_execution(thread, task_id, current_marker, now):
                 identity = json.loads(details.group(1)) if details else {}
             except ValueError:
                 identity = {}
-            if identity.get("id") != task_id or "通过 task mrun 执行项目任务。" not in text:
-                raise GuardError("执行标记缺少本任务 mrun 证据，拒绝猜测 T0")
+            launch = re.search(r"(?m)^通过 task (run|mrun) 执行项目任务。", text)
+            if (identity.get("id") != task_id or launch is None
+                    or launch.group(1) != execution_mode):
+                raise GuardError("执行标记缺少本任务对应入口证据，拒绝猜测 T0")
             started = turn.get("startedAt")
             if not isinstance(started, (int, float)) or isinstance(started, bool) or not math.isfinite(started):
                 raise GuardError("执行轮次缺少 startedAt，不能以当前时间重置预算")
@@ -181,7 +183,7 @@ def first_execution(thread, task_id, current_marker, now):
             executions.append((started, turn["id"], marker))
             markers.add(marker)
     if not executions or current_marker not in markers:
-        raise GuardError("无法核对首次 mrun 执行轮次和当前任务标记；不启动新计时")
+        raise GuardError("无法核对首次执行轮次和当前任务标记；不启动新计时")
     return min(executions)
 
 
@@ -217,12 +219,15 @@ class Guard:
         record = self.record(project, task_id)
         root = valid_uuid(self.env.get("CODEX_THREAD_ID"))
         lease = valid_uuid(record.get("lease"))
-        if record.get("status") != "running" or record.get("execution_mode") != "mrun":
-            raise GuardError("必须在正在执行的 task mrun 中初始化或结束守卫")
+        if record.get("status") != "running" or record.get("execution_mode") not in {"run", "mrun"}:
+            raise GuardError("必须在正在执行的 task run/mrun 中初始化或结束守卫")
         if record.get("session_id") != root:
             raise GuardError("当前会话未绑定本任务；先运行 task _bind_session")
         if self.expected_directory(project, record) != self.worktree:
             raise GuardError("脚本不在账本登记的本任务 worktree")
+        if record["execution_mode"] == "run" and (
+                not record.get("worktree") or self.worktree == Path(project).resolve()):
+            raise GuardError("task run 必须使用账本登记的隔离 worktree")
         home = Path(self.env.get("CODEX_HOME", str(Path.home() / ".codex"))).expanduser().resolve()
         if Path(record.get("codex_home", "")).resolve() != home:
             raise GuardError("任务 CODEX_HOME 不匹配")
@@ -230,7 +235,7 @@ class Guard:
             if self.env["CODEX_PROJECT_TASK_LEASE"] != lease:
                 raise GuardError("当前执行租约不匹配")
         else:
-            # Shared daemon tools do not inherit the mrun launcher's environment.
+            # Shared daemon tools do not inherit the launcher's environment.
             callback = self.active_run or installed("task_store").require_active_run
             callback(Path(project), record)
         valid_uuid(record.get("run_marker"))
@@ -283,7 +288,8 @@ class Guard:
                     text = "\n".join(c.get("text", "") for c in first_user.get("content", [])
                                      if c.get("type") == "text")
                     if text.startswith("CODEX_PROJECT_TASK_RUN:" + marker + "\n"):
-                        return first_execution({"turns": candidates}, state["task_id"], marker, self.clock())
+                        return first_execution({"turns": candidates}, state["task_id"], marker,
+                                               self.clock(), state.get("execution_mode", "mrun"))
             cursor = page.get("nextCursor")
             if not cursor:
                 raise GuardError("全部可见历史中找不到本任务首次执行证据；不重置预算")
@@ -332,7 +338,7 @@ class Guard:
     def scope_record(self, state):
         record = self.record(state["project"], state["task_id"])
         if (record.get("session_id") != state["root_thread_id"]
-                or record.get("execution_mode") != "mrun"
+                or record.get("execution_mode") != state.get("execution_mode", "mrun")
                 or record.get("status") not in {"running", "interrupted", "completed"}
                 or record.get("codex_home") != state["codex_home"]
                 or self.expected_directory(state["project"], record) != self.worktree):
@@ -351,11 +357,14 @@ class Guard:
                 record = self.authenticate(project, task_id)
                 if record["session_id"] != state["root_thread_id"]:
                     raise GuardError("恢复会话不是原任务根会话")
+                if record["execution_mode"] != state.get("execution_mode", "mrun"):
+                    raise GuardError("恢复入口与原守卫身份不匹配")
             else:
                 record = self.authenticate(project, task_id)
                 state = {"schema_version": 1, "project": str(Path(project).resolve()),
                          "task_id": task_id, "worktree": str(self.worktree),
-                         "root_thread_id": record["session_id"], "codex_home": record["codex_home"]}
+                         "root_thread_id": record["session_id"], "codex_home": record["codex_home"],
+                         "execution_mode": record["execution_mode"]}
                 thread = self.thread(state, record["session_id"])
                 if parent_id(thread) or (isinstance(thread.get("source"), dict)
                                          and "subAgent" in thread["source"]):
@@ -396,12 +405,21 @@ class Guard:
         with lock(self.directory / "state.lock"):
             state = self.load()
             self.authenticate(state["project"], state["task_id"])
-            if state["phase"] == "finished":
-                raise GuardError("守卫已结束，不能登记新的子会话")
+            def require_registration_open():
+                if state["phase"] == "finished":
+                    raise GuardError("守卫已结束，不能登记新的子会话")
+                now = self.now(state)
+                if now >= state["deadlines"]["deadline"]:
+                    self.request_stop(state, "deadline", now)
+                    raise GuardError("已到硬截止，不能登记新的子会话")
+                if state["phase"] != "armed":
+                    raise GuardError("守卫正在停止，不能登记新的子会话")
+            require_registration_open()
             root, chain, current = state["root_thread_id"], {}, child
             if current == root:
                 raise GuardError("根会话不是子会话")
             while current != root:
+                require_registration_open()
                 if current in chain or len(chain) >= 64:
                     raise GuardError("子会话谱系循环或过深")
                 thread = self.thread(state, current)
@@ -410,6 +428,7 @@ class Guard:
                     raise GuardError("此会话不是本任务后代；拒绝登记兄弟或无关会话")
                 chain[current] = {"parent_thread_id": parent, "registered_at": self.clock()}
                 current = parent
+            require_registration_open()
             state["children"].update(chain)
             self.save(state)
             return self.tick(state)
@@ -659,7 +678,7 @@ class Guard:
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     commands = parser.add_subparsers(dest="command", required=True)
-    start = commands.add_parser("start", help="认证正在执行的 mrun、恢复原 T0 并启动独立监督进程")
+    start = commands.add_parser("start", help="认证正在执行的隔离 run/mrun、恢复原 T0 并启动独立监督进程")
     start.add_argument("--project", type=Path, required=True, help="启动器给出的主项目目录")
     start.add_argument("--task", required=True, help="本任务 task ID")
     commands.add_parser("status", help="只读查看持久化时间、回执与监督进程最近心跳")
