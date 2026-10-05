@@ -400,6 +400,156 @@ class Guard:
             raise GuardError("无法唯一确定当前活动回合；不猜测中断目标")
         return turns[0]
 
+    def reset_authorized(self, authorization_path):
+        """Apply the user's explicit new window without erasing the old execution.
+
+        Ordinary start/resume never calls this. The authorization is checked
+        against the real root's user-message item, not an agent-written claim.
+        The first clock observation is retained across setup time and retries.
+        """
+        authorization_path = Path(authorization_path)
+        if authorization_path.is_symlink() or authorization_path.resolve().parent != self.directory:
+            raise GuardError("重置依据必须是本任务运行目录内的普通文件")
+        authorization = read_json(authorization_path)
+        # A successful CLI retry can encounter the newly running watcher. A
+        # byte-for-byte identical, already verified authorization is a no-op;
+        # authenticate the root again without stopping that live watcher.
+        with lock(self.directory / "state.lock"):
+            existing = self.load()
+            applied = existing.get("reset_authorization", {})
+            if applied.get("item_id") and applied.get("item_id") == authorization.get("item_id"):
+                record = self.authenticate(existing["project"], existing["task_id"])
+                if (record["session_id"] != existing["root_thread_id"]
+                        or record["execution_mode"] != existing.get("execution_mode", "mrun")):
+                    raise GuardError("重置依据与真实根任务身份不一致")
+                if applied != authorization:
+                    raise GuardError("已应用的重置指令不能改写")
+                return existing
+        with lock(self.directory / "watch.lock", nonblocking=True):
+            with lock(self.directory / "state.lock"):
+                state = self.load()
+                record = self.authenticate(state["project"], state["task_id"])
+                if (record["session_id"] != state["root_thread_id"]
+                        or record["execution_mode"] != state.get("execution_mode", "mrun")
+                        or authorization.get("task_id") != state["task_id"]
+                        or authorization.get("root_thread_id") != state["root_thread_id"]):
+                    raise GuardError("重置依据与真实根任务身份不一致")
+                turn_id = valid_uuid(authorization.get("turn_id"))
+                item_id = valid_uuid(authorization.get("item_id"))
+                # This deliberately narrow entry reflects the instruction that
+                # authorized this task's reset. No vague 'continue' is accepted.
+                text = authorization.get("message")
+                if text != "计时重置，即为从现在开始":
+                    raise GuardError("没有明确的重新计时指令")
+                digest = hashlib.sha256(text.encode()).hexdigest()
+                if authorization.get("message_sha256") != digest:
+                    raise GuardError("重置指令校验值不匹配")
+                cursor, seen, found = None, set(), False
+                while True:
+                    params = {"threadId": state["root_thread_id"], "turnId": turn_id,
+                              "limit": 100, "sortDirection": "desc"}
+                    if cursor:
+                        params["cursor"] = cursor
+                    page = self.rpc(state).call("thread/items/list", params)
+                    if not isinstance(page.get("data"), list):
+                        raise GuardError("无法读取重置指令的真实输入")
+                    for entry in page["data"]:
+                        item = entry.get("item", {})
+                        if entry.get("turnId") != turn_id:
+                            raise GuardError("重置指令轮次归属不一致")
+                        if item.get("id") == item_id:
+                            actual = "\n".join(c.get("text", "") for c in item.get("content", [])
+                                               if c.get("type") == "text").strip()
+                            if item.get("type") != "userMessage" or actual != text:
+                                raise GuardError("重置依据不是根会话的准确用户指令")
+                            found = True
+                            break
+                    if found or not page.get("nextCursor"):
+                        break
+                    cursor = page["nextCursor"]
+                    if cursor in seen:
+                        raise GuardError("重置指令分页游标重复")
+                    seen.add(cursor)
+                if not found:
+                    raise GuardError("共享服务未找到指定的用户重置指令")
+                previous_reset = state.get("reset_authorization", {})
+                if previous_reset.get("item_id") == item_id:
+                    if previous_reset != authorization:
+                        raise GuardError("已应用的重置指令不能改写")
+                    return state  # Retrying never moves the new T0.
+                if any(h.get("authorization_item_id") == item_id
+                       for h in state.get("reset_history", [])):
+                    raise GuardError("旧重置指令不能再次使用")
+                if state["phase"] != "finished" or not state.get("stop", {}).get("complete"):
+                    raise GuardError("原计时尚未核实停止，不能重置")
+                new_t0 = authorization.get("observed_t0")
+                if (isinstance(new_t0, bool) or not isinstance(new_t0, (int, float))
+                        or not math.isfinite(new_t0) or new_t0 > self.clock()
+                        or new_t0 < state["stop"]["finished_at"]
+                        or authorization.get("prior_t0") != state["t0"]
+                        or authorization.get("prior_stop_finished_at") != state["stop"]["finished_at"]):
+                    raise GuardError("新起点或原停止证据无效")
+                archive = self.directory / ("completed-window-" + item_id)
+                if archive.is_symlink():
+                    raise GuardError("旧窗口存档不能是符号链接")
+                archive.mkdir(mode=0o700, exist_ok=True)
+                # An interrupted pre-state-write retry may reuse only identical
+                # archived state. It must not silently overwrite earlier evidence.
+                def archive_json(name, value):
+                    path = archive / name
+                    if path.exists():
+                        if read_json(path) != value:
+                            raise GuardError("旧窗口存档已存在且内容不一致：" + name)
+                    else:
+                        atomic_json(path, value)
+                # Persist the authorized first observation before anything that
+                # can fail later. Retries cannot replace it with a later clock.
+                archive_json("reset-authorization.json", authorization)
+                archive_json("state.json", state)
+                if self.receipt_path.exists():
+                    archive_json("stop-receipt.json", read_json(self.receipt_path))
+                report = self.worktree / REPORT
+                archived_report = archive / "run-report.md"
+                if archived_report.is_symlink():
+                    raise GuardError("旧报告存档不能是符号链接")
+                if archived_report.exists():
+                    if not archived_report.is_file():
+                        raise GuardError("旧报告存档不是普通文件")
+                elif report.is_file() and not report.is_symlink():
+                    descriptor, temporary = tempfile.mkstemp(prefix=".report-", dir=archive)
+                    try:
+                        with os.fdopen(descriptor, "wb") as handle:
+                            handle.write(report.read_bytes())
+                            handle.flush()
+                            os.fsync(handle.fileno())
+                        os.replace(temporary, archived_report)
+                    finally:
+                        if os.path.exists(temporary):
+                            os.unlink(temporary)
+                archive_descriptor = os.open(archive, os.O_RDONLY)
+                try:
+                    os.fsync(archive_descriptor)
+                finally:
+                    os.close(archive_descriptor)
+                history = list(state.get("reset_history", []))
+                history.append({"t0": state["t0"], "deadlines": state["deadlines"],
+                                "stop_finished_at": state["stop"]["finished_at"],
+                                "archive": archive.name, "authorization_item_id": item_id})
+                state.setdefault("original_t0", state["t0"])
+                state.update(t0=new_t0, t0_source="explicit verified user reset; first clock observation",
+                             reset_authorization=authorization, reset_history=history,
+                             observed_at=new_t0, phase="armed", stop=None, last_error=None,
+                             closeout_notified_at=None, closeout_message_id=str(uuid.uuid4()),
+                             deadlines={"floor": new_t0 + FLOOR, "closeout": new_t0 + CLOSEOUT,
+                                        "deadline": new_t0 + DEADLINE},
+                             lease_digest=hashlib.sha256(record["lease"].encode()).hexdigest())
+                # Archive first; a crash before the canonical write leaves the
+                # finished state able to repair its receipt through normal check.
+                if self.receipt_path.exists():
+                    self.receipt_path.unlink()
+                self.save(state)
+                return state
+
     def register(self, child):
         valid_uuid(child)
         with lock(self.directory / "state.lock"):
@@ -685,6 +835,8 @@ def main(argv=None):
     commands.add_parser("check", help="立即检查并补执行到期动作；不唤醒任何会话")
     register = commands.add_parser("register", help="根代理登记已启动的后代；同时验证并登记中间祖先")
     register.add_argument("--thread", required=True)
+    reset = commands.add_parser("reset-authorized", help="核验明确用户指令、存档已停止窗口并开始新计时")
+    reset.add_argument("--authorization", type=Path, required=True)
     finish = commands.add_parser("finish", help="持久化结束原因并停止登记的子会话；user_stop 仅限用户明确要求结束")
     finish.add_argument("--reason", choices=("converged", "user_stop", "deadline"), required=True)
     watch = commands.add_parser("watch", help="监督已初始化的本任务；重复进程由独占锁去重")
@@ -699,6 +851,9 @@ def main(argv=None):
             guard.check()
         elif args.command == "register":
             guard.register(args.thread)
+        elif args.command == "reset-authorized":
+            guard.reset_authorized(args.authorization)
+            guard.launch_watch()
         elif args.command == "finish":
             guard.finish(args.reason)
             guard.launch_watch()

@@ -676,6 +676,135 @@ class GuardTests(unittest.TestCase):
             with self.assertRaises(GuardError):
                 rpc.call(method, params)
 
+    def reset_fixture(self):
+        self.start()
+        child = self.child()
+        self.guard.register(child)
+        self.now = self.t0 + guard_module.DEADLINE
+        old = self.guard.check()
+        self.assertEqual(old["phase"], "finished")
+        self.now += 3600
+        turn_id = self.later_turn(self.root)
+        turn = next(t for t in self.rpc.threads[self.root]["turns"] if t["id"] == turn_id)
+        text = "计时重置，即为从现在开始"
+        item = {"id": uid(), "type": "userMessage", "content": [{"type": "text", "text": text}]}
+        turn["items"].append(item)
+        authorization = {"task_id": self.task, "root_thread_id": self.root,
+                         "turn_id": turn["id"], "item_id": item["id"], "message": text,
+                         "message_sha256": guard_module.hashlib.sha256(text.encode()).hexdigest(),
+                         "observed_t0": self.now, "prior_t0": self.t0,
+                         "prior_stop_finished_at": old["stop"]["finished_at"]}
+        path = self.guard.directory / "reset-authorization.json"
+        guard_module.atomic_json(path, authorization)
+        return old, authorization, path
+
+    def test_authorized_reset_archives_exact_old_state_and_keeps_scope(self):
+        old, authorization, path = self.reset_fixture()
+        mutations = len(self.rpc.mutations())
+        new = self.guard.reset_authorized(path)
+        self.assertEqual(new["t0"], authorization["observed_t0"])
+        self.assertEqual(new["original_t0"], self.t0)
+        self.assertEqual(new["children"], old["children"])
+        self.assertEqual(new["first_turn_id"], old["first_turn_id"])
+        self.assertEqual(new["phase"], "armed")
+        self.assertIsNone(new["stop"])
+        self.assertFalse(self.guard.receipt_path.exists())
+        archive = self.guard.directory / new["reset_history"][0]["archive"]
+        self.assertEqual(guard_module.read_json(archive / "state.json"), old)
+        self.assertEqual(guard_module.read_json(archive / "stop-receipt.json")["reason"], "deadline")
+        self.assertEqual((archive / "run-report.md").read_bytes(), (self.worktree / guard_module.REPORT).read_bytes())
+        self.assertEqual(len(self.rpc.mutations()), mutations, "reset must not resume Goals or threads")
+        self.now += 120
+        self.assertEqual(self.start()["t0"], authorization["observed_t0"])
+
+    def test_authorized_reset_retry_keeps_t0_and_one_archive(self):
+        _, authorization, path = self.reset_fixture()
+        first = self.guard.reset_authorized(path)
+        self.now += 500
+        with guard_module.lock(self.guard.directory / "watch.lock"):
+            self.assertEqual(self.guard.reset_authorized(path), first)
+        self.assertEqual(len(list(self.guard.directory.glob("completed-window-*"))), 1)
+        authorization["observed_t0"] += 1
+        guard_module.atomic_json(path, authorization)
+        with self.assertRaisesRegex(GuardError, "不能改写"):
+            self.guard.reset_authorized(path)
+
+    def test_reset_requires_real_exact_user_item(self):
+        old, authorization, path = self.reset_fixture()
+        item = self.rpc.threads[self.root]["turns"][-1]["items"][0]
+        for changed in [{"type": "agentMessage"}, {"content": [{"type": "text", "text": "继续"}]}]:
+            original = copy.deepcopy(item)
+            item.update(changed)
+            with self.assertRaisesRegex(GuardError, "准确用户指令"):
+                self.guard.reset_authorized(path)
+            item.clear(); item.update(original)
+            self.assertEqual(self.guard.load(), old)
+        authorization["item_id"] = uid()
+        guard_module.atomic_json(path, authorization)
+        with self.assertRaisesRegex(GuardError, "未找到"):
+            self.guard.reset_authorized(path)
+
+    def test_reset_rejects_identity_time_and_unfinished_state(self):
+        old, authorization, path = self.reset_fixture()
+        for key, value in [("root_thread_id", uid()), ("task_id", "other"),
+                           ("observed_t0", self.now + 1), ("observed_t0", float("nan")),
+                           ("observed_t0", True), ("observed_t0", old["stop"]["finished_at"] - 1),
+                           ("prior_t0", self.t0 + 1), ("prior_stop_finished_at", 1)]:
+            with self.subTest(key=key, value=value):
+                guard_module.atomic_json(path, dict(authorization, **{key: value}))
+                with self.assertRaises(GuardError):
+                    self.guard.reset_authorized(path)
+                self.assertEqual(self.guard.load(), old)
+        guard_module.atomic_json(path, authorization)
+        pending = copy.deepcopy(old); pending["phase"] = "stopping"; pending["stop"]["complete"] = False
+        self.guard.save(pending)
+        with self.assertRaisesRegex(GuardError, "尚未核实停止"):
+            self.guard.reset_authorized(path)
+
+    def test_reset_refuses_live_watcher_and_mismatched_archive(self):
+        old, authorization, path = self.reset_fixture()
+        with guard_module.lock(self.guard.directory / "watch.lock"):
+            with self.assertRaises(BlockingIOError):
+                self.guard.reset_authorized(path)
+        archive = self.guard.directory / ("completed-window-" + authorization["item_id"])
+        archive.mkdir()
+        guard_module.atomic_json(archive / "state.json", {"other": True})
+        with self.assertRaisesRegex(GuardError, "内容不一致"):
+            self.guard.reset_authorized(path)
+        self.assertEqual(self.guard.load(), old)
+
+    def test_reset_new_deadline_stops_same_scope_without_reusing_old_receipt(self):
+        old, authorization, path = self.reset_fixture()
+        self.guard.reset_authorized(path)
+        self.rpc.goals[self.root]["status"] = "active"  # User control, not guard RPC.
+        self.now = authorization["observed_t0"] + guard_module.DEADLINE
+        final = self.guard.check()
+        self.assertEqual(final["phase"], "finished")
+        self.assertEqual(final["stop"]["requested_at"], self.now)
+        self.assertEqual(self.rpc.goals[self.root]["status"], "paused")
+        self.assertEqual(set(final["stop"]["threads"]), set(old["stop"]["threads"]))
+        self.assertEqual(guard_module.read_json(self.guard.receipt_path)["t0"], authorization["observed_t0"])
+
+    def test_reset_pre_state_crash_retry_preserves_first_observation_and_report(self):
+        old, authorization, path = self.reset_fixture()
+        report = self.worktree / guard_module.REPORT
+        original_report = report.read_bytes()
+        with patch.object(self.guard, "save", side_effect=OSError("injected state write failure")):
+            with self.assertRaises(OSError):
+                self.guard.reset_authorized(path)
+        self.assertEqual(self.guard.load(), old)
+        report.write_text("# Later closeout report\n", encoding="utf-8")
+        self.now += 500
+        guard_module.atomic_json(path, dict(authorization, observed_t0=self.now))
+        with self.assertRaisesRegex(GuardError, "内容不一致"):
+            self.guard.reset_authorized(path)
+        guard_module.atomic_json(path, authorization)
+        resumed = self.guard.reset_authorized(path)
+        archive = self.guard.directory / resumed["reset_history"][0]["archive"]
+        self.assertEqual(resumed["t0"], authorization["observed_t0"])
+        self.assertEqual((archive / "run-report.md").read_bytes(), original_report)
+        self.assertEqual(guard_module.read_json(archive / "stop-receipt.json")["reason"], "deadline")
+
 
 if __name__ == "__main__":
     unittest.main()
