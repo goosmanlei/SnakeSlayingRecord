@@ -20,6 +20,7 @@ RELEASE_PREFIXES={TASK:'materials-20261004-0004', 'task-20261004-0005':'asset-cl
                   'task-20261004-0008':'ui-unification-20261004-0008',
                   'task-20261004-0009':'ui-material-model-20261004-0009',
                   'task-20261005-0001':'autonomous-20261005-0001',
+                  'task-20261005-0002':'entity-material-20261005-0002',
                   'entity-acceptance-20261004':'entity-acceptance-20261004'}
 require,sha,read,save,run,git,inspect=base.require,base.sha,base.read,base.save,base.run,base.git,base.inspect
 

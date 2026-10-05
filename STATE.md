@@ -5,9 +5,11 @@
 - 任务发布、执行与完成状态以主项目 `.codex-project/tasks.json` 为准，本文件不复制任务状态。后续创作或系统修改按新请求确定范围，不恢复已结束的自主优化计时或单次生成授权。
 - 当前作品为方向三《把灯带回家》、故事结构第十稿、精修九定稿候选和剧本版本四。用户已确认版本四为制作终稿；准确依据见 [制作输入锁](production/source-lock.json)，作品与素材的具体认可仍按各自准确记录判断。
 - 制作拆解、完整状态、素材版本与候选体系已交付；全剧首轮 251 个图像状态和 42 份新音色已有成果，逐项用户认可范围见 [素材交付](production/full-generation/README.md)及其认可记录。四首歌曲的 10 份整曲录音已增量发布到正式审阅入口，最新草稿与已有录音分开，见 [歌曲入口](production/song-publication/README.md)。这些成果不表示全部素材或音频质量已接受，也不表示动态分镜或成片已就绪。
-- 最近一次正式代码发布为 `task-20261005-0001`，已完成双仓集成／推送及正式 Chrome 只读验收，业务增量为 0。系统提交以 `config/instance.json.review_desk_commit` 为准。正式入口为 `http://127.0.0.1:3000/`，正式库为主目录 `.runtime/review.sqlite3`；发布目录为 `.runtime/service-releases/autonomous-20261005-0001-2741cee62429-24e926d446a9/`。以上来自发布回执，本轮未启动 Docker 或重新验证在线服务；后续发布／恢复前核对实际容器、镜像与挂载。
+- 正式入口为 `http://127.0.0.1:3000/`，正式库为主目录 `.runtime/review.sqlite3`；运行身份从正式主目录的 `config/instance.json.review_desk_commit`、实际容器镜像与挂载回读。确认前基线为 `task-20261005-0001` 的双仓发布，业务增量 0；本任务已只读核对其 `.runtime/service-releases/autonomous-20261005-0001-2741cee62429-24e926d446a9/`，尚未正式切换。本工作区配置锁定交付候选，不代表它已正式运行。
 
 最近发布与验收回执位于 `.codex-project/worktrees/task-20261005-0001/.runtime/autonomous-optimization/delivery/`；任务完成及故事推送结果以主项目账本为准。[运行报告](planning/autonomous-optimization-run-report.md)与[交付说明](planning/autonomous-optimization-delivery.md)保留确认前的测量及操作背景，其“待确认”表述是历史时点，不代表当前任务未完成。
+
+- 本任务的大卡、编号、引用和旧关系说明清理候选已在双仓隔离工作区实现并预演。全量状态 359 项已有唯一归属，未新增历史关联；34 份旧说明仅在隔离库物理清理，正式删除与服务切换待最终候选确认。干净导出、逐项验收、精确双仓计划和正式／恢复步骤见 [交付包](production/entity-material/README.md)。
 
 ## 后续工作边界
 
@@ -20,3 +22,5 @@
 - 用户明确要求保留 `task-20261005-0001` 的故事／系统 worktree 与分支，用于准确追溯，不自动执行工作区退役。
 - 该任务工作区 `.runtime/autonomous-optimization/` 下的 `final-preview/`、`final-coverage-song-restore/` 仍存在。结项回执记载当时因共享 VM 文件句柄保留；62608 预览已停止。本轮只确认目录存在，未重查占用。下一次资源清理由执行清理的 Agent 核对当前使用者、文件身份及恢复用途，释放后按原清单精确处置，不停止共享 VM；依据为该任务 `delivery/cleanup-final-apply.json`、`delivery/pre-complete-receipt.json` 和受管收尾独审。
 - 正式发布目录、正式库、原件，以及尚用于发布追溯／恢复的回执与数据库保留；较新恢复基线替代且追溯用途结束后再核对移除。已删除资源的数量与经过只留原清理回执，不在本文件累计。
+
+- 本任务 `.runtime/entity-material/` 保留净化交付实例、系统 worktree、正式操作冻结包，以及确认前的旧说明原文／测试库。前者供最终验收与向前恢复，后者仅供受影响历史审阅，确认应用后按冻结哈希和应用占用检查清理，不停止共享平台 VM；详细资源条件见交付包资源记录。

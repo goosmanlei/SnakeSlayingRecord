@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Restore a Schema 6 song export, validating two legacy PCM rounding cases."""
+"""Restore a current song export, validating two legacy PCM rounding cases."""
 import argparse
 import copy
 import hashlib
@@ -95,7 +95,7 @@ def recover(root, destination, package, output, candidate=None):
         assert restored.keys() == expected.keys()
         for table in expected:
             assert sorted(map(canonical, restored[table])) == sorted(map(canonical, expected[table])), table
-    result = {'schema_version': 6, 'restored': True,
+    result = {'schema_version': read_json(destination / 'export/manifest.json')['schema_version'], 'restored': True,
               'historical_precision_revisions': sorted(validated),
               'historical_payloads_changed': False,
               'all_business_tables_equal': candidate is not None,
