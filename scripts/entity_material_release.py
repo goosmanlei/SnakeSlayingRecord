@@ -62,10 +62,10 @@ def readers(path, directory=False):
 
 
 def tree_hashes(path):
-    values={}
+    values={};sidecars={'.runtime/'+name+suffix for name in ('review.sqlite3','generation-base.sqlite3') for suffix in ('-wal','-shm')}
     for p in sorted(path.rglob('*')):
         base.require(not p.is_symlink(), 'task cleanup tree contains a symbolic link')
-        if p.is_file() and not p.name.endswith(('.sqlite3-wal','.sqlite3-shm')):
+        if p.is_file() and p.relative_to(path).as_posix() not in sidecars:
             values[p.relative_to(path).as_posix()]=base.sha(p.read_bytes())
     return values
 
