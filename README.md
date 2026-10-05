@@ -8,7 +8,7 @@
 
 采编每份资料和精修版本显示当前修订的“评论 N”，分类分别显示资料项数与评论合计；结构每个“第 N 稿”显示该稿评论总数。总数包含已关闭评论，不计删除记录或编辑／状态历史；新增后增加，编辑、关闭和重开不改变。共用面板继续显示未关闭／历史待决，不应把两种数字当作相同口径。使用、验证和本机候选版本见 [界面统一交付](planning/story-creation-ui-unification-delivery.md)。
 
-前置素材审阅任务已完成集成和正式应用，其块评论数、生成内容、筛选、共用音频和性能证据见 [素材审阅交付说明](planning/material-review-streamlining-delivery.md)。本轮资产审视合并内部重复实现并保留有效历史，覆盖清单、实际清理、双仓候选和正式操作见 [资产必要性报告](planning/asset-necessity-cleanup-report.md)。正式集成、推送、服务切换及 4 个旧预览容器清理仍待本轮最终确认。
+素材审阅优化与资产审视任务已完成；块评论数、生成内容、筛选、共用音频和性能证据见 [素材审阅交付说明](planning/material-review-streamlining-delivery.md)，内部合并与清理依据见 [资产必要性报告](planning/asset-necessity-cleanup-report.md)。报告中的候选和待确认表述属于当时记录；当前发布与未完成事项统一见 [STATE.md](STATE.md)。
 
 ## 评论输入
 
@@ -18,9 +18,9 @@
 
 图像、音色和歌曲任务的生成、登记及审阅均在各自 worktree；原件随任务分支合并，正式库随后显式增量发布。初始化、预览、提交、发布和恢复命令见[生成工作区流程](production/generation-workspaces.md)。
 
-首页以“制作思路”替换旧“当前工作”，提供“故事创作”“生产制作”两个 Tab；旧 `workspace=current` 链接兼容进入新页。方法正文在 [content/production-approach.json](content/production-approach.json)，随实例 Git 保存；系统负责只读展示，没有新增工作统计、任务账本或素材执行引擎。制作准备已按确认的版本四交付系统、全剧抽取、第一集设计与首批候选，用户确认本阶段结项。制作入口为 [正式 3000](http://127.0.0.1:3000/?workspace=settings.workspace)；当前新增的全剧逐镜首稿与版本／候选改造见 [制作拆解交付](production/breakdown/README.md)；本候选尚待最终确认与正式应用，方案交付不等于镜头媒体就绪。
+首页以“制作思路”替换旧“当前工作”，提供“故事创作”“生产制作”两个 Tab；旧 `workspace=current` 链接兼容进入新页。方法正文在 [content/production-approach.json](content/production-approach.json)，随实例 Git 保存；系统负责只读展示，没有新增工作统计、任务账本或素材执行引擎。制作准备已按确认的版本四交付系统、全剧抽取、第一集设计与首批候选，用户确认本阶段结项。制作入口为 [正式 3000](http://127.0.0.1:3000/?workspace=settings.workspace)；全剧逐镜首稿与版本／候选改造见 [制作拆解交付](production/breakdown/README.md)，后续完整素材版本契约见 [素材模型交付](production/ui-material-model/README.md)。方案交付不等于镜头媒体就绪。
 
-[正式入口](http://127.0.0.1:3000/)已完成首页、旧链接、双 Tab、桌面与窄屏回读；[隔离预览](http://127.0.0.1:8794/)及数据恢复证据保留。清理范围、输入版本、验证结果和发布说明见[交付记录](planning/production-approach-delivery.md)。恢复实例时同时保留 `config/`、`content/` 与 `export/`；方法文档不写业务数据库，无数据迁移。
+[正式入口](http://127.0.0.1:3000/)的首页、旧链接、双 Tab、桌面与窄屏历史验收，以及当时的隔离预览与数据恢复证据见[交付记录](planning/production-approach-delivery.md)；历史预览地址不作为当前入口。恢复实例时同时保留 `config/`、`content/` 与 `export/`；方法文档不写业务数据库，无数据迁移。
 
 两个方法 Tab 的章节目录在桌面常驻左侧，沿用故事创作页的浅色阅读栏与章节高亮；点击可定位，滚动时更新当前章。窄屏目录常驻正文上方、可横向滚动，章节链接支持刷新与浏览器前进／后退。
 
@@ -54,19 +54,18 @@
 
 ## 准备两仓并启动
 
-需要 Docker Compose、Python 3.9+ 和 FFmpeg／ffprobe。两个仓库放在同级目录；系统目录的提交必须与 [config/instance.json](config/instance.json) 一致。当前文件固定实体采纳修复系统 `d6fe329de5b335b0a9afd2084987b09d0fa72e6a`；隔离验证和正式切换已完成，运行状态见 [当前状态](STATE.md)。正式运行版本需同时核对镜像源码与实例挂载，不能只由配置文件推断。
+需要 Docker Compose、Python 3.9+ 和 FFmpeg／ffprobe。两个仓库放在同级目录；系统目录的提交必须与 [config/instance.json](config/instance.json) 一致，准确版本以该配置为准；最近正式发布依据见 [当前状态](STATE.md)。正式运行版本需同时核对镜像源码与实例挂载，不能只由配置文件推断。
 
-完成本地集成后，以故事根目录为工作目录，核对同级系统版本，再对空实例恢复和启动：
+完成本地集成后，以故事根目录为工作目录，核对同级系统版本。以下启动命令只适用于已有数据库且未使用独立发布挂载的普通实例；已有正式服务按 `STATE.md` 的发布入口恢复／重启。空实例须先按下方歌曲恢复入口完成恢复：
 
 ```bash
 production_system=../story-review-desk-python
 required_system=$(python3 -c 'import json; print(json.load(open("config/instance.json"))["review_desk_commit"])')
 test "$(git -C "$production_system" rev-parse HEAD)" = "$required_system"
-PYTHONPATH="$production_system" python3 -m review_desk --instance . restore
 REVIEW_DESK_BUILD_CONTEXT="$production_system" docker compose up -d --build
 ```
 
-已有运行数据库时跳过 `restore`，不可用快照覆盖活库。前置 `task-20261004-0004` 的系统工作区为该任务目录下的 `.runtime/material-streamlining/system`；隔离恢复操作与完整证据见 [素材审阅交付说明](planning/material-review-streamlining-delivery.md)。`export/` 是受管交付快照，不保证随正式数据库自动更新；本候选 Schema 5 同时保留方案版本／候选、旧轮次、准确修订、评论与原件清单，旧格式仍可恢复。迁移实例同时保留 `config/` 与 `content/`；当前活库、永久挂载和本地集成边界见 [STATE.md](STATE.md)。当前已运行的正式容器恢复／重启使用对应永久发布入口，新交付按其已确认发布包切换，避免用普通构建覆盖仍生效的准确挂载。
+已有运行数据库时跳过 `restore`，不可用快照覆盖活库。`export/` 是受管交付快照，不保证随正式数据库自动更新；当前 Schema 6 保存完整素材定义、方案版本／候选、旧轮次、准确修订、评论与原件清单，契约见 [素材模型交付](production/ui-material-model/data-contract.md)。当前歌曲导出包含两条旧 WAV 时长舍入差，恢复须使用 [歌曲恢复入口](production/song-publication/README.md)中的 `scripts/recover_song_publication.py`，不能直接套用普通恢复命令。迁移实例同时保留 `config/` 与 `content/`；当前活库与正式发布入口见 [STATE.md](STATE.md)。已有正式容器的恢复／重启使用对应发布入口，新交付按其已确认发布包切换，避免用普通构建覆盖仍生效的准确挂载。
 
 打开 [本机审阅台](http://127.0.0.1:3000/)：Nginx 长期运行在 Docker 容器 3000 端口并代理容器内 Python 服务；Nginx 镜像与通用代理规则由审阅台仓库维护，故事仓库只保留实例 Compose 配置。主机仅绑定 `127.0.0.1:3000`。`docker compose ps` 检查状态，`docker compose restart` 重启；`restart: unless-stopped` 保证 Docker 恢复时服务随之恢复。已有 `.runtime/review.sqlite3` 时跳过 `restore`。本机当前系统源码目录名是 `story-review-desk-python`，若在此目录运行，构建命令需加 `REVIEW_DESK_BUILD_CONTEXT=../story-review-desk-python`；公开克隆默认目录名为 `story-review-desk`，无需该变量。不要把 3000 端口转发到公网，本服务没有公网鉴权。
 
