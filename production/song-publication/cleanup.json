@@ -1,0 +1,87 @@
+{
+  "at": "2026-10-05T11:28:28.665379+00:00",
+  "deleted": [
+    {
+      "path": ".runtime/song-publication/bundle-recovery",
+      "files": 1412,
+      "logical_bytes": 1348298300
+    },
+    {
+      "path": ".runtime/song-publication/checks",
+      "files": 3,
+      "logical_bytes": 489000960
+    },
+    {
+      "path": ".runtime/song-publication/checks-final",
+      "files": 3,
+      "logical_bytes": 489000960
+    },
+    {
+      "path": ".runtime/song-publication/checks-resumed",
+      "files": 0,
+      "logical_bytes": 0
+    },
+    {
+      "path": ".runtime/song-publication/checks-resumed-v2",
+      "files": 3,
+      "logical_bytes": 508297216
+    },
+    {
+      "path": ".runtime/song-publication/checks-v2",
+      "files": 0,
+      "logical_bytes": 0
+    },
+    {
+      "path": ".runtime/song-publication/precision-recovery",
+      "files": 4208,
+      "logical_bytes": 1578032179
+    },
+    {
+      "path": ".runtime/song-publication/precision-recovery-final",
+      "files": 2430,
+      "logical_bytes": 1523541473
+    },
+    {
+      "path": ".runtime/song-publication/review",
+      "files": 1414,
+      "logical_bytes": 1693378389
+    },
+    {
+      "path": ".runtime/song-publication/prepared-v1.json",
+      "files": 1,
+      "logical_bytes": 1740866
+    },
+    {
+      "path": ".runtime/song-publication/verification-initial.json",
+      "files": 1,
+      "logical_bytes": 5370
+    },
+    {
+      "path": ".runtime/generation/publications/songs-model-preflight-01",
+      "files": 3,
+      "logical_bytes": 326003404
+    },
+    {
+      "path": ".runtime/generation/publications/songs-model-preflight-resumed",
+      "files": 3,
+      "logical_bytes": 345299661
+    },
+    {
+      "path": ".runtime/generation/publications/songs-model-apply-01/rehearsal.sqlite3",
+      "files": 1,
+      "logical_bytes": 182296576
+    }
+  ],
+  "deleted_files": 9482,
+  "logical_bytes_removed": 8484895354,
+  "all_deleted_paths_absent": true,
+  "retained": {
+    "publication_backup_and_receipts": ".runtime/generation/publications/songs-model-apply-01",
+    "purpose": "accurate publication audit and forward recovery; never replace a live database",
+    "removal_condition": "after a newer validated recovery baseline supersedes these receipts and backups",
+    "diagnostic_logs": ".runtime/song-publication/*.log",
+    "worktree_and_branch": "retained while this session uses it; remove worktree via Git after session exit, retain branch and commits"
+  },
+  "formal_database_and_media_deleted": false,
+  "other_task_resources_deleted": false
+}

@@ -1,6 +1,6 @@
 # 四首歌曲正式入口增量入库
 
-本次将已归档的歌曲制作成果适配当前正式审阅台的完整素材版本结构。范围是四首歌的全部既有录音及其准确历史：76 个歌曲对象（16 个更新、60 个新增）、142 个修订、640 条依赖、14 条真实评论、89 份受管文件。没有再次生成，也没有接受音频质量或修改正式剧本。
+2026-10-05 已完成正式 3000 增量入库，将已归档的歌曲制作成果适配当前正式审阅台的完整素材版本结构。范围是四首歌的全部既有录音及其准确历史：76 个歌曲对象（16 个更新、60 个新增）、142 个修订、640 条依赖、14 条真实评论、89 份受管文件。没有再次生成，也没有接受音频质量或修改正式剧本。
 
 ## 从正式入口试听
 
@@ -32,4 +32,24 @@
 
 执行回执和恢复备份留在本次独立工作区 `.runtime/generation/publications/`。包的事务记录位于正式库 `generation_publications`；外部回执丢失可使用同一准确包与新运行名恢复，不能把旧备份覆盖正式库。输入发生冲突时重新构建增量，保留其他任务的新数据。
 
-本次正式执行与页面验收结果将在执行后收敛到本目录；没有执行结果时，不将隔离验证写成正式入库完成。
+[正式执行回执](applied.json)与[正式数据回读](formal-verification.json)确认候选与正式库全部业务表一致，原有271条评论、300条事件及无关数据保持不变，入库后共285条评论、314条事件。[真实 Chrome 验收](browser-verification.json)已在3000歌曲分类中切换全部10个录音版本，确认播放器和时长，实际静音播放《三道滩》版本3并暂停；回读《明月还乡》的3条历史评论，没有创建测试意见。播放与页面检查不构成音质接受。
+
+正式已有录音的直接链接：
+
+- [三道滩 · 版本3](http://127.0.0.1:3000/?workspace=settings.workspace&production_tab=entities&breakdown_episode=screenplay-04-lantern-home-e01&breakdown_scene=preparation-s001&production_entity=entity-boat-song&entity_state=form-boat-song-independent&production_object=asset-songs-boat-full&production_revision=72894b94e4ae68720ae08df802fa0c13843dfafa07fc8c2d0ab400fe0fb94ced&material_id=need-form-boat-song-independent-overall&material_version=3)
+- [送青篷 · 版本3](http://127.0.0.1:3000/?workspace=settings.workspace&production_tab=entities&breakdown_episode=screenplay-04-lantern-home-e01&breakdown_scene=preparation-s001&production_entity=entity-blue-awning-song&entity_state=form-blue-awning-song-independent&production_object=asset-songs-blue-awning-full&production_revision=be7f9844f1058839ce2d6853b8d42214df1ab53ce2d1c56d64f5b75c5c9b71b9&material_id=need-form-blue-awning-song-independent-overall&material_version=3)
+- [四邻安 · 版本2](http://127.0.0.1:3000/?workspace=settings.workspace&production_tab=entities&breakdown_episode=screenplay-04-lantern-home-e01&breakdown_scene=preparation-s001&production_entity=entity-snake-welcome-song&entity_state=form-welcome-song-independent&production_object=asset-songs-welcome-full&production_revision=4c5e0f44701a7b4723a8f56f5b0cdc9864d5e347f0a8ce7ffc080d48a53fd446&material_id=need-form-welcome-song-independent-overall&material_version=2)
+- [明月还乡 · 版本2](http://127.0.0.1:3000/?workspace=settings.workspace&production_tab=entities&breakdown_episode=screenplay-04-lantern-home-e01&breakdown_scene=preparation-s001&production_entity=entity-blessing-stage-song&entity_state=form-blessing-song-independent&production_object=asset-songs-blessing-full&production_revision=4e3a28d1f3cf1c5a0ef9a6b57d80346c860a845e5a5a688af43e661131ad8d40&material_id=need-form-blessing-song-independent-overall&material_version=2)
+
+
+## 完整导出恢复
+
+当前系统的普通恢复器会拒绝两条旧WAV调用约0.167微秒的时间舍入差。使用 `scripts/recover_song_publication.py --system 兼容系统目录 --destination 本工作区.runtime内新目录 --candidate 待比较的准确数据库副本` 恢复本次Schema 6导出；仅核对并处理增量包中两条准确历史调用的校验视图，不改数据或系统代码。校验依据包括原件SHA-256、实际PCM帧数、准确输入组件及完整历史payload。其他输入仍按原恢复器校验。
+
+[恢复结果](recovery-verification.json)确认22张业务表与候选全部一致，含6296个对象、10302个修订、285条评论和314条事件；历史payload没有变化。旧 `production_review.py recover` 先展开历史replay，本轮进程被系统终止，未记为通过；本Schema 6恢复入口直接使用完整导出，避免依赖旧replay。
+
+## 本次过程资源清理
+
+[清理回执](cleanup.json)确认删除本次隔离测试、重复预检、恢复与审阅副本及旧中间包，共9482个文件、8484895354字节逻辑大小；所有指定路径已回读不存在。没有本次仍运行的预览进程或容器，正式服务挂载不指向本次工作区。正式库、原件及其他任务资源没有删除。
+
+本机仅保留 `songs-model-apply-01` 的准确发布前后数据库和事务回执，供发布追溯与向前恢复；较新的有效恢复基线取代后才能移除。少量诊断日志保留用于解释普通恢复器的旧时长兼容问题。当前会话仍使用工作区，退出后可经Git工作区管理清理，分支和提交保留。三份歌曲脚本用于复现准确适配、校验及历史精度恢复，属于交付入口，不是遗留试验脚本。
