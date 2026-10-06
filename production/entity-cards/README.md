@@ -19,7 +19,7 @@
 | 素材小卡总量 | 底部为“版本 N 个 · 候选 M 个”，移除小卡有无结果汇总；版本包括无候选方案，候选按准确版本内候选身份去重后汇总。M822 为 2版／1候选，最新 V2 未生成，浏览 V1 和 V2 不改变总量；M1089 为 3版／2候选。隔离 M001 为 2版／2候选，V1／C2、多个原文件组成和修订不多算；M002 为 1版／0候选；旧独立素材 M003 明确未登记并可读原件。[边界页面](evidence/material-boundaries.jpg)。失败调用不增候选另有自动校验。 |
 | 所选位置与总量分开 | 镜头槽的小卡显示总数，同时保留原 `Vn Cn` 所选位置和准确引用；槽位读投影增补两个总量字段，未执行 1009 专项重排或补关联。真实 SH001／M010 为 1版／0候选、所选 V1／C_，可打开准确方案，浏览不保存引用。[窄屏镜头引用](evidence/shot-reference-narrow.jpg)。 |
 | 共用入口和阅读恢复 | 实体管理、素材管理、制作拆解、镜头制作、左侧状态素材、无归属素材及引用叠层均实际操作。左侧底部只切同卡右侧，普通小卡开准确大卡。桌面／窄屏、长名称、真实缩略图、第二页返回、筛选／行数以及草稿保留均核对。[窄屏素材](evidence/materials-narrow.jpg)、[浏览器记录](evidence/browser.json)。 |
-| 数据保全和边界 | 预览使用正式库一致性副本，真实数据浏览没有提交评论、采纳、采用或生成。31 张业务表逐行摘要不变，[预览保全](evidence/preview-conservation.json)。采纳测试与离线文件组成仅在单独夹具，不进入发布。无模型调用、无新媒体原件、无历史清理、无任务快照覆盖正式库。正式保全由发布回执再次核对。 |
+| 数据保全和边界 | 预览使用正式库一致性副本，真实数据浏览没有提交评论、采纳、采用或生成。32 张业务表逐行摘要不变，[预览保全](evidence/preview-conservation.json)。采纳测试与离线文件组成仅在单独夹具，不进入发布。无模型调用、无新媒体原件、无历史清理、无任务快照覆盖正式库。正式保全由发布回执再次核对。 |
 
 浏览器为已连接 Chrome。桌面记录使用 1440×900，窄屏 390×844；每项尺寸以记录中的 DOM 回读为准。离线夹具的场源缺少完整剧本数据，不用它证明来源阅读；来源能力用真实 E05／S010 独立验证。Python 318 项、JavaScript 655 项及故事发布守卫 16 项通过，[检查摘要](evidence/tests.json)。自动检查不能替代上述真实操作。
 
@@ -36,10 +36,10 @@
 用户 `--auto` 已授权本任务自行验收及双仓交付、正式服务切换和普通推送；不表示用户接受作品或素材。正式库仍为主项目 `.runtime/review.sqlite3`，入口为 `http://127.0.0.1:3000/`。本次代码发布的业务增量为 0。
 
 1. 在系统任务 worktree 提交候选并锁定故事配置；故事提交后运行 `codex.project task _prepare_integration -g creative -p SnakeSlayingRecord --task task-20261006-0002 --push`。核对准确候选、main 目标及唯一 upstream；候选变化重新准备并补验影响范围。
-2. 在故事任务目录运行 `python3 scripts/material_review_release.py prepare --task task-20261006-0002 --push-system --system-worktree .runtime/entity-cards/system --bundle .runtime/entity-cards/release --story-candidate <准确SHA> --story-target <准确SHA> --system-candidate <计划candidate> --system-target <计划expected_target>`，再按同包执行 `build`、`preflight`。包冻结源码、配置、正式容器身份、原运行挂载及两个摘要，不导入数据。
-3. 候选验收后使用任务 `_deliver` 完成故事受控集成和普通推送。随后 `material_review_release.py apply --bundle .runtime/entity-cards/release --apply --manifest-sha256 <manifest摘要> --image-receipt-sha256 <image回执摘要>` 在共享锁内核对漂移，受控快进系统 main，切换准确镜像和只读配置挂载，并核对全库历史保留。正式数据库和原件保持活库挂载。
-4. Chrome 在正式 3000 实际验收关系选择／缩放、实体状态、两类小卡和共用入口；核对实际镜像与配置 pin。通过后按同包 `publish-system` 带两个摘要及 `--apply` 普通推送，回读远端。实际回执保存在本任务 `.runtime/entity-cards/release/run/` 与主账本，不能在已交付候选中补日志。
+2. 在故事任务目录运行 `python3 scripts/material_review_release.py prepare --task task-20261006-0002 --push-system --system-worktree .runtime/entity-cards/system --bundle .runtime/entity-cards/release-final --story-candidate <准确SHA> --story-target <准确SHA> --system-candidate <计划candidate> --system-target <计划expected_target>`，再按同包执行 `build`、`preflight`。包冻结源码、配置、正式容器身份、原运行挂载及两个摘要，不导入数据。
+3. 候选验收后使用任务 `_deliver` 完成故事受控集成和普通推送。随后 `material_review_release.py apply --bundle .runtime/entity-cards/release-final --apply --manifest-sha256 <manifest摘要> --image-receipt-sha256 <image回执摘要>` 在共享锁内核对漂移，受控快进系统 main，切换准确镜像和只读配置挂载，并核对全库历史保留。正式数据库和原件保持活库挂载。
+4. Chrome 在正式 3000 实际验收关系选择／缩放、实体状态、两类小卡和共用入口；核对实际镜像与配置 pin。通过后按同包 `publish-system` 带两个摘要及 `--apply` 普通推送，回读远端。实际回执保存在本任务 `.runtime/entity-cards/release-final/run/` 与主账本，不能在已交付候选中补日志。
 5. 清理本任务无效预览、旧夹具、对照工作区、测试缓存和重复运行文件；按实际 PID、路径及用途核对，回读无监听、资源归属与删除数量。保留系统任务工作区和分支、冻结包、必要验收证据及正式一致性备份，用于准确追溯和代码恢复；工作区锁待当前 TUI 退出后另由 `codex.project task cleanup` 退役。实际删除、占用原因及下一步见 `release/run/cleanup-final.json`。
 6. 全部实际完成后才调用任务 `_complete`，成功后停止文件写入，保持本 TUI；不能把 Git 成功当成部署或页面验收成功。
 
-切换失败可从同一冻结包继续 `apply`；需要恢复代码时用同包 `recover` 带两个准确摘要及 `--apply`，只恢复上一镜像与配置挂载，不重置 Git、不覆盖数据库。正式服务不可变目录位于主项目 `.runtime/service-releases/entity-cards-20261006-0002-<故事短SHA>-<系统短SHA>/`，用于准确重启与恢复。数据恢复仍沿实体大卡第二版的净化 Schema 7 包向前进行，不能恢复已清理的历史正文。
+初次冻结包 `.runtime/entity-cards/release/` 保留本任务前正式代码的恢复身份；文档修订后的准确发布包为 `release-final/`。切换失败可从对应冻结包继续 `apply`；需要恢复代码时用同包 `recover` 带两个准确摘要及 `--apply`，只恢复上一镜像与配置挂载，不重置 Git、不覆盖数据库。正式服务不可变目录位于主项目 `.runtime/service-releases/entity-cards-20261006-0002-<故事短SHA>-<系统短SHA>/`，用于准确重启与恢复。数据恢复仍沿实体大卡第二版的净化 Schema 7 包向前进行，不能恢复已清理的历史正文。
