@@ -37,4 +37,4 @@
 
 - 镜头制作任务保留故事／系统 worktree、分支与冻结发布包，供准确追溯及恢复；正式验收后停止隔离预览并清理无效库与夹具，实际删除及回读读取本任务 `.runtime/shot-production/release/run/cleanup-final.json`。待 TUI 退出释放锁后再由受管清理入口退役 worktree。
 
-- 实体大卡第二版任务保留双仓 worktree、分支、冻结发布包和净化恢复入口，用于准确追溯与向前恢复；实际过程资源清理读取本任务 `.runtime/entity-card-v2/release/run/cleanup-final.json`。旧库、浏览器夹具及重复预览在正式验收后核对清除，worktree 退役待 TUI 退出释放锁后另走受管入口。
+- 实体大卡第二版任务保留双仓 worktree、分支、冻结发布包和净化恢复入口，用于准确追溯与向前恢复；实际过程资源清理读取本任务 `.runtime/entity-card-v2/release-final/run/cleanup-final.json`。旧库、浏览器夹具及重复预览在正式验收后核对清除，worktree 退役待 TUI 退出释放锁后另走受管入口。

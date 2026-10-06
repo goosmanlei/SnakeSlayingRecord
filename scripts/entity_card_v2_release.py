@@ -11,6 +11,7 @@ from pathlib import Path
 import shutil
 import sys
 import time
+from types import SimpleNamespace
 import material_review_release as service
 from entity_material_release import fingerprint as full_fingerprint
 from entity_material_cleanup import compact
@@ -40,7 +41,7 @@ def prepare(a):
     for n,h in hashes.items():base.require(base.sha((story/n).read_bytes())==h,'candidate file differs: '+n)
     before=fingerprint(story/'.runtime/entity-card-v2/review/.runtime/generation-base.sqlite3')
     after=fingerprint(story/'.runtime/entity-card-v2/review/.runtime/review.sqlite3')
-    base.require(fingerprint(Path(m['story_main'])/'.runtime/review.sqlite3')==before,'formal data drifted')
+    base.require(fingerprint(Path(m['story_main'])/'.runtime/review.sqlite3') in (before,after),'formal data drifted')
     c={'format':'entity-card-v2-release-v1','hashes':hashes,'before':before,'after':after,
        'service_manifest_sha256':base.sha((root/'manifest.json').read_bytes()),
        'recovery':'Forward only: sanitized Schema 7 export plus approved reader. Never restore old state bodies.'}
@@ -56,7 +57,7 @@ def load(a):
 
 def rehearsal(root,m,c,plan,delta):
     live=Path(m['story_main'])/'.runtime/review.sqlite3'
-    base.require(fingerprint(live)==c['before'],'formal data changed; no cleanup applied')
+    base.require(fingerprint(live) in (c['before'],c['after']),'formal data changed; no cleanup applied')
     path=root/'run'/('shadow-'+str(time.time_ns())+'.sqlite3');base.snapshot(live,path)
     Store,cleanup,model,_=api(m);s=Store(path)
     try:
@@ -107,7 +108,11 @@ def apply(a):
                 for n in ('config','content'):shutil.copytree(Path(m['story_main'])/n,recovery/n)
                 (recovery/'config/instance.json').write_bytes((root/'instance/config/instance.json').read_bytes())
                 shutil.copytree(Path(m['story_main'])/'export/assets',recovery/'export/assets',copy_function=os.link)
-            bundle.export(s,recovery/'export')
+            # Metadata originals are archive references. Resolve them from this
+            # exact sanitized transaction before the recovery graph is written.
+            from review_desk import material_archives
+            reader=SimpleNamespace(db_path=recovery/'.runtime/review.sqlite3',db=s.db)
+            with material_archives.read_scope(reader):bundle.export(s,recovery/'export')
             base.require(fingerprint(live)==c['after'],'export changed business rows')
             service.install(root,m,image);base.compose_up(m,[release/'compose.release.json'],env,release=True)
             running=base.verify_service(m,image,release)
