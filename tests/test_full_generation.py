@@ -13,43 +13,60 @@ from register_full_generation import image_spec
 
 
 def current_rows():
-    data = read_framework(ROOT / 'export/objects.json')
+    data = read_framework(ROOT / 'export/objects.json',current_only=True,
+                          kinds={'ENTITY','STATE','REQUIREMENT','STORY','SOURCE','EPISODE','INPUT_LOCK'})
     revisions = {r['id']: r for r in data['revisions']}
     return [{**o, 'payload': json.loads(revisions[o['current_revision']]['payload'])} for o in data['objects']]
 
 
 class FullGenerationTest(unittest.TestCase):
     def setUp(self):
+        if self._testMethodName in ('test_native_size_policy_does_not_rewrite_old_requirement',
+                                   'test_registered_actual_inputs_and_originals_match_saved_requests'):return
         self.rows = current_rows(); self.by = {r['id']: r for r in self.rows}
 
     def test_scope_and_reference_dependencies_exclude_non_image_states(self):
         # This planner intentionally guards the approved task-20261002-0003
         # scope. Replay its exact saved heads; newer story states are not an
         # authorization to expand that historical generation batch.
-        data = read_framework(ROOT / 'export/objects.json')
-        revisions = {r['id']: r for r in data['revisions']}
         heads = read_json(ROOT / 'production/full-generation/source-lock.json')['formal_heads']
-        rows = [{**self.by[h['object_id']], 'current_revision':h['revision_id'],
+        data = read_framework(ROOT / 'export/objects.json',revision_ids=[h['revision_id'] for h in heads])
+        revisions = {r['id']: r for r in data['revisions']}
+        objects={o['id']:o for o in data['objects']}
+        rows = [{**objects[h['object_id']], 'kind':h['kind'], 'current_revision':h['revision_id'],
                  'current_version':h['version'], 'payload':json.loads(revisions[h['revision_id']]['payload'])}
                 for h in heads]
         by = {r['id']: r for r in rows}
-        images, states = prep.image_plans(rows, by)
+        # Four withdrawn bandage states have been physically cleaned by the
+        # entity-card-v2 delivery. Their exact historical references now resolve
+        # to deletion receipts, not definitions that may be regenerated.
+        with self.assertRaisesRegex(AssertionError, 'scope changed'):
+            prep.image_plans(rows, by)
+        amendment = read_json(ROOT / 'production/full-generation/scope-amendment.json')
+        withdrawn = {item['old']['object_id'] for item in amendment['state_mapping']}
+        self.assertEqual(withdrawn, {'form-bandage-base','form-bandage-head','form-bandage-blood','form-bandage-new'})
+        for oid in withdrawn:
+            self.assertEqual(by[oid]['payload']['format'], 'state-cleanup-receipt-v1')
+        states = [r for r in rows if r['kind']=='STATE' and r['payload'].get('state_model')=='complete-v1']
+        images = [r for r in states if r['payload']['reference_media']=='image'
+                  and by[r['payload']['entity']['object_id']]['payload']['entity_type']!='song']
+        self.assertEqual(len(states), 263)
+        self.assertEqual(len(images), amendment['after_image_count'])
         self.assertEqual(len(images), 251)
-        self.assertEqual(len({i['state']['object_id'] for i in images}), 251)
-        self.assertEqual(sum(i['is_baseline'] for i in images), 125)
         excluded = {s['id'] for s in states} - {i['id'] for i in images}
-        self.assertEqual(len(excluded), 16)
+        self.assertEqual(len(excluded), 12)
         self.assertTrue({'form-offscreen-caller-base','form-stage-drum-audible','form-xiao-man-base','form-xu-bride-base'} <= excluded)
-        self.assertTrue({'form-bandage-base','form-bandage-head','form-bandage-blood','form-bandage-new'} <= excluded)
-        original,_=prep.image_plans(rows,by,apply_scope_amendment=False)
-        self.assertEqual({i['id'] for i in original}-{i['id'] for i in images},
-                         {'form-bandage-base','form-bandage-head','form-bandage-blood','form-bandage-new'})
-        for i in images:
-            self.assertEqual(bool(i['generation']['inputs']), not i['is_baseline'])
-            if not i['is_baseline']:
-                self.assertEqual(i['execution']['binding_status'], 'pending_approved_master')
-                self.assertTrue(i['generation']['blockers'])
-                self.assertEqual(i['generation']['inputs'][0]['reference']['object_id'], 'need-'+i['baseline_state']['object_id']+'-overall')
+        self.assertTrue(withdrawn.isdisjoint({r['id'] for r in states}))
+        baseline_count=0
+        for state in images:
+            key=state['payload']['entity']['object_id'][7:]
+            baseline='form-'+key+'-'+prep.BASE_KEYS.get(key,'base')
+            self.assertIn(baseline, by)
+            self.assertIn('need-'+state['id']+'-overall', by)
+            self.assertIn('need-'+baseline+'-overall', by)
+            baseline_count += state['id']==baseline
+        self.assertEqual(baseline_count, amendment['after_image_baselines'])
+        self.assertEqual(baseline_count,125)
 
     def test_scope_or_screenplay_drift_fails_before_generation(self):
         locked = read_json(ROOT / 'production/full-generation/source-lock.json')

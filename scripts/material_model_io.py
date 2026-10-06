@@ -74,12 +74,27 @@ def logical_size(path):
     return path.stat().st_size
 
 
-def read_framework(path):
-    """Read logical revisions from either legacy JSON or a Schema 6 export."""
-    path=Path(path);value=read_json(path)
+def read_framework(path, *, current_only=False, revision_ids=None, kinds=None):
+    """Read logical revisions from either legacy JSON or a Schema 6 export.
+
+    current_only / revision_ids project just objects and selected revisions;
+    other export tables are omitted and unselected revision bodies are not hydrated.
+    """
+    path=Path(path)
+    if current_only or revision_ids is not None:
+        members=backend('material_content_stream').members
+        objects=[o for o in members(path,'objects') if kinds is None or o['kind'] in kinds]
+        wanted=set(revision_ids or ())
+        if current_only:wanted.update(o['current_revision'] for o in objects)
+        value={'objects':objects,'revisions':[row for row in members(path,'revisions') if row['id'] in wanted]}
+    else:
+        value=read_json(path)
+        if kinds is not None:value['objects']=[o for o in value['objects'] if o['kind'] in kinds]
     if not any('"_material_fields"' in row.get('payload','') for row in value.get('revisions',[])):return value
     storage=backend('material_storage');resolve=backend('material_archives').resolver(path)
     try:
-        for row in value['revisions']:row['payload']=storage.hydrate(None,row['payload'],resolve)
+        for row in value['revisions']:
+            row['payload']=storage.hydrate(None,row['payload'],resolve)
+            resolve.clear()
         return value
     finally:resolve.close()
