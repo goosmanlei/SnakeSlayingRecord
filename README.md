@@ -75,7 +75,7 @@ REVIEW_DESK_BUILD_CONTEXT="$production_system" docker compose up -d --build
 
 ## 站点图标
 
-“系统管理 → 系统配置 → 系统与 AI”可上传、选择和替换图标；点“清空，恢复默认”并保存可恢复书页图标。当前设计为屋檐护着灯火，源 SVG、ICO 和 PNG 在 `export/assets/`，16／32 像素深浅背景预览在[图标设计](design/favicon/README.md)。配置与当前源 SVG 随清单校验和空库恢复；Git 另保留派生文件与渲染脚本。图样已于 2026-09-30 获用户认可。操作、候选应用与浏览器限制见[交付记录](planning/favicon-delivery.md)。
+“系统管理 → 系统与 AI”可上传、选择和替换图标；点“恢复默认图标”并保存可恢复书页图标。当前图标与待保存预览分开，上传成功只登记文件，保存配置后才应用。当前设计为屋檐护着灯火，源 SVG、ICO 和 PNG 在 `export/assets/`，16／32 像素深浅背景预览在[图标设计](design/favicon/README.md)。配置与当前源 SVG 随清单校验和空库恢复；Git 另保留派生文件与渲染脚本。图样已于 2026-09-30 获用户认可。设计交付见[原交付记录](planning/favicon-delivery.md)，最新界面与实际验收边界见[全站视觉候选](production/system-page-style/README.md)。
 
 ## Codex 读取与公开同步
 

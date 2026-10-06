@@ -1,0 +1,47 @@
+{
+  "task": "task-20261005-0006",
+  "phase": "pending-upload-browser-acceptance",
+  "deleted_files": 1,
+  "deleted_bytes": 66799,
+  "deleted": [
+    {
+      "path": ".runtime/system-page-style/node-tests.log",
+      "bytes": 66799,
+      "sha256": "5fb954225ba1bf3b0fd348f7b361f1759396c20912f3309e3efc5579c19927fc",
+      "reason": "Superseded 646-test frontend log; final 648-test log retained."
+    }
+  ],
+  "readback_absent": true,
+  "containers_deleted": 0,
+  "images_deleted": 0,
+  "task_container_and_image_query": "no matching system-page-style-20261005-0006 resources",
+  "retained": [
+    {
+      "path": ".runtime/system-page-style/system",
+      "purpose": "Isolated system commit and source; retain until TUI lock release and controlled worktree cleanup."
+    },
+    {
+      "path": ".runtime/system-page-style/review",
+      "purpose": "Isolated live visual candidate and remaining upload verification; discard after acceptance and formal release, never publish its test configuration/comments."
+    },
+    {
+      "path": ".runtime/system-page-style/fixtures",
+      "purpose": "Three local file-upload fixtures for pending actual chooser tests."
+    },
+    {
+      "path": ".runtime/system-page-style/fault_proxy.py",
+      "purpose": "Local upload/save failure validation; stop 62661 and remove after remaining tests."
+    },
+    {
+      "path": ".runtime/system-page-style/*-tests*.log and proxy.log",
+      "purpose": "Necessary automatic and real save-fault evidence; archive summary and retain until release/recovery no longer needs these receipts."
+    }
+  ],
+  "service_ports": [
+    62660,
+    62661
+  ],
+  "cleanup_complete": false,
+  "remaining_owner": "task-20261005-0006 executing agent",
+  "next": "Resume upload browser tests after Chrome permission; formal acceptance then stop services and remove obsolete task process resources by exact path."
+}
