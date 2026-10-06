@@ -22,6 +22,8 @@
 
 [正式入口](http://127.0.0.1:3000/)的首页、旧链接、双 Tab、桌面与窄屏历史验收，以及当时的隔离预览与数据恢复证据见[交付记录](planning/production-approach-delivery.md)；历史预览地址不作为当前入口。恢复实例时同时保留 `config/`、`content/` 与 `export/`；方法文档不写业务数据库，无数据迁移。
 
+实体／素材管理正文使用三列共用小卡、准确集场筛选和分组行分页；点击通过弹窗审阅，大卡左侧素材列表只切换同卡右侧。读取来源、计数口径、全部入口及真实桌面／窄屏证据见[小卡交付](production/small-cards/README.md)。正式运行身份与完成回执见 [STATE.md](STATE.md) 和主项目任务账本。
+
 两个方法 Tab 的章节目录在桌面常驻左侧，沿用故事创作页的浅色阅读栏与章节高亮；点击可定位，滚动时更新当前章。窄屏目录常驻正文上方、可横向滚动，章节链接支持刷新与浏览器前进／后退。
 
 方法正文按两个用途组织：故事创作沉淀资料、结构、逐步写作、审阅回修和剧本改编的实际经验；生产制作以版本四全剧抽取、第一集 33 镜、实际候选及精确采用为依据，说明已实践能力与后续素材、动态分镜、工程审阅安排。完整成果、设计契约、隔离审阅入口及恢复操作见 [production/README.md](production/README.md)。此前制作审阅改进的正式验收见 [制作审阅验证](production/review-ui-verification.md)。当前候选由实例配置固定，实际正式运行、待确认项与发布边界以 [STATE.md](STATE.md) 为准。
@@ -65,7 +67,7 @@ test "$(git -C "$production_system" rev-parse HEAD)" = "$required_system"
 REVIEW_DESK_BUILD_CONTEXT="$production_system" docker compose up -d --build
 ```
 
-已有运行数据库时跳过 `restore`，不可用快照覆盖活库。`export/` 是受管交付快照，不保证随正式数据库自动更新；当前 Schema 6 保存完整素材定义、方案版本／候选、旧轮次、准确修订、评论与原件清单，契约见 [素材模型交付](production/ui-material-model/data-contract.md)。当前歌曲导出包含两条旧 WAV 时长舍入差，恢复须使用 [歌曲恢复入口](production/song-publication/README.md)中的 `scripts/recover_song_publication.py`，不能直接套用普通恢复命令。迁移实例同时保留 `config/` 与 `content/`；当前活库与正式发布入口见 [STATE.md](STATE.md)。已有正式容器的恢复／重启使用对应发布入口，新交付按其已确认发布包切换，避免用普通构建覆盖仍生效的准确挂载。
+已有运行数据库时跳过 `restore`，不可用快照覆盖活库。`export/` 是受管交付快照，不保证随正式数据库自动更新；当前 Schema 7 保存完整素材定义、方案版本／候选、旧轮次、准确修订、评论与原件清单，并保留业务编号和关系旧说明清理凭据，契约见 [素材模型交付](production/ui-material-model/data-contract.md)及[大卡交付](production/entity-material/README.md)。当前歌曲导出包含两条旧 WAV 时长舍入差，恢复须使用 [歌曲恢复入口](production/song-publication/README.md)中的 `scripts/recover_song_publication.py`，不能直接套用普通恢复命令。迁移实例同时保留 `config/` 与 `content/`；当前活库与正式发布入口见 [STATE.md](STATE.md)。已有正式容器的恢复／重启使用对应发布入口，新交付按其已确认发布包切换，避免用普通构建覆盖仍生效的准确挂载。
 
 打开 [本机审阅台](http://127.0.0.1:3000/)：Nginx 长期运行在 Docker 容器 3000 端口并代理容器内 Python 服务；Nginx 镜像与通用代理规则由审阅台仓库维护，故事仓库只保留实例 Compose 配置。主机仅绑定 `127.0.0.1:3000`。`docker compose ps` 检查状态，`docker compose restart` 重启；`restart: unless-stopped` 保证 Docker 恢复时服务随之恢复。已有 `.runtime/review.sqlite3` 时跳过 `restore`。本机当前系统源码目录名是 `story-review-desk-python`，若在此目录运行，构建命令需加 `REVIEW_DESK_BUILD_CONTEXT=../story-review-desk-python`；公开克隆默认目录名为 `story-review-desk`，无需该变量。不要把 3000 端口转发到公网，本服务没有公网鉴权。
 
