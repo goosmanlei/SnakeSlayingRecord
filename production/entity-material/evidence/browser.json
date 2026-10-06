@@ -1,0 +1,123 @@
+{
+  "format": "entity-material-browser-acceptance-v1",
+  "browser": "connected Chrome",
+  "instance": ".runtime/entity-material/review for reversible decisions/comments; clean delivery for final reads",
+  "base_url": "http://127.0.0.1:62179/",
+  "viewports": [
+    [
+      2166,
+      546
+    ],
+    [
+      390,
+      844
+    ]
+  ],
+  "formal_data_written": false,
+  "cases": [
+    {
+      "case": "entity and state title/versions/evidence",
+      "result": "passed",
+      "observed": "EN002 role in title; entity/state versions 1/2 default 2; accurate entity v1 refresh remains v1; framed collapsed evidence; ST092 selection matches content and materials; state evidence and 13 E02 shots share two Tabs, no outer jump; fresh entity URL with explicit ST092 and no redundant owner parameter retains ST092"
+    },
+    {
+      "case": "Aheng acceptance",
+      "result": "passed",
+      "observed": "isolated accept -> revoke -> accept; current entity stays actionable while older material plan is read; accurate historical entity/state remains read-only; no test decision enters delivery/export"
+    },
+    {
+      "case": "last generated material version",
+      "result": "passed",
+      "observed": "wet Aheng v1 has candidate, v2 empty; normal entry chooses v1/candidate1; manually choosing v2 shows only its plan with no candidate row, refresh retains v2; returning v1 restores its actual call"
+    },
+    {
+      "case": "self review and exact inputs",
+      "result": "passed",
+      "observed": "wet Aheng candidate shows generation result self-review heading; actual ST092 v2 input opens exact state; M1133 original image crop opens actual original and source; image order retained",
+      "screenshot": "self-review.jpg"
+    },
+    {
+      "case": "actual image crop",
+      "result": "passed",
+      "screenshot": "exact-input-crop.jpg"
+    },
+    {
+      "case": "relationship source",
+      "result": "passed",
+      "observed": "RL055 E03/S005 opens screenplay version 4 and six exact blocks including 不住进去 and 补不齐的词; source closes to graph without losing lower context"
+    },
+    {
+      "case": "simple/complex/long-name relation graph",
+      "result": "passed",
+      "observed": "送青篷 and 三道滩 simple graphs; Aheng 26 direct relationships; current node and primary relationships initially visible; direction/label/source retained; ArrowRight pans 80; square 542 desktop/312 narrow; resize preserves logical center; no horizontal page overflow",
+      "screenshot": "narrow-graph.jpg"
+    },
+    {
+      "case": "nested entity return",
+      "result": "passed",
+      "observed": "double-click LiJi, Enter LiDan, close two entity layers restores Aheng ST092 candidate1 and lower outer scroll position"
+    },
+    {
+      "case": "system prefix explanation",
+      "result": "passed",
+      "observed": "system management prefix page renders all 16 type/prefix/example/scope rows from same API catalog",
+      "screenshot": "code-prefixes.jpg"
+    },
+    {
+      "case": "breakdown shared card",
+      "result": "passed",
+      "observed": "M822 ordinary small-card/modal entry selects generated v1 even with empty newer v2; exact links remain exact"
+    },
+    {
+      "case": "comments and keyboard",
+      "result": "passed",
+      "observed": "review-only C286 whole-image create/edit using Command+Enter; Escape cancels pending edit; C287 drag circle on actual 225x300 image then save and locate original highlighted crop; delivery remains 285 original comments",
+      "screenshot": "comment-circle.jpg"
+    },
+    {
+      "case": "material management shared identity",
+      "result": "passed",
+      "observed": "search Aheng opens common full entity/material card; final read of shared song shows M841 header and M841/MV001/MC001 matching selected small card; old raw candidate identity retained"
+    },
+    {
+      "case": "audio original playback",
+      "result": "passed",
+      "observed": "actual M001 Aheng voice opens exact a041 original WAV, plays with advancing time and no media error"
+    },
+    {
+      "case": "historical audio range",
+      "result": "passed",
+      "observed": "asset-songs-aheng-boat-home exact d93ef93c opens M1212/MV001/MC001; actual input M1206 revision 99b0 opens 7.66..17.686979166666667 range; playback starts 7.66 and advances within range with no media error",
+      "screenshot": "exact-audio-range.jpg"
+    },
+    {
+      "case": "shot production reference",
+      "result": "passed",
+      "observed": "actual SH001 image1 M010 opens exact requirement revision c8a v6, historical ungenerated plan, original @images sequence; closing restores S001 without fallback candidate"
+    },
+    {
+      "case": "all-empty and multiple-candidate UI fixture",
+      "result": "passed",
+      "synthetic": true,
+      "observed": "two distinguishable WAV candidates in v1 plus empty v2: default v1/candidate2, manual v2 no candidate row, v1/candidate1 refresh stable; second wet-state material all ungenerated shows one version/no candidate row; fixture server stopped and files removed",
+      "screenshot": "multiple-candidates.jpg"
+    },
+    {
+      "case": "cleaned exact historical relationship link",
+      "result": "passed",
+      "observed": "relationship-a-heng-blue-awning-song-performance revision 96440a3e opens RL003 historical revision1 with explicit cleared notice, no new text masquerading as old; preserved E16/S039 source opens exact screenplay version4 blocks",
+      "screenshot": "old-relation.jpg"
+    },
+    {
+      "case": "final console",
+      "result": "passed",
+      "observed": "no captured Chrome error logs after final shared material read"
+    }
+  ],
+  "limitations": [
+    "Original reported network Failed to fetch was not reproduced; full 697-reference scan and representative UI opens pass, without inventing a network root cause.",
+    "No actual playable story video exists; existing automated preview tests cover video behavior, no live story-video acceptance is claimed.",
+    "Formal cleanup/deployment/3000 browser acceptance and remote pushes await final confirmation."
+  ],
+  "system_candidate": "0396791a7eaa552639f5a8cc124ea3e43e0aec43"
+}

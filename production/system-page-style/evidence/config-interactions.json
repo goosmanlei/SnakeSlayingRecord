@@ -1,0 +1,104 @@
+[
+  {
+    "action": "invalid inputs",
+    "chars": "999",
+    "current": "/assets/lantern-home-favicon.svg?v=78b9098fa86f978be424f44c5f72775bed286a0205ec7804d8c0c241df2703f2",
+    "env": "9BAD",
+    "icon": "lantern-home-favicon.png",
+    "invalid": [
+      "ai_polish_api_key_env",
+      "ai_context_max_chars"
+    ],
+    "pending": "/assets/lantern-home-favicon.png",
+    "status": "请修正标出的配置项；当前图标选择和其他输入已保留。"
+  },
+  {
+    "action": "saved selection and refresh",
+    "chars": "15555",
+    "current": "/assets/lantern-home-favicon.png?v=5cf1be0d7e6d690cebb14214cdc334bb58af7f46cf17230d51fa88242f3b7d17",
+    "env": "STYLE_TEST_KEY",
+    "icon": "lantern-home-favicon.png",
+    "tabIcon": "Chrome automation badge wraps the icon; saved preview URL recorded separately"
+  },
+  {
+    "action": "default saved and refresh",
+    "chars": "15555",
+    "env": "STYLE_TEST_KEY",
+    "icon": "",
+    "tabIcon": "Chrome automation badge wraps the icon; saved preview URL recorded separately"
+  },
+  {
+    "action": "save failure no write",
+    "chars": "16666",
+    "current": "/default-favicon.svg?v=b58aa2423929b1970c03192b4b767f40724602096ba7eecdca496db74a4c2b99",
+    "icon": "lantern-home-favicon.svg",
+    "status": "isolated test failure；尚未确认保存，当前输入已保留"
+  },
+  {
+    "action": "committed but response and readback lost",
+    "chars": "16666",
+    "icon": "lantern-home-favicon.svg",
+    "status": "isolated test failure；保存结果待确认，当前输入已保留"
+  },
+  {
+    "action": "refresh then reconcile unknown result",
+    "chars": "16666",
+    "icon": "lantern-home-favicon.svg",
+    "status": "系统与 AI 配置已保存并生效。",
+    "version": "配置版本 8 · Schema 4"
+  },
+  {
+    "action": "real concurrent 409",
+    "chars": "17777",
+    "icon": "lantern-home-favicon.ico",
+    "status": "本次保存未完成：配置版本已有变化。当前输入已保留，请核对最新配置后再保存。",
+    "version": "配置版本 7 · Schema 4"
+  },
+  {
+    "action": "conflict draft refresh",
+    "chars": "17777",
+    "icon": "lantern-home-favicon.ico",
+    "version": "配置版本 7 · Schema 4"
+  },
+  {
+    "action": "real pointer hover then keyboard selection",
+    "choices": [
+      {
+        "background": "rgb(255, 253, 250)",
+        "checked": false,
+        "hover": false,
+        "shadow": "none",
+        "text": "gpt-4.1-mini"
+      },
+      {
+        "background": "rgb(238, 238, 226)",
+        "checked": false,
+        "hover": true,
+        "shadow": "none",
+        "text": "gpt-5.4-mini"
+      },
+      {
+        "background": "rgb(228, 237, 223)",
+        "checked": true,
+        "hover": false,
+        "shadow": "rgb(123, 151, 117) 0px -2px 0px 0px inset",
+        "text": "gpt-5.6-luna"
+      },
+      {
+        "background": "rgb(255, 253, 250)",
+        "checked": false,
+        "hover": false,
+        "shadow": "none",
+        "text": "gpt-5.6-terra"
+      },
+      {
+        "background": "rgb(255, 253, 250)",
+        "checked": false,
+        "hover": false,
+        "shadow": "none",
+        "text": "gpt-5.6-sol"
+      }
+    ],
+    "focused": "ai_polish_model"
+  }
+]

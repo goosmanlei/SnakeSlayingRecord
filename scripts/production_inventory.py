@@ -213,7 +213,7 @@ def compile_inventory():
     def record(oid, kind, title, text, **fields):
         return {'object_id':oid, 'kind':kind, 'expected_version':0, 'payload':{
             'format':'production-'+kind.lower().replace('_','-')+'-v1', 'title':title,
-            'blocks':[{'id':'description','text':text}], **fields}}
+            'blocks':([{'id':'description','text':text}] if text else []), **fields}}
     records = [record('production-input-screenplay04','INPUT_LOCK','版本四制作输入',
         '用户已确认版本四定稿。本任务交付第一集正式镜头生成前的生产准备；画面为二维人物与轻手绘背景，动态分镜16:9。',
         screenplay={k:lock['screenplay'][k] for k in ('object_id','revision_id')},
@@ -285,7 +285,7 @@ def compile_inventory():
     compile_forms(records, appearances, entries, source, ref, record, scene_map)
     for sn,(number,ep,scene,blocks) in scene_map.items():
         records.append(record(f'preparation-s{sn:03d}','PREPARATION',scene['heading'],
-            f'已按版本四完整检查本场 {len(blocks)} 个正文块。画面、声音与仅提及分别登记；未指定造型作为制作选择审阅。',
+            '',
             source=source(sn), occurrences=appearances[sn], checked=True, state_model='complete-v1',
             notes='人物称谓只在有同人依据时合并；空间实体不等同于剧情场次。'))
     return {'format':'production-import-v1','records':records}
