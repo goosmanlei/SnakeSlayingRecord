@@ -7,7 +7,7 @@
 - 制作拆解、完整状态、素材版本与候选体系已交付；全剧首轮 251 个图像状态和 42 份新音色已有成果，逐项用户认可范围见 [素材交付](production/full-generation/README.md)及其认可记录。四首歌曲的 10 份整曲录音已增量发布到正式审阅入口，最新草稿与已有录音分开，见 [歌曲入口](production/song-publication/README.md)。这些成果不表示全部素材或音频质量已接受，也不表示动态分镜或成片已就绪。
 - 正式入口为 `http://127.0.0.1:3000/`，正式库为主目录 `.runtime/review.sqlite3`；运行身份从正式主目录的 `config/instance.json.review_desk_commit`、实际容器镜像与准确挂载回读。小卡任务已核对前置大卡任务 `task-20261005-0002` 完成及双仓集成，冻结时正式基线为 `.runtime/service-releases/entity-material-20261005-0002-f5fe99344395-0396791a7eaa/`。本工作区配置锁定交付候选；正式应用、页面验收和推送是否完成，以任务账本及对应发布回执为准。
 
-最近发布与验收回执位于 `.codex-project/worktrees/task-20261005-0001/.runtime/autonomous-optimization/delivery/`；任务完成及故事推送结果以主项目账本为准。[运行报告](planning/autonomous-optimization-run-report.md)与[交付说明](planning/autonomous-optimization-delivery.md)保留确认前的测量及操作背景，其“待确认”表述是历史时点，不代表当前任务未完成。
+自主优化任务的历史发布与验收回执位于 `.codex-project/worktrees/task-20261005-0001/.runtime/autonomous-optimization/delivery/`；任务完成及故事推送结果以主项目账本为准。[运行报告](planning/autonomous-optimization-run-report.md)与[交付说明](planning/autonomous-optimization-delivery.md)保留确认前的测量及操作背景，其“待确认”表述是历史时点，不代表当前任务未完成。小卡任务的实际发布与收尾回执沿下方交付入口读取。
 
 - 前置大卡、编号、引用与旧关系说明清理已正式交付；359 项状态归属与 34 份旧说明清理依据见[大卡交付包](production/entity-material/README.md)及任务账本。其确认前文档保留当时测量，不作为当前“待发布”状态。
 - 共用小卡、实体／素材管理三列分组分页、准确集场筛选和多层返回已在双仓隔离实例实现并真实验收。范围、来源、逐项证据、唯一系统候选及代码发布／恢复步骤见[小卡交付](production/small-cards/README.md)。本次不发布隔离测试评论、采纳或合成夹具，不迁移业务数据。
