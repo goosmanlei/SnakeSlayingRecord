@@ -1,0 +1,16 @@
+{
+  "item": "Browser favicon upload",
+  "status": "blocked",
+  "error": "To enable file upload, go to chrome://extensions in Google Chrome, click Details under the ChatGPT extension, and enable Allow access to file URLs. fileChooser.setFiles failed",
+  "native_fallback": "Computer Use server error -10005: cgWindowNotFound",
+  "not_passed": [
+    "valid upload and saved refresh",
+    "cancel file chooser",
+    "invalid file",
+    "over-limit file",
+    "upload failure retaining sibling inputs"
+  ],
+  "next": "User enables Allow access to file URLs for the ChatGPT Chrome extension; resume the same task and complete actual file-chooser tests.",
+  "safe_scope": "127.0.0.1:62660 and 62661 isolated instances only; no formal configuration changes",
+  "task_complete": false
+}
