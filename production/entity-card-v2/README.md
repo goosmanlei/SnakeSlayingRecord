@@ -36,11 +36,11 @@
 `--auto`授权本任务自行验收和依次交付，不表示用户接受任何作品或媒体。正式库是主项目`.runtime/review.sqlite3`，服务为3000；不得用隔离快照覆盖活库。候选、来源或数据发生变化时重新冻结并补验。
 
 1. 在各自任务工作区提交系统和故事候选，故事执行`codex.project task _prepare_integration -g creative -p SnakeSlayingRecord --task task-20261006-0001 --push`。核对目标main、upstream与准确候选。
-2. `python3 scripts/entity_card_v2_release.py prepare --system-worktree .runtime/entity-card-v2/system --bundle .runtime/entity-card-v2/release --push-system --story-candidate <SHA> --story-target <SHA> --system-candidate <SHA> --system-target <SHA>`冻结代码、配置、清理文件、全库前后指纹和唯一系统upstream。通过同包`material_review_release.py build`及`entity_card_v2_release.py preflight`，只在临时影子库预演。
-3. 候选验收后通过任务`_deliver`完成故事受控集成／普通推送，再执行`entity_card_v2_release.py apply`，带`--apply`及service manifest、image receipt、cleanup manifest三个准确摘要。共享锁内复核完整数据指纹、系统受控fast-forward、停止旧服务；在同一事务应用批准差异，核对指纹与存储，建立净化恢复包，再切换正式镜像与配置。漂移整批停止，绝不恢复旧正文或强推。
+2. `python3 scripts/entity_card_v2_release.py prepare --system-worktree .runtime/entity-card-v2/system --bundle .runtime/entity-card-v2/release-final --push-system --story-candidate <SHA> --story-target <SHA> --system-candidate <SHA> --system-target <SHA>`冻结代码、配置、清理文件、全库前后指纹和唯一系统upstream。正式库必须准确等于清理前或清理后指纹；已清理库只核验既有删除凭据，重复发布不再删除。通过同包`material_review_release.py build`及`entity_card_v2_release.py preflight`，只在临时影子库预演。
+3. 候选验收后通过任务`_deliver`完成故事受控集成／普通推送，再执行`entity_card_v2_release.py apply`，带`--apply`及service manifest、image receipt、cleanup manifest三个准确摘要。共享锁内复核完整数据指纹、系统受控fast-forward、停止旧服务；在同一事务应用批准差异，核对指纹与存储，建立净化恢复包，再切换正式镜像与配置。恢复包首次导出直接在同一净化事务中读取归档内容，避免要求尚未写出的内容图。漂移整批停止，绝不恢复旧正文或强推。
 4. Chrome在正式3000验证实体标题、双Tab、关系、准确删除目标和共用入口；核对真实镜像、配置pin与源码。再使用同包`material_review_release.py publish-system`带两个准确摘要和`--apply`普通推送，回读远端。
-5. 实际发布与验收回执留在本任务`.runtime/entity-card-v2/release/run/`和主任务账本，不在已交付候选中补日志。全部完成标准满足并清理过程资源后才调用`_complete`；之后结束文件写入并保持TUI。
+5. 首次正式清理回执保留在`.runtime/entity-card-v2/release/run/`；支持直接初始化恢复包的最终冻结包为`release-final/`，首次初始化与零删除重入均需实际通过。实际发布与验收回执留在本任务`.runtime/entity-card-v2/release-final/run/`和主任务账本，不在已交付候选中补日志。全部完成标准满足并清理过程资源后才调用`_complete`；之后结束文件写入并保持TUI。
 
 失败只能从同一冻结包继续`apply`，或使用净化后的`run/sanitized-recovery`及支持删除凭据的候选重新建立实例。服务目录在主项目`.runtime/service-releases/entity-card-v2-20261006-0001-<故事短SHA>-<系统短SHA>/`，保留准确配置／镜像挂载；数据库不回滚到旧备份。此前恢复包由本包替代，旧代码或旧Git提交不是现行数据恢复入口。
 
-预览、浏览器夹具、重复恢复实例、试验脚本、失效日志及缓存在正式验收后按PID／路径核对清除。冻结包、净化恢复资料、必要回执与双仓分支保留用于恢复和追溯；原图任务输入保留用于账本来源核验。实际删除数量、回读和仍保留用途读取`release/run/cleanup-final.json`，未执行时不宣称清理完成。worktree待TUI退出释放锁后另由受管清理命令退役，不递归删除嵌套Git工作区。
+预览、浏览器夹具、重复恢复实例、试验脚本、失效日志及缓存在正式验收后按PID／路径核对清除。冻结包、净化恢复资料、必要回执与双仓分支保留用于恢复和追溯；原图任务输入保留用于账本来源核验。实际删除数量、回读和仍保留用途读取`release-final/run/cleanup-final.json`，未执行时不宣称清理完成。worktree待TUI退出释放锁后另由受管清理命令退役，不递归删除嵌套Git工作区。
