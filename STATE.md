@@ -14,6 +14,8 @@
 
 - 制作拆解页的七项阅读优化已在独立双仓工作区和隔离库实现，覆盖全剧目录、准确历史、剧情高亮、评论与素材集合；交付输入、逐项实际证据、准确系统候选和正式发布／恢复入口见[拆解页优化交付](production/breakdown-page/README.md)。隔离夹具及测试评论不发布，业务数据增量为 0。
 
+- 镜头制作导航、版本与准确参考选择已在双仓隔离实例实现并实际验收；整章对应、选择／生产校验、系统候选、正式发布及恢复入口见[镜头制作交付](production/shot-production/README.md)。正式应用和推送以主账本及冻结包回执为准；隔离选择、评论与离线视频不发布，业务增量为 0。
+
 ## 后续工作边界
 
 - 歌曲尚有实唱词音不对应、Lyria 原生无损 WAV、逐句时间／新曲调短参考、角色演法及正式剧本唱词同步等缺口。用户要求以现状完成阶段交付，尚未接受音频质量；后续另定制作范围和调用授权。准确成果、意见与用法见 [歌曲交接](production/songs-review.md)。
@@ -30,3 +32,5 @@
 - 小卡任务保留故事／系统 worktree 与分支，发布冻结包及一致性备份用于准确恢复。隔离预览在正式页面验收后停止并按准确路径清理；实际删除与回读在[资源记录](production/small-cards/evidence/cleanup-before.json)及任务本机 `.runtime/small-cards/release/run/cleanup-final.json`，后者以实际执行回执为准。工作区退役须待 TUI 退出释放清理锁，另用 `codex.project task cleanup`。
 
 - 拆解页优化任务保留故事／系统 worktree 与分支，冻结发布包、正式一致性备份和回执用于恢复；预览库与夹具在正式验收后清理，实际结果见本任务 `.runtime/breakdown-page/release-final/run/cleanup-final.json`，首轮清理回执在原 `release/run/`。待 TUI 退出释放锁后，工作区另由 `codex.project task cleanup` 退役。
+
+- 镜头制作任务保留故事／系统 worktree、分支与冻结发布包，供准确追溯及恢复；正式验收后停止隔离预览并清理无效库与夹具，实际删除及回读读取本任务 `.runtime/shot-production/release/run/cleanup-final.json`。待 TUI 退出释放锁后再由受管清理入口退役 worktree。
