@@ -1,17 +1,13 @@
 {
-  "command": "python-tests-final.log",
+  "command": "NO_PROXY=127.0.0.1,localhost PYTHONPATH=system python3 -m unittest discover -s tests",
   "success": true,
-  "log_sha256": "d25ebd52f5bb6564afc29e3377c774bbdd1c9e8e6d1cf87d462dafb032ff4065",
+  "tests": 297,
+  "log_sha256": "9fb88e60affcc0eefc9cb9edb2770c7ebce3ae5193a165a28d8ff337a30e2c4c",
   "tail": [
-    "127.0.0.1 - - [06/Oct/2026 17:27:19] \"GET /api/instance HTTP/1.1\" 200 -",
-    "......................................................127.0.0.1 - - [06/Oct/2026 17:27:23] \"GET /api/production/materials?search=page-fixture&focus=generated HTTP/1.1\" 200 -",
-    "127.0.0.1 - - [06/Oct/2026 17:27:23] \"GET /api/production/materials?search=no+matching+material&focus=generated HTTP/1.1\" 200 -",
-    "127.0.0.1 - - [06/Oct/2026 17:27:23] \"GET /api/production/card?object_id=generated&revision_id=5d25c01ed8288bcb1062424f57b94a770a3216e643bcaced3dee8c6e0d15ff48 HTTP/1.1\" 200 -",
     "....",
     "----------------------------------------------------------------------",
-    "Ran 296 tests in 31.315s",
+    "Ran 297 tests in 41.365s",
     "",
     "OK"
-  ],
-  "tests": 296
+  ]
 }
