@@ -1,0 +1,135 @@
+{
+  "browser": "Connected Chrome",
+  "isolated": true,
+  "fixture_publish": false,
+  "desktop": {
+    "viewport": [
+      1440,
+      900
+    ],
+    "before": {
+      "right": 411.5,
+      "copy": 411.5,
+      "card": 370.5
+    },
+    "after": {
+      "right": 300,
+      "copy": 523,
+      "card": 271
+    },
+    "episode": [
+      150,
+      96
+    ]
+  },
+  "narrow": {
+    "viewport": [
+      390,
+      844
+    ],
+    "scrollWidth": 390,
+    "reader": 364,
+    "card": 318,
+    "titleTop": 154.046875,
+    "topbarBottom": 122,
+    "current": "SH016"
+  },
+  "navigation": {
+    "episodes": 17,
+    "scenes": 42,
+    "shots": 297,
+    "allInitiallyExpanded": true,
+    "crossScene": "S001 -> SH016 in S002",
+    "back": "S001 scroll 0",
+    "forwardRefresh": "SH016 scroll 2241",
+    "rapidSwitch": "E02 -> E03, final S005",
+    "nativeModalReturn": "SH016 source scroll 2241 before and after"
+  },
+  "source": {
+    "fullBlocks": 32,
+    "realHighlight": [
+      "screenplay-04-lantern-home-s001-b004",
+      "screenplay-04-lantern-home-s001-b006"
+    ],
+    "fixtureFirstLast": [
+      "screenplay-04-lantern-home-s001-b001",
+      "screenplay-04-lantern-home-s001-b032"
+    ],
+    "missingHighlights": 0,
+    "invalidError": "source blocks are absent or duplicated",
+    "oldShot": {
+      "object": "shot-e01-001",
+      "revision": "7c7733209a55ae6284a0a3ac60c66bdabbdd29068a7c8715ac80a46a5f93f0b0",
+      "number": 1,
+      "currentFixtureNumber": 999,
+      "episodeCount": 0
+    },
+    "hiddenNotes": "fixture-note exact preparation text via original comment location"
+  },
+  "comments": {
+    "counts": {
+      "initial": 2,
+      "edit": 2,
+      "close": 2,
+      "reopen": 2,
+      "create": 3,
+      "delete": 2
+    },
+    "actions": "UI edit/close/reopen; Store.create_comment; named disposable SQLite removal of comment and events; Chrome count refresh",
+    "createdID": "fixture-new-shot16",
+    "draft": "Source Escape and material/image modal close retain draft; editor Escape cancels"
+  },
+  "materials": {
+    "realGroups": [
+      "图像—场景",
+      "图像—道具",
+      "图像—角色",
+      "图像—镜头",
+      "音频—歌曲",
+      "音频—角色",
+      "音频—镜头",
+      "视频—镜头"
+    ],
+    "fixtureGroups": [
+      "图像—共有",
+      "文档—其他"
+    ],
+    "fixtureOwners": [
+      "entity-a-heng",
+      "entity-li-ji"
+    ],
+    "fixtureIDs": [
+      "fixture-shared-image",
+      "fixture-other-document"
+    ],
+    "empty": "SH999 before edge-case material injection",
+    "image": "M1003 / MV004 / MC001, 3584x2016, exact candidate before version 5",
+    "audio": "M1105 / MV002 / MC001; exact URL refresh preserves selection",
+    "playback": {
+      "duration": 8.5,
+      "paused": false,
+      "readyState": 4,
+      "currentTime": 0.025952
+    },
+    "largeReturn": {
+      "shot": "SH016",
+      "scroll": 2241,
+      "draftPreserved": true
+    }
+  },
+  "regressions": [
+    "Screenplay shared episode card and selected state",
+    "Material management three-column pagination and corrected shared audio target",
+    "Entity management and entity/state card",
+    "Shot production real prompt/reference semantics and video-only sidebar",
+    "Exact state reference nested modal",
+    "Original image enlargement",
+    "Source comment location and editor Escape",
+    "Structure overall draft and image modal Escape"
+  ],
+  "limitations": [
+    "Shared and unknown document classifications were only constructed in an isolated disposable database.",
+    "No generated video playback or media quality acceptance claimed.",
+    "Automation locator clicks can scroll an ancestor before opening; native coordinate clicks were used for exact scroll-return checks."
+  ]
+}

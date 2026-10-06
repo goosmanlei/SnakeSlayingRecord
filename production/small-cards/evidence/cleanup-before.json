@@ -1,0 +1,65 @@
+{
+  "phase": "before final candidate",
+  "containers_checked": [
+    "14652b711e24171b29cf1ce8aa0fab683ff2cae06a9ccd65496091faaaab52e0",
+    "be5b6c47030bcbeda5bf8470cdd7617f2c01f1942c565142de6cca9cfb4d45be",
+    "bb765c5eda1772737bd955223db99095204832d068d18e9dd690c2b2d8b00bdb",
+    "1fb25b719c76f96a6fe80a9b32d46a848cbb04f2b83188ac66f5fe41440e4f93"
+  ],
+  "removed": [
+    {
+      "path": ".runtime/small-cards/fixture",
+      "files": 4,
+      "bytes": 440909,
+      "file_hashes_sha256": "7129f5c2dd885b08cffec11c845543f8c3fca9a126a631bdc845912bc4da8529",
+      "read_only_platform_handles": [
+        {
+          "pid": 95209,
+          "read_only_handles": 9
+        }
+      ],
+      "absent": true
+    },
+    {
+      "path": ".runtime/small-cards/scope-fixture",
+      "files": 4,
+      "bytes": 481875,
+      "file_hashes_sha256": "ea2a45fb7f52c5bb7aa103639387a97ce24d0e9620288cf6c8025eca2c52c955",
+      "read_only_platform_handles": [
+        {
+          "pid": 95209,
+          "read_only_handles": 9
+        }
+      ],
+      "absent": true
+    },
+    {
+      "path": ".runtime/small-cards/scope-latest",
+      "files": 4,
+      "bytes": 481875,
+      "file_hashes_sha256": "ccb1e2bfc1f14f1c27e9f77b46ba5e0614f7a9f8ad6d267039b34861e9867237",
+      "read_only_platform_handles": [
+        {
+          "pid": 95209,
+          "read_only_handles": 9
+        }
+      ],
+      "absent": true
+    }
+  ],
+  "retained": [
+    {
+      "path": ".runtime/small-cards/review",
+      "use": "isolated preview until formal acceptance"
+    },
+    {
+      "path": ".runtime/small-cards/system",
+      "use": "system task worktree and branch remain retained"
+    },
+    {
+      "path": ".runtime/small-cards/*.log",
+      "use": "test evidence digests, remove after archive"
+    }
+  ],
+  "deleted_files": 12
+}
