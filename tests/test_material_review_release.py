@@ -54,6 +54,7 @@ class ReleaseTest(unittest.TestCase):
         self.assertEqual(r.release_name('task-20261004-0005','a'*40,'b'*40), 'asset-cleanup-20261004-0005-'+'a'*12+'-'+'b'*12)
         self.assertEqual(r.release_name('task-20261004-0008','a'*40,'b'*40), 'ui-unification-20261004-0008-'+'a'*12+'-'+'b'*12)
         self.assertEqual(r.release_name('task-20261005-0001','a'*40,'b'*40), 'autonomous-20261005-0001-'+'a'*12+'-'+'b'*12)
+        self.assertEqual(r.release_name('task-20261006-0002','a'*40,'b'*40), 'entity-cards-20261006-0002-'+'a'*12+'-'+'b'*12)
         with self.assertRaisesRegex(ValueError,'unsupported release task'):
             r.release_name('../foreign','a'*40,'b'*40)
 
