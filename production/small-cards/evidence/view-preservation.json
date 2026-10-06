@@ -1,0 +1,82 @@
+{
+  "source": "isolated generation-base.sqlite3 versus review.sqlite3 after real browser comments",
+  "changed_tables": {
+    "comment_events": {
+      "before": {
+        "schema": "6e995660c7e2b49a76d248f09b2fbed0a41242335d2a8066042a631b009902f5",
+        "count": 314,
+        "rows_sha256": "c4f4acb3eaf0f10bbdc8518f5e1db8a78ec2e2039254a25d3303ba2072e91346"
+      },
+      "after": {
+        "schema": "6e995660c7e2b49a76d248f09b2fbed0a41242335d2a8066042a631b009902f5",
+        "count": 316,
+        "rows_sha256": "8303e35406ebf8a91053a36598d339591148e522a7a82fda04bb189a540e5d56"
+      }
+    },
+    "comments": {
+      "before": {
+        "schema": "2589865d60f2f1dce1ccc7427ca6b3be8e7e5fd8ed4fbd3e3312f3eb95e71911",
+        "count": 285,
+        "rows_sha256": "14a0dd3561aaadb9cc579b2d6d201050074c27e3633b3b79950045128507c23e"
+      },
+      "after": {
+        "schema": "2589865d60f2f1dce1ccc7427ca6b3be8e7e5fd8ed4fbd3e3312f3eb95e71911",
+        "count": 286,
+        "rows_sha256": "b566d0f350fb5b3fc4adf878d3968c5e16a775b3fdd4beafca7b4d2dfdce985c"
+      }
+    },
+    "material_plan_comments": {
+      "before": {
+        "schema": "3228e72eaef734239c7e43a85a996f55bcb326c9b0e3fb1f2521062e015db11a",
+        "count": 14,
+        "rows_sha256": "1b891d537451f91dd20d4f45ba177a4e209075b078e981d68882d1f9593c4de4"
+      },
+      "after": {
+        "schema": "3228e72eaef734239c7e43a85a996f55bcb326c9b0e3fb1f2521062e015db11a",
+        "count": 15,
+        "rows_sha256": "2232e1f86d21d397f621d2f3f7ecc638fe190029ce171f6fee532cbe796880b7"
+      }
+    },
+    "business_comments": {
+      "before": {
+        "schema": "a6c57e003d1f9736974840d4465fa1a41b609ff2210ebe1168afb1015c658f38",
+        "count": 285,
+        "rows_sha256": "44e17826f5104e418393f8a1e034e3345d881dacf772fd2e5b0c0483837c9a94"
+      },
+      "after": {
+        "schema": "a6c57e003d1f9736974840d4465fa1a41b609ff2210ebe1168afb1015c658f38",
+        "count": 286,
+        "rows_sha256": "c6a1c8b73c6b68196a9ddcdbb23384d26da89a3dada40951212fba147ccd4ea8"
+      }
+    }
+  },
+  "unchanged_tables": [
+    "business_candidates",
+    "business_codes",
+    "configuration_events",
+    "configurations",
+    "dependencies",
+    "generation_publications",
+    "material_aliases",
+    "material_archive_files",
+    "material_candidate_members",
+    "material_comment_scopes",
+    "material_content",
+    "material_definition_versions",
+    "material_definitions",
+    "material_feedback",
+    "material_members",
+    "material_model_migrations",
+    "material_plan_members",
+    "material_plan_versions",
+    "material_rounds",
+    "objects",
+    "relation_explanation_policy",
+    "relation_explanation_redactions",
+    "relation_redacted_comments",
+    "revisions",
+    "sources"
+  ],
+  "business_records_unchanged": true,
+  "test_comments_published": false
+}
