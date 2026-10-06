@@ -53,3 +53,10 @@ class SmallCardReleaseTest(unittest.TestCase):
         with patch.object(r.base,'repo_check',side_effect=RuntimeError('stop before any service read')) as check:
             with self.assertRaisesRegex(RuntimeError,'stop before'):r.checks(self.root,m)
             self.assertTrue(check.call_args.kwargs['system'])
+
+    def test_breakdown_page_release_can_apply_after_controlled_story_delivery(self):
+        self.assertTrue(r.release_name('task-20261005-0004',self.candidate,self.target).startswith('breakdown-page-20261005-0004-'))
+        m={'task':'task-20261005-0004','story_worktree':'w','story_main':'m','story_candidate':self.candidate,'story_target':self.target}
+        with patch.object(r.base,'repo_check',side_effect=RuntimeError('stop before any service read')) as check:
+            with self.assertRaisesRegex(RuntimeError,'stop before'):r.checks(self.root,m)
+            self.assertTrue(check.call_args.kwargs['system'])

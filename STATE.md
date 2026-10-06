@@ -5,12 +5,14 @@
 - 后续创作或系统修改按新请求确定范围；发布、依赖、执行和完成状态统一查主项目 `.codex-project/tasks.json`，不在此复制任务列表。不恢复已结束的自主优化计时或单次生成授权。
 - 当前作品为方向三《把灯带回家》、故事结构第十稿、精修九定稿候选和剧本版本四。用户已确认版本四为制作终稿；准确依据见 [制作输入锁](production/source-lock.json)，作品与素材的具体认可仍按各自准确记录判断。
 - 制作拆解、完整状态、素材版本与候选体系已交付；全剧首轮 251 个图像状态和 42 份新音色已有成果，逐项用户认可范围见 [素材交付](production/full-generation/README.md)及其认可记录。四首歌曲的 10 份整曲录音已增量发布到正式审阅入口，最新草稿与已有录音分开，见 [歌曲入口](production/song-publication/README.md)。这些成果不表示全部素材或音频质量已接受，也不表示动态分镜或成片已就绪。
-- 正式入口为 `http://127.0.0.1:3000/`，正式库为主目录 `.runtime/review.sqlite3`；运行身份从正式主目录的 `config/instance.json.review_desk_commit`、实际容器镜像与准确挂载回读。小卡任务已核对前置大卡任务 `task-20261005-0002` 完成及双仓集成，冻结时正式基线为 `.runtime/service-releases/entity-material-20261005-0002-f5fe99344395-0396791a7eaa/`。本工作区配置锁定交付候选；正式应用、页面验收和推送是否完成，以任务账本及对应发布回执为准。
+- 正式入口为 `http://127.0.0.1:3000/`，正式库为主目录 `.runtime/review.sqlite3`；运行身份从正式主目录的 `config/instance.json.review_desk_commit`、实际容器镜像与准确挂载回读。当前工作区配置锁定交付候选；正式应用、页面验收和双仓推送是否完成，以主项目任务账本及对应冻结发布包的实际回执为准。
 
 自主优化任务的历史发布与验收回执位于 `.codex-project/worktrees/task-20261005-0001/.runtime/autonomous-optimization/delivery/`；任务完成及故事推送结果以主项目账本为准。[运行报告](planning/autonomous-optimization-run-report.md)与[交付说明](planning/autonomous-optimization-delivery.md)保留确认前的测量及操作背景，其“待确认”表述是历史时点，不代表当前任务未完成。小卡任务的实际发布与收尾回执沿下方交付入口读取。
 
 - 前置大卡、编号、引用与旧关系说明清理已正式交付；359 项状态归属与 34 份旧说明清理依据见[大卡交付包](production/entity-material/README.md)及任务账本。其确认前文档保留当时测量，不作为当前“待发布”状态。
 - 共用小卡、实体／素材管理三列分组分页、准确集场筛选和多层返回已在双仓隔离实例实现并真实验收。范围、来源、逐项证据、唯一系统候选及代码发布／恢复步骤见[小卡交付](production/small-cards/README.md)。本次不发布隔离测试评论、采纳或合成夹具，不迁移业务数据。
+
+- 制作拆解页的七项阅读优化已在独立双仓工作区和隔离库实现，覆盖全剧目录、准确历史、剧情高亮、评论与素材集合；交付输入、逐项实际证据、准确系统候选和正式发布／恢复入口见[拆解页优化交付](production/breakdown-page/README.md)。隔离夹具及测试评论不发布，业务数据增量为 0。
 
 ## 后续工作边界
 
@@ -26,3 +28,5 @@
 
 - 前置大卡任务的旧原文、测试库与预览重复副本已按完成回执清除；其系统 worktree、正式冻结包及净化恢复资料仍用于追溯／恢复，沿原任务入口处置，不由小卡任务扩大清理。
 - 小卡任务保留故事／系统 worktree 与分支，发布冻结包及一致性备份用于准确恢复。隔离预览在正式页面验收后停止并按准确路径清理；实际删除与回读在[资源记录](production/small-cards/evidence/cleanup-before.json)及任务本机 `.runtime/small-cards/release/run/cleanup-final.json`，后者以实际执行回执为准。工作区退役须待 TUI 退出释放清理锁，另用 `codex.project task cleanup`。
+
+- 拆解页优化任务保留故事／系统 worktree 与分支，冻结发布包、正式一致性备份和回执用于恢复；预览库与夹具在正式验收后清理，实际结果见本任务 `.runtime/breakdown-page/release/run/cleanup-final.json`。待 TUI 退出释放锁后，工作区另由 `codex.project task cleanup` 退役。
