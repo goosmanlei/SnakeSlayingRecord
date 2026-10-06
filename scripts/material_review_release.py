@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Prepare an immutable code-only release; apply only the user-confirmed bundle.
 
-No business-data import, generation, acceptance, task completion or push. The
-system fast-forward, live row-preservation checks and service switch run serially.
+No business-data import, generation, acceptance or task completion. The system
+fast-forward, live preservation checks, service switch and prepared ordinary
+system push run serially; story Git delivery stays with the task launcher.
 """
 import argparse
 from collections import Counter
@@ -20,6 +21,12 @@ RELEASE_PREFIXES={TASK:'materials-20261004-0004', 'task-20261004-0005':'asset-cl
                   'task-20261004-0008':'ui-unification-20261004-0008',
                   'task-20261004-0009':'ui-material-model-20261004-0009',
                   'task-20261005-0001':'autonomous-20261005-0001',
+                  'task-20261005-0002':'entity-material-20261005-0002',
+                  'task-20261005-0003':'small-cards-20261005-0003',
+                  'task-20261005-0004':'breakdown-page-20261005-0004',
+                  'task-20261005-0005':'shot-production-20261005-0005',
+                  'task-20261005-0006':'system-page-style-20261005-0006',
+                  'task-20261006-0001':'entity-card-v2-20261006-0001',
                   'entity-acceptance-20261004':'entity-acceptance-20261004'}
 require,sha,read,save,run,git,inspect=base.require,base.sha,base.read,base.save,base.run,base.git,base.inspect
 
@@ -36,6 +43,7 @@ def prepare(a):
     sm,gm=base.primary(story),base.primary(system)
     base.repo_check(story,sm,a.story_candidate,a.story_target)
     base.repo_check(system,gm,a.system_candidate,a.system_target,system=True)
+    upstream=system_upstream(system,a.system_target,a.system_candidate) if getattr(a,'push_system',False) else None
     root=a.bundle.resolve();require((story/'.runtime').resolve() in root.parents and not root.exists(),'new task runtime bundle required')
     app,nginx=inspect(base.APP),inspect(base.NGINX)
     old,proxy=base.safe_container(app),base.safe_container(nginx)
@@ -68,9 +76,9 @@ def prepare(a):
     for helper in ('material_review_release.py','autonomous_optimization_release.py','integrate_generation_review_system.py'):
         raw=base.git_file(story,a.story_candidate,'scripts/'+helper);require(raw==(story/'scripts'/helper).read_bytes(),'helper differs from committed candidate');put('helpers/'+helper,raw)
     files=old['config_files'].split(',');require(files==proxy['config_files'].split(','),'compose sets differ')
-    plan={'format':'generation-system-delivery-v1','task':task,'push':False,'system_main_from_story_main':os.path.relpath(gm,sm),'system_worktree':os.path.relpath(system,story),'expected_target':a.system_target,'candidate':a.system_candidate}
+    plan={'format':'generation-system-delivery-v1','task':task,'push':bool(upstream),'system_main_from_story_main':os.path.relpath(gm,sm),'system_worktree':os.path.relpath(system,story),'expected_target':a.system_target,'candidate':a.system_candidate}
     put('system-delivery.json',json.dumps(plan,ensure_ascii=False,indent=2).encode()+b'\n')
-    m={'format':'material-review-release-v1','task':task,'push':False,'story_worktree':str(story),'system_worktree':str(system),'story_main':str(sm),'system_main':str(gm),'story_candidate':a.story_candidate,'story_target':a.story_target,'system_candidate':a.system_candidate,'system_target':a.system_target,'release_name':release_id,'hashes':hashes,'source_hashes':source,'base_image_tag':tag,'previous_app':old,'previous_nginx':proxy,'previous_compose_hashes':{f:sha(Path(f).read_bytes()) for f in files},'previous_instance_hashes':current_files,'ca_sha256':sha(Path(mounts['/run/local-ca/cacert.pem']['Source']).read_bytes()),'prepared_at':datetime.now(timezone.utc).isoformat()}
+    m={'format':'material-review-release-v1','task':task,'push':False,'story_worktree':str(story),'system_worktree':str(system),'story_main':str(sm),'system_main':str(gm),'story_candidate':a.story_candidate,'story_target':a.story_target,'system_candidate':a.system_candidate,'system_target':a.system_target,'system_upstream':upstream,'release_name':release_id,'hashes':hashes,'source_hashes':source,'base_image_tag':tag,'previous_app':old,'previous_nginx':proxy,'previous_compose_hashes':{f:sha(Path(f).read_bytes()) for f in files},'previous_instance_hashes':current_files,'ca_sha256':sha(Path(mounts['/run/local-ca/cacert.pem']['Source']).read_bytes()),'prepared_at':datetime.now(timezone.utc).isoformat()}
     save(root/'manifest.json',m);print(json.dumps({'bundle':str(root),'manifest_sha256':sha((root/'manifest.json').read_bytes()),'formal_writes':False,'business_delta':0}))
 
 
@@ -95,9 +103,9 @@ def build(a):
 
 
 def checks(root,m,live=True):
-    # The breakdown release has an explicitly approved two-stage integration:
+    # Breakdown and small-card releases use the approved two-stage integration:
     # code first, data/service next, task completion after formal page acceptance.
-    base.repo_check(m['story_worktree'],m['story_main'],m['story_candidate'],m['story_target'],system=m['task']=='task-20261004-0007')
+    base.repo_check(m['story_worktree'],m['story_main'],m['story_candidate'],m['story_target'],system=m['task'] in ('task-20261004-0007','task-20261005-0003','task-20261005-0004','task-20261005-0005','task-20261005-0006','task-20261006-0001'))
     base.repo_check(m['system_worktree'],m['system_main'],m['system_candidate'],m['system_target'],system=True)
     for path,value in m['previous_compose_hashes'].items():require(sha(Path(path).read_bytes())==value,'compose input drifted')
     ca=next(x['Source'] for x in m['previous_app']['mounts'] if x['Destination']=='/run/local-ca/cacert.pem');require(sha(Path(ca).read_bytes())==m['ca_sha256'],'CA drifted')
@@ -191,6 +199,36 @@ def recover(a):
         print(json.dumps({'runtime_recovered':True,'database_restored':False,'git_reset':False}))
 
 
+def system_upstream(worktree,target,candidate,expected=None):
+    """Freeze or recheck one exact upstream; no force push and no remote guessing."""
+    remote=git(worktree,'config','--get','branch.main.remote')
+    ref=git(worktree,'config','--get','branch.main.merge')
+    require(remote and remote!='.' and ref=='refs/heads/main','system main needs one named upstream')
+    urls=git(worktree,'remote','get-url','--push','--all',remote).splitlines()
+    require(len(urls)==1,'system push needs one destination')
+    value={'remote':remote,'ref':ref,'url':urls[0],'expected_target':target}
+    require(expected is None or value==expected,'system upstream changed')
+    current=git(worktree,'ls-remote','--exit-code',remote,ref).splitlines()
+    require(len(current)==1 and current[0].split()[1]==ref,'system upstream identity differs')
+    head=current[0].split()[0]
+    require(head in (target,candidate),'system remote changed; prepare and verify again')
+    return value
+
+
+def publish_system(a):
+    root,m=authorized(a)
+    require(m.get('system_upstream'),'system push was not prepared')
+    base.repo_check(m['system_worktree'],m['system_main'],m['system_candidate'],m['system_target'],system=True)
+    require(git(m['system_main'],'rev-parse','HEAD')==m['system_candidate'],'system must be integrated before push')
+    upstream=system_upstream(m['system_worktree'],m['system_target'],m['system_candidate'],m['system_upstream'])
+    # A concurrent divergence is rejected by ordinary Git fast-forward rules.
+    run(['git','-C',m['system_worktree'],'push',upstream['remote'],m['system_candidate']+':'+upstream['ref']])
+    head=git(m['system_worktree'],'ls-remote','--exit-code',upstream['remote'],upstream['ref']).split()[0]
+    require(head==m['system_candidate'],'system remote verification failed')
+    result={'system_candidate':head,'remote':upstream['remote'],'ref':upstream['ref'],'remote_verified':True,'force':False}
+    save(root/'run/system-push.json',result);print(json.dumps(result))
+
+
 def restart(a):
     require(a.apply,'restart requires --apply');root=a.release.resolve();m=read(root/'manifest.json');image=read(root/'image.json')
     require(m['format']=='material-review-release-v1','not this release');expected=base.compose_definition(m,image,root)
@@ -203,13 +241,13 @@ def restart(a):
 def main():
     p=argparse.ArgumentParser(description=__doc__);sub=p.add_subparsers(dest='command',required=True)
     q=sub.add_parser('prepare');q.add_argument('--story-worktree',type=Path,default=Path(__file__).resolve().parents[1]);q.add_argument('--system-worktree',type=Path,required=True);q.add_argument('--bundle',type=Path,required=True)
-    q.add_argument('--task',choices=sorted(RELEASE_PREFIXES),default=TASK)
+    q.add_argument('--task',choices=sorted(RELEASE_PREFIXES),default=TASK);q.add_argument('--push-system',action='store_true')
     for name in ('story-candidate','system-candidate','story-target','system-target'):q.add_argument('--'+name,required=True)
-    for cmd in ('build','preflight','apply','recover'):
+    for cmd in ('build','preflight','apply','recover','publish-system'):
         q=sub.add_parser(cmd);q.add_argument('--bundle',type=Path,required=True)
-        if cmd in ('apply','recover'):
+        if cmd in ('apply','recover','publish-system'):
             q.add_argument('--apply',action='store_true');q.add_argument('--manifest-sha256',required=True);q.add_argument('--image-receipt-sha256',required=True)
     q=sub.add_parser('restart');q.add_argument('--release',type=Path,required=True);q.add_argument('--apply',action='store_true')
-    a=p.parse_args();globals()[a.command](a)
+    a=p.parse_args();globals()[a.command.replace('-','_')](a)
 
 if __name__=='__main__':main()

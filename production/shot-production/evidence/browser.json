@@ -1,0 +1,95 @@
+{
+  "task": "task-20261005-0005",
+  "browser": "connected Chrome",
+  "preview": "isolated clean and fixture instances; no paid generation",
+  "checks": [
+    {
+      "item": 1,
+      "result": "passed",
+      "actual": "Chrome 对照剧本与镜头页，共用分集卡 150×96 CSS px；17 集编号、场范围来自锁定版本四。隔离库新增视频、上游、剧本各1条评论后，镜头制作 E01 仅显示1；统计范围写在导航 aria-description。",
+      "evidence": [
+        "screenplay.png",
+        "wide.png"
+      ]
+    },
+    {
+      "item": 2,
+      "result": "passed",
+      "actual": "目录默认展开；窄屏 E17 点击 SH018 到 S042，刷新、后退回 S040、前进回 SH018 均保持准确编号和地址。全剧42场297镜素材集合不变。空场、长标题和旧镜序使用未改动的0004组件及其实际浏览器证据。",
+      "evidence": [
+        "narrow.png",
+        "material-set-audit.json",
+        "../../breakdown-page/evidence/browser.json"
+      ]
+    },
+    {
+      "item": 3,
+      "result": "passed",
+      "actual": "当前 DOM 无指定通用检查说明、说明空框或归属筛选，场名、地点、日夜和剧情依据存在。42项 inventory 源 blocks已移除，两个新编制入口不再生成该句；旧准确修订、评论和历史归档不改写。",
+      "evidence": [
+        "wide.png"
+      ]
+    },
+    {
+      "item": 4,
+      "result": "passed",
+      "actual": "真实数据单V1；隔离离线视频V1有候选，改选形成无结果V2后默认V2，仅待生成。手动V1和V2、刷新及准确地址均可用；Prompt原文、重复标记和真实CALL参数分别展示。无“当前”标签。",
+      "evidence": [
+        "locked-new-version.png"
+      ]
+    },
+    {
+      "item": 5,
+      "result": "passed",
+      "actual": "隔离显示 V3 C_、V1 C_、V_ C_及完整V3 C2；小卡、重复@图片1精确打开 M2528/MV003/MC002。同素材不同用途分别选V3C2/V1C1；同名M2533保持自身身份。未选V/C大卡可打开，无候选不假装已选。",
+      "evidence": [
+        "unselected.png",
+        "exact-reference.png",
+        "saved-slots.png"
+      ]
+    },
+    {
+      "item": 6,
+      "result": "passed",
+      "actual": "浏览V1再关闭不写；明确保存后关闭、刷新、小卡/重复Prompt重开一致。并发修改触发409，不覆盖；移走隔离原件后保存失败，修订前后相同，原件恢复。双层图片弹窗关闭恢复草稿与焦点；成功保存后草稿仍绑定原文。延迟4秒返回201的隔离HTTP适配器中，保存后立即关闭，迟到响应只刷新当前页面，弹窗数0，V3C2持久化。",
+      "evidence": [
+        "conflict.png",
+        "missing-original.png",
+        "exact-reference.png"
+      ]
+    },
+    {
+      "item": 7,
+      "result": "passed",
+      "actual": "Chrome 已提交V1改选新建V2。自动检查覆盖submitted/failed/unknown锁定、同输入改选仍建新版本、保留CALL与旧方案和range；HTTP generation-package拒绝缺项，shot-reference重复请求幂等且冲突409，production/import拒绝prepared_plan绕过。缺版本/候选、错配、失效引用、缺原件与不合法时间范围均拒绝。完整输入仅在重新认可准确方案后通过。无付费调用。",
+      "evidence": [
+        "locked-new-version.png",
+        "test-results.json"
+      ]
+    },
+    {
+      "item": 8,
+      "result": "passed",
+      "actual": "实际2192×1415宽屏正文1019px/右栏300px；1280×800正文363px/右栏300px；390×844正文及本镜视频区346px，页面横向溢出0。普通阿蘅大卡仍选M822/MV001/MC001（最新V2无候选），无镜头选择操作；普通视频大卡无专用操作，离线1秒片可播放。回归剧本、采编目录、结构放大图、实体与素材管理、拆解。",
+      "evidence": [
+        "wide.png",
+        "desktop.png",
+        "narrow.png"
+      ]
+    },
+    {
+      "item": 9,
+      "result": "passed",
+      "actual": "10项针对性Python覆盖原子、并发、幂等、组成与范围、锁定、HTTP入口和独立导出恢复；全量Python291、JavaScript643、故事release61通过。选择收据与准确引用保存在不可变修订，原导出/恢复协议保留；发布业务增量0，不导入任何隔离夹具。",
+      "evidence": [
+        "test-results.json"
+      ]
+    },
+    {
+      "item": 10,
+      "result": "candidate_verified",
+      "actual": "发布、正式验收、推送与最终清理将在冻结发布包run回执和主账本完成说明记录；候选正文不在交付后补日志。",
+      "evidence": []
+    }
+  ]
+}
