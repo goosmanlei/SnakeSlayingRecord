@@ -29,4 +29,4 @@
 - 前置大卡任务的旧原文、测试库与预览重复副本已按完成回执清除；其系统 worktree、正式冻结包及净化恢复资料仍用于追溯／恢复，沿原任务入口处置，不由小卡任务扩大清理。
 - 小卡任务保留故事／系统 worktree 与分支，发布冻结包及一致性备份用于准确恢复。隔离预览在正式页面验收后停止并按准确路径清理；实际删除与回读在[资源记录](production/small-cards/evidence/cleanup-before.json)及任务本机 `.runtime/small-cards/release/run/cleanup-final.json`，后者以实际执行回执为准。工作区退役须待 TUI 退出释放清理锁，另用 `codex.project task cleanup`。
 
-- 拆解页优化任务保留故事／系统 worktree 与分支，冻结发布包、正式一致性备份和回执用于恢复；预览库与夹具在正式验收后清理，实际结果见本任务 `.runtime/breakdown-page/release/run/cleanup-final.json`。待 TUI 退出释放锁后，工作区另由 `codex.project task cleanup` 退役。
+- 拆解页优化任务保留故事／系统 worktree 与分支，冻结发布包、正式一致性备份和回执用于恢复；预览库与夹具在正式验收后清理，实际结果见本任务 `.runtime/breakdown-page/release-final/run/cleanup-final.json`，首轮清理回执在原 `release/run/`。待 TUI 退出释放锁后，工作区另由 `codex.project task cleanup` 退役。
