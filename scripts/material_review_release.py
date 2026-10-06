@@ -26,6 +26,7 @@ RELEASE_PREFIXES={TASK:'materials-20261004-0004', 'task-20261004-0005':'asset-cl
                   'task-20261005-0004':'breakdown-page-20261005-0004',
                   'task-20261005-0005':'shot-production-20261005-0005',
                   'task-20261005-0006':'system-page-style-20261005-0006',
+                  'task-20261005-0007':'approach-20261005-0007',
                   'task-20261006-0001':'entity-card-v2-20261006-0001',
                   'entity-acceptance-20261004':'entity-acceptance-20261004'}
 require,sha,read,save,run,git,inspect=base.require,base.sha,base.read,base.save,base.run,base.git,base.inspect
@@ -66,7 +67,7 @@ def prepare(a):
     for name in base.INSTANCE_FILES:put('instance/'+name,base.git_file(story,a.story_candidate,name))
     cfg=read(root/'instance/config/instance.json');require(cfg['review_desk_commit']==a.system_candidate,'candidate instance pin differs')
     current_files={name:sha(Path(mounts['/instance/'+name]['Source']).read_bytes()) for name in base.INSTANCE_FILES}
-    require(current_files['content/production-approach.json']==hashes['instance/content/production-approach.json'],'approach content change is outside this release')
+    require(task=='task-20261005-0007' or current_files['content/production-approach.json']==hashes['instance/content/production-approach.json'],'approach content change is outside this release')
     source={}
     for line in git(system,'ls-tree','-r',a.system_candidate,'--','review_desk').splitlines():
         header,name=line.split('\t',1);require(header.split()[0] in ('100644','100755'),'special source file')
@@ -105,7 +106,7 @@ def build(a):
 def checks(root,m,live=True):
     # Breakdown and small-card releases use the approved two-stage integration:
     # code first, data/service next, task completion after formal page acceptance.
-    base.repo_check(m['story_worktree'],m['story_main'],m['story_candidate'],m['story_target'],system=m['task'] in ('task-20261004-0007','task-20261005-0003','task-20261005-0004','task-20261005-0005','task-20261005-0006','task-20261006-0001'))
+    base.repo_check(m['story_worktree'],m['story_main'],m['story_candidate'],m['story_target'],system=m['task'] in ('task-20261004-0007','task-20261005-0003','task-20261005-0004','task-20261005-0005','task-20261005-0006','task-20261005-0007','task-20261006-0001'))
     base.repo_check(m['system_worktree'],m['system_main'],m['system_candidate'],m['system_target'],system=True)
     for path,value in m['previous_compose_hashes'].items():require(sha(Path(path).read_bytes())==value,'compose input drifted')
     ca=next(x['Source'] for x in m['previous_app']['mounts'] if x['Destination']=='/run/local-ca/cacert.pem');require(sha(Path(ca).read_bytes())==m['ca_sha256'],'CA drifted')

@@ -48,7 +48,7 @@
 - 资料／版本计数按准确修订，分类合计；结构按具体稿次，块图标与列表使用同一准确范围并按评论编号去重。计数包含已关闭评论，不含删除记录和编辑／状态事件；零条保留图标不显示数字。评论定位滚到准确高亮文字，不取整块中点。来源：界面统一任务、素材审阅交付与 `VERIFICATION.md`。
 - 评论输入框内 ⌘+Enter 提交／保存，Esc 取消本次未提交内容，Enter 换行；组合输入期间不执行快捷操作，保存期间防重复提交。输入框外 Esc、窗外点击及关闭可收起面板并保留草稿与圈选。浮窗和正文复用通用评论能力；引用校验准确正文块与 Unicode 字符偏移。来源：系统 `docs/comment-checklist.md`、`planning/comment-shortcuts-delivery.md`。
 - 评论保存区分明确拒绝、结果未知、已保存但本机草稿清理失败。清理失败保留活跃输入，确认已保存后只重试清理，不重复发送；同一页面的失败缓存不能覆盖新建、取消或成功提交。保护绑定完整目标身份，不保证刷新或崩溃后恢复。实体异步读取还核对请求、工作区及弹窗身份，迟到响应不得覆盖新阅读上下文。来源：[自主优化报告](planning/autonomous-optimization-run-report.md)、系统 `docs/comment-checklist.md`。
-- 评论 AI 润色包含当前草稿、圈选、故事／创作背景、阶段与原文上下文，建议需手动采用与保存。系统只保存 API Key 的环境变量名，默认 `OPENAI_API_KEY`；自定义名称须由不入库的 Compose 覆盖文件透传。制作思路页面以故事创作、生产制作两 Tab 解释动作、产物、验收与页面交接，正文在 `content/production-approach.json`，不承担后台任务追踪。来源：用户确认、`README.md`、`planning/production-approach-delivery.md`。
+- 评论 AI 润色包含当前草稿、圈选、故事／创作背景、阶段与原文上下文，建议需手动采用与保存。系统只保存 API Key 的环境变量名，默认 `OPENAI_API_KEY`；自定义名称须由不入库的 Compose 覆盖文件透传。制作思路页面以故事创作、生产制作两 Tab 解释动作、产物、验收与页面交接，正文在 `content/production-approach.json`，不承担后台任务追踪。来源：用户确认、`README.md`、`production/approach/README.md`。
 - “素材准备”保留手动创作阶段；同一对象与准确旧→新变化只有一个可修订复核结论，旧窗口保存发生冲突，历史保留。来源：用户 2026-10-04 的两项明确选择、`planning/autonomous-optimization-run-report.md` 中前置约定。
 
 - 业务对象使用 1—3 字母的可读前缀，E／S／SH 沿用正文范围，EN／ST／M 等按实例首次登记稳定分配，MV／MC 在准确素材／版本内唯一；编号不替换内部身份，导出恢复保留分配与占号。类型与系统管理说明共用事实来源，见 [编号表](production/entity-material/codes.md)。

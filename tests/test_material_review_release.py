@@ -128,7 +128,10 @@ class ReleaseTest(unittest.TestCase):
              patch.object(r, 'git', return_value='100644 blob fixture\treview_desk/z.py'), \
              contextlib.redirect_stdout(io.StringIO()):
             for task in (r.TASK, 'task-20261004-0005', 'entity-acceptance-20261004',
-                         'task-20261004-0007', 'task-20261004-0008', 'task-20261005-0001'):
+                         'task-20261004-0007', 'task-20261004-0008', 'task-20261005-0001',
+                         'task-20261005-0007'):
+                if task == 'task-20261005-0007':
+                    (story / 'content/production-approach.json').write_text('{"new_method": true}')
                 args = argparse.Namespace(story_worktree=story, system_worktree=system,
                     story_candidate='a' * 40, system_candidate='b' * 40,
                     story_target='d' * 40, system_target='e' * 40,
@@ -140,6 +143,11 @@ class ReleaseTest(unittest.TestCase):
                 self.assertEqual(manifest['task'], task)
                 self.assertEqual(manifest['release_name'], r.release_name(task, 'a' * 40, 'b' * 40))
                 self.assertEqual(r.read(args.bundle / 'system-delivery.json')['task'], task)
+            # Only the method rewrite task may change the instance-owned text.
+            args.task = 'task-20261005-0006'
+            args.bundle = story / '.runtime' / 'forbidden-content-change'
+            with self.assertRaisesRegex(ValueError, 'approach content change'):
+                r.prepare(args)
 
     def test_replacing_round_member_at_same_row_count_is_rejected(self):
         for path in (self.before,self.after):
