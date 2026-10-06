@@ -124,6 +124,7 @@ def compile_design(store, p):
                     item['evidence']=[{**er,'scene_id':sid,'block_ids':bids}]
                 sp['occurrences']=list(current.values())
                 sp['occurrence_review']='版本四逐块复核；依据 production/breakdown/occurrence-review.json 校正泛称和位置，旧修订保留。'
+            sp['blocks']=[b for b in sp.get('blocks',[]) if not b.get('text','').startswith('已按版本四完整检查本场 ')]
             sp['input_lock']=ref(lockrow)
             records.append({'object_id':prep['object_id'],'kind':'PREPARATION','payload':sp})
             prep_ref=draft_ref(prep['object_id'])

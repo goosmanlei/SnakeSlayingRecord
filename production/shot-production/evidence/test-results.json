@@ -1,0 +1,72 @@
+{
+  "python": {
+    "count": 291,
+    "sha256": "2d526e56a0ec9865269f7f0bc9559161930ca38442164485bf8a09c63b0ce65b",
+    "tail": [
+      ".127.0.0.1 - - [06/Oct/2026 16:24:11] Request timed out: timeout('timed out')",
+      "127.0.0.1 - - [06/Oct/2026 16:24:11] \"GET /api/instance HTTP/1.1\" 200 -",
+      ".................................................127.0.0.1 - - [06/Oct/2026 16:24:17] \"GET /api/production/materials?search=page-fixture&focus=generated HTTP/1.1\" 200 -",
+      "127.0.0.1 - - [06/Oct/2026 16:24:17] \"GET /api/production/materials?search=no+matching+material&focus=generated HTTP/1.1\" 200 -",
+      "127.0.0.1 - - [06/Oct/2026 16:24:17] \"GET /api/production/card?object_id=generated&revision_id=5d25c01ed8288bcb1062424f57b94a770a3216e643bcaced3dee8c6e0d15ff48 HTTP/1.1\" 200 -",
+      "....",
+      "----------------------------------------------------------------------",
+      "Ran 291 tests in 39.467s",
+      "",
+      "OK"
+    ]
+  },
+  "javascript": {
+    "count": 643,
+    "sha256": "f6bcafaea4be8c24144d3075963c7cc487f67aaff96970ee36034f4ee18c473b",
+    "tail": [
+      "✔ legacy episode-shot titles use both exact numbers while ambiguous chapter-local headings remain unchanged (0.358334ms)",
+      "✔ episode and scene filter labels use authoritative numbers without altering the API catalog (1.933792ms)",
+      "ℹ tests 643",
+      "ℹ suites 0",
+      "ℹ pass 643",
+      "ℹ fail 0",
+      "ℹ cancelled 0",
+      "ℹ skipped 0",
+      "ℹ todo 0",
+      "ℹ duration_ms 449.27425"
+    ]
+  },
+  "story_release": {
+    "count": 61,
+    "sha256": "241ebdafd7e8aca113fe60ac28a3663ad8969eaca44750088801a6d2d782aeb9",
+    "tail": [
+      ".............................................................",
+      "----------------------------------------------------------------------",
+      "Ran 61 tests in 2.645s",
+      "",
+      "OK"
+    ]
+  },
+  "shot_python": {
+    "count": 10,
+    "sha256": "06186210b791309f3136b70fa341968de529049665209e1ef1a1f15f9c11cc1c",
+    "tail": [
+      ".....127.0.0.1 - - [06/Oct/2026 16:19:27] \"GET /api/production/generation-package?requirement_id=video HTTP/1.1\" 409 -",
+      "127.0.0.1 - - [06/Oct/2026 16:19:27] \"POST /api/production/shot-reference HTTP/1.1\" 201 -",
+      "127.0.0.1 - - [06/Oct/2026 16:19:27] \"POST /api/production/shot-reference HTTP/1.1\" 201 -",
+      "127.0.0.1 - - [06/Oct/2026 16:19:27] \"POST /api/production/shot-reference HTTP/1.1\" 409 -",
+      "127.0.0.1 - - [06/Oct/2026 16:19:27] \"POST /api/production/import HTTP/1.1\" 409 -",
+      ".....",
+      "----------------------------------------------------------------------",
+      "Ran 10 tests in 2.787s",
+      "",
+      "OK"
+    ]
+  },
+  "story_compilation": {
+    "count": 6,
+    "sha256": "5236d1f759f72b91dc86450cfe1061834af1e93da65692002e67a337c04979f5",
+    "tail": [
+      "......",
+      "----------------------------------------------------------------------",
+      "Ran 6 tests in 0.103s",
+      "",
+      "OK"
+    ]
+  }
+}
