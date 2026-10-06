@@ -88,6 +88,23 @@ class GenerationCLITest(unittest.TestCase):
         self.assertEqual(tables(self.db_path), after)
         self.assertFalse((self.main / 'export').exists())
 
+    def test_generation_code_allocations_are_exact_and_not_renumbered(self):
+        from scripts.verify_full_generation import verify
+        import sqlite3
+        before=self.task/'.runtime/number-before.sqlite3'
+        after=self.task/'.runtime/number-after.sqlite3'
+        Store(before).close()
+        store=Store(after)
+        try:
+            for batch in self.package['batches']:
+                production.import_records(store,batch)
+        finally:store.close()
+        verify(before,after,self.package)
+        with sqlite3.connect(after) as db:
+            db.execute("UPDATE business_codes SET number=99 WHERE object_id='asset-offline'")
+        with self.assertRaisesRegex(ValueError,'index differs from exact registration: business_codes'):
+            verify(before,after,self.package)
+
     def test_bad_second_batch_cannot_partially_publish_first_batch(self):
         self.package['batches'][1]['records'][0]['expected_version'] = 10
         result = self.cli('bad-batch', apply=True)

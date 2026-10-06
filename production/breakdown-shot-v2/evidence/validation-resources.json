@@ -1,0 +1,189 @@
+{
+  "format": "task-validation-resources-v1",
+  "runs": [
+    {
+      "receipt": ".runtime/breakdown-shot-v2/candidate-v6-resource.json",
+      "status": "passed",
+      "exit_code": 0,
+      "peak_rss_mib": 296.23,
+      "limit_mib": 768,
+      "elapsed_seconds": 31.21,
+      "host_before": {
+        "pressure": 1,
+        "compressed_bytes": 5332418560,
+        "swap_bytes": 0
+      },
+      "host_last_sample": {
+        "pressure": 1,
+        "compressed_bytes": 5363859456,
+        "swap_bytes": 0
+      },
+      "container_state": null
+    },
+    {
+      "receipt": ".runtime/breakdown-shot-v2/candidate-v6-audit-resource.json",
+      "status": "passed",
+      "exit_code": 0,
+      "peak_rss_mib": 384.22,
+      "limit_mib": 512,
+      "elapsed_seconds": 50.86,
+      "host_before": {
+        "pressure": 1,
+        "compressed_bytes": 5363777536,
+        "swap_bytes": 0
+      },
+      "host_last_sample": {
+        "pressure": 1,
+        "compressed_bytes": 5393498112,
+        "swap_bytes": 0
+      },
+      "container_state": null
+    },
+    {
+      "receipt": ".runtime/breakdown-shot-v2/restore-v12-resource.json",
+      "status": "passed",
+      "exit_code": 0,
+      "peak_rss_mib": 30.92,
+      "limit_mib": 128,
+      "elapsed_seconds": 119.28,
+      "host_before": {
+        "pressure": 1,
+        "compressed_bytes": 10787373056,
+        "swap_bytes": 0
+      },
+      "host_last_sample": {
+        "pressure": 1,
+        "compressed_bytes": 10696081408,
+        "swap_bytes": 0
+      },
+      "container_state": {
+        "Status": "exited",
+        "Running": false,
+        "Paused": false,
+        "Restarting": false,
+        "OOMKilled": false,
+        "Dead": false,
+        "Pid": 0,
+        "ExitCode": 0,
+        "Error": "",
+        "StartedAt": "2026-10-06T20:21:29.559695423Z",
+        "FinishedAt": "2026-10-06T20:23:28.294140672Z"
+      }
+    },
+    {
+      "receipt": ".runtime/breakdown-shot-v2/delivery-v12-resource.json",
+      "status": "passed",
+      "exit_code": 0,
+      "peak_rss_mib": 761.75,
+      "limit_mib": 1024,
+      "elapsed_seconds": 36.1,
+      "host_before": {
+        "pressure": 1,
+        "compressed_bytes": 10808918016,
+        "swap_bytes": 0
+      },
+      "host_last_sample": {
+        "pressure": 1,
+        "compressed_bytes": 11007803392,
+        "swap_bytes": 0
+      },
+      "container_state": null
+    },
+    {
+      "receipt": ".runtime/breakdown-shot-v2/system-python-streaming-final.json",
+      "status": "passed",
+      "exit_code": 0,
+      "peak_rss_mib": 137.56,
+      "limit_mib": 512,
+      "elapsed_seconds": 34.42,
+      "host_before": {
+        "pressure": 1,
+        "compressed_bytes": 9060483072,
+        "swap_bytes": 0
+      },
+      "host_last_sample": {
+        "pressure": 1,
+        "compressed_bytes": 8963883008,
+        "swap_bytes": 0
+      },
+      "container_state": null
+    },
+    {
+      "receipt": ".runtime/breakdown-shot-v2/system-js-final-v2.json",
+      "status": "passed",
+      "exit_code": 0,
+      "peak_rss_mib": 106.36,
+      "limit_mib": 384,
+      "elapsed_seconds": 3.72,
+      "host_before": {
+        "pressure": 1,
+        "compressed_bytes": 10816307200,
+        "swap_bytes": 0
+      },
+      "host_last_sample": {
+        "pressure": 1,
+        "compressed_bytes": 10816307200,
+        "swap_bytes": 0
+      },
+      "container_state": null
+    },
+    {
+      "receipt": ".runtime/breakdown-shot-v2/story-python-streaming-final.json",
+      "status": "passed",
+      "exit_code": 0,
+      "peak_rss_mib": 466.8,
+      "limit_mib": 768,
+      "elapsed_seconds": 76.06,
+      "host_before": {
+        "pressure": 1,
+        "compressed_bytes": 10885922816,
+        "swap_bytes": 0
+      },
+      "host_last_sample": {
+        "pressure": 1,
+        "compressed_bytes": 11022942208,
+        "swap_bytes": 0
+      },
+      "container_state": null
+    },
+    {
+      "receipt": ".runtime/breakdown-shot-v2/story-http-final.json",
+      "status": "passed",
+      "exit_code": 0,
+      "peak_rss_mib": 101.19,
+      "limit_mib": 256,
+      "elapsed_seconds": 1.06,
+      "host_before": {
+        "pressure": 1,
+        "compressed_bytes": 11000135680,
+        "swap_bytes": 0
+      },
+      "host_last_sample": {
+        "pressure": 1,
+        "compressed_bytes": 11000135680,
+        "swap_bytes": 0
+      },
+      "container_state": null
+    },
+    {
+      "receipt": ".runtime/breakdown-shot-v2/browser-v6-no-write-v2.json",
+      "status": "passed",
+      "exit_code": 0,
+      "peak_rss_mib": 152.12,
+      "limit_mib": 256,
+      "elapsed_seconds": 2.65,
+      "host_before": {
+        "pressure": 1,
+        "compressed_bytes": 11004575744,
+        "swap_bytes": 0
+      },
+      "host_last_sample": {
+        "pressure": 1,
+        "compressed_bytes": 11004575744,
+        "swap_bytes": 0
+      },
+      "container_state": null
+    }
+  ],
+  "host_limit_note": "进程树监控不代替容器硬限额；恢复实际限额768 MiB，见独立恢复回执。"
+}
