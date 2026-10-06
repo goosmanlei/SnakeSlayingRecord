@@ -18,7 +18,7 @@
 
 图像、音色和歌曲任务的生成、登记及审阅均在各自 worktree；原件随任务分支合并，正式库随后显式增量发布。初始化、预览、提交、发布和恢复命令见[生成工作区流程](production/generation-workspaces.md)。
 
-首页以“制作思路”替换旧“当前工作”，提供“故事创作”“生产制作”两个 Tab；旧 `workspace=current` 链接兼容进入新页。方法正文在 [content/production-approach.json](content/production-approach.json)，随实例 Git 保存；系统负责只读展示，没有新增工作统计、任务账本或素材执行引擎。制作准备已按确认的版本四交付系统、全剧抽取、第一集设计与首批候选，用户确认本阶段结项。制作入口为 [正式 3000](http://127.0.0.1:3000/?workspace=settings.workspace)；全剧逐镜首稿与版本／候选改造见 [制作拆解交付](production/breakdown/README.md)，后续完整素材版本契约见 [素材模型交付](production/ui-material-model/README.md)。方案交付不等于镜头媒体就绪。
+首页“制作思路”提供“故事创作”“生产制作”两个 Tab；旧 `workspace=current` 与既有章节链接兼容。方法正文在 [content/production-approach.json](content/production-approach.json)，按故事七步和制作十步贯通从原型到全剧质量检查、交付及返修，随实例 Git 保存，由系统只读展示。准确参考选择、连续例子、现有能力边界与逐项真实页面证据见 [制作思路交付](production/approach/README.md)。方案与首轮素材交付不表示镜头媒体或全剧作品已就绪。
 
 [正式入口](http://127.0.0.1:3000/)的首页、旧链接、双 Tab、桌面与窄屏历史验收，以及当时的隔离预览与数据恢复证据见[交付记录](planning/production-approach-delivery.md)；历史预览地址不作为当前入口。恢复实例时同时保留 `config/`、`content/` 与 `export/`；方法文档不写业务数据库，无数据迁移。
 
