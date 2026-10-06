@@ -2650,341 +2650,71 @@
         },
         {
           "object_id": "form-bandage-base",
-          "kind": "STATE",
+          "kind": "DELETED_STATE",
           "expected_version": 1,
           "payload": {
-            "blocks": [
-              {
-                "id": "description",
-                "text": "完整形态：李寄掌心包布，位置与额角布区分；未渗血时形态，具体布色待审。\n状况：维持上述完整形态，未明确的材质、色泽与磨损细节待审。\n组成与内容：组成与内容以上述描述及引用正文为准；未写内容不补造。\n使用位置：持有者与位置依本场引用和动作起止；普通转手不另拆状态。"
-              }
-            ],
-            "choices": [
-              "同一完整形态跨场复用；未写换装、湿痕消退、伤愈程度的衔接属于待审连续性安排，不冒充新增剧本事实。"
-            ],
-            "dimensions": {
-              "condition": "维持上述完整形态，未明确的材质、色泽与磨损细节待审。",
-              "contents": "组成与内容以上述描述及引用正文为准；未写内容不补造。",
-              "placement": "持有者与位置依本场引用和动作起止；普通转手不另拆状态。",
-              "structure": "李寄掌心包布，位置与额角布区分；未渗血时形态，具体布色待审。"
-            },
+            "format": "state-cleanup-receipt-v1",
+            "object_id": "form-bandage-base",
+            "revision_id": "616729c8c9a278f7f60fbf55d48685b484ac3c5d5b4a0e3866b5c9f67b966e31",
             "entity": {
               "object_id": "entity-bandage",
               "revision_id": "356f8db7875ae433910dc24b908e801bbb9a7b65d09656770a131acd17d4f107"
             },
-            "facts": [
-              "李绡拉出她藏着的手，掌心已经磨破，沾着木屑。她取湿布，替妹妹一点点拈掉。",
-              "李寄：咱家匀一点。阿蘅也能接着洗幕布。",
-              "李寄望向晒着的幕布。李绡手里的布碰到伤处，她缩了一下。",
-              "阿蘅提着洗好的幕布进门。李寄站起，将新纸递过去。",
-              "李绡数出洗布的工钱。",
-              "阿蘅收好钱，抱着湿布去找晾绳。布太宽，一端落到地上。",
-              "阿蘅看了一眼她裹着的手，把干净的布边递过去。",
-              "阿蘅：拿这儿。别扯伤口。",
-              "两个人各撑一端，慢慢将幕布挂起。湿布挡住她们的脸，李寄抬高一点，等阿蘅把皱起的地方抚平。"
-            ],
-            "format": "production-state-v1",
-            "reference_media": "image",
-            "sources": [
-              {
-                "block_ids": [
-                  "screenplay-04-lantern-home-s005-b006",
-                  "screenplay-04-lantern-home-s005-b008",
-                  "screenplay-04-lantern-home-s005-b010",
-                  "screenplay-04-lantern-home-s005-b015",
-                  "screenplay-04-lantern-home-s005-b020",
-                  "screenplay-04-lantern-home-s005-b023",
-                  "screenplay-04-lantern-home-s005-b026",
-                  "screenplay-04-lantern-home-s005-b027",
-                  "screenplay-04-lantern-home-s005-b028"
-                ],
-                "object_id": "screenplay-04-lantern-home-e03",
-                "revision_id": "561c690a2040b7ffb25ceaa18b3246902d33d57614caa63ff47678cabc0156bd",
-                "scene_id": "s005"
-              },
-              {
-                "block_ids": [
-                  "screenplay-04-lantern-home-s009-b011",
-                  "screenplay-04-lantern-home-s009-b016",
-                  "screenplay-04-lantern-home-s009-b026"
-                ],
-                "object_id": "screenplay-04-lantern-home-e05",
-                "revision_id": "8c58f966aca376091e4d555e1dec53506d537b79a9344efba97054fb7fbac04b",
-                "scene_id": "s009"
-              },
-              {
-                "block_ids": [
-                  "screenplay-04-lantern-home-s023-b019",
-                  "screenplay-04-lantern-home-s023-b020",
-                  "screenplay-04-lantern-home-s023-b029"
-                ],
-                "object_id": "screenplay-04-lantern-home-e10",
-                "revision_id": "1ddc78e2cb80ff4215a410cdc36db6166b457395c0761fc75dfebd895f079c9e",
-                "scene_id": "s023"
-              },
-              {
-                "block_ids": [
-                  "screenplay-04-lantern-home-s031-b020",
-                  "screenplay-04-lantern-home-s031-b021"
-                ],
-                "object_id": "screenplay-04-lantern-home-e13",
-                "revision_id": "d479a463803753088fb4779e38aec66dea94c29b4cb2322861d729027a020d55",
-                "scene_id": "s031"
-              }
-            ],
-            "state_model": "complete-v1",
-            "title": "李寄裹手与额角布·基准完整形态",
-            "unknowns": [
-              "李寄掌心包布，位置与额角布区分；未渗血时形态，具体布色待审。",
-              "维持上述完整形态，未明确的材质、色泽与磨损细节待审。"
-            ],
-            "status": "withdrawn",
-            "withdrawal_reason": "用户确认四项包布状态归入现有李寄完整状态，取消重复图像目标，255项调整为251项。旧原件、调用及评论保留。",
-            "merged_into": [
-              {
-                "object_id": "form-li-ji-wrapped",
-                "revision_id": "1af8069e9dacbea5ab573ecebefe02e1bcecd0afb0182452b6a7f79fe9274fe9"
-              },
-              {
-                "object_id": "form-li-ji-healing",
-                "revision_id": "258550b287f58d09196470efc058aab0747959777980fe63e32c99f4f0c6683d"
-              }
-            ]
-          }
+            "original_sha256": "0dd628170b33cb3d6bbec1f0049be9645661232c9e6f0a4b36636529102d9b13",
+            "reason": "当前实体完整状态范围外的历史保留独立状态"
+          },
+          "cleaned_revision_id": "616729c8c9a278f7f60fbf55d48685b484ac3c5d5b4a0e3866b5c9f67b966e31"
         },
         {
           "object_id": "form-bandage-blood",
-          "kind": "STATE",
+          "kind": "DELETED_STATE",
           "expected_version": 1,
           "payload": {
-            "blocks": [
-              {
-                "id": "description",
-                "text": "完整形态：掌心包布受斩击震动渗少量血；额角旧伤并存，额布是否仍用待审，不提前画新伤。\n状况：完整形态如上；材质、颜色及未写磨损细节待审。\n组成与内容：组成与内容以上述描述及引用正文为准；未写内容不补造。\n使用位置：持有者与位置依本场引用和动作起止；普通转手不另拆状态。"
-              }
-            ],
-            "choices": [
-              "同一完整形态跨场复用；未写换装、湿痕消退、伤愈程度的衔接属于待审连续性安排，不冒充新增剧本事实。"
-            ],
-            "dimensions": {
-              "condition": "完整形态如上；材质、颜色及未写磨损细节待审。",
-              "contents": "组成与内容以上述描述及引用正文为准；未写内容不补造。",
-              "placement": "持有者与位置依本场引用和动作起止；普通转手不另拆状态。",
-              "structure": "掌心包布受斩击震动渗少量血；额角旧伤并存，额布是否仍用待审，不提前画新伤。"
-            },
+            "format": "state-cleanup-receipt-v1",
+            "object_id": "form-bandage-blood",
+            "revision_id": "10d9b75ba8e9497d20316f55cc98bd1a9f16659385e7b1f42b4fe2b4330e1493",
             "entity": {
               "object_id": "entity-bandage",
               "revision_id": "356f8db7875ae433910dc24b908e801bbb9a7b65d09656770a131acd17d4f107"
             },
-            "facts": [
-              "她盯着那道口，嘴唇张开，半口气没能松出来。掌心的布透出一点血，刀还握在她手里。"
-            ],
-            "format": "production-state-v1",
-            "reference_media": "image",
-            "sources": [
-              {
-                "block_ids": [
-                  "screenplay-04-lantern-home-s031-b020"
-                ],
-                "object_id": "screenplay-04-lantern-home-e13",
-                "revision_id": "d479a463803753088fb4779e38aec66dea94c29b4cb2322861d729027a020d55",
-                "scene_id": "s031"
-              },
-              {
-                "block_ids": [
-                  "screenplay-04-lantern-home-s031-b020",
-                  "screenplay-04-lantern-home-s031-b021"
-                ],
-                "object_id": "screenplay-04-lantern-home-e13",
-                "revision_id": "d479a463803753088fb4779e38aec66dea94c29b4cb2322861d729027a020d55",
-                "scene_id": "s031"
-              },
-              {
-                "block_ids": [
-                  "screenplay-04-lantern-home-s032-b004",
-                  "screenplay-04-lantern-home-s032-b006",
-                  "screenplay-04-lantern-home-s032-b017"
-                ],
-                "object_id": "screenplay-04-lantern-home-e14",
-                "revision_id": "f0e2aa42927953ba45751c3a661dbfe7a46954e00cb9a7c378c1b62b7300d67e",
-                "scene_id": "s032"
-              },
-              {
-                "block_ids": [
-                  "screenplay-04-lantern-home-s033-b003",
-                  "screenplay-04-lantern-home-s033-b029"
-                ],
-                "object_id": "screenplay-04-lantern-home-e14",
-                "revision_id": "f0e2aa42927953ba45751c3a661dbfe7a46954e00cb9a7c378c1b62b7300d67e",
-                "scene_id": "s033"
-              }
-            ],
-            "state_model": "complete-v1",
-            "title": "李寄裹手与额角布·掌心布渗血",
-            "unknowns": [
-              "掌心包布受斩击震动渗少量血；额角旧伤并存，额布是否仍用待审，不提前画新伤。",
-              "完整形态如上；材质、颜色及未写磨损细节待审。"
-            ],
-            "status": "withdrawn",
-            "withdrawal_reason": "用户确认四项包布状态归入现有李寄完整状态，取消重复图像目标，255项调整为251项。旧原件、调用及评论保留。",
-            "merged_into": [
-              {
-                "object_id": "form-li-ji-blood",
-                "revision_id": "6395c8f484c7de45426c84ea652d6256a3e8a9f638fe8eab0fc94e807b332033"
-              },
-              {
-                "object_id": "form-li-ji-spent",
-                "revision_id": "a83bf9da5dac7ecc216e4d93c1170fd5f5f549a6663b8914f7a55582a66f665a"
-              }
-            ]
-          }
+            "original_sha256": "009b58d6b99e71aef58cb765b6f659718e21e55ee3d0a8cc1ce4072b7fbc57aa",
+            "reason": "当前实体完整状态范围外的历史保留独立状态"
+          },
+          "cleaned_revision_id": "10d9b75ba8e9497d20316f55cc98bd1a9f16659385e7b1f42b4fe2b4330e1493"
         },
         {
           "object_id": "form-bandage-head",
-          "kind": "STATE",
+          "kind": "DELETED_STATE",
           "expected_version": 1,
           "payload": {
-            "blocks": [
-              {
-                "id": "description",
-                "text": "完整形态：同一组伤处布：掌心旧伤包布，另一块压额角新伤；两处清楚，不合成一条缠全头的布。\n状况：完整形态如上；材质、颜色及未写磨损细节待审。\n组成与内容：组成与内容以上述描述及引用正文为准；未写内容不补造。\n使用位置：持有者与位置依本场引用和动作起止；普通转手不另拆状态。"
-              }
-            ],
-            "choices": [
-              "同一完整形态跨场复用；未写换装、湿痕消退、伤愈程度的衔接属于待审连续性安排，不冒充新增剧本事实。"
-            ],
-            "dimensions": {
-              "condition": "完整形态如上；材质、颜色及未写磨损细节待审。",
-              "contents": "组成与内容以上述描述及引用正文为准；未写内容不补造。",
-              "placement": "持有者与位置依本场引用和动作起止；普通转手不另拆状态。",
-              "structure": "同一组伤处布：掌心旧伤包布，另一块压额角新伤；两处清楚，不合成一条缠全头的布。"
-            },
+            "format": "state-cleanup-receipt-v1",
+            "object_id": "form-bandage-head",
+            "revision_id": "d7f4e128ed4e71e9c97561bcf605bd93859e278303eed50a4ada788006f2cfc1",
             "entity": {
               "object_id": "entity-bandage",
               "revision_id": "356f8db7875ae433910dc24b908e801bbb9a7b65d09656770a131acd17d4f107"
             },
-            "facts": [
-              "下山石桥边，李绡取布压住妹妹的额角。阿蘅接过布，替她按着。"
-            ],
-            "format": "production-state-v1",
-            "reference_media": "image",
-            "sources": [
-              {
-                "block_ids": [
-                  "screenplay-04-lantern-home-s009-b026"
-                ],
-                "object_id": "screenplay-04-lantern-home-e05",
-                "revision_id": "8c58f966aca376091e4d555e1dec53506d537b79a9344efba97054fb7fbac04b",
-                "scene_id": "s009"
-              },
-              {
-                "block_ids": [
-                  "screenplay-04-lantern-home-s009-b011",
-                  "screenplay-04-lantern-home-s009-b016",
-                  "screenplay-04-lantern-home-s009-b026"
-                ],
-                "object_id": "screenplay-04-lantern-home-e05",
-                "revision_id": "8c58f966aca376091e4d555e1dec53506d537b79a9344efba97054fb7fbac04b",
-                "scene_id": "s009"
-              },
-              {
-                "block_ids": [
-                  "screenplay-04-lantern-home-s013-b011"
-                ],
-                "object_id": "screenplay-04-lantern-home-e05",
-                "revision_id": "8c58f966aca376091e4d555e1dec53506d537b79a9344efba97054fb7fbac04b",
-                "scene_id": "s013"
-              },
-              {
-                "block_ids": [
-                  "screenplay-04-lantern-home-s014-b002",
-                  "screenplay-04-lantern-home-s014-b003",
-                  "screenplay-04-lantern-home-s014-b005",
-                  "screenplay-04-lantern-home-s014-b037"
-                ],
-                "object_id": "screenplay-04-lantern-home-e06",
-                "revision_id": "8032b712c6b3c6320d2f1b3a34ef2524e0427481f576becfd9e17735359707cb",
-                "scene_id": "s014"
-              }
-            ],
-            "state_model": "complete-v1",
-            "title": "李寄裹手与额角布·掌心裹布与额角压布",
-            "unknowns": [
-              "完整形态如上；材质、颜色及未写磨损细节待审。"
-            ],
-            "status": "withdrawn",
-            "withdrawal_reason": "用户确认四项包布状态归入现有李寄完整状态，取消重复图像目标，255项调整为251项。旧原件、调用及评论保留。",
-            "merged_into": [
-              {
-                "object_id": "form-li-ji-compress",
-                "revision_id": "5f44112127535c4eb234e7e8d9d737a33d599c6794425872557a33f408b8942e"
-              }
-            ]
-          }
+            "original_sha256": "535b799c13ac003f60c96ba5f674bafab5bac88eb6d5b1d1325be85cf8101b8d",
+            "reason": "当前实体完整状态范围外的历史保留独立状态"
+          },
+          "cleaned_revision_id": "d7f4e128ed4e71e9c97561bcf605bd93859e278303eed50a4ada788006f2cfc1"
         },
         {
           "object_id": "form-bandage-new",
-          "kind": "STATE",
+          "kind": "DELETED_STATE",
           "expected_version": 1,
           "payload": {
-            "blocks": [
-              {
-                "id": "description",
-                "text": "完整形态：归家手掌重新包过的干净布，仍影响拿筷；不得沿用满血旧布当新包扎。\n状况：完整形态如上；材质、颜色及未写磨损细节待审。\n组成与内容：组成与内容以上述描述及引用正文为准；未写内容不补造。\n使用位置：持有者与位置依本场引用和动作起止；普通转手不另拆状态。"
-              }
-            ],
-            "choices": [
-              "同一完整形态跨场复用；未写换装、湿痕消退、伤愈程度的衔接属于待审连续性安排，不冒充新增剧本事实。"
-            ],
-            "dimensions": {
-              "condition": "完整形态如上；材质、颜色及未写磨损细节待审。",
-              "contents": "组成与内容以上述描述及引用正文为准；未写内容不补造。",
-              "placement": "持有者与位置依本场引用和动作起止；普通转手不另拆状态。",
-              "structure": "归家手掌重新包过的干净布，仍影响拿筷；不得沿用满血旧布当新包扎。"
-            },
+            "format": "state-cleanup-receipt-v1",
+            "object_id": "form-bandage-new",
+            "revision_id": "b750572563932de2914823d44711b8c31d333143aca64cc171c6b811cd5be47b",
             "entity": {
               "object_id": "entity-bandage",
               "revision_id": "356f8db7875ae433910dc24b908e801bbb9a7b65d09656770a131acd17d4f107"
             },
-            "facts": [
-              "李寄的手重新包过。父亲掰开热饼，放到她碗边。她拿筷子不利索，换另一只手捏起小块。"
-            ],
-            "format": "production-state-v1",
-            "reference_media": "image",
-            "sources": [
-              {
-                "block_ids": [
-                  "screenplay-04-lantern-home-s034-b017"
-                ],
-                "object_id": "screenplay-04-lantern-home-e15",
-                "revision_id": "66dff731e9cea40ce22d89931790e69006d19db2d04fb724ba7e2d3a9ae7bc23",
-                "scene_id": "s034"
-              },
-              {
-                "block_ids": [
-                  "screenplay-04-lantern-home-s034-b017",
-                  "screenplay-04-lantern-home-s034-b021",
-                  "screenplay-04-lantern-home-s034-b025"
-                ],
-                "object_id": "screenplay-04-lantern-home-e15",
-                "revision_id": "66dff731e9cea40ce22d89931790e69006d19db2d04fb724ba7e2d3a9ae7bc23",
-                "scene_id": "s034"
-              }
-            ],
-            "state_model": "complete-v1",
-            "title": "李寄裹手与额角布·归家重新包扎",
-            "unknowns": [
-              "完整形态如上；材质、颜色及未写磨损细节待审。"
-            ],
-            "status": "withdrawn",
-            "withdrawal_reason": "用户确认四项包布状态归入现有李寄完整状态，取消重复图像目标，255项调整为251项。旧原件、调用及评论保留。",
-            "merged_into": [
-              {
-                "object_id": "form-li-ji-rewrapped",
-                "revision_id": "91f0c4a021aa3b2e64b4e96b0efb4bebf3039149da46792dee6fa2c27d189d1a"
-              }
-            ]
-          }
+            "original_sha256": "2e9f537554f3828a157b20d0143de9112690d5131589720fbaf24c68953c611b",
+            "reason": "当前实体完整状态范围外的历史保留独立状态"
+          },
+          "cleaned_revision_id": "b750572563932de2914823d44711b8c31d333143aca64cc171c6b811cd5be47b"
         },
         {
           "object_id": "need-form-bandage-base-overall",
@@ -9344,5 +9074,6 @@
     "withdrawn_requirements": 13,
     "changed_scene_preparations": 9,
     "new_calls": 0
-  }
+  },
+  "state_cleanup_policy": "历史保留状态已物理清理；本包保留准确引用和删除凭据，不可作为旧状态重放源。"
 }
