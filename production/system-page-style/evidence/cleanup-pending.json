@@ -1,6 +1,6 @@
 {
   "task": "task-20261005-0006",
-  "phase": "pending-upload-browser-acceptance",
+  "phase": "first-cleanup-before-deployment-build",
   "deleted_files": 1,
   "deleted_bytes": 66799,
   "deleted": [
@@ -22,11 +22,11 @@
     },
     {
       "path": ".runtime/system-page-style/review",
-      "purpose": "Isolated live visual candidate and remaining upload verification; discard after acceptance and formal release, never publish its test configuration/comments."
+      "purpose": "Isolated browser verification and recovery until formal acceptance; never publish test configuration/comments."
     },
     {
       "path": ".runtime/system-page-style/fixtures",
-      "purpose": "Three local file-upload fixtures for pending actual chooser tests."
+      "purpose": "Three local upload fixtures; actual verification completed; remove after formal acceptance."
     },
     {
       "path": ".runtime/system-page-style/fault_proxy.py",
@@ -43,5 +43,5 @@
   ],
   "cleanup_complete": false,
   "remaining_owner": "task-20261005-0006 executing agent",
-  "next": "Resume upload browser tests after Chrome permission; formal acceptance then stop services and remove obsolete task process resources by exact path."
+  "next": "Formal acceptance then stop services and remove obsolete task process resources by exact path; latest result is release-accepted/run/cleanup-final.json."
 }
