@@ -41,4 +41,4 @@
 
 - 实体大卡第二版任务保留双仓 worktree、分支、冻结发布包和净化恢复入口，用于准确追溯与向前恢复；实际过程资源清理读取本任务 `.runtime/entity-card-v2/release-final/run/cleanup-final.json`。旧库、浏览器夹具及重复预览在正式验收后核对清除，worktree 退役待 TUI 退出释放锁后另走受管入口。
 
-- 视觉任务保留 `.runtime/system-page-style/` 的隔离预览、故障代理、上传夹具与必要检查日志，用于剩余验收和恢复。责任为该任务执行者：阻断解除后补验，正式验收后按[资源清单](production/system-page-style/evidence/cleanup-pending.json)停止服务、清除无效过程文件；双仓 worktree 待 TUI 退出释放锁后受管退役。
+- 视觉任务保留 `.runtime/system-page-style/` 的隔离预览、故障代理、上传夹具与必要检查日志，用于剩余验收和恢复；准备后的冻结包与候选镜像供后续部署预检，当前记录从本机 `release-final/run/` 读取。责任为该任务执行者：阻断解除后补验，正式验收后沿[资源清单](production/system-page-style/evidence/cleanup-pending.json)及最新本机回执停止服务、清除无效过程文件；双仓 worktree 待 TUI 退出释放锁后受管退役。
