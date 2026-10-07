@@ -8,11 +8,11 @@
 
 以下流程要求 `codex.task` v0.2.0 或更新版本，并已将本项目适配合入；本机切换及历史接入情况见 [STATE.md](../STATE.md)。用户从故事主目录沿用 `add/mod/run/mrun`，无需填写仓库配置或执行登记命令。Agent 读取项目规则，核验主目录同级的 `../story-review-desk` 及其 Git 身份，通过当前任务的内部回调声明用途与目标分支。
 
-故事 worktree 仍为主目录下 `.codex-project/worktrees/<任务 ID>`；新系统 worktree 为 `.codex-project/linked-worktrees/<任务 ID>/<仓库别名>`。这些路径由账本返回，不按相邻关系猜测。澄清阶段只记录计划；执行时统一加锁后创建并授权目录。执行中发现还需修改系统时，先登记计划、保存当前成果，再通过原 `run/mrun` 恢复同一会话，不在尚未启用的系统目录提前工作。
+故事 worktree 仍为主目录下 `.codex-task/worktrees/<任务 ID>`；新系统 worktree 为 `.codex-task/linked-worktrees/<任务 ID>/<仓库别名>`。这些路径由账本返回，不按相邻关系猜测。澄清阶段只记录计划；执行时统一加锁后创建并授权目录。执行中发现还需修改系统时，先登记计划、保存当前成果，再通过原 `run/mrun` 恢复同一会话，不在尚未启用的系统目录提前工作。
 
 Agent 在执行会话内登记提交引用约束：主仓 `config/instance.json` 的 JSON 字段 `/review_desk_commit` 必须等于系统仓库候选。内部回调接收的对象为 `{"commit_references":[{"repository":"primary","file":"config/instance.json","pointer":"/review_desk_commit","equals_repository":"desk"}]}`，其中 `desk` 替换为本任务实际别名，文件路径相对故事 Git 根目录。先提交系统成果，再更新故事配置并提交，最后准备整组候选；上游集成使系统提交变化时须重新更新引用及准备。
 
-同时登记清理检查器 `scripts/task_workspace_guard.py` 和其实际 SHA-256；路径相对故事主目录。检查器只读核对包括已停止容器在内的挂载及 `.runtime/service-releases/*/manifest.json` 保留引用。Docker 查询失败、脚本摘要变化或资源仍被引用时保留现场；正式容器对整个故事根目录的普通 `/instance` 挂载不单独认定为每个任务的依赖，直接指向任务目录的其他挂载仍阻断。
+同时登记清理检查器 `scripts/task_workspace_guard.py` 和其实际 SHA-256；路径相对故事主目录。检查器只读核对包括已停止容器在内的挂载及 `.runtime/service-releases/*/manifest.json` 保留引用。冻结发布包的来源路径保留历史字节；检查器还通过公开任务查询按项目根目录和任务 ID 对应当前工作区，目录迁移后仍保护保留引用。Docker 或任务查询失败、脚本摘要变化或资源仍被引用时保留现场；正式容器对整个故事根目录的普通 `/instance` 挂载不单独认定为每个任务的依赖，直接指向任务目录的其他挂载仍阻断。
 
 新原生任务先 `_prepare_integration`（需要推送时加 `--push`）冻结全部候选，再准备现有项目发布包。`integrate_generation_review_system.py` 从包内的原生标记调用任务 `_deliver`，任务按依赖顺序完成系统和故事的集成与必要推送；项目脚本读取回执，不再自行重复合并或推送。正式库／服务发布、真实页面验收和资源收尾完成后再 `_complete`。中途失败使用同一冻结包和任务恢复；候选变化则重新准备和验证。
 
