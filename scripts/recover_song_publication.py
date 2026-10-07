@@ -2,6 +2,7 @@
 """Restore a current song export, validating two legacy PCM rounding cases."""
 import argparse
 import copy
+from contextlib import contextmanager
 import hashlib
 import json
 from pathlib import Path
@@ -14,6 +15,42 @@ import wave
 from generation_workspace import generation_root, isolated_instance, write_json
 from generation_publication import tables, canonical
 from material_model_io import read_json
+
+
+@contextmanager
+def precision_validation(checks, originals):
+    from review_desk import production
+    expected={'6f6ac04c7e2749e57158e98c814d67a44ea642e77515b52c4997ddccad86263f',
+              '527f86af6ab9ba0ab0ce6f4ca86685326f82d6a7e0978676a3dd47dc4a7e59ec'}
+    if len(checks)!=2 or {c['revision_id'] for c in checks}!=expected:
+        raise ValueError('unexpected historical precision scope')
+    validate = production.validate_payload
+    validated = set()
+
+    def precise_validation(db_store, object_id, kind, payload, inspect=True, check_current=True):
+        view = payload
+        for check in checks:
+            original = originals[check['revision_id']]
+            if (object_id == original['object_id'] and kind == 'CALL' and
+                    payload == json.loads(original['payload'])):
+                view = copy.deepcopy(payload)
+                matched = False
+                for ref in view.get('inputs', []):
+                    if ref.get('component_id') and ref.get('range', {}).get('end_seconds') == check['range_end']:
+                        _, component = production.component_for(db_store, ref, ref['component_id'])
+                        if (component['file'] == check['file'] and
+                                component['duration_seconds'] == check['recorded_duration']):
+                            ref['range']['end_seconds'] = check['recorded_duration']
+                            matched = True
+                if not matched:
+                    raise ValueError('historical precision reference differs')
+                validated.add(check['revision_id'])
+                break
+        return validate(db_store, object_id, kind, view, inspect=inspect, check_current=check_current)
+
+    production.validate_payload = precise_validation
+    try:yield validated
+    finally:production.validate_payload = validate
 
 
 def recover(root, destination, package, output, candidate=None):
@@ -55,37 +92,11 @@ def recover(root, destination, package, output, candidate=None):
     reader.commit()
     del graph
     archive_reader = SimpleNamespace(db_path=store.db_path, db=reader)
-    validate = production.validate_payload
-    validated = set()
-
-    def precise_validation(db_store, object_id, kind, payload, inspect=True, check_current=True):
-        view = payload
-        for check in checks:
-            original = originals[check['revision_id']]
-            if (object_id == original['object_id'] and kind == 'CALL' and
-                    payload == json.loads(original['payload'])):
-                view = copy.deepcopy(payload)
-                matched = False
-                for ref in view.get('inputs', []):
-                    if ref.get('component_id') and ref.get('range', {}).get('end_seconds') == check['range_end']:
-                        _, component = production.component_for(db_store, ref, ref['component_id'])
-                        if (component['file'] == check['file'] and
-                                component['duration_seconds'] == check['recorded_duration']):
-                            ref['range']['end_seconds'] = check['recorded_duration']
-                            matched = True
-                if not matched:
-                    raise ValueError('historical precision reference differs')
-                validated.add(check['revision_id'])
-                break
-        return validate(db_store, object_id, kind, view, inspect=inspect, check_current=check_current)
-
-    production.validate_payload = precise_validation
     try:
-        with material_archives.read_scope(archive_reader):
+        with precision_validation(checks, originals) as validated, material_archives.read_scope(archive_reader):
             bundle.restore(store, destination / 'export')
         assert validated == {c['revision_id'] for c in checks}
     finally:
-        production.validate_payload = validate
         reader.close()
         store.close()
         reader_path.unlink()

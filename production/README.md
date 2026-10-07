@@ -54,10 +54,10 @@
 
 ## Codex 后台维护与恢复
 
-以下三条只读命令可在真实故事根目录执行；正式业务库为主目录 `.runtime/review.sqlite3`。生成、登记、恢复和导出改在独立任务 worktree 执行，实例选择与变量设置见[任务工作区流程](generation-workspaces.md)。通用系统位于主项目同级 `story-review-desk-python`，按根 [README](../README.md)核对 [config/instance.json](../config/instance.json)指定版本；任务可选择自己的兼容系统工作区。不要复制密钥、建立第二份任务账本或把旧快照覆盖到活库。
+以下三条只读命令可在真实故事根目录执行；正式业务库为主目录 `.runtime/review.sqlite3`。生成、登记、恢复和导出改在独立任务 worktree 执行，实例选择与变量设置见[任务工作区流程](generation-workspaces.md)。通用系统位于主项目同级 `story-review-desk`，按根 [README](../README.md)核对 [config/instance.json](../config/instance.json)指定版本；任务可选择自己的兼容系统工作区。不要复制密钥、建立第二份任务账本或把旧快照覆盖到活库。
 
 ```bash
-production_system=../story-review-desk-python
+production_system=../story-review-desk
 PYTHONPATH="$production_system" python3 -m review_desk --instance . production-entity-review entity-li-ji
 PYTHONPATH="$production_system" python3 -m review_desk --instance . production-get --object asset-liji-image
 PYTHONPATH="$production_system" python3 -m review_desk --instance . production-ready shot-e01-001
