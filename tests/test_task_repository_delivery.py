@@ -95,3 +95,50 @@ class TaskDeliveryTests(unittest.TestCase):
             result = guard.check(['/owner/.codex-task/worktrees/task'], owner=Path('/owner'))
         self.assertEqual(len(result['blockers']), 1)
         self.assertIn('config/instance.json', result['blockers'][0])
+
+    def release_guard_fixture(self, directory, *, owner_matches=True):
+        root = Path(directory).resolve()
+        task = 'task-20261006-0003'
+        target = root / '.codex-task/worktrees' / task
+        release = root / '.runtime/service-releases/retained/manifest.json'
+        release.parent.mkdir(parents=True)
+        release.write_text(json.dumps({'task': task, 'story_main': str(root if owner_matches else root / 'other'),
+                                      'story_worktree': str(root / '.codex-project/worktrees' / task)}))
+        value = {'schemaVersion': 1, 'kind': 'workspace_inspection', 'workspace': str(root),
+                 'retainedWorktrees': [{'taskId': task, 'path': str(target), 'repository': 'primary'}]}
+        return root, target, release, value
+
+    def test_release_guard_keeps_frozen_reference_after_directory_migration(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root, target, release, value = self.release_guard_fixture(directory)
+            original = release.read_bytes()
+            responses = [subprocess.CompletedProcess([], 0, '', ''),
+                         subprocess.CompletedProcess([], 0, json.dumps(value), '')]
+            with patch.object(guard.shutil, 'which', side_effect=lambda name: name), \
+                    patch.object(guard.subprocess, 'run', side_effect=responses) as run:
+                result = guard.check([str(target)], owner=root)
+            self.assertEqual(result['blockers'], [f'retained release manifest: {release}'])
+            self.assertEqual(release.read_bytes(), original)
+            self.assertEqual(run.call_args.args[0], ['codex.task', '-C', str(root), 'inspect', '--json'])
+
+    def test_release_guard_does_not_match_same_task_in_another_owner(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root, target, _, _ = self.release_guard_fixture(directory, owner_matches=False)
+            with patch.object(guard.shutil, 'which', return_value='docker'), \
+                    patch.object(guard.subprocess, 'run', return_value=subprocess.CompletedProcess([], 0, '', '')) as run:
+                self.assertEqual(guard.check([str(target)], owner=root)['blockers'], [])
+            self.assertEqual(run.call_count, 1)
+
+    def test_release_guard_rejects_invalid_or_failed_task_queries(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root, target, _, value = self.release_guard_fixture(directory)
+            invalid = [dict(value, schemaVersion=2), dict(value, workspace='/another'),
+                       dict(value, retainedWorktrees=[{'taskId': 'task-20261006-0003', 'path': '/outside'}])]
+            for response in [*invalid, None]:
+                with self.subTest(response=response):
+                    result = (subprocess.CompletedProcess([], 0, json.dumps(response), '') if response else
+                              subprocess.CalledProcessError(1, ['codex.task']))
+                    with patch.object(guard.shutil, 'which', side_effect=lambda name: name), \
+                            patch.object(guard.subprocess, 'run', side_effect=[subprocess.CompletedProcess([], 0, '', ''), result]):
+                        with self.assertRaises((RuntimeError, subprocess.CalledProcessError)):
+                            guard.check([str(target)], owner=root)
