@@ -34,6 +34,10 @@ INSTANCE_FILES = ('config/instance.json', 'content/production-approach.json')
 PORTS = {'3000/tcp': [{'HostIp': '127.0.0.1', 'HostPort': '3000'},
                       {'HostIp': '127.0.0.1', 'HostPort': '64401'}]}
 DOCKER = shutil.which('docker')
+IMAGE_BASE = 'story-review-desk:base'
+IMAGE_CURRENT = 'story-review-desk:current'
+IMAGE_PREVIOUS = 'story-review-desk:previous'
+IMAGE_POLICY = 'stable-v1'
 
 
 def require(condition, message):
@@ -173,6 +177,85 @@ def pin_base_image(image_id, tag):
     require(inspect(tag, image=True)['Id'] == image_id, 'base image tag changed before build')
 
 
+def image_tag_target(tag):
+    ids = run([DOCKER, 'image', 'ls', '--no-trunc', '--format', '{{.ID}}',
+               '--filter', 'reference=' + tag]).decode().splitlines()
+    require(len(set(ids)) <= 1, 'ambiguous local image tag')
+    return ids[0] if ids else None
+
+
+@contextmanager
+def image_tag_lock(story_main):
+    path = Path(story_main) / '.runtime/docker-image-tags.lock'
+    require(not path.is_symlink(), 'image lock must not be symlink')
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open('a') as lock:
+        fcntl.flock(lock, fcntl.LOCK_EX)
+        yield
+
+
+def stable_image_policy(previous_id):
+    # Preparation only reads; bootstrap the fixed base during the locked build.
+    image_id = image_tag_target(IMAGE_BASE) or previous_id
+    fixed = inspect(image_id, image=True)
+    require(fixed['Id'] == image_id, 'fixed runtime base unavailable')
+    previous = inspect(previous_id, image=True)
+    for key in ('Cmd', 'Entrypoint', 'WorkingDir', 'User', 'Env'):
+        require((fixed.get('Config', {}).get(key) or '') == (previous.get('Config', {}).get(key) or ''),
+                'runtime base process configuration differs; review a base upgrade')
+    return {'image_policy': IMAGE_POLICY, 'base_image_tag': IMAGE_BASE,
+            'build_base_image': image_id}
+
+
+def pin_stable_base(image_id):
+    require(re.fullmatch(r'sha256:[0-9a-f]{64}', image_id or '') is not None, 'full base image ID required')
+    require(inspect(image_id, image=True)['Id'] == image_id, 'fixed runtime base unavailable')
+    existing = image_tag_target(IMAGE_BASE)
+    require(existing in (None, image_id), 'runtime base changed; prepare a new bundle')
+    if existing is None:
+        run([DOCKER, 'tag', image_id, IMAGE_BASE])
+    require(inspect(IMAGE_BASE, image=True)['Id'] == image_id, 'runtime base tag differs')
+
+
+def build_stable_image(root, m):
+    require(m['image_policy'] == IMAGE_POLICY and m['base_image_tag'] == IMAGE_BASE,
+            'unsupported image policy')
+    # No candidate tag: each bundle has its own ID even during parallel work.
+    # Resume a completed build whose receipt was interrupted, without rebuilding.
+    # Buildx may return a manifest digest; freeze the canonical local image ID.
+    iidfile = root / 'build-image-id'
+    require(not iidfile.is_symlink(), 'build image ID must not be symlink')
+    with image_tag_lock(m['story_main']):
+        pin_stable_base(m['build_base_image'])
+        if not iidfile.exists():
+            run([DOCKER, 'build', '--pull=false', '--network=none', '--iidfile', iidfile, root / 'build'])
+        require(inspect(IMAGE_BASE, image=True)['Id'] == m['build_base_image'], 'runtime base changed during build')
+        result = iidfile.read_text().strip()
+        require(re.fullmatch(r'sha256:[0-9a-f]{64}', result) is not None, 'invalid build image ID; inspect interrupted build')
+        image_id = inspect(result, image=True)['Id']
+    source_check(image_id, m['source_hashes'])
+    return image_id
+
+
+def update_image_aliases(m, image, *, recovered=False):
+    if m.get('image_policy') != IMAGE_POLICY:
+        return {}  # Frozen legacy bundles retain their original behavior.
+    current_id = m['previous_app']['image'] if recovered else image['image']
+    previous_id = image['image'] if recovered else m['previous_app']['image']
+    with image_tag_lock(m['story_main']):
+        app = inspect(APP)
+        require(app['Image'] == current_id and app['State']['Running'] and
+                app['State'].get('Health', {}).get('Status') == 'healthy',
+                'only the verified active service may move image aliases')
+        for image_id in (current_id, previous_id):
+            require(inspect(image_id, image=True)['Id'] == image_id, 'release image unavailable')
+        # Protect rollback first. A retry after either tag operation is safe.
+        for tag, image_id in ((IMAGE_PREVIOUS, previous_id), (IMAGE_CURRENT, current_id)):
+            run([DOCKER, 'tag', image_id, tag])
+            require(inspect(tag, image=True)['Id'] == image_id, 'release image alias differs')
+    return {IMAGE_CURRENT: current_id, IMAGE_PREVIOUS: previous_id}
+
+
 def prepare(args):
     story, system = args.story_worktree.resolve(), args.system_worktree.resolve()
     story_main, system_main = primary(story), primary(system)
@@ -222,8 +305,9 @@ def prepare(args):
         require(header.split()[0] in ('100644', '100755'), 'system source symlink or special file')
         raw = run(['git', '-C', system, 'show', args.system_candidate + ':' + name])
         put('build/' + name, raw); source[name] = sha(raw)
-    base_tag = base_image_tag(app['Image'])
-    put('build/Dockerfile', ('FROM ' + base_tag + '\nRUN rm -rf /app/review_desk\nCOPY review_desk /app/review_desk\n').encode())
+    policy = stable_image_policy(app['Image'])
+    base_tag = policy['base_image_tag']
+    put('build/Dockerfile', ('FROM ' + base_tag + '\nRUN rm -rf /app/review_desk\nCOPY review_desk /app/review_desk\nLABEL org.opencontainers.image.revision=' + args.system_candidate + '\n').encode())
     helper = 'scripts/integrate_generation_review_system.py'
     require((story / helper).read_bytes() == git_file(story, args.story_candidate, helper), 'integrator differs from candidate')
     files = app_safe['config_files'].split(',')
@@ -234,7 +318,7 @@ def prepare(args):
             'system_worktree': os.path.relpath(system, story),
             'expected_target': args.system_target, 'candidate': args.system_candidate}
     put('system-delivery.json', json.dumps(plan, ensure_ascii=False, indent=2).encode() + b'\n')
-    manifest = {'format': 'autonomous-release-v1', 'task': TASK, 'push': False,
+    manifest = {**policy, 'format': 'autonomous-release-v1', 'task': TASK, 'push': False,
                 'story_worktree': str(story), 'system_worktree': str(system),
                 'story_main': str(story_main), 'system_main': str(system_main),
                 'story_candidate': args.story_candidate, 'story_target': args.story_target,
@@ -272,6 +356,12 @@ def source_check(image_id, expected, *, running=False):
 def build(args):
     root, m = load_bundle(args.bundle)
     require(not (root / 'image.json').exists(), 'image receipt already exists; do not rebuild reviewed bundle')
+    if m.get('image_policy') == IMAGE_POLICY:
+        image_id = build_stable_image(root, m)
+        save(root / 'image.json', {'image': image_id, 'publish_tag': IMAGE_CURRENT,
+                                 'source_verified': True, 'manifest_sha256': sha((root / 'manifest.json').read_bytes())})
+        print(json.dumps({'image': image_id, 'image_receipt_sha256': sha((root / 'image.json').read_bytes()), 'formal_mutations': False}))
+        return
     base_id, base_tag = m['previous_app']['image'], m['base_image_tag']
     pin_base_image(base_id, base_tag)
     tag = 'story-review-desk:autonomous-' + m['system_candidate'][:12] + '-' + m['story_candidate'][:12]
@@ -528,6 +618,7 @@ def apply(args):
         fd, temp_name = tempfile.mkstemp(prefix='after-', suffix='.sqlite3', dir=receipt);os.close(fd);Path(temp_name).unlink()
         after_file = Path(temp_name);snapshot(db, after_file)
         history = verify_history(before_file, after_file, read(root / 'project-update/expected-body.json'), 15, 1)
+        update_image_aliases(m, image)
         final = {'status': 'formal_browser_acceptance_pending', 'project_version': result['record']['version'],
                  'project_sha256': sha(canonical(result['record'])), 'history': history,
                  'after_snapshot': after_file.name, 'after_snapshot_sha256': sha(after_file.read_bytes()),
@@ -607,6 +698,7 @@ def recover(args):
             wait_healthy()
             require(safe_container(inspect(APP)) in (m['previous_app'], rollback_app), 'service recovery differs from fixed previous app')
             require(safe_container(inspect(NGINX)) in (m['previous_nginx'], rollback_nginx), 'service recovery differs from fixed previous nginx')
+            update_image_aliases(m, image, recovered=True)
             save(root / 'run/service-recovered.json', {'old_image': m['previous_app']['image'], 'old_nginx_image': m['previous_nginx']['image'], 'database_restored': False})
         print(json.dumps({'recovery': args.action, 'complete_invoked': False, 'database_restored': False}))
 

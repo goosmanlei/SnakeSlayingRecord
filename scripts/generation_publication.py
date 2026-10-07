@@ -27,7 +27,11 @@ KEYS = {
     'material_plan_comments': ('comment_id','material_id'),
     'material_aliases': ('alias_id',),
     'material_definition_versions': ('material_id','number'),
+    'business_codes': ('object_id',),
+    'business_candidates': ('material_id','version','candidate_id'),
+    'business_comments': ('comment_id',),
 }
+CODE_TABLES={'business_codes','business_candidates','business_comments'}
 PLAN_TABLES={'material_plan_versions','material_plan_members','material_candidate_members','material_plan_comments'}
 MODEL_TABLES={'material_content','material_definitions','material_aliases','material_definition_versions','material_archive_files'}
 MUTABLE = {'objects', 'comments', 'material_rounds','material_plan_versions','material_aliases','material_definition_versions','material_archive_files'}
@@ -93,7 +97,7 @@ def revision_media(changes):
 
 def build_plan(before_path, after_path):
     before, after = tables(before_path), tables(after_path)
-    for table in PLAN_TABLES|MODEL_TABLES:
+    for table in PLAN_TABLES|MODEL_TABLES|CODE_TABLES:
         before.setdefault(table,[]);after.setdefault(table,[])
     if set(before) != set(after):
         raise ValueError('review schema changed; migrate and validate before preparing publication')
@@ -135,11 +139,16 @@ def build_plan(before_path, after_path):
     refs.update(c['after']['target_revision_id'] for c in changes['comments'])
     before_revisions = {r['id']: r for r in before['revisions']}
     expected_references = {rid: before_revisions[rid] for rid in refs - new_revisions}
+    code_owners = set()
+    for change in changes['business_codes']:
+        oid = change['after']['object_id']
+        code_owners.add(oid.split(':',2)[1] if oid.startswith('scene:') else oid)
     return {'format': 'generation-publication-v1', 'scope': sorted(scope),
             'expected_heads': {oid: old_objects.get(oid) for oid in sorted(scope)},
             'expected_references': expected_references,
             'guard_heads': {r['object_id']: r['id'] for r in expected_references.values()
                             if old_objects[r['object_id']]['current_revision'] == r['id']},
+            'expected_numbered_objects': {oid:old_objects[oid] for oid in code_owners if oid in old_objects},
             'changes': changes,
             'comment_events': events, 'media': revision_media(changes['revisions'])}
 
@@ -176,7 +185,8 @@ def journal(db, pid, callback):
 
 def apply_plan(db, plan, *, identity=None):
     active_keys={k:v for k,v in KEYS.items() if k in plan.get('changes',{})}
-    if plan.get('format') != 'generation-publication-v1' or set(plan.get('changes',{})) != set(active_keys) or set(active_keys) not in (set(KEYS),set(KEYS)-MODEL_TABLES,set(KEYS)-PLAN_TABLES-MODEL_TABLES):
+    allowed = [set(KEYS)-removed-codes for removed in (set(),MODEL_TABLES,PLAN_TABLES|MODEL_TABLES) for codes in (set(),CODE_TABLES)]
+    if plan.get('format') != 'generation-publication-v1' or set(plan.get('changes',{})) != set(active_keys) or set(active_keys) not in allowed:
         raise ValueError('invalid generation publication package')
     if sorted(plan['media'], key=lambda row: row['file']) != revision_media(plan['changes']['revisions']):
         raise ValueError('media manifest differs from published revisions')
@@ -204,6 +214,10 @@ def apply_plan(db, plan, *, identity=None):
                 if sqlite3.complete_statement(statement):
                     db.execute(statement);statement=''
             sqlite_compatibility(db)
+        if CODE_TABLES <= set(active_keys):
+            from review_desk.business_codes import SCHEMA as CODE_SCHEMA
+            for statement in CODE_SCHEMA.split(';'):
+                if statement.strip():db.execute(statement)
         columns = {t: {r[1] for r in db.execute('PRAGMA table_info(' + t + ')')} for t in active_keys}
         for oid, expected in plan['expected_heads'].items():
             if current('objects', {'id': oid}) != expected:
@@ -212,6 +226,9 @@ def apply_plan(db, plan, *, identity=None):
             row = current('objects', {'id': oid})
             if not row or row['current_revision'] != rid:
                 raise ValueError('formal input changed: ' + oid)
+        for oid, expected in plan.get('expected_numbered_objects', {}).items():
+            if current('objects',{'id':oid}) != expected:
+                raise ValueError('numbered object changed: ' + oid)
         for rid, expected in plan['expected_references'].items():
             if current('revisions', {'id': rid}) != expected:
                 raise ValueError('exact dependency changed or missing: ' + rid)
@@ -234,7 +251,7 @@ def apply_plan(db, plan, *, identity=None):
                 seen.add(pk)
                 owner = (new['id'] if table == 'objects' else new.get('object_id') or
                          new.get('target_object_id') or new.get('material_id'))
-                if owner and owner not in scope:
+                if owner and owner not in scope and table not in CODE_TABLES:
                     raise ValueError('row outside publication scope')
                 if table=='material_archive_files':
                     media={"export/assets/"+item['file']:item for item in plan['media']}
@@ -258,7 +275,7 @@ def apply_plan(db, plan, *, identity=None):
                     version=current('material_plan_versions',old)
                     if version and version['frozen']:raise ValueError('frozen material provenance cannot change')
                 actual=current(table,new)
-                shared_content=old is None and table in {'material_content','material_definitions'} and actual==new
+                shared_content=old is None and table in {'material_content','material_definitions'}|CODE_TABLES and actual==new
                 if actual != old and not shared_content:
                     raise ValueError('formal row changed: ' + table)
         for table in active_keys:
@@ -268,7 +285,7 @@ def apply_plan(db, plan, *, identity=None):
                 if row is None:
                     old=change['before'];db.execute('DELETE FROM '+table+' WHERE '+' AND '.join(k+'=?' for k in KEYS[table]),key(table,old));continue
                 if change['before'] is None:
-                    if table in {'material_content','material_definitions'} and current(table,row)==row:continue
+                    if table in {'material_content','material_definitions'}|CODE_TABLES and current(table,row)==row:continue
                     names = list(row)
                     db.execute('INSERT INTO ' + table + ' (' + ','.join(names) + ') VALUES (' + ','.join('?' for _ in names) + ')', tuple(row.values()))
                 else:
@@ -281,6 +298,9 @@ def apply_plan(db, plan, *, identity=None):
             head = current('revisions', {'id': obj['current_revision']}) if obj else None
             if not head or head['object_id'] != oid or head['version'] != obj['version']:
                 raise ValueError('invalid current revision after publication: ' + oid)
+        for table in CODE_TABLES & set(active_keys):
+            for change in plan['changes'][table]:
+                validate_numbered_row(db,table,change['after'],scope,plan.get('expected_numbered_objects',{}))
         events = []
         for row in plan['comment_events']:
             if set(row) != {'id', 'comment_id', 'action', 'body', 'at'} or row['comment_id'] not in changed_comments:
@@ -305,3 +325,31 @@ def apply_plan(db, plan, *, identity=None):
         return {'changed_rows': {t: len(c) for t, c in plan['changes'].items()}, 'comment_events': events}
 
     return journal(db, identity or publication_id(plan), mutate)
+
+
+def validate_numbered_row(db, table, row, scope, guarded):
+    """Allocate display identities without renumbering or changing story content."""
+    if type(row['number']) is not int or row['number'] < 1:
+        raise ValueError('invalid business number')
+    if table == 'business_codes':
+        from review_desk.business_codes import PREFIXES
+        oid = row['object_id'];scene = None
+        if oid.startswith('scene:'):
+            _, oid, scene = oid.split(':',2)
+        if oid not in scope and oid not in guarded:
+            raise ValueError('numbered identity outside guarded objects')
+        obj = db.execute('SELECT kind,current_revision FROM objects WHERE id=?',(oid,)).fetchone()
+        if not obj:raise ValueError('numbered object is missing')
+        payload=json.loads(db.execute('SELECT payload FROM revisions WHERE id=?',(obj['current_revision'],)).fetchone()[0])
+        prefix='RL' if obj['kind']=='RELATION' and payload.get('relation_type')=='entity' else PREFIXES.get(obj['kind'])
+        if scene is not None:
+            exists=obj['kind']=='EPISODE' and any(scene==v.get('id') for r in db.execute('SELECT payload FROM revisions WHERE object_id=?',(oid,)) for v in json.loads(r[0]).get('scenes',[]))
+            if not exists:raise ValueError('numbered scene is missing')
+            prefix='S'
+        if row['prefix']!=prefix:raise ValueError('business prefix differs from exact object kind')
+    elif table == 'business_candidates':
+        if type(row['version']) is not int or row['version']<1:raise ValueError('invalid local candidate version')
+        found=db.execute("SELECT 1 FROM material_plan_members m JOIN material_candidate_members c ON c.revision_id=m.revision_id WHERE m.material_id=? AND m.number=? AND c.candidate_id=? AND m.role='result'",(row['material_id'],row['version'],row['candidate_id'])).fetchone()
+        if not found:raise ValueError('candidate number has no exact version membership')
+    elif not db.execute('SELECT 1 FROM comments WHERE id=?',(row['comment_id'],)).fetchone():
+        raise ValueError('numbered comment is missing')

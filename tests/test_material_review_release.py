@@ -9,10 +9,12 @@ import shutil
 import sqlite3
 import sys
 import tempfile
+import tracemalloc
 import unittest
 from unittest.mock import patch
 sys.path.insert(0,str(Path(__file__).parents[1]/'scripts'))
 import material_review_release as r
+import task_repository_delivery as delivery
 
 class ReleaseTest(unittest.TestCase):
     def setUp(self):
@@ -54,6 +56,7 @@ class ReleaseTest(unittest.TestCase):
         self.assertEqual(r.release_name('task-20261004-0005','a'*40,'b'*40), 'asset-cleanup-20261004-0005-'+'a'*12+'-'+'b'*12)
         self.assertEqual(r.release_name('task-20261004-0008','a'*40,'b'*40), 'ui-unification-20261004-0008-'+'a'*12+'-'+'b'*12)
         self.assertEqual(r.release_name('task-20261005-0001','a'*40,'b'*40), 'autonomous-20261005-0001-'+'a'*12+'-'+'b'*12)
+        self.assertEqual(r.release_name('task-20261006-0002','a'*40,'b'*40), 'entity-cards-20261006-0002-'+'a'*12+'-'+'b'*12)
         with self.assertRaisesRegex(ValueError,'unsupported release task'):
             r.release_name('../foreign','a'*40,'b'*40)
 
@@ -122,6 +125,9 @@ class ReleaseTest(unittest.TestCase):
         def primary(path):
             return story_main if path == story else system_main
         with patch.object(r, 'inspect', side_effect=inspect), \
+             patch.object(r.base, 'stable_image_policy', return_value={'image_policy': r.base.IMAGE_POLICY,
+                 'base_image_tag': r.base.IMAGE_BASE, 'build_base_image': 'sha256:' + 'c' * 64}), \
+             patch.object(delivery, 'uses_native_backend', return_value=False), \
              patch.object(r.base, 'primary', side_effect=primary), \
              patch.object(r.base, 'repo_check'), \
              patch.object(r.base, 'git_file', side_effect=lambda repo, commit, name: (repo / name).read_bytes()), \
@@ -155,5 +161,35 @@ class ReleaseTest(unittest.TestCase):
                 db.executescript("CREATE TABLE material_members(material_id TEXT,number INTEGER,revision_id TEXT);INSERT INTO material_members VALUES ('need',1,'original');")
         with sqlite3.connect(self.after) as db:db.execute("UPDATE material_members SET revision_id='unrelated'")
         with self.assertRaisesRegex(ValueError,'identities lost: material_members'):r.preserved(self.before,self.after)
+
+    def test_duplicate_immutable_rows_cannot_hide_deletion(self):
+        for path in (self.before,self.after):
+            with sqlite3.connect(path) as db:
+                db.executescript("CREATE TABLE history(body TEXT);INSERT INTO history VALUES ('same'),('same');")
+        with sqlite3.connect(self.after) as db:db.execute('DELETE FROM history WHERE rowid=1')
+        with self.assertRaisesRegex(ValueError,'immutable history lost: history'):r.preserved(self.before,self.after)
+
+    def test_history_schema_change_and_blobs_are_rejected(self):
+        with sqlite3.connect(self.after) as db:db.execute('ALTER TABLE revisions ADD COLUMN another TEXT')
+        with self.assertRaisesRegex(ValueError,'schema changed'):r.preserved(self.before,self.after)
+        shutil.copyfile(self.before,self.after)
+        with sqlite3.connect(self.after) as db:db.execute('INSERT INTO revisions VALUES (?,?)',('blob',b'unknown'))
+        with self.assertRaisesRegex(ValueError,'BLOB history'):r.preserved(self.before,self.after)
+
+    def test_large_history_comparison_and_file_hash_do_not_load_entire_databases(self):
+        with sqlite3.connect(self.before) as db:
+            db.executemany('INSERT INTO revisions VALUES (?,?)',((str(i),'x'*65536) for i in range(256)))
+        shutil.copyfile(self.before,self.after)
+        expected=r.sha(self.before.read_bytes())
+        tracemalloc.start()
+        try:
+            with patch.object(r.base,'rows',side_effect=AssertionError('whole database loaded')), \
+                 patch.object(Path,'read_bytes',side_effect=AssertionError('whole file loaded')):
+                result=r.preserved(self.before,self.after)
+                self.assertEqual(r.file_sha256(self.before),expected)
+            peak=tracemalloc.get_traced_memory()[1]
+        finally:tracemalloc.stop()
+        self.assertEqual(result['revisions']['before'],257)
+        self.assertLess(peak,4*1024*1024)
 
 if __name__=='__main__':unittest.main()

@@ -186,6 +186,11 @@ def remote_head(system, remote, ref):
 
 def publish_system(a):
     root, m, c, _ = authorized(a)
+    if m.get('task_delivery'):
+        import task_repository_delivery
+        result = task_repository_delivery.push_receipt(m['task_delivery'])
+        base.save(root/'run/system-push.json', result)
+        print(json.dumps(result));return
     upstream = c.get('system_upstream')
     base.require(upstream is not None, 'system push was not included in reviewed package')
     system = Path(m['system_worktree'])
