@@ -8,6 +8,7 @@ an old database or old export must never be restored after it commits.
 import argparse
 import json
 from pathlib import Path
+import re
 import shutil
 import sys
 from types import SimpleNamespace
@@ -19,6 +20,15 @@ import task_repository_delivery as delivery
 base=service.base
 TASK='task-20261006-0007'
 PREFIX='production/version-consolidation/'
+
+
+def verify_committed_file(repository,commit,name):
+    path=Path(repository)/name;blob=base.git_file(repository,commit,name)
+    pointer=re.fullmatch(rb'version https://git-lfs.github.com/spec/v1\noid sha256:([0-9a-f]{64})\nsize ([0-9]+)\n',blob)
+    if name=='export/material-content.json' and pointer:
+        base.require(path.stat().st_size==int(pointer[2]) and migration.sha(path)==pointer[1].decode(),'LFS original differs from committed pointer')
+    else:
+        base.require(base.sha(blob)==migration.sha(path),'uncommitted migration input: '+name)
 
 
 def api(m):
@@ -36,7 +46,7 @@ def prepare(a):
            'scripts/content_version_release.py','scripts/content_version_consolidation.py',
            'export/objects.json','export/material-content.json','export/comments.json','export/manifest.json']
     hashes={n:migration.sha(story/n) for n in names}
-    for n,h in hashes.items():base.require(base.sha(base.git_file(story,m['story_candidate'],n))==h,'uncommitted migration input: '+n)
+    for n in hashes:verify_committed_file(story,m['story_candidate'],n)
     Store,vc=api(m);s=Store.open_readonly(Path(m['story_main'])/'.runtime/review.sqlite3')
     try:base.require(vc.fingerprint(s)==plan['baseline'],'formal database changed')
     finally:s.close()
