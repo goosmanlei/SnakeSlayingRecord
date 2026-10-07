@@ -3,14 +3,13 @@
 ## 当前成果与运行依据
 
 - 当前作品是方向三《把灯带回家》、故事结构第十稿、精修九定稿候选和剧本版本四。用户确认版本四为制作终稿；准确依据见 [制作输入锁](production/source-lock.json)。小说、剧本和具体素材的认可分别判断。
-- 制作系统已覆盖实体完整状态、素材方案与真实候选、17 集 42 场 297 镜的制作拆解和参考选择，以及管理页、共用大卡和事务失效缓存。代码准确身份由 `config/instance.json.review_desk_commit` 维护。
+- 生产制作统一包含制作拆解、实体管理、素材管理；297 镜的设计正文与视频方案同页阅读，完整素材区、准确参考选择、共用大卡与评论继续保留。入口合并的保全、恢复和验收依据见 [交付说明](production/production-unification/README.md)。代码准确身份由 `config/instance.json.review_desk_commit` 维护。
 - 四类生产内容的 V1 收敛、实际删除、引用缺项、净化恢复及浏览器验收入口统一见 [版本收敛交付](production/version-consolidation/README.md)。后续普通创作继续建立 V2；被删参考需要明确重新选择和审阅，不能自动替换。33 个缺原始需求方案的素材身份保留真实产物，须补全方案后再继续生成。
 - 正式入口为 `http://127.0.0.1:3000/`，正式库为主目录 `.runtime/review.sqlite3`。任务的双仓 Git 交付、正式数据应用、实际镜像和页面验收分别以主项目 `.codex-task/tasks.json` 及对应冻结包回执为准；任务工作区候选不等于正式运行版本。
 - 后续跨仓工作沿用一个故事任务管理两仓已纳管工作区。任务、依赖、执行和完成状态只在主账本维护；流程见 [生成工作区说明](production/generation-workspaces.md)。历史任务保持原交付后端，不恢复已结束的单次生成授权。
 
 ## 下一步与业务边界
 
-- 本任务将制作设定与全剧制作合并为生产制作，把视频方案接到逐镜设计下，并退役组合与历史；范围和保全边界见 [入口合并任务说明](planning/production-workspace-unification-task.md)。当前正式能力仍以实际发布回执为准。
 - V1 收敛完成后，先按 [缺项清单](production/version-consolidation/missing-references.json) 修复具体任务所需参考，再确认新的准确采纳范围。不得为清除提示而批量换为最新版本。
 - 歌曲仍有实唱词音不对应、原生无损 WAV、逐句定位、新曲调短参考及角色演法等缺口。用户要求以既有成果完成阶段交付，尚未接受音频质量；后续另定制作范围与调用授权。历史意见和用法见 [歌曲交接](production/songs-review.md)，当前可恢复内容以净化导出为准。
 - 当前没有已生成的镜头视频原件。后续视频、动态分镜与组合工程按准确剧本、素材和选择逐项推进，不能将素材覆盖或待生成方案视为视频交付。
@@ -23,5 +22,4 @@
 - 有效数据恢复入口是当前 `export/manifest.json` 及 `production/version-consolidation/recovery.json`；恢复到新的空实例后再核对。旧制作完整包已退役；任何收敛前数据库、旧导出或重放都不能覆盖正式库。其他任务现存数据库的定位与边界见 [恢复副本清单](production/version-consolidation/retired-recovery-inventory.json)。保留其文件不代表仍可用作恢复源。
 - 用户要求保留 `task-20261005-0001` 的双仓工作区、分支和必要追溯资料。其 `.runtime/autonomous-optimization/final-preview/`、`final-coverage-song-restore/` 曾因共享 VM 文件句柄暂留；原预览已停止。后续清理由原任务执行者重新核对占用和用途，释放后精确处理，不停止共享 VM。
 - 其他已完成任务的冻结包、旧一致性库和工作区不在本轮删除范围内。旧库已退出有效恢复入口；原任务执行者在追溯用途结束后核对进程、挂载和归属，经任务工具退役。不得仅因任务已完成便递归删除。
-- 本任务正式应用、页面复验及本机清理回执位于 `.codex-task/worktrees/task-20261006-0007/.runtime/version-consolidation/release/run/`。正式验收前保留必要基线与核验原件，验收后移除本任务无效副本并回读；是否完成以实际回执与账本为准。
 - 当前正式库、净化交付原件、准确服务配置与镜像、用户评论和真实调用回执继续保留。工作区在 TUI 退出释放锁后通过 `codex.project task cleanup` 受管退役；本任务不强删仍被使用的工作区，也不重写 Git 历史。
