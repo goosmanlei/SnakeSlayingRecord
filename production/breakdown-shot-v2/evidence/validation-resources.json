@@ -183,7 +183,71 @@
         "swap_bytes": 0
       },
       "container_state": null
+    },
+    {
+      "receipt": ".runtime/breakdown-shot-v2/release-history-resource.json",
+      "status": "passed",
+      "exit_code": 0,
+      "peak_rss_mib": 31.42,
+      "limit_mib": 128,
+      "elapsed_seconds": 6.91,
+      "host_before": {
+        "pressure": 1,
+        "compressed_bytes": 9453862912,
+        "swap_bytes": 0
+      },
+      "host_last_sample": {
+        "pressure": 1,
+        "compressed_bytes": 9244540928,
+        "swap_bytes": 0
+      },
+      "container_state": {
+        "Status": "exited",
+        "Running": false,
+        "Paused": false,
+        "Restarting": false,
+        "OOMKilled": false,
+        "Dead": false,
+        "Pid": 0,
+        "ExitCode": 0,
+        "Error": "",
+        "StartedAt": "2026-10-07T02:37:46.268599219Z",
+        "FinishedAt": "2026-10-07T02:37:52.65746275Z"
+      }
+    },
+    {
+      "receipt": ".runtime/breakdown-shot-v2/formal-preflight-recovery-v2-resource.json",
+      "status": "passed",
+      "exit_code": 0,
+      "peak_rss_mib": 675.5,
+      "limit_mib": 1024,
+      "elapsed_seconds": 17.35,
+      "host_before": {
+        "pressure": 1,
+        "compressed_bytes": 9240543232,
+        "swap_bytes": 0
+      },
+      "host_last_sample": {
+        "pressure": 1,
+        "compressed_bytes": 9231892480,
+        "swap_bytes": 0
+      },
+      "container_state": null
     }
   ],
-  "host_limit_note": "进程树监控不代替容器硬限额；恢复实际限额768 MiB，见独立恢复回执。"
+  "host_limit_note": "进程树监控不代替容器硬限额；恢复实际限额768 MiB，见独立恢复回执。",
+  "release_history_comparison": {
+    "implementation": "scripts/material_review_release.py",
+    "implementation_sha256": "1570944c4b9a5c63de64dbd0167b25286b2236f157683932226e13520b2dd286",
+    "regression_command": "python3.11 -m unittest discover -s tests -p test_material_review_release.py -v",
+    "regressions_passed": 12,
+    "new_regressions": 3,
+    "database_bytes": 213704704,
+    "database_sha256": "6e518e730ea9bb39788d87b960ea1502d18dd339a115c40f09134b83f1a774db",
+    "tables_checked": 32,
+    "peak_cgroup_bytes": 254283776,
+    "memory_limit_bytes": 268435456,
+    "oom_killed": false,
+    "formal_writes": false
+  }
 }

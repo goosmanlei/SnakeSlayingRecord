@@ -9,6 +9,7 @@ import shutil
 import sqlite3
 import sys
 import tempfile
+import tracemalloc
 import unittest
 from unittest.mock import patch
 sys.path.insert(0,str(Path(__file__).parents[1]/'scripts'))
@@ -156,5 +157,35 @@ class ReleaseTest(unittest.TestCase):
                 db.executescript("CREATE TABLE material_members(material_id TEXT,number INTEGER,revision_id TEXT);INSERT INTO material_members VALUES ('need',1,'original');")
         with sqlite3.connect(self.after) as db:db.execute("UPDATE material_members SET revision_id='unrelated'")
         with self.assertRaisesRegex(ValueError,'identities lost: material_members'):r.preserved(self.before,self.after)
+
+    def test_duplicate_immutable_rows_cannot_hide_deletion(self):
+        for path in (self.before,self.after):
+            with sqlite3.connect(path) as db:
+                db.executescript("CREATE TABLE history(body TEXT);INSERT INTO history VALUES ('same'),('same');")
+        with sqlite3.connect(self.after) as db:db.execute('DELETE FROM history WHERE rowid=1')
+        with self.assertRaisesRegex(ValueError,'immutable history lost: history'):r.preserved(self.before,self.after)
+
+    def test_history_schema_change_and_blobs_are_rejected(self):
+        with sqlite3.connect(self.after) as db:db.execute('ALTER TABLE revisions ADD COLUMN another TEXT')
+        with self.assertRaisesRegex(ValueError,'schema changed'):r.preserved(self.before,self.after)
+        shutil.copyfile(self.before,self.after)
+        with sqlite3.connect(self.after) as db:db.execute('INSERT INTO revisions VALUES (?,?)',('blob',b'unknown'))
+        with self.assertRaisesRegex(ValueError,'BLOB history'):r.preserved(self.before,self.after)
+
+    def test_large_history_comparison_and_file_hash_do_not_load_entire_databases(self):
+        with sqlite3.connect(self.before) as db:
+            db.executemany('INSERT INTO revisions VALUES (?,?)',((str(i),'x'*65536) for i in range(256)))
+        shutil.copyfile(self.before,self.after)
+        expected=r.sha(self.before.read_bytes())
+        tracemalloc.start()
+        try:
+            with patch.object(r.base,'rows',side_effect=AssertionError('whole database loaded')), \
+                 patch.object(Path,'read_bytes',side_effect=AssertionError('whole file loaded')):
+                result=r.preserved(self.before,self.after)
+                self.assertEqual(r.file_sha256(self.before),expected)
+            peak=tracemalloc.get_traced_memory()[1]
+        finally:tracemalloc.stop()
+        self.assertEqual(result['revisions']['before'],257)
+        self.assertLess(peak,4*1024*1024)
 
 if __name__=='__main__':unittest.main()
