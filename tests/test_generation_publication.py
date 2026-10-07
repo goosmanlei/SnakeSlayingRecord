@@ -208,3 +208,55 @@ class GenerationPublicationTest(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+class NumberPublicationTest(unittest.TestCase):
+    def setUp(self):
+        self.temp=tempfile.TemporaryDirectory();self.addCleanup(self.temp.cleanup)
+        self.root=Path(self.temp.name);self.source=self.root/'source.sqlite3';self.formal=self.root/'formal.sqlite3'
+        self.store=Store(self.source);self.addCleanup(self.store.close)
+        self.store.put_object('episode','EPISODE',{'title':'锁定正文','number':1,'blocks':[],'scenes':[{'id':'scene-one','block_ids':[]}]})
+        with self.store.db:
+            self.store.db.execute("DELETE FROM business_codes WHERE prefix IN ('E','S','SH')")
+        publication.backup(self.source,self.formal)
+        from review_desk import business_codes
+        business_codes.initialize(self.store)
+        self.plan=publication.build_plan(self.formal,self.source)
+
+    def test_existing_story_gets_codes_without_story_revisions_and_repeated_apply_is_safe(self):
+        self.assertEqual(self.plan['scope'],[])
+        self.assertFalse(self.plan['changes']['objects']);self.assertFalse(self.plan['changes']['revisions'])
+        before=publication.tables(self.formal)
+        db=publication.connect(self.formal,readonly=False);self.addCleanup(db.close)
+        publication.apply_plan(db,self.plan)
+        self.assertTrue(publication.apply_plan(db,self.plan)['already_published'])
+        after=publication.tables(self.formal)
+        self.assertEqual(before['objects'],after['objects']);self.assertEqual(before['revisions'],after['revisions'])
+        self.assertEqual(after['business_codes'],publication.tables(self.source)['business_codes'])
+
+    def test_matching_startup_migration_is_reused_but_number_collision_is_rejected(self):
+        target=Store(self.formal);target.close()
+        db=publication.connect(self.formal,readonly=False);self.addCleanup(db.close)
+        publication.apply_plan(db,self.plan)
+        self.assertEqual(db.execute('SELECT count(*) FROM business_codes').fetchone()[0],2)
+        # A separate exact target with a concurrent allocation must not be renumbered.
+        other=self.root/'other.sqlite3';publication.backup(self.source,other)
+        clash=publication.connect(other,readonly=False);self.addCleanup(clash.close)
+        with clash:
+            clash.execute('DELETE FROM business_codes')
+            clash.execute("INSERT INTO business_codes VALUES ('concurrent-object','E',1)")
+        before='\n'.join(clash.iterdump())
+        with self.assertRaises((ValueError,sqlite3.IntegrityError)):
+            publication.apply_plan(clash,self.plan)
+        self.assertEqual('\n'.join(clash.iterdump()),before)
+
+    def test_wrong_prefix_missing_scene_or_unguarded_identity_rolls_back(self):
+        db=publication.connect(self.formal,readonly=False);self.addCleanup(db.close)
+        for mutate in ('prefix','scene','guard'):
+            bad=copy.deepcopy(self.plan)
+            if mutate=='prefix':bad['changes']['business_codes'][0]['after']['prefix']='D'
+            elif mutate=='scene':
+                next(c for c in bad['changes']['business_codes'] if c['after']['prefix']=='S')['after']['object_id']='scene:episode:absent'
+            else:bad['expected_numbered_objects']={}
+            before='\n'.join(db.iterdump())
+            with self.assertRaises(ValueError):publication.apply_plan(db,bad)
+            self.assertEqual('\n'.join(db.iterdump()),before)

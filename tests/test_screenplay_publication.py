@@ -8,6 +8,51 @@ from review_desk.bundle import export, restore
 from review_desk.screenplay import import_screenplay
 from review_desk.store import Conflict, Store
 from scripts.publish_screenplay import publish
+from review_desk.material_content_stream import members
+
+
+def seed_basis(store, root, document, destination):
+    # This test exercises screenplay publication, not a restore of every media
+    # result in the growing production archive. Keep the exact real upstream
+    # histories and their dependency closure; full production restore is tested
+    # separately with bounded resources.
+    path=root/'export/objects.json'
+    objects={row['id']:row for row in members(path,'objects') if row['kind'] in {'SOURCE','STORY','GUIDANCE'}}
+    revisions=[r for r in members(path,'revisions') if r['object_id'] in objects]
+    by_revision={row['id']:row for row in revisions}
+    dependencies=[d for d in members(path,'dependencies') if d['from_revision'] in by_revision]
+    wanted={ref['object_id'] for ref in document['basis'].values()}
+    while True:
+        revision_ids={r['id'] for r in revisions if r['object_id'] in wanted}
+        linked={by_revision[d['to_revision']]['object_id'] for d in dependencies if d['from_revision'] in revision_ids}
+        if linked<=wanted:break
+        wanted.update(linked)
+    selected=[r for r in revisions if r['object_id'] in wanted]
+    if any(objects[oid]['kind'] not in {'SOURCE','STORY','GUIDANCE'} for oid in wanted):
+        raise AssertionError('screenplay basis unexpectedly depends on production media')
+    with store.db:
+        for oid in sorted(wanted):
+            row=objects[oid];store.db.execute('INSERT INTO objects VALUES (?,?,?,?,?,?)',tuple(row[k] for k in ('id','kind','current_revision','version','created_at','updated_at')))
+        for row in selected:store.db.execute('INSERT INTO revisions VALUES (?,?,?,?,?)',tuple(row[k] for k in ('id','object_id','version','payload','created_at')))
+        for row in dependencies:
+            if row['from_revision'] in revision_ids:store.db.execute('INSERT INTO dependencies VALUES (?,?,?)',tuple(row[k] for k in ('from_revision','to_revision','role')))
+    asset_names=set()
+    for source in json.loads((root/'export/materials.json').read_text()):
+        if source['id'] not in wanted:continue
+        store.put_source(source)
+        asset_names.update(a['file'] for a in source.get('assets',[]))
+        if (source.get('media') or {}).get('file'):asset_names.add(source['media']['file'])
+    for row in selected:
+        payload=json.loads(row['payload'])
+        if objects[row['object_id']]['kind']=='SOURCE':
+            asset_names.update(a['file'] for a in payload.get('assets',[]))
+            if (payload.get('media') or {}).get('file'):asset_names.add(payload['media']['file'])
+        else:asset_names.update(v['file'] for s in payload.get('sections',[]) for v in s.get('visuals',[]))
+    (destination/'export/assets').mkdir()
+    for name in asset_names:shutil.copyfile(root/'export/assets'/name,destination/'export/assets'/name)
+    source=store.source(document['basis']['story']['object_id']);block=source['blocks'][0]
+    store.create_comment({'id':'existing-basis-comment','source_id':source['id'],'body':'Existing review preserved in the publication fixture',
+                          'anchor':{'block_id':block['id'],'end_block_id':block['id'],'start':0,'end':5,'quote':block['text'][:5]}})
 
 
 class ScreenplayPublicationTest(unittest.TestCase):
@@ -20,15 +65,12 @@ class ScreenplayPublicationTest(unittest.TestCase):
         self.target = Path(self.temp.name) / 'target'
         (self.candidate / 'imports').mkdir(parents=True)
         (self.candidate / 'export').mkdir()
-        # Production originals must be inside the restored instance; a directory
-        # symlink is deliberately rejected by the managed-media validator.
-        shutil.copytree(root / 'export/assets', self.candidate / 'export/assets')
         self.document = json.loads((root / self.document_path).read_text())
         ids = [self.document['id']] + [e['id'] for e in self.document['episodes']]
         (self.candidate / self.document_path).write_text(json.dumps(self.document, ensure_ascii=False))
         prepared = Store(self.candidate / '.runtime/review.sqlite3')
         try:
-            restore(prepared, root / 'export')
+            seed_basis(prepared,root,self.document,self.candidate)
             # A not-yet-published edition cannot already have review comments.
             # Remove only those comments from this disposable candidate; keep
             # every other edition's comments for the preservation assertions.
