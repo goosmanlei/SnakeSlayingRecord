@@ -26,7 +26,7 @@
 
 ## 后续工作边界
 
-- 两页与全剧参考重构正在独立双仓工作区验收，基线覆盖 17 集、42 场、297 镜及 297 个当前视频方案；正式库尚未应用本轮增量。资源耗尽后的流式读取器与校验修复已通过回归，297/297 最终逐镜输出复核和隔离真实浏览器验收完成；最新候选的增量预演、冲突拒绝、重复应用和独立恢复已通过，受控交付尚受旧会话启动目录与新任务工具绑定不兼容阻挡，完成范围与恢复入口见[本轮交付说明](production/breakdown-shot-v2/README.md)，运行结果以实际回执为准。
+- 两页与全剧参考重构已形成独立双仓候选，基线覆盖 17 集、42 场、297 镜及 297 个当前视频方案；正式库尚未应用本轮增量。资源耗尽后的流式读取器与校验修复已通过回归，297/297 最终逐镜输出复核、隔离真实浏览器、增量预演、冲突拒绝、重复应用和独立恢复已通过。恢复会话已成功绑定；下一步完成受控候选准备，展示准确候选、既有证据与剩余步骤，经本次普通恢复的明确收尾确认后再交付、正式发布及结项。完成范围与恢复入口见[本轮交付说明](production/breakdown-shot-v2/README.md)，运行结果以实际回执为准。
 
 - 歌曲尚有实唱词音不对应、Lyria 原生无损 WAV、逐句时间／新曲调短参考、角色演法及正式剧本唱词同步等缺口。用户要求以现状完成阶段交付，尚未接受音频质量；后续另定制作范围和调用授权。准确成果、意见与用法见 [歌曲交接](production/songs-review.md)。
 - 后续视频、动态分镜及组合工程按准确剧本、素材与采用逐项推进；不能将首轮素材覆盖视为第一集完整媒体交付。已有设计入口见 [制作总览](production/README.md)、[逐镜拆解](production/breakdown/README.md)。
@@ -35,22 +35,23 @@
 ## 尚需收尾的本机资源
 
 - 用户明确要求保留 `task-20261005-0001` 的故事／系统 worktree 与分支，用于准确追溯，不自动执行工作区退役。
-- 该任务工作区 `.runtime/autonomous-optimization/` 下的 `final-preview/`、`final-coverage-song-restore/` 仍存在。结项回执记载当时因共享 VM 文件句柄保留；62608 预览已停止。本轮只确认目录存在，未重查占用。下一次资源清理由执行清理的 Agent 核对当前使用者、文件身份及恢复用途，释放后按原清单精确处置，不停止共享 VM；依据为该任务 `delivery/cleanup-final-apply.json`、`delivery/pre-complete-receipt.json` 和受管收尾独审。
+- `task-20261006-0003` 尚未完成；其 `.runtime/breakdown-shot-v2/system` 审阅台工作区包含未集成提交，仍被隔离预览容器使用。保留恢复现场，由该任务执行者继续工作并在结项后清理；状态以任务账本为准。
+- `task-20261005-0001` 工作区 `.runtime/autonomous-optimization/` 下的 `final-preview/`、`final-coverage-song-restore/` 仍存在。结项回执记载当时因共享 VM 文件句柄保留；62608 预览已停止。本轮只确认目录存在，未重查占用。下一次资源清理由执行清理的 Agent 核对当前使用者、文件身份及恢复用途，释放后按原清单精确处置，不停止共享 VM；依据为该任务 `delivery/cleanup-final-apply.json`、`delivery/pre-complete-receipt.json` 和受管收尾独审。
 - 正式发布目录、正式库、原件，以及尚用于发布追溯／恢复的回执与数据库保留；较新恢复基线替代且追溯用途结束后再核对移除。已删除资源的数量与经过只留原清理回执，不在本文件累计。
 
-- `task-20261005-0002` 工作区保留故事／系统分支、正式冻结包、净化恢复包及必要验收回执，用于准确追溯；第二版正式应用后其旧恢复数据不得回灌，向前恢复沿第二版净化包。旧关系原文、测试库与预览重复副本已清除。入口为该任务 `.runtime/entity-material/release/run/completion-operational-receipt.json`。工作区须在会话、进程和挂载释放后通过受管入口清理；恢复包在被新基线替代且追溯用途结束后再核对移除。
-- 小卡任务保留故事／系统 worktree 与分支，发布冻结包及一致性备份用于准确恢复。隔离预览在正式页面验收后停止并按准确路径清理；实际删除与回读在[资源记录](production/small-cards/evidence/cleanup-before.json)及任务本机 `.runtime/small-cards/release/run/cleanup-final.json`，后者以实际执行回执为准。工作区退役须待 TUI 退出释放清理锁，另用 `codex.project task cleanup`。
+- `task-20261005-0002` 保留故事 worktree、双仓分支、正式冻结包、净化恢复包及必要验收回执，用于准确追溯；第二版正式应用后其旧恢复数据不得回灌，向前恢复沿第二版净化包。旧关系原文、测试库与预览重复副本已清除。入口为该任务 `.runtime/entity-material/release/run/completion-operational-receipt.json`。工作区须在会话、进程和挂载释放后通过受管入口清理；恢复包在被新基线替代且追溯用途结束后再核对移除。
+- 小卡任务保留故事 worktree 与双仓分支，发布冻结包及一致性备份用于准确恢复。隔离预览在正式页面验收后停止并按准确路径清理；实际删除与回读在[资源记录](production/small-cards/evidence/cleanup-before.json)及任务本机 `.runtime/small-cards/release/run/cleanup-final.json`，后者以实际执行回执为准。工作区退役须待 TUI 退出释放清理锁，另用 `codex.project task cleanup`。
 
-- 拆解页优化任务保留故事／系统 worktree 与分支，冻结发布包、正式一致性备份和回执用于恢复；预览库与夹具在正式验收后清理，实际结果见本任务 `.runtime/breakdown-page/release-final/run/cleanup-final.json`，首轮清理回执在原 `release/run/`。待 TUI 退出释放锁后，工作区另由 `codex.project task cleanup` 退役。
+- 拆解页优化任务保留故事 worktree 与双仓分支，冻结发布包、正式一致性备份和回执用于恢复；预览库与夹具在正式验收后清理，实际结果见本任务 `.runtime/breakdown-page/release-final/run/cleanup-final.json`，首轮清理回执在原 `release/run/`。待 TUI 退出释放锁后，工作区另由 `codex.project task cleanup` 退役。
 
-- 镜头制作任务保留故事／系统 worktree、分支与冻结发布包，供准确追溯及恢复；正式验收后停止隔离预览并清理无效库与夹具，实际删除及回读读取本任务 `.runtime/shot-production/release/run/cleanup-final.json`。待 TUI 退出释放锁后再由受管清理入口退役 worktree。
+- 镜头制作任务保留故事 worktree、双仓分支与冻结发布包，供准确追溯及恢复；正式验收后停止隔离预览并清理无效库与夹具，实际删除及回读读取本任务 `.runtime/shot-production/release/run/cleanup-final.json`。待 TUI 退出释放锁后再由受管清理入口退役 worktree。
 
-- 实体大卡第二版任务保留双仓 worktree、分支、冻结发布包和净化恢复入口，用于准确追溯与向前恢复；实际过程资源清理读取本任务 `.runtime/entity-card-v2/release-final/run/cleanup-final.json`。旧库、浏览器夹具及重复预览在正式验收后核对清除，worktree 退役待 TUI 退出释放锁后另走受管入口。
+- 实体大卡第二版任务保留故事 worktree、双仓分支、冻结发布包和净化恢复入口，用于准确追溯与向前恢复；实际过程资源清理读取本任务 `.runtime/entity-card-v2/release-final/run/cleanup-final.json`。旧库、浏览器夹具及重复预览在正式验收后核对清除，worktree 退役待 TUI 退出释放锁后另走受管入口。
 
-- 视觉任务保留双仓 worktree、分支、最终冻结包、正式一致性备份与必要检查日志，用于准确追溯与向前恢复；实际过程资源清理和仍占用文件读取本机 `.runtime/system-page-style/release-accepted/run/cleanup-final.json`。责任为该任务执行者：正式验收后停止隔离服务并清除无效库、夹具及重复副本；共享 VM 持有的文件待释放后按回执清单处置，不停止共享 VM。双仓 worktree 待 TUI 退出释放锁后受管退役。
+- 视觉任务保留故事 worktree、双仓分支、最终冻结包、正式一致性备份与必要检查日志，用于准确追溯与向前恢复；实际过程资源清理和仍占用文件读取本机 `.runtime/system-page-style/release-accepted/run/cleanup-final.json`。责任为该任务执行者：正式验收后停止隔离服务并清除无效库、夹具及重复副本；共享 VM 持有的文件待释放后按回执清单处置，不停止共享 VM。故事 worktree 待 TUI 退出释放锁后受管退役。
 
-- 制作思路任务保留双仓 worktree／分支、准确冻结包和必要正式一致性备份，用于追溯与恢复；隔离过程资源在正式验收后清理，实际结果读取本任务 `.runtime/approach/release/run/cleanup-final.json`。TUI 退出释放锁后再受管退役工作区。
+- 制作思路任务保留故事 worktree、双仓分支、准确冻结包和必要正式一致性备份，用于追溯与恢复；隔离过程资源在正式验收后清理，实际结果读取本任务 `.runtime/approach/release/run/cleanup-final.json`。TUI 退出释放锁后再受管退役工作区。
 
-- 本任务双仓 worktree／分支、冻结包及正式一致性备份保留用于追溯和代码恢复；预览与夹具在正式验收后核对清除，实际删除和占用项见本任务 `.runtime/entity-cards/release/run/cleanup-final.json`。TUI 退出释放锁后由受管入口退役工作区。
+- 关系图与小卡任务保留故事 worktree、双仓分支、冻结包及正式一致性备份用于追溯和代码恢复；预览与夹具在正式验收后核对清除，实际删除和占用项见本任务 `.runtime/entity-cards/release/run/cleanup-final.json`。TUI 退出释放锁后由受管入口退役工作区。
 
-- 两页与全剧参考任务保留准确 v6 候选、独立恢复与当前隔离预览，用于尚未完成的受控集成和正式验收；绑定兼容问题修复后继续发布，正式验收后由本任务执行者停止预览并清理剩余无效副本。当前恢复与实际已执行清理沿[本轮交付说明](production/breakdown-shot-v2/README.md)读取，工作区退役等待 TUI 释放锁。
+- 两页与全剧参考任务保留准确 v6 候选、独立恢复与当前隔离预览，用于尚未完成的受控集成和正式验收；正式验收后由本任务执行者停止预览并清理剩余无效副本。当前恢复与实际已执行清理沿[本轮交付说明](production/breakdown-shot-v2/README.md)读取，工作区退役等待 TUI 释放锁。
