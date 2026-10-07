@@ -54,7 +54,7 @@ def plan(story_main):
 def normalize(story_main, apply=False):
     # Same publication lock as formal releases, then the shared image-tag lock.
     with base.publication_locks({'story_main': str(story_main.resolve()),
-                                 'system_main': str(story_main.resolve().parent / 'story-review-desk-python')}):
+                                 'system_main': str(story_main.resolve().parent / 'story-review-desk')}):
         with base.image_tag_lock(story_main):
             result = plan(story_main)
             if not apply:

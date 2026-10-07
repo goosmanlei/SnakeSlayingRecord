@@ -6,7 +6,7 @@
 
 ## 一项任务管理两个仓库
 
-以下流程要求 `codex.task` v0.2.0 或更新版本，并已将本项目适配合入；本机切换及历史接入情况见 [STATE.md](../STATE.md)。用户从故事主目录沿用 `add/mod/run/mrun`，无需填写仓库配置或执行登记命令。Agent 读取项目规则，核验主目录同级的 `../story-review-desk-python` 及其 Git 身份，通过当前任务的内部回调声明用途与目标分支。
+以下流程要求 `codex.task` v0.2.0 或更新版本，并已将本项目适配合入；本机切换及历史接入情况见 [STATE.md](../STATE.md)。用户从故事主目录沿用 `add/mod/run/mrun`，无需填写仓库配置或执行登记命令。Agent 读取项目规则，核验主目录同级的 `../story-review-desk` 及其 Git 身份，通过当前任务的内部回调声明用途与目标分支。
 
 故事 worktree 仍为主目录下 `.codex-project/worktrees/<任务 ID>`；新系统 worktree 为 `.codex-project/linked-worktrees/<任务 ID>/<仓库别名>`。这些路径由账本返回，不按相邻关系猜测。澄清阶段只记录计划；执行时统一加锁后创建并授权目录。执行中发现还需修改系统时，先登记计划、保存当前成果，再通过原 `run/mrun` 恢复同一会话，不在尚未启用的系统目录提前工作。
 
@@ -42,7 +42,7 @@ Agent 在执行会话内登记提交引用约束：主仓 `config/instance.json`
 
 ```bash
 generation_main=$(python3 -c 'from pathlib import Path; from scripts.generation_workspace import primary_root; print(primary_root(Path.cwd()))')
-generation_system="$generation_main/../story-review-desk-python"
+generation_system="$generation_main/../story-review-desk"
 
 python3 scripts/generation_review.py --system "$generation_system" \
   --instance .runtime/generation/review init
