@@ -16,7 +16,7 @@ from test_reader_review import Model, issue, result, source
 
 ROOT = Path(__file__).resolve().parents[1]
 SYSTEM = next((p for p in ((Path(os.environ["REVIEW_DESK_SYSTEM_PATH"]).resolve(),) if os.environ.get("REVIEW_DESK_SYSTEM_PATH")
-                          else (ROOT.parent / "story-review-desk-python", ROOT.parent / "story-review-desk"))
+                          else (ROOT.parent / "story-review-desk",))
                if (p / "review_desk/__main__.py").is_file()), None)
 
 

@@ -1,0 +1,105 @@
+{
+  "system_source": "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-task/worktrees/task-20261006-0005/.runtime/system-performance/baseline-system/review_desk/production.py",
+  "cache": false,
+  "counter": "all traced business SQL; record_expansions counts production.record_view calls",
+  "not_browser_latency": true,
+  "serialization": "sorted-key full JSON, not the negotiated HTTP graph representation",
+  "rows": [
+    {
+      "case": "materials-full",
+      "condition": "first",
+      "wall_ms": 1631.0237910000003,
+      "cpu_ms": 1627.5749999999998,
+      "sql_statements": 80952,
+      "sql_selects": 80950,
+      "record_expansions": 37369,
+      "json_bytes": 10781038,
+      "json_sha256": "497591c57506734185b9ce6fbda4e4eff6074e72dc6bd5ad9cbfe17163696910",
+      "peak_rss_bytes": 286081024
+    },
+    {
+      "case": "materials-full",
+      "condition": "repeat",
+      "wall_ms": 1760.818542,
+      "cpu_ms": 1759.6259999999995,
+      "sql_statements": 80952,
+      "sql_selects": 80950,
+      "record_expansions": 37369,
+      "json_bytes": 10781038,
+      "json_sha256": "497591c57506734185b9ce6fbda4e4eff6074e72dc6bd5ad9cbfe17163696910",
+      "peak_rss_bytes": 332611584
+    },
+    {
+      "case": "materials-combination",
+      "condition": "first",
+      "wall_ms": 1397.802166,
+      "cpu_ms": 1395.798,
+      "sql_statements": 80952,
+      "sql_selects": 80950,
+      "record_expansions": 37369,
+      "json_bytes": 67961,
+      "json_sha256": "440ffcbae78830548d3956d20b42f08379529b208a1282f4a14975c026d247d7",
+      "peak_rss_bytes": 334200832
+    },
+    {
+      "case": "materials-combination",
+      "condition": "repeat",
+      "wall_ms": 1328.3424999999997,
+      "cpu_ms": 1326.7389999999998,
+      "sql_statements": 80952,
+      "sql_selects": 80950,
+      "record_expansions": 37369,
+      "json_bytes": 67961,
+      "json_sha256": "440ffcbae78830548d3956d20b42f08379529b208a1282f4a14975c026d247d7",
+      "peak_rss_bytes": 334200832
+    },
+    {
+      "case": "card-large",
+      "condition": "first",
+      "wall_ms": 892.337874999999,
+      "cpu_ms": 888.1650000000008,
+      "sql_statements": 40977,
+      "sql_selects": 40975,
+      "record_expansions": 10110,
+      "json_bytes": 21253377,
+      "json_sha256": "dca7346c5cdbe8b30e38d8089e8b29f8d69e6408131c9c24ed775cf80ece56b1",
+      "peak_rss_bytes": 355041280
+    },
+    {
+      "case": "card-large",
+      "condition": "repeat",
+      "wall_ms": 904.7402499999997,
+      "cpu_ms": 902.3439999999994,
+      "sql_statements": 40977,
+      "sql_selects": 40975,
+      "record_expansions": 10110,
+      "json_bytes": 21253377,
+      "json_sha256": "dca7346c5cdbe8b30e38d8089e8b29f8d69e6408131c9c24ed775cf80ece56b1",
+      "peak_rss_bytes": 426901504
+    },
+    {
+      "case": "scene-full",
+      "condition": "first",
+      "wall_ms": 4399.925625,
+      "cpu_ms": 4392.835999999999,
+      "sql_statements": 91624,
+      "sql_selects": 91622,
+      "record_expansions": 40413,
+      "json_bytes": 21938851,
+      "json_sha256": "681dad4a826443ebd8ae47bc36c64332467e3a2d2008a7df29b540e0b1e5f511",
+      "peak_rss_bytes": 531251200
+    },
+    {
+      "case": "scene-full",
+      "condition": "repeat",
+      "wall_ms": 4330.653041,
+      "cpu_ms": 4326.532999999998,
+      "sql_statements": 91624,
+      "sql_selects": 91622,
+      "record_expansions": 40413,
+      "json_bytes": 21938851,
+      "json_sha256": "681dad4a826443ebd8ae47bc36c64332467e3a2d2008a7df29b540e0b1e5f511",
+      "peak_rss_bytes": 561872896
+    }
+  ]
+}
