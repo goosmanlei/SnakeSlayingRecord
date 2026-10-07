@@ -1,63 +1,8 @@
 {
-  "format": "production-import-v1",
-  "records": [
-    {
-      "object_id": "asset-aheng-voice-01",
-      "kind": "ASSET",
-      "expected_version": 0,
-      "payload": {
-        "format": "production-asset-v1",
-        "title": "阿蘅对白声线候选",
-        "blocks": [
-          {
-            "id": "description",
-            "text": "第一轮声线或演唱候选，真实 48 kHz WAV 原件；已核文件和返回字幕，尚未完成实际听审或用户接受。"
-          }
-        ],
-        "media_type": "audio",
-        "subjects": [
-          {
-            "object_id": "entity-a-heng",
-            "revision_id": "c431d8382100c6eb6b88e84ce092de3fd7074f554fe1c7f362dcb25a9a90fe2c"
-          }
-        ],
-        "states": [],
-        "components": [
-          {
-            "id": "original",
-            "role": "original",
-            "file": "a041a61f5f37de8086eba7de160804c785587d1ae1ce024ef67246f846c69e84.wav",
-            "sha256": "a041a61f5f37de8086eba7de160804c785587d1ae1ce024ef67246f846c69e84",
-            "bytes": 3264044,
-            "mime": "audio/wav",
-            "duration_seconds": 17.0,
-            "has_audio": true,
-            "sample_rate": 48000,
-            "channels": 2
-          },
-          {
-            "id": "receipt",
-            "role": "metadata",
-            "file": "19762d45dcc6b1d293c653a474bb0261229bc7e6337875c13e66158ddaf6bd45.json",
-            "sha256": "19762d45dcc6b1d293c653a474bb0261229bc7e6337875c13e66158ddaf6bd45",
-            "bytes": 9020,
-            "mime": "application/json"
-          }
-        ],
-        "production": {
-          "object_id": "call-aheng-voice-01",
-          "revision_id": "7d3ed726cc17d4537c687cea7719b2af73d9a6bbbebd0e2ca8663f9cb372f44f"
-        },
-        "lineage": {},
-        "placeholder": false,
-        "verification": {
-          "file_inspected": true,
-          "visually_inspected": false,
-          "listened": false,
-          "native_4k_passed": null,
-          "user_accepted": false
-        }
-      }
-    }
-  ]
+  "format": "retired-production-package-v1",
+  "path": "production/baseline-records/010.json",
+  "source_sha256": "5ba074f9ea0523cdc94ce460e726d1d5e761fa2dcff1ffe2b9997a0eb09a89ee",
+  "source_bytes": 2031,
+  "reason": "previous creation/import/migration package retired; complete current recovery is export/manifest.json",
+  "effective_recovery": "export/manifest.json"
 }

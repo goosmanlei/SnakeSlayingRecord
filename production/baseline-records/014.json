@@ -1,63 +1,8 @@
 {
-  "format": "production-import-v1",
-  "records": [
-    {
-      "object_id": "asset-liji-voice-01",
-      "kind": "ASSET",
-      "expected_version": 0,
-      "payload": {
-        "format": "production-asset-v1",
-        "title": "李寄对白声线候选",
-        "blocks": [
-          {
-            "id": "description",
-            "text": "第一轮声线或演唱候选，真实 48 kHz WAV 原件；已核文件和返回字幕，尚未完成实际听审或用户接受。"
-          }
-        ],
-        "media_type": "audio",
-        "subjects": [
-          {
-            "object_id": "entity-li-ji",
-            "revision_id": "28fdb4862c3820c89ef2a6eed1d9b36c9548a73055c894325180e07ad04d737f"
-          }
-        ],
-        "states": [],
-        "components": [
-          {
-            "id": "original",
-            "role": "original",
-            "file": "90227903269315a0fde6b66cdcb91698d0c7737c2e1f6dddf593e6fe7fc8f014.wav",
-            "sha256": "90227903269315a0fde6b66cdcb91698d0c7737c2e1f6dddf593e6fe7fc8f014",
-            "bytes": 2377004,
-            "mime": "audio/wav",
-            "duration_seconds": 12.38,
-            "has_audio": true,
-            "sample_rate": 48000,
-            "channels": 2
-          },
-          {
-            "id": "receipt",
-            "role": "metadata",
-            "file": "96f92975c37b651d859cfeab8fb6144ba4d1de88e8a3da4121553d75570531df.json",
-            "sha256": "96f92975c37b651d859cfeab8fb6144ba4d1de88e8a3da4121553d75570531df",
-            "bytes": 7202,
-            "mime": "application/json"
-          }
-        ],
-        "production": {
-          "object_id": "call-liji-voice-01",
-          "revision_id": "ea8b407c347318ca4ad1eab24baba1a47d3a92a6809ff6780ba4052afb37c324"
-        },
-        "lineage": {},
-        "placeholder": false,
-        "verification": {
-          "file_inspected": true,
-          "visually_inspected": false,
-          "listened": false,
-          "native_4k_passed": null,
-          "user_accepted": false
-        }
-      }
-    }
-  ]
+  "format": "retired-production-package-v1",
+  "path": "production/baseline-records/014.json",
+  "source_sha256": "9e571646f7e77e98fa43e9ebbc3a738e2a7c5c7132fd808343bc76030bafe387",
+  "source_bytes": 2029,
+  "reason": "previous creation/import/migration package retired; complete current recovery is export/manifest.json",
+  "effective_recovery": "export/manifest.json"
 }
