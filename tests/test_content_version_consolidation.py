@@ -5,9 +5,30 @@ import sqlite3
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
 import content_version_consolidation as migration
+import content_version_release as release
+
+
+class FrozenContentTest(unittest.TestCase):
+    def test_lfs_original_must_match_committed_hash_and_size(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder);path=root/'export/material-content.json';path.parent.mkdir();path.write_bytes(b'content graph')
+            pointer=('version https://git-lfs.github.com/spec/v1\noid sha256:'+migration.sha(path)+'\nsize 13\n').encode()
+            with patch.object(release.base,'git_file',return_value=pointer):
+                release.verify_committed_file(root,'candidate','export/material-content.json')
+                path.write_bytes(b'changed graph')
+                with self.assertRaisesRegex(ValueError,'LFS original differs'):
+                    release.verify_committed_file(root,'candidate','export/material-content.json')
+
+    def test_ordinary_file_cannot_use_a_pointer_as_an_approval(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder);path=root/'plan.json';path.write_bytes(b'plan')
+            with patch.object(release.base,'git_file',return_value=b'previous plan'):
+                with self.assertRaisesRegex(ValueError,'uncommitted migration input'):
+                    release.verify_committed_file(root,'candidate','plan.json')
 
 
 class FileRecoveryTest(unittest.TestCase):
