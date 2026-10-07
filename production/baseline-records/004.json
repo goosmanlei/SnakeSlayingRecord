@@ -1,27 +1,8 @@
 {
-  "format": "production-import-v1",
-  "records": [
-    {
-      "object_id": "review-liji-baseline-01",
-      "kind": "JUDGMENT",
-      "expected_version": 0,
-      "payload": {
-        "format": "production-judgment-v1",
-        "title": "李寄造型候选 · 待审说明",
-        "blocks": [
-          {
-            "id": "description",
-            "text": "两次显式 4K 请求均输出 2016×2688，规格待处理；人物轮廓和用色可供首轮比较，尚未认可为母版。"
-          }
-        ],
-        "target": {
-          "object_id": "asset-liji-image",
-          "revision_id": "3bc05d920d340a932e03d11a3795975fff189195d2a1e8700a2bde2a87e318e6"
-        },
-        "verdict": "changes_requested",
-        "actor": "Codex",
-        "reason": "两次显式 4K 请求均输出 2016×2688，规格待处理；人物轮廓和用色可供首轮比较，尚未认可为母版。"
-      }
-    }
-  ]
+  "format": "retired-production-package-v1",
+  "path": "production/baseline-records/004.json",
+  "source_sha256": "826278c9cc4ea7b8a32ddd4659a408750d463ce6fb658b62d65550507dce75c2",
+  "source_bytes": 920,
+  "reason": "previous creation/import/migration package retired; complete current recovery is export/manifest.json",
+  "effective_recovery": "export/manifest.json"
 }

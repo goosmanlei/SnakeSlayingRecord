@@ -67,6 +67,11 @@ def export_review(root, instance):
     store = Store(instance / '.runtime/review.sqlite3')
     try:
         manifest = export(store, instance / 'export')
+        try:
+            from .content_version_consolidation import export_publication_receipts
+        except ImportError:
+            from content_version_consolidation import export_publication_receipts
+        export_publication_receipts(store,root)
     finally:
         store.close()
     for name in [*manifest['files'], 'manifest.json']:

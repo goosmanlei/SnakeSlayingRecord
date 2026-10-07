@@ -45,6 +45,10 @@ def sqlite_compatibility(db,hydrate=False):
     db.create_function('material_model_migrating',0,lambda:0)
     db.create_function('material_sha256',1,lambda text:hashlib.sha256(text.encode()).hexdigest(),deterministic=True)
     db.create_function('material_revision_sha256',3,revision_hash)
+    def valid(oid,version,payload,rid):
+        return int(backend('version_consolidation').valid_identity(store,oid,version,
+                   json.loads(backend('material_storage').hydrate(store,payload)),rid))
+    db.create_function('material_revision_valid',4,valid)
     if hydrate:db.row_factory=backend('material_storage').row_factory(store)
     return db
 
