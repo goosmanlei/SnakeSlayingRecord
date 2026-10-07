@@ -119,6 +119,7 @@ def restore_runtime(root, m, environment):
     base.compose_up(m, [path], environment, release=True)
     base.wait_healthy()
     base.require(base.inspect(base.APP)['Image'] == m['previous_app']['image'], 'previous image not restored')
+    base.update_image_aliases(m, base.read(root / 'image.json'), recovered=True)
 
 
 def apply(a):
@@ -177,6 +178,7 @@ def apply(a):
             raise
         finally:
             if store is not None:store.db.close()
+        base.update_image_aliases(m, image)
         result = {'status': 'formal_browser_pending', 'migration': delta, 'checkpoint': checkpoint, 'verification': verification,
                   'service': running, 'release': str(release), 'archives': 'deferred_until_story_complete',
                   'push': False, 'complete_invoked': False}
