@@ -125,6 +125,8 @@ class ReleaseTest(unittest.TestCase):
         def primary(path):
             return story_main if path == story else system_main
         with patch.object(r, 'inspect', side_effect=inspect), \
+             patch.object(r.base, 'stable_image_policy', return_value={'image_policy': r.base.IMAGE_POLICY,
+                 'base_image_tag': r.base.IMAGE_BASE, 'build_base_image': 'sha256:' + 'c' * 64}), \
              patch.object(delivery, 'uses_native_backend', return_value=False), \
              patch.object(r.base, 'primary', side_effect=primary), \
              patch.object(r.base, 'repo_check'), \

@@ -83,8 +83,9 @@ def prepare(a):
     for line in git(system,'ls-tree','-r',a.system_candidate,'--','review_desk').splitlines():
         header,name=line.split('\t',1);require(header.split()[0] in ('100644','100755'),'special source file')
         raw=base.git_file(system,a.system_candidate,name);put('build/'+name,raw);source[name]=sha(raw)
-    tag=base.base_image_tag(app['Image'])
-    put('build/Dockerfile',('FROM '+tag+'\nRUN rm -rf /app/review_desk\nCOPY review_desk /app/review_desk\n').encode())
+    policy=base.stable_image_policy(app['Image'])
+    tag=policy['base_image_tag']
+    put('build/Dockerfile',('FROM '+tag+'\nRUN rm -rf /app/review_desk\nCOPY review_desk /app/review_desk\nLABEL org.opencontainers.image.revision='+a.system_candidate+'\n').encode())
     helpers=['material_review_release.py','autonomous_optimization_release.py','integrate_generation_review_system.py']
     if native:helpers.append('task_repository_delivery.py')
     for helper in helpers:
@@ -93,7 +94,7 @@ def prepare(a):
     plan={'format':'generation-system-delivery-v1','task':task,'push':bool(upstream),'system_main_from_story_main':os.path.relpath(gm,sm),'system_worktree':os.path.relpath(system,story),'expected_target':a.system_target,'candidate':a.system_candidate}
     if native:plan['task_delivery']=native
     put('system-delivery.json',json.dumps(plan,ensure_ascii=False,indent=2).encode()+b'\n')
-    m={'format':'material-review-release-v1','task':task,'push':False,'story_worktree':str(story),'system_worktree':str(system),'story_main':str(sm),'system_main':str(gm),'story_candidate':a.story_candidate,'story_target':a.story_target,'system_candidate':a.system_candidate,'system_target':a.system_target,'system_upstream':upstream,'release_name':release_id,'hashes':hashes,'source_hashes':source,'base_image_tag':tag,'previous_app':old,'previous_nginx':proxy,'previous_compose_hashes':{f:sha(Path(f).read_bytes()) for f in files},'previous_instance_hashes':current_files,'ca_sha256':sha(Path(mounts['/run/local-ca/cacert.pem']['Source']).read_bytes()),'prepared_at':datetime.now(timezone.utc).isoformat()}
+    m={**policy,'format':'material-review-release-v1','task':task,'push':False,'story_worktree':str(story),'system_worktree':str(system),'story_main':str(sm),'system_main':str(gm),'story_candidate':a.story_candidate,'story_target':a.story_target,'system_candidate':a.system_candidate,'system_target':a.system_target,'system_upstream':upstream,'release_name':release_id,'hashes':hashes,'source_hashes':source,'base_image_tag':tag,'previous_app':old,'previous_nginx':proxy,'previous_compose_hashes':{f:sha(Path(f).read_bytes()) for f in files},'previous_instance_hashes':current_files,'ca_sha256':sha(Path(mounts['/run/local-ca/cacert.pem']['Source']).read_bytes()),'prepared_at':datetime.now(timezone.utc).isoformat()}
     m['delivery_backend']='codex.task' if native else 'legacy'
     if native:m['task_delivery']=native
     save(root/'manifest.json',m);print(json.dumps({'bundle':str(root),'manifest_sha256':sha((root/'manifest.json').read_bytes()),'formal_writes':False,'business_delta':0}))
@@ -114,6 +115,10 @@ def load_bundle(path):
 
 def build(a):
     root,m=load_bundle(a.bundle);require(not (root/'image.json').exists(),'immutable image already prepared')
+    if m.get('image_policy')==base.IMAGE_POLICY:
+        image=base.build_stable_image(root,m)
+        save(root/'image.json',{'image':image,'publish_tag':base.IMAGE_CURRENT,'source_verified':True,'manifest_sha256':sha((root/'manifest.json').read_bytes())})
+        print(json.dumps({'image':image,'image_receipt_sha256':sha((root/'image.json').read_bytes()),'formal_writes':False}));return
     base.pin_base_image(m['previous_app']['image'],m['base_image_tag'])
     tag='story-review-desk:materials-'+m['system_candidate'][:12]+'-'+m['story_candidate'][:12]
     run([base.DOCKER,'build','--pull=false','--network=none','-t',tag,root/'build'])
@@ -238,6 +243,7 @@ def apply(a):
         service=base.verify_service(m,image,release)
         after=receipt/('after-'+str(time.time_ns())+'.sqlite3');base.snapshot(Path(m['story_main'])/'.runtime/review.sqlite3',after)
         evidence=preserved(before,after)
+        base.update_image_aliases(m,image)
         result={'status':'formal_browser_pending','service':service,'release':str(release),'rows':evidence,'business_delta':0,'system_candidate':m['system_candidate'],'push':False,'complete_invoked':False}
         save(receipt/('service-'+str(time.time_ns())+'.json'),result);print(json.dumps(result,ensure_ascii=False))
 
@@ -252,6 +258,7 @@ def recover(a):
         previous['services']['app']['volumes']=[{'type':'bind','source':v['Source'],'target':v['Destination'],'read_only':not v['RW']} for v in m['previous_app']['mounts']]
         path=root/'compose.previous.json';save(path,previous);base.compose_up(m,[path],base.env_values(current),release=True);base.wait_healthy()
         require(inspect(base.APP)['Image']==m['previous_app']['image'],'recovery image differs')
+        base.update_image_aliases(m,image,recovered=True)
         print(json.dumps({'runtime_recovered':True,'database_restored':False,'git_reset':False}))
 
 

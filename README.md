@@ -58,6 +58,8 @@
 
 项目迭代从故事目录发起一项任务。使用支持多仓库的 `codex.task` 时，Agent 自动核验所需仓库并管理各仓隔离工作区；用户仍使用原来的任务命令。候选引用、逐仓 Git 交付与项目发布的衔接见 [工作区流程](production/generation-workspaces.md)，当前启用状态见 [STATE.md](STATE.md)。
 
+新发布使用 `story-review-desk:current`、`:previous`、`:base` 三个固定镜像标签；准确版本和恢复继续以发布包中的镜像 ID 为准。现有标签收敛与构建规则见 [镜像发布流程](production/generation-workspaces.md#审阅台镜像的固定名称)。
+
 需要 Docker Compose、Python 3.9+ 和 FFmpeg／ffprobe。两个仓库放在同级目录；系统目录的提交必须与 [config/instance.json](config/instance.json) 一致，准确版本以该配置为准；最近正式发布依据见 [当前状态](STATE.md)。正式运行版本需同时核对镜像源码与实例挂载，不能只由配置文件推断。
 
 完成本地集成后，以故事根目录为工作目录，核对同级系统版本。以下启动命令只适用于已有数据库且未使用独立发布挂载的普通实例；已有正式服务按 `STATE.md` 的发布入口恢复／重启。空实例须先按下方歌曲恢复入口完成恢复：

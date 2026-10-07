@@ -1,5 +1,6 @@
 services:
   app:
+    image: story-review-desk:current
     build:
       context: ${REVIEW_DESK_BUILD_CONTEXT:-../story-review-desk}
     restart: unless-stopped
@@ -16,6 +17,7 @@ services:
       timeout: 5s
       retries: 3
   nginx:
+    image: snakeslayingrecord-nginx:latest
     build:
       context: ${REVIEW_DESK_BUILD_CONTEXT:-../story-review-desk}
       dockerfile: Dockerfile.nginx
