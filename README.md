@@ -65,7 +65,7 @@
 完成本地集成后，以故事根目录为工作目录，核对同级系统版本。以下启动命令只适用于已有数据库且未使用独立发布挂载的普通实例；已有正式服务按 `STATE.md` 的发布入口恢复／重启。空实例须先按下方歌曲恢复入口完成恢复：
 
 ```bash
-production_system=../story-review-desk-python
+production_system=../story-review-desk
 required_system=$(python3 -c 'import json; print(json.load(open("config/instance.json"))["review_desk_commit"])')
 test "$(git -C "$production_system" rev-parse HEAD)" = "$required_system"
 REVIEW_DESK_BUILD_CONTEXT="$production_system" docker compose up -d --build
@@ -73,7 +73,7 @@ REVIEW_DESK_BUILD_CONTEXT="$production_system" docker compose up -d --build
 
 已有运行数据库时跳过 `restore`，不可用快照覆盖活库。`export/` 是受管交付快照，不保证随正式数据库自动更新；当前 Schema 7 保存完整素材定义、方案版本／候选、旧轮次、准确修订、评论与原件清单，并保留业务编号和关系旧说明清理凭据，契约见 [素材模型交付](production/ui-material-model/data-contract.md)及[大卡交付](production/entity-material/README.md)。当前歌曲导出包含两条旧 WAV 时长舍入差，恢复须使用 [歌曲恢复入口](production/song-publication/README.md)中的 `scripts/recover_song_publication.py`，不能直接套用普通恢复命令。迁移实例同时保留 `config/` 与 `content/`；当前活库与正式发布入口见 [STATE.md](STATE.md)。已有正式容器的恢复／重启使用对应发布入口，新交付按其已确认发布包切换，避免用普通构建覆盖仍生效的准确挂载。
 
-打开 [本机审阅台](http://127.0.0.1:3000/)：Nginx 长期运行在 Docker 容器 3000 端口并代理容器内 Python 服务；Nginx 镜像与通用代理规则由审阅台仓库维护，故事仓库只保留实例 Compose 配置。主机仅绑定 `127.0.0.1:3000`。`docker compose ps` 检查状态，`docker compose restart` 重启；`restart: unless-stopped` 保证 Docker 恢复时服务随之恢复。已有 `.runtime/review.sqlite3` 时跳过 `restore`。本机当前系统源码目录名是 `story-review-desk-python`，若在此目录运行，构建命令需加 `REVIEW_DESK_BUILD_CONTEXT=../story-review-desk-python`；公开克隆默认目录名为 `story-review-desk`，无需该变量。不要把 3000 端口转发到公网，本服务没有公网鉴权。
+打开 [本机审阅台](http://127.0.0.1:3000/)：Nginx 长期运行在 Docker 容器 3000 端口并代理容器内 Python 服务；Nginx 镜像与通用代理规则由审阅台仓库维护，故事仓库只保留实例 Compose 配置。主机仅绑定 `127.0.0.1:3000`。`docker compose ps` 检查状态，`docker compose restart` 重启；`restart: unless-stopped` 保证 Docker 恢复时服务随之恢复。已有 `.runtime/review.sqlite3` 时跳过 `restore`。本机与公开克隆的系统目录名统一为 `story-review-desk`，同级放置时使用 Compose 默认构建路径；系统位于其他位置时设置 `REVIEW_DESK_BUILD_CONTEXT`。不要把 3000 端口转发到公网，本服务没有公网鉴权。
 
 `OPENAI_API_KEY` 默认只在本机启动 Compose 的环境中提供，不提交到仓库；无密钥时其他审阅功能不受影响。系统配置“系统与 AI”可选择评论润色模型、推理强度，并设置润色 API Key 的环境变量名（只保存名称，绝不保存密钥值）。若使用自定义名称，必须用本机、不入库的 `compose.override.yaml` 将同名环境变量透传给 `app` 容器；改页面配置不会自动透传宿主机变量。若本机网络需要私有可信 CA，也可在该覆盖文件中只读挂载 CA 并设置容器 `SSL_CERT_FILE`，不可关闭 TLS 校验。新建或编辑评论有文字即可点 AI 润色，系统自动生成并核验草稿、圈选、故事/创作背景、创作阶段、原文上下文及各版本资料的参考快照；也可单独点击“查看润色参考”。建议必须手动采用、保存。
 
