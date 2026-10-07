@@ -1,0 +1,31 @@
+{
+  "frozen_at": "2026-10-07T23:28:57.301358+08:00",
+  "candidate_commit": "4108544c2e664ca3170d9be94f59765e100c0616",
+  "baseline_commit": "bc31d7dc424ccec1328926cc034a67f4be579fcf",
+  "previous_candidate": "25e912a7ae37cf7bddc4a6d6ab6769e4c6b1757b",
+  "reason": "Real Chrome reproduced a stale comment refresh overwriting a newer successful close. Four runtime JS lines add a request sequence; backend/cache/transport/read-path code is unchanged. Static bundle bytes changed, so repeat all four first-document paths and comment save in two new ABAB pairs. Other main/accurate-history/filter/switch timings retain source-equivalence evidence.",
+  "order": [
+    "baseline4",
+    "candidate4",
+    "baseline5",
+    "candidate5"
+  ],
+  "ports": [
+    62475,
+    62476,
+    62485,
+    62486
+  ],
+  "instances": [
+    "baseline-write-r4",
+    "candidate-write-r4",
+    "baseline-write-r5",
+    "candidate-write-r5"
+  ],
+  "snapshot": "frozen-instance",
+  "samples_per_path_side_round": 10,
+  "cache": "Independent fresh instance copies, new ports, no candidate warmup, same Chrome viewport 1440x900; new documents reset isolated-origin browser storage; no OS/global browser clearing.",
+  "quartiles": "unchanged Hyndman-Fan type 7",
+  "probe_sha256": "8c15e696949fc7e13b9ef674f25b664f6765d9c6fd6299e247f6303510d2d467",
+  "script_sha256": "3134bf7a5e3236bfbd39e7415a3fb1e23551529032d116e971b9b7017bfba815"
+}

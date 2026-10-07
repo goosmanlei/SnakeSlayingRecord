@@ -97,6 +97,10 @@ def prepare(a):
     m={**policy,'format':'material-review-release-v1','task':task,'push':False,'story_worktree':str(story),'system_worktree':str(system),'story_main':str(sm),'system_main':str(gm),'story_candidate':a.story_candidate,'story_target':a.story_target,'system_candidate':a.system_candidate,'system_target':a.system_target,'system_upstream':upstream,'release_name':release_id,'hashes':hashes,'source_hashes':source,'base_image_tag':tag,'previous_app':old,'previous_nginx':proxy,'previous_compose_hashes':{f:sha(Path(f).read_bytes()) for f in files},'previous_instance_hashes':current_files,'ca_sha256':sha(Path(mounts['/run/local-ca/cacert.pem']['Source']).read_bytes()),'prepared_at':datetime.now(timezone.utc).isoformat()}
     m['delivery_backend']='codex.task' if native else 'legacy'
     if native:m['task_delivery']=native
+    if task=='task-20261006-0005':
+        m['database_changes']={'format':'transactional-read-cache-v1','journal_mode':'delete','journal_mode_changed':False,
+                               'auxiliary_table':'read_generations','business_rows':'preserve',
+                               'recovery':'retain current DELETE journal and business rows; disable or clear the disposable cache; never restore an old business snapshot'}
     save(root/'manifest.json',m);print(json.dumps({'bundle':str(root),'manifest_sha256':sha((root/'manifest.json').read_bytes()),'formal_writes':False,'business_delta':0}))
 
 
@@ -149,7 +153,26 @@ def preflight(a):
     print(json.dumps({'preflight_only':True,'manifest_sha256':sha((root/'manifest.json').read_bytes()),'image_receipt_sha256':sha((root/'image.json').read_bytes()),'image':image['image']}))
 
 
-def preserved(before,after):
+def read_generation_schema(db, schemas):
+    """Only the reviewed disposable invalidation journal may be added."""
+    name='read_generations'
+    if name not in schemas:return
+    require(schemas[name]=='CREATE TABLE read_generations (name TEXT PRIMARY KEY, token TEXT NOT NULL)',
+            'unexpected read generation schema')
+    values=dict(db.execute('SELECT name,token FROM read_generations'))
+    require(set(values)==set(schemas)-{name},'incomplete read generation table coverage')
+    require(all(re.fullmatch('[0-9a-f]{32}',v or '') for v in values.values()),'invalid read generation token')
+    triggers=dict(db.execute("SELECT name,sql FROM sqlite_master WHERE type='trigger' AND name LIKE 'read_generation_%'"))
+    expected={}
+    for table in values:
+        quoted='"'+table.replace('"','""')+'"';literal="'"+table.replace("'","''")+"'"
+        for operation in ('INSERT','UPDATE','DELETE'):
+            key='read_generation_'+hashlib.sha256((table+operation).encode()).hexdigest()[:24]
+            expected[key]=f'CREATE TRIGGER "{key}" AFTER {operation} ON {quoted} BEGIN UPDATE read_generations SET token=lower(hex(randomblob(16))) WHERE name={literal}; END'
+    require(triggers==expected,'read generation triggers differ from approved migration')
+
+
+def preserved(before,after,*,allow_read_generations=False):
     # The live instance contains a large content-addressed history. Keep only
     # one row in Python; the exact multiset comparison lives in a disk index.
     mutable={'objects':('id','kind','created_at'),
@@ -164,6 +187,11 @@ def preserved(before,after):
             db.row_factory=sqlite3.Row;db.execute('PRAGMA cache_size=-4096');db.execute('PRAGMA temp_store=FILE')
             db.execute('BEGIN');databases.append(db)
         schemas=[dict(db.execute("SELECT name,sql FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%'")) for db in databases]
+        if allow_read_generations:
+            require('read_generations' in schemas[1],'approved read generation migration missing')
+            for db,schema in zip(databases,schemas):
+                read_generation_schema(db,schema)
+                schema.pop('read_generations',None)
         require(schemas[0].keys()==schemas[1].keys(),'database table set changed')
         temporary=stack.enter_context(tempfile.TemporaryDirectory(prefix='review-release-history-'))
         index=stack.enter_context(closing(sqlite3.connect(Path(temporary)/'counts.sqlite3')))
@@ -242,9 +270,18 @@ def apply(a):
         if not exact_candidate:base.compose_up(m,[release/'compose.release.json'],environment,release=True)
         service=base.verify_service(m,image,release)
         after=receipt/('after-'+str(time.time_ns())+'.sqlite3');base.snapshot(Path(m['story_main'])/'.runtime/review.sqlite3',after)
-        evidence=preserved(before,after)
+        cache_migration=m.get('database_changes',{}).get('format')=='transactional-read-cache-v1'
+        require(not cache_migration or m['task']=='task-20261006-0005','unexpected database migration task')
+        evidence=preserved(before,after,allow_read_generations=cache_migration)
+        database_runtime=None
+        if cache_migration:
+            live_db=(Path(m['story_main'])/'.runtime/review.sqlite3').resolve()
+            with closing(sqlite3.connect(live_db.as_uri()+'?mode=ro',uri=True)) as db:
+                database_runtime={'journal_mode':db.execute('PRAGMA journal_mode').fetchone()[0]}
+            require(database_runtime['journal_mode']=='delete','reviewed DELETE journal mode changed')
         base.update_image_aliases(m,image)
-        result={'status':'formal_browser_pending','service':service,'release':str(release),'rows':evidence,'business_delta':0,'system_candidate':m['system_candidate'],'push':False,'complete_invoked':False}
+        result={'status':'formal_browser_pending','service':service,'release':str(release),'rows':evidence,'business_delta':0,'system_candidate':m['system_candidate'],'push':False,'complete_invoked':False,
+                'database_changes':m.get('database_changes'),'database_runtime':database_runtime}
         save(receipt/('service-'+str(time.time_ns())+'.json'),result);print(json.dumps(result,ensure_ascii=False))
 
 
