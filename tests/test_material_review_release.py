@@ -3,6 +3,7 @@ import argparse
 import contextlib
 import importlib.util
 import io
+import hashlib
 import json
 from pathlib import Path
 import shutil
@@ -35,6 +36,38 @@ class ReleaseTest(unittest.TestCase):
             shutil.copyfile(self.before,self.after)
             with sqlite3.connect(self.after) as db:db.execute('DELETE FROM '+table)
             with self.assertRaisesRegex(ValueError,'lost'):r.preserved(self.before,self.after)
+
+    def install_read_generation_fixture(self):
+        with sqlite3.connect(self.after) as db:
+            names=[row[0] for row in db.execute("SELECT name FROM sqlite_master WHERE type='table'")]
+            db.execute('CREATE TABLE read_generations (name TEXT PRIMARY KEY, token TEXT NOT NULL)')
+            for name in names:
+                db.execute('INSERT INTO read_generations VALUES (?,?)',(name,'a'*32))
+                for operation in ('INSERT','UPDATE','DELETE'):
+                    trigger='read_generation_'+hashlib.sha256((name+operation).encode()).hexdigest()[:24]
+                    db.execute(f'CREATE TRIGGER "{trigger}" AFTER {operation} ON "{name}" BEGIN UPDATE read_generations SET token=lower(hex(randomblob(16))) WHERE name=\'{name}\'; END')
+
+    def test_only_reviewed_cache_migration_is_allowed_and_history_remains_required(self):
+        self.install_read_generation_fixture()
+        with self.assertRaisesRegex(ValueError,'table set changed'):
+            r.preserved(self.before,self.after)
+        self.assertEqual(r.preserved(self.before,self.after,allow_read_generations=True)['revisions']['after'],1)
+        with sqlite3.connect(self.after) as db:db.execute('DELETE FROM revisions')
+        with self.assertRaisesRegex(ValueError,'immutable history lost'):
+            r.preserved(self.before,self.after,allow_read_generations=True)
+
+    def test_cache_migration_rejects_missing_trigger_or_invalid_token(self):
+        self.install_read_generation_fixture()
+        with sqlite3.connect(self.after) as db:
+            db.execute("UPDATE read_generations SET token='invalid' WHERE name='revisions'")
+        with self.assertRaisesRegex(ValueError,'invalid read generation token'):
+            r.preserved(self.before,self.after,allow_read_generations=True)
+        with sqlite3.connect(self.after) as db:
+            db.execute("UPDATE read_generations SET token=?",('a'*32,))
+            name=db.execute("SELECT name FROM sqlite_master WHERE type='trigger' LIMIT 1").fetchone()[0]
+            db.execute('DROP TRIGGER "'+name+'"')
+        with self.assertRaisesRegex(ValueError,'triggers differ'):
+            r.preserved(self.before,self.after,allow_read_generations=True)
 
     def test_unconfirmed_flag_or_changed_digests_stop_before_action(self):
         args=argparse.Namespace(apply=False,bundle=self.root,manifest_sha256='wrong',image_receipt_sha256='wrong')

@@ -81,7 +81,7 @@
 - 素材模型逆迁移须同事务验证旧格式可读写并移除依赖新连接函数的触发器；存在无关新编码素材时拒绝回退，保留现场向前恢复。迁移提交后截断 SQLite WAL 日志并核对没有忙碌读者。代码服务回退与数据恢复分别执行，不能靠旧服务启动替代迁移检查。来源：`scripts/ui_material_model_release.py`、`production/ui-material-model/README.md`。
 - 站点图标为用户认可的屋檐护灯图样，源 SVG、ICO、PNG 在 `export/assets/`，设计入口为 `design/favicon/README.md`。`SYSTEM.site_favicon` 只引用单个受管文件名，空值恢复默认；拒绝外部 URL、穿越、符号链接、缺失或损坏图像，图标随导出清单校验。来源：`planning/favicon-delivery.md`、系统图标契约。
 - Docker Desktop 对停止容器执行 `docker cp` 曾重建已消失的宿主 bind 源目录。失效挂载审计优先查已记录身份、镜像与可写层，副作用空目录只在来源、时间与为空均确认后精确移除。清理和恢复证据见 `production/evidence/asset-cleanup/`；历史档案中的实现哈希按对应 Git 提交追溯，不回写旧回执。
-- 性能证据区分正文／控件可用、图片实际加载、媒体可播放与纯工具往返耗时；主机重启、其他任务负载或错误选中状态会影响比较。已实现的实体聚合读取优化仅在单次读取事务中复用原始行和上下文，不缓存跨请求结果。具体测量、例外与自主优化实验的单次计时／入口授权留在 [自主优化任务说明](planning/autonomous-optimization-task.md)、[运行工具](planning/autonomous-optimization-runtime.md)、[本轮报告](planning/autonomous-optimization-run-report.md)，不作为其他任务通用授权。
+- 性能证据区分正文／控件可用、图片实际加载、媒体可播放与纯工具往返耗时；主机重启、其他任务负载或错误选中状态会影响比较。制作页面采用按需读取、完整 JSON 图传输、有界请求并发及事务失效的跨请求读取缓存；权威 SQLite 和媒体原件不变。缓存位于独立 `.runtime/read-cache.sqlite3`，业务写入与读取代号同事务更新，保守地使整实例缓存失效，不能用固定过期时间代替写后一致性。保留 DELETE 日志模式；空缓存重建仍有成本，不能将常用路径的 300 毫秒目标外推为所有冷读取保证。架构取舍、准确对照、容量及清空／停用／恢复见[性能交付](production/system-performance/README.md)及系统 `docs/production-performance.md`。历史自主优化报告只保留当次方法与边界，不作为本轮基线或通用授权。
 - 多份待审材料逐份列出独立链接和修改点，再明确询问认可范围；技术验收、任务完成、母版认可、音频质量接受和准确镜头采用互不替代。来源：用户 2026-10-03 的审阅交接要求及既有制作契约。
 
 - 历史保留的独立状态按当前实体、当前完整状态范围审计并物理清理，旧实体版本不扩大范围。准确目标保留最小删除身份与来源提示，不映射为现用状态；素材原件、真实调用、已有评论引文和采用历史保留。Schema 7 恢复须使用支持删除凭据的读取器和净化后的向前恢复包，旧库不再作为恢复入口。来源：[准确清单及恢复契约](production/entity-card-v2/README.md)。

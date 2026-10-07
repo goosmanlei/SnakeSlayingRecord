@@ -1,0 +1,569 @@
+{
+  "quartiles": "Hyndman-Fan type 7, fixed before measurement",
+  "failure_policy": "all raw failures and slow samples retained",
+  "media_metric": "actual image load events after the action, separate from main readiness; cached images without a new event are zero; playback verified separately",
+  "browser_cpu_metric": "Chrome Performance metrics; includes the shared observer and post-readiness media collection; not tool round-trip wall time",
+  "service_metric": "Requests that started in the same origin timestamp interval as the primary action; native server wall and thread CPU, process lifetime peak RSS; API time is not browser latency",
+  "rounds": [
+    8,
+    9
+  ],
+  "cases": 1,
+  "failures": [],
+  "paths": [
+    {
+      "round": 8,
+      "side": "baseline",
+      "path": "card.materials.standalone",
+      "condition": "repeat",
+      "latency_ms": {
+        "n": 10,
+        "median": 96.75000000745058,
+        "p25": 96.3749999962747,
+        "p75": 97.12499999254943,
+        "iqr": 0.7499999962747381,
+        "min": 88.70000000298023,
+        "max": 101.09999999403954
+      },
+      "ids": [
+        "8-baseline-4-card.materials.standalone-repeat",
+        "8-baseline-5-card.materials.standalone-repeat",
+        "8-baseline-6-card.materials.standalone-repeat",
+        "8-baseline-7-card.materials.standalone-repeat",
+        "8-baseline-8-card.materials.standalone-repeat",
+        "8-baseline-9-card.materials.standalone-repeat",
+        "8-baseline-10-card.materials.standalone-repeat",
+        "8-baseline-11-card.materials.standalone-repeat",
+        "8-baseline-12-card.materials.standalone-repeat",
+        "8-baseline-13-card.materials.standalone-repeat"
+      ],
+      "content_sha256": [
+        "733c8fb2baf5c3dd9cbe2f0f7c4b9edecda9b20c9194ef2d7015fbb4ee0cb4e1"
+      ],
+      "primary_requests": {
+        "n": 10,
+        "median": 2.0,
+        "p25": 2.0,
+        "p75": 2.75,
+        "iqr": 0.75,
+        "min": 2,
+        "max": 3
+      },
+      "primary_transfer_bytes": {
+        "n": 10,
+        "median": 308755.0,
+        "p25": 308755.0,
+        "p75": 309528.25,
+        "iqr": 773.25,
+        "min": 308755,
+        "max": 309786
+      },
+      "primary_encoded_body_bytes": {
+        "n": 10,
+        "median": 308155.0,
+        "p25": 308155.0,
+        "p75": 308703.25,
+        "iqr": 548.25,
+        "min": 308155,
+        "max": 308886
+      },
+      "browser_task_ms_including_observer_and_media": {
+        "n": 10,
+        "median": 28.281000000000056,
+        "p25": 27.21124999999995,
+        "p75": 31.20175,
+        "iqr": 3.9905000000000506,
+        "min": 24.74799999999999,
+        "max": 35.63800000000006
+      },
+      "browser_script_ms_including_observer": {
+        "n": 10,
+        "median": 2.0849999999999964,
+        "p25": 2.045500000000009,
+        "p75": 2.1989999999999994,
+        "iqr": 0.15349999999999042,
+        "min": 1.7719999999999958,
+        "max": 2.3019999999999987
+      },
+      "browser_layout_ms": {
+        "n": 10,
+        "median": 0.8544999999999994,
+        "p25": 0.8347500000000002,
+        "p75": 0.8817500000000015,
+        "iqr": 0.04700000000000126,
+        "min": 0.7410000000000003,
+        "max": 1.006
+      },
+      "browser_heap_bytes": {
+        "n": 10,
+        "median": 25474465.0,
+        "p25": 23809339.75,
+        "p75": 30451105.75,
+        "iqr": 6641766.0,
+        "min": 22916289,
+        "max": 32887740
+      },
+      "visible_media_load_events_ms": {
+        "n": 10,
+        "median": 0.0,
+        "p25": 0.0,
+        "p75": 0.0,
+        "iqr": 0.0,
+        "min": 0,
+        "max": 0
+      },
+      "unloaded_visible_media": 0,
+      "related_service": {
+        "/api/production/card": {
+          "requests": 10,
+          "wall_ms": {
+            "n": 10,
+            "median": 64.87639550000068,
+            "p25": 64.21781224999457,
+            "p75": 66.32084425000073,
+            "iqr": 2.1030320000061664,
+            "min": 62.68554099999335,
+            "max": 69.5106249999995
+          },
+          "thread_cpu_ms": {
+            "n": 10,
+            "median": 64.67895850000005,
+            "p25": 64.06412550000007,
+            "p75": 66.01516650000039,
+            "iqr": 1.9510410000003162,
+            "min": 62.51729099999981,
+            "max": 69.13695800000053
+          },
+          "peak_rss_bytes": 238649344,
+          "cache_states": {
+            "bypass": 10
+          }
+        }
+      }
+    },
+    {
+      "round": 8,
+      "side": "candidate",
+      "path": "card.materials.standalone",
+      "condition": "repeat",
+      "latency_ms": {
+        "n": 10,
+        "median": 30.55000000447035,
+        "p25": 29.69999999552965,
+        "p75": 30.600000008940697,
+        "iqr": 0.9000000134110451,
+        "min": 29.299999997019768,
+        "max": 38.5
+      },
+      "ids": [
+        "8-candidate-2-card.materials.standalone-repeat",
+        "8-candidate-3-card.materials.standalone-repeat",
+        "8-candidate-4-card.materials.standalone-repeat",
+        "8-candidate-5-card.materials.standalone-repeat",
+        "8-candidate-6-card.materials.standalone-repeat",
+        "8-candidate-7-card.materials.standalone-repeat",
+        "8-candidate-8-card.materials.standalone-repeat",
+        "8-candidate-9-card.materials.standalone-repeat",
+        "8-candidate-10-card.materials.standalone-repeat",
+        "8-candidate-11-card.materials.standalone-repeat"
+      ],
+      "content_sha256": [
+        "733c8fb2baf5c3dd9cbe2f0f7c4b9edecda9b20c9194ef2d7015fbb4ee0cb4e1"
+      ],
+      "primary_requests": {
+        "n": 10,
+        "median": 1.0,
+        "p25": 1.0,
+        "p75": 1.0,
+        "iqr": 0.0,
+        "min": 1,
+        "max": 1
+      },
+      "primary_transfer_bytes": {
+        "n": 10,
+        "median": 37429.0,
+        "p25": 37429.0,
+        "p75": 37429.0,
+        "iqr": 0.0,
+        "min": 37429,
+        "max": 37429
+      },
+      "primary_encoded_body_bytes": {
+        "n": 10,
+        "median": 37129.0,
+        "p25": 37129.0,
+        "p75": 37129.0,
+        "iqr": 0.0,
+        "min": 37129,
+        "max": 37129
+      },
+      "browser_task_ms_including_observer_and_media": {
+        "n": 10,
+        "median": 25.48400000000001,
+        "p25": 23.161250000000052,
+        "p75": 26.20100000000003,
+        "iqr": 3.0397499999999766,
+        "min": 20.88699999999999,
+        "max": 29.245999999999967
+      },
+      "browser_script_ms_including_observer": {
+        "n": 10,
+        "median": 2.030999999999998,
+        "p25": 1.938999999999996,
+        "p75": 2.057250000000004,
+        "iqr": 0.11825000000000774,
+        "min": 1.7109999999999903,
+        "max": 2.8639999999999985
+      },
+      "browser_layout_ms": {
+        "n": 10,
+        "median": 0.8009999999999997,
+        "p25": 0.7215000000000008,
+        "p75": 0.8327500000000003,
+        "iqr": 0.11124999999999952,
+        "min": 0.6720000000000007,
+        "max": 0.8809999999999998
+      },
+      "browser_heap_bytes": {
+        "n": 10,
+        "median": 22729434.5,
+        "p25": 21762668.75,
+        "p75": 24259026.25,
+        "iqr": 2496357.5,
+        "min": 18813164,
+        "max": 30670238
+      },
+      "visible_media_load_events_ms": {
+        "n": 10,
+        "median": 0.0,
+        "p25": 0.0,
+        "p75": 0.0,
+        "iqr": 0.0,
+        "min": 0,
+        "max": 0
+      },
+      "unloaded_visible_media": 0,
+      "related_service": {
+        "/api/production/card": {
+          "requests": 10,
+          "wall_ms": {
+            "n": 10,
+            "median": 0.6724584999999728,
+            "p25": 0.6537400000001803,
+            "p75": 0.7381247500002353,
+            "iqr": 0.08438475000005496,
+            "min": 0.5547079999992377,
+            "max": 0.9463749999998328
+          },
+          "thread_cpu_ms": {
+            "n": 10,
+            "median": 0.6143125000000003,
+            "p25": 0.58470825,
+            "p75": 0.648198499999998,
+            "iqr": 0.06349024999999797,
+            "min": 0.5160420000000012,
+            "max": 0.7920840000000002
+          },
+          "peak_rss_bytes": 96649216,
+          "cache_states": {
+            "hit": 10
+          }
+        }
+      }
+    },
+    {
+      "round": 9,
+      "side": "baseline",
+      "path": "card.materials.standalone",
+      "condition": "repeat",
+      "latency_ms": {
+        "n": 10,
+        "median": 105.29999999701975,
+        "p25": 99.37499998882414,
+        "p75": 105.67500000074507,
+        "iqr": 6.300000011920929,
+        "min": 96.5,
+        "max": 146.90000000596046
+      },
+      "ids": [
+        "9-baseline-2-card.materials.standalone-repeat",
+        "9-baseline-3-card.materials.standalone-repeat",
+        "9-baseline-4-card.materials.standalone-repeat",
+        "9-baseline-5-card.materials.standalone-repeat",
+        "9-baseline-6-card.materials.standalone-repeat",
+        "9-baseline-7-card.materials.standalone-repeat",
+        "9-baseline-8-card.materials.standalone-repeat",
+        "9-baseline-9-card.materials.standalone-repeat",
+        "9-baseline-10-card.materials.standalone-repeat",
+        "9-baseline-11-card.materials.standalone-repeat"
+      ],
+      "content_sha256": [
+        "733c8fb2baf5c3dd9cbe2f0f7c4b9edecda9b20c9194ef2d7015fbb4ee0cb4e1"
+      ],
+      "primary_requests": {
+        "n": 10,
+        "median": 2.0,
+        "p25": 2.0,
+        "p75": 3.0,
+        "iqr": 1.0,
+        "min": 1,
+        "max": 3
+      },
+      "primary_transfer_bytes": {
+        "n": 10,
+        "median": 308755.0,
+        "p25": 308755.0,
+        "p75": 309786.0,
+        "iqr": 1031.0,
+        "min": 307724,
+        "max": 309786
+      },
+      "primary_encoded_body_bytes": {
+        "n": 10,
+        "median": 308155.0,
+        "p25": 308155.0,
+        "p75": 308886.0,
+        "iqr": 731.0,
+        "min": 307424,
+        "max": 308886
+      },
+      "browser_task_ms_including_observer_and_media": {
+        "n": 10,
+        "median": 28.27650000000001,
+        "p25": 26.52650000000012,
+        "p75": 29.075500000000005,
+        "iqr": 2.548999999999886,
+        "min": 25.571000000000012,
+        "max": 33.855999999999995
+      },
+      "browser_script_ms_including_observer": {
+        "n": 10,
+        "median": 2.141000000000004,
+        "p25": 2.066249999999999,
+        "p75": 2.2309999999999985,
+        "iqr": 0.16474999999999973,
+        "min": 1.8490000000000033,
+        "max": 2.361000000000002
+      },
+      "browser_layout_ms": {
+        "n": 10,
+        "median": 0.8310000000000006,
+        "p25": 0.7827500000000013,
+        "p75": 0.9230000000000006,
+        "iqr": 0.14024999999999932,
+        "min": 0.7550000000000004,
+        "max": 1.0949999999999989
+      },
+      "browser_heap_bytes": {
+        "n": 10,
+        "median": 32003915.5,
+        "p25": 28835817.5,
+        "p75": 35662176.0,
+        "iqr": 6826358.5,
+        "min": 26366951,
+        "max": 37272419
+      },
+      "visible_media_load_events_ms": {
+        "n": 10,
+        "median": 0.0,
+        "p25": 0.0,
+        "p75": 0.0,
+        "iqr": 0.0,
+        "min": 0,
+        "max": 0
+      },
+      "unloaded_visible_media": 0,
+      "related_service": {
+        "/api/production/card": {
+          "requests": 10,
+          "wall_ms": {
+            "n": 10,
+            "median": 72.80379150000016,
+            "p25": 70.52588524999992,
+            "p75": 75.29210449999968,
+            "iqr": 4.766219249999764,
+            "min": 62.13891699999863,
+            "max": 116.5024170000013
+          },
+          "thread_cpu_ms": {
+            "n": 10,
+            "median": 71.06870850000013,
+            "p25": 68.95335375000022,
+            "p75": 73.05614625000001,
+            "iqr": 4.102792499999794,
+            "min": 61.950583999999864,
+            "max": 77.4564579999999
+          },
+          "peak_rss_bytes": 237944832,
+          "cache_states": {
+            "bypass": 10
+          }
+        }
+      }
+    },
+    {
+      "round": 9,
+      "side": "candidate",
+      "path": "card.materials.standalone",
+      "condition": "repeat",
+      "latency_ms": {
+        "n": 10,
+        "median": 30.75,
+        "p25": 30.524999998509884,
+        "p75": 31.25000000745058,
+        "iqr": 0.7250000089406967,
+        "min": 29.599999994039536,
+        "max": 37.19999998807907
+      },
+      "ids": [
+        "9-candidate-2-card.materials.standalone-repeat",
+        "9-candidate-3-card.materials.standalone-repeat",
+        "9-candidate-4-card.materials.standalone-repeat",
+        "9-candidate-5-card.materials.standalone-repeat",
+        "9-candidate-6-card.materials.standalone-repeat",
+        "9-candidate-7-card.materials.standalone-repeat",
+        "9-candidate-8-card.materials.standalone-repeat",
+        "9-candidate-9-card.materials.standalone-repeat",
+        "9-candidate-10-card.materials.standalone-repeat",
+        "9-candidate-11-card.materials.standalone-repeat"
+      ],
+      "content_sha256": [
+        "733c8fb2baf5c3dd9cbe2f0f7c4b9edecda9b20c9194ef2d7015fbb4ee0cb4e1"
+      ],
+      "primary_requests": {
+        "n": 10,
+        "median": 1.5,
+        "p25": 1.0,
+        "p75": 2.0,
+        "iqr": 1.0,
+        "min": 1,
+        "max": 2
+      },
+      "primary_transfer_bytes": {
+        "n": 10,
+        "median": 37944.5,
+        "p25": 37429.0,
+        "p75": 38460.0,
+        "iqr": 1031.0,
+        "min": 37429,
+        "max": 38460
+      },
+      "primary_encoded_body_bytes": {
+        "n": 10,
+        "median": 37494.5,
+        "p25": 37129.0,
+        "p75": 37860.0,
+        "iqr": 731.0,
+        "min": 37129,
+        "max": 37860
+      },
+      "browser_task_ms_including_observer_and_media": {
+        "n": 10,
+        "median": 27.111000000000054,
+        "p25": 25.147249999999925,
+        "p75": 28.28899999999998,
+        "iqr": 3.141750000000055,
+        "min": 22.718000000000018,
+        "max": 29.108000000000022
+      },
+      "browser_script_ms_including_observer": {
+        "n": 10,
+        "median": 1.9114999999999964,
+        "p25": 1.808500000000001,
+        "p75": 2.1195,
+        "iqr": 0.31099999999999883,
+        "min": 1.6299999999999994,
+        "max": 2.748
+      },
+      "browser_layout_ms": {
+        "n": 10,
+        "median": 0.8065,
+        "p25": 0.71075,
+        "p75": 0.8637499999999997,
+        "iqr": 0.1529999999999997,
+        "min": 0.6600000000000008,
+        "max": 0.9029999999999992
+      },
+      "browser_heap_bytes": {
+        "n": 10,
+        "median": 31615634.5,
+        "p25": 28898655.25,
+        "p75": 37751757.25,
+        "iqr": 8853102.0,
+        "min": 22834132,
+        "max": 44463471
+      },
+      "visible_media_load_events_ms": {
+        "n": 10,
+        "median": 0.0,
+        "p25": 0.0,
+        "p75": 0.0,
+        "iqr": 0.0,
+        "min": 0,
+        "max": 0
+      },
+      "unloaded_visible_media": 0,
+      "related_service": {
+        "/api/production/card": {
+          "requests": 10,
+          "wall_ms": {
+            "n": 10,
+            "median": 0.5844999999999878,
+            "p25": 0.5404579999996884,
+            "p75": 0.671656750000027,
+            "iqr": 0.13119875000033865,
+            "min": 0.5128749999983029,
+            "max": 0.7161250000002894
+          },
+          "thread_cpu_ms": {
+            "n": 10,
+            "median": 0.5590004999999967,
+            "p25": 0.5222297499999995,
+            "p75": 0.6308652500000028,
+            "iqr": 0.10863550000000333,
+            "min": 0.5081659999999905,
+            "max": 0.6995000000000005
+          },
+          "peak_rss_bytes": 180928512,
+          "cache_states": {
+            "hit": 10
+          }
+        }
+      }
+    }
+  ],
+  "comparisons": [
+    {
+      "round": 8,
+      "path": "card.materials.standalone",
+      "condition": "repeat",
+      "complete": true,
+      "baseline_ms": 96.75000000745058,
+      "candidate_ms": 30.55000000447035,
+      "drop_ms": 66.20000000298023,
+      "noise_ms": 0.9000000134110451,
+      "slow_path": true,
+      "improvement_pass": true,
+      "regression": false,
+      "candidate_p75_ms": 30.600000008940697,
+      "target_300ms_pass": true,
+      "content_equal": true
+    },
+    {
+      "round": 9,
+      "path": "card.materials.standalone",
+      "condition": "repeat",
+      "complete": true,
+      "baseline_ms": 105.29999999701975,
+      "candidate_ms": 30.75,
+      "drop_ms": 74.54999999701975,
+      "noise_ms": 6.300000011920929,
+      "slow_path": true,
+      "improvement_pass": true,
+      "regression": false,
+      "candidate_p75_ms": 31.25000000745058,
+      "target_300ms_pass": true,
+      "content_equal": true
+    }
+  ]
+}

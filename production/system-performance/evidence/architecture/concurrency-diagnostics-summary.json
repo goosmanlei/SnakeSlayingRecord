@@ -1,0 +1,24 @@
+{
+  "active_max": 4,
+  "queued_max": 8,
+  "worker_threads_max": 4,
+  "business_connections_max": 5,
+  "all_connections_max": 10,
+  "peak_rss_bytes": 548962304,
+  "transaction_statement_and_commit_ms": {
+    "n": 70,
+    "median": 0.007729499994724165,
+    "p25": 0.005551750007271039,
+    "p75": 0.017343249998802435,
+    "iqr": 0.011791499991531396,
+    "min": 0.0030419999994535374,
+    "max": 1.8178330000040432
+  },
+  "transaction_errors": [],
+  "after_shutdown": {
+    "at": 1791386783.002928,
+    "event": "stopped",
+    "remaining_connections": {}
+  },
+  "note": "Transaction duration includes SQLite execution and fsync; upper bound for wait, not isolated lock wait. Business connection count includes the non-request bootstrap connection."
+}
