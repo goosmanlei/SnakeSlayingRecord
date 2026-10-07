@@ -10,6 +10,7 @@ from collections import Counter
 from datetime import datetime, timezone
 import json
 import os
+import re
 from pathlib import Path
 import sys
 import time
@@ -34,8 +35,8 @@ require,sha,read,save,run,git,inspect=base.require,base.sha,base.read,base.save,
 
 
 def release_name(task, story_candidate, system_candidate):
-    require(task in RELEASE_PREFIXES, 'unsupported release task')
-    return RELEASE_PREFIXES[task]+'-'+story_candidate[:12]+'-'+system_candidate[:12]
+    require(task in RELEASE_PREFIXES or re.fullmatch(r'task-[0-9]{8}-[0-9]{4}', task), 'unsupported release task')
+    return RELEASE_PREFIXES.get(task, task)+'-'+story_candidate[:12]+'-'+system_candidate[:12]
 
 
 def prepare(a):
@@ -43,9 +44,14 @@ def prepare(a):
     release_id=release_name(task,a.story_candidate,a.system_candidate)
     story,system=a.story_worktree.resolve(),a.system_worktree.resolve()
     sm,gm=base.primary(story),base.primary(system)
+    native=None
+    if re.fullmatch(r'task-[0-9]{8}-[0-9]{4}', task):
+        import task_repository_delivery
+        if task_repository_delivery.uses_native_backend(sm,task):
+            native=task_repository_delivery.freeze(sm,task,story,system,a.story_candidate,a.system_candidate)
     base.repo_check(story,sm,a.story_candidate,a.story_target)
     base.repo_check(system,gm,a.system_candidate,a.system_target,system=True)
-    upstream=system_upstream(system,a.system_target,a.system_candidate) if getattr(a,'push_system',False) else None
+    upstream=system_upstream(system,a.system_target,a.system_candidate) if getattr(a,'push_system',False) and not native else None
     root=a.bundle.resolve();require((story/'.runtime').resolve() in root.parents and not root.exists(),'new task runtime bundle required')
     app,nginx=inspect(base.APP),inspect(base.NGINX)
     old,proxy=base.safe_container(app),base.safe_container(nginx)
@@ -75,22 +81,30 @@ def prepare(a):
         raw=base.git_file(system,a.system_candidate,name);put('build/'+name,raw);source[name]=sha(raw)
     tag=base.base_image_tag(app['Image'])
     put('build/Dockerfile',('FROM '+tag+'\nRUN rm -rf /app/review_desk\nCOPY review_desk /app/review_desk\n').encode())
-    for helper in ('material_review_release.py','autonomous_optimization_release.py','integrate_generation_review_system.py'):
+    helpers=['material_review_release.py','autonomous_optimization_release.py','integrate_generation_review_system.py']
+    if native:helpers.append('task_repository_delivery.py')
+    for helper in helpers:
         raw=base.git_file(story,a.story_candidate,'scripts/'+helper);require(raw==(story/'scripts'/helper).read_bytes(),'helper differs from committed candidate');put('helpers/'+helper,raw)
     files=old['config_files'].split(',');require(files==proxy['config_files'].split(','),'compose sets differ')
     plan={'format':'generation-system-delivery-v1','task':task,'push':bool(upstream),'system_main_from_story_main':os.path.relpath(gm,sm),'system_worktree':os.path.relpath(system,story),'expected_target':a.system_target,'candidate':a.system_candidate}
+    if native:plan['task_delivery']=native
     put('system-delivery.json',json.dumps(plan,ensure_ascii=False,indent=2).encode()+b'\n')
     m={'format':'material-review-release-v1','task':task,'push':False,'story_worktree':str(story),'system_worktree':str(system),'story_main':str(sm),'system_main':str(gm),'story_candidate':a.story_candidate,'story_target':a.story_target,'system_candidate':a.system_candidate,'system_target':a.system_target,'system_upstream':upstream,'release_name':release_id,'hashes':hashes,'source_hashes':source,'base_image_tag':tag,'previous_app':old,'previous_nginx':proxy,'previous_compose_hashes':{f:sha(Path(f).read_bytes()) for f in files},'previous_instance_hashes':current_files,'ca_sha256':sha(Path(mounts['/run/local-ca/cacert.pem']['Source']).read_bytes()),'prepared_at':datetime.now(timezone.utc).isoformat()}
+    m['delivery_backend']='codex.task' if native else 'legacy'
+    if native:m['task_delivery']=native
     save(root/'manifest.json',m);print(json.dumps({'bundle':str(root),'manifest_sha256':sha((root/'manifest.json').read_bytes()),'formal_writes':False,'business_delta':0}))
 
 
 def load_bundle(path):
-    root=path.resolve();m=read(root/'manifest.json');require(m.get('format')=='material-review-release-v1' and m.get('task') in RELEASE_PREFIXES and m.get('push') is False,'wrong bundle')
+    root=path.resolve();m=read(root/'manifest.json');require(m.get('format')=='material-review-release-v1' and (m.get('task') in RELEASE_PREFIXES or m.get('task_delivery',{}).get('backend')=='codex.task' or (m.get('delivery_backend')=='legacy' and re.fullmatch(r'task-[0-9]{8}-[0-9]{4}',m.get('task','')))) and m.get('push') is False,'wrong bundle')
     require(m.get('release_name')==release_name(m['task'],m['story_candidate'],m['system_candidate']),'release task or name differs')
     for rel,value in m['hashes'].items():
         require(not Path(rel).is_absolute() and '..' not in Path(rel).parts,'invalid package path');require(sha((root/rel).read_bytes())==value,'bundle changed: '+rel)
     require(sha(Path(__file__).read_bytes())==m['hashes']['helpers/material_review_release.py'],'wrapper changed')
     require(sha(Path(base.__file__).read_bytes())==m['hashes']['helpers/autonomous_optimization_release.py'],'runtime helper changed')
+    if m.get('task_delivery'):
+        import task_repository_delivery
+        require(sha(Path(task_repository_delivery.__file__).read_bytes())==m['hashes']['helpers/task_repository_delivery.py'],'task adapter changed')
     return root,m
 
 
@@ -107,7 +121,7 @@ def build(a):
 def checks(root,m,live=True):
     # Breakdown and small-card releases use the approved two-stage integration:
     # code first, data/service next, task completion after formal page acceptance.
-    base.repo_check(m['story_worktree'],m['story_main'],m['story_candidate'],m['story_target'],system=m['task'] in ('task-20261004-0007','task-20261005-0003','task-20261005-0004','task-20261005-0005','task-20261005-0006','task-20261005-0007','task-20261006-0001','task-20261006-0002'))
+    base.repo_check(m['story_worktree'],m['story_main'],m['story_candidate'],m['story_target'],system=bool(m.get('task_delivery')) or m['task'] in ('task-20261004-0007','task-20261005-0003','task-20261005-0004','task-20261005-0005','task-20261005-0006','task-20261005-0007','task-20261006-0001','task-20261006-0002'))
     base.repo_check(m['system_worktree'],m['system_main'],m['system_candidate'],m['system_target'],system=True)
     for path,value in m['previous_compose_hashes'].items():require(sha(Path(path).read_bytes())==value,'compose input drifted')
     ca=next(x['Source'] for x in m['previous_app']['mounts'] if x['Destination']=='/run/local-ca/cacert.pem');require(sha(Path(ca).read_bytes())==m['ca_sha256'],'CA drifted')
@@ -219,6 +233,10 @@ def system_upstream(worktree,target,candidate,expected=None):
 
 def publish_system(a):
     root,m=authorized(a)
+    if m.get('task_delivery'):
+        import task_repository_delivery
+        result=task_repository_delivery.push_receipt(m['task_delivery'])
+        save(root/'run/system-push.json',result);print(json.dumps(result));return
     require(m.get('system_upstream'),'system push was not prepared')
     base.repo_check(m['system_worktree'],m['system_main'],m['system_candidate'],m['system_target'],system=True)
     require(git(m['system_main'],'rev-parse','HEAD')==m['system_candidate'],'system must be integrated before push')
@@ -243,7 +261,7 @@ def restart(a):
 def main():
     p=argparse.ArgumentParser(description=__doc__);sub=p.add_subparsers(dest='command',required=True)
     q=sub.add_parser('prepare');q.add_argument('--story-worktree',type=Path,default=Path(__file__).resolve().parents[1]);q.add_argument('--system-worktree',type=Path,required=True);q.add_argument('--bundle',type=Path,required=True)
-    q.add_argument('--task',choices=sorted(RELEASE_PREFIXES),default=TASK);q.add_argument('--push-system',action='store_true')
+    q.add_argument('--task',default=TASK);q.add_argument('--push-system',action='store_true')
     for name in ('story-candidate','system-candidate','story-target','system-target'):q.add_argument('--'+name,required=True)
     for cmd in ('build','preflight','apply','recover','publish-system'):
         q=sub.add_parser(cmd);q.add_argument('--bundle',type=Path,required=True)
