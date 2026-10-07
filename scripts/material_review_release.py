@@ -6,12 +6,15 @@ fast-forward, live preservation checks, service switch and prepared ordinary
 system push run serially; story Git delivery stays with the task launcher.
 """
 import argparse
-from collections import Counter
+from contextlib import ExitStack, closing
 from datetime import datetime, timezone
+import hashlib
 import json
 import os
 from pathlib import Path
 import sys
+import sqlite3
+import tempfile
 import time
 import autonomous_optimization_release as base
 
@@ -128,21 +131,57 @@ def preflight(a):
 
 
 def preserved(before,after):
-    old,new=base.rows(before),base.rows(after);require(old.keys()==new.keys(),'database table set changed')
-    evidence={}
-    mutable={'objects','comments','configurations','material_rounds','material_members','sources'}
-    for table,value in old.items():
-        require(value['schema']==new[table]['schema'],'business table schema changed')
-        if table not in mutable:
-            a=Counter(sha(base.canonical(v)) for v in value['rows']);b=Counter(sha(base.canonical(v)) for v in new[table]['rows']);require(not a-b,'immutable history lost: '+table)
-        else:
-            # Concurrent user edits may advance current heads/status. Keep every
-            # original identity and every immutable history/event; never restore.
-            keys={'objects':('id','kind','created_at'),'comments':('id','target_object_id','target_revision_id','anchor','created_at'),'sources':('id',),'configurations':('scope',),'material_rounds':('material_id','number','created_at'),'material_members':('material_id','number','revision_id')}[table]
-            keys=tuple(k for k in keys if not value['rows'] or k in value['rows'][0])
-            require({tuple(r[k] for k in keys) for r in value['rows']}<={tuple(r[k] for k in keys) for r in new[table]['rows']},'current identities lost: '+table)
-        evidence[table]={'before':len(value['rows']),'after':len(new[table]['rows']),'preserved':True}
-    return evidence
+    # The live instance contains a large content-addressed history. Keep only
+    # one row in Python; the exact multiset comparison lives in a disk index.
+    mutable={'objects':('id','kind','created_at'),
+             'comments':('id','target_object_id','target_revision_id','anchor','created_at'),
+             'sources':('id',),'configurations':('scope',),
+             'material_rounds':('material_id','number','created_at'),
+             'material_members':('material_id','number','revision_id')}
+    with ExitStack() as stack:
+        databases=[]
+        for path in (before,after):
+            db=stack.enter_context(closing(sqlite3.connect(Path(path).resolve().as_uri()+'?mode=ro',uri=True)))
+            db.row_factory=sqlite3.Row;db.execute('PRAGMA cache_size=-4096');db.execute('PRAGMA temp_store=FILE')
+            db.execute('BEGIN');databases.append(db)
+        schemas=[dict(db.execute("SELECT name,sql FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%'")) for db in databases]
+        require(schemas[0].keys()==schemas[1].keys(),'database table set changed')
+        temporary=stack.enter_context(tempfile.TemporaryDirectory(prefix='review-release-history-'))
+        index=stack.enter_context(closing(sqlite3.connect(Path(temporary)/'counts.sqlite3')))
+        index.execute('PRAGMA cache_size=-4096');index.execute('PRAGMA temp_store=FILE')
+        index.execute('CREATE TABLE counts(side INTEGER,digest TEXT,n INTEGER,PRIMARY KEY(side,digest)) WITHOUT ROWID')
+        evidence={}
+        for table,schema in schemas[0].items():
+            require(schema==schemas[1][table],'business table schema changed')
+            quoted='"'+table.replace('"','""')+'"'
+            columns={row['name'] for row in databases[0].execute('PRAGMA table_info('+quoted+')')}
+            keys=tuple(k for k in mutable.get(table,()) if k in columns)
+            counts=[]
+            index.execute('DELETE FROM counts')
+            for side,db in enumerate(databases):
+                count=0
+                for row in db.execute('SELECT * FROM '+quoted):
+                    value=dict(row)
+                    require(all(not isinstance(v,bytes) for v in value.values()),'unexpected BLOB history; review serializer')
+                    # A current head/status may advance, but its original
+                    # identity and every immutable historical row must remain.
+                    identity=tuple(value[k] for k in keys) if table in mutable else value
+                    digest=sha(base.canonical(identity))
+                    index.execute('INSERT INTO counts VALUES (?,?,1) ON CONFLICT(side,digest) DO UPDATE SET n=n+1',(side,digest))
+                    count+=1
+                counts.append(count)
+            missing=index.execute('SELECT 1 FROM counts a LEFT JOIN counts b ON b.side=1 AND b.digest=a.digest '
+                'WHERE a.side=0 AND (b.digest IS NULL'+('' if table in mutable else ' OR b.n<a.n')+') LIMIT 1').fetchone()
+            require(missing is None,('current identities lost: ' if table in mutable else 'immutable history lost: ')+table)
+            evidence[table]={'before':counts[0],'after':counts[1],'preserved':True}
+        return evidence
+
+
+def file_sha256(path):
+    digest=hashlib.sha256()
+    with Path(path).open('rb') as stream:
+        for chunk in iter(lambda:stream.read(1024*1024),b''):digest.update(chunk)
+    return digest.hexdigest()
 
 
 def install(root,m,image):
@@ -173,9 +212,9 @@ def apply(a):
         require(proxy in (m['previous_nginx'],expected_proxy),'another proxy runtime is active')
         before=receipt/'before.sqlite3'
         if not before.exists():
-            checks(root,m);base.snapshot(Path(m['story_main'])/'.runtime/review.sqlite3',before);save(receipt/'before.json',{'sha256':sha(before.read_bytes())})
+            checks(root,m);base.snapshot(Path(m['story_main'])/'.runtime/review.sqlite3',before);save(receipt/'before.json',{'sha256':file_sha256(before)})
         else:
-            require(sha(before.read_bytes())==read(receipt/'before.json')['sha256'],'before snapshot changed')
+            require(file_sha256(before)==read(receipt/'before.json')['sha256'],'before snapshot changed')
             require(exact_candidate or base.safe_container(current)==m['previous_app'],'another runtime is active; recover or prepare again')
         # Integrator receipt root is task runtime, irrespective of copied helper.
         integration=json.loads(run([sys.executable,Path(m['story_worktree'])/'scripts/integrate_generation_review_system.py','--plan',root/'system-delivery.json','--apply','--receipt',receipt/'system-integration.json']))
