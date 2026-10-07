@@ -168,8 +168,8 @@ class ReleaseTest(unittest.TestCase):
              contextlib.redirect_stdout(io.StringIO()):
             for task in (r.TASK, 'task-20261004-0005', 'entity-acceptance-20261004',
                          'task-20261004-0007', 'task-20261004-0008', 'task-20261005-0001',
-                         'task-20261005-0007'):
-                if task == 'task-20261005-0007':
+                         'task-20261005-0007', 'task-20261006-0006'):
+                if task in {'task-20261005-0007', 'task-20261006-0006'}:
                     (story / 'content/production-approach.json').write_text('{"new_method": true}')
                 args = argparse.Namespace(story_worktree=story, system_worktree=system,
                     story_candidate='a' * 40, system_candidate='b' * 40,
@@ -182,7 +182,7 @@ class ReleaseTest(unittest.TestCase):
                 self.assertEqual(manifest['task'], task)
                 self.assertEqual(manifest['release_name'], r.release_name(task, 'a' * 40, 'b' * 40))
                 self.assertEqual(r.read(args.bundle / 'system-delivery.json')['task'], task)
-            # Only the method rewrite task may change the instance-owned text.
+            # Only the method rewrite tasks may change the instance-owned text.
             args.task = 'task-20261005-0006'
             args.bundle = story / '.runtime' / 'forbidden-content-change'
             with self.assertRaisesRegex(ValueError, 'approach content change'):

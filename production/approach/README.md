@@ -1,62 +1,54 @@
-# 制作思路重构交付
+# 制作思路全过程重构交付
 
-两页直接更新 `content/production-approach.json`，故事创作按七步组织，生产制作按十步贯通定稿到全剧交付与返修，另先解释实体、完整状态、素材、版本和候选。正文自成完整说明；用户负责审阅、评论和明确选择，后台负责创作、登记、生成与剪辑。
+本轮任务 `task-20261006-0006` 直接更新 `content/production-approach.json` 两页干净正文。先研究原型、方向、结构、逐段写作、读者审阅、剧本定稿及制作能力的形成，再按创作者的阅读和交接顺序成稿。生产制作重点解释全剧拆解、完整状态、素材方案、候选审阅、准确输入、有声预演、组合、交付与返修。
 
-## 变更与准确版本
+## 修改摘要
 
-- 故事页增加独立方向选择，拆开写作、回修与交付；生产页补全完整状态、准确参考、有声预演、场／集／全剧组合、质量与工程恢复。
-- 全剧 17 集、42 场、297 镜仅表示设计范围；移除失效的实体／状态数量。四首歌曲的 10 份整曲录音已登记，最新未生成草稿、词音与无损母版缺口分别表述。
-- 平铺版本、独立候选、共用大小卡、集场镜导航与剧情高亮按前置最终页面说明。方案采纳、候选审阅、本镜参考选择、真实生成和作品接受分别解释。
-- 当前新组合编辑与最终交付能力尚待实施和验证；完整有声预演、镜头媒体和全剧成片未冒称就绪。本任务不生成媒体、不接受素材或作品、不写业务数据库。
-- 系统独立工作区候选为 `6b7f9e781c97041769a8d31b0fd7096f0a965f69`，基线为 `166b766560273e9cdab533da22fc5636f60ec94a`。仅修改方法页目录滚动和刷新定位，保留深处阅读上下文；补 5 项定位回归。故事准确候选及远端身份由任务账本和冻结包记录，不在正文复制变化的 SHA。
+- 开头用简明流程总览串起全程；各阶段用自然因果说明为什么做、后台做什么、用户判断什么、得到什么以及何时继续或回修，去掉重复栏目和操作清单。
+- 以歌本的劳动用途、毁本、补词、装订和归家贯穿两条流程；制作以已确认的剧本四为准，解释与小说较早设计的差异。
+- 以1009最终SH007替换过时的少量参考例子，讲清完整人物道具路径、Prompt引用和尚未选齐的输入。方案采纳、候选审阅、浏览V/C、保存本镜参考、真实生成和作品接受分别说明。
+- 按1008—1011最终能力核对状态卡、总版本/候选数、四列管理、筛选和准确剧本高亮。只保留影响判断的必要操作，不把开发史放进方法正文。
+- 现有图像、音色和歌曲成果有明确范围；组合编辑、完整有声预演、镜头成片和最终工程交付仍待实际制作或实施验收，没有写成已完成成果。
+- 全部旧章节ID保留。最终desk基线代码已经满足本轮呈现要求，未修改审阅台，也未写业务数据库、生成媒体或代用户接受作品。
 
-## 前置成果与事实依据
+## 来源与有效版本
 
-核对主账本五项依赖均为 completed / pushed，并在真实正式页面读取其交付行为；原始 Notebook 截图没有作为完成证据。
+四前置均已完成并有实际双仓交付。完成说明、提交和内容哈希见 [输入快照](evidence/1012/input.json)。主项目基线为 `732f647438cd82904f9d6138ccf9b0d6636d483c`；任务工作区合入该基线；desk准确提交为 `e05f1d812ea92988a6d7ea0cd8b587855bc979b1`，与 `config/instance.json.review_desk_commit` 一致。
 
-|任务|故事交付提交|本次实际核对|
+|前置|交付入口|本轮使用的最终依据|
 |---|---|---|
-|0002|`f5fe993443959b90f56f5412e8650071930446a7`|编号、大卡、版本候选、完整状态；第二版有效状态以当前正式库为准|
-|0003|`53ab6949b0f0413c024c4c4f0b1f3261d905113b`|共用小卡、分组分页、打开大卡|
-|0004|`dae66880fa78ecb2d925cb05b127456a779ec196`|17 集卡、场镜导航、准确原句高亮和本镜素材|
-|0005|`fd9d70f00f69a267b2d80585f38ff775cbfc3588`|独立 Prompt、上游引用、准确槽选择及未生成禁用|
-|0006|`42c7598c66648eea04b66d4c206851060de79b04`|统一页首、配色、两 Tab、目录与窄屏表格|
+|1008 / 0002|[实体卡片](../entity-cards/README.md)|实体状态、关系与规范素材数、真实总版本候选数|
+|1009 / 0003|[全剧拆解与镜头](../breakdown-shot-v2/README.md)|17集42场297镜、完整参考路径、场/镜准确剧本、Prompt对应|
+|1010 / 0004|[管理页](../management-pages/README.md)|四列基准分页、集场和名称筛选、唯一身份与分组展示数量|
+|1011 / 0005|[读取性能](../system-performance/README.md)|最终双仓代码、正式发布与保全回执；本轮不重复共享压测|
 
-细节沿各任务的 [大卡](../entity-material/README.md)、[第二版](../entity-card-v2/README.md)、[小卡](../small-cards/README.md)、[拆解页](../breakdown-page/README.md)、[镜头制作](../shot-production/README.md)、[视觉](../system-page-style/README.md)交付及当前正式准确对象核对。制作边界沿 [制作输入锁](../source-lock.json)、[全剧拆解](../breakdown/README.md)、[原生声音流程](../native-audio-workflow.md)、[歌曲交接](../songs-review.md)读取。
+[来源与流程对应](evidence/1012/source-flow.md)保留全程的主要阶段、能力形成原因、关键决定、连续例子的准确版本、历史冲突和1008—1012映射。原始任务完整要求在 [任务依据](../../planning/creation-approach-optimization-task.md)。作品依据沿 [制作锁](../source-lock.json)、[剧本四审阅](../../planning/screenplay-04-review.md)、[首轮素材](../full-generation/README.md)和[歌曲交接](../songs-review.md)回查。
 
-连续例子使用剧本版本四 E01 / S001 的唱险滩、翻过两页、唱归家原句；对应 SH001–SH003。两份米分别为当天工米和许家预付，接续歌本转手、毁本补本及提灯归家的全剧回收。原句在剧情弹窗准确高亮，见 [截图](evidence/plot-reference.png)。抬河石、翻页后压稳是逐镜制作设计，明确不新增为剧情事实。
+## 实际验收
 
-M822 版本 1／候选 1 有真实阿蘅原件，版本 2 无候选；SH002 的直接上游 M020 关键画面和 M1621 声音参考均未生成。“图片1”打开大卡后无候选，选为本镜参考禁用。母版必须先成为关键画面的准确上游，再审阅关键画面并逐槽选择；本文只说明将来交接，不代替用户选定。见 [已有候选](evidence/existing-candidate.png)、[未生成](evidence/not-generated.png)、[未选定参考](evidence/unselected-reference.png)、[实际参考快照](evidence/shot-reference-actual.txt)。
+[阅读走查](evidence/1012/reading-review.md)记录一条故事路径、一条制作路径、一次发现问题后的回修路径，以及实际理解断点和修订。浏览器正文143项文字与文件一致，详见 [内容对应](evidence/1012/content-match.json)。
 
-## 完成标准逐项验收
+真实Chrome使用独立实例及一致性备份，覆盖两Tab全部19目录、桌面1280×900/窄屏390×844共38次目录点击、滚动高亮、直接链接、刷新、前进后退、旧链接、相关页面往返和评论草稿。全部目录标题可见、横向溢出0；窄屏深处刷新滚动6426→6426，SH007后退恢复生产章节及滚动3736。草稿返回后准确正文修订、圈选与文本保留，已取消且没有提交。见 [目录实测](evidence/1012/browser-directories.json)、[桌面总览](evidence/1012/production-overview-desktop.png)、[窄屏总览](evidence/1012/production-overview-narrow.png)、[草稿](evidence/1012/draft-preserved.png)。
 
-|标准|结果与证据|
-|---|---|
-|1 前置与两页完整重构|五项已完成并核对真实页面；故事 8 节、制作 11 节覆盖原型到全剧 QA、交付和返修。原始完整要求在 [任务依据](../../planning/creation-approach-rewrite-task.md)。|
-|2 输入、动作、产物与交接|最终正文逐节通读，七步／十步均写明目的与输入、后台动作和用户判断、产物与前进条件；[逐节走查](evidence/editorial-review.json)对应实际正文，不依赖聊天。连续例子依据见上。|
-|3 概念及操作一致|三种状态均实测，正文明确未选版本／候选／原件不可生产；浏览不保存，没有替用户采纳或选参考。|
-|4 能力与过时信息|现行编号、歌曲已登记、平铺版本和全剧范围已修订；已交付、待审阅和未来方法分别说明，故事正文与业务模型未改。|
-|5 加载与真实浏览器|现有加载器校验通过；浏览器逐节对比源文无差异。桌面 1280×900、窄屏 390×844 的全部 19 节目录均实际点击通过，标题低于固定区域，横向溢出为 0；旧 15 节 ID 全保留，旧 workspace=current 结构链接实测。刷新、两 Tab 键盘切换、直接链接、前进后退、正文滚动高亮、相关页往返及表格流程截图见 [浏览器证据](evidence/browser.json)。|
-|6 草稿、准确上下文、交付与清理|隔离页真实评论草稿跨方法两 Tab 往返恢复，随后取消，未提交；[截图](evidence/draft-preserved.png)。非零方法阅读往返保留准确路由和“返修”章节，布局恢复后滚动值 7804→7555，未声称像素完全相同。正式应用和实际资源清理回执按下述入口读取。|
+SH007两原句准确高亮、场级32段0高亮；七状态和Prompt引用完整。M822两版一候选、V1/C1真实图像、V2未生成；M054无候选；人物参考未选齐。浏览并关闭未改变本镜V?/C?，没有保存输入。实体及素材管理四列、全库2073素材身份/2882展示项、E01/S001搜索阿蘅42/42均实际核验。见 [镜头参考](evidence/1012/sh007-reference.txt)、[Prompt目标](evidence/1012/sh007-prompt-links.json)、[剧本高亮](evidence/1012/sh007-plot.png)、[筛选](evidence/1012/management-filter.png)。
 
-真实浏览器发现窄屏目录自动回拉打断点击、刷新标题部分遮挡；系统方法专用修复后全部目录及刷新重验通过。没有以自动检查替代浏览器。截图：[故事桌面](evidence/story-desktop.png)、[生产桌面](evidence/production-desktop.png)、[故事窄屏](evidence/story-narrow.png)、[生产窄屏表格](evidence/production-narrow.png)、[准确参考桌面](evidence/reference-desktop.png)、[准确参考窄屏](evidence/reference-narrow.png)。
+现有方法加载3项和发布守卫14项测试通过；守卫仅增列本方法任务可更新方法正文，其他任务的内容漂移仍被拒绝。desk未变，复用前置最终代码验证，不冒称本轮重跑完整系统或性能验收。正式与独立预览均保留285评论、314事件；正式发布会再验证全部业务表和原件保全。
 
-自动验证：系统完整 Python 297 项、Node 653 项通过；故事冻结发布守卫 9 项通过，新增检查只允许本任务更改方法正文。系统定位测试检查合成几何，不代替实际页面；完整输出保留本机 `.runtime/approach/`。既有方法加载器 3 项通过，正文加载、Git diff 检查通过。
+## 准确候选、正式应用与恢复
 
-## 正式应用与恢复
+本次 `--auto` 已授权范围内候选验收、整组交付、服务切换和结项；Agent验收不等于用户接受作品。
 
-本次 `--auto` 明确授权范围内候选验收、双仓提交／集成／推送和服务切换；验收由 Agent 实际执行，不冒称用户逐项验收或接受作品。
+1. 检查两仓任务worktree及准确依赖，提交主仓本轮内容，desk保持上述准确提交。用主项目内部 `_prepare_integration --task task-20261006-0006 --push` 固定整组candidate/target/upstream，候选内容变化才重新准备及补验。
+2. 按整组回执运行 `scripts/material_review_release.py prepare`，带 `--task task-20261006-0006`、双仓candidate/target、已纳管desk worktree及 `--bundle .runtime/approach-1012/release`。顺序执行 `build`、`preflight`，冻结方法文件、准确系统源码、挂载、镜像与恢复依据。
+3. 执行内部 `_deliver` 受控双仓交付并回读远端。然后按manifest及image回执准确SHA执行 `apply --apply`，原生适配消费同一任务交付身份，串行切换正式镜像及只读config/content挂载。保留活库、评论、采用历史和原件，不导入预览库。
+4. 正式3000真实浏览器检查两页内容与导航，核对实际镜像、系统提交、内容哈希及保全；`publish-system`在原生后端读取已推送回执，不另建Git交付。全部完成后才内部 `_complete`。
 
-1. 故事提交后用 `codex.project task _prepare_integration --push` 固定候选，核对目标、upstream 和前置交付；系统保持独立分支与上述准确提交。
-2. `scripts/material_review_release.py prepare` 固定 `.runtime/approach/release`，参数带任务、双仓 candidate／target、`--system-worktree .runtime/approach/system --push-system`；方法原文和系统源码冻结，当前服务与挂载同时记录。
-3. 顺序执行 `build`、`preflight`，回读 manifest 与 image 的 SHA-256。该脚本只对本任务允许方法内容更新；其他任务仍禁止内容漂移。
-4. 任务 `_deliver` 受控交付故事，随后按冻结摘要执行 `apply`：受控快进系统、切换正式代码镜像和只读 config／content 挂载，保留活库与全部历史。业务数据增量为 0，绝不导入预览库。
-5. 在正式 3000 实际验收两页、目录、刷新与链接；用 `publish-system` 普通推送并回读远端。故事推送、系统推送、服务切换、真实页面和任务完成分别记录。
+准确整组候选、目标和upstream在主任务账本 `repository_preparation`；运行回执在本任务 `.runtime/approach-1012/release/manifest.json`、`image.json`、`run/service-*.json`、`run/system-integration.json`、`run/system-push.json`和`run/formal-browser.json`。正式永久包位于主项目 `.runtime/service-releases/approach-20261006-0006-<故事短SHA>-<系统短SHA>/`。已交付候选不为补日志而改写，正式验收与清理结果写本机回执和账本完成说明。
 
-准确参数和实际顺序在本机 `.runtime/approach/release/manifest.json`、`image.json`、`run/system-integration.json`、`run/service-*.json`、`run/system-push.json`、`run/formal-browser.json`。正式永久运行包位于主项目 `.runtime/service-releases/approach-20261005-0007-<故事短SHA>-<系统短SHA>/`，仅作正式只读挂载和恢复入口。回滚仅恢复该包记录的旧代码／挂载，不重置 Git、不回灌旧库；恢复须先核对当前服务身份，沿冻结包 `recover` 入口处理。
+恢复时先核对当前服务与准确包，使用包的 `recover` 或正式永久包 `restart` 入口；只恢复准确代码和挂载，不重置Git、不把旧数据库覆盖活库。新的作品或评论继续保留。
 
-## 资源收尾
+## 本任务资源收尾
 
-最终正式验收后停止 62670 隔离服务，按准确归属清理预览库／配置／链接、重复基线、一次性正文写入脚本和任务测试缓存；保留准确冻结包、前后正式一致性备份、必要检查／浏览器证据和双仓提交分支。删除前核对进程、挂载与文件用途；不清理其他任务资源，不使用全局 prune。
+正式验收后停止本任务独立预览，按归属清理预览库、克隆素材、临时API响应及测试缓存。保留受管研究/阅读/浏览器证据、准确冻结包、必要正式一致性备份与当前/回退正式镜像；不清其他任务、共享数据库或全局缓存。原方法轮次的受管证据保留用于追查导航修复和历史依据，旧正文不另存副本。
 
-实际删除数量、逐路径回读及保留理由在 `.runtime/approach/cleanup-before.json`、`.runtime/approach/release/run/cleanup-final.json`，由结项说明回读。双仓 worktree 保留用于追溯及当前 TUI，会话退出释放锁后再走各自受管退役入口；保留数据在后续有效基线替代且追溯结束后再核对移除。
+实际删除数量、逐路径回读和保留用途在 `.runtime/approach-1012/cleanup-final.json` 及账本结项说明。两仓纳管worktree、分支及当前TUI保留；退出会话释放锁后，由受管清理入口按只读检查器退役。尚有恢复用途的冻结包与一致性备份，只有新有效回退依据替代且追溯结束后才核对移除。
