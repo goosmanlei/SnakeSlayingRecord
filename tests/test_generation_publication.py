@@ -15,6 +15,13 @@ from scripts.generation_review import initialize, export_review
 
 
 class GenerationPublicationTest(unittest.TestCase):
+    def test_retired_version_baseline_cannot_replay_even_with_unchanged_target_rows(self):
+        db=self.db()
+        with db:db.execute("INSERT INTO consolidation_runs VALUES ('new-baseline','checksum','{}')")
+        before='\n'.join(db.iterdump())
+        with self.assertRaisesRegex(ValueError,'retired version baseline'):publication.apply_plan(db,self.delta)
+        self.assertEqual('\n'.join(db.iterdump()),before)
+
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
@@ -218,8 +225,11 @@ class NumberPublicationTest(unittest.TestCase):
         with self.store.db:
             self.store.db.execute("DELETE FROM business_codes WHERE prefix IN ('E','S','SH')")
         publication.backup(self.source,self.formal)
-        from review_desk import business_codes
-        business_codes.initialize(self.store)
+        # Current E/S are derived from an exact screenplay edition. These
+        # tests cover publication of the pre-existing legacy allocation ledger.
+        with self.store.db:
+            self.store.db.executemany('INSERT INTO business_codes VALUES (?,?,?)',
+                                     [('episode','E',1),('scene:episode:scene-one','S',1)])
         self.plan=publication.build_plan(self.formal,self.source)
 
     def test_existing_story_gets_codes_without_story_revisions_and_repeated_apply_is_safe(self):
@@ -234,7 +244,9 @@ class NumberPublicationTest(unittest.TestCase):
         self.assertEqual(after['business_codes'],publication.tables(self.source)['business_codes'])
 
     def test_matching_startup_migration_is_reused_but_number_collision_is_rejected(self):
-        target=Store(self.formal);target.close()
+        target=Store(self.formal)
+        with target.db:target.db.executemany('INSERT INTO business_codes VALUES (?,?,?)',[('episode','E',1),('scene:episode:scene-one','S',1)])
+        target.close()
         db=publication.connect(self.formal,readonly=False);self.addCleanup(db.close)
         publication.apply_plan(db,self.plan)
         self.assertEqual(db.execute('SELECT count(*) FROM business_codes').fetchone()[0],2)

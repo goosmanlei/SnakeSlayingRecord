@@ -177,7 +177,11 @@ def main():
     data = material_read_json(replay_path)
     manifest=json.loads((ROOT/'export/manifest.json').read_text())
     schema6=manifest.get('schema_version',1)>=6
+    consolidated=manifest.get('schema_version',1)>=8
     indexed = data.get('format') == 'production-export-index-v1'
+    if consolidated and not indexed:
+        if data.get('format')!='retired-production-package-v1':parser.error('consolidated recovery requires its complete export or current index')
+        data={'files':{'export/'+name:checksum for name,checksum in manifest['files'].items() if name.startswith('assets/')}}
     if indexed:
         if not schema6 or file_hash(ROOT / 'export/manifest.json') != data['base_manifest_sha256']:
             parser.error('production index requires its exact complete export')
@@ -187,7 +191,7 @@ def main():
     for relative, expected in data['files'].items():
         if Path(relative).parts[:2] != ('export', 'assets') or len(Path(relative).parts) != 3:
             parser.error('unsafe replay media path')
-        if indexed:
+        if indexed or consolidated:
             # Verify the physical container here; restore checks its decoded
             # original against the exact stored component and content graph.
             from review_desk.production_media import physical_file_hash
@@ -200,15 +204,22 @@ def main():
     destination.mkdir(parents=True)
     for folder in ('config', 'content', 'export'):
         shutil.copytree(ROOT / folder, destination / folder)
+    if consolidated:
+        auxiliary='production/version-consolidation/recovery.json'
+        (destination/auxiliary).parent.mkdir(parents=True,exist_ok=True)
+        shutil.copy2(ROOT/auxiliary,destination/auxiliary)
     config_path = destination / 'config/instance.json'
     config = json.loads(config_path.read_text())
     config['title'] = '李寄斩蛇 · 制作准备隔离恢复'
     config_path.write_text(json.dumps(config, ensure_ascii=False, indent=2) + '\n')
     store = Store(destination / '.runtime/review.sqlite3')
     try:
-        precision = historical_pcm_precision(ROOT) if args.historical_pcm_precision else nullcontext()
+        precision = historical_pcm_precision(ROOT) if args.historical_pcm_precision and not consolidated else nullcontext()
         with precision:
             restore(store, destination / 'export')
+        if consolidated:
+            from content_version_consolidation import restore_publication_receipts
+            restore_publication_receipts(store,destination)
         # Complete exports already contain production history and its comments.
         # Replay only a story-only base; an inconsistent populated base must fail
         # the exact comparison below, never be silently amended or overwritten.
@@ -220,7 +231,9 @@ def main():
         from review_desk.material_archives import read_scope
         with read_scope(store, destination):
             for relative, expected in data['files'].items():
-                if file_hash(destination / relative) != expected:
+                from review_desk.production_media import physical_file_hash
+                actual=physical_file_hash(destination / relative) if consolidated and not indexed else file_hash(destination / relative)
+                if actual != expected:
                     raise ValueError('recovered file checksum mismatch')
         print(json.dumps({'recovered': True, 'production_objects': len(recovered['heads']),
                           'production_revisions': len(recovered['revisions']), 'files_verified': len(data['files']),

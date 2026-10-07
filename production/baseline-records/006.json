@@ -1,73 +1,8 @@
 {
-  "format": "production-import-v1",
-  "records": [
-    {
-      "object_id": "asset-liji-image",
-      "kind": "ASSET",
-      "expected_version": 1,
-      "payload": {
-        "format": "production-asset-v1",
-        "title": "李寄造型候选",
-        "blocks": [
-          {
-            "id": "description",
-            "text": "文字生成候选，实际 2016×2688；请求 high/4K，但未达到原生 4K 要求。未经用户选为母版。"
-          }
-        ],
-        "media_type": "image",
-        "subjects": [
-          {
-            "object_id": "entity-li-ji",
-            "revision_id": "28fdb4862c3820c89ef2a6eed1d9b36c9548a73055c894325180e07ad04d737f"
-          }
-        ],
-        "states": [
-          {
-            "object_id": "state-liji-paste",
-            "revision_id": "a2d6323e40adbdceb3a79a4b431b050d8cf4e6c5e6cb6804434b435a51c9bb98"
-          },
-          {
-            "object_id": "state-liji-water-mark",
-            "revision_id": "d6b735f82fdc334ffbed2cd0aac5f876894bd53e8edecd45f0019dadb39b50c1"
-          }
-        ],
-        "components": [
-          {
-            "id": "original",
-            "role": "original",
-            "file": "cd50ecc53c05dd06c2f592adf164b12f2711ef44538479cd3b55a711590dae33.png",
-            "sha256": "cd50ecc53c05dd06c2f592adf164b12f2711ef44538479cd3b55a711590dae33",
-            "bytes": 3493361,
-            "mime": "image/png",
-            "width": 2016,
-            "height": 2688
-          },
-          {
-            "id": "receipt",
-            "role": "metadata",
-            "file": "41ab8c99769e9b300bb40e4176a501e373323cbe3a462d4a83233e7d28249935.json",
-            "sha256": "41ab8c99769e9b300bb40e4176a501e373323cbe3a462d4a83233e7d28249935",
-            "bytes": 1318,
-            "mime": "application/json"
-          }
-        ],
-        "production": {
-          "object_id": "call-liji-baseline-02",
-          "revision_id": "6d65d6edf83674568ff0fcf051f1d1b72acffcf677a6f54483d647e47d077e4d"
-        },
-        "lineage": {
-          "i2i_depth": 0,
-          "references": []
-        },
-        "placeholder": false,
-        "verification": {
-          "file_inspected": true,
-          "visually_inspected": true,
-          "listened": false,
-          "native_4k_passed": false,
-          "user_accepted": false
-        }
-      }
-    }
-  ]
+  "format": "retired-production-package-v1",
+  "path": "production/baseline-records/006.json",
+  "source_sha256": "e5c0567bfbbdf01dece9b8fa54cca62411721cd097de54fa4762bbaeff0c1e79",
+  "source_bytes": 2334,
+  "reason": "previous creation/import/migration package retired; complete current recovery is export/manifest.json",
+  "effective_recovery": "export/manifest.json"
 }
