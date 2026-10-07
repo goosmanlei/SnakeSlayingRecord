@@ -74,7 +74,7 @@ def tables(path):
         db.execute('BEGIN')
         names = [r[0] for r in db.execute("SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%'")]
         return {name: [dict(r) for r in db.execute('SELECT * FROM "' + name.replace('"', '""') + '"')]
-                for name in names if name != 'generation_publications'}
+                for name in names if name not in ('generation_publications','read_generations')}
     finally:
         db.close()
 
@@ -144,6 +144,7 @@ def build_plan(before_path, after_path):
         oid = change['after']['object_id']
         code_owners.add(oid.split(':',2)[1] if oid.startswith('scene:') else oid)
     return {'format': 'generation-publication-v1', 'scope': sorted(scope),
+            'version_baseline':sorted(r['id'] for r in before.get('consolidation_runs',[])),
             'expected_heads': {oid: old_objects.get(oid) for oid in sorted(scope)},
             'expected_references': expected_references,
             'guard_heads': {r['object_id']: r['id'] for r in expected_references.values()
@@ -184,6 +185,11 @@ def journal(db, pid, callback):
 
 
 def apply_plan(db, plan, *, identity=None):
+    def baseline_check():
+        exists=db.execute("SELECT 1 FROM sqlite_master WHERE name='consolidation_runs'").fetchone()
+        current=sorted(r[0] for r in db.execute('SELECT id FROM consolidation_runs')) if exists else []
+        if current!=plan.get('version_baseline',[]):raise ValueError('publication belongs to a retired version baseline')
+    baseline_check()
     active_keys={k:v for k,v in KEYS.items() if k in plan.get('changes',{})}
     allowed = [set(KEYS)-removed-codes for removed in (set(),MODEL_TABLES,PLAN_TABLES|MODEL_TABLES) for codes in (set(),CODE_TABLES)]
     if plan.get('format') != 'generation-publication-v1' or set(plan.get('changes',{})) != set(active_keys) or set(active_keys) not in allowed:
@@ -199,6 +205,7 @@ def apply_plan(db, plan, *, identity=None):
         return dict(result) if result else None
 
     def mutate():
+        baseline_check()
         if PLAN_TABLES <= set(active_keys):
             from review_desk.material_plans import SCHEMA
             # Additive schema and data belong to the same transaction. executescript
