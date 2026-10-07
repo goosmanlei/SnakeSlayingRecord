@@ -1,0 +1,22 @@
+{
+  "Id": "sha256:cc35315383d9cfe11db949d9949af4134d1b4bdffac05fad7f528700aeeeda80",
+  "RepoTags": [
+    "story-review-desk:base"
+  ],
+  "process": {
+    "Cmd": [
+      "python",
+      "-m",
+      "review_desk",
+      "--instance",
+      "/instance",
+      "serve",
+      "--host",
+      "0.0.0.0",
+      "--port",
+      "8765"
+    ],
+    "Entrypoint": null,
+    "WorkingDir": "/app"
+  }
+}
