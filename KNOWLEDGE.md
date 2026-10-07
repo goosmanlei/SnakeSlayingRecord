@@ -6,6 +6,7 @@
 
 - 以《搜神记·李寄斩蛇》为原型，最终载体为漫剧；已选扩写方向三《把灯带回家》。资料整理、故事结构、小说与影视制作逐步迭代，用户通过审阅台自由审阅和评论，Codex 据此推进创作与系统。来源：用户历次确认、`imports/direction-03-clean.md`、`production/source-lock.json`。
 - 本故事公开仓库为 `goosmanlei/SnakeSlayingRecord`，通用审阅台为 `goosmanlei/story-review-desk`。本机通用 Python 系统目录是同级 `../story-review-desk-python`；故事实例用 `config/instance.json` 固定所需系统提交。故事仓库保存配置、正式数据／原件、创作与制作工具；通用系统承载展示、审阅、评论和数据管理，职责边界见 [AGENTS.md](AGENTS.md)。
+- 多仓任务采用“故事项目发起、任务工具统一管理各仓 worktree”的方案，不增加逐项目仓库配置或对外登记命令。`scripts/task_repository_delivery.py` 通过公开 CLI v1 消费任务的候选与交付回执，项目继续负责数据库、服务发布和真实页面验收；旧冻结包保留原后端。操作与检查器协议见 [生成工作区流程](production/generation-workspaces.md)，本机启用状态见 [STATE.md](STATE.md)。来源：用户确认的多仓任务实施方案及对应适配代码。
 - 《九头案》与历史审阅台仅作为整体框架、业务域和交互参考，不继承其业务设定、数据、任务或运行状态。历史参考入口为 `../2026.08.06.九头案/review-software` 与 `../story-review-desk`，使用前核对是否仍可用。来源：用户 2026-09-21 的复用边界确认。
 - 通用服务使用 Python 模块化单体、统一实例账本和不可变对象修订。本机长期入口由 Docker 中的 Nginx 代理 Python 服务，仅绑定 `127.0.0.1:3000`；凭据与 SQLite 运行库不公开。任务管理的后续设计须提高调度、监督和关键状态通知的确定性，不照搬旧故事的 Codex 驱动机制。来源：用户 2026-09-17、2026-09-21 的确认。
 

@@ -13,6 +13,7 @@ import unittest
 from unittest.mock import patch
 sys.path.insert(0,str(Path(__file__).parents[1]/'scripts'))
 import material_review_release as r
+import task_repository_delivery as delivery
 
 class ReleaseTest(unittest.TestCase):
     def setUp(self):
@@ -123,6 +124,7 @@ class ReleaseTest(unittest.TestCase):
         def primary(path):
             return story_main if path == story else system_main
         with patch.object(r, 'inspect', side_effect=inspect), \
+             patch.object(delivery, 'uses_native_backend', return_value=False), \
              patch.object(r.base, 'primary', side_effect=primary), \
              patch.object(r.base, 'repo_check'), \
              patch.object(r.base, 'git_file', side_effect=lambda repo, commit, name: (repo / name).read_bytes()), \
