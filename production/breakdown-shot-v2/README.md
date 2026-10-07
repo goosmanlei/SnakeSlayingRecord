@@ -1,6 +1,6 @@
 # 两页与全剧参考重构
 
-本包对应 `task-20261006-0003`，覆盖制作拆解、镜头制作，以及锁定清单中全部当前镜头的参考链和视频 Prompt。当前处于候选交付准备阶段：尚未正式应用数据、切换服务、集成或推送。本次普通恢复不继承历史自动授权；准确候选与剩余收尾步骤须经明确确认后才执行交付、正式发布及结项。任务完整要求见[任务说明](../../planning/breakdown-shot-page-v2-task.md)，完成状态以主项目任务账本为准。
+本包对应 `task-20261006-0003`，覆盖制作拆解、镜头制作，以及锁定清单中全部当前镜头的参考链和视频 Prompt。两页与全剧重构数据已应用到正式入口 `http://127.0.0.1:3000/`。任务完整要求见[任务说明](../../planning/breakdown-shot-page-v2-task.md)；准确交付、远端回读及完成状态以主项目任务账本和本机发布回执为准。
 
 ## 范围与准确依据
 
@@ -10,7 +10,7 @@
 
 [连续性核对](continuity-review.json)保存相邻镜头及跨场状态差异的准确两端、剧情依据与处理结论。身份一致时核对完整状态及两端既有动作、空间和声音约束；发生变化时核对剧情触发，不把状态名相似当作连续性证明。声音核对使用剧本、发声类型与素材身份，本任务没有生成或代替用户听审。
 
-原图保存在 [input/shot-reference-list-redundant-information.png](input/shot-reference-list-redundant-information.png)，未经重编码；尺寸、字节、散列及 Notebook 关联见[原件清单](input-manifest.json)。红框所圈小卡外部用途说明与重复未选警告在候选界面移除，用途、准确范围及生产校验仍保留。
+原图保存在 [input/shot-reference-list-redundant-information.png](input/shot-reference-list-redundant-information.png)，未经重编码；尺寸、字节、散列及 Notebook 关联见[原件清单](input-manifest.json)。红框所圈小卡外部用途说明与重复未选警告在正式界面移除，用途、准确范围及生产校验仍保留。
 
 ## 编号与参考规则
 
@@ -45,7 +45,7 @@ MV／MC 和小卡 V／C 保留局部序号：V 是该素材的制作版本号，
 
 最近一次完整自动核对输出位于 `.runtime/breakdown-shot-v2/candidate-v7/verified/`：297 个镜头、297 个视频 Prompt、2,363 条可解析参考路径。模型分配为 Fast 223 镜、2.5 共 74 镜；这只是方案编制，未发起调用。保全核对覆盖 10,302 条基线修订、285 条评论、314 个事件、482 个冻结制作版本及准确候选／评论归属。1,277 个旧方案输入归属中，2,932 个保留输入的准确选择不变，1,159 个从当前镜头链移除的输入保留旧方案与删除依据；新增输入全部待选。
 
-连续性自动连接比较覆盖 1,713 对图像状态（其中 75 对变化、468 对跨场）和 394 对发声状态（42 对变化、169 对跨场）。这些数量表示准确两端与人工决策的全量匹配，不表示逐条人工听审。最终输出的准确 Prompt 散列与逐镜复核结果见 [output-semantic-review.json](output-semantic-review.json)；真实浏览器操作及证据见[页面验收](browser-acceptance.md)。最终准确增量包已完成隔离应用、重复应用、当前头／编号冲突拒绝及独立恢复。回执为 `.runtime/breakdown-shot-v2/delivery-v7-final/verification.json`，31 张业务表与 1,396 份原件逐项一致；准确恢复入口为 `.runtime/breakdown-shot-v2/delivery-v7/restored/`。受管摘要见[增量与恢复回读](evidence/delivery-verification.json)和[资源测量](evidence/validation-resources.json)。
+连续性自动连接比较覆盖 1,713 对图像状态（其中 75 对变化、468 对跨场）和 394 对发声状态（42 对变化、169 对跨场）。这些数量表示准确两端与人工决策的全量匹配，不表示逐条人工听审。最终输出的准确 Prompt 散列与逐镜复核结果见 [output-semantic-review.json](output-semantic-review.json)；真实浏览器操作及证据见[页面验收](browser-acceptance.md)。最终准确增量包已完成隔离应用、重复应用、当前头／编号冲突拒绝及独立恢复。回执为 `.runtime/breakdown-shot-v2/delivery-v7-final/verification.json`，31 张业务表与 1,396 份原件逐项一致；早期恢复副本已由发布后的准确恢复替代：`.runtime/breakdown-shot-v2/formal-index-recovery-v7/`。受管摘要见[增量与恢复回读](evidence/delivery-verification.json)和[资源测量](evidence/validation-resources.json)。
 
 ## 资源事故修复与安全恢复
 
@@ -61,7 +61,9 @@ v6 构建峰值 296.23 MiB；v7 沿用完全相同的逐镜输出，仅调整编
 
 恢复准备进一步修复 `scripts/material_review_release.py` 的服务切换校验：历史保全从同时加载两份整库改为逐行读取、磁盘散列计数索引，仍核对不可变记录的重复次数、当前对象身份和准确表结构；数据库文件散列改为分块读取。12 项相关回归通过，包括 3 项新增的重复记录删除、表结构／二进制字段拒绝及内存回归。213,704,704 字节的准确候选库完整 32 表比较在 256 MiB 容器硬限额内通过，峰值约 242.5 MiB（含文件缓存），无 OOM；结果仍见[资源测量](evidence/validation-resources.json)。
 
-编号调整后的 v7 增量已在最新正式库副本上预演通过，峰值 683.5 MiB，仅在工作区备份上应用。回执为 `.runtime/generation/publications/shot-references-v7-preflight/preflight.json`；正式库内尚无本包发布记录。第一次预演因未设置系统模块搜索路径而失败，已核对隔离事务回滚及库一致性；正确运行显式设置 `PYTHONPATH` 为本任务系统工作区。正式发布前仍须再次核对目标、准确头与包字节。
+正式增量的实际事务与应用回执位于 `.runtime/generation/publications/shot-references-v7-apply-quiescent/`；系统集成、推送、服务版本和正式浏览器证据位于 `.runtime/breakdown-shot-v2/release-edition-v7/run/`。恢复时先核对这些回执和正式库的幂等记录，不能重复执行已经成功的发布。
+
+完整导出同时保存准确历史索引 `production/replay.json`，不再为已有完整历史生成第二份正文重放批次。索引绑定导出清单散列、全部生产修订和原件；恢复后核对准确身份及历史。内容图通过 Git LFS 保存实际 JSON，取回后仍按原字节散列校验，不改变数据库格式。
 
 ## 数据与正式交付顺序
 
@@ -75,7 +77,17 @@ v6 构建峰值 296.23 MiB；v7 沿用完全相同的逐镜输出，仅调整编
 
 失败时保留本任务准确回执和未完成现场。数据库发布依赖同事务冲突拒绝与幂等执行记录；事务结果未知时先回读原记录，不重复发布。正式服务代码回退与数据恢复分别处理；数据恢复只能使用已验证、身份一致且保持最新业务历史的恢复资料，不能把旧快照覆盖非空正式库。
 
-本次恢复已在准确任务工作区成功执行 `_bind_session`。候选准备完成后，展示故事／系统提交、现有验收证据和完整剩余发布流程；取得本次收尾确认再执行 `_deliver`、正式增量发布、服务切换及最终结项。后续步骤沿启动器提供的 `codex.task` 内部命令执行，任务状态只由内部命令更新。
+发布后的完整恢复入口为本任务 `.runtime/breakdown-shot-v2/formal-index-recovery-v7/`，31 张业务表、285 条评论、314 个事件及 1,396 个引用原件均与正式快照一致。原始导出恢复回执与新索引恢复回执分别为 `.runtime/breakdown-shot-v2/formal-recovery-v7/verification.json`、`formal-index-recovery-verification.json`。正式页面核验记录为冻结发布包中的 `run/formal-browser.json`；旧的隔离页面记录不替代正式验收。
+
+新克隆先取回 Git LFS 原件。在独立任务 worktree 中，使用配置锁定的系统工作区，按[资源边界](../../AGENTS.md)运行恢复：
+
+```bash
+git lfs pull --include=export/material-content.json
+python3 scripts/production_review.py --system "$generation_system" recover \
+  --destination .runtime/generation/current-recovery --historical-pcm-precision
+```
+
+`--historical-pcm-precision` 只复用既有两条历史 WAV 舍入兼容规则：先核对原件、实际 PCM 帧数、准确修订与完整原始调用，再临时调整校验视图；不改历史或放宽其他范围。完整数据恢复需要独立的新目录，不对已有正式库使用。
 
 ## 已执行清理与保留
 
@@ -85,4 +97,4 @@ v6 构建峰值 296.23 MiB；v7 沿用完全相同的逐镜输出，仅调整编
 
 编号范围调整后另删除 3 个已停止的本任务容器、2,830 个无效文件和 13 个目录，覆盖旧预览、重复恢复输入、临时目录及完成冲突测试的数据库；准确 ID／路径均回读不存在，镜像与数据卷未删除。回执为 `.runtime/breakdown-shot-v2/cleanup-edition-preparation.json`。
 
-冻结基线、当前 v7 候选与独立恢复、双仓工作区与分支、真实回执和当前预览仍用于未完成的受控交付及正式验收。责任为本任务执行者：正式验收通过后停止当前预览，清除剩余无效副本；TUI 退出、释放锁后再用受管清理入口退役工作区。本阶段清理完成不代表任务最终收尾或结项。
+最终过程资源清理按 `.runtime/breakdown-shot-v2/cleanup-final.json` 及补充回读记录执行：只删除身份明确的任务容器、旧镜像、重复导出、测试库、缓存和临时索引。保留当前正式服务、双仓工作区与分支、准确原件、最初逐镜核对基线、最新独立恢复及必要发布前后资料。较新恢复基线替代且追溯用途结束后才移除恢复资料；TUI 退出并释放锁后，工作区另由受管清理入口退役。实际删除数量和未完成项读取回执，不从目录名称推断。
