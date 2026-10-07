@@ -1,0 +1,17 @@
+{
+  "format": "system-performance-code-reference-v1",
+  "task": "task-20261006-0005",
+  "repository": "desk",
+  "source_from_primary": "../story-review-desk",
+  "worktree_from_task": "../../linked-worktrees/task-20261006-0005/desk",
+  "candidate": "e05f1d812ea92988a6d7ea0cd8b587855bc979b1",
+  "target": "main",
+  "business_delta": 0,
+  "database_changes": {
+    "journal_mode": "delete",
+    "journal_mode_changed": false,
+    "auxiliary_table": "read_generations",
+    "transactional_triggers": "INSERT, UPDATE, DELETE on every business table",
+    "disposable_cache": ".runtime/read-cache.sqlite3"
+  }
+}

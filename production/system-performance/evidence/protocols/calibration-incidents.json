@@ -1,0 +1,20 @@
+{
+  "formal_samples_started": false,
+  "incidents": [
+    {
+      "operation": "card.materials first",
+      "reason": "Readiness incorrectly required production_entity URL key; this entry uses material_id/version instead",
+      "effect": "Tool timed out after successful UI open; no latency recorded"
+    },
+    {
+      "operation": "materials combination",
+      "reason": "Locator fill dispatches nontrusted input; observer waits for trusted action; switched to pressSequentially after actual event validation",
+      "effect": "Readiness timeout stored in warm-browser.jsonl; result content was correct"
+    },
+    {
+      "operation": "card.shots first",
+      "reason": "Same material route identity as materials entry; predicate corrected after URL and full card inspection",
+      "effect": "Tool timed out after successful UI open; no latency recorded"
+    }
+  ]
+}

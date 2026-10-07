@@ -85,6 +85,16 @@ def main():
     plan = json.loads(args.plan.read_text())
     if plan.get("format") != "generation-system-delivery-v1":
         parser.error("unsupported delivery plan")
+    if plan.get("task_delivery"):
+        import task_repository_delivery
+        value = plan["task_delivery"]
+        if args.apply:
+            result = task_repository_delivery.apply(value, args.receipt)
+        else:
+            task_repository_delivery.validate(value)
+            result = {"backend": "codex.task", "preflight_only": True}
+        print(json.dumps(result, ensure_ascii=False))
+        return
     story_main = Path(git(ROOT, "rev-parse", "--path-format=absolute", "--git-common-dir")).resolve().parent
     system_main = args.system_main or story_main / plan["system_main_from_story_main"]
     system_worktree = args.system_worktree or ROOT / plan["system_worktree"]
