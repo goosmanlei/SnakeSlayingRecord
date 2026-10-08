@@ -82,6 +82,7 @@ def state():
 
 
 def save(s, phase, **values):
+    s.pop('last_error', None)
     s.update(values, phase=phase, updated_at=time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()))
     p = CONTROL/'state.json.tmp'
     p.write_text(json.dumps(s, ensure_ascii=False, indent=2)+'\n')
@@ -89,10 +90,66 @@ def save(s, phase, **values):
     return s
 
 
+def preflight():
+    if os.uname().machine != 'x86_64':
+        raise ValueError('the prepared runtime requires x86_64')
+    memory = {line.split(':', 1)[0]: int(line.split()[1])*1024
+              for line in Path('/proc/meminfo').read_text().splitlines() if ':' in line}
+    if memory.get('MemAvailable', 0) < 1536*1024**2 or memory.get('SwapFree', 0) < 512*1024**2:
+        raise ValueError('insufficient available memory/swap reserve for the bounded application')
+    if run('docker', 'info', '--format', '{{.CgroupVersion}}').strip() != '2':
+        raise ValueError('review runtime limits on this cgroup configuration')
+    nginx = json.loads(run('docker', 'inspect', NGINX_CONTAINER))[0]
+    required = {'/etc/nginx/conf.d/default.conf': NGINX,
+                '/etc/nginx/htpasswd': NGINX.parent/'htpasswd',
+                '/usr/share/nginx/html': HOME/'www'}
+    mounts = {item['Destination']: item for item in nginx['Mounts']}
+    for destination, source in required.items():
+        safe(source)
+        mount = mounts.get(destination, {})
+        if mount.get('Source') != str(source) or mount.get('RW') is not False:
+            raise ValueError('shared nginx mount boundary differs: '+destination)
+    if not nginx['State']['Running'] or NETWORK not in nginx['NetworkSettings']['Networks']:
+        raise ValueError('shared nginx service/network is unavailable')
+    if run('systemctl', 'is-active', 'xray').strip() != 'active':
+        raise ValueError('existing Xray service is not healthy; do not add deployment load')
+    run('docker', 'exec', NGINX_CONTAINER, 'nginx', '-t')
+    run('docker', 'network', 'inspect', NETWORK)
+    return {'memory_available': memory['MemAvailable'], 'swap_free': memory['SwapFree'],
+            'nginx_container': nginx['Id'], 'cgroup_version': '2', 'xray': 'active'}
+
+
+def credential_check():
+    credentials = safe(CONTROL/'credentials.env')
+    if not credentials.is_file() or credentials.stat().st_mode & 0o077:
+        raise ValueError('protected independent credentials.env is required')
+    values = {}
+    for line in credentials.read_text().splitlines():
+        if not line or line.startswith('#'):
+            continue
+        if '=' not in line:
+            raise ValueError('credentials must use Docker env-file key=value format')
+        key, value = line.split('=', 1)
+        if key in values:
+            raise ValueError('duplicate credential setting')
+        values[key] = value
+    try:
+        maximum = int(values.get('REVIEW_POLISH_MAX_ATTEMPTS', '0'))
+    except ValueError:
+        maximum = 0
+    if not values.get('OPENAI_API_KEY', '').strip() or maximum <= 0:
+        raise ValueError('independent API credential and positive cumulative call cap are required')
+    usage = safe(CONTROL/'usage/attempts.json')
+    if usage.exists() and json.loads(usage.read_text())['attempts'] >= maximum:
+        raise ValueError('the authorized cumulative API call cap is already exhausted')
+
+
 def configure(maintenance):
     safe(NGINX)
     text = NGINX.read_text()
-    if BEGIN in text:
+    if BEGIN in text or END in text:
+        if text.count(BEGIN) != 1 or text.count(END) != 1 or text.index(END) < text.index(BEGIN):
+            raise ValueError('unexpected nginx integration markers')
         original = text[:text.index(BEGIN)] + text[text.index(END)+len(END):]
     else:
         original = text
@@ -130,7 +187,8 @@ def configure(maintenance):
         add_header Retry-After 60 always;
     }
 '''+END
-    candidate = original.replace('location / {', block+'\n\tlocation / {', 1)
+    candidate = (text[:text.index(BEGIN)] + block + text[text.index(END)+len(END):]
+                 if BEGIN in text else original.replace('location / {', block+'\n\tlocation / {', 1))
     # This is a file bind mount: preserve its inode. Running workers still use
     # the old parsed config until a successful test and graceful reload.
     with NGINX.open('w') as f:
@@ -197,20 +255,19 @@ def stage(args):
                     shutil.copyfileobj(src, dst, 1024*1024)
     provisional = {'publication_id': args.publication}
     _, m = verified_package(provisional)
-    credentials = safe(CONTROL/'credentials.env')
-    if not credentials.is_file() or credentials.stat().st_mode & 0o077:
-        raise ValueError('protected independent credentials.env is required')
-    names = {line.split('=',1)[0] for line in credentials.read_text().splitlines() if '=' in line and not line.startswith('#')}
-    if not {'OPENAI_API_KEY','REVIEW_POLISH_MAX_ATTEMPTS'} <= names:
-        raise ValueError('independent API credential and cumulative call cap are required')
-    run('docker', 'network', 'inspect', NETWORK)
+    if m.get('format') != 'lijizhanshe-experience-v1' or m.get('architecture') != 'amd64' or m.get('image_tag') != 'lijizhanshe-experience:'+args.publication:
+        raise ValueError('unsupported package format, architecture or image identity')
+    credential_check()
+    environment = preflight()
     return save(s, 'staged', publication_id=args.publication, package_sha256=args.sha256,
-                image_id=m['image_id'], image_tag=m['image_tag'], story_commit=m['story_commit'], desk_commit=m['desk_commit'])
+                image_id=m['image_id'], image_tag=m['image_tag'], story_commit=m['story_commit'], desk_commit=m['desk_commit'], preflight=environment)
 
 
 def maintain(s):
     if s['phase'] not in ('staged', 'maintenance', 'failed', 'verified', 'complete', 'open'):
         raise ValueError('stage a verified package first')
+    credential_check()
+    preflight()
     configure(True)
     return save(s, 'maintenance')
 
