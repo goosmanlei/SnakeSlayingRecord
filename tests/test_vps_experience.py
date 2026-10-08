@@ -13,6 +13,12 @@ import vps_experience_remote as remote
 
 
 class VPSPackageBoundaryTest(unittest.TestCase):
+    def test_unconfirmed_maintenance_cannot_clear_the_old_instance(self):
+        with patch.object(remote,'clear') as clear:
+            with self.assertRaisesRegex(ValueError,'maintenance must protect'):
+                remote.replace({'phase':'staged','maintenance_confirmed':False})
+            clear.assert_not_called()
+
     def test_unusable_credentials_are_rejected_without_disclosing_values(self):
         with tempfile.TemporaryDirectory() as folder:
             control=Path(folder).resolve();credentials=control/'credentials.env';credentials.touch(mode=0o600)

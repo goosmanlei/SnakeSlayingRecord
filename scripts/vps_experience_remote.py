@@ -144,6 +144,12 @@ def credential_check():
         raise ValueError('the authorized cumulative API call cap is already exhausted')
 
 
+def nginx_workers():
+    listing = run('docker', 'exec', NGINX_CONTAINER, 'ps', '-o', 'pid,args')
+    return {line.split()[0] for line in listing.splitlines()
+            if 'nginx: worker process' in line and line.split()[0].isdigit()}
+
+
 def configure(maintenance):
     safe(NGINX)
     text = NGINX.read_text()
@@ -195,12 +201,24 @@ def configure(maintenance):
         f.write(candidate); f.flush(); os.fsync(f.fileno())
     try:
         run('docker', 'exec', NGINX_CONTAINER, 'nginx', '-t')
+        previous = nginx_workers()
+        if not previous:
+            raise ValueError('cannot verify nginx worker identities before reloading')
         run('docker', 'exec', NGINX_CONTAINER, 'nginx', '-s', 'reload')
     except Exception:
         NGINX.write_text(text)
         run('docker', 'exec', NGINX_CONTAINER, 'nginx', '-t')
         raise
     (CONTROL/'maintenance').write_text('on\n' if maintenance else 'off\n')
+    # A successful signal is not a completed transition. Let existing requests
+    # drain without terminating shared workers or another site's connections.
+    for attempt in range(30):
+        current = nginx_workers()
+        if current and not previous.intersection(current):
+            return
+        if attempt < 29:
+            time.sleep(1)
+    raise RuntimeError('nginx previous workers are still draining; inspect before clearing the instance')
 
 
 def verified_package(s):
@@ -260,7 +278,7 @@ def stage(args):
     credential_check()
     environment = preflight()
     return save(s, 'staged', publication_id=args.publication, package_sha256=args.sha256,
-                image_id=m['image_id'], image_tag=m['image_tag'], story_commit=m['story_commit'], desk_commit=m['desk_commit'], preflight=environment)
+                image_id=m['image_id'], image_tag=m['image_tag'], story_commit=m['story_commit'], desk_commit=m['desk_commit'], preflight=environment, maintenance_confirmed=False)
 
 
 def maintain(s):
@@ -269,7 +287,7 @@ def maintain(s):
     credential_check()
     preflight()
     configure(True)
-    return save(s, 'maintenance')
+    return save(s, 'maintenance', maintenance_confirmed=True)
 
 
 def clear(s):
@@ -311,7 +329,7 @@ def clear(s):
 
 
 def replace(s, fail=False):
-    if (CONTROL/'maintenance').read_text().strip() != 'on':
+    if not s.get('maintenance_confirmed') or (CONTROL/'maintenance').read_text().strip() != 'on':
         raise ValueError('maintenance must protect the whole prefix before clearing')
     root, m = verified_package(s)
     removed = clear(s)
@@ -398,7 +416,7 @@ def main():
             elif args.command == 'verify': s = verify(s)
             elif args.command == 'open':
                 if s['phase'] != 'verified': raise ValueError('verify before opening')
-                configure(False); s = save(s, 'open')
+                configure(False); s = save(s, 'open', maintenance_confirmed=False)
             else: s = cleanup(s)
         except Exception as exc:
             # Preserve phase and minimal reason, never copy data or secrets.
