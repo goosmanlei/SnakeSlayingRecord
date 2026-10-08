@@ -15,6 +15,8 @@
 
 ## 创作方法与作品依据
 
+- 影视专业知识的权威正文在 [production/filmcraft/](production/filmcraft/README.md)，包含十二领域、行业案例、本剧离线应用、原创图示与[三类速查](production/filmcraft/quick-reference.md)。来源记录说明实际读取范围、适用时间与支持的判断；正文区分技术事实、专业经验、流派选择与本项目建议。独立“影视专业知识”子页由同一正文和图示派生，维护与检查见 [知识维护](production/filmcraft/maintenance.md)。后续相关制作必须读取并说明重要选择依据；模型参数和 Prompt 方法仍由 [视频生成手册](production/seedance-video-handbook.md)维护。来源：本项目影视专业知识研究任务与确定性派生工具。
+
 - 三个扩写方向须有实质不同的主题、人物与情节因果，保留李寄主动应募、斩蛇止祸的核心；允许改编人物、动机和结局。现代白话与清楚的背景、逻辑优先，不用仿古措辞或过度省略增加阅读负担。早期每方向 20—30 分钟是制作规划，不约束小说篇幅，也不是成片时长。来源：用户 2026-09-21、2026-09-22 的确认；三份干净稿见 `imports/direction-0*-clean.md`。
 - 小说先发布完整故事结构，再按该具体版本逐片段、逐章写作；保存、回读后才采用并续写，构想可随正文调整，必要时回修前文。结构与小说的人物、关系、空间和因果保持同步，不一次生成全稿后再分段。后台工具为 `scripts/novel_writing.py`，候选、构想、检查点只留本机 `.runtime/`；小说仅发布完本干净稿。操作见 [小说创作方案](planning/novel-creation-plan.md)、[逐步创作流程](planning/incremental-writing-workflow.md)。
 - 新小说版本通常保留旧稿与评论；历史精修一原地替换、精修七局部原地修改均为单次选择，不能据此覆盖后续稿件。普通导入不改旧资料；系统 `replace-source-content` 仅在预期哈希一致、零评论、零依赖、单一资料修订时允许原地替换。来源：既有用户版本选择、系统 `docs/source-replacement.md`。

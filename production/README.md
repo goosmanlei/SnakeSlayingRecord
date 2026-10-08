@@ -6,6 +6,8 @@
 
 ## 内容入口
 
+分镜、调度、摄影、灯光、色彩、美术、表演、声音和剪辑任务开始前，必须读取[影视专业知识](filmcraft/README.md)的相关章节。按[制作速查](filmcraft/quick-reference.md)定位当前问题，在重要选择中说明原理、适用条件与检查方法，再做跨镜和全剧复核。[本剧应用](filmcraft/applications.md)仅演示方法，不是已经改写或接受的镜头方案；准确作品、参考与采纳仍沿原入口核对。专业意图确定后，模型规格与 Prompt 方法查[视频生成手册](seedance-video-handbook.md)。
+
 当前全剧逐镜首稿与新素材版本／候选交付见 [制作拆解交付](breakdown/README.md)：17 集、42 场、297 镜；正式应用以任务账本和发布回执为准。
 
 | 要核对什么 | 材料 |
@@ -20,7 +22,7 @@
 | 历史场级计划需求 | [scene-requirements.md](scene-requirements.md)：其余 40 场 566 项镜头用途需求，不等于 251 个有效图像状态生成目标 |
 | 现有候选的实体与状态归属 | [baseline-associations.md](baseline-associations.md)、[requests](requests/)、[receipts](receipts/)及[baseline-records](baseline-records/) |
 | 原生有声预演计划 | [声音契约](native-audio-workflow.md)、[33 镜计划](episode01/seedance/manifest.json)，尚未执行 |
-| 完整恢复与历史 | 完整 `export/` 交付快照与匹配的 [replay.json](replay.json)；历史制作准备验证见 [verification.md](verification.md) |
+| 完整恢复与历史 | 当前 Schema 8 完整 `export/`、[版本收敛恢复契约](version-consolidation/README.md)与准确发布回执；历史制作准备验证见 [verification.md](verification.md)，旧 replay 不再是当前恢复入口 |
 | 生成、独立预览与合并后发布 | [任务工作区流程](generation-workspaces.md)：所有新产物先留在任务分支，正式库显式增量发布 |
 
 ## 用户如何审阅
