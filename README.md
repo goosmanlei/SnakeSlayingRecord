@@ -96,3 +96,5 @@ git push origin main
 公开推送前须审阅评论内容；推送意味着评论也会公开。`export/` 含资料、素材、评论及事件、对象修订/依赖、公开配置及事件，运行凭据与 SQLite 本机库不入仓。评论已锚定稳定对象与精确修订，资料评论仍可用 `source_id` 访问；后续创作稿沿同一账本和导出/校验/同步/恢复协议，不能仅留在本地运行库。
 
 验收记录见 [VERIFICATION.md](VERIFICATION.md)。
+
+VPS 完整体验版的包准备、全量重置、维护与失败重建入口见 [体验版发布](production/vps-experience.md)。
