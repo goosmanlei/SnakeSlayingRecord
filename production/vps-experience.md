@@ -6,7 +6,7 @@
 
 先完成两仓最新主干同步、候选提交和 `config/instance.json.review_desk_commit` 的准确引用，通过 `codex.task _prepare_integration --push` 准备整组候选。正式发布前由任务工具完成 `_deliver`，不要在主目录手工合并或推送。
 
-远端复用 SSH 别名 `vps`、`nginx.me.leiguoguo` 容器与 `nginxmeleiguoguo_default` 网络。先回读架构、实际可用内存、磁盘、Xray、Nginx、已有实例、容器挂载和正在进行的发布。脚本只管理本实例，拒绝符号链接、其他应用占用的容器名及未完成的另一发布；不购买资源、不增加 swap、不重启 VPS、不使用全局 prune。
+远端复用 SSH 别名 `vps`、`nginx.me.leiguoguo` 容器与 `nginxmeleiguoguo_default` 网络。先回读架构、实际可用内存、磁盘、Xray、Nginx、已有实例、容器挂载和正在进行的发布。脚本在预检及进入维护前再次核对 x86_64、cgroup v2、至少 1.5 GiB 可用内存与 0.5 GiB 空闲 swap，以及既有 Xray、Nginx、网络和三个只读挂载的真实身份；余量不足时停止新增负载。磁盘按上传包三倍加 5 GiB 余量校验。脚本只管理本实例，拒绝符号链接、其他应用占用的容器名及未完成的另一发布；不购买资源、不增加 swap、不重启 VPS、不使用全局 prune。
 
 维护者在远端 `~/my-config/lijizhanshe/credentials.env` 提供独立服务端密钥及已授权的累计调用上限，目录权限 700、文件 600。文件内容采用 Docker env-file 格式：`OPENAI_API_KEY=实际独立密钥`、`REVIEW_POLISH_MAX_ATTEMPTS=已授权次数`；不把密钥写入 Git、业务库、发布包、命令参数或聊天。调用计数保存在同目录 `usage/attempts.json`，包括失败或结果未知的实际请求尝试；业务重置与普通重启都不会清零。调整上限须依据新授权，不能借发布重新获得额度。未配置真实独立凭据时，发布预检拒绝继续，不能把 API 禁用或模拟称为完整体验版。
 
