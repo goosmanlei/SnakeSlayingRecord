@@ -7,8 +7,7 @@ import unittest
 from unittest.mock import patch
 from review_desk.store import Store
 
-from generation_fixtures import make_worktree, git
-import test_song_publication as song_tests
+from generation_fixtures import make_worktree, git, PublicationFixture
 from scripts import generation_publication as publication
 from scripts import publish_generation as runner
 from scripts.generation_review import initialize, export_review
@@ -26,16 +25,15 @@ class GenerationPublicationTest(unittest.TestCase):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
         self.main, self.task = make_worktree(self.temp.name)
-        self.fixture = song_tests.SongPublicationTest()
-        self.fixture.setUp()
-        self.addCleanup(self.fixture.tearDown)
+        self.fixture = PublicationFixture()
+        self.addCleanup(self.fixture.close)
         (self.main / '.runtime').mkdir()
         (self.main / 'export/assets').mkdir(parents=True)
         self.formal = self.main / '.runtime/review.sqlite3'
         publication.backup(self.fixture.store.db_path, self.formal)
         self.baseline = Path(self.temp.name) / 'baseline.sqlite3'
         publication.backup(self.formal, self.baseline)
-        song_tests.apply(self.fixture.db, self.fixture.plan)
+        self.fixture.advance()
         self.delta = publication.build_plan(self.baseline, self.fixture.store.db_path)
 
     def db(self):

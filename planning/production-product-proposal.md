@@ -367,8 +367,8 @@
 ## 依据与阅读边界
 
 - [整体数据关系讨论稿](production-data-model-discussion.md)：本方案的概念依据，包含实体状态、共同故事来源及语境化需求关系。
-- [当前生产制作入口交付](../production/production-unification/README.md)：设计与视频方案的合并、旧入口兼容及组合页退役。
-- [当前实体与素材管理交付](../production/management-pages/README.md)：四列基准行分页和共用卡片。
+- [当前生产制作入口交付](../production/README.md)：设计与视频方案的合并、旧入口兼容及组合页退役。
+- [当前实体与素材管理交付](../production/README.md)：四列基准行分页和共用卡片。
 - 主项目当前 `config/instance.json` 固定通用系统提交 `e39434ff6675c160ed65c883d83a23c6a16adebb`，任务收敛时已核对系统源仓 HEAD 一致，视频生成手册已交付；草稿自身配置仍为讨论初期版本，执行时重新同步正式基线。先前只读页面观察用于确认生产入口和现有操作，不代表新方案验收。
 - 系统源码及契约入口相对 `../story-review-desk` 仓库根目录：`review_desk/static/navigation.js`、`review_desk/static/production-breakdown.js`、`docs/production-breakdown.md`、`docs/materials-and-relationships.md`、`docs/material-versions.md`、`docs/generation-preparation.md`。较早文档的旧分页、旧导航和导出版本按当前实现及实例交付核对。
 

@@ -1,6 +1,155 @@
 {
-  "bytes": 7349,
-  "format": "material-archive-reference-v1",
-  "recipe": "51cc2763628199f4cb2801a9ec336ce2519a0354222f97eda3d8b9f0f8b89bcf",
-  "sha256": "f33f042c1e41ace3297ec5a8039352d7ceedf698a14576f07121b85ce39d40b0"
+  "id": "fg3-temple-grain-refund-image-01",
+  "recipe_id": "form-temple-grain-refund",
+  "entity": {
+    "object_id": "entity-temple-grain",
+    "revision_id": "f446689d9dd82639ba2e1ef2dc217e33ccb6b49906fcd8c623abb2829fcf9c17"
+  },
+  "state": {
+    "object_id": "form-temple-grain-refund",
+    "revision_id": "6093112aad6c51177a08f6b67f1ab3e5197da692eb09da67472e6816dc017451"
+  },
+  "requirement": {
+    "object_id": "need-form-temple-grain-refund-overall",
+    "revision_id": "301368ad3881267037628c27293da05e38a7e21d6402b37ee1f0155c28fef486"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-temple-grain-stock-image-01",
+        "revision_id": "4019b1b947a63b65da6c6e226324e50a6e0f69de004720ba11bf409738c78018"
+      },
+      "component_id": "original",
+      "sha256": "5012c41213bd74360c3b76d98c1fd70af660a06a1d59fae972c84e4f75b4463f",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：仓院全空间，西门在左、北东堆粮、东檐账桌与南领粮桌"
+    },
+    {
+      "reference": {
+        "object_id": "asset-fg3-new-steward-base-image-01",
+        "revision_id": "8265ad6721550deaa902e8fdad10833b2076797dd4fa666358c798d8fa3482c3"
+      },
+      "component_id": "original",
+      "sha256": "fc0fffc7611e3a043f8508a18eabaa9bb40e54248c21f28930816d2d0c107c59",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图2：新管事面容、蓝灰长衣、帽与账本"
+    },
+    {
+      "reference": {
+        "object_id": "asset-fg3-aheng-image-01",
+        "revision_id": "e0e3e576207967838b531d30c69e5aa2841d44b7312818bc107c8f06d1ee7145"
+      },
+      "component_id": "original",
+      "sha256": "6f9cb6a1cabddd8ce34630709e0993ef66c69a66429a330f7cf943107b6c890f",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图3：阿蘅面容青灰衣裙，本场手中书移到安全桌角"
+    },
+    {
+      "reference": {
+        "object_id": "asset-fg3-liji-image-02",
+        "revision_id": "239727e0849309944d86de9ddd2f4606bda9ef149b6d32001ce3b695e3625b3e"
+      },
+      "component_id": "original",
+      "sha256": "b84208dd362f2bf0d5668384b5104da3de348619efa3b64e75ffcf3dd7ccb8cd",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图4：李寄面容砖红短衣深裤，干净手"
+    },
+    {
+      "reference": {
+        "object_id": "asset-fg3-temple-crowd-base-image-02",
+        "revision_id": "87b1ad35c0c03485530e31cb5b9d16ec73a2c415b5d300e3afb2470f6e350565"
+      },
+      "component_id": "original",
+      "sha256": "8d47ae8729bdf4085d0567f1c290f31bf87d7bcc56d0910216836a1e29187f7f",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图5：背景等待退粮村民组"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 2,
+    "references": [
+      {
+        "object_id": "asset-fg3-temple-grain-stock-image-01",
+        "revision_id": "4019b1b947a63b65da6c6e226324e50a6e0f69de004720ba11bf409738c78018"
+      },
+      {
+        "object_id": "asset-fg3-new-steward-base-image-01",
+        "revision_id": "8265ad6721550deaa902e8fdad10833b2076797dd4fa666358c798d8fa3482c3"
+      },
+      {
+        "object_id": "asset-fg3-aheng-image-01",
+        "revision_id": "e0e3e576207967838b531d30c69e5aa2841d44b7312818bc107c8f06d1ee7145"
+      },
+      {
+        "object_id": "asset-fg3-liji-image-02",
+        "revision_id": "239727e0849309944d86de9ddd2f4606bda9ef149b6d32001ce3b695e3625b3e"
+      },
+      {
+        "object_id": "asset-fg3-temple-crowd-base-image-02",
+        "revision_id": "87b1ad35c0c03485530e31cb5b9d16ec73a2c415b5d300e3afb2470f6e350565"
+      }
+    ]
+  },
+  "master_approvals": [
+    {
+      "object_id": "review-master-fg3-temple-grain-stock-image-01",
+      "revision_id": "c6796c3f7ebdcc0504977ff674483be4f15a30a6c2d39e2e4b5397946741c0c1"
+    },
+    {
+      "object_id": "review-master-fg3-new-steward-base-image-01",
+      "revision_id": "d6ce5aa52b1b3d8f4f25cad269706859f3888de44e770c046060bd049cd199b4"
+    },
+    {
+      "object_id": "review-master-fg3-aheng-image-01",
+      "revision_id": "a75edf8549c47e302844162ab250ba38545ffa05d537472c18a0a3e5bf45f24f"
+    },
+    {
+      "object_id": "review-master-fg3-liji-image-02",
+      "revision_id": "4babe32967d41299291709d36a4f2cc3fb8adc0064a3c8777cd29858abacc1ef"
+    },
+    {
+      "object_id": "review-master-fg3-temple-crowd-base-image-02",
+      "revision_id": "190d9f93c2f6a9d88c7063241a3fa8aa16a80aaa5bcb268102fa14e7bb6b86fe"
+    }
+  ],
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "新生成单幅完整状态整体参考，二维人物与清洁轻手绘背景，柔和清楚线条、低饱和平涂，保留准确参考的身份、轮廓、颜色和建筑方向。背景轻笔触，不加纸纹、脏颗粒、浮雕、锐化。不是多时刻拼图、照片或旧图放大；使用模型最高原生输出。\n完整原件按顺序输入：图1：仓院全空间，西门在左、北东堆粮、东檐账桌与南领粮桌；图2：新管事面容、蓝灰长衣、帽与账本；图3：阿蘅面容青灰衣裙，本场手中书移到安全桌角；图4：李寄面容砖红短衣深裤，干净手；图5：背景等待退粮村民组。\n16:9二十多天后日间退粮，图1旧赵执事完全移除，位置由图2新管事接替。东檐账桌移在原位置前的亮处，重新核过的账摊开，木箱与堆粮墙不换方向；南侧领粮桌旁李寄两手撑开米袋上口，阿蘅用双手托住袋底，两人一起随着粮重放低。新管事倾一只木斗，米流准确落入这一个袋中，不漏地。身后少量图5村民有序等待，中央西门通路留空。袋子和斗、三人手部关系清楚，人物全身可见；不带刀包布、祭牌或新徽章。两女孩干净无新伤，整体以同一仓院与清账退粮动作布置为重点。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/5012c41213bd74360c3b76d98c1fd70af660a06a1d59fae972c84e4f75b4463f.png",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/fc0fffc7611e3a043f8508a18eabaa9bb40e54248c21f28930816d2d0c107c59.png",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/6f9cb6a1cabddd8ce34630709e0993ef66c69a66429a330f7cf943107b6c890f.png",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/b84208dd362f2bf0d5668384b5104da3de348619efa3b64e75ffcf3dd7ccb8cd.png",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/8d47ae8729bdf4085d0567f1c290f31bf87d7bcc56d0910216836a1e29187f7f.png"
+    ]
+  }
 }

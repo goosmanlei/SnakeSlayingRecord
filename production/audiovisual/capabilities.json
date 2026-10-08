@@ -1,0 +1,13 @@
+{
+  "format": "audiovisual-planning-capabilities-v1",
+  "observed_at": "2026-10-09T00:12:11+08:00",
+  "source": "pippit-tool-cli model describe seedance2.0_fast_vision --refresh; pippit-tool-cli model describe Seedance_2.5",
+  "scope": "只读模型目录；不代表已生成、已计费、声音表现已验证或任何作品素材已被接受。实际执行前须重新核对能力与额度。",
+  "video": {
+    "seedance2.0_fast_vision": {"minimum_seconds": 4, "maximum_seconds": 15, "resolution": "720p", "images": 9, "audio": 3, "video": 3, "audio_total_seconds": 15.2, "prompt_characters": 5000},
+    "Seedance_2.5": {"minimum_seconds": 4, "maximum_seconds": 30, "resolution": "720p", "images": 30, "audio": 10, "video": 10, "audio_total_seconds": 30.2, "prompt_characters": 15000}
+  },
+  "selection": "4—15秒默认使用Seedance 2.0 Fast；16—30秒使用Seedance 2.5。若参考数量或长度超过所选模型边界，应先缩减为具体必要参考或另建经审阅的方案，不静默换模型、截对白或提速。",
+  "images": {"configuration": "../../config/openart.json", "native_resolution_policy": "使用用户已接受的指定模型实际最高原生尺寸，不把4K请求档位或放大图写成已核验原生像素。", "maximum_i2i_depth": 2},
+  "media_generation_calls_in_this_task": 0
+}

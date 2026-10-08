@@ -1,6 +1,83 @@
 {
-  "bytes": 4170,
-  "format": "material-archive-reference-v1",
-  "recipe": "11ff7a96a4c304e4d8483545138df138c92eb08e0758de397d41150f0f86890c",
-  "sha256": "376a7a9dc0e8dde739a7312eeb5b26f1611e84d1409baf9aa9906e4017dc576d"
+  "id": "fg3-crossbeam-installed-image-02",
+  "recipe_id": "form-crossbeam-installed",
+  "entity": {
+    "object_id": "entity-crossbeam",
+    "revision_id": "115731814d24b6b4b99e325d0f9286435df91fc1582e838690e44edf150b599c"
+  },
+  "state": {
+    "object_id": "form-crossbeam-installed",
+    "revision_id": "6aebcb9068b8679ec0831705ee267b417a819f5cbbb4a93a656ab52cfd5953db"
+  },
+  "requirement": {
+    "object_id": "need-form-crossbeam-installed-overall",
+    "revision_id": "6953b14811fbf448a0d6dfb49676108a121bc70a14eaafb4ea95f90cc019d8ac"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-crossbeam-base-image-01",
+        "revision_id": "94e9b74b04de561706b0c7aa2b5caf24b6a812493bc168c69555bd8f7f2d1e70"
+      },
+      "component_id": "original",
+      "sha256": "9ff476bb5d123bb9459100eb6667f542cbfb2e7ee2e17961bcfcb9777f7acf4f",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：全幅，整根长灰褐木杠，两个端头和直径"
+    },
+    {
+      "reference": {
+        "object_id": "asset-fg3-feeding-channel-base-image-02",
+        "revision_id": "40c463e5d080aca4387023e158cb95a75c6dc42c7de734d8d87eb3a30485e8e4"
+      },
+      "component_id": "original",
+      "sha256": "3bc99507444a691fb933dad0a7503343b3be448ad98732b1b0b39c1b0bd044a4",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图2：全幅，矮石道与双木柱滑闸，原木栓仍保留"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 2,
+    "references": [
+      {
+        "object_id": "asset-fg3-crossbeam-base-image-01",
+        "revision_id": "94e9b74b04de561706b0c7aa2b5caf24b6a812493bc168c69555bd8f7f2d1e70"
+      },
+      {
+        "object_id": "asset-fg3-feeding-channel-base-image-02",
+        "revision_id": "40c463e5d080aca4387023e158cb95a75c6dc42c7de734d8d87eb3a30485e8e4"
+      }
+    ]
+  },
+  "master_approvals": [
+    {
+      "object_id": "review-master-fg3-crossbeam-base-image-01",
+      "revision_id": "a385bcc1ca6f26edd57cb9a9cd218e8e0b76155725a956cc187743bd5d0ca050"
+    },
+    {
+      "object_id": "review-master-fg3-feeding-channel-base-image-02",
+      "revision_id": "ff13d6f38af207c59864fe82d88c40ffccf68c329b7ba466d9559954e149915c"
+    }
+  ],
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "制作一张新的完整状态整体参考，二维清楚人物与轻手绘背景，细而干净的线条、低饱和平涂，保留参考的比例与颜色，减少纸纹和颗粒。不是照片、分镜拼图、旧图裁切或放大。原生最高可用输出，无水印、无装饰标题。\n16:9横幅单幅器物装配整体，从南偏西略俯视。保留图2封顶石道南门闭闩、北闸落底、双木柱及短木栓仍插在柱孔。图1长圆木杠独立置于两木柱朝南的前面，沿东西方向跨过闸板，两个长端伸出石道左右且完整入画。长杠不能穿柱孔，绝不是原短木栓变长；短木栓仍在更靠北更高处可单独辨认。闸板南面原本有一根贴着活动门板的短横木，长杠中央用两组麻绳八字绕扎在这根短横木上，绳不绕固定立柱，结紧、尾短。展示长杠与闸板作为一体可升降，固定柱在它后面。无人承重，两端空置。所有石顶闭合，只保留已有接缝，未画刀缝；这是装杠已试牢时点。让主体长杠和麻绳醒目，背景淡。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/9ff476bb5d123bb9459100eb6667f542cbfb2e7ee2e17961bcfcb9777f7acf4f.png",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/3bc99507444a691fb933dad0a7503343b3be448ad98732b1b0b39c1b0bd044a4.png"
+    ]
+  }
 }

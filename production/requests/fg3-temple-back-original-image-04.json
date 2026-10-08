@@ -1,6 +1,57 @@
 {
-  "bytes": 3664,
-  "format": "material-archive-reference-v1",
-  "recipe": "79c0ce1cb6240d4f64ef5b9fcc3ab296dffe2b577936cc8fc8b97956911970a7",
-  "sha256": "5d3d99dd9e96ca5640556c75d4656556e648c1d728d4da45425f213b9c6e7163"
+  "id": "fg3-temple-back-original-image-04",
+  "recipe_id": "form-temple-back-original",
+  "entity": {
+    "object_id": "entity-temple-back",
+    "revision_id": "98363978173ad313598b5654d827c2a1d84e37b967fca65445206785d5f27ec3"
+  },
+  "state": {
+    "object_id": "form-temple-back-original",
+    "revision_id": "1b6b57d6eb4e268f2d7bfbc70a89463e7d1dc723fcebb40b08e3833a082e5594"
+  },
+  "requirement": {
+    "object_id": "need-form-temple-back-original-overall",
+    "revision_id": "284bab16375ea876989d076ef3ef888ffa2075f56d7498e7693843029dc71f77"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-cave-gate-base-image-02",
+        "revision_id": "9f2dd5a25d3a9b294892313fcfc40dc380f838125ebdb5a2133b7f551a7e9bfe"
+      },
+      "component_id": "original",
+      "sha256": "1ebb9619a864ff72087147b6aa6d188d911a6a71a4a81968df78e997f9da0374",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：独立干净北闸母版，保留灰木双柱竖拼滑闸和短锁销，供重新建立低谱系院落基准"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-fg3-cave-gate-base-image-02",
+        "revision_id": "9f2dd5a25d3a9b294892313fcfc40dc380f838125ebdb5a2133b7f551a7e9bfe"
+      }
+    ]
+  },
+  "master_approval": {
+    "object_id": "review-master-fg3-cave-gate-base-image-02",
+    "revision_id": "c5929ad614df03fae2f0b615752fc7eb7425bc0c29b75d76d7b40effc9a77e2a"
+  },
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "生成一张新的完整状态整体参考，二维人物与轻手绘背景，低饱和自然色、清楚干净轮廓、平涂为主；保持准确母版身份、比例、配色与空间方向。不要摄影皮肤、纸纹噪点、厚肌理或过锐边缘。单幅单时刻，不是分镜拼图、裁切或放大。输出工具最高原生画面，无水印和装饰标题。\n完整原件按实际顺序输入：图1：独立干净北闸母版，保留灰木双柱竖拼滑闸和短锁销，供重新建立低谱系院落基准。\n16:9完整庙后封闭小院的新基准。仅用图1北闸干净原图，不输入先前院落或石道生成图；按以下锁定空间重新建院。南墙位于画面下方，唯一木后门带旧铁环大锁；东西高土白墙接上方北灰岩，不加第二出口。短矮石道从北岩根朝画面下方南延伸：北端安装图1双灰褐木立柱竖拼滑闸，闸后有短段盖严石顶再接唯一岩洞；闸板完全落底、原短木栓穿两木柱。闸前至南门是两块平整石盖封顶的短通道，只及成人膝高，宽能过粗蛇、不能走人；南端整石门框内一扇暗褐厚木投食小门，左铰向外开但本图闭合，横木闩卡两侧石槽。两盖石之间只有正常接缝，无刀缝。观察点在南偏西墙上方，完整院墙和前后两种门同时可辨，石道长轴竖直向北；东西各留四人站位宽空地。没有长杠、蛇、人、刀或灯，只有日光。所有固定构件构成同一干净院落，不把木柱换石柱，不把石道变敞口渠。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/1ebb9619a864ff72087147b6aa6d188d911a6a71a4a81968df78e997f9da0374.png"
+    ]
+  }
 }

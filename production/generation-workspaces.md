@@ -46,7 +46,7 @@ Agent 在执行会话内登记提交引用约束：主仓 `config/instance.json`
 
 ## 初始化与恢复审阅
 
-四类内容完成 V1 收敛后，以 [版本收敛交付](version-consolidation/README.md) 的 Schema 8 完整导出与发布幂等回执作为有效恢复入口。旧制作包、旧回放和其他任务的旧库只供历史追溯，不能恢复到当前实例。新的普通创作从最新正式基线初始化，原有历史保留和冻结规则继续生效。
+当前以 [新视听制作](audiovisual/README.md) 的 Schema 9 完整导出、准确索引与最小发布幂等凭据恢复。旧制作包、旧格式回放和其他任务历史库不再是恢复源。普通创作从最新正式基线初始化，冻结方案按正常规则建新版。
 
 先创建或进入自己的任务 worktree，并同步最新主干。无正式任务记录的独立工程工作也可以使用独立分支；不要为了使用这些工具另建任务账本。下列命令从 worktree 根目录执行：
 
@@ -76,7 +76,7 @@ python3 scripts/generation_review.py --system "$generation_system" \
 ## 生成、登记与审阅
 
 1. 使用本工作区的 `seed_audio.py`、`lyria_music.py` 或图像工具。外部图像工具返回到其原生缓存时，`record_builtin_image.py` 将准确原件与真实回执收敛到本 worktree，不复制到主目录。Lyria 原始响应与候选先留在 `.runtime/lyria/<id>/`，整理交付时再登记内容寻址原件。
-2. `register_production_candidates.py`、`register_full_generation.py`、`register_generation_batch.py` 的 `--instance` 必须指向本工作区 `.runtime/` 下的实例。通用系统的 `production-file`、`production-import` 也只针对该实例调用；不使用正式主目录作为日常生成目标。既有准确输入、母版认可、谱系和预期版本校验继续生效。
+2. 旧批次登记工具已退役。通用系统的 `production-file`、`production-import` 只针对本工作区 `.runtime/` 下的实例调用；不使用正式主目录作为日常生成目标。既有准确输入、母版认可、谱系和预期版本校验继续生效。
 3. 在任务页面查看图像、播放音频、评论、修订和记录实际审阅结论。真实用户认可与工具检查分别记录。执行本流程不代表授权新增付费调用，也不代表接受任何作品。
 4. 自检完成后冻结包；不要把测试评论、测试采纳或无关创作变更放进交付数据。
 
@@ -161,7 +161,7 @@ python3 scripts/production_review.py --system "$generation_system" recover \
 
 正式库发布、导出合并、服务部署和远端推送分别回读，不能用其中一步的成功替代其他结果。纯故事工具更新通常无需重建通用审阅台或切换 3000。
 
-本次实施的验证范围、正式库前后比较和复用来源见 [验收证据](evidence/generation-workspace-verification.json)。0003、0004 的既有素材不迁移、不删改；它们的实际制作与正式入库状态继续见 [STATE.md](../STATE.md)。
+工作区隔离、并发保护、真实 HTTP 及恢复由 `tests/test_generation_workspace.py`、`tests/test_generation_publication.py` 验证。实例当前制作与正式入库状态见 [STATE.md](../STATE.md)。
 
 ## 结项清理
 

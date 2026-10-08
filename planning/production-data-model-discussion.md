@@ -515,7 +515,7 @@
 | 镜头参考选择 | `shot_references.py`、`reference_paths.py`、`docs/production-breakdown.md`；逐方案选择准确输入，保留间接路径 |
 | 评论、修订与共同机制 | `store.py`、`business_codes.py`、`production_changes.py`；版本、依赖、评论、编号与变更复核 |
 
-部分较早文档仍包含旧轮次或已退役流程说明；现状按当前代码、现行专门契约及故事[生产制作入口说明](../production/production-unification/README.md)核对，不把框架目录里预留的类型名全部当成已实现业务实体。
+部分较早文档仍包含旧轮次或已退役流程说明；现状按当前代码、现行专门契约及故事[生产制作入口说明](../production/README.md)核对，不把框架目录里预留的类型名全部当成已实现业务实体。
 
 ### 9.2 主要结构变化
 
