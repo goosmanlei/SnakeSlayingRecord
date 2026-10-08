@@ -1,6 +1,155 @@
 {
-  "bytes": 9452,
-  "format": "material-archive-reference-v1",
-  "recipe": "5aeffa981379762fc666a257b79cb35d8fc3802fc80736c246e23eaaca55b946",
-  "sha256": "0f1b69a3053865a261c6ff0be50e7aa597df5f4f0675296174fff01095091c9a"
+  "id": "fg3-temple-back-battle-image-01",
+  "recipe_id": "form-temple-back-battle",
+  "entity": {
+    "object_id": "entity-temple-back",
+    "revision_id": "98363978173ad313598b5654d827c2a1d84e37b967fca65445206785d5f27ec3"
+  },
+  "state": {
+    "object_id": "form-temple-back-battle",
+    "revision_id": "262cc468aedf1d204a5c9fcdd00c16d1fbd8ffe8fe645e5eefda5434a5654ed1"
+  },
+  "requirement": {
+    "object_id": "need-form-temple-back-battle-overall",
+    "revision_id": "9a0cd5bf025af3b68277fa21f2d16413c37f8958da978bf7050b92132920ed36"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-temple-back-original-image-06",
+        "revision_id": "2f1fffaf541f82cbbcb8d9d08cb8b657b59e15ab5d8f03275c69fccce4900aa6"
+      },
+      "component_id": "original",
+      "sha256": "c44c03328f19433f02a7660b7768f06d0d1123e32e2074a60ed1d5ab256286e6",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：已认可庙后院第六原件；固定高墙、唯一南后门、北岩根与短石道的尺度和空间位置"
+    },
+    {
+      "reference": {
+        "object_id": "asset-fg3-feeding-channel-base-image-02",
+        "revision_id": "40c463e5d080aca4387023e158cb95a75c6dc42c7de734d8d87eb3a30485e8e4"
+      },
+      "component_id": "original",
+      "sha256": "3bc99507444a691fb933dad0a7503343b3be448ad98732b1b0b39c1b0bd044a4",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图2：已认可完整短石道：两块平盖石、南投食门、连续矮石墙、北闸后封顶短段和岩根；保留同一实体，不能断开、拉长或改为敞口"
+    },
+    {
+      "reference": {
+        "object_id": "asset-fg3-crossbeam-base-image-01",
+        "revision_id": "94e9b74b04de561706b0c7aa2b5caf24b6a812493bc168c69555bd8f7f2d1e70"
+      },
+      "component_id": "original",
+      "sha256": "9ff476bb5d123bb9459100eb6667f542cbfb2e7ee2e17961bcfcb9777f7acf4f",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图3：已认可完整灰褐长圆木；保持轮廓、颜色，一根不断开的横杠"
+    },
+    {
+      "reference": {
+        "object_id": "asset-fg3-heavy-blade-base-image-03",
+        "revision_id": "cbeeb636859d121ba3bcaaf1caeff98df8350c5c887af0fd96d02ac939546b5e"
+      },
+      "component_id": "original",
+      "sha256": "bdc77f0680ffc30cf027f6ad3a94c1018bbc83d6e1ec773a107a97804b4a3149",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图4：已认可厚背刀第三原件；取其单刃灰铁厚背刀及木柄，平放西侧低平石，不借旧细刀形状"
+    },
+    {
+      "reference": {
+        "object_id": "asset-fg3-lantern-image-01",
+        "revision_id": "c04b3877a5421432067f5bb24be40d19bf1af4b1e2325462de2f884df4e2c3af"
+      },
+      "component_id": "original",
+      "sha256": "db9bd8e4707d2533180622e8d44c50b16c171c3518b9da6772247861666e4b26",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图5：已认可旧竹纸灯母版；保留浅旧纸、竹骨、弯提把，置唯一人行后门内侧贴墙且避开通路"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 2,
+    "references": [
+      {
+        "object_id": "asset-fg3-temple-back-original-image-06",
+        "revision_id": "2f1fffaf541f82cbbcb8d9d08cb8b657b59e15ab5d8f03275c69fccce4900aa6"
+      },
+      {
+        "object_id": "asset-fg3-feeding-channel-base-image-02",
+        "revision_id": "40c463e5d080aca4387023e158cb95a75c6dc42c7de734d8d87eb3a30485e8e4"
+      },
+      {
+        "object_id": "asset-fg3-crossbeam-base-image-01",
+        "revision_id": "94e9b74b04de561706b0c7aa2b5caf24b6a812493bc168c69555bd8f7f2d1e70"
+      },
+      {
+        "object_id": "asset-fg3-heavy-blade-base-image-03",
+        "revision_id": "cbeeb636859d121ba3bcaaf1caeff98df8350c5c887af0fd96d02ac939546b5e"
+      },
+      {
+        "object_id": "asset-fg3-lantern-image-01",
+        "revision_id": "c04b3877a5421432067f5bb24be40d19bf1af4b1e2325462de2f884df4e2c3af"
+      }
+    ]
+  },
+  "master_approvals": [
+    {
+      "object_id": "review-master-fg3-temple-back-original-image-06",
+      "revision_id": "4e1d958cc656281e920e347e9d0d7157db2dfa6265f1763f8dda54417ab32806"
+    },
+    {
+      "object_id": "review-master-fg3-feeding-channel-base-image-02",
+      "revision_id": "ff13d6f38af207c59864fe82d88c40ffccf68c329b7ba466d9559954e149915c"
+    },
+    {
+      "object_id": "review-master-fg3-crossbeam-base-image-01",
+      "revision_id": "a385bcc1ca6f26edd57cb9a9cd218e8e0b76155725a956cc187743bd5d0ca050"
+    },
+    {
+      "object_id": "review-master-fg3-heavy-blade-base-image-03",
+      "revision_id": "c58a85061a509dc66cd9e720ba2a05483a26c1685dfcd08cd4f4b3efb466d6c2"
+    },
+    {
+      "object_id": "review-master-fg3-lantern-image-01",
+      "revision_id": "cfa293a74f1370e9c334d1414baef64a26926e852fa7abb93c12888b0065a8ec"
+    }
+  ],
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "Create a NEW full setting reference “庙后封闭小院·祭日绳垫与空门道” by editing IMAGE 1. It remains the SAME compact northern rock-side short passage in the SAME enclosed courtyard, unique human doorway at foreground-left SOUTH wall, no other entrance. IMAGE 2 supplies precise continuous stone details, IMAGE 3 the grey-brown long beam, IMAGE 4 the thick-backed single-edged knife, IMAGE 5 the old paper-and-bamboo lantern. Do not transplant their blank backgrounds or enlarge the stone passage into the courtyard. The long beam is a SINGLE continuous grey-brown round log, placed across the FRONT of the MOVING northern gate panel, entirely in front of both fixed posts. A small short horizontal cleat is fixed to the moving panel, its ends well inside the posts. Exactly two compact tight hemp-rope loops hug BOTH this cleat and the long beam together near the centre; no suspension ropes, no rope to fixed posts or to the locking pin. The wooden panel and posts may extend upwards to leave usable space above the knee-high stone lid; do not raise stone walls. All stone components remain connected: southern small barred wooden door, two front stone lids, gate position, roofed short segment behind the gate and rock root. Both beam ends extend over clear open ground. This is a dry covered stone snake passage, never a water canal or open trench.\nThis is the earliest third-morning PREPARATION arrangement before helpers lift the gate: gate fully down with bare long locking pin through both posts, south small feeding door shut/barred. Same correct beam-to-moving-cleat connection. Add extra tight hemp turns reinforcing the two central rope bindings, and small worn cloth pads only between rope and sharp rubbing stone/wood edges; no dangling cloth screen or ropes to fixed posts.\nPut the EXACT thick-backed grey knife from image 4 lying FLAT on a low flat stone on the WEST/left side of the short passage. Knife is resting safely, not stuck upright or held by a person; its long single blade, wood grip and two dark wraps retain the reference shape. Do not add multiple knives.\nThe human back door in foreground-left SOUTH wall is now unlocked and open for passage. Set the small old bamboo-and-paper lamp from image 5 on the ground JUST INSIDE this doorway, TIGHT AGAINST THE WALL, away from the walk-through centre. Its arched bamboo handle and patched pale paper should be identifiable. Slightly higher bird's-eye view is permitted to make this inside placement visible without moving the doorway. The entire route from human gate to mechanism remains clear, no bystanders, drums, baskets or tools. This is an unoccupied environment reference, not a portrait or a shot of the battle.\nMorning soft daylight, restrained hand-painted grey/earth palette, clean fine outlines, no grain accumulation. Keep all high walls, rock, complete SHORT stone body, knife, lamp and unique open doorway in one 16:9 composition. No panels, text or new architecture. Highest native output available.",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/c44c03328f19433f02a7660b7768f06d0d1123e32e2074a60ed1d5ab256286e6.png",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/3bc99507444a691fb933dad0a7503343b3be448ad98732b1b0b39c1b0bd044a4.png",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/9ff476bb5d123bb9459100eb6667f542cbfb2e7ee2e17961bcfcb9777f7acf4f.png",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/bdc77f0680ffc30cf027f6ad3a94c1018bbc83d6e1ec773a107a97804b4a3149.png",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/db9bd8e4707d2533180622e8d44c50b16c171c3518b9da6772247861666e4b26.png"
+    ]
+  }
 }

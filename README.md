@@ -4,29 +4,25 @@
 
 ## 故事创作导航与评论数
 
-故事采编、故事结构和剧本创作均选中一级“故事创作”，顶部 Tab 区分当前子页。采编不再提供右上搜索框、资料总数及正文重复“审阅意见”按钮；浮动“查看评论”、正文高亮和圈选入口继续使用共用评论面板。
+故事采编、故事结构和故事剧本均选中一级“故事创作”，顶部 Tab 区分当前子页。采编不再提供右上搜索框、资料总数及正文重复“审阅意见”按钮；浮动“查看评论”、正文高亮和圈选入口继续使用共用评论面板。
 
 采编每份资料和精修版本显示当前修订的“评论 N”，分类分别显示资料项数与评论合计；结构每个“第 N 稿”显示该稿评论总数。总数包含已关闭评论，不计删除记录或编辑／状态历史；新增后增加，编辑、关闭和重开不改变。共用面板继续显示未关闭／历史待决，不应把两种数字当作相同口径。使用、验证和本机候选版本见 [界面统一交付](planning/story-creation-ui-unification-delivery.md)。
 
-素材审阅优化与资产审视任务已完成；块评论数、生成内容、筛选、共用音频和性能证据见 [素材审阅交付说明](planning/material-review-streamlining-delivery.md)，内部合并与清理依据见 [资产必要性报告](planning/asset-necessity-cleanup-report.md)。报告中的候选和待确认表述属于当时记录；当前发布与未完成事项统一见 [STATE.md](STATE.md)。
+当前素材审阅、恢复及退役范围见 [生产制作](production/README.md)，正式发布状态见 [STATE.md](STATE.md)。
 
 ## 评论输入
 
 故事采编、故事结构和剧本分集共用评论输入框。聚焦输入框时按 ⌘+Enter 提交或保存修改，按 Esc 取消并放弃本次未提交内容，已保存评论不变；普通 Enter 换行。输入框外 Esc 仍收起面板并保留草稿。中文输入法组合期间不触发快捷操作，保存中不能重复提交。实现、验证与验收范围见[快捷键交付说明](planning/comment-shortcuts-delivery.md)。
 
-## 制作思路
+## 制作与审阅
 
-图像、音色和歌曲任务的生成、登记及审阅均在各自 worktree；原件随任务分支合并，正式库随后显式增量发布。初始化、预览、提交、发布和恢复命令见[生成工作区流程](production/generation-workspaces.md)。
+[生产制作](production/README.md)统一组织视听制作、实体管理和素材管理。当前[全剧视听设计](production/audiovisual/README.md)覆盖版本四的 17 集、42 故事场，重编为 65 个视听场、344 镜；1,534 项新需求与四项保留歌曲需求共用准确素材关系。6021 秒是为表演和动作预留的保守方案估计，约 100 分钟，不是成片实测。用户允许适度加长，以动作和表演读得清楚为先。
 
-首页“制作思路”提供“故事创作”“生产制作”两个 Tab；旧 `workspace=current` 与既有章节链接兼容。方法正文在 [content/production-approach.json](content/production-approach.json)，按故事七步和制作十步贯通从原型到全剧质量检查、交付及返修，随实例 Git 保存，由系统只读展示。准确参考选择、连续例子、现有能力边界与逐项真实页面证据见 [制作思路交付](production/approach/README.md)。方案与首轮素材交付不表示镜头媒体或全剧作品已就绪。
+“制作思路”有故事创作、生产制作、[视频生成手册](production/seedance-video-handbook.md)和[影视专业知识](production/filmcraft/README.md)四个子页。正文由 [content/production-approach.json](content/production-approach.json) 与相应方法原文维护；桌面常驻目录，窄屏横向目录，支持准确章节链接。
 
-[正式入口](http://127.0.0.1:3000/)的首页、旧链接、双 Tab、桌面与窄屏历史验收，以及当时的隔离预览与数据恢复证据见[交付记录](planning/production-approach-delivery.md)；历史预览地址不作为当前入口。恢复实例时同时保留 `config/`、`content/` 与 `export/`；方法文档不写业务数据库，无数据迁移。
+每镜支持多个需求、每需多个方案版本和候选；实体状态、准确来源、关系、候选比较、评论和采纳共用详情。管理列表按四列基准行分页，窄屏只重排当前集合。技术验收不代表用户接受新设计，已有图像与音频不代表镜头视频已生成。本任务没有媒体生成调用。
 
-实体／素材管理正文使用三列共用小卡、准确集场筛选和分组行分页；点击通过弹窗审阅，大卡左侧素材列表只切换同卡右侧。读取来源、计数口径、全部入口及真实桌面／窄屏证据见[小卡交付](production/small-cards/README.md)。正式运行身份与完成回执见 [STATE.md](STATE.md) 和主项目任务账本。
-
-两个方法 Tab 的章节目录在桌面常驻左侧，沿用故事创作页的浅色阅读栏与章节高亮；点击可定位，滚动时更新当前章。窄屏目录常驻正文上方、可横向滚动，章节链接支持刷新与浏览器前进／后退。
-
-方法正文按两个用途组织：故事创作沉淀资料、结构、逐步写作、审阅回修和剧本改编的实际经验；生产制作以版本四全剧抽取、第一集 33 镜、实际候选及精确采用为依据，说明已实践能力与后续素材、动态分镜、工程审阅安排。完整成果、设计契约、隔离审阅入口及恢复操作见 [production/README.md](production/README.md)。此前制作审阅改进的正式验收见 [制作审阅验证](production/review-ui-verification.md)。当前候选由实例配置固定，实际正式运行、待确认项与发布边界以 [STATE.md](STATE.md) 为准。
+生成、登记、预览、增量发布和恢复均按 [受管工作区流程](production/generation-workspaces.md) 执行。当前发布状态只认主项目任务账本与实际运行回执；候选文件与正式服务分别核对。
 
 ## 资料与出处
 
@@ -62,7 +58,7 @@
 
 需要 Docker Compose、Python 3.9+ 和 FFmpeg／ffprobe。两个仓库放在同级目录；系统目录的提交必须与 [config/instance.json](config/instance.json) 一致，准确版本以该配置为准；最近正式发布依据见 [当前状态](STATE.md)。正式运行版本需同时核对镜像源码与实例挂载，不能只由配置文件推断。
 
-完成本地集成后，以故事根目录为工作目录，核对同级系统版本。以下启动命令只适用于已有数据库且未使用独立发布挂载的普通实例；已有正式服务按 `STATE.md` 的发布入口恢复／重启。空实例须先按下方歌曲恢复入口完成恢复：
+完成本地集成后，以故事根目录为工作目录，核对同级系统版本。以下启动命令只适用于已有数据库且未使用独立发布挂载的普通实例；已有正式服务按 `STATE.md` 的发布入口恢复／重启。空实例须先按下方生产恢复入口完成恢复：
 
 ```bash
 production_system=../story-review-desk
@@ -71,7 +67,7 @@ test "$(git -C "$production_system" rev-parse HEAD)" = "$required_system"
 REVIEW_DESK_BUILD_CONTEXT="$production_system" docker compose up -d --build
 ```
 
-已有运行数据库时跳过 `restore`，不可用快照覆盖活库。`export/` 是受管交付快照，不保证随正式数据库自动更新；当前 Schema 7 保存完整素材定义、方案版本／候选、旧轮次、准确修订、评论与原件清单，并保留业务编号和关系旧说明清理凭据，契约见 [素材模型交付](production/ui-material-model/data-contract.md)及[大卡交付](production/entity-material/README.md)。当前歌曲导出包含两条旧 WAV 时长舍入差，恢复须使用 [歌曲恢复入口](production/song-publication/README.md)中的 `scripts/recover_song_publication.py`，不能直接套用普通恢复命令。迁移实例同时保留 `config/` 与 `content/`；当前活库与正式发布入口见 [STATE.md](STATE.md)。已有正式容器的恢复／重启使用对应发布入口，新交付按其已确认发布包切换，避免用普通构建覆盖仍生效的准确挂载。
+已有运行数据库时跳过恢复，不能用快照覆盖活库。当前 Schema 9 完整导出及发布凭据只能通过 [生产恢复入口](production/README.md#恢复) 恢复到新的空实例；旧歌曲、旧编排与旧格式重放已经退役。迁移同时保留 `config/`、`content/`、`export/` 和准确恢复索引。正式服务使用对应冻结发布包，不能用普通构建覆盖准确挂载。
 
 打开 [本机审阅台](http://127.0.0.1:3000/)：Nginx 长期运行在 Docker 容器 3000 端口并代理容器内 Python 服务；Nginx 镜像与通用代理规则由审阅台仓库维护，故事仓库只保留实例 Compose 配置。主机仅绑定 `127.0.0.1:3000`。`docker compose ps` 检查状态，`docker compose restart` 重启；`restart: unless-stopped` 保证 Docker 恢复时服务随之恢复。已有 `.runtime/review.sqlite3` 时跳过 `restore`。本机与公开克隆的系统目录名统一为 `story-review-desk`，同级放置时使用 Compose 默认构建路径；系统位于其他位置时设置 `REVIEW_DESK_BUILD_CONTEXT`。不要把 3000 端口转发到公网，本服务没有公网鉴权。
 
@@ -79,7 +75,7 @@ REVIEW_DESK_BUILD_CONTEXT="$production_system" docker compose up -d --build
 
 ## 站点图标
 
-“系统管理 → 系统与 AI”可上传、选择和替换图标；点“恢复默认图标”并保存可恢复书页图标。当前图标与待保存预览分开，上传成功只登记文件，保存配置后才应用。当前设计为屋檐护着灯火，源 SVG、ICO 和 PNG 在 `export/assets/`，16／32 像素深浅背景预览在[图标设计](design/favicon/README.md)。配置与当前源 SVG 随清单校验和空库恢复；Git 另保留派生文件与渲染脚本。图样已于 2026-09-30 获用户认可。设计交付见[原交付记录](planning/favicon-delivery.md)，最新界面与实际验收边界见[全站视觉候选](production/system-page-style/README.md)。
+“系统管理 → 系统与 AI”可上传、选择和替换图标；点“恢复默认图标”并保存可恢复书页图标。当前图标与待保存预览分开，上传成功只登记文件，保存配置后才应用。当前设计为屋檐护着灯火，源 SVG、ICO 和 PNG 在 `export/assets/`，16／32 像素深浅背景预览在[图标设计](design/favicon/README.md)。配置与当前源 SVG 随清单校验和空库恢复；Git 另保留派生文件与渲染脚本。图样已于 2026-09-30 获用户认可。设计交付见[原交付记录](planning/favicon-delivery.md)。
 
 ## Codex 读取与公开同步
 
@@ -100,5 +96,3 @@ git push origin main
 公开推送前须审阅评论内容；推送意味着评论也会公开。`export/` 含资料、素材、评论及事件、对象修订/依赖、公开配置及事件，运行凭据与 SQLite 本机库不入仓。评论已锚定稳定对象与精确修订，资料评论仍可用 `source_id` 访问；后续创作稿沿同一账本和导出/校验/同步/恢复协议，不能仅留在本地运行库。
 
 验收记录见 [VERIFICATION.md](VERIFICATION.md)。
-
-制作拆解的分集卡、场镜目录、完整剧情高亮与紧凑素材分区见[阅读优化交付](production/breakdown-page/README.md)。运行及发布结果以主项目任务账本和冻结包实际回执为准。

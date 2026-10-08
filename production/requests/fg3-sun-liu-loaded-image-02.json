@@ -1,6 +1,58 @@
 {
-  "bytes": 3511,
-  "format": "material-archive-reference-v1",
-  "recipe": "8fc13717a9376a3685580190f4b3c01ffe1c2566d6b7dee9f1fde9706f0ea985",
-  "sha256": "654a0299c2a52179a81be3df08c3103c9a3a34efcc44ef86e674ff7259a157c1"
+  "id": "fg3-sun-liu-loaded-image-02",
+  "recipe_id": "form-sun-liu-loaded",
+  "entity": {
+    "object_id": "entity-sun-liu",
+    "revision_id": "4b2ec689619f74ff7f54d1815afee52943c5d2f1eafe94d321ca7fbe16a8fda8"
+  },
+  "state": {
+    "object_id": "form-sun-liu-loaded",
+    "revision_id": "8fc2631bf0a023c1355fa6853b724508cae326f085cb0d2c3d99422ab533a366"
+  },
+  "requirement": {
+    "object_id": "need-form-sun-liu-loaded-overall",
+    "revision_id": "85c7915e545f260426f13c7c3671b3b3caf998424ab63e0a9b0ee441b48b7e42"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "master_approval": {
+    "object_id": "review-master-fg3-sun-liu-base-image-01",
+    "revision_id": "2620e6a456aff05ed0249f69f1603e06b947ff86cdaa9ef63f59c3da576b16bd"
+  },
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-sun-liu-base-image-01",
+        "revision_id": "859396d6c1d139499dd1d90b9ceefbe7692c4a8e7aefcb60e5b9787a0bef5a6d"
+      },
+      "component_id": "original",
+      "sha256": "6c2a968d077e3fe1c34eb951ace6884529268c8300a2ed9dc48a2918dd0e47e1",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：用户认可的对应人物完整基准，固定身份、身体比例、衣着轮廓、配色和线条。"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-fg3-sun-liu-base-image-01",
+        "revision_id": "859396d6c1d139499dd1d90b9ceefbe7692c4a8e7aefcb60e5b9787a0bef5a6d"
+      }
+    ]
+  },
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具仅暴露GPT Image名称，未提供底层型号、质量、像素选择或计费用量。",
+  "request": {
+    "prompt": "以参考图1中已获用户认可的干净 D0 人物基准为唯一输入，重新生成同一人物的指定完整状态；没有使用失败派生图。保留同一张脸、发式、灰蓝衣或灰绿外褂的原版型配色、体格、鞋和二维线色；只按下述状态修改表情、汗与姿态。3:4单人完整头至鞋，所有四肢完整，浅暖灰底，无文字、拼图、额外人物或纹理强化。\n实体及完整状态：孙六·持续压杠；整体外观：孙六，戏班鼓手，粗壮胳膊裸露；\n随身物：不跨场凭空携带。\n疲劳：持续肩压横杠，仍在承重，不能提前坐下卸力。\nThis is a downward pressing effort, NOT carrying or lifting. The man bends deeply forward with knees bent and feet braced apart. A horizontal wooden bar is IN FRONT of his upper body, below the front of one shoulder. He leans the front shoulder/chest ON TOP OF the bar and pushes DOWN with his body weight. The bar never sits behind his neck.\n孙六咬牙沉肩，重心向前下方压，双臂扶住身前横杠维持接触，肩不能离木。眉紧、闭嘴咬牙，额侧有汗、领口汗湿，不能保留基准的轻松笑容。腿仍站稳承压，不能坐下或提起木杠。只用一段朴素横杠解释受力，不画其他人或闸装置。\n最高可用原生输出，不放大。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/6c2a968d077e3fe1c34eb951ace6884529268c8300a2ed9dc48a2918dd0e47e1.png"
+    ]
+  },
+  "repair_reason": "首次压杠方向或卸力疲态未符合定稿，回已认可D0重新生成。"
 }

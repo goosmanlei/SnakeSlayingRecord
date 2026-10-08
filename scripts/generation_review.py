@@ -62,15 +62,19 @@ def initialize(root, instance):
 def export_review(root, instance):
     from review_desk.store import Store
     from review_desk.bundle import export
+    try:
+        from .publication_receipts import sha
+    except ImportError:
+        from publication_receipts import sha
     root = generation_root(root)
     instance = existing_instance(root, instance)
     store = Store(instance / '.runtime/review.sqlite3')
     try:
         manifest = export(store, instance / 'export')
         try:
-            from .content_version_consolidation import export_publication_receipts
+            from .publication_receipts import export_publication_receipts
         except ImportError:
-            from content_version_consolidation import export_publication_receipts
+            from publication_receipts import export_publication_receipts
         export_publication_receipts(store,root)
     finally:
         store.close()
@@ -78,7 +82,10 @@ def export_review(root, instance):
         target = contained(root, Path('export') / name)
         source = contained(root, instance / 'export' / name)
         target.parent.mkdir(parents=True, exist_ok=True)
-        if name.startswith('assets/') and target.exists() and material_read_bytes(target) != material_read_bytes(source):
+        # Equal physical bytes need no archive expansion. In a worktree without
+        # a live DB, each expansion otherwise reparses the entire content graph.
+        if (name.startswith('assets/') and target.exists() and sha(target) != sha(source)
+                and material_read_bytes(target) != material_read_bytes(source)):
             raise ValueError('existing managed original differs')
         shutil.copyfile(source, target)
     return manifest

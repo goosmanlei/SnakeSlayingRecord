@@ -1,6 +1,83 @@
 {
-  "bytes": 4226,
-  "format": "material-archive-reference-v1",
-  "recipe": "aeb51366cf1cb3562af02846061535768ad654e5069bf8cfd028d8a1000f3030",
-  "sha256": "dce3c88a745ed6abf34c2b52c7f1e3800a199c05fa2d309de97b296036d40694"
+  "id": "fg3-bait-basin-empty-image-01",
+  "recipe_id": "form-bait-basin-empty",
+  "entity": {
+    "object_id": "entity-bait-basin",
+    "revision_id": "caeaf73c829ca323876c1391f39b21dc4347da49c0654046ab363bb0a3b9a467"
+  },
+  "state": {
+    "object_id": "form-bait-basin-empty",
+    "revision_id": "54f89d00f484426928fa713f84e1e51bcebb8d6d53800c9c2f0d74c5a27bdb90"
+  },
+  "requirement": {
+    "object_id": "need-form-bait-basin-empty-overall",
+    "revision_id": "25248be3c587b9ab3a47325ce67469dce5ba6135d0ff8fa2e2c76ac076e508ee"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-bait-basin-base-image-01",
+        "revision_id": "9dce1957bde5a5009fd2098256705765af44be44b53d8f130197ca5f8462d4ef"
+      },
+      "component_id": "original",
+      "sha256": "38736d34664cf46ef9339ce33cca6e81138aa0ea96e2cabf05f50d220694e721",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：完整木盆身份，灰褐宽浅盆、两侧耳把和盆沿"
+    },
+    {
+      "reference": {
+        "object_id": "asset-fg3-feeding-channel-base-image-02",
+        "revision_id": "40c463e5d080aca4387023e158cb95a75c6dc42c7de734d8d87eb3a30485e8e4"
+      },
+      "component_id": "original",
+      "sha256": "3bc99507444a691fb933dad0a7503343b3be448ad98732b1b0b39c1b0bd044a4",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图2：南门北闸、低矮封顶石道的结构与颜色"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 2,
+    "references": [
+      {
+        "object_id": "asset-fg3-bait-basin-base-image-01",
+        "revision_id": "9dce1957bde5a5009fd2098256705765af44be44b53d8f130197ca5f8462d4ef"
+      },
+      {
+        "object_id": "asset-fg3-feeding-channel-base-image-02",
+        "revision_id": "40c463e5d080aca4387023e158cb95a75c6dc42c7de734d8d87eb3a30485e8e4"
+      }
+    ]
+  },
+  "master_approvals": [
+    {
+      "object_id": "review-master-fg3-bait-basin-base-image-01",
+      "revision_id": "6cff9af686bbfd06d71791044e7b78f870e993be9314b5090997dadd5ef9a392"
+    },
+    {
+      "object_id": "review-master-fg3-feeding-channel-base-image-02",
+      "revision_id": "ff13d6f38af207c59864fe82d88c40ffccf68c329b7ba466d9559954e149915c"
+    }
+  ],
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "生成一张全剧素材的完整状态整体参考。二维人物配轻手绘空间，低饱和自然色、清楚轮廓、平涂为主，保留已认可母版的建筑方向、器物比例、人物身份和衣色。干净边缘，轻背景笔触，无纸纹噪点、过锐、摄影皮肤或厚重肌理。单幅单时刻，不做分镜拼接；不新增剧情。输出模型可提供的最高原生画面，无水印、装饰边框。\n输入按顺序使用完整原件：图1：完整木盆身份，灰褐宽浅盆、两侧耳把和盆沿；图2：南门北闸、低矮封顶石道的结构与颜色。\n4:3横幅，从南侧略俯视，完整空盆置于石道南端内部试位，盆口内部清楚全空、干净、没有食物湿草。南门向外打开，门框完整；北木闸落底且木栓穿牢。按此时事实，靠南的一块顶盖被起开靠在旁边，靠北盖石仍在，横向接缝原位置可辨，尚无新刀缝。不画后来的湿草试刀时刻。木盆全轮廓与耳把均在画内，盆低于通道净高，尺度只供伸手推饵，不是人行门。石道和起开的石盖也入画，淡简底、不画人蛇。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/38736d34664cf46ef9339ce33cca6e81138aa0ea96e2cabf05f50d220694e721.png",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/3bc99507444a691fb933dad0a7503343b3be448ad98732b1b0b39c1b0bd044a4.png"
+    ]
+  }
 }
