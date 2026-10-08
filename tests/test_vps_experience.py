@@ -1,4 +1,5 @@
 import argparse
+import hashlib
 import io
 import json
 from pathlib import Path
@@ -13,6 +14,20 @@ import vps_experience_remote as remote
 
 
 class VPSPackageBoundaryTest(unittest.TestCase):
+    def test_save_config_digest_survives_different_docker_image_stores(self):
+        config=json.dumps({'architecture':'amd64','config':{'Labels':{
+            'org.leiguoguo.instance':'lijizhanshe','org.opencontainers.image.revision':'candidate'}}}).encode()
+        with tempfile.TemporaryDirectory() as folder:
+            path=Path(folder)/'image.tar.gz'
+            with tarfile.open(path,'w:gz') as archive:
+                for name,data in [('config.json',config),('manifest.json',json.dumps([{
+                    'Config':'config.json','RepoTags':['lijizhanshe-experience:round1']}]).encode())]:
+                    entry=tarfile.TarInfo(name);entry.size=len(data);archive.addfile(entry,io.BytesIO(data))
+            self.assertEqual(remote.portable_image(path,'lijizhanshe-experience:round1','candidate'),
+                             'sha256:'+hashlib.sha256(config).hexdigest())
+            with self.assertRaisesRegex(ValueError,'revision differs'):
+                remote.portable_image(path,'lijizhanshe-experience:round1','other-candidate')
+
     def test_unconfirmed_maintenance_cannot_clear_the_old_instance(self):
         with patch.object(remote,'clear') as clear:
             with self.assertRaisesRegex(ValueError,'maintenance must protect'):
