@@ -43,6 +43,7 @@
 
 ## 视频生成
 
+- 编写或修改镜头视频方案与 Prompt 前，先阅读并应用 [视频生成手册](production/seedance-video-handbook.md)，再核对本次制作输入锁、完整状态和准确参考。手册是唯一方法正文；能力、方案估计、真实调用结果与实际认可分别判断，不据此改写旧采用记录。
 - 可以通过 `pippit-tool-cli` 使用 Seedance（简称 SD）模型生成视频，默认采用 Seedance 2.0 Fast（`seedance2.0_fast_vision`）、720p；镜头需要较长视频时长时，可以采用 Seedance 2.5（`Seedance_2.5`）、720p。
 - 执行前核对 CLI 实际模型标识、时长限制、参考输入支持与可用额度；记录真实模型、参数、输入与输出，不将选型约定写成已验证的调用结果。视频素材沿用任务 worktree 隔离与增量发布规则。
 
