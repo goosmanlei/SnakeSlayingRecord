@@ -1,0 +1,342 @@
+{
+  "reviewer": "light_research（非applications及quick-reference原作者）",
+  "reviewed_on": "2026-10-08",
+  "overall": "pass_after_recorded_corrections",
+  "method": "先完整阅读六类应用及速查，再完整阅读相关10场276块；逐项比对剧本文件哈希、锁内场元数据和每块文本哈希；方案推导与剧本事实分开审阅。速查逐条与01—12正文比对，此项是语义一致性审查，不另计专业来源或替代章节原始来源复核。",
+  "source_identity": {
+    "script": "imports/screenplay-04.json",
+    "source_lock": "production/source-lock.json",
+    "screenplay_id": "screenplay-04-lantern-home",
+    "screenplay_revision": "7287b25a34d4b0db242ec5688f33349fa6d449874a3c6acb30033e2260cd2686",
+    "script_sha256": "c428946554029be05f119eae0ecefeb5bbc6501115db5d096c007ebe0af12f3d",
+    "source_lock_sha256": "713a5307157df405f434e3a5da3f02aa05b1c540bd6cb84629051cf94bbb7519",
+    "whole_file_hash": "matches_lock",
+    "complete_scenes": [
+      {
+        "episode": 1,
+        "scene": "s001",
+        "heading": "01-01 米铺门口",
+        "full_block_count": 32,
+        "read_scope": "完整场正文，非关键词摘读",
+        "locked_scene_metadata": "exact_match",
+        "locked_block_text_sha256": "all_match"
+      },
+      {
+        "episode": 4,
+        "scene": "s008",
+        "heading": "04-02 没有吐出的月亮",
+        "full_block_count": 37,
+        "read_scope": "完整场正文，非关键词摘读",
+        "locked_scene_metadata": "exact_match",
+        "locked_block_text_sha256": "all_match"
+      },
+      {
+        "episode": 5,
+        "scene": "s010",
+        "heading": "05-02 娘，我不去",
+        "full_block_count": 17,
+        "read_scope": "完整场正文，非关键词摘读",
+        "locked_scene_metadata": "exact_match",
+        "locked_block_text_sha256": "all_match"
+      },
+      {
+        "episode": 8,
+        "scene": "s018",
+        "heading": "08-01 看见喂食的次序",
+        "full_block_count": 40,
+        "read_scope": "完整场正文，非关键词摘读",
+        "locked_scene_metadata": "exact_match",
+        "locked_block_text_sha256": "all_match"
+      },
+      {
+        "episode": 13,
+        "scene": "s030",
+        "heading": "13-01 七个人还不够",
+        "full_block_count": 30,
+        "read_scope": "完整场正文，非关键词摘读",
+        "locked_scene_metadata": "exact_match",
+        "locked_block_text_sha256": "all_match"
+      },
+      {
+        "episode": 13,
+        "scene": "s031",
+        "heading": "13-02 我来砍蛇",
+        "full_block_count": 21,
+        "read_scope": "完整场正文，非关键词摘读",
+        "locked_scene_metadata": "exact_match",
+        "locked_block_text_sha256": "all_match"
+      },
+      {
+        "episode": 14,
+        "scene": "s032",
+        "heading": "14-01 同一个地方",
+        "full_block_count": 26,
+        "read_scope": "完整场正文，非关键词摘读",
+        "locked_scene_metadata": "exact_match",
+        "locked_block_text_sha256": "all_match"
+      },
+      {
+        "episode": 14,
+        "scene": "s033",
+        "heading": "14-02 最后一阵声音",
+        "full_block_count": 32,
+        "read_scope": "完整场正文，非关键词摘读",
+        "locked_scene_metadata": "exact_match",
+        "locked_block_text_sha256": "all_match"
+      },
+      {
+        "episode": 17,
+        "scene": "s040",
+        "heading": "17-01 这一页我来",
+        "full_block_count": 19,
+        "read_scope": "完整场正文，非关键词摘读",
+        "locked_scene_metadata": "exact_match",
+        "locked_block_text_sha256": "all_match"
+      },
+      {
+        "episode": 17,
+        "scene": "s041",
+        "heading": "17-02 唱完这一首",
+        "full_block_count": 22,
+        "read_scope": "完整场正文，非关键词摘读",
+        "locked_scene_metadata": "exact_match",
+        "locked_block_text_sha256": "all_match"
+      }
+    ],
+    "complete_scene_count": 10,
+    "complete_block_count": 276
+  },
+  "application_checks": [
+    {
+      "id": "APP01",
+      "type": "多角色对白",
+      "full_scenes": [
+        "E01/s001"
+      ],
+      "source_checks": [
+        "b011—b016打趣；b017—b025掌柜交米、追加米与婚礼安排；b021生字画圈、按页；b026—b032檐外说还得看词、浆糊手与歌本交还。",
+        "未把未熟词改成缺词；未扩大周掌柜知情范围；A/B机位为明示建议，非原剧本新增事实。"
+      ],
+      "result": "pass_after_correction"
+    },
+    {
+      "id": "APP02",
+      "type": "复杂动作",
+      "full_scenes": [
+        "E13/s030",
+        "E13/s031",
+        "E14/s032",
+        "E14/s033"
+      ],
+      "source_checks": [
+        "s030 b009—b010李诞由西绕投食门外到东侧、两侧各四人；s031 b015重列双方共八人，李寄在西侧刀位。",
+        "s031 b012—b019刀缝、试入、落刀和原路抽回；s032 b003先抽刀再退步、b007—b014擦石停手与重新对准；不能扩写蛇冲出或刀穿盖石。",
+        "s032 b020刀放平石后空手退步；b022阿蘅才离开门边扶空臂；b024—b026深处擦撞而继续压杠；s033 b011—b012缓卸、b014继续守投食门。",
+        "接触参考与二维合成为执行选项，不保证结果通过；无媒体生成或音质验收声明。"
+      ],
+      "result": "pass_after_correction"
+    },
+    {
+      "id": "APP03",
+      "type": "悬念揭示",
+      "full_scenes": [
+        "E04/s008"
+      ],
+      "source_checks": [
+        "b021—b025借绳、靠结处剪绳、木牌边新刮木白被遮、阿蘅看后回向鼓面；b026锣、b027停鼓/停线/月亮卡住；b031阿蘅看新红绳。",
+        "b032转牌→b033叫名→b034鼓槌落地闷响→b035退碰桶水漫鞋→b037李寄攥线、月亮仍卡蛇口，顺序符合。",
+        "正文只认定线索可提示人为操作，不认定阿蘅已揭穿；方案B明确改变知情顺序并需下游审阅，未伪装成已锁定事实。"
+      ],
+      "result": "pass"
+    },
+    {
+      "id": "APP04",
+      "type": "情绪表演",
+      "full_scenes": [
+        "E05/s010"
+      ],
+      "source_checks": [
+        "b002扶坐、握母亲手、蹲下；b003不想去→b004母亲欲言无声→b005不去→b006拥抱→b007母亲回应→b008女儿托背。",
+        "b009李寄进半步又退出门外；b010—b011远处戏与喝彩、母女不抬头；后续b013李寄仍提议找船、b015出门，不能将退步解释成不再帮助。",
+        "两次台词行动目标是本任务分析建议，非剧本明示内心；A/B未删除母亲随后回应，也未补写病弱突然好转。"
+      ],
+      "result": "pass_after_clarification"
+    },
+    {
+      "id": "APP05",
+      "type": "歌曲与声音",
+      "full_scenes": [
+        "E17/s040",
+        "E17/s041"
+      ],
+      "source_checks": [
+        "s040 b013—b018支持旧残页、新页、同色线补缀与未唱完段落回收；不是临时编造歌本道具。",
+        "s041 b008阿蘅母亲台下、李寄侧幕持新歌本；b009/11/13三段唱词；b010母亲轻打拍；b012手在新旧页接合处；b014尾音收→b015松页、相笑→b016掌声。",
+        "正文将歌曲原件质量与剧本分析分开；母亲明确为阿蘅母亲，未误指b019后来送灯的李寄母亲；反应插入及听觉视角为建议。"
+      ],
+      "result": "pass_after_clarification"
+    },
+    {
+      "id": "APP06",
+      "type": "空间与连续性",
+      "full_scenes": [
+        "E08/s018",
+        "E13/s030",
+        "E13/s031",
+        "E14/s032",
+        "E14/s033"
+      ],
+      "source_checks": [
+        "s018 b002院墙人行后门独立；b007由北向南为洞→闸后短段封顶石道→木闸→门闸间封顶石道→投食门，不能省略/错置闸后短段。",
+        "b008门闸间不到迈开一步；b012李诞肩背进不去；正文使用成人尺度归纳而未编造精确米数/机位。",
+        "b020闸关死再开投食门；b021放饵退手、关门上闩确认；b024再提闸；b032—b034蛇退完、落闸、穿栓检查；没有两端同时打开。",
+        "写实机位不穿透封顶；草图与剖面明确为示意；斩蛇沿用西刀位、东父亲，阿蘅位置依动作时序变化，八人到缓卸时才松肩。"
+      ],
+      "result": "pass_after_correction"
+    }
+  ],
+  "quick_reference": {
+    "term_count": 49,
+    "terms": [
+      "叙事视角",
+      "信息揭示",
+      "悬念与惊讶",
+      "导演意图",
+      "分镜",
+      "镜头覆盖",
+      "主镜头",
+      "反应镜头",
+      "插入镜头",
+      "景别",
+      "构图",
+      "透视",
+      "焦距与视角",
+      "景深",
+      "机位",
+      "推拉与变焦",
+      "摇摄与横移",
+      "运镜动机",
+      "场面调度",
+      "动作轴线",
+      "视线匹配",
+      "出入画",
+      "光质",
+      "主光与补光",
+      "负补光",
+      "曝光与动态范围",
+      "色相、明度、饱和度",
+      "色彩脚本",
+      "白平衡",
+      "色彩管理",
+      "制作设计",
+      "置景与陈设",
+      "道具连续性",
+      "表演目标",
+      "行动与反应",
+      "节拍",
+      "关键姿势",
+      "连续性剪辑",
+      "动作匹配",
+      "时间省略",
+      "声桥",
+      "J 切与 L 切",
+      "故事内声与故事外声",
+      "画内声与画外声",
+      "声音视角",
+      "拟音与环境声",
+      "动态分镜",
+      "时间安排与间距",
+      "制作交接"
+    ],
+    "comparison_chapters": [
+      "01-narrative.md",
+      "02-coverage.md",
+      "03-cinematography.md",
+      "04-camera.md",
+      "05-staging.md",
+      "06-lighting.md",
+      "07-color.md",
+      "08-design.md",
+      "09-performance.md",
+      "10-editing.md",
+      "11-sound.md",
+      "12-animation-ai.md"
+    ],
+    "problem_routes": 18,
+    "stage_routes": 9,
+    "decision_record_items": 6,
+    "result": "all_terms_consistent_after_corrections",
+    "limits": "速查只作定位，不单独构成完整定律；章节来源/反例须联读。未把建议中的镜头、时长或声音当成原剧本已存在的结果。"
+  },
+  "findings": [
+    {
+      "id": "APP-F01",
+      "severity": "substantive",
+      "location": "多角色对白/作品依据",
+      "before": "把末页生字圈与未熟唱词写为缺词，可能与后段补本混淆。",
+      "change": "明确b021生字圈和按页；当前是词不熟，不能写成歌本已缺词。",
+      "evidence": "s001 b021、b027",
+      "status": "resolved_and_rechecked"
+    },
+    {
+      "id": "APP-F02",
+      "severity": "substantive",
+      "location": "空间与连续性/作品依据、方案A",
+      "before": "北洞—闸—短石道—南门的简写没有交代闸后另有短石道，人行后门也易与木闸混淆。",
+      "change": "完整列出北南顺序，并明示人行后门是另一处；投食动作统一称投食门/木闸。",
+      "evidence": "s018 b002、b007、b020—b024",
+      "status": "resolved_and_rechecked"
+    },
+    {
+      "id": "APP-F03",
+      "severity": "substantive",
+      "location": "空间与连续性/预期与检查",
+      "before": "跨s031—s033统称阿蘅门边，易冻结其后段位置。",
+      "change": "注明s032 b022才离开门边扶空臂，并注明八人到s033 b011—b012才缓卸。",
+      "evidence": "s032 b010、b022；s033 b011—b012",
+      "status": "resolved_and_rechecked"
+    },
+    {
+      "id": "APP-F04",
+      "severity": "clarification",
+      "location": "复杂动作、情绪表演、歌曲与声音",
+      "before": "参考/合成保障表述过强；母亲回应及身份可以更明确。",
+      "change": "接触关键帧仍须完成后检查；补列母亲原句；打拍者明确为阿蘅母亲。",
+      "evidence": "s010 b007；s041 b008—b010；12章结果验证边界",
+      "status": "resolved_and_rechecked"
+    },
+    {
+      "id": "QR-F01",
+      "severity": "terminology",
+      "location": "速查术语索引",
+      "before": "摇移混合旋转与位移；运镜动机用必须，易误读为唯一规则。",
+      "change": "改摇摄与横移，明示朝向/位置及视差区别；改为何选择。",
+      "evidence": "04-camera.md运动方式、可执行运动说明",
+      "status": "resolved_and_rechecked"
+    },
+    {
+      "id": "QR-F02",
+      "severity": "terminology",
+      "location": "速查声音术语",
+      "before": "拟音限定可见动作且笼统称人工声效；声音视点与正文命名不同；声桥仅链声音章。",
+      "change": "定义身体/物件动作补录或表演、不限画内；统一声音视角；声桥增剪辑章链接。",
+      "evidence": "11-sound.md声音视角及声部分工；10-editing.md声画切口",
+      "status": "resolved_and_rechecked"
+    },
+    {
+      "id": "QR-F03",
+      "severity": "terminology",
+      "location": "速查动画术语",
+      "before": "动态分镜似乎必须有临时声音；姿势间距与时间名称混淆位置间距。",
+      "change": "改可配临时声音；统一时间安排与间距，分别说明历时与帧间位置分配。",
+      "evidence": "12-animation-ai.md时长与间距、动态分镜定义",
+      "status": "resolved_and_rechecked"
+    }
+  ],
+  "unresolved": [],
+  "media_boundary": "应用仅为离线制作推导；本复核没有生成媒体、没有试听本剧歌曲/成片、没有改变正式镜头及采纳记录。",
+  "reviewed_sha256": {
+    "applications.md": "e6c28cbd93f91ade6fecf7627c5c4b67536b554c1b52c77951b8d2864fe233e5",
+    "quick-reference.md": "1da0ec4185f7ff44eba6627ea6c5167a61f6ae736f87487fdb86713a81c7100f"
+  }
+}

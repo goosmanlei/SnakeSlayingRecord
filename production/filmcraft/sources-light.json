@@ -1,0 +1,419 @@
+{
+  "sources": [
+    {
+      "id": "LD01",
+      "author": "Bill Holshevnikoff / ARRI",
+      "title": "ARRI Lighting Handbook, Fourth Edition",
+      "url": "https://www.arri.com/resource/blob/83996/409091c612f371b0c68b41d9dcb636db/arri-lighting-handbook-english-data.pdf",
+      "published": "2016；下载页标2020-02-19",
+      "accessed": "2026-10-08",
+      "locator": "印刷页4—17：Light Quality、Hard vs. Soft Light、Key/Fill/Separation/Background、Elements of 3-Dimensional Contrast",
+      "domains": [
+        "06"
+      ],
+      "supports": [
+        "光质与强度分开；光源尺寸改变影边",
+        "主光、补光、轮廓光按作用区分，轮廓光不是必需",
+        "柔光溢光需要控制"
+      ],
+      "read_scope": "通过官方PDF实际读取上述正文；未以器材章节推定当前规格。",
+      "kind": "official-guide"
+    },
+    {
+      "id": "LD02",
+      "author": "Eastman Kodak Company",
+      "title": "The Essential Reference Guide for Filmmakers",
+      "url": "https://www.kodak.com/content/products-brochures/Film/kodak-essential-reference-guide-for-filmmakers.pdf",
+      "published": "2007",
+      "accessed": "2026-10-08",
+      "locator": "印刷页52—53、109—112、133—137：Exposure Index and Latitude、Exposing Film、Lighting",
+      "domains": [
+        "06"
+      ],
+      "supports": [
+        "一挡表示光量倍增/减半",
+        "负补光减少回填；硬软与光量不同",
+        "胶片曝光经验有介质适用边界"
+      ],
+      "read_scope": "官方PDF下载后pdftotext实际读取指定章节；曝光时间示例隐含快门条件，不作为所有24fps的统一值。",
+      "kind": "official-guide"
+    },
+    {
+      "id": "LD03",
+      "author": "ARRI",
+      "title": "Dynamic Range — White Paper",
+      "url": "https://www.arri.com/resource/blob/295460/e10ff8a5b3abf26c33f8754379b57442/2022-09-28-arri-dynamic-range-whitepaper-data.pdf",
+      "published": "2022-09-28",
+      "accessed": "2026-10-08",
+      "locator": "PDF页4、13—19：Dynamic Range in the Scene、Exposure Index、Exposure Latitude",
+      "domains": [
+        "06"
+      ],
+      "supports": [
+        "场景明暗跨度与记录窗口不同",
+        "实际曝光改变暗部/高光取舍；EI是另一项控制",
+        "伪色与噪声判断依赖相机定义"
+      ],
+      "read_scope": "官方PDF下载后实际读取指定章节；只将ALEXA曝光指数行为归于文中设备，不推广所有相机。",
+      "kind": "official-guide"
+    },
+    {
+      "id": "LD04",
+      "author": "Eastman Kodak Company",
+      "title": "Gray Card for the Cinematographer",
+      "url": "https://www.kodak.com/en/motion/page/for-the-cinematographer/",
+      "published": "未标日期；胶片转录与配光流程",
+      "accessed": "2026-10-08",
+      "locator": "Shooting the KODAK Gray Card / R27；Normal Exposure and Color Balance；Mixed Lighting；Special Lighting and Exposure Control",
+      "domains": [
+        "06",
+        "07"
+      ],
+      "supports": [
+        "灰卡应说明中性校正或保留有意色光的用途",
+        "参考的拍摄条件和后期解释必须一致"
+      ],
+      "read_scope": "已读网页全文中灰卡操作与特殊光部分；不把胶片操作参数规定为数字/AI工作流。",
+      "kind": "official-guide"
+    },
+    {
+      "id": "LD05",
+      "author": "洪坰杓（Kyung-pyo Hong），ARRI采访",
+      "title": "ARRI SkyPanel shines in Academy Award-winning film Parasite",
+      "url": "https://www.arri.com/news-en/arri-skypanel-shines-in-academy-award-winning-film-parasite-/208884-208884",
+      "published": "2020；网页未显示具体日",
+      "accessed": "2026-10-08",
+      "locator": "问题 Did lighting play a big role... 及回答",
+      "domains": [
+        "06",
+        "07"
+      ],
+      "supports": [
+        "主创说明金家少日光、混合廉价实景灯，朴家充足日光与昂贵室内灯具"
+      ],
+      "read_scope": "实际读取官方页面导语与该问题完整回答；页面可获取正文仅这些段落。",
+      "kind": "creator-interview"
+    },
+    {
+      "id": "LD06",
+      "author": "Rosco",
+      "title": "Filter Facts",
+      "url": "https://www.rosco.com/sites/default/files/content/resource/2016-09/FilterFacts09.pdf",
+      "published": "2009版文件；站点资源路径2016-09",
+      "accessed": "2026-10-08",
+      "locator": "PDF页10—14（印刷页9—13）：Natural Daylight、CTO/CTB、Fluorescent Correction",
+      "domains": [
+        "06",
+        "07"
+      ],
+      "supports": [
+        "冷暖校正与绿/品红偏色校正不同",
+        "校色与减光可以分开处理；滤片有透过损失"
+      ],
+      "read_scope": "已实际打开PDF，并读取自然日光与人工光校正条目；产品数值不作为本项目规格。",
+      "kind": "official-guide"
+    },
+    {
+      "id": "LD07",
+      "author": "Eastman Kodak Company；Woody Omens、Rod Ryan、Bruce A. Block参与",
+      "title": "Exploring the Color Image, H-188",
+      "url": "https://www.kodak.com/content/products-brochures/Film/Exploring-the-Color-Image.pdf",
+      "published": "1996，2000重印",
+      "accessed": "2026-10-08",
+      "locator": "印刷页14—23：Production of Color、Spectral Reflectance、Viewing Conditions、Color as a Sensation、Munsell System",
+      "domains": [
+        "07",
+        "08"
+      ],
+      "supports": [
+        "色相、明度与饱和度不同",
+        "材料、光源和观看条件共同影响颜色",
+        "视觉匹配不等于光谱一致"
+      ],
+      "read_scope": "实际打开并下载PDF；已读指定正文，不采信过时生理机制推测为当前神经科学结论。",
+      "kind": "official-guide"
+    },
+    {
+      "id": "LD08",
+      "author": "Academy Color Encoding System",
+      "title": "The Academy Color Encoding System — Overview",
+      "url": "https://community.acescentral.com/uploads/default/original/1X/b8efb030fe699b9491fda084030779134c656cb3.pdf",
+      "published": "2018-08-13",
+      "accessed": "2026-10-08",
+      "locator": "PDF页1—2：ACES Color Science、Crafting a Look",
+      "domains": [
+        "07"
+      ],
+      "supports": [
+        "ACES帮助图像来源与输出之间的色彩管理",
+        "场景参照和显示参照含义不同",
+        "技术管理不代替创作风格"
+      ],
+      "read_scope": "实际读取两页概览；工作空间清单以LD09的现行文档补充。",
+      "kind": "official-guide"
+    },
+    {
+      "id": "LD09",
+      "author": "ACES / Academy Software Foundation",
+      "title": "Overview of ACES Encodings",
+      "url": "https://docs.acescentral.com/encodings/introduction/",
+      "published": "2025-09-10",
+      "accessed": "2026-10-08",
+      "locator": "What is ACES encoding?；Aren’t there other encodings?；Why are there different spaces?",
+      "domains": [
+        "07"
+      ],
+      "supports": [
+        "ACES2065-1、ACEScg与ACEScct服务不同工作用途",
+        "场景线性与非线性编码需明确区分"
+      ],
+      "read_scope": "实际读取网页三节及现行编码列表；不要求本项目统一改用ACES。",
+      "kind": "official-guide"
+    },
+    {
+      "id": "LD10",
+      "author": "Josef & Anni Albers Foundation",
+      "title": "Interaction of Color",
+      "url": "https://www.albersfoundation.org/alberses/teaching/interaction-of-color",
+      "published": "未标日期；介绍1963年著作与教学",
+      "accessed": "2026-10-08",
+      "locator": "正文从 In Albers’s universe 到书籍版本介绍前；颜色相互作用练习说明",
+      "domains": [
+        "07"
+      ],
+      "supports": [
+        "颜色感受依赖邻色条件",
+        "用实际比较检验配色，不能仅靠色轮口诀"
+      ],
+      "read_scope": "实际读取基金会教学介绍与书中短摘引；未冒称读完整本Interaction of Color。",
+      "kind": "foundation-teaching"
+    },
+    {
+      "id": "LD11",
+      "author": "Walt Disney Animation Studios",
+      "title": "Filmmaking Process — Lighting",
+      "url": "https://www.disneyanimation.com/process/lighting/",
+      "published": "未标日期；读取版本包含Zootopia 2（2025）",
+      "accessed": "2026-10-08",
+      "locator": "Primary Visual Looks；Zootopia Standard；Genre-Driven；Emotionally-Driven；末尾color keys说明",
+      "domains": [
+        "06",
+        "07"
+      ],
+      "supports": [
+        "同一作品可按叙事变化采用不同视觉方法",
+        "灯光从色键组织镜头注意力"
+      ],
+      "read_scope": "实际读取页面全文；只引用工作室所述流程和分类，未声称观测其动态成片。",
+      "kind": "studio-process"
+    },
+    {
+      "id": "LD12",
+      "author": "Walt Disney Animation Studios",
+      "title": "Filmmaking Process — Visual Development",
+      "url": "https://www.disneyanimation.com/process/visual-development/",
+      "published": "未标日期；页面包含2025作品",
+      "accessed": "2026-10-08",
+      "locator": "开头定义、Making Moments、Creating Compelling Characters；Moana 2 Color Script 图",
+      "domains": [
+        "07",
+        "08"
+      ],
+      "supports": [
+        "视觉开发由剧本与导演意图建立角色世界",
+        "色彩脚本通过并置简化画面比较整段关系"
+      ],
+      "read_scope": "已读全文，并实际下载、view_image查看Moana 2 Color Script原图；无成片动态观察。",
+      "kind": "studio-process",
+      "visual_materials": [
+        {
+          "url": "https://cdn.disneyanimation.com/uploads/pipeline/visual-development/MOANA2_Process_VisDev_02_v2.webp",
+          "viewed": "2026-10-08",
+          "locator": "页面最后Moana 2 Color Script",
+          "observation": "多行简化画面并置；蓝绿、紫红与橙红色区段及不同重心可比较。"
+        }
+      ]
+    },
+    {
+      "id": "LD13",
+      "author": "Walt Disney Animation Studios",
+      "title": "Filmmaking Process — Look Development",
+      "url": "https://www.disneyanimation.com/process/look-development/",
+      "published": "未标日期",
+      "accessed": "2026-10-08",
+      "locator": "The Process；Deconstructing Materials；Clothing；Iterations",
+      "domains": [
+        "08"
+      ],
+      "supports": [
+        "材质由颜色、形状细节、纹理与反射分层组织",
+        "视觉开发参考与最后镜头表现不是同一层工作"
+      ],
+      "read_scope": "实际读取页面指定文字；未把未查看的分解图当成视觉观察证据。",
+      "kind": "studio-process"
+    },
+    {
+      "id": "LD14",
+      "author": "Mike Olson 采访 Adam Stockhausen / Motion Picture Association",
+      "title": "The Grand Budapest Hotel Production Designer Adam Stockhausen Goes Handmade",
+      "url": "https://www.motionpictures.org/2014/03/the-grand-budapest-hotel-production-designer-adam-stockhausen-goes-handmade/",
+      "published": "2014-03-19",
+      "accessed": "2026-10-08",
+      "locator": "全文问答：research、miniature、Görlitz、staff quarters、sixties、execution；大厅/餐厅/职员房3图",
+      "domains": [
+        "07",
+        "08"
+      ],
+      "supports": [
+        "历史参考需综合成统一世界而非拼贴",
+        "美术与拍摄执行共同设计",
+        "区域反差而非单一色板构成影片设计"
+      ],
+      "read_scope": "实际读取全文并下载view_image查看文中3张原图；只分析静帧可见的色面、器物与空间，不推断运动或全片色彩曲线。",
+      "kind": "creator-interview",
+      "visual_materials": [
+        {
+          "url": "https://www.motionpictures.org/wp-content/uploads/2014/03/image-ac18d6f1-132b-4b7d-9e95-98b234463ade.jpg",
+          "locator": "Owen Wilson in the lobby",
+          "viewed": "2026-10-08",
+          "observation": "粉色大厅、金棕阶梯、深紫制服、黑旗形成差异。"
+        },
+        {
+          "url": "https://www.motionpictures.org/wp-content/uploads/2014/03/image-0e1cbab5-d63b-4763-9367-e89fa472033d.jpg",
+          "locator": "F. Murray Abraham and Jude Law in the grand ballroom",
+          "viewed": "2026-10-08",
+          "observation": "两人对坐举杯，橙黄棕色包围人物，背景桌子和壁画。"
+        },
+        {
+          "url": "https://www.motionpictures.org/wp-content/uploads/2014/03/image-03a37c1c-17dc-4bbd-bda1-5388279eb034.jpg",
+          "locator": "Tony Revolori as Zero in the servants quarters",
+          "viewed": "2026-10-08",
+          "observation": "灰褐窄房间、裸灯泡、挂衣和少量器物，Zero居中。"
+        }
+      ]
+    },
+    {
+      "id": "LD15",
+      "author": "CJ Entertainment / Barunson E&A；奉俊昊、李河埈、崔世妍等主创",
+      "title": "PARASITE — Cannes 2019 Press Kit",
+      "url": "https://cdn-media.festival-cannes.com/film_film/0001/66/72f026493fedd9576b0ebc4b7837fd67b8cc95a3.pdf",
+      "published": "2019",
+      "accessed": "2026-10-08",
+      "locator": "PDF页11：Creating Two Different Worlds Through Production Design；页21—22：摄影/美术/服装/妆发原述",
+      "domains": [
+        "06",
+        "07",
+        "08"
+      ],
+      "supports": [
+        "高低住宅与躲藏转角是有意空间条件",
+        "服装可选择融入环境而非永远突出人物",
+        "人物造型变化须保留可辨认的连续性"
+      ],
+      "read_scope": "通过web实际读取指定PDF文字；本机PDF下载超时，不声称查看PDF图片。",
+      "kind": "official-production-notes"
+    },
+    {
+      "id": "LD16",
+      "author": "ScreenSkills",
+      "title": "Production designer (Film and TV Drama)",
+      "url": "https://www.screenskills.com/job-profiles/browse/film-and-tv-drama/craft/production-designer-film-and-tv-drama/",
+      "published": "未标日期",
+      "accessed": "2026-10-08",
+      "locator": "What does a production designer do?；What’s a production designer good at?",
+      "domains": [
+        "08"
+      ],
+      "supports": [
+        "美术设计从剧本并与视觉部门协作",
+        "草图包含氛围、光线、构图、颜色与纹理",
+        "预算排期与执行是设计职责的一部分"
+      ],
+      "read_scope": "已读角色职责与技能部分，未将职业入行建议写入制作知识。",
+      "kind": "industry-training"
+    },
+    {
+      "id": "LD17",
+      "author": "ScreenSkills",
+      "title": "Hair and make-up designer (Film and TV Drama)",
+      "url": "https://www.screenskills.com/job-profiles/browse/film-and-tv-drama/craft/hair-and-make-up-designer-film-and-tv-drama/",
+      "published": "未标日期",
+      "accessed": "2026-10-08",
+      "locator": "What does a hair and make-up designer do?；What’s a hair and make-up designer good at?",
+      "domains": [
+        "08"
+      ],
+      "supports": [
+        "妆发按剧情变化并保留连续性记录",
+        "造型应与摄影部门在不同照明下测试"
+      ],
+      "read_scope": "已读职责、技能和协作说明；未引用入行部分。",
+      "kind": "industry-training"
+    },
+    {
+      "id": "LD18",
+      "author": "ScreenSkills",
+      "title": "Costume designer (Film and TV Drama)",
+      "url": "https://www.screenskills.com/job-profiles/browse/film-and-tv-drama/craft/costume-designer-film-and-tv-drama/",
+      "published": "未标日期",
+      "accessed": "2026-10-08",
+      "locator": "What does a costume designer do?；What’s a costume designer good at?",
+      "domains": [
+        "08"
+      ],
+      "supports": [
+        "服装服务人物叙事并与美术妆发协作",
+        "试装照片与沟通帮助落实设计",
+        "需要倾听演员的实际穿着需求"
+      ],
+      "read_scope": "已读职责、技能与试装记录部分；二维动作检查是本文转译而非来源原话。",
+      "kind": "industry-training"
+    },
+    {
+      "id": "LD19",
+      "author": "ARRI",
+      "title": "Color FAQ",
+      "url": "https://www.arri.com/en/learn/camera-systems/image-science/color-faq",
+      "published": "未标日期；读取页面同时含LogC3与LogC4条目",
+      "accessed": "2026-10-08",
+      "locator": "LogC4转换说明；What is a 1D-LUT?；My images seem to be lacking contrast...；What is Scene Linear?；What is ARRI/ALEXA Wide Gamut?；What is a 3D-LUT?",
+      "domains": [
+        "06",
+        "07"
+      ],
+      "supports": [
+        "编码、色域、观看转换不能混为一谈",
+        "LUT具有输入前提，不是无条件风格滤镜",
+        "Log直接显示的低反差不等于最终造型"
+      ],
+      "read_scope": "实际读取上述问答；区分历史LogC3示例与新LogC4说明，不转述老接口为当前通用规则。",
+      "kind": "official-guide"
+    },
+    {
+      "id": "LD20",
+      "author": "CJ ENM / Barunson E&A 剧照；ナタリー供稿，ぴあ掲載",
+      "title": "パラサイト 半地下の家族：新場面写真",
+      "url": "https://lp.p.pia.jp/article/news/76858/index.html",
+      "published": "2019-10-21",
+      "accessed": "2026-10-08",
+      "locator": "文章首张发布剧照：金家父母在厨房餐桌旁",
+      "domains": [
+        "06"
+      ],
+      "supports": [
+        "该静帧可见的物件密度、人物间距与面部明暗"
+      ],
+      "read_scope": "已打开发布页核对版权说明，下载原图并实际view_image；只使用图像观察，不将新闻转述计作专业原理来源。",
+      "kind": "publicity-still",
+      "count_for_research_minimum": false,
+      "visual_materials": [
+        {
+          "url": "https://lp.p.pia.jp/shared/materials/bfd27a40-7e85-460e-bda3-9cca0306a2fd/origin.jpg",
+          "locator": "首张剧照",
+          "viewed": "2026-10-08",
+          "observation": "父母坐圆桌两侧；橱柜、线缆、餐具密集；左墙较亮，两人的脸保留明暗与细节。"
+        }
+      ]
+    }
+  ]
+}

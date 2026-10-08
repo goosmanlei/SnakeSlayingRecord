@@ -1,0 +1,216 @@
+{
+  "task": "task-20261008-0006",
+  "date": "2026-10-08",
+  "purpose": "Google Gemini raw-audio understanding reliability check; text output only",
+  "authorization": "User selected Google Gemini; maximum three requests, within CNY 1 budget",
+  "attempts": [
+    {
+      "status": "completed",
+      "model": "gemini-3.8-flash",
+      "input": {
+        "source": "zero-valued PCM control",
+        "duration_seconds": 5,
+        "file": ".runtime/filmcraft/audio-research/sample-c.wav",
+        "sha256": "3f46e59f7d98476a0efab2bad647733d2fa7b9647ac2680315c5b3f2116a44a1"
+      },
+      "prompt": "只依据附带原始音频，用中文分析；不检索或猜测片名，不根据文件名/常见影片情节补充声音。可能存在静音对照。先判断是否能听到声音、音乐、语音或非语音人/动物声；没有就明确写没有。按相对本片段的时间（秒）描述主要可听事件与音乐/环境/音效层次、起止及变化；无法定位时给范围而不是虚构精确时间。区分直接听到的声学特征和推测的物理声源，不把低沉声自动叫雷声。简述这些层次怎样引导注意力或等待，但未知画面时不能确认声画同步、摄影机运动、人物身份或叙事意图。最后列出不确定内容。不要提供歌词、谱面或长段转写。只返回分析文本，不生成音频。约500个中文字。",
+      "generation_config": {
+        "max_output_tokens": 2200,
+        "thinking_level": "low"
+      },
+      "submitted_at": "2026-10-08T13:54:44.536921+00:00",
+      "reserved_cost_usd": 0.025,
+      "total_attempt_limit": 3,
+      "user_budget_cny": 1,
+      "pricing_url": "https://ai.google.dev/gemini-api/docs/pricing#gemini-3.8-flash",
+      "price_usd_per_million": {
+        "input": 0.75,
+        "output": 3.75
+      },
+      "output_kind": "text_only",
+      "response_id": null,
+      "usage": {
+        "total_tokens": 827,
+        "total_input_tokens": 316,
+        "input_tokens_by_modality": [
+          {
+            "modality": "audio",
+            "tokens": 125
+          },
+          {
+            "modality": "text",
+            "tokens": 191
+          }
+        ],
+        "total_cached_tokens": 0,
+        "total_output_tokens": 511,
+        "total_tool_use_tokens": 0,
+        "total_thought_tokens": 0,
+        "raw_prompt_token": 382,
+        "model_invocation_token_counts": [
+          {
+            "prompt_tokens_details": [
+              {
+                "modality": "text",
+                "tokens": 232
+              },
+              {
+                "modality": "audio",
+                "tokens": 150
+              }
+            ],
+            "candidates_tokens_details": [
+              {
+                "modality": "text",
+                "tokens": 515
+              }
+            ]
+          }
+        ],
+        "non_grounding_model_invocation_token_counts": [
+          {
+            "prompt_tokens_details": [
+              {
+                "modality": "text",
+                "tokens": 232
+              },
+              {
+                "modality": "audio",
+                "tokens": 150
+              }
+            ],
+            "candidates_tokens_details": [
+              {
+                "modality": "text",
+                "tokens": 515
+              }
+            ]
+          }
+        ]
+      },
+      "actual_model": "gemini-3.8-flash",
+      "attempt": "sample-c-call",
+      "endpoint_kind": "interactions",
+      "analysis": "**声音存在性判断**：\n本片段中能听到清晰的声音。包含音乐、语音（人声哼唱）以及背景环境底噪，没有听到动物声或除人声之外的明确非语音生物声。\n\n**时间线与声音层次分析（相对时间）**：\n- **0.0秒 - 4.5秒（全段贯穿）**：\n  - **音乐/人声层次**：以一段轻柔的女声无词哼唱（近似“嗯/啊”的母音）为主导旋律，音色圆润、柔和，呈现平缓的抒情旋律线条，音量相对稳定，在中后段略有起伏后自然延伸。\n  - **环境/背景层次**：伴随持续且微弱的低频空气感底噪，以及轻微的声学混响，声场空间感偏向室内或带有适度人工混响的空旷环境。\n  - **音效层次**：未听到明显的瞬态撞击、脚步或机械音效，整体缺乏突发的硬性音效事件。\n\n**声学特征与推测声源**：\n- **直接声学特征**：单一人声旋律，音高居中偏高，发声平滑连贯，具有明显的母音共鸣与延音衰减特性；伴底底噪为平稳宽频的轻微噪声。\n- **推测物理声源**：成年女性或年轻人的近距离麦克风哼唱/伴唱，可能经过了轻微的混响音频处理。\n\n**听觉注意力与等待感引导**：\n由于全段缺乏突发音效与强烈节奏，持续平缓的哼唱旋律在听觉上构建了一种静态、安宁或略带感伤的基调。人声的连续延音与无词特性将注意力完全聚焦于旋律起伏本身，避免了语义理解的干扰，产生一种悬置、沉思或持续等待下一步视听事件展开的情绪引导。\n\n**不确定内容**：\n- 无法确认人声是否为单声道单轨录制还是叠加了伴奏轨。\n- 背景微弱噪声的具体物理来源（录音底噪、室内空调风声或特定环境音）无法确定。\n- 无法确认哼唱者的具体年龄与身份。"
+    },
+    {
+      "status": "failed_or_unknown",
+      "model": "gemini-2.5-flash",
+      "input": {
+        "source": "zero-valued PCM control",
+        "duration_seconds": 5,
+        "file": ".runtime/filmcraft/audio-research/sample-c.wav",
+        "sha256": "3f46e59f7d98476a0efab2bad647733d2fa7b9647ac2680315c5b3f2116a44a1"
+      },
+      "prompt": "只依据附带原始音频，用中文分析；不检索或猜测片名，不根据文件名/常见影片情节补充声音。可能存在静音对照。先判断是否能听到声音、音乐、语音或非语音人/动物声；没有就明确写没有。按相对本片段的时间（秒）描述主要可听事件与音乐/环境/音效层次、起止及变化；无法定位时给范围而不是虚构精确时间。区分直接听到的声学特征和推测的物理声源，不把低沉声自动叫雷声。简述这些层次怎样引导注意力或等待，但未知画面时不能确认声画同步、摄影机运动、人物身份或叙事意图。最后列出不确定内容。不要提供歌词、谱面或长段转写。只返回分析文本，不生成音频。约500个中文字。",
+      "generation_config": {
+        "maxOutputTokens": 2200,
+        "temperature": 0,
+        "thinkingConfig": {
+          "thinkingBudget": 0
+        }
+      },
+      "submitted_at": "2026-10-08T13:58:32.339506+00:00",
+      "reserved_cost_usd": 0.025,
+      "total_attempt_limit": 3,
+      "user_budget_cny": 1,
+      "pricing_url": "https://ai.google.dev/gemini-api/docs/pricing#gemini-2.5-flash",
+      "price_usd_per_million": {
+        "audio_input": 1.0,
+        "text_input": 0.3,
+        "output": 2.5
+      },
+      "output_kind": "text_only",
+      "attempt": "sample-c-v25-call",
+      "endpoint_kind": "generateContent",
+      "error": "{\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.8-flash for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n"
+    },
+    {
+      "status": "completed",
+      "model": "gemini-3.8-flash",
+      "input": {
+        "inputs_in_order": [
+          {
+            "source": "caminandes.mp4",
+            "source_start_seconds": 30,
+            "duration_seconds": 23.0,
+            "file": ".runtime/filmcraft/audio-research/sample-b.wav",
+            "sha256": "9ed93efce0dcaec826e835bad9c4e7b3348c33ea25f8b17e820b4eea339f49fc"
+          },
+          {
+            "source": "zero-valued PCM control",
+            "duration_seconds": 5,
+            "file": ".runtime/filmcraft/audio-research/sample-c.wav",
+            "sha256": "3f46e59f7d98476a0efab2bad647733d2fa7b9647ac2680315c5b3f2116a44a1"
+          },
+          {
+            "source": "bbb.mp4",
+            "source_start_seconds": 78,
+            "duration_seconds": 18.0,
+            "file": ".runtime/filmcraft/audio-research/sample-a.wav",
+            "sha256": "8cdeb0ab81ce06906e4ca2342cfe81cbec5a5503874de784ad51a1f575795519"
+          }
+        ]
+      },
+      "prompt": "分析附带的三个独立音频，各自单独输出编号1/2/3。只依据原始音频，不检索、不猜影片、不按文件名补充内容。每段先判断实际有无声音；完全无声应明确说明，不得虚构声源或音乐。其余只描述听到的音乐、人声、环境与效果声，以及按该段相对秒数表示的主要变化。将直接声学特征与推测声源分开，无法确定就写未知；不知道画面，不能声称声画同步。每段约250个中文字。不要歌词、谱面或长转写。",
+      "generation_config": {
+        "maxOutputTokens": 2400,
+        "temperature": 0,
+        "thinkingConfig": {
+          "thinkingLevel": "low"
+        }
+      },
+      "submitted_at": "2026-10-08T13:59:37.256694+00:00",
+      "reserved_cost_usd": 0.025,
+      "total_attempt_limit": 3,
+      "user_budget_cny": 1,
+      "pricing_url": "https://ai.google.dev/gemini-api/docs/pricing#gemini-3.8-flash",
+      "price_usd_per_million": {
+        "input": 0.75,
+        "output": 3.75
+      },
+      "output_kind": "text_only",
+      "response_id": null,
+      "usage": {
+        "promptTokenCount": 1295,
+        "candidatesTokenCount": 437,
+        "totalTokenCount": 1732,
+        "promptTokensDetails": [
+          {
+            "modality": "AUDIO",
+            "tokenCount": 1150
+          },
+          {
+            "modality": "TEXT",
+            "tokenCount": 145
+          }
+        ],
+        "serviceTier": "standard"
+      },
+      "actual_model": "gemini-3.8-flash",
+      "attempt": "combined-generate-call",
+      "endpoint_kind": "generateContent",
+      "analysis": "**音频编号1**\n该音频实际有声音。\n- **声学特征与时间变化**：0-3秒为高频尖锐的女声喊叫及急促的吸气、粗喘声。3-12秒背景转为带有空间混响的环境低频低吼与空灵风声，夹杂短促的金属质感摩擦与微弱回音；8-11秒出现类似钟摆摆动或机械转动的轻微节奏声。12-19秒为轻微的脚步声或物体摩擦声，伴随空旷环境回响。20-21秒突发两声沉重短促的钝击响声。\n- **推测声源**：成年女性尖叫与喘息；未知空旷室内或地下空间的环境背景声；未知钟摆或链条转动声；未知地面脚步走动；未知重物撞击或关门声。\n\n**音频编号2**\n该音频实际完全无声（全长约4秒，未检测到任何有效声音信号、背景底噪或环境声源）。\n\n**音频编号3**\n该音频实际有声音。\n- **声学特征与时间变化**：0-4秒为悠长、颤动的高音人声哼鸣与微弱的叹息声，混响较大。4-6秒出现较清晰的木质或硬质撞击击打声与摩擦声。6-11秒转为连贯的水流流动与微弱翻滚声，伴随空旷的滴水或回音混响。12-14秒背景出现低频气流呼啸声。14-17秒出现类似微弱的织物摩擦或呼吸余音后逐渐淡出。\n- **推测声源**：女性或童声的虚无吟唱/哼鸣；未知硬物碰撞或木质机关声；地下洞穴或水管流动的水流声、滴水声；未知环境风声。"
+    }
+  ],
+  "silent_control": {
+    "pcm_sample_count": 240000,
+    "min": 0,
+    "max": 0,
+    "seconds": 5,
+    "channels": 2,
+    "sample_rate": 24000
+  },
+  "decision": "No audio descriptions accepted as film evidence: the first call hallucinated detailed singing from zero PCM; the later correct silence result does not independently validate real clip descriptions. 2.5 Flash was listed but returned 404 unavailable. No more calls.",
+  "accepted_acoustic_claims": [],
+  "cost": {
+    "successful_requests": 2,
+    "http_404_requests": 1,
+    "estimated_usd_from_returned_usage_and_published_rates": 0.00476325,
+    "conservative_request_reservation_usd": 0.075,
+    "conversion_for_budget_only_cny_per_usd": 10,
+    "reserved_budget_cny": 0.75,
+    "conversion_note": "Conservative accounting bound, not a market FX quote or invoice. Actual billing not available."
+  },
+  "retention": "Sanitized receipts and input hashes retained here; local raw responses/audio extracts may be removed after audit."
+}

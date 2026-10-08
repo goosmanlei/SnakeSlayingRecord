@@ -35,8 +35,36 @@ RELEASE_PREFIXES={TASK:'materials-20261004-0004', 'task-20261004-0005':'asset-cl
                   'task-20261006-0002':'entity-cards-20261006-0002',
                   'task-20261006-0003':'breakdown-shot-v2-20261006-0003',
                   'task-20261006-0006':'approach-20261006-0006',
+                  'task-20261008-0002':'seedance-handbook-20261008-0002',
+                  'task-20261008-0006':'filmcraft-20261008-0006',
                   'entity-acceptance-20261004':'entity-acceptance-20261004'}
 require,sha,read,save,run,git,inspect=base.require,base.sha,base.read,base.save,base.run,base.git,base.inspect
+METHOD_MEDIA_DIRECTORY='content/production-approach-assets'
+
+
+def method_media_files(document):
+    files={}
+    for tab in document.get('tabs',[]):
+        for section in tab.get('sections',[]):
+            for block in section.get('blocks',[]):
+                if block.get('type')!='media':continue
+                filename,digest=block.get('file'),block.get('sha256')
+                require(isinstance(filename,str) and re.fullmatch(r'[a-z0-9][a-z0-9._-]*\.(png|jpg|jpeg|webp|svg|mp4|webm|mp3|wav)',filename),'unsafe method media filename')
+                require(isinstance(digest,str) and re.fullmatch(r'[a-f0-9]{64}',digest),'method media hash missing')
+                relative=METHOD_MEDIA_DIRECTORY+'/'+filename
+                require(relative not in files or files[relative]==digest,'conflicting method media versions')
+                files[relative]=digest
+    return files
+
+
+def method_directory_hashes(folder):
+    folder=Path(folder)
+    require(folder.is_dir() and not folder.is_symlink(),'method media mount must be a directory')
+    files={}
+    for path in folder.iterdir():
+        require(path.is_file() and not path.is_symlink(),'unexpected method media mount entry')
+        files[path.name]=file_sha256(path)
+    return files
 
 
 def release_name(task, story_candidate, system_candidate):
@@ -64,7 +92,10 @@ def prepare(a):
     require(proxy['ports']==base.PORTS and not nginx['Mounts'],'formal proxy layout changed')
     require(app['State']['Running'] and app['State'].get('Health',{}).get('Status')=='healthy','formal app unhealthy')
     mounts={m['Destination']:m for m in old['mounts']}
-    require(set(mounts)=={'/instance','/instance/config/instance.json','/instance/content/production-approach.json','/run/local-ca/cacert.pem'},'review unknown formal mounts')
+    expected_mounts={'/instance','/instance/config/instance.json','/instance/content/production-approach.json','/run/local-ca/cacert.pem'}
+    media_mount=mounts.get('/instance/'+METHOD_MEDIA_DIRECTORY)
+    if media_mount:expected_mounts.add('/instance/'+METHOD_MEDIA_DIRECTORY)
+    require(set(mounts)==expected_mounts,'review unknown formal mounts')
     require(mounts['/instance']['Source']==str(sm) and mounts['/instance']['RW'],'normal live instance mount differs')
     require(all(not mounts[n]['RW'] for n in mounts if n!='/instance'),'overlay and CA must be read-only')
     # Preserve exact service process/environment semantics of the verified images.
@@ -77,9 +108,14 @@ def prepare(a):
     hashes={}
     def put(rel,raw):base.write_once(root/rel,raw);hashes[rel]=sha(raw)
     for name in base.INSTANCE_FILES:put('instance/'+name,base.git_file(story,a.story_candidate,name))
+    method_media=method_media_files(read(root/'instance/content/production-approach.json'))
+    for name,digest in method_media.items():
+        raw=base.git_file(story,a.story_candidate,name)
+        require(sha(raw)==digest,'method media differs from declared version: '+name)
+        put('instance/'+name,raw)
     cfg=read(root/'instance/config/instance.json');require(cfg['review_desk_commit']==a.system_candidate,'candidate instance pin differs')
     current_files={name:sha(Path(mounts['/instance/'+name]['Source']).read_bytes()) for name in base.INSTANCE_FILES}
-    require(task in {'task-20261005-0007','task-20261006-0006','task-20261008-0001'} or current_files['content/production-approach.json']==hashes['instance/content/production-approach.json'],'approach content change is outside this release')
+    require(task in {'task-20261005-0007','task-20261006-0006','task-20261008-0001','task-20261008-0002','task-20261008-0006'} or current_files['content/production-approach.json']==hashes['instance/content/production-approach.json'],'approach content change is outside this release')
     source={}
     for line in git(system,'ls-tree','-r',a.system_candidate,'--','review_desk').splitlines():
         header,name=line.split('\t',1);require(header.split()[0] in ('100644','100755'),'special source file')
@@ -97,6 +133,8 @@ def prepare(a):
     put('system-delivery.json',json.dumps(plan,ensure_ascii=False,indent=2).encode()+b'\n')
     m={**policy,'format':'material-review-release-v1','task':task,'push':False,'story_worktree':str(story),'system_worktree':str(system),'story_main':str(sm),'system_main':str(gm),'story_candidate':a.story_candidate,'story_target':a.story_target,'system_candidate':a.system_candidate,'system_target':a.system_target,'system_upstream':upstream,'release_name':release_id,'hashes':hashes,'source_hashes':source,'base_image_tag':tag,'previous_app':old,'previous_nginx':proxy,'previous_compose_hashes':{f:sha(Path(f).read_bytes()) for f in files},'previous_instance_hashes':current_files,'ca_sha256':sha(Path(mounts['/run/local-ca/cacert.pem']['Source']).read_bytes()),'prepared_at':datetime.now(timezone.utc).isoformat()}
     m['delivery_backend']='codex.task' if native else 'legacy'
+    if method_media:m['method_media']=method_media
+    if media_mount:m['previous_method_media']=method_directory_hashes(media_mount['Source'])
     if native:m['task_delivery']=native
     if task=='task-20261006-0005':
         m['database_changes']={'format':'transactional-read-cache-v1','journal_mode':'delete','journal_mode_changed':False,
@@ -144,6 +182,9 @@ def checks(root,m,live=True):
         require(base.safe_container(inspect(base.APP))==m['previous_app'] and base.safe_container(inspect(base.NGINX))==m['previous_nginx'],'formal service drifted')
         for name,value in m['previous_instance_hashes'].items():
             path=next(x['Source'] for x in m['previous_app']['mounts'] if x['Destination']=='/instance/'+name);require(sha(Path(path).read_bytes())==value,'formal overlay drifted')
+        if 'previous_method_media' in m:
+            path=next(x['Source'] for x in m['previous_app']['mounts'] if x['Destination']=='/instance/'+METHOD_MEDIA_DIRECTORY)
+            require(method_directory_hashes(path)==m['previous_method_media'],'formal method media drifted')
     return image
 
 
@@ -235,7 +276,7 @@ def file_sha256(path):
 def install(root,m,image):
     release=Path(m['story_main'])/'.runtime/service-releases'/m['release_name']
     require(not release.is_symlink(),'release must not be symlink')
-    for name in base.INSTANCE_FILES:base.write_once(release/'instance'/name,(root/'instance'/name).read_bytes())
+    for name in (*base.INSTANCE_FILES,*m.get('method_media',{})):base.write_once(release/'instance'/name,(root/'instance'/name).read_bytes())
     for name in ('manifest.json','image.json'):base.write_once(release/name,(root/name).read_bytes())
     for name in ('material_review_release.py','autonomous_optimization_release.py'):base.write_once(release/name,(root/'helpers'/name).read_bytes())
     save(release/'compose.release.json',base.compose_definition(m,image,release))
