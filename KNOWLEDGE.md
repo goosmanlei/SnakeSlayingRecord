@@ -65,7 +65,7 @@
 
 ## 生成工具与规格
 
-- 后续视频方案与 Prompt 编写的统一入口为 [视频生成手册](production/seedance-video-handbook.md)，按任务要求先读并应用，再核对当次接口和准确输入；正文及能力表只在手册维护。页面读取副本由 `scripts/sync_video_handbook.py` 确定生成，`--check` 校验一致性。交付状态以主任务账本为准，研究候选不代表正式准则已验收。来源：`task-20261008-0002` 的用户交付要求与实例派生工具。
+- 后续视频方案与 Prompt 编写的统一入口为 [视频生成手册](production/seedance-video-handbook.md)，按任务要求先读并应用，再核对当次接口和准确输入；正文及能力表只在手册维护。页面读取副本由 `scripts/sync_video_handbook.py` 确定生成，`--check` 校验一致性。原创教学 Demo、研究观察与本故事的镜头采用分别判断；准确交付和正式运行以主任务账本及发布回执为准。来源：`task-20261008-0002` 的用户交付要求、原件研究与实例派生工具。
 - 画面方向为二维人物＋轻手绘背景、16:9 横屏，仅用已确认平台及可用额度，不自行充值、购买或另开收费 API。原制作要求为原生 4K；全剧首轮 `task-20261002-0003` 经用户 2026-10-02 调整，接受指定模型实际最高原生尺寸，保留未放大原件，该例外不改旧图规格。OpenArt 固定项目、CLI 优先、母版与最多两代图生图规则见 [AGENTS.md](AGENTS.md)、`config/openart.json`。
 - 图像首选约定为 OpenArt 的 GPT IMG 2.5，Credit 用完后全剧首轮获准切到 Codex 内置 GPT Image。CLI 0.1.1 曾拒绝 `--quality`，当时改用同账号／项目连接器；内置工具当时未暴露可选型号、质量、像素尺寸、服务端调用 ID 或用量，最多接收五张参考。以上是历史能力，执行前重查，只记录实际暴露字段和实际像素，不将文件 ID 当调用 ID。来源：`production/full-generation/README.md`、请求与回执。
 - 当前作品的河街是可涉水浅滩与低缓岸坡，下游石缝暗水仅为局部。横杠安装须保持已认可短石道本体、闸后封顶短段及岩根，长杠高于石盖并给两端成人留出下压空间。每批母版认可仅绑定准确原件，不能扩到新候选、其他身份或镜头采用，也不重置图生图代数。准确意见与认可入口在 `production/full-generation/`，分别见 `river-feedback.json`、`crossbeam-continuity-approvals.json` 及各批 `*-approvals.json`。
