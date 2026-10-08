@@ -77,6 +77,8 @@
 
 ## 数据权威、发布与恢复
 
+- 已确认 VPS 完整体验版使用独立可写体验库，普通重启保留操作，每次显式发版以本机准确完整快照重置且成功后不长期保留旧部署及上轮体验数据，本机始终是正式数据权威；访问保护、扩容前提、共享服务边界与验收要求见 [VPS 体验部署说明](planning/vps-experience-deployment-task.md)。
+
 - 发布清单保存准确任务、提交和构建来源，与任务工作区的生命周期独立。`scripts/task_workspace_guard.py` 按实际 Docker 挂载、发布 Compose 及恢复配置中的目录依赖保护工作区，不因清单保留或任务编号相同而阻断；清理不改写冻结清单。检查器更新后须核对并更新账本绑定摘要，不能跳过摘要检查。依据：用户 2026-10-08 对清单留存阻断清理的纠正、检查器及 `tests/test_task_repository_delivery.py`。
 
 - 正式审阅台发布统一使用 `story-review-desk:current`、`:previous`、`:base` 三个固定镜像标签；候选、正式 Compose 与恢复仍按准确镜像 ID 校验。构建基底不随发布移动，避免逐版叠层；旧冻结包保持原辅助脚本。标签收敛、并行构建及清理边界见 [生成工作区流程](production/generation-workspaces.md#审阅台镜像的固定名称)。来源：用户固定镜像名要求、`scripts/material_review_release.py`、`scripts/autonomous_optimization_release.py`、`scripts/normalize_review_images.py`。
