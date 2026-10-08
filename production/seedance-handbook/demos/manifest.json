@@ -1,0 +1,169 @@
+{
+  "format": "original-handbook-demos-v1",
+  "generated_on": "2026-10-08",
+  "prompt_authority": "production/seedance-video-handbook.md",
+  "images": [
+    {
+      "file": "content/production-approach-assets/workshop-master.png",
+      "sha256": "77f6dce301b56f8a80875758ff18ce1ab06655b441538c8835e459f881fc62a9",
+      "width": 1672,
+      "height": 941,
+      "provider": "built-in image generation tool",
+      "model_identifier": "not returned",
+      "prompt_file": "workshop-master-prompt.txt",
+      "generation_depth": 0
+    },
+    {
+      "file": "content/production-approach-assets/dialogue-master.png",
+      "sha256": "1dcc955083bf09dac2800954d0ea97a101c3c1227f754a047a2a3334a59c82ea",
+      "width": 1672,
+      "height": 941,
+      "provider": "built-in image generation tool",
+      "model_identifier": "not returned",
+      "prompt_file": "dialogue-master-prompt.txt",
+      "generation_depth": 1
+    }
+  ],
+  "videos": [
+    {
+      "file": "content/production-approach-assets/action-current.mp4",
+      "sha256": "7d00e8352767ac28916338702262201e014ff8831ea4584a49b53854e93f0313",
+      "model_identifier": "seedance2.0_fast_vision",
+      "task_type": "reference",
+      "requested_duration": 8,
+      "ratio": "16:9",
+      "resolution": "720p",
+      "inputs": [
+        {
+          "kind": "image",
+          "file": "workshop-master.png",
+          "sha256": "77f6dce301b56f8a80875758ff18ce1ab06655b441538c8835e459f881fc62a9"
+        }
+      ],
+      "output": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 8.041731,
+        "audio_present": true
+      },
+      "prompt_section": "demo-action-current",
+      "prompt_sha256": "1c68288719010f7ca90866867b8aa03ee5136175f6aaa6b10411e355aa68e6b1",
+      "completed_at": "2026-10-08T03:27:40.759150+00:00"
+    },
+    {
+      "file": "content/production-approach-assets/dialogue.mp4",
+      "sha256": "86950972f7bfd9849099e3dcefe8d9f05991dd4dfbb80afc03343fe8ed8050d5",
+      "model_identifier": "seedance2.0_fast_vision",
+      "task_type": "reference",
+      "requested_duration": 12,
+      "ratio": "16:9",
+      "resolution": "720p",
+      "inputs": [
+        {
+          "kind": "image",
+          "file": "workshop-master.png",
+          "sha256": "77f6dce301b56f8a80875758ff18ce1ab06655b441538c8835e459f881fc62a9"
+        },
+        {
+          "kind": "image",
+          "file": "dialogue-master.png",
+          "sha256": "1dcc955083bf09dac2800954d0ea97a101c3c1227f754a047a2a3334a59c82ea"
+        }
+      ],
+      "output": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 12.041763,
+        "audio_present": true
+      },
+      "prompt_section": "demo-dialogue",
+      "prompt_sha256": "e1733c83056385eb3b3739bcc0fa15fc1f6aadf4fc82cdf39ad2b39b1c6bf853",
+      "completed_at": "2026-10-08T03:33:55.157651+00:00"
+    },
+    {
+      "file": "content/production-approach-assets/extension.mp4",
+      "sha256": "41ef5946828719f72f6fa683c46ae5999d684ad7471f02b13180b2d38237e2b8",
+      "model_identifier": "Seedance_2.5",
+      "task_type": "extend",
+      "requested_duration": 6,
+      "ratio": "adaptive",
+      "resolution": "720p",
+      "inputs": [
+        {
+          "kind": "image",
+          "file": "workshop-master.png",
+          "sha256": "77f6dce301b56f8a80875758ff18ce1ab06655b441538c8835e459f881fc62a9"
+        },
+        {
+          "kind": "video",
+          "file": "action-current.mp4",
+          "sha256": "7d00e8352767ac28916338702262201e014ff8831ea4584a49b53854e93f0313"
+        }
+      ],
+      "output": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 6.000048,
+        "audio_present": true
+      },
+      "prompt_section": "demo-extension",
+      "prompt_sha256": "51eea4dd507265e6b709ebd13661b116d1d2eccf8890d866bc52a97c1efab6d5",
+      "completed_at": "2026-10-08T03:36:55.567846+00:00"
+    },
+    {
+      "file": "content/production-approach-assets/style.mp4",
+      "sha256": "e834dad284670750d792e4f0e078e43ee855adc93f8e08cb4fa0ccb30bbc8282",
+      "model_identifier": "Seedance_2.5",
+      "task_type": "reference",
+      "requested_duration": 18,
+      "ratio": "16:9",
+      "resolution": "720p",
+      "inputs": [
+        {
+          "kind": "image",
+          "file": "workshop-master.png",
+          "sha256": "77f6dce301b56f8a80875758ff18ce1ab06655b441538c8835e459f881fc62a9"
+        },
+        {
+          "kind": "video",
+          "file": "action-current.mp4",
+          "sha256": "7d00e8352767ac28916338702262201e014ff8831ea4584a49b53854e93f0313"
+        }
+      ],
+      "output": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 18.041811,
+        "audio_present": true
+      },
+      "prompt_section": "demo-style",
+      "prompt_sha256": "c91402d80f9499e93da7970d0950beb9831c9cc2669e230886d7346fa44761d0",
+      "completed_at": "2026-10-08T03:43:38.490484+00:00"
+    },
+    {
+      "file": "content/production-approach-assets/song.mp4",
+      "sha256": "c1bfb595628c88a1bcc736895a3c56db0e8eaa3c13f41db145d2b3e92a94931a",
+      "model_identifier": "Seedance_2.5",
+      "task_type": "reference",
+      "requested_duration": 20,
+      "ratio": "16:9",
+      "resolution": "720p",
+      "inputs": [
+        {
+          "kind": "image",
+          "file": "workshop-master.png",
+          "sha256": "77f6dce301b56f8a80875758ff18ce1ab06655b441538c8835e459f881fc62a9"
+        }
+      ],
+      "output": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 20.041827,
+        "audio_present": true
+      },
+      "prompt_section": "demo-song",
+      "prompt_sha256": "504eb967ca3df72c95676415f715ed4f409bbb749a80be67414e92ad6b6ea33d",
+      "completed_at": "2026-10-08T03:43:44.219772+00:00"
+    }
+  ]
+}

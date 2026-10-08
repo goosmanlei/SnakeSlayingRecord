@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
-"""Read-only cleanup guard: report exact Docker mounts and release references."""
+"""Read-only cleanup guard: report runtime and recovery path dependencies."""
 import argparse
 import json
 from pathlib import Path
-import re
 import shutil
 import subprocess
 
@@ -13,30 +12,62 @@ def overlaps(source, targets):
     return any(path == target or target in path.parents or path in target.parents for target in targets)
 
 
-def retained_task_ids(root, targets):
-    """Resolve task ownership through the public query, independent of layout."""
-    executable = shutil.which('codex.task')
-    if executable is None:
-        raise RuntimeError('Task inventory unavailable; cannot confirm release references')
-    result = subprocess.run([executable, '-C', str(root), 'inspect', '--json'],
-                            check=True, capture_output=True, text=True, timeout=10)
-    value = json.loads(result.stdout)
-    if (not isinstance(value, dict) or type(value.get('schemaVersion')) is not int
-            or value['schemaVersion'] != 1 or value.get('kind') != 'workspace_inspection'
-            or value.get('workspace') != str(root)
-            or not isinstance(value.get('retainedWorktrees'), list)):
-        raise RuntimeError('Invalid task inventory; cannot confirm release references')
-    matched = set()
-    for entry in value['retainedWorktrees']:
-        if (not isinstance(entry, dict) or not isinstance(entry.get('taskId'), str)
-                or not re.fullmatch(r'task-\d{8}-\d{4}', entry['taskId'])
-                or not isinstance(entry.get('path'), str)
-                or not Path(entry['path']).is_absolute()
-                or root not in Path(entry['path']).resolve().parents):
-            raise RuntimeError('Invalid task worktree identity; cannot confirm release references')
-        if overlaps(entry['path'], targets):
-            matched.add(entry['taskId'])
-    return matched
+def mount_dependency(source, destination, root, targets):
+    # The shared instance root doesn't imply use of every task directory in it.
+    if destination == '/instance' and Path(source).resolve() == root:
+        return False
+    return overlaps(source, targets)
+
+
+def release_dependencies(path, manifest, root, targets):
+    blockers = []
+    # story_worktree/system_worktree and task IDs are provenance. Only paths
+    # consumed by restart/recovery can keep their source workspace alive.
+    for name in ('previous_app', 'previous_nginx'):
+        runtime = manifest.get(name, {})
+        if not isinstance(runtime, dict) or not isinstance(runtime.get('mounts', []), list):
+            raise RuntimeError(f'Invalid recovery runtime: {path}')
+        for mount in runtime.get('mounts', []):
+            source = mount.get('Source') if isinstance(mount, dict) else None
+            if not isinstance(source, str) or not Path(source).is_absolute():
+                raise RuntimeError(f'Invalid recovery mount: {path}')
+            if mount_dependency(source, mount.get('Destination'), root, targets):
+                blockers.append(f'recovery mount in {path}: {source}')
+        for key in ('config_files', 'working_dir'):
+            value = runtime.get(key)
+            if isinstance(value, str):
+                for source in value.split(',') if key == 'config_files' else [value]:
+                    source_path = Path(source).resolve()
+                    referenced = (any(source_path == target or target in source_path.parents for target in targets)
+                                  if key == 'working_dir' else overlaps(source, targets))
+                    if Path(source).is_absolute() and referenced:
+                        blockers.append(f'recovery {key} in {path}: {source}')
+    compose = path.parent / 'compose.release.json'
+    if compose.exists():
+        value = json.loads(compose.read_text())
+        if not isinstance(value, dict) or not isinstance(value.get('services'), dict):
+            raise RuntimeError(f'Invalid retained release compose: {compose}')
+        for service in value['services'].values():
+            if not isinstance(service, dict) or not isinstance(service.get('volumes', []), list):
+                raise RuntimeError(f'Invalid release service: {compose}')
+            for volume in service.get('volumes', []):
+                if isinstance(volume, dict):
+                    if volume.get('type') != 'bind':
+                        continue
+                    source, destination = volume.get('source'), volume.get('target')
+                elif isinstance(volume, str):
+                    parts = volume.split(':')
+                    if len(parts) < 2 or not parts[0].startswith(('/', '.')):
+                        continue  # Named/anonymous Docker volume, not a host path.
+                    source, destination = parts[:2]
+                else:
+                    raise RuntimeError(f'Invalid release volume: {compose}')
+                if not isinstance(source, str) or not source or not isinstance(destination, str):
+                    raise RuntimeError(f'Invalid release bind mount: {compose}')
+                source = str((compose.parent / source).resolve())
+                if mount_dependency(source, destination, root, targets):
+                    blockers.append(f'release mount in {compose}: {source}')
+    return blockers
 
 
 def check(paths, owner=None):
@@ -60,25 +91,11 @@ def check(paths, owner=None):
                                  and Path(mount.get('Source', '/')).resolve() == root)
                 if mount.get('Source') and not formal_parent and overlaps(mount['Source'], targets):
                     blockers.append(f"container {row['Id'][:12]} {row.get('Name', '')}: {mount['Source']}")
-    affected_tasks = None
     for path in (root / '.runtime/service-releases').glob('*/manifest.json'):
-        # These are retained recovery manifests, not arbitrary application data.
-        data = path.read_text()
-        manifest = json.loads(data)
+        manifest = json.loads(path.read_text())
         if not isinstance(manifest, dict):
             raise RuntimeError(f'Invalid retained release manifest: {path}')
-        referenced = any(str(target) in data for target in targets)
-        owner_path = manifest.get('story_main')
-        # Frozen release files retain their original bytes and digest. A moved
-        # task is still retained by its owner and task ID, even if old paths
-        # recorded when the release was prepared no longer exist.
-        if (isinstance(owner_path, str) and Path(owner_path).is_absolute()
-                and Path(owner_path).resolve() == root and manifest.get('task')):
-            if affected_tasks is None:
-                affected_tasks = retained_task_ids(root, targets)
-            referenced = referenced or manifest['task'] in affected_tasks
-        if referenced:
-            blockers.append(f'retained release manifest: {path}')
+        blockers.extend(release_dependencies(path, manifest, root, targets))
     return {'blockers': blockers}
 
 
