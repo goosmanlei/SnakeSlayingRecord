@@ -12,7 +12,7 @@ import sqlite3
 import subprocess
 import tarfile
 
-from vps_experience_remote import database, sha
+from vps_experience_remote import database, sha, portable_image
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -80,10 +80,11 @@ def prepare(args):
         finally:
             process.stdout.close()
         if process.wait(): raise ValueError('docker save failed')
+    image_id = portable_image(image_archive, image_tag, commit)
     manifest = {'format': 'lijizhanshe-experience-v1', 'publication_id': identity,
                 'story_commit': git(ROOT,'rev-parse','HEAD'), 'desk_commit': commit,
                 'formal_database': str(formal/'.runtime/review.sqlite3'),
-                'image_id': image['Id'], 'image_tag': image_tag, 'architecture':'amd64',
+                'image_id': image_id, 'build_image_id': image['Id'], 'image_tag': image_tag, 'architecture':'amd64',
                 'database': snapshot, 'files': {}}
     for p in sorted(output.rglob('*')):
         if p.is_symlink(): raise ValueError('runtime input must not be a symlink')
@@ -97,7 +98,7 @@ def prepare(args):
         for rel in [*manifest['files'], 'manifest.json']:
             archive.add(output/rel, arcname=rel, recursive=False)
     receipt = {'publication_id':identity,'package_sha256':sha(package),'package_bytes':package.stat().st_size,
-               'image_id':image['Id'],'story_commit':manifest['story_commit'],'desk_commit':commit}
+               'image_id':image_id,'build_image_id':image['Id'],'story_commit':manifest['story_commit'],'desk_commit':commit}
     (output/'prepare.json').write_text(json.dumps(receipt,indent=2)+'\n')
     print(json.dumps(receipt,indent=2))
 

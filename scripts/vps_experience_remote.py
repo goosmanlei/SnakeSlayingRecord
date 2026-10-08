@@ -38,6 +38,29 @@ def sha(path):
     return h.hexdigest()
 
 
+def portable_image(path, tag, revision):
+    """Read the Docker save config identity, shared by both image stores."""
+    def member_bytes(name):
+        with tarfile.open(path, 'r|gz') as archive:
+            for number, member in enumerate(archive):
+                if number >= 10000:
+                    raise ValueError('image archive has too many members')
+                if member.name == name:
+                    if not member.isfile() or member.size > 1024*1024:
+                        raise ValueError('invalid image metadata member')
+                    return archive.extractfile(member).read()
+        raise ValueError('image metadata member is missing')
+    entries = json.loads(member_bytes('manifest.json'))
+    if len(entries) != 1 or entries[0].get('RepoTags') != [tag]:
+        raise ValueError('image archive tag differs')
+    config = member_bytes(entries[0]['Config'])
+    value = json.loads(config)
+    labels = value.get('config', {}).get('Labels', {})
+    if value.get('architecture') != 'amd64' or labels.get('org.leiguoguo.instance') != 'lijizhanshe' or labels.get('org.opencontainers.image.revision') != revision:
+        raise ValueError('image archive architecture, ownership or revision differs')
+    return 'sha256:'+hashlib.sha256(config).hexdigest()
+
+
 def safe(path):
     path = Path(path)
     for part in (path, *path.parents):
@@ -193,6 +216,8 @@ def configure(maintenance):
     location = /__lijizhanshe_maintenance__ {
         internal;
         alias /usr/share/nginx/html/.lijizhanshe-control/maintenance.html;
+        default_type text/html;
+        charset utf-8;
         add_header Cache-Control "no-store, no-cache, must-revalidate" always;
         add_header Retry-After 60 always;
     }
@@ -336,15 +361,20 @@ def replace(s, fail=False):
     if not s.get('maintenance_confirmed') or (CONTROL/'maintenance').read_text().strip() != 'on':
         raise ValueError('maintenance must protect the whole prefix before clearing')
     root, m = verified_package(s)
+    # Containerd may report an index digest locally, whereas classic Docker
+    # reports the config digest after loading the exact same save archive.
+    s['image_id'] = portable_image(root/'image.tar.gz', m['image_tag'], m['desk_commit'])
     removed = clear(s)
     s.setdefault('cleanups', []).append(removed)
     save(s, 'cleared')
     if fail:
         raise RuntimeError('controlled verification fault after old instance clearance')
     run('docker', 'load', '-i', str(root/'image.tar.gz'))
-    image = json.loads(run('docker', 'image', 'inspect', m['image_id']))[0]
+    image = json.loads(run('docker', 'image', 'inspect', m['image_tag']))[0]
     if image['Architecture'] != 'amd64' or image['Config'].get('Labels', {}).get('org.leiguoguo.instance') != 'lijizhanshe':
         raise ValueError('wrong image architecture or ownership')
+    if image['Id'] != s['image_id']:
+        raise ValueError('loaded image config differs from the verified archive')
     shutil.copytree(root/'instance', TARGET)
     save(s, 'deployed')
     (CONTROL/'usage').mkdir(mode=0o700, exist_ok=True)
@@ -359,7 +389,7 @@ def replace(s, fail=False):
         '-e', 'REVIEW_UPLOAD_RESERVE_BYTES=5368709120',
         '-e', 'REVIEW_POLISH_BUDGET_FILE=/usage/attempts.json',
         '-v', str(CONTROL/'usage')+':/usage',
-        '-v', str(TARGET)+':/instance', m['image_id'])
+        '-v', str(TARGET)+':/instance', image['Id'])
     return save(s, 'started')
 
 
