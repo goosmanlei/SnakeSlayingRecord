@@ -1,105 +1,64 @@
-# 版本四制作准备与审阅
+# 视听制作与素材审阅
 
-《把灯带回家》版本四已获用户确认，17 集、42 场、1,114 个正文块；主视觉为二维人物与轻手绘背景，16:9。当前完成全剧实体／状态抽取、第一集 33 镜设计、逐素材方案及首批实际候选。基准尚未全部补齐或接受，第一集未就绪；完整素材、有声动态分镜、成片和工程在后续制作范围。
+《把灯带回家》以已确认的剧本版本四为共同来源：17 集、42 个故事场、1114 个正文块。当前视听设计重新编成 17 个视听集、65 个视听场、344 个镜头，逐段覆盖正文，并为每镜及其上游素材编制需求和生成方案。镜头估时合计 6021 秒，约 100 分钟；用户已确认允许适度加长，以动作和表演读得清楚为先。这是方案预留时长，须在真实表演和后续剪辑中复核。
 
-全剧非歌曲首轮生成已交付 369 张新图、42 份新声音，共 411 份原件，并由前序任务增量发布正式库；探索、返工和撤回版本一并保留。有效图像目标为 251 项，四份声音获用户听审认可，其余 38 份待听审。准确身份、原件、谱系和接受范围见 [全剧生成交接](full-generation/README.md)及[范围归并](full-generation/scope-amendment.json)。素材卡、筛选、评论计数、共用音频播放器和实体读取由 `task-20261004-0004` 更新；使用与证据见[素材审阅交付说明](../planning/material-review-streamlining-delivery.md)。当前候选与实际运行状态沿 [STATE.md](../STATE.md)核对，旧阶段记录不代表新的验收或授权。
+本轮终点是镜头多需求、多方案版本、多候选的组织、登记、预览和审阅。没有发起图像、音频或视频生成；已有媒体沿准确原件与真实调用复用。技术验证不代表用户采纳新设计、方案或候选，也不表示已有镜头视频、完整预演或成片。
 
-## 内容入口
+## 制作依据与正文
 
-分镜、调度、摄影、灯光、色彩、美术、表演、声音和剪辑任务开始前，必须读取[影视专业知识](filmcraft/README.md)的相关章节。按[制作速查](filmcraft/quick-reference.md)定位当前问题，在重要选择中说明原理、适用条件与检查方法，再做跨镜和全剧复核。[本剧应用](filmcraft/applications.md)仅演示方法，不是已经改写或接受的镜头方案；准确作品、参考与采纳仍沿原入口核对。专业意图确定后，模型规格与 Prompt 方法查[视频生成手册](seedance-video-handbook.md)。
-
-当前全剧逐镜首稿与新素材版本／候选交付见 [制作拆解交付](breakdown/README.md)：17 集、42 场、297 镜；正式应用以任务账本和发布回执为准。
-
-| 要核对什么 | 材料 |
+| 要解决的问题 | 权威入口 |
 | --- | --- |
-| 定稿、用户确认与准确来源 | [source-lock.json](source-lock.json) |
-| 全剧身份、别名、完整状态和出场 | [inventory.md](inventory.md)及[inventory.json](inventory.json)：原始抽取为 133 个实体、267 个完整状态；按[归并说明](full-generation/scope-amendment.json)撤回重复包布后，有效范围为 132 个实体、263 个完整状态 |
-| 直接关系、集场原文和修正范围 | [entity-relationships.md](entity-relationships.md)、[准确增量与全部证据](entity-relationships.json)、[33 条修正前后对应](relationship-review.md) |
-| 第一集镜头、空间和定稿声音 | [33 镜设计](episode01/shots.md)、[准确数据](episode01/shots.json)、[37 个对白／演唱单元](episode01/dialogue-cues.json) |
-| 实体描述与生成方案 | [generation-preparation.md](generation-preparation.md)：33 个实体的 77 个状态、122 项方案，区分计划与实际调用 |
-| 全剧非歌曲首轮方案与新原件 | [交接与审阅入口](full-generation/README.md)、[逐项方案及历史目标](full-generation/recipes.json)、[音色范围](full-generation/voice-scope.md)，包含准确方案、待绑定输入和用户锁定的 40 基础＋2 变化音色范围 |
-| 素材轮次、历史对应及 0001 验证 | [material-rounds.md](material-rounds.md)、[准确对应](material-round-mapping.json)与[编制工具](../scripts/material_round_audit.py) |
-| 历史场级计划需求 | [scene-requirements.md](scene-requirements.md)：其余 40 场 566 项镜头用途需求，不等于 251 个有效图像状态生成目标 |
-| 现有候选的实体与状态归属 | [baseline-associations.md](baseline-associations.md)、[requests](requests/)、[receipts](receipts/)及[baseline-records](baseline-records/) |
-| 原生有声预演计划 | [声音契约](native-audio-workflow.md)、[33 镜计划](episode01/seedance/manifest.json)，尚未执行 |
-| 完整恢复与历史 | 当前 Schema 8 完整 `export/`、[版本收敛恢复契约](version-consolidation/README.md)与准确发布回执；历史制作准备验证见 [verification.md](verification.md)，旧 replay 不再是当前恢复入口 |
-| 生成、独立预览与合并后发布 | [任务工作区流程](generation-workspaces.md)：所有新产物先留在任务分支，正式库显式增量发布 |
+| 准确剧本、集场正文和用户确认 | [制作输入锁](source-lock.json)及当前导出中的 INPUT_LOCK |
+| 全剧目的、场划分、逐镜表演与视听设计 | [全剧视听设计](audiovisual/README.md)，分集稿可独立阅读 |
+| 全剧连续性与专业选择的复核 | [逐集复核](audiovisual/review.md)、[出现范围](audiovisual/appearances.txt)、[状态范围](audiovisual/state-ranges.txt)、[镜内变化](audiovisual/state-transitions.txt) |
+| 分镜、调度、摄影、灯光、美术、表演和声音原理 | [影视专业知识](filmcraft/README.md)与[制作速查](filmcraft/quick-reference.md) |
+| 视频方案、Prompt 与参考方法 | [视频生成手册](seedance-video-handbook.md)，实际调用前重新核对能力和额度 |
+| 页面中的制作流程与判断 | “制作思路 → 生产制作”，内容源为 `content/production-approach.json` |
+| 隔离工作区、准确增量与正式发布 | [任务工作区流程](generation-workspaces.md) |
 
-## 用户如何审阅
+故事集边界保持不变。视听场根据地点、时间、戏剧动作和声音组织，可拆开一个故事场，也可组合本集多个故事场的准确片段。视听集引用准确视听场版本，场引用准确镜头版本；修改一个镜头不会悄悄替换已有集场稿。
 
-统一入口为 [生产制作](http://127.0.0.1:3000/?workspace=settings.workspace&production_tab=breakdown)，包含制作拆解、实体管理、素材管理。旧镜头制作链接进入合并后的准确位置，旧素材链接兼容保留；旧组合页面明确不可用。准确运行身份及正式验收以任务账本和发布回执为准，交付说明见 [入口合并](production-unification/README.md)。
+故事同时支撑两条制作线。一条形成实体、实体关系和实体状态；另一条形成视听集、场、镜。它们共用素材需求。故事中提到一个人、人物实际出现在画面中、状态适用于某段、镜头采用了某个素材，是不同事实。准确故事出处、出现范围、素材用途及调用输入分别登记。
 
-制作拆解左选集、中间按场读镜头设计、右侧跟随场／镜查看实体状态与素材；剧情正文由准确来源入口打开。实体管理保留身份、主要关系与完整状态；关系、状态及素材版本在对应控件切换，评论绑定准确修订。
+## 页面如何使用
 
-“采纳”认可当前基础信息、关系、全部完整状态和生成方案，通过完整准备校验才允许推进生成；仍可取消和评论。旧内容采纳取消后，原实体／状态／素材范围仍完全一致时可重新认可，页面说明其不授予生成许可。内容修订、真实缺项、历史阅读或版本冲突不会靠启用按钮绕过；Codex 不代替用户采纳。
+[生产制作](http://127.0.0.1:3000/?workspace=settings.workspace&production_tab=breakdown)包含“视听制作”“实体管理”“素材管理”三个子页。
 
-素材管理按具体需求计一项，在同一条目查看占位、结果和历史；没有需求关联的历史素材独立保留。按未生成／已生成、真实内容类别与搜索组合筛选，只有真实原件计为已生成。类别由完整可浏览数据确定，组合搜索零结果不移除已有类别；清除恢复完整列表。真实调用、审阅结论和镜头采用保留详情与旧链接，不再与需求并列计数。
+在视听制作中，先选集和场，再读镜头的叙事目的、构图、调度、轴线、动作起止、表演、光色、声音、剪辑与连续性。每镜的需求控件可切换首帧、视频及其他独立需求。右侧“本镜素材”按同一需求身份去重；选择某个结果不会多算一项需求。故事依据按钮打开准确版本的正文，标出本镜引用段落。
 
-实体管理和素材管理复用素材卡。未生成时显示真实需求对应的图像、声音或其他媒体占位；声音不借人物封面充当原件。已有准确结果时预览真实文件。未生成时显示待执行方案，已有结果只显示所选结果真实调用中的模型、参数、提示词和参考输入；历史原方案可单独查看，不互相补写；参考在页内弹窗查看，可继续放大原图。关闭、Esc 和键盘返回保留版本、阅读上下文、焦点与未提交评论草稿。图像完整显示，真实音频可播放、选段、试听和评论。
+实体管理查看身份、实体关系和完整实体状态；素材管理按需求组织方案和候选，并支持集场、媒体、状态和搜索筛选。没有现行需求但仍有用途的历史候选作为独立素材保留真实来源。素材列表的当前页集合固定，窄屏只改变排列；关闭详情、返回和切换版本保留阅读位置与未提交评论草稿。
 
-素材代表持续需求；版本固定模型、参数、提示词、准确输入与随机策略，实际调用后固定方案。同方案重复生成产生同版本多个候选；评论、审阅、选择、重复回执和关联补全不自动建版。固定种子变化建新版，随机产生的实际种子只记录调用。旧轮次及评论锚点原样保留，逐项对应见 [迁移说明](breakdown/migration.md)。
+素材方案尚无结果时显示待生成；已有结果时展示所选候选及其真实调用。某版本没有候选，不借用其他版本结果。通过“比较两个候选”可同时查看同需求的两个准确候选，也可跨版本对照；图像看原件，声音和视频可实际播放。比较和浏览本身不会保存参考或采用。
 
-制作页面用于审阅与准确采用，数据编辑和生成通过后台工具完成。制作拆解按集场镜阅读设计正文，随后连续显示本镜视频方案、准确输入、版本候选和采用；完整素材区包含视频子集并按稳定身份去重。旧组合与历史页面及其专属契约已退役。素材管理新增集场筛选，每页 40 项。使用说明与完整逐镜稿见 [本轮交付](breakdown/README.md)。
+## 需求、方案、候选与准确参考
 
-## 现有候选与实际限制
+一个镜头可有多项独立需求，例如正面身份、侧面机位、首帧、动作声音和视频。需求说明解决什么问题、媒体类别及检查要点。每项需求可有多个方案版本，每版可有多个实际候选；模型、参数、Prompt、准确输入或固定种子等执行定义改变时，已冻结方案必须建新版。同方案再次生成增加候选；评论、浏览、审阅和重复回执不自动建版。
 
-| 原件 | 实际情况 |
-| --- | --- |
-| [李寄第一张](../export/assets/82a51fcd631931e43bc0ed5535a1c80827a072fb37dd9a2e8b366d5d13258458.png)、[第二张](../export/assets/cd50ecc53c05dd06c2f592adf164b12f2711ef44538479cd3b55a711590dae33.png) | 两次文字生成根候选，2016×2688，未达原生 4K，未接受母版；同一素材身份的旧准确原件保留 |
-| [阿蘅对白](../export/assets/a041a61f5f37de8086eba7de160804c785587d1ae1ce024ef67246f846c69e84.wav) | 17 秒，48 kHz、双声道、PCM 16-bit |
-| [李寄对白](../export/assets/90227903269315a0fde6b66cdcb91698d0c7737c2e1f6dddf593e6fe7fc8f014.wav) | 12.38 秒，同规格 |
-| [周掌柜对白](../export/assets/d242aeb9c0b0069f18a252f62a6a2aedc4625522033aa92c5a5ab03f8da1f76f.wav) | 17 秒，同规格 |
-| [赵执事对白](../export/assets/842ecea98a028fa105e0f30a4f5a6085d412d3c40aecf24516f5a7a10b19ab92.wav) | 11.5 秒，同规格 |
-| [阿蘅舟行曲](../export/assets/9edcf64a1d34914d1d406a01aff9617f3759eb51ed699e1380fde6f96993c953.wav) | 17.0534 秒，实际引用阿蘅对白作声线参考 |
+素材生产关系说明上下游、所在语境、用途、要保留的内容、允许变化的内容和检查方法。例如身份母版到状态图保持人物辨识，空间全景到机位图保持门窗及轴线，首帧到视频保持构图与起始姿态。实体之间的亲属或冲突关系不等同于素材生产关系。
 
-上表为早期 6 个素材身份、7 次实际调用、两张图和五份 WAV，作为历史样例全部保留，不是当前全剧数量。后续 411 份新原件及准确调用见[全剧交接](full-generation/README.md)。播放或技术自检不代替声音听审；素材有原件和内容采纳也不等于镜头已明确采用。第一集的准确采用、完整有声动态分镜与工程仍待制作，227 秒为设计估时。继续生成须重新核对额度、准确输入、母版认可与当次授权。
+参考可以是必需、可选、条件满足时使用或几条路线择一。先确定执行路线与条件，再检查该路线上的缺项和循环；未选路线不误阻断。自定义但尚无机器语义的关系只供理解，不自动进入生成输入。
 
-## Codex 后台维护与恢复
+“选为方案参考”保存需求的准确版本、候选及原件组成，可进一步保存图像裁切或音视频时间范围。只选需求或方案而未选实际原件时仍显示待选，不能生成。引用经过哪些上游素材，与某次真实调用直接传了哪些文件，分别展示；新方案不能冒充旧候选的历史生成方案。原始方案缺失时明确标为未知。
 
-以下三条只读命令可在真实故事根目录执行；正式业务库为主目录 `.runtime/review.sqlite3`。生成、登记、恢复和导出改在独立任务 worktree 执行，实例选择与变量设置见[任务工作区流程](generation-workspaces.md)。通用系统位于主项目同级 `story-review-desk`，按根 [README](../README.md)核对 [config/instance.json](../config/instance.json)指定版本；任务可选择自己的兼容系统工作区。不要复制密钥、建立第二份任务账本或把旧快照覆盖到活库。
+## 认可、评论与生成条件
+
+设计采纳、素材方案采纳、生成结果审阅和明确采用分别表达不同判断。集或场采纳覆盖当时引用的准确子项；子项撤销后上级显示部分采纳，后续新修订不继承旧认可。实体及其状态、关系沿准确版本审阅。评论绑定原修订与文字、区域或时间锚点，编辑、关闭、重新打开和定位均保留追溯。
+
+开始真实生成前，后台重新核对制作输入锁、当前能力与授权、必要设计和方案认可、完整状态、所选路线、每个参考原件和时间范围、递归依赖与谱系。任何缺项都须先解决。本轮隔离验收使用的色块和测试音明确标记为测试，不发布到作品库。
+
+## 后台编制与恢复
+
+故事特有的编制规则留在本仓：`scripts/audiovisual_design.py` 读取分集稿并核对准确正文，`scripts/audiovisual_materials.py` 形成需求、上下游关系和 Prompt。通用审阅台只提供数据管理、展示、审阅与校验。使用方式见[全剧设计入口](audiovisual/README.md)。
+
+实际生成任务在各自受管工作区使用当前系统版本与独立实例。先只读检查，再将文件登记为原件，记录真实调用和候选；不把任务快照覆盖正式活库。正常新增与修订沿通用 `production-import` 和现有增量发布协议进行，不重跑本次一次性切换。
+
+当前恢复以完整 Schema 9 `export/manifest.json`、[制作索引](audiovisual/index.json)和[最小发布幂等凭据](audiovisual/recovery.json)为准。仅在任务 worktree 中向全新隔离目录恢复：
 
 ```bash
-production_system=../story-review-desk
-PYTHONPATH="$production_system" python3 -m review_desk --instance . production-entity-review entity-li-ji
-PYTHONPATH="$production_system" python3 -m review_desk --instance . production-get --object asset-liji-image
-PYTHONPATH="$production_system" python3 -m review_desk --instance . production-ready shot-e01-001
-```
-
-读取历史采纳时，`production-entity-review` 追加 `--revision 准确采纳修订`；读取素材历史时 `production-get` 追加 `--revision 准确修订`。HTTP 对应 `/api/production/entity-review`、`/api/production` 与准确来源的 `/api/production/source`，读取不写内容。
-
-生成任务维护使用 `production-import FILE --validate-only` 预演，再用相同批次导入自己的隔离实例；携带 `expected_version` 和必要的 `expected_heads`，保留原稿与历史锚点。真实文件先用 `production-file FILE` 导入该实例，再通过 `production-import FILE.json` 登记其准确 CALL、ASSET 与需求／状态关联；文件入库本身不创建采用。准确采用沿用系统仓库的 `docs/production.md` 契约。正式生成数据统一经准确包、Git 合并及显式发布处理。关系在本故事 [编制工具](../scripts/entity_relationships.py)中维护，先 `plan` 后 `apply`，正式写前重新准备。
-
-`production_forms.py`、`production_inventory.py`、`episode01_shots.py` 和 `scene_requirements.py` 保存本故事规则；不要重复运行初始批次覆盖已审内容。`register_production_candidates.py` 只用于真实新调用首次登记，不重复登记已有对象。全剧首轮方案与代表项使用 `prepare_full_generation.py`、`register_full_generation.py`，后续真实增量使用 `register_generation_batch.py` 和带准确批次参数的 `publish_full_generation.py`；这些工具不代发模型请求；已经发布的批次不得盲重跑。新媒体请求先检查单个请求、最新额度与准确输入，再按当次授权执行。
-
-恢复只接受任务 worktree 内新的隔离目录，先准备 Python、FFmpeg／ffprobe 和固定版本系统；以下命令均在任务 worktree 根目录执行，`production_system` 指向实际通用系统目录：
-
-```bash
-python3 scripts/production_review.py --system "$production_system" recover \
+python3 scripts/production_review.py --system <受管审阅台目录> recover \
   --destination .runtime/production/fresh-review
-PYTHONPATH="$production_system" python3 -m review_desk \
-  --instance .runtime/production/fresh-review serve --port 39105
 ```
 
-完整 `export/` 校验全部资料、对象与修订、依赖、评论／事件、公开配置及原件；恢复后比较准确版本与文件校验，不重复导入已有生产数据。`production-package ID --output directory` 仅在必要输入满足时复制执行文件；缺项清单不作为可执行包。
+恢复校验对象与全部有效修订、准确关系、评论及事件、原件哈希和发布幂等凭据。旧场准备、旧镜头编排、旧方案迁移和旧 replay 入口已退出；删除内容只保留最小身份与摘要凭据以解释真实来源缺口，不恢复其业务正文。
 
-每次收尾从最新正式库的一致性备份导出完整 `export/`，再执行 `production_review.py ... snapshot --instance ...` 保存与导出匹配的重放。测试意见和测试采纳不得进入正式导出。正式发布增量应用，不用启动快照替换数据库；恢复失败保留隔离目标供检查，不覆盖已有实例。
-
-## 正式运行和集成
-
-3000 由 `snakeslayingrecord-app-1` 与 `snakeslayingrecord-nginx-1` 提供，仅监听本机，使用 `unless-stopped`。正式实例文件由永久发布目录覆盖挂载；应使用当前发布目录内的恢复／重启入口，不能用普通 `docker compose up --build` 覆盖精确镜像与挂载。实际运行版本、当前目录和本轮操作计划见 [STATE.md](../STATE.md)与[资产清理报告](../planning/asset-necessity-cleanup-report.md)。凭据和可信 CA 保持原配置，不复制或公开。
-
-共享正式库、公开导出、系统集成与服务应用串行。发布前核对最新数据与两仓基线，备份后增量应用，再回读重点页面与历史；代码恢复不覆盖活库。旧容器按其实际用途、层内数据、挂载和恢复依赖判断，不因停止就删除，也不同时启动共享正式库的旧实例。
-
-双仓代码、说明和证据先在任务隔离工作区提交，故事用 `_prepare_integration` 固定候选；最终确认覆盖准确候选、推送目标和正式操作方案后才受控应用。任务完成状态只读唯一账本，完成后不追加文件提交。
-
-此前 `0002` 的关系发布复核使用故事工具，只读比较其保留工作区中的发布前后备份；批次限定为逐条审阅的实体关系，不允许其他对象、旧修订、评论、轮次或采用发生变化：
-
-```bash
-python3 scripts/verify_production_review.py \
-  --before .runtime/review-ui/formal-publication/write-window-before.sqlite3 \
-  --after .runtime/review-ui/formal-publication/after-all-browser.sqlite3 \
-  --batch .runtime/review-ui/formal-publication/published-batch.json \
-  --report .runtime/review-ui/formal-publication/rechecked.json
-```
-
-上述 `.runtime/review-ui/` 路径相对保留的 `task-20261002-0002` 工作区，仅用于复核该次关系发布。全剧方案／原件发布核对使用 `verify_full_generation.py`，准确命令见 [全剧交接](full-generation/README.md)。下一次修改必须重新读取正式当前版本并准备增量。
+正式代码、数据与服务版本沿 `config/instance.json`、任务账本和实际发布回执核对。先完成两仓准确提交、受控集成及候选验证，再在串行窗口停止旧写入、事务切换、部署与真实浏览器复验。切换提交之后只向前恢复新体系，不能用旧数据库覆盖用户后续意见。

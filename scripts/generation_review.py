@@ -68,9 +68,9 @@ def export_review(root, instance):
     try:
         manifest = export(store, instance / 'export')
         try:
-            from .content_version_consolidation import export_publication_receipts
+            from .publication_receipts import export_publication_receipts
         except ImportError:
-            from content_version_consolidation import export_publication_receipts
+            from publication_receipts import export_publication_receipts
         export_publication_receipts(store,root)
     finally:
         store.close()

@@ -1,6 +1,83 @@
 {
-  "bytes": 4441,
-  "format": "material-archive-reference-v1",
-  "recipe": "1324e4beee525ddb96958207c5caa2c46d14cc68c5b19911632bd10bec886242",
-  "sha256": "7940c7d327061c62079852c8a0b27cd7f18f4f3bd9f9ba3d607c69509309b800"
+  "id": "fg3-crossbeam-seven-image-01",
+  "recipe_id": "form-crossbeam-seven",
+  "entity": {
+    "object_id": "entity-crossbeam",
+    "revision_id": "115731814d24b6b4b99e325d0f9286435df91fc1582e838690e44edf150b599c"
+  },
+  "state": {
+    "object_id": "form-crossbeam-seven",
+    "revision_id": "b3f1b2b4531afa86e04fc9def10c0227654aac4e0cbccdd9237cd665356c6a44"
+  },
+  "requirement": {
+    "object_id": "need-form-crossbeam-seven-overall",
+    "revision_id": "b23279acc3e3e0df4e01d2a5ae089aa50183789c73b1ceca04792468e6bc1fde"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-cave-gate-base-image-02",
+        "revision_id": "9f2dd5a25d3a9b294892313fcfc40dc380f838125ebdb5a2133b7f551a7e9bfe"
+      },
+      "component_id": "original",
+      "sha256": "1ebb9619a864ff72087147b6aa6d188d911a6a71a4a81968df78e997f9da0374",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：北端木柱升降闸的正面结构，绝不是南投食门"
+    },
+    {
+      "reference": {
+        "object_id": "asset-fg3-crossbeam-base-image-01",
+        "revision_id": "94e9b74b04de561706b0c7aa2b5caf24b6a812493bc168c69555bd8f7f2d1e70"
+      },
+      "component_id": "original",
+      "sha256": "9ff476bb5d123bb9459100eb6667f542cbfb2e7ee2e17961bcfcb9777f7acf4f",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图2：整根灰褐圆木杠颜色、直径和两端"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-fg3-cave-gate-base-image-02",
+        "revision_id": "9f2dd5a25d3a9b294892313fcfc40dc380f838125ebdb5a2133b7f551a7e9bfe"
+      },
+      {
+        "object_id": "asset-fg3-crossbeam-base-image-01",
+        "revision_id": "94e9b74b04de561706b0c7aa2b5caf24b6a812493bc168c69555bd8f7f2d1e70"
+      }
+    ]
+  },
+  "master_approvals": [
+    {
+      "object_id": "review-master-fg3-cave-gate-base-image-02",
+      "revision_id": "c5929ad614df03fae2f0b615752fc7eb7425bc0c29b75d76d7b40effc9a77e2a"
+    },
+    {
+      "object_id": "review-master-fg3-crossbeam-base-image-01",
+      "revision_id": "a385bcc1ca6f26edd57cb9a9cd218e8e0b76155725a956cc187743bd5d0ca050"
+    }
+  ],
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "制作一张新的完整状态整体参考，二维人物配轻手绘背景，低饱和平涂、柔和干净线条，保持参考身份、颜色与比例。轻薄背景，不增纸纹、噪点、浮雕或锐化。单幅完整形态，不拼贴、裁切或放大；工具最高原生输出，无水印或装饰标题。\n参考顺序：图1为北端木柱升降闸的正面结构，绝不是南投食门；图2为整根灰褐圆木杠颜色、直径和两端。\n16:9整根压闸长杠与准确七个承托人形的机械状态示意，北在后南在前，正面从南略俯看北闸。长杠中央两组麻绳绑活动闸板南面的贴板短横木，左右伸出固定柱，绳不绕固定柱。短锁销已取出平放后墙边，柱孔全空。选七人一起提闸的时点：长杠连门板沿立柱升起，门底露低矮通道；闸后仍是北岩洞而非院外。杠左即西侧恰四个浅灰简化承托人形，杠右即东侧恰三个，人形每个完整头身脚且有间隔，一共七个，没有第八个；这仅标受力位置，不冒作独立角色身份母版。每人握杠协力上提，脚在石道外院地，不站石顶或进石道。正中矮石道全封顶向南延伸，仅在前景画一小截以免遮住北闸；不画南门以避免绑错门。整杠两端、七人和双木柱全部入画，可在组下小字“西四”“东三”，不添李诞人形。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/1ebb9619a864ff72087147b6aa6d188d911a6a71a4a81968df78e997f9da0374.png",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/9ff476bb5d123bb9459100eb6667f542cbfb2e7ee2e17961bcfcb9777f7acf4f.png"
+    ]
+  }
 }

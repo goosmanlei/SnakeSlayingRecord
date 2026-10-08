@@ -73,7 +73,7 @@ def integrate(system_main, system_worktree, expected_target, candidate, receipt=
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--plan", type=Path, default=ROOT / "production/full-generation/system-delivery.json")
+    parser.add_argument("--plan", type=Path, required=True)
     parser.add_argument("--system-main", type=Path)
     parser.add_argument("--system-worktree", type=Path)
     parser.add_argument("--expected-target")

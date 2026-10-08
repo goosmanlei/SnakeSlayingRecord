@@ -1,6 +1,57 @@
 {
-  "bytes": 3137,
-  "format": "material-archive-reference-v1",
-  "recipe": "ccf13d9a6e7005aa9f0a32944507f8828ec2484072080b8357f0fa3dafd628a5",
-  "sha256": "85c342ca754121ffe7d19e4b4651a963db56cdfdc753f14861ff8169926f8087"
+  "id": "fg3-ferry-loaded-image-01",
+  "recipe_id": "form-ferry-loaded",
+  "entity": {
+    "object_id": "entity-ferry",
+    "revision_id": "d6344f350ab47de20c482e262c33a86b785fcbad3aa2d4b67ab6741e5111095e"
+  },
+  "state": {
+    "object_id": "form-ferry-loaded",
+    "revision_id": "f379d26deb15b4f4bdefa5292d6badc4499fb0bf81e61858f0a64724fc6de59e"
+  },
+  "requirement": {
+    "object_id": "need-form-ferry-loaded-overall",
+    "revision_id": "e38c5f95c611ce26c5d65637d390e3438f36f01111717d671deffc6e2d718705"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-boatman-base-image-01",
+        "revision_id": "e7297846ea3424086dcb9c804396b4127a88dc210e8ce2aadb7e9204cf1dbc7a"
+      },
+      "component_id": "original",
+      "sha256": "9f3ee3a89a9f1f14ace33b1625bfbbfcef3d446833ceea3da79ea0236bb0e527",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：已认可船家身份与服装，放入装货宽景。"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-fg3-boatman-base-image-01",
+        "revision_id": "e7297846ea3424086dcb9c804396b4127a88dc210e8ce2aadb7e9204cf1dbc7a"
+      }
+    ]
+  },
+  "master_approval": {
+    "object_id": "review-master-fg3-boatman-base-image-01",
+    "revision_id": "35f699fa464113554542d64cd824d5aec00fd0b77ae06f41d58c8017a6b7fc3e"
+  },
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "单幅完整整体参考，不分格、不拼贴、不画标题、水印、箭头或尺寸标注。干净二维动画线条与低饱和平涂，背景轻手绘、大块柔和明暗；不要写实摄影、三维建模、厚纸纹、颗粒、锐化、繁密装饰。主要对象全部入画并留边。输出工具可提供的最高原生图，不放大。画幅16:9，清楚的宽景空间参考，平视略高的自然三分之二视角。建筑、出入口和所述功能区关系要一眼看懂。人物如有仅按指定参考出现，不新增身份或剧情。庙会当日稍后的临河渡口。左边低石岸，右边单艘灰褐木货船贴岸停稳；一块窄木船板由左岸搭到右船舷，两端都有明确承托，不悬浮、不画成宽栈桥。系船绳从船头牵到左岸矮石柱。开敞货舱内几只灰黄箩筐，留通行空位；参考图1的同一船家俯身把最后一只筐推入舱内，帽子、灰褐服装与面貌保持。全船船头船尾都入画，岸、船板、绳和货舱关系清楚，平缓灰绿水面，不加另一艘船或人群。低饱和日光，二维人物与轻手绘岸景。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/9f3ee3a89a9f1f14ace33b1625bfbbfcef3d446833ceea3da79ea0236bb0e527.png"
+    ]
+  }
 }

@@ -1,6 +1,57 @@
 {
-  "bytes": 2969,
-  "format": "material-archive-reference-v1",
-  "recipe": "2170d8bb49c052f138e34b4b70c9e5244c0f2c11762b4d15312e094c56df4314",
-  "sha256": "7de104c0225fd2a1a937f43eddb704ac97a22e6c22c6fe3d2afc92195c26f397"
+  "id": "fg3-songbook-wet-image-01",
+  "recipe_id": "form-songbook-wet",
+  "entity": {
+    "object_id": "entity-songbook",
+    "revision_id": "6e88c28d85f24f7a841e0bcf77c88a230cd44441500e99a122658a68e802df44"
+  },
+  "state": {
+    "object_id": "form-songbook-wet",
+    "revision_id": "e8361952aeaa869a1a3493dfff40bd9a67be4b62c0787df0c6b687b0a8e90f59"
+  },
+  "requirement": {
+    "object_id": "need-form-songbook-wet-overall",
+    "revision_id": "888b52961a054f3dedd029a3f021186bd477ed0e1cc1d3be9c19819dfb0f69a1"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-songbook-base-image-03",
+        "revision_id": "9445e15dfd4469422b88020d616029c829e7559253f639561a412c440edac731"
+      },
+      "component_id": "original",
+      "sha256": "9d2780553a4d35649e2ed7b4d7e15642a1c4be2d42110a7c3fdc9b412afe26ce",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：准确认可原件；按提示词中参考图1的用途保持身份与结构，使用完整原件。"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 2,
+    "references": [
+      {
+        "object_id": "asset-fg3-songbook-base-image-03",
+        "revision_id": "9445e15dfd4469422b88020d616029c829e7559253f639561a412c440edac731"
+      }
+    ]
+  },
+  "master_approval": {
+    "object_id": "review-master-fg3-songbook-base-image-03",
+    "revision_id": "539524c25886e84ba049d4831ddbf1ed17178ae1d6bd5023b855ddaabf62559d"
+  },
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "单幅完整道具参考图，干净二维线条、低饱和大色块，柔和中性光，浅暖灰空底。全部指定组成完整留边；不用分格、箭头、标题、水印、人物或额外故事场景。无纸纹噪点、锐化及写实浮雕。保持参考的物件身份与配色，仅修改指定状态。使用工具最高原生输出，不放大。4:3。参考图1固定灰青素封面、左脊三孔麻线、米白纸和末页生字小圈；只有一本书，不另画第二本。同一本歌本浸水受损：灰青封面保持，左脊三孔处纸已泡软裂开、麻线松脱；摊开的米白页变湿灰，大片不规则波皱，最后一段只剩半页，墨迹成暗灰洇团。少量分离残页挨在残本旁完整呈现，失去的纸不补回；幸存页的一只小圈可留淡痕。此刻没有完整领唱旧纸、新抄白纸或收据，不加河流场景，不另生一本完整书。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/9d2780553a4d35649e2ed7b4d7e15642a1c4be2d42110a7c3fdc9b412afe26ce.png"
+    ]
+  }
 }
