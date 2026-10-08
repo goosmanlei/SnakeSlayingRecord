@@ -1,0 +1,139 @@
+{
+  "task_id": "task-20261008-0006",
+  "reviewer": "space_research",
+  "review_type": "independent_non_author_code_review",
+  "reviewed_at": "2026-10-08T22:19:27+08:00",
+  "status": "passed_after_fixes",
+  "open_findings": [],
+  "scope": {
+    "primary": [
+      "scripts/sync_filmcraft.py",
+      "tests/test_sync_filmcraft.py",
+      "scripts/sync_video_handbook.py",
+      "scripts/material_review_release.py"
+    ],
+    "desk": [
+      "review_desk/approach.py",
+      "review_desk/static/approach.js",
+      "review_desk/static/approach.css",
+      "review_desk/static/structure.js",
+      "review_desk/static/structure.css",
+      "tests/test_approach.py",
+      "tests/approach_format.test.cjs",
+      "tests/approach_navigation.test.cjs",
+      "tests/structure_navigation.test.cjs",
+      "tests/structure_scroll.test.cjs"
+    ],
+    "context_read": [
+      "desk:review_desk/server.py /api/production-approach and /approach-media routes and file headers",
+      "desk:review_desk/static/app.js workspace switching",
+      "desk:review_desk/static/index.html script loading",
+      "primary:production/filmcraft/research-contract.md",
+      "primary:all 16 published filmcraft chapters and derived tab"
+    ],
+    "focus": [
+      "complete prose derivation",
+      "chapter and source links",
+      "passive SVG validation",
+      "existing method tabs and shared image-reader compatibility",
+      "missing, stale and corrupt input behavior"
+    ],
+    "method": "Read-only code inspection, local isolated API/VM tests, independent text/link/media checks; only this review receipt was written by the reviewer."
+  },
+  "resolved_findings": [
+    {
+      "id": "FC-CODE-01",
+      "severity": "P2",
+      "location": "desk:review_desk/approach.py:14-46",
+      "title": "Raw-byte declaration check and parsed-tree filtering allowed forbidden SVG constructs",
+      "before": "The original validator accepted an external xml-stylesheet processing instruction because ElementTree omits it from the parsed element tree; UTF-16 DTD bytes bypassed the ASCII <! check; xml:base could change the resolution of an apparently local fragment.",
+      "reproductions": [
+        "<?xml-stylesheet type=\"text/css\" href=\"https://example.org/style.css\"?><svg xmlns=\"http://www.w3.org/2000/svg\"/>",
+        "<svg xmlns=\"http://www.w3.org/2000/svg\" xml:base=\"//example.org/paint.svg\"><rect fill=\"url(#paint)\"/></svg>",
+        "UTF-16 bytes for <!DOCTYPE svg [<!ENTITY caption \"expanded\">]><svg xmlns=\"http://www.w3.org/2000/svg\"><text>&caption;</text></svg>"
+      ],
+      "impact_boundary": "Confirmed passive-document validation bypass. Browser script execution was not tested or claimed; inline image handling and direct SVG navigation have different browser restrictions.",
+      "fix": "Author enforced UTF-8, rejected declarations, processing instructions and NUL; required exact SVG namespaces and a small attribute allowlist, rejecting xml:base/style/external attributes and CSS escapes.",
+      "independent_recheck": "All three previously accepted payloads now raise ValueError; all 12 real diagram originals and all 12 declared derived media files pass the updated validator, path and hash checks.",
+      "status": "resolved"
+    },
+    {
+      "id": "FC-CODE-02",
+      "severity": "P2",
+      "location": "desk:review_desk/static/structure.js:140-141, called from approach.js:67",
+      "title": "Unfinished region selection on another workspace blocked method image viewing",
+      "before": "openStructureImage returned on any state.drawMode. switchWorkspace did not clear that state, so choosing region comment in the story workspace then switching to method reading prevented image click/keyboard activation.",
+      "reproduction": "Evaluate the actual openStructureImage function with state.drawMode=\"story-diagram-id\" and mediaBase=\"/approach-media/\". Before the fix openReviewDialog was called zero times.",
+      "fix": "Author restricted the drawing guard to /assets/ image viewing while preserving the existing duplicate-dialog guard.",
+      "independent_recheck": "The actual function now opens the method dialog once, still blocks the story /assets/ dialog during drawing, and leaves state.drawMode unchanged. Added author regression also passes.",
+      "status": "resolved"
+    }
+  ],
+  "verification": [
+    {
+      "command": "python3 -m unittest discover -s tests -p test_sync_filmcraft.py",
+      "repository": "primary",
+      "result": "4 tests passed"
+    },
+    {
+      "command": "python3 scripts/sync_filmcraft.py --check",
+      "repository": "primary",
+      "result": "consistent: 16 chapters, 70 source records, 12 diagrams; source-record count is not the independent research-source count"
+    },
+    {
+      "command": "python3 -m unittest discover -s tests -p test_approach.py",
+      "repository": "desk",
+      "result": "7 tests passed after SVG fix; covers absent document, corrupt documents, preserved legacy schema, invalid blocks, exact declared media, ranges, traversal, mutation, symlinks and heading identity"
+    },
+    {
+      "command": "node --test tests/approach_format.test.cjs tests/approach_navigation.test.cjs tests/structure_navigation.test.cjs tests/structure_scroll.test.cjs",
+      "repository": "desk",
+      "result": "24 tests passed after both fixes"
+    },
+    {
+      "check": "Independent complete visible-text order comparison",
+      "result": "All 16 Markdown chapters match derived blocks, totaling 56651 non-whitespace visible characters. Markdown block/inline delimiters and link destinations were removed for the comparison; code body content retained. No differences."
+    },
+    {
+      "check": "Independent local-link target enumeration",
+      "result": "264 local-link occurrences checked against 163 existing chapter/subchapter target IDs; no missing filmcraft anchors."
+    },
+    {
+      "check": "Independent real SVG and declared-media checks",
+      "result": "12 original SVGs accepted; all 12 declared media resolve with matching hashes and image/svg+xml MIME."
+    },
+    {
+      "check": "Independent adversarial SVG recheck",
+      "result": "All three originally accepted cases now rejected; no browser execution claim."
+    },
+    {
+      "check": "Independent actual-function VM reproduction",
+      "result": "Method image opens during unrelated draw mode; story image remains blocked; original draw state preserved."
+    }
+  ],
+  "limits": [
+    "No browser control was used for this review. Layout, focus, real click behavior and browser media rendering remain part of the main executor browser acceptance, not these unit/VM checks.",
+    "The derivation supports the explicitly selected Markdown subset, rather than general CommonMark. The full-text comparison applies to the 16 current published chapters.",
+    "No code, business data or shared services were modified by this reviewer; tests used their temporary isolated fixtures."
+  ],
+  "reviewed_file_sha256": {
+    "primary": {
+      "scripts/sync_filmcraft.py": "55ea2b48a8d6e56e2bc1cebbe84d804ddaf5b6168b2c80012ea01092d5b56aa9",
+      "tests/test_sync_filmcraft.py": "fb1d5943f2ceb015a8e1952291710947526cf2d9c22b1f7f59d7d543566b407c",
+      "scripts/sync_video_handbook.py": "8c7b0228c231325b4ec0036982fb5358638cf9de7f63858fecb680cc3ded10d8",
+      "scripts/material_review_release.py": "033b195dd02be08a0a2522cf3f18cc169f92394ac838139a01d6542380da1a6f"
+    },
+    "desk": {
+      "review_desk/approach.py": "3fc9b8dfeafbfe65a0ae9706db7616d3343443cc2f7823f2f54bd16af67ab323",
+      "review_desk/static/approach.js": "d326acfc29478d876cc4f7dab16b1c080c6cd74c50d5f6c2f1a491c1956bfe89",
+      "review_desk/static/approach.css": "15bef187d686ad590741e5fe1b9bcf2cc35b9af4b3f1b1229329c616b24be73f",
+      "review_desk/static/structure.js": "b6a9577429d2a19466b54d186484077b9b1ca9189d251b32ada764fd03ae30b1",
+      "review_desk/static/structure.css": "3a10fa289c7c8e8d96d0a11eae7980b00c6d1e8ea9ce842b58dc9092e501d60c",
+      "tests/test_approach.py": "5a990ec13e12c149f8aa6d5b588ea68aeee2c6d8f1f0a092e44d9ee2d4d41338",
+      "tests/approach_format.test.cjs": "a6bc843873ea7e8b23debd6aad2b08c79307f3a019d03d9779e835e092193668",
+      "tests/approach_navigation.test.cjs": "e4f2a6cd85a8b74b8828ec224d726ccf37a3d47b9998b55ec9f58339ef85f242",
+      "tests/structure_navigation.test.cjs": "d4ef2047981d512a97297570d06777cdaeb34fc0a77bac6bcce577e8d88acf4c",
+      "tests/structure_scroll.test.cjs": "8ab10a651f1802091ec37a7916ecbc95fae08d8220d79ebf4261b29e0ce3c204"
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "task": "task-20261008-0006",
+  "browser": "connected Chrome via cua_repl",
+  "instance": "isolated task preview on loopback port 58178",
+  "viewports": [
+    [
+      1365,
+      900
+    ],
+    [
+      390,
+      844
+    ]
+  ],
+  "business_writes": false,
+  "checks": [
+    {
+      "case": "完整子页与老子页",
+      "result": "完整16节与4个子页可见；故事创作/生产制作/视频手册切换正常。"
+    },
+    {
+      "case": "章节与来源深链",
+      "result": "目录lighting及SP24小节直达；括号URL正确编码；刷新后小节标题窄屏top200.734375，不被固定栏遮挡。"
+    },
+    {
+      "case": "长文阅读位置",
+      "result": "原生可见tab点击切到生产制作，back后scrollY15219，forward回生产制作，back及刷新仍15219。此前Playwright click自动滚动造成415px偏移，原生点击无此问题，未作为产品故障修复。"
+    },
+    {
+      "case": "窄屏长文与表格",
+      "result": "390x844无整页横向溢出；术语表按行保留列名；横向目录可选择章节。"
+    },
+    {
+      "case": "图示可读性",
+      "result": "Enter打开，原始尺寸900px宽在372px窗口内可滚动，切换适应窗口及Escape关闭成功；正文图片原件恢复后naturalWidth900。"
+    },
+    {
+      "case": "圈选兼容性",
+      "result": "真实故事结构页点圈选评论且未提交，切方法页仍可用Enter打开光线图；关闭后无新增评论。"
+    },
+    {
+      "case": "缺失与损坏JSON",
+      "result": "仅隔离实例移走文件/写坏JSON，分别出现未提供方法与格式错误提示；故事采编仍可读；原文件已恢复。"
+    },
+    {
+      "case": "单媒体缺失",
+      "result": "仅隔离实例删除ld-light-size.svg，实际滚至图示后出现加载失败与刷新/核对版本提示，正文继续；随后复制准确原件恢复。"
+    },
+    {
+      "case": "旧入口兼容",
+      "result": "实际打开?workspace=current，故事创作tab被选中、标题故事创作方法正常。"
+    }
+  ],
+  "limits": [
+    "未对正式实例注入故障；正式服务另留独立回执。",
+    "没有将模型文字输出或页面音视频存在当作真实听辨。"
+  ]
+}
