@@ -12,6 +12,7 @@ import sqlite3
 import subprocess
 import tarfile
 import time
+from zoneinfo import ZoneInfo
 
 HOME = Path.home()
 CONTROL = HOME / 'my-config/lijizhanshe'
@@ -101,7 +102,6 @@ def preflight():
         raise ValueError('review runtime limits on this cgroup configuration')
     nginx = json.loads(run('docker', 'inspect', NGINX_CONTAINER))[0]
     required = {'/etc/nginx/conf.d/default.conf': NGINX,
-                '/etc/nginx/htpasswd': NGINX.parent/'htpasswd',
                 '/usr/share/nginx/html': HOME/'www'}
     mounts = {item['Destination']: item for item in nginx['Mounts']}
     for destination, source in required.items():
@@ -122,7 +122,7 @@ def preflight():
 def credential_check():
     credentials = safe(CONTROL/'credentials.env')
     if not credentials.is_file() or credentials.stat().st_mode & 0o077:
-        raise ValueError('protected independent credentials.env is required')
+        raise ValueError('protected server credentials.env is required')
     values = {}
     for line in credentials.read_text().splitlines():
         if not line or line.startswith('#'):
@@ -135,13 +135,18 @@ def credential_check():
         values[key] = value
     try:
         maximum = int(values.get('REVIEW_POLISH_MAX_ATTEMPTS', '0'))
+        daily = int(values.get('REVIEW_POLISH_DAILY_LIMIT', '0'))
     except ValueError:
-        maximum = 0
-    if not values.get('OPENAI_API_KEY', '').strip() or maximum <= 0:
-        raise ValueError('independent API credential and positive cumulative call cap are required')
+        maximum = daily = 0
+    if not values.get('OPENAI_API_KEY', '').strip() or maximum <= 0 and daily <= 0:
+        raise ValueError('server API credential and positive call cap are required')
     usage = safe(CONTROL/'usage/attempts.json')
-    if usage.exists() and json.loads(usage.read_text())['attempts'] >= maximum:
-        raise ValueError('the authorized cumulative API call cap is already exhausted')
+    if daily > 0:
+        ZoneInfo(values.get('REVIEW_POLISH_BUDGET_TIMEZONE', 'Asia/Shanghai'))
+    if usage.exists():
+        value = json.loads(usage.read_text())
+        if type(value['attempts']) is not int or value['attempts'] < 0:
+            raise ValueError('invalid API usage counter; inspect without resetting it')
 
 
 def nginx_workers():
@@ -181,8 +186,7 @@ def configure(maintenance):
     block = BEGIN+'''
     location = /lijizhanshe { return 308 /lijizhanshe/$is_args$args; }
     location ^~ /lijizhanshe/ {
-        auth_basic "Li Ji experience";
-        auth_basic_user_file /etc/nginx/htpasswd;
+        auth_basic off;
         add_header Cache-Control "no-store" always;
 '''+content+'''
     }

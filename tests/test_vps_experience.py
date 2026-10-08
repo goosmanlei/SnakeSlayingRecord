@@ -32,7 +32,8 @@ class VPSPackageBoundaryTest(unittest.TestCase):
                 credentials.write_text('OPENAI_API_KEY=test-only-secret\nREVIEW_POLISH_MAX_ATTEMPTS=5\n')
                 remote.credential_check()
                 (control/'usage').mkdir();(control/'usage/attempts.json').write_text('{"attempts":5}')
-                with self.assertRaisesRegex(ValueError,'exhausted'):remote.credential_check()
+                remote.credential_check()
+                self.assertEqual(json.loads((control/'usage/attempts.json').read_text()),{'attempts':5})
 
     def test_changed_shared_nginx_mount_is_rejected_before_any_write(self):
         nginx={'State':{'Running':True},'Mounts':[],'NetworkSettings':{'Networks':{remote.NETWORK:{}}},'Id':'shared-nginx'}
