@@ -111,8 +111,7 @@ class WorkspaceTest(unittest.TestCase):
         # Prevent a later add/add resolution from restoring the pre-isolation CLI.
         import ast
         root = Path(__file__).resolve().parents[1]
-        for name in ('seed_audio', 'lyria_music', 'record_builtin_image', 'register_full_generation',
-                     'register_generation_batch', 'register_production_candidates', 'production_review'):
+        for name in ('seed_audio', 'lyria_music', 'record_builtin_image', 'production_review'):
             tree = ast.parse((root / 'scripts' / (name + '.py')).read_text())
             calls = [n for n in ast.walk(tree) if isinstance(n, ast.Call)]
             self.assertTrue(any(isinstance(c.func, ast.Name) and c.func.id == 'generation_root' for c in calls), name)

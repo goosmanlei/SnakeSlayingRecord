@@ -1,6 +1,107 @@
 {
-  "bytes": 5292,
-  "format": "material-archive-reference-v1",
-  "recipe": "c066022e0452ac1d167b08278c3eb4d06966f0126af5b9e015d973d3e408a6d1",
-  "sha256": "7cd8ed849fde6b41cff6287fdf827b4248a502055b425b7ba0515ee24fd1c033"
+  "id": "fg3-cave-gate-loaded-image-01",
+  "recipe_id": "form-cave-gate-loaded",
+  "entity": {
+    "object_id": "entity-cave-gate",
+    "revision_id": "ed76d5b1efb108994ffe0ec7deaf09f5146f1d637a4d7b4d736f215012a7656c"
+  },
+  "state": {
+    "object_id": "form-cave-gate-loaded",
+    "revision_id": "f8e5d07aa17003cca1177c9d8668e8ad2e90caeeb238cf3019fc460e8fb7e07f"
+  },
+  "requirement": {
+    "object_id": "need-form-cave-gate-loaded-overall",
+    "revision_id": "6689e7152e9163e752e62afda148148b6befb3a9f8e3cf1d1564db1ffb61e008"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-cave-gate-base-image-02",
+        "revision_id": "9f2dd5a25d3a9b294892313fcfc40dc380f838125ebdb5a2133b7f551a7e9bfe"
+      },
+      "component_id": "original",
+      "sha256": "1ebb9619a864ff72087147b6aa6d188d911a6a71a4a81968df78e997f9da0374",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：北端木滑闸与两柱结构"
+    },
+    {
+      "reference": {
+        "object_id": "asset-fg3-crossbeam-base-image-01",
+        "revision_id": "94e9b74b04de561706b0c7aa2b5caf24b6a812493bc168c69555bd8f7f2d1e70"
+      },
+      "component_id": "original",
+      "sha256": "9ff476bb5d123bb9459100eb6667f542cbfb2e7ee2e17961bcfcb9777f7acf4f",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图2：灰褐长压杠整体"
+    },
+    {
+      "reference": {
+        "object_id": "asset-fg3-snake-base-image-02",
+        "revision_id": "4d7c6f872a13ca84e80e9925bc481caae780dd556bc97247686f82190f4887c6"
+      },
+      "component_id": "original",
+      "sha256": "28d8542d9f7d6061820f30a0edaba641a25e177108bdc8cf3d5c9405e1b02525",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图3：蛇的灰橄榄色深纹和粗细，仅显示闸下穿过的一段"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 2,
+    "references": [
+      {
+        "object_id": "asset-fg3-cave-gate-base-image-02",
+        "revision_id": "9f2dd5a25d3a9b294892313fcfc40dc380f838125ebdb5a2133b7f551a7e9bfe"
+      },
+      {
+        "object_id": "asset-fg3-crossbeam-base-image-01",
+        "revision_id": "94e9b74b04de561706b0c7aa2b5caf24b6a812493bc168c69555bd8f7f2d1e70"
+      },
+      {
+        "object_id": "asset-fg3-snake-base-image-02",
+        "revision_id": "4d7c6f872a13ca84e80e9925bc481caae780dd556bc97247686f82190f4887c6"
+      }
+    ]
+  },
+  "master_approvals": [
+    {
+      "object_id": "review-master-fg3-cave-gate-base-image-02",
+      "revision_id": "c5929ad614df03fae2f0b615752fc7eb7425bc0c29b75d76d7b40effc9a77e2a"
+    },
+    {
+      "object_id": "review-master-fg3-crossbeam-base-image-01",
+      "revision_id": "a385bcc1ca6f26edd57cb9a9cd218e8e0b76155725a956cc187743bd5d0ca050"
+    },
+    {
+      "object_id": "review-master-fg3-snake-base-image-02",
+      "revision_id": "e06bdeda97bb763a3b6a353f1b9fed9792c4d5045b12d0e2320f26bb92a9faf1"
+    }
+  ],
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "生成一张新的完整状态整体参考，二维人物与轻手绘背景，低饱和自然色、清楚干净轮廓、平涂为主；保持准确母版身份、比例、配色与空间方向。不要摄影皮肤、纸纹噪点、厚肌理或过锐边缘。单幅单时刻，不是分镜拼图、裁切或放大。输出工具最高原生画面，无水印和装饰标题。\n完整原件按实际顺序输入：图1：北端木滑闸与两柱结构；图2：灰褐长压杠整体；图3：蛇的灰橄榄色深纹和粗细，仅显示闸下穿过的一段。\n4:3横幅完整北闸，略偏南西俯看。门板半落卡在蛇躯背上，底部有明显非零间隙，整板高于母版完全落底位置；闸板与柱的栓孔错位。两柱间没有短栓，原短木栓放在左墙根。图2长杠中央用两组麻绳绑在活动闸板南面的短横木上，长杠两头伸出两柱；它在柱前，不穿固定柱孔。两端受力示意用向下的小灰箭头即可，勿新增身份人物。蛇只露闸下通道内一截，头在封顶石道南段，身与尾留北洞，不在院中横爬；简淡剖视仅用于看闸底受压，绝不是新增实际开口。南门小背景仍关牢。闸、杠和两柱完整入画，色线与母版连续，不能插销或落到底。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/1ebb9619a864ff72087147b6aa6d188d911a6a71a4a81968df78e997f9da0374.png",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/9ff476bb5d123bb9459100eb6667f542cbfb2e7ee2e17961bcfcb9777f7acf4f.png",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/28d8542d9f7d6061820f30a0edaba641a25e177108bdc8cf3d5c9405e1b02525.png"
+    ]
+  }
 }

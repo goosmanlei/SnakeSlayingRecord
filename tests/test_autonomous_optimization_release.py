@@ -17,7 +17,19 @@ class DraftChecks(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory();self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name)
-        shutil.copytree(HERE.parent / 'production/autonomous-optimization-release/project-context', self.root / 'project-update')
+        package = self.root / 'project-update'; package.mkdir()
+        before = dict(scope='PROJECT', schema_version=3, version=14,
+                      body=dict(story_background='original story', creative_background='original intent',
+                                current_stage='SCREENPLAY', audience='unchanged audience'), updated_at='before')
+        request = dict(expected_version=14, updates=dict(story_background='revised story',
+                       creative_background='revised intent', current_stage='MATERIAL_PREPARATION'))
+        after = {**before['body'], **request['updates']}
+        manifest = dict(guard=dict(expected_version=14, full_old_project_sha256=r.sha(r.canonical(before)),
+                         full_old_body_sha256=r.sha(r.canonical(before['body']))),
+                        candidate=dict(expected_body_sha256=r.sha(r.canonical(after))))
+        for name, value in [('request.json', request), ('before-project.json', before),
+                            ('expected-body.json', after), ('manifest.json', manifest)]:
+            (package / name).write_text(json.dumps(value))
         self.request, self.before, self.after = r.update_package(self.root / 'project-update')
 
     def current(self, version=15, body=None):

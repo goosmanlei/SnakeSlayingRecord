@@ -1,6 +1,83 @@
 {
-  "bytes": 4258,
-  "format": "material-archive-reference-v1",
-  "recipe": "3ec3141f02cb917faff172670f45edecad9b4dc95459534fc66e2a97eecefeac",
-  "sha256": "f316bb554446b4e29a105090c695238538bb47ebb7f1a2fa7d75ff7bbe77d0ab"
+  "id": "fg3-rice-shop-day-image-01",
+  "recipe_id": "form-rice-shop-day",
+  "entity": {
+    "object_id": "entity-rice-shop",
+    "revision_id": "febc054f3519aa2ff902ad0f1f51f11643de98cb716b2990db699b7f95637f63"
+  },
+  "state": {
+    "object_id": "form-rice-shop-day",
+    "revision_id": "418881083043f67a8fe97417384b1f0ed010221e681d2dfcf6d68aa925e84699"
+  },
+  "requirement": {
+    "object_id": "need-form-rice-shop-day-overall",
+    "revision_id": "df19b2f84bf929796bb03a67a67873ff2f4e2864d1cdd949c560ced6275758be"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-zhou-base-image-02",
+        "revision_id": "23e8da1b8fe6d12afb7449fa1877ece4b1466fd240117e844331cce5bc406867"
+      },
+      "component_id": "original",
+      "sha256": "641cc8163f4ecf05977f9acf908dcba2b85f27bdd5112a9fd574ec10f0dfbbe2",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：已认可周掌柜量米身份与围裙。"
+    },
+    {
+      "reference": {
+        "object_id": "asset-fg3-book-basket-base-image-01",
+        "revision_id": "4ee118b7902d06408740eb279e96845fe4e53776cb3ae6d518602705560dd3ba"
+      },
+      "component_id": "original",
+      "sha256": "4ed29944eafa2cf42adc564fdfec7e400fab0071479eb290c341d9d5530e6936",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图2：同一倒扣垫歌本竹篮，只取篮身形状。"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 2,
+    "references": [
+      {
+        "object_id": "asset-fg3-zhou-base-image-02",
+        "revision_id": "23e8da1b8fe6d12afb7449fa1877ece4b1466fd240117e844331cce5bc406867"
+      },
+      {
+        "object_id": "asset-fg3-book-basket-base-image-01",
+        "revision_id": "4ee118b7902d06408740eb279e96845fe4e53776cb3ae6d518602705560dd3ba"
+      }
+    ]
+  },
+  "master_approvals": [
+    {
+      "object_id": "review-master-fg3-zhou-base-image-02",
+      "revision_id": "d5a172477d98414ddff912f2aded6b5de659c2024c70aaa66d7749a88f821d56"
+    },
+    {
+      "object_id": "review-master-fg3-book-basket-base-image-01",
+      "revision_id": "6eec9ba2a288a7ec5f931b5158abfc9ec4ded964b7039d58fe7f98ec48fa2ee3"
+    }
+  ],
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "单幅完整整体参考，不分格、不拼贴、不画标题、水印、箭头或尺寸标注。干净二维动画线条与低饱和平涂，背景轻手绘、大块柔和明暗；不要写实摄影、三维建模、厚纸纹、颗粒、锐化、繁密装饰。主要对象全部入画并留边。输出工具可提供的最高原生图，不放大。画幅16:9，清楚的宽景空间参考，平视略高的自然三分之二视角。建筑、出入口和所述功能区关系要一眼看懂。人物如有仅按指定参考出现，不新增身份或剧情。周家米铺白日空间基准。参考图1同一周掌柜在右侧柜后量米，圆脸、灰褐衣、沾米粉围裙与灰鞋不变；参考图2只取门外倒扣竹篮，作为唱曲点，没有另外生新人物。单层暖灰木铺面朝河街，门全开，面向店时右侧量米柜、米缸在柜后，左侧几扇拆下门板靠墙；门宽够两人并行。门外左侧放倒扣竹篮，篮上灰青歌本用一块平河石压住，檐下容三四人但此时清楚留白。柜到门、檐下到街的通道通畅，少量粮袋靠内墙不堵路。柔和白日从街入，檐下稍暗，土色墙，朴素生活场景不加密集招牌、现代秤或陌生歌者。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/641cc8163f4ecf05977f9acf908dcba2b85f27bdd5112a9fd574ec10f0dfbbe2.png",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/4ed29944eafa2cf42adc564fdfec7e400fab0071479eb290c341d9d5530e6936.png"
+    ]
+  }
 }

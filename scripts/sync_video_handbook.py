@@ -138,7 +138,10 @@ def main():
     tab = derive((ROOT / SOURCE).read_bytes())
     path = ROOT / DESTINATION
     value = json.loads(path.read_text(encoding="utf-8"))
-    expected = {**value, "schema_version": 2, "tabs": [t for t in value["tabs"] if t["id"] != TAB] + [tab]}
+    tabs = [tab if t['id'] == TAB else t for t in value['tabs']]
+    if not any(t['id'] == TAB for t in value['tabs']):
+        tabs.append(tab)
+    expected = {**value, "schema_version": 2, "tabs": tabs}
     if args.check:
         if value != expected:
             raise SystemExit("handbook reading copy is stale; run scripts/sync_video_handbook.py")

@@ -1,6 +1,83 @@
 {
-  "bytes": 4006,
-  "format": "material-archive-reference-v1",
-  "recipe": "3d02111ef1547038bb05c4a499df962dbfd1e61b720b93252c7e72b9aea2db8d",
-  "sha256": "6d574b3017e8bbc1c2628d1964cd5d2523f74faf120d9f8610fdc5d130aa44fe"
+  "id": "fg3-cave-gate-released-image-03",
+  "recipe_id": "form-cave-gate-released",
+  "entity": {
+    "object_id": "entity-cave-gate",
+    "revision_id": "ed76d5b1efb108994ffe0ec7deaf09f5146f1d637a4d7b4d736f215012a7656c"
+  },
+  "state": {
+    "object_id": "form-cave-gate-released",
+    "revision_id": "478a0220ef6bb74560601e1b6c2d2dbe7148ec78cd8401f35196e25fb7db7dad"
+  },
+  "requirement": {
+    "object_id": "need-form-cave-gate-released-overall",
+    "revision_id": "3b3c4a035332a58de53054e29c902bdf405c0c8371f755f94b645f89b70c0476"
+  },
+  "source_lock_sha256": "dc1e00c5648fd420812f914d428cac5c08a9931f733f5a5febd6a3a2d1966cb3",
+  "references": [
+    {
+      "reference": {
+        "object_id": "asset-fg3-cave-gate-base-image-02",
+        "revision_id": "9f2dd5a25d3a9b294892313fcfc40dc380f838125ebdb5a2133b7f551a7e9bfe"
+      },
+      "component_id": "original",
+      "sha256": "1ebb9619a864ff72087147b6aa6d188d911a6a71a4a81968df78e997f9da0374",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图1：认可的D0双柱厚闸与整石道，重新从干净基准生成"
+    },
+    {
+      "reference": {
+        "object_id": "asset-fg3-crossbeam-base-image-01",
+        "revision_id": "94e9b74b04de561706b0c7aa2b5caf24b6a812493bc168c69555bd8f7f2d1e70"
+      },
+      "component_id": "original",
+      "sha256": "9ff476bb5d123bb9459100eb6667f542cbfb2e7ee2e17961bcfcb9777f7acf4f",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "use": "参考图2：完整长灰褐圆木杠身份与比例"
+    }
+  ],
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-fg3-cave-gate-base-image-02",
+        "revision_id": "9f2dd5a25d3a9b294892313fcfc40dc380f838125ebdb5a2133b7f551a7e9bfe"
+      },
+      {
+        "object_id": "asset-fg3-crossbeam-base-image-01",
+        "revision_id": "94e9b74b04de561706b0c7aa2b5caf24b6a812493bc168c69555bd8f7f2d1e70"
+      }
+    ]
+  },
+  "master_approvals": [
+    {
+      "object_id": "review-master-fg3-cave-gate-base-image-02",
+      "revision_id": "c5929ad614df03fae2f0b615752fc7eb7425bc0c29b75d76d7b40effc9a77e2a"
+    },
+    {
+      "object_id": "review-master-fg3-crossbeam-base-image-01",
+      "revision_id": "a385bcc1ca6f26edd57cb9a9cd218e8e0b76155725a956cc187743bd5d0ca050"
+    }
+  ],
+  "tool": "image_gen.imagegen",
+  "model": "GPT Image",
+  "model_identity_note": "工具只暴露GPT Image；底层型号、尺寸、质量、调用ID和用量未暴露。",
+  "request": {
+    "prompt": "新生成4:3北端洞闸在蛇停止顶闸后的整体器物参考。图1固定灰木双柱、厚竖板活动门、灰石底座、封顶短石道的造型颜色不改；图2完整长圆木杠绑在活动闸板正面中央短横木上，两组麻绳只缠这两个活动件，不绕固定柱。整根长杠在柱子前方，遮住两柱的前面，不能从柱孔穿过。无人物，浅灰空底，不画全院或南端。木闸已下沉，底边只隔一条极薄的静止蛇鳞，蛇不再往上顶；不声称木闸重新锁死。长杠已随活动闸下沉至板面中下部，两固定柱的原插栓槽孔在它上方完全空着。木栓早已抽走、搁在画外墙边，画面里不再出现任何另一根杆、销、短木块。两端长杠和整门都留边。门后石道顶盖始终完整不透明，不用开口来展示蛇，不加箭头。干净二维平涂、轻手绘木石，保持基准灰褐色，无纹理噪点、无文字。",
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/1ebb9619a864ff72087147b6aa6d188d911a6a71a4a81968df78e997f9da0374.png",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-project/worktrees/task-20261002-0003/export/assets/9ff476bb5d123bb9459100eb6667f542cbfb2e7ee2e17961bcfcb9777f7acf4f.png"
+    ]
+  }
 }

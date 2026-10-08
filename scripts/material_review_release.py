@@ -36,6 +36,7 @@ RELEASE_PREFIXES={TASK:'materials-20261004-0004', 'task-20261004-0005':'asset-cl
                   'task-20261006-0003':'breakdown-shot-v2-20261006-0003',
                   'task-20261006-0006':'approach-20261006-0006',
                   'task-20261008-0002':'seedance-handbook-20261008-0002',
+                  'task-20261008-0006':'filmcraft-20261008-0006',
                   'entity-acceptance-20261004':'entity-acceptance-20261004'}
 require,sha,read,save,run,git,inspect=base.require,base.sha,base.read,base.save,base.run,base.git,base.inspect
 METHOD_MEDIA_DIRECTORY='content/production-approach-assets'
@@ -48,7 +49,7 @@ def method_media_files(document):
             for block in section.get('blocks',[]):
                 if block.get('type')!='media':continue
                 filename,digest=block.get('file'),block.get('sha256')
-                require(isinstance(filename,str) and re.fullmatch(r'[a-z0-9][a-z0-9._-]*\.(png|jpg|jpeg|webp|mp4|webm|mp3|wav)',filename),'unsafe method media filename')
+                require(isinstance(filename,str) and re.fullmatch(r'[a-z0-9][a-z0-9._-]*\.(png|jpg|jpeg|webp|svg|mp4|webm|mp3|wav)',filename),'unsafe method media filename')
                 require(isinstance(digest,str) and re.fullmatch(r'[a-f0-9]{64}',digest),'method media hash missing')
                 relative=METHOD_MEDIA_DIRECTORY+'/'+filename
                 require(relative not in files or files[relative]==digest,'conflicting method media versions')
@@ -114,7 +115,7 @@ def prepare(a):
         put('instance/'+name,raw)
     cfg=read(root/'instance/config/instance.json');require(cfg['review_desk_commit']==a.system_candidate,'candidate instance pin differs')
     current_files={name:sha(Path(mounts['/instance/'+name]['Source']).read_bytes()) for name in base.INSTANCE_FILES}
-    require(task in {'task-20261005-0007','task-20261006-0006','task-20261008-0001','task-20261008-0002'} or current_files['content/production-approach.json']==hashes['instance/content/production-approach.json'],'approach content change is outside this release')
+    require(task in {'task-20261005-0007','task-20261006-0006','task-20261008-0001','task-20261008-0002','task-20261008-0006','task-20261008-0004'} or current_files['content/production-approach.json']==hashes['instance/content/production-approach.json'],'approach content change is outside this release')
     source={}
     for line in git(system,'ls-tree','-r',a.system_candidate,'--','review_desk').splitlines():
         header,name=line.split('\t',1);require(header.split()[0] in ('100644','100755'),'special source file')

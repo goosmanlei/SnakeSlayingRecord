@@ -1,30 +1,15 @@
 #!/usr/bin/env python3
-"""Save exact production revisions or recover a fresh, isolated review instance.
-
-The complete export preserves story and production records, comments and events.
-Older story-only exports can add production records through the shared import API;
-neither path replaces a live database or copies any credentials.
-"""
+"""Index or restore the current clean production export; never replay retired plans."""
 import argparse
-from contextlib import contextmanager, nullcontext
-import hashlib
 import json
 from pathlib import Path
 import shutil
-import tempfile
 import sys
-import wave
-from production_data import exact_replay
 
 try:
-    from .generation_workspace import generation_root, contained, isolated_instance
+    from .generation_workspace import generation_root, isolated_instance
 except ImportError:
-    from generation_workspace import generation_root, contained, isolated_instance
-
-try:
-    from .material_model_io import read_json as material_read_json, read_bytes as material_read_bytes, sqlite_compatibility
-except ImportError:
-    from material_model_io import read_json as material_read_json, read_bytes as material_read_bytes, sqlite_compatibility
+    from generation_workspace import generation_root, isolated_instance
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -75,172 +60,43 @@ def verify_export_index(index, export_dir, formats):
         raise ValueError('complete export and production index describe different revisions')
 
 
-@contextmanager
-def historical_pcm_precision(root):
-    """Apply the existing two-record exception only after verifying originals."""
-    from material_model_io import read_framework
-    from recover_song_publication import precision_validation
-    from review_desk.production_media import physical_file_hash
-    from review_desk.store import canonical
-    checks = material_read_json(root / 'production/publications/songs-current-model-v2.json')['origin']['historical_pcm_precision_checks']
-    wanted = {c['revision_id'] for c in checks}
-    rows = read_framework(root / 'export/objects.json', revision_ids=wanted)['revisions']
-    originals = {r['id']: r for r in rows}
-    if set(originals) != wanted:
-        raise ValueError('historical PCM revisions missing from export')
-    for check in checks:
-        path = root / 'export/assets' / check['file']
-        if path.parent != root / 'export/assets' or path.is_symlink() or physical_file_hash(path) != path.stem:
-            raise ValueError('historical PCM original changed')
-        with wave.open(str(path)) as audio:
-            duration = audio.getnframes() / audio.getframerate()
-        if duration != check['pcm_duration'] or duration != check['range_end'] or not 0 < duration - check['recorded_duration'] < .0000005:
-            raise ValueError('historical PCM precision evidence differs')
-        row = originals[check['revision_id']]
-        value = {'object_id': row['object_id'], 'version': row['version'], 'payload': json.loads(row['payload'])}
-        if hashlib.sha256(canonical(value).encode()).hexdigest() != row['id']:
-            raise ValueError('historical PCM revision checksum differs')
-    with precision_validation(checks, originals) as validated:
-        yield
-    if validated != wanted:
-        raise ValueError('historical PCM compatibility scope incomplete')
-
-
 def main():
-    global ROOT
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--system', type=Path, required=True)
-    commands = parser.add_subparsers(dest='command', required=True)
-    save = commands.add_parser('snapshot')
-    save.add_argument('--instance', type=Path, required=True)
-    recover = commands.add_parser('recover')
-    recover.add_argument('--destination', type=Path, required=True)
-    recover.add_argument('--historical-pcm-precision', action='store_true',
-                         help='verify originals and reuse the two documented legacy WAV rounding exceptions')
-    parser.add_argument('--workspace', type=Path, default=ROOT)
-    args = parser.parse_args()
-    ROOT = generation_root(args.workspace)
-    sys.path.insert(0, str(args.system.resolve()))
+    parser=argparse.ArgumentParser(description='Index or restore the current complete audiovisual export into an empty task instance.')
+    parser.add_argument('--system',type=Path,required=True);parser.add_argument('--workspace',type=Path,default=ROOT)
+    commands=parser.add_subparsers(dest='command',required=True)
+    q=commands.add_parser('snapshot');q.add_argument('--instance',type=Path,required=True)
+    q=commands.add_parser('recover');q.add_argument('--destination',type=Path,required=True)
+    args=parser.parse_args();root=generation_root(args.workspace);sys.path.insert(0,str(args.system.resolve()))
     from review_desk import production
     from review_desk.store import Store
     from review_desk.bundle import restore
-    from review_desk.production_media import file_hash, validate_component
-    replay_path = contained(ROOT, 'production/replay.json')
-    if args.command == 'snapshot':
-        # Store initialization may migrate; run it only on our private snapshot.
+    from publication_receipts import RECOVERY,restore_publication_receipts,sha,save
+    manifest=json.loads((root/'export/manifest.json').read_text())
+    if manifest.get('schema_version')!=9:raise ValueError('use the current clean audiovisual export (schema 9)')
+    index_path=root/'production/audiovisual/index.json'
+    if args.command=='snapshot':
+        instance=args.instance if args.instance.is_absolute() else root/args.instance
+        store=Store.open_readonly(instance/'.runtime/review.sqlite3')
         try:
-            from .generation_publication import backup
-        except ImportError:
-            from generation_publication import backup
-        runtime = contained(ROOT, '.runtime/generation/snapshots')
-        runtime.mkdir(parents=True, exist_ok=True)
-        snapshot = Path(tempfile.mkdtemp(dir=runtime)) / 'review.sqlite3'
-        source = args.instance if args.instance.is_absolute() else ROOT / args.instance
-        backup(source.resolve() / '.runtime/review.sqlite3', snapshot)
-        store = Store(snapshot)
-        try:
-            complete = json.loads((ROOT / 'export/manifest.json').read_text()).get('schema_version', 1) >= 6
-            if complete:
-                data = complete_export_index(store, production)
-                verify_export_index(data, ROOT / 'export', production.FORMATS)
-                from review_desk.material_archives import read_scope
-                # Reuse the consistent snapshot's content graph. Otherwise each
-                # archived file rebuilds the same exported graph on disk.
-                with read_scope(store, ROOT):
-                    for name, expected in data['files'].items():
-                        if Path(name).parts[:2] != ('export', 'assets') or len(Path(name).parts) != 3:
-                            raise ValueError('unsafe production original path')
-                        if file_hash(contained(ROOT, name)) != expected:
-                            raise ValueError('original media checksum differs: ' + name)
-            else:
-                data = exact_replay(store, production)
-                files = {}
-                for batch in data['batches']:
-                    for record in batch['records']:
-                        for component in record['payload'].get('components', []):
-                            validate_component(ROOT, component)
-                            files['export/assets/' + component['file']] = component['sha256']
-                data['files'] = files
-            data['base_manifest_sha256'] = file_hash(ROOT / 'export/manifest.json')
-            replay_path.parent.mkdir(parents=True, exist_ok=True)
-            replay_path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n')
-            print(json.dumps({'objects': len(data['heads']), 'revisions': len(data['revisions']),
-                              'batches': len(data.get('batches', [])), 'files': len(data['files'])}))
-        finally:
-            store.close()
+            data=complete_export_index(store,production);verify_export_index(data,root/'export',production.FORMATS)
+            data['base_manifest_sha256']=sha(root/'export/manifest.json');save(index_path,data)
+            print(json.dumps({'objects':len(data['heads']),'revisions':len(data['revisions']),'files':len(data['files'])}))
+        finally:store.close()
         return
-    destination = isolated_instance(ROOT, args.destination)
-    if destination.exists():
-        parser.error('recovery requires a new destination; no existing instance will be overwritten')
-    if ROOT not in destination.parents or '.runtime' not in destination.relative_to(ROOT).parts:
-        parser.error('use a new directory inside this task worktree .runtime for isolated recovery')
-    data = material_read_json(replay_path)
-    manifest=json.loads((ROOT/'export/manifest.json').read_text())
-    schema6=manifest.get('schema_version',1)>=6
-    consolidated=manifest.get('schema_version',1)>=8
-    indexed = data.get('format') == 'production-export-index-v1'
-    if consolidated and not indexed:
-        if data.get('format')!='retired-production-package-v1':parser.error('consolidated recovery requires its complete export or current index')
-        data={'files':{'export/'+name:checksum for name,checksum in manifest['files'].items() if name.startswith('assets/')}}
-    if indexed:
-        if not schema6 or file_hash(ROOT / 'export/manifest.json') != data['base_manifest_sha256']:
-            parser.error('production index requires its exact complete export')
-        verify_export_index(data, ROOT / 'export', production.FORMATS)
-    if not schema6 and (data.get('format') != 'production-replay-v1' or file_hash(ROOT / 'export/manifest.json') != data['base_manifest_sha256']):
-        parser.error('base export changed; review provenance before rebuilding the replay package')
-    for relative, expected in data['files'].items():
-        if Path(relative).parts[:2] != ('export', 'assets') or len(Path(relative).parts) != 3:
-            parser.error('unsafe replay media path')
-        if indexed or consolidated:
-            # Verify the physical container here; restore checks its decoded
-            # original against the exact stored component and content graph.
-            from review_desk.production_media import physical_file_hash
-            expected_container = manifest['files'].get(str(Path(relative).relative_to('export')))
-            valid = expected_container is not None and physical_file_hash(ROOT / relative) == expected_container
-        else:
-            valid = file_hash(ROOT / relative) == expected
-        if not valid:
-            parser.error('original media checksum differs: ' + relative)
+    destination=isolated_instance(root,args.destination)
+    if destination.exists():raise ValueError('recovery requires a new destination; no existing database is overwritten')
+    data=json.loads(index_path.read_text())
+    if data['base_manifest_sha256']!=sha(root/'export/manifest.json'):raise ValueError('production index and export differ')
+    verify_export_index(data,root/'export',production.FORMATS)
     destination.mkdir(parents=True)
-    for folder in ('config', 'content', 'export'):
-        shutil.copytree(ROOT / folder, destination / folder)
-    if consolidated:
-        auxiliary='production/version-consolidation/recovery.json'
-        (destination/auxiliary).parent.mkdir(parents=True,exist_ok=True)
-        shutil.copy2(ROOT/auxiliary,destination/auxiliary)
-    config_path = destination / 'config/instance.json'
-    config = json.loads(config_path.read_text())
-    config['title'] = '李寄斩蛇 · 制作准备隔离恢复'
-    config_path.write_text(json.dumps(config, ensure_ascii=False, indent=2) + '\n')
-    store = Store(destination / '.runtime/review.sqlite3')
+    for folder in ('config','content','export'):shutil.copytree(root/folder,destination/folder)
+    (destination/RECOVERY).parent.mkdir(parents=True,exist_ok=True);shutil.copy2(root/RECOVERY,destination/RECOVERY)
+    store=Store(destination/'.runtime/review.sqlite3')
     try:
-        precision = historical_pcm_precision(ROOT) if args.historical_pcm_precision and not consolidated else nullcontext()
-        with precision:
-            restore(store, destination / 'export')
-        if consolidated:
-            from content_version_consolidation import restore_publication_receipts
-            restore_publication_receipts(store,destination)
-        # Complete exports already contain production history and its comments.
-        # Replay only a story-only base; an inconsistent populated base must fail
-        # the exact comparison below, never be silently amended or overwritten.
-        if not schema6 and not exact_replay(store, production)['heads']:
-            production.restore_records(store, data['batches'])
-        recovered = complete_export_index(store, production) if schema6 else exact_replay(store, production)
-        if (indexed or not schema6) and (recovered['heads'] != data['heads'] or recovered['revisions'] != data['revisions']):
-            raise ValueError('recovered exact revisions or selected heads differ')
-        from review_desk.material_archives import read_scope
-        with read_scope(store, destination):
-            for relative, expected in data['files'].items():
-                from review_desk.production_media import physical_file_hash
-                actual=physical_file_hash(destination / relative) if consolidated and not indexed else file_hash(destination / relative)
-                if actual != expected:
-                    raise ValueError('recovered file checksum mismatch')
-        print(json.dumps({'recovered': True, 'production_objects': len(recovered['heads']),
-                          'production_revisions': len(recovered['revisions']), 'files_verified': len(data['files']),
-                          'comments': len(store.comments()), 'destination': str(destination)}, ensure_ascii=False))
-    finally:
-        store.close()
+        restore(store,destination/'export');restore_publication_receipts(store,destination)
+        recovered=complete_export_index(store,production)
+        if any(recovered[k]!=data[k] for k in ('heads','revisions','files')):raise ValueError('restored exact production index differs')
+        print(json.dumps({'recovered':True,'objects':len(store.objects()),'production_objects':len(recovered['heads']),'revisions':len(store.revisions()),'comments':len(store.comments()),'files_verified':len(manifest['files']),'destination':str(destination)},ensure_ascii=False))
+    finally:store.close()
 
-
-if __name__ == '__main__':
-    main()
+if __name__=='__main__':main()
