@@ -168,9 +168,15 @@ class ReleaseTest(unittest.TestCase):
              contextlib.redirect_stdout(io.StringIO()):
             for task in (r.TASK, 'task-20261004-0005', 'entity-acceptance-20261004',
                          'task-20261004-0007', 'task-20261004-0008', 'task-20261005-0001',
-                         'task-20261005-0007', 'task-20261006-0006'):
-                if task in {'task-20261005-0007', 'task-20261006-0006'}:
+                         'task-20261005-0007', 'task-20261006-0006', 'task-20261008-0002'):
+                if task in {'task-20261005-0007', 'task-20261006-0006', 'task-20261008-0002'}:
                     (story / 'content/production-approach.json').write_text('{"new_method": true}')
+                if task == 'task-20261008-0002':
+                    media = story / r.METHOD_MEDIA_DIRECTORY / 'demo.mp4'
+                    media.parent.mkdir(); media.write_bytes(b'original method fixture')
+                    document = {'tabs': [{'sections': [{'blocks': [{'type': 'media', 'kind': 'video',
+                        'file': media.name, 'caption': 'example', 'sha256': r.sha(media.read_bytes()), 'width': 1280, 'height': 720}]}]}]}
+                    (story / 'content/production-approach.json').write_text(json.dumps(document))
                 args = argparse.Namespace(story_worktree=story, system_worktree=system,
                     story_candidate='a' * 40, system_candidate='b' * 40,
                     story_target='d' * 40, system_target='e' * 40,
@@ -182,6 +188,18 @@ class ReleaseTest(unittest.TestCase):
                 self.assertEqual(manifest['task'], task)
                 self.assertEqual(manifest['release_name'], r.release_name(task, 'a' * 40, 'b' * 40))
                 self.assertEqual(r.read(args.bundle / 'system-delivery.json')['task'], task)
+                if task == 'task-20261008-0002':
+                    relative = r.METHOD_MEDIA_DIRECTORY + '/demo.mp4'
+                    self.assertEqual(manifest['method_media'], {relative: r.sha(media.read_bytes())})
+                    self.assertEqual((args.bundle / 'instance' / relative).read_bytes(), media.read_bytes())
+                    volumes = r.base.compose_definition(manifest, {'image': 'test'}, args.bundle)['services']['app']['volumes']
+                    mount = next(v for v in volumes if v['target'] == '/instance/' + r.METHOD_MEDIA_DIRECTORY)
+                    self.assertTrue(mount['read_only'])
+                    media.write_bytes(b'changed after declaration')
+                    args.bundle = story / '.runtime' / 'wrong-media-version'
+                    with self.assertRaisesRegex(ValueError, 'method media differs from declared version'):
+                        r.prepare(args)
+                    media.write_bytes(b'original method fixture')
             # Only the method rewrite tasks may change the instance-owned text.
             args.task = 'task-20261005-0006'
             args.bundle = story / '.runtime' / 'forbidden-content-change'

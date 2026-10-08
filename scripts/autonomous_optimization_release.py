@@ -466,7 +466,8 @@ def compose_definition(m, image, release):
     return {'services': {
         'app': {'image': image['image'], 'restart': 'unless-stopped', 'environment': environment,
                 'volumes': [volume(m['story_main'], '/instance', False), volume(ca, '/run/local-ca/cacert.pem', True),
-                            *[volume(release / 'instance' / name, '/instance/' + name, True) for name in INSTANCE_FILES]],
+                            *[volume(release / 'instance' / name, '/instance/' + name, True) for name in INSTANCE_FILES],
+                            *([volume(release / 'instance/content/production-approach-assets', '/instance/content/production-approach-assets', True)] if m.get('method_media') else [])],
                 'expose': ['8765'], 'healthcheck': {'test': ['CMD', 'python', '-c', "import urllib.request;urllib.request.build_opener(urllib.request.ProxyHandler({})).open('http://127.0.0.1:8765/api/instance',timeout=3)"], 'interval': '15s', 'timeout': '5s', 'retries': 3}},
         'nginx': {'image': m['previous_nginx']['image'], 'restart': 'unless-stopped',
                   'depends_on': {'app': {'condition': 'service_healthy'}},
@@ -534,6 +535,9 @@ def verify_service(m, image, release):
     for name in INSTANCE_FILES:
         actual = run([DOCKER, 'exec', APP, 'cat', '/instance/' + name])
         require(sha(actual) == m['hashes']['instance/' + name], 'running instance file differs')
+    for name,digest in m.get('method_media',{}).items():
+        actual = run([DOCKER, 'exec', APP, 'python', '-c', "import hashlib,sys\nh=hashlib.sha256()\nwith open(sys.argv[1],'rb') as f:\n for b in iter(lambda:f.read(1048576),b''): h.update(b)\nprint(h.hexdigest())", '/instance/'+name]).decode().strip()
+        require(actual == digest, 'running method media differs')
     for port in (3000, 64401):
         with build_opener(ProxyHandler({})).open('http://127.0.0.1:' + str(port) + '/api/instance', timeout=15) as response:
             require(response.status == 200, 'formal entry unavailable')
