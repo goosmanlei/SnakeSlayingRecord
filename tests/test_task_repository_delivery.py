@@ -108,18 +108,21 @@ class TaskDeliveryTests(unittest.TestCase):
                  'retainedWorktrees': [{'taskId': task, 'path': str(target), 'repository': 'primary'}]}
         return root, target, release, value
 
-    def test_release_guard_keeps_frozen_reference_after_directory_migration(self):
+    def test_release_provenance_does_not_retain_worktree_or_modify_manifest(self):
         with tempfile.TemporaryDirectory() as directory:
             root, target, release, value = self.release_guard_fixture(directory)
+            manifest = json.loads(release.read_text())
+            manifest['system_worktree'] = str(target / 'system')
+            manifest['previous_app'] = {'mounts': [{'Source': str(root), 'Destination': '/instance'}],
+                                        'working_dir': str(root)}
+            release.write_text(json.dumps(manifest))
             original = release.read_bytes()
-            responses = [subprocess.CompletedProcess([], 0, '', ''),
-                         subprocess.CompletedProcess([], 0, json.dumps(value), '')]
-            with patch.object(guard.shutil, 'which', side_effect=lambda name: name), \
-                    patch.object(guard.subprocess, 'run', side_effect=responses) as run:
+            with patch.object(guard.shutil, 'which', return_value='docker'), \
+                    patch.object(guard.subprocess, 'run', return_value=subprocess.CompletedProcess([], 0, '', '')) as run:
                 result = guard.check([str(target)], owner=root)
-            self.assertEqual(result['blockers'], [f'retained release manifest: {release}'])
+            self.assertEqual(result['blockers'], [])
             self.assertEqual(release.read_bytes(), original)
-            self.assertEqual(run.call_args.args[0], ['codex.task', '-C', str(root), 'inspect', '--json'])
+            self.assertEqual(run.call_count, 1)
 
     def test_release_guard_does_not_match_same_task_in_another_owner(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -129,16 +132,64 @@ class TaskDeliveryTests(unittest.TestCase):
                 self.assertEqual(guard.check([str(target)], owner=root)['blockers'], [])
             self.assertEqual(run.call_count, 1)
 
-    def test_release_guard_rejects_invalid_or_failed_task_queries(self):
+    def test_recovery_mount_and_compose_bind_keep_actual_worktree_dependency(self):
         with tempfile.TemporaryDirectory() as directory:
-            root, target, _, value = self.release_guard_fixture(directory)
-            invalid = [dict(value, schemaVersion=2), dict(value, workspace='/another'),
-                       dict(value, retainedWorktrees=[{'taskId': 'task-20261006-0003', 'path': '/outside'}])]
-            for response in [*invalid, None]:
-                with self.subTest(response=response):
-                    result = (subprocess.CompletedProcess([], 0, json.dumps(response), '') if response else
-                              subprocess.CalledProcessError(1, ['codex.task']))
-                    with patch.object(guard.shutil, 'which', side_effect=lambda name: name), \
-                            patch.object(guard.subprocess, 'run', side_effect=[subprocess.CompletedProcess([], 0, '', ''), result]):
-                        with self.assertRaises((RuntimeError, subprocess.CalledProcessError)):
+            root, target, release, _ = self.release_guard_fixture(directory)
+            manifest = json.loads(release.read_text())
+            manifest['previous_app'] = {'mounts': [{'Source': str(target / 'config.json'), 'Destination': '/config'}]}
+            release.write_text(json.dumps(manifest))
+            compose = release.parent / 'compose.release.json'
+            compose.write_text(json.dumps({'services': {'app': {'volumes': [
+                {'type': 'bind', 'source': str(target / 'instance'), 'target': '/instance'},
+                str(target / 'short') + ':/short:ro',
+                {'type': 'volume', 'source': 'named-cache', 'target': '/cache'}]}}}))
+            with patch.object(guard.shutil, 'which', return_value='docker'), \
+                    patch.object(guard.subprocess, 'run', return_value=subprocess.CompletedProcess([], 0, '', '')):
+                result = guard.check([str(target)], owner=root)
+            self.assertEqual(len(result['blockers']), 3)
+            self.assertIn('recovery mount', result['blockers'][0])
+            self.assertTrue(all('release mount' in item for item in result['blockers'][1:]))
+
+    def test_release_mount_detects_symlink_and_avoids_path_prefix_match(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root, target, release, _ = self.release_guard_fixture(directory)
+            target.mkdir(parents=True)
+            link = release.parent / 'linked-instance'
+            link.symlink_to(target, target_is_directory=True)
+            compose = release.parent / 'compose.release.json'
+            compose.write_text(json.dumps({'services': {'app': {'volumes': [
+                {'type': 'bind', 'source': './linked-instance', 'target': '/instance'},
+                str(target) + '-another:/other:ro']}}}))
+            with patch.object(guard.shutil, 'which', return_value='docker'), \
+                    patch.object(guard.subprocess, 'run', return_value=subprocess.CompletedProcess([], 0, '', '')):
+                result = guard.check([str(target)], owner=root)
+            self.assertEqual(len(result['blockers']), 1)
+
+    def test_release_guard_rejects_invalid_runtime_contracts(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root, target, release, _ = self.release_guard_fixture(directory)
+            for value in [[], {'previous_app': None}, {'previous_app': {'mounts': [{}]}}]:
+                with self.subTest(manifest=value):
+                    release.write_text(json.dumps(value))
+                    with patch.object(guard.shutil, 'which', return_value='docker'), \
+                            patch.object(guard.subprocess, 'run', return_value=subprocess.CompletedProcess([], 0, '', '')):
+                        with self.assertRaises(RuntimeError):
                             guard.check([str(target)], owner=root)
+            release.write_text('{}')
+            (release.parent / 'compose.release.json').write_text('{"services":[]}')
+            with patch.object(guard.shutil, 'which', return_value='docker'), \
+                    patch.object(guard.subprocess, 'run', return_value=subprocess.CompletedProcess([], 0, '', '')):
+                with self.assertRaises(RuntimeError):
+                    guard.check([str(target)], owner=root)
+
+    def test_recovery_config_and_working_directory_inside_worktree_are_protected(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root, target, release, _ = self.release_guard_fixture(directory)
+            release.write_text(json.dumps({'previous_app': {
+                'config_files': str(target / 'compose.json'), 'working_dir': str(target / 'runtime')}}))
+            with patch.object(guard.shutil, 'which', return_value='docker'), \
+                    patch.object(guard.subprocess, 'run', return_value=subprocess.CompletedProcess([], 0, '', '')):
+                result = guard.check([str(target)], owner=root)
+            self.assertEqual(len(result['blockers']), 2)
+            self.assertIn('config_files', result['blockers'][0])
+            self.assertIn('working_dir', result['blockers'][1])

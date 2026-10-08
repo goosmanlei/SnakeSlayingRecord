@@ -20,7 +20,9 @@
 
 以下本机路径相对主项目，历史任务资源仍由原任务执行者负责。
 
+- 已完成任务的发布清单保留原始内容，不再因任务编号或构建来源记录而阻断工作区清理。检查器仍保护容器挂载、发布 Compose 及恢复配置的实际目录依赖；已登记任务的检查器摘要已按本次修正核对更新。工作区退役继续通过普通 cleanup 的归档、会话和占用检查。
+
 - 有效数据恢复入口是当前 `export/manifest.json` 及 `production/version-consolidation/recovery.json`；恢复到新的空实例后再核对。旧制作完整包已退役；任何收敛前数据库、旧导出或重放都不能覆盖正式库。其他任务现存数据库的定位与边界见 [恢复副本清单](production/version-consolidation/retired-recovery-inventory.json)。保留其文件不代表仍可用作恢复源。
-- 用户要求保留 `task-20261005-0001` 的双仓工作区、分支和必要追溯资料。其 `.runtime/autonomous-optimization/final-preview/`、`final-coverage-song-restore/` 曾因共享 VM 文件句柄暂留；原预览已停止。后续清理由原任务执行者重新核对占用和用途，释放后精确处理，不停止共享 VM。
+- `task-20261005-0001`、`task-20261006-0003` 已解除工作区保留约束。清理工具归档的本机资料以任务账本 `repositories.*.cleanup.ignored_archive` 定位，仅用于原任务追溯，不作为后续开发基线或当前数据恢复源。归档尚未逐项裁剪；原任务执行者核对必要回执已完整保留后，清除重复测试数据及失效副本。核验与退役回执见 `.runtime/worktree-cleanup/retire-task-baselines-20261008/`。
 - 其他已完成任务的冻结包、旧一致性库和工作区不在本轮删除范围内。旧库已退出有效恢复入口；原任务执行者在追溯用途结束后核对进程、挂载和归属，经任务工具退役。不得仅因任务已完成便递归删除。
 - 当前正式库、净化交付原件、准确服务配置与镜像、用户评论和真实调用回执继续保留。工作区在 TUI 退出释放锁后通过 `codex.project task cleanup` 受管退役；本任务不强删仍被使用的工作区，也不重写 Git 历史。

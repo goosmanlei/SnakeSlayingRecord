@@ -77,6 +77,8 @@
 
 ## 数据权威、发布与恢复
 
+- 发布清单保存准确任务、提交和构建来源，与任务工作区的生命周期独立。`scripts/task_workspace_guard.py` 按实际 Docker 挂载、发布 Compose 及恢复配置中的目录依赖保护工作区，不因清单保留或任务编号相同而阻断；清理不改写冻结清单。检查器更新后须核对并更新账本绑定摘要，不能跳过摘要检查。依据：用户 2026-10-08 对清单留存阻断清理的纠正、检查器及 `tests/test_task_repository_delivery.py`。
+
 - 正式审阅台发布统一使用 `story-review-desk:current`、`:previous`、`:base` 三个固定镜像标签；候选、正式 Compose 与恢复仍按准确镜像 ID 校验。构建基底不随发布移动，避免逐版叠层；旧冻结包保持原辅助脚本。标签收敛、并行构建及清理边界见 [生成工作区流程](production/generation-workspaces.md#审阅台镜像的固定名称)。来源：用户固定镜像名要求、`scripts/material_review_release.py`、`scripts/autonomous_optimization_release.py`、`scripts/normalize_review_images.py`。
 
 - 正式数据库 `.runtime/review.sqlite3` 是本机运行权威，`export/` 是受管可恢复快照，不自动随活库更新。公开数据包含作品、素材、不可变修订／依赖、准确评论及事件、公开配置与原件；凭据、私有创作检查点不入库。恢复同时保留 `config/`、`content/`、`export/` 及受管原件，不能以旧快照覆盖已有活库。来源：`README.md`、`production/README.md`。
