@@ -532,7 +532,7 @@ class Builder:
                     state = self.states[value['state']]['payload']
                     instruction = ('：该图只固定身份，当前衣着、持物与动作按以下描述及本镜先后表现：'
                                    if executable else '只附身份母版，当前差异按文字与结果核查：')
-                    plan['prompt'] += '\n' + state['title'] + instruction + description(state)
+                    plan['prompt'] += '\n' + state['title'] + instruction + self.visual_description(self.states[value['state']], description(state))
             plan['blockers'] = self.reviewed.blockers(source)
             planned = video_plan(plan, self.input_audit[shot_id], supplement, media_type)
             if text_choice.get('handoff'):
