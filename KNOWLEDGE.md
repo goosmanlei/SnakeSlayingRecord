@@ -72,6 +72,7 @@
 
 - 正式数据库 `.runtime/review.sqlite3` 是本机运行权威，`export/` 是受管快照。当前 Schema 9 保存新视听模型、有效素材版本与原件、准确评论、配置和最小退役身份，不恢复已退出的旧业务对象。当前恢复使用 `scripts/production_review.py recover`、[准确索引](production/audiovisual/index.json) 与 [发布凭据](production/audiovisual/recovery.json)，只能恢复新空实例，不能覆盖活库。
 - 生成、登记、审阅与导出均在任务 worktree；准确增量和原件先合入主干，再持有正式发布锁应用。`generation_publications` 与 `consolidation_runs` 保存发布幂等事实，不能因不属于业务正文便删除。范围外新评论和引用须保全，旧基线拒绝重放。操作见 [工作区流程](production/generation-workspaces.md)。
+- 状态准备用途由作者在 [逐集判断](production/audiovisual/state-preparation.md) 维护，`scripts/state_preparation.py` 只汇编并交给现有准确状态与需求模型；关系数量不代替用途判断。独立审阅或可选对照可不进入镜头输入，镜内结束状态可只作结果检查。已有完整维度或描述块承担制作描述，真实缺项及认可边界继续保留。
 - 全剧编制由 `scripts/audiovisual_design.py`、`scripts/audiovisual_materials.py` 读取锁定故事和作者逐镜稿；一次性切换由 `scripts/audiovisual_cutover.py` 与 `scripts/audiovisual_release.py` 消费准确清单。先只读预演、隔离副本、净化导出及空恢复，再核对正式基线并事务应用；失败沿同一冻结包向前恢复，不把旧库覆盖新意见。
 - 正式镜像统一用 `story-review-desk:current`、`:previous`、`:base`，候选和 Compose 固定准确镜像 ID；构建基底不逐版移动。服务回退不等于数据回退。流程见 [固定镜像名称](production/generation-workspaces.md#审阅台镜像的固定名称)。
 - `export/material-content.json` 使用 Git LFS；克隆后须取回实际内容再校验。独立请求／回执若由素材归档配方保存，物理退役配方前须还原真实逻辑字节或指向字节相同的保留组成，不能只留下失效容器。
