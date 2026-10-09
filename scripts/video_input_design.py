@@ -36,7 +36,8 @@ def load_audit(shots=None):
             if set(ref) != {'state', 'revision_id'} or not all(isinstance(v, str) and v.strip() for v in ref.values()):
                 raise ValueError('invalid first-frame state reference: ' + row['shot'] + ' ' + owner)
         for state, text in row.get('frame_state_text', {}).items():
-            if set(text) != {'revision_id', 'text'} or not all(isinstance(v, str) and v.strip() for v in text.values()):
+            if (not {'revision_id', 'text'} <= set(text) or set(text) - {'revision_id', 'text', 'model_label'}
+                    or not all(isinstance(v, str) and v.strip() for v in text.values())):
                 raise ValueError('invalid first-frame state text: ' + row['shot'] + ' ' + state)
         for item in row.get('supplements', []):
             if item.get('reference_basis', 'state') not in ('state', 'identity_master'):
@@ -52,6 +53,14 @@ def load_audit(shots=None):
             if any(v['state'] not in states for v in decision.get('supplements', [])):
                 raise ValueError('supplement is not an exact state of this shot: ' + row['object_id'])
     return by_id
+
+
+def frame_state_label(state, decision):
+    """An explicitly reviewed local name can exclude another scene's placement."""
+    text = decision.get('frame_state_text', {}).get(state['object_id'])
+    if text and text['revision_id'] != state['id']:
+        raise ValueError('first-frame state text needs re-review: ' + state['object_id'])
+    return text.get('model_label', state['payload']['title']) if text else state['payload']['title']
 
 
 def first_frame_states(states, available, decision):

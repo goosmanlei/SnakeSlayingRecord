@@ -11,7 +11,7 @@ import json
 import re
 
 from audiovisual_design import ROOT, future, reference, union_sources
-from video_input_design import load_audit, frame_plan, video_plan, first_frame_states, FRAME_USE
+from video_input_design import load_audit, frame_plan, video_plan, first_frame_states, frame_state_label, FRAME_USE
 from state_preparation import decisions
 import exact_text_handoffs
 
@@ -459,7 +459,7 @@ class Builder:
                 inputs.append(self.relation(upstream, oid, scope, '首帧使用：' + state['payload']['title'],
                     TYPE_CHECKS[self.entities[state['payload']['entity']['object_id']]['payload']['entity_type']][0], '只调整本镜站位、手位、朝向与构图',
                     payload['continuity'], sources=source, type_id='state-frame'))
-            labels = '图片1为选定机位；' + ''.join(f'图片{i}为{s["payload"]["title"]}；' for i, s in enumerate(visible, 2))
+            labels = '图片1为选定机位；' + ''.join(f'图片{i}为{frame_state_label(s, self.input_audit[shot_id])}；' for i, s in enumerate(visible, 2))
             prompt = f'{STYLE}\n{labels}\n准确状态参考只固定可见主体的轮廓、衣着、伤侧、材质与结构；其制作说明中的其他使用场合和动作不在本首帧重演。\n拍摄位置：{payload["framing"]}。{payload["axis"]}\n只画动作开始的瞬间：{visual_start}。参考只约束真正入画的主体，镜内后续才入画的人物和画外声不提前塞入首帧。\n场所：{payload["spatial"]}\n{payload["lighting"]}。{payload["color"]}\n镜尾将发生“{visual_end}”，此首帧不得提前表现完成结果。\n连续性：{payload["continuity"]}。不加字幕、水印和装饰边框。'
             for state in visible:
                 if state['object_id'] not in self.state_needs:
@@ -467,7 +467,7 @@ class Builder:
                     if stage_text and stage_text['revision_id'] != state['id']:
                         raise ValueError('first-frame state text needs re-review: ' + shot_id + ' ' + state['object_id'])
                     text = stage_text['text'] if stage_text else self.visual_description(state, description(state['payload']))
-                    prompt += '\n' + state['payload']['title'] + '：此参考提供基础结构，当前形态按以下文字落实，仅画本镜起点；' + text
+                    prompt += '\n' + frame_state_label(state, self.input_audit[shot_id]) + '：此参考提供基础结构，当前形态按以下文字落实，仅画本镜起点；' + text
             if set(self.input_audit[shot_id].get('frame_state_text', {})) - {s['object_id'] for s in visible if s['object_id'] not in self.state_needs}:
                 raise ValueError('first-frame state text is not used by this shot: ' + shot_id)
             if text_choice.get('frame_detail'):
