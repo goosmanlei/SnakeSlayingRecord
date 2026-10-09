@@ -6,7 +6,14 @@
 - 当前交付包含 [全剧视听设计](production/audiovisual/README.md)：17 集、42 故事场、65 视听场、344 镜，全部 1114 个正文块有准确表达范围。新设计支持每镜多需求、每需多版多候选、关系路线、准确原件及区域／时间选择。技术验证不代表用户接受新设计或声音质量。
 - 生产制作包含视听制作、实体管理、素材管理；故事剧本可回查两条制作来源链。方法页保留 [视频生成手册](production/seedance-video-handbook.md) 与 [影视专业知识](production/filmcraft/README.md)，生产方法按新模型重编。
 - 镜头视频方案已按 [逐场输入审查](production/audiovisual/video-inputs.json) 区分普通参考与固定起点，并补充镜内后显内容的直接依据；方案、原件选定和实际效果分别审阅。交付核验及正式回读按 [输入契约验收](production/audiovisual/video-inputs-verification.md) 与任务回执定位。
+- 全剧必要准确文字已逐集复核，11份可编辑工程沿原镜头素材入口交接；正确旧图继续复用，字层不迁移既有认可。原词、揭示与未定字句见 [文字交接](production/audiovisual/text-review.md)，发布与实际验收按任务 `task-20261009-0010` 回执及 [复验入口](production/audiovisual/text-verification.md) 核对。
+- 当前状态准备按 [逐集用途判断](production/audiovisual/state-preparation.md) 区分生成输入、独立审阅、可选对照与文字检查；渡口、刀缝长杠及镜内变化贯通到具体镜头。隔离实操、历史保护与正式回查入口见 [状态准备验收](production/state-preparation-review.md)，正式生效及清理以任务 `task-20261009-0008` 实际回执为准。
 - 素材来源卡片支持实体自身、实体状态和镜头需求的连续审阅，历史原件保留准确来源与中文用途；候选核验及正式回执入口见 [素材来源卡片验收](production/material-source-cards/VERIFICATION.md)。准确正式身份仍以实例配置和任务发布回执为准。
+- 准确参考保存后的核对、重开、再次调整及明确放弃已完成隔离候选复验；正式生效与收尾按任务 `task-20261009-0011` 的实际发布和完成回执定位，原路复验及数据保护边界见 [准确参考闭环验收](production/reference-selection/VERIFICATION.md)。
+- 编号与中文内容查找、按目的组织素材、准确完整镜头反查及失效定位保护已形成隔离通过的候选；实操、历史版本与草稿恢复依据见 [查找与连续审阅验收](production/readable-navigation/VERIFICATION.md)。正式发布是否完成仍以任务账本和实际回执为准。
+- 评论润色参考按准确对象、当前意见与统一总字符预算构建；歌曲进度已按准确包只更新两项背景，并保留411历史批次。正式生效与验收以任务 `task-20261009-0006` 的实际发布回执为准，复验路径见 [评论参考验收](production/review-context/VERIFICATION.md)。
+- 准确人工判断、决定范围与原位保存已完成隔离候选复验；正式生效与收尾以任务 `task-20261009-0009` 的实际发布和完成回执为准，复验路径见 [准确判断验收](production/review-decisions/VERIFICATION.md)。
+- 跨版本意见复核已完成隔离候选实操：结构十可查 11 条未关闭旧意见及原回应，C134 与 C138 可回查准确图文／改句，C137 保留有限处理与人工待决边界。正式生效及资源收尾以任务 `task-20261009-0012` 的实际回执为准，复验路径见 [跨版本复核验收](production/comment-review/VERIFICATION.md)。
 - 正式入口 `http://127.0.0.1:3000/`，活库为主目录 `.runtime/review.sqlite3`；准确系统提交由 `config/instance.json.review_desk_commit` 维护。两仓集成、正式切换、浏览器复验与任务完成只认主项目 `.codex-task/tasks.json` 和冻结包实际回执，工作区候选不能单凭文件存在宣称正式生效。
 - VPS 完整体验版已在 `https://leiguoguo.me/lijizhanshe/` 公开运行，使用独立可写体验库；普通重启保留操作，显式发布全量重置，本机正式库未被体验操作修改。维护、旧版清除后的故障重建、两轮重置及远端 Chrome 验收通过。AI 润色经 VPS 现有 Xray 回环 HTTP 入口真实返回建议并可采用到草稿；北京时间每日最多 100 次，失败也计数，发布和重启保留当天次数。旧实例专用资源、远端暂存及本机过程包已清除并回读。准确运行身份、验收与清理证据沿部署任务 `task-20261008-0007` 的本机回执定位，重复发布入口见 [体验版发布](production/vps-experience.md)。
 
@@ -24,3 +31,4 @@
 - 正式数据、服务、镜像及必要恢复回执继续保留；临时资源按相应任务账本和实际引用核对，完成发布、页面验收与新空库恢复后清理。方案核验范围见 [视听验收](production/audiovisual/verification.md)。
 - 其他任务现存工作区、历史库和归档由原任务执行者负责，不能据旧编号或目录名批删；它们不再是有效制作基线。`task-20261005-0001`、`task-20261006-0003` 的本机归档按任务账本 `repositories.*.cleanup.ignored_archive` 定位，原任务执行者在追溯结束后裁剪重复过程资料。
 - task-20261009-0003 会话仍占用故事 worktree，结项、退出并释放锁后再通过 `codex.project task cleanup` 受管退役，保留分支、提交、最小回执及会话历史；不强删活跃工作区。
+- task-20261009-0010 的双仓 worktree 仍由当前会话占用；退出并释放锁后，由受管任务清理入口退役，保留分支和会话。文字交接的必要验收及清理回执归主项目 `.runtime/task-20261009-0010/`，不依赖保留实验库或预览服务。
