@@ -77,7 +77,7 @@
 - 状态准备用途由作者在 [逐集判断](production/audiovisual/state-preparation.md) 维护，`scripts/state_preparation.py` 只汇编并交给现有准确状态与需求模型；关系数量不代替用途判断。独立审阅或可选对照可不进入镜头输入，镜内结束状态可只作结果检查。已有完整维度或描述块承担制作描述，真实缺项及认可边界继续保留。
 - 全剧编制由 `scripts/audiovisual_design.py`、`scripts/audiovisual_materials.py` 读取锁定故事和作者逐镜稿；一次性切换由 `scripts/audiovisual_cutover.py` 与 `scripts/audiovisual_release.py` 消费准确清单。先只读预演、隔离副本、净化导出及空恢复，再核对正式基线并事务应用；失败沿同一冻结包向前恢复，不把旧库覆盖新意见。
 - 正式镜像统一用 `story-review-desk:current`、`:previous`、`:base`，候选和 Compose 固定准确镜像 ID；构建基底不逐版移动。服务回退不等于数据回退。流程见 [固定镜像名称](production/generation-workspaces.md#审阅台镜像的固定名称)。
-- `export/material-content.json` 使用 Git LFS；克隆后须取回实际内容再校验。独立请求／回执若由素材归档配方保存，物理退役配方前须还原真实逻辑字节或指向字节相同的保留组成，不能只留下失效容器。
+- `export/material-content.json` 和 `export/objects.json` 使用 Git LFS；克隆后须取回实际内容再校验，操作见 [生成工作区流程](production/generation-workspaces.md)。独立请求／回执若由素材归档配方保存，物理退役配方前须还原真实逻辑字节或指向字节相同的保留组成，不能只留下失效容器。
 - 站点图标是用户认可的屋檐护灯；源 SVG、ICO、PNG 和维护说明见 [图标设计](design/favicon/README.md)。配置只保存受管文件名，上传不等于应用；图标、方法及媒体随各自清单核对，凭据不公开。
 - 制作读取使用独立 `.runtime/read-cache.sqlite3`；业务写入与失效代号同事务更新，缓存可清除后重建。保留 DELETE 日志模式；冷读取和工具往返时间不等同于正文可用、图片加载或音频可播放。契约见系统 `docs/production-performance.md`。
 - Docker Desktop 曾在对停止容器执行 `docker cp` 时重建宿主失效挂载目录。清理前核对归属、实际挂载和准确 ID，不能全局 prune；仍被会话、正式服务或其他任务使用的工作区不强删。详细清理回执留原任务，后续开发用最新主干与有效正式数据。
