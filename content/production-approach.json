@@ -329,7 +329,7 @@
       "lead": "先决定这支镜头需要保住什么，再选择模型、生成方式和参考输入，最后编写 Prompt（提交给生成模型的文字指令）。本手册用于方案设计、提交前检查和结果返修；五类离线走查用于检查方案；另附原创图像、五次真实视频调用、完整 Prompt 与返回原件，便于对照预期和实际结果。",
       "source": {
         "path": "production/seedance-video-handbook.md",
-        "sha256": "f7c8c7aea3bd66233065228548438d219cb13a805f823da6c2ca40d68381a4c2"
+        "sha256": "5efc7241ed205e0561ee0292ec3dc7fe59097822054dcc16d49a218284e18c37"
       },
       "sections": [
         {
@@ -395,7 +395,7 @@
           "blocks": [
             {
               "type": "paragraph",
-              "text": "以下 CLI 参数于 2026-10-08 通过 pippit-tool-cli 1.0.38 的 model list、model describe 和 generate help 核对。表中“配置提供”不等于当前账号有调用权限、额度充足或每种组合都已实测。本文另列原创 Demo 的真实调用结果，仅支持相应型号、输入和参数下的观察。正式提交前重新读取模型配置和额度，保存当次回执。"
+              "text": "以下 CLI 参数于 2026-10-08 通过 pippit-tool-cli 1.0.38 的 model list、model describe 和 generate-video --help 核对。表中“配置提供”不等于当前账号有调用权限、额度充足或每种组合都已实测。本文另列原创 Demo 的真实调用结果，仅支持相应型号、输入和参数下的观察。正式提交前重新读取模型配置和额度，保存当次回执。"
             },
             {
               "type": "table",
@@ -486,7 +486,7 @@
             {
               "type": "code",
               "language": "bash",
-              "text": "pippit-tool-cli --version\npippit-tool-cli model list\npippit-tool-cli model describe seedance2.0_fast_vision\npippit-tool-cli model describe seedance2.0_vision\npippit-tool-cli model describe Seedance_2.5\npippit-tool-cli generate --help"
+              "text": "pippit-tool-cli --version\npippit-tool-cli model list\npippit-tool-cli model describe seedance2.0_fast_vision\npippit-tool-cli model describe seedance2.0_vision\npippit-tool-cli model describe Seedance_2.5\npippit-tool-cli generate-video --help"
             }
           ]
         },
@@ -562,6 +562,18 @@
                   "要保留原音轨每个采样点时，保留母版并后期对齐；不能依赖重新生成保持字节一致"
                 ]
               ]
+            },
+            {
+              "type": "paragraph",
+              "text": "在当前 pippit-tool-cli 中，普通参考明确使用 `task_type=reference`。`generate_type=1` 是首尾帧入口，按首帧、尾帧顺序传两张图片；help 只明确 MiniMax/Wan 可以只传首图，不能据此认为 Seedance 单图已经是固定首帧。2.5 的此模式还要求 adaptive 且禁止独立音频。2026-10-09 以 CLI 1.0.38 重新读取的 2.5 配置与这些限制一致；2.0 Fast 仍未给出完整模式组合，继续待具体核实。固定首帧同时保留多图身份和独立音色的组合没有充分依据时，必须保留待准备状态，或明确改选允许重解释起点的普通参考路线，不把文字承诺当成接口保证。"
+            },
+            {
+              "type": "paragraph",
+              "text": "起始画面与整个镜头的视觉依据分开审查。手部近景随后抬到脸、背身转面、从人群后走出、开门显露房间，都可能需要额外的完整身份或空间图。该图只约束后来显露的内容，不能为了交代身份而把脸提前塞入起始图。音色只给声音身份；起始图的间接母版只有明确选为直接输入才会上传，不能假设模型已经看过。若起始图已清楚涵盖全部需要的主体、朝向与活动空间，保留一图路线；选到实际原件后发现裁切或遮挡不足，再修订具体输入，不给每镜机械添加全体人物表。"
+            },
+            {
+              "type": "paragraph",
+              "text": "方案表达计划职责，不宣称原件已经选定。准确候选、文件组成和必要裁切／时间范围要在选择后单独登记，准备包再携带同一渠道、模式、角色和参数。计划契约通过只说明组合有依据；尚未采纳或未选齐原件时仍不可准备，也没有身份稳定性、动作、口型或音质的实际通过结论。"
             },
             {
               "type": "paragraph",
