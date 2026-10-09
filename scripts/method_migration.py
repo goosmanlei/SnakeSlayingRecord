@@ -23,8 +23,16 @@ def check_cutover(story_main, audit):
             raise ValueError('先完成已核对的旧交付，再启用方法约束：' + task_id)
 
 
-def stopped_api():
-    """Use invalid empty inputs; prove both normal ingress ports cannot write."""
+def stopped_api(*, application_stopped=False):
+    """Probe ingress only after the caller verifies the exact app is stopped.
+
+    Docker/HTTP proxies may keep accepting sockets while the upstream is gone.
+    A timeout is recorded as such, not treated as independent proof of a lock.
+    The stopped application is the write barrier; invalid probes cannot create
+    queued business writes if the proxy reconnects after service restoration.
+    """
+    if application_stopped is not True:
+        raise ValueError('先核验准确应用已经停止，不能仅凭请求超时认定写入已阻断')
     result = []
     opener = build_opener(ProxyHandler({}))
     surfaces = [('POST', '/api/comments'), ('POST', '/api/production/acceptance'),
@@ -39,7 +47,9 @@ def stopped_api():
                 status = error.code; error.close()
             except URLError:
                 status = 'connection-unavailable'
-            if status not in (502, 503, 'connection-unavailable'):
+            except (TimeoutError, ConnectionError):
+                status = 'response-unavailable-after-verified-stop'
+            if status not in (502, 503, 504, 'connection-unavailable', 'response-unavailable-after-verified-stop'):
                 raise ValueError('写入口尚未停止：' + path + ' ' + str(status))
             result.append({'port': port, 'method': method, 'path': path, 'status': status})
     return result
