@@ -9,6 +9,7 @@ import json
 import re
 
 from audiovisual_design import ROOT, future, reference, union_sources
+from video_input_design import load_audit, frame_plan, video_plan, FRAME_USE
 
 STYLE = '二维人物与轻手绘背景，正常人物比例，干净轮廓与清楚色块，背景轻而可读；不新增粗纸纹、颗粒、过锐边缘或写实皮肤。'
 IMAGE_CHECK = ['身份、配色、服装与伤侧和准确实体状态一致', '构图、接触点、空间出入口与轴线可核对',
@@ -45,6 +46,7 @@ class Builder:
         self.voice = casting()
         self.masters, self.state_needs, self.voices = {}, {}, {}
         self.counts = Counter()
+        self.input_audit = load_audit([r for r in av_records if r['kind'] == 'AV_SHOT'])
         self.frame_subjects = {}
         for line in (ROOT / 'production/audiovisual/frame-subjects.txt').read_text().splitlines():
             if not line.strip() or line.startswith('#'): continue
@@ -69,13 +71,13 @@ class Builder:
         return oid
 
     def relation(self, upstream, downstream, context, purpose, preserve, change, check, *, sources,
-                 necessity='required', group=None, route=None, semantics='reference', type_id='reference'):
-        oid = f'mr-{downstream}-{len(self.rows):04}'
+                 necessity='required', group=None, route=None, semantics='reference', type_id='reference', identity=None):
+        oid = identity or f'mr-{downstream}-{len(self.rows):04}'
         values = {'title': purpose, 'purpose': purpose, 'upstream': self.resolve(upstream),
             'downstream_id': downstream, 'context': context, 'preserve': preserve, 'change': change, 'check': check,
             'type_id': type_id, 'type_label': {'identity-state': '身份到实体状态', 'space-camera': '空间到机位',
-                'frame-video': '首帧到镜头视频', 'reference': '准确素材参考', 'state-frame': '实体状态到首帧',
-                'voice-performance': '音色到现场表演'}.get(type_id, type_id),
+                'frame-video': '起始图到镜头视频', 'reference': '准确素材参考', 'state-frame': '实体状态到首帧',
+                'voice-performance': '音色到现场表演', 'state-video': '镜内后续内容到视频'}.get(type_id, type_id),
             'type_version': 1, 'type_definition': {'endpoints': ['REQUIREMENT' if upstream in self.generated else self.p.record(self.store, upstream)['kind'], 'REQUIREMENT'], 'direction': 'directed',
                 'attributes': {'i2i_budget': '图像最深参考谱系上限，执行时按实际输入回查，不是已生成代数'}},
             'attributes': {'i2i_budget': 2}, 'semantics': semantics, 'necessity': necessity,
@@ -257,14 +259,14 @@ class Builder:
             state_text = '\n'.join(s['payload']['title'] + '：' + description(s['payload']) for s in visible)
             prompt = f'{STYLE}\n{labels}\n{state_text}\n拍摄位置：{payload["framing"]}。{payload["axis"]}\n只画动作开始的瞬间：{payload["action_start"]}。参考只约束真正入画的主体，镜内后续才入画的人物和画外声不提前塞入首帧。\n场所：{payload["spatial"]}\n{payload["lighting"]}。{payload["color"]}\n镜尾将发生“{payload["action_end"]}”，此首帧不得提前表现完成结果。\n连续性：{payload["continuity"]}。不加字幕、水印和装饰边框。'
             self.need(oid, scope, 'first-frame', 'image', '固定本镜动作起点、人物身份、手位和机位，供视频原生表演延续。',
-                self.plan('image', prompt, inputs, name=payload['title'] + ' · 首帧', description=payload['action_start'], selected_routes={'camera': 'main'}),
+                frame_plan(self.plan('image', prompt, inputs, name=payload['title'] + ' · 首帧', description=payload['action_start'], selected_routes={'camera': 'main'}), self.input_audit[shot_id]),
                 sources=source, entities=[s['payload']['entity'] for s in visible], states=[reference(s) for s in visible],
                 specification={'planned_i2i_depth': 2, 'first_frame': True})
             frame_id = oid
             oid = 'material-' + shot_id + '-video'
-            inputs = [self.relation(frame_id, oid, scope, '以准确首帧开始本镜，不改身份、机位与起始手位',
+            inputs = [self.relation(frame_id, oid, scope, FRAME_USE,
                 payload['action_start'] + '；固定主体与空间', '原生生成下述连续动作、对白、呼吸、环境与表演',
-                payload['action_end'] + '；' + payload['continuity'], sources=source, type_id='frame-video')]
+                '普通参考不保证固定首帧；' + payload['action_end'] + '；' + payload['continuity'], sources=source, type_id='frame-video')]
             texts = self.block_text(payload); speakers = self.speakers(payload, texts)
             audio_labels = []
             for key in speakers:
@@ -283,12 +285,24 @@ class Builder:
             maximum = 3 if seconds <= 15 else 10
             if len(audio_labels) > maximum:
                 raise ValueError('too many voice references for authored duration; revise route explicitly: ' + shot_id)
-            prompt = f'{STYLE}\n{seconds}秒，16:9，720p。@图片1是已选首帧，维持身份、空间和手位；' + ''.join(audio_labels)
+            prompt = f'{STYLE}\n{seconds}秒，16:9，720p。@图片1为起始构图参考，维持已可见身份、空间和手位；' + ''.join(audio_labels)
             prompt += f'\n意图与表演：{payload["performance"]}\n镜头：{payload["framing"]}。轴线：{payload["axis"]}\n从{payload["action_start"]}开始，到{payload["action_end"]}结束。\n{payload["spatial"]}\n光色：{payload["lighting"]}；{payload["color"]}\n声音和剪接：' + '\n'.join(payload['sound'])
             prompt += '\n本镜准确故事正文（按叙述表演动作，只有明确人物台词或歌词出声，不朗读叙述、角色名或括号说明）：\n' + '\n'.join(texts)
             prompt += '\n连续性：' + payload['continuity'] + '\n不添加对白、旁白、抢先信息、炫技切镜或慢动作。没有画外声的台词由实际说话人同步说出；保留自然气口和动作停顿。'
+            def supplement(value):
+                state = self.states[value['state']]
+                return self.relation(self.state_needs[value['state']], oid, scope, value['use'],
+                    state['payload']['title'] + '的身份与完整状态；只取本镜需要显露的部分',
+                    '按本镜时间顺序入画，不提前露脸、改站位或提前展示状态变化结果',
+                    value['use'] + '；只选本直接参考的准确候选，不自动附带祖先', sources=source,
+                    type_id='state-video', identity='mr-video-input-' + shot_id + '-' + value['state'])
+            def media_type(item):
+                key = item['reference']['object_id']
+                return (self.generated[key] if key in self.generated else self.p.record(self.store, key))['payload']['media_type']
+            planned = video_plan(self.plan('video', prompt, inputs, seconds=seconds, name=payload['title'] + ' · 视频',
+                description=payload['action_start'] + ' → ' + payload['action_end']), self.input_audit[shot_id], supplement, media_type)
             self.need(oid, scope, 'video', 'video', '原生音画完成这一镜；图像候选不计为视频结果。',
-                self.plan('video', prompt, inputs, seconds=seconds, name=payload['title'] + ' · 视频', description=payload['action_start'] + ' → ' + payload['action_end']),
+                planned,
                 sources=source, entities=payload['entities'], states=payload['states'], specification={'resolution': '720p', 'aspect_ratio': '16:9'})
 
     def build(self):
