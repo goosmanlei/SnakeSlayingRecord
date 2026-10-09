@@ -13,6 +13,7 @@ sys.path.insert(0, str(ROOT / 'scripts'))
 import managed_methods
 import sync_system_vision as vision
 import material_review_release as release
+from scripts.method_runtime import deliver_files
 from review_desk import methods
 from review_desk.store import Store
 
@@ -41,9 +42,41 @@ class VisionDeliveryTest(unittest.TestCase):
 
 
 class ReviewMethodDeliveryTest(unittest.TestCase):
+    def test_legacy_execution_reexport_and_restore_keep_original_prose(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory).resolve()
+            store = Store(root / 'old/.runtime/review.sqlite3')
+            restored = Store(root / 'restored/.runtime/review.sqlite3')
+            self.addCleanup(store.close); self.addCleanup(restored.close)
+            archive = json.loads((ROOT / 'content/creative-system-review-registry.json').read_text())
+            legacy = {'format': archive['format'], 'records': [r for r in archive['records'] if r['version'] == 1]}
+            legacy['sha256'] = methods.checksum(legacy)
+            methods.restore_registry(store, legacy)
+            request = {'work_type': 'creative-system-review', 'run_id': 'legacy-reading', 'step_id': 'original',
+                       'target': 'frozen-prose', 'private': True,
+                       'inputs': {'goal': 'compatibility', 'scope': 'legacy definition',
+                                  'authorization': 'isolated test', 'evidence': 'original registry'}}
+            execution = methods.prepare(store, request)
+            methods.restore_registry(store, archive)
+            self.assertEqual(methods.prepare(store, request), execution)
+            fresh = methods.prepare(store, {**request, 'step_id': 'new-binding'})
+            self.assertNotEqual(fresh['payload']['package']['binding'], execution['payload']['package']['binding'])
+            self.assertEqual(len(execution['payload']['package']['resources']), 3)
+            self.assertEqual(len(fresh['payload']['package']['resources']), 1)
+            folder = root / 'standard'
+            methods.export_execution(store, methods.reference(execution), folder)
+            deliver_files(root / 'author', execution['payload']['package'], request['inputs'])
+            for number, resource in enumerate(execution['payload']['package']['resources']):
+                self.assertEqual((folder / f'shared/{number}.md').read_text(), resource['content'])
+                self.assertEqual((root / 'author' / f'shared/{number}.md').read_text(), resource['content'])
+            # Do not manufacture absent companions or rewrite historical SKILL prose.
+            self.assertFalse((folder / 'shared/references/project-context.md').exists())
+            methods.restore_registry(restored, json.loads((folder / 'registry.json').read_text()))
+            self.assertEqual(methods.prepare(restored, request), execution)
+
     def test_full_source_projection_prepare_restore_and_frozen_execution(self):
         with tempfile.TemporaryDirectory() as directory:
-            root = Path(directory)
+            root = Path(directory).resolve()
             store = Store(root / 'source/.runtime/review.sqlite3')
             restored = Store(root / 'restored/.runtime/review.sqlite3')
             self.addCleanup(store.close)
@@ -63,9 +96,12 @@ class ReviewMethodDeliveryTest(unittest.TestCase):
                                   'authorization': '隔离实例检验', 'evidence': '源稿及真实阅读另验'}}
             execution = methods.prepare(store, request)
             resources = execution['payload']['package']['resources']
-            self.assertEqual(len(resources), 3)
-            for resource, spec in zip(resources, seed['sources'][0]['sections'].values()):
-                self.assertEqual(resource['content'], (ROOT / spec['path']).read_text())
+            self.assertEqual(len(resources), 1)
+            self.assertEqual(resources[0]['content'], (ROOT / 'skills/creative-system-review/SKILL.md').read_text())
+            for spec in seed['sources'][0]['sections'].values():
+                path = spec['path']
+                body = resources[0]['content'] if path == resources[0]['file'] else resources[0]['files'][path]
+                self.assertEqual(body.encode(), (ROOT / path).read_bytes())
             projection = methods.read(store, 'method.resource.creative-system-review-texts')
             for filename, source in projection['payload']['source']['files'].items():
                 raw = (ROOT / source['path']).read_bytes()
@@ -89,10 +125,22 @@ class ReviewMethodDeliveryTest(unittest.TestCase):
             self.assertEqual(next_execution['payload']['package']['method'], methods.reference(next_method))
             folder = root / 'exported'
             methods.export_execution(store, methods.reference(execution), folder)
-            for index, resource in enumerate(resources):
-                self.assertEqual((folder / 'shared' / (str(index) + '.md')).read_text(), resource['content'])
+            author = root / 'author'
+            deliver_files(author, execution['payload']['package'], request['inputs'])
+            for delivered in (author, folder):
+                entry = (delivered / 'SKILL.md').read_text()
+                full = delivered / re.search(r'\[完整方法\]\(([^)]+)\)', entry)[1]
+                text = full.read_text()
+                adaptation = full.parent / re.search(r'\[项目适配\]\(([^)]+)\)', text)[1]
+                self.assertEqual(adaptation.read_bytes(), (ROOT / 'skills/creative-system-review/references/project-context.md').read_bytes())
+                for spec in seed['sources'][0]['sections'].values():
+                    self.assertEqual((delivered / 'shared/0' / spec['path']).read_bytes(), (ROOT / spec['path']).read_bytes())
             methods.restore_registry(restored, json.loads((folder / 'registry.json').read_text()))
             self.assertEqual(methods.prepare(restored, request), execution)
+            methods.export_execution(restored, methods.reference(execution), root / 'reexported')
+            for spec in seed['sources'][0]['sections'].values():
+                path = Path('shared/0') / spec['path']
+                self.assertEqual((root / 'reexported' / path).read_bytes(), (folder / path).read_bytes())
             self.assertEqual(methods.resolve(restored, 'creative-system-review'),
                              methods.resolve(store, 'creative-system-review'))
 

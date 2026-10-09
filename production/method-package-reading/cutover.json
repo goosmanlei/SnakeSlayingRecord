@@ -1,0 +1,31 @@
+{
+  "format": "managed-method-cutover-v1",
+  "task": "task-20261010-0005",
+  "wait_for_delivery": [],
+  "reviewed_work": [
+    {
+      "task": "task-20261010-0002",
+      "status": "running",
+      "work_type": "review-ui",
+      "boundary": "各任务自有隔离环境；不覆盖其数据或在途私有执行；正式发布锁与准确app停写串行核验。"
+    },
+    {
+      "task": "task-20261010-0004",
+      "status": "running",
+      "work_type": "review-ui",
+      "boundary": "各任务自有隔离环境；不覆盖其数据或在途私有执行；正式发布锁与准确app停写串行核验。"
+    },
+    {
+      "task": "task-20261010-0005",
+      "status": "running",
+      "work_type": "creative-system-review",
+      "boundary": "各任务自有隔离环境；不覆盖其数据或在途私有执行；正式发布锁与准确app停写串行核验。"
+    }
+  ],
+  "write_window": {
+    "publication": "既有共享发布锁；捕获准确现役app，若运行已变化则重新准备包",
+    "api": "停止准确app并检查3000/64401写入口；在正式切点取最新备份后仅追加本Review三对象定义",
+    "preservation": "作品、Prompt、评论、判断、原件、旧定义和执行不改写；不启用新的媒体范围豁免",
+    "root_review": "根独立Review实例/49292只读边界，不接管、不迁移其运行库"
+  }
+}
