@@ -1,12 +1,14 @@
 """Compile explicit material routes for the newly authored audiovisual score.
 
-No provider calls, approvals, candidate choices or retrospective call edits.
+No provider calls, automatic approvals or retrospective call edits.
+Exact voice inputs compile only individually authored source/use decisions.
 The four still-useful independent-song materials retain their exact identities.
 """
 from collections import Counter
 import importlib.util
 import hashlib
 import json
+import re
 
 from audiovisual_design import ROOT, future, reference, union_sources
 from video_input_design import load_audit, frame_plan, video_plan, FRAME_USE
@@ -53,6 +55,55 @@ def casting():
     return value
 
 
+def recorded_voice_identity(asset, call):
+    """Read the requested identity from an exact completed call, not its title.
+
+    This is a candidate-discovery basis only. It cannot establish the audible
+    speaker, quality, an appropriate excerpt, or suitability for a new use.
+    """
+    payload = asset['payload']
+    if payload.get('media_type') != 'audio' or payload.get('placeholder'):
+        return None
+    originals = [c for c in payload.get('components', [])
+                 if c.get('role') == 'original' and c.get('has_audio')]
+    if len(originals) != 1 or call.get('kind') != 'CALL':
+        return None
+    recorded = call['payload']
+    receipt = recorded.get('receipt', {})
+    prompt = receipt.get('input', {}).get('text_prompt', '')
+    if (recorded.get('method') != 'generation' or receipt.get('status') != 'completed'
+            or not originals[0].get('sha256')
+            or receipt.get('sha256') != originals[0]['sha256']
+            or not prompt or prompt != recorded.get('prompt')):
+        return None
+    first_line = prompt.split('\n', 1)[0]
+    match = re.fullmatch(r'生成一份单人干净音色核对录音。说话身份：(.+?)。声音方向：(.+)。', first_line)
+    return match.groups() if match else None
+
+
+def reviewed_voice_uses(root):
+    """Read authored decisions; stale episode evidence never selects an input."""
+    path = root / 'production/voice-reuse/reviews.json'
+    if not path.exists():
+        return {}, {}, False
+    doc = json.loads(path.read_text())
+    if doc.get('format') != 'reviewed-voice-reuse-v1' or doc.get('audio_generation') is not False:
+        raise ValueError('invalid voice review source')
+    script_hash = hashlib.sha256((root / 'imports/screenplay-04.json').read_bytes()).hexdigest()
+    uses = {}
+    for number, episode in enumerate(doc['episode_reviews'], 1):
+        actual = hashlib.sha256((root / f'production/audiovisual/e{number:02}.md').read_bytes()).hexdigest()
+        if (episode['number'] != number or episode['authored_sha256'] != actual
+                or episode['screenplay_sha256'] != script_hash):
+            raise ValueError('voice purpose changed; re-review episode ' + str(number))
+        for use in episode['uses']:
+            key = (use['shot'], use['speaker'])
+            if key in uses or use['speaker'] not in episode['voices']:
+                raise ValueError('ambiguous or unauthored voice use: ' + str(key))
+            uses[key] = {**use, 'purpose': episode['voices'][use['speaker']]}
+    return doc['reviews'], uses, doc.get('coverage_complete', False)
+
+
 class Builder:
     def __init__(self, store, p, av_records, reviewed):
         self.store, self.p, self.av = store, p, av_records
@@ -64,6 +115,8 @@ class Builder:
         self.states = {r['object_id']: r for r in p.current_records(store, {'STATE'})}
         self.image_config = json.loads((ROOT / 'config/openart.json').read_text())
         self.voice = casting()
+        self.voice_reviews, self.voice_uses, self.voice_review_complete = reviewed_voice_uses(ROOT)
+        self.voice_choices = {}
         self.relations = {}
         for row in p.current_records(store, {'MATERIAL_RELATION'}):
             key = self.relation_key(row['payload'])
@@ -105,12 +158,17 @@ class Builder:
         return oid
 
     def relation(self, upstream, downstream, context, purpose, preserve, change, check, *, sources,
-                 necessity='required', group=None, route=None, semantics='reference', type_id='reference', identity=None):
-        values = {'title': purpose, 'purpose': purpose, 'upstream': self.resolve(upstream),
+                 necessity='required', group=None, route=None, semantics='reference', type_id='reference', identity=None,
+                 upstream_ref=None):
+        exact = upstream_ref or self.resolve(upstream)
+        if exact['object_id'] != upstream:
+            raise ValueError('exact relation source differs from upstream identity')
+        values = {'title': purpose, 'purpose': purpose, 'upstream': exact,
             'downstream_id': downstream, 'context': context, 'preserve': preserve, 'change': change, 'check': check,
             'type_id': type_id, 'type_label': {'identity-state': '身份到实体状态', 'space-camera': '空间到机位',
                 'frame-video': '起始图到镜头视频', 'reference': '准确素材参考', 'state-frame': '实体状态到首帧',
-                'voice-performance': '音色到现场表演', 'state-video': '镜内后续内容到视频'}.get(type_id, type_id),
+                'voice-performance': '音色到现场表演', 'voice-reuse': '已有声音身份复用',
+                'state-video': '镜内后续内容到视频'}.get(type_id, type_id),
             'type_version': 1, 'type_definition': {'endpoints': ['REQUIREMENT' if upstream in self.generated else self.p.record(self.store, upstream)['kind'], 'REQUIREMENT'], 'direction': 'directed',
                 'attributes': {'i2i_budget': '图像最深参考谱系上限，执行时按实际输入回查，不是已生成代数'}},
             'attributes': {'i2i_budget': 2}, 'semantics': semantics, 'necessity': necessity,
@@ -122,7 +180,84 @@ class Builder:
         # not relabel every subsequent edge or overwrite a different relation.
         oid = self.relations.get(key) or identity or 'mr-' + hashlib.sha256(json.dumps(key).encode()).hexdigest()[:32]
         self.put(oid, 'MATERIAL_RELATION', values)
-        return {'reference': self.resolve(upstream), 'relation': future(oid), 'selection_state': 'unselected', 'use': purpose}
+        return {'reference': exact, 'relation': future(oid), 'selection_state': 'unselected', 'use': purpose}
+
+    def voice_choice(self, key):
+        review = self.voice_reviews.get(key)
+        if not review:
+            if self.voice_review_complete:
+                raise ValueError('current voice lacks an individual review: ' + key)
+            return None
+        if review['need_id'] != 'material-voice-' + key:
+            raise ValueError('voice review names another need: ' + key)
+        source = review['source']
+        exact = {k: source[k] for k in ('object_id', 'revision_id')}
+        asset = self.p.record(self.store, **exact)
+        call = self.p.record(self.store, **asset['payload']['production'])
+        owner = 'entity-' + self.voice.GROUP_ENTITIES.get(key, key)
+        if ({v['object_id'] for v in asset['payload']['subjects']} != {owner}
+                or recorded_voice_identity(asset, call) != self.voice.VOICES[key]):
+            raise ValueError('reviewed voice owner or requested direction changed: ' + key)
+        component = next((v for v in asset['payload']['components'] if v['id'] == source['component_id']), None)
+        if not component or component['role'] != 'original' or component['sha256'] != source['sha256']:
+            raise ValueError('reviewed original component changed: ' + key)
+        if not review['analysis_attempts']:
+            raise ValueError('voice choice has no actual audio analysis: ' + key)
+        for attempt in review['analysis_attempts']:
+            evidence = json.loads((ROOT / 'production/voice-reuse/analysis' / (attempt + '.json')).read_text())
+            metadata = evidence['request_metadata']['source']
+            if (evidence['receipt'].get('state') != 'completed' or metadata['sha256'] != source['sha256']
+                    or metadata['asset']['object_id'] != source['object_id']
+                    or metadata['asset']['revision_id'] != source['revision_id']
+                    or metadata['component'] != source['component_id']):
+                raise ValueError('voice analysis refers to another or incomplete original: ' + key)
+        selected = review.get('range')
+        decision = review['decision']
+        if decision not in {'suitable_spoken_identity', 'needs_comparison', 'needs_new_reference', 'needs_longer_reference'}:
+            raise ValueError('unrecognised authored voice decision: ' + key)
+        if selected:
+            start, end = selected['start_seconds'], selected['end_seconds']
+            if (type(start) not in (int, float) or type(end) not in (int, float)
+                    or not 0 <= start < end <= component['duration_seconds'] or not 2 <= end-start <= 15):
+                raise ValueError('reviewed voice range violates actual source/channel bounds: ' + key)
+        if (decision == 'suitable_spoken_identity' and not selected
+                or decision in {'needs_new_reference', 'needs_longer_reference'} and selected):
+            raise ValueError('voice decision and execution range disagree: ' + key)
+        return {'review': review, 'reference': exact, 'component': component}
+
+    def voice_input(self, key, downstream, scope, sources, shot):
+        name = self.voice.VOICES[key][0]
+        use = self.voice_uses.get((shot, key))
+        choice = self.voice_choices.get(key)
+        if not use and self.voice_review_complete:
+            raise ValueError('current voice use lacks an episode judgment: ' + shot + ' ' + key)
+        if use:
+            actual = [e for e in self.reviewed.for_sources(sources) if e['speaker'] == key]
+            if (use['source_keys'] != list(dict.fromkeys(e['source'] for e in actual))
+                    or use['modes'] != list(dict.fromkeys(e['mode'] for e in actual))):
+                raise ValueError('reviewed voice event changed: ' + shot + ' ' + key)
+        purpose = name + '：只锁定说话身份的干净短参考'
+        preserve = '同一人物的音区、共鸣与咬字'
+        change = '按本镜正文和身体状态重新表演，不照搬试样文字或静音口型'
+        check = '明确选取约2至4秒可辨音色片段，所有音频参考总长在模型上限内'
+        if use and choice and choice['review']['decision'] == 'suitable_spoken_identity':
+            # Keep the existing need-to-shot identity as a descriptive link.
+            # Its old required revision remains historical; it is not a second
+            # active execution dependency alongside the selected exact asset.
+            old_key = (self.voices[key], downstream, scope['object_id'], 'voice-performance',
+                       'reference', 'required', None, None)
+            self.relation(self.voices[key], downstream, scope, name + '：当前声音需求与本镜用途说明',
+                preserve, change, use['purpose'], sources=sources, type_id='voice-performance',
+                semantics='description', necessity='optional', identity=self.relations.get(old_key))
+            item = self.relation(choice['reference']['object_id'], downstream, scope, purpose,
+                preserve, change + '；不继承旧语气、呼吸、空间或演唱旋律',
+                '核已选完整短片段及全部音频参考总长；本集复核：' + use['purpose'] + '；新片段及新方案不继承旧母版认可',
+                sources=sources, type_id='voice-performance', upstream_ref=choice['reference'])
+            item.pop('selection_state')
+            item.update(component_id=choice['review']['source']['component_id'], range=choice['review']['range'])
+            return item
+        return self.relation(self.voices[key], downstream, scope, purpose, preserve, change, check,
+            sources=sources, type_id='voice-performance')
 
     @staticmethod
     def relation_key(payload):
@@ -180,8 +315,36 @@ class Builder:
             owner = 'entity-' + self.voice.GROUP_ENTITIES.get(key, key)
             row = self.entities[owner]; oid = 'material-voice-' + key
             prompt = f'{direction}。这是独立音色试样，不是本剧台词，也不代表作品实际采用。\n试样文字：我把东西放在桌上，等你说完再走。\n单一角色自然普通话，开头结尾各留半秒安静，无伴奏、环境、混响、角色名朗读或字幕提示语。'
-            self.need(oid, reference(row), 'voice-' + key, 'audio', name + '的可复用说话身份；现场对白、呼吸和环境交给镜头原生音频。',
-                self.plan('audio', prompt, name=name + ' · 音色参考', description=direction), sources=row['payload']['sources'],
+            plan = self.plan('audio', prompt, name=name + ' · 音色参考', description=direction)
+            purpose = name + '的可复用说话身份；现场对白、呼吸和环境交给镜头原生音频。'
+            choice = self.voice_choice(key)
+            if choice:
+                self.voice_choices[key] = choice
+                review = choice['review']
+                purpose += '\n当前评估：' + review['reason']
+                if review.get('range'):
+                    comparing = review['decision'] == 'needs_comparison'
+                    use = name + ('：旧原件身份待比较，尚未启用执行' if comparing else '：复用旧原件的说话身份片段；新方案和片段须独立认可')
+                    item = self.relation(choice['reference']['object_id'], oid, reference(row), use,
+                        review['responsibility'], '不继承：' + '、'.join(review['not_inherited']),
+                        '核完整气口、当前声音方向与独立片段认可；不把旧母版认可转授新方案。',
+                        sources=row['payload']['sources'], semantics='reuse', type_id='voice-reuse',
+                        necessity='optional' if comparing else 'required', upstream_ref=choice['reference'])
+                    item.pop('selection_state')
+                    item.update(component_id=review['source']['component_id'], range=review['range'])
+                    if comparing:
+                        item['enabled'] = False
+                    plan.update(method='reuse', tool='准确原件复用', model='original-audio', parameters={}, inputs=[item],
+                        prompt=f'只复用本方案选定的准确原件片段，锁定{name}的声音身份；起止范围以参考选择为准。\n'
+                               + review['reason'] + '\n' + review['responsibility']
+                               + '\n不重新生成，不冒充新试读词音轨；旧原件、原词、调用与判断原样保留。',
+                        output={'name': name + (' · 待比较身份片段' if comparing else ' · 已有原件身份复用方案'),
+                                'description': direction + '\n不继承：' + '、'.join(review['not_inherited']),
+                                'review_criteria': AUDIO_CHECK})
+                    if comparing:
+                        plan['blockers'] = ['先比较当前选角：' + review['reason'] + '；通过后明确启用输入，并独立认可新方案。']
+            self.need(oid, reference(row), 'voice-' + key, 'audio', purpose,
+                plan, sources=row['payload']['sources'],
                 entities=[reference(row)], specification={'voice_reference': True, 'preferred_input_seconds': 4})
             self.voices[key] = oid
         for owner, oid in SONGS.items():
@@ -314,9 +477,7 @@ class Builder:
             speakers = list(dict.fromkeys(e['speaker'] for e in events if e['speaker'] in self.voice.VOICES))
             audio_labels = []
             for key in speakers:
-                inputs.append(self.relation(self.voices[key], oid, scope, self.voice.VOICES[key][0] + '：只锁定说话身份的干净短参考',
-                    '同一人物的音区、共鸣与咬字', '按本镜正文和身体状态重新表演，不照搬试样文字或静音口型',
-                    '明确选取约2至4秒可辨音色片段，所有音频参考总长在模型上限内', sources=source, type_id='voice-performance'))
+                inputs.append(self.voice_input(key, oid, scope, source, shot_id))
                 audio_labels.append('@音频' + str(len(audio_labels) + 1) + '只参考' + self.voice.VOICES[key][0] + '的音色。')
             song_owners = list(dict.fromkeys(e['song'] for e in events if e.get('song')))
             for owner in song_owners:
@@ -377,6 +538,8 @@ class Builder:
         # their purpose without adopting them or attaching them to a new call.
         for asset in self.p.current_records(self.store, {'ASSET'}):
             targets = set()
+            voice_targets = self.existing_voice_targets(asset)
+            targets.update(voice_targets)
             for state in asset['payload'].get('states', []):
                 target = 'material-' + state['object_id'] + '-overall'
                 if target in self.generated and self.generated[target]['payload'].get('status') != 'withdrawn':
@@ -388,6 +551,24 @@ class Builder:
             for target in sorted(targets):
                 need = self.generated[target]['payload']
                 if need['media_type'] != asset['payload']['media_type']: continue
+                if target in voice_targets:
+                    choice = next((v for v in self.voice_choices.values()
+                                   if v['review']['need_id'] == target and v['reference'] == reference(asset)), None)
+                    labels = {'suitable_spoken_identity': '限定片段复用方案待认可',
+                              'needs_comparison': '声音方向或字音待比较',
+                              'needs_new_reference': '当前方向需新准备',
+                              'needs_longer_reference': '过短，需更长试样'}
+                    title = '已有音色候选，待听审与用途比较'
+                    check = '逐项实际听辨说话者、音区音色、字音、噪声伴奏与表达；明确原件组成和起止范围，按具体镜头渠道核时长；未听审或未选段保持待准备'
+                    if choice:
+                        title = '已有音色候选：' + labels[choice['review']['decision']]
+                        check = choice['review']['reason'] + '；新方案、片段及本镜表演须独立认可，不转授旧母版判断。'
+                    self.relation(asset['object_id'], target, need['scope'], title,
+                        '准确旧原件、真实调用与原说话身份；历史母版认可只限旧原件',
+                        '只取声音身份，现场重新表演本镜正文；不继承旧试读台词、语气、呼吸或环境，也不冒充新试样的生成结果',
+                        check,
+                        sources=need['sources'], necessity='optional', semantics='alternative', type_id='existing-candidate')
+                    continue
                 self.relation(asset['object_id'], target, need['scope'], '已有候选可供本需求比较和复用选择',
                     '原件身份、真实调用及已知身份或状态依据；不把旧认可迁到新方案',
                     '本次未选择候选；先核当前完整状态、风格、原生规格与图像谱系，再明确改选输入路线',
@@ -406,3 +587,20 @@ class Builder:
                 value = deepcopy(relation['payload']);value.update(status='withdrawn', withdrawal_reason='本次逐镜用途判断已调整状态准备或准确输入；旧关系与历史方案保留，不再作为当前执行依据')
                 self.put(relation['object_id'], 'MATERIAL_RELATION', value)
         return {'records': self.rows, 'preserve_exact_requirements': list(self.keep.values()), 'counts': dict(self.counts)}
+
+    def existing_voice_targets(self, asset):
+        """Match owner and exact requested speaker/direction; never a group alone."""
+        ref = asset['payload'].get('production')
+        if asset['payload'].get('media_type') != 'audio' or not ref:
+            return set()
+        try:
+            call = self.p.record(self.store, **ref)
+        except KeyError:
+            return set()
+        identity = recorded_voice_identity(asset, call)
+        if identity is None:
+            return set()
+        owners = {r['object_id'] for r in asset['payload'].get('subjects', [])}
+        return {target for key, target in self.voices.items()
+                if owners == {self.generated[target]['payload']['scope']['object_id']}
+                and identity == self.voice.VOICES[key]}
