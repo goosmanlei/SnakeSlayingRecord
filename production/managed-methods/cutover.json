@@ -9,37 +9,26 @@
       "task": "task-20261009-0005",
       "status": "completed",
       "summary": "让已有音色进入可评估的复用路线，减少无依据重复准备",
-      "observed_at": "2026-10-09T11:45:41.527801+00:00",
+      "observed_at": "2026-10-09T16:48:32.449606+00:00",
       "work_type": "media-plan",
       "boundary": "已有音色复用交付已完成；启用时仅冻结正式库已有准确方案，方法历史仍未知。"
     },
     {
       "task": "task-20261009-0014",
-      "status": "running",
+      "status": "completed",
       "summary": "消除镜头起点倒退与失效条件继承，逐场统一首帧、动作、声音与模型提交表达",
-      "observed_at": "2026-10-09T11:45:41.528002+00:00",
+      "observed_at": "2026-10-09T16:48:32.449606+00:00",
       "work_type": "media-plan",
-      "boundary": "仍在修改全剧方案，无冻结整组交付候选；本次观察不冻结文件、不按任务号豁免。等待相关旧交付完成后启用。",
-      "observed_files": {
-        "production/audiovisual/README.md": "d3a1e621bccb01049109e2d30864a7dfbdda51ef67ca1bae1f60dc2ddb103619",
-        "production/audiovisual/appearances.txt": "814d2bd682b6defc0aa6d5561350f7212387362a97f853d878cb0f6ba1227f9d",
-        "production/audiovisual/e08.md": "6612fcce51aa16a895000b5d5c692eac36ae20569062eafb3140c78c4dcc123a",
-        "production/audiovisual/frame-subjects.txt": "cc5babdffb5ee10c7859929067781d4f6c327d7d707638fdb9fec773de10e34a",
-        "production/audiovisual/shot-contexts.json": "de2c9a413170ccd088bfd26f1eced458225b7f2f71ec4dffdd915ffebb58e441",
-        "production/audiovisual/stage-review.md": "a15fbb323e3972928ed85554ad7081636adb4b08253bd8f6768b6c150b9d9e74",
-        "production/audiovisual/video-inputs.json": "b9e79b94f4e2519f190096b3406ca471ea056eb68916306fa1471e5691a03092",
-        "production/voice-reuse/reviews.json": "273dc91a03177b6f8e5d7f2b61c266fcca05bea89910f3b0aa39718dbd6c7f88",
-        "scripts/audiovisual_materials.py": "49ddb0e9a0364cd2ea96d36b2471d1b7e999f53234e1a285580c18989e0da0e8",
-        "scripts/video_input_design.py": "deda4fcf1eecbc48db4e629a850365f3519c4520e1c277a9682a97b682ac30c3",
-        "tests/test_first_frame_states.py": "5dbd77f720624c4d66fa031e6cd575c9a07f9b89de72e269b6da09acf43e0b32",
-        "production/audiovisual/e09.md": "d030a294d7176105b5ad30888c95eb289295d67247acedbf8efe95b873edfebe"
-      }
+      "boundary": "相关旧交付已完成并正式增量发布；启用时仅冻结正式库中实际已有的准确方案修订，方法历史仍未知。切换后新创作步骤须使用方法，不按任务号豁免。",
+      "completed_at": "2026-10-10T00:32:34.002812+08:00",
+      "delivery_commit": "338c2d449eecba4c1c85eb5736e9b3fa90596aad",
+      "publication_id": "c3019cfd2f788ea1a4090c233fd962f6478de182d44be9fdc1ff0999339fe004"
     },
     {
       "task": "task-20261009-0024",
       "status": "completed",
       "summary": "按视听场准确查找制作实体与素材，修正源场混合与旧备选误归",
-      "observed_at": "2026-10-09T11:45:41.558526+00:00",
+      "observed_at": "2026-10-09T16:48:32.449606+00:00",
       "work_type": "review-ui",
       "boundary": "准确来源、历史图像或已选片段查看；没有新创作步骤豁免，服务切换仍共用互斥发布窗口。"
     },
@@ -47,7 +36,7 @@
       "task": "task-20261009-0028",
       "status": "completed",
       "summary": "补齐历史意见复核中准确回应整稿的图像",
-      "observed_at": "2026-10-09T11:45:41.558532+00:00",
+      "observed_at": "2026-10-09T16:48:32.449606+00:00",
       "work_type": "review-ui",
       "boundary": "准确来源、历史图像或已选片段查看；没有新创作步骤豁免，服务切换仍共用互斥发布窗口。"
     },
@@ -55,7 +44,7 @@
       "task": "task-20261009-0029",
       "status": "completed",
       "summary": "让已选音频参考片段直接接入准确试听",
-      "observed_at": "2026-10-09T11:45:41.558534+00:00",
+      "observed_at": "2026-10-09T16:48:32.449606+00:00",
       "work_type": "review-ui",
       "boundary": "准确来源、历史图像或已选片段查看；没有新创作步骤豁免，服务切换仍共用互斥发布窗口。"
     }
@@ -70,5 +59,21 @@
     "api": "停止核验身份的准确 app，检查 3000、64401 评论、认可、配置、内容写入口停止，再取切点快照。",
     "preservation": "仅追加方法定义及启用记录；严格结构和无关行比较，不回灌旧任务库。",
     "recovery": "定义包与完整导出分别恢复；启用后拒绝切回不支持方法约束的旧镜像，使用兼容版本重启或兼容修复；不回灌旧库。"
+  },
+  "active_work_audit": {
+    "observed_at": "2026-10-09T16:48:32.449606+00:00",
+    "running_tasks": [
+      "task-20261009-0020"
+    ],
+    "published_not_started": [
+      "task-20261009-0021",
+      "task-20261009-0022",
+      "task-20261009-0023",
+      "task-20261009-0030",
+      "task-20261009-0031",
+      "task-20261009-0032",
+      "task-20261009-0033"
+    ],
+    "boundary": "除本任务外没有正在运行的任务；已发布未开始的后续创作任务不属于旧冻结范围。"
   }
 }
