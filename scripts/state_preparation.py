@@ -61,8 +61,9 @@ def state_records(store, p):
         # This exact character-only boilerplate was incorrectly copied to all
         # types. Preserve other authored choices rather than replacing them.
         old = '同一完整形态跨场复用；未写换装、湿痕消退、伤愈程度的衔接属于待审连续性安排，不冒充新增剧本事实。'
+        generic = '本状态的具体湿痕、伤侧、色彩和衔接安排属于制作选择，剧本事实列在下方。'
         payload['choices'] = [v for v in payload.get('choices', [])
-                              if v != old and not v.startswith('准备用途：')]
+                              if v not in (old, generic) and not v.startswith('准备用途：')]
         payload['choices'].append('准备用途：' + decision['mode'] + '。' + decision['purpose'])
         rows.append({'object_id': oid, 'kind': 'STATE', 'payload': payload})
     return rows
