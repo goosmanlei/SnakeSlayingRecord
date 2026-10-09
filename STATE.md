@@ -2,6 +2,8 @@
 
 ## 当前成果与运行依据
 
+- 剧本四 E01/S002 已完成隔离实操：EN002、ST088、M2544 直接准确完整审阅，M1133 旧图可见并保留母版判断范围，具体用途与原件区域意见分开保存／定位，原场及卡内草稿和阅读位置恢复。三入口、旧版／失效引用、李寄对照与迟到响应边界见 [剧本形象比较验收](production/script-character-image-review/VERIFICATION.md)；正式运行、只读复走与清理按 task-20261010-0002 实际发布／完成回执核对。
+
 - [创作协作 Review](skills/creative-system-review/SKILL.md) 和 [愿景与协作](production/system-vision.md) 已正式发布；愿景为制作思路默认首项，系统方法沿准确只读投影交接。根实际复验了默认页、刷新、旧章节链接与方法完整只读正文。隔离准备和空实例恢复边界见 [交付验收](production/creative-system-review/VERIFICATION.md)，根验收见 `.runtime/system-review/skill-delivery/formal-acceptance.md`；结项收尾按 task-20261010-0001 实际回执核对。
 
 - 旧镜头制作方案已完成最新双仓候选上的隔离实读：E02/AS006/ASH033版本1直接读原M3071及旧图片1，当前方案可返回；M3070版本2多记录、冻结M1206和ST087旧状态正常对照见[历史方案验收](production/historical-production-definition/VERIFICATION.md)。旧意见、当前采纳/取消、同未冻结制作版参考修改及冲突保护已实操；正式生效、3000只读复验与清理以task-20261009-0031实际回执为准，根独立复验尚未执行。
