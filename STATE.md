@@ -2,6 +2,8 @@
 
 ## 当前成果与运行依据
 
+- 集版本比较已在隔离候选中从 E02/AS006/ASH033 完成 3→2→3、相邻镜与准确 S004 返回；多父复用、移场、缺席及草稿/迟到响应另做隔离验证。正式生效、原入口只读复走与清理以 task-20261009-0025 实际回执为准，样本、准确身份和复验路径见 [集版本比较验收](production/version-comparison-context/VERIFICATION.md)；根独立 Review 尚未执行。
+
 - 素材参考、旧备选与沿用方案的具名入口及准确用途意见已完成隔离实践，包括 M2710→ASH001、M1516文字依据与原图区域定位、关系草稿隔离和宽窄窗口。实操与无真实样本的夹具边界见 [参考用途验收](production/material-reference-purpose/VERIFICATION.md)；正式生效、只读复验与清理以 task-20261009-0017 实际回执为准。
 
 - 作品为方向三《把灯带回家》、故事结构第十稿、精修九定稿候选与用户已确认的剧本版本四。准确制作来源锁定于 [production/source-lock.json](production/source-lock.json)；故事创作域与评论保留。
