@@ -84,6 +84,26 @@ class EventTests(unittest.TestCase):
         # The paper's printed invocation is seen, not sung by the person nearby.
         self.assertEqual(self.reviewed.for_sources(sources('s003', 14)), [])
 
+    def test_time_title_can_leave_the_picture_prompt_without_losing_narrated_voice(self):
+        src = sources('s037', 1, 2, 3)
+        events = self.reviewed.for_sources(src)
+        self.assertEqual([e['speaker'] for e in events], ['clerk-proclamation'])
+        rendered = self.reviewed.render(src, {'s037:1': ''})
+        self.assertNotIn('二十多天后', rendered)
+        self.assertIn(self.reviewed.describe(events[0]), rendered)
+        pending = sources('s037', 16, 17, 18)
+        self.reviewed.render(pending, {'s037:18': '交纸并核印，末行未给原词。'})
+        self.assertTrue(self.reviewed.blockers(pending))
+
+    def test_paper_translation_does_not_create_speech_or_borrow_other_scene_words(self):
+        src = sources('s003', 14)
+        rendered = self.reviewed.render(src, {'s003:14': '旧纸翻出两列净纸区。'})
+        self.assertIn('旧纸翻出两列净纸区', rendered)
+        self.assertNotIn('米饵奉蛇神', rendered)
+        self.assertNotIn('本段发声', rendered)
+        with self.assertRaisesRegex(ValueError, 'outside the exact shot sources'):
+            self.reviewed.render(src, {'s022:13': '后来揭出的条款'})
+
     def test_changed_source_cannot_reuse_semantic_review(self):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
