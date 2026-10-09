@@ -14,6 +14,41 @@ import vps_experience_remote as remote
 
 
 class VPSPackageBoundaryTest(unittest.TestCase):
+    def test_loopback_proxy_binds_only_the_actual_private_bridge(self):
+        values={'REVIEW_USE_XRAY_LOOPBACK':'1','HTTPS_PROXY':'http://test-user:test-secret@127.0.0.1:9090'}
+        network={'Driver':'bridge','IPAM':{'Config':[{'Subnet':'172.23.0.0/16','Gateway':'172.23.0.1'}]}}
+        with patch.object(remote,'credential_values',return_value=values),patch.object(remote,'run',return_value=json.dumps([network])):
+            target=remote.runtime_target()
+        self.assertEqual(target['network'],'host')
+        self.assertEqual(target['bind_host'],'172.23.0.1')
+        self.assertEqual(target['upstream'],'http://172.23.0.1:8765')
+        self.assertNotIn('test-secret',json.dumps(target))
+        command=remote.runtime_command(target)
+        self.assertEqual(command[command.index('--host')+1],'172.23.0.1')
+
+    def test_proxy_credentials_and_invalid_urls_never_enter_error_messages(self):
+        for proxy in ['http://test-user:test-secret@198.51.100.1:9090',
+                      'http://test-user:test-secret@127.0.0.1:invalid',
+                      'http://127.0.0.1:9090','https://test-user:test-secret@127.0.0.1:9090']:
+            with patch.object(remote,'credential_values',return_value={'REVIEW_USE_XRAY_LOOPBACK':'1','HTTPS_PROXY':proxy}),patch.object(remote,'run') as execute:
+                with self.assertRaisesRegex(ValueError,'authenticated loopback HTTP proxy') as error:remote.runtime_target()
+                self.assertNotIn('test-secret',str(error.exception));execute.assert_not_called()
+
+    def test_public_or_non_bridge_application_binding_is_rejected(self):
+        values={'REVIEW_USE_XRAY_LOOPBACK':'1','HTTPS_PROXY':'http://user:pass@127.0.0.1:9090'}
+        for network in [{'Driver':'host','IPAM':{'Config':[]}},
+                        {'Driver':'bridge','IPAM':{'Config':[{'Subnet':'8.8.8.0/24','Gateway':'8.8.8.1'}]}},
+                        {'Driver':'bridge','IPAM':{'Config':[{'Subnet':'172.23.0.0/16','Gateway':'172.24.0.1'}]}}]:
+            with patch.object(remote,'credential_values',return_value=values),patch.object(remote,'run',return_value=json.dumps([network])):
+                with self.assertRaises(ValueError):remote.runtime_target()
+
+    def test_default_runtime_keeps_existing_container_network_and_local_probe(self):
+        with patch.object(remote,'credential_values',return_value={}),patch.object(remote,'run') as execute:
+            target=remote.runtime_target()
+            self.assertEqual(target['network'],remote.NETWORK)
+            self.assertEqual(target['probe_host'],'127.0.0.1')
+            execute.assert_not_called()
+
     def test_save_config_digest_survives_different_docker_image_stores(self):
         config=json.dumps({'architecture':'amd64','config':{'Labels':{
             'org.leiguoguo.instance':'lijizhanshe','org.opencontainers.image.revision':'candidate'}}}).encode()
