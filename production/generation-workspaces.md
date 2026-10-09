@@ -152,7 +152,7 @@ python3 scripts/generation_review.py --system "$generation_system" \
 python3 scripts/production_review.py --system "$generation_system" snapshot \
   --instance .runtime/generation/published-snapshot
 python3 scripts/production_review.py --system "$generation_system" recover \
-  --destination .runtime/generation/published-recovery --historical-pcm-precision
+  --destination .runtime/generation/published-recovery
 ```
 
 `export` 和 `snapshot` 只改当前 worktree 的受管交付文件；核对恢复后的准确版本、历史评论和文件哈希，再提交导出并合入主干。Schema 6 及以上完整导出已经保存全部修订，`snapshot` 写出 `production-export-index-v1` 索引，绑定准确历史身份、原件和导出清单，不再生成重复的正文重放批次；旧格式恢复仍兼容。索引与清单或历史不一致时拒绝恢复。
