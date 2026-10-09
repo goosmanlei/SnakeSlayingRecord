@@ -220,7 +220,7 @@ class Builder:
                     '；'.join(TYPE_CHECKS[kind]) + '；图像按最深真实输入核验，当前计划从干净母版一代得到', sources=payload['sources'], type_id='identity-state', semantics='variant'))
             prefix = ('图片1只固定干净母版的身份与结构；' if media == 'image' else '@音频1只锁定已明确的旋律范围，不自动继承独立歌手身份；') if inputs else ''
             prompt = prefix + self.visual_description(row, description(payload))
-            if decision:
+            if decision and state_id not in self.text_handoffs['visual_descriptions']:
                 prompt += '\n本次准备的实际用途与限制：' + purpose
             if media == 'image':
                 instruction = {'character': '按实体定义呈现同一人物、动物或可辨群组的全形与本阶段可见细节；不复制成员，不给动物套人类衣饰，不添加别场伤势、湿痕或持物。',
