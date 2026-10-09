@@ -16,8 +16,23 @@ from unittest.mock import patch
 sys.path.insert(0,str(Path(__file__).parents[1]/'scripts'))
 import material_review_release as r
 import task_repository_delivery as delivery
+import method_migration
 
 class ReleaseTest(unittest.TestCase):
+    def test_ingress_timeout_requires_verified_application_stop(self):
+        with patch.object(method_migration, 'build_opener') as opener:
+            opener.return_value.open.side_effect = TimeoutError('upstream stopped')
+            with self.assertRaisesRegex(ValueError, '准确应用已经停止'):
+                method_migration.stopped_api()
+            opener.assert_not_called()
+            rows = method_migration.stopped_api(application_stopped=True)
+            self.assertEqual(len(rows), 8)
+            self.assertEqual({row['status'] for row in rows}, {'response-unavailable-after-verified-stop'})
+            opener.return_value.open.side_effect = None
+            opener.return_value.open.return_value.__enter__.return_value.status = 400
+            with self.assertRaisesRegex(ValueError, '写入口尚未停止'):
+                method_migration.stopped_api(application_stopped=True)
+
     def setUp(self):
         self.tmp=tempfile.TemporaryDirectory();self.addCleanup(self.tmp.cleanup);self.root=Path(self.tmp.name)
         self.before=self.root/'before.sqlite3';self.after=self.root/'after.sqlite3'

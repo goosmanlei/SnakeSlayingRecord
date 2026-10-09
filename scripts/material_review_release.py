@@ -333,7 +333,7 @@ def apply(a):
             require(not inspect(current['Id'])['State']['Running'], 'application still accepting writes')
             save(receipt/'write-window.json', {'container_id': current['Id'], 'stopped': True,
                                               'surfaces': ['comments','acceptance','configuration','content','uploads'],
-                                              'ingress': method_migration.stopped_api(),
+                                              'ingress': method_migration.stopped_api(application_stopped=True),
                                               'at': datetime.now(timezone.utc).isoformat()})
         if not before.exists():
             checks(root,m);base.snapshot(Path(m['story_main'])/'.runtime/review.sqlite3',before);save(receipt/'before.json',{'sha256':file_sha256(before)})
