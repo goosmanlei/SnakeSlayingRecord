@@ -115,6 +115,49 @@ class EventTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'reviewed event source changed'):
                 ReviewedEvents(root, self.score, casting())
 
+    def test_executable_opening_starts_before_placing_book_and_keeps_sung_words(self):
+        scene = self.score[0]['scenes'][0]
+        self.assertIn('歌本尚在手中', scene['shots'][0]['action_start'])
+        rendered = self.reviewed.render(sources('s001', 1, 2, 3), executable=True)
+        self.assertLess(rendered.index('摊在倒扣竹篮上'), rendered.index('一道险滩水急'))
+        self.assertLess(rendered.index('一道险滩水急'), rendered.index('老汉把扁担竖在腿边'))
+        self.assertLess(rendered.index('老汉把扁担竖在腿边'), rendered.index('阿蘅翻过两页'))
+        reply = self.reviewed.render(sources('s001', 4, 5, 6), executable=True)
+        self.assertLess(reply.index('船靠岸，灯来迎'), reply.index('二道——哎，到了？'))
+        self.assertIn('延续尾腔', reply)
+
+    def test_actions_interleave_with_voices_without_making_pending_reply_ready(self):
+        src = sources('s001', 9)
+        rendered = self.reviewed.render(src, executable=True)
+        self.assertLess(rendered.index('听客一起自然发笑'), rendered.index('下回补上'))
+        self.assertLess(rendered.index('下回补上'), rendered.index('阿蘅欠身'))
+        self.assertLess(rendered.index('阿蘅欠身'), rendered.index('几个听客提起米袋'))
+        self.assertNotIn('原词待准备', rendered)
+        self.assertNotIn('新增独立音色', rendered)
+        self.assertTrue(self.reviewed.blockers(src))
+
+    def test_executable_readback_preserves_two_actual_utterances(self):
+        src = sources('s026', 1, 2, 3)
+        events = self.reviewed.for_sources(src)
+        rendered = self.reviewed.render(src, executable=True)
+        self.assertEqual(rendered.count(events[0]['content']), 2)
+        self.assertLess(rendered.index('阿蘅母亲／'), rendered.index('梁书吏／'))
+
+    def test_authored_order_cannot_omit_or_duplicate_a_voice(self):
+        for order in ([{'voice': 0}, {'voice': 1}],
+                      [{'voice': 0}, {'voice': 1}, {'voice': 1}, {'voice': 2}]):
+            with self.subTest(order=order), tempfile.TemporaryDirectory() as temp:
+                root = Path(temp)
+                (root / 'imports').mkdir()
+                (root / 'production/audiovisual').mkdir(parents=True)
+                for name in ('imports/screenplay-04.json', 'production/audiovisual/vocal-events.json'):
+                    (root / name).write_bytes((ROOT / name).read_bytes())
+                context = deepcopy(self.reviewed.contexts)
+                context['action_order']['s001:9'] = order
+                (root / 'production/audiovisual/shot-contexts.json').write_text(json.dumps(context))
+                with self.assertRaisesRegex(ValueError, 'preserve every vocal event in order'):
+                    ReviewedEvents(root, self.score, casting())
+
 
 if __name__ == '__main__':
     unittest.main()
