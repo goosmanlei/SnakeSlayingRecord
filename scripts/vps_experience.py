@@ -106,7 +106,7 @@ def prepare(args):
 def remote(command, *extra):
     # Use the configured SSH alias; no fixed host address or credentials.
     return run('ssh','-o','BatchMode=yes','-o','ConnectTimeout=15','vps',
-               shlex.join(['python3', 'my-config/lijizhanshe/deploy.py', command, *extra]))
+               shlex.join(['python3', 'lijizhanshe/deploy.py', command, *extra]))
 
 
 def upload(args):
@@ -115,10 +115,10 @@ def upload(args):
     receipt = json.loads((output/'prepare.json').read_text())
     if sha(output/'bundle.tar') != receipt['package_sha256']:
         raise ValueError('local package changed')
-    run('ssh','-o','BatchMode=yes','vps', 'umask 077; mkdir -p my-config/lijizhanshe/incoming/'+identity)
-    run('scp',str(ROOT/'scripts/vps_experience_remote.py'),'vps:my-config/lijizhanshe/deploy.py')
-    run('scp',str(output/'bundle.tar'),'vps:my-config/lijizhanshe/incoming/'+identity+'/bundle.tar.part')
-    run('ssh','-o','BatchMode=yes','vps','mv my-config/lijizhanshe/incoming/'+identity+'/bundle.tar.part my-config/lijizhanshe/incoming/'+identity+'/bundle.tar')
+    run('ssh','-o','BatchMode=yes','vps', 'umask 077; mkdir -p lijizhanshe/incoming/'+identity)
+    run('scp',str(ROOT/'scripts/vps_experience_remote.py'),'vps:lijizhanshe/deploy.py')
+    run('scp',str(output/'bundle.tar'),'vps:lijizhanshe/incoming/'+identity+'/bundle.tar.part')
+    run('ssh','-o','BatchMode=yes','vps','mv lijizhanshe/incoming/'+identity+'/bundle.tar.part lijizhanshe/incoming/'+identity+'/bundle.tar')
     remote('stage','--publication',identity,'--sha256',receipt['package_sha256'])
 
 
