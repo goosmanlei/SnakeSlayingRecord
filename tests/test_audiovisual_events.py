@@ -56,6 +56,21 @@ class EventTests(unittest.TestCase):
         rendered = self.reviewed.render(src)
         self.assertEqual(rendered.count(events[0]['content']), 2)
 
+    def test_explicit_memory_keeps_its_time_and_nonverbal_overlap(self):
+        src = sources('s014', 15)
+        events = self.reviewed.for_sources(src)
+        self.assertEqual([(e['speaker'], e['words']) for e in events], [('tao', 'none')])
+        rendered = self.reviewed.render(src, executable=True)
+        self.assertLess(rendered.index('进入李诞记忆'), rendered.index('与陶伯被庙工拖开的动作同时'))
+        self.assertLess(rendered.index('与陶伯被庙工拖开的动作同时'), rendered.index('动作：阿禾回头'))
+        self.assertLess(rendered.index('动作：阿禾回头'), rendered.index('动作：人群合上'))
+        self.assertIn('没有迈出去', rendered)
+        scene = self.score[5]['scenes'][1]
+        conditions, _ = self.reviewed.conditions(6, scene, 1)
+        self.assertIn('日光', conditions['光线'])
+        self.assertNotIn('灶火', conditions['光线'])
+        self.assertIn('前年记忆', conditions['连续性'])
+
     def test_humming_following_and_stopping_keep_both_voices_and_order(self):
         events = self.reviewed.for_sources(sources('s038', 9, 10, 11))
         self.assertEqual([(e['speaker'], e['mode']) for e in events],
