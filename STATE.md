@@ -45,7 +45,7 @@
 
 ## 下一步与制作边界
 
-- [受管方法与执行绑定](production/managed-methods.md) 已正式启用：评论润色、小说检查点、独立读者和媒体准备取得准确方法及共用资料；旧方案历史保持未知，新创作步骤受方法契约约束。0014 旧交付完成后已按停写窗口追加配置，正式页面、兼容运行重启和完整空库恢复通过，实际边界见[验收记录](production/managed-methods/VERIFICATION.md)。主要创作制作方法库已正式发布，完成自然场、独立对话／动作／文字试用及改进后复用；正式页只读回查和完整空库恢复通过，见[方法试用](production/professional-methods/VERIFICATION.md)。用户已取消原全剧重做任务 0022/0023，保留已确认结构、小说及有效成果；后续按新 Review SKILL 实践后重新确定改进范围。0022/0023 已从队列撤下，未完成草稿不构成正式制作依据；撤销事实与必要追溯见 `.runtime/system-review/abandon-0022-0023/status.json`。新的持续 Review 仍暂停，运行约定见 `.runtime/system-review/RUNBOOK.md`。
+- [受管方法与执行绑定](production/managed-methods.md) 已正式启用：评论润色、小说检查点、独立读者和媒体准备取得准确方法及共用资料；旧方案历史保持未知，新创作步骤受方法契约约束。0014 旧交付完成后已按停写窗口追加配置，正式页面、兼容运行重启和完整空库恢复通过，实际边界见[验收记录](production/managed-methods/VERIFICATION.md)。主要创作制作方法库已正式发布，完成自然场、独立对话／动作／文字试用及改进后复用；正式页只读回查和完整空库恢复通过，见[方法试用](production/professional-methods/VERIFICATION.md)。用户已取消原全剧重做任务 0022/0023，保留已确认结构、小说及有效成果；后续按新 Review SKILL 实践后重新确定改进范围。0022/0023 已从队列撤下，未完成草稿不构成正式制作依据；撤销事实与必要追溯见 `.runtime/system-review/abandon-0022-0023/status.json`。持续 Review 的运行、暂停与发布授权按当前会话指令及本机 `.runtime/system-review/RUNBOOK.md`、`.runtime/system-review/state.json` 核对，不沿用旧轮次状态；执行任务仍由受管任务入口承接。
 
 - `task-20261009-0005` 的已有音色复用路线已正式生效，40个身份与17集当前用途均已逐项复核，形成26个说话身份复用方案、7个待比较项、3个当前方向待新准备项及4个过短待更长参考项。当前需求与代表镜头可追到准确旧原件、选段和原判断；授权音频理解、隔离交互、正式只读回查及完整导出恢复的边界见 [音色复用说明](production/voice-reuse/README.md)。下一步独立审阅本次片段与方案，再处理未选项和真实输出；不继承旧认可，未验证新视频的音色保持或实际费用节约。
 - 按 [全剧逐集稿与复核](production/audiovisual/review.md) 审阅具体视听选择，并对实际要生成的需求确定准确方案、路线、候选及局部范围。方案未获采纳、原件未选或所选路线缺项时不生成；旧认可不转授新设计。
