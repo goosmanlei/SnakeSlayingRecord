@@ -8,6 +8,7 @@ import json
 from pathlib import Path
 import shutil
 import sqlite3
+import socket
 import sys
 import tempfile
 import tracemalloc
@@ -21,7 +22,7 @@ import method_migration
 class ReleaseTest(unittest.TestCase):
     def test_ingress_timeout_requires_verified_application_stop(self):
         with patch.object(method_migration, 'build_opener') as opener:
-            opener.return_value.open.side_effect = TimeoutError('upstream stopped')
+            opener.return_value.open.side_effect = socket.timeout('upstream stopped')
             with self.assertRaisesRegex(ValueError, '准确应用已经停止'):
                 method_migration.stopped_api()
             opener.assert_not_called()
