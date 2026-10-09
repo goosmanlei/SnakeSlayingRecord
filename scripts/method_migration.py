@@ -12,6 +12,30 @@ import sys
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, build_opener, ProxyHandler
 
+CONFIG_FORMATS = {'managed-method-' + name + '-v1' for name in ('skill', 'resource', 'binding')}
+
+
+def check_registry(registry):
+    if registry.get('format') != 'managed-method-registry-v1' or not isinstance(registry.get('records'), list):
+        raise ValueError('配置迁移需要准确方法定义包')
+    if any(row.get('payload', {}).get('format') not in CONFIG_FORMATS for row in registry['records']):
+        raise ValueError('配置迁移只能含方法、共用资料和绑定，不能混入工作产物或冻结范围')
+
+
+def export_configuration(database):
+    from review_desk import methods
+    from review_desk.store import Store
+    store = Store.open_existing(Path(database))
+    try:
+        archive = methods.export_registry(store)
+    finally:
+        store.close()
+    archive['records'] = [row for row in archive['records'] if row['payload']['format'] in CONFIG_FORMATS]
+    archive.pop('sha256')
+    archive['sha256'] = methods.checksum(archive)
+    check_registry(archive)
+    return archive
+
 
 def check_cutover(story_main, audit):
     if audit.get('format') != 'managed-method-cutover-v1' or not audit.get('reviewed_work'):
@@ -59,9 +83,7 @@ def stopped_api(*, application_stopped=False):
 def apply(database, registry, *, activate_media=False):
     from review_desk import methods, method_media
     from review_desk.store import Store
-    allowed = {methods.FORMATS[name] for name in ('skill', 'resource', 'binding')}
-    if any(row['payload'].get('format') not in allowed for row in registry['records']):
-        raise ValueError('配置迁移只能含方法、共用资料和绑定，不能混入工作产物或冻结范围')
+    check_registry(registry)
     store = Store.open_existing(Path(database))
     try:
         result = methods.restore_registry(store, registry)
@@ -112,6 +134,9 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--system', type=Path, required=True)
     sub = parser.add_subparsers(dest='action', required=True)
+    export = sub.add_parser('export')
+    export.add_argument('--database', type=Path, required=True)
+    export.add_argument('--output', type=Path, required=True)
     change = sub.add_parser('apply')
     change.add_argument('--database', type=Path, required=True)
     change.add_argument('--registry', type=Path, required=True)
@@ -121,6 +146,11 @@ def main():
     check.add_argument('--after', type=Path, required=True)
     check.add_argument('--registry', type=Path, required=True)
     args = parser.parse_args(); sys.path.insert(0, str(args.system.resolve()))
+    if args.action == 'export':
+        result = export_configuration(args.database)
+        args.output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n')
+        print(json.dumps({'sha256': result['sha256'], 'revisions': len(result['records']), 'output': str(args.output)}))
+        return
     registry = json.loads(args.registry.read_text())
     result = apply(args.database, registry, activate_media=args.activate_media) if args.action == 'apply' else compare(args.before, args.after, registry)
     print(json.dumps(result, ensure_ascii=False))
