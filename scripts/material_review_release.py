@@ -376,6 +376,13 @@ def apply(a):
 def recover(a):
     root,m=authorized(a);image=read(root/'image.json');release=Path(m['story_main'])/'.runtime/service-releases'/m['release_name']
     with base.publication_locks(m):
+        if m.get('managed_methods'):
+            # The pre-cutover image cannot enforce the newly active contract.
+            # Keep the database and require a compatible runtime repair instead.
+            database=Path(m['story_main'])/'.runtime/review.sqlite3'
+            with sqlite3.connect(database.resolve().as_uri()+'?mode=ro',uri=True) as db:
+                active=db.execute("SELECT 1 FROM objects WHERE id='method.activation.media-plan'").fetchone()
+            require(not active,'方法约束已启用，不能回退到切换前镜像；请重启当前兼容版本或发布兼容修复，不要回灌旧数据库')
         current=inspect(base.APP);known_mounts=[{v['Destination']:(v['Source'],v['RW']) for v in m['previous_app']['mounts']},{v['target']:(v['source'],not v['read_only']) for v in base.compose_definition(m,image,release)['services']['app']['volumes']}];require(current['Image'] in (image['image'],m['previous_app']['image']) and {v['Destination']:(v['Source'],v['RW']) for v in current['Mounts']} in known_mounts,'another release is active')
         proxy=base.safe_container(inspect(base.NGINX));expected_proxy={**m['previous_nginx'],'config_files':str(release/'compose.release.json')};recovered_proxy={**m['previous_nginx'],'config_files':str(root/'compose.previous.json')}
         require(proxy in (m['previous_nginx'],expected_proxy,recovered_proxy),'another proxy runtime is active')

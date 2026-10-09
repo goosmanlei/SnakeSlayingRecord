@@ -97,6 +97,20 @@ class ReleaseTest(unittest.TestCase):
             with self.assertRaisesRegex(ValueError,'not this release'):r.restart(argparse.Namespace(apply=True,release=self.root))
             inspect.assert_not_called()
 
+    def test_active_methods_block_pre_cutover_image_recovery_before_runtime_changes(self):
+        runtime=self.root/'.runtime';runtime.mkdir()
+        with sqlite3.connect(runtime/'review.sqlite3') as db:
+            db.execute('CREATE TABLE objects(id TEXT PRIMARY KEY)')
+            db.execute("INSERT INTO objects VALUES ('method.activation.media-plan')")
+        (self.root/'image.json').write_text('{}')
+        manifest={'story_main':str(self.root),'release_name':'method-test','managed_methods':{'registry':'methods/registry.json'}}
+        with patch.object(r,'authorized',return_value=(self.root,manifest)), \
+             patch.object(r.base,'publication_locks',return_value=contextlib.nullcontext()), \
+             patch.object(r,'inspect') as inspect, patch.object(r.base,'compose_up') as compose:
+            with self.assertRaisesRegex(ValueError,'不能回退到切换前镜像'):
+                r.recover(argparse.Namespace())
+            inspect.assert_not_called();compose.assert_not_called()
+
     def test_release_names_keep_task_identity_and_old_default(self):
         self.assertEqual(r.release_name(r.TASK,'a'*40,'b'*40), 'materials-20261004-0004-'+'a'*12+'-'+'b'*12)
         self.assertEqual(r.release_name('task-20261004-0005','a'*40,'b'*40), 'asset-cleanup-20261004-0005-'+'a'*12+'-'+'b'*12)
