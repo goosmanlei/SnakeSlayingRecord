@@ -1,0 +1,236 @@
+{
+  "checked_at": "2026-10-10T03:59:13.365173+08:00",
+  "environment": "http://127.0.0.1:49292",
+  "operation": "GET resolve and record only",
+  "root_ui_action": "Only purpose suffix （隔离回写检查） added to audiovisual-scene v4; saved v5 and explicitly bound audiovisual-design to v5. Root reports no condition editing.",
+  "before": {
+    "binding": {
+      "object_id": "method.binding.audiovisual-design",
+      "revision_id": "277edaaccdbda0fbf05e93c24ea97d02194d2fc33f6c5851b5ca967afd6999ea"
+    },
+    "method": {
+      "object_id": "method.skill.audiovisual-scene",
+      "revision_id": "9ac798963959078533328f3dc481a295cee20788e29f817436a2b0824a3a81d6"
+    },
+    "version": 4,
+    "purpose": "把准确故事事件变成连续可读的声画表达",
+    "conditions": {
+      "need_staging": true
+    },
+    "sections": [
+      "staging"
+    ],
+    "staging_when": {
+      "need_staging": true
+    }
+  },
+  "after": [
+    {
+      "conditions": {
+        "need_staging": true
+      },
+      "binding": {
+        "object_id": "method.binding.audiovisual-design",
+        "revision_id": "96e56b4facbc9c7d3671ce3bd94e2d6cb5b5beafd1c1cd161713e13baf081714"
+      },
+      "method": {
+        "object_id": "method.skill.audiovisual-scene",
+        "revision_id": "128647c5bd9bbbeb8ef41ee90964508b8dfb3d2057ab9b591c8fbcb813ce3777"
+      },
+      "version": 5,
+      "sections": [],
+      "resource_references": []
+    },
+    {
+      "conditions": {
+        "need_staging": "true"
+      },
+      "binding": {
+        "object_id": "method.binding.audiovisual-design",
+        "revision_id": "96e56b4facbc9c7d3671ce3bd94e2d6cb5b5beafd1c1cd161713e13baf081714"
+      },
+      "method": {
+        "object_id": "method.skill.audiovisual-scene",
+        "revision_id": "128647c5bd9bbbeb8ef41ee90964508b8dfb3d2057ab9b591c8fbcb813ce3777"
+      },
+      "version": 5,
+      "sections": [
+        "staging"
+      ],
+      "resource_references": [
+        {
+          "object_id": "method.resource.filmcraft-execution",
+          "revision_id": "12485da7ee3aea8d9b95e92b2bbb5e5c81f58e107b6dd06a7c63169c3b2baf35",
+          "section": "staging"
+        }
+      ]
+    },
+    {
+      "conditions": {
+        "need_narrative": true,
+        "need_coverage": true,
+        "need_staging": true
+      },
+      "binding": {
+        "object_id": "method.binding.audiovisual-design",
+        "revision_id": "96e56b4facbc9c7d3671ce3bd94e2d6cb5b5beafd1c1cd161713e13baf081714"
+      },
+      "method": {
+        "object_id": "method.skill.audiovisual-scene",
+        "revision_id": "128647c5bd9bbbeb8ef41ee90964508b8dfb3d2057ab9b591c8fbcb813ce3777"
+      },
+      "version": 5,
+      "sections": [],
+      "resource_references": []
+    }
+  ],
+  "after_record": {
+    "binding_version": 5,
+    "method_version": 5,
+    "purpose": "把准确故事事件变成连续可读的声画表达（隔离回写检查）",
+    "resources": [
+      {
+        "object_id": "method.resource.filmcraft-execution",
+        "revision_id": "12485da7ee3aea8d9b95e92b2bbb5e5c81f58e107b6dd06a7c63169c3b2baf35",
+        "section": "animation-ai",
+        "when": {
+          "need_animation-ai": "true"
+        }
+      },
+      {
+        "object_id": "method.resource.filmcraft-execution",
+        "revision_id": "12485da7ee3aea8d9b95e92b2bbb5e5c81f58e107b6dd06a7c63169c3b2baf35",
+        "section": "camera",
+        "when": {
+          "need_camera": "true"
+        }
+      },
+      {
+        "object_id": "method.resource.filmcraft-execution",
+        "revision_id": "12485da7ee3aea8d9b95e92b2bbb5e5c81f58e107b6dd06a7c63169c3b2baf35",
+        "section": "cinematography",
+        "when": {
+          "need_cinematography": "true"
+        }
+      },
+      {
+        "object_id": "method.resource.filmcraft-execution",
+        "revision_id": "12485da7ee3aea8d9b95e92b2bbb5e5c81f58e107b6dd06a7c63169c3b2baf35",
+        "section": "color",
+        "when": {
+          "need_color": "true"
+        }
+      },
+      {
+        "object_id": "method.resource.filmcraft-execution",
+        "revision_id": "12485da7ee3aea8d9b95e92b2bbb5e5c81f58e107b6dd06a7c63169c3b2baf35",
+        "section": "coverage",
+        "when": {
+          "need_coverage": "true"
+        }
+      },
+      {
+        "object_id": "method.resource.filmcraft-execution",
+        "revision_id": "12485da7ee3aea8d9b95e92b2bbb5e5c81f58e107b6dd06a7c63169c3b2baf35",
+        "section": "design",
+        "when": {
+          "need_design": "true"
+        }
+      },
+      {
+        "object_id": "method.resource.filmcraft-execution",
+        "revision_id": "12485da7ee3aea8d9b95e92b2bbb5e5c81f58e107b6dd06a7c63169c3b2baf35",
+        "section": "editing",
+        "when": {
+          "need_editing": "true"
+        }
+      },
+      {
+        "object_id": "method.resource.filmcraft-execution",
+        "revision_id": "12485da7ee3aea8d9b95e92b2bbb5e5c81f58e107b6dd06a7c63169c3b2baf35",
+        "section": "guide",
+        "when": {
+          "need_guide": "true"
+        }
+      },
+      {
+        "object_id": "method.resource.filmcraft-execution",
+        "revision_id": "12485da7ee3aea8d9b95e92b2bbb5e5c81f58e107b6dd06a7c63169c3b2baf35",
+        "section": "lighting",
+        "when": {
+          "need_lighting": "true"
+        }
+      },
+      {
+        "object_id": "method.resource.filmcraft-execution",
+        "revision_id": "12485da7ee3aea8d9b95e92b2bbb5e5c81f58e107b6dd06a7c63169c3b2baf35",
+        "section": "narrative",
+        "when": {
+          "need_narrative": "true"
+        }
+      },
+      {
+        "object_id": "method.resource.filmcraft-execution",
+        "revision_id": "12485da7ee3aea8d9b95e92b2bbb5e5c81f58e107b6dd06a7c63169c3b2baf35",
+        "section": "performance",
+        "when": {
+          "need_performance": "true"
+        }
+      },
+      {
+        "object_id": "method.resource.filmcraft-execution",
+        "revision_id": "12485da7ee3aea8d9b95e92b2bbb5e5c81f58e107b6dd06a7c63169c3b2baf35",
+        "section": "quick-reference",
+        "when": {
+          "need_quick-reference": "true"
+        }
+      },
+      {
+        "object_id": "method.resource.filmcraft-execution",
+        "revision_id": "12485da7ee3aea8d9b95e92b2bbb5e5c81f58e107b6dd06a7c63169c3b2baf35",
+        "section": "sound",
+        "when": {
+          "need_sound": "true"
+        }
+      },
+      {
+        "object_id": "method.resource.filmcraft-execution",
+        "revision_id": "12485da7ee3aea8d9b95e92b2bbb5e5c81f58e107b6dd06a7c63169c3b2baf35",
+        "section": "sources",
+        "when": {
+          "need_sources": "true"
+        }
+      },
+      {
+        "object_id": "method.resource.filmcraft-execution",
+        "revision_id": "12485da7ee3aea8d9b95e92b2bbb5e5c81f58e107b6dd06a7c63169c3b2baf35",
+        "section": "staging",
+        "when": {
+          "need_staging": "true"
+        }
+      }
+    ],
+    "changed_payload_fields": [
+      "purpose",
+      "resources"
+    ]
+  },
+  "formal_readonly_control": {
+    "environment": "http://127.0.0.1:3000",
+    "conditions": {
+      "need_staging": true
+    },
+    "binding": {
+      "object_id": "method.binding.audiovisual-design",
+      "revision_id": "277edaaccdbda0fbf05e93c24ea97d02194d2fc33f6c5851b5ca967afd6999ea"
+    },
+    "method": {
+      "object_id": "method.skill.audiovisual-scene",
+      "revision_id": "9ac798963959078533328f3dc481a295cee20788e29f817436a2b0824a3a81d6"
+    },
+    "version": 4,
+    "sections": [
+      "staging"
+    ]
+  }
+}
