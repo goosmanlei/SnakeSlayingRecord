@@ -2,7 +2,7 @@
 
 ## 当前成果与运行依据
 
-- AS009/ASH059→060的歌本记工已完成两镜隔离候选：歌本图固定物理身份，唱工记录保留金额／剧情依据，原“两升”字层负责准确文字，解除额外全形图前提。真实Chrome保存、用途草稿、旧版回读及干净副本增量试装通过；根独立复验和正式采用仍待后续，入口见[两镜候选验收](production/songbook-work-ledger-two-shot/VERIFICATION.md)。ASH064/066已只读确认同因，本次零修改；不放行缺图、未选或未认可的生成。
+- AS009/ASH059→060的歌本记工已完成两镜隔离候选：歌本图固定物理身份，唱工记录保留金额／剧情依据，原“两升”字层负责准确文字，解除额外全形图前提。执行者的Chrome保存、用途草稿、旧版回读及干净副本增量试装见[两镜候选验收](production/songbook-work-ledger-two-shot/VERIFICATION.md)。根已独立阅读059/060的准备链与上下游交接，确认直接图片前提七／四项减为六／三项、060净纸底图须合成原rate两字后交视频；根未重做保存或试装，正式采用仍待后续，准确环境与边界见[根独立阅读](planning/songbook-two-nights-inputs/findings/cycle-04-0008-independent-reading.md)。ASH064/066仍未修改，根已核实其未写起点与完成态唱工全形的冲突；相邻两夜的范围与输入见[两夜记工规格](planning/songbook-two-nights-task.md)，不放行缺图、未选或未认可的生成。
 
 - M4081冻结工程完整卡的用途错配已在自有隔离Chrome复现并修复：MV001原要求和M4092原ZIP保持，M3149的赵执事／阿蘅用途、直接候选、意见草稿和原场返回已实操。正式生效、3000只读复走与清理以 task-20261010-0007 实际回执为准；[验收与根复走](production/frozen-material-relations/VERIFICATION.md)保留准确入口，根独立Review尚未执行。
 
