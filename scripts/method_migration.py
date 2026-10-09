@@ -7,6 +7,7 @@ import argparse
 import json
 from pathlib import Path
 import sqlite3
+import socket
 import sys
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, build_opener, ProxyHandler
@@ -47,7 +48,7 @@ def stopped_api(*, application_stopped=False):
                 status = error.code; error.close()
             except URLError:
                 status = 'connection-unavailable'
-            except (TimeoutError, ConnectionError):
+            except (socket.timeout, TimeoutError, ConnectionError):
                 status = 'response-unavailable-after-verified-stop'
             if status not in (502, 503, 504, 'connection-unavailable', 'response-unavailable-after-verified-stop'):
                 raise ValueError('写入口尚未停止：' + path + ' ' + str(status))
