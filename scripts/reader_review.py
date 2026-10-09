@@ -22,6 +22,12 @@ from urllib.error import HTTPError
 from urllib.parse import urlencode, urlsplit
 from urllib.request import Request, urlopen
 
+try:
+    from .method_runtime import MethodClient, instructions as method_instructions
+except ImportError:
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from method_runtime import MethodClient, instructions as method_instructions
+
 
 SOURCE_ID = "refinement-06-lantern-home-v6"
 INSTRUCTIONS = """你是一位首次阅读中文小说的普通读者。任务是随着阅读逐步理解，并审阅逻辑完整性、通俗易懂性。
@@ -133,14 +139,14 @@ def make_summary_request(config, policy, previous, paragraphs, through, memory, 
                "reader_questions": compact_issues(memory)}
     return {"model": config["model"], "reasoning": {"effort": config["effort"]},
             "store": False, "tools": [], "tool_choice": "none", "max_output_tokens": 8192,
-            "instructions": SUMMARY_INSTRUCTIONS, "input": canonical(context),
+            "instructions": policy["summary_instructions"], "input": canonical(context),
             "text": {"format": {"type": "json_schema", "name": "reader_summary", "strict": True,
-                                "schema": SUMMARY_SCHEMA}}}
+                                "schema": policy["schema"]}}}
 
 
 def summary_result(response, policy):
     result = extract_result(response)
-    check_schema(result, SUMMARY_SCHEMA)
+    check_schema(result, policy["schema"])
     require(bool(result["summary"].strip()) and len(result["summary"]) <= policy["max_chars"],
             "reader summary exceeds its character budget or is empty")
     return result
@@ -213,7 +219,7 @@ def visible(paragraph):
     return {k: paragraph[k] for k in ("n", "chapter", "chapter_title", "chapter_paragraph", "text")}
 
 
-def make_request(config, paragraphs, step, memory, reading_summary=None):
+def make_request(config, paragraphs, step, memory, reading_summary=None, summary_policy=None):
     final = step == len(paragraphs) + 1
     require(1 <= step <= len(paragraphs) + 1, "invalid reading step")
     # No revision, future table of contents, total length, path or project metadata.
@@ -227,7 +233,8 @@ def make_request(config, paragraphs, step, memory, reading_summary=None):
         context["read_summary"] = reading_summary
         context["read_paragraphs"] = [visible(p) for p in paragraphs[reading_summary["through"]:step - 1]]
         context["reader_memory"] = {"facts": {}, "issues": compact_issues(memory)}
-        instructions = SUMMARY_READER_INSTRUCTIONS
+        require(summary_policy is not None, "frozen summary policy is required")
+        instructions = summary_policy["reader_instructions"]
     return {"model": config["model"], "reasoning": {"effort": config["effort"]},
             "store": False, "tools": [], "tool_choice": "none", "max_output_tokens": 8192,
             "instructions": instructions,
@@ -426,8 +433,18 @@ class ReaderRun:
         self.db.execute("PRAGMA foreign_keys=ON")
         self.db.execute("PRAGMA synchronous=FULL")
         self.config = self.get("config")
-        require(self.config["instructions"] == INSTRUCTIONS and self.config["schema"] == SCHEMA,
+        packages = self.config.get('method_packages')
+        # The literal digest identifies the audited legacy contract. It must not
+        # be recomputed from today's constants when a new method is introduced.
+        expected = self.config.get('contract_sha256') if packages else "61ad8a0d5c82f39203ab325f92e54ca5f4842484b38ec1d39a5dcb5ece508a20"
+        require(digest({k: self.config[k] for k in ("instructions", "schema")}) == expected,
                 "review contract differs from the audited program")
+        if packages:
+            for package in packages.values():
+                value = dict(package)
+                sha = value.pop('sha256')
+                require(digest(value) == sha, 'frozen method package changed')
+            require(self.config['instructions'] == method_instructions(packages['full']), 'frozen reader method differs')
         self.frozen = self.get("frozen")
         self.paragraphs = self.get("paragraphs")
         require(digest(self.frozen["source"]) == self.frozen["source_hash"], "frozen source hash differs")
@@ -448,17 +465,16 @@ class ReaderRun:
         """)
         policy = self.get("summary_policy")
         if policy:
-            require(policy["reader_instructions"] == SUMMARY_READER_INSTRUCTIONS
-                    and policy["summary_instructions"] == SUMMARY_INSTRUCTIONS
-                    and policy["schema"] == SUMMARY_SCHEMA, "summary contract differs from the audited program")
+            expected = policy.get('contract_sha256') if packages else "5aed862a48aeddfc54aa47af3b3bd7934abf950e4d540eda7949d37bbf009e17"
+            require(digest({k: policy[k] for k in ("reader_instructions", "summary_instructions", "schema")}) == expected, "summary contract differs from the audited program")
         grounding = self.get("grounding_policy")
         if grounding:
-            require(grounding["reader_instructions"] == RECALL_READER_INSTRUCTIONS
-                    and grounding["grounding_instructions"] == GROUNDING_INSTRUCTIONS,
+            expected = grounding.get('contract_sha256') if packages else "fd6569bada75c7223134aea61981d18850bb937dd10d8ad8ca42a4e1a0a5864e"
+            require(digest({k: grounding[k] for k in ("reader_instructions", "grounding_instructions")}) == expected,
                     "grounding contract differs from the audited program")
 
     @classmethod
-    def initialize(cls, directory, desk, source_id=SOURCE_ID, book_title="把灯带回家", model="gpt-5.6-sol", effort="medium", key_env="OPENAI_API_KEY"):
+    def initialize(cls, directory, desk, source_id=SOURCE_ID, book_title="把灯带回家", model="gpt-5.6-sol", effort="medium", key_env="OPENAI_API_KEY", *, method_client=None):
         directory = Path(directory)
         require(not directory.exists(), "run already exists; resume instead of reinitializing")
         frozen = desk.source(source_id)
@@ -467,6 +483,11 @@ class ReaderRun:
         require(api_source == frozen["source"], "HTTP desk does not match local instance")
         paragraphs = split_paragraphs(frozen["source"])
         baseline = desk.baseline()
+        client = method_client or MethodClient(desk.base)
+        packages = {mode: client.resolve('reader-review', {'mode': mode})
+                    for mode in ('full', 'summary-reader', 'summary', 'recall-reader', 'grounding')}
+        require(all(package['steps'] == ['result'] for package in packages.values()),
+                '独立读者方法需声明单项 result；请修正绑定后新建运行')
         directory.mkdir(parents=True)
         db = sqlite3.connect(str(directory / "work.sqlite3"))
         db.executescript("""
@@ -486,6 +507,9 @@ class ReaderRun:
                               "schema": SCHEMA, "base_url": desk.base, "created": stamp()},
                   "frozen": frozen, "paragraphs": paragraphs, "baseline": baseline,
                   "memory": {"facts": {}, "issues": {}}, "state": "READY", "last_error": None}
+        values['config']['method_packages'] = packages
+        values['config']['instructions'] = method_instructions(packages['full'])
+        values['config']['contract_sha256'] = digest({k: values['config'][k] for k in ('instructions', 'schema')})
         with db:
             db.executemany("INSERT INTO metadata VALUES (?,?)", [(k, canonical(v)) for k, v in values.items()])
         db.close()
@@ -500,6 +524,37 @@ class ReaderRun:
 
     def put(self, key, value):
         self.db.execute("INSERT INTO metadata VALUES (?,?) ON CONFLICT(key) DO UPDATE SET value=excluded.value", (key, canonical(value)))
+
+    def bind_request(self, step, request, mode):
+        """One exact delivery per model request; legacy requests remain unknown."""
+        packages = self.config.get('method_packages')
+        if not packages:
+            return request
+        package = packages[mode]
+        require(request['instructions'] == method_instructions(package), 'request did not consume frozen reader method')
+        basis = {'work_type': 'reader-review', 'run_id': self.config['run_id'], 'step_id': step, 'private': True,
+                 'target': self.frozen['source']['id'] + '@' + self.frozen['target_revision'],
+                 'conditions': {'mode': mode}, 'binding': package['binding'],
+                 'inputs': {'context': json.loads(request['input'])}}
+        step = step + '.' + mode
+        basis['step_id'] = step
+        key = 'method_execution.' + step
+        saved = self.get(key)
+        if saved:
+            require(saved['request'] == basis, 'frozen reader method inputs changed')
+        else:
+            execution = MethodClient(self.config['base_url']).prepare(basis)
+            require(execution['payload']['package'] == package, 'method selection differs from frozen reader run')
+            with self.db:
+                self.put(key, {'request': basis, 'execution': execution})
+        return request
+
+    def bind_result(self, step, result):
+        saved = self.get('method_execution.' + step)
+        if not self.config.get('method_packages'):
+            return
+        require(saved is not None, 'reader result has no exact method delivery')
+        MethodClient(self.config['base_url']).artifact(saved['execution'], saved['request'], 'result', result)
 
     def switch_summary(self, interval=20, max_chars=1200, reason=""):
         require(10 <= interval <= 20 and 600 <= max_chars <= 2000 and bool(reason.strip()), "invalid summary policy")
@@ -525,6 +580,10 @@ class ReaderRun:
                       "reason": reason, "at": stamp(), "reader_instructions": SUMMARY_READER_INSTRUCTIONS,
                       "summary_instructions": SUMMARY_INSTRUCTIONS, "schema": SUMMARY_SCHEMA,
                       "archived_pending": archived, "archived_attempts": old_attempts}
+            if self.config.get('method_packages'):
+                policy['reader_instructions'] = method_instructions(self.config['method_packages']['summary-reader'])
+                policy['summary_instructions'] = method_instructions(self.config['method_packages']['summary'])
+                policy['contract_sha256'] = digest({k: policy[k] for k in ('reader_instructions', 'summary_instructions', 'schema')})
             with self.db:
                 self.put("summary_policy", policy)
                 self.put("state", "READY")
@@ -542,7 +601,7 @@ class ReaderRun:
         return {"through": row["through"], "text": json.loads(row["result"])["summary"]}
 
     def request_for_step(self, number, memory):
-        request = make_request(self.config, self.paragraphs, number, memory, self.reading_summary(number))
+        request = make_request(self.config, self.paragraphs, number, memory, self.reading_summary(number), self.get("summary_policy"))
         policy = self.get("grounding_policy")
         if policy and number >= policy["from_step"]:
             context = json.loads(request["input"])
@@ -553,8 +612,10 @@ class ReaderRun:
             cursor = context["read_summary"]["through"]
             context["recalled_paragraphs"] = recall_paragraphs(self.paragraphs, cursor, query)
             request["input"] = json.dumps(context, ensure_ascii=False, separators=(",", ":"))
-            request["instructions"] = RECALL_READER_INSTRUCTIONS
-        return request
+            request["instructions"] = policy["reader_instructions"]
+        return self.bind_request('read-' + str(number), request,
+                                 'recall-reader' if policy and number >= policy['from_step'] else
+                                 'summary-reader' if self.reading_summary(number) is not None else 'full')
 
     def enable_grounding(self, reason):
         require(bool(reason.strip()), "grounding reason is required")
@@ -571,6 +632,10 @@ class ReaderRun:
             require(n <= len(self.paragraphs) + 1, "reading already finished")
             policy = {"from_step": n, "at": stamp(), "reason": reason,
                       "reader_instructions": RECALL_READER_INSTRUCTIONS, "grounding_instructions": GROUNDING_INSTRUCTIONS}
+            if self.config.get('method_packages'):
+                policy['reader_instructions'] = method_instructions(self.config['method_packages']['recall-reader'])
+                policy['grounding_instructions'] = method_instructions(self.config['method_packages']['grounding'])
+                policy['contract_sha256'] = digest({k: policy[k] for k in ('reader_instructions', 'grounding_instructions')})
             with self.db:
                 self.put("grounding_policy", policy)
             return policy
@@ -592,9 +657,9 @@ class ReaderRun:
         context = {"reading_input": json.loads(json.loads(row["request"])["input"]),
                    "candidate": candidate, "source_check": recalled}
         request = json.loads(row["request"])
-        request["instructions"] = GROUNDING_INSTRUCTIONS
+        request["instructions"] = policy["grounding_instructions"]
         request["input"] = canonical(context)
-        return request
+        return self.bind_request('ground-' + str(row['number']), request, 'grounding')
 
     def ground_step(self, row, model, sleeper=time.sleep):
         request = self.grounding_request(row)
@@ -653,8 +718,9 @@ class ReaderRun:
                 value = json.loads(r["result"])
                 observations.append({"paragraph": r["number"], "understanding": value["understanding"],
                                      "memory_updates": value["memory_updates"]})
-        return make_summary_request(self.config, self.get("summary_policy"), previous, self.paragraphs,
-                                    through, memory, observations)
+        return self.bind_request('summary-' + str(through),
+                                 make_summary_request(self.config, self.get("summary_policy"), previous, self.paragraphs,
+                                                      through, memory, observations), 'summary')
 
     def ensure_summary(self, model, sleeper=time.sleep):
         policy = self.get("summary_policy")
@@ -707,6 +773,7 @@ class ReaderRun:
                     if attempt == 3 or (isinstance(exc, ModelAPIError) and not exc.retryable):
                         raise ReviewError(error) from None
                     sleeper(min(2 ** (attempt + 1), 30))
+        self.bind_result('summary-' + str(through) + '.summary', result)
         with self.db:
             self.db.execute("UPDATE summaries SET response=?,result=?,status='DONE',finished=? WHERE through=?",
                             (canonical(response), canonical(result), stamp(), through))
@@ -801,6 +868,10 @@ class ReaderRun:
     def commit_step(self, row):
         result = json.loads(row["result"])
         after, changed = transition(result, json.loads(row["memory_before"]), self.paragraphs, row["number"])
+        mode = 'recall-reader' if self.get('grounding_policy') and row['number'] >= self.get('grounding_policy')['from_step'] else 'summary-reader' if self.reading_summary(row['number']) is not None else 'full'
+        self.bind_result('read-' + str(row['number']) + '.' + mode, extract_result(json.loads(row['response'])))
+        if self.get('method_execution.ground-' + str(row['number']) + '.grounding'):
+            self.bind_result('ground-' + str(row['number']) + '.grounding', result)
         with self.db:
             for issue_id in changed:
                 issue = after["issues"][issue_id]
