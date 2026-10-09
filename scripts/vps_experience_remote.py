@@ -18,7 +18,7 @@ from zoneinfo import ZoneInfo
 from urllib.parse import urlsplit
 
 HOME = Path.home()
-CONTROL = HOME / 'my-config/lijizhanshe'
+CONTROL = HOME / 'lijizhanshe'
 TARGET = HOME / 'www/lijizhanshe'
 PAGE = HOME / 'www/.lijizhanshe-control'
 NGINX = HOME / 'my-config/nginx.me.leiguoguo/default.conf'
