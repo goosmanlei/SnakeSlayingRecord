@@ -9,7 +9,7 @@ import hashlib
 import json
 
 from audiovisual_design import ROOT, future, reference, union_sources
-from video_input_design import load_audit, frame_plan, video_plan, FRAME_USE
+from video_input_design import load_audit, frame_plan, video_plan, first_frame_states, FRAME_USE
 from state_preparation import decisions
 import exact_text_handoffs
 
@@ -193,6 +193,7 @@ class Builder:
 
     def forms(self):
         used = {r['object_id'] for row in self.av if row['kind'] == 'AV_SHOT' for r in row['payload']['states']}
+        used.update(ref['state'] for choice in self.input_audit.values() for ref in choice.get('first_frame_states', {}).values())
         for state_id in sorted(used):
             row = self.states[state_id]; payload = row['payload']; media = payload['reference_media']
             owner = payload['entity']['object_id']; entity = self.entities[owner]
@@ -278,16 +279,16 @@ class Builder:
                 inputs.append(self.relation(camera, oid, scope, '选择此镜机位作为首帧构图依据',
                     '轴线、出入口、固定物距离与镜头景别', '按动作起点加入准确人物和道具，不照搬空景为成片',
                     payload['action_start'], sources=source, necessity='one_of', group='camera', route=route))
-            start_states = {}
-            for state in states:
-                start_states.setdefault(state['payload']['entity']['object_id'], state)
-            visible = [s for s in start_states.values() if s['payload']['reference_media'] == 'image' and
+            start_states = first_frame_states(states, self.states, self.input_audit[shot_id])
+            visible = [s for s in start_states if s['payload']['reference_media'] == 'image' and
                        self.entities[s['payload']['entity']['object_id']]['payload']['entity_type'] != 'space']
             if shot_id in self.frame_subjects:
                 wanted = self.frame_subjects[shot_id]
                 if wanted - {s['payload']['entity']['object_id'] for s in visible}:
                     raise ValueError('first-frame choice lacks an applicable state: ' + shot_id + ' ' + str(wanted - {s['payload']['entity']['object_id'] for s in visible}))
                 visible = [s for s in visible if s['payload']['entity']['object_id'] in wanted]
+            if set(self.input_audit[shot_id].get('first_frame_states', {})) - {s['payload']['entity']['object_id'] for s in visible}:
+                raise ValueError('first-frame state choice is not visible: ' + shot_id)
             if len(visible) + 1 > 16:
                 raise ValueError('first frame exceeds OpenArt input limit; author a narrower shot or route: ' + shot_id)
             for state in visible:
