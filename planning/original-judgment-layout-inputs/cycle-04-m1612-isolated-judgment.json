@@ -1,0 +1,97 @@
+{
+  "format": "system-review-exact-judgment-evidence-v1",
+  "cycle": 4,
+  "checked_at": "2026-10-09T22:24:09.948872+00:00",
+  "owner": "01a1222c-9a12-7663-9523-a245a73e937c",
+  "target": {
+    "object_id": "asset-fg3-crossbeam-eight-image-04",
+    "revision_id": "2ccaa3a630d81b9729277ae9131c7801889031c65e64c3318bf5f123b6ade660"
+  },
+  "ui_practitioner": "root",
+  "assistant_scope": "read-only targeted SQLite metadata; no media viewing; no business writes",
+  "environments": {
+    "formal": {
+      "db_path": ".runtime/review.sqlite3",
+      "target_current_revision": "2ccaa3a630d81b9729277ae9131c7801889031c65e64c3318bf5f123b6ade660",
+      "target_version": 1,
+      "original_components": [
+        {
+          "bytes": 1705844,
+          "file": "217b292ac24cde829ca03c2e00de44a5184c7880fffa9533ae6572be5cf8c2d4.png",
+          "height": 941,
+          "id": "original",
+          "mime": "image/png",
+          "role": "original",
+          "sha256": "217b292ac24cde829ca03c2e00de44a5184c7880fffa9533ae6572be5cf8c2d4",
+          "width": 1672
+        }
+      ],
+      "all_judgment_revisions_for_object": [],
+      "all_judgment_revision_count": 0,
+      "exact_target_current_judgment_count": 0,
+      "isolated_judgment_object_present": false,
+      "isolated_judgment_revision_present": false
+    },
+    "isolation_49295": {
+      "db_path": ".runtime/system-review/isolated-cycle-04-verify-0004/.runtime/review.sqlite3",
+      "target_current_revision": "2ccaa3a630d81b9729277ae9131c7801889031c65e64c3318bf5f123b6ade660",
+      "target_version": 1,
+      "original_components": [
+        {
+          "bytes": 1705844,
+          "file": "217b292ac24cde829ca03c2e00de44a5184c7880fffa9533ae6572be5cf8c2d4.png",
+          "height": 941,
+          "id": "original",
+          "mime": "image/png",
+          "role": "original",
+          "sha256": "217b292ac24cde829ca03c2e00de44a5184c7880fffa9533ae6572be5cf8c2d4",
+          "width": 1672
+        }
+      ],
+      "all_judgment_revisions_for_object": [
+        {
+          "object_id": "review-a69d0084-09ca-4e01-a2ae-c89f44e74fe5",
+          "current_revision": "d211a4bbba632c3c6e9f9a034477c7ba3292cfab718c0c7b0a0bf93ee095602d",
+          "revision_id": "d211a4bbba632c3c6e9f9a034477c7ba3292cfab718c0c7b0a0bf93ee095602d",
+          "version": 1,
+          "created_at": "2026-10-09T22:23:04+00:00",
+          "payload": {
+            "actor": "Review Agent · 本轮隔离练习",
+            "blocks": [
+              {
+                "id": "review",
+                "text": "本轮隔离练习，仅针对 M1612 此准确原件。已放大查看：左侧四人、右侧四人，八个灰色示意人形向下压同一根连续长杠，可保留作为八人位置与道具受力方向的示意参考。灰人不是角色造型；本图未验证持刀动作、刀缝局部、真实重量或连续表演，也不授予当前镜头、其他素材版本或视频生成认可。正式采用仍另行决定。"
+              }
+            ],
+            "format": "production-judgment-v1",
+            "reason": "本轮隔离练习，仅针对 M1612 此准确原件。已放大查看：左侧四人、右侧四人，八个灰色示意人形向下压同一根连续长杠，可保留作为八人位置与道具受力方向的示意参考。灰人不是角色造型；本图未验证持刀动作、刀缝局部、真实重量或连续表演，也不授予当前镜头、其他素材版本或视频生成认可。正式采用仍另行决定。",
+            "target": {
+              "object_id": "asset-fg3-crossbeam-eight-image-04",
+              "revision_id": "2ccaa3a630d81b9729277ae9131c7801889031c65e64c3318bf5f123b6ade660"
+            },
+            "title": "压闸长横杠·八人持续压杠 · 内置渠道返工 · 审阅",
+            "verdict": "passed"
+          }
+        }
+      ],
+      "all_judgment_revision_count": 1,
+      "exact_target_current_judgment_count": 1,
+      "isolated_judgment_object_present": true,
+      "isolated_judgment_revision_present": true
+    }
+  },
+  "screenshot": {
+    "path": ".runtime/system-review/evidence/cycle-04-m1612-isolated-judgment.jpg",
+    "exists": true,
+    "bytes": 254874,
+    "sha256": "e8b5a39c2f582396f21d0ec8afab1918c2ff5329a0991595f20df533d065a649"
+  },
+  "conclusion": {
+    "exact_isolated_passed_judgment_present": true,
+    "formal_same_object_all_judgment_revisions": 0,
+    "formal_isolated_judgment_absent": true,
+    "formal_target_revision_same": true,
+    "source_media_not_modified_or_opened_by_this_check": true,
+    "scope": "Only this exact asset and its judgments; no full-database comparison; reason is evidence of limited intent, not a technical acceptance grant."
+  }
+}
