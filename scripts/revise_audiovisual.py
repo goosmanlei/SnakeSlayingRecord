@@ -21,9 +21,9 @@ from generation_workspace import generation_root, isolated_instance, contained
 
 
 def authored_hashes(root):
-    paths = [root / 'imports/screenplay-04.json', *sorted((root / 'production/audiovisual').glob('*')),
+    paths = [root / 'imports/screenplay-04.json', *sorted((root / 'production/audiovisual').rglob('*')),
              *[root / 'scripts' / name for name in ('audiovisual_design.py', 'audiovisual_events.py',
-                                                   'audiovisual_materials.py', 'video_input_design.py', 'state_preparation.py', 'revise_audiovisual.py')]]
+                                                   'audiovisual_materials.py', 'video_input_design.py', 'state_preparation.py', 'exact_text_handoffs.py', 'revise_audiovisual.py')]]
     return {p.relative_to(root).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest() for p in paths if p.is_file()}
 
 

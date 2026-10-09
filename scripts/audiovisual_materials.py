@@ -11,6 +11,7 @@ import json
 from audiovisual_design import ROOT, future, reference, union_sources
 from video_input_design import load_audit, frame_plan, video_plan, FRAME_USE
 from state_preparation import decisions
+import exact_text_handoffs
 
 STYLE = '二维人物与轻手绘背景，正常人物比例，干净轮廓与清楚色块，背景轻而可读；不新增粗纸纹、颗粒、过锐边缘或写实皮肤。'
 IMAGE_CHECK = ['画面中实际需要的身份、结构与状态和准确用途一致', '构图、接触点、空间出入口与轴线可核对',
@@ -57,6 +58,7 @@ class Builder:
         self.store, self.p, self.av = store, p, av_records
         self.reviewed = reviewed
         self.preparation = decisions()
+        self.text_handoffs = exact_text_handoffs.load()
         self.rows, self.generated, self.keep = [], {}, {}
         self.entities = {r['object_id']: r for r in p.current_records(store, {'ENTITY'})}
         self.states = {r['object_id']: r for r in p.current_records(store, {'STATE'})}
@@ -82,6 +84,14 @@ class Builder:
 
     def resolve(self, oid):
         return future(oid) if oid in self.generated else reference(self.p.record(self.store, oid))
+
+    def visual_description(self, row, fallback):
+        choice = self.text_handoffs['visual_descriptions'].get(row['object_id'])
+        if not choice:
+            return fallback
+        if choice['revision_id'] != row['id']:
+            raise ValueError('text visual responsibility needs review after source change: ' + row['object_id'])
+        return choice['text']
 
     def put(self, oid, kind, payload):
         if oid in self.generated:
@@ -158,7 +168,7 @@ class Builder:
             composition = {'character': '按对象实际定义呈现一人、一只动物或可逐个辨认的群组；以等比例正侧背面说明身份、轮廓和完整肢体，群组不复制同脸，不给动物套人类衣饰。中性姿态、浅灰背景，无现场伤势或剧情动作。',
                            'space': '空间全景与清楚的出入口、通道和固定结构关系，不画临时人物；先确定左右与尺度，不用镜像变体。',
                            'prop': '按对象定义呈现单件或实际物件组，全形与接触结构清楚，保留真实材质与轮廓，中性背景，不加入使用者或现场动作。'}.get(kind, '主体完整入画，身份与结构清楚。')
-            description = payload.get('production_description') or '\n'.join(payload['facts'])
+            description = self.visual_description(row, payload.get('production_description') or '\n'.join(payload['facts']))
             prompt = f'{STYLE}\n对象：{payload["title"]}。{description}\n{composition}\n这是从文字创建的干净根母版；当前没有选中图像输入，不假称参考现有候选。无装饰边框、水印或额外文字。'
             name = payload['title'] + (' · 空间布局母版' if kind == 'space' else ' · 身份母版' if kind == 'character' else ' · 结构母版')
             purpose = '为全剧固定' + payload['title'] + '的身份、轮廓、配色和可复查结构；实际候选仍须逐项选择。'
@@ -209,7 +219,7 @@ class Builder:
                     TYPE_CHECKS[kind][0], description(payload),
                     '；'.join(TYPE_CHECKS[kind]) + '；图像按最深真实输入核验，当前计划从干净母版一代得到', sources=payload['sources'], type_id='identity-state', semantics='variant'))
             prefix = ('图片1只固定干净母版的身份与结构；' if media == 'image' else '@音频1只锁定已明确的旋律范围，不自动继承独立歌手身份；') if inputs else ''
-            prompt = prefix + description(payload)
+            prompt = prefix + self.visual_description(row, description(payload))
             if decision:
                 prompt += '\n本次准备的实际用途与限制：' + purpose
             if media == 'image':
@@ -235,6 +245,10 @@ class Builder:
             if row['kind'] != 'AV_SHOT':
                 continue
             payload, shot_id = row['payload'], row['object_id']
+            text_choice = self.text_handoffs['shots'].get(shot_id, {})
+            visual_start = text_choice.get('visual_start', payload['action_start'])
+            visual_end = text_choice.get('visual_end', payload['action_end'])
+            visual_performance = text_choice.get('visual_performance', payload['performance'])
             states = [self.states[r['object_id']] for r in payload['states']]
             owners = {r['object_id']: self.entities[r['object_id']] for r in payload['entities']}
             spaces = [r for r in owners.values() if r['payload']['entity_type'] == 'space']
@@ -281,10 +295,12 @@ class Builder:
                     TYPE_CHECKS[self.entities[state['payload']['entity']['object_id']]['payload']['entity_type']][0], '只调整本镜站位、手位、朝向与构图',
                     payload['continuity'], sources=source, type_id='state-frame'))
             labels = '图片1为选定机位；' + ''.join(f'图片{i}为{s["payload"]["title"]}；' for i, s in enumerate(visible, 2))
-            prompt = f'{STYLE}\n{labels}\n准确状态参考只固定可见主体的轮廓、衣着、伤侧、材质与结构；其制作说明中的其他使用场合和动作不在本首帧重演。\n拍摄位置：{payload["framing"]}。{payload["axis"]}\n只画动作开始的瞬间：{payload["action_start"]}。参考只约束真正入画的主体，镜内后续才入画的人物和画外声不提前塞入首帧。\n场所：{payload["spatial"]}\n{payload["lighting"]}。{payload["color"]}\n镜尾将发生“{payload["action_end"]}”，此首帧不得提前表现完成结果。\n连续性：{payload["continuity"]}。不加字幕、水印和装饰边框。'
+            prompt = f'{STYLE}\n{labels}\n准确状态参考只固定可见主体的轮廓、衣着、伤侧、材质与结构；其制作说明中的其他使用场合和动作不在本首帧重演。\n拍摄位置：{payload["framing"]}。{payload["axis"]}\n只画动作开始的瞬间：{visual_start}。参考只约束真正入画的主体，镜内后续才入画的人物和画外声不提前塞入首帧。\n场所：{payload["spatial"]}\n{payload["lighting"]}。{payload["color"]}\n镜尾将发生“{visual_end}”，此首帧不得提前表现完成结果。\n连续性：{payload["continuity"]}。不加字幕、水印和装饰边框。'
             for state in visible:
                 if state['object_id'] not in self.state_needs:
-                    prompt += '\n' + state['payload']['title'] + '：此参考提供基础结构，当前形态按以下文字落实，仅画本镜起点；' + description(state['payload'])
+                    prompt += '\n' + state['payload']['title'] + '：此参考提供基础结构，当前形态按以下文字落实，仅画本镜起点；' + self.visual_description(state, description(state['payload']))
+            if text_choice.get('frame_detail'):
+                prompt += '\n' + text_choice['frame_detail']
             self.need(oid, scope, 'first-frame', 'image', '固定本镜动作起点、人物身份、手位和机位，供视频原生表演延续。',
                 frame_plan(self.plan('image', prompt, inputs, name=payload['title'] + ' · 首帧', description=payload['action_start'], selected_routes={'camera': 'main'}), self.input_audit[shot_id]),
                 sources=source, entities=[s['payload']['entity'] for s in visible], states=[reference(s) for s in visible],
@@ -313,8 +329,10 @@ class Builder:
             if len(audio_labels) > maximum:
                 raise ValueError('too many voice references for authored duration; revise route explicitly: ' + shot_id)
             prompt = f'{STYLE}\n{seconds}秒，16:9，720p。@图片1为起始构图参考，维持已可见身份、空间和手位；' + ''.join(audio_labels)
-            prompt += f'\n意图与表演：{payload["performance"]}\n镜头：{payload["framing"]}。轴线：{payload["axis"]}\n从{payload["action_start"]}开始，到{payload["action_end"]}结束。\n{payload["spatial"]}\n光色：{payload["lighting"]}；{payload["color"]}\n声音和剪接：' + '\n'.join(payload['sound'][:2])
-            prompt += '\n本镜准确动作与发声执行顺序（叙述转成动作，发声事件实际出声；不朗读叙述、角色名或制作说明）：\n' + self.reviewed.render(source)
+            prompt += f'\n意图与表演：{visual_performance}\n镜头：{payload["framing"]}。轴线：{payload["axis"]}\n从{visual_start}开始，到{visual_end}结束。\n{payload["spatial"]}\n光色：{payload["lighting"]}；{payload["color"]}\n声音和剪接：' + '\n'.join(payload['sound'][:2])
+            prompt += '\n本镜准确动作与发声执行顺序（叙述转成动作，发声事件实际出声；不朗读叙述、角色名或制作说明）：\n' + self.reviewed.render(source, text_choice.get('narration'))
+            if text_choice.get('video_detail'):
+                prompt += '\n' + text_choice['video_detail']
             prompt += '\n连续性：' + payload['continuity'] + '\n不添加对白、旁白、抢先信息、炫技切镜或慢动作。没有画外声的台词由实际说话人同步说出；保留自然气口和动作停顿。'
             def supplement(value):
                 state = self.states[value['state']]
@@ -342,12 +360,19 @@ class Builder:
                     plan['prompt'] += '\n' + state['title'] + '只附身份母版，当前差异按文字与结果核查：' + description(state)
             plan['blockers'] = self.reviewed.blockers(source)
             planned = video_plan(plan, self.input_audit[shot_id], supplement, media_type)
-            self.need(oid, scope, 'video', 'video', '原生音画完成这一镜；图像候选不计为视频结果。',
+            if text_choice.get('handoff'):
+                planned['output'] = {**planned['output'],
+                    'description': planned['output']['description'] + '\n' + text_choice['handoff'],
+                    'review_criteria': [*planned['output']['review_criteria'], text_choice['handoff']]}
+            purpose = ('完成本镜动作与原生声音，文字交接和检查见输出要求；视频结果须连同应读文字验收。'
+                       if text_choice.get('handoff') else '原生音画完成这一镜；图像候选不计为视频结果。')
+            self.need(oid, scope, 'video', 'video', purpose,
                 planned,
                 sources=source, entities=payload['entities'], states=payload['states'], specification={'resolution': '720p', 'aspect_ratio': '16:9'})
 
     def build(self):
         self.roots(); self.forms(); self.shots()
+        self.rows.extend(exact_text_handoffs.records(self.text_handoffs, self.av, self.entities, self.states))
         # Exact existing candidates are reviewable alternatives. This declares
         # their purpose without adopting them or attaching them to a new call.
         for asset in self.p.current_records(self.store, {'ASSET'}):
