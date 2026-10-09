@@ -1,0 +1,41 @@
+{
+  "request_metadata": {
+    "created_at": "2026-10-09T07:03:39.477191+00:00",
+    "provider": "Google Gemini",
+    "model": "gemini-2.5-pro",
+    "operation": "audio_understanding",
+    "source": {
+      "asset": {
+        "object_id": "asset-fg3-aheng-voice-01",
+        "revision_id": "e522f05e989232e8323608cc74addd94b5e542c15c2d69692109c5fdd3e78ecb",
+        "code": "M1134"
+      },
+      "component": "original",
+      "path": "export/assets/a7d678681c2e490de0a7dc8aca163131f68e196ceda703dc9c9282418c589272.wav",
+      "sha256": "a7d678681c2e490de0a7dc8aca163131f68e196ceda703dc9c9282418c589272",
+      "bytes": 2784044,
+      "duration_seconds": 14.5
+    },
+    "prompt": "请实际聆听整份音频，独立复核单人配音音色身份。没有提供预期台词，不要猜测文本，不借助人物设定。请给出：实际说话者人数、音色轻重和音区/共鸣、咬字与表达、背景音乐和杂声、混响或异常声音的约略位置；判断是否适合只取说话声音身份，而由视频重新表演新台词。\n请格外注意末尾短句的字音，逐字转写，听不准时给出候选字或“不确定”，不要按语意自动修正；区分同音字不能仅靠音频判定。给出自然发声段落的约略起止秒数（不可承诺采样级准确）；推荐连续2至15秒范围时必须让完整句尾结束，不能把语句截在中间。若不能准确计时，直说时间仅为估计。无歌唱或大喊时不得推断已验证这些能力。中文1500字以内，只分析、不生成、不采纳。\n",
+    "generation_config": {
+      "max_output_tokens": 6000
+    },
+    "store": false,
+    "reserved_usd": 0.12,
+    "reservation_cap_usd": 2.0,
+    "pricing_basis": "2026-10-09 published 3.8 Flash standard input 0.75/output 3.75 USD per million tokens; conservative reservation, not billing",
+    "new_media_generation": false,
+    "expected_transcript_supplied": false
+  },
+  "receipt": {
+    "state": "http_error",
+    "http_status": 404,
+    "automatic_retry": false
+  },
+  "error.txt": {
+    "error": {
+      "message": "This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements.",
+      "code": "not_found"
+    }
+  }
+}
