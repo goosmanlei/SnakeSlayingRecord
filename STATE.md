@@ -8,6 +8,7 @@
 - 镜头视频方案已按 [逐场输入审查](production/audiovisual/video-inputs.json) 区分普通参考与固定起点，并补充镜内后显内容的直接依据；方案、原件选定和实际效果分别审阅。交付核验及正式回读按 [输入契约验收](production/audiovisual/video-inputs-verification.md) 与任务回执定位。
 - 素材来源卡片支持实体自身、实体状态和镜头需求的连续审阅，历史原件保留准确来源与中文用途；候选核验及正式回执入口见 [素材来源卡片验收](production/material-source-cards/VERIFICATION.md)。准确正式身份仍以实例配置和任务发布回执为准。
 - 评论润色参考已在隔离候选中按准确对象、当前意见与统一总字符预算收敛；歌曲进度修订包只更新两项背景。正式生效与验收以任务 `task-20261009-0006` 的实际发布回执为准，复验路径见 [评论参考验收](production/review-context/VERIFICATION.md)。
+- 准确人工判断、决定范围与原位保存已完成隔离候选复验；正式生效与收尾以任务 `task-20261009-0009` 的实际发布和完成回执为准，复验路径见 [准确判断验收](production/review-decisions/VERIFICATION.md)。
 - 正式入口 `http://127.0.0.1:3000/`，活库为主目录 `.runtime/review.sqlite3`；准确系统提交由 `config/instance.json.review_desk_commit` 维护。两仓集成、正式切换、浏览器复验与任务完成只认主项目 `.codex-task/tasks.json` 和冻结包实际回执，工作区候选不能单凭文件存在宣称正式生效。
 - VPS 完整体验版已在 `https://leiguoguo.me/lijizhanshe/` 公开运行，使用独立可写体验库；普通重启保留操作，显式发布全量重置，本机正式库未被体验操作修改。维护、旧版清除后的故障重建、两轮重置及远端 Chrome 验收通过。AI 润色经 VPS 现有 Xray 回环 HTTP 入口真实返回建议并可采用到草稿；北京时间每日最多 100 次，失败也计数，发布和重启保留当天次数。旧实例专用资源、远端暂存及本机过程包已清除并回读。准确运行身份、验收与清理证据沿部署任务 `task-20261008-0007` 的本机回执定位，重复发布入口见 [体验版发布](production/vps-experience.md)。
 
