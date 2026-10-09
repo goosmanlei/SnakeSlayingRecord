@@ -125,6 +125,9 @@ def prepare(a):
             require(not Path(relative).is_absolute() and '..' not in Path(relative).parts, 'method cutover paths must be project-relative')
             raw = base.git_file(story, a.story_candidate, relative)
             require(raw == (story / relative).read_bytes(), 'method cutover input differs from candidate')
+            if key == 'registry':
+                import method_migration
+                method_migration.check_registry(json.loads(raw))
             paths[key] = 'methods/' + key + '.json'; put(paths[key], raw)
         managed_methods = paths
     method_media=method_media_files(read(root/'instance/content/production-approach.json'))
