@@ -40,6 +40,15 @@ PRODUCTION_KINDS = {'ENTITY', 'STATE', 'REPRESENTATION', 'REQUIREMENT', 'CALL',
                     'AV_EPISODE', 'AV_SCENE', 'AV_SHOT', 'INPUT_LOCK'}
 
 
+def publishable_object(obj, revision):
+    if obj['kind'] in PRODUCTION_KINDS:
+        return True
+    payload = json.loads(revision['payload'])
+    return (obj['kind'] == 'NOTE' and obj['version'] == revision['version'] == 1
+            and payload.get('format') in ('managed-method-execution-v1', 'managed-method-artifact-v1')
+            and payload.get('private') is False)
+
+
 def canonical(value):
     return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(',', ':'))
 
@@ -132,7 +141,8 @@ def build_plan(before_path, after_path):
     scope.update(c['after']['target_object_id'] for c in changes['comments'])
     scope.update((c['after'] or c['before'])['material_id'] for t in KEYS if t.startswith('material_') for c in changes[t] if 'material_id' in (c['after'] or c['before']))
     scope.update((c['after'] or c['before'])['alias_id'] for c in changes['material_aliases'])
-    if any(objects[oid]['kind'] not in PRODUCTION_KINDS for oid in scope):
+    after_revisions = {row['id']: row for row in after['revisions']}
+    if any(not publishable_object(objects[oid], after_revisions[objects[oid]['current_revision']]) for oid in scope):
         raise ValueError('generation publication cannot change story or system objects')
     new_revisions = {c['after']['id'] for c in changes['revisions']}
     refs = {c['after']['to_revision'] for c in changes['dependencies']}
@@ -148,7 +158,8 @@ def build_plan(before_path, after_path):
             'expected_heads': {oid: old_objects.get(oid) for oid in sorted(scope)},
             'expected_references': expected_references,
             'guard_heads': {r['object_id']: r['id'] for r in expected_references.values()
-                            if old_objects[r['object_id']]['current_revision'] == r['id']},
+                            if old_objects[r['object_id']]['current_revision'] == r['id']
+                            and not r['object_id'].startswith('method.')},
             'expected_numbered_objects': {oid:old_objects[oid] for oid in code_owners if oid in old_objects},
             'changes': changes,
             'comment_events': events, 'media': revision_media(changes['revisions'])}
@@ -265,8 +276,10 @@ def apply_plan(db, plan, *, identity=None):
                     expected=media.get(new['path']);container=json.loads(new['container'])
                     if not expected or container.get('sha256')!=expected['sha256'] or container.get('bytes')!=expected['bytes']:
                         raise ValueError('archive catalog outside registered metadata')
-                if table == 'objects' and new['kind'] not in PRODUCTION_KINDS:
-                    raise ValueError('non-production object')
+                if table == 'objects':
+                    planned = next((c['after'] for c in plan['changes']['revisions'] if c['after']['id'] == new['current_revision']), None)
+                    if not planned or not publishable_object(new, planned):
+                        raise ValueError('non-production object or private method work')
                 if table == 'dependencies' and new['from_revision'] not in changed_revisions:
                     raise ValueError('dependency outside new history')
                 if old is not None and table not in MUTABLE:
@@ -305,6 +318,43 @@ def apply_plan(db, plan, *, identity=None):
             head = current('revisions', {'id': obj['current_revision']}) if obj else None
             if not head or head['object_id'] != oid or head['version'] != obj['version']:
                 raise ValueError('invalid current revision after publication: ' + oid)
+        # Method receipts are append-only production provenance, never a way
+        # to change method definitions or bypass the managed plan writer.
+        from types import SimpleNamespace
+        from review_desk import methods, method_media, production
+        original_factory = db.row_factory
+        try:
+            sqlite_compatibility(db, hydrate=True)
+            context = SimpleNamespace(db=db, source=lambda oid: json.loads(db.execute('SELECT document FROM sources WHERE id=?', (oid,)).fetchone()[0]))
+            for change in plan['changes']['revisions']:
+                row = production.record(context, revision_id=change['after']['id'])
+                payload = row['payload']
+                if payload.get('format') in methods.FORMATS.values():
+                    methods.verify_dependencies(context, {**row, 'revision_id': row['id']})
+                if payload.get('format') == methods.FORMATS['execution']:
+                    methods.verify_execution(context, {'object_id':row['object_id'], 'revision_id':row['id']},
+                                             {k:payload[k] for k in ('work_type','run_id','step_id','target')}, payload['inputs'])
+                    if methods.resolve(context, payload['work_type'], payload['conditions'], payload['package']['binding']) != payload['package']:
+                        raise ValueError('published method package differs from its exact definition')
+                elif payload.get('format') == methods.FORMATS['artifact']:
+                    execution = methods.read(context, **payload['execution'])
+                    methods.artifact(context, {**payload, 'inputs':execution['payload']['inputs']})
+                elif row['kind'] == 'REQUIREMENT' and payload.get('generation'):
+                    method_media.verify(context, row['object_id'], payload, row['id'])
+                elif row['kind'] == 'CALL' and method_media.activation(context):
+                    before = plan['expected_heads'].get(row['object_id'])
+                    old = production.record(context, revision_id=before['current_revision']) if before else None
+                    if old and old['payload'].get('status') in ('submitted','completed','failed','unknown'):
+                        for field in ('generation_requirement','generation_acceptances','prepared_plan','method','tool','model','parameters','prompt','inputs','output','randomization','execution','method_basis'):
+                            if old['payload'].get(field) != payload.get(field):
+                                raise ValueError('publication cannot rewrite executed call inputs')
+                    elif payload.get('status') in ('submitted','completed','failed','unknown'):
+                        need = production.ref_record(context, payload.get('generation_requirement'), {'REQUIREMENT'})
+                        basis = method_media.verify(context, need['object_id'], need['payload'], need['id'])
+                        if basis != payload.get('method_basis'):
+                            raise ValueError('published call differs from the exact method basis')
+        finally:
+            db.row_factory = original_factory
         for table in CODE_TABLES & set(active_keys):
             for change in plan['changes'][table]:
                 validate_numbered_row(db,table,change['after'],scope,plan.get('expected_numbered_objects',{}))

@@ -1,0 +1,79 @@
+{
+  "format": "managed-method-cutover-v1",
+  "task": "task-20261009-0020",
+  "wait_for_delivery": [
+    "task-20261009-0014"
+  ],
+  "reviewed_work": [
+    {
+      "task": "task-20261009-0005",
+      "status": "completed",
+      "summary": "让已有音色进入可评估的复用路线，减少无依据重复准备",
+      "observed_at": "2026-10-09T16:48:32.449606+00:00",
+      "work_type": "media-plan",
+      "boundary": "已有音色复用交付已完成；启用时仅冻结正式库已有准确方案，方法历史仍未知。"
+    },
+    {
+      "task": "task-20261009-0014",
+      "status": "completed",
+      "summary": "消除镜头起点倒退与失效条件继承，逐场统一首帧、动作、声音与模型提交表达",
+      "observed_at": "2026-10-09T16:48:32.449606+00:00",
+      "work_type": "media-plan",
+      "boundary": "相关旧交付已完成并正式增量发布；启用时仅冻结正式库中实际已有的准确方案修订，方法历史仍未知。切换后新创作步骤须使用方法，不按任务号豁免。",
+      "completed_at": "2026-10-10T00:32:34.002812+08:00",
+      "delivery_commit": "338c2d449eecba4c1c85eb5736e9b3fa90596aad",
+      "publication_id": "c3019cfd2f788ea1a4090c233fd962f6478de182d44be9fdc1ff0999339fe004"
+    },
+    {
+      "task": "task-20261009-0024",
+      "status": "completed",
+      "summary": "按视听场准确查找制作实体与素材，修正源场混合与旧备选误归",
+      "observed_at": "2026-10-09T16:48:32.449606+00:00",
+      "work_type": "review-ui",
+      "boundary": "准确来源、历史图像或已选片段查看；没有新创作步骤豁免，服务切换仍共用互斥发布窗口。"
+    },
+    {
+      "task": "task-20261009-0028",
+      "status": "completed",
+      "summary": "补齐历史意见复核中准确回应整稿的图像",
+      "observed_at": "2026-10-09T16:48:32.449606+00:00",
+      "work_type": "review-ui",
+      "boundary": "准确来源、历史图像或已选片段查看；没有新创作步骤豁免，服务切换仍共用互斥发布窗口。"
+    },
+    {
+      "task": "task-20261009-0029",
+      "status": "completed",
+      "summary": "让已选音频参考片段直接接入准确试听",
+      "observed_at": "2026-10-09T16:48:32.449606+00:00",
+      "work_type": "review-ui",
+      "boundary": "准确来源、历史图像或已选片段查看；没有新创作步骤豁免，服务切换仍共用互斥发布窗口。"
+    }
+  ],
+  "other_work": {
+    "novel-writing": "四个历史 SQLite 运行无待处理候选；旧检查点只读，新 begin 需要方法。",
+    "reader-review": "真实旧运行重放 1033 步，保留原 instructions 与阅读策略；新运行冻结五种模式，新请求逐步绑定。",
+    "comment-polish": "单请求边界；停止准确 app 后新请求暂不可用，重启后取新绑定。"
+  },
+  "write_window": {
+    "publication": "项目及系统发布锁",
+    "api": "停止核验身份的准确 app，检查 3000、64401 评论、认可、配置、内容写入口停止，再取切点快照。",
+    "preservation": "仅追加方法定义及启用记录；严格结构和无关行比较，不回灌旧任务库。",
+    "recovery": "定义包与完整导出分别恢复；启用后拒绝切回不支持方法约束的旧镜像，使用兼容版本重启或兼容修复；不回灌旧库。"
+  },
+  "active_work_audit": {
+    "observed_at": "2026-10-09T16:48:32.449606+00:00",
+    "running_tasks": [
+      "task-20261009-0020"
+    ],
+    "published_not_started": [
+      "task-20261009-0021",
+      "task-20261009-0022",
+      "task-20261009-0023",
+      "task-20261009-0030",
+      "task-20261009-0031",
+      "task-20261009-0032",
+      "task-20261009-0033"
+    ],
+    "boundary": "除本任务外没有正在运行的任务；已发布未开始的后续创作任务不属于旧冻结范围。"
+  }
+}
