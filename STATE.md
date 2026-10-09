@@ -45,6 +45,8 @@
 - 正式入口 `http://127.0.0.1:3000/`，活库为主目录 `.runtime/review.sqlite3`；准确系统提交由 `config/instance.json.review_desk_commit` 维护。两仓集成、正式切换、浏览器复验与任务完成只认主项目 `.codex-task/tasks.json` 和冻结包实际回执，工作区候选不能单凭文件存在宣称正式生效。
 - VPS 完整体验版已在 `https://leiguoguo.me/lijizhanshe/` 公开运行，任务 `task-20261009-0032` 已将执行时最新已交付正式版升级至独立体验实例。维护、旧版清除后的同包故障重建、两轮同源重置、普通应用重启持久性及 Chrome 真实页面验收通过；最终业务表与完整原件回到准确正式快照，本机正式库未被体验操作修改。AI 润色经现有 Xray 回环入口真实返回并采用到草稿；北京时间每日最多 100 次，失败也计数，发布和重启保留次数。旧体验资源、远端暂存及本机完整过程包已清除并回读。准确发布和容器身份以 VPS `~/lijizhanshe/state.json` 为准，本轮版本、验收边界及清理证据见主项目 `.runtime/task-20261009-0032/vps-upgrade/acceptance.md`；重复发布入口见 [体验版发布](production/vps-experience.md)。
 
+- 方法包直接阅读在 task-20261010-0005 隔离候选已完成：作者、标准导出、空实例恢复均可顺读全文、适配与愿景；旧执行内链限制保留。正式生效、收尾与根独立复验以实际回执为准，见 [阅读交付验收](production/method-package-reading/VERIFICATION.md)。
+
 ## 下一步与制作边界
 
 - [受管方法与执行绑定](production/managed-methods.md) 已正式启用：评论润色、小说检查点、独立读者和媒体准备取得准确方法及共用资料；旧方案历史保持未知，新创作步骤受方法契约约束。0014 旧交付完成后已按停写窗口追加配置，正式页面、兼容运行重启和完整空库恢复通过，实际边界见[验收记录](production/managed-methods/VERIFICATION.md)。主要创作制作方法库已正式发布，完成自然场、独立对话／动作／文字试用及改进后复用；正式页只读回查和完整空库恢复通过，见[方法试用](production/professional-methods/VERIFICATION.md)。用户已取消原全剧重做任务 0022/0023，保留已确认结构、小说及有效成果；后续按新 Review SKILL 实践后重新确定改进范围。0022/0023 已从队列撤下，未完成草稿不构成正式制作依据；撤销事实与必要追溯见 `.runtime/system-review/abandon-0022-0023/status.json`。新的持续 Review 仍暂停，运行约定见 `.runtime/system-review/RUNBOOK.md`。
