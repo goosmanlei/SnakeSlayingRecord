@@ -25,9 +25,13 @@
 
 `content/creative-system-review-method.json` 是安装定义，只含来源路径、简短入口及环节元数据。用已有 `scripts/managed_methods.py install --seed content/creative-system-review-method.json` 在任务隔离实例安装，`--system` 指向本任务审阅台工作区，`--instance` 指向隔离实例。重复安装相同正文幂等，已维护配置不同则拒绝覆盖。
 
-准备请求沿 `POST /api/methods/prepare` 或 `method-prepare`，提供 `work_type: creative-system-review`、独立 `run_id/step_id/target`，以及 `inputs` 中的 `goal`（当前目标）、`scope`（准确对象、版本及范围）、`authorization`（本次委托边界）、`evidence`（实际材料和实践证据）。返回包依次提供完整 SKILL、项目适配和愿景三个准确资源；专业制作所需章节及作品输入由本步按需补齐，这三个文本不能代替真实看、听、操作或其他专业材料。`review` 产物登记实际判断，不以取得方法代表完成审阅。
+准备请求沿 `POST /api/methods/prepare` 或 `method-prepare`，提供 `work_type: creative-system-review`、独立 `run_id/step_id/target`，以及 `inputs` 中的 `goal`（当前目标）、`scope`（准确对象、版本及范围）、`authorization`（本次委托边界）、`evidence`（实际材料和实践证据）。返回包以完整 SKILL 为一个准确章节，随章附带项目适配和愿景，保留源目录关系；专业制作所需章节及作品输入由本步按需补齐，这三个文本不能代替真实看、听、操作或其他专业材料。`review` 产物登记实际判断，不以取得方法代表完成审阅。
 
-显式 `method-export` 将三个资源分别写到 `shared/0.md`、`shared/1.md`、`shared/2.md`，入口文件说明这一映射；`registry.json` 保留来源路径、全文/投影摘要、准确修订及执行快照。用既有 `method-restore` 在新空实例恢复该登记包后，可以重新取得同一执行。仅需恢复定义时使用受管 `content/creative-system-review-registry.json`：它只包含本方法资源、引用入口和专用绑定，不携带其他方法或私有试用记录；恢复完整作品后也可显式追加它，目标已经前进时仍拒绝旧包覆盖。
+作者 `creative_method.py begin` 与标准 `method-export` 都从包根 `SKILL.md` 进入 `shared/0/skills/creative-system-review/SKILL.md`，正文的相对链接直接通向同目录的 `references/project-context.md`；愿景为 `shared/0/production/system-vision.md`，由包根入口链接。正文原字节保持，使用者无需改名。三份文本均保留来源路径和摘要；标准导出另含 `registry.json`、`execution.json` 与准确输入，恢复到新空实例后仍可重取同一执行。作者交付以 `delivery.json` 固定请求及执行，`RESOURCES.md` 只索引本次实际资料。
+
+包内链接以当前文件为基准；适配列出的 `AGENTS.md`、`KNOWLEDGE.md`、`STATE.md`、作品和专业资料路径以**本次输入明确给出的故事项目根**为基准。begin 的 `inputs` 应包含该根及准确作品/页面范围、授权、已有证据；没有提供的项目材料须沿本项目或本次输入补齐。加载方法不授予正式写入、持续运行或生成许可，方法可读也不等于创作完成。
+
+仅恢复定义可用 `content/creative-system-review-registry.json`：只含本方法资源、引用入口与专用绑定的连续历史，不携带其他方法或私有试用。恢复完整作品后可显式追加，目标前进时拒绝旧包覆盖。旧第1版定义、执行和已经交付的历史包仍是原文与原目录：当前作者交付器对旧平面资源与标准导出统一使用 `shared/0.md` 等，解决重取时的顶层命名差异；**旧完整方法中的内部适配链接仍不可用**，从旧入口的第二份资源 `shared/1.md` 读取适配、第三份 `shared/2.md` 读愿景。原作者历史包的带章节名路径由其 `RESOURCES.md` 索引。不得向旧执行补入新附件或改写旧正文；要完整内链须显式采用第2版新绑定、另建步骤。导出和恢复只包含显式选中的私有执行，不会为其他历史身份补造记录。
 
 后续修改先改唯一包或愿景，用 `method-source` 同步对应来源定义并提供资源当前 `expected_version`，再以 `method-save` 追加引用新资源准确修订的方法版本，最后显式更新本工作类型的绑定。旧执行继续旧资源及绑定。将相应准确历史从有效实例导出到登记包，再沿 [工作区发布](generation-workspaces.md) 增量发布；不能手改导出正文或用旧任务整库覆盖正式库。
 
