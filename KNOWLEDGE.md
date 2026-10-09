@@ -49,6 +49,8 @@
 
 ## 审阅界面与评论约定
 
+- 完整素材卡的关联用途与所显示的准确要求共用对象／修订；冻结版本活动方案为空时，沿保存的原需求读取，不以候选修订或当前要求填替。缺少要求才沿所选候选自身的完整引用读取用途，候选人工判断保持候选自身归属。通用契约在系统 `docs/materials-and-relationships.md`，M4081冻结工程、M3149用途和三入口实践见 [冻结素材用途验收](production/frozen-material-relations/VERIFICATION.md)。
+
 - 历史设计按准确归属直接读原需求的要求、参数、有序输入与提示词；同设计多需求修订默认最新绑定记录，可进一步读其他已保存记录，不冒充未保存的时间快照。当前准备方案另开共用卡后可返回原设计，历史意见不迁移，真实CALL和缺失要求各守原证据。通用契约在系统 `docs/material-versions.md`，本剧实读、状态对照与保护边界见[历史方案验收](production/historical-production-definition/VERIFICATION.md)。
 
 - 制作管理以准确视听集／场为共同范围，沿视听父子引用和具体用途汇总实体、状态及素材；源剧本用于依据，实体级全局备选不借首个源场进入所需清单。旧源场地址要求明确重选，历史视听范围保留原集版本；准确实体／素材卡和未关联搜索沿共同入口读取。通用契约在系统 `docs/small-cards.md`，本剧实践与边界见 [制作范围验收](production/scope-filters/VERIFICATION.md)。
