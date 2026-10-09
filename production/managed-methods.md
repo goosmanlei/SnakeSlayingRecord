@@ -86,6 +86,14 @@ python3 scripts/media_method.py --method-url http://127.0.0.1:PORT --directory .
 
 恢复分三件事：
 
+正式迁移先从隔离实例导出配置专用包；它仅含方法、资源和绑定，完整运行包中的启用记录及私有产物不能混入。准备发布包时先检查此边界，避免停写后才拒绝：
+
+```bash
+python3 scripts/method_migration.py --system PATH_TO_DESK export \
+  --database .runtime/generation/review/.runtime/review.sqlite3 \
+  --output content/managed-method-registry.json
+```
+
 1. 方法定义包可在空实例恢复同样的正文、版本和引用；目标已经更新时不能覆盖。
 2. 完整 Schema 9 导出恢复作品、评论、认可、原件索引和公开方法／制作关联；实际原件按哈希保全。私有执行另外显式导出，不能靠公开作品包恢复私有候选。
 3. 方法约束启用后，本次发布的 `recover` 会拒绝切回启用前镜像：旧代码不能执行新方法约束。运行故障先用本次发布的 `restart` 重启已验证的兼容版本，代码故障则准备兼容修复版本；修复期间需要停写就保持维护窗口。不能改用旧发布包绕过此边界。这些运行操作**不恢复数据库**；如需要数据修正，应在保全新写入的前提下作新的准确变更，不能回灌旧快照。

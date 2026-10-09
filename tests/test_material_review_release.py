@@ -20,6 +20,15 @@ import task_repository_delivery as delivery
 import method_migration
 
 class ReleaseTest(unittest.TestCase):
+    def test_configuration_package_rejects_activation_or_work_before_release(self):
+        for kind in ('activation', 'execution', 'artifact'):
+            archive = {'format': 'managed-method-registry-v1', 'records': [
+                {'payload': {'format': 'managed-method-' + kind + '-v1'}}]}
+            with self.assertRaisesRegex(ValueError, '配置迁移只能'):
+                method_migration.check_registry(archive)
+        method_migration.check_registry({'format': 'managed-method-registry-v1', 'records': [
+            {'payload': {'format': 'managed-method-' + kind + '-v1'}} for kind in ('skill','resource','binding')]})
+
     def test_ingress_timeout_requires_verified_application_stop(self):
         with patch.object(method_migration, 'build_opener') as opener:
             opener.return_value.open.side_effect = socket.timeout('upstream stopped')
