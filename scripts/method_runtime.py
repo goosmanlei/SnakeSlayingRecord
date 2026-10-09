@@ -61,7 +61,7 @@ def deliver_files(directory, package, inputs):
             files.update({prefix + n: content for n, content in resource['files'].items()})
             name = prefix + resource['file']
         else:
-            name = 'shared/' + str(number) + '-' + section + '.md'
+            name = 'shared/' + str(number) + '.md'
         files[name] = resource['content']
         index.append('- [' + resource['title'] + ' / ' + section + '](' + name + ')：'
                      + resource['reference']['object_id'] + ' @ ' + resource['reference']['revision_id'])
