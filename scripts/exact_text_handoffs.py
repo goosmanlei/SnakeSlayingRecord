@@ -40,12 +40,23 @@ def load():
 
 def records(data, av, entities, states):
     shots = {r['object_id']: r for r in av if r['kind'] == 'AV_SHOT'}
+    screenplay = json.loads((ROOT / 'imports/screenplay-04.json').read_text())
+    excerpts = {f'{s["id"]}:{i}': (e['id'], s['id'], bid)
+                for e in screenplay['episodes'] for s in e['scenes']
+                for i, bid in enumerate(s['block_ids'], 1)}
+    source_heads = {s['object_id']: s['revision_id'] for r in shots.values()
+                    for s in r['payload']['sources']}
     result = []
     for item in data['handoffs']:
         targets = [shots[oid] for oid in item['shots']]
-        # The exact screenplay references are inherited from the actual shots;
-        # the document names the precise paragraph for each authored fragment.
-        sources = union_sources(s for r in targets for s in r['payload']['sources'])
+        # Include the actual word sources even when an uttered name precedes
+        # the shot that shows the written form. Never infer a current revision.
+        word_sources = []
+        for exact in item['texts']:
+            episode, scene, block = excerpts[exact['source']]
+            word_sources.append({'object_id': episode, 'revision_id': source_heads[episode],
+                                 'scene_id': scene, 'block_ids': [block]})
+        sources = union_sources([*(s for r in targets for s in r['payload']['sources']), *word_sources])
         oid = 'material-text-' + item['id']
         scope = future(targets[0]['object_id'])
         body = (DIRECTORY / item['id'] / 'README.md').read_text().strip()

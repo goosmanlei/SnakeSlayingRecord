@@ -209,6 +209,8 @@ class Builder:
             payload, shot_id = row['payload'], row['object_id']
             text_choice = self.text_handoffs['shots'].get(shot_id, {})
             visual_start = text_choice.get('visual_start', payload['action_start'])
+            visual_end = text_choice.get('visual_end', payload['action_end'])
+            visual_performance = text_choice.get('visual_performance', payload['performance'])
             states = [self.states[r['object_id']] for r in payload['states']]
             owners = {r['object_id']: self.entities[r['object_id']] for r in payload['entities']}
             spaces = [r for r in owners.values() if r['payload']['entity_type'] == 'space']
@@ -254,7 +256,7 @@ class Builder:
                     '人物或道具身份、完整状态、伤侧和比例', '只调整本镜站位、手位、朝向与构图',
                     payload['continuity'], sources=source, type_id='state-frame'))
             labels = '图片1为选定机位；' + ''.join(f'图片{i}为{s["payload"]["title"]}；' for i, s in enumerate(visible, 2))
-            prompt = f'{STYLE}\n{labels}\n准确状态参考只固定可见主体的轮廓、衣着、伤侧、材质与结构；其制作说明中的其他使用场合和动作不在本首帧重演。\n拍摄位置：{payload["framing"]}。{payload["axis"]}\n只画动作开始的瞬间：{visual_start}。参考只约束真正入画的主体，镜内后续才入画的人物和画外声不提前塞入首帧。\n场所：{payload["spatial"]}\n{payload["lighting"]}。{payload["color"]}\n镜尾将发生“{payload["action_end"]}”，此首帧不得提前表现完成结果。\n连续性：{payload["continuity"]}。不加字幕、水印和装饰边框。'
+            prompt = f'{STYLE}\n{labels}\n准确状态参考只固定可见主体的轮廓、衣着、伤侧、材质与结构；其制作说明中的其他使用场合和动作不在本首帧重演。\n拍摄位置：{payload["framing"]}。{payload["axis"]}\n只画动作开始的瞬间：{visual_start}。参考只约束真正入画的主体，镜内后续才入画的人物和画外声不提前塞入首帧。\n场所：{payload["spatial"]}\n{payload["lighting"]}。{payload["color"]}\n镜尾将发生“{visual_end}”，此首帧不得提前表现完成结果。\n连续性：{payload["continuity"]}。不加字幕、水印和装饰边框。'
             if text_choice.get('frame_detail'):
                 prompt += '\n' + text_choice['frame_detail']
             self.need(oid, scope, 'first-frame', 'image', '固定本镜动作起点、人物身份、手位和机位，供视频原生表演延续。',
@@ -285,7 +287,7 @@ class Builder:
             if len(audio_labels) > maximum:
                 raise ValueError('too many voice references for authored duration; revise route explicitly: ' + shot_id)
             prompt = f'{STYLE}\n{seconds}秒，16:9，720p。@图片1为起始构图参考，维持已可见身份、空间和手位；' + ''.join(audio_labels)
-            prompt += f'\n意图与表演：{payload["performance"]}\n镜头：{payload["framing"]}。轴线：{payload["axis"]}\n从{visual_start}开始，到{payload["action_end"]}结束。\n{payload["spatial"]}\n光色：{payload["lighting"]}；{payload["color"]}\n声音和剪接：' + '\n'.join(payload['sound'][:2])
+            prompt += f'\n意图与表演：{visual_performance}\n镜头：{payload["framing"]}。轴线：{payload["axis"]}\n从{visual_start}开始，到{visual_end}结束。\n{payload["spatial"]}\n光色：{payload["lighting"]}；{payload["color"]}\n声音和剪接：' + '\n'.join(payload['sound'][:2])
             prompt += '\n本镜准确动作与发声执行顺序（叙述转成动作，发声事件实际出声；不朗读叙述、角色名或制作说明）：\n' + self.reviewed.render(source, text_choice.get('narration'))
             if text_choice.get('video_detail'):
                 prompt += '\n' + text_choice['video_detail']
@@ -308,7 +310,9 @@ class Builder:
                 planned['output'] = {**planned['output'],
                     'description': planned['output']['description'] + '\n' + text_choice['handoff'],
                     'review_criteria': [*planned['output']['review_criteria'], text_choice['handoff']]}
-            self.need(oid, scope, 'video', 'video', '原生音画完成这一镜；图像候选不计为视频结果。',
+            purpose = ('完成本镜动作与原生声音，文字交接和检查见输出要求；视频结果须连同应读文字验收。'
+                       if text_choice.get('handoff') else '原生音画完成这一镜；图像候选不计为视频结果。')
+            self.need(oid, scope, 'video', 'video', purpose,
                 planned,
                 sources=source, entities=payload['entities'], states=payload['states'], specification={'resolution': '720p', 'aspect_ratio': '16:9'})
 
