@@ -42,6 +42,8 @@ S002 的人物、状态和需求原来只打开文字简窗，需要换到实体
 - `node --test tests/*.test.cjs`：837 项通过。新增回归覆盖故事底层与前景卡的评论目标／草稿键、关闭时持有范围、原件可见且下游折叠；其余准确版本、叠层返回、区域／时间和迟到响应沿既有检查复验。
 - `PYTHONPATH=.:tests python3 -m unittest test_ui_projection test_ui_projection_requirements test_reference_purpose test_reference_paths test_review_decisions test_screenplay test_entity_review -q`：54 项通过。接口与自动测试仅辅助准确性，不代替上述页面实操。
 
+最终候选已合入两仓执行时更新的主干，其中方法条件保存修复保留。合并只在 `STATE.md` 新成果段发生文字冲突，保留双方有效成果后提交；代码无冲突。同步后前端 837 项重新通过，加入 `test_method_conditions_api` 的后端检查共 57 项通过，Chrome 重新加载最终代码后复走 EN002→M1133／用途 C282→关闭回 S002，准确范围未变。
+
 ## 正式发布与收尾依据
 
 使用既有 `material_review_release.py` 准备准确 UI 包、构建、预检和共享锁内发布；受管 Git 先 desk 后 primary，回读远端后切换服务。版本、行保护、正式 Chrome 原路只读回查和清理结果记录在主项目 `.runtime/task-20261010-0002/` 及任务完成回执；此处不预写正式验收结论。正式复走只读，不把 C282／C283／C284 测试数据导入活库。
