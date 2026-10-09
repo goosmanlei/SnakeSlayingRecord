@@ -5,6 +5,7 @@
 - 作品为方向三《把灯带回家》、故事结构第十稿、精修九定稿候选与用户已确认的剧本版本四。准确制作来源锁定于 [production/source-lock.json](production/source-lock.json)；故事创作域与评论保留。
 - 当前交付包含 [全剧视听设计](production/audiovisual/README.md)：17 集、42 故事场、65 视听场、344 镜，全部 1114 个正文块有准确表达范围。新设计支持每镜多需求、每需多版多候选、关系路线、准确原件及区域／时间选择。技术验证不代表用户接受新设计或声音质量。
 - 生产制作包含视听制作、实体管理、素材管理；故事剧本可回查两条制作来源链。方法页保留 [视频生成手册](production/seedance-video-handbook.md) 与 [影视专业知识](production/filmcraft/README.md)，生产方法按新模型重编。
+- 素材来源卡片支持实体自身、实体状态和镜头需求的连续审阅，历史原件保留准确来源与中文用途；候选核验及正式回执入口见 [素材来源卡片验收](production/material-source-cards/VERIFICATION.md)。准确正式身份仍以实例配置和任务发布回执为准。
 - 正式入口 `http://127.0.0.1:3000/`，活库为主目录 `.runtime/review.sqlite3`；准确系统提交由 `config/instance.json.review_desk_commit` 维护。两仓集成、正式切换、浏览器复验与任务完成只认主项目 `.codex-task/tasks.json` 和冻结包实际回执，工作区候选不能单凭文件存在宣称正式生效。
 - VPS 完整体验版已在 `https://leiguoguo.me/lijizhanshe/` 公开运行，使用独立可写体验库；普通重启保留操作，显式发布全量重置，本机正式库未被体验操作修改。维护、旧版清除后的故障重建、两轮重置及远端 Chrome 验收通过。AI 润色经 VPS 现有 Xray 回环 HTTP 入口真实返回建议并可采用到草稿；北京时间每日最多 100 次，失败也计数，发布和重启保留当天次数。旧实例专用资源、远端暂存及本机过程包已清除并回读。准确运行身份、验收与清理证据沿部署任务 `task-20261008-0007` 的本机回执定位，重复发布入口见 [体验版发布](production/vps-experience.md)。
 
