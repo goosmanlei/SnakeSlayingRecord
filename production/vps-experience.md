@@ -2,6 +2,24 @@
 
 入口为 `https://leiguoguo.me/lijizhanshe/`，远端实例为 `vps:~/www/lijizhanshe/`。本机正式数据库仍是权威；体验库可真实写入，普通容器重启保留操作，显式发布才全量重置。完整要求见 [部署任务](../planning/vps-experience-deployment-task.md)。以下命令从当前受管故事 worktree 根目录执行，系统代码使用同一任务纳管的 desk worktree。
 
+## 域名 HTTPS 与证书续期
+
+`leiguoguo.me` 的根域名 A 记录使用 Cloudflare **DNS only（灰云）**，网站流量直接访问 VPS；Cloudflare 继续提供 DNS。此设置作用于主域名的所有路径，邮箱记录独立维护。源站使用 Let’s Encrypt 根域名证书，普通浏览器可以直接验证，无需信任 Cloudflare Origin CA。
+
+VPS 通过官方 Certbot snap 与 HTTP-01 网站验证管理证书。证书原件位于 `/etc/letsencrypt/live/leiguoguo.me/`，`snap.certbot.renew.timer` 定期检查续期。成功续期后，`/etc/letsencrypt/renewal-hooks/deploy/20-leiguoguo-nginx` 校验证书域名、有效期及公私钥匹配，持有体验版发布锁，将证书链和私钥更新到 `~/my-config/nginx.me.leiguoguo/ssl/letsencrypt.crt`、`letsencrypt.key`，测试 Nginx 配置并平滑重载。容器沿用整个 `ssl` 目录的只读挂载，私钥不进入网站根目录或 Git。
+
+共享 Nginx 的 80 与 443 端口均保留 `/.well-known/acme-challenge/` 路由，对应宿主 `~/www/.well-known/acme-challenge/`。普通 HTTP 请求继续跳转 HTTPS。发布脚本只替换体验版标记内的配置；维护时须保留标记外的验证路由和证书配置，以及脚本所需的唯一 `location / {` 接入位置。
+
+以下命令在 VPS 上执行，分别检查定时器、演练续期与证书部署、查看当前证书：
+
+```bash
+systemctl status snap.certbot.renew.timer --no-pager
+sudo /snap/bin/certbot renew --cert-name leiguoguo.me --dry-run --run-deploy-hooks --no-random-sleep-on-renew
+sudo /snap/bin/certbot certificates
+```
+
+演练使用测试签发服务，部署钩子使用当前有效正式证书，不把测试证书装到线上。维护后仍需用普通域名访问确认 DNS、HTTPS 与页面正常，不能只凭配置测试通过判定生效。依据：[Certbot 续期与部署钩子说明](https://eff-certbot.readthedocs.io/en/stable/using.html#renewing-certificates)及 2026-10-09 服务器和 Cloudflare 配置回读。
+
 ## 发布前准备
 
 先完成两仓最新主干同步、候选提交和 `config/instance.json.review_desk_commit` 的准确引用，通过 `codex.task _prepare_integration --push` 准备整组候选。正式发布前由任务工具完成 `_deliver`，不要在主目录手工合并或推送。
