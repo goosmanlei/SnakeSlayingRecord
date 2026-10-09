@@ -21,7 +21,7 @@ def write(path, value):
 def plan_output(record):
     payload = record['payload']
     return {'requirement': {k: v for k, v in payload.items() if k not in
-            ('generation', 'method_basis', 'status', 'withdrawal_reason', 'required', 'blocks')},
+            ('generation', 'method_basis', 'status', 'withdrawal_reason', 'required', 'blocks', 'method_adjustment', 'shot_reference_operation')},
             'generation': payload['generation']}
 
 
@@ -68,6 +68,8 @@ def stage(client, directory, name, record=None, review=None):
         output = plan_output(record)
     artifact = client.artifact(execution, saved['request'], name, output)
     if name == 'result':
+        record['payload'].pop('method_adjustment', None)
+        record['payload'].pop('shot_reference_operation', None)
         record['payload']['method_basis'] = {'execution': reference(execution), 'artifact': reference(artifact),
                                              'run_id': saved['request']['run_id'], 'step_id': saved['request']['step_id']}
         return record

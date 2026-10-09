@@ -69,6 +69,19 @@ class ReleaseTest(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'triggers differ'):
             r.preserved(self.before,self.after,allow_read_generations=True)
 
+    def test_method_migration_permits_only_existing_disposable_cache_tokens(self):
+        self.install_read_generation_fixture()
+        shutil.copyfile(self.after,self.before)
+        with sqlite3.connect(self.after) as db:
+            db.execute("UPDATE read_generations SET token=?",('b'*32,))
+        with self.assertRaisesRegex(ValueError,'immutable history lost'):
+            r.preserved(self.before,self.after)
+        result=r.preserved(self.before,self.after,allow_cache_token_updates=True)
+        self.assertTrue(result['read_generations']['disposable_tokens_only'])
+        with sqlite3.connect(self.after) as db:db.execute('DELETE FROM revisions')
+        with self.assertRaisesRegex(ValueError,'immutable history lost'):
+            r.preserved(self.before,self.after,allow_cache_token_updates=True)
+
     def test_unconfirmed_flag_or_changed_digests_stop_before_action(self):
         args=argparse.Namespace(apply=False,bundle=self.root,manifest_sha256='wrong',image_receipt_sha256='wrong')
         with patch.object(r,'load_bundle') as load:
