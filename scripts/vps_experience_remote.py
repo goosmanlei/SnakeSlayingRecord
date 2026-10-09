@@ -3,16 +3,19 @@
 import argparse
 import fcntl
 import hashlib
+import ipaddress
 import json
 import os
 from pathlib import Path
 import re
 import shutil
+import socket
 import sqlite3
 import subprocess
 import tarfile
 import time
 from zoneinfo import ZoneInfo
+from urllib.parse import urlsplit
 
 HOME = Path.home()
 CONTROL = HOME / 'my-config/lijizhanshe'
@@ -142,7 +145,7 @@ def preflight():
             'nginx_container': nginx['Id'], 'cgroup_version': '2', 'xray': 'active'}
 
 
-def credential_check():
+def credential_values():
     credentials = safe(CONTROL/'credentials.env')
     if not credentials.is_file() or credentials.stat().st_mode & 0o077:
         raise ValueError('protected server credentials.env is required')
@@ -156,6 +159,60 @@ def credential_check():
         if key in values:
             raise ValueError('duplicate credential setting')
         values[key] = value
+    return values
+
+
+def runtime_target():
+    values = credential_values()
+    if values.get('REVIEW_USE_XRAY_LOOPBACK', '0') == '0':
+        return {'network': NETWORK, 'bind_host': '0.0.0.0',
+                'upstream': 'http://'+CONTAINER+':8765', 'probe_host': '127.0.0.1'}
+    if values.get('REVIEW_USE_XRAY_LOOPBACK') != '1':
+        raise ValueError('invalid loopback Xray setting')
+    try:
+        proxy = urlsplit(values.get('HTTPS_PROXY', ''))
+        valid = proxy.scheme == 'http' and proxy.hostname == '127.0.0.1' and proxy.port and proxy.username and proxy.password
+    except ValueError:
+        valid = False
+    if not valid:
+        raise ValueError('protected authenticated loopback HTTP proxy is required')
+    network = json.loads(run('docker', 'network', 'inspect', NETWORK))[0]
+    gateways = [item.get('Gateway') for item in network.get('IPAM', {}).get('Config', [])
+                if item.get('Gateway') and ipaddress.ip_address(item['Gateway']).version == 4
+                and ipaddress.ip_address(item['Gateway']) in ipaddress.ip_network(item['Subnet'])]
+    if network.get('Driver') != 'bridge' or len(gateways) != 1:
+        raise ValueError('one actual IPv4 Docker bridge gateway is required')
+    address = ipaddress.ip_address(gateways[0])
+    if not any(address in ipaddress.ip_network(cidr) for cidr in ('10.0.0.0/8', '172.16.0.0/12', '192.168.0.0/16')):
+        raise ValueError('application binding must stay on a private Docker bridge')
+    return {'network': 'host', 'bind_host': str(address),
+            'upstream': 'http://'+str(address)+':8765', 'probe_host': str(address)}
+
+
+def check_runtime_target(target):
+    if target['network'] != 'host':
+        return
+    proxy = urlsplit(credential_values()['HTTPS_PROXY'])
+    with socket.create_connection((proxy.hostname, proxy.port), timeout=3):
+        pass
+    with socket.socket() as probe:
+        try:
+            probe.bind((target['bind_host'], 8765))
+        except OSError:
+            info = json.loads(run('docker', 'inspect', CONTAINER))[0]
+            if (info['Config'].get('Labels', {}).get('org.leiguoguo.instance') != 'lijizhanshe'
+                    or not info['State']['Running'] or info['HostConfig']['NetworkMode'] != 'host'
+                    or info['Config']['Cmd'] != runtime_command(target)):
+                raise ValueError('private application port is not available for this instance') from None
+
+
+def runtime_command(target):
+    return ['python', '-m', 'review_desk', '--instance', '/instance', 'serve',
+            '--host', target['bind_host'], '--port', '8765']
+
+
+def credential_check():
+    values = credential_values()
     try:
         maximum = int(values.get('REVIEW_POLISH_MAX_ATTEMPTS', '0'))
         daily = int(values.get('REVIEW_POLISH_DAILY_LIMIT', '0'))
@@ -206,6 +263,8 @@ def configure(maintenance):
         proxy_read_timeout 90s;
         client_max_body_size 8192m;
 '''
+    if not maintenance:
+        content = content.replace('http://lijizhanshe-app:8765', runtime_target()['upstream'])
     block = BEGIN+'''
     location = /lijizhanshe { return 308 /lijizhanshe/$is_args$args; }
     location ^~ /lijizhanshe/ {
@@ -306,6 +365,9 @@ def stage(args):
         raise ValueError('unsupported package format, architecture or image identity')
     credential_check()
     environment = preflight()
+    target = runtime_target()
+    check_runtime_target(target)
+    environment['runtime'] = target
     return save(s, 'staged', publication_id=args.publication, package_sha256=args.sha256,
                 image_id=m['image_id'], image_tag=m['image_tag'], story_commit=m['story_commit'], desk_commit=m['desk_commit'], preflight=environment, maintenance_confirmed=False)
 
@@ -361,6 +423,8 @@ def replace(s, fail=False):
     if not s.get('maintenance_confirmed') or (CONTROL/'maintenance').read_text().strip() != 'on':
         raise ValueError('maintenance must protect the whole prefix before clearing')
     root, m = verified_package(s)
+    target = runtime_target()
+    check_runtime_target(target)
     # Containerd may report an index digest locally, whereas classic Docker
     # reports the config digest after loading the exact same save archive.
     s['image_id'] = portable_image(root/'image.tar.gz', m['image_tag'], m['desk_commit'])
@@ -379,7 +443,7 @@ def replace(s, fail=False):
     save(s, 'deployed')
     (CONTROL/'usage').mkdir(mode=0o700, exist_ok=True)
     run('docker', 'run', '-d', '--name', CONTAINER, '--label', LABEL,
-        '--restart', 'unless-stopped', '--network', NETWORK,
+        '--restart', 'unless-stopped', '--network', target['network'],
         '--cpus', '1', '--memory', '1g', '--memory-swap', '1536m', '--pids-limit', '64',
         '--log-opt', 'max-size=10m', '--log-opt', 'max-file=3',
         '--env-file', str(CONTROL/'credentials.env'),
@@ -389,7 +453,7 @@ def replace(s, fail=False):
         '-e', 'REVIEW_UPLOAD_RESERVE_BYTES=5368709120',
         '-e', 'REVIEW_POLISH_BUDGET_FILE=/usage/attempts.json',
         '-v', str(CONTROL/'usage')+':/usage',
-        '-v', str(TARGET)+':/instance', image['Id'])
+        '-v', str(TARGET)+':/instance', image['Id'], *runtime_command(target))
     return save(s, 'started')
 
 
@@ -404,9 +468,16 @@ def verify(s):
             raise ValueError('running file checksum differs: '+rel)
     info = json.loads(run('docker', 'inspect', CONTAINER))[0]
     h = info['HostConfig']
+    target = runtime_target()
     if not info['State']['Running'] or h['Memory'] != 1024**3 or h['MemorySwap'] != 1536*1024**2 or h['NanoCpus'] != 10**9 or h['PidsLimit'] != 64 or h['PortBindings']:
         raise ValueError('runtime limits or network boundary differ')
-    probe = "import json,urllib.request;print(json.dumps(json.load(urllib.request.urlopen('http://127.0.0.1:8765/lijizhanshe/api/instance',timeout=20))))"
+    if h['NetworkMode'] != target['network'] or info['Config']['Cmd'] != runtime_command(target):
+        raise ValueError('runtime network or private application binding differs')
+    if target['network'] == 'host':
+        env = dict(item.split('=', 1) for item in info['Config']['Env'])
+        if env.get('HTTPS_PROXY') != credential_values().get('HTTPS_PROXY') or env.get('REVIEW_USE_XRAY_LOOPBACK') != '1':
+            raise ValueError('runtime loopback proxy setting differs')
+    probe = "import json,urllib.request;print(json.dumps(json.load(urllib.request.urlopen('http://"+target['probe_host']+":8765/lijizhanshe/api/instance',timeout=20))))"
     for attempt in range(10):
         try:
             value = json.loads(run('docker', 'exec', CONTAINER, 'python', '-c', probe))
