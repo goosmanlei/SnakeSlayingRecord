@@ -28,6 +28,23 @@ class ReviewedEvents:
             if doc.get('format') != name or doc.get('source_sha256') != hashlib.sha256(raw).hexdigest():
                 raise ValueError('reviewed event source changed; re-review before compiling: ' + name)
         self.events = vocals['events']
+        self.narration = self.contexts.get('narration', {})
+        if self.narration.keys() - self.blocks.keys() or any(not isinstance(v, str) for v in self.narration.values()):
+            raise ValueError('reviewed action narration outside locked source')
+        self.action_order = self.contexts.get('action_order', {})
+        for key, steps in self.action_order.items():
+            if key not in self.blocks or not isinstance(steps, list) or not steps:
+                raise ValueError('invalid reviewed action order: ' + key)
+            voices = []
+            for step in steps:
+                if set(step) == {'action'} and isinstance(step['action'], str) and step['action'].strip():
+                    continue
+                if set(step) == {'voice'} and type(step['voice']) is int:
+                    voices.append(step['voice'])
+                    continue
+                raise ValueError('invalid action/voice step: ' + key)
+            if voices != list(range(len(self.at(key)))):
+                raise ValueError('reviewed action order must preserve every vocal event in order: ' + key)
         scenes = {f'{e["number"]:02}-{s["code"]}': s for e in score for s in e['scenes']}
         if scenes.keys() != self.contexts['scenes'].keys():
             raise ValueError('every audiovisual scene needs reviewed fixed conditions')
@@ -53,7 +70,7 @@ class ReviewedEvents:
             if not isinstance(events, list) or not events:
                 raise ValueError('empty vocal annotation: ' + key)
             for event in events:
-                if set(event) - {'speaker', 'mode', 'words', 'content', 'direction', 'song'}:
+                if set(event) - {'speaker', 'mode', 'words', 'content', 'direction', 'song', 'model_direction'}:
                     raise ValueError('unknown vocal event field: ' + key)
                 for field in ('speaker', 'mode', 'words', 'content', 'direction'):
                     if not isinstance(event.get(field), str):
@@ -66,6 +83,8 @@ class ReviewedEvents:
                     raise ValueError('unknown cast identity: ' + event['speaker'])
                 if event.get('song') and event['song'] not in SONGS:
                     raise ValueError('unknown performed song: ' + key)
+                if 'model_direction' in event and not isinstance(event['model_direction'], str):
+                    raise ValueError('invalid model vocal direction: ' + key)
         # Validate every explicit dialogue label even when a compile targets a subset.
         for key in self.blocks:
             self.at(key)
@@ -106,21 +125,35 @@ class ReviewedEvents:
     def for_sources(self, sources):
         return [dict(event, source=key) for key in self.keys(sources) for event in self.at(key)]
 
-    def describe(self, event):
+    def describe(self, event, *, executable=False):
         speaker = self.voice.VOICES[event['speaker']][0] if event['speaker'] in self.voice.VOICES else event['speaker']
         body = {'exact': '说唱原词「' + event['content'] + '」',
                 'meaning': '只确定语意「' + event['content'] + '」，原词待准备，不将语意当逐字台词',
                 'unspecified': '词句或句段未指定：' + (event['content'] or '待准备，不自行补词'),
                 'none': '无新增词句' + ('；' + event['content'] if event['content'] else '')}[event['words']]
-        return f'{speaker}／{event["mode"]}：{body}。{event["direction"]}'
+        direction = event.get('model_direction', event['direction']) if executable else event['direction']
+        return f'{speaker}／{event["mode"]}：{body}。{direction}'
 
-    def render(self, sources, narration=None):
+    def render(self, sources, narration=None, *, executable=False):
         parts = []
         narration = narration or {}
         if set(narration) - set(self.keys(sources)):
             raise ValueError('visual narration is outside the exact shot sources')
+        # The stage review may refine an already-authored text handoff. Both
+        # remain anchored to the locked paragraph, never inferred from a start.
+        if executable:
+            narration = {**narration, **{k: self.narration[k] for k in self.keys(sources) if k in self.narration}}
         for key in self.keys(sources):
             events = self.at(key)
+            if executable and key in self.action_order:
+                for step in self.action_order[key]:
+                    if 'action' in step:
+                        parts.append('动作：' + step['action'])
+                    else:
+                        event = events[step['voice']]
+                        if event['words'] in ('exact', 'none'):
+                            parts.append('声音：' + self.describe(event, executable=True))
+                continue
             text = narration.get(key, self.blocks[key])
             # Direct lines occur once as an executable vocal event. Narration is
             # retained as action evidence, with embedded spoken quotes replaced
@@ -130,9 +163,15 @@ class ReviewedEvents:
                     if event['words'] == 'exact' and event['content'] in text:
                         text = text.replace(event['content'], f'〔本段发声{i}〕', 1)
                 if text:
-                    parts.append('动作与叙述依据：' + text)
+                    parts.append(('动作：' if executable else '动作与叙述依据：') + text)
             if events:
-                parts.append('本段发声（依序；注明同时者重叠）：\n' + '\n'.join(f'{i}. {self.describe(e)}' for i, e in enumerate(events, 1)))
+                # Unlocked words belong to blockers, not to a model's to-do
+                # list. They still prevent package preparation through blockers().
+                known = [e for e in events if not executable or e['words'] in ('exact', 'none')]
+                if known:
+                    parts.append(('声音（依序；注明同时者重叠）：\n' if executable else
+                                  '本段发声（依序；注明同时者重叠）：\n') +
+                                 '\n'.join(f'{i}. {self.describe(e, executable=executable)}' for i, e in enumerate(known, 1)))
         return '\n'.join(parts)
 
     def blockers(self, sources):

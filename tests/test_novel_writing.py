@@ -22,10 +22,12 @@ SOURCE = {
 
 class WritingTest(unittest.TestCase):
     def setUp(self):
+        from method_client_fixture import Client
+        self.method_client = Client()
         self.tmp = tempfile.TemporaryDirectory()
         self.root = Path(self.tmp.name)
         self.path = self.root / "working" / "work.sqlite3"
-        self.work = WritingStore(self.path)
+        self.work = WritingStore(self.path, self.method_client)
         self.seed = {"source": SOURCE, "source_revision": checksum(SOURCE), "constraints": ["逐片段写作"],
                      "book_title": "测试小说", "notes": {"outlook": "初步构想", "facts": {}, "issues": {}}}
         self.work.init(self.seed)
@@ -89,7 +91,7 @@ class WritingTest(unittest.TestCase):
         candidate = {"fragments": [{"id": "s1", "text": "甲"}]}
         saved = self.work.save_candidate("s1", candidate)
         self.work.close()
-        self.work = WritingStore(self.path)
+        self.work = WritingStore(self.path, self.method_client)
         self.assertEqual(saved, self.work.save_candidate("s1", candidate))
         with self.assertRaises(Conflict):
             self.work.save_candidate("s1", {"fragments": [{"id": "s1", "text": "乙"}]})
@@ -97,7 +99,7 @@ class WritingTest(unittest.TestCase):
         review = {"observations": "读过保存结果", "updates": {}}
         result = self.work.accept("s1", review)
         self.work.close()
-        self.work = WritingStore(self.path)
+        self.work = WritingStore(self.path, self.method_client)
         self.assertEqual(result, self.work.accept("s1", review))
         self.assertEqual(self.work.status()["fragments"], 1)
         self.assertEqual(self.work.context()["fragments"][0]["text"], "甲")
@@ -146,7 +148,7 @@ class WritingTest(unittest.TestCase):
         package = self.ready()
         self.assertEqual(json.loads(self.formal.execute("SELECT document FROM sources").fetchone()[0]), SOURCE)
         self.work.close()
-        self.work = WritingStore(self.path)
+        self.work = WritingStore(self.path, self.method_client)
         self.assertEqual(package, self.work.bundle())
         with self.assertRaises(Conflict):
             self.work.published(self.formal_path)
@@ -155,7 +157,7 @@ class WritingTest(unittest.TestCase):
             self.formal.execute("UPDATE sources SET document=?,revision=? WHERE id=?", (canonical(package["document"]), package["document_sha256"], SOURCE["id"]))
         # Publication succeeded, author checkpoint did not yet record it.
         self.work.close()
-        self.work = WritingStore(self.path)
+        self.work = WritingStore(self.path, self.method_client)
         formal_before = self.formal_path.read_bytes()
         self.assertEqual(self.work.published(self.formal_path)["phase"], "PUBLISHED")
         self.assertEqual(self.work.published(self.formal_path)["phase"], "PUBLISHED")
@@ -206,7 +208,7 @@ class WritingTest(unittest.TestCase):
         self.write()
         self.work.close()
         before = self.path.read_bytes()
-        self.work = WritingStore(self.path)
+        self.work = WritingStore(self.path, self.method_client)
         self.assertEqual(self.work.status()["fragments"], 1)
         self.assertEqual(self.path.read_bytes(), before)
 
