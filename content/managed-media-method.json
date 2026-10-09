@@ -1,0 +1,215 @@
+{
+  "format": "managed-method-seed-v1",
+  "sources": [
+    {
+      "name": "video-handbook",
+      "title": "视频生成手册",
+      "expected_version": 0,
+      "sections": {
+        "use": {
+          "path": "production/seedance-video-handbook.md",
+          "section": "use"
+        },
+        "models": {
+          "path": "production/seedance-video-handbook.md",
+          "section": "models"
+        },
+        "modes": {
+          "path": "production/seedance-video-handbook.md",
+          "section": "modes"
+        },
+        "load": {
+          "path": "production/seedance-video-handbook.md",
+          "section": "load"
+        },
+        "references": {
+          "path": "production/seedance-video-handbook.md",
+          "section": "references"
+        },
+        "prompt": {
+          "path": "production/seedance-video-handbook.md",
+          "section": "prompt"
+        },
+        "sound": {
+          "path": "production/seedance-video-handbook.md",
+          "section": "sound"
+        },
+        "checks": {
+          "path": "production/seedance-video-handbook.md",
+          "section": "checks"
+        },
+        "case-action": {
+          "path": "production/seedance-video-handbook.md",
+          "section": "case-action"
+        },
+        "case-dialogue": {
+          "path": "production/seedance-video-handbook.md",
+          "section": "case-dialogue"
+        },
+        "case-extension": {
+          "path": "production/seedance-video-handbook.md",
+          "section": "case-extension"
+        },
+        "case-style": {
+          "path": "production/seedance-video-handbook.md",
+          "section": "case-style"
+        },
+        "case-song": {
+          "path": "production/seedance-video-handbook.md",
+          "section": "case-song"
+        }
+      }
+    },
+    {
+      "name": "filmcraft-execution",
+      "title": "影视意图与制作交接",
+      "expected_version": 0,
+      "sections": {
+        "animation": {
+          "path": "production/filmcraft/12-animation-ai.md"
+        }
+      }
+    }
+  ],
+  "records": [
+    {
+      "category": "skill",
+      "name": "media-plan",
+      "expected_version": 0,
+      "payload": {
+        "title": "单项素材制作方案与 Prompt",
+        "purpose": "把准确创作意图交接为可审阅、可准备的单项素材方案",
+        "applies": "新建或修订一项图像、声音或镜头视频方案；仅准备，不授权生成",
+        "inputs": "准确需求、上游作品与实体状态、直接参考的职责和可用性",
+        "outputs": "方案草稿、回读检查和定稿；生成 Prompt 与模型参数分别保存",
+        "checks": "核对输入锁、原词、完整状态、准确参考、前后连续性和实际渠道；未知保持阻断",
+        "work_types": [
+          "media-plan"
+        ],
+        "required_inputs": [
+          "context",
+          "records"
+        ],
+        "steps": [
+          "draft",
+          "review",
+          "result"
+        ],
+        "files": {
+          "SKILL.md": "---\nname: media-plan\ndescription: 根据准确作品和参考，为单项素材编写制作方案及生成 Prompt，并完成回读交接。\n---\n\n先读 request.json 中的需求与准确上游材料，明确本项让观众看懂或听懂什么。核对已确认的输入锁、人物与物件状态、原句和直接参考；不以缺失原件替代为想象，不擅自确认原词。\n\n视频工作按本包加载的视频手册与影视章节确定起点、变化、落点、时间、声音和跨镜衔接。重要选择说明适用原理、具体条件、所选方案和检查材料；需要时比较两个可行办法。按实际媒体准备图像身份与构图、声音身份或旋律职责，不把一份参考用于冲突目的。\n\n先读 references/record-contract.md，保持既有 JSON 字段含义与类型；说明文字不得占用路由条件字段。\n\n先形成 draft：模型、渠道、模式、参数、准确输入职责、Prompt、输出目标、验收标准和阻断原因。Prompt 只写给媒体模型执行的画面与声音任务；不把整本手册、运行记录、素材库标识或工具报错塞入 Prompt。视频可按手册 prompt 章节模板填写；参数在实际字段设置，不靠文字冒充。\n\n回读草稿和真实输入，形成 review：逐项说明发现、依据与必要修正，检查编号、说话人、原句、完整状态、接触因果与前后衔接；没有生成就不写效果通过。修改输入职责或作品依据需要新步骤；草稿自身修正留在本步定稿。\n\n保存 result 为准确定稿；真实生成仍须重新通过既有采纳、原件、渠道、额度和许可检查。本方法不产生调用许可，不发起付费生成。返回后须实际看听原件；技术检查、创作认可和采用分开。\n",
+          "references/record-contract.md": "# 媒体方案交付字段\n\nrecord.json 是本步骤准确基线。只修改本次请求允许的字段；保留 object_id、kind、expected_version 与全部准确引用。expected_version 是登记时的并发保护，目标前进后不能手改数字继续提交，须回读新版本、新建步骤。\n\npayload.generation.format 固定为 generation-plan-v1；method 只能是 generate 或 reuse。model、tool、execution、parameters、randomization 和 inputs 各自有实际接口含义，保留已核实的值；改动需要准确依据。参数里的数值保持数值，不换成解释句。\n\nprompt 是给媒体模型的实际内容指令。output 含 name、description 和 review_criteria 字符串数组。blockers 是尚未满足条件的字符串数组；它们不会进入媒体 Prompt。generation.conditions 是“条件标识 → true/false”的对象，generation.selected_routes 是既定路线选择对象；两者属于既有输入关系协议，不能写入创作说明、字符串判断或待办。解释选择可写在本次 review 的 assessment 中，阻断写在 blockers 中。\n\ninputs 是既有准确参考数组，保留 reference、角色、用途、候选和范围等实际字段。selection_state=unselected 表示尚未选定，不能通过填写任意文件或自报认可变成就绪。缺原词、原件、认可或输入锁时保留阻断；不得用新编内容补齐。\n\n先把完整草稿写入 draft-record.json，通过 draft 登记。保存并实际重读后，把发现与修订判断写入 review.md，通过 review 登记。最后写 final-record.json 并执行 finish。服务端会校验 JSON 载荷、准确引用与步骤顺序；拒绝时按错误修正本阶段，成功后的步骤不可重写，进一步修改须新建步骤。\n\nfinish 输出的是待 production-import 的准确登记包，仍需目标并发版本、原有制作校验与方法依据全部通过才成为受管方案；它不表示已生成、获认可或获调用许可。正式发布沿项目既有增量流程，不把执行库快照覆盖到正式库。\n"
+        },
+        "resources": [
+          {
+            "name": "continuity",
+            "section": "continuity"
+          },
+          {
+            "name": "filmcraft-execution",
+            "section": "animation",
+            "when": {
+              "media_type": "video"
+            }
+          },
+          {
+            "name": "video-handbook",
+            "section": "use",
+            "when": {
+              "media_type": "video"
+            }
+          },
+          {
+            "name": "video-handbook",
+            "section": "models",
+            "when": {
+              "media_type": "video"
+            }
+          },
+          {
+            "name": "video-handbook",
+            "section": "modes",
+            "when": {
+              "media_type": "video"
+            }
+          },
+          {
+            "name": "video-handbook",
+            "section": "load",
+            "when": {
+              "media_type": "video"
+            }
+          },
+          {
+            "name": "video-handbook",
+            "section": "references",
+            "when": {
+              "media_type": "video"
+            }
+          },
+          {
+            "name": "video-handbook",
+            "section": "prompt",
+            "when": {
+              "media_type": "video"
+            }
+          },
+          {
+            "name": "video-handbook",
+            "section": "sound",
+            "when": {
+              "media_type": "video"
+            }
+          },
+          {
+            "name": "video-handbook",
+            "section": "checks",
+            "when": {
+              "media_type": "video"
+            }
+          },
+          {
+            "name": "video-handbook",
+            "section": "case-action",
+            "when": {
+              "media_type": "video"
+            }
+          },
+          {
+            "name": "video-handbook",
+            "section": "case-dialogue",
+            "when": {
+              "media_type": "video"
+            }
+          },
+          {
+            "name": "video-handbook",
+            "section": "case-extension",
+            "when": {
+              "media_type": "video"
+            }
+          },
+          {
+            "name": "video-handbook",
+            "section": "case-style",
+            "when": {
+              "media_type": "video"
+            }
+          },
+          {
+            "name": "video-handbook",
+            "section": "case-song",
+            "when": {
+              "media_type": "video"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "bindings": [
+    {
+      "work_type": "media-plan",
+      "method": "media-plan"
+    }
+  ]
+}
