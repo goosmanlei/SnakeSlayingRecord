@@ -5,10 +5,11 @@ The four still-useful independent-song materials retain their exact identities.
 """
 from collections import Counter
 import importlib.util
+import hashlib
 import json
-import re
 
 from audiovisual_design import ROOT, future, reference, union_sources
+from video_input_design import load_audit, frame_plan, video_plan, FRAME_USE
 
 STYLE = '二维人物与轻手绘背景，正常人物比例，干净轮廓与清楚色块，背景轻而可读；不新增粗纸纹、颗粒、过锐边缘或写实皮肤。'
 IMAGE_CHECK = ['身份、配色、服装与伤侧和准确实体状态一致', '构图、接触点、空间出入口与轴线可核对',
@@ -36,15 +37,23 @@ def casting():
 
 
 class Builder:
-    def __init__(self, store, p, av_records):
+    def __init__(self, store, p, av_records, reviewed):
         self.store, self.p, self.av = store, p, av_records
+        self.reviewed = reviewed
         self.rows, self.generated, self.keep = [], {}, {}
         self.entities = {r['object_id']: r for r in p.current_records(store, {'ENTITY'})}
         self.states = {r['object_id']: r for r in p.current_records(store, {'STATE'})}
         self.image_config = json.loads((ROOT / 'config/openart.json').read_text())
         self.voice = casting()
+        self.relations = {}
+        for row in p.current_records(store, {'MATERIAL_RELATION'}):
+            key = self.relation_key(row['payload'])
+            if key in self.relations:
+                raise ValueError('ambiguous existing material relation: ' + str(key))
+            self.relations[key] = row['object_id']
         self.masters, self.state_needs, self.voices = {}, {}, {}
         self.counts = Counter()
+        self.input_audit = load_audit([r for r in av_records if r['kind'] == 'AV_SHOT'])
         self.frame_subjects = {}
         for line in (ROOT / 'production/audiovisual/frame-subjects.txt').read_text().splitlines():
             if not line.strip() or line.startswith('#'): continue
@@ -69,21 +78,29 @@ class Builder:
         return oid
 
     def relation(self, upstream, downstream, context, purpose, preserve, change, check, *, sources,
-                 necessity='required', group=None, route=None, semantics='reference', type_id='reference'):
-        oid = f'mr-{downstream}-{len(self.rows):04}'
+                 necessity='required', group=None, route=None, semantics='reference', type_id='reference', identity=None):
         values = {'title': purpose, 'purpose': purpose, 'upstream': self.resolve(upstream),
             'downstream_id': downstream, 'context': context, 'preserve': preserve, 'change': change, 'check': check,
             'type_id': type_id, 'type_label': {'identity-state': '身份到实体状态', 'space-camera': '空间到机位',
-                'frame-video': '首帧到镜头视频', 'reference': '准确素材参考', 'state-frame': '实体状态到首帧',
-                'voice-performance': '音色到现场表演'}.get(type_id, type_id),
+                'frame-video': '起始图到镜头视频', 'reference': '准确素材参考', 'state-frame': '实体状态到首帧',
+                'voice-performance': '音色到现场表演', 'state-video': '镜内后续内容到视频'}.get(type_id, type_id),
             'type_version': 1, 'type_definition': {'endpoints': ['REQUIREMENT' if upstream in self.generated else self.p.record(self.store, upstream)['kind'], 'REQUIREMENT'], 'direction': 'directed',
                 'attributes': {'i2i_budget': '图像最深参考谱系上限，执行时按实际输入回查，不是已生成代数'}},
             'attributes': {'i2i_budget': 2}, 'semantics': semantics, 'necessity': necessity,
             'basis': 'production_choice', 'sources': sources}
         if group:
             values.update(group=group, route=route)
+        key = self.relation_key(values)
+        # Position in a batch is not an identity: inserting a voice event must
+        # not relabel every subsequent edge or overwrite a different relation.
+        oid = self.relations.get(key) or identity or 'mr-' + hashlib.sha256(json.dumps(key).encode()).hexdigest()[:32]
         self.put(oid, 'MATERIAL_RELATION', values)
         return {'reference': self.resolve(upstream), 'relation': future(oid), 'selection_state': 'unselected', 'use': purpose}
+
+    @staticmethod
+    def relation_key(payload):
+        return (payload['upstream']['object_id'], payload['downstream_id'], payload['context']['object_id'],
+                payload['type_id'], payload['semantics'], payload['necessity'], payload.get('group'), payload.get('route'))
 
     def plan(self, media, prompt, inputs=(), *, seconds=None, name, description, selected_routes=None, image_ratio='16:9'):
         if media == 'image':
@@ -175,35 +192,6 @@ class Builder:
                 specification={'reference_role': 'overall', 'planned_i2i_depth': 1 if media == 'image' else None})
             self.state_needs[state_id] = oid
 
-    def block_text(self, payload):
-        texts = []
-        for source in payload['sources']:
-            episode = self.p.ref_record(self.store, source, {'EPISODE'})
-            blocks = {b['id']: b['text'] for b in episode['payload']['blocks']}
-            texts.extend(blocks[b] for b in source['block_ids'])
-        return texts
-
-    def speakers(self, payload, texts):
-        result = []
-        for text in texts:
-            match = re.match(r'^([^：]{1,16})：', text)
-            if not match or match[1] in ('字幕', '李诞回忆中的短暂画面', '贴纸揭下，旧字完整露出来', '经过人群，有人贴着家人的耳朵说'):
-                continue
-            name = match[1].replace('（唱）', '')
-            key = self.voice.LABELS.get(name)
-            if name == '书吏':
-                sid = payload['sources'][0]['scene_id']
-                key = 'clerk-notice' if sid == 's013' else 'clerk-proclamation' if sid == 's037' else 'clerk-liang'
-            if not key:
-                raise ValueError('speaking identity needs a reviewed mapping: ' + name)
-            if key not in result:
-                result.append(key)
-        source_blocks = {(s['scene_id'], int(b.rsplit('-b', 1)[1])) for s in payload['sources'] for b in s['block_ids']}
-        for key, position in self.voice.EMBEDDED.items():
-            if position in source_blocks and key not in result:
-                result.append(key)
-        return result
-
     def shots(self):
         for row in self.av:
             if row['kind'] != 'AV_SHOT':
@@ -254,26 +242,25 @@ class Builder:
                     '人物或道具身份、完整状态、伤侧和比例', '只调整本镜站位、手位、朝向与构图',
                     payload['continuity'], sources=source, type_id='state-frame'))
             labels = '图片1为选定机位；' + ''.join(f'图片{i}为{s["payload"]["title"]}；' for i, s in enumerate(visible, 2))
-            state_text = '\n'.join(s['payload']['title'] + '：' + description(s['payload']) for s in visible)
-            prompt = f'{STYLE}\n{labels}\n{state_text}\n拍摄位置：{payload["framing"]}。{payload["axis"]}\n只画动作开始的瞬间：{payload["action_start"]}。参考只约束真正入画的主体，镜内后续才入画的人物和画外声不提前塞入首帧。\n场所：{payload["spatial"]}\n{payload["lighting"]}。{payload["color"]}\n镜尾将发生“{payload["action_end"]}”，此首帧不得提前表现完成结果。\n连续性：{payload["continuity"]}。不加字幕、水印和装饰边框。'
+            prompt = f'{STYLE}\n{labels}\n准确状态参考只固定可见主体的轮廓、衣着、伤侧、材质与结构；其制作说明中的其他使用场合和动作不在本首帧重演。\n拍摄位置：{payload["framing"]}。{payload["axis"]}\n只画动作开始的瞬间：{payload["action_start"]}。参考只约束真正入画的主体，镜内后续才入画的人物和画外声不提前塞入首帧。\n场所：{payload["spatial"]}\n{payload["lighting"]}。{payload["color"]}\n镜尾将发生“{payload["action_end"]}”，此首帧不得提前表现完成结果。\n连续性：{payload["continuity"]}。不加字幕、水印和装饰边框。'
             self.need(oid, scope, 'first-frame', 'image', '固定本镜动作起点、人物身份、手位和机位，供视频原生表演延续。',
-                self.plan('image', prompt, inputs, name=payload['title'] + ' · 首帧', description=payload['action_start'], selected_routes={'camera': 'main'}),
+                frame_plan(self.plan('image', prompt, inputs, name=payload['title'] + ' · 首帧', description=payload['action_start'], selected_routes={'camera': 'main'}), self.input_audit[shot_id]),
                 sources=source, entities=[s['payload']['entity'] for s in visible], states=[reference(s) for s in visible],
                 specification={'planned_i2i_depth': 2, 'first_frame': True})
             frame_id = oid
             oid = 'material-' + shot_id + '-video'
-            inputs = [self.relation(frame_id, oid, scope, '以准确首帧开始本镜，不改身份、机位与起始手位',
+            inputs = [self.relation(frame_id, oid, scope, FRAME_USE,
                 payload['action_start'] + '；固定主体与空间', '原生生成下述连续动作、对白、呼吸、环境与表演',
-                payload['action_end'] + '；' + payload['continuity'], sources=source, type_id='frame-video')]
-            texts = self.block_text(payload); speakers = self.speakers(payload, texts)
+                '普通参考不保证固定首帧；' + payload['action_end'] + '；' + payload['continuity'], sources=source, type_id='frame-video')]
+            events = self.reviewed.for_sources(source)
+            speakers = list(dict.fromkeys(e['speaker'] for e in events if e['speaker'] in self.voice.VOICES))
             audio_labels = []
             for key in speakers:
                 inputs.append(self.relation(self.voices[key], oid, scope, self.voice.VOICES[key][0] + '：只锁定说话身份的干净短参考',
                     '同一人物的音区、共鸣与咬字', '按本镜正文和身体状态重新表演，不照搬试样文字或静音口型',
                     '明确选取约2至4秒可辨音色片段，所有音频参考总长在模型上限内', sources=source, type_id='voice-performance'))
                 audio_labels.append('@音频' + str(len(audio_labels) + 1) + '只参考' + self.voice.VOICES[key][0] + '的音色。')
-            song_owners = list(dict.fromkeys(s['payload']['entity']['object_id'] for s in states
-                                            if s['payload']['entity']['object_id'] in SONGS))
+            song_owners = list(dict.fromkeys(e['song'] for e in events if e.get('song')))
             for owner in song_owners:
                 inputs.append(self.relation(SONGS[owner], oid, scope, '曲调短参考：' + self.entities[owner]['payload']['title'],
                     '已明确曲调的旋律轮廓和节拍', '角色自己唱本镜输入锁规定词句；不加入独立整曲的额外歌词，不继承独立歌手音色',
@@ -283,12 +270,26 @@ class Builder:
             maximum = 3 if seconds <= 15 else 10
             if len(audio_labels) > maximum:
                 raise ValueError('too many voice references for authored duration; revise route explicitly: ' + shot_id)
-            prompt = f'{STYLE}\n{seconds}秒，16:9，720p。@图片1是已选首帧，维持身份、空间和手位；' + ''.join(audio_labels)
-            prompt += f'\n意图与表演：{payload["performance"]}\n镜头：{payload["framing"]}。轴线：{payload["axis"]}\n从{payload["action_start"]}开始，到{payload["action_end"]}结束。\n{payload["spatial"]}\n光色：{payload["lighting"]}；{payload["color"]}\n声音和剪接：' + '\n'.join(payload['sound'])
-            prompt += '\n本镜准确故事正文（按叙述表演动作，只有明确人物台词或歌词出声，不朗读叙述、角色名或括号说明）：\n' + '\n'.join(texts)
+            prompt = f'{STYLE}\n{seconds}秒，16:9，720p。@图片1为起始构图参考，维持已可见身份、空间和手位；' + ''.join(audio_labels)
+            prompt += f'\n意图与表演：{payload["performance"]}\n镜头：{payload["framing"]}。轴线：{payload["axis"]}\n从{payload["action_start"]}开始，到{payload["action_end"]}结束。\n{payload["spatial"]}\n光色：{payload["lighting"]}；{payload["color"]}\n声音和剪接：' + '\n'.join(payload['sound'][:2])
+            prompt += '\n本镜准确动作与发声执行顺序（叙述转成动作，发声事件实际出声；不朗读叙述、角色名或制作说明）：\n' + self.reviewed.render(source)
             prompt += '\n连续性：' + payload['continuity'] + '\n不添加对白、旁白、抢先信息、炫技切镜或慢动作。没有画外声的台词由实际说话人同步说出；保留自然气口和动作停顿。'
+            def supplement(value):
+                state = self.states[value['state']]
+                return self.relation(self.state_needs[value['state']], oid, scope, value['use'],
+                    state['payload']['title'] + '的身份与完整状态；只取本镜需要显露的部分',
+                    '按本镜时间顺序入画，不提前露脸、改站位或提前展示状态变化结果',
+                    value['use'] + '；只选本直接参考的准确候选，不自动附带祖先', sources=source,
+                    type_id='state-video', identity='mr-video-input-' + shot_id + '-' + value['state'])
+            def media_type(item):
+                key = item['reference']['object_id']
+                return (self.generated[key] if key in self.generated else self.p.record(self.store, key))['payload']['media_type']
+            plan = self.plan('video', prompt, inputs, seconds=seconds, name=payload['title'] + ' · 视频',
+                description=payload['action_start'] + ' → ' + payload['action_end'])
+            plan['blockers'] = self.reviewed.blockers(source)
+            planned = video_plan(plan, self.input_audit[shot_id], supplement, media_type)
             self.need(oid, scope, 'video', 'video', '原生音画完成这一镜；图像候选不计为视频结果。',
-                self.plan('video', prompt, inputs, seconds=seconds, name=payload['title'] + ' · 视频', description=payload['action_start'] + ' → ' + payload['action_end']),
+                planned,
                 sources=source, entities=payload['entities'], states=payload['states'], specification={'resolution': '720p', 'aspect_ratio': '16:9'})
 
     def build(self):
