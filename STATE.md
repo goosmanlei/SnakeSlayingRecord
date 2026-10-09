@@ -8,6 +8,7 @@
 - 镜头视频方案已按 [逐场输入审查](production/audiovisual/video-inputs.json) 区分普通参考与固定起点，并补充镜内后显内容的直接依据；方案、原件选定和实际效果分别审阅。交付核验及正式回读按 [输入契约验收](production/audiovisual/video-inputs-verification.md) 与任务回执定位。
 - 全剧必要准确文字已逐集复核，11份可编辑工程沿原镜头素材入口交接；正确旧图继续复用，字层不迁移既有认可。原词、揭示与未定字句见 [文字交接](production/audiovisual/text-review.md)，发布与实际验收按任务 `task-20261009-0010` 回执及 [复验入口](production/audiovisual/text-verification.md) 核对。
 - 素材来源卡片支持实体自身、实体状态和镜头需求的连续审阅，历史原件保留准确来源与中文用途；候选核验及正式回执入口见 [素材来源卡片验收](production/material-source-cards/VERIFICATION.md)。准确正式身份仍以实例配置和任务发布回执为准。
+- 准确参考保存后的核对、重开、再次调整及明确放弃已完成隔离候选复验；正式生效与收尾按任务 `task-20261009-0011` 的实际发布和完成回执定位，原路复验及数据保护边界见 [准确参考闭环验收](production/reference-selection/VERIFICATION.md)。
 - 编号与中文内容查找、按目的组织素材、准确完整镜头反查及失效定位保护已形成隔离通过的候选；实操、历史版本与草稿恢复依据见 [查找与连续审阅验收](production/readable-navigation/VERIFICATION.md)。正式发布是否完成仍以任务账本和实际回执为准。
 - 评论润色参考按准确对象、当前意见与统一总字符预算构建；歌曲进度已按准确包只更新两项背景，并保留411历史批次。正式生效与验收以任务 `task-20261009-0006` 的实际发布回执为准，复验路径见 [评论参考验收](production/review-context/VERIFICATION.md)。
 - 准确人工判断、决定范围与原位保存已完成隔离候选复验；正式生效与收尾以任务 `task-20261009-0009` 的实际发布和完成回执为准，复验路径见 [准确判断验收](production/review-decisions/VERIFICATION.md)。
