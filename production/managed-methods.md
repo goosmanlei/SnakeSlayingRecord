@@ -4,6 +4,8 @@
 
 本页说明已经实现的契约与操作。基础契约的正式启用见 [基础验收](managed-methods/VERIFICATION.md)；主要创作制作方法、选择入口与试用边界见 [创作制作方法](professional-methods.md)。当前生效身份以系统绑定及任务发布回执为准，候选通过不等于正式生效。
 
+编辑用途或方法选择时，两处条件编辑保留原 JSON 类型和值；布尔 `true` / `false` 与文本 `"true"` / `"false"` 明确区分，混合无效条件整次拒绝。回写样例、冻结执行及正式数据检查见 [条件回写验收](method-condition-roundtrip/VERIFICATION.md)。
+
 ## 正文在哪里维护
 
 | 内容 | 有效正文与同步方向 |
