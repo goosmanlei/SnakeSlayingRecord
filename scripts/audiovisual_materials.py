@@ -7,6 +7,7 @@ from collections import Counter
 import importlib.util
 import hashlib
 import json
+import re
 
 from audiovisual_design import ROOT, future, reference, union_sources
 from video_input_design import load_audit, frame_plan, video_plan, FRAME_USE
@@ -34,6 +35,32 @@ def casting():
     value = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(value)
     return value
+
+
+def recorded_voice_identity(asset, call):
+    """Read the requested identity from an exact completed call, not its title.
+
+    This is a candidate-discovery basis only. It cannot establish the audible
+    speaker, quality, an appropriate excerpt, or suitability for a new use.
+    """
+    payload = asset['payload']
+    if payload.get('media_type') != 'audio' or payload.get('placeholder'):
+        return None
+    originals = [c for c in payload.get('components', [])
+                 if c.get('role') == 'original' and c.get('has_audio')]
+    if len(originals) != 1 or call.get('kind') != 'CALL':
+        return None
+    recorded = call['payload']
+    receipt = recorded.get('receipt', {})
+    prompt = receipt.get('input', {}).get('text_prompt', '')
+    if (recorded.get('method') != 'generation' or receipt.get('status') != 'completed'
+            or not originals[0].get('sha256')
+            or receipt.get('sha256') != originals[0]['sha256']
+            or not prompt or prompt != recorded.get('prompt')):
+        return None
+    first_line = prompt.split('\n', 1)[0]
+    match = re.fullmatch(r'生成一份单人干净音色核对录音。说话身份：(.+?)。声音方向：(.+)。', first_line)
+    return match.groups() if match else None
 
 
 class Builder:
@@ -298,6 +325,8 @@ class Builder:
         # their purpose without adopting them or attaching them to a new call.
         for asset in self.p.current_records(self.store, {'ASSET'}):
             targets = set()
+            voice_targets = self.existing_voice_targets(asset)
+            targets.update(voice_targets)
             for state in asset['payload'].get('states', []):
                 target = self.state_needs.get(state['object_id'])
                 if target and self.states[state['object_id']]['id'] == state['revision_id']:
@@ -309,9 +338,33 @@ class Builder:
             for target in sorted(targets):
                 need = self.generated[target]['payload']
                 if need['media_type'] != asset['payload']['media_type']: continue
+                if target in voice_targets:
+                    self.relation(asset['object_id'], target, need['scope'], '已有音色候选，待听审与用途比较',
+                        '准确旧原件、真实调用与原说话身份；历史母版认可只限旧原件',
+                        '只取声音身份，现场重新表演本镜正文；不继承旧试读台词、语气、呼吸或环境，也不冒充新试样的生成结果',
+                        '逐项实际听辨说话者、音区音色、字音、噪声伴奏与表达；明确原件组成和起止范围，按具体镜头渠道核时长；未听审或未选段保持待准备',
+                        sources=need['sources'], necessity='optional', semantics='alternative', type_id='existing-candidate')
+                    continue
                 self.relation(asset['object_id'], target, need['scope'], '已有候选可供本需求比较和复用选择',
                     '原件身份、真实调用及已知身份或状态依据；不把旧认可迁到新方案',
                     '本次未选择候选；先核当前完整状态、风格、原生规格与图像谱系，再明确改选输入路线',
                     '打开本候选原件逐项审阅；资料缺失继续标为未知，不用新方案补造生成来历',
                     sources=need['sources'], necessity='optional', semantics='alternative', type_id='existing-candidate')
         return {'records': self.rows, 'preserve_exact_requirements': list(self.keep.values()), 'counts': dict(self.counts)}
+
+    def existing_voice_targets(self, asset):
+        """Match owner and exact requested speaker/direction; never a group alone."""
+        ref = asset['payload'].get('production')
+        if asset['payload'].get('media_type') != 'audio' or not ref:
+            return set()
+        try:
+            call = self.p.record(self.store, **ref)
+        except KeyError:
+            return set()
+        identity = recorded_voice_identity(asset, call)
+        if identity is None:
+            return set()
+        owners = {r['object_id'] for r in asset['payload'].get('subjects', [])}
+        return {target for key, target in self.voices.items()
+                if owners == {self.generated[target]['payload']['scope']['object_id']}
+                and identity == self.voice.VOICES[key]}
