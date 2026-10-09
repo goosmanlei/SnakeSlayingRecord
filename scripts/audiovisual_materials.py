@@ -324,7 +324,7 @@ class Builder:
                 purpose += '\n当前评估：' + review['reason']
                 if review.get('range'):
                     comparing = review['decision'] == 'needs_comparison'
-                    use = name + ('：旧原件身份待比较，尚未启用执行' if comparing else '：复用旧原件的说话身份片段，方案仍待独立认可')
+                    use = name + ('：旧原件身份待比较，尚未启用执行' if comparing else '：复用旧原件的说话身份片段；新方案和片段须独立认可')
                     item = self.relation(choice['reference']['object_id'], oid, reference(row), use,
                         review['responsibility'], '不继承：' + '、'.join(review['not_inherited']),
                         '核完整气口、当前声音方向与独立片段认可；不把旧母版认可转授新方案。',
