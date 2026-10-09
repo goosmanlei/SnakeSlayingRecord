@@ -1,12 +1,12 @@
 # VPS 完整体验版发布
 
-入口为 `https://leiguoguo.me/lijizhanshe/`，远端实例为 `vps:~/www/lijizhanshe/`。本机正式数据库仍是权威；体验库可真实写入，普通容器重启保留操作，显式发布才全量重置。完整要求见 [部署任务](../planning/vps-experience-deployment-task.md)。以下命令从当前受管故事 worktree 根目录执行，系统代码使用同一任务纳管的 desk worktree。
+入口为 `https://leiguoguo.me/lijizhanshe/`，远端实例为 `vps:~/www/lijizhanshe/`；发布工具、服务端凭据、阶段回执和累计 AI 调用次数统一保存在 `vps:~/lijizhanshe/`，独立于每次发版会重建的实例目录。本机正式数据库仍是权威；体验库可真实写入，普通容器重启保留操作，显式发布才全量重置。完整要求见 [部署任务](../planning/vps-experience-deployment-task.md)。以下命令从当前受管故事 worktree 根目录执行，系统代码使用同一任务纳管的 desk worktree。
 
 ## 域名 HTTPS 与证书续期
 
 `leiguoguo.me` 的根域名 A 记录使用 Cloudflare **DNS only（灰云）**，网站流量直接访问 VPS；Cloudflare 继续提供 DNS。此设置作用于主域名的所有路径，邮箱记录独立维护。源站使用 Let’s Encrypt 根域名证书，普通浏览器可以直接验证，无需信任 Cloudflare Origin CA。
 
-VPS 通过官方 Certbot snap 与 HTTP-01 网站验证管理证书。证书原件位于 `/etc/letsencrypt/live/leiguoguo.me/`，`snap.certbot.renew.timer` 定期检查续期。成功续期后，`/etc/letsencrypt/renewal-hooks/deploy/20-leiguoguo-nginx` 校验证书域名、有效期及公私钥匹配，持有体验版发布锁，将证书链和私钥更新到 `~/my-config/nginx.me.leiguoguo/ssl/letsencrypt.crt`、`letsencrypt.key`，测试 Nginx 配置并平滑重载。容器沿用整个 `ssl` 目录的只读挂载，私钥不进入网站根目录或 Git。
+VPS 通过官方 Certbot snap 与 HTTP-01 网站验证管理证书。证书原件位于 `/etc/letsencrypt/live/leiguoguo.me/`，`snap.certbot.renew.timer` 定期检查续期。成功续期后，`/etc/letsencrypt/renewal-hooks/deploy/20-leiguoguo-nginx` 校验证书域名、有效期及公私钥匹配，持有体验版 `~/lijizhanshe/publish.lock` 发布锁，将证书链和私钥更新到 `~/my-config/nginx.me.leiguoguo/ssl/letsencrypt.crt`、`letsencrypt.key`，测试 Nginx 配置并平滑重载。容器沿用整个 `ssl` 目录的只读挂载，私钥不进入网站根目录或 Git。
 
 共享 Nginx 的 80 与 443 端口均保留 `/.well-known/acme-challenge/` 路由，对应宿主 `~/www/.well-known/acme-challenge/`。普通 HTTP 请求继续跳转 HTTPS。发布脚本只替换体验版标记内的配置；维护时须保留标记外的验证路由和证书配置，以及脚本所需的唯一 `location / {` 接入位置。
 
@@ -26,7 +26,7 @@ sudo /snap/bin/certbot certificates
 
 远端复用 SSH 别名 `vps`、`nginx.me.leiguoguo` 容器与 `nginxmeleiguoguo_default` 网络。先回读架构、实际可用内存、磁盘、Xray、Nginx、已有实例、容器挂载和正在进行的发布。脚本在预检及进入维护前再次核对 x86_64、cgroup v2、至少 1.5 GiB 可用内存与 0.5 GiB 空闲 swap，以及既有 Xray、Nginx、网络和配置、网站根目录两个只读挂载的真实身份；余量不足时停止新增负载。磁盘按上传包三倍加 5 GiB 余量校验。脚本只管理本实例，拒绝符号链接、其他应用占用的容器名及未完成的另一发布；不购买资源、不增加 swap、不重启 VPS、不使用全局 prune。
 
-用户已明确允许使用 VPS 现有 `OPENAI_API_KEY`，它与本机使用同一密钥。现有变量只在交互式 shell 加载；维护者在服务器内将其写入 `~/my-config/lijizhanshe/credentials.env`，目录权限 700、文件 600，不回显或经本机转存密钥。文件采用 Docker env-file 格式，设置 `OPENAI_API_KEY`、`REVIEW_POLISH_DAILY_LIMIT=100`、`REVIEW_POLISH_BUDGET_TIMEZONE=Asia/Shanghai`。不把密钥写入 Git、业务库、发布包、浏览器或命令参数。
+用户已明确允许使用 VPS 现有 `OPENAI_API_KEY`，它与本机使用同一密钥。现有变量只在交互式 shell 加载；维护者在服务器内将其写入 `~/lijizhanshe/credentials.env`，目录权限 700、文件 600，不回显或经本机转存密钥。文件采用 Docker env-file 格式，设置 `OPENAI_API_KEY`、`REVIEW_POLISH_DAILY_LIMIT=100`、`REVIEW_POLISH_BUDGET_TIMEZONE=Asia/Shanghai`。不把密钥写入 Git、业务库、发布包、浏览器或命令参数。
 
 AI 出网按用户 2026-10-09 的明确要求使用 VPS 自身 Xray 回环 HTTP inbound。当前入口为 `http-local`、`127.0.0.1:9090`，账户沿服务器现有受保护 Xray 配置取用；只在服务器内将编码后的认证代理 URL 写入同一 env-file 的 `HTTPS_PROXY`，另设 `REVIEW_USE_XRAY_LOOPBACK=1`。不回显代理认证信息。标准库的 OpenAI HTTPS 请求读取此变量，公网网站入口仍直接访问本站。每次发布前核对 Xray 监听和实际 Docker 桥接网关。
 
@@ -65,7 +65,7 @@ python3 scripts/vps_experience.py status
 
 任何超时或中断后，先执行 `status` 并查询实际容器、维护状态与准确发布身份，不能盲目再次发布。上传未完整或摘要不符时，旧版继续运行；修复上传后对同一包重新校验。
 
-旧版已经清除后的失败保持维护，准确新包留在 `~/my-config/lijizhanshe/incoming/<身份>/`。先查阶段，确认没有旧应用写入，再沿 `replace → verify → open → cleanup` 从该完整包重建；不寻找旧库或恢复旧部署目录。若新包丢失，可从本机同一已验证包重新上传。受控失败验收使用 `replace --fail-after-clear`，只在维护且有完整包时执行，调用后必须实际恢复。
+旧版已经清除后的失败保持维护，准确新包留在 `~/lijizhanshe/incoming/<身份>/`。先查阶段，确认没有旧应用写入，再沿 `replace → verify → open → cleanup` 从该完整包重建；不寻找旧库或恢复旧部署目录。若新包丢失，可从本机同一已验证包重新上传。受控失败验收使用 `replace --fail-after-clear`，只在维护且有完整包时执行，调用后必须实际恢复。
 
 `cleanup` 删除上传包、展开副本和无用暂存，并回读为空，随后阶段才变为 `complete`。开放访问或 Git 推送成功都不等于发布完成。必要保留项只有当前实例、稳定接入／维护配置、服务端凭据、累计 API 次数和最小阶段回执；不留下故障库或重复数据副本。
 
