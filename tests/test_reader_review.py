@@ -107,6 +107,11 @@ class FakeDesk:
 
 class ReaderTests(unittest.TestCase):
     def setUp(self):
+        from method_client_fixture import Client
+        self.method_client = Client()
+        patcher = patch("scripts.reader_review.MethodClient", return_value=self.method_client)
+        patcher.start()
+        self.addCleanup(patcher.stop)
         self.temp = tempfile.TemporaryDirectory()
         self.desk = FakeDesk()
         self.path = Path(self.temp.name) / "run"
@@ -336,6 +341,26 @@ class ReaderTests(unittest.TestCase):
         with self.assertRaisesRegex(ReviewError, "contract differs"):
             changed = ReaderRun(self.path)
 
+    def test_legacy_resume_uses_frozen_text_when_current_constants_change(self):
+        config = dict(self.work.config)
+        config.pop('method_packages'); config.pop('contract_sha256')
+        with self.work.db:
+            self.work.put('config', config)
+        self.work.close(); self.work = ReaderRun(self.path)
+        self.step(Model([result()]))
+        self.work.switch_summary(reason='保留历史摘要契约')
+        self.work.enable_grounding('保留历史回溯契约')
+        self.work.ensure_summary(Model([{'summary': '小梅持灯。[段1]'}]), self.sleep)
+        request = self.work.request_for_step(2, self.work.get('memory'))
+        self.work.close()
+        with patch('scripts.reader_review.INSTRUCTIONS', 'new unrelated instructions'), \
+             patch('scripts.reader_review.SUMMARY_INSTRUCTIONS', 'new summary instructions'), \
+             patch('scripts.reader_review.RECALL_READER_INSTRUCTIONS', 'new recall instructions'):
+            self.work = ReaderRun(self.path)
+            self.assertEqual(self.work.request_for_step(2, self.work.get('memory')), request)
+            self.assertEqual(self.work.verify()['summary_checkpoints_verified'], 1)
+        self.assertFalse(self.work.db.execute("SELECT 1 FROM metadata WHERE key LIKE 'method_execution.%'").fetchone())
+
     def test_unknown_existing_issue_and_finish_watch_are_rejected(self):
         memory = {"facts": {}, "issues": {}}
         with self.assertRaises(ReviewError):
@@ -447,8 +472,8 @@ class ReaderTests(unittest.TestCase):
         changed["blocks"].append({"id": "future", "text": "第二章 未来标题\n\n未知结局。"})
         summary = {"through": 1, "text": "已经读过第一段。"}
         memory = {"facts": {}, "issues": {}}
-        self.assertEqual(make_request(self.work.config, split_paragraphs(original), 2, memory, summary),
-                         make_request(self.work.config, split_paragraphs(changed), 2, memory, summary))
+        self.assertEqual(make_request(self.work.config, split_paragraphs(original), 2, memory, summary, {"reader_instructions": INSTRUCTIONS}),
+                         make_request(self.work.config, split_paragraphs(changed), 2, memory, summary, {"reader_instructions": INSTRUCTIONS}))
 
     def test_bounded_recall_keeps_exact_read_source_and_excludes_future(self):
         paragraphs = split_paragraphs(source(["石头东边有一道缺口，缺口属于西院墙。", "两人来到缺口。", "未来的东墙秘密。"] ))

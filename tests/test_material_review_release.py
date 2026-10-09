@@ -8,6 +8,7 @@ import json
 from pathlib import Path
 import shutil
 import sqlite3
+import socket
 import sys
 import tempfile
 import tracemalloc
@@ -16,8 +17,23 @@ from unittest.mock import patch
 sys.path.insert(0,str(Path(__file__).parents[1]/'scripts'))
 import material_review_release as r
 import task_repository_delivery as delivery
+import method_migration
 
 class ReleaseTest(unittest.TestCase):
+    def test_ingress_timeout_requires_verified_application_stop(self):
+        with patch.object(method_migration, 'build_opener') as opener:
+            opener.return_value.open.side_effect = socket.timeout('upstream stopped')
+            with self.assertRaisesRegex(ValueError, '准确应用已经停止'):
+                method_migration.stopped_api()
+            opener.assert_not_called()
+            rows = method_migration.stopped_api(application_stopped=True)
+            self.assertEqual(len(rows), 8)
+            self.assertEqual({row['status'] for row in rows}, {'response-unavailable-after-verified-stop'})
+            opener.return_value.open.side_effect = None
+            opener.return_value.open.return_value.__enter__.return_value.status = 400
+            with self.assertRaisesRegex(ValueError, '写入口尚未停止'):
+                method_migration.stopped_api(application_stopped=True)
+
     def setUp(self):
         self.tmp=tempfile.TemporaryDirectory();self.addCleanup(self.tmp.cleanup);self.root=Path(self.tmp.name)
         self.before=self.root/'before.sqlite3';self.after=self.root/'after.sqlite3'
@@ -69,6 +85,19 @@ class ReleaseTest(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'triggers differ'):
             r.preserved(self.before,self.after,allow_read_generations=True)
 
+    def test_method_migration_permits_only_existing_disposable_cache_tokens(self):
+        self.install_read_generation_fixture()
+        shutil.copyfile(self.after,self.before)
+        with sqlite3.connect(self.after) as db:
+            db.execute("UPDATE read_generations SET token=?",('b'*32,))
+        with self.assertRaisesRegex(ValueError,'immutable history lost'):
+            r.preserved(self.before,self.after)
+        result=r.preserved(self.before,self.after,allow_cache_token_updates=True)
+        self.assertTrue(result['read_generations']['disposable_tokens_only'])
+        with sqlite3.connect(self.after) as db:db.execute('DELETE FROM revisions')
+        with self.assertRaisesRegex(ValueError,'immutable history lost'):
+            r.preserved(self.before,self.after,allow_cache_token_updates=True)
+
     def test_unconfirmed_flag_or_changed_digests_stop_before_action(self):
         args=argparse.Namespace(apply=False,bundle=self.root,manifest_sha256='wrong',image_receipt_sha256='wrong')
         with patch.object(r,'load_bundle') as load:
@@ -83,6 +112,20 @@ class ReleaseTest(unittest.TestCase):
         with patch.object(r,'inspect') as inspect:
             with self.assertRaisesRegex(ValueError,'not this release'):r.restart(argparse.Namespace(apply=True,release=self.root))
             inspect.assert_not_called()
+
+    def test_active_methods_block_pre_cutover_image_recovery_before_runtime_changes(self):
+        runtime=self.root/'.runtime';runtime.mkdir()
+        with sqlite3.connect(runtime/'review.sqlite3') as db:
+            db.execute('CREATE TABLE objects(id TEXT PRIMARY KEY)')
+            db.execute("INSERT INTO objects VALUES ('method.activation.media-plan')")
+        (self.root/'image.json').write_text('{}')
+        manifest={'story_main':str(self.root),'release_name':'method-test','managed_methods':{'registry':'methods/registry.json'}}
+        with patch.object(r,'authorized',return_value=(self.root,manifest)), \
+             patch.object(r.base,'publication_locks',return_value=contextlib.nullcontext()), \
+             patch.object(r,'inspect') as inspect, patch.object(r.base,'compose_up') as compose:
+            with self.assertRaisesRegex(ValueError,'不能回退到切换前镜像'):
+                r.recover(argparse.Namespace())
+            inspect.assert_not_called();compose.assert_not_called()
 
     def test_release_names_keep_task_identity_and_old_default(self):
         self.assertEqual(r.release_name(r.TASK,'a'*40,'b'*40), 'materials-20261004-0004-'+'a'*12+'-'+'b'*12)

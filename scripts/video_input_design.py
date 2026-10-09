@@ -26,11 +26,19 @@ def load_audit(shots=None):
     value = json.loads(AUDIT.read_text())
     if value['format'] != 'story-video-input-audit-v1':
         raise ValueError('unsupported video input audit')
-    rows = [r for s in value['scenes'] for r in s['shots']]
+    rows = [dict(r, execution_reviewed=s.get('execution_reviewed', False))
+            for s in value['scenes'] for r in s['shots']]
     by_id = {r['shot']: r for r in rows}
     if len(rows) != len(by_id):
         raise ValueError('duplicate reviewed shot')
     for row in rows:
+        for owner, ref in row.get('first_frame_states', {}).items():
+            if set(ref) != {'state', 'revision_id'} or not all(isinstance(v, str) and v.strip() for v in ref.values()):
+                raise ValueError('invalid first-frame state reference: ' + row['shot'] + ' ' + owner)
+        for state, text in row.get('frame_state_text', {}).items():
+            if (not {'revision_id', 'text'} <= set(text) or set(text) - {'revision_id', 'text', 'model_label'}
+                    or not all(isinstance(v, str) and v.strip() for v in text.values())):
+                raise ValueError('invalid first-frame state text: ' + row['shot'] + ' ' + state)
         for item in row.get('supplements', []):
             if item.get('reference_basis', 'state') not in ('state', 'identity_master'):
                 raise ValueError('unknown reviewed reference basis: ' + row['shot'])
@@ -45,6 +53,31 @@ def load_audit(shots=None):
             if any(v['state'] not in states for v in decision.get('supplements', [])):
                 raise ValueError('supplement is not an exact state of this shot: ' + row['object_id'])
     return by_id
+
+
+def frame_state_label(state, decision):
+    """An explicitly reviewed local name can exclude another scene's placement."""
+    text = decision.get('frame_state_text', {}).get(state['object_id'])
+    if text and text['revision_id'] != state['id']:
+        raise ValueError('first-frame state text needs re-review: ' + state['object_id'])
+    return text.get('model_label', state['payload']['title']) if text else state['payload']['title']
+
+
+def first_frame_states(states, available, decision):
+    """Use an explicit starting state when the source paragraph also has its result."""
+    selected = {}
+    for state in states:
+        selected.setdefault(state['payload']['entity']['object_id'], state)
+    for owner, ref in decision.get('first_frame_states', {}).items():
+        if owner not in selected:
+            raise ValueError('first-frame state has no subject in shot: ' + owner)
+        state = available.get(ref['state'])
+        if not state or state['id'] != ref['revision_id']:
+            raise ValueError('first-frame state needs re-review: ' + ref['state'])
+        if state['payload']['entity']['object_id'] != owner:
+            raise ValueError('first-frame state belongs to another subject: ' + ref['state'])
+        selected[owner] = state
+    return list(selected.values())
 
 
 def frame_plan(plan, decision):
@@ -76,9 +109,14 @@ def video_plan(plan, decision, supplement, media_type):
     descriptions = ['@图片1只提供起始构图与已可见内容。']
     descriptions += [f'@图片{i}：{item["use"]}。' for i, item in enumerate(decision.get('supplements', []), 2)]
     descriptions += ['各图是直接普通参考，后显内容按动作先后入画；不把参考图拼贴进首图，不把音色当视觉身份。']
-    result['prompt'] = '\n'.join([lines[0], '生成方式：普通参考生成；起点和逐镜身份仍须实际原件审阅，不承诺固定首帧。',
+    mode = ('生成方式：普通参考生成。' if decision.get('execution_reviewed') else
+            '生成方式：普通参考生成；起点和逐镜身份仍须实际原件审阅，不承诺固定首帧。')
+    result['prompt'] = '\n'.join([lines[0], mode,
                                  '参考输入职责：' + ''.join(descriptions), *lines[1:]])
     criteria = result['output']['review_criteria']
+    if decision.get('execution_reviewed'):
+        criteria = result['output']['review_criteria'] = [*criteria,
+            '起点和逐镜身份须按实际原件审阅；普通参考不承诺固定首帧像素']
     if CRITERION not in criteria:
         criteria.append(CRITERION)
     return result
