@@ -3193,9 +3193,9 @@
         {
           "shot": "av-e12-a01-s01",
           "label": "ASH224",
-          "reviewed_intent_sha256": "7901fa649d17e6588d4eadb1c6f1a836064d4da353325ea6153d840fa23f4f14",
+          "reviewed_intent_sha256": "bbf95a219d0aaebb17a7a988f30b8861c49a527138f3b1dc3e76d1ef20d86c44",
           "decision": "supplement",
-          "first_frame": "先见队列与睡孩，再靠近石阶上的巫祝与程。",
+          "first_frame": "先见已经排好的领粮队与怀中睡孩，另一父亲还没拉近女儿；巫祝和程留抬移后显，李家四人和未亮灯此时未入院。",
           "supplements": [
             {
               "state": "form-priest-base",
@@ -3204,15 +3204,20 @@
             {
               "state": "form-officer-cheng-base",
               "use": "展开文书时程差役的身份，与巫祝明确区分"
+            },
+            {
+              "state": "form-stop-order-all",
+              "reference_basis": "identity_master",
+              "use": "程走到阶下后展开的已写完且盖印的同一文书；纸由程持，不能在开场队列中无主悬浮"
             }
           ]
         },
         {
           "shot": "av-e12-a01-s02",
           "label": "ASH225",
-          "reviewed_intent_sha256": "ae4a70e98ae03ef1ba193cc3049e5eea9c03c3f880cec0788890827957b8e4a4",
+          "reviewed_intent_sha256": "0739b4c99f628bc919a22711f3673fd173b3929dcce8af597b61133e41a26be7",
           "decision": "supplement",
-          "first_frame": "先由文书确立停索人约束，两女孩随后带未亮灯入场。",
+          "first_frame": "巫祝手未指香炉，程在阶下已展开文书，两乡老仍在旁未趋近完整柜封；李家四人尚未进庙门，柜门未开。",
           "supplements": [
             {
               "state": "form-a-heng-later",
@@ -3225,31 +3230,74 @@
             {
               "state": "form-old-lantern-base",
               "use": "两人带入的旧灯保持未点亮"
+            },
+            {
+              "state": "form-li-dan-coat",
+              "use": "从庙门后来进入的李诞，持已系带套刀的工具捆"
+            },
+            {
+              "state": "form-li-xiao-base",
+              "use": "与家人后来进入、扛原绳捆的李绡"
+            },
+            {
+              "state": "form-heavy-blade-sheathed",
+              "use": "系在父亲工具捆上的厚刀入套形态，不露刃"
+            },
+            {
+              "state": "form-stage-tools-base",
+              "use": "父亲带入的原工具捆，不在首帧封柜前摆好"
+            },
+            {
+              "state": "form-hemp-rope-base",
+              "use": "姐姐后来扛入的同一陶伯绳捆，先前补旧布延续"
             }
-          ]
+          ],
+          "frame_state_text": {
+            "form-stop-order-all": {
+              "revision_id": "d3c3eea98abef5ef0b93fbda50533bc1b0fc4a63693bd7453b0ca5bbbe64ab9a",
+              "text": "程已持展开的同一已写完盖印文书；不重演县衙写字，不让文书先收起再展开，柜门仍封闭。"
+            }
+          }
         },
         {
           "shot": "av-e12-a01-s03",
           "label": "ASH226",
-          "reviewed_intent_sha256": "133d2b8bbaa64b64aee5a0112b9ef9906db3362953e9828fa84960d68786ee1e",
+          "reviewed_intent_sha256": "7872a50d58ef04997c66f5f101bbb011ad38a0b0b1fb6a74c6b4346f5ff7a971",
           "decision": "start_image",
-          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。"
+          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。",
+          "first_frame": "李寄提未燃灯、和阿蘅还在队侧前行，赵手未举指她；李寄尚未收脚，阿蘅衣襟内凭记不可见，没有提前亮纸。"
         },
         {
           "shot": "av-e12-a01-s04",
           "label": "ASH227",
-          "reviewed_intent_sha256": "a6e51610e2b4549570a87f85e1ac17e697a61bbef0e95b8aa60935a95e29b3aa",
-          "decision": "start_image",
-          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。"
+          "reviewed_intent_sha256": "fa91219caf77302156bc5d34f11866ec05e3ad45408e950df534e3765b9b36c6",
+          "decision": "supplement",
+          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。",
+          "first_frame": "阿蘅已在阶前站稳、嘴未开始数字陈述，手贴衣襟但凭记仍未取出；赵的肩在对面，李寄与灯留画外几步后。",
+          "supplements": [
+            {
+              "state": "form-evidence-receipt-base",
+              "reference_basis": "identity_master",
+              "use": "阿蘅说原纸已交官后才从衣襟取出并举给赵的小张收单凭记；首帧不外露，不变成借据原件"
+            }
+          ]
         },
         {
           "shot": "av-e12-a01-s05",
           "label": "ASH228",
-          "reviewed_intent_sha256": "877b8c4a0d9f266132c20cc4bebce6df15638a763b3c692cadde81e9d1cb447b",
+          "reviewed_intent_sha256": "509174adce2246f38045d2503a1c919ad161a9940b35d54c2a79e520d7cc8873",
           "decision": "start_image",
-          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。"
+          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。",
+          "first_frame": "阿蘅仍举凭记，赵尚未转看巫祝、双手未接，阿蘅没放低手也未收纸；几步外李寄静持未燃灯。",
+          "frame_state_text": {
+            "form-evidence-receipt-base": {
+              "revision_id": "4910b9c8fcaad50481f18cdc95b18294a5419d5ed5ea07db3f77072b88c81d48",
+              "text": "同一写好交还给阿蘅的小张收单凭记，保持纸型与既有笔迹，此刻还举在赵面前；没有转交、放低或收回。不是借据原件，不新造可读日期或条款。"
+            }
+          }
         }
-      ]
+      ],
+      "execution_reviewed": true
     },
     {
       "scene": "av-e12-a02",
@@ -3259,16 +3307,17 @@
         {
           "shot": "av-e12-a02-s01",
           "label": "ASH229",
-          "reviewed_intent_sha256": "b7d21be3c3a61024949e7f71c6529481d91b640f2ba26c7ed284e8f663349607",
+          "reviewed_intent_sha256": "8b6a82b45f58e595e219398a817a0f1a3887aafa4f4e945b8c5fb519619f2cf5",
           "decision": "start_image",
-          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。"
+          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。",
+          "first_frame": "妇人仍抱孩子，窄粮票低持未举高，邻近人也没举；不提前有米袋装满、三册或掌柜底账。"
         },
         {
           "shot": "av-e12-a02-s02",
           "label": "ASH230",
-          "reviewed_intent_sha256": "fa87158001cb5b0c73c32e001fc7e071d927cf803dd7793fabe04395adb84569",
+          "reviewed_intent_sha256": "31429f6562a539c82d3bbf4ad33978308ddaf658f82ac394c24333e7eccf2183",
           "decision": "supplement",
-          "first_frame": "铜扣响后才开柜，三册尚未取出。",
+          "first_frame": "已验的封条还没揭，铜扣未拨、柜门关闭、三册未露；程、同伴、赵和两乡老在柜箱旁，赵手还未伸。开箱仅沿空箱结构，不提前放入祭册。程的文书已收怀，不占手或露作另一册。",
           "supplements": [
             {
               "state": "form-sacrificial-registers-base",
@@ -3279,33 +3328,34 @@
         {
           "shot": "av-e12-a02-s03",
           "label": "ASH231",
-          "reviewed_intent_sha256": "17bf069633ec26e415ab1c26fc06369a4c935f53993b032b8325bf0c6de83c58",
+          "reviewed_intent_sha256": "d89229e4ce2e15f6cba4334ddc824109adc52680614a82d91a8331abed8e9cef",
           "decision": "supplement",
-          "first_frame": "周掌柜先在人后，不提前走到程身侧。",
+          "first_frame": "东门队后周抱合着的底账，夹条只露纸边，尚未走到程身边；李绡还没侧让路、绳在肩，赵刚被挡手还未完全退远。",
           "supplements": [
             {
               "state": "form-zhou-plain",
-              "use": "让路后走前的周掌柜无围裙身份"
+              "use": "周由队后走到程身侧时保持同一无围裙身份，不因景别改变而换人"
             },
             {
               "state": "form-shop-ledger-base",
-              "use": "举起的底账完整形制，不能混成三年祭册"
+              "use": "同一开始合拢、随后翻到夹条页转给众人的底账，不混成祭册或县衙原单"
             }
           ]
         },
         {
           "shot": "av-e12-a02-s04",
           "label": "ASH232",
-          "reviewed_intent_sha256": "e971e582faa96511f37c9e9cc72fd99548affa8d3b876ee2717e255ff50da358",
+          "reviewed_intent_sha256": "79938de7c364455ed5d86824ecf852060859829b7f45c454e82cda3513791eac",
           "decision": "start_image",
-          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。"
+          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。",
+          "first_frame": "周已朝众人打开夹条页，账仍在他手，程双手未接；妇人抱孩子持票未问、巫祝未答、赵在背景未转望。"
         },
         {
           "shot": "av-e12-a02-s05",
           "label": "ASH233",
-          "reviewed_intent_sha256": "885e285c8fe901d32a7fc5d682ffe775993f0e65f16291471a1b77b51f93e25a",
+          "reviewed_intent_sha256": "51b6b0778b3f0011be8685f202e1849fce17583d2c37a6c074a2bd5737fede53",
           "decision": "supplement",
-          "first_frame": "票号与领米动作先发生，陶伯随后靠册箱问年份。",
+          "first_frame": "妇人仍抱孩子低持窄票、未收票入仓，陶伯还在队外画外；不把陶伯提前放到箱边，也没有领好的满米袋。",
           "supplements": [
             {
               "state": "form-tao-away",
@@ -3314,17 +3364,67 @@
             {
               "state": "form-elders-two-base",
               "use": "在场指认的乡老身份，按调度各自留位"
+            },
+            {
+              "state": "form-evidence-chest-registers-open",
+              "use": "随后靠近的开箱，三册仅临放箱口待核，尚未归齐或贴封条"
+            },
+            {
+              "state": "form-sacrificial-registers-base",
+              "use": "已经取出临放箱口的三本原册，乡老指其中阿禾册封的年份位置，不从柜中再取"
+            },
+            {
+              "state": "form-officer-second-base",
+              "use": "在箱旁护着原册的程之同伴，与两位乡老和陶伯分清"
             }
           ]
         },
         {
           "shot": "av-e12-a02-s06",
           "label": "ASH234",
-          "reviewed_intent_sha256": "ac3e98a601bf92641b76b7030b6e0db770557a26a707118d62815d0fff710739",
-          "decision": "start_image",
-          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。"
+          "reviewed_intent_sha256": "85d14fad00ed45fb442166d8a2cc31ab3b93b744f72270776102f180febd3f66",
+          "decision": "supplement",
+          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。",
+          "first_frame": "三册临放开箱口尚未归齐，箱盖开、最后封纸未贴；程、同伴与阿蘅在箱边关系内，阿蘅未走回李寄。李寄、父亲与领米妇人留后显。周的底账还打开托在程手里，尚未合起交留守同伴。",
+          "first_frame_states": {
+            "entity-evidence-chest": {
+              "state": "form-evidence-chest-registers-open",
+              "revision_id": "85757b99e9d6343ca229ca8bee3e36c2429a577e91361aab51b1c60709773540"
+            }
+          },
+          "supplements": [
+            {
+              "state": "form-li-ji-healing",
+              "use": "封纸贴平后阿蘅走回的李寄，等待在几步外，不提前替阿蘅看箱"
+            },
+            {
+              "state": "form-old-lantern-base",
+              "use": "仍由李寄持的未点灯，不发光、不交阿蘅"
+            },
+            {
+              "state": "form-li-dan-coat",
+              "use": "最后带两女孩绕井的父亲，沿原穿着与离开方向"
+            },
+            {
+              "state": "form-heavy-blade-sheathed",
+              "use": "跟父亲离开的原刀套，仍系在工具捆里，不露刃"
+            },
+            {
+              "state": "form-stage-tools-base",
+              "use": "父亲从李家带入的原工具捆，离开时一起携带"
+            },
+            {
+              "state": "form-ticket-woman-base",
+              "use": "后来领米出仓侧身让路的同一妇人，抱袋口而非再举票"
+            },
+            {
+              "state": "form-ticket-child-base",
+              "use": "妇人抱着的同一孩子，不在出仓时消失或另抱一次"
+            }
+          ]
         }
-      ]
+      ],
+      "execution_reviewed": true
     },
     {
       "scene": "av-e12-a03",
@@ -3334,40 +3434,58 @@
         {
           "shot": "av-e12-a03-s01",
           "label": "ASH235",
-          "reviewed_intent_sha256": "bbc93cdba7693347d678e621e4339e2fb8bf210ced94cfd680d83850bd2fedad",
+          "reviewed_intent_sha256": "26884c7c3725d633cefd6e8945cd558cc59d57b579cb4810459e413cf2759c73",
           "decision": "supplement",
-          "first_frame": "先开锁入院，护垫尚未加在石角。",
+          "first_frame": "只见院门外等候、门锁未开；程钥匙尚未插，孙六已接来的绳布在手、父亲刀套随工具捆带着，四乡亲袖口已扎好。门内护垫不抢先出现，女孩与灯在同行队后画外。",
           "supplements": [
             {
               "state": "form-temple-back-battle",
-              "use": "门后显露的祭日院子，投食门道留空"
+              "use": "提供开门后固定院墙、北闸南门和西石结构；石角旧布只在孙六加垫后出现，不提前放刀灯或提闸"
+            },
+            {
+              "state": "form-crossbeam-installed",
+              "use": "父亲后扶、孙六后补结的原长杠，尚未由七人承重"
             },
             {
               "state": "form-hemp-rope-padded",
-              "use": "补结加垫并拉紧后才成立的绳布接触结构"
+              "use": "补结加垫并试紧后才成立的绳布接触结构"
             }
-          ]
+          ],
+          "first_frame_states": {
+            "entity-hemp-rope": {
+              "state": "form-hemp-rope-base",
+              "revision_id": "575297eaaf1a7580ec72a8af2b9484152cc3ccb6283abb43522e337e0a87ee27"
+            }
+          }
         },
         {
           "shot": "av-e12-a03-s02",
           "label": "ASH236",
-          "reviewed_intent_sha256": "a154f7a01c4a4b213e5d767cf7a0deb660230290c68c60ba27001163001c2f10",
+          "reviewed_intent_sha256": "8fd7710f9867ae5ee9bcd1275498b7306cd39973b445bfd36b27e2ffbd1858ee",
           "decision": "start_image",
-          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。"
+          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。",
+          "first_frame": "两乡老刚跟进院门内，程还未领他们退出或指门，门外围观者尚未离开；七杠手不列成承重阵形。"
         },
         {
           "shot": "av-e12-a03-s03",
           "label": "ASH237",
-          "reviewed_intent_sha256": "c9b16b5c402b60d56ca1513c1c0992887d044460da463bfa83ef3b22490f12f8",
+          "reviewed_intent_sha256": "563597a5c4b909589aac4a138e05536d2ec0ec15de2636902e66bd0adce37d92",
           "decision": "start_image",
-          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。"
+          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。",
+          "first_frame": "父亲在北闸旁未验，木栓插牢、南门闭闩；李寄左臂托盆右手提灯在南门外等，李绡未指，盆尚未入道。",
+          "first_frame_states": {
+            "entity-feeding-door": {
+              "state": "form-feeding-door-base",
+              "revision_id": "60096bb28f86fa4dd8059900d228af1764f192099b6a9f136286b25f646379a7"
+            }
+          }
         },
         {
           "shot": "av-e12-a03-s04",
           "label": "ASH238",
-          "reviewed_intent_sha256": "9c0429145e0e26455d4998228aaf3236f7807bcd229bd23d8b7140e439db1ae0",
+          "reviewed_intent_sha256": "9181931ae4dfd8bea2948a233918fb6c65eefc87c9cf4234cb7e420502ca6d63",
           "decision": "supplement",
-          "first_frame": "从西石脱刀开始，灯尚未放墙根，两女孩随移镜才到门边。",
+          "first_frame": "西石面空，父亲在石旁、刀还在原工具捆的套内；不提前画裸刀或墙根灯。两女孩随后短移才成为主体。",
           "supplements": [
             {
               "state": "form-a-heng-later",
@@ -3383,18 +3501,60 @@
             },
             {
               "state": "form-temple-back-battle",
-              "use": "西石至门边的连续路线，灯不占通道"
+              "use": "仅沿西石到院门内墙根的固定路线，闸仍落栓、盖条未揭，未亮灯按交接后才置墙根"
+            },
+            {
+              "state": "form-heavy-blade-base",
+              "use": "从原刀套中取出后露出的完整厚背刀，保持同一柄背与刃的结构，不提前裸露或染血"
             }
-          ]
+          ],
+          "first_frame_states": {
+            "entity-heavy-blade": {
+              "state": "form-heavy-blade-sheathed",
+              "revision_id": "e2a9e26465190f199ca41f0c1b9db26e5a4b4611a19b74023546992a8295c670"
+            }
+          }
         },
         {
           "shot": "av-e12-a03-s05",
           "label": "ASH239",
-          "reviewed_intent_sha256": "965fb672622e408b3107d0681d9318084c44943f61ac9aad9bc3fb81287ce606",
+          "reviewed_intent_sha256": "a7bbf02615ccac11d1e086cf62511c07f492fe2ae66409640344b2178057535b",
           "decision": "start_image",
-          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。"
+          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。",
+          "first_frame": "西四东三尚未全员握稳，父亲在西石旁，北闸落底且木栓未抽、刀缝木条未揭；不提前画负重疲竭、压杠姿态或蛇，女孩与灯在机位后方画外。",
+          "first_frame_states": {
+            "entity-sun-liu": {
+              "state": "form-sun-liu-base",
+              "revision_id": "9f68a26cf8c92dfdd8cca656837247d29457fc59c8f075c6616fda0b688a0f00"
+            },
+            "entity-li-xiao": {
+              "state": "form-li-xiao-base",
+              "revision_id": "d6d6cb4c16f6445d483fc8431b96a00aead9681d984fabe103fb2ec425a5724f"
+            },
+            "entity-officer-cheng": {
+              "state": "form-officer-cheng-base",
+              "revision_id": "e416a84e92ffc45fd2bc6edb41ef27bcc94037b668c40143f8e15a2e5372ae9b"
+            },
+            "entity-helpers-four": {
+              "state": "form-helpers-four-base",
+              "revision_id": "ef573176c073c7ba710086a11702cfe4b96ba964600fb013988543c3d7bab29e"
+            },
+            "entity-crossbeam": {
+              "state": "form-crossbeam-installed",
+              "revision_id": "4a75bb0e4064bf10105c1d9c5fd8cbaeeeb8156b33a2d9295958b4de83680129"
+            },
+            "entity-cave-gate": {
+              "state": "form-cave-gate-base",
+              "revision_id": "37079dc0f3a37058d11751f6a93fdc82231875d3bcea589ba282e47e16e13bfe"
+            },
+            "entity-gate-pin": {
+              "state": "form-gate-pin-base",
+              "revision_id": "8168c37bcbac308850ffb851bd0cfc508bdbb976ad97efcb94b0fd716cf5bcef"
+            }
+          }
         }
-      ]
+      ],
+      "execution_reviewed": true
     },
     {
       "scene": "av-e12-a04",
@@ -3404,18 +3564,21 @@
         {
           "shot": "av-e12-a04-s01",
           "label": "ASH240",
-          "reviewed_intent_sha256": "fca85aba3435965b6409efbe8b9bee290f7037086f50bfe89ba164b15ebb4089",
+          "reviewed_intent_sha256": "9f148bdd3ec398b50e7bbc5158014abf826ea508f24c75b2a1c88d2d1639554f",
           "decision": "start_image",
-          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。"
+          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。",
+          "first_frame": "七人已提闸并保持原握持，缝已揭仍暗；孙六还未换气，李寄尚未前探、阿蘅手未碰，父亲西侧看缝未举掌，刀平放西石，灯在门内墙根未亮。"
         },
         {
           "shot": "av-e12-a04-s02",
           "label": "ASH241",
-          "reviewed_intent_sha256": "e670993db7d2701e4c8e46a0d035a892217af7b246f50e27bacd9cc2361a74ad",
+          "reviewed_intent_sha256": "90af8184deed887d285be0f41b1316c8fc9843ac0a6c37047db66c3a72ab8b00",
           "decision": "start_image",
-          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。"
+          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。",
+          "first_frame": "只画西侧父亲低头看暗缝，两只手都未举，刀平放西石；七位杠手与女孩在画外保持已建立位置，不添完整蛇形或提前举掌。"
         }
-      ]
+      ],
+      "execution_reviewed": true
     },
     {
       "scene": "av-e13-a01",
