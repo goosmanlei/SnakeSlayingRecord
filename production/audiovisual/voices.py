@@ -58,18 +58,3 @@ LABELS = {'老汉':'woodcutter','阿蘅':'a-heng','李寄':'li-ji','周掌柜':'
     '程差役':'officer-cheng','瘦高庙工':'temple-tall','码头工':'helpers-four-dock-a','差役':'officer-second',
     '陶伯':'tao','乡老':'elders-two-speaker','汉子':'temple-crowd-refuser','小满母亲':'xiaoman-mother',
     '新管事':'new-steward','歌娘':'singer-teacher'}
-
-
-# Narrated speech events with exact source positions; unspecified words remain
-# unspecified in the locked screenplay, never borrowed from another speaker.
-EMBEDDED = {
-    'rice-listeners-speaker': ('s001', 9),
-    'street-passers-greeter': ('s002', 12),
-    'troupe-workers-caller': ('s003', 13),
-    'temple-crowd-whisperer': ('s009', 24),
-    'temple-workers-year-witness': ('s028', 40),
-    'delivery-worker': ('s036', 12), 'order-writer': ('s036', 12),
-    'temple-crowd-urging': ('s030', 29),
-    'temple-crowd-enquirer': ('s033', 25),
-    'offscreen-caller': ('s040', 18),
-}
