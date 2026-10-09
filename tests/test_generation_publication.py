@@ -14,6 +14,29 @@ from scripts.generation_review import initialize, export_review
 
 
 class GenerationPublicationTest(unittest.TestCase):
+    def test_exact_method_execution_publishes_after_binding_update(self):
+        from review_desk import methods
+        from scripts.managed_methods import install
+        seed = json.loads((Path(__file__).resolve().parents[1] / 'content/managed-methods.json').read_text())
+        install(self.fixture.store, seed)
+        formal = Store(self.formal)
+        self.addCleanup(formal.close)
+        methods.restore_registry(formal, methods.export_registry(self.fixture.store))
+        baseline = Path(self.temp.name) / 'method-baseline.sqlite3'
+        publication.backup(self.fixture.store.db_path, baseline)
+        request = {'work_type': 'novel-writing', 'run_id': 'writer', 'step_id': 'one', 'target': 'entity-boat-song',
+                   'inputs': {'context': {'source': 'exact original', 'spec': 'reflect'}}}
+        execution = methods.prepare(self.fixture.store, request)
+        for stage in ('draft', 'review', 'result'):
+            methods.artifact(self.fixture.store, {**request, 'execution': methods.reference(execution), 'stage': stage, 'output': stage})
+        delta = publication.build_plan(baseline, self.fixture.store.db_path)
+        binding = methods.read(formal, 'method.binding.novel-writing')
+        methods.save(formal, {'category': 'binding', 'name': 'novel-writing', 'expected_version': binding['version'], 'payload': binding['payload']})
+        publication.apply_plan(formal.db, delta)
+        self.assertEqual(methods.prepare(formal, request), execution)
+        self.assertEqual(methods.read(formal, binding['object_id'])['version'], 2)
+        self.assertTrue(publication.apply_plan(formal.db, delta)['already_published'])
+
     def test_retired_version_baseline_cannot_replay_even_with_unchanged_target_rows(self):
         db=self.db()
         with db:db.execute("INSERT INTO consolidation_runs VALUES ('new-baseline','checksum','{}')")
