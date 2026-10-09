@@ -32,6 +32,9 @@ def load_audit(shots=None):
     if len(rows) != len(by_id):
         raise ValueError('duplicate reviewed shot')
     for row in rows:
+        for owner, ref in row.get('first_frame_states', {}).items():
+            if set(ref) != {'state', 'revision_id'} or not all(isinstance(v, str) and v.strip() for v in ref.values()):
+                raise ValueError('invalid first-frame state reference: ' + row['shot'] + ' ' + owner)
         for state, text in row.get('frame_state_text', {}).items():
             if set(text) != {'revision_id', 'text'} or not all(isinstance(v, str) and v.strip() for v in text.values()):
                 raise ValueError('invalid first-frame state text: ' + row['shot'] + ' ' + state)
@@ -49,6 +52,23 @@ def load_audit(shots=None):
             if any(v['state'] not in states for v in decision.get('supplements', [])):
                 raise ValueError('supplement is not an exact state of this shot: ' + row['object_id'])
     return by_id
+
+
+def first_frame_states(states, available, decision):
+    """Use an explicit starting state when the source paragraph also has its result."""
+    selected = {}
+    for state in states:
+        selected.setdefault(state['payload']['entity']['object_id'], state)
+    for owner, ref in decision.get('first_frame_states', {}).items():
+        if owner not in selected:
+            raise ValueError('first-frame state has no subject in shot: ' + owner)
+        state = available.get(ref['state'])
+        if not state or state['id'] != ref['revision_id']:
+            raise ValueError('first-frame state needs re-review: ' + ref['state'])
+        if state['payload']['entity']['object_id'] != owner:
+            raise ValueError('first-frame state belongs to another subject: ' + ref['state'])
+        selected[owner] = state
+    return list(selected.values())
 
 
 def frame_plan(plan, decision):
