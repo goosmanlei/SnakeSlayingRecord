@@ -2651,9 +2651,9 @@
         {
           "shot": "av-e10-a01-s01",
           "label": "ASH186",
-          "reviewed_intent_sha256": "4b7178aac254aaf898b42e5a66ed7a59a039f45328638349bbb70050022a0101",
+          "reviewed_intent_sha256": "895347169c4bb616086c5fdf665edb7544401a8de78730931e13263ac5477788",
           "decision": "supplement",
-          "first_frame": "四乡亲先到门，靠近交木时再看清脸，不多造第五人。",
+          "first_frame": "院门刚打开，四乡亲与孙六站定门外，同一码头工头尚抬、长木仍在肩上，父亲近门内手还未接；不增第五乡亲、不先把木绑在闸上。",
           "supplements": [
             {
               "state": "form-helpers-four-base",
@@ -2664,18 +2664,21 @@
         {
           "shot": "av-e10-a01-s02",
           "label": "ASH187",
-          "reviewed_intent_sha256": "281472277ee4b4cb23432c7bf927a5152c5c44d4e179cb0f89ff752a73bf52b0",
+          "reviewed_intent_sha256": "3651869ed87611ae2e61ecac16ee6754b6d17287696ac91d265ec2920a3cc11b",
           "decision": "start_image",
-          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。"
+          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。",
+          "first_frame": "孙六手中图仍合着未铺，工人手持扁担尚未靠墙、未摸闸；只取孙六和该码头工，另三人及父亲长木在裁切外，北闸仍插栓。"
         },
         {
           "shot": "av-e10-a01-s03",
           "label": "ASH188",
-          "reviewed_intent_sha256": "8ffeac5ecba5cbdf32cf58a9b3687640d12c53029864da79fced1cdbdc8ad8d4",
+          "reviewed_intent_sha256": "26d0355b022f65e529a1f83fea2c150ef5e444833449ab86d75eda3b47758bdc",
           "decision": "start_image",
-          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。"
+          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。",
+          "first_frame": "程笔未落、三名乡亲还未围近，长木仍在门外暂稳，李寄旁工具捆尚挡通路；只见同一四人，不提前画搬入完成或清空通路。"
         }
-      ]
+      ],
+      "execution_reviewed": true
     },
     {
       "scene": "av-e10-a02",
@@ -2685,16 +2688,24 @@
         {
           "shot": "av-e10-a02-s01",
           "label": "ASH189",
-          "reviewed_intent_sha256": "30c768836400e18d0802bb06ff7eaef6b39a63d0586c6b480bb1b59894e435dc",
-          "decision": "start_image",
-          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。"
+          "reviewed_intent_sha256": "909d33da19d084075745887061fc629c135149ed3b2ef50097db5809bf43a18d",
+          "decision": "supplement",
+          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。",
+          "first_frame": "北闸已落栓但程还没验，南门闭闩、石盖无刀缝，父亲未开门，石匠与李绡在侧等；不见门内残饵或盆，不先移盖。",
+          "supplements": [
+            {
+              "state": "form-bait-basin-empty",
+              "use": "南门打开清残饵后才出现的同一饵盆，姐姐放回南端时已经空；不把食物提前补回",
+              "reference_basis": "identity_master"
+            }
+          ]
         },
         {
           "shot": "av-e10-a02-s02",
           "label": "ASH190",
-          "reviewed_intent_sha256": "c76b716e8546eef13637477710b66c0c6af771a86756adb0f44dad5f914de323",
+          "reviewed_intent_sha256": "064b9e2112c4b6842c49b0e66b85b8245e7e85cb9481bd22cba5de12e143b2df",
           "decision": "supplement",
-          "first_frame": "原盖石未开缝，量刀后才凿接边。",
+          "first_frame": "外盖已经起开但接边尚未凿，父亲未站到西位，程仍持厚背刀，石匠未量、女孩簸箕未接屑；空盆在南端、南门开、北栓牢。",
           "supplements": [
             {
               "state": "form-temple-back-original",
@@ -2704,23 +2715,32 @@
               "state": "form-feeding-channel-cut",
               "use": "凿完归位后的窄刀缝完整结构，凿前不提前出现"
             }
-          ]
+          ],
+          "first_frame_states": {
+            "entity-feeding-channel": {
+              "state": "form-feeding-channel-base",
+              "revision_id": "86492253f4cf8be7bd424824876a8474c9d19ecd649d39c061c79f9d3991c2e8"
+            }
+          }
         },
         {
           "shot": "av-e10-a02-s03",
           "label": "ASH191",
-          "reviewed_intent_sha256": "c5541d14ef0c677e9f492fe93e968756c70ef12abb3e37829c9f495ce0a611a7",
+          "reviewed_intent_sha256": "856b907fa5b0dc7ed20c7a3413d1cfd66e55f61aa5a4e640cd9eb7ea2f3bf3af",
           "decision": "start_image",
-          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。"
+          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。",
+          "first_frame": "父亲西侧稳持刀在新窄缝上方未空试，石匠未看缝点头，孙六未动盆；空盆仍在南端，南门开，缝下没有湿草。"
         },
         {
           "shot": "av-e10-a02-s04",
           "label": "ASH192",
-          "reviewed_intent_sha256": "3e29ea5a2ef41fc1858d61f2356b9116ea584ba698d36144444f41603ad67005",
+          "reviewed_intent_sha256": "f2ee1be4e380aa7c491691e280e6bc1800c50eaf1f20b373eafaf42fb593ab8e",
           "decision": "start_image",
-          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。"
+          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。",
+          "first_frame": "父亲仍握斩下停在缝内的刀，西侧平石空，南投食门闭、断草还在道内；李寄掌伤旧布未重新裹，孙六在门侧还未开。"
         }
-      ]
+      ],
+      "execution_reviewed": true
     },
     {
       "scene": "av-e10-a03",
@@ -2730,45 +2750,80 @@
         {
           "shot": "av-e10-a03-s01",
           "label": "ASH193",
-          "reviewed_intent_sha256": "f33909ade226fdba9145363037a13bb42e8979cd5cac1be5a1889591019ff000",
+          "reviewed_intent_sha256": "148aab209f54c54e86eb7b7af5c6b28463d9977d2b614e931c2d207e32755c0a",
           "decision": "start_image",
-          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。"
+          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。",
+          "first_frame": "女儿掌已重包、双手空着，父亲近旁尚未回身，厚刀平放西石；南门承接取草后开着，北栓牢，不先画父亲已在验栓。",
+          "first_frame_states": {
+            "entity-feeding-door": {
+              "state": "form-feeding-door-open",
+              "revision_id": "b31343fcd48d49e5ffc6f183b6b74f0becfb8e9e9b6c52bc0a25b1ca5aa8d20a"
+            }
+          }
         },
         {
           "shot": "av-e10-a03-s02",
           "label": "ASH194",
-          "reviewed_intent_sha256": "fe8125fd20f8d8a5db6fdbd996b38b4e814fade4a04a2eca99f0f72c22b50564",
+          "reviewed_intent_sha256": "8f2ff39fc4761939600abeddab7acfcd32d3a7c64d7f784995a7fa4dbdb937e9",
           "decision": "start_image",
-          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。"
+          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。",
+          "first_frame": "父亲仍在北栓旁，李寄西侧手空，刀平放西石还没拿；南门开、缝下空，女儿脚还未向外调整。",
+          "first_frame_states": {
+            "entity-feeding-door": {
+              "state": "form-feeding-door-open",
+              "revision_id": "b31343fcd48d49e5ffc6f183b6b74f0becfb8e9e9b6c52bc0a25b1ca5aa8d20a"
+            }
+          }
         },
         {
           "shot": "av-e10-a03-s03",
           "label": "ASH195",
-          "reviewed_intent_sha256": "58619307e1717c61ac4635490f44d2019623e9edfe738636b51bb424508650e7",
+          "reviewed_intent_sha256": "567985e53d812f7d2101611720bcdfd8de4a00840abbd866ce1768c226ec0e95",
           "decision": "start_image",
-          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。"
+          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。",
+          "first_frame": "李寄双手稳持刀于缝上方尚未斩，父亲手在旁未扶；脚位不回移、南门已关，未敲石、未缩或停半空。"
         },
         {
           "shot": "av-e10-a03-s04",
           "label": "ASH196",
-          "reviewed_intent_sha256": "078424769a09be290ca658486ecb811aadaaab522b15be925d02c1b76dc44c5e",
+          "reviewed_intent_sha256": "f2aa23b032607ff640ffb611655ae001b3eca466d0b4c3ebc7092f77463aac80",
           "decision": "start_image",
-          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。"
+          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。",
+          "first_frame": "刀仍停半空、父亲手扶背，李寄尚未再探缝；南门仍闭、草未断，不提前笑或见断草。"
         },
         {
           "shot": "av-e10-a03-s05",
           "label": "ASH197",
-          "reviewed_intent_sha256": "3b406ee46f140f12ee98b25b12cc75ed412022859c1495f57ec1cc21406a7793",
+          "reviewed_intent_sha256": "7ff156373c4f8865874dc89cbdd9535bc106226a021873fd5577832999ca49f9",
           "decision": "supplement",
-          "first_frame": "父女交刀在前，父亲走回杠位在后。",
+          "first_frame": "李寄仍握柄刚微滑的刀，父亲手还托断草未接刀；两人西侧，南门取草后开，长木及搬木者留在后续移镜显露。",
           "supplements": [
             {
               "state": "form-temple-back-cut",
               "use": "让出画面后显露的杠位、西石、刀缝关系；此时长杠仍待绑"
+            },
+            {
+              "state": "form-crossbeam-base",
+              "use": "移镜后才见已移到柱旁、尚未绑的同一长木"
+            },
+            {
+              "state": "form-helpers-four-base",
+              "use": "移镜后在柱旁扶木的原四乡亲，不提前站到父女近景"
+            },
+            {
+              "state": "form-sun-liu-base",
+              "use": "移镜后与四乡亲在杠旁的孙六，未提前参与父女交刀"
             }
-          ]
+          ],
+          "first_frame_states": {
+            "entity-feeding-door": {
+              "state": "form-feeding-door-open",
+              "revision_id": "b31343fcd48d49e5ffc6f183b6b74f0becfb8e9e9b6c52bc0a25b1ca5aa8d20a"
+            }
+          }
         }
-      ]
+      ],
+      "execution_reviewed": true
     },
     {
       "scene": "av-e10-a04",
@@ -2778,39 +2833,63 @@
         {
           "shot": "av-e10-a04-s01",
           "label": "ASH198",
-          "reviewed_intent_sha256": "61ccc8dbbd54c0c92473a5d0d150bc3532ea14a4e5225e95df83b238edea81e9",
+          "reviewed_intent_sha256": "96e8c203cd46c3ded8005345ee06e648a89c2fafedb0a4a2d8179488a1e24a62",
           "decision": "start_image",
-          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。"
+          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。",
+          "first_frame": "长木已在柱旁、父亲扶中段，孙六和同一四乡亲尚未把木横到闸外；李绡手未量墙，碎石还在，木未绑。",
+          "first_frame_states": {
+            "entity-crossbeam": {
+              "state": "form-crossbeam-base",
+              "revision_id": "2481dacd26c74b1337eecf29413710bbf4a694a298967b6700f3639de0d05cad"
+            }
+          }
         },
         {
           "shot": "av-e10-a04-s02",
           "label": "ASH199",
-          "reviewed_intent_sha256": "5b36470edef6b570a98a0d9f4e8c587248d57126592b633378408516fe453b7a",
+          "reviewed_intent_sha256": "cb97457b4b6165de2332c1e2f0b3f1335709e8350880cff3f661ff6132ae5ff5",
           "decision": "start_image",
-          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。"
+          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。",
+          "first_frame": "父亲正扶未绑的杠，孙六手里绳尚未绕上，程在旁未俯身；两端由画外同来的乡亲支稳。这里只画绑接处和三人相应手身，不换成李绡绑绳。",
+          "first_frame_states": {
+            "entity-crossbeam": {
+              "state": "form-crossbeam-base",
+              "revision_id": "2481dacd26c74b1337eecf29413710bbf4a694a298967b6700f3639de0d05cad"
+            }
+          }
         },
         {
           "shot": "av-e10-a04-s03",
           "label": "ASH200",
-          "reviewed_intent_sha256": "4ce2e15de69e7dccd164189b702a39ce6df732362694e6901254c7b9b63afe1b",
+          "reviewed_intent_sha256": "256e2c673b26c03d6c96c0ffe4939e4e5a6e0b7f8b90c49a4abeaa5a63397fd7",
           "decision": "start_image",
-          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。"
+          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。",
+          "first_frame": "横杠已绑验，四乡亲未收工具，南投食门仍开待扫残草，窄缝未盖、姐姐手边木条未落；院门开、程手未拿锁，厚刀已在父亲刀套中。",
+          "first_frame_states": {
+            "entity-feeding-door": {
+              "state": "form-feeding-door-open",
+              "revision_id": "b31343fcd48d49e5ffc6f183b6b74f0becfb8e9e9b6c52bc0a25b1ca5aa8d20a"
+            }
+          }
         },
         {
           "shot": "av-e10-a04-s04",
           "label": "ASH201",
-          "reviewed_intent_sha256": "7672f540cd59bb66c93bf6316a38ff5bb921f074351d669a953350a7c1a5647e",
+          "reviewed_intent_sha256": "fc198b4679e4a699e664c10a6cb47e5d24bbf5301a0684b94bb989f810d20a36",
           "decision": "start_image",
-          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。"
+          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。",
+          "first_frame": "前殿闭柜未封，另一差役手未指，巫祝手未挡，程站门侧在场听；不见柜内原册、后院杠或仓箱。"
         },
         {
           "shot": "av-e10-a04-s05",
           "label": "ASH202",
-          "reviewed_intent_sha256": "f186b59df8c3ea9757d852c54ee9c1b49642902df453d82606e02c6504e35741",
+          "reviewed_intent_sha256": "2c1207e0290e152b69cdaa5318f0f6bfdc0a7a6094ef01ce6a2e6da63d416872",
           "decision": "start_image",
-          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。"
+          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。",
+          "first_frame": "巫祝手仍挡着闭柜，程尚未取封条也未走近，另一差役仍在门侧；没有柜上已贴的湿封纸。"
         }
-      ]
+      ],
+      "execution_reviewed": true
     },
     {
       "scene": "av-e10-a05",
@@ -2820,31 +2899,52 @@
         {
           "shot": "av-e10-a05-s01",
           "label": "ASH203",
-          "reviewed_intent_sha256": "50cc39609fa225dedd3d85f2e92eba0cc2bcb444998af353d1947dc1dfd30c60",
+          "reviewed_intent_sha256": "88afdfc053716e011d40155a5099c0fc4b0531e36132cfe5f87c789dfc598975",
           "decision": "start_image",
-          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。"
+          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。",
+          "first_frame": "陶伯门侧仍持麻绳未搁，父亲刚到殿外廊道出口还未走近，厚刀完整入套随身；旧布不在绳上、孙六不在首图，后院已经上锁。",
+          "first_frame_states": {
+            "entity-heavy-blade": {
+              "state": "form-heavy-blade-sheathed",
+              "revision_id": "e2a9e26465190f199ca41f0c1b9db26e5a4b4611a19b74023546992a8295c670"
+            }
+          }
         },
         {
           "shot": "av-e10-a05-s02",
           "label": "ASH204",
-          "reviewed_intent_sha256": "0ea631ce92c27e0905aa0ebd6b3b901e80f6c7f84be568da0f0fe5f8c3588802",
+          "reviewed_intent_sha256": "2afc8a4fe514b0f213d422c121a5a88b426f36a2a552c70cdd17924eadfc63e3",
           "decision": "start_image",
-          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。"
+          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。",
+          "first_frame": "陶伯还未抬眼望门，父亲已停阶下保持距离，绳捆在地上；门锁已扣，不重演锁门，无旧布或孙六。",
+          "first_frame_states": {
+            "entity-heavy-blade": {
+              "state": "form-heavy-blade-sheathed",
+              "revision_id": "e2a9e26465190f199ca41f0c1b9db26e5a4b4611a19b74023546992a8295c670"
+            }
+          }
         },
         {
           "shot": "av-e10-a05-s03",
           "label": "ASH205",
-          "reviewed_intent_sha256": "a14b8dc13093ca72e30039e4ee832494566f6ed74a61239e8040604057fcfdaf",
+          "reviewed_intent_sha256": "6b8e67bf3c13ee202417a06cfbf02d46913eb84593b6973ea4364db9fd871184",
           "decision": "supplement",
-          "first_frame": "父亲先抱绳，孙六后来搭上旧布。",
+          "first_frame": "陶伯尚未转身，父亲阶下手空，绳仍在门外地上；孙六和旧布留后续入场，刀在父亲身侧套中未抽。",
           "supplements": [
             {
               "state": "form-sun-liu-base",
               "use": "靠入搭布的孙六身份；布只是搭上而未绑机关"
             }
-          ]
+          ],
+          "first_frame_states": {
+            "entity-heavy-blade": {
+              "state": "form-heavy-blade-sheathed",
+              "revision_id": "e2a9e26465190f199ca41f0c1b9db26e5a4b4611a19b74023546992a8295c670"
+            }
+          }
         }
-      ]
+      ],
+      "execution_reviewed": true
     },
     {
       "scene": "av-e11-a01",
