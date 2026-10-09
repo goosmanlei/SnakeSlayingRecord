@@ -16,13 +16,14 @@ from audiovisual_design import (ROOT, read_score, coverage, bind_sources, bind_s
                                 score_records, canonical)
 from audiovisual_events import ReviewedEvents
 from audiovisual_materials import Builder, casting
+from state_preparation import state_records, WithStates
 from generation_workspace import generation_root, isolated_instance, contained
 
 
 def authored_hashes(root):
-    paths = [root / 'imports/screenplay-04.json', *sorted((root / 'production/audiovisual').glob('*')),
+    paths = [root / 'imports/screenplay-04.json', *sorted((root / 'production/audiovisual').rglob('*')),
              *[root / 'scripts' / name for name in ('audiovisual_design.py', 'audiovisual_events.py',
-                                                   'audiovisual_materials.py', 'revise_audiovisual.py')]]
+                                                   'audiovisual_materials.py', 'video_input_design.py', 'state_preparation.py', 'exact_text_handoffs.py', 'revise_audiovisual.py')]]
     return {p.relative_to(root).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest() for p in paths if p.is_file()}
 
 
@@ -55,16 +56,20 @@ def reconcile(store, p, records):
 
 
 def prepare(store, p):
+    states = state_records(store, p)
+    _, state_ids = reconcile(store, p, states)
+    current = WithStates(p, states, state_ids)
     score = read_score()
     screenplay = json.loads((ROOT / 'imports/screenplay-04.json').read_text())
     report = coverage(score, screenplay)
     reviewed = ReviewedEvents(ROOT, score, casting())
     lock, episodes = bind_sources(store, screenplay, p)
-    bindings, issues = bind_states(store, score, episodes, p)
+    bindings, issues = bind_states(store, score, episodes, current)
     if issues:
         raise ValueError('state binding needs review: ' + json.dumps(issues, ensure_ascii=False))
-    records = score_records(score, lock, episodes, bindings, reviewed)
-    materials = Builder(store, p, records, reviewed).build()
+    av = score_records(score, lock, episodes, bindings, reviewed)
+    materials = Builder(store, current, av, reviewed).build()
+    records = states + av
     records.extend(materials['records'])
     batch, resolved = reconcile(store, p, records)
     changed = batch['records']
