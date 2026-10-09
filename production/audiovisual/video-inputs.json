@@ -4451,16 +4451,17 @@
         {
           "shot": "av-e16-a01-s01",
           "label": "ASH304",
-          "reviewed_intent_sha256": "096f7d8ea07b07758f441b6f1dceeab31502adc047556ce3f21a9acd80a7f58c",
+          "reviewed_intent_sha256": "e4848f1e4084e7a4df8a85ba95a6f23a16845de298d0dd76a8ef5cfd08acd856",
           "decision": "start_image",
-          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。"
+          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。",
+          "first_frame": "新告示已经貼墙、纸角仍翘、刷头尚未压，不能回退空墙或提前贴好旁边两抄件；人群将聚，书吏未读。"
         },
         {
           "shot": "av-e16-a01-s02",
           "label": "ASH305",
-          "reviewed_intent_sha256": "b52a52c3976db5041da833bc50a7e511f2ab35ce454d5ac273e695685836e561",
+          "reviewed_intent_sha256": "1506289c42efdfa538f11bef5af3569887eb73dcf0f6f6c1eac43acffa6dae81",
           "decision": "supplement",
-          "first_frame": "宣读在前，两人随后被押下阶，不提前离开现场。",
+          "first_frame": "书吏在墙旁待读第一条，左阶顶通路尚无押解人；巫祝赵与差役随后入深景并下山，只作后显参考。",
           "supplements": [
             {
               "state": "form-priest-custody",
@@ -4469,29 +4470,35 @@
             {
               "state": "form-zhao-custody",
               "use": "押解赵执事身份和无钥匙状态"
+            },
+            {
+              "state": "form-officer-second-base",
+              "use": "随后在石阶深景带巫祝和赵下山的同一差役，宣读完才进入下阶路线，不在书吏身旁当听众"
             }
           ]
         },
         {
           "shot": "av-e16-a01-s03",
           "label": "ASH306",
-          "reviewed_intent_sha256": "c81290aa7b9fd5828093a34ec8920a0ce217cf64a01efaa06994f12975f2e7a6",
+          "reviewed_intent_sha256": "99ae4b30ff0c9532702ef245621e72b0864c85ff7d912e05d4ad9bc040235fda",
           "decision": "start_image",
-          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。"
+          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。",
+          "first_frame": "上一条读完但本条未读，父亲在女孩后方尚未抬头；程手中两抄件都未贴，墙旁两纸位置仍空。"
         },
         {
           "shot": "av-e16-a01-s04",
           "label": "ASH307",
-          "reviewed_intent_sha256": "0866f275230e72ce86925685c88e7ca5b37d9e40ebd8edf403e48c7ce4d663b9",
+          "reviewed_intent_sha256": "c05187fda9ea9684bbb48e7bba3aafbc4da3011a99f78c33a824ddbc10fc03f7",
           "decision": "start_image",
-          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。"
+          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。",
+          "first_frame": "两抄件已贴合法保持，妇人已抱孩在老人旁，皱票仍手中未展；读与复述尚未发生，陶伯和女孩后镜再靠墙。"
         },
         {
           "shot": "av-e16-a01-s05",
           "label": "ASH308",
-          "reviewed_intent_sha256": "4740625bcec79daf32c074c439f63cd6773568867b3140cfb79855d6f67d0507",
+          "reviewed_intent_sha256": "166fd328facfbee94cd4b38e676aa6ae1535f5c6166509f437a6b016c506fbd9",
           "decision": "supplement",
-          "first_frame": "陶伯先看女儿名字，退开后女孩才靠墙。",
+          "first_frame": "陶伯尚在墙外没走近，女孩在后侧画外；墙上两抄件保持，女儿名没有读完、他也未退开，不首图提前结果。",
           "supplements": [
             {
               "state": "form-a-heng-later",
@@ -4503,7 +4510,8 @@
             }
           ]
         }
-      ]
+      ],
+      "execution_reviewed": true
     },
     {
       "scene": "av-e16-a02",
@@ -4513,36 +4521,56 @@
         {
           "shot": "av-e16-a02-s01",
           "label": "ASH309",
-          "reviewed_intent_sha256": "ddf9cba4756d07af190fd97a8c54b496609dc54b90a067d92b3ead24356329e4",
+          "reviewed_intent_sha256": "c485c91c1c8e7414109cf00e8dbe2f9ec5d576d7aa8bee39af7cde9aee5beca0",
           "decision": "start_image",
-          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。"
+          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。",
+          "first_frame": "核过的账还未摊亮处，阿蘅未听逐行念，李寄旁提空袋，父亲在后方画外不提前接本。"
         },
         {
           "shot": "av-e16-a02-s02",
           "label": "ASH310",
-          "reviewed_intent_sha256": "8e6ed810df87d61e5c84ea76c6d8b800551a742c5603b5ebee6e52ca19cc8116",
+          "reviewed_intent_sha256": "21637998a343e3cf9231eb6fca49f67c4ed8ea6e0c2dc4fb62f0985b1a7998ef",
           "decision": "supplement",
-          "first_frame": "阿蘅先逐行核对，父亲随后接书，不能提前拿走。",
+          "first_frame": "已摊账但阿蘅未自己从头读，凭据仍管事一侧，旧本尚无新凭据且未交父亲。",
           "supplements": [
             {
               "state": "form-li-dan-after",
               "use": "交接时父亲的身份与接书手"
             }
-          ]
+          ],
+          "first_frame_states": {
+            "entity-songbook": {
+              "state": "form-songbook-account",
+              "revision_id": "935174a2b020a1a4cc434a0bf706029dec424daa0b32218073835ea2ca9c052a"
+            }
+          }
         },
         {
           "shot": "av-e16-a02-s03",
           "label": "ASH311",
-          "reviewed_intent_sha256": "29d15bf8005fd4b6b3fb413b36f7f704b2728343e32611f761ebb095fabf6dfe",
+          "reviewed_intent_sha256": "7c89a9d80400ef1a531a78376336851dab41302fa73835fefe04718ac325a1c6",
           "decision": "start_image",
-          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。"
+          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。",
+          "first_frame": "米袋仍空、口未撑，木斗有米尚未倾；阿蘅两手腾空尚未转，父亲持本画外。",
+          "first_frame_states": {
+            "entity-rice-bag": {
+              "state": "form-rice-bag-base",
+              "revision_id": "6bcc32c990ed070b55805a52228bf1da05db934e05f0e4f5477aff7f5541ddbc"
+            }
+          },
+          "frame_state_text": {
+            "form-grain-base": {
+              "revision_id": "d04b637a4af3c1ae0e2bf62050633003d01f328de0e6b7138fa36e9a24540371",
+              "text": "米白略暖的干米仍在木斗里，斗未倾、袋内仍空；本场只退多收粮，没有额外预付一小把。"
+            }
+          }
         },
         {
           "shot": "av-e16-a02-s04",
           "label": "ASH312",
-          "reviewed_intent_sha256": "8dc4378d7c48fbc3c0aefe7a1c153743bc5250c5bd4a1aadd955d84bdbdec2c7",
+          "reviewed_intent_sha256": "894228b038b869a3a0a93220dd1c4783bf284dd687e9629a38110330f6d8fe67",
           "decision": "supplement",
-          "first_frame": "两女孩先提粮下阶，父亲随后接粮还本。",
+          "first_frame": "袋内已是刚接稳的退粮，绳未系，人未下阶；父亲持本在后方画外，两女孩尚未交袋。",
           "supplements": [
             {
               "state": "form-li-dan-after",
@@ -4551,10 +4579,25 @@
             {
               "state": "form-temple-grain-refund",
               "use": "从仓阶到告示墙的连续空间"
+            },
+            {
+              "state": "form-public-verdict-base",
+              "use": "稍后随三人经过告示墙时，已贴好的新告示，不重新宣读"
+            },
+            {
+              "state": "form-approval-orders-copies",
+              "use": "经过墙时新告示旁一直贴好的两份旧批文抄件，不再贴一次"
             }
-          ]
+          ],
+          "frame_state_text": {
+            "form-grain-base": {
+              "revision_id": "d04b637a4af3c1ae0e2bf62050633003d01f328de0e6b7138fa36e9a24540371",
+              "text": "刚退还的米已经在袋中、袋绳未系，米白干燥而无闪光；不重倒木斗或另添一把预付。"
+            }
+          }
         }
-      ]
+      ],
+      "execution_reviewed": true
     },
     {
       "scene": "av-e16-a03",
@@ -4564,42 +4607,52 @@
         {
           "shot": "av-e16-a03-s01",
           "label": "ASH313",
-          "reviewed_intent_sha256": "270d40dc0cbfb4777c9faaef0adfd8e89b2f2a232f4c845f805c45437685d8c3",
+          "reviewed_intent_sha256": "935f1bd41272d1d33b0c8b6db4445f973267ee6399c5d6863453b515763bee93",
           "decision": "supplement",
-          "first_frame": "先看米缸与凭据，靠桌后才看到母亲歇息和李寄看空白。",
+          "first_frame": "凭据已在歌本、米仅小半缸，母亲站床侧面对未叠妥褥子，阿蘅未接；李寄未坐对面。",
           "supplements": [
             {
-              "state": "form-heng-mother-recovering",
-              "use": "归家仍易疲累的病母身份"
+              "state": "form-li-ji-scar",
+              "use": "靠近桌后才看清并坐到对面的李寄身份与新疤，未提前拿笔"
             },
             {
-              "state": "form-li-ji-scar",
-              "use": "靠桌后李寄脸、掌心新疤及不拿笔的手"
+              "state": "form-copied-pages-base",
+              "use": "随后桌上与旧页并列的半补新纸，缺处仍空，不是已核好的新歌词"
             }
-          ]
+          ],
+          "frame_state_text": {
+            "form-grain-base": {
+              "revision_id": "d04b637a4af3c1ae0e2bf62050633003d01f328de0e6b7138fa36e9a24540371",
+              "text": "米白略暖的干米已有小半缸，只在灶边米缸内静置，没有木斗唱工米或额外预付一把的动作。"
+            }
+          }
         },
         {
           "shot": "av-e16-a03-s02",
           "label": "ASH314",
-          "reviewed_intent_sha256": "db0a9c6de4022a5a68988ab3ef1213b48c1787539a03a686fb06b1fd4c26a9a4",
+          "reviewed_intent_sha256": "dbda4dc1c19c93b57b166fee6a65c500751b2d232a3c0702ca98403b2e016493",
           "decision": "start_image",
-          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。"
+          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。",
+          "first_frame": "李寄已坐、两纸有空白且均未包，母亲已经歇坐床沿；提议与回答还没发生。"
         },
         {
           "shot": "av-e16-a03-s03",
           "label": "ASH315",
-          "reviewed_intent_sha256": "caa1d86cd58dba798f02b32c86856280efcc18e14827c0da48dcac3e8ef7b6d9",
+          "reviewed_intent_sha256": "009de690c38735d2722763740179497e5f5295b9daa5a19d121b042c00566d3c",
           "decision": "start_image",
-          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。"
+          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。",
+          "first_frame": "母亲还未起哼，阿蘅未接，不能首帧已唱到断处摇头；纸依旧缺行。"
         },
         {
           "shot": "av-e16-a03-s04",
           "label": "ASH316",
-          "reviewed_intent_sha256": "ebf2f132b60c20becb92597b45d2d06001cf355678aac4485cc735333917bedb",
+          "reviewed_intent_sha256": "6b011a280df8589ad5c1e66c124d856f5cc5ac6e86835fba65e6544564cec318",
           "decision": "start_image",
-          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。"
+          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。",
+          "first_frame": "布在李寄手边未递，两纸在桌未包，碗也在桌，包妥之后才准拿碗去洗。"
         }
-      ]
+      ],
+      "execution_reviewed": true
     },
     {
       "scene": "av-e16-a04",
@@ -4609,39 +4662,51 @@
         {
           "shot": "av-e16-a04-s01",
           "label": "ASH317",
-          "reviewed_intent_sha256": "96275f397d874136d78530a64b34651aec554bc69b57035f56e66a3939d4f5ed",
+          "reviewed_intent_sha256": "9ea1f20fefb2c531e2b761d3a969aeeeb7d610f76191491e19d7dde84f484063",
           "decision": "start_image",
-          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。"
+          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。",
+          "first_frame": "旧红袖还手中、两女孩仍站等、两客凳未搬，只有其他演出衣已晾；不能首图老师已拍膝授课。"
         },
         {
           "shot": "av-e16-a04-s02",
           "label": "ASH318",
-          "reviewed_intent_sha256": "143f032692403fd9a2cbb9e5f854d7847d819507341e4d1a9f7fa0d0ee1a4485",
+          "reviewed_intent_sha256": "a272bb3260bcfcc1295854988d643374599e4940f839d45f236c0a8106af44ea",
           "decision": "start_image",
-          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。"
+          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。",
+          "first_frame": "已围坐、红袖已晾可保持，阿蘅尚未唱；页上缺处未补，老师尚未接调。"
         },
         {
           "shot": "av-e16-a04-s03",
           "label": "ASH319",
-          "reviewed_intent_sha256": "2a8fe69964542a203260905524f9c7afe01dfb1f3846f44ad319db94c5b0c660",
+          "reviewed_intent_sha256": "1a4eb2686f52f2e05024e9393e7bbe6820ddfc09998c65fb896108639c11c37a",
           "decision": "start_image",
-          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。"
+          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。",
+          "first_frame": "李寄还在末句之前写、未停笔未举，老师未核；过和认只待口头核问，不提前纸上写错字。",
+          "first_frame_states": {
+            "entity-copied-pages": {
+              "state": "form-copied-pages-base",
+              "revision_id": "341dc6e43db5b821c3c6f481198212bf6cc043a11c4a823729c2d1c468a26355"
+            }
+          }
         },
         {
           "shot": "av-e16-a04-s04",
           "label": "ASH320",
-          "reviewed_intent_sha256": "c22427fa3da725968d334fb9b5cd768854ff02f320ae4de840992bf0749a74a8",
+          "reviewed_intent_sha256": "83614b002248c0a8838cc4211dac744c4eb48be050bc1db75bd2924e75739560",
           "decision": "start_image",
-          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。"
+          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。",
+          "first_frame": "新页已核且板已归李寄，阿蘅未开声、老师未作换气提示；不回退未核纸也不提前尾句。"
         },
         {
           "shot": "av-e16-a04-s05",
           "label": "ASH321",
-          "reviewed_intent_sha256": "3ee63c36af826f61adfabfa7e36bd25074e0a8bfe5e0705f65d1b954de9580eb",
+          "reviewed_intent_sha256": "31ff0d935c9f9400be90f30499b20046b94e918bbc9d2957535acbfb0dfd8594",
           "decision": "start_image",
-          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。"
+          "check": "首图须清楚覆盖本镜实际可见主体、所需朝向及运动范围；近景未转到全貌、画外人不露脸时不补全身图。若所选原件裁切或遮挡使后续缺据，先改输入方案再准备。",
+          "first_frame": "延续刚唱末句的尾音未尽，老师手尚未收定、未说连上了；李寄已抱板停笔，红袖绳上。"
         }
-      ]
+      ],
+      "execution_reviewed": true
     },
     {
       "scene": "av-e17-a01",
