@@ -83,7 +83,7 @@ python3 scripts/generation_review.py --system "$generation_system" \
 ```bash
 python3 scripts/generation_review.py --instance .runtime/generation/review prepare \
   --output production/publications/素材批次-v1.json
-python3 scripts/publish_generation.py --instance "$generation_main" \
+PYTHONPATH="$generation_system" python3 scripts/publish_generation.py --instance "$generation_main" \
   --package production/publications/素材批次-v1.json --run-name materials-preflight-01
 ```
 
@@ -97,7 +97,7 @@ python3 scripts/publish_generation.py --instance "$generation_main" \
 
 ```bash
 generation_source_commit=填写已合入主干的完整提交SHA
-python3 scripts/publish_generation.py --instance "$generation_main" \
+PYTHONPATH="$generation_system" python3 scripts/publish_generation.py --instance "$generation_main" \
   --package production/publications/素材批次-v1.json --run-name materials-apply-01 \
   --source-commit "$generation_source_commit" --apply
 ```
