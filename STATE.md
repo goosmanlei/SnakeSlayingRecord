@@ -2,6 +2,8 @@
 
 ## 当前成果与运行依据
 
+- 素材参考、旧备选与沿用方案的具名入口及准确用途意见已完成隔离实践，包括 M2710→ASH001、M1516文字依据与原图区域定位、关系草稿隔离和宽窄窗口。实操与无真实样本的夹具边界见 [参考用途验收](production/material-reference-purpose/VERIFICATION.md)；正式生效、只读复验与清理以 task-20261009-0017 实际回执为准。
+
 - 作品为方向三《把灯带回家》、故事结构第十稿、精修九定稿候选与用户已确认的剧本版本四。准确制作来源锁定于 [production/source-lock.json](production/source-lock.json)；故事创作域与评论保留。
 - 当前交付包含 [全剧视听设计](production/audiovisual/README.md)：17 集、42 故事场、65 视听场、344 镜，全部 1114 个正文块有准确表达范围。新设计支持每镜多需求、每需多版多候选、关系路线、准确原件及区域／时间选择。技术验证不代表用户接受新设计或声音质量。
 - 生产制作包含视听制作、实体管理、素材管理；故事剧本可回查两条制作来源链。方法页保留 [视频生成手册](production/seedance-video-handbook.md) 与 [影视专业知识](production/filmcraft/README.md)，生产方法按新模型重编。
