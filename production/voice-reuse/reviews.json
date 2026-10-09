@@ -1,6 +1,6 @@
 {
   "format": "reviewed-voice-reuse-v1",
-  "review_method": "经用户授权，音频理解模型直接分析准确受管WAV原件；Codex结合实际音频观察、制作原文和渠道限制逐项判断。不是本会话模型直接听音，也不是用户逐项认可。",
+  "review_method": "经用户授权，音频理解模型直接分析准确受管WAV原件；Codex结合实际音频观察、制作原文和渠道限制逐项判断。不是本会话模型直接听音，也不是用户逐项认可。 原件经授权音频理解服务读取，模型声学描述有不确定性；独立文件和CALL证明来源独立，不证明声纹差异或多角色可听区别已通过。全部当前具体用途按17集顺序阅读，依据原件观察分别判断身份参考与尚未展示的表演能力。",
   "audio_generation": false,
   "reviews": {
     "a-heng": {
@@ -49,9 +49,19 @@
         2,
         3,
         4,
-        5
+        5,
+        7,
+        8,
+        9,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
       ],
-      "use_review_status": "remaining_episodes_pending",
+      "use_review_status": "all_current_authored_uses_reviewed; performance_and_plan_approval_pending",
       "approval": "new_plan_pending; historical_user_master_acceptance_stays_on_exact_old_original",
       "ark_recheck": "原生音频复核独立听为单一少女感女声，清亮轻盈、初段自然；末字辨为省，修正Flash转写分歧。极淡混响与后段亲昵轻快仅保留为限制，不转授新表演。",
       "iteration": "新原生结果保留0–5.6秒初段选择；完整原件仍为历史依据，新片段与新方案仍须独立认可。"
@@ -72,7 +82,19 @@
         1,
         2,
         3,
-        5
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
       ],
       "iteration": "获得直接原生音频复核后回查第1集，修正此前仅依据Flash的较低实判断。撤回自动进入视频的片段，保留第1集表演要求与完整旧记录；阿蘅原件轻盈方向继续成立，不把两个少女互换。",
       "need_id": "material-voice-li-ji",
@@ -94,15 +116,15 @@
         "歌唱旋律或未经展示的表演能力"
       ],
       "approval": "new_plan_pending; no_historical_approval_transfer",
-      "use_review_status": "remaining_episodes_pending",
+      "use_review_status": "all_current_authored_uses_reviewed; performance_and_plan_approval_pending",
       "models": [
         "gemini-3.8-flash",
         "doubao-seed-2-0-lite-260428"
       ]
     },
     "zhou": {
-      "heard": "一人中年到中老年听感男声，中低音、胸声足、厚实略有喉音砂感，字头清楚、语速平缓；日常交代、叮嘱与付米话语连续，未察觉明显伴奏、其他人声或爆音。",
-      "diction": "邀唱处‘送青篷’同音字不能靠音频决定书写，‘也省’一处模型报告略含混，排除强提醒段。选择‘你娘说你能唱，我替你应下了’完整两分句，模型听辨字音清楚。",
+      "heard": "两份独立原音分析均为单一成熟男声，中低偏厚、胸声足、事务性交代平实，气息稳定；无明显音乐、他人或粗噪，原生复核听到轻微混响，不称无混响。",
+      "diction": "所选你娘说你能唱我替你应下了两分句清楚；全段曲名和也省的转写仍有分歧，不把原生模型清晰度很高的总结当逐字准确。",
       "decision": "suitable_spoken_identity",
       "reason": "第1集掌柜谈实际生意并付工钱，声音有厚度而不是强迫性恶人声；选平实交代段只取身份，现场提醒和第9集递日期纸等语境重新表演，不能继承模型对台词动机的‘利诱’解释。",
       "range": {
@@ -116,7 +138,11 @@
       ],
       "use_review_completed_episodes": [
         1,
-        2
+        2,
+        7,
+        9,
+        12,
+        15
       ],
       "approval": "new_plan_pending; historical_user_master_acceptance_stays_on_exact_old_original",
       "need_id": "material-voice-zhou",
@@ -127,7 +153,8 @@
         "sha256": "78869528db4fbac5d5f8ff3d747317c3fabd7c69d96494029c9967600083c2ec"
       },
       "analysis_attempts": [
-        "zhou-blind-01"
+        "zhou-blind-01",
+        "zhou-ark-lite-01"
       ],
       "responsibility": "周掌柜的说话声音身份；新台词、呼吸、音量、情绪和声源距离由本镜重新表演。",
       "not_inherited": [
@@ -136,10 +163,12 @@
         "旧录音空间",
         "歌唱旋律或未经展示的表演能力"
       ],
-      "use_review_status": "remaining_episodes_pending",
+      "use_review_status": "all_current_authored_uses_reviewed; performance_and_plan_approval_pending",
       "models": [
-        "gemini-3.8-flash"
-      ]
+        "gemini-3.8-flash",
+        "doubao-seed-2-0-lite-260428"
+      ],
+      "iteration": "第9集日常生意转向迟疑作证，原生复核仍支持同一平实厚声身份，保留5.2–8.3秒片段。愧疚、停顿与先找我作证的目的由现场重演，旧用户母版认可仍只限准确完整旧原件。"
     },
     "woodcutter": {
       "heard": "单一男声偏中高、细而干，轻微砂质，日常惊讶和打趣语调起伏，气声少；未察觉音乐或其他人，模型报告微弱持续沙沙底噪。",
@@ -177,7 +206,7 @@
         "歌唱旋律或未经展示的表演能力"
       ],
       "approval": "new_plan_pending; no_historical_approval_transfer",
-      "use_review_status": "remaining_episodes_pending",
+      "use_review_status": "all_current_authored_uses_reviewed; performance_and_plan_approval_pending",
       "models": [
         "gemini-3.8-flash"
       ]
@@ -214,7 +243,7 @@
         "歌唱旋律或未经展示的表演能力"
       ],
       "approval": "new_plan_pending; no_historical_approval_transfer",
-      "use_review_status": "remaining_episodes_pending",
+      "use_review_status": "all_current_authored_uses_reviewed; performance_and_plan_approval_pending",
       "models": [
         "gemini-3.8-flash"
       ]
@@ -237,7 +266,12 @@
       "use_review_completed_episodes": [
         1,
         3,
-        5
+        5,
+        7,
+        8,
+        9,
+        12,
+        15
       ],
       "iteration": "原生复核确认尾句断裂，保留此前0–3.7秒完整初段并排除尾部；第3集五六七斗及两升条件逐句重新表演，不用旧录音中的七斗代替当前音轨。",
       "need_id": "material-voice-zhao",
@@ -259,7 +293,7 @@
         "歌唱旋律或未经展示的表演能力"
       ],
       "approval": "new_plan_pending; no_historical_approval_transfer",
-      "use_review_status": "remaining_episodes_pending",
+      "use_review_status": "all_current_authored_uses_reviewed; performance_and_plan_approval_pending",
       "models": [
         "gemini-3.8-flash",
         "doubao-seed-2-0-lite-260428"
@@ -297,7 +331,7 @@
         "歌唱旋律或未经展示的表演能力"
       ],
       "approval": "new_plan_pending; no_historical_approval_transfer",
-      "use_review_status": "remaining_episodes_pending",
+      "use_review_status": "all_current_authored_uses_reviewed; performance_and_plan_approval_pending",
       "models": [
         "gemini-3.8-flash"
       ]
@@ -318,7 +352,16 @@
         2,
         3,
         4,
-        5
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12,
+        14,
+        15,
+        17
       ],
       "iteration": "新增原生音频复核后，将待比较状态收敛为有依据保留新准备。纠正转写，不修改旧录音或旧CALL原词，也不根据Pro推测去做声纹分离。",
       "need_id": "material-voice-li-xiao",
@@ -342,7 +385,7 @@
         "歌唱旋律或未经展示的表演能力"
       ],
       "approval": "new_plan_pending; no_historical_approval_transfer",
-      "use_review_status": "remaining_episodes_pending",
+      "use_review_status": "all_current_authored_uses_reviewed; performance_and_plan_approval_pending",
       "models": [
         "gemini-3.8-flash",
         "gemini-3.1-pro-preview",
@@ -387,7 +430,7 @@
         "歌唱旋律或未经展示的表演能力"
       ],
       "approval": "new_plan_pending; no_historical_approval_transfer",
-      "use_review_status": "remaining_episodes_pending",
+      "use_review_status": "all_current_authored_uses_reviewed; performance_and_plan_approval_pending",
       "models": [
         "gemini-3.8-flash",
         "doubao-seed-2-0-lite-260428"
@@ -410,7 +453,13 @@
       ],
       "use_review_completed_episodes": [
         4,
-        5
+        5,
+        6,
+        7,
+        11,
+        15,
+        16,
+        17
       ],
       "need_id": "material-voice-heng-mother",
       "source": {
@@ -430,7 +479,7 @@
         "歌唱旋律或未经展示的表演能力"
       ],
       "approval": "new_plan_pending; no_historical_approval_transfer",
-      "use_review_status": "remaining_episodes_pending",
+      "use_review_status": "all_current_authored_uses_reviewed; performance_and_plan_approval_pending",
       "models": [
         "doubao-seed-2-0-lite-260428"
       ]
@@ -451,7 +500,8 @@
         "没有新准备调用或下游音色保持验证"
       ],
       "use_review_completed_episodes": [
-        4
+        4,
+        6
       ],
       "iteration": "邻妇例说明不足2秒的模型切段建议不等于原件不合格；真实2.28秒完整原件可比较，与四份真实不足2秒反例分开。",
       "need_id": "material-voice-neighbor-woman",
@@ -472,7 +522,7 @@
         "歌唱旋律或未经展示的表演能力"
       ],
       "approval": "new_plan_pending; no_historical_approval_transfer",
-      "use_review_status": "remaining_episodes_pending",
+      "use_review_status": "all_current_authored_uses_reviewed; performance_and_plan_approval_pending",
       "models": [
         "doubao-seed-2-0-lite-260428"
       ]
@@ -493,7 +543,16 @@
       ],
       "use_review_completed_episodes": [
         4,
-        5
+        5,
+        6,
+        7,
+        8,
+        10,
+        11,
+        13,
+        14,
+        15,
+        17
       ],
       "need_id": "material-voice-sun-liu",
       "source": {
@@ -513,7 +572,7 @@
         "歌唱旋律或未经展示的表演能力"
       ],
       "approval": "new_plan_pending; no_historical_approval_transfer",
-      "use_review_status": "remaining_episodes_pending",
+      "use_review_status": "all_current_authored_uses_reviewed; performance_and_plan_approval_pending",
       "models": [
         "doubao-seed-2-0-lite-260428"
       ]
@@ -533,7 +592,9 @@
         "没有验证真实着急、公开质问或生成音色保持"
       ],
       "use_review_completed_episodes": [
-        4
+        4,
+        12,
+        16
       ],
       "need_id": "material-voice-ticket-woman",
       "source": {
@@ -553,7 +614,7 @@
         "歌唱旋律或未经展示的表演能力"
       ],
       "approval": "new_plan_pending; no_historical_approval_transfer",
-      "use_review_status": "remaining_episodes_pending",
+      "use_review_status": "all_current_authored_uses_reviewed; performance_and_plan_approval_pending",
       "models": [
         "doubao-seed-2-0-lite-260428"
       ]
@@ -575,7 +636,10 @@
       ],
       "use_review_completed_episodes": [
         4,
-        5
+        5,
+        7,
+        12,
+        15
       ],
       "need_id": "material-voice-priest",
       "source": {
@@ -595,7 +659,7 @@
         "歌唱旋律或未经展示的表演能力"
       ],
       "approval": "new_plan_pending; no_historical_approval_transfer",
-      "use_review_status": "remaining_episodes_pending",
+      "use_review_status": "all_current_authored_uses_reviewed; performance_and_plan_approval_pending",
       "models": [
         "doubao-seed-2-0-lite-260428"
       ]
@@ -637,7 +701,7 @@
         "歌唱旋律或未经展示的表演能力"
       ],
       "approval": "new_plan_pending; no_historical_approval_transfer",
-      "use_review_status": "remaining_episodes_pending",
+      "use_review_status": "all_current_authored_uses_reviewed; performance_and_plan_approval_pending",
       "models": [
         "doubao-seed-2-0-lite-260428"
       ]
@@ -678,7 +742,7 @@
         "歌唱旋律或未经展示的表演能力"
       ],
       "approval": "new_plan_pending; no_historical_approval_transfer",
-      "use_review_status": "remaining_episodes_pending",
+      "use_review_status": "all_current_authored_uses_reviewed; performance_and_plan_approval_pending",
       "models": [
         "doubao-seed-2-0-lite-260428"
       ]
@@ -720,7 +784,7 @@
         "歌唱旋律或未经展示的表演能力"
       ],
       "approval": "new_plan_pending; no_historical_approval_transfer",
-      "use_review_status": "remaining_episodes_pending",
+      "use_review_status": "all_current_authored_uses_reviewed; performance_and_plan_approval_pending",
       "models": [
         "doubao-seed-2-0-lite-260428",
         "gemini-3.8-flash"
@@ -762,7 +826,929 @@
         "歌唱旋律或未经展示的表演能力"
       ],
       "approval": "new_plan_pending; no_historical_approval_transfer",
-      "use_review_status": "remaining_episodes_pending",
+      "use_review_status": "all_current_authored_uses_reviewed; performance_and_plan_approval_pending",
+      "models": [
+        "doubao-seed-2-0-lite-260428"
+      ]
+    },
+    "li-dan": {
+      "heard": "单一低男声，胸腔共鸣厚实扎稳，轻沙哑、少气声淡鼻音，初问疑惑后短拒绝果决；无明显伴奏、他人或粗噪，轻微小空间混响。",
+      "diction": "开头怎么伤的、你会杀蛇、短句不行和我去报名可辨，停顿自然。",
+      "decision": "suitable_spoken_identity",
+      "reason": "第6集父亲是低厚劳作者口语，拒绝短实而非武将腔；原件可锁定身份。承认自己不会、追忆缺口碗与接病人不同语气由当下行动表演，不能把短样果决套成已会杀蛇。",
+      "range": {
+        "start_seconds": 0,
+        "end_seconds": 2.9
+      },
+      "range_basis": "保留开头两句问话，PCM2.512292–3.251042秒自然间隙，2.9秒在其中，不行的短硬段尚未进入；不采纳模型约1秒开始会丢第二句起音的估计。",
+      "limits": [
+        "短样不证明大段家庭商议或喊话的持续表现",
+        "没有实际生成音色保持验收"
+      ],
+      "use_review_completed_episodes": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        17
+      ],
+      "need_id": "material-voice-li-dan",
+      "source": {
+        "object_id": "asset-fg3-li-dan-base-voice-01",
+        "revision_id": "eb674fc0bfeb9ab4caa720624b1337d658a7f9a5fecadc870f67934b0b87191c",
+        "component_id": "original",
+        "sha256": "78a09f5fe56f6abb603aaac6e5adc59f0868a2173437435cefef4eec61bf0e04"
+      },
+      "analysis_attempts": [
+        "li-dan-ark-lite-01"
+      ],
+      "responsibility": "李诞的说话声音身份；新台词、呼吸、音量、情绪和声源距离由本镜重新表演。",
+      "not_inherited": [
+        "旧试读台词",
+        "旧语气、呼吸与停顿",
+        "旧录音空间",
+        "歌唱旋律或未经展示的表演能力"
+      ],
+      "approval": "new_plan_pending; no_historical_approval_transfer",
+      "use_review_status": "all_current_authored_uses_reviewed; performance_and_plan_approval_pending",
+      "models": [
+        "doubao-seed-2-0-lite-260428"
+      ]
+    },
+    "tao": {
+      "heard": "单一低沉男声，鼻胸腔共鸣、厚重而轻发力，轻沙哑明显鼻音，慢句有充裕停顿；模型年龄感为中年，未听到明显伴奏、他人或粗噪，极淡混响。",
+      "diction": "初段忆阿禾、提醒绳勿贴石角与后段讲被拖开的经历可辨；阿禾同音书写为阿和不改旧CALL。",
+      "decision": "needs_comparison",
+      "reason": "第6集回忆只需要陶伯挣扎声身份，不能加旧试读台词；后续制作明确陶伯为老年窄干、略砂的声线。原件有低沙与慢句，但模型听为厚重中年，窄干程度待比较；保留候选而不借挑柴老汉的高轻声补齐。",
+      "range": {
+        "start_seconds": 3.3,
+        "end_seconds": 8.3
+      },
+      "range_basis": "待比较片段取完整绳索提醒，原音约3–9秒；PCM前气口2.705687–3.874896、后气口7.759271–8.902146，3.3–8.3秒位于两端间隙。准确20.28秒原件不整段提交Fast。",
+      "responsibility": "陶伯的声音身份；挣扎声、现场对白、呼吸和空间由本镜重新表演，不将试样的阿禾台词加进无新增台词的回忆。",
+      "limits": [
+        "年龄及厚窄质地待选角比较，暂不选入视频",
+        "口语录音不能证明回忆中的挣扎声或后续受压证言表演",
+        "不继承试样情绪及混响"
+      ],
+      "use_review_completed_episodes": [
+        6,
+        10,
+        12,
+        15
+      ],
+      "need_id": "material-voice-tao",
+      "source": {
+        "object_id": "asset-fg3-tao-base-voice-01",
+        "revision_id": "1c1f75b138143843f14d3e7ac83fe50bc0bdb4414ce6e72c91741278b9a009d1",
+        "component_id": "original",
+        "sha256": "d7a22da3f26022982795148f5aa7af6ae0bf4d037fb8a06a242239177515c915"
+      },
+      "analysis_attempts": [
+        "tao-ark-lite-01"
+      ],
+      "not_inherited": [
+        "旧试读台词",
+        "旧语气、呼吸与停顿",
+        "旧录音空间",
+        "歌唱旋律或未经展示的表演能力"
+      ],
+      "approval": "new_plan_pending; no_historical_approval_transfer",
+      "use_review_status": "all_current_authored_uses_reviewed; performance_and_plan_approval_pending",
+      "models": [
+        "doubao-seed-2-0-lite-260428"
+      ]
+    },
+    "li-mother": {
+      "heard": "单一成熟中年女声，中低沉稳、胸腔相关共鸣有支撑，轻鼻音、较清亮且少气声，无明显沙哑；从恳切担忧转为笃定安排，无明显音乐、他人或粗噪，极淡混响。",
+      "diction": "开头‘你会’及一家孩子怎么办可辨，后段生活化长句有逻辑停顿，个别句尾收得快；他娘/她娘书写不由同音辨别。",
+      "decision": "suitable_spoken_identity",
+      "reason": "第6集母亲担忧一家后果又安排照护与工作，低而稳、有支撑的自然声适合，不能被剪成只会阻止帮助。与阿蘅母亲低薄气弱声区分，身份不靠尖叫和长哭。",
+      "range": {
+        "start_seconds": 0,
+        "end_seconds": 4
+      },
+      "range_basis": "保留初段完整探问与一家孩子怎么办，原音起段可辨；PCM3.586313–4.559125秒自然气口，4秒在其中。19.38秒原件不整段送Fast。",
+      "limits": [
+        "未验证大情绪爆发、哭戏或生成音色保持",
+        "原件担忧语气不自动继承每镜，当前劝阻与事务安排按剧本重演"
+      ],
+      "use_review_completed_episodes": [
+        6,
+        7,
+        11,
+        15,
+        17
+      ],
+      "need_id": "material-voice-li-mother",
+      "source": {
+        "object_id": "asset-fg3-li-mother-base-voice-01",
+        "revision_id": "93e5cff5c590437a6f2da2e390fe9534247f92fb9e57c3f26a41913f09f26389",
+        "component_id": "original",
+        "sha256": "9034291ac77b1fc68178e3f3778ad703d662db4d0061ba5c62ed03942ffa386e"
+      },
+      "analysis_attempts": [
+        "li-mother-ark-lite-01"
+      ],
+      "responsibility": "李寄母亲的说话声音身份；新台词、呼吸、音量、情绪和声源距离由本镜重新表演。",
+      "not_inherited": [
+        "旧试读台词",
+        "旧语气、呼吸与停顿",
+        "旧录音空间",
+        "歌唱旋律或未经展示的表演能力"
+      ],
+      "approval": "new_plan_pending; no_historical_approval_transfer",
+      "use_review_status": "all_current_authored_uses_reviewed; performance_and_plan_approval_pending",
+      "models": [
+        "doubao-seed-2-0-lite-260428"
+      ]
+    },
+    "temple-guards-guard-a": {
+      "heard": "单一成年至中老年感男声，偏低、胸腔共鸣厚，少气声轻鼻音，短句郑重硬实；无明显音乐、其他人或粗噪，轻微混响。",
+      "diction": "祭户不能乱走一句可辨；寄户/祭户同音书写不认作实际错误。模型时间到2.58秒与PCM尾部安静不一致，只作粗定位。",
+      "decision": "suitable_spoken_identity",
+      "reason": "第6集守院发话者按差事拦人，需要短句硬边；此成年男声硬实清楚且没有瘦高庙工的高窄鼻声，可作独立身份候选。只给此明确发话位置，另一守院者不补对白或共用母版。",
+      "range": {
+        "start_seconds": 0,
+        "end_seconds": 2.58
+      },
+      "range_basis": "准确2.58秒完整原件，保留首句和真实首尾安静，PCM尾部2.131063–2.58秒；不使用模型将末字延到文件尾的粗略时间。",
+      "limits": [
+        "实际声区较低，仍由制作者认可当前身份选角，不宣称音高测量通过",
+        "没有验证长句、喊话或生成音色保持"
+      ],
+      "use_review_completed_episodes": [
+        6
+      ],
+      "need_id": "material-voice-temple-guards-guard-a",
+      "source": {
+        "object_id": "asset-fg3-temple-guards-guard-a-base-voice-01",
+        "revision_id": "ee517d972121d0c0803c1f7452d2cac15de5e14d4a4834d693a71cf051a04a5d",
+        "component_id": "original",
+        "sha256": "d18567fcb68fea33d680192b9ba6bc5d2aa12b670e7272c37244bfc5c10aa5ec"
+      },
+      "analysis_attempts": [
+        "temple-guards-guard-a-ark-lite-01"
+      ],
+      "responsibility": "守院庙工中发话者的说话声音身份；新台词、呼吸、音量、情绪和声源距离由本镜重新表演。",
+      "not_inherited": [
+        "旧试读台词",
+        "旧语气、呼吸与停顿",
+        "旧录音空间",
+        "歌唱旋律或未经展示的表演能力"
+      ],
+      "approval": "new_plan_pending; no_historical_approval_transfer",
+      "use_review_status": "all_current_authored_uses_reviewed; performance_and_plan_approval_pending",
+      "models": [
+        "doubao-seed-2-0-lite-260428"
+      ]
+    },
+    "clerk-liang": {
+      "heard": "单一青年感男声，偏轻稳、清亮、鼻共鸣明显，少气声；模型描述中低音，绝对音高未测。平读短句笃定，无明显伴奏、他人或粗噪，极淡混响；原件最后证据末字报告被截。",
+      "diction": "开头前两次送庙里都用这个及庙里怎么报我就怎么记清楚，原据/原句同音转写不决定书写；排除末字截断段。",
+      "decision": "suitable_spoken_identity",
+      "reason": "第7集梁书吏平读公文，需要较轻薄青年男声区别于圆厚照壁书吏，原件清亮轻稳可作此身份候选。被质问时停顿不稳由现场表演，不把旧样笃定套成全程冷硬；当众读回不得用旧句冒充新文书。",
+      "range": {
+        "start_seconds": 0,
+        "end_seconds": 3.2
+      },
+      "range_basis": "保留开头完整三小分句，PCM2.754604–3.802687秒句间低电平，3.2秒在其中。模型1.3秒声称后句起点与波形分段不符，不用它截去首句；末尾不选。",
+      "limits": [
+        "模型所报偏中低不构成精确音高，当前略高薄的选角仍需独立认可",
+        "未验证大段准确读回或视频音色保持",
+        "尾字断裂报告只限制全段，所选首句完整"
+      ],
+      "use_review_completed_episodes": [
+        7,
+        9,
+        11
+      ],
+      "need_id": "material-voice-clerk-liang",
+      "source": {
+        "object_id": "asset-fg3-clerk-liang-base-voice-01",
+        "revision_id": "04fa877f6c4540a044e25041230493b22614cc934ec19d1dd33beba09be9cf01",
+        "component_id": "original",
+        "sha256": "f07005495cf9e7cb50202a2cd4dfe869ea0762778c14a6d1820c93dad6a104ec"
+      },
+      "analysis_attempts": [
+        "clerk-liang-ark-lite-01"
+      ],
+      "responsibility": "梁书吏的说话声音身份；新台词、呼吸、音量、情绪和声源距离由本镜重新表演。",
+      "not_inherited": [
+        "旧试读台词",
+        "旧语气、呼吸与停顿",
+        "旧录音空间",
+        "歌唱旋律或未经展示的表演能力"
+      ],
+      "approval": "new_plan_pending; no_historical_approval_transfer",
+      "use_review_status": "all_current_authored_uses_reviewed; performance_and_plan_approval_pending",
+      "models": [
+        "doubao-seed-2-0-lite-260428"
+      ]
+    },
+    "magistrate": {
+      "heard": "单一中年男声，中低音、胸声圆厚沉稳，清亮少沙哑气声，轻鼻音；停顿规整，严肃审视问话，无明显音乐、他人或粗噪，轻微室内混响。",
+      "diction": "初句你们是准备怎么杀呀以及后续看过地方、两家愿意和洞口问题可辨，语气有审视而非粗吼。",
+      "decision": "suitable_spoken_identity",
+      "reason": "第7集县丞追问和逐项说明有权威感，需要比书吏更圆厚慢稳的身份。旧件声线适合，不能把初段质问表演固定到写免祭令或后续受责防御；声音身份不等于角色已经觉醒或规则永久生效。",
+      "range": {
+        "start_seconds": 0,
+        "end_seconds": 2.6
+      },
+      "range_basis": "保留完整首问，PCM1.830229–3.953333秒低电平间隙，2.6秒位于其中，下句未进入；拒绝模型1.3秒为地方句起点的错误粗估。",
+      "limits": [
+        "未验证长令读回、大喊或生成音色保持",
+        "选角与新片段仍须独立认可，不继承旧表演动机"
+      ],
+      "use_review_completed_episodes": [
+        7,
+        9,
+        15
+      ],
+      "need_id": "material-voice-magistrate",
+      "source": {
+        "object_id": "asset-fg3-magistrate-base-voice-01",
+        "revision_id": "974691c3554d45aeca6662c5890a9ca54cc2a7f74f54ad5588a6cf95634cd5eb",
+        "component_id": "original",
+        "sha256": "f7b1842ab5c31fe739654b36ef94050721a51595d95c075ef93cd07b1800d32e"
+      },
+      "analysis_attempts": [
+        "magistrate-ark-lite-01"
+      ],
+      "responsibility": "县丞的说话声音身份；新台词、呼吸、音量、情绪和声源距离由本镜重新表演。",
+      "not_inherited": [
+        "旧试读台词",
+        "旧语气、呼吸与停顿",
+        "旧录音空间",
+        "歌唱旋律或未经展示的表演能力"
+      ],
+      "approval": "new_plan_pending; no_historical_approval_transfer",
+      "use_review_status": "all_current_authored_uses_reviewed; performance_and_plan_approval_pending",
+      "models": [
+        "doubao-seed-2-0-lite-260428"
+      ]
+    },
+    "officer-cheng": {
+      "heard": "单一成熟男声，中低沉稳、胸腔共鸣厚实、咬字出力足，少气声轻鼻音；冷静指令和陈述，未听到明显音乐、他人或粗噪，极淡混响。模型年龄感近似40–50，不作人物年龄事实。",
+      "diction": "午后一起去、原据和账先封好以及查验等短句可辨；模型和/核同音书写不改旧CALL。钥匙后明显停顿是完整短词。",
+      "decision": "suitable_spoken_identity",
+      "reason": "第7集程差役承认未见洞口并安排封账查验，声音需要扎实清楚、有执行感而不装凶；此成熟低实声可用作身份候选。后续关键停止口令要重新表演并核落点，未由旧口语证明；不能拿他替另一年轻差役。",
+      "range": {
+        "start_seconds": 0,
+        "end_seconds": 3.75
+      },
+      "range_basis": "保留初段午后一起去与原据和账先封好两短句，PCM3.469604–4.057521秒自然间隙，3.75秒在其中，后续请书吏查未进入。",
+      "limits": [
+        "不能把模型100%描述当成音质或年龄鉴定",
+        "未验证远喊停止口令及生成音色保持",
+        "旧混响与冷静语气不直接继承到后院"
+      ],
+      "use_review_completed_episodes": [
+        7,
+        8,
+        9,
+        10,
+        12,
+        13,
+        14,
+        15
+      ],
+      "need_id": "material-voice-officer-cheng",
+      "source": {
+        "object_id": "asset-fg3-officer-cheng-base-voice-01",
+        "revision_id": "4079dfe695b5a94b9cad29a55fc1cb056a21f5c63409de4ef2f1787cf67b73f9",
+        "component_id": "original",
+        "sha256": "2852b272ce9d1a523766afabd358e3629d46cd2bc7b2305a3fa98dfad7c18a47"
+      },
+      "analysis_attempts": [
+        "officer-cheng-ark-lite-01"
+      ],
+      "responsibility": "程差役的说话声音身份；新台词、呼吸、音量、情绪和声源距离由本镜重新表演。",
+      "not_inherited": [
+        "旧试读台词",
+        "旧语气、呼吸与停顿",
+        "旧录音空间",
+        "歌唱旋律或未经展示的表演能力"
+      ],
+      "approval": "new_plan_pending; no_historical_approval_transfer",
+      "use_review_status": "all_current_authored_uses_reviewed; performance_and_plan_approval_pending",
+      "models": [
+        "doubao-seed-2-0-lite-260428"
+      ]
+    },
+    "temple-tall": {
+      "heard": "单一中年感男声，中低音、胸腔共鸣明显，均匀清亮少气声，无突出鼻音；平缓客观解释，无明显音乐、他人或粗噪，轻微混响。",
+      "diction": "探头吃、身留洞、岩根查验、互锁与闸底空了的短句可辨，末词收声但未报截断。",
+      "decision": "needs_new_reference",
+      "reason": "第8集瘦高庙工需要和守院、送单及报年份者保持独立，当前选角明确偏高、轻、鼻腔稍窄。原件实际分析是中低胸声且无突出鼻音，未展示该声音区别；保留有依据的新准备计划和旧候选比较，不因为新试读文字不同重做，也不搬用守院者。",
+      "range": null,
+      "range_basis": "原件虽14.68秒在单段上限内，当前音区共鸣方向未满足，不以时长合格替代身份选择。",
+      "limits": [
+        "这是当前声音方向下的制作判断，新方案仍待认可；不宣称旧声音普遍不能演此人",
+        "没有新增生成调用或输出音色保持验证"
+      ],
+      "use_review_completed_episodes": [
+        8
+      ],
+      "iteration": "实际音区共鸣与请求方向不一致说明文本匹配只应建立候选入口；回查守院者，仍按其独立硬实声音用途保留，不把两位庙工合并。",
+      "need_id": "material-voice-temple-tall",
+      "source": {
+        "object_id": "asset-fg3-temple-tall-base-voice-01",
+        "revision_id": "ff76fac079308f8e36177552fb7c58510d04ee6a5bd9220c71ea801d537d16bd",
+        "component_id": "original",
+        "sha256": "22a9ac308796591ae4dca6ffc3d02bbf8f2053a4dae9f0aa90a89ce40a08b56e"
+      },
+      "analysis_attempts": [
+        "temple-tall-ark-lite-01"
+      ],
+      "responsibility": "瘦高庙工的说话声音身份；新台词、呼吸、音量、情绪和声源距离由本镜重新表演。",
+      "not_inherited": [
+        "旧试读台词",
+        "旧语气、呼吸与停顿",
+        "旧录音空间",
+        "歌唱旋律或未经展示的表演能力"
+      ],
+      "approval": "new_plan_pending; no_historical_approval_transfer",
+      "use_review_status": "all_current_authored_uses_reviewed; performance_and_plan_approval_pending",
+      "models": [
+        "doubao-seed-2-0-lite-260428"
+      ]
+    },
+    "helpers-four-dock-a": {
+      "heard": "单一中青年感男声，中低胸声厚重平实、微哑轻鼻音，少气声；先陈述后问再短实决定，无明显音乐、他人或粗噪，极淡混响。",
+      "diction": "约0–2秒前晚我说家里有事清楚，其实后停顿、不用钻进去疑问和添名字加重各可辨。",
+      "decision": "suitable_spoken_identity",
+      "reason": "第10集此码头工先承认退缩，了解外侧方案后报名，需要结实稍粗的普通男声。原件身份方向适合，只给明确报名发话者，其余三人不因此共用独立母版；话未说完由接长木动作承接，不补训斥或勇士声。",
+      "range": {
+        "start_seconds": 0,
+        "end_seconds": 2.15
+      },
+      "range_basis": "取第一完整陈述至有事后的气口，模型推荐0–2.1秒，PCM1.985729–2.257521秒低电平，2.15秒位于其中，其实尚未进入。",
+      "limits": [
+        "未验证持续压杠时发话、远喊或生成音色保持",
+        "身份不继承原件迟疑或后段指令情绪"
+      ],
+      "use_review_completed_episodes": [
+        10
+      ],
+      "need_id": "material-voice-helpers-four-dock-a",
+      "source": {
+        "object_id": "asset-fg3-helpers-four-dock-a-base-voice-01",
+        "revision_id": "d5de34a81f0f1b91fce37d5f52242c26b713fba601909793330adaa8fba67c1d",
+        "component_id": "original",
+        "sha256": "cd5d4fa47c097f26b00d044e8414285c3a540341ab6d6ea346ef0055c94128c4"
+      },
+      "analysis_attempts": [
+        "helpers-four-dock-a-ark-lite-01"
+      ],
+      "responsibility": "四名压杠乡亲中的报名码头工的说话声音身份；新台词、呼吸、音量、情绪和声源距离由本镜重新表演。",
+      "not_inherited": [
+        "旧试读台词",
+        "旧语气、呼吸与停顿",
+        "旧录音空间",
+        "歌唱旋律或未经展示的表演能力"
+      ],
+      "approval": "new_plan_pending; no_historical_approval_transfer",
+      "use_review_status": "all_current_authored_uses_reviewed; performance_and_plan_approval_pending",
+      "models": [
+        "doubao-seed-2-0-lite-260428"
+      ]
+    },
+    "officer-second": {
+      "heard": "单一青年感男声，中高音、共鸣靠前、清亮均匀轻鼻音，少气声无明显沙哑；平缓告知，无明显音乐、他人或粗噪，极轻混响。",
+      "diction": "约1.2–7.7秒仓账守着、三年原祭册在此与等行礼才开完整可辨；园/原的同音书写不判错。",
+      "decision": "suitable_spoken_identity",
+      "reason": "第10集另一差役直接说明看守和册柜事项，较年轻偏明声线适合，与程差役厚实较低声独立。首段只是看守情况，不能认作封册经手年份的另一庙工，群体或差役身份不能互换。",
+      "range": {
+        "start_seconds": 2.9,
+        "end_seconds": 5.1
+      },
+      "range_basis": "取三年的原祭册在这里完整一句，PCM前间隙2.295562–3.229062、后间隙4.754354–5.494354秒，2.9–5.1秒位于两气口，2.2秒合法，不采用模型粗估起点。",
+      "limits": [
+        "没有证明高声传令、长段公文或生成音色保持",
+        "旧告知语气不继承为所有现场状态"
+      ],
+      "use_review_completed_episodes": [
+        10
+      ],
+      "need_id": "material-voice-officer-second",
+      "source": {
+        "object_id": "asset-fg3-officer-second-base-voice-01",
+        "revision_id": "f251ceee0cc42f0e4d57085c3f8432d4ebe61744b846bab9c5ea73b185b1b813",
+        "component_id": "original",
+        "sha256": "a2774b7d46360bb4c9259ce280a74384570c5f343c88cbc5bef88dcb0526191e"
+      },
+      "analysis_attempts": [
+        "officer-second-ark-lite-01"
+      ],
+      "responsibility": "另一名差役的说话声音身份；新台词、呼吸、音量、情绪和声源距离由本镜重新表演。",
+      "not_inherited": [
+        "旧试读台词",
+        "旧语气、呼吸与停顿",
+        "旧录音空间",
+        "歌唱旋律或未经展示的表演能力"
+      ],
+      "approval": "new_plan_pending; no_historical_approval_transfer",
+      "use_review_status": "all_current_authored_uses_reviewed; performance_and_plan_approval_pending",
+      "models": [
+        "doubao-seed-2-0-lite-260428"
+      ]
+    },
+    "elders-two-speaker": {
+      "heard": "单一清亮男声，中低区轻胸声，用力时微哑，无明显鼻音；求助急、叙述无奈、宣告提高音量均同人。模型听感偏青年，年龄不作人物事实。极淡户外底噪与空旷混响，无明显伴奏或他人声。",
+      "diction": "帮一把、没人肯来及蛇死大家活着三段可辨；石道/食道同音书写不判错误，整体仍清楚。",
+      "decision": "needs_comparison",
+      "reason": "第12集邀陶伯录供和后续求援报信设为两乡老中同一明确发话位置；当前选角年长薄亮，原件有亮和轻胸但模型年龄感偏青年。先比较，不仅凭近似年龄判废；另一乡老领路或留守不自动共用此声音。",
+      "range": {
+        "start_seconds": 2.7,
+        "end_seconds": 7.1
+      },
+      "range_basis": "待比较范围取没人肯来至叫不动的完整自然叙述；PCM前气口2.507583–2.9125、后气口6.863354–7.306854秒，2.7–7.1保留三分句。拒绝模型3–6秒粗估会漏后句的边界，排除强求助和激动宣告。",
+      "limits": [
+        "年长方向待选角比较，不自动选入视频",
+        "提高音量不证明真实远距离报信投射或生成音色保持",
+        "环境底噪与旧无奈语气不继承"
+      ],
+      "use_review_completed_episodes": [
+        12,
+        13,
+        14
+      ],
+      "need_id": "material-voice-elders-two-speaker",
+      "source": {
+        "object_id": "asset-fg3-elders-two-speaker-base-voice-01",
+        "revision_id": "765d7cb69dfa24637d3fb30f8e1387564704e798b78d3bc3f37a77846c62338c",
+        "component_id": "original",
+        "sha256": "8d3489f33661c68f9f829f79dca00c98c25cc18960eef5dfd0bcdcc783d8f62b"
+      },
+      "analysis_attempts": [
+        "elders-two-speaker-ark-lite-01"
+      ],
+      "responsibility": "两位乡老中求援与报信者的说话声音身份；新台词、呼吸、音量、情绪和声源距离由本镜重新表演。",
+      "not_inherited": [
+        "旧试读台词",
+        "旧语气、呼吸与停顿",
+        "旧录音空间",
+        "歌唱旋律或未经展示的表演能力"
+      ],
+      "approval": "new_plan_pending; no_historical_approval_transfer",
+      "use_review_status": "all_current_authored_uses_reviewed; performance_and_plan_approval_pending",
+      "models": [
+        "doubao-seed-2-0-lite-260428"
+      ]
+    },
+    "temple-workers-year-witness": {
+      "heard": "单一中年男声，中低胸声厚稳、较清亮少气声无沙哑，轻播音类鼻音；平直陈述，无明显音乐、他人或粗噪，轻微后期混响。",
+      "diction": "约0.15–3.28秒庙里怎么报我就怎么记完整可辨，逗号处短停顿。",
+      "decision": "suitable_spoken_identity",
+      "reason": "第12集说明经手年份的独立庙工，当前选角中年稍低平、字清楚，旧原件可作身份参考。试读词与梁书吏相同不证明同人；本条来自此庙工准确独立CALL。真正年份原词未定，不能用旧句替当前说明或把未明身份合并。规整读法只取声线，现场谨慎停顿另演。",
+      "range": {
+        "start_seconds": 0,
+        "end_seconds": 3.7
+      },
+      "range_basis": "准确3.7秒完整原件，保留整个两分句与首尾气口，PCM尾部3.336542–3.7秒；模型2.9秒结束建议仍在发声区，不采用。",
+      "limits": [
+        "轻播音感和混响不继承为前殿声场，现场口语须独立验收",
+        "当前年份的准确词句待准备，不读旧词填空",
+        "没有验证大喊或视频音色保持"
+      ],
+      "use_review_completed_episodes": [
+        12
+      ],
+      "iteration": "重复试读词不能用来合并声音身份，回查梁书吏仍保留其较轻青年声音与独立来源。",
+      "need_id": "material-voice-temple-workers-year-witness",
+      "source": {
+        "object_id": "asset-fg3-temple-workers-year-witness-base-voice-01",
+        "revision_id": "9fa10e86d704221561a6773e54ef0102a91c8dd6881d567e7909c239dc0b9597",
+        "component_id": "original",
+        "sha256": "25cc45850da338907448b1d94c4788dd0d48034996771c99c1b6d8b1247ef889"
+      },
+      "analysis_attempts": [
+        "temple-workers-year-witness-ark-lite-01"
+      ],
+      "responsibility": "封册时说明经手年份的庙工的说话声音身份；新台词、呼吸、音量、情绪和声源距离由本镜重新表演。",
+      "not_inherited": [
+        "旧试读台词",
+        "旧语气、呼吸与停顿",
+        "旧录音空间",
+        "歌唱旋律或未经展示的表演能力"
+      ],
+      "approval": "new_plan_pending; no_historical_approval_transfer",
+      "use_review_status": "all_current_authored_uses_reviewed; performance_and_plan_approval_pending",
+      "models": [
+        "doubao-seed-2-0-lite-260428"
+      ]
+    },
+    "temple-crowd-refuser": {
+      "heard": "单一成年男声，中低厚实、轻鼻音少气声，前段担心回不了家，末句抗拒加重；无明显伴奏、他人或粗噪，极淡混响。",
+      "diction": "那蛇要跑出来、谁还回得了家、我不去完整可辨，末句力度较重。",
+      "decision": "suitable_spoken_identity",
+      "reason": "第13集抬粮汉子拒援因为害怕蛇出来，厚实低声身份适合，恐惧不变凶恶，不加恶笑或扔袋动作。只给此明确拒援者，其他抬粮人和同群询问者不共用母版。",
+      "range": {
+        "start_seconds": 0.8,
+        "end_seconds": 3.6
+      },
+      "range_basis": "保留前两完整分句，PCM首部至0.982167秒安静，后气口3.295417–3.969625秒；0.8–3.6在两端气口，排除末句加重的我不去。模型1.1秒称为谁句起点与实际分段不符，不采用。",
+      "limits": [
+        "不证明急呼吸、大喊或生成音色保持",
+        "旧抗拒语气不自动继承现场，实际本镜需恐惧而非怒骂"
+      ],
+      "use_review_completed_episodes": [
+        13
+      ],
+      "need_id": "material-voice-temple-crowd-refuser",
+      "source": {
+        "object_id": "asset-fg3-temple-crowd-refuser-base-voice-01",
+        "revision_id": "d72e58a50e7b3547839a7e7078377e539797f201b6b13e4a32cd54284f6df48e",
+        "component_id": "original",
+        "sha256": "a462bbe392ff40afcf89204da4a4eb8ad0ce81acd520ee2857e2759bf75cb996"
+      },
+      "analysis_attempts": [
+        "temple-crowd-refuser-ark-lite-01"
+      ],
+      "responsibility": "拒绝帮忙的抬粮汉子的说话声音身份；新台词、呼吸、音量、情绪和声源距离由本镜重新表演。",
+      "not_inherited": [
+        "旧试读台词",
+        "旧语气、呼吸与停顿",
+        "旧录音空间",
+        "歌唱旋律或未经展示的表演能力"
+      ],
+      "approval": "new_plan_pending; no_historical_approval_transfer",
+      "use_review_status": "all_current_authored_uses_reviewed; performance_and_plan_approval_pending",
+      "models": [
+        "doubao-seed-2-0-lite-260428"
+      ]
+    },
+    "temple-crowd-urging": {
+      "heard": "单一中青年感女声，中低轻柔、轻胸共鸣、近录淡鼻音，少气声；轻声叮嘱平缓而非急喊，極淡环境底噪和混响，无明显音乐或他人声。",
+      "diction": "约0.3–1.6秒明早来吧可辨，只一句，不能当作当前催同伴离开的原词或急促表演已通过。",
+      "decision": "needs_longer_reference",
+      "reason": "第13集门旁催同伴走者是制作选定的成年女性低声身份，准确原件只有1.70秒，无符合视频渠道2秒下限的范围。保留对照，需要更长干净同方向试样并复核急而有声的表达；不是因为旧试读词不等于新话就默认重做。其他同群人物不能代她。",
+      "range": null,
+      "range_basis": "整件1.70秒已小于入口下限，不裁成更短、不补静音或改时长凑通过。",
+      "limits": [
+        "只支持短句低声身份听感，实际催促情绪未证明",
+        "新准备仅计划，无新增媒体生成"
+      ],
+      "use_review_completed_episodes": [
+        13
+      ],
+      "need_id": "material-voice-temple-crowd-urging",
+      "source": {
+        "object_id": "asset-fg3-temple-crowd-urging-base-voice-01",
+        "revision_id": "49f0da38025f8a7b8f6c7b0930160abdb64db62e984ab16529987b3c48d9ff6d",
+        "component_id": "original",
+        "sha256": "9ec0c43a61da6a6e7905435730e074faa30cb27bfe6d885531d8969a46b0ae79"
+      },
+      "analysis_attempts": [
+        "temple-crowd-urging-ark-lite-01"
+      ],
+      "responsibility": "门旁催同伴离开者的说话声音身份；新台词、呼吸、音量、情绪和声源距离由本镜重新表演。",
+      "not_inherited": [
+        "旧试读台词",
+        "旧语气、呼吸与停顿",
+        "旧录音空间",
+        "歌唱旋律或未经展示的表演能力"
+      ],
+      "approval": "new_plan_pending; no_historical_approval_transfer",
+      "use_review_status": "all_current_authored_uses_reviewed; performance_and_plan_approval_pending",
+      "models": [
+        "doubao-seed-2-0-lite-260428"
+      ]
+    },
+    "temple-crowd-enquirer": {
+      "heard": "单一中年感男声，偏低中音、稍厚轻胸声、少气声极淡鼻音，两个字拖尾平淡；无明显伴奏、他人或粗噪，极淡混响。模型末尾剪辑感不单独确认为尾字受损。",
+      "diction": "约0.05–1.23秒模型听为你会，短词清楚，不能当当前前院问消息的原词或证明远送自然询问。",
+      "decision": "needs_longer_reference",
+      "reason": "第14集前院问消息者是独立的制作男声选角，准确原件仅1.38秒，无法满足至少2秒参考；低沉拖尾也未展示当前中高自然远问方向。保留对照并准备更长同方向干净试样，不借拒援汉子或其他同群人声。",
+      "range": null,
+      "range_basis": "整件1.38秒不足下限，模型0.1–1.1秒符合要求的建议无效；不补静音、改时长或放宽入口。",
+      "limits": [
+        "短件只有两字，完整声音方向和投射力仍待新试样",
+        "新准备仅计划，沒有媒体生成或实际视频验收"
+      ],
+      "use_review_completed_episodes": [
+        14
+      ],
+      "need_id": "material-voice-temple-crowd-enquirer",
+      "source": {
+        "object_id": "asset-fg3-temple-crowd-enquirer-base-voice-01",
+        "revision_id": "f729aaad0857ccb93da7739d6a2c21e787558ea6f29969372b7a0ffc6515d119",
+        "component_id": "original",
+        "sha256": "e0dfd6f13da2979f716eb5490f59df2a7b69b485dec9f1a975ae211ec5e14dee"
+      },
+      "analysis_attempts": [
+        "temple-crowd-enquirer-ark-lite-01"
+      ],
+      "responsibility": "前院询问消息者的说话声音身份；新台词、呼吸、音量、情绪和声源距离由本镜重新表演。",
+      "not_inherited": [
+        "旧试读台词",
+        "旧语气、呼吸与停顿",
+        "旧录音空间",
+        "歌唱旋律或未经展示的表演能力"
+      ],
+      "approval": "new_plan_pending; no_historical_approval_transfer",
+      "use_review_status": "all_current_authored_uses_reviewed; performance_and_plan_approval_pending",
+      "models": [
+        "doubao-seed-2-0-lite-260428"
+      ]
+    },
+    "delivery-worker": {
+      "heard": "单一中年感男声，偏低厚重、胸声足、咬字偏实、少气声轻鼻音，笃定平直；无明显音乐、他人或粗噪，轻微混响。",
+      "diction": "约0.38–3.17秒庙里怎么报我就怎么记完整可辨；这个试读句不是当前指认送单日期的实际证词。",
+      "decision": "suitable_spoken_identity",
+      "reason": "第15集送单庙工独立指认日期，需要低而清楚的中年声，旧件可作此身份候选。它与报年份者、梁书吏虽同词，也各有独立原件和CALL，不能合并；当前日期原词未定，谨慎停顿重演，不配旧句。",
+      "range": {
+        "start_seconds": 0,
+        "end_seconds": 3.7
+      },
+      "range_basis": "准确3.7秒完整原件，PCM尾部3.105792–3.7秒自然安静；保留两完整分句及气口，不用模型3.1秒尾点可能漏尾音的估计。",
+      "limits": [
+        "声线相近程度没有可靠声纹鉴别结论，独立来源不等于已证明声学差异足够，选角仍待认可",
+        "日期的原词与谨慎表演待准备和输出验收",
+        "没有验证视频音色保持"
+      ],
+      "use_review_completed_episodes": [
+        15
+      ],
+      "need_id": "material-voice-delivery-worker",
+      "source": {
+        "object_id": "asset-fg3-delivery-worker-base-voice-01",
+        "revision_id": "70318fb887be2cd082c8959f5854ac4cc3a4cfebda3b7ff70fba56fe4fd2df9a",
+        "component_id": "original",
+        "sha256": "1952e97a43b8fb83b4f834448b4c6b9e63d1d16b8ed4aed8848dfa5b4301a4f2"
+      },
+      "analysis_attempts": [
+        "delivery-worker-ark-lite-01"
+      ],
+      "responsibility": "送单庙工的说话声音身份；新台词、呼吸、音量、情绪和声源距离由本镜重新表演。",
+      "not_inherited": [
+        "旧试读台词",
+        "旧语气、呼吸与停顿",
+        "旧录音空间",
+        "歌唱旋律或未经展示的表演能力"
+      ],
+      "approval": "new_plan_pending; no_historical_approval_transfer",
+      "use_review_status": "all_current_authored_uses_reviewed; performance_and_plan_approval_pending",
+      "models": [
+        "doubao-seed-2-0-lite-260428"
+      ]
+    },
+    "order-writer": {
+      "heard": "单一成熟男声，中低音、厚胸声、较清亮无明显粗哑，少气声带轻后鼻音，平缓笃定。无明显音乐、他人或杂音，轻微混响。",
+      "diction": "庙里怎么报我就怎么记完整清楚；报后停顿，慢而规整。原试读不是第15集认笔迹的实际证词。",
+      "decision": "needs_comparison",
+      "reason": "认笔迹者当前要求男中音稍细偏干、迟缓且字尾收紧；原音的厚重胸声与这个差异不充分一致，先比较选角，不据一次模型年龄或音色概括自动重做。它与送单者虽试读同词，准确来源各自独立；声学区别仍未被可靠验证。",
+      "range": {
+        "start_seconds": 0,
+        "end_seconds": 4.18
+      },
+      "range_basis": "4.18秒原件整句；PCM开头0–0.27975秒、尾部3.880125–4.18秒自然安静。模型推荐0.2秒从庙字后起，不能采用截词切点。此范围仅供比较，暂不启用。",
+      "limits": [
+        "厚声与偏细干的方向差异待用户比较和选角",
+        "独立CALL和原件不证明与送单者的声纹区别足够",
+        "认笔迹原词未定，迟缓、收尾等表演未验收",
+        "没有验证视频音色保持"
+      ],
+      "use_review_completed_episodes": [
+        15
+      ],
+      "need_id": "material-voice-order-writer",
+      "source": {
+        "object_id": "asset-fg3-order-writer-base-voice-01",
+        "revision_id": "a9416f3a5220d987f9947a4c3d1b9a43466c6aae680a18e02969842147edfc4b",
+        "component_id": "original",
+        "sha256": "88776888eab232bb0929591106649cc172ae0891dc86124616f132a9a7d813fb"
+      },
+      "analysis_attempts": [
+        "order-writer-ark-lite-01"
+      ],
+      "responsibility": "备粮单经手人的说话声音身份；新台词、呼吸、音量、情绪和声源距离由本镜重新表演。",
+      "not_inherited": [
+        "旧试读台词",
+        "旧语气、呼吸与停顿",
+        "旧录音空间",
+        "歌唱旋律或未经展示的表演能力"
+      ],
+      "approval": "new_plan_pending; no_historical_approval_transfer",
+      "use_review_status": "all_current_authored_uses_reviewed; performance_and_plan_approval_pending",
+      "models": [
+        "doubao-seed-2-0-lite-260428"
+      ]
+    },
+    "xiaoman-mother": {
+      "heard": "单一中低女声，清亮带明显鼻腔共鸣，声压由克制控诉转向悲愤，字音清楚有支撑；无明显音乐、他人、粗噪或强混响。末句尾音被报告有截断。",
+      "diction": "前段小满也不愿意、她抱着我的腿哭、你们连一晚都不肯等清楚，后段孩子还给我明显升高。转写他/她不能靠同音区分，不改原词。",
+      "decision": "suitable_spoken_identity",
+      "reason": "当前需要略低、清楚而绷紧的申诉女声，前段可提供这个身份与短句控诉的候选依据。模型未明确听到干哑边缘，年龄概括不能当确切年龄；片段和选角仍需认可，不把悲愤读句等同长哭能力。",
+      "range": {
+        "start_seconds": 2.1,
+        "end_seconds": 6.15
+      },
+      "range_basis": "起点位于1.545479–2.515437秒安静间隙，保留她抱着我的腿哭到你们连一晚都不肯等完整分句；尾点在5.977708–6.419208秒间隙。避开首句与被报告截断的末句，不采用模型从1秒起会截前句的推荐。",
+      "limits": [
+        "干哑边缘与准确年龄感没有可靠结论，选角仍待认可",
+        "这段只承担声音身份，不把原控诉直接作为新镜头声轨",
+        "伏案哭到说不出话与持续哭泣未验证",
+        "没有验证视频音色保持"
+      ],
+      "use_review_completed_episodes": [
+        15
+      ],
+      "need_id": "material-voice-xiaoman-mother",
+      "source": {
+        "object_id": "asset-fg3-xiaoman-mother-base-voice-01",
+        "revision_id": "d0c393a56b68d66b5a84641910edcf42a31dfda8a1377d6c35e293f8a7a13377",
+        "component_id": "original",
+        "sha256": "b42d76dfa35ab9ad01d038a272244d249ec50ed4a270c8bd8988423b098ce5b2"
+      },
+      "analysis_attempts": [
+        "xiaoman-mother-ark-lite-01"
+      ],
+      "responsibility": "小满母亲的说话声音身份；新台词、呼吸、音量、情绪和声源距离由本镜重新表演。",
+      "not_inherited": [
+        "旧试读台词",
+        "旧语气、呼吸与停顿",
+        "旧录音空间",
+        "歌唱旋律或未经展示的表演能力"
+      ],
+      "approval": "new_plan_pending; no_historical_approval_transfer",
+      "use_review_status": "all_current_authored_uses_reviewed; performance_and_plan_approval_pending",
+      "models": [
+        "doubao-seed-2-0-lite-260428"
+      ]
+    },
+    "new-steward": {
+      "heard": "单一中低成熟男声，口胸共鸣明显、分量足、清亮少气声，轻正式播音感；平稳温平、字音实。无明显伴奏他人粗噪，轻均匀混响。",
+      "diction": "都算了、原约本息共六斗、以前还的加上这四升已经超过、旧债销清多收粮退你们清楚，逻辑停顿完整。",
+      "decision": "suitable_spoken_identity",
+      "reason": "温平、清晰、稍慢核数的男中音与第16集耐心核账用途相符，原音有数字与公允告知依据。制作身份与赵执事分开，但没有可靠声纹比较结论；逐行原账与末行实际文字仍未锁，不能以旧解释句替读账。",
+      "range": {
+        "start_seconds": 1.3,
+        "end_seconds": 4.35
+      },
+      "range_basis": "起于0.848167–1.862292秒间隙，完整保留原约本息共六斗；尾在4.064479–4.633917秒自然间隙。3.05秒足以核口胸声与咬字，不复制整段解释作为镜头声轨。",
+      "limits": [
+        "正式播音感需要新镜头生活化表演",
+        "确切年龄、与赵执事的声纹区别未证实",
+        "逐行账原词和末行重读须先准备",
+        "没有验证视频音色保持"
+      ],
+      "use_review_completed_episodes": [
+        16
+      ],
+      "need_id": "material-voice-new-steward",
+      "source": {
+        "object_id": "asset-fg3-new-steward-base-voice-01",
+        "revision_id": "eb3cf12c84aed134d97b74dd68257a96362a1286faa5e5d3dce6af2e9e129ea3",
+        "component_id": "original",
+        "sha256": "bf032631a9d32fb7fdd1a8d757975e4080640af96129326b796f6b76bde9aec3"
+      },
+      "analysis_attempts": [
+        "new-steward-ark-lite-01"
+      ],
+      "responsibility": "新管事的说话声音身份；新台词、呼吸、音量、情绪和声源距离由本镜重新表演。",
+      "not_inherited": [
+        "旧试读台词",
+        "旧语气、呼吸与停顿",
+        "旧录音空间",
+        "歌唱旋律或未经展示的表演能力"
+      ],
+      "approval": "new_plan_pending; no_historical_approval_transfer",
+      "use_review_status": "all_current_authored_uses_reviewed; performance_and_plan_approval_pending",
+      "models": [
+        "doubao-seed-2-0-lite-260428"
+      ]
+    },
+    "clerk-proclamation": {
+      "heard": "单一青年感男声，中低、靠前平实，清亮轻鼻音，分量均匀少气声，正式平直；无明显伴奏他人粗噪，极淡混响，尾部宣读被报告截断。",
+      "diction": "判词大多清楚、书面逻辑停顿规整；模型只概括内容，末尾梁书吏须记的转写可能是虚/须同音误判，不能当逐字核验通过，也不改历史原词。",
+      "decision": "suitable_spoken_identity",
+      "reason": "明亮、平正且稳定宣读的青年男声可作第16集新书吏身份候选，与梁及读募书吏准确来源分开。完整33.9秒不直接进入视频参考；选取前部完整罪责与处置短段，公开气息远送、各长判词仍需新表演验收。",
+      "range": {
+        "start_seconds": 2.4,
+        "end_seconds": 10.65
+      },
+      "range_basis": "原音分析定位强迫献祭到押赴郡狱待决；边界分别在2.177437–2.62625秒、10.213958–11.087604秒自然间隙。8.25秒保留完整语义，不采用模型12.1秒落在下一发声中的尾点，排除被报告切断末尾。",
+      "limits": [
+        "当前声区较低但清亮，具体选角仍待认可，不把模型年龄和100%置信当事实",
+        "完整判词逐字、换气与远送能力未验收",
+        "三名书吏独立来源不等于已完成可靠声纹比较",
+        "没有验证视频音色保持"
+      ],
+      "use_review_completed_episodes": [
+        16
+      ],
+      "need_id": "material-voice-clerk-proclamation",
+      "source": {
+        "object_id": "asset-fg3-clerk-proclamation-base-voice-01",
+        "revision_id": "5c98e08d24ebf0bcf1ef70ae0763e5f6886c4b157c1583a244c3a17068e5c12b",
+        "component_id": "original",
+        "sha256": "2e1c8a43dbc0704bbaa6571a3f3068d3fa4969d5512ef9a7c026e237d5ccb0e6"
+      },
+      "analysis_attempts": [
+        "clerk-proclamation-ark-lite-01"
+      ],
+      "responsibility": "宣读告示书吏的说话声音身份；新台词、呼吸、音量、情绪和声源距离由本镜重新表演。",
+      "not_inherited": [
+        "旧试读台词",
+        "旧语气、呼吸与停顿",
+        "旧录音空间",
+        "歌唱旋律或未经展示的表演能力"
+      ],
+      "approval": "new_plan_pending; no_historical_approval_transfer",
+      "use_review_status": "all_current_authored_uses_reviewed; performance_and_plan_approval_pending",
+      "models": [
+        "doubao-seed-2-0-lite-260428"
+      ]
+    },
+    "singer-teacher": {
+      "heard": "单一成熟中低女声，柔和适中、轻胸声，清亮轻鼻音，少气声无明显沙哑；气息稳定、口语平缓清楚。无明显音乐他人粗噪，轻自然混响。",
+      "diction": "你先唱我听听、认回来认得自家的桥再听一遍、连上了清楚；全件为说话，没有演唱。",
+      "decision": "suitable_spoken_identity",
+      "reason": "温润、有支撑、教词口语清楚的声音与歌娘当前身份相符。它只证明说话候选，不证明接住阿蘅旋律、放慢重唱、按换气提示等演唱能力，歌曲仍沿既有独立路线另验。",
+      "range": {
+        "start_seconds": 2.05,
+        "end_seconds": 5.9
+      },
+      "range_basis": "从1.856958–2.262729秒间隙进入认字，保留回来认得自家的桥再听一遍；尾在5.612396–6.160792秒间隙。3.85秒完整，不采用模型1.7秒会侵入前句尾音及5秒尚未结束的估计。",
+      "limits": [
+        "只证明口语声线与咬字，不证明歌唱或旋律接续",
+        "轻微混响不继承到院中声场",
+        "与其他女声没有可靠声纹鉴别结论，选角和新片段待认可",
+        "没有验证视频音色保持"
+      ],
+      "use_review_completed_episodes": [
+        16
+      ],
+      "need_id": "material-voice-singer-teacher",
+      "source": {
+        "object_id": "asset-fg3-singer-teacher-base-voice-01",
+        "revision_id": "b765dea8e10478504ba423f03a002cf58c86398c1a941f63ea05d3b28a0b180d",
+        "component_id": "original",
+        "sha256": "858980170049160d53ffaa20108bf0f79e11066df70e6d257af2a652a79b9abd"
+      },
+      "analysis_attempts": [
+        "singer-teacher-ark-lite-01"
+      ],
+      "responsibility": "邻村歌娘的说话声音身份；新台词、呼吸、音量、情绪和声源距离由本镜重新表演。",
+      "not_inherited": [
+        "旧试读台词",
+        "旧语气、呼吸与停顿",
+        "旧录音空间",
+        "歌唱旋律或未经展示的表演能力"
+      ],
+      "approval": "new_plan_pending; no_historical_approval_transfer",
+      "use_review_status": "all_current_authored_uses_reviewed; performance_and_plan_approval_pending",
+      "models": [
+        "doubao-seed-2-0-lite-260428"
+      ]
+    },
+    "offscreen-caller": {
+      "heard": "单一中低女声，偏厚胸声、轻沙哑与鼻音，少气声，清楚平实而郑重；无音乐或其他人，模型报告极淡脚步鸟鸣及自然混响，未能另行确认具体背景来源。",
+      "diction": "记住你们说的人多也别逞强清楚，句尾强字较轻，完整自然停顿；原句不是第17集叫李寄回家的实际词。",
+      "decision": "needs_comparison",
+      "reason": "当前窗外归家呼唤制作选为中年女性温平自然中音，原件偏低厚、轻沙边缘与此方向尚需比较；不能只因关切叮嘱便认成李寄母亲，也不因旧词不同默认重录。暂不开启下游参考，保留准确比较片段和独立待认可方案。",
+      "range": {
+        "start_seconds": 0,
+        "end_seconds": 4.58
+      },
+      "range_basis": "准确4.58秒整件，两完整分句和原有长停顿，尾部4.140396–4.58秒自然安静；不采用模型3.8秒可能漏强字尾音的推荐，不添加静音或改时长。",
+      "limits": [
+        "偏低厚轻沙声线与温平中音方向待比较",
+        "极淡具体环境声仅为模型观察，不能当已查明的声源事实",
+        "姓名与亲属身份未明，不能当李寄母亲，也不借用唤程者",
+        "真实回家呼唤原词和窗外距离未验证",
+        "没有验证视频音色保持"
+      ],
+      "use_review_completed_episodes": [
+        17
+      ],
+      "need_id": "material-voice-offscreen-caller",
+      "source": {
+        "object_id": "asset-fg3-offscreen-caller-base-voice-01",
+        "revision_id": "aac153bf8095f2e35c8f23aa784e93b62565f5d913211d012d4e76f9d2bf6254",
+        "component_id": "original",
+        "sha256": "716f9b92c8ed9b716f143ddb4ac4f0cfe0874676524a2729fdf2e5a301f24d2a"
+      },
+      "analysis_attempts": [
+        "offscreen-caller-ark-lite-01"
+      ],
+      "responsibility": "窗外唤李寄归家的人的说话声音身份；新台词、呼吸、音量、情绪和声源距离由本镜重新表演。",
+      "not_inherited": [
+        "旧试读台词",
+        "旧语气、呼吸与停顿",
+        "旧录音空间",
+        "歌唱旋律或未经展示的表演能力"
+      ],
+      "approval": "new_plan_pending; no_historical_approval_transfer",
+      "use_review_status": "all_current_authored_uses_reviewed; performance_and_plan_approval_pending",
       "models": [
         "doubao-seed-2-0-lite-260428"
       ]
@@ -2285,6 +3271,3376 @@
       ],
       "authored_sha256": "19bd05f2ccd74b037a2a71f4b3927d98bb83cb358a28f478bd3fb1636fc1450c",
       "screenplay_sha256": "c428946554029be05f119eae0ecefeb5bbc6501115db5d096c007ebe0af12f3d"
+    },
+    {
+      "summary": "父亲先承认不会才承担组织，母亲既说家庭后果也安排照护，支援落实为背稳病人和照门槛；声音从关门阻止转向共同工作，不做英雄任命。",
+      "voices": {
+        "li-dan": "厚实低男声候选取完整问话，不继承后段果决到全部商议。不会、先看地方和不照旧祭蛇的条件完整；随口嗯不是郑重任命李寄。",
+        "li-ji": "新准备方向保持，长句急说要留换气，爹的短呼唤与按衣角犹豫不同于抢牌；末句托罐底说明共同承重，不抢帮忙主体。",
+        "tao": "低沙慢句旧件待比较窄干老年方向，回忆只发挣扎声，旧阿禾台词不得新增；口语参考未验证该非语言表演。",
+        "li-mother": "稳而有支撑的中低女声候选，担忧一家与腾床托工作都是同人意图，不能用尖叫把她变成阻挠者。",
+        "li-xiao": "有依据新准备不变；门外报船讯、应下找孙六、竹杆隔开庙工分别按距离和当下任务重演，不复用旧试读词。",
+        "sun-liu": "厚男中音候选从背带熟人话到敲小鼓呼邻人，投射力另验；鼓只是召集，不提前变战鼓。",
+        "heng-mother": "低薄初段身份用于担心连累，问完父亲答完再接触；咳嗽与呼吸仍由病人重量和搬运动作重演。",
+        "temple-guards-guard-a": "完整2.58秒作明确发话守院者身份参考，另一庙工不补声；阻拦短句不和李绡叠成多人怒喊。",
+        "neighbor-woman": "完整2.28秒候选，灯照门槛时这里高慢些是实用提醒，与母亲及李绡独立。"
+      },
+      "continuity": "汤碗灶声、重闩一次、柴断进入唯一记忆，人群挡陶伯后缺口碗落桌返回当下，不新增阿禾台词或洞内死法。商议每人完整说完；背带接触顺序、扶靠托腰兜腿到站起保留呼吸和布声，院门停在安全处，鼓后邻门逐个开，先移凳再跨槛。药罐上方与底部双人分担，脚步按灯照路慢下来。",
+      "iteration": "陶伯旧声低沙但厚窄与年龄方向待比较，不能借挑柴老汉高轻声解决；守院发话者则保留其硬实独立声。短原件2.28与2.58的模型时间只能粗定位，继续按准确原件范围，四件过短不放行。",
+      "number": 6,
+      "uses": [
+        {
+          "shot": "av-e06-a01-s01",
+          "speaker": "li-dan",
+          "source_keys": [
+            "s014:3"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e06-a01-s01",
+          "speaker": "li-ji",
+          "source_keys": [
+            "s014:4"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e06-a01-s02",
+          "speaker": "li-ji",
+          "source_keys": [
+            "s014:6",
+            "s014:8"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e06-a01-s03",
+          "speaker": "li-dan",
+          "source_keys": [
+            "s014:10",
+            "s014:12"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e06-a01-s03",
+          "speaker": "li-ji",
+          "source_keys": [
+            "s014:11"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e06-a02-s01",
+          "speaker": "tao",
+          "source_keys": [
+            "s014:15"
+          ],
+          "modes": [
+            "挣扎声"
+          ]
+        },
+        {
+          "shot": "av-e06-a03-s01",
+          "speaker": "li-dan",
+          "source_keys": [
+            "s014:17",
+            "s014:20"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e06-a03-s01",
+          "speaker": "li-mother",
+          "source_keys": [
+            "s014:19"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e06-a03-s02",
+          "speaker": "li-ji",
+          "source_keys": [
+            "s014:22"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e06-a03-s03",
+          "speaker": "li-mother",
+          "source_keys": [
+            "s014:24",
+            "s014:28"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e06-a03-s03",
+          "speaker": "li-dan",
+          "source_keys": [
+            "s014:27"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e06-a03-s04",
+          "speaker": "li-dan",
+          "source_keys": [
+            "s014:29",
+            "s014:31",
+            "s014:33"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e06-a03-s04",
+          "speaker": "li-ji",
+          "source_keys": [
+            "s014:32"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e06-a03-s05",
+          "speaker": "li-ji",
+          "source_keys": [
+            "s014:34"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e06-a03-s05",
+          "speaker": "li-dan",
+          "source_keys": [
+            "s014:36"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e06-a03-s06",
+          "speaker": "li-mother",
+          "source_keys": [
+            "s014:39"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e06-a03-s06",
+          "speaker": "li-xiao",
+          "source_keys": [
+            "s014:40"
+          ],
+          "modes": [
+            "门外报讯"
+          ]
+        },
+        {
+          "shot": "av-e06-a03-s07",
+          "speaker": "li-dan",
+          "source_keys": [
+            "s014:43"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e06-a03-s07",
+          "speaker": "li-xiao",
+          "source_keys": [
+            "s014:44"
+          ],
+          "modes": [
+            "应答"
+          ]
+        },
+        {
+          "shot": "av-e06-a04-s01",
+          "speaker": "li-dan",
+          "source_keys": [
+            "s015:3"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e06-a04-s01",
+          "speaker": "sun-liu",
+          "source_keys": [
+            "s015:4"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e06-a04-s02",
+          "speaker": "heng-mother",
+          "source_keys": [
+            "s015:7"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e06-a04-s02",
+          "speaker": "li-dan",
+          "source_keys": [
+            "s015:8"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e06-a04-s03",
+          "speaker": "li-dan",
+          "source_keys": [
+            "s015:10"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e06-a04-s04",
+          "speaker": "temple-guards-guard-a",
+          "source_keys": [
+            "s015:13"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e06-a04-s04",
+          "speaker": "li-xiao",
+          "source_keys": [
+            "s015:15"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e06-a04-s05",
+          "speaker": "sun-liu",
+          "source_keys": [
+            "s015:17"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e06-a04-s05",
+          "speaker": "neighbor-woman",
+          "source_keys": [
+            "s015:19"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e06-a04-s06",
+          "speaker": "heng-mother",
+          "source_keys": [
+            "s015:20"
+          ],
+          "modes": [
+            "咳嗽"
+          ]
+        },
+        {
+          "shot": "av-e06-a04-s07",
+          "speaker": "li-ji",
+          "source_keys": [
+            "s015:25"
+          ],
+          "modes": [
+            "说话"
+          ]
+        }
+      ],
+      "authored_sha256": "da38a63b696a40b14ba3f8f0d42b49e4bd9f80fe0137b908a6187c8a7e3b9d75",
+      "screenplay_sha256": "c428946554029be05f119eae0ecefeb5bbc6501115db5d096c007ebe0af12f3d"
+    },
+    {
+      "summary": "报名通过逐条谈条件取得暂停、阿蘅此次免祭与不补抓；阿蘅亲口否认自愿，自己核对收纸。声音让文书条件被听懂，不把父亲承担或官员命令演成已经永久禁祭。",
+      "voices": {
+        "heng-mother": "同一低薄身份仅延续里屋咳嗽和跨门画外咳嗽，口语参考不证明咳嗽本身；喂水等咳完才接。",
+        "li-ji": "新准备，夜问喂蛇人进出与狗送饵都是真疑问，被否定后收手；县衙报还有我、问看过洞口和两日期限清楚，不自动任命作战。",
+        "li-dan": "低厚问话身份保留，磨刀停声才答；报名、换纸、留家、查后院条件稳而不豪言，请求当众念完仅语意已定不补原词。",
+        "a-heng": "轻亮说话身份保持，黎明主动同行、没答应喂蛇、以后呢和不是自愿的各由她自己说完；记工债数长句留气口，不由李寄代言。",
+        "li-mother": "有支撑女中低音候选，黎明接药罐说照看是落实互助，与阿蘅母亲独立。",
+        "li-xiao": "沿新准备，报姓名与认出自愿入祀同一人，字头干脆，声音不代替文字交接的准确纸面。",
+        "sun-liu": "厚男中音候选，报名与说明供食止于井边平实，不先知道互锁机关。",
+        "clerk-liang": "青年较轻稳的独立声候选，旧式说明和庙里怎么报平读，被追问留不稳停顿；当众读回须按当前文书内容，不能以旧试样词或另一书吏声替代。",
+        "magistrate": "圆厚中低声候选，追问、承认信息缺失、逐项下令有区别，受责不粗吼；停止索人至查清和未来召乡老议各有边界。",
+        "officer-cheng": "成熟低实清楚身份，应声、记下封据查账与承认洞口未见，按日期安排行动，不装全知；后续停止口令另验。",
+        "priest": "厚实宣告身份保留，向官员说后院禁地和不成仍安神时无视女孩由接话和目光表达，不盖掉阿蘅明确拒绝。",
+        "zhao": "中低平稳初段身份，祭停后粮未说完一句保留其话语位置，不增加结束对白。",
+        "zhou": "平实厚声片段保留，举票说人等米下锅是为实际需求发话，旧邀唱词不作当前音轨。"
+      },
+      "continuity": "夜咳跨里外、巷步远去、磨刀停让对白有同一听觉空间，狗舔手不配理解台词的反应声。廊下报四人名字分开，读自愿、换白纸、两旧名无答停顿再到免祭读回依次听懂。纸笔、按印和折纸不遮关键字；应募与免祭两文书去向独立，粮照发、债要封查按议题分开。走出廊后街声渐近，李寄只压风等阿蘅收证据。",
+      "iteration": "新增两名书吏相关声音中，梁较轻清亮与照壁圆厚分开；年龄和绝对音区近似值不作鉴定。全部40需求与40原资产正式当前头本次读回未变，已做原音判断仍指同一准确原件；主干新增文字交接保留，正确声音条件与事件不重做。",
+      "number": 7,
+      "uses": [
+        {
+          "shot": "av-e07-a01-s01",
+          "speaker": "heng-mother",
+          "source_keys": [
+            "s016:1"
+          ],
+          "modes": [
+            "咳嗽"
+          ]
+        },
+        {
+          "shot": "av-e07-a01-s02",
+          "speaker": "li-ji",
+          "source_keys": [
+            "s016:5"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e07-a01-s02",
+          "speaker": "li-dan",
+          "source_keys": [
+            "s016:7"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e07-a01-s03",
+          "speaker": "li-ji",
+          "source_keys": [
+            "s016:9"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e07-a01-s03",
+          "speaker": "li-dan",
+          "source_keys": [
+            "s016:10",
+            "s016:12"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e07-a01-s04",
+          "speaker": "heng-mother",
+          "source_keys": [
+            "s016:13"
+          ],
+          "modes": [
+            "画外咳嗽"
+          ]
+        },
+        {
+          "shot": "av-e07-a01-s05",
+          "speaker": "li-ji",
+          "source_keys": [
+            "s016:15"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e07-a01-s05",
+          "speaker": "a-heng",
+          "source_keys": [
+            "s016:16"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e07-a01-s05",
+          "speaker": "li-mother",
+          "source_keys": [
+            "s016:18"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e07-a02-s01",
+          "speaker": "li-dan",
+          "source_keys": [
+            "s017:2"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e07-a02-s01",
+          "speaker": "li-xiao",
+          "source_keys": [
+            "s017:3"
+          ],
+          "modes": [
+            "报姓名"
+          ]
+        },
+        {
+          "shot": "av-e07-a02-s01",
+          "speaker": "sun-liu",
+          "source_keys": [
+            "s017:4"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e07-a02-s01",
+          "speaker": "li-ji",
+          "source_keys": [
+            "s017:6"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e07-a02-s02",
+          "speaker": "li-xiao",
+          "source_keys": [
+            "s017:8"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e07-a02-s02",
+          "speaker": "li-dan",
+          "source_keys": [
+            "s017:10",
+            "s017:12"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e07-a02-s02",
+          "speaker": "clerk-liang",
+          "source_keys": [
+            "s017:11"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e07-a02-s03",
+          "speaker": "magistrate",
+          "source_keys": [
+            "s017:14",
+            "s017:16"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e07-a02-s03",
+          "speaker": "li-dan",
+          "source_keys": [
+            "s017:15"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e07-a02-s03",
+          "speaker": "sun-liu",
+          "source_keys": [
+            "s017:17"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e07-a02-s03",
+          "speaker": "li-ji",
+          "source_keys": [
+            "s017:18"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e07-a02-s04",
+          "speaker": "magistrate",
+          "source_keys": [
+            "s017:20"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e07-a02-s04",
+          "speaker": "li-dan",
+          "source_keys": [
+            "s017:21"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e07-a02-s04",
+          "speaker": "clerk-liang",
+          "source_keys": [
+            "s017:23"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e07-a02-s05",
+          "speaker": "magistrate",
+          "source_keys": [
+            "s017:25",
+            "s017:27"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e07-a02-s05",
+          "speaker": "li-ji",
+          "source_keys": [
+            "s017:28"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e07-a02-s06",
+          "speaker": "a-heng",
+          "source_keys": [
+            "s017:30"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e07-a02-s07",
+          "speaker": "magistrate",
+          "source_keys": [
+            "s017:32",
+            "s017:36"
+          ],
+          "modes": [
+            "说话",
+            "吩咐"
+          ]
+        },
+        {
+          "shot": "av-e07-a02-s07",
+          "speaker": "officer-cheng",
+          "source_keys": [
+            "s017:33"
+          ],
+          "modes": [
+            "应声"
+          ]
+        },
+        {
+          "shot": "av-e07-a02-s07",
+          "speaker": "li-dan",
+          "source_keys": [
+            "s017:35"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e07-a03-s01",
+          "speaker": "priest",
+          "source_keys": [
+            "s017:38",
+            "s017:41"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e07-a03-s01",
+          "speaker": "a-heng",
+          "source_keys": [
+            "s017:39"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e07-a03-s02",
+          "speaker": "magistrate",
+          "source_keys": [
+            "s017:43",
+            "s017:45"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e07-a03-s02",
+          "speaker": "a-heng",
+          "source_keys": [
+            "s017:44"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e07-a03-s03",
+          "speaker": "a-heng",
+          "source_keys": [
+            "s017:47"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e07-a03-s04",
+          "speaker": "li-dan",
+          "source_keys": [
+            "s017:49"
+          ],
+          "modes": [
+            "请求"
+          ]
+        },
+        {
+          "shot": "av-e07-a03-s04",
+          "speaker": "clerk-liang",
+          "source_keys": [
+            "s017:49"
+          ],
+          "modes": [
+            "当众读回"
+          ]
+        },
+        {
+          "shot": "av-e07-a04-s01",
+          "speaker": "magistrate",
+          "source_keys": [
+            "s017:50"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e07-a04-s01",
+          "speaker": "li-dan",
+          "source_keys": [
+            "s017:51"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e07-a04-s02",
+          "speaker": "zhao",
+          "source_keys": [
+            "s017:52"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e07-a04-s02",
+          "speaker": "zhou",
+          "source_keys": [
+            "s017:54"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e07-a04-s02",
+          "speaker": "magistrate",
+          "source_keys": [
+            "s017:55"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e07-a04-s03",
+          "speaker": "a-heng",
+          "source_keys": [
+            "s017:58"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e07-a04-s04",
+          "speaker": "officer-cheng",
+          "source_keys": [
+            "s017:60"
+          ],
+          "modes": [
+            "说话"
+          ]
+        }
+      ],
+      "authored_sha256": "ac77c93a0611a881e7436ff5935f03ea82acc57e858cbe458026ac21fda672e4",
+      "screenplay_sha256": "c428946554029be05f119eae0ecefeb5bbc6501115db5d096c007ebe0af12f3d"
+    },
+    {
+      "summary": "门闸真实用途先以操作与挡撞建立，再听同一装置怎样送人；阿蘅从事实发问并有退坐权利，最后只提外侧设想，尚未获许可动手。",
+      "voices": {
+        "zhao": "中低平稳初段身份保留，开门拖延和两年祭神未说完的借口维持停顿，不增邪恶回声；无答和摸空腰侧是动作，不补台词。",
+        "officer-cheng": "低实清楚身份用于要钥匙、核出口、先说再动、催问和喝止；距离与指令落点重演。只在实际核查后承认无旁路，不预知机关。",
+        "li-dan": "低厚身份，量距、描述成人所见蛇粗和反问木门是平声带重量，不让女孩获得他的视觉细节；外侧下刀仍疑问不是必胜宣言。",
+        "temple-tall": "保留新准备：旧音未展示偏高轻窄鼻音方向。真实操作解释一条条说清，送人次序迟疑处不能补遇害画面或受害者惨叫；与其他庙工身份不合并。",
+        "a-heng": "轻亮身份候选，先问互锁再问阿禾从哪进去，退到墙边后的为什么需完整空隙；只取身份，原样劝慰词和亲昵语气不适用此时。",
+        "li-ji": "沿新准备，原来有门与末段轻问走得动吗是理解和陪伴，不先替阿蘅得答案；狗送饵未获方案不添声。",
+        "sun-liu": "厚男中音候选，先得压住及不能伸手试蛇说清，沉默后木槌轻放与后续技术话不同层次，不改热血挥槌。"
+      },
+      "continuity": "南前门北后闸、验栓开前放饵抽手关前推两次再提后、蛇退净才落闸顺序逐响对应，保持东侧声源。院外卸粮远声到盖下擦动、一次沉撞再退鳞等待，门闩未松时不加未来砍蛇音。成人挡女孩与细缝所见有听觉和知情边界；送人证词留沉默再技术讨论，锁院收钥匙后下山慢脚步以家灯结束。",
+      "iteration": "瘦高庙工实际声线未呈现当前独立选角方向，改有理由的新准备，守院发話者仍适合自己的硬实短句用途。阿蘅处境从日常转震动但身份保持，旧参考不继承语气，既有正确操作声音设计不动。",
+      "number": 8,
+      "uses": [
+        {
+          "shot": "av-e08-a01-s02",
+          "speaker": "zhao",
+          "source_keys": [
+            "s018:4"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e08-a01-s02",
+          "speaker": "officer-cheng",
+          "source_keys": [
+            "s018:5"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e08-a01-s03",
+          "speaker": "li-dan",
+          "source_keys": [
+            "s018:9"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e08-a01-s03",
+          "speaker": "temple-tall",
+          "source_keys": [
+            "s018:10"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e08-a01-s04",
+          "speaker": "officer-cheng",
+          "source_keys": [
+            "s018:13"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e08-a01-s04",
+          "speaker": "temple-tall",
+          "source_keys": [
+            "s018:14"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e08-a01-s05",
+          "speaker": "officer-cheng",
+          "source_keys": [
+            "s018:16"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e08-a02-s01",
+          "speaker": "officer-cheng",
+          "source_keys": [
+            "s018:18",
+            "s018:19"
+          ],
+          "modes": [
+            "叫停",
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e08-a02-s03",
+          "speaker": "a-heng",
+          "source_keys": [
+            "s018:22"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e08-a02-s03",
+          "speaker": "temple-tall",
+          "source_keys": [
+            "s018:23"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e08-a02-s05",
+          "speaker": "li-dan",
+          "source_keys": [
+            "s018:30"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e08-a02-s06",
+          "speaker": "temple-tall",
+          "source_keys": [
+            "s018:33"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e08-a03-s01",
+          "speaker": "li-ji",
+          "source_keys": [
+            "s018:36"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e08-a03-s01",
+          "speaker": "zhao",
+          "source_keys": [
+            "s018:37"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e08-a03-s01",
+          "speaker": "li-dan",
+          "source_keys": [
+            "s018:39"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e08-a03-s02",
+          "speaker": "a-heng",
+          "source_keys": [
+            "s019:2"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e08-a03-s02",
+          "speaker": "officer-cheng",
+          "source_keys": [
+            "s019:4"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e08-a03-s03",
+          "speaker": "temple-tall",
+          "source_keys": [
+            "s019:6"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e08-a03-s04",
+          "speaker": "a-heng",
+          "source_keys": [
+            "s019:9"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e08-a03-s05",
+          "speaker": "officer-cheng",
+          "source_keys": [
+            "s019:11"
+          ],
+          "modes": [
+            "喝止"
+          ]
+        },
+        {
+          "shot": "av-e08-a04-s01",
+          "speaker": "li-dan",
+          "source_keys": [
+            "s019:13"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e08-a04-s01",
+          "speaker": "sun-liu",
+          "source_keys": [
+            "s019:15"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e08-a04-s01",
+          "speaker": "officer-cheng",
+          "source_keys": [
+            "s019:16"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e08-a04-s02",
+          "speaker": "officer-cheng",
+          "source_keys": [
+            "s019:18"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e08-a04-s03",
+          "speaker": "li-ji",
+          "source_keys": [
+            "s019:21"
+          ],
+          "modes": [
+            "说话"
+          ]
+        }
+      ],
+      "authored_sha256": "4e616f85283bef1cc5eb3d667f31e73022d4b3424c6e1788f3628d7607d7ee14",
+      "screenplay_sha256": "c428946554029be05f119eae0ecefeb5bbc6501115db5d096c007ebe0af12f3d"
+    },
+    {
+      "summary": "证据沿原单抄单现场口供核查，先保障除蛇无论成败都不得再索人再谈改造；掌柜迟到不是完整悔改戏，阿蘅保护证据并提出亲认借据的需求。",
+      "voices": {
+        "zhou": "原生复核保留平实厚声和5.2–8.3秒身份片段；敲门道谢、承认怕丢生意和答应先找他作证有停顿，不铺忏悔歌或改成慈善声。",
+        "a-heng": "轻亮身份保留，先日期核对再私人震动、不是只免我、母亲手印和原来没有供奉，句子从事实到感受，长句气口不省；不把整段旧劝慰套上新证言。",
+        "li-xiao": "沿新准备，先说明梦示日期与调查写送者，再读任何一户的政策范围，字清楚且不宣布已经定伪造者。",
+        "li-ji": "沿新准备，那晚您就知道了问完后不持续审判掌柜，末段还歌本并各自帮工互通消息，不抢阿蘅认据任务。",
+        "li-dan": "低厚身份，原件留姐姐收，自己带抄件；问失败后是否再抓人完整等待写完才谈石盖，不把救人绑成功。",
+        "officer-cheng": "低实指令身份，亲眼看互锁与送人流程陈述有事实依据，压不住不下刀、谁添字等清楚，纸板木片动作不遮台词。",
+        "magistrate": "圆厚中低身份，承认当时没问清承担自身批准责任，查旧祭与任何一户不再索人命令完整；准外盖改造不准扩洞放蛇各否定词不省。",
+        "zhao": "平稳低声身份，祖传、补账与供奉也不一定的半句辩解按中断停顿留位，无答收手不补新句。",
+        "clerk-liang": "较轻青年男声候选用于带原据下山和不还留证，排除旧样末字截断；旧试读正好同词仍只是身份参考，不当当前实际音轨或已认可读回结果。"
+      },
+      "continuity": "李家门桌、县衙廊与仓院分别建立声场；掌柜走后数秒环境声让私人感受落下，不加破案音。原件抄件口供独立落桌，木片互锁不同时开；县丞令写完再印。湿布润纸等待挑角先露六再全句，不撕裂，字层准确交接保留。借据贴纸分别夹好，最后还本封箱与分路工具脚步分层，赵不跟去触证据。",
+      "iteration": "周掌柜第二原音复核保留原选身份范围，不制造返工。原件词句恰与下游某句相同仍不等于当前音轨，回查梁书吏末尾截段继续排除；已正确的政策和声音次序保持，主干字层交接不重做。",
+      "number": 9,
+      "uses": [
+        {
+          "shot": "av-e09-a01-s01",
+          "speaker": "zhou",
+          "source_keys": [
+            "s020:2"
+          ],
+          "modes": [
+            "道谢"
+          ]
+        },
+        {
+          "shot": "av-e09-a01-s02",
+          "speaker": "a-heng",
+          "source_keys": [
+            "s020:4"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e09-a01-s02",
+          "speaker": "zhou",
+          "source_keys": [
+            "s020:5",
+            "s020:8"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e09-a01-s02",
+          "speaker": "li-xiao",
+          "source_keys": [
+            "s020:6"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e09-a01-s03",
+          "speaker": "li-ji",
+          "source_keys": [
+            "s020:9"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e09-a01-s03",
+          "speaker": "zhou",
+          "source_keys": [
+            "s020:11"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e09-a01-s04",
+          "speaker": "li-xiao",
+          "source_keys": [
+            "s020:13"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e09-a01-s04",
+          "speaker": "zhou",
+          "source_keys": [
+            "s020:14"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e09-a01-s04",
+          "speaker": "a-heng",
+          "source_keys": [
+            "s020:15"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e09-a01-s05",
+          "speaker": "li-dan",
+          "source_keys": [
+            "s020:17"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e09-a01-s06",
+          "speaker": "a-heng",
+          "source_keys": [
+            "s020:20"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e09-a02-s01",
+          "speaker": "officer-cheng",
+          "source_keys": [
+            "s021:2",
+            "s021:4"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e09-a02-s02",
+          "speaker": "magistrate",
+          "source_keys": [
+            "s021:6",
+            "s021:9"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e09-a02-s02",
+          "speaker": "zhao",
+          "source_keys": [
+            "s021:7"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e09-a02-s03",
+          "speaker": "li-dan",
+          "source_keys": [
+            "s021:11"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e09-a02-s03",
+          "speaker": "magistrate",
+          "source_keys": [
+            "s021:13"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e09-a02-s04",
+          "speaker": "li-dan",
+          "source_keys": [
+            "s021:14"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e09-a02-s04",
+          "speaker": "magistrate",
+          "source_keys": [
+            "s021:16"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e09-a02-s05",
+          "speaker": "li-dan",
+          "source_keys": [
+            "s021:18"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e09-a02-s05",
+          "speaker": "officer-cheng",
+          "source_keys": [
+            "s021:19"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e09-a02-s05",
+          "speaker": "magistrate",
+          "source_keys": [
+            "s021:20"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e09-a02-s06",
+          "speaker": "magistrate",
+          "source_keys": [
+            "s021:22"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e09-a03-s01",
+          "speaker": "a-heng",
+          "source_keys": [
+            "s022:2"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e09-a03-s01",
+          "speaker": "li-xiao",
+          "source_keys": [
+            "s022:3"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e09-a03-s03",
+          "speaker": "a-heng",
+          "source_keys": [
+            "s022:8"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e09-a03-s03",
+          "speaker": "zhao",
+          "source_keys": [
+            "s022:9"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e09-a03-s06",
+          "speaker": "a-heng",
+          "source_keys": [
+            "s022:15"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e09-a03-s06",
+          "speaker": "zhao",
+          "source_keys": [
+            "s022:16"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e09-a03-s06",
+          "speaker": "officer-cheng",
+          "source_keys": [
+            "s022:17"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e09-a03-s07",
+          "speaker": "a-heng",
+          "source_keys": [
+            "s022:20",
+            "s022:22"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e09-a03-s07",
+          "speaker": "clerk-liang",
+          "source_keys": [
+            "s022:21",
+            "s022:24"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e09-a03-s08",
+          "speaker": "li-ji",
+          "source_keys": [
+            "s022:26"
+          ],
+          "modes": [
+            "说话"
+          ]
+        }
+      ],
+      "authored_sha256": "42ccf70e0693711b67c5e4935686ca4c7acb5ea675e33810e42065ee869cace7",
+      "screenplay_sha256": "c428946554029be05f119eae0ecefeb5bbc6501115db5d096c007ebe0af12f3d"
+    },
+    {
+      "summary": "外侧方案通过工人理解后报名、封闸下改盖与两次湿草练刀说明边界；陶伯送绳提供实用帮助却不等于原谅，技术声和情绪停顿各有职责。",
+      "voices": {
+        "helpers-four-dock-a": "低实稍粗男声候选只给报名发话码头工；解释半句由接长木动作承接，问不用钻后才加名字，另三人不补独立母版。",
+        "sun-liu": "厚实男中音候选，说不进去不放出和人少压不稳清楚；招清地和明早垫布按当下距离，不改豪爽战鼓声。",
+        "li-xiao": "沿新准备，食物刀缝后闸位置解释按真实先后说，锤停让说明，不用旧录音证明具备现场解释表演。",
+        "li-ji": "沿新准备，请求试刀、首失误缩手、第二笑被沉刀打断，声音不表示已熟练；旧掌伤被草擦不是新刀伤。",
+        "li-dan": "厚低身份，脚外刀直不撬卡停不伸手逐句与示教动作相接，不抢再找和草不会动保留；门外在是承认旧不作为，不演获赦。",
+        "officer-second": "青年明亮独立声候选用于仓账与三年原祭册的看守说明，和程差役或报年份庙工不混用。",
+        "officer-cheng": "低实指令身份，明早乡老点册和今夜谁不动说清，封条跨柜缝，守夜吩咐原词待准备不补对白。",
+        "tao": "仍待选角比较窄干老年方向，拟比较绳索提醒片段完整。阿禾那年你也在与实用提醒是不同目的，沉默保留，送绳不新增原谅台词或哭腔。"
+      },
+      "continuity": "封北闸才开南门清槽，石匠停锤女孩停手，前门换草关好才下刀；第一碰石清脆立即停与第二草断较闷区别，呼吸留在找位提刀之间。绳绷与摇验后收工扫草闩门盖刀缝锁院完整。前殿另建声场，册柜封而未开；陶伯门外距离和父亲阶下沉默不被和解音乐填满，布只说明早垫，老人远去脚步独立。",
+      "iteration": "新增年轻差役的偏明声与程差役低实声实际区别成立，保留两个来源；新增报名码头工仅对应本人，不给四人群体套同声。陶伯用途由回忆非语言转实际提醒，旧声方向分歧仍待比较，不为凑复用数自动转适合。",
+      "number": 10,
+      "uses": [
+        {
+          "shot": "av-e10-a01-s01",
+          "speaker": "helpers-four-dock-a",
+          "source_keys": [
+            "s023:3"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e10-a01-s02",
+          "speaker": "helpers-four-dock-a",
+          "source_keys": [
+            "s023:6",
+            "s023:9"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e10-a01-s02",
+          "speaker": "sun-liu",
+          "source_keys": [
+            "s023:7"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e10-a01-s03",
+          "speaker": "sun-liu",
+          "source_keys": [
+            "s023:10"
+          ],
+          "modes": [
+            "招呼"
+          ]
+        },
+        {
+          "shot": "av-e10-a02-s01",
+          "speaker": "li-xiao",
+          "source_keys": [
+            "s023:13"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e10-a03-s01",
+          "speaker": "li-ji",
+          "source_keys": [
+            "s023:21"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e10-a03-s02",
+          "speaker": "li-dan",
+          "source_keys": [
+            "s023:24"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e10-a03-s03",
+          "speaker": "li-dan",
+          "source_keys": [
+            "s023:27"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e10-a03-s04",
+          "speaker": "li-ji",
+          "source_keys": [
+            "s023:29"
+          ],
+          "modes": [
+            "短笑"
+          ]
+        },
+        {
+          "shot": "av-e10-a03-s05",
+          "speaker": "li-dan",
+          "source_keys": [
+            "s023:31",
+            "s023:33"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e10-a04-s04",
+          "speaker": "officer-second",
+          "source_keys": [
+            "s024:7"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e10-a04-s05",
+          "speaker": "officer-cheng",
+          "source_keys": [
+            "s024:10",
+            "s024:11"
+          ],
+          "modes": [
+            "说话",
+            "吩咐"
+          ]
+        },
+        {
+          "shot": "av-e10-a05-s01",
+          "speaker": "li-dan",
+          "source_keys": [
+            "s025:2",
+            "s025:6"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e10-a05-s01",
+          "speaker": "tao",
+          "source_keys": [
+            "s025:4"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e10-a05-s02",
+          "speaker": "tao",
+          "source_keys": [
+            "s025:9"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e10-a05-s02",
+          "speaker": "li-dan",
+          "source_keys": [
+            "s025:10"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e10-a05-s03",
+          "speaker": "sun-liu",
+          "source_keys": [
+            "s025:13"
+          ],
+          "modes": [
+            "说话"
+          ]
+        }
+      ],
+      "authored_sha256": "b5b43c0638dddaa79104ee9c0041592017af145ec2274aa7119204e7cff9f2f3",
+      "screenplay_sha256": "c428946554029be05f119eae0ecefeb5bbc6501115db5d096c007ebe0af12f3d"
+    },
+    {
+      "summary": "证词核原据与读回、桌上失败退路、共担费用、两位母亲等人回来和晨间未点灯连成同一家庭支持；怕仍要说，不以团结口号取消真实忧虑。",
+      "voices": {
+        "heng-mother": "低薄短句身份可继续比较复用，但长证词需字字清楚，旧后部长段含混及断尾不入选；本镜重新表演并留喘气，口语身份不能证明长证词已验收。夜里轻问人数与坐不坐得下是同人。",
+        "clerk-liang": "轻稳青年声候选读回母亲刚说的完整证词，不能靠书写字幕或旧源念白假称当下读回完成；旧末字受截片段仍排除。",
+        "a-heng": "轻亮身份保持，狗留家、谁能看见、自己要去看册、怕但仍说与费用担忧逐项有意愿；不继承旧劝慰表情或演成被动受恩。",
+        "li-ji": "新准备方向保持，先明确狗不带并实际关门，床边轻声问答有气口不突然宣誓；帮拉绳只托一端不夺阿蘅解结能力。",
+        "li-xiao": "沿新准备，图上头过缝才落闸与门道前院分工清楚；县里按单和大家共担费用分开，不给阿蘅添债。",
+        "li-dan": "厚低身份，西刀位与女孩门内侧及失败退路长句按动作分气，停止退门同号提闸看空落底插栓不省条件；不能喊成出征演说。",
+        "sun-liu": "厚男中音身份，闸夹时不能插栓与一直压、不能独松说清；解死结的普通请求回日常，短样不证明长期负重喊话已通过。",
+        "li-mother": "有支撑女中低身份，压不住问题认真得到答复，等人回来做饭和两次递灯提醒分别保留。天亮也带上没有把灯点燃，声音不表示已获胜。"
+      },
+      "continuity": "病人读证言喘息清晰，书吏读回等点头；借据贴纸和收单凭记各有去向。桌图实际转动再讲西东，长退路与禁独松完整，解结试两次才成。夜席响、隔门两位母亲声音和逐碗摆放停顿不填配乐，未明轻咳不指认母亲。夜灯到清晨已经熄灭，灯罩扶正接稳再松手，狗退回篱笆，巷步转弯渐远。",
+      "iteration": "回查阿蘅母亲第4集短选段，保留低薄身份但明确第11集長证詞不使用旧含混长段或尾部，新增的长句可懂度待真实输出；其他身份用途变为退路与家庭支持，正确的片段与声音顺序保持。",
+      "number": 11,
+      "uses": [
+        {
+          "shot": "av-e11-a01-s01",
+          "speaker": "heng-mother",
+          "source_keys": [
+            "s026:2"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e11-a01-s01",
+          "speaker": "clerk-liang",
+          "source_keys": [
+            "s026:3"
+          ],
+          "modes": [
+            "读回证词"
+          ]
+        },
+        {
+          "shot": "av-e11-a01-s04",
+          "speaker": "a-heng",
+          "source_keys": [
+            "s026:7"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e11-a01-s04",
+          "speaker": "li-ji",
+          "source_keys": [
+            "s026:9"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e11-a02-s01",
+          "speaker": "li-xiao",
+          "source_keys": [
+            "s026:11",
+            "s026:12"
+          ],
+          "modes": [
+            "招呼",
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e11-a02-s01",
+          "speaker": "a-heng",
+          "source_keys": [
+            "s026:13"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e11-a02-s01",
+          "speaker": "li-dan",
+          "source_keys": [
+            "s026:14"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e11-a02-s02",
+          "speaker": "sun-liu",
+          "source_keys": [
+            "s026:16"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e11-a02-s02",
+          "speaker": "li-mother",
+          "source_keys": [
+            "s026:18"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e11-a02-s03",
+          "speaker": "li-dan",
+          "source_keys": [
+            "s026:20"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e11-a02-s03",
+          "speaker": "sun-liu",
+          "source_keys": [
+            "s026:21"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e11-a02-s04",
+          "speaker": "li-mother",
+          "source_keys": [
+            "s026:23"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e11-a02-s04",
+          "speaker": "li-ji",
+          "source_keys": [
+            "s026:24"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e11-a02-s04",
+          "speaker": "li-xiao",
+          "source_keys": [
+            "s026:25"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e11-a03-s01",
+          "speaker": "a-heng",
+          "source_keys": [
+            "s026:27",
+            "s026:29"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e11-a03-s01",
+          "speaker": "li-ji",
+          "source_keys": [
+            "s026:28"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e11-a03-s02",
+          "speaker": "a-heng",
+          "source_keys": [
+            "s026:32"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e11-a03-s02",
+          "speaker": "li-xiao",
+          "source_keys": [
+            "s026:33"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e11-a03-s03",
+          "speaker": "sun-liu",
+          "source_keys": [
+            "s026:35"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e11-a04-s01",
+          "speaker": "heng-mother",
+          "source_keys": [
+            "s027:3"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e11-a04-s02",
+          "speaker": "li-mother",
+          "source_keys": [
+            "s027:5",
+            "s027:7"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e11-a04-s02",
+          "speaker": "heng-mother",
+          "source_keys": [
+            "s027:6"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e11-a04-s03",
+          "speaker": "li-ji",
+          "source_keys": [
+            "s027:10",
+            "s027:12"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e11-a04-s03",
+          "speaker": "a-heng",
+          "source_keys": [
+            "s027:11",
+            "s027:13"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e11-a05-s01",
+          "speaker": "li-mother",
+          "source_keys": [
+            "s027:18",
+            "s027:20"
+          ],
+          "modes": [
+            "说话"
+          ]
+        }
+      ],
+      "authored_sha256": "ab46f6c08fb8308b0aa43e3bfe3ad5ef249266a955a4de39442c87adee82839e",
+      "screenplay_sha256": "c428946554029be05f119eae0ecefeb5bbc6501115db5d096c007ebe0af12f3d"
+    },
+    {
+      "summary": "先在前院让阿蘅完整再说一次并完成三本原祭册移交，领米生活线与证据线并行；后院就位七人提闸等待，紧张来自已知重量而非战鼓或幻想。",
+      "voices": {
+        "priest": "厚实宣告身份候选用于水旱施压与香未尽拖延，声音盖队议一次有位置，半句辩解不自动当事实。",
+        "officer-cheng": "低实清楚身份索原册、天亮了、我来及后院门道分工；提是起提闸，父亲抬掌暂不动不加落闸词，指令实际表演另验。",
+        "zhao": "平稳中低身份，指责认账与账还查半句按原文轮次，阿蘅末句不被盖住，不加恶人气声。",
+        "a-heng": "轻亮身份候选，五六斗四升、原据已交、贴新纸想认哪句及未答应喂蛇完整发出；李寄收脚不代言，阿蘅收凭记并看封箱贴平才离开。",
+        "ticket-woman": "旧件继续待年龄方向比较；是第4集同一问兑米妇人，问米给不给和梦示时间是实际生计与核对，不改成全群口号。",
+        "zhou": "平实厚声候选，向前一步举底账、先米照发再说明提前备粮，不演突变英雄；原单已交衙，这次底账不同纸。",
+        "tao": "窄干老年方向仍待比较，问阿禾那本有自己的悲痛和核查目标，不拿老人助威斩蛇；旧绳索提醒不作本句音轨。",
+        "elders-two-speaker": "原件待年长方向比较，只给本次设定的邀留陶伯发话位置及后续求援报信者，另一乡老留门道领路不因此共享声线。",
+        "temple-workers-year-witness": "单独中年低平声候选用于说明经手年份，旧试读与梁同词仍是独立CALL；年份原词待准备，不把庙里怎么报音轨直接配入说明。",
+        "li-ji": "沿新准备，前院短问走吗与后院回看阿蘅位置、被碰手退回不补预知危险对白，灯未点燃不交人代辩。",
+        "li-xiao": "沿新准备，饵再往前头过缝才能吃到说明在推门前清楚；西侧持杠身份不变，真实负重表演另验。",
+        "li-dan": "厚低身份，前门好了落点在关闩肩推之后，西刀位看缝，等待举掌只暂不动，不自造落闸号令。"
+      },
+      "continuity": "前殿队声低、阿蘅吸气与数字发言不加叫好，柜扣三本册逐本出，票号在证据段后回生活距离。原件底账凭记来源不同，封纸贴平才转院。七人四西三东站稳才两口令提闸，木栓放墙边；两女孩灯靠墙不堵门道。隔殿一远叫隔很久一迟应，近肩呼吸与渐近摩擦保持声源，末端没有提前撞门或落闸。",
+      "iteration": "同试读词的庙工与梁书吏继续分开，新庙工声符合低平身份但现场年份尚待词句。乡老年长方向模型未证实保留比较，票妇与陶伯待比较仍保持，不为推进后院自动选择；正确的人数、灯和等待声音不重做。",
+      "number": 12,
+      "uses": [
+        {
+          "shot": "av-e12-a01-s01",
+          "speaker": "priest",
+          "source_keys": [
+            "s028:3"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e12-a01-s01",
+          "speaker": "officer-cheng",
+          "source_keys": [
+            "s028:5"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e12-a01-s02",
+          "speaker": "priest",
+          "source_keys": [
+            "s028:7"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e12-a01-s02",
+          "speaker": "officer-cheng",
+          "source_keys": [
+            "s028:8"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e12-a01-s03",
+          "speaker": "zhao",
+          "source_keys": [
+            "s028:11"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e12-a01-s04",
+          "speaker": "a-heng",
+          "source_keys": [
+            "s028:14",
+            "s028:16",
+            "s028:18"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e12-a01-s04",
+          "speaker": "zhao",
+          "source_keys": [
+            "s028:15"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e12-a01-s05",
+          "speaker": "a-heng",
+          "source_keys": [
+            "s028:20"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e12-a02-s01",
+          "speaker": "ticket-woman",
+          "source_keys": [
+            "s028:23"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e12-a02-s02",
+          "speaker": "officer-cheng",
+          "source_keys": [
+            "s028:27"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e12-a02-s03",
+          "speaker": "zhou",
+          "source_keys": [
+            "s028:30",
+            "s028:32"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e12-a02-s04",
+          "speaker": "ticket-woman",
+          "source_keys": [
+            "s028:33"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e12-a02-s04",
+          "speaker": "priest",
+          "source_keys": [
+            "s028:34"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e12-a02-s04",
+          "speaker": "zhou",
+          "source_keys": [
+            "s028:35"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e12-a02-s05",
+          "speaker": "tao",
+          "source_keys": [
+            "s028:38"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e12-a02-s05",
+          "speaker": "elders-two-speaker",
+          "source_keys": [
+            "s028:39"
+          ],
+          "modes": [
+            "邀请"
+          ]
+        },
+        {
+          "shot": "av-e12-a02-s06",
+          "speaker": "officer-cheng",
+          "source_keys": [
+            "s028:40"
+          ],
+          "modes": [
+            "吩咐"
+          ]
+        },
+        {
+          "shot": "av-e12-a02-s06",
+          "speaker": "temple-workers-year-witness",
+          "source_keys": [
+            "s028:40"
+          ],
+          "modes": [
+            "说明"
+          ]
+        },
+        {
+          "shot": "av-e12-a02-s06",
+          "speaker": "li-ji",
+          "source_keys": [
+            "s028:42"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e12-a03-s02",
+          "speaker": "officer-cheng",
+          "source_keys": [
+            "s029:4"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e12-a03-s03",
+          "speaker": "li-xiao",
+          "source_keys": [
+            "s029:8"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e12-a03-s04",
+          "speaker": "a-heng",
+          "source_keys": [
+            "s029:12"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e12-a03-s05",
+          "speaker": "li-dan",
+          "source_keys": [
+            "s029:15"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e12-a03-s05",
+          "speaker": "officer-cheng",
+          "source_keys": [
+            "s029:16"
+          ],
+          "modes": [
+            "说话"
+          ]
+        }
+      ],
+      "authored_sha256": "a4ebf2e30a0980257c41a54db92a3ff15c299f2c66aacfe55e1b248112ab5d59",
+      "screenplay_sha256": "c428946554029be05f119eae0ecefeb5bbc6501115db5d096c007ebe0af12f3d"
+    },
+    {
+      "summary": "七人压不稳父亲补东侧成八人，刀空出来却走不开；求援失败是众人怕蛇跑出的误解，李寄两次退缩才接刀，第一刀浅伤未胜。声音必须让这些身体与责任关系被读懂。",
+      "voices": {
+        "li-dan": "低厚身份取问话片段但本镜落口令和劝别硬逞强重新表演；放刀绕南端补东杠才成为八人，试抬肩失败的断气是真受力，不加任命女儿出战。",
+        "sun-liu": "厚男中音候选，呼老李来、贴肩别光用手、大伙使劲分别与当下压杠因果对齐，普通口语参考不证明负重远喊。",
+        "officer-cheng": "低实清楚身份用于压住别松和快叫人，指令完整短，不盖父亲转位脚步；同一口令不能被群体各自吼乱。",
+        "a-heng": "轻亮身份候选支持本人，第一呼援太急没传远与吸气后完整第二呼援分别表演，旧劝慰样本不证明远送能力；门内回望与轻碰手保持陪伴不代替出刀。",
+        "elders-two-speaker": "原件年长方向仍待比较，求助急与返门扶墙喘的无奈不同，拟比较片段排除强宣告。发话者去前院又独返，另一乡老留门领路不共用母版。",
+        "temple-crowd-refuser": "低厚男声候选取前两问句，拒援因担心回不了家而非凶恶，不新增扔粮袋或恶笑；其他躲目光者不补同声台词。",
+        "temple-crowd-urging": "1.70秒旧女声仅对照，须更长试样，不原样进视频；门旁低声急催原词未定，旧明早来吧不配成新对白。",
+        "li-ji": "沿新准备，拿刀前两次退缩和喘气完整，我来不是不怕的宣言；父亲视线不等于递刀授权，第一浅裂后半口气没松继续站稳。"
+      },
+      "continuity": "落闸没有到底实响是关键缺声，前門沉撞、闸反顶吱響和脚灰擦各别，四西三东变四西四东通过完整绕南外侧脚步。前后院隔殿距离保持，误解不配真实破门音，守前院差役因抓赵不能入杠。重撞让李寄两次收步缩手，刀柄摩擦吃力吸气后才话；同力压低和刀闷震有反作用，抽回只浅伤，掌布此时才透红，不落胜利音乐。",
+      "iteration": "第三份不足2秒原件拒绝模型推荐短区间，无借他人、补静音或放宽闸门；四西四东与现场呼援需真输出另验。前例合适身份保留，乡老待比较不因急需帮手自动通过。",
+      "number": 13,
+      "uses": [
+        {
+          "shot": "av-e13-a01-s01",
+          "speaker": "li-dan",
+          "source_keys": [
+            "s030:2"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e13-a01-s03",
+          "speaker": "sun-liu",
+          "source_keys": [
+            "s030:8"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e13-a01-s05",
+          "speaker": "officer-cheng",
+          "source_keys": [
+            "s030:12"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e13-a02-s01",
+          "speaker": "officer-cheng",
+          "source_keys": [
+            "s030:15"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e13-a02-s01",
+          "speaker": "a-heng",
+          "source_keys": [
+            "s030:16",
+            "s030:17"
+          ],
+          "modes": [
+            "第一声呼援",
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e13-a02-s02",
+          "speaker": "elders-two-speaker",
+          "source_keys": [
+            "s030:20"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e13-a02-s02",
+          "speaker": "temple-crowd-refuser",
+          "source_keys": [
+            "s030:22"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e13-a03-s01",
+          "speaker": "sun-liu",
+          "source_keys": [
+            "s030:25"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e13-a03-s02",
+          "speaker": "elders-two-speaker",
+          "source_keys": [
+            "s030:28"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e13-a03-s02",
+          "speaker": "temple-crowd-urging",
+          "source_keys": [
+            "s030:29"
+          ],
+          "modes": [
+            "低声催促"
+          ]
+        },
+        {
+          "shot": "av-e13-a03-s05",
+          "speaker": "li-ji",
+          "source_keys": [
+            "s031:8"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e13-a03-s06",
+          "speaker": "li-dan",
+          "source_keys": [
+            "s031:9"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e13-a03-s06",
+          "speaker": "li-ji",
+          "source_keys": [
+            "s031:10"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e13-a04-s03",
+          "speaker": "sun-liu",
+          "source_keys": [
+            "s031:18"
+          ],
+          "modes": [
+            "说话"
+          ]
+        }
+      ],
+      "authored_sha256": "b86f418c3c641061bcbe6402400315e2f8f6ca57e9ce511c5e78fcfbdbe902dc",
+      "screenplay_sha256": "c428946554029be05f119eae0ecefeb5bbc6501115db5d096c007ebe0af12f3d"
+    },
+    {
+      "summary": "停刀找缝抽刀与八人承压直到确认才卸重可见可听；断开后仍有拖擦，真正释放分给女孩和疲惫成人，不用胜利音乐删掉等待。",
+      "voices": {
+        "li-ji": "沿新准备，爹压住的短气与末段终于哭是同一身份，哭声未由旧口语样本证明；手未松刀时不示伤或拥抱。",
+        "li-dan": "低厚身份候选，压着呢虽与木板震同起仍要字清，父亲始终东侧扣杠，喘气和累得抬不起臂不靠武将声。",
+        "a-heng": "轻亮身份候选，好半句被深擦截住，轻问不再送人后先泪再抽泣另验；阿蘅刀放下才近扶，旧劝慰词不配成当前音轨。",
+        "officer-cheng": "低实指令身份，继续压门别动、慢卸底下动立刻说、谁也别开各有明确动作边界，口令落完再卸，未验证真实远喊力度。",
+        "li-xiao": "沿新准备，同一长姐负重确认两头断到确定不再送人，放松后手仍僵；不抢成英雄宣布。",
+        "elders-two-speaker": "原件年长方向待比较，求石匠应声和确认后向外报大家活着有距离变化，旧激动宣告未选入中性范围；另一乡老不共用。",
+        "sun-liu": "厚男中音身份，想笑先咳到低声没出来保留身体脱力，不能用原样轻松笑意代替当下疲劳。",
+        "temple-crowd-enquirer": "1.38秒只作对照，前院询问者独立、原词未定，须更长自然远问方向试样，不换拒援者声。"
+      },
+      "continuity": "第二刀后先收脚抽刀才退，碰石尖响后立即停；到底短硬声与仍往山内拖擦分开。八人呼吸绳颤不断，深擦后门外叶擦再静，李绡父亲程观察等待链完整，外脚步走远还多等。逐人卸重父亲孙六最后松，前门继续关。近院哭与远处报信并存不被欢呼吞，父亲額碰未伤侧，程留下接应，女孩提未亮灯慢跨槛。",
+      "iteration": "第四件短原件拒绝入口，四件均没有有效2秒区间，未借其他同群声音。口语身份不证明哭、咳或远喊，但当前片段只锁定身份，具体身体表演和生成音色保持留真实输出验；原有正确等待与卸重声音设计保留。",
+      "number": 14,
+      "uses": [
+        {
+          "shot": "av-e14-a01-s06",
+          "speaker": "li-ji",
+          "source_keys": [
+            "s032:11"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e14-a01-s06",
+          "speaker": "li-dan",
+          "source_keys": [
+            "s032:12"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e14-a02-s04",
+          "speaker": "a-heng",
+          "source_keys": [
+            "s032:23"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e14-a02-s05",
+          "speaker": "officer-cheng",
+          "source_keys": [
+            "s032:25"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e14-a03-s03",
+          "speaker": "li-xiao",
+          "source_keys": [
+            "s033:8"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e14-a03-s04",
+          "speaker": "officer-cheng",
+          "source_keys": [
+            "s033:11"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e14-a03-s05",
+          "speaker": "officer-cheng",
+          "source_keys": [
+            "s033:14"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e14-a04-s01",
+          "speaker": "elders-two-speaker",
+          "source_keys": [
+            "s033:15"
+          ],
+          "modes": [
+            "应声"
+          ]
+        },
+        {
+          "shot": "av-e14-a04-s01",
+          "speaker": "sun-liu",
+          "source_keys": [
+            "s033:16",
+            "s033:17"
+          ],
+          "modes": [
+            "咳嗽",
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e14-a04-s02",
+          "speaker": "li-xiao",
+          "source_keys": [
+            "s033:19",
+            "s033:23"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e14-a04-s02",
+          "speaker": "a-heng",
+          "source_keys": [
+            "s033:21",
+            "s033:24"
+          ],
+          "modes": [
+            "说话",
+            "哭声"
+          ]
+        },
+        {
+          "shot": "av-e14-a04-s03",
+          "speaker": "temple-crowd-enquirer",
+          "source_keys": [
+            "s033:25"
+          ],
+          "modes": [
+            "画外询问"
+          ]
+        },
+        {
+          "shot": "av-e14-a04-s03",
+          "speaker": "elders-two-speaker",
+          "source_keys": [
+            "s033:26"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e14-a04-s04",
+          "speaker": "li-ji",
+          "source_keys": [
+            "s033:30"
+          ],
+          "modes": [
+            "哭声"
+          ]
+        },
+        {
+          "shot": "av-e14-a04-s05",
+          "speaker": "officer-cheng",
+          "source_keys": [
+            "s033:31"
+          ],
+          "modes": [
+            "接应安排"
+          ]
+        }
+      ],
+      "authored_sha256": "f67eaacdc0749ff015c153080472372cac47bfb90cee1c24a6fe63b45864e1d1",
+      "screenplay_sha256": "c428946554029be05f119eae0ecefeb5bbc6501115db5d096c007ebe0af12f3d"
+    },
+    {
+      "summary": "一家人承认害怕、洗手包手后吃普通饭，与数日后的遗物认领和旧批准追责分段并存；幸存温暖不能消除阿禾、小满的失去。",
+      "voices": {
+        "li-mother": "先逐个确认人回来再家常吩咐，端碗提醒与熟人玩笑自然；不加庆典喊声。",
+        "a-heng": "平实报平安、叫娘，稍后用祭册质问；不同处境沿同一轻清身份，新句和气口重新演。",
+        "sun-liu": "疲惫身体中的短笑与吃饭玩笑；笑声样本能力仍未验证，不复用旧夸张逗趣声轨。",
+        "officer-cheng": "饭前短交代明确留守与刀回收，遗物放好退开才请认，案上短问谁填；不同声压和距离重新表演。",
+        "li-ji": "吃饭时轻声承认怕和腾不开的处境，父女回应不训勇；旧件当前方向不合，保留待新准备。",
+        "li-dan": "疼痛吸气后承认自己也怕；公堂愤怒不能替代家属悲伤，质问前两年与自愿限定完整，长句另验。",
+        "li-xiao": "上菜时让孙六先吃，不重演血腥；旧轻声与成年偏实方向差异待新准备。",
+        "heng-mother": "仍半坐，里屋轻笑隔门为阿蘅安心的依据；弱气口语不能证明笑，保持空间距离不假称已验。",
+        "zhao": "只唱曲的未完辩解被祭册追问，然后短答他；身份可取首段，新短促语气重新演。",
+        "priest": "梦示名半句到消灾辩解，仪式话术不配神秘混响；各轮次不覆盖家属原话。",
+        "zhou": "推店账清楚指日，账日与庙会前后关系完整；旧句只供音色不替证词。",
+        "delivery-worker": "独立确认送单日期，准确原词未锁；不能搬用原试读或合并认笔迹者。",
+        "order-writer": "另一个经手人迟缓认笔迹，当前偏细干方向与旧厚胸声待比较；笔迹不自动成为所有罪自白。",
+        "tao": "抚簪、声颤控诉与送郡请求沿同一父亲身份，旧厚声与老窄干方向待比较；不新增阿禾哭声或祭杀回放。",
+        "xiaoman-mother": "断梳认物后控诉完整，索女语句与哭声兼具可懂度，末尾哭到无话；采用前段仅作身份候选，不宣称持续哭已验。",
+        "magistrate": "本次帮助的完整句不能抵旧准祭责任；停顿退让后一并送另录经手，未作判决。"
+      },
+      "continuity": "阿蘅交未点灯，李寄先洗手重包再吃，肩痛和病母状态延续。遗物簪归陶伯、梳归小满母亲，重复抚摸和空半凳不加配乐或死童声音。送单与认笔迹两人分开；两份准祭批文同署名与旧册一起移交郡，县丞此刻同意送而非免责。女孩离开仍经过守卷的悲伤家属。未明屋内唤程者与旁食客不并入既有声音身份。",
+      "iteration": "第14集脱险释放不延展成皆大欢喜；本集保留所有人的怕与家属独立悲伤。新原音发现认笔迹者厚声与当前偏细干方向不一致，改为待比较；小满母亲避开被报告截断尾音，不据强情绪证明长哭。先前正确音色身份结论保留，单独限制新用途。",
+      "number": 15,
+      "uses": [
+        {
+          "shot": "av-e15-a01-s01",
+          "speaker": "li-mother",
+          "source_keys": [
+            "s034:4"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e15-a01-s03",
+          "speaker": "a-heng",
+          "source_keys": [
+            "s034:7",
+            "s034:9"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e15-a02-s01",
+          "speaker": "li-mother",
+          "source_keys": [
+            "s034:12",
+            "s034:15"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e15-a02-s01",
+          "speaker": "sun-liu",
+          "source_keys": [
+            "s034:13",
+            "s034:14"
+          ],
+          "modes": [
+            "笑声",
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e15-a02-s02",
+          "speaker": "officer-cheng",
+          "source_keys": [
+            "s034:16"
+          ],
+          "modes": [
+            "交代"
+          ]
+        },
+        {
+          "shot": "av-e15-a02-s03",
+          "speaker": "li-ji",
+          "source_keys": [
+            "s034:18",
+            "s034:20"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e15-a02-s04",
+          "speaker": "li-dan",
+          "source_keys": [
+            "s034:22",
+            "s034:24"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e15-a02-s04",
+          "speaker": "li-ji",
+          "source_keys": [
+            "s034:23"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e15-a02-s05",
+          "speaker": "li-xiao",
+          "source_keys": [
+            "s034:27"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e15-a02-s05",
+          "speaker": "sun-liu",
+          "source_keys": [
+            "s034:28"
+          ],
+          "modes": [
+            "笑声"
+          ]
+        },
+        {
+          "shot": "av-e15-a02-s06",
+          "speaker": "heng-mother",
+          "source_keys": [
+            "s034:30"
+          ],
+          "modes": [
+            "里屋轻笑"
+          ]
+        },
+        {
+          "shot": "av-e15-a03-s01",
+          "speaker": "officer-cheng",
+          "source_keys": [
+            "s035:3"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e15-a04-s01",
+          "speaker": "zhao",
+          "source_keys": [
+            "s036:3"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e15-a04-s01",
+          "speaker": "a-heng",
+          "source_keys": [
+            "s036:5"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e15-a04-s02",
+          "speaker": "officer-cheng",
+          "source_keys": [
+            "s036:7"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e15-a04-s02",
+          "speaker": "zhao",
+          "source_keys": [
+            "s036:8"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e15-a04-s02",
+          "speaker": "priest",
+          "source_keys": [
+            "s036:9"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e15-a04-s03",
+          "speaker": "zhou",
+          "source_keys": [
+            "s036:11"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e15-a04-s03",
+          "speaker": "delivery-worker",
+          "source_keys": [
+            "s036:12"
+          ],
+          "modes": [
+            "指认"
+          ]
+        },
+        {
+          "shot": "av-e15-a04-s03",
+          "speaker": "order-writer",
+          "source_keys": [
+            "s036:12"
+          ],
+          "modes": [
+            "承认"
+          ]
+        },
+        {
+          "shot": "av-e15-a04-s04",
+          "speaker": "tao",
+          "source_keys": [
+            "s036:14",
+            "s036:16"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e15-a04-s05",
+          "speaker": "xiaoman-mother",
+          "source_keys": [
+            "s036:17",
+            "s036:19"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e15-a04-s06",
+          "speaker": "priest",
+          "source_keys": [
+            "s036:21"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e15-a04-s06",
+          "speaker": "li-dan",
+          "source_keys": [
+            "s036:23"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e15-a04-s06",
+          "speaker": "xiaoman-mother",
+          "source_keys": [
+            "s036:24"
+          ],
+          "modes": [
+            "哭声"
+          ]
+        },
+        {
+          "shot": "av-e15-a04-s07",
+          "speaker": "magistrate",
+          "source_keys": [
+            "s036:26"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e15-a04-s07",
+          "speaker": "li-dan",
+          "source_keys": [
+            "s036:28"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e15-a04-s08",
+          "speaker": "li-dan",
+          "source_keys": [
+            "s036:30"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e15-a04-s09",
+          "speaker": "tao",
+          "source_keys": [
+            "s036:33"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e15-a04-s09",
+          "speaker": "magistrate",
+          "source_keys": [
+            "s036:36"
+          ],
+          "modes": [
+            "说话"
+          ]
+        }
+      ],
+      "authored_sha256": "e3e7b31a60b8eb30acdd78ac4e337b9913b0af9e598a9011e554bdfce5592211",
+      "screenplay_sha256": "c428946554029be05f119eae0ecefeb5bbc6501115db5d096c007ebe0af12f3d"
+    },
+    {
+      "summary": "二十多天后的复查把旧罪、新功、非自愿与销名读清；清账经阿蘅主动核对并自留凭据。粮债解决不等于母病痊愈或歌词恢复，补歌先问再学。",
+      "voices": {
+        "clerk-proclamation": "年轻新书吏逐项宣读判词，姓名、旧批准责任、待决、禁索人均完整；选前部短段作身份，整件超15秒且末尾截断不能直接使用。",
+        "ticket-woman": "向听不清老人复述告示末句，非群众齐喊；当前年龄感与旧声方向仍待比较，复述清晰和距老人关系重演。",
+        "a-heng": "销名后主动去领米、再核数字要求重读、自留凭据，请李寄帮扶袋口；同一轻清身份延至母女同停断处、向老师接唱、独立唱过缺处。口语候选不证明演唱，曲词旋律另验。",
+        "new-steward": "耐心逐项核账、解释历次已还加四升超过六斗，再读末行并递凭据；不是四升单独还清六斗，未锁账原词不以旧解释句冒充。",
+        "li-ji": "询问是否给母亲看、先问抄还是陪问、核过或认；等待阿蘅决定和老师校对，不替她擅改。旧音色方向待新准备。",
+        "heng-mother": "仍病后疲惫，轻哼被女儿接调并停在同处，不被催想起；弱口语不能证明哼唱、喘气等能力。",
+        "singer-teacher": "先听实际断处再接未收调，慢唱认字并逐行校正；阿蘅独立唱时只提示换气，不加老师替唱和声。旧件只说话，完整歌唱与慢唱均未验证。"
+      },
+      "continuity": "墙上贴旧批文抄件而非原件，死罪押赴郡狱待决不拍行刑，县丞新功不抵旧罪，阿禾小满非自愿与阿蘅销名分开。陶伯读女儿名后停留不追押解。账逐行再读，父亲先接歌本、后接粮并还书，双人袋口袋底同时下沉；生活好转与病未愈、歌词未补并存。正确归来认旧桥到学时才出现，母女此前只到柳影到船边，李寄先核再写不猜。匿名后队咳声不新建角色或借用身份。",
+      "iteration": "第15集送郡尚未判决，本集二十多天后才复查处置，不能提前套判词。新管事耐心清楚数字维持独立身份；告示书吏整件33.9秒且被报告尾部截断，改为前部有效短段。歌娘的口语合适结论只到身份，不把歌曲能力和阿蘅母女断处补成已具备。",
+      "number": 16,
+      "uses": [
+        {
+          "shot": "av-e16-a01-s02",
+          "speaker": "clerk-proclamation",
+          "source_keys": [
+            "s037:3"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e16-a01-s03",
+          "speaker": "clerk-proclamation",
+          "source_keys": [
+            "s037:5"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e16-a01-s04",
+          "speaker": "clerk-proclamation",
+          "source_keys": [
+            "s037:8"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e16-a01-s04",
+          "speaker": "ticket-woman",
+          "source_keys": [
+            "s037:9"
+          ],
+          "modes": [
+            "复述"
+          ]
+        },
+        {
+          "shot": "av-e16-a01-s05",
+          "speaker": "a-heng",
+          "source_keys": [
+            "s037:12"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e16-a02-s01",
+          "speaker": "new-steward",
+          "source_keys": [
+            "s037:13",
+            "s037:15"
+          ],
+          "modes": [
+            "逐行读账",
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e16-a02-s01",
+          "speaker": "a-heng",
+          "source_keys": [
+            "s037:14"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e16-a02-s02",
+          "speaker": "a-heng",
+          "source_keys": [
+            "s037:17"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e16-a02-s02",
+          "speaker": "new-steward",
+          "source_keys": [
+            "s037:18"
+          ],
+          "modes": [
+            "重读末行"
+          ]
+        },
+        {
+          "shot": "av-e16-a02-s03",
+          "speaker": "a-heng",
+          "source_keys": [
+            "s037:20"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e16-a02-s04",
+          "speaker": "li-ji",
+          "source_keys": [
+            "s037:24"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e16-a02-s04",
+          "speaker": "a-heng",
+          "source_keys": [
+            "s037:25"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e16-a03-s02",
+          "speaker": "li-ji",
+          "source_keys": [
+            "s038:5",
+            "s038:7"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e16-a03-s02",
+          "speaker": "a-heng",
+          "source_keys": [
+            "s038:6",
+            "s038:8"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e16-a03-s03",
+          "speaker": "heng-mother",
+          "source_keys": [
+            "s038:9",
+            "s038:11"
+          ],
+          "modes": [
+            "轻哼",
+            "收声"
+          ]
+        },
+        {
+          "shot": "av-e16-a03-s03",
+          "speaker": "a-heng",
+          "source_keys": [
+            "s038:9",
+            "s038:10",
+            "s038:11"
+          ],
+          "modes": [
+            "接调",
+            "演唱",
+            "收声"
+          ]
+        },
+        {
+          "shot": "av-e16-a04-s01",
+          "speaker": "singer-teacher",
+          "source_keys": [
+            "s039:3"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e16-a04-s02",
+          "speaker": "a-heng",
+          "source_keys": [
+            "s039:5"
+          ],
+          "modes": [
+            "演唱"
+          ]
+        },
+        {
+          "shot": "av-e16-a04-s02",
+          "speaker": "singer-teacher",
+          "source_keys": [
+            "s039:7"
+          ],
+          "modes": [
+            "演唱"
+          ]
+        },
+        {
+          "shot": "av-e16-a04-s03",
+          "speaker": "li-ji",
+          "source_keys": [
+            "s039:9"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e16-a04-s03",
+          "speaker": "singer-teacher",
+          "source_keys": [
+            "s039:10",
+            "s039:11"
+          ],
+          "modes": [
+            "说话",
+            "放慢重唱"
+          ]
+        },
+        {
+          "shot": "av-e16-a04-s04",
+          "speaker": "a-heng",
+          "source_keys": [
+            "s039:14",
+            "s039:16"
+          ],
+          "modes": [
+            "演唱"
+          ]
+        },
+        {
+          "shot": "av-e16-a04-s05",
+          "speaker": "singer-teacher",
+          "source_keys": [
+            "s039:18"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e16-a04-s05",
+          "speaker": "a-heng",
+          "source_keys": [
+            "s039:19"
+          ],
+          "modes": [
+            "低声重唱"
+          ]
+        }
+      ],
+      "authored_sha256": "b66c6c7ea5356a8632dc13a2a18c1470991a5fabe894f3ca1c5ab9991d222a8f",
+      "screenplay_sha256": "c428946554029be05f119eae0ecefeb5bbc6501115db5d096c007ebe0af12f3d"
+    },
+    {
+      "summary": "问过再帮、换手慢念、共同装订、交还主人和提灯照路把关系改变落到动作；完整歌是阿蘅的手艺，结尾是普通明天与半开的家门。",
+      "voices": {
+        "a-heng": "主动接笔要慢念，低唱通过旧缺处，暮色自己唱完两段；随后应声接灯、约明天睡懒觉、同笑与回来了沿同一轻清身份。口语短参考不证明连续演唱、笑或完整曲词能力，各模式分别验。",
+        "heng-mother": "床边低哼、轻哼完末句到屋内叫阿蘅，身体仍未宣称痊愈；弱口语只作身份，哼唱和床内距离另演。",
+        "li-ji": "分句慢念等写完再续，答窗外来了，归家问明天唱和约太阳到窗台后同笑；旧方向不合待新准备，不拿阿蘅声替。",
+        "offscreen-caller": "只承担窗外叫李寄回家，姓名亲属未明，温平中音与旧偏低厚声待比较；原叮嘱句不作回家声轨、不认成李母。",
+        "li-xiao": "远处校杆高低、孙六先误抬才纠正，夜路提醒慢些；成年姐姐方向待新准备，准确指令原词未定者先锁，不能添新剧情。",
+        "li-dan": "忍笑短问等她说完，杆扎稳后相视笑；旧说话候选只供身份，不证明笑声，别延续除蛇疼痛与英雄演法。",
+        "sun-liu": "同桌劳动搭杆稳后笑，河街各扛一端；角色身份继续，笑和运动呼吸重新表演。",
+        "li-mother": "当面点亮补罩旧灯后嘱带着河边看路，接稳才同行；口语候选可供身份，新话温平，不把窗外未明者归为她。"
+      },
+      "continuity": "新疤绷紧不再出血；阿蘅主动接笔，纸留中间，旧残页夹后，新页校词并订牢试翻，窗外叫后李寄答再交本。一个多月后两成人各扶幕杆一端，李绡扎好才松手。阿蘅完整两段到归来认旧桥，尾音收住才掌声，不加斩蛇颂歌。旧灯由李母点亮交阿蘅，女孩灯本分持，家门先交本再还灯，各走半步停住才同笑；病母屋内叫，整本归使用者，灯照杆路回无闩李家。多个地点重建方向，声距、木杆、河拍与生活声延续，无额外歌唱和总结字幕。",
+      "iteration": "第16集学得的认旧桥本集才贯通，原缺处不剪断；母亲能哼末句不等于痊愈或演唱能力已验证。窗外未明呼唤者严格独立，最新原音较低厚改为待比较，其他正确身份结论保留但歌唱、笑和新词不迁移旧认可。跨全剧仍保留李寄、李绡当前方向待新准备及四短件长度反例，没有因结局暖意自动通过。",
+      "number": 17,
+      "uses": [
+        {
+          "shot": "av-e17-a01-s01",
+          "speaker": "a-heng",
+          "source_keys": [
+            "s040:1"
+          ],
+          "modes": [
+            "慢念"
+          ]
+        },
+        {
+          "shot": "av-e17-a01-s01",
+          "speaker": "heng-mother",
+          "source_keys": [
+            "s040:1"
+          ],
+          "modes": [
+            "床边低哼"
+          ]
+        },
+        {
+          "shot": "av-e17-a01-s02",
+          "speaker": "a-heng",
+          "source_keys": [
+            "s040:4"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e17-a01-s03",
+          "speaker": "li-ji",
+          "source_keys": [
+            "s040:6",
+            "s040:8"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e17-a01-s04",
+          "speaker": "a-heng",
+          "source_keys": [
+            "s040:10",
+            "s040:12"
+          ],
+          "modes": [
+            "低声起唱",
+            "演唱"
+          ]
+        },
+        {
+          "shot": "av-e17-a01-s04",
+          "speaker": "heng-mother",
+          "source_keys": [
+            "s040:13"
+          ],
+          "modes": [
+            "轻哼末句"
+          ]
+        },
+        {
+          "shot": "av-e17-a01-s07",
+          "speaker": "offscreen-caller",
+          "source_keys": [
+            "s040:18"
+          ],
+          "modes": [
+            "窗外呼唤"
+          ]
+        },
+        {
+          "shot": "av-e17-a01-s07",
+          "speaker": "li-ji",
+          "source_keys": [
+            "s040:18"
+          ],
+          "modes": [
+            "回答"
+          ]
+        },
+        {
+          "shot": "av-e17-a02-s01",
+          "speaker": "li-xiao",
+          "source_keys": [
+            "s041:2",
+            "s041:3"
+          ],
+          "modes": [
+            "指挥",
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e17-a02-s02",
+          "speaker": "li-dan",
+          "source_keys": [
+            "s041:5",
+            "s041:6"
+          ],
+          "modes": [
+            "说话",
+            "笑声"
+          ]
+        },
+        {
+          "shot": "av-e17-a02-s02",
+          "speaker": "sun-liu",
+          "source_keys": [
+            "s041:6"
+          ],
+          "modes": [
+            "笑声"
+          ]
+        },
+        {
+          "shot": "av-e17-a03-s02",
+          "speaker": "a-heng",
+          "source_keys": [
+            "s041:9"
+          ],
+          "modes": [
+            "演唱"
+          ]
+        },
+        {
+          "shot": "av-e17-a03-s03",
+          "speaker": "a-heng",
+          "source_keys": [
+            "s041:11"
+          ],
+          "modes": [
+            "演唱"
+          ]
+        },
+        {
+          "shot": "av-e17-a03-s04",
+          "speaker": "a-heng",
+          "source_keys": [
+            "s041:13"
+          ],
+          "modes": [
+            "演唱"
+          ]
+        },
+        {
+          "shot": "av-e17-a04-s02",
+          "speaker": "li-mother",
+          "source_keys": [
+            "s041:20"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e17-a04-s02",
+          "speaker": "a-heng",
+          "source_keys": [
+            "s041:21"
+          ],
+          "modes": [
+            "应声"
+          ]
+        },
+        {
+          "shot": "av-e17-a04-s03",
+          "speaker": "li-xiao",
+          "source_keys": [
+            "s042:1"
+          ],
+          "modes": [
+            "提醒"
+          ]
+        },
+        {
+          "shot": "av-e17-a04-s04",
+          "speaker": "li-ji",
+          "source_keys": [
+            "s042:6"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e17-a04-s04",
+          "speaker": "a-heng",
+          "source_keys": [
+            "s042:7"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e17-a04-s05",
+          "speaker": "a-heng",
+          "source_keys": [
+            "s042:9",
+            "s042:11"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e17-a04-s05",
+          "speaker": "li-ji",
+          "source_keys": [
+            "s042:10"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e17-a04-s06",
+          "speaker": "a-heng",
+          "source_keys": [
+            "s042:13"
+          ],
+          "modes": [
+            "笑出声"
+          ]
+        },
+        {
+          "shot": "av-e17-a04-s06",
+          "speaker": "li-ji",
+          "source_keys": [
+            "s042:13"
+          ],
+          "modes": [
+            "笑出声"
+          ]
+        },
+        {
+          "shot": "av-e17-a04-s07",
+          "speaker": "heng-mother",
+          "source_keys": [
+            "s042:15"
+          ],
+          "modes": [
+            "说话"
+          ]
+        },
+        {
+          "shot": "av-e17-a04-s07",
+          "speaker": "a-heng",
+          "source_keys": [
+            "s042:16"
+          ],
+          "modes": [
+            "说话"
+          ]
+        }
+      ],
+      "authored_sha256": "da09adb4e85a973ca46e68940d61008ff3c3ab163470554849907a7f38442bc2",
+      "screenplay_sha256": "c428946554029be05f119eae0ecefeb5bbc6501115db5d096c007ebe0af12f3d"
     }
-  ]
+  ],
+  "coverage_complete": true
 }
