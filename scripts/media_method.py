@@ -1,12 +1,12 @@
 """Deliver methods before authoring one exact media plan; no generation calls."""
 import argparse
 import json
-from pathlib import Path, PurePosixPath
+from pathlib import Path
 
 try:
-    from .method_runtime import MethodClient, reference
+    from .method_runtime import MethodClient, deliver_files, delivery_directory, reference
 except ImportError:
-    from method_runtime import MethodClient, reference
+    from method_runtime import MethodClient, deliver_files, delivery_directory, reference
 
 
 def read(path):
@@ -25,36 +25,41 @@ def plan_output(record):
             'generation': payload['generation']}
 
 
-def begin(client, directory, record, run_id, step_id):
-    directory = Path(directory)
+def begin(client, directory, record, run_id, step_id, conditions=None, supporting=None):
+    directory = delivery_directory(directory)
     if directory.exists():
         saved = read(directory / 'delivery.json')
-        if read(directory / 'record.json') != record or saved['request']['run_id'] != run_id or saved['request']['step_id'] != step_id:
+        original = saved['record'] if 'record' in saved else read(directory / 'record.json')
+        if original != record or saved['request']['run_id'] != run_id or saved['request']['step_id'] != step_id:
             raise ValueError('恢复目录属于其他步骤或输入；请沿原步骤恢复')
+        if conditions is not None and saved['request']['conditions'] != {**conditions, 'media_type': record['payload']['media_type']}:
+            raise ValueError('恢复条件改变；请新建步骤并复核受影响的工作')
+        if supporting is not None and saved['request']['inputs'].get('supporting_references') != supporting:
+            raise ValueError('恢复材料改变；请新建步骤')
         if client.prepare(saved['request']) != saved['execution']:
             raise ValueError('恢复服务的准确方法与本步骤不同')
+        if not (directory / 'record.json').exists():
+            write(directory / 'record.json', original)
+        elif read(directory / 'record.json') != original:
+            raise ValueError('本地准确方案已改变')
+        deliver_files(directory, saved['execution']['payload']['package'], saved['request']['inputs'])
         return saved
     value = {'object_id': record['object_id'], 'payload': record['payload'], 'expected_version': record['expected_version'], 'run_id': run_id, 'step_id': step_id}
-    prepared = client.call('/api/methods/media-prepare', value)
+    if conditions is not None:
+        value['method_conditions'] = conditions
+    if supporting is not None:
+        value['supporting_references'] = supporting
+    prepared = {**client.call('/api/methods/media-prepare', value), 'record': record}
     directory.mkdir(parents=True)
     package = prepared['execution']['payload']['package']
-    for name, body in package['files'].items():
-        path = PurePosixPath(name)
-        if path.is_absolute() or '..' in path.parts:
-            raise ValueError('方法包路径越界')
-        target = directory / name; target.parent.mkdir(parents=True, exist_ok=True)
-        target.write_text(body)
-    (directory / 'shared').mkdir(exist_ok=True)
-    for index, resource in enumerate(package['resources']):
-        (directory / 'shared' / (str(index) + '.md')).write_text(resource['content'])
-    write(directory / 'request.json', prepared['request']['inputs'])
     write(directory / 'delivery.json', prepared)
     write(directory / 'record.json', record)
+    deliver_files(directory, package, prepared['request']['inputs'])
     return prepared
 
 
 def stage(client, directory, name, record=None, review=None):
-    directory = Path(directory); saved = read(directory / 'delivery.json')
+    directory = delivery_directory(directory); saved = read(directory / 'delivery.json')
     execution = client.prepare(saved['request'])
     if execution != saved['execution']:
         raise ValueError('服务返回的冻结方法与本步骤不同；请恢复准确执行包')
@@ -84,12 +89,15 @@ def main():
     start = subs.add_parser('begin')
     start.add_argument('--record', type=Path, required=True)
     start.add_argument('--run-id', required=True); start.add_argument('--step-id', required=True)
+    start.add_argument('--conditions', type=Path, help='按本次制作问题选取方法与章节的 JSON 条件')
+    start.add_argument('--supporting', type=Path, help='输入锁、必要相邻方案或原件的准确引用 JSON 数组')
     draft = subs.add_parser('draft'); draft.add_argument('--record', type=Path, required=True)
     review = subs.add_parser('review'); review.add_argument('--assessment', type=Path, required=True)
     finish = subs.add_parser('finish'); finish.add_argument('--record', type=Path, required=True); finish.add_argument('--output', type=Path, required=True)
     args = parser.parse_args(); client = MethodClient(args.method_url)
     if args.action == 'begin':
-        result = begin(client, args.directory, read(args.record), args.run_id, args.step_id)
+        result = begin(client, args.directory, read(args.record), args.run_id, args.step_id,
+                       read(args.conditions) if args.conditions else None, read(args.supporting) if args.supporting else None)
     elif args.action == 'review':
         result = stage(client, args.directory, 'review', review=args.assessment.read_text())
     else:

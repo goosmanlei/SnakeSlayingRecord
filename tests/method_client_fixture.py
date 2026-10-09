@@ -17,7 +17,7 @@ class Client:
                    'method': {'object_id': 'method.skill.' + work_type, 'revision_id': 'method-v1'},
                    'version': 1, 'title': work_type, 'work_type': work_type, 'conditions': conditions or {},
                    'files': {'SKILL.md': body}, 'resources': [], 'required_inputs': ['context'],
-                   'steps': ['draft', 'review', 'result'] if work_type == 'novel-writing' else ['result']}
+                   'steps': ['draft', 'review', 'result'] if work_type in ('novel-writing', 'screenplay-writing') else ['result']}
         package['sha256'] = reader.digest(package)
         return package
 
