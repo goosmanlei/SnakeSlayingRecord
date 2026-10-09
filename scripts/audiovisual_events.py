@@ -114,11 +114,14 @@ class ReviewedEvents:
                 'none': '无新增词句' + ('；' + event['content'] if event['content'] else '')}[event['words']]
         return f'{speaker}／{event["mode"]}：{body}。{event["direction"]}'
 
-    def render(self, sources):
+    def render(self, sources, narration=None):
         parts = []
+        narration = narration or {}
+        if set(narration) - set(self.keys(sources)):
+            raise ValueError('visual narration is outside the exact shot sources')
         for key in self.keys(sources):
             events = self.at(key)
-            text = self.blocks[key]
+            text = narration.get(key, self.blocks[key])
             # Direct lines occur once as an executable vocal event. Narration is
             # retained as action evidence, with embedded spoken quotes replaced
             # by event markers rather than a second performance of the words.
@@ -126,7 +129,8 @@ class ReviewedEvents:
                 for i, event in enumerate(events, 1):
                     if event['words'] == 'exact' and event['content'] in text:
                         text = text.replace(event['content'], f'〔本段发声{i}〕', 1)
-                parts.append('动作与叙述依据：' + text)
+                if text:
+                    parts.append('动作与叙述依据：' + text)
             if events:
                 parts.append('本段发声（依序；注明同时者重叠）：\n' + '\n'.join(f'{i}. {self.describe(e)}' for i, e in enumerate(events, 1)))
         return '\n'.join(parts)
