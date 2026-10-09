@@ -33,6 +33,7 @@
 - 场级事件概述不直接进入每镜方案；`production/audiovisual/shot-contexts.json` 确认可共享固定条件与镜内覆盖，`vocal-events.json` 按准确源段落记录叙述式发声、多人顺序、重叠和停止。首帧沿准确状态引用固定外观，不全文重演状态制作说明中的使用动作。原词、语意、未定句段与非语言声分别处理；重编沿 `scripts/revise_audiovisual.py` 只追加实际变化，流程见 [全剧视听设计](production/audiovisual/README.md)。
 - 一个镜头可以有多项素材需求，每项有多个冻结方案版本，每版可有多个候选。角色身份、状态整体、空间全景、机位、道具细节、首帧、声音与视频通过有用途的关系连接。关系记录保持／改变约束、适用范围与必需、可选、条件或择一路线；只有实际选择的路线参与缺项和循环检查，自定义说明不自动执行。
 - 准确参考须固定需求版本、候选、原件组成，以及需要的图像区域或音视频区间；浏览候选不改变选择，间接引用不冒充真实输入。首次真实提交即锁定方案，失败或未知也锁定；定义变化建新版，同方案重试增加同版候选。生成、方案采纳、原件认可和镜头采用分别判断。本次重编不继承旧方案认可。
+- 准确参考保存回执推进当前消费方案的准确修订与输入位置；已选入口携带当前素材版本基线，合法旧链继续准确映射，删除身份不回退。保存后可核对范围、重开、再调整或放弃修改；预览组成与原件分别处理，不把一次选择变为制作采纳。通用契约见系统 `docs/production-breakdown.md`，实例证据见 [准确参考闭环验收](production/reference-selection/VERIFICATION.md)。
 - 视频方案显式声明渠道、生成模式与直接输入角色；普通参考不保证固定起点。全剧起始裁切与镜内后续显露的输入职责以 [逐场输入审查](production/audiovisual/video-inputs.json) 编制，意图变化先复审；首图祖先不自动上传，音色不代替视觉身份。通用参数与输入组合校验、准确选择、准备包及 CALL 守卫由审阅台承担，未知组合不判可执行。方法仍只在 [视频生成手册](production/seedance-video-handbook.md) 维护。
 - 旧场准备、旧镜头编排与无用途方案已从当前交付退出。保留媒体身份、字节及真实输入，独立调用凭据按 [来源索引](production/audiovisual/provenance-files.json) 定位；没有原始方案的候选继续明确未知。一次性清理不成为日常重写冻结历史的入口。
 
@@ -46,8 +47,11 @@
 - 项目配置保存稳定创作背景及其适用作品边界；动态制作进度与待办由 `STATE.md` 和对应制作交接维护，采用由 `production/source-lock.json` 与准确采纳记录维护。四首歌的有效内容沿 [歌曲交接](production/songs-review.md) 和审阅台准确歌曲版本回查；369 图像加 42 录音共 411 原件是非歌曲首轮历史批次，不能冒充当前总量。配置修订用 [准确两字段包](production/review-context/project-update.json) 与 `scripts/publish_review_context_config.py`，须版本与完整旧正文哈希一致，持发布锁增量更新，保留其他字段及全部历史；不以快照覆盖活库。
 - 原件创建时自检与后来人工判断分别显示时间、准确范围和理由；每个判断对象的当前修订独立成立，相反意见并存且不按时间替用户消解。实体和素材入口共用原位保存及准确草稿；整体与单版方案许可择一且独立撤回，不代替原件选择、结果认可或采用。契约与复验入口见 [准确判断验收](production/review-decisions/VERIFICATION.md)，准确母版认可不转授新需求。
 - 评论绑定准确对象、修订和圈选；编辑、关闭、重开保留事件，不能将旧意见迁给实质不同的新设计。总评论包含已关闭而不包含删除或编辑历史。⌘+Enter 提交／保存，普通 Enter 换行，输入框内 Esc 放弃本次未保存内容，输入框外 Esc 收起面板并保留草稿；中文输入法组合时不触发快捷键。
+- 当前稿的“历史意见复核”沿原评论、不可变结构回应及受管作者处理依据核对，不保存第二份评论状态。作者回应、当前稿准确改动证据和人工关闭分别判断；未登记证据不等于没有修改。复核窗保留底层阅读与草稿，准确目标缺失不换最新版。C134 图文和精修八至九 C137／C138 的处理范围、来源与增量发布入口见 [跨版本复核验收](production/comment-review/VERIFICATION.md)。
 - 业务编号为实例内持久标识：故事 E／S、视听集 AE、视听场 AS、视听镜 ASH、实体 EN、状态 ST、素材 M。视听镜与旧镜头 SH 是不同类型，独立从 ASH001 起号；本次退役旧镜头时同时删除其无用途 SH 占位。保留类型的编号不复用，失效链接明确不可用，不跳到新对象。完整系统契约见 `docs/production-breakdown.md`、`docs/material-versions.md` 和 `docs/small-cards.md`。
 - 素材与实体查找使用持久编号、中文名称及明确字段；素材来源动作只跟随准确直接镜头。未限定集场的搜索按独立素材展示，可展开真实位置用途；按集场浏览继续保留跨场展示。状态或素材来源能进入准确完整镜头、选择设计历史并返回外层；显式失效定位不替换默认稿、集或场。通用契约见系统 `docs/small-cards.md`，本剧实操与证据边界见 [查找与连续审阅验收](production/readable-navigation/VERIFICATION.md)。
+
+- 必要准确文字按镜头的揭示顺序交接，图像／视频生成与后期可编辑字层分工；已有正确图像优先复用，静图正确不代表运动中可读。11份确定性工程、准确来源与逐集取舍见 [文字交接入口](production/audiovisual/README.md#准确文字与可编辑字层)；通用审阅台的工程文件与素材要求绑定制作时的准确版本，外部制作不虚构模型调用或迁移旧认可。
 
 ## 生成工具与规格
 
@@ -70,6 +74,7 @@
 
 - 正式数据库 `.runtime/review.sqlite3` 是本机运行权威，`export/` 是受管快照。当前 Schema 9 保存新视听模型、有效素材版本与原件、准确评论、配置和最小退役身份，不恢复已退出的旧业务对象。当前恢复使用 `scripts/production_review.py recover`、[准确索引](production/audiovisual/index.json) 与 [发布凭据](production/audiovisual/recovery.json)，只能恢复新空实例，不能覆盖活库。
 - 生成、登记、审阅与导出均在任务 worktree；准确增量和原件先合入主干，再持有正式发布锁应用。`generation_publications` 与 `consolidation_runs` 保存发布幂等事实，不能因不属于业务正文便删除。范围外新评论和引用须保全，旧基线拒绝重放。操作见 [工作区流程](production/generation-workspaces.md)。
+- 状态准备用途由作者在 [逐集判断](production/audiovisual/state-preparation.md) 维护，`scripts/state_preparation.py` 只汇编并交给现有准确状态与需求模型；关系数量不代替用途判断。独立审阅或可选对照可不进入镜头输入，镜内结束状态可只作结果检查。已有完整维度或描述块承担制作描述，真实缺项及认可边界继续保留。
 - 全剧编制由 `scripts/audiovisual_design.py`、`scripts/audiovisual_materials.py` 读取锁定故事和作者逐镜稿；一次性切换由 `scripts/audiovisual_cutover.py` 与 `scripts/audiovisual_release.py` 消费准确清单。先只读预演、隔离副本、净化导出及空恢复，再核对正式基线并事务应用；失败沿同一冻结包向前恢复，不把旧库覆盖新意见。
 - 正式镜像统一用 `story-review-desk:current`、`:previous`、`:base`，候选和 Compose 固定准确镜像 ID；构建基底不逐版移动。服务回退不等于数据回退。流程见 [固定镜像名称](production/generation-workspaces.md#审阅台镜像的固定名称)。
 - `export/material-content.json` 使用 Git LFS；克隆后须取回实际内容再校验。独立请求／回执若由素材归档配方保存，物理退役配方前须还原真实逻辑字节或指向字节相同的保留组成，不能只留下失效容器。
