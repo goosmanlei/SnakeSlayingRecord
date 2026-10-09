@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""Prepare an immutable code-only release; apply only the user-confirmed bundle.
+"""Prepare an immutable runtime release; apply only the authorized bundle.
 
-No business-data import, generation, acceptance or task completion. The system
+Optional exact method configuration is appended during a stopped-app window.
+No story-data import, generation, acceptance or task completion. The system
 fast-forward, live preservation checks, service switch and prepared ordinary
 system push run serially; story Git delivery stays with the task launcher.
 """
@@ -108,6 +109,17 @@ def prepare(a):
     hashes={}
     def put(rel,raw):base.write_once(root/rel,raw);hashes[rel]=sha(raw)
     for name in base.INSTANCE_FILES:put('instance/'+name,base.git_file(story,a.story_candidate,name))
+    managed_methods = None
+    if getattr(a, 'method_registry', None):
+        require(getattr(a, 'method_audit', None), 'method cutover requires an in-flight delivery audit')
+        paths = {}
+        for key, path in (('registry', a.method_registry), ('audit', a.method_audit)):
+            relative = Path(path).as_posix()
+            require(not Path(relative).is_absolute() and '..' not in Path(relative).parts, 'method cutover paths must be project-relative')
+            raw = base.git_file(story, a.story_candidate, relative)
+            require(raw == (story / relative).read_bytes(), 'method cutover input differs from candidate')
+            paths[key] = 'methods/' + key + '.json'; put(paths[key], raw)
+        managed_methods = paths
     method_media=method_media_files(read(root/'instance/content/production-approach.json'))
     for name,digest in method_media.items():
         raw=base.git_file(story,a.story_candidate,name)
@@ -124,6 +136,7 @@ def prepare(a):
     tag=policy['base_image_tag']
     put('build/Dockerfile',('FROM '+tag+'\nRUN rm -rf /app/review_desk\nCOPY review_desk /app/review_desk\nLABEL org.opencontainers.image.revision='+a.system_candidate+'\n').encode())
     helpers=['material_review_release.py','autonomous_optimization_release.py','integrate_generation_review_system.py']
+    if managed_methods:helpers.append('method_migration.py')
     if native:helpers.append('task_repository_delivery.py')
     for helper in helpers:
         raw=base.git_file(story,a.story_candidate,'scripts/'+helper);require(raw==(story/'scripts'/helper).read_bytes(),'helper differs from committed candidate');put('helpers/'+helper,raw)
@@ -136,6 +149,7 @@ def prepare(a):
     if method_media:m['method_media']=method_media
     if media_mount:m['previous_method_media']=method_directory_hashes(media_mount['Source'])
     if native:m['task_delivery']=native
+    if managed_methods:m['managed_methods']=managed_methods
     if task=='task-20261006-0005':
         m['database_changes']={'format':'transactional-read-cache-v1','journal_mode':'delete','journal_mode_changed':False,
                                'auxiliary_table':'read_generations','business_rows':'preserve',
@@ -214,7 +228,7 @@ def read_generation_schema(db, schemas):
     require(triggers==expected,'read generation triggers differ from approved migration')
 
 
-def preserved(before,after,*,allow_read_generations=False):
+def preserved(before,after,*,allow_read_generations=False,allow_cache_token_updates=False):
     # The live instance contains a large content-addressed history. Keep only
     # one row in Python; the exact multiset comparison lives in a disk index.
     mutable={'objects':('id','kind','created_at'),
@@ -242,6 +256,12 @@ def preserved(before,after,*,allow_read_generations=False):
         evidence={}
         for table,schema in schemas[0].items():
             require(schema==schemas[1][table],'business table schema changed')
+            if table == 'read_generations' and allow_cache_token_updates:
+                for db, schema_set in zip(databases, schemas):
+                    read_generation_schema(db, schema_set)
+                counts=[db.execute('SELECT COUNT(*) FROM read_generations').fetchone()[0] for db in databases]
+                evidence[table]={'before':counts[0],'after':counts[1],'disposable_tokens_only':True}
+                continue
             quoted='"'+table.replace('"','""')+'"'
             columns={row['name'] for row in databases[0].execute('PRAGMA table_info('+quoted+')')}
             keys=tuple(k for k in mutable.get(table,()) if k in columns)
@@ -300,6 +320,21 @@ def apply(a):
         proxy=base.safe_container(inspect(base.NGINX));expected_proxy={**m['previous_nginx'],'config_files':str(release/'compose.release.json')}
         require(proxy in (m['previous_nginx'],expected_proxy),'another proxy runtime is active')
         before=receipt/'before.sqlite3'
+        method_change = m.get('managed_methods')
+        if method_change:
+            import method_migration
+            require(sha(Path(method_migration.__file__).read_bytes()) == m['hashes']['helpers/method_migration.py'], 'method migration helper changed')
+            method_migration.check_cutover(Path(m['story_main']), read(root/method_change['audit']))
+            # The previous release may not know the HTTP maintenance lock.
+            # Stop the exact verified application, then take the cutoff snapshot.
+            # Accepted writes before this stop are included; no old DB is restored.
+            require(exact_candidate or base.safe_container(current)==m['previous_app'], 'another app is active')
+            if current['State']['Running']:run([base.DOCKER, 'stop', '--time', '30', current['Id']])
+            require(not inspect(current['Id'])['State']['Running'], 'application still accepting writes')
+            save(receipt/'write-window.json', {'container_id': current['Id'], 'stopped': True,
+                                              'surfaces': ['comments','acceptance','configuration','content','uploads'],
+                                              'ingress': method_migration.stopped_api(application_stopped=True),
+                                              'at': datetime.now(timezone.utc).isoformat()})
         if not before.exists():
             checks(root,m);base.snapshot(Path(m['story_main'])/'.runtime/review.sqlite3',before);save(receipt/'before.json',{'sha256':file_sha256(before)})
         else:
@@ -308,13 +343,24 @@ def apply(a):
         # Integrator receipt root is task runtime, irrespective of copied helper.
         integration=json.loads(run([sys.executable,Path(m['story_worktree'])/'scripts/integrate_generation_review_system.py','--plan',root/'system-delivery.json','--apply','--receipt',receipt/'system-integration.json']))
         require(integration['target_after']==m['system_candidate'],'system integration mismatch')
+        if method_change:
+            cutoff=receipt/('method-cutoff-'+str(time.time_ns())+'.sqlite3')
+            base.snapshot(Path(m['story_main'])/'.runtime/review.sqlite3',cutoff)
+            result = json.loads(run([sys.executable, root/'helpers/method_migration.py', '--system', m['system_main'],
+                                     'apply', '--database', Path(m['story_main'])/'.runtime/review.sqlite3',
+                                     '--registry', root/method_change['registry'], '--activate-media']))
+            save(receipt/'method-migration.json', result)
+            migrated=receipt/('methods-'+str(time.time_ns())+'.sqlite3')
+            base.snapshot(Path(m['story_main'])/'.runtime/review.sqlite3',migrated)
+            evidence = method_migration.compare(cutoff,migrated,read(root/method_change['registry']))
+            save(receipt/'method-preservation.json',evidence)
         release=install(root,m,image);environment=base.env_values(inspect(base.APP))
-        if not exact_candidate:base.compose_up(m,[release/'compose.release.json'],environment,release=True)
+        if not exact_candidate or not inspect(base.APP)['State']['Running']:base.compose_up(m,[release/'compose.release.json'],environment,release=True)
         service=base.verify_service(m,image,release)
         after=receipt/('after-'+str(time.time_ns())+'.sqlite3');base.snapshot(Path(m['story_main'])/'.runtime/review.sqlite3',after)
         cache_migration=m.get('database_changes',{}).get('format')=='transactional-read-cache-v1'
         require(not cache_migration or m['task']=='task-20261006-0005','unexpected database migration task')
-        evidence=preserved(before,after,allow_read_generations=cache_migration)
+        evidence=preserved(before,after,allow_read_generations=cache_migration,allow_cache_token_updates=bool(method_change))
         database_runtime=None
         if cache_migration:
             live_db=(Path(m['story_main'])/'.runtime/review.sqlite3').resolve()
@@ -322,7 +368,7 @@ def apply(a):
                 database_runtime={'journal_mode':db.execute('PRAGMA journal_mode').fetchone()[0]}
             require(database_runtime['journal_mode']=='delete','reviewed DELETE journal mode changed')
         base.update_image_aliases(m,image)
-        result={'status':'formal_browser_pending','service':service,'release':str(release),'rows':evidence,'business_delta':0,'system_candidate':m['system_candidate'],'push':False,'complete_invoked':False,
+        result={'status':'formal_browser_pending','service':service,'release':str(release),'rows':evidence,'business_delta':None if method_change else 0,'method_migration':read(receipt/'method-migration.json') if method_change else None,'system_candidate':m['system_candidate'],'push':False,'complete_invoked':False,
                 'database_changes':m.get('database_changes'),'database_runtime':database_runtime}
         save(receipt/('service-'+str(time.time_ns())+'.json'),result);print(json.dumps(result,ensure_ascii=False))
 
@@ -330,6 +376,13 @@ def apply(a):
 def recover(a):
     root,m=authorized(a);image=read(root/'image.json');release=Path(m['story_main'])/'.runtime/service-releases'/m['release_name']
     with base.publication_locks(m):
+        if m.get('managed_methods'):
+            # The pre-cutover image cannot enforce the newly active contract.
+            # Keep the database and require a compatible runtime repair instead.
+            database=Path(m['story_main'])/'.runtime/review.sqlite3'
+            with sqlite3.connect(database.resolve().as_uri()+'?mode=ro',uri=True) as db:
+                active=db.execute("SELECT 1 FROM objects WHERE id='method.activation.media-plan'").fetchone()
+            require(not active,'方法约束已启用，不能回退到切换前镜像；请重启当前兼容版本或发布兼容修复，不要回灌旧数据库')
         current=inspect(base.APP);known_mounts=[{v['Destination']:(v['Source'],v['RW']) for v in m['previous_app']['mounts']},{v['target']:(v['source'],not v['read_only']) for v in base.compose_definition(m,image,release)['services']['app']['volumes']}];require(current['Image'] in (image['image'],m['previous_app']['image']) and {v['Destination']:(v['Source'],v['RW']) for v in current['Mounts']} in known_mounts,'another release is active')
         proxy=base.safe_container(inspect(base.NGINX));expected_proxy={**m['previous_nginx'],'config_files':str(release/'compose.release.json')};recovered_proxy={**m['previous_nginx'],'config_files':str(root/'compose.previous.json')}
         require(proxy in (m['previous_nginx'],expected_proxy,recovered_proxy),'another proxy runtime is active')
@@ -388,6 +441,7 @@ def main():
     p=argparse.ArgumentParser(description=__doc__);sub=p.add_subparsers(dest='command',required=True)
     q=sub.add_parser('prepare');q.add_argument('--story-worktree',type=Path,default=Path(__file__).resolve().parents[1]);q.add_argument('--system-worktree',type=Path,required=True);q.add_argument('--bundle',type=Path,required=True)
     q.add_argument('--task',default=TASK);q.add_argument('--push-system',action='store_true')
+    q.add_argument('--method-registry',type=Path);q.add_argument('--method-audit',type=Path)
     for name in ('story-candidate','system-candidate','story-target','system-target'):q.add_argument('--'+name,required=True)
     for cmd in ('build','preflight','apply','recover','publish-system'):
         q=sub.add_parser(cmd);q.add_argument('--bundle',type=Path,required=True)
