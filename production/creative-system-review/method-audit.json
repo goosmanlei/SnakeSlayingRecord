@@ -1,0 +1,32 @@
+{
+  "format": "managed-method-cutover-v1",
+  "task": "task-20261010-0001",
+  "wait_for_delivery": [],
+  "reviewed_work": [
+    {
+      "task": "task-20261009-0021",
+      "status": "running",
+      "observed_at": "2026-10-09T18:41:20.183661+00:00",
+      "boundary": "只消费已合入主干的契约；本次新增独立 creative-system-review 绑定，既有方法、快照、媒体启用记录和在途工作不重写。"
+    },
+    {
+      "task": "task-20261009-0031",
+      "status": "completed",
+      "observed_at": "2026-10-09T18:41:20.183661+00:00",
+      "boundary": "只消费已合入主干的契约；本次新增独立 creative-system-review 绑定，既有方法、快照、媒体启用记录和在途工作不重写。"
+    },
+    {
+      "task": "task-20261009-0033",
+      "status": "completed",
+      "observed_at": "2026-10-09T18:41:20.183661+00:00",
+      "boundary": "只消费已合入主干的契约；本次新增独立 creative-system-review 绑定，既有方法、快照、媒体启用记录和在途工作不重写。"
+    }
+  ],
+  "work_type": "creative-system-review",
+  "write_window": {
+    "publication": "既有项目及系统发布锁，核对准确正式容器和并发发布者",
+    "api": "停止准确 app 并核对 3000/64401 写入口后取切点快照；增量只含本任务三个方法对象。",
+    "preservation": "method_migration.compare 逐表比较无关数据，保留旧方法、绑定、执行、作品、评论、认可和全部历史。",
+    "activation": "媒体约束已经启用，本次不新增或扩大冻结范围。"
+  }
+}

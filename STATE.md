@@ -2,6 +2,8 @@
 
 ## 当前成果与运行依据
 
+- [创作协作 Review](skills/creative-system-review/SKILL.md) 和 [愿景与协作](production/system-vision.md) 已按批准正文形成候选；愿景为制作思路首项，系统方法沿准确只读投影交接。隔离页面、完整准备与新空实例恢复边界见 [交付验收](production/creative-system-review/VERIFICATION.md)。正式生效、根独立页面结论与收尾按 task-20261010-0001 实际回执核对。
+
 - 旧镜头制作方案已完成最新双仓候选上的隔离实读：E02/AS006/ASH033版本1直接读原M3071及旧图片1，当前方案可返回；M3070版本2多记录、冻结M1206和ST087旧状态正常对照见[历史方案验收](production/historical-production-definition/VERIFICATION.md)。旧意见、当前采纳/取消、同未冻结制作版参考修改及冲突保护已实操；正式生效、3000只读复验与清理以task-20261009-0031实际回执为准，根独立复验尚未执行。
 
 - 方法正文连续阅读后的制作返回已完成最新双仓候选上的隔离实践：AE017/AS065/M1194、全局M2673及ASH344的准确修订、搜索、草稿与阅读位置可继续；方法刷新、历史返回、明确作品及新标签边界见[方法返回验收](production/method-reading-return/VERIFICATION.md)。正式生效、3000只读复验与清理按 task-20261009-0033 实际回执核对。
