@@ -39,6 +39,8 @@
 
 ## 审阅界面与评论约定
 
+- 剧情依据默认保留有价值的选段，沿准确原文提示实际省略；按需在同一弹层读原对象、原修订和准确场的全部正文，高亮只代表原引用，返回不扩大引用或改变意见归属。仅正文块引用须能在同修订内确定唯一场，缺失、失效或歧义不借最新版补读。已有完整路径不叠加入口。通用契约见系统 `docs/materials-and-relationships.md`，实例因果、草稿和受控时序边界见 [剧情选段验收](production/source-excerpt-context/VERIFICATION.md)。
+
 - 视听集版本比较按所选准确集的组成定位同一场镜及真实父场；地址固定集修订，孩子被多版复用也不改回另一版。目标缺席、准确引用不符或父位置不唯一时明确说明，保留所选版本及现有导航；不按标题猜测，不迁移意见。通用契约见系统 `docs/production-breakdown.md`，实例原路、夹具与时序边界见 [集版本比较验收](production/version-comparison-context/VERIFICATION.md)。
 
 - 素材直接参考的用途意见紧邻准确输入；旧备选与沿用方案按具体名称展开，不代表已选择或已生成。关系意见保留准确两端、修订与原文字锚点，原图意见仍绑定准确文件。仅文字依据的实际调用不冒充媒体上传；历史引用不借新设计补造来历。实例实践及保护边界见 [参考用途验收](production/material-reference-purpose/VERIFICATION.md)，通用契约在系统 `docs/materials-and-relationships.md`。
