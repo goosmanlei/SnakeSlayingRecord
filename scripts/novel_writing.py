@@ -6,8 +6,16 @@ import hashlib
 import json
 import re
 import sqlite3
+import sys
+import uuid
 from datetime import datetime, timezone
 from pathlib import Path
+
+try:
+    from .method_runtime import MethodClient
+except ImportError:
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from method_runtime import MethodClient
 
 
 class Conflict(ValueError):
@@ -28,7 +36,8 @@ def checksum(value):
 
 
 class WritingStore:
-    def __init__(self, path):
+    def __init__(self, path, method_client=None):
+        self.method_client = method_client
         self.path = Path(path)
         self.path.parent.mkdir(parents=True, exist_ok=True)
         self.db = sqlite3.connect(str(path))
@@ -111,7 +120,19 @@ class WritingStore:
             self._event("CONTEXT_READ", {"revision": head, "full": full, "fragment_ids": [f["id"] for f in state["fragments"] if full or f["id"] in selected]})
             return {"revision": head, "phase": state["phase"], "constraints": self._get("seed")["constraints"],
                     "notes": state["notes"], "index": [{k: f[k] for k in ("id", "chapter_id", "chapter_title")} for f in state["fragments"]],
-                    "fragments": [f for f in state["fragments"] if full or f["id"] in selected]}
+                    "fragments": [f for f in state["fragments"] if full or f["id"] in selected],
+                    "active_methods": [self._get('method.' + row['id']) for row in self.db.execute("SELECT id FROM steps WHERE status IN ('PENDING','CANDIDATE_SAVED')")]}
+
+    def _method(self, step_id, stage=None, output=None):
+        saved = self._get('method.' + step_id)
+        if not saved or self.method_client is None:
+            raise Conflict('本步骤缺少受管方法依据；请从 begin 取得当前方法，不能借用其他步骤回执')
+        actual = self.method_client.prepare(saved['request'])
+        if actual != saved['execution']:
+            raise Conflict('恢复的方法依据不一致；请检查准确方法服务与原执行记录')
+        if stage is not None:
+            self.method_client.artifact(actual, saved['request'], stage, output)
+        return actual
 
     def _step(self, step_id):
         row = self.db.execute("SELECT * FROM steps WHERE id=?", (step_id,)).fetchone()
@@ -134,7 +155,7 @@ class WritingStore:
             if existing:
                 if json.loads(existing["spec"]) != spec:
                     raise Conflict("step id reused with different inputs")
-                return dict(existing)
+                return {**dict(existing), 'method_execution': self._method(spec['step_id'])}
             head, state = self.current()
             if spec["base_revision"] != head or self._get("context_seen") != head:
                 raise Conflict("read current checkpoint before beginning a step")
@@ -163,9 +184,20 @@ class WritingStore:
                     raise ValueError("REFLECT cannot alter prose")
             else:
                 raise ValueError("unknown authoring action")
+            if self.method_client is None:
+                raise Conflict('新创作步骤必须连接方法服务；请指定 --method-url')
+            run_id = self._get('method_run_id') or str(uuid.uuid4())
+            self._set('method_run_id', run_id)
+            request = {'work_type': 'novel-writing', 'run_id': run_id, 'step_id': spec['step_id'], 'private': True,
+                       'target': self._get('seed')['source']['id'], 'conditions': {'action': action},
+                       'inputs': {'context': {'seed': {k: v for k, v in self._get('seed').items() if k != 'formal_baseline'}, 'checkpoint': state, 'spec': spec}}}
+            execution = self.method_client.prepare(request)
+            if execution['payload']['package']['steps'] != ['draft', 'review', 'result']:
+                raise Conflict('写作方法必须支持 draft、review、result；请修正绑定后新建步骤')
+            self._set('method.' + spec['step_id'], {'request': request, 'execution': execution})
             self.db.execute("INSERT INTO steps(id,base_revision,spec,status) VALUES (?,?,?,'PENDING')", (spec["step_id"], head, canonical(spec)))
             self._event("BEGIN", spec)
-        return {"step_id": spec["step_id"], "status": "PENDING"}
+        return {"step_id": spec["step_id"], "status": "PENDING", 'method_execution': execution}
 
     def save_candidate(self, step_id, value):
         with self.db:
@@ -192,6 +224,7 @@ class WritingStore:
                     if re.search(r"^#{1,6}\s", f["text"], re.M):
                         raise ValueError("chapter headings are metadata, not fragment prose")
             value_hash = checksum(value)
+            self._method(step_id, 'draft', value)
             self.db.execute("UPDATE steps SET candidate=?,candidate_hash=?,status='CANDIDATE_SAVED' WHERE id=?", (canonical(value), value_hash, step_id))
             self._event("CANDIDATE_SAVED", {"step_id": step_id, "hash": value_hash})
         return {"step_id": step_id, "candidate_hash": value_hash, "status": "CANDIDATE_SAVED"}
@@ -251,6 +284,8 @@ class WritingStore:
                     if f["id"] in replacements:
                         f["text"] = replacements[f["id"]]
             self._merge_notes(state["notes"], review["updates"], {f["id"] for f in state["fragments"]})
+            self._method(step_id, 'review', review)
+            self._method(step_id, 'result', candidate)
             revision = self._checkpoint(state, head, step_id)
             self.db.execute("UPDATE steps SET status='ACCEPTED',review=?,result_revision=? WHERE id=?", (canonical(review), revision, step_id))
         return {"revision": revision, "status": "ACCEPTED"}
@@ -336,6 +371,7 @@ def build_parser():
     parser.add_argument("--instance", type=Path, default=Path(__file__).resolve().parents[1],
                         help="story project root (default: this script's repository)")
     parser.add_argument("--run", default="default", help="local run name (default: default)")
+    parser.add_argument('--method-url', help='exact local method service; required for new authoring steps')
     commands = parser.add_subparsers(dest="writing_action", required=True)
     for name in ("init", "begin", "stage"):
         commands.add_parser(name).add_argument("file", type=Path)
@@ -362,7 +398,7 @@ def run_cli(root, args):
     folder = root / ".runtime" / "novel-writing" / args.run
     if args.writing_action != "init" and not (folder / "work.sqlite3").is_file():
         raise ValueError("writing run does not exist; check --run or initialize explicitly")
-    store = WritingStore(folder / "work.sqlite3")
+    store = WritingStore(folder / "work.sqlite3", MethodClient(args.method_url) if args.method_url else None)
     try:
         action = args.writing_action
         value = json.loads(args.file.read_text()) if hasattr(args, "file") else None
