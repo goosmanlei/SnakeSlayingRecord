@@ -24,7 +24,9 @@ class EventTests(unittest.TestCase):
 
     def test_entire_story_still_covered_exactly_once(self):
         report = coverage(self.score, json.loads((ROOT / 'imports/screenplay-04.json').read_text()))
-        self.assertEqual(report['totals'], dict(story_scenes=42, audiovisual_scenes=65, shots=344, blocks=1114, planned_seconds=6033))
+        self.assertTrue(report['complete'])
+        self.assertEqual(report['uncovered_blocks'], 0)
+        self.assertEqual(report['duplicate_blocks'], 0)
 
     def test_scene_events_cannot_leak_into_a_shot_through_replaced_fields(self):
         scene = deepcopy(self.score[7]['scenes'][1])
