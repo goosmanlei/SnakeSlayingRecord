@@ -88,3 +88,7 @@ python3 scripts/revise_audiovisual.py apply --system <受管审阅台目录> --i
 媒体方案按[视频生成手册](../seedance-video-handbook.md)编制；[能力观察](capabilities.json)只是当时只读模型目录结果，实际生成前仍须核验当前能力与额度。
 
 [系统、数据、恢复及页面核验](verification.md)说明实际完成范围；[切换清单](cutover.json)、[文件退役清单](retired-files.json)与[真实来源去向](provenance-files.json)分别维护唯一事实。正式发布与任务完成以主项目任务账本和冻结包回执为准。
+
+## 从准确方案连续阅读
+
+当前镜头的动作、说话与反应从已保存视频 Prompt 的准确区间显示，生成参考、渠道、参数和全文按需展开。视听设计字段和既有作品正文仍各有原来源，未定词句不会因页面变短而补齐。需要重编范围时，在任务隔离实例运行 `python3 scripts/scene_reading.py --system <系统工作区> --instance .runtime/generation/review --all --write-config`；只写实例配置，不写库或 Prompt。任一锁定来源、准确需求或完整事件序列不符即拒绝编制，不留下部分结果。原路径、对照和历史边界见 [场内连读验收](../scene-reading/VERIFICATION.md)。

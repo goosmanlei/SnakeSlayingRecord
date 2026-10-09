@@ -15,6 +15,9 @@
 
 ## 创作方法与作品依据
 
+- 场内“动作与对白”与生成详情共用同一准确 Prompt。`scripts/scene_reading.py` 以既有审核事件顺序和锁定剧本编制字符范围；只有完整事件序列在已存 Prompt 中唯一出现才登记，不写回正文。实例配置 `scene_reading` 只保存修订、归属、全文哈希与 Unicode 区间，通用审阅台校验后从原文读取；缺少可靠范围的旧记录保留全文，不能用当前故事补入。编制与复验见 [场内连读验收](production/scene-reading/VERIFICATION.md)，通用契约在审阅台 `docs/production-breakdown.md`。来源：task-20261010-0004 准确派生与范围保护检查。
+
+
 - 创作协作与系统 Review 的可移植方法只在 [skills/creative-system-review/](skills/creative-system-review/SKILL.md) 维护；项目适配说明本剧入口，迁移时替换适配。系统专用工作类型 `creative-system-review` 经既有 `method-source` 取得完整正文、适配和愿景的准确只读投影，独立于生成绑定；安装、版本更新和空实例恢复见 [受管方法](production/managed-methods.md#创作协作-review)。[愿景与协作](production/system-vision.md) 是唯一愿景正文，`scripts/sync_system_vision.py` 派生制作思路首子页，旧页 ID 和内容保留。来源：task-20261010-0001 已审正文及确定性派生/方法恢复检查；正式启用仍按任务发布回执核对。
 
 - 用户已确认将主要创作、制作方法纳入系统管理，并让实际执行取得所选方法、共用资料和准确输入。已交付 SKILL、执行绑定基础与共用专业方法库；保留已确认故事结构与小说。用户在 2026-10-10 取消原 0022/0023 全剧重做安排，后续以创作协作 Review SKILL 的实际探索重新确定优化范围，不将旧重做规划当成持续有效的执行指令。基础任务只验证加载及绑定能力，不代替方法编制或全剧创作。范围与验收目标见 [方法管理与执行绑定规划](planning/managed-skills-runtime-task.md)。方法、共用章节、准确环节绑定与执行快照已正式启用，操作与兼容恢复见 [受管方法](production/managed-methods.md)；旧方案仅按切点中的准确修订保留未知方法历史，新工作使用新契约，不能按任务号永久豁免。主要工作的方法与交接见 [创作制作方法](production/professional-methods.md)，试用范围和发现见 [方法试用](production/professional-methods/VERIFICATION.md)。影视知识、手册仍由项目正文维护，只读投影按准确章节附带图示与来源；新剧本场次及外部创作也须先取得方法，旧候选不补造历史。实际启用与后续运行身份以任务账本和发布回执为准。来源：用户 2026-10-09 批准规格、澄清授权及 task-20261009-0020 的 2026-10-10 正式启用回执及 task-20261009-0021 方法库交付；后续范围以用户 2026-10-10 取消旧重做任务、改用 Review SKILL 的决定为准。
