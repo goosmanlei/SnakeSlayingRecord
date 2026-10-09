@@ -4,6 +4,9 @@
 
 - 场内动作、对白与生成细节的准确分层已完成隔离小样连读和共同路径扩展；ASH015—019 的反应、接本、提袋、试鼓及先走顺序可直接阅读，ASH003 未定应答仍保留。正式生效、只读回查和收尾按 task-20261010-0004 实际回执核对；复验入口与准确意见见 [场内连读验收](production/scene-reading/VERIFICATION.md)，根独立 Review 尚未执行。
 
+- 剧本四 E01/S002 已完成隔离实操：EN002、ST088、M2544 直接准确完整审阅，M1133 旧图可见并保留母版判断范围，具体用途与原件区域意见分开保存／定位，原场及卡内草稿和阅读位置恢复。三入口、旧版／失效引用、李寄对照与迟到响应边界见 [剧本形象比较验收](production/script-character-image-review/VERIFICATION.md)；正式运行、只读复走与清理按 task-20261010-0002 实际发布／完成回执核对。
+
+- 工作方法的按需条件回写已完成自有隔离 Chrome 实操：只改用途后15项条件与准确资源不变，staging/sound全文仍可取；两处显式编辑、失败保护及冻结执行见 [条件回写验收](production/method-condition-roundtrip/VERIFICATION.md)。正式数据没有已证受影响方法，本次不迁移；最终正式版本、验收与清理按 task-20261010-0003 实际回执核对。
 
 - [创作协作 Review](skills/creative-system-review/SKILL.md) 和 [愿景与协作](production/system-vision.md) 已正式发布；愿景为制作思路默认首项，系统方法沿准确只读投影交接。根实际复验了默认页、刷新、旧章节链接与方法完整只读正文。隔离准备和空实例恢复边界见 [交付验收](production/creative-system-review/VERIFICATION.md)，根验收见 `.runtime/system-review/skill-delivery/formal-acceptance.md`；结项收尾按 task-20261010-0001 实际回执核对。
 
@@ -46,9 +49,11 @@
 - 正式入口 `http://127.0.0.1:3000/`，活库为主目录 `.runtime/review.sqlite3`；准确系统提交由 `config/instance.json.review_desk_commit` 维护。两仓集成、正式切换、浏览器复验与任务完成只认主项目 `.codex-task/tasks.json` 和冻结包实际回执，工作区候选不能单凭文件存在宣称正式生效。
 - VPS 完整体验版已在 `https://leiguoguo.me/lijizhanshe/` 公开运行，任务 `task-20261009-0032` 已将执行时最新已交付正式版升级至独立体验实例。维护、旧版清除后的同包故障重建、两轮同源重置、普通应用重启持久性及 Chrome 真实页面验收通过；最终业务表与完整原件回到准确正式快照，本机正式库未被体验操作修改。AI 润色经现有 Xray 回环入口真实返回并采用到草稿；北京时间每日最多 100 次，失败也计数，发布和重启保留次数。旧体验资源、远端暂存及本机完整过程包已清除并回读。准确发布和容器身份以 VPS `~/lijizhanshe/state.json` 为准，本轮版本、验收边界及清理证据见主项目 `.runtime/task-20261009-0032/vps-upgrade/acceptance.md`；重复发布入口见 [体验版发布](production/vps-experience.md)。
 
+- 方法包直接阅读在 task-20261010-0005 隔离候选已完成：作者、标准导出、空实例恢复均可顺读全文、适配与愿景；旧执行内链限制保留。正式生效、收尾与根独立复验以实际回执为准，见 [阅读交付验收](production/method-package-reading/VERIFICATION.md)。
+
 ## 下一步与制作边界
 
-- [受管方法与执行绑定](production/managed-methods.md) 已正式启用：评论润色、小说检查点、独立读者和媒体准备取得准确方法及共用资料；旧方案历史保持未知，新创作步骤受方法契约约束。0014 旧交付完成后已按停写窗口追加配置，正式页面、兼容运行重启和完整空库恢复通过，实际边界见[验收记录](production/managed-methods/VERIFICATION.md)。主要创作制作方法库已正式发布，完成自然场、独立对话／动作／文字试用及改进后复用；正式页只读回查和完整空库恢复通过，见[方法试用](production/professional-methods/VERIFICATION.md)。用户已取消原全剧重做任务 0022/0023，保留已确认结构、小说及有效成果；后续按新 Review SKILL 实践后重新确定改进范围。0022/0023 已从队列撤下，未完成草稿不构成正式制作依据；撤销事实与必要追溯见 `.runtime/system-review/abandon-0022-0023/status.json`。新的持续 Review 仍暂停，运行约定见 `.runtime/system-review/RUNBOOK.md`。
+- [受管方法与执行绑定](production/managed-methods.md) 已正式启用：评论润色、小说检查点、独立读者和媒体准备取得准确方法及共用资料；旧方案历史保持未知，新创作步骤受方法契约约束。0014 旧交付完成后已按停写窗口追加配置，正式页面、兼容运行重启和完整空库恢复通过，实际边界见[验收记录](production/managed-methods/VERIFICATION.md)。主要创作制作方法库已正式发布，完成自然场、独立对话／动作／文字试用及改进后复用；正式页只读回查和完整空库恢复通过，见[方法试用](production/professional-methods/VERIFICATION.md)。用户已取消原全剧重做任务 0022/0023，保留已确认结构、小说及有效成果；后续按新 Review SKILL 实践后重新确定改进范围。0022/0023 已从队列撤下，未完成草稿不构成正式制作依据；撤销事实与必要追溯见 `.runtime/system-review/abandon-0022-0023/status.json`。持续 Review 的运行、暂停与发布授权按当前会话指令及本机 `.runtime/system-review/RUNBOOK.md`、`.runtime/system-review/state.json` 核对，不沿用旧轮次状态；执行任务仍由受管任务入口承接。
 
 - `task-20261009-0005` 的已有音色复用路线已正式生效，40个身份与17集当前用途均已逐项复核，形成26个说话身份复用方案、7个待比较项、3个当前方向待新准备项及4个过短待更长参考项。当前需求与代表镜头可追到准确旧原件、选段和原判断；授权音频理解、隔离交互、正式只读回查及完整导出恢复的边界见 [音色复用说明](production/voice-reuse/README.md)。下一步独立审阅本次片段与方案，再处理未选项和真实输出；不继承旧认可，未验证新视频的音色保持或实际费用节约。
 - 按 [全剧逐集稿与复核](production/audiovisual/review.md) 审阅具体视听选择，并对实际要生成的需求确定准确方案、路线、候选及局部范围。方案未获采纳、原件未选或所选路线缺项时不生成；旧认可不转授新设计。
