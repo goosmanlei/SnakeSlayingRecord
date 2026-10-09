@@ -26,11 +26,15 @@ def load_audit(shots=None):
     value = json.loads(AUDIT.read_text())
     if value['format'] != 'story-video-input-audit-v1':
         raise ValueError('unsupported video input audit')
-    rows = [r for s in value['scenes'] for r in s['shots']]
+    rows = [dict(r, execution_reviewed=s.get('execution_reviewed', False))
+            for s in value['scenes'] for r in s['shots']]
     by_id = {r['shot']: r for r in rows}
     if len(rows) != len(by_id):
         raise ValueError('duplicate reviewed shot')
     for row in rows:
+        for state, text in row.get('frame_state_text', {}).items():
+            if set(text) != {'revision_id', 'text'} or not all(isinstance(v, str) and v.strip() for v in text.values()):
+                raise ValueError('invalid first-frame state text: ' + row['shot'] + ' ' + state)
         for item in row.get('supplements', []):
             if item.get('reference_basis', 'state') not in ('state', 'identity_master'):
                 raise ValueError('unknown reviewed reference basis: ' + row['shot'])
@@ -76,9 +80,14 @@ def video_plan(plan, decision, supplement, media_type):
     descriptions = ['@图片1只提供起始构图与已可见内容。']
     descriptions += [f'@图片{i}：{item["use"]}。' for i, item in enumerate(decision.get('supplements', []), 2)]
     descriptions += ['各图是直接普通参考，后显内容按动作先后入画；不把参考图拼贴进首图，不把音色当视觉身份。']
-    result['prompt'] = '\n'.join([lines[0], '生成方式：普通参考生成；起点和逐镜身份仍须实际原件审阅，不承诺固定首帧。',
+    mode = ('生成方式：普通参考生成。' if decision.get('execution_reviewed') else
+            '生成方式：普通参考生成；起点和逐镜身份仍须实际原件审阅，不承诺固定首帧。')
+    result['prompt'] = '\n'.join([lines[0], mode,
                                  '参考输入职责：' + ''.join(descriptions), *lines[1:]])
     criteria = result['output']['review_criteria']
+    if decision.get('execution_reviewed'):
+        criteria = result['output']['review_criteria'] = [*criteria,
+            '起点和逐镜身份须按实际原件审阅；普通参考不承诺固定首帧像素']
     if CRITERION not in criteria:
         criteria.append(CRITERION)
     return result

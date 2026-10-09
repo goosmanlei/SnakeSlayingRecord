@@ -245,6 +245,7 @@ class Builder:
             if row['kind'] != 'AV_SHOT':
                 continue
             payload, shot_id = row['payload'], row['object_id']
+            executable = self.input_audit[shot_id].get('execution_reviewed', False)
             text_choice = self.text_handoffs['shots'].get(shot_id, {})
             visual_start = text_choice.get('visual_start', payload['action_start'])
             visual_end = text_choice.get('visual_end', payload['action_end'])
@@ -298,7 +299,13 @@ class Builder:
             prompt = f'{STYLE}\n{labels}\n准确状态参考只固定可见主体的轮廓、衣着、伤侧、材质与结构；其制作说明中的其他使用场合和动作不在本首帧重演。\n拍摄位置：{payload["framing"]}。{payload["axis"]}\n只画动作开始的瞬间：{visual_start}。参考只约束真正入画的主体，镜内后续才入画的人物和画外声不提前塞入首帧。\n场所：{payload["spatial"]}\n{payload["lighting"]}。{payload["color"]}\n镜尾将发生“{visual_end}”，此首帧不得提前表现完成结果。\n连续性：{payload["continuity"]}。不加字幕、水印和装饰边框。'
             for state in visible:
                 if state['object_id'] not in self.state_needs:
-                    prompt += '\n' + state['payload']['title'] + '：此参考提供基础结构，当前形态按以下文字落实，仅画本镜起点；' + self.visual_description(state, description(state['payload']))
+                    stage_text = self.input_audit[shot_id].get('frame_state_text', {}).get(state['object_id'])
+                    if stage_text and stage_text['revision_id'] != state['id']:
+                        raise ValueError('first-frame state text needs re-review: ' + shot_id + ' ' + state['object_id'])
+                    text = stage_text['text'] if stage_text else self.visual_description(state, description(state['payload']))
+                    prompt += '\n' + state['payload']['title'] + '：此参考提供基础结构，当前形态按以下文字落实，仅画本镜起点；' + text
+            if set(self.input_audit[shot_id].get('frame_state_text', {})) - {s['object_id'] for s in visible if s['object_id'] not in self.state_needs}:
+                raise ValueError('first-frame state text is not used by this shot: ' + shot_id)
             if text_choice.get('frame_detail'):
                 prompt += '\n' + text_choice['frame_detail']
             self.need(oid, scope, 'first-frame', 'image', '固定本镜动作起点、人物身份、手位和机位，供视频原生表演延续。',
@@ -330,10 +337,14 @@ class Builder:
                 raise ValueError('too many voice references for authored duration; revise route explicitly: ' + shot_id)
             prompt = f'{STYLE}\n{seconds}秒，16:9，720p。@图片1为起始构图参考，维持已可见身份、空间和手位；' + ''.join(audio_labels)
             prompt += f'\n意图与表演：{visual_performance}\n镜头：{payload["framing"]}。轴线：{payload["axis"]}\n从{visual_start}开始，到{visual_end}结束。\n{payload["spatial"]}\n光色：{payload["lighting"]}；{payload["color"]}\n声音和剪接：' + '\n'.join(payload['sound'][:2])
-            prompt += '\n本镜准确动作与发声执行顺序（叙述转成动作，发声事件实际出声；不朗读叙述、角色名或制作说明）：\n' + self.reviewed.render(source, text_choice.get('narration'))
+            prompt += ('\n动作与发声按下列顺序连续发生；不朗读动作说明或角色名：\n' if executable else
+                       '\n本镜准确动作与发声执行顺序（叙述转成动作，发声事件实际出声；不朗读叙述、角色名或制作说明）：\n')
+            prompt += self.reviewed.render(source, text_choice.get('narration'), executable=executable)
             if text_choice.get('video_detail'):
                 prompt += '\n' + text_choice['video_detail']
-            prompt += '\n连续性：' + payload['continuity'] + '\n不添加对白、旁白、抢先信息、炫技切镜或慢动作。没有画外声的台词由实际说话人同步说出；保留自然气口和动作停顿。'
+            dialogue_rule = ('不新增锁定原句以外的台词，不添加旁白、抢先信息、炫技切镜或慢动作。' if executable else
+                             '不添加对白、旁白、抢先信息、炫技切镜或慢动作。')
+            prompt += '\n连续性：' + payload['continuity'] + '\n' + dialogue_rule + '没有画外声的台词由实际说话人同步说出；保留自然气口和动作停顿。'
             def supplement(value):
                 state = self.states[value['state']]
                 if value.get('reference_basis') == 'identity_master':
