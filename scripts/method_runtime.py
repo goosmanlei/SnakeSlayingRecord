@@ -1,7 +1,7 @@
 """Story-side client for the desk's portable method contract."""
 import json
 from urllib.parse import urlencode, urlsplit
-from urllib.request import Request, urlopen
+from urllib.request import Request, build_opener, ProxyHandler
 from urllib.error import HTTPError
 
 
@@ -15,7 +15,7 @@ class MethodClient:
         request = Request(self.base + path, data=None if value is None else json.dumps(value, ensure_ascii=False).encode(),
                           headers={'Content-Type': 'application/json'}, method='GET' if value is None else 'POST')
         try:
-            with urlopen(request, timeout=30) as response:
+            with build_opener(ProxyHandler({})).open(request, timeout=30) as response:
                 return json.load(response)
         except HTTPError as exc:
             try:
@@ -42,4 +42,4 @@ def reference(record):
 
 
 def instructions(package):
-    return package['files']['SKILL.md'] + ''.join('\n\n## 共用资料：' + r['title'] + ' / ' + r['reference']['section'] + '\n' + r['content'] for r in package['resources'])
+    return package['files']['SKILL.md'] + ''.join('\n\n## 包内文件：' + name + '\n' + body for name, body in package['files'].items() if name != 'SKILL.md') + ''.join('\n\n## 共用资料：' + r['title'] + ' / ' + r['reference']['section'] + '\n' + r['content'] for r in package['resources'])

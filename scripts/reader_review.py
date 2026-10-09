@@ -542,6 +542,8 @@ class ReaderRun:
         saved = self.get(key)
         if saved:
             require(saved['request'] == basis, 'frozen reader method inputs changed')
+            require(MethodClient(self.config['base_url']).prepare(basis) == saved['execution'],
+                    'reader method record is unavailable or differs; restore the exact execution package before calling the model')
         else:
             execution = MethodClient(self.config['base_url']).prepare(basis)
             require(execution['payload']['package'] == package, 'method selection differs from frozen reader run')
