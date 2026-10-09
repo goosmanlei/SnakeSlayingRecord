@@ -280,7 +280,7 @@ def source_text(row, spans):
     return '\n'.join(blocks[b] for source in source_refs(row, spans) for b in source['block_ids'])
 
 
-def score_records(score, lock, episodes, bindings):
+def score_records(score, lock, episodes, bindings, reviewed):
     """bindings is independently reviewed state usage, never an old shot map."""
     records = []
     for episode in score:
@@ -294,16 +294,21 @@ def score_records(score, lock, episodes, bindings):
                 oid = f'{sid}-s{index:02}'
                 sources = source_refs(story, shot['source'])
                 usage = bindings[oid]
+                fixed, shared = reviewed.conditions(number, scene, index)
+                vocals = reviewed.for_sources(sources)
                 payload = {'format': 'production-av-shot-v1', 'title': f'{number:02} · {scene["code"]} · {index:02} {shot["action_end"]}',
                     'number': index, 'input_lock': reference(lock), 'sources': sources,
                     'purpose': shot['performance'], 'framing': shot['framing'],
-                    'spatial': scene['空间'], 'axis': scene['轴线'], 'movement': shot['framing'],
+                    'spatial': fixed['空间'], 'axis': fixed['轴线'], 'movement': shot['framing'],
                     'action_start': shot['action_start'], 'action_end': shot['action_end'],
-                    'performance': shot['performance'], 'lighting': scene['光线'], 'color': scene['色彩'],
-                    'editing': shot['sound_edit'], 'continuity': scene['连续性'],
-                    'sound': [scene['声音'], shot['sound_edit']], 'fps': 24, 'duration_frames': shot['seconds'] * 24,
+                    'performance': shot['performance'], 'lighting': fixed['光线'], 'color': fixed['色彩'],
+                    'editing': shot['sound_edit'], 'continuity': fixed['连续性'],
+                    'sound': [fixed['声音'], shot['sound_edit'], *[reviewed.describe(e) for e in vocals]],
+                    'fps': 24, 'duration_frames': shot['seconds'] * 24,
                     'state_model': 'complete-v1', **usage,
-                    'authoring': {'file': episode['file'], 'line': shot['line'], 'shared_scene_fields': list(FIELDS)}}
+                    'authoring': {'file': episode['file'], 'line': shot['line'], 'shared_scene_fields': shared,
+                        'conditions': 'production/audiovisual/shot-contexts.json',
+                        'vocal_score': 'production/audiovisual/vocal-events.json'}}
                 records.append({'object_id': oid, 'kind': 'AV_SHOT', 'payload': payload})
                 shot_refs.append(future(oid)); scene_sources.extend(sources)
             sources = union_sources(scene_sources)
@@ -335,6 +340,9 @@ def main():
     score = read_score()
     screenplay = json.loads((ROOT / 'imports/screenplay-04.json').read_text())
     report = coverage(score, screenplay)
+    from audiovisual_events import ReviewedEvents
+    from audiovisual_materials import casting
+    reviewed = ReviewedEvents(ROOT, score, casting())
     report['authored_files_sha256'] = {e['file']: hashlib.sha256((ROOT / e['file']).read_bytes()).hexdigest() for e in score}
     if args.command in ('bind', 'compile'):
         if not args.system or not args.db:
@@ -349,10 +357,10 @@ def main():
             report['state_binding_issues'] = issues
             report['complete'] = not issues
             if not issues:
-                report['records'] = score_records(score, lock, episodes, bindings)
+                report['records'] = score_records(score, lock, episodes, bindings, reviewed)
                 if args.command == 'compile':
                     from audiovisual_materials import Builder
-                    materials = Builder(store, p, report['records']).build()
+                    materials = Builder(store, p, report['records'], reviewed).build()
                     report['records'].extend(materials['records'])
                     report['material_counts'] = materials['counts']
                     report['preserve_exact_requirements'] = materials['preserve_exact_requirements']
