@@ -30,6 +30,10 @@ def load_audit(shots=None):
     by_id = {r['shot']: r for r in rows}
     if len(rows) != len(by_id):
         raise ValueError('duplicate reviewed shot')
+    for row in rows:
+        for item in row.get('supplements', []):
+            if item.get('reference_basis', 'state') not in ('state', 'identity_master'):
+                raise ValueError('unknown reviewed reference basis: ' + row['shot'])
     if shots is not None:
         if set(by_id) != {r['object_id'] for r in shots}:
             raise ValueError('reviewed video inputs must cover every current shot exactly once')

@@ -10,9 +10,10 @@ import json
 
 from audiovisual_design import ROOT, future, reference, union_sources
 from video_input_design import load_audit, frame_plan, video_plan, FRAME_USE
+from state_preparation import decisions
 
 STYLE = '二维人物与轻手绘背景，正常人物比例，干净轮廓与清楚色块，背景轻而可读；不新增粗纸纹、颗粒、过锐边缘或写实皮肤。'
-IMAGE_CHECK = ['身份、配色、服装与伤侧和准确实体状态一致', '构图、接触点、空间出入口与轴线可核对',
+IMAGE_CHECK = ['画面中实际需要的身份、结构与状态和准确用途一致', '构图、接触点、空间出入口与轴线可核对',
                '核实际原件尺寸与原生回执，不以请求4K或放大冒充原生', '最深输入图像谱系不超过两代；失真时回干净母版']
 AUDIO_CHECK = ['实际逐句听审而非仅据字幕判断', '音色身份、字音、呼吸、旋律用途一致，未混入其他说话人',
                '保留提供方原件、真实编码和时长；转码不冒充原生无损', '明确选定候选、原件与时间范围后才提交下游']
@@ -25,7 +26,22 @@ SONGS = {'entity-boat-song': 'need-form-boat-song-independent-overall',
 
 
 def description(payload):
-    return payload.get('production_description') or '\n'.join(b['text'] for b in payload['blocks'])
+    if 'production_description' in payload:
+        return payload['production_description']
+    if payload.get('state_model') == 'complete-v1':
+        return '\n'.join(payload['dimensions'].values())
+    return '\n'.join(b['text'] for b in payload['blocks'] if b['id'] == 'description')
+
+
+TYPE_CHECKS = {
+    'character': ['同一人物、动物或已定义群组的身份、数量与比例一致；适用的衣着、伤侧和持物按本阶段，不给动物套衣饰或把群组缩成一人'],
+    'space': ['固定出入口、通道、尺度和岸船等接触关系一致；临时布置与光时符合本阶段',
+              '按相邻镜起点、变化、落点检查，不提前出现新结构，也不把撤去的结构复原'],
+    'prop': ['全形、材质、接触部位与内容一致；缺损、开合、装入或取出按动作先后发生',
+             '检查持有者与去向；局部细节不冒充物件完整结构'],
+    'song': ['只提供已说明的曲词与旋律范围；演唱者、距离、缺词停顿按现场用途核对',
+             '独立完整歌曲、角色音色与镜内表演分别判断，不重复准备同一曲调'],
+}
 
 
 def casting():
@@ -40,6 +56,7 @@ class Builder:
     def __init__(self, store, p, av_records, reviewed):
         self.store, self.p, self.av = store, p, av_records
         self.reviewed = reviewed
+        self.preparation = decisions()
         self.rows, self.generated, self.keep = [], {}, {}
         self.entities = {r['object_id']: r for r in p.current_records(store, {'ENTITY'})}
         self.states = {r['object_id']: r for r in p.current_records(store, {'STATE'})}
@@ -123,12 +140,12 @@ class Builder:
                 'selected_routes': selected_routes or {}, 'conditions': {}, 'blockers': [],
                 'randomization': {'mode': 'random'}, 'output': {'name': name, 'description': description, 'review_criteria': criteria}}
 
-    def need(self, oid, scope, slot, media, purpose, plan, *, sources, entities=(), states=(), required=True, specification=None):
+    def need(self, oid, scope, slot, media, purpose, plan, *, sources, entities=(), states=(), required=True, specification=None, usage=None):
         spec = specification or {}
         if media == 'image':
             spec['native_resolution_policy'] = 'highest_provider_native'
         return self.put(oid, 'REQUIREMENT', {'title': plan['output']['name'], 'scope': scope, 'slot': slot,
-            'media_type': media, 'purpose': purpose, 'required': required, 'usage': 'generation_input' if media != 'video' else 'editorial',
+            'media_type': media, 'purpose': purpose, 'required': required, 'usage': usage or ('generation_input' if media != 'video' else 'editorial'),
             'entities': list(entities), 'states': list(states), 'sources': sources, 'specification': spec, 'generation': plan})
 
     def roots(self):
@@ -138,9 +155,9 @@ class Builder:
         for owner in sorted(visual_owners):
             row = self.entities[owner]; payload = row['payload']; kind = payload['entity_type']
             oid = 'material-' + owner + '-identity'
-            composition = {'character': '单一人物等比例正面、侧面、背面并排，手脚完整可见；中性站姿，背景浅灰，无现场伤势或剧情动作。',
+            composition = {'character': '按对象实际定义呈现一人、一只动物或可逐个辨认的群组；以等比例正侧背面说明身份、轮廓和完整肢体，群组不复制同脸，不给动物套人类衣饰。中性姿态、浅灰背景，无现场伤势或剧情动作。',
                            'space': '空间全景与清楚的出入口、通道和固定结构关系，不画临时人物；先确定左右与尺度，不用镜像变体。',
-                           'prop': '单一物件全形与接触结构清楚，保留真实材质与轮廓，中性背景，不加入使用者或现场动作。'}.get(kind, '主体完整入画，身份与结构清楚。')
+                           'prop': '按对象定义呈现单件或实际物件组，全形与接触结构清楚，保留真实材质与轮廓，中性背景，不加入使用者或现场动作。'}.get(kind, '主体完整入画，身份与结构清楚。')
             description = payload.get('production_description') or '\n'.join(payload['facts'])
             prompt = f'{STYLE}\n对象：{payload["title"]}。{description}\n{composition}\n这是从文字创建的干净根母版；当前没有选中图像输入，不假称参考现有候选。无装饰边框、水印或额外文字。'
             name = payload['title'] + (' · 空间布局母版' if kind == 'space' else ' · 身份母版' if kind == 'character' else ' · 结构母版')
@@ -168,29 +185,50 @@ class Builder:
         used = {r['object_id'] for row in self.av if row['kind'] == 'AV_SHOT' for r in row['payload']['states']}
         for state_id in sorted(used):
             row = self.states[state_id]; payload = row['payload']; media = payload['reference_media']
-            if media == 'none' or payload.get('reference_mode') == 'description':
-                continue
             owner = payload['entity']['object_id']; entity = self.entities[owner]
             oid = 'material-' + state_id + '-overall'
-            purpose = payload['title'] + '的整体状态参考，不能用一个局部图声片段冒充完整覆盖。'
+            decision = self.preparation.get(state_id)
+            if media == 'none' or decision and decision['mode'] == '文字检查':
+                if decision:
+                    try: old = self.p.record(self.store, oid)
+                    except KeyError: continue
+                    from copy import deepcopy
+                    withdrawn = deepcopy(old['payload'])
+                    withdrawn.update(status='withdrawn', required=False, withdrawal_reason=decision['purpose'])
+                    self.put(oid, 'REQUIREMENT', withdrawn)
+                continue
+            if payload.get('reference_mode') == 'description' and not decision:
+                continue
+            kind = entity['payload']['entity_type']
+            purpose = decision['purpose'] if decision else payload['title'] + '的整体状态参考，不能用一个局部图声片段冒充完整覆盖。'
+            independent = decision and decision['mode'] in ('可选对照', '独立审阅')
             inputs = []
             if owner in self.masters:
                 upstream = self.masters[owner]
                 inputs.append(self.relation(upstream, oid, reference(row), '固定身份与结构，按此版状态表现差异',
-                    '保持同一主体的比例、轮廓、配色和空间拓扑或曲调', description(payload),
-                    '逐项核对完整状态各维度；参考是干净母版，最深图像代数不超过一代', sources=payload['sources'], type_id='identity-state', semantics='variant'))
+                    TYPE_CHECKS[kind][0], description(payload),
+                    '；'.join(TYPE_CHECKS[kind]) + '；图像按最深真实输入核验，当前计划从干净母版一代得到', sources=payload['sources'], type_id='identity-state', semantics='variant'))
             prefix = ('图片1只固定干净母版的身份与结构；' if media == 'image' else '@音频1只锁定已明确的旋律范围，不自动继承独立歌手身份；') if inputs else ''
             prompt = prefix + description(payload)
+            if decision:
+                prompt += '\n本次准备的实际用途与限制：' + purpose
             if media == 'image':
-                prompt = STYLE + '\n' + prompt + '\n清楚呈现本状态的全形与指定细节，不添加别场才有的伤、湿痕、持物。中性背景或已说明的空间，全体轮廓完整。'
+                instruction = {'character': '按实体定义呈现同一人物、动物或可辨群组的全形与本阶段可见细节；不复制成员，不给动物套人类衣饰，不添加别场伤势、湿痕或持物。',
+                    'space': '呈现同一空间的固定结构与本阶段布置；不画人物，不镜像，不混入此前或此后的布置。',
+                    'prop': '按实体定义呈现同一道具或物件组的全形和指定接触细节；不添加使用者，不提前展示后续缺损或内容。'}[kind]
+                prompt = STYLE + '\n' + prompt + '\n' + instruction
             else:
                 prompt += '\n这是独立状态声音参考，原生视频负责现场表演；不自动制作每一句对白分轨。只用本状态明确的曲词范围。'
-            self.need(oid, reference(row), 'overall', media, purpose,
-                self.plan(media, prompt, inputs, name=payload['title'] + ' · 整体参考', description=description(payload),
-                          image_ratio='3:4' if entity['payload']['entity_type'] == 'character' else '16:9'),
+            suffix = ' · 可选对照' if decision and decision['mode'] == '可选对照' else ' · 独立审阅' if independent else ' · 整体参考'
+            plan = self.plan(media, prompt, inputs, name=payload['title'] + suffix, description=description(payload),
+                             image_ratio='3:4' if kind == 'character' else '16:9')
+            plan['output']['review_criteria'] = TYPE_CHECKS[kind] + (IMAGE_CHECK[2:] if media == 'image' else AUDIO_CHECK)
+            self.need(oid, reference(row), 'overall', media, purpose, plan,
                 sources=payload['sources'], entities=[reference(entity)], states=[reference(row)],
+                required=not decision or decision['mode'] != '可选对照', usage='review_reference' if independent else None,
                 specification={'reference_role': 'overall', 'planned_i2i_depth': 1 if media == 'image' else None})
-            self.state_needs[state_id] = oid
+            if not independent:
+                self.state_needs[state_id] = oid
 
     def shots(self):
         for row in self.av:
@@ -238,11 +276,15 @@ class Builder:
             if len(visible) + 1 > 16:
                 raise ValueError('first frame exceeds OpenArt input limit; author a narrower shot or route: ' + shot_id)
             for state in visible:
-                inputs.append(self.relation(self.state_needs[state['object_id']], oid, scope, '首帧使用：' + state['payload']['title'],
-                    '人物或道具身份、完整状态、伤侧和比例', '只调整本镜站位、手位、朝向与构图',
+                upstream = self.state_needs.get(state['object_id']) or self.masters[state['payload']['entity']['object_id']]
+                inputs.append(self.relation(upstream, oid, scope, '首帧使用：' + state['payload']['title'],
+                    TYPE_CHECKS[self.entities[state['payload']['entity']['object_id']]['payload']['entity_type']][0], '只调整本镜站位、手位、朝向与构图',
                     payload['continuity'], sources=source, type_id='state-frame'))
             labels = '图片1为选定机位；' + ''.join(f'图片{i}为{s["payload"]["title"]}；' for i, s in enumerate(visible, 2))
             prompt = f'{STYLE}\n{labels}\n准确状态参考只固定可见主体的轮廓、衣着、伤侧、材质与结构；其制作说明中的其他使用场合和动作不在本首帧重演。\n拍摄位置：{payload["framing"]}。{payload["axis"]}\n只画动作开始的瞬间：{payload["action_start"]}。参考只约束真正入画的主体，镜内后续才入画的人物和画外声不提前塞入首帧。\n场所：{payload["spatial"]}\n{payload["lighting"]}。{payload["color"]}\n镜尾将发生“{payload["action_end"]}”，此首帧不得提前表现完成结果。\n连续性：{payload["continuity"]}。不加字幕、水印和装饰边框。'
+            for state in visible:
+                if state['object_id'] not in self.state_needs:
+                    prompt += '\n' + state['payload']['title'] + '：此参考提供基础结构，当前形态按以下文字落实，仅画本镜起点；' + description(state['payload'])
             self.need(oid, scope, 'first-frame', 'image', '固定本镜动作起点、人物身份、手位和机位，供视频原生表演延续。',
                 frame_plan(self.plan('image', prompt, inputs, name=payload['title'] + ' · 首帧', description=payload['action_start'], selected_routes={'camera': 'main'}), self.input_audit[shot_id]),
                 sources=source, entities=[s['payload']['entity'] for s in visible], states=[reference(s) for s in visible],
@@ -276,9 +318,17 @@ class Builder:
             prompt += '\n连续性：' + payload['continuity'] + '\n不添加对白、旁白、抢先信息、炫技切镜或慢动作。没有画外声的台词由实际说话人同步说出；保留自然气口和动作停顿。'
             def supplement(value):
                 state = self.states[value['state']]
-                return self.relation(self.state_needs[value['state']], oid, scope, value['use'],
-                    state['payload']['title'] + '的身份与完整状态；只取本镜需要显露的部分',
-                    '按本镜时间顺序入画，不提前露脸、改站位或提前展示状态变化结果',
+                if value.get('reference_basis') == 'identity_master':
+                    if self.preparation[value['state']]['mode'] != '文字检查':
+                        raise ValueError('identity-only supplement needs an authored textual state decision: ' + value['state'])
+                    upstream = self.masters[state['payload']['entity']['object_id']]
+                    preserve = '只固定干净母版的身份、尺度与结构，不把母版姿态当当前结果'
+                    change = description(state['payload']) + '；按本镜时间顺序形成，不提前展示变化结果'
+                else:
+                    upstream = self.state_needs[value['state']]
+                    preserve = state['payload']['title'] + '的身份与完整状态；只取本镜需要显露的部分'
+                    change = '按本镜时间顺序入画，不提前露脸、改站位或提前展示状态变化结果'
+                return self.relation(upstream, oid, scope, value['use'], preserve, change,
                     value['use'] + '；只选本直接参考的准确候选，不自动附带祖先', sources=source,
                     type_id='state-video', identity='mr-video-input-' + shot_id + '-' + value['state'])
             def media_type(item):
@@ -286,6 +336,10 @@ class Builder:
                 return (self.generated[key] if key in self.generated else self.p.record(self.store, key))['payload']['media_type']
             plan = self.plan('video', prompt, inputs, seconds=seconds, name=payload['title'] + ' · 视频',
                 description=payload['action_start'] + ' → ' + payload['action_end'])
+            for value in self.input_audit[shot_id].get('supplements', []):
+                if value.get('reference_basis') == 'identity_master':
+                    state = self.states[value['state']]['payload']
+                    plan['prompt'] += '\n' + state['title'] + '只附身份母版，当前差异按文字与结果核查：' + description(state)
             plan['blockers'] = self.reviewed.blockers(source)
             planned = video_plan(plan, self.input_audit[shot_id], supplement, media_type)
             self.need(oid, scope, 'video', 'video', '原生音画完成这一镜；图像候选不计为视频结果。',
@@ -299,8 +353,8 @@ class Builder:
         for asset in self.p.current_records(self.store, {'ASSET'}):
             targets = set()
             for state in asset['payload'].get('states', []):
-                target = self.state_needs.get(state['object_id'])
-                if target and self.states[state['object_id']]['id'] == state['revision_id']:
+                target = 'material-' + state['object_id'] + '-overall'
+                if target in self.generated and self.generated[target]['payload'].get('status') != 'withdrawn':
                     targets.add(target)
             for entity in asset['payload'].get('subjects', []):
                 target = self.masters.get(entity['object_id'])
@@ -314,4 +368,16 @@ class Builder:
                     '本次未选择候选；先核当前完整状态、风格、原生规格与图像谱系，再明确改选输入路线',
                     '打开本候选原件逐项审阅；资料缺失继续标为未知，不用新方案补造生成来历',
                     sources=need['sources'], necessity='optional', semantics='alternative', type_id='existing-candidate')
+        # Retire the compiled routes of a withdrawn preparation, retaining the
+        # previous exact edge and all historical plans/calls in revision history.
+        from copy import deepcopy
+        retired = {oid for oid, r in self.generated.items() if r['kind'] == 'REQUIREMENT' and r['payload'].get('status') == 'withdrawn'}
+        for relation in self.p.current_records(self.store, {'MATERIAL_RELATION'}):
+            target = self.generated.get(relation['payload']['downstream_id'])
+            replaced_direct_input = (relation['object_id'].startswith('mr-video-input-') and target
+                and target['kind'] == 'REQUIREMENT' and relation['object_id'] not in {
+                    i.get('relation', {}).get('object_id') for i in target['payload'].get('generation', {}).get('inputs', [])})
+            if relation['object_id'] not in self.generated and (relation['payload']['downstream_id'] in retired or relation['payload']['upstream']['object_id'] in retired or replaced_direct_input):
+                value = deepcopy(relation['payload']);value.update(status='withdrawn', withdrawal_reason='本次逐镜用途判断已调整状态准备或准确输入；旧关系与历史方案保留，不再作为当前执行依据')
+                self.put(relation['object_id'], 'MATERIAL_RELATION', value)
         return {'records': self.rows, 'preserve_exact_requirements': list(self.keep.values()), 'counts': dict(self.counts)}
