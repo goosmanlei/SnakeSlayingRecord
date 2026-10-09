@@ -1,0 +1,70 @@
+{
+  "sources": [
+    {
+      "name": "creative-system-review-texts",
+      "title": "创作协作 Review · 项目只读正文",
+      "expected_version": 0,
+      "sections": {
+        "skill": {
+          "path": "skills/creative-system-review/SKILL.md"
+        },
+        "project-context": {
+          "path": "skills/creative-system-review/references/project-context.md"
+        },
+        "vision": {
+          "path": "production/system-vision.md"
+        }
+      }
+    }
+  ],
+  "records": [
+    {
+      "category": "skill",
+      "name": "creative-system-review",
+      "expected_version": 0,
+      "payload": {
+        "title": "创作协作 Review",
+        "purpose": "通过真实创作与使用，改进作品、人和 AI 的协作方法及审阅系统。",
+        "applies": "用户要求创作协作或系统 Review、查清具体反馈及评估改进时使用；按本次授权交付。",
+        "inputs": "当前目标、范围与授权，以及准确作品或页面版本和实际证据；专业问题按需提供对应方法与资源。",
+        "outputs": "有依据的发现、最小有效改进和可观察的验证结果，说明未验证的范围。",
+        "checks": "结论与实际读、看、听、操作的证据相称；保持必要判断能力，回收实际价值与成本。",
+        "work_types": [
+          "creative-system-review"
+        ],
+        "required_inputs": [
+          "goal",
+          "scope",
+          "authorization",
+          "evidence"
+        ],
+        "steps": [
+          "review"
+        ],
+        "files": {
+          "SKILL.md": "---\nname: creative-system-review\ndescription: 从项目的准确只读投影取得创作协作 Review 方法、项目适配与愿景。\n---\n\n# 创作协作 Review 入口\n\n依次阅读本次准备返回的共用资料 `skill`、`project-context`、`vision`：它们分别是完整方法、项目适配和愿景。唯一维护入口为项目 `skills/creative-system-review/` 与 `production/system-vision.md`；本入口只引用准确版本，不另写方法正文。\n\n执行导出中的对应文件为 [完整方法](shared/0.md)、[项目适配](shared/1.md)、[愿景](shared/2.md)。正文里的“项目适配”由第二份资源提供，项目根路径及进一步专业材料按适配和本步准确输入查阅；导出 `registry.json` 保留来源路径、摘要与版本，可在空实例恢复。\n\n按当前授权使用方法。所需专业章节、作品输入、页面或媒体证据尚缺时明确范围；这三个资源不代替全部项目资料或真实实践。\n"
+        },
+        "resources": [
+          {
+            "name": "creative-system-review-texts",
+            "section": "skill"
+          },
+          {
+            "name": "creative-system-review-texts",
+            "section": "project-context"
+          },
+          {
+            "name": "creative-system-review-texts",
+            "section": "vision"
+          }
+        ]
+      }
+    }
+  ],
+  "bindings": [
+    {
+      "work_type": "creative-system-review",
+      "method": "creative-system-review"
+    }
+  ]
+}

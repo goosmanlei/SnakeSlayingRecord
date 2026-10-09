@@ -43,6 +43,13 @@ require,sha,read,save,run,git,inspect=base.require,base.sha,base.read,base.save,
 METHOD_MEDIA_DIRECTORY='content/production-approach-assets'
 
 
+def check_vision_change(previous, candidate, raw):
+    """Only this source-derived first tab may differ in the Review delivery."""
+    from sync_system_vision import update
+    require(candidate == update(previous, raw),
+            'Review delivery may only prepend/update the exact vision tab; old approach content must remain')
+
+
 def method_media_files(document):
     files={}
     for tab in document.get('tabs',[]):
@@ -127,7 +134,14 @@ def prepare(a):
         put('instance/'+name,raw)
     cfg=read(root/'instance/config/instance.json');require(cfg['review_desk_commit']==a.system_candidate,'candidate instance pin differs')
     current_files={name:sha(Path(mounts['/instance/'+name]['Source']).read_bytes()) for name in base.INSTANCE_FILES}
-    require(task in {'task-20261005-0007','task-20261006-0006','task-20261008-0001','task-20261008-0002','task-20261008-0006','task-20261008-0004','task-20261009-0004'} or current_files['content/production-approach.json']==hashes['instance/content/production-approach.json'],'approach content change is outside this release')
+    if task == 'task-20261010-0001':
+        raw = base.git_file(story, a.story_candidate, 'production/system-vision.md')
+        require(raw == (story/'production/system-vision.md').read_bytes(), 'vision source differs from candidate')
+        check_vision_change(read(mounts['/instance/content/production-approach.json']['Source']),
+                            read(root/'instance/content/production-approach.json'), raw)
+        put('instance/production/system-vision.md', raw)
+    else:
+        require(task in {'task-20261005-0007','task-20261006-0006','task-20261008-0001','task-20261008-0002','task-20261008-0006','task-20261008-0004','task-20261009-0004'} or current_files['content/production-approach.json']==hashes['instance/content/production-approach.json'],'approach content change is outside this release')
     source={}
     for line in git(system,'ls-tree','-r',a.system_candidate,'--','review_desk').splitlines():
         header,name=line.split('\t',1);require(header.split()[0] in ('100644','100755'),'special source file')

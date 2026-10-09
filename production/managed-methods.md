@@ -8,7 +8,8 @@
 
 | 内容 | 有效正文与同步方向 |
 | --- | --- |
-| 方法 SKILL、连续性知识、环节绑定 | 启用后在实例“系统配置 → 工作方法”维护。保存追加新版本，绑定显式选择准确版本。 |
+| 实例原生方法、连续性知识、环节绑定 | 启用后在实例“系统配置 → 工作方法”维护。保存追加新版本，绑定显式选择准确版本。 |
+| 创作协作 Review | 唯一方法包在 `skills/creative-system-review/`，愿景在 `production/system-vision.md`。系统方法只保留简短引用入口，全文沿 `method-source` 追加为只读资源；操作见下节。 |
 | 视频手册与影视知识 | 项目 Markdown 是唯一正文。`method-source` 把选定章节及来源摘要追加为只读资源投影；已有阅读页也沿原正文派生。不能在配置页反向改一份正文。 |
 | `content/managed-methods.json`、`managed-media-method.json` | 初始化定义，安装到空实例；不覆盖已编辑的活库。媒体初始化同时读取本项目 Markdown。 |
 | `content/managed-method-registry.json` | 本次候选的准确配置历史，用于增量迁移与空实例恢复；不是启用后的编辑副本。后续导出必须来自当时有效实例。 |
@@ -17,6 +18,20 @@
 当前只用评论润色、小说检查点、读者请求和单项媒体方案验证基础。视频方法按条件加载手册的模板、参考规则和五类离线案例，评论润色只加载适用的连续性章节。共用专业方法库、全剧重做和新一轮 Prompt 制作继续由后续任务负责。
 
 投影保存所选正文；原文的专业来源、延伸章节和图示仍可从项目原阅读入口查阅，不声称把外部文献或整套影视图文都交给模型。执行需要额外材料时，应显式加入准确资源或保持未满足条件，不能凭链接名称补全事实。
+
+## 创作协作 Review
+
+按 [项目 SKILL](../skills/creative-system-review/SKILL.md) 审查作品、人和 AI 的协作及系统使用。项目会话从 AGENTS 的场景入口读取；系统“工作方法”中的“创作协作 Review”通过独立 `creative-system-review` 工作类型取得同一正文，不改变评论润色、作者、读者或媒体生成的绑定。
+
+`content/creative-system-review-method.json` 是安装定义，只含来源路径、简短入口及环节元数据。用已有 `scripts/managed_methods.py install --seed content/creative-system-review-method.json` 在任务隔离实例安装，`--system` 指向本任务审阅台工作区，`--instance` 指向隔离实例。重复安装相同正文幂等，已维护配置不同则拒绝覆盖。
+
+准备请求沿 `POST /api/methods/prepare` 或 `method-prepare`，提供 `work_type: creative-system-review`、独立 `run_id/step_id/target`，以及 `inputs` 中的 `goal`（当前目标）、`scope`（准确对象、版本及范围）、`authorization`（本次委托边界）、`evidence`（实际材料和实践证据）。返回包依次提供完整 SKILL、项目适配和愿景三个准确资源；专业制作所需章节及作品输入由本步按需补齐，这三个文本不能代替真实看、听、操作或其他专业材料。`review` 产物登记实际判断，不以取得方法代表完成审阅。
+
+显式 `method-export` 将三个资源分别写到 `shared/0.md`、`shared/1.md`、`shared/2.md`，入口文件说明这一映射；`registry.json` 保留来源路径、全文/投影摘要、准确修订及执行快照。用既有 `method-restore` 在新空实例恢复该登记包后，可以重新取得同一执行。仅需恢复定义时使用受管 `content/creative-system-review-registry.json`：它只包含本方法资源、引用入口和专用绑定，不携带其他方法或私有试用记录；恢复完整作品后也可显式追加它，目标已经前进时仍拒绝旧包覆盖。
+
+后续修改先改唯一包或愿景，用 `method-source` 同步对应来源定义并提供资源当前 `expected_version`，再以 `method-save` 追加引用新资源准确修订的方法版本，最后显式更新本工作类型的绑定。旧执行继续旧资源及绑定。将相应准确历史从有效实例导出到登记包，再沿 [工作区发布](generation-workspaces.md) 增量发布；不能手改导出正文或用旧任务整库覆盖正式库。
+
+愿景阅读页由 `python3 scripts/sync_system_vision.py` 确定性派生；`--check` 检查全文和首项位置。愿景是方向说明，不代表全部能力已经实现。已审正文、试用边界及本次实际验收见 [交付验收](creative-system-review/VERIFICATION.md)。
 
 ## 外部小说作者
 
