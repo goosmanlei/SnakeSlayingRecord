@@ -2,8 +2,9 @@
 """Read the authored audiovisual score and bind it to exact screenplay evidence.
 
 This story-side compiler does not read retired preparation/shot objects, invent
-shots from paragraph counts, or call a generation provider. Markdown is the
-authoritative creative input; checks never rewrite it to make a test pass.
+shots from paragraph counts, or call a generation provider. The individually authored reading JSON is the
+authoritative creative input; checks never supply narrative prose. Exact media
+plans are revised independently through media_method.py, not rebuilt in bulk.
 """
 from __future__ import annotations
 
@@ -16,8 +17,6 @@ import re
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-FIELDS = ('空间', '轴线', '光线', '色彩', '声音', '连续性')
-EPISODE_FIELDS = ('意图', '结构', '节奏', '连续性')
 RANGE = re.compile(r'(s\d{3}):(\d+)(?:-(\d+))?')
 
 
@@ -43,51 +42,31 @@ def keys(spans):
 
 
 def read_score(directory=ROOT / 'production/audiovisual'):
+    """Read authored prose and exact products; no inherited scene conditions."""
     result = []
-    for path in sorted(directory.glob('e[0-9][0-9].md')):
-        episode = {'number': int(path.stem[1:]), 'file': str(path.relative_to(ROOT)), 'scenes': []}
-        section = episode
-        for line_number, line in enumerate(path.read_text().splitlines(), 1):
-            if line.startswith('# '):
-                episode['title'] = line[2:].strip()
-            elif line.startswith('## '):
-                code, title = line[3:].split(' · ', 1)
-                if code != f'A{len(episode["scenes"]) + 1:02}':
-                    raise ValueError(f'{path}:{line_number}: scene order is not explicit and contiguous')
-                section = {'code': code, 'title': title, 'shots': []}
-                episode['scenes'].append(section)
-            elif re.match(r'\| s\d', line):
-                columns = [v.strip() for v in line.strip('|').split('|')]
-                if len(columns) != 6 or section is episode:
-                    raise ValueError(f'{path}:{line_number}: incomplete authored shot')
-                source, seconds, framing, action, purpose, sound_edit = columns
-                if ' → ' not in action:
-                    raise ValueError(f'{path}:{line_number}: shot needs an authored start and end')
-                seconds = int(seconds)
-                if not 4 <= seconds <= 30:
-                    raise ValueError(f'{path}:{line_number}: unsupported single clip duration')
-                start, end = action.split(' → ', 1)
-                if not all((framing, start, end, purpose, sound_edit)):
-                    raise ValueError(f'{path}:{line_number}: empty design field')
-                section['shots'].append({'source': ranges(source), 'seconds': seconds,
-                    'framing': framing, 'action_start': start, 'action_end': end,
-                    'performance': purpose, 'sound_edit': sound_edit, 'line': line_number})
-            elif '：' in line and not line.startswith(('#', '|')):
-                label, value = line.split('：', 1)
-                if label in (*FIELDS, *EPISODE_FIELDS):
-                    if label in section or not value.strip():
-                        raise ValueError(f'{path}:{line_number}: duplicate or empty {label}')
-                    section[label] = value.strip()
-        for field in EPISODE_FIELDS:
-            if field not in episode:
-                raise ValueError(f'{path}: episode needs {field}')
-        for scene in episode['scenes']:
-            for field in FIELDS:
-                if field not in scene:
-                    raise ValueError(f'{path}: {scene["code"]} needs {field}')
-            if not scene['shots']:
-                raise ValueError(f'{path}: empty audiovisual scene')
-        result.append(episode)
+    for path in sorted((directory / 'readings').glob('e[0-9][0-9].json')):
+        doc = json.loads(path.read_text())
+        if doc.get('format') != 'audiovisual-reading-v1':
+            raise ValueError('unsupported audiovisual reading: ' + str(path))
+        source = (ROOT / doc['reading']['source']).resolve(strict=True)
+        if not source.is_relative_to(ROOT) or hashlib.sha256(source.read_bytes()).hexdigest() != doc['reading']['source_sha256']:
+            raise ValueError('locked screenplay changed; re-read before authoring')
+        scenes = {}
+        for item in doc['shots']:
+            oid = item['object_id']; scene_id = oid.rsplit('-s', 1)[0]
+            if not item['purpose'].strip():
+                raise ValueError('shot needs an authored narrative purpose: ' + oid)
+            spans = []
+            for ref in item['sources']:
+                numbers = [int(b.rsplit('-b', 1)[1]) for b in ref['block_ids']]
+                if numbers != list(range(min(numbers), max(numbers)+1)):
+                    raise ValueError('source block range must remain contiguous: ' + oid)
+                spans.append((ref['scene_id'], min(numbers), max(numbers)))
+            scene = scenes.setdefault(scene_id, {'code':scene_id.rsplit('-',1)[1].upper(), 'shots':[]})
+            scene['shots'].append({**item, 'source':spans, 'seconds':item.get('planned_seconds', 0)})
+        result.append({'number':doc['episode'], 'file':path.relative_to(ROOT).as_posix(),
+                       'title':doc.get('title',''), 'scenes':list(scenes.values()),
+                       'reading':doc['reading'], 'working_notes':doc['working_notes']})
     return result
 
 
@@ -280,59 +259,35 @@ def source_text(row, spans):
     return '\n'.join(blocks[b] for source in source_refs(row, spans) for b in source['block_ids'])
 
 
-def score_records(score, lock, episodes, bindings, reviewed):
-    """bindings is independently reviewed state usage, never an old shot map."""
-    records = []
+
+def render_readings(score, directory=ROOT / 'production/audiovisual'):
+    """A readable projection of authored JSON, never a second creative source."""
+    paths = []
     for episode in score:
-        number = episode['number']
-        story = episodes[number]
-        scene_refs, episode_sources = [], []
+        oid = f"av-e{episode['number']:02}"
+        lines = ['# ' + episode['title'], '',
+                 '本文由 [' + Path(episode['file']).name + '](readings/' + Path(episode['file']).name + ') 派生；修订唯一源稿后重新运行 `audiovisual_design.py render`。', '',
+                 episode['working_notes'][oid], '']
         for scene in episode['scenes']:
-            sid = f'av-e{number:02}-{scene["code"].lower()}'
-            shot_refs, scene_sources = [], []
-            for index, shot in enumerate(scene['shots'], 1):
-                oid = f'{sid}-s{index:02}'
-                sources = source_refs(story, shot['source'])
-                usage = bindings[oid]
-                fixed, shared = reviewed.conditions(number, scene, index)
-                vocals = reviewed.for_sources(sources)
-                payload = {'format': 'production-av-shot-v1', 'title': f'{number:02} · {scene["code"]} · {index:02} {shot["action_end"]}',
-                    'number': index, 'input_lock': reference(lock), 'sources': sources,
-                    'purpose': shot['performance'], 'framing': shot['framing'],
-                    'spatial': fixed['空间'], 'axis': fixed['轴线'], 'movement': shot['framing'],
-                    'action_start': shot['action_start'], 'action_end': shot['action_end'],
-                    'performance': shot['performance'], 'lighting': fixed['光线'], 'color': fixed['色彩'],
-                    'editing': shot['sound_edit'], 'continuity': fixed['连续性'],
-                    'sound': [fixed['声音'], shot['sound_edit'], *[reviewed.describe(e) for e in vocals]],
-                    'fps': 24, 'duration_frames': shot['seconds'] * 24,
-                    'state_model': 'complete-v1', **usage,
-                    'authoring': {'file': episode['file'], 'line': shot['line'], 'shared_scene_fields': shared,
-                        'conditions': 'production/audiovisual/shot-contexts.json',
-                        'vocal_score': 'production/audiovisual/vocal-events.json'}}
-                records.append({'object_id': oid, 'kind': 'AV_SHOT', 'payload': payload})
-                shot_refs.append(future(oid)); scene_sources.extend(sources)
-            sources = union_sources(scene_sources)
-            payload = {'format': 'production-av-scene-v1', 'title': scene['title'], 'input_lock': reference(lock),
-                'sources': sources, 'shots': shot_refs, 'purpose': episode['意图'],
-                'structure': '\n'.join(f'{i:02} {s["action_start"]} → {s["action_end"]}' for i, s in enumerate(scene['shots'], 1)),
-                'rhythm': '\n'.join(s['sound_edit'] for s in scene['shots']), 'continuity': scene['连续性'],
-                'spatial': scene['空间'], 'axis': scene['轴线'], 'lighting': scene['光线'], 'color': scene['色彩'], 'sound': [scene['声音']]}
-            records.append({'object_id': sid, 'kind': 'AV_SCENE', 'payload': payload})
-            scene_refs.append(future(sid)); episode_sources.extend(sources)
-        records.append({'object_id': f'av-e{number:02}', 'kind': 'AV_EPISODE', 'payload': {
-            'format': 'production-av-episode-v1', 'title': episode['title'], 'input_lock': reference(lock),
-            'story_episode': reference(story), 'number': number, 'sources': union_sources(episode_sources),
-            'scenes': scene_refs, 'purpose': episode['意图'], 'structure': episode['结构'],
-            'rhythm': episode['节奏'], 'continuity': episode['连续性']}})
-    for row in records:
-        row['expected_version'] = 0
-        row['payload']['blocks'] = [{'id': 'purpose', 'text': row['payload']['purpose']}]
-    return records
+            sid = oid + '-' + scene['code'].lower()
+            lines += ['## ' + scene['code'], '', episode['working_notes'][sid], '']
+            for shot in scene['shots']:
+                lines += ['### ' + shot['label'], '', shot['purpose'], '', '关键状态：', '']
+                if not shot['key_states']:
+                    lines += ['此镜没有另行准备状态素材。', '']
+                for state in shot['key_states']:
+                    names = [next(v['label'] for v in shot['products'] if v['requirement'] == ref) for ref in state['requirements']]
+                    lines += ['- ' + state['description'] + '（' + '、'.join(names) + '）']
+                lines += ['', '产物顺序：' + ' → '.join(v['label'] for v in shot['products']) + '。准确素材引用见源稿；参数、Prompt 与输入保存在该素材方案，不在这里另写副本。', '']
+        path = directory / f"e{episode['number']:02}.md"
+        path.write_text('\n'.join(lines))
+        paths.append(path.relative_to(ROOT).as_posix())
+    return paths
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('command', choices=['audit', 'bind', 'compile'])
+    parser.add_argument('command', choices=['audit', 'bind', 'compile', 'render'])
     parser.add_argument('--output', type=Path)
     parser.add_argument('--system', type=Path)
     parser.add_argument('--db', type=Path)
@@ -340,32 +295,23 @@ def main():
     score = read_score()
     screenplay = json.loads((ROOT / 'imports/screenplay-04.json').read_text())
     report = coverage(score, screenplay)
-    from audiovisual_events import ReviewedEvents
-    from audiovisual_materials import casting
-    reviewed = ReviewedEvents(ROOT, score, casting())
+    if args.command == 'render':
+        report['rendered'] = render_readings(score)
     report['authored_files_sha256'] = {e['file']: hashlib.sha256((ROOT / e['file']).read_bytes()).hexdigest() for e in score}
     if args.command in ('bind', 'compile'):
         if not args.system or not args.db:
-            parser.error('bind requires --system and --db; database is opened read-only')
+            parser.error('bind/compile requires --system and --db; database is opened read-only')
         sys.path.insert(0, str(args.system.resolve()))
         from review_desk.store import Store
         from review_desk import production as p
+        from audiovisual_reading import prepare
         store = Store.open_readonly(args.db)
         try:
-            lock, episodes = bind_sources(store, screenplay, p)
-            bindings, issues = bind_states(store, score, episodes, p)
-            report['state_binding_issues'] = issues
-            report['complete'] = not issues
-            if not issues:
-                report['records'] = score_records(score, lock, episodes, bindings, reviewed)
-                if args.command == 'compile':
-                    from audiovisual_materials import Builder
-                    materials = Builder(store, p, report['records'], reviewed).build()
-                    report['records'].extend(materials['records'])
-                    report['material_counts'] = materials['counts']
-                    report['preserve_exact_requirements'] = materials['preserve_exact_requirements']
+            bind_sources(store, screenplay, p)
+            report['migration'] = prepare(store, [ROOT/e['file'] for e in score])
+            report['preserve_exact_requirements'] = [product['requirement'] for e in score for scene in e['scenes'] for shot in scene['shots'] for product in shot['products']]
         finally:
-            store.db.close()
+            store.close()
     if args.output:
         args.output.parent.mkdir(parents=True, exist_ok=True)
         args.output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')

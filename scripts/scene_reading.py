@@ -21,7 +21,10 @@ from video_input_design import load_audit
 
 def descriptor(shot, need, reviewed, choice, executable):
     sources = shot['payload']['sources']
-    if need['payload'].get('scope') != {'object_id': shot['object_id'], 'revision_id': shot['id']}:
+    scope = need['payload'].get('scope', {})
+    bound = any(item['requirement'] == {'object_id':need['object_id'], 'revision_id':need.get('id')}
+                for item in shot['payload'].get('products', []))
+    if scope.get('object_id') != shot['object_id'] or not (bound or scope.get('revision_id') == shot['id']):
         raise ValueError('requirement is outside exact shot')
     events = reviewed.render(sources, choice.get('narration'), executable=executable)
     detail = choice.get('video_detail')
@@ -62,10 +65,11 @@ def compile_reading(instance, shot_ids):
             for source in shot['payload']['sources']:
                 if locked.get(source['object_id']) != source['revision_id']:
                     raise ValueError('shot source is outside locked screenplay: ' + oid)
-            needs = store.db.execute("SELECT r.id FROM revisions r JOIN objects o ON o.current_revision=r.id WHERE o.kind='REQUIREMENT' AND json_extract(r.payload,'$.scope.revision_id')=? AND json_extract(r.payload,'$.media_type')='video'", (shot['id'],)).fetchall()
+            needs = [p.ref_record(store, v['requirement'], {'REQUIREMENT'}) for v in shot['payload']['products']]
+            needs = [r for r in needs if r['payload']['media_type'] == 'video']
             if len(needs) != 1:
-                raise ValueError('one exact video requirement required: ' + oid)
-            need = p.record(store, revision_id=needs[0][0])
+                raise ValueError('one exact video product required: ' + oid)
+            need = needs[0]
             entries[need['id']] = descriptor(shot, need, reviewed, choices.get(oid, {}), audit[oid]['execution_reviewed'])
     finally:
         store.close()
