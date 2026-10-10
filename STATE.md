@@ -61,7 +61,7 @@
 
 ## 下一步与制作边界
 
-- 生产制作阅读沿0012的整场、原件前置和历史保护继续收敛：0014已在自有隔离实例实操S001→AS001／AS002→阿蘅原图、区域与时间意见及返回草稿，并连读AS048／AS049／AS051，核对AS012干湿时序。已吸收0013的跨段准确反馈候选，原修复证据见 [准确反馈验收](production/composed-selection-feedback/VERIFICATION.md)。当前作品只带入相关状态、关系与视频用途；明确整体许可时完整呈现准确批准内容。前后差异、覆盖范围与清理见 [0014验收记录](production/reports/task-20261010-0014/VERIFICATION.md)，作者准备沿 [制作阅读准备](production/production-reading.md)。Git交付以任务账本及配置为准；正式服务未应用候选，负责人独立复验、声音效果听审、真实视频效果及0013跨段选择交付后的组合复验仍待完成。未编排场不视为全剧简化完成；部署、正式写入和付费生成须另获授权。
+- 生产制作阅读沿0012的整场、原件前置和历史保护继续收敛：0014已在自有隔离实例实操S001→AS001／AS002→阿蘅原图、区域与时间意见及返回草稿，并连读AS048／AS049／AS051，核对AS012干湿时序。已吸收0013的跨段准确反馈候选，组合候选已完成真实两段圈选、预览、保存及刷新定位；原修复证据见 [准确反馈验收](production/composed-selection-feedback/VERIFICATION.md)。当前作品只带入相关状态、关系与视频用途；明确整体许可时完整呈现准确批准内容。前后差异、覆盖范围与清理见 [0014验收记录](production/reports/task-20261010-0014/VERIFICATION.md)，作者准备沿 [制作阅读准备](production/production-reading.md)。Git交付以任务账本及配置为准；正式服务未应用候选，负责人独立复验、声音效果听审和真实视频效果仍待完成。未编排场不视为全剧简化完成；部署、正式写入和付费生成须另获授权。
 
 - [受管方法与执行绑定](production/managed-methods.md) 已正式启用：评论润色、小说检查点、独立读者和媒体准备取得准确方法及共用资料；旧方案历史保持未知，新创作步骤受方法契约约束。0014 旧交付完成后已按停写窗口追加配置，正式页面、兼容运行重启和完整空库恢复通过，实际边界见[验收记录](production/managed-methods/VERIFICATION.md)。主要创作制作方法库已正式发布，完成自然场、独立对话／动作／文字试用及改进后复用；正式页只读回查和完整空库恢复通过，见[方法试用](production/professional-methods/VERIFICATION.md)。用户已取消原全剧重做任务 0022/0023，保留已确认结构、小说及有效成果；后续按新 Review SKILL 实践后重新确定改进范围。0022/0023 已从队列撤下，未完成草稿不构成正式制作依据；撤销事实与必要追溯见 `.runtime/system-review/abandon-0022-0023/status.json`。持续 Review 的运行、暂停与发布授权按当前会话指令及本机 `.runtime/system-review/RUNBOOK.md`、`.runtime/system-review/state.json` 核对，不沿用旧轮次状态；执行任务仍由受管任务入口承接。
 
@@ -84,3 +84,5 @@
 - task-20261009-0032 的故事 worktree 仍由当前 TUI 占用；本任务执行者退出并释放锁后，通过 `codex.project task cleanup` 退役。必要证据已收敛至上述主项目本机回执目录，VPS 运行和恢复不依赖此工作区。
 
 - `task-20261009-0021` 的双仓 worktree 仍由当前会话占用，退出并释放锁后由受管 cleanup 退役。方法试用和正式发布的最小证据归主项目 `.runtime/task-20261009-0021/`；正式服务挂载及恢复不依赖任务工作区。
+
+- `task-20261010-0014` 的双仓worktree仍由当前TUI及清理锁占用；退出释放锁后沿 `codex.project task cleanup` 整组退役。预览服务与测试库已移除，必要证据及准确清理回执见 [0014验收记录](production/reports/task-20261010-0014/VERIFICATION.md)，运行和恢复不依赖预览目录。

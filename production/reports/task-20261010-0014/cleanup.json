@@ -1,0 +1,78 @@
+{
+  "task": "task-20261010-0014",
+  "stopped_server": {
+    "pid": 66913,
+    "port": 51502,
+    "listen_closed": true
+  },
+  "removed": [
+    {
+      "path": ".runtime/production-reading-review",
+      "files": 1058,
+      "directories": 7,
+      "bytes": 1707371402,
+      "absent_after": true
+    },
+    {
+      "path": ".runtime/production-reading-work",
+      "files": 2,
+      "directories": 1,
+      "bytes": 107749,
+      "absent_after": true
+    },
+    {
+      "path": "/tmp/task-20261010-0014-node.log",
+      "files": 1,
+      "bytes": 90647,
+      "absent_after": true
+    },
+    {
+      "path": "/tmp/task-20261010-0014-python.log",
+      "files": 1,
+      "bytes": 81370,
+      "absent_after": true
+    },
+    {
+      "path": "/tmp/task-20261010-0014-focus.log",
+      "files": 1,
+      "bytes": 12013,
+      "absent_after": true
+    },
+    {
+      "path": "/tmp/task-20261010-0014-shot.log",
+      "files": 1,
+      "bytes": 1094,
+      "absent_after": true
+    }
+  ],
+  "total_files": 1064,
+  "total_bytes": 1707664275,
+  "containers_created": 0,
+  "images_created": 0,
+  "volumes_created": 0,
+  "guard_before": {
+    "blockers": []
+  },
+  "browser": {
+    "closed_tabs": [
+      "2044187541",
+      "2044187578"
+    ],
+    "origin": "http://127.0.0.1:51502",
+    "local_data_clear": "user confirmed manual cleanup",
+    "reason": "Raw CDP methods unsupported; Chrome settings navigation rejected by browser security policy. No workaround attempted.",
+    "verification_boundary": "User replied 已清理. Tool did not independently inspect browser storage; no new preview tab created to avoid repopulation."
+  },
+  "retained_worktrees": {
+    "count": 2,
+    "reason": "current TUI and managed cleanup lock",
+    "responsibility": "task executor / codex.project task cleanup after TUI exit and lock release"
+  },
+  "guard_after": {
+    "blockers": []
+  },
+  "protected_services_listening": [
+    3000,
+    63108
+  ]
+}

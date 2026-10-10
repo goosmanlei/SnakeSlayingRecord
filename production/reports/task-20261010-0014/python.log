@@ -1,0 +1,765 @@
+test_diagrams_are_passive_local_shapes (test_approach.ApproachTest) ... ok
+test_heading_targets_cannot_collide_or_escape_the_method_page (test_approach.ApproachTest) ... 127.0.0.1 - - [10/Oct/2026 15:02:49] "GET /api/production-approach HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:02:49] "GET /api/production-approach HTTP/1.1" 503 -
+127.0.0.1 - - [10/Oct/2026 15:02:49] "GET /api/production-approach HTTP/1.1" 503 -
+127.0.0.1 - - [10/Oct/2026 15:02:49] "GET /api/production-approach HTTP/1.1" 503 -
+127.0.0.1 - - [10/Oct/2026 15:02:49] "GET /api/production-approach HTTP/1.1" 503 -
+127.0.0.1 - - [10/Oct/2026 15:02:49] "GET /api/production-approach HTTP/1.1" 503 -
+ok
+test_instance_document_round_trip_and_reload (test_approach.ApproachTest) ... 127.0.0.1 - - [10/Oct/2026 15:02:49] "GET /api/production-approach HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:02:49] "GET /api/production-approach HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:02:49] "GET /api/comments HTTP/1.1" 200 -
+ok
+test_invalid_document_is_reported_without_breaking_other_pages (test_approach.ApproachTest) ... 127.0.0.1 - - [10/Oct/2026 15:02:49] "GET /api/production-approach HTTP/1.1" 503 -
+127.0.0.1 - - [10/Oct/2026 15:02:49] "GET /api/sources HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:02:49] "GET /api/production-approach HTTP/1.1" 503 -
+127.0.0.1 - - [10/Oct/2026 15:02:49] "GET /api/sources HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:02:49] "GET /api/production-approach HTTP/1.1" 503 -
+127.0.0.1 - - [10/Oct/2026 15:02:49] "GET /api/sources HTTP/1.1" 200 -
+ok
+test_method_media_is_local_declared_exact_and_supports_ranges (test_approach.ApproachTest) ... 127.0.0.1 - - [10/Oct/2026 15:02:50] "GET /approach-media/demo.mp4 HTTP/1.1" 206 -
+127.0.0.1 - - [10/Oct/2026 15:02:50] "GET /approach-media/unlisted.mp4 HTTP/1.1" 404 -
+127.0.0.1 - - [10/Oct/2026 15:02:50] "GET /approach-media/../production-approach.json HTTP/1.1" 503 -
+127.0.0.1 - - [10/Oct/2026 15:02:50] "GET /approach-media/https://private.invalid/a.mp4 HTTP/1.1" 503 -
+127.0.0.1 - - [10/Oct/2026 15:02:50] "GET /approach-media/demo.mp4 HTTP/1.1" 503 -
+127.0.0.1 - - [10/Oct/2026 15:02:50] "GET /approach-media/demo.mp4 HTTP/1.1" 404 -
+127.0.0.1 - - [10/Oct/2026 15:02:50] "GET /api/production-approach HTTP/1.1" 503 -
+127.0.0.1 - - [10/Oct/2026 15:02:50] "GET /api/production-approach HTTP/1.1" 503 -
+127.0.0.1 - - [10/Oct/2026 15:02:50] "GET /api/production-approach HTTP/1.1" 503 -
+127.0.0.1 - - [10/Oct/2026 15:02:50] "GET /api/production-approach HTTP/1.1" 503 -
+127.0.0.1 - - [10/Oct/2026 15:02:50] "GET /api/production-approach HTTP/1.1" 503 -
+127.0.0.1 - - [10/Oct/2026 15:02:50] "GET /api/production-approach HTTP/1.1" 503 -
+127.0.0.1 - - [10/Oct/2026 15:02:50] "GET /api/production-approach HTTP/1.1" 503 -
+127.0.0.1 - - [10/Oct/2026 15:02:50] "GET /api/production-approach HTTP/1.1" 503 -
+ok
+test_optional_document_and_no_ledger (test_approach.ApproachTest) ... 127.0.0.1 - - [10/Oct/2026 15:02:50] "GET /api/production-approach HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:02:50] "GET /api/sources HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:02:50] "GET /api/framework HTTP/1.1" 200 -
+ok
+test_rich_method_document_round_trip_and_invalid_blocks (test_approach.ApproachTest) ... 127.0.0.1 - - [10/Oct/2026 15:02:50] "GET /api/production-approach HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:02:50] "GET /api/production-approach HTTP/1.1" 503 -
+127.0.0.1 - - [10/Oct/2026 15:02:50] "GET /api/comments HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:02:50] "GET /api/production-approach HTTP/1.1" 503 -
+127.0.0.1 - - [10/Oct/2026 15:02:50] "GET /api/comments HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:02:50] "GET /api/production-approach HTTP/1.1" 503 -
+127.0.0.1 - - [10/Oct/2026 15:02:50] "GET /api/comments HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:02:50] "GET /api/production-approach HTTP/1.1" 503 -
+127.0.0.1 - - [10/Oct/2026 15:02:50] "GET /api/comments HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:02:50] "GET /api/production-approach HTTP/1.1" 503 -
+127.0.0.1 - - [10/Oct/2026 15:02:50] "GET /api/comments HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:02:50] "GET /api/production-approach HTTP/1.1" 503 -
+127.0.0.1 - - [10/Oct/2026 15:02:50] "GET /api/production-approach HTTP/1.1" 503 -
+127.0.0.1 - - [10/Oct/2026 15:02:50] "GET /api/production-approach HTTP/1.1" 503 -
+ok
+test_schema_two_preserves_instance_order_and_legacy_routes (test_approach.ApproachTest) ... 127.0.0.1 - - [10/Oct/2026 15:02:50] "GET /api/production-approach HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:02:50] "GET /api/production-approach HTTP/1.1" 503 -
+127.0.0.1 - - [10/Oct/2026 15:02:50] "GET /api/production-approach HTTP/1.1" 503 -
+127.0.0.1 - - [10/Oct/2026 15:02:50] "GET /api/production-approach HTTP/1.1" 503 -
+ok
+test_next_preparing_round_and_metadata_updates_do_not_relabel_old_result (test_asset_list_round.AssetListRoundTest) ... ok
+test_shared_result_label_matches_default_material_card_not_largest_membership (test_asset_list_round.AssetListRoundTest) ... ok
+test_unassociated_result_has_its_real_round_and_schema3_history_remains_unknown (test_asset_list_round.AssetListRoundTest) ... ok
+test_acceptance_is_exact_and_concurrent_decisions_are_rejected (test_audiovisual.AudiovisualTest) ... ok
+test_design_revision_reordering_never_moves_materials (test_audiovisual.AudiovisualTest) ... ok
+test_group_acceptance_child_override_and_restore_have_one_order (test_audiovisual.AudiovisualTest) ... ok
+test_optional_and_unselected_routes_are_not_missing_inputs (test_audiovisual.AudiovisualTest) ... ok
+test_route_choice_participates_in_frozen_definition (test_audiovisual.AudiovisualTest) ... ok
+test_selected_cycle_blocks_readiness_but_not_draft_or_other_route (test_audiovisual.AudiovisualTest) ... ok
+test_source_scene_block_and_child_scope_rejected_atomically (test_audiovisual.AudiovisualTest) ... ok
+test_story_related_has_both_entity_and_av_evidence (test_audiovisual.AudiovisualTest) ... ok
+test_two_story_scenes_and_exact_composition_survive_child_revision (test_audiovisual.AudiovisualTest) ... ok
+test_unknown_custom_relation_remains_descriptive (test_audiovisual.AudiovisualTest) ... ok
+test_applicability_is_neither_occurrence_nor_actual_input (test_breakdown_page.BreakdownPageTest) ... ok
+test_classification_keeps_multiple_owners_and_never_guesses_from_title (test_breakdown_page.BreakdownPageTest) ... ok
+test_exact_catalog_targets_do_not_follow_unpublished_child_heads (test_breakdown_page.BreakdownPageTest) ... ok
+test_exact_historical_context_survives_a_new_shot (test_breakdown_page.BreakdownPageTest) ... ok
+test_full_scene_returns_all_blocks_and_only_discontinuous_exact_highlights (test_breakdown_page.BreakdownPageTest) ... ok
+test_historical_chain_does_not_follow_current_input_lock (test_breakdown_page.BreakdownPageTest) ... ok
+test_historical_composition_does_not_follow_story_head (test_breakdown_page.BreakdownPageTest) ... ok
+test_occurrence_does_not_imply_material_use_and_source_validation_is_atomic (test_breakdown_page.BreakdownPageTest) ... ok
+test_scene_requires_design_text_and_preserves_exact_children (test_breakdown_page.BreakdownPageTest) ... ok
+test_all_supported_schemas_require_their_core_files_and_still_restore (test_bundle_integrity.BundleIntegrityTest) ... ok
+test_export_rejects_symlink_metadata_without_touching_its_target (test_bundle_integrity.BundleIntegrityTest) ... ok
+test_export_replacement_failure_restores_previous_bundle_and_can_retry (test_bundle_integrity.BundleIntegrityTest) ... ok
+test_export_retains_recovery_files_if_rollback_also_fails (test_bundle_integrity.BundleIntegrityTest) ... ok
+test_export_staging_failure_does_not_replace_previous_files (test_bundle_integrity.BundleIntegrityTest) ... ok
+test_failed_export_preserves_last_complete_bundle (test_bundle_integrity.BundleIntegrityTest) ... ok
+test_first_export_replacement_failure_removes_partial_metadata (test_bundle_integrity.BundleIntegrityTest) ... ok
+test_restore_database_commit_failure_restores_layout_and_remains_retryable (test_bundle_integrity.BundleIntegrityTest) ... ok
+test_restore_layout_failure_keeps_database_empty_and_retryable (test_bundle_integrity.BundleIntegrityTest) ... ok
+test_restore_layout_replacement_failure_rolls_back_every_table (test_bundle_integrity.BundleIntegrityTest) ... ok
+test_restore_rejects_core_file_missing_from_manifest (test_bundle_integrity.BundleIntegrityTest) ... ok
+test_retired_production_types_cannot_reenter_through_restore (test_bundle_integrity.BundleIntegrityTest) ... ok
+test_streamed_content_keeps_exact_previous_bytes_and_manifest (test_bundle_integrity.BundleIntegrityTest) ... ok
+test_breakdown_reads_only_list_metadata_but_keeps_exact_card_and_counts (test_card_counts.CardCountsTest) ... ok
+test_candidates_and_metadata_revisions_do_not_inflate_material_counts (test_card_counts.CardCountsTest) ... ok
+test_card_reader_preserves_the_requested_exact_requirement_and_its_plan (test_card_counts.CardCountsTest) ... ok
+test_current_acceptance_filter_tracks_content_changes_and_cancellation (test_card_counts.CardCountsTest) ... ok
+test_empty_plan_repeated_candidate_revision_and_new_unproduced_version (test_card_counts.CardCountsTest) ... ok
+test_facets_keep_other_filters_and_categories_remain_present_at_zero_results (test_card_counts.CardCountsTest) ... ok
+test_failed_call_does_not_create_candidate (test_card_counts.CardCountsTest) ... ok
+test_generated_history_does_not_promote_the_empty_current_plan (test_card_counts.CardCountsTest) ... ok
+test_missing_registration_is_unknown_and_duplicate_association_is_one_material (test_card_counts.CardCountsTest) ... ok
+test_scene_fallback_keeps_exact_scope_and_rejects_placeholder_or_preview_as_results (test_card_counts.CardCountsTest) ... ok
+test_scene_history_summary_preserves_its_exact_link_and_empty_current_plan (test_card_counts.CardCountsTest) ... ok
+test_shared_requirement_history_is_independent_of_alias_name_order (test_card_counts.CardCountsTest) ... ok
+test_unassigned_historical_asset_counts_under_its_explicit_entity_subject (test_card_counts.CardCountsTest) ... ok
+test_breakdown_reads_only_list_metadata_but_keeps_exact_card_and_counts (test_ui_projection.UiProjectionTest) ... ok
+test_candidates_and_metadata_revisions_do_not_inflate_material_counts (test_ui_projection.UiProjectionTest) ... ok
+test_card_reader_preserves_the_requested_exact_requirement_and_its_plan (test_ui_projection.UiProjectionTest) ... ok
+test_current_acceptance_filter_tracks_content_changes_and_cancellation (test_ui_projection.UiProjectionTest) ... ok
+test_facets_keep_other_filters_and_categories_remain_present_at_zero_results (test_ui_projection.UiProjectionTest) ... ok
+test_generated_history_does_not_promote_the_empty_current_plan (test_ui_projection.UiProjectionTest) ... ok
+test_scene_fallback_keeps_exact_scope_and_rejects_placeholder_or_preview_as_results (test_ui_projection.UiProjectionTest) ... ok
+test_scene_history_summary_preserves_its_exact_link_and_empty_current_plan (test_ui_projection.UiProjectionTest) ... ok
+test_shared_requirement_history_is_independent_of_alias_name_order (test_ui_projection.UiProjectionTest) ... ok
+test_unassigned_historical_asset_counts_under_its_explicit_entity_subject (test_ui_projection.UiProjectionTest) ... ok
+test_committed_source_structure_and_material_requests_survive_refresh_retry (test_comment_retry_http.CommentRetryHTTPTest) ... ok
+test_exact_source_unicode_quotes_state_conflict_and_export_restore (test_comment_review.CommentReviewTest) ... ok
+test_response_without_current_evidence_never_becomes_resolved (test_comment_review.CommentReviewTest) ... ok
+test_validation_is_atomic_and_refuses_wrong_comment_anchor_revision_and_response (test_comment_review.CommentReviewTest) ... ok
+test_bad_anchor_or_revision_does_not_poison_another_comment (test_comment_source_reuse.CommentSourceReuseTest) ... ok
+test_batch_matches_single_anchor_validation_without_caching_targets (test_comment_source_reuse.CommentSourceReuseTest) ... ok
+test_historical_non_source_revision_stays_exact_in_a_mixed_batch (test_comment_source_reuse.CommentSourceReuseTest) ... ok
+test_http_filters_keep_complete_rows_and_use_a_fresh_batch (test_comment_source_reuse.CommentSourceReuseTest) ... 127.0.0.1 - - [10/Oct/2026 15:03:02] "GET /api/comments HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:02] "GET /api/comments?source_id=source HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:02] "GET /api/comments?target_object_id=source&target_revision_id=7915b2732a998fe0a48ee826fadc846e6a4082f63cbd0733afb7dcf2927e61f1 HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:02] "GET /api/comments?source_id=absent HTTP/1.1" 200 -
+ok
+test_media_is_validated_again_for_each_anchor_and_after_file_changes (test_comment_source_reuse.CommentSourceReuseTest) ... ok
+test_next_read_and_comment_write_see_legitimate_source_replacement (test_comment_source_reuse.CommentSourceReuseTest) ... ok
+test_overlapping_reads_do_not_share_same_named_source_between_instances (test_comment_source_reuse.CommentSourceReuseTest) ... ok
+test_unexpected_batch_failure_leaves_no_cache_for_next_request (test_comment_source_reuse.CommentSourceReuseTest) ... ok
+test_complete_dimensions_and_required_overall_contract (test_complete_states.CompleteStatesTest) ... ok
+test_detail_cannot_replace_overall_and_passed_does_not_adopt (test_complete_states.CompleteStatesTest) ... ok
+test_guarded_import_detects_changed_read_dependencies (test_complete_states.CompleteStatesTest) ... ok
+test_invalid_asset_mapping_and_atomic_concurrent_import (test_complete_states.CompleteStatesTest) ... ok
+test_missing_wrong_owner_legacy_and_transition_block_export (test_complete_states.CompleteStatesTest) ... ok
+test_one_asset_many_states_optional_details_exact_ranges_and_versions (test_complete_states.CompleteStatesTest) ... ok
+test_withdrawn_overall_retains_exact_scope_without_requiring_new_media (test_complete_states.CompleteStatesTest) ... ok
+test_historical_contiguous_opinion_and_object_revision_protection (test_composed_selection.ComposedSelectionTest) ... ok
+test_no_envelope_gap_bad_quote_overlap_nested_range_or_invalid_unicode (test_composed_selection.ComposedSelectionTest) ... ok
+test_one_opinion_lifecycle_export_restore_and_exact_unicode (test_composed_selection.ComposedSelectionTest) ... ok
+test_polish_required_quote_preserves_all_passages_and_the_single_intent (test_composed_selection.ComposedSelectionTest) ... ok
+test_reordered_and_same_block_omissions_are_valid (test_composed_selection.ComposedSelectionTest) ... ok
+test_bundles_match_sources_and_content_addressed_browser_validation (test_concurrent_http.ConcurrentHttpTest) ... 127.0.0.1 - - [10/Oct/2026 15:03:04] "GET /static/617640fbc1303b58023e3da830dd9be82211647e1794e4a8d67b8de09dcc8cc6/desk.css HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "GET /static/617640fbc1303b58023e3da830dd9be82211647e1794e4a8d67b8de09dcc8cc6/desk.css HTTP/1.1" 304 -
+ok
+test_existing_wal_requires_explicit_reviewed_conversion (test_concurrent_http.ConcurrentHttpTest) ... ok
+test_media_range_identity_and_revalidation_during_api_reads (test_concurrent_http.ConcurrentHttpTest) ... 127.0.0.1 - - [10/Oct/2026 15:03:04] "GET /api/production/files/9b994a5b0c4a6f18d5bd49325b4ac5e5fb73a01ab03b87e06f2425d9e6222761.mp4 HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "GET /api/production/files/9b994a5b0c4a6f18d5bd49325b4ac5e5fb73a01ab03b87e06f2425d9e6222761.mp4 HTTP/1.1" 304 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "GET /api/production/files/9b994a5b0c4a6f18d5bd49325b4ac5e5fb73a01ab03b87e06f2425d9e6222761.mp4 HTTP/1.1" 206 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "GET /api/production/files/9b994a5b0c4a6f18d5bd49325b4ac5e5fb73a01ab03b87e06f2425d9e6222761.mp4 HTTP/1.1" 206 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "GET /api/production/files/9b994a5b0c4a6f18d5bd49325b4ac5e5fb73a01ab03b87e06f2425d9e6222761.mp4 HTTP/1.1" 416 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "GET /api/production/files/9b994a5b0c4a6f18d5bd49325b4ac5e5fb73a01ab03b87e06f2425d9e6222761.mp4 HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "GET /api/production/files/9b994a5b0c4a6f18d5bd49325b4ac5e5fb73a01ab03b87e06f2425d9e6222761.mp4 HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "GET /api/instance HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "GET /api/instance HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "GET /api/production/files/9b994a5b0c4a6f18d5bd49325b4ac5e5fb73a01ab03b87e06f2425d9e6222761.mp4 HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "GET /api/production/files/9b994a5b0c4a6f18d5bd49325b4ac5e5fb73a01ab03b87e06f2425d9e6222761.mp4 HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "GET /api/production/files/9b994a5b0c4a6f18d5bd49325b4ac5e5fb73a01ab03b87e06f2425d9e6222761.mp4 HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "GET /api/instance HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "GET /api/instance HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "GET /api/production/files/9b994a5b0c4a6f18d5bd49325b4ac5e5fb73a01ab03b87e06f2425d9e6222761.mp4 HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "GET /api/instance HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "GET /api/instance HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "GET /api/production/files/9b994a5b0c4a6f18d5bd49325b4ac5e5fb73a01ab03b87e06f2425d9e6222761.mp4 HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "GET /api/production/files/9b994a5b0c4a6f18d5bd49325b4ac5e5fb73a01ab03b87e06f2425d9e6222761.mp4 HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "GET /api/production/files/9b994a5b0c4a6f18d5bd49325b4ac5e5fb73a01ab03b87e06f2425d9e6222761.mp4 HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "GET /api/instance HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "GET /api/instance HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "GET /api/production/files/9b994a5b0c4a6f18d5bd49325b4ac5e5fb73a01ab03b87e06f2425d9e6222761.mp4 HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "GET /api/instance HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "GET /api/production/files/9b994a5b0c4a6f18d5bd49325b4ac5e5fb73a01ab03b87e06f2425d9e6222761.mp4 HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "GET /api/instance HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "GET /api/production/files/9b994a5b0c4a6f18d5bd49325b4ac5e5fb73a01ab03b87e06f2425d9e6222761.mp4 HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "GET /api/instance HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "GET /api/instance HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "GET /api/production/files/9b994a5b0c4a6f18d5bd49325b4ac5e5fb73a01ab03b87e06f2425d9e6222761.mp4 HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "GET /api/production/files/../config/instance.json HTTP/1.1" 400 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "GET /api/production/files/9b994a5b0c4a6f18d5bd49325b4ac5e5fb73a01ab03b87e06f2425d9e6222761.mp4 HTTP/1.1" 400 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "GET /api/production/files/9b994a5b0c4a6f18d5bd49325b4ac5e5fb73a01ab03b87e06f2425d9e6222761.mp4 HTTP/1.1" 200 -
+ok
+test_workers_serialize_expected_versions_and_cache_observes_writes (test_concurrent_http.ConcurrentHttpTest) ... 127.0.0.1 - - [10/Oct/2026 15:03:04] "PATCH /api/comments/race HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "PATCH /api/comments/race HTTP/1.1" 409 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "GET /api/comments HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "PATCH /api/configurations/PROJECT HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "PATCH /api/configurations/PROJECT HTTP/1.1" 409 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "GET /api/business-codes HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "GET /api/business-codes HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "GET /api/business-codes HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "GET /api/business-codes HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "GET /api/business-codes HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "GET /api/business-codes HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "GET /api/business-codes HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "GET /api/business-codes HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "GET /api/business-codes HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "GET /api/business-codes HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "GET /api/business-codes HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "GET /api/business-codes HTTP/1.1" 200 -
+ok
+test_write_window_blocks_all_mutations_and_preserves_reads (test_concurrent_http.ConcurrentHttpTest) ... 127.0.0.1 - - [10/Oct/2026 15:03:04] "POST /api/comments HTTP/1.1" 503 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "POST /api/production/acceptance HTTP/1.1" 503 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "PATCH /api/configurations/PROJECT HTTP/1.1" 503 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "POST /api/methods/save HTTP/1.1" 503 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "PUT /api/production/files/test HTTP/1.1" 503 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "GET /api/instance HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:04] "PATCH /api/configurations/PROJECT HTTP/1.1" 200 -
+ok
+test_content_import_rejects_missing_previous_and_wrong_scope (test_content_acceptance.ContentAcceptanceTest) ... ok
+test_first_incomplete_content_can_cycle_and_restore_without_generation_permission (test_content_acceptance.ContentAcceptanceTest) ... ok
+test_new_media_does_not_trap_a_revoked_legacy_decision (test_content_acceptance.ContentAcceptanceTest) ... ok
+test_plan_completion_does_not_upgrade_content_acceptance_automatically (test_content_acceptance.ContentAcceptanceTest) ... ok
+test_stale_upstream_allows_content_but_blocks_generation_and_stale_writes (test_content_acceptance.ContentAcceptanceTest) ... ok
+test_actual_prefixed_http_and_stale_write_boundary (test_deployment.DeploymentTest) ... 127.0.0.1 - - [10/Oct/2026 15:03:05] "GET /lijizhanshe/?workspace=story.outline HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:05] "GET /lijizhanshe/favicon.ico HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:05] "GET /lijizhanshe/static/617640fbc1303b58023e3da830dd9be82211647e1794e4a8d67b8de09dcc8cc6/desk.css HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:05] "GET /lijizhanshe/static/aff35e39a1d7b57c1c9c0893c836e2ae6880e3a281ccd3303114578c674e7ff7/desk.js HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:05] code 404, message Not Found
+127.0.0.1 - - [10/Oct/2026 15:03:05] "GET /api/instance HTTP/1.1" 404 -
+127.0.0.1 - - [10/Oct/2026 15:03:05] code 404, message Not Found
+127.0.0.1 - - [10/Oct/2026 15:03:05] "GET /lijizhanshex/api/instance HTTP/1.1" 404 -
+127.0.0.1 - - [10/Oct/2026 15:03:05] "GET /lijizhanshe/.runtime/review.sqlite3 HTTP/1.1" 404 -
+127.0.0.1 - - [10/Oct/2026 15:03:05] "PATCH /lijizhanshe/api/configurations/PROJECT HTTP/1.1" 409 -
+127.0.0.1 - - [10/Oct/2026 15:03:05] "PATCH /lijizhanshe/api/configurations/PROJECT HTTP/1.1" 409 -
+127.0.0.1 - - [10/Oct/2026 15:03:05] "PATCH /lijizhanshe/api/configurations/PROJECT HTTP/1.1" 409 -
+127.0.0.1 - - [10/Oct/2026 15:03:05] "GET /lijizhanshe/api/configurations HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:05] "PATCH /lijizhanshe/api/configurations/PROJECT HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:05] "GET /lijizhanshe/api/production/files/bfc7f95412ad54e7e097ba4e1fad11a707259fe496dbe8a271a1befaef867c7e.wav HTTP/1.1" 206 -
+127.0.0.1 - - [10/Oct/2026 15:03:05] "GET /lijizhanshe/api/production/files/bfc7f95412ad54e7e097ba4e1fad11a707259fe496dbe8a271a1befaef867c7e.wav HTTP/1.1" 304 -
+ok
+test_root_bundle_and_invalid_configuration (test_deployment.DeploymentTest) ... ok
+test_acceptance_is_exact_and_concurrent_decisions_are_rejected (test_audiovisual.AudiovisualTest) ... ok
+test_design_revision_reordering_never_moves_materials (test_audiovisual.AudiovisualTest) ... ok
+test_group_acceptance_child_override_and_restore_have_one_order (test_audiovisual.AudiovisualTest) ... ok
+test_optional_and_unselected_routes_are_not_missing_inputs (test_audiovisual.AudiovisualTest) ... ok
+test_route_choice_participates_in_frozen_definition (test_audiovisual.AudiovisualTest) ... ok
+test_selected_cycle_blocks_readiness_but_not_draft_or_other_route (test_audiovisual.AudiovisualTest) ... ok
+test_source_scene_block_and_child_scope_rejected_atomically (test_audiovisual.AudiovisualTest) ... ok
+test_story_related_has_both_entity_and_av_evidence (test_audiovisual.AudiovisualTest) ... ok
+test_two_story_scenes_and_exact_composition_survive_child_revision (test_audiovisual.AudiovisualTest) ... ok
+test_unknown_custom_relation_remains_descriptive (test_audiovisual.AudiovisualTest) ... ok
+test_acceptance_is_exact_and_concurrent_decisions_are_rejected (test_edition_context.EditionContextTest) ... ok
+test_design_revision_reordering_never_moves_materials (test_edition_context.EditionContextTest) ... ok
+test_explicit_edition_wins_over_reused_child_and_scene_heads (test_edition_context.EditionContextTest) ... ok
+test_group_acceptance_child_override_and_restore_have_one_order (test_edition_context.EditionContextTest) ... ok
+test_moved_shot_uses_target_parent_and_old_scene_is_rejected (test_edition_context.EditionContextTest) ... ok
+test_optional_and_unselected_routes_are_not_missing_inputs (test_edition_context.EditionContextTest) ... ok
+test_route_choice_participates_in_frozen_definition (test_edition_context.EditionContextTest) ... ok
+test_selected_cycle_blocks_readiness_but_not_draft_or_other_route (test_edition_context.EditionContextTest) ... ok
+test_source_scene_block_and_child_scope_rejected_atomically (test_edition_context.EditionContextTest) ... ok
+test_story_related_has_both_entity_and_av_evidence (test_edition_context.EditionContextTest) ... ok
+test_two_story_scenes_and_exact_composition_survive_child_revision (test_edition_context.EditionContextTest) ... ok
+test_unknown_custom_relation_remains_descriptive (test_edition_context.EditionContextTest) ... ok
+test_candidate_and_comment_numbers_survive_metadata_edits_and_restore (test_entity_material_integrity.EntityMaterialIntegrityTest) ... ok
+test_cleanup_preview_is_atomic_idempotent_and_preserves_comment_quotes_and_facts (test_entity_material_integrity.EntityMaterialIntegrityTest) ... ok
+test_codes_preserve_exact_scopes_and_survive_restore_and_append (test_entity_material_integrity.EntityMaterialIntegrityTest) ... ok
+test_future_writes_keep_only_latest_explanation_and_export_rejects_tampered_facts (test_entity_material_integrity.EntityMaterialIntegrityTest) ... ok
+test_head_or_comment_conflict_stops_without_partial_removal (test_entity_material_integrity.EntityMaterialIntegrityTest) ... ok
+test_relation_exact_route_is_available_without_adding_it_to_entity_list (test_entity_material_integrity.EntityMaterialIntegrityTest) ... ok
+test_retained_state_and_shared_media_context_does_not_expand_acceptance (test_entity_material_integrity.EntityMaterialIntegrityTest) ... ok
+test_concurrent_writer_does_not_mix_heads_and_next_read_observes_it (test_entity_read_scope.EntityReadScopeTest) ... ok
+test_entity_state_plan_asset_relation_comment_decision_import_and_history_are_fresh (test_entity_read_scope.EntityReadScopeTest) ... ok
+test_failure_clears_cache_and_does_not_rollback_callers_transaction (test_entity_read_scope.EntityReadScopeTest) ... ok
+test_acceptance_allows_comments_and_new_candidate_does_not_inherit_it (test_entity_review.EntityReviewTest) ... ok
+test_bundle_restores_historical_acceptance_and_cli_reads_same_aggregate (test_entity_review.EntityReviewTest) ... ok
+test_current_content_needs_no_workflow_and_query_is_read_only (test_entity_review.EntityReviewTest) ... ok
+test_legacy_records_and_historical_comments_do_not_gate_current_content (test_entity_review.EntityReviewTest) ... ok
+test_note_comments_bind_exact_entity_and_state_fields_and_survive_restore (test_entity_review.EntityReviewTest) ... ok
+test_note_projection_preserves_original_blocks_and_avoids_id_collisions (test_entity_review.EntityReviewTest) ... ok
+test_production_recovery_is_empty_only_and_preserves_old_acceptance (test_entity_review.EntityReviewTest) ... ok
+test_related_candidates_visible_without_inventing_state_coverage (test_entity_review.EntityReviewTest) ... ok
+test_stale_collection_identity_media_and_forgery_reject_atomically (test_entity_review.EntityReviewTest) ... ok
+test_state_revision_update_does_not_transfer_media_or_acceptance (test_entity_review.EntityReviewTest) ... ok
+test_switchable_originals_keep_exact_historical_state_names_outside_acceptance_scope (test_entity_review.EntityReviewTest) ... ok
+test_unmapped_component_stays_separate_from_explicit_state_coverage (test_entity_review.EntityReviewTest) ... ok
+test_budget_persists_and_counts_uncertain_attempts (test_external_budget.ExternalBudgetTest) ... ok
+test_daily_limit_survives_reopening_and_rolls_over_only_on_next_day (test_external_budget.ExternalBudgetTest) ... ok
+test_experience_without_authorized_limit_fails_closed (test_external_budget.ExternalBudgetTest) ... ok
+test_parallel_calls_cannot_exceed_the_daily_limit (test_external_budget.ExternalBudgetTest) ... ok
+test_upload_save_conflict_missing_and_mime (test_favicon.FaviconHTTPTests) ... 127.0.0.1 - - [10/Oct/2026 15:03:12] "POST /api/favicon HTTP/1.1" 201 -
+127.0.0.1 - - [10/Oct/2026 15:03:12] "PATCH /api/configurations/SYSTEM HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:12] "GET /api/configurations HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:12] "GET /assets/favicon-0e77cd07fe2e2b33aebddfc080c15295d1c20e7e8e2d1b76b3e5a11c533573b6.svg?v=0e77cd07fe2e2b33aebddfc080c15295d1c20e7e8e2d1b76b3e5a11c533573b6 HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:12] "GET /favicon.ico?v=old HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:12] "PATCH /api/configurations/SYSTEM HTTP/1.1" 409 -
+127.0.0.1 - - [10/Oct/2026 15:03:12] "POST /api/favicon HTTP/1.1" 400 -
+127.0.0.1 - - [10/Oct/2026 15:03:12] "GET /favicon.ico HTTP/1.1" 503 -
+127.0.0.1 - - [10/Oct/2026 15:03:12] "GET /api/configurations HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:12] "GET /default-favicon.svg?v=b58aa2423929b1970c03192b4b767f40724602096ba7eecdca496db74a4c2b99 HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:12] "GET /api/sources HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:12] "PATCH /api/configurations/SYSTEM HTTP/1.1" 400 -
+127.0.0.1 - - [10/Oct/2026 15:03:12] "PATCH /api/configurations/SYSTEM HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:12] "GET /api/configurations HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:12] "GET /default-favicon.svg?v=b58aa2423929b1970c03192b4b767f40724602096ba7eecdca496db74a4c2b99 HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:12] "GET /favicon.ico HTTP/1.1" 200 -
+ok
+test_bad_references_and_upload_leave_configuration_unchanged (test_favicon.FaviconTests) ... ok
+test_export_restore_checksum_and_manifest_membership (test_favicon.FaviconTests) ... ok
+test_migration_default_and_versioned_persistence (test_favicon.FaviconTests) ... ok
+test_png_ico_and_corruption (test_favicon.FaviconTests) ... ok
+test_content_changed_after_size_check_still_requires_image_validation (test_favicon_limits.FaviconLimitsTest) ... ok
+test_disappearing_file_does_not_break_other_choices (test_favicon_limits.FaviconLimitsTest) ... ok
+test_exact_size_limit_accepts_valid_content_with_a_bounded_read (test_favicon_limits.FaviconLimitsTest) ... ok
+test_file_growth_after_size_check_is_bounded_and_rejected (test_favicon_limits.FaviconLimitsTest) ... ok
+test_oversized_regular_file_is_rejected_without_reading_content (test_favicon_limits.FaviconLimitsTest) ... ok
+test_valid_existing_names_upload_and_invalid_paths_keep_their_semantics (test_favicon_limits.FaviconLimitsTest) ... ok
+test_accept_revoke_reaccept_and_comments_do_not_depend_on_candidates (test_generation.GenerationTest) ... ok
+test_adoption_does_not_select_a_plan_input_and_changes_require_acceptance (test_generation.GenerationTest) ... ok
+test_candidate_association_is_not_generation_or_adoption (test_generation.GenerationTest) ... ok
+test_changes_reject_stale_acceptance_atomically_and_require_every_plan (test_generation.GenerationTest) ... ok
+test_exact_plan_comments_cli_and_recovery (test_generation.GenerationTest) ... ok
+test_execution_call_checks_current_decision_and_exact_inputs (test_generation.GenerationTest) ... ok
+test_single_state_plan_and_entity_permit_are_alternative_exact_paths (test_generation.GenerationTest) ... ok
+test_withdrawn_state_leaves_current_scope_but_preserves_accepted_history (test_generation.GenerationTest) ... ok
+test_audiovisual_shots_do_not_continue_legacy_shot_sequence (test_global_codes.GlobalCodesTest) ... ok
+test_episode_and_scene_numbers_are_unique_within_each_complete_edition (test_global_codes.GlobalCodesTest) ... ok
+test_removed_prefixes_remain_hidden_tombstones_and_vc_stay_local (test_global_codes.GlobalCodesTest) ... ok
+test_repeated_local_numbers_and_reordering_keep_distinct_exact_identities (test_global_codes.GlobalCodesTest) ... ok
+test_unbound_episodes_do_not_get_cross_version_global_numbers (test_global_codes.GlobalCodesTest) ... ok
+test_breakdown_reads_only_list_metadata_but_keeps_exact_card_and_counts (test_grouped_management.GroupedManagementTest) ... ok
+test_candidates_and_metadata_revisions_do_not_inflate_material_counts (test_grouped_management.GroupedManagementTest) ... ok
+test_card_reader_preserves_the_requested_exact_requirement_and_its_plan (test_grouped_management.GroupedManagementTest) ... ok
+test_compact_list_preserves_membership_filters_groups_and_card_information (test_grouped_management.GroupedManagementTest) ... ok
+test_cross_scene_duplicates_use_group_and_material_identity (test_grouped_management.GroupedManagementTest) ... ok
+test_current_acceptance_filter_tracks_content_changes_and_cancellation (test_grouped_management.GroupedManagementTest) ... ok
+test_explicit_owner_preserves_target_and_rejects_unrelated_object (test_grouped_management.GroupedManagementTest) ... ok
+test_facets_keep_other_filters_and_categories_remain_present_at_zero_results (test_grouped_management.GroupedManagementTest) ... ok
+test_generated_history_does_not_promote_the_empty_current_plan (test_grouped_management.GroupedManagementTest) ... ok
+test_grouped_api_keeps_material_counts_and_source_evidence (test_grouped_management.GroupedManagementTest) ... ok
+test_numbered_management_episodes_do_not_depend_on_active_input_lock (test_grouped_management.GroupedManagementTest) ... ok
+test_scene_fallback_keeps_exact_scope_and_rejects_placeholder_or_preview_as_results (test_grouped_management.GroupedManagementTest) ... ok
+test_scene_history_summary_preserves_its_exact_link_and_empty_current_plan (test_grouped_management.GroupedManagementTest) ... ok
+test_shared_requirement_history_is_independent_of_alias_name_order (test_grouped_management.GroupedManagementTest) ... ok
+test_state_count_and_stale_adoption_follow_current_reader (test_grouped_management.GroupedManagementTest) ... ok
+test_unassigned_historical_asset_counts_under_its_explicit_entity_subject (test_grouped_management.GroupedManagementTest) ... ok
+test_breakdown_reads_only_list_metadata_but_keeps_exact_card_and_counts (test_ui_projection.UiProjectionTest) ... ok
+test_candidates_and_metadata_revisions_do_not_inflate_material_counts (test_ui_projection.UiProjectionTest) ... ok
+test_card_reader_preserves_the_requested_exact_requirement_and_its_plan (test_ui_projection.UiProjectionTest) ... ok
+test_current_acceptance_filter_tracks_content_changes_and_cancellation (test_ui_projection.UiProjectionTest) ... ok
+test_facets_keep_other_filters_and_categories_remain_present_at_zero_results (test_ui_projection.UiProjectionTest) ... ok
+test_generated_history_does_not_promote_the_empty_current_plan (test_ui_projection.UiProjectionTest) ... ok
+test_scene_fallback_keeps_exact_scope_and_rejects_placeholder_or_preview_as_results (test_ui_projection.UiProjectionTest) ... ok
+test_scene_history_summary_preserves_its_exact_link_and_empty_current_plan (test_ui_projection.UiProjectionTest) ... ok
+test_shared_requirement_history_is_independent_of_alias_name_order (test_ui_projection.UiProjectionTest) ... ok
+test_unassigned_historical_asset_counts_under_its_explicit_entity_subject (test_ui_projection.UiProjectionTest) ... ok
+test_mixed_seedance_labels_and_missing_or_phantom_reference (test_input_contracts.InputContractsTest) ... ok
+test_multi_image_order_natural_language_and_no_magic_alias (test_input_contracts.InputContractsTest) ... ok
+test_pending_plan_checks_size_type_and_phantom_slots_without_media (test_input_contracts.InputContractsTest) ... ok
+test_seed_audio_order_limits_unknown_model_and_text_only (test_input_contracts.InputContractsTest) ... ok
+test_chunk_boundaries_unicode_and_layout (test_material_content_stream.ContentStreamTest) ... ok
+test_truncation_extra_data_and_invalid_envelope (test_material_content_stream.ContentStreamTest) ... ok
+test_archive_container_reads_from_live_db_before_export_graph (test_material_model.MaterialModelTest) ... ok
+test_conflict_preserves_all_tables_and_files (test_material_model.MaterialModelTest) ... ok
+test_constructor_failure_cleans_feature_triggers_before_old_runtime (test_material_model.MaterialModelTest) ... ok
+test_expand_failed_parent_is_not_cached_and_preserves_callers_visiting_set (test_material_model.MaterialModelTest) ... ok
+test_expand_recipe_and_inline_values_return_independent_mutable_trees (test_material_model.MaterialModelTest) ... ok
+test_expand_repeated_children_are_independent_at_every_returned_position (test_material_model.MaterialModelTest) ... ok
+test_export_archive_readers_release_graph_without_waiting_for_gc (test_material_model.MaterialModelTest) ... ok
+test_failed_hydration_is_not_cached_and_scope_cleanup_allows_retry (test_material_model.MaterialModelTest) ... ok
+test_large_schema6_restore_reads_metadata_on_own_spilled_transaction (test_material_model.MaterialModelTest) ... ok
+test_legacy_recovery_refuses_concurrent_encoded_material_without_partial_inverse (test_material_model.MaterialModelTest) ... ok
+test_migration_defer_archive_and_rollback_preserve_unrelated_comment (test_material_model.MaterialModelTest) ... ok
+test_nested_json_archive_and_catalog_survive_empty_restore (test_material_model.MaterialModelTest) ... ok
+test_original_json_layout_and_checksum_survive_physical_encoding (test_material_model.MaterialModelTest) ... ok
+test_package_has_only_content_keys_and_load_checks_graph (test_material_model.MaterialModelTest) ... ok
+test_raw_legacy_rollback_removes_only_feature_triggers (test_material_model.MaterialModelTest) ... ok
+test_read_scope_keeps_envelopes_original_layouts_and_custom_resolvers_distinct (test_material_model.MaterialModelTest) ... ok
+test_read_scope_reuses_hydrated_text_with_independent_record_projections (test_material_model.MaterialModelTest) ... ok
+test_schema6_missing_definition_rolls_back_empty_restore (test_material_model.MaterialModelTest) ... ok
+test_comments_never_create_versions_and_wrong_anchor_rolls_back (test_material_plans.PlanVersionsTest) ... ok
+test_draft_edits_then_frozen_scheme_changes (test_material_plans.PlanVersionsTest) ... ok
+test_failed_unknown_calls_freeze_scheme_and_do_not_create_results (test_material_plans.PlanVersionsTest) ... ok
+test_outputs_of_one_call_do_not_inherit_each_others_uses (test_material_plans.PlanVersionsTest) ... ok
+test_random_strategy_and_exact_reference_signatures (test_material_plans.PlanVersionsTest) ... ok
+test_same_scheme_multiple_calls_and_association_updates_are_one_version (test_material_plans.PlanVersionsTest) ... ok
+test_schema5_roundtrip_and_migration_is_idempotent (test_material_plans.PlanVersionsTest) ... ok
+test_changed_relationship_invalidates_generation_but_keeps_cancel_and_media_adoption (test_material_relationships.MaterialRelationshipsTest) ... ok
+test_invalid_relationship_reference_is_rejected (test_material_relationships.MaterialRelationshipsTest) ... ok
+test_legacy_acceptance_can_be_cancelled_without_a_complete_plan_and_never_reappears (test_material_relationships.MaterialRelationshipsTest) ... ok
+test_legacy_content_cycle_has_no_generation_permission_and_rejects_changed_scope (test_material_relationships.MaterialRelationshipsTest) ... ok
+test_material_provenance_stays_on_exact_call_and_fields_are_commentable (test_material_relationships.MaterialRelationshipsTest) ... ok
+test_media_keeps_its_requirement_round_when_the_plan_is_no_longer_in_current_preparation (test_material_relationships.MaterialRelationshipsTest) ... ok
+test_relationship_revision_preserves_the_original_comment_and_evidence_after_restore (test_material_relationships.MaterialRelationshipsTest) ... ok
+test_asset_entry_keeps_each_round_candidate_actual_call_context (test_material_versions.MaterialVersionsTest) ... ok
+test_comments_on_carried_plan_remain_scoped_to_selected_round (test_material_versions.MaterialVersionsTest) ... ok
+test_concurrent_first_feedback_creates_one_round_without_orphans (test_material_versions.MaterialVersionsTest) ... ok
+test_delayed_first_submission_uses_active_round_and_input_history_is_frozen (test_material_versions.MaterialVersionsTest) ... ok
+test_failed_batch_and_validate_only_do_not_create_round_members (test_material_versions.MaterialVersionsTest) ... ok
+test_invalid_round_recovery_rolls_back_all_destination_rows (test_material_versions.MaterialVersionsTest) ... ok
+test_migration_guard_idempotence_and_export_recovery (test_material_versions.MaterialVersionsTest) ... ok
+test_round_lifecycle_metadata_and_exact_history (test_material_versions.MaterialVersionsTest) ... ok
+test_shared_result_reads_original_round_and_comments_on_other_entity_without_expanding_acceptance (test_material_versions.MaterialVersionsTest) ... ok
+test_stale_feedback_rolls_back_comment_and_event_and_retry_is_idempotent (test_material_versions.MaterialVersionsTest) ... ok
+test_workspace_keeps_entity_revision_options_separate_from_rounds (test_material_versions.MaterialVersionsTest) ... ok
+test_full_json_values_and_exact_number_text_round_trip_both_editors (test_method_conditions_api.MethodConditionsApiTest) ... 127.0.0.1 - - [10/Oct/2026 15:03:27] "POST /api/methods/save HTTP/1.1" 201 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "POST /api/methods/save HTTP/1.1" 201 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "POST /api/methods/save HTTP/1.1" 201 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "GET /api/methods HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "POST /api/methods/save HTTP/1.1" 201 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "POST /api/methods/save HTTP/1.1" 201 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "GET /api/methods/resolve?work_type=audiovisual-design&conditions=%7B%22true%22%3A+true%2C+%22false%22%3A+false%2C+%22literal-true%22%3A+%22true%22%2C+%22literal-false%22%3A+%22false%22%2C+%22number%22%3A+9007199254740993%2C+%22float%22%3A+1.25%2C+%22null%22%3A+null%2C+%22array%22%3A+%5Btrue%2C+%22x%2Cy%3Dz%22%2C+null%2C+2%5D%2C+%22object%22%3A+%7B%22nested%22%3A+%5Bfalse%2C+3%5D%7D%2C+%22__proto__%22%3A+%22data%22%2C+%22text%22%3A+%22comma%2C+equals%3D%5Cuff0cquotes%5C%22%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "POST /api/methods/save HTTP/1.1" 201 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "POST /api/methods/save HTTP/1.1" 201 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "GET /api/methods/resolve?work_type=audiovisual-design&conditions=%7B%22need_staging%22%3A+false%2C+%22literal%22%3A+%22false%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "GET /api/methods/resolve?work_type=audiovisual-design&conditions=%7B%22need_staging%22%3A%22false%22%2C%22literal%22%3A%22false%22%7D HTTP/1.1" 400 -
+ok
+test_mixed_invalid_inputs_append_nothing_and_leave_bindings_unchanged (test_method_conditions_api.MethodConditionsApiTest) ... 127.0.0.1 - - [10/Oct/2026 15:03:27] "POST /api/methods/save HTTP/1.1" 201 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "POST /api/methods/save HTTP/1.1" 201 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "POST /api/methods/save HTTP/1.1" 201 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "GET /api/methods HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "POST /api/methods/save HTTP/1.1" 400 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "POST /api/methods/save HTTP/1.1" 400 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "GET /api/methods HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "POST /api/methods/save HTTP/1.1" 400 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "POST /api/methods/save HTTP/1.1" 400 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "GET /api/methods HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "POST /api/methods/save HTTP/1.1" 400 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "POST /api/methods/save HTTP/1.1" 400 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "GET /api/methods HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "POST /api/methods/save HTTP/1.1" 400 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "POST /api/methods/save HTTP/1.1" 400 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "GET /api/methods HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "POST /api/methods/save HTTP/1.1" 400 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "POST /api/methods/save HTTP/1.1" 400 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "GET /api/methods HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "POST /api/methods/save HTTP/1.1" 400 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "POST /api/methods/save HTTP/1.1" 400 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "GET /api/methods HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "POST /api/methods/save HTTP/1.1" 400 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "POST /api/methods/save HTTP/1.1" 400 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "GET /api/methods HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "POST /api/methods/save HTTP/1.1" 400 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "POST /api/methods/save HTTP/1.1" 400 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "GET /api/methods HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "POST /api/methods/save HTTP/1.1" 400 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "POST /api/methods/save HTTP/1.1" 400 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "GET /api/methods HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "POST /api/methods/save HTTP/1.1" 400 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "POST /api/methods/save HTTP/1.1" 400 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "GET /api/methods HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "POST /api/methods/save HTTP/1.1" 400 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "POST /api/methods/save HTTP/1.1" 400 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "GET /api/methods HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "POST /api/methods/save HTTP/1.1" 400 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "GET /api/methods HTTP/1.1" 200 -
+ok
+test_old_execution_stays_exact_and_media_string_branches_still_select (test_method_conditions_api.MethodConditionsApiTest) ... 127.0.0.1 - - [10/Oct/2026 15:03:27] "POST /api/methods/save HTTP/1.1" 201 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "POST /api/methods/save HTTP/1.1" 201 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "POST /api/methods/save HTTP/1.1" 201 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "POST /api/methods/prepare HTTP/1.1" 201 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "POST /api/methods/save HTTP/1.1" 201 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "POST /api/methods/save HTTP/1.1" 201 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "POST /api/methods/prepare HTTP/1.1" 201 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "POST /api/methods/prepare HTTP/1.1" 201 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "GET /api/methods/resolve?work_type=audiovisual-design&conditions=%7B%22need_staging%22%3A+%22true%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "POST /api/methods/save HTTP/1.1" 201 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "POST /api/methods/save HTTP/1.1" 201 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "POST /api/methods/save HTTP/1.1" 201 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "POST /api/methods/save HTTP/1.1" 201 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "POST /api/methods/save HTTP/1.1" 201 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "GET /api/methods/resolve?work_type=media-plan&conditions=%7B%22media_type%22%3A+%22image%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "GET /api/methods/resolve?work_type=media-plan&conditions=%7B%22media_type%22%3A+%22audio%22%7D HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:27] "GET /api/methods/resolve?work_type=media-plan&conditions=%7B%22media_type%22%3A+%22video%22%7D HTTP/1.1" 200 -
+ok
+test_clear_historic_range (test_method_media.ActivatedReferenceTest) ... ok
+test_exact_call_reference_selection (test_method_media.ActivatedReferenceTest) ... ok
+test_reference_conflict (test_method_media.ActivatedReferenceTest) ... ok
+test_reference_export_recovery (test_method_media.ActivatedReferenceTest) ... ok
+test_reference_receipt_cannot_author_a_prompt (test_method_media.ActivatedReferenceTest) ... ok
+test_reference_selection (test_method_media.ActivatedReferenceTest) ... ok
+test_route_choice_remains_exact_without_claiming_new_authorship (test_method_media.ActivatedReferenceTest) ... ok
+test_withdrawal_preserves_authorship_and_cannot_rewrite_plan (test_method_media.ActivatedReferenceTest) ... ok
+test_cutover_uses_exact_frozen_plans_and_enforces_new_artifacts (test_method_media.MediaMethodTest) ... ok
+test_prepare_rejects_source_content_drift (test_method_media.MediaMethodTest) ... ok
+test_supporting_inputs_freeze_exact_docs_and_validate_outer_references (test_method_media.MediaMethodTest) ... ok
+test_condition_specificity_and_ambiguity (test_methods.MethodsTest) ... ok
+test_conflict_does_not_overwrite_and_missing_chapter_is_rejected (test_methods.MethodsTest) ... ok
+test_delivered_instructions_include_required_package_files (test_methods.MethodsTest) ... ok
+test_private_work_is_portable_but_not_public (test_methods.MethodsTest) ... ok
+test_registry_conflict_rolls_back_and_markdown_has_one_writer (test_methods.MethodsTest) ... ok
+test_restore_rejects_missing_lineage_even_with_recomputed_package_hash (test_methods.MethodsTest) ... ok
+test_resume_rejects_damaged_original_resource (test_methods.MethodsTest) ... ok
+test_schema_unchanged_and_bundle_preserves_history (test_methods.MethodsTest) ... ok
+test_snapshot_survives_method_update_and_new_work_uses_explicit_selection (test_methods.MethodsTest) ... ok
+test_source_companions_preserve_links_export_restore_and_old_snapshot (test_methods.MethodsTest) ... ok
+test_stages_are_ordered_immutable_and_generic_writer_cannot_forge (test_methods.MethodsTest) ... ok
+test_wrong_target_run_work_or_inputs_cannot_reuse_receipt (test_methods.MethodsTest) ... ok
+test_direct_shot_code_and_action_respect_filter_intersection (test_navigation_projection.NavigationProjectionTest) ... ok
+test_exact_historical_card_has_full_design_and_only_its_materials (test_navigation_projection.NavigationProjectionTest) ... ok
+test_entity_search_includes_own_aliases_and_states (test_navigation_search.NavigationSearchTest) ... ok
+test_fields_exclude_internal_json_and_generation_prompts (test_navigation_search.NavigationSearchTest) ... ok
+test_material_search_follows_exact_direct_owner_only (test_navigation_search.NavigationSearchTest) ... ok
+test_normalized_identity_and_chinese_content (test_navigation_search.NavigationSearchTest) ... ok
+test_state_explanation_is_not_a_source_shot_action (test_navigation_search.NavigationSearchTest) ... ok
+test_historical_call_input_failure_is_reported_even_when_current_adopted_rows_are_valid (test_package_readiness.PackageReadinessTest) ... ok
+test_http_and_cli_share_availability_failure_and_exact_success_manifest (test_package_readiness.PackageReadinessTest) ... 127.0.0.1 - - [10/Oct/2026 15:03:34] "GET /api/production/readiness?scope=songbook HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:34] "GET /api/production/readiness?scope=songbook HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:34] "GET /api/production/package?scope=songbook HTTP/1.1" 400 -
+127.0.0.1 - - [10/Oct/2026 15:03:34] "GET /api/production/package?scope=songbook HTTP/1.1" 200 -
+ok
+test_missing_and_same_size_corrupt_optional_block_package_without_recounting_or_history_changes (test_package_readiness.PackageReadinessTest) ... ok
+test_one_check_hashes_reused_components_once_and_later_download_rechecks (test_package_readiness.PackageReadinessTest) ... ok
+test_optional_quality_warning_remains_packable_and_selected_original_is_included (test_package_readiness.PackageReadinessTest) ... ok
+test_request_cache_rejects_changes_during_dependency_validation_and_checks_metadata (test_package_readiness.PackageReadinessTest) ... ok
+test_required_counts_and_unselected_optional_keep_the_existing_contract (test_package_readiness.PackageReadinessTest) ... ok
+test_comparison_requires_a_named_version_and_carries_its_boundary (test_polish_context.FocusedContextTest) ... ok
+test_exact_preview_is_the_model_input_and_configuration_change_invalidates_it (test_polish_context.FocusedContextTest) ... ok
+test_late_long_selection_is_never_replaced_with_the_document_opening (test_polish_context.FocusedContextTest) ... ok
+test_overall_opinion_selects_relevant_structure_text_without_word_alignment_bias (test_polish_context.FocusedContextTest) ... ok
+test_plain_opinion_is_grounded_only_in_the_exact_target (test_polish_context.FocusedContextTest) ... ok
+test_serialized_total_counts_identity_metadata_and_escaped_text (test_polish_context.FocusedContextTest) ... ok
+test_source_metadata_and_requested_background_cannot_escape_the_budget (test_polish_context.FocusedContextTest) ... ok
+test_changed_context_digest_never_reaches_the_model_stub (test_polish_revision_http.PolishRevisionHTTPTest) ... ok
+test_current_revision_and_legacy_omitted_revision_preserve_context_and_stub_contract (test_polish_revision_http.PolishRevisionHTTPTest) ... ok
+test_explicit_stale_other_empty_or_unknown_revision_cannot_use_the_current_head (test_polish_revision_http.PolishRevisionHTTPTest) ... ok
+test_actual_image_inputs_cannot_be_omitted_to_reset_lineage (test_production.ProductionTest) ... ok
+test_atomic_validation_aliases_exact_sources_and_state_coexistence (test_production.ProductionTest) ... ok
+test_batch_refs_and_concurrent_writers (test_production.ProductionTest) ... ok
+test_completed_call_cannot_claim_an_unrelated_output (test_production.ProductionTest) ... ok
+test_evidence_version_follows_the_cited_episode_instead_of_the_latest_script (test_production.ProductionTest) ... ok
+test_file_tampering_and_unknown_image_ancestry_are_rejected (test_production.ProductionTest) ... ok
+test_native_resolution_needs_actual_pixels_and_provenance (test_production.ProductionTest) ... ok
+test_one_asset_multiple_scopes_and_change_requires_review (test_production.ProductionTest) ... ok
+test_optional_slots_and_wrong_original_type_are_not_ready (test_production.ProductionTest) ... ok
+test_passed_is_not_adopted_and_new_candidate_does_not_replace (test_production.ProductionTest) ... ok
+test_reviewed_state_rename_keeps_exact_inputs_and_expires_on_later_change (test_production.ProductionTest) ... ok
+test_revision_history_is_retained_without_false_change_alarm (test_production.ProductionTest) ... ok
+test_selected_asset_must_cover_required_identity_and_state (test_production.ProductionTest) ... ok
+test_source_excerpt_preserves_historical_text_and_anchor (test_production.ProductionTest) ... ok
+test_state_rename_review_cannot_exempt_content_changes_or_wrong_target (test_production.ProductionTest) ... ok
+test_time_comments_exact_components_ranges_and_restore (test_production.ProductionTest) ... ok
+test_file_range_batch_conflict_exact_source_and_time_comment (test_production_api.ProductionApiTest) ... 127.0.0.1 - - [10/Oct/2026 15:03:38] "PUT /api/production/files/voice.wav HTTP/1.1" 201 -
+127.0.0.1 - - [10/Oct/2026 15:03:38] "POST /api/production/import HTTP/1.1" 201 -
+127.0.0.1 - - [10/Oct/2026 15:03:38] "GET /api/production/files/0a8f76d89c709043814cb74f331a4578d17ff61256303bd0019a263d053f86e8.wav HTTP/1.1" 206 -
+127.0.0.1 - - [10/Oct/2026 15:03:38] "GET /api/production/source?object_id=episode&revision_id=e61098a46c6dbb0014e70f9f0a024c9914664b576ad6bca1910cde5e31d5e688&scene_id=s1&block_ids=a HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:38] "POST /api/comments HTTP/1.1" 201 -
+127.0.0.1 - - [10/Oct/2026 15:03:38] "POST /api/production/import HTTP/1.1" 409 -
+127.0.0.1 - - [10/Oct/2026 15:03:38] "GET /api/production?object_id=voice HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:38] "GET /api/production/readiness?scope=voice HTTP/1.1" 200 -
+ok
+test_new_production_routes_do_not_shadow_story_structure_reader (test_production_api.ProductionApiTest) ... 127.0.0.1 - - [10/Oct/2026 15:03:38] "GET /api/story-structure HTTP/1.1" 200 -
+ok
+test_applicability_is_neither_occurrence_nor_actual_input (test_production_breakdown.BreakdownTest) ... ok
+test_exact_historical_context_survives_a_new_shot (test_production_breakdown.BreakdownTest) ... ok
+test_historical_chain_does_not_follow_current_input_lock (test_production_breakdown.BreakdownTest) ... ok
+test_occurrence_does_not_imply_material_use_and_source_validation_is_atomic (test_production_breakdown.BreakdownTest) ... ok
+test_scene_requires_design_text_and_preserves_exact_children (test_production_breakdown.BreakdownTest) ... ok
+test_existing_change_key_cannot_be_removed_or_retargeted (test_production_change_decisions.ChangeDecisionTest) ... ok
+test_first_create_is_unique_across_two_real_connections (test_production_change_decisions.ChangeDecisionTest) ... ok
+test_keep_can_be_revised_to_rework_with_same_id_and_immutable_history (test_production_change_decisions.ChangeDecisionTest) ... ok
+test_legacy_and_consolidated_history_round_trip_without_dropping_records (test_production_change_decisions.ChangeDecisionTest) ... ok
+test_legacy_conflicting_records_require_all_exact_heads_then_remain_history (test_production_change_decisions.ChangeDecisionTest) ... ok
+test_legacy_equal_actions_also_need_explicit_consolidation (test_production_change_decisions.ChangeDecisionTest) ... ok
+test_missing_version_and_same_batch_duplicates_leave_no_partial_data (test_production_change_decisions.ChangeDecisionTest) ... ok
+test_readiness_exposes_kept_review_for_revision_without_adding_pending_issue (test_production_change_decisions.ChangeDecisionTest) ... ok
+test_resolution_cannot_borrow_a_different_target_pair_or_stale_head (test_production_change_decisions.ChangeDecisionTest) ... ok
+test_baseline_drift_refuses_entire_transaction (test_production_cutover.CutoverTest) ... ok
+test_old_shot_identity_and_number_are_physically_removed (test_production_cutover.CutoverTest) ... ok
+test_readonly_plan_faults_commit_interruption_and_retry (test_production_cutover.CutoverTest) ... ok
+test_result_comparison_ignores_only_new_creation_times (test_production_cutover.CutoverTest) ... ok
+test_empty_explicit_value_and_unrelated_notes_are_not_descriptions (test_production_description.ProductionDescriptionTest) ... ok
+test_legacy_description_and_dimensions_do_not_require_duplicate_field (test_production_description.ProductionDescriptionTest) ... ok
+test_optional_review_cannot_replace_required_generation_state (test_production_description.ProductionDescriptionTest) ... ok
+test_old_and_current_names_are_exact_and_deduplicated_without_payload_or_export_changes (test_production_reference_names.ProductionReferenceNamesTest) ... ok
+test_same_title_different_objects_and_revisions_do_not_collapse_identity (test_production_reference_names.ProductionReferenceNamesTest) ... ok
+test_source_document_and_old_episode_names_preserve_exact_reference_paths (test_production_reference_names.ProductionReferenceNamesTest) ... ok
+test_empty_catalog_and_unassigned_search_remain_available_without_write (test_production_scope.ProductionScopeTest) ... ok
+test_exact_old_episode_keeps_old_children_after_new_design_and_scope (test_production_scope.ProductionScopeTest) ... ok
+test_explicit_voice_and_continuity_entities_survive_without_picture_presence (test_production_scope.ProductionScopeTest) ... ok
+test_shared_concrete_input_keeps_identity_global_alternative_stays_unassigned (test_production_scope.ProductionScopeTest) ... ok
+test_split_and_cross_source_never_invert_sources_or_expand_siblings (test_production_scope.ProductionScopeTest) ... ok
+test_actual_call_is_mapped_only_by_its_own_revision_and_text (test_prompt_reading.PromptReadingTest) ... ok
+test_excerpt_and_comment_range_are_the_original_unicode_prompt (test_prompt_reading.PromptReadingTest) ... ok
+test_invalid_or_overlapping_ranges_never_hide_full_text (test_prompt_reading.PromptReadingTest) ... ok
+test_new_head_cannot_receive_an_old_reading (test_prompt_reading.PromptReadingTest) ... ok
+test_wrong_text_owner_or_scope_fails_without_replacing_the_prompt (test_prompt_reading.PromptReadingTest) ... ok
+test_capacity_corruption_and_expired_filler (test_read_cache.CacheTest) ... ok
+test_clear_reaches_live_connections_and_failed_cache_rebuilds (test_read_cache.CacheTest) ... ok
+test_layout_change_invalidates_projection_without_database_write (test_read_cache.CacheTest) ... ok
+test_shared_process_lease_prevents_duplicate_fill (test_read_cache.CacheTest) ... ok
+test_transactional_invalidation_external_writer_rollback_and_restart (test_read_cache.CacheTest) ... ok
+test_transport_preserves_types_order_and_repeated_record_differences (test_read_cache.CacheTest) ... ok
+test_uncommitted_values_failures_and_instance_isolation (test_read_cache.CacheTest) ... ok
+test_concurrent_writer_does_not_mix_heads_and_next_read_observes_it (test_read_cache.CachedEntityReadScopeTest) ... ok
+test_entity_state_plan_asset_relation_comment_decision_import_and_history_are_fresh (test_read_cache.CachedEntityReadScopeTest) ... ok
+test_failure_clears_cache_and_does_not_rollback_callers_transaction (test_read_cache.CachedEntityReadScopeTest) ... ok
+test_accept_revoke_reaccept_and_comments_do_not_depend_on_candidates (test_read_cache.CachedGenerationTest) ... ok
+test_adoption_does_not_select_a_plan_input_and_changes_require_acceptance (test_read_cache.CachedGenerationTest) ... ok
+test_candidate_association_is_not_generation_or_adoption (test_read_cache.CachedGenerationTest) ... ok
+test_changes_reject_stale_acceptance_atomically_and_require_every_plan (test_read_cache.CachedGenerationTest) ... ok
+test_exact_plan_comments_cli_and_recovery (test_read_cache.CachedGenerationTest) ... ok
+test_execution_call_checks_current_decision_and_exact_inputs (test_read_cache.CachedGenerationTest) ... ok
+test_single_state_plan_and_entity_permit_are_alternative_exact_paths (test_read_cache.CachedGenerationTest) ... ok
+test_withdrawn_state_leaves_current_scope_but_preserves_accepted_history (test_read_cache.CachedGenerationTest) ... ok
+test_historical_call_uses_its_exact_prompt_annotations_after_new_draft (test_reference_paths.ReferencePathsTest) ... ok
+test_indirect_owner_is_exact_upstream_and_local_write_is_rejected (test_reference_paths.ReferencePathsTest) ... ok
+test_invalid_path_identity_or_span_is_rejected_before_revision_write (test_reference_paths.ReferencePathsTest) ... ok
+test_new_reference_does_not_choose_latest_and_version_only_save_is_local (test_reference_paths.ReferencePathsTest) ... ok
+test_repeated_unicode_names_bind_exact_material_and_do_not_change_model_prompt (test_reference_paths.ReferencePathsTest) ... ok
+test_restore_validates_selected_reference_with_its_exact_memberships (test_reference_paths.ReferencePathsTest) ... ok
+test_unselected_version_still_reports_totals_and_independent_candidate (test_reference_paths.ReferencePathsTest) ... ok
+test_current_master_exposes_old_reference_without_attributing_it_to_new_revision (test_reference_purpose.ReferencePurposeTest) ... ok
+test_historical_use_opinion_keeps_its_revision_text_and_anchor (test_reference_purpose.ReferencePurposeTest) ... ok
+test_old_plan_uses_exact_edge_and_does_not_borrow_later_comparisons (test_reference_purpose.ReferencePurposeTest) ... ok
+test_only_real_original_in_the_exact_downstream_plan_counts_as_result (test_reference_purpose.ReferencePurposeTest) ... ok
+test_deferred_release_delta_is_one_transaction_and_repeat_is_read_only (test_release_migration_transaction.ReleaseMigrationTransactionTest) ... ok
+test_delete_history_dry_run_and_comment_guard (test_requirement_cleanup.RequirementCleanupTest) ... ok
+test_description_state_still_checks_real_presentation (test_requirement_cleanup.RequirementCleanupTest) ... ok
+test_history_dependencies_and_atomic_rollback (test_requirement_cleanup.RequirementCleanupTest) ... ok
+test_layout_round_trip_does_not_change_acceptance (test_requirement_cleanup.RequirementCleanupTest) ... ok
+test_successful_removal_and_invalid_update_rolls_back (test_requirement_cleanup.RequirementCleanupTest) ... ok
+test_anchor_comment_lifecycle (test_review.ReviewTest) ... ok
+test_api_key_environment_name_not_secret (test_review.ReviewTest) ... ok
+test_configuration_and_ai_context (test_review.ReviewTest) ... ok
+test_export_restore_and_integrity (test_review.ReviewTest) ... ok
+test_external_performance_source (test_review.ReviewTest) ... ok
+test_legacy_comment_migration (test_review.ReviewTest) ... ok
+test_local_media_is_hashed_and_required_on_restore (test_review.ReviewTest) ... ok
+test_remove_sources_cleans_exclusive_records_and_rejects_external_dependency (test_review.ReviewTest) ... ok
+test_replace_source_metadata_preserves_text_and_restore (test_review.ReviewTest) ... ok
+test_story_refinement_group_is_supported (test_review.ReviewTest) ... ok
+test_changed_original_and_unaccounted_block_fail_closed (test_review_composition.ReviewCompositionTest) ... ok
+test_invalid_owner_range_or_disposition_cannot_show_partial_arrangement (test_review_composition.ReviewCompositionTest) ... ok
+test_other_revision_never_inherits_arrangement (test_review_composition.ReviewCompositionTest) ... ok
+test_unicode_original_offsets_and_companions_are_preserved (test_review_composition.ReviewCompositionTest) ... ok
+test_independent_opposing_opinions_are_not_collapsed_by_time (test_review_decisions.ReviewDecisionsTest) ... ok
+test_old_revision_and_another_candidate_do_not_inherit_approval (test_review_decisions.ReviewDecisionsTest) ... ok
+test_revising_one_opinion_preserves_history_without_resolving_another (test_review_decisions.ReviewDecisionsTest) ... ok
+test_bad_work_identity_or_scene_fails_instead_of_using_current (test_review_work.ReviewWorkTest) ... ok
+test_exact_old_scene_keeps_old_shot_without_mutating_or_granting_scope (test_review_work.ReviewWorkTest) ... ok
+test_comment_isolation_unicode_history_and_restore (test_screenplay.ScreenplayTest) ... ok
+test_directory_preserves_exact_links_and_scene_metadata_without_body_text (test_screenplay.ScreenplayTest) ... ok
+test_immutable_idempotent_and_atomic (test_screenplay.ScreenplayTest) ... ok
+test_invalid_contracts_do_not_write (test_screenplay.ScreenplayTest) ... ok
+test_polish_uses_exact_episode_and_original_basis_after_new_structure (test_screenplay.ScreenplayTest) ... ok
+test_invalid_or_duplicate_summaries_do_not_break_script_api (test_screenplay_summaries.ScreenplaySummariesTest) ... 127.0.0.1 - - [10/Oct/2026 15:03:47] "GET /api/screenplay-summaries HTTP/1.1" 503 -
+127.0.0.1 - - [10/Oct/2026 15:03:47] "GET /api/screenplays HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:47] "GET /api/screenplay-summaries HTTP/1.1" 503 -
+127.0.0.1 - - [10/Oct/2026 15:03:47] "GET /api/screenplays HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:47] "GET /api/screenplay-summaries HTTP/1.1" 503 -
+127.0.0.1 - - [10/Oct/2026 15:03:47] "GET /api/screenplays HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:47] "GET /api/screenplay-summaries HTTP/1.1" 503 -
+127.0.0.1 - - [10/Oct/2026 15:03:47] "GET /api/screenplays HTTP/1.1" 200 -
+ok
+test_optional_revision_bound_summaries_reload_without_ledger_changes (test_screenplay_summaries.ScreenplaySummariesTest) ... 127.0.0.1 - - [10/Oct/2026 15:03:47] "GET /api/screenplay-summaries HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:47] "GET /api/screenplay-summaries HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:47] "GET /api/screenplay-summaries HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:47] "GET /api/screenplays HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:47] "GET /api/comments HTTP/1.1" 200 -
+ok
+test_another_connection_conflicts_without_partial_changes (test_shot_references.ShotReferenceTest) ... ok
+test_catalog_comment_identities_match_complete_versions_after_reference_write (test_shot_references.ShotReferenceTest) ... ok
+test_clearing_range_on_frozen_plan_does_not_restore_old_bounds (test_shot_references.ShotReferenceTest) ... ok
+test_draft_same_signature_selection_metadata_uses_latest_exact_record (test_shot_references.ShotReferenceTest) ... ok
+test_draft_save_is_atomic_per_slot_idempotent_and_keeps_other_inputs (test_shot_references.ShotReferenceTest) ... ok
+test_exact_candidate_version_component_and_ranges_are_required (test_shot_references.ShotReferenceTest) ... ok
+test_export_restore_keeps_selection_receipt_and_exact_history (test_shot_references.ShotReferenceTest) ... ok
+test_http_endpoints_reject_incomplete_inputs_and_replay_selection_once (test_shot_references.ShotReferenceTest) ... 127.0.0.1 - - [10/Oct/2026 15:03:50] "GET /api/production/generation-package?requirement_id=video HTTP/1.1" 409 -
+127.0.0.1 - - [10/Oct/2026 15:03:50] "POST /api/production/shot-reference HTTP/1.1" 201 -
+127.0.0.1 - - [10/Oct/2026 15:03:50] "POST /api/production/shot-reference HTTP/1.1" 201 -
+127.0.0.1 - - [10/Oct/2026 15:03:50] "POST /api/production/shot-reference HTTP/1.1" 409 -
+127.0.0.1 - - [10/Oct/2026 15:03:50] "POST /api/production/import HTTP/1.1" 409 -
+ok
+test_missing_version_keeps_identity_for_explicit_repair_and_bypass_is_rejected (test_shot_references.ShotReferenceTest) ... ok
+test_readiness_package_and_new_call_share_guard_without_generating (test_shot_references.ShotReferenceTest) ... ok
+test_same_exact_input_on_locked_plan_still_creates_a_new_version (test_shot_references.ShotReferenceTest) ... ok
+test_scene_selected_result_uses_owning_material_identity_and_counts (test_shot_references.ShotReferenceTest) ... ok
+test_submitted_failed_unknown_are_locked_and_change_creates_new_plan (test_shot_references.ShotReferenceTest) ... ok
+test_python_and_browser_projections_match_without_reindexing_or_rewriting (test_shot_sound_comments.ShotSoundCommentsTest) ... ok
+test_sound_comment_validates_exact_unicode_quote_and_remains_on_old_revision (test_shot_sound_comments.ShotSoundCommentsTest) ... ok
+test_current_revision_metadata_is_read_only_and_targets_comments (test_source_api.SourceApiTest) ... 127.0.0.1 - - [10/Oct/2026 15:03:51] "GET /api/sources?with_revision=1 HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:51] "GET /api/sources HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:51] "POST /api/comments HTTP/1.1" 201 -
+ok
+test_idle_browser_preconnect_does_not_block_another_request (test_source_api.SourceApiTest) ... 127.0.0.1 - - [10/Oct/2026 15:03:52] "GET /api/instance HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:03:54] Request timed out: timeout('timed out')
+ok
+test_block_only_reference_resolves_only_unique_exact_scene (test_source_excerpt_context.SourceExcerptContextTest) ... ok
+test_complete_and_contiguous_citations_have_no_false_internal_gap (test_source_excerpt_context.SourceExcerptContextTest) ... ok
+test_excerpt_follows_scene_order_and_marks_only_real_gaps (test_source_excerpt_context.SourceExcerptContextTest) ... ok
+test_full_scene_keeps_old_revision_and_original_citation (test_source_excerpt_context.SourceExcerptContextTest) ... ok
+test_historical_source_document_is_not_replaced_by_current_text (test_source_excerpt_context.SourceExcerptContextTest) ... ok
+test_invalid_or_incomplete_scene_refuses_substitution (test_source_excerpt_context.SourceExcerptContextTest) ... ok
+test_cli_keeps_publisher_but_has_no_authoring_commands (test_source_replacement.SourceReplacementTest) ... ok
+test_in_place_identity_idempotency_and_export_restore (test_source_replacement.SourceReplacementTest) ... ok
+test_incoming_and_outgoing_dependencies_reject (test_source_replacement.SourceReplacementTest) ... ok
+test_new_comments_and_stale_revision_reject (test_source_replacement.SourceReplacementTest) ... ok
+test_replacement_failure_rolls_back_all_rows (test_source_replacement.SourceReplacementTest) ... ok
+test_single_revision_refinement_and_identity_guards (test_source_replacement.SourceReplacementTest) ... ok
+test_unrelated_comments_untouched_and_normal_import_immutable (test_source_replacement.SourceReplacementTest) ... ok
+test_archive_input_conflict_rolls_back_entire_batch (test_state_cleanup.StateCleanupTest) ... ok
+test_cleaned_exact_link_keeps_entity_context_on_reload (test_state_cleanup.StateCleanupTest) ... ok
+test_conflict_has_no_partial_write_and_future_import_is_rejected (test_state_cleanup.StateCleanupTest) ... ok
+test_export_restore_export_and_comments_without_resurrection (test_state_cleanup.StateCleanupTest) ... ok
+test_instance_policy_rejects_old_export_into_empty_recovery (test_state_cleanup.StateCleanupTest) ... ok
+test_physical_retirement_exact_link_and_preservation (test_state_cleanup.StateCleanupTest) ... ok
+test_invalid_anchors_and_direction_change (test_structure.StructureTest) ... ok
+test_review_revision_and_script_handoff (test_structure.StructureTest) ... ok
+test_source_image_and_explicit_broken_reference (test_structure.StructureTest) ... ok
+test_archive_restores_exact_whitespace_unicode_escapes_numbers_and_duplicate_keys (test_ui_material_independent.IndependentMaterialContractTest) ... ok
+test_archive_scope_exception_rolls_back_and_does_not_reuse_cached_uncommitted_nodes (test_ui_material_independent.IndependentMaterialContractTest) ... ok
+test_archive_scope_reads_its_uncommitted_writer_without_borrowing_other_instances (test_ui_material_independent.IndependentMaterialContractTest) ... ok
+test_complete_definition_changes_create_new_version_after_failure (test_ui_material_independent.IndependentMaterialContractTest) ... ok
+test_definition_provenance_comment_membership_is_exact_and_does_not_expand_reuse_chain (test_ui_material_independent.IndependentMaterialContractTest) ... ok
+test_executed_call_cannot_rebind_prepared_requirement (test_ui_material_independent.IndependentMaterialContractTest) ... ok
+test_legacy_schema5_restore_preserves_noncanonical_revision_bytes (test_ui_material_independent.IndependentMaterialContractTest) ... ok
+test_legacy_schema5_restore_rejects_rehashed_bundle_with_wrong_revision_identity (test_ui_material_independent.IndependentMaterialContractTest) ... ok
+test_nested_archive_scopes_restore_outer_instance_after_inner_exception (test_ui_material_independent.IndependentMaterialContractTest) ... ok
+test_nested_json_archive_payload_shares_prompt_leaf_without_retaining_full_payload_text (test_ui_material_independent.IndependentMaterialContractTest) ... ok
+test_noncanonical_revision_layout_restores_original_bytes (test_ui_material_independent.IndependentMaterialContractTest) ... ok
+test_physical_prompt_is_one_leaf_across_revisions_definitions_and_archives (test_ui_material_independent.IndependentMaterialContractTest) ... ok
+test_prepared_plan_only_failure_and_unknown_lock_before_any_result_exists (test_ui_material_independent.IndependentMaterialContractTest) ... ok
+test_same_definition_retry_preserves_locked_provenance_and_old_source_comment (test_ui_material_independent.IndependentMaterialContractTest) ... ok
+test_shared_alias_detaches_after_material_requirement_changes (test_ui_material_independent.IndependentMaterialContractTest) ... ok
+test_two_incomplete_historical_calls_are_not_evidence_of_the_same_scheme (test_ui_material_independent.IndependentMaterialContractTest) ... ok
+test_unknown_call_also_locks_and_title_changes_do_not_create_version (test_ui_material_independent.IndependentMaterialContractTest) ... ok
+test_unknown_result_with_a_complete_scheme_still_retries_in_the_same_version (test_ui_material_independent.IndependentMaterialContractTest) ... ok
+test_verify_rejects_alias_mapping_to_an_unrelated_material (test_ui_material_independent.IndependentMaterialContractTest) ... ok
+test_verify_rejects_frozen_version_bound_to_another_complete_definition (test_ui_material_independent.IndependentMaterialContractTest) ... ok
+test_verify_rejects_frozen_version_missing_its_complete_definition (test_ui_material_independent.IndependentMaterialContractTest) ... ok
+test_wrong_material_comment_membership_rolls_back_atomically (test_ui_material_independent.IndependentMaterialContractTest) ... ok
+test_breakdown_reads_only_list_metadata_but_keeps_exact_card_and_counts (test_ui_projection.UiProjectionTest) ... ok
+test_candidates_and_metadata_revisions_do_not_inflate_material_counts (test_ui_projection.UiProjectionTest) ... ok
+test_card_reader_preserves_the_requested_exact_requirement_and_its_plan (test_ui_projection.UiProjectionTest) ... ok
+test_current_acceptance_filter_tracks_content_changes_and_cancellation (test_ui_projection.UiProjectionTest) ... ok
+test_facets_keep_other_filters_and_categories_remain_present_at_zero_results (test_ui_projection.UiProjectionTest) ... ok
+test_generated_history_does_not_promote_the_empty_current_plan (test_ui_projection.UiProjectionTest) ... ok
+test_scene_fallback_keeps_exact_scope_and_rejects_placeholder_or_preview_as_results (test_ui_projection.UiProjectionTest) ... ok
+test_scene_history_summary_preserves_its_exact_link_and_empty_current_plan (test_ui_projection.UiProjectionTest) ... ok
+test_shared_requirement_history_is_independent_of_alias_name_order (test_ui_projection.UiProjectionTest) ... ok
+test_unassigned_historical_asset_counts_under_its_explicit_entity_subject (test_ui_projection.UiProjectionTest) ... ok
+test_candidates_and_new_plan_versions_do_not_inflate_entity_material_counts (test_ui_projection_requirements.UIProjectionRequirementsTest) ... ok
+test_combined_facets_count_materials_and_retain_categories_for_zero_results (test_ui_projection_requirements.UIProjectionRequirementsTest) ... ok
+test_each_shot_demand_has_complete_exact_source_navigation (test_ui_projection_requirements.UIProjectionRequirementsTest) ... ok
+test_entity_and_state_applicability_do_not_invent_shot_material_use (test_ui_projection_requirements.UIProjectionRequirementsTest) ... ok
+test_entity_demand_is_in_list_count_and_card_without_extending_approval (test_ui_projection_requirements.UIProjectionRequirementsTest) ... ok
+test_exact_generated_asset_recovers_owner_from_its_actual_call_requirement (test_ui_projection_requirements.UIProjectionRequirementsTest) ... ok
+test_filter_excluded_focus_does_not_inflate_zero_or_nonzero_results (test_ui_projection_requirements.UIProjectionRequirementsTest) ... ok
+test_focused_material_and_old_candidate_locate_item_41_without_changing_exact_card (test_ui_projection_requirements.UIProjectionRequirementsTest) ... ok
+test_historical_scene_keeps_its_old_shot_after_current_shot_moves (test_ui_projection_requirements.UIProjectionRequirementsTest) ... ok
+test_http_material_focus_and_empty_filter_keep_the_exact_historical_card (test_ui_projection_requirements.UIProjectionRequirementsTest) ... 127.0.0.1 - - [10/Oct/2026 15:04:03] "GET /api/production/materials?search=page-fixture&focus=generated HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:04:03] "GET /api/production/materials?search=no+matching+material&focus=generated HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 15:04:03] "GET /api/production/card?object_id=generated&revision_id=5d25c01ed8288bcb1062424f57b94a770a3216e643bcaced3dee8c6e0d15ff48 HTTP/1.1" 200 -
+ok
+test_retired_need_does_not_hide_exact_subject_or_coverage (test_ui_projection_requirements.UIProjectionRequirementsTest) ... ok
+test_scene_occurrence_does_not_duplicate_explicit_shot_material_in_shared_area (test_ui_projection_requirements.UIProjectionRequirementsTest) ... ok
+test_subject_only_legacy_asset_card_restores_its_known_entity (test_ui_projection_requirements.UIProjectionRequirementsTest) ... ok
+test_subject_only_legacy_asset_counts_once_for_its_entity (test_ui_projection_requirements.UIProjectionRequirementsTest) ... ok
+test_baseline_blocks_missing_inputs_and_next_plan_is_v2 (test_version_consolidation.ConsolidationTest) ... ok
+test_drift_and_failure_do_not_partially_delete (test_version_consolidation.ConsolidationTest) ... ok
+test_empty_restore_and_policy_reject_old_snapshot (test_version_consolidation.ConsolidationTest) ... ok
+test_latest_of_multiple_produced_versions_and_shared_file (test_version_consolidation.ConsolidationTest) ... ok
+test_latest_output_keeps_all_candidates_and_old_identity_never_reappears (test_version_consolidation.ConsolidationTest) ... ok
+test_missing_file_blocks_plan_and_commit_interruption_resumes (test_version_consolidation.ConsolidationTest) ... ok
+test_execution_and_roles_are_part_of_definition_without_migrating_legacy (test_video_modes.VideoModesTest) ... ok
+test_fixed_endpoints_and_no_rule_transfer_to_20 (test_video_modes.VideoModesTest) ... ok
+test_original_in_memory_negative_is_incompatible (test_video_modes.VideoModesTest) ... ok
+test_reference_models_and_long_audio_contract_only (test_video_modes.VideoModesTest) ... ok
+test_unknown_or_contradictory_mode_cannot_look_verified (test_video_modes.VideoModesTest) ... ok
+test_selection_package_exact_registration_history_and_restore (test_video_preparation.VideoPreparationTest) ... ok
+
+----------------------------------------------------------------------
+Ran 509 tests in 77.034s
+
+OK
