@@ -55,7 +55,7 @@ M1187嗓哑补充9.88秒与M1134基础音色14.50秒分别打开，其各自旧�
 
 ## 双仓实现与验证边界
 
-开始时primary本地main／upstream均为 `d922a0b1de9079741860b4dddf82d08201fbab62`，desk均为 `0ad376bd1cefeb2d71b8cbd418bb22a943b22b3d`。阶段保存后吸收0013已交付主干：primary `9dfd50c77fa231388670d020b56bebc5a49ba0b4`、desk `499424c7dcdb270b90e7ec02c32b4d224278fbe9`。共同组合呈现和反馈冲突在受管工作区解决；没有重复实现0013，也没有为它增加任务依赖。
+开始时primary本地main／upstream均为 `d922a0b1de9079741860b4dddf82d08201fbab62`，desk均为 `0ad376bd1cefeb2d71b8cbd418bb22a943b22b3d`。阶段保存后吸收0013已交付主干：primary `9dfd50c77fa231388670d020b56bebc5a49ba0b4`、desk `499424c7dcdb270b90e7ec02c32b4d224278fbe9`。共同组合呈现和反馈冲突在受管工作区解决；没有重复实现0013，也没有为它增加任务依赖。准备最终候选前，主目录规则作者另行提交后，又吸收primary最新main `7781a3eee387a7e17230245fb4f799e9d8835b1c`；该次仅更新项目规则及任务方法包，不改变本任务运行代码、作品或实例编排。
 
 desk准确候选为 `59fbaa39b117e8a6bb6d92b094ca582e0d718f4d`，主仓 `config/instance.json.review_desk_commit` 与之相等。primary最终候选、逐仓目标、upstream及Git交付状态以主项目 `.codex-task/tasks.json` 的本任务回执为准，报告不自写循环提交身份。
 
