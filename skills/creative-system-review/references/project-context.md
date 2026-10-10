@@ -8,6 +8,7 @@
 - 影视专业知识：`production/filmcraft/README.md`、`production/filmcraft/quick-reference.md`；具体制作问题只读相关章节。
 - 视频生成方法与 Prompt 模板：`production/seedance-video-handbook.md`，在制作方案或 Prompt 工作前读取适用部分。
 - 方法正文、共用资源与准确执行：`production/managed-methods.md`。本 SKILL 文件包是本方法唯一维护正文；系统配置中的入口引用其准确只读投影，导出和快照不成为第二份可编辑正文。修改后沿既有同步和发布流程更新，不能静默改写过去的执行。
+- 任务定义与发布：`skills/task-definition-publish/SKILL.md`。形成任务时按需从本次明确的故事项目根读取，继续为目标、范围、关键取舍与验收调查研究；它是项目材料，不包含在当前 Review 三文件导出包中。缺少项目材料时补取对应方法，不把包内不存在的文件当作已读。
 - 任务、隔离工作区与发布：`production/generation-workspaces.md`，任务现状以主项目 `.codex-task/tasks.json` 与实际回执为准。通用审阅台承担展示、审阅、评论与数据管理；本剧特有创作工具留在故事仓。
 
 本项目持续 Review 的运行约定、暂停状态与历史证据在本机 `.runtime/system-review/`；这些是会话运行资料，不是可移植方法，也不因加载此 SKILL 自动恢复。用户本次已授权的任务范围优先，不能沿旧计时或旧计划继续执行。
