@@ -31,7 +31,7 @@ class VisionDeliveryTest(unittest.TestCase):
         actual = [tab['title'], tab['lead']]
         for section in tab['sections']:
             actual += [section['title']] + [block['text'] for block in section['blocks']]
-        expected = [re.sub(r'^#{1,2} ', '', line) for line in raw.decode().splitlines() if line.strip()]
+        expected = [re.sub(r'^#{1,2} ', '', line) for line in raw.decode().splitlines() if line.strip() and not line.startswith('<!-- layout: ')]
         self.assertEqual(actual, expected)
         self.assertEqual(tab['source']['sha256'], hashlib.sha256(raw).hexdigest())
         release.check_vision_change(before, updated, raw)
