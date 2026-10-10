@@ -1,0 +1,89 @@
+{
+  "format": "production-current-release-v1",
+  "files": {
+    "migration": {
+      "sha256": "a56c3942c3c29b447b8c02bc720daaa36142f1ff9f141665325e0e5c5acc6c79",
+      "file": "production/current-candidates/migration.json"
+    },
+    "methods": {
+      "sha256": "3e6135dab6d1673f7b43b472c9e58a99d92e2fa497fa82f23bd81bdce4a178b8",
+      "file": "production/current-candidates/methods.json"
+    }
+  },
+  "method_changes": {
+    "method.skill.audiovisual-scene": {
+      "before": "a938d5fc18baf7923578785a211995dee1c8215a8c574095145c0e1c1cddf667",
+      "after": "9d8cf9c8f5264c1a304af9560c97db2fa4839fabac74304294d25e5c97a66696"
+    },
+    "method.skill.generation-preflight": {
+      "before": "a078f8d9dd345c6f5620d8d17f80a280dd0fda1f2dbcf656e7a91bb7cc47ea0f",
+      "after": "83c3eba3d0041540a0b9088c1f0dd4b4cfe58d3dc29f7ed219f1535ba5bd365c"
+    },
+    "method.skill.image-plan": {
+      "before": "9fc5becfe58143d5fc2883cf4816505fc7b20bdc0ba70a181e7b4d78d97f8f26",
+      "after": "feee4e99eae66f92576f04da549b5173b9ebcca87e23cc9d677ccdd403b912d5"
+    },
+    "method.skill.material-assessment": {
+      "before": "2c49a0b2c328aefc35497c2630f828d86a32b5680896eae581df603c0967bb9c",
+      "after": "e0d016cb00eb71980b9714c82453548cc5cfff85fdb6043276e645f3b9cfdb2e"
+    },
+    "method.skill.media-plan": {
+      "before": "8eb0314a98425da5493f7c719558cc95cd19f9be25d19d54f4c284c8353a422a",
+      "after": "346b26e695e924ff837a287cc417dab5e0a5881c75c803c768e60bf6ddcac0fd"
+    },
+    "method.skill.result-review": {
+      "before": "843c5efe42183c4ca24ec8589570cb6a4ff1a49580e426f4de76e888dee1e2e3",
+      "after": "227a6e16614459c9d83f1839b30bb8f3c3581237b98ee81ee8171137f3ec8f55"
+    },
+    "method.skill.text-layer": {
+      "before": "072011ad73bb1a04a7f9a9922786035c5e9f337eb1fb52144324ca614296bb0d",
+      "after": "ccf5d6d26a891714b229cf3ecc725c143823f6731e60cd6aeed7445746eaa7c9"
+    },
+    "method.skill.video-plan": {
+      "before": "c0d7c2490eb478cac20bb1edd419acc7de55edd54ab6814633d1d446425dd2c1",
+      "after": "20f1509cb6650bada2271ecfc0a00a7010e9a1440b753260f764f5427e24af9a"
+    },
+    "method.skill.voice-song-plan": {
+      "before": "a669d6273517296788f8e1e6b3aa2059cc306df2266ba2782f67111b5aea5459",
+      "after": "8c22045135660753c8e1fd5d5b7bb27495c901ac70b40ba0a3c456a1faaf0da4"
+    },
+    "method.binding.audiovisual-design": {
+      "before": "4a7173b6d091882f11709d34fe7240505d333d068051a598c95812ead81d2cb3",
+      "after": "838a3d990f575532e4cd5d257d707414442be9f21823b75f2bf0bcfc340dd571"
+    },
+    "method.binding.generation-preflight": {
+      "before": "70f9e538092c5c918ecb98e22ca1b74ce9ce836d7a3acc606fbdeac51b6dce86",
+      "after": "02b252b73c93eb93ad65192e8e8132aad5f400b76e365f466bd0caed5d4331e1"
+    },
+    "method.binding.material-assessment": {
+      "before": "0009a9641881961b04cae8d475d2c91713a8dbe278ca58f6a3be737cc93fc49b",
+      "after": "b351497b776dc1b3952e642166e982050dfc3a5e3f49146d6dce330eea5c9a6b"
+    },
+    "method.binding.media-plan": {
+      "before": "182eeeab79ccad54fff144c2a5321f001cf20aaddee4605d9236d312a5779523",
+      "after": "f186a146c9a428571ed0e7df8170b642529ec94ad38301d86ca03994f37c2ddc"
+    },
+    "method.binding.result-review": {
+      "before": "358a3262b92213f9de08bb69efe8cda7309a48f69fac470c31e83af90ade27bf",
+      "after": "8329ff0092dc1ea81ff9aa5569ddc993b4bd22afaa31e612772264c597204d3f"
+    },
+    "method.binding.text-layer": {
+      "before": "736790e8331b85f4df904adf93afe4c72fc4c9e656e65cd02b310fbe1067337e",
+      "after": "c17985b66e03785393cef554fd170884a3b91cf97bdaa7dd7f7b24c2269d8e96"
+    }
+  },
+  "prerequisites": {
+    "consolidation_runs": [
+      "4a39206ac24a876b5b6afa9b1e6f49e3a446df7b2fbf2256f74b6b5cf578daf1",
+      "87e85d22235cf1c90f2704dedf259b3402d1eed8ad34393ed4c58ca667619930",
+      "f423c3e2d9e6eae0275085bf754ae5f523b6dea176999a80818b60e757b2eba2"
+    ],
+    "audiovisual_cleanup_runs": [
+      "cd1b3d167db0722f634d903302b546318c7d9154b59165683457b40a33e08861"
+    ],
+    "business_relation_runs": [
+      "4c00da6fcab9ed26a1d07a1fedc86e637ca36325a32fe573826beb3c25fe5c05",
+      "89cbe34b8a34b2f6c49ba15b73c387b12fef20390ebe87abafa88265898656f9"
+    ]
+  }
+}

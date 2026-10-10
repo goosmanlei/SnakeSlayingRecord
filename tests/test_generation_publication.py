@@ -85,17 +85,17 @@ class GenerationPublicationTest(unittest.TestCase):
             publication.apply_plan(db, self.delta)
         self.assertEqual('\n'.join(db.iterdump()), before)
 
-    def test_concurrent_unrelated_revisions_and_decisions_are_preserved(self):
+    def test_concurrent_unrelated_revisions_and_guidance_are_preserved(self):
         store = Store(self.formal)
         try:
             store.put_object('entity-unrelated','ENTITY',{'title':'concurrent revision'},expected_version=1)
-            store.put_object('judgment-unrelated','JUDGMENT',{'verdict':'accepted','actor':'fixture'},expected_version=0)
+            store.put_object('guidance-unrelated','GUIDANCE',{'note':'unrelated concurrent guidance','actor':'fixture'},expected_version=0)
         finally:
             store.close()
         before = publication.tables(self.formal)
         publication.apply_plan(self.db(),self.delta)
         after = publication.tables(self.formal)
-        ids = {'entity-unrelated','judgment-unrelated'}
+        ids = {'entity-unrelated','guidance-unrelated'}
         for table, column in (('objects','id'),('revisions','object_id')):
             self.assertEqual([r for r in after[table] if r[column] in ids],
                              [r for r in before[table] if r[column] in ids])

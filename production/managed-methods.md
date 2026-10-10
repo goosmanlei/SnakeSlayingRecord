@@ -93,7 +93,7 @@ python3 scripts/media_method.py --method-url http://127.0.0.1:PORT --directory .
 
 需要输入锁正文、相邻镜或真实原件记录时，begin 加 `--supporting references.json`，传准确引用数组；包中同时提供可读文档，避免只给修订号。每条外层引用仍受可用性检查；文档内引用历史退役候选仅作为原文保存，不重新激活为本步骤的生产依赖。`--conditions conditions.json` 选择具体章节，如视频的 `{"case":"dialogue","need_sound":true,"need_staging":true}`；不能借条件改变媒体类型。已冻结请求恢复时，补充材料和选择条件也须保持原样。
 
-`finish` 生成待 `production-import` 的准确包，只有并发版本、现有制作规则和方法产物同时通过才成为受管方案。目标前进时不要手改 `expected_version` 继续提交；回读新目标并开始新步骤。已冻结阶段不能覆盖，进一步修订显式新建步骤。
+`finish` 生成待 `production-import` 的准确包，只有当前内容并发标记、现有制作规则和方法产物摘要同时通过才更新受管方案。目标前进时不要手改 `expected_version` 继续提交；回读新目标并开始新步骤。方法步骤的执行事实不能覆盖，进一步改稿显式新建步骤；制作正文仍写回同一对象，不追加完整稿件。新制作步骤在数据库只保存输入及结果摘要，完整输入和草稿留在任务工作区，完成恢复用途后清理。见 [当前制作与候选](current-candidates/README.md)。
 
 生成准备包把方法快照与模型 Prompt 分开。模型只得到方案 Prompt、准确媒体和实际参数；手册不会被拼成最终视频 Prompt。新调用登记必须来自同一准备包，仍检查准确输入、原词、输入锁、渠道、原件与局部范围。已有候选／片段／路线选择记录准确父方案与确定性操作；不补造作者方法历史，也不能夹带 Prompt 修订。
 

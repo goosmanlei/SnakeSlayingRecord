@@ -36,7 +36,7 @@
 
 ## 制作对象、状态、素材与采用
 
-- 用户已确认后续改为“制作内容原地维护、实际生成候选保存提交时准确方案快照”：故事至文字剧本保留版本，制作实体、状态、关系、集场镜及素材需求只保留当前稿；评论保留原摘录与实际回应，方法正文版本及真实执行事实继续保留。该方向待 task-20261010-0021 实施，不能视为当前模型已经切换；本任务将承接0019并替代0016／0018／0019的制作版本契约，完整方案、迁移保护与本机正式交付验收见 [制作当前稿与候选快照任务](planning/production-current-candidates-task.md)。来源：用户2026-10-10已确认决定及随任务保存的证据。
+- 制作内容原地维护，实际生成候选保存提交前的准确方案快照。故事至文字剧本保留版本；制作实体、独立状态、关系、集场镜和素材需求保留稳定身份及单份当前稿，更新使用并发标记，不推进父级版本。候选按真实调用归组，回调、补文件及下载重试不新增候选；没有原件的失败调用不制造候选，外部工程保留真实来源。评论保留原摘录与实际回应，再次改稿不冒充当时整改。新方法步骤仅保存方法、摘要与执行事实，完整草稿留在有实际恢复用途的工作区；旧执行事实不改写。契约和入口见 [当前制作内容与生成候选](production/current-candidates/README.md)，迁移与验收见 [验证记录](production/current-candidates/VERIFICATION.md)。来源：用户2026-10-10决定及 task-20261010-0021 实现；正式身份以配置、发布回执与主任务账本为准。
 
 - 用户已确认统一实体关系、素材需求关系及素材到镜头的适用关系：同一对稳定对象只有一条当前关系，不同方面与阶段融合；编号体现端点与依赖方向，摘要在关系图连线、参考项和 Prompt 素材链接按需呈现，AI 将准确适用约束融入本次 Prompt。关系不代替准确参考选择、质量检查或真实调用。统一业务契约、准确迁移包及验证见 [统一关系](production/unified-relations/README.md)；实际正式生效身份沿任务账本与发布回执核对。
 
@@ -110,7 +110,7 @@
 
 - 发布清单保存准确任务、提交和构建来源，与任务工作区的生命周期独立。`scripts/task_workspace_guard.py` 按实际 Docker 挂载、发布 Compose 及恢复配置中的目录依赖保护工作区，不因清单保留或任务编号相同而阻断；清理不改写冻结清单。检查器更新后须核对并更新账本绑定摘要，不能跳过摘要检查。依据：用户 2026-10-08 对清单留存阻断清理的纠正、检查器及 `tests/test_task_repository_delivery.py`。
 
-- 正式数据库 `.runtime/review.sqlite3` 是本机运行权威，`export/` 是受管快照。当前 Schema 12 保存统一关系与历史别名、三部分视听模型、集场当前工作稿、视听专属文本清理凭据、有效素材版本与原件、准确评论、配置、历史意见来源和最小退役身份，不恢复已退出的旧业务对象。当前恢复使用 `scripts/production_review.py recover`、[准确索引](production/audiovisual/index.json) 与 [发布凭据](production/audiovisual/recovery.json)，只能恢复新空实例，不能覆盖活库。
+- 正式数据库 `.runtime/review.sqlite3` 是本机运行权威，`export/` 是受管快照。当前 Schema 13 保存单份制作当前稿、提交快照、真实候选及组成、评论原摘录与实际回应，以及故事版本、配置、方法和必要发布事实；旧制作全文链、方案版本、轮次与专属索引不进入常规恢复。旧链接只按最小映射定位候选、意见或明确退役提示，不静默替换为当前内容。当前恢复使用 `scripts/production_review.py recover`、[准确索引](production/audiovisual/index.json) 与 [发布凭据](production/audiovisual/recovery.json)，只能恢复新空实例，不能覆盖活库。
 - 生成、登记、审阅与导出均在任务 worktree；准确增量和原件先合入主干，再持有正式发布锁应用。`generation_publications` 与 `consolidation_runs` 保存发布幂等事实，不能因不属于业务正文便删除。范围外新评论和引用须保全，旧基线拒绝重放。操作见 [工作区流程](production/generation-workspaces.md)。
 - 状态准备用途由作者在 [逐集判断](production/audiovisual/state-preparation.md) 维护，`scripts/state_preparation.py` 只汇编并交给现有准确状态与需求模型；关系数量不代替用途判断。独立审阅或可选对照可不进入镜头输入，镜内结束状态可只作结果检查。已有完整维度或描述块承担制作描述，真实缺项及准确选择边界继续保留。
 - 当前视听编制由 `scripts/audiovisual_design.py`、`scripts/audiovisual_reading.py` 读取锁定故事和 `production/audiovisual/readings/` 作者逐镜稿；既有素材方案只按准确引用复用，不全量重建。三部分物理退役使用 `scripts/audiovisual_publication.py` 的准确清单与事务，先隔离迁移、完整导出和空恢复；正式应用另核当前头、评论及授权，不把任务快照覆盖活库。方法与操作见 [视听入口](production/audiovisual/README.md)。

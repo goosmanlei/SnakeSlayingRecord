@@ -22,7 +22,7 @@
 
 “制作思路”有故事创作、生产制作、[视频生成手册](production/seedance-video-handbook.md)和[影视专业知识](production/filmcraft/README.md)四个子页。正文由 [content/production-approach.json](content/production-approach.json) 与相应方法原文维护；桌面常驻目录，窄屏横向目录，支持准确章节链接。 实际创作从“系统管理 → 工作方法”选择适用 SKILL，由既有写作及媒体入口取得准确方法和资料；[工作交接表](production/professional-methods.md)说明输入、输出和负责阶段。
 
-每镜支持多个需求、每需多个方案版本和候选；实体状态、准确来源、关系、候选比较、评论和采纳共用详情。管理列表按四列基准行分页，窄屏只重排当前集合。技术验收不代表用户接受新设计，已有图像与音频不代表镜头视频已生成。本任务没有媒体生成调用。
+每镜支持多个需求、每需一份当前方案和多个实际候选；实体状态、准确来源、关系、候选比较、评论和采纳共用详情。管理列表按四列基准行分页，窄屏只重排当前集合。技术验收不代表用户接受新设计，已有图像与音频不代表镜头视频已生成。本任务没有媒体生成调用。
 
 生成、登记、预览、增量发布和恢复均按 [受管工作区流程](production/generation-workspaces.md) 执行。当前发布状态只认主项目任务账本与实际运行回执；候选文件与正式服务分别核对。
 
@@ -69,7 +69,7 @@ test "$(git -C "$production_system" rev-parse HEAD)" = "$required_system"
 REVIEW_DESK_BUILD_CONTEXT="$production_system" docker compose up -d --build
 ```
 
-已有运行数据库时跳过恢复，不能用快照覆盖活库。当前 Schema 9 完整导出及发布凭据只能通过 [生产恢复入口](production/README.md#恢复) 恢复到新的空实例；旧歌曲、旧编排与旧格式重放已经退役。迁移同时保留 `config/`、`content/`、`export/` 和准确恢复索引。正式服务使用对应冻结发布包，不能用普通构建覆盖准确挂载。
+已有运行数据库时跳过恢复，不能用快照覆盖活库。当前 Schema 13 完整导出及发布凭据只能通过 [生产恢复入口](production/README.md#恢复) 恢复到新的空实例；旧歌曲、旧编排与旧格式重放已经退役。迁移同时保留 `config/`、`content/`、`export/` 和准确恢复索引。正式服务使用对应冻结发布包，不能用普通构建覆盖准确挂载。
 
 打开 [本机审阅台](http://127.0.0.1:3000/)：Nginx 长期运行在 Docker 容器 3000 端口并代理容器内 Python 服务；Nginx 镜像与通用代理规则由审阅台仓库维护，故事仓库只保留实例 Compose 配置。主机仅绑定 `127.0.0.1:3000`。`docker compose ps` 检查状态，`docker compose restart` 重启；`restart: unless-stopped` 保证 Docker 恢复时服务随之恢复。已有 `.runtime/review.sqlite3` 时跳过 `restore`。本机与公开克隆的系统目录名统一为 `story-review-desk`，同级放置时使用 Compose 默认构建路径；系统位于其他位置时设置 `REVIEW_DESK_BUILD_CONTEXT`。不要把 3000 端口转发到公网，本服务没有公网鉴权。
 
