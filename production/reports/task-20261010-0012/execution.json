@@ -1,0 +1,342 @@
+{
+  "task": "task-20261010-0012",
+  "formal_read_only": {
+    "container": "8f4db084a608209c6d9a39ff404d38c3e757da60422cb99e9476dfe39cfa45cb",
+    "image": "sha256:36b2166cceb56a21218217f51461bf9a2afdf2b07ee98e902433d3d0c0b839d5",
+    "health": "healthy",
+    "config": ".runtime/service-releases/task-20261010-0009-0af1ca2d5b13-ac735586575f/instance/config/instance.json",
+    "config_readonly": true,
+    "config_sha256": "a11045f1b942fcdee12bc24852d8428d9b0d5665fa42064166eb1e4aa31fed85",
+    "review_desk_commit": "ac735586575f3a0bdd319ae95d23acd188285117"
+  },
+  "inputs": [
+    {
+      "name": "m1133-aheng-original.png",
+      "bytes": 5929467,
+      "sha256": "6f9cb6a1cabddd8ce34630709e0993ef66c69a66429a330f7cf943107b6c890f"
+    },
+    {
+      "name": "m1134-aheng-base-voice.wav",
+      "bytes": 2784044,
+      "sha256": "a7d678681c2e490de0a7dc8aca163131f68e196ceda703dc9c9282418c589272"
+    },
+    {
+      "name": "m1187-aheng-hoarse-voice.wav",
+      "bytes": 1897004,
+      "sha256": "1c03d8d5efa4320e75086932bd28489ec714c8eaaa87bbe84daf57c6aafb1c16"
+    }
+  ],
+  "resources_created": {
+    "docker_containers": [],
+    "docker_images": [],
+    "preview_instance": ".runtime/production-simplification/review",
+    "server": "http://127.0.0.1:53518/"
+  },
+  "isolated_comments": [
+    {
+      "id": "d2eaade7-3fa5-41f1-a6ec-09a8e0897b50",
+      "source_id": null,
+      "target_object_id": "asset-fg3-aheng-voice-01",
+      "target_revision_id": "e522f05e989232e8323608cc74addd94b5e542c15c2d69692109c5fdd3e78ecb",
+      "anchor": {
+        "asset_file": "a7d678681c2e490de0a7dc8aca163131f68e196ceda703dc9c9282418c589272.wav",
+        "component_id": "original",
+        "end_seconds": 1,
+        "start_seconds": 0,
+        "type": "time"
+      },
+      "body": "这段旧录音只用于比较阿蘅的说话身份。开场两段演唱与尾腔仍需另行听审，不能把说话母版的认可当成唱腔已经通过。",
+      "status": "OPEN",
+      "version": 1,
+      "created_at": "2026-10-10T04:47:03+00:00",
+      "updated_at": "2026-10-10T04:47:03+00:00",
+      "number": 282,
+      "creation_method": "browser UI in isolated instance"
+    },
+    {
+      "id": "b08c7eb3-84f0-4613-a7fb-26999ac5984c",
+      "source_id": null,
+      "target_object_id": "av-e01-a01",
+      "target_revision_id": "91b490a1a6f6b6a8448acbd939cc7b8e64ebf77e350ca85ef660392b2cd1f9ce",
+      "anchor": {
+        "block_id": "purpose",
+        "end": 59,
+        "end_block_id": "purpose",
+        "quote": "不提前把她拍成等待救援的人。",
+        "start": 45
+      },
+      "body": "保留她靠唱曲换米的主动性：第二镜是故意跳段后的忍笑，第三镜自己接住听客的打趣；李寄到第四镜才入画。第三镜应答的具体词句继续待定。",
+      "status": "OPEN",
+      "version": 4,
+      "created_at": "2026-10-10T04:51:16+00:00",
+      "updated_at": "2026-10-10T04:53:00+00:00",
+      "number": 283,
+      "creation_method": "browser UI in isolated instance"
+    },
+    {
+      "id": "39692417-dca0-4039-9355-de0082f0bf05",
+      "source_id": null,
+      "target_object_id": "asset-fg3-aheng-image-01",
+      "target_revision_id": "e0e3e576207967838b531d30c69e5aa2841d44b7312818bc107c8f06d1ee7145",
+      "anchor": {
+        "asset_file": "6f9cb6a1cabddd8ce34630709e0993ef66c69a66429a330f7cf943107b6c890f.png",
+        "points": [
+          {
+            "x": 0.3467,
+            "y": 0.1888
+          },
+          {
+            "x": 0.6978,
+            "y": 0.1888
+          },
+          {
+            "x": 0.6978,
+            "y": 0.5988
+          },
+          {
+            "x": 0.3467,
+            "y": 0.5988
+          }
+        ],
+        "type": "region",
+        "visual_id": "original"
+      },
+      "body": "保留低髻、青衣与清瘦比例；旧图怀里的歌本和手提小袋只用于形象比较，ASH001 应从手持歌本开始摊本压石，工钱米袋不入开场。",
+      "status": "OPEN",
+      "version": 1,
+      "created_at": "2026-10-10T04:58:08+00:00",
+      "updated_at": "2026-10-10T04:58:08+00:00",
+      "number": 284,
+      "creation_method": "browser UI in isolated instance"
+    },
+    {
+      "id": "00cb7cca-6c8d-423e-a4f6-72d33eb23f33",
+      "source_id": "soushenji-literal-translation-v1",
+      "target_object_id": "soushenji-literal-translation-v1",
+      "target_revision_id": "6569109399c178a6b60d8e639770c05d1e84fb7956266983404104f007e7959d",
+      "anchor": {
+        "block_id": "translation-4",
+        "end": 54,
+        "end_block_id": "translation-4",
+        "quote": "李寄走进洞里，看见先前九个女孩的头骨，把它们全带出来，叹道：你们胆怯，被蛇吃掉，真叫人哀怜。随后她缓步回家。",
+        "start": 0
+      },
+      "body": "隔离交互回归：本意见仅验证准确原文定位，不修改译文或采纳结论。",
+      "status": "OPEN",
+      "version": 1,
+      "created_at": "2026-10-10T05:01:59+00:00",
+      "updated_at": "2026-10-10T05:01:59+00:00",
+      "number": 285,
+      "creation_method": "browser UI in isolated instance"
+    },
+    {
+      "id": "d702133e-f6d2-43c5-bb5c-d3cd86681fcd",
+      "source_id": null,
+      "target_object_id": "story-structure",
+      "target_revision_id": "73e1de6bd288b2211f0cd8001cc07a3f5863f99f3414bae67a0a77a3ec899a58",
+      "anchor": {
+        "block_id": "theme-2",
+        "end": 63,
+        "end_block_id": "theme-2",
+        "quote": "情感核心｜关心朋友，要听见她的处境和需要。李寄从冲动毁本，到先问、一起做、承担后果；阿蘅也从独自扛着，走向主动开口、接受帮助。",
+        "start": 0,
+        "type": "text"
+      },
+      "body": "隔离交互回归：保留本结构稿的准确原段落归属，只验证保存与定位。",
+      "status": "OPEN",
+      "version": 1,
+      "created_at": "2026-10-10T05:02:39+00:00",
+      "updated_at": "2026-10-10T05:02:39+00:00",
+      "number": 286,
+      "creation_method": "browser UI in isolated instance"
+    },
+    {
+      "id": "task0012-omitted-source-comment",
+      "source_id": null,
+      "target_object_id": "av-e01-a01",
+      "target_revision_id": "91b490a1a6f6b6a8448acbd939cc7b8e64ebf77e350ca85ef660392b2cd1f9ce",
+      "anchor": {
+        "block_id": "purpose",
+        "end": 45,
+        "end_block_id": "purpose",
+        "quote": "最后由她先走向道具屋继续做事，",
+        "start": 30,
+        "type": "text"
+      },
+      "body": "隔离回归：此句属于后续场段；本评论只验证未呈现区间仍能回到准确原文，不迁到当前可见句。",
+      "status": "OPEN",
+      "version": 1,
+      "created_at": "2026-10-10T05:05:57+00:00",
+      "updated_at": "2026-10-10T05:05:57+00:00",
+      "number": 287,
+      "creation_method": "API-seeded regression; located in actual browser"
+    }
+  ],
+  "validation": {
+    "review_composition_entries": 134,
+    "formal_and_isolated_object_heads_equal": true,
+    "isolated_comment_ids_absent_from_formal": true,
+    "unchanged_object_count": 9467,
+    "formal_runtime_rechecked_unchanged": true,
+    "final_tests": {
+      "python": {
+        "passed": 502,
+        "seconds": 66.412
+      },
+      "node": {
+        "passed": 874,
+        "failed": 0
+      }
+    },
+    "final_compositions_revalidated": 134
+  },
+  "browser": {
+    "browser": "Chrome",
+    "url": "http://127.0.0.1:53518/",
+    "actual_checks": [
+      "AS001/ASH001 continuous reading and all five shots",
+      "AS012/ASH081 dry-to-wet transition",
+      "EN002/ST088 current and historical versions; M2710/M1133 comparison",
+      "M1134 to M1187 to M1134; direct M1187 and back",
+      "AS001 materials: 57 identities, 14 with results, 43 without",
+      "C282 audio range save and exact reopen/location",
+      "C283 scene text save, draft refresh and exact location",
+      "C284 image polygon save and exact reopen/location",
+      "C285 source text and C286 structure text saved and located",
+      "C287 omitted original range located through exact original reader",
+      "fresh story S001 to EN002 image and back: scrollTop 1024 and exact episode revision unchanged",
+      "Full human song phrase listening and 2-to-8-second range decision retained and reread after final composition change"
+    ],
+    "listened": false,
+    "watched_video": false,
+    "image_viewed": true,
+    "independent_review": false,
+    "latest_frontend_tests": {
+      "passed": 874,
+      "failed": 0
+    },
+    "test_comments_are_not_human_approval": true,
+    "tab_closed": true
+  },
+  "cleanup": {
+    "phase": "removed-and-readback",
+    "preview_server_stopped": true,
+    "retained_worktrees": "Active task TUI holds both managed worktrees; launcher cleanup after exit. Branches, task ledger and evidence retained.",
+    "deleted": {
+      "preview_root": ".runtime/production-simplification",
+      "preview_files": 1075,
+      "preview_directories_including_root": 8,
+      "preview_bytes": 1777868484,
+      "external_test_logs": [
+        "task-20261010-0012-api-final.log",
+        "task-20261010-0012-audiovisual-final.log",
+        "task-20261010-0012-composition-js.log",
+        "task-20261010-0012-entity-history.log",
+        "task-20261010-0012-focus2.log",
+        "task-20261010-0012-focus3.log",
+        "task-20261010-0012-focus4.log",
+        "task-20261010-0012-focus5.log",
+        "task-20261010-0012-focus6.log",
+        "task-20261010-0012-focused.log",
+        "task-20261010-0012-generation-final.log",
+        "task-20261010-0012-node-all.log",
+        "task-20261010-0012-node-all2.log",
+        "task-20261010-0012-node-all3.log",
+        "task-20261010-0012-node-all4.log",
+        "task-20261010-0012-node-final.log",
+        "task-20261010-0012-node-first.log",
+        "task-20261010-0012-package-final.log",
+        "task-20261010-0012-python-all.log",
+        "task-20261010-0012-python-final.log",
+        "task-20261010-0012-python-first.log"
+      ],
+      "external_test_log_bytes": 721832,
+      "python_cache_directories": 0,
+      "python_cache_files": 0
+    },
+    "runtime_absent": true,
+    "external_logs_absent": true,
+    "python_cache_absent": true,
+    "task_docker_resources_created": 0,
+    "task_docker_resources_deleted": 0,
+    "task_container_mounts": 0,
+    "preview_port_released": true
+  },
+  "candidate": {
+    "review_desk_commit": "0ad376bd1cefeb2d71b8cbd418bb22a943b22b3d",
+    "primary": "this report commit; integration receipt in authoritative task ledger",
+    "formal_applied": false
+  },
+  "evidence_files": [
+    {
+      "name": "VERIFICATION.md",
+      "bytes": 14795,
+      "sha256": "5e26bbd3edf86b84374f7f3991cbbb7dc4ea1d99190b18f50f9745c8f8fb592e"
+    },
+    {
+      "name": "as001-continuous-reading.jpg",
+      "bytes": 367908,
+      "sha256": "85b81b0593db6e9835b482c6e4dc1229601d406642266d5605c64e8a557d52f7"
+    },
+    {
+      "name": "as001-materials.jpg",
+      "bytes": 400434,
+      "sha256": "c9ac2867d20fc83c55b0a29907710cb802d86d7beb8f50631e3b7f71974bb80f"
+    },
+    {
+      "name": "as001-materials.txt",
+      "bytes": 14125,
+      "sha256": "089719060fb04721a6b504d9af049a756c920c372ec862229ac48ebb9fce01a6"
+    },
+    {
+      "name": "as012-reading.txt",
+      "bytes": 52461,
+      "sha256": "3c54d344db7ff603b12de9dd2819ce0b227f3685d1922c242594ad102f00f73a"
+    },
+    {
+      "name": "ash081-transition.jpg",
+      "bytes": 388128,
+      "sha256": "e6c9c24db92a25fb2d89353d7fb8535c593da173fc78b2e5dca9e4115711929a"
+    },
+    {
+      "name": "image-region-feedback.jpg",
+      "bytes": 359767,
+      "sha256": "0c2c9b608e5fd0733b1f69dcff74a090f43a1c150b3278cc8c6c676f4c6962e2"
+    },
+    {
+      "name": "m1187-direct.jpg",
+      "bytes": 337700,
+      "sha256": "66cb43406c584eab32b04280f32651b5f184b1f13d23d2c22f09273f252ff1b7"
+    },
+    {
+      "name": "omitted-comment-original.jpg",
+      "bytes": 265384,
+      "sha256": "e2d1dee082bc7be9040363c9d15d1f2d8cf7b985eb50908aba84145dcd36c0f8"
+    },
+    {
+      "name": "song-range-choice.jpg",
+      "bytes": 383438,
+      "sha256": "d56f30236425cda8ae429d24ecb149727e3e700cf66e41e73a4c59d7bcb60593"
+    },
+    {
+      "name": "source-comment.jpg",
+      "bytes": 315094,
+      "sha256": "3539928e85344e14b937224af3786054323cf2af757849b7ffdd65ca888648e8"
+    },
+    {
+      "name": "story-character-comparison.jpg",
+      "bytes": 306428,
+      "sha256": "51cca069010c1264fea1b0428f82e05ca0c42cf348888c677931d1430e1f34c5"
+    },
+    {
+      "name": "structure-comment.jpg",
+      "bytes": 332526,
+      "sha256": "0b6c25fcda9d51f4d9ebd9f79f0cdda091a83dc2a89a325e882e12eb8903786a"
+    },
+    {
+      "name": "test-results.txt",
+      "bytes": 1614,
+      "sha256": "39896b96f91a999ead08e193d89aaec8ebcf23192d1d66eb6fd26cfb5f451f8a"
+    }
+  ]
+}
