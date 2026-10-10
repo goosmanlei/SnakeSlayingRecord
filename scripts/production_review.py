@@ -72,7 +72,7 @@ def main():
     from review_desk.bundle import restore
     from publication_receipts import RECOVERY,restore_publication_receipts,sha,save
     manifest=json.loads((root/'export/manifest.json').read_text())
-    if manifest.get('schema_version')!=11:raise ValueError('use the current clean unified-relationship export (schema 11)')
+    if manifest.get('schema_version')!=12:raise ValueError('use the current comment-led review export (schema 12)')
     index_path=root/'production/audiovisual/index.json'
     if args.command=='snapshot':
         instance=args.instance if args.instance.is_absolute() else root/args.instance
