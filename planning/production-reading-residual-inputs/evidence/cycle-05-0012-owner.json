@@ -1,0 +1,562 @@
+{
+  "format": "root-review-isolation-v1",
+  "owner": "01a1222c-9a12-7663-9523-a245a73e937c",
+  "cycle": 5,
+  "task": "task-20261010-0012",
+  "created_at": "2026-10-10T05:31:59.338511+00:00",
+  "status": "ready",
+  "root": "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.runtime/system-review/isolated-cycle-05-0012",
+  "purpose": "Root independent verification and user-visible preview of exact task0012 delivered candidate; ledger revision3, desk0ad376bd/storyd922a0b1; formal deployment is separate",
+  "candidate_phase_at_start": {
+    "primary": "pushed",
+    "desk": "pushed"
+  },
+  "story_candidate": "d922a0b1de9079741860b4dddf82d08201fbab62",
+  "desk_candidate": "0ad376bd1cefeb2d71b8cbd418bb22a943b22b3d",
+  "formal_writes": false,
+  "browser_started": false,
+  "api_calls": 0,
+  "resource_owner": "root cycle05 Review",
+  "cleanup_responsibility": "root cycle05 Review after preserving only necessary private feedback and closing browser",
+  "writable_mounts_must_be_within": "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.runtime/system-review/isolated-cycle-05-0012",
+  "archives": [
+    {
+      "path": "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.runtime/system-review/isolated-cycle-05-0012/story-archive.tar",
+      "repository": "/Users/bytedance/codex-path/creative/SnakeSlayingRecord",
+      "commit": "d922a0b1de9079741860b4dddf82d08201fbab62",
+      "paths": [
+        "config/instance.json",
+        "config/entity-relationship-layout.json",
+        "content"
+      ],
+      "sha256": "bff9d4a0393b6945434209c99d9d431876d2c98322174d4d02fe32d3b9f8b89e",
+      "bytes": 48445440
+    },
+    {
+      "path": "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.runtime/system-review/isolated-cycle-05-0012/desk-archive.tar",
+      "repository": "/Users/bytedance/codex-path/creative/story-review-desk",
+      "commit": "0ad376bd1cefeb2d71b8cbd418bb22a943b22b3d",
+      "paths": [
+        "review_desk"
+      ],
+      "sha256": "3df8dc6605ad2637cbd1d80afcc707599b3239c20cbdf8f4a6f96ebc5405b715",
+      "bytes": 1576960
+    }
+  ],
+  "created_images": [
+    "sha256:911fb1648fd7ee5fc6b8012f4b249603ce1bcb1f9441079e7f4fdf2a37846b73"
+  ],
+  "candidate_config_original_sha256": "21739aa5560da127c95219ad6149e12527a8a809ec76f878e0f3ccbe59a1861b",
+  "relationship_layout_sha256": "272e6152b9e7f840e6101aeb6f7a4b671698576f38861b998db9e90a5e3255c7",
+  "config_local_difference": "title suffix only; complete production_reading/scene_reading and relationship layout retained",
+  "candidate_config_sha256": "04c04d9293aff9abb9985fa2602f531b05a5aeb22298ba6fcf03012b8fad5d91",
+  "production_reading_entries": 134,
+  "snapshot_locks": {
+    "paths": [
+      "/Users/bytedance/codex-path/creative/story-review-desk/.git/review-desk-integration.lock",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.runtime/publication.lock"
+    ],
+    "mode": "read-only nonblocking shared flock",
+    "acquired_at": "2026-10-10T05:31:59.578539+00:00",
+    "released_at": "2026-10-10T05:32:04.842352+00:00"
+  },
+  "formal_before": {
+    "container_id": "8f4db084a608209c6d9a39ff404d38c3e757da60422cb99e9476dfe39cfa45cb",
+    "image": "sha256:36b2166cceb56a21218217f51461bf9a2afdf2b07ee98e902433d3d0c0b839d5",
+    "status": "running",
+    "health": "healthy",
+    "system_commit": "ac735586575f3a0bdd319ae95d23acd188285117",
+    "config": "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.runtime/service-releases/task-20261010-0009-0af1ca2d5b13-ac735586575f/instance/config/instance.json",
+    "config_sha256": "a11045f1b942fcdee12bc24852d8428d9b0d5665fa42064166eb1e4aa31fed85",
+    "release": "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.runtime/service-releases/task-20261010-0009-0af1ca2d5b13-ac735586575f",
+    "manifest_story_candidate": "0af1ca2d5b13e193af56b47cea38f63d061e5e51",
+    "manifest_sha256": "80c487729ca28536a074dc391e644d1cb54ce5e28d138361a3b737c2e7d9a624"
+  },
+  "backup": {
+    "source": "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.runtime/review.sqlite3",
+    "method": "SQLite online backup mode=ro query_only read transaction under shared locks; independent active copy",
+    "baseline": "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.runtime/system-review/isolated-cycle-05-0012/generation-base.sqlite3",
+    "active": "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.runtime/system-review/isolated-cycle-05-0012/instance/.runtime/review.sqlite3",
+    "counts": {
+      "business_candidates": 328,
+      "business_codes": 11282,
+      "business_comments": 272,
+      "comment_events": 301,
+      "comments": 272,
+      "configuration_events": 18,
+      "configurations": 2,
+      "consolidation_definitions": 4,
+      "consolidation_missing": 7453,
+      "consolidation_objects": 6985,
+      "consolidation_revisions": 12994,
+      "consolidation_runs": 2,
+      "consolidation_signatures": 5312,
+      "consolidation_versions": 2589,
+      "dependencies": 234300,
+      "generation_publications": 10,
+      "material_aliases": 0,
+      "material_archive_files": 624,
+      "material_candidate_members": 336,
+      "material_comment_scopes": 7,
+      "material_content": 150974,
+      "material_definition_versions": 1862,
+      "material_definitions": 6695,
+      "material_feedback": 0,
+      "material_members": 959,
+      "material_model_migrations": 1,
+      "material_plan_comments": 8,
+      "material_plan_members": 7385,
+      "material_plan_versions": 1862,
+      "material_rounds": 317,
+      "objects": 9467,
+      "read_generations": 39,
+      "relation_explanation_policy": 1,
+      "relation_explanation_redactions": 30,
+      "relation_redacted_comments": 0,
+      "revisions": 31092,
+      "sources": 45,
+      "state_cleanup_comments": 0,
+      "state_cleanup_preserved": 53,
+      "state_cleanup_receipts": 143
+    },
+    "copy_counts_equal": true,
+    "quick_check": "ok",
+    "sha256": "db053400264a4343ddd6d0251ee225bc9c165bac52d32162b7da2e4f9f526572",
+    "bytes": 294420480,
+    "completed_at": "2026-10-10T05:32:00.783337+00:00"
+  },
+  "media_copy": {
+    "files": 1016,
+    "bytes": 778343828,
+    "all_sha256_matched": true,
+    "manifest": "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.runtime/system-review/isolated-cycle-05-0012/media-copy-manifest.json",
+    "manifest_sha256": "ff156ade41aac1e112386b21d0ebb63dc9af555c6e839947d4ecf8b990631130",
+    "no_hardlinks_or_symlinks": true
+  },
+  "formal_after_snapshot": {
+    "container_id": "8f4db084a608209c6d9a39ff404d38c3e757da60422cb99e9476dfe39cfa45cb",
+    "image": "sha256:36b2166cceb56a21218217f51461bf9a2afdf2b07ee98e902433d3d0c0b839d5",
+    "status": "running",
+    "health": "healthy",
+    "system_commit": "ac735586575f3a0bdd319ae95d23acd188285117",
+    "config": "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.runtime/service-releases/task-20261010-0009-0af1ca2d5b13-ac735586575f/instance/config/instance.json",
+    "config_sha256": "a11045f1b942fcdee12bc24852d8428d9b0d5665fa42064166eb1e4aa31fed85",
+    "release": "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.runtime/service-releases/task-20261010-0009-0af1ca2d5b13-ac735586575f",
+    "manifest_story_candidate": "0af1ca2d5b13e193af56b47cea38f63d061e5e51",
+    "manifest_sha256": "80c487729ca28536a074dc391e644d1cb54ce5e28d138361a3b737c2e7d9a624"
+  },
+  "base_image_reused": "sha256:cc35315383d9cfe11db949d9949af4134d1b4bdffac05fad7f528700aeeeda80",
+  "build": {
+    "context": "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.runtime/system-review/isolated-cycle-05-0012/build",
+    "dockerfile_sha256": "0dacd50b5af3d33fcdda1057ec8dab564742cc9352254393e5a7c8e4b37cba23",
+    "iidfile": "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.runtime/system-review/isolated-cycle-05-0012/image-id",
+    "log": "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.runtime/system-review/isolated-cycle-05-0012/build.log",
+    "base_image_reference": "story-review-desk:base",
+    "base_image_exact_id": "sha256:cc35315383d9cfe11db949d9949af4134d1b4bdffac05fad7f528700aeeeda80",
+    "network": "none",
+    "pull": false,
+    "tag": null,
+    "status": "completed",
+    "argv": [
+      "docker",
+      "build",
+      "--pull=false",
+      "--network=none",
+      "--iidfile",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.runtime/system-review/isolated-cycle-05-0012/image-id",
+      "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.runtime/system-review/isolated-cycle-05-0012/build"
+    ],
+    "started_at": "2026-10-10T05:32:16.379018+00:00",
+    "exit_code": 0,
+    "completed_at": "2026-10-10T05:32:17.273903+00:00",
+    "image_size": 826689804,
+    "labels": {
+      "org.opencontainers.image.revision": "0ad376bd1cefeb2d71b8cbd418bb22a943b22b3d",
+      "review.cycle": "5",
+      "review.owner": "01a1222c-9a12-7663-9523-a245a73e937c",
+      "review.task": "task-20261010-0012"
+    }
+  },
+  "image_id": "sha256:911fb1648fd7ee5fc6b8012f4b249603ce1bcb1f9441079e7f4fdf2a37846b73",
+  "container_name": "system-review-01a1222c-cycle05-verify0012",
+  "network_name": "system-review-01a1222c-cycle05-verify0012-internal",
+  "network_create_argv": [
+    "docker",
+    "network",
+    "create",
+    "--internal",
+    "--label",
+    "review.owner=01a1222c-9a12-7663-9523-a245a73e937c",
+    "--label",
+    "review.cycle=5",
+    "--label",
+    "review.task=task-20261010-0012",
+    "system-review-01a1222c-cycle05-verify0012-internal"
+  ],
+  "network_id": "799149cef080e4446fcd7980873e3fc1ba6a7c1d6ac8a09db4b55ce6db26d818",
+  "container_create_argv": [
+    "docker",
+    "run",
+    "--detach",
+    "--name",
+    "system-review-01a1222c-cycle05-verify0012",
+    "--label",
+    "review.owner=01a1222c-9a12-7663-9523-a245a73e937c",
+    "--label",
+    "review.cycle=5",
+    "--label",
+    "review.task=task-20261010-0012",
+    "--network",
+    "799149cef080e4446fcd7980873e3fc1ba6a7c1d6ac8a09db4b55ce6db26d818",
+    "--read-only",
+    "--cpus",
+    "2",
+    "--memory",
+    "2g",
+    "--pids-limit",
+    "128",
+    "--tmpfs",
+    "/tmp:rw,nosuid,size=64m",
+    "--log-opt",
+    "max-size=5m",
+    "--log-opt",
+    "max-file=1",
+    "--env",
+    "OPENAI_API_KEY=",
+    "--add-host",
+    "api.openai.com:127.0.0.1",
+    "--health-cmd",
+    "python -c \"import urllib.request; urllib.request.urlopen('http://127.0.0.1:8765/api/instance', timeout=4).close()\"",
+    "--health-interval",
+    "10s",
+    "--health-timeout",
+    "5s",
+    "--health-start-period",
+    "5s",
+    "--health-retries",
+    "3",
+    "--mount",
+    "type=bind,src=/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.runtime/system-review/isolated-cycle-05-0012/instance,dst=/instance",
+    "--mount",
+    "type=bind,src=/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.runtime/system-review/isolated-cycle-05-0012/instance/export/assets,dst=/instance/export/assets,readonly",
+    "--mount",
+    "type=bind,src=/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.runtime/system-review/isolated-cycle-05-0012/instance/content,dst=/instance/content,readonly",
+    "--mount",
+    "type=bind,src=/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.runtime/system-review/isolated-cycle-05-0012/instance/config,dst=/instance/config,readonly",
+    "sha256:911fb1648fd7ee5fc6b8012f4b249603ce1bcb1f9441079e7f4fdf2a37846b73",
+    "python",
+    "-m",
+    "review_desk",
+    "--instance",
+    "/instance",
+    "serve",
+    "--host",
+    "0.0.0.0",
+    "--port",
+    "8765"
+  ],
+  "container_id": "414f901e837ddf099ab7baec8a940a20fa377f9c58df564665a865180298bdfb",
+  "container_started_at": "2026-10-10T05:32:43.552704+00:00",
+  "proxy": {
+    "pid": 82040,
+    "script": "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.runtime/system-review/isolated-cycle-05-0012/loopback_proxy.py",
+    "script_sha256": "0659bfa23eec0bdc86fa212c8865c55fd70fb3f643c0731f5c4c85b23d5d7a28",
+    "source": "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.runtime/system-review/isolated-cycle-05-0011/loopback_proxy.py",
+    "config": "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.runtime/system-review/isolated-cycle-05-0012/proxy-config.json",
+    "ready_file": "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.runtime/system-review/isolated-cycle-05-0012/proxy-ready.json",
+    "log": "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.runtime/system-review/isolated-cycle-05-0012/proxy.log",
+    "started_at": "2026-10-10T05:32:43.562656+00:00",
+    "max_connections": 16,
+    "loopback_only": true,
+    "credential_env_forwarded": false,
+    "ready": {
+      "owner": "01a1222c-9a12-7663-9523-a245a73e937c",
+      "cycle": 5,
+      "pid": 82040,
+      "host": "127.0.0.1",
+      "port": 63108,
+      "container_id": "414f901e837ddf099ab7baec8a940a20fa377f9c58df564665a865180298bdfb",
+      "max_connections": 16
+    }
+  },
+  "port": 63108,
+  "url": "http://127.0.0.1:63108/",
+  "checks": {
+    "checked_at": "2026-10-10T05:33:21.837264+00:00",
+    "api_instance": {
+      "status": 200,
+      "bytes": 109,
+      "id": "snake-slaying-record",
+      "title": "李寄斩蛇 · 故事采编 · Review 第5轮 0012候选隔离复验"
+    },
+    "html": {
+      "status": 200,
+      "bytes": 5805
+    },
+    "static_scripts": [
+      {
+        "path": "/static/1516a5156783e7bd3329796d1bd63333305ff10c7e4d7ca5d82b902502625ee8/desk.js",
+        "status": 200,
+        "bytes": 607452,
+        "sha256": "1516a5156783e7bd3329796d1bd63333305ff10c7e4d7ca5d82b902502625ee8"
+      }
+    ],
+    "container_status": "running",
+    "container_health": "healthy",
+    "network_internal": true,
+    "no_default_ipv4_route": true,
+    "published_docker_ports": {},
+    "credential_env_nonempty": {
+      "OPENAI_API_KEY": false
+    },
+    "environment_names": [
+      "OPENAI_API_KEY",
+      "PATH",
+      "LANG",
+      "GPG_KEY",
+      "PYTHON_VERSION",
+      "PYTHON_SHA256",
+      "PYTHONUNBUFFERED"
+    ],
+    "baseline_comments": 272,
+    "active_comments": 272,
+    "executor_test_comment_ids_absent": [
+      "d2eaade7-3fa5-41f1-a6ec-09a8e0897b50",
+      "b08c7eb3-84f0-4613-a7fb-26999ac5984c",
+      "39692417-dca0-4039-9355-de0082f0bf05",
+      "00cb7cca-6c8d-423e-a4f6-72d33eb23f33",
+      "d702133e-f6d2-43c5-bb5c-d3cd86681fcd",
+      "task0012-omitted-source-comment"
+    ],
+    "formal_container_unchanged": true,
+    "actual_mounts": [
+      {
+        "source": "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.runtime/system-review/isolated-cycle-05-0012/instance",
+        "destination": "/instance",
+        "readonly": false
+      },
+      {
+        "source": "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.runtime/system-review/isolated-cycle-05-0012/instance/config",
+        "destination": "/instance/config",
+        "readonly": true
+      },
+      {
+        "source": "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.runtime/system-review/isolated-cycle-05-0012/instance/content",
+        "destination": "/instance/content",
+        "readonly": true
+      },
+      {
+        "source": "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.runtime/system-review/isolated-cycle-05-0012/instance/export/assets",
+        "destination": "/instance/export/assets",
+        "readonly": true
+      }
+    ],
+    "limits": {
+      "memory_bytes": 2147483648,
+      "nano_cpus": 2000000000,
+      "pids": 128,
+      "read_only_rootfs": true,
+      "tmpfs": {
+        "/tmp": "rw,nosuid,size=64m"
+      },
+      "log_config": {
+        "Type": "json-file",
+        "Config": {
+          "max-file": "1",
+          "max-size": "5m"
+        }
+      }
+    },
+    "runtime_code": {
+      "tracked_source_files": 88,
+      "all_source_bytes_match_exact_git_archive": true,
+      "canonical_file_manifest_sha256": "e19a287866056397552a8622d8692a7e4f094a8f09065f76c5ca6fd8e15b1e62",
+      "config_sha256": "04c04d9293aff9abb9985fa2602f531b05a5aeb22298ba6fcf03012b8fad5d91",
+      "config_commit": "0ad376bd1cefeb2d71b8cbd418bb22a943b22b3d",
+      "relationship_layout_sha256": "272e6152b9e7f840e6101aeb6f7a4b671698576f38861b998db9e90a5e3255c7",
+      "production_reading_entries": 134
+    }
+  },
+  "integration_readback": {
+    "checked_at": "2026-10-10T05:33:21.838489+00:00",
+    "task_status": "completed",
+    "revision": 3,
+    "repositories": {
+      "primary": {
+        "git_delivery": {
+          "base_commit": "afd5ac0c4f1209085bac9cab0f2136399494a780",
+          "branch": "main",
+          "candidate_commit": "d922a0b1de9079741860b4dddf82d08201fbab62",
+          "note": "准确候选 desk=0ad376bd1cefeb2d71b8cbd418bb22a943b22b3d、primary=d922a0b1de9079741860b4dddf82d08201fbab62，提交引用与清理检查器已核对；与已验树一致且工作区干净。Python 502、Node 874 全部通过；134 份准确编排通过真实 production.record 投影校验。Chrome 实做 AS001 连读、EN002/M2710/M1133 原图比较、M1134/M1187 切换与直达、AS012 干湿对照、文字/图像区域/声音时间评论及刷新草稿/原文定位/故事返回。执行证据在 production/reports/task-20261010-0012/。仅授权 Git 候选与隔离验证；正式未部署、测试意见未入正式、没有付费生成。声音效果、真实视频及根独立复验仍待验，不以文件和播放器检查代替。预览已停，1,075 文件约1.78GB及21临时日志已清理，双worktree因TUI保留待退出后受管退役。",
+          "phase": "pushed",
+          "push_destination": "7f8db02e864d7d28f25e5769d728070bc6e483a2945346e8720e8785d5504dde",
+          "remote": "origin",
+          "remote_ref": "refs/heads/main",
+          "repository": ".",
+          "session_id": "01a12403-af19-7a83-8e5b-4a8f907f1d52",
+          "workspace": "worktree"
+        },
+        "integration": {
+          "candidate_commit": "d922a0b1de9079741860b4dddf82d08201fbab62",
+          "note": "准确候选 desk=0ad376bd1cefeb2d71b8cbd418bb22a943b22b3d、primary=d922a0b1de9079741860b4dddf82d08201fbab62，提交引用与清理检查器已核对；与已验树一致且工作区干净。Python 502、Node 874 全部通过；134 份准确编排通过真实 production.record 投影校验。Chrome 实做 AS001 连读、EN002/M2710/M1133 原图比较、M1134/M1187 切换与直达、AS012 干湿对照、文字/图像区域/声音时间评论及刷新草稿/原文定位/故事返回。执行证据在 production/reports/task-20261010-0012/。仅授权 Git 候选与隔离验证；正式未部署、测试意见未入正式、没有付费生成。声音效果、真实视频及根独立复验仍待验，不以文件和播放器检查代替。预览已停，1,075 文件约1.78GB及21临时日志已清理，双worktree因TUI保留待退出后受管退役。",
+          "phase": "applied",
+          "session_id": "01a12403-af19-7a83-8e5b-4a8f907f1d52",
+          "target_commit": "afd5ac0c4f1209085bac9cab0f2136399494a780"
+        },
+        "main": "d922a0b1de9079741860b4dddf82d08201fbab62",
+        "prepared_tree": "66c5d8393149dcd6b3faea83aad7a5fd5e799283",
+        "main_tree": "66c5d8393149dcd6b3faea83aad7a5fd5e799283",
+        "tree_equal": true
+      },
+      "desk": {
+        "git_delivery": {
+          "base_commit": "e2b5b97103c7d2860e0d370f4eee691d9b6a4532",
+          "branch": "main",
+          "candidate_commit": "0ad376bd1cefeb2d71b8cbd418bb22a943b22b3d",
+          "note": "准确候选 desk=0ad376bd1cefeb2d71b8cbd418bb22a943b22b3d、primary=d922a0b1de9079741860b4dddf82d08201fbab62，提交引用与清理检查器已核对；与已验树一致且工作区干净。Python 502、Node 874 全部通过；134 份准确编排通过真实 production.record 投影校验。Chrome 实做 AS001 连读、EN002/M2710/M1133 原图比较、M1134/M1187 切换与直达、AS012 干湿对照、文字/图像区域/声音时间评论及刷新草稿/原文定位/故事返回。执行证据在 production/reports/task-20261010-0012/。仅授权 Git 候选与隔离验证；正式未部署、测试意见未入正式、没有付费生成。声音效果、真实视频及根独立复验仍待验，不以文件和播放器检查代替。预览已停，1,075 文件约1.78GB及21临时日志已清理，双worktree因TUI保留待退出后受管退役。",
+          "phase": "pushed",
+          "push_destination": "2ab02051ecb62f5af9e3e5f31bed2d09f68cd4ad6a9b0fe9ad38506b19c30980",
+          "remote": "origin",
+          "remote_ref": "refs/heads/main",
+          "repository": ".",
+          "session_id": "01a12403-af19-7a83-8e5b-4a8f907f1d52",
+          "workspace": "worktree"
+        },
+        "integration": {
+          "candidate_commit": "0ad376bd1cefeb2d71b8cbd418bb22a943b22b3d",
+          "note": "准确候选 desk=0ad376bd1cefeb2d71b8cbd418bb22a943b22b3d、primary=d922a0b1de9079741860b4dddf82d08201fbab62，提交引用与清理检查器已核对；与已验树一致且工作区干净。Python 502、Node 874 全部通过；134 份准确编排通过真实 production.record 投影校验。Chrome 实做 AS001 连读、EN002/M2710/M1133 原图比较、M1134/M1187 切换与直达、AS012 干湿对照、文字/图像区域/声音时间评论及刷新草稿/原文定位/故事返回。执行证据在 production/reports/task-20261010-0012/。仅授权 Git 候选与隔离验证；正式未部署、测试意见未入正式、没有付费生成。声音效果、真实视频及根独立复验仍待验，不以文件和播放器检查代替。预览已停，1,075 文件约1.78GB及21临时日志已清理，双worktree因TUI保留待退出后受管退役。",
+          "phase": "applied",
+          "session_id": "01a12403-af19-7a83-8e5b-4a8f907f1d52",
+          "target_commit": "e2b5b97103c7d2860e0d370f4eee691d9b6a4532"
+        },
+        "main": "0ad376bd1cefeb2d71b8cbd418bb22a943b22b3d",
+        "prepared_tree": "47d98f5b3d3836ca156cec4daed88266e403a577",
+        "main_tree": "47d98f5b3d3836ca156cec4daed88266e403a577",
+        "tree_equal": true
+      }
+    },
+    "prepared_environment_carries_to_integrated_content": true,
+    "formal_deployed": false
+  },
+  "checked_at": "2026-10-10T05:33:21.838494+00:00",
+  "cleanup": {
+    "responsibility": "root cycle05 Review",
+    "condition": "After root browser closed and writes ceased; preserve necessary exact private comments/anchors and independent verification evidence first",
+    "ordered_actions": [
+      {
+        "action": "verify exact proxy cmdline then SIGTERM and confirm listener absent",
+        "pid": 82040,
+        "script": "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.runtime/system-review/isolated-cycle-05-0012/loopback_proxy.py",
+        "port": 63108
+      },
+      {
+        "action": "normal stop then remove owned container",
+        "container_id": "414f901e837ddf099ab7baec8a940a20fa377f9c58df564665a865180298bdfb"
+      },
+      {
+        "action": "remove detached owned internal network",
+        "network_id": "799149cef080e4446fcd7980873e3fc1ba6a7c1d6ac8a09db4b55ce6db26d818"
+      },
+      {
+        "action": "remove own image only after no container/reference use; retain all shared tags",
+        "image_id": "sha256:911fb1648fd7ee5fc6b8012f4b249603ce1bcb1f9441079e7f4fdf2a37846b73",
+        "command": [
+          "docker",
+          "image",
+          "rm",
+          "--no-prune",
+          "sha256:911fb1648fd7ee5fc6b8012f4b249603ce1bcb1f9441079e7f4fdf2a37846b73"
+        ]
+      },
+      {
+        "action": "remove only own directory if no handles/mounts/recovery need; shared VM handles require retention without retries or stopping VM",
+        "path": "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.runtime/system-review/isolated-cycle-05-0012"
+      }
+    ],
+    "shared_resources_to_retain": [
+      "Docker VM",
+      "sha256:cc35315383d9cfe11db949d9949af4134d1b4bdffac05fad7f528700aeeeda80",
+      "sha256:36b2166cceb56a21218217f51461bf9a2afdf2b07ee98e902433d3d0c0b839d5",
+      "story-review-desk:current",
+      "story-review-desk:previous",
+      "story-review-desk:base"
+    ]
+  },
+  "current_resource_check": {
+    "checked_at": "2026-10-10T05:45:47.794356+00:00",
+    "proxy_pid": 82040,
+    "proxy_command": "82040 /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python -u /Users/bytedance/codex-path/creative/SnakeSlayingRecord/.runtime/system-review/isolated-cycle-05-0012/loopback_proxy.py",
+    "listener": "COMMAND   PID      USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME\nPython  82040 bytedance    3u  IPv4 0x84d3eee6f2135db5      0t0  TCP 127.0.0.1:63108 (LISTEN)",
+    "proxy_script_sha256": "0659bfa23eec0bdc86fa212c8865c55fd70fb3f643c0731f5c4c85b23d5d7a28",
+    "container_id": "414f901e837ddf099ab7baec8a940a20fa377f9c58df564665a865180298bdfb",
+    "container_name": "/system-review-01a1222c-cycle05-verify0012",
+    "container_status": "running",
+    "container_health": "healthy",
+    "image_id": "sha256:911fb1648fd7ee5fc6b8012f4b249603ce1bcb1f9441079e7f4fdf2a37846b73",
+    "image_labels": {
+      "org.opencontainers.image.revision": "0ad376bd1cefeb2d71b8cbd418bb22a943b22b3d",
+      "review.cycle": "5",
+      "review.owner": "01a1222c-9a12-7663-9523-a245a73e937c",
+      "review.task": "task-20261010-0012"
+    },
+    "network_id": "799149cef080e4446fcd7980873e3fc1ba6a7c1d6ac8a09db4b55ce6db26d818",
+    "network_name": "system-review-01a1222c-cycle05-verify0012-internal",
+    "network_internal": true,
+    "network_members": [
+      "414f901e837ddf099ab7baec8a940a20fa377f9c58df564665a865180298bdfb"
+    ],
+    "mounts": [
+      {
+        "source": "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.runtime/system-review/isolated-cycle-05-0012/instance",
+        "destination": "/instance",
+        "readonly": false
+      },
+      {
+        "source": "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.runtime/system-review/isolated-cycle-05-0012/instance/config",
+        "destination": "/instance/config",
+        "readonly": true
+      },
+      {
+        "source": "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.runtime/system-review/isolated-cycle-05-0012/instance/content",
+        "destination": "/instance/content",
+        "readonly": true
+      },
+      {
+        "source": "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.runtime/system-review/isolated-cycle-05-0012/instance/export/assets",
+        "destination": "/instance/export/assets",
+        "readonly": true
+      }
+    ],
+    "http": {
+      "status": 200,
+      "body": {
+        "id": "snake-slaying-record",
+        "title": "李寄斩蛇 · 故事采编 · Review 第5轮 0012候选隔离复验"
+      }
+    },
+    "identity_drift": false,
+    "actions": "read-only inspection; no service or resource changes"
+  },
+  "retention": {
+    "purpose": "供用户查看本轮0012实际候选效果及独立残留复验参照；后续任务自建环境，不以此为开发基线",
+    "responsibility": "root cycle05 Review",
+    "status": "retained_in_use",
+    "release_condition": "下一轮采用新的准确交付预览或用户不再需要本预览时，先关闭root浏览器并保全必要意见/对照证据，核对无其他活跃引用，再按已有授权退役准确归属资源；不额外推导需用户批准普通清理。",
+    "deadline_behavior": "Review deadline pause does not stop other terminal execution tasks; no automatic cleanup or service stop performed."
+  },
+  "private_evidence": {
+    "comments": [
+      {
+        "path": ".runtime/system-review/evidence/cycle-05-0012-comment-export.json",
+        "bytes": 8610,
+        "sha256": "f75e3ee9fb950ba28d166a0acdaa21b9bb9d86d7446ad4894b9d6bbdf16c8983"
+      }
+    ],
+    "delivery": {
+      "path": ".runtime/system-review/evidence/cycle-05-0012-delivery-receipt.json",
+      "bytes": 11726,
+      "sha256": "118f3af1bdbf369aa6fcced3db509e164c5fd10eb9cf4ba2c8eda321f2e5fa6b"
+    }
+  },
+  "owner_update_previous_sha256": "f1fc7987dfb6c571914f4866cfe90725cb19ec58791530929be990bbc97fe56d"
+}
