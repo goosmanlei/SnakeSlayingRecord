@@ -1,9 +1,4 @@
-"""Compile explicit material routes for the newly authored audiovisual score.
-
-No provider calls, automatic approvals or retrospective call edits.
-Exact voice inputs compile only individually authored source/use decisions.
-The four still-useful independent-song materials retain their exact identities.
-"""
+"""Verify existing exact audiovisual products without rebuilding their media plans."""
 from collections import Counter
 import importlib.util
 import hashlib
@@ -115,7 +110,7 @@ class Builder:
         self.states = {r['object_id']: r for r in p.current_records(store, {'STATE'})}
         self.image_config = json.loads((ROOT / 'config/openart.json').read_text())
         self.voice = casting()
-        self.voice_reviews, self.voice_uses, self.voice_review_complete = reviewed_voice_uses(ROOT)
+        self.voice_reviews, self.voice_uses, self.voice_review_complete = {}, {}, False
         self.voice_choices = {}
         self.relations = {}
         for row in p.current_records(store, {'MATERIAL_RELATION'}):
@@ -405,202 +400,23 @@ class Builder:
                 self.state_needs[state_id] = oid
 
     def shots(self):
+        """Keep each explicitly named plan; purpose edits never recompile it."""
         for row in self.av:
             if row['kind'] != 'AV_SHOT':
                 continue
-            payload, shot_id = row['payload'], row['object_id']
-            executable = self.input_audit[shot_id].get('execution_reviewed', False)
-            text_choice = self.text_handoffs['shots'].get(shot_id, {})
-            visual_start = text_choice.get('visual_start', payload['action_start'])
-            visual_end = text_choice.get('visual_end', payload['action_end'])
-            visual_performance = text_choice.get('visual_performance', payload['performance'])
-            states = [self.states[r['object_id']] for r in payload['states']]
-            owners = {r['object_id']: self.entities[r['object_id']] for r in payload['entities']}
-            spaces = [r for r in owners.values() if r['payload']['entity_type'] == 'space']
-            source = payload['sources']; scope = future(shot_id)
-            camera_ids = []
-            # The alternate camera is useful where the enclosing stone passage
-            # makes a reversed view especially easy to misunderstand.
-            alternate = any(s['scene_id'] in ('s018', 's023', 's029', 's030', 's031', 's032', 's033') for s in source)
-            for view in ('main', 'reverse') if alternate else ('main',):
-                oid = 'material-' + shot_id + '-camera-' + view
-                purpose = ('主机位' if view == 'main' else '同侧备用观察机位') + '确认本镜空间方向和可拍范围。'
-                inputs = [self.relation(self.masters[s['object_id']], oid, scope, '沿准确空间母版确定本镜机位，固定出入口与尺度',
-                    '空间拓扑、固定结构、北南东西及真实距离', '只改变相机位置、景别和本场光线，不左右镜像空间',
-                    payload['axis'] + '；以人物可站位置和通道尺度核对', sources=source, type_id='space-camera', semantics='variant') for s in spaces]
-                labels = '\n'.join(f'图片{i}固定空间：{s["payload"]["title"]}。' for i, s in enumerate(spaces, 1))
-                choice = payload['framing'] if view == 'main' else '在已定轴线同侧改为略偏侧的观察视点，保留相同左右，不跨轴、不镜像；供明确改选路线时比较。'
-                prompt = f'{STYLE}\n{labels}\n空间：{payload["spatial"]}\n轴线：{payload["axis"]}\n机位：{choice}\n光线：{payload["lighting"]}\n色彩：{payload["color"]}\n只出环境和固定器物的机位参考，不放人物、不生成未来动作或文字标记。'
-                self.need(oid, scope, 'camera-' + view, 'image', purpose,
-                    self.plan('image', prompt, inputs, name=payload['title'] + ' · ' + ('主机位' if view == 'main' else '侧机位'), description=purpose),
-                    sources=source, entities=[reference(s) for s in spaces], required=view == 'main',
-                    specification={'planned_i2i_depth': 1, 'camera_route': view})
-                camera_ids.append(oid)
-            oid = 'material-' + shot_id + '-first-frame'
-            inputs = []
-            for camera, route in zip(camera_ids, ('main', 'reverse')):
-                inputs.append(self.relation(camera, oid, scope, '选择此镜机位作为首帧构图依据',
-                    '轴线、出入口、固定物距离与镜头景别', '按动作起点加入准确人物和道具，不照搬空景为成片',
-                    payload['action_start'], sources=source, necessity='one_of', group='camera', route=route))
-            start_states = first_frame_states(states, self.states, self.input_audit[shot_id])
-            visible = [s for s in start_states if s['payload']['reference_media'] == 'image' and
-                       self.entities[s['payload']['entity']['object_id']]['payload']['entity_type'] != 'space']
-            if shot_id in self.frame_subjects:
-                wanted = self.frame_subjects[shot_id]
-                if wanted - {s['payload']['entity']['object_id'] for s in visible}:
-                    raise ValueError('first-frame choice lacks an applicable state: ' + shot_id + ' ' + str(wanted - {s['payload']['entity']['object_id'] for s in visible}))
-                visible = [s for s in visible if s['payload']['entity']['object_id'] in wanted]
-            if set(self.input_audit[shot_id].get('first_frame_states', {})) - {s['payload']['entity']['object_id'] for s in visible}:
-                raise ValueError('first-frame state choice is not visible: ' + shot_id)
-            if len(visible) + 1 > 16:
-                raise ValueError('first frame exceeds OpenArt input limit; author a narrower shot or route: ' + shot_id)
-            for state in visible:
-                upstream = self.state_needs.get(state['object_id']) or self.masters[state['payload']['entity']['object_id']]
-                inputs.append(self.relation(upstream, oid, scope, '首帧使用：' + state['payload']['title'],
-                    TYPE_CHECKS[self.entities[state['payload']['entity']['object_id']]['payload']['entity_type']][0], '只调整本镜站位、手位、朝向与构图',
-                    payload['continuity'], sources=source, type_id='state-frame'))
-            labels = '图片1为选定机位；' + ''.join(f'图片{i}为{frame_state_label(s, self.input_audit[shot_id])}；' for i, s in enumerate(visible, 2))
-            prompt = f'{STYLE}\n{labels}\n准确状态参考只固定可见主体的轮廓、衣着、伤侧、材质与结构；其制作说明中的其他使用场合和动作不在本首帧重演。\n拍摄位置：{payload["framing"]}。{payload["axis"]}\n只画动作开始的瞬间：{visual_start}。参考只约束真正入画的主体，镜内后续才入画的人物和画外声不提前塞入首帧。\n场所：{payload["spatial"]}\n{payload["lighting"]}。{payload["color"]}\n镜尾将发生“{visual_end}”，此首帧不得提前表现完成结果。\n连续性：{payload["continuity"]}。不加字幕、水印和装饰边框。'
-            for state in visible:
-                if state['object_id'] not in self.state_needs:
-                    stage_text = self.input_audit[shot_id].get('frame_state_text', {}).get(state['object_id'])
-                    if stage_text and stage_text['revision_id'] != state['id']:
-                        raise ValueError('first-frame state text needs re-review: ' + shot_id + ' ' + state['object_id'])
-                    text = stage_text['text'] if stage_text else self.visual_description(state, description(state['payload']))
-                    prompt += '\n' + frame_state_label(state, self.input_audit[shot_id]) + '：此参考提供基础结构，当前形态按以下文字落实，仅画本镜起点；' + text
-            if set(self.input_audit[shot_id].get('frame_state_text', {})) - {s['object_id'] for s in visible if s['object_id'] not in self.state_needs}:
-                raise ValueError('first-frame state text is not used by this shot: ' + shot_id)
-            if text_choice.get('frame_detail'):
-                prompt += '\n' + text_choice['frame_detail']
-            self.need(oid, scope, 'first-frame', 'image', '固定本镜动作起点、人物身份、手位和机位，供视频原生表演延续。',
-                frame_plan(self.plan('image', prompt, inputs, name=payload['title'] + ' · 首帧', description=payload['action_start'], selected_routes={'camera': 'main'}), self.input_audit[shot_id]),
-                sources=source, entities=[s['payload']['entity'] for s in visible], states=[reference(s) for s in visible],
-                specification={'planned_i2i_depth': 2, 'first_frame': True})
-            frame_id = oid
-            oid = 'material-' + shot_id + '-video'
-            inputs = [self.relation(frame_id, oid, scope, FRAME_USE,
-                payload['action_start'] + '；固定主体与空间', '原生生成下述连续动作、对白、呼吸、环境与表演',
-                '普通参考不保证固定首帧；' + payload['action_end'] + '；' + payload['continuity'], sources=source, type_id='frame-video')]
-            events = self.reviewed.for_sources(source)
-            speakers = list(dict.fromkeys(e['speaker'] for e in events if e['speaker'] in self.voice.VOICES))
-            audio_labels = []
-            for key in speakers:
-                inputs.append(self.voice_input(key, oid, scope, source, shot_id))
-                audio_labels.append('@音频' + str(len(audio_labels) + 1) + '只参考' + self.voice.VOICES[key][0] + '的音色。')
-            song_owners = list(dict.fromkeys(e['song'] for e in events if e.get('song')))
-            for owner in song_owners:
-                inputs.append(self.relation(SONGS[owner], oid, scope, '曲调短参考：' + self.entities[owner]['payload']['title'],
-                    '已明确曲调的旋律轮廓和节拍', '角色自己唱本镜输入锁规定词句；不加入独立整曲的额外歌词，不继承独立歌手音色',
-                    '听审后准确选择对应乐句2至8秒；缺词状态必须真的停，不用母版补唱', sources=source))
-                audio_labels.append('@音频' + str(len(audio_labels) + 1) + '只参考' + self.entities[owner]['payload']['title'] + '的指定曲调片段。')
-            seconds = payload['duration_frames'] // payload['fps']
-            maximum = 3 if seconds <= 15 else 10
-            if len(audio_labels) > maximum:
-                raise ValueError('too many voice references for authored duration; revise route explicitly: ' + shot_id)
-            prompt = f'{STYLE}\n{seconds}秒，16:9，720p。@图片1为起始构图参考，维持已可见身份、空间和手位；' + ''.join(audio_labels)
-            prompt += f'\n意图与表演：{visual_performance}\n镜头：{payload["framing"]}。轴线：{payload["axis"]}\n从{visual_start}开始，到{visual_end}结束。\n{payload["spatial"]}\n光色：{payload["lighting"]}；{payload["color"]}\n声音和剪接：' + '\n'.join(payload['sound'][:2])
-            prompt += ('\n动作与发声按下列顺序连续发生；不朗读动作说明或角色名：\n' if executable else
-                       '\n本镜准确动作与发声执行顺序（叙述转成动作，发声事件实际出声；不朗读叙述、角色名或制作说明）：\n')
-            prompt += self.reviewed.render(source, text_choice.get('narration'), executable=executable)
-            if text_choice.get('video_detail'):
-                prompt += '\n' + text_choice['video_detail']
-            dialogue_rule = ('不新增锁定原句以外的台词，不添加旁白、抢先信息、炫技切镜或慢动作。' if executable else
-                             '不添加对白、旁白、抢先信息、炫技切镜或慢动作。')
-            prompt += '\n连续性：' + payload['continuity'] + '\n' + dialogue_rule + '没有画外声的台词由实际说话人同步说出；保留自然气口和动作停顿。'
-            def supplement(value):
-                state = self.states[value['state']]
-                if value.get('reference_basis') == 'identity_master':
-                    if self.preparation[value['state']]['mode'] != '文字检查':
-                        raise ValueError('identity-only supplement needs an authored textual state decision: ' + value['state'])
-                    upstream = self.masters[state['payload']['entity']['object_id']]
-                    preserve = '只固定干净母版的身份、尺度与结构，不把母版姿态当当前结果'
-                    change = description(state['payload']) + '；按本镜时间顺序形成，不提前展示变化结果'
-                else:
-                    upstream = self.state_needs[value['state']]
-                    preserve = state['payload']['title'] + '的身份与完整状态；只取本镜需要显露的部分'
-                    change = '按本镜时间顺序入画，不提前露脸、改站位或提前展示状态变化结果'
-                return self.relation(upstream, oid, scope, value['use'], preserve, change,
-                    value['use'] + '；只选本直接参考的准确候选，不自动附带祖先', sources=source,
-                    type_id='state-video', identity='mr-video-input-' + shot_id + '-' + value['state'])
-            def media_type(item):
-                key = item['reference']['object_id']
-                return (self.generated[key] if key in self.generated else self.p.record(self.store, key))['payload']['media_type']
-            plan = self.plan('video', prompt, inputs, seconds=seconds, name=payload['title'] + ' · 视频',
-                description=payload['action_start'] + ' → ' + payload['action_end'])
-            for value in self.input_audit[shot_id].get('supplements', []):
-                if value.get('reference_basis') == 'identity_master':
-                    state = self.states[value['state']]['payload']
-                    instruction = ('：该图只固定身份，当前衣着、持物与动作按以下描述及本镜先后表现：'
-                                   if executable else '只附身份母版，当前差异按文字与结果核查：')
-                    plan['prompt'] += '\n' + state['title'] + instruction + self.visual_description(self.states[value['state']], description(state))
-            plan['blockers'] = self.reviewed.blockers(source)
-            planned = video_plan(plan, self.input_audit[shot_id], supplement, media_type)
-            if text_choice.get('handoff'):
-                planned['output'] = {**planned['output'],
-                    'description': planned['output']['description'] + '\n' + text_choice['handoff'],
-                    'review_criteria': [*planned['output']['review_criteria'], text_choice['handoff']]}
-            purpose = ('完成本镜动作与原生声音，文字交接和检查见输出要求；视频结果须连同应读文字验收。'
-                       if text_choice.get('handoff') else '原生音画完成这一镜；图像候选不计为视频结果。')
-            self.need(oid, scope, 'video', 'video', purpose,
-                planned,
-                sources=source, entities=payload['entities'], states=payload['states'], specification={'resolution': '720p', 'aspect_ratio': '16:9'})
+            payload = row['payload']
+            if payload.get('reading_contract') != 'audiovisual-three-part-v1':
+                raise ValueError('author the three-part reading before material handoff')
+            for product in payload['products']:
+                need = self.p.ref_record(self.store, product['requirement'], {'REQUIREMENT'})
+                if need['payload']['scope']['object_id'] != row['object_id']:
+                    raise ValueError('product belongs to another shot')
+                self.keep[need['object_id']] = reference(need)
 
     def build(self):
-        self.roots(); self.forms(); self.shots()
-        self.rows.extend(exact_text_handoffs.records(self.text_handoffs, self.av, self.entities, self.states))
-        # Exact existing candidates are reviewable alternatives. This declares
-        # their purpose without adopting them or attaching them to a new call.
-        for asset in self.p.current_records(self.store, {'ASSET'}):
-            targets = set()
-            voice_targets = self.existing_voice_targets(asset)
-            targets.update(voice_targets)
-            for state in asset['payload'].get('states', []):
-                target = 'material-' + state['object_id'] + '-overall'
-                if target in self.generated and self.generated[target]['payload'].get('status') != 'withdrawn':
-                    targets.add(target)
-            for entity in asset['payload'].get('subjects', []):
-                target = self.masters.get(entity['object_id'])
-                if target in self.generated:
-                    targets.add(target)
-            for target in sorted(targets):
-                need = self.generated[target]['payload']
-                if need['media_type'] != asset['payload']['media_type']: continue
-                if target in voice_targets:
-                    choice = next((v for v in self.voice_choices.values()
-                                   if v['review']['need_id'] == target and v['reference'] == reference(asset)), None)
-                    labels = {'suitable_spoken_identity': '限定片段复用方案待认可',
-                              'needs_comparison': '声音方向或字音待比较',
-                              'needs_new_reference': '当前方向需新准备',
-                              'needs_longer_reference': '过短，需更长试样'}
-                    title = '已有音色候选，待听审与用途比较'
-                    check = '逐项实际听辨说话者、音区音色、字音、噪声伴奏与表达；明确原件组成和起止范围，按具体镜头渠道核时长；未听审或未选段保持待准备'
-                    if choice:
-                        title = '已有音色候选：' + labels[choice['review']['decision']]
-                        check = choice['review']['reason'] + '；新方案、片段及本镜表演须独立认可，不转授旧母版判断。'
-                    self.relation(asset['object_id'], target, need['scope'], title,
-                        '准确旧原件、真实调用与原说话身份；历史母版认可只限旧原件',
-                        '只取声音身份，现场重新表演本镜正文；不继承旧试读台词、语气、呼吸或环境，也不冒充新试样的生成结果',
-                        check,
-                        sources=need['sources'], necessity='optional', semantics='alternative', type_id='existing-candidate')
-                    continue
-                self.relation(asset['object_id'], target, need['scope'], '已有候选可供本需求比较和复用选择',
-                    '原件身份、真实调用及已知身份或状态依据；不把旧认可迁到新方案',
-                    '本次未选择候选；先核当前完整状态、风格、原生规格与图像谱系，再明确改选输入路线',
-                    '打开本候选原件逐项审阅；资料缺失继续标为未知，不用新方案补造生成来历',
-                    sources=need['sources'], necessity='optional', semantics='alternative', type_id='existing-candidate')
-        # Retire the compiled routes of a withdrawn preparation, retaining the
-        # previous exact edge and all historical plans/calls in revision history.
-        from copy import deepcopy
-        retired = {oid for oid, r in self.generated.items() if r['kind'] == 'REQUIREMENT' and r['payload'].get('status') == 'withdrawn'}
-        for relation in self.p.current_records(self.store, {'MATERIAL_RELATION'}):
-            target = self.generated.get(relation['payload']['downstream_id'])
-            replaced_direct_input = (relation['object_id'].startswith('mr-video-input-') and target
-                and target['kind'] == 'REQUIREMENT' and relation['object_id'] not in {
-                    i.get('relation', {}).get('object_id') for i in target['payload'].get('generation', {}).get('inputs', [])})
-            if relation['object_id'] not in self.generated and (relation['payload']['downstream_id'] in retired or relation['payload']['upstream']['object_id'] in retired or replaced_direct_input):
-                value = deepcopy(relation['payload']);value.update(status='withdrawn', withdrawal_reason='本次逐镜用途判断已调整状态准备或准确输入；旧关系与历史方案保留，不再作为当前执行依据')
-                self.put(relation['object_id'], 'MATERIAL_RELATION', value)
-        return {'records': self.rows, 'preserve_exact_requirements': list(self.keep.values()), 'counts': dict(self.counts)}
+        self.shots()
+        return {'records': [], 'preserve_exact_requirements': list(self.keep.values()),
+                'counts': {'preserved_products': len(self.keep)}}
 
     def existing_voice_targets(self, asset):
         """Match owner and exact requested speaker/direction; never a group alone."""

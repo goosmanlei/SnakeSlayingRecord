@@ -39,3 +39,10 @@ class SceneReadingTest(unittest.TestCase):
         self.need['payload']['scope']['revision_id'] = 'latest-shot'
         with self.assertRaisesRegex(ValueError, 'outside exact shot'):
             descriptor(self.shot, self.need, ReviewedSequence(), {}, True)
+
+    def test_new_purpose_can_reuse_an_explicit_exact_product(self):
+        self.need['id'] = 'accurate-video-plan'
+        self.need['payload']['scope']['revision_id'] = 'earlier-shot'
+        self.shot['payload']['products'] = [{'requirement': {'object_id':'video', 'revision_id':'accurate-video-plan'}}]
+        result = descriptor(self.shot, self.need, ReviewedSequence(), {}, True)
+        self.assertEqual(result['sha256'], hashlib.sha256(self.prompt.encode()).hexdigest())
