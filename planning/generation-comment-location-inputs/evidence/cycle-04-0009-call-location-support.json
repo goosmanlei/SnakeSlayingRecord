@@ -1,0 +1,153 @@
+{
+  "format": "cycle-04-call-comment-location-support-v1",
+  "read_at": "2026-10-09T23:51:45.587519+00:00",
+  "environment": {
+    "url": "http://127.0.0.1:49297/api/production/entity-review?entity_id=entity-crossbeam",
+    "purpose": "isolated_review_exercise",
+    "desk_commit": "ac735586575f3a0bdd319ae95d23acd188285117"
+  },
+  "source": "read-only API; UI observations supplied by root",
+  "asset": {
+    "object_id": "asset-fg3-crossbeam-eight-image-04",
+    "id": "2ccaa3a630d81b9729277ae9131c7801889031c65e64c3318bf5f123b6ade660",
+    "kind": "ASSET",
+    "version": 1
+  },
+  "placement": {
+    "id": "asset-fg3-crossbeam-eight-image-04:component:original",
+    "state": null,
+    "review_state": {
+      "object_id": "form-crossbeam-eight",
+      "revision_id": "8a7f693c532aa2cb8ff04bbd1ca060ba0a1416dae97cd0310dd1152b9de88db9"
+    },
+    "component_id": "original"
+  },
+  "call": {
+    "object_id": "call-fg3-crossbeam-eight-image-04",
+    "id": "dabee604f4cc373e1b8bb47573dcd96fde044c675af3973ac810bc41bd574081",
+    "kind": "CALL",
+    "version": 1
+  },
+  "call_prompt_characters": 2806,
+  "call_prompt_sha256": "c69c77b747030fa5d1fecf2ff34e8c60e69936e04f810202d81ed618add0977c",
+  "input_records": [
+    {
+      "object_id": "entity-crossbeam",
+      "id": "115731814d24b6b4b99e325d0f9286435df91fc1582e838690e44edf150b599c",
+      "kind": "ENTITY",
+      "version": 1
+    },
+    {
+      "object_id": "form-crossbeam-eight",
+      "id": "8a7f693c532aa2cb8ff04bbd1ca060ba0a1416dae97cd0310dd1152b9de88db9",
+      "kind": "STATE",
+      "version": 1
+    },
+    {
+      "object_id": "asset-fg3-feeding-channel-base-image-02",
+      "id": "40c463e5d080aca4387023e158cb95a75c6dc42c7de734d8d87eb3a30485e8e4",
+      "kind": "ASSET",
+      "version": 1
+    },
+    {
+      "object_id": "asset-fg3-crossbeam-base-image-01",
+      "id": "94e9b74b04de561706b0c7aa2b5caf24b6a812493bc168c69555bd8f7f2d1e70",
+      "kind": "ASSET",
+      "version": 1
+    }
+  ],
+  "call_input_refs": [
+    {
+      "object_id": "entity-crossbeam",
+      "revision_id": "115731814d24b6b4b99e325d0f9286435df91fc1582e838690e44edf150b599c"
+    },
+    {
+      "object_id": "form-crossbeam-eight",
+      "revision_id": "8a7f693c532aa2cb8ff04bbd1ca060ba0a1416dae97cd0310dd1152b9de88db9"
+    },
+    {
+      "component_id": "original",
+      "crop": {
+        "height": 1,
+        "width": 1,
+        "x": 0,
+        "y": 0
+      },
+      "object_id": "asset-fg3-feeding-channel-base-image-02",
+      "revision_id": "40c463e5d080aca4387023e158cb95a75c6dc42c7de734d8d87eb3a30485e8e4"
+    },
+    {
+      "component_id": "original",
+      "crop": {
+        "height": 1,
+        "width": 1,
+        "x": 0,
+        "y": 0
+      },
+      "object_id": "asset-fg3-crossbeam-base-image-01",
+      "revision_id": "94e9b74b04de561706b0c7aa2b5caf24b6a812493bc168c69555bd8f7f2d1e70"
+    }
+  ],
+  "retained_state_records": [],
+  "root_evidence_files": [
+    {
+      "path": ".runtime/system-review/evidence/cycle-04-0009-technical-location-duplicate.txt",
+      "sha256": "b9b368dea485892ac3c6eadaf8d1059c3c409e4e2de291d7e48c8357b3c04418",
+      "bytes": 11932
+    },
+    {
+      "path": ".runtime/system-review/evidence/cycle-04-0009-technical-comment-located.jpg",
+      "sha256": "0bb7f7996e1f3437b78c4d665743e01f0e962bce29eb5edf6ff1928aaf2b3442",
+      "bytes": 353518
+    },
+    {
+      "path": ".runtime/system-review/evidence/cycle-04-0009-duplicate-inputs-missing.jpg",
+      "sha256": "1977695c8b123556e6ec7a9880041306487b9c21c0e14147ee3bd12f6184f8bf",
+      "bytes": 241187
+    },
+    {
+      "path": ".runtime/system-review/evidence/cycle-04-0009-left-call-remains-after-collapse.jpg",
+      "sha256": "24042ee1ec3f6643c3e7469e151a2ec47c4111bb4ba06474c5651e036b1fccf2",
+      "bytes": 315399
+    }
+  ],
+  "executor_fixture_file": ".runtime/task-20261010-0009/evidence/technical-comment.json",
+  "executor_screenshot_file": ".runtime/task-20261010-0009/evidence/technical-comment-location.jpg",
+  "root_comment": {
+    "source": "root actual browser practice; isolated only",
+    "id": "9654e70d-b935-403c-8b81-ee2ea58d9743",
+    "display_code": "C283",
+    "target_object_id": "call-fg3-crossbeam-eight-image-04",
+    "target_revision_id": "dabee604f4cc373e1b8bb47573dcd96fde044c675af3973ac810bc41bd574081",
+    "anchor": {
+      "type": "text",
+      "block_id": "@review/call/prompt",
+      "start": 1375,
+      "end": 1409,
+      "quote": "No hanging rope, no post bindings."
+    }
+  },
+  "task_status_observed": {
+    "task_id": "task-20261010-0009",
+    "status": "completed",
+    "revision": 3,
+    "updated_at": "2026-10-10T07:40:43.864988+08:00"
+  },
+  "associated_state_records": [
+    {
+      "state": {
+        "object_id": "form-crossbeam-eight",
+        "id": "8a7f693c532aa2cb8ff04bbd1ca060ba0a1416dae97cd0310dd1152b9de88db9",
+        "kind": "STATE",
+        "version": 1
+      },
+      "entity": {
+        "object_id": "entity-crossbeam",
+        "id": "115731814d24b6b4b99e325d0f9286435df91fc1582e838690e44edf150b599c",
+        "kind": "ENTITY",
+        "version": 1
+      }
+    }
+  ],
+  "associated_state_read_at": "2026-10-09T23:53:07.557441+00:00"
+}
