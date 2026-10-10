@@ -139,6 +139,11 @@ def prepare(a):
             require(not Path(relative).is_absolute() and '..' not in Path(relative).parts, 'migration must be project relative')
             raw = base.git_file(story, a.story_candidate, relative)
             require(raw == (story / relative).read_bytes(), 'migration input differs from candidate')
+            if key == 'package':
+                for filename, digest in json.loads(raw)['authored_sha256'].items():
+                    require(not Path(filename).is_absolute() and '..' not in Path(filename).parts, 'unsafe authored source path')
+                    source_raw = base.git_file(story, a.story_candidate, filename)
+                    require(sha(source_raw) == digest and source_raw == (story/filename).read_bytes(), 'authored migration source drifted: '+filename)
             latest[key] = 'latest/' + key + '.json'; put(latest[key], raw)
     method_media=method_media_files(read(root/'instance/content/production-approach.json'))
     for name,digest in method_media.items():
@@ -407,7 +412,7 @@ def apply(a):
                 database_runtime={'journal_mode':db.execute('PRAGMA journal_mode').fetchone()[0]}
             require(database_runtime['journal_mode']=='delete','reviewed DELETE journal mode changed')
         base.update_image_aliases(m,image)
-        result={'status':'formal_browser_pending','service':service,'release':str(release),'rows':evidence,'business_delta':None if method_change else 0,'method_migration':read(receipt/'method-migration.json') if method_change else None,'system_candidate':m['system_candidate'],'push':False,'complete_invoked':False,
+        result={'status':'formal_browser_pending','service':service,'release':str(release),'rows':evidence,'business_delta':None if method_change or m.get('latest_state_migration') else 0,'method_migration':read(receipt/'method-migration.json') if method_change else None,'system_candidate':m['system_candidate'],'push':False,'complete_invoked':False,
                 'database_changes':m.get('database_changes'),'database_runtime':database_runtime}
         save(receipt/('service-'+str(time.time_ns())+'.json'),result);print(json.dumps(result,ensure_ascii=False))
 
