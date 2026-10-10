@@ -6,7 +6,7 @@
     "path": ".runtime/system-review/publication/cycle-05-production-simplification-draft.md",
     "sha256": "24ef06a88a5ab9421590b642ef25493bdfbbc3e3beb0827890425bcce2838c35",
     "managed_document": "planning/production-simplification-task.md",
-    "changes": "Retained the complete task specification; adapted task identity, stable relative evidence links and clarified historical verification status."
+    "changes": "Retained complete task scope, adapted task identity and evidence links. Latest human-decision contract corrects unsupported mandatory layer-by-layer approval claims; M1187 entry consistency is included without alleging wrong original binding."
   },
   "copied_files": [
     {
@@ -91,6 +91,41 @@
       "source_project_relative": ".runtime/system-review/prototypes/cycle-05/source-manifest.json",
       "bytes": 30840,
       "sha256": "9c75e1d662f35e04d52dc14bb1128e1fae9c3a2a0c580d3a379ac645f665e1ff",
+      "transfer": "byte_identical"
+    },
+    {
+      "path": "evidence/cycle-05-human-decisions-contract.md",
+      "source_project_relative": ".runtime/system-review/evidence/cycle-05-human-decisions-contract.md",
+      "bytes": 14000,
+      "sha256": "c4fd4b9ac4106cc86ee0ccda80e1803c31f72d01cd9fa27e963344fc06241c15",
+      "transfer": "byte_identical"
+    },
+    {
+      "path": "evidence/cycle-05-m1187-entry-investigation.md",
+      "source_project_relative": ".runtime/system-review/evidence/cycle-05-m1187-entry-investigation.md",
+      "bytes": 6905,
+      "sha256": "805cde57fabc4980bbbb63b0527df9342a7ed76c0bc57a2a283727dc602043c0",
+      "transfer": "byte_identical"
+    },
+    {
+      "path": "evidence/cycle-05-m1134-current.txt",
+      "source_project_relative": ".runtime/system-review/evidence/cycle-05-m1134-current.txt",
+      "bytes": 7270,
+      "sha256": "0103666ad4387c3c7432d54f22c1f17ef63ab0cd93087afd1753e85c56265e49",
+      "transfer": "byte_identical"
+    },
+    {
+      "path": "evidence/cycle-05-m1187-current.txt",
+      "source_project_relative": ".runtime/system-review/evidence/cycle-05-m1187-current.txt",
+      "bytes": 7167,
+      "sha256": "7ec9ebe193fa0a2c0ce509ea2148b3bd7974a28ca4760c56c1bf7cea1a0e8b9b",
+      "transfer": "byte_identical"
+    },
+    {
+      "path": "evidence/cycle-05-m1187-direct-current.txt",
+      "source_project_relative": ".runtime/system-review/evidence/cycle-05-m1187-direct-current.txt",
+      "bytes": 7132,
+      "sha256": "5221c93345a4341799c3a647e6650857411311beb7b1263d985c8ea7d3a3bd48",
       "transfer": "byte_identical"
     }
   ],
@@ -198,9 +233,22 @@
       "transfer": "publish_callback_input_file",
       "assessment": "exact original; no new quality acceptance",
       "listened": false
+    },
+    {
+      "input_index": 9,
+      "source_project_relative": ".runtime/system-review/evidence/cycle-05-prototype-aheng-viewport.jpg",
+      "published_name": "cycle-05-prototype-aheng-viewport.jpg",
+      "purpose": "准确阿蘅原图与当前形象、既有认可和两份意见区域相邻的展示优先画面；不覆盖原两张截图及其源名映射",
+      "bytes": 211213,
+      "sha256": "603be882e4912afaf6bbca6a835273f76e30e28ad673f3bb918866a8de912c01",
+      "mime": "image/jpeg",
+      "transfer": "modify_callback_input_file_pending",
+      "assessment": "screenshot viewed in this clarification",
+      "width": 3408,
+      "height": 1891
     }
   ],
-  "verification_boundary": "Byte and identity checks only at transfer. Root actual reading/image/draft practice is source evidence; no listening or video acceptance is claimed. This session does not execute the product task.",
+  "verification_boundary": "Transferred sources remain exact snapshots. Migrated static sample was actually read and its image/navigation checked; this is not product candidate verification. Root draft-persistence practice is source evidence. No listening or video acceptance is claimed. The ninth screenshot still requires the managed modification media callback; the task ledger is authoritative.",
   "unselected_local_evidence": [
     {
       "path": ".runtime/system-review/evidence/cycle-05-prototype-feedback-v1.jpg",
@@ -218,8 +266,13 @@
   "transfer_validation": {
     "html_sha256": "b97a794a15232b9ce6f089ef74bf1bee0daa62947a93bcec8eb4e2e3a128c80e",
     "image_sha256": "6f9cb6a1cabddd8ce34630709e0993ef66c69a66429a330f7cf943107b6c890f",
-    "browser_attempt": "Chrome file:// open rejected by browser URL policy; only http/https protocols allowed. No workaround or alternate browser attempted.",
-    "browser_result": "Not verified in this clarification. Root prior real prototype readback remains historical source evidence.",
+    "browser_attempt": "Initial file:// request was rejected. After explicit user instruction, a directory-limited localhost HTTP service served the unchanged migrated sample on its own ephemeral port, without root Review service.",
+    "browser_result": "Actual Chrome verification of migrated full five-shot content, aheng exact image and adjacent design/judgment, image zoom/original-size/return, and section navigation. No new draft feedback entered or persistence retested; root prior practice remains separately attributed. Own tab and server closed after verification.",
     "audio": "Both original WAV files exist and hash matches filename. Duration metadata 14.50 / 9.88 seconds; no listening performed."
+  },
+  "update_basis": {
+    "human_decisions": "evidence/cycle-05-human-decisions-contract.md",
+    "entry_consistency": "evidence/cycle-05-m1187-entry-investigation.md",
+    "precedence": "The task specification and latest exact contract take precedence over earlier unverified approval-chain hypotheses in the preserved original findings. Original evidence snapshots remain byte identical."
   }
 }
