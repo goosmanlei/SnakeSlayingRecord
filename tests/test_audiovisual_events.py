@@ -28,26 +28,6 @@ class EventTests(unittest.TestCase):
         self.assertEqual(report['uncovered_blocks'], 0)
         self.assertEqual(report['duplicate_blocks'], 0)
 
-    def test_scene_events_cannot_leak_into_a_shot_through_replaced_fields(self):
-        scene = deepcopy(self.score[7]['scenes'][1])
-        scene['空间'] += '突然提起北闸，蛇撞门，然后退净落闸。'
-        scene['声音'] += '一次播放整场门闸声。'
-        fields, shared = self.reviewed.conditions(8, scene, 2)
-        self.assertNotIn('突然', fields['空间'])
-        self.assertNotIn('整场', fields['声音'])
-        self.assertIn('北闸全镜不动', fields['连续性'])
-        self.assertNotIn('空间', shared)
-        opening, _ = self.reviewed.conditions(1, self.score[0]['scenes'][0], 1)
-        self.assertNotIn('转调', opening['声音'])
-        night, _ = self.reviewed.conditions(11, self.score[10]['scenes'][3], 1)
-        self.assertIn('保持夜间', night['光线'])
-
-    def test_changed_shared_condition_requires_human_rereview(self):
-        changed = deepcopy(self.score)
-        changed[0]['scenes'][0]['光线'] += '然后天黑。'
-        with self.assertRaisesRegex(ValueError, 'inherited scene condition changed'):
-            ReviewedEvents(ROOT, changed, casting())
-
     def test_narrated_readback_is_a_second_speaker_not_lost_or_tripled(self):
         src = sources('s026', 1, 2, 3)
         events = self.reviewed.for_sources(src)
@@ -65,11 +45,6 @@ class EventTests(unittest.TestCase):
         self.assertLess(rendered.index('与陶伯被庙工拖开的动作同时'), rendered.index('动作：阿禾回头'))
         self.assertLess(rendered.index('动作：阿禾回头'), rendered.index('动作：人群合上'))
         self.assertIn('没有迈出去', rendered)
-        scene = self.score[5]['scenes'][1]
-        conditions, _ = self.reviewed.conditions(6, scene, 1)
-        self.assertIn('日光', conditions['光线'])
-        self.assertNotIn('灶火', conditions['光线'])
-        self.assertIn('前年记忆', conditions['连续性'])
 
     def test_humming_following_and_stopping_keep_both_voices_and_order(self):
         events = self.reviewed.for_sources(sources('s038', 9, 10, 11))
@@ -127,14 +102,14 @@ class EventTests(unittest.TestCase):
             (root / 'imports').mkdir()
             (root / 'production/audiovisual').mkdir(parents=True)
             (root / 'imports/screenplay-04.json').write_bytes((ROOT / 'imports/screenplay-04.json').read_bytes() + b'\n')
-            for name in ('shot-contexts.json', 'vocal-events.json'):
+            for name in ('vocal-events.json',):
                 (root / 'production/audiovisual' / name).write_bytes((ROOT / 'production/audiovisual' / name).read_bytes())
             with self.assertRaisesRegex(ValueError, 'reviewed event source changed'):
                 ReviewedEvents(root, self.score, casting())
 
     def test_executable_opening_starts_before_placing_book_and_keeps_sung_words(self):
         scene = self.score[0]['scenes'][0]
-        self.assertIn('歌本尚在手中', scene['shots'][0]['action_start'])
+        self.assertIn('歌本', scene['shots'][0]['key_states'][0]['description'])
         rendered = self.reviewed.render(sources('s001', 1, 2, 3), executable=True)
         self.assertLess(rendered.index('摊在倒扣竹篮上'), rendered.index('一道险滩水急'))
         self.assertLess(rendered.index('一道险滩水急'), rendered.index('老汉把扁担竖在腿边'))
@@ -171,7 +146,7 @@ class EventTests(unittest.TestCase):
                     (root / name).write_bytes((ROOT / name).read_bytes())
                 context = deepcopy(self.reviewed.contexts)
                 context['action_order']['s001:9'] = order
-                (root / 'production/audiovisual/shot-contexts.json').write_text(json.dumps(context))
+                (root / 'production/audiovisual/vocal-events.json').write_text(json.dumps(context))
                 with self.assertRaisesRegex(ValueError, 'preserve every vocal event in order'):
                     ReviewedEvents(root, self.score, casting())
 

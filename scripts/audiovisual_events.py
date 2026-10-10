@@ -1,4 +1,4 @@
-"""Reviewed shot conditions and ordered vocal events over the locked screenplay.
+"""Reviewed actions and ordered vocal events over the locked screenplay.
 
 Narrative speech is authored, not inferred from keywords. Only explicit dialogue
 labels have a default reading; annotations override that reading per paragraph.
@@ -7,7 +7,6 @@ import hashlib
 import json
 import re
 
-FIELDS = ('空间', '轴线', '光线', '色彩', '声音', '连续性')
 NON_DIALOGUE = {'字幕', '李诞回忆中的短暂画面', '贴纸揭下，旧字完整露出来', '经过人群，有人贴着家人的耳朵说'}
 SONGS = {'entity-boat-song', 'entity-blue-awning-song', 'entity-blessing-stage-song', 'entity-snake-welcome-song'}
 
@@ -22,11 +21,10 @@ class ReviewedEvents:
             for scene in episode['scenes']:
                 self.blocks.update({f'{scene["id"]}:{i}': texts[b] for i, b in enumerate(scene['block_ids'], 1)})
         directory = root / 'production/audiovisual'
-        self.contexts = json.loads((directory / 'shot-contexts.json').read_text())
         vocals = json.loads((directory / 'vocal-events.json').read_text())
-        for doc, name in ((self.contexts, 'reviewed-shot-contexts-v1'), (vocals, 'reviewed-vocal-events-v1')):
-            if doc.get('format') != name or doc.get('source_sha256') != hashlib.sha256(raw).hexdigest():
-                raise ValueError('reviewed event source changed; re-review before compiling: ' + name)
+        if vocals.get('format') != 'reviewed-vocal-events-v1' or vocals.get('source_sha256') != hashlib.sha256(raw).hexdigest():
+            raise ValueError('reviewed event source changed; re-review before compiling')
+        self.contexts = vocals
         self.events = vocals['events']
         self.narration = self.contexts.get('narration', {})
         if self.narration.keys() - self.blocks.keys() or any(not isinstance(v, str) for v in self.narration.values()):
@@ -45,25 +43,6 @@ class ReviewedEvents:
                 raise ValueError('invalid action/voice step: ' + key)
             if voices != list(range(len(self.at(key)))):
                 raise ValueError('reviewed action order must preserve every vocal event in order: ' + key)
-        scenes = {f'{e["number"]:02}-{s["code"]}': s for e in score for s in e['scenes']}
-        if scenes.keys() != self.contexts['scenes'].keys():
-            raise ValueError('every audiovisual scene needs reviewed fixed conditions')
-        shot_keys = set()
-        for key, scene in scenes.items():
-            entry = self.contexts['scenes'][key]
-            inherit = entry['inherit']
-            if len(set(inherit)) != len(inherit) or set(inherit) - set(FIELDS):
-                raise ValueError('invalid shared conditions: ' + key)
-            if set(entry) != {'inherit', 'inherited_values'} | (set(FIELDS) - set(inherit)):
-                raise ValueError('fixed conditions must explicitly replace or inherit each field: ' + key)
-            if entry['inherited_values'] != {f: scene[f] for f in inherit}:
-                raise ValueError('inherited scene condition changed; re-review: ' + key)
-            if any(not isinstance(entry[f], str) or not entry[f].strip() for f in FIELDS if f not in inherit):
-                raise ValueError('empty reviewed condition: ' + key)
-            shot_keys.update(f'{key}-s{i:02}' for i in range(1, len(scene['shots']) + 1))
-        for key, fields in self.contexts['shots'].items():
-            if key not in shot_keys or set(fields) - set(FIELDS) or any(not isinstance(v, str) or not v.strip() for v in fields.values()):
-                raise ValueError('invalid shot condition override: ' + key)
         if self.events.keys() - self.blocks.keys():
             raise ValueError('vocal event outside locked source')
         for key, events in self.events.items():
@@ -88,14 +67,6 @@ class ReviewedEvents:
         # Validate every explicit dialogue label even when a compile targets a subset.
         for key in self.blocks:
             self.at(key)
-
-    def conditions(self, episode, scene, index):
-        key = f'{episode:02}-{scene["code"]}'
-        entry = self.contexts['scenes'][key]
-        fields = {f: scene[f] if f in entry['inherit'] else entry[f] for f in FIELDS}
-        overrides = self.contexts['shots'].get(f'{key}-s{index:02}', {})
-        fields.update(overrides)
-        return fields, [f for f in entry['inherit'] if f not in overrides]
 
     def direct(self, key):
         match = re.match(r'^([^：]{1,16})：(.+)$', self.blocks[key])
