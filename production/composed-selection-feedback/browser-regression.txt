@@ -1,0 +1,41 @@
+PASS data-block-id / sibling-zero
+PASS data-block-id / sibling-text-zero
+PASS data-block-id / parent-gap
+PASS data-block-id / inside
+PASS data-block-id / reverse
+PASS data-block-id / external-title
+PASS data-block-id / external-prefix
+PASS data-block-id / label-only
+PASS data-block-id / other-revision
+PASS data-block-id / hidden-gap
+PASS data-structure-block / sibling-zero
+PASS data-structure-block / sibling-text-zero
+PASS data-structure-block / parent-gap
+PASS data-structure-block / inside
+PASS data-structure-block / reverse
+PASS data-structure-block / external-title
+PASS data-structure-block / external-prefix
+PASS data-structure-block / label-only
+PASS data-structure-block / other-revision
+PASS data-structure-block / hidden-gap
+PASS 组合选区 / different-block-gap
+PASS 组合选区 / reordered
+PASS 组合选区 / hidden-node
+PASS 组合选区 / astral-half
+PASS 正文内松手与已有高亮内选词
+PASS 拖到正文外松手仍显示按钮
+PASS 仅 selectionchange 也能更新按钮
+PASS 评论未变化时后台刷新不打断正在拖选的正文
+PASS 清除选区后立即移除旧按钮
+PASS 反向跨段及 Unicode 引用准确
+PASS 选区端点落在正文容器边界
+PASS 拖选中不出现遮挡鼠标的按钮
+PASS 点击评论按钮保留引用并打开编辑器
+PASS 长选区跨过滚动容器顶部时按钮仍可见
+PASS 非正文选区与切换资料不保留旧按钮
+PASS 结构稿也支持正文外松手与跨块引用
+PASS 正文评论定位到长块末尾的原圈选
+FAIL 结构稿评论定位到长块末尾的原圈选 — 定位后原圈选仍在可视范围外
+FAIL 制作思路往返保留正文阅读位置 — 切换制作思路丢失正文阅读位置
+PASS 制作思路往返不删除未保存的评论草稿
+FAIL 制作思路 Tab 与浏览器历史同步 — Tab 未写入直接链接

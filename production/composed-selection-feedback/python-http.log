@@ -1,0 +1,22 @@
+test_file_range_batch_conflict_exact_source_and_time_comment (test_production_api.ProductionApiTest) ... 127.0.0.1 - - [10/Oct/2026 14:22:44] "PUT /api/production/files/voice.wav HTTP/1.1" 201 -
+127.0.0.1 - - [10/Oct/2026 14:22:44] "POST /api/production/import HTTP/1.1" 201 -
+127.0.0.1 - - [10/Oct/2026 14:22:44] "GET /api/production/files/0a8f76d89c709043814cb74f331a4578d17ff61256303bd0019a263d053f86e8.wav HTTP/1.1" 206 -
+127.0.0.1 - - [10/Oct/2026 14:22:44] "GET /api/production/source?object_id=episode&revision_id=e61098a46c6dbb0014e70f9f0a024c9914664b576ad6bca1910cde5e31d5e688&scene_id=s1&block_ids=a HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 14:22:44] "POST /api/comments HTTP/1.1" 201 -
+127.0.0.1 - - [10/Oct/2026 14:22:44] "POST /api/production/import HTTP/1.1" 409 -
+127.0.0.1 - - [10/Oct/2026 14:22:44] "GET /api/production?object_id=voice HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 14:22:44] "GET /api/production/readiness?scope=voice HTTP/1.1" 200 -
+ok
+test_new_production_routes_do_not_shadow_story_structure_reader (test_production_api.ProductionApiTest) ... 127.0.0.1 - - [10/Oct/2026 14:22:44] "GET /api/story-structure HTTP/1.1" 200 -
+ok
+test_exact_source_unicode_quotes_state_conflict_and_export_restore (test_comment_review.CommentReviewTest) ... ok
+test_response_without_current_evidence_never_becomes_resolved (test_comment_review.CommentReviewTest) ... ok
+test_validation_is_atomic_and_refuses_wrong_comment_anchor_revision_and_response (test_comment_review.CommentReviewTest) ... ok
+test_changed_context_digest_never_reaches_the_model_stub (test_polish_revision_http.PolishRevisionHTTPTest) ... ok
+test_current_revision_and_legacy_omitted_revision_preserve_context_and_stub_contract (test_polish_revision_http.PolishRevisionHTTPTest) ... ok
+test_explicit_stale_other_empty_or_unknown_revision_cannot_use_the_current_head (test_polish_revision_http.PolishRevisionHTTPTest) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.828s
+
+OK

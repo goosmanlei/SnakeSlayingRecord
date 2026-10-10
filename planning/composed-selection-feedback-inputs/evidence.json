@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "purpose": "Evidence index for task clarification; task status authority remains primary .codex-task/tasks.json.",
+  "task_id": "task-20261010-0013",
+  "draft": "8263c89b-f066-4015-b5e5-469d425b3adb",
+  "checked_at": "2026-10-10T13:53:45.015945+08:00",
+  "approved_source": {
+    "path_relative_to_primary": ".runtime/system-review/publication/cycle-05-selection-residual-draft.md",
+    "bytes": 11453,
+    "sha256": "fb1b3c3dfebc33e94e57276b5d10d151d3c74d6197fe2adf77933a7f70bf142f"
+  },
+  "repositories": [
+    {
+      "name": "primary",
+      "source_relative_to_primary": ".",
+      "target": "main",
+      "observed_main": "d922a0b1de9079741860b4dddf82d08201fbab62",
+      "observed_local_origin_main": "d922a0b1de9079741860b4dddf82d08201fbab62",
+      "remote_origin": "git@github.com:goosmanlei/SnakeSlayingRecord.git",
+      "evidence_candidate": "d922a0b1de9079741860b4dddf82d08201fbab62"
+    },
+    {
+      "name": "desk",
+      "source_relative_to_primary": "../story-review-desk",
+      "target": "main",
+      "observed_main": "0ad376bd1cefeb2d71b8cbd418bb22a943b22b3d",
+      "observed_local_origin_main": "0ad376bd1cefeb2d71b8cbd418bb22a943b22b3d",
+      "remote_origin": "git@github.com:goosmanlei/story-review-desk.git",
+      "evidence_candidate": "0ad376bd1cefeb2d71b8cbd418bb22a943b22b3d"
+    }
+  ],
+  "reproduction": {
+    "actor": "root Review",
+    "browser_gesture": "native mouse selection; no scripted Range used for reported reproduction",
+    "historical_url": "http://127.0.0.1:63108/",
+    "environment": "root isolated candidate; not formal deployment; executor must create own isolated instance",
+    "object_id": "av-e01-a01",
+    "revision": "91b490a1a6f6b6a8448acbd939cc7b8e64ebf77e350ca85ef660392b2cd1f9ce",
+    "business_id": "AS001",
+    "selected_visible_text": "不提前把她拍成等待救援的人。\n\n空间与摄影\n米铺开向河街，阿蘅在门口篮旁，周掌柜在柜内；李寄从街侧进入，歌本和听众同处一个可辨空间。",
+    "single_sentence_control": "不提前把她拍成等待救援的人。",
+    "incorrect_draft": "cancelled without saving",
+    "this_clarification_verification": "read root evidence, inspect screenshot, compare exact bytes/hashes and matching source code; no browser reproduction or repair executed"
+  },
+  "deduplication_snapshot": {
+    "completed_baselines": [
+      {
+        "id": "task-20261010-0012",
+        "status": "completed",
+        "revision": 3,
+        "summary": "整体简化生产制作的信息与人工工作，让人直接审阅作品、原件和具体取舍"
+      },
+      {
+        "id": "task-20261010-0011",
+        "status": "completed",
+        "revision": 2,
+        "summary": "定位生成意见时复用准确调用并高亮原句"
+      }
+    ],
+    "active_tasks": [],
+    "open_drafts": [
+      {
+        "draft": "772fd8d0-391a-44d1-8c8c-2479fe623c62",
+        "id": "task-20261010-0014",
+        "status": "draft"
+      },
+      {
+        "draft": "8263c89b-f066-4015-b5e5-469d425b3adb",
+        "id": "task-20261010-0013",
+        "status": "draft"
+      }
+    ],
+    "decision": "No other owner for this exact residual at check time. Read task-20261010-0014 draft 772fd8d0-391a-44d1-8c8c-2479fe623c62: its structure simplification scope explicitly excludes the cross-selection quote expansion owned by 0013. Both inherit completed 0012, can develop in isolated worktrees and coordinate integration of shared composition/comment protection. Recheck before publishing; no task-id dependency."
+  },
+  "session_media": {
+    "command": "_media --draft 8263c89b-f066-4015-b5e5-469d425b3adb",
+    "count": 0,
+    "omitted": [],
+    "local_image_inputs": 1
+  },
+  "evidence": [
+    {
+      "source_relative_to_primary": ".runtime/system-review/evidence/cycle-05-0012-cross-selection-preview.txt",
+      "bytes": 1497,
+      "sha256": "0e16450caaa029879777182dbd9aec56526dbd3069e9e7467362714bf6257916",
+      "delivery": "tracked_text",
+      "path": "planning/composed-selection-feedback-inputs/cycle-05-0012-cross-selection-preview.txt"
+    },
+    {
+      "source_relative_to_primary": ".runtime/system-review/evidence/cycle-05-0012-single-selection-preview.txt",
+      "bytes": 524,
+      "sha256": "7382401d63102e6e7448bb6d9ca688ea3546444febf575d6e576c8bc5672ce1d",
+      "delivery": "tracked_text",
+      "path": "planning/composed-selection-feedback-inputs/cycle-05-0012-single-selection-preview.txt"
+    },
+    {
+      "source_relative_to_primary": ".runtime/system-review/evidence/cycle-05-0012-cross-selection.png",
+      "bytes": 306683,
+      "sha256": "73b0b772829dc24bcb8997b13eb5c57129b159a43aee705202407ba0d23864b6",
+      "delivery": "managed_task_input",
+      "file_name": "as001-cross-selection-preview.jpg",
+      "managed_path_relative_to_primary": ".codex-task/task-inputs/task-20261010-0013/as001-cross-selection-preview.jpg",
+      "mime": "image/jpeg",
+      "pixel_width": 1681,
+      "pixel_height": 1930,
+      "format_note": "Source has .png suffix but file and sips identify JPEG. Original bytes retained without transcoding.",
+      "local_publish_source": ".runtime/clarification-inputs/as001-cross-selection-preview.jpg",
+      "retention": "Local publish source supports current draft publication/retry only. After managed input verification it is disposable task process data; task executor removes it during authorized resource cleanup."
+    }
+  ],
+  "workspace_guard": {
+    "path": "scripts/task_workspace_guard.py",
+    "sha256": "5fe54f621163ceb4e8821980d8bea16075addc3283c8e5738fba52287617bd7a",
+    "note": "Recompute and register during execution; not a frozen execution digest."
+  }
+}
