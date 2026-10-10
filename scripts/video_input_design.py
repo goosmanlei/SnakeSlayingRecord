@@ -10,16 +10,11 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 AUDIT = ROOT / 'production/audiovisual/video-inputs.json'
-FIELDS = ('framing', 'action_start', 'action_end', 'performance', 'spatial', 'axis', 'continuity')
 EXECUTION = {'channel': 'pippit-tool-cli', 'mode': 'reference', 'start_constraint': 'reference'}
 FRAME_USE = '起始图提供构图、手位和已可见主体的参考；本模式不固定首帧像素'
 OLD_PROMISE = '@图片1是已选首帧，维持身份、空间和手位；'
 FRAME_PROMISE = '@图片1为起始构图参考，维持已可见身份、空间和手位；'
 CRITERION = '按本镜显露顺序核对直接图像参考；未入画者不提前出现，音频只约束声源而不代替视觉身份'
-
-
-def intent_digest(payload):
-    return hashlib.sha256(json.dumps({k: payload[k] for k in FIELDS}, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
 
 
 def load_audit(shots=None):
@@ -47,8 +42,8 @@ def load_audit(shots=None):
             raise ValueError('reviewed video inputs must cover every current shot exactly once')
         for row in shots:
             decision = by_id[row['object_id']]
-            if decision['reviewed_intent_sha256'] != intent_digest(row['payload']):
-                raise ValueError('shot intent changed; review the input decision: ' + row['object_id'])
+            if decision['reviewed_product_references'] != [v['requirement'] for v in row['payload']['products']]:
+                raise ValueError('exact product plan changed; review the input decision: ' + row['object_id'])
             states = {s['object_id'] for s in row['payload']['states']}
             if any(v['state'] not in states for v in decision.get('supplements', [])):
                 raise ValueError('supplement is not an exact state of this shot: ' + row['object_id'])
