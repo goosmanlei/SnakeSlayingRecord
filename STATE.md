@@ -91,3 +91,5 @@
 - task-20261010-0020 的两仓worktree仍由当前TUI及清理锁占用；退出释放锁后由受管cleanup整组退役，保留提交和会话历史。正式挂载与VPS不依赖任务工作区；最小发布、恢复边界和清理回执见 [两端正式部署验收](production/entity-material-formal-release/VERIFICATION.md)。
 
 - task-20261010-0022 的双仓worktree仍由当前TUI及清理锁使用；退出释放后由本任务执行者沿 `codex.project task cleanup` 整组退役，保留分支和会话。预览服务、测试库、构建副本已清除；必要JSON回执保留在主项目 `.runtime/task-20261010-0022/`，待独立Review及追溯用途结束后裁剪，正式运行和恢复不依赖任务目录。
+
+- task-20261010-0023 已在最新正式数据副本验证三方协作图示及Review第4版增量。双仓正式交付、3000复验与资源处置沿任务账本和 [协作图示验收](production/vision-collaboration/VERIFICATION.md) 核对；用户要求本任务不自动结项，负责人独立Review保留。
