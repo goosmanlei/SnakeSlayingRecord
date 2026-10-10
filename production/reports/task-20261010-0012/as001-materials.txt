@@ -1,0 +1,329 @@
+- complementary "工作区导航":
+  - button "返回网站首页":
+    - generic: 阅
+    - generic: 故事审阅台
+    - generic: LOCAL PRODUCTION DESK
+  - navigation "系统工作区":
+    - button "思路 制作思路 故事创作与生产制作方法":
+      - generic: 思路
+      - generic: 制作思路
+      - generic: 故事创作与生产制作方法
+    - button "故事 故事创作 故事采编、故事结构与分集剧本":
+      - generic: 故事
+      - generic: 故事创作
+      - generic: 故事采编、故事结构与分集剧本
+    - button "制作 生产制作 视听制作、实体与素材":
+      - generic: 制作
+      - generic: 生产制作
+      - generic: 视听制作、实体与素材
+    - button "管理 系统管理 故事项目与系统配置":
+      - generic: 管理
+      - generic: 系统管理
+      - generic: 故事项目与系统配置
+  - generic: 李寄斩蛇 · 故事采编 · 任务预览
+  - generic: 本机独立实例 · 业务数据可公开同步
+- main:
+  - generic: 制
+  - generic: 当前视图
+  - generic: 生产制作
+  - tablist "生产制作子页面":
+    - tab "视听制作"
+    - tab "实体管理"
+    - tab "素材管理" [selected]
+  - generic "素材管理":
+    - generic: MATERIAL LIBRARY
+    - heading "素材管理" [level=1]
+    - paragraph: 按集场查看素材方案、版本与真实候选，预览原件并审阅准确内容。
+  - region "素材管理筛选":
+    - searchbox "搜索素材"
+    - button "清除筛选"
+    - group "视听集":
+      - generic: 视听集
+      - button "全部集":
+        - generic: 全部集
+      - button "AE001" [pressed]:
+        - generic: AE001
+      - button "AE002":
+        - generic: AE002
+      - button "AE003":
+        - generic: AE003
+      - button "AE004":
+        - generic: AE004
+      - button "AE005":
+        - generic: AE005
+      - button "AE006":
+        - generic: AE006
+      - button "AE007":
+        - generic: AE007
+      - button "AE008":
+        - generic: AE008
+      - button "AE009":
+        - generic: AE009
+      - button "AE010":
+        - generic: AE010
+      - button "AE011":
+        - generic: AE011
+      - button "AE012":
+        - generic: AE012
+      - button "AE013":
+        - generic: AE013
+      - button "AE014":
+        - generic: AE014
+      - button "AE015":
+        - generic: AE015
+      - button "AE016":
+        - generic: AE016
+      - button "AE017":
+        - generic: AE017
+    - group "视听场":
+      - generic: 视听场
+      - button "全部场":
+        - generic: 全部场
+      - button "AS001 · 唱到跳页处" [pressed]:
+        - generic: AS001 · 唱到跳页处
+      - button "AS002 · 工钱与预付":
+        - generic: AS002 · 工钱与预付
+      - button "AS003 · 干净的手与旧名字":
+        - generic: AS003 · 干净的手与旧名字
+    - group "媒体类型":
+      - generic: 媒体类型
+      - button "全部 57" [pressed]:
+        - generic: 全部
+        - generic: "57"
+      - button "声音 7":
+        - generic: 声音
+        - generic: "7"
+      - button "图像 45":
+        - generic: 图像
+        - generic: "45"
+      - button "工程 0":
+        - generic: 工程
+        - generic: "0"
+      - button "视频 5":
+        - generic: 视频
+        - generic: "5"
+    - group "生成结果（含历史版本）":
+      - generic: 生成结果（含历史版本）
+      - button "全部 57" [pressed]:
+        - generic: 全部
+        - generic: "57"
+      - button "有结果 14":
+        - generic: 有结果
+        - generic: "14"
+      - button "无结果 43":
+        - generic: 无结果
+        - generic: "43"
+  - status "素材数按唯一素材身份计数；同一素材在不同真实关联分组各展示一次": 14 项已有原件可比较；43 项尚无结果。制作准备不要求逐项审阅。
+  - generic "素材列表":
+    - heading "AE001 / AS001 · 唱到跳页处 · 已有原件" [level=3]
+    - button "图像 阿蘅 · 首轮整体候选 M1133 版本 1 个 · 候选 1 个":
+      - img "图像"
+      - strong: 阿蘅 · 首轮整体候选
+      - generic: M1133
+      - generic: 版本 1 个 · 候选 1 个
+    - button "声音 阿蘅 · 基础音色 · 首轮候选 M1134 版本 1 个 · 候选 1 个":
+      - img "声音"
+      - strong: 阿蘅 · 基础音色 · 首轮候选
+      - generic: M1134
+      - generic: 版本 1 个 · 候选 1 个
+    - button "图像 垫歌本竹篮·基准实体状态 · 内置渠道首轮基准 M1349 版本 1 个 · 候选 1 个":
+      - img "图像"
+      - strong: 垫歌本竹篮·基准实体状态 · 内置渠道首轮基准
+      - generic: M1349
+      - generic: 版本 1 个 · 候选 1 个
+    - button "图像 李寄 · 整体返工候选二 M1214 版本 1 个 · 候选 1 个":
+      - img "图像"
+      - strong: 李寄 · 整体返工候选二
+      - generic: M1214
+      - generic: 版本 1 个 · 候选 1 个
+    - button "图像 干浆糊与羊毛·基准实体状态 · 内置渠道返工 M1473 版本 1 个 · 候选 1 个":
+      - img "图像"
+      - strong: 干浆糊与羊毛·基准实体状态 · 内置渠道返工
+      - generic: M1473
+      - generic: 版本 1 个 · 候选 1 个
+    - button "图像 阿蘅米袋·基准实体状态 · 内置渠道首轮基准 M1370 版本 1 个 · 候选 1 个":
+      - img "图像"
+      - strong: 阿蘅米袋·基准实体状态 · 内置渠道首轮基准
+      - generic: M1370
+      - generic: 版本 1 个 · 候选 1 个
+    - button "图像 米铺听客·基准实体状态 · 内置渠道首轮基准 M1341 版本 1 个 · 候选 1 个":
+      - img "图像"
+      - strong: 米铺听客·基准实体状态 · 内置渠道首轮基准
+      - generic: M1341
+      - generic: 版本 1 个 · 候选 1 个
+    - button "图像 米铺小木斗·基准实体状态 · 内置渠道首轮基准 M1371 版本 1 个 · 候选 1 个":
+      - img "图像"
+      - strong: 米铺小木斗·基准实体状态 · 内置渠道首轮基准
+      - generic: M1371
+      - generic: 版本 1 个 · 候选 1 个
+    - button "图像 压页河石·基准实体状态 · 内置渠道首轮基准 M1359 版本 1 个 · 候选 1 个":
+      - img "图像"
+      - strong: 压页河石·基准实体状态 · 内置渠道首轮基准
+      - generic: M1359
+      - generic: 版本 1 个 · 候选 1 个
+    - button "图像 阿蘅歌本·基准实体状态 · 内置渠道返工 M1442 版本 1 个 · 候选 1 个":
+      - img "图像"
+      - strong: 阿蘅歌本·基准实体状态 · 内置渠道返工
+      - generic: M1442
+      - generic: 版本 1 个 · 候选 1 个
+    - button "图像 挑柴老汉·基准实体状态 · 内置渠道返工 M1334 版本 1 个 · 候选 1 个":
+      - img "图像"
+      - strong: 挑柴老汉·基准实体状态 · 内置渠道返工
+      - generic: M1334
+      - generic: 版本 1 个 · 候选 1 个
+    - button "声音 挑柴老汉 · 基础音色 · 基础音色首轮 M1260 版本 1 个 · 候选 1 个":
+      - img "声音"
+      - strong: 挑柴老汉 · 基础音色 · 基础音色首轮
+      - generic: M1260
+      - generic: 版本 1 个 · 候选 1 个
+    - button "图像 李寄造型候选 M002 版本 1 个 · 候选 1 个":
+      - img "图像"
+      - strong: 李寄造型候选
+      - generic: M002
+      - generic: 版本 1 个 · 候选 1 个
+    - button "声音 三道滩·完整独立歌曲 M1195 版本 1 个 · 候选 1 个":
+      - img "声音"
+      - strong: 三道滩·完整独立歌曲
+      - generic: M1195
+      - generic: 版本 1 个 · 候选 1 个
+    - heading "AE001 / AS001 · 唱到跳页处 · 尚无结果" [level=3]
+    - button "图像 ASH001 · 阿蘅翻过两页 · 主机位 M2973 版本 1 个 · 候选 0 个":
+      - img "图像"
+      - strong: ASH001 · 阿蘅翻过两页 · 主机位
+      - generic: M2973
+      - generic: 版本 1 个 · 候选 0 个
+    - button "图像 ASH001 · 阿蘅翻过两页 · 首帧 M2974 版本 1 个 · 候选 0 个":
+      - img "图像"
+      - strong: ASH001 · 阿蘅翻过两页 · 首帧
+      - generic: M2974
+      - generic: 版本 1 个 · 候选 0 个
+    - button "视频 ASH001 · 阿蘅翻过两页 · 视频 M2975 版本 1 个 · 候选 0 个":
+      - img "视频"
+      - strong: ASH001 · 阿蘅翻过两页 · 视频
+      - generic: M2975
+      - generic: 版本 1 个 · 候选 0 个
+    - button "图像 ASH002 · 老汉接唱扑空，阿蘅收尾 · 主机位 M2976 版本 1 个 · 候选 0 个":
+      - img "图像"
+      - strong: ASH002 · 老汉接唱扑空，阿蘅收尾 · 主机位
+      - generic: M2976
+      - generic: 版本 1 个 · 候选 0 个
+    - button "图像 ASH002 · 老汉接唱扑空，阿蘅收尾 · 首帧 M2977 版本 1 个 · 候选 0 个":
+      - img "图像"
+      - strong: ASH002 · 老汉接唱扑空，阿蘅收尾 · 首帧
+      - generic: M2977
+      - generic: 版本 1 个 · 候选 0 个
+    - button "视频 ASH002 · 老汉接唱扑空，阿蘅收尾 · 视频 M2978 版本 1 个 · 候选 0 个":
+      - img "视频"
+      - strong: ASH002 · 老汉接唱扑空，阿蘅收尾 · 视频
+      - generic: M2978
+      - generic: 版本 1 个 · 候选 0 个
+    - button "图像 ASH003 · 阿蘅应对，听客散开 · 主机位 M2979 版本 1 个 · 候选 0 个":
+      - img "图像"
+      - strong: ASH003 · 阿蘅应对，听客散开 · 主机位
+      - generic: M2979
+      - generic: 版本 1 个 · 候选 0 个
+    - button "图像 ASH003 · 阿蘅应对，听客散开 · 首帧 M2980 版本 1 个 · 候选 0 个":
+      - img "图像"
+      - strong: ASH003 · 阿蘅应对，听客散开 · 首帧
+      - generic: M2980
+      - generic: 版本 1 个 · 候选 0 个
+    - button "视频 ASH003 · 阿蘅应对，听客散开 · 视频 M2981 版本 1 个 · 候选 0 个":
+      - img "视频"
+      - strong: ASH003 · 阿蘅应对，听客散开 · 视频
+      - generic: M2981
+      - generic: 版本 1 个 · 候选 0 个
+    - button "图像 ASH004 · 李寄挤到身旁 · 主机位 M2982 版本 1 个 · 候选 0 个":
+      - img "图像"
+      - strong: ASH004 · 李寄挤到身旁 · 主机位
+      - generic: M2982
+      - generic: 版本 1 个 · 候选 0 个
+    - button "图像 ASH004 · 李寄挤到身旁 · 首帧 M2983 版本 1 个 · 候选 0 个":
+      - img "图像"
+      - strong: ASH004 · 李寄挤到身旁 · 首帧
+      - generic: M2983
+      - generic: 版本 1 个 · 候选 0 个
+    - button "视频 ASH004 · 李寄挤到身旁 · 视频 M2984 版本 1 个 · 候选 0 个":
+      - img "视频"
+      - strong: ASH004 · 李寄挤到身旁 · 视频
+      - generic: M2984
+      - generic: 版本 1 个 · 候选 0 个
+    - button "图像 ASH005 · 两人把话接完 · 主机位 M2985 版本 1 个 · 候选 0 个":
+      - img "图像"
+      - strong: ASH005 · 两人把话接完 · 主机位
+      - generic: M2985
+      - generic: 版本 1 个 · 候选 0 个
+    - button "图像 ASH005 · 两人把话接完 · 首帧 M2986 版本 1 个 · 候选 0 个":
+      - img "图像"
+      - strong: ASH005 · 两人把话接完 · 首帧
+      - generic: M2986
+      - generic: 版本 1 个 · 候选 0 个
+    - button "视频 ASH005 · 两人把话接完 · 视频 M2987 版本 1 个 · 候选 0 个":
+      - img "视频"
+      - strong: ASH005 · 两人把话接完 · 视频
+      - generic: M2987
+      - generic: 版本 1 个 · 候选 0 个
+    - button "图像 阿蘅 · 身份母版 M2544 版本 1 个 · 候选 0 个":
+      - img "图像"
+      - strong: 阿蘅 · 身份母版
+      - generic: M2544
+      - generic: 版本 1 个 · 候选 0 个
+    - button "图像 垫歌本竹篮 · 结构母版 M2550 版本 1 个 · 候选 0 个":
+      - img "图像"
+      - strong: 垫歌本竹篮 · 结构母版
+      - generic: M2550
+      - generic: 版本 1 个 · 候选 0 个
+    - button "图像 挑柴扁担 · 结构母版 M2553 版本 1 个 · 候选 0 个":
+      - img "图像"
+      - strong: 挑柴扁担 · 结构母版
+      - generic: M2553
+      - generic: 版本 1 个 · 候选 0 个
+    - button "图像 米粮 · 结构母版 M2580 版本 1 个 · 候选 0 个":
+      - img "图像"
+      - strong: 米粮 · 结构母版
+      - generic: M2580
+      - generic: 版本 1 个 · 候选 0 个
+    - button "图像 李寄 · 身份母版 M2597 版本 1 个 · 候选 0 个":
+      - img "图像"
+      - strong: 李寄 · 身份母版
+      - generic: M2597
+      - generic: 版本 1 个 · 候选 0 个
+    - button "图像 干浆糊与羊毛 · 结构母版 M2614 版本 1 个 · 候选 0 个":
+      - img "图像"
+      - strong: 干浆糊与羊毛 · 结构母版
+      - generic: M2614
+      - generic: 版本 1 个 · 候选 0 个
+    - button "图像 阿蘅米袋 · 结构母版 M2621 版本 1 个 · 候选 0 个":
+      - img "图像"
+      - strong: 阿蘅米袋 · 结构母版
+      - generic: M2621
+      - generic: 版本 1 个 · 候选 0 个
+    - button "图像 米铺听客 · 身份母版 M2622 版本 1 个 · 候选 0 个":
+      - img "图像"
+      - strong: 米铺听客 · 身份母版
+      - generic: M2622
+      - generic: 版本 1 个 · 候选 0 个
+    - button "图像 米铺小木斗 · 结构母版 M2623 版本 1 个 · 候选 0 个":
+      - img "图像"
+      - strong: 米铺小木斗 · 结构母版
+      - generic: M2623
+      - generic: 版本 1 个 · 候选 0 个
+  - navigation "列表分页":
+    - button "首页" [disabled]
+    - button "上一页" [disabled]
+    - generic: 第 1 / 2 页
+    - button "下一页"
+    - button "末页"
+    - generic: 每页行数
+    - combobox "每页行数":
+      - option "5"
+      - option "10" [selected]
+      - option "20"
+      - option "50"
+    - generic: 行数按四列计算；窄屏仅重排
+  - generic: 阅
+  - generic: 故事审阅台
+  - generic: 故事创作与制作审阅
+  - paragraph: 故事资料、创作配置与审阅意见以当前实例为准；本机运行凭据不会公开同步。
+- button "查看评论 · 1"
+- status
+- document
