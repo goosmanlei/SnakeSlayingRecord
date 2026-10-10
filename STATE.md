@@ -2,6 +2,8 @@
 
 ## 当前成果与运行依据
 
+- task-20261010-0018 已形成统一关系候选、准确增量包和隔离验收：实体、素材需求与镜头适用关系共用稳定对象对身份，准确方案保留各自选择和范围。内容前后例、方法依据与验证边界见 [统一关系验收](production/unified-relations/VERIFICATION.md)。正式生效、服务与收尾以主任务账本及对应本机发布回执为准；执行者验收不代替根独立 Review。
+
 - task-20261010-0016 已完成17集65场344镜的三部分候选与隔离迁移：目的逐集连读改写，关键状态只绑定已有需求，699项产物按真实顺序阅读；清除20,668份旧视听／关系专属正文及4次独占设计决定。浏览器准确切版、状态与工程、原件和跨段评论已实操；完整恢复、具体清单及清理见 [视听三部分验收](production/audiovisual-three-part/VERIFICATION.md)。本机正式库和服务已由 task-20261010-0020 按用户追加的“最新状态部署”授权应用准确迁移和方法V5；保全及正式Chrome回查见 [正式部署验收](production/entity-material-formal-release/VERIFICATION.md)。负责人独立Review与实际媒体效果仍分别判断，不用完整候选快照覆盖活库。
 
 - task-20261010-0015 已完成共用实体／素材大卡隔离候选：两 Tab 唯一入口、所选结果与准确生成方案、原字段标准帮助；ST209 v2→v1→v2 保持 M2826→M1218→M2826，四类入口、图像／音频选段及草稿返回可用。完整空实例恢复保持原件、准确输入和历史意见，业务删除为 0。多版本／候选和缺 CALL 分支使用只读夹具，真实试听操作不代表已听审音质；证据、边界及清理见 [实体素材验收](production/entity-material-review/VERIFICATION.md)。0015原隔离验收边界保持；本机正式应用、M2597未生成方案及ST209 v2→v1→v2的Chrome验收已由0020补齐，见 [正式部署验收](production/entity-material-formal-release/VERIFICATION.md)。准确身份以配置、发布回执与任务账本为准；负责人独立Review仍分别进行。
@@ -74,7 +76,7 @@
 ## 恢复与资源边界
 
 - task-20261010-0016 的双仓worktree仍由当前TUI及清理锁使用；本任务执行者在退出释放锁后沿 `codex.project task cleanup` 整组退役，保留提交与会话历史。必要验收及准确清理回执见 [视听三部分验收](production/audiovisual-three-part/VERIFICATION.md)，正式运行和恢复不依赖任务临时目录。
-- 受管候选的唯一当前恢复入口为完整 Schema 10 `export/manifest.json`、[准确索引](production/audiovisual/index.json) 和 [发布幂等凭据](production/audiovisual/recovery.json)。按 [生产说明](production/README.md) 恢复到新空实例；旧编排包、旧导出、旧歌曲重放与其他任务历史数据库不能覆盖活库。
+- 受管候选的唯一当前恢复入口为完整 Schema 11 `export/manifest.json`、[准确索引](production/audiovisual/index.json) 和 [发布幂等凭据](production/audiovisual/recovery.json)。按 [生产说明](production/README.md) 恢复到新空实例；旧编排包、旧导出、旧歌曲重放与其他任务历史数据库不能覆盖活库。
 - 正式数据、服务、镜像及必要恢复回执继续保留；临时资源按相应任务账本和实际引用核对，完成发布、页面验收与新空库恢复后清理。方案核验范围见 [视听验收](production/audiovisual/verification.md)。
 - 其他任务现存工作区、历史库和归档由原任务执行者负责，不能据旧编号或目录名批删；它们不再是有效制作基线。`task-20261005-0001`、`task-20261006-0003` 的本机归档按任务账本 `repositories.*.cleanup.ignored_archive` 定位，原任务执行者在追溯结束后裁剪重复过程资料。
 - task-20261009-0003 会话仍占用故事 worktree，结项、退出并释放锁后再通过 `codex.project task cleanup` 受管退役，保留分支、提交、最小回执及会话历史；不强删活跃工作区。
