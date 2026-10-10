@@ -1,0 +1,92 @@
+{
+  "task": "task-20261010-0015",
+  "removed": [
+    {
+      "path": ".runtime/generation",
+      "repository": "primary",
+      "files": 3167,
+      "bytes": 4178011246
+    },
+    {
+      "path": "/tmp/task-0015-python.log",
+      "repository": "external-temp",
+      "files": 1,
+      "bytes": 1101
+    },
+    {
+      "path": "/tmp/task-0015-node-all.log",
+      "repository": "external-temp",
+      "files": 1,
+      "bytes": 90606
+    },
+    {
+      "path": "/tmp/task-0015-node-candidates.log",
+      "repository": "external-temp",
+      "files": 1,
+      "bytes": 91522
+    },
+    {
+      "path": "/tmp/task-0015-node-final.log",
+      "repository": "external-temp",
+      "files": 1,
+      "bytes": 91573
+    },
+    {
+      "path": "/tmp/task-0015-new.log",
+      "repository": "external-temp",
+      "files": 1,
+      "bytes": 3262
+    },
+    {
+      "path": "/tmp/task-0015-node-scope-final.log",
+      "repository": "external-temp",
+      "files": 1,
+      "bytes": 11104
+    },
+    {
+      "path": "/tmp/task-0015-node-merged.log",
+      "repository": "external-temp",
+      "files": 1,
+      "bytes": 91443
+    },
+    {
+      "path": "/tmp/task-0015-node-focused.log",
+      "repository": "external-temp",
+      "files": 1,
+      "bytes": 12659
+    },
+    {
+      "path": "/tmp/task-0015-node.log",
+      "repository": "external-temp",
+      "files": 1,
+      "bytes": 14227
+    }
+  ],
+  "total_files": 3176,
+  "total_bytes": 4178418743,
+  "absent_after_readback": true,
+  "preview_ports_closed": {
+    "52291": true,
+    "52292": true,
+    "52293": true
+  },
+  "preview_servers_stopped": 3,
+  "browser_tabs_closed": 4,
+  "created_docker_containers": 0,
+  "created_docker_images": 0,
+  "removed_business_records": 0,
+  "mount_guard": "mount-check.json",
+  "retained": [
+    {
+      "resource": "primary and desk managed worktrees",
+      "purpose": "current task TUI and run locks; cleanup through codex.project task cleanup after TUI exit",
+      "responsibility": "task owner / managed launcher",
+      "removal_condition": "TUI exited and managed cleanup guard passes"
+    },
+    {
+      "resource": "Git branches, commits, task and session history, production/entity-material-review receipts and screenshots",
+      "purpose": "accurate candidate review and necessary traceability",
+      "removal_condition": "retain as managed delivery history"
+    }
+  ]
+}

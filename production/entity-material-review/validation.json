@@ -1,0 +1,19 @@
+{
+  "node": {
+    "passed": 895,
+    "failed": 0,
+    "command": "node --test tests/*.test.cjs",
+    "log_sha256": "5cf9e37955712fa9eb18bc0c25ef800260396bf72b36f7bfa906963464f5134f"
+  },
+  "python": {
+    "passed": 61,
+    "failed": 0,
+    "command": "PYTHONPATH=.:tests python3 -m unittest test_entity_review test_entity_material_integrity test_material_versions test_material_relationships test_production_api test_ui_material_independent",
+    "log_sha256": "b0584acd181bd3512637f78723231b0ed8f57f32c6355c8ca50d978df05a54cb"
+  },
+  "browser": "evidence/browser.json",
+  "audio_quality_listened": false,
+  "paid_calls": 0,
+  "formal_deployment": false,
+  "formal_business_writes": 0
+}
