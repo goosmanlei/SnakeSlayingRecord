@@ -3,8 +3,8 @@
   "tabs": [
     {
       "id": "vision",
-      "label": "愿景",
-      "title": "愿景",
+      "label": "系统构想",
+      "title": "系统构想",
       "lead": "",
       "layout": {
         "type": "diagram",
@@ -17,50 +17,42 @@
       "sections": [
         {
           "id": "review-desk",
-          "title": "人与 AI 协作完成故事创作",
+          "title": "审阅台支撑人与 AI 协作完成影视创作",
           "blocks": [],
           "diagram": {
-            "type": "collaboration",
-            "support": {
-              "title": "审阅台",
-              "value": "提升协作效率",
-              "text": "连接作品与意见，让阅读、反馈与交接更顺畅"
-            },
+            "type": "supported-collaboration",
             "roles": [
               {
-                "id": "human",
                 "title": "人",
-                "value": "创造性与判断"
+                "icon": "human"
               },
               {
-                "id": "ai",
                 "title": "AI",
-                "value": "生成、整理与复用"
+                "icon": "ai"
               }
             ],
-            "exchanges": [
-              {
-                "from": "human",
-                "to": "ai",
-                "label": "交流 · 创作 · 修订"
-              }
-            ],
-            "workflow": {
-              "label": "人与 AI 协作完成故事创作",
-              "stages": [
-                "采编",
-                "小说",
-                "剧本",
-                "素材",
-                "影视作品"
+            "outcome": "影视创作",
+            "foundation": {
+              "title": "审阅台",
+              "pillars": [
+                {
+                  "title": "数据模型",
+                  "icon": "model"
+                },
+                {
+                  "title": "基础流程",
+                  "icon": "process"
+                }
               ]
-            }
+            },
+            "support": "共同支撑",
+            "description": "审阅台通过数据模型与基础流程提供共同约束，提升人与 AI 双向协作的效率与质量，共同完成影视创作。"
           }
         }
       ],
       "source": {
         "path": "production/system-vision.md",
-        "sha256": "828a4fddc2ceeb9e3f732a707d3794b6f1da4f74af4896428ebd3f4e65266c50"
+        "sha256": "427def2e00e2e94170304618de3fd732aa01d751b31b5ffe2372775bb57a6dfa"
       }
     },
     {
