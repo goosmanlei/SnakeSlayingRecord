@@ -15,6 +15,20 @@ SECTION_IDS = ('practice', 'review-desk', 'methods', 'delivery')
 
 
 def derive(raw):
+    compact = [line for line in raw.decode('utf-8').splitlines() if line.strip()]
+    if len(compact) >= 2 and compact[1].startswith('<!-- layout: '):
+        match = re.fullmatch(r'<!-- layout: (.+) -->', compact[1])
+        metadata = json.loads(match[1]) if match else None
+        if isinstance(metadata, dict) and metadata.get('type') == 'diagram':
+            if len(compact) != 4 or not compact[0].startswith('# ') or not compact[2].startswith('## '):
+                raise ValueError('diagram-only vision must contain one title and one diagram section')
+            diagram = re.fullmatch(r'<!-- diagram: (.+) -->', compact[3])
+            if not diagram or set(metadata) != {'type', 'anchors'} or metadata['anchors'] != {key: 'review-desk' for key in ('practice', 'methods', 'delivery')}:
+                raise ValueError('invalid diagram-only vision or legacy anchors')
+            return {'id': 'vision', 'label': compact[0][2:], 'title': compact[0][2:], 'lead': '',
+                    'layout': metadata, 'sections': [{'id': 'review-desk', 'title': compact[2][3:],
+                    'blocks': [], 'diagram': json.loads(diagram[1])}],
+                    'source': {'path': SOURCE.as_posix(), 'sha256': hashlib.sha256(raw).hexdigest()}}
     # The approved source stays byte-for-byte intact. Stable reading anchors are
     # supplied to the existing Schema 2 Markdown converter, not added to prose.
     lines, count, layout, diagrams = [], 0, None, {}

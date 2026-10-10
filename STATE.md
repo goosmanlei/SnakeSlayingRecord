@@ -22,7 +22,7 @@
 
 - 工作方法的按需条件回写已完成自有隔离 Chrome 实操：只改用途后15项条件与准确资源不变，staging/sound全文仍可取；两处显式编辑、失败保护及冻结执行见 [条件回写验收](production/method-condition-roundtrip/VERIFICATION.md)。正式数据没有已证受影响方法，本次不迁移；最终正式版本、验收与清理按 task-20261010-0003 实际回执核对。
 
-- task-20261010-0022 已将 [愿景](production/system-vision.md) 改为四块线框流程与对应短说明，移除本页阅读目录和重复标题；默认、显式入口、刷新、旧锚点、其余四子页及窄屏键盘已在正式 Chrome 回查，Review 当前投影追加第3版。实际发布、恢复及过程清理见 [愿景页验收](production/vision-page/VERIFICATION.md)。[创作协作 Review](skills/creative-system-review/SKILL.md) 继续沿准确只读投影交接。原 task-20261010-0001 的根独立复验仅针对当时版本；旧阶段隔离准备和空实例恢复边界见 [交付验收](production/creative-system-review/VERIFICATION.md)，根验收见 `.runtime/system-review/skill-delivery/formal-acceptance.md`；结项收尾按 task-20261010-0001 实际回执核对。
+- task-20261010-0022 原四块阶段曾将愿景改为四块线框流程与对应短说明，移除本页阅读目录和重复标题；默认、显式入口、刷新、旧锚点、其余四子页及窄屏键盘已在正式 Chrome 回查，Review 当前投影追加第3版。实际发布、恢复及过程清理见 [愿景页验收](production/vision-page/VERIFICATION.md)。[创作协作 Review](skills/creative-system-review/SKILL.md) 继续沿准确只读投影交接。原 task-20261010-0001 的根独立复验仅针对当时版本；旧阶段隔离准备和空实例恢复边界见 [交付验收](production/creative-system-review/VERIFICATION.md)，根验收见 `.runtime/system-review/skill-delivery/formal-acceptance.md`；结项收尾按 task-20261010-0001 实际回执核对。
 
 - 旧镜头制作方案已完成最新双仓候选上的隔离实读：E02/AS006/ASH033版本1直接读原M3071及旧图片1，当前方案可返回；M3070版本2多记录、冻结M1206和ST087旧状态正常对照见[历史方案验收](production/historical-production-definition/VERIFICATION.md)。旧意见、当前采纳/取消、同未冻结制作版参考修改及冲突保护已实操；正式生效、3000只读复验与清理以task-20261009-0031实际回执为准，根独立复验尚未执行。
 
@@ -92,4 +92,4 @@
 
 - task-20261010-0022 的双仓worktree仍由当前TUI及清理锁使用；退出释放后由本任务执行者沿 `codex.project task cleanup` 整组退役，保留分支和会话。预览服务、测试库、构建副本已清除；必要JSON回执保留在主项目 `.runtime/task-20261010-0022/`，待独立Review及追溯用途结束后裁剪，正式运行和恢复不依赖任务目录。
 
-- task-20261010-0023 已在最新正式数据副本验证三方协作图示及Review第4版增量。双仓正式交付、3000复验与资源处置沿任务账本和 [协作图示验收](production/vision-collaboration/VERIFICATION.md) 核对；用户要求本任务不自动结项，负责人独立Review保留。
+- task-20261010-0023 按用户最新反馈，整个愿景页收敛为人与AI协作图，审阅台提升协作效率；纯图与Review第5版在隔离实例验证通过。双仓正式交付、3000复验与资源处置沿任务账本和 [协作图示验收](production/vision-collaboration/VERIFICATION.md) 核对；用户要求本任务不自动结项，负责人独立Review保留。

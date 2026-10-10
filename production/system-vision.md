@@ -1,23 +1,7 @@
 # 愿景
 
-<!-- layout: {"type":"cycle","return_label":"继续实践与改进"} -->
+<!-- layout: {"type":"diagram","anchors":{"practice":"review-desk","methods":"review-desk","delivery":"review-desk"}} -->
 
-从《李寄斩蛇》的真实创作出发，探索人和 AI 的协作，逐步形成可使用、可调整的系统与工作方法，让人专注作品，并支持新的故事。
+## 人与 AI 协作完成故事创作
 
-## 真实作品实践
-
-从故事到影视制作，用《李寄斩蛇》的实际作品检验协作方式；具体故事的设定与制作选择不作为通用要求。
-
-## 人、AI 与系统协作
-
-<!-- diagram: {"type":"collaboration","roles":[{"id":"human","title":"人","value":"创造性"},{"id":"desk","title":"审阅台","value":"基础约束"},{"id":"ai","title":"AI","value":"效率与复用性"}],"exchanges":[{"from":"human","to":"desk","label":"交换意见"},{"from":"desk","to":"ai","label":"交换意见"}],"constraint":"准确作品依据、版本与交接，贯穿创作全流程","workflow":{"label":"三方共同完成故事创作","stages":["采编","小说","剧本","素材","影视作品"]}} -->
-
-人提供创造性与判断，AI 提供效率与复用性，双方通过审阅台交换意见。审阅台以准确作品依据、版本和可靠交接提供基础约束；三方共同推进从采编到影视作品的创作全流程。
-
-## 方法与系统持续改进
-
-从真实使用中发现问题，沉淀可复用的方法与知识。每次改动都用作品效果、AI 执行可靠性和人的判断负担来检验。
-
-## 支持新的故事
-
-希望交付可使用、可调整的系统雏形与协作方法，让新使用者带入自己的故事独立创作。这是持续实践的方向，不代表当前已具备全部能力，也不要求照搬本剧流程。
+<!-- diagram: {"type":"collaboration","support":{"title":"审阅台","value":"提升协作效率","text":"连接作品与意见，让阅读、反馈与交接更顺畅"},"roles":[{"id":"human","title":"人","value":"创造性与判断"},{"id":"ai","title":"AI","value":"生成、整理与复用"}],"exchanges":[{"from":"human","to":"ai","label":"交流 · 创作 · 修订"}],"workflow":{"label":"人与 AI 协作完成故事创作","stages":["采编","小说","剧本","素材","影视作品"]}} -->
