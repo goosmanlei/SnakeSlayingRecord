@@ -28,7 +28,7 @@ class VisionDeliveryTest(unittest.TestCase):
         self.assertEqual(updated['tabs'][1:], before['tabs'])
         self.assertEqual(vision.update(updated, raw), updated)
         tab = updated['tabs'][0]
-        actual = [tab['title'], tab['lead']]
+        actual = [tab['title']] + ([tab['lead']] if tab['lead'] else [])
         for section in tab['sections']:
             actual += [section['title']] + [block['text'] for block in section['blocks']]
         expected = [re.sub(r'^#{1,2} ', '', line) for line in raw.decode().splitlines()
