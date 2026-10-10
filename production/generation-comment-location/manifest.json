@@ -1,0 +1,177 @@
+{
+  "task_id": "task-20261010-0011",
+  "format": "generation-comment-location-verification-v1",
+  "evidence_owner": "execution session; actual Chrome actions, no root independent review",
+  "baseline": {
+    "primary_task": "68de1eadd5ea95bf6411c277e0d109672642711a",
+    "primary_main": "0af1ca2d5b13e193af56b47cea38f63d061e5e51",
+    "desk_main": "ac735586575f3a0bdd319ae95d23acd188285117",
+    "data_source": "main .runtime/review.sqlite3, consistent read-only SQLite backup",
+    "sources": 45,
+    "objects": 9467,
+    "revisions": 31092
+  },
+  "main_absorbed": "d1c1b7838799029431f1567ac4b7e7380b2e9e67",
+  "browser": {
+    "browser": "connected Chrome",
+    "viewport_css": [
+      2192,
+      1359
+    ],
+    "device_pixel_ratio": 1,
+    "origins": [
+      "http://127.0.0.1:61599",
+      "http://127.0.0.1:63722"
+    ],
+    "viewport_override": false
+  },
+  "exact_call": {
+    "object_id": "call-fg3-crossbeam-eight-image-04",
+    "revision_id": "dabee604f4cc373e1b8bb47573dcd96fde044c675af3973ac810bc41bd574081",
+    "block_id": "@review/call/prompt",
+    "start": 1375,
+    "end": 1409,
+    "length": 2806,
+    "quote": "No hanging rope, no post bindings.",
+    "offset_protocol": "Unicode code points; UTF-16 equals these offsets in this BMP-only prefix"
+  },
+  "original": {
+    "object_id": "asset-fg3-crossbeam-eight-image-04",
+    "revision_id": "2ccaa3a630d81b9729277ae9131c7801889031c65e64c3318bf5f123b6ade660",
+    "component_id": "original",
+    "file": "217b292ac24cde829ca03c2e00de44a5184c7880fffa9533ae6572be5cf8c2d4.png"
+  },
+  "inputs": [
+    {
+      "code": "EN058",
+      "object_id": "entity-crossbeam",
+      "revision_id": "115731814d24b6b4b99e325d0f9286435df91fc1582e838690e44edf150b599c"
+    },
+    {
+      "code": "ST140",
+      "object_id": "form-crossbeam-eight",
+      "revision_id": "8a7f693c532aa2cb8ff04bbd1ca060ba0a1416dae97cd0310dd1152b9de88db9"
+    },
+    {
+      "code": "M1392",
+      "object_id": "asset-fg3-feeding-channel-base-image-02",
+      "revision_id": "40c463e5d080aca4387023e158cb95a75c6dc42c7de734d8d87eb3a30485e8e4",
+      "component_id": "original"
+    },
+    {
+      "code": "M1405",
+      "object_id": "asset-fg3-crossbeam-base-image-01",
+      "revision_id": "94e9b74b04de561706b0c7aa2b5caf24b6a812493bc168c69555bd8f7f2d1e70",
+      "component_id": "original"
+    }
+  ],
+  "boundary": {
+    "formal_data_written": false,
+    "deployed": false,
+    "paid_generation": false,
+    "root_independent_review": false,
+    "missing_case": "separate injected fixture: exact M1405 original component absent, CALL/input revisions preserved"
+  },
+  "files": [
+    {
+      "file": "evidence/direct-call-location.jpg",
+      "bytes": 277985,
+      "sha256": "f348236b7348dae9ee1e4b0a5fb9eb1c77c4204cbd24b259106e70044fb88a19"
+    },
+    {
+      "file": "evidence/missing-history.jpg",
+      "bytes": 262211,
+      "sha256": "59970f0d5c2d84549c10c2f1ede4093181e23b151480c90c726b9fa8ee486a03"
+    },
+    {
+      "file": "evidence/audio-time-location.jpg",
+      "bytes": 216661,
+      "sha256": "78079240551154fac4506cf378c3d281fccff20fa21583f5c5c04aebbef2d67c"
+    },
+    {
+      "file": "evidence/data-protection.json",
+      "bytes": 15228,
+      "sha256": "9fdd1d2855a6d149c3232fb54be487a6b50a611518f26e145f4dd630ff067cc3"
+    },
+    {
+      "file": "evidence/return-original-draft.jpg",
+      "bytes": 225246,
+      "sha256": "43e575c4568cb40b3966dd6aca43d4608c67bab555f11360a0eadb29cae2a382"
+    },
+    {
+      "file": "evidence/m4081-frozen.jpg",
+      "bytes": 235246,
+      "sha256": "7dc6f585dc66aae993ef04497a463e5b099389452fbfcceea5711f697e6124d5"
+    },
+    {
+      "file": "evidence/before-collapse.jpg",
+      "bytes": 326742,
+      "sha256": "673bf8d9f6adfc75a1df9584c01b7570208d5ab245b050f73a8e564843f50856"
+    },
+    {
+      "file": "evidence/ash329-handoff.jpg",
+      "bytes": 161506,
+      "sha256": "1294550fff7288aa9bdb18f9dffc9b08f2a6554e03cdb267c5886a5cc7b8d60c"
+    },
+    {
+      "file": "evidence/reference-m1392.jpg",
+      "bytes": 195375,
+      "sha256": "e95681ff2f499862d8f45a76925308c80c008140645a17960ab5c16475b6d6b4"
+    },
+    {
+      "file": "evidence/missing-history-fixture.json",
+      "bytes": 374,
+      "sha256": "3c41fc25789864c5c54bf55be2576f741d5c54f8f642d65a7bce36ff8a350eb4"
+    },
+    {
+      "file": "evidence/after-location.jpg",
+      "bytes": 364033,
+      "sha256": "943a3ef9fe424ae6d0218bf7f6ed1de93b920ad5784694e6e6759c05a6963e14"
+    },
+    {
+      "file": "evidence/continuous-paragraphs.jpg",
+      "bytes": 264815,
+      "sha256": "064382e51aedf20fa4f20d77828440cbe1612fdd1e97782d438e9b25528d1a82"
+    },
+    {
+      "file": "evidence/before-location.jpg",
+      "bytes": 320084,
+      "sha256": "6bf3e6417eda7e110a6828adcb5cdba8e371cbe27eb998ec7f987210cf6e14ed"
+    },
+    {
+      "file": "evidence/region-location.jpg",
+      "bytes": 208889,
+      "sha256": "069c01e7a617170c82fa1e904ec3227bec0a1c7bc25b0708125f866e1d01104b"
+    },
+    {
+      "file": "evidence/direct-call.jpg",
+      "bytes": 271627,
+      "sha256": "1e2aedaefd08631c6bdca05533477d35bd959795b0de743a99bee57ebfa8b4b7"
+    },
+    {
+      "file": "evidence/action-boundary-rejected.jpg",
+      "bytes": 217760,
+      "sha256": "3152a27af52087f13e7f81941ac5fd73751c62f479cb4b09546ed3be49e536ee"
+    },
+    {
+      "file": "evidence/action-paragraph.jpg",
+      "bytes": 216601,
+      "sha256": "faa9d374f85b7a35513f471dad385a7d6ca4a53a24629d2c2fa4c93d9065e8a3"
+    },
+    {
+      "file": "evidence/m4087-handoff.jpg",
+      "bytes": 184903,
+      "sha256": "5ae895ebedae68d0841723d39b5b627c23078bbaf44ceecc9db34aef902173cf"
+    },
+    {
+      "file": "evidence/node-tests.log",
+      "bytes": 89066,
+      "sha256": "82621c07ae1716b3a5dcf73e430c399b1457d809e837f45286f9863d42b6b86c"
+    },
+    {
+      "file": "evidence/python-tests.log",
+      "bytes": 135,
+      "sha256": "09061c7944a4312fe4f5898beca8882b6fb1413a95a14a6d2a9e56749e1f559c"
+    }
+  ]
+}
