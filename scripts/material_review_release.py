@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Prepare an immutable runtime release; apply only the authorized bundle.
 
-Optional exact method configuration is appended during a stopped-app window.
-No story-data import, generation, acceptance or task completion. The system
+Optional exact method or explicitly packaged data migration is applied during
+a stopped-app window. No generation, acceptance or task completion. The system
 fast-forward, live preservation checks, service switch and prepared ordinary
 system push run serially; story Git delivery stays with the task launcher.
 """
@@ -139,7 +139,29 @@ def prepare(a):
             require(not Path(relative).is_absolute() and '..' not in Path(relative).parts, 'migration must be project relative')
             raw = base.git_file(story, a.story_candidate, relative)
             require(raw == (story / relative).read_bytes(), 'migration input differs from candidate')
+            if key == 'package':
+                for filename, digest in json.loads(raw)['authored_sha256'].items():
+                    require(not Path(filename).is_absolute() and '..' not in Path(filename).parts, 'unsafe authored source path')
+                    source_raw = base.git_file(story, a.story_candidate, filename)
+                    require(sha(source_raw) == digest and source_raw == (story/filename).read_bytes(), 'authored migration source drifted: '+filename)
             latest[key] = 'latest/' + key + '.json'; put(latest[key], raw)
+    relations = None
+    if getattr(a, 'relations_package', None):
+        require(not managed_methods and not latest, 'unified relationship release owns its exact method/data transaction')
+        relative = Path(a.relations_package).as_posix()
+        require(not Path(relative).is_absolute() and '..' not in Path(relative).parts, 'relationship package must be project relative')
+        raw = base.git_file(story, a.story_candidate, relative)
+        require(raw == (story / relative).read_bytes(), 'relationship package differs from candidate')
+        document = json.loads(raw)
+        require(document.get('format') == 'unified-relation-release-v1', 'wrong relationship package')
+        put('relations/' + relative, raw)
+        for item in document['files'].values():
+            name = item['file']
+            require(not Path(name).is_absolute() and '..' not in Path(name).parts, 'relationship input path escaped')
+            value = base.git_file(story, a.story_candidate, name)
+            require(sha(value) == item['sha256'] and value == (story/name).read_bytes(), 'relationship input differs: ' + name)
+            put('relations/' + name, value)
+        relations = {'root':'relations', 'package':'relations/' + relative}
     method_media=method_media_files(read(root/'instance/content/production-approach.json'))
     for name,digest in method_media.items():
         raw=base.git_file(story,a.story_candidate,name)
@@ -147,7 +169,7 @@ def prepare(a):
         put('instance/'+name,raw)
     cfg=read(root/'instance/config/instance.json');require(cfg['review_desk_commit']==a.system_candidate,'candidate instance pin differs')
     current_files={name:sha(Path(mounts['/instance/'+name]['Source']).read_bytes()) for name in base.INSTANCE_FILES}
-    if task == 'task-20261010-0001':
+    if task in {'task-20261010-0001', 'task-20261010-0022', 'task-20261010-0023'}:
         raw = base.git_file(story, a.story_candidate, 'production/system-vision.md')
         require(raw == (story/'production/system-vision.md').read_bytes(), 'vision source differs from candidate')
         check_vision_change(read(mounts['/instance/content/production-approach.json']['Source']),
@@ -166,6 +188,7 @@ def prepare(a):
     if managed_methods:helpers.append('method_migration.py')
     if native:helpers.append('task_repository_delivery.py')
     if latest:helpers.extend(['latest_state_migration.py','audiovisual_publication.py','generation_workspace.py','method_migration.py'])
+    if relations:helpers.extend(['unified_relation_migration.py','method_migration.py'])
     for helper in helpers:
         raw=base.git_file(story,a.story_candidate,'scripts/'+helper);require(raw==(story/'scripts'/helper).read_bytes(),'helper differs from committed candidate');put('helpers/'+helper,raw)
     files=old['config_files'].split(',');require(files==proxy['config_files'].split(','),'compose sets differ')
@@ -179,11 +202,12 @@ def prepare(a):
     if native:m['task_delivery']=native
     if managed_methods:m['managed_methods']=managed_methods
     if latest:m['latest_state_migration']=latest
+    if relations:m['unified_relation_migration']=relations
     if task=='task-20261006-0005':
         m['database_changes']={'format':'transactional-read-cache-v1','journal_mode':'delete','journal_mode_changed':False,
                                'auxiliary_table':'read_generations','business_rows':'preserve',
                                'recovery':'retain current DELETE journal and business rows; disable or clear the disposable cache; never restore an old business snapshot'}
-    save(root/'manifest.json',m);print(json.dumps({'bundle':str(root),'manifest_sha256':sha((root/'manifest.json').read_bytes()),'formal_writes':False,'business_delta':0}))
+    save(root/'manifest.json',m);print(json.dumps({'bundle':str(root),'manifest_sha256':sha((root/'manifest.json').read_bytes()),'formal_writes':False,'business_delta':None if managed_methods or latest or relations else 0}))
 
 
 def load_bundle(path):
@@ -377,6 +401,16 @@ def apply(a):
             save(receipt/'latest-write-window.json', {'container_id':current['Id'], 'stopped':True,
                  'ingress':__import__('method_migration').stopped_api(application_stopped=True)})
             latest_state_migration.apply(root,m)
+        if m.get('unified_relation_migration'):
+            import unified_relation_migration
+            for helper in ('unified_relation_migration.py','method_migration.py'):
+                require(sha((Path(m['story_worktree'])/'scripts'/helper).read_bytes()) == m['hashes']['helpers/'+helper], 'relationship migration helper drifted')
+            require(exact_candidate or base.safe_container(current)==m['previous_app'], 'another app is active')
+            if current['State']['Running']:run([base.DOCKER, 'stop', '--time', '30', current['Id']])
+            require(not inspect(current['Id'])['State']['Running'], 'application still writing')
+            save(receipt/'relations-write-window.json', {'container_id':current['Id'], 'stopped':True,
+                 'ingress':__import__('method_migration').stopped_api(application_stopped=True)})
+            unified_relation_migration.apply(root,m)
         if not before.exists():
             checks(root,m);base.snapshot(Path(m['story_main'])/'.runtime/review.sqlite3',before);save(receipt/'before.json',{'sha256':file_sha256(before)})
         else:
@@ -399,7 +433,7 @@ def apply(a):
         after=receipt/('after-'+str(time.time_ns())+'.sqlite3');base.snapshot(Path(m['story_main'])/'.runtime/review.sqlite3',after)
         cache_migration=m.get('database_changes',{}).get('format')=='transactional-read-cache-v1'
         require(not cache_migration or m['task']=='task-20261006-0005','unexpected database migration task')
-        evidence=preserved(before,after,allow_read_generations=cache_migration,allow_cache_token_updates=bool(method_change or m.get('latest_state_migration')))
+        evidence=preserved(before,after,allow_read_generations=cache_migration,allow_cache_token_updates=bool(method_change or m.get('latest_state_migration') or m.get('unified_relation_migration')))
         database_runtime=None
         if cache_migration:
             live_db=(Path(m['story_main'])/'.runtime/review.sqlite3').resolve()
@@ -407,7 +441,7 @@ def apply(a):
                 database_runtime={'journal_mode':db.execute('PRAGMA journal_mode').fetchone()[0]}
             require(database_runtime['journal_mode']=='delete','reviewed DELETE journal mode changed')
         base.update_image_aliases(m,image)
-        result={'status':'formal_browser_pending','service':service,'release':str(release),'rows':evidence,'business_delta':None if method_change else 0,'method_migration':read(receipt/'method-migration.json') if method_change else None,'system_candidate':m['system_candidate'],'push':False,'complete_invoked':False,
+        result={'status':'formal_browser_pending','service':service,'release':str(release),'rows':evidence,'business_delta':None if method_change or m.get('latest_state_migration') or m.get('unified_relation_migration') else 0,'method_migration':read(receipt/'method-migration.json') if method_change else None,'system_candidate':m['system_candidate'],'push':False,'complete_invoked':False,
                 'database_changes':m.get('database_changes'),'database_runtime':database_runtime}
         save(receipt/('service-'+str(time.time_ns())+'.json'),result);print(json.dumps(result,ensure_ascii=False))
 
@@ -416,6 +450,7 @@ def recover(a):
     root,m=authorized(a);image=read(root/'image.json');release=Path(m['story_main'])/'.runtime/service-releases'/m['release_name']
     with base.publication_locks(m):
         require(not m.get('latest_state_migration'), 'latest data contract applied: recover forward with the exact current package; never restore an old database or incompatible image')
+        require(not m.get('unified_relation_migration'), 'unified relationship contract: recover forward with this exact package; never restore an old database or incompatible image')
         if m.get('managed_methods'):
             # The pre-cutover image cannot enforce the newly active contract.
             # Keep the database and require a compatible runtime repair instead.
@@ -482,6 +517,7 @@ def main():
     q=sub.add_parser('prepare');q.add_argument('--story-worktree',type=Path,default=Path(__file__).resolve().parents[1]);q.add_argument('--system-worktree',type=Path,required=True);q.add_argument('--bundle',type=Path,required=True)
     q.add_argument('--task',default=TASK);q.add_argument('--push-system',action='store_true')
     q.add_argument('--audiovisual-package',type=Path);q.add_argument('--latest-registry',type=Path)
+    q.add_argument('--relations-package',type=Path)
     q.add_argument('--method-registry',type=Path);q.add_argument('--method-audit',type=Path)
     for name in ('story-candidate','system-candidate','story-target','system-target'):q.add_argument('--'+name,required=True)
     for cmd in ('build','preflight','apply','recover','publish-system'):
