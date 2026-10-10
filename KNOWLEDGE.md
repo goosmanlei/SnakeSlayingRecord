@@ -106,7 +106,7 @@
 
 - 发布清单保存准确任务、提交和构建来源，与任务工作区的生命周期独立。`scripts/task_workspace_guard.py` 按实际 Docker 挂载、发布 Compose 及恢复配置中的目录依赖保护工作区，不因清单保留或任务编号相同而阻断；清理不改写冻结清单。检查器更新后须核对并更新账本绑定摘要，不能跳过摘要检查。依据：用户 2026-10-08 对清单留存阻断清理的纠正、检查器及 `tests/test_task_repository_delivery.py`。
 
-- 正式数据库 `.runtime/review.sqlite3` 是本机运行权威，`export/` 是受管快照。受管候选 Schema 11 保存三部分视听模型、集场当前工作稿、视听专属文本清理凭据、有效素材版本与原件、准确评论、配置和最小退役身份，不恢复已退出的旧业务对象。当前恢复使用 `scripts/production_review.py recover`、[准确索引](production/audiovisual/index.json) 与 [发布凭据](production/audiovisual/recovery.json)，只能恢复新空实例，不能覆盖活库。
+- 正式数据库 `.runtime/review.sqlite3` 是本机运行权威，`export/` 是受管快照。当前 Schema 11 保存统一关系与历史别名、三部分视听模型、集场当前工作稿、视听专属文本清理凭据、有效素材版本与原件、准确评论、配置和最小退役身份，不恢复已退出的旧业务对象。当前恢复使用 `scripts/production_review.py recover`、[准确索引](production/audiovisual/index.json) 与 [发布凭据](production/audiovisual/recovery.json)，只能恢复新空实例，不能覆盖活库。
 - 生成、登记、审阅与导出均在任务 worktree；准确增量和原件先合入主干，再持有正式发布锁应用。`generation_publications` 与 `consolidation_runs` 保存发布幂等事实，不能因不属于业务正文便删除。范围外新评论和引用须保全，旧基线拒绝重放。操作见 [工作区流程](production/generation-workspaces.md)。
 - 状态准备用途由作者在 [逐集判断](production/audiovisual/state-preparation.md) 维护，`scripts/state_preparation.py` 只汇编并交给现有准确状态与需求模型；关系数量不代替用途判断。独立审阅或可选对照可不进入镜头输入，镜内结束状态可只作结果检查。已有完整维度或描述块承担制作描述，真实缺项及认可边界继续保留。
 - 当前视听编制由 `scripts/audiovisual_design.py`、`scripts/audiovisual_reading.py` 读取锁定故事和 `production/audiovisual/readings/` 作者逐镜稿；既有素材方案只按准确引用复用，不全量重建。三部分物理退役使用 `scripts/audiovisual_publication.py` 的准确清单与事务，先隔离迁移、完整导出和空恢复；正式应用另核当前头、评论及授权，不把任务快照覆盖活库。方法与操作见 [视听入口](production/audiovisual/README.md)。
