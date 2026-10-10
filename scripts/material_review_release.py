@@ -169,7 +169,7 @@ def prepare(a):
         put('instance/'+name,raw)
     cfg=read(root/'instance/config/instance.json');require(cfg['review_desk_commit']==a.system_candidate,'candidate instance pin differs')
     current_files={name:sha(Path(mounts['/instance/'+name]['Source']).read_bytes()) for name in base.INSTANCE_FILES}
-    if task == 'task-20261010-0001':
+    if task in {'task-20261010-0001', 'task-20261010-0022'}:
         raw = base.git_file(story, a.story_candidate, 'production/system-vision.md')
         require(raw == (story/'production/system-vision.md').read_bytes(), 'vision source differs from candidate')
         check_vision_change(read(mounts['/instance/content/production-approach.json']['Source']),
