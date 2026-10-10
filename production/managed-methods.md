@@ -11,7 +11,7 @@
 | 内容 | 有效正文与同步方向 |
 | --- | --- |
 | 实例原生方法、连续性知识、环节绑定 | 启用后在实例“系统配置 → 工作方法”维护。保存追加新版本，绑定显式选择准确版本。 |
-| 创作协作 Review | 唯一方法包在 `skills/creative-system-review/`，愿景在 `production/system-vision.md`。系统方法只保留简短引用入口，全文沿 `method-source` 追加为只读资源；操作见下节。 |
+| 创作协作 Review | 唯一方法包在 `skills/creative-system-review/`，系统构想在 `production/system-vision.md`。系统方法只保留简短引用入口，全文沿 `method-source` 追加为只读资源；操作见下节。 |
 | 视频手册与影视知识 | 项目 Markdown 是唯一正文。`method-source` 把选定章节及来源摘要追加为只读资源投影；已有阅读页也沿原正文派生。不能在配置页反向改一份正文。 |
 | `content/managed-methods.json`、`managed-media-method.json` | 初始化定义，安装到空实例；不覆盖已编辑的活库。媒体初始化同时读取本项目 Markdown。 |
 | `content/managed-method-registry.json` | 本次候选的准确配置历史，用于增量迁移与空实例恢复；不是启用后的编辑副本。后续导出必须来自当时有效实例。 |
@@ -27,19 +27,19 @@
 
 `content/creative-system-review-method.json` 是安装定义，只含来源路径、简短入口及环节元数据。用已有 `scripts/managed_methods.py install --seed content/creative-system-review-method.json` 在任务隔离实例安装，`--system` 指向本任务审阅台工作区，`--instance` 指向隔离实例。重复安装相同正文幂等，已维护配置不同则拒绝覆盖。
 
-准备请求沿 `POST /api/methods/prepare` 或 `method-prepare`，提供 `work_type: creative-system-review`、独立 `run_id/step_id/target`，以及 `inputs` 中的 `goal`（当前目标）、`scope`（准确对象、版本及范围）、`authorization`（本次委托边界）、`evidence`（实际材料和实践证据）。返回包以完整 SKILL 为一个准确章节，随章附带项目适配和愿景，保留源目录关系；专业制作所需章节及作品输入由本步按需补齐，这三个文本不能代替真实看、听、操作或其他专业材料。`review` 产物登记实际判断，不以取得方法代表完成审阅。
+准备请求沿 `POST /api/methods/prepare` 或 `method-prepare`，提供 `work_type: creative-system-review`、独立 `run_id/step_id/target`，以及 `inputs` 中的 `goal`（当前目标）、`scope`（准确对象、版本及范围）、`authorization`（本次委托边界）、`evidence`（实际材料和实践证据）。返回包以完整 SKILL 为一个准确章节，随章附带项目适配和系统构想，保留源目录关系；专业制作所需章节及作品输入由本步按需补齐，这三个文本不能代替真实看、听、操作或其他专业材料。`review` 产物登记实际判断，不以取得方法代表完成审阅。
 
-作者 `creative_method.py begin` 与标准 `method-export` 都从包根 `SKILL.md` 进入 `shared/0/skills/creative-system-review/SKILL.md`，正文的相对链接直接通向同目录的 `references/project-context.md`；愿景为 `shared/0/production/system-vision.md`，由包根入口链接。正文原字节保持，使用者无需改名。三份文本均保留来源路径和摘要；标准导出另含 `registry.json`、`execution.json` 与准确输入，恢复到新空实例后仍可重取同一执行。作者交付以 `delivery.json` 固定请求及执行，`RESOURCES.md` 只索引本次实际资料。
+作者 `creative_method.py begin` 与标准 `method-export` 都从包根 `SKILL.md` 进入 `shared/0/skills/creative-system-review/SKILL.md`，正文的相对链接直接通向同目录的 `references/project-context.md`；系统构想为 `shared/0/production/system-vision.md`，由包根入口链接。正文原字节保持，使用者无需改名。三份文本均保留来源路径和摘要；标准导出另含 `registry.json`、`execution.json` 与准确输入，恢复到新空实例后仍可重取同一执行。作者交付以 `delivery.json` 固定请求及执行，`RESOURCES.md` 只索引本次实际资料。
 
 包内链接以当前文件为基准；适配列出的 `AGENTS.md`、`KNOWLEDGE.md`、`STATE.md`、作品和专业资料路径以**本次输入明确给出的故事项目根**为基准。begin 的 `inputs` 应包含该根及准确作品/页面范围、授权、已有证据；没有提供的项目材料须沿本项目或本次输入补齐。加载方法不授予正式写入、持续运行或生成许可，方法可读也不等于创作完成。
 
 仅恢复定义可用 `content/creative-system-review-registry.json`：只含本方法资源、引用入口与专用绑定的连续历史，不携带其他方法或私有试用。恢复完整作品后可显式追加，目标前进时拒绝旧包覆盖。旧第1版定义、执行和已经交付的历史包仍是原文与原目录：当前作者交付器对旧平面资源与标准导出统一使用 `shared/0.md` 等，解决重取时的顶层命名差异；**旧完整方法中的内部适配链接仍不可用**，从旧入口的第二份资源 `shared/1.md` 读取适配、第三份 `shared/2.md` 读愿景。原作者历史包的带章节名路径由其 `RESOURCES.md` 索引。不得向旧执行补入新附件或改写旧正文；要完整内链须显式采用保留目录的第2版或后续绑定、另建步骤。导出和恢复只包含显式选中的私有执行，不会为其他历史身份补造记录。
 
-后续修改先改唯一包或愿景，用 `method-source` 同步对应来源定义并提供资源当前 `expected_version`，再以 `method-save` 追加引用新资源准确修订的方法版本，最后显式更新本工作类型的绑定。旧执行继续旧资源及绑定。将相应准确历史从有效实例导出到登记包，再沿 [工作区发布](generation-workspaces.md) 增量发布；不能手改导出正文或用旧任务整库覆盖正式库。
+后续修改先改唯一包或系统构想，用 `method-source` 同步对应来源定义并提供资源当前 `expected_version`，再以 `method-save` 追加引用新资源准确修订的方法版本，最后显式更新本工作类型的绑定。旧执行继续旧资源及绑定。将相应准确历史从有效实例导出到登记包，再沿 [工作区发布](generation-workspaces.md) 增量发布；不能手改导出正文或用旧任务整库覆盖正式库。
 
-当前愿景名称为“愿景”，按用户最新修改仅保留人与AI协作图，审阅台作为提升协作效率的平台；五阶段作品链直接展开。唯一源稿、阅读页与Review第5版准确投影一致；第1至4版和旧执行保持原文。当前候选、恢复与正式回执入口见 [协作图示验收](vision-collaboration/VERIFICATION.md)，原四块布局沿 [愿景页验收](vision-page/VERIFICATION.md) 及Git准确历史追溯。
+当前首子页名称为“系统构想”，只保留两层协作图：审阅台的数据模型与基础流程共同支撑人与 AI 完成影视创作，以共同约束提升协作效率与质量。页面突出基础层，复用系统浅色纸面与柔和绿色。唯一源稿、阅读页与 Review 第6版准确投影一致；第1至5版和旧执行保持原文。当前候选、恢复与正式回执入口见 [协作图示验收](vision-collaboration/VERIFICATION.md)，旧布局沿准确 Git 历史和原回执追溯。
 
-愿景阅读页由 `python3 scripts/sync_system_vision.py` 确定性派生；`--check` 检查全文和首项位置。愿景是方向说明，不代表全部能力已经实现。初次交付的已审正文与试用边界见 [交付验收](creative-system-review/VERIFICATION.md)。
+系统构想阅读页由 `python3 scripts/sync_system_vision.py` 确定性派生；`--check` 检查全文和首项位置。系统构想是方向说明，不代表全部能力已经实现。初次交付的已审正文与试用边界见 [交付验收](creative-system-review/VERIFICATION.md)。
 
 ## 外部小说作者
 
