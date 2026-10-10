@@ -3,6 +3,7 @@
 import argparse
 import hashlib
 import json
+import re
 from pathlib import Path
 
 from sync_video_handbook import derive as derive_markdown
@@ -16,8 +17,22 @@ SECTION_IDS = ('practice', 'review-desk', 'methods', 'delivery')
 def derive(raw):
     # The approved source stays byte-for-byte intact. Stable reading anchors are
     # supplied to the existing Schema 2 Markdown converter, not added to prose.
-    lines, count = [], 0
+    lines, count, layout, diagrams = [], 0, None, {}
     for line in raw.decode('utf-8').splitlines():
+        if line.startswith('<!-- layout: '):
+            if layout is not None:
+                raise ValueError('duplicate vision layout')
+            match = re.fullmatch(r'<!-- layout: (.+) -->', line)
+            layout = json.loads(match[1]) if match else None
+            if not isinstance(layout, dict) or set(layout) != {'type', 'return_label'} or layout['type'] != 'cycle' or not isinstance(layout['return_label'], str) or not layout['return_label'].strip():
+                raise ValueError('invalid vision cycle layout')
+            continue
+        if line.startswith('<!-- diagram: '):
+            match = re.fullmatch(r'<!-- diagram: (.+) -->', line)
+            if not match or not count or SECTION_IDS[count - 1] in diagrams:
+                raise ValueError('invalid or duplicate vision diagram')
+            diagrams[SECTION_IDS[count - 1]] = json.loads(match[1])
+            continue
         if line.startswith('## '):
             if count == len(SECTION_IDS):
                 raise ValueError('vision sections changed; assign their stable reading anchors')
@@ -27,7 +42,11 @@ def derive(raw):
     if count != len(SECTION_IDS):
         raise ValueError('vision sections changed; preserve or revise their reading anchors')
     tab = derive_markdown(('\n'.join(lines) + '\n').encode(), root=ROOT)
+    for section in tab['sections']:
+        if section['id'] in diagrams:
+            section['diagram'] = diagrams[section['id']]
     return {**tab, 'id': 'vision', 'label': tab['title'],
+            **({'layout': layout} if layout else {}),
             'source': {'path': SOURCE.as_posix(), 'sha256': hashlib.sha256(raw).hexdigest()}}
 
 
