@@ -179,6 +179,23 @@ def prepare(a):
             require(sha(value) == item['sha256'] and value == (story/name).read_bytes(), 'retirement input differs: '+name)
             put('retirement/'+name, value)
         retirement = {'root':'retirement', 'package':'retirement/'+relative}
+    current_production = None
+    if getattr(a, 'production_current_package', None):
+        require(not managed_methods and not latest and not relations and not retirement, 'current production owns its exact migration transaction')
+        relative = Path(a.production_current_package).as_posix()
+        require(not Path(relative).is_absolute() and '..' not in Path(relative).parts, 'unsafe current production package')
+        raw = base.git_file(story, a.story_candidate, relative)
+        require(raw == (story/relative).read_bytes(), 'current production package differs from candidate')
+        document = json.loads(raw)
+        require(document.get('format') == 'production-current-release-v1', 'wrong current production package')
+        put('current/'+relative, raw)
+        for item in document['files'].values():
+            name = item['file']
+            require(not Path(name).is_absolute() and '..' not in Path(name).parts, 'current production input escaped')
+            value = base.git_file(story, a.story_candidate, name)
+            require(sha(value) == item['sha256'] and value == (story/name).read_bytes(), 'current production input differs: '+name)
+            put('current/'+name, value)
+        current_production = {'root':'current', 'package':'current/'+relative}
     method_media=method_media_files(read(root/'instance/content/production-approach.json'))
     for name,digest in method_media.items():
         raw=base.git_file(story,a.story_candidate,name)
@@ -207,6 +224,7 @@ def prepare(a):
     if latest:helpers.extend(['latest_state_migration.py','audiovisual_publication.py','generation_workspace.py','method_migration.py'])
     if relations:helpers.extend(['unified_relation_migration.py','method_migration.py'])
     if retirement:helpers.extend(['review_retirement_release.py','unified_relation_migration.py','method_migration.py'])
+    if current_production:helpers.extend(['production_current_release.py','unified_relation_migration.py','method_migration.py'])
     for helper in helpers:
         raw=base.git_file(story,a.story_candidate,'scripts/'+helper);require(raw==(story/'scripts'/helper).read_bytes(),'helper differs from committed candidate');put('helpers/'+helper,raw)
     files=old['config_files'].split(',');require(files==proxy['config_files'].split(','),'compose sets differ')
@@ -222,11 +240,12 @@ def prepare(a):
     if latest:m['latest_state_migration']=latest
     if relations:m['unified_relation_migration']=relations
     if retirement:m['review_retirement']=retirement
+    if current_production:m['production_current']=current_production
     if task=='task-20261006-0005':
         m['database_changes']={'format':'transactional-read-cache-v1','journal_mode':'delete','journal_mode_changed':False,
                                'auxiliary_table':'read_generations','business_rows':'preserve',
                                'recovery':'retain current DELETE journal and business rows; disable or clear the disposable cache; never restore an old business snapshot'}
-    save(root/'manifest.json',m);print(json.dumps({'bundle':str(root),'manifest_sha256':sha((root/'manifest.json').read_bytes()),'formal_writes':False,'business_delta':None if managed_methods or latest or relations or retirement else 0}))
+    save(root/'manifest.json',m);print(json.dumps({'bundle':str(root),'manifest_sha256':sha((root/'manifest.json').read_bytes()),'formal_writes':False,'business_delta':None if managed_methods or latest or relations or retirement or current_production else 0}))
 
 
 def load_bundle(path):
@@ -440,6 +459,16 @@ def apply(a):
             save(receipt/'review-write-window.json', {'container_id':current['Id'], 'stopped':True,
                  'ingress':__import__('method_migration').stopped_api(application_stopped=True)})
             review_retirement_release.apply(root,m)
+        if m.get('production_current'):
+            import production_current_release
+            for helper in ('production_current_release.py','unified_relation_migration.py','method_migration.py'):
+                require(sha((Path(m['story_worktree'])/'scripts'/helper).read_bytes()) == m['hashes']['helpers/'+helper], 'current production helper drifted')
+            require(exact_candidate or base.safe_container(current)==m['previous_app'], 'another app is active')
+            if current['State']['Running']:run([base.DOCKER, 'stop', '--time', '30', current['Id']])
+            require(not inspect(current['Id'])['State']['Running'], 'application still writing')
+            save(receipt/'production-current-write-window.json', {'container_id':current['Id'], 'stopped':True,
+                 'ingress':__import__('method_migration').stopped_api(application_stopped=True)})
+            production_current_release.apply(root,m)
         if not before.exists():
             checks(root,m);base.snapshot(Path(m['story_main'])/'.runtime/review.sqlite3',before);save(receipt/'before.json',{'sha256':file_sha256(before)})
         else:
@@ -462,7 +491,7 @@ def apply(a):
         after=receipt/('after-'+str(time.time_ns())+'.sqlite3');base.snapshot(Path(m['story_main'])/'.runtime/review.sqlite3',after)
         cache_migration=m.get('database_changes',{}).get('format')=='transactional-read-cache-v1'
         require(not cache_migration or m['task']=='task-20261006-0005','unexpected database migration task')
-        evidence=preserved(before,after,allow_read_generations=cache_migration,allow_cache_token_updates=bool(method_change or m.get('latest_state_migration') or m.get('unified_relation_migration') or m.get('review_retirement')))
+        evidence=preserved(before,after,allow_read_generations=cache_migration,allow_cache_token_updates=bool(method_change or m.get('latest_state_migration') or m.get('unified_relation_migration') or m.get('review_retirement') or m.get('production_current')))
         database_runtime=None
         if cache_migration:
             live_db=(Path(m['story_main'])/'.runtime/review.sqlite3').resolve()
@@ -470,7 +499,7 @@ def apply(a):
                 database_runtime={'journal_mode':db.execute('PRAGMA journal_mode').fetchone()[0]}
             require(database_runtime['journal_mode']=='delete','reviewed DELETE journal mode changed')
         base.update_image_aliases(m,image)
-        result={'status':'formal_browser_pending','service':service,'release':str(release),'rows':evidence,'business_delta':None if method_change or m.get('latest_state_migration') or m.get('unified_relation_migration') or m.get('review_retirement') else 0,'method_migration':read(receipt/'method-migration.json') if method_change else None,'system_candidate':m['system_candidate'],'push':False,'complete_invoked':False,
+        result={'status':'formal_browser_pending','service':service,'release':str(release),'rows':evidence,'business_delta':None if method_change or m.get('latest_state_migration') or m.get('unified_relation_migration') or m.get('review_retirement') or m.get('production_current') else 0,'method_migration':read(receipt/'method-migration.json') if method_change else None,'system_candidate':m['system_candidate'],'push':False,'complete_invoked':False,
                 'database_changes':m.get('database_changes'),'database_runtime':database_runtime}
         save(receipt/('service-'+str(time.time_ns())+'.json'),result);print(json.dumps(result,ensure_ascii=False))
 
@@ -478,6 +507,7 @@ def apply(a):
 def recover(a):
     root,m=authorized(a);image=read(root/'image.json');release=Path(m['story_main'])/'.runtime/service-releases'/m['release_name']
     with base.publication_locks(m):
+        require(not m.get('production_current'), 'current production: recover forward with the exact compatible package; never restart a version-chain writer or restore the retired database')
         require(not m.get('latest_state_migration'), 'latest data contract applied: recover forward with the exact current package; never restore an old database or incompatible image')
         require(not m.get('review_retirement'), 'approval retirement: recover forward with this exact package; never restore an old approval database or incompatible image')
         require(not m.get('unified_relation_migration'), 'unified relationship contract: recover forward with this exact package; never restore an old database or incompatible image')
@@ -549,6 +579,7 @@ def main():
     q.add_argument('--audiovisual-package',type=Path);q.add_argument('--latest-registry',type=Path)
     q.add_argument('--relations-package',type=Path)
     q.add_argument('--review-retirement-package',type=Path)
+    q.add_argument('--production-current-package',type=Path)
     q.add_argument('--method-registry',type=Path);q.add_argument('--method-audit',type=Path)
     for name in ('story-candidate','system-candidate','story-target','system-target'):q.add_argument('--'+name,required=True)
     for cmd in ('build','preflight','apply','recover','publish-system'):

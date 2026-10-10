@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Apply individually authored shot readings without rebuilding media plans.
 
-The reading documents name exact existing material revisions. This entry point
-only writes an isolated task instance; formal application needs the reviewed
-cleanup manifest and a separately authorized publication window.
+The reading documents name current material identities and exact story inputs.
+This entry point writes an isolated task instance. Current production updates
+neither propagate parent revisions nor run the retired history cleanup.
 """
 import argparse
 from copy import deepcopy
@@ -23,6 +23,8 @@ def prepare(store, sources):
     from review_desk.audiovisual_notes import get as note
     from review_desk.store import canonical
     from review_desk.version_consolidation import new_identity
+    from review_desk.production_current import enabled, marker
+    current_mode = enabled(store)
     records, resolved, notes, authored, selected = [], {}, {}, {}, set()
     current = {r['object_id']: r for r in p.current_records(store, {'AV_EPISODE','AV_SCENE','AV_SHOT'})}
     def append(row, payload):
@@ -57,7 +59,7 @@ def prepare(store, sources):
             if note(store,oid)['body'] != body:
                 notes[oid] = {'object_id':oid, 'body':body, 'expected_etag':note(store,oid)['etag']}
     # Exact composition changes propagate upward; other shot payloads do not.
-    for kind, field in (('AV_SCENE','shots'),('AV_EPISODE','scenes')):
+    for kind, field in (() if current_mode else (('AV_SCENE','shots'),('AV_EPISODE','scenes'))):
         for row in current.values():
             if row['kind'] != kind or not any(ref['object_id'] in selected for ref in row['payload'][field]):continue
             oid = row['object_id'];selected.add(oid)
@@ -68,10 +70,12 @@ def prepare(store, sources):
             if oid not in notes and not note(store,oid)['body']:
                 notes[oid] = {'object_id':oid, 'body':row['payload'].get('purpose',''), 'expected_etag':note(store,oid)['etag']}
             append(row,payload)
-    removal = cleanup.plan(store, selected)
-    removal['heads'].update({oid:resolved[oid] for oid in selected if oid in resolved})
+    removal = None if current_mode else cleanup.plan(store, selected)
+    if removal:
+        removal['heads'].update({oid:resolved[oid] for oid in selected if oid in resolved})
     return {'format':'audiovisual-reading-migration-v1', 'authored_sha256':authored,
-            'import': {'format':'production-import-v1', 'expected_heads':{oid:current[oid]['id'] for oid in selected},'records':records},
+            'import': {'format':'production-import-v1', 'expected_heads':{oid:current[oid]['id'] for oid in selected},
+                       **({'expected_content':{oid:marker(current[oid]) for oid in selected}} if current_mode else {}), 'records':records},
             'cleanup':removal, 'working_notes':list(notes.values())}
 
 
@@ -84,7 +88,7 @@ def apply(store, plan, validate_only=False):
         for item in plan['working_notes']:
             if note(store,item['object_id'])['etag'] != item['expected_etag']:raise Conflict('working note changed')
         imported = p._import_records(store,plan['import'],transaction=False) if plan['import']['records'] else {'records':[]}
-        result = cleanup.apply(store,plan['cleanup'],transaction=False)
+        result = cleanup.apply(store,plan['cleanup'],transaction=False) if plan['cleanup'] else {'current_content':True}
         for item in plan['working_notes']:
             store.db.execute('INSERT INTO audiovisual_notes VALUES (?,?,?) ON CONFLICT(object_id) DO UPDATE SET body=excluded.body,updated_at=excluded.updated_at',
                              (item['object_id'],item['body'],now()))
@@ -113,8 +117,8 @@ def main():
         if args.command=='prepare':
             path.parent.mkdir(parents=True,exist_ok=True)
             path.write_text(json.dumps(actual,ensure_ascii=False,indent=2)+'\n')
-            print(json.dumps({'append':len(actual['import']['records']), 'redact':len(actual['cleanup']['revisions']),
-                              'remove_decisions':len(actual['cleanup']['decisions'])}))
+            print(json.dumps({'write':len(actual['import']['records']), 'redact':len((actual['cleanup'] or {}).get('revisions',[])),
+                              'remove_decisions':len((actual['cleanup'] or {}).get('decisions',[]))}))
         else:
             plan=json.loads(path.read_text())
             if plan!=actual:raise ValueError('authored content or database changed; prepare a fresh migration')

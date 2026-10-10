@@ -48,6 +48,8 @@ def run_publication(root, target, package, run_name, *, apply=False, source_comm
     if not db_path.is_file():
         raise ValueError('publication requires an existing review database')
     entries = entries if entries is not None else document['media']
+    if document.get('format')=='production-current-publication-v1' and apply_fn is apply_plan:
+        apply_fn=lambda db,plan:apply_plan(db,plan,media_root=root)
     verify_media(root, entries)
     if apply and formal:
         verify_integrated(root, target, source_commit, package, entries)

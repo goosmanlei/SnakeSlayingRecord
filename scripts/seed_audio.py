@@ -179,8 +179,16 @@ def main():
         if remaining < 120:
             parser.error("remaining verified allowance is below a worst-case 120-second request")
         request_id = str(uuid.uuid4())
+        try:
+            from .generation_operation import before_submit
+        except ImportError:
+            from generation_operation import before_submit
+        production_submission = before_submit(spec.get('production'), model=payload['model'], prompt=payload['text_prompt'],
+            parameters={k:v for k,v in payload.items() if k not in ('model','text_prompt','references')},
+            inputs=[{'sha256':r['sha256']} for r in refs], provider_request=display, tool='seed-audio')
         body = json.dumps(payload, ensure_ascii=False, separators=(",", ":")).encode()
         receipt = {"id": label, "status": "submitted", "request_id": request_id, "quota_id": quota["id"],
+                   "production_submission": production_submission,
                    "submitted_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
                    "endpoint": API_URL, "input": display, "input_sha256": hashlib.sha256(body).hexdigest(),
                    "remaining_before_seconds": remaining, "reserved_seconds": 120}

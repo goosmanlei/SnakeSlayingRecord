@@ -106,6 +106,10 @@ def revision_media(changes):
 
 def build_plan(before_path, after_path):
     before, after = tables(before_path), tables(after_path)
+    if before.get("production_current_policy") or after.get("production_current_policy"):
+        try:from .production_current_publication import build
+        except ImportError:from production_current_publication import build
+        return build(before,after)
     for table in PLAN_TABLES|MODEL_TABLES|CODE_TABLES:
         before.setdefault(table,[]);after.setdefault(table,[])
     if set(before) != set(after):
@@ -195,7 +199,13 @@ def journal(db, pid, callback):
         raise
 
 
-def apply_plan(db, plan, *, identity=None):
+def apply_plan(db, plan, *, identity=None, media_root=None):
+    if plan.get("format")=="production-current-publication-v1":
+        try:from .production_current_publication import apply
+        except ImportError:from production_current_publication import apply
+        return apply(db,plan,identity=identity,media_root=media_root)
+    if db.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name='production_current_policy'").fetchone():
+        raise ValueError("旧制作增量不能写入当前模型，请从最新正式基线重新准备")
     def baseline_check():
         exists=db.execute("SELECT 1 FROM sqlite_master WHERE name='consolidation_runs'").fetchone()
         current=sorted(r[0] for r in db.execute('SELECT id FROM consolidation_runs')) if exists else []

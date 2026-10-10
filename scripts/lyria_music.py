@@ -112,7 +112,7 @@ def prepare(spec_path):
     spec_path = spec_path.resolve(strict=True)
     spec = json.loads(spec_path.read_text(encoding="utf-8"))
     allowed = {"id", "song_entity_id", "model", "lyrics_file", "lyrics_sha256",
-               "directions_file", "directions_sha256", "output_format"}
+               "directions_file", "directions_sha256", "output_format", "production"}
     if not isinstance(spec, dict) or set(spec) - allowed:
         raise ValueError("unknown specification fields; see production/lyria-music.md")
     if not re.fullmatch(r"[a-z0-9][a-z0-9-]{0,79}", spec.get("id", "")):
@@ -138,6 +138,7 @@ def prepare(spec_path):
                 "sources": {"lyrics": lyric_source, "directions": direction_source},
                 "requested_format": fmt, "estimated_cost_usd": str(ESTIMATED_USD),
                 "price_checked": "2026-10-03", "audio_accepted": False}
+    if 'production' in spec:metadata['production']=spec['production']
     return payload, metadata
 
 
@@ -283,6 +284,12 @@ def submit(payload, metadata, workspace, max_cost, timeout, proxy=None, proxy_us
                        max_cost_usd=str(budget), endpoint=ENDPOINT,
                        proxy=proxy or "system/environment proxy settings")
         atomic_write(run / "request.json", dump(payload).encode("utf-8"))
+        try:
+            from .generation_operation import before_submit
+        except ImportError:
+            from generation_operation import before_submit
+        receipt['production_submission'] = before_submit(metadata.get('production'), model=payload['model'], prompt=payload['input'],
+            parameters={k:v for k,v in payload.items() if k not in ('model','input')}, inputs=[], provider_request=payload, tool='lyria')
         receipt.update(status="submitted", submitted_at=now())
         atomic_write(run / "receipt.json", dump(receipt).encode("utf-8"))
         response_saved = False

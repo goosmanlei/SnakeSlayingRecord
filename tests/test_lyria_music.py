@@ -11,6 +11,7 @@ from unittest.mock import patch
 import wave
 
 from scripts import lyria_music as lyria
+from scripts import generation_operation
 from generation_fixtures import make_worktree
 
 
@@ -24,7 +25,8 @@ class LyriaMusicTest(unittest.TestCase):
         (self.root / "directions.txt").write_text("中文女声，2/4拍，76 BPM。", encoding="utf-8")
         self.spec.write_text(json.dumps({"id": "boat-v1-a01", "song_entity_id": "entity-boat-song",
                                         "lyrics_file": "lyrics.txt", "directions_file": "directions.txt",
-                                        "output_format": "wav"}))
+                                        "output_format": "wav",
+                                        "production":{"url":"http://127.0.0.1:53101","requirement_id":"music","operation_id":"submit-music","call_id":"music-call"}}))
         buffer = io.BytesIO()
         with wave.open(buffer, "wb") as out:
             out.setnchannels(2)
@@ -41,9 +43,20 @@ class LyriaMusicTest(unittest.TestCase):
     def mocked_submit(self, error=None):
         payload, metadata = lyria.prepare(self.spec)
         response = (json.dumps(self.response).encode(), self.response)
+        package={'model':payload['model'],'prompt':payload['input'],
+                 'parameters':{k:v for k,v in payload.items() if k not in ('model','input')},
+                 'inputs':[],'current_marker':{'edit_token':1,'content_sha256':'a'*64}}
         with patch.dict(os.environ, {"GOOGLE_API_KEY": "secret-test-key"}), \
              patch.object(lyria, "shared_root", return_value=self.root), \
-             patch.object(lyria, "request_json", return_value=response, side_effect=error) as request:
+             patch.object(generation_operation,'MethodClient') as client, \
+             patch.object(lyria, "request_json") as request:
+            client.return_value.call.side_effect=[package,{'already_applied':False,'call_id':'music-call','submission_sha256':'b'*64}]
+            def dispatch(*_args,**_kwargs):
+                self.assertEqual(client.return_value.call.call_args.args[0],'/api/production/submit')
+                self.assertEqual(client.return_value.call.call_count,2)
+                if error:raise error
+                return response
+            request.side_effect=dispatch
             result = lyria.submit(payload, metadata, self.root, "0.08", 60)
         return result, request
 
