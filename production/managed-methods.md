@@ -37,7 +37,7 @@
 
 后续修改先改唯一包或愿景，用 `method-source` 同步对应来源定义并提供资源当前 `expected_version`，再以 `method-save` 追加引用新资源准确修订的方法版本，最后显式更新本工作类型的绑定。旧执行继续旧资源及绑定。将相应准确历史从有效实例导出到登记包，再沿 [工作区发布](generation-workspaces.md) 增量发布；不能手改导出正文或用旧任务整库覆盖正式库。
 
-当前愿景名称为“愿景”，源稿含同源循环布局与协作图示，四块正文和阅读页、Review 第4版只读投影一致。三方角色、双向意见交换与五阶段作品链均直接展开；第1至3版和旧执行保持原文。协作候选、恢复与正式回执入口见 [协作图示验收](vision-collaboration/VERIFICATION.md)，原四块布局的正式历史见 [愿景页验收](vision-page/VERIFICATION.md)。
+当前愿景名称为“愿景”，按用户最新修改仅保留人与AI协作图，审阅台作为提升协作效率的平台；五阶段作品链直接展开。唯一源稿、阅读页与Review第5版准确投影一致；第1至4版和旧执行保持原文。当前候选、恢复与正式回执入口见 [协作图示验收](vision-collaboration/VERIFICATION.md)，原四块布局沿 [愿景页验收](vision-page/VERIFICATION.md) 及Git准确历史追溯。
 
 愿景阅读页由 `python3 scripts/sync_system_vision.py` 确定性派生；`--check` 检查全文和首项位置。愿景是方向说明，不代表全部能力已经实现。初次交付的已审正文与试用边界见 [交付验收](creative-system-review/VERIFICATION.md)。
 
