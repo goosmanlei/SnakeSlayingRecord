@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>关系优化 · 离线交互样例</title>
+<style>
+  :root{font:16px/1.75 system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;color:#30352e;background:#f5f3eb;--green:#496b4e;--line:#d7dccf;--paper:#fffef9;--muted:#6a7166}
+  *{box-sizing:border-box}body{margin:0}button,a{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible{outline:3px solid #819878;outline-offset:4px}button{color:inherit}main{max-width:1000px;padding:36px 28px 70px;margin:auto}h1{font-size:25px;margin:0 0 6px}h2{font-size:22px;margin:0 0 5px}h3{font-size:17px;margin:24px 0 9px}p{margin:10px 0}.boundary{font-size:14px;color:var(--muted);max-width:800px;margin-bottom:25px}.tabs{display:flex;gap:7px;border-bottom:1px solid var(--line);margin-bottom:24px}.tabs button{border:0;border-radius:5px 5px 0 0;background:transparent;padding:10px 18px}.tabs button[aria-selected=true]{color:var(--green);font-weight:650;background:#e5eddf;box-shadow:inset 0 -3px var(--green)}[hidden]{display:none!important}.paper{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:30px}.meta{color:var(--muted);font-size:14px;margin:0}.graph{min-height:250px;display:grid;grid-template-columns:1fr minmax(140px,1.2fr) 1fr;align-items:center;max-width:720px;margin:auto}.node{border:1px solid #aebca4;background:#f1f5eb;border-radius:8px;padding:16px;text-align:center}.node strong{display:block;font-size:20px}.node small{color:var(--muted)}.edge{position:relative;background:transparent;border:0;padding:30px 0;min-width:0;align-self:center}.edge:before{content:"";height:2px;background:#87957d;position:absolute;left:0;right:0;top:50%}.edge span{position:relative;background:var(--paper);padding:5px 10px;font-size:15px;color:var(--green)}.refs{padding:0;margin:0;list-style:none;border-top:1px solid var(--line)}.refs li{border-bottom:1px solid var(--line)}.ref{width:100%;text-align:left;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:13px 2px;color:var(--green);background:transparent;border:0}.ref small{color:var(--muted);white-space:nowrap}.prompt{max-width:760px;line-height:1.95}.inline-ref{display:inline;padding:0;border:0;background:transparent;color:var(--green);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;cursor:pointer}.hint{font-size:13px;color:var(--muted);margin:22px 0 0}.tooltip{position:fixed;z-index:30;max-width:min(360px,calc(100vw - 24px));background:#fffef9;border:1px solid #aaba9d;border-radius:7px;padding:13px 16px;box-shadow:0 7px 24px #22301821;pointer-events:auto;line-height:1.65}.tooltip .code{font-size:12px;color:var(--muted);display:block;margin-bottom:6px;overflow-wrap:anywhere}.tooltip p{margin:0;font-size:14px}dialog{border:1px solid #abb9a1;border-radius:10px;max-width:650px;width:calc(100vw - 44px);padding:26px;background:var(--paper);color:inherit}dialog::backdrop{background:#26342255}.dialoghead{display:flex;justify-content:space-between;align-items:start;gap:20px}.close{background:transparent;border:1px solid var(--line);border-radius:5px;padding:4px 12px}.placeholder{height:180px;display:grid;place-content:center;text-align:center;border:1px dashed #b8c1af;background:#f3f5ef;margin-top:20px;color:var(--muted)}.placeholder p{margin:0}.placeholder small{font-size:13px}.caption{font-size:14px;color:var(--muted)}@media(max-width:600px){main{padding:24px 16px}.paper{padding:20px}.graph{grid-template-columns:1fr 120px 1fr;min-height:210px}.node{padding:12px 5px}.node strong{font-size:17px}.ref{align-items:flex-start}.ref small{white-space:normal;text-align:right}.edge span{padding:5px;font-size:14px}}
+</style>
+<main>
+  <h1>关系优化 · 离线交互样例</h1>
+  <p class="boundary">用于检验关系摘要出现的位置与素材查看的衔接。内容为讨论样例；Prompt 是局部拟稿，未替换正式方案、未选择原件、未提交生成。下列两个标签仅用于切换样例。</p>
+  <nav class="tabs" role="tablist" aria-label="样例场景">
+    <button id="graph-tab" role="tab" aria-selected="true" aria-controls="graph-panel" tabindex="0">实体关系图</button>
+    <button id="generation-tab" role="tab" aria-selected="false" aria-controls="generation-panel" tabindex="-1">首帧生成方案</button>
+  </nav>
+  <section id="graph-panel" class="paper" role="tabpanel" aria-labelledby="graph-tab">
+    <h2>李寄</h2>
+    <p class="meta">EN012 · 实体大卡中的关系图</p>
+    <div class="graph" aria-label="李寄与阿蘅之间一条无向关系">
+      <div class="node"><strong>李寄</strong><small>EN012</small></div>
+      <button class="edge relation-trigger" data-relation="friends" aria-label="R-EN012-EN002：李寄与阿蘅相互照应"><span>相互照应</span><span style="display:block;font-size:11px;margin-top:6px;line-height:1.5">R-EN012-EN002</span></button>
+      <div class="node"><strong>阿蘅</strong><small>EN002</small></div>
+    </div>
+  </section>
+  <section id="generation-panel" class="paper" role="tabpanel" aria-labelledby="generation-tab" hidden>
+    <h2>阿蘅翻过两页 · 首帧</h2>
+    <p class="meta">M2974 · ASH001 · 关系应用的局部拟稿</p>
+    <h3>参考素材</h3>
+    <ul class="refs">
+      <li><button class="ref relation-trigger material-link" data-relation="reference" data-material="M2710"><span>图片 1 · 阿蘅 · 日常洗旧青衣</span><small>M2710</small></button></li>
+    </ul>
+    <h3>Prompt · 局部拟稿</h3>
+    <div class="prompt">
+      <p>阿蘅穿洗旧青衣，袖口挽得整齐，保持<button class="inline-ref relation-trigger material-link" data-relation="reference" data-material="M2710">@图片1</button>中的脸型和身体比例。青衣干燥，姿势按本镜起点安排：她站在倒扣的空竹篮旁，歌本仍拿在手中，河石搁在篮面。</p>
+      <p>画面停在摊本、压石和开唱之前。只表现这一刻；翻页是本镜后续动作，不提前画入首帧。</p>
+    </div>
+  </section>
+  <p class="hint">操作样例：把鼠标停在关系连线、参考素材或 @图片1 上，也可用 Tab 聚焦；移入摘要可继续阅读，Esc 关闭。点击参考素材或 @图片1 仍打开素材查看示例。</p>
+</main>
+<div id="relation-tooltip" class="tooltip" role="tooltip" hidden><span class="code"></span><p></p></div>
+<dialog id="material-dialog" aria-labelledby="material-title">
+  <div class="dialoghead"><div><h2 id="material-title">阿蘅 · 日常洗旧青衣</h2><p class="meta">M2710 · 素材查看示例</p></div><button class="close" aria-label="关闭素材查看">返回</button></div>
+  <div class="placeholder"><p>本样例未加载素材原件</p><small>未提交任何生成请求</small></div>
+  <p class="caption">这里仅检验“阅读关系摘要 → 查看素材 → 返回方案”的操作，不表示原件已选择、已生成或已通过审阅。</p>
+</dialog>
+<script>
+  // 每对对象只有一个来源；参考列表和 Prompt 引用读取同一个 relation。
+  const relations = {
+    friends: {
+      id: 'R-EN012-EN002',
+      endpoints: ['EN012','EN002'], direction: 'undirected',
+      description: '李寄与阿蘅相互照应。',
+      summary: '李寄与阿蘅相互照应。'
+    },
+    reference: {
+      id: 'R-M2710->M2974',
+      endpoints: ['M2710','M2974'], direction: 'first-to-second',
+      description: 'M2974 首帧依赖 M2710 提供阿蘅的身份、身体比例与日常洗旧青衣外观。保持准确外观，站位、手位和构图按 ASH001 起点安排；起点为开唱前，歌本在手、河石在篮，摊本、压石、唱完翻页属于随后动作，不在首帧中同时表现。',
+      summary: '沿用阿蘅的身份、比例和青衣外观；姿势按本镜开唱前的起点安排，不照搬参考姿势。'
+    }
+  };
+  const tooltip=document.querySelector('#relation-tooltip');
+  const dialog=document.querySelector('#material-dialog');
+  let activeTrigger=null, timer=null, pointerOnTooltip=false;
+  function clearTimer(){if(timer){clearTimeout(timer);timer=null}}
+  function hideTooltip(){clearTimer();if(activeTrigger)activeTrigger.removeAttribute('aria-describedby');activeTrigger=null;pointerOnTooltip=false;tooltip.hidden=true}
+  function positionTooltip(){if(!activeTrigger||tooltip.hidden)return;const rect=activeTrigger.getBoundingClientRect();const bounds=tooltip.getBoundingClientRect();const x=Math.max(12,Math.min(rect.left+(rect.width-bounds.width)/2,innerWidth-bounds.width-12));let y=rect.bottom+8;if(y+bounds.height>innerHeight-12)y=Math.max(12,rect.top-bounds.height-8);tooltip.style.left=x+'px';tooltip.style.top=y+'px'}
+  function showTooltip(trigger){clearTimer();if(activeTrigger&&activeTrigger!==trigger)activeTrigger.removeAttribute('aria-describedby');activeTrigger=trigger;const relation=relations[trigger.dataset.relation];tooltip.querySelector('.code').textContent=relation.id;tooltip.querySelector('p').textContent=relation.summary;trigger.setAttribute('aria-describedby','relation-tooltip');tooltip.hidden=false;positionTooltip()}
+  function scheduleHide(){clearTimer();timer=setTimeout(()=>{if(!pointerOnTooltip&&(!activeTrigger||document.activeElement!==activeTrigger))hideTooltip()},180)}
+  document.querySelectorAll('.relation-trigger').forEach(trigger=>{
+    trigger.addEventListener('pointerenter',()=>{clearTimer();timer=setTimeout(()=>showTooltip(trigger),240)});
+    trigger.addEventListener('pointerleave',scheduleHide);
+    trigger.addEventListener('focus',()=>showTooltip(trigger));
+    trigger.addEventListener('blur',scheduleHide);
+  });
+  tooltip.addEventListener('pointerenter',()=>{pointerOnTooltip=true;clearTimer()});
+  tooltip.addEventListener('pointerleave',()=>{pointerOnTooltip=false;scheduleHide()});
+  document.querySelectorAll('.material-link').forEach(trigger=>trigger.addEventListener('click',()=>{hideTooltip();dialog.showModal()}));
+  document.querySelector('.close').addEventListener('click',()=>dialog.close());
+  document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!tooltip.hidden){event.preventDefault();event.stopPropagation();hideTooltip()}},true);
+  const tabs=Array.from(document.querySelectorAll('[role="tab"]'));
+  function selectTab(tab){hideTooltip();tabs.forEach(item=>{const selected=item===tab;item.setAttribute('aria-selected',String(selected));item.tabIndex=selected?0:-1;document.getElementById(item.getAttribute('aria-controls')).hidden=!selected})}
+  tabs.forEach((tab,index)=>{tab.addEventListener('click',()=>selectTab(tab));tab.addEventListener('keydown',event=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(event.key)){event.preventDefault();const next=event.key==='Home'?0:event.key==='End'?tabs.length-1:(index+(event.key==='ArrowRight'?1:-1)+tabs.length)%tabs.length;selectTab(tabs[next]);tabs[next].focus()}})});
+  addEventListener('resize',positionTooltip);addEventListener('scroll',positionTooltip,{passive:true});
+</script>
+</html>

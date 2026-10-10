@@ -2,17 +2,21 @@
 
 ## 当前成果与运行依据
 
-- task-20261010-0016 已完成17集65场344镜的三部分候选与隔离迁移：目的逐集连读改写，关键状态只绑定已有需求，699项产物按真实顺序阅读；清除20,668份旧视听／关系专属正文及4次独占设计决定。浏览器准确切版、状态与工程、原件和跨段评论已实操；完整恢复、具体清单及清理见 [视听三部分验收](production/audiovisual-three-part/VERIFICATION.md)。当前正式库和服务未应用本候选，负责人独立Review、正式清理与部署须后续授权；不得将完整候选快照覆盖活库。
+- task-20261010-0019 已在本机正式库与 3000 服务取消逐项审批：RV/DC 物理退出，历史意见保留准确来源，生成准备不再要求审批；准确输入和冻结 CALL 继续校验。正式 Chrome 已从素材、实体和镜头入口回查同一 M1134 意见，并核对《三道滩》原意见、文字与图像锚点。发布后的完整导出已在新空库恢复，业务表与原件一致；隔离反馈闭环见 [退出验收](production/comment-review/RETIREMENT-VERIFICATION.md)，准确发布、正式复验与收尾归主任务账本及 `.runtime/task-20261010-0019/`。负责人独立复验另行记录。
 
-- task-20261010-0015 已完成共用实体／素材大卡隔离候选：两 Tab 唯一入口、所选结果与准确生成方案、原字段标准帮助；ST209 v2→v1→v2 保持 M2826→M1218→M2826，四类入口、图像／音频选段及草稿返回可用。完整空实例恢复保持原件、准确输入和历史意见，业务删除为 0。多版本／候选和缺 CALL 分支使用只读夹具，真实试听操作不代表已听审音质；证据、边界及清理见 [实体素材验收](production/entity-material-review/VERIFICATION.md)。Git 候选交付以任务账本与配置为准；未部署或写正式库，负责人独立 Review 与正式应用待后续授权。
+- task-20261010-0018 已将统一关系准确增量应用到本机正式库与服务：实体、素材需求与镜头适用关系共用稳定对象对身份，准确方案保留各自选择和范围。正式 Chrome 已回查实体图、参考与 Prompt 摘要、原件片段、两夜阶段及原场返回；最新正式导出在新空实例恢复后，全部业务表逐行一致。内容前后例与隔离边界见 [统一关系验收](production/unified-relations/VERIFICATION.md)，准确 Git／服务身份及正式验收与收尾见主任务账本和 `.runtime/task-20261010-0018/` 回执。执行者验收不代替根独立 Review。
 
-- task-20261010-0017 的故事评论独立浮窗已完成隔离Chrome候选验收：译注开关由690→618px、x=649→421修为690→690px、x=649→649；采编、结构、剧本四视口及长章、准确意见、大卡草稿返回和AS001对照保持。准确依据与边界见[故事评论浮窗验收](production/story-comments-overlay/VERIFICATION.md)，Git交付以任务账本与实例配置为准。当前未部署或写正式内容；根独立复验及正式应用待后续授权。
+- task-20261010-0016 已完成17集65场344镜的三部分候选与隔离迁移：目的逐集连读改写，关键状态只绑定已有需求，699项产物按真实顺序阅读；清除20,668份旧视听／关系专属正文及4次独占设计决定。浏览器准确切版、状态与工程、原件和跨段评论已实操；完整恢复、具体清单及清理见 [视听三部分验收](production/audiovisual-three-part/VERIFICATION.md)。本机正式库和服务已由 task-20261010-0020 按用户追加的“最新状态部署”授权应用准确迁移和方法V5；保全及正式Chrome回查见 [正式部署验收](production/entity-material-formal-release/VERIFICATION.md)。负责人独立Review与实际媒体效果仍分别判断，不用完整候选快照覆盖活库。
+
+- task-20261010-0015 已完成共用实体／素材大卡隔离候选：两 Tab 唯一入口、所选结果与准确生成方案、原字段标准帮助；ST209 v2→v1→v2 保持 M2826→M1218→M2826，四类入口、图像／音频选段及草稿返回可用。完整空实例恢复保持原件、准确输入和历史意见，业务删除为 0。多版本／候选和缺 CALL 分支使用只读夹具，真实试听操作不代表已听审音质；证据、边界及清理见 [实体素材验收](production/entity-material-review/VERIFICATION.md)。0015原隔离验收边界保持；本机正式应用、M2597未生成方案及ST209 v2→v1→v2的Chrome验收已由0020补齐，见 [正式部署验收](production/entity-material-formal-release/VERIFICATION.md)。准确身份以配置、发布回执与任务账本为准；负责人独立Review仍分别进行。
+
+- task-20261010-0017 的故事评论独立浮窗已完成隔离Chrome候选验收：译注开关由690→618px、x=649→421修为690→690px、x=649→649；采编、结构、剧本四视口及长章、准确意见、大卡草稿返回和AS001对照保持。准确依据与边界见[故事评论浮窗验收](production/story-comments-overlay/VERIFICATION.md)，Git交付以任务账本与实例配置为准。本机正式服务已随0020最新系统应用该代码；本轮回查剧本四阅读及大卡返回，原候选证据与根独立复验边界保持。
 
 - 原件判断与已有工程交接沿 task-20261010-0009 的 [既有验收](production/original-judgment-layout/VERIFICATION.md) 保留。task-20261010-0011 已在自有隔离 Chrome 完成技术意见定位候选：同一准确调用只呈现一次，34字符原句直接高亮，四历史输入、参考返回草稿、区域／时间及连续段落定位保持；M4087、M4081和动作对白对照可读。[生成意见定位验收](production/generation-comment-location/VERIFICATION.md) 保存执行者前后证据、准确锚点与复验入口。当前仅交付候选，未部署或写正式内容；根独立 Review 与正式入口验收仍待后续，Git交付和结项按主任务实际回执核对。
 
 - AS009/ASH059→060的歌本记工已完成两镜隔离候选：歌本图固定物理身份，唱工记录保留金额／剧情依据，原“两升”字层负责准确文字，解除额外全形图前提。执行者的Chrome保存、用途草稿、旧版回读及干净副本增量试装见[两镜候选验收](production/songbook-work-ledger-two-shot/VERIFICATION.md)。根已独立阅读059/060的准备链与上下游交接，确认直接图片前提七／四项减为六／三项、060净纸底图须合成原rate两字后交视频；根未重做保存或试装，正式采用仍待后续，准确环境与边界见[根独立阅读](planning/songbook-two-nights-inputs/findings/cycle-04-0008-independent-reading.md)。0008原冻结包和两组守卫保留，不能原样与后续两夜候选联合复放。
 
-- AS010/ASH064→066两夜记工已完成独立隔离候选：两首帧直接图均为机位、阿蘅和同一歌本；四条用途保留本体／纸材／接触，字区按阶段显露。064最终起始合成原“一日两升”、第一笔空；066起始保留标题与第一笔、第二笔空且无圈，镜内写第二笔后只圈两笔。原视频生成文字、各8秒及声音保持。执行者真实Chrome保存、四用途／旧版／旧意见回读、草稿往返取消和另一干净副本26项增量试装见[两夜候选验收](production/songbook-two-nights/VERIFICATION.md)。根独立复验、正式采用及实片声画仍待后续，不放行缺图、未选或未认可；与0008共同采用须另备准确相容方案并取得授权。
+- AS010/ASH064→066两夜记工已完成独立隔离候选：两首帧直接图均为机位、阿蘅和同一歌本；四条用途保留本体／纸材／接触，字区按阶段显露。064最终起始合成原“一日两升”、第一笔空；066起始保留标题与第一笔、第二笔空且无圈，镜内写第二笔后只圈两笔。原视频生成文字、各8秒及声音保持。执行者真实Chrome保存、四用途／旧版／旧意见回读、草稿往返取消和另一干净副本26项增量试装见[两夜候选验收](production/songbook-two-nights/VERIFICATION.md)。根独立复验、正式采用及实片声画仍待后续，不放行缺图或未选的实际输入；与0008共同采用须另备准确相容方案并取得授权。
 
 - M4081冻结工程完整卡的用途错配已在自有隔离Chrome复现并修复：MV001原要求和M4092原ZIP保持，M3149的赵执事／阿蘅用途、直接候选、意见草稿和原场返回已实操。正式生效、3000只读复走与清理以 task-20261010-0007 实际回执为准；[验收与根复走](production/frozen-material-relations/VERIFICATION.md)保留准确入口，根独立Review尚未执行。
 
@@ -20,7 +24,7 @@
 
 - 工作方法的按需条件回写已完成自有隔离 Chrome 实操：只改用途后15项条件与准确资源不变，staging/sound全文仍可取；两处显式编辑、失败保护及冻结执行见 [条件回写验收](production/method-condition-roundtrip/VERIFICATION.md)。正式数据没有已证受影响方法，本次不迁移；最终正式版本、验收与清理按 task-20261010-0003 实际回执核对。
 
-- [创作协作 Review](skills/creative-system-review/SKILL.md) 和 [愿景与协作](production/system-vision.md) 已正式发布；愿景为制作思路默认首项，系统方法沿准确只读投影交接。根实际复验了默认页、刷新、旧章节链接与方法完整只读正文。隔离准备和空实例恢复边界见 [交付验收](production/creative-system-review/VERIFICATION.md)，根验收见 `.runtime/system-review/skill-delivery/formal-acceptance.md`；结项收尾按 task-20261010-0001 实际回执核对。
+- task-20261010-0022 原四块阶段曾将愿景改为四块线框流程与对应短说明，移除本页阅读目录和重复标题；默认、显式入口、刷新、旧锚点、其余四子页及窄屏键盘已在正式 Chrome 回查，Review 当前投影追加第3版。实际发布、恢复及过程清理见 [愿景页验收](production/vision-page/VERIFICATION.md)。[创作协作 Review](skills/creative-system-review/SKILL.md) 继续沿准确只读投影交接。原 task-20261010-0001 的根独立复验仅针对当时版本；旧阶段隔离准备和空实例恢复边界见 [交付验收](production/creative-system-review/VERIFICATION.md)，根验收见 `.runtime/system-review/skill-delivery/formal-acceptance.md`；结项收尾按 task-20261010-0001 实际回执核对。
 
 - 旧镜头制作方案已完成最新双仓候选上的隔离实读：E02/AS006/ASH033版本1直接读原M3071及旧图片1，当前方案可返回；M3070版本2多记录、冻结M1206和ST087旧状态正常对照见[历史方案验收](production/historical-production-definition/VERIFICATION.md)。旧意见、当前采纳/取消、同未冻结制作版参考修改及冲突保护已实操；正式生效、3000只读复验与清理以task-20261009-0031实际回执为准，根独立复验尚未执行。
 
@@ -53,7 +57,7 @@
 - 生产子页加载中切换的迟到目录／场保护已完成隔离候选复验，包含同名往返、当前失败、准确历史和未提交草稿。实操与证据边界见 [生产切页验收](production/navigation-consistency/VERIFICATION.md)；正式生效、3000只读复走及收尾以 task-20261009-0019 的实际回执为准。
 - 长章历史返回已完成隔离候选复验：精修九责任段两次往返、相同URL各次访问、排版变化及精修八旧圈选／草稿保持。范围、反例与根独立复验边界见 [长章阅读验收](production/history-reading/VERIFICATION.md)；正式生效与收尾以 task-20261009-0027 实际回执为准。
 - 正式入口 `http://127.0.0.1:3000/`，活库为主目录 `.runtime/review.sqlite3`；准确系统提交由 `config/instance.json.review_desk_commit` 维护。两仓集成、正式切换、浏览器复验与任务完成只认主项目 `.codex-task/tasks.json` 和冻结包实际回执，工作区候选不能单凭文件存在宣称正式生效。
-- VPS 完整体验版已在 `https://leiguoguo.me/lijizhanshe/` 公开运行，任务 `task-20261009-0032` 已将执行时最新已交付正式版升级至独立体验实例。维护、旧版清除后的同包故障重建、两轮同源重置、普通应用重启持久性及 Chrome 真实页面验收通过；最终业务表与完整原件回到准确正式快照，本机正式库未被体验操作修改。AI 润色经现有 Xray 回环入口真实返回并采用到草稿；北京时间每日最多 100 次，失败也计数，发布和重启保留次数。旧体验资源、远端暂存及本机完整过程包已清除并回读。准确发布和容器身份以 VPS `~/lijizhanshe/state.json` 为准，本轮版本、验收边界及清理证据见主项目 `.runtime/task-20261009-0032/vps-upgrade/acceptance.md`；重复发布入口见 [体验版发布](production/vps-experience.md)。
+- VPS 完整体验版已由 task-20261010-0020 升级至本轮最新主干系统及本机正式快照，运行于 `https://leiguoguo.me/lijizhanshe/`。发布器完整指纹验证、Chrome的M2597、ST209切版/刷新、真实原图及AS001新稿通过，暂存和旧体验实例已清除；本机正式库未被体验操作修改。准确身份以VPS `~/lijizhanshe/state.json` 为准，回执与边界见 [两端正式部署验收](production/entity-material-formal-release/VERIFICATION.md)。0032原有全功能写入、普通重启、双发布重置、故障向前恢复及真实AI验证保持历史范围；Xray、每日100次预算与累计次数契约继续保留。本轮未调用AI；重复发布入口见 [体验版发布](production/vps-experience.md)。
 
 - 方法包直接阅读在 task-20261010-0005 隔离候选已完成：作者、标准导出、空实例恢复均可顺读全文、适配与愿景；旧执行内链限制保留。正式生效、收尾与根独立复验以实际回执为准，见 [阅读交付验收](production/method-package-reading/VERIFICATION.md)。
 
@@ -64,7 +68,7 @@
 - [受管方法与执行绑定](production/managed-methods.md) 已正式启用：评论润色、小说检查点、独立读者和媒体准备取得准确方法及共用资料；旧方案历史保持未知，新创作步骤受方法契约约束。0014 旧交付完成后已按停写窗口追加配置，正式页面、兼容运行重启和完整空库恢复通过，实际边界见[验收记录](production/managed-methods/VERIFICATION.md)。主要创作制作方法库已正式发布，完成自然场、独立对话／动作／文字试用及改进后复用；正式页只读回查和完整空库恢复通过，见[方法试用](production/professional-methods/VERIFICATION.md)。用户已取消原全剧重做任务 0022/0023，保留已确认结构、小说及有效成果；后续按新 Review SKILL 实践后重新确定改进范围。0022/0023 已从队列撤下，未完成草稿不构成正式制作依据；撤销事实与必要追溯见 `.runtime/system-review/abandon-0022-0023/status.json`。持续 Review 的运行、暂停与发布授权按当前会话指令及本机 `.runtime/system-review/RUNBOOK.md`、`.runtime/system-review/state.json` 核对，不沿用旧轮次状态；执行任务仍由受管任务入口承接。
 
 - `task-20261009-0005` 的已有音色复用路线已正式生效，40个身份与17集当前用途均已逐项复核，形成26个说话身份复用方案、7个待比较项、3个当前方向待新准备项及4个过短待更长参考项。当前需求与代表镜头可追到准确旧原件、选段和原判断；授权音频理解、隔离交互、正式只读回查及完整导出恢复的边界见 [音色复用说明](production/voice-reuse/README.md)。下一步独立审阅本次片段与方案，再处理未选项和真实输出；不继承旧认可，未验证新视频的音色保持或实际费用节约。
-- 按 [当前逐集稿](production/audiovisual/README.md) 审阅目的、状态和准确产物方案，并对实际要生成的需求确定准确方案、路线、候选及局部范围。方案未获采纳、原件未选或所选路线缺项时不生成；旧认可不转授新设计。
+- 按 [当前逐集稿](production/audiovisual/README.md) 审阅目的、状态和准确产物方案，并对实际要生成的需求确定准确方案、路线、候选及局部范围。原件未选、准确输入错配或所选路线缺项时不生成；旧意见不扩展为新设计的质量判断。
 - 全剧动作与声音已按故事场复核；门闸、昼夜、物品交接各守镜头范围，叙述式读回、哼唱、答话与群声纳入执行方案。白纸全文、账簿末行、半页念词及部分呼喊原词仍待准备，具体位置见上述逐场复核和方案中的“生成前仍需”；未定文本先锁定并复核是否拆镜。
 - 起点倒退与失效条件继承已按17集65场344镜完成逐场反馈循环，并正式增量发布。ASH025/026回到必要动作前，ASH060结束赵离场后的站位与借据条件，ASH062前殿与真实病房分别表达；原入口四例、回忆、准确历史内容及完整空库恢复已验收。逐场选择、声音保护、准备链路和清理见 [阶段一致性交付](production/audiovisual/stage-verification.md)，准确发布身份按 task-20261009-0014 实际回执核对；根独立Review仍须自行只读抽核，实际声画效果待生成后验证。
 - 用户允许适度加长，以动作和表演读得清楚为先。镜头方案预留合计105分44秒，尚无实片验证；后续按真实表演逐镜调整，不为追平剧本估时删台词。
@@ -73,8 +77,10 @@
 
 ## 恢复与资源边界
 
+- task-20261010-0019 的双仓 worktree 仍由当前 TUI 及清理锁占用；本任务执行者退出并释放锁后，通过 `codex.project task cleanup` 整组退役，保留提交与会话历史。正式运行和当前完整恢复不依赖任务目录，必要证据归主项目 `.runtime/task-20261010-0019/`。
+
 - task-20261010-0016 的双仓worktree仍由当前TUI及清理锁使用；本任务执行者在退出释放锁后沿 `codex.project task cleanup` 整组退役，保留提交与会话历史。必要验收及准确清理回执见 [视听三部分验收](production/audiovisual-three-part/VERIFICATION.md)，正式运行和恢复不依赖任务临时目录。
-- 受管候选的唯一当前恢复入口为完整 Schema 10 `export/manifest.json`、[准确索引](production/audiovisual/index.json) 和 [发布幂等凭据](production/audiovisual/recovery.json)。按 [生产说明](production/README.md) 恢复到新空实例；旧编排包、旧导出、旧歌曲重放与其他任务历史数据库不能覆盖活库。
+- 受管候选的唯一当前恢复入口为完整 Schema 12 `export/manifest.json`、[准确索引](production/audiovisual/index.json) 和 [发布幂等凭据](production/audiovisual/recovery.json)。按 [生产说明](production/README.md) 恢复到新空实例；旧编排包、旧导出、旧歌曲重放与其他任务历史数据库不能覆盖活库。
 - 正式数据、服务、镜像及必要恢复回执继续保留；临时资源按相应任务账本和实际引用核对，完成发布、页面验收与新空库恢复后清理。方案核验范围见 [视听验收](production/audiovisual/verification.md)。
 - 其他任务现存工作区、历史库和归档由原任务执行者负责，不能据旧编号或目录名批删；它们不再是有效制作基线。`task-20261005-0001`、`task-20261006-0003` 的本机归档按任务账本 `repositories.*.cleanup.ignored_archive` 定位，原任务执行者在追溯结束后裁剪重复过程资料。
 - task-20261009-0003 会话仍占用故事 worktree，结项、退出并释放锁后再通过 `codex.project task cleanup` 受管退役，保留分支、提交、最小回执及会话历史；不强删活跃工作区。
@@ -85,3 +91,9 @@
 - `task-20261009-0021` 的双仓 worktree 仍由当前会话占用，退出并释放锁后由受管 cleanup 退役。方法试用和正式发布的最小证据归主项目 `.runtime/task-20261009-0021/`；正式服务挂载及恢复不依赖任务工作区。
 
 - `task-20261010-0014` 的双仓worktree仍由当前TUI及清理锁占用；退出释放锁后沿 `codex.project task cleanup` 整组退役。预览服务与测试库已移除，必要证据及准确清理回执见 [0014验收记录](production/reports/task-20261010-0014/VERIFICATION.md)，运行和恢复不依赖预览目录。
+
+- task-20261010-0020 的两仓worktree仍由当前TUI及清理锁占用；退出释放锁后由受管cleanup整组退役，保留提交和会话历史。正式挂载与VPS不依赖任务工作区；最小发布、恢复边界和清理回执见 [两端正式部署验收](production/entity-material-formal-release/VERIFICATION.md)。
+
+- task-20261010-0022 的双仓worktree仍由当前TUI及清理锁使用；退出释放后由本任务执行者沿 `codex.project task cleanup` 整组退役，保留分支和会话。预览服务、测试库、构建副本已清除；必要JSON回执保留在主项目 `.runtime/task-20261010-0022/`，待独立Review及追溯用途结束后裁剪，正式运行和恢复不依赖任务目录。
+
+- task-20261010-0023 按用户最新反馈，整个愿景页收敛为人与AI协作图，审阅台提升协作效率；纯图与Review第5版在隔离实例验证通过。双仓正式交付、3000复验与资源处置沿任务账本和 [协作图示验收](production/vision-collaboration/VERIFICATION.md) 核对；用户要求本任务不自动结项，负责人独立Review保留。

@@ -1,0 +1,55 @@
+{
+  "format": "comment-review-executor-validation-v1",
+  "task": "task-20261010-0019",
+  "environment": "isolated local instances on ports 51919 and 51920",
+  "system_commit": "cc47adfab672e95aef376ddccf3786a084870f81",
+  "formal_published": false,
+  "migration": {
+    "plan": "87e85d22235cf1c90f2704dedf259b3402d1eed8ad34393ed4c58ca667619930",
+    "objects_removed": 287,
+    "revisions_removed": 293,
+    "comments_imported": 131,
+    "comments_reused": 5,
+    "pure_flow_revisions_removed": 157,
+    "dry_run_rolled_back": true,
+    "repeat_idempotent": true,
+    "protected_tables": 45
+  },
+  "original_files": {
+    "files": 1016,
+    "all_exact": true,
+    "manifest_sha256": "9ee1469a6acf44668367dd7e9cf3742ecdd8ef0fedbe3a12ae8c4bd8b4e57550"
+  },
+  "clean_restore": {
+    "schema": 12,
+    "tables_exact": 45,
+    "repeat_idempotent": true
+  },
+  "feedback": {
+    "comment_id": "b30c7033-add5-4427-8e33-2ecee2032bb1",
+    "object_id": "material-voice-a-heng",
+    "original_revision": "80708ac6a954a70ec0a8d3e6b39464dbf243503ed8ea7a43bcaa7e56d0d5c0ef",
+    "response_revision": "82646f44cfb7e35e9aeac38f55b1e45147f8d71801b1027f14482f4944bc6c73",
+    "changed_field": "generation.output.description",
+    "method_stages": [
+      "draft",
+      "review",
+      "result"
+    ],
+    "inputs_and_prompt_unchanged": true,
+    "browser_return": {
+      "body_width_before": 1418,
+      "body_width_after": 1418,
+      "material_width_before": 709,
+      "material_width_after": 709,
+      "scroll_top_before": 0,
+      "scroll_top_after": 0
+    }
+  },
+  "automated": {
+    "python": 481,
+    "javascript": 810,
+    "failures": 0
+  },
+  "media_boundary": "Chrome loaded the original and played exact 0-5.6 and 1.2-2.8 second ranges. Playback and anchor checks are not a new voice-quality approval."
+}

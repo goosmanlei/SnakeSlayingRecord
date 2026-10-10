@@ -15,6 +15,8 @@ def migrate(database, system, package, registry):
     store = Store(database)  # Current runtime's additive schema initialization.
     try:
         result = audiovisual_publication.apply_package(store, package)
+        from review_desk import read_cache
+        read_cache.initialize(store)
     finally:
         store.close()
     result['methods'] = method_migration.apply(database, registry)
