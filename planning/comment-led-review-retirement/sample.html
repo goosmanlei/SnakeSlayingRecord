@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>以评论表达意见 · 交互草样</title>
+<style>
+  *{box-sizing:border-box}body{margin:0;background:#f4f0e5;color:#32362f;font:16px/1.7 system-ui,-apple-system,sans-serif}button,textarea{font:inherit}button{cursor:pointer;border:1px solid #c9d1bf;border-radius:5px;background:#fffdf6;color:inherit;padding:7px 14px}button:focus-visible,textarea:focus-visible{outline:3px solid #497851;outline-offset:3px}.notice{margin:0;padding:12px 28px;background:#e6eadc;font-size:14px}main{max-width:1000px;margin:40px auto;padding:0 32px}h1{font-size:24px;margin:0 0 24px}h2{font-size:18px;margin:0}p{margin:10px 0}.material{position:relative;background:#fcfefa;border:1px solid #c9d9c6;border-left:4px solid #8baa85;border-radius:7px;padding:26px 28px}.material h2{padding-right:60px}.comment-toggle{position:absolute;right:18px;top:18px;width:42px;height:40px;padding:6px;color:#527854}.comment-toggle svg{width:23px;height:23px;vertical-align:middle}.placeholder{margin:26px 0 20px;padding:32px;text-align:center;background:#f0f2eb;border:1px dashed #c4c9ba;color:#6c7167}.muted{color:#74796d;font-size:14px}.context{padding-top:14px;border-top:1px solid #e0e5d8}.context p{margin-bottom:0}.drawer{position:fixed;z-index:5;top:64px;right:20px;bottom:20px;width:410px;max-width:calc(100vw - 32px);display:flex;flex-direction:column;background:#fffef9;border:1px solid #bfcbb7;border-radius:8px;box-shadow:0 12px 36px #38403029}.drawer[hidden]{display:none}.drawer header{display:flex;align-items:center;justify-content:space-between;padding:17px 20px;border-bottom:1px solid #dbe0d2}.close{border:0;font-size:23px;line-height:1;padding:7px 10px}.scroll{overflow:auto;flex:1;min-height:0;padding:0 20px}.comment{padding:18px 0;border-bottom:1px solid #e2e5da}.meta{font-size:13px;color:#69705f}.comment p{white-space:pre-wrap;overflow-wrap:anywhere}.scope{font-size:14px;color:#596350}.response{border-left:2px solid #b7c9af;margin-top:14px;padding-left:13px}.compose{padding:16px 20px;border-top:1px solid #dbe0d2;background:#fafbf5;border-radius:0 0 8px 8px}.compose label{display:block;margin-bottom:7px;font-size:14px}.compose textarea{width:100%;min-height:90px;resize:vertical;border:1px solid #bfcab5;border-radius:5px;padding:10px;background:white}.compose footer{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:8px}.save{background:#e4eddc;border-color:#8aa67d}.status{font-size:13px;color:#59734d;min-height:20px}.error{color:#a14132}@media(max-width:700px){main{margin:26px auto;padding:0 20px}.notice{padding:10px 20px}.material{padding:20px}.drawer{right:12px;top:70px;bottom:12px;max-width:calc(100vw - 24px)}}
+</style>
+<p class="notice">本机交互草样 · 非正式数据 · 未加载媒体，未运行 AI。测试评论只保存在当前浏览器。</p>
+<main>
+  <h1>阿蘅 · 基础音色</h1>
+  <article class="material" id="material">
+    <h2>M1134 · 阿蘅基础音色原件</h2>
+    <button class="comment-toggle" id="open" aria-label="查看 M1134 原件评论" aria-expanded="false" aria-controls="comments" title="查看评论">
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16v12H9l-5 4V4Z"/><path d="M8 8h8M8 12h6"/></svg>
+    </button>
+    <div class="placeholder">音频原件占位<br><span class="muted">本草样未加载音频，不提供试听。</span></div>
+    <div class="context"><p>用于参考阿蘅的声音身份。</p><p class="muted">当前内容保持固定。点击右上角评论图标，阅读历史意见或写下测试意见。</p></div>
+  </article>
+</main>
+<aside class="drawer" id="comments" aria-label="M1134 原件评论" hidden>
+  <header><h2>原件评论</h2><button class="close" id="close" aria-label="关闭评论">×</button></header>
+  <div class="scroll" id="scroll">
+    <article class="comment" id="historical">
+      <div class="meta">user · 2026-10-03 · 历史导入，原记录 DC060</div>
+      <p>认可；不补</p>
+      <p class="scope">范围：M1134 的这份音色原件，作为基础母版。</p>
+      <div class="meta">保留原意见，不代表对后续版本或生成结果的判断。</div>
+    </article>
+    <article class="comment">
+      <div class="meta">测试用户 · 预置演示</div>
+      <p>后续生成请只参考声音身份，不带入这段原件的情绪。</p>
+      <div class="response"><div class="meta">AI · 预置回应示例，未实际整改</div><p>将在后续方案中限定为声音身份参考，具体情绪按当前内容设计。原件保持不变。</p></div>
+    </article>
+    <div id="saved"></div>
+  </div>
+  <form class="compose" id="form">
+    <label for="opinion">对这份原件发表意见</label>
+    <textarea id="opinion" required placeholder="填写一条测试意见…" maxlength="4000"></textarea>
+    <footer><span class="status" id="status" role="status"></span><button class="save" type="submit">保存测试评论</button></footer>
+  </form>
+</aside>
+<script>
+  const storageKey = 'review-retirement-20261010.sample.v1.comments';
+  const drawer = document.getElementById('comments');
+  const opener = document.getElementById('open');
+  const status = document.getElementById('status');
+  const input = document.getElementById('opinion');
+  function load() {
+    try {
+      const data = JSON.parse(localStorage.getItem(storageKey) || '[]');
+      return Array.isArray(data) ? data.filter(item => item && typeof item.text === 'string' && typeof item.time === 'string') : [];
+    } catch (_) { status.textContent = '本地评论读取失败，请检查浏览器存储。'; status.classList.add('error'); return []; }
+  }
+  let comments = load();
+  function render() {
+    const list = document.getElementById('saved');
+    list.replaceChildren();
+    comments.forEach(item => {
+      const article = document.createElement('article'); article.className = 'comment';
+      const meta = document.createElement('div'); meta.className = 'meta'; meta.textContent = '测试用户 · ' + item.time + ' · 本机测试评论';
+      const body = document.createElement('p'); body.textContent = item.text;
+      article.append(meta, body); list.append(article);
+    });
+  }
+  function close() { drawer.hidden = true; opener.setAttribute('aria-expanded', 'false'); opener.focus(); }
+  opener.addEventListener('click', () => { drawer.hidden = false; opener.setAttribute('aria-expanded', 'true'); document.getElementById('close').focus(); });
+  document.getElementById('close').addEventListener('click', close);
+  document.addEventListener('keydown', event => { if (event.key === 'Escape' && !drawer.hidden) close(); });
+  document.getElementById('form').addEventListener('submit', event => {
+    event.preventDefault();
+    const text = input.value.trim(); if (!text) { input.focus(); return; }
+    const next = [...comments, {text, time:new Date().toLocaleString('zh-CN', {hour12:false})}];
+    try { localStorage.setItem(storageKey, JSON.stringify(next)); }
+    catch (_) { status.textContent = '未保存：浏览器存储不可用。'; status.classList.add('error'); return; }
+    comments = next; render(); input.value = ''; status.classList.remove('error'); status.textContent = '已保存到本机';
+    document.getElementById('scroll').scrollTop = document.getElementById('scroll').scrollHeight;
+  });
+  render();
+</script>
+</html>
