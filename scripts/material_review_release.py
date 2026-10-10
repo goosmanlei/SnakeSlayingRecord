@@ -130,6 +130,16 @@ def prepare(a):
                 method_migration.check_registry(json.loads(raw))
             paths[key] = 'methods/' + key + '.json'; put(paths[key], raw)
         managed_methods = paths
+    latest = None
+    if getattr(a, 'audiovisual_package', None):
+        require(a.latest_registry, 'latest migration requires exact registry')
+        latest = {}
+        for key, path in (('package', a.audiovisual_package), ('registry', a.latest_registry)):
+            relative = Path(path).as_posix()
+            require(not Path(relative).is_absolute() and '..' not in Path(relative).parts, 'migration must be project relative')
+            raw = base.git_file(story, a.story_candidate, relative)
+            require(raw == (story / relative).read_bytes(), 'migration input differs from candidate')
+            latest[key] = 'latest/' + key + '.json'; put(latest[key], raw)
     method_media=method_media_files(read(root/'instance/content/production-approach.json'))
     for name,digest in method_media.items():
         raw=base.git_file(story,a.story_candidate,name)
@@ -155,6 +165,7 @@ def prepare(a):
     helpers=['material_review_release.py','autonomous_optimization_release.py','integrate_generation_review_system.py']
     if managed_methods:helpers.append('method_migration.py')
     if native:helpers.append('task_repository_delivery.py')
+    if latest:helpers.extend(['latest_state_migration.py','audiovisual_publication.py','generation_workspace.py','method_migration.py'])
     for helper in helpers:
         raw=base.git_file(story,a.story_candidate,'scripts/'+helper);require(raw==(story/'scripts'/helper).read_bytes(),'helper differs from committed candidate');put('helpers/'+helper,raw)
     files=old['config_files'].split(',');require(files==proxy['config_files'].split(','),'compose sets differ')
@@ -167,6 +178,7 @@ def prepare(a):
     if media_mount:m['previous_method_media']=method_directory_hashes(media_mount['Source'])
     if native:m['task_delivery']=native
     if managed_methods:m['managed_methods']=managed_methods
+    if latest:m['latest_state_migration']=latest
     if task=='task-20261006-0005':
         m['database_changes']={'format':'transactional-read-cache-v1','journal_mode':'delete','journal_mode_changed':False,
                                'auxiliary_table':'read_generations','business_rows':'preserve',
@@ -352,14 +364,24 @@ def apply(a):
                                               'surfaces': ['comments','acceptance','configuration','content','uploads'],
                                               'ingress': method_migration.stopped_api(application_stopped=True),
                                               'at': datetime.now(timezone.utc).isoformat()})
+        # Integrator receipt root is task runtime, irrespective of copied helper.
+        integration=json.loads(run([sys.executable,Path(m['story_worktree'])/'scripts/integrate_generation_review_system.py','--plan',root/'system-delivery.json','--apply','--receipt',receipt/'system-integration.json']))
+        require(integration['target_after']==m['system_candidate'],'system integration mismatch')
+        if m.get('latest_state_migration'):
+            import latest_state_migration
+            for helper in ('latest_state_migration.py','audiovisual_publication.py','generation_workspace.py','method_migration.py'):
+                require(sha((Path(m['story_worktree'])/'scripts'/helper).read_bytes()) == m['hashes']['helpers/'+helper], 'latest migration helper drifted')
+            require(exact_candidate or base.safe_container(current)==m['previous_app'], 'another app is active')
+            if current['State']['Running']:run([base.DOCKER, 'stop', '--time', '30', current['Id']])
+            require(not inspect(current['Id'])['State']['Running'], 'application still writing')
+            save(receipt/'latest-write-window.json', {'container_id':current['Id'], 'stopped':True,
+                 'ingress':__import__('method_migration').stopped_api(application_stopped=True)})
+            latest_state_migration.apply(root,m)
         if not before.exists():
             checks(root,m);base.snapshot(Path(m['story_main'])/'.runtime/review.sqlite3',before);save(receipt/'before.json',{'sha256':file_sha256(before)})
         else:
             require(file_sha256(before)==read(receipt/'before.json')['sha256'],'before snapshot changed')
             require(exact_candidate or base.safe_container(current)==m['previous_app'],'another runtime is active; recover or prepare again')
-        # Integrator receipt root is task runtime, irrespective of copied helper.
-        integration=json.loads(run([sys.executable,Path(m['story_worktree'])/'scripts/integrate_generation_review_system.py','--plan',root/'system-delivery.json','--apply','--receipt',receipt/'system-integration.json']))
-        require(integration['target_after']==m['system_candidate'],'system integration mismatch')
         if method_change:
             cutoff=receipt/('method-cutoff-'+str(time.time_ns())+'.sqlite3')
             base.snapshot(Path(m['story_main'])/'.runtime/review.sqlite3',cutoff)
@@ -377,7 +399,7 @@ def apply(a):
         after=receipt/('after-'+str(time.time_ns())+'.sqlite3');base.snapshot(Path(m['story_main'])/'.runtime/review.sqlite3',after)
         cache_migration=m.get('database_changes',{}).get('format')=='transactional-read-cache-v1'
         require(not cache_migration or m['task']=='task-20261006-0005','unexpected database migration task')
-        evidence=preserved(before,after,allow_read_generations=cache_migration,allow_cache_token_updates=bool(method_change))
+        evidence=preserved(before,after,allow_read_generations=cache_migration,allow_cache_token_updates=bool(method_change or m.get('latest_state_migration')))
         database_runtime=None
         if cache_migration:
             live_db=(Path(m['story_main'])/'.runtime/review.sqlite3').resolve()
@@ -393,6 +415,7 @@ def apply(a):
 def recover(a):
     root,m=authorized(a);image=read(root/'image.json');release=Path(m['story_main'])/'.runtime/service-releases'/m['release_name']
     with base.publication_locks(m):
+        require(not m.get('latest_state_migration'), 'latest data contract applied: recover forward with the exact current package; never restore an old database or incompatible image')
         if m.get('managed_methods'):
             # The pre-cutover image cannot enforce the newly active contract.
             # Keep the database and require a compatible runtime repair instead.
@@ -458,6 +481,7 @@ def main():
     p=argparse.ArgumentParser(description=__doc__);sub=p.add_subparsers(dest='command',required=True)
     q=sub.add_parser('prepare');q.add_argument('--story-worktree',type=Path,default=Path(__file__).resolve().parents[1]);q.add_argument('--system-worktree',type=Path,required=True);q.add_argument('--bundle',type=Path,required=True)
     q.add_argument('--task',default=TASK);q.add_argument('--push-system',action='store_true')
+    q.add_argument('--audiovisual-package',type=Path);q.add_argument('--latest-registry',type=Path)
     q.add_argument('--method-registry',type=Path);q.add_argument('--method-audit',type=Path)
     for name in ('story-candidate','system-candidate','story-target','system-target'):q.add_argument('--'+name,required=True)
     for cmd in ('build','preflight','apply','recover','publish-system'):
