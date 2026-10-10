@@ -2,7 +2,7 @@
 
 ## 当前成果与运行依据
 
-- task-20261010-0019 已完成取消逐项审批的隔离迁移与真实反馈回查：RV/DC 物理退出，历史意见保留准确来源，生成准备不再要求审批；准确输入和冻结 CALL 继续校验。完整干净恢复、评论回应与保护边界见 [退出验收](production/comment-review/RETIREMENT-VERIFICATION.md)。正式发布及负责人独立复验按任务账本回执分别核对。
+- task-20261010-0019 已在本机正式库与 3000 服务取消逐项审批：RV/DC 物理退出，历史意见保留准确来源，生成准备不再要求审批；准确输入和冻结 CALL 继续校验。正式 Chrome 已从素材、实体和镜头入口回查同一 M1134 意见，并核对《三道滩》原意见、文字与图像锚点。发布后的完整导出已在新空库恢复，业务表与原件一致；隔离反馈闭环见 [退出验收](production/comment-review/RETIREMENT-VERIFICATION.md)，准确发布、正式复验与收尾归主任务账本及 `.runtime/task-20261010-0019/`。负责人独立复验另行记录。
 
 - task-20261010-0018 已将统一关系准确增量应用到本机正式库与服务：实体、素材需求与镜头适用关系共用稳定对象对身份，准确方案保留各自选择和范围。正式 Chrome 已回查实体图、参考与 Prompt 摘要、原件片段、两夜阶段及原场返回；最新正式导出在新空实例恢复后，全部业务表逐行一致。内容前后例与隔离边界见 [统一关系验收](production/unified-relations/VERIFICATION.md)，准确 Git／服务身份及正式验收与收尾见主任务账本和 `.runtime/task-20261010-0018/` 回执。执行者验收不代替根独立 Review。
 
@@ -76,6 +76,8 @@
 - 四首歌曲的实唱词音、原生无损 WAV、逐句定位、新旋律短参考和角色演法仍有缺口；质量尚未获接受。当前词稿、原件及真实来源见 [歌曲交接](production/songs-review.md)，剧本同步提案不自动修改版本四。
 
 ## 恢复与资源边界
+
+- task-20261010-0019 的双仓 worktree 仍由当前 TUI 及清理锁占用；本任务执行者退出并释放锁后，通过 `codex.project task cleanup` 整组退役，保留提交与会话历史。正式运行和当前完整恢复不依赖任务目录，必要证据归主项目 `.runtime/task-20261010-0019/`。
 
 - task-20261010-0016 的双仓worktree仍由当前TUI及清理锁使用；本任务执行者在退出释放锁后沿 `codex.project task cleanup` 整组退役，保留提交与会话历史。必要验收及准确清理回执见 [视听三部分验收](production/audiovisual-three-part/VERIFICATION.md)，正式运行和恢复不依赖任务临时目录。
 - 受管候选的唯一当前恢复入口为完整 Schema 12 `export/manifest.json`、[准确索引](production/audiovisual/index.json) 和 [发布幂等凭据](production/audiovisual/recovery.json)。按 [生产说明](production/README.md) 恢复到新空实例；旧编排包、旧导出、旧歌曲重放与其他任务历史数据库不能覆盖活库。
