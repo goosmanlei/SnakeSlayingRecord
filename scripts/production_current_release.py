@@ -39,8 +39,16 @@ def compare(before, after, package, root):
         db.execute('ATTACH DATABASE ? AS candidate',(Path(after).resolve().as_uri()+'?mode=ro',))
         names={side:{r[0] for r in db.execute("SELECT name FROM "+side+".sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%'")}
                for side in ('main','candidate')}
-        require(names['main']-names['candidate']==set(LEGACY_TABLES),'删除表范围不同')
-        require(names['candidate']-names['main']==set(TABLES),'新增表范围不同')
+        if 'production_current_policy' in names['main']:
+            # A partial release may already have committed the exact migration.
+            # Forward recovery must preserve that model and all business rows.
+            plan = read(file_of(root, package['files']['migration']))
+            for schema in ('main', 'candidate'):
+                require(db.execute('SELECT migration_id FROM '+schema+'.production_current_policy WHERE id=1').fetchone() == (plan['id'],), '恢复迁移身份不同')
+            require(names['main']==names['candidate'] and not set(LEGACY_TABLES)&names['main'], '当前模型恢复表范围不同')
+        else:
+            require(names['main']-names['candidate']==set(LEGACY_TABLES),'删除表范围不同')
+            require(names['candidate']-names['main']==set(TABLES),'新增表范围不同')
         kinds=','.join("'"+v+"'" for v in sorted(RECORD_KINDS|{'MATERIAL_RELATION'}))
         production='SELECT id FROM main.objects WHERE kind IN ('+kinds+')'
         revisions='SELECT id FROM main.revisions WHERE object_id IN ('+production+')'
