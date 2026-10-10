@@ -2,11 +2,11 @@
 
 ## 当前成果与运行依据
 
-- task-20261010-0016 已完成17集65场344镜的三部分候选与隔离迁移：目的逐集连读改写，关键状态只绑定已有需求，699项产物按真实顺序阅读；清除20,668份旧视听／关系专属正文及4次独占设计决定。浏览器准确切版、状态与工程、原件和跨段评论已实操；完整恢复、具体清单及清理见 [视听三部分验收](production/audiovisual-three-part/VERIFICATION.md)。当前正式库和服务未应用本候选，负责人独立Review、正式清理与部署须后续授权；不得将完整候选快照覆盖活库。
+- task-20261010-0016 已完成17集65场344镜的三部分候选与隔离迁移：目的逐集连读改写，关键状态只绑定已有需求，699项产物按真实顺序阅读；清除20,668份旧视听／关系专属正文及4次独占设计决定。浏览器准确切版、状态与工程、原件和跨段评论已实操；完整恢复、具体清单及清理见 [视听三部分验收](production/audiovisual-three-part/VERIFICATION.md)。本机正式库和服务已由 task-20261010-0020 按用户追加的“最新状态部署”授权应用准确迁移和方法V5；保全及正式Chrome回查见 [正式部署验收](production/entity-material-formal-release/VERIFICATION.md)。负责人独立Review与实际媒体效果仍分别判断，不用完整候选快照覆盖活库。
 
-- task-20261010-0015 已完成共用实体／素材大卡隔离候选：两 Tab 唯一入口、所选结果与准确生成方案、原字段标准帮助；ST209 v2→v1→v2 保持 M2826→M1218→M2826，四类入口、图像／音频选段及草稿返回可用。完整空实例恢复保持原件、准确输入和历史意见，业务删除为 0。多版本／候选和缺 CALL 分支使用只读夹具，真实试听操作不代表已听审音质；证据、边界及清理见 [实体素材验收](production/entity-material-review/VERIFICATION.md)。Git 候选交付以任务账本与配置为准；未部署或写正式库，负责人独立 Review 与正式应用待后续授权。
+- task-20261010-0015 已完成共用实体／素材大卡隔离候选：两 Tab 唯一入口、所选结果与准确生成方案、原字段标准帮助；ST209 v2→v1→v2 保持 M2826→M1218→M2826，四类入口、图像／音频选段及草稿返回可用。完整空实例恢复保持原件、准确输入和历史意见，业务删除为 0。多版本／候选和缺 CALL 分支使用只读夹具，真实试听操作不代表已听审音质；证据、边界及清理见 [实体素材验收](production/entity-material-review/VERIFICATION.md)。0015原隔离验收边界保持；本机正式应用、M2597未生成方案及ST209 v2→v1→v2的Chrome验收已由0020补齐，见 [正式部署验收](production/entity-material-formal-release/VERIFICATION.md)。准确身份以配置、发布回执与任务账本为准；负责人独立Review仍分别进行。
 
-- task-20261010-0017 的故事评论独立浮窗已完成隔离Chrome候选验收：译注开关由690→618px、x=649→421修为690→690px、x=649→649；采编、结构、剧本四视口及长章、准确意见、大卡草稿返回和AS001对照保持。准确依据与边界见[故事评论浮窗验收](production/story-comments-overlay/VERIFICATION.md)，Git交付以任务账本与实例配置为准。当前未部署或写正式内容；根独立复验及正式应用待后续授权。
+- task-20261010-0017 的故事评论独立浮窗已完成隔离Chrome候选验收：译注开关由690→618px、x=649→421修为690→690px、x=649→649；采编、结构、剧本四视口及长章、准确意见、大卡草稿返回和AS001对照保持。准确依据与边界见[故事评论浮窗验收](production/story-comments-overlay/VERIFICATION.md)，Git交付以任务账本与实例配置为准。本机正式服务已随0020最新系统应用该代码；本轮回查剧本四阅读及大卡返回，原候选证据与根独立复验边界保持。
 
 - 原件判断与已有工程交接沿 task-20261010-0009 的 [既有验收](production/original-judgment-layout/VERIFICATION.md) 保留。task-20261010-0011 已在自有隔离 Chrome 完成技术意见定位候选：同一准确调用只呈现一次，34字符原句直接高亮，四历史输入、参考返回草稿、区域／时间及连续段落定位保持；M4087、M4081和动作对白对照可读。[生成意见定位验收](production/generation-comment-location/VERIFICATION.md) 保存执行者前后证据、准确锚点与复验入口。当前仅交付候选，未部署或写正式内容；根独立 Review 与正式入口验收仍待后续，Git交付和结项按主任务实际回执核对。
 
@@ -53,7 +53,7 @@
 - 生产子页加载中切换的迟到目录／场保护已完成隔离候选复验，包含同名往返、当前失败、准确历史和未提交草稿。实操与证据边界见 [生产切页验收](production/navigation-consistency/VERIFICATION.md)；正式生效、3000只读复走及收尾以 task-20261009-0019 的实际回执为准。
 - 长章历史返回已完成隔离候选复验：精修九责任段两次往返、相同URL各次访问、排版变化及精修八旧圈选／草稿保持。范围、反例与根独立复验边界见 [长章阅读验收](production/history-reading/VERIFICATION.md)；正式生效与收尾以 task-20261009-0027 实际回执为准。
 - 正式入口 `http://127.0.0.1:3000/`，活库为主目录 `.runtime/review.sqlite3`；准确系统提交由 `config/instance.json.review_desk_commit` 维护。两仓集成、正式切换、浏览器复验与任务完成只认主项目 `.codex-task/tasks.json` 和冻结包实际回执，工作区候选不能单凭文件存在宣称正式生效。
-- VPS 完整体验版已在 `https://leiguoguo.me/lijizhanshe/` 公开运行，任务 `task-20261009-0032` 已将执行时最新已交付正式版升级至独立体验实例。维护、旧版清除后的同包故障重建、两轮同源重置、普通应用重启持久性及 Chrome 真实页面验收通过；最终业务表与完整原件回到准确正式快照，本机正式库未被体验操作修改。AI 润色经现有 Xray 回环入口真实返回并采用到草稿；北京时间每日最多 100 次，失败也计数，发布和重启保留次数。旧体验资源、远端暂存及本机完整过程包已清除并回读。准确发布和容器身份以 VPS `~/lijizhanshe/state.json` 为准，本轮版本、验收边界及清理证据见主项目 `.runtime/task-20261009-0032/vps-upgrade/acceptance.md`；重复发布入口见 [体验版发布](production/vps-experience.md)。
+- VPS 完整体验版已由 task-20261010-0020 升级至本轮最新主干系统及本机正式快照，运行于 `https://leiguoguo.me/lijizhanshe/`。发布器完整指纹验证、Chrome的M2597、ST209切版/刷新、真实原图及AS001新稿通过，暂存和旧体验实例已清除；本机正式库未被体验操作修改。准确身份以VPS `~/lijizhanshe/state.json` 为准，回执与边界见 [两端正式部署验收](production/entity-material-formal-release/VERIFICATION.md)。0032原有全功能写入、普通重启、双发布重置、故障向前恢复及真实AI验证保持历史范围；Xray、每日100次预算与累计次数契约继续保留。本轮未调用AI；重复发布入口见 [体验版发布](production/vps-experience.md)。
 
 - 方法包直接阅读在 task-20261010-0005 隔离候选已完成：作者、标准导出、空实例恢复均可顺读全文、适配与愿景；旧执行内链限制保留。正式生效、收尾与根独立复验以实际回执为准，见 [阅读交付验收](production/method-package-reading/VERIFICATION.md)。
 
@@ -85,3 +85,5 @@
 - `task-20261009-0021` 的双仓 worktree 仍由当前会话占用，退出并释放锁后由受管 cleanup 退役。方法试用和正式发布的最小证据归主项目 `.runtime/task-20261009-0021/`；正式服务挂载及恢复不依赖任务工作区。
 
 - `task-20261010-0014` 的双仓worktree仍由当前TUI及清理锁占用；退出释放锁后沿 `codex.project task cleanup` 整组退役。预览服务与测试库已移除，必要证据及准确清理回执见 [0014验收记录](production/reports/task-20261010-0014/VERIFICATION.md)，运行和恢复不依赖预览目录。
+
+- task-20261010-0020 的两仓worktree仍由当前TUI及清理锁占用；退出释放锁后由受管cleanup整组退役，保留提交和会话历史。正式挂载与VPS不依赖任务工作区；最小发布、恢复边界和清理回执见 [两端正式部署验收](production/entity-material-formal-release/VERIFICATION.md)。
