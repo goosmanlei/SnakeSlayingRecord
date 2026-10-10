@@ -63,7 +63,8 @@ def apply_package(store, package, *, validate_only=False):
                 raise Conflict('audiovisual head changed: '+oid)
         for row in package['working_notes']:
             current = notes.get(store, row['object_id'])
-            if (current['body'] != row['body']) if applied else (current['etag'] != row['expected_etag']):
+            changed = current['body'] != row['body'] if applied else current['etag'] != row['expected_etag']
+            if changed:
                 raise Conflict('audiovisual working note changed: '+row['object_id'])
         if applied:
             for item in package['records']:
