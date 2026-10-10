@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>当前方案与生成候选 · 离线交互演示</title>
+  <style>
+    :root{font-family:system-ui,-apple-system,"PingFang SC",sans-serif;color:#26352d;background:#f4f4ed;line-height:1.6;font-size:15px}
+    *{box-sizing:border-box}body{margin:0}main{max-width:1320px;margin:0 auto;padding:28px}
+    h1{font-size:27px;line-height:1.35;margin:6px 0 12px}h2{font-size:20px;margin:0 0 14px}h3{font-size:16px;margin:22px 0 10px}
+    p{margin:8px 0}button,input,textarea{font:inherit}button{border:1px solid #b4c1b3;border-radius:7px;background:#fffefa;color:#26352d;padding:9px 13px;cursor:pointer}
+    button:hover{background:#f0f5eb}button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #87a679;outline-offset:2px}
+    button:disabled{opacity:.5;cursor:default}.primary{background:#325a40;color:white;border-color:#325a40}.primary:hover{background:#264b33}
+    .eyebrow{font-size:13px;letter-spacing:.04em;color:#557053}.notice{background:#fff4d5;border:1px solid #dec58a;border-radius:9px;padding:15px 18px;margin:20px 0 24px}
+    .notice strong{display:block}.hint{color:#647263;font-size:13px}.columns{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.12fr);gap:24px;align-items:start}
+    .panel{background:#fffefa;border:1px solid #d3dbcd;border-radius:11px;padding:24px}.label{display:block;font-weight:600;margin:18px 0 7px}
+    input,textarea{display:block;width:100%;padding:10px 12px;border:1px solid #becabc;border-radius:6px;background:white;color:#26352d}textarea{resize:vertical;min-height:100px}
+    .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:19px}.candidate-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 20px}.candidate-tabs button[aria-selected="true"]{background:#e1edda;border-color:#5d8555;box-shadow:inset 3px 0 #5d8555}
+    .result{min-height:115px;border:1px dashed #b7c3af;background:#f6f8f0;border-radius:8px;padding:20px;display:flex;align-items:center}.result p{white-space:pre-wrap;overflow-wrap:anywhere}
+    .snapshot{margin-top:20px;border-top:1px solid #dce2d6;padding-top:4px}.snapshot dl{margin:0}.snapshot dt{font-weight:650;margin-top:15px}.snapshot dd{margin:5px 0 0;white-space:pre-wrap;overflow-wrap:anywhere}.snapshot pre{background:#f1f3eb;padding:12px;border-radius:6px;white-space:pre-wrap;margin:5px 0 0;overflow-wrap:anywhere}
+    .empty{padding:26px 0;color:#647263}.status{min-height:25px;color:#325a40;margin:15px 0}.status.error{color:#9a3025}.bottom{display:flex;align-items:center;gap:14px;margin-top:24px}.bottom button{font-size:13px}.call{border-left:3px solid #d2c38c;padding:8px 12px;margin:12px 0;background:#faf8ef}.call .actions{margin:10px 0 3px}.call button{font-size:13px}
+    #candidate-prompt{border-left:3px solid #cbd7c3;padding-left:12px}.saved{font-size:13px;color:#647263;margin:10px 0 0}
+    @media(max-width:900px){main{padding:18px}.columns{grid-template-columns:1fr}.panel{padding:18px}}
+  </style>
+</head>
+<body>
+<main>
+  <div class="eyebrow">虚拟素材需求 DEMO-M01</div>
+  <h1>一份当前方案，每次有结果的生成留下一个候选</h1>
+  <p>修改当前方案；提交时固定当次输入；有结果后形成候选，和当次输入一起查看。</p>
+  <div class="notice">
+    <strong>纯离线交互演示 · 不是真实生成</strong>
+    虚拟文字占位，无真实素材、网络请求或费用。下方编辑框与按钮用于演示 AI 的工作步骤，不代表产品将新增制作编辑器。
+    数据只存于本浏览器的独立演示空间。
+  </div>
+  <div class="columns">
+    <section class="panel" aria-labelledby="current-title">
+      <h2 id="current-title">当前方案</h2>
+      <p class="hint">始终只有这一份。保存修改不会新增方案版本，也不会改变已有候选。</p>
+      <form id="plan-form">
+        <label class="label" for="purpose">制作目的</label>
+        <input id="purpose" value="为虚拟示例制作一个圆形图案" maxlength="200">
+        <label class="label" for="prompt">Prompt</label>
+        <textarea id="prompt" rows="4">虚拟测试：灰色圆形位于浅色背景中央。</textarea>
+        <label class="label" for="parameters">生成参数（JSON）</label>
+        <textarea id="parameters" rows="4" spellcheck="false">{
+  "颜色": "灰色",
+  "比例": "1:1"
+}</textarea>
+        <label class="label" for="references">准确参考</label>
+        <textarea id="references" rows="3">虚拟需求 REF-A · 候选 1 · 原件 DEMO-HASH-A · 完整画面</textarea>
+        <p class="hint">这里用文字代替准确素材引用，仅演示提交时一并冻结。</p>
+        <div class="actions">
+          <button id="save-plan" type="submit">演示 AI：保存当前方案</button>
+          <button id="submit-generation" type="button" class="primary">演示 AI：提交一次生成</button>
+        </div>
+      </form>
+      <p id="save-state" class="saved"></p>
+    </section>
+    <section class="panel" aria-labelledby="candidates-title">
+      <h2 id="candidates-title">生成候选</h2>
+      <p class="hint">候选来自实际产物。同参再次生成取得新结果，也产生新候选；等待或失败的无结果调用不算候选。</p>
+      <div id="calls" aria-live="polite"></div>
+      <div id="candidate-tabs" class="candidate-tabs" role="tablist" aria-label="选择生成候选"></div>
+      <div id="candidate-content" role="tabpanel" aria-live="polite"></div>
+    </section>
+  </div>
+  <p id="status" class="status" role="status"></p>
+  <div class="bottom"><button id="reset" type="button">重置本演示</button><span class="hint">只清除这个样例保存的数据。</span></div>
+</main>
+<script>
+'use strict';
+const STORAGE_KEY='SnakeSlayingRecord.production-current-candidates.demo.20261010.v2';
+const schema=2;
+const freshPlan=()=>({purpose:'为虚拟示例制作一个圆形图案',prompt:'虚拟测试：灰色圆形位于浅色背景中央。',parameters:{颜色:'灰色',比例:'1:1'},references:'虚拟需求 REF-A · 候选 1 · 原件 DEMO-HASH-A · 完整画面'});
+const copy=value=>JSON.parse(JSON.stringify(value));
+const freshState=()=>({schema,current:freshPlan(),calls:[],candidates:[],selected:null,nextCallId:1,nextCandidateId:1,draft:null});
+let state=freshState();
+let persistenceAvailable=true;
+try{
+  const stored=JSON.parse(localStorage.getItem(STORAGE_KEY)||'null');
+  if(stored&&stored.schema===schema&&stored.current&&Array.isArray(stored.calls)&&Array.isArray(stored.candidates)&&Number.isInteger(stored.nextCallId)&&Number.isInteger(stored.nextCandidateId))state=stored;
+}catch(error){persistenceAvailable=false}
+const $=id=>document.getElementById(id);
+function announce(message,error=false){$('status').textContent=message;$('status').className='status'+(error?' error':'')}
+function persist(){
+  try{localStorage.setItem(STORAGE_KEY,JSON.stringify(state));persistenceAvailable=true}
+  catch(error){persistenceAvailable=false;announce('浏览器无法保存演示数据；本页仍可操作，刷新可能丢失。',true)}
+}
+function fieldsFromPlan(plan){return{purpose:plan.purpose,prompt:plan.prompt,parameters:JSON.stringify(plan.parameters,null,2),references:plan.references}}
+function formValues(){return{purpose:$('purpose').value,prompt:$('prompt').value,parameters:$('parameters').value,references:$('references').value}}
+function loadForm(){const values=state.draft||fieldsFromPlan(state.current);for(const id of Object.keys(values))$(id).value=values[id];renderSaveState()}
+function readForm(){
+  const values=formValues();let parameters;
+  try{parameters=JSON.parse(values.parameters)}catch(error){throw new Error('请将生成参数填写为有效 JSON 对象。')}
+  if(!parameters||typeof parameters!=='object'||Array.isArray(parameters))throw new Error('生成参数必须是 JSON 对象。');
+  if(!values.purpose.trim()||!values.prompt.trim()||!values.references.trim())throw new Error('请保留制作目的、Prompt 和准确参考。');
+  return{purpose:values.purpose.trim(),prompt:values.prompt.trim(),parameters,references:values.references.trim()};
+}
+function isDirty(){return JSON.stringify(formValues())!==JSON.stringify(fieldsFromPlan(state.current))}
+function renderSaveState(){
+  $('save-state').textContent=isDirty()?'演示修改尚未保存。提交使用已保存的当前方案。':'当前方案已保存，可继续修改或提交。';
+  $('submit-generation').disabled=isDirty();
+}
+function element(tag,text,className){const node=document.createElement(tag);if(text!==undefined)node.textContent=text;if(className)node.className=className;return node}
+function appendField(list,label,text,id){list.append(element('dt',label));const value=element('dd',text);if(id)value.id=id;list.append(value)}
+function selectedCandidate(){
+  const candidate=state.candidates.find(value=>value.id===state.selected);
+  if(!candidate)return null;
+  const call=state.calls.find(value=>value.id===candidate.callId);
+  return call?{...candidate,submitted:call.submitted}:null;
+}
+function renderCalls(){
+  const box=$('calls');box.replaceChildren();
+  for(const call of state.calls.filter(value=>value.status!=='returned')){
+    const item=element('div',undefined,'call');
+    item.append(element('p','调用 '+call.id+' · '+(call.status==='pending'?'等待模拟结果；请求已固定，尚无候选。':'无结果；仅保留调用记录，未创建候选。')));
+    if(call.status==='pending'){
+      const actions=element('div',undefined,'actions');
+      const finish=element('button','演示 AI：返回调用 '+call.id+' 的结果');finish.type='button';finish.id='return-call-'+call.id;
+      finish.addEventListener('click',()=>{
+        const target=state.calls.find(value=>value.id===call.id);if(!target||target.status!=='pending')return;
+        target.status='returned';target.returnedAt=new Date().toISOString();
+        const candidate={id:state.nextCandidateId++,callId:target.id,result:'文字占位 · 并非真实图像\n这是调用 '+target.id+' 产生的模拟结果。\n提交时的 Prompt：'+target.submitted.prompt};
+        state.candidates.push(candidate);state.selected=candidate.id;persist();renderCalls();renderCandidates();
+        announce('调用 '+target.id+' 的模拟结果形成候选 '+candidate.id+'，仍绑定原提交请求。');
+      });
+      const fail=element('button','演示 AI：调用 '+call.id+' 无结果');fail.type='button';fail.id='fail-call-'+call.id;
+      fail.addEventListener('click',()=>{
+        const target=state.calls.find(value=>value.id===call.id);if(!target||target.status!=='pending')return;
+        target.status='failed';persist();renderCalls();announce('调用 '+target.id+' 无结果，仅保留调用记录；候选数量不变。');
+      });
+      actions.append(finish,fail);item.append(actions);
+    }
+    box.append(item);
+  }
+}
+function renderCandidates(){
+  const tabs=$('candidate-tabs');const content=$('candidate-content');tabs.replaceChildren();content.replaceChildren();
+  for(const candidate of state.candidates){
+    const button=element('button','候选 '+candidate.id);
+    button.type='button';button.setAttribute('role','tab');button.setAttribute('aria-selected',String(candidate.id===state.selected));button.setAttribute('aria-controls','candidate-content');button.id='candidate-tab-'+candidate.id;
+    button.addEventListener('click',()=>{state.selected=candidate.id;persist();renderCandidates()});tabs.append(button);
+  }
+  const candidate=selectedCandidate();
+  if(!candidate){content.removeAttribute('aria-labelledby');content.append(element('p','尚无候选。模拟生成有结果后，才会出现在这里。','empty'));return}
+  content.setAttribute('aria-labelledby','candidate-tab-'+candidate.id);
+  content.append(element('h3','候选 '+candidate.id+' 的结果'));
+  const result=element('div',undefined,'result');
+  result.append(element('p',candidate.result));content.append(result);
+  const actions=element('div',undefined,'actions');
+  const reuse=element('button','演示 AI：用本候选方案作为当前起点');reuse.type='button';reuse.id='reuse-candidate';
+  reuse.addEventListener('click',()=>{
+    const target=selectedCandidate();if(!target)return;
+    state.current=copy(target.submitted);state.draft=null;persist();loadForm();
+    announce('已将候选 '+target.id+' 的提交方案复制为当前方案；候选原方案及结果未改变。');
+  });
+  actions.append(reuse);content.append(actions);
+  const snapshot=element('div',undefined,'snapshot');snapshot.append(element('h3','产生本候选的准确生成方案'));
+  const list=element('dl');appendField(list,'制作目的',candidate.submitted.purpose);
+  appendField(list,'准确参考',candidate.submitted.references,'candidate-references');
+  list.append(element('dt','参数'));const parameterValue=element('dd');const code=element('pre',JSON.stringify(candidate.submitted.parameters,null,2));code.id='candidate-parameters';parameterValue.append(code);list.append(parameterValue);
+  appendField(list,'Prompt',candidate.submitted.prompt,'candidate-prompt');snapshot.append(list);content.append(snapshot);
+}
+$('plan-form').addEventListener('submit',event=>{
+  event.preventDefault();try{state.current=readForm();state.draft=null;persist();loadForm();announce('当前方案已原地更新；已有候选的方案和结果保持原样。')}catch(error){announce(error.message,true)}
+});
+$('plan-form').addEventListener('input',()=>{state.draft=formValues();persist();renderSaveState()});
+$('submit-generation').addEventListener('click',()=>{
+  if(isDirty()){announce('请先保存演示修改，再提交当前方案。',true);return}
+  const call={id:state.nextCallId++,status:'pending',submitted:copy(state.current),submittedAt:new Date().toISOString()};
+  state.calls.push(call);persist();renderCalls();
+  announce('调用 '+call.id+' 已提交，Prompt、参数和准确参考已固定；目前尚无结果，不创建候选。');
+});
+$('reset').addEventListener('click',()=>{state=freshState();persist();loadForm();renderCalls();renderCandidates();announce('已重置本演示。')});
+loadForm();renderCalls();renderCandidates();
+if(!persistenceAvailable)announce('浏览器存储当前不可用；演示数据可能无法跨刷新保留。',true);
+</script>
+</body>
+</html>
