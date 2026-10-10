@@ -74,6 +74,30 @@
       ]
     },
     {
+      "object_id": "method.binding.creative-system-review",
+      "kind": "GUIDANCE",
+      "version": 4,
+      "revision_id": "6910a26e1f4ed7bf4fa64bc7687a71764c38e218a61345e3b3470d46ad1707e7",
+      "payload": {
+        "format": "managed-method-binding-v1",
+        "rules": [
+          {
+            "object_id": "method.skill.creative-system-review",
+            "revision_id": "caef6c3418d623c4f01c5207cf1068aa75518d5b74f02c1a751d2b0911d10cec",
+            "when": {}
+          }
+        ],
+        "work_type": "creative-system-review"
+      },
+      "created_at": "2026-10-10T13:20:35+00:00",
+      "dependencies": [
+        {
+          "revision_id": "caef6c3418d623c4f01c5207cf1068aa75518d5b74f02c1a751d2b0911d10cec",
+          "role": "selected-method"
+        }
+      ]
+    },
+    {
       "object_id": "method.resource.creative-system-review-texts",
       "kind": "GUIDANCE",
       "version": 1,
@@ -209,6 +233,54 @@
         "title": "创作协作 Review · 项目只读正文"
       },
       "created_at": "2026-10-10T12:39:50+00:00",
+      "dependencies": []
+    },
+    {
+      "object_id": "method.resource.creative-system-review-texts",
+      "kind": "GUIDANCE",
+      "version": 4,
+      "revision_id": "3c92d4aca9058f4df67b1f11872fac38a07c5b65f1f79e6ef29a1bc61872081c",
+      "payload": {
+        "companions": {
+          "skill": [
+            "skills/creative-system-review/references/project-context.md",
+            "production/system-vision.md"
+          ]
+        },
+        "files": {
+          "production/system-vision.md": "# 愿景\n\n<!-- layout: {\"type\":\"cycle\",\"return_label\":\"继续实践与改进\"} -->\n\n从《李寄斩蛇》的真实创作出发，探索人和 AI 的协作，逐步形成可使用、可调整的系统与工作方法，让人专注作品，并支持新的故事。\n\n## 真实作品实践\n\n从故事到影视制作，用《李寄斩蛇》的实际作品检验协作方式；具体故事的设定与制作选择不作为通用要求。\n\n## 人、AI 与系统协作\n\n<!-- diagram: {\"type\":\"collaboration\",\"roles\":[{\"id\":\"human\",\"title\":\"人\",\"value\":\"创造性\"},{\"id\":\"desk\",\"title\":\"审阅台\",\"value\":\"基础约束\"},{\"id\":\"ai\",\"title\":\"AI\",\"value\":\"效率与复用性\"}],\"exchanges\":[{\"from\":\"human\",\"to\":\"desk\",\"label\":\"交换意见\"},{\"from\":\"desk\",\"to\":\"ai\",\"label\":\"交换意见\"}],\"constraint\":\"准确作品依据、版本与交接，贯穿创作全流程\",\"workflow\":{\"label\":\"三方共同完成故事创作\",\"stages\":[\"采编\",\"小说\",\"剧本\",\"素材\",\"影视作品\"]}} -->\n\n人提供创造性与判断，AI 提供效率与复用性，双方通过审阅台交换意见。审阅台以准确作品依据、版本和可靠交接提供基础约束；三方共同推进从采编到影视作品的创作全流程。\n\n## 方法与系统持续改进\n\n从真实使用中发现问题，沉淀可复用的方法与知识。每次改动都用作品效果、AI 执行可靠性和人的判断负担来检验。\n\n## 支持新的故事\n\n希望交付可使用、可调整的系统雏形与协作方法，让新使用者带入自己的故事独立创作。这是持续实践的方向，不代表当前已具备全部能力，也不要求照搬本剧流程。\n",
+          "skills/creative-system-review/SKILL.md": "---\nname: creative-system-review\ndescription: 通过真实创作与页面使用，审查并改进影视创作内容、人和 AI 的协作方法及审阅系统。适用于系统变复杂、创作质量不稳、工作交接不清或持续 Review；把具体反馈查清后形成有证据、可验收的改进。\n---\n\n# 创作协作与系统改进\n\n使人更容易创作和判断作品，使 AI 按可靠的方法完成工作，使系统承担结构、保存与校验。改进可能是修改作品、工作方法、自动处理或界面，也可能是删除多余要求、确认现状合理。任务数量、字段齐全和可追溯本身都不代表创作价值。\n\n## 从正在做的工作出发\n\n先确认用户当前要完成什么、已有创作依据、实际能力与偏好，以及此次授权是分析、发布任务、实现还是持续运行。阅读当前项目愿景和相关方法；本项目入口见 [项目适配](references/project-context.md)，迁移到其他故事时替换适配，不继承本剧内容与运行状态。\n\n以一个真实工作目标开始，例如判断一场戏是否讲清人物选择、选定角色形象、修改不连贯的镜头。按实际先后使用产品，观察作品、信息、操作和结果；然后用相邻阶段与同类场景检查遗漏。全系统 Review 应逐步覆盖每个页面和功能，覆盖清单用来防漏，不能替代真实工作路径。\n\n记录足以重走现场的内容和版本、人的目标、关键动作、实际结果与期望差异。阅读源码、接口、模型自述只能补充证据；视觉、声音、交互和创作连贯性的结论，分别需要看、听、操作和连读。工具受阻时明确哪部分未验证，不补造实践。\n\n## 先判断谁需要做这件事\n\n对遇到的每项信息和动作，问：它帮助人理解什么内容、作出什么判断或完成什么动作？这是不是当前需要？人的时间、注意力、记忆、查找、操作和返工成本是否值得？默认展示与主动深入查看分别判断。\n\n- **AI 的工作**：在准确输入和适用方法下理解、探索、创作、整理、检查与修订。能自行查明和检查的事项，不默认转成待人逐项确认的清单。\n- **系统的工作**：可靠保存和交接，保证引用、版本、上下文与操作结果一致，处理可确定的约束。内部模型复杂，不等于使用者必须学习它。\n- **人的工作**：决定创作方向、表达与取舍，凭自己的经验和审美评价结果，提供 AI 缺少的理解，并作出需要其授权的决定。具体分工依用户能力和委托范围调整；保留主动阅读、编辑和追查的自由。\n\n先检查是否能复用现有表达、自动完成、减少一步或不再要求这件事，再考虑新增概念、状态、控件或审批。折叠和改名不自动证明必要性。必要的专业细节应保留在作出相应判断的地方；删除默认展示不等于删除数据、历史、校验与追溯能力。\n\n例如，人物图审阅默认要求人检查“不要给动物套衣服”，需要回查通用检查是否错误地交给了人；历史记录能逐层打开，也仍需确认当前选图为什么需要先读它们。相反，真实参考图、能听到的声音片段、准确返回原阅读位置直接支持判断，不因“少展示”而删掉。\n\n## 把反馈查成问题，而不是直接派成任务\n\n用反馈定位现场，沿作品依据、方法、上下游产物和人的判断延伸探索，比较同类正常情况与反例。区分内容缺陷、方法缺陷、系统行为错误和界面负担；它们可以共同出现，但修复不必都落在界面。\n\n证据支持共同原因时，按完整用户目标汇聚；只证实局部就如实保留局部范围，不为了“体系性”扩大。检查已有任务、在途修改和实际交付，避免重复派发。准确性修复仍有价值，不能因为界面复杂就撤销保存保护、真实历史或正确引用。\n\n提出方案时写清：当前具体表现、想达到的创作或使用结果、关键原因与证据、最小有效改变，以及预计减少什么负担、保留什么判断能力。尚不确定的因果用小范围实践验证，不把假设写成全系统事实。优先解决阻碍创作的关键路径，沿用已有习惯；较大的交互变化先用可操作的样例检验目标体验，避免反复改动让人重新学习。\n\n## 创作改进须按专业过程产生结果\n\n先读相关专业原理和适用的工作方法，再用准确作品输入作出选择。共享知识按场景取用，不把整本手册加载成每次的清单，不用固定模板取代创作判断。\n\n重做视听作品时，理解整体依据后按集推进、集内按场镜展开，随推进更新对人物、主题和表现方式的认识，连读复核后用于后续；必要时回改前文。编写镜头 Prompt 时，先读视频生成方法并选用适合的模板，再理解当前镜头的表达目的、动作变化、相邻承接和准确参考，形成模型能执行的描述。脚本可以整理已作出的设计，不能一次批量填满后伪称逐步创作。\n\n检查最终作品是否真的改善，并检查关键步骤是否发生。采用简洁真实的过程证据，不强制每字段留日志；保存了方法快照不等于理解了方法，通过结构检查不等于影片表达成立。\n\n## 交接任务并回收实际效果\n\n按授权选择交付方式。只要求 Review 就交付发现与建议；获准发布任务时使用项目现有任务工具；获准实现时完成相应交付与验证。这个 SKILL 不自动启动持续任务、付费生成、外部通知或发布。也不因发现问题自行取消、改写或恢复正在执行及已结项的任务。\n\n需要定义或发布任务时，沿项目适配读取“任务定义与发布”方法，交接当前用户目标、准确现场与证据、已定选择及尚未解决的问题。该方法为确定任务的目标、范围、关键取舍和验收继续调查研究，不只是整理措辞或登记任务；新证据也可改变原问题判断。复用有效实践，不因方法切换重做全部调查。若目标或方案尚不清楚，继续澄清，不把关键产品与创作决定留给执行者猜测。\n\n每个任务结束报告先给准确任务编号和原问题，再说实际改了什么、用户现在能做什么、在哪个版本和环境怎样验证、未解决什么。把预期收益与已实现效果分开。回收结果时查看实际交付与关键使用路径，执行者说完成不等于独立复验通过；未复现旧版问题也不证明已修复。已结项任务发现确切残留时，保留历史并通过现有流程明确后续归属。\n\n持续运行只沿用户已授权的时长、报告和暂停约定执行。阶段报告应便于人决定继续还是停止：说明发布及完成事项、具体预期或实际效果、未覆盖和受阻范围、下一阶段可能获得的收益及理由。反馈到来后调整调查方向，不机械追加任务。\n\n## 用实践改进本方法\n\n把新证据带回当前作品、系统或方法的唯一维护入口。只固化能改变以后判断、且经实践支持的知识；项目特例留在项目适配或任务证据中。发现方法失效时修改对应判断和验证方式，不为每个新案例叠加一条永久规则。\n",
+          "skills/creative-system-review/references/project-context.md": "# 本项目适配\n\n本文件中的路径相对故事项目根目录。本适配说明当前项目的入口；通用方法不固定故事人物、集数、镜数、生成供应商或任务调度工具。迁移时先核对目标项目，再替换这里的入口。\n\n- 愿景与人的工作定位：`production/system-vision.md`；它也是“制作思路 → 愿景”的唯一正文，阅读页由此派生。\n- 产品设计依据：[产品演化原则](https://bytedance.larkoffice.com/wiki/wikcnDKbbkpMqO8zeTdBmwToQIe)。本项目结合创作主场景理解必要性、持有成本、稳定体验、价值先于入口、关键路径与先预测再验证，不机械套用消费产品的流量指标。需要核对这些原则时查原文；内部原文不复制到交付包，其他使用者没有该文档权限也能独立使用本 SKILL。\n- 有效规则、作品输入与当前状态：依次读 `AGENTS.md`、`KNOWLEDGE.md`、`STATE.md`，按其中入口查当前已确认故事和作品；不根据本适配猜当前版本。\n- 影视专业知识：`production/filmcraft/README.md`、`production/filmcraft/quick-reference.md`；具体制作问题只读相关章节。\n- 视频生成方法与 Prompt 模板：`production/seedance-video-handbook.md`，在制作方案或 Prompt 工作前读取适用部分。\n- 方法正文、共用资源与准确执行：`production/managed-methods.md`。本 SKILL 文件包是本方法唯一维护正文；系统配置中的入口引用其准确只读投影，导出和快照不成为第二份可编辑正文。修改后沿既有同步和发布流程更新，不能静默改写过去的执行。\n- 任务定义与发布：`skills/task-definition-publish/SKILL.md`。形成任务时按需从本次明确的故事项目根读取，继续为目标、范围、关键取舍与验收调查研究；它是项目材料，不包含在当前 Review 三文件导出包中。缺少项目材料时补取对应方法，不把包内不存在的文件当作已读。\n- 任务、隔离工作区与发布：`production/generation-workspaces.md`，任务现状以主项目 `.codex-task/tasks.json` 与实际回执为准。通用审阅台承担展示、审阅、评论与数据管理；本剧特有创作工具留在故事仓。\n\n本项目持续 Review 的运行约定、暂停状态与历史证据在本机 `.runtime/system-review/`；这些是会话运行资料，不是可移植方法，也不因加载此 SKILL 自动恢复。用户本次已授权的任务范围优先，不能沿旧计时或旧计划继续执行。\n"
+        },
+        "format": "managed-method-resource-v1",
+        "sections": {
+          "project-context": "skills/creative-system-review/references/project-context.md",
+          "skill": "skills/creative-system-review/SKILL.md",
+          "vision": "production/system-vision.md"
+        },
+        "source": {
+          "files": {
+            "production/system-vision.md": {
+              "content_sha256": "f3a90e5d9d70130fe28065c386f009296f2e083c4f9ef28768e3583de83b82e4",
+              "path": "production/system-vision.md",
+              "sha256": "f3a90e5d9d70130fe28065c386f009296f2e083c4f9ef28768e3583de83b82e4"
+            },
+            "skills/creative-system-review/SKILL.md": {
+              "content_sha256": "fab41b9193b8f9b63fac1571dce7d0b51eac417b2f2dd1c28318d5628652af4a",
+              "path": "skills/creative-system-review/SKILL.md",
+              "sha256": "fab41b9193b8f9b63fac1571dce7d0b51eac417b2f2dd1c28318d5628652af4a"
+            },
+            "skills/creative-system-review/references/project-context.md": {
+              "content_sha256": "0635e72032ab0f2ed14054ffeae21c44ee630339a87abfd6e0c87bfc87451bc6",
+              "path": "skills/creative-system-review/references/project-context.md",
+              "sha256": "0635e72032ab0f2ed14054ffeae21c44ee630339a87abfd6e0c87bfc87451bc6"
+            }
+          },
+          "kind": "project-markdown"
+        },
+        "title": "创作协作 Review · 项目只读正文"
+      },
+      "created_at": "2026-10-10T13:20:35+00:00",
       "dependencies": []
     },
     {
@@ -352,7 +424,51 @@
           "role": "method-resource"
         }
       ]
+    },
+    {
+      "object_id": "method.skill.creative-system-review",
+      "kind": "GUIDANCE",
+      "version": 4,
+      "revision_id": "caef6c3418d623c4f01c5207cf1068aa75518d5b74f02c1a751d2b0911d10cec",
+      "payload": {
+        "applies": "用户要求创作协作或系统 Review、查清具体反馈及评估改进时使用；按本次授权交付。",
+        "checks": "结论与实际读、看、听、操作的证据相称；保持必要判断能力，回收实际价值与成本。",
+        "files": {
+          "SKILL.md": "---\nname: creative-system-review\ndescription: 从项目的准确只读投影取得创作协作 Review 方法、项目适配与愿景。\n---\n\n# 创作协作 Review 入口\n\n先读 [完整方法](shared/0/skills/creative-system-review/SKILL.md)，沿正文内的“项目适配”进入 [本项目适配](shared/0/skills/creative-system-review/references/project-context.md)，再读 [愿景](shared/0/production/system-vision.md)，均读到结尾。三份正文作为同一准确章节及必要附属文件交付，保留源目录关系；作者交付和标准 `method-export` 使用相同路径。\n\n唯一维护入口为项目 `skills/creative-system-review/` 与 `production/system-vision.md`；本入口只引用准确版本，不另写方法正文。标准导出的 `registry.json` 保留来源路径、摘要、方法、绑定与执行身份，可在空实例恢复；作者交付的 `delivery.json` 保存本步请求及准确执行，`request.json` 提供本步输入。\n\n包内链接相对当前文件；适配中列出的项目路径相对本次输入明确指定的故事项目根目录，不相对导出目录。先核对该项目的 `AGENTS.md`、`KNOWLEDGE.md`、`STATE.md`、准确作品输入及本次授权；它们由项目或本次输入补齐，不随本方法包复制。迁移到新故事先核对目标项目，再替换项目适配。\n\n按当前授权使用方法；加载本包不授予持续 Review、付费生成或正式写入许可。所需专业章节、作品、页面或媒体证据尚缺时明确范围并按需取得；方法可读不等于创作或审阅已经完成，正式只读边界和可写范围以本次委托为准。\n"
+        },
+        "format": "managed-method-skill-v1",
+        "inputs": "当前目标、范围与授权，以及准确作品或页面版本和实际证据；专业问题按需提供对应方法与资源。",
+        "outputs": "有依据的发现、最小有效改进和可观察的验证结果，说明未验证的范围。",
+        "purpose": "通过真实创作与使用，改进作品、人和 AI 的协作方法及审阅系统。",
+        "required_inputs": [
+          "goal",
+          "scope",
+          "authorization",
+          "evidence"
+        ],
+        "resources": [
+          {
+            "object_id": "method.resource.creative-system-review-texts",
+            "revision_id": "3c92d4aca9058f4df67b1f11872fac38a07c5b65f1f79e6ef29a1bc61872081c",
+            "section": "skill"
+          }
+        ],
+        "steps": [
+          "review"
+        ],
+        "title": "创作协作 Review",
+        "work_types": [
+          "creative-system-review"
+        ]
+      },
+      "created_at": "2026-10-10T13:20:35+00:00",
+      "dependencies": [
+        {
+          "revision_id": "3c92d4aca9058f4df67b1f11872fac38a07c5b65f1f79e6ef29a1bc61872081c",
+          "role": "method-resource"
+        }
+      ]
     }
   ],
-  "sha256": "93a9e8505a63d3ca01319e96f9199c6d7fa1a7b2361e31c97f6d2c85419ebc56"
+  "sha256": "2ca5d763f7556ecb2f10e207bf26ab3fc5b5c38de8f4ab0cd079a627abce6ded"
 }
