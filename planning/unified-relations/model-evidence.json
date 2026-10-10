@@ -1,0 +1,3213 @@
+{
+  "format": "unified-relations-model-evidence-v1",
+  "read_at": "2026-10-10T09:37:15.935351+00:00",
+  "database": ".runtime/review.sqlite3",
+  "connection": "sqlite3 URI mode=ro, BEGIN consistent read; no Store initialization",
+  "primary_commit": "b84f7bc8c2aa3ac62dd19c33912ad5d20fba4d34",
+  "desk_commit": "08698d5deb4e8874d9fb9ffc897d94cebaa66733",
+  "counts": {
+    "entity": 147,
+    "material_relation": 5708,
+    "applicability": 28,
+    "relation_comments": 0,
+    "aliases": 0,
+    "historical_relation_explanations_already_cleaned": 30
+  },
+  "pair_analysis": {
+    "scope": "one current head per RELATION/MATERIAL_RELATION object, unordered object-id endpoints, revisions not counted as separate objects",
+    "current_records": 5883,
+    "distinct_unordered_pairs": 5850,
+    "duplicate_pairs": 33,
+    "duplicate_records": 66,
+    "excess_records": 33,
+    "all_duplicate_pairs_same_exact_upstream_revision": true,
+    "duplicate_semantic_pairs": {
+      "alternative+reuse": 33
+    },
+    "duplicates": [
+      {
+        "endpoint_ids": [
+          "asset-fg3-aheng-voice-01",
+          "material-voice-a-heng"
+        ],
+        "endpoint_codes": [
+          "M1134",
+          "M2669"
+        ],
+        "relations": [
+          {
+            "object_id": "mr-1982bd1e5f3997f7a58bc3d364f7252a",
+            "revision_id": "d10c4dae482bdb5b00af19fe353438e8f142f6251bcb22c22af445c5d370d1c5",
+            "version": 2,
+            "business_code": "MR5132",
+            "semantics": "alternative"
+          },
+          {
+            "object_id": "mr-02c83518892408c7cb6f9dec76c33f42",
+            "revision_id": "11758e44266d5ebe8172c1610b2e37dcb3402d3bcc60ad199d7f7205621e048a",
+            "version": 2,
+            "business_code": "MR5172",
+            "semantics": "reuse"
+          }
+        ]
+      },
+      {
+        "endpoint_ids": [
+          "asset-fg3-boatman-base-voice-01",
+          "material-voice-boatman"
+        ],
+        "endpoint_codes": [
+          "M1243",
+          "M2679"
+        ],
+        "relations": [
+          {
+            "object_id": "mr-dcda76e9b1323905ae888093634f3034",
+            "revision_id": "1faad8e7c836924abbdc6bde1ab396d3c420b53398ab9d4f91163ae1700de565",
+            "version": 2,
+            "business_code": "MR5133",
+            "semantics": "alternative"
+          },
+          {
+            "object_id": "mr-fce78c3dd29389e56257a92fb1c4309e",
+            "revision_id": "029039d6f58ee6be8ca65b33d90d3fac2df11ff177ede9d6ce8cdbc38f272750",
+            "version": 2,
+            "business_code": "MR5180",
+            "semantics": "reuse"
+          }
+        ]
+      },
+      {
+        "endpoint_ids": [
+          "asset-fg3-clerk-liang-base-voice-01",
+          "material-voice-clerk-liang"
+        ],
+        "endpoint_codes": [
+          "M1244",
+          "M2686"
+        ],
+        "relations": [
+          {
+            "object_id": "mr-92e8bab63cdd9d14589a9ff2d48fadde",
+            "revision_id": "38fa50c4115e67f4822ca0ce8878e6383c163545ddfb259e65c6b1ef311f6229",
+            "version": 2,
+            "business_code": "MR5134",
+            "semantics": "alternative"
+          },
+          {
+            "object_id": "mr-4dbfe2124aff448327497b3b442b8984",
+            "revision_id": "35b55d74213683c5ac53073eea959c847338f5c33c94781be124064a50e68525",
+            "version": 2,
+            "business_code": "MR5187",
+            "semantics": "reuse"
+          }
+        ]
+      },
+      {
+        "endpoint_ids": [
+          "asset-fg3-clerk-notice-base-voice-01",
+          "material-voice-clerk-notice"
+        ],
+        "endpoint_codes": [
+          "M1245",
+          "M2681"
+        ],
+        "relations": [
+          {
+            "object_id": "mr-dbe55591a0af4b6b3450665c99e27a38",
+            "revision_id": "c6436fdefe119077317f66615cb6b13a971864f9363b08174000cb44190db2c1",
+            "version": 2,
+            "business_code": "MR5135",
+            "semantics": "alternative"
+          },
+          {
+            "object_id": "mr-88e429e56c99af4e5920b54e28270c53",
+            "revision_id": "5d31de150c283f8cbea2bc4329b636800a63fdfd155398b3f4b972f3e515dd9c",
+            "version": 2,
+            "business_code": "MR5182",
+            "semantics": "reuse"
+          }
+        ]
+      },
+      {
+        "endpoint_ids": [
+          "asset-fg3-clerk-proclamation-base-voice-01",
+          "material-voice-clerk-proclamation"
+        ],
+        "endpoint_codes": [
+          "M1262",
+          "M2698"
+        ],
+        "relations": [
+          {
+            "object_id": "mr-abe77a2221fedc8b812b552fb0569fdd",
+            "revision_id": "eb817f98a1651fe8747478e11c103ab5d000c7978ef7aee1e94bb1ebf27a205e",
+            "version": 2,
+            "business_code": "MR5136",
+            "semantics": "alternative"
+          },
+          {
+            "object_id": "mr-41c7a79f31c2c3191ca249d654326e12",
+            "revision_id": "c0e1058665d06ce59be6d3766f3d07220459aea72f43e1ffa445bee068952895",
+            "version": 2,
+            "business_code": "MR5198",
+            "semantics": "reuse"
+          }
+        ]
+      },
+      {
+        "endpoint_ids": [
+          "asset-fg3-delivery-worker-base-voice-01",
+          "material-voice-delivery-worker"
+        ],
+        "endpoint_codes": [
+          "M1263",
+          "M2704"
+        ],
+        "relations": [
+          {
+            "object_id": "mr-b9687cb6146a885f0b5c4a56a029ca69",
+            "revision_id": "3e14710819e3e87a33321fb7eaae365e9ccfcd639bcc92c107149d1504caf39e",
+            "version": 2,
+            "business_code": "MR5137",
+            "semantics": "alternative"
+          },
+          {
+            "object_id": "mr-0ca8cdcbea61f2b60b66df5d75ad1581",
+            "revision_id": "1df4630c12d229e8dc2dc0a2f832ddcab47c5febad58a27daf6db6e04af4378c",
+            "version": 2,
+            "business_code": "MR5202",
+            "semantics": "reuse"
+          }
+        ]
+      },
+      {
+        "endpoint_ids": [
+          "asset-fg3-elders-two-speaker-base-voice-01",
+          "material-voice-elders-two-speaker"
+        ],
+        "endpoint_codes": [
+          "M1264",
+          "M2693"
+        ],
+        "relations": [
+          {
+            "object_id": "mr-98c3f10333f74506088ea3b17ef08f10",
+            "revision_id": "549ba6a99a8315b3b96dce5f242aebee39edec88b887a111d46c3022792d67fa",
+            "version": 2,
+            "business_code": "MR5138",
+            "semantics": "alternative"
+          },
+          {
+            "object_id": "mr-2aa8675101ad35ff167fdcfb005052b6",
+            "revision_id": "746790b7b567e55c8cfbf1a688b54ae2aad144e00e293a842d637e491091433f",
+            "version": 1,
+            "business_code": "MR5193",
+            "semantics": "reuse"
+          }
+        ]
+      },
+      {
+        "endpoint_ids": [
+          "asset-fg3-helpers-four-dock-a-base-voice-01",
+          "material-voice-helpers-four-dock-a"
+        ],
+        "endpoint_codes": [
+          "M1246",
+          "M2690"
+        ],
+        "relations": [
+          {
+            "object_id": "mr-c1e5bd041bcdfd9728a43d4d03ebd80f",
+            "revision_id": "21ade8bf34f22e825faf079ba2affd5be1154fba3e350ae5ff48f5a427c0e88d",
+            "version": 2,
+            "business_code": "MR5139",
+            "semantics": "alternative"
+          },
+          {
+            "object_id": "mr-d334b9d7dc1fc7837c08ab0a11c909ba",
+            "revision_id": "1856860c3b4e5f7e0975be87de118da313d8e1b16af21068ff52f52da82e052f",
+            "version": 2,
+            "business_code": "MR5190",
+            "semantics": "reuse"
+          }
+        ]
+      },
+      {
+        "endpoint_ids": [
+          "asset-fg3-heng-mother-base-voice-01",
+          "material-voice-heng-mother"
+        ],
+        "endpoint_codes": [
+          "M1247",
+          "M2675"
+        ],
+        "relations": [
+          {
+            "object_id": "mr-cf72e3beb2e33e93e56af728ba969b6a",
+            "revision_id": "941c028a41f86ca2251433f8578d8d6cd81d7b8f36a5d2ada9ad9decaeeb8e24",
+            "version": 2,
+            "business_code": "MR5140",
+            "semantics": "alternative"
+          },
+          {
+            "object_id": "mr-7f81a7b937d31b71df75958737f26c34",
+            "revision_id": "0770e05a25f7e7440b0c7e863ee4015e0e2c26aed389f64154e726aa321c71a6",
+            "version": 2,
+            "business_code": "MR5176",
+            "semantics": "reuse"
+          }
+        ]
+      },
+      {
+        "endpoint_ids": [
+          "asset-fg3-li-dan-base-voice-01",
+          "material-voice-li-dan"
+        ],
+        "endpoint_codes": [
+          "M1248",
+          "M2682"
+        ],
+        "relations": [
+          {
+            "object_id": "mr-e663b12f6ad9d2fc67a372616a7588b7",
+            "revision_id": "dfd1f569e783e2d0a2422162045144548122ca80ad5a5ab25cf284c357f563f2",
+            "version": 2,
+            "business_code": "MR5141",
+            "semantics": "alternative"
+          },
+          {
+            "object_id": "mr-6722b869ec6d71495b6f344036c8632f",
+            "revision_id": "2fae5af4b10721577f8f9271ae9c616189aee6cabb87e673287364a72d2e7768",
+            "version": 2,
+            "business_code": "MR5183",
+            "semantics": "reuse"
+          }
+        ]
+      },
+      {
+        "endpoint_ids": [
+          "asset-fg3-li-mother-base-voice-01",
+          "material-voice-li-mother"
+        ],
+        "endpoint_codes": [
+          "M1249",
+          "M2683"
+        ],
+        "relations": [
+          {
+            "object_id": "mr-2618b534a8469167de6ab0d0ea8950f9",
+            "revision_id": "292b5b2585ca297ddaf77539ec135c88a01442ac4daf3e166f055d2d8a6f7a3f",
+            "version": 2,
+            "business_code": "MR5143",
+            "semantics": "alternative"
+          },
+          {
+            "object_id": "mr-1dc31dc93aad2806cdbadd8fcb591625",
+            "revision_id": "c966c436462bf769eed19720e6b32d466e45bdbd26ca4bc879dcb218c4c60f34",
+            "version": 2,
+            "business_code": "MR5184",
+            "semantics": "reuse"
+          }
+        ]
+      },
+      {
+        "endpoint_ids": [
+          "asset-fg3-magistrate-base-voice-01",
+          "material-voice-magistrate"
+        ],
+        "endpoint_codes": [
+          "M1251",
+          "M2687"
+        ],
+        "relations": [
+          {
+            "object_id": "mr-a5dcdff79061b93e188fa5c424b330fb",
+            "revision_id": "d0193fec07ce1ec6b1b5d915f8471c755846c2bcb9d466fbca070047d619b951",
+            "version": 2,
+            "business_code": "MR5145",
+            "semantics": "alternative"
+          },
+          {
+            "object_id": "mr-8aee07ce2f91205e9a12ed793c202867",
+            "revision_id": "73a593185e8f0f93b1871d2c570c4601606b5a46b3ac12fd8355699a2b1c5580",
+            "version": 2,
+            "business_code": "MR5188",
+            "semantics": "reuse"
+          }
+        ]
+      },
+      {
+        "endpoint_ids": [
+          "asset-fg3-neighbor-woman-base-voice-01",
+          "material-voice-neighbor-woman"
+        ],
+        "endpoint_codes": [
+          "M1252",
+          "M2685"
+        ],
+        "relations": [
+          {
+            "object_id": "mr-eb91b623c507489a05aa8444eab06c00",
+            "revision_id": "6f7b4fe658f40d52e2d2a4846dc01be5e7a4c19b28402a98fd913a93f1b3fba1",
+            "version": 2,
+            "business_code": "MR5146",
+            "semantics": "alternative"
+          },
+          {
+            "object_id": "mr-24f164b577d35063bec03af81854b173",
+            "revision_id": "38e58d617b1efced32ffa17adc8c2db65660661a8d3073fdb0e8aaa330faa345",
+            "version": 2,
+            "business_code": "MR5186",
+            "semantics": "reuse"
+          }
+        ]
+      },
+      {
+        "endpoint_ids": [
+          "asset-fg3-new-steward-base-voice-01",
+          "material-voice-new-steward"
+        ],
+        "endpoint_codes": [
+          "M1265",
+          "M2696"
+        ],
+        "relations": [
+          {
+            "object_id": "mr-4111300df4fb5d5fb47acf65c8691f67",
+            "revision_id": "7198925030c3eff893c9e9d67c8694e0f615e4aaaeb8fc14487753141a6f76dc",
+            "version": 2,
+            "business_code": "MR5147",
+            "semantics": "alternative"
+          },
+          {
+            "object_id": "mr-a128ffaab49f341f0e9e88333259c413",
+            "revision_id": "26bb815342a049d4a0b27500eadba2f8c57722b8eae873205b45342ef63778f3",
+            "version": 2,
+            "business_code": "MR5196",
+            "semantics": "reuse"
+          }
+        ]
+      },
+      {
+        "endpoint_ids": [
+          "asset-fg3-officer-cheng-base-voice-01",
+          "material-voice-officer-cheng"
+        ],
+        "endpoint_codes": [
+          "M1253",
+          "M2688"
+        ],
+        "relations": [
+          {
+            "object_id": "mr-188680652d8100a8c71c387965b7b0fb",
+            "revision_id": "bad830b98971c91cfcf9a1fd9013300050f0d442b1949332ab5df0a1d60ff1d9",
+            "version": 2,
+            "business_code": "MR5148",
+            "semantics": "alternative"
+          },
+          {
+            "object_id": "mr-80f703b7340de98738ad7539adbe0013",
+            "revision_id": "7626a761c31b24ca6d072d3bd44915c1783f0340c77babfb031dda3f40e20178",
+            "version": 2,
+            "business_code": "MR5189",
+            "semantics": "reuse"
+          }
+        ]
+      },
+      {
+        "endpoint_ids": [
+          "asset-fg3-officer-second-base-voice-01",
+          "material-voice-officer-second"
+        ],
+        "endpoint_codes": [
+          "M1266",
+          "M2691"
+        ],
+        "relations": [
+          {
+            "object_id": "mr-a4d2622d07adf7337fcb14bb2c9e7ea9",
+            "revision_id": "274eae6254901a92364e270a31ad039f41d030e7621d648bf0edfab015ee98e3",
+            "version": 2,
+            "business_code": "MR5149",
+            "semantics": "alternative"
+          },
+          {
+            "object_id": "mr-25e953f828897da88f70b73502473927",
+            "revision_id": "191ca2cec47f0f456a0fc07b900aea2868cf0b50f18ff75654e00f6f646440da",
+            "version": 2,
+            "business_code": "MR5191",
+            "semantics": "reuse"
+          }
+        ]
+      },
+      {
+        "endpoint_ids": [
+          "asset-fg3-offscreen-caller-base-voice-01",
+          "material-voice-offscreen-caller"
+        ],
+        "endpoint_codes": [
+          "M1267",
+          "M2708"
+        ],
+        "relations": [
+          {
+            "object_id": "mr-bc0d3b7ccbacdf341abe49c51920f865",
+            "revision_id": "cb551431897952e904e632ffd1639eb1c051a7f78393784f5f40bfd28dc68ae0",
+            "version": 2,
+            "business_code": "MR5150",
+            "semantics": "alternative"
+          },
+          {
+            "object_id": "mr-6d80f737f9c6f4563faa9f96a1a54490",
+            "revision_id": "e4c48ae25932dd23fc07c0d18098ed9293359242f6a19272b9ea002155170e48",
+            "version": 1,
+            "business_code": "MR5204",
+            "semantics": "reuse"
+          }
+        ]
+      },
+      {
+        "endpoint_ids": [
+          "asset-fg3-old-woman-base-voice-01",
+          "material-voice-old-woman"
+        ],
+        "endpoint_codes": [
+          "M1254",
+          "M2680"
+        ],
+        "relations": [
+          {
+            "object_id": "mr-228dcb6e4e9885f5aa88b73bb1b157c5",
+            "revision_id": "3189ccc8ba85e2a3621c74d4d7b7b40725d4507be950f816306435aa0413b857",
+            "version": 2,
+            "business_code": "MR5151",
+            "semantics": "alternative"
+          },
+          {
+            "object_id": "mr-2fc34d417878d53b557818414e6037ab",
+            "revision_id": "fc05ca5a0d8ff222cc5dee195d3eac57c6547c17670314cb7a147e1053a6c8d9",
+            "version": 1,
+            "business_code": "MR5181",
+            "semantics": "reuse"
+          }
+        ]
+      },
+      {
+        "endpoint_ids": [
+          "asset-fg3-order-writer-base-voice-01",
+          "material-voice-order-writer"
+        ],
+        "endpoint_codes": [
+          "M1268",
+          "M2705"
+        ],
+        "relations": [
+          {
+            "object_id": "mr-806eb7d88a7bcfc53fa9aba52d163a6d",
+            "revision_id": "8db4c6bca3b0b68fd4e3c8e2d139e5c2af1e475e30f1f608a7fac9787945b520",
+            "version": 2,
+            "business_code": "MR5152",
+            "semantics": "alternative"
+          },
+          {
+            "object_id": "mr-9d6161c4fba46c8fc66aedfe90edadb9",
+            "revision_id": "8f7ec7ec8f45d7ae5845fefebf2ff755ed98c9124d325c4bf823f879551ae486",
+            "version": 1,
+            "business_code": "MR5203",
+            "semantics": "reuse"
+          }
+        ]
+      },
+      {
+        "endpoint_ids": [
+          "asset-fg3-priest-base-voice-01",
+          "material-voice-priest"
+        ],
+        "endpoint_codes": [
+          "M1255",
+          "M2678"
+        ],
+        "relations": [
+          {
+            "object_id": "mr-dc4f2e143b8bee4e24c1fdc8b1ce65a1",
+            "revision_id": "75915671c9a28f83d85408b542ed32e69c1b3cf449b5f730d13565cf8b69d710",
+            "version": 2,
+            "business_code": "MR5153",
+            "semantics": "alternative"
+          },
+          {
+            "object_id": "mr-38f6fcd630b8ad461aa5a602907576dd",
+            "revision_id": "dd3474e79e875c992a8b096042d47436811363c19c7a668e4c1457bc1609cf1a",
+            "version": 2,
+            "business_code": "MR5179",
+            "semantics": "reuse"
+          }
+        ]
+      },
+      {
+        "endpoint_ids": [
+          "asset-fg3-singer-teacher-base-voice-01",
+          "material-voice-singer-teacher"
+        ],
+        "endpoint_codes": [
+          "M1270",
+          "M2697"
+        ],
+        "relations": [
+          {
+            "object_id": "mr-ad49edde50a0d0d0bdc5f6116b0b1c34",
+            "revision_id": "27e90df9d3f93e48cbb28625e2af98d12d19ece2bf68b18c33ecc51c434fc2a9",
+            "version": 2,
+            "business_code": "MR5155",
+            "semantics": "alternative"
+          },
+          {
+            "object_id": "mr-773d8ef43952641ffa2451a73c9ca43b",
+            "revision_id": "98c2f5d696acc7ccee2e41ca741c6cd5cdc2e4a6c98859b4c502cddd264b770d",
+            "version": 2,
+            "business_code": "MR5197",
+            "semantics": "reuse"
+          }
+        ]
+      },
+      {
+        "endpoint_ids": [
+          "asset-fg3-sun-liu-base-voice-01",
+          "material-voice-sun-liu"
+        ],
+        "endpoint_codes": [
+          "M1256",
+          "M2676"
+        ],
+        "relations": [
+          {
+            "object_id": "mr-99065ff30b845a2b0281496bf061b94b",
+            "revision_id": "4a6518285ff4f63c07ab3096605ead66eb23b41061eba2811c6bbd0477e6a235",
+            "version": 2,
+            "business_code": "MR5157",
+            "semantics": "alternative"
+          },
+          {
+            "object_id": "mr-88bf8c5d9708745d2f8bac285873f212",
+            "revision_id": "4297ecb01787a2f1d6fa5908788b77cd2edffc810aa6a88c4f91b03cfc7e4090",
+            "version": 2,
+            "business_code": "MR5177",
+            "semantics": "reuse"
+          }
+        ]
+      },
+      {
+        "endpoint_ids": [
+          "asset-fg3-tao-base-voice-01",
+          "material-voice-tao"
+        ],
+        "endpoint_codes": [
+          "M1272",
+          "M2692"
+        ],
+        "relations": [
+          {
+            "object_id": "mr-e339109a8c93db51319231d6837da233",
+            "revision_id": "f4427686afa87521f5395468a084397c8b33d4688c05421e5835437f25d93c2b",
+            "version": 2,
+            "business_code": "MR5158",
+            "semantics": "alternative"
+          },
+          {
+            "object_id": "mr-acc357ab2ac426bb243caec5ad58eb96",
+            "revision_id": "c16bc900bac6d11bbca6690969fed1d5d3757163e5e4a167d520c04f55136de8",
+            "version": 1,
+            "business_code": "MR5192",
+            "semantics": "reuse"
+          }
+        ]
+      },
+      {
+        "endpoint_ids": [
+          "asset-fg3-temple-crowd-refuser-base-voice-01",
+          "material-voice-temple-crowd-refuser"
+        ],
+        "endpoint_codes": [
+          "M1274",
+          "M2694"
+        ],
+        "relations": [
+          {
+            "object_id": "mr-548b4c7fcab71960d40ab6af2dde1776",
+            "revision_id": "b8eb1b25a19f96b54e64ceb4dd2dcc2894ccb207491860ca5c4abc1d36b59391",
+            "version": 2,
+            "business_code": "MR5160",
+            "semantics": "alternative"
+          },
+          {
+            "object_id": "mr-3f684ebad7a366f4238d1b344e93c8d9",
+            "revision_id": "0b0e93ba35600fcbd375f2fd584465e1d7c7256889131ba0f5fe666b96385ed1",
+            "version": 2,
+            "business_code": "MR5194",
+            "semantics": "reuse"
+          }
+        ]
+      },
+      {
+        "endpoint_ids": [
+          "asset-fg3-temple-crowd-whisperer-base-voice-01",
+          "material-voice-temple-crowd-whisperer"
+        ],
+        "endpoint_codes": [
+          "M1276",
+          "M2702"
+        ],
+        "relations": [
+          {
+            "object_id": "mr-378a6b84d6042fa683f53455151856fc",
+            "revision_id": "ab567b168220a0aa77b92323e25eb957daa590e9dbb35d3d7703e6a9d2803371",
+            "version": 2,
+            "business_code": "MR5162",
+            "semantics": "alternative"
+          },
+          {
+            "object_id": "mr-3739d2ba4ca075b44a49454404cd82de",
+            "revision_id": "f8fbdbf594b890e8e7e25314b22814a5e84b144707ba76a1a8cdaeb1c11dc4c8",
+            "version": 1,
+            "business_code": "MR5200",
+            "semantics": "reuse"
+          }
+        ]
+      },
+      {
+        "endpoint_ids": [
+          "asset-fg3-temple-guards-guard-a-base-voice-01",
+          "material-voice-temple-guards-guard-a"
+        ],
+        "endpoint_codes": [
+          "M1257",
+          "M2684"
+        ],
+        "relations": [
+          {
+            "object_id": "mr-c175ac4293002f42672439d63e013890",
+            "revision_id": "0064b85699569001be07f8f73b86c0823426200e93973d2304765e73effd5946",
+            "version": 2,
+            "business_code": "MR5163",
+            "semantics": "alternative"
+          },
+          {
+            "object_id": "mr-fb1e79cb07e0ac951b71a761bb6df78e",
+            "revision_id": "4ef57e7336bf750519fd1d0482499e1009cfc9776233a973dc8289e168646185",
+            "version": 2,
+            "business_code": "MR5185",
+            "semantics": "reuse"
+          }
+        ]
+      },
+      {
+        "endpoint_ids": [
+          "asset-fg3-temple-workers-year-witness-base-voice-01",
+          "material-voice-temple-workers-year-witness"
+        ],
+        "endpoint_codes": [
+          "M1277",
+          "M2703"
+        ],
+        "relations": [
+          {
+            "object_id": "mr-d1667eca33551f70405f83b96e80bf7a",
+            "revision_id": "6a9108d0f638cf2207f2219ef048f685ee6f6fc5b1f99c81694e6b174fb642ec",
+            "version": 2,
+            "business_code": "MR5165",
+            "semantics": "alternative"
+          },
+          {
+            "object_id": "mr-0964246ed1bc38b0523965a413fc8f89",
+            "revision_id": "41645a48577dfbc7ac118c588f7582a3d40e7eef1d65ea19eb41586263b79c64",
+            "version": 2,
+            "business_code": "MR5201",
+            "semantics": "reuse"
+          }
+        ]
+      },
+      {
+        "endpoint_ids": [
+          "asset-fg3-ticket-woman-base-voice-01",
+          "material-voice-ticket-woman"
+        ],
+        "endpoint_codes": [
+          "M1259",
+          "M2677"
+        ],
+        "relations": [
+          {
+            "object_id": "mr-8c104f89773d48d1e27aee2d772e3554",
+            "revision_id": "a6f7f53170eccf70e85b09392ccee1100120819214e24636af57b1c515f76354",
+            "version": 2,
+            "business_code": "MR5166",
+            "semantics": "alternative"
+          },
+          {
+            "object_id": "mr-98ee4084079d2ab12d818ef2d3d10c97",
+            "revision_id": "4325aebcf73aa446a7cbb7fd3e420c51a46ea406ac53b7ffaf4c9bad868616e3",
+            "version": 1,
+            "business_code": "MR5178",
+            "semantics": "reuse"
+          }
+        ]
+      },
+      {
+        "endpoint_ids": [
+          "asset-fg3-troupe-workers-caller-base-voice-01",
+          "material-voice-troupe-workers-caller"
+        ],
+        "endpoint_codes": [
+          "M1278",
+          "M2701"
+        ],
+        "relations": [
+          {
+            "object_id": "mr-aa202141e3d032c018105e73a8f64035",
+            "revision_id": "1201786578bf060af18f873c603d3d82abe14a243ab819cd5c8ade3829362d2f",
+            "version": 2,
+            "business_code": "MR5167",
+            "semantics": "alternative"
+          },
+          {
+            "object_id": "mr-88963c7bfa2f8786f78c79802a4074b6",
+            "revision_id": "90e8d8fc0f4e4f242c4d467f22d13fc618fe3eb21352db04b7a23a20211191e3",
+            "version": 2,
+            "business_code": "MR5199",
+            "semantics": "reuse"
+          }
+        ]
+      },
+      {
+        "endpoint_ids": [
+          "asset-fg3-woodcutter-base-voice-01",
+          "material-voice-woodcutter"
+        ],
+        "endpoint_codes": [
+          "M1260",
+          "M2673"
+        ],
+        "relations": [
+          {
+            "object_id": "mr-ebe3fd508bf9dd5bca087d6cae6b188b",
+            "revision_id": "9b7c83bcc57b1dacb6b206afaeadfb566336cbe53c4e347e83d301db419433d9",
+            "version": 2,
+            "business_code": "MR5168",
+            "semantics": "alternative"
+          },
+          {
+            "object_id": "mr-b55bb3dce3629c238c82f3e94402164a",
+            "revision_id": "9ef7849adab49fd88ff93f9290710e4009592d1034b834d12f8659573660d1c7",
+            "version": 2,
+            "business_code": "MR5175",
+            "semantics": "reuse"
+          }
+        ]
+      },
+      {
+        "endpoint_ids": [
+          "asset-fg3-xiaoman-mother-base-voice-01",
+          "material-voice-xiaoman-mother"
+        ],
+        "endpoint_codes": [
+          "M1279",
+          "M2695"
+        ],
+        "relations": [
+          {
+            "object_id": "mr-96711e861b9acc25afdaef885085b115",
+            "revision_id": "6e91b10acd2308682ebcdd34fddbbdaac27f11b1f34bfbed95a2845837c3e910",
+            "version": 2,
+            "business_code": "MR5169",
+            "semantics": "alternative"
+          },
+          {
+            "object_id": "mr-525f765aea421c339aad38864552951a",
+            "revision_id": "4e3cadc603044f94353de700741bea9933767f096a0fe23a00e5e4d173845d2a",
+            "version": 2,
+            "business_code": "MR5195",
+            "semantics": "reuse"
+          }
+        ]
+      },
+      {
+        "endpoint_ids": [
+          "asset-fg3-zhao-base-voice-01",
+          "material-voice-zhao"
+        ],
+        "endpoint_codes": [
+          "M1261",
+          "M2672"
+        ],
+        "relations": [
+          {
+            "object_id": "mr-d3cea6c5ce547ac6668c06315ef07dab",
+            "revision_id": "5b43c215568f56997208ede3bcaa93daf7174674991609ce262b634a66a10b48",
+            "version": 2,
+            "business_code": "MR5170",
+            "semantics": "alternative"
+          },
+          {
+            "object_id": "mr-1742fcb48774510d94e0f0896cbe734c",
+            "revision_id": "6f0fa73805cbd21f1bc14d00b7c108454e89b691b82d24b8c4f092473d9e4e11",
+            "version": 2,
+            "business_code": "MR5174",
+            "semantics": "reuse"
+          }
+        ]
+      },
+      {
+        "endpoint_ids": [
+          "asset-fg3-zhou-voice-01",
+          "material-voice-zhou"
+        ],
+        "endpoint_codes": [
+          "M1138",
+          "M2671"
+        ],
+        "relations": [
+          {
+            "object_id": "mr-7abf6c8b148c3ceb95e804c71d3a3168",
+            "revision_id": "9a732607ebf8e8c8a0efb88332c73cc1a53e8e5a5c3a17460a01d494820d992e",
+            "version": 2,
+            "business_code": "MR5171",
+            "semantics": "alternative"
+          },
+          {
+            "object_id": "mr-6ebf533e618077f089bf3646688b5948",
+            "revision_id": "ab19f9edc4b0ac1c923f3791a027279c53dc88a8a1d44a73798e9b8f92e56c47",
+            "version": 2,
+            "business_code": "MR5173",
+            "semantics": "reuse"
+          }
+        ]
+      }
+    ]
+  },
+  "applicability": [
+    {
+      "object_id": "text-use-lead-lyrics-av-e01-a03-s06",
+      "revision_id": "ff145c9c90046cf6142a8b6441061c452348fda19abf41963c5c909113ba1567",
+      "endpoint_ids": [
+        "material-text-lead-lyrics",
+        "av-e01-a03-s06"
+      ],
+      "endpoint_codes": [
+        "M4078",
+        "ASH016"
+      ],
+      "reason": "只在旧纸露出时让观众读准首张十字；其余页无新增可读词。"
+    },
+    {
+      "object_id": "text-use-songbook-missing-line-av-e03-a01-s06",
+      "revision_id": "b03206c73b67ec7688ccc6628eb709f3061fdd495b779df651c9c41fddf97395",
+      "endpoint_ids": [
+        "material-text-songbook-missing-line",
+        "av-e03-a01-s06"
+      ],
+      "endpoint_codes": [
+        "M4080",
+        "ASH048"
+      ],
+      "reason": "只抄已知五字，下一列留白；递接后才由阿蘅夹入残本。"
+    },
+    {
+      "object_id": "text-use-songbook-missing-line-av-e07-a04-s03",
+      "revision_id": "2062a76cdee5a61180a91e057f2e73e310188ff1d4d3f4a14fa59b7e2f487249",
+      "endpoint_ids": [
+        "material-text-songbook-missing-line",
+        "av-e07-a04-s03"
+      ],
+      "endpoint_codes": [
+        "M4080",
+        "ASH144"
+      ],
+      "reason": "只抄已知五字，下一列留白；递接后才由阿蘅夹入残本。"
+    },
+    {
+      "object_id": "text-use-songbook-missing-line-av-e16-a03-s01",
+      "revision_id": "faf2bde0c765fa57500e5669f2cdd5de10abb9a79b4ff6ade64de4d4fb7799e3",
+      "endpoint_ids": [
+        "material-text-songbook-missing-line",
+        "av-e16-a03-s01"
+      ],
+      "endpoint_codes": [
+        "M4080",
+        "ASH313"
+      ],
+      "reason": "只抄已知五字，下一列留白；递接后才由阿蘅夹入残本。"
+    },
+    {
+      "object_id": "text-use-songbook-missing-line-av-e16-a03-s03",
+      "revision_id": "e6a4a35ce74566e8661130fabe56d8040aeecc23d58b61c9cf7566c6ac906412",
+      "endpoint_ids": [
+        "material-text-songbook-missing-line",
+        "av-e16-a03-s03"
+      ],
+      "endpoint_codes": [
+        "M4080",
+        "ASH315"
+      ],
+      "reason": "只抄已知五字，下一列留白；递接后才由阿蘅夹入残本。"
+    },
+    {
+      "object_id": "text-use-work-account-av-e03-a02-s09",
+      "revision_id": "a41ddcc18b0106b145f730a36e49f71988ae76cb4443becc17f16be9970cf5a8",
+      "endpoint_ids": [
+        "material-text-work-account",
+        "av-e03-a02-s09"
+      ],
+      "endpoint_codes": [
+        "M4081",
+        "ASH060"
+      ],
+      "reason": "按阶段显示约定、第一笔及第二笔；两笔已做工钱合计四升，不能把约定额计作第三笔。"
+    },
+    {
+      "object_id": "text-use-work-account-av-e04-a01-s03",
+      "revision_id": "40049363403922a199c7f1beef66031c955160cc8f40fed8b235e10c4e95346f",
+      "endpoint_ids": [
+        "material-text-work-account",
+        "av-e04-a01-s03"
+      ],
+      "endpoint_codes": [
+        "M4081",
+        "ASH064"
+      ],
+      "reason": "按阶段显示约定、第一笔及第二笔；两笔已做工钱合计四升，不能把约定额计作第三笔。"
+    },
+    {
+      "object_id": "text-use-work-account-av-e04-a01-s05",
+      "revision_id": "abc27a525989a3b93d97b7b38452d198988d618071d1e1ee001108e80a856905",
+      "endpoint_ids": [
+        "material-text-work-account",
+        "av-e04-a01-s05"
+      ],
+      "endpoint_codes": [
+        "M4081",
+        "ASH066"
+      ],
+      "reason": "按阶段显示约定、第一笔及第二笔；两笔已做工钱合计四升，不能把约定额计作第三笔。"
+    },
+    {
+      "object_id": "text-use-work-account-av-e07-a02-s06",
+      "revision_id": "1e69c588ddb1e9ce3858dbdea7f269d5853853071207638c564ab4026c415947",
+      "endpoint_ids": [
+        "material-text-work-account",
+        "av-e07-a02-s06"
+      ],
+      "endpoint_codes": [
+        "M4081",
+        "ASH136"
+      ],
+      "reason": "按阶段显示约定、第一笔及第二笔；两笔已做工钱合计四升，不能把约定额计作第三笔。"
+    },
+    {
+      "object_id": "text-use-court-papers-av-e07-a02-s04",
+      "revision_id": "b3e6c8e368ecba6bc0b852e3995c342a7b11a1b8b703b18f330dfbd26fcb3e58",
+      "endpoint_ids": [
+        "material-text-court-papers",
+        "av-e07-a02-s04"
+      ],
+      "endpoint_codes": [
+        "M4083",
+        "ASH134"
+      ],
+      "reason": "旧纸错误条款先显、换白纸后另写非自愿声明；应募纸和阿蘅免祭纸分开，不提前套用后续永久禁祭。"
+    },
+    {
+      "object_id": "text-use-court-papers-av-e07-a03-s03",
+      "revision_id": "25877e65c6aac595b3c5452767ae9e2daae9f9df819275a3feb72469342b9d9d",
+      "endpoint_ids": [
+        "material-text-court-papers",
+        "av-e07-a03-s03"
+      ],
+      "endpoint_codes": [
+        "M4083",
+        "ASH140"
+      ],
+      "reason": "旧纸错误条款先显、换白纸后另写非自愿声明；应募纸和阿蘅免祭纸分开，不提前套用后续永久禁祭。"
+    },
+    {
+      "object_id": "text-use-court-papers-av-e07-a03-s04",
+      "revision_id": "7eba90fe2a966b8ca8d3847a92dcb5a34c4d66a5e9995cd2eba8ca7dd8e22088",
+      "endpoint_ids": [
+        "material-text-court-papers",
+        "av-e07-a03-s04"
+      ],
+      "endpoint_codes": [
+        "M4083",
+        "ASH141"
+      ],
+      "reason": "旧纸错误条款先显、换白纸后另写非自愿声明；应募纸和阿蘅免祭纸分开，不提前套用后续永久禁祭。"
+    },
+    {
+      "object_id": "text-use-court-papers-av-e09-a02-s04",
+      "revision_id": "7be54653e3b6c524940e75bb621a41a3934ebecfc166d097ce6133ac90244b8b",
+      "endpoint_ids": [
+        "material-text-court-papers",
+        "av-e09-a02-s04"
+      ],
+      "endpoint_codes": [
+        "M4083",
+        "ASH175"
+      ],
+      "reason": "旧纸错误条款先显、换白纸后另写非自愿声明；应募纸和阿蘅免祭纸分开，不提前套用后续永久禁祭。"
+    },
+    {
+      "object_id": "text-use-court-papers-av-e09-a03-s01",
+      "revision_id": "9406e12f7ed32b7d86c6b26d481644c4f26c53570506f47e683c97671b5d1e35",
+      "endpoint_ids": [
+        "material-text-court-papers",
+        "av-e09-a03-s01"
+      ],
+      "endpoint_codes": [
+        "M4083",
+        "ASH178"
+      ],
+      "reason": "旧纸错误条款先显、换白纸后另写非自愿声明；应募纸和阿蘅免祭纸分开，不提前套用后续永久禁祭。"
+    },
+    {
+      "object_id": "text-use-court-papers-av-e11-a03-s01",
+      "revision_id": "8309eb0b7a7fd887dd39d4d118268cddba3fa416d5d7e5f78284c3550d73d5d4",
+      "endpoint_ids": [
+        "material-text-court-papers",
+        "av-e11-a03-s01"
+      ],
+      "endpoint_codes": [
+        "M4083",
+        "ASH214"
+      ],
+      "reason": "旧纸错误条款先显、换白纸后另写非自愿声明；应募纸和阿蘅免祭纸分开，不提前套用后续永久禁祭。"
+    },
+    {
+      "object_id": "text-use-court-papers-av-e15-a04-s01",
+      "revision_id": "25ad9bba0553fe75e6d5f1fedca15c1128542b8676d96fc0957b5a5205a18a3d",
+      "endpoint_ids": [
+        "material-text-court-papers",
+        "av-e15-a04-s01"
+      ],
+      "endpoint_codes": [
+        "M4083",
+        "ASH294"
+      ],
+      "reason": "旧纸错误条款先显、换白纸后另写非自愿声明；应募纸和阿蘅免祭纸分开，不提前套用后续永久禁祭。"
+    },
+    {
+      "object_id": "text-use-court-papers-av-e15-a04-s08",
+      "revision_id": "4d4eb8f6355802b4d87e10fe592e92118b1340b65fe659dddd72b29af7492f39",
+      "endpoint_ids": [
+        "material-text-court-papers",
+        "av-e15-a04-s08"
+      ],
+      "endpoint_codes": [
+        "M4083",
+        "ASH301"
+      ],
+      "reason": "旧纸错误条款先显、换白纸后另写非自愿声明；应募纸和阿蘅免祭纸分开，不提前套用后续永久禁祭。"
+    },
+    {
+      "object_id": "text-use-debt-reveal-av-e09-a03-s05",
+      "revision_id": "fe40d39866c4719674d45a88e9cecf4c4390e5a63ddc0ce9d014e3002bae0bd3",
+      "endpoint_ids": [
+        "material-text-debt-reveal",
+        "av-e09-a03-s05"
+      ],
+      "endpoint_codes": [
+        "M4084",
+        "ASH182"
+      ],
+      "reason": "先仅露六，再露完整原约；揭下的新贴纸另放，供奉小字到下一镜才读清，不在早集露出。"
+    },
+    {
+      "object_id": "text-use-debt-reveal-av-e15-a04-s01",
+      "revision_id": "4103aeb0566d4a8675e8e486436c242f9f8b482d8fbb8bd14c4d841cf7587f34",
+      "endpoint_ids": [
+        "material-text-debt-reveal",
+        "av-e15-a04-s01"
+      ],
+      "endpoint_codes": [
+        "M4084",
+        "ASH294"
+      ],
+      "reason": "先仅露六，再露完整原约；揭下的新贴纸另放，供奉小字到下一镜才读清，不在早集露出。"
+    },
+    {
+      "object_id": "text-use-songbook-completed-av-e16-a04-s04",
+      "revision_id": "e14c6108b895f240ccd9703227e51b1b7a9cff5cf440eb8455abc8c2d6d4cd85",
+      "endpoint_ids": [
+        "material-text-songbook-completed",
+        "av-e16-a04-s04"
+      ],
+      "endpoint_codes": [
+        "M4086",
+        "ASH320"
+      ],
+      "reason": "歌娘听到断处后才补齐，末句核准认旧桥；只在后段完成纸上使用，早集缺词区域仍空。"
+    },
+    {
+      "object_id": "text-use-songbook-completed-av-e16-a04-s05",
+      "revision_id": "a59e01590c34ca8711659a269f76810b48923513cfd099f47219faeb7e90b829",
+      "endpoint_ids": [
+        "material-text-songbook-completed",
+        "av-e16-a04-s05"
+      ],
+      "endpoint_codes": [
+        "M4086",
+        "ASH321"
+      ],
+      "reason": "歌娘听到断处后才补齐，末句核准认旧桥；只在后段完成纸上使用，早集缺词区域仍空。"
+    },
+    {
+      "object_id": "text-use-songbook-completed-av-e17-a01-s01",
+      "revision_id": "3d834d6b6c8e2ab8e333bf3bf9a55fe9de9d1f791ef0b6a0b5512265bc399437",
+      "endpoint_ids": [
+        "material-text-songbook-completed",
+        "av-e17-a01-s01"
+      ],
+      "endpoint_codes": [
+        "M4086",
+        "ASH322"
+      ],
+      "reason": "歌娘听到断处后才补齐，末句核准认旧桥；只在后段完成纸上使用，早集缺词区域仍空。"
+    },
+    {
+      "object_id": "text-use-songbook-completed-av-e17-a01-s03",
+      "revision_id": "c5c4586c16415ed9895acacf7a76e065c8ecad05f9abdcda8fc0d2efafdd1450",
+      "endpoint_ids": [
+        "material-text-songbook-completed",
+        "av-e17-a01-s03"
+      ],
+      "endpoint_codes": [
+        "M4086",
+        "ASH324"
+      ],
+      "reason": "歌娘听到断处后才补齐，末句核准认旧桥；只在后段完成纸上使用，早集缺词区域仍空。"
+    },
+    {
+      "object_id": "text-use-songbook-completed-av-e17-a01-s04",
+      "revision_id": "baf15c67cdaa72a8f38d3823052b98eed226dd9428501325b5c3614becc5ef6b",
+      "endpoint_ids": [
+        "material-text-songbook-completed",
+        "av-e17-a01-s04"
+      ],
+      "endpoint_codes": [
+        "M4086",
+        "ASH325"
+      ],
+      "reason": "歌娘听到断处后才补齐，末句核准认旧桥；只在后段完成纸上使用，早集缺词区域仍空。"
+    },
+    {
+      "object_id": "text-use-songbook-completed-av-e17-a01-s05",
+      "revision_id": "7d23f0ab13f219a5746b48ab6fca370c5a501a6ac59802d563a50dad92d58489",
+      "endpoint_ids": [
+        "material-text-songbook-completed",
+        "av-e17-a01-s05"
+      ],
+      "endpoint_codes": [
+        "M4086",
+        "ASH326"
+      ],
+      "reason": "歌娘听到断处后才补齐，末句核准认旧桥；只在后段完成纸上使用，早集缺词区域仍空。"
+    },
+    {
+      "object_id": "text-use-songbook-completed-av-e17-a01-s06",
+      "revision_id": "ed8332a18d77ecba3363fdb1dc41255a64c1d2e29cd16c01ea51fbb82bbea1ee",
+      "endpoint_ids": [
+        "material-text-songbook-completed",
+        "av-e17-a01-s06"
+      ],
+      "endpoint_codes": [
+        "M4086",
+        "ASH327"
+      ],
+      "reason": "歌娘听到断处后才补齐，末句核准认旧桥；只在后段完成纸上使用，早集缺词区域仍空。"
+    },
+    {
+      "object_id": "text-use-songbook-completed-av-e17-a03-s03",
+      "revision_id": "5c726d145ca38e8c9b677f15837156b10306512163622308afb831f1f6c129fa",
+      "endpoint_ids": [
+        "material-text-songbook-completed",
+        "av-e17-a03-s03"
+      ],
+      "endpoint_codes": [
+        "M4086",
+        "ASH333"
+      ],
+      "reason": "歌娘听到断处后才补齐，末句核准认旧桥；只在后段完成纸上使用，早集缺词区域仍空。"
+    },
+    {
+      "object_id": "text-use-songbook-completed-av-e17-a04-s07",
+      "revision_id": "735d16af9d531f6ac125c424585ecce8b594360f68b1ea6c1d370aa73221d81f",
+      "endpoint_ids": [
+        "material-text-songbook-completed",
+        "av-e17-a04-s07"
+      ],
+      "endpoint_codes": [
+        "M4086",
+        "ASH342"
+      ],
+      "reason": "歌娘听到断处后才补齐，末句核准认旧桥；只在后段完成纸上使用，早集缺词区域仍空。"
+    }
+  ],
+  "samples": [
+    {
+      "object_id": "relationship-li-ji-a-heng-personal",
+      "kind": "RELATION",
+      "revision_id": "3fd9f970bafe7dd687914320b183bcce57b65e3fac097f848c66496f9186e4ed",
+      "version": 2,
+      "payload": {
+        "applies_to": [
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s005-b023",
+              "screenplay-04-lantern-home-s005-b024",
+              "screenplay-04-lantern-home-s005-b025",
+              "screenplay-04-lantern-home-s005-b026",
+              "screenplay-04-lantern-home-s005-b027",
+              "screenplay-04-lantern-home-s005-b028"
+            ],
+            "object_id": "screenplay-04-lantern-home-e03",
+            "revision_id": "561c690a2040b7ffb25ceaa18b3246902d33d57614caa63ff47678cabc0156bd",
+            "scene_id": "s005"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s040-b001",
+              "screenplay-04-lantern-home-s040-b002",
+              "screenplay-04-lantern-home-s040-b003",
+              "screenplay-04-lantern-home-s040-b004",
+              "screenplay-04-lantern-home-s040-b005",
+              "screenplay-04-lantern-home-s040-b006",
+              "screenplay-04-lantern-home-s040-b007",
+              "screenplay-04-lantern-home-s040-b008",
+              "screenplay-04-lantern-home-s040-b009"
+            ],
+            "object_id": "screenplay-04-lantern-home-e17",
+            "revision_id": "86472299d571ceb960315b77be5e782e2153575aa4bfe44dead0c3fcc1818fd8",
+            "scene_id": "s040"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s036-b038"
+            ],
+            "object_id": "screenplay-04-lantern-home-e15",
+            "revision_id": "66dff731e9cea40ce22d89931790e69006d19db2d04fb724ba7e2d3a9ae7bc23",
+            "scene_id": "s036"
+          }
+        ],
+        "basis": "script",
+        "blocks": [
+          {
+            "id": "relationship",
+            "text": "李寄 — 相互照应 ↔ 阿蘅。"
+          }
+        ],
+        "category": "personal",
+        "direction": "mutual",
+        "entities": [
+          {
+            "object_id": "entity-li-ji",
+            "revision_id": "42af4494af12312922e3aa58ce011f67346ede435ef75b7b24a97827d999ec9b"
+          },
+          {
+            "object_id": "entity-a-heng",
+            "revision_id": "be76284a262dd11d562410a15e3fefcf6cbedb152eb5dad4c4d94b854619d663"
+          }
+        ],
+        "format": "production-relation-v1",
+        "label": "相互照应",
+        "relation_type": "entity",
+        "sources": [
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s005-b023",
+              "screenplay-04-lantern-home-s005-b024",
+              "screenplay-04-lantern-home-s005-b025",
+              "screenplay-04-lantern-home-s005-b026",
+              "screenplay-04-lantern-home-s005-b027",
+              "screenplay-04-lantern-home-s005-b028"
+            ],
+            "object_id": "screenplay-04-lantern-home-e03",
+            "revision_id": "561c690a2040b7ffb25ceaa18b3246902d33d57614caa63ff47678cabc0156bd",
+            "scene_id": "s005"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s040-b001",
+              "screenplay-04-lantern-home-s040-b002",
+              "screenplay-04-lantern-home-s040-b003",
+              "screenplay-04-lantern-home-s040-b004",
+              "screenplay-04-lantern-home-s040-b005",
+              "screenplay-04-lantern-home-s040-b006",
+              "screenplay-04-lantern-home-s040-b007",
+              "screenplay-04-lantern-home-s040-b008",
+              "screenplay-04-lantern-home-s040-b009"
+            ],
+            "object_id": "screenplay-04-lantern-home-e17",
+            "revision_id": "86472299d571ceb960315b77be5e782e2153575aa4bfe44dead0c3fcc1818fd8",
+            "scene_id": "s040"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s036-b038"
+            ],
+            "object_id": "screenplay-04-lantern-home-e15",
+            "revision_id": "66dff731e9cea40ce22d89931790e69006d19db2d04fb724ba7e2d3a9ae7bc23",
+            "scene_id": "s036"
+          }
+        ],
+        "title": "李寄 · 相互照应 · 阿蘅"
+      },
+      "business_code": "RL055",
+      "endpoint_ids": [
+        "entity-li-ji",
+        "entity-a-heng"
+      ],
+      "endpoint_codes": [
+        "EN012",
+        "EN002"
+      ]
+    },
+    {
+      "object_id": "relationship-zhao-a-heng-personal",
+      "kind": "RELATION",
+      "revision_id": "8186a67d494a75b5c8ea8e0299476d029b1557d58d2bd359fd871a0fd336ec9d",
+      "version": 2,
+      "payload": {
+        "applies_to": [
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s006-b013",
+              "screenplay-04-lantern-home-s006-b014",
+              "screenplay-04-lantern-home-s006-b015",
+              "screenplay-04-lantern-home-s006-b016",
+              "screenplay-04-lantern-home-s006-b017",
+              "screenplay-04-lantern-home-s006-b018",
+              "screenplay-04-lantern-home-s006-b019",
+              "screenplay-04-lantern-home-s006-b020",
+              "screenplay-04-lantern-home-s006-b021",
+              "screenplay-04-lantern-home-s006-b022",
+              "screenplay-04-lantern-home-s006-b023",
+              "screenplay-04-lantern-home-s006-b024"
+            ],
+            "object_id": "screenplay-04-lantern-home-e03",
+            "revision_id": "561c690a2040b7ffb25ceaa18b3246902d33d57614caa63ff47678cabc0156bd",
+            "scene_id": "s006"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s036-b002",
+              "screenplay-04-lantern-home-s036-b003",
+              "screenplay-04-lantern-home-s036-b004",
+              "screenplay-04-lantern-home-s036-b005",
+              "screenplay-04-lantern-home-s036-b006",
+              "screenplay-04-lantern-home-s036-b007",
+              "screenplay-04-lantern-home-s036-b008",
+              "screenplay-04-lantern-home-s036-b009"
+            ],
+            "object_id": "screenplay-04-lantern-home-e15",
+            "revision_id": "66dff731e9cea40ce22d89931790e69006d19db2d04fb724ba7e2d3a9ae7bc23",
+            "scene_id": "s036"
+          }
+        ],
+        "basis": "script",
+        "blocks": [
+          {
+            "id": "relationship",
+            "text": "赵执事 — 以领唱招募并胁迫入祭 → 阿蘅。"
+          }
+        ],
+        "category": "personal",
+        "direction": "forward",
+        "entities": [
+          {
+            "object_id": "entity-zhao",
+            "revision_id": "10782097784d8939bdcf74e885a976266fa85637451ecd5d52a73f1dd45e2c49"
+          },
+          {
+            "object_id": "entity-a-heng",
+            "revision_id": "be76284a262dd11d562410a15e3fefcf6cbedb152eb5dad4c4d94b854619d663"
+          }
+        ],
+        "format": "production-relation-v1",
+        "label": "以领唱招募并胁迫入祭",
+        "relation_type": "entity",
+        "sources": [
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s006-b013",
+              "screenplay-04-lantern-home-s006-b014",
+              "screenplay-04-lantern-home-s006-b015",
+              "screenplay-04-lantern-home-s006-b016",
+              "screenplay-04-lantern-home-s006-b017",
+              "screenplay-04-lantern-home-s006-b018",
+              "screenplay-04-lantern-home-s006-b019",
+              "screenplay-04-lantern-home-s006-b020",
+              "screenplay-04-lantern-home-s006-b021",
+              "screenplay-04-lantern-home-s006-b022",
+              "screenplay-04-lantern-home-s006-b023",
+              "screenplay-04-lantern-home-s006-b024"
+            ],
+            "object_id": "screenplay-04-lantern-home-e03",
+            "revision_id": "561c690a2040b7ffb25ceaa18b3246902d33d57614caa63ff47678cabc0156bd",
+            "scene_id": "s006"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s036-b002",
+              "screenplay-04-lantern-home-s036-b003",
+              "screenplay-04-lantern-home-s036-b004",
+              "screenplay-04-lantern-home-s036-b005",
+              "screenplay-04-lantern-home-s036-b006",
+              "screenplay-04-lantern-home-s036-b007",
+              "screenplay-04-lantern-home-s036-b008",
+              "screenplay-04-lantern-home-s036-b009"
+            ],
+            "object_id": "screenplay-04-lantern-home-e15",
+            "revision_id": "66dff731e9cea40ce22d89931790e69006d19db2d04fb724ba7e2d3a9ae7bc23",
+            "scene_id": "s036"
+          }
+        ],
+        "title": "赵执事 · 以领唱招募并胁迫入祭 · 阿蘅"
+      },
+      "business_code": "RL149",
+      "endpoint_ids": [
+        "entity-zhao",
+        "entity-a-heng"
+      ],
+      "endpoint_codes": [
+        "EN037",
+        "EN002"
+      ]
+    },
+    {
+      "object_id": "mr-material-av-e01-a01-s01-first-frame-0698",
+      "kind": "MATERIAL_RELATION",
+      "revision_id": "36187821034ea71018bb98a701a848279b3ca5e38d59e12bf7aceb51dd8b5598",
+      "version": 4,
+      "payload": {
+        "attributes": {
+          "i2i_budget": 2
+        },
+        "basis": "production_choice",
+        "blocks": [
+          {
+            "id": "purpose",
+            "text": "首帧使用：阿蘅·日常洗旧青衣"
+          }
+        ],
+        "change": "只调整本镜站位、手位、朝向与构图",
+        "check": "歌本干燥完整；先摊在篮上、压石，再唱一道滩，唱完才翻过两页。米工钱尚未交付，米袋不入开场；李寄尚未入画。",
+        "context": {
+          "object_id": "av-e01-a01-s01",
+          "revision_id": "982201d6e8e009c605b9abe4015de8511d856021abd006305b04eda7afa87325"
+        },
+        "downstream_id": "material-av-e01-a01-s01-first-frame",
+        "format": "production-material-relation-v1",
+        "necessity": "required",
+        "preserve": "同一人物、动物或已定义群组的身份、数量与比例一致；适用的衣着、伤侧和持物按本阶段，不给动物套衣饰或把群组缩成一人",
+        "purpose": "首帧使用：阿蘅·日常洗旧青衣",
+        "semantics": "reference",
+        "sources": [
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s001-b001",
+              "screenplay-04-lantern-home-s001-b002",
+              "screenplay-04-lantern-home-s001-b003"
+            ],
+            "object_id": "screenplay-04-lantern-home-e01",
+            "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+            "scene_id": "s001"
+          }
+        ],
+        "title": "首帧使用：阿蘅·日常洗旧青衣",
+        "type_definition": {
+          "attributes": {
+            "i2i_budget": "图像最深参考谱系上限，执行时按实际输入回查，不是已生成代数"
+          },
+          "direction": "directed",
+          "endpoints": [
+            "REQUIREMENT",
+            "REQUIREMENT"
+          ]
+        },
+        "type_id": "state-frame",
+        "type_label": "实体状态到首帧",
+        "type_version": 1,
+        "upstream": {
+          "object_id": "material-form-a-heng-blue-overall",
+          "revision_id": "24bdcd841798cae54d7898cd3b4378a51ce80ef65df878fead2dcbde629f09a9"
+        }
+      },
+      "business_code": "MR268",
+      "endpoint_ids": [
+        "material-form-a-heng-blue-overall",
+        "material-av-e01-a01-s01-first-frame"
+      ],
+      "endpoint_codes": [
+        "M2710",
+        "M2974"
+      ]
+    },
+    {
+      "object_id": "text-use-work-account-av-e04-a01-s03",
+      "kind": "RELATION",
+      "revision_id": "40049363403922a199c7f1beef66031c955160cc8f40fed8b235e10c4e95346f",
+      "version": 3,
+      "payload": {
+        "basis": "production_choice",
+        "blocks": [
+          {
+            "id": "use",
+            "text": "按阶段显示约定、第一笔及第二笔；两笔已做工钱合计四升，不能把约定额计作第三笔。"
+          }
+        ],
+        "format": "production-relation-v1",
+        "reason": "按阶段显示约定、第一笔及第二笔；两笔已做工钱合计四升，不能把约定额计作第三笔。",
+        "relation_type": "applicability",
+        "scope": {
+          "object_id": "av-e04-a01-s03",
+          "revision_id": "49cbfd847728bfa2c38e4d234ce28db08e7519143710482cad74d0004ebbb58c"
+        },
+        "sources": [
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s007-b003"
+            ],
+            "object_id": "screenplay-04-lantern-home-e04",
+            "revision_id": "e720c535cacff062ee5bacc9b6cd9bba6664afd9155f15b6ad1475eeed2c66f2",
+            "scene_id": "s007"
+          }
+        ],
+        "subject": {
+          "object_id": "material-text-work-account",
+          "revision_id": "3f7c65f9a611e616924e4daa137f73efcf19aa64ff6c30fd1d83151d4debcb17"
+        },
+        "title": "歌本背页记工 · 准确字层交接在本镜的交接"
+      },
+      "business_code": "text-use-work-account-av-e04-a01-s03",
+      "endpoint_ids": [
+        "material-text-work-account",
+        "av-e04-a01-s03"
+      ],
+      "endpoint_codes": [
+        "M4081",
+        "ASH064"
+      ]
+    },
+    {
+      "object_id": "mr-1982bd1e5f3997f7a58bc3d364f7252a",
+      "kind": "MATERIAL_RELATION",
+      "revision_id": "d10c4dae482bdb5b00af19fe353438e8f142f6251bcb22c22af445c5d370d1c5",
+      "version": 2,
+      "payload": {
+        "attributes": {
+          "i2i_budget": 2
+        },
+        "basis": "production_choice",
+        "blocks": [
+          {
+            "id": "purpose",
+            "text": "已有音色候选：限定片段复用方案待认可"
+          }
+        ],
+        "change": "只取声音身份，现场重新表演本镜正文；不继承旧试读台词、语气、呼吸或环境，也不冒充新试样的生成结果",
+        "check": "第1集的日常合作、讨价、轻快回应与克制说怕需要同一少女身份；初段的轻盈、自然、非播报声线可作身份依据。只取身份，不继承对长者的劝慰语气；不把原词当作当前剧本音轨。；新方案、片段及本镜表演须独立认可，不转授旧母版判断。",
+        "context": {
+          "object_id": "entity-a-heng",
+          "revision_id": "be76284a262dd11d562410a15e3fefcf6cbedb152eb5dad4c4d94b854619d663"
+        },
+        "downstream_id": "material-voice-a-heng",
+        "format": "production-material-relation-v1",
+        "necessity": "optional",
+        "preserve": "准确旧原件、真实调用与原说话身份；历史母版认可只限旧原件",
+        "purpose": "已有音色候选：限定片段复用方案待认可",
+        "semantics": "alternative",
+        "sources": [
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s001-b001",
+              "screenplay-04-lantern-home-s001-b002",
+              "screenplay-04-lantern-home-s001-b003",
+              "screenplay-04-lantern-home-s001-b004",
+              "screenplay-04-lantern-home-s001-b006",
+              "screenplay-04-lantern-home-s001-b008",
+              "screenplay-04-lantern-home-s001-b009",
+              "screenplay-04-lantern-home-s001-b011",
+              "screenplay-04-lantern-home-s001-b013",
+              "screenplay-04-lantern-home-s001-b015",
+              "screenplay-04-lantern-home-s001-b016",
+              "screenplay-04-lantern-home-s001-b017",
+              "screenplay-04-lantern-home-s001-b019",
+              "screenplay-04-lantern-home-s001-b021",
+              "screenplay-04-lantern-home-s001-b022",
+              "screenplay-04-lantern-home-s001-b023",
+              "screenplay-04-lantern-home-s001-b025",
+              "screenplay-04-lantern-home-s001-b026",
+              "screenplay-04-lantern-home-s001-b028",
+              "screenplay-04-lantern-home-s001-b030",
+              "screenplay-04-lantern-home-s001-b031"
+            ],
+            "object_id": "screenplay-04-lantern-home-e01",
+            "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+            "scene_id": "s001"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s002-b002",
+              "screenplay-04-lantern-home-s002-b003",
+              "screenplay-04-lantern-home-s002-b005",
+              "screenplay-04-lantern-home-s002-b008",
+              "screenplay-04-lantern-home-s002-b009",
+              "screenplay-04-lantern-home-s002-b012",
+              "screenplay-04-lantern-home-s002-b015",
+              "screenplay-04-lantern-home-s002-b018",
+              "screenplay-04-lantern-home-s002-b019",
+              "screenplay-04-lantern-home-s002-b022",
+              "screenplay-04-lantern-home-s002-b025",
+              "screenplay-04-lantern-home-s002-b027",
+              "screenplay-04-lantern-home-s002-b028",
+              "screenplay-04-lantern-home-s002-b030",
+              "screenplay-04-lantern-home-s002-b031"
+            ],
+            "object_id": "screenplay-04-lantern-home-e01",
+            "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+            "scene_id": "s002"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s003-b001",
+              "screenplay-04-lantern-home-s003-b007",
+              "screenplay-04-lantern-home-s003-b008",
+              "screenplay-04-lantern-home-s003-b009",
+              "screenplay-04-lantern-home-s003-b012",
+              "screenplay-04-lantern-home-s003-b014",
+              "screenplay-04-lantern-home-s003-b015",
+              "screenplay-04-lantern-home-s003-b018",
+              "screenplay-04-lantern-home-s003-b019",
+              "screenplay-04-lantern-home-s003-b020",
+              "screenplay-04-lantern-home-s003-b023",
+              "screenplay-04-lantern-home-s003-b025",
+              "screenplay-04-lantern-home-s003-b026",
+              "screenplay-04-lantern-home-s003-b027",
+              "screenplay-04-lantern-home-s003-b030",
+              "screenplay-04-lantern-home-s003-b032"
+            ],
+            "object_id": "screenplay-04-lantern-home-e02",
+            "revision_id": "3d68c31be1c91938d71734a60d7486dd9c17eed67ae88d51a23772a7ba61245d",
+            "scene_id": "s003"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s004-b001",
+              "screenplay-04-lantern-home-s004-b002",
+              "screenplay-04-lantern-home-s004-b004",
+              "screenplay-04-lantern-home-s004-b006",
+              "screenplay-04-lantern-home-s004-b007",
+              "screenplay-04-lantern-home-s004-b009",
+              "screenplay-04-lantern-home-s004-b010",
+              "screenplay-04-lantern-home-s004-b013",
+              "screenplay-04-lantern-home-s004-b014",
+              "screenplay-04-lantern-home-s004-b016",
+              "screenplay-04-lantern-home-s004-b017",
+              "screenplay-04-lantern-home-s004-b020",
+              "screenplay-04-lantern-home-s004-b022",
+              "screenplay-04-lantern-home-s004-b023",
+              "screenplay-04-lantern-home-s004-b025",
+              "screenplay-04-lantern-home-s004-b027",
+              "screenplay-04-lantern-home-s004-b029",
+              "screenplay-04-lantern-home-s004-b030",
+              "screenplay-04-lantern-home-s004-b031",
+              "screenplay-04-lantern-home-s004-b033"
+            ],
+            "object_id": "screenplay-04-lantern-home-e02",
+            "revision_id": "3d68c31be1c91938d71734a60d7486dd9c17eed67ae88d51a23772a7ba61245d",
+            "scene_id": "s004"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s005-b003",
+              "screenplay-04-lantern-home-s005-b008",
+              "screenplay-04-lantern-home-s005-b015",
+              "screenplay-04-lantern-home-s005-b017",
+              "screenplay-04-lantern-home-s005-b018",
+              "screenplay-04-lantern-home-s005-b021",
+              "screenplay-04-lantern-home-s005-b023",
+              "screenplay-04-lantern-home-s005-b026",
+              "screenplay-04-lantern-home-s005-b027",
+              "screenplay-04-lantern-home-s005-b028"
+            ],
+            "object_id": "screenplay-04-lantern-home-e03",
+            "revision_id": "561c690a2040b7ffb25ceaa18b3246902d33d57614caa63ff47678cabc0156bd",
+            "scene_id": "s005"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s006-b002",
+              "screenplay-04-lantern-home-s006-b005",
+              "screenplay-04-lantern-home-s006-b006",
+              "screenplay-04-lantern-home-s006-b008",
+              "screenplay-04-lantern-home-s006-b010",
+              "screenplay-04-lantern-home-s006-b013",
+              "screenplay-04-lantern-home-s006-b016",
+              "screenplay-04-lantern-home-s006-b018",
+              "screenplay-04-lantern-home-s006-b019",
+              "screenplay-04-lantern-home-s006-b021",
+              "screenplay-04-lantern-home-s006-b023",
+              "screenplay-04-lantern-home-s006-b025",
+              "screenplay-04-lantern-home-s006-b026",
+              "screenplay-04-lantern-home-s006-b028",
+              "screenplay-04-lantern-home-s006-b029",
+              "screenplay-04-lantern-home-s006-b031",
+              "screenplay-04-lantern-home-s006-b032",
+              "screenplay-04-lantern-home-s006-b035",
+              "screenplay-04-lantern-home-s006-b036"
+            ],
+            "object_id": "screenplay-04-lantern-home-e03",
+            "revision_id": "561c690a2040b7ffb25ceaa18b3246902d33d57614caa63ff47678cabc0156bd",
+            "scene_id": "s006"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s007-b001",
+              "screenplay-04-lantern-home-s007-b002",
+              "screenplay-04-lantern-home-s007-b003",
+              "screenplay-04-lantern-home-s007-b004",
+              "screenplay-04-lantern-home-s007-b005",
+              "screenplay-04-lantern-home-s007-b006",
+              "screenplay-04-lantern-home-s007-b007",
+              "screenplay-04-lantern-home-s007-b009",
+              "screenplay-04-lantern-home-s007-b011",
+              "screenplay-04-lantern-home-s007-b012",
+              "screenplay-04-lantern-home-s007-b014",
+              "screenplay-04-lantern-home-s007-b015",
+              "screenplay-04-lantern-home-s007-b017"
+            ],
+            "object_id": "screenplay-04-lantern-home-e04",
+            "revision_id": "e720c535cacff062ee5bacc9b6cd9bba6664afd9155f15b6ad1475eeed2c66f2",
+            "scene_id": "s007"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s008-b002",
+              "screenplay-04-lantern-home-s008-b005",
+              "screenplay-04-lantern-home-s008-b007",
+              "screenplay-04-lantern-home-s008-b008",
+              "screenplay-04-lantern-home-s008-b010",
+              "screenplay-04-lantern-home-s008-b013",
+              "screenplay-04-lantern-home-s008-b015",
+              "screenplay-04-lantern-home-s008-b016",
+              "screenplay-04-lantern-home-s008-b019",
+              "screenplay-04-lantern-home-s008-b021",
+              "screenplay-04-lantern-home-s008-b022",
+              "screenplay-04-lantern-home-s008-b025",
+              "screenplay-04-lantern-home-s008-b031",
+              "screenplay-04-lantern-home-s008-b035"
+            ],
+            "object_id": "screenplay-04-lantern-home-e04",
+            "revision_id": "e720c535cacff062ee5bacc9b6cd9bba6664afd9155f15b6ad1475eeed2c66f2",
+            "scene_id": "s008"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s009-b001",
+              "screenplay-04-lantern-home-s009-b003",
+              "screenplay-04-lantern-home-s009-b018",
+              "screenplay-04-lantern-home-s009-b019",
+              "screenplay-04-lantern-home-s009-b021",
+              "screenplay-04-lantern-home-s009-b022",
+              "screenplay-04-lantern-home-s009-b025",
+              "screenplay-04-lantern-home-s009-b026",
+              "screenplay-04-lantern-home-s009-b028",
+              "screenplay-04-lantern-home-s009-b031",
+              "screenplay-04-lantern-home-s009-b033",
+              "screenplay-04-lantern-home-s009-b035"
+            ],
+            "object_id": "screenplay-04-lantern-home-e05",
+            "revision_id": "8c58f966aca376091e4d555e1dec53506d537b79a9344efba97054fb7fbac04b",
+            "scene_id": "s009"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s010-b001",
+              "screenplay-04-lantern-home-s010-b002",
+              "screenplay-04-lantern-home-s010-b003",
+              "screenplay-04-lantern-home-s010-b005",
+              "screenplay-04-lantern-home-s010-b007",
+              "screenplay-04-lantern-home-s010-b008",
+              "screenplay-04-lantern-home-s010-b012",
+              "screenplay-04-lantern-home-s010-b014",
+              "screenplay-04-lantern-home-s010-b016"
+            ],
+            "object_id": "screenplay-04-lantern-home-e05",
+            "revision_id": "8c58f966aca376091e4d555e1dec53506d537b79a9344efba97054fb7fbac04b",
+            "scene_id": "s010"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s012-b002"
+            ],
+            "object_id": "screenplay-04-lantern-home-e05",
+            "revision_id": "8c58f966aca376091e4d555e1dec53506d537b79a9344efba97054fb7fbac04b",
+            "scene_id": "s012"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s013-b006"
+            ],
+            "object_id": "screenplay-04-lantern-home-e05",
+            "revision_id": "8c58f966aca376091e4d555e1dec53506d537b79a9344efba97054fb7fbac04b",
+            "scene_id": "s013"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s014-b004",
+              "screenplay-04-lantern-home-s014-b011",
+              "screenplay-04-lantern-home-s014-b027",
+              "screenplay-04-lantern-home-s014-b031",
+              "screenplay-04-lantern-home-s014-b033",
+              "screenplay-04-lantern-home-s014-b043"
+            ],
+            "object_id": "screenplay-04-lantern-home-e06",
+            "revision_id": "8032b712c6b3c6320d2f1b3a34ef2524e0427481f576becfd9e17735359707cb",
+            "scene_id": "s014"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s015-b006",
+              "screenplay-04-lantern-home-s015-b007",
+              "screenplay-04-lantern-home-s015-b009",
+              "screenplay-04-lantern-home-s015-b020",
+              "screenplay-04-lantern-home-s015-b023",
+              "screenplay-04-lantern-home-s015-b026"
+            ],
+            "object_id": "screenplay-04-lantern-home-e06",
+            "revision_id": "8032b712c6b3c6320d2f1b3a34ef2524e0427481f576becfd9e17735359707cb",
+            "scene_id": "s015"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s016-b001",
+              "screenplay-04-lantern-home-s016-b014",
+              "screenplay-04-lantern-home-s016-b016",
+              "screenplay-04-lantern-home-s016-b019"
+            ],
+            "object_id": "screenplay-04-lantern-home-e07",
+            "revision_id": "b57f260623beb1ffdcb32e77afdd9c65f831e297ccd82b91ad176e49b599aa19",
+            "scene_id": "s016"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s017-b028",
+              "screenplay-04-lantern-home-s017-b029",
+              "screenplay-04-lantern-home-s017-b030",
+              "screenplay-04-lantern-home-s017-b035",
+              "screenplay-04-lantern-home-s017-b039",
+              "screenplay-04-lantern-home-s017-b043",
+              "screenplay-04-lantern-home-s017-b044",
+              "screenplay-04-lantern-home-s017-b046",
+              "screenplay-04-lantern-home-s017-b047",
+              "screenplay-04-lantern-home-s017-b048",
+              "screenplay-04-lantern-home-s017-b049",
+              "screenplay-04-lantern-home-s017-b057",
+              "screenplay-04-lantern-home-s017-b058",
+              "screenplay-04-lantern-home-s017-b061"
+            ],
+            "object_id": "screenplay-04-lantern-home-e07",
+            "revision_id": "b57f260623beb1ffdcb32e77afdd9c65f831e297ccd82b91ad176e49b599aa19",
+            "scene_id": "s017"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s018-b011",
+              "screenplay-04-lantern-home-s018-b022",
+              "screenplay-04-lantern-home-s018-b027"
+            ],
+            "object_id": "screenplay-04-lantern-home-e08",
+            "revision_id": "a9a288b8ed442c918edab6f2e13ea2639aa622e09d78060b970b4c25e6030ad3",
+            "scene_id": "s018"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s019-b001",
+              "screenplay-04-lantern-home-s019-b002",
+              "screenplay-04-lantern-home-s019-b008",
+              "screenplay-04-lantern-home-s019-b009",
+              "screenplay-04-lantern-home-s019-b020",
+              "screenplay-04-lantern-home-s019-b022"
+            ],
+            "object_id": "screenplay-04-lantern-home-e08",
+            "revision_id": "a9a288b8ed442c918edab6f2e13ea2639aa622e09d78060b970b4c25e6030ad3",
+            "scene_id": "s019"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s020-b002",
+              "screenplay-04-lantern-home-s020-b003",
+              "screenplay-04-lantern-home-s020-b004",
+              "screenplay-04-lantern-home-s020-b012",
+              "screenplay-04-lantern-home-s020-b015",
+              "screenplay-04-lantern-home-s020-b019",
+              "screenplay-04-lantern-home-s020-b020",
+              "screenplay-04-lantern-home-s020-b021"
+            ],
+            "object_id": "screenplay-04-lantern-home-e09",
+            "revision_id": "239fd195c0450db3261d67337add67c652960982f2d254923d33b18d8507cf84",
+            "scene_id": "s020"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s022-b001",
+              "screenplay-04-lantern-home-s022-b002",
+              "screenplay-04-lantern-home-s022-b004",
+              "screenplay-04-lantern-home-s022-b007",
+              "screenplay-04-lantern-home-s022-b008",
+              "screenplay-04-lantern-home-s022-b011",
+              "screenplay-04-lantern-home-s022-b015",
+              "screenplay-04-lantern-home-s022-b019",
+              "screenplay-04-lantern-home-s022-b020",
+              "screenplay-04-lantern-home-s022-b022",
+              "screenplay-04-lantern-home-s022-b025",
+              "screenplay-04-lantern-home-s022-b027"
+            ],
+            "object_id": "screenplay-04-lantern-home-e09",
+            "revision_id": "239fd195c0450db3261d67337add67c652960982f2d254923d33b18d8507cf84",
+            "scene_id": "s022"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s026-b001",
+              "screenplay-04-lantern-home-s026-b002",
+              "screenplay-04-lantern-home-s026-b003",
+              "screenplay-04-lantern-home-s026-b004",
+              "screenplay-04-lantern-home-s026-b006",
+              "screenplay-04-lantern-home-s026-b007",
+              "screenplay-04-lantern-home-s026-b011",
+              "screenplay-04-lantern-home-s026-b013",
+              "screenplay-04-lantern-home-s026-b026",
+              "screenplay-04-lantern-home-s026-b027",
+              "screenplay-04-lantern-home-s026-b029",
+              "screenplay-04-lantern-home-s026-b032",
+              "screenplay-04-lantern-home-s026-b034",
+              "screenplay-04-lantern-home-s026-b036"
+            ],
+            "object_id": "screenplay-04-lantern-home-e11",
+            "revision_id": "95475950c78fb133139df9d7b783089c9547c887334ad44982ed4e4f788bbcb5",
+            "scene_id": "s026"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s027-b002",
+              "screenplay-04-lantern-home-s027-b003",
+              "screenplay-04-lantern-home-s027-b006",
+              "screenplay-04-lantern-home-s027-b009",
+              "screenplay-04-lantern-home-s027-b011",
+              "screenplay-04-lantern-home-s027-b013",
+              "screenplay-04-lantern-home-s027-b014",
+              "screenplay-04-lantern-home-s027-b021"
+            ],
+            "object_id": "screenplay-04-lantern-home-e11",
+            "revision_id": "95475950c78fb133139df9d7b783089c9547c887334ad44982ed4e4f788bbcb5",
+            "scene_id": "s027"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s028-b009",
+              "screenplay-04-lantern-home-s028-b010",
+              "screenplay-04-lantern-home-s028-b012",
+              "screenplay-04-lantern-home-s028-b013",
+              "screenplay-04-lantern-home-s028-b014",
+              "screenplay-04-lantern-home-s028-b016",
+              "screenplay-04-lantern-home-s028-b018",
+              "screenplay-04-lantern-home-s028-b019",
+              "screenplay-04-lantern-home-s028-b020",
+              "screenplay-04-lantern-home-s028-b021",
+              "screenplay-04-lantern-home-s028-b028",
+              "screenplay-04-lantern-home-s028-b032",
+              "screenplay-04-lantern-home-s028-b041",
+              "screenplay-04-lantern-home-s028-b043"
+            ],
+            "object_id": "screenplay-04-lantern-home-e12",
+            "revision_id": "b398ec886d04e1184cd3463d0edd7a85eeb6f5c0140f06ea8b3c57031f02b60f",
+            "scene_id": "s028"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s029-b011",
+              "screenplay-04-lantern-home-s029-b012",
+              "screenplay-04-lantern-home-s029-b021"
+            ],
+            "object_id": "screenplay-04-lantern-home-e12",
+            "revision_id": "b398ec886d04e1184cd3463d0edd7a85eeb6f5c0140f06ea8b3c57031f02b60f",
+            "scene_id": "s029"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s030-b016",
+              "screenplay-04-lantern-home-s030-b017",
+              "screenplay-04-lantern-home-s030-b029"
+            ],
+            "object_id": "screenplay-04-lantern-home-e13",
+            "revision_id": "d479a463803753088fb4779e38aec66dea94c29b4cb2322861d729027a020d55",
+            "scene_id": "s030"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s031-b003"
+            ],
+            "object_id": "screenplay-04-lantern-home-e13",
+            "revision_id": "d479a463803753088fb4779e38aec66dea94c29b4cb2322861d729027a020d55",
+            "scene_id": "s031"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s032-b010",
+              "screenplay-04-lantern-home-s032-b022",
+              "screenplay-04-lantern-home-s032-b023",
+              "screenplay-04-lantern-home-s032-b026"
+            ],
+            "object_id": "screenplay-04-lantern-home-e14",
+            "revision_id": "f0e2aa42927953ba45751c3a661dbfe7a46954e00cb9a7c378c1b62b7300d67e",
+            "scene_id": "s032"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s033-b002",
+              "screenplay-04-lantern-home-s033-b003",
+              "screenplay-04-lantern-home-s033-b018",
+              "screenplay-04-lantern-home-s033-b019",
+              "screenplay-04-lantern-home-s033-b021",
+              "screenplay-04-lantern-home-s033-b024",
+              "screenplay-04-lantern-home-s033-b032"
+            ],
+            "object_id": "screenplay-04-lantern-home-e14",
+            "revision_id": "f0e2aa42927953ba45751c3a661dbfe7a46954e00cb9a7c378c1b62b7300d67e",
+            "scene_id": "s033"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s034-b002",
+              "screenplay-04-lantern-home-s034-b006",
+              "screenplay-04-lantern-home-s034-b007",
+              "screenplay-04-lantern-home-s034-b008",
+              "screenplay-04-lantern-home-s034-b009",
+              "screenplay-04-lantern-home-s034-b026",
+              "screenplay-04-lantern-home-s034-b030"
+            ],
+            "object_id": "screenplay-04-lantern-home-e15",
+            "revision_id": "66dff731e9cea40ce22d89931790e69006d19db2d04fb724ba7e2d3a9ae7bc23",
+            "scene_id": "s034"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s036-b004",
+              "screenplay-04-lantern-home-s036-b005",
+              "screenplay-04-lantern-home-s036-b038"
+            ],
+            "object_id": "screenplay-04-lantern-home-e15",
+            "revision_id": "66dff731e9cea40ce22d89931790e69006d19db2d04fb724ba7e2d3a9ae7bc23",
+            "scene_id": "s036"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s037-b008",
+              "screenplay-04-lantern-home-s037-b011",
+              "screenplay-04-lantern-home-s037-b012",
+              "screenplay-04-lantern-home-s037-b013",
+              "screenplay-04-lantern-home-s037-b014",
+              "screenplay-04-lantern-home-s037-b016",
+              "screenplay-04-lantern-home-s037-b017",
+              "screenplay-04-lantern-home-s037-b019",
+              "screenplay-04-lantern-home-s037-b020",
+              "screenplay-04-lantern-home-s037-b021",
+              "screenplay-04-lantern-home-s037-b022",
+              "screenplay-04-lantern-home-s037-b025",
+              "screenplay-04-lantern-home-s037-b026"
+            ],
+            "object_id": "screenplay-04-lantern-home-e16",
+            "revision_id": "94ca5b3b1fa8e9acc7a25d7918904c8a8147cdd572c879b6c894ad4f517412d2",
+            "scene_id": "s037"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s038-b001",
+              "screenplay-04-lantern-home-s038-b002",
+              "screenplay-04-lantern-home-s038-b006",
+              "screenplay-04-lantern-home-s038-b008",
+              "screenplay-04-lantern-home-s038-b009",
+              "screenplay-04-lantern-home-s038-b010",
+              "screenplay-04-lantern-home-s038-b011",
+              "screenplay-04-lantern-home-s038-b012"
+            ],
+            "object_id": "screenplay-04-lantern-home-e16",
+            "revision_id": "94ca5b3b1fa8e9acc7a25d7918904c8a8147cdd572c879b6c894ad4f517412d2",
+            "scene_id": "s038"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s039-b004",
+              "screenplay-04-lantern-home-s039-b005",
+              "screenplay-04-lantern-home-s039-b008",
+              "screenplay-04-lantern-home-s039-b013",
+              "screenplay-04-lantern-home-s039-b014",
+              "screenplay-04-lantern-home-s039-b016",
+              "screenplay-04-lantern-home-s039-b017",
+              "screenplay-04-lantern-home-s039-b019",
+              "screenplay-04-lantern-home-s039-b020"
+            ],
+            "object_id": "screenplay-04-lantern-home-e16",
+            "revision_id": "94ca5b3b1fa8e9acc7a25d7918904c8a8147cdd572c879b6c894ad4f517412d2",
+            "scene_id": "s039"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s040-b001",
+              "screenplay-04-lantern-home-s040-b003",
+              "screenplay-04-lantern-home-s040-b004",
+              "screenplay-04-lantern-home-s040-b007",
+              "screenplay-04-lantern-home-s040-b009",
+              "screenplay-04-lantern-home-s040-b010",
+              "screenplay-04-lantern-home-s040-b011",
+              "screenplay-04-lantern-home-s040-b012",
+              "screenplay-04-lantern-home-s040-b013",
+              "screenplay-04-lantern-home-s040-b014",
+              "screenplay-04-lantern-home-s040-b015",
+              "screenplay-04-lantern-home-s040-b016",
+              "screenplay-04-lantern-home-s040-b018",
+              "screenplay-04-lantern-home-s040-b019"
+            ],
+            "object_id": "screenplay-04-lantern-home-e17",
+            "revision_id": "86472299d571ceb960315b77be5e782e2153575aa4bfe44dead0c3fcc1818fd8",
+            "scene_id": "s040"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s041-b008",
+              "screenplay-04-lantern-home-s041-b009",
+              "screenplay-04-lantern-home-s041-b010",
+              "screenplay-04-lantern-home-s041-b011",
+              "screenplay-04-lantern-home-s041-b012",
+              "screenplay-04-lantern-home-s041-b013",
+              "screenplay-04-lantern-home-s041-b015",
+              "screenplay-04-lantern-home-s041-b016",
+              "screenplay-04-lantern-home-s041-b017",
+              "screenplay-04-lantern-home-s041-b019",
+              "screenplay-04-lantern-home-s041-b021"
+            ],
+            "object_id": "screenplay-04-lantern-home-e17",
+            "revision_id": "86472299d571ceb960315b77be5e782e2153575aa4bfe44dead0c3fcc1818fd8",
+            "scene_id": "s041"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s042-b003",
+              "screenplay-04-lantern-home-s042-b004",
+              "screenplay-04-lantern-home-s042-b007",
+              "screenplay-04-lantern-home-s042-b009",
+              "screenplay-04-lantern-home-s042-b011",
+              "screenplay-04-lantern-home-s042-b012",
+              "screenplay-04-lantern-home-s042-b013",
+              "screenplay-04-lantern-home-s042-b015",
+              "screenplay-04-lantern-home-s042-b016"
+            ],
+            "object_id": "screenplay-04-lantern-home-e17",
+            "revision_id": "86472299d571ceb960315b77be5e782e2153575aa4bfe44dead0c3fcc1818fd8",
+            "scene_id": "s042"
+          }
+        ],
+        "title": "已有音色候选：限定片段复用方案待认可",
+        "type_definition": {
+          "attributes": {
+            "i2i_budget": "图像最深参考谱系上限，执行时按实际输入回查，不是已生成代数"
+          },
+          "direction": "directed",
+          "endpoints": [
+            "ASSET",
+            "REQUIREMENT"
+          ]
+        },
+        "type_id": "existing-candidate",
+        "type_label": "existing-candidate",
+        "type_version": 1,
+        "upstream": {
+          "object_id": "asset-fg3-aheng-voice-01",
+          "revision_id": "e522f05e989232e8323608cc74addd94b5e542c15c2d69692109c5fdd3e78ecb"
+        }
+      },
+      "business_code": "MR5132",
+      "endpoint_ids": [
+        "asset-fg3-aheng-voice-01",
+        "material-voice-a-heng"
+      ],
+      "endpoint_codes": [
+        "M1134",
+        "M2669"
+      ]
+    },
+    {
+      "object_id": "mr-02c83518892408c7cb6f9dec76c33f42",
+      "kind": "MATERIAL_RELATION",
+      "revision_id": "11758e44266d5ebe8172c1610b2e37dcb3402d3bcc60ad199d7f7205621e048a",
+      "version": 2,
+      "payload": {
+        "attributes": {
+          "i2i_budget": 2
+        },
+        "basis": "production_choice",
+        "blocks": [
+          {
+            "id": "purpose",
+            "text": "阿蘅：复用旧原件的说话身份片段；新方案和片段须独立认可"
+          }
+        ],
+        "change": "不继承：旧试读台词、劝慰与俏皮语气、旧呼吸与停顿、录音空间、歌唱旋律或演唱能力",
+        "check": "核完整气口、当前声音方向与独立片段认可；不把旧母版认可转授新方案。",
+        "context": {
+          "object_id": "entity-a-heng",
+          "revision_id": "be76284a262dd11d562410a15e3fefcf6cbedb152eb5dad4c4d94b854619d663"
+        },
+        "downstream_id": "material-voice-a-heng",
+        "format": "production-material-relation-v1",
+        "necessity": "required",
+        "preserve": "阿蘅的说话声音身份；新台词、呼吸、音量、情绪和声源距离由本镜重新表演。",
+        "purpose": "阿蘅：复用旧原件的说话身份片段；新方案和片段须独立认可",
+        "semantics": "reuse",
+        "sources": [
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s001-b001",
+              "screenplay-04-lantern-home-s001-b002",
+              "screenplay-04-lantern-home-s001-b003",
+              "screenplay-04-lantern-home-s001-b004",
+              "screenplay-04-lantern-home-s001-b006",
+              "screenplay-04-lantern-home-s001-b008",
+              "screenplay-04-lantern-home-s001-b009",
+              "screenplay-04-lantern-home-s001-b011",
+              "screenplay-04-lantern-home-s001-b013",
+              "screenplay-04-lantern-home-s001-b015",
+              "screenplay-04-lantern-home-s001-b016",
+              "screenplay-04-lantern-home-s001-b017",
+              "screenplay-04-lantern-home-s001-b019",
+              "screenplay-04-lantern-home-s001-b021",
+              "screenplay-04-lantern-home-s001-b022",
+              "screenplay-04-lantern-home-s001-b023",
+              "screenplay-04-lantern-home-s001-b025",
+              "screenplay-04-lantern-home-s001-b026",
+              "screenplay-04-lantern-home-s001-b028",
+              "screenplay-04-lantern-home-s001-b030",
+              "screenplay-04-lantern-home-s001-b031"
+            ],
+            "object_id": "screenplay-04-lantern-home-e01",
+            "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+            "scene_id": "s001"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s002-b002",
+              "screenplay-04-lantern-home-s002-b003",
+              "screenplay-04-lantern-home-s002-b005",
+              "screenplay-04-lantern-home-s002-b008",
+              "screenplay-04-lantern-home-s002-b009",
+              "screenplay-04-lantern-home-s002-b012",
+              "screenplay-04-lantern-home-s002-b015",
+              "screenplay-04-lantern-home-s002-b018",
+              "screenplay-04-lantern-home-s002-b019",
+              "screenplay-04-lantern-home-s002-b022",
+              "screenplay-04-lantern-home-s002-b025",
+              "screenplay-04-lantern-home-s002-b027",
+              "screenplay-04-lantern-home-s002-b028",
+              "screenplay-04-lantern-home-s002-b030",
+              "screenplay-04-lantern-home-s002-b031"
+            ],
+            "object_id": "screenplay-04-lantern-home-e01",
+            "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+            "scene_id": "s002"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s003-b001",
+              "screenplay-04-lantern-home-s003-b007",
+              "screenplay-04-lantern-home-s003-b008",
+              "screenplay-04-lantern-home-s003-b009",
+              "screenplay-04-lantern-home-s003-b012",
+              "screenplay-04-lantern-home-s003-b014",
+              "screenplay-04-lantern-home-s003-b015",
+              "screenplay-04-lantern-home-s003-b018",
+              "screenplay-04-lantern-home-s003-b019",
+              "screenplay-04-lantern-home-s003-b020",
+              "screenplay-04-lantern-home-s003-b023",
+              "screenplay-04-lantern-home-s003-b025",
+              "screenplay-04-lantern-home-s003-b026",
+              "screenplay-04-lantern-home-s003-b027",
+              "screenplay-04-lantern-home-s003-b030",
+              "screenplay-04-lantern-home-s003-b032"
+            ],
+            "object_id": "screenplay-04-lantern-home-e02",
+            "revision_id": "3d68c31be1c91938d71734a60d7486dd9c17eed67ae88d51a23772a7ba61245d",
+            "scene_id": "s003"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s004-b001",
+              "screenplay-04-lantern-home-s004-b002",
+              "screenplay-04-lantern-home-s004-b004",
+              "screenplay-04-lantern-home-s004-b006",
+              "screenplay-04-lantern-home-s004-b007",
+              "screenplay-04-lantern-home-s004-b009",
+              "screenplay-04-lantern-home-s004-b010",
+              "screenplay-04-lantern-home-s004-b013",
+              "screenplay-04-lantern-home-s004-b014",
+              "screenplay-04-lantern-home-s004-b016",
+              "screenplay-04-lantern-home-s004-b017",
+              "screenplay-04-lantern-home-s004-b020",
+              "screenplay-04-lantern-home-s004-b022",
+              "screenplay-04-lantern-home-s004-b023",
+              "screenplay-04-lantern-home-s004-b025",
+              "screenplay-04-lantern-home-s004-b027",
+              "screenplay-04-lantern-home-s004-b029",
+              "screenplay-04-lantern-home-s004-b030",
+              "screenplay-04-lantern-home-s004-b031",
+              "screenplay-04-lantern-home-s004-b033"
+            ],
+            "object_id": "screenplay-04-lantern-home-e02",
+            "revision_id": "3d68c31be1c91938d71734a60d7486dd9c17eed67ae88d51a23772a7ba61245d",
+            "scene_id": "s004"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s005-b003",
+              "screenplay-04-lantern-home-s005-b008",
+              "screenplay-04-lantern-home-s005-b015",
+              "screenplay-04-lantern-home-s005-b017",
+              "screenplay-04-lantern-home-s005-b018",
+              "screenplay-04-lantern-home-s005-b021",
+              "screenplay-04-lantern-home-s005-b023",
+              "screenplay-04-lantern-home-s005-b026",
+              "screenplay-04-lantern-home-s005-b027",
+              "screenplay-04-lantern-home-s005-b028"
+            ],
+            "object_id": "screenplay-04-lantern-home-e03",
+            "revision_id": "561c690a2040b7ffb25ceaa18b3246902d33d57614caa63ff47678cabc0156bd",
+            "scene_id": "s005"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s006-b002",
+              "screenplay-04-lantern-home-s006-b005",
+              "screenplay-04-lantern-home-s006-b006",
+              "screenplay-04-lantern-home-s006-b008",
+              "screenplay-04-lantern-home-s006-b010",
+              "screenplay-04-lantern-home-s006-b013",
+              "screenplay-04-lantern-home-s006-b016",
+              "screenplay-04-lantern-home-s006-b018",
+              "screenplay-04-lantern-home-s006-b019",
+              "screenplay-04-lantern-home-s006-b021",
+              "screenplay-04-lantern-home-s006-b023",
+              "screenplay-04-lantern-home-s006-b025",
+              "screenplay-04-lantern-home-s006-b026",
+              "screenplay-04-lantern-home-s006-b028",
+              "screenplay-04-lantern-home-s006-b029",
+              "screenplay-04-lantern-home-s006-b031",
+              "screenplay-04-lantern-home-s006-b032",
+              "screenplay-04-lantern-home-s006-b035",
+              "screenplay-04-lantern-home-s006-b036"
+            ],
+            "object_id": "screenplay-04-lantern-home-e03",
+            "revision_id": "561c690a2040b7ffb25ceaa18b3246902d33d57614caa63ff47678cabc0156bd",
+            "scene_id": "s006"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s007-b001",
+              "screenplay-04-lantern-home-s007-b002",
+              "screenplay-04-lantern-home-s007-b003",
+              "screenplay-04-lantern-home-s007-b004",
+              "screenplay-04-lantern-home-s007-b005",
+              "screenplay-04-lantern-home-s007-b006",
+              "screenplay-04-lantern-home-s007-b007",
+              "screenplay-04-lantern-home-s007-b009",
+              "screenplay-04-lantern-home-s007-b011",
+              "screenplay-04-lantern-home-s007-b012",
+              "screenplay-04-lantern-home-s007-b014",
+              "screenplay-04-lantern-home-s007-b015",
+              "screenplay-04-lantern-home-s007-b017"
+            ],
+            "object_id": "screenplay-04-lantern-home-e04",
+            "revision_id": "e720c535cacff062ee5bacc9b6cd9bba6664afd9155f15b6ad1475eeed2c66f2",
+            "scene_id": "s007"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s008-b002",
+              "screenplay-04-lantern-home-s008-b005",
+              "screenplay-04-lantern-home-s008-b007",
+              "screenplay-04-lantern-home-s008-b008",
+              "screenplay-04-lantern-home-s008-b010",
+              "screenplay-04-lantern-home-s008-b013",
+              "screenplay-04-lantern-home-s008-b015",
+              "screenplay-04-lantern-home-s008-b016",
+              "screenplay-04-lantern-home-s008-b019",
+              "screenplay-04-lantern-home-s008-b021",
+              "screenplay-04-lantern-home-s008-b022",
+              "screenplay-04-lantern-home-s008-b025",
+              "screenplay-04-lantern-home-s008-b031",
+              "screenplay-04-lantern-home-s008-b035"
+            ],
+            "object_id": "screenplay-04-lantern-home-e04",
+            "revision_id": "e720c535cacff062ee5bacc9b6cd9bba6664afd9155f15b6ad1475eeed2c66f2",
+            "scene_id": "s008"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s009-b001",
+              "screenplay-04-lantern-home-s009-b003",
+              "screenplay-04-lantern-home-s009-b018",
+              "screenplay-04-lantern-home-s009-b019",
+              "screenplay-04-lantern-home-s009-b021",
+              "screenplay-04-lantern-home-s009-b022",
+              "screenplay-04-lantern-home-s009-b025",
+              "screenplay-04-lantern-home-s009-b026",
+              "screenplay-04-lantern-home-s009-b028",
+              "screenplay-04-lantern-home-s009-b031",
+              "screenplay-04-lantern-home-s009-b033",
+              "screenplay-04-lantern-home-s009-b035"
+            ],
+            "object_id": "screenplay-04-lantern-home-e05",
+            "revision_id": "8c58f966aca376091e4d555e1dec53506d537b79a9344efba97054fb7fbac04b",
+            "scene_id": "s009"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s010-b001",
+              "screenplay-04-lantern-home-s010-b002",
+              "screenplay-04-lantern-home-s010-b003",
+              "screenplay-04-lantern-home-s010-b005",
+              "screenplay-04-lantern-home-s010-b007",
+              "screenplay-04-lantern-home-s010-b008",
+              "screenplay-04-lantern-home-s010-b012",
+              "screenplay-04-lantern-home-s010-b014",
+              "screenplay-04-lantern-home-s010-b016"
+            ],
+            "object_id": "screenplay-04-lantern-home-e05",
+            "revision_id": "8c58f966aca376091e4d555e1dec53506d537b79a9344efba97054fb7fbac04b",
+            "scene_id": "s010"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s012-b002"
+            ],
+            "object_id": "screenplay-04-lantern-home-e05",
+            "revision_id": "8c58f966aca376091e4d555e1dec53506d537b79a9344efba97054fb7fbac04b",
+            "scene_id": "s012"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s013-b006"
+            ],
+            "object_id": "screenplay-04-lantern-home-e05",
+            "revision_id": "8c58f966aca376091e4d555e1dec53506d537b79a9344efba97054fb7fbac04b",
+            "scene_id": "s013"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s014-b004",
+              "screenplay-04-lantern-home-s014-b011",
+              "screenplay-04-lantern-home-s014-b027",
+              "screenplay-04-lantern-home-s014-b031",
+              "screenplay-04-lantern-home-s014-b033",
+              "screenplay-04-lantern-home-s014-b043"
+            ],
+            "object_id": "screenplay-04-lantern-home-e06",
+            "revision_id": "8032b712c6b3c6320d2f1b3a34ef2524e0427481f576becfd9e17735359707cb",
+            "scene_id": "s014"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s015-b006",
+              "screenplay-04-lantern-home-s015-b007",
+              "screenplay-04-lantern-home-s015-b009",
+              "screenplay-04-lantern-home-s015-b020",
+              "screenplay-04-lantern-home-s015-b023",
+              "screenplay-04-lantern-home-s015-b026"
+            ],
+            "object_id": "screenplay-04-lantern-home-e06",
+            "revision_id": "8032b712c6b3c6320d2f1b3a34ef2524e0427481f576becfd9e17735359707cb",
+            "scene_id": "s015"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s016-b001",
+              "screenplay-04-lantern-home-s016-b014",
+              "screenplay-04-lantern-home-s016-b016",
+              "screenplay-04-lantern-home-s016-b019"
+            ],
+            "object_id": "screenplay-04-lantern-home-e07",
+            "revision_id": "b57f260623beb1ffdcb32e77afdd9c65f831e297ccd82b91ad176e49b599aa19",
+            "scene_id": "s016"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s017-b028",
+              "screenplay-04-lantern-home-s017-b029",
+              "screenplay-04-lantern-home-s017-b030",
+              "screenplay-04-lantern-home-s017-b035",
+              "screenplay-04-lantern-home-s017-b039",
+              "screenplay-04-lantern-home-s017-b043",
+              "screenplay-04-lantern-home-s017-b044",
+              "screenplay-04-lantern-home-s017-b046",
+              "screenplay-04-lantern-home-s017-b047",
+              "screenplay-04-lantern-home-s017-b048",
+              "screenplay-04-lantern-home-s017-b049",
+              "screenplay-04-lantern-home-s017-b057",
+              "screenplay-04-lantern-home-s017-b058",
+              "screenplay-04-lantern-home-s017-b061"
+            ],
+            "object_id": "screenplay-04-lantern-home-e07",
+            "revision_id": "b57f260623beb1ffdcb32e77afdd9c65f831e297ccd82b91ad176e49b599aa19",
+            "scene_id": "s017"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s018-b011",
+              "screenplay-04-lantern-home-s018-b022",
+              "screenplay-04-lantern-home-s018-b027"
+            ],
+            "object_id": "screenplay-04-lantern-home-e08",
+            "revision_id": "a9a288b8ed442c918edab6f2e13ea2639aa622e09d78060b970b4c25e6030ad3",
+            "scene_id": "s018"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s019-b001",
+              "screenplay-04-lantern-home-s019-b002",
+              "screenplay-04-lantern-home-s019-b008",
+              "screenplay-04-lantern-home-s019-b009",
+              "screenplay-04-lantern-home-s019-b020",
+              "screenplay-04-lantern-home-s019-b022"
+            ],
+            "object_id": "screenplay-04-lantern-home-e08",
+            "revision_id": "a9a288b8ed442c918edab6f2e13ea2639aa622e09d78060b970b4c25e6030ad3",
+            "scene_id": "s019"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s020-b002",
+              "screenplay-04-lantern-home-s020-b003",
+              "screenplay-04-lantern-home-s020-b004",
+              "screenplay-04-lantern-home-s020-b012",
+              "screenplay-04-lantern-home-s020-b015",
+              "screenplay-04-lantern-home-s020-b019",
+              "screenplay-04-lantern-home-s020-b020",
+              "screenplay-04-lantern-home-s020-b021"
+            ],
+            "object_id": "screenplay-04-lantern-home-e09",
+            "revision_id": "239fd195c0450db3261d67337add67c652960982f2d254923d33b18d8507cf84",
+            "scene_id": "s020"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s022-b001",
+              "screenplay-04-lantern-home-s022-b002",
+              "screenplay-04-lantern-home-s022-b004",
+              "screenplay-04-lantern-home-s022-b007",
+              "screenplay-04-lantern-home-s022-b008",
+              "screenplay-04-lantern-home-s022-b011",
+              "screenplay-04-lantern-home-s022-b015",
+              "screenplay-04-lantern-home-s022-b019",
+              "screenplay-04-lantern-home-s022-b020",
+              "screenplay-04-lantern-home-s022-b022",
+              "screenplay-04-lantern-home-s022-b025",
+              "screenplay-04-lantern-home-s022-b027"
+            ],
+            "object_id": "screenplay-04-lantern-home-e09",
+            "revision_id": "239fd195c0450db3261d67337add67c652960982f2d254923d33b18d8507cf84",
+            "scene_id": "s022"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s026-b001",
+              "screenplay-04-lantern-home-s026-b002",
+              "screenplay-04-lantern-home-s026-b003",
+              "screenplay-04-lantern-home-s026-b004",
+              "screenplay-04-lantern-home-s026-b006",
+              "screenplay-04-lantern-home-s026-b007",
+              "screenplay-04-lantern-home-s026-b011",
+              "screenplay-04-lantern-home-s026-b013",
+              "screenplay-04-lantern-home-s026-b026",
+              "screenplay-04-lantern-home-s026-b027",
+              "screenplay-04-lantern-home-s026-b029",
+              "screenplay-04-lantern-home-s026-b032",
+              "screenplay-04-lantern-home-s026-b034",
+              "screenplay-04-lantern-home-s026-b036"
+            ],
+            "object_id": "screenplay-04-lantern-home-e11",
+            "revision_id": "95475950c78fb133139df9d7b783089c9547c887334ad44982ed4e4f788bbcb5",
+            "scene_id": "s026"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s027-b002",
+              "screenplay-04-lantern-home-s027-b003",
+              "screenplay-04-lantern-home-s027-b006",
+              "screenplay-04-lantern-home-s027-b009",
+              "screenplay-04-lantern-home-s027-b011",
+              "screenplay-04-lantern-home-s027-b013",
+              "screenplay-04-lantern-home-s027-b014",
+              "screenplay-04-lantern-home-s027-b021"
+            ],
+            "object_id": "screenplay-04-lantern-home-e11",
+            "revision_id": "95475950c78fb133139df9d7b783089c9547c887334ad44982ed4e4f788bbcb5",
+            "scene_id": "s027"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s028-b009",
+              "screenplay-04-lantern-home-s028-b010",
+              "screenplay-04-lantern-home-s028-b012",
+              "screenplay-04-lantern-home-s028-b013",
+              "screenplay-04-lantern-home-s028-b014",
+              "screenplay-04-lantern-home-s028-b016",
+              "screenplay-04-lantern-home-s028-b018",
+              "screenplay-04-lantern-home-s028-b019",
+              "screenplay-04-lantern-home-s028-b020",
+              "screenplay-04-lantern-home-s028-b021",
+              "screenplay-04-lantern-home-s028-b028",
+              "screenplay-04-lantern-home-s028-b032",
+              "screenplay-04-lantern-home-s028-b041",
+              "screenplay-04-lantern-home-s028-b043"
+            ],
+            "object_id": "screenplay-04-lantern-home-e12",
+            "revision_id": "b398ec886d04e1184cd3463d0edd7a85eeb6f5c0140f06ea8b3c57031f02b60f",
+            "scene_id": "s028"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s029-b011",
+              "screenplay-04-lantern-home-s029-b012",
+              "screenplay-04-lantern-home-s029-b021"
+            ],
+            "object_id": "screenplay-04-lantern-home-e12",
+            "revision_id": "b398ec886d04e1184cd3463d0edd7a85eeb6f5c0140f06ea8b3c57031f02b60f",
+            "scene_id": "s029"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s030-b016",
+              "screenplay-04-lantern-home-s030-b017",
+              "screenplay-04-lantern-home-s030-b029"
+            ],
+            "object_id": "screenplay-04-lantern-home-e13",
+            "revision_id": "d479a463803753088fb4779e38aec66dea94c29b4cb2322861d729027a020d55",
+            "scene_id": "s030"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s031-b003"
+            ],
+            "object_id": "screenplay-04-lantern-home-e13",
+            "revision_id": "d479a463803753088fb4779e38aec66dea94c29b4cb2322861d729027a020d55",
+            "scene_id": "s031"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s032-b010",
+              "screenplay-04-lantern-home-s032-b022",
+              "screenplay-04-lantern-home-s032-b023",
+              "screenplay-04-lantern-home-s032-b026"
+            ],
+            "object_id": "screenplay-04-lantern-home-e14",
+            "revision_id": "f0e2aa42927953ba45751c3a661dbfe7a46954e00cb9a7c378c1b62b7300d67e",
+            "scene_id": "s032"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s033-b002",
+              "screenplay-04-lantern-home-s033-b003",
+              "screenplay-04-lantern-home-s033-b018",
+              "screenplay-04-lantern-home-s033-b019",
+              "screenplay-04-lantern-home-s033-b021",
+              "screenplay-04-lantern-home-s033-b024",
+              "screenplay-04-lantern-home-s033-b032"
+            ],
+            "object_id": "screenplay-04-lantern-home-e14",
+            "revision_id": "f0e2aa42927953ba45751c3a661dbfe7a46954e00cb9a7c378c1b62b7300d67e",
+            "scene_id": "s033"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s034-b002",
+              "screenplay-04-lantern-home-s034-b006",
+              "screenplay-04-lantern-home-s034-b007",
+              "screenplay-04-lantern-home-s034-b008",
+              "screenplay-04-lantern-home-s034-b009",
+              "screenplay-04-lantern-home-s034-b026",
+              "screenplay-04-lantern-home-s034-b030"
+            ],
+            "object_id": "screenplay-04-lantern-home-e15",
+            "revision_id": "66dff731e9cea40ce22d89931790e69006d19db2d04fb724ba7e2d3a9ae7bc23",
+            "scene_id": "s034"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s036-b004",
+              "screenplay-04-lantern-home-s036-b005",
+              "screenplay-04-lantern-home-s036-b038"
+            ],
+            "object_id": "screenplay-04-lantern-home-e15",
+            "revision_id": "66dff731e9cea40ce22d89931790e69006d19db2d04fb724ba7e2d3a9ae7bc23",
+            "scene_id": "s036"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s037-b008",
+              "screenplay-04-lantern-home-s037-b011",
+              "screenplay-04-lantern-home-s037-b012",
+              "screenplay-04-lantern-home-s037-b013",
+              "screenplay-04-lantern-home-s037-b014",
+              "screenplay-04-lantern-home-s037-b016",
+              "screenplay-04-lantern-home-s037-b017",
+              "screenplay-04-lantern-home-s037-b019",
+              "screenplay-04-lantern-home-s037-b020",
+              "screenplay-04-lantern-home-s037-b021",
+              "screenplay-04-lantern-home-s037-b022",
+              "screenplay-04-lantern-home-s037-b025",
+              "screenplay-04-lantern-home-s037-b026"
+            ],
+            "object_id": "screenplay-04-lantern-home-e16",
+            "revision_id": "94ca5b3b1fa8e9acc7a25d7918904c8a8147cdd572c879b6c894ad4f517412d2",
+            "scene_id": "s037"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s038-b001",
+              "screenplay-04-lantern-home-s038-b002",
+              "screenplay-04-lantern-home-s038-b006",
+              "screenplay-04-lantern-home-s038-b008",
+              "screenplay-04-lantern-home-s038-b009",
+              "screenplay-04-lantern-home-s038-b010",
+              "screenplay-04-lantern-home-s038-b011",
+              "screenplay-04-lantern-home-s038-b012"
+            ],
+            "object_id": "screenplay-04-lantern-home-e16",
+            "revision_id": "94ca5b3b1fa8e9acc7a25d7918904c8a8147cdd572c879b6c894ad4f517412d2",
+            "scene_id": "s038"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s039-b004",
+              "screenplay-04-lantern-home-s039-b005",
+              "screenplay-04-lantern-home-s039-b008",
+              "screenplay-04-lantern-home-s039-b013",
+              "screenplay-04-lantern-home-s039-b014",
+              "screenplay-04-lantern-home-s039-b016",
+              "screenplay-04-lantern-home-s039-b017",
+              "screenplay-04-lantern-home-s039-b019",
+              "screenplay-04-lantern-home-s039-b020"
+            ],
+            "object_id": "screenplay-04-lantern-home-e16",
+            "revision_id": "94ca5b3b1fa8e9acc7a25d7918904c8a8147cdd572c879b6c894ad4f517412d2",
+            "scene_id": "s039"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s040-b001",
+              "screenplay-04-lantern-home-s040-b003",
+              "screenplay-04-lantern-home-s040-b004",
+              "screenplay-04-lantern-home-s040-b007",
+              "screenplay-04-lantern-home-s040-b009",
+              "screenplay-04-lantern-home-s040-b010",
+              "screenplay-04-lantern-home-s040-b011",
+              "screenplay-04-lantern-home-s040-b012",
+              "screenplay-04-lantern-home-s040-b013",
+              "screenplay-04-lantern-home-s040-b014",
+              "screenplay-04-lantern-home-s040-b015",
+              "screenplay-04-lantern-home-s040-b016",
+              "screenplay-04-lantern-home-s040-b018",
+              "screenplay-04-lantern-home-s040-b019"
+            ],
+            "object_id": "screenplay-04-lantern-home-e17",
+            "revision_id": "86472299d571ceb960315b77be5e782e2153575aa4bfe44dead0c3fcc1818fd8",
+            "scene_id": "s040"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s041-b008",
+              "screenplay-04-lantern-home-s041-b009",
+              "screenplay-04-lantern-home-s041-b010",
+              "screenplay-04-lantern-home-s041-b011",
+              "screenplay-04-lantern-home-s041-b012",
+              "screenplay-04-lantern-home-s041-b013",
+              "screenplay-04-lantern-home-s041-b015",
+              "screenplay-04-lantern-home-s041-b016",
+              "screenplay-04-lantern-home-s041-b017",
+              "screenplay-04-lantern-home-s041-b019",
+              "screenplay-04-lantern-home-s041-b021"
+            ],
+            "object_id": "screenplay-04-lantern-home-e17",
+            "revision_id": "86472299d571ceb960315b77be5e782e2153575aa4bfe44dead0c3fcc1818fd8",
+            "scene_id": "s041"
+          },
+          {
+            "block_ids": [
+              "screenplay-04-lantern-home-s042-b003",
+              "screenplay-04-lantern-home-s042-b004",
+              "screenplay-04-lantern-home-s042-b007",
+              "screenplay-04-lantern-home-s042-b009",
+              "screenplay-04-lantern-home-s042-b011",
+              "screenplay-04-lantern-home-s042-b012",
+              "screenplay-04-lantern-home-s042-b013",
+              "screenplay-04-lantern-home-s042-b015",
+              "screenplay-04-lantern-home-s042-b016"
+            ],
+            "object_id": "screenplay-04-lantern-home-e17",
+            "revision_id": "86472299d571ceb960315b77be5e782e2153575aa4bfe44dead0c3fcc1818fd8",
+            "scene_id": "s042"
+          }
+        ],
+        "title": "阿蘅：复用旧原件的说话身份片段；新方案和片段须独立认可",
+        "type_definition": {
+          "attributes": {
+            "i2i_budget": "图像最深参考谱系上限，执行时按实际输入回查，不是已生成代数"
+          },
+          "direction": "directed",
+          "endpoints": [
+            "ASSET",
+            "REQUIREMENT"
+          ]
+        },
+        "type_id": "voice-reuse",
+        "type_label": "已有声音身份复用",
+        "type_version": 1,
+        "upstream": {
+          "object_id": "asset-fg3-aheng-voice-01",
+          "revision_id": "e522f05e989232e8323608cc74addd94b5e542c15c2d69692109c5fdd3e78ecb"
+        }
+      },
+      "business_code": "MR5172",
+      "endpoint_ids": [
+        "asset-fg3-aheng-voice-01",
+        "material-voice-a-heng"
+      ],
+      "endpoint_codes": [
+        "M1134",
+        "M2669"
+      ]
+    }
+  ],
+  "consumer_samples": [
+    {
+      "object_id": "material-voice-a-heng",
+      "revision_id": "991731079f3d2a4bce37c4686fa39b7f4ee4baf647b1d6fd0af3d00783b5e731",
+      "business_code": "M2669",
+      "title": "阿蘅 · 已有原件身份复用方案",
+      "scope": {
+        "object_id": "entity-a-heng",
+        "revision_id": "be76284a262dd11d562410a15e3fefcf6cbedb152eb5dad4c4d94b854619d663"
+      },
+      "generation": {
+        "blockers": [],
+        "conditions": {},
+        "format": "generation-plan-v1",
+        "inputs": [
+          {
+            "component_id": "original",
+            "range": {
+              "end_seconds": 5.6,
+              "start_seconds": 0
+            },
+            "reference": {
+              "object_id": "asset-fg3-aheng-voice-01",
+              "revision_id": "e522f05e989232e8323608cc74addd94b5e542c15c2d69692109c5fdd3e78ecb"
+            },
+            "relation": {
+              "object_id": "mr-02c83518892408c7cb6f9dec76c33f42",
+              "revision_id": "11758e44266d5ebe8172c1610b2e37dcb3402d3bcc60ad199d7f7205621e048a"
+            },
+            "use": "阿蘅：复用旧原件的说话身份片段；新方案和片段须独立认可"
+          }
+        ],
+        "method": "reuse",
+        "model": "original-audio",
+        "output": {
+          "description": "少女自然中高女声，清亮而不尖细，声带轻、气息稳；语调灵活，亲近时轻笑意，遇成年人压低音量，不撒娇、不播报\n不继承：旧试读台词、劝慰与俏皮语气、旧呼吸与停顿、录音空间、歌唱旋律或演唱能力",
+          "name": "阿蘅 · 已有原件身份复用方案",
+          "review_criteria": [
+            "实际逐句听审而非仅据字幕判断",
+            "音色身份、字音、呼吸、旋律用途一致，未混入其他说话人",
+            "保留提供方原件、真实编码和时长；转码不冒充原生无损",
+            "明确选定候选、原件与时间范围后才提交下游"
+          ]
+        },
+        "parameters": {},
+        "prompt": "只复用本方案选定的准确原件片段，锁定阿蘅的声音身份；起止范围以参考选择为准。\n第1集的日常合作、讨价、轻快回应与克制说怕需要同一少女身份；初段的轻盈、自然、非播报声线可作身份依据。只取身份，不继承对长者的劝慰语气；不把原词当作当前剧本音轨。\n阿蘅的说话声音身份；新台词、呼吸、音量、情绪和声源距离由本镜重新表演。\n不重新生成，不冒充新试读词音轨；旧原件、原词、调用与判断原样保留。",
+        "randomization": {
+          "mode": "random"
+        },
+        "relation_model": "context-v1",
+        "selected_routes": {},
+        "tool": "准确原件复用"
+      },
+      "material_version_memberships": [
+        {
+          "material_id": "material-voice-a-heng",
+          "number": 1,
+          "role": "plan"
+        }
+      ]
+    },
+    {
+      "object_id": "material-form-a-heng-blue-overall",
+      "revision_id": "24bdcd841798cae54d7898cd3b4378a51ce80ef65df878fead2dcbde629f09a9",
+      "business_code": "M2710",
+      "title": "阿蘅·日常洗旧青衣 · 整体参考",
+      "scope": {
+        "object_id": "form-a-heng-blue",
+        "revision_id": "628202da105b4299bb4336b5886920f679e77e7891f7ed4cc46ff8059f67fc3b"
+      },
+      "generation": {
+        "blockers": [],
+        "conditions": {},
+        "format": "generation-plan-v1",
+        "inputs": [
+          {
+            "reference": {
+              "object_id": "material-entity-a-heng-identity",
+              "revision_id": "400511fb64c0dd26b17dc24d019a06a3d55d8ca842065b6ae5aa7b142a3485ba"
+            },
+            "relation": {
+              "object_id": "mr-material-form-a-heng-blue-overall-0168",
+              "revision_id": "db26c30283485a4d6152460deb6a80276c1b9ee0f7f5e3c23d3c0811b7e1197e"
+            },
+            "selection_state": "unselected",
+            "use": "固定身份与结构，按此版状态表现差异"
+          }
+        ],
+        "method": "generate",
+        "model": "gpt-image-2-5-sunburst",
+        "output": {
+          "description": "清瘦女孩，稍长的脸型、清楚的下颌，眉眼柔和；黑发整齐低髻，额边少量碎发。洗旧青绿交领衣、浅灰内衫、深青裙裤、灰布鞋，袖口平整挽两折。身形不与李寄等宽；唱曲时脚下稳稳打拍，护书时手臂贴身。\n青衣干燥，袖口挽齐，鞋面干净但旧；脸和手无新伤，精神清醒。可护书、拿小米袋并稳稳打拍，日常轻声与演唱共用声线。",
+          "name": "阿蘅·日常洗旧青衣 · 整体参考",
+          "review_criteria": [
+            "同一人物、动物或已定义群组的身份、数量与比例一致；适用的衣着、伤侧和持物按本阶段，不给动物套衣饰或把群组缩成一人",
+            "核实际原件尺寸与原生回执，不以请求4K或放大冒充原生",
+            "最深输入图像谱系不超过两代；失真时回干净母版"
+          ]
+        },
+        "parameters": {
+          "aspect_ratio": "3:4",
+          "n": 1,
+          "project_id": "8K6WcbrPLghSBJXBtWAE",
+          "quality": "high",
+          "resolution": "4K"
+        },
+        "prompt": "二维人物与轻手绘背景，正常人物比例，干净轮廓与清楚色块，背景轻而可读；不新增粗纸纹、颗粒、过锐边缘或写实皮肤。\n图片1只固定干净母版的身份与结构；清瘦女孩，稍长的脸型、清楚的下颌，眉眼柔和；黑发整齐低髻，额边少量碎发。洗旧青绿交领衣、浅灰内衫、深青裙裤、灰布鞋，袖口平整挽两折。身形不与李寄等宽；唱曲时脚下稳稳打拍，护书时手臂贴身。\n青衣干燥，袖口挽齐，鞋面干净但旧；脸和手无新伤，精神清醒。可护书、拿小米袋并稳稳打拍，日常轻声与演唱共用声线。\n本次准备的实际用途与限制：A01—A03 保持青衣、低髻、清瘦比例与唱歌护本的同一人；ASH001 推近后仍需清楚身份，沿已有直接视频参考，不用音色替代脸。旧日常候选先比衣色、比例和原生规格，未选定不算复用。\n按实体定义呈现同一人物、动物或可辨群组的全形与本阶段可见细节；不复制成员，不给动物套人类衣饰，不添加别场伤势、湿痕或持物。",
+        "randomization": {
+          "mode": "random"
+        },
+        "relation_model": "context-v1",
+        "selected_routes": {},
+        "tool": "openart cli"
+      },
+      "material_version_memberships": [
+        {
+          "material_id": "material-form-a-heng-blue-overall",
+          "number": 1,
+          "role": "plan"
+        }
+      ]
+    },
+    {
+      "object_id": "material-av-e01-a01-s01-first-frame",
+      "revision_id": "5a4cb9ebee7bc0b9a86419a029a283205beace0152eb6556d70a27053edc74bc",
+      "business_code": "M2974",
+      "title": "01 · A01 · 01 阿蘅翻过两页 · 首帧",
+      "scope": {
+        "object_id": "av-e01-a01-s01",
+        "revision_id": "982201d6e8e009c605b9abe4015de8511d856021abd006305b04eda7afa87325"
+      },
+      "generation": {
+        "blockers": [],
+        "conditions": {},
+        "format": "generation-plan-v1",
+        "inputs": [
+          {
+            "reference": {
+              "object_id": "material-av-e01-a01-s01-camera-main",
+              "revision_id": "efcb832484828fb55a36e09c869e658854734a7b4b942a444bfc2cfbc3e5b73c"
+            },
+            "relation": {
+              "object_id": "mr-material-av-e01-a01-s01-first-frame-0697",
+              "revision_id": "f462ec228430734ff99e21426846fc26f940e1e00f024a739000cdefba5556cc"
+            },
+            "selection_state": "unselected",
+            "use": "选择此镜机位作为首帧构图依据"
+          },
+          {
+            "reference": {
+              "object_id": "material-form-a-heng-blue-overall",
+              "revision_id": "24bdcd841798cae54d7898cd3b4378a51ce80ef65df878fead2dcbde629f09a9"
+            },
+            "relation": {
+              "object_id": "mr-material-av-e01-a01-s01-first-frame-0698",
+              "revision_id": "36187821034ea71018bb98a701a848279b3ca5e38d59e12bf7aceb51dd8b5598"
+            },
+            "selection_state": "unselected",
+            "use": "首帧使用：阿蘅·日常洗旧青衣"
+          },
+          {
+            "reference": {
+              "object_id": "material-form-book-basket-base-overall",
+              "revision_id": "ba4db6ea603fade23a7ea546dc7b9f548f551fc0b8f0f4e6ecb27c9d39437fa3"
+            },
+            "relation": {
+              "object_id": "mr-material-av-e01-a01-s01-first-frame-0699",
+              "revision_id": "59cb021437489f61c60c8d7921e4e8e5334ca26d4e8cc27af034f8fe97f61095"
+            },
+            "selection_state": "unselected",
+            "use": "首帧使用：垫歌本竹篮·基准完整形态"
+          },
+          {
+            "reference": {
+              "object_id": "material-entity-carrying-pole-identity",
+              "revision_id": "f0dd2f3023933f39f3bcc7f9783a274a0be018c62b95c4b513d1ad5059a68f85"
+            },
+            "relation": {
+              "object_id": "mr-dbb560afaa926f99df39b3ff51df5419",
+              "revision_id": "c9480b8b0f4081a42db23089cb936887e9ace11e64a7fb1081d7666da6a262cf"
+            },
+            "selection_state": "unselected",
+            "use": "首帧使用：挑柴扁担·基准完整形态"
+          },
+          {
+            "reference": {
+              "object_id": "material-entity-grain-identity",
+              "revision_id": "9fcf2fa6016671ae417c09782937779b07cfe3de9333aaf6ca9d111fae3b7fb7"
+            },
+            "relation": {
+              "object_id": "mr-333760a1c289133ac1a4158fa7cee92d",
+              "revision_id": "4f3eed25f52102b72aa5a64677cfcb0efba9d48b4c3d1e6c2c2bc14bf4cf99b8"
+            },
+            "selection_state": "unselected",
+            "use": "首帧使用：米粮·基准完整形态"
+          },
+          {
+            "reference": {
+              "object_id": "material-form-rice-listeners-base-overall",
+              "revision_id": "1e3869b5f352e6d79f979bd213a8a070550f491fb4fa0492c45143a84259dff2"
+            },
+            "relation": {
+              "object_id": "mr-material-av-e01-a01-s01-first-frame-0702",
+              "revision_id": "15e1707495bfec603e5f2ed4caa2ba09542936c614f9710057ebb5ea898ed577"
+            },
+            "selection_state": "unselected",
+            "use": "首帧使用：米铺听客·基准完整形态"
+          },
+          {
+            "reference": {
+              "object_id": "material-form-rice-measure-base-overall",
+              "revision_id": "426e08b6070a0e460c797e77968a2ebf8092bdd451a6bd59fe34e41ac1c8cc2c"
+            },
+            "relation": {
+              "object_id": "mr-material-av-e01-a01-s01-first-frame-0703",
+              "revision_id": "330fcba974b2c2815c43fa7809739915895f7b1103f057c79ddae4b87d775e2e"
+            },
+            "selection_state": "unselected",
+            "use": "首帧使用：米铺小木斗·基准完整形态"
+          },
+          {
+            "reference": {
+              "object_id": "material-form-river-stone-base-overall",
+              "revision_id": "2e11b45809516757f6d8d578a116fe5ecbec79750a4c6731c3d46387d2e3cb4f"
+            },
+            "relation": {
+              "object_id": "mr-material-av-e01-a01-s01-first-frame-0704",
+              "revision_id": "a5b1b00b7b9339b24a417d0d2bb728a851bbbf99f2d4270f342b6ed03c3a8ab6"
+            },
+            "selection_state": "unselected",
+            "use": "首帧使用：压页河石·基准完整形态"
+          },
+          {
+            "reference": {
+              "object_id": "material-form-songbook-base-overall",
+              "revision_id": "2125e896cb8c684bacb0e71f854eeafbf44581f4833d5ef4df5dc69e76277cd0"
+            },
+            "relation": {
+              "object_id": "mr-material-av-e01-a01-s01-first-frame-0705",
+              "revision_id": "88b4a58cee3f3b41f944ab57f0e9fbe450d298a34e22767c642213d481708e50"
+            },
+            "selection_state": "unselected",
+            "use": "首帧使用：阿蘅歌本·基准完整形态"
+          },
+          {
+            "reference": {
+              "object_id": "material-form-woodcutter-base-overall",
+              "revision_id": "2c35e01257cd6d80e52ac419898f11c48eff3e3c05c991d4847fb65a2c90594e"
+            },
+            "relation": {
+              "object_id": "mr-material-av-e01-a01-s01-first-frame-0706",
+              "revision_id": "db098bf21767187f496c00d39538e6d7c69d370bbe8cf5a2dc908b71a29f0d51"
+            },
+            "selection_state": "unselected",
+            "use": "首帧使用：挑柴老汉·基准完整形态"
+          }
+        ],
+        "method": "generate",
+        "model": "gpt-image-2-5-sunburst",
+        "output": {
+          "description": "阿蘅站在空竹篮旁，歌本尚在手中，河石搁在篮面",
+          "name": "01 · A01 · 01 阿蘅翻过两页 · 首帧",
+          "review_criteria": [
+            "画面中实际需要的身份、结构与状态和准确用途一致",
+            "构图、接触点、空间出入口与轴线可核对",
+            "核实际原件尺寸与原生回执，不以请求4K或放大冒充原生",
+            "最深输入图像谱系不超过两代；失真时回干净母版"
+          ]
+        },
+        "parameters": {
+          "aspect_ratio": "16:9",
+          "n": 1,
+          "project_id": "8K6WcbrPLghSBJXBtWAE",
+          "quality": "high",
+          "resolution": "4K"
+        },
+        "prompt": "二维人物与轻手绘背景，正常人物比例，干净轮廓与清楚色块，背景轻而可读；不新增粗纸纹、颗粒、过锐边缘或写实皮肤。\n图片1为选定机位；图片2为阿蘅·日常洗旧青衣；图片3为垫歌本竹篮·基准完整形态；图片4为挑柴扁担·基准完整形态；图片5为米粮·基准完整形态；图片6为米铺听客·基准完整形态；图片7为米铺小木斗·基准完整形态；图片8为压页河石·基准完整形态；图片9为阿蘅歌本·基准完整形态；图片10为挑柴老汉·基准完整形态；\n准确状态参考只固定可见主体的轮廓、衣着、伤侧、材质与结构；其制作说明中的其他使用场合和动作不在本首帧重演。\n拍摄位置：街侧全景，缓慢靠近门口。柜台至门口为主轴，摄影机留临街侧；街侧入口在画左。\n只画动作开始的瞬间：阿蘅站在空竹篮旁，歌本尚在手中，河石搁在篮面。参考只约束真正入画的主体，镜内后续才入画的人物和画外声不提前塞入首帧。\n场所：米铺开向河街，柜台、门口倒扣竹篮与临街听客区相邻；竹篮可置歌本，河石可压页。\n白昼门外柔光，檐下略暗，纸面能辨字，不以光柱突出命运。。青衣、赭红与米白为生活色；背景木灰，歌本不做发光道具。\n镜尾将发生“阿蘅翻过两页”，此首帧不得提前表现完成结果。\n连续性：歌本干燥完整；先摊在篮上、压石，再唱一道滩，唱完才翻过两页。米工钱尚未交付，米袋不入开场；李寄尚未入画。。不加字幕、水印和装饰边框。\n挑柴扁担·基准完整形态：此参考提供基础结构，当前形态按以下文字落实，仅画本镜起点；略弯灰褐木扁担，中央肩位扁平磨浅、两头渐细，完整干燥。此刻由老汉斜持，尚未在腿边竖稳；底端和地面关系自然，无悬空柴捆。\n米粮·基准完整形态：此参考提供基础结构，当前形态按以下文字落实，仅画本镜起点；柜内量米区的干米为米白略暖的浅色堆面，远景不逐粒突出。阿蘅尚未领到工钱，唱歌的篮旁没有已交付的米袋或预付米。\n本镜起始裁切：街面和两人位置先成立，推近后才要求看清阿蘅与樵夫的脸。",
+        "randomization": {
+          "mode": "random"
+        },
+        "relation_model": "context-v1",
+        "selected_routes": {
+          "camera": "main"
+        },
+        "tool": "openart cli"
+      },
+      "material_version_memberships": [
+        {
+          "material_id": "material-av-e01-a01-s01-first-frame",
+          "number": 1,
+          "role": "plan"
+        }
+      ]
+    }
+  ],
+  "source_locations": {
+    "entity_validation": "../story-review-desk/review_desk/entity_relations.py:16-39",
+    "material_validation_and_execution_rule": "../story-review-desk/review_desk/material_relations.py:13-132",
+    "applicability_validation": "../story-review-desk/review_desk/production_breakdown.py:13-30",
+    "adoption_separate_semantics": "../story-review-desk/review_desk/production.py:493-512",
+    "business_codes": "../story-review-desk/review_desk/business_codes.py:20-59",
+    "old_explanation_cleanup_policy": "../story-review-desk/review_desk/relation_explanations.py:19-65,121-124",
+    "material_exact_input_contract": "../story-review-desk/docs/production-breakdown.md:51-79"
+  },
+  "boundaries": [
+    "No browser interaction by this evidence subagent; data/model evidence only.",
+    "Stable complete prior source is tracked export/objects.json at primary_commit; root dedup subagent independently verified its LFS identity and complete revision coverage. Do not import it wholesale into current instance.",
+    "One pair means object identity, not each revision; preserve exact frozen relation/input/asset/call/comment history without keeping duplicate active business relations.",
+    "All 33 duplicates are distinct current object identities, not two versions of the same object; their exact upstream revisions are equal.",
+    "Applicability here is material requirement to shot, all 28 records. Inclusion in unified relation model is appropriate, while explicit adoption and low-level dependency foreign keys are not generic relation facts.",
+    "Old entity forward describes story actor-to-object semantics, not production dependency; it cannot be blindly mapped to -> dependency identifier.",
+    "MATERIAL_RELATION semantics and necessity currently drive execution; retain specific consumer input choice and exact selection in generation plans when relation descriptions are fused.",
+    "No formal write, implementation, test fixture, preview, generation, or task publication performed by this subagent."
+  ]
+}

@@ -67,6 +67,12 @@ def deliver_files(directory, package, inputs):
                      + resource['reference']['object_id'] + ' @ ' + resource['reference']['revision_id'])
     files['RESOURCES.md'] = '# 本步骤取得的准确共用资料\n\n' + '\n'.join(index) + '\n'
     files['request.json'] = json.dumps(inputs, ensure_ascii=False, indent=2) + '\n'
+    for number, item in enumerate(inputs.get('relation_readings', [])):
+        if 'content_json' in item:
+            files['materials/reference-' + str(number) + '.json'] = json.dumps(
+                {'reference': {k: item[k] for k in ('object_id', 'revision_id')},
+                 'kind': item['kind'], 'payload': json.loads(item['content_json'])},
+                ensure_ascii=False, indent=2) + '\n'
     for number, item in enumerate(inputs.get('supporting_records', [])):
         files['materials/' + str(number) + '.json'] = json.dumps(
             {'reference': item['reference'], 'kind': item['kind'], 'payload': json.loads(item['content_json'])},
