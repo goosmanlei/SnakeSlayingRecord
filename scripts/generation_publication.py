@@ -35,8 +35,8 @@ CODE_TABLES={'business_codes','business_candidates','business_comments'}
 PLAN_TABLES={'material_plan_versions','material_plan_members','material_candidate_members','material_plan_comments'}
 MODEL_TABLES={'material_content','material_definitions','material_aliases','material_definition_versions','material_archive_files'}
 MUTABLE = {'objects', 'comments', 'material_rounds','material_plan_versions','material_aliases','material_definition_versions','material_archive_files'}
-PRODUCTION_KINDS = {'ENTITY', 'STATE', 'REPRESENTATION', 'REQUIREMENT', 'CALL',
-                    'ASSET', 'JUDGMENT', 'RELATION', 'MATERIAL_RELATION',
+PRODUCTION_KINDS = {'ENTITY', 'STATE', 'REQUIREMENT', 'CALL',
+                    'ASSET', 'RELATION', 'MATERIAL_RELATION',
                     'AV_EPISODE', 'AV_SCENE', 'AV_SHOT', 'INPUT_LOCK'}
 
 

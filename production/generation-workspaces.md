@@ -76,9 +76,9 @@ python3 scripts/generation_review.py --system "$generation_system" \
 ## 生成、登记与审阅
 
 1. 使用本工作区的 `seed_audio.py`、`lyria_music.py` 或图像工具。外部图像工具返回到其原生缓存时，`record_builtin_image.py` 将准确原件与真实回执收敛到本 worktree，不复制到主目录。Lyria 原始响应与候选先留在 `.runtime/lyria/<id>/`，整理交付时再登记内容寻址原件。
-2. 旧批次登记工具已退役。通用系统的 `production-file`、`production-import` 只针对本工作区 `.runtime/` 下的实例调用；不使用正式主目录作为日常生成目标。既有准确输入、母版认可、谱系和预期版本校验继续生效。
+2. 旧批次登记工具已退役。通用系统的 `production-file`、`production-import` 只针对本工作区 `.runtime/` 下的实例调用；不使用正式主目录作为日常生成目标。既有准确输入、原始意见、谱系和预期版本校验继续生效。
 3. 在任务页面查看图像、播放音频、评论、修订和记录实际审阅结论。真实用户认可与工具检查分别记录。执行本流程不代表授权新增付费调用，也不代表接受任何作品。
-4. 自检完成后冻结包；不要把测试评论、测试采纳或无关创作变更放进交付数据。
+4. 自检完成后冻结包；不要把测试评论、测试选择或无关创作变更放进交付数据。
 
 ```bash
 python3 scripts/generation_review.py --instance .runtime/generation/review prepare \
