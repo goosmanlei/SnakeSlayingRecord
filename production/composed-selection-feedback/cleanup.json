@@ -1,0 +1,95 @@
+{
+  "task": "task-20261010-0013",
+  "removed": [
+    {
+      "path": ".runtime/selection-review",
+      "files": 1058,
+      "bytes": 1675710950,
+      "method": "removed after own server exit and evidence preservation",
+      "absent_after": true
+    },
+    {
+      "path": "../../linked-worktrees/task-20261010-0013/desk/.runtime/selection-baseline",
+      "files": 91,
+      "bytes": 3132081,
+      "method": "removed after own server exit and evidence preservation",
+      "absent_after": true
+    },
+    {
+      "path": "../../linked-worktrees/task-20261010-0013/desk/.runtime/selection-tests",
+      "files": 4,
+      "bytes": 98896,
+      "method": "removed after own server exit and evidence preservation",
+      "absent_after": true
+    },
+    {
+      "path": "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/review-selection-_f6ffeen",
+      "files": 2,
+      "bytes": 450560,
+      "sqlite_files": 2,
+      "absent_after": true,
+      "method": "TemporaryDirectory removed by normal server exit"
+    },
+    {
+      "path": "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/review-selection-wagawk1b",
+      "files": 2,
+      "bytes": 450560,
+      "sqlite_files": 2,
+      "absent_after": true,
+      "method": "TemporaryDirectory removed by normal server exit"
+    },
+    {
+      "path": "production/composed-selection-feedback/after-preview.png",
+      "files": 1,
+      "bytes": 237191,
+      "method": "duplicate; final screenshot or registered input retained",
+      "absent_after": true
+    },
+    {
+      "path": "production/composed-selection-feedback/after-located.png",
+      "files": 1,
+      "bytes": 230449,
+      "method": "duplicate; final screenshot or registered input retained",
+      "absent_after": true
+    },
+    {
+      "path": "production/composed-selection-feedback/draft-return.png",
+      "files": 1,
+      "bytes": 295555,
+      "method": "duplicate; final screenshot or registered input retained",
+      "absent_after": true
+    },
+    {
+      "path": ".runtime/clarification-inputs/as001-cross-selection-preview.jpg",
+      "files": 1,
+      "bytes": 306683,
+      "method": "duplicate; final screenshot or registered input retained",
+      "absent_after": true
+    }
+  ],
+  "removed_files": 1161,
+  "removed_bytes": 1680912925,
+  "own_ports_closed": {
+    "51094": true,
+    "51113": true,
+    "51114": true
+  },
+  "own_processes_exited": [
+    17812,
+    17830,
+    15069
+  ],
+  "containers_created_or_removed": 0,
+  "images_created_or_removed": 0,
+  "worktrees_retained": "Current TUI and task cleanup lock; exit session then managed whole-task cleanup; no preview or test database retained",
+  "shared_listeners_unchanged": [
+    3000,
+    63108
+  ],
+  "workspace_guard": {
+    "script": "scripts/task_workspace_guard.py",
+    "sha256": "5fe54f621163ceb4e8821980d8bea16075addc3283c8e5738fba52287617bd7a",
+    "run_from": "main project root",
+    "blockers": []
+  }
+}
