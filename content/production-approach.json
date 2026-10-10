@@ -8,7 +8,7 @@
       "lead": "从《李寄斩蛇》的真实创作出发，探索人和 AI 的协作，逐步形成可使用、可调整的系统与工作方法，让人专注作品，并支持新的故事。",
       "source": {
         "path": "production/system-vision.md",
-        "sha256": "0f496d1827c9a76ab78cda95eb8ff63a8f5d9d99d3862e7daa8f0dc11db3a2d6"
+        "sha256": "f3a90e5d9d70130fe28065c386f009296f2e083c4f9ef28768e3583de83b82e4"
       },
       "sections": [
         {
@@ -27,9 +27,52 @@
           "blocks": [
             {
               "type": "paragraph",
-              "text": "人把握方向与表达、作出判断；AI 按适用方法创作、自检和修订。审阅台连接作品、素材与反馈，可靠保存和交接，让人专注作品。"
+              "text": "人提供创造性与判断，AI 提供效率与复用性，双方通过审阅台交换意见。审阅台以准确作品依据、版本和可靠交接提供基础约束；三方共同推进从采编到影视作品的创作全流程。"
             }
-          ]
+          ],
+          "diagram": {
+            "type": "collaboration",
+            "roles": [
+              {
+                "id": "human",
+                "title": "人",
+                "value": "创造性"
+              },
+              {
+                "id": "desk",
+                "title": "审阅台",
+                "value": "基础约束"
+              },
+              {
+                "id": "ai",
+                "title": "AI",
+                "value": "效率与复用性"
+              }
+            ],
+            "exchanges": [
+              {
+                "from": "human",
+                "to": "desk",
+                "label": "交换意见"
+              },
+              {
+                "from": "desk",
+                "to": "ai",
+                "label": "交换意见"
+              }
+            ],
+            "constraint": "准确作品依据、版本与交接，贯穿创作全流程",
+            "workflow": {
+              "label": "三方共同完成故事创作",
+              "stages": [
+                "采编",
+                "小说",
+                "剧本",
+                "素材",
+                "影视作品"
+              ]
+            }
+          }
         },
         {
           "id": "methods",
