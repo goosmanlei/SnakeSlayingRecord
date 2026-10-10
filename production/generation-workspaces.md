@@ -46,7 +46,7 @@ Agent 在执行会话内登记提交引用约束：主仓 `config/instance.json`
 
 ## 初始化与恢复审阅
 
-当前以 [新视听制作](audiovisual/README.md) 的 Schema 9 完整导出、准确索引与最小发布幂等凭据恢复。旧制作包、旧格式回放和其他任务历史库不再是恢复源。普通创作从最新正式基线初始化，冻结方案按正常规则建新版。
+当前以 [新视听制作](audiovisual/README.md) 的当前完整导出、准确索引与最小发布幂等凭据恢复。旧制作包、旧格式回放和其他任务历史库不再是恢复源。普通创作从最新正式基线初始化，冻结方案按正常规则建新版。
 
 先创建或进入自己的任务 worktree，并同步最新主干。无正式任务记录的独立工程工作也可以使用独立分支；不要为了使用这些工具另建任务账本。下列命令从 worktree 根目录执行：
 
@@ -76,9 +76,9 @@ python3 scripts/generation_review.py --system "$generation_system" \
 ## 生成、登记与审阅
 
 1. 使用本工作区的 `seed_audio.py`、`lyria_music.py` 或图像工具。外部图像工具返回到其原生缓存时，`record_builtin_image.py` 将准确原件与真实回执收敛到本 worktree，不复制到主目录。Lyria 原始响应与候选先留在 `.runtime/lyria/<id>/`，整理交付时再登记内容寻址原件。
-2. 旧批次登记工具已退役。通用系统的 `production-file`、`production-import` 只针对本工作区 `.runtime/` 下的实例调用；不使用正式主目录作为日常生成目标。既有准确输入、母版认可、谱系和预期版本校验继续生效。
+2. 旧批次登记工具已退役。通用系统的 `production-file`、`production-import` 只针对本工作区 `.runtime/` 下的实例调用；不使用正式主目录作为日常生成目标。既有准确输入、原始意见、谱系和预期版本校验继续生效。
 3. 在任务页面查看图像、播放音频、评论、修订和记录实际审阅结论。真实用户认可与工具检查分别记录。执行本流程不代表授权新增付费调用，也不代表接受任何作品。
-4. 自检完成后冻结包；不要把测试评论、测试采纳或无关创作变更放进交付数据。
+4. 自检完成后冻结包；不要把测试评论、测试选择或无关创作变更放进交付数据。
 
 ```bash
 python3 scripts/generation_review.py --instance .runtime/generation/review prepare \

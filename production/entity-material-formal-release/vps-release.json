@@ -1,0 +1,53 @@
+{
+  "publication_id": "lijizhanshe-20261010-0020-r1",
+  "phase": "complete",
+  "maintenance": "off",
+  "story_commit": "6bea5807fcc2843f9b772ab45d05346bcbed99aa",
+  "desk_commit": "23defa1b4f8b2b07344d754c90effa0b83a1b38d",
+  "image_id": "sha256:6a7ead6aa1bec84d628e336132966ffb99561f06f054eedb30d905782c030012",
+  "container_id": "7efa79b599195acde65ff2dd592cceaf442e07421eafb6941a94ef915d600408",
+  "limits": {
+    "Memory": 1073741824,
+    "MemorySwap": 1610612736,
+    "NanoCpus": 1000000000,
+    "PidsLimit": 64,
+    "RestartPolicy": {
+      "Name": "unless-stopped",
+      "MaximumRetryCount": 0
+    },
+    "LogConfig": {
+      "Type": "json-file",
+      "Config": {
+        "max-file": "3",
+        "max-size": "10m"
+      }
+    }
+  },
+  "latest_cleanup": {
+    "containers": [
+      "ada78df5fa2b"
+    ],
+    "volumes": [],
+    "images": [
+      "sha256:0af4e9ee3173d162fc7ae9dbd0912f396e0f9f26501e27a8b64c79a021af06e9"
+    ],
+    "old_instance": {
+      "files": 1046,
+      "bytes": 1132036487
+    }
+  },
+  "removed_staging": {
+    "files": 1050,
+    "bytes": 2707049071
+  },
+  "prepare": {
+    "publication_id": "lijizhanshe-20261010-0020-r1",
+    "package_sha256": "1c2863da09af8c8eaa31af99ce0e74bf86de9a77a409d9273166f92cd0e65ccf",
+    "package_bytes": 1354475520,
+    "image_id": "sha256:6a7ead6aa1bec84d628e336132966ffb99561f06f054eedb30d905782c030012",
+    "build_image_id": "sha256:32f0b873967f49a863f764c7b6446d6d65ce7113c3b16f92c8f246253694390d",
+    "story_commit": "6bea5807fcc2843f9b772ab45d05346bcbed99aa",
+    "desk_commit": "23defa1b4f8b2b07344d754c90effa0b83a1b38d"
+  },
+  "boundary": "one authorized upgrade; readonly Chrome acceptance; prior reset/restart/AI budget evidence retained from 0032, no new AI request"
+}

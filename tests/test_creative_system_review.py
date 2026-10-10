@@ -28,11 +28,15 @@ class VisionDeliveryTest(unittest.TestCase):
         self.assertEqual(updated['tabs'][1:], before['tabs'])
         self.assertEqual(vision.update(updated, raw), updated)
         tab = updated['tabs'][0]
-        actual = [tab['title'], tab['lead']]
+        actual = [tab['title']] + ([tab['lead']] if tab['lead'] else [])
         for section in tab['sections']:
             actual += [section['title']] + [block['text'] for block in section['blocks']]
-        expected = [re.sub(r'^#{1,2} ', '', line) for line in raw.decode().splitlines() if line.strip()]
+        expected = [re.sub(r'^#{1,2} ', '', line) for line in raw.decode().splitlines()
+                    if line.strip() and not line.startswith(('<!-- layout: ', '<!-- diagram: '))]
         self.assertEqual(actual, expected)
+        diagrams = [json.loads(line[len('<!-- diagram: '):-len(' -->')])
+                    for line in raw.decode().splitlines() if line.startswith('<!-- diagram: ')]
+        self.assertEqual([section['diagram'] for section in tab['sections'] if 'diagram' in section], diagrams)
         self.assertEqual(tab['source']['sha256'], hashlib.sha256(raw).hexdigest())
         release.check_vision_change(before, updated, raw)
         changed = copy.deepcopy(updated)
