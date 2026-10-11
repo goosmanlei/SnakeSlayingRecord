@@ -1,0 +1,44 @@
+elapsed 20.588544416 bytes 16745585
+         20618471 function calls (20600622 primitive calls) in 20.579 seconds
+
+   Ordered by: cumulative time
+   List reduced from 398 to 35 due to restriction <35>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.001    0.001   20.570   20.570 ui_projection.py:259(scene)
+  304/303    0.001    0.000   18.451    0.061 read_cache.py:209(read_json)
+   155545   13.190    0.000   13.190    0.000 {method 'execute' of 'sqlite3.Connection' objects}
+       26    0.002    0.000   10.782    0.415 shot_references.py:96(enrich_detail)
+      302    0.032    0.000   10.505    0.035 business_relations.py:214(input_context)
+      302    0.001    0.000   10.416    0.034 business_relations.py:162(code)
+      303    0.000    0.000    9.409    0.031 business_codes.py:169(visible_codes)
+      303    0.010    0.000    9.408    0.031 business_codes.py:172(<lambda>)
+        1    0.000    0.000    9.077    9.077 ui_projection.py:7(material_entries)
+        1    0.005    0.005    9.073    9.073 ui_projection.py:9(<lambda>)
+        1    0.013    0.013    9.068    9.068 ui_projection.py:12(_material_entries)
+      303    0.114    0.000    7.127    0.024 business_codes.py:134(edition_codes)
+    35036    0.091    0.000    7.113    0.000 production.py:68(record)
+        9    0.000    0.000    6.432    0.715 ui_projection.py:286(enrich)
+        9    0.000    0.000    6.174    0.686 ui_projection.py:349(<dictcomp>)
+       11    0.000    0.000    6.174    0.561 production.py:674(snapshot)
+        5    0.000    0.000    4.983    0.997 entity_contract.py:75(shot_workspace)
+        1    0.017    0.017    4.650    4.650 list_associations.py:54(material_uses)
+    21822    0.062    0.000    3.574    0.000 business_relations.py:138(material_bindings)
+    11332    0.006    0.000    3.553    0.000 production.py:118(ref_record)
+     4723    0.012    0.000    3.432    0.001 business_relations.py:187(exact_input_relation)
+     4675    0.006    0.000    3.398    0.001 material_relations.py:47(rules)
+     4421    0.011    0.000    3.391    0.001 business_relations.py:204(input_rules)
+     1981    0.006    0.000    3.372    0.002 material_relations.py:76(active_inputs)
+      303    0.000    0.000    2.105    0.007 business_codes.py:97(dump)
+      303    1.350    0.004    2.103    0.007 business_codes.py:98(<listcomp>)
+    35027    0.032    0.000    1.690    0.000 production_current.py:102(annotate)
+     1861    0.029    0.000    1.557    0.001 material_storage.py:266(identity)
+    62360    0.035    0.000    1.142    0.000 __init__.py:183(dumps)
+    83203    0.029    0.000    1.136    0.000 __init__.py:299(loads)
+    83203    0.047    0.000    1.097    0.000 decoder.py:332(decode)
+    62360    0.052    0.000    1.091    0.000 encoder.py:182(encode)
+      302    0.503    0.002    1.036    0.003 business_relations.py:167(<dictcomp>)
+    52962    0.100    0.000    1.035    0.000 production.py:35(record_view)
+    37071    0.015    0.000    1.031    0.000 production_current.py:77(checksum)
+
+
