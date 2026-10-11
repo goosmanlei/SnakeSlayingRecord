@@ -10,19 +10,22 @@ REPLACEMENTS = {
 }
 
 
-def update(store, root):
+def update(store, root, names=None):
     from review_desk import methods
     from review_desk.production_current_methods import WORK_TYPES
     changes = {}
     for entry in methods.export_registry(store)['records']:
         oid = entry['object_id'];row = methods.read(store, oid);payload = copy.deepcopy(row['payload'])
         if payload['format'] != methods.FORMATS['skill'] or not (set(payload['work_types']) & WORK_TYPES):continue
+        if names is not None and oid.removeprefix('method.skill.') not in names:continue
         for filename,body in payload['files'].items():
             for old,new in REPLACEMENTS.items():body=body.replace(old,new)
             payload['files'][filename]=body
         rule = (root/'production/current-candidates/README.md').read_text()
         payload['files']['references/current-production.md'] = rule
         body=payload['files']['SKILL.md']
+        if oid == 'method.skill.material-assessment' and '先判断独立状态的制作职责' not in body:
+            body=body.replace('## 实际比对后选路线', '## 先判断独立状态的制作职责\n\n先用准确故事依据、当前镜头目标、直接需求和消费者回答：这项差异是否确需独立制作输入？身份本身够用，不另造基准状态；纯表演、普通持放和连续性检查回到实际镜头或方案。结构、通行、干湿和声音差异按真实用途保留，不能按名称或零需求自动撤下。已有状态撤下前先迁好有效条件及当前引用，再清理无用途正文；历史提交保持原样。没有独立状态职责与没有独立素材需求是两个判断，不为保状态制造需求。\n\n## 实际比对后选路线')
         marker='## 当前制作内容与候选'
         if marker in body:body=body[:body.index(marker)].rstrip()
         payload['files']['SKILL.md']=body+'\n\n'+marker+'\n\n执行前阅读 references/current-production.md。制作对象原地维护，步骤摘要不保存全文历史；只有实际提交保存候选所需完整快照。草稿、回读、自检及完成仍按本方法的必要步骤执行。故事域版本不受此规则影响。\n'
