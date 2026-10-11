@@ -1,0 +1,215 @@
+{
+  "object_id": "material-av-e01-a02-s03-video",
+  "kind": "REQUIREMENT",
+  "expected_version": 9,
+  "payload": {
+    "blocks": [
+      {
+        "id": "purpose",
+        "text": "原生音画完成这一镜；图像候选不计为视频结果。"
+      }
+    ],
+    "entities": [
+      {
+        "object_id": "entity-a-heng",
+        "revision_id": "77ca680362056db37a7d222e83ecefba99466d62f7119b122f029d27560a88f9"
+      },
+      {
+        "object_id": "entity-grain",
+        "revision_id": "e8359253021664bcb81ccf2eba3293987e69baedf231d9b242c4876d6c9ebfa0"
+      },
+      {
+        "object_id": "entity-li-ji",
+        "revision_id": "55680f0c4847d806cdc302001450b5e0cd67b14c827ddb5bf20cf7b622ead92e"
+      },
+      {
+        "object_id": "entity-paste-wool",
+        "revision_id": "cd1bbb737aa0bfb2195f95cac00672276443ae9dda1551a188684267fc13de9d"
+      },
+      {
+        "object_id": "entity-rice-bag",
+        "revision_id": "81f2fa9415112bdf432b44f31a8d9c75782d5d5fbfd3263b7f8b78211b38e862"
+      },
+      {
+        "object_id": "entity-rice-shop",
+        "revision_id": "35809d8a5e123c970e38f839a298ccfc8d4aa9c11a06197dd593cfcc8c579225"
+      },
+      {
+        "object_id": "entity-songbook",
+        "revision_id": "185e7a5f034b3015474297e27278ff05987e8a2171222bf9bf2db237112d3e03"
+      },
+      {
+        "object_id": "entity-zhou",
+        "revision_id": "5b04d7bbc033a2cd2300ec8e59d8c51223498e74d6bd596b88dcf000534001fe"
+      }
+    ],
+    "format": "production-requirement-v1",
+    "generation": {
+      "blockers": [
+        "M2995 首帧尚无生成原件，须实际看图并选定准确候选后再准备视频调用。",
+        "周掌柜和阿蘅的音频片段本轮尚未试听；保留原准确引用与范围，未宣称音色及片段适用通过。",
+        "14 秒是沿用的方案估计，尚未通过自然语速的完整对白与添米动作合排验证；不得提速或缩词凑时长。"
+      ],
+      "conditions": {},
+      "execution": {
+        "channel": "pippit-tool-cli",
+        "mode": "reference",
+        "start_constraint": "reference"
+      },
+      "format": "generation-plan-v1",
+      "inputs": [
+        {
+          "necessity": "required",
+          "reference": {
+            "object_id": "material-av-e01-a02-s03-first-frame",
+            "revision_id": "348f890c9c08c403eac7771b518c2a75ce2e8ba93b4f4e85c5dd95d15f42d55f"
+          },
+          "relation": {
+            "object_id": "relation-d6679684225081488032bb0f3d7f90cc",
+            "revision_id": "d8239f4d332cbc6de49a4d4cc0177b0cf219f23d610bf3839e9ff876e2debcdc"
+          },
+          "role": "reference_image",
+          "selection_state": "unselected",
+          "semantics": "reference",
+          "use": "起始图提供构图、手位和已可见主体的参考；本模式不固定首帧像素"
+        },
+        {
+          "component_id": "original",
+          "necessity": "required",
+          "range": {
+            "end_seconds": 8.3,
+            "start_seconds": 5.2
+          },
+          "reference": {
+            "object_id": "asset-fg3-zhou-voice-01",
+            "revision_id": "0e38300c0d078f6eeb93350845aa75c5b044ad844f74e79a70f93c2ae231157c"
+          },
+          "relation": {
+            "object_id": "relation-3d5c34e83cceeb56fcc9a408e51e821b",
+            "revision_id": "71011d0723c5193cba95eb2f05207d9fffe4612d1d7f1986dc436bfed7027a67"
+          },
+          "role": "reference_audio",
+          "semantics": "reference",
+          "use": "周掌柜：只锁定说话身份的干净短参考"
+        },
+        {
+          "component_id": "original",
+          "necessity": "required",
+          "range": {
+            "end_seconds": 5.6,
+            "start_seconds": 0
+          },
+          "reference": {
+            "object_id": "asset-fg3-aheng-voice-01",
+            "revision_id": "f912f743495fbc0eab984f066331201d49dd38dbd49cd98a5af0257c9d1e419a"
+          },
+          "relation": {
+            "object_id": "relation-34fda420a436374a6f0ff215128f68de",
+            "revision_id": "4fce5ec86452a0366f4a2f0ce48a0a4587d94f1d437b0828311c8fb662bf7d35"
+          },
+          "role": "reference_audio",
+          "semantics": "reference",
+          "use": "阿蘅：只锁定说话身份的干净短参考"
+        }
+      ],
+      "method": "generate",
+      "model": "seedance2.0_fast_vision",
+      "output": {
+        "description": "阿蘅已答应不省唱段，掌柜在柜外，米袋口仍未扎紧 → 预付添入同一袋",
+        "name": "01 · A02 · 03 预付添入同一袋 · 视频",
+        "review_criteria": [
+          "逐句核对本镜准确剧本，不补写、缩词、提速或抢唱后文",
+          "人物知情、动作顺序、接触点与受力合理",
+          "镜前镜后状态和空间方向衔接，音画同期与声源距离可辨",
+          "核实720p原件、真实时长及实际上传参考；无结果时保持未生成",
+          "起点和逐镜身份须按实际原件审阅；普通参考不承诺固定首帧像素",
+          "按本镜显露顺序核对直接图像参考；未入画者不提前出现，音频只约束声源而不代替视觉身份"
+        ]
+      },
+      "parameters": {
+        "aspect_ratio": "16:9",
+        "duration": 14,
+        "resolution": "720p",
+        "task_type": "reference"
+      },
+      "prompt": "二维人物与轻手绘背景，河街米铺的日间柜边。周掌柜把另抓的一小把预付米添入阿蘅已有唱工米的同一只布袋，让人看清这次预付与之前一木斗工钱的数量和动作不同。一镜到底，正常人物比例、清楚轮廓与轻背景，不加重纸纹、锐化或写实皮肤。\n\n@图片1提供起始构图、已可见的人物和空间；使用普通参考，不将它拼贴进画面。周掌柜画左、阿蘅画右，摄影机始终留在临街侧，以双手与面部同框的近景看清柜边、袋口和添米动作。李寄仍在阿蘅同侧的后景，手上浆糊保留，本镜不说话。\n\n起点是阿蘅已经答应唱全，袋口尚未系紧，袋内只有之前的唱工米；掌柜尚未抓起预付米。周掌柜回到柜边，另抓一小把米，示意阿蘅重新撑开袋口；她撑稳后，他将这一小把添进同一袋，手放空后收回。这里不用木斗，不重复上一镜的量米，也不出现第二只袋；原有米与小把新米合在袋中，体积只略增。\n\n添米后周掌柜平实清楚地说：“这把先付你。唱成了，明天的报酬够你家吃几天。”他是在说明约定，不作施舍或奖赏的夸张表情。阿蘅听完，留出自然反应，再说：“谢谢周叔。我傍晚就来。”两句各说一次，不抢接、不重叠；非说话者安静听，保留自然气口。结束时预付米已经落袋，袋仍由阿蘅持有，袋口尚未系紧，留给下一镜扎袋和与李寄安排练曲。\n\n@音频1只给周掌柜声音身份，@音频2只给阿蘅声音身份，不复述参考词，不照搬参考的语气或录音空间。对白和对应人物同步，添米时有短而明确的米粒落袋声；柜边近声与远街底声分层，无背景音乐、旁白或额外对白。檐下柔光让手、袋口和米粒可辨，不过曝；米白、灰木、青衣和赭衣沿用前镜，不新增字幕或文字。",
+      "randomization": {
+        "mode": "random"
+      },
+      "relation_model": "context-v1",
+      "selected_routes": {},
+      "tool": "pippit-tool-cli"
+    },
+    "media_type": "video",
+    "method_adjustment": {
+      "operation": "relation-contract",
+      "parent": {
+        "object_id": "material-av-e01-a02-s03-video",
+        "revision_id": "d9ba84aff34e88222de6007de7f991ee571361e12fb4f6b9bf4896a590f4a1ae"
+      }
+    },
+    "purpose": "原生音画完成这一镜；图像候选不计为视频结果。",
+    "required": true,
+    "scope": {
+      "object_id": "av-e01-a02-s03",
+      "revision_id": "0e4756b54b76556712a2cc2ddca61fe9f2977500048ffdcaf5eecb1960854df9"
+    },
+    "slot": "video",
+    "sources": [
+      {
+        "block_ids": [
+          "screenplay-04-lantern-home-s001-b023",
+          "screenplay-04-lantern-home-s001-b024",
+          "screenplay-04-lantern-home-s001-b025"
+        ],
+        "object_id": "screenplay-04-lantern-home-e01",
+        "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+        "scene_id": "s001"
+      }
+    ],
+    "specification": {
+      "aspect_ratio": "16:9",
+      "resolution": "720p"
+    },
+    "states": [
+      {
+        "object_id": "form-a-heng-blue",
+        "revision_id": "f37d3fce86c71b44a4f4c00bd23b048d89dbe51b34d21cbd8455f6a24af611e6"
+      },
+      {
+        "object_id": "form-grain-base",
+        "revision_id": "1de256f12be9f7e60ef4953d7a72d1a2a3f93082a709d2714624dcffc9773b05"
+      },
+      {
+        "object_id": "form-li-ji-paste",
+        "revision_id": "6ecf1cc575d6527f25b10095bfb1c1a746747c8e6188919d239e733ff37a42b7"
+      },
+      {
+        "object_id": "form-paste-wool-base",
+        "revision_id": "8a439dada8fff332aed14731da9d87bb03ee390e1d624875feeb5087aadfd5fc"
+      },
+      {
+        "object_id": "form-rice-bag-wages",
+        "revision_id": "b1fbb01d5c5f0ca35cf8b9d7b62d72dc3dac181b4546ed117d94df3c06820007"
+      },
+      {
+        "object_id": "form-rice-bag-advance",
+        "revision_id": "b2f0f34d04db87bed76162ff6e25046eca8f6e2c5c0bde75d167b4da2d4b3dfe"
+      },
+      {
+        "object_id": "form-rice-shop-day",
+        "revision_id": "bf34c49620c87b90b3b560b1b49a6c59d568623efa0591ac6197b77af15df95d"
+      },
+      {
+        "object_id": "form-songbook-base",
+        "revision_id": "094586233378ac6b7f8cdadf6060c341260692876600d7ff9795849a14f64f09"
+      },
+      {
+        "object_id": "form-zhou-base",
+        "revision_id": "d0f08dd88db91a127e370e1a8db5463ae3e498af6ae309d9a5b962fbc715db05"
+      }
+    ],
+    "title": "01 · A02 · 03 预付添入同一袋 · 视频",
+    "usage": "editorial"
+  }
+}
