@@ -57,6 +57,19 @@ class CompleteExportIndexTest(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'different revisions'):
                 verify_export_index(index, export, self.formats)
 
+    def test_shot_and_ordinary_entity_share_one_index_without_shadow_identity(self):
+        self.formats.update(('production-entity-v1','production-av-shot-v1'))
+        self.add('shot-current','ash001',1,{'format':'production-av-shot-v1'})
+        self.add('entity-current','girl',1,{'format':'production-entity-v1','entity_type':'character'})
+        index=self.index()
+        self.assertEqual(index['entities'],{'ash001':{'revision_id':'shot-current','type':'shot'},'girl':{'revision_id':'entity-current','type':'character'}})
+        with tempfile.TemporaryDirectory() as directory:
+            destination=Path(directory)
+            (destination/'objects.json').write_text(json.dumps({'revisions':self.rows}))
+            verify_export_index(index,destination,self.formats)
+            index['entities'].pop('ash001')
+            with self.assertRaisesRegex(ValueError,'different entities'):verify_export_index(index,destination,self.formats)
+
     def test_conflicting_original_checksum_is_rejected(self):
         self.add('asset2', 'asset', 2, {'format': 'production-asset-v1', 'components': [{'file': 'abc.png', 'sha256': 'other'}]})
         with self.assertRaisesRegex(ValueError, 'conflicting original'):
