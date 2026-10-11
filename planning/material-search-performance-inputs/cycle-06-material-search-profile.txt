@@ -1,0 +1,54 @@
+{"episode": "av-e01", "scene": "av-e01-a01", "scope_revision": "576b2f01640d266c20d8d3f90dc95be0a12d955c3cde3f22f31eb4ed2e982fb6", "search": "M2635", "wall_seconds": 12.017145791999999, "total": 1, "json_bytes": 163400, "read_cache": "not attached; business DB mode=ro", "source_desk": "123e7d00912414d4ca1241a03ad5e91ee9d18622"}
+         10257083 function calls (10216501 primitive calls) in 12.006 seconds
+
+   Ordered by: cumulative time
+   List reduced from 373 to 45 due to restriction <45>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.016    0.016   12.006   12.006 /Users/bytedance/codex-path/creative/story-review-desk/review_desk/ui_projection.py:130(material_list)
+        1    0.000    0.000    9.379    9.379 /Users/bytedance/codex-path/creative/story-review-desk/review_desk/ui_projection.py:7(material_entries)
+      2/1    0.000    0.000    9.372    9.372 /Users/bytedance/codex-path/creative/story-review-desk/review_desk/read_cache.py:209(read_json)
+        1    0.004    0.004    9.372    9.372 /Users/bytedance/codex-path/creative/story-review-desk/review_desk/ui_projection.py:9(<lambda>)
+        1    0.011    0.011    9.368    9.368 /Users/bytedance/codex-path/creative/story-review-desk/review_desk/ui_projection.py:12(_material_entries)
+    47215    0.114    0.000    8.527    0.000 /Users/bytedance/codex-path/creative/story-review-desk/review_desk/production.py:78(record)
+   208857    6.748    0.000    6.748    0.000 {method 'execute' of 'sqlite3.Connection' objects}
+        1    0.018    0.018    4.993    4.993 /Users/bytedance/codex-path/creative/story-review-desk/review_desk/list_associations.py:54(material_uses)
+    30426    0.085    0.000    4.570    0.000 /Users/bytedance/codex-path/creative/story-review-desk/review_desk/business_relations.py:138(material_bindings)
+     6571    0.015    0.000    4.414    0.001 /Users/bytedance/codex-path/creative/story-review-desk/review_desk/material_relations.py:76(active_inputs)
+     8292    0.011    0.000    4.390    0.001 /Users/bytedance/codex-path/creative/story-review-desk/review_desk/material_relations.py:47(rules)
+     8234    0.024    0.000    4.377    0.001 /Users/bytedance/codex-path/creative/story-review-desk/review_desk/business_relations.py:210(input_rules)
+     8234    0.019    0.000    4.345    0.001 /Users/bytedance/codex-path/creative/story-review-desk/review_desk/business_relations.py:193(exact_input_relation)
+    16495    0.009    0.000    4.310    0.000 /Users/bytedance/codex-path/creative/story-review-desk/review_desk/production.py:128(ref_record)
+        1    0.032    0.032    2.474    2.474 /Users/bytedance/codex-path/creative/story-review-desk/review_desk/production_scope.py:47(projection)
+    47215    0.045    0.000    2.404    0.000 /Users/bytedance/codex-path/creative/story-review-desk/review_desk/production_current.py:102(annotate)
+    85143    0.049    0.000    1.740    0.000 /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/__init__.py:183(dumps)
+    85143    0.076    0.000    1.668    0.000 /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/encoder.py:182(encode)
+    70957    0.193    0.000    1.576    0.000 /Users/bytedance/codex-path/creative/story-review-desk/review_desk/production.py:35(record_view)
+    49805    0.021    0.000    1.540    0.000 /Users/bytedance/codex-path/creative/story-review-desk/review_desk/production_current.py:77(checksum)
+    85143    1.351    0.000    1.373    0.000 /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/encoder.py:204(iterencode)
+     4452    0.011    0.000    1.346    0.000 /Users/bytedance/codex-path/creative/story-review-desk/review_desk/production_scope.py:120(at_scope)
+27092/22262    0.064    0.000    1.316    0.000 /Users/bytedance/codex-path/creative/story-review-desk/review_desk/production_scope.py:97(visit)
+     1291    0.027    0.000    1.267    0.001 /Users/bytedance/codex-path/creative/story-review-desk/review_desk/material_storage.py:267(identity)
+    49805    0.012    0.000    1.249    0.000 /Users/bytedance/codex-path/creative/story-review-desk/review_desk/store.py:12(canonical)
+    80629    0.030    0.000    1.067    0.000 /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/__init__.py:299(loads)
+    80629    0.051    0.000    1.026    0.000 /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/decoder.py:332(decode)
+    80629    0.945    0.000    0.945    0.000 /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/decoder.py:343(raw_decode)
+    47218    0.070    0.000    0.530    0.000 /Users/bytedance/codex-path/creative/story-review-desk/review_desk/production_current.py:68(enabled)
+    35338    0.012    0.000    0.516    0.000 /Users/bytedance/codex-path/creative/story-review-desk/review_desk/review_text.py:14(generation_parameter_text)
+   142002    0.054    0.000    0.424    0.000 /Users/bytedance/codex-path/creative/story-review-desk/review_desk/list_reading.py:86(ref_record)
+     2590    0.007    0.000    0.410    0.000 /Users/bytedance/codex-path/creative/story-review-desk/review_desk/production_current.py:116(submission)
+   149726    0.076    0.000    0.368    0.000 /Users/bytedance/codex-path/creative/story-review-desk/review_desk/list_reading.py:66(record)
+        7    0.000    0.000    0.287    0.041 /Users/bytedance/codex-path/creative/story-review-desk/review_desk/list_reading.py:101(rows)
+        3    0.000    0.000    0.249    0.083 /Users/bytedance/codex-path/creative/story-review-desk/review_desk/business_relations.py:119(current)
+        3    0.062    0.021    0.248    0.083 /Users/bytedance/codex-path/creative/story-review-desk/review_desk/business_relations.py:128(<listcomp>)
+    12883    0.003    0.000    0.242    0.000 /Users/bytedance/codex-path/creative/story-review-desk/review_desk/list_reading.py:92(historical_ref_record)
+        3    0.000    0.000    0.237    0.079 /Users/bytedance/codex-path/creative/story-review-desk/review_desk/production_breakdown.py:33(rows)
+   194551    0.180    0.000    0.235    0.000 {method 'fetchone' of 'sqlite3.Cursor' objects}
+        7    0.153    0.022    0.233    0.033 /Users/bytedance/codex-path/creative/story-review-desk/review_desk/list_reading.py:106(<listcomp>)
+   813118    0.064    0.000    0.202    0.000 /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/encoder.py:413(_iterencode)
+    13567    0.008    0.000    0.170    0.000 /Users/bytedance/codex-path/creative/story-review-desk/review_desk/version_consolidation.py:63(deleted)
+    49805    0.014    0.000    0.150    0.000 /Users/bytedance/codex-path/creative/story-review-desk/review_desk/store.py:16(digest)
+    14287    0.020    0.000    0.135    0.000 /Users/bytedance/codex-path/creative/story-review-desk/review_desk/list_associations.py:63(add)
+830248/813118    0.092    0.000    0.132    0.000 /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/encoder.py:333(_iterencode_dict)
+
+
