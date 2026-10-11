@@ -24,7 +24,8 @@ def production_tables(before, after):
     for table, field in (('objects', 'id'), ('revisions', 'object_id')):
         after[table] = [r for r in after[table] if r[field] not in ignored] + [
             r for r in before[table] if r[field] in ignored]
-    if any(r['to_revision'] in rids and r['from_revision'] not in rids
+    unpublished = rids - {r['id'] for r in before['revisions']}
+    if any(r['to_revision'] in unpublished and r['from_revision'] not in rids
            and not any(v == r for v in before['dependencies']) for r in after['dependencies']):
         raise ValueError('production depends on newly changed method data; deliver its exact binding first')
     after['dependencies'] = [r for r in after['dependencies'] if r['from_revision'] not in rids] + [
