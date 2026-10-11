@@ -2,6 +2,8 @@
 
 ## 当前成果与运行依据
 
+- task-20261011-0004 已实现实体管理集／场／镜三级聚焦、去派生涉及边及真实方向／循环／孤立布局。ASH001 的14节点／10关系、ASH002的11／7和ASH006的10／9已按当前隔离数据核对，Chrome完成切换、大卡返回、原评论草稿、窄屏拖动和故障恢复；素材原筛选及分页保留。具体边界见 [关系图聚焦验收](production/entity-graph-focus/VERIFICATION.md)。本机正式身份、发布后复走、恢复和资源收尾以主任务账本及 `.runtime/task-20261011-0004/` 实际回执核对；负责人独立复验另行承接。
+
 - task-20261011-0001 已实现镜头统一实体契约、全剧／集场关系图、大卡与视听页共用素材工作区，旧 ASSET 的 17 份当前方案已按准确包增量进入本机正式库。当前方案、历史候选、准确参考与原评论分别保持；执行者页面验收与恢复边界见 [镜头实体工作区验收](production/entity-shot-workspace/VERIFICATION.md)。3000 正式镜像、最终两仓身份、发布后 Chrome 与清理结果以主任务账本及 `.runtime/task-20261011-0001/` 实际回执为准，根独立复验另行记录。
 
 - task-20261011-0002 已实现素材媒体分组、唯一身份展示和五列基准行分页，隔离Chrome覆盖AS001／AS002、全剧翻页、图片原件、音频实际播放及故障恢复。具体边界见[素材分组验收](production/material-media-groups/VERIFICATION.md)；本机正式服务、Git交付和资源收尾以主任务账本及 `.runtime/task-20261011-0002/` 准确回执核对，执行者验收与负责人独立复验分开。
@@ -90,7 +92,7 @@
 - task-20261010-0019 的双仓 worktree 仍由当前 TUI 及清理锁占用；本任务执行者退出并释放锁后，通过 `codex.project task cleanup` 整组退役，保留提交与会话历史。正式运行和当前完整恢复不依赖任务目录，必要证据归主项目 `.runtime/task-20261010-0019/`。
 
 - task-20261010-0016 的双仓worktree仍由当前TUI及清理锁使用；本任务执行者在退出释放锁后沿 `codex.project task cleanup` 整组退役，保留提交与会话历史。必要验收及准确清理回执见 [视听三部分验收](production/audiovisual-three-part/VERIFICATION.md)，正式运行和恢复不依赖任务临时目录。
-- 受管候选的唯一当前恢复入口为完整 Schema 12 `export/manifest.json`、[准确索引](production/audiovisual/index.json) 和 [发布幂等凭据](production/audiovisual/recovery.json)。按 [生产说明](production/README.md) 恢复到新空实例；旧编排包、旧导出、旧歌曲重放与其他任务历史数据库不能覆盖活库。
+- 受管候选的唯一当前恢复入口为完整 Schema 13 `export/manifest.json`、[准确索引](production/audiovisual/index.json) 和 [发布幂等凭据](production/audiovisual/recovery.json)。按 [生产说明](production/README.md) 恢复到新空实例；旧编排包、旧导出、旧歌曲重放与其他任务历史数据库不能覆盖活库。
 - 正式数据、服务、镜像及必要恢复回执继续保留；临时资源按相应任务账本和实际引用核对，完成发布、页面验收与新空库恢复后清理。方案核验范围见 [视听验收](production/audiovisual/verification.md)。
 - 其他任务现存工作区、历史库和归档由原任务执行者负责，不能据旧编号或目录名批删；它们不再是有效制作基线。`task-20261005-0001`、`task-20261006-0003` 的本机归档按任务账本 `repositories.*.cleanup.ignored_archive` 定位，原任务执行者在追溯结束后裁剪重复过程资料。
 - task-20261009-0003 会话仍占用故事 worktree，结项、退出并释放锁后再通过 `codex.project task cleanup` 受管退役，保留分支、提交、最小回执及会话历史；不强删活跃工作区。
