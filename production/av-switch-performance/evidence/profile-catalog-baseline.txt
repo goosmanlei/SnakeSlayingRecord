@@ -1,0 +1,44 @@
+elapsed 1.4606009580000001 bytes 329998
+         111360 function calls in 1.461 seconds
+
+   Ordered by: cumulative time
+   List reduced from 171 to 35 due to restriction <35>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    1.458    1.458 audiovisual.py:158(catalog)
+        1    0.001    0.001    1.423    1.423 audiovisual.py:196(<listcomp>)
+       17    0.001    0.000    1.418    0.083 audiovisual.py:187(comment_targets)
+     6106    1.346    0.000    1.346    0.000 {method 'execute' of 'sqlite3.Connection' objects}
+      426    0.008    0.000    1.119    0.003 production_breakdown.py:158(material_comment_targets)
+      567    0.000    0.000    0.325    0.001 production.py:118(ref_record)
+      121    0.000    0.000    0.324    0.003 audiovisual.py:128(children)
+      567    0.002    0.000    0.324    0.001 production.py:68(record)
+      121    0.000    0.000    0.324    0.003 audiovisual.py:130(<listcomp>)
+     1132    0.000    0.000    0.262    0.000 {method 'extend' of 'list' objects}
+      361    0.000    0.000    0.250    0.001 audiovisual.py:190(<genexpr>)
+      852    0.001    0.000    0.047    0.000 production_breakdown.py:188(exact_scoped)
+      852    0.012    0.000    0.039    0.000 production_breakdown.py:194(<listcomp>)
+     2125    0.001    0.000    0.036    0.000 __init__.py:299(loads)
+     2125    0.001    0.000    0.035    0.000 decoder.py:332(decode)
+     1541    0.003    0.000    0.033    0.000 list_reading.py:34(project)
+     2125    0.033    0.000    0.033    0.000 decoder.py:343(raw_decode)
+      584    0.001    0.000    0.021    0.000 production_current.py:102(annotate)
+        1    0.000    0.000    0.019    0.019 audiovisual.py:184(<listcomp>)
+      584    0.000    0.000    0.012    0.000 production_current.py:77(checksum)
+     1125    0.001    0.000    0.011    0.000 list_reading.py:66(record)
+     2252    0.010    0.000    0.011    0.000 production_breakdown.py:176(<genexpr>)
+        1    0.000    0.000    0.010    0.010 production.py:516(current_records)
+      584    0.000    0.000    0.010    0.000 store.py:12(canonical)
+      584    0.001    0.000    0.010    0.000 production.py:35(record_view)
+      584    0.000    0.000    0.010    0.000 __init__.py:183(dumps)
+      584    0.000    0.000    0.009    0.000 encoder.py:182(encode)
+      584    0.009    0.000    0.009    0.000 encoder.py:204(iterencode)
+      584    0.001    0.000    0.007    0.000 production_current.py:68(enabled)
+        3    0.000    0.000    0.006    0.002 <frozen importlib._bootstrap>:1002(_find_and_load)
+        3    0.000    0.000    0.006    0.002 <frozen importlib._bootstrap>:967(_find_and_load_unlocked)
+        3    0.000    0.000    0.005    0.002 <frozen importlib._bootstrap>:659(_load_unlocked)
+        3    0.000    0.000    0.005    0.002 <frozen importlib._bootstrap_external>:844(exec_module)
+        3    0.000    0.000    0.005    0.002 <frozen importlib._bootstrap_external>:916(get_code)
+    11294    0.004    0.000    0.005    0.000 material_storage.py:207(factory)
+
+
