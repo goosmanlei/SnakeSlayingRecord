@@ -47,6 +47,28 @@ def sha(value):
 def pk(table,row):
     return tuple(row[k] for k in KEYS[table])
 
+def verify_applied(db, plan, identity):
+    """Read back every changed row from a fresh post-commit snapshot."""
+    original_factory = db.row_factory
+    db.row_factory = sqlite3.Row
+    try:
+        if [r[0] for r in db.execute('PRAGMA integrity_check')] != ['ok']:
+            raise ValueError('published database integrity check failed')
+        if (not db.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name='generation_publications'").fetchone()
+                or not db.execute('SELECT 1 FROM generation_publications WHERE id=?', (identity,)).fetchone()):
+            raise ValueError('publication transaction receipt is missing on readback')
+        counts = {}
+        for table, changes in plan['changes'].items():
+            for change in changes:
+                where = ' AND '.join(k+'=?' for k in KEYS[table])
+                row = db.execute('SELECT * FROM '+table+' WHERE '+where, change['key']).fetchone()
+                if (dict(row) if row else None) != change['after']:
+                    raise ValueError('publication readback differs: '+table+' '+str(change['key']))
+            counts[table] = len(changes)
+        return {'integrity': 'ok', 'transaction_receipt': True, 'exact_changed_rows': counts}
+    finally:
+        db.row_factory = original_factory
+
 def supported(obj,revision):
     from review_desk.production_current import RECORD_KINDS
     if obj['kind'] in RECORD_KINDS:return True

@@ -5,7 +5,9 @@ import tempfile
 import unittest
 from review_desk.store import Store
 from review_desk import production as p, production_current as current, production_current_migration as migration
-from scripts.generation_publication import backup,build_plan,apply_plan
+from scripts.generation_publication import backup,build_plan,apply_plan,publication_id
+from scripts.production_current_publication import verify_applied
+from scripts.publish_generation import formal_application_stopped
 
 class CurrentPublicationTest(unittest.TestCase):
     def setUp(self):
@@ -45,6 +47,28 @@ class CurrentPublicationTest(unittest.TestCase):
         before='\n'.join(self.formal.db.iterdump())
         with self.assertRaisesRegex(ValueError,'formal row changed'):apply_plan(self.formal.db,self.plan)
         self.assertEqual('\n'.join(self.formal.db.iterdump()),before)
+
+    def test_post_commit_readback_detects_missing_or_later_changed_content(self):
+        identity=publication_id(self.plan)
+        with self.assertRaisesRegex(ValueError, 'receipt is missing'):
+            verify_applied(self.formal.db,self.plan,identity)
+        apply_plan(self.formal.db,self.plan)
+        self.assertEqual(verify_applied(self.formal.db,self.plan,identity)['integrity'],'ok')
+        self.edit(self.formal,'one','different current content')
+        with self.assertRaisesRegex(ValueError, 'readback differs'):
+            verify_applied(self.formal.db,self.plan,identity)
+
+    def test_host_publication_requires_exact_stopped_container(self):
+        target=self.formal.db_path.parent.parent
+        container={'Id':'exact-app','Mounts':[{'Destination':'/instance','Source':str(target)}],
+                   'State':{'Running':True}}
+        with self.assertRaisesRegex(ValueError,'stop the verified'):
+            formal_application_stopped(target,lambda _:container)
+        container['State']['Running']=False
+        self.assertEqual(formal_application_stopped(target,lambda _:container)['container_id'],'exact-app')
+        container['Mounts'][0]['Source']=str(self.root/'unrelated')
+        with self.assertRaisesRegex(ValueError,'mount differs'):
+            formal_application_stopped(target,lambda _:container)
     def test_corrupt_current_body_rolls_back(self):
         plan=copy.deepcopy(self.plan)
         row=plan['changes']['revisions'][0]['after'];body=json.loads(row['payload']);body['blocks'][0]['text']='forged body';row['payload']=json.dumps(body)
