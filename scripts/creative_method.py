@@ -5,72 +5,56 @@ and in the method service, private by default. The caller supplies real inputs.
 """
 import argparse
 import json
-import re
 from pathlib import Path
 
 try:
-    from .method_runtime import MethodClient, deliver_files, delivery_directory, reference
+    from .method_runtime import (MethodClient, deliver_files, delivery_directory, reference,
+                                 load_json, save_json, delivery_lock, read_stage_value, checksum, read_text_value)
 except ImportError:
-    from method_runtime import MethodClient, deliver_files, delivery_directory, reference
+    from method_runtime import (MethodClient, deliver_files, delivery_directory, reference,
+                                load_json, save_json, delivery_lock, read_stage_value, checksum, read_text_value)
 
 
 def load(path):
-    return json.loads(Path(path).read_text())
+    return load_json(path)
 
 
 def save(path, value):
-    path = Path(path)
-    if path.exists():
-        if load(path) != value:
-            raise ValueError('本地产物已存在且内容不同；保留原步骤并新建修订步骤')
-        return
-    with path.open('x') as stream:
-        stream.write(json.dumps(value, ensure_ascii=False, indent=2) + '\n')
+    save_json(path, value)
 
 
 def begin(client, directory, request):
-    directory = delivery_directory(directory)
     request = {**request, 'private': request.get('private', True)}
-    if directory.exists():
-        delivery = load(directory / 'delivery.json')
-        if request != delivery['request']:
-            raise ValueError('恢复请求与原步骤不同；换输入或方法须新建步骤')
-        if client.prepare(request) != delivery['execution']:
-            raise ValueError('准确方法快照不一致；先恢复原包')
+    with delivery_lock(directory) as directory:
+        path = directory / 'delivery.json'
+        if path.exists():
+            delivery = load(path)
+            if checksum(request) != checksum(delivery['request']):
+                raise ValueError('恢复请求与原步骤不同；换输入或方法须新建步骤')
+            if checksum(client.read(reference(delivery['execution']))) != checksum(delivery['execution']) or checksum(client.prepare(request)) != checksum(delivery['execution']):
+                raise ValueError('准确方法快照不一致；先恢复原包')
+        else:
+            save(directory / 'begin-request.json', request)
+            execution = client.prepare(request)
+            delivery = {'request': request, 'execution': execution}
+            save(path, delivery)
         deliver_files(directory, delivery['execution']['payload']['package'], request['inputs'])
         return delivery
-    execution = client.prepare(request)
-    directory.mkdir(parents=True)
-    delivery = {'request': request, 'execution': execution}
-    # Persist the identity first, so a partial file export can be recovered.
-    save(directory / 'delivery.json', delivery)
-    deliver_files(directory, execution['payload']['package'], request['inputs'])
-    return delivery
 
 
 def record(client, directory, stage, output):
-    directory = delivery_directory(directory)
-    if not re.fullmatch(r'[a-zA-Z0-9_-]{1,80}', stage):
-        raise ValueError('无效阶段名')
-    delivery = load(directory / 'delivery.json')
-    execution = client.prepare(delivery['request'])
-    if execution != delivery['execution']:
-        raise ValueError('准确方法快照不一致；先恢复原包')
-    artifact = client.artifact(execution, delivery['request'], stage, output)
-    save(directory / ('stage-' + stage + '.json'), artifact)
-    return artifact
+    with delivery_lock(directory):
+        return read_stage_value(client, directory, stage, source=output, resume=True)[1]
 
 
 def read_stage(client, directory, stage):
-    directory = delivery_directory(directory)
-    if not re.fullmatch(r'[a-zA-Z0-9_-]{1,80}', stage):
-        raise ValueError('无效阶段名')
-    delivery = load(Path(directory) / 'delivery.json')
-    local = load(Path(directory) / ('stage-' + stage + '.json'))
-    remote = client.read(reference(local))
-    if remote != local or remote['payload']['execution'] != reference(delivery['execution']):
-        raise ValueError('阶段产物或方法归属不一致')
-    return remote['payload']['output']
+    with delivery_lock(directory):
+        return read_stage_value(client, directory, stage)[0]
+
+
+def recover(client, directory, stage, output=None):
+    with delivery_lock(directory):
+        return read_stage_value(client, directory, stage, source=output, resume=True)[0]
 
 
 def main():
@@ -81,17 +65,25 @@ def main():
     start = subs.add_parser('begin'); start.add_argument('--request', type=Path, required=True)
     item = subs.add_parser('record'); item.add_argument('--stage', required=True); item.add_argument('--file', type=Path, required=True)
     read = subs.add_parser('read'); read.add_argument('--stage', required=True)
+    recovery = subs.add_parser('recover'); recovery.add_argument('--stage', required=True)
+    recovery.add_argument('--file', type=Path, help='旧摘要步骤仍有准确原文时，经摘要核验接入；已有原值无需此参数')
     args = parser.parse_args(); client = MethodClient(args.method_url)
     if args.action == 'begin':
         result = begin(client, args.directory, load(args.request))
         result = {'execution': reference(result['execution']), 'steps': result['execution']['payload']['package']['steps'], 'directory': str(args.directory)}
     elif args.action == 'record':
-        body = load(args.file) if args.file.suffix == '.json' else args.file.read_text()
+        body = load(args.file) if args.file.suffix == '.json' else read_text_value(args.file)
         result = reference(record(client, args.directory, args.stage, body))
+    elif args.action == 'recover':
+        body = (load(args.file) if args.file.suffix == '.json' else read_text_value(args.file)) if args.file else None
+        result = recover(client, args.directory, args.stage, body)
     else:
         result = read_stage(client, args.directory, args.stage)
     print(json.dumps(result, ensure_ascii=False, indent=2))
 
 
 if __name__ == '__main__':
-    main()
+    try:
+        main()
+    except (ValueError, OSError) as exc:
+        raise SystemExit(str(exc)) from None
