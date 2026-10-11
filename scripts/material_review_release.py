@@ -50,6 +50,25 @@ def check_vision_change(previous, candidate, raw):
             'Review delivery may only prepend/update the exact vision tab; old approach content must remain')
 
 
+def check_workflow_change(previous, candidate):
+    """This delivery replaces only the story/materials reading pages with graphs."""
+    allowed = {'story', 'materials'}
+    require({key: value for key, value in previous.items() if key != 'tabs'} ==
+            {key: value for key, value in candidate.items() if key != 'tabs'},
+            'workflow release cannot change document metadata')
+    require([tab['id'] for tab in previous['tabs']] == [tab['id'] for tab in candidate['tabs']],
+            'workflow release cannot add, remove or reorder method pages')
+    require([tab for tab in previous['tabs'] if tab['id'] not in allowed] ==
+            [tab for tab in candidate['tabs'] if tab['id'] not in allowed],
+            'workflow release must preserve the other method pages')
+    changed = [tab for tab in candidate['tabs'] if tab['id'] in allowed]
+    require({tab['id'] for tab in changed} == allowed, 'both workflow pages are required')
+    require(all(tab.get('layout', {}).get('type') == 'diagram' and tab.get('lead') == ''
+                and len(tab['sections']) == 1 and tab['sections'][0].get('blocks') == []
+                and tab['sections'][0].get('diagram', {}).get('type') == 'workflow' for tab in changed),
+            'workflow release requires two native diagram-only pages')
+
+
 def method_media_files(document):
     files={}
     for tab in document.get('tabs',[]):
@@ -209,6 +228,15 @@ def prepare(a):
         check_vision_change(read(mounts['/instance/content/production-approach.json']['Source']),
                             read(root/'instance/content/production-approach.json'), raw)
         put('instance/production/system-vision.md', raw)
+    elif task == 'task-20261011-0005':
+        check_workflow_change(read(mounts['/instance/content/production-approach.json']['Source']),
+                              read(root/'instance/content/production-approach.json'))
+        # Validate with the exact candidate system, isolated from this process's
+        # imports. The copied instance contains only the frozen reading inputs.
+        run([sys.executable, '-c',
+             'import sys; from pathlib import Path; sys.path.insert(0,sys.argv[1]); '
+             'from review_desk.approach import read_document; read_document(Path(sys.argv[2]))',
+             str(system), str(root/'instance')])
     else:
         require(task in {'task-20261005-0007','task-20261006-0006','task-20261008-0001','task-20261008-0002','task-20261008-0006','task-20261008-0004','task-20261009-0004','task-20261010-0019'} or current_files['content/production-approach.json']==hashes['instance/content/production-approach.json'],'approach content change is outside this release')
     source={}

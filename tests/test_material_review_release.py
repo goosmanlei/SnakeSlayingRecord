@@ -1,5 +1,6 @@
 """Release guards and preservation checks; no formal Docker/DB writes."""
 import argparse
+import copy
 import contextlib
 import importlib.util
 import io
@@ -20,6 +21,26 @@ import task_repository_delivery as delivery
 import method_migration
 
 class ReleaseTest(unittest.TestCase):
+    def test_workflow_release_preserves_other_pages_and_requires_both_native_graphs(self):
+        previous = {'schema_version': 2, 'tabs': [
+            {'id': id, 'title': id, 'lead': '', 'sections': []}
+            for id in ('vision', 'story', 'materials', 'video-handbook', 'filmcraft')]}
+        candidate = copy.deepcopy(previous)
+        for tab in candidate['tabs']:
+            if tab['id'] in ('story', 'materials'):
+                tab.update(layout={'type': 'diagram'}, sections=[{'blocks': [], 'diagram': {'type': 'workflow'}}])
+        r.check_workflow_change(previous, candidate)
+        for change in ('metadata', 'other-page', 'reorder', 'missing-page', 'long-prose', 'unknown-diagram'):
+            invalid = copy.deepcopy(candidate)
+            if change == 'metadata': invalid['schema_version'] = 3
+            if change == 'other-page': invalid['tabs'][0]['title'] = 'different vision'
+            if change == 'reorder': invalid['tabs'].reverse()
+            if change == 'missing-page': invalid['tabs'].pop(1)
+            if change == 'long-prose': invalid['tabs'][1]['lead'] = 'hidden old explanation'
+            if change == 'unknown-diagram': invalid['tabs'][2]['sections'][0]['diagram']['type'] = 'arbitrary'
+            with self.subTest(change=change), self.assertRaises(ValueError):
+                r.check_workflow_change(previous, invalid)
+
     def test_configuration_package_rejects_activation_or_work_before_release(self):
         for kind in ('activation', 'execution', 'artifact'):
             archive = {'format': 'managed-method-registry-v1', 'records': [
