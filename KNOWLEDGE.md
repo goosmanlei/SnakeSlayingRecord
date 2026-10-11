@@ -15,6 +15,8 @@
 
 ## 创作方法与作品依据
 
+- 工作方法默认连续阅读，文件与所引共用章节按准确修订导航；GUIDANCE 方法和只读资料复用原文评论、历史意见与回应。普通正文编辑只更新选定后续工作类型／条件分支，保存与应用部分失败分开回执，可核对后幂等继续。项目 Markdown 仍是影视知识、手册和 Review 的唯一源；相对媒体原件由源同步固定摘要，缺失或变化不替代。人的操作及恢复入口见 [受管方法](production/managed-methods.md#阅读评论和编辑正文)。
+
 - `scripts/scene_reading.py` 维护准确 Prompt 的文字区间与反馈定位，不另设动作对白镜卡。区间须对应锁定剧本和完整事件序列，缺少可靠范围的历史记录保留原文，不能借当前故事补写。当前编制入口见 [全剧镜头](production/audiovisual/README.md)，准确投影的历史依据见 [场内连读验收](production/scene-reading/VERIFICATION.md)。
 
 - 方法的共用章节加载条件与工作环节选择条件使用同一无损编辑契约：保留 JSON 类型、顺序和准确引用，布尔与同名字面文本分开，非法或重复字段整次拒绝。修改方法只追加版本，绑定显式更新，旧执行保持原全文快照。操作与验证见 [受管方法](production/managed-methods.md) 和 [条件回写验收](production/method-condition-roundtrip/VERIFICATION.md)；正式方法是否需修正以当次数据证据判断，不从隔离复现推定正式数据损坏。
