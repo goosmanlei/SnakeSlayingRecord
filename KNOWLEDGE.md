@@ -19,6 +19,8 @@
 
 - 方法的共用章节加载条件与工作环节选择条件使用同一无损编辑契约：保留 JSON 类型、顺序和准确引用，布尔与同名字面文本分开，非法或重复字段整次拒绝。修改方法只追加版本，绑定显式更新，旧执行保持原全文快照。操作与验证见 [受管方法](production/managed-methods.md) 和 [条件回写验收](production/method-condition-roundtrip/VERIFICATION.md)；正式方法是否需修正以当次数据证据判断，不从隔离复现推定正式数据损坏。
 
+- 六类摘要化制作工作由作者工具在本机任务目录保存阶段原值与确认回执；服务保持摘要，回读按原执行、阶段、前置依赖和规范 JSON 摘要取得原值。媒体 draft/review/result 及待导入包沿同一步恢复；缺全文须有准确原文件或旧完整服务值才可核验接入。准确方法 record/stage 接口不添加界面编号，旧完整执行恢复沿其原输入格式；不通过新绑定重建旧包。操作见 [受管方法](production/managed-methods.md)，边界及原文对照见 [阶段回读验收](production/method-stage-recovery/VERIFICATION.md)。
+
 - 创作协作与系统 Review 的可移植方法只在 [skills/creative-system-review/](skills/creative-system-review/SKILL.md) 维护；项目适配说明本剧入口，迁移时替换适配。系统专用工作类型 `creative-system-review` 经既有 `method-source` 取得完整正文、适配和系统构想的准确只读投影，独立于生成绑定；新步骤交付保留源目录，旧执行保持原文及旧入口限制；安装、版本更新和空实例恢复见 [受管方法](production/managed-methods.md#创作协作-review)。[系统构想](production/system-vision.md) 是制作思路首子页的唯一正文，`scripts/sync_system_vision.py` 确定性派生。按用户2026-10-11确认的关系，整页只展示两层图：上层人与 AI 双向协作完成影视创作；下层审阅台以数据模型和基础流程提供共同约束，支撑协作效率与质量。页面用原生文字与矢量图标，复用系统浅色纸面和柔和绿色，突出共同基础、适度减弱上层；不显示旧四块或五阶段链。其他子页保留，URL 的 vision 标识和原四个锚点继续进入当前图示。通用显示与拒错契约见系统 `docs/production-approach.md`；唯一正文、派生和当前 Review 投影一致。实际发布与验收见 [协作图示验收](production/vision-collaboration/VERIFICATION.md)，旧版沿 Git 和准确回执追溯。
 
 - 用户已确认将主要创作、制作方法纳入系统管理，并让实际执行取得所选方法、共用资料和准确输入。已交付 SKILL、执行绑定基础与共用专业方法库；保留已确认故事结构与小说。用户在 2026-10-10 取消原 0022/0023 全剧重做安排，后续以创作协作 Review SKILL 的实际探索重新确定优化范围，不将旧重做规划当成持续有效的执行指令。基础任务只验证加载及绑定能力，不代替方法编制或全剧创作。范围与验收目标见 [方法管理与执行绑定规划](planning/managed-skills-runtime-task.md)。方法、共用章节、准确环节绑定与执行快照已正式启用，操作与兼容恢复见 [受管方法](production/managed-methods.md)；旧方案仅按切点中的准确修订保留未知方法历史，新工作使用新契约，不能按任务号永久豁免。主要工作的方法与交接见 [创作制作方法](production/professional-methods.md)，试用范围和发现见 [方法试用](production/professional-methods/VERIFICATION.md)。影视知识、手册仍由项目正文维护，只读投影按准确章节附带图示与来源；新剧本场次及外部创作也须先取得方法，旧候选不补造历史。实际启用与后续运行身份以任务账本和发布回执为准。来源：用户 2026-10-09 批准规格、澄清授权及 task-20261009-0020 的 2026-10-10 正式启用回执及 task-20261009-0021 方法库交付；后续范围以用户 2026-10-10 取消旧重做任务、改用 Review SKILL 的决定为准。
@@ -56,6 +58,8 @@
 - 旧场准备、旧镜头编排与无用途方案已从当前交付退出。保留媒体身份、字节及真实输入，独立调用凭据按 [来源索引](production/audiovisual/provenance-files.json) 定位；没有原始方案的候选继续明确未知。一次性清理不成为日常重写冻结历史的入口。
 
 ## 审阅界面与评论约定
+
+- 实体图的同范围重排只在完整几何与连线／摘要都准备好后替换，失败保留上次完整图及视野并允许重试；新范围失败不得展示旧图。通路保留障碍近边界，所有端口出口与主体路线都应分离，不能只核对SVG数量或跳过失败关系。通用契约沿系统 `docs/small-cards.md`，固定输入、完整集合及实际读图的边界见 [关系图可靠性](production/graph-reliability/VERIFICATION.md)。
 
 - 制作设定送审对象（RV）和独立审阅决定（DC）退出当前模型；真实历史意见沿普通评论保留原话、原主体、原时间与准确范围，纯审批流程状态删除。AI 读取原意见和上下文，实际修订后回应并连接准确新版本；关闭讨论不构成批准条件。准确版本、候选、组成及片段选择保留既有能力，不增设选择界面或自动策略。迁移、当前方法及恢复入口见 [评论流程](production/comment-review/README.md)。来源：用户 2026-10-10 确认的新方向与 task-20261010-0019 准确交付。
 
@@ -121,6 +125,6 @@
 - 正式镜像统一用 `story-review-desk:current`、`:previous`、`:base`，候选和 Compose 固定准确镜像 ID；构建基底不逐版移动。服务回退不等于数据回退。流程见 [固定镜像名称](production/generation-workspaces.md#审阅台镜像的固定名称)。
 - `export/material-content.json` 和 `export/objects.json` 使用 Git LFS；克隆后须取回实际内容再校验，操作见 [生成工作区流程](production/generation-workspaces.md)。独立请求／回执若由素材归档配方保存，物理退役配方前须还原真实逻辑字节或指向字节相同的保留组成，不能只留下失效容器。
 - 站点图标是用户认可的屋檐护灯；源 SVG、ICO、PNG 和维护说明见 [图标设计](design/favicon/README.md)。配置只保存受管文件名，上传不等于应用；图标、方法及媒体随各自清单核对，凭据不公开。
-- 制作读取使用独立 `.runtime/read-cache.sqlite3`；业务写入与失效代号同事务更新，缓存可清除后重建。保留 DELETE 日志模式。视听场读取先展开准确选中方案／候选，其余可见镜头自动有界补齐；目录批量取得评论归属，仍以权威事务代号核对新鲜度。冷读取和工具往返时间不等同于正文可用、图片加载或音频可播放。契约见系统 `docs/production-performance.md`，实测口径见 [切集切场验收](production/av-switch-performance/VERIFICATION.md)。
+- 制作读取使用独立 `.runtime/read-cache.sqlite3`；业务写入与失效代号同事务更新，缓存可清除后重建。保留 DELETE 日志模式。视听场读取先展开准确选中方案／候选，其余可见镜头自动有界补齐；目录批量取得评论归属，仍以权威事务代号核对新鲜度。冷读取和工具往返时间不等同于正文可用、图片加载或音频可播放。素材检索按准确视听集修订复用目录，场、词、媒体和结果条件在该目录上筛选；卡片传输保留准确开卡引用，完整关系沿原接口读取。契约见系统 `docs/production-performance.md`，实测口径见 [切集切场验收](production/av-switch-performance/VERIFICATION.md) 与 [素材检索验收](production/material-search-performance/VERIFICATION.md)。
 - Docker Desktop 曾在对停止容器执行 `docker cp` 时重建宿主失效挂载目录。清理前核对归属、实际挂载和准确 ID，不能全局 prune；仍被会话、正式服务或其他任务使用的工作区不强删。详细清理回执留原任务，后续开发用最新主干与有效正式数据。
 - 多份待审素材逐项给出准确链接与修改点；任务完成、技术验证、母版认可、音频质量接受及镜头采用互不替代。新媒体调用需要当前范围与额度授权，不继承已用完的历史授权。
