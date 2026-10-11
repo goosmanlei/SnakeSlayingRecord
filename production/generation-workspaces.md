@@ -106,6 +106,8 @@ python3 scripts/generation_review.py --system "$review_system_worktree" \
 
 `generation_source_commit` 填入包含已审发布包及全部原件的完整提交 SHA。该提交必须已合入主目录当前 `main`；主目录必须干净。回到保留的任务 worktree，在已协调的正式写入窗口执行：
 
+本机正式 SQLite 位于 Docker Desktop 的宿主机挂载目录。宿主机与容器之间不能仅凭 SQLite 文件锁认定读写已互斥：持有正式 `http-write.lock` 排他锁，核验应用容器 ID、镜像及 `/instance` 挂载确属目标后，正常停止该应用并回读停止状态，再运行下列发布命令。发布器在 `publication.lock` 内再次核验准确应用已停止；隔离预演不要求停服。完成后从新连接核对库内回执、完整性及每一行增量结果，再启动原容器或沿已准备的服务包切换，复验实际页面。未知结果先查库，不用外部成功日志代替提交后的数据，也不回灌旧快照。
+
 ```bash
 generation_source_commit=填写已合入主干的完整提交SHA
 PYTHONPATH="$generation_system" python3 scripts/publish_generation.py --instance "$generation_main" \
@@ -113,7 +115,7 @@ PYTHONPATH="$generation_system" python3 scripts/publish_generation.py --instance
   --source-commit "$generation_source_commit" --apply
 ```
 
-发布器检查提交祖先关系，以及包和原件在任务目录、该提交、主目录文件与主干 HEAD 中的字节一致性。正式发布不再从 worktree 补拷原件；未跟踪、未合并、被修改或缺失的文件必须先通过 Git 修复。`--apply` 是实际写入开关，源码提交并不等于数据库已发布。
+发布器检查提交祖先关系，以及包和原件在任务目录、该提交、主目录文件与主干 HEAD 中的字节一致性。当前制作增量的 `applied.json` 还包含提交后完整性、库内回执与全部变更行的准确回读。正式发布不再从 worktree 补拷原件；未跟踪、未合并、被修改或缺失的文件必须先通过 Git 修复。`--apply` 是实际写入开关，源码提交并不等于数据库已发布。
 
 现有两种登记格式保留兼容入口，沿用同样的工作区、合并检查、锁、备份和回执规则：
 
