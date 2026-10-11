@@ -23,6 +23,25 @@ except ImportError:
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def formal_application_stopped(target, inspector=None):
+    """Host SQLite writes require the exact Docker reader to be offline.
+
+    The publisher lock coordinates host publishers, not SQLite file locks
+    across the Docker Desktop VM and host. The caller owns the service window.
+    """
+    try:
+        from .autonomous_optimization_release import APP, inspect
+    except ImportError:
+        from autonomous_optimization_release import APP, inspect
+    current = (inspector or inspect)(APP)
+    mounts = {row['Destination']: row['Source'] for row in current['Mounts']}
+    if '/instance' not in mounts or Path(mounts['/instance']).resolve() != target.resolve():
+        raise ValueError('formal application database mount differs from publication target')
+    if current['State']['Running']:
+        raise ValueError('stop the verified formal application in the shared write window before host SQLite publication')
+    return {'container_id': current['Id'], 'stopped': True}
+
+
 def copy_media(root, target, entries):
     """Used only for an isolated review/rehearsal target."""
     verify_media(root, entries)
@@ -63,6 +82,7 @@ def run_publication(root, target, package, run_name, *, apply=False, source_comm
         # Recheck the merged bytes while holding the publisher lock.
         if apply and formal:
             verify_integrated(root, target, source_commit, package, entries)
+            write_json(root, run / 'application-stopped.json', formal_application_stopped(target))
         backup(db_path, run / 'before.sqlite3')
         db = connect(run / 'before.sqlite3')
         try:
@@ -96,6 +116,16 @@ def run_publication(root, target, package, run_name, *, apply=False, source_comm
             result['applied'] = True
             write_json(root, run / 'transaction.json', result)
             backup(db_path, run / 'after.sqlite3')
+            if document.get('format') == 'production-current-publication-v1':
+                try:
+                    from .production_current_publication import verify_applied
+                except ImportError:
+                    from production_current_publication import verify_applied
+                db = connect(run / 'after.sqlite3')
+                try:
+                    result['readback'] = verify_applied(db, prepared, pid)
+                finally:
+                    db.close()
             write_json(root, run / 'applied.json', result)
         return result
 
