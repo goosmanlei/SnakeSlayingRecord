@@ -22,7 +22,7 @@
 
 “制作思路”有故事创作、生产制作、[视频生成手册](production/seedance-video-handbook.md)和[影视专业知识](production/filmcraft/README.md)四个子页。正文由 [content/production-approach.json](content/production-approach.json) 与相应方法原文维护；桌面常驻目录，窄屏横向目录，支持准确章节链接。 实际创作从“系统管理 → 工作方法”选择适用 SKILL，由既有写作及媒体入口取得准确方法和资料；[工作交接表](production/professional-methods.md)说明输入、输出和负责阶段。
 
-每镜支持多个需求、每需一份当前方案和多个实际候选；实体状态、准确来源、关系、候选比较、评论和采纳共用详情。管理列表按四列基准行分页，窄屏只重排当前集合。技术验收不代表用户接受新设计，已有图像与音频不代表镜头视频已生成。本任务没有媒体生成调用。
+每镜支持多个需求、每需一份当前方案和多个实际候选；实体状态、准确来源、关系、候选比较、评论和采纳共用详情。素材管理按五列基准行分页，窄屏只重排当前集合；实体管理以集／场／镜聚焦关系图，见 [使用与验收](production/entity-graph-focus/VERIFICATION.md)。技术验收不代表用户接受新设计，已有图像与音频不代表镜头视频已生成。本任务没有媒体生成调用。
 
 生成、登记、预览、增量发布和恢复均按 [受管工作区流程](production/generation-workspaces.md) 执行。当前发布状态只认主项目任务账本与实际运行回执；候选文件与正式服务分别核对。
 
