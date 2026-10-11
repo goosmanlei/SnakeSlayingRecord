@@ -70,6 +70,12 @@ python3 scripts/creative_method.py --method-url http://127.0.0.1:PORT --director
 
 请求包含 `work_type`、独立 `run_id`、`step_id`、`target`、`conditions`、`inputs.context`（准确正文及项目材料）。默认 private，执行只留本机。视听按包内五个阶段工作，其余通常为 draft/review/result；以实际包为准。每步产物保存并重读后才进入依赖步骤。`RESOURCES.md` 指向本次实际交付的准确章节与图示；缺文件、中断或恢复用同一请求继续，文件有异则拒绝覆盖。换输入、范围或条件须开新步骤。
 
+制作摘要化的六类工作（视听设计、素材评估、字层、生成准备、结果审阅、媒体方案）共用本机原值交付：提交前先将原字符串或 JSON 对象及执行、目标、阶段身份安全落盘，服务确认后关联准确回执。`read` 核对原方法、前置产物、原值摘要与服务压缩外层摘要，返回原始值；字符串保留 Unicode、LF/CRLF，JSON 保留值和类型。服务继续只保存约定摘要，已有完整旧产物仍可准确读回；本机过程全文不进入公开作品导出，不建立永久草稿库。
+
+服务已接受但响应或本机回执丢失时，先 `read --stage 原阶段` 重取已有确认。服务尚未确认时，`read` 明确报未确认；沿原目录执行 `recover --stage 原阶段` 才幂等继续本机保存的原值。原值写入尚未完成、或旧摘要步骤只有准确原文件时，使用 `recover --stage 原阶段 --file 原文件`；工具先核验原执行及摘要再接入，不从当前方案或相似文本补造。已确认阶段不能换正文，不同阶段可以按实际修订交接。换目标、输入、条件或支持材料须新步骤；恢复不导入作品，也不修改当前稿。
+
+目录里的 `stage-阶段-value.json` 是带归属和摘要的原值，`stage-阶段.json` 是确认回执；回执单独存在不意味着拥有全文。文件均以完整临时文件原子交付，拒绝不同内容和符号链接；中断遗留的 `.method-write-*` 不是确认产物。全文缺失、内容或归属冲突时保留现场并按错误回查，不能删除回执后假装新提交。操作与两条真实 CLI 恢复链见 [阶段回读验收](method-stage-recovery/VERIFICATION.md)。
+
 ## 评论润色与独立读者
 
 评论润色请求实际装入当前绑定的方法全文、适用资料和准确原文上下文，共用既有字符预算。方法过长或条件不匹配会给出修正原因，不回退到硬编码自由 Prompt。建议仍由人手动采用；方法保存不改评论或作品。
@@ -86,12 +92,17 @@ python3 scripts/creative_method.py --method-url http://127.0.0.1:PORT --director
 python3 scripts/media_method.py --method-url http://127.0.0.1:PORT --directory .runtime/my-media-step begin --record record.json --run-id my-run --step-id shot-01
 # 实际读取目录中的 SKILL.md、references/、shared/、request.json 和 record.json 后创作
 python3 scripts/media_method.py --method-url http://127.0.0.1:PORT --directory .runtime/my-media-step draft --record draft-record.json
+python3 scripts/media_method.py --method-url http://127.0.0.1:PORT --directory .runtime/my-media-step read --stage draft
 # 保存后实际重读，再写发现、依据和修订判断
 python3 scripts/media_method.py --method-url http://127.0.0.1:PORT --directory .runtime/my-media-step review --assessment review.md
-python3 scripts/media_method.py --method-url http://127.0.0.1:PORT --directory .runtime/my-media-step finish --record final-record.json --output registered.json
+python3 scripts/media_method.py --method-url http://127.0.0.1:PORT --directory .runtime/my-media-step read --stage review
+python3 scripts/media_method.py --method-url http://127.0.0.1:PORT --directory .runtime/my-media-step finish --record final-record.json --output .runtime/my-media-step/registered.json
+python3 scripts/media_method.py --method-url http://127.0.0.1:PORT --directory .runtime/my-media-step read --stage result
 ```
 
 需要输入锁正文、相邻镜或真实原件记录时，begin 加 `--supporting references.json`，传准确引用数组；包中同时提供可读文档，避免只给修订号。每条外层引用仍受可用性检查；文档内引用历史退役候选仅作为原文保存，不重新激活为本步骤的生产依赖。`--conditions conditions.json` 选择具体章节，如视频的 `{"case":"dialogue","need_sound":true,"need_staging":true}`；不能借条件改变媒体类型。已冻结请求恢复时，补充材料和选择条件也须保持原样。
+
+媒体 `read --stage draft` 返回完整 requirement/generation 和准确原记录；`read --stage review` 返回原 assessment；`read --stage result` 返回定稿原值、带准确 method_basis 的记录及 `import_package`。原提交值与加入 method_basis 后的待导入包分别核验，不能混用摘要。finish 包写入中断后，`recover --stage result --output 原步骤目录/registered.json` 从同一确认结果重建同一包；正常 finish 重试也幂等。输出须在原步骤目录内，已有不同内容或损坏的目标不会被覆盖。旧 draft/result 若缺全文但尚有准确原记录，recover 加 `--record`；旧 review 加 `--assessment`。不存在准确证据时诚实报缺。
 
 `finish` 生成待 `production-import` 的准确包，只有当前内容并发标记、现有制作规则和方法产物摘要同时通过才更新受管方案。目标前进时不要手改 `expected_version` 继续提交；回读新目标并开始新步骤。方法步骤的执行事实不能覆盖，进一步改稿显式新建步骤；制作正文仍写回同一对象，不追加完整稿件。新制作步骤在数据库只保存输入及结果摘要，完整输入和草稿留在任务工作区，完成恢复用途后清理。见 [当前制作与候选](current-candidates/README.md)。
 
@@ -118,7 +129,7 @@ python3 scripts/method_migration.py --system PATH_TO_DESK export \
 ```
 
 1. 方法定义包可在空实例恢复同样的正文、版本和引用；目标已经更新时不能覆盖。
-2. 完整 Schema 12 导出恢复作品、评论、准确选择、原件索引和公开方法／制作关联；实际原件按哈希保全。私有执行另外显式导出，不能靠公开作品包恢复私有候选。
+2. 完整 Schema 13 导出恢复当前制作、提交快照、故事版本、评论、准确选择、原件索引和公开方法／制作关联；实际原件按哈希保全。私有执行另按原运行范围显式导出，公开作品包不恢复本机阶段全文。
 3. 方法约束启用后，本次发布的 `recover` 会拒绝切回启用前镜像：旧代码不能执行新方法约束。运行故障先用本次发布的 `restart` 重启已验证的兼容版本，代码故障则准备兼容修复版本；修复期间需要停写就保持维护窗口。不能改用旧发布包绕过此边界。这些运行操作**不恢复数据库**；如需要数据修正，应在保全新写入的前提下作新的准确变更，不能回灌旧快照。
 
 执行记录证明读取入口交付了具体内容与阶段结果，不能证明模型内部理解。受控请求、独立会话实践、真实页面与付费外部调用分别验收，不互相代替。
