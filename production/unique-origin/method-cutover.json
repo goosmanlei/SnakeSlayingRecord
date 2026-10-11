@@ -1,0 +1,67 @@
+{
+  "format": "managed-method-cutover-v1",
+  "reviewed_work": [
+    {
+      "scope": "seven-current-methods",
+      "definition_changes": {
+        "method.skill.audiovisual-scene": {
+          "before": "7985c16f008627a277402b93bde4aa205d9d111f285e8abefd52bcf2b3c708d5",
+          "after": "af2c7d1f2d04cbe652ec60ac2027b0da881edf456c58e0f1c2ecf6d2b5a7015c"
+        },
+        "method.skill.generation-preflight": {
+          "before": "83c3eba3d0041540a0b9088c1f0dd4b4cfe58d3dc29f7ed219f1535ba5bd365c",
+          "after": "d8c3df7d630ff433c5a3b6e40f381e43a5320b7570b81069856c9bb86f4a515a"
+        },
+        "method.skill.image-plan": {
+          "before": "feee4e99eae66f92576f04da549b5173b9ebcca87e23cc9d677ccdd403b912d5",
+          "after": "baf9d8abcf9078bac41e5cd53deda08e45f30d62d0add03ae8dc93388b9c7625"
+        },
+        "method.skill.material-assessment": {
+          "before": "e0d016cb00eb71980b9714c82453548cc5cfff85fdb6043276e645f3b9cfdb2e",
+          "after": "52fd5fa5148566ffee54333ad6f41548837022ba3038021b6a86a04d87b8b155"
+        },
+        "method.skill.media-plan": {
+          "before": "346b26e695e924ff837a287cc417dab5e0a5881c75c803c768e60bf6ddcac0fd",
+          "after": "9affb655f94099aef43b9b01dccf6b3cd32a7d2b9b5ea5ff92f8176c163316fa"
+        },
+        "method.skill.video-plan": {
+          "before": "35c56c86a4c2ed5eb90a2e3e731449f93c203496f9ee692934224d904c97332f",
+          "after": "d4fabca186c4222c3c964385deece63aa5a7aabf21216104fdd8b7445abdf08b"
+        },
+        "method.skill.voice-song-plan": {
+          "before": "8c22045135660753c8e1fd5d5b7bb27495c901ac70b40ba0a3c456a1faaf0da4",
+          "after": "9f0aa4940c76cda897ab79489a0d04e75a8dfe06525adc8c31a03e90b88df0dd"
+        },
+        "method.binding.audiovisual-design": {
+          "before": "5966dd3d70c50131e404be3b059d767394aad82187a8cf4c6cf7996d7a9734c2",
+          "after": "0c1408afdea461c8f1b12947895a17231321fa8508f24ac55f22a8b4a7b8c655"
+        },
+        "method.binding.generation-preflight": {
+          "before": "02b252b73c93eb93ad65192e8e8132aad5f400b76e365f466bd0caed5d4331e1",
+          "after": "297738d3a4cf5f6ae9fa393c02e8618ebc1dd062a1ee5c5e2439f0709afc7485"
+        },
+        "method.binding.material-assessment": {
+          "before": "b351497b776dc1b3952e642166e982050dfc3a5e3f49146d6dce330eea5c9a6b",
+          "after": "4bce6249a5c970543809b2c03fd53d1fd25a61d8865a91561c5046dd60a0dfd4"
+        },
+        "method.binding.media-plan": {
+          "before": "20ff039d63fb5cd1657000e7421f48be20db7c4f9b8470fc3690150a265fcbc5",
+          "after": "2caf702e1f6337574d6fbbc1f7ddc5ea3885bf1d01226cd418c8f09f0e1fb08c"
+        }
+      },
+      "actual_begin": "production/unique-origin/method-begin.json",
+      "actual_read": "production/unique-origin/method-read.json"
+    },
+    {
+      "scope": "frozen-executions",
+      "evidence": "production/unique-origin/old-methods.json",
+      "decision": "保留准确旧包，不强制旧执行换方法或重新生成"
+    },
+    {
+      "scope": "task-20261012-0002 / 0003 / 0006",
+      "decision": "分别负责连续工作区、方法阅读与检索性能；已合入的方法定义作为新包基线，旧冻结执行保持；代码按最新主干联合复验，不增加任务硬依赖"
+    }
+  ],
+  "wait_for_delivery": [],
+  "publication": "本机发布窗口内由方法迁移器只追加配置并比较其余数据；制作正文另按准确增量包发布。"
+}
