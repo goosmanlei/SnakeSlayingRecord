@@ -65,9 +65,11 @@ def build(store, decisions):
             if additions:value['production_description']='\n'.join([body.get('production_description',''),*additions]).strip()
             # The prose block and editable description are the same content;
             # keep the existing block identity (and opinions), avoid two copies.
-            for block in value.get('blocks',[]):
-                if block['id']=='description' and value.get('production_description','').startswith(block['text']):
-                    block['text']=value['production_description']
+            if additions:
+                if len(value.get('blocks',[])) == 1 and value['blocks'][0]['id']=='description':
+                    value['blocks'][0]['text']=value['production_description']
+                else:
+                    value.setdefault('blocks',[]).append({'id':'production-conditions','text':'\n'.join(additions)})
         handoffs=[]
         if row['kind']=='REQUIREMENT' and body['scope']['object_id'] in rows and rows[body['scope']['object_id']]['kind']=='AV_SHOT':
             shot=rows[body['scope']['object_id']]['payload']
