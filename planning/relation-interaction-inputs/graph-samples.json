@@ -1,0 +1,618 @@
+{
+  "read_at": "2026-10-11T16:11:36.574322+08:00",
+  "source": "read-only GET 127.0.0.1:3000/api/production/index",
+  "desk_commit": "b5d2d821a869767316c32da8cbf1e93c18e6d4aa",
+  "samples": [
+    {
+      "scope": {
+        "episode": "av-e01",
+        "scope_revision": "576b2f01640d266c20d8d3f90dc95be0a12d955c3cde3f22f31eb4ed2e982fb6",
+        "scene": "av-e01-a01",
+        "shot": "av-e01-a01-s01"
+      },
+      "rows": [
+        {
+          "object_id": "entity-a-heng",
+          "id": "77ca680362056db37a7d222e83ecefba99466d62f7119b122f029d27560a88f9",
+          "business_code": "EN002",
+          "kind": "ENTITY",
+          "payload": {
+            "title": "阿蘅"
+          }
+        },
+        {
+          "object_id": "entity-boat-song",
+          "id": "e487bbae6c8b0e3144bd2b1a66049f65b928e8ddb15840bc977eb215e2711b3a",
+          "business_code": "EN046",
+          "kind": "ENTITY",
+          "payload": {
+            "title": "三道滩"
+          }
+        },
+        {
+          "object_id": "entity-book-basket",
+          "id": "59aca863588a8153dc9e00d7020d0ce5daf9b8a7bc62016916fc828b764246a5",
+          "business_code": "EN047",
+          "kind": "ENTITY",
+          "payload": {
+            "title": "垫歌本竹篮"
+          }
+        },
+        {
+          "object_id": "entity-carrying-pole",
+          "id": "b706513a3660663c099d8e9aed8cb4496ab10f0932ac1a9c3da798b7001e22b4",
+          "business_code": "EN050",
+          "kind": "ENTITY",
+          "payload": {
+            "title": "挑柴扁担"
+          }
+        },
+        {
+          "object_id": "entity-grain",
+          "id": "e8359253021664bcb81ccf2eba3293987e69baedf231d9b242c4876d6c9ebfa0",
+          "business_code": "EN072",
+          "kind": "ENTITY",
+          "payload": {
+            "title": "米粮"
+          }
+        },
+        {
+          "object_id": "entity-rice-bag",
+          "id": "81f2fa9415112bdf432b44f31a8d9c75782d5d5fbfd3263b7f8b78211b38e862",
+          "business_code": "EN099",
+          "kind": "ENTITY",
+          "payload": {
+            "title": "阿蘅米袋"
+          }
+        },
+        {
+          "object_id": "entity-rice-listeners",
+          "id": "67b59cb6f1b27424328681ce261e352c5a890cb68d779c561ba91b198091e16e",
+          "business_code": "EN023",
+          "kind": "ENTITY",
+          "payload": {
+            "title": "米铺听客"
+          }
+        },
+        {
+          "object_id": "entity-rice-measure",
+          "id": "2131e4f4475a79ac6bfb844b6882f72b0ebd544ddbd4c3de0310d50b3eef15db",
+          "business_code": "EN100",
+          "kind": "ENTITY",
+          "payload": {
+            "title": "米铺小木斗"
+          }
+        },
+        {
+          "object_id": "entity-rice-shop",
+          "id": "35809d8a5e123c970e38f839a298ccfc8d4aa9c11a06197dd593cfcc8c579225",
+          "business_code": "EN101",
+          "kind": "ENTITY",
+          "payload": {
+            "title": "周家米铺"
+          }
+        },
+        {
+          "object_id": "entity-river-stone",
+          "id": "e650f7b6672c97707470801db323a141c713129e6118b8debb53741e6589c989",
+          "business_code": "EN103",
+          "kind": "ENTITY",
+          "payload": {
+            "title": "压页河石"
+          }
+        },
+        {
+          "object_id": "entity-river-street",
+          "id": "51b77f679f4337467f5ba51959a3f866828e8036d543288f02754fe81ae05fef",
+          "business_code": "EN104",
+          "kind": "ENTITY",
+          "payload": {
+            "title": "河街"
+          }
+        },
+        {
+          "object_id": "entity-songbook",
+          "id": "185e7a5f034b3015474297e27278ff05987e8a2171222bf9bf2db237112d3e03",
+          "business_code": "EN112",
+          "kind": "ENTITY",
+          "payload": {
+            "title": "阿蘅歌本"
+          }
+        },
+        {
+          "object_id": "entity-woodcutter",
+          "id": "94dad06bcc59cf130e11e8f866ceb62c52bc4213afe07e4038286083517e292b",
+          "business_code": "EN034",
+          "kind": "ENTITY",
+          "payload": {
+            "title": "挑柴老汉"
+          }
+        },
+        {
+          "object_id": "av-e01-a01-s01",
+          "id": "43fa97594d70d275ac7c2d0cbd53d98b74d42b12fbdf4cc4f9edd94f3e29df54",
+          "business_code": "ASH001",
+          "kind": "AV_SHOT",
+          "payload": {
+            "title": "01 · A01 · 01 阿蘅翻过两页"
+          }
+        }
+      ],
+      "edges": [
+        {
+          "id": "relation-0429cc4b0086cb4478dced219bcae9fe",
+          "endpoints": [
+            "entity-a-heng",
+            "entity-songbook"
+          ],
+          "summary": "抄写并持有",
+          "direction": "related",
+          "derived": false
+        },
+        {
+          "id": "relation-265bf8bc23a38e19b6700e7137ccbaf9",
+          "endpoints": [
+            "entity-a-heng",
+            "entity-woodcutter"
+          ],
+          "summary": "听曲并发现省段",
+          "direction": "related",
+          "derived": false
+        },
+        {
+          "id": "relation-265e9bfee84db2c64fe2cf92f39b832f",
+          "endpoints": [
+            "entity-rice-shop",
+            "entity-river-street"
+          ],
+          "summary": "临河街开门",
+          "direction": "related",
+          "derived": false
+        },
+        {
+          "id": "relation-61c4d382354de741707f4b25c4223a52",
+          "endpoints": [
+            "entity-grain",
+            "entity-rice-bag"
+          ],
+          "summary": "盛装米粮",
+          "direction": "related",
+          "derived": false
+        },
+        {
+          "id": "relation-646e1f64851f21d4d1317f04c8b08c67",
+          "endpoints": [
+            "entity-carrying-pole",
+            "entity-woodcutter"
+          ],
+          "summary": "听曲时持扁担",
+          "direction": "related",
+          "derived": false
+        },
+        {
+          "id": "relation-75561fcfe73b3f03b5543591329b7b3c",
+          "endpoints": [
+            "entity-river-stone",
+            "entity-songbook"
+          ],
+          "summary": "压住摊开的书页",
+          "direction": "related",
+          "derived": false
+        },
+        {
+          "id": "relation-8399c2b591640f89637e61f5c931a11d",
+          "endpoints": [
+            "entity-a-heng",
+            "entity-rice-bag"
+          ],
+          "summary": "携带唱曲所得米",
+          "direction": "related",
+          "derived": false
+        },
+        {
+          "id": "relation-b379382194165dba645b7290eab0e67e",
+          "endpoints": [
+            "entity-book-basket",
+            "entity-songbook"
+          ],
+          "summary": "搁在倒扣竹篮上",
+          "direction": "related",
+          "derived": false
+        },
+        {
+          "id": "relation-b5226ef95a96219ac7bea429dc38c469",
+          "endpoints": [
+            "entity-a-heng",
+            "entity-rice-listeners"
+          ],
+          "summary": "听曲并回应",
+          "direction": "related",
+          "derived": false
+        },
+        {
+          "id": "relation-e28a58ebe2d6cf44a67741631de7c338",
+          "endpoints": [
+            "entity-grain",
+            "entity-rice-measure"
+          ],
+          "summary": "计量米粮",
+          "direction": "related",
+          "derived": false
+        }
+      ]
+    },
+    {
+      "scope": {
+        "episode": "av-e01",
+        "scope_revision": "576b2f01640d266c20d8d3f90dc95be0a12d955c3cde3f22f31eb4ed2e982fb6",
+        "scene": "av-e01-a01",
+        "shot": "av-e01-a01-s02"
+      },
+      "rows": [
+        {
+          "object_id": "entity-a-heng",
+          "id": "77ca680362056db37a7d222e83ecefba99466d62f7119b122f029d27560a88f9",
+          "business_code": "EN002",
+          "kind": "ENTITY",
+          "payload": {
+            "title": "阿蘅"
+          }
+        },
+        {
+          "object_id": "entity-boat-song",
+          "id": "e487bbae6c8b0e3144bd2b1a66049f65b928e8ddb15840bc977eb215e2711b3a",
+          "business_code": "EN046",
+          "kind": "ENTITY",
+          "payload": {
+            "title": "三道滩"
+          }
+        },
+        {
+          "object_id": "entity-book-basket",
+          "id": "59aca863588a8153dc9e00d7020d0ce5daf9b8a7bc62016916fc828b764246a5",
+          "business_code": "EN047",
+          "kind": "ENTITY",
+          "payload": {
+            "title": "垫歌本竹篮"
+          }
+        },
+        {
+          "object_id": "entity-carrying-pole",
+          "id": "b706513a3660663c099d8e9aed8cb4496ab10f0932ac1a9c3da798b7001e22b4",
+          "business_code": "EN050",
+          "kind": "ENTITY",
+          "payload": {
+            "title": "挑柴扁担"
+          }
+        },
+        {
+          "object_id": "entity-rice-bag",
+          "id": "81f2fa9415112bdf432b44f31a8d9c75782d5d5fbfd3263b7f8b78211b38e862",
+          "business_code": "EN099",
+          "kind": "ENTITY",
+          "payload": {
+            "title": "阿蘅米袋"
+          }
+        },
+        {
+          "object_id": "entity-rice-listeners",
+          "id": "67b59cb6f1b27424328681ce261e352c5a890cb68d779c561ba91b198091e16e",
+          "business_code": "EN023",
+          "kind": "ENTITY",
+          "payload": {
+            "title": "米铺听客"
+          }
+        },
+        {
+          "object_id": "entity-rice-shop",
+          "id": "35809d8a5e123c970e38f839a298ccfc8d4aa9c11a06197dd593cfcc8c579225",
+          "business_code": "EN101",
+          "kind": "ENTITY",
+          "payload": {
+            "title": "周家米铺"
+          }
+        },
+        {
+          "object_id": "entity-river-stone",
+          "id": "e650f7b6672c97707470801db323a141c713129e6118b8debb53741e6589c989",
+          "business_code": "EN103",
+          "kind": "ENTITY",
+          "payload": {
+            "title": "压页河石"
+          }
+        },
+        {
+          "object_id": "entity-songbook",
+          "id": "185e7a5f034b3015474297e27278ff05987e8a2171222bf9bf2db237112d3e03",
+          "business_code": "EN112",
+          "kind": "ENTITY",
+          "payload": {
+            "title": "阿蘅歌本"
+          }
+        },
+        {
+          "object_id": "entity-woodcutter",
+          "id": "94dad06bcc59cf130e11e8f866ceb62c52bc4213afe07e4038286083517e292b",
+          "business_code": "EN034",
+          "kind": "ENTITY",
+          "payload": {
+            "title": "挑柴老汉"
+          }
+        },
+        {
+          "object_id": "av-e01-a01-s02",
+          "id": "d4924ed5bac14b85aa1efd2ec8de5e4e4d4958056d1633757a06f6fd7ff49b6a",
+          "business_code": "ASH002",
+          "kind": "AV_SHOT",
+          "payload": {
+            "title": "01 · A01 · 02 老汉接唱扑空，阿蘅收尾"
+          }
+        }
+      ],
+      "edges": [
+        {
+          "id": "relation-0429cc4b0086cb4478dced219bcae9fe",
+          "endpoints": [
+            "entity-a-heng",
+            "entity-songbook"
+          ],
+          "summary": "抄写并持有",
+          "direction": "related",
+          "derived": false
+        },
+        {
+          "id": "relation-265bf8bc23a38e19b6700e7137ccbaf9",
+          "endpoints": [
+            "entity-a-heng",
+            "entity-woodcutter"
+          ],
+          "summary": "听曲并发现省段",
+          "direction": "related",
+          "derived": false
+        },
+        {
+          "id": "relation-646e1f64851f21d4d1317f04c8b08c67",
+          "endpoints": [
+            "entity-carrying-pole",
+            "entity-woodcutter"
+          ],
+          "summary": "听曲时持扁担",
+          "direction": "related",
+          "derived": false
+        },
+        {
+          "id": "relation-75561fcfe73b3f03b5543591329b7b3c",
+          "endpoints": [
+            "entity-river-stone",
+            "entity-songbook"
+          ],
+          "summary": "压住摊开的书页",
+          "direction": "related",
+          "derived": false
+        },
+        {
+          "id": "relation-8399c2b591640f89637e61f5c931a11d",
+          "endpoints": [
+            "entity-a-heng",
+            "entity-rice-bag"
+          ],
+          "summary": "携带唱曲所得米",
+          "direction": "related",
+          "derived": false
+        },
+        {
+          "id": "relation-b379382194165dba645b7290eab0e67e",
+          "endpoints": [
+            "entity-book-basket",
+            "entity-songbook"
+          ],
+          "summary": "搁在倒扣竹篮上",
+          "direction": "related",
+          "derived": false
+        },
+        {
+          "id": "relation-b5226ef95a96219ac7bea429dc38c469",
+          "endpoints": [
+            "entity-a-heng",
+            "entity-rice-listeners"
+          ],
+          "summary": "听曲并回应",
+          "direction": "related",
+          "derived": false
+        }
+      ]
+    },
+    {
+      "scope": {
+        "episode": "av-e01",
+        "scope_revision": "576b2f01640d266c20d8d3f90dc95be0a12d955c3cde3f22f31eb4ed2e982fb6",
+        "scene": "av-e01-a02",
+        "shot": "av-e01-a02-s01"
+      },
+      "rows": [
+        {
+          "object_id": "entity-a-heng",
+          "id": "77ca680362056db37a7d222e83ecefba99466d62f7119b122f029d27560a88f9",
+          "business_code": "EN002",
+          "kind": "ENTITY",
+          "payload": {
+            "title": "阿蘅"
+          }
+        },
+        {
+          "object_id": "entity-grain",
+          "id": "e8359253021664bcb81ccf2eba3293987e69baedf231d9b242c4876d6c9ebfa0",
+          "business_code": "EN072",
+          "kind": "ENTITY",
+          "payload": {
+            "title": "米粮"
+          }
+        },
+        {
+          "object_id": "entity-li-ji",
+          "id": "55680f0c4847d806cdc302001450b5e0cd67b14c827ddb5bf20cf7b622ead92e",
+          "business_code": "EN012",
+          "kind": "ENTITY",
+          "payload": {
+            "title": "李寄"
+          }
+        },
+        {
+          "object_id": "entity-paste-wool",
+          "id": "cd1bbb737aa0bfb2195f95cac00672276443ae9dda1551a188684267fc13de9d",
+          "business_code": "EN093",
+          "kind": "ENTITY",
+          "payload": {
+            "title": "干浆糊与羊毛"
+          }
+        },
+        {
+          "object_id": "entity-rice-bag",
+          "id": "81f2fa9415112bdf432b44f31a8d9c75782d5d5fbfd3263b7f8b78211b38e862",
+          "business_code": "EN099",
+          "kind": "ENTITY",
+          "payload": {
+            "title": "阿蘅米袋"
+          }
+        },
+        {
+          "object_id": "entity-rice-measure",
+          "id": "2131e4f4475a79ac6bfb844b6882f72b0ebd544ddbd4c3de0310d50b3eef15db",
+          "business_code": "EN100",
+          "kind": "ENTITY",
+          "payload": {
+            "title": "米铺小木斗"
+          }
+        },
+        {
+          "object_id": "entity-rice-shop",
+          "id": "35809d8a5e123c970e38f839a298ccfc8d4aa9c11a06197dd593cfcc8c579225",
+          "business_code": "EN101",
+          "kind": "ENTITY",
+          "payload": {
+            "title": "周家米铺"
+          }
+        },
+        {
+          "object_id": "entity-songbook",
+          "id": "185e7a5f034b3015474297e27278ff05987e8a2171222bf9bf2db237112d3e03",
+          "business_code": "EN112",
+          "kind": "ENTITY",
+          "payload": {
+            "title": "阿蘅歌本"
+          }
+        },
+        {
+          "object_id": "entity-zhou",
+          "id": "5b04d7bbc033a2cd2300ec8e59d8c51223498e74d6bd596b88dcf000534001fe",
+          "business_code": "EN038",
+          "kind": "ENTITY",
+          "payload": {
+            "title": "周掌柜"
+          }
+        },
+        {
+          "object_id": "av-e01-a02-s01",
+          "id": "a2d7cc7f0cf45438b239a8c9ce28c682a8620252a322de085f405c13a8ae0622",
+          "business_code": "ASH006",
+          "kind": "AV_SHOT",
+          "payload": {
+            "title": "01 · A02 · 01 米落袋，阿蘅接稳"
+          }
+        }
+      ],
+      "edges": [
+        {
+          "id": "relation-0429cc4b0086cb4478dced219bcae9fe",
+          "endpoints": [
+            "entity-a-heng",
+            "entity-songbook"
+          ],
+          "summary": "抄写并持有",
+          "direction": "related",
+          "derived": false
+        },
+        {
+          "id": "relation-61c4d382354de741707f4b25c4223a52",
+          "endpoints": [
+            "entity-grain",
+            "entity-rice-bag"
+          ],
+          "summary": "盛装米粮",
+          "direction": "related",
+          "derived": false
+        },
+        {
+          "id": "relation-69ce48324cb4fa9f043ff387684ff007",
+          "endpoints": [
+            "entity-a-heng",
+            "entity-li-ji"
+          ],
+          "summary": "从一起撑布到换手抄词，相互照应并保留各自决定。",
+          "direction": "related",
+          "derived": false
+        },
+        {
+          "id": "relation-8399c2b591640f89637e61f5c931a11d",
+          "endpoints": [
+            "entity-a-heng",
+            "entity-rice-bag"
+          ],
+          "summary": "携带唱曲所得米",
+          "direction": "related",
+          "derived": false
+        },
+        {
+          "id": "relation-88de3c44cce156d3d25f36f8741c1a19",
+          "endpoints": [
+            "entity-a-heng",
+            "entity-zhou"
+          ],
+          "summary": "安排唱活并付米",
+          "direction": "related",
+          "derived": false
+        },
+        {
+          "id": "relation-88e58a3478eafbe4a5256704407a4a7e",
+          "endpoints": [
+            "entity-rice-shop",
+            "entity-zhou"
+          ],
+          "summary": "经营米铺",
+          "direction": "related",
+          "derived": false
+        },
+        {
+          "id": "relation-d9c0c33c8956fff60ebea986cd3236c0",
+          "endpoints": [
+            "entity-rice-measure",
+            "entity-zhou"
+          ],
+          "summary": "量米付唱工",
+          "direction": "related",
+          "derived": false
+        },
+        {
+          "id": "relation-db6b7c0defc1ff09e38ad63ab3379b0d",
+          "endpoints": [
+            "entity-li-ji",
+            "entity-paste-wool"
+          ],
+          "summary": "劳作后手上附着",
+          "direction": "related",
+          "derived": false
+        },
+        {
+          "id": "relation-e28a58ebe2d6cf44a67741631de7c338",
+          "endpoints": [
+            "entity-grain",
+            "entity-rice-measure"
+          ],
+          "summary": "计量米粮",
+          "direction": "related",
+          "derived": false
+        }
+      ]
+    }
+  ]
+}
