@@ -125,6 +125,6 @@
 - 正式镜像统一用 `story-review-desk:current`、`:previous`、`:base`，候选和 Compose 固定准确镜像 ID；构建基底不逐版移动。服务回退不等于数据回退。流程见 [固定镜像名称](production/generation-workspaces.md#审阅台镜像的固定名称)。
 - `export/material-content.json` 和 `export/objects.json` 使用 Git LFS；克隆后须取回实际内容再校验，操作见 [生成工作区流程](production/generation-workspaces.md)。独立请求／回执若由素材归档配方保存，物理退役配方前须还原真实逻辑字节或指向字节相同的保留组成，不能只留下失效容器。
 - 站点图标是用户认可的屋檐护灯；源 SVG、ICO、PNG 和维护说明见 [图标设计](design/favicon/README.md)。配置只保存受管文件名，上传不等于应用；图标、方法及媒体随各自清单核对，凭据不公开。
-- 制作读取使用独立 `.runtime/read-cache.sqlite3`；业务写入与失效代号同事务更新，缓存可清除后重建。保留 DELETE 日志模式。视听场读取先展开准确选中方案／候选，其余可见镜头自动有界补齐；目录批量取得评论归属，仍以权威事务代号核对新鲜度。冷读取和工具往返时间不等同于正文可用、图片加载或音频可播放。契约见系统 `docs/production-performance.md`，实测口径见 [切集切场验收](production/av-switch-performance/VERIFICATION.md)。
+- 制作读取使用独立 `.runtime/read-cache.sqlite3`；业务写入与失效代号同事务更新，缓存可清除后重建。保留 DELETE 日志模式。视听场读取先展开准确选中方案／候选，其余可见镜头自动有界补齐；目录批量取得评论归属，仍以权威事务代号核对新鲜度。冷读取和工具往返时间不等同于正文可用、图片加载或音频可播放。素材检索按准确视听集修订复用目录，场、词、媒体和结果条件在该目录上筛选；卡片传输保留准确开卡引用，完整关系沿原接口读取。契约见系统 `docs/production-performance.md`，实测口径见 [切集切场验收](production/av-switch-performance/VERIFICATION.md) 与 [素材检索验收](production/material-search-performance/VERIFICATION.md)。
 - Docker Desktop 曾在对停止容器执行 `docker cp` 时重建宿主失效挂载目录。清理前核对归属、实际挂载和准确 ID，不能全局 prune；仍被会话、正式服务或其他任务使用的工作区不强删。详细清理回执留原任务，后续开发用最新主干与有效正式数据。
 - 多份待审素材逐项给出准确链接与修改点；任务完成、技术验证、母版认可、音频质量接受及镜头采用互不替代。新媒体调用需要当前范围与额度授权，不继承已用完的历史授权。
