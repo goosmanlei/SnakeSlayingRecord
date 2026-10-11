@@ -39,8 +39,13 @@ def complete_export_index(store, production):
             if name in files and files[name] != component['sha256']:
                 raise ValueError('conflicting original checksums: ' + name)
             files[name] = component['sha256']
+    entities = {}
+    for row in store.db.execute("SELECT object_id,id,json_extract(payload,'$.format') AS format,json_extract(payload,'$.entity_type') AS subtype FROM revisions WHERE json_extract(payload,'$.format') IN ('production-entity-v1','production-av-shot-v1')"):
+        if heads.get(row['object_id']) == row['id']:
+            entities[row['object_id']] = {'revision_id':row['id'], 'type':'shot' if row['format']=='production-av-shot-v1' else row['subtype']}
     return {'format': 'production-export-index-v1', 'heads': heads,
-            'revisions': sorted(revisions), 'files': files}
+            'revisions': sorted(revisions), 'files': files,
+            'entity_contract':'production-entity-v2','entities':entities}
 
 
 def verify_export_index(index, export_dir, formats):
@@ -48,14 +53,19 @@ def verify_export_index(index, export_dir, formats):
     from review_desk.material_content_stream import members
     wanted = set(index['revisions'])
     found, heads = set(), {}
-    versions = {}
+    versions, entities = {}, {}
     for row in members(export_dir / 'objects.json', 'revisions'):
-        if json.loads(row['payload']).get('format') not in formats:
+        payload = json.loads(row['payload'])
+        if payload.get('format') not in formats:
             continue
         found.add(row['id'])
         if row['version'] > versions.get(row['object_id'], 0):
             versions[row['object_id']] = row['version']
             heads[row['object_id']] = row['id']
+            if payload['format'] in ('production-entity-v1','production-av-shot-v1'):
+                entities[row['object_id']]={'revision_id':row['id'],'type':'shot' if payload['format']=='production-av-shot-v1' else payload.get('entity_type')}
+    if index.get('entity_contract') and (index['entity_contract']!='production-entity-v2' or entities!=index.get('entities')):
+        raise ValueError('complete export and entity index describe different entities')
     if found != wanted or heads != index['heads']:
         raise ValueError('complete export and production index describe different revisions')
 
@@ -95,7 +105,7 @@ def main():
     try:
         restore(store,destination/'export');restore_publication_receipts(store,destination)
         recovered=complete_export_index(store,production)
-        if any(recovered[k]!=data[k] for k in ('heads','revisions','files')):raise ValueError('restored exact production index differs')
+        if any(recovered[k]!=data[k] for k in ('heads','revisions','files', *(['entity_contract','entities'] if 'entity_contract' in data else []))):raise ValueError('restored exact production index differs')
         print(json.dumps({'recovered':True,'objects':len(store.objects()),'production_objects':len(recovered['heads']),'revisions':len(store.revisions()),'comments':len(store.comments()),'files_verified':len(manifest['files']),'destination':str(destination)},ensure_ascii=False))
     finally:store.close()
 

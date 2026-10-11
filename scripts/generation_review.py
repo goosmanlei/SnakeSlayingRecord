@@ -118,6 +118,7 @@ def main():
     commands = parser.add_subparsers(dest='command', required=True)
     commands.add_parser('init')
     commands.add_parser('export')
+    commands.add_parser('initialize-legacy-plans')
     freeze = commands.add_parser('prepare')
     freeze.add_argument('--output', type=Path, required=True)
     serve = commands.add_parser('serve')
@@ -125,7 +126,7 @@ def main():
     args = parser.parse_args()
     root = generation_root(args.workspace)
     instance = isolated_instance(root, args.instance)
-    if args.command in ('init', 'export', 'serve'):
+    if args.command in ('init', 'export', 'serve', 'initialize-legacy-plans'):
         if args.system is None:
             parser.error('--system is required for the review interface')
         sys.path.insert(0, str(args.system.resolve(strict=True)))
@@ -139,6 +140,15 @@ def main():
         finally:
             store.close()
         result = {'instance': str(instance), 'initialized': True}
+    elif args.command == 'initialize-legacy-plans':
+        instance = existing_instance(root, instance)
+        from review_desk.store import Store
+        from review_desk.legacy_material_plans import initialize as initialize_plans
+        store = Store(instance / '.runtime/review.sqlite3')
+        try:
+            result = initialize_plans(store)
+        finally:
+            store.close()
     elif args.command == 'prepare':
         result = prepare(root, instance, args.output)
     elif args.command == 'export':
