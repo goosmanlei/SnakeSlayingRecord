@@ -89,6 +89,17 @@ PYTHONPATH="$generation_system" python3 scripts/publish_generation.py --instance
 
 `prepare` 比较初始化基线与当前任务库，收集对象修订、准确依赖、素材轮次、评论、锚点及编辑／关闭历史，并核对原件哈希和字节数。当前模型的增量使用变更前摘要和准确依赖核对并发，原地更新制作正文；提交快照、原件和原意见仍不可改写。旧模型增量禁止写入当前实例，也不能借此发布剧本、资料或系统配置修改。预演默认只在本 worktree 的备份上应用增量；正式库不变。正式输入已变更、同一对象已前进或同一评论被改动时会停止，须读取最新数据重新整理候选。
 
+## 旧素材补齐当前方案
+
+仅有 ASSET 身份的旧素材，在隔离任务实例执行下列入口，从确切历史候选初始化一份当前方案；保留原 M 编号、候选、原件及快照，已有方案不覆盖：
+
+```bash
+python3 scripts/generation_review.py --system "$review_system_worktree" \
+  --instance .runtime/generation/review initialize-legacy-plans
+```
+
+初始化不触发生成。无法核实的旧参考保留阻断提示，后续编辑沿既有制作方法和并发校验。然后执行常规 export、production_review snapshot、空库 recover 与增量 prepare／publish 流程；正式库不能从恢复快照覆盖。`production/audiovisual/index.json` 的统一实体索引同时包含普通实体与原 AV_SHOT 身份。
+
 ## 合并与正式发布
 
 先核对工作区 diff、原件清单、预演结果和授权范围，提交准确包与原件。多仓任务按上节的准备、Git 交付、正式发布与最终完成顺序推进；单仓与已执行旧任务沿其既有受控流程集成。没有任务记录的工作按已获授权的 Git 合并流程办理。发布和恢复所需资料收敛前保留原任务分支及 worktree；结项按下节清理，不把工作区永久保留当作归档方式。
