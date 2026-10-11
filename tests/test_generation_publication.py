@@ -47,6 +47,11 @@ class GenerationPublicationTest(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
+        # These temporary Git repositories have no application container.
+        # The real target/stop guard has separate focused coverage.
+        offline = patch.object(runner, 'formal_application_stopped',
+                               return_value={'container_id': 'isolated-fixture', 'stopped': True})
+        offline.start(); self.addCleanup(offline.stop)
         self.main, self.task = make_worktree(self.temp.name)
         self.fixture = PublicationFixture()
         self.addCleanup(self.fixture.close)

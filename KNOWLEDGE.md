@@ -125,7 +125,7 @@
 - 发布清单保存准确任务、提交和构建来源，与任务工作区的生命周期独立。`scripts/task_workspace_guard.py` 按实际 Docker 挂载、发布 Compose 及恢复配置中的目录依赖保护工作区，不因清单保留或任务编号相同而阻断；清理不改写冻结清单。检查器更新后须核对并更新账本绑定摘要，不能跳过摘要检查。依据：用户 2026-10-08 对清单留存阻断清理的纠正、检查器及 `tests/test_task_repository_delivery.py`。
 
 - 正式数据库 `.runtime/review.sqlite3` 是本机运行权威，`export/` 是受管快照。当前 Schema 13 保存单份制作当前稿、提交快照、真实候选及组成、评论原摘录与实际回应，以及故事版本、配置、方法和必要发布事实；旧制作全文链、方案版本、轮次与专属索引不进入常规恢复。旧链接只按最小映射定位候选、意见或明确退役提示，不静默替换为当前内容。当前恢复使用 `scripts/production_review.py recover`、[准确索引](production/audiovisual/index.json) 与 [发布凭据](production/audiovisual/recovery.json)，只能恢复新空实例，不能覆盖活库。
-- 生成、登记、审阅与导出均在任务 worktree；准确增量和原件先合入主干，再持有正式发布锁应用。`generation_publications` 与 `consolidation_runs` 保存发布幂等事实，不能因不属于业务正文便删除。范围外新评论和引用须保全，旧基线拒绝重放。操作见 [工作区流程](production/generation-workspaces.md)。
+- 生成、登记、审阅与导出均在任务 worktree；准确增量和原件先合入主干，再停止已核验的正式应用，在共享写入窗口持锁发布并逐行回读。宿主机 SQLite 写入不能与 Docker Desktop 容器读库并行，具体停服与恢复顺序见工作区流程。`generation_publications` 与 `consolidation_runs` 保存发布幂等事实，不能因不属于业务正文便删除。范围外新评论和引用须保全，旧基线拒绝重放。操作见 [工作区流程](production/generation-workspaces.md)。
 - 状态准备用途的历史逐集依据在 [逐集判断](production/audiovisual/state-preparation.md)，当前保留身份及条件承接以 [唯一制作出处](production/unique-origin/README.md) 的逐项决定为准，不能按旧编制源复活已撤下状态。关系数量不代替独立制作职责；独立审阅或可选对照可不进入镜头输入，镜内结束状态可只作结果检查。真实缺项及准确选择边界继续保留。
 - 当前视听编制由 `scripts/audiovisual_design.py`、`scripts/audiovisual_reading.py` 读取锁定故事和 `production/audiovisual/readings/` 作者逐镜稿；既有素材方案只按准确引用复用，不全量重建。三部分物理退役使用 `scripts/audiovisual_publication.py` 的准确清单与事务，先隔离迁移、完整导出和空恢复；正式应用另核当前头、评论及授权，不把任务快照覆盖活库。方法与操作见 [视听入口](production/audiovisual/README.md)。
 - 正式镜像统一用 `story-review-desk:current`、`:previous`、`:base`，候选和 Compose 固定准确镜像 ID；构建基底不逐版移动。服务回退不等于数据回退。流程见 [固定镜像名称](production/generation-workspaces.md#审阅台镜像的固定名称)。
