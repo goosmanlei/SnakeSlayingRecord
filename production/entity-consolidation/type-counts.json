@@ -1,0 +1,594 @@
+{
+  "format": "production-type-union-counts-v1",
+  "reviewer": "/root/review_objects",
+  "created_at": "2026-10-11T15:25:42.570234+00:00",
+  "method": {
+    "scope": "character/prop/space/song按ENTITY.entity_type；AV_SHOT沿原镜头类型，无新增镜头ENTITY。每组根对象总数与有效数单列。",
+    "states": "实体组只统计STATE.entity实际拥有的状态；AV_SHOT本身拥有0个STATE，另统计其states准确引用并集。90 DELETED_STATE不混入STATE。",
+    "owned_requirements": "有效需求按scope准确归属、ENTITY/STATE作用域的显式states及现行稳定关系scope_links汇集；与generation.requirements_for及entity_contract.direct_materials口径一致。",
+    "necessary_requirements": "从归属需求中required=true项出发，按material_relations.active_inputs选定的reference/reuse/variant、路线、条件、可选开关递归合并REQUIREMENT。尚未选中的候选不伪称已上传。",
+    "real_candidates": "生产候选注册中，原件准确states/state_coverage/entities/subjects/scope归属本类的候选，或目标属于必要需求并集、或是已选执行ASSET输入，按candidate_id取并集。旧unavailable状态只用于候选历史归属，不恢复为当前状态；因此不会把旧虚拟target导致的候选漏算。",
+    "material_files": "上述必要需求/已选ASSET的显式文件，全部真实候选原件组件与其不可变提交引用文件之并集；包括审阅/恢复所需metadata，不等于单次生成上传文件数。",
+    "sharing": "类型间、实体与镜头间会共用同一状态、需求、候选、文件或有效当前关系，各组数不能相加；cross_group_unions给出真实并集和重复成员数。",
+    "global": "全局实体/STATE/需求/候选/必需文件/关系总数直接引用integrity-counts.json的完整核验；本轮不重复全量哈希。分类文件并集不包括仅因故事来源、系统图标或已退役但受历史/评论保护而全局保留的其他文件。",
+    "classification_not_generation": "统计的是归属/必要引用可达集合，不是新增生成数；integrity-counts.json已核328真实CALL和提交不变，候选注册无新增。镜头可达候选变多不得解读成生成了更多素材。",
+    "active_relationships": "以各类roots、states、owned_requirements及candidates映射到的ASSET对象ID取稳定端点并集；有效business_relations的任一endpoint_a/endpoint_b命中即计入该类，按RELATION对象ID去重。只取现行production-relation-v1且status不为withdrawn；不把contexts、文本提及、历史别名、最小退役收据或退役关系计为有效关系。不递归扩散关系邻居。AV_SHOT的states仍为准确引用状态并集，非镜头自有状态。"
+  },
+  "by_type": {
+    "character": {
+      "before": {
+        "root_objects": 51,
+        "active_root_objects": 51,
+        "owned_states": 97,
+        "state_union": 97,
+        "state_relation": "STATE.entity明确归属",
+        "owned_requirement_union": 173,
+        "owned_required_requirement_union": 173,
+        "necessary_requirement_union": 173,
+        "direct_state_associated_candidate_union": 142,
+        "real_candidate_union": 142,
+        "required_material_file_union": 422,
+        "active_relationship_union": 2859
+      },
+      "after": {
+        "root_objects": 51,
+        "active_root_objects": 51,
+        "owned_states": 97,
+        "state_union": 97,
+        "state_relation": "STATE.entity明确归属",
+        "owned_requirement_union": 119,
+        "owned_required_requirement_union": 118,
+        "necessary_requirement_union": 118,
+        "direct_state_associated_candidate_union": 123,
+        "real_candidate_union": 123,
+        "required_material_file_union": 370,
+        "active_relationship_union": 2718
+      }
+    },
+    "prop": {
+      "before": {
+        "root_objects": 63,
+        "active_root_objects": 62,
+        "owned_states": 124,
+        "state_union": 124,
+        "state_relation": "STATE.entity明确归属",
+        "owned_requirement_union": 162,
+        "owned_required_requirement_union": 162,
+        "necessary_requirement_union": 162,
+        "direct_state_associated_candidate_union": 124,
+        "real_candidate_union": 124,
+        "required_material_file_union": 361,
+        "active_relationship_union": 1454
+      },
+      "after": {
+        "root_objects": 63,
+        "active_root_objects": 62,
+        "owned_states": 124,
+        "state_union": 124,
+        "state_relation": "STATE.entity明确归属",
+        "owned_requirement_union": 98,
+        "owned_required_requirement_union": 98,
+        "necessary_requirement_union": 98,
+        "direct_state_associated_candidate_union": 103,
+        "real_candidate_union": 104,
+        "required_material_file_union": 301,
+        "active_relationship_union": 1299
+      }
+    },
+    "space": {
+      "before": {
+        "root_objects": 16,
+        "active_root_objects": 16,
+        "owned_states": 46,
+        "state_union": 46,
+        "state_relation": "STATE.entity明确归属",
+        "owned_requirement_union": 32,
+        "owned_required_requirement_union": 30,
+        "necessary_requirement_union": 30,
+        "direct_state_associated_candidate_union": 44,
+        "real_candidate_union": 44,
+        "required_material_file_union": 180,
+        "active_relationship_union": 592
+      },
+      "after": {
+        "root_objects": 16,
+        "active_root_objects": 16,
+        "owned_states": 46,
+        "state_union": 46,
+        "state_relation": "STATE.entity明确归属",
+        "owned_requirement_union": 29,
+        "owned_required_requirement_union": 27,
+        "necessary_requirement_union": 27,
+        "direct_state_associated_candidate_union": 22,
+        "real_candidate_union": 22,
+        "required_material_file_union": 86,
+        "active_relationship_union": 488
+      }
+    },
+    "song": {
+      "before": {
+        "root_objects": 4,
+        "active_root_objects": 4,
+        "owned_states": 13,
+        "state_union": 13,
+        "state_relation": "STATE.entity明确归属",
+        "owned_requirement_union": 4,
+        "owned_required_requirement_union": 4,
+        "necessary_requirement_union": 4,
+        "direct_state_associated_candidate_union": 18,
+        "real_candidate_union": 18,
+        "required_material_file_union": 61,
+        "active_relationship_union": 18
+      },
+      "after": {
+        "root_objects": 4,
+        "active_root_objects": 4,
+        "owned_states": 13,
+        "state_union": 13,
+        "state_relation": "STATE.entity明确归属",
+        "owned_requirement_union": 5,
+        "owned_required_requirement_union": 4,
+        "necessary_requirement_union": 4,
+        "direct_state_associated_candidate_union": 7,
+        "real_candidate_union": 7,
+        "required_material_file_union": 51,
+        "active_relationship_union": 18
+      }
+    },
+    "AV_SHOT": {
+      "before": {
+        "root_objects": 344,
+        "active_root_objects": 344,
+        "owned_states": 0,
+        "state_union": 268,
+        "state_relation": "镜头明确引用的STATE并集，不宣称镜头拥有这些状态",
+        "owned_requirement_union": 1115,
+        "owned_required_requirement_union": 1043,
+        "necessary_requirement_union": 1384,
+        "direct_state_associated_candidate_union": 11,
+        "real_candidate_union": 41,
+        "required_material_file_union": 122,
+        "active_relationship_union": 4807
+      },
+      "after": {
+        "root_objects": 344,
+        "active_root_objects": 344,
+        "owned_states": 0,
+        "state_union": 268,
+        "state_relation": "镜头明确引用的STATE并集，不宣称镜头拥有这些状态",
+        "owned_requirement_union": 1042,
+        "owned_required_requirement_union": 1042,
+        "necessary_requirement_union": 1261,
+        "direct_state_associated_candidate_union": 11,
+        "real_candidate_union": 247,
+        "required_material_file_union": 745,
+        "active_relationship_union": 4884
+      }
+    }
+  },
+  "cross_group_unions": {
+    "before": {
+      "states": {
+        "union_count": 280,
+        "sum_of_group_counts": 548,
+        "shared_between_groups_count": 268,
+        "additional_memberships_from_sharing": 268
+      },
+      "owned_requirements": {
+        "union_count": 1486,
+        "sum_of_group_counts": 1486,
+        "shared_between_groups_count": 0,
+        "additional_memberships_from_sharing": 0
+      },
+      "required_seeds": {
+        "union_count": 1412,
+        "sum_of_group_counts": 1412,
+        "shared_between_groups_count": 0,
+        "additional_memberships_from_sharing": 0
+      },
+      "necessary_requirements": {
+        "union_count": 1412,
+        "sum_of_group_counts": 1753,
+        "shared_between_groups_count": 341,
+        "additional_memberships_from_sharing": 341
+      },
+      "candidates": {
+        "union_count": 328,
+        "sum_of_group_counts": 369,
+        "shared_between_groups_count": 41,
+        "additional_memberships_from_sharing": 41
+      },
+      "files": {
+        "union_count": 962,
+        "sum_of_group_counts": 1146,
+        "shared_between_groups_count": 179,
+        "additional_memberships_from_sharing": 184
+      },
+      "active_relationships": {
+        "union_count": 5616,
+        "sum_of_group_counts": 9730,
+        "shared_between_groups_count": 4114,
+        "additional_memberships_from_sharing": 4114,
+        "global_active_relationships_not_in_these_groups": 0
+      }
+    },
+    "after": {
+      "states": {
+        "union_count": 280,
+        "sum_of_group_counts": 548,
+        "shared_between_groups_count": 268,
+        "additional_memberships_from_sharing": 268
+      },
+      "owned_requirements": {
+        "union_count": 1291,
+        "sum_of_group_counts": 1293,
+        "shared_between_groups_count": 2,
+        "additional_memberships_from_sharing": 2
+      },
+      "required_seeds": {
+        "union_count": 1288,
+        "sum_of_group_counts": 1289,
+        "shared_between_groups_count": 1,
+        "additional_memberships_from_sharing": 1
+      },
+      "necessary_requirements": {
+        "union_count": 1288,
+        "sum_of_group_counts": 1508,
+        "shared_between_groups_count": 219,
+        "additional_memberships_from_sharing": 220
+      },
+      "candidates": {
+        "union_count": 257,
+        "sum_of_group_counts": 503,
+        "shared_between_groups_count": 245,
+        "additional_memberships_from_sharing": 246
+      },
+      "files": {
+        "union_count": 775,
+        "sum_of_group_counts": 1553,
+        "shared_between_groups_count": 751,
+        "additional_memberships_from_sharing": 778
+      },
+      "active_relationships": {
+        "union_count": 5120,
+        "sum_of_group_counts": 9407,
+        "shared_between_groups_count": 4263,
+        "additional_memberships_from_sharing": 4287,
+        "global_active_relationships_not_in_these_groups": 0
+      }
+    }
+  },
+  "global_counts_from_integrity": {
+    "file": "integrity-counts.json",
+    "status": "pass",
+    "counts_by_kind": {
+      "ASSET": {
+        "before": {
+          "total_objects": 328,
+          "active": 328,
+          "minimal_retirement": 0,
+          "withdrawn_full_content": 0,
+          "legacy_deleted_state": 0,
+          "archived_alias_object": 0
+        },
+        "after": {
+          "total_objects": 328,
+          "active": 257,
+          "minimal_retirement": 71,
+          "withdrawn_full_content": 0,
+          "legacy_deleted_state": 0,
+          "archived_alias_object": 0
+        }
+      },
+      "AV_EPISODE": {
+        "before": {
+          "total_objects": 17,
+          "active": 17,
+          "minimal_retirement": 0,
+          "withdrawn_full_content": 0,
+          "legacy_deleted_state": 0,
+          "archived_alias_object": 0
+        },
+        "after": {
+          "total_objects": 17,
+          "active": 17,
+          "minimal_retirement": 0,
+          "withdrawn_full_content": 0,
+          "legacy_deleted_state": 0,
+          "archived_alias_object": 0
+        }
+      },
+      "AV_SCENE": {
+        "before": {
+          "total_objects": 65,
+          "active": 65,
+          "minimal_retirement": 0,
+          "withdrawn_full_content": 0,
+          "legacy_deleted_state": 0,
+          "archived_alias_object": 0
+        },
+        "after": {
+          "total_objects": 65,
+          "active": 65,
+          "minimal_retirement": 0,
+          "withdrawn_full_content": 0,
+          "legacy_deleted_state": 0,
+          "archived_alias_object": 0
+        }
+      },
+      "AV_SHOT": {
+        "before": {
+          "total_objects": 344,
+          "active": 344,
+          "minimal_retirement": 0,
+          "withdrawn_full_content": 0,
+          "legacy_deleted_state": 0,
+          "archived_alias_object": 0
+        },
+        "after": {
+          "total_objects": 344,
+          "active": 344,
+          "minimal_retirement": 0,
+          "withdrawn_full_content": 0,
+          "legacy_deleted_state": 0,
+          "archived_alias_object": 0
+        }
+      },
+      "CALL": {
+        "before": {
+          "total_objects": 328,
+          "active": 328,
+          "minimal_retirement": 0,
+          "withdrawn_full_content": 0,
+          "legacy_deleted_state": 0,
+          "archived_alias_object": 0
+        },
+        "after": {
+          "total_objects": 328,
+          "active": 328,
+          "minimal_retirement": 0,
+          "withdrawn_full_content": 0,
+          "legacy_deleted_state": 0,
+          "archived_alias_object": 0
+        }
+      },
+      "DELETED_STATE": {
+        "before": {
+          "total_objects": 90,
+          "active": 0,
+          "minimal_retirement": 0,
+          "withdrawn_full_content": 0,
+          "legacy_deleted_state": 90,
+          "archived_alias_object": 0
+        },
+        "after": {
+          "total_objects": 90,
+          "active": 0,
+          "minimal_retirement": 0,
+          "withdrawn_full_content": 0,
+          "legacy_deleted_state": 90,
+          "archived_alias_object": 0
+        }
+      },
+      "ENTITY": {
+        "before": {
+          "total_objects": 134,
+          "active": 133,
+          "minimal_retirement": 0,
+          "withdrawn_full_content": 1,
+          "legacy_deleted_state": 0,
+          "archived_alias_object": 0
+        },
+        "after": {
+          "total_objects": 134,
+          "active": 133,
+          "minimal_retirement": 0,
+          "withdrawn_full_content": 1,
+          "legacy_deleted_state": 0,
+          "archived_alias_object": 0
+        }
+      },
+      "EPISODE": {
+        "before": {
+          "total_objects": 72,
+          "active": 72,
+          "minimal_retirement": 0,
+          "withdrawn_full_content": 0,
+          "legacy_deleted_state": 0,
+          "archived_alias_object": 0
+        },
+        "after": {
+          "total_objects": 72,
+          "active": 72,
+          "minimal_retirement": 0,
+          "withdrawn_full_content": 0,
+          "legacy_deleted_state": 0,
+          "archived_alias_object": 0
+        }
+      },
+      "GUIDANCE": {
+        "before": {
+          "total_objects": 38,
+          "active": 38,
+          "minimal_retirement": 0,
+          "withdrawn_full_content": 0,
+          "legacy_deleted_state": 0,
+          "archived_alias_object": 0
+        },
+        "after": {
+          "total_objects": 38,
+          "active": 38,
+          "minimal_retirement": 0,
+          "withdrawn_full_content": 0,
+          "legacy_deleted_state": 0,
+          "archived_alias_object": 0
+        }
+      },
+      "INPUT_LOCK": {
+        "before": {
+          "total_objects": 1,
+          "active": 1,
+          "minimal_retirement": 0,
+          "withdrawn_full_content": 0,
+          "legacy_deleted_state": 0,
+          "archived_alias_object": 0
+        },
+        "after": {
+          "total_objects": 1,
+          "active": 1,
+          "minimal_retirement": 0,
+          "withdrawn_full_content": 0,
+          "legacy_deleted_state": 0,
+          "archived_alias_object": 0
+        }
+      },
+      "NOTE": {
+        "before": {
+          "total_objects": 24,
+          "active": 24,
+          "minimal_retirement": 0,
+          "withdrawn_full_content": 0,
+          "legacy_deleted_state": 0,
+          "archived_alias_object": 0
+        },
+        "after": {
+          "total_objects": 24,
+          "active": 24,
+          "minimal_retirement": 0,
+          "withdrawn_full_content": 0,
+          "legacy_deleted_state": 0,
+          "archived_alias_object": 0
+        }
+      },
+      "RELATION": {
+        "before": {
+          "total_objects": 5850,
+          "active": 5616,
+          "minimal_retirement": 0,
+          "withdrawn_full_content": 234,
+          "legacy_deleted_state": 0,
+          "archived_alias_object": 0
+        },
+        "after": {
+          "total_objects": 7417,
+          "active": 5120,
+          "minimal_retirement": 2061,
+          "withdrawn_full_content": 236,
+          "legacy_deleted_state": 0,
+          "archived_alias_object": 0
+        }
+      },
+      "REQUIREMENT": {
+        "before": {
+          "total_objects": 1896,
+          "active": 1833,
+          "minimal_retirement": 0,
+          "withdrawn_full_content": 63,
+          "legacy_deleted_state": 0,
+          "archived_alias_object": 0
+        },
+        "after": {
+          "total_objects": 1896,
+          "active": 1291,
+          "minimal_retirement": 605,
+          "withdrawn_full_content": 0,
+          "legacy_deleted_state": 0,
+          "archived_alias_object": 0
+        }
+      },
+      "SOURCE": {
+        "before": {
+          "total_objects": 45,
+          "active": 45,
+          "minimal_retirement": 0,
+          "withdrawn_full_content": 0,
+          "legacy_deleted_state": 0,
+          "archived_alias_object": 0
+        },
+        "after": {
+          "total_objects": 45,
+          "active": 45,
+          "minimal_retirement": 0,
+          "withdrawn_full_content": 0,
+          "legacy_deleted_state": 0,
+          "archived_alias_object": 0
+        }
+      },
+      "STATE": {
+        "before": {
+          "total_objects": 280,
+          "active": 280,
+          "minimal_retirement": 0,
+          "withdrawn_full_content": 0,
+          "legacy_deleted_state": 0,
+          "archived_alias_object": 0
+        },
+        "after": {
+          "total_objects": 280,
+          "active": 280,
+          "minimal_retirement": 0,
+          "withdrawn_full_content": 0,
+          "legacy_deleted_state": 0,
+          "archived_alias_object": 0
+        }
+      },
+      "STORY": {
+        "before": {
+          "total_objects": 5,
+          "active": 5,
+          "minimal_retirement": 0,
+          "withdrawn_full_content": 0,
+          "legacy_deleted_state": 0,
+          "archived_alias_object": 0
+        },
+        "after": {
+          "total_objects": 5,
+          "active": 5,
+          "minimal_retirement": 0,
+          "withdrawn_full_content": 0,
+          "legacy_deleted_state": 0,
+          "archived_alias_object": 0
+        }
+      }
+    },
+    "real_candidates": {
+      "before": 328,
+      "after": 257
+    },
+    "required_files": {
+      "before": 1014,
+      "after": 856
+    }
+  },
+  "input_route_issues": {
+    "before": [],
+    "after": []
+  },
+  "writes": "仅后台统计报告；两库mode=ro，未改生产文件或库。",
+  "membership_evidence": {
+    "file": "type-counts-memberships.json",
+    "sha256": "2bc281c139600beaae2e0e7ce234dab0e591eaceeeb6cf863b149170956267c7",
+    "contents": "逐类成员ID、文件名、关系稳定端点对象、有效当前关系ID及跨类共享成员完整清单；正文仅留统计。"
+  },
+  "direct_candidate_metric_note": "direct_state_associated_candidate_union名称沿工具字段，实际含明确states/state_coverage/entities/subjects/scope归属，非仅STATE。",
+  "relationship_count_verification": {
+    "read_at": "2026-10-11T15:36:20.761866+00:00",
+    "checks": {
+      "before": {
+        "database": ".runtime/generation/review/.runtime/generation-base.sqlite3",
+        "active_registry_relations": 5616,
+        "agrees_with_existing_integrity_total": true,
+        "stable_registry_endpoints_match_current_relation_payload": true,
+        "missing_candidate_asset_mappings": 0
+      },
+      "after": {
+        "database": ".runtime/generation/review/.runtime/review.sqlite3",
+        "active_registry_relations": 5120,
+        "agrees_with_existing_integrity_total": true,
+        "stable_registry_endpoints_match_current_relation_payload": true,
+        "missing_candidate_asset_mappings": 0
+      }
+    },
+    "boundary": "本轮只读取关系当前状态、稳定端点和既有候选到原件的映射；全局关系数量沿用integrity-counts.json的5616→5120并核对投影数量一致，不重复全量内容哈希。分类关系并集以稳定端点命中，不能解释为该类型专有关系或当前采用。"
+  }
+}

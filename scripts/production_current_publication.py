@@ -165,7 +165,12 @@ def apply(db,plan,*,identity=None,media_root=None):
         current.read_adapters(store)
         from review_desk.material_storage import row_factory
         db.row_factory=row_factory(store)
-        validate(store)
+        from review_desk.material_archives import read_scope
+        # The media root may be a clean worktree without a live database. Read
+        # archived metadata from this transaction instead of rebuilding an
+        # exported content index for each original being validated.
+        with read_scope(store):
+            validate(store)
         for table in ('business_codes','business_comments'):
             for change in plan['changes'][table]:validate_numbered_row(db,table,change['after'],scope,{})
         return {'contract':FORMAT,'changed_rows':{t:len(v) for t,v in plan['changes'].items()},'comment_events':events}

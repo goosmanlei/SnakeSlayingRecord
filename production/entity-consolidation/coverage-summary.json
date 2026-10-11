@@ -1,0 +1,173 @@
+{
+  "format": "explicit-object-audit-coverage-v1",
+  "reviewer": "/root/review_objects",
+  "created_at": "2026-10-11T15:25:42.616347+00:00",
+  "method": "仅逐对象decision/action与reason记录计覆盖。全局审阅里的引用字符串、依赖索引、消费者ID、数量摘要和仅出现object_id的缓存均不冒充逐项审阅。",
+  "reports": {
+    "root": {
+      "file": "review-root.json",
+      "explicit_record_path": "objects",
+      "record_count": 104,
+      "counts_by_kind": {
+        "ASSET": 30,
+        "REQUIREMENT": 48,
+        "ENTITY": 6,
+        "STATE": 20
+      }
+    },
+    "characters": {
+      "file": "audit-characters.json",
+      "explicit_record_path": "first_review.objects",
+      "record_count": 592,
+      "counts_by_kind": {
+        "ENTITY": 49,
+        "STATE": 90,
+        "REQUIREMENT": 327,
+        "ASSET": 126
+      }
+    },
+    "objects": {
+      "file": "audit-objects.json",
+      "explicit_record_path": "object_review.{entities,states,requirements,candidates}",
+      "record_count": 823,
+      "counts_by_kind": {
+        "ENTITY": 79,
+        "STATE": 170,
+        "REQUIREMENT": 406,
+        "ASSET": 168
+      }
+    },
+    "shots": {
+      "file": "audit-shots.json",
+      "explicit_record_path": "first_pass.objects",
+      "record_count": 1563,
+      "counts_by_kind": {
+        "AV_EPISODE": 17,
+        "AV_SCENE": 65,
+        "AV_SHOT": 344,
+        "REQUIREMENT": 1115,
+        "ASSET": 11,
+        "CALL": 11
+      }
+    }
+  },
+  "baseline_coverage": {
+    "ENTITY": {
+      "expected_baseline_count": 134,
+      "explicitly_reviewed_baseline_count": 134,
+      "missing_ids": [],
+      "outside_baseline_ids": [],
+      "reviewed_more_than_once": {}
+    },
+    "STATE": {
+      "expected_baseline_count": 280,
+      "explicitly_reviewed_baseline_count": 280,
+      "missing_ids": [],
+      "outside_baseline_ids": [],
+      "reviewed_more_than_once": {}
+    },
+    "REQUIREMENT": {
+      "expected_baseline_count": 1896,
+      "explicitly_reviewed_baseline_count": 1896,
+      "missing_ids": [],
+      "outside_baseline_ids": [],
+      "reviewed_more_than_once": {}
+    },
+    "ASSET": {
+      "expected_baseline_count": 328,
+      "explicitly_reviewed_baseline_count": 328,
+      "missing_ids": [],
+      "outside_baseline_ids": [],
+      "reviewed_more_than_once": {
+        "asset-text-07ea52106b98c3d14211": [
+          "objects",
+          "shots"
+        ],
+        "asset-text-0fd6a7922b76b4092b16": [
+          "objects",
+          "shots"
+        ],
+        "asset-text-135ea116a2fb8c2e996b": [
+          "objects",
+          "shots"
+        ],
+        "asset-text-21de65311ee667a610f4": [
+          "objects",
+          "shots"
+        ],
+        "asset-text-4a8b6d5ee42fead8455d": [
+          "objects",
+          "shots"
+        ],
+        "asset-text-522e1d44dafd0a542061": [
+          "objects",
+          "shots"
+        ],
+        "asset-text-efcde3c122e48dd6ff40": [
+          "objects",
+          "shots"
+        ]
+      }
+    },
+    "AV_SHOT": {
+      "expected_baseline_count": 344,
+      "explicitly_reviewed_baseline_count": 344,
+      "missing_ids": [],
+      "outside_baseline_ids": [],
+      "reviewed_more_than_once": {}
+    },
+    "AV_SCENE": {
+      "expected_baseline_count": 65,
+      "explicitly_reviewed_baseline_count": 65,
+      "missing_ids": [],
+      "outside_baseline_ids": [],
+      "reviewed_more_than_once": {}
+    },
+    "AV_EPISODE": {
+      "expected_baseline_count": 17,
+      "explicitly_reviewed_baseline_count": 17,
+      "missing_ids": [],
+      "outside_baseline_ids": [],
+      "reviewed_more_than_once": {}
+    }
+  },
+  "invalid_judgment_records": [],
+  "status": "complete",
+  "global_continuity_review_boundaries": {
+    "characters": "audit-characters.json/global_review（E01—E06）",
+    "objects": "audit-objects.json/global_e07_e12（E07—E12）",
+    "shots": "audit-shots.json/global_second_pass（E13—E17）",
+    "note": "分镜首轮全部344镜已有独立判断；按集连续复审及媒体实际观看边界沿各审计正文，覆盖完成不等于全部媒体已播放认可。"
+  },
+  "deleted_states": {
+    "count": 90,
+    "not_part_of_STATE_280": true,
+    "all_minimal_current_receipts_verified": true,
+    "active_current_consumer_count": 0,
+    "active_consumer_rule": "只查有效CURRENT_KINDS正文的可用准确引用和有效关系endpoints；unavailable与method_basis/method_adjustment/_method_binding/initial_plan_source保留为历史上下文，ASSET/CALL/提交为不可变真实历史。 最小收据自身的object_id/revision_id身份对不算外部历史引用。",
+    "same_as_baseline": "沿integrity-counts.json确认90项哈希不变，本轮逐读最小收据，核现行production_current_records与production_legacy_links。current模型迁移已将旧state_cleanup_receipts外键记录迁入legacy_links（旧表两库均空），不误用旧表判丢失，不恢复完整状态。",
+    "retention_evidence_counts": {
+      "with_unavailable_reference_sources": 0,
+      "with_external_frozen_reference_sources": 1,
+      "with_original_comments": 0,
+      "with_legacy_links": 90,
+      "total_legacy_links": 143
+    },
+    "minimal_fact_fields": [
+      "entity",
+      "format",
+      "object_id",
+      "original_sha256",
+      "reason",
+      "revision_id"
+    ],
+    "preservation_reason": "原状态正文已删除；保留准确对象/版本ID、所属实体引用、原内容hash和清理理由，以承接旧引用与恢复事实，不能把它恢复成新状态或并计当前280完整状态。90项都无有效当前制作消费者，历史/不可用引用和旧意见按各原ID保留。",
+    "rows_evidence": "coverage-memberships.json/deleted_state_rows"
+  },
+  "writes": "仅本后台报告；未改库、生产文件或交付文档。",
+  "membership_evidence": {
+    "file": "coverage-memberships.json",
+    "sha256": "3cb1f0490ce22898737efc340d15fe9b99e65fba40b5b80f662b56ea781e365a",
+    "contents": "每审阅方明确判断ID、全基线覆盖ID及90条最小收据的理由和引用边界；正文给覆盖数、重叠与漏项。"
+  }
+}

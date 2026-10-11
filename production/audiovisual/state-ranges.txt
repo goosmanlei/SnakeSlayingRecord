@@ -1,3 +1,4 @@
+# 状态范围定义叙事时点，不要求每行各建一份素材；同外观或完整组合可共用需求，准确时点仍由镜头起止控制。
 # 实体状态在故事正文中的呈现范围。编号相对 imports/screenplay-04.json。
 # 每行是现有完整状态的准确身份（省略 form-），不是旧镜头或旧场准备。
 # 一个主体有多种状态时须显式列范围；同一动作段重叠表示镜内变化，编译器生成准确转变说明。
@@ -37,7 +38,7 @@ li-xiao-spent = s033:18-32; s034:2-30
 sun-liu-base = s008:1-37; s009:7-25; s015:1-26; s016:19; s017:3-61; s018:1-40; s019:1-22; s021:1-23; s023:1-35; s024:1-5; s025:12-14; s026:11-37; s028:40-43; s029:1-16; s041:2-22; s042:1-19
 sun-liu-loaded = s029:17-24; s030:1-18; s030:24-30; s031:1-21; s032:1-26; s033:1-14
 sun-liu-spent = s033:15-32; s034:2-30
-officer-cheng-base = s017:33-61; s018:1-40; s019:1-22; s021:1-23; s022:1-28; s023:1-35; s024:1-11; s028:4-43; s029:1-16; s035:2-9; s036:1-38; s037:4-8
+officer-cheng-base = s017:33-61; s018:1-40; s019:1-19; s021:1-23; s022:1-28; s023:1-35; s024:1-11; s028:4-43; s029:1-16; s035:2-9; s036:1-38; s037:4-8
 officer-cheng-loaded = s029:17-24; s030:1-18; s030:24-30; s031:1-21; s032:1-26; s033:1-12
 officer-cheng-spent = s033:13-31; s034:16-30
 helpers-four-base = s023:1-35; s024:1-5; s029:1-16
@@ -65,8 +66,8 @@ songbook-papers-on-top = s002:20-21
 songbook-inserted = s002:22-31; s003:1-16
 songbook-wet = s003:17-32; s004:1-33
 songbook-dry-uninserted = s005:14-18
-songbook-dry = s005:19-28; s006:2-27
-songbook-account = s006:28-36; s007:3-5; s009:34-35; s016:14-19; s017:29-61; s022:7-27; s037:13-17
+songbook-dry = s005:19-28; s006:2-27; s037:13-17
+songbook-account = s006:28-36; s007:3-5; s009:34-35; s016:14-19; s017:29-61; s022:7-27
 songbook-receipt = s037:18-26; s038:1-13; s040:1-13
 songbook-repaired = s040:14-19; s041:8-22; s042:3-17
 copied-pages-base = s005:14-19; s038:3-12; s039:2-11
@@ -103,7 +104,7 @@ curtain-stage = s008:1-37; s009:1-25; s041:2-17
 curtain-packed = s041:18-22; s042:1-19
 work-ledger-base = s006:28-36
 work-ledger-one = s007:3-3
-work-ledger-two = s007:5-5; s009:34-35; s016:14-19; s017:29-61; s026:4-4; s037:13-18
+work-ledger-two = s007:5-5; s009:34-35; s016:14-19; s017:29-61; s026:4-4
 debt-note-base = s006:3-30; s022:7-11
 debt-note-uncovered = s022:12-24; s026:1-4; s036:1-38
 debt-overlay-base = s006:12-14; s022:7-12
@@ -116,8 +117,8 @@ approval-orders-base = s021:8-9; s036:32-37
 approval-orders-copies = s037:6-12; s037:22-26
 sacrificial-registers-copies = s017:19-49
 sacrificial-registers-base = s028:25-43; s036:1-38
-stop-order-base = s017:32-61; s018:3-6
-stop-order-all = s021:16-23; s022:1-4; s026:26-37; s028:4-9
+stop-order-base = s017:32-61; s018:3-6; s026:26-37
+stop-order-all = s021:16-23; s022:1-4; s028:4-9
 channel-plan-base = s020:16-18; s021:1-23; s023:5-10
 channel-plan-slot = s026:11-37
 keys-base = s002:12-22; s018:3-6; s019:17-17

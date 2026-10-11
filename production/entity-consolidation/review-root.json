@@ -1,0 +1,948 @@
+{
+  "format": "entity-semantic-root-review-v1",
+  "task": "task-20261011-0008",
+  "reviewer": "root",
+  "evidence_boundary": [
+    "图像按本轮实际观看判断",
+    "全部声音未实际听辨；只用元数据、准确来源、原用户反馈及逐样本裁切同一性，未作音质通过结论",
+    "完整状态保留，不因同一身份图复用删去声音/湿区/阶段判断"
+  ],
+  "objects": [
+    {
+      "object_id": "asset-aheng-song-01",
+      "code": "M004",
+      "kind": "ASSET",
+      "title": "阿蘅舟行曲演唱候选",
+      "decision": "retain",
+      "reason": "早期阿蘅舟行曲演唱，是另一真实演唱，非M1206的纯裁切；保留为同一省段需求下候选。",
+      "keep_id": "asset-aheng-song-01"
+    },
+    {
+      "object_id": "asset-aheng-voice-01",
+      "code": "M001",
+      "kind": "ASSET",
+      "title": "阿蘅对白声线候选",
+      "decision": "retain",
+      "reason": "原阿蘅对白试读，与后续基础/情绪音频并列比较，未听辨，不转移认可。",
+      "keep_id": "asset-aheng-voice-01"
+    },
+    {
+      "object_id": "asset-fg3-a-heng-hoarse-voice-01",
+      "code": "M1187",
+      "kind": "ASSET",
+      "title": "阿蘅 · 嗓哑补充 · 首轮候选",
+      "decision": "retain",
+      "reason": "嗓哑试读在声音身份下保留真实演法候选，未听辨。",
+      "keep_id": "asset-fg3-a-heng-hoarse-voice-01"
+    },
+    {
+      "object_id": "asset-fg3-a-heng-tears-voice-01",
+      "code": "M1188",
+      "kind": "ASSET",
+      "title": "阿蘅 · 泪后哽咽补充 · 首轮候选",
+      "decision": "retain",
+      "reason": "泪后哽咽试读保留原结果与情绪差异，未听辨。",
+      "keep_id": "asset-fg3-a-heng-tears-voice-01"
+    },
+    {
+      "object_id": "asset-fg3-aheng-hoarse-image-01",
+      "code": "M1189",
+      "kind": "ASSET",
+      "title": "阿蘅·连唱后嗓哑 · 首轮派生候选",
+      "decision": "retire",
+      "reason": "已实际看图：衣着身份与基准相同，手摸喉或落泪仅表达镜内表演；当前无独立图像消费者，不再作为新的状态素材候选。实际生成调用保留。",
+      "keep_id": null
+    },
+    {
+      "object_id": "asset-fg3-aheng-image-01",
+      "code": "M1133",
+      "kind": "ASSET",
+      "title": "阿蘅 · 首轮整体候选",
+      "decision": "retain",
+      "reason": "实际看图，干净低髻青衣、清瘦全身身份，与当前干燥身份目标可比较。",
+      "keep_id": "asset-fg3-aheng-image-01"
+    },
+    {
+      "object_id": "asset-fg3-aheng-later-image-01",
+      "code": "M1190",
+      "kind": "ASSET",
+      "title": "阿蘅·点名后日常形态 · 首轮派生候选",
+      "decision": "retain",
+      "reason": "实际看图，点名后干燥形态与基础身份同义，但真实结果是另一候选，不伪成同一次生成。",
+      "keep_id": "asset-fg3-aheng-later-image-01"
+    },
+    {
+      "object_id": "asset-fg3-aheng-tears-image-01",
+      "code": "M1191",
+      "kind": "ASSET",
+      "title": "阿蘅·确认安全后泪痕 · 首轮派生候选",
+      "decision": "retire",
+      "reason": "已实际看图：衣着身份与基准相同，手摸喉或落泪仅表达镜内表演；当前无独立图像消费者，不再作为新的状态素材候选。实际生成调用保留。",
+      "keep_id": null
+    },
+    {
+      "object_id": "asset-fg3-aheng-voice-01",
+      "code": "M1134",
+      "kind": "ASSET",
+      "title": "阿蘅 · 基础音色 · 首轮候选",
+      "decision": "retain",
+      "reason": "基础音色真实录音，保留同一声音需求下比较，未听辨。",
+      "keep_id": "asset-fg3-aheng-voice-01"
+    },
+    {
+      "object_id": "asset-fg3-aheng-wet-image-01",
+      "code": "M1192",
+      "kind": "ASSET",
+      "title": "阿蘅·捞书后湿衣袖 · 首轮派生候选",
+      "decision": "retain",
+      "reason": "实际看图，湿袖/膝对应捞书阶段，独立于仅湿鞋；保留实际图与原谱系。",
+      "keep_id": "asset-fg3-aheng-wet-image-01"
+    },
+    {
+      "object_id": "asset-fg3-aheng-wet-shoes-image-01",
+      "code": "M1193",
+      "kind": "ASSET",
+      "title": "阿蘅·嗓音劳累、鞋被水浸 · 首轮派生候选",
+      "decision": "retain",
+      "reason": "实际看图，湿鞋、干袖对应另一完整状态，不能并作M1192同一湿区。",
+      "keep_id": "asset-fg3-aheng-wet-shoes-image-01"
+    },
+    {
+      "object_id": "asset-fg3-woodcutter-base-image-02",
+      "code": "M1334",
+      "kind": "ASSET",
+      "title": "挑柴老汉·基准完整形态 · 内置渠道返工",
+      "decision": "retain",
+      "reason": "实际看图为1086×1448卸担老汉单视图，与固定身份可比；持扁担D1来源及原评论保留。",
+      "keep_id": "asset-fg3-woodcutter-base-image-02"
+    },
+    {
+      "object_id": "asset-fg3-woodcutter-base-voice-01",
+      "code": "M1260",
+      "kind": "ASSET",
+      "title": "挑柴老汉 · 基础音色 · 基础音色首轮",
+      "decision": "retain",
+      "reason": "老汉基础音色原件，按原2.7–7.08秒范围保留实际试读，不伪称本轮听审。",
+      "keep_id": "asset-fg3-woodcutter-base-voice-01"
+    },
+    {
+      "object_id": "asset-songs-aheng-boat-home",
+      "code": "M1212",
+      "kind": "ASSET",
+      "title": "三道滩·阿蘅归家清唱",
+      "decision": "retire",
+      "reason": "与 M1206 准确范围逐样本相同，无独立音频内容、原评论或下游真实输入。保留调用与范围回执，删除可由源重现的重复切片。",
+      "keep_id": null
+    },
+    {
+      "object_id": "asset-songs-aheng-boat-opening",
+      "code": "M1213",
+      "kind": "ASSET",
+      "title": "三道滩·阿蘅开头清唱",
+      "decision": "retire",
+      "reason": "与 M1206 准确范围逐样本相同，无独立音频内容、原评论或下游真实输入。保留调用与范围回执，删除可由源重现的重复切片。",
+      "keep_id": null
+    },
+    {
+      "object_id": "asset-songs-blessing-full",
+      "code": "M1200",
+      "kind": "ASSET",
+      "title": "明月还乡 · Lyria 完整演唱候选",
+      "decision": "retain",
+      "reason": "《明月还乡》完整真实录音，保留原有审阅边界，本次未听辨。",
+      "keep_id": "asset-songs-blessing-full"
+    },
+    {
+      "object_id": "asset-songs-blue-awning-full",
+      "code": "M1196",
+      "kind": "ASSET",
+      "title": "送青篷 · Lyria 完整演唱候选",
+      "decision": "retain",
+      "reason": "完整《送青篷》真实录音与原有未通过/待审事实保留，本次未听辨。",
+      "keep_id": "asset-songs-blue-awning-full"
+    },
+    {
+      "object_id": "asset-songs-boat-aheng-dry-v1",
+      "code": "M1206",
+      "kind": "ASSET",
+      "title": "三道滩·阿蘅省段清唱",
+      "decision": "retain",
+      "reason": "源清唱17.686979秒，逐PCM样本证明两旧切片与准确范围一致；保留源与真实调用，音质/词/旋律未听审。",
+      "keep_id": "asset-songs-boat-aheng-dry-v1"
+    },
+    {
+      "object_id": "asset-songs-boat-diction-reference-v1",
+      "code": "M1386",
+      "kind": "ASSET",
+      "title": "三道滩·原唱前两句（11秒）",
+      "decision": "retire",
+      "reason": "旧录音片段不再承担独立当前制作目的；其旧母版不可用，不能冒充现整曲裁切。仍保留原件以核真实调用、准确输入和旧意见。",
+      "keep_id": null
+    },
+    {
+      "object_id": "asset-songs-boat-full",
+      "code": "M1197",
+      "kind": "ASSET",
+      "title": "三道滩 · Lyria 吐字调整整曲",
+      "decision": "retain",
+      "reason": "完整《三道滩》吐字调整真实录音，旧用户纠词意见仍针对本结果，不推定合格。",
+      "keep_id": "asset-songs-boat-full"
+    },
+    {
+      "object_id": "asset-songs-boat-lyria-diction-pilot-v1",
+      "code": "M1387",
+      "kind": "ASSET",
+      "title": "三道滩·两句纠词短样（12秒）",
+      "decision": "retain",
+      "reason": "12秒纠词试唱保留真实失败/比较意见，归到整曲同一需求，但不当完整16行产物。",
+      "keep_id": "asset-songs-boat-lyria-diction-pilot-v1"
+    },
+    {
+      "object_id": "asset-songs-ref-blessing-moon",
+      "code": "M1207",
+      "kind": "ASSET",
+      "title": "明月还乡·blessing-moon",
+      "decision": "retire",
+      "reason": "旧录音切片已无当前独立用途；核对无原评论、冻结提交输入或保留结果谱系依赖。原 CALL 与准确文件摘要仍在原地址，不为旧编号另保留无用录音。",
+      "keep_id": null
+    },
+    {
+      "object_id": "asset-songs-ref-blue-lamplight",
+      "code": "M1208",
+      "kind": "ASSET",
+      "title": "送青篷·blue-lamplight",
+      "decision": "retire",
+      "reason": "旧录音切片已无当前独立用途；核对无原评论、冻结提交输入或保留结果谱系依赖。原 CALL 与准确文件摘要仍在原地址，不为旧编号另保留无用录音。",
+      "keep_id": null
+    },
+    {
+      "object_id": "asset-songs-ref-blue-old-bridge",
+      "code": "M1209",
+      "kind": "ASSET",
+      "title": "送青篷·blue-old-bridge",
+      "decision": "retire",
+      "reason": "旧录音切片已无当前独立用途；核对无原评论、冻结提交输入或保留结果谱系依赖。原 CALL 与准确文件摘要仍在原地址，不为旧编号另保留无用录音。",
+      "keep_id": null
+    },
+    {
+      "object_id": "asset-songs-ref-blue-opening",
+      "code": "M1201",
+      "kind": "ASSET",
+      "title": "送青篷·blue-opening",
+      "decision": "retire",
+      "reason": "旧录音切片已无当前独立用途；核对无原评论、冻结提交输入或保留结果谱系依赖。原 CALL 与准确文件摘要仍在原地址，不为旧编号另保留无用录音。",
+      "keep_id": null
+    },
+    {
+      "object_id": "asset-songs-ref-blue-unfinished",
+      "code": "M1210",
+      "kind": "ASSET",
+      "title": "送青篷·blue-unfinished",
+      "decision": "retire",
+      "reason": "旧录音切片已无当前独立用途；核对无原评论、冻结提交输入或保留结果谱系依赖。原 CALL 与准确文件摘要仍在原地址，不为旧编号另保留无用录音。",
+      "keep_id": null
+    },
+    {
+      "object_id": "asset-songs-ref-boat-home",
+      "code": "M1202",
+      "kind": "ASSET",
+      "title": "三道滩·boat-home",
+      "decision": "retire",
+      "reason": "旧录音片段不再承担独立当前制作目的；其旧母版不可用，不能冒充现整曲裁切。仍保留原件以核真实调用、准确输入和旧意见。",
+      "keep_id": null
+    },
+    {
+      "object_id": "asset-songs-ref-boat-opening",
+      "code": "M1203",
+      "kind": "ASSET",
+      "title": "三道滩·boat-opening",
+      "decision": "retire",
+      "reason": "旧录音片段不再承担独立当前制作目的；其旧母版不可用，不能冒充现整曲裁切。仍保留原件以核真实调用、准确输入和旧意见。",
+      "keep_id": null
+    },
+    {
+      "object_id": "asset-songs-ref-welcome-response",
+      "code": "M1211",
+      "kind": "ASSET",
+      "title": "四邻安·welcome-response",
+      "decision": "retire",
+      "reason": "旧录音切片已无当前独立用途；核对无原评论、冻结提交输入或保留结果谱系依赖。原 CALL 与准确文件摘要仍在原地址，不为旧编号另保留无用录音。",
+      "keep_id": null
+    },
+    {
+      "object_id": "asset-songs-welcome-full",
+      "code": "M1204",
+      "kind": "ASSET",
+      "title": "四邻安 · Lyria 完整演唱候选",
+      "decision": "retain",
+      "reason": "《四邻安》完整真实录音，领应结构不能据元数据认证听感，本次未听辨。",
+      "keep_id": "asset-songs-welcome-full"
+    },
+    {
+      "object_id": "current-plan-038a8bee7a86a4284af8c9ab",
+      "code": "current-plan-038a8bee7a86a4284af8c9ab",
+      "kind": "REQUIREMENT",
+      "title": "阿蘅对白声线候选",
+      "decision": "merge",
+      "reason": "均属阿蘅同一声音身份；干声、嘶哑、带泪试读仍是准确候选，实际原词与表演不变，不按状态重复创建声音需求或迁移认可。",
+      "keep_id": "material-voice-a-heng"
+    },
+    {
+      "object_id": "current-plan-0561eba73bc4fc9cdf497c45",
+      "code": "current-plan-0561eba73bc4fc9cdf497c45",
+      "kind": "REQUIREMENT",
+      "title": "三道滩·boat-home",
+      "decision": "retire",
+      "reason": "旧录音裁切只用于历史旋律参照/纠词尝试，旧完整录音已不可用或已被替换，不能伪称为当前整曲范围；真实调用和必要原件保留，退出当前独立生成需求。",
+      "keep_id": null
+    },
+    {
+      "object_id": "current-plan-1783a7547607621ce0b7356f",
+      "code": "current-plan-1783a7547607621ce0b7356f",
+      "kind": "REQUIREMENT",
+      "title": "挑柴老汉·基准完整形态 · 内置渠道返工",
+      "decision": "merge",
+      "reason": "长脸灰短须、浅土灰短褂的同一老汉；唯一完整状态没有新增衣着或伤势，点头打趣由镜内表演负责，身份与基准图共用。",
+      "keep_id": "material-entity-woodcutter-identity"
+    },
+    {
+      "object_id": "current-plan-224eccd7af4235ce07a78c95",
+      "code": "current-plan-224eccd7af4235ce07a78c95",
+      "kind": "REQUIREMENT",
+      "title": "三道滩·阿蘅省段清唱",
+      "decision": "merge",
+      "reason": "同为阿蘅在第一集省去中段、由开头转归家句的一次清唱需要；两次真实演唱可比较，完整独立歌曲仍另立，认可不转移。",
+      "keep_id": "material-form-boat-song-short-overall"
+    },
+    {
+      "object_id": "current-plan-2ad732ab08659eedb3695e3e",
+      "code": "current-plan-2ad732ab08659eedb3695e3e",
+      "kind": "REQUIREMENT",
+      "title": "阿蘅·嗓音劳累、鞋被水浸 · 首轮派生候选",
+      "decision": "merge",
+      "reason": "旧首轮图和当前方案服务同一湿衣区域需求，保留准确候选与其原始制作事实。湿袖与仅湿鞋仍是两个不同需求。",
+      "keep_id": "material-form-a-heng-wet-shoes-overall"
+    },
+    {
+      "object_id": "current-plan-2f92b4f075f12dcc80d08c71",
+      "code": "current-plan-2f92b4f075f12dcc80d08c71",
+      "kind": "REQUIREMENT",
+      "title": "三道滩·阿蘅归家清唱",
+      "decision": "retire",
+      "reason": "逐 PCM 样本确认只裁切 M1206，当前无独立制作消费者；准确源与范围已写入同一省段需求，旧调用不改。",
+      "keep_id": null
+    },
+    {
+      "object_id": "current-plan-3228b5d45b5866a44e2116c4",
+      "code": "current-plan-3228b5d45b5866a44e2116c4",
+      "kind": "REQUIREMENT",
+      "title": "阿蘅 · 基础音色 · 首轮候选",
+      "decision": "merge",
+      "reason": "均属阿蘅同一声音身份；干声、嘶哑、带泪试读仍是准确候选，实际原词与表演不变，不按状态重复创建声音需求或迁移认可。",
+      "keep_id": "material-voice-a-heng"
+    },
+    {
+      "object_id": "current-plan-341d768c7950fce23e3fb430",
+      "code": "current-plan-341d768c7950fce23e3fb430",
+      "kind": "REQUIREMENT",
+      "title": "挑柴老汉 · 基础音色 · 基础音色首轮",
+      "decision": "merge",
+      "reason": "老汉同一声音身份及原试读，不因既有文件和声音复用方案各有编号就保留两个需求。",
+      "keep_id": "material-voice-woodcutter"
+    },
+    {
+      "object_id": "current-plan-34cba5de977e7ced4629e6af",
+      "code": "current-plan-34cba5de977e7ced4629e6af",
+      "kind": "REQUIREMENT",
+      "title": "阿蘅 · 嗓哑补充 · 首轮候选",
+      "decision": "merge",
+      "reason": "均属阿蘅同一声音身份；干声、嘶哑、带泪试读仍是准确候选，实际原词与表演不变，不按状态重复创建声音需求或迁移认可。",
+      "keep_id": "material-voice-a-heng"
+    },
+    {
+      "object_id": "current-plan-368942bce61d783ed5d869c4",
+      "code": "current-plan-368942bce61d783ed5d869c4",
+      "kind": "REQUIREMENT",
+      "title": "阿蘅舟行曲演唱候选",
+      "decision": "merge",
+      "reason": "同为阿蘅在第一集省去中段、由开头转归家句的一次清唱需要；两次真实演唱可比较，完整独立歌曲仍另立，认可不转移。",
+      "keep_id": "material-form-boat-song-short-overall"
+    },
+    {
+      "object_id": "current-plan-40a073c002b24d7c5cad2a9c",
+      "code": "current-plan-40a073c002b24d7c5cad2a9c",
+      "kind": "REQUIREMENT",
+      "title": "三道滩·两句纠词短样（12秒）",
+      "decision": "merge",
+      "reason": "两句纠词短样是同一完整《三道滩》吐字问题的一次局部试验，不是独立作品；保留12秒候选和原失败反馈，不当作完整十六行成品。",
+      "keep_id": "need-form-boat-song-independent-overall"
+    },
+    {
+      "object_id": "current-plan-4c9291d2ab47f53e6bb491c9",
+      "code": "current-plan-4c9291d2ab47f53e6bb491c9",
+      "kind": "REQUIREMENT",
+      "title": "三道滩·原唱前两句（11秒）",
+      "decision": "retire",
+      "reason": "旧录音裁切只用于历史旋律参照/纠词尝试，旧完整录音已不可用或已被替换，不能伪称为当前整曲范围；真实调用和必要原件保留，退出当前独立生成需求。",
+      "keep_id": null
+    },
+    {
+      "object_id": "current-plan-515a17f3e206b7672a00c270",
+      "code": "current-plan-515a17f3e206b7672a00c270",
+      "kind": "REQUIREMENT",
+      "title": "送青篷·blue-opening",
+      "decision": "retire",
+      "reason": "旧录音裁切只用于历史旋律参照/纠词尝试，旧完整录音已不可用或已被替换，不能伪称为当前整曲范围；真实调用和必要原件保留，退出当前独立生成需求。",
+      "keep_id": null
+    },
+    {
+      "object_id": "current-plan-6d3d461a921ccceb5ebb7e31",
+      "code": "current-plan-6d3d461a921ccceb5ebb7e31",
+      "kind": "REQUIREMENT",
+      "title": "送青篷·blue-lamplight",
+      "decision": "retire",
+      "reason": "旧录音裁切只用于历史旋律参照/纠词尝试，旧完整录音已不可用或已被替换，不能伪称为当前整曲范围；真实调用和必要原件保留，退出当前独立生成需求。",
+      "keep_id": null
+    },
+    {
+      "object_id": "current-plan-79e76e8f63ad66dd1caa2464",
+      "code": "current-plan-79e76e8f63ad66dd1caa2464",
+      "kind": "REQUIREMENT",
+      "title": "送青篷·blue-unfinished",
+      "decision": "retire",
+      "reason": "旧录音裁切只用于历史旋律参照/纠词尝试，旧完整录音已不可用或已被替换，不能伪称为当前整曲范围；真实调用和必要原件保留，退出当前独立生成需求。",
+      "keep_id": null
+    },
+    {
+      "object_id": "current-plan-81536e8a6290eac6c93cc204",
+      "code": "current-plan-81536e8a6290eac6c93cc204",
+      "kind": "REQUIREMENT",
+      "title": "三道滩·boat-opening",
+      "decision": "retire",
+      "reason": "旧录音裁切只用于历史旋律参照/纠词尝试，旧完整录音已不可用或已被替换，不能伪称为当前整曲范围；真实调用和必要原件保留，退出当前独立生成需求。",
+      "keep_id": null
+    },
+    {
+      "object_id": "current-plan-850a7dbd8dbf9f82764aa245",
+      "code": "current-plan-850a7dbd8dbf9f82764aa245",
+      "kind": "REQUIREMENT",
+      "title": "四邻安·welcome-response",
+      "decision": "retire",
+      "reason": "旧录音裁切只用于历史旋律参照/纠词尝试，旧完整录音已不可用或已被替换，不能伪称为当前整曲范围；真实调用和必要原件保留，退出当前独立生成需求。",
+      "keep_id": null
+    },
+    {
+      "object_id": "current-plan-8f7983542f53d4a66f25268c",
+      "code": "current-plan-8f7983542f53d4a66f25268c",
+      "kind": "REQUIREMENT",
+      "title": "阿蘅·确认安全后泪痕 · 首轮派生候选",
+      "decision": "merge",
+      "reason": "同一低髻青绿衣、无新增外伤的阿蘅身份；嗓哑、谨慎与泪后分别保留在完整状态和镜内表演，不另造相同衣着身份需求。点名后干燥只适用于次日，不能覆盖同晚湿鞋。",
+      "keep_id": "material-entity-a-heng-identity"
+    },
+    {
+      "object_id": "current-plan-9e0bf0f070d5e5742e70fc6a",
+      "code": "current-plan-9e0bf0f070d5e5742e70fc6a",
+      "kind": "REQUIREMENT",
+      "title": "送青篷·blue-old-bridge",
+      "decision": "retire",
+      "reason": "旧录音裁切只用于历史旋律参照/纠词尝试，旧完整录音已不可用或已被替换，不能伪称为当前整曲范围；真实调用和必要原件保留，退出当前独立生成需求。",
+      "keep_id": null
+    },
+    {
+      "object_id": "current-plan-b1115abf6093522ca4dff63d",
+      "code": "current-plan-b1115abf6093522ca4dff63d",
+      "kind": "REQUIREMENT",
+      "title": "明月还乡·blessing-moon",
+      "decision": "retire",
+      "reason": "旧录音裁切只用于历史旋律参照/纠词尝试，旧完整录音已不可用或已被替换，不能伪称为当前整曲范围；真实调用和必要原件保留，退出当前独立生成需求。",
+      "keep_id": null
+    },
+    {
+      "object_id": "current-plan-bd1a45952edbda22f48e49f2",
+      "code": "current-plan-bd1a45952edbda22f48e49f2",
+      "kind": "REQUIREMENT",
+      "title": "三道滩·阿蘅开头清唱",
+      "decision": "retire",
+      "reason": "逐 PCM 样本确认只裁切 M1206，当前无独立制作消费者；准确源与范围已写入同一省段需求，旧调用不改。",
+      "keep_id": null
+    },
+    {
+      "object_id": "current-plan-c717903a39f4c9b8c76e7632",
+      "code": "current-plan-c717903a39f4c9b8c76e7632",
+      "kind": "REQUIREMENT",
+      "title": "阿蘅·点名后日常形态 · 首轮派生候选",
+      "decision": "merge",
+      "reason": "同一低髻青绿衣、无新增外伤的阿蘅身份；嗓哑、谨慎与泪后分别保留在完整状态和镜内表演，不另造相同衣着身份需求。点名后干燥只适用于次日，不能覆盖同晚湿鞋。",
+      "keep_id": "material-entity-a-heng-identity"
+    },
+    {
+      "object_id": "current-plan-c843778e3ef3282012760aba",
+      "code": "current-plan-c843778e3ef3282012760aba",
+      "kind": "REQUIREMENT",
+      "title": "阿蘅 · 嗓哑补充 · 首轮候选",
+      "decision": "merge",
+      "reason": "均属阿蘅同一声音身份；干声、嘶哑、带泪试读仍是准确候选，实际原词与表演不变，不按状态重复创建声音需求或迁移认可。",
+      "keep_id": "material-voice-a-heng"
+    },
+    {
+      "object_id": "current-plan-cc61cc5da070f4eecf5868bf",
+      "code": "current-plan-cc61cc5da070f4eecf5868bf",
+      "kind": "REQUIREMENT",
+      "title": "阿蘅·捞书后湿衣袖 · 首轮派生候选",
+      "decision": "merge",
+      "reason": "旧首轮图和当前方案服务同一湿衣区域需求，保留准确候选与其原始制作事实。湿袖与仅湿鞋仍是两个不同需求。",
+      "keep_id": "material-form-a-heng-wet-overall"
+    },
+    {
+      "object_id": "current-plan-cd69860ae202939ef764b623",
+      "code": "current-plan-cd69860ae202939ef764b623",
+      "kind": "REQUIREMENT",
+      "title": "阿蘅 · 泪后哽咽补充 · 首轮候选",
+      "decision": "merge",
+      "reason": "均属阿蘅同一声音身份；干声、嘶哑、带泪试读仍是准确候选，实际原词与表演不变，不按状态重复创建声音需求或迁移认可。",
+      "keep_id": "material-voice-a-heng"
+    },
+    {
+      "object_id": "current-plan-dd07f2c400a02ba1707d77df",
+      "code": "current-plan-dd07f2c400a02ba1707d77df",
+      "kind": "REQUIREMENT",
+      "title": "阿蘅 · 基础音色 · 首轮候选",
+      "decision": "merge",
+      "reason": "均属阿蘅同一声音身份；干声、嘶哑、带泪试读仍是准确候选，实际原词与表演不变，不按状态重复创建声音需求或迁移认可。",
+      "keep_id": "material-voice-a-heng"
+    },
+    {
+      "object_id": "current-plan-e13a305656534e8410174792",
+      "code": "current-plan-e13a305656534e8410174792",
+      "kind": "REQUIREMENT",
+      "title": "阿蘅 · 基础音色 · 首轮候选",
+      "decision": "merge",
+      "reason": "均属阿蘅同一声音身份；干声、嘶哑、带泪试读仍是准确候选，实际原词与表演不变，不按状态重复创建声音需求或迁移认可。",
+      "keep_id": "material-voice-a-heng"
+    },
+    {
+      "object_id": "current-plan-f8c06d056fbcadce25ad4aae",
+      "code": "current-plan-f8c06d056fbcadce25ad4aae",
+      "kind": "REQUIREMENT",
+      "title": "阿蘅·连唱后嗓哑 · 首轮派生候选",
+      "decision": "merge",
+      "reason": "同一低髻青绿衣、无新增外伤的阿蘅身份；嗓哑、谨慎与泪后分别保留在完整状态和镜内表演，不另造相同衣着身份需求。点名后干燥只适用于次日，不能覆盖同晚湿鞋。",
+      "keep_id": "material-entity-a-heng-identity"
+    },
+    {
+      "object_id": "current-plan-fdf73daeca4758046a180f79",
+      "code": "current-plan-fdf73daeca4758046a180f79",
+      "kind": "REQUIREMENT",
+      "title": "阿蘅 · 首轮整体候选",
+      "decision": "merge",
+      "reason": "同一低髻青绿衣、无新增外伤的阿蘅身份；嗓哑、谨慎与泪后分别保留在完整状态和镜内表演，不另造相同衣着身份需求。点名后干燥只适用于次日，不能覆盖同晚湿鞋。",
+      "keep_id": "material-entity-a-heng-identity"
+    },
+    {
+      "object_id": "entity-a-heng",
+      "code": "EN002",
+      "kind": "ENTITY",
+      "title": "阿蘅",
+      "decision": "retain",
+      "reason": "阿蘅的清瘦青衣身份、日常声音与同一人演唱分别解决图像、对白和歌曲使用；六完整状态按湿区、声音和情绪阶段保留，单帧表演不另生身份。",
+      "keep_id": "entity-a-heng"
+    },
+    {
+      "object_id": "entity-blessing-stage-song",
+      "code": "EN044",
+      "kind": "ENTITY",
+      "title": "明月还乡",
+      "decision": "retain",
+      "reason": "庙戏远处传来“米饵献上，明月还乡”，与前殿众人领应不是同一曲；远声场由镜头处理，完整独立作品仍供歌曲审阅。",
+      "keep_id": "entity-blessing-stage-song"
+    },
+    {
+      "object_id": "entity-blue-awning-song",
+      "code": "EN045",
+      "kind": "ENTITY",
+      "title": "送青篷",
+      "decision": "retain",
+      "reason": "歌本缺词、母女同停、歌娘核词、念写和台前唱完整构成同一曲的恢复过程；演唱者与词段改变，保留七个状态，不把独立歌手录音当阿蘅成品。",
+      "keep_id": "entity-blue-awning-song"
+    },
+    {
+      "object_id": "entity-boat-song",
+      "code": "EN046",
+      "kind": "ENTITY",
+      "title": "三道滩",
+      "decision": "retain",
+      "reason": "第一集阿蘅省中段清唱与完整十六行歌曲有不同制作目的；两次真实清唱归在同一需求，纯开头/归家切片由源加范围承接。",
+      "keep_id": "entity-boat-song"
+    },
+    {
+      "object_id": "entity-snake-welcome-song",
+      "code": "EN111",
+      "kind": "ENTITY",
+      "title": "四邻安",
+      "decision": "retain",
+      "reason": "前殿女领唱与小群体应和的祭祀曲是独立作品；阿蘅在人群中接唱不是唯一主唱，保留整曲与剧情领应状态。",
+      "keep_id": "entity-snake-welcome-song"
+    },
+    {
+      "object_id": "entity-woodcutter",
+      "code": "EN034",
+      "kind": "ENTITY",
+      "title": "挑柴老汉",
+      "decision": "retain",
+      "reason": "老汉听见跳页并接唱扑空、打趣；一份完整衣着状态，图像和声音两种产物，不能把不同模态并为一项。",
+      "keep_id": "entity-woodcutter"
+    },
+    {
+      "object_id": "form-a-heng-blue",
+      "code": "ST088",
+      "kind": "STATE",
+      "title": "阿蘅·日常洗旧青衣",
+      "decision": "retain",
+      "reason": "干燥旧青衣、齐袖、清醒唱工；与湿袖和湿鞋不可混用。图像身份、共同声音和第一集省段歌曲共三项。",
+      "keep_id": "form-a-heng-blue"
+    },
+    {
+      "object_id": "form-a-heng-hoarse",
+      "code": "ST089",
+      "kind": "STATE",
+      "title": "阿蘅·连唱后嗓哑",
+      "decision": "retain",
+      "reason": "连续唱后的嗓哑与疲劳影响表演和发声，衣着身份不变；不再为摸喉姿态制作一份整体图。",
+      "keep_id": "form-a-heng-hoarse"
+    },
+    {
+      "object_id": "form-a-heng-later",
+      "code": "ST090",
+      "kind": "STATE",
+      "title": "阿蘅·点名后日常形态",
+      "decision": "retain",
+      "reason": "点名后的次日恢复干燥衣着，不能倒用到点名同晚湿鞋；基础图与同一声音身份共用。",
+      "keep_id": "form-a-heng-later"
+    },
+    {
+      "object_id": "form-a-heng-tears",
+      "code": "ST091",
+      "kind": "STATE",
+      "title": "阿蘅·确认安全后泪痕",
+      "decision": "retain",
+      "reason": "确认安全后的泪痕和哽咽须保留阶段，泪后姿态不另立图像身份；已有哽咽音频仍作为准确声音候选。",
+      "keep_id": "form-a-heng-tears"
+    },
+    {
+      "object_id": "form-a-heng-wet",
+      "code": "ST092",
+      "kind": "STATE",
+      "title": "阿蘅·捞书后湿衣袖",
+      "decision": "retain",
+      "reason": "捞书致袖与膝湿，衣服湿区明确，须有区别于干燥和仅湿鞋的整体参考。",
+      "keep_id": "form-a-heng-wet"
+    },
+    {
+      "object_id": "form-a-heng-wet-shoes",
+      "code": "ST093",
+      "kind": "STATE",
+      "title": "阿蘅·嗓音劳累、鞋被水浸",
+      "decision": "retain",
+      "reason": "桥下/水边后鞋湿且嗓劳累，袖口仍干；不能用捞书湿袖候选冒充。",
+      "keep_id": "form-a-heng-wet-shoes"
+    },
+    {
+      "object_id": "form-blessing-song-independent",
+      "code": "ST357",
+      "kind": "STATE",
+      "title": "明月还乡·独立整曲演唱",
+      "decision": "retain",
+      "reason": "十六行《明月还乡》的独立录音，完整开头到结尾；剧情只远传一句另由镜头承担。",
+      "keep_id": "form-blessing-song-independent"
+    },
+    {
+      "object_id": "form-blessing-stage-song-distant",
+      "code": "ST105",
+      "kind": "STATE",
+      "title": "明月还乡·远处戏声",
+      "decision": "retain",
+      "reason": "庙中未具名戏班的远处戏声，传到阿蘅家；与近场独立录音的声音空间不同，状态保留、重复生成计划撤回。",
+      "keep_id": "form-blessing-stage-song-distant"
+    },
+    {
+      "object_id": "form-blue-awning-song-complete",
+      "code": "ST106",
+      "kind": "STATE",
+      "title": "送青篷·暮色台前完整演唱",
+      "decision": "retain",
+      "reason": "暮色台前由阿蘅唱已锁剧本两段，到收尾才掌声，不添加独立歌曲扩写行。",
+      "keep_id": "form-blue-awning-song-complete"
+    },
+    {
+      "object_id": "form-blue-awning-song-independent",
+      "code": "ST355",
+      "kind": "STATE",
+      "title": "送青篷·独立整曲演唱",
+      "decision": "retain",
+      "reason": "十四行完整《送青篷》的独立演唱；不能代替剧中各人的缺词/核词过程。",
+      "keep_id": "form-blue-awning-song-independent"
+    },
+    {
+      "object_id": "form-blue-awning-song-missing",
+      "code": "ST107",
+      "kind": "STATE",
+      "title": "送青篷·缺词处停下",
+      "decision": "retain",
+      "reason": "无法接缺词处不是作品结尾；先阿蘅、后母女同停的演法有剧情判断意义。",
+      "keep_id": "form-blue-awning-song-missing"
+    },
+    {
+      "object_id": "form-blue-awning-song-practice",
+      "code": "ST108",
+      "kind": "STATE",
+      "title": "送青篷·受损前低声练曲",
+      "decision": "retain",
+      "reason": "受损前洗布低声练曲，只给练曲语意，未锁句段保留缺项，不能补写歌词。",
+      "keep_id": "form-blue-awning-song-practice"
+    },
+    {
+      "object_id": "form-blue-awning-song-recited",
+      "code": "ST358",
+      "kind": "STATE",
+      "title": "送青篷·李寄逐句念写",
+      "decision": "retain",
+      "reason": "李寄逐句念“莫怕远山高”“隔水灯相照”，等阿蘅写完；这是念读，不可并成演唱。",
+      "keep_id": "form-blue-awning-song-recited"
+    },
+    {
+      "object_id": "form-blue-awning-song-soft",
+      "code": "ST109",
+      "kind": "STATE",
+      "title": "送青篷·补抄时低唱轻哼",
+      "decision": "retain",
+      "reason": "补抄后阿蘅低唱、母亲接哼末句，与台前公开演唱不同。",
+      "keep_id": "form-blue-awning-song-soft"
+    },
+    {
+      "object_id": "form-blue-awning-song-teaching",
+      "code": "ST110",
+      "kind": "STATE",
+      "title": "送青篷·歌娘核词接全",
+      "decision": "retain",
+      "reason": "歌娘慢唱核“认”字、阿蘅跟唱再独立接全，是师生两声源的核词过程。",
+      "keep_id": "form-blue-awning-song-teaching"
+    },
+    {
+      "object_id": "form-boat-song-independent",
+      "code": "ST354",
+      "kind": "STATE",
+      "title": "三道滩·独立整曲演唱",
+      "decision": "retain",
+      "reason": "十六行完整《三道滩》的独立女歌手录音；不是阿蘅省段清唱。",
+      "keep_id": "form-boat-song-independent"
+    },
+    {
+      "object_id": "form-boat-song-short",
+      "code": "ST111",
+      "kind": "STATE",
+      "title": "三道滩·省段清唱归家句",
+      "decision": "retain",
+      "reason": "阿蘅开头后翻两页转归家；两个范围之间留镜内停顿，不能用完整发行版铺满。",
+      "keep_id": "form-boat-song-short"
+    },
+    {
+      "object_id": "form-snake-welcome-song-chorus",
+      "code": "ST289",
+      "kind": "STATE",
+      "title": "四邻安·前殿集体领唱",
+      "decision": "retain",
+      "reason": "前殿领者起句、众人应和，阿蘅只在人群接长句；选段是制作选择，保留明确边界。",
+      "keep_id": "form-snake-welcome-song-chorus"
+    },
+    {
+      "object_id": "form-welcome-song-independent",
+      "code": "ST356",
+      "kind": "STATE",
+      "title": "四邻安·独立整曲演唱",
+      "decision": "retain",
+      "reason": "十四行《四邻安》的独立女领唱与混声小群录音；与具体前殿镜头的距离和群体位置分开。",
+      "keep_id": "form-welcome-song-independent"
+    },
+    {
+      "object_id": "form-woodcutter-base",
+      "code": "ST340",
+      "kind": "STATE",
+      "title": "挑柴老汉·基准完整形态",
+      "decision": "retain",
+      "reason": "老汉唯一完整基础形态仍是必要状态；固定脸、短须和旧衣，点头/扁担位置属于镜内动作。",
+      "keep_id": "form-woodcutter-base"
+    },
+    {
+      "object_id": "material-entity-a-heng-identity",
+      "code": "M2544",
+      "kind": "REQUIREMENT",
+      "title": "阿蘅 · 身份母版",
+      "decision": "retain",
+      "reason": "同一干燥青衣身份，基础、嗓哑、次日日常和泪后共用；两真实图像候选仍可比，不声称已有三视根母版。",
+      "keep_id": "material-entity-a-heng-identity"
+    },
+    {
+      "object_id": "material-entity-woodcutter-identity",
+      "code": "M2662",
+      "kind": "REQUIREMENT",
+      "title": "挑柴老汉 · 身份母版",
+      "decision": "retain",
+      "reason": "老汉身份与唯一基础状态共一图像需求；已有持扁担单视角保留为候选，准确1086×1448与D1事实不改。",
+      "keep_id": "material-entity-woodcutter-identity"
+    },
+    {
+      "object_id": "material-form-a-heng-blue-overall",
+      "code": "M2710",
+      "kind": "REQUIREMENT",
+      "title": "阿蘅·日常洗旧青衣 · 整体参考",
+      "decision": "merge",
+      "reason": "同一低髻青绿衣、无新增外伤的阿蘅身份；嗓哑、谨慎与泪后分别保留在完整状态和镜内表演，不另造相同衣着身份需求。点名后干燥只适用于次日，不能覆盖同晚湿鞋。",
+      "keep_id": "material-entity-a-heng-identity"
+    },
+    {
+      "object_id": "material-form-a-heng-hoarse-overall",
+      "code": "M2711",
+      "kind": "REQUIREMENT",
+      "title": "阿蘅·连唱后嗓哑 · 整体参考",
+      "decision": "retire",
+      "reason": "嗓音与泪后表演已由完整状态及镜头承担；已撤回的重复图像正文不再保留为可编辑方案。",
+      "keep_id": null
+    },
+    {
+      "object_id": "material-form-a-heng-later-overall",
+      "code": "M2712",
+      "kind": "REQUIREMENT",
+      "title": "阿蘅·点名后日常形态 · 整体参考",
+      "decision": "merge",
+      "reason": "同一低髻青绿衣、无新增外伤的阿蘅身份；嗓哑、谨慎与泪后分别保留在完整状态和镜内表演，不另造相同衣着身份需求。点名后干燥只适用于次日，不能覆盖同晚湿鞋。",
+      "keep_id": "material-entity-a-heng-identity"
+    },
+    {
+      "object_id": "material-form-a-heng-tears-overall",
+      "code": "M2713",
+      "kind": "REQUIREMENT",
+      "title": "阿蘅·确认安全后泪痕 · 整体参考",
+      "decision": "retire",
+      "reason": "嗓音与泪后表演已由完整状态及镜头承担；已撤回的重复图像正文不再保留为可编辑方案。",
+      "keep_id": null
+    },
+    {
+      "object_id": "material-form-a-heng-wet-overall",
+      "code": "M2714",
+      "kind": "REQUIREMENT",
+      "title": "阿蘅·捞书后湿衣袖 · 整体参考",
+      "decision": "retain",
+      "reason": "袖、膝湿而身份不变，需要一份完整湿衣参考；沿M1192真实候选审阅，不能以仅湿鞋替换。",
+      "keep_id": "material-form-a-heng-wet-overall"
+    },
+    {
+      "object_id": "material-form-a-heng-wet-shoes-overall",
+      "code": "M2715",
+      "kind": "REQUIREMENT",
+      "title": "阿蘅·嗓音劳累、鞋被水浸 · 整体参考",
+      "decision": "retain",
+      "reason": "湿鞋干袖且劳累，有独立连续性用途；沿M1193真实候选，不与湿袖合并。",
+      "keep_id": "material-form-a-heng-wet-shoes-overall"
+    },
+    {
+      "object_id": "material-form-blessing-stage-song-distant-overall",
+      "code": "M2723",
+      "kind": "REQUIREMENT",
+      "title": "明月还乡·远处戏声 · 整体参考",
+      "decision": "retire",
+      "reason": "已经撤回的重复演唱方案：剧中短词、口述和集体演唱的状态与镜内表演保留；不得因清理恢复新的完整状态录音义务。",
+      "keep_id": null
+    },
+    {
+      "object_id": "material-form-blue-awning-song-complete-overall",
+      "code": "M2724",
+      "kind": "REQUIREMENT",
+      "title": "送青篷·暮色台前完整演唱 · 整体参考",
+      "decision": "retire",
+      "reason": "已经撤回的重复演唱方案：剧中短词、口述和集体演唱的状态与镜内表演保留；不得因清理恢复新的完整状态录音义务。",
+      "keep_id": null
+    },
+    {
+      "object_id": "material-form-boat-song-short-overall",
+      "code": "M2725",
+      "kind": "REQUIREMENT",
+      "title": "三道滩·省段清唱归家句 · 整体参考",
+      "decision": "retain",
+      "reason": "同一阿蘅省段清唱，M004与M1206两次真实录音比较；M1206开头0.18–7.14s、归家7.66–17.686979166667s范围承接纯切片。",
+      "keep_id": "material-form-boat-song-short-overall"
+    },
+    {
+      "object_id": "material-form-snake-welcome-song-chorus-overall",
+      "code": "M2905",
+      "kind": "REQUIREMENT",
+      "title": "四邻安·前殿集体领唱 · 整体参考",
+      "decision": "retire",
+      "reason": "已经撤回的重复演唱方案：剧中短词、口述和集体演唱的状态与镜内表演保留；不得因清理恢复新的完整状态录音义务。",
+      "keep_id": null
+    },
+    {
+      "object_id": "material-form-woodcutter-base-overall",
+      "code": "M2961",
+      "kind": "REQUIREMENT",
+      "title": "挑柴老汉·基准完整形态 · 整体参考",
+      "decision": "merge",
+      "reason": "长脸灰短须、浅土灰短褂的同一老汉；唯一完整状态没有新增衣着或伤势，点头打趣由镜内表演负责，身份与基准图共用。",
+      "keep_id": "material-entity-woodcutter-identity"
+    },
+    {
+      "object_id": "material-voice-a-heng",
+      "code": "M2669",
+      "kind": "REQUIREMENT",
+      "title": "阿蘅 · 已有原件身份复用方案",
+      "decision": "retain",
+      "reason": "阿蘅共同声音身份，四次真实对白/基础/嗓哑/哽咽保留为候选；未听辨，不把情绪候选另立需求。",
+      "keep_id": "material-voice-a-heng"
+    },
+    {
+      "object_id": "material-voice-woodcutter",
+      "code": "M2673",
+      "kind": "REQUIREMENT",
+      "title": "挑柴老汉 · 已有原件身份复用方案",
+      "decision": "retain",
+      "reason": "老汉的声音身份与图像不同模态；原试读范围2.7–7.08秒不改，本次未听辨。",
+      "keep_id": "material-voice-woodcutter"
+    },
+    {
+      "object_id": "need-form-blessing-song-independent-overall",
+      "code": "M1205",
+      "kind": "REQUIREMENT",
+      "title": "明月还乡·完整独立歌曲",
+      "decision": "retain",
+      "reason": "完整十六行《明月还乡》保留完整歌曲需要，远处戏声场与整曲不同使用层次。",
+      "keep_id": "need-form-blessing-song-independent-overall"
+    },
+    {
+      "object_id": "need-form-blue-awning-song-independent-overall",
+      "code": "M1198",
+      "kind": "REQUIREMENT",
+      "title": "送青篷·完整独立歌曲",
+      "decision": "retain",
+      "reason": "完整十四行《送青篷》是独立作品录音需求，剧中缺词、跟唱和念写不另生完整录音方案。",
+      "keep_id": "need-form-blue-awning-song-independent-overall"
+    },
+    {
+      "object_id": "need-form-boat-song-independent-overall",
+      "code": "M1195",
+      "kind": "REQUIREMENT",
+      "title": "三道滩·完整独立歌曲",
+      "decision": "retain",
+      "reason": "完整十六行《三道滩》维持一个需求；整曲与12秒纠词试验是真实不同候选，短样不是完整歌曲。",
+      "keep_id": "need-form-boat-song-independent-overall"
+    },
+    {
+      "object_id": "need-form-welcome-song-independent-overall",
+      "code": "M1199",
+      "kind": "REQUIREMENT",
+      "title": "四邻安·完整独立歌曲",
+      "decision": "retain",
+      "reason": "完整十四行《四邻安》保留女领唱及群体应和目的，不并入另三首。",
+      "keep_id": "need-form-welcome-song-independent-overall"
+    }
+  ]
+}
