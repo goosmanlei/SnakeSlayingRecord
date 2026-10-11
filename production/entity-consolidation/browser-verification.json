@@ -1,0 +1,131 @@
+{
+  "format": "entity-consolidation-browser-verification-v1",
+  "task": "task-20261011-0008",
+  "browser": "实际连接的 Chrome",
+  "environments": {
+    "isolated": "127.0.0.1:64808; 候选数据只读验收",
+    "recovered": "127.0.0.1:64809; 从完整导出恢复的空实例，随后只在该库测试C284草稿/保存",
+    "formal": "由任务正式发布后回执单独记录，不把隔离结果当正式结果"
+  },
+  "paths": [
+    {
+      "path": "实体管理→阿蘅→全部状态→素材→当前方案/候选→返回",
+      "verified": "图6状态/5唯一素材，六行3/3/2/3/2/2；切ASH005、切状态、刷新与重开保持；实体3份与湿态2份共用准确身份"
+    },
+    {
+      "path": "实体管理→挑柴老汉→基础状态→图像与声音",
+      "verified": "1状态/2需求；M2662原图1086×1448单视角及C320意见，M2673声音参考范围2.7—7.08秒；空实例恢复后重开仍一致"
+    },
+    {
+      "path": "素材管理→搜索阿蘅→M2725→当前方案/准确候选",
+      "verified": "AS001检索范围21项中6匹配、15不匹配；同一省段素材与歌曲实体共享，M1206原件播放器实际到17.69/17.69；没有听审质量"
+    },
+    {
+      "path": "视听制作→AS001→场面机位→空间输入→周家米铺",
+      "verified": "机位无候选仍显示当前方案；未选准确原件保持缺项；空间2状态共享1需求，另一状态0项明确显示"
+    },
+    {
+      "path": "实体管理→米铺听客/墨耳/干浆糊与羊毛",
+      "verified": "群体1状态2需求；动物2状态2需求；道具3状态1需求，擦净阶段0项，必要差异和复用可读"
+    },
+    {
+      "path": "视听制作→ASH012→机位/首帧/视频",
+      "verified": "三种产物沿同一镜头大卡；无候选不伪称已生成；净手、翻布、接本、招狗先后及入画时点可读"
+    },
+    {
+      "path": "素材管理→M4081文字工程→准确候选",
+      "verified": "可编辑ZIP原件入口、三阶段文字和已有候选可读；曾点击下载，但下载等待工具超时，未把完成下载计为通过。实际工程文件内容另由逐项审阅读取"
+    },
+    {
+      "path": "空实例→阿蘅→旧M2710地址→显式归并入口",
+      "verified": "先呈现原身份/退役原因与旧意见入口，主动点击归并入口才到M2544，没有静默改绑"
+    },
+    {
+      "path": "空实例双窗口C284保存→冲突→核对最新→断线→恢复",
+      "verified": "A保存后B旧版本被拒绝，B草稿保留；核对已存文本后继续修改；停止专属64809进程后保存失败且保稿，重启同一实例后保存同一合并草稿成功。该测试库不参与发布或导出"
+    }
+  ],
+  "boundaries": [
+    "全剧17集65场344镜是逐项及连续文本/状态/方案复审，实际浏览器按上述类型和关键差异覆盖，不宣称逐镜成片观看",
+    "没有新的付费生成，没有音质、演唱认可或真实视频效果结论",
+    "正式库发布后仅只读复走，保存/冲突/失败发生于一次性恢复库"
+  ],
+  "visible_page_evidence": [
+    {
+      "file": "evidence/isolated-aheng-ax.txt",
+      "sha256": "9c4088e4bb71df0b7d58d23d69030bfb229ea731eda8ce4ab7cdac3982666109"
+    },
+    {
+      "file": "evidence/isolated-aheng-cross-shot-ax.txt",
+      "sha256": "fc2a42c32182a442d149e30b92806ba4025d6decbc5c83af3be6e61b3e0fe712"
+    },
+    {
+      "file": "evidence/isolated-animal-ax.txt",
+      "sha256": "fdcbe7ee1fc2ca7511e854e7fcf86c1bd7f35fc46563c6d952a4b75e9be575dd"
+    },
+    {
+      "file": "evidence/isolated-breakdown-ax.txt",
+      "sha256": "381c4a9ddd24d6cbca46b67204e8bec1ef5bbcea7879b4a3402b605006496465"
+    },
+    {
+      "file": "evidence/isolated-conflict-ax.txt",
+      "sha256": "c2a900d2fe48ffea979d97bfa4ed20aa3b48b64e073c73ae88dce494ca2a9919"
+    },
+    {
+      "file": "evidence/isolated-engineering-ax.txt",
+      "sha256": "1b4576f77d477db961646fa217570754e7dd0b135b0d554df0cb7e0d3a6d6581"
+    },
+    {
+      "file": "evidence/isolated-group-ax.txt",
+      "sha256": "e2362067dee61950319eee428450c90217c67fa0391e5a8a18ee33723d538a19"
+    },
+    {
+      "file": "evidence/isolated-prop-zero-states-ax.txt",
+      "sha256": "cdaab292d4d82f95c05c9729d8349e087ef9a451826df8602685b826b468da92"
+    },
+    {
+      "file": "evidence/isolated-save-failure-ax.txt",
+      "sha256": "494e108007b436206a1fcddb2008831d46b9184e1276409f44274da6dc0a5695"
+    },
+    {
+      "file": "evidence/isolated-save-recovered-ax.txt",
+      "sha256": "27da249df02ae25c8b4468a203ee7a49c7dce7759d8daf062e8fff440fa6994b"
+    },
+    {
+      "file": "evidence/isolated-scene-states-ax.txt",
+      "sha256": "ac050d0ecc98d7bc6585ecd8bd4319d196714098d3654dab734be01daa0ddf3a"
+    },
+    {
+      "file": "evidence/isolated-shot-firstframe-ax.txt",
+      "sha256": "3629d33977feccf75435f16d8b24247d54aa8ab1208c6116415584159a51802a"
+    },
+    {
+      "file": "evidence/isolated-shot-video-ax.txt",
+      "sha256": "f25b8d0eeb90968d5bc5dd92f060ffd7771b46bed00fe429458eab2e8b6a5648"
+    },
+    {
+      "file": "evidence/isolated-song-original-ax.txt",
+      "sha256": "53da2810e738fd32bc93fa01d338104d4253f2a4afd28bd35b0b70172e619f7c"
+    },
+    {
+      "file": "evidence/isolated-song-plan-ax.txt",
+      "sha256": "d96646c7c9477a4753a42ea87d6424379793680b6d3086f0030703d73918a709"
+    },
+    {
+      "file": "evidence/isolated-song-playback-ax.txt",
+      "sha256": "262e3c206368b8938cb1c5a475aa9e7efeedaa4599041dec113f08502fe05bd7"
+    },
+    {
+      "file": "evidence/recovered-aheng-ax.txt",
+      "sha256": "2837bc142d2bda14d3a0af1b8777618d832152a0bc6b3221fa89a593a6bd1620"
+    },
+    {
+      "file": "evidence/recovered-retired-link-ax.txt",
+      "sha256": "3e94e97a9ad2088e7cab465f4d94ccaec9407b3890f7a40bca320e4c0d04f295"
+    },
+    {
+      "file": "evidence/recovered-wood-ax.txt",
+      "sha256": "5e1c3b1e8369b000da9a9197d947972954a4dc5e74aec0c2b50d79f64b51ad3c"
+    }
+  ]
+}

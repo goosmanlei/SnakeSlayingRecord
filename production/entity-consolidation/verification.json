@@ -1,0 +1,67 @@
+{
+  "format": "entity-consolidation-verification-v1",
+  "task": "task-20261011-0008",
+  "desk_candidate": "123e7d00912414d4ca1241a03ad5e91ee9d18622",
+  "checks": [
+    {
+      "check": "吸收0007后的后端完整回归",
+      "tests": 536,
+      "passed": true,
+      "log_sha256": "f7d583a856b210dabf11d248e8eb73a033cae9dfe13235241dd2a4647234440d",
+      "boundary": "随后仅增加连续归并的发布地址验证；新分支由下项定向覆盖"
+    },
+    {
+      "check": "吸收0007后的前端完整回归",
+      "tests": 842,
+      "passed": true,
+      "log_sha256": "ef98b58caf6d7ca9de9a95abc686bc57e91d07dab6c02a8d7128e122032e4bae"
+    },
+    {
+      "check": "最终semantic_consolidation定向回归",
+      "tests": 14,
+      "passed": true,
+      "cases": [
+        "当前内容漂移拒绝",
+        "原件哈希漂移拒绝",
+        "中断回滚",
+        "原CALL保持",
+        "退役候选不能复活",
+        "连续归并地址仅允许有依据的完整链终点",
+        "不允许中间/未知/循环地址改绑"
+      ]
+    },
+    {
+      "check": "当前制作增量发布定向回归",
+      "tests": 4,
+      "passed": true,
+      "boundary": "事务读取归档metadata修正后再次通过"
+    },
+    {
+      "check": "正式库快照增量预演",
+      "passed": true,
+      "evidence": "publication-scoped-preflight.json",
+      "boundary": "只写隔离rehearsal，不是正式写入"
+    },
+    {
+      "check": "同一最终包重复应用",
+      "passed": true,
+      "evidence": "publication-idempotence.json"
+    },
+    {
+      "check": "空实例完整恢复",
+      "passed": true,
+      "evidence": "recovery-result.json",
+      "boundary": "随后测试C284草稿的恢复库不用于发布/导出"
+    },
+    {
+      "check": "全对象保护核验",
+      "passed": true,
+      "evidence": "integrity-counts.json"
+    },
+    {
+      "check": "编制源与当前文本一致",
+      "passed": true,
+      "evidence": "authoring-final-audit.json"
+    }
+  ]
+}
