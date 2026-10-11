@@ -1,0 +1,205 @@
+{
+  "observed_at_local": "2026-10-11 17:57—18:00 Asia/Shanghai",
+  "browser": "真实已连接Chrome，自建2044187883标签",
+  "entry": "http://127.0.0.1:3000/",
+  "primary": "19ed040b8d9f4fe6ad32fc43930218ce0d1023ec",
+  "desk": "b1bc11017f9bab3eac4ad25f373ae554302fc79e",
+  "measurement": "Chrome DevTools Protocol Network.requestWillBeSent至loadingFinished，单条样本取毫秒四舍五入；字节为encodedDataLength含传输表示开销。仅保存必要脱敏字段，无头/凭据。所有所列业务请求200。",
+  "limits": "正常只读点击；未改正式业务数据、清缓存或压测。首访非严格冷缓存；无P75/总体性能结论，无服务端剖析或准确DOMContentPaint端点。",
+  "cases": [
+    {
+      "case": "进入首集首场",
+      "target": "AE001/AS001",
+      "condition": "本轮首次页面进入；未清正式缓存",
+      "requests": [
+        {
+          "path": "/api/production/breakdown?episode=&view=breakdown",
+          "ms": 14,
+          "encoded_bytes": 115257
+        },
+        {
+          "path": "/api/production/scene",
+          "target": "av-e01-a01",
+          "ms": 9,
+          "encoded_bytes": 213070
+        },
+        {
+          "path": "/api/comment-review",
+          "target": "av-e01-a01",
+          "ms": 27,
+          "encoded_bytes": 568
+        }
+      ]
+    },
+    {
+      "case": "AE001切AE017",
+      "target": "AE017/AS062",
+      "condition": "本轮首次目标访问；未清正式缓存",
+      "requests": [
+        {
+          "id": "76522.22",
+          "path": "/api/production/breakdown?episode=av-e17&view=breakdown",
+          "start": 375058.296114,
+          "end": 375060.934692,
+          "ms": 2639,
+          "encoded_bytes": 114028
+        },
+        {
+          "id": "76522.23",
+          "path": "/api/production/scene",
+          "target": "av-e17-a01",
+          "revision": "9ebba44d55644abd2e185dcbb0727a7d9a1d2862a47a26c51bdb1fe289404a64",
+          "start": 375060.954918,
+          "end": 375065.604062,
+          "ms": 4649,
+          "encoded_bytes": 285819
+        },
+        {
+          "id": "76522.24",
+          "path": "/api/comment-review",
+          "target": "av-e17-a01",
+          "start": 375065.735708,
+          "end": 375065.766469,
+          "ms": 31,
+          "encoded_bytes": 572
+        }
+      ],
+      "critical_network_span_ms": 7308,
+      "ui": "立即出现加载状态；请求完成后实读AS062与ASH322—328当前方案。无精准绘制时间埋点，7308ms不是总可交互耗时。"
+    },
+    {
+      "case": "同集AS062切AS065",
+      "target": "AE017/AS065",
+      "condition": "本轮首次目标访问；未清正式缓存",
+      "requests": [
+        {
+          "id": "76522.25",
+          "path": "/api/production/scene",
+          "target": "av-e17-a04",
+          "revision": "9e7a37959b01ab67ce51057f95dea8093546d9bd38baccff6e5e7547701a067c",
+          "start": 375092.33084,
+          "end": 375098.864169,
+          "ms": 6533,
+          "encoded_bytes": 441381,
+          "send_end_ms": 2.124,
+          "receive_headers_start_ms": 6524.891,
+          "from_disk_cache": false,
+          "from_service_worker": false
+        },
+        {
+          "id": "76522.26",
+          "path": "/api/comment-review",
+          "target": "av-e17-a04",
+          "ms": 33,
+          "encoded_bytes": 564
+        }
+      ],
+      "other_requests": [
+        {
+          "path": "/favicon.ico",
+          "ms": 17,
+          "encoded_bytes": 996
+        }
+      ],
+      "ui": "目标场9镜完整当前内容最终可读。主要请求耗时发生在收到响应头之前，不能据此拆出服务端计算和队列的占比。"
+    },
+    {
+      "case": "AS065返回AS062",
+      "target": "AE017/AS062",
+      "condition": "重复访问同一准确目标",
+      "requests": [
+        {
+          "id": "76522.28",
+          "path": "/api/production/scene",
+          "target": "av-e17-a01",
+          "start": 375133.163272,
+          "end": 375133.18204,
+          "ms": 19,
+          "encoded_bytes": 285818
+        },
+        {
+          "id": "76522.30",
+          "path": "/api/comment-review",
+          "target": "av-e17-a01",
+          "ms": 30,
+          "encoded_bytes": 572
+        }
+      ],
+      "other_requests": [
+        {
+          "path": "/favicon.ico",
+          "ms": 12,
+          "encoded_bytes": 996
+        }
+      ],
+      "ui": "点击后紧接的DOM快照已显示AS062当前方案。未读取服务端缓存命中字段，不将热返回推断写成确证的缓存层命中。"
+    },
+    {
+      "case": "同场定位ASH323",
+      "target": "AE017/AS062/ASH323",
+      "requests": [
+        {
+          "id": "76522.31",
+          "path": "/api/comment-review",
+          "target": "av-e17-a01-s02",
+          "ms": 36,
+          "encoded_bytes": 594
+        }
+      ],
+      "ui": "点击调用返回约49ms，目标标题可见；无目录/场API。这是含工具开销的观察，不作为精准绘制指标。"
+    },
+    {
+      "case": "快速AE015→AE016→AE017",
+      "target": "最终AE017/AS062",
+      "requests": [
+        {
+          "id": "76522.32",
+          "path": "/api/production/breakdown?episode=av-e15&view=breakdown",
+          "start": 375159.011069,
+          "end": 375161.882862,
+          "ms": 2872,
+          "encoded_bytes": 114935
+        },
+        {
+          "id": "76522.33",
+          "path": "/api/production/breakdown?episode=av-e16&view=breakdown",
+          "start": 375159.052416,
+          "end": 375161.760684,
+          "ms": 2708,
+          "encoded_bytes": 113571
+        },
+        {
+          "id": "76522.34",
+          "path": "/api/production/breakdown?episode=av-e17&view=breakdown",
+          "start": 375159.094907,
+          "end": 375159.10901,
+          "ms": 14,
+          "encoded_bytes": 114027
+        },
+        {
+          "id": "76522.35",
+          "path": "/api/production/scene",
+          "target": "av-e17-a01",
+          "start": 375159.114429,
+          "end": 375159.119979,
+          "ms": 6,
+          "encoded_bytes": 285818
+        },
+        {
+          "id": "76522.36",
+          "path": "/api/comment-review",
+          "target": "av-e17-a01",
+          "ms": 25,
+          "encoded_bytes": 572
+        }
+      ],
+      "ui": "点击后短暂同时出现3条相同加载状态；最终保持AE017/AS062，未被迟到AE015/16覆盖。已放弃目录仍完成200，没有在本样例证明最后一次被明显阻塞。"
+    }
+  ],
+  "version_boundary": "进入本轮时两仓HEAD及实例引用为上列提交。17:57:59—17:59:43 的主要网络样本结束后，0006于18:00:23换正式app；调查结束核对到新服务desk=e4a539d928f0730d526232e32a0e8c657b574e7f、primary=fe06a146dd656c587da3a21107dfe651e1e8e0a3。没有在旧容器退出前保存其image身份，不把源代码基线冒充完整正式发布指纹；未来基线/候选对照须在同数据隔离实例重新测量。两desk提交之间后端聚合代码未变，production-breakdown.js仅删除Prompt关系浮卡绑定。",
+  "network_wall_anchor": {
+    "request_id": "76522.22",
+    "start_monotonic": 375058.296114,
+    "wallTime_epoch_seconds": 1791712679.349253
+  }
+}
