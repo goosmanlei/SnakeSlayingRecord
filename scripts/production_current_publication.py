@@ -10,7 +10,7 @@ KEYS = {
     'comments': ('id',), 'material_content': ('id',),
     'material_archive_files': ('path',), 'material_aliases': ('alias_id',),
     'business_codes': ('object_id',), 'business_comments': ('comment_id',),
-    'business_relations': ('object_id',), 'audiovisual_notes': ('object_id',),
+    'business_relations': ('object_id',), 'business_relation_aliases': ('alias_id',), 'audiovisual_notes': ('object_id',),
     'production_current_records': ('object_id',),
     'production_submissions': ('operation_id',), 'production_candidates': ('id',),
     'production_candidate_targets': ('candidate_id','material_id'),
@@ -39,6 +39,8 @@ def supported(obj,revision):
              or obj['kind']=='GUIDANCE' and payload.get('format')=='comment-handling-v1'))
 
 def build(before,after):
+    from review_desk.semantic_consolidation import allows_publication_change
+    receipts = [json.loads(r['result']) for r in after.get('production_current_operations', [])]
     if set(before)!=set(after) or before['production_current_policy']!=after['production_current_policy']:
         raise ValueError('current publication requires the same migrated schema and baseline')
     changes={table:[] for table in KEYS if table in before}
@@ -52,9 +54,10 @@ def build(before,after):
         for key in sorted(old.keys()|new.keys()):
             a,b=old.get(key),new.get(key)
             if a==b:continue
-            if b is None and table not in ('dependencies','material_aliases'):
+            semantic = allows_publication_change(table,a,b,receipts)
+            if b is None and table not in ('dependencies','material_aliases') and not semantic:
                 raise ValueError('current publication cannot remove evidence: '+table)
-            if a is not None and table not in MUTABLE:
+            if a is not None and table not in MUTABLE and not semantic:
                 raise ValueError('immutable evidence changed: '+table)
             changes[table].append({'key':list(key),'before_sha256':sha(a) if a else None,'after':b})
     old_events={r['id']:r for r in before['comment_events']};new_events={r['id']:r for r in after['comment_events']}
@@ -81,6 +84,7 @@ def apply(db,plan,*,identity=None,media_root=None):
     from review_desk import production_current as current, production as p
     from review_desk.store import Store
     from review_desk.production_current_bundle import validate
+    from review_desk.semantic_consolidation import allows_publication_change, is_retired
     if plan.get('format')!=FORMAT or set(plan.get('changes',{}))!=set(KEYS):raise ValueError('invalid current publication')
     if plan['media']!=revision_media(plan['changes']['revisions']):raise ValueError('current media manifest differs')
     original_factory=db.row_factory
@@ -89,6 +93,8 @@ def apply(db,plan,*,identity=None,media_root=None):
         return dict(row) if row else None
     def mutate():
         db.row_factory=sqlite3.Row
+        receipts = [json.loads(r['result']) for r in db.execute('SELECT result FROM production_current_operations')]
+        receipts += [json.loads(c['after']['result']) for c in plan['changes']['production_current_operations'] if c['after']]
         if [dict(r) for r in db.execute('SELECT * FROM production_current_policy')]!=plan['baseline']:
             raise ValueError('current migration baseline differs')
         scope=set(plan['scope']);saved={};changed_rids={c['after']['id'] for c in plan['changes']['revisions']}
@@ -102,8 +108,9 @@ def apply(db,plan,*,identity=None,media_root=None):
                 if key in seen or (sha(old) if old else None)!=change['before_sha256']:raise ValueError('formal row changed: '+table)
                 seen.add(key);saved[table,key]=old
                 if new is not None and (set(new)!=columns or pk(table,new)!=key):raise ValueError('row schema or identity changed')
-                if new is None and table not in ('dependencies','material_aliases'):raise ValueError('cannot delete current evidence')
-                if old and table not in MUTABLE:raise ValueError('immutable evidence cannot change')
+                semantic=allows_publication_change(table,old,new,receipts)
+                if new is None and table not in ('dependencies','material_aliases') and not semantic:raise ValueError('cannot delete current evidence')
+                if old and table not in MUTABLE and not semantic:raise ValueError('immutable evidence cannot change')
                 row=new or old
                 owner=row.get('object_id') or row.get('target_object_id')
                 if table not in ('business_codes',) and owner and owner not in scope:raise ValueError('row outside current publication scope')
@@ -120,8 +127,15 @@ def apply(db,plan,*,identity=None,media_root=None):
                         if before['status']=='completed' and after['status']!='completed':raise ValueError('completed call moved backwards')
                     if old and obj['kind']=='ASSET':
                         if any(before.get(f)!=after.get(f) for f in ('production','external_source')):raise ValueError('candidate source changed')
-                        components={c['id']:c for c in after['components']}
-                        if any(components.get(c['id'])!=c for c in before['components']):raise ValueError('candidate original changed')
+                        if is_retired(after):
+                            original_hash=before['original_content_sha256'] if is_retired(before) else current.checksum(before)
+                            if after.get('original_content_sha256')!=original_hash:raise ValueError('candidate retirement differs from exact original')
+                            components=after.get('components') or [{('file' if k=='former_file' else k):v for k,v in c.items()} for c in after.get('former_components', [])]
+                            original_components=before.get('components') or [{('file' if k=='former_file' else k):v for k,v in c.items()} for c in before.get('former_components', [])]
+                            if components!=original_components:raise ValueError('retired original metadata changed')
+                        else:
+                            components={c['id']:c for c in after['components']}
+                            if any(components.get(c['id'])!=c for c in before['components']):raise ValueError('candidate original changed')
                 if old and table=='objects' and any(old[f]!=new[f] for f in ('id','kind','created_at','current_revision')):raise ValueError('current object identity changed')
                 if old and table=='comments' and any(old[f]!=new[f] for f in ('id','source_id','target_object_id','target_revision_id','anchor','created_at')):raise ValueError('original opinion changed')
         store=Store.__new__(Store);store.db=db

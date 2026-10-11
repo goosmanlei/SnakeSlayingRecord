@@ -52,4 +52,46 @@ class CurrentPublicationTest(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'checksum'):apply_plan(self.formal.db,plan)
         self.assertEqual('\n'.join(self.formal.db.iterdump()),before)
 
+    def test_semantic_merge_and_candidate_retirement_publish_without_rewriting_history(self):
+        import io
+        import wave
+        from review_desk import semantic_consolidation as sem
+        from review_desk.production_media import ingest
+        source=Store(self.root/'semantic/.runtime/review.sqlite3');self.addCleanup(source.close)
+        def put(oid,kind,**fields):
+            payload={'format':'production-'+p.KINDS[kind]+'-v1','title':oid,
+                     'blocks':[{'id':'body','text':oid}],**fields}
+            p.import_records(source,{'format':'production-import-v1','records':[
+                {'object_id':oid,'kind':kind,'expected_version':0,'payload':payload}]})
+        def ref(oid):return {'object_id':oid,'revision_id':p.record(source,oid)['id']}
+        put('subject','ENTITY',entity_type='prop',aliases=[],facts=[],choices=[],unknowns=[],sources=[])
+        for oid in ('need-a','need-b'):
+            put(oid,'REQUIREMENT',scope=ref('subject'),slot=oid,required=False,purpose='同一翻页声音',
+                media_type='audio',usage='review_reference',entities=[ref('subject')],states=[],specification={})
+        put('recording','CALL',method='recording',tool='test',status='submitted',inputs=[],outputs=[])
+        audio=io.BytesIO()
+        with wave.open(audio,'wb') as wav:
+            wav.setnchannels(1);wav.setsampwidth(2);wav.setframerate(48000);wav.writeframes(b'\0\0'*480)
+        audio.seek(0);component=ingest(source.db_path.parent.parent,audio,'voice.wav')
+        put('voice','ASSET',media_type='audio',subjects=[],states=[],components=[component],
+            production=ref('recording'),lineage={},candidate_requirements=[ref('need-b')])
+        migration.apply(source,migration.plan(source))
+        base=self.root/'semantic-base.sqlite3';backup(source.db_path,base)
+        path=self.root/'semantic-formal/.runtime/review.sqlite3';path.parent.mkdir(parents=True)
+        backup(base,path);formal=Store(path);self.addCleanup(formal.close)
+        before_call=copy.deepcopy(p.record(formal,'recording')['payload'])
+        sem.apply(source,sem.prepare(source,{'merges':[{'source':'need-b','target':'need-a','reason':'相同实际用途'}],
+            'retire_candidates':[{'source':'voice','reason':'没有当前用途的试样','remove_files':False}]}))
+        # Later cleanup preserves the first original hash, not the receipt hash.
+        sem.apply(source,sem.prepare(source,{'retire_candidates':[
+            {'source':'voice','reason':'确认无输入和原意见依赖，可清理原件','remove_files':True}]}))
+        plan=build_plan(base,source.db_path)
+        self.assertFalse(apply_plan(formal.db,plan)['already_published'])
+        self.assertTrue(apply_plan(formal.db,plan)['already_published'])
+        self.assertTrue(sem.is_retired(p.record(formal,'need-b')['payload']))
+        self.assertTrue(sem.is_retired(p.record(formal,'voice')['payload']))
+        self.assertEqual(p.record(formal,'recording')['payload'],before_call)
+        self.assertFalse(formal.db.execute("SELECT 1 FROM production_candidates WHERE asset_object_id='voice'").fetchone())
+        sem.validate(formal)
+
 if __name__=='__main__':unittest.main()
