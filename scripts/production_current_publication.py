@@ -21,6 +21,23 @@ MUTABLE = {'objects','revisions','dependencies','comments','production_current_r
            'material_aliases','material_archive_files','business_relations','audiovisual_notes'}
 FORMAT = 'production-current-publication-v1'
 
+def publication_media(changes):
+    try:from .generation_publication import revision_media
+    except ImportError:from generation_publication import revision_media
+    from review_desk.material_reference import EVIDENCE
+    result={v['file']:v for v in revision_media(changes['revisions'])}
+    for change in changes['production_current_operations']:
+        if not change['after']:continue
+        receipt=json.loads(change['after']['result'])
+        if receipt.get('format')!=EVIDENCE:continue
+        for item in receipt['references']:
+            component=item.get('component')
+            if component:
+                name=component['file'];expected={k:component[k] for k in ('file','sha256','bytes')}
+                if name in result and result[name]!=expected:raise ValueError('recovered original media conflict')
+                result[name]=expected
+    return [result[name] for name in sorted(result)]
+
 def canonical(value):
     return json.dumps(value,ensure_ascii=False,sort_keys=True,separators=(',',':'))
 
@@ -76,7 +93,7 @@ def build(before,after):
     return {'format':FORMAT,'baseline':before['production_current_policy'],'scope':sorted(scope),
             'changes':changes,'expected_references':expected,
             'comment_events':[r for i,r in sorted(new_events.items()) if i not in old_events],
-            'media':revision_media(changes['revisions'])}
+            'media':publication_media(changes)}
 
 def apply(db,plan,*,identity=None,media_root=None):
     try:from .generation_publication import journal,publication_id,revision_media,validate_numbered_row
@@ -86,7 +103,7 @@ def apply(db,plan,*,identity=None,media_root=None):
     from review_desk.production_current_bundle import validate
     from review_desk.semantic_consolidation import allows_publication_change, is_retired
     if plan.get('format')!=FORMAT or set(plan.get('changes',{}))!=set(KEYS):raise ValueError('invalid current publication')
-    if plan['media']!=revision_media(plan['changes']['revisions']):raise ValueError('current media manifest differs')
+    if plan['media']!=publication_media(plan['changes']):raise ValueError('current media manifest differs')
     original_factory=db.row_factory
     def lookup(table,keys):
         row=db.execute('SELECT * FROM '+table+' WHERE '+' AND '.join(k+'=?' for k in KEYS[table]),keys).fetchone()
