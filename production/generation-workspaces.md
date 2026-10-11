@@ -91,7 +91,7 @@ PYTHONPATH="$generation_system" python3 scripts/publish_generation.py --instance
 
 ## 旧素材补齐当前方案
 
-仅有 ASSET 身份的旧素材，在隔离任务实例执行下列入口，从确切历史候选初始化一份当前方案；保留原 M 编号、候选、原件及快照，已有方案不覆盖：
+已有真实候选而缺少当前方案的旧素材，在隔离任务实例执行下列入口，从该素材自己的确切提交初始化一份当前方案。覆盖仅有 ASSET 身份及原需求已退役但候选仍可召回的素材流；保留原 M 编号、候选、原件及快照，退役需求不复活，已有方案不覆盖：
 
 ```bash
 python3 scripts/generation_review.py --system "$review_system_worktree" \
