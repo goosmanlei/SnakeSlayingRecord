@@ -23,16 +23,25 @@ def vocal_ranges(prompt, sources, reviewed):
     """Check literal original words, speaker and order in the actual new prose."""
     events = [e for e in reviewed.for_sources(sources) if e['words'] == 'exact']
     expected = {}
-    identities = {v[0] for v in reviewed.voice.VOICES.values()} | set(reviewed.voice.LABELS)
+    identities = ({v[0] for v in reviewed.voice.VOICES.values()} | set(reviewed.voice.LABELS)
+                  | {e['speaker'] for e in events if e['speaker'] not in reviewed.voice.VOICES})
     occurrences = {}
     for event in events:
         expected[event['content']] = expected.get(event['content'], 0) + 1
+    utterances = []
+    for quoted in re.finditer(r'“([^”]*)”|「([^」]*)」|"([^"]*)"', prompt):
+        group = next(n for n in range(1, 4) if quoted.group(n) is not None)
+        if quoted.group(group) in expected:
+            utterances.append((quoted.start(group), quoted.end(group), quoted.group(group)))
     for words, count in expected.items():
         # A spoken name can also occur in reference duties or stage directions.
         # Only its quoted utterance is a vocal event, not every identity mention.
         pattern = (r'(?<=[“「"])' + re.escape(words) + r'(?=[”」"])'
-                   if words in identities else re.escape(words))
-        occurrences[words] = [m.start() for m in re.finditer(pattern, prompt)]
+                   if words.rstrip('。！？?!') in identities else re.escape(words))
+        occurrences[words] = [m.start() for m in re.finditer(pattern, prompt)
+                              if not any(begin <= m.start() and m.end() <= end
+                                         and utterance != words
+                                         for begin, end, utterance in utterances)]
         if len(occurrences[words]) != count:
             raise ValueError('original words missing or repeated: ' + words)
     result, previous = [], 0
@@ -49,7 +58,11 @@ def vocal_ranges(prompt, sources, reviewed):
         # The event's clause must identify its own speaker, not borrow the
         # reference paragraph or a previous speaker's dialogue attribution.
         attribution = prompt[max(previous, prompt.rfind('\n', previous, start) + 1, start - 180):start]
-        if not any(name in attribution for name in names):
+        # Match the longest known identity first: 阿蘅母亲 is not 阿蘅,
+        # and 程差役 is not the other actor whose label is 差役.
+        identified = {m[0] for m in re.finditer('|'.join(re.escape(n) for n in
+                      sorted(identities, key=lambda n: (-len(n), n))), attribution)}
+        if not names.intersection(identified):
             raise ValueError('vocal event speaker is not explicit: ' + event['source'] + ' ' + speaker)
         result.append({'start': start, 'end': start + len(words), 'source': event['source'],
                        'speaker': event['speaker']})
