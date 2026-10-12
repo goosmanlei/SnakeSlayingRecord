@@ -4,6 +4,8 @@
 
 ## 当前成果与运行依据
 
+- task-20261012-0015 已将四首完整歌曲直接归实体，补两项结构需求，并在正式库落实137实体、75状态、1293需求。统一来源双列列表与纯说明问号已在本机正式页面及最终导出的新空实例复走；准确双仓、服务、恢复和过程清理依据见 [来源素材列表验收](production/material-source-list/VERIFICATION.md)及任务账本。负责人独立复验单独登记；双仓工作区仍由本TUI和清理锁占用，退出释锁后由本任务执行者受管退役。
+
 - task-20261012-0014 已形成 [Higgsfield 与本系统创作思路对比报告](production/reports/higgsfield-creation-comparison.md)，比较专业决策封装、作品上下文和反馈修订，包含三个场景、借鉴建议及证据边界。仅文档交付，建议尚未实施；待用户阅读核验后沿同一任务处理反馈，实际 Git 交付以任务账本为准。
 
 - task-20261012-0009 已按新版抽取方法完成风险样例、17 集顺序抽取及全剧复审，当前为137普通实体、79有效状态、1291项需求；保护原故事、评论、提交与候选。本机正式增量、3000 Chrome 与最终正式导出的新空实例约束和页面复走通过。具体身份归并、跨镜时点、方法与作者入口见 [全剧抽取](production/extraction/README.md)；准确双仓、运行与清理沿任务账本及主项目 `.runtime/task-20261012-0009/` 回执核对。负责人独立复验与下游视频重编另行承接；必要阶段原值用于独立复验，双仓工作区退出本 TUI 释锁后受管退役。
@@ -133,7 +135,7 @@
 - task-20261010-0019 的双仓 worktree 仍由当前 TUI 及清理锁占用；本任务执行者退出并释放锁后，通过 `codex.project task cleanup` 整组退役，保留提交与会话历史。正式运行和当前完整恢复不依赖任务目录，必要证据归主项目 `.runtime/task-20261010-0019/`。
 
 - task-20261010-0016 的双仓worktree仍由当前TUI及清理锁使用；本任务执行者在退出释放锁后沿 `codex.project task cleanup` 整组退役，保留提交与会话历史。必要验收及准确清理回执见 [视听三部分验收](production/audiovisual-three-part/VERIFICATION.md)，正式运行和恢复不依赖任务临时目录。
-- 受管候选的唯一当前恢复入口为完整 Schema 13 `export/manifest.json`、[准确索引](production/audiovisual/index.json) 和 [发布幂等凭据](production/audiovisual/recovery.json)。按 [生产说明](production/README.md) 恢复到新空实例；旧编排包、旧导出、旧歌曲重放与其他任务历史数据库不能覆盖活库。
+- 受管候选的唯一当前恢复入口为完整 Schema 14 `export/manifest.json`、[准确索引](production/audiovisual/index.json) 和 [发布幂等凭据](production/audiovisual/recovery.json)。按 [生产说明](production/README.md) 恢复到新空实例；旧编排包、旧导出、旧歌曲重放与其他任务历史数据库不能覆盖活库。
 - 正式数据、服务、镜像及必要恢复回执继续保留；临时资源按相应任务账本和实际引用核对，完成发布、页面验收与新空库恢复后清理。方案核验范围见 [视听验收](production/audiovisual/verification.md)。
 - 其他任务现存工作区、历史库和归档由原任务执行者负责，不能据旧编号或目录名批删；它们不再是有效制作基线。`task-20261005-0001`、`task-20261006-0003` 的本机归档按任务账本 `repositories.*.cleanup.ignored_archive` 定位，原任务执行者在追溯结束后裁剪重复过程资料。
 - task-20261009-0003 会话仍占用故事 worktree，结项、退出并释放锁后再通过 `codex.project task cleanup` 受管退役，保留分支、提交、最小回执及会话历史；不强删活跃工作区。

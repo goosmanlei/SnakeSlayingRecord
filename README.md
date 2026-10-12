@@ -69,7 +69,7 @@ test "$(git -C "$production_system" rev-parse HEAD)" = "$required_system"
 REVIEW_DESK_BUILD_CONTEXT="$production_system" docker compose up -d --build
 ```
 
-已有运行数据库时跳过恢复，不能用快照覆盖活库。当前 Schema 13 完整导出及发布凭据只能通过 [生产恢复入口](production/README.md#恢复) 恢复到新的空实例；旧歌曲、旧编排与旧格式重放已经退役。迁移同时保留 `config/`、`content/`、`export/` 和准确恢复索引。正式服务使用对应冻结发布包，不能用普通构建覆盖准确挂载。
+已有运行数据库时跳过恢复，不能用快照覆盖活库。当前 Schema 14 完整导出及发布凭据只能通过 [生产恢复入口](production/README.md#恢复) 恢复到新的空实例；旧歌曲、旧编排与旧格式重放已经退役。迁移同时保留 `config/`、`content/`、`export/` 和准确恢复索引。正式服务使用对应冻结发布包，不能用普通构建覆盖准确挂载。
 
 打开 [本机审阅台](http://127.0.0.1:3000/)：Nginx 长期运行在 Docker 容器 3000 端口并代理容器内 Python 服务；Nginx 镜像与通用代理规则由审阅台仓库维护，故事仓库只保留实例 Compose 配置。主机仅绑定 `127.0.0.1:3000`。`docker compose ps` 检查状态，`docker compose restart` 重启；`restart: unless-stopped` 保证 Docker 恢复时服务随之恢复。已有 `.runtime/review.sqlite3` 时跳过 `restore`。本机与公开克隆的系统目录名统一为 `story-review-desk`，同级放置时使用 Compose 默认构建路径；系统位于其他位置时设置 `REVIEW_DESK_BUILD_CONTEXT`。不要把 3000 端口转发到公网，本服务没有公网鉴权。
 

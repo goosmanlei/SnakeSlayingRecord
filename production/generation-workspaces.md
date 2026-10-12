@@ -168,7 +168,7 @@ python3 scripts/production_review.py --system "$generation_system" recover \
   --destination .runtime/generation/published-recovery
 ```
 
-`export` 和 `snapshot` 只改当前 worktree 的受管交付文件；核对恢复后的准确版本、历史评论和文件哈希，再提交导出并合入主干。Schema 6 及以上完整导出已经保存全部修订，`snapshot` 写出 `production-export-index-v1` 索引，绑定准确历史身份、原件和导出清单，不再生成重复的正文重放批次；旧格式恢复仍兼容。索引与清单或历史不一致时拒绝恢复。
+`export` 和 `snapshot` 只改当前 worktree 的受管交付文件；核对恢复后的准确版本、历史评论和文件哈希，再提交导出并合入主干。Schema 14 完整导出保存故事与方法历史、制作当前内容及候选提交快照，`snapshot` 写出 `production-export-index-v1` 索引，绑定准确历史身份、原件和导出清单，不再生成重复的正文重放批次；退役素材版本的旧恢复包明确拒绝。索引与清单或历史不一致时拒绝恢复。
 
 `export/material-content.json` 和 `export/objects.json` 使用 Git LFS 保存实际文件。新克隆先执行 `git lfs pull --include='export/material-content.json,export/objects.json'`，再核验清单和恢复；不能把 Git 中的 LFS 指针当作内容图或完整对象历史。交付时核对实际文件与指针的 SHA256、大小及远端原件回读。受控 Git 交付与 LFS 原件上传均须成功，不能只确认分支指针。
 

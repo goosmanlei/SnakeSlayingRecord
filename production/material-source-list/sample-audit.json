@@ -1,0 +1,56 @@
+[
+  {
+    "object_id": "form-boat-song-independent",
+    "title": "三道滩 · 独立完整演唱",
+    "content_sha256": "66e2ef97146064ff04946c2961634fc70cdfd31a60792ab8ffce49bd2f27e3f6",
+    "action": "remove",
+    "reason": "完整歌曲录音是歌曲自身的稳定基础产物，无需独立基准状态；剧中省段演法继续独立。",
+    "destination": "entity",
+    "condition": "完整作品录音保留全部段落、自然头尾及必要编配；独立录音歌者的声线不自动代表阿蘅或其他剧中角色。实际演唱、咬字、旋律、结尾与音质仍待听审。",
+    "requirement_handoffs": [
+      {
+        "object_id": "need-form-boat-song-independent-overall",
+        "scope": "entity-boat-song",
+        "title": "三道滩 · 完整演唱"
+      }
+    ],
+    "direct_requirements": [
+      "need-form-boat-song-independent-overall"
+    ],
+    "consumers": [
+      {
+        "object_id": "asset-songs-boat-full",
+        "kind": "ASSET",
+        "path": "payload.state_coverage.0.state"
+      },
+      {
+        "object_id": "asset-songs-boat-full",
+        "kind": "ASSET",
+        "path": "payload.states.0"
+      },
+      {
+        "object_id": "asset-songs-boat-lyria-diction-pilot-v1",
+        "kind": "ASSET",
+        "path": "payload.state_coverage.0.state"
+      },
+      {
+        "object_id": "asset-songs-boat-lyria-diction-pilot-v1",
+        "kind": "ASSET",
+        "path": "payload.states.0"
+      },
+      {
+        "object_id": "need-form-boat-song-independent-overall",
+        "kind": "REQUIREMENT",
+        "path": "payload.scope"
+      },
+      {
+        "object_id": "need-form-boat-song-independent-overall",
+        "kind": "REQUIREMENT",
+        "path": "payload.states.0"
+      }
+    ],
+    "updated_consumers": [
+      "need-form-boat-song-independent-overall"
+    ]
+  }
+]

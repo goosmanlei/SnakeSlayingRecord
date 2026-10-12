@@ -82,7 +82,7 @@ def main():
     from review_desk.bundle import restore
     from publication_receipts import RECOVERY,restore_publication_receipts,sha,save
     manifest=json.loads((root/'export/manifest.json').read_text())
-    if manifest.get('schema_version')!=13:raise ValueError('use the current production export (schema 13)')
+    if manifest.get('schema_version')!=14:raise ValueError('use the current production export (schema 14)')
     index_path=root/'production/audiovisual/index.json'
     if args.command=='snapshot':
         instance=args.instance if args.instance.is_absolute() else root/args.instance
