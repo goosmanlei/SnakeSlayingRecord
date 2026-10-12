@@ -184,6 +184,8 @@ def check_artifact(delivery, stage, artifact, output):
                     'stage': stage, 'sha256': checksum(output)}
         if stage in ('draft', 'result') and isinstance(output, dict) and 'requirement' in output and 'generation' in output:
             expected.update(requirement_sha256=checksum(output['requirement']), generation_sha256=checksum(output['generation']))
+            if 'text_layer' in output:
+                expected['text_layer_sha256'] = checksum(output['text_layer'])
         elif isinstance(output, dict) and isinstance(output.get('assessment'), str):
             expected['assessment'] = output['assessment']
         if checksum(saved) != checksum(expected):
@@ -256,7 +258,8 @@ def deliver_files(directory, package, inputs):
         files[name] = resource['content']
         index.append('- [' + resource['title'] + ' / ' + section + '](' + name + ')：'
                      + resource['reference']['object_id'] + ' @ ' + resource['reference']['revision_id'])
-    files['RESOURCES.md'] = '# 本步骤取得的准确共用资料\n\n' + '\n'.join(index) + '\n'
+    selected = ('本次适用文件：' + '、'.join(package['applicable_files']) + '。其他图像专项保留在包中供查阅，不并入本步骤要求。\n\n') if package.get('applicable_files') else ''
+    files['RESOURCES.md'] = '# 本步骤取得的准确共用资料\n\n' + selected + '\n'.join(index) + '\n'
     files['request.json'] = json.dumps(inputs, ensure_ascii=False, indent=2) + '\n'
     for number, item in enumerate(inputs.get('relation_readings', [])):
         if 'content_json' in item:
@@ -279,4 +282,6 @@ def deliver_files(directory, package, inputs):
 
 
 def instructions(package):
-    return package['files']['SKILL.md'] + ''.join('\n\n## 包内文件：' + name + '\n' + body for name, body in package['files'].items() if name != 'SKILL.md') + ''.join('\n\n## 共用资料：' + r['title'] + ' / ' + r['reference']['section'] + '\n' + r['content'] for r in package['resources'])
+    specialties = {'references/' + key + '.md' for key in ('character-image', 'scene-image', 'prop-image', 'shot-image')}
+    applicable = package.get('applicable_files')
+    return package['files']['SKILL.md'] + ''.join('\n\n## 包内文件：' + name + '\n' + body for name, body in package['files'].items() if name != 'SKILL.md' and (not applicable or name not in specialties or name in applicable)) + ''.join('\n\n## 共用资料：' + r['title'] + ' / ' + r['reference']['section'] + '\n' + r['content'] for r in package['resources'])
