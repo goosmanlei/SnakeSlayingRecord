@@ -1,8 +1,20 @@
 # 当前状态与下一步
 
-- task-20261012-0013 已实现流程式 SKILL 阅读、独立文件历史、实体关系图及小说创作入口；素材方案为图像、音色、演唱、视频、字层五类。正式 MV 清除、方法增量与 Schema 14 空实例恢复已实测；最终双仓、服务与清理按主任务账本及 `.runtime/task-20261012-0013/final/` 回执核对。负责人独立 Review 和旧 Python 测试迁移残留单独登记，详见 [验收记录](production/skill-admin-data-model/VERIFICATION.md)。
+- task-20261012-0013 已实现流程式 SKILL 阅读、独立文件历史、实体关系图及小说创作入口；素材分类及方法分支由后续 0016 统一维护。正式 MV 清除、方法增量与 Schema 14 空实例恢复已实测；最终双仓、服务与清理按主任务账本及 `.runtime/task-20261012-0013/final/` 回执核对。负责人独立 Review 和旧 Python 测试迁移残留单独登记，详见 [验收记录](production/skill-admin-data-model/VERIFICATION.md)。
 
 ## 当前成果与运行依据
+
+- task-20261013-0002 已实现素材默认全量、分类／结果在上、具体场下按镜筛选；隔离Chrome完成准确返回、窄屏、失败重试及迟到响应保护。准确双仓、本机正式服务及最终导出恢复以任务账本和主项目 `.runtime/task-receipts/task-20261013-0002/` 回执核对；具体前后例和既有测试边界见 [素材范围验收](production/material-scope-filter/VERIFICATION.md)。负责人独立Review另行承接，在用双仓工作区退出TUI释锁后受管退役。
+
+- task-20261013-0001 的素材分类已实现平铺分组和12项线性图标，1440px桌面由五行缩为两行，390px组内换行保留父子边界。隔离Chrome已实操单选、零结果、组合筛选、分页重置、刷新及开卡返回；准确双仓交付、本机正式发布、发布后实操与清理以任务账本和主项目 `.runtime/task-receipts/task-20261013-0001/` 回执核对，前后截图及验证边界见 [分类布局验收](production/material-filter-layout/VERIFICATION.md)。既有未知分类测试残留单列，不修改分类契约。
+
+- task-20261012-0020 已形成 [DSH 实现成本与推荐架构报告](production/reports/dsh-integration-cost-architecture.md)，建议先接执行层、保留业务服务与历史，比较轻量连接、统一入口和整体迁移，含投入拆分与两条恢复流程。用户已确认本报告完成；建议尚未实施，后续实施须另行授权，准确 Git 交付以任务账本为准。
+
+- task-20261012-0016 已完成九类分类与方法自动选择、全剧 1,293 项逐项核对及 98 项实质方案修订，旧候选、调用、评论与准确原件保留。双仓受管集成与推送、本机正式增量／服务、正式 Chrome 和最终完整导出新空实例恢复已验收。负责人独立复验保持开放；后续素材准备仍须按逐项缺口选择准确输入并实际看听。前后例、覆盖与原件实读边界见[素材分类验收](production/material-categories/VERIFICATION.md)，准确运行结果以任务账本及主项目 `.runtime/task-receipts/task-20261012-0016/` 为准。
+
+- task-20261012-0019 已完成关系图共同排布、连续样条及隔离验收：三反馈图各1→0，全量344镜3143→77、无交叉增加。当前残留与阅读边界见 [连续曲线验收](production/graph-smooth-routing/VERIFICATION.md)；准确双仓、本机正式发布、最终完整导出空实例复走与清理以任务账本和主项目 `.runtime/task-20261012-0019/` 回执核对。负责人独立Review单列；在用双仓工作区退出TUI释锁后受管退役。
+
+- task-20261012-0011 已按同身份新版视频方法逐镜重编 17 集、65 场、344 项视频 Prompt，校准 M2999 两项上游图像方案，并同步最终正文定位；已在本机正式生效，完成正式 Chrome 与最终完整导出的新空实例复走。原有 37 镜未定原词保留，另明确 20 镜自然读演计时要求；原件选择与实片检查继续由对应制作阶段负责。具体前后例、逐镜责任和验证边界见 [全剧视频重编](production/video-prompt-rewrite/VERIFICATION.md)；准确双仓、本机正式发布、最终导出空实例复走及清理结果以任务账本和主项目 `.runtime/task-receipts/task-20261012-0011/` 回执核对。负责人独立 Review 另行承接；必要作者阶段留供复验，两仓工作区退出当前 TUI 释锁后受管退役。
 
 - task-20261012-0015 已将四首完整歌曲直接归实体，补两项结构需求，并在正式库落实137实体、75状态、1293需求。统一来源双列列表、纯说明问号及镜头素材切换不清空阅读器已在本机正式页面及最终导出的新空实例复走；准确双仓、服务、恢复和过程清理依据见 [来源素材列表验收](production/material-source-list/VERIFICATION.md)及任务账本。负责人独立复验单独登记；双仓工作区仍由本TUI和清理锁占用，退出释锁后由本任务执行者受管退役。
 
@@ -83,7 +95,7 @@
 
 - 作品为方向三《把灯带回家》、故事结构第十稿、精修九定稿候选与用户已确认的剧本版本四。准确制作来源锁定于 [production/source-lock.json](production/source-lock.json)；故事创作域与评论保留。
 - 当前交付包含 [全剧视听设计](production/audiovisual/README.md)：17 集、42 故事场、65 视听场、344 镜，全部 1114 个正文块有准确表达范围。新设计支持每镜多需求、每需单份当前方案和多个真实候选、关系路线、准确原件及区域／时间选择。技术验证不代表用户接受新设计或声音质量。
-- 生产制作包含视听制作、实体管理、素材管理；故事剧本可回查两条制作来源链。方法页保留 [视频生成手册](production/seedance-video-handbook.md) 与 [影视专业知识](production/filmcraft/README.md)，生产方法按新模型重编。
+- 生产制作包含视听制作、实体管理、素材管理；故事剧本可回查两条制作来源链。专业正文保留 [视频生成手册](production/seedance-video-handbook.md) 与 [影视专业知识](production/filmcraft/README.md)，沿制作思路的基础流程 SKILL 文件树连续阅读。五页归位、阶段产出和静态概览已本机正式验收，完整导出恢复与准确历史读取见 [统一入口验收](production/approach-foundation/VERIFICATION.md)。当前身份以实例配置和任务发布回执为准；负责人独立复验仍由负责人承接。
 - 镜头视频方案已按 [逐场输入审查](production/audiovisual/video-inputs.json) 区分普通参考与固定起点，并补充镜内后显内容的直接依据；方案、原件选定和实际效果分别审阅。交付核验及正式回读按 [输入契约验收](production/audiovisual/video-inputs-verification.md) 与任务回执定位。
 - 全剧必要准确文字已逐集复核，11份可编辑工程沿原镜头素材入口交接；正确旧图继续复用，字层不迁移既有认可。原词、揭示与未定字句见 [文字交接](production/audiovisual/text-review.md)，发布与实际验收按任务 `task-20261009-0010` 回执及 [复验入口](production/audiovisual/text-verification.md) 核对。
 - 早期状态准备用途按 [逐集用途判断](production/audiovisual/state-preparation.md) 区分生成输入、独立审阅、可选对照与文字检查；渡口、刀缝长杠及镜内变化贯通到具体镜头。隔离实操、历史保护与正式回查入口见 [状态准备验收](production/state-preparation-review.md)，正式生效及清理以任务 `task-20261009-0008` 实际回执为准。

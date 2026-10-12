@@ -77,7 +77,7 @@
           "title": "实体、状态与素材抽取"
         }
       ],
-      "output": "实体 EN（角色、场景、道具、歌曲）\n实体状态 ST · 素材需求 M"
+      "output": "实体：角色、场景、道具、歌曲 EN；承接同一镜头 ASH\n必要状态 ST · 素材需求 M"
     },
     {
       "id": "plans",
@@ -86,36 +86,78 @@
         {
           "work_type": "media-plan",
           "when": {
-            "media_type": "image"
+            "material_category": "character-image"
           },
-          "title": "图像方案"
+          "title": "角色图像",
+          "group": "图像",
+          "file": "references/character-image.md"
         },
         {
           "work_type": "media-plan",
           "when": {
-            "media_type": "audio",
-            "audio_type": "voice"
+            "material_category": "scene-image"
           },
-          "title": "音色方案"
+          "title": "场景图像",
+          "group": "图像",
+          "file": "references/scene-image.md"
         },
         {
           "work_type": "media-plan",
           "when": {
-            "media_type": "audio",
-            "audio_type": "song"
+            "material_category": "prop-image"
           },
-          "title": "演唱方案"
+          "title": "道具图像",
+          "group": "图像",
+          "file": "references/prop-image.md"
         },
         {
           "work_type": "media-plan",
           "when": {
-            "media_type": "video"
+            "material_category": "shot-image"
           },
-          "title": "视频方案"
+          "title": "镜头画面",
+          "group": "图像",
+          "file": "references/shot-image.md"
         },
         {
-          "work_type": "text-layer",
-          "title": "字层方案"
+          "work_type": "media-plan",
+          "when": {
+            "material_category": "voice"
+          },
+          "title": "人物音色",
+          "group": "声音"
+        },
+        {
+          "work_type": "media-plan",
+          "when": {
+            "material_category": "scene-sound"
+          },
+          "title": "场景音",
+          "group": "声音"
+        },
+        {
+          "work_type": "media-plan",
+          "when": {
+            "material_category": "song"
+          },
+          "title": "演唱",
+          "group": "声音"
+        },
+        {
+          "work_type": "media-plan",
+          "when": {
+            "material_category": "video"
+          },
+          "title": "视频",
+          "group": "视频"
+        },
+        {
+          "work_type": "media-plan",
+          "when": {
+            "material_category": "text-layer"
+          },
+          "title": "字层",
+          "group": "字层"
         }
       ],
       "output": "素材 M 的当前方案"
