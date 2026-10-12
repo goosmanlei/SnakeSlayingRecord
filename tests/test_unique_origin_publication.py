@@ -24,3 +24,18 @@ class MethodPrerequisiteTest(unittest.TestCase):
         after['dependencies'].append({'from_revision': 'public-step', 'to_revision': 'definition', 'role': 'method'})
         with self.assertRaisesRegex(ValueError, 'deliver its exact binding first'):
             production_tables(before, after)
+
+    def test_exact_file_histories_travel_with_configuration_not_production(self):
+        before = self.snapshot(True)
+        before.update(method_file_versions=[{'object_id':'method','id':'old-file'}],
+                      method_file_packages=[{'object_id':'method','revision_id':'definition'}],
+                      method_file_members=[{'package_revision':'definition','path':'SKILL.md'}])
+        after = copy.deepcopy(before)
+        after['method_file_versions'].append({'object_id':'method','id':'new-file'})
+        after['method_file_packages'].append({'object_id':'method','revision_id':'new-definition'})
+        after['method_file_members'].append({'package_revision':'new-definition','path':'SKILL.md'})
+        after['method_file_versions'].append({'object_id':'unrelated','id':'must-remain-visible'})
+        _, filtered, _ = production_tables(before, after)
+        self.assertEqual(filtered['method_file_packages'],before['method_file_packages'])
+        self.assertEqual(filtered['method_file_members'],before['method_file_members'])
+        self.assertIn({'object_id':'unrelated','id':'must-remain-visible'},filtered['method_file_versions'])
