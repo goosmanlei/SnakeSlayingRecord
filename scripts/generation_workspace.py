@@ -117,6 +117,25 @@ def verify_media(root, entries):
             raise ValueError('original byte count differs: ' + entry['file'])
 
 
+def matches_committed_file(path, blob):
+    """Check hydrated LFS files and ordinary Git files with bounded reads."""
+    if blob.startswith(b'version https://git-lfs.github.com/spec/v1\n'):
+        pointer = re.fullmatch(rb'version https://git-lfs.github.com/spec/v1\n'
+                               rb'oid sha256:([a-f0-9]{64})\nsize ([0-9]+)\n', blob)
+        if not pointer:
+            raise ValueError('invalid committed Git LFS pointer')
+        expected_hash, expected_size = pointer[1].decode(), int(pointer[2])
+    else:
+        expected_hash, expected_size = hashlib.sha256(blob).hexdigest(), len(blob)
+    if path.stat().st_size != expected_size:
+        return False
+    digest = hashlib.sha256()
+    with path.open('rb') as stream:
+        for chunk in iter(lambda: stream.read(1024 * 1024), b''):
+            digest.update(chunk)
+    return digest.hexdigest() == expected_hash
+
+
 def verify_integrated(root, target, commit, package, entries):
     """Formal publication consumes merged files; it never copies missing media."""
     root = generation_root(root)
@@ -139,8 +158,9 @@ def verify_integrated(root, target, commit, package, entries):
         source = contained(root, name)
         destination = contained(target, name)
         if (not source.is_file() or not destination.is_file()
-                or source.read_bytes() != expected or destination.read_bytes() != expected
-                or git(target, 'show', 'HEAD:' + name) != expected):
+                or git(target, 'show', 'HEAD:' + name) != expected
+                or not matches_committed_file(source, expected)
+                or not matches_committed_file(destination, expected)):
             raise ValueError('publication file differs from integrated commit: ' + name)
     verify_media(target, entries)
     return commit
