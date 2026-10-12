@@ -138,6 +138,10 @@ def main():
     tab = derive((ROOT / SOURCE).read_bytes())
     path = ROOT / DESTINATION
     value = json.loads(path.read_text(encoding="utf-8"))
+    if not any(t['id'] == TAB for t in value['tabs']) and 'reading_routes' in value:
+        from approach_foundation import synchronize
+        print(json.dumps(synchronize(ROOT, check=args.check), ensure_ascii=False))
+        return
     tabs = [tab if t['id'] == TAB else t for t in value['tabs']]
     if not any(t['id'] == TAB for t in value['tabs']):
         tabs.append(tab)

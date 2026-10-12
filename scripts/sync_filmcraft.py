@@ -184,6 +184,13 @@ def synchronize(root=ROOT, check=False):
     tab, sources_raw, media, sources = derive(root)
     path = root / 'content/production-approach.json'
     original = json.loads(path.read_text())
+    if not any(t['id'] == 'filmcraft' for t in original['tabs']) and 'reading_routes' in original:
+        from approach_foundation import synchronize as sync_reading
+        if (root / BASE / 'sources.md').read_bytes() != sources_raw:
+            if check:raise ValueError('来源目录未与唯一来源记录同步')
+            (root / BASE / 'sources.md').write_bytes(sources_raw)
+        print(json.dumps(sync_reading(root, check=check), ensure_ascii=False))
+        return
     tabs = [tab if t['id'] == 'filmcraft' else t for t in original['tabs']]
     if not any(t['id'] == 'filmcraft' for t in original['tabs']): tabs.append(tab)
     updated = {**original, 'schema_version': 2, 'tabs': tabs}
