@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Bind readable event ranges to existing exact Prompts; never rewrite them.
+"""Bind final Prompt paragraphs after checking exact speech and event order.
 
-The reviewed event compiler is the authority for order. A range is emitted only
-when its complete output occurs exactly once in the already saved Prompt.
-The instance configuration stores offsets and hashes, never a second text.
+Legacy plans retain their existing rendered ranges. Authored current plans are
+checked against the locked vocal events without requiring the old rendering.
+The map stores offsets and hashes, never a second copy of the Prompt.
 """
 import argparse
 import hashlib
@@ -19,6 +19,44 @@ from generation_workspace import generation_root, isolated_instance
 from video_input_design import load_audit
 
 
+def vocal_ranges(prompt, sources, reviewed):
+    """Check literal original words, speaker and order in the actual new prose."""
+    events = [e for e in reviewed.for_sources(sources) if e['words'] == 'exact']
+    expected = {}
+    identities = {v[0] for v in reviewed.voice.VOICES.values()} | set(reviewed.voice.LABELS)
+    occurrences = {}
+    for event in events:
+        expected[event['content']] = expected.get(event['content'], 0) + 1
+    for words, count in expected.items():
+        # A spoken name can also occur in reference duties or stage directions.
+        # Only its quoted utterance is a vocal event, not every identity mention.
+        pattern = (r'(?<=[“「"])' + re.escape(words) + r'(?=[”」"])'
+                   if words in identities else re.escape(words))
+        occurrences[words] = [m.start() for m in re.finditer(pattern, prompt)]
+        if len(occurrences[words]) != count:
+            raise ValueError('original words missing or repeated: ' + words)
+    result, previous = [], 0
+    for event in events:
+        words = event['content']
+        starts = [value for value in occurrences[words] if value >= previous]
+        if not starts:
+            raise ValueError('vocal event order differs: ' + event['source'])
+        start = starts[0]
+        speaker = (reviewed.voice.VOICES[event['speaker']][0]
+                   if event['speaker'] in reviewed.voice.VOICES else event['speaker'])
+        names = {speaker, *(name for name, identity in reviewed.voice.LABELS.items()
+                             if identity == event['speaker'])}
+        # The event's clause must identify its own speaker, not borrow the
+        # reference paragraph or a previous speaker's dialogue attribution.
+        attribution = prompt[max(previous, prompt.rfind('\n', previous, start) + 1, start - 180):start]
+        if not any(name in attribution for name in names):
+            raise ValueError('vocal event speaker is not explicit: ' + event['source'] + ' ' + speaker)
+        result.append({'start': start, 'end': start + len(words), 'source': event['source'],
+                       'speaker': event['speaker']})
+        previous = start + len(words)
+    return result
+
+
 def descriptor(shot, need, reviewed, choice, executable):
     sources = shot['payload']['sources']
     scope = need['payload'].get('scope', {})
@@ -26,10 +64,22 @@ def descriptor(shot, need, reviewed, choice, executable):
                 for item in shot['payload'].get('products', []))
     if scope.get('object_id') != shot['object_id'] or not (bound or scope.get('revision_id') == shot['id']):
         raise ValueError('requirement is outside exact shot')
+    prompt = need['payload']['generation']['prompt']
     events = reviewed.render(sources, choice.get('narration'), executable=executable)
     detail = choice.get('video_detail')
     sequence = events + ('\n' + detail if detail else '')
-    prompt = need['payload']['generation']['prompt']
+    if need['payload'].get('method_basis') and (not sequence or prompt.count(sequence) != 1):
+        vocals = vocal_ranges(prompt, sources, reviewed)
+        parts = []
+        for match in re.finditer(r'[^\n]+', prompt):
+            parts.append({'start': match.start(), 'end': match.end(),
+                          'role': 'voice' if any(match.start() <= v['start'] < match.end()
+                                                 for v in vocals) else 'detail'})
+        if not parts:
+            raise ValueError('authored Prompt is empty')
+        return {'object_id': need['object_id'], 'scope': need['payload']['scope'],
+                'field': 'generation.prompt', 'sha256': hashlib.sha256(prompt.encode()).hexdigest(),
+                'parts': parts}
     if not sequence or prompt.count(sequence) != 1:
         raise ValueError('reviewed sequence is not unique in exact saved Prompt: ' + need['object_id'])
     offset = prompt.index(sequence)
@@ -70,7 +120,8 @@ def compile_reading(instance, shot_ids):
             if len(needs) != 1:
                 raise ValueError('one exact video product required: ' + oid)
             need = needs[0]
-            entries[need['id']] = descriptor(shot, need, reviewed, choices.get(oid, {}), audit[oid]['execution_reviewed'])
+            value = descriptor(shot, need, reviewed, choices.get(oid, {}), audit[oid]['execution_reviewed'])
+            entries[need['id'] + ':' + value['sha256']] = value
     finally:
         store.close()
     return {'format': 'exact-prompt-reading-v1', 'entries': entries}
@@ -95,7 +146,8 @@ def main():
     if args.write_config:
         config_file = root / 'config/instance.json'
         config = json.loads(config_file.read_text())
-        config['scene_reading'] = reading
+        prior = config.get('scene_reading', {})
+        config['scene_reading'] = {**reading, 'entries': {**prior.get('entries', {}), **reading['entries']}}
         config_file.write_text(json.dumps(config, ensure_ascii=False, indent=2) + '\n')
     print(json.dumps({'exact_requirements': len(reading['entries']), 'prompt_writes': 0, 'config_written': args.write_config}))
 

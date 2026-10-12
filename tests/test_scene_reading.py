@@ -4,7 +4,8 @@ import sys
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
-from scene_reading import descriptor
+from scene_reading import descriptor, vocal_ranges
+from types import SimpleNamespace
 
 
 class ReviewedSequence:
@@ -29,11 +30,44 @@ class SceneReadingTest(unittest.TestCase):
         self.assertTrue(all('text' not in p for p in result['parts']))
         self.assertEqual(self.need['payload']['generation']['prompt'], self.prompt)
 
+    def test_authored_prose_keeps_words_and_order_without_the_rendered_template(self):
+        reviewed = ReviewedSequence()
+        reviewed.voice = SimpleNamespace(VOICES={'a': ('阿蘅',), 'l': ('李寄',)}, LABELS={})
+        reviewed.for_sources = lambda _: [
+            {'speaker': 'l', 'words': 'exact', 'content': '最后那段，你还得看词呢。', 'source': 's001:27'},
+            {'speaker': 'a', 'words': 'exact', 'content': '晚些你陪我一起练。', 'source': 's001:28'}]
+        prompt = '相机同侧轻随，两人站定。\n李寄轻声说：“最后那段，你还得看词呢。”阿蘅答：“晚些你陪我一起练。”\n米袋仍归阿蘅。'
+        self.need['payload']['generation']['prompt'] = prompt
+        self.need['payload']['method_basis'] = {'execution': {'object_id':'actual-step', 'revision_id':'actual-method'}}
+        result = descriptor(self.shot, self.need, reviewed, {}, True)
+        self.assertEqual([prompt[p['start']:p['end']] for p in result['parts']], prompt.splitlines())
+        for damaged in (prompt.replace('晚些你陪我一起练。', '明天再唱。'),
+                        prompt + '\n晚些你陪我一起练。',
+                        '阿蘅答：“晚些你陪我一起练。”李寄说：“最后那段，你还得看词呢。”',
+                        prompt.replace('李寄轻声说', '老汉轻声说')):
+            with self.assertRaises(ValueError):
+                vocal_ranges(damaged, [], reviewed)
+        self.assertTrue(all('text' not in p for p in result['parts']))
+        self.assertEqual(self.need['payload']['generation']['prompt'], prompt)
+
     def test_missing_or_repeated_sequence_is_refused_instead_of_inventing_text(self):
         for prompt in ('只有新头', self.prompt + self.sequence):
             self.need['payload']['generation']['prompt'] = prompt
             with self.assertRaisesRegex(ValueError, 'not unique'):
                 descriptor(self.shot, self.need, ReviewedSequence(), {}, True)
+
+    def test_spoken_name_is_separate_from_visual_identity_mentions(self):
+        reviewed = SimpleNamespace(voice=SimpleNamespace(
+            VOICES={'z':('赵执事',), 'p':('河街路人',)}, LABELS={}),
+            for_sources=lambda _: [{'speaker':'p','words':'exact','content':'赵执事','source':'s002:12'}])
+        prompt = '赵执事在檐下，参考图约束赵执事身份。\n河街路人招呼：“赵执事”。赵执事只点头。'
+        ranges = vocal_ranges(prompt, [], reviewed)
+        self.assertEqual(prompt[ranges[0]['start']:ranges[0]['end']], '赵执事')
+        self.assertGreater(ranges[0]['start'], prompt.index('河街路人'))
+        with self.assertRaises(ValueError):
+            vocal_ranges(prompt + '\n河街路人又喊：“赵执事”。', [], reviewed)
+        with self.assertRaises(ValueError):
+            vocal_ranges('河街路人只在参考段落。\n另一人招呼：“赵执事”。', [], reviewed)
 
     def test_another_shot_revision_cannot_supply_the_reading(self):
         self.need['payload']['scope']['revision_id'] = 'latest-shot'
