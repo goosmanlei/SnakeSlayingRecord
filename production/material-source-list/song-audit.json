@@ -1,0 +1,134 @@
+[
+  {
+    "object_id": "form-blue-awning-song-independent",
+    "title": "送青篷 · 独立完整演唱",
+    "content_sha256": "9da698158dce004b58d3bee9a44359e36cae58ea4dac89f40abe3572f7498ba0",
+    "action": "remove",
+    "reason": "完整作品录音是歌曲稳定基础产物；独立歌者不另建基准状态，角色演法仍独立。",
+    "destination": "entity",
+    "condition": "完整作品录音保留完整开头、全部段落和结尾；此声线不自动代表剧中阿蘅、母亲或歌娘。实际演唱、咬字、旋律、结尾与音质尚待真实听审。",
+    "requirement_handoffs": [
+      {
+        "object_id": "need-form-blue-awning-song-independent-overall",
+        "scope": "entity-blue-awning-song",
+        "title": "送青篷 · 完整演唱"
+      }
+    ],
+    "direct_requirements": [
+      "need-form-blue-awning-song-independent-overall"
+    ],
+    "consumers": [
+      {
+        "object_id": "asset-songs-blue-awning-full",
+        "kind": "ASSET",
+        "path": "payload.state_coverage.0.state"
+      },
+      {
+        "object_id": "asset-songs-blue-awning-full",
+        "kind": "ASSET",
+        "path": "payload.states.0"
+      },
+      {
+        "object_id": "need-form-blue-awning-song-independent-overall",
+        "kind": "REQUIREMENT",
+        "path": "payload.scope"
+      },
+      {
+        "object_id": "need-form-blue-awning-song-independent-overall",
+        "kind": "REQUIREMENT",
+        "path": "payload.states.0"
+      }
+    ],
+    "updated_consumers": [
+      "need-form-blue-awning-song-independent-overall"
+    ]
+  },
+  {
+    "object_id": "form-welcome-song-independent",
+    "title": "四邻安 · 独立完整演唱",
+    "content_sha256": "ce7ef4d51edd1e285560f2c4d05ef10b733ca156ac52c4dd9743b1aef68ed56e",
+    "action": "remove",
+    "reason": "完整作品录音是歌曲稳定基础产物；独立歌者不另建基准状态，角色演法仍独立。",
+    "destination": "entity",
+    "condition": "完整作品录音保留完整开头、全部段落和结尾；此声线不自动代表剧中阿蘅、母亲或歌娘。实际演唱、咬字、旋律、结尾与音质尚待真实听审。",
+    "requirement_handoffs": [
+      {
+        "object_id": "need-form-welcome-song-independent-overall",
+        "scope": "entity-snake-welcome-song",
+        "title": "四邻安 · 完整演唱"
+      }
+    ],
+    "direct_requirements": [
+      "need-form-welcome-song-independent-overall"
+    ],
+    "consumers": [
+      {
+        "object_id": "asset-songs-welcome-full",
+        "kind": "ASSET",
+        "path": "payload.state_coverage.0.state"
+      },
+      {
+        "object_id": "asset-songs-welcome-full",
+        "kind": "ASSET",
+        "path": "payload.states.0"
+      },
+      {
+        "object_id": "need-form-welcome-song-independent-overall",
+        "kind": "REQUIREMENT",
+        "path": "payload.scope"
+      },
+      {
+        "object_id": "need-form-welcome-song-independent-overall",
+        "kind": "REQUIREMENT",
+        "path": "payload.states.0"
+      }
+    ],
+    "updated_consumers": [
+      "need-form-welcome-song-independent-overall"
+    ]
+  },
+  {
+    "object_id": "form-blessing-song-independent",
+    "title": "明月还乡 · 独立完整演唱",
+    "content_sha256": "9ed0b95e25814ce613588bb15e67cb6f6070f6a8c24d88eb0a5cc9696dcf9a8f",
+    "action": "remove",
+    "reason": "完整作品录音是歌曲稳定基础产物；独立歌者不另建基准状态，角色演法仍独立。",
+    "destination": "entity",
+    "condition": "完整作品录音保留完整开头、全部段落和结尾；此声线不自动代表剧中阿蘅、母亲或歌娘。实际演唱、咬字、旋律、结尾与音质尚待真实听审。",
+    "requirement_handoffs": [
+      {
+        "object_id": "need-form-blessing-song-independent-overall",
+        "scope": "entity-blessing-stage-song",
+        "title": "明月还乡 · 完整演唱"
+      }
+    ],
+    "direct_requirements": [
+      "need-form-blessing-song-independent-overall"
+    ],
+    "consumers": [
+      {
+        "object_id": "asset-songs-blessing-full",
+        "kind": "ASSET",
+        "path": "payload.state_coverage.0.state"
+      },
+      {
+        "object_id": "asset-songs-blessing-full",
+        "kind": "ASSET",
+        "path": "payload.states.0"
+      },
+      {
+        "object_id": "need-form-blessing-song-independent-overall",
+        "kind": "REQUIREMENT",
+        "path": "payload.scope"
+      },
+      {
+        "object_id": "need-form-blessing-song-independent-overall",
+        "kind": "REQUIREMENT",
+        "path": "payload.states.0"
+      }
+    ],
+    "updated_consumers": [
+      "need-form-blessing-song-independent-overall"
+    ]
+  }
+]
