@@ -106,6 +106,22 @@ def method_directory_hashes(folder):
     return files
 
 
+def registry_media_files(archive):
+    """Freeze the original files used by exact method history after page retirement."""
+    files={}
+    for row in archive['records']:
+        for links in row['payload'].get('media',{}).values():
+            for item in links.values():
+                name,digest=item['path'],item['sha256']
+                relative=Path(name)
+                require(not relative.is_absolute() and '..' not in relative.parts
+                        and relative.parent.as_posix()==METHOD_MEDIA_DIRECTORY,'unsafe method original path')
+                require(re.fullmatch(r'[a-f0-9]{64}',digest),'method original hash missing')
+                require(name not in files or files[name]==digest,'different historical originals need separate paths')
+                files[name]=digest
+    return files
+
+
 def release_name(task, story_candidate, system_candidate):
     require(task in RELEASE_PREFIXES or re.fullmatch(r'task-[0-9]{8}-[0-9]{4}', task), 'unsupported release task')
     return RELEASE_PREFIXES.get(task, task)+'-'+story_candidate[:12]+'-'+system_candidate[:12]
@@ -235,6 +251,10 @@ def prepare(a):
     require(not getattr(a,'method_file_history',False) or not (managed_methods or latest or relations or retirement or current_production),'file history uses its own preservation-only write window')
     require(not getattr(a,'remove_material_versions',False) or not (latest or relations or retirement or current_production or getattr(a,'method_file_history',False)), 'material removal cannot combine unrelated data migrations')
     method_media=method_media_files(read(root/'instance/content/production-approach.json'))
+    if managed_methods:
+        for name,digest in registry_media_files(read(root/managed_methods['registry'])).items():
+            require(name not in method_media or method_media[name]==digest,'page and method originals disagree')
+            method_media[name]=digest
     for name,digest in method_media.items():
         raw=base.git_file(story,a.story_candidate,name)
         require(sha(raw)==digest,'method media differs from declared version: '+name)
@@ -255,6 +275,15 @@ def prepare(a):
         check_handbook_change(read(mounts['/instance/content/production-approach.json']['Source']),
                               read(root/'instance/content/production-approach.json'), derive(raw, story))
         put('instance/'+source, raw)
+    elif task == 'task-20261012-0017':
+        from approach_foundation import project_document
+        require(read(root/'instance/content/production-approach.json')==project_document(
+            read(mounts['/instance/content/production-approach.json']['Source']),story),
+            'foundation release must preserve the vision and exact overview relations')
+        run([sys.executable,'-c',
+             'import sys; from pathlib import Path; sys.path.insert(0,sys.argv[1]); '
+             'from review_desk.approach import read_document; read_document(Path(sys.argv[2]))',
+             str(system),str(root/'instance')])
     elif task == 'task-20261011-0005':
         check_workflow_change(read(mounts['/instance/content/production-approach.json']['Source']),
                               read(root/'instance/content/production-approach.json'))
@@ -265,7 +294,7 @@ def prepare(a):
              'from review_desk.approach import read_document; read_document(Path(sys.argv[2]))',
              str(system), str(root/'instance')])
     else:
-        require(task in {'task-20261005-0007','task-20261006-0006','task-20261008-0001','task-20261008-0002','task-20261008-0006','task-20261008-0004','task-20261009-0004','task-20261010-0019','task-20261012-0013'} or current_files['content/production-approach.json']==hashes['instance/content/production-approach.json'],'approach content change is outside this release')
+        require(task in {'task-20261005-0007','task-20261006-0006','task-20261008-0001','task-20261008-0002','task-20261008-0006','task-20261008-0004','task-20261009-0004','task-20261010-0019','task-20261012-0013','task-20261012-0017'} or current_files['content/production-approach.json']==hashes['instance/content/production-approach.json'],'approach content change is outside this release')
     source={}
     for line in git(system,'ls-tree','-r',a.system_candidate,'--','review_desk').splitlines():
         header,name=line.split('\t',1);require(header.split()[0] in ('100644','100755'),'special source file')
