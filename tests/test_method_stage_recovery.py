@@ -40,9 +40,8 @@ class StageRecoveryTest(unittest.TestCase):
         self.root = Path(self.tmp.name).resolve()
         self.store = Store(self.root / 'service/.runtime/review.sqlite3')
         self.addCleanup(self.store.close)
-        self.store.db.executescript(current.SCHEMA)
-        self.store.db.execute('INSERT INTO production_current_policy VALUES (1,?,?)', (current.CONTRACT, 'test'))
-        self.store.db.commit()
+        self.assertEqual(self.store.db.execute(
+            'SELECT contract FROM production_current_policy WHERE id=1').fetchone()[0], current.CONTRACT)
         self.client = LedgerClient(self.store)
         self.folder = self.root / 'step'
         self.request = {'work_type': 'audiovisual-design', 'target': 'shot', 'run_id': 'recovery',
