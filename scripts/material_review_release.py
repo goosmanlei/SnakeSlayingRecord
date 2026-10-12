@@ -41,6 +41,8 @@ RELEASE_PREFIXES={TASK:'materials-20261004-0004', 'task-20261004-0005':'asset-cl
                   'entity-acceptance-20261004':'entity-acceptance-20261004'}
 require,sha,read,save,run,git,inspect=base.require,base.sha,base.read,base.save,base.run,base.git,base.inspect
 METHOD_MEDIA_DIRECTORY='content/production-approach-assets'
+MODEL_OVERLAYS=('content/skill-flow.json','content/data-model.json')
+METHOD_FILE_TABLES={'method_file_versions','method_file_packages','method_file_members'}
 
 
 def check_vision_change(previous, candidate, raw):
@@ -122,6 +124,7 @@ def prepare(a):
     expected_mounts={'/instance','/instance/config/instance.json','/instance/content/production-approach.json','/run/local-ca/cacert.pem'}
     media_mount=mounts.get('/instance/'+METHOD_MEDIA_DIRECTORY)
     if media_mount:expected_mounts.add('/instance/'+METHOD_MEDIA_DIRECTORY)
+    expected_mounts.update('/instance/'+name for name in MODEL_OVERLAYS if '/instance/'+name in mounts)
     require(set(mounts)==expected_mounts,'review unknown formal mounts')
     require(mounts['/instance']['Source']==str(sm) and mounts['/instance']['RW'],'normal live instance mount differs')
     require(all(not mounts[n]['RW'] for n in mounts if n!='/instance'),'overlay and CA must be read-only')
@@ -135,6 +138,10 @@ def prepare(a):
     hashes={}
     def put(rel,raw):base.write_once(root/rel,raw);hashes[rel]=sha(raw)
     for name in base.INSTANCE_FILES:put('instance/'+name,base.git_file(story,a.story_candidate,name))
+    overlays=[]
+    for name in MODEL_OVERLAYS:
+        if name in git(story,'ls-tree','--name-only',a.story_candidate,'--',name).splitlines():
+            put('instance/'+name,base.git_file(story,a.story_candidate,name));overlays.append(name)
     managed_methods = None
     if getattr(a, 'method_registry', None):
         require(getattr(a, 'method_audit', None), 'method cutover requires an in-flight delivery audit')
@@ -215,13 +222,14 @@ def prepare(a):
             require(sha(value) == item['sha256'] and value == (story/name).read_bytes(), 'current production input differs: '+name)
             put('current/'+name, value)
         current_production = {'root':'current', 'package':'current/'+relative}
+    require(not getattr(a,'method_file_history',False) or not (managed_methods or latest or relations or retirement or current_production),'file history uses its own preservation-only write window')
     method_media=method_media_files(read(root/'instance/content/production-approach.json'))
     for name,digest in method_media.items():
         raw=base.git_file(story,a.story_candidate,name)
         require(sha(raw)==digest,'method media differs from declared version: '+name)
         put('instance/'+name,raw)
     cfg=read(root/'instance/config/instance.json');require(cfg['review_desk_commit']==a.system_candidate,'candidate instance pin differs')
-    current_files={name:sha(Path(mounts['/instance/'+name]['Source']).read_bytes()) for name in base.INSTANCE_FILES}
+    current_files={name:sha(Path(mounts['/instance/'+name]['Source']).read_bytes()) for name in (*base.INSTANCE_FILES, *(name for name in MODEL_OVERLAYS if '/instance/'+name in mounts))}
     if task in {'task-20261010-0001', 'task-20261010-0022', 'task-20261010-0023'}:
         raw = base.git_file(story, a.story_candidate, 'production/system-vision.md')
         require(raw == (story/'production/system-vision.md').read_bytes(), 'vision source differs from candidate')
@@ -249,6 +257,7 @@ def prepare(a):
     helpers=['material_review_release.py','autonomous_optimization_release.py','integrate_generation_review_system.py']
     if managed_methods:helpers.append('method_migration.py')
     if native:helpers.append('task_repository_delivery.py')
+    if getattr(a,'method_file_history',False):helpers.extend(['method_file_history.py','method_migration.py'])
     if latest:helpers.extend(['latest_state_migration.py','audiovisual_publication.py','generation_workspace.py','method_migration.py'])
     if relations:helpers.extend(['unified_relation_migration.py','method_migration.py'])
     if retirement:helpers.extend(['review_retirement_release.py','unified_relation_migration.py','method_migration.py'])
@@ -261,6 +270,8 @@ def prepare(a):
     put('system-delivery.json',json.dumps(plan,ensure_ascii=False,indent=2).encode()+b'\n')
     m={**policy,'format':'material-review-release-v1','task':task,'push':False,'story_worktree':str(story),'system_worktree':str(system),'story_main':str(sm),'system_main':str(gm),'story_candidate':a.story_candidate,'story_target':a.story_target,'system_candidate':a.system_candidate,'system_target':a.system_target,'system_upstream':upstream,'release_name':release_id,'hashes':hashes,'source_hashes':source,'base_image_tag':tag,'previous_app':old,'previous_nginx':proxy,'previous_compose_hashes':{f:sha(Path(f).read_bytes()) for f in files},'previous_instance_hashes':current_files,'ca_sha256':sha(Path(mounts['/run/local-ca/cacert.pem']['Source']).read_bytes()),'prepared_at':datetime.now(timezone.utc).isoformat()}
     m['delivery_backend']='codex.task' if native else 'legacy'
+    if overlays:m['instance_overlays']=overlays
+    if getattr(a,'method_file_history',False):m['method_file_history']={'format':'method-file-history-v1','existing_rows':'preserve','restore':'derive and validate exact legacy package membership'}
     if method_media:m['method_media']=method_media
     if media_mount:m['previous_method_media']=method_directory_hashes(media_mount['Source'])
     if native:m['task_delivery']=native
@@ -347,7 +358,7 @@ def read_generation_schema(db, schemas):
     require(triggers==expected,'read generation triggers differ from approved migration')
 
 
-def preserved(before,after,*,allow_read_generations=False,allow_cache_token_updates=False):
+def preserved(before,after,*,allow_read_generations=False,allow_cache_token_updates=False,allow_method_file_history=False,strict=False):
     # The live instance contains a large content-addressed history. Keep only
     # one row in Python; the exact multiset comparison lives in a disk index.
     mutable={'objects':('id','kind','created_at'),
@@ -355,6 +366,7 @@ def preserved(before,after,*,allow_read_generations=False,allow_cache_token_upda
              'sources':('id',),'configurations':('scope',),
              'material_rounds':('material_id','number','created_at'),
              'material_members':('material_id','number','revision_id')}
+    if strict:mutable={}
     with ExitStack() as stack:
         databases=[]
         for path in (before,after):
@@ -367,17 +379,26 @@ def preserved(before,after,*,allow_read_generations=False,allow_cache_token_upda
             for db,schema in zip(databases,schemas):
                 read_generation_schema(db,schema)
                 schema.pop('read_generations',None)
+        added={}
+        if allow_method_file_history:
+            require(METHOD_FILE_TABLES <= schemas[1].keys(),'file history tables missing')
+            for db,schema in zip(databases,schemas):
+                if 'read_generations' in schema:read_generation_schema(db,schema)
+            for name in METHOD_FILE_TABLES-schemas[0].keys():
+                added[name]={'before':0,'after':databases[1].execute('SELECT count(*) FROM '+name).fetchone()[0],'derived_history':True}
+                schemas[1].pop(name)
         require(schemas[0].keys()==schemas[1].keys(),'database table set changed')
         temporary=stack.enter_context(tempfile.TemporaryDirectory(prefix='review-release-history-'))
         index=stack.enter_context(closing(sqlite3.connect(Path(temporary)/'counts.sqlite3')))
         index.execute('PRAGMA cache_size=-4096');index.execute('PRAGMA temp_store=FILE')
         index.execute('CREATE TABLE counts(side INTEGER,digest TEXT,n INTEGER,PRIMARY KEY(side,digest)) WITHOUT ROWID')
-        evidence={}
+        evidence=dict(added)
         for table,schema in schemas[0].items():
             require(schema==schemas[1][table],'business table schema changed')
             if table == 'read_generations' and allow_cache_token_updates:
-                for db, schema_set in zip(databases, schemas):
-                    read_generation_schema(db, schema_set)
+                if not allow_method_file_history:
+                    for db, schema_set in zip(databases, schemas):
+                        read_generation_schema(db, schema_set)
                 counts=[db.execute('SELECT COUNT(*) FROM read_generations').fetchone()[0] for db in databases]
                 evidence[table]={'before':counts[0],'after':counts[1],'disposable_tokens_only':True}
                 continue
@@ -398,6 +419,7 @@ def preserved(before,after,*,allow_read_generations=False,allow_cache_token_upda
                     index.execute('INSERT INTO counts VALUES (?,?,1) ON CONFLICT(side,digest) DO UPDATE SET n=n+1',(side,digest))
                     count+=1
                 counts.append(count)
+            if strict:require(counts[0]==counts[1],'existing table row count changed: '+table)
             missing=index.execute('SELECT 1 FROM counts a LEFT JOIN counts b ON b.side=1 AND b.digest=a.digest '
                 'WHERE a.side=0 AND (b.digest IS NULL'+('' if table in mutable else ' OR b.n<a.n')+') LIMIT 1').fetchone()
             require(missing is None,('current identities lost: ' if table in mutable else 'immutable history lost: ')+table)
@@ -415,7 +437,7 @@ def file_sha256(path):
 def install(root,m,image):
     release=Path(m['story_main'])/'.runtime/service-releases'/m['release_name']
     require(not release.is_symlink(),'release must not be symlink')
-    for name in (*base.INSTANCE_FILES,*m.get('method_media',{})):base.write_once(release/'instance'/name,(root/'instance'/name).read_bytes())
+    for name in (*base.INSTANCE_FILES,*m.get('instance_overlays',[]),*m.get('method_media',{})):base.write_once(release/'instance'/name,(root/'instance'/name).read_bytes())
     for name in ('manifest.json','image.json'):base.write_once(release/name,(root/name).read_bytes())
     for name in ('material_review_release.py','autonomous_optimization_release.py'):base.write_once(release/name,(root/'helpers'/name).read_bytes())
     save(release/'compose.release.json',base.compose_definition(m,image,release))
@@ -440,6 +462,15 @@ def apply(a):
         require(proxy in (m['previous_nginx'],expected_proxy),'another proxy runtime is active')
         before=receipt/'before.sqlite3'
         method_change = m.get('managed_methods')
+        if m.get('method_file_history'):
+            require(sha((root/'helpers/method_file_history.py').read_bytes())==m['hashes']['helpers/method_file_history.py'],'file history helper changed')
+            require(exact_candidate or base.safe_container(current)==m['previous_app'],'another app is active')
+            if current['State']['Running']:run([base.DOCKER,'stop','--time','30',current['Id']])
+            require(not inspect(current['Id'])['State']['Running'],'application still writing')
+            import method_migration
+            require(sha(Path(method_migration.__file__).read_bytes())==m['hashes']['helpers/method_migration.py'],'write-window helper changed')
+            from method_migration import stopped_api
+            save(receipt/'file-history-write-window.json',{'container_id':current['Id'],'stopped':True,'ingress':stopped_api(application_stopped=True)})
         if method_change:
             import method_migration
             require(sha(Path(method_migration.__file__).read_bytes()) == m['hashes']['helpers/method_migration.py'], 'method migration helper changed')
@@ -513,13 +544,25 @@ def apply(a):
             base.snapshot(Path(m['story_main'])/'.runtime/review.sqlite3',migrated)
             evidence = method_migration.compare(cutoff,migrated,read(root/method_change['registry']))
             save(receipt/'method-preservation.json',evidence)
+        if m.get('method_file_history'):
+            command=[sys.executable,root/'helpers/method_file_history.py','--system',m['system_main'],'--database',Path(m['story_main'])/'.runtime/review.sqlite3']
+            result=json.loads(run([*command,'migrate']))
+            save(receipt/'file-history-migration.json',result)
+            json.loads(run([*command,'check']))
+            migrated=receipt/'file-history-migrated.sqlite3'
+            if migrated.exists():
+                require(file_sha256(migrated)==read(receipt/'file-history-snapshot.json')['sha256'],'migration snapshot changed')
+            else:
+                base.snapshot(Path(m['story_main'])/'.runtime/review.sqlite3',migrated)
+                save(receipt/'file-history-snapshot.json',{'sha256':file_sha256(migrated)})
+            save(receipt/'file-history-preservation.json',preserved(before,migrated,allow_cache_token_updates=True,allow_method_file_history=True,strict=True))
         release=install(root,m,image);environment=base.env_values(inspect(base.APP))
         if not exact_candidate or not inspect(base.APP)['State']['Running']:base.compose_up(m,[release/'compose.release.json'],environment,release=True)
         service=base.verify_service(m,image,release)
         after=receipt/('after-'+str(time.time_ns())+'.sqlite3');base.snapshot(Path(m['story_main'])/'.runtime/review.sqlite3',after)
         cache_migration=m.get('database_changes',{}).get('format')=='transactional-read-cache-v1'
         require(not cache_migration or m['task']=='task-20261006-0005','unexpected database migration task')
-        evidence=preserved(before,after,allow_read_generations=cache_migration,allow_cache_token_updates=bool(method_change or m.get('latest_state_migration') or m.get('unified_relation_migration') or m.get('review_retirement') or m.get('production_current')))
+        evidence=preserved(before,after,allow_method_file_history=bool(m.get('method_file_history')),allow_read_generations=cache_migration,allow_cache_token_updates=bool(m.get('method_file_history') or method_change or m.get('latest_state_migration') or m.get('unified_relation_migration') or m.get('review_retirement') or m.get('production_current')))
         database_runtime=None
         if cache_migration:
             live_db=(Path(m['story_main'])/'.runtime/review.sqlite3').resolve()
@@ -539,6 +582,7 @@ def recover(a):
         require(not m.get('latest_state_migration'), 'latest data contract applied: recover forward with the exact current package; never restore an old database or incompatible image')
         require(not m.get('review_retirement'), 'approval retirement: recover forward with this exact package; never restore an old approval database or incompatible image')
         require(not m.get('unified_relation_migration'), 'unified relationship contract: recover forward with this exact package; never restore an old database or incompatible image')
+        require(not m.get('method_file_history'),'file history is active: recover forward with a compatible writer; do not restart a pre-migration writer')
         if m.get('managed_methods'):
             # The pre-cutover image cannot enforce the newly active contract.
             # Keep the database and require a compatible runtime repair instead.
@@ -608,6 +652,7 @@ def main():
     q.add_argument('--relations-package',type=Path)
     q.add_argument('--review-retirement-package',type=Path)
     q.add_argument('--production-current-package',type=Path)
+    q.add_argument('--method-file-history',action='store_true',help='derive exact independent file histories without changing existing records')
     q.add_argument('--method-registry',type=Path);q.add_argument('--method-audit',type=Path)
     for name in ('story-candidate','system-candidate','story-target','system-target'):q.add_argument('--'+name,required=True)
     for cmd in ('build','preflight','apply','recover','publish-system'):

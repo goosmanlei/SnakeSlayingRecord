@@ -119,7 +119,9 @@ def compare(before, after, registry):
             for prefix in ('main', 'after'):
                 where = ''
                 if name == 'objects': where = ' WHERE id NOT IN (SELECT id FROM allowed)'
-                if name == 'revisions': where = ' WHERE object_id NOT IN (SELECT id FROM allowed)'
+                if name in ('revisions','method_file_versions','method_file_packages'): where = ' WHERE object_id NOT IN (SELECT id FROM allowed)'
+                if name == 'method_file_members':
+                    where = ' WHERE package_revision NOT IN (SELECT revision_id FROM '+prefix+'.method_file_packages WHERE object_id IN (SELECT id FROM allowed))'
                 if name == 'dependencies':
                     where = ' WHERE from_revision NOT IN (SELECT id FROM ' + prefix + '.revisions WHERE object_id IN (SELECT id FROM allowed))'
                 queries.append('SELECT * FROM ' + prefix + '.' + quoted + where)

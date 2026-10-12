@@ -21,6 +21,18 @@ import task_repository_delivery as delivery
 import method_migration
 
 class ReleaseTest(unittest.TestCase):
+    def test_preservation_only_window_rejects_unrelated_insert(self):
+        shutil.copy2(self.before,self.after)
+        r.preserved(self.before,self.after,strict=True)
+        with sqlite3.connect(self.after) as db:
+            table=db.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='revisions'").fetchone()[0]
+            columns=[r[1] for r in db.execute('PRAGMA table_info('+table+')')]
+            row=list(db.execute('SELECT * FROM '+table+' LIMIT 1').fetchone())
+            row[columns.index('id')]='extra-unrelated-revision'
+            db.execute('INSERT INTO '+table+' VALUES ('+','.join('?' for _ in row)+')',row)
+        with self.assertRaisesRegex(ValueError,'row count changed'):
+            r.preserved(self.before,self.after,strict=True)
+
     def test_workflow_release_preserves_other_pages_and_requires_both_native_graphs(self):
         previous = {'schema_version': 2, 'tabs': [
             {'id': id, 'title': id, 'lead': '', 'sections': []}

@@ -15,7 +15,7 @@
 
 ## 创作方法与作品依据
 
-- 工作方法有“方法／共用资料／工作环节”三个真实 Tab，分类、使用范围、历史版本和文件均平铺可选。首次进入按故事创作→生产制作→协作辅助选择首个真实绑定方法，读生效版；准确旧链接优先，未绑定旧稿仍在全部方法可读。环节默认阅读已有规则，主动编辑才显示配置。连续阅读与共用章节往返保持准确修订、阅读位置和未发评论；正文改稿沿本机草稿恢复，配置输入在本页会话保留。方法和只读资料的“查看评论”汇总同对象所有版本、所有文件的未关闭意见，包含未回应旧意见，按原评论身份去重。原圈选、真实回应稿与当前稿分别读取；新稿改名或删除文件不迁锚点，关闭后沿已有历史入口回查。普通正文编辑只更新选定后续工作类型／条件分支，保存与应用部分失败分开回执，可核对后幂等继续；已开始执行保持原包，条件回写保持 JSON 类型、整数精度和行顺序。项目 Markdown 仍是影视知识、手册和 Review 的唯一源；相对媒体原件由源同步固定摘要，缺失或变化不替代。操作入口见 [受管方法](production/managed-methods.md#阅读评论和编辑正文)，目录与恢复边界见 [可见导航验收](production/working-methods-navigation/VERIFICATION.md)，旧意见范围见 [旧意见回查验收](production/method-history-followup/VERIFICATION.md)。
+- “SKILL管理”沿 `content/skill-flow.json` 的基础流程读取真实绑定身份，普通入口读当前文件，旧链接／准确资源引用／冻结执行保留原组合。文件按所属对象与路径独立计版，原字节改变才追加；旧整包映射、评论锚点与旧执行不改写。页面提供阅读、版本比较和当前文件各版本评论；后台 CLI/API 维护唯一正文与显式执行绑定。“数据模型”沿 `content/data-model.json` 展示故事版本、当前制作、唯一素材出处、候选及准确引用关系，保留旧编号与 CODES URL。操作和兼容恢复统一见 [受管方法](production/managed-methods.md)，验收见 [SKILL 管理](production/skill-admin-data-model/VERIFICATION.md)。
 
 - `scripts/scene_reading.py` 维护准确 Prompt 的文字区间与反馈定位，不另设动作对白镜卡。区间须对应锁定剧本和完整事件序列，缺少可靠范围的历史记录保留原文，不能借当前故事补写。当前编制入口见 [全剧镜头](production/audiovisual/README.md)，准确投影的历史依据见 [场内连读验收](production/scene-reading/VERIFICATION.md)。
 
