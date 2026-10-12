@@ -60,6 +60,7 @@
 - 准确参考保存回执推进当前消费方案的准确修订与输入位置；已选入口携带当前内容并发标记；准确候选保持原提交快照，退役素材版本地址明确拒绝。保存后可核对范围、重开、再调整或放弃修改；预览组成与原件分别处理，不把一次选择变为制作采纳。通用契约见系统 `docs/production-breakdown.md`，实例证据见 [准确参考闭环验收](production/reference-selection/VERIFICATION.md)。
 - 已选音视频参考的范围紧邻播放器，直接试听已存片段；编辑后试听未保存范围，明确保存才改变生成输入。完整原件、预览组成和评论选段分别表达，清除评论选段不扩大参考试听；跨版本、候选或组成不继承另一准确选择的范围。契约沿系统 `docs/production-breakdown.md`，真实两例与切换夹具边界见 [参考片段试听](production/reference-audition/VERIFICATION.md)。
 - 视频方案显式声明渠道、生成模式与直接输入角色；普通参考不保证固定起点。全剧起始裁切与镜内后续显露的输入职责以 [逐场输入审查](production/audiovisual/video-inputs.json) 编制，意图变化先复审；首图祖先不自动上传，音色不代替视觉身份。通用参数与输入组合校验、准确选择、准备包及 CALL 守卫由审阅台承担，未知组合不判可执行。方法仍只在 [视频生成手册](production/seedance-video-handbook.md) 维护。
+- 当前视频 Prompt 按整集、场、镜实际创作，正文在素材需求中维护；`scripts/video_prompt_work.py` 只取得准确输入、保存及回读作者提供的阶段，不拼接旧事件串。`scripts/scene_reading.py` 校验准确原词、发声者与顺序，并绑定最终实际段落及摘要；旧渲染全文不是新稿保存或评论定位的前提，旧意见仍保留原摘录。逐镜方法、输入与准备责任见 [视频重编索引及交接](production/video-prompt-rewrite/VERIFICATION.md)。
 - 旧场准备、旧镜头编排与无用途方案已从当前交付退出。保留媒体身份、字节及真实输入，独立调用凭据按 [来源索引](production/audiovisual/provenance-files.json) 定位；没有原始方案的候选继续明确未知。一次性清理不成为日常重写冻结历史的入口。
 
 ## 审阅界面与评论约定

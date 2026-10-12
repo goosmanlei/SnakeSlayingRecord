@@ -71,6 +71,16 @@ def check_workflow_change(previous, candidate):
             'workflow release requires two native diagram-only pages')
 
 
+def check_handbook_change(previous, candidate, derived_tab):
+    """Only replace the existing handbook with its exact source projection."""
+    require(derived_tab.get('id') == 'video-handbook', 'wrong handbook projection')
+    require(sum(tab['id'] == 'video-handbook' for tab in previous['tabs']) == 1,
+            'existing handbook page required')
+    expected = {**previous, 'tabs': [derived_tab if tab['id'] == 'video-handbook' else tab
+                                    for tab in previous['tabs']]}
+    require(candidate == expected, 'handbook release must preserve other pages and metadata')
+
+
 def method_media_files(document):
     files={}
     for tab in document.get('tabs',[]):
@@ -237,6 +247,14 @@ def prepare(a):
         check_vision_change(read(mounts['/instance/content/production-approach.json']['Source']),
                             read(root/'instance/content/production-approach.json'), raw)
         put('instance/production/system-vision.md', raw)
+    elif task == 'task-20261012-0011':
+        from sync_video_handbook import derive
+        source = 'production/seedance-video-handbook.md'
+        raw = base.git_file(story, a.story_candidate, source)
+        require(raw == (story/source).read_bytes(), 'handbook source differs from candidate')
+        check_handbook_change(read(mounts['/instance/content/production-approach.json']['Source']),
+                              read(root/'instance/content/production-approach.json'), derive(raw, story))
+        put('instance/'+source, raw)
     elif task == 'task-20261011-0005':
         check_workflow_change(read(mounts['/instance/content/production-approach.json']['Source']),
                               read(root/'instance/content/production-approach.json'))
