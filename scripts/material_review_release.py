@@ -223,6 +223,7 @@ def prepare(a):
             put('current/'+name, value)
         current_production = {'root':'current', 'package':'current/'+relative}
     require(not getattr(a,'method_file_history',False) or not (managed_methods or latest or relations or retirement or current_production),'file history uses its own preservation-only write window')
+    require(not getattr(a,'remove_material_versions',False) or not (latest or relations or retirement or current_production or getattr(a,'method_file_history',False)), 'material removal cannot combine unrelated data migrations')
     method_media=method_media_files(read(root/'instance/content/production-approach.json'))
     for name,digest in method_media.items():
         raw=base.git_file(story,a.story_candidate,name)
@@ -246,7 +247,7 @@ def prepare(a):
              'from review_desk.approach import read_document; read_document(Path(sys.argv[2]))',
              str(system), str(root/'instance')])
     else:
-        require(task in {'task-20261005-0007','task-20261006-0006','task-20261008-0001','task-20261008-0002','task-20261008-0006','task-20261008-0004','task-20261009-0004','task-20261010-0019'} or current_files['content/production-approach.json']==hashes['instance/content/production-approach.json'],'approach content change is outside this release')
+        require(task in {'task-20261005-0007','task-20261006-0006','task-20261008-0001','task-20261008-0002','task-20261008-0006','task-20261008-0004','task-20261009-0004','task-20261010-0019','task-20261012-0013'} or current_files['content/production-approach.json']==hashes['instance/content/production-approach.json'],'approach content change is outside this release')
     source={}
     for line in git(system,'ls-tree','-r',a.system_candidate,'--','review_desk').splitlines():
         header,name=line.split('\t',1);require(header.split()[0] in ('100644','100755'),'special source file')
@@ -258,6 +259,7 @@ def prepare(a):
     if managed_methods:helpers.append('method_migration.py')
     if native:helpers.append('task_repository_delivery.py')
     if getattr(a,'method_file_history',False):helpers.extend(['method_file_history.py','method_migration.py'])
+    if getattr(a,'remove_material_versions',False):helpers.extend(['material_version_removal.py','method_migration.py'])
     if latest:helpers.extend(['latest_state_migration.py','audiovisual_publication.py','generation_workspace.py','method_migration.py'])
     if relations:helpers.extend(['unified_relation_migration.py','method_migration.py'])
     if retirement:helpers.extend(['review_retirement_release.py','unified_relation_migration.py','method_migration.py'])
@@ -272,6 +274,7 @@ def prepare(a):
     m['delivery_backend']='codex.task' if native else 'legacy'
     if overlays:m['instance_overlays']=overlays
     if getattr(a,'method_file_history',False):m['method_file_history']={'format':'method-file-history-v1','existing_rows':'preserve','restore':'derive and validate exact legacy package membership'}
+    if getattr(a,'remove_material_versions',False):m['material_version_removal']={'format':'material-version-removal-v1','backup_created':False,'recovery':'forward-only schema 14'}
     if method_media:m['method_media']=method_media
     if media_mount:m['previous_method_media']=method_directory_hashes(media_mount['Source'])
     if native:m['task_delivery']=native
@@ -284,7 +287,7 @@ def prepare(a):
         m['database_changes']={'format':'transactional-read-cache-v1','journal_mode':'delete','journal_mode_changed':False,
                                'auxiliary_table':'read_generations','business_rows':'preserve',
                                'recovery':'retain current DELETE journal and business rows; disable or clear the disposable cache; never restore an old business snapshot'}
-    save(root/'manifest.json',m);print(json.dumps({'bundle':str(root),'manifest_sha256':sha((root/'manifest.json').read_bytes()),'formal_writes':False,'business_delta':None if managed_methods or latest or relations or retirement or current_production else 0}))
+    save(root/'manifest.json',m);print(json.dumps({'bundle':str(root),'manifest_sha256':sha((root/'manifest.json').read_bytes()),'formal_writes':False,'business_delta':None if managed_methods or latest or relations or retirement or current_production or getattr(a,'remove_material_versions',False) else 0}))
 
 
 def load_bundle(path):
@@ -363,9 +366,7 @@ def preserved(before,after,*,allow_read_generations=False,allow_cache_token_upda
     # one row in Python; the exact multiset comparison lives in a disk index.
     mutable={'objects':('id','kind','created_at'),
              'comments':('id','target_object_id','target_revision_id','anchor','created_at'),
-             'sources':('id',),'configurations':('scope',),
-             'material_rounds':('material_id','number','created_at'),
-             'material_members':('material_id','number','revision_id')}
+             'sources':('id',),'configurations':('scope',)}
     if strict:mutable={}
     with ExitStack() as stack:
         databases=[]
@@ -528,6 +529,20 @@ def apply(a):
             save(receipt/'production-current-write-window.json', {'container_id':current['Id'], 'stopped':True,
                  'ingress':__import__('method_migration').stopped_api(application_stopped=True)})
             production_current_release.apply(root,m)
+        if m.get('material_version_removal'):
+            for helper in ('material_version_removal.py','method_migration.py'):
+                require(sha((root/'helpers'/helper).read_bytes()) == m['hashes']['helpers/'+helper], 'material cleanup helper drifted')
+            require(exact_candidate or base.safe_container(current)==m['previous_app'], 'another app is active')
+            if current['State']['Running']:run([base.DOCKER, 'stop', '--time', '30', current['Id']])
+            require(not inspect(current['Id'])['State']['Running'], 'application still writing')
+            save(receipt/'material-removal-write-window.json', {'container_id':current['Id'], 'stopped':True,
+                 'ingress':__import__('method_migration').stopped_api(application_stopped=True)})
+            command=[sys.executable,root/'helpers/material_version_removal.py','--system',m['system_main'],'--database',Path(m['story_main'])/'.runtime/review.sqlite3']
+            removal_receipt=receipt/'material-removal.json'
+            if removal_receipt.exists():
+                json.loads(run([*command,'check']))
+            else:
+                save(removal_receipt,json.loads(run([*command,'apply'])))
         if not before.exists():
             checks(root,m);base.snapshot(Path(m['story_main'])/'.runtime/review.sqlite3',before);save(receipt/'before.json',{'sha256':file_sha256(before)})
         else:
@@ -570,7 +585,7 @@ def apply(a):
                 database_runtime={'journal_mode':db.execute('PRAGMA journal_mode').fetchone()[0]}
             require(database_runtime['journal_mode']=='delete','reviewed DELETE journal mode changed')
         base.update_image_aliases(m,image)
-        result={'status':'formal_browser_pending','service':service,'release':str(release),'rows':evidence,'business_delta':None if method_change or m.get('latest_state_migration') or m.get('unified_relation_migration') or m.get('review_retirement') or m.get('production_current') else 0,'method_migration':read(receipt/'method-migration.json') if method_change else None,'system_candidate':m['system_candidate'],'push':False,'complete_invoked':False,
+        result={'status':'formal_browser_pending','service':service,'release':str(release),'rows':evidence,'business_delta':None if method_change or m.get('latest_state_migration') or m.get('unified_relation_migration') or m.get('review_retirement') or m.get('production_current') or m.get('material_version_removal') else 0,'method_migration':read(receipt/'method-migration.json') if method_change else None,'material_version_removal':read(receipt/'material-removal.json') if m.get('material_version_removal') else None,'system_candidate':m['system_candidate'],'push':False,'complete_invoked':False,
                 'database_changes':m.get('database_changes'),'database_runtime':database_runtime}
         save(receipt/('service-'+str(time.time_ns())+'.json'),result);print(json.dumps(result,ensure_ascii=False))
 
@@ -578,6 +593,7 @@ def apply(a):
 def recover(a):
     root,m=authorized(a);image=read(root/'image.json');release=Path(m['story_main'])/'.runtime/service-releases'/m['release_name']
     with base.publication_locks(m):
+        require(not m.get('material_version_removal'), 'material versions were physically removed: recover forward with schema 14; do not restore removed data')
         require(not m.get('production_current'), 'current production: recover forward with the exact compatible package; never restart a version-chain writer or restore the retired database')
         require(not m.get('latest_state_migration'), 'latest data contract applied: recover forward with the exact current package; never restore an old database or incompatible image')
         require(not m.get('review_retirement'), 'approval retirement: recover forward with this exact package; never restore an old approval database or incompatible image')
@@ -653,6 +669,7 @@ def main():
     q.add_argument('--review-retirement-package',type=Path)
     q.add_argument('--production-current-package',type=Path)
     q.add_argument('--method-file-history',action='store_true',help='derive exact independent file histories without changing existing records')
+    q.add_argument('--remove-material-versions',action='store_true',help='physically remove retired material versions without retaining a backup')
     q.add_argument('--method-registry',type=Path);q.add_argument('--method-audit',type=Path)
     for name in ('story-candidate','system-candidate','story-target','system-target'):q.add_argument('--'+name,required=True)
     for cmd in ('build','preflight','apply','recover','publish-system'):
