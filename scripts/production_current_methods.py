@@ -24,8 +24,8 @@ def update(store, root, names=None):
         rule = (root/'production/current-candidates/README.md').read_text()
         payload['files']['references/current-production.md'] = rule
         body=payload['files']['SKILL.md']
-        if oid == 'method.skill.material-assessment' and '先判断独立状态的制作职责' not in body:
-            body=body.replace('## 实际比对后选路线', '## 先判断独立状态的制作职责\n\n先用准确故事依据、当前镜头目标、直接需求和消费者回答：这项差异是否确需独立制作输入？身份本身够用，不另造基准状态；纯表演、普通持放和连续性检查回到实际镜头或方案。结构、通行、干湿和声音差异按真实用途保留，不能按名称或零需求自动撤下。已有状态撤下前先迁好有效条件及当前引用，再清理无用途正文；历史提交保持原样。没有独立状态职责与没有独立素材需求是两个判断，不为保状态制造需求。\n\n## 实际比对后选路线')
+        if oid == 'method.skill.material-assessment' and '先判断独立状态的制作职责' not in body and '实体、状态与素材需求抽取' not in body:
+            body=body.replace('## 实际比对后选路线', '## 先判断独立状态的制作职责\n\n有效状态至少拥有一项以其为唯一制作出处的真实独立素材需求；使用范围不算拥有权。先读准确原文、场镜和消费者判断实际素材职责，不为保状态复制或虚构需求。纯表演、账目阶段和连续性条件迁回实体、镜头或方案；撤下状态时同笔承接消费者，历史保持原样。\n\n## 实际比对后选路线')
         marker='## 当前制作内容与候选'
         if marker in body:body=body[:body.index(marker)].rstrip()
         payload['files']['SKILL.md']=body+'\n\n'+marker+'\n\n执行前阅读 references/current-production.md。制作对象原地维护，步骤摘要不保存全文历史；只有实际提交保存候选所需完整快照。草稿、回读、自检及完成仍按本方法的必要步骤执行。故事域版本不受此规则影响。\n'

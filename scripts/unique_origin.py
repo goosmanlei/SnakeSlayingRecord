@@ -11,7 +11,7 @@ from pathlib import Path
 import sys
 
 FROZEN = {'method_basis', 'method_adjustment', '_method_binding', 'initial_plan_source'}
-LISTS = {'states','continuity_context','sources','contexts'}
+LISTS = {'states','continuity_context','sources','contexts','previous_states'}
 
 
 def build(store, decisions):
@@ -23,10 +23,16 @@ def build(store, decisions):
             semantic.validate_retirement(store,oid,'STATE',retired['payload'])
     reviewed={oid:d for oid,d in decisions['states'].items() if oid in rows}
     removed={oid:choice for oid,choice in reviewed.items() if choice['action']=='remove'}
+    replacements={oid:d['replace_with'] for oid,d in removed.items() if d.get('replace_with')}
+    for oid,target in replacements.items():
+        if (target not in rows or rows[target]['kind']!='STATE' or target in removed or
+                rows[target]['payload'].get('status')=='withdrawn' or
+                rows[target]['payload']['entity']!=rows[oid]['payload']['entity']):
+            raise ValueError('state reuse requires a retained form of the same exact entity: '+oid)
     handoff_needs={v['object_id']:v for d in removed.values() for v in d.get('requirement_handoffs',[])}
     for item in handoff_needs.values():
-        if rows[item['object_id']]['kind']!='REQUIREMENT' or rows[item['scope']]['kind']!='AV_SHOT':
-            raise ValueError('a reviewed requirement handoff needs an existing shot')
+        if rows[item['object_id']]['kind']!='REQUIREMENT' or rows[item['scope']]['kind'] not in ('ENTITY','AV_SHOT'):
+            raise ValueError('a reviewed requirement handoff needs an existing entity or shot')
     for oid,choice in reviewed.items():
         row=rows.get(oid)
         if not row or row['kind']!='STATE' or row['payload'].get('status')=='withdrawn':
@@ -37,6 +43,11 @@ def build(store, decisions):
             raise ValueError('condition destination required: '+oid)
     def refs(value):
         return [(path,ref) for path,ref in p.references(value) if not any('.'+key in path for key in FROZEN)]
+    def add_block(payload, name, text):
+        old=next((b for b in payload.get('blocks',[]) if b['id']==name),None)
+        if old:
+            if text not in old['text']:old['text']+='\n'+text
+        else:payload.setdefault('blocks',[]).append({'id':name,'text':text})
     consumers={oid:[] for oid in reviewed}
     for oid,row in rows.items():
         if row['payload'].get('status')=='withdrawn':continue
@@ -45,10 +56,25 @@ def build(store, decisions):
     def rewrite(value, key=None):
         if key in FROZEN:return copy.deepcopy(value)
         if isinstance(value,list):
-            if key in LISTS:return [rewrite(v) for v in value if v.get('object_id') not in removed]
-            if key=='state_transitions':return [rewrite(v) for v in value if not any(ref['object_id'] in removed for _,ref in refs(v))]
+            if key in LISTS:
+                result=[]
+                for v in value:
+                    if v.get('object_id') in removed and v.get('object_id') not in replacements:continue
+                    item=rewrite(v)
+                    if not result or item!=result[-1]:result.append(item)
+                return result
+            if key=='state_transitions':
+                result=[]
+                for v in value:
+                    if any(ref['object_id'] in removed and ref['object_id'] not in replacements for _,ref in refs(v)):continue
+                    item=rewrite(v)
+                    if item['from']!=item['to']:result.append(item)
+                return result
             return [rewrite(v) for v in value]
         if not isinstance(value,dict):return value
+        if value.get('object_id') in replacements and 'revision_id' in value:
+            target=rows[replacements[value['object_id']]]
+            return {**copy.deepcopy(value),'object_id':target['object_id'],'revision_id':target['id']}
         return {k:rewrite(v,k) for k,v in value.items()}
     patches={}
     for oid,row in rows.items():
@@ -59,9 +85,23 @@ def build(store, decisions):
             handoff=handoff_needs[oid]
             value['scope']={'object_id':handoff['scope'],'revision_id':rows[handoff['scope']]['id']}
             value['title']=handoff['title']
+            if value.get('generation'):value['generation']['output']['name']=handoff['title']
             value['specification'].pop('reference_role',None)
+            if rows[handoff['scope']]['kind']=='ENTITY':
+                value['entities']=[{'object_id':handoff['scope'],'revision_id':rows[handoff['scope']]['id']}]
+        for sid,d in removed.items():
+            target=d.get('replace_entity')
+            if (not target or row['kind'] not in ('REQUIREMENT','AV_SHOT') or
+                    not any(ref['object_id']==sid for _,ref in refs(body))):continue
+            if target not in rows or rows[target]['kind']!='ENTITY':raise ValueError('identity destination is not an entity')
+            original_owner=rows[sid]['payload']['entity']['object_id']
+            entities=value.setdefault('entities',[])
+            if d.get('replace_consumer_entity'):
+                entities[:]=[ref for ref in entities if ref['object_id']!=original_owner]
+            if not any(ref['object_id']==target for ref in entities):
+                entities.append({'object_id':target,'revision_id':rows[target]['id']})
         if row['kind']=='ENTITY':
-            additions=[d['condition'] for sid,d in removed.items() if d['destination']=='entity' and rows[sid]['payload']['entity']['object_id']==oid]
+            additions=[d['condition'] for sid,d in removed.items() if d['destination']=='entity' and d.get('condition_entity', rows[sid]['payload']['entity']['object_id'])==oid]
             if additions:value['production_description']='\n'.join([body.get('production_description',''),*additions]).strip()
             # The prose block and editable description are the same content;
             # keep the existing block identity (and opinions), avoid two copies.
@@ -69,7 +109,13 @@ def build(store, decisions):
                 if len(value.get('blocks',[])) == 1 and value['blocks'][0]['id']=='description':
                     value['blocks'][0]['text']=value['production_description']
                 else:
-                    value.setdefault('blocks',[]).append({'id':'production-conditions','text':'\n'.join(additions)})
+                    add_block(value,'production-conditions','\n'.join(additions))
+        if row['kind']=='AV_SHOT':
+            used={ref['object_id'] for ref in body.get('states',[])+body.get('continuity_context',[])}
+            additions=[d['condition'] for sid,d in removed.items() if sid in used and d['destination']=='shot']
+            if additions:
+                add_block(value,'state-handoff',
+                    '只核对本镜实际起止与已经发生的阶段，后续变化不能提前。\n'+'\n'.join(additions))
         handoffs=[]
         if row['kind']=='REQUIREMENT' and body['scope']['object_id'] in rows and rows[body['scope']['object_id']]['kind']=='AV_SHOT':
             shot=rows[body['scope']['object_id']]['payload']
@@ -87,7 +133,7 @@ def build(store, decisions):
                 lead=('只检查本镜起点与已发生阶段，后续动作不得提前画入首帧。'
                       if body['media_type']=='image' else
                       '对照本镜原有起点、动作与落点，只执行本镜阶段；跨镜顺序作为核对依据。')
-                value.setdefault('blocks',[]).append({'id':'continuity-conditions','text':lead+'\n'+'\n'.join(handoffs)})
+                add_block(value,'continuity-conditions',lead+'\n'+'\n'.join(handoffs))
         unresolved=[(path,ref['object_id']) for path,ref in refs(value) if ref['object_id'] in removed]
         if unresolved:raise ValueError('current consumer needs an explicit handoff: '+oid+' '+str(unresolved))
         if value!=body:patches[oid]=value
