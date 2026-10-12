@@ -6,7 +6,7 @@
 
 ## 阅读、比较和评论
 
-左侧基础流程覆盖采编、结构、小说、剧本、视听、抽取、图像、音色、演唱、视频、字层五类并列素材方案、生成准备、检查返修和剪辑；小说与故事剧本内分别标出“创作→独立阅读→修订→再读”；评论 AI 润色与创作协作 Review 为直接辅助节点。节点下方用次要文字标出该步骤的产出：小说稿、剧本集场、视听集场镜、四类实体与状态、素材需求及候选等，帮助对照数据模型。节点由真实工作类型绑定取得 SKILL 身份，无方法的阶段只作流程说明。普通点击读取所选 SKILL 当前文件；旧链接、共用资料引用和历史执行仍固定原准确组合。可读的最新版不会自动改变后续执行绑定。
+左侧基础流程覆盖采编、结构、小说、剧本、视听、抽取，以及图像、声音、视频、字层四大类素材方案、生成准备、检查返修和剪辑；小说与故事剧本内分别标出“创作→独立阅读→修订→再读”；评论 AI 润色与创作协作 Review 为直接辅助节点。节点下方用次要文字标出该步骤的产出：小说稿、剧本集场、视听集场镜、实体（角色、场景、道具、歌曲 EN；镜头 ASH）、必要状态 ST、素材需求 M 及候选等，帮助对照数据模型。节点由真实工作类型绑定取得 SKILL 身份，无方法的阶段只作流程说明。普通点击读取所选 SKILL 当前文件；旧链接、共用资料引用和历史执行仍固定原准确组合。可读的最新版不会自动改变后续执行绑定。
 
 右侧文件树包含正文、参考、模板、图示和原件。完整 Review、项目适配及系统构想沿唯一来源连续阅读；包内的 shared 路径及普通相对链接均解析到所引准确文件。视频手册、影视知识等公共部件在各 SKILL 内嵌阅读；章节评论仍属于公共部件的准确文件，点击章节不追加返回原位置引导。文件以阅读顺序编号并按正文、参考、模板、图示和媒体分组，同层项目保持对齐。页面只提供阅读、比较和评论；方法维护沿后台 CLI/API，已移除旧三个 Tab、配置编辑、正文保存／应用与下载入口。
 
@@ -101,7 +101,18 @@ python3 scripts/creative_method.py --method-url http://127.0.0.1:PORT --director
 
 ## 单项媒体方案
 
-音色解决角色声音身份与说话表现，演唱解决歌词、旋律、节奏与音乐母带；分别绑定 `voice-plan` 和 `song-plan`。声音需求通过 `--conditions 条件文件.json` 明确选择，文件内容为 `{"audio_type":"voice"}` 或 `{"audio_type":"song"}`；缺少具体类型不进入通用兜底方法。图像与视频继续各自绑定；字层沿独立 `text-layer` 工作类型交付准确可编辑文字。旧已冻结执行仍取原绑定和文件，不被新选择改写。
+每项素材按独立交付职责保存唯一 `material_category`（具体素材分类）。系统从此字段自动取得大类、方法及专项文件；物理 `media_type` 校验文件类型，原出处保持不变。分类不由名称、scope 或 Prompt 关键词推断，人不必另选声音类型或 SKILL。
+
+| 素材分类 | 取得的方法与专项 |
+| --- | --- |
+| 角色图像、场景图像、道具图像、镜头画面 | `image-plan` 共同正文，加 `references/character-image.md`、`scene-image.md`、`prop-image.md`、`shot-image.md` 中对应的一项 |
+| 人物音色、场景音、演唱 | 分别取得 `voice-plan`、`scene-sound-plan`、`song-plan`；沿声音专业知识审阅 |
+| 视频 | `video-plan`，沿准确视频手册和相邻镜头 |
+| 字层 | `text-layer`，交准确文字与可编辑工程，不虚构模型调用 |
+
+类别键依次为 `character-image`、`scene-image`、`prop-image`、`shot-image`、`voice`、`scene-sound`、`song`、`video`、`text-layer`。例如 M2798 是镜头所属的独立角色参考，仍归角色图像；M2977 是首帧，归镜头画面。M2725 虽属角色状态，独立交付清唱片段，仍归演唱。没有独立场景音目标时不新造正式需求。
+
+合法改类后重新开始方法步骤，重取方法、专项和准确输入；旧准备不能混用。条件中的同值旧 `audio_type` 只在输入边界转换，异值明确拒绝，不再保存第二套分类。缺分类、方法、专项文件或不兼容物理类型时拒绝当前执行；旧候选和冻结执行沿原准确组合读取。完整导出、恢复和正式发布还核查全量有效需求，不能把部分迁移当作完成。
 
 先在隔离实例取得准确 REQUIREMENT（素材需求）记录；`record.json` 保留 `object_id`、`kind`、当前 `expected_version` 和完整 `payload`。以下命令均只准备或登记，不生成媒体：
 
@@ -117,11 +128,13 @@ python3 scripts/media_method.py --method-url http://127.0.0.1:PORT --directory .
 python3 scripts/media_method.py --method-url http://127.0.0.1:PORT --directory .runtime/my-media-step read --stage result
 ```
 
-需要输入锁正文、相邻镜或真实原件记录时，begin 加 `--supporting references.json`，传准确引用数组；包中同时提供可读文档，避免只给修订号。每条外层引用仍受可用性检查；文档内引用历史退役候选仅作为原文保存，不重新激活为本步骤的生产依赖。`--conditions conditions.json` 选择具体章节，如视频的 `{"case":"dialogue","need_sound":true,"need_staging":true}`；不能借条件改变媒体类型。已冻结请求恢复时，补充材料和选择条件也须保持原样。
+需要输入锁正文、相邻镜或真实原件记录时，begin 加 `--supporting references.json`，传准确引用数组；包中同时提供可读文档，避免只给修订号。每条外层引用仍受可用性检查；文档内引用历史退役候选仅作为原文保存，不重新激活为本步骤的生产依赖。`--conditions conditions.json` 选择具体章节，如视频的 `{"case":"dialogue","need_sound":true,"need_staging":true}`；不能借条件改变素材分类或物理媒体类型。已冻结请求恢复时，补充材料和选择条件也须保持原样。
 
-媒体 `read --stage draft` 返回完整 requirement/generation 和准确原记录；`read --stage review` 返回原 assessment；`read --stage result` 返回定稿原值、带准确 method_basis 的记录及 `import_package`。原提交值与加入 method_basis 后的待导入包分别核验，不能混用摘要。finish 包写入中断后，`recover --stage result --output 原步骤目录/registered.json` 从同一确认结果重建同一包；正常 finish 重试也幂等。输出须在原步骤目录内，已有不同内容或损坏的目标不会被覆盖。旧 draft/result 若缺全文但尚有准确原记录，recover 加 `--record`；旧 review 加 `--assessment`。不存在准确证据时诚实报缺。
+媒体 `read --stage draft` 返回完整 requirement/generation 和准确原记录；字层同时返回 `text_layer.blocks/specification` 并核验其摘要；`read --stage review` 返回原 assessment；`read --stage result` 返回定稿原值、带准确 method_basis 的记录及 `import_package`。原提交值与加入 method_basis 后的待导入包分别核验，不能混用摘要。finish 包写入中断后，`recover --stage result --output 原步骤目录/registered.json` 从同一确认结果重建同一包；正常 finish 重试也幂等。输出须在原步骤目录内，已有不同内容或损坏的目标不会被覆盖。旧 draft/result 若缺全文但尚有准确原记录，recover 加 `--record`；旧 review 加 `--assessment`。不存在准确证据时诚实报缺。
 
 `finish` 生成待 `production-import` 的准确包，只有当前内容并发标记、现有制作规则和方法产物摘要同时通过才更新受管方案。目标前进时不要手改 `expected_version` 继续提交；回读新目标并开始新步骤。方法步骤的执行事实不能覆盖，进一步改稿显式新建步骤；制作正文仍写回同一对象，不追加完整稿件。新制作步骤在数据库只保存输入及结果摘要，完整输入和草稿留在任务工作区，完成恢复用途后清理。见 [当前制作与候选](current-candidates/README.md)。
+
+复用与本地编辑沿真实原件、区间和交接保存；没有模型调用就不填 model、tool、Prompt 或随机生成字段。字层可无 generation，但准确文字、SVG 版面及镜头交接不能省略。
 
 生成准备包把方法快照与模型 Prompt 分开。模型只得到方案 Prompt、准确媒体和实际参数；手册不会被拼成最终视频 Prompt。新调用登记必须来自同一准备包，仍检查准确输入、原词、输入锁、渠道、原件与局部范围。已有候选／片段／路线选择记录准确父方案与确定性操作；不补造作者方法历史，也不能夹带 Prompt 修订。
 
