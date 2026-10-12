@@ -289,115 +289,12 @@ class Builder:
             'entities': list(entities), 'states': list(states), 'sources': sources, 'specification': spec, 'generation': plan})
 
     def roots(self):
-        used = {r['object_id'] for row in self.av if row['kind'] == 'AV_SHOT' for r in row['payload']['states']}
-        visual_owners = {self.states[oid]['payload']['entity']['object_id'] for oid in used
-                         if self.states[oid]['payload']['reference_media'] == 'image'}
-        for owner in sorted(visual_owners):
-            row = self.entities[owner]; payload = row['payload']; kind = payload['entity_type']
-            oid = 'material-' + owner + '-identity'
-            composition = {'character': '按对象实际定义呈现一人、一只动物或可逐个辨认的群组；以等比例正侧背面说明身份、轮廓和完整肢体，群组不复制同脸，不给动物套人类衣饰。中性姿态、浅灰背景，无现场伤势或剧情动作。',
-                           'space': '空间全景与清楚的出入口、通道和固定结构关系，不画临时人物；先确定左右与尺度，不用镜像变体。',
-                           'prop': '按对象定义呈现单件或实际物件组，全形与接触结构清楚，保留真实材质与轮廓，中性背景，不加入使用者或现场动作。'}.get(kind, '主体完整入画，身份与结构清楚。')
-            description = self.visual_description(row, payload.get('production_description') or '\n'.join(payload['facts']))
-            prompt = f'{STYLE}\n对象：{payload["title"]}。{description}\n{composition}\n这是从文字创建的干净根母版；当前没有选中图像输入，不假称参考现有候选。无装饰边框、水印或额外文字。'
-            name = payload['title'] + (' · 空间布局母版' if kind == 'space' else ' · 身份母版' if kind == 'character' else ' · 结构母版')
-            purpose = '为全剧固定' + payload['title'] + '的身份、轮廓、配色和可复查结构；实际候选仍须逐项选择。'
-            self.need(oid, reference(row), 'layout-master' if kind == 'space' else 'identity-master', 'image', purpose,
-                self.plan('image', prompt, name=name, description=composition, image_ratio='3:4' if kind == 'character' else '16:9' if kind == 'space' else '4:3'),
-                sources=payload['sources'], entities=[reference(row)], specification={'lineage_role': 'clean_master', 'planned_i2i_depth': 0})
-            self.masters[owner] = oid
-        for key, (name, direction) in self.voice.VOICES.items():
-            owner = 'entity-' + self.voice.GROUP_ENTITIES.get(key, key)
-            row = self.entities[owner]; oid = 'material-voice-' + key
-            prompt = f'{direction}。这是独立音色试样，不是本剧台词，也不代表作品实际采用。\n试样文字：我把东西放在桌上，等你说完再走。\n单一角色自然普通话，开头结尾各留半秒安静，无伴奏、环境、混响、角色名朗读或字幕提示语。'
-            plan = self.plan('audio', prompt, name=name + ' · 音色参考', description=direction)
-            purpose = name + '的可复用说话身份；现场对白、呼吸和环境交给镜头原生音频。'
-            choice = self.voice_choice(key)
-            if choice:
-                self.voice_choices[key] = choice
-                review = choice['review']
-                purpose += '\n当前评估：' + review['reason']
-                if review.get('range'):
-                    comparing = review['decision'] == 'needs_comparison'
-                    use = name + ('：旧原件身份待比较，尚未启用执行' if comparing else '：复用旧原件的说话身份片段；新方案和片段须独立认可')
-                    item = self.relation(choice['reference']['object_id'], oid, reference(row), use,
-                        review['responsibility'], '不继承：' + '、'.join(review['not_inherited']),
-                        '核完整气口、当前声音方向与独立片段认可；不把旧母版认可转授新方案。',
-                        sources=row['payload']['sources'], semantics='reuse', type_id='voice-reuse',
-                        necessity='optional' if comparing else 'required', upstream_ref=choice['reference'])
-                    item.pop('selection_state')
-                    item.update(component_id=review['source']['component_id'], range=review['range'])
-                    if comparing:
-                        item['enabled'] = False
-                    plan.update(method='reuse', tool='准确原件复用', model='original-audio', parameters={}, inputs=[item],
-                        prompt=f'只复用本方案选定的准确原件片段，锁定{name}的声音身份；起止范围以参考选择为准。\n'
-                               + review['reason'] + '\n' + review['responsibility']
-                               + '\n不重新生成，不冒充新试读词音轨；旧原件、原词、调用与判断原样保留。',
-                        output={'name': name + (' · 待比较身份片段' if comparing else ' · 已有原件身份复用方案'),
-                                'description': direction + '\n不继承：' + '、'.join(review['not_inherited']),
-                                'review_criteria': AUDIO_CHECK})
-                    if comparing:
-                        plan['blockers'] = ['先比较当前选角：' + review['reason'] + '；通过后明确启用输入，并独立认可新方案。']
-            self.need(oid, reference(row), 'voice-' + key, 'audio', purpose,
-                plan, sources=row['payload']['sources'],
-                entities=[reference(row)], specification={'voice_reference': True, 'preferred_input_seconds': 4})
-            self.voices[key] = oid
-        for owner, oid in SONGS.items():
-            row = self.p.record(self.store, oid)
-            if row['kind'] != 'REQUIREMENT' or row['payload']['media_type'] != 'audio' or not row['payload'].get('generation'):
-                raise ValueError('independent song material is not a usable exact source: ' + oid)
-            self.keep[oid] = reference(row)
-            self.masters[owner] = oid
+        """Historical bulk authoring cannot recreate current production."""
+        raise ValueError("Use the exact material-assessment method and reviewed current objects; bulk roots/forms authoring is retired")
 
     def forms(self):
-        used = {r['object_id'] for row in self.av if row['kind'] == 'AV_SHOT' for r in row['payload']['states']}
-        used.update(ref['state'] for choice in self.input_audit.values() for ref in choice.get('first_frame_states', {}).values())
-        for state_id in sorted(used):
-            row = self.states[state_id]; payload = row['payload']; media = payload['reference_media']
-            owner = payload['entity']['object_id']; entity = self.entities[owner]
-            oid = 'material-' + state_id + '-overall'
-            decision = self.preparation.get(state_id)
-            if media == 'none' or decision and decision['mode'] == '文字检查':
-                if decision:
-                    try: old = self.p.record(self.store, oid)
-                    except KeyError: continue
-                    from copy import deepcopy
-                    withdrawn = deepcopy(old['payload'])
-                    withdrawn.update(status='withdrawn', required=False, withdrawal_reason=decision['purpose'])
-                    self.put(oid, 'REQUIREMENT', withdrawn)
-                continue
-            if payload.get('reference_mode') == 'description' and not decision:
-                continue
-            kind = entity['payload']['entity_type']
-            purpose = decision['purpose'] if decision else payload['title'] + '的整体状态参考，不能用一个局部图声片段冒充完整覆盖。'
-            independent = decision and decision['mode'] in ('可选对照', '独立审阅')
-            inputs = []
-            if owner in self.masters:
-                upstream = self.masters[owner]
-                inputs.append(self.relation(upstream, oid, reference(row), '固定身份与结构，按此版状态表现差异',
-                    TYPE_CHECKS[kind][0], description(payload),
-                    '；'.join(TYPE_CHECKS[kind]) + '；图像按最深真实输入核验，当前计划从干净母版一代得到', sources=payload['sources'], type_id='identity-state', semantics='variant'))
-            prefix = ('图片1只固定干净母版的身份与结构；' if media == 'image' else '@音频1只锁定已明确的旋律范围，不自动继承独立歌手身份；') if inputs else ''
-            prompt = prefix + self.visual_description(row, description(payload))
-            if decision and state_id not in self.text_handoffs['visual_descriptions']:
-                prompt += '\n本次准备的实际用途与限制：' + purpose
-            if media == 'image':
-                instruction = {'character': '按实体定义呈现同一人物、动物或可辨群组的全形与本阶段可见细节；不复制成员，不给动物套人类衣饰，不添加别场伤势、湿痕或持物。',
-                    'space': '呈现同一空间的固定结构与本阶段布置；不画人物，不镜像，不混入此前或此后的布置。',
-                    'prop': '按实体定义呈现同一道具或物件组的全形和指定接触细节；不添加使用者，不提前展示后续缺损或内容。'}[kind]
-                prompt = STYLE + '\n' + prompt + '\n' + instruction
-            else:
-                prompt += '\n这是独立状态声音参考，原生视频负责现场表演；不自动制作每一句对白分轨。只用本状态明确的曲词范围。'
-            suffix = ' · 可选对照' if decision and decision['mode'] == '可选对照' else ' · 独立审阅' if independent else ' · 整体参考'
-            plan = self.plan(media, prompt, inputs, name=payload['title'] + suffix, description=description(payload),
-                             image_ratio='3:4' if kind == 'character' else '16:9')
-            plan['output']['review_criteria'] = TYPE_CHECKS[kind] + (IMAGE_CHECK[2:] if media == 'image' else AUDIO_CHECK)
-            self.need(oid, reference(row), 'overall', media, purpose, plan,
-                sources=payload['sources'], entities=[reference(entity)], states=[reference(row)],
-                required=not decision or decision['mode'] != '可选对照', usage='review_reference' if independent else None,
-                specification={'reference_role': 'overall', 'planned_i2i_depth': 1 if media == 'image' else None})
-            if not independent:
-                self.state_needs[state_id] = oid
+        """Historical bulk authoring cannot recreate current production."""
+        raise ValueError("Use the exact material-assessment method and reviewed current objects; bulk roots/forms authoring is retired")
 
     def shots(self):
         """Keep each explicitly named plan; purpose edits never recompile it."""
