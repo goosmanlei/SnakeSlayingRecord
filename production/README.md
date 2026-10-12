@@ -52,7 +52,7 @@
 
 实际生成任务使用最新受管工作区和独立实例。当前制作修改、真实提交、候选及评论沿现有入口登记。增量包使用变更前摘要核对并发，范围外数据保持；新模型拒绝旧增量重放。迁移和日常增量均不能用任务快照覆盖正式活库。
 
-当前候选恢复以完整 Schema 13 `export/manifest.json`、[制作索引](audiovisual/index.json)和[最小发布幂等凭据](audiovisual/recovery.json)为准。制作对象恢复单份当前内容，候选恢复提交快照；故事和方法仍保留原有版本。仅在任务 worktree 中向全新隔离目录恢复：
+当前候选恢复以完整 Schema 14 `export/manifest.json`、[制作索引](audiovisual/index.json)和[最小发布幂等凭据](audiovisual/recovery.json)为准。制作对象恢复单份当前内容，候选恢复提交快照；故事和方法仍保留原有版本。仅在任务 worktree 中向全新隔离目录恢复：
 
 ```bash
 python3 scripts/production_review.py --system <受管审阅台目录> recover \

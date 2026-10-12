@@ -133,7 +133,7 @@
 - task-20261010-0019 的双仓 worktree 仍由当前 TUI 及清理锁占用；本任务执行者退出并释放锁后，通过 `codex.project task cleanup` 整组退役，保留提交与会话历史。正式运行和当前完整恢复不依赖任务目录，必要证据归主项目 `.runtime/task-20261010-0019/`。
 
 - task-20261010-0016 的双仓worktree仍由当前TUI及清理锁使用；本任务执行者在退出释放锁后沿 `codex.project task cleanup` 整组退役，保留提交与会话历史。必要验收及准确清理回执见 [视听三部分验收](production/audiovisual-three-part/VERIFICATION.md)，正式运行和恢复不依赖任务临时目录。
-- 受管候选的唯一当前恢复入口为完整 Schema 13 `export/manifest.json`、[准确索引](production/audiovisual/index.json) 和 [发布幂等凭据](production/audiovisual/recovery.json)。按 [生产说明](production/README.md) 恢复到新空实例；旧编排包、旧导出、旧歌曲重放与其他任务历史数据库不能覆盖活库。
+- 受管候选的唯一当前恢复入口为完整 Schema 14 `export/manifest.json`、[准确索引](production/audiovisual/index.json) 和 [发布幂等凭据](production/audiovisual/recovery.json)。按 [生产说明](production/README.md) 恢复到新空实例；旧编排包、旧导出、旧歌曲重放与其他任务历史数据库不能覆盖活库。
 - 正式数据、服务、镜像及必要恢复回执继续保留；临时资源按相应任务账本和实际引用核对，完成发布、页面验收与新空库恢复后清理。方案核验范围见 [视听验收](production/audiovisual/verification.md)。
 - 其他任务现存工作区、历史库和归档由原任务执行者负责，不能据旧编号或目录名批删；它们不再是有效制作基线。`task-20261005-0001`、`task-20261006-0003` 的本机归档按任务账本 `repositories.*.cleanup.ignored_archive` 定位，原任务执行者在追溯结束后裁剪重复过程资料。
 - task-20261009-0003 会话仍占用故事 worktree，结项、退出并释放锁后再通过 `codex.project task cleanup` 受管退役，保留分支、提交、最小回执及会话历史；不强删活跃工作区。

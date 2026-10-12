@@ -26,18 +26,36 @@
           "title": "小说创作"
         }
       ],
-      "output": "小说稿"
+      "output": "小说稿",
+      "repeat": {
+        "label": "创作 → 独立阅读 → 修订 → 再读",
+        "capabilities": [
+          {
+            "work_type": "reader-review",
+            "title": "独立读者 · 多轮"
+          }
+        ]
+      }
     },
     {
       "id": "screenplay",
-      "title": "影视剧本",
+      "title": "故事剧本",
       "capabilities": [
         {
           "work_type": "screenplay-writing",
-          "title": "影视剧本"
+          "title": "故事剧本"
         }
       ],
-      "output": "剧本 · 剧本集 E · 剧本场 S"
+      "output": "剧本 · 剧本集 E · 剧本场 S",
+      "repeat": {
+        "label": "创作 → 独立阅读 → 修订 → 再读",
+        "capabilities": [
+          {
+            "work_type": "reader-review",
+            "title": "独立读者 · 多轮"
+          }
+        ]
+      }
     },
     {
       "id": "audiovisual",
@@ -75,9 +93,18 @@
         {
           "work_type": "media-plan",
           "when": {
-            "media_type": "audio"
+            "media_type": "audio",
+            "audio_type": "voice"
           },
-          "title": "声音方案"
+          "title": "音色方案"
+        },
+        {
+          "work_type": "media-plan",
+          "when": {
+            "media_type": "audio",
+            "audio_type": "song"
+          },
+          "title": "演唱方案"
         },
         {
           "work_type": "media-plan",
@@ -89,11 +116,6 @@
         {
           "work_type": "text-layer",
           "title": "字层方案"
-        },
-        {
-          "work_type": "media-plan",
-          "when": {},
-          "title": "其他素材方案"
         }
       ],
       "output": "素材 M 的当前方案"
@@ -146,7 +168,7 @@
   "branches": [
     {
       "id": "feedback",
-      "title": "阅读反馈",
+      "title": "评论辅助",
       "supports": [
         "structure",
         "novel",
@@ -155,15 +177,12 @@
       ],
       "capabilities": [
         {
-          "work_type": "reader-review",
-          "title": "独立读者"
-        },
-        {
           "work_type": "comment-polish",
-          "title": "意见表达"
+          "title": "评论 AI 润色"
         }
       ],
-      "output": "评论 C · 原稿与回应依据"
+      "output": "评论草稿 → 表达建议 → 用户采用",
+      "support_label": "在阅读页面编辑评论时使用"
     },
     {
       "id": "improvement",
