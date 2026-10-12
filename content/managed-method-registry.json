@@ -266,6 +266,30 @@
       ]
     },
     {
+      "object_id": "method.binding.audiovisual-design",
+      "kind": "GUIDANCE",
+      "version": 12,
+      "revision_id": "a07e6751186a3d537a42499609cf0a5a71740c73c012962ee8bba681ae76aa06",
+      "payload": {
+        "format": "managed-method-binding-v1",
+        "rules": [
+          {
+            "object_id": "method.skill.audiovisual-scene",
+            "revision_id": "b020cd540607547176e4413f0bcc551c0652d6d676e77b8ca3255e3fb6745019",
+            "when": {}
+          }
+        ],
+        "work_type": "audiovisual-design"
+      },
+      "created_at": "2026-10-12T10:51:57+00:00",
+      "dependencies": [
+        {
+          "revision_id": "b020cd540607547176e4413f0bcc551c0652d6d676e77b8ca3255e3fb6745019",
+          "role": "selected-method"
+        }
+      ]
+    },
+    {
       "object_id": "method.binding.comment-polish",
       "kind": "GUIDANCE",
       "version": 1,
@@ -650,6 +674,30 @@
       ]
     },
     {
+      "object_id": "method.binding.generation-preflight",
+      "kind": "GUIDANCE",
+      "version": 7,
+      "revision_id": "0b35f8655be737755cd612c5b4d51634a7d544fd9c4b580c090844d0b06113a8",
+      "payload": {
+        "format": "managed-method-binding-v1",
+        "rules": [
+          {
+            "object_id": "method.skill.generation-preflight",
+            "revision_id": "fe25ae57340198eacb2f65382ec9acc968d9d21dba7823248632e6f3ba8db597",
+            "when": {}
+          }
+        ],
+        "work_type": "generation-preflight"
+      },
+      "created_at": "2026-10-12T10:51:57+00:00",
+      "dependencies": [
+        {
+          "revision_id": "fe25ae57340198eacb2f65382ec9acc968d9d21dba7823248632e6f3ba8db597",
+          "role": "selected-method"
+        }
+      ]
+    },
+    {
       "object_id": "method.binding.material-assessment",
       "kind": "GUIDANCE",
       "version": 1,
@@ -837,6 +885,30 @@
       "dependencies": [
         {
           "revision_id": "f31872fb58f4d16d5009d182041c3c6af30ff44739a3c01244bee0785761b233",
+          "role": "selected-method"
+        }
+      ]
+    },
+    {
+      "object_id": "method.binding.material-assessment",
+      "kind": "GUIDANCE",
+      "version": 9,
+      "revision_id": "1deaa919855891b2a2c0675c0900931e5a07a4af0ac505008bd4ee49373c47eb",
+      "payload": {
+        "format": "managed-method-binding-v1",
+        "rules": [
+          {
+            "object_id": "method.skill.material-assessment",
+            "revision_id": "f70f8264c7a625a5db7c3d36d59ab6b4bc901630dbaf1a32f126cc9edb196da1",
+            "when": {}
+          }
+        ],
+        "work_type": "material-assessment"
+      },
+      "created_at": "2026-10-12T10:51:57+00:00",
+      "dependencies": [
+        {
+          "revision_id": "f70f8264c7a625a5db7c3d36d59ab6b4bc901630dbaf1a32f126cc9edb196da1",
           "role": "selected-method"
         }
       ]
@@ -1733,6 +1805,67 @@
       ]
     },
     {
+      "object_id": "method.binding.media-plan",
+      "kind": "GUIDANCE",
+      "version": 19,
+      "revision_id": "7f2b38df50e619db3a785bd96ace66f3045eca61a6b01deb1dcee343375c895c",
+      "payload": {
+        "format": "managed-method-binding-v1",
+        "rules": [
+          {
+            "object_id": "method.skill.image-plan",
+            "revision_id": "3941c8324b92d60aa036e011f6e1a920a7070964aa9518b839fd27f6646cd5f9",
+            "when": {
+              "media_type": "image"
+            }
+          },
+          {
+            "object_id": "method.skill.video-plan",
+            "revision_id": "0dc3dc3cd951b36cdb151b9cf85b15e79473e143d3ae66d0890e5ea52b1129f5",
+            "when": {
+              "media_type": "video"
+            }
+          },
+          {
+            "object_id": "method.skill.voice-plan",
+            "revision_id": "1d7596354c19544249ce5687279051bf394a7ed11ff7d426cd9a7c15b1949138",
+            "when": {
+              "audio_type": "voice",
+              "media_type": "audio"
+            }
+          },
+          {
+            "object_id": "method.skill.song-plan",
+            "revision_id": "3aa71411549381365ac80cd21b29596390eeda60c148ebfed3153f530323d8e7",
+            "when": {
+              "audio_type": "song",
+              "media_type": "audio"
+            }
+          }
+        ],
+        "work_type": "media-plan"
+      },
+      "created_at": "2026-10-12T10:51:57+00:00",
+      "dependencies": [
+        {
+          "revision_id": "0dc3dc3cd951b36cdb151b9cf85b15e79473e143d3ae66d0890e5ea52b1129f5",
+          "role": "selected-method"
+        },
+        {
+          "revision_id": "1d7596354c19544249ce5687279051bf394a7ed11ff7d426cd9a7c15b1949138",
+          "role": "selected-method"
+        },
+        {
+          "revision_id": "3941c8324b92d60aa036e011f6e1a920a7070964aa9518b839fd27f6646cd5f9",
+          "role": "selected-method"
+        },
+        {
+          "revision_id": "3aa71411549381365ac80cd21b29596390eeda60c148ebfed3153f530323d8e7",
+          "role": "selected-method"
+        }
+      ]
+    },
+    {
       "object_id": "method.binding.novel-writing",
       "kind": "GUIDANCE",
       "version": 1,
@@ -1992,6 +2125,30 @@
       "dependencies": [
         {
           "revision_id": "77cb8b7e9d4286fabe974b959a5613bbf0454c0809a986e6d534219461a4e54c",
+          "role": "selected-method"
+        }
+      ]
+    },
+    {
+      "object_id": "method.binding.result-review",
+      "kind": "GUIDANCE",
+      "version": 7,
+      "revision_id": "6e08e953cc9bb2e87ca70f786ed82472cb8da67735bf77279c183d3019a33c39",
+      "payload": {
+        "format": "managed-method-binding-v1",
+        "rules": [
+          {
+            "object_id": "method.skill.result-review",
+            "revision_id": "60e897e33275ba419354ff4d8f19bf87cec59b994fb28d6509220210db34b9e7",
+            "when": {}
+          }
+        ],
+        "work_type": "result-review"
+      },
+      "created_at": "2026-10-12T10:51:57+00:00",
+      "dependencies": [
+        {
+          "revision_id": "60e897e33275ba419354ff4d8f19bf87cec59b994fb28d6509220210db34b9e7",
           "role": "selected-method"
         }
       ]
@@ -2304,6 +2461,30 @@
       "dependencies": [
         {
           "revision_id": "8f2ee68b94fbcfe8e6c03b829feb83e0f36944661f1e54d37845a319dca2cc21",
+          "role": "selected-method"
+        }
+      ]
+    },
+    {
+      "object_id": "method.binding.text-layer",
+      "kind": "GUIDANCE",
+      "version": 8,
+      "revision_id": "13c05972e15a47a21dcf222984d0eb3a2a599fe6b9f778ee3d0e203d231419b4",
+      "payload": {
+        "format": "managed-method-binding-v1",
+        "rules": [
+          {
+            "object_id": "method.skill.text-layer",
+            "revision_id": "65cddfca92c2fad9cb7738668bd6f685737610adc5e53f36ea69d25d401a03ef",
+            "when": {}
+          }
+        ],
+        "work_type": "text-layer"
+      },
+      "created_at": "2026-10-12T10:51:57+00:00",
+      "dependencies": [
+        {
+          "revision_id": "65cddfca92c2fad9cb7738668bd6f685737610adc5e53f36ea69d25d401a03ef",
           "role": "selected-method"
         }
       ]
@@ -5892,6 +6073,168 @@
       ]
     },
     {
+      "object_id": "method.skill.audiovisual-scene",
+      "kind": "GUIDANCE",
+      "version": 13,
+      "revision_id": "b020cd540607547176e4413f0bcc551c0652d6d676e77b8ca3255e3fb6745019",
+      "payload": {
+        "applies": "整剧理解后的逐集视听设计或明确自然场的局部修订",
+        "checks": "按集阅读、按场连读；目的不复述动作，状态不机械新增，方案和输入准确，集场仅当前工作稿；实际声画另验。",
+        "files": {
+          "SKILL.md": "---\nname: audiovisual-scene\ndescription: 从准确剧本逐集形成镜头叙事目的、确需独立素材的关键状态，以及按制作顺序关联的准确产物方案。\n---\n\n本方法负责把剧本转为可制作、可连读的镜头。已锁定的故事事实、原词和已有镜头顺序按本次授权保持；修改目的表达不自动重做媒体、改选原件或取得调用许可。每个阶段先保存真实产物并实际重读，再进入依赖阶段；不索取内部思维过程。\n\n## 先理解这一集为什么这样发生\n\n首次承担整部作品时读全剧，理解人物选择、因果、信息揭示与结局。局部工作可复用仍有效的全剧理解，但须读当前整集、完整自然场及必要相邻镜。准确正文与输入锁须可读，不能只给编号，也不能拿旧方案代替缺失原文。\n\n保存 understanding：观众在本场开始知道什么，人物分别知道什么；谁想做什么、遇到什么、怎样选择；本场结束改变什么，怎样接到下一场。区分源文事实、允许设计的拍法和未知项。逐集推进、逐场连读后写每镜目的，不先用程序套出全剧句式再补阅读记录。\n\n## 按当前问题选择专业原理\n\n信息与人物选择读 narrative，行为节拍与覆盖读 coverage，站位、通路、持物与受力读 staging，情绪和关系变化读 performance，声源与画外空间读 sound，切点与停顿读 editing。摄影、灯光、色彩、美术、动画限制按实际问题再取。保存 principles：当前条件、适用原理、所选方案和检查办法；不为每镜填齐所有维度。\n\n## 写目的并确定需要准备的状态\n\n保存 design，使用 templates/reading.json 的结构，按准确源范围逐镜写：\n\n- purpose 讲本镜使观众新理解或感受什么。因果、性格、关系、气氛、暗线只写实际适用者。动作顺序、运镜和剧本复述不能换名充当目的。\n- key_states 只收确需独立素材准备的镜内画面或动作关系，每项给简明描述与准确素材需求引用。它不是人物的实体状态清单；没有独立素材就可以为空。一状态可关联多个不同需求，同一需求不重复制造两个状态，不机械各造起点和终点。\n- products 按本镜实际产物制作顺序排列。复用已有准确需求；主机位等上游输入仍是参考，不升格为最终产物。字层工程按工程标识，不冒充视频。引用必须同时包含对象和准确修订，缺失不借别镜或最新版本补齐。\n\n集场只留一份可原地迭代的 working_notes，写对继续制作有用的当前说明。实际集场镜组成仍有准确身份；工作稿不再复制成版本正文，不要求场级共同条件、镜头共同条件、额外设计采纳或固定摄影剪辑框。需执行的摄影、声音、动作与衔接写进它实际服务的准确产物 Prompt，不能因简化阅读删掉影片内容。\n\n## 形成准确产物方案\n\n保存 handoff：每项产物明确是图像、声音、视频还是工程，给出准确需求和必要交接。修订单项方案走既有媒体方法，视频先读适用手册。方案将直接参考列表、模型与参数、完整 Prompt 保持在同一准确版本；输入保留必要版本、候选、原件组成、裁切或时段。上下游身份、路线和依赖保留可执行关系，不另填重复的用途与意见段落。\n\n源文给出的动作与对白仍完整发生。有意义的重复、停顿、犹豫不统一去重或提速；画外声不自动让说话人入画。原文仅给道谢、复述等语意时保留发声事件，另做可审阅的原词准备，未知不写成逐字台词。字层按显字时机、透视和遮挡交接；既有素材的意见不能自动适用于新用途。生成准备仍检查素材方案、准确输入、原词和实际调用授权，不要求已取消的场镜设计采纳。\n\n## 回到观众的连续体验\n\n核对人物动机时，先从准确原文找出触发事实、当时持物与交接顺序，再判断人物为何改变选择。把目的、关键状态和完整 Prompt 对照同一事实链；不一致时先定位错误部分，只修实际有误的内容，保留正确方案、候选与原件。局部修改后连读相邻镜和下一场的接取、放手与持物落点；缺少触发证据不以人物性格或概括动作补造原因。\n\n保存 review：把整场每镜目的、状态和方案连读，再对照完整原文、前后落点。每镜有什么新理解，是否重复前镜或提前泄漏后镜？动作发生一次还是有意重复，是否被两侧都省掉？接取、放手、起身、转向有没有姿势、空手和承重前提？同段的终态不能提前画入起点。\n\n地理方向与画面左右分别校准；用实际机位检查门、通路、视线与人物位置。集末检查因果、关系、道具、声音与节奏，完整工作再跨集回读。重要方案记录条件和验法，允许有依据地变通，不把专业章节变成每镜必填项目。\n\n文字连读、准备检查与实际声画各有边界。未生成就不声称表演、声音或时长通过；实际看图、听声、观看连续画面后再判断质量。未完成范围如实保留，不能把承诺降成限制后结项。若新发现影响冻结产物，保持原执行，以准确旧产物为输入新建步骤修订，不倒改历史。\n\n## 意见、修订与回查\n\n动笔前读取所选准确修订及其相关原评论；历史意见连同原文、作者、发生时间和范围理解，不把沉默推成质量认可。AI 自检、机器检测与用户反馈分别记录。对意见作出实际修改后，通过现有 comment-handling-v1 回应保存原评论及版本、处置说明、实际修改说明、内容摘要和必要局部前后片段；未修改则说明依据和边界。读者可从原意见对照原文、实际修订与上下文；不改原锚点，不把旧意见冒充新稿意见。关闭或重开评论只是整理讨论，不是后续工作的批准或阻断条件。\n\n方案在授权内按准确输入、真实原件和质量检查推进，不要求逐对象审批。素材选择固定准确候选、组成及片段；改用新输入须重读并更新方案依赖，冻结调用不换输入。缺失、已撤回、错配、无效参数或循环仍按真实约束处理。付费、正式写入和部署仍遵守本次任务授权。\n\n## 当前制作内容与候选\n\n执行前阅读 references/current-production.md。制作对象原地维护，步骤摘要不保存全文历史；只有实际提交保存候选所需完整快照。草稿、回读、自检及完成仍按本方法的必要步骤执行。故事域版本不受此规则影响。\n",
+          "references/current-production.md": "# 当前制作内容与生成候选\n\n故事资料、方向、结构、小说和文字剧本继续保留各自版本。实体、必要实体状态、业务关系、视听集场镜、输入锁和素材需求只维护当前内容。有效实体状态必须至少拥有一项真实独立素材需求；需求的 scope 是唯一制作出处，states 只是使用范围。先从准确原文和场镜目标判断独立素材职责，再抽取状态，不能为了保状态制造或复制需求。实体身份足以承担的基准形象不另造状态；纯表演、普通持放、账目阶段和连续性条件由实际实体、镜头或方案承接。结构、通行、干湿和声音差异确需独立准备时，保留有真实需求支持的必要状态。\n\n正式导入和增量发布检查整笔提交后的当前树。状态与真实需求可同笔新增；移走或撤下最后一项需求时，同步承接状态条件、所有当前引用与关系，撤下或归并状态。隔离作者文件可以暂存未完成判断，不新增长期草稿库或审批。撤下前读准确原文和消费者，不能按零需求计数直接批删；历史调用、候选、原件、原意见与执行快照继续准确回查。\n\n实体自身稳定的基础制作职责直接归实体，不按媒体类型、已有结果或是否有状态机械分类：图像身份、说话音色、空间布局、道具结构及歌曲完整演唱都可属于实体。只有确需独立准备的不同形态、结构、声音或演法才建状态及独占需求；完整歌曲与剧中省段、缺词、哼唱和角色演法分别判断。“基础状态”只是实体直属需求的列表分组名，不建立同名 ST。确无独立制作职责的提及对象或由场景、字层、镜内动作承接的对象可以没有需求，保留身份和实际承接位置，不为计数补造素材。迁移基础需求时保留 M 身份及其候选、原件、真实输入与意见，当前消费者按必要字段承接，历史快照和旧方法执行保持当时事实。\n\n当前稿更新使用稳定对象身份和并发标记，不再保存制作全文修订链，也不因改一个镜头推进场、集版本。\n\n每个素材需求只有一个当前方案。一次真实调用返回原件后形成一个候选，候选展示提交前保存的完整方案、实际模型、参数、Prompt、有序参考及文件范围。同参数再次调用是另一个候选；回调、下载重试、状态推进和多文件组成仍归原调用。上传或外部制作保留真实来源，不虚构模型调用。未返回原件的失败或未知调用不产生候选；未知请求先查询原身份。\n\n## 状态正文与按需属性\n\n状态先用一份独立可读描述讲清同一实体此刻的完整形态与必要阶段差异，再保留实际供业务消费的属性。complete-v1 不要求按类型填满属性；不相关项省略，不填“如上”“依场次”或重复整段。独有声音、真实未知与必要条件必须仍可读。来源与实体归属仍须准确，空正文不能用标题、用途或引文代替。当前方案只将本次模型需要的确定内容写入 Prompt；真实未知保存在 unknowns，确实阻断制作时同时写入既有 production_blockers 或 generation.blockers。不能通过删除缺项放行未选原件。\n\n## 唯一制作出处与准确参考\n\n需求的 `scope` 是唯一制作出处，指向一个实体、必要实体状态或镜头。`entities`、`states`、关系的场景上下文、计划输入与实际输入说明使用范围，不增加拥有者；通过集场筛选找到素材后，仍回到该出处。实体身份、状态差异和镜头产物各自列自己的需求，不复制共用身份。镜头的 `key_states` 只记录确需独立准备的关键画面或动作关系，可以为空；它不是人物状态清单。\n\n每个当前候选只属于一个当前需求。引用卡、Prompt 和搜索通过同一准确身份核对原件旧编号、当前需求及候选号，保留原修订、文件组成、裁切和时间范围。选用已有候选是准确原件引用，不因候选来自同一需求就变成未来依赖循环；未产出的需求自依赖仍须拒绝。\n\n退役原件沿已保存提交说明当时需求与退出原因，不按相似外观或共用实体硬塞进当前需求。没有保存当时需求就保留未知；缺组件时显示已知名称、出处证据和不可用原因，不能用今天的相似原件补位。修复只能来自身份可核实的原件。有效输出不因历史输入缺口自动消失，历史缺口也不等于当前输入已就绪。\n\n## 制作、提交与恢复\n\n1. 从当前对象读取 `edit_token`（并发编辑计数）和 `content_sha256`（当前内容摘要），通过现有 `scripts/media_method.py` 完成方法准备、草稿、回读和定稿，再 `production-import`。步骤不满足、输入已变或目标冲突时保留工作区草稿，回读后另起步骤。新制作方法的数据库记录只保存摘要、方法和执行事实；完整工作输入及草稿仅留在任务 `.runtime/`，恢复用途结束后清理。过去的方法执行事实保持原样。\n2. 用 `production-generation-package` 取得准确准备包。对外提交前调用 `/api/production/submit`，提交唯一 `id`、`call_id`、`requirement_id`、`expected_content`、`package_sha256` 和实际 `tool`。返回后才可发起外部请求；同身份返回 `already_applied=true` 时只查询原调用。`scripts/generation_operation.py` 提供同一本机 API 的命令入口。Seed Audio 与 Lyria 的实际提交入口也先核验当前包并保存提交快照；规格中的 `production` 包含 `url`、`requirement_id`、`operation_id` 和 `call_id`。工具参数必须逐项等于方案参数：Seed Audio 使用完整 `audio_config` 与 `watermark`，Lyria 使用 `store` 与实际 `response_format`；参考按上传顺序核对原件哈希及范围。\n3. 轮询或回调沿 `/api/production/result` 保存，携带唯一回执 `id`、`call_id`、`submission_sha256` 和真实 `status`。返回原件时提供已入库文件的 `asset` 元数据；其稳定身份由调用确定，补文件仍更新同一候选。真实请求、响应、费用和文件证据归原调用，不改已知事实。此接口不调用生成平台。\n4. 通过 `/api/production/reuse-candidate` 将准确候选方案复制到当前需求，携带 `id`、`requirement_id`、`candidate_id` 和 `expected_content`。缺失原方案、引用过时或目标冲突会拒绝；不补用最新文件，不触发生成。进一步改稿仍走方法步骤。\n\n`scripts/register_text_handoffs.py --operation 唯一本地制作身份` 登记可编辑字层工程；先通过方法流程准备需求，同身份恢复只补齐原操作，新制作使用新身份。它保留真实本地制作来源，不调用付费模型。\n\n已有真实候选但没有当前方案的旧素材，可按 [工作区流程](../generation-workspaces.md#旧素材补齐当前方案) 从自己的确切提交补齐内部当前稿，包括仅有 ASSET 身份及原需求已退役的素材流。公共素材身份与 M 编号不变，退役需求不复活；已有当前稿不覆盖，历史缺口保留，非媒体历史依据不转成上传输入。\n\n界面统一呈现“当前方案 | 候选 候选1…”；没有候选时只保留“当前方案 | 候选”。普通进入先读当前方案，准确候选与旧评论链接仍定位原候选。选择候选仅改变阅读目标，不改变生成所选输入。候选的 Prompt、参数和参考直接可读；未保存的历史参数显示缺口。\n\n## 意见及实际整改\n\n对当前制作内容保存意见时带 `expected_edit_token`，服务在事务中核对后保存当时原摘录。正文后来修改，原话、时间、作者及摘录保留；相似文字不视为原位置。候选音频时间段、图像区域仍绑定原件。`comment-handling-v1` 继续承担实际回应；当前制作回应另带 `expected_response_content`，记录真实处置说明和必要局部改后锚点。原意见提供改前摘录，回应保存改后摘录及摘要；再次修改当前稿不会把当时处理结果冒充今天的正文。\n\n## 物理清除与常规恢复\n\n当前制作不再保留旧素材版本、轮次、旧方案全文及其专属索引。现有实例先在隔离库验证，再沿 `scripts/material_review_release.py prepare --remove-material-versions` 进入受管发布窗口：核验准确基线、停止写入应用，在事务中删除退役数据和缓存索引，保全候选提交、原件、评论及实际回应；随后压实数据库并检查旧数据确实不存在。事务失败时回滚，已完成清除不重复执行。\n\n不制作或保留旧素材版本的物理备份。清除回执只记录计数、摘要和校验结果；之后使用兼容当前模型的服务前向恢复，不启动旧写入模型，也不把历史任务库覆盖正式库。并行任务的有效新增内容沿准确当前数据增量承接。\n\n完整公开导出为 Schema 14：保存当前制作单份正文、不可变提交快照、真实候选、意见／回应摘录、故事版本、独立 SKILL 文件历史及有效配置方法。通过现有 `restore` 入口恢复到新空实例；旧格式不能重新带入退役模型。私有执行只在显式选择后另行恢复，准确旧方法包保持原字节，不覆盖已经更新的方法头。原件及真实费用回执不因取消素材版本而删除。\n",
+          "templates/reading.json": "{\n  \"format\": \"audiovisual-reading-v1\",\n  \"episode\": \"准确集序号\",\n  \"reading\": {\n    \"source\": \"准确剧本文件\",\n    \"source_sha256\": \"实际文件摘要\",\n    \"stage\": \"实际阅读与相邻镜回读范围\"\n  },\n  \"working_notes\": {\n    \"准确集或场对象\": \"当前制作说明，原地迭代\"\n  },\n  \"shots\": [\n    {\n      \"object_id\": \"准确镜头对象\",\n      \"sources\": [\n        {\n          \"object_id\": \"准确剧本集\",\n          \"revision_id\": \"准确版本\",\n          \"scene_id\": \"自然场\",\n          \"block_ids\": [\n            \"准确段落\"\n          ]\n        }\n      ],\n      \"purpose\": \"本镜让观众理解或感受什么\",\n      \"key_states\": [\n        {\n          \"id\": \"本镜时刻\",\n          \"description\": \"确需独立素材的画面或动作关系\",\n          \"requirements\": [\n            {\n              \"object_id\": \"已有素材需求\",\n              \"revision_id\": \"准确方案\"\n            }\n          ]\n        }\n      ],\n      \"products\": [\n        {\n          \"label\": \"实际产物名称\",\n          \"requirement\": {\n            \"object_id\": \"已有素材需求\",\n            \"revision_id\": \"准确方案\"\n          }\n        }\n      ]\n    }\n  ]\n}\n"
+        },
+        "format": "managed-method-skill-v1",
+        "inputs": "准确全剧理解、当前整集和自然场正文、输入锁、必要相邻场及相关原件；区分源文事实与允许设计的调度。",
+        "outputs": "understanding、principles、design、handoff、review 五步；逐镜目的、状态、产物引用和真实连读发现。",
+        "purpose": "让观众理解每镜作用，让制作者准备真正需要的状态与准确产物",
+        "required_inputs": [
+          "context"
+        ],
+        "resources": [
+          {
+            "object_id": "method.resource.filmcraft-execution",
+            "revision_id": "36250178f2e3a73145233f593f2871ea00502119003c08251c58270a9a08acf3",
+            "section": "narrative",
+            "when": {
+              "need_narrative": true
+            }
+          },
+          {
+            "object_id": "method.resource.filmcraft-execution",
+            "revision_id": "36250178f2e3a73145233f593f2871ea00502119003c08251c58270a9a08acf3",
+            "section": "coverage",
+            "when": {
+              "need_coverage": true
+            }
+          },
+          {
+            "object_id": "method.resource.filmcraft-execution",
+            "revision_id": "36250178f2e3a73145233f593f2871ea00502119003c08251c58270a9a08acf3",
+            "section": "cinematography",
+            "when": {
+              "need_cinematography": true
+            }
+          },
+          {
+            "object_id": "method.resource.filmcraft-execution",
+            "revision_id": "36250178f2e3a73145233f593f2871ea00502119003c08251c58270a9a08acf3",
+            "section": "camera",
+            "when": {
+              "need_camera": true
+            }
+          },
+          {
+            "object_id": "method.resource.filmcraft-execution",
+            "revision_id": "36250178f2e3a73145233f593f2871ea00502119003c08251c58270a9a08acf3",
+            "section": "staging",
+            "when": {
+              "need_staging": true
+            }
+          },
+          {
+            "object_id": "method.resource.filmcraft-execution",
+            "revision_id": "36250178f2e3a73145233f593f2871ea00502119003c08251c58270a9a08acf3",
+            "section": "lighting",
+            "when": {
+              "need_lighting": true
+            }
+          },
+          {
+            "object_id": "method.resource.filmcraft-execution",
+            "revision_id": "36250178f2e3a73145233f593f2871ea00502119003c08251c58270a9a08acf3",
+            "section": "color",
+            "when": {
+              "need_color": true
+            }
+          },
+          {
+            "object_id": "method.resource.filmcraft-execution",
+            "revision_id": "36250178f2e3a73145233f593f2871ea00502119003c08251c58270a9a08acf3",
+            "section": "design",
+            "when": {
+              "need_design": true
+            }
+          },
+          {
+            "object_id": "method.resource.filmcraft-execution",
+            "revision_id": "36250178f2e3a73145233f593f2871ea00502119003c08251c58270a9a08acf3",
+            "section": "performance",
+            "when": {
+              "need_performance": true
+            }
+          },
+          {
+            "object_id": "method.resource.filmcraft-execution",
+            "revision_id": "36250178f2e3a73145233f593f2871ea00502119003c08251c58270a9a08acf3",
+            "section": "editing",
+            "when": {
+              "need_editing": true
+            }
+          },
+          {
+            "object_id": "method.resource.filmcraft-execution",
+            "revision_id": "36250178f2e3a73145233f593f2871ea00502119003c08251c58270a9a08acf3",
+            "section": "sound",
+            "when": {
+              "need_sound": true
+            }
+          },
+          {
+            "object_id": "method.resource.filmcraft-execution",
+            "revision_id": "36250178f2e3a73145233f593f2871ea00502119003c08251c58270a9a08acf3",
+            "section": "animation-ai",
+            "when": {
+              "need_animation-ai": true
+            }
+          },
+          {
+            "object_id": "method.resource.filmcraft-execution",
+            "revision_id": "36250178f2e3a73145233f593f2871ea00502119003c08251c58270a9a08acf3",
+            "section": "guide",
+            "when": {
+              "need_guide": true
+            }
+          },
+          {
+            "object_id": "method.resource.filmcraft-execution",
+            "revision_id": "36250178f2e3a73145233f593f2871ea00502119003c08251c58270a9a08acf3",
+            "section": "quick-reference",
+            "when": {
+              "need_quick-reference": true
+            }
+          },
+          {
+            "object_id": "method.resource.filmcraft-execution",
+            "revision_id": "36250178f2e3a73145233f593f2871ea00502119003c08251c58270a9a08acf3",
+            "section": "sources",
+            "when": {
+              "need_sources": true
+            }
+          }
+        ],
+        "steps": [
+          "understanding",
+          "principles",
+          "design",
+          "handoff",
+          "review"
+        ],
+        "title": "镜头目的、关键状态与产物方案",
+        "work_types": [
+          "audiovisual-design"
+        ]
+      },
+      "created_at": "2026-10-12T10:51:57+00:00",
+      "dependencies": [
+        {
+          "revision_id": "36250178f2e3a73145233f593f2871ea00502119003c08251c58270a9a08acf3",
+          "role": "method-resource"
+        }
+      ]
+    },
+    {
       "object_id": "method.skill.comment-polish",
       "kind": "GUIDANCE",
       "version": 1,
@@ -6680,6 +7023,50 @@
       ]
     },
     {
+      "object_id": "method.skill.generation-preflight",
+      "kind": "GUIDANCE",
+      "version": 8,
+      "revision_id": "fe25ae57340198eacb2f65382ec9acc968d9d21dba7823248632e6f3ba8db597",
+      "payload": {
+        "applies": "把已审媒体方案交给既有生成准备入口，核清准确输入与授权，形成可追溯准备结果或可行动的缺项。",
+        "checks": "对照准确原文与原件判断，缺项交回明确阶段；保存不等于认可或调用授权。",
+        "files": {
+          "SKILL.md": "---\nname: generation-preflight\ndescription: 把已审媒体方案交给既有生成准备入口，核清准确输入与授权，形成可追溯准备结果或可行动的缺项。\n---\n\n把已审媒体方案交给既有生成准备入口，核清准确输入与授权，形成可追溯准备结果或可行动的缺项。\n\n输入必须是准确素材方案修订、完整输入锁、准确参考及用途说明、已确定原词、实际工具渠道和本次调用授权/额度上限。取得本方法不产生付费许可；本轮方法库试用只做准备，不发起生成。缺少哪一项明确回到负责的剧本、素材、方案或授权阶段，不用默认值补齐。\n\ndraft 先复核方法/输入快照与当前方案的一致性；准备期间上游当前内容改变时重新读取并另起步骤；已经提交的调用继续使用自身快照，不改旧回执。核对真实原件哈希、图片像素、音视频区间及与 Prompt 编号的对应，确认使用的是选定原件而非卡片预览。准确参考、文字、输入锁和渠道任一不满足时保留阻断。模型档位和能力执行前读当前 CLI，不能沿旧记忆认定兼容。\n\n调用已有 generation prepare/材料准备 API，保存实际就绪结果、准确准备身份及错误；不要另建调用旁路。review 检查模型收到的只有必要 Prompt、媒体与参数，共用手册、哈希和内部检查没有误进 Prompt。对未就绪结果确认每条缺项可回到具体负责人/步骤；不能为演示通过删除 blockers 或伪造认可。\n\nresult 是既有准备包及本次授权的明确边界，或仍被阻断的准确结果。真正调用须在相同准备包、余额/次数/费用约束下执行；超时先查询远端状态，未知时不重复收费。结果审阅另开步骤实际听看；准备成功既不等于调用，也不等于效果合格。\n\n## 意见、修订与回查\n\n动笔前读取所选准确修订及其相关原评论；历史意见连同原文、作者、发生时间和范围理解，不把沉默推成质量认可。AI 自检、机器检测与用户反馈分别记录。对意见作出实际修改后，通过现有 comment-handling-v1 回应保存原评论及版本、处置说明、实际修改说明、内容摘要和必要局部前后片段；未修改则说明依据和边界。读者可从原意见对照原文、实际修订与上下文；不改原锚点，不把旧意见冒充新稿意见。关闭或重开评论只是整理讨论，不是后续工作的批准或阻断条件。\n\n方案在授权内按准确输入、真实原件和质量检查推进，不要求逐对象审批。素材选择固定准确候选、组成及片段；改用新输入须重读并更新方案依赖，冻结调用不换输入。缺失、已撤回、错配、无效参数或循环仍按真实约束处理。付费、正式写入和部署仍遵守本次任务授权。\n\n## 当前制作内容与候选\n\n执行前阅读 references/current-production.md。制作对象原地维护，步骤摘要不保存全文历史；只有实际提交保存候选所需完整快照。草稿、回读、自检及完成仍按本方法的必要步骤执行。故事域版本不受此规则影响。\n",
+          "references/current-production.md": "# 当前制作内容与生成候选\n\n故事资料、方向、结构、小说和文字剧本继续保留各自版本。实体、必要实体状态、业务关系、视听集场镜、输入锁和素材需求只维护当前内容。有效实体状态必须至少拥有一项真实独立素材需求；需求的 scope 是唯一制作出处，states 只是使用范围。先从准确原文和场镜目标判断独立素材职责，再抽取状态，不能为了保状态制造或复制需求。实体身份足以承担的基准形象不另造状态；纯表演、普通持放、账目阶段和连续性条件由实际实体、镜头或方案承接。结构、通行、干湿和声音差异确需独立准备时，保留有真实需求支持的必要状态。\n\n正式导入和增量发布检查整笔提交后的当前树。状态与真实需求可同笔新增；移走或撤下最后一项需求时，同步承接状态条件、所有当前引用与关系，撤下或归并状态。隔离作者文件可以暂存未完成判断，不新增长期草稿库或审批。撤下前读准确原文和消费者，不能按零需求计数直接批删；历史调用、候选、原件、原意见与执行快照继续准确回查。\n\n实体自身稳定的基础制作职责直接归实体，不按媒体类型、已有结果或是否有状态机械分类：图像身份、说话音色、空间布局、道具结构及歌曲完整演唱都可属于实体。只有确需独立准备的不同形态、结构、声音或演法才建状态及独占需求；完整歌曲与剧中省段、缺词、哼唱和角色演法分别判断。“基础状态”只是实体直属需求的列表分组名，不建立同名 ST。确无独立制作职责的提及对象或由场景、字层、镜内动作承接的对象可以没有需求，保留身份和实际承接位置，不为计数补造素材。迁移基础需求时保留 M 身份及其候选、原件、真实输入与意见，当前消费者按必要字段承接，历史快照和旧方法执行保持当时事实。\n\n当前稿更新使用稳定对象身份和并发标记，不再保存制作全文修订链，也不因改一个镜头推进场、集版本。\n\n每个素材需求只有一个当前方案。一次真实调用返回原件后形成一个候选，候选展示提交前保存的完整方案、实际模型、参数、Prompt、有序参考及文件范围。同参数再次调用是另一个候选；回调、下载重试、状态推进和多文件组成仍归原调用。上传或外部制作保留真实来源，不虚构模型调用。未返回原件的失败或未知调用不产生候选；未知请求先查询原身份。\n\n## 状态正文与按需属性\n\n状态先用一份独立可读描述讲清同一实体此刻的完整形态与必要阶段差异，再保留实际供业务消费的属性。complete-v1 不要求按类型填满属性；不相关项省略，不填“如上”“依场次”或重复整段。独有声音、真实未知与必要条件必须仍可读。来源与实体归属仍须准确，空正文不能用标题、用途或引文代替。当前方案只将本次模型需要的确定内容写入 Prompt；真实未知保存在 unknowns，确实阻断制作时同时写入既有 production_blockers 或 generation.blockers。不能通过删除缺项放行未选原件。\n\n## 唯一制作出处与准确参考\n\n需求的 `scope` 是唯一制作出处，指向一个实体、必要实体状态或镜头。`entities`、`states`、关系的场景上下文、计划输入与实际输入说明使用范围，不增加拥有者；通过集场筛选找到素材后，仍回到该出处。实体身份、状态差异和镜头产物各自列自己的需求，不复制共用身份。镜头的 `key_states` 只记录确需独立准备的关键画面或动作关系，可以为空；它不是人物状态清单。\n\n每个当前候选只属于一个当前需求。引用卡、Prompt 和搜索通过同一准确身份核对原件旧编号、当前需求及候选号，保留原修订、文件组成、裁切和时间范围。选用已有候选是准确原件引用，不因候选来自同一需求就变成未来依赖循环；未产出的需求自依赖仍须拒绝。\n\n退役原件沿已保存提交说明当时需求与退出原因，不按相似外观或共用实体硬塞进当前需求。没有保存当时需求就保留未知；缺组件时显示已知名称、出处证据和不可用原因，不能用今天的相似原件补位。修复只能来自身份可核实的原件。有效输出不因历史输入缺口自动消失，历史缺口也不等于当前输入已就绪。\n\n## 制作、提交与恢复\n\n1. 从当前对象读取 `edit_token`（并发编辑计数）和 `content_sha256`（当前内容摘要），通过现有 `scripts/media_method.py` 完成方法准备、草稿、回读和定稿，再 `production-import`。步骤不满足、输入已变或目标冲突时保留工作区草稿，回读后另起步骤。新制作方法的数据库记录只保存摘要、方法和执行事实；完整工作输入及草稿仅留在任务 `.runtime/`，恢复用途结束后清理。过去的方法执行事实保持原样。\n2. 用 `production-generation-package` 取得准确准备包。对外提交前调用 `/api/production/submit`，提交唯一 `id`、`call_id`、`requirement_id`、`expected_content`、`package_sha256` 和实际 `tool`。返回后才可发起外部请求；同身份返回 `already_applied=true` 时只查询原调用。`scripts/generation_operation.py` 提供同一本机 API 的命令入口。Seed Audio 与 Lyria 的实际提交入口也先核验当前包并保存提交快照；规格中的 `production` 包含 `url`、`requirement_id`、`operation_id` 和 `call_id`。工具参数必须逐项等于方案参数：Seed Audio 使用完整 `audio_config` 与 `watermark`，Lyria 使用 `store` 与实际 `response_format`；参考按上传顺序核对原件哈希及范围。\n3. 轮询或回调沿 `/api/production/result` 保存，携带唯一回执 `id`、`call_id`、`submission_sha256` 和真实 `status`。返回原件时提供已入库文件的 `asset` 元数据；其稳定身份由调用确定，补文件仍更新同一候选。真实请求、响应、费用和文件证据归原调用，不改已知事实。此接口不调用生成平台。\n4. 通过 `/api/production/reuse-candidate` 将准确候选方案复制到当前需求，携带 `id`、`requirement_id`、`candidate_id` 和 `expected_content`。缺失原方案、引用过时或目标冲突会拒绝；不补用最新文件，不触发生成。进一步改稿仍走方法步骤。\n\n`scripts/register_text_handoffs.py --operation 唯一本地制作身份` 登记可编辑字层工程；先通过方法流程准备需求，同身份恢复只补齐原操作，新制作使用新身份。它保留真实本地制作来源，不调用付费模型。\n\n已有真实候选但没有当前方案的旧素材，可按 [工作区流程](../generation-workspaces.md#旧素材补齐当前方案) 从自己的确切提交补齐内部当前稿，包括仅有 ASSET 身份及原需求已退役的素材流。公共素材身份与 M 编号不变，退役需求不复活；已有当前稿不覆盖，历史缺口保留，非媒体历史依据不转成上传输入。\n\n界面统一呈现“当前方案 | 候选 候选1…”；没有候选时只保留“当前方案 | 候选”。普通进入先读当前方案，准确候选与旧评论链接仍定位原候选。选择候选仅改变阅读目标，不改变生成所选输入。候选的 Prompt、参数和参考直接可读；未保存的历史参数显示缺口。\n\n## 意见及实际整改\n\n对当前制作内容保存意见时带 `expected_edit_token`，服务在事务中核对后保存当时原摘录。正文后来修改，原话、时间、作者及摘录保留；相似文字不视为原位置。候选音频时间段、图像区域仍绑定原件。`comment-handling-v1` 继续承担实际回应；当前制作回应另带 `expected_response_content`，记录真实处置说明和必要局部改后锚点。原意见提供改前摘录，回应保存改后摘录及摘要；再次修改当前稿不会把当时处理结果冒充今天的正文。\n\n## 物理清除与常规恢复\n\n当前制作不再保留旧素材版本、轮次、旧方案全文及其专属索引。现有实例先在隔离库验证，再沿 `scripts/material_review_release.py prepare --remove-material-versions` 进入受管发布窗口：核验准确基线、停止写入应用，在事务中删除退役数据和缓存索引，保全候选提交、原件、评论及实际回应；随后压实数据库并检查旧数据确实不存在。事务失败时回滚，已完成清除不重复执行。\n\n不制作或保留旧素材版本的物理备份。清除回执只记录计数、摘要和校验结果；之后使用兼容当前模型的服务前向恢复，不启动旧写入模型，也不把历史任务库覆盖正式库。并行任务的有效新增内容沿准确当前数据增量承接。\n\n完整公开导出为 Schema 14：保存当前制作单份正文、不可变提交快照、真实候选、意见／回应摘录、故事版本、独立 SKILL 文件历史及有效配置方法。通过现有 `restore` 入口恢复到新空实例；旧格式不能重新带入退役模型。私有执行只在显式选择后另行恢复，准确旧方法包保持原字节，不覆盖已经更新的方法头。原件及真实费用回执不因取消素材版本而删除。\n"
+        },
+        "format": "managed-method-skill-v1",
+        "inputs": "request.json 中的准确材料、授权范围与当前工作目的。",
+        "outputs": "按本包阶段保存的实际产物及可定位的回读判断。",
+        "purpose": "把已审媒体方案交给既有生成准备入口，核清准确输入与授权，形成可追溯准备结果或可行动的缺项。",
+        "required_inputs": [
+          "context"
+        ],
+        "resources": [
+          {
+            "object_id": "method.resource.continuity",
+            "revision_id": "b2886e752736f9b20312300c4c4dbffbf15b6feb08728fed96a82f508aa6848f",
+            "section": "continuity"
+          }
+        ],
+        "steps": [
+          "draft",
+          "review",
+          "result"
+        ],
+        "title": "真实生成执行准备",
+        "work_types": [
+          "generation-preflight"
+        ]
+      },
+      "created_at": "2026-10-12T10:51:57+00:00",
+      "dependencies": [
+        {
+          "revision_id": "b2886e752736f9b20312300c4c4dbffbf15b6feb08728fed96a82f508aa6848f",
+          "role": "method-resource"
+        }
+      ]
+    },
+    {
       "object_id": "method.skill.image-plan",
       "kind": "GUIDANCE",
       "version": 1,
@@ -7431,6 +7818,82 @@
       ]
     },
     {
+      "object_id": "method.skill.image-plan",
+      "kind": "GUIDANCE",
+      "version": 11,
+      "revision_id": "3941c8324b92d60aa036e011f6e1a920a7070964aa9518b839fd27f6646cd5f9",
+      "payload": {
+        "applies": "为当前实体、完整状态或镜头首帧编写图像方案与模型 Prompt，依据实际原件明确身份、构图和修改范围。",
+        "checks": "对照准确原文与原件判断，缺项交回明确阶段；保存不等于认可或调用授权。",
+        "files": {
+          "SKILL.md": "---\nname: image-plan\ndescription: 为当前实体、完整状态或镜头首帧编写图像方案与模型 Prompt，依据实际原件明确身份、构图和修改范围。\n---\n\n为当前实体、完整状态或镜头首帧编写图像方案与模型 Prompt，依据实际原件明确身份、构图和修改范围。\n\n先读 request.json、record.json、references/record-contract.md 和实际参考图。取得当前完整状态、输入锁及相邻镜头首尾关系；缺准确原件交素材准备，不能用名字替代。读 staging 检查站位/通路/持物，design 检查用途，按问题选 cinematography、lighting、color。首帧是动作尚待发生的起点，不能把本镜终态提前画入；用上一镜最后可见状态核对。\n\n保存 draft：比较复用、局部编辑、新制和不需单独图的路线；明确各图承担身份、构图、风格还是物件参考。用干净母版保持轮廓比例、配色、线条与背景笔触。图像谱系按真实父参考算最深链，遵项目最多两代的边界；失败回母版，不靠反复整图迁移堆纹理。写清必须改与必须保持的部分，但不要求模型记住哈希/任务编号。\n\n模型 Prompt 单列可见场景、人物关系、起始姿态、画面重点、光色风格与必要限制；参数和尺寸放实际字段。渠道沿项目现行工具约定，执行前查实际能力；请求档位不等于输出像素。保留源原件，不放大后冒称原生分辨率。\n\nreview 实际重读 Prompt 并再次对比参考，检查身份/衣着可复用但姿势/道具不适用的部分、主体与背景层次、手部接触和起点。result 交方案、准确参考、检查目标及未就绪项。没有生成就不写生成效果通过；真实生成另过准确输入准备和调用授权。\n\n先读 [当前阶段的准确关系](references/relations.md)，再将适用约束融入本次 Prompt。关系正文和准确输入在 request.json 中随本步骤冻结；参考选择不由摘要或图中箭头代替。\n\n## 意见、修订与回查\n\n动笔前读取所选准确修订及其相关原评论；历史意见连同原文、作者、发生时间和范围理解，不把沉默推成质量认可。AI 自检、机器检测与用户反馈分别记录。对意见作出实际修改后，通过现有 comment-handling-v1 回应保存原评论及版本、处置说明、实际修改说明、内容摘要和必要局部前后片段；未修改则说明依据和边界。读者可从原意见对照原文、实际修订与上下文；不改原锚点，不把旧意见冒充新稿意见。关闭或重开评论只是整理讨论，不是后续工作的批准或阻断条件。\n\n方案在授权内按准确输入、真实原件和质量检查推进，不要求逐对象审批。素材选择固定准确候选、组成及片段；改用新输入须重读并更新方案依赖，冻结调用不换输入。缺失、已撤回、错配、无效参数或循环仍按真实约束处理。付费、正式写入和部署仍遵守本次任务授权。\n\n## 当前制作内容与候选\n\n执行前阅读 references/current-production.md。制作对象原地维护，步骤摘要不保存全文历史；只有实际提交保存候选所需完整快照。草稿、回读、自检及完成仍按本方法的必要步骤执行。故事域版本不受此规则影响。\n",
+          "references/current-production.md": "# 当前制作内容与生成候选\n\n故事资料、方向、结构、小说和文字剧本继续保留各自版本。实体、必要实体状态、业务关系、视听集场镜、输入锁和素材需求只维护当前内容。有效实体状态必须至少拥有一项真实独立素材需求；需求的 scope 是唯一制作出处，states 只是使用范围。先从准确原文和场镜目标判断独立素材职责，再抽取状态，不能为了保状态制造或复制需求。实体身份足以承担的基准形象不另造状态；纯表演、普通持放、账目阶段和连续性条件由实际实体、镜头或方案承接。结构、通行、干湿和声音差异确需独立准备时，保留有真实需求支持的必要状态。\n\n正式导入和增量发布检查整笔提交后的当前树。状态与真实需求可同笔新增；移走或撤下最后一项需求时，同步承接状态条件、所有当前引用与关系，撤下或归并状态。隔离作者文件可以暂存未完成判断，不新增长期草稿库或审批。撤下前读准确原文和消费者，不能按零需求计数直接批删；历史调用、候选、原件、原意见与执行快照继续准确回查。\n\n实体自身稳定的基础制作职责直接归实体，不按媒体类型、已有结果或是否有状态机械分类：图像身份、说话音色、空间布局、道具结构及歌曲完整演唱都可属于实体。只有确需独立准备的不同形态、结构、声音或演法才建状态及独占需求；完整歌曲与剧中省段、缺词、哼唱和角色演法分别判断。“基础状态”只是实体直属需求的列表分组名，不建立同名 ST。确无独立制作职责的提及对象或由场景、字层、镜内动作承接的对象可以没有需求，保留身份和实际承接位置，不为计数补造素材。迁移基础需求时保留 M 身份及其候选、原件、真实输入与意见，当前消费者按必要字段承接，历史快照和旧方法执行保持当时事实。\n\n当前稿更新使用稳定对象身份和并发标记，不再保存制作全文修订链，也不因改一个镜头推进场、集版本。\n\n每个素材需求只有一个当前方案。一次真实调用返回原件后形成一个候选，候选展示提交前保存的完整方案、实际模型、参数、Prompt、有序参考及文件范围。同参数再次调用是另一个候选；回调、下载重试、状态推进和多文件组成仍归原调用。上传或外部制作保留真实来源，不虚构模型调用。未返回原件的失败或未知调用不产生候选；未知请求先查询原身份。\n\n## 状态正文与按需属性\n\n状态先用一份独立可读描述讲清同一实体此刻的完整形态与必要阶段差异，再保留实际供业务消费的属性。complete-v1 不要求按类型填满属性；不相关项省略，不填“如上”“依场次”或重复整段。独有声音、真实未知与必要条件必须仍可读。来源与实体归属仍须准确，空正文不能用标题、用途或引文代替。当前方案只将本次模型需要的确定内容写入 Prompt；真实未知保存在 unknowns，确实阻断制作时同时写入既有 production_blockers 或 generation.blockers。不能通过删除缺项放行未选原件。\n\n## 唯一制作出处与准确参考\n\n需求的 `scope` 是唯一制作出处，指向一个实体、必要实体状态或镜头。`entities`、`states`、关系的场景上下文、计划输入与实际输入说明使用范围，不增加拥有者；通过集场筛选找到素材后，仍回到该出处。实体身份、状态差异和镜头产物各自列自己的需求，不复制共用身份。镜头的 `key_states` 只记录确需独立准备的关键画面或动作关系，可以为空；它不是人物状态清单。\n\n每个当前候选只属于一个当前需求。引用卡、Prompt 和搜索通过同一准确身份核对原件旧编号、当前需求及候选号，保留原修订、文件组成、裁切和时间范围。选用已有候选是准确原件引用，不因候选来自同一需求就变成未来依赖循环；未产出的需求自依赖仍须拒绝。\n\n退役原件沿已保存提交说明当时需求与退出原因，不按相似外观或共用实体硬塞进当前需求。没有保存当时需求就保留未知；缺组件时显示已知名称、出处证据和不可用原因，不能用今天的相似原件补位。修复只能来自身份可核实的原件。有效输出不因历史输入缺口自动消失，历史缺口也不等于当前输入已就绪。\n\n## 制作、提交与恢复\n\n1. 从当前对象读取 `edit_token`（并发编辑计数）和 `content_sha256`（当前内容摘要），通过现有 `scripts/media_method.py` 完成方法准备、草稿、回读和定稿，再 `production-import`。步骤不满足、输入已变或目标冲突时保留工作区草稿，回读后另起步骤。新制作方法的数据库记录只保存摘要、方法和执行事实；完整工作输入及草稿仅留在任务 `.runtime/`，恢复用途结束后清理。过去的方法执行事实保持原样。\n2. 用 `production-generation-package` 取得准确准备包。对外提交前调用 `/api/production/submit`，提交唯一 `id`、`call_id`、`requirement_id`、`expected_content`、`package_sha256` 和实际 `tool`。返回后才可发起外部请求；同身份返回 `already_applied=true` 时只查询原调用。`scripts/generation_operation.py` 提供同一本机 API 的命令入口。Seed Audio 与 Lyria 的实际提交入口也先核验当前包并保存提交快照；规格中的 `production` 包含 `url`、`requirement_id`、`operation_id` 和 `call_id`。工具参数必须逐项等于方案参数：Seed Audio 使用完整 `audio_config` 与 `watermark`，Lyria 使用 `store` 与实际 `response_format`；参考按上传顺序核对原件哈希及范围。\n3. 轮询或回调沿 `/api/production/result` 保存，携带唯一回执 `id`、`call_id`、`submission_sha256` 和真实 `status`。返回原件时提供已入库文件的 `asset` 元数据；其稳定身份由调用确定，补文件仍更新同一候选。真实请求、响应、费用和文件证据归原调用，不改已知事实。此接口不调用生成平台。\n4. 通过 `/api/production/reuse-candidate` 将准确候选方案复制到当前需求，携带 `id`、`requirement_id`、`candidate_id` 和 `expected_content`。缺失原方案、引用过时或目标冲突会拒绝；不补用最新文件，不触发生成。进一步改稿仍走方法步骤。\n\n`scripts/register_text_handoffs.py --operation 唯一本地制作身份` 登记可编辑字层工程；先通过方法流程准备需求，同身份恢复只补齐原操作，新制作使用新身份。它保留真实本地制作来源，不调用付费模型。\n\n已有真实候选但没有当前方案的旧素材，可按 [工作区流程](../generation-workspaces.md#旧素材补齐当前方案) 从自己的确切提交补齐内部当前稿，包括仅有 ASSET 身份及原需求已退役的素材流。公共素材身份与 M 编号不变，退役需求不复活；已有当前稿不覆盖，历史缺口保留，非媒体历史依据不转成上传输入。\n\n界面统一呈现“当前方案 | 候选 候选1…”；没有候选时只保留“当前方案 | 候选”。普通进入先读当前方案，准确候选与旧评论链接仍定位原候选。选择候选仅改变阅读目标，不改变生成所选输入。候选的 Prompt、参数和参考直接可读；未保存的历史参数显示缺口。\n\n## 意见及实际整改\n\n对当前制作内容保存意见时带 `expected_edit_token`，服务在事务中核对后保存当时原摘录。正文后来修改，原话、时间、作者及摘录保留；相似文字不视为原位置。候选音频时间段、图像区域仍绑定原件。`comment-handling-v1` 继续承担实际回应；当前制作回应另带 `expected_response_content`，记录真实处置说明和必要局部改后锚点。原意见提供改前摘录，回应保存改后摘录及摘要；再次修改当前稿不会把当时处理结果冒充今天的正文。\n\n## 物理清除与常规恢复\n\n当前制作不再保留旧素材版本、轮次、旧方案全文及其专属索引。现有实例先在隔离库验证，再沿 `scripts/material_review_release.py prepare --remove-material-versions` 进入受管发布窗口：核验准确基线、停止写入应用，在事务中删除退役数据和缓存索引，保全候选提交、原件、评论及实际回应；随后压实数据库并检查旧数据确实不存在。事务失败时回滚，已完成清除不重复执行。\n\n不制作或保留旧素材版本的物理备份。清除回执只记录计数、摘要和校验结果；之后使用兼容当前模型的服务前向恢复，不启动旧写入模型，也不把历史任务库覆盖正式库。并行任务的有效新增内容沿准确当前数据增量承接。\n\n完整公开导出为 Schema 14：保存当前制作单份正文、不可变提交快照、真实候选、意见／回应摘录、故事版本、独立 SKILL 文件历史及有效配置方法。通过现有 `restore` 入口恢复到新空实例；旧格式不能重新带入退役模型。私有执行只在显式选择后另行恢复，准确旧方法包保持原字节，不覆盖已经更新的方法头。原件及真实费用回执不因取消素材版本而删除。\n",
+          "references/record-contract.md": "# 媒体方案交付字段\n\nrecord.json 是本步骤准确基线。只修改本次请求允许的字段；保留 object_id、kind、expected_version 与全部准确引用。expected_version 是登记时的并发保护，目标前进后不能手改数字继续提交，须回读新版本、新建步骤。\n\npayload.generation.format 固定为 generation-plan-v1；method 只能是 generate 或 reuse。model、tool、execution、parameters、randomization 和 inputs 各自有实际接口含义，保留已核实的值；改动需要准确依据。参数里的数值保持数值，不换成解释句。\n\nprompt 是给媒体模型的实际内容指令。output 含 name、description 和 review_criteria 字符串数组。blockers 是尚未满足条件的字符串数组；它们不会进入媒体 Prompt。generation.conditions 是“条件标识 → true/false”的对象，generation.selected_routes 是既定路线选择对象；两者属于既有输入关系协议，不能写入创作说明、字符串判断或待办。解释选择可写在本次 review 的 assessment 中，阻断写在 blockers 中。\n\ninputs 是既有准确参考数组，保留 reference、角色、用途、候选和范围等实际字段。selection_state=unselected 表示尚未选定，不能通过填写任意文件或自报认可变成就绪。缺原词、原件或输入锁时保留阻断；不得用新编内容补齐。\n\n先把完整草稿写入 draft-record.json，通过 draft 登记。保存并实际重读后，把发现与修订判断写入 review.md，通过 review 登记。最后写 final-record.json 并执行 finish。服务端会校验 JSON 载荷、准确引用与步骤顺序；拒绝时按错误修正本阶段，成功后的步骤不可重写，进一步修改须新建步骤。\n\nfinish 输出的是待 production-import 的准确登记包，仍需目标并发版本、原有制作校验与方法依据全部通过才成为受管方案；它不表示已生成、获认可或获调用许可。正式发布沿项目既有增量流程，不把执行库快照覆盖到正式库。\n",
+          "references/relations.md": "# 按当前阶段使用准确关系\n\n先读 request.json 的 relation_readings 与 contextual_relations。前者包含准确参考和方案所钉住的完整关系修订；后者包含本对象、所属镜头与其他素材的完整关系。摘要只帮助定位，不能代替关系原文、当前作品、镜头起止状态和准确输入。没有取得原件就不宣称已经看听。\n\n关系以两端稳定对象为身份，同一对只读一份连贯内容。R-A->B 表示 B 依赖 A，R-A-B 表示相关；图上是相关也可以在具体方案中明确选 A 为 B 的输入。人物行为的方向不等于制作依赖。不同阶段的动作与条件先判断在本次是否已发生，不把相反阶段同时施加，不从当前关系补造旧 CALL 的依据。\n\n逐项判断参考在本次约束什么：身份、完整状态、构图、空间、音色、旋律或可读文字。保留已有正确 Prompt，只修遗漏、冲突与提前呈现。首帧只描述起点；音色不连带继承旧台词、语气、呼吸、环境和认可；文字随真实书写、翻页或揭纸阶段显现。具体改动写成模型能执行的声画与动作，融入原有段落，不逐项粘贴关系全文或在 Prompt 添加关系编号、修订号和技术检查。\n\n关系存在不自动选择或上传参考。generation.inputs 的 reference、relation、semantics、necessity、group、route、condition、enabled、material_selection、component_id、crop 与 range 保留各自职责：relation 是准确关系引用，semantics/necessity 等是这次方案的明确选择；同一上游的不同组成或时段仍分别保存。只检查当前选中路线的缺项和循环，未选择的备选保持可回查。上下游是稳定身份，版本、候选、裁切、时段不能写到关系身份里。\n\n保存 draft 后完整回读 Prompt、实际选中输入和关系正文，逐组说明保留与修订的理由，检查相邻镜头和已知阶段。review 不把静态校验写成观看、试听或用户认可。result 保留未解决条件；冻结执行继续原方法、原输入，换方法或作品依据必须开始新步骤。\n"
+        },
+        "format": "managed-method-skill-v1",
+        "inputs": "request.json 中的准确材料、授权范围与当前工作目的。",
+        "outputs": "按本包阶段保存的实际产物及可定位的回读判断。",
+        "purpose": "为当前实体、完整状态或镜头首帧编写图像方案与模型 Prompt，依据实际原件明确身份、构图和修改范围。",
+        "required_inputs": [
+          "context",
+          "records"
+        ],
+        "resources": [
+          {
+            "object_id": "method.resource.filmcraft-execution",
+            "revision_id": "36250178f2e3a73145233f593f2871ea00502119003c08251c58270a9a08acf3",
+            "section": "staging"
+          },
+          {
+            "object_id": "method.resource.filmcraft-execution",
+            "revision_id": "36250178f2e3a73145233f593f2871ea00502119003c08251c58270a9a08acf3",
+            "section": "design"
+          },
+          {
+            "object_id": "method.resource.filmcraft-execution",
+            "revision_id": "36250178f2e3a73145233f593f2871ea00502119003c08251c58270a9a08acf3",
+            "section": "cinematography",
+            "when": {
+              "need_cinematography": true
+            }
+          },
+          {
+            "object_id": "method.resource.filmcraft-execution",
+            "revision_id": "36250178f2e3a73145233f593f2871ea00502119003c08251c58270a9a08acf3",
+            "section": "lighting",
+            "when": {
+              "need_lighting": true
+            }
+          },
+          {
+            "object_id": "method.resource.filmcraft-execution",
+            "revision_id": "36250178f2e3a73145233f593f2871ea00502119003c08251c58270a9a08acf3",
+            "section": "color",
+            "when": {
+              "need_color": true
+            }
+          }
+        ],
+        "steps": [
+          "draft",
+          "review",
+          "result"
+        ],
+        "title": "图像方案与提示词",
+        "work_types": [
+          "media-plan"
+        ]
+      },
+      "created_at": "2026-10-12T10:51:57+00:00",
+      "dependencies": [
+        {
+          "revision_id": "36250178f2e3a73145233f593f2871ea00502119003c08251c58270a9a08acf3",
+          "role": "method-resource"
+        }
+      ]
+    },
+    {
       "object_id": "method.skill.material-assessment",
       "kind": "GUIDANCE",
       "version": 1,
@@ -8010,6 +8473,72 @@
         ]
       },
       "created_at": "2026-10-12T08:49:32+00:00",
+      "dependencies": [
+        {
+          "revision_id": "36250178f2e3a73145233f593f2871ea00502119003c08251c58270a9a08acf3",
+          "role": "method-resource"
+        },
+        {
+          "revision_id": "b2886e752736f9b20312300c4c4dbffbf15b6feb08728fed96a82f508aa6848f",
+          "role": "method-resource"
+        }
+      ]
+    },
+    {
+      "object_id": "method.skill.material-assessment",
+      "kind": "GUIDANCE",
+      "version": 10,
+      "revision_id": "f70f8264c7a625a5db7c3d36d59ab6b4bc901630dbaf1a32f126cc9edb196da1",
+      "payload": {
+        "applies": "逐集逐场逐镜抽取或修订制作对象；真实自有需求决定状态存在。",
+        "checks": "真实制作职责、整笔自有需求、准确消费者、逐集回读修订与历史保护。",
+        "files": {
+          "SKILL.md": "---\nname: material-assessment\ndescription: 从准确作品与场镜目标抽取实体、必要状态和真实素材需求，明确名称、唯一出处、复用及下游交接。\n---\n\n# 实体、状态与素材需求抽取\n\n交给制作者一份能够继续工作的当前制作依据：它是谁或是什么、哪些差异需要独立准备、具体准备什么、由谁拥有、在哪里使用，以及还缺什么。实体不是场次清单，状态不是动作日志，素材需求不是为了填满字段而补出的占位。镜头也是实体，沿实际镜头身份组织机位、首帧、视频与工程；没有独立状态需要时可以没有状态。\n\n## 先读依据与实际使用\n\n取得锁定作品、当前集的完整原文、集内场镜顺序和必要前后承接。读取相关实体、状态、唯一出处的直接需求、当前方案、关系、准确输入、原评论及可用原件。固定原文与当前内容摘要；不以最新指针替换输入锁，不凭旧表或名称补故事事实。跨集索引供按需回查，不递归装入全剧全部依赖。\n\n从观众在本场必须看懂、听懂的事情出发，逐项区分身份、独立形态、动作或事件阶段、物件持有与连续性条件、实际制作产物。提及和画外发声不等于入画；相同地点在不同灯光下不自动成为两个实体。群体中的独立说话者保留可辨身份，动物不套单人服装模板。\n\n## 基础职责直接归实体\n\n实体自身稳定的基础制作职责直接归实体，不按媒体类型、已有结果或是否有状态机械分类：图像身份、说话音色、空间布局、道具结构及歌曲完整演唱都可属于实体。只有确需独立准备的不同形态、结构、声音或演法才建状态及独占需求；完整歌曲与剧中省段、缺词、哼唱和角色演法分别判断。“基础状态”只是实体直属需求的列表分组名，不建立同名 ST。确无独立制作职责的提及对象或由场景、字层、镜内动作承接的对象可以没有需求，保留身份和实际承接位置，不为计数补造素材。迁移基础需求时保留 M 身份及其候选、原件、真实输入与意见，当前消费者按必要字段承接，历史快照和旧方法执行保持当时事实。\n\n## 由真实需求决定必要状态\n\n有效实体状态必须至少拥有一项真实独立素材需求，以该状态为需求的唯一 scope。states 使用范围、间接输入、关系数量和可引用原件均不算拥有权。需求可以是图像、音频或其他确有必要的独立产物，可以多项，不要求每状态一张图。先说明独立产物帮助哪一步制作或判断，再决定是否抽取状态；不能先保住状态编号再复制或虚构需求。\n\n身份参考已够用时，不另造基准状态。纯表演、持放、账目阶段、疲劳反应和仅需核对的连续性信息，归入对应实体、准确镜头、方案或关系。干湿部位、伤口处理、空间通行、道具结构、纸页和曲词或演法的真实制作差异不能被归并掉。标题只是索引，完整正文应独立说明同一时刻必要形态；属性按实际用途填写，真实未知单独保留。\n\n正式提交检查整笔结果。状态与其真实需求允许同笔新增；移走、归并或撤下最后一项需求时，同笔承接状态条件、所有当前引用及关系，并归并或撤下状态。隔离作者文件可暂存未完成判断，不新增长期草稿库、审批或管理入口。撤下前先读原文与全部消费者，不能按零需求计数直接批删；退役收据只供历史回查，不能再成为当前输入。\n\n## 唯一制作出处与复用\n\n每项需求只有一个 scope，指向一个实体、必要状态或镜头。实体图像身份、状态差异和镜头产物分别拥有自己的需求；其他地方引用同一需求，不复制拥有权。entities、states、关系上下文和使用范围说明在哪里使用，不能改变出处。准确候选固定原件组成、哈希及裁切或时间范围；普通关联不等于采用、实际输入或生成许可。\n\n判断复用时实际打开图像，检查身份、轮廓、比例、服装、湿区、伤口、手与道具、空间结构及画框职责；实际听音频对应片段，检查声音身份、词句、演法、气口与噪声。名字、时长、历史认可和技术规格不能证明当前用途适配。未看、未听就写明未验与下一步；仍可作文字职责判断，不能声称原件复用质量已通过。\n\n比较直接复用、局部编辑、新制和无需独立素材四条路线，写清各自能承担什么、不能继承什么。身份可借用但动作或持物不合时拆清职责；完整歌曲不同于省段、缺词、哼唱或角色演唱参考。不自动制作逐句对白轨，现场表演与环境声沿镜头方案交接。图像谱系沿准确输入计算最深一支；从干净母版出发，修订代数按当前项目规则，不因加回母版重置。\n\n## 用名称表达制作职责\n\n编号沿稳定身份独立展示，不因改名换号。实体用作品中可辨名称，重名由真实身份或地点区分。状态用“实体名 · 必要形态”，只表达足以区分独立准备职责的差异，不堆全部属性或使用版本、候选、工作进度词。\n\n需求用对象加实际制作职责，同类用同一词：\n\n- 人物、群体或动物：“图像身份参考”；例如“李寄 · 图像身份参考”和“阿蘅 · 图像身份参考”。母版属于原件质量与谱系事实，不混入需求职责。\n- 空间：“空间布局参考”；道具：“结构参考”；确需局部制作时说明真实部位的“细节参考”。\n- 状态：“整体形态参考”，或明确部位的“细节参考”；独立声音差异按真实演法或片段命名，不强制套图像词。\n- 说话身份：“说话人名 · 音色参考”；歌曲写曲名和“完整演唱”或具体片段、词句与演法。\n- 镜头：“镜头短名 · 主机位参考／首帧／视频”；字层工程写明具体歌词、账目或字幕交付目标。\n\n当前 title、generation.output.name、列表、详情、引用卡和 Prompt 可点击名使用同一当前名称。历史候选提交时的名字、原参数、原输入、评论摘录和旧执行保持当时事实；不把历史名判成当前命名错误。内部 slot 与 ID 没有必要不迁移。系统检查确定的一致性，中文正则和数量不代替创作判断。\n\n## 按集推进、保存后回读与修订\n\n先用风险样例走完整小循环，检查方法歧义与交接，再按全剧顺序逐集工作，集内逐场逐镜。\n\n1. draft：读该集准确原文、相邻镜与现有消费者，重新判断每项实体身份、必要形态、真实素材需求、出处、引用与名称。说明新增、保留、归并或撤下的定位依据，准备准确记录与条件迁移；脚本只整理已经作出的判断。\n2. 实际 read：保存后从作者入口取回原值，按正文核对同一时点、持有、干湿部位、伤口处理、空间通路、词句与演法。检查全部消费者和上下游，不能在换布前使用净布，不能把放刀后的膝软提前到举刀时。\n3. review：写明实际读到了什么、发现什么、依据在哪里、怎样修订或为什么保留。发现后集影响前集时回修准确范围，不能一次填全表再补写逐集过程。\n4. result：交付准确当前对象、显式映射或退役原因、唯一需求与路线、有效条件承接位置、准确引用和名称、尚未就绪项及负责阶段。同步真正编制源和恢复入口，避免下次重生退役对象或旧名。\n\n集末连读关键变化，全剧从末集回看重复对象与跨镜条件。覆盖以执行时真实有效分母为准，包含全部实体类型、镜头及图像／音频／视频／工程职责；数量不变不是目标，结构检查不是创作完成。\n\n## 保护与下游交接\n\n故事结构、小说、锁定剧本和已确认叙事意图不因抽取变化而改写。保留有效原件、干净母版与谱系、真实候选和调用、原评论及准确旧执行。当前消费者更新到真实拥有者；必要剧情、表演与连续性条件在实际使用它的实体或镜头可读，不留断链等待下游补救。全剧视频正文重编由下游在稳定抽取结果上完成，本步只迁必要语义和准确引用，不擅自扩展为整剧重写或付费生成。\n\n动笔前理解原意见及准确上下文。实际修改后沿 comment-handling-v1 回应实际处置、内容摘要与必要前后片段；未修改说明依据与边界。关闭评论只是整理讨论，不新增审批。输入改变、并发冲突或目标不可用时保留草稿，回读后开准确新步骤；同包中断先查询原回执再恢复，不换目标或原件补缺。\n\n执行前阅读 references/current-production.md。制作对象原地维护，步骤只保存必要方法摘要和事实，过程全文留在有恢复用途的任务工作区。正式增量、服务发布、真实页面与空实例恢复分别核验；方法使用不等于艺术质量、用户认可或生成许可，始终遵守本次授权。\n",
+          "references/current-production.md": "# 当前制作内容与生成候选\n\n故事资料、方向、结构、小说和文字剧本继续保留各自版本。实体、必要实体状态、业务关系、视听集场镜、输入锁和素材需求只维护当前内容。有效实体状态必须至少拥有一项真实独立素材需求；需求的 scope 是唯一制作出处，states 只是使用范围。先从准确原文和场镜目标判断独立素材职责，再抽取状态，不能为了保状态制造或复制需求。实体身份足以承担的基准形象不另造状态；纯表演、普通持放、账目阶段和连续性条件由实际实体、镜头或方案承接。结构、通行、干湿和声音差异确需独立准备时，保留有真实需求支持的必要状态。\n\n正式导入和增量发布检查整笔提交后的当前树。状态与真实需求可同笔新增；移走或撤下最后一项需求时，同步承接状态条件、所有当前引用与关系，撤下或归并状态。隔离作者文件可以暂存未完成判断，不新增长期草稿库或审批。撤下前读准确原文和消费者，不能按零需求计数直接批删；历史调用、候选、原件、原意见与执行快照继续准确回查。\n\n实体自身稳定的基础制作职责直接归实体，不按媒体类型、已有结果或是否有状态机械分类：图像身份、说话音色、空间布局、道具结构及歌曲完整演唱都可属于实体。只有确需独立准备的不同形态、结构、声音或演法才建状态及独占需求；完整歌曲与剧中省段、缺词、哼唱和角色演法分别判断。“基础状态”只是实体直属需求的列表分组名，不建立同名 ST。确无独立制作职责的提及对象或由场景、字层、镜内动作承接的对象可以没有需求，保留身份和实际承接位置，不为计数补造素材。迁移基础需求时保留 M 身份及其候选、原件、真实输入与意见，当前消费者按必要字段承接，历史快照和旧方法执行保持当时事实。\n\n当前稿更新使用稳定对象身份和并发标记，不再保存制作全文修订链，也不因改一个镜头推进场、集版本。\n\n每个素材需求只有一个当前方案。一次真实调用返回原件后形成一个候选，候选展示提交前保存的完整方案、实际模型、参数、Prompt、有序参考及文件范围。同参数再次调用是另一个候选；回调、下载重试、状态推进和多文件组成仍归原调用。上传或外部制作保留真实来源，不虚构模型调用。未返回原件的失败或未知调用不产生候选；未知请求先查询原身份。\n\n## 状态正文与按需属性\n\n状态先用一份独立可读描述讲清同一实体此刻的完整形态与必要阶段差异，再保留实际供业务消费的属性。complete-v1 不要求按类型填满属性；不相关项省略，不填“如上”“依场次”或重复整段。独有声音、真实未知与必要条件必须仍可读。来源与实体归属仍须准确，空正文不能用标题、用途或引文代替。当前方案只将本次模型需要的确定内容写入 Prompt；真实未知保存在 unknowns，确实阻断制作时同时写入既有 production_blockers 或 generation.blockers。不能通过删除缺项放行未选原件。\n\n## 唯一制作出处与准确参考\n\n需求的 `scope` 是唯一制作出处，指向一个实体、必要实体状态或镜头。`entities`、`states`、关系的场景上下文、计划输入与实际输入说明使用范围，不增加拥有者；通过集场筛选找到素材后，仍回到该出处。实体身份、状态差异和镜头产物各自列自己的需求，不复制共用身份。镜头的 `key_states` 只记录确需独立准备的关键画面或动作关系，可以为空；它不是人物状态清单。\n\n每个当前候选只属于一个当前需求。引用卡、Prompt 和搜索通过同一准确身份核对原件旧编号、当前需求及候选号，保留原修订、文件组成、裁切和时间范围。选用已有候选是准确原件引用，不因候选来自同一需求就变成未来依赖循环；未产出的需求自依赖仍须拒绝。\n\n退役原件沿已保存提交说明当时需求与退出原因，不按相似外观或共用实体硬塞进当前需求。没有保存当时需求就保留未知；缺组件时显示已知名称、出处证据和不可用原因，不能用今天的相似原件补位。修复只能来自身份可核实的原件。有效输出不因历史输入缺口自动消失，历史缺口也不等于当前输入已就绪。\n\n## 制作、提交与恢复\n\n1. 从当前对象读取 `edit_token`（并发编辑计数）和 `content_sha256`（当前内容摘要），通过现有 `scripts/media_method.py` 完成方法准备、草稿、回读和定稿，再 `production-import`。步骤不满足、输入已变或目标冲突时保留工作区草稿，回读后另起步骤。新制作方法的数据库记录只保存摘要、方法和执行事实；完整工作输入及草稿仅留在任务 `.runtime/`，恢复用途结束后清理。过去的方法执行事实保持原样。\n2. 用 `production-generation-package` 取得准确准备包。对外提交前调用 `/api/production/submit`，提交唯一 `id`、`call_id`、`requirement_id`、`expected_content`、`package_sha256` 和实际 `tool`。返回后才可发起外部请求；同身份返回 `already_applied=true` 时只查询原调用。`scripts/generation_operation.py` 提供同一本机 API 的命令入口。Seed Audio 与 Lyria 的实际提交入口也先核验当前包并保存提交快照；规格中的 `production` 包含 `url`、`requirement_id`、`operation_id` 和 `call_id`。工具参数必须逐项等于方案参数：Seed Audio 使用完整 `audio_config` 与 `watermark`，Lyria 使用 `store` 与实际 `response_format`；参考按上传顺序核对原件哈希及范围。\n3. 轮询或回调沿 `/api/production/result` 保存，携带唯一回执 `id`、`call_id`、`submission_sha256` 和真实 `status`。返回原件时提供已入库文件的 `asset` 元数据；其稳定身份由调用确定，补文件仍更新同一候选。真实请求、响应、费用和文件证据归原调用，不改已知事实。此接口不调用生成平台。\n4. 通过 `/api/production/reuse-candidate` 将准确候选方案复制到当前需求，携带 `id`、`requirement_id`、`candidate_id` 和 `expected_content`。缺失原方案、引用过时或目标冲突会拒绝；不补用最新文件，不触发生成。进一步改稿仍走方法步骤。\n\n`scripts/register_text_handoffs.py --operation 唯一本地制作身份` 登记可编辑字层工程；先通过方法流程准备需求，同身份恢复只补齐原操作，新制作使用新身份。它保留真实本地制作来源，不调用付费模型。\n\n已有真实候选但没有当前方案的旧素材，可按 [工作区流程](../generation-workspaces.md#旧素材补齐当前方案) 从自己的确切提交补齐内部当前稿，包括仅有 ASSET 身份及原需求已退役的素材流。公共素材身份与 M 编号不变，退役需求不复活；已有当前稿不覆盖，历史缺口保留，非媒体历史依据不转成上传输入。\n\n界面统一呈现“当前方案 | 候选 候选1…”；没有候选时只保留“当前方案 | 候选”。普通进入先读当前方案，准确候选与旧评论链接仍定位原候选。选择候选仅改变阅读目标，不改变生成所选输入。候选的 Prompt、参数和参考直接可读；未保存的历史参数显示缺口。\n\n## 意见及实际整改\n\n对当前制作内容保存意见时带 `expected_edit_token`，服务在事务中核对后保存当时原摘录。正文后来修改，原话、时间、作者及摘录保留；相似文字不视为原位置。候选音频时间段、图像区域仍绑定原件。`comment-handling-v1` 继续承担实际回应；当前制作回应另带 `expected_response_content`，记录真实处置说明和必要局部改后锚点。原意见提供改前摘录，回应保存改后摘录及摘要；再次修改当前稿不会把当时处理结果冒充今天的正文。\n\n## 物理清除与常规恢复\n\n当前制作不再保留旧素材版本、轮次、旧方案全文及其专属索引。现有实例先在隔离库验证，再沿 `scripts/material_review_release.py prepare --remove-material-versions` 进入受管发布窗口：核验准确基线、停止写入应用，在事务中删除退役数据和缓存索引，保全候选提交、原件、评论及实际回应；随后压实数据库并检查旧数据确实不存在。事务失败时回滚，已完成清除不重复执行。\n\n不制作或保留旧素材版本的物理备份。清除回执只记录计数、摘要和校验结果；之后使用兼容当前模型的服务前向恢复，不启动旧写入模型，也不把历史任务库覆盖正式库。并行任务的有效新增内容沿准确当前数据增量承接。\n\n完整公开导出为 Schema 14：保存当前制作单份正文、不可变提交快照、真实候选、意见／回应摘录、故事版本、独立 SKILL 文件历史及有效配置方法。通过现有 `restore` 入口恢复到新空实例；旧格式不能重新带入退役模型。私有执行只在显式选择后另行恢复，准确旧方法包保持原字节，不覆盖已经更新的方法头。原件及真实费用回执不因取消素材版本而删除。\n"
+        },
+        "format": "managed-method-skill-v1",
+        "inputs": "request.json 中的准确材料、授权范围与当前工作目的。",
+        "outputs": "准确对象与需求、名称、唯一出处、引用及条件迁移；增删判断、缺项与下游交接。",
+        "purpose": "从准确作品与场镜目标抽取实体、必要状态和真实素材需求，统一命名、唯一出处、复用及下游交接。",
+        "required_inputs": [
+          "context"
+        ],
+        "resources": [
+          {
+            "object_id": "method.resource.filmcraft-execution",
+            "revision_id": "36250178f2e3a73145233f593f2871ea00502119003c08251c58270a9a08acf3",
+            "section": "staging"
+          },
+          {
+            "object_id": "method.resource.filmcraft-execution",
+            "revision_id": "36250178f2e3a73145233f593f2871ea00502119003c08251c58270a9a08acf3",
+            "section": "design"
+          },
+          {
+            "object_id": "method.resource.filmcraft-execution",
+            "revision_id": "36250178f2e3a73145233f593f2871ea00502119003c08251c58270a9a08acf3",
+            "section": "sound",
+            "when": {
+              "need_sound": true
+            }
+          },
+          {
+            "object_id": "method.resource.continuity",
+            "revision_id": "b2886e752736f9b20312300c4c4dbffbf15b6feb08728fed96a82f508aa6848f",
+            "section": "continuity"
+          }
+        ],
+        "steps": [
+          "draft",
+          "review",
+          "result"
+        ],
+        "title": "实体、状态与素材需求抽取",
+        "work_types": [
+          "material-assessment"
+        ]
+      },
+      "created_at": "2026-10-12T10:51:57+00:00",
       "dependencies": [
         {
           "revision_id": "36250178f2e3a73145233f593f2871ea00502119003c08251c58270a9a08acf3",
@@ -10406,6 +10935,80 @@
       ]
     },
     {
+      "object_id": "method.skill.result-review",
+      "kind": "GUIDANCE",
+      "version": 8,
+      "revision_id": "60e897e33275ba419354ff4d8f19bf87cec59b994fb28d6509220210db34b9e7",
+      "payload": {
+        "applies": "对真实图像、声音或视频原件与准确目标进行审阅，定位问题原因，选择有限修订并复验受影响关系。",
+        "checks": "对照准确原文与原件判断，缺项交回明确阶段；保存不等于认可或调用授权。",
+        "files": {
+          "SKILL.md": "---\nname: result-review\ndescription: 对真实图像、声音或视频原件与准确目标进行审阅，定位问题原因，选择有限修订并复验受影响关系。\n---\n\n对真实图像、声音或视频原件与准确目标进行审阅，定位问题原因，选择有限修订并复验受影响关系。\n\n取得实际输出原件、准确 Prompt/参数/参考与调用回执、当前场镜及必要相邻镜。图像实际打开，声音实际收听，视频按正常速度连看并在问题处逐帧/分段核对；技术规格、模型成功状态和摘要不能替代作品检查。缺能力或原件就写清未验项目，不自报通过。\n\ndraft 先说明观众应看懂/听懂什么，再定位现象到画面区域、时间段或准确词句。连续性核对起点、动作因果、落点、下一镜首个未完成动作和道具归属；只核覆盖过同一段源文不足。sound 按需要查声源和表演，staging 检查通路/接触，animation-ai 区分身份漂移、时间负荷、物理接触、声音和生成不稳定。\n\nreview 将观察到的现象与原因假设分开，比较上游设计不成立、参考职责冲突、Prompt 含糊/负荷过大和本次随机失败。以能解决原因的最小改动选择剪取、局部编辑、改路线/拆镜、重生成或回上游。正确反复、停顿和背景动作有作用就保留，不统一提速/去重。没有证据不能把所有失败归模型；只加“高质量/更多细节”不是原因修复。\n\nresult 交可定位问题、依据、修订方案及复验范围。修改准确输入或已冻结产物需新步骤，保持旧原件/评论可追溯；图像到允许代数仍不合格回干净母版。新结果先对目标核验，再连看受影响相邻镜，集级改动还复核集内与跨集关系。创作者自检、独立观察、人工采用和最终媒体质量分别陈述。\n\n## 意见、修订与回查\n\n动笔前读取所选准确修订及其相关原评论；历史意见连同原文、作者、发生时间和范围理解，不把沉默推成质量认可。AI 自检、机器检测与用户反馈分别记录。对意见作出实际修改后，通过现有 comment-handling-v1 回应保存原评论及版本、处置说明、实际修改说明、内容摘要和必要局部前后片段；未修改则说明依据和边界。读者可从原意见对照原文、实际修订与上下文；不改原锚点，不把旧意见冒充新稿意见。关闭或重开评论只是整理讨论，不是后续工作的批准或阻断条件。\n\n方案在授权内按准确输入、真实原件和质量检查推进，不要求逐对象审批。素材选择固定准确候选、组成及片段；改用新输入须重读并更新方案依赖，冻结调用不换输入。缺失、已撤回、错配、无效参数或循环仍按真实约束处理。付费、正式写入和部署仍遵守本次任务授权。\n\n## 当前制作内容与候选\n\n执行前阅读 references/current-production.md。制作对象原地维护，步骤摘要不保存全文历史；只有实际提交保存候选所需完整快照。草稿、回读、自检及完成仍按本方法的必要步骤执行。故事域版本不受此规则影响。\n",
+          "references/current-production.md": "# 当前制作内容与生成候选\n\n故事资料、方向、结构、小说和文字剧本继续保留各自版本。实体、必要实体状态、业务关系、视听集场镜、输入锁和素材需求只维护当前内容。有效实体状态必须至少拥有一项真实独立素材需求；需求的 scope 是唯一制作出处，states 只是使用范围。先从准确原文和场镜目标判断独立素材职责，再抽取状态，不能为了保状态制造或复制需求。实体身份足以承担的基准形象不另造状态；纯表演、普通持放、账目阶段和连续性条件由实际实体、镜头或方案承接。结构、通行、干湿和声音差异确需独立准备时，保留有真实需求支持的必要状态。\n\n正式导入和增量发布检查整笔提交后的当前树。状态与真实需求可同笔新增；移走或撤下最后一项需求时，同步承接状态条件、所有当前引用与关系，撤下或归并状态。隔离作者文件可以暂存未完成判断，不新增长期草稿库或审批。撤下前读准确原文和消费者，不能按零需求计数直接批删；历史调用、候选、原件、原意见与执行快照继续准确回查。\n\n实体自身稳定的基础制作职责直接归实体，不按媒体类型、已有结果或是否有状态机械分类：图像身份、说话音色、空间布局、道具结构及歌曲完整演唱都可属于实体。只有确需独立准备的不同形态、结构、声音或演法才建状态及独占需求；完整歌曲与剧中省段、缺词、哼唱和角色演法分别判断。“基础状态”只是实体直属需求的列表分组名，不建立同名 ST。确无独立制作职责的提及对象或由场景、字层、镜内动作承接的对象可以没有需求，保留身份和实际承接位置，不为计数补造素材。迁移基础需求时保留 M 身份及其候选、原件、真实输入与意见，当前消费者按必要字段承接，历史快照和旧方法执行保持当时事实。\n\n当前稿更新使用稳定对象身份和并发标记，不再保存制作全文修订链，也不因改一个镜头推进场、集版本。\n\n每个素材需求只有一个当前方案。一次真实调用返回原件后形成一个候选，候选展示提交前保存的完整方案、实际模型、参数、Prompt、有序参考及文件范围。同参数再次调用是另一个候选；回调、下载重试、状态推进和多文件组成仍归原调用。上传或外部制作保留真实来源，不虚构模型调用。未返回原件的失败或未知调用不产生候选；未知请求先查询原身份。\n\n## 状态正文与按需属性\n\n状态先用一份独立可读描述讲清同一实体此刻的完整形态与必要阶段差异，再保留实际供业务消费的属性。complete-v1 不要求按类型填满属性；不相关项省略，不填“如上”“依场次”或重复整段。独有声音、真实未知与必要条件必须仍可读。来源与实体归属仍须准确，空正文不能用标题、用途或引文代替。当前方案只将本次模型需要的确定内容写入 Prompt；真实未知保存在 unknowns，确实阻断制作时同时写入既有 production_blockers 或 generation.blockers。不能通过删除缺项放行未选原件。\n\n## 唯一制作出处与准确参考\n\n需求的 `scope` 是唯一制作出处，指向一个实体、必要实体状态或镜头。`entities`、`states`、关系的场景上下文、计划输入与实际输入说明使用范围，不增加拥有者；通过集场筛选找到素材后，仍回到该出处。实体身份、状态差异和镜头产物各自列自己的需求，不复制共用身份。镜头的 `key_states` 只记录确需独立准备的关键画面或动作关系，可以为空；它不是人物状态清单。\n\n每个当前候选只属于一个当前需求。引用卡、Prompt 和搜索通过同一准确身份核对原件旧编号、当前需求及候选号，保留原修订、文件组成、裁切和时间范围。选用已有候选是准确原件引用，不因候选来自同一需求就变成未来依赖循环；未产出的需求自依赖仍须拒绝。\n\n退役原件沿已保存提交说明当时需求与退出原因，不按相似外观或共用实体硬塞进当前需求。没有保存当时需求就保留未知；缺组件时显示已知名称、出处证据和不可用原因，不能用今天的相似原件补位。修复只能来自身份可核实的原件。有效输出不因历史输入缺口自动消失，历史缺口也不等于当前输入已就绪。\n\n## 制作、提交与恢复\n\n1. 从当前对象读取 `edit_token`（并发编辑计数）和 `content_sha256`（当前内容摘要），通过现有 `scripts/media_method.py` 完成方法准备、草稿、回读和定稿，再 `production-import`。步骤不满足、输入已变或目标冲突时保留工作区草稿，回读后另起步骤。新制作方法的数据库记录只保存摘要、方法和执行事实；完整工作输入及草稿仅留在任务 `.runtime/`，恢复用途结束后清理。过去的方法执行事实保持原样。\n2. 用 `production-generation-package` 取得准确准备包。对外提交前调用 `/api/production/submit`，提交唯一 `id`、`call_id`、`requirement_id`、`expected_content`、`package_sha256` 和实际 `tool`。返回后才可发起外部请求；同身份返回 `already_applied=true` 时只查询原调用。`scripts/generation_operation.py` 提供同一本机 API 的命令入口。Seed Audio 与 Lyria 的实际提交入口也先核验当前包并保存提交快照；规格中的 `production` 包含 `url`、`requirement_id`、`operation_id` 和 `call_id`。工具参数必须逐项等于方案参数：Seed Audio 使用完整 `audio_config` 与 `watermark`，Lyria 使用 `store` 与实际 `response_format`；参考按上传顺序核对原件哈希及范围。\n3. 轮询或回调沿 `/api/production/result` 保存，携带唯一回执 `id`、`call_id`、`submission_sha256` 和真实 `status`。返回原件时提供已入库文件的 `asset` 元数据；其稳定身份由调用确定，补文件仍更新同一候选。真实请求、响应、费用和文件证据归原调用，不改已知事实。此接口不调用生成平台。\n4. 通过 `/api/production/reuse-candidate` 将准确候选方案复制到当前需求，携带 `id`、`requirement_id`、`candidate_id` 和 `expected_content`。缺失原方案、引用过时或目标冲突会拒绝；不补用最新文件，不触发生成。进一步改稿仍走方法步骤。\n\n`scripts/register_text_handoffs.py --operation 唯一本地制作身份` 登记可编辑字层工程；先通过方法流程准备需求，同身份恢复只补齐原操作，新制作使用新身份。它保留真实本地制作来源，不调用付费模型。\n\n已有真实候选但没有当前方案的旧素材，可按 [工作区流程](../generation-workspaces.md#旧素材补齐当前方案) 从自己的确切提交补齐内部当前稿，包括仅有 ASSET 身份及原需求已退役的素材流。公共素材身份与 M 编号不变，退役需求不复活；已有当前稿不覆盖，历史缺口保留，非媒体历史依据不转成上传输入。\n\n界面统一呈现“当前方案 | 候选 候选1…”；没有候选时只保留“当前方案 | 候选”。普通进入先读当前方案，准确候选与旧评论链接仍定位原候选。选择候选仅改变阅读目标，不改变生成所选输入。候选的 Prompt、参数和参考直接可读；未保存的历史参数显示缺口。\n\n## 意见及实际整改\n\n对当前制作内容保存意见时带 `expected_edit_token`，服务在事务中核对后保存当时原摘录。正文后来修改，原话、时间、作者及摘录保留；相似文字不视为原位置。候选音频时间段、图像区域仍绑定原件。`comment-handling-v1` 继续承担实际回应；当前制作回应另带 `expected_response_content`，记录真实处置说明和必要局部改后锚点。原意见提供改前摘录，回应保存改后摘录及摘要；再次修改当前稿不会把当时处理结果冒充今天的正文。\n\n## 物理清除与常规恢复\n\n当前制作不再保留旧素材版本、轮次、旧方案全文及其专属索引。现有实例先在隔离库验证，再沿 `scripts/material_review_release.py prepare --remove-material-versions` 进入受管发布窗口：核验准确基线、停止写入应用，在事务中删除退役数据和缓存索引，保全候选提交、原件、评论及实际回应；随后压实数据库并检查旧数据确实不存在。事务失败时回滚，已完成清除不重复执行。\n\n不制作或保留旧素材版本的物理备份。清除回执只记录计数、摘要和校验结果；之后使用兼容当前模型的服务前向恢复，不启动旧写入模型，也不把历史任务库覆盖正式库。并行任务的有效新增内容沿准确当前数据增量承接。\n\n完整公开导出为 Schema 14：保存当前制作单份正文、不可变提交快照、真实候选、意见／回应摘录、故事版本、独立 SKILL 文件历史及有效配置方法。通过现有 `restore` 入口恢复到新空实例；旧格式不能重新带入退役模型。私有执行只在显式选择后另行恢复，准确旧方法包保持原字节，不覆盖已经更新的方法头。原件及真实费用回执不因取消素材版本而删除。\n"
+        },
+        "format": "managed-method-skill-v1",
+        "inputs": "request.json 中的准确材料、授权范围与当前工作目的。",
+        "outputs": "按本包阶段保存的实际产物及可定位的回读判断。",
+        "purpose": "对真实图像、声音或视频原件与准确目标进行审阅，定位问题原因，选择有限修订并复验受影响关系。",
+        "required_inputs": [
+          "context"
+        ],
+        "resources": [
+          {
+            "object_id": "method.resource.filmcraft-execution",
+            "revision_id": "36250178f2e3a73145233f593f2871ea00502119003c08251c58270a9a08acf3",
+            "section": "staging"
+          },
+          {
+            "object_id": "method.resource.filmcraft-execution",
+            "revision_id": "36250178f2e3a73145233f593f2871ea00502119003c08251c58270a9a08acf3",
+            "section": "animation-ai"
+          },
+          {
+            "object_id": "method.resource.filmcraft-execution",
+            "revision_id": "36250178f2e3a73145233f593f2871ea00502119003c08251c58270a9a08acf3",
+            "section": "sound",
+            "when": {
+              "need_sound": true
+            }
+          },
+          {
+            "object_id": "method.resource.filmcraft-execution",
+            "revision_id": "36250178f2e3a73145233f593f2871ea00502119003c08251c58270a9a08acf3",
+            "section": "editing",
+            "when": {
+              "need_editing": true
+            }
+          },
+          {
+            "object_id": "method.resource.continuity",
+            "revision_id": "b2886e752736f9b20312300c4c4dbffbf15b6feb08728fed96a82f508aa6848f",
+            "section": "continuity"
+          }
+        ],
+        "steps": [
+          "draft",
+          "review",
+          "result"
+        ],
+        "title": "结果审阅与原因返修",
+        "work_types": [
+          "result-review"
+        ]
+      },
+      "created_at": "2026-10-12T10:51:57+00:00",
+      "dependencies": [
+        {
+          "revision_id": "36250178f2e3a73145233f593f2871ea00502119003c08251c58270a9a08acf3",
+          "role": "method-resource"
+        },
+        {
+          "revision_id": "b2886e752736f9b20312300c4c4dbffbf15b6feb08728fed96a82f508aa6848f",
+          "role": "method-resource"
+        }
+      ]
+    },
+    {
       "object_id": "method.skill.screenplay-scene",
       "kind": "GUIDANCE",
       "version": 1,
@@ -10708,6 +11311,70 @@
         ]
       },
       "created_at": "2026-10-12T10:09:13+00:00",
+      "dependencies": [
+        {
+          "revision_id": "36250178f2e3a73145233f593f2871ea00502119003c08251c58270a9a08acf3",
+          "role": "method-resource"
+        },
+        {
+          "revision_id": "63a21b5d7be17ef53f00eec3238d7aa770e201995930557c3339410d69bbf362",
+          "role": "method-resource"
+        }
+      ]
+    },
+    {
+      "object_id": "method.skill.song-plan",
+      "kind": "GUIDANCE",
+      "version": 3,
+      "revision_id": "3aa71411549381365ac80cd21b29596390eeda60c148ebfed3153f530323d8e7",
+      "payload": {
+        "applies": "素材需求的 media_type=audio，audio_type=song",
+        "checks": "准确原词、用途、真实模型和实际听审依据",
+        "files": {
+          "SKILL.md": "---\nname: song-plan\ndescription: 将准确歌词与戏剧情境转成可检查的演唱方案，分别设计旋律、节奏、演唱和音乐母带。\n---\n# 演唱方案\n\n演唱方案解决“唱什么、怎样唱、歌曲怎样推进这段戏”。它产出演唱与音乐方案、准确歌词和节奏依据、音乐原件及与画面的交接要求。音色参考可以作为输入，不能代替歌曲设计。\n\n## 01 锁定歌词与戏剧作用\n\n读取准确歌曲实体、歌词、演唱者和场景。明确是锁定原词、只锁语义、歌词尚未创作，还是无词哼唱；前两者的自由度不同，未定歌词必须先完成创作。写清歌声在画内还是画外、是否由人物亲口唱、此处希望观众听懂哪句或感到什么变化。\n\n## 02 分别选择音乐与声音路径\n\n项目已有演唱制作使用 Lyria 3.5（记录中的 lyria-3.5）；Seed Audio 的角色音色样本不等同于旋律、节奏和完整演唱生成能力。历史 Seed 歌曲或已有音乐可作为准确原件评估复用，不能据此保证某个模型当前支持所有歌曲输入。执行前核对实际模型、歌词控制、时长和参考能力、额度与授权；记录真实调用选择，不把换格式写成新演唱。\n\n## 03 写出歌曲和画面的交接\n\n明确歌词分句、旋律走向、拍感、速度、段落、呼吸与留白、演唱人数、声部及伴奏关系。比较直接复用、歌曲母带先行再配画面、局部剪辑或重新生成；为选择写明依据。与口型或动作同步时标出准确音频片段和节奏位置，不在画面生成时重新发明旋律或让所有角色都跟唱。需视频配合时再读取视频生成手册的歌曲案例，保持音乐原件与镜头引用准确。\n\n## 04 实际听整曲并回到场景\n\n逐字核对歌词是否增删、错唱或模糊，检查旋律、节奏、断句、呼吸、演唱身份、情绪和伴奏是否服务剧情。既听独立片段，也听整曲和前后镜头衔接。格式、时长或模型成功回执不代表唱词准确、听感合格或已被认可；失败须区分歌词、音乐、演唱和混音问题后再改方案。\n\n## 阅读顺序与交付\n\n先读本正文，再读[当前制作数据与交付](references/current-production.md)、[关系与准确引用](references/relations.md)、[步骤记录契约](references/record-contract.md)，最后读本次装入的影视专业知识章节。公共资料按冻结的准确引用取得；不另抄方法库。\n\n按 draft → review → result 交付：draft 是具体方案，review 必须记录实际回读发现及修订判断，result 是吸收检查后的完整方案。准备方案不等于已经生成；模型名称不等于能力验证；可用原件不等于已经被用户认可。结果审阅须实际听原件，不能以格式检测、波形或文字说明冒充听审。\n\n如果依据用户评论工作，先读准确原意见与原稿，完成实际回应稿后关联回应记录；采用与否仍由现有评论流程表达，不替用户采纳。不改写已冻结的旧执行。\n",
+          "references/current-production.md": "# 当前制作内容与生成候选\n\n故事资料、方向、结构、小说和文字剧本继续保留各自版本。实体、必要实体状态、业务关系、视听集场镜、输入锁和素材需求只维护当前内容。有效实体状态必须至少拥有一项真实独立素材需求；需求的 scope 是唯一制作出处，states 只是使用范围。先从准确原文和场镜目标判断独立素材职责，再抽取状态，不能为了保状态制造或复制需求。实体身份足以承担的基准形象不另造状态；纯表演、普通持放、账目阶段和连续性条件由实际实体、镜头或方案承接。结构、通行、干湿和声音差异确需独立准备时，保留有真实需求支持的必要状态。\n\n正式导入和增量发布检查整笔提交后的当前树。状态与真实需求可同笔新增；移走或撤下最后一项需求时，同步承接状态条件、所有当前引用与关系，撤下或归并状态。隔离作者文件可以暂存未完成判断，不新增长期草稿库或审批。撤下前读准确原文和消费者，不能按零需求计数直接批删；历史调用、候选、原件、原意见与执行快照继续准确回查。\n\n实体自身稳定的基础制作职责直接归实体，不按媒体类型、已有结果或是否有状态机械分类：图像身份、说话音色、空间布局、道具结构及歌曲完整演唱都可属于实体。只有确需独立准备的不同形态、结构、声音或演法才建状态及独占需求；完整歌曲与剧中省段、缺词、哼唱和角色演法分别判断。“基础状态”只是实体直属需求的列表分组名，不建立同名 ST。确无独立制作职责的提及对象或由场景、字层、镜内动作承接的对象可以没有需求，保留身份和实际承接位置，不为计数补造素材。迁移基础需求时保留 M 身份及其候选、原件、真实输入与意见，当前消费者按必要字段承接，历史快照和旧方法执行保持当时事实。\n\n当前稿更新使用稳定对象身份和并发标记，不再保存制作全文修订链，也不因改一个镜头推进场、集版本。\n\n每个素材需求只有一个当前方案。一次真实调用返回原件后形成一个候选，候选展示提交前保存的完整方案、实际模型、参数、Prompt、有序参考及文件范围。同参数再次调用是另一个候选；回调、下载重试、状态推进和多文件组成仍归原调用。上传或外部制作保留真实来源，不虚构模型调用。未返回原件的失败或未知调用不产生候选；未知请求先查询原身份。\n\n## 状态正文与按需属性\n\n状态先用一份独立可读描述讲清同一实体此刻的完整形态与必要阶段差异，再保留实际供业务消费的属性。complete-v1 不要求按类型填满属性；不相关项省略，不填“如上”“依场次”或重复整段。独有声音、真实未知与必要条件必须仍可读。来源与实体归属仍须准确，空正文不能用标题、用途或引文代替。当前方案只将本次模型需要的确定内容写入 Prompt；真实未知保存在 unknowns，确实阻断制作时同时写入既有 production_blockers 或 generation.blockers。不能通过删除缺项放行未选原件。\n\n## 唯一制作出处与准确参考\n\n需求的 `scope` 是唯一制作出处，指向一个实体、必要实体状态或镜头。`entities`、`states`、关系的场景上下文、计划输入与实际输入说明使用范围，不增加拥有者；通过集场筛选找到素材后，仍回到该出处。实体身份、状态差异和镜头产物各自列自己的需求，不复制共用身份。镜头的 `key_states` 只记录确需独立准备的关键画面或动作关系，可以为空；它不是人物状态清单。\n\n每个当前候选只属于一个当前需求。引用卡、Prompt 和搜索通过同一准确身份核对原件旧编号、当前需求及候选号，保留原修订、文件组成、裁切和时间范围。选用已有候选是准确原件引用，不因候选来自同一需求就变成未来依赖循环；未产出的需求自依赖仍须拒绝。\n\n退役原件沿已保存提交说明当时需求与退出原因，不按相似外观或共用实体硬塞进当前需求。没有保存当时需求就保留未知；缺组件时显示已知名称、出处证据和不可用原因，不能用今天的相似原件补位。修复只能来自身份可核实的原件。有效输出不因历史输入缺口自动消失，历史缺口也不等于当前输入已就绪。\n\n## 制作、提交与恢复\n\n1. 从当前对象读取 `edit_token`（并发编辑计数）和 `content_sha256`（当前内容摘要），通过现有 `scripts/media_method.py` 完成方法准备、草稿、回读和定稿，再 `production-import`。步骤不满足、输入已变或目标冲突时保留工作区草稿，回读后另起步骤。新制作方法的数据库记录只保存摘要、方法和执行事实；完整工作输入及草稿仅留在任务 `.runtime/`，恢复用途结束后清理。过去的方法执行事实保持原样。\n2. 用 `production-generation-package` 取得准确准备包。对外提交前调用 `/api/production/submit`，提交唯一 `id`、`call_id`、`requirement_id`、`expected_content`、`package_sha256` 和实际 `tool`。返回后才可发起外部请求；同身份返回 `already_applied=true` 时只查询原调用。`scripts/generation_operation.py` 提供同一本机 API 的命令入口。Seed Audio 与 Lyria 的实际提交入口也先核验当前包并保存提交快照；规格中的 `production` 包含 `url`、`requirement_id`、`operation_id` 和 `call_id`。工具参数必须逐项等于方案参数：Seed Audio 使用完整 `audio_config` 与 `watermark`，Lyria 使用 `store` 与实际 `response_format`；参考按上传顺序核对原件哈希及范围。\n3. 轮询或回调沿 `/api/production/result` 保存，携带唯一回执 `id`、`call_id`、`submission_sha256` 和真实 `status`。返回原件时提供已入库文件的 `asset` 元数据；其稳定身份由调用确定，补文件仍更新同一候选。真实请求、响应、费用和文件证据归原调用，不改已知事实。此接口不调用生成平台。\n4. 通过 `/api/production/reuse-candidate` 将准确候选方案复制到当前需求，携带 `id`、`requirement_id`、`candidate_id` 和 `expected_content`。缺失原方案、引用过时或目标冲突会拒绝；不补用最新文件，不触发生成。进一步改稿仍走方法步骤。\n\n`scripts/register_text_handoffs.py --operation 唯一本地制作身份` 登记可编辑字层工程；先通过方法流程准备需求，同身份恢复只补齐原操作，新制作使用新身份。它保留真实本地制作来源，不调用付费模型。\n\n已有真实候选但没有当前方案的旧素材，可按 [工作区流程](../generation-workspaces.md#旧素材补齐当前方案) 从自己的确切提交补齐内部当前稿，包括仅有 ASSET 身份及原需求已退役的素材流。公共素材身份与 M 编号不变，退役需求不复活；已有当前稿不覆盖，历史缺口保留，非媒体历史依据不转成上传输入。\n\n界面统一呈现“当前方案 | 候选 候选1…”；没有候选时只保留“当前方案 | 候选”。普通进入先读当前方案，准确候选与旧评论链接仍定位原候选。选择候选仅改变阅读目标，不改变生成所选输入。候选的 Prompt、参数和参考直接可读；未保存的历史参数显示缺口。\n\n## 意见及实际整改\n\n对当前制作内容保存意见时带 `expected_edit_token`，服务在事务中核对后保存当时原摘录。正文后来修改，原话、时间、作者及摘录保留；相似文字不视为原位置。候选音频时间段、图像区域仍绑定原件。`comment-handling-v1` 继续承担实际回应；当前制作回应另带 `expected_response_content`，记录真实处置说明和必要局部改后锚点。原意见提供改前摘录，回应保存改后摘录及摘要；再次修改当前稿不会把当时处理结果冒充今天的正文。\n\n## 物理清除与常规恢复\n\n当前制作不再保留旧素材版本、轮次、旧方案全文及其专属索引。现有实例先在隔离库验证，再沿 `scripts/material_review_release.py prepare --remove-material-versions` 进入受管发布窗口：核验准确基线、停止写入应用，在事务中删除退役数据和缓存索引，保全候选提交、原件、评论及实际回应；随后压实数据库并检查旧数据确实不存在。事务失败时回滚，已完成清除不重复执行。\n\n不制作或保留旧素材版本的物理备份。清除回执只记录计数、摘要和校验结果；之后使用兼容当前模型的服务前向恢复，不启动旧写入模型，也不把历史任务库覆盖正式库。并行任务的有效新增内容沿准确当前数据增量承接。\n\n完整公开导出为 Schema 14：保存当前制作单份正文、不可变提交快照、真实候选、意见／回应摘录、故事版本、独立 SKILL 文件历史及有效配置方法。通过现有 `restore` 入口恢复到新空实例；旧格式不能重新带入退役模型。私有执行只在显式选择后另行恢复，准确旧方法包保持原字节，不覆盖已经更新的方法头。原件及真实费用回执不因取消素材版本而删除。\n",
+          "references/record-contract.md": "# 媒体方案交付字段\n\nrecord.json 是本步骤准确基线。只修改本次请求允许的字段；保留 object_id、kind、expected_version 与全部准确引用。expected_version 是登记时的并发保护，目标前进后不能手改数字继续提交，须回读新版本、新建步骤。\n\npayload.generation.format 固定为 generation-plan-v1；method 只能是 generate 或 reuse。model、tool、execution、parameters、randomization 和 inputs 各自有实际接口含义，保留已核实的值；改动需要准确依据。参数里的数值保持数值，不换成解释句。\n\nprompt 是给媒体模型的实际内容指令。output 含 name、description 和 review_criteria 字符串数组。blockers 是尚未满足条件的字符串数组；它们不会进入媒体 Prompt。generation.conditions 是“条件标识 → true/false”的对象，generation.selected_routes 是既定路线选择对象；两者属于既有输入关系协议，不能写入创作说明、字符串判断或待办。解释选择可写在本次 review 的 assessment 中，阻断写在 blockers 中。\n\ninputs 是既有准确参考数组，保留 reference、角色、用途、候选和范围等实际字段。selection_state=unselected 表示尚未选定，不能通过填写任意文件或自报认可变成就绪。缺原词、原件或输入锁时保留阻断；不得用新编内容补齐。\n\n先把完整草稿写入 draft-record.json，通过 draft 登记。保存并实际重读后，把发现与修订判断写入 review.md，通过 review 登记。最后写 final-record.json 并执行 finish。服务端会校验 JSON 载荷、准确引用与步骤顺序；拒绝时按错误修正本阶段，成功后的步骤不可重写，进一步修改须新建步骤。\n\nfinish 输出的是待 production-import 的准确登记包，仍需目标并发版本、原有制作校验与方法依据全部通过才成为受管方案；它不表示已生成、获认可或获调用许可。正式发布沿项目既有增量流程，不把执行库快照覆盖到正式库。\n",
+          "references/relations.md": "# 按当前阶段使用准确关系\n\n先读 request.json 的 relation_readings 与 contextual_relations。前者包含准确参考和方案所钉住的完整关系修订；后者包含本对象、所属镜头与其他素材的完整关系。摘要只帮助定位，不能代替关系原文、当前作品、镜头起止状态和准确输入。没有取得原件就不宣称已经看听。\n\n关系以两端稳定对象为身份，同一对只读一份连贯内容。R-A->B 表示 B 依赖 A，R-A-B 表示相关；图上是相关也可以在具体方案中明确选 A 为 B 的输入。人物行为的方向不等于制作依赖。不同阶段的动作与条件先判断在本次是否已发生，不把相反阶段同时施加，不从当前关系补造旧 CALL 的依据。\n\n逐项判断参考在本次约束什么：身份、完整状态、构图、空间、音色、旋律或可读文字。保留已有正确 Prompt，只修遗漏、冲突与提前呈现。首帧只描述起点；音色不连带继承旧台词、语气、呼吸、环境和认可；文字随真实书写、翻页或揭纸阶段显现。具体改动写成模型能执行的声画与动作，融入原有段落，不逐项粘贴关系全文或在 Prompt 添加关系编号、修订号和技术检查。\n\n关系存在不自动选择或上传参考。generation.inputs 的 reference、relation、semantics、necessity、group、route、condition、enabled、material_selection、component_id、crop 与 range 保留各自职责：relation 是准确关系引用，semantics/necessity 等是这次方案的明确选择；同一上游的不同组成或时段仍分别保存。只检查当前选中路线的缺项和循环，未选择的备选保持可回查。上下游是稳定身份，版本、候选、裁切、时段不能写到关系身份里。\n\n保存 draft 后完整回读 Prompt、实际选中输入和关系正文，逐组说明保留与修订的理由，检查相邻镜头和已知阶段。review 不把静态校验写成观看、试听或用户认可。result 保留未解决条件；冻结执行继续原方法、原输入，换方法或作品依据必须开始新步骤。\n"
+        },
+        "format": "managed-method-skill-v1",
+        "inputs": "准确角色或歌曲、原词、完整状态、已有声音原件与片段",
+        "outputs": "完整生成或复用方案、实际回读与修订结果",
+        "purpose": "围绕准确歌词、旋律、节奏和戏剧情境设计演唱",
+        "required_inputs": [
+          "context",
+          "records"
+        ],
+        "resources": [
+          {
+            "object_id": "method.resource.filmcraft-execution",
+            "revision_id": "36250178f2e3a73145233f593f2871ea00502119003c08251c58270a9a08acf3",
+            "section": "sound"
+          },
+          {
+            "object_id": "method.resource.filmcraft-execution",
+            "revision_id": "36250178f2e3a73145233f593f2871ea00502119003c08251c58270a9a08acf3",
+            "section": "performance"
+          },
+          {
+            "object_id": "method.resource.video-handbook",
+            "revision_id": "63a21b5d7be17ef53f00eec3238d7aa770e201995930557c3339410d69bbf362",
+            "section": "case-song",
+            "when": {
+              "need_video": true
+            }
+          }
+        ],
+        "steps": [
+          "draft",
+          "review",
+          "result"
+        ],
+        "title": "演唱方案",
+        "work_types": [
+          "media-plan"
+        ]
+      },
+      "created_at": "2026-10-12T10:51:57+00:00",
       "dependencies": [
         {
           "revision_id": "36250178f2e3a73145233f593f2871ea00502119003c08251c58270a9a08acf3",
@@ -11364,6 +12031,69 @@
         ]
       },
       "created_at": "2026-10-12T03:20:40+00:00",
+      "dependencies": [
+        {
+          "revision_id": "36250178f2e3a73145233f593f2871ea00502119003c08251c58270a9a08acf3",
+          "role": "method-resource"
+        },
+        {
+          "revision_id": "b2886e752736f9b20312300c4c4dbffbf15b6feb08728fed96a82f508aa6848f",
+          "role": "method-resource"
+        }
+      ]
+    },
+    {
+      "object_id": "method.skill.text-layer",
+      "kind": "GUIDANCE",
+      "version": 9,
+      "revision_id": "65cddfca92c2fad9cb7738668bd6f685737610adc5e53f36ea69d25d401a03ef",
+      "payload": {
+        "applies": "为观众必须读懂的信件、账册、招牌、字幕或歌词形成准确字层及与画面配合的制作交接。",
+        "checks": "逐字来源、观看和宣读顺序、遮挡与持物链；关键未知不补造，最终画幅和播放速度另做实际核读。",
+        "files": {
+          "SKILL.md": "---\nname: text-layer\ndescription: 为观众必须读懂的信件、账册、招牌、字幕或歌词形成准确字层及与画面配合的制作交接。\n---\n\n为观众必须读懂的信件、账册、招牌、字幕或歌词形成准确字层及与画面配合的制作交接。\n\n读取准确原文、字物所在场镜与出现时机，先判文字是在当时提供证据、说明环境还是无须读清的背景。不得把后来才取得的文字画进早期镜头，不能把“拿起册子”扩成提前指认某年。需要字层时取 narrative 确定信息何时给观众，design 与 editing 检查承载物、可见区域和持续时间。\n\ndraft 列实际显示的原字、行列、页/面、出现与遮挡范围、所属实物及手部接触。原文只描述语意而没有字句，交剧本/表演原词阶段提出可审阅候选，保留候选状态；涉及关键事实不能擅造已锁文书。非关键背景能用不可读笔迹时说明为何不需新增可读内容。\n\n比较直接拍/复用准确字稿、生成无字底图后合成和模型内文字。关键多字与多帧稳定性不能由“模型应该能写”保证。选择后期合成时交准确干净文本与排版、透视/跟踪、遮挡及材质要求；模型 Prompt 只描述无字底图/留白位置和画面，不要求模型发明证据。不要用字幕补偿本应表演出来的动作。\n\nreview 回查人物与文书的准确前史，不把本场收到回应误写成此前从未主动行动。逐字比较原词、文书候选及实际宣读，区分同一事实换载体与新添关键事实；未给出的人名、数额和印文不能由模型补齐。\n\nreview 将字稿放回当前镜头查看阅读顺序、实物关系和停留时间；只做文字方案时不假称实际合成通过。result 交可独立使用的准确字稿、需要发声的完整原词及明确候选、制作说明、检查标准、未确定项。读清、重复读回、核印、折纸和转交按实际顺序交接，不能只给纸面清单。后期实际完成还需在最终分辨率和播放速度核读，每一个关键字和上下镜阶段都要成立。\n\n## 意见、修订与回查\n\n动笔前读取所选准确修订及其相关原评论；历史意见连同原文、作者、发生时间和范围理解，不把沉默推成质量认可。AI 自检、机器检测与用户反馈分别记录。对意见作出实际修改后，通过现有 comment-handling-v1 回应保存原评论及版本、处置说明、实际修改说明、内容摘要和必要局部前后片段；未修改则说明依据和边界。读者可从原意见对照原文、实际修订与上下文；不改原锚点，不把旧意见冒充新稿意见。关闭或重开评论只是整理讨论，不是后续工作的批准或阻断条件。\n\n方案在授权内按准确输入、真实原件和质量检查推进，不要求逐对象审批。素材选择固定准确候选、组成及片段；改用新输入须重读并更新方案依赖，冻结调用不换输入。缺失、已撤回、错配、无效参数或循环仍按真实约束处理。付费、正式写入和部署仍遵守本次任务授权。\n\n## 当前制作内容与候选\n\n执行前阅读 references/current-production.md。制作对象原地维护，步骤摘要不保存全文历史；只有实际提交保存候选所需完整快照。草稿、回读、自检及完成仍按本方法的必要步骤执行。故事域版本不受此规则影响。\n",
+          "references/current-production.md": "# 当前制作内容与生成候选\n\n故事资料、方向、结构、小说和文字剧本继续保留各自版本。实体、必要实体状态、业务关系、视听集场镜、输入锁和素材需求只维护当前内容。有效实体状态必须至少拥有一项真实独立素材需求；需求的 scope 是唯一制作出处，states 只是使用范围。先从准确原文和场镜目标判断独立素材职责，再抽取状态，不能为了保状态制造或复制需求。实体身份足以承担的基准形象不另造状态；纯表演、普通持放、账目阶段和连续性条件由实际实体、镜头或方案承接。结构、通行、干湿和声音差异确需独立准备时，保留有真实需求支持的必要状态。\n\n正式导入和增量发布检查整笔提交后的当前树。状态与真实需求可同笔新增；移走或撤下最后一项需求时，同步承接状态条件、所有当前引用与关系，撤下或归并状态。隔离作者文件可以暂存未完成判断，不新增长期草稿库或审批。撤下前读准确原文和消费者，不能按零需求计数直接批删；历史调用、候选、原件、原意见与执行快照继续准确回查。\n\n实体自身稳定的基础制作职责直接归实体，不按媒体类型、已有结果或是否有状态机械分类：图像身份、说话音色、空间布局、道具结构及歌曲完整演唱都可属于实体。只有确需独立准备的不同形态、结构、声音或演法才建状态及独占需求；完整歌曲与剧中省段、缺词、哼唱和角色演法分别判断。“基础状态”只是实体直属需求的列表分组名，不建立同名 ST。确无独立制作职责的提及对象或由场景、字层、镜内动作承接的对象可以没有需求，保留身份和实际承接位置，不为计数补造素材。迁移基础需求时保留 M 身份及其候选、原件、真实输入与意见，当前消费者按必要字段承接，历史快照和旧方法执行保持当时事实。\n\n当前稿更新使用稳定对象身份和并发标记，不再保存制作全文修订链，也不因改一个镜头推进场、集版本。\n\n每个素材需求只有一个当前方案。一次真实调用返回原件后形成一个候选，候选展示提交前保存的完整方案、实际模型、参数、Prompt、有序参考及文件范围。同参数再次调用是另一个候选；回调、下载重试、状态推进和多文件组成仍归原调用。上传或外部制作保留真实来源，不虚构模型调用。未返回原件的失败或未知调用不产生候选；未知请求先查询原身份。\n\n## 状态正文与按需属性\n\n状态先用一份独立可读描述讲清同一实体此刻的完整形态与必要阶段差异，再保留实际供业务消费的属性。complete-v1 不要求按类型填满属性；不相关项省略，不填“如上”“依场次”或重复整段。独有声音、真实未知与必要条件必须仍可读。来源与实体归属仍须准确，空正文不能用标题、用途或引文代替。当前方案只将本次模型需要的确定内容写入 Prompt；真实未知保存在 unknowns，确实阻断制作时同时写入既有 production_blockers 或 generation.blockers。不能通过删除缺项放行未选原件。\n\n## 唯一制作出处与准确参考\n\n需求的 `scope` 是唯一制作出处，指向一个实体、必要实体状态或镜头。`entities`、`states`、关系的场景上下文、计划输入与实际输入说明使用范围，不增加拥有者；通过集场筛选找到素材后，仍回到该出处。实体身份、状态差异和镜头产物各自列自己的需求，不复制共用身份。镜头的 `key_states` 只记录确需独立准备的关键画面或动作关系，可以为空；它不是人物状态清单。\n\n每个当前候选只属于一个当前需求。引用卡、Prompt 和搜索通过同一准确身份核对原件旧编号、当前需求及候选号，保留原修订、文件组成、裁切和时间范围。选用已有候选是准确原件引用，不因候选来自同一需求就变成未来依赖循环；未产出的需求自依赖仍须拒绝。\n\n退役原件沿已保存提交说明当时需求与退出原因，不按相似外观或共用实体硬塞进当前需求。没有保存当时需求就保留未知；缺组件时显示已知名称、出处证据和不可用原因，不能用今天的相似原件补位。修复只能来自身份可核实的原件。有效输出不因历史输入缺口自动消失，历史缺口也不等于当前输入已就绪。\n\n## 制作、提交与恢复\n\n1. 从当前对象读取 `edit_token`（并发编辑计数）和 `content_sha256`（当前内容摘要），通过现有 `scripts/media_method.py` 完成方法准备、草稿、回读和定稿，再 `production-import`。步骤不满足、输入已变或目标冲突时保留工作区草稿，回读后另起步骤。新制作方法的数据库记录只保存摘要、方法和执行事实；完整工作输入及草稿仅留在任务 `.runtime/`，恢复用途结束后清理。过去的方法执行事实保持原样。\n2. 用 `production-generation-package` 取得准确准备包。对外提交前调用 `/api/production/submit`，提交唯一 `id`、`call_id`、`requirement_id`、`expected_content`、`package_sha256` 和实际 `tool`。返回后才可发起外部请求；同身份返回 `already_applied=true` 时只查询原调用。`scripts/generation_operation.py` 提供同一本机 API 的命令入口。Seed Audio 与 Lyria 的实际提交入口也先核验当前包并保存提交快照；规格中的 `production` 包含 `url`、`requirement_id`、`operation_id` 和 `call_id`。工具参数必须逐项等于方案参数：Seed Audio 使用完整 `audio_config` 与 `watermark`，Lyria 使用 `store` 与实际 `response_format`；参考按上传顺序核对原件哈希及范围。\n3. 轮询或回调沿 `/api/production/result` 保存，携带唯一回执 `id`、`call_id`、`submission_sha256` 和真实 `status`。返回原件时提供已入库文件的 `asset` 元数据；其稳定身份由调用确定，补文件仍更新同一候选。真实请求、响应、费用和文件证据归原调用，不改已知事实。此接口不调用生成平台。\n4. 通过 `/api/production/reuse-candidate` 将准确候选方案复制到当前需求，携带 `id`、`requirement_id`、`candidate_id` 和 `expected_content`。缺失原方案、引用过时或目标冲突会拒绝；不补用最新文件，不触发生成。进一步改稿仍走方法步骤。\n\n`scripts/register_text_handoffs.py --operation 唯一本地制作身份` 登记可编辑字层工程；先通过方法流程准备需求，同身份恢复只补齐原操作，新制作使用新身份。它保留真实本地制作来源，不调用付费模型。\n\n已有真实候选但没有当前方案的旧素材，可按 [工作区流程](../generation-workspaces.md#旧素材补齐当前方案) 从自己的确切提交补齐内部当前稿，包括仅有 ASSET 身份及原需求已退役的素材流。公共素材身份与 M 编号不变，退役需求不复活；已有当前稿不覆盖，历史缺口保留，非媒体历史依据不转成上传输入。\n\n界面统一呈现“当前方案 | 候选 候选1…”；没有候选时只保留“当前方案 | 候选”。普通进入先读当前方案，准确候选与旧评论链接仍定位原候选。选择候选仅改变阅读目标，不改变生成所选输入。候选的 Prompt、参数和参考直接可读；未保存的历史参数显示缺口。\n\n## 意见及实际整改\n\n对当前制作内容保存意见时带 `expected_edit_token`，服务在事务中核对后保存当时原摘录。正文后来修改，原话、时间、作者及摘录保留；相似文字不视为原位置。候选音频时间段、图像区域仍绑定原件。`comment-handling-v1` 继续承担实际回应；当前制作回应另带 `expected_response_content`，记录真实处置说明和必要局部改后锚点。原意见提供改前摘录，回应保存改后摘录及摘要；再次修改当前稿不会把当时处理结果冒充今天的正文。\n\n## 物理清除与常规恢复\n\n当前制作不再保留旧素材版本、轮次、旧方案全文及其专属索引。现有实例先在隔离库验证，再沿 `scripts/material_review_release.py prepare --remove-material-versions` 进入受管发布窗口：核验准确基线、停止写入应用，在事务中删除退役数据和缓存索引，保全候选提交、原件、评论及实际回应；随后压实数据库并检查旧数据确实不存在。事务失败时回滚，已完成清除不重复执行。\n\n不制作或保留旧素材版本的物理备份。清除回执只记录计数、摘要和校验结果；之后使用兼容当前模型的服务前向恢复，不启动旧写入模型，也不把历史任务库覆盖正式库。并行任务的有效新增内容沿准确当前数据增量承接。\n\n完整公开导出为 Schema 14：保存当前制作单份正文、不可变提交快照、真实候选、意见／回应摘录、故事版本、独立 SKILL 文件历史及有效配置方法。通过现有 `restore` 入口恢复到新空实例；旧格式不能重新带入退役模型。私有执行只在显式选择后另行恢复，准确旧方法包保持原字节，不覆盖已经更新的方法头。原件及真实费用回执不因取消素材版本而删除。\n"
+        },
+        "format": "managed-method-skill-v1",
+        "inputs": "准确源文、当前文字的叙事职责与出现阶段、承载实物、必要前史及已取得的原件。",
+        "outputs": "准确字稿、行款和可见范围、原词与候选、字物及手部交接、后期制作条件与未确定项。",
+        "purpose": "为观众必须读懂的信件、账册、招牌、字幕或歌词形成准确字层及与画面配合的制作交接。",
+        "required_inputs": [
+          "context"
+        ],
+        "resources": [
+          {
+            "object_id": "method.resource.filmcraft-execution",
+            "revision_id": "36250178f2e3a73145233f593f2871ea00502119003c08251c58270a9a08acf3",
+            "section": "narrative"
+          },
+          {
+            "object_id": "method.resource.filmcraft-execution",
+            "revision_id": "36250178f2e3a73145233f593f2871ea00502119003c08251c58270a9a08acf3",
+            "section": "design"
+          },
+          {
+            "object_id": "method.resource.filmcraft-execution",
+            "revision_id": "36250178f2e3a73145233f593f2871ea00502119003c08251c58270a9a08acf3",
+            "section": "editing"
+          },
+          {
+            "object_id": "method.resource.continuity",
+            "revision_id": "b2886e752736f9b20312300c4c4dbffbf15b6feb08728fed96a82f508aa6848f",
+            "section": "continuity"
+          }
+        ],
+        "steps": [
+          "draft",
+          "review",
+          "result"
+        ],
+        "title": "叙事文字与后期字层",
+        "work_types": [
+          "text-layer"
+        ]
+      },
+      "created_at": "2026-10-12T10:51:57+00:00",
       "dependencies": [
         {
           "revision_id": "36250178f2e3a73145233f593f2871ea00502119003c08251c58270a9a08acf3",
@@ -13139,6 +13869,167 @@
       ]
     },
     {
+      "object_id": "method.skill.video-plan",
+      "kind": "GUIDANCE",
+      "version": 12,
+      "revision_id": "0dc3dc3cd951b36cdb151b9cf85b15e79473e143d3ae66d0890e5ea52b1129f5",
+      "payload": {
+        "applies": "当前准确视频镜头的生成准备与局部修订",
+        "checks": "核对输入锁、原词、完整状态、准确参考、前后连续性和实际渠道；未知保持阻断",
+        "files": {
+          "SKILL.md": "---\nname: video-plan\ndescription: 将当前镜头的明确视听设计转为视频生成方式、准确参考分工和模型 Prompt，并按相邻镜头复核；不代替剧本创作或生成许可。\n---\n\n## 取得本镜而非整场任务\n\n先读 request.json 和 record.json，核对需求版本、源文、输入锁正文、镜头起点／变化／落点及观众须理解的事。必要相邻镜头在 supporting_records；实体的跨集 sources 只是准确索引，只有当前判断需要时才展开原文。不把没展开的来源称作已读。缺材料返回该材料准备步骤；没有必要的原件就保留未验，而不是凭名称判适配。\n\n本步骤只修订指定需求的 generation；先读 references/record-contract.md。上游事件、完整状态或源范围需改变时，转回视听设计或负责创作阶段，不能在媒体 Prompt 偷改。原文只给道谢、读回、叙述性答话或未定歌词时，保留事件并给出原词准备的明确交接；由影视剧本／表演原词步骤提出可审阅候选，确定后才生成。局部媒体任务不擅造“已锁定”词句。\n\n## 先定路线，再取细节\n\n先读共享手册 use、modes 确定当前保留目标：普通参考、固定端点、编辑、延长或按节拍表达。必须看模式的限制与替代方案，不凭 Prompt 声称固定首帧。核对当时实际渠道能力，选择后读 models、references、prompt、load、checks，以及真正需要的案例：action、dialogue、extension、style、song。这些由 begin 的 method_conditions（如 case: dialogue）选择；需要声音或接缝知识时设置 need_sound / need_staging / need_editing。可先 resolve 看入口和路线，再带所选条件 begin；已冻结步骤条件有变化就新建步骤并核查受影响产物。\n\n直接参考逐项说明它约束身份、完整状态、构图、运动、音色还是旋律。先实际看图／听音，比较复用、编辑、新制与无需独立素材。完整状态图中不适用的持物和表情不能随衣服一起继承。首图未涵盖后显的人脸或空间时才补准确直接参考；画外声本身不需视觉图。旧候选、实际选择、真实上传和认可分别处理。只读元数据不算听看。\n\n## 形成模型能执行的草稿\n\n保存 draft。制作说明保留选择依据、文件／片段、模型参数、缺项与检查；模型 Prompt 只表达已确定的声画：整体事件与风格、按实际输入编号分工、可实现的初始空间、动作和发声次序、结尾状态。它不接收内部编号、修订哈希、检查待办、整场后续动作或整本手册。\n\n对白只在发生的位置写完整原句一次；每个说话人和画外声明确，必要的复述、重复尝试各自保留为事件。时间只表达自然顺序和有意义的停顿，不能靠抢读满足上限。模型、模式、分辨率和时长在参数字段设置。复杂动作先简化无关变化或拆镜，保留关键接触、松手、物品归属和人物处理信息的时间。\n\n## 回读、定稿和下一步\n\n保存草稿后从磁盘重读，再取得前镜落点和后镜起点逐项连读。review 记录具体发现与依据、做何修订、哪些检查仍未验；不只勾“已读”。同一段可能含动作前后两态，必须核查首个必要动作在起点仍有发生空间。原文因果和生成负载都成立后形成 result，经 finish 产生准确登记包。\n\n制作步骤以准备时内容摘要核对输入；改用新输入须新建步骤，真实调用使用已固定快照；本步草稿范围内的修订进入 result，不覆盖冻结 draft。真实生成仍须通过现有准备包、准确原件、原词、能力和本次授权。模型结果须实际完整看听并与前后镜比较，不能把本方法定稿当效果已通过。\n\n媒体原件中的表情、持物与姿势按本镜阶段另核，不能随“同一身份／湿衣”整图继承。按实际渠道核对附件指代；当前 pippit-tool-cli 使用 @图片1、@视频1、@音频1，手册中的一般“图1”不是可直接提交的接口语法。\n\n先读 [当前阶段的准确关系](references/relations.md)，再将适用约束融入本次 Prompt。关系正文和准确输入在 request.json 中随本步骤冻结；参考选择不由摘要或图中箭头代替。\n\n## 意见、修订与回查\n\n动笔前读取所选准确修订及其相关原评论；历史意见连同原文、作者、发生时间和范围理解，不把沉默推成质量认可。AI 自检、机器检测与用户反馈分别记录。对意见作出实际修改后，通过现有 comment-handling-v1 回应保存原评论及版本、处置说明、实际修改说明、内容摘要和必要局部前后片段；未修改则说明依据和边界。读者可从原意见对照原文、实际修订与上下文；不改原锚点，不把旧意见冒充新稿意见。关闭或重开评论只是整理讨论，不是后续工作的批准或阻断条件。\n\n方案在授权内按准确输入、真实原件和质量检查推进，不要求逐对象审批。素材选择固定准确候选、组成及片段；改用新输入须重读并更新方案依赖，冻结调用不换输入。缺失、已撤回、错配、无效参数或循环仍按真实约束处理。付费、正式写入和部署仍遵守本次任务授权。\n\n## 当前制作内容与候选\n\n执行前阅读 references/current-production.md。制作对象原地维护，步骤摘要不保存全文历史；只有实际提交保存候选所需完整快照。草稿、回读、自检及完成仍按本方法的必要步骤执行。故事域版本不受此规则影响。\n",
+          "references/current-production.md": "# 当前制作内容与生成候选\n\n故事资料、方向、结构、小说和文字剧本继续保留各自版本。实体、必要实体状态、业务关系、视听集场镜、输入锁和素材需求只维护当前内容。有效实体状态必须至少拥有一项真实独立素材需求；需求的 scope 是唯一制作出处，states 只是使用范围。先从准确原文和场镜目标判断独立素材职责，再抽取状态，不能为了保状态制造或复制需求。实体身份足以承担的基准形象不另造状态；纯表演、普通持放、账目阶段和连续性条件由实际实体、镜头或方案承接。结构、通行、干湿和声音差异确需独立准备时，保留有真实需求支持的必要状态。\n\n正式导入和增量发布检查整笔提交后的当前树。状态与真实需求可同笔新增；移走或撤下最后一项需求时，同步承接状态条件、所有当前引用与关系，撤下或归并状态。隔离作者文件可以暂存未完成判断，不新增长期草稿库或审批。撤下前读准确原文和消费者，不能按零需求计数直接批删；历史调用、候选、原件、原意见与执行快照继续准确回查。\n\n实体自身稳定的基础制作职责直接归实体，不按媒体类型、已有结果或是否有状态机械分类：图像身份、说话音色、空间布局、道具结构及歌曲完整演唱都可属于实体。只有确需独立准备的不同形态、结构、声音或演法才建状态及独占需求；完整歌曲与剧中省段、缺词、哼唱和角色演法分别判断。“基础状态”只是实体直属需求的列表分组名，不建立同名 ST。确无独立制作职责的提及对象或由场景、字层、镜内动作承接的对象可以没有需求，保留身份和实际承接位置，不为计数补造素材。迁移基础需求时保留 M 身份及其候选、原件、真实输入与意见，当前消费者按必要字段承接，历史快照和旧方法执行保持当时事实。\n\n当前稿更新使用稳定对象身份和并发标记，不再保存制作全文修订链，也不因改一个镜头推进场、集版本。\n\n每个素材需求只有一个当前方案。一次真实调用返回原件后形成一个候选，候选展示提交前保存的完整方案、实际模型、参数、Prompt、有序参考及文件范围。同参数再次调用是另一个候选；回调、下载重试、状态推进和多文件组成仍归原调用。上传或外部制作保留真实来源，不虚构模型调用。未返回原件的失败或未知调用不产生候选；未知请求先查询原身份。\n\n## 状态正文与按需属性\n\n状态先用一份独立可读描述讲清同一实体此刻的完整形态与必要阶段差异，再保留实际供业务消费的属性。complete-v1 不要求按类型填满属性；不相关项省略，不填“如上”“依场次”或重复整段。独有声音、真实未知与必要条件必须仍可读。来源与实体归属仍须准确，空正文不能用标题、用途或引文代替。当前方案只将本次模型需要的确定内容写入 Prompt；真实未知保存在 unknowns，确实阻断制作时同时写入既有 production_blockers 或 generation.blockers。不能通过删除缺项放行未选原件。\n\n## 唯一制作出处与准确参考\n\n需求的 `scope` 是唯一制作出处，指向一个实体、必要实体状态或镜头。`entities`、`states`、关系的场景上下文、计划输入与实际输入说明使用范围，不增加拥有者；通过集场筛选找到素材后，仍回到该出处。实体身份、状态差异和镜头产物各自列自己的需求，不复制共用身份。镜头的 `key_states` 只记录确需独立准备的关键画面或动作关系，可以为空；它不是人物状态清单。\n\n每个当前候选只属于一个当前需求。引用卡、Prompt 和搜索通过同一准确身份核对原件旧编号、当前需求及候选号，保留原修订、文件组成、裁切和时间范围。选用已有候选是准确原件引用，不因候选来自同一需求就变成未来依赖循环；未产出的需求自依赖仍须拒绝。\n\n退役原件沿已保存提交说明当时需求与退出原因，不按相似外观或共用实体硬塞进当前需求。没有保存当时需求就保留未知；缺组件时显示已知名称、出处证据和不可用原因，不能用今天的相似原件补位。修复只能来自身份可核实的原件。有效输出不因历史输入缺口自动消失，历史缺口也不等于当前输入已就绪。\n\n## 制作、提交与恢复\n\n1. 从当前对象读取 `edit_token`（并发编辑计数）和 `content_sha256`（当前内容摘要），通过现有 `scripts/media_method.py` 完成方法准备、草稿、回读和定稿，再 `production-import`。步骤不满足、输入已变或目标冲突时保留工作区草稿，回读后另起步骤。新制作方法的数据库记录只保存摘要、方法和执行事实；完整工作输入及草稿仅留在任务 `.runtime/`，恢复用途结束后清理。过去的方法执行事实保持原样。\n2. 用 `production-generation-package` 取得准确准备包。对外提交前调用 `/api/production/submit`，提交唯一 `id`、`call_id`、`requirement_id`、`expected_content`、`package_sha256` 和实际 `tool`。返回后才可发起外部请求；同身份返回 `already_applied=true` 时只查询原调用。`scripts/generation_operation.py` 提供同一本机 API 的命令入口。Seed Audio 与 Lyria 的实际提交入口也先核验当前包并保存提交快照；规格中的 `production` 包含 `url`、`requirement_id`、`operation_id` 和 `call_id`。工具参数必须逐项等于方案参数：Seed Audio 使用完整 `audio_config` 与 `watermark`，Lyria 使用 `store` 与实际 `response_format`；参考按上传顺序核对原件哈希及范围。\n3. 轮询或回调沿 `/api/production/result` 保存，携带唯一回执 `id`、`call_id`、`submission_sha256` 和真实 `status`。返回原件时提供已入库文件的 `asset` 元数据；其稳定身份由调用确定，补文件仍更新同一候选。真实请求、响应、费用和文件证据归原调用，不改已知事实。此接口不调用生成平台。\n4. 通过 `/api/production/reuse-candidate` 将准确候选方案复制到当前需求，携带 `id`、`requirement_id`、`candidate_id` 和 `expected_content`。缺失原方案、引用过时或目标冲突会拒绝；不补用最新文件，不触发生成。进一步改稿仍走方法步骤。\n\n`scripts/register_text_handoffs.py --operation 唯一本地制作身份` 登记可编辑字层工程；先通过方法流程准备需求，同身份恢复只补齐原操作，新制作使用新身份。它保留真实本地制作来源，不调用付费模型。\n\n已有真实候选但没有当前方案的旧素材，可按 [工作区流程](../generation-workspaces.md#旧素材补齐当前方案) 从自己的确切提交补齐内部当前稿，包括仅有 ASSET 身份及原需求已退役的素材流。公共素材身份与 M 编号不变，退役需求不复活；已有当前稿不覆盖，历史缺口保留，非媒体历史依据不转成上传输入。\n\n界面统一呈现“当前方案 | 候选 候选1…”；没有候选时只保留“当前方案 | 候选”。普通进入先读当前方案，准确候选与旧评论链接仍定位原候选。选择候选仅改变阅读目标，不改变生成所选输入。候选的 Prompt、参数和参考直接可读；未保存的历史参数显示缺口。\n\n## 意见及实际整改\n\n对当前制作内容保存意见时带 `expected_edit_token`，服务在事务中核对后保存当时原摘录。正文后来修改，原话、时间、作者及摘录保留；相似文字不视为原位置。候选音频时间段、图像区域仍绑定原件。`comment-handling-v1` 继续承担实际回应；当前制作回应另带 `expected_response_content`，记录真实处置说明和必要局部改后锚点。原意见提供改前摘录，回应保存改后摘录及摘要；再次修改当前稿不会把当时处理结果冒充今天的正文。\n\n## 物理清除与常规恢复\n\n当前制作不再保留旧素材版本、轮次、旧方案全文及其专属索引。现有实例先在隔离库验证，再沿 `scripts/material_review_release.py prepare --remove-material-versions` 进入受管发布窗口：核验准确基线、停止写入应用，在事务中删除退役数据和缓存索引，保全候选提交、原件、评论及实际回应；随后压实数据库并检查旧数据确实不存在。事务失败时回滚，已完成清除不重复执行。\n\n不制作或保留旧素材版本的物理备份。清除回执只记录计数、摘要和校验结果；之后使用兼容当前模型的服务前向恢复，不启动旧写入模型，也不把历史任务库覆盖正式库。并行任务的有效新增内容沿准确当前数据增量承接。\n\n完整公开导出为 Schema 14：保存当前制作单份正文、不可变提交快照、真实候选、意见／回应摘录、故事版本、独立 SKILL 文件历史及有效配置方法。通过现有 `restore` 入口恢复到新空实例；旧格式不能重新带入退役模型。私有执行只在显式选择后另行恢复，准确旧方法包保持原字节，不覆盖已经更新的方法头。原件及真实费用回执不因取消素材版本而删除。\n",
+          "references/record-contract.md": "# 媒体方案交付字段\n\nrecord.json 是本步骤准确基线。只修改本次请求允许的字段；保留 object_id、kind、expected_version 与全部准确引用。expected_version 是登记时的并发保护，目标前进后不能手改数字继续提交，须回读新版本、新建步骤。\n\npayload.generation.format 固定为 generation-plan-v1；method 只能是 generate 或 reuse。model、tool、execution、parameters、randomization 和 inputs 各自有实际接口含义，保留已核实的值；改动需要准确依据。参数里的数值保持数值，不换成解释句。\n\nprompt 是给媒体模型的实际内容指令。output 含 name、description 和 review_criteria 字符串数组。blockers 是尚未满足条件的字符串数组；它们不会进入媒体 Prompt。generation.conditions 是“条件标识 → true/false”的对象，generation.selected_routes 是既定路线选择对象；两者属于既有输入关系协议，不能写入创作说明、字符串判断或待办。解释选择可写在本次 review 的 assessment 中，阻断写在 blockers 中。\n\ninputs 是既有准确参考数组，保留 reference、角色、用途、候选和范围等实际字段。selection_state=unselected 表示尚未选定，不能通过填写任意文件或自报认可变成就绪。缺原词、原件或输入锁时保留阻断；不得用新编内容补齐。\n\n先把完整草稿写入 draft-record.json，通过 draft 登记。保存并实际重读后，把发现与修订判断写入 review.md，通过 review 登记。最后写 final-record.json 并执行 finish。服务端会校验 JSON 载荷、准确引用与步骤顺序；拒绝时按错误修正本阶段，成功后的步骤不可重写，进一步修改须新建步骤。\n\nfinish 输出的是待 production-import 的准确登记包，仍需目标并发版本、原有制作校验与方法依据全部通过才成为受管方案；它不表示已生成、获认可或获调用许可。正式发布沿项目既有增量流程，不把执行库快照覆盖到正式库。\n",
+          "references/relations.md": "# 按当前阶段使用准确关系\n\n先读 request.json 的 relation_readings 与 contextual_relations。前者包含准确参考和方案所钉住的完整关系修订；后者包含本对象、所属镜头与其他素材的完整关系。摘要只帮助定位，不能代替关系原文、当前作品、镜头起止状态和准确输入。没有取得原件就不宣称已经看听。\n\n关系以两端稳定对象为身份，同一对只读一份连贯内容。R-A->B 表示 B 依赖 A，R-A-B 表示相关；图上是相关也可以在具体方案中明确选 A 为 B 的输入。人物行为的方向不等于制作依赖。不同阶段的动作与条件先判断在本次是否已发生，不把相反阶段同时施加，不从当前关系补造旧 CALL 的依据。\n\n逐项判断参考在本次约束什么：身份、完整状态、构图、空间、音色、旋律或可读文字。保留已有正确 Prompt，只修遗漏、冲突与提前呈现。首帧只描述起点；音色不连带继承旧台词、语气、呼吸、环境和认可；文字随真实书写、翻页或揭纸阶段显现。具体改动写成模型能执行的声画与动作，融入原有段落，不逐项粘贴关系全文或在 Prompt 添加关系编号、修订号和技术检查。\n\n关系存在不自动选择或上传参考。generation.inputs 的 reference、relation、semantics、necessity、group、route、condition、enabled、material_selection、component_id、crop 与 range 保留各自职责：relation 是准确关系引用，semantics/necessity 等是这次方案的明确选择；同一上游的不同组成或时段仍分别保存。只检查当前选中路线的缺项和循环，未选择的备选保持可回查。上下游是稳定身份，版本、候选、裁切、时段不能写到关系身份里。\n\n保存 draft 后完整回读 Prompt、实际选中输入和关系正文，逐组说明保留与修订的理由，检查相邻镜头和已知阶段。review 不把静态校验写成观看、试听或用户认可。result 保留未解决条件；冻结执行继续原方法、原输入，换方法或作品依据必须开始新步骤。\n"
+        },
+        "format": "managed-method-skill-v1",
+        "inputs": "准确需求、上游作品与实体状态、直接参考的职责和可用性",
+        "outputs": "方案草稿、回读检查和定稿；生成 Prompt 与模型参数分别保存",
+        "purpose": "把准确创作意图交接为可审阅、可准备的单项素材方案",
+        "required_inputs": [
+          "context",
+          "records"
+        ],
+        "resources": [
+          {
+            "object_id": "method.resource.video-handbook",
+            "revision_id": "f6d816a895c2463eaa119e8efa2f736e33d16aacd003ef82cd2e50df901055b8",
+            "section": "use"
+          },
+          {
+            "object_id": "method.resource.video-handbook",
+            "revision_id": "f6d816a895c2463eaa119e8efa2f736e33d16aacd003ef82cd2e50df901055b8",
+            "section": "models"
+          },
+          {
+            "object_id": "method.resource.video-handbook",
+            "revision_id": "f6d816a895c2463eaa119e8efa2f736e33d16aacd003ef82cd2e50df901055b8",
+            "section": "modes"
+          },
+          {
+            "object_id": "method.resource.video-handbook",
+            "revision_id": "f6d816a895c2463eaa119e8efa2f736e33d16aacd003ef82cd2e50df901055b8",
+            "section": "load"
+          },
+          {
+            "object_id": "method.resource.video-handbook",
+            "revision_id": "f6d816a895c2463eaa119e8efa2f736e33d16aacd003ef82cd2e50df901055b8",
+            "section": "references"
+          },
+          {
+            "object_id": "method.resource.video-handbook",
+            "revision_id": "f6d816a895c2463eaa119e8efa2f736e33d16aacd003ef82cd2e50df901055b8",
+            "section": "prompt"
+          },
+          {
+            "object_id": "method.resource.video-handbook",
+            "revision_id": "f6d816a895c2463eaa119e8efa2f736e33d16aacd003ef82cd2e50df901055b8",
+            "section": "checks"
+          },
+          {
+            "object_id": "method.resource.video-handbook",
+            "revision_id": "f6d816a895c2463eaa119e8efa2f736e33d16aacd003ef82cd2e50df901055b8",
+            "section": "case-action",
+            "when": {
+              "case": "action"
+            }
+          },
+          {
+            "object_id": "method.resource.video-handbook",
+            "revision_id": "f6d816a895c2463eaa119e8efa2f736e33d16aacd003ef82cd2e50df901055b8",
+            "section": "case-dialogue",
+            "when": {
+              "case": "dialogue"
+            }
+          },
+          {
+            "object_id": "method.resource.video-handbook",
+            "revision_id": "f6d816a895c2463eaa119e8efa2f736e33d16aacd003ef82cd2e50df901055b8",
+            "section": "case-extension",
+            "when": {
+              "case": "extension"
+            }
+          },
+          {
+            "object_id": "method.resource.video-handbook",
+            "revision_id": "f6d816a895c2463eaa119e8efa2f736e33d16aacd003ef82cd2e50df901055b8",
+            "section": "case-style",
+            "when": {
+              "case": "style"
+            }
+          },
+          {
+            "object_id": "method.resource.video-handbook",
+            "revision_id": "f6d816a895c2463eaa119e8efa2f736e33d16aacd003ef82cd2e50df901055b8",
+            "section": "case-song",
+            "when": {
+              "case": "song"
+            }
+          },
+          {
+            "object_id": "method.resource.video-handbook",
+            "revision_id": "f6d816a895c2463eaa119e8efa2f736e33d16aacd003ef82cd2e50df901055b8",
+            "section": "sound",
+            "when": {
+              "need_sound": true
+            }
+          },
+          {
+            "object_id": "method.resource.filmcraft-execution",
+            "revision_id": "36250178f2e3a73145233f593f2871ea00502119003c08251c58270a9a08acf3",
+            "section": "staging",
+            "when": {
+              "need_staging": true
+            }
+          },
+          {
+            "object_id": "method.resource.filmcraft-execution",
+            "revision_id": "36250178f2e3a73145233f593f2871ea00502119003c08251c58270a9a08acf3",
+            "section": "sound",
+            "when": {
+              "need_sound": true
+            }
+          },
+          {
+            "object_id": "method.resource.filmcraft-execution",
+            "revision_id": "36250178f2e3a73145233f593f2871ea00502119003c08251c58270a9a08acf3",
+            "section": "editing",
+            "when": {
+              "need_editing": true
+            }
+          },
+          {
+            "object_id": "method.resource.filmcraft-execution",
+            "revision_id": "36250178f2e3a73145233f593f2871ea00502119003c08251c58270a9a08acf3",
+            "section": "performance",
+            "when": {
+              "need_performance": true
+            }
+          }
+        ],
+        "steps": [
+          "draft",
+          "review",
+          "result"
+        ],
+        "title": "镜头视频方案与 Prompt",
+        "work_types": [
+          "media-plan"
+        ]
+      },
+      "created_at": "2026-10-12T10:51:57+00:00",
+      "dependencies": [
+        {
+          "revision_id": "36250178f2e3a73145233f593f2871ea00502119003c08251c58270a9a08acf3",
+          "role": "method-resource"
+        },
+        {
+          "revision_id": "f6d816a895c2463eaa119e8efa2f736e33d16aacd003ef82cd2e50df901055b8",
+          "role": "method-resource"
+        }
+      ]
+    },
+    {
       "object_id": "method.skill.voice-plan",
       "kind": "GUIDANCE",
       "version": 1,
@@ -13235,6 +14126,58 @@
         ]
       },
       "created_at": "2026-10-12T10:09:12+00:00",
+      "dependencies": [
+        {
+          "revision_id": "36250178f2e3a73145233f593f2871ea00502119003c08251c58270a9a08acf3",
+          "role": "method-resource"
+        }
+      ]
+    },
+    {
+      "object_id": "method.skill.voice-plan",
+      "kind": "GUIDANCE",
+      "version": 3,
+      "revision_id": "1d7596354c19544249ce5687279051bf394a7ed11ff7d426cd9a7c15b1949138",
+      "payload": {
+        "applies": "素材需求的 media_type=audio，audio_type=voice",
+        "checks": "准确原词、用途、真实模型和实际听审依据",
+        "files": {
+          "SKILL.md": "---\nname: voice-plan\ndescription: 为角色选择或制作可辨识、连续的声音身份与说话表现，交付准确音色参考和复用方案。\n---\n# 音色方案\n\n音色方案解决“这个角色听起来是谁、怎样说话”。它产出角色声音身份、说话表现、准确参考片段与生成或复用参数，不负责创作歌曲。\n\n## 01 先锁定角色、台词与声音用途\n\n读取准确角色和完整状态、镜内发声事件、已经确定的原词、说话对象、语速和重音、呼吸与停顿。说明本素材用于声音身份参考、对白还是独立声音片段。原词未确定时先回到创作，不让生成模型代编事实或台词。\n\n## 02 在复用和音色制作之间选择\n\n先回查已有准确音频：声音身份是否合适，哪些时间段可用，是否含杂音或不需要的配乐，能否直接复用或截取。项目现有音色制作路径使用 Seed Audio 1.0（记录中的 seed-audio-1.0）；执行前仍核对当时工具、模型标识、输入能力、额度和授权。原件复用不产生新的模型调用。试听确认的声音身份，不自动成为音色克隆许可，也不保证同一模型能唱歌。\n\n## 03 写成可执行方案\n\n方案分别写清声音身份特征与这句台词的表演：音高范围、质感、年龄感，及说话目的、情绪转折、停连、重音、音量和空间关系。冻结参考原件及起止时间、原词、声道和输出规格；不要用“有感情”代替具体动作。先比较已有原件、局部裁剪与重新制作，再选择满足用途且成本合适的路径。\n\n## 04 以实际听辨检查\n\n逐句核对发音、原词、角色可辨识度、语气和情绪，检查跨镜声音身份、呼吸、响度及空间的连续性；发现变声、口齿含混、突兀停顿或背景泄漏时定位到准确片段。文件时长和采样率只是技术检查，不能证明音色合适。\n\n## 阅读顺序与交付\n\n先读本正文，再读[当前制作数据与交付](references/current-production.md)、[关系与准确引用](references/relations.md)、[步骤记录契约](references/record-contract.md)，最后读本次装入的影视专业知识章节。公共资料按冻结的准确引用取得；不另抄方法库。\n\n按 draft → review → result 交付：draft 是具体方案，review 必须记录实际回读发现及修订判断，result 是吸收检查后的完整方案。准备方案不等于已经生成；模型名称不等于能力验证；可用原件不等于已经被用户认可。结果审阅须实际听原件，不能以格式检测、波形或文字说明冒充听审。\n\n如果依据用户评论工作，先读准确原意见与原稿，完成实际回应稿后关联回应记录；采用与否仍由现有评论流程表达，不替用户采纳。不改写已冻结的旧执行。\n",
+          "references/current-production.md": "# 当前制作内容与生成候选\n\n故事资料、方向、结构、小说和文字剧本继续保留各自版本。实体、必要实体状态、业务关系、视听集场镜、输入锁和素材需求只维护当前内容。有效实体状态必须至少拥有一项真实独立素材需求；需求的 scope 是唯一制作出处，states 只是使用范围。先从准确原文和场镜目标判断独立素材职责，再抽取状态，不能为了保状态制造或复制需求。实体身份足以承担的基准形象不另造状态；纯表演、普通持放、账目阶段和连续性条件由实际实体、镜头或方案承接。结构、通行、干湿和声音差异确需独立准备时，保留有真实需求支持的必要状态。\n\n正式导入和增量发布检查整笔提交后的当前树。状态与真实需求可同笔新增；移走或撤下最后一项需求时，同步承接状态条件、所有当前引用与关系，撤下或归并状态。隔离作者文件可以暂存未完成判断，不新增长期草稿库或审批。撤下前读准确原文和消费者，不能按零需求计数直接批删；历史调用、候选、原件、原意见与执行快照继续准确回查。\n\n实体自身稳定的基础制作职责直接归实体，不按媒体类型、已有结果或是否有状态机械分类：图像身份、说话音色、空间布局、道具结构及歌曲完整演唱都可属于实体。只有确需独立准备的不同形态、结构、声音或演法才建状态及独占需求；完整歌曲与剧中省段、缺词、哼唱和角色演法分别判断。“基础状态”只是实体直属需求的列表分组名，不建立同名 ST。确无独立制作职责的提及对象或由场景、字层、镜内动作承接的对象可以没有需求，保留身份和实际承接位置，不为计数补造素材。迁移基础需求时保留 M 身份及其候选、原件、真实输入与意见，当前消费者按必要字段承接，历史快照和旧方法执行保持当时事实。\n\n当前稿更新使用稳定对象身份和并发标记，不再保存制作全文修订链，也不因改一个镜头推进场、集版本。\n\n每个素材需求只有一个当前方案。一次真实调用返回原件后形成一个候选，候选展示提交前保存的完整方案、实际模型、参数、Prompt、有序参考及文件范围。同参数再次调用是另一个候选；回调、下载重试、状态推进和多文件组成仍归原调用。上传或外部制作保留真实来源，不虚构模型调用。未返回原件的失败或未知调用不产生候选；未知请求先查询原身份。\n\n## 状态正文与按需属性\n\n状态先用一份独立可读描述讲清同一实体此刻的完整形态与必要阶段差异，再保留实际供业务消费的属性。complete-v1 不要求按类型填满属性；不相关项省略，不填“如上”“依场次”或重复整段。独有声音、真实未知与必要条件必须仍可读。来源与实体归属仍须准确，空正文不能用标题、用途或引文代替。当前方案只将本次模型需要的确定内容写入 Prompt；真实未知保存在 unknowns，确实阻断制作时同时写入既有 production_blockers 或 generation.blockers。不能通过删除缺项放行未选原件。\n\n## 唯一制作出处与准确参考\n\n需求的 `scope` 是唯一制作出处，指向一个实体、必要实体状态或镜头。`entities`、`states`、关系的场景上下文、计划输入与实际输入说明使用范围，不增加拥有者；通过集场筛选找到素材后，仍回到该出处。实体身份、状态差异和镜头产物各自列自己的需求，不复制共用身份。镜头的 `key_states` 只记录确需独立准备的关键画面或动作关系，可以为空；它不是人物状态清单。\n\n每个当前候选只属于一个当前需求。引用卡、Prompt 和搜索通过同一准确身份核对原件旧编号、当前需求及候选号，保留原修订、文件组成、裁切和时间范围。选用已有候选是准确原件引用，不因候选来自同一需求就变成未来依赖循环；未产出的需求自依赖仍须拒绝。\n\n退役原件沿已保存提交说明当时需求与退出原因，不按相似外观或共用实体硬塞进当前需求。没有保存当时需求就保留未知；缺组件时显示已知名称、出处证据和不可用原因，不能用今天的相似原件补位。修复只能来自身份可核实的原件。有效输出不因历史输入缺口自动消失，历史缺口也不等于当前输入已就绪。\n\n## 制作、提交与恢复\n\n1. 从当前对象读取 `edit_token`（并发编辑计数）和 `content_sha256`（当前内容摘要），通过现有 `scripts/media_method.py` 完成方法准备、草稿、回读和定稿，再 `production-import`。步骤不满足、输入已变或目标冲突时保留工作区草稿，回读后另起步骤。新制作方法的数据库记录只保存摘要、方法和执行事实；完整工作输入及草稿仅留在任务 `.runtime/`，恢复用途结束后清理。过去的方法执行事实保持原样。\n2. 用 `production-generation-package` 取得准确准备包。对外提交前调用 `/api/production/submit`，提交唯一 `id`、`call_id`、`requirement_id`、`expected_content`、`package_sha256` 和实际 `tool`。返回后才可发起外部请求；同身份返回 `already_applied=true` 时只查询原调用。`scripts/generation_operation.py` 提供同一本机 API 的命令入口。Seed Audio 与 Lyria 的实际提交入口也先核验当前包并保存提交快照；规格中的 `production` 包含 `url`、`requirement_id`、`operation_id` 和 `call_id`。工具参数必须逐项等于方案参数：Seed Audio 使用完整 `audio_config` 与 `watermark`，Lyria 使用 `store` 与实际 `response_format`；参考按上传顺序核对原件哈希及范围。\n3. 轮询或回调沿 `/api/production/result` 保存，携带唯一回执 `id`、`call_id`、`submission_sha256` 和真实 `status`。返回原件时提供已入库文件的 `asset` 元数据；其稳定身份由调用确定，补文件仍更新同一候选。真实请求、响应、费用和文件证据归原调用，不改已知事实。此接口不调用生成平台。\n4. 通过 `/api/production/reuse-candidate` 将准确候选方案复制到当前需求，携带 `id`、`requirement_id`、`candidate_id` 和 `expected_content`。缺失原方案、引用过时或目标冲突会拒绝；不补用最新文件，不触发生成。进一步改稿仍走方法步骤。\n\n`scripts/register_text_handoffs.py --operation 唯一本地制作身份` 登记可编辑字层工程；先通过方法流程准备需求，同身份恢复只补齐原操作，新制作使用新身份。它保留真实本地制作来源，不调用付费模型。\n\n已有真实候选但没有当前方案的旧素材，可按 [工作区流程](../generation-workspaces.md#旧素材补齐当前方案) 从自己的确切提交补齐内部当前稿，包括仅有 ASSET 身份及原需求已退役的素材流。公共素材身份与 M 编号不变，退役需求不复活；已有当前稿不覆盖，历史缺口保留，非媒体历史依据不转成上传输入。\n\n界面统一呈现“当前方案 | 候选 候选1…”；没有候选时只保留“当前方案 | 候选”。普通进入先读当前方案，准确候选与旧评论链接仍定位原候选。选择候选仅改变阅读目标，不改变生成所选输入。候选的 Prompt、参数和参考直接可读；未保存的历史参数显示缺口。\n\n## 意见及实际整改\n\n对当前制作内容保存意见时带 `expected_edit_token`，服务在事务中核对后保存当时原摘录。正文后来修改，原话、时间、作者及摘录保留；相似文字不视为原位置。候选音频时间段、图像区域仍绑定原件。`comment-handling-v1` 继续承担实际回应；当前制作回应另带 `expected_response_content`，记录真实处置说明和必要局部改后锚点。原意见提供改前摘录，回应保存改后摘录及摘要；再次修改当前稿不会把当时处理结果冒充今天的正文。\n\n## 物理清除与常规恢复\n\n当前制作不再保留旧素材版本、轮次、旧方案全文及其专属索引。现有实例先在隔离库验证，再沿 `scripts/material_review_release.py prepare --remove-material-versions` 进入受管发布窗口：核验准确基线、停止写入应用，在事务中删除退役数据和缓存索引，保全候选提交、原件、评论及实际回应；随后压实数据库并检查旧数据确实不存在。事务失败时回滚，已完成清除不重复执行。\n\n不制作或保留旧素材版本的物理备份。清除回执只记录计数、摘要和校验结果；之后使用兼容当前模型的服务前向恢复，不启动旧写入模型，也不把历史任务库覆盖正式库。并行任务的有效新增内容沿准确当前数据增量承接。\n\n完整公开导出为 Schema 14：保存当前制作单份正文、不可变提交快照、真实候选、意见／回应摘录、故事版本、独立 SKILL 文件历史及有效配置方法。通过现有 `restore` 入口恢复到新空实例；旧格式不能重新带入退役模型。私有执行只在显式选择后另行恢复，准确旧方法包保持原字节，不覆盖已经更新的方法头。原件及真实费用回执不因取消素材版本而删除。\n",
+          "references/record-contract.md": "# 媒体方案交付字段\n\nrecord.json 是本步骤准确基线。只修改本次请求允许的字段；保留 object_id、kind、expected_version 与全部准确引用。expected_version 是登记时的并发保护，目标前进后不能手改数字继续提交，须回读新版本、新建步骤。\n\npayload.generation.format 固定为 generation-plan-v1；method 只能是 generate 或 reuse。model、tool、execution、parameters、randomization 和 inputs 各自有实际接口含义，保留已核实的值；改动需要准确依据。参数里的数值保持数值，不换成解释句。\n\nprompt 是给媒体模型的实际内容指令。output 含 name、description 和 review_criteria 字符串数组。blockers 是尚未满足条件的字符串数组；它们不会进入媒体 Prompt。generation.conditions 是“条件标识 → true/false”的对象，generation.selected_routes 是既定路线选择对象；两者属于既有输入关系协议，不能写入创作说明、字符串判断或待办。解释选择可写在本次 review 的 assessment 中，阻断写在 blockers 中。\n\ninputs 是既有准确参考数组，保留 reference、角色、用途、候选和范围等实际字段。selection_state=unselected 表示尚未选定，不能通过填写任意文件或自报认可变成就绪。缺原词、原件或输入锁时保留阻断；不得用新编内容补齐。\n\n先把完整草稿写入 draft-record.json，通过 draft 登记。保存并实际重读后，把发现与修订判断写入 review.md，通过 review 登记。最后写 final-record.json 并执行 finish。服务端会校验 JSON 载荷、准确引用与步骤顺序；拒绝时按错误修正本阶段，成功后的步骤不可重写，进一步修改须新建步骤。\n\nfinish 输出的是待 production-import 的准确登记包，仍需目标并发版本、原有制作校验与方法依据全部通过才成为受管方案；它不表示已生成、获认可或获调用许可。正式发布沿项目既有增量流程，不把执行库快照覆盖到正式库。\n",
+          "references/relations.md": "# 按当前阶段使用准确关系\n\n先读 request.json 的 relation_readings 与 contextual_relations。前者包含准确参考和方案所钉住的完整关系修订；后者包含本对象、所属镜头与其他素材的完整关系。摘要只帮助定位，不能代替关系原文、当前作品、镜头起止状态和准确输入。没有取得原件就不宣称已经看听。\n\n关系以两端稳定对象为身份，同一对只读一份连贯内容。R-A->B 表示 B 依赖 A，R-A-B 表示相关；图上是相关也可以在具体方案中明确选 A 为 B 的输入。人物行为的方向不等于制作依赖。不同阶段的动作与条件先判断在本次是否已发生，不把相反阶段同时施加，不从当前关系补造旧 CALL 的依据。\n\n逐项判断参考在本次约束什么：身份、完整状态、构图、空间、音色、旋律或可读文字。保留已有正确 Prompt，只修遗漏、冲突与提前呈现。首帧只描述起点；音色不连带继承旧台词、语气、呼吸、环境和认可；文字随真实书写、翻页或揭纸阶段显现。具体改动写成模型能执行的声画与动作，融入原有段落，不逐项粘贴关系全文或在 Prompt 添加关系编号、修订号和技术检查。\n\n关系存在不自动选择或上传参考。generation.inputs 的 reference、relation、semantics、necessity、group、route、condition、enabled、material_selection、component_id、crop 与 range 保留各自职责：relation 是准确关系引用，semantics/necessity 等是这次方案的明确选择；同一上游的不同组成或时段仍分别保存。只检查当前选中路线的缺项和循环，未选择的备选保持可回查。上下游是稳定身份，版本、候选、裁切、时段不能写到关系身份里。\n\n保存 draft 后完整回读 Prompt、实际选中输入和关系正文，逐组说明保留与修订的理由，检查相邻镜头和已知阶段。review 不把静态校验写成观看、试听或用户认可。result 保留未解决条件；冻结执行继续原方法、原输入，换方法或作品依据必须开始新步骤。\n"
+        },
+        "format": "managed-method-skill-v1",
+        "inputs": "准确角色或歌曲、原词、完整状态、已有声音原件与片段",
+        "outputs": "完整生成或复用方案、实际回读与修订结果",
+        "purpose": "确定角色声音身份、说话表现及准确音色参考",
+        "required_inputs": [
+          "context",
+          "records"
+        ],
+        "resources": [
+          {
+            "object_id": "method.resource.filmcraft-execution",
+            "revision_id": "36250178f2e3a73145233f593f2871ea00502119003c08251c58270a9a08acf3",
+            "section": "sound"
+          },
+          {
+            "object_id": "method.resource.filmcraft-execution",
+            "revision_id": "36250178f2e3a73145233f593f2871ea00502119003c08251c58270a9a08acf3",
+            "section": "performance"
+          }
+        ],
+        "steps": [
+          "draft",
+          "review",
+          "result"
+        ],
+        "title": "音色方案",
+        "work_types": [
+          "media-plan"
+        ]
+      },
+      "created_at": "2026-10-12T10:51:57+00:00",
       "dependencies": [
         {
           "revision_id": "36250178f2e3a73145233f593f2871ea00502119003c08251c58270a9a08acf3",
@@ -13874,5 +14817,5 @@
       ]
     }
   ],
-  "sha256": "6f6cd4bf5b3727788f6ff9f344718aee2a36ee5f81c6265f2fff83832af239f8"
+  "sha256": "01d44c4a5681f2403c6209f1f984483bbc078bc2be822f87fcfe07cacdeb76a2"
 }
