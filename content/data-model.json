@@ -1,0 +1,75 @@
+{
+  "format": "data-model-v1",
+  "title": "创作数据怎样连接",
+  "lead": "故事稿保留各自版本；制作对象维护当前内容。准确来源、真实产出和原意见让每次修改都能回查。",
+  "diagrams": [
+    {
+      "title": "故事版本 → 制作依据",
+      "nodes": [
+        {"id":"sources","title":"采编资料与故事方向","text":"分别保留来源和版本，支撑故事设计。"},
+        {"id":"structure","title":"故事结构","text":"保留结构版本，组织人物、关系和因果。"},
+        {"id":"novel","title":"小说","text":"按准确结构写作，保留各稿；修订可回到结构。"},
+        {"id":"screenplay","title":"文字剧本 · 集 E / 场 S","text":"每份剧本版本包含准确的集、场和局部正文。"},
+        {"id":"audiovisual","title":"视听集 AE → 视听场 AS → 镜头 ASH","text":"只维护当前制作内容。视听场可组合多个故事场或局部正文；每个镜头本身就是实体。"}
+      ],
+      "groups": [{"title":"各自保留版本","rows":[["sources","structure"],["novel","screenplay"]]},{"title":"当前制作内容","rows":[["audiovisual"]]}],
+      "connections": [
+        {"from":"sources","to":"structure","label":"提供依据"},
+        {"from":"structure","to":"novel","label":"据此写作"},
+        {"from":"novel","to":"screenplay","label":"改编"},
+        {"from":"screenplay","to":"audiovisual","label":"准确来源"}
+      ],
+      "note":"视听集场镜按制作需要组织，不与剧本集场强制一一对应；当前制作修改不推动故事版本。"
+    },
+    {
+      "title":"唯一制作出处 → 当前方案 → 真实候选",
+      "nodes": [
+        {"id":"entity","title":"实体 · EN","text":"人物、场景、道具、歌曲等稳定身份；身份素材由实体拥有。"},
+        {"id":"state","title":"必要实体状态 · ST","text":"属于一个实体。确需独立准备，且至少拥有一项真实素材需求。"},
+        {"id":"shot","title":"镜头实体 · ASH","text":"沿用镜头自身身份，拥有本镜产物需求；引用出场实体与状态。"},
+        {"id":"requirement","title":"素材需求 · M","text":"唯一出处是某个实体、状态或镜头，三者择一。首帧、视频、声音等是需求用途；引用者可有多个。"},
+        {"id":"plan","title":"一个当前方案","text":"维护本次 Prompt、模型参数、拟用参考和文件范围；修改只更新当前稿。"},
+        {"id":"candidate","title":"多个真实候选 · MC","text":"每次真实生成或制作产出一个候选，属于原需求。保存当时方案、实际输入、参数与原件；以后改方案不改写候选。"}
+      ],
+      "groups": [{"title":"实体范畴 · 镜头就是其中一类","rows":[["entity","state","shot"]]},{"title":"需求只归一个出处","rows":[["requirement"]]},{"title":"方案与结果","rows":[["plan","candidate"]]}],
+      "connections": [
+        {"from":"entity","to":"state","label":"按需拥有"},
+        {"from":"entity","to":"requirement","label":"身份需求"},
+        {"from":"state","to":"requirement","label":"状态需求"},
+        {"from":"shot","to":"requirement","label":"镜头需求"},
+        {"from":"requirement","to":"plan","label":"一份当前稿"},
+        {"from":"requirement","to":"candidate","label":"拥有产出"},
+        {"from":"plan","to":"candidate","label":"提交快照 · 真实产出"}
+      ],
+      "note":"仅关联状态或使用它的参考，不算拥有状态需求。失败或结果未知的调用不生成候选；重试下载仍属于原调用。"
+    },
+    {
+      "title":"关联、参考与实际选用",
+      "nodes": [
+        {"id":"relation","title":"统一业务关系","text":"连接相关或依赖的稳定对象，说明业务关系；不表示已审批或已调用。"},
+        {"id":"objects","title":"实体 / 状态 / 素材需求","text":"关系端点保留各自身份和唯一出处，共享参考不增加拥有者。"},
+        {"id":"reference","title":"素材参考","text":"指向某个准确候选及文件、裁切或时间范围。可以供多个方案引用。"},
+        {"id":"selected","title":"实际选用与提交","text":"从拟用参考中明确选用；提交快照保存实际模型、参数、输入顺序与范围。"}
+      ],
+      "groups":[{"rows":[["relation","objects"],["reference","selected"]]}],
+      "connections":[{"from":"relation","to":"objects","label":"相关 / 依赖"},{"from":"reference","to":"selected","label":"明确选用"}],
+      "note":"对象关系说明联系，素材引用说明准确原件，提交说明真正使用了什么；三者分别记录。"
+    },
+    {
+      "title":"文件版本、执行组合与评论",
+      "nodes": [
+        {"id":"skill","title":"SKILL","text":"由 SKILL.md、参考文件、模板及源投影组成。"},
+        {"id":"file","title":"独立文件版本","text":"只在该文件字节变化时推进。同一文件可以被多个准确整包组合引用。"},
+        {"id":"execution","title":"方法执行","text":"固定取得的 SKILL 文件及共用资料组合；旧执行继续读原组合。"},
+        {"id":"comment","title":"评论与回应 · C","text":"原圈选、原话与准确对象保留；回应保存实际改动依据，可回看原稿、回应稿和当前稿。"},
+        {"id":"targets","title":"准确评论目标","text":"故事版本、SKILL 文件版本、候选原件，或制作当前内容的当时摘录。"}
+      ],
+      "groups":[{"rows":[["skill","file","execution"],["comment","targets"]]}],
+      "connections":[{"from":"skill","to":"file","label":"由文件组成"},{"from":"file","to":"execution","label":"准确组合"},{"from":"comment","to":"targets","label":"指向原内容"}]
+    }
+  ],
+  "examples": [
+    {"title":"EN002 · 阿蘅","href":"/?workspace=settings.workspace&production_tab=entities&production_entity=entity-a-heng","text":"回查实体身份素材与必要状态的各自需求；镜头引用阿蘅不会改变这些需求的出处。"},
+    {"title":"ASH002 · 镜头素材","href":"/?workspace=settings.workspace&production_tab=entities&production_entity=av-e01-a01-s02","text":"回查本镜需求与当前方案；若引用 EN002 的素材，仍保留两类需求各自的出处。"}
+  ]
+}

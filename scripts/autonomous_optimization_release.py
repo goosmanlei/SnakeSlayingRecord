@@ -466,7 +466,7 @@ def compose_definition(m, image, release):
     return {'services': {
         'app': {'image': image['image'], 'restart': 'unless-stopped', 'environment': environment,
                 'volumes': [volume(m['story_main'], '/instance', False), volume(ca, '/run/local-ca/cacert.pem', True),
-                            *[volume(release / 'instance' / name, '/instance/' + name, True) for name in INSTANCE_FILES],
+                            *[volume(release / 'instance' / name, '/instance/' + name, True) for name in (*INSTANCE_FILES, *m.get('instance_overlays', []))],
                             *([volume(release / 'instance/content/production-approach-assets', '/instance/content/production-approach-assets', True)] if m.get('method_media') else [])],
                 'expose': ['8765'], 'healthcheck': {'test': ['CMD', 'python', '-c', "import urllib.request;urllib.request.build_opener(urllib.request.ProxyHandler({})).open('http://127.0.0.1:8765/api/instance',timeout=3)"], 'interval': '15s', 'timeout': '5s', 'retries': 3}},
         'nginx': {'image': m['previous_nginx']['image'], 'restart': 'unless-stopped',
@@ -532,7 +532,7 @@ def verify_service(m, image, release):
     actual = {v['Destination']: (v['Source'], v['RW']) for v in app['Mounts']}
     require(actual == expected and all(v['Type'] == 'bind' for v in app['Mounts']), 'running mounts differ')
     source_check(image['image'], m['source_hashes'], running=True)
-    for name in INSTANCE_FILES:
+    for name in (*INSTANCE_FILES, *m.get('instance_overlays', [])):
         actual = run([DOCKER, 'exec', APP, 'cat', '/instance/' + name])
         require(sha(actual) == m['hashes']['instance/' + name], 'running instance file differs')
     for name,digest in m.get('method_media',{}).items():
