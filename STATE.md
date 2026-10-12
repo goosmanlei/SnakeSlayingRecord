@@ -1,6 +1,6 @@
 # 当前状态与下一步
 
-- task-20261012-0013 已实现流程式 SKILL 阅读、独立文件历史与数据模型关系图；完整 Review、比较、旧意见回查及隔离 Chrome 已实操。双仓发布、正式迁移、空实例恢复与清理按主任务账本及 `.runtime/task-20261012-0013/` 回执核对；负责人独立 Review 仍单独登记。详见 [验收记录](production/skill-admin-data-model/VERIFICATION.md)。
+- task-20261012-0013 已实现流程式 SKILL 阅读、独立文件历史、实体关系图及小说创作入口；素材方案为图像、音色、演唱、视频、字层五类。正式 MV 清除、方法增量与 Schema 14 空实例恢复已实测；最终双仓、服务与清理按主任务账本及 `.runtime/task-20261012-0013/final/` 回执核对。负责人独立 Review 和旧 Python 测试迁移残留单独登记，详见 [验收记录](production/skill-admin-data-model/VERIFICATION.md)。
 
 ## 当前成果与运行依据
 

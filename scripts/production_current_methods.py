@@ -10,7 +10,7 @@ REPLACEMENTS = {
 }
 
 
-def update(store, root, names=None):
+def update(store, root, names=None, *, reference_only=False):
     from review_desk import methods
     from review_desk.production_current_methods import WORK_TYPES
     changes = {}
@@ -18,17 +18,19 @@ def update(store, root, names=None):
         oid = entry['object_id'];row = methods.read(store, oid);payload = copy.deepcopy(row['payload'])
         if payload['format'] != methods.FORMATS['skill'] or not (set(payload['work_types']) & WORK_TYPES):continue
         if names is not None and oid.removeprefix('method.skill.') not in names:continue
-        for filename,body in payload['files'].items():
-            for old,new in REPLACEMENTS.items():body=body.replace(old,new)
-            payload['files'][filename]=body
+        if not reference_only:
+            for filename,body in payload['files'].items():
+                for old,new in REPLACEMENTS.items():body=body.replace(old,new)
+                payload['files'][filename]=body
         rule = (root/'production/current-candidates/README.md').read_text()
         payload['files']['references/current-production.md'] = rule
         body=payload['files']['SKILL.md']
-        if oid == 'method.skill.material-assessment' and '先判断独立状态的制作职责' not in body and '实体、状态与素材需求抽取' not in body:
+        if not reference_only and oid == 'method.skill.material-assessment' and '先判断独立状态的制作职责' not in body and '实体、状态与素材需求抽取' not in body:
             body=body.replace('## 实际比对后选路线', '## 先判断独立状态的制作职责\n\n有效状态至少拥有一项以其为唯一制作出处的真实独立素材需求；使用范围不算拥有权。先读准确原文、场镜和消费者判断实际素材职责，不为保状态复制或虚构需求。纯表演、账目阶段和连续性条件迁回实体、镜头或方案；撤下状态时同笔承接消费者，历史保持原样。\n\n## 实际比对后选路线')
         marker='## 当前制作内容与候选'
-        if marker in body:body=body[:body.index(marker)].rstrip()
-        payload['files']['SKILL.md']=body+'\n\n'+marker+'\n\n执行前阅读 references/current-production.md。制作对象原地维护，步骤摘要不保存全文历史；只有实际提交保存候选所需完整快照。草稿、回读、自检及完成仍按本方法的必要步骤执行。故事域版本不受此规则影响。\n'
+        if not reference_only:
+            if marker in body:body=body[:body.index(marker)].rstrip()
+            payload['files']['SKILL.md']=body+'\n\n'+marker+'\n\n执行前阅读 references/current-production.md。制作对象原地维护，步骤摘要不保存全文历史；只有实际提交保存候选所需完整快照。草稿、回读、自检及完成仍按本方法的必要步骤执行。故事域版本不受此规则影响。\n'
         if payload!=row['payload']:
             changed=methods.save(store,{'category':'skill','name':oid.removeprefix('method.skill.'),'expected_version':row['version'],'payload':payload})
             changes[oid]={'before':row['revision_id'],'after':changed['revision_id']}
