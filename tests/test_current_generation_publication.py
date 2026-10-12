@@ -18,7 +18,7 @@ class CurrentPublicationTest(unittest.TestCase):
             payload={'format':'production-entity-v1','title':name,'blocks':[{'id':'body','text':'old body '+name}],
                      'entity_type':'prop','aliases':[],'facts':[],'choices':[],'unknowns':[],'sources':[]}
             p.import_records(self.source,{'format':'production-import-v1','records':[{'object_id':name,'kind':'ENTITY','expected_version':0,'payload':payload}]})
-        migration.apply(self.source,migration.plan(self.source))
+        self.assertTrue(current.enabled(self.source))
         other=p.record(self.source,'other')
         self.source.create_comment({'id':'concurrent-opinion','target_object_id':'other','target_revision_id':other['id'],
             'expected_edit_token':other['edit_token'],'anchor':{'type':'global'},'body':'old feedback'})
@@ -99,7 +99,7 @@ class CurrentPublicationTest(unittest.TestCase):
         audio.seek(0);component=ingest(source.db_path.parent.parent,audio,'voice.wav')
         put('voice','ASSET',media_type='audio',subjects=[],states=[],components=[component],
             production=ref('recording'),lineage={},candidate_requirements=[ref('need-b')])
-        migration.apply(source,migration.plan(source))
+        self.assertTrue(current.enabled(source))
         base=self.root/'semantic-base.sqlite3';backup(source.db_path,base)
         path=self.root/'semantic-formal/.runtime/review.sqlite3';path.parent.mkdir(parents=True)
         backup(base,path);formal=Store(path);self.addCleanup(formal.close)

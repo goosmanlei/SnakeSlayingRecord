@@ -296,7 +296,7 @@ class ReleaseTest(unittest.TestCase):
             with sqlite3.connect(path) as db:
                 db.executescript("CREATE TABLE material_members(material_id TEXT,number INTEGER,revision_id TEXT);INSERT INTO material_members VALUES ('need',1,'original');")
         with sqlite3.connect(self.after) as db:db.execute("UPDATE material_members SET revision_id='unrelated'")
-        with self.assertRaisesRegex(ValueError,'identities lost: material_members'):r.preserved(self.before,self.after)
+        with self.assertRaisesRegex(ValueError,'immutable history lost: material_members'):r.preserved(self.before,self.after)
 
     def test_duplicate_immutable_rows_cannot_hide_deletion(self):
         for path in (self.before,self.after):
