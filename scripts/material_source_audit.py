@@ -52,7 +52,7 @@ def main():
     args=parser.parse_args();sys.path.insert(0,str(args.system.resolve()))
     from review_desk.store import Store
     from review_desk import production as p
-    current=Store.open_existing(args.database);baseline=Store.open_existing(args.baseline)
+    current=Store.open_readonly(args.database);baseline=Store.open_readonly(args.baseline)
     try:
         with p.read_scope(current),p.read_scope(baseline):result=audit(current,baseline)
     finally:current.close();baseline.close()
