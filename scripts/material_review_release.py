@@ -257,7 +257,7 @@ def prepare(a):
     helpers=['material_review_release.py','autonomous_optimization_release.py','integrate_generation_review_system.py']
     if managed_methods:helpers.append('method_migration.py')
     if native:helpers.append('task_repository_delivery.py')
-    if getattr(a,'method_file_history',False):helpers.append('method_file_history.py')
+    if getattr(a,'method_file_history',False):helpers.extend(['method_file_history.py','method_migration.py'])
     if latest:helpers.extend(['latest_state_migration.py','audiovisual_publication.py','generation_workspace.py','method_migration.py'])
     if relations:helpers.extend(['unified_relation_migration.py','method_migration.py'])
     if retirement:helpers.extend(['review_retirement_release.py','unified_relation_migration.py','method_migration.py'])
@@ -467,6 +467,8 @@ def apply(a):
             require(exact_candidate or base.safe_container(current)==m['previous_app'],'another app is active')
             if current['State']['Running']:run([base.DOCKER,'stop','--time','30',current['Id']])
             require(not inspect(current['Id'])['State']['Running'],'application still writing')
+            import method_migration
+            require(sha(Path(method_migration.__file__).read_bytes())==m['hashes']['helpers/method_migration.py'],'write-window helper changed')
             from method_migration import stopped_api
             save(receipt/'file-history-write-window.json',{'container_id':current['Id'],'stopped':True,'ingress':stopped_api(application_stopped=True)})
         if method_change:
@@ -548,7 +550,11 @@ def apply(a):
             save(receipt/'file-history-migration.json',result)
             json.loads(run([*command,'check']))
             migrated=receipt/'file-history-migrated.sqlite3'
-            base.snapshot(Path(m['story_main'])/'.runtime/review.sqlite3',migrated)
+            if migrated.exists():
+                require(file_sha256(migrated)==read(receipt/'file-history-snapshot.json')['sha256'],'migration snapshot changed')
+            else:
+                base.snapshot(Path(m['story_main'])/'.runtime/review.sqlite3',migrated)
+                save(receipt/'file-history-snapshot.json',{'sha256':file_sha256(migrated)})
             save(receipt/'file-history-preservation.json',preserved(before,migrated,allow_cache_token_updates=True,allow_method_file_history=True,strict=True))
         release=install(root,m,image);environment=base.env_values(inspect(base.APP))
         if not exact_candidate or not inspect(base.APP)['State']['Running']:base.compose_up(m,[release/'compose.release.json'],environment,release=True)
