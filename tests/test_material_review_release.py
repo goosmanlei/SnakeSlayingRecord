@@ -21,6 +21,19 @@ import task_repository_delivery as delivery
 import method_migration
 
 class ReleaseTest(unittest.TestCase):
+    def test_handbook_release_rejects_unrelated_page_or_metadata_changes(self):
+        old = {'schema_version': 2, 'tabs': [{'id': 'vision', 'title': 'keep'},
+                                          {'id': 'video-handbook', 'title': 'old'}]}
+        derived = {'id': 'video-handbook', 'title': 'new', 'source': {'sha256': 'exact'}}
+        good = {'schema_version': 2, 'tabs': [old['tabs'][0], derived]}
+        r.check_handbook_change(old, good, derived)
+        for invalid in ({**good, 'schema_version': 3},
+                        {**good, 'tabs': list(reversed(good['tabs']))},
+                        {**good, 'tabs': [{'id': 'vision', 'title': 'changed'}, derived]},
+                        {**good, 'tabs': [old['tabs'][0], {**derived, 'title': 'unreviewed'}]}):
+            with self.assertRaisesRegex(ValueError, 'preserve other pages'):
+                r.check_handbook_change(old, invalid, derived)
+
     def test_preservation_only_window_rejects_unrelated_insert(self):
         shutil.copy2(self.before,self.after)
         r.preserved(self.before,self.after,strict=True)

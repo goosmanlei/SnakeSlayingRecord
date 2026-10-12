@@ -22,9 +22,28 @@ def write(path, value):
 
 def plan_output(record):
     payload = record['payload']
-    return {'requirement': {k: v for k, v in payload.items() if k not in
-            ('generation', 'method_basis', 'status', 'withdrawal_reason', 'required', 'blocks', 'method_adjustment', 'shot_reference_operation')},
-            'generation': payload['generation']}
+    excluded = ('generation', 'method_basis', 'status', 'withdrawal_reason', 'required', 'blocks', 'method_adjustment', 'shot_reference_operation')
+    if payload.get('material_category') == 'text-layer':
+        excluded += ('specification',)
+    result = {'requirement': {k: v for k, v in payload.items() if k not in excluded},
+              'generation': payload.get('generation')}
+    if payload.get('material_category') == 'text-layer':
+        result['text_layer'] = {key: copy.deepcopy(payload.get(key)) for key in ('blocks', 'specification')}
+    return result
+
+
+def selection_conditions(payload, supplied):
+    # Match the server's explicit old audio-hint input conversion. Classification
+    # itself always comes from the requirement and is validated by the server.
+    result = {**(supplied or {}), 'media_type': payload['media_type']}
+    if payload.get('material_category'):
+        if 'audio_type' in result and result['audio_type'] != payload['material_category']:
+            raise ValueError('调用条件不能改变素材分类')
+        result.pop('audio_type', None)
+        if result.get('material_category', payload['material_category']) != payload['material_category']:
+            raise ValueError('调用条件不能改变素材分类')
+        result['material_category'] = payload['material_category']
+    return result
 
 
 def _begin(client, directory, record, run_id, step_id, conditions=None, supporting=None):
@@ -34,7 +53,7 @@ def _begin(client, directory, record, run_id, step_id, conditions=None, supporti
         original = saved['record'] if 'record' in saved else read(directory / 'record.json')
         if checksum(original) != checksum(record) or saved['request']['run_id'] != run_id or saved['request']['step_id'] != step_id:
             raise ValueError('恢复目录属于其他步骤或输入；请沿原步骤恢复')
-        if conditions is not None and checksum(saved['request']['conditions']) != checksum({**conditions, 'media_type': record['payload']['media_type']}):
+        if conditions is not None and checksum(saved['request']['conditions']) != checksum(selection_conditions(record['payload'], conditions)):
             raise ValueError('恢复条件改变；请新建步骤并复核受影响的工作')
         if supporting is not None and checksum(saved['request']['inputs'].get('supporting_references')) != checksum(supporting):
             raise ValueError('恢复材料改变；请新建步骤')
@@ -71,7 +90,9 @@ def validate_record(saved, record):
         raise ValueError('旧步骤缺少完整媒体记录；请先沿原 begin 请求恢复')
     def baseline(value):
         result = copy.deepcopy(value)
-        for key in ('generation', 'method_basis', 'method_adjustment', 'shot_reference_operation'):
+        keys = ('generation', 'method_basis', 'method_adjustment', 'shot_reference_operation')
+        if value['payload'].get('material_category') == 'text-layer': keys += ('blocks', 'specification')
+        for key in keys:
             result['payload'].pop(key, None)
         return result
     if (record['object_id'] != saved['execution']['payload']['target']
@@ -126,7 +147,10 @@ def read_stage(client, directory, name, *, resume=False, record=None, review=Non
         if original is None:
             # Legacy full outputs may use the frozen original envelope, never today's plan.
             original = copy.deepcopy(saved.get('record') or read(directory / 'record.json'))
-            original['payload']['generation'] = copy.deepcopy(output['generation'])
+            if output.get('generation') is not None:
+                original['payload']['generation'] = copy.deepcopy(output['generation'])
+            if output.get('text_layer'):
+                original['payload'].update(copy.deepcopy(output['text_layer']))
         validate_record(saved, original)
         if checksum(plan_output(original)) != checksum(output):
             raise ValueError('完整媒体记录与阶段原值不一致：' + name)
