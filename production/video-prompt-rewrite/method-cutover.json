@@ -1,0 +1,23 @@
+{
+  "format": "managed-method-cutover-v1",
+  "task": "task-20261012-0011",
+  "wait_for_delivery": [
+    "task-20261012-0009",
+    "task-20261012-0010",
+    "task-20261012-0015"
+  ],
+  "reviewed_work": [
+    {
+      "work_type": "media-plan",
+      "conditions": {
+        "media_type": "video"
+      },
+      "disposition": "Append video-plan v13, handbook v5 and binding v20 after latest formal definitions; preserve old executions and other media bindings."
+    },
+    {
+      "scope": "344 current video plans and M2999 camera/first-frame plans",
+      "disposition": "Use completed per-shot writing and exact new execution receipts. No real calls, candidates, comments or locked story changes."
+    }
+  ],
+  "source": "production/video-prompt-rewrite/VERIFICATION.md"
+}

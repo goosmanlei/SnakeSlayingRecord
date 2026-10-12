@@ -101,6 +101,20 @@ class WorkspaceTest(unittest.TestCase):
         with self.assertRaises(ValueError):
             verify_integrated(self.task, self.main, commit, package, entries)
 
+    def test_lfs_publication_verifies_hydrated_bytes_not_only_pointer(self):
+        git(self.task, 'lfs', 'install', '--local')
+        (self.task / '.gitattributes').write_text('package.json filter=lfs diff=lfs merge=lfs -text\n')
+        git(self.task, 'add', '.gitattributes')
+        commit, package, entries = self.package()
+        pointer = git(self.task, 'show', commit + ':package.json').encode()
+        self.assertTrue(pointer.startswith(b'version https://git-lfs.github.com/spec/v1\n'))
+        git(self.main, 'merge', '--ff-only', commit)
+        self.assertEqual(verify_integrated(self.task, self.main, commit, package, entries), commit)
+        for invalid in (b'[]\n', b'{}', pointer):
+            package.write_bytes(invalid)
+            with self.subTest(invalid=invalid), self.assertRaisesRegex(ValueError, 'differs'):
+                verify_integrated(self.task, self.main, commit, package, entries)
+
     def test_media_size_is_verified_in_addition_to_its_hash(self):
         _, _, entries = self.package()
         entries[0]['bytes'] += 1
