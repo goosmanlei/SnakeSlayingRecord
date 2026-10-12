@@ -11,7 +11,8 @@ import sys
 
 
 def production_tables(before, after):
-    from method_migration import CONFIG_FORMATS
+    try: from .method_migration import CONFIG_FORMATS
+    except ImportError: from method_migration import CONFIG_FORMATS
     ignored = set()
     revisions = before['revisions'] + after['revisions']
     for row in revisions:
@@ -30,6 +31,17 @@ def production_tables(before, after):
         raise ValueError('production depends on newly changed method data; deliver its exact binding first')
     after['dependencies'] = [r for r in after['dependencies'] if r['from_revision'] not in rids] + [
         r for r in before['dependencies'] if r['from_revision'] in rids]
+    # File histories travel with the same exact method registry. They are
+    # configuration, not generation data, and must never be partly published.
+    packages = {r['revision_id'] for side in (before, after)
+                for r in side.get('method_file_packages', []) if r['object_id'] in ignored}
+    for table, field, excluded in (
+            ('method_file_versions', 'object_id', ignored),
+            ('method_file_packages', 'object_id', ignored),
+            ('method_file_members', 'package_revision', packages)):
+        if table in before:
+            after[table] = [r for r in after[table] if r[field] not in excluded] + [
+                r for r in before[table] if r[field] in excluded]
     return before, after, sorted(ignored)
 
 
