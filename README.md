@@ -20,7 +20,7 @@
 
 [生产制作](production/README.md)统一组织视听制作、实体管理和素材管理。当前[全剧视听设计](production/audiovisual/README.md)覆盖版本四的 17 集、42 故事场，重编为 65 个视听场、344 镜；1,534 项新需求与四项保留歌曲需求共用准确素材关系。6021 秒是为表演和动作预留的保守方案估计，约 100 分钟，不是成片实测。用户允许适度加长，以动作和表演读得清楚为先。
 
-“制作思路”有故事创作、生产制作、[视频生成手册](production/seedance-video-handbook.md)和[影视专业知识](production/filmcraft/README.md)四个子页。正文由 [content/production-approach.json](content/production-approach.json) 与相应方法原文维护；桌面常驻目录，窄屏横向目录，支持准确章节链接。 实际创作从“系统管理 → SKILL管理”选择适用 SKILL，由既有写作及媒体入口取得准确方法和资料；[工作交接表](production/professional-methods.md)说明输入、输出和负责阶段。
+“制作思路”按系统构想、数据模型、基础流程、故事创作、生产制作排列。基础流程以紧凑阶段框连接动作与纸张形产出，承接真实 SKILL、准确文件阅读、版本比较和评论；数据模型保留编号查询。两个创作概览只表达关系。专业资料沿对应 SKILL 文件树读取，[视频生成手册](production/seedance-video-handbook.md)及[影视专业知识](production/filmcraft/README.md)仍是唯一专业正文，旧章节和准确文件链接转入对应阅读位置。导航与源映射由 [content/production-approach.json](content/production-approach.json)及同步工具维护；实际执行由既有写作及媒体入口取得准确方法和资料；[工作交接表](production/professional-methods.md)说明输入、输出和负责阶段。
 
 每镜支持多个需求、每需一份当前方案和多个实际候选；实体状态、准确来源、关系、候选比较、评论和采纳共用详情。素材管理按五列基准行分页，窄屏只重排当前集合；实体管理以集／场／镜聚焦关系图，单击突出直连关系，双击或 Enter 打开准确大卡，见 [范围说明](production/entity-graph-focus/VERIFICATION.md)和[关系交互验收](production/relation-interaction/VERIFICATION.md)。技术验收不代表用户接受新设计，已有图像与音频不代表镜头视频已生成。本任务没有媒体生成调用。
 

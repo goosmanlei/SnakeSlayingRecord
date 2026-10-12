@@ -95,7 +95,7 @@
 
 - 作品为方向三《把灯带回家》、故事结构第十稿、精修九定稿候选与用户已确认的剧本版本四。准确制作来源锁定于 [production/source-lock.json](production/source-lock.json)；故事创作域与评论保留。
 - 当前交付包含 [全剧视听设计](production/audiovisual/README.md)：17 集、42 故事场、65 视听场、344 镜，全部 1114 个正文块有准确表达范围。新设计支持每镜多需求、每需单份当前方案和多个真实候选、关系路线、准确原件及区域／时间选择。技术验证不代表用户接受新设计或声音质量。
-- 生产制作包含视听制作、实体管理、素材管理；故事剧本可回查两条制作来源链。方法页保留 [视频生成手册](production/seedance-video-handbook.md) 与 [影视专业知识](production/filmcraft/README.md)，生产方法按新模型重编。
+- 生产制作包含视听制作、实体管理、素材管理；故事剧本可回查两条制作来源链。专业正文保留 [视频生成手册](production/seedance-video-handbook.md) 与 [影视专业知识](production/filmcraft/README.md)；0017 候选将其收敛到基础流程 SKILL 文件树，实际正式身份以任务发布回执为准。
 - 镜头视频方案已按 [逐场输入审查](production/audiovisual/video-inputs.json) 区分普通参考与固定起点，并补充镜内后显内容的直接依据；方案、原件选定和实际效果分别审阅。交付核验及正式回读按 [输入契约验收](production/audiovisual/video-inputs-verification.md) 与任务回执定位。
 - 全剧必要准确文字已逐集复核，11份可编辑工程沿原镜头素材入口交接；正确旧图继续复用，字层不迁移既有认可。原词、揭示与未定字句见 [文字交接](production/audiovisual/text-review.md)，发布与实际验收按任务 `task-20261009-0010` 回执及 [复验入口](production/audiovisual/text-verification.md) 核对。
 - 早期状态准备用途按 [逐集用途判断](production/audiovisual/state-preparation.md) 区分生成输入、独立审阅、可选对照与文字检查；渡口、刀缝长杠及镜内变化贯通到具体镜头。隔离实操、历史保护与正式回查入口见 [状态准备验收](production/state-preparation-review.md)，正式生效及清理以任务 `task-20261009-0008` 实际回执为准。
