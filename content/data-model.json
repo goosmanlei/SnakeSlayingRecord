@@ -1,75 +1,383 @@
 {
   "format": "data-model-v1",
-  "title": "创作数据怎样连接",
-  "lead": "故事稿保留各自版本；制作对象维护当前内容。准确来源、真实产出和原意见让每次修改都能回查。",
+  "title": "系统数据实体与关系",
+  "lead": "下图逐一对应上方编号中的实体，并补出稿件、当前方案、文件和执行记录。连线说明归属或引用；每张卡片直接标明版本与评论规则。",
   "diagrams": [
     {
-      "title": "故事版本 → 制作依据",
+      "title": "稿件、剧本与视听编排",
       "nodes": [
-        {"id":"sources","title":"采编资料与故事方向","text":"分别保留来源和版本，支撑故事设计。"},
-        {"id":"structure","title":"故事结构","text":"保留结构版本，组织人物、关系和因果。"},
-        {"id":"novel","title":"小说","text":"按准确结构写作，保留各稿；修订可回到结构。"},
-        {"id":"screenplay","title":"文字剧本 · 集 E / 场 S","text":"每份剧本版本包含准确的集、场和局部正文。"},
-        {"id":"audiovisual","title":"视听集 AE → 视听场 AS → 镜头 ASH","text":"只维护当前制作内容。视听场可组合多个故事场或局部正文；每个镜头本身就是实体。"}
+        {
+          "id": "edition",
+          "title": "稿件与剧本版本",
+          "text": "采编资料、故事方向、结构、小说各自保留稿件；一份完整文字剧本版本包含该版的集与场。",
+          "version": "保留各稿；剧本按完整版本组织",
+          "comments": "可评论准确稿件与原文"
+        },
+        {
+          "id": "episode",
+          "title": "剧本集 · E",
+          "text": "属于一份准确剧本版本，内部包含按顺序编排的剧本场。",
+          "version": "随所属剧本版本",
+          "comments": "可对该版正文评论"
+        },
+        {
+          "id": "scene",
+          "title": "剧本场 · S",
+          "text": "包含在一个剧本集中，保存这一场的段落、动作与对白。",
+          "version": "随所属剧本版本，不单独计版",
+          "comments": "可圈选该版场内原文"
+        },
+        {
+          "id": "av-episode",
+          "title": "视听集 · AE",
+          "text": "依据一个准确剧本集组织制作，包含多个视听场。",
+          "version": "仅当前内容，不滚动存稿",
+          "comments": "可评论，保存当时摘录"
+        },
+        {
+          "id": "av-scene",
+          "title": "视听场 · AS",
+          "text": "属于视听集，包含多个镜头；可引用多个剧本场或其中的局部正文。",
+          "version": "仅当前内容，不滚动存稿",
+          "comments": "可评论，保存当时摘录"
+        },
+        {
+          "id": "shot",
+          "title": "视听镜／镜头实体 · ASH",
+          "text": "编排在视听场中。镜头本身就是实体，拥有本镜产物的素材需求。",
+          "version": "仅当前内容，不滚动存稿",
+          "comments": "可评论，保存当时摘录",
+          "related": [
+            {
+              "to": "entity",
+              "label": "引用出场实体"
+            },
+            {
+              "to": "state",
+              "label": "按需引用状态"
+            },
+            {
+              "to": "requirement",
+              "label": "拥有本镜素材需求"
+            }
+          ]
+        }
       ],
-      "groups": [{"title":"各自保留版本","rows":[["sources","structure"],["novel","screenplay"]]},{"title":"当前制作内容","rows":[["audiovisual"]]}],
+      "groups": [
+        {
+          "rows": [
+            [
+              "edition"
+            ],
+            [
+              "episode",
+              "av-episode"
+            ],
+            [
+              "scene",
+              "av-scene"
+            ],
+            [
+              "shot"
+            ]
+          ]
+        }
+      ],
       "connections": [
-        {"from":"sources","to":"structure","label":"提供依据"},
-        {"from":"structure","to":"novel","label":"据此写作"},
-        {"from":"novel","to":"screenplay","label":"改编"},
-        {"from":"screenplay","to":"audiovisual","label":"准确来源"}
+        {
+          "from": "edition",
+          "to": "episode",
+          "label": "包含多集"
+        },
+        {
+          "from": "episode",
+          "to": "scene",
+          "label": "包含多场"
+        },
+        {
+          "from": "av-episode",
+          "to": "episode",
+          "label": "准确集依据",
+          "style": "dashed"
+        },
+        {
+          "from": "av-episode",
+          "to": "av-scene",
+          "label": "包含多场"
+        },
+        {
+          "from": "av-scene",
+          "to": "scene",
+          "label": "场／局部依据",
+          "style": "dashed"
+        },
+        {
+          "from": "av-scene",
+          "to": "shot",
+          "label": "包含多镜"
+        }
       ],
-      "note":"视听集场镜按制作需要组织，不与剧本集场强制一一对应；当前制作修改不推动故事版本。"
+      "note": "剧本集场属于准确文字剧本版本；视听集场镜维护各自当前内容。视听场与剧本场没有强制一一对应关系。"
     },
     {
-      "title":"唯一制作出处 → 当前方案 → 真实候选",
+      "title": "实体、状态、素材与候选",
       "nodes": [
-        {"id":"entity","title":"实体 · EN","text":"人物、场景、道具、歌曲等稳定身份；身份素材由实体拥有。"},
-        {"id":"state","title":"必要实体状态 · ST","text":"属于一个实体。确需独立准备，且至少拥有一项真实素材需求。"},
-        {"id":"shot","title":"镜头实体 · ASH","text":"沿用镜头自身身份，拥有本镜产物需求；引用出场实体与状态。"},
-        {"id":"requirement","title":"素材需求 · M","text":"唯一出处是某个实体、状态或镜头，三者择一。首帧、视频、声音等是需求用途；引用者可有多个。"},
-        {"id":"plan","title":"一个当前方案","text":"维护本次 Prompt、模型参数、拟用参考和文件范围；修改只更新当前稿。"},
-        {"id":"candidate","title":"多个真实候选 · MC","text":"每次真实生成或制作产出一个候选，属于原需求。保存当时方案、实际输入、参数与原件；以后改方案不改写候选。"}
+        {
+          "id": "entity",
+          "title": "实体 · EN",
+          "text": "角色、场景、道具、歌曲四类稳定身份。拥有身份素材；必要时拥有独立状态。",
+          "version": "仅当前内容，不滚动存稿",
+          "comments": "可评论，保存当时摘录"
+        },
+        {
+          "id": "state",
+          "title": "实体状态 · ST",
+          "text": "只属于一个实体；确需独立准备，且至少拥有一项真实素材需求。",
+          "version": "仅当前内容，不滚动存稿",
+          "comments": "可评论，保存当时摘录"
+        },
+        {
+          "id": "requirement",
+          "title": "素材／素材需求 · M",
+          "text": "唯一出处为实体 EN、状态 ST、镜头 ASH，三者择一。一个需求拥有一个当前方案及零到多个真实候选。",
+          "version": "仅当前内容，不滚动存稿",
+          "comments": "可评论，保存当时摘录",
+          "related": [
+            {
+              "to": "shot",
+              "label": "也可归属镜头"
+            }
+          ]
+        },
+        {
+          "id": "plan",
+          "title": "当前方案（素材 M 内）",
+          "text": "属于一个素材需求，保存 Prompt、参数、拟用参考与文件范围。",
+          "version": "一份当前稿，不滚动 MV 版",
+          "comments": "评论落在所属素材的方案原文",
+          "related": [
+            {
+              "to": "candidate",
+              "label": "可引用准确候选原件"
+            }
+          ]
+        },
+        {
+          "id": "candidate",
+          "title": "素材候选 · MC",
+          "text": "属于一个素材需求，对应一次真实生成或制作产出；以后改方案不改写候选。",
+          "version": "按产出新增候选，不是方案版本",
+          "comments": "可评论原件、图像区域与音视频时间段"
+        },
+        {
+          "id": "submission",
+          "title": "提交快照与原件",
+          "text": "保存候选当时的完整方案、实际模型、参数、有序输入、选用范围及原件。",
+          "version": "提交事实冻结保留",
+          "comments": "通过所属候选回查与评论"
+        },
+        {
+          "id": "relation",
+          "title": "业务关系 · R",
+          "text": "一条关系连接两个稳定业务对象，表达相关或依赖。同一对对象共用一条关系；不代表参考已被实际选用。",
+          "version": "仅当前内容，不滚动存稿",
+          "comments": "可评论，保存当时摘录",
+          "related": [
+            {
+              "to": "entity",
+              "label": "端点可为实体"
+            },
+            {
+              "to": "state",
+              "label": "或状态"
+            },
+            {
+              "to": "requirement",
+              "label": "或素材等业务对象"
+            }
+          ]
+        },
+        {
+          "id": "legacy",
+          "title": "旧素材版本 · MV（历史）",
+          "text": "只承接旧链接和历史意见。现行素材的当前方案与候选沿 M、MC 阅读。",
+          "version": "已退役，不再新增",
+          "comments": "既有评论与准确历史仍可回查",
+          "related": [
+            {
+              "to": "requirement",
+              "label": "当前素材身份"
+            },
+            {
+              "to": "candidate",
+              "label": "真实产出"
+            }
+          ]
+        }
       ],
-      "groups": [{"title":"实体范畴 · 镜头就是其中一类","rows":[["entity","state","shot"]]},{"title":"需求只归一个出处","rows":[["requirement"]]},{"title":"方案与结果","rows":[["plan","candidate"]]}],
+      "groups": [
+        {
+          "rows": [
+            [
+              "entity",
+              "state"
+            ],
+            [
+              "requirement",
+              "plan"
+            ],
+            [
+              "candidate",
+              "submission"
+            ],
+            [
+              "relation",
+              "legacy"
+            ]
+          ]
+        }
+      ],
       "connections": [
-        {"from":"entity","to":"state","label":"按需拥有"},
-        {"from":"entity","to":"requirement","label":"身份需求"},
-        {"from":"state","to":"requirement","label":"状态需求"},
-        {"from":"shot","to":"requirement","label":"镜头需求"},
-        {"from":"requirement","to":"plan","label":"一份当前稿"},
-        {"from":"requirement","to":"candidate","label":"拥有产出"},
-        {"from":"plan","to":"candidate","label":"提交快照 · 真实产出"}
+        {
+          "from": "entity",
+          "to": "state",
+          "label": "拥有多状态"
+        },
+        {
+          "from": "entity",
+          "to": "requirement",
+          "label": "身份需求"
+        },
+        {
+          "from": "state",
+          "to": "requirement",
+          "label": "状态需求"
+        },
+        {
+          "from": "requirement",
+          "to": "plan",
+          "label": "一份当前稿"
+        },
+        {
+          "from": "requirement",
+          "to": "candidate",
+          "label": "零到多候选"
+        },
+        {
+          "from": "plan",
+          "to": "submission",
+          "label": "提交时冻结"
+        },
+        {
+          "from": "submission",
+          "to": "candidate",
+          "label": "对应原件"
+        }
       ],
-      "note":"仅关联状态或使用它的参考，不算拥有状态需求。失败或结果未知的调用不生成候选；重试下载仍属于原调用。"
+      "note": "实体、状态与镜头的素材需求各有唯一出处。多个对象可以共享参考，引用不会增加拥有者；拟用参考与实际提交输入分别记录。失败或结果未知的调用不形成新候选，下载重试也不形成另一候选。"
     },
     {
-      "title":"关联、参考与实际选用",
+      "title": "SKILL 文件、执行与评论",
       "nodes": [
-        {"id":"relation","title":"统一业务关系","text":"连接相关或依赖的稳定对象，说明业务关系；不表示已审批或已调用。"},
-        {"id":"objects","title":"实体 / 状态 / 素材需求","text":"关系端点保留各自身份和唯一出处，共享参考不增加拥有者。"},
-        {"id":"reference","title":"素材参考","text":"指向某个准确候选及文件、裁切或时间范围。可以供多个方案引用。"},
-        {"id":"selected","title":"实际选用与提交","text":"从拟用参考中明确选用；提交快照保存实际模型、参数、输入顺序与范围。"}
+        {
+          "id": "skill",
+          "title": "SKILL 与共用资料",
+          "text": "SKILL 由正文、参考文件、模板和图示组成，可以引用准确的共用资料文件。",
+          "version": "保留准确整包组合，页面逐文件计版",
+          "comments": "在具体文件中评论"
+        },
+        {
+          "id": "file",
+          "title": "SKILL／资料文件",
+          "text": "由所属方法或资料及相对路径确定身份；字节变化才产生新的文件版本。",
+          "version": "每个文件独立版本",
+          "comments": "可评论准确文件版本与原文"
+        },
+        {
+          "id": "execution",
+          "title": "方法执行记录",
+          "text": "固定本步骤实际取得的 SKILL、共用资料与准确文件组合。",
+          "version": "冻结记录，旧执行保持原组合",
+          "comments": "没有独立评论入口"
+        },
+        {
+          "id": "comment",
+          "title": "评论 · C",
+          "text": "一条评论指向一个准确目标。稿件和文件定位原版本；当前制作保留当时摘录；候选定位原件及圈选范围。",
+          "version": "保留评论修改记录，不是作品版本",
+          "comments": "可修订、关闭，保留原意见",
+          "related": [
+            {
+              "to": "edition",
+              "label": "稿件版本"
+            },
+            {
+              "to": "file",
+              "label": "文件版本"
+            },
+            {
+              "to": "av-episode",
+              "label": "当前制作，例如"
+            },
+            {
+              "to": "candidate",
+              "label": "候选原件"
+            }
+          ]
+        },
+        {
+          "id": "response",
+          "title": "评论处理依据",
+          "text": "关联一条原评论与真实回应稿或局部改后摘录，可分别回看原稿、回应稿和当前稿。",
+          "version": "已登记处理事实保留",
+          "comments": "承接原评论，不另建审批意见"
+        }
       ],
-      "groups":[{"rows":[["relation","objects"],["reference","selected"]]}],
-      "connections":[{"from":"relation","to":"objects","label":"相关 / 依赖"},{"from":"reference","to":"selected","label":"明确选用"}],
-      "note":"对象关系说明联系，素材引用说明准确原件，提交说明真正使用了什么；三者分别记录。"
-    },
-    {
-      "title":"文件版本、执行组合与评论",
-      "nodes": [
-        {"id":"skill","title":"SKILL","text":"由 SKILL.md、参考文件、模板及源投影组成。"},
-        {"id":"file","title":"独立文件版本","text":"只在该文件字节变化时推进。同一文件可以被多个准确整包组合引用。"},
-        {"id":"execution","title":"方法执行","text":"固定取得的 SKILL 文件及共用资料组合；旧执行继续读原组合。"},
-        {"id":"comment","title":"评论与回应 · C","text":"原圈选、原话与准确对象保留；回应保存实际改动依据，可回看原稿、回应稿和当前稿。"},
-        {"id":"targets","title":"准确评论目标","text":"故事版本、SKILL 文件版本、候选原件，或制作当前内容的当时摘录。"}
+      "groups": [
+        {
+          "rows": [
+            [
+              "skill",
+              "file",
+              "execution"
+            ],
+            [
+              "comment",
+              "response"
+            ]
+          ]
+        }
       ],
-      "groups":[{"rows":[["skill","file","execution"],["comment","targets"]]}],
-      "connections":[{"from":"skill","to":"file","label":"由文件组成"},{"from":"file","to":"execution","label":"准确组合"},{"from":"comment","to":"targets","label":"指向原内容"}]
+      "connections": [
+        {
+          "from": "skill",
+          "to": "file",
+          "label": "包含多文件"
+        },
+        {
+          "from": "file",
+          "to": "execution",
+          "label": "固定组合"
+        },
+        {
+          "from": "comment",
+          "to": "response",
+          "label": "关联多次回应"
+        }
+      ],
+      "note": "是否保留全文版本与是否支持评论是两件事。当前制作即使只维护一份正文，原评论和实际回应仍保留当时内容；评论关闭不等于创作获批。"
     }
   ],
   "examples": [
-    {"title":"EN002 · 阿蘅","href":"/?workspace=settings.workspace&production_tab=entities&production_entity=entity-a-heng","text":"回查实体身份素材与必要状态的各自需求；镜头引用阿蘅不会改变这些需求的出处。"},
-    {"title":"ASH002 · 镜头素材","href":"/?workspace=settings.workspace&production_tab=entities&production_entity=av-e01-a01-s02","text":"回查本镜需求与当前方案；若引用 EN002 的素材，仍保留两类需求各自的出处。"}
+    {
+      "title": "EN002 · 阿蘅",
+      "href": "/?workspace=settings.workspace&production_tab=entities&production_entity=entity-a-heng",
+      "text": "回查实体身份素材与必要状态的各自需求；镜头引用阿蘅不会改变这些需求的出处。"
+    },
+    {
+      "title": "ASH002 · 镜头素材",
+      "href": "/?workspace=settings.workspace&production_tab=entities&production_entity=av-e01-a01-s02",
+      "text": "回查本镜需求与当前方案；若引用 EN002 的素材，仍保留两类需求各自的出处。"
+    }
   ]
 }
