@@ -251,8 +251,14 @@ def prepare(a):
     require(not getattr(a,'method_file_history',False) or not (managed_methods or latest or relations or retirement or current_production),'file history uses its own preservation-only write window')
     require(not getattr(a,'remove_material_versions',False) or not (latest or relations or retirement or current_production or getattr(a,'method_file_history',False)), 'material removal cannot combine unrelated data migrations')
     method_media=method_media_files(read(root/'instance/content/production-approach.json'))
-    if managed_methods:
-        for name,digest in registry_media_files(read(root/managed_methods['registry'])).items():
+    media_registry = read(root/managed_methods['registry']) if managed_methods else None
+    # Retired standalone pages no longer declare originals. A later code-only
+    # release still freezes the exact candidate's managed resource originals.
+    registry_path = 'content/managed-method-registry.json'
+    if media_registry is None and registry_path in git(story,'ls-tree','--name-only',a.story_candidate,'--',registry_path).splitlines():
+        media_registry = json.loads(base.git_file(story,a.story_candidate,registry_path))
+    if media_registry:
+        for name,digest in registry_media_files(media_registry).items():
             require(name not in method_media or method_media[name]==digest,'page and method originals disagree')
             method_media[name]=digest
     for name,digest in method_media.items():
