@@ -74,6 +74,55 @@ class SceneReadingTest(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'outside exact shot'):
             descriptor(self.shot, self.need, ReviewedSequence(), {}, True)
 
+    def test_reviewed_offscreen_singer_without_reusable_voice_is_explicit(self):
+        reviewed = SimpleNamespace(voice=SimpleNamespace(VOICES={}, LABELS={}),
+            for_sources=lambda _: [{'speaker': '远处祈福戏歌者', 'words': 'exact',
+                                   'content': '米饵献上，明月还乡——', 'source': 's010:10'}])
+        self.assertEqual(len(vocal_ranges('远处祈福戏歌者唱：“米饵献上，明月还乡——”。', [], reviewed)), 1)
+        with self.assertRaisesRegex(ValueError, 'speaker'):
+            vocal_ranges('阿蘅唱：“米饵献上，明月还乡——”。', [], reviewed)
+
+    def test_spoken_name_with_punctuation_does_not_count_reference_identity(self):
+        reviewed = SimpleNamespace(voice=SimpleNamespace(
+            VOICES={'t': ('陶伯',), 'l': ('李诞',)}, LABELS={}),
+            for_sources=lambda _: [{'speaker': 'l', 'words': 'exact',
+                                   'content': '陶伯。', 'source': 's025:2'}])
+        prompt = '李诞叫：“陶伯。”@音频1约束李诞、@音频2约束陶伯。'
+        ranges = vocal_ranges(prompt, [], reviewed)
+        self.assertEqual(prompt[ranges[0]['start']:ranges[0]['end']], '陶伯。')
+        with self.assertRaises(ValueError):
+            vocal_ranges(prompt + '李诞又叫：“陶伯。”', [], reviewed)
+
+    def test_longer_person_identity_cannot_pass_for_another_speaker(self):
+        reviewed = SimpleNamespace(voice=SimpleNamespace(
+            VOICES={'a': ('阿蘅',), 'm': ('阿蘅母亲',), 'c': ('程差役',),
+                    's': ('另一名差役',)}, LABELS={'差役': 's'}),
+            for_sources=lambda _: [{'speaker': 'a', 'words': 'exact',
+                                   'content': '知道啦。', 'source': 's007:15'}])
+        with self.assertRaisesRegex(ValueError, 'speaker'):
+            vocal_ranges('阿蘅母亲答：“知道啦。”', [], reviewed)
+        self.assertEqual(len(vocal_ranges('阿蘅答：“知道啦。”', [], reviewed)), 1)
+        reviewed.for_sources = lambda _: [{'speaker': 's', 'words': 'exact',
+                                          'content': '仓账守着。', 'source': 's024:7'}]
+        with self.assertRaisesRegex(ValueError, 'speaker'):
+            vocal_ranges('程差役说：“仓账守着。”', [], reviewed)
+        self.assertEqual(len(vocal_ranges('另一名差役说：“仓账守着。”', [], reviewed)), 1)
+
+    def test_short_reply_is_not_repeated_by_a_later_longer_utterance(self):
+        reviewed = SimpleNamespace(voice=SimpleNamespace(
+            VOICES={'z': ('赵执事',), 'a': ('阿蘅',)}, LABELS={}),
+            for_sources=lambda _: [
+                {'speaker': 'z', 'words': 'exact', 'content': '两升。', 'source': 's007:25'},
+                {'speaker': 'a', 'words': 'exact', 'content': '一天两升。做一天，记一天。', 'source': 's007:26'}])
+        prompt = '赵执事答：“两升。”阿蘅核定：“一天两升。做一天，记一天。”'
+        ranges = vocal_ranges(prompt, [], reviewed)
+        self.assertEqual([prompt[r['start']:r['end']] for r in ranges],
+                         ['两升。', '一天两升。做一天，记一天。'])
+        for damaged in (prompt + '\n两升。', prompt + '赵执事又答：“两升。”',
+                        prompt.replace('赵执事答：“两升。”', '')):
+            with self.assertRaises(ValueError):
+                vocal_ranges(damaged, [], reviewed)
+
     def test_new_purpose_can_reuse_an_explicit_exact_product(self):
         self.need['id'] = 'accurate-video-plan'
         self.need['payload']['scope']['revision_id'] = 'earlier-shot'

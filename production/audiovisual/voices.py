@@ -58,4 +58,5 @@ LABELS = {'老汉':'woodcutter','阿蘅':'a-heng','李寄':'li-ji','周掌柜':'
     '程差役':'officer-cheng','瘦高庙工':'temple-tall','码头工':'helpers-four-dock-a','差役':'officer-second',
     '陶伯':'tao','乡老':'elders-two-speaker','汉子':'temple-crowd-refuser','小满母亲':'xiaoman-mother',
     '新管事':'new-steward','歌娘':'singer-teacher',
-    '米铺听客':'rice-listeners-speaker','河街路人':'street-passers-greeter','掌柜':'zhou'}
+    '米铺听客':'rice-listeners-speaker','河街路人':'street-passers-greeter','掌柜':'zhou',
+    '贴耳低语的乡人':'temple-crowd-whisperer','老妇':'old-woman'}
