@@ -15,6 +15,8 @@
 
 ## 创作方法与作品依据
 
+- 素材需求按独立交付职责保存唯一 `material_category`：图像四类（角色、场景、道具、镜头画面），声音三类（人物音色、场景音、演唱），以及视频、字层。大类与适用 SKILL 从该字段取得；物理媒体和唯一出处分别表达，调用条件不能越权改类。图像共用正文及四专项，动物不套人物衣饰；准确复用及字层无模型调用时不补造生成字段。镜头沿 ASH 身份拥有需求并编排于视听场，不另建 EN 副本。当前作者契约见[受管方法](production/managed-methods.md)，逐项重审及验证边界见[素材分类](production/material-categories/VERIFICATION.md)。
+
 - “SKILL管理”沿 `content/skill-flow.json` 的基础流程读取真实绑定身份，普通入口读当前文件，旧链接／准确资源引用／冻结执行保留原组合。文件按所属对象与路径独立计版，原字节改变才追加；旧整包映射、评论锚点与旧执行不改写。页面提供阅读、版本比较和当前文件各版本评论；后台 CLI/API 维护唯一正文与显式执行绑定。“数据模型”沿 `content/data-model.json` 展示故事版本、当前制作、唯一素材出处、候选及准确引用关系，保留旧编号与 CODES URL。操作和兼容恢复统一见 [受管方法](production/managed-methods.md)，验收见 [SKILL 管理](production/skill-admin-data-model/VERIFICATION.md)。
 
 - `scripts/scene_reading.py` 维护准确 Prompt 的文字区间与反馈定位，不另设动作对白镜卡。区间须对应锁定剧本和完整事件序列，缺少可靠范围的历史记录保留原文，不能借当前故事补写。当前编制入口见 [全剧镜头](production/audiovisual/README.md)，准确投影的历史依据见 [场内连读验收](production/scene-reading/VERIFICATION.md)。

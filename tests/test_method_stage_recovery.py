@@ -31,6 +31,12 @@ class LedgerClient:
     def stage(self, execution, stage):
         return methods.stage_record(self.store, execution, stage)
 
+    def call(self, path, value):
+        from review_desk import method_media
+        if path == '/api/methods/media-prepare':
+            return method_media.prepare(self.store, value)
+        raise ValueError('Unexpected test endpoint: ' + path)
+
 
 @unittest.skipIf(methods is None, 'run with the managed desk on PYTHONPATH')
 class StageRecoveryTest(unittest.TestCase):
@@ -182,6 +188,38 @@ class StageRecoveryTest(unittest.TestCase):
         self.assertFalse((outside / 'file').exists())
         with self.assertRaisesRegex(ValueError, '越界'):
             media.export_result(self.folder, self.folder / '..' / 'escaped.json', {})
+
+    def test_text_layer_full_body_survives_client_stages_and_lost_confirmation(self):
+        self.seed('media-plan', ['draft', 'review', 'result'])
+        base = methods.read(self.store, 'method.skill.media-plan')
+        skill = methods.save(self.store, {'category': 'skill', 'name': 'text-layer',
+            'expected_version': 0, 'payload': base['payload']})
+        methods.save(self.store, {'category': 'binding', 'name': 'media-plan',
+            'expected_version': 1, 'payload': {'work_type': 'media-plan',
+                'rules': [{**runtime.reference(skill), 'when': {'material_category': 'text-layer'}}]}})
+        record = {'object_id': 'text', 'kind': 'REQUIREMENT', 'expected_version': 0,
+            'payload': {'media_type': 'project', 'material_category': 'text-layer',
+                'purpose': '同页两笔工钱', 'blocks': [{'id': 'title', 'text': '一日两升'}],
+                'specification': {'delivery': 'SVG', 'tracking': 'same page'}}}
+        delivery = media.begin(self.client, self.folder, record, 'recovery', 'text')
+        original = self.client.artifact
+        def lost(*args):
+            original(*args)
+            raise OSError('response lost after text draft commit')
+        with patch.object(self.client, 'artifact', lost), self.assertRaises(OSError):
+            media.stage(self.client, self.folder, 'draft', record=record)
+        draft = media.read_stage(self.client, self.folder, 'draft')
+        self.assertEqual(draft['record'], record)
+        media.stage(self.client, self.folder, 'review', review='保留约定标题，两笔工钱不是三笔。')
+        final = copy.deepcopy(record)
+        final['payload']['blocks'].append({'id': 'wages', 'text': '两升；两升'})
+        media.stage(self.client, self.folder, 'result', record=final)
+        result = media.read_stage(self.client, self.folder, 'result')
+        self.assertEqual(result['record']['payload']['blocks'], final['payload']['blocks'])
+        self.assertNotIn('generation', result['record']['payload'])
+        artifact = self.client.stage(runtime.reference(delivery['execution']), 'result')['artifact']
+        self.assertEqual(artifact['payload']['output']['text_layer_sha256'],
+                         runtime.checksum(result['output']['text_layer']))
 
 
 if __name__ == '__main__':
