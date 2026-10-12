@@ -1,0 +1,181 @@
+{
+  "format": "skill-flow-v1",
+  "stages": [
+    {
+      "id": "sources",
+      "title": "采编与方向"
+    },
+    {
+      "id": "structure",
+      "title": "故事结构",
+      "capabilities": [
+        {
+          "work_type": "story-structure",
+          "title": "故事结构"
+        }
+      ]
+    },
+    {
+      "id": "novel",
+      "title": "小说创作",
+      "capabilities": [
+        {
+          "work_type": "novel-writing",
+          "title": "小说创作"
+        }
+      ]
+    },
+    {
+      "id": "screenplay",
+      "title": "影视剧本",
+      "capabilities": [
+        {
+          "work_type": "screenplay-writing",
+          "title": "影视剧本"
+        }
+      ]
+    },
+    {
+      "id": "audiovisual",
+      "title": "视听设计",
+      "capabilities": [
+        {
+          "work_type": "audiovisual-design",
+          "title": "视听设计"
+        }
+      ]
+    },
+    {
+      "id": "extraction",
+      "title": "实体、状态与素材抽取",
+      "capabilities": [
+        {
+          "work_type": "material-assessment",
+          "title": "实体、状态与素材抽取"
+        }
+      ]
+    },
+    {
+      "id": "plans",
+      "title": "素材方案",
+      "capabilities": [
+        {
+          "work_type": "media-plan",
+          "when": {
+            "media_type": "image"
+          },
+          "title": "图像方案"
+        },
+        {
+          "work_type": "media-plan",
+          "when": {
+            "media_type": "audio"
+          },
+          "title": "声音方案"
+        },
+        {
+          "work_type": "media-plan",
+          "when": {
+            "media_type": "video"
+          },
+          "title": "视频方案"
+        },
+        {
+          "work_type": "text-layer",
+          "title": "字层方案"
+        },
+        {
+          "work_type": "media-plan",
+          "when": {},
+          "title": "其他素材方案"
+        }
+      ]
+    },
+    {
+      "id": "preflight",
+      "title": "生成准备",
+      "capabilities": [
+        {
+          "work_type": "generation-preflight",
+          "title": "生成准备"
+        }
+      ]
+    },
+    {
+      "id": "production",
+      "title": "生成与制作"
+    },
+    {
+      "id": "review",
+      "title": "结果检查与返修",
+      "capabilities": [
+        {
+          "work_type": "result-review",
+          "title": "结果检查与返修"
+        }
+      ]
+    },
+    {
+      "id": "edit",
+      "title": "剪辑成片"
+    }
+  ],
+  "returns": [
+    {
+      "from": "novel",
+      "to": "structure",
+      "label": "回读修订"
+    },
+    {
+      "from": "review",
+      "to": "plans",
+      "label": "返修方案"
+    }
+  ],
+  "branches": [
+    {
+      "id": "feedback",
+      "title": "阅读反馈",
+      "supports": [
+        "structure",
+        "novel",
+        "screenplay",
+        "audiovisual"
+      ],
+      "capabilities": [
+        {
+          "work_type": "reader-review",
+          "title": "独立读者"
+        },
+        {
+          "work_type": "comment-polish",
+          "title": "意见表达"
+        }
+      ]
+    },
+    {
+      "id": "improvement",
+      "title": "系统改进",
+      "supports": [
+        "sources",
+        "structure",
+        "novel",
+        "screenplay",
+        "audiovisual",
+        "extraction",
+        "plans",
+        "preflight",
+        "production",
+        "review",
+        "edit"
+      ],
+      "capabilities": [
+        {
+          "work_type": "creative-system-review",
+          "title": "创作协作 Review"
+        }
+      ],
+      "support_label": "贯穿创作与协作"
+    }
+  ]
+}
