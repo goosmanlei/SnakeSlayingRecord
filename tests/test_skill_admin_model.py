@@ -1,5 +1,6 @@
 """Instance models stay declarative and use the real live bindings."""
 from pathlib import Path
+import json
 import unittest
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -9,6 +10,23 @@ from review_desk.skill_flow import load as load_flow
 
 
 class ModelTest(unittest.TestCase):
+    def test_five_material_skills_have_concrete_independent_bindings(self):
+        registry=json.loads((ROOT/'content/managed-method-registry.json').read_text())
+        current={}
+        for row in registry['records']:
+            if row['version'] > current.get(row['object_id'],{}).get('version',0):
+                current[row['object_id']]=row
+        catalog={kind:[r for r in current.values() if r['payload']['format']=='managed-method-'+kind+'-v1']
+                 for kind in ('skill','binding')}
+        plans=next(s for s in load_flow(ROOT,catalog)['stages'] if s['id']=='plans')
+        self.assertEqual([m['title'] for m in plans['methods']],['图像方案','音色方案','演唱方案','视频方案','字层方案'])
+        self.assertEqual(len({m['object_id'] for m in plans['methods']}),5)
+        rules=current['method.binding.media-plan']['payload']['rules']
+        self.assertTrue(all(rule['when'] for rule in rules))
+        voice=next(r for r in rules if r['when']=={'media_type':'audio','audio_type':'voice'})
+        song=next(r for r in rules if r['when']=={'media_type':'audio','audio_type':'song'})
+        self.assertNotEqual(voice['object_id'],song['object_id'])
+
     def test_instance_relations_cover_the_current_business_contract(self):
         value=load_model(ROOT)
         nodes={n['id']:n for d in value['diagrams'] for n in d['nodes']}
