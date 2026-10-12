@@ -1,6 +1,6 @@
 # VPS 完整体验版发布
 
-入口为 `https://leiguoguo.me/lijizhanshe/`，远端实例为 `vps:~/www/lijizhanshe/`；发布工具、服务端凭据、阶段回执和累计 AI 调用次数统一保存在 `vps:~/lijizhanshe/`，独立于每次发版会重建的实例目录。本机正式数据库仍是权威；体验库可真实写入，普通容器重启保留操作，显式发布才全量重置。完整要求见 [部署任务](../planning/vps-experience-deployment-task.md)。以下命令从当前受管故事 worktree 根目录执行，系统代码使用同一任务纳管的 desk worktree。
+入口为 `https://leiguoguo.me/lijizhanshe/`，远端实例为 `vps:~/www/lijizhanshe/`；发布工具、服务端凭据、阶段回执和累计 AI 调用次数统一保存在 `vps:~/lijizhanshe/`，独立于每次发版会重建的实例目录。本机正式数据库仍是权威；体验库可真实写入，普通容器重启保留操作，显式发布才全量重置。完整要求见 [部署任务](../planning/vps-experience-deployment-task.md)。以下命令从当前受管故事 worktree 根目录执行。涉及系统修改时，系统代码使用同一任务纳管的 desk worktree；仅部署已正式交付版本、且任务明确系统源只读时，可通过 `--desk` 消费已核验真实路径的系统源。后者须在构建前后确认准确提交与干净状态，不 checkout、不修改共享源，也不为只读构建手造附属工作区。
 
 ## 域名 HTTPS 与证书续期
 
@@ -22,7 +22,7 @@ sudo /snap/bin/certbot certificates
 
 ## 发布前准备
 
-先完成两仓最新主干同步、候选提交和 `config/instance.json.review_desk_commit` 的准确引用，通过 `codex.task _prepare_integration --push` 准备整组候选。正式发布前由任务工具完成 `_deliver`，不要在主目录手工合并或推送。
+先完成实际纳管仓库的最新主干同步与候选提交，核对系统源及 `config/instance.json.review_desk_commit` 的准确引用，通过 `codex.task _prepare_integration --push` 准备候选。只读系统源不加入可写交付组；其本地／远端主干、运行身份和构建提交仍须匹配。正式发布前由任务工具完成 `_deliver`，不要在主目录手工合并或推送。
 
 远端复用 SSH 别名 `vps`、`nginx.me.leiguoguo` 容器与 `nginxmeleiguoguo_default` 网络。先回读架构、实际可用内存、磁盘、Xray、Nginx、已有实例、容器挂载和正在进行的发布。脚本在预检及进入维护前再次核对 x86_64、cgroup v2、至少 1.5 GiB 可用内存与 0.5 GiB 空闲 swap，以及既有 Xray、Nginx、网络和配置、网站根目录两个只读挂载的真实身份；余量不足时停止新增负载。磁盘按上传包三倍加 5 GiB 余量校验。脚本只管理本实例，拒绝符号链接、其他应用占用的容器名及未完成的另一发布；不购买资源、不增加 swap、不重启 VPS、不使用全局 prune。
 
@@ -42,7 +42,7 @@ python3 scripts/vps_experience.py prepare \
   --desk "$DESK_WORKTREE" --formal "$FORMAL_STORY_ROOT"
 ```
 
-`DESK_WORKTREE` 是任务纳管的系统工作区，`FORMAL_STORY_ROOT` 是本机正式故事目录。准备命令持有既有正式发布锁，以 SQLite 一致性备份读取活库，复制完整原件、配置和方法内容，不写正式业务库或导出。镜像在本机编译为 `linux/amd64`；发布包包含运行必需文件、完整数据库、镜像和逐文件摘要，排除任务目录、完整运行目录、密钥和调试资料。镜像运行身份使用 `docker save` 内配置文件的 SHA-256，避免本机构建引擎的索引 ID 与 VPS 载入后的配置 ID 不同；载入后核对配置摘要、架构、归属和源码修订。恢复已有完整包时仍校验其原摘要，不改写包。输出位于本任务 `.runtime/vps-experience/<发布身份>/`，已有身份拒绝覆盖。以备份后的库指纹、物理文件哈希和准确源码提交校验，不能用过期受管导出冒充活库。
+`DESK_WORKTREE` 是任务纳管的系统工作区，或任务明确允许只读消费的准确系统源目录；变量名不改变仓库授权。`FORMAL_STORY_ROOT` 是本机正式故事目录。准备命令持有既有正式发布锁，以 SQLite 一致性备份读取活库，复制完整原件、配置和方法内容，不写正式业务库或导出。镜像在本机编译为 `linux/amd64`；发布包包含运行必需文件、完整数据库、镜像和逐文件摘要，排除任务目录、完整运行目录、密钥和调试资料。镜像运行身份使用 `docker save` 内配置文件的 SHA-256，避免本机构建引擎的索引 ID 与 VPS 载入后的配置 ID 不同；载入后核对配置摘要、架构、归属和源码修订。恢复已有完整包时仍校验其原摘要，不改写包。输出位于本任务 `.runtime/vps-experience/<发布身份>/`，已有身份拒绝覆盖。以备份后的库指纹、物理文件哈希和准确源码提交校验，不能用过期受管导出冒充活库。
 
 ## 全量发布
 
