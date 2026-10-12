@@ -6,7 +6,7 @@ import json
 import re
 
 from audiovisual_design import ROOT, future, reference, union_sources
-from video_input_design import load_audit, frame_plan, video_plan, first_frame_states, frame_state_label, FRAME_USE
+from video_input_design import load_audit, frame_plan, first_frame_states, frame_state_label, FRAME_USE
 from state_preparation import decisions
 import exact_text_handoffs
 

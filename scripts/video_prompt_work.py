@@ -58,10 +58,24 @@ def envelope(row):
             'expected_version': row['version'], 'payload': copy.deepcopy(row['payload'])}
 
 
-def inspect(store, episode, offset, count, include_source, compact=False):
+def inspect(store, episode, offset, count, include_source, compact=False, relations=False):
     from review_desk import production as p
     from review_desk.material_relations import active_inputs
     value = inventory(store, episode)
+    if relations:
+        from review_desk.method_media import inputs
+        readings, bodies = {}, {}
+        for need in value['needs']:
+            for row in inputs(store, need['payload'], target_id=need['object_id'])['contextual_relations']:
+                readings[row['revision_id']] = row
+        for row in readings.values():
+            payload = row['payload']
+            body = '\n'.join(block['text'] for block in payload['blocks'])
+            bodies.setdefault(body, []).append({k: payload[k] for k in ('direction', 'endpoints')})
+        save(ROOT / f'.runtime/video-prompts/episodes/e{episode:02d}/contextual-relations.json', list(readings.values()))
+        for body, edges in bodies.items():
+            print(json.dumps(edges, ensure_ascii=False))
+            print(body)
     if include_source:
         source = value['source']
         print(source['title'])
@@ -73,7 +87,9 @@ def inspect(store, episode, offset, count, include_source, compact=False):
     for shot, need in list(zip(value['shots'], value['needs']))[offset:offset + count]:
         print('\nSHOT', shot['object_id'], shot['payload']['title'], need.get('code', ''))
         print('目标', shot['payload']['purpose'])
-        print('起点', [v['description'] for v in shot['payload'].get('key_states', [])])
+        key_states = shot['payload'].get('key_states', [])
+        print('起点', [v['description'] for v in key_states if v['id'] == 'opening'])
+        print('镜内关键状态', [v['description'] for v in key_states if v['id'] != 'opening'])
         print('状态', [r['object_id'] for r in shot['payload'].get('states', [])])
         plan = need['payload']['generation']
         print('参数', plan['model'], plan['parameters'], plan.get('execution'))
@@ -197,6 +213,7 @@ def main():
     context.add_argument('--offset', type=int, default=0); context.add_argument('--count', type=int, default=30)
     context.add_argument('--source', action='store_true')
     context.add_argument('--compact', action='store_true', help='omit repeated display metadata; exact stages retain full inputs')
+    context.add_argument('--relations', action='store_true', help='read full relationship bodies once per identical text, retaining every direction and endpoint')
     start = sub.add_parser('begin'); start.add_argument('--episode', type=int, required=True)
     start.add_argument('--shots', nargs='+'); start.add_argument('--run-id', required=True)
     start.add_argument('--conditions', type=Path, required=True)
@@ -213,7 +230,7 @@ def main():
     try:
         client = MethodClient(args.method_url)
         if args.action == 'context':
-            inspect(store, args.episode, args.offset, args.count, args.source, args.compact)
+            inspect(store, args.episode, args.offset, args.count, args.source, args.compact, args.relations)
         elif args.action == 'begin':
             begin(store, client, directory, args.episode, args.shots, args.run_id, load(args.conditions))
         elif args.action == 'read':
