@@ -1,0 +1,194 @@
+{
+  "format": "skill-flow-v1",
+  "stages": [
+    {
+      "id": "sources",
+      "title": "采编与方向",
+      "output": "资料 · 故事方向"
+    },
+    {
+      "id": "structure",
+      "title": "故事结构",
+      "capabilities": [
+        {
+          "work_type": "story-structure",
+          "title": "故事结构"
+        }
+      ],
+      "output": "故事结构稿"
+    },
+    {
+      "id": "novel",
+      "title": "小说创作",
+      "capabilities": [
+        {
+          "work_type": "novel-writing",
+          "title": "小说创作"
+        }
+      ],
+      "output": "小说稿"
+    },
+    {
+      "id": "screenplay",
+      "title": "影视剧本",
+      "capabilities": [
+        {
+          "work_type": "screenplay-writing",
+          "title": "影视剧本"
+        }
+      ],
+      "output": "剧本 · 剧本集 E · 剧本场 S"
+    },
+    {
+      "id": "audiovisual",
+      "title": "视听设计",
+      "capabilities": [
+        {
+          "work_type": "audiovisual-design",
+          "title": "视听设计"
+        }
+      ],
+      "output": "视听集 AE · 视听场 AS · 镜头 ASH"
+    },
+    {
+      "id": "extraction",
+      "title": "实体、状态与素材抽取",
+      "capabilities": [
+        {
+          "work_type": "material-assessment",
+          "title": "实体、状态与素材抽取"
+        }
+      ],
+      "output": "实体 EN（角色、场景、道具、歌曲）\n实体状态 ST · 素材需求 M"
+    },
+    {
+      "id": "plans",
+      "title": "素材方案",
+      "capabilities": [
+        {
+          "work_type": "media-plan",
+          "when": {
+            "media_type": "image"
+          },
+          "title": "图像方案"
+        },
+        {
+          "work_type": "media-plan",
+          "when": {
+            "media_type": "audio"
+          },
+          "title": "声音方案"
+        },
+        {
+          "work_type": "media-plan",
+          "when": {
+            "media_type": "video"
+          },
+          "title": "视频方案"
+        },
+        {
+          "work_type": "text-layer",
+          "title": "字层方案"
+        },
+        {
+          "work_type": "media-plan",
+          "when": {},
+          "title": "其他素材方案"
+        }
+      ],
+      "output": "素材 M 的当前方案"
+    },
+    {
+      "id": "preflight",
+      "title": "生成准备",
+      "capabilities": [
+        {
+          "work_type": "generation-preflight",
+          "title": "生成准备"
+        }
+      ],
+      "output": "准确输入 · 提交前准备包"
+    },
+    {
+      "id": "production",
+      "title": "生成与制作",
+      "output": "提交快照 · 素材候选 MC · 原件"
+    },
+    {
+      "id": "review",
+      "title": "结果检查与返修",
+      "capabilities": [
+        {
+          "work_type": "result-review",
+          "title": "结果检查与返修"
+        }
+      ],
+      "output": "评论 C · 实际回应 · 修订后的当前方案"
+    },
+    {
+      "id": "edit",
+      "title": "剪辑成片",
+      "output": "成片 · 使用的准确素材"
+    }
+  ],
+  "returns": [
+    {
+      "from": "novel",
+      "to": "structure",
+      "label": "回读修订"
+    },
+    {
+      "from": "review",
+      "to": "plans",
+      "label": "返修方案"
+    }
+  ],
+  "branches": [
+    {
+      "id": "feedback",
+      "title": "阅读反馈",
+      "supports": [
+        "structure",
+        "novel",
+        "screenplay",
+        "audiovisual"
+      ],
+      "capabilities": [
+        {
+          "work_type": "reader-review",
+          "title": "独立读者"
+        },
+        {
+          "work_type": "comment-polish",
+          "title": "意见表达"
+        }
+      ],
+      "output": "评论 C · 原稿与回应依据"
+    },
+    {
+      "id": "improvement",
+      "title": "系统改进",
+      "supports": [
+        "sources",
+        "structure",
+        "novel",
+        "screenplay",
+        "audiovisual",
+        "extraction",
+        "plans",
+        "preflight",
+        "production",
+        "review",
+        "edit"
+      ],
+      "capabilities": [
+        {
+          "work_type": "creative-system-review",
+          "title": "创作协作 Review"
+        }
+      ],
+      "support_label": "贯穿创作与协作",
+      "output": "改进意见 · 修订的 SKILL 文件"
+    }
+  ]
+}
