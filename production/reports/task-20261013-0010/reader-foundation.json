@@ -629,6 +629,61 @@
       },
       "accepted": true,
       "coordinator_reinvocations": 0
+    },
+    {
+      "item": "current-production",
+      "round": 2,
+      "unit": 1,
+      "path": ".runtime/skill-cold-reader-fresh/current-production/round-02/step-0001",
+      "model": "gpt-6-astra",
+      "effort": "max",
+      "native_inference_chain": [
+        {
+          "inference_call_id": "1937e300-5da7-43d6-8658-ae73e62cd09b",
+          "status": "inference_failed",
+          "request_path": "payloads/4.json"
+        },
+        {
+          "inference_call_id": "614470ae-8801-49da-952b-8dc3b586918b",
+          "status": "inference_completed",
+          "request_path": "payloads/6.json"
+        }
+      ],
+      "trace_sha256": "02baf15a7b0c6875afa92964a54ff81e70e9fd55ede5f5a398237bffe8b5bc81",
+      "raw_payload_sha256": {
+        "native-trace/trace-2e00732c-4851-4859-92ea-103bb3b6456b-01a134bd-3c3e-7961-9cf2-d8324746ebb1/payloads/1.json": "37df5197188bf5bb2a6b2e0415398dc7f6b36763e52472bda884a01699a15c8c",
+        "native-trace/trace-2e00732c-4851-4859-92ea-103bb3b6456b-01a134bd-3c3e-7961-9cf2-d8324746ebb1/payloads/2.json": "08ed29a22a21a5a6cb447450a65c95f7351f0e426f6d92fbb7e759ad7e5d87dc",
+        "native-trace/trace-2e00732c-4851-4859-92ea-103bb3b6456b-01a134bd-3c3e-7961-9cf2-d8324746ebb1/payloads/3.json": "28908f1088f288ae7ef532448d7eb9ea1c33087a1e5cc3348513ae3589a837b7",
+        "native-trace/trace-2e00732c-4851-4859-92ea-103bb3b6456b-01a134bd-3c3e-7961-9cf2-d8324746ebb1/payloads/4.json": "ffceb39b755c8a7d59e015681699d90ea394d4fa86404dfba8e498bd6ae95133",
+        "native-trace/trace-2e00732c-4851-4859-92ea-103bb3b6456b-01a134bd-3c3e-7961-9cf2-d8324746ebb1/payloads/5.json": "be5ac10d62c501a5318b48754669c9d41f71f477d56da6e92a2dc586a6b360b2",
+        "native-trace/trace-2e00732c-4851-4859-92ea-103bb3b6456b-01a134bd-3c3e-7961-9cf2-d8324746ebb1/payloads/6.json": "4f28979dc9c29ff1707ed748833eba9e15320a54780338178a93b1d75e5512b6",
+        "native-trace/trace-2e00732c-4851-4859-92ea-103bb3b6456b-01a134bd-3c3e-7961-9cf2-d8324746ebb1/payloads/7.json": "082aa531a6c272ca98a5f079feb5e6a3076c6fa0f565f02ab65c972f1e378c20",
+        "native-trace/trace-2e00732c-4851-4859-92ea-103bb3b6456b-01a134bd-3c3e-7961-9cf2-d8324746ebb1/payloads/8.json": "0daabeeb2085581fae501a95996fcfa2c231c19aa63e06ca20653ab71cfe1cb1",
+        "native-trace/trace-2e00732c-4851-4859-92ea-103bb3b6456b-01a134bd-3c3e-7961-9cf2-d8324746ebb1/payloads/9.json": "43568e86ce2556ab8da6303a89a2e0359509abc830739979977ac0efe671c432"
+      },
+      "accepted": true,
+      "coordinator_reinvocations": 0
     }
-  ]
+  ],
+  "native_reset_checks": {
+    "checks": [
+      {
+        "case": "saved_reset_and_recovery",
+        "accepted": true,
+        "passed": true,
+        "guard": null,
+        "model_calls": 0
+      },
+      {
+        "case": "reset_with_extra_input",
+        "accepted": false,
+        "passed": true,
+        "guard": "native continuation has unexplained input",
+        "model_calls": 0
+      }
+    ],
+    "model_calls": 0,
+    "temporary_root_removed_after": true,
+    "adapter_sha256": "0d5d97e07117b9ff1e372c7b2c0fc52ade1e4e792a89a0f9bb11f6f531008c62"
+  }
 }
