@@ -2,7 +2,7 @@
   "format": "material-reference-browser-validation-v1",
   "formal": {
     "environment": "Chrome / 127.0.0.1:3000",
-    "system_commit": "d89e9d5a80a3cd9ad78c0ba57d980e5975af3b25",
+    "system_commit": "7bccc725e8c36a69d805ab557fdaca4e51dac37e",
     "entries": [
       "material-management",
       "entity-dialog",
@@ -20,7 +20,10 @@
     "unselected_downstream": "M2975 input4 remains unselected by user decision",
     "no_result": "M2973 has zero output candidates; latest river candidate1 input retained",
     "writes": "read-only; 19 business tables unchanged",
-    "screenshot": "screenshots/formal-reuse.png"
+    "screenshot": "screenshots/formal-reuse.png",
+    "image": "sha256:a2a2af0887b845acc0ac4b96c4238ce2fad11fbb73509673a5c1433375ef095d",
+    "instance_config_sha256": "09eac8a801b6b418835d19e1eff489e4432f5ef8988097f4d9a42f313e3fb07a",
+    "normal_contrast_validation_basis": "最终7bccc72实际打开M2714→M2544候选2准确PNG并返回原当前方案；M2973零候选与最新河街候选1、M2975无选中音色均实际复验"
   },
   "empty_recovery": {
     "environment": "Chrome / 127.0.0.1:55972",
@@ -42,5 +45,5 @@
     "formal_data_modified_by_tests": false,
     "screenshot": "screenshots/recovered-reuse.png"
   },
-  "final_formal_system_verification": "passed all three entries, exact range playback/stop/return, repeated browsing and normal contrasts; final documentation pin has identical runtime source"
+  "final_formal_system_verification": "passed actual final 7bccc72 all three entries, exact playback/stop/return, repeated browsing and normal/unselected contrasts; all 19 business tables unchanged after all final browsing"
 }
