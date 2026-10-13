@@ -234,9 +234,9 @@ def check_predecessor(directory, state):
 def audit(directory, expected_prefix):
     """Reject missing events, extra inference/calls, or unreviewed native context.
 
-    The narrow pilot accepts exactly one complete, full-input inference per
-    unit. A richer actual event stream is retained for inspection, never
-    silently normalized into a successful read.
+    Accept the observed complete inference, or one native stream continuation
+    whose retained reasoning exactly matches the saved partial response.
+    Other event patterns stop for inspection; this function never retries.
     """
     check_frozen(directory)
     frozen = json.loads((directory / "frozen.json").read_text())
@@ -254,7 +254,7 @@ def audit(directory, expected_prefix):
     reader.require([v["seq"] for v in trace] == list(range(1, len(trace) + 1)), "native event sequence gap")
     events = [v["payload"] for v in trace]
     allowed = {"rollout_started", "thread_started", "protocol_event_observed", "codex_turn_started",
-               "inference_started", "inference_completed", "codex_turn_ended", "thread_ended", "rollout_ended"}
+               "inference_started", "inference_completed", "inference_failed", "codex_turn_ended", "thread_ended", "rollout_ended"}
     reader.require(all(v["type"] in allowed for v in events), "native tool, delegation, compaction, or unknown event")
     reader.require(events[-1] == {"type": "rollout_ended", "status": "completed"}, "trace not complete")
     protocol = [v["event_type"] for v in events if v["type"] == "protocol_event_observed"]
@@ -262,8 +262,13 @@ def audit(directory, expected_prefix):
                    "unexplained runtime protocol event")
     started = [v for v in events if v["type"] == "inference_started"]
     completed = [v for v in events if v["type"] == "inference_completed"]
-    reader.require(len(started) == len(completed) == 1, "pilot requires one fully auditable inference")
-    reader.require(started[0]["inference_call_id"] == completed[0]["inference_call_id"], "response chain mismatch")
+    failed = [v for v in events if v["type"] == "inference_failed"]
+    reader.require(1 <= len(started) <= 2 and len(completed) == 1 and len(failed) == len(started) - 1,
+                   "unreviewed native inference/continuation count")
+    inference_events = [v for v in events if v["type"].startswith("inference_")]
+    reader.require([v["type"] for v in inference_events] ==
+                   ["inference_started", "inference_failed"] * len(failed) + ["inference_started", "inference_completed"],
+                   "native inference sequence differs")
     raw = {}
     def payload(ref):
         p = bundle / ref["path"]
@@ -277,6 +282,38 @@ def audit(directory, expected_prefix):
                 payload(value)
     request = payload(started[0]["request_payload"])
     response = payload(completed[0]["response_payload"])
+    retained, continuation_chain = [], []
+    def transport_item(item):
+        # The native serializer omits this optional empty field on continuation.
+        return {k: v for k, v in item.items() if not (k == "content" and v == [] and item["type"] == "reasoning")}
+    for index in range(0, len(inference_events), 2):
+        begin, ending = inference_events[index:index + 2]
+        reader.require(begin["inference_call_id"] == ending["inference_call_id"], "response chain mismatch")
+        actual = payload(begin["request_payload"])
+        reader.require(not actual.get("previous_response_id"), "unresolved native preceding response chain")
+        reader.require({k: v for k, v in actual.items() if k not in ("input", "client_metadata")} ==
+                       {k: v for k, v in request.items() if k not in ("input", "client_metadata")},
+                       "native continuation parameters differ")
+        reader.require({k: v for k, v in actual.get("client_metadata", {}).items() if k != "x-codex-ws-stream-request-start-ms"} ==
+                       {k: v for k, v in request.get("client_metadata", {}).items() if k != "x-codex-ws-stream-request-start-ms"},
+                       "native continuation identity/context differs")
+        expected_input = request["input"] + retained
+        reader.require([transport_item(v) for v in actual["input"]] == [transport_item(v) for v in expected_input],
+                       "native continuation has unexplained input")
+        if ending["type"] == "inference_failed":
+            reader.require(ending["error"] == "stream disconnected before completion: websocket closed by server before response.completed",
+                           "unreviewed native inference failure")
+            # A null payload records a disconnect before any output was saved.
+            # In that observed case the next request must repeat the exact input;
+            # the equality check above still rejects any unexplained addition.
+            partial_ref = ending["partial_response_payload"]
+            if partial_ref is not None:
+                partial = payload(partial_ref)
+                reader.require(all(v["type"] == "reasoning" for v in partial["output_items"]),
+                               "partial response contains a call or unreviewed output")
+                retained.extend(partial["output_items"])
+        continuation_chain.append({"inference_call_id": begin["inference_call_id"], "status": ending["type"],
+                                   "request_path": begin["request_payload"]["path"]})
     reader.require(request["model"] == MODEL and request["reasoning"]["effort"] == EFFORT,
                    "actual native model/effort differs")
     reader.require(not request.get("previous_response_id"), "unresolved native preceding response chain")
@@ -324,6 +361,7 @@ def audit(directory, expected_prefix):
                                  for name in ("logical-request.json", "prompt.txt", "schema.json", "launch.json",
                                               "exit.json", "events.jsonl", "answer.json", "native-prefix.json")}
     report["trace_sha256"] = sha((bundle / "trace.jsonl").read_bytes())
+    report["native_inference_chain"] = continuation_chain
     if (unit / "audit.json").exists():
         prior_report = json.loads((unit / "audit.json").read_text())
         report["audited_at"] = prior_report["audited_at"]
