@@ -2,7 +2,7 @@
 
 - task-20261013-0010 正在从当前方法重新进行独立读者多轮优化，兼顾人类理解和 AI 执行，尚未形成完整候选或正式生效。真实逐段调用、断点与分离修订证据归 [阅读基础](production/reports/task-20261013-0010/reader-foundation.md) 及本任务 `.runtime/skill-cold-reader-fresh/`；隔离方法实例用于样例、版本和评论回查，交付完成后清理。按用户补充要求，结项前清除本范围 SKILL 的旧版本与历史使用记录，只留准确最新版，处理相关引用并验证空实例恢复。各项达到任务轮次、末稿复读与实际样例标准后，再准备准确方法增量、正式验收和受管集成。
 
-- task-20261013-0007 的小卡／Prompt候选悬停、同步选择与取消、占位图、播放器移入保持、无关按钮稳定及持续高亮已获用户确认并完成受管集成、推送和本机正式发布；部分参考与多余选择控件已移除，完整原件增量已正式应用。最新正式导出恢复到新空实例，数据与文件核对通过，详见 [小卡验收](production/reference-card-compact/VERIFICATION.md)及[发布回读](production/reference-card-compact/formal-publication.json)。当前会话Chrome列表仍为空，正式只读页面与新空实例实际选择／取消复走未完成，任务暂不结项。新恢复实例由执行者保留至实操完成后清理；准确版本和本机回执归主任务账本及主项目 `.runtime/task-receipts/task-20261013-0007/`。负责人独立复验另行承接，双仓工作区退出本TUI释锁后受管退役。
+- task-20261013-0007 已按用户明确确认接受现有已发布版本并结项。小卡／Prompt候选预览、选择取消、完整原件增量及正式导出沿 [小卡验收](production/reference-card-compact/VERIFICATION.md) 和任务账本核对；实体模态大卡hover播放器命中及最终恢复实例页面实操残留保持开放，不宣称已修复或全量实操通过。完成授权、残留及准确版本见主项目 `.runtime/task-receipts/task-20261013-0007/completion-acceptance.json`。负责人独立复验仍另行承接，双仓工作区退出释锁后由原任务收尾维护受管退役。
 
 - task-20261013-0004 已实现参考小卡候选预览、准确选择、失败重试和并发恢复，隔离Chrome及数据保护通过；双仓受管正式交付、3000只读验收、最终正式完整导出新空实例复走及资源处置以任务账本和主项目 `.runtime/task-receipts/task-20261013-0004/` 回执核对。操作与验证边界见 [候选小卡验收](production/reference-candidate-picker/VERIFICATION.md)；负责人独立Review仍开放，两仓工作区退出当前TUI释锁后受管退役。
 
@@ -124,7 +124,7 @@
 - 生产子页加载中切换的迟到目录／场保护已完成隔离候选复验，包含同名往返、当前失败、准确历史和未提交草稿。实操与证据边界见 [生产切页验收](production/navigation-consistency/VERIFICATION.md)；正式生效、3000只读复走及收尾以 task-20261009-0019 的实际回执为准。
 - 长章历史返回已完成隔离候选复验：精修九责任段两次往返、相同URL各次访问、排版变化及精修八旧圈选／草稿保持。范围、反例与根独立复验边界见 [长章阅读验收](production/history-reading/VERIFICATION.md)；正式生效与收尾以 task-20261009-0027 实际回执为准。
 - 正式入口 `http://127.0.0.1:3000/`，活库为主目录 `.runtime/review.sqlite3`；准确系统提交由 `config/instance.json.review_desk_commit` 维护。两仓集成、正式切换、浏览器复验与任务完成只认主项目 `.codex-task/tasks.json` 和冻结包实际回执，工作区候选不能单凭文件存在宣称正式生效。
-- VPS 完整体验版已由 task-20261012-0018 将最新已交付系统与一致正式快照部署到 `https://leiguoguo.me/lijizhanshe/`。两轮同源发布、完整业务／原件校验、真实 Chrome 页面／媒体、评论及配置写入、普通重启、发布重置、旧标签页拒写、维护故障向前恢复与一次真实 AI 润色均完成；VPS 暂存清空，阶段 complete，本机正式业务数据保持原快照。准确运行身份以 VPS `~/lijizhanshe/state.json` 为准，范围和最小回执见 [本轮部署验收](production/vps-current-state/VERIFICATION.md)；后续发布沿 [体验版发布](production/vps-experience.md)。本任务工作区仍由 TUI 使用，退出释锁后沿受管 cleanup 退役；正式运行不依赖它。其他任务的独立 Review 和作品制作仍由原负责人承接。
+- VPS完整体验版已由 task-20261014-0001 更新为最新已交付系统与一致正式快照，入口 `https://leiguoguo.me/lijizhanshe/`。按用户最新要求仅验证部署成功：准确包及运行配置校验通过，HTTPS与实例API返回200，远端complete且暂存清空，本机正式数据不变。范围与最小回执见 [本轮部署结果](production/vps-20261014/VERIFICATION.md)，实际运行身份以VPS `~/lijizhanshe/state.json` 为准，后续沿 [体验版发布](production/vps-experience.md)。用户已明确确认完成结项，实际结项状态以任务账本为准；本工作区仍由TUI及任务锁使用，退出释锁后由本任务收尾维护受管退役，正式运行不依赖它。业务正确性和其他任务的独立Review／制作不由本次部署承接。
 
 - 方法包直接阅读在 task-20261010-0005 隔离候选已完成：作者、标准导出、空实例恢复均可顺读全文、适配与愿景；旧执行内链限制保留。正式生效、收尾与根独立复验以实际回执为准，见 [阅读交付验收](production/method-package-reading/VERIFICATION.md)。
 
