@@ -1,0 +1,255 @@
+{
+  "material-av-e01-a01-s01-camera-main": {
+    "unchanged": false,
+    "inputs": [
+      {
+        "component_id": "original",
+        "material_selection": {
+          "candidate_id": "candidate-b9087ab9a6664eb98da526001979a5c52ae7ceea7cd53a2b45082f9a8499bd76",
+          "material_id": "material-entity-rice-shop-identity"
+        },
+        "necessity": "required",
+        "reference": {
+          "object_id": "asset-fg3-rice-shop-day-image-02",
+          "revision_id": "57d9306f07241158231720825adb66dd386a1b4b6fbcbf9f7de8266a28121b1f"
+        },
+        "relation": {
+          "object_id": "relation-d5f3340fcbdca6e86cb6d2b86ac71d0c",
+          "revision_id": "1b832a948bccb9f6577c61a51de2bc838e2c462b6afcde6fb1045bda7e0269e6"
+        },
+        "semantics": "variant",
+        "use": "沿准确空间母版确定本镜机位，固定出入口与尺度"
+      },
+      {
+        "necessity": "required",
+        "reference": {
+          "object_id": "material-entity-river-street-identity",
+          "revision_id": "4d77ea358e24aa019fcbcf815d323096287a63d3f42ce6eae5285e1aac6b2a22"
+        },
+        "relation": {
+          "object_id": "relation-cb38334289edc7edad81cc6a2dad1656",
+          "revision_id": "6bf1020278a12df1eeec45f8f483f46acf3f6f379b5e47997141e3175c2c32ef"
+        },
+        "selection_state": "unselected",
+        "semantics": "variant",
+        "use": "沿准确空间母版确定本镜机位，固定出入口与尺度"
+      }
+    ]
+  },
+  "material-av-e01-a01-s01-first-frame": {
+    "unchanged": false,
+    "inputs": [
+      {
+        "group": "camera",
+        "necessity": "one_of",
+        "reference": {
+          "object_id": "material-av-e01-a01-s01-camera-main",
+          "revision_id": "d311f6ffba62d99b13618b357f8db78212c580e5ce76cc022db8a46762e7d137"
+        },
+        "relation": {
+          "object_id": "relation-ec2e161cb80218d698c60ce0dda10ac7",
+          "revision_id": "0a08d182a76d6f562aaeb0217e6f663e90633779408e13348d79e81f9c782577"
+        },
+        "route": "main",
+        "selection_state": "unselected",
+        "semantics": "reference",
+        "use": "选择此镜机位作为首帧构图依据"
+      },
+      {
+        "necessity": "required",
+        "reference": {
+          "object_id": "material-entity-a-heng-identity",
+          "revision_id": "01fc3a5d1f8050f5590ad0cca7e693f2ac0f0edc063d9eb1526c7fa214e6354f"
+        },
+        "relation": {
+          "object_id": "relation-034f698e08e581f7574aa68aff618414",
+          "revision_id": "4bbea413c5b8d13791a5a732c8d9302d0b24c57d0eb164b207b1f343f2525aa3"
+        },
+        "selection_state": "unselected",
+        "semantics": "reference",
+        "use": "首帧使用：阿蘅·日常洗旧青衣"
+      },
+      {
+        "necessity": "required",
+        "reference": {
+          "object_id": "material-entity-book-basket-identity",
+          "revision_id": "4e5735bea8e0348eb21df1955b1dbfc870738735f8b0459f3ceef74ef7e04178"
+        },
+        "relation": {
+          "object_id": "relation-addf3df4ffd523b36629e38d800d2b43",
+          "revision_id": "c81055f93251e716a6165891d16d83c9b435b83e9974818cc3236381f302ec39"
+        },
+        "selection_state": "unselected",
+        "semantics": "reference",
+        "use": "首帧使用：垫歌本竹篮·基准完整形态"
+      },
+      {
+        "necessity": "required",
+        "reference": {
+          "object_id": "material-entity-carrying-pole-identity",
+          "revision_id": "b8b31cea5a48b0a9f72e8d8349dfa477c3957c10954c0e01ad0c8580a82a2a0e"
+        },
+        "relation": {
+          "object_id": "relation-a077533b229cabcf7e60c19dc6a14fe6",
+          "revision_id": "d3b1753dac4d570b448fae67d15d06812a8a91dd96140e75683fb62d1f1b4626"
+        },
+        "selection_state": "unselected",
+        "semantics": "reference",
+        "use": "首帧使用：挑柴扁担·基准完整形态"
+      },
+      {
+        "necessity": "required",
+        "reference": {
+          "object_id": "material-entity-grain-identity",
+          "revision_id": "d99c56dd1848bb895e8e4e5261e4ca14031578fc20b8a865d95de7b85bf03005"
+        },
+        "relation": {
+          "object_id": "relation-1686a5dea592eebd2c92c1e9d810272f",
+          "revision_id": "e0f46ee7e73525beb14978e62151f7b8590625cb186bb2372281bb742f2140b8"
+        },
+        "selection_state": "unselected",
+        "semantics": "reference",
+        "use": "首帧使用：米粮·基准完整形态"
+      },
+      {
+        "necessity": "required",
+        "reference": {
+          "object_id": "material-entity-rice-listeners-identity",
+          "revision_id": "e0c34095df5ac07105493d951cf4b9805d757df486381d5269dcd4fb0a50edc8"
+        },
+        "relation": {
+          "object_id": "relation-bd7988ee67f3db47dbbdcf496c816521",
+          "revision_id": "fb357429e19d746eb24003805ae0bed072a4829918f22465dd15a29b1afa87da"
+        },
+        "selection_state": "unselected",
+        "semantics": "reference",
+        "use": "首帧使用：米铺听客·基准完整形态"
+      },
+      {
+        "necessity": "required",
+        "reference": {
+          "object_id": "material-entity-rice-measure-identity",
+          "revision_id": "1a649b64b65ba2a231082b39aad04393b7a06bdffee14ae8ecfb6804da8c1945"
+        },
+        "relation": {
+          "object_id": "relation-1769c4942c45b824a1fee54ea1014e2d",
+          "revision_id": "42a9de87fc6841c8b83d5e26f5876979d3d16002c1260b00f53f3c2838ab3dd3"
+        },
+        "selection_state": "unselected",
+        "semantics": "reference",
+        "use": "首帧使用：米铺小木斗·基准完整形态"
+      },
+      {
+        "necessity": "required",
+        "reference": {
+          "object_id": "material-entity-river-stone-identity",
+          "revision_id": "897849aff17d5c6663386a360a164ad9f327e9c52bb1dbfdc3218a4737d5bf08"
+        },
+        "relation": {
+          "object_id": "relation-005826a097d074ceab1940fe50a16fb3",
+          "revision_id": "ec2e0e7f91c716775c1677b1db4276975a7cf666b29a64fb8730b6da5029454d"
+        },
+        "selection_state": "unselected",
+        "semantics": "reference",
+        "use": "首帧使用：压页河石·基准完整形态"
+      },
+      {
+        "necessity": "required",
+        "reference": {
+          "object_id": "material-entity-songbook-identity",
+          "revision_id": "cab2971d4c8ae9544a3fe384db77aa770ee56f83611a4716dd2d58086992aebf"
+        },
+        "relation": {
+          "object_id": "relation-b02f7401b3d1698fdede7841a1c4852a",
+          "revision_id": "ad1d4ff41c901777ce2b41178b47da8e197b6b51b72057e3b82781630adeba0c"
+        },
+        "selection_state": "unselected",
+        "semantics": "reference",
+        "use": "首帧使用：阿蘅歌本·基准完整形态"
+      },
+      {
+        "necessity": "required",
+        "reference": {
+          "object_id": "material-entity-woodcutter-identity",
+          "revision_id": "78eee872d510e0cab6c65e140f6f4cd22af9f43b35fbc8f3d075f2a032f021cf"
+        },
+        "relation": {
+          "object_id": "relation-3e2d733ffaef5beff523439b33a95ef8",
+          "revision_id": "448deaf8bd34ee5176d303a04d4aa72f635a98848999cd111447fbe577841a66"
+        },
+        "selection_state": "unselected",
+        "semantics": "reference",
+        "use": "首帧使用：挑柴老汉·基准完整形态"
+      },
+      {
+        "necessity": "optional",
+        "reference": {
+          "object_id": "material-av-e01-a01-s01-video",
+          "revision_id": "ac9e7fe982eb6d36927ccbd410a956d8712d9d40104180b4d00bb86759c3536b"
+        },
+        "selection_state": "unselected",
+        "semantics": "reference",
+        "use": "本任务隔离视频参考播放器验收"
+      }
+    ]
+  },
+  "material-voice-a-heng": {
+    "unchanged": false,
+    "inputs": [
+      {
+        "component_id": "original",
+        "material_selection": {
+          "candidate_id": "candidate-26e0c745f61603d7ed40b408e4e203e8e0a26225c1c61dab9a74bf34d804fb6e",
+          "material_id": "material-voice-a-heng"
+        },
+        "necessity": "required",
+        "reference": {
+          "object_id": "asset-fg3-aheng-voice-01",
+          "revision_id": "f912f743495fbc0eab984f066331201d49dd38dbd49cd98a5af0257c9d1e419a"
+        },
+        "relation": {
+          "object_id": "relation-6e34d6b8de8e22f68d78ef74750060c5",
+          "revision_id": "a46daf7d2789302645c54d2fc350abe9ad436b699eb90009cbc27c474e693af3"
+        },
+        "semantics": "reuse",
+        "use": "阿蘅：复用旧原件的说话身份片段；新方案和片段须独立认可"
+      }
+    ]
+  },
+  "material-form-a-heng-wet-overall": {
+    "unchanged": true,
+    "inputs": [
+      {
+        "necessity": "required",
+        "reference": {
+          "object_id": "material-entity-a-heng-identity",
+          "revision_id": "01fc3a5d1f8050f5590ad0cca7e693f2ac0f0edc063d9eb1526c7fa214e6354f"
+        },
+        "relation": {
+          "object_id": "relation-45560c634eb07fa0f09e202f206f122a",
+          "revision_id": "9dd6e5a1ada5c1cd9194f75e8322e00dce7e509201032b9cc0fe9260f48af501"
+        },
+        "selection_state": "unselected",
+        "semantics": "variant",
+        "use": "固定身份与结构，按此版状态表现差异"
+      }
+    ]
+  },
+  "material-entity-a-heng-identity": {
+    "unchanged": true,
+    "inputs": []
+  },
+  "asset-fg3-aheng-image-01": {
+    "unchanged": true,
+    "inputs": null
+  },
+  "asset-fg3-aheng-later-image-01": {
+    "unchanged": true,
+    "inputs": null
+  },
+  "asset-fg3-aheng-voice-01": {
+    "unchanged": true,
+    "inputs": null
+  },
+  "other_real_frame_inputs_unchanged": true
+}
