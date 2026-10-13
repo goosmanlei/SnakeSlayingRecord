@@ -1,8 +1,14 @@
 # 当前状态与下一步
 
+- task-20261013-0007 已修复参考小卡外套框、额外占地和重复预览入口：原卡状态行提供候选比较、选择及明确再次点击取消。隔离 Chrome 的单／双候选、横滑、多原件、裁切／片段、故障恢复及共同入口已实走，见 [小卡验收](production/reference-card-compact/VERIFICATION.md)。准确双仓、本机服务、正式只读复验、最终完整导出新空实例复走及清理沿主任务账本与主项目 `.runtime/task-receipts/task-20261013-0007/` 回执核对；负责人独立复验另行承接。在用双仓工作区退出本 TUI 释锁后受管退役。
+
+- task-20261013-0004 已实现参考小卡候选预览、准确选择、失败重试和并发恢复，隔离Chrome及数据保护通过；双仓受管正式交付、3000只读验收、最终正式完整导出新空实例复走及资源处置以任务账本和主项目 `.runtime/task-receipts/task-20261013-0004/` 回执核对。操作与验证边界见 [候选小卡验收](production/reference-candidate-picker/VERIFICATION.md)；负责人独立Review仍开放，两仓工作区退出当前TUI释锁后受管退役。
+
 - task-20261012-0013 已实现流程式 SKILL 阅读、独立文件历史、实体关系图及小说创作入口；素材分类及方法分支由后续 0016 统一维护。正式 MV 清除、方法增量与 Schema 14 空实例恢复已实测；最终双仓、服务与清理按主任务账本及 `.runtime/task-20261012-0013/final/` 回执核对。负责人独立 Review 和旧 Python 测试迁移残留单独登记，详见 [验收记录](production/skill-admin-data-model/VERIFICATION.md)。
 
 ## 当前成果与运行依据
+
+- task-20261013-0006 已重构当前 16 个有效方法与图像四专项，合并生成与制作，修复基础流程连续阅读与准确章节目录。隔离试写、独立阅读、本地字层及提交恢复边界见 [验收与试用](production/foundation-refactor/VERIFICATION.md)；准确双仓、正式增量／服务、最终完整恢复和清理状态沿主任务账本及主项目 `.runtime/task-receipts/task-20261013-0006/` 回执核对。负责人独立复验另行承接；双仓工作区退出本 TUI 释锁后受管退役。
 
 - task-20261013-0003 已实现实体／镜头／素材大卡一次建立、稳定占位、原卡重试及迟到保护；隔离Chrome覆盖M2974→M2623／M2544、Prompt、关系图和素材管理，以及准确候选、原件、评论草稿与嵌套返回。前后连续画面和实际验证边界见 [大卡稳定加载验收](production/stable-material-dialog/VERIFICATION.md)；准确双仓、本机3000、最终正式导出空实例复走及资源回读以任务账本和主项目 `.runtime/task-receipts/task-20261013-0003/` 为准。负责人独立Review单列；在用双仓工作区退出TUI释锁后由本任务受管退役。
 
