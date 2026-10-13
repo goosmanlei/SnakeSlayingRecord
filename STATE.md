@@ -122,7 +122,7 @@
 - 生产子页加载中切换的迟到目录／场保护已完成隔离候选复验，包含同名往返、当前失败、准确历史和未提交草稿。实操与证据边界见 [生产切页验收](production/navigation-consistency/VERIFICATION.md)；正式生效、3000只读复走及收尾以 task-20261009-0019 的实际回执为准。
 - 长章历史返回已完成隔离候选复验：精修九责任段两次往返、相同URL各次访问、排版变化及精修八旧圈选／草稿保持。范围、反例与根独立复验边界见 [长章阅读验收](production/history-reading/VERIFICATION.md)；正式生效与收尾以 task-20261009-0027 实际回执为准。
 - 正式入口 `http://127.0.0.1:3000/`，活库为主目录 `.runtime/review.sqlite3`；准确系统提交由 `config/instance.json.review_desk_commit` 维护。两仓集成、正式切换、浏览器复验与任务完成只认主项目 `.codex-task/tasks.json` 和冻结包实际回执，工作区候选不能单凭文件存在宣称正式生效。
-- VPS完整体验版已由 task-20261014-0001 更新为最新已交付系统与一致正式快照，入口 `https://leiguoguo.me/lijizhanshe/`。按用户最新要求仅验证部署成功：准确包及运行配置校验通过，HTTPS与实例API返回200，远端complete且暂存清空，本机正式数据不变。范围与最小回执见 [本轮部署结果](production/vps-20261014/VERIFICATION.md)，实际运行身份以VPS `~/lijizhanshe/state.json` 为准，后续沿 [体验版发布](production/vps-experience.md)。任务等待用户确认完成；本工作区仍由TUI及任务锁使用，确认并退出释锁后由本任务收尾维护受管退役，正式运行不依赖它。业务正确性和其他任务的独立Review／制作不由本次部署承接。
+- VPS完整体验版已由 task-20261014-0001 更新为最新已交付系统与一致正式快照，入口 `https://leiguoguo.me/lijizhanshe/`。按用户最新要求仅验证部署成功：准确包及运行配置校验通过，HTTPS与实例API返回200，远端complete且暂存清空，本机正式数据不变。范围与最小回执见 [本轮部署结果](production/vps-20261014/VERIFICATION.md)，实际运行身份以VPS `~/lijizhanshe/state.json` 为准，后续沿 [体验版发布](production/vps-experience.md)。用户已明确确认完成结项，实际结项状态以任务账本为准；本工作区仍由TUI及任务锁使用，退出释锁后由本任务收尾维护受管退役，正式运行不依赖它。业务正确性和其他任务的独立Review／制作不由本次部署承接。
 
 - 方法包直接阅读在 task-20261010-0005 隔离候选已完成：作者、标准导出、空实例恢复均可顺读全文、适配与愿景；旧执行内链限制保留。正式生效、收尾与根独立复验以实际回执为准，见 [阅读交付验收](production/method-package-reading/VERIFICATION.md)。
 
