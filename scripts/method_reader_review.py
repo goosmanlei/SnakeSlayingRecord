@@ -301,7 +301,9 @@ def audit(directory, expected_prefix):
         reader.require([transport_item(v) for v in actual["input"]] == [transport_item(v) for v in expected_input],
                        "native continuation has unexplained input")
         if ending["type"] == "inference_failed":
-            reader.require(ending["error"] == "stream disconnected before completion: websocket closed by server before response.completed",
+            reader.require(ending["error"] in (
+                           "stream disconnected before completion: websocket closed by server before response.completed",
+                           "stream disconnected before completion: WebSocket protocol error: Connection reset without closing handshake"),
                            "unreviewed native inference failure")
             # A null payload records a disconnect before any output was saved.
             # In that observed case the next request must repeat the exact input;
