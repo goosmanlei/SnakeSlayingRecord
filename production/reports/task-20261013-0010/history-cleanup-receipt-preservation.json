@@ -1,0 +1,27 @@
+{
+  "format": "method-cleanup-receipt-preservation-check-v1",
+  "task": "task-20261013-0010",
+  "database": "rehearsal-before.sqlite3",
+  "database_written": false,
+  "changed_operation_count": 277,
+  "semantic_migration_evidence_preserved": 213,
+  "other_operation_results_unchanged_from_previous_plan": 64,
+  "preserved_fields": [
+    "history",
+    "semantic_operation",
+    "before_sha256",
+    "extraction_assessment"
+  ],
+  "only_nested_method_reference_replaced": true,
+  "unresolved_removed_usage_references": 0,
+  "comparison_sha256": "be10fea8c34a0bd96b0ffb5f7a37984fcef08f39b471ce981ac63aa2af364427",
+  "implementation_sha256": "48c230179db3c147a8f71f73756ec7d7049592fab98fb5778e0c125caedc4041",
+  "boundary": "Read-only re-evaluation of real receipts plus separate transactional regression tests; final live cleanup not yet executed.",
+  "transactional_regression": {
+    "command": "PYTHONPATH=.runtime/skill-cold-reader-fresh/system/103238350b965410d65896f42db3b6cf5bd4de51 python3 -m unittest tests.test_method_history_cleanup tests.test_method_history_baseline tests.test_material_review_release",
+    "tests": 34,
+    "result": "OK",
+    "exit_code": 0,
+    "direct_original_business_evidence_comparison": true
+  }
+}
