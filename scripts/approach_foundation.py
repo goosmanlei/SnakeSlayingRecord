@@ -81,6 +81,7 @@ def _update_methods(store, root=ROOT):
         spec['companions'].pop(section,None)
     for section in ('applications','guide'):
         spec['companions'][section]=['production/source-lock.json']
+    spec['companions']['guide'].append('production/current-candidates/README.md')
     new=methods.sync_source(store,root,spec)
     resources={new['object_id']:new}
     changes={previous['object_id']:{'before':previous['revision_id'],'after':new['revision_id']}} if previous['revision_id']!=new['revision_id'] else {}
