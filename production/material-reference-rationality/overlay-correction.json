@@ -1,0 +1,89 @@
+{
+  "changes": [
+    {
+      "material_id": "material-form-debt-overlay-removed-overall",
+      "before_content_sha256": "4ad84c7a30184e28bb0f0658712508999dbdaf684150e436d501577d21e383f4",
+      "after_content_sha256": "71823dc26a26846386f6da29f282e38ef2fb8a979d2667fbc22182b68d0b9da8",
+      "before_input": {
+        "necessity": "required",
+        "reference": {
+          "object_id": "material-entity-debt-note-identity",
+          "revision_id": "35e51b3cfbc219960d4bd9977e1698108d9557cde79c6f8442760a3f54dfac8e"
+        },
+        "selection_state": "unselected",
+        "semantics": "variant",
+        "use": "固定身份与结构，按此版状态表现差异"
+      },
+      "after_input": {
+        "necessity": "required",
+        "reference": {
+          "object_id": "material-entity-debt-overlay-structure",
+          "revision_id": "0690953994176c9d3826a49d35f9bd9046d1b837ff9b7bbdbeee23e0d6b1d65c"
+        },
+        "selection_state": "unselected",
+        "semantics": "variant",
+        "use": "固定同一篡改贴纸的轮廓、纸质和糨糊接边，按湿揭后的独立留证状态表现；原借据仅供覆盖位置与手印接位对照，不是贴纸身份母版。"
+      },
+      "reason": "已读完整当前方案、贴纸实体M4446结构职责、湿揭状态及十条上下文关系。旧输入原借据属于另一实体，不能用作贴纸身份母版；现以同一贴纸结构需求为未选输入。原据手印接位仍可对照，红绳与祭牌、纸月与纸蛇是两件组成关系，不说成同一主体。保留锁词、湿揭后分纸留证、Prompt与工具参数；未选原件及尺寸核定继续阻断，不宣称看过旧贴纸图或生成。"
+    },
+    {
+      "object_id": "relation-5c00d8153fa40c31f1807e58278bbc59",
+      "before_content_sha256": "04077860568a650f668e3062a7fc6f053071c8eec71ec7824d80ae3f9f7a8f75",
+      "before": "身份母版约束同一主体，完整状态在本阶段内变化。",
+      "after": "原借据与篡改贴纸是两张不同纸件。本关系用于核对覆盖位置、供奉字末尾与原手印接位；湿揭后分别留证，不重新合贴。贴纸本体结构由同一贴纸的结构参考承担，原借据不作其身份母版。",
+      "after_content_sha256": "b17d01ed432d4f29a8b2ff7eb0f244accc0b1f1b415168cb005705dea1cfda0b"
+    },
+    {
+      "object_id": "relation-c8cdfc9f17eaf6a1aaa34f360df0b2c1",
+      "before_content_sha256": "97c7f2beda288afcf91fd4934c29d4818e8df266cf79b0e448cdf5d70b19479e",
+      "before": "身份母版约束同一主体，完整状态在本阶段内变化。",
+      "after": "借出的同一红绳以原双回结绑在祭名木牌下，约束组合中的绳形、绑结与接触位置；红绳和木牌是不同物件，不把红绳当整块木牌的身份母版。",
+      "after_content_sha256": "faada0fb12aac08f63d935296b4941599bda8cf6ce1a92ce16d427521eb20fb2"
+    },
+    {
+      "object_id": "relation-cd1afb8b0587cd9a4f283f20d5a981cf",
+      "before_content_sha256": "c17194109b92e3740e09b1b4bd3162f818369deeeb146bcc3177361773121a9d",
+      "before": "身份母版约束同一主体，完整状态在本阶段内变化。",
+      "after": "同一纸月亮由纸蛇半张的嘴含牢，约束组合中的纸月轮廓和夹持接点；纸月与纸蛇是不同道具，各自结构参考共同服务同一完整组合，不作重复的同主体输入。",
+      "after_content_sha256": "944a2980187945ef1e4c45b079a60aef4182ddb665812cb200e74d7ff8b6f852"
+    }
+  ],
+  "result": {
+    "validated_only": false,
+    "records": [
+      {
+        "id": "material-form-debt-overlay-removed-overall",
+        "kind": "REQUIREMENT",
+        "revision": "a4db47ba925a1897d65f41e03730a2c78fadab1234dfafae973f2a75fb0d7e26",
+        "version": 11,
+        "edit_token": 11,
+        "content_sha256": "71823dc26a26846386f6da29f282e38ef2fb8a979d2667fbc22182b68d0b9da8"
+      },
+      {
+        "id": "relation-5c00d8153fa40c31f1807e58278bbc59",
+        "kind": "RELATION",
+        "revision": "8d47e95de03a5826549f62c59a84253e4cdb59d1d36ac73a199a906a731db4f4",
+        "version": 3,
+        "edit_token": 3,
+        "content_sha256": "b17d01ed432d4f29a8b2ff7eb0f244accc0b1f1b415168cb005705dea1cfda0b"
+      },
+      {
+        "id": "relation-c8cdfc9f17eaf6a1aaa34f360df0b2c1",
+        "kind": "RELATION",
+        "revision": "8da5ba5508fdf62eb4a2cffd383e32e936a594e64f7db785e78461cd1e24c662",
+        "version": 3,
+        "edit_token": 3,
+        "content_sha256": "faada0fb12aac08f63d935296b4941599bda8cf6ce1a92ce16d427521eb20fb2"
+      },
+      {
+        "id": "relation-cd1afb8b0587cd9a4f283f20d5a981cf",
+        "kind": "RELATION",
+        "revision": "b62b9f37a58e80e98c14ba1538de9b39634bf3bd318dfac42094fdd6bd5dc93b",
+        "version": 3,
+        "edit_token": 3,
+        "content_sha256": "944a2980187945ef1e4c45b079a60aef4182ddb665812cb200e74d7ff8b6f852"
+      }
+    ],
+    "removed": []
+  }
+}

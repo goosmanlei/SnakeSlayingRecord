@@ -1,0 +1,26 @@
+{
+  "name": "aheng-return",
+  "file": ".runtime/material-reference-rationality/audio-review/aheng-return.wav",
+  "range": {
+    "start_seconds": 7.66,
+    "end_seconds": 17.686979166666667
+  },
+  "original_sha256": "dcd331048e40bb4bf5ed6b4aaa96e86852f80339094ce4bc6512c57d03476e4c",
+  "clip_sha256": "502d72a86bb7a676f9791b6df72fbe7bfc5747f88831c88f3e0221da15d17e96",
+  "command": [
+    "/opt/homebrew/bin/arkcli",
+    "+understand",
+    "asr",
+    "--model",
+    "ep-20261009153507-rncvv",
+    "--input",
+    "@.runtime/material-reference-rationality/audio-review/aheng-return.wav",
+    "--max-output-tokens",
+    "500",
+    "--thinking",
+    "disabled",
+    "--format",
+    "json",
+    "只转写附件实际唱出的字，不能按常见歌词补全；不清楚写[不清]。"
+  ]
+}
