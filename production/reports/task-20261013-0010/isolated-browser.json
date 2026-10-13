@@ -15,33 +15,20 @@
     "page reloaded; test body, quote and original file version 5 read back",
     "original quote opened in review modal"
   ],
-  "test_comment": {
-    "id": "317ec2f4-0b81-4daf-b1ca-1e038140d6f2",
-    "source_id": null,
-    "target_object_id": "method.skill.story-structure",
-    "target_revision_id": "8798530f599f4c68cc814601cd40a91c42138548e8dabaa4f20d44f32e9287d0",
-    "anchor": {
-      "block_id": "@method/SKILL.md/38",
-      "end": 99,
-      "end_block_id": "@method/SKILL.md/38",
-      "file": "SKILL.md",
-      "quote": "通过既有作者入口保存草稿、回读判断和干净结果；交接时指明准确结构修订与需要正文验证的具体问题。版本、评论回应和发布沿项目的受管方法入口办理。自检完成、发布可审阅与用户认可分别记录，不增加逐对象审批。",
-      "start": 0
-    },
-    "body": "【task-20261013-0010 隔离验收】这条评论固定于 SKILL.md 第5版的交接段，用于验证方法改版后原圈选与版本仍可回查；不作为新的创作意见，不进入正式库。",
-    "status": "OPEN",
-    "version": 1,
-    "created_at": "2026-10-13T10:41:18+00:00",
-    "updated_at": "2026-10-13T10:41:18+00:00"
-  },
-  "existing_comments_preserved": 3,
   "test_comment_absent_from_formal": true,
-  "screenshot": "production/reports/task-20261013-0010/screenshots/isolated-original-comment.jpg",
-  "screenshot_sha256": "826cd7619f4d85c7fc87c1f8c5a7a245727c755aecc75120aafe8e0bba94cfe5",
   "pending": [
     "new method full-round acceptance",
-    "changed-version comparison and old anchor readback",
+    "latest-only cleanup and readback",
     "final formal and empty-instance Chrome acceptance"
   ],
-  "no_formal_writes": true
+  "no_formal_writes": true,
+  "comment_counts_observed_before_cleanup": {
+    "existing_user_comments": 3,
+    "isolated_test_comments": 1
+  },
+  "removed_report_artifacts": {
+    "comment_detail_records": 1,
+    "comment_screenshots": 1
+  },
+  "history_cleanup_status": "pending final candidate; no live database deletion claimed"
 }
