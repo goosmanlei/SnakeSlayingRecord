@@ -39,7 +39,10 @@ APPROVED_PREFIXES = ("a9e967fd9422ccaae1ae4d6edddba40130540c79cee2ece6aa1f589139
                      "dce906c83e5cf8358d84218470d5478cc7d7a1892f45487130d9777e86189ea6,"
                      "855b126995b4faa0867fa2c47f237236fd4b7e650a9a334d84804d9a1bc90dfa,"
                      "31ffe538df820a2b68d948f74b5a4995decceca8144e45b1d40a84c9d1a05ff8,"
-                     "8d1a6996cabdc99608cee70d8b3acdbb998953de4222683b0febaff62c0f5f96")
+                     "8d1a6996cabdc99608cee70d8b3acdbb998953de4222683b0febaff62c0f5f96,"
+                     "4e702e73bd0e8a7bf4f78ded66099d7a26654a64c535080ae810ea3770e858de,"
+                     "790d78d5c25286ae62fcb393dced6bf29c0f9c959f09080e4299a39294eaf38a,"
+                     "0f5bfcbffbe1fd36ceb07b3255d6018eedfa683840643834e8b2a458eea5b612")
 
 
 def sha(body):
@@ -241,8 +244,8 @@ def check_predecessor(directory, state):
 def audit(directory, expected_prefix):
     """Reject missing events, extra inference/calls, or unreviewed native context.
 
-    Accept the observed complete inference, or one native stream continuation
-    whose retained reasoning exactly matches the saved partial response.
+    Accept the observed complete inference, or up to two native continuations
+    whose retained reasoning exactly matches the saved partial responses.
     Other event patterns stop for inspection; this function never retries.
     """
     check_frozen(directory)
@@ -270,7 +273,7 @@ def audit(directory, expected_prefix):
     started = [v for v in events if v["type"] == "inference_started"]
     completed = [v for v in events if v["type"] == "inference_completed"]
     failed = [v for v in events if v["type"] == "inference_failed"]
-    reader.require(1 <= len(started) <= 2 and len(completed) == 1 and len(failed) == len(started) - 1,
+    reader.require(1 <= len(started) <= 3 and len(completed) == 1 and len(failed) == len(started) - 1,
                    "unreviewed native inference/continuation count")
     inference_events = [v for v in events if v["type"].startswith("inference_")]
     reader.require([v["type"] for v in inference_events] ==
@@ -310,7 +313,8 @@ def audit(directory, expected_prefix):
         if ending["type"] == "inference_failed":
             reader.require(ending["error"] in (
                            "stream disconnected before completion: websocket closed by server before response.completed",
-                           "stream disconnected before completion: WebSocket protocol error: Connection reset without closing handshake"),
+                           "stream disconnected before completion: WebSocket protocol error: Connection reset without closing handshake",
+                           "stream disconnected before completion: idle timeout waiting for websocket"),
                            "unreviewed native inference failure")
             # A null payload records a disconnect before any output was saved.
             # In that observed case the next request must repeat the exact input;
@@ -356,15 +360,28 @@ def audit(directory, expected_prefix):
     reader.require(result == json.loads((unit / "answer.json").read_text()), "last-message file differs from raw response")
     after, _ = reader.transition(result, state["memory"], frozen["paragraphs"], number)
     cli = [json.loads(line) for line in (unit / "events.jsonl").read_text().splitlines()]
-    reader.require([v["type"] for v in cli] == ["thread.started", "turn.started", "item.completed", "turn.completed"],
+    transport_errors = [v for v in cli if v["type"] == "error"]
+    if transport_errors:
+        # These observed CLI messages describe transport reconnects, not extra
+        # model input. The complete inference chain above remains mandatory.
+        reader.require(bool(failed) and 1 <= len(transport_errors) <= 3 and
+                       cli[2:-2] == transport_errors, "unreviewed CLI reconnect sequence")
+        for attempt, event in enumerate(transport_errors, 2):
+            reader.require(event in (
+                {"type": "error", "message": "Reconnecting... %s/5 (request timed out)" % attempt},
+                {"type": "error", "message": "Reconnecting... %s/5 (stream disconnected before completion: idle timeout waiting for websocket)" % attempt}),
+                "unreviewed CLI transport error")
+    cli_content = [v for v in cli if v["type"] != "error"]
+    reader.require([v["type"] for v in cli_content] == ["thread.started", "turn.started", "item.completed", "turn.completed"],
                    "CLI events contain extra operations or gaps")
-    reader.require(cli[2]["item"]["type"] == "agent_message" and json.loads(cli[2]["item"]["text"]) == result,
+    reader.require(cli_content[2]["item"]["type"] == "agent_message" and json.loads(cli_content[2]["item"]["text"]) == result,
                    "CLI response differs from raw inference")
     report = {"accepted": True, "unit": number, "model": request["model"], "effort": request["reasoning"]["effort"],
               "native_prefix_sha256": prefix_sha, "native_event_count": len(trace), "raw_payload_sha256": raw,
               "logical_request_sha256": reader.digest(intended), "result": result,
               "memory_before_sha256": reader.digest(state["memory"]), "memory_after_sha256": reader.digest(after),
               "response_id": response["response_id"], "thread_id": cli[0]["thread_id"], "audited_at": reader.stamp()}
+    report["cli_transport_errors"] = transport_errors
     report["previous_audit_sha256"] = state.get("last_audit_sha256")
     report["evidence_sha256"] = {name: sha((unit / name).read_bytes())
                                  for name in ("logical-request.json", "prompt.txt", "schema.json", "launch.json",
@@ -374,6 +391,8 @@ def audit(directory, expected_prefix):
     if (unit / "audit.json").exists():
         prior_report = json.loads((unit / "audit.json").read_text())
         report["audited_at"] = prior_report["audited_at"]
+        if "cli_transport_errors" not in prior_report and not transport_errors:
+            report.pop("cli_transport_errors")
         reader.require(report == prior_report, "saved audit differs from current native evidence")
     save_json(unit / "audit.json", report)
     reader.write_json(directory / "checkpoint.json", {**state, "status": "AUDITED", "accepted_units": number,

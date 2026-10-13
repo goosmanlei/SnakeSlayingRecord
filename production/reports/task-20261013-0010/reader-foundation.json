@@ -856,7 +856,7 @@
         "reinvocations": 0
       }
     ],
-    "adapter_sha256": "874cc6846b1cd696b8bf869831f003f22ffa673dfe52cf076b14e745fd676158",
+    "adapter_sha256": "ec7866bddcd31a2d6447fb47c91645c7011984dbed86fb0ac04e794b98bb0802",
     "latest_manual_comparison": {
       "at": "2026-10-13T11:18:07.858584+00:00",
       "generic_policy_diff": ".runtime/skill-cold-reader-fresh/video-handbook/round-01/step-0113/prefix-diff.txt",
@@ -866,7 +866,68 @@
       ],
       "model_policy_read": "/Users/bytedance/.codex/policies/model-calls.md",
       "reader_operations": 0
-    }
+    },
+    "reboot_prefix_comparisons": [
+      {
+        "before": ".runtime/skill-cold-reader-fresh/current-production/round-03/step-0013/native-prefix.json",
+        "after": ".runtime/skill-cold-reader-fresh/generation-preflight/round-02/step-0003/native-prefix.json",
+        "before_sha256": "7bc793650b6b4622ba97dd81d4d2f33f75e1b79f62ac5d21995c1f60e407bad8",
+        "after_sha256": "e9c6cb1a55aef483666dcf3c76b633c959922741fe64dc37e3f895e1c4d9940a",
+        "prefix_sha256": "4e702e73bd0e8a7bf4f78ded66099d7a26654a64c535080ae810ea3770e858de",
+        "changes": [
+          "Pages plugin catalog path version 0.1.21 to 0.1.23",
+          "environment current_date 2026-10-13 to 2026-10-14"
+        ],
+        "all_other_prefix_bytes_equal": true,
+        "project_or_author_context_added": false,
+        "approved_at": "2026-10-13T16:14:54.776+00:00"
+      },
+      {
+        "comparisons": [
+          {
+            "before": ".runtime/skill-cold-reader-fresh/task-definition-publish/round-04/step-0019/native-prefix.json",
+            "after": ".runtime/skill-cold-reader-fresh/task-definition-publish/round-04/step-0020/native-prefix.json",
+            "before_sha256": "b30ce13374d61b1945a2a45cbad8b5ac03a576154d627ac5c8aeb83c5b25299e",
+            "after_sha256": "f2eab7588c0cacdce9960cf2b0755e228c36aad7d421645f10d68ecdd0355eef",
+            "prefix_sha256": "790d78d5c25286ae62fcb393dced6bf29c0f9c959f09080e4299a39294eaf38a",
+            "changes": [
+              [
+                "<current_date>2026-10-13</current_date>",
+                "<current_date>2026-10-14</current_date>"
+              ]
+            ],
+            "all_other_prefix_bytes_equal": true,
+            "project_or_author_context_added": false,
+            "actual_effort_still_checked_independently": "max"
+          },
+          {
+            "before": ".runtime/skill-cold-reader-fresh/current-production/round-03/step-0013/native-prefix.json",
+            "after": ".runtime/skill-cold-reader-fresh/filmcraft/round-01/step-0374/native-prefix.json",
+            "before_sha256": "7bc793650b6b4622ba97dd81d4d2f33f75e1b79f62ac5d21995c1f60e407bad8",
+            "after_sha256": "7f52113bd8dec99ad5c81f90cc032b68530006c4c1e7bc8ed7b13cc581a7768a",
+            "prefix_sha256": "0f5bfcbffbe1fd36ceb07b3255d6018eedfa683840643834e8b2a458eea5b612",
+            "changes": [
+              [
+                "/pages/0.1.21/skills",
+                "/pages/0.1.23/skills"
+              ],
+              [
+                "<current_date>2026-10-13</current_date>",
+                "<current_date>2026-10-14</current_date>"
+              ],
+              [
+                "Reasoning efforts: low, medium (default), high, xhigh, max, ultra. Service tiers: priority.",
+                "Reasoning efforts: low (default), medium, high, xhigh, max, ultra. Service tiers: priority."
+              ]
+            ],
+            "all_other_prefix_bytes_equal": true,
+            "project_or_author_context_added": false,
+            "actual_effort_still_checked_independently": "max"
+          }
+        ],
+        "approved_at": "2026-10-13T16:20:22.132+00:00"
+      }
+    ]
   },
   "dual_audience_requirement": {
     "task": "task-20261013-0010",
@@ -877,5 +938,377 @@
     "frozen_round_policy": "正在进行的准确输入和读者提示不变；下一轮冻结时加入双读者通用说明。修订者从本次起应用此判断，已完成条目另作回查，必要改稿须再完整读。",
     "evidence_boundary": "模型冷读、协调者文本回查和隔离样例不等于真人用户测试。",
     "formal_source_modified": false
+  },
+  "native_idle_timeout_recovery": {
+    "inspection": {
+      "reviewed_at": "2026-10-13T14:56:39.751897+00:00",
+      "stage": "original chain inspection before adapter change",
+      "steps": [
+        {
+          "method": "task-definition-publish",
+          "round": 4,
+          "unit": 14,
+          "trace_sha256": "3dfe64aee3ab6832617890e598d3f4703536e06fe4b3c5c47b5f8b7761dde8c7",
+          "actual_model": "gpt-6-astra",
+          "actual_effort": "max",
+          "trace_events": 14,
+          "chain": [
+            {
+              "status": "inference_failed",
+              "input_exact": true,
+              "parameters_exact": true,
+              "retained_reasoning_items_on_input": 0,
+              "error": "stream disconnected before completion: idle timeout waiting for websocket",
+              "partial_output_types": []
+            },
+            {
+              "status": "inference_completed",
+              "input_exact": true,
+              "parameters_exact": true,
+              "retained_reasoning_items_on_input": 0
+            }
+          ],
+          "cli_transport_errors": [
+            "Reconnecting... 2/5 (request timed out)",
+            "Reconnecting... 3/5 (request timed out)",
+            "Reconnecting... 4/5 (request timed out)"
+          ],
+          "raw_final_matches_saved_answer": true,
+          "new_invocations": 0,
+          "accepted_audit_sha256": "f522fde85b9a8d59caaac50535a0bd7ab6b24e6465ce70f311f669cc8f8fd49c"
+        },
+        {
+          "method": "generation-preflight",
+          "round": 1,
+          "unit": 11,
+          "trace_sha256": "2f2cafe1a347a46cd66a0ce790dc44aaccac44bdd76486297a6f35df0101466e",
+          "actual_model": "gpt-6-astra",
+          "actual_effort": "max",
+          "trace_events": 14,
+          "chain": [
+            {
+              "status": "inference_failed",
+              "input_exact": true,
+              "parameters_exact": true,
+              "retained_reasoning_items_on_input": 0,
+              "error": "stream disconnected before completion: idle timeout waiting for websocket",
+              "partial_output_types": [
+                "reasoning"
+              ]
+            },
+            {
+              "status": "inference_completed",
+              "input_exact": true,
+              "parameters_exact": true,
+              "retained_reasoning_items_on_input": 1
+            }
+          ],
+          "cli_transport_errors": [
+            "Reconnecting... 2/5 (request timed out)",
+            "Reconnecting... 3/5 (request timed out)",
+            "Reconnecting... 4/5 (request timed out)"
+          ],
+          "raw_final_matches_saved_answer": true,
+          "new_invocations": 0,
+          "accepted_audit_sha256": "b6df3a45769e7819dd6963f8a26f6d7dc7dbb84763c2e9ceee1c0bfb060cb45d"
+        },
+        {
+          "method": "image-plan",
+          "round": 2,
+          "unit": 18,
+          "trace_sha256": "3b3318450ff8f4965ff28b73ae169d8b4043dd7999ea8abf58b96eb2244f3a11",
+          "actual_model": "gpt-6-astra",
+          "actual_effort": "max",
+          "trace_events": 16,
+          "chain": [
+            {
+              "status": "inference_failed",
+              "input_exact": true,
+              "parameters_exact": true,
+              "retained_reasoning_items_on_input": 0,
+              "error": "stream disconnected before completion: websocket closed by server before response.completed",
+              "partial_output_types": []
+            },
+            {
+              "status": "inference_failed",
+              "input_exact": true,
+              "parameters_exact": true,
+              "retained_reasoning_items_on_input": 0,
+              "error": "stream disconnected before completion: idle timeout waiting for websocket",
+              "partial_output_types": [
+                "reasoning"
+              ]
+            },
+            {
+              "status": "inference_completed",
+              "input_exact": true,
+              "parameters_exact": true,
+              "retained_reasoning_items_on_input": 1
+            }
+          ],
+          "cli_transport_errors": [
+            "Reconnecting... 2/5 (stream disconnected before completion: idle timeout waiting for websocket)",
+            "Reconnecting... 3/5 (request timed out)",
+            "Reconnecting... 4/5 (request timed out)"
+          ],
+          "raw_final_matches_saved_answer": true,
+          "new_invocations": 0,
+          "accepted_audit_sha256": "c6e64d584b7d9c73f933c8aa7b68ac4d034708cc6a301e8a762016494bf1f09c"
+        },
+        {
+          "method": "filmcraft",
+          "round": 1,
+          "unit": 367,
+          "trace_sha256": "ad011bd357b67216b0d4dcd911117591b7b5d7493095aad6f9a689061136f89a",
+          "actual_model": "gpt-6-astra",
+          "actual_effort": "max",
+          "trace_events": 14,
+          "chain": [
+            {
+              "status": "inference_failed",
+              "input_exact": true,
+              "parameters_exact": true,
+              "retained_reasoning_items_on_input": 0,
+              "error": "stream disconnected before completion: idle timeout waiting for websocket",
+              "partial_output_types": [
+                "reasoning",
+                "reasoning"
+              ]
+            },
+            {
+              "status": "inference_completed",
+              "input_exact": true,
+              "parameters_exact": true,
+              "retained_reasoning_items_on_input": 2
+            }
+          ],
+          "cli_transport_errors": [
+            "Reconnecting... 2/5 (request timed out)",
+            "Reconnecting... 3/5 (request timed out)"
+          ],
+          "raw_final_matches_saved_answer": true,
+          "new_invocations": 0,
+          "accepted_audit_sha256": "e1bfbf65b43d6bbbbe5d0d2b1978c383f8a8612d21db00315f7a150711ac2b30"
+        },
+        {
+          "method": "video-handbook",
+          "round": 2,
+          "unit": 157,
+          "trace_sha256": "3ac6d395dcced7fdfd5230ab594a1f4e0887e0e1733870ecac499c0ae88be9fd",
+          "actual_model": "gpt-6-astra",
+          "actual_effort": "max",
+          "trace_events": 14,
+          "chain": [
+            {
+              "status": "inference_failed",
+              "input_exact": true,
+              "parameters_exact": true,
+              "retained_reasoning_items_on_input": 0,
+              "error": "stream disconnected before completion: idle timeout waiting for websocket",
+              "partial_output_types": [
+                "reasoning"
+              ]
+            },
+            {
+              "status": "inference_completed",
+              "input_exact": true,
+              "parameters_exact": true,
+              "retained_reasoning_items_on_input": 1
+            }
+          ],
+          "cli_transport_errors": [
+            "Reconnecting... 2/5 (request timed out)",
+            "Reconnecting... 3/5 (request timed out)"
+          ],
+          "raw_final_matches_saved_answer": true,
+          "new_invocations": 0,
+          "accepted_audit_sha256": "40b97d8c6168f8be844ad6138aee00b76c6aae9c6ae668892f41e00cd919d025"
+        }
+      ]
+    },
+    "offline_checks": {
+      "tests": [
+        {
+          "case": "valid-native-continuation",
+          "accepted": true,
+          "rejection": null,
+          "simulated_mutation": false,
+          "new_inference": false
+        },
+        {
+          "case": "changed-model",
+          "accepted": false,
+          "rejection": "native continuation parameters differ",
+          "simulated_mutation": true,
+          "new_inference": false
+        },
+        {
+          "case": "added-context",
+          "accepted": false,
+          "rejection": "native continuation has unexplained input",
+          "simulated_mutation": true,
+          "new_inference": false
+        },
+        {
+          "case": "external-tool-event",
+          "accepted": false,
+          "rejection": "native tool, delegation, compaction, or unknown event",
+          "simulated_mutation": true,
+          "new_inference": false
+        },
+        {
+          "case": "missing-event",
+          "accepted": false,
+          "rejection": "native event sequence gap",
+          "simulated_mutation": true,
+          "new_inference": false
+        },
+        {
+          "case": "unrecognized-cli-error",
+          "accepted": false,
+          "rejection": "unreviewed CLI transport error",
+          "simulated_mutation": true,
+          "new_inference": false
+        }
+      ],
+      "temporary_directories_removed": 6,
+      "original_evidence_changed": false
+    },
+    "old_audit_recovery": {
+      "case": "resume-existing-audit-before-cli-error-field",
+      "accepted": true,
+      "original_audit_sha256": "cfbd73f2eb17b05cfcab1c75cd486a2e317c7134f6d265ec3980ac202fbec91b",
+      "audit_bytes_unchanged": true,
+      "new_model_calls": 0,
+      "adapter_sha256": "eb025b76105bfc7bd92fa740b54520d5e255fc4a62aae518fe41f2ab493811c1",
+      "temporary_directory_removed": true
+    },
+    "adapter_sha256": "ec7866bddcd31a2d6447fb47c91645c7011984dbed86fb0ac04e794b98bb0802"
+  },
+  "host_reboot_recovery": {
+    "checkpoint_restore": {
+      "boot": "{ sec = 1791904593, usec = 798095 } Tue Oct 13 23:16:33 2026",
+      "status": "FIVE_CHECKPOINTS_RESTORED_TO_LAST_ACCEPTED_MEMORY",
+      "requests_reissued": 0,
+      "read_units_counted": 0,
+      "entries": [
+        {
+          "package": "filmcraft",
+          "round": "round-01",
+          "unit": 374,
+          "accepted_units": 373,
+          "archive": ".runtime/skill-cold-reader-fresh/filmcraft/round-01/interrupted-attempts/step-0374-boot-1791904593",
+          "proof_sha256": "f14e6e8e37173bc187d18f8acb0f5a1919872740e29b03cbd3db5ca478719ad1",
+          "empty_cwd_removed": true
+        },
+        {
+          "package": "video-handbook",
+          "round": "round-02",
+          "unit": 165,
+          "accepted_units": 164,
+          "archive": ".runtime/skill-cold-reader-fresh/video-handbook/round-02/interrupted-attempts/step-0165-boot-1791904593",
+          "proof_sha256": "7aadc631c75168a9c3b1aeafdcb1a405e2f1aef2906be60b4e041ceba615807b",
+          "empty_cwd_removed": false
+        },
+        {
+          "package": "task-definition-publish",
+          "round": "round-04",
+          "unit": 20,
+          "accepted_units": 19,
+          "archive": ".runtime/skill-cold-reader-fresh/task-definition-publish/round-04/interrupted-attempts/step-0020-boot-1791904593",
+          "proof_sha256": "b519a736f43cddc94771eafc199c31bfa6519c8d2ee52e97fe157a1dcc820ea0",
+          "empty_cwd_removed": false
+        },
+        {
+          "package": "image-plan",
+          "round": "round-02",
+          "unit": 23,
+          "accepted_units": 22,
+          "archive": ".runtime/skill-cold-reader-fresh/image-plan/round-02/interrupted-attempts/step-0023-boot-1791904593",
+          "proof_sha256": "7debe9b5167538e3c480e9affb2d21b63a9654357b7eb8bc85c3ac499beab32d",
+          "empty_cwd_removed": false
+        },
+        {
+          "package": "generation-preflight",
+          "round": "round-02",
+          "unit": 3,
+          "accepted_units": 2,
+          "archive": ".runtime/skill-cold-reader-fresh/generation-preflight/round-02/interrupted-attempts/step-0003-boot-1791904593",
+          "proof_sha256": "0f7ec49c0aa83455f0787b6e96a39e2f7c53e41e949967fc2d398def6575d6b9",
+          "empty_cwd_removed": false
+        }
+      ],
+      "recorded_at": "2026-10-13T16:12:32.646+00:00"
+    },
+    "resumed_results": [
+      {
+        "package": "filmcraft",
+        "round": "round-01",
+        "unit": 374,
+        "audit_sha256": "b447b35d0c143ad4737307b6a33c5ff399a594806ec6cad267c3b122ca87e93e",
+        "thread_id": "01a1360d-4a59-7482-80d5-906a81d32f18",
+        "model": "gpt-6-astra",
+        "effort": "max",
+        "prior_interrupted_attempt_count": 1,
+        "new_accepted_result_count": 1
+      },
+      {
+        "package": "video-handbook",
+        "round": "round-02",
+        "unit": 165,
+        "audit_sha256": "6f492e8653ca3b61bc9d3009d1cf3f44565ad0660424c6ef21fec815c6347cdf",
+        "thread_id": "01a1360c-b1c9-75d0-bfca-1cfa5265fec0",
+        "model": "gpt-6-astra",
+        "effort": "max",
+        "prior_interrupted_attempt_count": 1,
+        "new_accepted_result_count": 1
+      },
+      {
+        "package": "task-definition-publish",
+        "round": "round-04",
+        "unit": 20,
+        "audit_sha256": "018b00c574091bc54d9236d0a6d46a0d950cecc07c6dd4f2458749cb68e3a46b",
+        "thread_id": "01a1360c-664a-7e31-90f0-10f3541d25dc",
+        "model": "gpt-6-astra",
+        "effort": "max",
+        "prior_interrupted_attempt_count": 1,
+        "new_accepted_result_count": 1
+      },
+      {
+        "package": "image-plan",
+        "round": "round-02",
+        "unit": 23,
+        "audit_sha256": "4f265e399f7b59a9fe8eb02b8045ad1d9c52f87ebf979fb1591047645b750927",
+        "thread_id": "01a1360c-a712-7e40-964b-0be3ae5f55a3",
+        "model": "gpt-6-astra",
+        "effort": "max",
+        "prior_interrupted_attempt_count": 1,
+        "new_accepted_result_count": 1
+      },
+      {
+        "package": "generation-preflight",
+        "round": "round-02",
+        "unit": 3,
+        "audit_sha256": "66da360243f2ffde2028e6947ac17f1d6094511a8413f66e2cee41bb0fb31221",
+        "thread_id": "01a13609-8d2d-7840-a749-02dd9dd4a508",
+        "model": "gpt-6-astra",
+        "effort": "max",
+        "prior_interrupted_attempt_count": 1,
+        "new_accepted_result_count": 1
+      }
+    ],
+    "interrupted_attempts_not_counted": 5,
+    "empty_reader_directories_removed": 1,
+    "one_time_recovery_script_removed": {
+      "count": 1,
+      "sha256": "34df7bb3ecd67a9e66255311f2d1bfff9645345fec0e335d78921f6d3e106974",
+      "exists_after": false
+    },
+    "runtime_restored": {
+      "formal_url": "http://127.0.0.1:3000",
+      "isolated_url": "http://127.0.0.1:57149",
+      "protected_five_reader_packages_equal": true
+    },
+    "verified_at": "2026-10-13T16:22:32.058+00:00"
   }
 }
