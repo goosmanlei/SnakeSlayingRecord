@@ -1,0 +1,46 @@
+{
+  "format": "material-reference-browser-validation-v1",
+  "formal": {
+    "environment": "Chrome / 127.0.0.1:3000",
+    "system_commit": "d89e9d5a80a3cd9ad78c0ba57d980e5975af3b25",
+    "entries": [
+      "material-management",
+      "entity-dialog",
+      "audiovisual-inline"
+    ],
+    "own_source": "M2669 candidate2 original a7d678681c2e490de0a7dc8aca163131f68e196ceda703dc9c9282418c589272.wav",
+    "range": [
+      0,
+      5.6
+    ],
+    "actual_playback_started": true,
+    "actual_playback_stopped_at": 5.6,
+    "returned_to_current": true,
+    "normal_cross_reference": "M2714 -> M2544 candidate2 original b085f4f67c782c286fec7132b2b8bc1bcac71d5a72cdffdeed625caa36bd8cb1.png",
+    "unselected_downstream": "M2975 input4 remains unselected by user decision",
+    "no_result": "M2973 has zero output candidates; latest river candidate1 input retained",
+    "writes": "read-only; 19 business tables unchanged",
+    "screenshot": "screenshots/formal-reuse.png"
+  },
+  "empty_recovery": {
+    "environment": "Chrome / 127.0.0.1:55972",
+    "system_commit": "d89e9d5a80a3cd9ad78c0ba57d980e5975af3b25",
+    "full_data_equality_checked_before_tests": true,
+    "own_source_playback": [
+      0,
+      5.6
+    ],
+    "returned_to_current": true,
+    "cancellation_failure_before_fix": "self REQUIREMENT was rejected as a cycle; transaction did not alter selected original",
+    "cancellation_after_fix": "same original provenance retained, selection and range cleared; UI candidate pending",
+    "selected_again": true,
+    "range_explicitly_saved_again": [
+      0,
+      5.6
+    ],
+    "unchanged_save_disabled": true,
+    "formal_data_modified_by_tests": false,
+    "screenshot": "screenshots/recovered-reuse.png"
+  },
+  "final_formal_system_verification": "passed all three entries, exact range playback/stop/return, repeated browsing and normal contrasts; final documentation pin has identical runtime source"
+}

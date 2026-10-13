@@ -1,7 +1,7 @@
 {
   "format": "material-reference-semantic-audit-v1",
   "task": "task-20261013-0005",
-  "current_inventory_sha256": "12979d066a69e1889ac765021ac8b29633c2d93bbe51ea1cc83802bbe81ae0dd",
+  "current_inventory_sha256": "fadf172845d0e26a582781e89ae89fe13539a53deaeac218bf3afd7207b45b95",
   "summary": {
     "materials": 1293,
     "categories": {
@@ -12956,7 +12956,7 @@
           "index": 1,
           "active": true,
           "layer": "current-plan",
-          "kind": "demand"
+          "kind": "exact-original"
         },
         {
           "material_id": "material-av-e01-a03-s01-camera-main",
@@ -18822,7 +18822,7 @@
           "index": 3,
           "active": true,
           "layer": "current-plan",
-          "kind": "exact-original"
+          "kind": "demand"
         },
         {
           "material_id": "material-av-e01-a01-s02-video",
@@ -36617,7 +36617,7 @@
     {
       "material_id": "material-av-e01-a01-s01-camera-main",
       "code": "M2973",
-      "content_sha256": "af161d5055bd1528716e7c30aa722813f8e5d9d49241fea96e5a01345d800a54",
+      "content_sha256": "9ee38e16fc62441277f91c864e769351bbb8dfecde00ff681ac4dd33a9807be8",
       "decision": "reference-role-reviewed",
       "reason": "街景建立后靠近唱歌阿蘅，歌本先摊压石再唱再翻页；老汉后显脸，米工钱和李寄尚未交入。",
       "slots": [
@@ -36649,29 +36649,31 @@
         },
         {
           "index": 1,
-          "input_key": "99eef021eaffc741fa1b075dbe0ec198718153e1924e35f7da1c6692a1978964",
-          "decision": "preparation-gap",
-          "reason": "保留此规划方向；沿准确空间母版确定本镜机位，固定出入口与尺度。准确候选尚未选定，当前不是已取得可执行原件。",
+          "input_key": "139a43a367de4d827d238ccf6960c500c977d1ad3d50fbdc2f576b809eb14bee",
+          "decision": "retain-selected-space-reference",
+          "reason": "最新河街候选1原件已实际查看：左侧店铺与沿河步行街、浅水石滩、远处桥及对岸共同固定空间方向；不借人物或未来动作。米铺内部仍由未选的米铺参考负责，此图不证明全部机位已可执行。",
           "reference": {
+            "component_id": "original",
+            "material_selection": {
+              "candidate_id": "candidate-9b835cab03dc6cb0569f9d150c4c074adcf3327e37fdc837f282d5d7f833f2d2",
+              "material_id": "material-entity-river-street-identity"
+            },
             "necessity": "required",
             "reference": {
-              "object_id": "material-entity-river-street-identity",
-              "revision_id": "4d77ea358e24aa019fcbcf815d323096287a63d3f42ce6eae5285e1aac6b2a22"
+              "object_id": "asset-fg3-river-image-04",
+              "revision_id": "9019726464477e4011ed7bca03e0a711fb3e03ae270306a6c54245dd1de9897e"
             },
             "relation": {
               "object_id": "relation-cb38334289edc7edad81cc6a2dad1656",
               "revision_id": "6bf1020278a12df1eeec45f8f483f46acf3f6f379b5e47997141e3175c2c32ef"
             },
-            "selection_state": "unselected",
             "semantics": "variant",
             "use": "沿准确空间母版确定本镜机位，固定出入口与尺度"
           },
           "target_material": "material-entity-river-street-identity",
           "active": true,
-          "issues": [
-            "尚未选定候选"
-          ],
-          "target_kind": "REQUIREMENT"
+          "issues": [],
+          "target_kind": "ASSET"
         }
       ],
       "read_scope": [
@@ -36683,7 +36685,9 @@
         "scope_content.key_states",
         "generation.prompt.state-constraints"
       ],
-      "original_viewed": [],
+      "original_viewed": [
+        "c4ce81f63a44f3cf2880a41661d07fd614021455239d9555c918ab805c8e924d"
+      ],
       "original_listened": [],
       "category": "shot-image",
       "title": "阿蘅翻过两页 · 主机位参考",
@@ -36703,7 +36707,16 @@
         "relation-cb38334289edc7edad81cc6a2dad1656",
         "relation-d5f3340fcbdca6e86cb6d2b86ac71d0c",
         "relation-ec2e161cb80218d698c60ce0dda10ac7"
-      ]
+      ],
+      "latest_state_review": {
+        "previous_content_sha256": "af161d5055bd1528716e7c30aa722813f8e5d9d49241fea96e5a01345d800a54",
+        "basis": "正式发布前已存在的最新选择；正式增量保全证明本任务未改变这些选择。",
+        "read_scope": [
+          "full-current-plan-diff",
+          "ordered-slot-diff",
+          "latest-selected-original-or-preparation-gap"
+        ]
+      }
     },
     {
       "material_id": "material-av-e01-a01-s01-first-frame",
@@ -37017,7 +37030,7 @@
     {
       "material_id": "material-av-e01-a01-s01-video",
       "code": "M2975",
-      "content_sha256": "e47f9de5f1ec168cb382fcbe09f0cf91c44a2d10fa6183d1f95685f08783165b",
+      "content_sha256": "6ac705b8e198e584e62fa87c599a5fd5b66b9d94133a4dcaa1427f7b7e3ea8b0",
       "decision": "reference-role-reviewed",
       "reason": "街景建立后靠近唱歌阿蘅，歌本先摊压石再唱再翻页；老汉后显脸，米工钱和李寄尚未交入。",
       "slots": [
@@ -37104,32 +37117,30 @@
         },
         {
           "index": 3,
-          "input_key": "75881354a742fd9fe4d78c102dca8cb02413f9c84ce1195a133a295823ea5d63",
-          "decision": "pending-audio-review",
-          "reason": "说话者与当镜声源职责匹配，准确片段尚待实际听辨。",
+          "input_key": "ee1a2718029fc6cd5d62851f9a84cd7467cfcda222b29c85f98880681a525e71",
+          "decision": "preparation-gap",
+          "reason": "当前仍只规划借阿蘅说话身份，不继承旧词、语气或歌唱能力；最新选择已取消，用户确认保留未选，准确候选及片段必须在后续制作准备时决定。M2669自身候选2的0–5.6秒复用不替代此槽选择。",
           "reference": {
-            "component_id": "original",
             "necessity": "required",
-            "range": {
-              "end_seconds": 5.6,
-              "start_seconds": 0
-            },
             "reference": {
-              "object_id": "asset-fg3-aheng-voice-01",
-              "revision_id": "f912f743495fbc0eab984f066331201d49dd38dbd49cd98a5af0257c9d1e419a"
+              "object_id": "material-voice-a-heng",
+              "revision_id": "160d671769098911f50771ef898ffb55c0e2ce77ccefb1ae0a25e08affdc5e09"
             },
             "relation": {
               "object_id": "relation-26ad5c3d470d2bd8d3c9a30850c05ceb",
               "revision_id": "7cec7fb4a4e773ecd5c1a29299c954bcc303fb4b07d5d224a39e754993077802"
             },
             "role": "reference_audio",
+            "selection_state": "unselected",
             "semantics": "reference",
             "use": "阿蘅：只锁定说话身份的干净短参考"
           },
           "target_material": "material-voice-a-heng",
           "active": true,
-          "issues": [],
-          "target_kind": "ASSET"
+          "issues": [
+            "尚未选定候选"
+          ],
+          "target_kind": "REQUIREMENT"
         },
         {
           "index": 4,
@@ -37184,12 +37195,22 @@
         "relation-bfd450a284cc2127a974de1fd60cf206",
         "relation-eddf2b8ee34ce7f40986425a43bada48",
         "relation-f3e96d466115b2760ff08f1fcb0b64ab"
-      ]
+      ],
+      "latest_state_review": {
+        "previous_content_sha256": "e47f9de5f1ec168cb382fcbe09f0cf91c44a2d10fa6183d1f95685f08783165b",
+        "basis": "正式发布前已存在的最新选择；正式增量保全证明本任务未改变这些选择。",
+        "read_scope": [
+          "full-current-plan-diff",
+          "ordered-slot-diff",
+          "latest-selected-original-or-preparation-gap"
+        ],
+        "user_decision": "保留最新未选状态，按实际准备缺口验收。"
+      }
     },
     {
       "material_id": "material-av-e01-a01-s02-camera-main",
       "code": "M2976",
-      "content_sha256": "659aac610df6a883323c23f11e34b8af9862809b13c15293bdbd67c236913467",
+      "content_sha256": "3b3fd34b101c418d46189400d24d94ad757ff066fbba1dfaf43bb59463b17d69",
       "decision": "reference-role-reviewed",
       "reason": "干燥歌本已翻归家页，老汉扁担竖稳后接唱扑空；身份、曲调分别约束说话者与旋律，不替代当镜台词。",
       "slots": [
@@ -37248,7 +37269,16 @@
       "business_relations": [
         "relation-702f391fb60ed851f507150eca7159cd",
         "relation-ba8f545c63395d3b9e3214d9866e1fdd"
-      ]
+      ],
+      "latest_state_review": {
+        "previous_content_sha256": "659aac610df6a883323c23f11e34b8af9862809b13c15293bdbd67c236913467",
+        "basis": "正式发布前已存在的最新选择；正式增量保全证明本任务未改变这些选择。仅生成方式的取消回执变化，输入与Prompt不变，原逐项内容判断仍适用。",
+        "read_scope": [
+          "full-current-plan-diff",
+          "ordered-slot-diff",
+          "latest-selected-original-or-preparation-gap"
+        ]
+      }
     },
     {
       "material_id": "material-av-e01-a01-s02-first-frame",
@@ -438032,5 +438062,13 @@
     }
   ],
   "reading_boundary": "Material plans and ordered slots were individually read. Repeated relation sentences reuse the exact material review only when clause matching and current content hashes agree; additional clauses and unmatched consumers were separately read. Historical candidates were independently read. No structural test implies artistic acceptance.",
-  "audio_boundary": "50 successful model audio requests: 34 current-reference samples, 13 comparison samples, 3 focused song checks. Execution agent read model results; not native auditory perception or user approval."
+  "audio_boundary": "50 successful model audio requests: 34 current-reference samples, 13 comparison samples, 3 focused song checks. Execution agent read model results; not native auditory perception or user approval.",
+  "latest_formal_review": {
+    "changed_materials": [
+      "M2973",
+      "M2975",
+      "M2976"
+    ],
+    "decision": "保留发布前最新选择，不回填旧快照；全部1293项摘要重新与正式导出及空实例核对。"
+  }
 }
