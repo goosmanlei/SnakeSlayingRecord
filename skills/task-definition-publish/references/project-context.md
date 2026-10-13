@@ -6,7 +6,7 @@
 
 - 依次读取 `AGENTS.md`、`KNOWLEDGE.md`、`STATE.md`，遵循本次用户要求与当前有效依据。`production/system-vision.md` 说明创作价值与人的工作定位。
 - 作品、协作方法或审阅系统的问题调查使用 `skills/creative-system-review/SKILL.md`；任务定义仍可继续调查，发现新的关键问题时沿该方法补足真实实践。两种方法共享证据，不互相要求重做全部流程。
-- 创作取舍按 `production/filmcraft/README.md`、`production/filmcraft/quick-reference.md` 查询适用知识；视频方案与 Prompt 先读 `production/seedance-video-handbook.md`。方法资源、准确版本及执行快照的约束见 `production/managed-methods.md`。
+- 创作取舍按 `production/filmcraft/README.md`、`production/filmcraft/quick-reference.md` 查询适用知识；视频方案与 Prompt 先读 `production/seedance-video-handbook.md`。方法资源、准确版本及执行快照的约束见 `production/managed-methods.md`。涉及制作输入锁时，读取 `production/source-lock.json` 与本次实际 `INPUT_LOCK`，并核对本次用户决定；代码主干更新不自动改变已确定的作品或素材输入。
 - 编写任务说明按 `document-writing` SKILL 以执行者的理解和工作顺序成稿。任务正文及随任务交付的必要文字证据放入既有 `planning/`；本机调查过程沿既有 `.runtime/` 入口保存。不能让执行者只能从发布者私有聊天或即将退役的预览环境取得关键输入。
 
 ## 获准发布时

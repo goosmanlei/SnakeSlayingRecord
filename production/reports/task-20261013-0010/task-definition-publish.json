@@ -1,0 +1,168 @@
+{
+  "status": "COMPLETE_SOURCE_AND_UNPUBLISHED_SAMPLE",
+  "task": "task-20261013-0010",
+  "method": "task-definition-publish",
+  "completed_at": "2026-10-13T17:09:36.322875+00:00",
+  "valid_rounds": 5,
+  "last_material_revision_round": 1,
+  "complete_rereads_after_last_revision": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "model": "gpt-6-astra",
+  "effort": "max",
+  "rounds": [
+    {
+      "round": 1,
+      "units": 32,
+      "accepted_contexts": 33,
+      "actual_inferences": 33,
+      "events": 396,
+      "continuation_units": [],
+      "decision": "revise",
+      "comments": 1,
+      "read_complete_sha256": "dea82c53404e48ca880a15f689f468df65aef8050e75105d3ec3079d0b4689c0",
+      "revision_sha256": "bd62a3a0f1d7d43d052a0049db4e42a5ba6e1e2c5cf0226fa3a1d0f226e46f95",
+      "raw_evidence_and_predecessor_chains_verified": true,
+      "removed_native_cwds_absent": 33
+    },
+    {
+      "round": 2,
+      "units": 32,
+      "accepted_contexts": 33,
+      "actual_inferences": 34,
+      "events": 398,
+      "continuation_units": [
+        7
+      ],
+      "decision": "keep",
+      "comments": 0,
+      "read_complete_sha256": "8ab8d10956ef3979612297de199d629ee25a5937299650349be88266937754b3",
+      "revision_sha256": "c5da16960a3b22e8ab911ed09223d7d432f2772cd95a1ed5bc0a7154e92cc4ac",
+      "raw_evidence_and_predecessor_chains_verified": true,
+      "removed_native_cwds_absent": 33
+    },
+    {
+      "round": 3,
+      "units": 32,
+      "accepted_contexts": 33,
+      "actual_inferences": 33,
+      "events": 396,
+      "continuation_units": [],
+      "decision": "keep",
+      "comments": 0,
+      "read_complete_sha256": "f370cdd0efa23038226587950ad6b55f15af20041fb18b0091c138c80602fbc7",
+      "revision_sha256": "0ec8cf8da7629b358b9efac9d3c3b49a19f8fbb4c2c1033a46654d1b84203185",
+      "raw_evidence_and_predecessor_chains_verified": true,
+      "removed_native_cwds_absent": 33
+    },
+    {
+      "round": 4,
+      "units": 32,
+      "accepted_contexts": 33,
+      "actual_inferences": 34,
+      "events": 398,
+      "continuation_units": [
+        14
+      ],
+      "decision": "keep",
+      "comments": 0,
+      "read_complete_sha256": "d6aff96dbcda5a9a98e4c703bcd495e1982151fa6e9272bd79d6166e93b1b297",
+      "revision_sha256": "07f1d07bcf66ba961b4d92c071ea8ba4213f3bbdd4cf5ba640bdabebda70b576",
+      "raw_evidence_and_predecessor_chains_verified": true,
+      "removed_native_cwds_absent": 33
+    },
+    {
+      "round": 5,
+      "units": 32,
+      "accepted_contexts": 33,
+      "actual_inferences": 33,
+      "events": 396,
+      "continuation_units": [],
+      "decision": "keep",
+      "comments": 0,
+      "read_complete_sha256": "4c2951fc167cf10683d6281c0b907ece78008d2f7902aadf752568c6d4c80ce4",
+      "revision_sha256": "e97884e9a76638061354c6172fe51a3f93bdbeb94d2ee312ad2a341c6d79f8ad",
+      "raw_evidence_and_predecessor_chains_verified": true,
+      "removed_native_cwds_absent": 33
+    }
+  ],
+  "accepted_reader_contexts": 165,
+  "actual_inferences_in_accepted_chains": 167,
+  "native_events_in_accepted_chains": 1984,
+  "interrupted_attempt": {
+    "path": "round-04/interrupted-attempts/step-0020-boot-1791904593",
+    "receipt_sha256": "b519a736f43cddc94771eafc199c31bfa6519c8d2ee52e97fe157a1dcc820ea0",
+    "accepted_as_read": false,
+    "started_contexts": 1,
+    "started_inferences": 1,
+    "native_events": 6,
+    "server_completion": "UNKNOWN",
+    "clean_cwd_exists": false,
+    "clean_cwd_removed_by_this_reviewer": false
+  },
+  "all_started_contexts": 166,
+  "all_started_inferences": 168,
+  "all_native_events": 1990,
+  "source_files": {
+    "skills/task-definition-publish/SKILL.md": {
+      "initial_sha256": "1d5f24019bfdf0f94c80e4a8cd15818b30e2bd4b9dd2cf553c7789dfa0931e1e",
+      "final_sha256": "8bd4e058dc1d4441c3e4875894e9f6a6207e6aea2e441bd9b6a2f7d95094477e",
+      "characters": 3315,
+      "bytes": 9397
+    },
+    "skills/task-definition-publish/references/project-context.md": {
+      "initial_sha256": "0fd57730105c04207c4654efec55148fa4ff22689bf5de40c433893a5ccf1207",
+      "final_sha256": "a6311d6673ef132c0164be7e6745a71028e214bf28a416f151746a8e8405fbd1",
+      "characters": 1801,
+      "bytes": 4035
+    }
+  },
+  "unresolved": [],
+  "sample": {
+    "path": "work-sample/scope-supplement-draft.md",
+    "sha256": "86e290e4aaa387841f6885ba3a132ee09b8a34ace9a6312970aa11b913120547",
+    "assessment": "work-sample/assessment.json",
+    "status": "COMPLETE_UNPUBLISHED_DRAFT_SAMPLE",
+    "new_task_published": false,
+    "content": "# task-20261013-0010 补充范围草稿：本次 SKILL 历史清理与最新版本收敛\n\n本稿是“任务定义与发布”方法的隔离工作样例，补充现有任务 0010 的执行范围。任务账本仍为 running，当前用户已把一次历史清理加入该任务，因此不另建、发布或启动任务。本稿不执行清理，也不改变受管账本。以下项目路径以故事项目根为基准。\n\n用户完成这轮方法优化后，应能从“制作思路 → 基础流程”取得本次最终采用的准确方法；范围内每项 SKILL 只保留一个最新版本，旧方法的使用记录和与旧版一同退役的评论不再留在正式方法数据中。系统仍可在后续工作中记录新的版本和执行；这是本任务结束前的一次收敛。\n\n当前独立副本演练表明，历史内容存在跨表及制作方案的出处引用，不能只删版本列表。选定做法是保留最终方法的真实身份及其准确绑定，在同一受控迁移中删除授权范围内旧定义、旧绑定、失去用途的资源版本、历史执行与阶段产物，并只清理会指向这些退役事实的制作出处字段。保留最新版本不重编号，也不把旧执行伪装成由新方法完成。\n\n## 范围与已经确定的取舍\n\n- 覆盖本任务范围内 15 项系统 SKILL 的最终最新版本及相关准确绑定、必要资源投影。项目本地方法仍沿唯一文件交付，不因这次清理被另行注册为系统方法。\n- 旧版 SKILL 的 3 条用户评论随旧版删除，交付报告只记录删除数量，不保存正文或可还原正文的副本。隔离演练中的另 1 条测试评论单列，不能把演练的 4 条混报为正式用户评论数。\n- 系统构想的评论及其准确资源继续保护。范围外方法仍依赖的资源历史也保留；不删除范围外方法定义，不改独立读者本体与五种模式绑定。\n- 当前制作方案只清除退役方法的 `method_basis` 出处记录；操作回执只清除对应出处字段。方案的 Prompt、参数、原件选择及其他业务正文保持原样，候选、媒体真实调用、费用、用户作品和范围外评论不在删除范围内。\n- 只在故事任务 worktree 编写迁移与交付内容，通用审阅台仓库继续只读。复用项目受管增量发布和共享窗口，不以演练库或任务快照覆盖正式库。\n\n已有演练支持上述最小出处清理可实施，但不代表正式交付完成。演练保存了 15 个最新 SKILL，清除了 489 项执行和 1,464 项阶段产物；454 份当前方案除方法出处外保持一致，277 份操作回执只改出处字段。配置包在新空实例恢复了 82 条记录、27 个保留起点，准确身份及文件历史校验通过。这些数字描述当次独立副本；最终方法版本继续变化时，须按最终准确头重新计算删除与保留清单。\n\n## 实施顺序与准确依据\n\n1. 完成本任务的方法优化、最终完整复读和隔离样例，保存最终权威正文与准确绑定。以这些最终身份重新冻结清理范围，核对实际正式基线、引用关系、评论归属和共享写入者；旧演练清单不能替代最终清单。\n2. 沿 `scripts/method_history_cleanup.py` 的现有事务方案完成与受管发布入口的衔接，在准确版本的隔离环境应用最终清单。校验本次授权内删除项确实消失，保留的最新头、系统构想评论、范围外资源依赖及业务内容仍准确可用。\n3. 重新导出受管方法配置及完整公开作品包，分别验证配置恢复和新空实例完整恢复。恢复后不得重新带回本次退役的方法版本、历史执行或旧 SKILL 评论；最新方法身份、准确引用及受保护作品须一致。\n4. 按 `AGENTS.md`、`production/generation-workspaces.md` 和既有受管发布入口完成集成、必要推送、本机正式增量生效及真实 Chrome 回读。只有正式回执、可见使用路径和恢复验收均对应最终准确版本后，才把这项补充范围计为完成。\n\n本次集成、正式发布与验收已获授权，按上述流程直接推进；实际交付验证完成后，受管结项操作 `_complete` 仍须等待用户明确确认。主执行先交付可核验的结果，再处理这一最终确认，不提前为已授权步骤索要许可。\n\n本次工作锁定的是最终交付方法、准确发布基线与已确认保护范围。执行中若方法头、正式数据或依赖发生变化，应重算相应清单并复验，不能只换摘要后重放旧清单；这不授权换用作品或素材。\n\n## 用原工作路径验收\n\n| 检查对象 | 清理前的情况 | 完成后须验证的结果 |\n| --- | --- | --- |\n| 方法使用 | 同一范围内方法存在旧版本与历史执行，交付后仍可残留旧出处 | 从基础流程读取本次最新准确方法；范围内只剩最终一个版本，旧执行和阶段产物不可再读回；后续新执行机制仍可使用 |\n| 评论 | 旧 SKILL 评论与受保护的系统构想评论性质不同 | 正式旧 SKILL 评论按授权删除并只计数量；系统构想评论及其准确阅读依据完整保留 |\n| 制作内容 | 当前方案和操作回执含指向待退役方法事实的出处 | 只清理已列入迁移的出处字段；Prompt、参数、原件、真实调用和其他业务内容逐项保持 |\n| 恢复 | 仅清活库可能由旧导出重新带回历史 | 从最终完整公开包恢复到新空实例后，最新身份、受保护内容与清理结果都一致，未带回退役记录 |\n\n真实 Chrome 验收应走“进入基础流程、打开被改方法文件、核对准确引用、刷新再开”的路径，并确认当前保留评论能定位到准确内容。源码、事务测试和配置恢复只支持各自结论，不能代替页面操作或完整公开包恢复。\n\n当前证据只证明独立副本的清理、保护比对与配置恢复。最终方法重绑定、正式发布入口衔接、完整公开导出、新空实例完整恢复及正式 Chrome 验收尚待主执行完成；本稿不把这些工作写成已完成。\n\n## 证据与交接\n\n同目录 `input-facts.json` 保存本样例使用的任务状态、回执路径、准确摘要与计数，未复制待删评论正文。主要依据为 `.runtime/skill-cold-reader-fresh/history-cleanup-authorization.json` 及 `.runtime/skill-cold-reader-fresh/history-cleanup/` 下的 `rehearsal-plan.json`、`rehearsal-apply.json`、`rehearsal-preservation.json`、`rehearsal-configuration-recovery.json`。这些是当前任务内的演练证据；正式交付时须收敛到本任务已有受管交付入口，不能要求后续使用者依赖将退役的临时实例。\n\n本补充范围继承现有任务 P1、极复杂与无 task-id 硬依赖的登记，不另创优先级或依赖。开发可继续隔离推进；正式方法、绑定、导出、服务和恢复窗口由主执行按序协调，无依赖不表示可以并发写正式库。\n\n最终回复先写任务编号和实际解决的问题，再给出准确正式版本、方法与使用记录清理数量、评论删除数量、前后路径验证、恢复结果及未完成项。按项目规则清理本任务已失效资源，回读确认删除结果，并说明仍保留的审阅审计证据的用途；不以脚本运行或候选提交代替本机正式交付。\n"
+  },
+  "evidence": {
+    "report.md": "1d3eaaffcc1b387cf5efebc70096721586cb930108b03b42360968e5700f9730",
+    "audit-readback-final.json": "66b6ea49f4eee6b5ad8278b67a1706560ac521e4112fa77d867781d2d960456d",
+    "source-writeback.json": "2f58a9445038f3f640f69e8d183a2f041a693269810d4a3ee5aafa390afe1949",
+    "work-sample/assessment.json": "7016b2775f93a917fc7a0c56a7b1c4ca9bc901d23e46dcb159dff80c17f0b9d6",
+    "work-sample/input-facts.json": "3dfcea345b3696b5a5ea6390f18d9154566afdc5f22dc191ca6d7fe861032acb"
+  },
+  "validation_boundary": {
+    "full_semantic_read_of_final_own_texts_and_draft": true,
+    "human_participant_study": false,
+    "browser_performed_by_this_reviewer": false,
+    "database_write_by_this_reviewer": false,
+    "formal_publication_by_this_reviewer": false,
+    "all_reader_contexts_separate_from_reviser": true
+  },
+  "cleanup": {
+    "completed_reader_empty_cwds_removed_and_absent": 165,
+    "interrupted_reader_empty_cwd_absent": true,
+    "active_reader_runner": false,
+    "retained_audit_purpose": "主执行复核真实轮次、准确版本和中断恢复；完成交付与恢复用途后按任务统一清理计划处置。"
+  },
+  "handoff": "仅两份项目源可供阶段提交；本报告和样例均为本机证据，系统登记、正式交付与清理由主执行负责。",
+  "evidence_directory": ".runtime/skill-cold-reader-fresh/task-definition-publish",
+  "evidence_paths_base": "evidence_directory unless explicitly a project source path",
+  "report_sha256": "5c177585b162d5d5784ac409a619416406896fb9739036f486b703007dac9576",
+  "before_after_example": {
+    "before": "授权、保护内容、输入锁和影响成败的约束不能省略。",
+    "reader_issue": "输入锁没有定义，不知道锁的是哪些输入和何时可改。",
+    "after": "这里的输入锁是本次工作明确采用的准确作品、素材等输入及其换用限制，例如已确认的剧本版本不能自行换成最新稿。",
+    "work_effect": "样例明确最终方法和发布基线，变更须重新冻结核验，不把代码基线更新当作换作品输入的授权。"
+  },
+  "dual_audience": {
+    "human": "以原问题、改后工作和前后例递进说明，解释输入锁。",
+    "ai": "要求准确依据、范围、取舍、产出和受管回读。",
+    "human_participant_study": false
+  }
+}
