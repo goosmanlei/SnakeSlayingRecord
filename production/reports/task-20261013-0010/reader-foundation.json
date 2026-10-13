@@ -782,8 +782,45 @@
         "round": "round-03",
         "unit": 1,
         "audit_sha256": "38d0bea03232655a0069ede278c80aefbf484e74db7192cee6ae58ac80672d7c"
+      },
+      {
+        "item": "story-structure",
+        "round": "round-04",
+        "unit": 4,
+        "audit_sha256": "dad5a8a92643ebe7a18f283d85f4fb527ddabf1131415e1e1ff916ebb73f3ded",
+        "prefix_sha256": "855b126995b4faa0867fa2c47f237236fd4b7e650a9a334d84804d9a1bc90dfa",
+        "rationale": "Observed prefix items 0–4 exactly equal already reviewed 10bcf643 prefix; item 5 exactly equals already reviewed dce906c8 prefix. No other bytes changed.",
+        "reinvocations": 0
+      },
+      {
+        "item": "filmcraft",
+        "round": "round-01",
+        "unit": 127,
+        "audit_sha256": "286ee83c05b2db644eea2ed00bcebd18996652f5bb654ac533e931cf49177d99",
+        "prefix_sha256": "855b126995b4faa0867fa2c47f237236fd4b7e650a9a334d84804d9a1bc90dfa",
+        "rationale": "Observed prefix items 0–4 exactly equal already reviewed 10bcf643 prefix; item 5 exactly equals already reviewed dce906c8 prefix. No other bytes changed.",
+        "reinvocations": 0
+      },
+      {
+        "item": "video-handbook",
+        "round": "round-01",
+        "unit": 101,
+        "audit_sha256": "49da0363515934fed262622edfe62e7c23bb4678087abb7aa4721200be551403",
+        "prefix_sha256": "855b126995b4faa0867fa2c47f237236fd4b7e650a9a334d84804d9a1bc90dfa",
+        "rationale": "Observed prefix items 0–4 exactly equal already reviewed 10bcf643 prefix; item 5 exactly equals already reviewed dce906c8 prefix. No other bytes changed.",
+        "reinvocations": 0
       }
     ],
-    "adapter_sha256": "750af37cf561ff1d5ed05c62deae17a649a3a1c0741b65eee44678b2898cbb94"
+    "adapter_sha256": "e9ae4326139e95a937b46b3d93265338f5a4806cbbcff71785d77184f5c673ff"
+  },
+  "dual_audience_requirement": {
+    "task": "task-20261013-0010",
+    "source": "用户在执行中的直接补充",
+    "original": "我补充强调下，你所做的SKILL优化工作，不止要考虑AI阅读理解，也要考虑人类阅读理解它，两者是要兼顾的",
+    "recorded_at": "2026-10-13T11:01:17.649096+00:00",
+    "effect": "同时以人类首次阅读与AI实际使用为目标。检查目的、概念、条件、依据和例子是否足以理解，及输入、动作、产出、检查是否能落实。保留专业判断和必要细节，不将全部正文改为系统字段或命令清单。",
+    "frozen_round_policy": "正在进行的准确输入和读者提示不变；下一轮冻结时加入双读者通用说明。修订者从本次起应用此判断，已完成条目另作回查，必要改稿须再完整读。",
+    "evidence_boundary": "模型冷读、协调者文本回查和隔离样例不等于真人用户测试。",
+    "formal_source_modified": false
   }
 }
