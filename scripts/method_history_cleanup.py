@@ -47,7 +47,14 @@ def clean_receipt(value, removed):
         return value
     result = {}
     for key, item in value.items():
-        if key in ('method_basis', 'basis', 'original_media_plan_basis') and usage_refs(item) & removed:
+        # A semantic-migration basis can contain a method basis alongside its
+        # own operation identity and assessment evidence. Only the complete,
+        # known method-reference record belongs to this cleanup. Unknown
+        # shapes retain their data and build_plan refuses any remaining refs.
+        method_record = isinstance(item, dict) and set(item) == {
+            'execution', 'artifact', 'run_id', 'step_id'}
+        if (key in ('method_basis', 'basis', 'original_media_plan_basis')
+                and method_record and usage_refs(item) & removed):
             if key != 'method_basis':
                 result[key] = {'history': 'cleared-by-user', 'cleanup_task': TASK}
         else:

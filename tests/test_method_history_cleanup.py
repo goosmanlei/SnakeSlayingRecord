@@ -114,6 +114,35 @@ class MethodHistoryCleanupTest(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, '范围外数据：comments'):
             cleanup.compare(before, self.store.db_path, plan)
 
+    def test_nested_method_cleanup_preserves_semantic_migration_evidence(self):
+        method_basis = {
+            'execution': self.methods.reference(self.execution),
+            'artifact': self.methods.reference(self.artifact),
+            'run_id': 'old', 'step_id': 'one'}
+        semantic_basis = {
+            'history': 'reviewed-semantic-migration',
+            'semantic_operation': 'existing-semantic-operation',
+            'before_sha256': 'a' * 64,
+            'extraction_assessment': {'episode': 1, 'result_path': 'production/extraction/episodes/e01.json',
+                                      'result_sha256': 'b' * 64},
+            'original_media_plan_basis': method_basis}
+        result = {'basis': semantic_basis, 'before': {'input_mode': 'interval'},
+                  'after': {'input_mode': 'whole-reference'}}
+        with self.store.db:
+            self.store.db.execute('INSERT INTO production_current_operations VALUES (?,?,?)',
+                ('whole-reference-example', 'c' * 64, json.dumps(result)))
+        before = Path(self.tmp.name) / 'semantic-before.sqlite3'
+        with sqlite3.connect(before) as db:
+            self.store.db.backup(db)
+        plan = cleanup.build_plan(self.store)
+        cleanup.apply_plan(self.store, plan)
+        saved = json.loads(self.store.db.execute(
+            'SELECT result FROM production_current_operations WHERE id=?', ('whole-reference-example',)).fetchone()[0])
+        expected = copy.deepcopy(result)
+        expected['basis']['original_media_plan_basis'] = {'history': 'cleared-by-user', 'cleanup_task': cleanup.TASK}
+        self.assertEqual(saved, expected)
+        cleanup.compare(before, self.store.db_path, plan)
+
     def release_package(self, advance=False):
         from scripts import method_migration
         candidate = self.store
