@@ -13,6 +13,7 @@ from urllib.error import HTTPError, URLError
 from urllib.request import Request, build_opener, ProxyHandler
 
 CONFIG_FORMATS = {'managed-method-' + name + '-v1' for name in ('skill', 'resource', 'binding')}
+BASELINES = 'configuration_history_baselines'
 
 
 def check_registry(registry):
@@ -20,21 +21,123 @@ def check_registry(registry):
         raise ValueError('配置迁移需要准确方法定义包')
     if any(row.get('payload', {}).get('format') not in CONFIG_FORMATS for row in registry['records']):
         raise ValueError('配置迁移只能含方法、共用资料和绑定，不能混入工作产物或冻结范围')
+    if BASELINES not in registry:
+        return  # Ordinary archives retain the native validation contract.
+    baselines = registry.get(BASELINES, {})
+    if not isinstance(baselines, dict):
+        raise ValueError('方法配置历史起点必须是准确对象映射')
+    owners = {}
+    for row in registry['records']:
+        owners.setdefault(row['object_id'], []).append(row)
+    for oid, start in baselines.items():
+        rows = sorted(owners.get(oid, []), key=lambda row: row['version'])
+        if (not rows or start != {'version': rows[0]['version'], 'revision_id': rows[0]['revision_id']}
+                or type(start['version']) is not int or start['version'] < 2):
+            raise ValueError('方法历史起点与保留的第一份准确版本不一致：' + oid)
+    for oid, rows in owners.items():
+        versions = sorted(row['version'] for row in rows)
+        first = baselines.get(oid, {}).get('version', 1)
+        if versions[0] != first or any(right != left + 1 for left, right in zip(versions, versions[1:])):
+            raise ValueError('方法包缺少已声明起点之后的连续历史：' + oid)
 
 
-def export_configuration(database):
+def restore_configuration(store, registry, *, transaction=True):
+    """Restore an explicit retained-history baseline without renumbering it.
+
+    This never removes target rows. Only the separately reviewed cleanup can
+    prune history. Baselines let an empty instance retain the latest revision's
+    exact identity after that cleanup; future versions remain consecutive.
+    The native validator still checks every payload, dependency and file map.
+    """
+    from contextlib import nullcontext
     from review_desk import methods
-    from review_desk.store import Store
-    store = Store.open_existing(Path(database))
-    try:
-        archive = methods.export_registry(store)
-    finally:
-        store.close()
+    from review_desk.store import canonical
+    check_registry(registry)
+    if not registry.get(BASELINES):
+        return methods.restore_registry(store, registry, transaction=transaction)
+    body = {key: value for key, value in registry.items() if key != 'sha256'}
+    if methods.checksum(body) != registry.get('sha256'):
+        raise ValueError('方法包摘要不匹配')
+    rows = registry['records']
+    ids = {row['revision_id'] for row in rows}
+    if len(ids) != len(rows):
+        raise ValueError('方法包有重复准确版本')
+    for row in rows:
+        expected = methods.checksum({key: row[key] for key in ('object_id', 'version', 'payload')})
+        if row['revision_id'] != expected or row['kind'] != 'GUIDANCE':
+            raise ValueError('方法版本身份损坏')
+        if any(dep['revision_id'] not in ids for dep in row['dependencies']):
+            raise ValueError('方法包缺少准确依赖')
+    with store.db if transaction else nullcontext():
+        if transaction:
+            store.db.execute('BEGIN IMMEDIATE')
+        elif not store.db.in_transaction:
+            raise ValueError('方法恢复需要所属事务')
+        # Validate all heads before inserting any baseline. A normal import
+        # cannot overwrite a newer target or silently repair a different row.
+        for oid in {row['object_id'] for row in rows}:
+            head = store.db.execute('SELECT version FROM objects WHERE id=?', (oid,)).fetchone()
+            if head and head[0] > max(row['version'] for row in rows if row['object_id'] == oid):
+                raise ValueError('目标已更新；不能用旧方法包覆盖当前版本')
+        inserted = 0
+        missing = []
+        for row in sorted(rows, key=lambda item: (item['object_id'], item['version'])):
+            old = store.db.execute('SELECT * FROM revisions WHERE id=?', (row['revision_id'],)).fetchone()
+            if old:
+                continue  # Native verification below compares exact old rows.
+            head = store.db.execute('SELECT * FROM objects WHERE id=?', (row['object_id'],)).fetchone()
+            version = head['version'] if head else 0
+            start = registry.get(BASELINES, {}).get(row['object_id'], {}).get('version', 1)
+            if row['version'] != (version + 1 if head else start):
+                raise ValueError('目标历史不同或版本不连续：' + row['object_id'])
+            if not head:
+                store.db.execute('INSERT INTO objects VALUES (?,?,?,?,?,?)',
+                                 (row['object_id'], row['kind'], row['revision_id'], row['version'],
+                                  row['created_at'], row['created_at']))
+            else:
+                if head['kind'] != row['kind']:
+                    raise ValueError('目标方法对象类型不同')
+                store.db.execute('UPDATE objects SET current_revision=?,version=?,updated_at=? WHERE id=?',
+                                 (row['revision_id'], row['version'], row['created_at'], row['object_id']))
+            store.db.execute('INSERT INTO revisions VALUES (?,?,?,?,?)',
+                             (row['revision_id'], row['object_id'], row['version'],
+                              canonical(row['payload']), row['created_at']))
+            missing.append(row)
+            inserted += 1
+        for row in missing:
+            for dep in row['dependencies']:
+                store.db.execute('INSERT INTO dependencies VALUES (?,?,?)',
+                                 (row['revision_id'], dep['revision_id'], dep['role']))
+        result = methods.restore_registry(store, registry, transaction=False)
+        result['inserted'] += inserted
+        result[BASELINES] = registry[BASELINES]
+    return result
+
+
+def configuration_registry(store):
+    from review_desk import methods
+    archive = methods.export_registry(store)
     archive['records'] = [row for row in archive['records'] if row['payload']['format'] in CONFIG_FORMATS]
     archive.pop('sha256')
+    first = {}
+    for row in archive['records']:
+        first.setdefault(row['object_id'], row)
+    starts = {oid: {'version': row['version'], 'revision_id': row['revision_id']}
+              for oid, row in first.items() if row['version'] > 1}
+    if starts:
+        archive[BASELINES] = starts
     archive['sha256'] = methods.checksum(archive)
     check_registry(archive)
     return archive
+
+
+def export_configuration(database):
+    from review_desk.store import Store
+    store = Store.open_readonly(Path(database))
+    try:
+        return configuration_registry(store)
+    finally:
+        store.close()
 
 
 def check_cutover(story_main, audit):
@@ -86,7 +189,7 @@ def apply(database, registry, *, activate_media=False):
     check_registry(registry)
     store = Store.open_existing(Path(database))
     try:
-        result = methods.restore_registry(store, registry)
+        result = restore_configuration(store, registry)
         if activate_media:
             policy = method_media.activate(store)
             result['activation'] = methods.reference(policy)

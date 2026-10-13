@@ -120,14 +120,17 @@ def update_methods(store, root=ROOT):
     # Build against a method-only copy first; malformed source or later binding
     # failures cannot leave an earlier method enabled on the actual instance.
     import tempfile
-    from review_desk import methods
     from review_desk.store import Store
+    try:
+        from .method_migration import configuration_registry, restore_configuration
+    except ImportError:
+        from method_migration import configuration_registry, restore_configuration
     with tempfile.TemporaryDirectory(prefix='approach-methods-') as directory:
         staged=Store(Path(directory)/'review.sqlite3')
         try:
-            methods.restore_registry(staged,methods.export_registry(store))
+            restore_configuration(staged,configuration_registry(store))
             result=_update_methods(staged,root)
-            methods.restore_registry(store,methods.export_registry(staged))
+            restore_configuration(store,configuration_registry(staged))
             return result
         finally:staged.close()
 

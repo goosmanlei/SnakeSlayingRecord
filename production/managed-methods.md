@@ -138,9 +138,9 @@ python3 scripts/media_method.py --method-url http://127.0.0.1:PORT --directory .
 
 `finish` 生成待 `production-import` 的准确包，只有当前内容并发标记、现有制作规则和方法产物摘要同时通过才更新受管方案。目标前进时不要手改 `expected_version` 继续提交；回读新目标并开始新步骤。方法步骤的执行事实不能覆盖，进一步改稿显式新建步骤；制作正文仍写回同一对象，不追加完整稿件。新制作步骤在数据库只保存输入及结果摘要，完整输入和草稿留在任务工作区，完成恢复用途后清理。见 [当前制作与候选](current-candidates/README.md)。
 
-复用与本地编辑沿真实原件、区间和交接保存；没有模型调用就不填 model、tool、Prompt 或随机生成字段。字层可无 generation，但准确文字、SVG 版面及镜头交接不能省略。
+当前参考选择使用准确候选的完整原件；真实后期编辑可以按其制作目的记录区间与交接，但不把剪辑操作混入生成参考选择。复用与本地编辑没有模型调用时，不填 model、tool、Prompt 或随机生成字段。字层可无 generation，但准确文字、SVG 版面及镜头交接不能省略。
 
-基础流程的“生成与制作”包含取得准确输入、内部准备、提交和回收；稳定工作类型仍为 `generation-preflight`，旧执行原文不变，不再另设准备阶段。生成准备包把方法快照与模型 Prompt 分开。模型只得到方案 Prompt、准确媒体和实际参数；手册不会被拼成最终视频 Prompt。新调用登记必须来自同一准备包，仍检查准确输入、原词、输入锁、渠道、原件与局部范围。已有候选／片段／路线选择记录准确父方案与确定性操作；不补造作者方法历史，也不能夹带 Prompt 修订。
+基础流程的“生成与制作”包含取得准确输入、内部准备、提交和回收；稳定工作类型仍为 `generation-preflight`，旧执行原文不变，不再另设准备阶段。生成准备包把方法快照与模型 Prompt 分开。模型只得到方案 Prompt、准确媒体和实际参数；手册不会被拼成最终视频 Prompt。新调用登记必须来自同一准备包，仍检查准确输入、原词、输入锁、渠道和完整原件。已有候选与路线选择记录准确父方案和真实操作，历史提交的局部范围保留当时事实；不补造作者方法历史，也不能夹带 Prompt 修订。
 
 本任务未向 OpenArt、Seedance、Seed Audio 或 Lyria 发起生成。`seed_audio.py`、`lyria_music.py` 的独立实验入口仍保留原账号、费用和恢复边界；它们不自动变成合格生产方案。进入受管制作必须通过准备和 CALL 登记校验。图像／视频 CLI 是外部执行通道，不存在自动生成全剧的服务。
 
@@ -161,6 +161,16 @@ python3 scripts/method_migration.py --system PATH_TO_DESK export \
   --database .runtime/generation/review/.runtime/review.sqlite3 \
   --output content/managed-method-registry.json
 ```
+
+明确清理旧 SKILL 历史后，配置包用 `configuration_history_baselines` 记录每个对象首次保留的准确版号和修订。最新方法仍保留原身份，例如第 8 版不会伪装成第 1 版；以后改稿继续追加下一版。空实例恢复这类配置包使用项目入口：
+
+```bash
+python3 scripts/method_migration.py --system PATH_TO_DESK apply \
+  --database EMPTY_INSTANCE/.runtime/review.sqlite3 \
+  --registry content/managed-method-registry.json
+```
+
+目标数据库须先由现有实例入口初始化。此命令只恢复配置，不删除目标已有历史，也不启用额外约束；旧包不能覆盖已更新的方法头。若还需恢复之后显式导出的私有执行，先恢复与该执行包同次导出的配置包，再用既有 `method-restore` 恢复其 `registry.json`。完整公开作品恢复仍沿下文 Schema 14 入口。一次性历史清理的范围与验证另见[本任务演练](reports/task-20261013-0010/history-cleanup.md)，不作为日常保存规则。
 
 1. 方法定义包可在空实例恢复同样的正文、版本和引用；目标已经更新时不能覆盖。
 2. 完整 Schema 14 导出恢复当前制作、提交快照、故事版本、评论、准确选择、原件索引和公开方法／制作关联；实际原件按哈希保全。私有执行另按原运行范围显式导出，公开作品包不恢复本机阶段全文。
