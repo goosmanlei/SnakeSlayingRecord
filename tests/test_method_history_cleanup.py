@@ -51,12 +51,33 @@ class MethodHistoryCleanupTest(unittest.TestCase):
         return self.methods.prepare(self.store, {'work_type': work_type, 'run_id': run, 'step_id': 'one',
             'target': 'sample', 'conditions': {}, 'inputs': {'context': 'Supplied text'}, 'private': True})
 
-    def comment(self, row):
+    def comment(self, row, filename='SKILL.md'):
         from review_desk.method_document import project
-        block = project(row['payload'])[0]
+        block = project(row['payload'], filename)[0]
         return self.store.create_comment({'target_object_id': row['object_id'], 'target_revision_id': row['revision_id'],
-            'anchor': {'file': 'SKILL.md', 'block_id': block['id'], 'end_block_id': block['id'],
+            'anchor': {'file': filename, 'block_id': block['id'], 'end_block_id': block['id'],
                        'start': 0, 'end': len(block['text']), 'quote': block['text']}, 'body': 'Example comment'})
+
+    def review_resource_history(self):
+        versions = []
+        for version in (1, 2):
+            versions.append(self.methods.save(self.store, {'category': 'resource',
+                'name': 'creative-system-review-texts', 'expected_version': version - 1,
+                'payload': {'title': 'Review and vision', 'files': {
+                    'skills/creative-system-review/SKILL.md': 'Review method ' + str(version) + '.\n',
+                    'production/system-vision.md': 'Protected vision ' + str(version) + '.\n'},
+                    'sections': {'review': 'skills/creative-system-review/SKILL.md',
+                                 'vision': 'production/system-vision.md'}}}))
+        old = self.heads['method.skill.creative-system-review']
+        payload = copy.deepcopy(old['payload'])
+        payload['resources'] = [{**self.methods.reference(versions[-1]), 'section': 'review'}]
+        new = self.methods.save(self.store, {'category': 'skill', 'name': 'creative-system-review',
+            'expected_version': old['version'], 'payload': payload})
+        self.methods.save(self.store, {'category': 'binding', 'name': 'example-creative-system-review',
+            'expected_version': 2, 'payload': {'work_type': 'example-creative-system-review',
+                'rules': [{**self.methods.reference(new), 'when': {}}]}})
+        self.heads[new['object_id']] = new
+        return versions
 
     def dump(self):
         return '\n'.join(self.store.db.iterdump())
@@ -91,6 +112,46 @@ class MethodHistoryCleanupTest(unittest.TestCase):
             cleanup.apply_plan(self.store, plan)
         self.assertEqual(self.dump(), before)
         self.assertFalse(self.store.db.in_transaction)
+
+    def test_current_vision_comment_survives_while_old_review_files_are_removed(self):
+        from scripts import method_migration
+        from review_desk.store import Store
+        old, latest = self.review_resource_history()
+        vision_comment = self.comment(latest, 'production/system-vision.md')
+        old_review_comment = self.comment(old, 'skills/creative-system-review/SKILL.md')
+        before = Path(self.tmp.name) / 'resource-before.sqlite3'
+        with sqlite3.connect(before) as db:
+            self.store.db.backup(db)
+        plan = cleanup.build_plan(self.store)
+        self.assertIn(latest['object_id'], plan['heads'])
+        self.assertNotIn(vision_comment['id'], [row['id'] for row in plan['remove_comments']])
+        cleanup.apply_plan(self.store, plan)
+        self.assertEqual(self.store.comment(vision_comment['id']), vision_comment)
+        self.assertIsNone(self.store.comment(old_review_comment['id']))
+        self.assertEqual(self.methods.read(self.store, latest['object_id']), latest)
+        self.assertEqual(self.store.db.execute('SELECT count(*) FROM revisions WHERE object_id=?',
+                                             (latest['object_id'],)).fetchone()[0], 1)
+        files = self.store.db.execute('SELECT path,version FROM method_file_versions WHERE object_id=? ORDER BY path',
+                                      (latest['object_id'],)).fetchall()
+        self.assertEqual([tuple(row) for row in files], [('production/system-vision.md', 1),
+                         ('skills/creative-system-review/SKILL.md', 1)])
+        cleanup.compare(before, self.store.db_path, plan)
+        recovered = Store(Path(self.tmp.name) / 'resource-restored/.runtime/review.sqlite3')
+        self.addCleanup(recovered.close)
+        method_migration.restore_configuration(recovered, method_migration.configuration_registry(self.store))
+        self.assertEqual(self.methods.read(recovered, latest['object_id']), latest)
+
+    def test_historical_vision_comment_still_preserves_its_exact_package(self):
+        old, latest = self.review_resource_history()
+        vision_comment = self.comment(old, 'production/system-vision.md')
+        plan = cleanup.build_plan(self.store)
+        self.assertNotIn(latest['object_id'], plan['heads'])
+        kept = next(item for item in plan['preserved_resource_history'] if item['object_id'] == latest['object_id'])
+        self.assertEqual(kept['protected_system_vision_comments'], [vision_comment['id']])
+        cleanup.apply_plan(self.store, plan)
+        self.assertEqual(self.store.comment(vision_comment['id']), vision_comment)
+        self.assertEqual(self.methods.read(self.store, old['object_id'], old['revision_id']), old)
+        self.assertEqual(self.methods.read(self.store, latest['object_id']), latest)
 
     def test_failure_after_deletion_rolls_back_history_comments_and_file_maps(self):
         plan = cleanup.build_plan(self.store)

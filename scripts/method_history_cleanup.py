@@ -94,18 +94,22 @@ def build_plan(store):
     for oid in sorted(resource_ids):
         if oid in ('method.resource.reader-contract', 'method.resource.continuity'):
             continue
+        resource = methods.read(store, oid)
         outside = store.db.execute('''SELECT DISTINCT r.object_id FROM dependencies d
             JOIN revisions target ON target.id=d.to_revision JOIN revisions r ON r.id=d.from_revision
             WHERE target.object_id=?''', (oid,)).fetchall()
         outside = sorted({row[0] for row in outside} - set(configs) - removed_objects)
+        # A comment on the retained head does not need an older package. Only
+        # an exact historical vision anchor prevents removing that history.
         protected_comments = [row['id'] for row in store.db.execute(
-            'SELECT id,anchor FROM comments WHERE target_object_id=?', (oid,))
-            if json.loads(row['anchor']).get('file') == 'production/system-vision.md']
+            'SELECT id,anchor,target_revision_id FROM comments WHERE target_object_id=?', (oid,))
+            if json.loads(row['anchor']).get('file') == 'production/system-vision.md'
+            and row['target_revision_id'] != resource['revision_id']]
         if outside or protected_comments:
             resource_history_kept.append({'object_id': oid, 'required_by_outside_definitions': outside,
                                           'protected_system_vision_comments': protected_comments})
         else:
-            configs[oid] = methods.read(store, oid)
+            configs[oid] = resource
     removed_revisions = []
     for row in store.db.execute('SELECT id,object_id FROM revisions'):
         if row['object_id'] in removed_objects or (row['object_id'] in configs

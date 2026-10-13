@@ -1,0 +1,36 @@
+{
+  "task": "task-20261013-0010",
+  "status": "READ_ONLY_PLAN_AND_ISOLATED_TESTS_PASSED",
+  "checked_at": "2026-10-13T19:59:43.360369+00:00",
+  "scope": "Only historical system-vision comment anchors prevent removing resource history; a current-head comment remains on the retained exact package.",
+  "helper_sha256": "8d8900a57ddbf38da2bab5861b1399a617b6d44408eb5dbc9dfff622fad58617",
+  "test_sha256": "41631534032589cfc6df730c13fbb695fc2aa633395a5eb52894ab800b654691",
+  "live_readonly_plan_sha256": "2fa17a434c8af057fa3fbb896e3a6a1daf0e7f00e8c947f71e5be408f61b8944",
+  "resource_head": {
+    "object_id": "method.resource.creative-system-review-texts",
+    "revision_id": "b1f519c403ac5701575635d28f693993bbed4ea8ad8338544ac6045299863c46"
+  },
+  "old_resource_versions_in_plan": 5,
+  "protected_current_comment_count": 1,
+  "protected_current_comments_retained": true,
+  "tests": {
+    "suite": "tests.test_method_history_cleanup tests.test_method_history_baseline tests.test_material_review_release",
+    "passed": 36,
+    "new_cases": [
+      "Current vision comment remains unchanged while obsolete Review method files are cleared; exact latest resource restores to an empty configuration store.",
+      "Historical vision comment still preserves its original exact resource package."
+    ]
+  },
+  "independent_source_review": {
+    "model": "gpt-6-astra",
+    "effort": "max",
+    "record": ".runtime/skill-cold-reader-fresh/creative-system-review/work-sample/history-cleanup-current-resource-readback.json",
+    "sha256": "eba0eb476eccdfb4c9e017c49bce132105f84975b11b21476d1a993c859bec09",
+    "code_findings": 0,
+    "scope": "Read-only source, tests and authorization review; did not rerun tests or perform database cleanup.",
+    "scope_condition": "Preserve the system-vision source, exact current resource, its comment and all dependencies outside this cleanup; replan if that resource head advances."
+  },
+  "work_instance_history_deleted": false,
+  "formal_history_deleted": false,
+  "final_plan_requires_all_methods_and_samples_complete": true
+}
