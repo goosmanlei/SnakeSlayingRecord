@@ -927,6 +927,68 @@
         ],
         "approved_at": "2026-10-13T16:20:22.132+00:00"
       }
+    ],
+    "later_prefix_comparisons": [
+      {
+        "task": "task-20261013-0010",
+        "at": "2026-10-13T19:14:13.892973+00:00",
+        "coordinator_session": "01a1346f-7915-7a40-b676-864edb334ecc",
+        "model": "gpt-6-astra",
+        "effort": "max",
+        "accepted_prefix": "0f5bfcbffbe1fd36ceb07b3255d6018eedfa683840643834e8b2a458eea5b612",
+        "new_prefix": "b3f64ae7d812a6442fd70708a86628d666dece5fd14ba53b578aee18e8821355",
+        "comparison": "complete_recursive_equality_except_listed_string_changes",
+        "before": ".runtime/skill-cold-reader-fresh/filmcraft/round-01/step-0374/native-prefix.json",
+        "after": ".runtime/skill-cold-reader-fresh/filmcraft/round-01/step-0661/native-prefix.json",
+        "changed_leaves": [
+          {
+            "path": [
+              0,
+              "tools",
+              2,
+              "tools",
+              4,
+              "description"
+            ],
+            "diff": [
+              "--- \n",
+              "+++ \n",
+              "@@ -4 +4 @@\n",
+              "-- `gpt-6-astra`: Frontier intelligence for the most demanding work. Reasoning efforts: low (default), medium, high, xhigh, max, ultra. Service tiers: priority.",
+              "+- `gpt-6-astra`: Frontier intelligence for the most demanding work. Reasoning efforts: low, medium (default), high, xhigh, max, ultra. Service tiers: priority."
+            ]
+          },
+          {
+            "path": [
+              2,
+              "content",
+              0,
+              "text"
+            ],
+            "diff": [
+              "--- \n",
+              "+++ \n",
+              "@@ -324 +324 @@\n",
+              "-- sites:sites: Use Sit (file: r4/sites/1.0.1/skills/sites/SKILL.md)",
+              "+- sites:sites: Use Sit (file: r4/sites/1.0.0/skills/sites/SKILL.md)"
+            ]
+          }
+        ],
+        "decision": "approve_exact_prefix_only",
+        "reason": "Only the generic Astra capability default label and the Sites plugin catalog version differ. No author comments, method sources, future units, prior rounds or external task content are added. Requested and actual max remains separately mandatory. All event and response audit rules remain unchanged.",
+        "model_reinvocations": 0,
+        "existing_result_audit": {
+          "accepted": true,
+          "unit": 661,
+          "model": "gpt-6-astra",
+          "effort": "max",
+          "native_prefix_sha256": "b3f64ae7d812a6442fd70708a86628d666dece5fd14ba53b578aee18e8821355",
+          "native_event_count": 12
+        },
+        "audit_path": ".runtime/skill-cold-reader-fresh/filmcraft/round-01/step-0661/audit.json",
+        "audit_sha256": "a11f230c9cdd0de86f068b197d4230810fb0a89435de74fcea3f8ae73ac56737",
+        "adapter_sha256": "8c56bad4572853fc6f4b6ff57a364dae01b01f87e617c7f3833c6ad64e8ff7b6"
+      }
     ]
   },
   "dual_audience_requirement": {
