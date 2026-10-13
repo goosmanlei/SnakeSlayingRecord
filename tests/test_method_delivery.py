@@ -42,5 +42,16 @@ class MethodDeliveryTest(unittest.TestCase):
             with self.assertRaisesRegex(ValueError,'阶段名'):
                 creative_method.read_stage(None,root,'../escape')
 
+    def test_conditional_resources_keep_declared_indexes_and_plain_aliases(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp).resolve()
+            package={'files':{'SKILL.md':'[voice](shared/3/references/sound.md)'},'resources':[
+                {'source_index':3,'title':'Sound','reference':{'object_id':'resource','revision_id':'v1','section':'sound'},
+                 'file':'references/sound.md','content':'Exact sound chapter'}]}
+            deliver_files(root,package,{})
+            self.assertEqual((root/'shared/3/references/sound.md').read_text(),'Exact sound chapter')
+            self.assertEqual((root/'shared/3.md').read_text(),'Exact sound chapter')
+            self.assertFalse((root/'shared/0').exists())
+
 
 if __name__=='__main__':unittest.main()

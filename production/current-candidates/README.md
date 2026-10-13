@@ -24,6 +24,12 @@
 
 ## 制作、提交与恢复
 
+素材作者入口的 `request.json` 和 `record.json` 是本步骤的准确输入，只改本次允许的字段。`relation_readings` 与 `contextual_relations` 提供准确关系全文，摘要只用于定位；关系存在不自动选择或上传素材。参考应按当前阶段说明约束身份、完整状态、空间、动作、音色、旋律还是文字，不把关系全文和内码拼入模型指令。上下游使用稳定身份，候选、组成、裁切和时间范围保留在具体输入选择中。
+
+模型方案的 `generation.format` 为 `generation-plan-v1`，`method` 按实际路线取 `generate`、`reuse` 或 `external-edit`。模型、工具、参数、有序输入和随机策略各保留真实接口含义；数值不换成说明句。本地编辑与复用不填虚构模型。`prompt` 只写实际模型指令；`output` 保存名称、说明和检查目标；未满足项写 `blockers`。`conditions` 是既有条件标识到布尔值的映射，`selected_routes` 是真实路线选择，不放叙事说明或待办。`selection_state=unselected` 不能凭任意文件或自报认可变成就绪。字层在准确 `blocks` 和 `specification` 中保存原词、阶段和可编辑工程要求，没有模型调用就不建 `generation`。
+
+保存草稿后实际全文回读，再登记本步发现和修订判断，最后交干净结果。`finish` 输出待导入的准确记录包，仍须当前目标、内容摘要、输入及方法依据校验通过；它不表示已生成或获质量认可。阶段成功后保留原事实，继续修改另起步骤；并发变化不能只修改版本数字重交。
+
 1. 从当前对象读取 `edit_token`（并发编辑计数）和 `content_sha256`（当前内容摘要），通过现有 `scripts/media_method.py` 完成方法准备、草稿、回读和定稿，再 `production-import`。步骤不满足、输入已变或目标冲突时保留工作区草稿，回读后另起步骤。新制作方法的数据库记录只保存摘要、方法和执行事实；完整工作输入及草稿仅留在任务 `.runtime/`，恢复用途结束后清理。过去的方法执行事实保持原样。
 2. 用 `production-generation-package` 取得准确准备包。对外提交前调用 `/api/production/submit`，提交唯一 `id`、`call_id`、`requirement_id`、`expected_content`、`package_sha256` 和实际 `tool`。返回后才可发起外部请求；同身份返回 `already_applied=true` 时只查询原调用。`scripts/generation_operation.py` 提供同一本机 API 的命令入口。Seed Audio 与 Lyria 的实际提交入口也先核验当前包并保存提交快照；规格中的 `production` 包含 `url`、`requirement_id`、`operation_id` 和 `call_id`。工具参数必须逐项等于方案参数：Seed Audio 使用完整 `audio_config` 与 `watermark`，Lyria 使用 `store` 与实际 `response_format`；参考按上传顺序核对原件哈希及范围。
 3. 轮询或回调沿 `/api/production/result` 保存，携带唯一回执 `id`、`call_id`、`submission_sha256` 和真实 `status`。返回原件时提供已入库文件的 `asset` 元数据；其稳定身份由调用确定，补文件仍更新同一候选。真实请求、响应、费用和文件证据归原调用，不改已知事实。此接口不调用生成平台。

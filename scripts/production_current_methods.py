@@ -14,10 +14,29 @@ def update(store, root, names=None, *, reference_only=False):
     from review_desk import methods
     from review_desk.production_current_methods import WORK_TYPES
     changes = {}
+    catalog=methods.catalog(store)
+    active={rule['object_id'] for binding in catalog['binding'] for rule in binding['payload']['rules']}
+    protocol=None
+    if any(ref['object_id']=='method.resource.current-production' for row in catalog['skill']
+           if row['object_id'] in active for ref in row['payload'].get('resources',[])):
+        old=methods.read(store,'method.resource.current-production')
+        protocol=methods.sync_source(store,root,{'name':'current-production','title':old['payload']['title'],
+                    'expected_version':old['version'],'preserve_paths':True,
+                    'sections':{'main':{'path':'production/current-candidates/README.md'}}})
+        if old['revision_id']!=protocol['revision_id']:
+            changes[old['object_id']]={'before':old['revision_id'],'after':protocol['revision_id']}
     for entry in methods.export_registry(store)['records']:
         oid = entry['object_id'];row = methods.read(store, oid);payload = copy.deepcopy(row['payload'])
         if payload['format'] != methods.FORMATS['skill'] or not (set(payload['work_types']) & WORK_TYPES):continue
+        if oid not in active:continue
         if names is not None and oid.removeprefix('method.skill.') not in names:continue
+        refs=[ref for ref in payload.get('resources',[]) if ref['object_id']=='method.resource.current-production']
+        if refs:
+            for ref in refs:ref['revision_id']=protocol['revision_id']
+            if payload!=row['payload']:
+                changed=methods.save(store,{'category':'skill','name':oid.removeprefix('method.skill.'),'expected_version':row['version'],'payload':payload})
+                changes[oid]={'before':row['revision_id'],'after':changed['revision_id']}
+            continue
         if not reference_only:
             for filename,body in payload['files'].items():
                 for old,new in REPLACEMENTS.items():body=body.replace(old,new)
