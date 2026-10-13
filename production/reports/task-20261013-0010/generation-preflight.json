@@ -182,8 +182,140 @@
     "formal_writes": false
   },
   "work_sample": {
-    "status": "PREPARATION_ONLY",
-    "note": "实际准备接口已读回首帧缺7项所选参考与人物包就绪；最终制作样例待字层最终方法完成后开展。未外部调用。"
+    "status": "SUBMISSION_SIMULATION_COMPLETE_LOCAL_TEXT_PRODUCTION_PENDING",
+    "execution": {
+      "object_id": "method.execution.d501eed75194f1724b7f6322fed7dcd2608d52e0ea3b060f5cc79eaec6002cc1",
+      "revision_id": "33ad6ef8ee214d093e9618d600d220e3f3a9395eede200d9a4d7c66af7ead935"
+    },
+    "method": {
+      "object_id": "method.skill.generation-preflight",
+      "revision_id": "64a8e63f343f54958a1cf7e25a56ed782505d08189cb990d618dd77f712547ef"
+    },
+    "binding": {
+      "object_id": "method.binding.generation-preflight",
+      "revision_id": "15b15a5c4aca0b6af5518db2e99b4262bf6564c4f9aebc3f39887ab6ddde1e2e"
+    },
+    "stage_readbacks": {
+      "draft": {
+        "path": ".runtime/skill-cold-reader-fresh/generation-preflight/sample/submission-contract/execution/stage-draft.json",
+        "sha256": "b90c58f6e51906f2233d64057d236edf195cbc382142c4acc09491593bcd8a4d"
+      },
+      "review": {
+        "path": ".runtime/skill-cold-reader-fresh/generation-preflight/sample/submission-contract/execution/stage-review.json",
+        "sha256": "f72b58a94664a211fbfd870980bb49f111d1a8d3687152a16a3662d23bf5442f"
+      },
+      "result": {
+        "path": ".runtime/skill-cold-reader-fresh/generation-preflight/sample/submission-contract/execution/stage-result.json",
+        "sha256": "5fad6ca03443543ec4281d0af9b17138d910692cb23e46e05138e98f019bfebf"
+      }
+    },
+    "simulation": {
+      "scope": "local simulation of current function; all peer responses are simulated",
+      "implementation": "scripts/generation_operation.py",
+      "implementation_sha256": "0caf9e508ca9ef0014333f3746365019ab1afb192c1ce372b9fe1b98971ea130",
+      "source_readback_sha256": "c4a439a411e2dd034954ca6b54c6df167d9175233c5147293d0a7de4d210c605",
+      "preparation_package_sha256": "db1fd512c203c84b2b1ee80b57c4b89c0c0201f7aa55f29264027c9969a95b72",
+      "cases": [
+        {
+          "case": "parameter_mismatch",
+          "rejected": true,
+          "message": "对外请求的模型、完整 Prompt 或参数与当前准备包不同；请先修正方案",
+          "snapshot_submissions": 0
+        },
+        {
+          "case": "exact_request",
+          "accepted_by_local_check": true,
+          "snapshot_submissions": 1,
+          "external_dispatches": 0
+        },
+        {
+          "case": "same_identity_recovery",
+          "external_dispatch_rejected": true,
+          "message": "此提交身份已登记；先查询原调用，禁止再次对外提交",
+          "snapshot_submissions": 1
+        }
+      ],
+      "events": [
+        {
+          "action": "read_exact_preparation",
+          "package_sha256": "db1fd512c203c84b2b1ee80b57c4b89c0c0201f7aa55f29264027c9969a95b72"
+        },
+        {
+          "action": "read_exact_preparation",
+          "package_sha256": "db1fd512c203c84b2b1ee80b57c4b89c0c0201f7aa55f29264027c9969a95b72"
+        },
+        {
+          "action": "simulated_snapshot_submission",
+          "operation_id": "simulation-only-task0010-operation",
+          "call_id": "simulation-only-task0010-call",
+          "already_applied": false,
+          "provider_request_sha256": "094fe9f0b497233b708b60e7abcfe245f925921a93733edd7b00087febf031db"
+        },
+        {
+          "action": "read_exact_preparation",
+          "package_sha256": "db1fd512c203c84b2b1ee80b57c4b89c0c0201f7aa55f29264027c9969a95b72"
+        },
+        {
+          "action": "simulated_snapshot_submission",
+          "operation_id": "simulation-only-task0010-operation",
+          "call_id": "simulation-only-task0010-call",
+          "already_applied": true,
+          "provider_request_sha256": "094fe9f0b497233b708b60e7abcfe245f925921a93733edd7b00087febf031db"
+        }
+      ],
+      "real_network_requests": 0,
+      "real_production_call_records_written": 0,
+      "real_external_dispatches": 0,
+      "new_media_candidates": 0
+    },
+    "result": "# 本机提交与恢复样例结果\n\n按最终“生成与制作”方法完成了准确准备包核对、草稿保存与回读、现有脚本的本机模拟、检查和结果回读。方法版本为 v12，准确修订为 `64a8e63f343f54958a1cf7e25a56ed782505d08189cb990d618dd77f712547ef`。\n\n| 输入与动作 | 实际结果 | 工作意义 |\n| --- | --- | --- |\n| 实际阿禾准备接口读取 | HTTP 200，含模型、完整指令、参数和准确当前摘要，参考列表为空 | 可整理本次输入；尚不能据此跳过平台能力和额度核对 |\n| 实际相邻镜头首帧准备接口读取 | HTTP 409，七项参考尚未选择 | 缺口应回到方案补选，不能由已有关系或相似素材替代 |\n| 模拟请求把 `n=1` 改为 `n=2` | 真实校验函数拒绝；模拟快照提交 0 次 | 请求与方案不同须先修方案 |\n| 模拟提交准确请求 | 先读取准确包，再保存同一方案摘要与唯一身份 | 提交身份与依据先于外部派发 |\n| 模拟以同一身份恢复 | 函数要求先查询原调用，并拒绝再次对外提交 | 恢复不能换编号造成重复发送 |\n\n模拟中仅有一个进程内快照身份，未调用网络或实际制作提交接口；没有创建真实模型调用、费用记录或媒体候选。三种模拟结果均来自本次执行现有函数，不是对接口结果的手写替代。\n\n本样例证明最终方法能引导执行者分清材料核验、保存身份和恢复动作。它没有验证外部渠道、当前额度、图像效果或字层成片效果。真实本地字层工程另按最终字层方法制作，再交给结果检查；本次方法执行快照保持不变。\n\n证据为同目录 `simulation.json`、准确准备回读和 `execution/` 的逐步保存回读记录。正式方法发布与历史清理尚未进行。\n",
+    "result_sha256": "28586ff3047f357158f8ff6a4caf7e61e09d8cdd1cbd4ef4064479fd168a4c97",
+    "simulation_script_sha256": "18499788798d0cb554a2e3eb90a7da4f588e7dac4ef0849ed72f2ca03aabe73b",
+    "unverified": [
+      "external platform capability",
+      "current quota",
+      "new media quality",
+      "final local text handoff pending text-layer method"
+    ]
   },
-  "history_cleanup_pending": true
+  "history_cleanup_pending": true,
+  "isolated_browser": {
+    "verified_at": "2026-10-13T17:36:32.517910+00:00",
+    "browser": "Google Chrome",
+    "channel": "macOS Accessibility AX actions and rendered page text; direct Chrome window capture",
+    "window_title_contains": "任务预览",
+    "window_capture_id": 103,
+    "method_revision": "64a8e63f343f54958a1cf7e25a56ed782505d08189cb990d618dd77f712547ef",
+    "file_version": 6,
+    "resource_revision": "4cc34c388a53477286824a0c2dd98a8d1f5681633eea6ceb2a93b349c4f50919",
+    "resource_file_version": 3,
+    "actions": [
+      "open generation method from foundation flow",
+      "read rendered complete method text",
+      "open version comparison 5 to 6 and read actual changes",
+      "close comparison",
+      "follow shared protocol link and read exact current-production text",
+      "return to generation method",
+      "reload and verify same exact method and selected file version"
+    ],
+    "evidence": {
+      "comparison-visible.txt": "51baba89cfeef4c450d0996ffa7c5c0e9cc228c5c747c6b6f9953f6ebf52f079",
+      "shared-link-visible.txt": "8b4955b94e3ad02dd31fc69b1029f89ee42370ed33c5882023f699ac95a4ee11",
+      "reload-visible.txt": "3d10767c7636c2af2e6accbe02945a4822e73a595c4925da436666d4e1f2a9c3"
+    },
+    "stage": "isolated before latest-only history cleanup",
+    "formal_writes": false,
+    "javascript_permission_changed": false,
+    "accessibility_tree_temporarily_enabled": true,
+    "accessibility_tree_restored_to_initial_false": true,
+    "direct_window_capture_viewed": true,
+    "direct_window_capture_sha256": "26858be0467ab1ef6a038b996dbc22b6cf2785b2d4c8f6b993032d52df6f0e47",
+    "direct_window_capture_retained": false
+  },
+  "incremental_process_cleanup": {
+    "files_removed": 4,
+    "all_absent": true,
+    "scope": "two completed one-time scripts and two transient screen captures; no database or media deletion",
+    "evidence": ".runtime/skill-cold-reader-fresh/incremental-process-cleanup.json"
+  }
 }
