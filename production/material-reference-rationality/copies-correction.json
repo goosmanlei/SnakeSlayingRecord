@@ -1,0 +1,58 @@
+{
+  "material_id": "material-form-approval-orders-copies-overall",
+  "before_content_sha256": "1a01b201f9e58afe08f1b48a99b432efafe1dae0012a0dc7c10da23664079198",
+  "after_content_sha256": "fad2dba8277285b291228cd3375ea648a8baa99593c3f2b9649cab0e55fb42b5",
+  "before_input": {
+    "necessity": "required",
+    "reference": {
+      "object_id": "material-entity-approval-orders-identity",
+      "revision_id": "a7ecc5e594c83adcf1ff7340b817f51e3dbfae5607120022f289e9b2c17c7146"
+    },
+    "relation": {
+      "object_id": "relation-e38e69d12a47c1cc162c2b8bf79d0dbd",
+      "revision_id": "5e8203755e15fceabdbe3cef9f8670001a5c8ee11d507da206cce5c0f9ab2e1a"
+    },
+    "selection_state": "unselected",
+    "semantics": "variant",
+    "use": "固定身份与结构，按此版状态表现差异"
+  },
+  "after_input": {
+    "necessity": "required",
+    "reference": {
+      "object_id": "material-entity-approval-orders-identity",
+      "revision_id": "a7ecc5e594c83adcf1ff7340b817f51e3dbfae5607120022f289e9b2c17c7146"
+    },
+    "relation": {
+      "object_id": "relation-e38e69d12a47c1cc162c2b8bf79d0dbd",
+      "revision_id": "5e8203755e15fceabdbe3cef9f8670001a5c8ee11d507da206cce5c0f9ab2e1a"
+    },
+    "selection_state": "unselected",
+    "semantics": "reference",
+    "use": "只参照两份原批文的纸型、文字对应和签押位置，制作另两张公开抄件；原纸继续随卷，不当作同一原件的另一状态。"
+  },
+  "relation_id": "relation-e38e69d12a47c1cc162c2b8bf79d0dbd",
+  "before_summary": "身份母版约束同一主体，完整状态在本阶段内变化。",
+  "after_summary": "两份原准祭批文只供纸型、文字对应与签押位置对照，另制两张公开抄件；原纸随卷送郡，抄件不是原纸的另一状态。贴前两张未上墙，贴后位置依本镜连续，不再重复张贴。",
+  "result": {
+    "validated_only": false,
+    "records": [
+      {
+        "id": "material-form-approval-orders-copies-overall",
+        "kind": "REQUIREMENT",
+        "revision": "ad2e996a5ae814fac045854d5046330c92ded3a656cef90a7db464f489c7eabd",
+        "version": 11,
+        "edit_token": 11,
+        "content_sha256": "fad2dba8277285b291228cd3375ea648a8baa99593c3f2b9649cab0e55fb42b5"
+      },
+      {
+        "id": "relation-e38e69d12a47c1cc162c2b8bf79d0dbd",
+        "kind": "RELATION",
+        "revision": "5e8203755e15fceabdbe3cef9f8670001a5c8ee11d507da206cce5c0f9ab2e1a",
+        "version": 5,
+        "edit_token": 5,
+        "content_sha256": "9df6507f2e894710c88c4b4fe52abb058f4d3411121f59672d11cee044f83a11"
+      }
+    ],
+    "removed": []
+  }
+}
