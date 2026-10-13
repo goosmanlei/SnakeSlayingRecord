@@ -28,6 +28,8 @@
 
 ## 资料与出处
 
+完整阅读 PDF：[《把灯带回家》剧本版本四](output/pdf/把灯带回家-剧本版本四.pdf)，17 集、42 场、57 页，含分集目录和集场书签。[导出与核验说明](output/pdf/README.md)记录准确来源、完整性与页面检查。
+
 最新交付为[《把灯带回家》版本四](imports/screenplay-04-clean.md)：17 集、42 场，单集预计正片 3:50—4:55，总计 73:12，非成片实测。[正式入口](http://127.0.0.1:3000/?workspace=story.script&script=screenplay-04-lantern-home&episode=screenplay-04-lantern-home-e01)可逐集逐场阅读和评论。全部 73 条意见已映射到新稿，旧稿和最终稿各有 336 项检查；[审校说明](planning/screenplay-04-review.md)集中列出三条联动修改、真实逐场过程、表演估时与验证边界。旧三版保留，用户已确认版本四为本次制作终稿，接受记录见 [输入锁定](production/source-lock.json)。正式浏览器验收中 C40 曾被误关闭并已恢复，其记录版本与两条审计历史如实保留，详见[输入差异](planning/screenplay-04-input-diff.json)。版本四创作时的候选挂载和受控集成证据保留在该任务交付文件；当前制作输入、运行边界及工作区见 [当前状态](STATE.md)。
 
 此前发布的[分集影视剧本版本三](imports/screenplay-03-clean.md)：17 集、42 场，单集预计正片 3:52—4:53，总计 74:10，均非成片实测。[版本三入口](http://127.0.0.1:3000/?workspace=story.script&script=screenplay-03-lantern-home&episode=screenplay-03-lantern-home-e01)可逐集、逐场阅读和评论。先归纳版本二前五场 47 条评论的共性，再结合[John August 原始资料研究](planning/john-august-screenwriting-research.md)重构全剧；[历史审校说明](planning/screenplay-03-review.md)列明该版全部评论处理、版本二全场诊断、结构调整与具体表演估时。版本一、二及旧评论均保留。作品发布与任务集成、用户接受分别记录。
