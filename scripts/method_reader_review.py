@@ -32,7 +32,10 @@ ADAPTATION = """本次仅调整阅读对象与身份：你是首次使用这份�
 """
 
 APPROVED_PREFIXES = ("a9e967fd9422ccaae1ae4d6edddba40130540c79cee2ece6aa1f5891390049fe,"
-                     "9ffc5a9443c9f060084ff8251094d8df77931309fc9dcefb2b2644605bf6cbd2")
+                     "9ffc5a9443c9f060084ff8251094d8df77931309fc9dcefb2b2644605bf6cbd2,"
+                     "10bcf6434fb08629551816ed22d0d246876318ae736c41ae020fe0e130fd1ea2,"
+                     "b05c0caa5ca95e6edf3c173aad6ecee81e36f9887a300d4d97aeff36c104e492,"
+                     "dce906c83e5cf8358d84218470d5478cc7d7a1892f45487130d9777e86189ea6")
 
 
 def sha(body):
