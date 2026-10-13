@@ -72,11 +72,15 @@ def _update_methods(store, root=ROOT):
           'companions':copy.deepcopy(payload.get('companions',{}))}
     spec['sections']['applications']={'path':'production/filmcraft/applications.md'}
     spec['sections']['video-handbook']={'path':'production/seedance-video-handbook.md'}
-    required=['production/source-lock.json','production/filmcraft/quick-reference.md',
-              'production/filmcraft/applications.md','production/seedance-video-handbook.md']+list(payload['files'])
-    spec['companions']['applications']=sorted(set(required))
-    spec['companions']['guide']=sorted(set(spec['companions'].get('guide',[])+['production/filmcraft/applications.md','production/filmcraft/quick-reference.md','production/source-lock.json','production/seedance-video-handbook.md']))
-    spec['companions']['quick-reference']=sorted(set(spec['companions'].get('quick-reference',[])+['production/filmcraft/applications.md','production/seedance-video-handbook.md']))
+    # Chapter delivery needs its diagrams and readable citations. Other chapters
+    # remain exact link targets in the same resource, not implicit dependencies.
+    spec['companions']={section:[name for name in names
+                                if name.endswith('.svg') or name=='production/filmcraft/sources.md']
+                        for section,names in spec['companions'].items()}
+    for section in ('applications','guide','quick-reference','sources'):
+        spec['companions'].pop(section,None)
+    for section in ('applications','guide'):
+        spec['companions'][section]=['production/source-lock.json']
     new=methods.sync_source(store,root,spec)
     resources={new['object_id']:new}
     changes={previous['object_id']:{'before':previous['revision_id'],'after':new['revision_id']}} if previous['revision_id']!=new['revision_id'] else {}
@@ -91,8 +95,10 @@ def _update_methods(store, root=ROOT):
     if video['revision_id']!=current['revision_id']:
         changes[video['object_id']]={'before':video['revision_id'],'after':current['revision_id']}
     catalog=methods.catalog(store)
+    active={rule['object_id'] for binding in catalog['binding'] for rule in binding['payload']['rules']}
     saved={}
     for row in catalog['skill']:
+        if row['object_id'] not in active:continue
         p=copy.deepcopy(row['payload'])
         for ref in p.get('resources',[]):
             if ref['object_id'] in resources:ref['revision_id']=resources[ref['object_id']]['revision_id']
