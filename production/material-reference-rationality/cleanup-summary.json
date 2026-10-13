@@ -1,0 +1,62 @@
+{
+  "format": "material-reference-cleanup-v1",
+  "files_deleted": 4165,
+  "bytes_deleted": 9203788419,
+  "phases": [
+    {
+      "files": 293,
+      "bytes": 4704843
+    },
+    {
+      "files": 298,
+      "bytes": 4740454
+    },
+    {
+      "files": 2198,
+      "bytes": 5406747928
+    },
+    {
+      "files": 1376,
+      "bytes": 3787595194
+    }
+  ],
+  "preview_ports_closed": [
+    55971,
+    55972,
+    55973
+  ],
+  "deleted_images": [
+    "sha256:040ce208873e1b76186c03c010528c8a2d7aa05e0649625b588b7d2658b9789e"
+  ],
+  "created_or_deleted_temporary_containers": 0,
+  "deleted_paths_absent": true,
+  "workspace_guard_blockers": [],
+  "retained": [
+    {
+      "resource": "formal current A2 / previous 79 and their main service releases",
+      "purpose": "running formal service and latest rollback",
+      "owner": "formal deployment maintenance",
+      "release_condition": "replaced and no active dependency"
+    },
+    {
+      "resource": "shared build base cc353153",
+      "purpose": "existing shared build base",
+      "owner": "shared build maintenance",
+      "release_condition": "not task-owned"
+    },
+    {
+      "resource": ".runtime/task-receipts/task-20261013-0005/formal-publication/before.sqlite3",
+      "bytes": 307081216,
+      "purpose": "independent production review exact prepublication comparison; never restore over live data",
+      "owner": "task-20261013-0005 follow-up cleanup after review",
+      "release_condition": "independent review closes"
+    },
+    {
+      "resource": "two managed worktrees",
+      "purpose": "current TUI retains cleanup lock; no formal runtime dependency",
+      "owner": "task-20261013-0005 managed cleanup",
+      "release_condition": "exit TUI, release locks, codex.project task cleanup"
+    }
+  ],
+  "minimal_receipt_root": ".runtime/task-receipts/task-20261013-0005"
+}
