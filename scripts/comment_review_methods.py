@@ -24,6 +24,8 @@ WORKFLOW = '''\n## 意见、修订与回查\n\n动笔前读取所选准确修订
 def update(store, root):
     from review_desk import methods
     before = {r['object_id']: r for r in methods.export_registry(store)['records']}
+    active={rule['object_id'] for row in before.values() if row['payload']['format']==methods.FORMATS['binding']
+            for rule in row['payload']['rules']}
     changed = {}
     # The authoritative Markdown remains in this project. Only its registered
     # reading projection and the explicit current bindings advance.
@@ -49,13 +51,15 @@ def update(store, root):
         row = methods.read(store, oid)
         if row['payload']['format'] != methods.FORMATS['skill']:
             continue
+        if oid not in active:continue
         payload = copy.deepcopy(row['payload'])
-        for filename, body in payload['files'].items():
+        role_specific=any(ref['object_id']=='method.resource.current-production' for ref in payload.get('resources',[]))
+        for filename, body in ([] if role_specific else payload['files'].items()):
             for old, new in REPLACEMENTS.items():
                 body = body.replace(old, new)
             payload['files'][filename] = body
         name = oid.removeprefix('method.skill.')
-        if name not in ('comment-polish', 'comment-polish-clear', 'creative-system-review', 'reader-review') and '## 意见、修订与回查' not in payload['files']['SKILL.md']:
+        if not role_specific and name not in ('comment-polish', 'comment-polish-clear', 'creative-system-review', 'reader-review','story-structure','novel-writing','screenplay-scene') and '## 意见、修订与回查' not in payload['files']['SKILL.md']:
             payload['files']['SKILL.md'] = payload['files']['SKILL.md'].rstrip() + '\n' + WORKFLOW
         for ref in payload.get('resources', []):
             resource = methods.read(store, ref['object_id'])

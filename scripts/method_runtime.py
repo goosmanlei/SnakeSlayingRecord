@@ -248,14 +248,17 @@ def deliver_files(directory, package, inputs):
     files = dict(package['files'])
     index = []
     for number, resource in enumerate(package['resources']):
+        number = resource.get('source_index', number)
         section = resource['reference']['section']
-        if resource.get('files'):
+        if resource.get('files') or 'source_index' in resource:
             prefix = 'shared/' + str(number) + '/'
-            files.update({prefix + n: content for n, content in resource['files'].items()})
+            files.update({prefix + n: content for n, content in resource.get('files', {}).items()})
             name = prefix + resource['file']
         else:
             name = 'shared/' + str(number) + '.md'
         files[name] = resource['content']
+        if not resource.get('files'):
+            files['shared/' + str(number) + '.md'] = resource['content']
         index.append('- [' + resource['title'] + ' / ' + section + '](' + name + ')：'
                      + resource['reference']['object_id'] + ' @ ' + resource['reference']['revision_id'])
     selected = ('本次适用文件：' + '、'.join(package['applicable_files']) + '。其他图像专项保留在包中供查阅，不并入本步骤要求。\n\n') if package.get('applicable_files') else ''
