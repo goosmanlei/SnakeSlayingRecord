@@ -43,14 +43,17 @@ def _install(store, seed):
 def install(store, seed):
     # Stage against the actual maintained registry, then append one atomic
     # package. An invalid later method cannot leave an earlier binding enabled.
-    from review_desk import methods
     from review_desk.store import Store
+    try:
+        from .method_migration import configuration_registry, restore_configuration
+    except ImportError:
+        from method_migration import configuration_registry, restore_configuration
     with tempfile.TemporaryDirectory(prefix='method-bootstrap-') as directory:
         staged = Store(Path(directory) / '.runtime/review.sqlite3')
         try:
-            methods.restore_registry(staged, methods.export_registry(store))
+            restore_configuration(staged, configuration_registry(store))
             result = _install(staged, seed)
-            result['restored'] = methods.restore_registry(store, methods.export_registry(staged))
+            result['restored'] = restore_configuration(store, configuration_registry(staged))
             return result
         finally:
             staged.close()
