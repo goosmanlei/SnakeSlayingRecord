@@ -25,6 +25,10 @@ def inventory(instance):
         with p.read_scope(store):
             entries = material_entries(store, uses=False, identities=False)
             materials, consumers = [], {}
+            owners = {}
+            for raw in store.db.execute('''SELECT c.asset_object_id,t.material_id
+                FROM production_candidates c JOIN production_candidate_targets t ON t.candidate_id=c.id'''):
+                owners.setdefault(raw['asset_object_id'], []).append(canonical_id(store, raw['material_id']))
             relations, relation_ids = [], {}
             for row in business_relations.current(store):
                 value = row['payload']
@@ -38,7 +42,9 @@ def inventory(instance):
                         'title': e['payload']['title']} for e in endpoints], 'semantic_review': None})
                 for endpoint in endpoints:
                     if endpoint['kind'] in ('REQUIREMENT', 'ASSET'):
-                        relation_ids.setdefault(canonical_id(store, endpoint['object_id']), []).append(row['object_id'])
+                        mids = owners.get(endpoint['object_id'], [canonical_id(store, endpoint['object_id'])])
+                        for mid in mids:
+                            relation_ids.setdefault(mid, []).append(row['object_id'])
             for entry in sorted(entries, key=lambda e: code(store, e['canonical_material_id']) or ''):
                 row = p.record(store, entry['object_id'])
                 payload = row['payload']
@@ -78,16 +84,29 @@ def inventory(instance):
                     c.operation_id FROM production_candidate_targets t JOIN production_candidates c ON c.id=t.candidate_id
                     WHERE t.material_id=? ORDER BY t.number''', (item['material_id'],))]
             candidates = []
+            actual_consumers = {}
             for raw in store.db.execute('SELECT * FROM production_candidates ORDER BY id'):
                 saved = production_current.submission(store, raw['operation_id'])
                 targets = [dict(t) for t in store.db.execute('SELECT material_id,number FROM production_candidate_targets WHERE candidate_id=? ORDER BY material_id', (raw['id'],))]
                 snapshot = saved['snapshot']
+                actual_slots = slots(store, snapshot.get('request', {}).get('inputs', []))
+                for slot in actual_slots:
+                    source = slot['value'].get('reference', slot['value'])
+                    mids = owners.get(source.get('object_id'), [slot.get('canonical_material_id')])
+                    for mid in mids:
+                        if mid:
+                            actual_consumers.setdefault(mid, []).append({'layer': 'submitted-candidate',
+                                'candidate_id': raw['id'], 'operation_id': raw['operation_id'],
+                                'targets': targets, 'index': slot['index'], 'value': slot['value']})
                 candidates.append({**dict(raw), 'targets': targets, 'submission_sha256': saved['snapshot_sha256'],
                     'origin': saved['origin'], 'request': snapshot.get('request', {}),
                     'input_contents': snapshot.get('input_contents', []), 'gaps': snapshot.get('gaps', []),
                     'slots': [{k:v for k,v in slot.items() if k not in ('record','candidate')}
-                        for slot in slots(store, snapshot.get('request', {}).get('inputs', []))],
+                        for slot in actual_slots],
                     'semantic_review': None})
+            for item in materials:
+                item['actual_consumers'] = actual_consumers.get(item['material_id'], [])
+                item['business_relations'] = sorted(set(item['business_relations']))
             counts = Counter(item['category'] for item in materials)
             summary = {'materials': len(materials), 'categories': {k: counts[k] for k in CATEGORIES},
                 'with_plan': sum(item['generation'] is not None for item in materials),
