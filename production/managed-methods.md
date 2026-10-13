@@ -140,7 +140,7 @@ python3 scripts/media_method.py --method-url http://127.0.0.1:PORT --directory .
 
 复用与本地编辑沿真实原件、区间和交接保存；没有模型调用就不填 model、tool、Prompt 或随机生成字段。字层可无 generation，但准确文字、SVG 版面及镜头交接不能省略。
 
-生成准备包把方法快照与模型 Prompt 分开。模型只得到方案 Prompt、准确媒体和实际参数；手册不会被拼成最终视频 Prompt。新调用登记必须来自同一准备包，仍检查准确输入、原词、输入锁、渠道、原件与局部范围。已有候选／片段／路线选择记录准确父方案与确定性操作；不补造作者方法历史，也不能夹带 Prompt 修订。
+基础流程的“生成与制作”包含取得准确输入、内部准备、提交和回收；稳定工作类型仍为 `generation-preflight`，旧执行原文不变，不再另设准备阶段。生成准备包把方法快照与模型 Prompt 分开。模型只得到方案 Prompt、准确媒体和实际参数；手册不会被拼成最终视频 Prompt。新调用登记必须来自同一准备包，仍检查准确输入、原词、输入锁、渠道、原件与局部范围。已有候选／片段／路线选择记录准确父方案与确定性操作；不补造作者方法历史，也不能夹带 Prompt 修订。
 
 本任务未向 OpenArt、Seedance、Seed Audio 或 Lyria 发起生成。`seed_audio.py`、`lyria_music.py` 的独立实验入口仍保留原账号、费用和恢复边界；它们不自动变成合格生产方案。进入受管制作必须通过准备和 CALL 登记校验。图像／视频 CLI 是外部执行通道，不存在自动生成全剧的服务。
 
@@ -171,3 +171,5 @@ python3 scripts/method_migration.py --system PATH_TO_DESK export \
 当前方法按评论理解、实际修订及准确回查推进，不要求逐对象审批。`scripts/comment_review_methods.py` 追加资源、方法和工作类型绑定；历史方法、冻结执行和真实 CALL 保留原文。本次准确迁移及恢复契约见 [评论流程](comment-review/README.md)。
 
 文件历史首次启用使用 `material_review_release.py prepare --method-file-history`，在既有停写窗口内运行冻结的 `method_file_history.py`。它从所有旧准确整包派生三张文件历史表，逐行保全原业务数据，并校验映射和读取缓存。失败不回灌旧库；启用后只运行支持该历史的代码。完整公开导出携带文件历史，旧公开包在恢复时派生同样映射。私有执行仅显式导出恢复；新执行另带 `file_manifest` 与标准导出的 `file-manifest.json`，旧执行不补写新字段。
+
+当前职责与参考范围见 [创作制作方法](professional-methods.md)。新引用按声明序号导出，条件过滤不改变 `shared/<序号>/<原路径>` 的链接；页面只列声明章节及必要图文，完整准确资源支持合法延伸阅读。旧包沿原路径和摘要恢复。维护脚本只推进当前绑定的方法，当前制作协议通过既有 `production/current-candidates/README.md` 的准确资源共享，不再向全部方法追加通用段落或复活退休方法。
