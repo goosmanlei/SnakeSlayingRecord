@@ -434,5 +434,201 @@
     "effect": "各项完整阅读覆盖当前方法正文、模板及媒体配套文字；不要求对当前媒体看听理解，不声称未输入媒体效果已验证；只在确需说明方法时考虑新示例。",
     "formal_source_modified": false,
     "new_generation_calls": 0
-  }
+  },
+  "native_continuation_checks": {
+    "kind": "native_stream_continuation_fault_and_recovery_checks",
+    "checks": [
+      {
+        "case": "valid_single",
+        "fixture": "single",
+        "accepted": true,
+        "expected": true,
+        "passed": true,
+        "guard": null,
+        "model_calls": 0
+      },
+      {
+        "case": "valid_retained_and_recovery",
+        "fixture": "retained",
+        "accepted": true,
+        "expected": true,
+        "passed": true,
+        "guard": null,
+        "model_calls": 0
+      },
+      {
+        "case": "valid_empty_and_recovery",
+        "fixture": "empty",
+        "accepted": true,
+        "expected": true,
+        "passed": true,
+        "guard": null,
+        "model_calls": 0
+      },
+      {
+        "case": "changed_continuation_input",
+        "fixture": "empty",
+        "accepted": false,
+        "expected": false,
+        "passed": true,
+        "guard": "native continuation has unexplained input",
+        "model_calls": 0
+      },
+      {
+        "case": "mismatched_retained_reasoning",
+        "fixture": "retained",
+        "accepted": false,
+        "expected": false,
+        "passed": true,
+        "guard": "native continuation has unexplained input",
+        "model_calls": 0
+      },
+      {
+        "case": "partial_tool_call",
+        "fixture": "retained",
+        "accepted": false,
+        "expected": false,
+        "passed": true,
+        "guard": "partial response contains a call or unreviewed output",
+        "model_calls": 0
+      },
+      {
+        "case": "unknown_disconnect",
+        "fixture": "empty",
+        "accepted": false,
+        "expected": false,
+        "passed": true,
+        "guard": "unreviewed native inference failure",
+        "model_calls": 0
+      },
+      {
+        "case": "missing_partial_evidence",
+        "fixture": "empty",
+        "accepted": false,
+        "expected": false,
+        "passed": true,
+        "guard": "'partial_response_payload'",
+        "model_calls": 0
+      },
+      {
+        "case": "changed_continuation_model",
+        "fixture": "empty",
+        "accepted": false,
+        "expected": false,
+        "passed": true,
+        "guard": "native continuation parameters differ",
+        "model_calls": 0
+      },
+      {
+        "case": "changed_identity",
+        "fixture": "empty",
+        "accepted": false,
+        "expected": false,
+        "passed": true,
+        "guard": "native continuation identity/context differs",
+        "model_calls": 0
+      },
+      {
+        "case": "unresolved_continuation_response",
+        "fixture": "empty",
+        "accepted": false,
+        "expected": false,
+        "passed": true,
+        "guard": "unresolved native preceding response chain",
+        "model_calls": 0
+      },
+      {
+        "case": "mismatched_call_identity",
+        "fixture": "retained",
+        "accepted": false,
+        "expected": false,
+        "passed": true,
+        "guard": "response chain mismatch",
+        "model_calls": 0
+      },
+      {
+        "case": "extra_inference",
+        "fixture": "empty",
+        "accepted": false,
+        "expected": false,
+        "passed": true,
+        "guard": "unreviewed native inference/continuation count",
+        "model_calls": 0
+      }
+    ],
+    "real_reading_rounds": 0,
+    "model_calls": 0,
+    "temporary_root": "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261013-0010-continuation-test-4euxo5ib",
+    "temporary_root_removed_after": true,
+    "adapter_sha256": "c12fef600533627d8ca998976cc2a7f33bb60f3536555cac8088bcbaa29c213f"
+  },
+  "observed_native_continuations": [
+    {
+      "item": "story-structure",
+      "round": 1,
+      "unit": 3,
+      "path": ".runtime/skill-cold-reader-fresh/story-structure/round-01/step-0003",
+      "model": "gpt-6-astra",
+      "effort": "max",
+      "native_inference_chain": [
+        {
+          "inference_call_id": "27b14148-0dc5-4079-82a3-69806900b2b4",
+          "status": "inference_failed",
+          "request_path": "payloads/4.json"
+        },
+        {
+          "inference_call_id": "dd5c5acb-f161-4e77-aaf8-6c0fcbcafb78",
+          "status": "inference_completed",
+          "request_path": "payloads/6.json"
+        }
+      ],
+      "trace_sha256": "672723eb4007790cf6be90770afba4a0425474917fb6be86b1d5bf7690ac54d3",
+      "raw_payload_sha256": {
+        "native-trace/trace-c93bc7d5-eaca-49ea-b7cf-2d6b32a55b36-01a134a7-920b-73e2-9192-709c7167bc21/payloads/1.json": "8c0a3cc0c048a7bb50198ae1200346b597e46015444e9a1ffb559ebbfed3e602",
+        "native-trace/trace-c93bc7d5-eaca-49ea-b7cf-2d6b32a55b36-01a134a7-920b-73e2-9192-709c7167bc21/payloads/2.json": "19d82836e3f723fe6e4fb8ca2c3c2ccfccbaebcd9009b8142a92303e4d33e947",
+        "native-trace/trace-c93bc7d5-eaca-49ea-b7cf-2d6b32a55b36-01a134a7-920b-73e2-9192-709c7167bc21/payloads/3.json": "fe1cdd5aa3f818d898c8381be872197868cf913a44388767922a37a25f763825",
+        "native-trace/trace-c93bc7d5-eaca-49ea-b7cf-2d6b32a55b36-01a134a7-920b-73e2-9192-709c7167bc21/payloads/4.json": "80de2951521a8d7c91b01d483a6de9fafda11e873c7d663cea9d7e767b7afdd8",
+        "native-trace/trace-c93bc7d5-eaca-49ea-b7cf-2d6b32a55b36-01a134a7-920b-73e2-9192-709c7167bc21/payloads/5.json": "bd30b256a93ee884a3f85d6187808ae8603b491c42316609d68f01034bc51774",
+        "native-trace/trace-c93bc7d5-eaca-49ea-b7cf-2d6b32a55b36-01a134a7-920b-73e2-9192-709c7167bc21/payloads/6.json": "dff75381ba794db1099fe04528cc176f757831bf865abdeecc7f00c5d2a8c325",
+        "native-trace/trace-c93bc7d5-eaca-49ea-b7cf-2d6b32a55b36-01a134a7-920b-73e2-9192-709c7167bc21/payloads/7.json": "eb8292ff23627c613b463447b087c598dcb97dbdb9467396a92299c3ad186a36",
+        "native-trace/trace-c93bc7d5-eaca-49ea-b7cf-2d6b32a55b36-01a134a7-920b-73e2-9192-709c7167bc21/payloads/8.json": "3befa36f088cfc0cb1eb597b8e46ce2dbabd561636e703151f71b56164972970",
+        "native-trace/trace-c93bc7d5-eaca-49ea-b7cf-2d6b32a55b36-01a134a7-920b-73e2-9192-709c7167bc21/payloads/9.json": "43568e86ce2556ab8da6303a89a2e0359509abc830739979977ac0efe671c432"
+      },
+      "accepted": true,
+      "coordinator_reinvocations": 0
+    },
+    {
+      "item": "video-handbook",
+      "round": 1,
+      "unit": 35,
+      "path": ".runtime/skill-cold-reader-fresh/video-handbook/round-01/step-0035",
+      "model": "gpt-6-astra",
+      "effort": "max",
+      "native_inference_chain": [
+        {
+          "inference_call_id": "e4dc798a-dc92-4c23-8eb1-491a5ee8121f",
+          "status": "inference_failed",
+          "request_path": "payloads/4.json"
+        },
+        {
+          "inference_call_id": "36e14600-009e-4483-b085-b1ba9a2903ce",
+          "status": "inference_completed",
+          "request_path": "payloads/5.json"
+        }
+      ],
+      "trace_sha256": "3bfef915cb60cbbebe9193815abb99f508d6ad91083b40469b645dac97f46650",
+      "raw_payload_sha256": {
+        "native-trace/trace-ba04d1a9-fbac-42ea-8790-dc7f83ed5c27-01a134ad-2f36-7a81-b1b3-ce2cf257c455/payloads/1.json": "0229bf64fd4a3fa4cf5302cda48a5c7a6f99f8fcb4654226f258498611e9dc8f",
+        "native-trace/trace-ba04d1a9-fbac-42ea-8790-dc7f83ed5c27-01a134ad-2f36-7a81-b1b3-ce2cf257c455/payloads/2.json": "513ca8196ffbfe15cc94734231aa7793ec70c902688ab0d155e316628900bb6c",
+        "native-trace/trace-ba04d1a9-fbac-42ea-8790-dc7f83ed5c27-01a134ad-2f36-7a81-b1b3-ce2cf257c455/payloads/3.json": "43f9783b7090d76481e3e49d73f2268e35d3e288279167cea9ac247cb699c5e5",
+        "native-trace/trace-ba04d1a9-fbac-42ea-8790-dc7f83ed5c27-01a134ad-2f36-7a81-b1b3-ce2cf257c455/payloads/4.json": "af7d78b1356bed3d622d0b9737d64de65d382fb4b71b5046787fca95169b3fb0",
+        "native-trace/trace-ba04d1a9-fbac-42ea-8790-dc7f83ed5c27-01a134ad-2f36-7a81-b1b3-ce2cf257c455/payloads/5.json": "156b086f3cec267549647df7ebd47fd0b3a9e6acf9c1bbff913451354d869da7",
+        "native-trace/trace-ba04d1a9-fbac-42ea-8790-dc7f83ed5c27-01a134ad-2f36-7a81-b1b3-ce2cf257c455/payloads/6.json": "5f27d76a1f1988b74c46309e9f3ca7f37aa6107cb6d53e5b8268d224abd43517",
+        "native-trace/trace-ba04d1a9-fbac-42ea-8790-dc7f83ed5c27-01a134ad-2f36-7a81-b1b3-ce2cf257c455/payloads/7.json": "4a961a8122544fe7bfbd84fee51f343cdbf146d3a2306e530e69de796bc17438",
+        "native-trace/trace-ba04d1a9-fbac-42ea-8790-dc7f83ed5c27-01a134ad-2f36-7a81-b1b3-ce2cf257c455/payloads/8.json": "43568e86ce2556ab8da6303a89a2e0359509abc830739979977ac0efe671c432"
+      },
+      "accepted": true,
+      "coordinator_reinvocations": 0
+    }
+  ]
 }
