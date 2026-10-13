@@ -1,0 +1,154 @@
+{
+  "object_id": "method.skill.novel-writing",
+  "version": 8,
+  "revision_id": "36fe2ff9ec56351f72637916443dbfeb3c014449fb27cd42bd34a8187f12d95a",
+  "valid_rounds": 5,
+  "required_minimum": 5,
+  "status": "reading_and_isolated_sample_passed",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "2d9dc6b83aa7bd2dbabfe1a5558d3b4a40911032d8b95ea8c21deac25717fa4a",
+      "characters": 1784
+    },
+    {
+      "path": "references/prose-choices.md",
+      "sha256": "fc26f66f0a9954e772dc0adea2cee9581216b491a4fbb78dc799eed9415e8836",
+      "characters": 1351
+    }
+  ],
+  "rounds": [
+    {
+      "round": 1,
+      "units": 22,
+      "contexts": 23,
+      "native_inferences": 23,
+      "decision": "revise",
+      "rationale": "完整读回22单位、全文结算与两份原文。接受q0012-01：首次使用者知道要保存/回应/发布，但“受管入口”在全文结束仍无定位；核对当前 production/managed-methods.md 的外部小说作者及 planning/incremental-writing-workflow.md 的实际命令与职责，补明确故事项目根目录、脚本及两份现有文档定位，不把历史批次当当前作品。接受q0015-01：例句“划掉自己的解释”没有可指认的书写对象，末句发言人也不确定；改成指明错户名、明确口头纠正、兄长拿衣并说话，使动作、心理、对白共同承载承认的代价，不声称账已更正或他人已谅解。其余场景/概述、视角和心理距离原则保留：本会话已实际查读Lubbock第IX节相关段落、UNR公开心理距离全文相关说明及Stanford公开教学说明；示例仍原创，没有复制来源例句或声称读完整书/登录讲义。两处改动同时服务人的叙事理解与AI执行，不以添加字段替代判断。新稿须下一轮完整复读。",
+      "finish": "整体创作逻辑连贯，关键概念、选择条件和回读依据有文字示例支撑。初读时待解释的受管入口定位到完篇仍未交代，影响首次执行；第15段展开示例中“划掉自己的解释”的具体对象及末句发言者仍有歧义，影响理解动作与对白如何承载选择。",
+      "remaining_comments": 2,
+      "unresolved": [],
+      "evidence": ".runtime/skill-cold-reader-fresh/novel-writing/round-01",
+      "frozen_sha256": "a0a9cb04ce7b439688eb9e8cfaeb0d5793066a2f57cec953a2aa1795992d5cd8",
+      "read_complete_sha256": "eacafae4da74bcbc667deba7b23b26417463bac3eb4cafdea65d47856b9c3cc6",
+      "decision_sha256": "2480959c8363fa9729c09bc41799822141aeafbeae1eaa1dc2b9eb534b18d8ea"
+    },
+    {
+      "round": 2,
+      "units": 22,
+      "contexts": 23,
+      "native_inferences": 23,
+      "decision": "keep",
+      "rationale": "完整读回22个单位及全文结算，逐项核对新增入口和重写短例。读者准确定位故事项目根目录、外部小说作者及保存/采用/交付的既有说明；能区分本地采用与用户质量认可，未沿历史批次补造本次输入。第15单位明确理解她纠正少记为错户名、兄长表示同行，原动作与发言人歧义已消除。全篇未留COMMENT或WATCH，场景/概述、视角和心理距离保留适用条件与原创对照例，不把短、快或字段齐全当成质量。保留修订稿；引用入口的实际执行另由隔离样例检验，不把本轮阅读算作已完成操作。",
+      "finish": "已读正文的目的、概念、判断依据和对照例子衔接清楚，执行者能够理解如何选择写法、推进片段并检查结果；没有留下需要结清的初读疑问或明确矛盾。保存、采用、恢复及完本交付的操作细则引用了项目文档，这些文档尚未开放，因此本次不能确认具体操作是否完整可执行。",
+      "remaining_comments": 0,
+      "unresolved": [],
+      "evidence": ".runtime/skill-cold-reader-fresh/novel-writing/round-02",
+      "frozen_sha256": "8817a19795a549c882a7c9de8435369cc481b6564dbffe95b862d90e9a7b6067",
+      "read_complete_sha256": "504db19c498d2569f69a2e8c38605db7c34999c4619c871b89191604b5e60260",
+      "decision_sha256": "d5032d81c78bd760c10a19c236cb31fc63c5f9e50240b964ee8854a9dc4baf51"
+    },
+    {
+      "round": 3,
+      "units": 22,
+      "contexts": 23,
+      "native_inferences": 23,
+      "decision": "keep",
+      "rationale": "已完整读回22个单位及FINISH，逐项对照入口、选择条件和两组原创例子。本轮无COMMENT或WATCH；读者能说明小说不限于可拍动作，区分场景/概述的适用条件、限知/全知的信息边界及心理距离变化，也准确跟随改口承认错户名和兄长同行的主体。恢复、采用与本次版本的关系正确，研究来源的实际阅读边界没有被扩大。全文保留，实际操作是否顺畅仍由后续隔离小说样例验证，不以本轮无问题代替实践。",
+      "finish": "已完整读完。目的、关键概念、选择条件和判断依据清楚，短例能帮助首次执行者理解场景取舍、视角与心理距离。人类读者能理解选择理由，AI 能辨认输入、推进顺序和检查要求；具体保存、采用与交付操作由指定项目入口和工作流承接。初读记录没有遗留疑问，最终未发现需要批注的逻辑矛盾或明确理解障碍。",
+      "remaining_comments": 0,
+      "unresolved": [],
+      "evidence": ".runtime/skill-cold-reader-fresh/novel-writing/round-03",
+      "frozen_sha256": "602d0cb3376a1b4eac389205e159787c9db48aaed503cebd62944f2000e7c2a7",
+      "read_complete_sha256": "17a9be8438021709b5a3287a4936612a995ef0ad9744fe031258704927acc8f0",
+      "decision_sha256": "ade6f723e9db2cba1c8c39bb03b9c05ebc58728bdbe57dc7f8921407088c2f38"
+    },
+    {
+      "round": 4,
+      "units": 22,
+      "contexts": 23,
+      "native_inferences": 23,
+      "decision": "keep",
+      "rationale": "已逐条读回22个正文单位和全文结算。读者准确复述了取得准确依据、选择叙述视角、场景与概述的取舍、心理距离、保存回读及采用边界；补账例中的发言者、决定同行与账目尚未改正也分清。人类读者可跟随例子的具体选择，AI可定位外部小说作者入口。无未决COMMENT或WATCH；相关操作本轮未实践，保留到独立样例验证。完整稿保持，进入第五轮。",
+      "finish": "已读正文的目的、概念、执行顺序与检查依据衔接清楚，配套短例能帮助首次使用者理解不同写法的适用条件。此前没有未决困惑，完读后未发现需要批注的逻辑矛盾或理解障碍。具体保存、恢复和完本交付另有项目文件承接；这些文件未在本次开放，相关操作细则未作核验。",
+      "remaining_comments": 0,
+      "unresolved": [],
+      "evidence": ".runtime/skill-cold-reader-fresh/novel-writing/round-04",
+      "frozen_sha256": "9cb6a59548ba0cacee805aca10dbd816df351e747448e0fe886849ef591d040b",
+      "read_complete_sha256": "f3e940dca5d26867aeb30a63ca71fbfc0d236a8b7aebb75e198d748d4858b3e2",
+      "decision_sha256": "cb03ae4141f4c0fb75cd4e2a5e8de0d80b2841a376c660156e6851faa37f9857"
+    },
+    {
+      "round": 5,
+      "units": 22,
+      "contexts": 23,
+      "native_inferences": 23,
+      "decision": "keep",
+      "rationale": "已在当前独立协调者上下文全文读回22个正文单位与FINISH，读者对方法目的、准确入口、视角知识边界、场景与概述、心理距离、动作心理对白配合、保存回读与采用流程均理解一致；短例的责任变化和说话人清楚，研究依据与未读部分也有清楚界限。无未决COMMENT或WATCH。对人类读者，例子与取舍依据可连贯阅读；对AI，操作入口与产物边界明确。保留完整两文件。第五轮结束后的实际小说小样另行执行，不能将本文理解验收写成小说质量获用户认可。",
+      "finish": "已读完方法正文与配套短例。目的、概念、取舍条件和检查依据衔接清楚，短例帮助首次执行者理解怎样作出写作判断。此前没有待追踪疑问，完读后未发现明确的逻辑或理解障碍。具体操作与交付细则由文中指定的项目入口承接，这些外部文件未在本轮核验。",
+      "remaining_comments": 0,
+      "unresolved": [],
+      "evidence": ".runtime/skill-cold-reader-fresh/novel-writing/round-05",
+      "frozen_sha256": "ac1afeda42107834faadef3e482db8d87dad59aa17602289bccc3ac5179493e6",
+      "read_complete_sha256": "1f2b369a94983dd47778ebf04e7e5b6025eb811870fa19e6ddd6a147faebaa5d",
+      "decision_sha256": "5d8e63497be2e9bfa62c3a2b682bc5e231424d4183d8138e68cbaf46ddd55b85"
+    }
+  ],
+  "reader_model": "gpt-6-astra",
+  "reader_effort": "max",
+  "reviser_model": "gpt-6-astra",
+  "reviser_effort": "max",
+  "reviser_session": "01a1346f-7915-7a40-b676-864edb334ecc",
+  "native_contexts": 115,
+  "native_inferences": 115,
+  "removed_empty_directories": 115,
+  "last_material_revision_has_been_read": true,
+  "human_user_study": false,
+  "formal_publication": false,
+  "work_sample": {
+    "source": ".runtime/skill-cold-reader-fresh/novel-writing/sample/seed.json",
+    "source_sha256": "2829e500cc6cb5bb77895e686af551d0180f84b1b5b85354ef9243df6c4b4bd6",
+    "output": "production/reports/task-20261013-0010/samples/novel-writing.md",
+    "verification": {
+      "method": {
+        "object_id": "method.skill.novel-writing",
+        "revision_id": "36fe2ff9ec56351f72637916443dbfeb3c014449fb27cd42bd34a8187f12d95a"
+      },
+      "execution": {
+        "object_id": "method.execution.16f17168ec9192392d66f06fda04600fd6d2d9aedb6a71b37c06fc05256cddcd",
+        "revision_id": "c94a6563a53072bf22e801bdf344a6d12a3205ddec393e93beb445b8bc14b20d"
+      },
+      "stages": {
+        "draft": {
+          "object_id": "method.artifact.8d8554a77ee0152ebf4ed7ba0993e1571dca698fa477ad0dda8c61309fd87a34",
+          "revision_id": "1ece10d653bfb368aaa904203c08ffd8e01f4e215ed3df1eb394684998929a0e"
+        },
+        "review": {
+          "object_id": "method.artifact.742b49351bab7bb1ba5685039b8626205586c9dd53fcd0ae7e5e65af6b83ede5",
+          "revision_id": "c407b98623596de2c904020920dee33f67c285da4e73f5a5be87e47aa6647799"
+        },
+        "result": {
+          "object_id": "method.artifact.0c1f73cbdad9b72ceda1584eb19a5d571b6791edd688e484d24356da5eb869cb",
+          "revision_id": "58544c7b280aa4e13ad4d1c9fe54fa570fe2642acb7c7c77a909eaadbef38f25"
+        }
+      },
+      "accepted": {
+        "revision": "2bf9555906f7d8a0ad5eb69928d6782e4a8251e134c9f045b699c0bb2608d747",
+        "status": "ACCEPTED"
+      },
+      "fragments": 1,
+      "characters": 1186,
+      "exact_result_readback": true,
+      "formal_writes": false,
+      "human_approval": false,
+      "whole_novel_completed": false
+    },
+    "drafts": 3,
+    "rejected_before_acceptance": 2,
+    "review": ".runtime/skill-cold-reader-fresh/novel-writing/sample/acceptance.json",
+    "review_sha256": "415e6374fe9e7d0991aaff9f06e67d11ac7fd6c88f2810ba7560fb6f296f2e14",
+    "output_sha256": "2414d52323a86d4a18cea60e21489f8954e765d6e3c2dd1b261222a272bcdc65"
+  },
+  "binding_and_readback": ".runtime/skill-cold-reader-fresh/novel-writing/isolated-edit/verification.json",
+  "history_cleanup_pending": true
+}

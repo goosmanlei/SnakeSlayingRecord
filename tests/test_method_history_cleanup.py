@@ -114,6 +114,74 @@ class MethodHistoryCleanupTest(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, '范围外数据：comments'):
             cleanup.compare(before, self.store.db_path, plan)
 
+    def release_package(self, advance=False):
+        from scripts import method_migration
+        candidate = self.store
+        if advance:
+            from review_desk.store import Store
+            path = Path(self.tmp.name)/'candidate/.runtime/review.sqlite3'
+            cleanup.snapshot(self.store.db_path, path)
+            candidate = Store.open_existing(path)
+            self.addCleanup(candidate.close)
+            old = self.heads['method.skill.story-structure']
+            payload = copy.deepcopy(old['payload'])
+            payload['files']['SKILL.md'] += 'A separately reviewed final improvement.\n'
+            new = self.methods.save(candidate, {'category':'skill', 'name':'story-structure',
+                'expected_version':old['version'], 'payload':payload})
+            self.methods.save(candidate, {'category':'binding', 'name':'example-story-structure',
+                'expected_version':2, 'payload':{'work_type':'example-story-structure',
+                    'rules':[{**self.methods.reference(new), 'when':{}}]}})
+        registry = method_migration.configuration_registry(candidate)
+        plan = cleanup.build_plan(candidate)
+        latest = cleanup.retained_registry(registry, plan)
+        before = self.dump()
+        package = cleanup.prepare_release(self.store.db_path, registry, latest)
+        self.assertEqual(self.dump(), before, 'preparing a package must only read the live instance')
+        return package, latest
+
+    def test_publication_retry_never_reinstalls_deleted_versions_or_removes_new_work(self):
+        package, latest = self.release_package(advance=True)
+        directory = Path(self.tmp.name) / 'release'
+        result = cleanup.apply_release(self.store.db_path, package, latest, directory)
+        # The prior version-2 comment is now historical after version 3 lands.
+        self.assertEqual(result['cleanup']['counts']['comments'], 2)
+        new = self.prepare('after-publication')
+        before_retry = self.dump()
+        self.assertEqual(cleanup.apply_release(self.store.db_path, package, latest, directory), result)
+        self.assertEqual(self.dump(), before_retry)
+        self.assertEqual(self.methods.read(self.store, new['object_id']), new)
+        self.assertEqual(self.store.db.execute('SELECT count(*) FROM revisions WHERE object_id=?',
+                                             ('method.skill.story-structure',)).fetchone()[0], 1)
+        self.assertEqual(self.methods.read(self.store, 'method.skill.story-structure')['version'], 3)
+
+    def test_publication_resumes_committed_cleanup_before_receipt_snapshot(self):
+        package, latest = self.release_package()
+        directory = Path(self.tmp.name) / 'interrupted-release'
+        real_snapshot = cleanup.snapshot
+        def interrupted_snapshot(database, path):
+            if path.name == 'cleaned.sqlite3':
+                raise ValueError('injected evidence interruption')
+            return real_snapshot(database, path)
+        with patch.object(cleanup, 'snapshot', side_effect=interrupted_snapshot):
+            with self.assertRaisesRegex(ValueError, 'evidence interruption'):
+                cleanup.apply_release(self.store.db_path, package, latest, directory)
+        self.assertIsNone(self.store.comment(self.old_comment['id']))
+        result = cleanup.apply_release(self.store.db_path, package, latest, directory)
+        self.assertEqual(result['cleanup']['counts']['execution'], 1)
+        cleanup.compare(directory/'configuration-after.sqlite3', directory/'cleaned.sqlite3', package['plan'])
+
+    def test_publication_candidate_mismatch_and_stale_comment_refuse_deletion(self):
+        package, latest = self.release_package()
+        wrong = copy.deepcopy(latest)
+        wrong['records'].pop()
+        with self.assertRaisesRegex(ValueError, '准确最新版'):
+            cleanup.verify_release_package(package, wrong)
+        self.comment(self.old['method.skill.story-structure'])
+        before = self.dump()
+        with self.assertRaisesRegex(ValueError, '已变化'):
+            cleanup.apply_release(self.store.db_path, package, latest, Path(self.tmp.name)/'stale-release')
+        self.assertEqual(self.dump(), before)
+
 
 if __name__ == '__main__':
     unittest.main()
