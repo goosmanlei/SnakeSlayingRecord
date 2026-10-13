@@ -129,13 +129,27 @@ def release_name(task, story_candidate, system_candidate):
 
 def prepare(a):
     task=getattr(a,'task',TASK)
+    history_package = getattr(a, 'method_history_package', None)
+    read_only_system = getattr(a, 'read_only_system', False)
+    if read_only_system:
+        require(task == 'task-20261013-0010' and a.system_candidate == a.system_target
+                and not getattr(a, 'push_system', False),
+                'task 0010 may only reuse the unchanged read-only system commit')
+    if history_package:
+        require(task == 'task-20261013-0010' and getattr(a, 'method_registry', None)
+                and not any(getattr(a, key, None) for key in ('audiovisual_package', 'relations_package',
+                    'review_retirement_package', 'production_current_package', 'method_file_history', 'remove_material_versions')),
+                'method history cleanup is task 0010 only, with its exact method registry and no other data migration')
     release_id=release_name(task,a.story_candidate,a.system_candidate)
     story,system=a.story_worktree.resolve(),a.system_worktree.resolve()
     sm,gm=base.primary(story),base.primary(system)
+    require(not read_only_system or system == gm, 'read-only system must be its actual main checkout')
     native=None
     if re.fullmatch(r'task-[0-9]{8}-[0-9]{4}', task):
         import task_repository_delivery
-        if task_repository_delivery.uses_native_backend(sm,task):
+        if read_only_system:
+            native=task_repository_delivery.freeze_primary(sm,task,story,system,a.story_candidate,a.system_candidate)
+        elif task_repository_delivery.uses_native_backend(sm,task):
             native=task_repository_delivery.freeze(sm,task,story,system,a.story_candidate,a.system_candidate)
     base.repo_check(story,sm,a.story_candidate,a.story_target)
     base.repo_check(system,gm,a.system_candidate,a.system_target,system=True)
@@ -182,6 +196,18 @@ def prepare(a):
                 method_migration.check_registry(json.loads(raw))
             paths[key] = 'methods/' + key + '.json'; put(paths[key], raw)
         managed_methods = paths
+    history_cleanup = None
+    if history_package:
+        original = history_package if history_package.is_absolute() else story / history_package
+        require(not original.is_symlink() and original.is_file()
+                and (story / '.runtime').resolve() in original.resolve().parents,
+                'reviewed method history package must be an owned task runtime file')
+        package_path = 'methods/history-cleanup.json'
+        put(package_path, original.read_bytes())
+        result = json.loads(run([sys.executable, story/'scripts/method_history_cleanup.py',
+            '--system', system, 'verify-release', '--package', root/package_path,
+            '--latest-registry', root/managed_methods['registry']]))
+        history_cleanup = {'package': package_path, **result}
     latest = None
     if getattr(a, 'audiovisual_package', None):
         require(a.latest_registry, 'latest migration requires exact registry')
@@ -310,6 +336,7 @@ def prepare(a):
     put('build/Dockerfile',('FROM '+tag+'\nRUN rm -rf /app/review_desk\nCOPY review_desk /app/review_desk\nLABEL org.opencontainers.image.revision='+a.system_candidate+'\n').encode())
     helpers=['material_review_release.py','autonomous_optimization_release.py','integrate_generation_review_system.py']
     if managed_methods:helpers.append('method_migration.py')
+    if history_cleanup:helpers.append('method_history_cleanup.py')
     if native:helpers.append('task_repository_delivery.py')
     if getattr(a,'method_file_history',False):helpers.extend(['method_file_history.py','method_migration.py'])
     if getattr(a,'remove_material_versions',False):helpers.extend(['material_version_removal.py','method_migration.py'])
@@ -332,6 +359,7 @@ def prepare(a):
     if media_mount:m['previous_method_media']=method_directory_hashes(media_mount['Source'])
     if native:m['task_delivery']=native
     if managed_methods:m['managed_methods']=managed_methods
+    if history_cleanup:m['method_history_cleanup']=history_cleanup
     if latest:m['latest_state_migration']=latest
     if relations:m['unified_relation_migration']=relations
     if retirement:m['review_retirement']=retirement
@@ -516,6 +544,7 @@ def apply(a):
         require(proxy in (m['previous_nginx'],expected_proxy),'another proxy runtime is active')
         before=receipt/'before.sqlite3'
         method_change = m.get('managed_methods')
+        method_system = root/'build' if m.get('task_delivery', {}).get('read_only_system') else m['system_main']
         if m.get('method_file_history'):
             require(sha((root/'helpers/method_file_history.py').read_bytes())==m['hashes']['helpers/method_file_history.py'],'file history helper changed')
             require(exact_candidate or base.safe_container(current)==m['previous_app'],'another app is active')
@@ -601,10 +630,10 @@ def apply(a):
         else:
             require(file_sha256(before)==read(receipt/'before.json')['sha256'],'before snapshot changed')
             require(exact_candidate or base.safe_container(current)==m['previous_app'],'another runtime is active; recover or prepare again')
-        if method_change:
+        if method_change and not m.get('method_history_cleanup'):
             cutoff=receipt/('method-cutoff-'+str(time.time_ns())+'.sqlite3')
             base.snapshot(Path(m['story_main'])/'.runtime/review.sqlite3',cutoff)
-            result = json.loads(run([sys.executable, root/'helpers/method_migration.py', '--system', m['system_main'],
+            result = json.loads(run([sys.executable, root/'helpers/method_migration.py', '--system', method_system,
                                      'apply', '--database', Path(m['story_main'])/'.runtime/review.sqlite3',
                                      '--registry', root/method_change['registry'], '--activate-media']))
             save(receipt/'method-migration.json', result)
@@ -612,6 +641,20 @@ def apply(a):
             base.snapshot(Path(m['story_main'])/'.runtime/review.sqlite3',migrated)
             evidence = method_migration.compare(cutoff,migrated,read(root/method_change['registry']))
             save(receipt/'method-preservation.json',evidence)
+        cleaned_baseline = None
+        if m.get('method_history_cleanup'):
+            require(m['task'] == 'task-20261013-0010' and method_change, 'unexpected method cleanup task')
+            helper = root/'helpers/method_history_cleanup.py'
+            require(sha(helper.read_bytes()) == m['hashes']['helpers/method_history_cleanup.py'], 'method cleanup helper changed')
+            result = json.loads(run([sys.executable, helper, '--system', method_system, 'apply-release',
+                '--database', Path(m['story_main'])/'.runtime/review.sqlite3',
+                '--package', root/m['method_history_cleanup']['package'],
+                '--latest-registry', root/method_change['registry'], '--receipts', receipt/'method-history']))
+            save(receipt/'method-history-cleanup.json', result)
+            cleaned_baseline = Path(result['cleaned_database'])
+            require(cleaned_baseline.resolve() == (receipt/'method-history/cleaned.sqlite3').resolve(),
+                    'cleanup preservation baseline escaped its receipt directory')
+            save(receipt/'method-migration.json', read(receipt/'method-history/configuration-migration.json')['migration'])
         if m.get('method_file_history'):
             command=[sys.executable,root/'helpers/method_file_history.py','--system',m['system_main'],'--database',Path(m['story_main'])/'.runtime/review.sqlite3']
             result=json.loads(run([*command,'migrate']))
@@ -630,7 +673,7 @@ def apply(a):
         after=receipt/('after-'+str(time.time_ns())+'.sqlite3');base.snapshot(Path(m['story_main'])/'.runtime/review.sqlite3',after)
         cache_migration=m.get('database_changes',{}).get('format')=='transactional-read-cache-v1'
         require(not cache_migration or m['task']=='task-20261006-0005','unexpected database migration task')
-        evidence=preserved(before,after,allow_method_file_history=bool(m.get('method_file_history')),allow_read_generations=cache_migration,allow_cache_token_updates=bool(m.get('method_file_history') or method_change or m.get('latest_state_migration') or m.get('unified_relation_migration') or m.get('review_retirement') or m.get('production_current')))
+        evidence=preserved(cleaned_baseline or before,after,allow_method_file_history=bool(m.get('method_file_history')),allow_read_generations=cache_migration,allow_cache_token_updates=bool(m.get('method_file_history') or method_change or m.get('latest_state_migration') or m.get('unified_relation_migration') or m.get('review_retirement') or m.get('production_current')))
         database_runtime=None
         if cache_migration:
             live_db=(Path(m['story_main'])/'.runtime/review.sqlite3').resolve()
@@ -639,13 +682,15 @@ def apply(a):
             require(database_runtime['journal_mode']=='delete','reviewed DELETE journal mode changed')
         base.update_image_aliases(m,image)
         result={'status':'formal_browser_pending','service':service,'release':str(release),'rows':evidence,'business_delta':None if method_change or m.get('latest_state_migration') or m.get('unified_relation_migration') or m.get('review_retirement') or m.get('production_current') or m.get('material_version_removal') else 0,'method_migration':read(receipt/'method-migration.json') if method_change else None,'material_version_removal':read(receipt/'material-removal.json') if m.get('material_version_removal') else None,'system_candidate':m['system_candidate'],'push':False,'complete_invoked':False,
-                'database_changes':m.get('database_changes'),'database_runtime':database_runtime}
+                'database_changes':m.get('database_changes'),'database_runtime':database_runtime,
+                'method_history_cleanup':read(receipt/'method-history-cleanup.json') if m.get('method_history_cleanup') else None}
         save(receipt/('service-'+str(time.time_ns())+'.json'),result);print(json.dumps(result,ensure_ascii=False))
 
 
 def recover(a):
     root,m=authorized(a);image=read(root/'image.json');release=Path(m['story_main'])/'.runtime/service-releases'/m['release_name']
     with base.publication_locks(m):
+        require(not m.get('method_history_cleanup'), 'method history was explicitly cleared: recover forward; never restore old method data')
         require(not m.get('material_version_removal'), 'material versions were physically removed: recover forward with schema 14; do not restore removed data')
         require(not m.get('production_current'), 'current production: recover forward with the exact compatible package; never restart a version-chain writer or restore the retired database')
         require(not m.get('latest_state_migration'), 'latest data contract applied: recover forward with the exact current package; never restore an old database or incompatible image')
@@ -717,6 +762,7 @@ def main():
     p=argparse.ArgumentParser(description=__doc__);sub=p.add_subparsers(dest='command',required=True)
     q=sub.add_parser('prepare');q.add_argument('--story-worktree',type=Path,default=Path(__file__).resolve().parents[1]);q.add_argument('--system-worktree',type=Path,required=True);q.add_argument('--bundle',type=Path,required=True)
     q.add_argument('--task',default=TASK);q.add_argument('--push-system',action='store_true')
+    q.add_argument('--read-only-system',action='store_true',help='task 0010: integrate only the primary story repository and reuse unchanged system main')
     q.add_argument('--audiovisual-package',type=Path);q.add_argument('--latest-registry',type=Path)
     q.add_argument('--relations-package',type=Path)
     q.add_argument('--review-retirement-package',type=Path)
@@ -724,6 +770,7 @@ def main():
     q.add_argument('--method-file-history',action='store_true',help='derive exact independent file histories without changing existing records')
     q.add_argument('--remove-material-versions',action='store_true',help='physically remove retired material versions without retaining a backup')
     q.add_argument('--method-registry',type=Path);q.add_argument('--method-audit',type=Path)
+    q.add_argument('--method-history-package',type=Path,help='task 0010 reviewed one-time cleanup package; committed registry contains only retained configuration')
     for name in ('story-candidate','system-candidate','story-target','system-target'):q.add_argument('--'+name,required=True)
     for cmd in ('build','preflight','apply','recover','publish-system'):
         q=sub.add_parser(cmd);q.add_argument('--bundle',type=Path,required=True)

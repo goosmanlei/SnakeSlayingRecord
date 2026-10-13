@@ -15,6 +15,59 @@ import integrate_generation_review_system as legacy
 
 
 class TaskDeliveryTests(unittest.TestCase):
+    def test_story_only_delivery_keeps_exact_system_checkout_read_only(self):
+        with tempfile.TemporaryDirectory() as temp:
+            owner = Path(temp)/'story'
+            story = owner/'.codex-task/worktrees/task-20261013-0010'
+            system = Path(temp)/'desk'
+            story.mkdir(parents=True)
+            system.mkdir()
+            def git(*args):
+                return subprocess.run(['git','-C',str(system),*args], check=True,
+                                      capture_output=True,text=True).stdout.strip()
+            git('init','--initial-branch=main')
+            git('config','user.name','Isolated test')
+            git('config','user.email','test@example.invalid')
+            source = system/'source.txt'
+            source.write_text('exact read-only system\n')
+            git('add','source.txt')
+            git('commit','-m','fixture')
+            commit = git('rev-parse','HEAD')
+            record = self.record()
+            del record['repositories']['desk']
+            del record['repository_preparation']['desk']
+            record['repository_management'] = 'native'
+            record['repositories']['primary']['worktree']['path'] = str(story.relative_to(owner))
+            with patch.object(adapter,'command',return_value=['task']), patch.object(adapter,'query',return_value=record):
+                value = adapter.freeze_primary(owner,'task-20261013-0010',story,system,'a'*40,commit)
+                real_run = subprocess.run
+                calls = []
+                def command(argv, **kwargs):
+                    calls.append(argv)
+                    if argv[0] == 'task':
+                        self.assertIn('_deliver', argv)
+                        record['repositories']['primary']['integration']['phase']='applied'
+                        record['repositories']['primary']['git_delivery']['phase']='pushed'
+                        return subprocess.CompletedProcess(argv,0,'','')
+                    self.assertEqual(argv[:3],['git','-C',str(system.resolve())])
+                    self.assertIn(argv[3],('rev-parse','branch','status'))
+                    return real_run(argv,**kwargs)
+                with patch.object(adapter.subprocess,'run',side_effect=command):
+                    result=adapter.apply(value)
+                self.assertEqual(result['target_after'],commit)
+                self.assertEqual(git('rev-parse','HEAD'),commit)
+                self.assertEqual(sum(cmd[0]=='task' for cmd in calls),1)
+                self.assertEqual(set(value['repositories']),{'primary'})
+                with self.assertRaisesRegex(ValueError,'no Git push'):
+                    adapter.push_receipt(value)
+                source.write_text('changed by another task\n')
+                with self.assertRaisesRegex(ValueError,'dependency changed'):
+                    adapter.validate(value)
+                source.write_text('exact read-only system\n')
+                record['repositories']['desk']={'mode':'write'}
+                with self.assertRaisesRegex(ValueError,'scope changed'):
+                    adapter.validate(value)
+
     def record(self):
         entries = {}
         for key, candidate in [('primary', 'a'*40), ('desk', 'b'*40)]:

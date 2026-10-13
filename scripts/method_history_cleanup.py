@@ -6,11 +6,19 @@ never attribute old creative results to a new method. Future history is enabled.
 """
 import argparse
 import copy
+from contextlib import closing
+import hashlib
 import json
 from pathlib import Path
 import re
 import sqlite3
 import sys
+import tempfile
+
+try:
+    from . import method_migration
+except ImportError:
+    import method_migration
 
 TASK = 'task-20261013-0010'
 FORMAT = 'method-history-cleanup-v1'
@@ -307,6 +315,158 @@ def compare(before, after, plan):
             'operation_provenance_only': len(plan['operation_changes'])}
 
 
+def retained_registry(registry, plan):
+    """Derive the committed latest configuration, without storing another copy."""
+    from review_desk import methods
+    BASELINES = method_migration.BASELINES
+    result = copy.deepcopy(registry)
+    result.pop('sha256', None)
+    result.pop(BASELINES, None)
+    removed = set(plan['remove_revisions'])
+    result['records'] = [row for row in result['records'] if row['revision_id'] not in removed]
+    first = {}
+    for row in sorted(result['records'], key=lambda row: (row['object_id'], row['version'])):
+        first.setdefault(row['object_id'], row)
+    starts = {oid: {'version': row['version'], 'revision_id': row['revision_id']}
+              for oid, row in first.items() if row['version'] > 1}
+    if starts:
+        result[BASELINES] = starts
+    result['sha256'] = methods.checksum(result)
+    method_migration.check_registry(result)
+    return result
+
+
+def verify_release_package(package, latest):
+    from review_desk import methods
+    require(package.get('format') == 'method-history-release-v1' and package.get('task') == TASK,
+            '不是本任务的历史清理发布包')
+    require(methods.checksum({k: v for k, v in package.items() if k != 'sha256'}) == package.get('sha256'),
+            '清理发布包摘要不匹配')
+    plan = package['plan']
+    require(plan.get('format') == FORMAT and plan.get('task') == TASK
+            and methods.checksum({k: v for k, v in plan.items() if k != 'sha256'}) == plan.get('sha256'),
+            '发布包的准确清理方案不匹配')
+    method_migration.check_registry(package['install_registry'])
+    require(methods.checksum({k: v for k, v in package['install_registry'].items() if k != 'sha256'})
+            == package['install_registry'].get('sha256'), '安装配置摘要不匹配')
+    require(retained_registry(package['install_registry'], plan) == latest,
+            '清理结果不是候选提交中的准确最新版配置')
+    require(package.get('latest_registry_sha256') == latest['sha256'], '最新配置摘要不同')
+    return {'task': TASK, 'sha256': package['sha256'], 'plan_sha256': plan['sha256'],
+            'latest_registry_sha256': latest['sha256'], 'counts': plan['counts']}
+
+
+def snapshot(database, destination):
+    require(not destination.exists(), '不能覆盖已有清理核对快照')
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    with closing(sqlite3.connect(Path(database).resolve().as_uri() + '?mode=ro', uri=True)) as source:
+        with closing(sqlite3.connect(destination)) as target:
+            source.backup(target)
+
+
+def prepare_release(database, install_registry, latest):
+    """Read the live cutoff into a disposable copy; never write the live DB."""
+    from review_desk import methods
+    from review_desk.store import Store
+    with tempfile.TemporaryDirectory(prefix='method-cleanup-plan-') as temp:
+        copy_path = Path(temp) / '.runtime/review.sqlite3'
+        snapshot(database, copy_path)
+        method_migration.apply(copy_path, install_registry)
+        store = Store.open_readonly(copy_path)
+        try:
+            plan = build_plan(store)
+            actual_registry = method_migration.configuration_registry(store)
+        finally:
+            store.close()
+        # The installation package must include any current outside definitions
+        # unchanged; a stale task copy cannot silently drop a concurrent method.
+        require(actual_registry == install_registry, '正式配置与安装包不同，先吸收准确当前配置')
+    package = {'format': 'method-history-release-v1', 'task': TASK,
+               'install_registry': install_registry, 'plan': plan,
+               'latest_registry_sha256': latest['sha256']}
+    package['sha256'] = methods.checksum(package)
+    verify_release_package(package, latest)
+    return package
+
+
+def apply_release(database, package, latest, receipt_directory):
+    """Called only by the publisher after stopping its exact application.
+
+    A committed cleanup receipt prevents a retry from reinstalling removed
+    versions. Each pre-service preservation boundary has an exact local copy;
+    the publisher subsequently compares the cleaned copy with the live result.
+    These copies are temporary verification resources, never recovery inputs.
+    """
+    from review_desk.store import Store
+    verify_release_package(package, latest)
+    directory = Path(receipt_directory)
+    directory.mkdir(parents=True, exist_ok=True)
+    plan = package['plan']
+
+    def file_hash(path):
+        digest = hashlib.sha256()
+        with path.open('rb') as stream:
+            for chunk in iter(lambda: stream.read(1024 * 1024), b''):
+                digest.update(chunk)
+        return digest.hexdigest()
+
+    def saved_snapshot(name):
+        path = directory / (name + '.sqlite3')
+        note = directory / (name + '.json')
+        if not path.exists():
+            snapshot(database, path)
+            digest = file_hash(path)
+            note.write_text(json.dumps({'sha256': digest}) + '\n')
+        else:
+            require(note.is_file(), '快照保存中断，需核对已有文件后恢复：' + str(path))
+            digest = file_hash(path)
+            require(json.loads(note.read_text()) == {'sha256': digest}, '清理核对快照被改变')
+        return path
+
+    store = Store.open_readonly(Path(database))
+    try:
+        old = store.db.execute('SELECT * FROM production_current_operations WHERE id=?',
+                               (TASK + '-method-history-cleanup',)).fetchone()
+        if old:
+            require(old['request_sha256'] == plan['sha256'], '已执行的清理方案不同')
+            cleanup_receipt = json.loads(old['result'])
+    finally:
+        store.close()
+    if not old:
+        before = saved_snapshot('configuration-before')
+        migration = method_migration.apply(database, package['install_registry'])
+        migrated = saved_snapshot('configuration-after')
+        config_evidence = method_migration.compare(before, migrated, package['install_registry'])
+        (directory / 'configuration-migration.json').write_text(json.dumps(
+            {'migration': migration, 'preservation': config_evidence}, ensure_ascii=False, indent=2) + '\n')
+        store = Store.open_existing(Path(database))
+        try:
+            cleanup_receipt = apply_plan(store, plan)
+        finally:
+            store.close()
+    else:
+        require(all((directory / (name + '.sqlite3')).is_file()
+                    for name in ('configuration-before', 'configuration-after')),
+                '已清理但缺少原始核对快照，不能重新安装历史')
+        migrated = saved_snapshot('configuration-after')
+    cleaned_path = directory / 'cleaned.sqlite3'
+    if not cleaned_path.exists():
+        # Remove freed pages only after the exact transaction has committed.
+        # A failed compaction can be resumed without repeating the deletion.
+        with closing(sqlite3.connect(database)) as db:
+            db.execute('VACUUM')
+            require(db.execute('PRAGMA integrity_check').fetchone()[0] == 'ok', '压实后数据库损坏')
+    cleaned = saved_snapshot('cleaned')
+    preservation = compare(migrated, cleaned, plan)
+    actual = method_migration.export_configuration(cleaned)
+    require(actual == latest, '清理后的配置与候选最新版不同')
+    result = {'cleanup': cleanup_receipt, 'preservation': preservation,
+              'cleaned_database': str(cleaned), 'latest_registry_sha256': latest['sha256'],
+              'temporary_snapshots': 3, 'recovery': 'forward-only; never restore old snapshots'}
+    (directory / 'result.json').write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n')
+    return result
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--system', type=Path, required=True)
@@ -321,10 +481,32 @@ def main():
     check.add_argument('--before', type=Path, required=True)
     check.add_argument('--after', type=Path, required=True)
     check.add_argument('--plan', type=Path, required=True)
+    release = sub.add_parser('prepare-release')
+    release.add_argument('--database', type=Path, required=True)
+    release.add_argument('--install-registry', type=Path, required=True)
+    release.add_argument('--latest-registry', type=Path, required=True)
+    release.add_argument('--output', type=Path, required=True)
+    for name in ('verify-release', 'apply-release'):
+        release = sub.add_parser(name)
+        release.add_argument('--package', type=Path, required=True)
+        release.add_argument('--latest-registry', type=Path, required=True)
+        if name == 'apply-release':
+            release.add_argument('--database', type=Path, required=True)
+            release.add_argument('--receipts', type=Path, required=True)
     args = parser.parse_args()
     sys.path.insert(0, str(args.system.resolve()))
     from review_desk.store import Store
-    if args.action == 'compare':
+    if args.action == 'prepare-release':
+        package = prepare_release(args.database, json.loads(args.install_registry.read_text()),
+                                  json.loads(args.latest_registry.read_text()))
+        with args.output.open('x') as stream:
+            stream.write(json.dumps(package, ensure_ascii=False, indent=2) + '\n')
+        result = {'sha256': package['sha256'], 'counts': package['plan']['counts'], 'output': str(args.output)}
+    elif args.action in ('verify-release', 'apply-release'):
+        package, latest = json.loads(args.package.read_text()), json.loads(args.latest_registry.read_text())
+        result = (verify_release_package(package, latest) if args.action == 'verify-release'
+                  else apply_release(args.database, package, latest, args.receipts))
+    elif args.action == 'compare':
         result = compare(args.before, args.after, json.loads(args.plan.read_text()))
     else:
         store = (Store.open_readonly if args.action == 'plan' else Store.open_existing)(args.database)

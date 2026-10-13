@@ -162,7 +162,7 @@ python3 scripts/method_migration.py --system PATH_TO_DESK export \
   --output content/managed-method-registry.json
 ```
 
-明确清理旧 SKILL 历史后，配置包用 `configuration_history_baselines` 记录每个对象首次保留的准确版号和修订。最新方法仍保留原身份，例如第 8 版不会伪装成第 1 版；以后改稿继续追加下一版。空实例恢复这类配置包使用项目入口：
+明确清理旧 SKILL 历史后，配置包用 `configuration_history_baselines` 记录每个对象首次保留的准确版号和修订。最新方法整包仍保留原身份，例如整包第 8 版不改称第 1 版；以后改稿继续追加下一版。独立文件历史则按保留的整包重新生成，清理后的文件序号从 1 开始，准确正文与所属整包不变。空实例恢复这类配置包使用项目入口：
 
 ```bash
 python3 scripts/method_migration.py --system PATH_TO_DESK apply \

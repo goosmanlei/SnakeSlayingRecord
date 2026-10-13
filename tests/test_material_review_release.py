@@ -21,6 +21,17 @@ import task_repository_delivery as delivery
 import method_migration
 
 class ReleaseTest(unittest.TestCase):
+    def test_method_history_cleanup_cannot_expand_task_or_combine_other_migrations(self):
+        for task, extra in (('task-20261013-0011', {}),
+                            ('task-20261013-0010', {'remove_material_versions': True}),
+                            ('task-20261013-0010', {'production_current_package': Path('other.json')})):
+            args = argparse.Namespace(task=task, method_history_package=Path('history.json'),
+                                      method_registry=Path('registry.json'), **extra)
+            with self.subTest(task=task, extra=extra), patch.object(r, 'inspect') as inspect:
+                with self.assertRaisesRegex(ValueError, 'task 0010 only'):
+                    r.prepare(args)
+                inspect.assert_not_called()
+
     def test_handbook_release_rejects_unrelated_page_or_metadata_changes(self):
         old = {'schema_version': 2, 'tabs': [{'id': 'vision', 'title': 'keep'},
                                           {'id': 'video-handbook', 'title': 'old'}]}
