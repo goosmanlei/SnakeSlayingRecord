@@ -106,7 +106,7 @@
 - 剧情选段到准确全场已完成双仓最新主干上的隔离实读：M1134/S039 的补词与核字因果、ST268/S004 的还米因果可读并返回原用途或状态；原引用、草稿、历史和迟到请求保持准确。实操及夹具边界见 [剧情选段验收](production/source-excerpt-context/VERIFICATION.md)；正式生效、3000 原路只读复走及清理以 task-20261009-0026 实际回执为准，根独立 Review 尚未执行。
 
 - 作品为方向三《把灯带回家》、故事结构第十稿、精修九定稿候选与用户已确认的剧本版本四。准确制作来源锁定于 [production/source-lock.json](production/source-lock.json)；故事创作域与评论保留。
-- 当前交付包含 [全剧视听设计](production/audiovisual/README.md)：17 集、42 故事场、65 视听场、344 镜，全部 1114 个正文块有准确表达范围。新设计支持每镜多需求、每需单份当前方案和多个真实候选、关系路线、准确原件及区域／时间选择。技术验证不代表用户接受新设计或声音质量。
+- 当前交付包含 [全剧视听设计](production/audiovisual/README.md)：17 集、42 故事场、65 视听场、344 镜，全部 1114 个正文块有准确表达范围。每镜可有多项需求，每需保存单份当前方案、多个真实候选及关系路线；当前生成参考选择准确候选与完整原件，原件区域／时间仍可用于意见定位。技术验证不代表用户接受新设计或声音质量。
 - 生产制作包含视听制作、实体管理、素材管理；故事剧本可回查两条制作来源链。专业正文保留 [视频生成手册](production/seedance-video-handbook.md) 与 [影视专业知识](production/filmcraft/README.md)，沿制作思路的基础流程 SKILL 文件树连续阅读。五页归位、阶段产出和静态概览已本机正式验收，完整导出恢复与准确历史读取见 [统一入口验收](production/approach-foundation/VERIFICATION.md)。当前身份以实例配置和任务发布回执为准；负责人独立复验仍由负责人承接。
 - 镜头视频方案已按 [逐场输入审查](production/audiovisual/video-inputs.json) 区分普通参考与固定起点，并补充镜内后显内容的直接依据；方案、原件选定和实际效果分别审阅。交付核验及正式回读按 [输入契约验收](production/audiovisual/video-inputs-verification.md) 与任务回执定位。
 - 全剧必要准确文字已逐集复核，11份可编辑工程沿原镜头素材入口交接；正确旧图继续复用，字层不迁移既有认可。原词、揭示与未定字句见 [文字交接](production/audiovisual/text-review.md)，发布与实际验收按任务 `task-20261009-0010` 回执及 [复验入口](production/audiovisual/text-verification.md) 核对。
