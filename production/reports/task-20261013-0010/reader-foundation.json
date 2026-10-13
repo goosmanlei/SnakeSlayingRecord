@@ -1372,5 +1372,27 @@
       "protected_five_reader_packages_equal": true
     },
     "verified_at": "2026-10-13T16:22:32.058+00:00"
+  },
+  "video_timeline_requirement": {
+    "source": "本会话用户直接补充",
+    "original": "镜头的视频Prompt要有对应的格式约束，目前的Prompt没有镜头内的时间线故事板演绎，这是很大的问题，这轮修正的时候要重点注意这个问题",
+    "required_result": "镜头内时间线故事板成为实际提交 Prompt 的必需结构，在视频方法、唯一手册模板及相邻镜头样例中一致落实。",
+    "format_content": [
+      "从0到计划总长的时间段",
+      "按时间推进的可见动作和状态变化",
+      "机位和构图的延续或变化",
+      "同期声音及准确台词的发生点和交叠",
+      "结束状态与下一镜的承接"
+    ],
+    "constraints": [
+      "段数由实际事件决定，持续动作可只有一段；不机械均分，不凭空添加动作或台词。",
+      "时间是执行预算，不能声称模型已能精确执行秒点。",
+      "本轮已冻结输入不修改；整项读完后分离修订，修订稿安排完整复读。",
+      "历史实际调用 Prompt 原文保留；新教学文本标明尚未调用。"
+    ],
+    "evidence_path": ".runtime/skill-cold-reader-fresh/video-timeline-user-requirement.json",
+    "evidence_sha256": "928500b9803ceaf0258298194c8d78bb43ea31a1f1e97936496cb35d728087bf",
+    "status": "REQUIREMENT_AND_DRAFT_NOT_FINAL_ACCEPTANCE",
+    "boundary": "需求已进入视频方法、手册与相邻镜准备稿；最终完整复读、准确方法样例及正式交付仍须分别验收。"
   }
 }
