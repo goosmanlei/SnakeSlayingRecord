@@ -1,0 +1,26 @@
+{
+  "name": "aheng-opening",
+  "file": ".runtime/material-reference-rationality/audio-review/aheng-opening.wav",
+  "range": {
+    "start_seconds": 0.18,
+    "end_seconds": 7.14
+  },
+  "original_sha256": "dcd331048e40bb4bf5ed6b4aaa96e86852f80339094ce4bc6512c57d03476e4c",
+  "clip_sha256": "567c86d7e2a367490d32ce72c114a01e239e1f1b36b7ffe11d3b769986cda75d",
+  "command": [
+    "/opt/homebrew/bin/arkcli",
+    "+understand",
+    "asr",
+    "--model",
+    "ep-20261009153507-rncvv",
+    "--input",
+    "@.runtime/material-reference-rationality/audio-review/aheng-opening.wav",
+    "--max-output-tokens",
+    "500",
+    "--thinking",
+    "disabled",
+    "--format",
+    "json",
+    "只转写附件实际唱出的字，不能按常见歌词补全；不清楚写[不清]。"
+  ]
+}
