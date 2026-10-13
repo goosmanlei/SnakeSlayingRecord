@@ -1,0 +1,104 @@
+{
+  "object_id": "method.skill.comment-polish-clear",
+  "title": "评论表达润色",
+  "version": 4,
+  "revision_id": "4d97ba2f30807eba0a6846d07ebac7795e731d2145e644e1b9b1c36b94fe8f37",
+  "valid_rounds": 5,
+  "required_minimum": 5,
+  "status": "reading_and_isolated_sample_passed_keep_current_content",
+  "source_files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "07120b27cc0719f0822e597a6501868f8365b71c386c8b883aac233188038ae3",
+      "characters": 520
+    }
+  ],
+  "rounds": [
+    {
+      "round": 1,
+      "reading_units": 6,
+      "finish": "输入、整理动作、核对要求和交付边界衔接清楚，对单句评论和上下文不足也有处理原则。已读记录没有遗留困惑，读完后未发现妨碍首次执行的逻辑或表述问题。",
+      "decision": "keep",
+      "rationale": "原文支持读者本轮理解：标题与说明交代用于整理用户已有评论；正文明确输入，先区分判断、提问和诉求，再按需整理并逐句核对，最后交付由用户决定采用和发布的干净草稿。整理顺序用“可以”限定，单句评论有保留原则，指代信息不足时禁止擅换目标；不新增诉求、不改作品和不自动发送的职责边界也清楚。未发现妨碍首次执行的具体缺口，保留原稿。",
+      "evidence": ".runtime/skill-cold-reader-fresh/comment-polish-clear/round-01",
+      "frozen_sha256": "c3aff55287ce18478bf8d20640a00694f13ee6851020e9bd4ccbb8ed535e4814",
+      "decision_sha256": "54d90ae080ed0602f5fe6a6943577fc87dc37721ca4ea15dc33409183cd935b5"
+    },
+    {
+      "round": 2,
+      "reading_units": 6,
+      "finish": "输入、整理步骤、核对要求和交付边界衔接清楚，可据此执行。初读没有需要追踪的困惑，读完后未发现仍成立的逻辑或可读性问题。",
+      "decision": "keep",
+      "rationale": "第2轮逐段理解准确对应原文：P003说明评论、对象及必要上下文并区分判断/提问/诉求；P004给出可选整理顺序和单句保留，限制判断增强与背景丢失；P005要求逐句忠实核对且不转为作品改写；P006交付一份用户草稿、不自行发布。读者未把可选顺序误解为强制模板，也未把准确对象视为额外审批。全文结算无遗留疑惑；核对准确原稿后没有应通过改写解决的实质缺口，保留完整520字符原稿。",
+      "evidence": ".runtime/skill-cold-reader-fresh/comment-polish-clear/round-02",
+      "frozen_sha256": "8850353e0aea1ecf83ef466f340e24deea4e59e95de35669d19dd4b6dce5bdb0",
+      "decision_sha256": "e5c6afc32cd7c1947280cd9f908dc61d7950558c577f267ec707d69f8981f07a"
+    },
+    {
+      "round": 3,
+      "reading_units": 6,
+      "finish": "已读完全部6段。输入要求、整理动作、核对标准和交付方式衔接清楚，保留语气、判断强度、不确定性及用户决定权的边界明确。此前未记录困惑，最终未发现妨碍首次理解或执行的问题。",
+      "decision": "keep",
+      "rationale": "第3轮读者在P004把整理理解为按原评论需要调整句子和结构，未把示例顺序扩张为强制字段；P005理解为忠实核对并禁止猜换指代目标；P006明确结果回到用户草稿。对照完整原稿，这些理解均有直接文字支持，且任务只需整理表达，不需要新增作品审查、解释分析或审批环节。六段读完和全文结算均无遗留疑惑，维持原稿。",
+      "evidence": ".runtime/skill-cold-reader-fresh/comment-polish-clear/round-03",
+      "frozen_sha256": "01dce41a1f60e3accb7e0b37ded70dd8d448676f901926cd595f68a4a1778f5a",
+      "decision_sha256": "cfaedbc106200474e264781ddd7411d7addd0ae97443d0431b3f56bf7294f798"
+    },
+    {
+      "round": 4,
+      "reading_units": 6,
+      "finish": "已读完全文。输入、整理动作、核对要求与交付边界衔接清楚，指代不明时也有明确处理原则，首次执行者能够据此开展润色。此前未记录初读困惑，最终未发现仍成立的逻辑或理解障碍。",
+      "decision": "keep",
+      "rationale": "第4轮准确理解了必要上下文与关键指代不足时的处理：依据当前原文保留含义，不凭相似段落换目标；整理后的逐句核对不触发作品审查，交付也不代发或代同意。原文已经给出执行动作和检查标准，单句、专业背景和限制均可保留。读者全文结算没有未解决问题，也没有把润色扩展成另一个创作/审批步骤；本轮不作实质或机械修改。",
+      "evidence": ".runtime/skill-cold-reader-fresh/comment-polish-clear/round-04",
+      "frozen_sha256": "192be4189d7b03f54d579db18eb85b4ac29418c1496132c81b27bd4dd31bcc96",
+      "decision_sha256": "98711c848979f7f3b00344256e412de9640046853e12e3876e327d8c3f8046fd"
+    },
+    {
+      "round": 5,
+      "reading_units": 6,
+      "finish": "输入、整理动作、核对标准和交付方式衔接清楚，遇到上下文不足时的处理边界也有说明。首次阅读未留下需要补清的逻辑或表达问题。",
+      "decision": "keep",
+      "rationale": "第5轮从元数据到全文结算均准确理解原稿的工作链：只整理已表达的意思，以评论/对象/必要上下文为输入，按需整理并逐句核对，交回一份由用户决定采用发布的干净评论。读者保留了不确定性、单句处理和上下文不足边界，未提出仍成立的问题。完整源与前四轮一致；没有需要实质修订的证据，维持准确原文，已满足本项五轮阅读要求。可执行性另用真实用户反馈的隔离润色样例检验，不以五轮替代该检查。",
+      "evidence": ".runtime/skill-cold-reader-fresh/comment-polish-clear/round-05",
+      "frozen_sha256": "6a97cc48764ffda7c5c4f6536e8fca0598116400782b4cc2dbd5d38d2228cc86",
+      "decision_sha256": "769f733f8c0efbbf6e3eb61f6dd2ba6c3cb867041616732a51bcbc282336e590"
+    }
+  ],
+  "work_sample": {
+    "status": "executed_and_read_back_in_isolation",
+    "model": "gpt-6-astra",
+    "effort": "max",
+    "executor_session": "01a1346f-7915-7a40-b676-864edb334ecc",
+    "input_sha256": "04809fca605074872a2ecc2226ef15f20c4766d559cfc74ef1dc490c23651e71",
+    "output_sha256": "5f8779c14f32b530bad84bc6e4c460c5203026d577b342edeeccc5591cef708f",
+    "input_comment": "你不用去看听理解当前的多媒体资料，需要的地方可以重新生成",
+    "actual_output": "本任务不需要看听理解现有多媒体资料；需要的地方可以重新生成。\n",
+    "checks": [
+      {
+        "requirement": "保留当前媒体看听理解的豁免",
+        "evidence": "原文“不用去看听理解当前的多媒体资料”对应“不需要看听理解现有多媒体资料”，含义未增强或减弱。"
+      },
+      {
+        "requirement": "保留有需要时可以重新生成的许可语气",
+        "evidence": "“需要的地方可以重新生成”逐字保留，未改成必须生成或全部重做。"
+      },
+      {
+        "requirement": "仅补足已有准确对象的指代",
+        "evidence": "“本任务”来自输入中明确的 task-20261013-0010，未换成其他作品或全部未来任务。"
+      },
+      {
+        "requirement": "交付单份简短草稿",
+        "evidence": "输出一行，未附另一套建议、收费说明、审批或发布动作。"
+      }
+    ],
+    "formal_comment_saved": false,
+    "external_message_sent": false,
+    "new_media_generated": false,
+    "limitation": "这是明确对象下的一次真实文本润色样例；不表示已验证正式评论界面或媒体生成效果。"
+  },
+  "substantive_changes": false,
+  "before_after": "五轮未发现需要实质修订的理解或执行障碍；原文保留，不编造旧句缺陷或修改收益。",
+  "formal_publication": false,
+  "remaining_for_overall_task": "其余十八项、联动样例、准确版本导出恢复与最终受管交付仍待完成。"
+}
