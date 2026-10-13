@@ -809,9 +809,64 @@
         "prefix_sha256": "855b126995b4faa0867fa2c47f237236fd4b7e650a9a334d84804d9a1bc90dfa",
         "rationale": "Observed prefix items 0–4 exactly equal already reviewed 10bcf643 prefix; item 5 exactly equals already reviewed dce906c8 prefix. No other bytes changed.",
         "reinvocations": 0
+      },
+      {
+        "item": "story-structure",
+        "round": "round-04",
+        "unit": 16,
+        "audit_sha256": "a3349597d0c9cc557eae02aa906ff235db980b390530d1ba71d73011239a2585",
+        "prefix_sha256": "31ffe538df820a2b68d948f74b5a4995decceca8144e45b1d40a84c9d1a05ff8",
+        "rationale": "Generic AGENTS now links browser/model/work-resource detail policies and combines clean-draft wording; no project source or author decisions added. Four prefixes are byte-identical. The current-production variant additionally has 32 plugin skill entries and prefix-only truncation of 285 existing descriptions; names and file paths of existing entries are unchanged, all other content exact. Actual event, model, response and preceding-context checks pass.",
+        "reinvocations": 0
+      },
+      {
+        "item": "novel-writing",
+        "round": "round-01",
+        "unit": 4,
+        "audit_sha256": "92cf6f475369a59b3859e6af74d1c6ec4fded929e17c8dd28a7ea3947160907e",
+        "prefix_sha256": "31ffe538df820a2b68d948f74b5a4995decceca8144e45b1d40a84c9d1a05ff8",
+        "rationale": "Generic AGENTS now links browser/model/work-resource detail policies and combines clean-draft wording; no project source or author decisions added. Four prefixes are byte-identical. The current-production variant additionally has 32 plugin skill entries and prefix-only truncation of 285 existing descriptions; names and file paths of existing entries are unchanged, all other content exact. Actual event, model, response and preceding-context checks pass.",
+        "reinvocations": 0
+      },
+      {
+        "item": "filmcraft",
+        "round": "round-01",
+        "unit": 138,
+        "audit_sha256": "6b6caadaa061c61f81997291a034ea266459197446b81db9f9db5d054e1c4388",
+        "prefix_sha256": "31ffe538df820a2b68d948f74b5a4995decceca8144e45b1d40a84c9d1a05ff8",
+        "rationale": "Generic AGENTS now links browser/model/work-resource detail policies and combines clean-draft wording; no project source or author decisions added. Four prefixes are byte-identical. The current-production variant additionally has 32 plugin skill entries and prefix-only truncation of 285 existing descriptions; names and file paths of existing entries are unchanged, all other content exact. Actual event, model, response and preceding-context checks pass.",
+        "reinvocations": 0
+      },
+      {
+        "item": "video-handbook",
+        "round": "round-01",
+        "unit": 113,
+        "audit_sha256": "32bea78351f26ae985193e73cfa29de4e41cf9ce7ebdb756d6eb928f6b02f4a0",
+        "prefix_sha256": "31ffe538df820a2b68d948f74b5a4995decceca8144e45b1d40a84c9d1a05ff8",
+        "rationale": "Generic AGENTS now links browser/model/work-resource detail policies and combines clean-draft wording; no project source or author decisions added. Four prefixes are byte-identical. The current-production variant additionally has 32 plugin skill entries and prefix-only truncation of 285 existing descriptions; names and file paths of existing entries are unchanged, all other content exact. Actual event, model, response and preceding-context checks pass.",
+        "reinvocations": 0
+      },
+      {
+        "item": "current-production",
+        "round": "round-03",
+        "unit": 13,
+        "audit_sha256": "cb826897256bc51373c8f8bcc3cb1e46a03d0f66877f8a9668268e43484b21b2",
+        "prefix_sha256": "8d1a6996cabdc99608cee70d8b3acdbb998953de4222683b0febaff62c0f5f96",
+        "rationale": "Generic AGENTS now links browser/model/work-resource detail policies and combines clean-draft wording; no project source or author decisions added. Four prefixes are byte-identical. The current-production variant additionally has 32 plugin skill entries and prefix-only truncation of 285 existing descriptions; names and file paths of existing entries are unchanged, all other content exact. Actual event, model, response and preceding-context checks pass.",
+        "reinvocations": 0
       }
     ],
-    "adapter_sha256": "e9ae4326139e95a937b46b3d93265338f5a4806cbbcff71785d77184f5c673ff"
+    "adapter_sha256": "874cc6846b1cd696b8bf869831f003f22ffa673dfe52cf076b14e745fd676158",
+    "latest_manual_comparison": {
+      "at": "2026-10-13T11:18:07.858584+00:00",
+      "generic_policy_diff": ".runtime/skill-cold-reader-fresh/video-handbook/round-01/step-0113/prefix-diff.txt",
+      "new_exact_prefixes": [
+        "31ffe538df820a2b68d948f74b5a4995decceca8144e45b1d40a84c9d1a05ff8",
+        "8d1a6996cabdc99608cee70d8b3acdbb998953de4222683b0febaff62c0f5f96"
+      ],
+      "model_policy_read": "/Users/bytedance/.codex/policies/model-calls.md",
+      "reader_operations": 0
+    }
   },
   "dual_audience_requirement": {
     "task": "task-20261013-0010",
