@@ -1,8 +1,12 @@
 # 当前状态与下一步
 
+- task-20261013-0004 已实现参考小卡候选预览、准确选择、失败重试和并发恢复，隔离Chrome及数据保护通过；双仓受管正式交付、3000只读验收、最终正式完整导出新空实例复走及资源处置以任务账本和主项目 `.runtime/task-receipts/task-20261013-0004/` 回执核对。操作与验证边界见 [候选小卡验收](production/reference-candidate-picker/VERIFICATION.md)；负责人独立Review仍开放，两仓工作区退出当前TUI释锁后受管退役。
+
 - task-20261012-0013 已实现流程式 SKILL 阅读、独立文件历史、实体关系图及小说创作入口；素材分类及方法分支由后续 0016 统一维护。正式 MV 清除、方法增量与 Schema 14 空实例恢复已实测；最终双仓、服务与清理按主任务账本及 `.runtime/task-20261012-0013/final/` 回执核对。负责人独立 Review 和旧 Python 测试迁移残留单独登记，详见 [验收记录](production/skill-admin-data-model/VERIFICATION.md)。
 
 ## 当前成果与运行依据
+
+- task-20261013-0003 已实现实体／镜头／素材大卡一次建立、稳定占位、原卡重试及迟到保护；隔离Chrome覆盖M2974→M2623／M2544、Prompt、关系图和素材管理，以及准确候选、原件、评论草稿与嵌套返回。前后连续画面和实际验证边界见 [大卡稳定加载验收](production/stable-material-dialog/VERIFICATION.md)；准确双仓、本机3000、最终正式导出空实例复走及资源回读以任务账本和主项目 `.runtime/task-receipts/task-20261013-0003/` 为准。负责人独立Review单列；在用双仓工作区退出TUI释锁后由本任务受管退役。
 
 - task-20261013-0002 已实现素材默认全量、分类／结果在上、具体场下按镜筛选；隔离Chrome完成准确返回、窄屏、失败重试及迟到响应保护。准确双仓、本机正式服务及最终导出恢复以任务账本和主项目 `.runtime/task-receipts/task-20261013-0002/` 回执核对；具体前后例和既有测试边界见 [素材范围验收](production/material-scope-filter/VERIFICATION.md)。负责人独立Review另行承接，在用双仓工作区退出TUI释锁后受管退役。
 
