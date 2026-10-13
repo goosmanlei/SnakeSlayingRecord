@@ -240,7 +240,7 @@
   "handoff": "两份方法源已完成五轮，本次保持不变。更新的受管 JSON 与人类报告由主协调提交；样例保持未发布，最终方法交付与清理由主协调负责。",
   "evidence_directory": ".runtime/skill-cold-reader-fresh/task-definition-publish",
   "evidence_paths_base": "report.md and work-sample/* are relative to evidence_directory; production/* and skills/* are relative to the story project root",
-  "report_sha256": "56ff4210fb6157df73544432763a570e1b58e4b72ce1eccb930442e20370c822",
+  "report_sha256": "fbec3d1240063f178ada9abdbf4ad68cb5f1e399591ac613f411eedb456a36e3",
   "before_after_example": {
     "before": "授权、保护内容、输入锁和影响成败的约束不能省略。",
     "reader_issue": "输入锁没有定义，不知道锁的是哪些输入和何时可改。",
@@ -252,5 +252,13 @@
     "ai": "要求准确依据、范围、取舍、产出和受管回读。",
     "human_participant_study": false
   },
-  "sample_updated_at": "2026-10-13T20:25:45.938444+00:00"
+  "sample_updated_at": "2026-10-13T20:25:45.938444+00:00",
+  "frozen_evidence_sources": {
+    "production/reports/task-20261013-0010/history-cleanup.md": {
+      "repository": "primary",
+      "commit": "2659530f38dd4dc3761ea401178927b2db51aa84",
+      "sha256": "80bf712b8f266998c3b76299ed724cbce39c2d6f82d901f70c3c0915898f95d6",
+      "reason": "该报告在样例完成后只重组了当前阶段说明；已执行样例仍采用此准确历史输入，不把新说明回填为当时输入。"
+    }
+  }
 }
