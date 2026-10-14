@@ -514,16 +514,26 @@ def record_revision(directory, decision_path, rollout_path):
                    "revision must contain the whole same package")
     changed = {name: changed[name] for name in original}
     reader.require((changed == original) == (decision["decision"] == "keep"), "decision/content mismatch")
-    events = [json.loads(line) for line in rollout_path.read_text().splitlines()]
-    metadata = next(v["payload"] for v in events if v["type"] == "session_meta")
-    turns = [v for v in events if v["type"] == "turn_context"]
-    reader.require(turns and turns[-1]["payload"]["model"] == MODEL and turns[-1]["payload"]["effort"] == EFFORT,
+    metadata, last_turn = None, None
+    rollout_digest = hashlib.sha256()
+    # The long-running coordinator's rollout grows across every completed round.
+    # Verify the whole file without retaining its unrelated messages in memory.
+    with rollout_path.open("rb") as stream:
+        for line in stream:
+            rollout_digest.update(line)
+            event = json.loads(line)
+            if event["type"] == "session_meta" and metadata is None:
+                metadata = event["payload"]
+            elif event["type"] == "turn_context":
+                last_turn = event
+    reader.require(metadata is not None, "revision session metadata is missing")
+    reader.require(last_turn and last_turn["payload"]["model"] == MODEL and last_turn["payload"]["effort"] == EFFORT,
                    "actual revision context is not Astra/max")
     reader_threads = [json.loads((directory / ("step-%04d" % i) / "audit.json").read_text())["thread_id"]
                       for i in range(1, state["accepted_units"] + 1)]
     reader.require(metadata["id"] not in reader_threads, "reviser shares a reader context")
-    save_json(directory / "revision-context.json", {"session_meta": metadata, "turn_context": turns[-1],
-              "rollout_path": str(rollout_path), "rollout_sha256_at_decision": sha(rollout_path.read_bytes())})
+    save_json(directory / "revision-context.json", {"session_meta": metadata, "turn_context": last_turn,
+              "rollout_path": str(rollout_path), "rollout_sha256_at_decision": rollout_digest.hexdigest()})
     report = {"status": "ROUND_VALID", "decision": decision["decision"], "rationale": decision["rationale"],
               "unresolved": decision["unresolved"], "next_files": changed,
               "changed_paths": [name for name in original if original[name] != changed[name]],
