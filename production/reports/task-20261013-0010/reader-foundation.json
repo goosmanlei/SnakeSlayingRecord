@@ -2009,5 +2009,39 @@
     "new_automatic_retry": false,
     "reboot_cause": "unknown",
     "source_scope": "Resource observation and sequencing only; no change to cold-reader inputs, audit or model."
+  },
+  "filmcraft_round04_separate_revision": {
+    "path": ".runtime/skill-cold-reader-fresh/filmcraft/round-04/coordinator-progress-exposure.json",
+    "sha256": "553e65a43fc86ef427c9fb7c08ed67fe893da5458d8ea3c7f38d8e18ccbf335e",
+    "fresh_context": {
+      "thread_id": "01a13b21-c3c3-7aa0-b05a-182d7ca50d18",
+      "native_inferences": 1,
+      "native_events": 12,
+      "audit_path": ".runtime/skill-cold-reader-fresh/filmcraft/round-04/semantic-context/audit.json",
+      "audit_sha256": "59c573747347323fd6ed2af37ac853f196b759295694ac1a3208cec72d247250",
+      "full_source_files": 16,
+      "all_body_understandings": 355,
+      "all_issue_histories": true,
+      "finish": true
+    },
+    "reader_contamination": false,
+    "partial_revision": false,
+    "final_revision_decision_sha256": "7ec6847c001c5f8ab763fb4bf9347ee9e5b25b26815c0cda7c61f7a00314a8ac",
+    "status": "RESOLVED_WITH_FRESH_FULL_REVIEW_AND_SOURCE_VERIFICATION"
+  },
+  "native_prefix_20261015_date": {
+    "only_change": "Generic native current_date advanced from 2026-10-14 to 2026-10-15; two observed catalogue variants each equal a previously approved prefix after restoring that single date.",
+    "existing_answers_reaudited": 2,
+    "new_requests_for_recovery": 0,
+    "receipts": [
+      {
+        "path": ".runtime/skill-cold-reader-fresh/filmcraft/round-05/native-prefix-date.json",
+        "sha256": "19fc551959e5f84f60f54e8a405da25f6a7cbcbbf04d0c751d71e38ccd6dccff"
+      },
+      {
+        "path": ".runtime/skill-cold-reader-fresh/filmcraft/round-05/native-prefix-date-0002.json",
+        "sha256": "1fcc939ffa7613f71ecf0b64291739bb0215f1c5d92e529624dcd457cacf87fc"
+      }
+    ]
   }
 }

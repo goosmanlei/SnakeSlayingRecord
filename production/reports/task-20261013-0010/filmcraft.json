@@ -1,8 +1,8 @@
 {
   "task": "task-20261013-0010",
   "item": "filmcraft",
-  "status": "ROUND_04_READING",
-  "valid_complete_rounds": 3,
+  "status": "ROUND_05_READING",
+  "valid_complete_rounds": 4,
   "rounds": [
     {
       "round": 1,
@@ -65,23 +65,65 @@
       "revision_decision_sha256": "bdc8c975d6ca214ab92a46165bc6bc0d6e4d4bc1a2b7cc723c17699975841ce5",
       "semantic_review_sha256": "bd77ad128f6a9c7b7a8dfbb1fd28f6ec8ee1173d6a42ed0741afdd1ddf1a630f",
       "evidence_directory": ".runtime/skill-cold-reader-fresh/filmcraft/round-03"
+    },
+    {
+      "round": 4,
+      "body_units": 355,
+      "reader_contexts": 356,
+      "native_inferences": 360,
+      "native_events": 4280,
+      "decision": "revise",
+      "changed_paths": [
+        "production/filmcraft/04-camera.md",
+        "production/filmcraft/sources.md"
+      ],
+      "rationale": "依据全新修订上下文的全文判断及原始资料核查，补清七秒经验的量取对象和适用条件；第五轮完整复读后再判断末稿。",
+      "unresolved": [],
+      "frozen_sha256": "37914c11ecfe1fbd0ea11e18cc1c2f989cf6aaf142acc9a3b30104f8fb823bca",
+      "read_complete_sha256": "8340be860945d11432e0277503427eefbf3ab82fed28754d1803ee81cb8d1228",
+      "revision_decision_sha256": "7ec6847c001c5f8ab763fb4bf9347ee9e5b25b26815c0cda7c61f7a00314a8ac",
+      "semantic_review_sha256": "8a767a11df47802b5d4785a71af7bb2b26c24d3b7256472deacb86a728e344c0",
+      "evidence_directory": ".runtime/skill-cold-reader-fresh/filmcraft/round-04",
+      "fresh_semantic_context": {
+        "thread_id": "01a13b21-c3c3-7aa0-b05a-182d7ca50d18",
+        "native_inferences": 1,
+        "native_events": 12,
+        "audit_path": ".runtime/skill-cold-reader-fresh/filmcraft/round-04/semantic-context/audit.json",
+        "audit_sha256": "59c573747347323fd6ed2af37ac853f196b759295694ac1a3208cec72d247250",
+        "full_source_files": 16,
+        "all_body_understandings": 355,
+        "all_issue_histories": true,
+        "finish": true
+      },
+      "source_verification": {
+        "path": ".runtime/skill-cold-reader-fresh/filmcraft/round-04/source-verification.json",
+        "sha256": "1553fa79993a0be622afc8b5cf28abb8e664f9cedb62be865097224e4cc742ae"
+      },
+      "source_metadata_derivation": {
+        "path": ".runtime/skill-cold-reader-fresh/filmcraft/round-04/source-metadata-derivation.json",
+        "sha256": "7b4f22ada993b983465871b081723ffd2478c417dd19890889874fdbd945c63c"
+      },
+      "coordinator_exposure_resolved": {
+        "path": ".runtime/skill-cold-reader-fresh/filmcraft/round-04/coordinator-progress-exposure.json",
+        "sha256": "553e65a43fc86ef427c9fb7c08ed67fe893da5458d8ea3c7f38d8e18ccbf335e"
+      }
     }
   ],
-  "reader_contexts": 1509,
-  "native_inferences": 1551,
-  "native_events": 18192,
+  "reader_contexts": 1865,
+  "native_inferences": 1911,
+  "native_events": 22472,
   "reader_model": "gpt-6-astra",
   "reader_effort": "max",
   "reviser_model": "gpt-6-astra",
   "reviser_effort": "max",
-  "index_readback_at": "2026-10-14T11:08:34.026618+00:00",
+  "index_readback_at": "2026-10-14T16:11:53.429533+00:00",
   "frozen_settlement_audit_chain_and_event_hashes_equal": true,
   "current_candidate_files": {
     "production/filmcraft/README.md": "1190bb09a7a7f11d67e389219b549c7154af98d610338bb0a008b952687bd10d",
     "production/filmcraft/01-narrative.md": "7f1cc6ccf7691e13a4897caf02dddd92d8dd0a4d38949bb47d9c251aafd93749",
     "production/filmcraft/02-coverage.md": "e421607e919b29b960ba6cafeaded1798a8b0e06b5812ae10d5642c1b4fcce4c",
     "production/filmcraft/03-cinematography.md": "0f4b4152b807cbbf8f9a3a15d3b8b065adbf10f3e6459d5b8cc433a0af9d4223",
-    "production/filmcraft/04-camera.md": "dd501e6e29f1bf54581bc1ec03a0b850b2e3ceb31fe7d1b3ade6ec91b84b6542",
+    "production/filmcraft/04-camera.md": "3a28d47631b7ee39a5a00c060f3f53f98f56fe559ccc57d11ad0cdcb24e6af19",
     "production/filmcraft/05-staging.md": "25114856e31f4fabe69931720121a6d2acbb527839de5c554edc9dc094641285",
     "production/filmcraft/06-lighting.md": "7fcf03079486ac3fda2dbdd930bf9e27b95a58f388cd7ae29d6e2c1b082d4086",
     "production/filmcraft/07-color.md": "1f229fa48d1fb7011d1f0617e532e4ffe74b2d576c061e13921dfe7f473ec7d0",
@@ -92,19 +134,20 @@
     "production/filmcraft/12-animation-ai.md": "44e601338c611f64d37693407f6a9d8f70606b6a4cfb2cac367b69b0f01fbe11",
     "production/filmcraft/applications.md": "2f8fcd218a4d319f108c122e94ffcd886d1914574216c841627250d29e2dd7fc",
     "production/filmcraft/quick-reference.md": "f3fa0be8be12db826d3660a46c1baefb4506848c58f6a589e75eddd12fad19c7",
-    "production/filmcraft/sources.md": "f90aec903f14ec32109997fc22a52f58bd68531e68b2240f2edd67a78028d40f"
+    "production/filmcraft/sources.md": "c2ce796120b3bc36d3ead13d7df3ba7bcfbdc54253ed963dd688a1efdc3b34af"
   },
   "current_round": {
-    "round": 4,
+    "round": 5,
     "body_units": 355,
     "files": 16,
-    "frozen_sha256": "37914c11ecfe1fbd0ea11e18cc1c2f989cf6aaf142acc9a3b30104f8fb823bca",
-    "source_package_sha256": "a8dd3d2d6c7a92021681a30d97a4eb9f61820859f7a4d96dfae2352833a7afd7",
-    "reading_units_sha256": "7dda8bbd23de1505b2afff26d5df48ef0f4c826bce16631d8706d73bcb30a2f3",
+    "characters": 75543,
+    "frozen_sha256": "1e29370cde0c90a35b49000c516669118f158ca02fb6af66942a62f0e15bf3c6",
+    "source_package_sha256": "4e5bdba9cab786d7bb5d493ba2e105e798548a40a99b44367136c55a6805c77a",
+    "reading_units_sha256": "7165465600a0e2ce19e17437a56ffc27606c6d5e9a569c91e0141c07b5a7dd4f",
     "not_counted_as_valid": true,
     "reader_started": true
   },
-  "canonical_source_written_back": true,
+  "canonical_source_written_back": false,
   "stable_resource_projection": false,
   "final_sample_complete": false,
   "formal_publication": false,
@@ -117,6 +160,7 @@
     "path": ".runtime/skill-cold-reader-fresh/filmcraft/round-03/canonical-writeback.json",
     "sha256": "4d44793fdfc056159cdd0ea328f656651f771c2afa25247e9a163437ea3c5c05"
   },
-  "last_material_revision_has_been_read": true,
-  "minimum_rounds_remaining": 2
+  "last_material_revision_has_been_read": false,
+  "minimum_rounds_remaining": 1,
+  "canonical_writeback_scope": "The existing round-03 receipt covers the previous candidate. The new round-04 camera paragraph and SP21 metadata remain pending a complete round-05 reread."
 }
