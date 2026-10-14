@@ -522,13 +522,13 @@
 
 **Color FAQ** — ARRI。
 
-发表或适用时间：未标日期；读取页面同时含LogC3与LogC4条目；读取时点：2026-10-08。材料类型：官方指南。
+发表或适用时间：未标日期；读取页面同时含LogC3与LogC4条目；读取时点：2026-10-08；2026-10-14 补核。材料类型：官方指南。
 
-[回查原始材料](https://www.arri.com/en/learn/camera-systems/image-science/color-faq)。定位：LogC4转换说明；What is a 1D-LUT?；My images seem to be lacking contrast...；What is Scene Linear?；What is ARRI/ALEXA Wide Gamut?；What is a 3D-LUT?。
+[回查原始材料](https://www.arri.com/en/learn/camera-systems/image-science/color-faq)。定位：LogC4转换说明；What is a 1D-LUT?；My images seem to be lacking contrast...；What is Scene Linear?；What is ARRI/ALEXA Wide Gamut?；What is a 3D-LUT?；What is Color Gamut?；ALF2 与 ALF4 的转换／创作分工及旧 Look 适配 LogC4 的问答。
 
-实际阅读范围：实际读取上述问答；区分历史LogC3示例与新LogC4说明，不转述老接口为当前通用规则。
+实际阅读范围：2026-10-08 实际读取上述 Log 编码、LUT 与 Wide Gamut 问答，区分历史 LogC3 示例与新 LogC4 说明；2026-10-14 补核色域定义、Look 的创作调整与输出转换分工，以及 LogC3 Look 不能直接用于 LogC4 的适用条件。不把旧接口转述为当前通用规则。
 
-支持的判断：编码、色域、观看转换不能混为一谈；LUT具有输入前提，不是无条件风格滤镜；Log直接显示的低反差不等于最终造型。
+支持的判断：编码、色域、观看转换不能混为一谈；LUT具有输入前提，不是无条件风格滤镜；Log直接显示的低反差不等于最终造型；色域、Log 编码、Look 外观与 LUT 映射各有职责；Look 不能等同于一种 LUT 文件。
 
 ## LD20
 
@@ -738,13 +738,13 @@
 
 **R 128: Loudness normalisation and permitted maximum level of audio signals** — European Broadcasting Union。
 
-发表或适用时间：2023-11；v5.0；读取时点：2026-10-08。材料类型：标准发布及正文。
+发表或适用时间：2023-11；v5.0；读取时点：2026-10-08；2026-10-14 补核。材料类型：标准发布及正文。
 
-[回查原始材料](https://tech.ebu.ch/publications/r128)。定位：官网说明正文与版本历史，Programme Loudness、Loudness Range、Maximum True Peak Level。
+[回查原始材料](https://tech.ebu.ch/publications/r128)。定位：官网说明正文与版本历史；[R 128 v5.0 正文](https://tech.ebu.ch/files/live/sites/tech/files/shared/r/r128.pdf)第 4–5 页建议与 Programme Loudness、Loudness Range、Maximum True Peak Level 定义；配套 [EBU Tech 3341 v4.0](https://tech.ebu.ch/files/live/sites/tech/files/shared/tech/tech3341.pdf) 第 2.6 节真峰值测量要求。
 
-实际阅读范围：实际读取官方发布页与版本说明；未声称阅读全文标准 PDF，也未为项目设置交付目标。
+实际阅读范围：2026-10-08 实际读取官方发布页与版本说明，当时未阅读全文标准 PDF；2026-10-14 补读 R 128 v5.0 正文的建议与定义，以及配套 EBU Tech 3341 v4.0 第 2.6 节真峰值测量要求。未据此为本项目设置统一交付目标，未实测声音文件。
 
-支持的判断：−23 LUFS 是该广播建议的节目响度目标；响度、响度范围、真峰值是不同测量维度；不得直接套用到所有平台。
+支持的判断：−23 LUFS 是该广播建议的节目响度目标；响度、响度范围、真峰值是不同测量维度；不得直接套用到所有平台；真峰值对应连续时间波形的最大值，测量须符合相应真峰值算法要求；已记录样本的最大幅度不能代替它。
 
 ## PA18
 
