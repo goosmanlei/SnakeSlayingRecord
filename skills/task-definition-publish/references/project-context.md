@@ -59,7 +59,7 @@
 
 在本次草稿中形成完整目标与验收，用户原始需求完整保留。先把会话媒体逐项对应到用途或省略理由，读取实际需要的原件；必要本地文件通过指令的 `--input-file` 保存，图像、音频不能只保留不可恢复的临时引用。Markdown、JSON等文字证据沿任务规划交付，不伪装成媒体。
 
-通过本次 `_repositories --draft UUID --repository-spec JSON` 原子保存完整仓库范围。对象含 `repositories` 数组和 `complete=true`，每项提供 `name/source/purpose/target/depends_on`；纯主仓使用 `{"repositories":[],"complete":true}`。澄清只登记附属计划，执行领取时工具统一取锁并创建目录。执行中新仓先登记、保存成果，再通过 `run --task TASK_ID` 恢复启用；启用前不写。
+通过本次 `_repositories --draft UUID --repository-spec JSON` 原子保存完整仓库范围。对象含 `repositories` 数组和 `complete=true`，每项提供 `name/source/purpose/target/depends_on`；纯主仓使用 `{"repositories":[],"complete":true}`。澄清只登记附属计划，执行领取时工具统一取锁并创建目录。执行中发现需要新增仓库时，先按本次执行指令登记，保存现有受管工作区的成果，再通过 `run --task TASK_ID` 恢复启用新仓；启用前不向新仓写入。
 
 按本次指令填写登记字段：
 
