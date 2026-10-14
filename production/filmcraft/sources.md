@@ -246,13 +246,13 @@
 
 **Panning Speed Best Practices** — RED Digital Cinema。
 
-发表或适用时间：未标日期；读取时点：2026-10-08。材料类型：厂商摄影技术资料。
+发表或适用时间：未标日期；读取时点：2026-10-08；文字条件复核：2026-10-15。材料类型：厂商摄影技术资料。
 
-[回查原始材料](https://www.reddigitalcinema.com/red-101/camera-panning-speed)。定位：Panning Speed、Other Considerations及seven seconds 条件。
+[回查原始材料](https://www.reddigitalcinema.com/red-101/camera-panning-speed)。定位：摇摄速度、帧率与快门角、摇摄工具，以及其他因素中的主体距离示例。
 
-实际阅读范围：阅读全文；不把经验阈值应用于所有帧率和观看条件。
+实际阅读范围：阅读全文；距离示例的文字描述为相机固定、内容横向运动，不将其概括为原地转向摇摄的远近速度规则。
 
-支持的判断：摇摄顿挫与画内位移及采样相关；七秒建议有条件。
+支持的判断：以画幅位移计时；七秒建议的帧率、快门及观看条件明确，静态场景匀速摇摄仍须按实际观看调整；主体或前后景实际速度不同的镜头须按观看重点检查。
 
 ## SP22
 
