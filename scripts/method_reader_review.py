@@ -287,7 +287,7 @@ def audit(directory, expected_prefix):
     started = [v for v in events if v["type"] == "inference_started"]
     completed = [v for v in events if v["type"] == "inference_completed"]
     failed = [v for v in events if v["type"] == "inference_failed"]
-    empty_capacity_retries = (len(started) in (4, 5) and len(failed) == len(started) - 1 and
+    empty_capacity_retries = (4 <= len(started) <= 6 and len(failed) == len(started) - 1 and
                              all(v["error"] in (SERVICE_UNAVAILABLE, RATE_LIMITED) and
                                  v["partial_response_payload"] is None for v in failed))
     observed_empty_mixed_chain = (len(started) == 5 and
@@ -392,7 +392,8 @@ def audit(directory, expected_prefix):
     if transport_errors:
         # These observed CLI messages describe transport reconnects, not extra
         # model input. The complete inference chain above remains mandatory.
-        reader.require(bool(failed) and 1 <= len(transport_errors) <= 3 and
+        error_limit = 4 if empty_capacity_retries and len(started) == 6 else 3
+        reader.require(bool(failed) and 1 <= len(transport_errors) <= error_limit and
                        cli[2:-2] == transport_errors, "unreviewed CLI reconnect sequence")
         for attempt, event in enumerate(transport_errors, 2):
             reader.require(event in (

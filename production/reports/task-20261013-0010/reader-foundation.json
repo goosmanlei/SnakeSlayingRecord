@@ -1903,6 +1903,73 @@
       "concurrency": 1,
       "next_step": 151,
       "round_credit_from_recovery": 0
+    },
+    "six_capacity_requests": {
+      "source_step": ".runtime/skill-cold-reader-fresh/filmcraft/round-03/step-0164",
+      "native_inferences": 6,
+      "failed_errors": [
+        "503",
+        "503",
+        "429",
+        "503",
+        "503"
+      ],
+      "partial_responses": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "actual_requests_equal_except_transport_timestamp": true,
+      "new_requests_by_coordinator": 0,
+      "accepted_audit_sha256": "63cb50b217336a69c007c270e12362b9bf4a2e0917029163c5b62c1cce7e852c",
+      "accepted_thread_id": "01a139a6-946c-76e0-96ae-d8357e3eb690",
+      "model": "gpt-6-astra",
+      "effort": "max",
+      "checks": {
+        "source_step": "step-0164",
+        "adapter_sha256": "174808d45cfb5d448d143029bf999c7ac3fccedd50acfbe7ba792d276e130344",
+        "protected_reader_sha256": "9ba6de88e652b1623d75a5504b5e8d6fc3886eec4cda4f20a09503b956c0b81a",
+        "cases": [
+          {
+            "case": "accepted_six_capacity_requests",
+            "accepted": true
+          },
+          {
+            "case": "seventh_inference",
+            "accepted": false,
+            "reason": "unreviewed native inference/continuation count"
+          },
+          {
+            "case": "partial_failed_output",
+            "accepted": false,
+            "reason": "unreviewed native inference/continuation count"
+          },
+          {
+            "case": "changed_input",
+            "accepted": false,
+            "reason": "native continuation has unexplained input"
+          },
+          {
+            "case": "fifth_cli_error",
+            "accepted": false,
+            "reason": "unreviewed CLI reconnect sequence"
+          }
+        ],
+        "new_model_calls": 0,
+        "original_checkpoint_unchanged": true,
+        "temporary_cleanup": {
+          "files": 143,
+          "directories": 31,
+          "bytes": 13390094,
+          "all_paths_absent": true
+        }
+      },
+      "checks_sha256": "10002e8fc2e05924a879d5305f52d5b1625c9860f92e75741c0f91b6025fe7f1",
+      "concurrency": 1,
+      "next_step": 165,
+      "round_credit_from_recovery": 0
     }
   }
 }
