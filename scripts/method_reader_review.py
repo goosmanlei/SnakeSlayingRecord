@@ -401,7 +401,7 @@ def audit(directory, expected_prefix):
     reader.write_json(directory / "checkpoint.json", {**state, "status": "AUDITED", "accepted_units": number,
                       "memory": after, "valid_rounds": 0, "last_audit": str(unit / "audit.json"),
                       "last_audit_sha256": sha((unit / "audit.json").read_bytes())})
-    print(json.dumps({"unit": number, "accepted": True, "prefix_sha256": prefix_sha, "result": result}, ensure_ascii=False))
+    print(json.dumps({"unit": number, "accepted": True, "prefix_sha256": prefix_sha}, ensure_ascii=False))
 
 
 def finish_read(directory):
