@@ -1,0 +1,91 @@
+{
+  "task": "task-20261013-0010",
+  "object_id": "method.skill.voice-plan",
+  "status": "THREE_ROUNDS_COMPLETE_FINAL_ROUNDS_AND_SAMPLE_PENDING",
+  "valid_complete_rounds": 3,
+  "reader_model": "gpt-6-astra",
+  "reader_effort": "max",
+  "reviser_model": "gpt-6-astra",
+  "reviser_effort": "max",
+  "rounds": [
+    {
+      "round": 1,
+      "units": 8,
+      "finish_accepted": true,
+      "audited_steps": 9,
+      "native_inference_requests": 9,
+      "decision": "revise",
+      "final_reader_issues": 0,
+      "unresolved_revision_issues": [],
+      "changed_paths": [
+        "SKILL.md"
+      ],
+      "last_material_revision_has_been_read": false,
+      "frozen_sha256": "ea3ec6ac23313406c9133fee8ccb15340438edbd849f6efa14e9aff4f1227300",
+      "read_complete_sha256": "0293590e3d5a5356ff7599b98970ccf625c4c0d5acd454e61d628f5b64a9f5d5",
+      "revision_decision_sha256": "7a8474f5c67057d354bdec959f83a72a9efd785adb71ea231ec21aa9bca66d6f",
+      "evidence_directory": ".runtime/skill-cold-reader-fresh/voice-plan/round-01"
+    },
+    {
+      "round": 2,
+      "units": 10,
+      "finish_accepted": true,
+      "audited_steps": 11,
+      "native_inference_requests": 11,
+      "decision": "keep",
+      "final_reader_issues": 0,
+      "unresolved_revision_issues": [],
+      "changed_paths": [],
+      "last_material_revision_has_been_read": true,
+      "frozen_sha256": "7d6ac2c9dba341704c8fa5ebf1fe2c63c6369191418aa08ef7c791130b096ffc",
+      "read_complete_sha256": "3444a2dfabab4dcdc199ee98a2ee3ce15c18d45c3842dda5a9e030c874e64209",
+      "revision_decision_sha256": "b731832186fefa4b9a1e08e169d32cc8ed921a9eda21569ca7ec48290b74ed29",
+      "evidence_directory": ".runtime/skill-cold-reader-fresh/voice-plan/round-02"
+    },
+    {
+      "round": 3,
+      "units": 10,
+      "finish_accepted": true,
+      "audited_steps": 11,
+      "native_inference_requests": 11,
+      "decision": "keep",
+      "final_reader_issues": 0,
+      "unresolved_revision_issues": [],
+      "changed_paths": [],
+      "last_material_revision_has_been_read": true,
+      "frozen_sha256": "6db17b6505776ae7ba4f17d38e62e9ac35fcf8a2167713dfbff2650fd8891862",
+      "read_complete_sha256": "f0edf8e80dff4a2bdc49a433d7bab63f6402afdf74ea515cbf68d595da4e3220",
+      "revision_decision_sha256": "014ddfa26748f0f907eb19b23da65f9aeff09ea0990e5cd98c636829a0e23664",
+      "evidence_directory": ".runtime/skill-cold-reader-fresh/voice-plan/round-03"
+    }
+  ],
+  "reader_contexts": 31,
+  "native_inferences": 31,
+  "candidate_files_sha256": {
+    "SKILL.md": "bd6c9e0ee26d401e6102ab7438b6ce8ad35fb2088c17907bff395f06d3cacece"
+  },
+  "candidate_source": ".runtime/skill-cold-reader-fresh/voice-plan/round-03/revision-decision.json:next_files",
+  "candidate_decision_sha256": "014ddfa26748f0f907eb19b23da65f9aeff09ea0990e5cd98c636829a0e23664",
+  "source_report": ".runtime/skill-cold-reader-fresh/voice-plan/three-round-report.json",
+  "source_report_sha256": "17c1efb428f6ec127eb953283c3a882597be5130bc1ff8d76241c49f81b85dad",
+  "unresolved_text_issues_at_round_3": [],
+  "last_revision_fully_reread": true,
+  "final_sample_executed": false,
+  "formal_method_publication": false,
+  "formal_story_changes": false,
+  "media_watched_or_heard": false,
+  "new_media_generated": false,
+  "human_participant_test": false,
+  "pending": [
+    "final full rounds after shared resource stability",
+    "exact final method binding and isolated work sample",
+    "managed formal delivery and latest-only cleanup"
+  ],
+  "before_after": {
+    "old": "参考有多人或背景遮盖时先另选干净片段；复用明确原件、候选、组成与起止时间。",
+    "revision_basis": "读者 R1 没有遗留问题。分离修订者对照当前制作定稿与实际作者入口，发现生成参考原件与试听/后期取段的执行含义需分清，并补入口与无原件时的证据边界。",
+    "new": "生成声音参考明确准确候选及完整原件；试听或后期区间另记用途与起止时间。未有原件时写待试声方向。沿 voice 分类和任务作者目录完成 begin、draft、read、review、finish。",
+    "verification": "R2/R3 第 3、4、7、8 单位均准确复述新增边界与保存流程，两个完整结算均无问题。"
+  },
+  "outer_description_sync_pending": true
+}
