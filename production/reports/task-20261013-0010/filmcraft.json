@@ -1,8 +1,8 @@
 {
   "task": "task-20261013-0010",
   "item": "filmcraft",
-  "status": "ROUND_03_READING_LAST_REVISION_NOT_YET_REREAD",
-  "valid_complete_rounds": 2,
+  "status": "ROUND_04_FROZEN_AWAITING_SERIAL_READER",
+  "valid_complete_rounds": 3,
   "rounds": [
     {
       "round": 1,
@@ -49,16 +49,32 @@
       "revision_decision_sha256": "878355cad867b1e45c7723a5efbad1fd55ca7c6176db9fc6dcd31d7c2bc5fdf2",
       "semantic_review_sha256": "8a71701f840079d969dd7948fee9199f07850a6ed51ac7820519a004c67be337",
       "evidence_directory": ".runtime/skill-cold-reader-fresh/filmcraft/round-02"
+    },
+    {
+      "round": 3,
+      "body_units": 355,
+      "reader_contexts": 356,
+      "native_inferences": 392,
+      "native_events": 4344,
+      "decision": "keep",
+      "changed_paths": [],
+      "rationale": "已通读355条正文理解、四条问题事件、两项完整问题历史及FINISH，并回查相关准确原文。保留全文：光质的初读疑问已由紧邻的距离说明解释；七秒经验值的具体条件没有展开，但其作用是限制误用，运动执行与验收另有明确方法，读者已据此撤销观察而未谎称条件已解释。上一轮五处澄清均得到正确理解，未发现新的执行障碍或专业矛盾，不为增加改动而重复定义或删除有用例子。末次实质改稿已完整复读；仍须完成第四、五轮和隔离工作样例。未进行真人测试、既有媒体看听或正式写入。",
+      "unresolved": [],
+      "frozen_sha256": "cdbb89faf3874445931973da2e70acad3d4336c7fb61f28a87cbc46c96b841d0",
+      "read_complete_sha256": "d714fa67d528d91458d5b2915fdbc1ef7b3b767acfb99402b2c429872f82c23e",
+      "revision_decision_sha256": "bdc8c975d6ca214ab92a46165bc6bc0d6e4d4bc1a2b7cc723c17699975841ce5",
+      "semantic_review_sha256": "bd77ad128f6a9c7b7a8dfbb1fd28f6ec8ee1173d6a42ed0741afdd1ddf1a630f",
+      "evidence_directory": ".runtime/skill-cold-reader-fresh/filmcraft/round-03"
     }
   ],
-  "reader_contexts": 1153,
-  "native_inferences": 1159,
-  "native_events": 13848,
+  "reader_contexts": 1509,
+  "native_inferences": 1551,
+  "native_events": 18192,
   "reader_model": "gpt-6-astra",
   "reader_effort": "max",
   "reviser_model": "gpt-6-astra",
   "reviser_effort": "max",
-  "index_readback_at": "2026-10-14T06:21:48.567332+00:00",
+  "index_readback_at": "2026-10-14T11:08:34.026618+00:00",
   "frozen_settlement_audit_chain_and_event_hashes_equal": true,
   "current_candidate_files": {
     "production/filmcraft/README.md": "1190bb09a7a7f11d67e389219b549c7154af98d610338bb0a008b952687bd10d",
@@ -79,20 +95,28 @@
     "production/filmcraft/sources.md": "f90aec903f14ec32109997fc22a52f58bd68531e68b2240f2edd67a78028d40f"
   },
   "current_round": {
-    "round": 3,
+    "round": 4,
     "body_units": 355,
     "files": 16,
-    "frozen_sha256": "cdbb89faf3874445931973da2e70acad3d4336c7fb61f28a87cbc46c96b841d0",
+    "frozen_sha256": "37914c11ecfe1fbd0ea11e18cc1c2f989cf6aaf142acc9a3b30104f8fb823bca",
     "source_package_sha256": "a8dd3d2d6c7a92021681a30d97a4eb9f61820859f7a4d96dfae2352833a7afd7",
     "reading_units_sha256": "7dda8bbd23de1505b2afff26d5df48ef0f4c826bce16631d8706d73bcb30a2f3",
-    "not_counted_as_valid": true
+    "not_counted_as_valid": true,
+    "reader_started": false
   },
-  "canonical_source_written_back": false,
+  "canonical_source_written_back": true,
   "stable_resource_projection": false,
   "final_sample_complete": false,
   "formal_publication": false,
   "human_participant_test": false,
   "old_media_watched_or_heard_in_round_02": false,
   "new_media_generated": false,
-  "independent_reader_concurrency": 1
+  "independent_reader_concurrency": 1,
+  "native_inference_count_scope": "Accepted unit evidence; incomplete and failed attempts are recorded separately in reader-foundation.json.",
+  "canonical_writeback_receipt": {
+    "path": ".runtime/skill-cold-reader-fresh/filmcraft/round-03/canonical-writeback.json",
+    "sha256": "4d44793fdfc056159cdd0ea328f656651f771c2afa25247e9a163437ea3c5c05"
+  },
+  "last_material_revision_has_been_read": true,
+  "minimum_rounds_remaining": 2
 }
