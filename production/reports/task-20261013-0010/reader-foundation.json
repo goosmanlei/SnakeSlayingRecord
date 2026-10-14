@@ -1993,5 +1993,21 @@
     "next_unit": 30,
     "evidence": ".runtime/skill-cold-reader-fresh/filmcraft/round-04/native-prefix-gmail.json",
     "evidence_sha256": "8f7b0c09085792c7b960ab908d75d8a5403629882958dd7fa09e67183b385d32"
+  },
+  "bounded_two_reader_window": {
+    "evidence": ".runtime/skill-cold-reader-fresh/recovery-bounded-two-readers.json",
+    "sha256": "38acf9773bbcc7f6f0a026e07490d47a6d79d501cbf1f93ab700191e2cc41dea",
+    "maximum": 2,
+    "items": [
+      "filmcraft/round-04",
+      "task-definition-publish/round-07"
+    ],
+    "closed": true,
+    "current_native_reader_concurrency": 1,
+    "short_round_completed_contexts": 56,
+    "short_round_native_inferences": 56,
+    "new_automatic_retry": false,
+    "reboot_cause": "unknown",
+    "source_scope": "Resource observation and sequencing only; no change to cold-reader inputs, audit or model."
   }
 }
