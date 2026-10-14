@@ -1,13 +1,14 @@
 {
   "task": "task-20261013-0010",
   "source_path": "production/current-candidates/README.md",
-  "source_sha256": "01507f6c98d5e31d5b120c6e856c11e0e0ecdea43b1a65e58ea04c76a5b0694c",
-  "source_characters": 6005,
-  "valid_complete_rounds": 5,
-  "last_change_round": 3,
+  "source_sha256": "509d43236f424dff34aa3cd874c87113a053051cad73df010edd45a13de1e723",
+  "source_characters": 6019,
+  "valid_complete_rounds": 7,
+  "last_change_round": 6,
   "unchanged_complete_reread_rounds": [
     4,
-    5
+    5,
+    7
   ],
   "rounds": [
     {
@@ -92,16 +93,45 @@
       "read_complete_sha256": "91d999a97e81a5329d13e46b7ce87379152f7bb66ab70b21809e774668b2282d",
       "revision_decision_sha256": "b3945cf0caf943f0a0560956e6761a8510872b910334783631142b6172389eae",
       "last_material_revision_has_been_read": true
+    },
+    {
+      "round": 6,
+      "natural_units": 24,
+      "accepted_unit_requests": 25,
+      "native_inferences": 25,
+      "native_continuation_units": [],
+      "decision": "revise",
+      "reader_final_issue_states": {
+        "EXPLAINED": 1
+      },
+      "source_sha256": "01507f6c98d5e31d5b120c6e856c11e0e0ecdea43b1a65e58ea04c76a5b0694c",
+      "read_complete_sha256": "890974fdcaa87e89fc69fcfe434e90b1519e14d376c2853af76e2a1c10d7a701",
+      "revision_decision_sha256": "c63bcbcb183cab67139790128955e14f27640af70b1d9f4d9fbd739b905abc24",
+      "last_material_revision_has_been_read": false
+    },
+    {
+      "round": 7,
+      "natural_units": 24,
+      "accepted_unit_requests": 25,
+      "native_inferences": 25,
+      "native_continuation_units": [],
+      "decision": "keep",
+      "reader_final_issue_states": {
+        "EXPLAINED": 1
+      },
+      "source_sha256": "509d43236f424dff34aa3cd874c87113a053051cad73df010edd45a13de1e723",
+      "read_complete_sha256": "c90f4ccd19130d1b5230da7e6d42526da2bc14adfdcf61b253a59fc0cb03b632",
+      "revision_decision_sha256": "f361c26b1ba1d36c0885459324981a7b093fd13115cdf49aec0db40ac8647c32",
+      "last_material_revision_has_been_read": true
     }
   ],
-  "accepted_unit_requests": 119,
-  "native_inferences": 122,
-  "distinct_reader_threads": 119,
+  "accepted_unit_requests": 169,
+  "native_inferences": 172,
+  "distinct_reader_threads": 169,
   "reader_model": "gpt-6-astra",
   "reader_effort": "max",
   "reviser_model": "gpt-6-astra",
   "reviser_effort": "max",
-  "reviser_thread": "01a13485-589c-76a2-a3b2-ff24769ef530",
   "unresolved_text_issues": [],
   "semantic_changes": [
     "补独立准备的判断依据、对照例子、ST 分组名与 M 持久身份解释。",
@@ -110,7 +140,8 @@
     "补实际回应登记入口及 expected_response_content 的含义、获取时机。",
     "解释私有执行、公开作品包与任务临时输入的恢复边界。",
     "按已生效上游要求写明只使用完整原件，旧当前范围清除但历史实际提交不改。",
-    "补文档用途和阅读顺序，将业务消费与格式版本说明改为普通语言。"
+    "补文档用途和阅读顺序，将业务消费与格式版本说明改为普通语言。",
+    "将审阅台中失效的相对链接改为明确的项目根目录路径与章节名。"
   ],
   "dual_audience": {
     "explicit_generic_adaptation_rounds": [
@@ -121,85 +152,130 @@
     "human_participant_test": false
   },
   "evidence_directory": ".runtime/skill-cold-reader-fresh/current-production",
-  "reader_report_sha256": "39dd1437e0ee4705f0c4108b5294b7d658af4fff3d4e575520677ba6f36e58fa",
+  "reader_report_sha256": "c6c8bc6cbdeae14aef1720d7733273f0acd1a8b2c14400335ef42ef6c6c13bf9",
   "isolated_linkage": {
     "resource": {
       "object_id": "method.resource.current-production",
-      "revision_id": "4cc34c388a53477286824a0c2dd98a8d1f5681633eea6ceb2a93b349c4f50919"
+      "revision_id": "28bd4643f77b2f1e39bd2c3aaafe934bcfdefd873a80ddd89633c7f403e3b787",
+      "version": 4
     },
     "changes": {
       "method.resource.current-production": {
-        "before": "2b5fa53bebccd80f3143f6cf39490c3a8aecab48811ca427a785fa2b1e858fd5",
-        "after": "4cc34c388a53477286824a0c2dd98a8d1f5681633eea6ceb2a93b349c4f50919"
+        "before": "4cc34c388a53477286824a0c2dd98a8d1f5681633eea6ceb2a93b349c4f50919",
+        "after": "28bd4643f77b2f1e39bd2c3aaafe934bcfdefd873a80ddd89633c7f403e3b787"
       },
       "method.skill.audiovisual-scene": {
-        "before": "9f6fcf655a26a147e9ef9dea0b185af9c73e3833b190627d7bae1b9fa4c0639f",
-        "after": "6e3cca29acaf13cca0efb7222a33205da918e58dacc024903a2709880c57562a"
+        "before": "6e3cca29acaf13cca0efb7222a33205da918e58dacc024903a2709880c57562a",
+        "after": "992540cfdaaf1cc84870592ec0beee2c0444b45d8bc8ff116652c6a93bec128f"
       },
       "method.skill.generation-preflight": {
-        "before": "6ec4ca823a3219a1aeb001e23b28265f302326e752c4ceaf1e7800a78fe70934",
-        "after": "8c322a910c56561de74a1a3e84d37ea7bbcf15cc5f6034742d09a4554857ef50"
+        "before": "64a8e63f343f54958a1cf7e25a56ed782505d08189cb990d618dd77f712547ef",
+        "after": "20b9aefbe15be58da5e9f5eb968965282deb297f6b11e2ed43f2e2e2e0b7d079"
       },
       "method.skill.image-plan": {
-        "before": "8b180de1142baec197d04d8c78050ca0403727c214f709d110f310b56df6bf12",
-        "after": "cb92ed0fc73c93b0e3c27d0bd3d1363cf2b620a77f82604ce64f83ba3e701a36"
+        "before": "cb92ed0fc73c93b0e3c27d0bd3d1363cf2b620a77f82604ce64f83ba3e701a36",
+        "after": "c199938b90d85b592d003f307042c0b2bfc62a22ea222ae16f53298754271dd6"
       },
       "method.skill.material-assessment": {
-        "before": "019adaa976244d2d6b5d6135f47a50caaa3b01d09f8c055fb37c34cc2fbbf713",
-        "after": "c574ab264cc0e2f7a8eef4b276a1e5c52c07fa87f6b5899cce311fc0ee894d5f"
+        "before": "c574ab264cc0e2f7a8eef4b276a1e5c52c07fa87f6b5899cce311fc0ee894d5f",
+        "after": "37d536f62bce58d6dc8644ebfb08d73088674f8afef8a8b30fece13d133db4f4"
       },
       "method.skill.result-review": {
-        "before": "a1ca56b5a00bff9c43d94fa2eea78650223362c26bb1f940a8dbeeced0fcef00",
-        "after": "95578a3462258db73ac7cd2cffdc0c4dd52533a347a315f22d690afbaae1803c"
+        "before": "95578a3462258db73ac7cd2cffdc0c4dd52533a347a315f22d690afbaae1803c",
+        "after": "e04d513a62358e422540f112c7d1a96d1aa13d3f3070ca1b658d738cc0052639"
       },
       "method.skill.scene-sound-plan": {
-        "before": "8aa97c48df38292ff18202a3c1eb38e876cef399f3be3deb54d4413a200f51cf",
-        "after": "80163449d774fc1990a0d22bb2a21cc60ccb85b06ee7f9d494b5a32ffafbadbb"
+        "before": "80163449d774fc1990a0d22bb2a21cc60ccb85b06ee7f9d494b5a32ffafbadbb",
+        "after": "82a5d633555d1d13f2c85e316c2eaaab4baf0026418e0c0ac924692b9edc8b0e"
       },
       "method.skill.song-plan": {
-        "before": "340d2bd638768d5b5d0bc270e33d8811f6c0baa3095d41f4b2b5ae5334392f73",
-        "after": "38eacded15e08ed51247ceef6828471e29987d669d1cca13f788a24ee76edfe1"
+        "before": "38eacded15e08ed51247ceef6828471e29987d669d1cca13f788a24ee76edfe1",
+        "after": "c1c555dbf99739a808c3f042678fe12c025d42255eef3f32de4c5cef82b8ed59"
       },
       "method.skill.text-layer": {
-        "before": "797eb367822f111462f10eeec21ed62c0a108ab12db9cd5afa407690ae076173",
-        "after": "1b7b313b6bdab7e808add7150219a2decc70dddc6d01450ceca8a097b2fe521d"
+        "before": "1b7b313b6bdab7e808add7150219a2decc70dddc6d01450ceca8a097b2fe521d",
+        "after": "6ad8b4f459bf713a52f4fad27173ef89664bdff1a43a7679fb8193c4ef723e46"
       },
       "method.skill.video-plan": {
-        "before": "57c22341eca874b200f6f0f340a340391d8d643f26b2f75b404502bdecb49c5e",
-        "after": "6eafdbf7cacfc52bb822402df7c662d27bc726d110dd8806a63a6e8bf1648b3d"
+        "before": "6eafdbf7cacfc52bb822402df7c662d27bc726d110dd8806a63a6e8bf1648b3d",
+        "after": "13eb6b10fcc3f89408fcadb1c591e987f0ea0a4861498eae946d024d2b5ff319"
       },
       "method.skill.voice-plan": {
-        "before": "2023c829e741c4a9d31e9855157c1aaf3cf33ed12169e0a066f11c18b6541c2a",
-        "after": "046baed930d89cf511f5474555067a5ce0ddd637195779966ab5750095994087"
+        "before": "046baed930d89cf511f5474555067a5ce0ddd637195779966ab5750095994087",
+        "after": "a921b4722cbaa239f32d62302047fb47f3529ee3f164f0c28d0488c2ee4deaa8"
       },
       "method.binding.audiovisual-design": {
-        "before": "9c043306ea1a6657493c474548dcd6ed6dedb3cf1749064d438e4daee766e443",
-        "after": "ee971c64801692f1fd114296da94e48a66f1f6668630f35d603b876723742013"
+        "before": "ee971c64801692f1fd114296da94e48a66f1f6668630f35d603b876723742013",
+        "after": "efe1ec9bd25b189785cc928a2947a28e4cb519457c904528c9b039d88d52fd16"
       },
       "method.binding.generation-preflight": {
-        "before": "85d525b548ebbf702848dce9bde22845a51d7123aa9072ae5e7f8c6448f4a9e9",
-        "after": "c95e1dc41f558d661aa2a6d44c1cdf95d9a4a36702b1342b62231c28202874de"
+        "before": "15b15a5c4aca0b6af5518db2e99b4262bf6564c4f9aebc3f39887ab6ddde1e2e",
+        "after": "7b63eb4f8367eaddf6ee5e3ebb2b6cf655fc96fae5eec2672d2a5199612777b8"
       },
       "method.binding.material-assessment": {
-        "before": "60580712923fd1b390fe8043967717a0c43cc668f13d7884dcd2613f413bc6c1",
-        "after": "47b163dc8aebeb5359082565bcd04104240ac6d4789f01ddfbe9d55956212a33"
+        "before": "47b163dc8aebeb5359082565bcd04104240ac6d4789f01ddfbe9d55956212a33",
+        "after": "810fd03014fb01492016c791fec42edec32c5a1cd8607114b01e29c1e704d4fc"
       },
       "method.binding.media-plan": {
-        "before": "d22f1f0e5586a1f7b076bf5e67f1800fd3f83d2cf5fa6a340c4d76b71b485b7d",
-        "after": "a9306f3bc03b8abe09803bcce1027fb0dd1d48184650b005a524da7c87b42ae4"
+        "before": "a9306f3bc03b8abe09803bcce1027fb0dd1d48184650b005a524da7c87b42ae4",
+        "after": "b17cffeb1645ba60588e8194b0feb6d4d05df55037f9adc8698956b4450917c5"
       },
       "method.binding.result-review": {
-        "before": "1d97cf1ee80197e7821e9f028c04302efa54a64035511e6a3924af10412f8581",
-        "after": "a5f0ca1d904ce8bf18fe0cc1fe478030bbcb1f475e02a96ec2395efee8860cc2"
+        "before": "a5f0ca1d904ce8bf18fe0cc1fe478030bbcb1f475e02a96ec2395efee8860cc2",
+        "after": "1de657c9060041a08b0f5c1a29be188b1bcefcfcf601dce6e883b541c3da877d"
       },
       "method.binding.text-layer": {
-        "before": "072b3b6677c19f6180ce79df150cd51ed89422489d7de09e70cc2d4a059986b5",
-        "after": "c3c5ef6cb9ca818424b6c2b9d4559a898ed6e89f33f3cee36cd31e08c29b6298"
+        "before": "c3c5ef6cb9ca818424b6c2b9d4559a898ed6e89f33f3cee36cd31e08c29b6298",
+        "after": "3dfd33319e744318880ef8476160e9317315d44f78ce454ee3febe47362fa121"
       }
     },
     "preserved_tables": 43,
-    "receipt_sha256": "bea7adfff29b8bd41f96ea58d3d45f42ca2104a69f2a1e31b9acaad1a10ed25a",
+    "receipt_sha256": "7a83694822c0681a4e6036af31804a1001cf74887fe7d3d4b01216f872fa254d",
     "formal_writes": false
   },
-  "pending": "Final caller linkage samples, final package recovery and formal publication."
+  "pending": "Final caller linkage samples, final package recovery and formal publication.",
+  "reviser_sessions_by_round": {
+    "1": "01a13485-589c-76a2-a3b2-ff24769ef530",
+    "2": "01a13485-589c-76a2-a3b2-ff24769ef530",
+    "3": "01a13485-589c-76a2-a3b2-ff24769ef530",
+    "4": "01a13485-589c-76a2-a3b2-ff24769ef530",
+    "5": "01a13485-589c-76a2-a3b2-ff24769ef530",
+    "6": "01a1346f-7915-7a40-b676-864edb334ecc",
+    "7": "01a1346f-7915-7a40-b676-864edb334ecc"
+  },
+  "browser": {
+    "evidence_path": ".runtime/skill-cold-reader-fresh/chrome-task-current-production-round07.json",
+    "sha256": "83887b09396c971f45c9ca0975ce4144fd17af646de372f6bda78c9fe12a2ef0",
+    "resource_file_version": 4,
+    "comparison": [
+      3,
+      4
+    ],
+    "refresh_passed": true,
+    "screenshots_viewed": [
+      {
+        "path": ".runtime/skill-cold-reader-fresh/chrome-task-current-production-round07.png",
+        "sha256": "1ada9bdac2e40cfd8b473136ca2a8fcf1b1e098a803d1e90437a05aeed12923d"
+      },
+      {
+        "path": ".runtime/skill-cold-reader-fresh/chrome-task-current-production-round07-comparison.png",
+        "sha256": "aa69f16e41ccf1697c403682abf7141b819011f7a06c08f4205dad0f4f07e24d"
+      }
+    ]
+  },
+  "incremental_process_cleanup": {
+    "path": ".runtime/skill-cold-reader-fresh/current-production/round-07-linkage/before.sqlite3",
+    "size_bytes": 310296576,
+    "reason": "preservation and latest resource/caller readback including Chrome comparison completed",
+    "container_process_reference_count": 0,
+    "host_holder": "Docker Virtualization read-only shared-filesystem handle; no application descriptor uses this file",
+    "retained": [
+      "receipt.json",
+      "registry.json",
+      "migration.json",
+      "plan.json"
+    ],
+    "removed_files": 1,
+    "exists_after": false
+  }
 }

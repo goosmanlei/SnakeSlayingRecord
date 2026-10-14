@@ -1,8 +1,8 @@
 {
   "task": "task-20261013-0010",
   "object_id": "method.skill.generation-preflight",
-  "version": 12,
-  "revision_id": "64a8e63f343f54958a1cf7e25a56ed782505d08189cb990d618dd77f712547ef",
+  "version": 13,
+  "revision_id": "20b9aefbe15be58da5e9f5eb968965282deb297f6b11e2ed43f2e2e2e0b7d079",
   "valid_rounds": 5,
   "required_minimum": 5,
   "status": "FIVE_ROUNDS_VALID_ISOLATED_METHOD_SAVED_SAMPLE_PENDING",
@@ -317,5 +317,35 @@
     "all_absent": true,
     "scope": "two completed one-time scripts and two transient screen captures; no database or media deletion",
     "evidence": ".runtime/skill-cold-reader-fresh/incremental-process-cleanup.json"
+  },
+  "current_protocol_linkage": {
+    "resource": {
+      "object_id": "method.resource.current-production",
+      "revision_id": "28bd4643f77b2f1e39bd2c3aaafe934bcfdefd873a80ddd89633c7f403e3b787",
+      "version": 4
+    },
+    "own_files_unchanged": true,
+    "receipt_sha256": "7a83694822c0681a4e6036af31804a1001cf74887fe7d3d4b01216f872fa254d",
+    "chrome_evidence": {
+      "evidence_path": ".runtime/skill-cold-reader-fresh/chrome-task-current-production-round07.json",
+      "sha256": "83887b09396c971f45c9ca0975ce4144fd17af646de372f6bda78c9fe12a2ef0",
+      "resource_file_version": 4,
+      "comparison": [
+        3,
+        4
+      ],
+      "refresh_passed": true,
+      "screenshots_viewed": [
+        {
+          "path": ".runtime/skill-cold-reader-fresh/chrome-task-current-production-round07.png",
+          "sha256": "1ada9bdac2e40cfd8b473136ca2a8fcf1b1e098a803d1e90437a05aeed12923d"
+        },
+        {
+          "path": ".runtime/skill-cold-reader-fresh/chrome-task-current-production-round07-comparison.png",
+          "sha256": "aa69f16e41ccf1697c403682abf7141b819011f7a06c08f4205dad0f4f07e24d"
+        }
+      ]
+    },
+    "existing_sample_basis_retained": "prior exact method; final text handoff pipeline still pending"
   }
 }
