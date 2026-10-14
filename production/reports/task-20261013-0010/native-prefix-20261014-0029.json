@@ -1,0 +1,282 @@
+{
+  "task": "task-20261013-0010",
+  "at": "2026-10-14T03:08:42.730861+00:00",
+  "coordinator_session": "01a1346f-7915-7a40-b676-864edb334ecc",
+  "model": "gpt-6-astra",
+  "effort": "max",
+  "accepted_prefix": "1bf100cad40cfa2df016fdb9955e7fa19b582e5ea10fc04a014bbca0431841ea",
+  "new_prefix": "90d3e14af2a2442543ccf04ad0a79e565834f9201fa09a2f4306317d069b0294",
+  "before": ".runtime/skill-cold-reader-fresh/video-handbook/round-06/step-0028/native-prefix.json",
+  "after": ".runtime/skill-cold-reader-fresh/video-handbook/round-06/step-0029/native-prefix.json",
+  "raw_prefix_files_sha256": {
+    "before": "e4eacfc05cb2ec5689acc7071e3bc6f5eebc98aa762c751dc2429478a8f6b189",
+    "after": "27b0fff13c8eea395b7e00fd31040ae46f3f67cd98d8383ad20ddf4c3ed9a299"
+  },
+  "changed_leaf": "$[2].content[0].text",
+  "comparison": "Complete recursive comparison; the only changed leaf is the generic skills catalog. Parsed every entry by resolved path; all other JSON and all non-catalog text are equal.",
+  "existing_entries": 285,
+  "all_existing_names_and_paths_unchanged": true,
+  "all_existing_descriptions_same_or_shorter_prefix": true,
+  "removed_entries": 0,
+  "added_roots": {
+    "r3": "/Users/bytedance/.codex/plugins/cache/openai-curated-remote",
+    "r4": "/Users/bytedance/.codex/plugins/cache/openai-curated-remote/app-6a3293e129088191abf0875820e839da/2.1.0/skills",
+    "r5": "/Users/bytedance/.codex/plugins/cache/openai-curated-remote/hugging-face/1.0.0/skills",
+    "r6": "/Users/bytedance/.codex/plugins/cache/openai-curated-remote/pages/0.1.23/skills",
+    "r7": "/Users/bytedance/.codex/plugins/cache/openai-curated-remote/plugin-creator/0.1.26/skills",
+    "r8": "/Users/bytedance/.codex/plugins/cache/openai-curated-remote/runpod/1.1.2/skills",
+    "r9": "/Users/bytedance/.codex/plugins/cache/openai-curated-remote/work-pets/0.1.6/skills"
+  },
+  "added_catalog_entries": [
+    {
+      "name": "andrej-karpathy-skills:karpathy-guidelines",
+      "description": "Use w",
+      "line": "- andrej-karpathy-skills:karpathy-guidelines: Use w (file: r3/andrej-karpathy-skills/1.0.0/skills/karpathy-guidelines/SKILL.md)"
+    },
+    {
+      "name": "app-6a3293e129088191abf0875820e839da:ad-multiplier",
+      "description": "Cre",
+      "line": "- app-6a3293e129088191abf0875820e839da:ad-multiplier: Cre (file: r4/ad-multiplier/SKILL.md)"
+    },
+    {
+      "name": "app-6a3293e129088191abf0875820e839da:ai-host-video",
+      "description": "Pro",
+      "line": "- app-6a3293e129088191abf0875820e839da:ai-host-video: Pro (file: r4/ai-host-video/SKILL.md)"
+    },
+    {
+      "name": "app-6a3293e129088191abf0875820e839da:faceless-video",
+      "description": "Use o",
+      "line": "- app-6a3293e129088191abf0875820e839da:faceless-video: Use o (file: r4/faceless-video/SKILL.md)"
+    },
+    {
+      "name": "app-6a3293e129088191abf0875820e839da:higgsfield",
+      "description": "Resol",
+      "line": "- app-6a3293e129088191abf0875820e839da:higgsfield: Resol (file: r4/higgsfield/SKILL.md)"
+    },
+    {
+      "name": "app-6a3293e129088191abf0875820e839da:motion-craft",
+      "description": "Desig",
+      "line": "- app-6a3293e129088191abf0875820e839da:motion-craft: Desig (file: r4/motion-craft/SKILL.md)"
+    },
+    {
+      "name": "app-6a3293e129088191abf0875820e839da:narrator",
+      "description": "P",
+      "line": "- app-6a3293e129088191abf0875820e839da:narrator: P (file: r4/narrator/SKILL.md)"
+    },
+    {
+      "name": "app-6a3293e129088191abf0875820e839da:subtitles",
+      "description": "Use",
+      "line": "- app-6a3293e129088191abf0875820e839da:subtitles: Use (file: r4/subtitles/SKILL.md)"
+    },
+    {
+      "name": "app-6a3293e129088191abf0875820e839da:thumbnail-generation",
+      "description": "C",
+      "line": "- app-6a3293e129088191abf0875820e839da:thumbnail-generation: C (file: r4/thumbnail-generation/SKILL.md)"
+    },
+    {
+      "name": "app-6a3293e129088191abf0875820e839da:ugc-product-video",
+      "description": "Pro",
+      "line": "- app-6a3293e129088191abf0875820e839da:ugc-product-video: Pro (file: r4/ugc-product-video/SKILL.md)"
+    },
+    {
+      "name": "app-6a3293e129088191abf0875820e839da:ugc-try-on-video",
+      "description": "P",
+      "line": "- app-6a3293e129088191abf0875820e839da:ugc-try-on-video: P (file: r4/ugc-try-on-video/SKILL.md)"
+    },
+    {
+      "name": "app-6a3293e129088191abf0875820e839da:ugc-tutorial-video",
+      "description": "P",
+      "line": "- app-6a3293e129088191abf0875820e839da:ugc-tutorial-video: P (file: r4/ugc-tutorial-video/SKILL.md)"
+    },
+    {
+      "name": "app-6a3293e129088191abf0875820e839da:ugc-unboxing-video",
+      "description": "P",
+      "line": "- app-6a3293e129088191abf0875820e839da:ugc-unboxing-video: P (file: r4/ugc-unboxing-video/SKILL.md)"
+    },
+    {
+      "name": "app-6a3293e129088191abf0875820e839da:ugc-website-video",
+      "description": "Pro",
+      "line": "- app-6a3293e129088191abf0875820e839da:ugc-website-video: Pro (file: r4/ugc-website-video/SKILL.md)"
+    },
+    {
+      "name": "app-6a3293e129088191abf0875820e839da:video-editing",
+      "description": "Edi",
+      "line": "- app-6a3293e129088191abf0875820e839da:video-editing: Edi (file: r4/video-editing/SKILL.md)"
+    },
+    {
+      "name": "app-6a3293e129088191abf0875820e839da:website-builder",
+      "description": "Bui",
+      "line": "- app-6a3293e129088191abf0875820e839da:website-builder: Bui (file: r4/website-builder/SKILL.md)"
+    },
+    {
+      "name": "app-6a3293e129088191abf0875820e839da:youtube-script",
+      "description": "W",
+      "line": "- app-6a3293e129088191abf0875820e839da:youtube-script: W (file: r4/youtube-script/SKILL.md)"
+    },
+    {
+      "name": "cloud-environment:cloud-environment-runtime",
+      "description": "R",
+      "line": "- cloud-environment:cloud-environment-runtime: R (file: r3/cloud-environment/0.1.2/skills/runtime/SKILL.md)"
+    },
+    {
+      "name": "hugging-face:hf-cli",
+      "description": "Hugg",
+      "line": "- hugging-face:hf-cli: Hugg (file: r5/cli/SKILL.md)"
+    },
+    {
+      "name": "hugging-face:huggingface-community-evals",
+      "description": "Run",
+      "line": "- hugging-face:huggingface-community-evals: Run (file: r5/community-evals/SKILL.md)"
+    },
+    {
+      "name": "hugging-face:huggingface-datasets",
+      "description": "U",
+      "line": "- hugging-face:huggingface-datasets: U (file: r5/datasets/SKILL.md)"
+    },
+    {
+      "name": "hugging-face:huggingface-gradio",
+      "description": "B",
+      "line": "- hugging-face:huggingface-gradio: B (file: r5/gradio/SKILL.md)"
+    },
+    {
+      "name": "hugging-face:huggingface-jobs",
+      "description": "T",
+      "line": "- hugging-face:huggingface-jobs: T (file: r5/jobs/SKILL.md)"
+    },
+    {
+      "name": "hugging-face:huggingface-llm-trainer",
+      "description": "Thi",
+      "line": "- hugging-face:huggingface-llm-trainer: Thi (file: r5/llm-trainer/SKILL.md)"
+    },
+    {
+      "name": "hugging-face:huggingface-paper-publisher",
+      "description": "Pub",
+      "line": "- hugging-face:huggingface-paper-publisher: Pub (file: r5/paper-publisher/SKILL.md)"
+    },
+    {
+      "name": "hugging-face:huggingface-papers",
+      "description": "L",
+      "line": "- hugging-face:huggingface-papers: L (file: r5/papers/SKILL.md)"
+    },
+    {
+      "name": "hugging-face:huggingface-trackio",
+      "description": "Tra",
+      "line": "- hugging-face:huggingface-trackio: Tra (file: r5/trackio/SKILL.md)"
+    },
+    {
+      "name": "hugging-face:transformers-js",
+      "description": "Use",
+      "line": "- hugging-face:transformers-js: Use (file: r5/transformers.js/SKILL.md)"
+    },
+    {
+      "name": "hugging-face:huggingface-vision-trainer",
+      "description": "T",
+      "line": "- hugging-face:huggingface-vision-trainer: T (file: r5/vision-trainer/SKILL.md)"
+    },
+    {
+      "name": "pages:maintain-space",
+      "description": "Reco",
+      "line": "- pages:maintain-space: Reco (file: r6/maintain-space/SKILL.md)"
+    },
+    {
+      "name": "pages:manage-schedules",
+      "description": "Revi",
+      "line": "- pages:manage-schedules: Revi (file: r6/manage-schedules/SKILL.md)"
+    },
+    {
+      "name": "pages:organize-space",
+      "description": "Orga",
+      "line": "- pages:organize-space: Orga (file: r6/organize-space/SKILL.md)"
+    },
+    {
+      "name": "pages:write-page",
+      "description": "Crea",
+      "line": "- pages:write-page: Crea (file: r6/write-page/SKILL.md)"
+    },
+    {
+      "name": "plugin-creator:create-plugin",
+      "description": "C",
+      "line": "- plugin-creator:create-plugin: C (file: r7/create-plugin/SKILL.md)"
+    },
+    {
+      "name": "plugin-creator:prepare-plugin-submission",
+      "description": "G",
+      "line": "- plugin-creator:prepare-plugin-submission: G (file: r7/prepare-plugin-submission/SKILL.md)"
+    },
+    {
+      "name": "plugin-creator:update-plugin",
+      "description": "I",
+      "line": "- plugin-creator:update-plugin: I (file: r7/update-plugin/SKILL.md)"
+    },
+    {
+      "name": "plugin-management:plugin-management",
+      "description": "Dis",
+      "line": "- plugin-management:plugin-management: Dis (file: r3/plugin-management/0.1.0/skills/plugin-management/SKILL.md)"
+    },
+    {
+      "name": "runpod:companion-clis",
+      "description": "Com",
+      "line": "- runpod:companion-clis: Com (file: r8/companion-clis/SKILL.md)"
+    },
+    {
+      "name": "runpod:flash",
+      "description": "r",
+      "line": "- runpod:flash: r (file: r8/flash/SKILL.md)"
+    },
+    {
+      "name": "runpod:runpod-mcp",
+      "description": "Man",
+      "line": "- runpod:runpod-mcp: Man (file: r8/runpod-mcp/SKILL.md)"
+    },
+    {
+      "name": "runpod:runpod-usage",
+      "description": "How",
+      "line": "- runpod:runpod-usage: How (file: r8/runpod-usage/SKILL.md)"
+    },
+    {
+      "name": "runpod:runpod",
+      "description": "Sta",
+      "line": "- runpod:runpod: Sta (file: r8/runpod/SKILL.md)"
+    },
+    {
+      "name": "runpod:runpodctl",
+      "description": "R",
+      "line": "- runpod:runpodctl: R (file: r8/runpodctl/SKILL.md)"
+    },
+    {
+      "name": "sites:sites",
+      "description": "Use",
+      "line": "- sites:sites: Use (file: r3/sites/1.0.0/skills/sites/SKILL.md)"
+    },
+    {
+      "name": "work-pets:create-pet",
+      "description": "Crea",
+      "line": "- work-pets:create-pet: Crea (file: r9/create-pet/SKILL.md)"
+    },
+    {
+      "name": "work-pets:pets",
+      "description": "List",
+      "line": "- work-pets:pets: List (file: r9/pets/SKILL.md)"
+    },
+    {
+      "name": "work-pets:update-pet",
+      "description": "Insp",
+      "line": "- work-pets:update-pet: Insp (file: r9/update-pet/SKILL.md)"
+    }
+  ],
+  "decision": "approve_exact_prefix_only",
+  "reason": "New content is the visible generic plugin directory, with abbreviated catalog descriptions; it contains no project methods, future paragraphs, author explanations, prior reader conclusions or messages from other sessions. Catalog visibility is permitted by the task. Actual requests, outputs, model and event chains remain independently mandatory.",
+  "model_reinvocations": 0,
+  "existing_result_audit": {
+    "accepted": true,
+    "unit": 29,
+    "model": "gpt-6-astra",
+    "effort": "max",
+    "native_prefix_sha256": "90d3e14af2a2442543ccf04ad0a79e565834f9201fa09a2f4306317d069b0294",
+    "native_event_count": 12
+  },
+  "audit_path": ".runtime/skill-cold-reader-fresh/video-handbook/round-06/step-0029/audit.json",
+  "audit_sha256": "3aeb59aa2a402c026252c432368fe1b9f29eac7ce33a1e6399dd1c58520779b0",
+  "adapter_sha256": "a6a654a33f65c21730e4ad85a4391d655526b166daf2e6222b7730f25a5e8f08",
+  "revision_timing": "No handbook semantic revision or input change was made; full-round settlement is still required."
+}
