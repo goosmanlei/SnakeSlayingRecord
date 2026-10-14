@@ -1698,6 +1698,75 @@
     },
     "reader_opinions_not_used_before_full_settlement": true,
     "next_step": 21,
-    "round_credit_from_recovery": 0
+    "round_credit_from_recovery": 0,
+    "mixed_503_429_recovery": {
+      "source_step": ".runtime/skill-cold-reader-fresh/filmcraft/round-03/step-0024",
+      "native_inferences": 4,
+      "failed_errors": [
+        "503",
+        "429",
+        "503"
+      ],
+      "partial_responses": [
+        null,
+        null,
+        null
+      ],
+      "actual_requests_equal_except_transport_timestamp": true,
+      "new_requests_by_coordinator": 0,
+      "accepted_audit_sha256": "984ea0bae188245375afa3647feafe54b9a1e2ac114aa3bae04ce6d65c9b7405",
+      "accepted_thread_id": "01a13948-0908-7bc1-bd01-78a889a1fc0e",
+      "checks": {
+        "adapter_sha256": "b422e37b10f3dd4860395172c521778f0208881230e1945c781e09c7f58a622c",
+        "protected_reader_sha256": "9ba6de88e652b1623d75a5504b5e8d6fc3886eec4cda4f20a09503b956c0b81a",
+        "cases": [
+          {
+            "case": "accepted_exact_mixed_chain",
+            "accepted": true
+          },
+          {
+            "case": "changed_input",
+            "accepted": false,
+            "reason": "native continuation has unexplained input"
+          },
+          {
+            "case": "partial_429_output",
+            "accepted": false,
+            "reason": "rate-limit retry has unreviewed partial output"
+          },
+          {
+            "case": "fifth_inference",
+            "accepted": false,
+            "reason": "unreviewed native inference/continuation count"
+          },
+          {
+            "case": "unknown_failure",
+            "accepted": false,
+            "reason": "unreviewed native inference/continuation count"
+          },
+          {
+            "case": "four_stream_failures",
+            "accepted": false,
+            "reason": "unreviewed native inference/continuation count"
+          },
+          {
+            "case": "unknown_cli_error",
+            "accepted": false,
+            "reason": "unreviewed CLI transport error"
+          }
+        ],
+        "source_step": "step-0024",
+        "new_model_calls": 0,
+        "original_checkpoint_unchanged": true,
+        "temporary_cleanup": {
+          "files": 185,
+          "directories": 42,
+          "bytes": 8414319,
+          "all_paths_absent": true
+        }
+      },
+      "checks_sha256": "e8bdfb43b3835eeb4cf0aa4c6d5f8320edff65ddee34dd750e06326b2f8a1b24",
+      "next_step": 25
+    }
   }
 }
