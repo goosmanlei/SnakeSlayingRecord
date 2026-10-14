@@ -27,6 +27,7 @@ SERVICE_UNAVAILABLE = ("unexpected status 503 Service Unavailable: An error occu
                        "You can retry your request, or contact us through our help center at help.openai.com "
                        "if the error persists.")
 RATE_LIMITED = "exceeded retry limit, last status: 429 Too Many Requests"
+WEBSOCKET_CLOSED = "stream disconnected before completion: websocket closed by server before response.completed"
 ADAPTATION = """本次仅调整阅读对象与身份：你是首次使用这份工作方法的执行者。
 审阅兼顾首次接触方法的人类读者和 AI 使用者：人应能读懂目的、概念、条件、判断依据和例子，AI 应能据此识别输入、推进工作、交付并检查结果。具体障碍按实际已读原文判断，不把术语、命令或专业细节本身判为缺点，也不以字段齐全代替理解。
 下面独立读者方法中小说/剧本/作品指本次逐段开放的工作方法；人物、动作和因果的观察，在本次对应概念、条件、输入、动作、输出、依据与上下文衔接。其余独立性、顺序、准确引文与五种模式的边界保持。
@@ -257,7 +258,8 @@ def audit(directory, expected_prefix):
 
     Accept the observed complete inference, or up to two native continuations
     whose retained reasoning exactly matches the saved partial responses. The
-    observed three empty HTTP 503/429 failures may precede one successful inference.
+    observed empty capacity failures and the exact mixed disconnect chain may
+    precede one successful inference.
     Other event patterns stop for inspection; this function never retries.
     """
     check_frozen(directory)
@@ -288,7 +290,11 @@ def audit(directory, expected_prefix):
     empty_capacity_retries = (len(started) == 4 and len(failed) == 3 and
                              all(v["error"] in (SERVICE_UNAVAILABLE, RATE_LIMITED) and
                                  v["partial_response_payload"] is None for v in failed))
-    reader.require((1 <= len(started) <= 3 or empty_capacity_retries) and
+    observed_empty_mixed_chain = (len(started) == 5 and
+                                 [v["error"] for v in failed] ==
+                                 [SERVICE_UNAVAILABLE, WEBSOCKET_CLOSED, SERVICE_UNAVAILABLE, RATE_LIMITED] and
+                                 all(v["partial_response_payload"] is None for v in failed))
+    reader.require((1 <= len(started) <= 3 or empty_capacity_retries or observed_empty_mixed_chain) and
                    len(completed) == 1 and len(failed) == len(started) - 1,
                    "unreviewed native inference/continuation count")
     inference_events = [v for v in events if v["type"].startswith("inference_")]
@@ -328,7 +334,7 @@ def audit(directory, expected_prefix):
                        "native continuation has unexplained input")
         if ending["type"] == "inference_failed":
             reader.require(ending["error"] in (
-                           "stream disconnected before completion: websocket closed by server before response.completed",
+                           WEBSOCKET_CLOSED,
                            "stream disconnected before completion: WebSocket protocol error: Connection reset without closing handshake",
                            "stream disconnected before completion: idle timeout waiting for websocket",
                            RATE_LIMITED,
@@ -392,6 +398,7 @@ def audit(directory, expected_prefix):
             reader.require(event in (
                 {"type": "error", "message": "Reconnecting... %s/5 (request timed out)" % attempt},
                 {"type": "error", "message": "Reconnecting... %s/5 (stream disconnected before completion: idle timeout waiting for websocket)" % attempt},
+                {"type": "error", "message": "Reconnecting... %s/5 (%s)" % (attempt, WEBSOCKET_CLOSED)},
                 {"type": "error", "message": "Reconnecting... %s/5 (%s)" % (attempt, SERVICE_UNAVAILABLE)},
                 {"type": "error", "message": "Reconnecting... %s/5 (%s)" % (attempt, RATE_LIMITED)}),
                 "unreviewed CLI transport error")

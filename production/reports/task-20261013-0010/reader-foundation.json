@@ -1767,6 +1767,82 @@
       },
       "checks_sha256": "e8bdfb43b3835eeb4cf0aa4c6d5f8320edff65ddee34dd750e06326b2f8a1b24",
       "next_step": 25
+    },
+    "exact_mixed_disconnect_recovery": {
+      "source_step": ".runtime/skill-cold-reader-fresh/filmcraft/round-03/step-0138",
+      "native_inferences": 5,
+      "failed_errors": [
+        "503",
+        "websocket_closed_without_partial_output",
+        "503",
+        "429"
+      ],
+      "partial_responses": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "actual_requests_equal_except_transport_timestamp": true,
+      "new_requests_by_coordinator": 0,
+      "accepted_audit_sha256": "1c24d64c7f51ce0063526c833f7aa7def2fa432499608adcb3c095e7d506d61b",
+      "accepted_thread_id": "01a1398f-dd4a-7530-ae8e-d9f96da32a27",
+      "model": "gpt-6-astra",
+      "effort": "max",
+      "checks": {
+        "adapter_sha256": "844a28b87c6fbd39a11726fc55146d9c4ced9015d3b1091d83ab9d43551f0a86",
+        "protected_reader_sha256": "9ba6de88e652b1623d75a5504b5e8d6fc3886eec4cda4f20a09503b956c0b81a",
+        "cases": [
+          {
+            "case": "accepted_exact_five_request_chain",
+            "accepted": true
+          },
+          {
+            "case": "changed_input",
+            "accepted": false,
+            "reason": "native continuation has unexplained input"
+          },
+          {
+            "case": "partial_failed_output",
+            "accepted": false,
+            "reason": "unreviewed native inference/continuation count"
+          },
+          {
+            "case": "sixth_inference",
+            "accepted": false,
+            "reason": "unreviewed native inference/continuation count"
+          },
+          {
+            "case": "unknown_failure",
+            "accepted": false,
+            "reason": "unreviewed native inference/continuation count"
+          },
+          {
+            "case": "four_stream_failures",
+            "accepted": false,
+            "reason": "unreviewed native inference/continuation count"
+          },
+          {
+            "case": "unknown_cli_error",
+            "accepted": false,
+            "reason": "unreviewed CLI transport error"
+          }
+        ],
+        "source_step": "step-0138",
+        "new_model_calls": 0,
+        "original_checkpoint_unchanged": true,
+        "temporary_cleanup": {
+          "files": 192,
+          "directories": 43,
+          "bytes": 15184119,
+          "all_paths_absent": true
+        }
+      },
+      "checks_sha256": "82a690631d583f2f0d6769cb92aa9108a9c3c177d98701d9146db072c2a15458",
+      "concurrency": 1,
+      "next_step": 139,
+      "round_credit_from_recovery": 0,
+      "reader_opinions_not_used_before_full_settlement": true
     }
   }
 }
