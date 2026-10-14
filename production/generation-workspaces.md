@@ -6,9 +6,9 @@
 
 ## 一项任务管理两个仓库
 
-以下多仓流程源于 `codex.task` v0.2.0 起的能力，当前公开入口按 v0.9.0 使用 `publish/mod/do/run`；本机切换及历史接入情况见 [STATE.md](../STATE.md)。用户从故事主目录发布、修改或直接整理并执行需求，无需填写仓库配置或执行登记命令。Agent 读取项目规则，核验主目录同级的 `../story-review-desk` 及其 Git 身份，通过当前任务的内部回调声明用途与目标分支。
+从故事主目录发起任务：`codex.task publish` 整理并发布待办，`mod --task TASK_ID` 修改尚未执行的任务，`do` 整理需求后自动衔接执行，`run --task TASK_ID` 执行或恢复已发布任务。任务定义和登记按[任务发布方法](../skills/task-definition-publish/SKILL.md)进行。Agent 根据实际修改范围核验故事仓与同级 `../story-review-desk` 的 Git 身份，向用户说明用途、目标分支和交付依赖，通过本次回调登记完整列表；用户无需配置仓库或手工创建工作区。
 
-故事 worktree 仍为主目录下 `.codex-task/worktrees/<任务 ID>`；新系统 worktree 为 `.codex-task/linked-worktrees/<任务 ID>/<仓库别名>`。这些路径由账本返回，不按相邻关系猜测。澄清阶段只记录计划；执行时统一加锁后创建并授权目录。执行中发现还需修改系统时，先登记计划、保存当前成果，再通过 `run --task TASK_ID` 恢复同一会话，不在尚未启用的系统目录提前工作。
+主仓工作区位于 `.codex-task/worktrees/<任务 ID>`，附属工作区位于 `.codex-task/linked-worktrees/<任务 ID>/<仓库别名>`，实际目录取任务账本。澄清时只保存附属计划；执行领取时工具按任务类型统一取锁，创建并授权目录。执行中新增系统仓时，先登记并保存当前成果，再通过 `run --task TASK_ID` 恢复同一任务、同一会话；取得全组必要锁并启用后才写入系统工作区。
 
 Agent 在执行会话内登记提交引用约束：主仓 `config/instance.json` 的 JSON 字段 `/review_desk_commit` 必须等于系统仓库候选。内部回调接收的对象为 `{"commit_references":[{"repository":"primary","file":"config/instance.json","pointer":"/review_desk_commit","equals_repository":"desk"}]}`，其中 `desk` 替换为本任务实际别名，文件路径相对故事 Git 根目录。先提交系统成果，再更新故事配置并提交，最后准备整组候选；上游集成使系统提交变化时须重新更新引用及准备。
 
