@@ -1,16 +1,11 @@
 {
-  "status": "UPSTREAM_REFRESH_AWAITING_COMPLETE_REREAD_AND_SAMPLE_REVALIDATION",
+  "status": "ROUND_07_FROZEN_AWAITING_FINAL_REREAD_AND_SAMPLE_REVALIDATION",
   "task": "task-20261013-0010",
   "method": "task-definition-publish",
-  "completed_at": "2026-10-13T17:09:36.322875+00:00",
-  "valid_rounds": 5,
-  "last_material_revision_round": 1,
-  "complete_rereads_after_last_revision": [
-    2,
-    3,
-    4,
-    5
-  ],
+  "completed_at": null,
+  "valid_rounds": 6,
+  "last_material_revision_round": 6,
+  "complete_rereads_after_last_revision": [],
   "model": "gpt-6-astra",
   "effort": "max",
   "rounds": [
@@ -87,11 +82,26 @@
       "revision_sha256": "e97884e9a76638061354c6172fe51a3f93bdbeb94d2ee312ad2a341c6d79f8ad",
       "raw_evidence_and_predecessor_chains_verified": true,
       "removed_native_cwds_absent": 33
+    },
+    {
+      "round": 6,
+      "units": 55,
+      "accepted_contexts": 56,
+      "actual_inferences": 56,
+      "events": 672,
+      "continuation_units": [],
+      "decision": "revise",
+      "comments": 0,
+      "read_complete_sha256": "5313e84c180ed1fa3566f3c5dbf64b2cb0ed0b5fca35caf93124bbcd7c8249fa",
+      "revision_sha256": "ceaed26305fbeb1fe96d5137c0597d59dae3b4bedd0c8116211dbcbd8b448487",
+      "semantic_review_sha256": "f4c8a6ddbee9882e4901be964bc62cb6965c8913bfb94dca81677944f4c3d61d",
+      "raw_evidence_and_predecessor_chains_verified": true,
+      "removed_native_cwds_absent": 56
     }
   ],
-  "accepted_reader_contexts": 165,
-  "actual_inferences_in_accepted_chains": 167,
-  "native_events_in_accepted_chains": 1984,
+  "accepted_reader_contexts": 221,
+  "actual_inferences_in_accepted_chains": 223,
+  "native_events_in_accepted_chains": 2656,
   "interrupted_attempt": {
     "path": "round-04/interrupted-attempts/step-0020-boot-1791904593",
     "receipt_sha256": "b519a736f43cddc94771eafc199c31bfa6519c8d2ee52e97fe157a1dcc820ea0",
@@ -103,21 +113,21 @@
     "clean_cwd_exists": false,
     "clean_cwd_removed_by_this_reviewer": false
   },
-  "all_started_contexts": 166,
-  "all_started_inferences": 168,
-  "all_native_events": 1990,
+  "all_started_contexts": 222,
+  "all_started_inferences": 224,
+  "all_native_events": 2662,
   "source_files": {
     "skills/task-definition-publish/SKILL.md": {
       "initial_sha256": "1d5f24019bfdf0f94c80e4a8cd15818b30e2bd4b9dd2cf553c7789dfa0931e1e",
-      "final_sha256": "8bd4e058dc1d4441c3e4875894e9f6a6207e6aea2e441bd9b6a2f7d95094477e",
-      "characters": 3315,
-      "bytes": 9397
+      "final_sha256": "fbbfb1c1c61671d379aba548e4e8dca52a397443dde118e64622eee917cb6b70",
+      "characters": 3150,
+      "bytes": 8734
     },
     "skills/task-definition-publish/references/project-context.md": {
       "initial_sha256": "0fd57730105c04207c4654efec55148fa4ff22689bf5de40c433893a5ccf1207",
-      "final_sha256": "a6311d6673ef132c0164be7e6745a71028e214bf28a416f151746a8e8405fbd1",
-      "characters": 1801,
-      "bytes": 4035
+      "final_sha256": "8b44e1d80870d868bf52829f8fd252e760352eba02cdbfa90ceb5949bbb2eb2f",
+      "characters": 4951,
+      "bytes": 10949
     }
   },
   "unresolved": [],
@@ -238,7 +248,7 @@
     "active_reader_runner": false,
     "retained_audit_purpose": "主执行复核真实轮次、准确版本和中断恢复；完成交付与恢复用途后按任务统一清理计划处置。"
   },
-  "handoff": "已吸收本地主干新的完整任务发布流程并保留两处输入锁解释。前五轮及旧样例证据不改；两份现行文件已冻结第六轮，须完整复读并按最终准确方法复核未发布样例。",
+  "handoff": "第六轮已完整复读主干更新，随后补清新增仓库时保存成果的对象及新仓写入边界。第七轮两文件完整包已冻结，等待影视知识第四轮结束后串行读取；最终未发布样例仍待准确末稿复核。",
   "evidence_directory": ".runtime/skill-cold-reader-fresh/task-definition-publish",
   "evidence_paths_base": "report.md and work-sample/* are relative to evidence_directory; production/* and skills/* are relative to the story project root",
   "report_sha256": "fbec3d1240063f178ada9abdbf4ad68cb5f1e399591ac613f411eedb456a36e3",
@@ -262,7 +272,7 @@
       "reason": "该报告在样例完成后只重组了当前阶段说明；已执行样例仍采用此准确历史输入，不把新说明回填为当时输入。"
     }
   },
-  "source_files_last_valid_round": 5,
+  "source_files_last_valid_round": 6,
   "current_source_files": {
     "skills/task-definition-publish/SKILL.md": {
       "sha256": "fbbfb1c1c61671d379aba548e4e8dca52a397443dde118e64622eee917cb6b70",
@@ -270,9 +280,9 @@
       "bytes": 8734
     },
     "skills/task-definition-publish/references/project-context.md": {
-      "sha256": "8b44e1d80870d868bf52829f8fd252e760352eba02cdbfa90ceb5949bbb2eb2f",
-      "characters": 4951,
-      "bytes": 10949
+      "sha256": "75c17fc58cf1b9c8839e2265a4a49b68760f6388ccdec02998eb50900ace84bc",
+      "characters": 4980,
+      "bytes": 11036
     }
   },
   "upstream_refresh": {
@@ -311,5 +321,33 @@
     "round_06_frozen_sha256": "bd4a64d480efde8c8ad7aff6bec844ded87bf72177389be0b5f393cd5a5cdf58",
     "round_06_source_package_sha256": "688e0e6f974060796b081847a6987d938ec8e4779dadb5118a6ecc3afa9f95d1",
     "round_06_body_units": 55
-  }
+  },
+  "last_reviewed_at": "2026-10-14T11:45:20.785136+00:00",
+  "last_material_revision_has_been_read": false,
+  "upstream_refresh_result": {
+    "round_06_read_complete_sha256": "5313e84c180ed1fa3566f3c5dbf64b2cb0ed0b5fca35caf93124bbcd7c8249fa",
+    "round_06_revision_sha256": "ceaed26305fbeb1fe96d5137c0597d59dae3b4bedd0c8116211dbcbd8b448487",
+    "upstream_merged_source_fully_read": true,
+    "subsequent_revision_requires_round": 7
+  },
+  "current_round": {
+    "round": 7,
+    "body_units": 55,
+    "files": 2,
+    "frozen_sha256": "c1b5bb98f419e6256e0316841efe204d7dee5157f8ce6891fb31e3625c1af024",
+    "source_package_sha256": "34160d284b0c63dc9e10c295404d3b2fc1ff47119f3685213670993c400b6538",
+    "reading_units_sha256": "5c790bf352c8bc8f950904ce42fe5b5cea39f5478eb489b68c9514e5814be369",
+    "reader_started": false,
+    "not_counted_as_valid": true
+  },
+  "additional_before_after_examples": [
+    {
+      "round": 6,
+      "before": "执行中新仓先登记、保存成果，再通过 `run --task TASK_ID` 恢复启用；启用前不写。",
+      "reader_issue": "The saved work location was initially unclear; later text resolved it.",
+      "after": "执行中发现需要新增仓库时，先按本次执行指令登记，保存现有受管工作区的成果，再通过 `run --task TASK_ID` 恢复启用新仓；启用前不向新仓写入。",
+      "work_effect": "恢复步骤直接指出先保存现有受管工作区成果，再启用新仓；写入限制的对象也明确为新仓。此处效果仍待第七轮完整复读。",
+      "pending_full_reread": true
+    }
+  ]
 }
