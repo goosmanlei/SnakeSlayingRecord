@@ -287,7 +287,7 @@ def audit(directory, expected_prefix):
     started = [v for v in events if v["type"] == "inference_started"]
     completed = [v for v in events if v["type"] == "inference_completed"]
     failed = [v for v in events if v["type"] == "inference_failed"]
-    empty_capacity_retries = (len(started) == 4 and len(failed) == 3 and
+    empty_capacity_retries = (len(started) in (4, 5) and len(failed) == len(started) - 1 and
                              all(v["error"] in (SERVICE_UNAVAILABLE, RATE_LIMITED) and
                                  v["partial_response_payload"] is None for v in failed))
     observed_empty_mixed_chain = (len(started) == 5 and

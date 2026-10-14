@@ -1843,6 +1843,66 @@
       "next_step": 139,
       "round_credit_from_recovery": 0,
       "reader_opinions_not_used_before_full_settlement": true
+    },
+    "five_capacity_requests": {
+      "source_step": ".runtime/skill-cold-reader-fresh/filmcraft/round-03/step-0150",
+      "native_inferences": 5,
+      "failed_errors": [
+        "503",
+        "503",
+        "503",
+        "429"
+      ],
+      "partial_responses": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "actual_requests_equal_except_transport_timestamp": true,
+      "new_requests_by_coordinator": 0,
+      "accepted_audit_sha256": "63b25030b906b1580780fc728a07f2b1a8601c7fce58ff286e8f348b6e218468",
+      "accepted_thread_id": "01a1399b-f5d4-76c2-8acd-3ae14c83499a",
+      "model": "gpt-6-astra",
+      "effort": "max",
+      "checks": {
+        "source_step": "step-0150",
+        "adapter_sha256": "50f5fd279e27409dda1fa4336e5c564d2769c7f260c8d336824655b0b4a7d8b8",
+        "protected_reader_sha256": "9ba6de88e652b1623d75a5504b5e8d6fc3886eec4cda4f20a09503b956c0b81a",
+        "cases": [
+          {
+            "case": "accepted_five_capacity_requests",
+            "accepted": true
+          },
+          {
+            "case": "sixth_inference",
+            "accepted": false,
+            "reason": "unreviewed native inference/continuation count"
+          },
+          {
+            "case": "partial_failed_output",
+            "accepted": false,
+            "reason": "unreviewed native inference/continuation count"
+          },
+          {
+            "case": "changed_input",
+            "accepted": false,
+            "reason": "native continuation has unexplained input"
+          }
+        ],
+        "new_model_calls": 0,
+        "original_checkpoint_unchanged": true,
+        "temporary_cleanup": {
+          "files": 110,
+          "directories": 25,
+          "bytes": 9155703,
+          "all_paths_absent": true
+        }
+      },
+      "checks_sha256": "ce7dbde7752e959eafa776717ae89310de17a6ccd42e1221141dcc55b9a3ce46",
+      "concurrency": 1,
+      "next_step": 151,
+      "round_credit_from_recovery": 0
     }
   }
 }
