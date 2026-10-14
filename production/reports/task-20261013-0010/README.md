@@ -21,7 +21,7 @@
 | 结果检查与返修 | 3 | [已补改图代数与返修入口](result-review.md)；待后续全文轮次和新字层候选检查 |
 | 评论表达润色 | 5 | [阅读与隔离评论操作](comment-polish-clear.md)已完成；待最终发布 |
 | 创作协作 Review | 3 | [前三轮保留理由与意见准备](creative-system-review.md)；待后续全文轮次及实际结果复核 |
-| 任务定义与发布 | 5 | [阅读与未发布任务草稿](task-definition-publish.md)已完成 |
+| 任务定义与发布 | 5 | [旧稿阅读与未发布草稿](task-definition-publish.md)已完成；已吸收主干新流程，待第六轮全文复读及样例复核 |
 | 完整影视专业知识 | 2 | [专业判断、参照对象与入口已修订](filmcraft.md)；第三轮正在完整复读，本书只计一项 |
 | 完整视频生成手册 | 6 | [完整时间线与准确依据入口](video-handbook.md)已定稿，隔离资源与 Chrome 章节引用已核对；待最终样例与正式发布 |
 | 当前制作约定 | 7 | [末稿复读、准确引用和 Chrome 比较](current-production.md)已完成；待最终联动和发布 |
