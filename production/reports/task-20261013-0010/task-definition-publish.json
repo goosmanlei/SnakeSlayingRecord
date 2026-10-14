@@ -1,5 +1,5 @@
 {
-  "status": "COMPLETE_SOURCE_AND_UNPUBLISHED_SAMPLE",
+  "status": "UPSTREAM_REFRESH_AWAITING_COMPLETE_REREAD_AND_SAMPLE_REVALIDATION",
   "task": "task-20261013-0010",
   "method": "task-definition-publish",
   "completed_at": "2026-10-13T17:09:36.322875+00:00",
@@ -224,12 +224,13 @@
     "production/reports/task-20261013-0010/task-definition-publish.md": "6360590acab434ee43d64c10358346f339dad99c3c9713ad3c10db67b79fa752"
   },
   "validation_boundary": {
-    "full_semantic_read_of_final_own_texts_and_draft": true,
+    "full_semantic_read_of_final_own_texts_and_draft": false,
     "human_participant_study": false,
     "browser_performed_by_this_reviewer": false,
     "database_write_by_this_reviewer": false,
     "formal_publication_by_this_reviewer": false,
-    "all_reader_contexts_separate_from_reviser": true
+    "all_reader_contexts_separate_from_reviser": true,
+    "previous_five_rounds_and_sample_still_valid_for_their_exact_sources": true
   },
   "cleanup": {
     "completed_reader_empty_cwds_removed_and_absent": 165,
@@ -237,7 +238,7 @@
     "active_reader_runner": false,
     "retained_audit_purpose": "主执行复核真实轮次、准确版本和中断恢复；完成交付与恢复用途后按任务统一清理计划处置。"
   },
-  "handoff": "两份方法源已完成五轮，本次保持不变。更新的受管 JSON 与人类报告由主协调提交；样例保持未发布，最终方法交付与清理由主协调负责。",
+  "handoff": "已吸收本地主干新的完整任务发布流程并保留两处输入锁解释。前五轮及旧样例证据不改；两份现行文件已冻结第六轮，须完整复读并按最终准确方法复核未发布样例。",
   "evidence_directory": ".runtime/skill-cold-reader-fresh/task-definition-publish",
   "evidence_paths_base": "report.md and work-sample/* are relative to evidence_directory; production/* and skills/* are relative to the story project root",
   "report_sha256": "fbec3d1240063f178ada9abdbf4ad68cb5f1e399591ac613f411eedb456a36e3",
@@ -260,5 +261,55 @@
       "sha256": "80bf712b8f266998c3b76299ed724cbce39c2d6f82d901f70c3c0915898f95d6",
       "reason": "该报告在样例完成后只重组了当前阶段说明；已执行样例仍采用此准确历史输入，不把新说明回填为当时输入。"
     }
+  },
+  "source_files_last_valid_round": 5,
+  "current_source_files": {
+    "skills/task-definition-publish/SKILL.md": {
+      "sha256": "fbbfb1c1c61671d379aba548e4e8dca52a397443dde118e64622eee917cb6b70",
+      "characters": 3150,
+      "bytes": 8734
+    },
+    "skills/task-definition-publish/references/project-context.md": {
+      "sha256": "8b44e1d80870d868bf52829f8fd252e760352eba02cdbfa90ceb5949bbb2eb2f",
+      "characters": 4951,
+      "bytes": 10949
+    }
+  },
+  "upstream_refresh": {
+    "task": "task-20261013-0010",
+    "created_at": "2026-10-14T07:36:55.179787+00:00",
+    "origin": "Current local main introduced a substantive task publication workflow update after the fifth accepted round; merge required by project baseline rules.",
+    "previous_accepted_round": "round-05",
+    "previous_revision_decision_sha256": "e97884e9a76638061354c6172fe51a3f93bdbeb94d2ee312ad2a341c6d79f8ad",
+    "previous_read_complete_sha256": "4c2951fc167cf10683d6281c0b907ece78008d2f7902aadf752568c6d4c80ce4",
+    "source_commits": [
+      "7e4b132",
+      "bde71dd88bbdba48d7803a15130b365ea9fa824e"
+    ],
+    "merged_commit": "85f08d81c9187bd9fdf4e3042f913ef935e3853c",
+    "decision": "Use the current complete workflow and project adaptation while retaining both previously audited explanations of accurate input locks. Entire incoming and merged two-file text read by the coordinator; conflicts resolved semantically.",
+    "actual_coordinator_model": "gpt-6-astra",
+    "actual_coordinator_effort": "max",
+    "actual_coordinator_session": "01a1346f-7915-7a40-b676-864edb334ecc",
+    "before_sha256": {
+      "skills/task-definition-publish/SKILL.md": "8bd4e058dc1d4441c3e4875894e9f6a6207e6aea2e441bd9b6a2f7d95094477e",
+      "skills/task-definition-publish/references/project-context.md": "a6311d6673ef132c0164be7e6745a71028e214bf28a416f151746a8e8405fbd1"
+    },
+    "after_sha256": {
+      "skills/task-definition-publish/SKILL.md": "fbbfb1c1c61671d379aba548e4e8dca52a397443dde118e64622eee917cb6b70",
+      "skills/task-definition-publish/references/project-context.md": "8b44e1d80870d868bf52829f8fd252e760352eba02cdbfa90ceb5949bbb2eb2f"
+    },
+    "old_rounds_unchanged": true,
+    "new_round_credit": 0,
+    "next_full_round": 6,
+    "independent_reader_started": false,
+    "previous_opinions_not_given_to_next_reader": true,
+    "freeze_boundary": "Round 6 starts from the merged source; this exact transition links it to round 5 without rewriting the old frozen source or revision decision. The transition metadata is coordinator evidence, not reader input.",
+    "sample_revalidation_required": true,
+    "evidence": ".runtime/skill-cold-reader-fresh/task-definition-publish/upstream-refresh.json",
+    "evidence_sha256": "afe5143b4d93063eb0fbd8cf45bc2b29a3ec11b4e50f2da23d4a22684bce6284",
+    "round_06_frozen_sha256": "bd4a64d480efde8c8ad7aff6bec844ded87bf72177389be0b5f393cd5a5cdf58",
+    "round_06_source_package_sha256": "688e0e6f974060796b081847a6987d938ec8e4779dadb5118a6ecc3afa9f95d1",
+    "round_06_body_units": 55
   }
 }
