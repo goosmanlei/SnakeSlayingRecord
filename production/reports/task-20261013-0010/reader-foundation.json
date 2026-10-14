@@ -1475,5 +1475,88 @@
     "durable_reader_results_changed": false,
     "native_input_changed": false,
     "protected_reader_changed": false
+  },
+  "host_reboot_recovery_20261014": {
+    "task": "task-20261013-0010",
+    "boot": "kern.boottime: { sec = 1791949852, usec = 702545 } Wed Oct 14 11:50:52 2026",
+    "restore_receipt": {
+      "path": ".runtime/skill-cold-reader-fresh/host-reboot-recovery-20261014-1150.json",
+      "sha256": "68b7dcd8b7b6645798cabb61c03c43e80986e992f1cec336230bed4faae38c63"
+    },
+    "resumed_results": [
+      {
+        "package": "filmcraft",
+        "round": "round-02",
+        "unit": 245,
+        "audit_path": ".runtime/skill-cold-reader-fresh/filmcraft/round-02/step-0245/audit.json",
+        "audit_sha256": "9b0a575333a3bd41fdd013e8102c0f9040aeaeb2a537c8965e0a6ae1c971b31c",
+        "thread_id": "01a13897-a2bd-7903-a487-41fb39550234",
+        "model": "gpt-6-astra",
+        "effort": "max",
+        "interrupted_attempts_not_counted": 1,
+        "new_accepted_results": 1
+      },
+      {
+        "package": "video-handbook",
+        "round": "round-06",
+        "unit": 72,
+        "audit_path": ".runtime/skill-cold-reader-fresh/video-handbook/round-06/step-0072/audit.json",
+        "audit_sha256": "5fd840b1c38e38e108b9c7f723890853c23f2e9e35d499447fa5fdba8e0d6e43",
+        "thread_id": "01a1389b-ffaa-70c1-a34b-d19dc924aa18",
+        "model": "gpt-6-astra",
+        "effort": "max",
+        "interrupted_attempts_not_counted": 1,
+        "new_accepted_results": 1
+      },
+      {
+        "package": "current-production",
+        "round": "round-06",
+        "unit": 13,
+        "audit_path": ".runtime/skill-cold-reader-fresh/current-production/round-06/step-0013/audit.json",
+        "audit_sha256": "979bfd0d1a4305a12ff101c5ce1127fb6f66530793827f810aa1b94f976bc9eb",
+        "thread_id": "01a13890-85da-7393-b536-5744047a785b",
+        "model": "gpt-6-astra",
+        "effort": "max",
+        "interrupted_attempts_not_counted": 1,
+        "new_accepted_results": 1
+      }
+    ],
+    "recovery_semantics": "Each archived attempt has no accepted final answer in local native evidence; remote completion is unknown and no partial reasoning was reused. The next independent request used only the preserved accepted prefix.",
+    "interrupted_attempts_not_counted": 3,
+    "runtime_restored": {
+      "formal_url": "http://127.0.0.1:3000",
+      "isolated_url": "http://127.0.0.1:57149",
+      "protected_five_reader_packages_equal": true,
+      "formal_containers": [
+        {
+          "id": "40221a97b79c7aba2156f7817786dc724e9bb13e495780dbfc0760f94be7c868",
+          "name": "/snakeslayingrecord-app-1",
+          "image": "sha256:b00d69d2334ac61d9d724b754814949e56ce78bad1a98d6c65f53fd76b3c8126",
+          "running": true,
+          "health": "healthy",
+          "newly_created": false
+        },
+        {
+          "id": "3c2f1d7663532325b8740f779a0161bd8e1cd6f40abb4873ae63f4efbc3408f6",
+          "name": "/snakeslayingrecord-nginx-1",
+          "image": "sha256:009d73a160564cce886ee8a8538c4d18f0ea9b961f03db9df410e45b0fdf29b2",
+          "running": true,
+          "health": null,
+          "newly_created": false
+        }
+      ],
+      "candidate_published": false
+    },
+    "restart_cause": "not confirmed",
+    "recovery_concurrency": {
+      "initial": 1,
+      "then": 2,
+      "bounded_max": 3,
+      "observed_swap_used_bytes": 0,
+      "physical_memory_bytes": 51539607552
+    },
+    "verified_at": "2026-10-14T04:13:53.801121+00:00",
+    "evidence_path": ".runtime/skill-cold-reader-fresh/host-reboot-resumed-20261014-1150.json",
+    "evidence_sha256": "e1fa7ba3f7117ab1c4ed89bf8673dabbefa19f82a60a805e45c47c0d98bf5df6"
   }
 }
