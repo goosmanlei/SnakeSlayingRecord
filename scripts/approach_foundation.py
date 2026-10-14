@@ -63,6 +63,48 @@ def synchronize(root=ROOT, check=False):
     return {'tabs':[t['id'] for t in result['tabs']], 'legacy_anchors':sum(len(r['anchors']) for r in result['reading_routes'].values())}
 
 
+def sync_handbook_resource(store, root, source):
+    """Keep source section markers in chapter files used by the reading tree.
+
+    The native projector validates paths, reads the sole source and binds media.
+    Its temporary unmarked revision never enters the destination history.
+    """
+    import hashlib
+    import tempfile
+    from review_desk import methods
+    from review_desk.store import Store
+    with tempfile.TemporaryDirectory(prefix='handbook-source-') as directory:
+        staged = Store(Path(directory) / 'review.sqlite3')
+        try:
+            projected = methods.sync_source(staged, root, {**source, 'expected_version': 0})
+            payload = copy.deepcopy(projected['payload'])
+        finally:
+            staged.close()
+    for filename, spec in payload['source']['files'].items():
+        if not spec.get('section'):
+            continue
+        raw = (Path(root) / spec['path']).read_bytes()
+        if hashlib.sha256(raw).hexdigest() != spec['sha256']:
+            raise ValueError('Handbook source changed during projection')
+        marker = re.search(r'<!--\s*section:\s*' + re.escape(spec['section']) + r'\s*-->', raw.decode()).group()
+        content = marker + '\n' + payload['files'][filename]
+        payload['files'][filename] = content
+        spec['content_sha256'] = hashlib.sha256(content.encode()).hexdigest()
+    oid = 'method.resource.' + source['name']
+    if store.db.execute('SELECT 1 FROM objects WHERE id=?', (oid,)).fetchone():
+        previous = methods.read(store, oid)
+        if previous['payload'] == payload:
+            return previous
+    # This remains a source synchronization: no editable resource prose enters it.
+    before = getattr(store, '_method_source_sync', False)
+    store._method_source_sync = True
+    try:
+        return methods.save(store, {'category': 'resource', 'name': source['name'],
+                                   'expected_version': source['expected_version'], 'payload': payload})
+    finally:
+        store._method_source_sync = before
+
+
 def _update_methods(store, root=ROOT):
     from review_desk import methods
     previous=methods.read(store,'method.resource.filmcraft-execution')
@@ -91,7 +133,7 @@ def _update_methods(store, root=ROOT):
             'preserve_paths':False,'sections':{}}
     for section,file in payload['sections'].items():
         source['sections'][section]={k:v for k,v in payload['source']['files'][file].items() if k in ('path','section')}
-    current=methods.sync_source(store,root,source)
+    current=sync_handbook_resource(store,root,source)
     resources[current['object_id']]=current
     if video['revision_id']!=current['revision_id']:
         changes[video['object_id']]={'before':video['revision_id'],'after':current['revision_id']}
