@@ -30,5 +30,56 @@
     "comment_detail_records": 1,
     "comment_screenshots": 1
   },
-  "history_cleanup_status": "pending final candidate; no live database deletion claimed"
+  "history_cleanup_status": "pending final candidate; no live database deletion claimed",
+  "additional_readback": {
+    "validated_at": "2026-10-14T02:46:44.635930+00:00",
+    "system_commit": "103238350b965410d65896f42db3b6cf5bd4de51",
+    "browser": "Google Chrome/155.0.8059.40",
+    "channel": "headed desktop Chrome with task-owned profile, via Chrome DevTools Protocol",
+    "scope": "isolated final story method before latest-only cleanup",
+    "method": {
+      "object_id": "method.skill.story-structure",
+      "revision_id": "7d01a43d01ea9ff6c4d76a328fcbfef8a7aa1ff14f84dbe5463e0d99f23f780b"
+    },
+    "actual_ui_steps": [
+      "opened 制作思路 → 基础流程 and read story SKILL.md file version 6",
+      "compared SKILL.md file versions 5 and 6; read both changed passages and viewed rendered modal at top and end",
+      "followed the body link to references/structure-choices.md and read its complete rendered text at file version 2",
+      "compared reference file versions 1 and 2; checked the revised red-line inference example in the rendered modal",
+      "used 返回原阅读位置 and read back the original SKILL.md file version 6"
+    ],
+    "evidence": [
+      {
+        "path": ".runtime/skill-cold-reader-fresh/chrome-task-initial-page.json",
+        "sha256": "a538da5617fb5c6e72366368a5509952911e7b0521eb022b107711b52153e41a"
+      },
+      {
+        "path": ".runtime/skill-cold-reader-fresh/chrome-task-story-compare.json",
+        "sha256": "7fd6d84df966ad85109f39dec4f284b3e90027dd5e75f18633a342ab9a74514e"
+      },
+      {
+        "path": ".runtime/skill-cold-reader-fresh/chrome-task-story-reference.json",
+        "sha256": "55c74558a69af437bebbaed47190e7eff0530913175a053b57a0efc1baca5ca4"
+      },
+      {
+        "path": ".runtime/skill-cold-reader-fresh/chrome-task-story-reference-compare.json",
+        "sha256": "8db625899f71c74dece44c63a827117ff1419b5698e34462c4f957791fc47da5"
+      },
+      {
+        "path": ".runtime/skill-cold-reader-fresh/chrome-task-story-return.json",
+        "sha256": "3afd0190cd018bb4dda5d260408c3165bb62eca1911dec70f0eb8ea404e6f5bc"
+      }
+    ],
+    "screenshots_visually_inspected": [
+      "chrome-task-initial-page.png",
+      "chrome-task-foundation.png",
+      "chrome-task-story-compare.png",
+      "chrome-task-story-compare-end.png",
+      "chrome-task-story-reference-compare.png"
+    ],
+    "new_comments": 0,
+    "formal_writes": false,
+    "screen_unlock_performed": false,
+    "final_formal_or_restore_acceptance": false
+  }
 }
