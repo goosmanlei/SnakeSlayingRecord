@@ -23,6 +23,9 @@ except ImportError:
 
 MODEL = "gpt-6-astra"
 EFFORT = "max"
+SERVICE_UNAVAILABLE = ("unexpected status 503 Service Unavailable: An error occurred while processing your request. "
+                       "You can retry your request, or contact us through our help center at help.openai.com "
+                       "if the error persists.")
 ADAPTATION = """本次仅调整阅读对象与身份：你是首次使用这份工作方法的执行者。
 审阅兼顾首次接触方法的人类读者和 AI 使用者：人应能读懂目的、概念、条件、判断依据和例子，AI 应能据此识别输入、推进工作、交付并检查结果。具体障碍按实际已读原文判断，不把术语、命令或专业细节本身判为缺点，也不以字段齐全代替理解。
 下面独立读者方法中小说/剧本/作品指本次逐段开放的工作方法；人物、动作和因果的观察，在本次对应概念、条件、输入、动作、输出、依据与上下文衔接。其余独立性、顺序、准确引文与五种模式的边界保持。
@@ -252,7 +255,8 @@ def audit(directory, expected_prefix):
     """Reject missing events, extra inference/calls, or unreviewed native context.
 
     Accept the observed complete inference, or up to two native continuations
-    whose retained reasoning exactly matches the saved partial responses.
+    whose retained reasoning exactly matches the saved partial responses. The
+    observed three empty HTTP 503 failures may precede one successful inference.
     Other event patterns stop for inspection; this function never retries.
     """
     check_frozen(directory)
@@ -280,7 +284,11 @@ def audit(directory, expected_prefix):
     started = [v for v in events if v["type"] == "inference_started"]
     completed = [v for v in events if v["type"] == "inference_completed"]
     failed = [v for v in events if v["type"] == "inference_failed"]
-    reader.require(1 <= len(started) <= 3 and len(completed) == 1 and len(failed) == len(started) - 1,
+    empty_service_retries = (len(started) == 4 and len(failed) == 3 and
+                            all(v["error"] == SERVICE_UNAVAILABLE and v["partial_response_payload"] is None
+                                for v in failed))
+    reader.require((1 <= len(started) <= 3 or empty_service_retries) and
+                   len(completed) == 1 and len(failed) == len(started) - 1,
                    "unreviewed native inference/continuation count")
     inference_events = [v for v in events if v["type"].startswith("inference_")]
     reader.require([v["type"] for v in inference_events] ==
@@ -322,7 +330,8 @@ def audit(directory, expected_prefix):
                            "stream disconnected before completion: websocket closed by server before response.completed",
                            "stream disconnected before completion: WebSocket protocol error: Connection reset without closing handshake",
                            "stream disconnected before completion: idle timeout waiting for websocket",
-                           "exceeded retry limit, last status: 429 Too Many Requests"),
+                           "exceeded retry limit, last status: 429 Too Many Requests",
+                           SERVICE_UNAVAILABLE),
                            "unreviewed native inference failure")
             # A null payload records a disconnect before any output was saved.
             # In that observed case the next request must repeat the exact input;
@@ -330,6 +339,8 @@ def audit(directory, expected_prefix):
             partial_ref = ending["partial_response_payload"]
             if ending["error"] == "exceeded retry limit, last status: 429 Too Many Requests":
                 reader.require(partial_ref is None, "rate-limit retry has unreviewed partial output")
+            if ending["error"] == SERVICE_UNAVAILABLE:
+                reader.require(partial_ref is None, "service retry has unreviewed partial output")
             if partial_ref is not None:
                 partial = payload(partial_ref)
                 reader.require(all(v["type"] == "reasoning" for v in partial["output_items"]),
@@ -379,7 +390,8 @@ def audit(directory, expected_prefix):
         for attempt, event in enumerate(transport_errors, 2):
             reader.require(event in (
                 {"type": "error", "message": "Reconnecting... %s/5 (request timed out)" % attempt},
-                {"type": "error", "message": "Reconnecting... %s/5 (stream disconnected before completion: idle timeout waiting for websocket)" % attempt}),
+                {"type": "error", "message": "Reconnecting... %s/5 (stream disconnected before completion: idle timeout waiting for websocket)" % attempt},
+                {"type": "error", "message": "Reconnecting... %s/5 (%s)" % (attempt, SERVICE_UNAVAILABLE)}),
                 "unreviewed CLI transport error")
     cli_content = [v for v in cli if v["type"] != "error"]
     reader.require([v["type"] for v in cli_content] == ["thread.started", "turn.started", "item.completed", "turn.completed"],

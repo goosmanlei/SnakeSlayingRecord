@@ -1629,5 +1629,75 @@
   "native_prefix_20261014_0506": {
     "path": "production/reports/task-20261013-0010/native-prefix-20261014-0506.json",
     "sha256": "ac69c7cbe908fe0416de86aa6ad425c0860c271711d1eca62ea8dd4899f0c3bf"
+  },
+  "native_capacity_recovery": {
+    "source_step": ".runtime/skill-cold-reader-fresh/filmcraft/round-03/step-0020",
+    "failed_attempt_native_inferences": 7,
+    "failed_attempt_accepted": false,
+    "manual_recovery_requests": 1,
+    "minimum_backoff_seconds": 300,
+    "same_logical_request": true,
+    "recovery_native_inferences": 4,
+    "empty_503_failures_before_success": 3,
+    "actual_requests_equal_except_transport_timestamp": true,
+    "model": "gpt-6-astra",
+    "effort": "max",
+    "concurrency": 1,
+    "accepted_audit_sha256": "23a9cabb2b9d5e0f763aafa17f49b0b9ae106014ecd3696306091d4a3412d5a3",
+    "accepted_thread_id": "01a13923-9be2-7ab2-b2b7-09c2c5db655c",
+    "evidence_path": ".runtime/skill-cold-reader-fresh/filmcraft/round-03/capacity-recovery.json",
+    "evidence_sha256": "33f101afea90c2e2652a99ae19ab1ac504cd6d24041a41ea63436197722e59ec",
+    "checks": {
+      "adapter_sha256": "931dfd95eea2e1959d8b457c221407b6deb81ee584afcaf102120284d86b0d2b",
+      "protected_reader_sha256": "9ba6de88e652b1623d75a5504b5e8d6fc3886eec4cda4f20a09503b956c0b81a",
+      "cases": [
+        {
+          "case": "accepted_exact_503_chain",
+          "accepted": true
+        },
+        {
+          "case": "changed_input",
+          "accepted": false,
+          "reason": "native continuation has unexplained input"
+        },
+        {
+          "case": "partial_output",
+          "accepted": false,
+          "reason": "service retry has unreviewed partial output"
+        },
+        {
+          "case": "fifth_inference",
+          "accepted": false,
+          "reason": "unreviewed native inference/continuation count"
+        },
+        {
+          "case": "unknown_failure",
+          "accepted": false,
+          "reason": "unreviewed native inference/continuation count"
+        },
+        {
+          "case": "four_non_503_attempts",
+          "accepted": false,
+          "reason": "unreviewed native inference/continuation count"
+        },
+        {
+          "case": "unknown_cli_error",
+          "accepted": false,
+          "reason": "unreviewed CLI transport error"
+        }
+      ],
+      "actual_source": "step-0020",
+      "new_model_calls": 0,
+      "original_checkpoint_unchanged": true,
+      "temporary_cleanup": {
+        "files": 185,
+        "directories": 42,
+        "bytes": 8287724,
+        "all_paths_absent": true
+      }
+    },
+    "reader_opinions_not_used_before_full_settlement": true,
+    "next_step": 21,
+    "round_credit_from_recovery": 0
   }
 }
