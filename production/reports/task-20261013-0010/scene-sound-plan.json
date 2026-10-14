@@ -1,8 +1,8 @@
 {
   "task": "task-20261013-0010",
   "object_id": "method.skill.scene-sound-plan",
-  "status": "THREE_ROUNDS_COMPLETE_FINAL_ROUNDS_AND_SAMPLE_PENDING",
-  "valid_complete_rounds": 3,
+  "status": "FOUR_ROUNDS_COMPLETE_FINAL_REREAD_AND_SAMPLE_PENDING",
+  "valid_complete_rounds": 4,
   "reader_model": "gpt-6-astra",
   "reader_effort": "max",
   "reviser_model": "gpt-6-astra",
@@ -10,41 +10,78 @@
   "rounds": [
     {
       "round": 1,
-      "units": 7,
+      "body_units": 7,
+      "reader_contexts": 8,
+      "native_inferences": 8,
+      "native_events": 96,
       "decision": "revise",
       "rationale": "已全文读回7个单位和FINISH，读者没有未决问题，能够解释独立音轨的真实用途、注意力、声音远近、竞争层和单轨／混合验收边界。协调者对照已经生效的0007完整原件规则，发现第6段“保存原件与范围”会继续引导当前参考截段；改为准确候选与完整原件，另说明真实后期剪辑可记区间，避免把两类动作混为一谈。这来自当前系统依据，不冒充读者批注。另补故事项目现有单项媒体方案入口、准确类别和隔离实例，使人能找到实际步骤、AI能取得准确输入。专业判断和真实回听要求保留；本次媒体看听豁免仅用于本次验收，不写成永久省略。",
+      "unresolved": [],
+      "changed_paths": [
+        "SKILL.md"
+      ],
+      "last_material_revision_has_been_read": false,
+      "frozen_sha256": "8e9d2724d4c90634169a4fa29304a9ccc04456d295335397a84843376ac31c80",
       "read_complete_sha256": "d1a9358213439c9fa336b10c3387345962a19c124ded945395d03aea3ebe1102",
-      "decision_sha256": "322678af35e21c8637dadcef5a76a01fa2d84424e68d5350d09ce9e0c10260d5",
-      "unresolved": []
+      "revision_decision_sha256": "322678af35e21c8637dadcef5a76a01fa2d84424e68d5350d09ce9e0c10260d5",
+      "evidence_directory": ".runtime/skill-cold-reader-fresh/scene-sound-plan/round-01"
     },
     {
       "round": 2,
-      "units": 8,
+      "body_units": 8,
+      "reader_contexts": 9,
+      "native_inferences": 9,
+      "native_events": 108,
       "decision": "keep",
       "rationale": "已完整读回8个正文单位与FINISH。读者能区分独立音频的必要性、叙事注意力、距离与掩蔽、完整参考和后期编辑、单轨与混合验收，以及实际项目入口。第3段对“量米声”的WATCH在全文结算中已撤销：按字面可理解为量米动作的声音，前后文足以支撑注意力举例，未见误字证据，不据此机械换词。保留当前正文继续下一完整轮。共享声音知识尚在优化；最后两轮及样例待其定稿后进行。",
+      "unresolved": [],
+      "changed_paths": [],
+      "last_material_revision_has_been_read": true,
+      "frozen_sha256": "ade8a237f5ae2c654129cf954dc626b4ff8a2bb011bc6f4d33e5b8229f7d56a9",
       "read_complete_sha256": "0cbf5c6d1b373eb29fde3922f251424a8bb8de6a8a721d9c5c4ea1092a21ff90",
-      "decision_sha256": "ba1fc28fb9601df657b353bc43a0d4170ece9d6e64cf4e0c2fdad6587f369d77",
-      "unresolved": []
+      "revision_decision_sha256": "ba1fc28fb9601df657b353bc43a0d4170ece9d6e64cf4e0c2fdad6587f369d77",
+      "evidence_directory": ".runtime/skill-cold-reader-fresh/scene-sound-plan/round-02"
     },
     {
       "round": 3,
-      "units": 8,
+      "body_units": 8,
+      "reader_contexts": 9,
+      "native_inferences": 9,
+      "native_events": 108,
       "decision": "keep",
       "rationale": "已逐条完整读取8个正文单位和FINISH。读者准确说明真实独立音频需求、声源和听觉位置、距离不只由音量构成、掩蔽时的比较选择、动作同步与循环、完整参考和编辑区间、单件与整场试听以及项目入口；全文没有未决问题。保留人能理解的条件和具体例子，也保留AI能定位的分类与流程，不为凑修改而删去专业信息。前三轮完成，最后两轮及实际样例等待共享声音知识定稿。",
+      "unresolved": [],
+      "changed_paths": [],
+      "last_material_revision_has_been_read": true,
+      "frozen_sha256": "c4bfe0b43a40de7caa87a3b480c07691ec4cf027ae001b47f01a4cc5827c92b3",
       "read_complete_sha256": "ecbd2fca7e2ce969cd060ea2d39ceca9261d9fb5e151b0bc521d4e194fc875c2",
-      "decision_sha256": "a2f266d247727890bea265aa6d61bd0b17e453824ddf97cec048104475085380",
-      "unresolved": []
+      "revision_decision_sha256": "a2f266d247727890bea265aa6d61bd0b17e453824ddf97cec048104475085380",
+      "evidence_directory": ".runtime/skill-cold-reader-fresh/scene-sound-plan/round-03"
+    },
+    {
+      "round": 4,
+      "body_units": 8,
+      "reader_contexts": 9,
+      "native_inferences": 9,
+      "native_events": 108,
+      "decision": "keep",
+      "rationale": "第四轮已全文读取8个正文单位、全部逐段理解和记忆更新、全文结算及空问题历史。读者准确区分真实独立音频职责、镜头原生声音、声源与听觉位置、声音远近、掩蔽和循环，以及完整参考与后期取段；能找到实际单项媒体作者入口。现稿与已经定稿的声音知识、当前制作规则一致，未发现需要靠追加术语或格式才能解决的障碍。保留现有例子和专业取舍，交第五轮完整重读；隔离样例及实际声音效果不据本轮判定通过。",
+      "unresolved": [],
+      "changed_paths": [],
+      "last_material_revision_has_been_read": true,
+      "frozen_sha256": "3ca5e2b2eb7a10f6de26e76f4b3653b5ff16dfda396a917ed677ebb71ce0575e",
+      "read_complete_sha256": "d295b05240c2433f750430caf9216937e084087d1342dc4c15e69f32a6f36116",
+      "revision_decision_sha256": "1565945c0ed98fb71e696d4e0e294c568cab47e23a0c1b9503f1e48ffe839864",
+      "evidence_directory": ".runtime/skill-cold-reader-fresh/scene-sound-plan/round-04"
     }
   ],
-  "reader_contexts": 26,
-  "native_inferences": 26,
+  "reader_contexts": 35,
+  "native_inferences": 35,
   "candidate_files_sha256": {
     "SKILL.md": "910ddbae080459b630b4b4d867e7f62bfe698215ad11f67a8fd6e62e36a2c379"
   },
-  "candidate_source": ".runtime/skill-cold-reader-fresh/scene-sound-plan/round-03/revision-decision.json:next_files",
-  "candidate_decision_sha256": "a2f266d247727890bea265aa6d61bd0b17e453824ddf97cec048104475085380",
-  "source_report": ".runtime/skill-cold-reader-fresh/scene-sound-plan/three-round-report.json",
-  "source_report_sha256": "fe198e4340c2faa4f09ffc89339181e6612e2ea6a3852ef61c9909a3949cc539",
+  "candidate_source": ".runtime/skill-cold-reader-fresh/scene-sound-plan/round-04/revision-decision.json:next_files",
+  "candidate_decision_sha256": "1565945c0ed98fb71e696d4e0e294c568cab47e23a0c1b9503f1e48ffe839864",
   "unresolved_text_issues_at_round_3": [],
   "last_revision_fully_reread": true,
   "final_sample_executed": false,
@@ -54,8 +91,11 @@
   "new_media_generated": false,
   "human_participant_test": false,
   "pending": [
-    "final full rounds after shared resource stability",
+    "round-05 full reading and separate semantic decision",
     "exact final method binding and isolated work sample",
     "managed formal delivery and latest-only cleanup"
-  ]
+  ],
+  "native_events": 420,
+  "durable_evidence_reverified_at": "2026-10-14T23:44:15.004495+00:00",
+  "all_saved_raw_payload_event_and_chain_hashes_equal": true
 }

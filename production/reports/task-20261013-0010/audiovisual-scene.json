@@ -1,8 +1,8 @@
 {
   "task": "task-20261013-0010",
   "object_id": "method.skill.audiovisual-scene",
-  "status": "THREE_ROUNDS_COMPLETE_FINAL_ROUNDS_AND_SAMPLE_PENDING",
-  "valid_complete_rounds": 3,
+  "status": "FOUR_ROUNDS_COMPLETE_FINAL_REREAD_AND_SAMPLE_PENDING",
+  "valid_complete_rounds": 4,
   "reader_model": "gpt-6-astra",
   "reader_effort": "max",
   "reviser_model": "gpt-6-astra",
@@ -10,16 +10,13 @@
   "rounds": [
     {
       "round": 1,
-      "units": 12,
-      "finish_accepted": true,
-      "audited_steps": 13,
-      "native_inference_requests": 13,
+      "body_units": 12,
+      "reader_contexts": 13,
+      "native_inferences": 13,
+      "native_events": 156,
       "decision": "keep",
-      "final_issue_states": {
-        "EXPLAINED": 1
-      },
-      "final_reader_comments": 0,
-      "unresolved_revision_issues": [],
+      "rationale": "R1 整包12个单位及FINISH已审计。我完整读取逐段理解、疑问变化和全文结算，并复核两个自有文件。读者第3单位对“作者入口”的疑问在第11单位由当前制作的准确链接解释，最终没有留下阅读障碍；不能把已解释的初读疑问当作必须改字的问题。目的、观众变化到逐镜设计的顺序、按疑难取专业资料、机位参考与首帧的区别、独立素材条件、声画连读及阅读模板用途能够连贯理解，AI也能识别需要沿任务取得的准确输入与步骤。保留原有判断、例子和模板格式；共享正文尚未作为本轮自有包展开，仍待其各自稳定后的末轮联动。没有真人测试或实际制作样例结论。",
+      "unresolved": [],
       "changed_paths": [],
       "last_material_revision_has_been_read": true,
       "frozen_sha256": "486ecee1581d65a8d079fcf88bfb8a33a28492208cfaa0b225ebdc7428043011",
@@ -29,16 +26,13 @@
     },
     {
       "round": 2,
-      "units": 12,
-      "finish_accepted": true,
-      "audited_steps": 13,
-      "native_inference_requests": 14,
+      "body_units": 12,
+      "reader_contexts": 13,
+      "native_inferences": 14,
+      "native_events": 158,
       "decision": "keep",
-      "final_issue_states": {
-        "DISMISSED": 2
-      },
-      "final_reader_comments": 0,
-      "unresolved_revision_issues": [],
+      "rationale": "已逐条完整阅读第二轮 12 个正文单位及 FINISH 的全部观察和问题历史，并复读本轮两份自有文件。两项初读疑问分别涉及作者入口与五阶段保存流程；读者在全文结算时已根据第 11 单位的当前制作入口和第 12 单位的工作记录模板撤销，未确认仍成立的理解或执行障碍。正文已解释整场观众经历的目的、所需输入、专业章节的适用条件、长镜与切镜的判断依据、机位参考与首帧的区别、独立素材状态的边界及整场声画验收，模板可承接准确来源和实际产物。首次接触的人可以理解这些取舍，AI 可以按条件取用正文并保持工作与交接的可追溯性。本轮没有足够证据要求语义改写，保留两份全文；未开放的共享正文留待其独立审阅稳定后做联动复读，不据本轮声称已审阅共享材料或实际媒体。",
+      "unresolved": [],
       "changed_paths": [],
       "last_material_revision_has_been_read": true,
       "frozen_sha256": "4a046041bae7b66f979c51216a5ab410f4205f279a1a18d29ebea83eddcc9ac1",
@@ -48,37 +42,50 @@
     },
     {
       "round": 3,
-      "units": 12,
-      "finish_accepted": true,
-      "audited_steps": 13,
-      "native_inference_requests": 13,
+      "body_units": 12,
+      "reader_contexts": 13,
+      "native_inferences": 13,
+      "native_events": 156,
       "decision": "keep",
-      "final_issue_states": {
-        "EXPLAINED": 1,
-        "DISMISSED": 1
-      },
-      "final_reader_comments": 0,
-      "unresolved_revision_issues": [],
+      "rationale": "第三轮 12 个正文单位及 FINISH 已全部审计通过。我完整读过每段观察、记忆中的问题全历史与最终结算，并对照未变的两份自有正文。读者能够连贯理解从整场观众经历到专业取用、逐镜设计、独立素材交接、声画连读及来源记录的目的和判断依据；具体例子与限制让人能理解选择，也让 AI 能明确适用条件和执行责任。材料入口的初读疑问由后文给出的当前制作链接解释，五阶段保存疑问因已有继续查找入口及模板而撤销。两项均未留下确认成立的批注，不能把未开放共享正文误判为说明缺失，也不因重复出现过疑问就制造修改。本轮保留两份全文，前三轮均无实质改字；当前制作的新版本及 filmcraft 全集需在稳定后的第 4/5 轮联动核对，并用实际样例核验保存与交接，现阶段不据此声称其已完成。",
+      "unresolved": [],
       "changed_paths": [],
       "last_material_revision_has_been_read": true,
       "frozen_sha256": "5f3f86da4baa0fc39d4d38b81039563be8a36b2ae91b2238fd86d90a4ff5ee0c",
       "read_complete_sha256": "f15a07aeb78384da30dca3354d7ae3310c8a9ee77a11f8de0d10fe75fe06cca6",
       "revision_decision_sha256": "bac52915616f9397f67cbef1e228f22dbeda7e733bbc540174568239adb788e4",
       "evidence_directory": ".runtime/skill-cold-reader-fresh/audiovisual-scene/round-03"
+    },
+    {
+      "round": 4,
+      "body_units": 12,
+      "reader_contexts": 13,
+      "native_inferences": 13,
+      "native_events": 156,
+      "decision": "revise",
+      "rationale": "全文及全部13条理解与三项问题历史已读。采纳q0008-01的执行疑问，并核对最终当前制作约定：原文把镜头key_states写作完整状态清单，确与现行字段职责不符。现稿先说明独立交付用途及基础素材不能承担的条件，以单镜疲惫/换手与需单独准备的湿袖形态对照；由抽取环节建立必要实体状态，镜头key_states只记录独立关键画面或动作关系，可为空，模板标识同步澄清。q0003-01、q0007-01虽被读者按后文链接标为已解释，实际链接主要讲素材作者入口；协调者核对creative_method.py及当前audiovisual-design绑定后，补明任务输入位置、五个真实阶段、保存回读和冻结边界。条件变化另建步骤，不改变原执行。保留专业章节及整场判断，将虚称handoff模板改为真实reading.json链接。所有改动进入第五轮全文包；本轮不声称改稿已通过复读或样例。",
+      "unresolved": [],
+      "changed_paths": [
+        "SKILL.md",
+        "templates/reading.json"
+      ],
+      "last_material_revision_has_been_read": false,
+      "frozen_sha256": "dedf8ac7733bae94c891c8d0ce3e06d55d69416558ee699210cff8cf16d25adc",
+      "read_complete_sha256": "9bd980d041c6bb7d3790b8579d5eda1aca6344d87ed1c24225b83193e429fc12",
+      "revision_decision_sha256": "f64cd849fa56c0be64cb34368e514a0d311511311a857d8ea8edfc94b712a85e",
+      "evidence_directory": ".runtime/skill-cold-reader-fresh/audiovisual-scene/round-04"
     }
   ],
-  "reader_contexts": 39,
-  "native_inferences": 40,
+  "reader_contexts": 52,
+  "native_inferences": 53,
   "candidate_files_sha256": {
-    "SKILL.md": "bc810004239f7e28111fe3777fb5cc0f3cec0c1ec1347737d77290a79d415984",
-    "templates/reading.json": "4a7ef67a834909bd0aa081195f22db89f86858ff2d871bfa1973b6258a32ef32"
+    "SKILL.md": "e61b19527c9a0fd305a6fdd78fe712b44961f9b0557a93015d4d180f4c0b3352",
+    "templates/reading.json": "5a3127469af1461503f569c68da6684a8da3d0218f02de7553383190743a7178"
   },
-  "candidate_source": ".runtime/skill-cold-reader-fresh/audiovisual-scene/round-03/revision-decision.json:next_files",
-  "candidate_decision_sha256": "bac52915616f9397f67cbef1e228f22dbeda7e733bbc540174568239adb788e4",
-  "source_report": ".runtime/skill-cold-reader-fresh/audiovisual-scene/three-round-report.json",
-  "source_report_sha256": "4cb1ef36d830d2e8e741597f0bf8e695542ca68ae72ca1f877f7bea871733fd4",
+  "candidate_source": ".runtime/skill-cold-reader-fresh/audiovisual-scene/round-04/revision-decision.json:next_files",
+  "candidate_decision_sha256": "f64cd849fa56c0be64cb34368e514a0d311511311a857d8ea8edfc94b712a85e",
   "unresolved_text_issues_at_round_3": [],
-  "last_revision_fully_reread": true,
+  "last_revision_fully_reread": false,
   "final_sample_executed": false,
   "formal_method_publication": false,
   "formal_story_changes": false,
@@ -86,7 +93,7 @@
   "new_media_generated": false,
   "human_participant_test": false,
   "pending": [
-    "final full rounds after shared resource stability",
+    "round-05 full reading and separate semantic decision",
     "exact final method binding and isolated work sample",
     "managed formal delivery and latest-only cleanup"
   ],
@@ -95,6 +102,12 @@
     "sha256": "d8fb65d33bc439df1a63a3cc3b39b8ab6642917da24317e77753a3147725c894",
     "count": 2,
     "apply_after_full_round": 4,
-    "required_complete_reread_round": 5
-  }
+    "required_complete_reread_round": 5,
+    "applied": true,
+    "applied_in_round": 4,
+    "complete_reread_pending": 5
+  },
+  "native_events": 626,
+  "durable_evidence_reverified_at": "2026-10-14T23:44:10.349893+00:00",
+  "all_saved_raw_payload_event_and_chain_hashes_equal": true
 }
