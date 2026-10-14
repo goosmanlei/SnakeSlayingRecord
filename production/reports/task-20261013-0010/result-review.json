@@ -1,0 +1,70 @@
+{
+  "task": "task-20261013-0010",
+  "item": "result-review",
+  "status": "THREE_ROUNDS_COMPLETE_PENDING_FINAL_ROUNDS_AND_SAMPLE",
+  "valid_complete_rounds": 3,
+  "rounds": [
+    {
+      "round": 1,
+      "body_units": 8,
+      "reader_contexts": 9,
+      "native_inferences": 9,
+      "native_events": 108,
+      "decision": "revise",
+      "changed_paths": [
+        "SKILL.md"
+      ],
+      "rationale": "已完整读回8个正文单位及FINISH。采纳第7单位important COMMENT：读者理解超限回母版，但不能从原文判断最深谱系如何计算及上限何来。对照当前项目AGENTS图像创作、已核验的实际谱系计算和图像方案候选，补无图像输入为0、新输出取最深输入加1、多参考取最深、优先一代最多两代与不因重命名重置；简要说明干净母版条件和项目规则入口。协调者同时按已稳定当前制作正文，把裁切/区间明确为真实后期编辑，补项目根通用作者入口和按问题选择专业条件。保留真实体验、观察与原因假设分离、最小有效返修、相邻复查、原意见及用户采用区别；任务对既有媒体的豁免不写成通用免验规则。新稿保持人类理解判断与AI执行都可追踪；须下一轮完整复读，最后两轮等待共用影视知识稳定。",
+      "unresolved": [],
+      "frozen_sha256": "899703902e76799d36324be0ce48344da61ec569b967832f9a5d6afdb40ee0ae",
+      "read_complete_sha256": "b66ced4ea40cc3706ec6e675bff0aefa357de3032696243df224cfa86c3ebfc0",
+      "revision_decision_sha256": "1ca4fe1fa4cca26fb49c67667695bf7602be1beed5a343c79fb8b4ed5964055a",
+      "evidence_directory": ".runtime/skill-cold-reader-fresh/result-review/round-01"
+    },
+    {
+      "round": 2,
+      "body_units": 10,
+      "reader_contexts": 11,
+      "native_inferences": 11,
+      "native_events": 132,
+      "decision": "keep",
+      "changed_paths": [],
+      "rationale": "已完整读本轮10个正文单位及FINISH，并对照同一完整源稿。读者能区分观察和原因假设、真实看听与技术检查、完整参考与后期裁切、最小有效返修及实际新结果复查；第8段准确理解第0代起点、最深输入加1、第2代不能继续、母版条件与项目规则入口，没有留下术语或执行疑问。正文给人的判断依据和例子与AI可用入口同时成立，保留已读稿，不机械增加清单。用户本次免看听现有多媒体是执行边界，不改这份长期方法中真实体验的职责。共享影视资料尚在独立阅读，最后两轮和本地工程检查样例仍等其定稿后按准确引用联动。",
+      "unresolved": [],
+      "frozen_sha256": "d6de1f91961ea1887b6226d6bf7b3074890678c172e435a8f16283923bca30c5",
+      "read_complete_sha256": "ca16afcd0677ad09e774455ef7c7a5a6600e4cef1b9d568c4e9935c7c368df1f",
+      "revision_decision_sha256": "519fd60ef55f0948f537f948bbf39697f2edb6869f07349ed1d64da60c8f33f9",
+      "evidence_directory": ".runtime/skill-cold-reader-fresh/result-review/round-02"
+    },
+    {
+      "round": 3,
+      "body_units": 10,
+      "reader_contexts": 11,
+      "native_inferences": 11,
+      "native_events": 132,
+      "decision": "keep",
+      "changed_paths": [],
+      "rationale": "完整通读10个正文单位及全文结算，读者能区分实际观察与原因假设、生成参考与后期编辑、技术文件事实与内容检查，并准确说明图像谱系的最深输入加一及两代上限。没有遗留疑问。专项资料按问题读取及操作入口均可定位，保留现稿；最后两轮将在共享影视知识稳定后执行，并以字层真实本地候选验证返修承接，不以此轮文本理解冒充媒体质量验收。",
+      "unresolved": [],
+      "frozen_sha256": "49c19b02c06a7b11b4b296d756a9d68efcc14451fcea643455650cdd2ea42903",
+      "read_complete_sha256": "3d9372757a496067d36d74189132110e8f749b05c023ef8cb0b512931aa523e7",
+      "revision_decision_sha256": "7e3e1f175310510c2ce621573bcf78654b34d87960929024bf494566d392bdb1",
+      "evidence_directory": ".runtime/skill-cold-reader-fresh/result-review/round-03"
+    }
+  ],
+  "reader_contexts": 31,
+  "native_inferences": 31,
+  "native_events": 372,
+  "reader_model": "gpt-6-astra",
+  "reader_effort": "max",
+  "reviser_model": "gpt-6-astra",
+  "reviser_effort": "max",
+  "durable_evidence_reverified_at": "2026-10-14T05:57:52.687053+00:00",
+  "all_saved_raw_payload_event_and_chain_hashes_equal": true,
+  "current_candidate_files": {
+    "SKILL.md": "e32c1a8154e7a007cc224e07ceb0879106a0aecab7585bd5898e44015f13f864"
+  },
+  "final_sample_complete": false,
+  "formal_publication": false,
+  "human_participant_test": false
+}
