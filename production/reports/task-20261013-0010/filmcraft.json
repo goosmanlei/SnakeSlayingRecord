@@ -1,8 +1,8 @@
 {
   "task": "task-20261013-0010",
   "item": "filmcraft",
-  "status": "ROUND_06_READING",
-  "valid_complete_rounds": 5,
+  "status": "SIX_ROUNDS_COMPLETE_SHARED_SOURCE_STABLE",
+  "valid_complete_rounds": 6,
   "rounds": [
     {
       "round": 1,
@@ -149,16 +149,44 @@
         "path": ".runtime/skill-cold-reader-fresh/filmcraft/round-05/capacity-recovery-0218.json",
         "sha256": "97c995a7fde354cbfb71bfe75b6e643fa7fd21bf4d915a27d84ca87176a83a38"
       }
+    },
+    {
+      "round": 6,
+      "body_units": 355,
+      "reader_contexts": 356,
+      "native_inferences": 356,
+      "native_events": 4272,
+      "decision": "keep",
+      "changed_paths": [],
+      "rationale": "第六轮355个正文单位及全文结算均完成，356个新读者上下文的原始请求、响应和事件链通过审计。全文结束后，新的独立 Astra/max 修订上下文实际接收16份全文、355条理解、唯一问题的全部历史和结算，判定保留；其一次推理和12个运行事件另行审计通过。协调者回读该完整判断并核对第49、61、83、84、306段：光源相对大小的初读疑问紧接由距离与视角例子解释；此前摇摄计时与运动条件修订已在这次完整阅读中被读过，不再补改正文。保留完整末稿，无未解决的文本理解或执行问题。分离修订证据见 semantic-context/audit.json 和 answer.json；这不替代后续准确资源投影、工作样例和正式发布验收，也不声称媒体效果或真人测试通过。",
+      "unresolved": [],
+      "frozen_sha256": "2eba76ba0577c59a120de771f94b4bdc52742ebe9423fdc4687024fc19286a4e",
+      "read_complete_sha256": "f481a31b5e9909000a5d01d4ec2216e5a9b08728ac65508681518a6c6d36731c",
+      "revision_decision_sha256": "811231f862bd43efdc970aeceaac9323f9deeba280352b857b2803f742cd3b63",
+      "semantic_review_path": ".runtime/skill-cold-reader-fresh/filmcraft/round-06/semantic-context/answer.json",
+      "semantic_review_sha256": "cd23c422cdb0a4becf0dcecbfbd97f6fc649a2e41db552baf27170e03e91a41c",
+      "evidence_directory": ".runtime/skill-cold-reader-fresh/filmcraft/round-06",
+      "fresh_semantic_context": {
+        "thread_id": "01a13ca9-8cd0-7571-8585-73bc58ef8496",
+        "native_inferences": 1,
+        "native_events": 12,
+        "audit_path": ".runtime/skill-cold-reader-fresh/filmcraft/round-06/semantic-context/audit.json",
+        "audit_sha256": "d5ba85af1101527672d27b629e8649174f13969c19cd17af50afcc62b6bafad4",
+        "full_source_files": 16,
+        "all_body_understandings": 355,
+        "all_issue_histories": true,
+        "finish": true
+      }
     }
   ],
-  "reader_contexts": 2221,
-  "native_inferences": 2268,
-  "native_events": 26746,
+  "reader_contexts": 2577,
+  "native_inferences": 2624,
+  "native_events": 31018,
   "reader_model": "gpt-6-astra",
   "reader_effort": "max",
   "reviser_model": "gpt-6-astra",
   "reviser_effort": "max",
-  "index_readback_at": "2026-10-14T20:03:50.885+00:00",
+  "index_readback_at": "2026-10-14T23:13:42.376733+00:00",
   "frozen_settlement_audit_chain_and_event_hashes_equal": true,
   "current_candidate_files": {
     "production/filmcraft/README.md": "1190bb09a7a7f11d67e389219b549c7154af98d610338bb0a008b952687bd10d",
@@ -186,11 +214,14 @@
     "frozen_sha256": "2eba76ba0577c59a120de771f94b4bdc52742ebe9423fdc4687024fc19286a4e",
     "source_package_sha256": "9a6f9450ab8b475fd1db90d74160f98175c7269efb35e411d589b52c807cd405",
     "reading_units_sha256": "84a60978241ee9819271a4393ab7357d39094c50cfa186a6616910819f5db2aa",
-    "not_counted_as_valid": true,
-    "reader_started": true
+    "not_counted_as_valid": false,
+    "reader_started": true,
+    "status": "ROUND_VALID",
+    "read_complete_sha256": "f481a31b5e9909000a5d01d4ec2216e5a9b08728ac65508681518a6c6d36731c",
+    "revision_decision_sha256": "811231f862bd43efdc970aeceaac9323f9deeba280352b857b2803f742cd3b63"
   },
-  "canonical_source_written_back": false,
-  "stable_resource_projection": false,
+  "canonical_source_written_back": true,
+  "stable_resource_projection": true,
   "final_sample_complete": false,
   "formal_publication": false,
   "human_participant_test": false,
@@ -199,10 +230,14 @@
   "independent_reader_concurrency": 1,
   "native_inference_count_scope": "Accepted unit evidence; incomplete and failed attempts are recorded separately in reader-foundation.json.",
   "canonical_writeback_receipt": {
-    "path": ".runtime/skill-cold-reader-fresh/filmcraft/round-03/canonical-writeback.json",
-    "sha256": "4d44793fdfc056159cdd0ea328f656651f771c2afa25247e9a163437ea3c5c05"
+    "path": ".runtime/skill-cold-reader-fresh/filmcraft/round-06/canonical-writeback.json",
+    "sha256": "ca5f99b5ffcf52dfe5f3d31e9719bdf1ea735de6a9a216c6ab0112fa228d2b04"
   },
-  "last_material_revision_has_been_read": false,
-  "minimum_rounds_remaining": 1,
-  "canonical_writeback_scope": "The round-03 receipt covers the earlier canonical candidate. The latest round-05 camera wording and SP21 metadata await a complete round-06 reread before canonical writeback."
+  "last_material_revision_has_been_read": true,
+  "minimum_rounds_remaining": 0,
+  "canonical_writeback_scope": "All sixteen canonical texts match the fully read sixth-round package. SP21 metadata derives exactly the read sources catalogue. Isolated resources and existing caller references match. Final samples and formal publication remain pending.",
+  "resource_projection_receipt": {
+    "path": ".runtime/skill-cold-reader-fresh/filmcraft/round-06-linkage/receipt.json",
+    "sha256": "ada51c9f3944d778234f47352b79c32bf84a92f62389074942ab5735d46d5260"
+  }
 }
