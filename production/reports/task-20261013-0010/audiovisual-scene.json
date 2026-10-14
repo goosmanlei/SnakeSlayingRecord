@@ -1,0 +1,100 @@
+{
+  "task": "task-20261013-0010",
+  "object_id": "method.skill.audiovisual-scene",
+  "status": "THREE_ROUNDS_COMPLETE_FINAL_ROUNDS_AND_SAMPLE_PENDING",
+  "valid_complete_rounds": 3,
+  "reader_model": "gpt-6-astra",
+  "reader_effort": "max",
+  "reviser_model": "gpt-6-astra",
+  "reviser_effort": "max",
+  "rounds": [
+    {
+      "round": 1,
+      "units": 12,
+      "finish_accepted": true,
+      "audited_steps": 13,
+      "native_inference_requests": 13,
+      "decision": "keep",
+      "final_issue_states": {
+        "EXPLAINED": 1
+      },
+      "final_reader_comments": 0,
+      "unresolved_revision_issues": [],
+      "changed_paths": [],
+      "last_material_revision_has_been_read": true,
+      "frozen_sha256": "486ecee1581d65a8d079fcf88bfb8a33a28492208cfaa0b225ebdc7428043011",
+      "read_complete_sha256": "12a306eaee7546e790050f0c93f377581a81c0fabb2266b7f555f9947240536d",
+      "revision_decision_sha256": "5c81a00508a7ac70f8a721e177941570b86ea7150913eae9266e63ea557554cc",
+      "evidence_directory": ".runtime/skill-cold-reader-fresh/audiovisual-scene/round-01"
+    },
+    {
+      "round": 2,
+      "units": 12,
+      "finish_accepted": true,
+      "audited_steps": 13,
+      "native_inference_requests": 14,
+      "decision": "keep",
+      "final_issue_states": {
+        "DISMISSED": 2
+      },
+      "final_reader_comments": 0,
+      "unresolved_revision_issues": [],
+      "changed_paths": [],
+      "last_material_revision_has_been_read": true,
+      "frozen_sha256": "4a046041bae7b66f979c51216a5ab410f4205f279a1a18d29ebea83eddcc9ac1",
+      "read_complete_sha256": "e8e04641139de530ce5578f638baa0dbc21e5a52396903147673f800cea8bdf0",
+      "revision_decision_sha256": "a2b5e38540c8de0293e986bf33e629fef9877c5f8c36f4072cc9378f2bfe0d29",
+      "evidence_directory": ".runtime/skill-cold-reader-fresh/audiovisual-scene/round-02"
+    },
+    {
+      "round": 3,
+      "units": 12,
+      "finish_accepted": true,
+      "audited_steps": 13,
+      "native_inference_requests": 13,
+      "decision": "keep",
+      "final_issue_states": {
+        "EXPLAINED": 1,
+        "DISMISSED": 1
+      },
+      "final_reader_comments": 0,
+      "unresolved_revision_issues": [],
+      "changed_paths": [],
+      "last_material_revision_has_been_read": true,
+      "frozen_sha256": "5f3f86da4baa0fc39d4d38b81039563be8a36b2ae91b2238fd86d90a4ff5ee0c",
+      "read_complete_sha256": "f15a07aeb78384da30dca3354d7ae3310c8a9ee77a11f8de0d10fe75fe06cca6",
+      "revision_decision_sha256": "bac52915616f9397f67cbef1e228f22dbeda7e733bbc540174568239adb788e4",
+      "evidence_directory": ".runtime/skill-cold-reader-fresh/audiovisual-scene/round-03"
+    }
+  ],
+  "reader_contexts": 39,
+  "native_inferences": 40,
+  "candidate_files_sha256": {
+    "SKILL.md": "bc810004239f7e28111fe3777fb5cc0f3cec0c1ec1347737d77290a79d415984",
+    "templates/reading.json": "4a7ef67a834909bd0aa081195f22db89f86858ff2d871bfa1973b6258a32ef32"
+  },
+  "candidate_source": ".runtime/skill-cold-reader-fresh/audiovisual-scene/round-03/revision-decision.json:next_files",
+  "candidate_decision_sha256": "bac52915616f9397f67cbef1e228f22dbeda7e733bbc540174568239adb788e4",
+  "source_report": ".runtime/skill-cold-reader-fresh/audiovisual-scene/three-round-report.json",
+  "source_report_sha256": "4cb1ef36d830d2e8e741597f0bf8e695542ca68ae72ca1f877f7bea871733fd4",
+  "unresolved_text_issues_at_round_3": [],
+  "last_revision_fully_reread": true,
+  "final_sample_executed": false,
+  "formal_method_publication": false,
+  "formal_story_changes": false,
+  "media_watched_or_heard": false,
+  "new_media_generated": false,
+  "human_participant_test": false,
+  "pending": [
+    "final full rounds after shared resource stability",
+    "exact final method binding and isolated work sample",
+    "managed formal delivery and latest-only cleanup"
+  ],
+  "queued_coordinator_findings": {
+    "path": ".runtime/skill-cold-reader-fresh/audiovisual-scene/coordinator-followups.json",
+    "sha256": "d8fb65d33bc439df1a63a3cc3b39b8ab6642917da24317e77753a3147725c894",
+    "count": 2,
+    "apply_after_full_round": 4,
+    "required_complete_reread_round": 5
+  }
+}

@@ -47,7 +47,9 @@ APPROVED_PREFIXES = ("a9e967fd9422ccaae1ae4d6edddba40130540c79cee2ece6aa1f589139
                      "1bf100cad40cfa2df016fdb9955e7fa19b582e5ea10fc04a014bbca0431841ea,"
                      "90d3e14af2a2442543ccf04ad0a79e565834f9201fa09a2f4306317d069b0294,"
                      "978a8e485db9b99d686a37bc107bd659eeace11c31b41362f60033ca5e7f1a11,"
-                     "5849e370cb54602a81e13df4d257f83f35b99536b4fc543216584b97ff23193c")
+                     "5849e370cb54602a81e13df4d257f83f35b99536b4fc543216584b97ff23193c,"
+                     "8c8b4f7388c38f635cdff9ff2132410597b169d08d0f09dbbdd17de68c142482,"
+                     "bf79c3ed30a3cc2436be360f0a7bd38d5b676c47c2bd46720078e32e63456acf")
 
 
 def sha(body):

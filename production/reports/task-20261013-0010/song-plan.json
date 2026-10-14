@@ -1,0 +1,61 @@
+{
+  "task": "task-20261013-0010",
+  "object_id": "method.skill.song-plan",
+  "status": "THREE_ROUNDS_COMPLETE_FINAL_ROUNDS_AND_SAMPLE_PENDING",
+  "valid_complete_rounds": 3,
+  "reader_model": "gpt-6-astra",
+  "reader_effort": "max",
+  "reviser_model": "gpt-6-astra",
+  "reviser_effort": "max",
+  "rounds": [
+    {
+      "round": 1,
+      "units": 9,
+      "decision": "revise",
+      "rationale": "完整读回9个正文单位和全文结算。读者无COMMENT或WATCH，准确复述了歌词权限、声部职责、时长估计、无损缺项及实际听辨；但也直接接受第6段“复用准确原件与区间”。协调者核对已生效的当前制作规则，当前生成参考只允许完整原件，故明确准确候选和完整原件，区分独立短唱段的制作与后期编辑区间；这是实际协议联动问题，不冒充读者批注。另补现有单项媒体方案的项目根目录、脚本、song类别与隔离实例入口，使首次使用的人可定位操作、AI可取得准确需求。音乐和演唱专业判断及完整听审要求保留。下一轮须完整复读新稿；本次媒体豁免不改永久方法规则。",
+      "read_complete_sha256": "a9f8995d28e3b927030a6a6517789ad5142b93f8d4dd5f1d7da02b41cdbf71a6",
+      "decision_sha256": "9f586f75897d0e837021298d8d831eab262bff8bb5bec78a3baa73c1ad6f3fa5",
+      "unresolved": []
+    },
+    {
+      "round": 2,
+      "units": 10,
+      "decision": "keep",
+      "rationale": "逐条读回10个正文单位与FINISH。新读者明确区分完整生成参考、独立短唱段的完整原件和后期剪辑区间，且能定位项目根目录的song单项媒体方案入口；未把登记方案当成音频听审通过。词曲与表演职责、真实能力核对、歌词权限和无损缺项的理解均与正文一致，无未决COMMENT或WATCH。保留专业判断及本次新增解释，人可以理解操作区别，AI可以据此选择入口。下一轮继续完整复读；影视知识和视频案例未稳定，最终两轮及实际样例等待准确共享资料。",
+      "read_complete_sha256": "7f6d5e6cd1395cfc7e5df551ac4f39b3d43a70f0c6903cdf9312ab139c83680c",
+      "decision_sha256": "1284379a2aa664100f9304796a2bb2fa62cad87d2e9695233cefd4faacbd3865",
+      "unresolved": []
+    },
+    {
+      "round": 3,
+      "units": 10,
+      "decision": "keep",
+      "rationale": "已完整读回10个正文单位及FINISH。读者能沿输入版本、交付范围、参考职责、实现路线、方案回读和真实音频听辨推进，准确分清整曲与短段、音色与旋律、完整生成参考与编辑区间、登记与听审。无COMMENT或WATCH。目的和判断理由对首次人类读者可解释，项目入口及条件分支对AI可执行，未以风格标签替代具体声部或配器。保留现稿；已完成三轮，最后两轮和实际歌曲方案样例等待影视知识及视频案例定稿后联动核验。",
+      "read_complete_sha256": "c95c36156f7fd62c9baf080949fd0de1ee1e7d01ef32247d67f2ac29639b7a09",
+      "decision_sha256": "29528fe9012709eeaba12d45ecac08f7d3101a7a98f4b90a243653d54816a847",
+      "unresolved": []
+    }
+  ],
+  "reader_contexts": 32,
+  "native_inferences": 32,
+  "candidate_files_sha256": {
+    "SKILL.md": "c56fb147e7a85f129311bd84ee2d7a17ffe21480fe107229214bd38f94a1dd85"
+  },
+  "candidate_source": ".runtime/skill-cold-reader-fresh/song-plan/round-03/revision-decision.json:next_files",
+  "candidate_decision_sha256": "29528fe9012709eeaba12d45ecac08f7d3101a7a98f4b90a243653d54816a847",
+  "source_report": ".runtime/skill-cold-reader-fresh/song-plan/three-round-report.json",
+  "source_report_sha256": "10a1859788a3e17ea97809cdf5089b04f5410948cd43fb5a8fa4a59f83dc4781",
+  "unresolved_text_issues_at_round_3": [],
+  "last_revision_fully_reread": true,
+  "final_sample_executed": false,
+  "formal_method_publication": false,
+  "formal_story_changes": false,
+  "media_watched_or_heard": false,
+  "new_media_generated": false,
+  "human_participant_test": false,
+  "pending": [
+    "final full rounds after shared resource stability",
+    "exact final method binding and isolated work sample",
+    "managed formal delivery and latest-only cleanup"
+  ]
+}

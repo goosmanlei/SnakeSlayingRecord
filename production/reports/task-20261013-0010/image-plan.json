@@ -1,0 +1,74 @@
+{
+  "task": "task-20261013-0010",
+  "object_id": "method.skill.image-plan",
+  "status": "THREE_ROUNDS_COMPLETE_FINAL_ROUNDS_AND_SAMPLE_PENDING",
+  "valid_complete_rounds": 3,
+  "reader_model": "gpt-6-astra",
+  "reader_effort": "max",
+  "reviser_model": "gpt-6-astra",
+  "reviser_effort": "max",
+  "rounds": [
+    {
+      "round": 1,
+      "units": 33,
+      "decision": "revise",
+      "rationale": "整轮33正文单位及FINISH已实际全文读回。接受q0006-01：说明干净母版以已确认设计、可辨身份结构、无妨碍用途的形变纹理及准确谱系为选择条件，不以名称或旧认可放行。接受q0010-01：按项目AGENTS、config/openart.json及现行production._lineage/generation.readiness的真实规则说明根图第0代、输出取最深输入加1、上限包含本次输出，给出0到1到2的短链且选为母版不能清零。分类与机位分工已被后文解释，不把初读WATCH冒充残留；仍补现有material_category名称和单项媒体入口，使人能找到输入、AI可执行。另由协调者对照当前制作完整原件规则，改正“复用…裁切”与当前选择协议的冲突，区分独立编辑动作和生成参考。四专项原有身份、空间、操作、时点和跨镜例子均保留。未将本次媒体豁免写成永久省略，也不宣称原件质量已检验；新主文须下一轮完整复读。",
+      "read_complete_sha256": "d372527f720dc4b7bd6bd4fcfc68917dd0db7b81a2cb6bfb92c2587a4cc93e4b",
+      "decision_sha256": "4b2b4298517ac718818f8096c8813e0107d6247632cbbe029ef48c22f4b095a2",
+      "unresolved": [],
+      "native_contexts": 34,
+      "native_inferences": 34,
+      "removed_empty_directories": 34
+    },
+    {
+      "round": 2,
+      "units": 26,
+      "decision": "keep",
+      "rationale": "已完整阅读本轮26个正文单位与FINISH、共同正文和角色/道具/场景/镜头四专项。读者在第5段对代数的暂疑被第8段完整计数规则解释，第9段对结果提前的暂疑由动作阶段、后写文字和首帧未完成动作的例子解释；结算无未解决问题。正文既交代图像帮助人的判断及专业理由，也给AI准确入口、分类、原件与回读步骤，四分支没有缩成字段清单。保留完整已读稿，不因曾出现可由后文解决的观察项重复添释。共享filmcraft尚在阅读，本方法只完成前段轮次，最终联动复读及实际图像方案样例仍待完成。",
+      "read_complete_sha256": "df44e31c4ddb2118edb7387daf6b2df1b8d069ea2bc99d54bc04df27c89f82c8",
+      "decision_sha256": "de83f1b67e5fd18e666675cdb4260de3268853d085721a9c4bfddbd113bbd594",
+      "unresolved": [],
+      "native_contexts": 27,
+      "native_inferences": 29,
+      "removed_empty_directories": 27
+    },
+    {
+      "round": 3,
+      "units": 26,
+      "decision": "keep",
+      "rationale": "完整通读共同正文与四专项共26个单位及全文结算。初读对已有代数和结果提前的两条疑惑，分别被第8段计数规则和后续动作时点实例解释；读者能据完整形态、构图、空间、道具结构及首帧目的区分四类交付，没有剩余理解障碍。保留此稿，专业共享知识定稿后再完成最后两轮；四分支样例准备稿已据准确需求区分适用目标和未选原件，尚不计为最终执行。",
+      "read_complete_sha256": "0a2b7bd3d05a13f5a00a6f49e86ff1c166951a7825ee5ae1e5c53fc8684fb430",
+      "decision_sha256": "57f7e2a31e90e7c087c06e689048fb7b6187685022cc9d5cbf7dec25e7931f23",
+      "unresolved": [],
+      "native_contexts": 27,
+      "native_inferences": 27,
+      "removed_empty_directories": 27
+    }
+  ],
+  "reader_contexts": 88,
+  "native_inferences": 90,
+  "candidate_files_sha256": {
+    "SKILL.md": "afe910835c463c18d6a5bfd54aae494212b45c59f78fc22d699e21dc2420ec91",
+    "references/character-image.md": "7bb1cd16dd1e13173cbe286b477c2c8f693dff6586071f9cd70253ed22e2ac90",
+    "references/prop-image.md": "20e52a6f0fe42f268786a676eaab45c21c1e074a01af283a9e6213e209380d93",
+    "references/scene-image.md": "8faaf9ab81315372919b2ebacbd50bfc19f3eef17cb1d31504928a5f1c181ca3",
+    "references/shot-image.md": "bfb4c6d220a488d0eb89b64b4f77c2a8773cfe70ed8957d48d2a6a76e5db1bd1"
+  },
+  "candidate_source": ".runtime/skill-cold-reader-fresh/image-plan/round-03/revision-decision.json:next_files",
+  "candidate_decision_sha256": "57f7e2a31e90e7c087c06e689048fb7b6187685022cc9d5cbf7dec25e7931f23",
+  "source_report": ".runtime/skill-cold-reader-fresh/image-plan/three-round-report.json",
+  "source_report_sha256": "94f158b22dcb2fc65b6f63c22e7f69fa2cffa808aee1c54495a583f0ca21966b",
+  "unresolved_text_issues_at_round_3": [],
+  "last_revision_fully_reread": true,
+  "final_sample_executed": false,
+  "formal_method_publication": false,
+  "formal_story_changes": false,
+  "media_watched_or_heard": false,
+  "new_media_generated": false,
+  "human_participant_test": false,
+  "pending": [
+    "final full rounds after shared resource stability",
+    "exact final method binding and isolated work sample",
+    "managed formal delivery and latest-only cleanup"
+  ]
+}
