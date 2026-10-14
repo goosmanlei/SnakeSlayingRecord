@@ -856,7 +856,7 @@
         "reinvocations": 0
       }
     ],
-    "adapter_sha256": "b71b5ae055192360df18346de2a1cfd8ee2fc98910ae23eb6ecce85e11df6c65",
+    "adapter_sha256": "42641411c1bee395989b526334c24b3756f0998d845ea806b2d5cb867ccfaf03",
     "latest_manual_comparison": {
       "at": "2026-10-13T11:18:07.858584+00:00",
       "generic_policy_diff": ".runtime/skill-cold-reader-fresh/video-handbook/round-01/step-0113/prefix-diff.txt",
@@ -1000,6 +1000,64 @@
         "sha256": "dcaed95a46154c64194ea07a46496b564c4e8dd9d7a553dcd21fff5bb760c1dc",
         "approved_prefix_sha256": "90d3e14af2a2442543ccf04ad0a79e565834f9201fa09a2f4306317d069b0294",
         "change": "通用 Skill 目录新增 47 个插件条目；原 285 条名称和路径不变，描述仅缩短为原文前缀，其余规范化输入一致。"
+      },
+      {
+        "at": "2026-10-14T03:13:37.707989+00:00",
+        "before": ".runtime/skill-cold-reader-fresh/filmcraft/round-02/step-0205/native-prefix.json",
+        "after": ".runtime/skill-cold-reader-fresh/filmcraft/round-02/step-0206/native-prefix.json",
+        "accepted_prefix": "1bf100cad40cfa2df016fdb9955e7fa19b582e5ea10fc04a014bbca0431841ea",
+        "new_prefix": "978a8e485db9b99d686a37bc107bd659eeace11c31b41362f60033ca5e7f1a11",
+        "changed_leaf": "$[2].content[3].text",
+        "added_line": "- Gmail (gmail@openai-curated-remote)",
+        "all_other_normalized_prefix_bytes_equal": true,
+        "reason": "Only a generic recommended-plugin catalog entry was added. No project, author, future unit or prior reader material was added.",
+        "model_reinvocations": 0,
+        "audit": {
+          "accepted": true,
+          "unit": 206,
+          "model": "gpt-6-astra",
+          "effort": "max",
+          "native_prefix_sha256": "978a8e485db9b99d686a37bc107bd659eeace11c31b41362f60033ca5e7f1a11",
+          "native_event_count": 12
+        },
+        "audit_sha256": "e5d3d455d0736717dd11c7feb28dc718f2b5fde08dbc69cf7631b3f34bc12471",
+        "adapter_sha256": "13bfd428ca08b152bccefeb50e4c0b11953b75809c39afeda7a14f18f91622ea",
+        "audit_console_contains_only_metadata": true
+      },
+      {
+        "at": "2026-10-14T03:17:26.369468+00:00",
+        "before": ".runtime/skill-cold-reader-fresh/video-handbook/round-06/step-0029/native-prefix.json",
+        "after": ".runtime/skill-cold-reader-fresh/video-handbook/round-06/step-0035/native-prefix.json",
+        "accepted_prefix": "90d3e14af2a2442543ccf04ad0a79e565834f9201fa09a2f4306317d069b0294",
+        "new_prefix": "5849e370cb54602a81e13df4d257f83f35b99536b4fc543216584b97ff23193c",
+        "changed_leaf": "$[2].content[0].text",
+        "exact_replacements": [
+          [
+            ":higgsfield: Resol (file: r4/higgsfield/SKILL.md)",
+            ":higgsfield: R (file: r4/higgsfield/SKILL.md)"
+          ],
+          [
+            ":motion-craft: Desig (file: r4/motion-craft/SKILL.md)",
+            ":motion-craft: D (file: r4/motion-craft/SKILL.md)"
+          ],
+          [
+            "- sites:sites: Use (file: r3/sites/1.0.0/skills/sites/SKILL.md)",
+            "- sites:sites: U (file: r3/sites/1.0.2-remix-a.1/skills/sites/SKILL.md)"
+          ]
+        ],
+        "all_other_normalized_prefix_bytes_equal": true,
+        "reason": "Three generic plugin catalog descriptions were shortened; the Sites plugin catalog path changed version. No method body, author context, future unit or previous reader result was added.",
+        "model_reinvocations": 0,
+        "audit": {
+          "accepted": true,
+          "unit": 35,
+          "model": "gpt-6-astra",
+          "effort": "max",
+          "native_prefix_sha256": "5849e370cb54602a81e13df4d257f83f35b99536b4fc543216584b97ff23193c",
+          "native_event_count": 12
+        },
+        "audit_sha256": "afe95162c3c76989644fed19e6a54d7cbbcbcd5b414a9658615bcb0cdccc8b27",
+        "adapter_sha256": "42641411c1bee395989b526334c24b3756f0998d845ea806b2d5cb867ccfaf03"
       }
     ]
   },
