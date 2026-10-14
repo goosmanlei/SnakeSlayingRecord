@@ -6,6 +6,8 @@
 
 - 任务数据统一位于主项目 `.codex-task/`，使用 `codex.task` 默认配置，不再维护本项目的数据目录覆盖。历史任务编号、分支和冻结发布包沿用原身份；历史文字中的 `.codex-project/` 按当前 `.codex-task/` 定位并核对任务与 Git 身份，不能改写冻结包来调整路径。迁移会话从任务入口恢复，以新回调为准。来源：2026-10-07 本机任务目录迁移，回执为 `.runtime/task-data-migration.json`。
 
+- 项目会话的任务定义与发布沿 [任务发布 SKILL](skills/task-definition-publish/SKILL.md) 及其[项目衔接](skills/task-definition-publish/references/project-context.md)：当前适配 codex.task 0.9.0 的规范入口、三类任务、完整仓库声明及 do 自动衔接。入口不扩大交付授权，普通执行交付后等待用户明确结项确认；本项目系统改进的 `--auto` 正式交付要求仍以 `AGENTS.md` 为准。该方法不注册为系统工作类型，不修改正式方法库。来源：task-20261014-0002 的实际 CLI 核对及[文档验收](production/reports/task-20261014-0002/VERIFICATION.md)。
+
 - 以《搜神记·李寄斩蛇》为原型，最终载体为漫剧；已选扩写方向三《把灯带回家》。资料整理、故事结构、小说与影视制作逐步迭代，用户通过审阅台自由审阅和评论，Codex 据此推进创作与系统。来源：用户历次确认、`imports/direction-03-clean.md`、`production/source-lock.json`。
 - 本故事公开仓库为 `goosmanlei/SnakeSlayingRecord`，通用审阅台为 `goosmanlei/story-review-desk`。本机通用 Python 系统目录是主项目同级 `../story-review-desk`，两仓交付目标均为 `main`；故事实例用 `config/instance.json` 固定所需系统提交。故事仓库保存配置、正式数据／原件、创作与制作工具；通用系统承载展示、审阅、评论和数据管理，职责边界见 [AGENTS.md](AGENTS.md)。路径与 Git 身份依据主项目当前上下文及两仓本机 Git 回读。
 - 本机系统目录已由 `story-review-desk-python` 重命名为 `story-review-desk`。历史报告、冻结发布包与已完成任务说明保留记录时的路径，不代表旧目录仍存在；引用旧路径时按当前同级目录定位并核对 Git 身份。历史系统交付计划需要重新使用时，通过 `scripts/integrate_generation_review_system.py --system-main` 显式指定当前目录，不改写冻结包或历史回执。来源：用户 2026-10-07 的目录重命名要求与本机 Git 关联核验。
