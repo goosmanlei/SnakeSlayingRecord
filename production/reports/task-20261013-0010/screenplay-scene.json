@@ -1,8 +1,8 @@
 {
   "task": "task-20261013-0010",
   "object_id": "method.skill.screenplay-scene",
-  "status": "THREE_ROUNDS_COMPLETE_FINAL_ROUNDS_AND_SAMPLE_PENDING",
-  "valid_complete_rounds": 3,
+  "status": "FIVE_ROUNDS_AND_FINAL_BOUND_SAMPLE_COMPLETE_FORMAL_PENDING",
+  "valid_complete_rounds": 5,
   "reader_model": "gpt-6-astra",
   "reader_effort": "max",
   "reviser_model": "gpt-6-astra",
@@ -14,6 +14,7 @@
       "finish_accepted": true,
       "audited_steps": 10,
       "native_inference_requests": 10,
+      "native_events": 120,
       "decision": "revise",
       "final_reader_issues": 1,
       "unresolved_revision_issues": [],
@@ -29,6 +30,7 @@
       "finish_accepted": true,
       "audited_steps": 11,
       "native_inference_requests": 11,
+      "native_events": 132,
       "decision": "keep",
       "final_reader_issues": 0,
       "unresolved_revision_issues": [],
@@ -44,6 +46,7 @@
       "finish_accepted": true,
       "audited_steps": 11,
       "native_inference_requests": 11,
+      "native_events": 132,
       "decision": "keep",
       "final_reader_issues": 0,
       "unresolved_revision_issues": [],
@@ -52,34 +55,84 @@
       "read_complete_sha256": "5286eb299591118ee9f13bd605e89f5f15008aa4dff2f055fec2965d449d1740",
       "revision_decision_sha256": "4fcc9d85f16c6795c32b1b488fe03293a9f6876082083a2ae0d20cf95e7e135c",
       "evidence_directory": ".runtime/skill-cold-reader-fresh/screenplay-scene/round-03"
+    },
+    {
+      "round": 4,
+      "units": 10,
+      "finish_accepted": true,
+      "audited_steps": 11,
+      "native_inference_requests": 11,
+      "native_events": 132,
+      "decision": "keep",
+      "final_reader_issues": 0,
+      "unresolved_revision_issues": [],
+      "last_material_revision_has_been_read": true,
+      "frozen_sha256": "22bc7735865317d00d89fe68d819d4becb48ed5895726c01e6ef6bb28566f332",
+      "read_complete_sha256": "ad0e91f49b5d3b0f8e56ac13b83d989aaa62e980216a8afe361a84609019e63c",
+      "revision_decision_sha256": "d0c37b0b92a4836acb3ed1d83d506da2e7a9638fe61e3acb394bf900d940877c",
+      "evidence_directory": ".runtime/skill-cold-reader-fresh/screenplay-scene/round-04"
+    },
+    {
+      "round": 5,
+      "units": 10,
+      "finish_accepted": true,
+      "audited_steps": 11,
+      "native_inference_requests": 11,
+      "native_events": 132,
+      "decision": "keep",
+      "final_reader_issues": 0,
+      "unresolved_revision_issues": [],
+      "last_material_revision_has_been_read": true,
+      "frozen_sha256": "fbe10ef46b0e7142b537a2698b248380fbbc71e60810a699e4a914ea4202a2f5",
+      "read_complete_sha256": "44c35e23b07c941c4cd96ab5d720b29e8fc0a90dfbda1feb832f384da522295e",
+      "revision_decision_sha256": "c155a60f8471568512740ff69a784375406df48154bc8a4fcbeee04b29a5069f",
+      "evidence_directory": ".runtime/skill-cold-reader-fresh/screenplay-scene/round-05"
     }
   ],
-  "reader_contexts": 32,
-  "native_inferences": 32,
+  "reader_contexts": 54,
+  "native_inferences": 54,
   "candidate_files_sha256": {
     "SKILL.md": "da333c37c254ee382f7a5bf6ddb85bd3aaa875c0ea99267058539cdb62c390be"
   },
-  "candidate_source": ".runtime/skill-cold-reader-fresh/screenplay-scene/round-03/revision-decision.json:next_files",
-  "candidate_decision_sha256": "4fcc9d85f16c6795c32b1b488fe03293a9f6876082083a2ae0d20cf95e7e135c",
-  "source_report": ".runtime/skill-cold-reader-fresh/screenplay-scene/three-round-report.json",
-  "source_report_sha256": "51312d8ce3996524f4baf628ee06933c363b173e0ec1d619966b34e86f869368",
+  "candidate_source": ".runtime/skill-cold-reader-fresh/screenplay-scene/round-05/revision-decision.json:next_files",
+  "candidate_decision_sha256": "c155a60f8471568512740ff69a784375406df48154bc8a4fcbeee04b29a5069f",
+  "source_report": "production/reports/task-20261013-0010/screenplay-scene.json",
   "unresolved_text_issues_at_round_3": [],
   "last_revision_fully_reread": true,
-  "final_sample_executed": false,
+  "final_sample_executed": true,
   "formal_method_publication": false,
   "formal_story_changes": false,
   "media_watched_or_heard": false,
   "new_media_generated": false,
   "human_participant_test": false,
   "pending": [
-    "final full rounds after shared resource stability",
-    "exact final method binding and isolated work sample",
-    "managed formal delivery and latest-only cleanup"
+    "managed formal delivery and latest-only cleanup",
+    "formal and complete empty-instance verification"
   ],
   "before_after": {
     "old": "通过原作者入口保存本场草稿并全文读回。",
     "reader_observation": "R1 q0008-01：首次执行者无法仅凭正文识别保存目标和读回途径；结尾仍未解释。",
     "new": "说明沿用本次剧本作者工具、任务指定的 --run 与 --method-url，save 保存后以 read 取回实际全文，再顺读与对照检查。",
-    "verification": "R2/R3 第8单位均准确复述任务运行位置及保存—读回次序，全文结算无遗留问题。"
-  }
+    "verification": "R2/R3/R4/R5 understand the actual run and save/read order. Final method sample completed four begin/save/read/accept chains and one full review, with exact input and remote stage readback."
+  },
+  "native_events": 648,
+  "final_method": {
+    "object_id": "method.skill.screenplay-scene",
+    "revision_id": "b82a2acb43667ffc0248a00fa810c245e454711f13e7a51d45a5ceb20d3aeeb7",
+    "version": 10
+  },
+  "final_linkage": {
+    "path": ".runtime/skill-cold-reader-fresh/screenplay-scene/final-linkage/receipt.json",
+    "sha256": "b5d3893a8eed2d09fb88b1d4939ddb34f4182e37b082aacd19a141feb618c7b7"
+  },
+  "final_sample": {
+    "path": ".runtime/skill-cold-reader-fresh/screenplay-scene/sample/verification.json",
+    "sha256": "64e1799cf2f6e36783f7f3146ea30a4cd2268a1f284ab417a85a2a49d2b5caa9",
+    "artifact": "production/reports/task-20261013-0010/samples/screenplay-scene.md",
+    "artifact_sha256": "60428ad00d5c48e1c4ca3d4b06be9eee212edd6cda30a51224df706abe3f7de9"
+  },
+  "frozen_settlement_audit_and_payload_hashes_equal": true,
+  "verified_at": "2026-10-14T23:29:59.274545+00:00",
+  "isolated_browser_checked": true,
+  "isolated_browser_evidence_index": "production/reports/task-20261013-0010/isolated-browser.json:screenplay_final"
 }
