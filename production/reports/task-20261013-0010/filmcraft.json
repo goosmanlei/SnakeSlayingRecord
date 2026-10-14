@@ -1,8 +1,8 @@
 {
   "task": "task-20261013-0010",
   "item": "filmcraft",
-  "status": "ROUND_05_READING",
-  "valid_complete_rounds": 4,
+  "status": "ROUND_06_READING",
+  "valid_complete_rounds": 5,
   "rounds": [
     {
       "round": 1,
@@ -107,23 +107,65 @@
         "path": ".runtime/skill-cold-reader-fresh/filmcraft/round-04/coordinator-progress-exposure.json",
         "sha256": "553e65a43fc86ef427c9fb7c08ed67fe893da5458d8ea3c7f38d8e18ccbf335e"
       }
+    },
+    {
+      "round": 5,
+      "body_units": 355,
+      "reader_contexts": 356,
+      "native_inferences": 357,
+      "native_events": 4274,
+      "decision": "revise",
+      "changed_paths": [
+        "production/filmcraft/04-camera.md",
+        "production/filmcraft/sources.md"
+      ],
+      "rationale": "新修订上下文完整核对16份正文、355条理解及全部4项问题历史，仅保留摇摄远近速度的条件疑问。原始资料与投影原理核实后，修正无条件概括并同步来源记录；其余三项沿全文已有解释或职责边界保留。改稿须第六轮完整复读。",
+      "unresolved": [],
+      "frozen_sha256": "1e29370cde0c90a35b49000c516669118f158ca02fb6af66942a62f0e15bf3c6",
+      "read_complete_sha256": "ffb90112633ac9e49865958b25e01e75e13afcd3b73428637c94c450ad950fad",
+      "revision_decision_sha256": "f76408d102e341d9c3406c597fe505174aca18f40b2d335089a795fef8f18dee",
+      "semantic_review_sha256": "4cfc38a9cf66280826ad1d9767fec587894f4a6b3aa2e279294307b8c38cbd27",
+      "evidence_directory": ".runtime/skill-cold-reader-fresh/filmcraft/round-05",
+      "fresh_semantic_context": {
+        "thread_id": "01a13bfb-44cb-7780-b96b-97e9fa383eab",
+        "native_inferences": 1,
+        "native_events": 12,
+        "audit_path": ".runtime/skill-cold-reader-fresh/filmcraft/round-05/semantic-context/audit.json",
+        "audit_sha256": "3c0fa4db567f64ed2b27a0623ff7cdeaca9528ee02cd2d45f93fc6c7ca2a9fd7",
+        "full_source_files": 16,
+        "all_body_understandings": 355,
+        "all_issue_histories": true,
+        "finish": true
+      },
+      "source_verification": {
+        "path": ".runtime/skill-cold-reader-fresh/filmcraft/round-05/source-verification.json",
+        "sha256": "b453955867d2f057014f02645458543e5afb682e79bfe92b2126b00839e4ac6f"
+      },
+      "source_metadata_derivation": {
+        "path": ".runtime/skill-cold-reader-fresh/filmcraft/round-05/source-metadata-derivation.json",
+        "sha256": "c98b3cf5671948b7dc617d5598b9337b16c153346801a90ee2c09fd109732877"
+      },
+      "failed_capacity_attempt": {
+        "path": ".runtime/skill-cold-reader-fresh/filmcraft/round-05/capacity-recovery-0218.json",
+        "sha256": "97c995a7fde354cbfb71bfe75b6e643fa7fd21bf4d915a27d84ca87176a83a38"
+      }
     }
   ],
-  "reader_contexts": 1865,
-  "native_inferences": 1911,
-  "native_events": 22472,
+  "reader_contexts": 2221,
+  "native_inferences": 2268,
+  "native_events": 26746,
   "reader_model": "gpt-6-astra",
   "reader_effort": "max",
   "reviser_model": "gpt-6-astra",
   "reviser_effort": "max",
-  "index_readback_at": "2026-10-14T16:11:53.429533+00:00",
+  "index_readback_at": "2026-10-14T20:03:50.885+00:00",
   "frozen_settlement_audit_chain_and_event_hashes_equal": true,
   "current_candidate_files": {
     "production/filmcraft/README.md": "1190bb09a7a7f11d67e389219b549c7154af98d610338bb0a008b952687bd10d",
     "production/filmcraft/01-narrative.md": "7f1cc6ccf7691e13a4897caf02dddd92d8dd0a4d38949bb47d9c251aafd93749",
     "production/filmcraft/02-coverage.md": "e421607e919b29b960ba6cafeaded1798a8b0e06b5812ae10d5642c1b4fcce4c",
     "production/filmcraft/03-cinematography.md": "0f4b4152b807cbbf8f9a3a15d3b8b065adbf10f3e6459d5b8cc433a0af9d4223",
-    "production/filmcraft/04-camera.md": "3a28d47631b7ee39a5a00c060f3f53f98f56fe559ccc57d11ad0cdcb24e6af19",
+    "production/filmcraft/04-camera.md": "0bfb05c5430ad690828ba9438abf6561d217c2415f5ce412c2a5a3964c904c31",
     "production/filmcraft/05-staging.md": "25114856e31f4fabe69931720121a6d2acbb527839de5c554edc9dc094641285",
     "production/filmcraft/06-lighting.md": "7fcf03079486ac3fda2dbdd930bf9e27b95a58f388cd7ae29d6e2c1b082d4086",
     "production/filmcraft/07-color.md": "1f229fa48d1fb7011d1f0617e532e4ffe74b2d576c061e13921dfe7f473ec7d0",
@@ -134,16 +176,16 @@
     "production/filmcraft/12-animation-ai.md": "44e601338c611f64d37693407f6a9d8f70606b6a4cfb2cac367b69b0f01fbe11",
     "production/filmcraft/applications.md": "2f8fcd218a4d319f108c122e94ffcd886d1914574216c841627250d29e2dd7fc",
     "production/filmcraft/quick-reference.md": "f3fa0be8be12db826d3660a46c1baefb4506848c58f6a589e75eddd12fad19c7",
-    "production/filmcraft/sources.md": "c2ce796120b3bc36d3ead13d7df3ba7bcfbdc54253ed963dd688a1efdc3b34af"
+    "production/filmcraft/sources.md": "ad52f541df4018fad416a97c5ec56b8747916d9260cf18c7bbac31a051e7b810"
   },
   "current_round": {
-    "round": 5,
+    "round": 6,
     "body_units": 355,
     "files": 16,
-    "characters": 75543,
-    "frozen_sha256": "1e29370cde0c90a35b49000c516669118f158ca02fb6af66942a62f0e15bf3c6",
-    "source_package_sha256": "4e5bdba9cab786d7bb5d493ba2e105e798548a40a99b44367136c55a6805c77a",
-    "reading_units_sha256": "7165465600a0e2ce19e17437a56ffc27606c6d5e9a569c91e0141c07b5a7dd4f",
+    "characters": 75601,
+    "frozen_sha256": "2eba76ba0577c59a120de771f94b4bdc52742ebe9423fdc4687024fc19286a4e",
+    "source_package_sha256": "9a6f9450ab8b475fd1db90d74160f98175c7269efb35e411d589b52c807cd405",
+    "reading_units_sha256": "84a60978241ee9819271a4393ab7357d39094c50cfa186a6616910819f5db2aa",
     "not_counted_as_valid": true,
     "reader_started": true
   },
@@ -162,5 +204,5 @@
   },
   "last_material_revision_has_been_read": false,
   "minimum_rounds_remaining": 1,
-  "canonical_writeback_scope": "The existing round-03 receipt covers the previous candidate. The new round-04 camera paragraph and SP21 metadata remain pending a complete round-05 reread."
+  "canonical_writeback_scope": "The round-03 receipt covers the earlier canonical candidate. The latest round-05 camera wording and SP21 metadata await a complete round-06 reread before canonical writeback."
 }
