@@ -319,12 +319,15 @@ def audit(directory, expected_prefix):
             reader.require(ending["error"] in (
                            "stream disconnected before completion: websocket closed by server before response.completed",
                            "stream disconnected before completion: WebSocket protocol error: Connection reset without closing handshake",
-                           "stream disconnected before completion: idle timeout waiting for websocket"),
+                           "stream disconnected before completion: idle timeout waiting for websocket",
+                           "exceeded retry limit, last status: 429 Too Many Requests"),
                            "unreviewed native inference failure")
             # A null payload records a disconnect before any output was saved.
             # In that observed case the next request must repeat the exact input;
             # the equality check above still rejects any unexplained addition.
             partial_ref = ending["partial_response_payload"]
+            if ending["error"] == "exceeded retry limit, last status: 429 Too Many Requests":
+                reader.require(partial_ref is None, "rate-limit retry has unreviewed partial output")
             if partial_ref is not None:
                 partial = payload(partial_ref)
                 reader.require(all(v["type"] == "reasoning" for v in partial["output_items"]),

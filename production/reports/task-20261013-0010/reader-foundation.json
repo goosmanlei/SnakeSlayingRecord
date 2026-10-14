@@ -1558,5 +1558,58 @@
     "verified_at": "2026-10-14T04:13:53.801121+00:00",
     "evidence_path": ".runtime/skill-cold-reader-fresh/host-reboot-resumed-20261014-1150.json",
     "evidence_sha256": "e1fa7ba3f7117ab1c4ed89bf8673dabbefa19f82a60a805e45c47c0d98bf5df6"
+  },
+  "native_rate_limit_recovery": {
+    "source_step": ".runtime/skill-cold-reader-fresh/filmcraft/round-02/step-0259",
+    "request_diff_paths": [
+      "$.client_metadata.x-codex-ws-stream-request-start-ms"
+    ],
+    "model": "gpt-6-astra",
+    "effort": "max",
+    "native_events": 14,
+    "native_requests": 2,
+    "first_request_error": "exceeded retry limit, last status: 429 Too Many Requests",
+    "first_request_partial_response": null,
+    "second_input_exactly_repeats_first": true,
+    "raw_final_matches_saved_answer": true,
+    "new_model_invocations_by_coordinator": 0,
+    "checks": [
+      {
+        "case": "valid-429-no-output",
+        "accepted": true,
+        "rejection": null,
+        "new_inference": false,
+        "simulated_mutation": false
+      },
+      {
+        "case": "429-with-partial-output",
+        "accepted": false,
+        "rejection": "rate-limit retry has unreviewed partial output",
+        "new_inference": false,
+        "simulated_mutation": true
+      },
+      {
+        "case": "429-changed-input",
+        "accepted": false,
+        "rejection": "native continuation has unexplained input",
+        "new_inference": false,
+        "simulated_mutation": true
+      },
+      {
+        "case": "unreviewed-rate-error",
+        "accepted": false,
+        "rejection": "unreviewed native inference failure",
+        "new_inference": false,
+        "simulated_mutation": true
+      }
+    ],
+    "temporary_directories_removed": 5,
+    "harness_setup_failure": "The first temporary directory used the macOS /var symlink and was rejected by the existing path guard. It was automatically removed; four subsequent copies used the resolved task runtime path.",
+    "adapter_sha256": "995a26302086cdd403ac94edee36ab60262bc1f4827315680d44377a188d2d08",
+    "accepted_audit_sha256": "075e81d5bed95181b9450bd10e105d0e016f62789a95e0f0f3f74dcd5b2162e5",
+    "accepted_thread_id": "01a138a2-3674-75b0-9d25-cb688e67840c",
+    "concurrency_after_inspection": 2,
+    "evidence_path": ".runtime/skill-cold-reader-fresh/filmcraft/round-02/rate-limit-0259-recovery.json",
+    "evidence_sha256": "c6734b768a416d4c126717ace9c3a3dad5f94aee77cab382882cb37b2991e0e4"
   }
 }
