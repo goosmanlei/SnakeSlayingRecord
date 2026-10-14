@@ -1,0 +1,88 @@
+{
+  "task": "task-20261013-0010",
+  "item": "video-plan",
+  "status": "THREE_ROUNDS_COMPLETE_PENDING_FINAL_ROUNDS_AND_SAMPLE",
+  "valid_complete_rounds": 3,
+  "rounds": [
+    {
+      "round": 1,
+      "body_units": 37,
+      "reader_contexts": 38,
+      "native_inferences": 38,
+      "native_events": 456,
+      "decision": "revise",
+      "changed_paths": [
+        "SKILL.md",
+        "references/prompt-review.md",
+        "references/worked-examples.md"
+      ],
+      "rationale": "完整读完37个正文单元、FINISH及4条问题历史。采纳两条最终意见：补明步骤目录、准确输入、supporting_records对应正文与同一步骤read入口；历史米袋示例保留原Prompt，以准确剧本第30段区分阿蘅持袋和李寄伸手提袋，补充教学说明。两条已解释意见不视为未解决问题，同时把认可、收入条目写得更直白。按当前整份原件规则修正新参考、编号与缺项边界，把示例的操作流水压缩为有用的写法解释和真实限制。未修改任何历史Prompt、作品、真实输入或媒体。",
+      "unresolved": [],
+      "frozen_sha256": "a83a663b23cb45d2575803150b3728423614802af9dc3f3feff6c7844b55ce85",
+      "read_complete_sha256": "fe4a9afd66b9931068353bcaae058669cd87d0479314b8e1e4ec6a14fe0e5962",
+      "revision_decision_sha256": "6d3ae8ccab9429d6754d15e8ad1cbd84f74e1ac4d25b7f024e216e51e8360c85",
+      "evidence_directory": ".runtime/skill-cold-reader-fresh/video-plan/round-01"
+    },
+    {
+      "round": 2,
+      "body_units": 44,
+      "reader_contexts": 45,
+      "native_inferences": 45,
+      "native_events": 540,
+      "decision": "revise",
+      "changed_paths": [
+        "SKILL.md",
+        "references/prompt-review.md",
+        "references/worked-examples.md"
+      ],
+      "rationale": "已完整读取44个正文单元、FINISH与唯一问题完整历史。采纳 q0012-01，解释原件组成是同一候选中的登记文件而非文件局部。依用户本轮新增硬要求，将镜内时间线故事板设为实际提交 Prompt 正文必需内容：覆盖局部0至方案总长，按事件安排段数及负载，用连贯句演绎可见变化、机位构图和同期声，准确写清原词、跨段尾腔和插话，末态接下镜。保存回读与查错表同步核查真实 Prompt 是否保留时间线，不强制四段、不均分、不添剧情。三个历史 Prompt 字节未变并明确只是旧写法分析，另增加标明未提交的完整时间线教学稿；无新媒体、无作品当前方案修改。 延长新增段与渠道时长参数分别核对；教学稿明确倒扣竹篮、歌本摊篮底及河石压页的接触关系。 明确时间段不等于剪辑切点，并逐段保持手、物件、位置与声音连续；教学稿不重复已完成的翻页。",
+      "unresolved": [],
+      "frozen_sha256": "008f5dea5f83114c76c0a31ec55afb7be5d7737c9ce0ca83f33eb7a5f958233d",
+      "read_complete_sha256": "a0a1526f5d2d86465283cf7bd29bd220034b16e40eda5eb51ac16b6e44f890a1",
+      "revision_decision_sha256": "779063503712c7447a3ca99c9d7aa266ce17eb577b528cac8fa34fa90da54a03",
+      "evidence_directory": ".runtime/skill-cold-reader-fresh/video-plan/round-02"
+    },
+    {
+      "round": 3,
+      "body_units": 51,
+      "reader_contexts": 52,
+      "native_inferences": 52,
+      "native_events": 624,
+      "decision": "revise",
+      "changed_paths": [
+        "SKILL.md",
+        "references/prompt-review.md",
+        "references/worked-examples.md"
+      ],
+      "rationale": "完整冷读留下一个局部执行歧义：字层工程与本步输入、后期交接的关系不明。依据当前制作契约补普通语言定义及路线区别：依赖合成准确起图时先备齐真实输入，后期叠字路线则锁定字稿和显露条件并保留后期交付缺项。同步把查错表的完整引用限制明确为同一次发声，保留原作真实重复。其余正文和四个 Prompt 代码块保持不变。",
+      "unresolved": [],
+      "frozen_sha256": "8f6d5a052313a66f6d50a98e8939498674a1b9c7c94f3d0f88c218a067852068",
+      "read_complete_sha256": "7f3cbcf63889ac5818855de4bcbb277b4f52942a2727d1d87279e4cdf3318bd3",
+      "revision_decision_sha256": "1931603058a20179586eb6b282e25c4582f9dd5662026447a1b9bd7c053a4fda",
+      "evidence_directory": ".runtime/skill-cold-reader-fresh/video-plan/round-03"
+    }
+  ],
+  "reader_contexts": 135,
+  "native_inferences": 135,
+  "native_events": 1620,
+  "reader_model": "gpt-6-astra",
+  "reader_effort": "max",
+  "reviser_model": "gpt-6-astra",
+  "reviser_effort": "max",
+  "durable_evidence_reverified_at": "2026-10-14T05:57:55.532968+00:00",
+  "all_saved_raw_payload_event_and_chain_hashes_equal": true,
+  "current_candidate_files": {
+    "SKILL.md": "bc7bd1c5ddf23bac2b76e49a01f61bf72d2a7838094f35f102cd6c5c5f4d1d9a",
+    "references/prompt-review.md": "257d02931a0912bafcc9419a0e694314cc69b74e8aa8ec8de01294f6470e565c",
+    "references/worked-examples.md": "d1d2c79a616f2af2142989f35f2a350b782d39527f443710dbd26e0a1bc53aac"
+  },
+  "final_sample_complete": false,
+  "formal_publication": false,
+  "human_participant_test": false,
+  "queued_coordinator_followups": {
+    "path": ".runtime/skill-cold-reader-fresh/video-plan/coordinator-followups.json",
+    "sha256": "449731f811a6b6a3367aa732f0f8c93a7e33e394eac6c2ee1f34a8aa18cb5156",
+    "applied": false,
+    "apply_after": "round-04 complete settlement"
+  }
+}
