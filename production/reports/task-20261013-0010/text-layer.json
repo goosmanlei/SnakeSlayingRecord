@@ -1,7 +1,7 @@
 {
   "task": "task-20261013-0010",
   "item": "text-layer",
-  "status": "FORMAL_PUBLICATION_PENDING",
+  "status": "LOCAL_FORMAL_DELIVERY_VERIFIED_AWAITING_USER_CONFIRMATION",
   "valid_complete_rounds": 6,
   "rounds": [
     {
@@ -115,7 +115,7 @@
   "durable_evidence_reverified_at": "2026-10-15T00:40:09.120563+00:00",
   "all_saved_raw_payload_event_and_chain_hashes_equal": true,
   "final_sample_complete": true,
-  "formal_publication": false,
+  "formal_publication": true,
   "human_participant_test": false,
   "queued_coordinator_followups": {
     "path": ".runtime/skill-cold-reader-fresh/text-layer/coordinator-followups.json",
@@ -132,8 +132,6 @@
     "SKILL.md": "cf0f5536e15af71aaae8476c47d559e19f2ee2ea1ee8b780906ed9abf959fe31"
   },
   "pending": [
-    "incremental formal publication and latest-only cleanup",
-    "post-publication verification",
     "user completion confirmation",
     "separately owned independent review"
   ],
@@ -153,9 +151,11 @@
   },
   "result_review_complete": true,
   "current_delivery": {
-    "status": "FORMAL_PUBLICATION_PENDING",
+    "status": "LOCAL_FORMAL_DELIVERY_VERIFIED_AWAITING_USER_CONFIRMATION",
     "reference": "delivery.md",
-    "prior_delivery_unchanged": true
+    "formal_release": "formal-release.json",
+    "browser": "formal-browser.json",
+    "complete_recovery": "final-recovery.json"
   },
   "prompt_constraint_samples": {
     "text-layer": {

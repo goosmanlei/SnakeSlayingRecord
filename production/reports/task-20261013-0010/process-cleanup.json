@@ -1,11 +1,13 @@
 {
   "task": "task-20261013-0010",
   "status": "INVALID_PROCESS_RESOURCES_REMOVED_REQUIRED_AUDIT_ARCHIVED",
-  "temporary_preview_processes_stopped": 3,
+  "temporary_preview_processes_stopped": 5,
   "preview_ports_closed": [
     57149,
     54703,
-    58120
+    58120,
+    55188,
+    60517
   ],
   "cleanup_batches": [
     {
@@ -41,10 +43,17 @@
     {
       "scope": "completed final browser, audit and cleanup scripts",
       "files": 7
+    },
+    {
+      "scope": "Prompt constraints: completed rehearsals, publication validation, sample previews, final export and empty restore, obsolete full method installation packages and one-time helpers",
+      "files": 4997,
+      "database_files": 22,
+      "invalid_bytes": 6517868890,
+      "directories_including_archived_evidence": 1972
     }
   ],
-  "invalid_files_deleted": 7283,
-  "invalid_database_files_deleted": 29,
+  "invalid_files_deleted": 12280,
+  "invalid_database_files_deleted": 51,
   "all_exact_deleted_paths_absent": true,
   "archive": {
     "files": 115795,
@@ -63,5 +72,22 @@
   "temporary_images_created": 0,
   "formal_containers_and_reused_images_retained": true,
   "worktree": "Still used by this task session; managed retirement after explicit completion and TUI exit releases the lock.",
-  "audit_is_formal_method_use_history": false
+  "audit_is_formal_method_use_history": false,
+  "additional_archive": {
+    "location": ".runtime/task-20261013-0010/prompt-constraint-audit.tar.gz",
+    "sha256": "a0801bc5c2de6fb595b522878dd1c4f7848295fc04cd80527321772c23abb42a",
+    "bytes": 51969561,
+    "manifest_sha256": "39ceeb1b9275c09ad7f238de5fb14d68e7db5491dc55bd2c3643a8a5bbfe7cc0",
+    "verified_files": 8658,
+    "purpose": "Native reader and separate revision audit, final actual samples, publication and UI proofs; not formal method use history",
+    "owner": "task-20261013-0010 executor",
+    "retention_until": "User acceptance and separately owned review finish; then assess necessary trace retention",
+    "unfolded_files_removed": 8658
+  },
+  "new_formal_image_created": {
+    "count": 1,
+    "id": "sha256:447b882389fa176766d596ba46707650a1c2070d5bd97b995f59ec62ae2e34d0",
+    "purpose": "Current formal application; not an unused temporary image"
+  },
+  "cleanup_result_reference": ".runtime/task-20261013-0010/prompt-constraint-cleanup-result.json"
 }
