@@ -1,8 +1,8 @@
 {
   "task": "task-20261013-0010",
   "object_id": "method.skill.song-plan",
-  "status": "FOUR_ROUNDS_COMPLETE_FINAL_REREAD_AND_SAMPLE_PENDING",
-  "valid_complete_rounds": 4,
+  "status": "FIVE_ROUNDS_AND_FINAL_SAMPLE_COMPLETE_FORMAL_DELIVERY_PENDING",
+  "valid_complete_rounds": 5,
   "reader_model": "gpt-6-astra",
   "reader_effort": "max",
   "reviser_model": "gpt-6-astra",
@@ -73,31 +73,62 @@
       "read_complete_sha256": "19c113434f4b035d1dc96ce96004322700570aad1f8f237ae17442bbf71f2c07",
       "revision_decision_sha256": "d6f325680a781256c5539e31446703b9c348c40a9acc6a4d86d3d74fe8867ab2",
       "evidence_directory": ".runtime/skill-cold-reader-fresh/song-plan/round-04"
+    },
+    {
+      "round": 5,
+      "body_units": 10,
+      "reader_contexts": 11,
+      "native_inferences": 11,
+      "native_events": 132,
+      "decision": "keep",
+      "rationale": "分离修订者已全文阅读冻结的 SKILL.md、10 个正文单位及全文结算，并核对每段理解和记忆更新。读者正确区分整曲、曲调基准、短段与人物音色，理解准确歌词不能为押韵擅改，短段仍需有完整起落和尾音，实际呼吸与进入反应不能由字数代替。完整原件参考与后期片段的边界、历史 Lyria 结果不能证明本次能力、need_video 条件下镜头演唱的原声对齐与后期替换职责均被准确解释。项目入口、全文回读和实际听整段的检查顺序明确，未结疑惑为空。保持全文，避免把不同歌曲用途压成一张机械清单；最后实质改稿已完整复读。此结论不宣称本轮听验、重新生成或采纳了歌曲。",
+      "unresolved": [],
+      "changed_paths": [],
+      "last_material_revision_has_been_read": true,
+      "frozen_sha256": "dc10ac2050e42c404dca0f62650489d766e8d46268628aac28b1c2ae49fa20d4",
+      "read_complete_sha256": "edcac5c60ad569e00874fe2be898a842c52f3889ee4093555593225f68bc75bd",
+      "revision_decision_sha256": "c08d7f5af402edfdc123b875e7928824cb7d1c6b0262a6ec219054ce06aa9c40",
+      "evidence_directory": ".runtime/skill-cold-reader-fresh/song-plan/round-05"
     }
   ],
-  "reader_contexts": 43,
-  "native_inferences": 43,
+  "reader_contexts": 54,
+  "native_inferences": 54,
   "candidate_files_sha256": {
     "SKILL.md": "c56fb147e7a85f129311bd84ee2d7a17ffe21480fe107229214bd38f94a1dd85"
   },
-  "candidate_source": ".runtime/skill-cold-reader-fresh/song-plan/round-04/revision-decision.json:next_files",
-  "candidate_decision_sha256": "d6f325680a781256c5539e31446703b9c348c40a9acc6a4d86d3d74fe8867ab2",
+  "candidate_source": ".runtime/skill-cold-reader-fresh/song-plan/round-05/revision-decision.json:next_files",
+  "candidate_decision_sha256": "c08d7f5af402edfdc123b875e7928824cb7d1c6b0262a6ec219054ce06aa9c40",
   "source_report": ".runtime/skill-cold-reader-fresh/song-plan/three-round-report.json",
   "source_report_sha256": "10a1859788a3e17ea97809cdf5089b04f5410948cd43fb5a8fa4a59f83dc4781",
   "unresolved_text_issues_at_round_3": [],
   "last_revision_fully_reread": true,
-  "final_sample_executed": false,
+  "final_sample_executed": true,
   "formal_method_publication": false,
   "formal_story_changes": false,
   "media_watched_or_heard": false,
   "new_media_generated": false,
   "human_participant_test": false,
   "pending": [
-    "final full rounds after shared resource stability",
-    "exact final method binding and isolated work sample",
     "managed formal delivery and latest-only cleanup"
   ],
-  "native_events": 516,
-  "durable_evidence_reverified_at": "2026-10-15T00:40:09.120563+00:00",
-  "all_saved_raw_payload_event_and_chain_hashes_equal": true
+  "native_events": 648,
+  "durable_evidence_reverified_at": "2026-10-15T01:22:45.973848+00:00",
+  "all_saved_raw_payload_event_and_chain_hashes_equal": true,
+  "final_method": {
+    "object_id": "method.skill.song-plan",
+    "revision_id": "301bcf3f9f8d8d0db5bfabac9d7080d460e6f69e99272bb193d47c92013d5b5c",
+    "version": 15
+  },
+  "final_linkage_receipt": {
+    "path": ".runtime/skill-cold-reader-fresh/song-plan/final-linkage/receipt.json",
+    "sha256": "21b29fa4ec77e896e9892b1880541db302dbebf9373ee1cdad9c109e16e41c8b"
+  },
+  "final_sample": {
+    "verification_path": ".runtime/skill-cold-reader-fresh/song-plan/sample/verification.json",
+    "verification_sha256": "13f79f481b8b3d431916aa43006cc18a88ba572a0ebc2153e06cc52feff41fcc",
+    "public_sample": "samples/song-plan.md",
+    "public_sample_sha256": "f38d3d24b46ada3da380e95f2172670dc92c5e2a1f18be4175323c92a4dcfa7a",
+    "formal_writes": false
+  },
+  "outer_description_sync_pending": false
 }

@@ -1,8 +1,8 @@
 {
   "task": "task-20261013-0010",
   "object_id": "method.skill.voice-plan",
-  "status": "FOUR_ROUNDS_COMPLETE_FINAL_REREAD_AND_SAMPLE_PENDING",
-  "valid_complete_rounds": 4,
+  "status": "FIVE_ROUNDS_AND_FINAL_SAMPLE_COMPLETE_FORMAL_DELIVERY_PENDING",
+  "valid_complete_rounds": 5,
   "reader_model": "gpt-6-astra",
   "reader_effort": "max",
   "reviser_model": "gpt-6-astra",
@@ -73,28 +73,42 @@
       "read_complete_sha256": "53413d5bcc829fb06a082fa43ea6381c299d96ae70ab017b4dca5b034a4e9a30",
       "revision_decision_sha256": "4003e5068d17e18fb66d9bdae55fee38161c1bcbfc1ac8869529090eae751da8",
       "evidence_directory": ".runtime/skill-cold-reader-fresh/voice-plan/round-04"
+    },
+    {
+      "round": 5,
+      "body_units": 10,
+      "reader_contexts": 11,
+      "native_inferences": 11,
+      "native_events": 132,
+      "decision": "keep",
+      "rationale": "分离修订者已全文阅读冻结的 SKILL.md、10 个正文单位及全文结算，并核对每段理解和记忆更新。读者准确区分人物可复用的声音身份、当场表演和录音环境；知道必须按原话设计试声、实际听辨，不能从外貌推定声线，也不能用角色名或文字描述替代准确原件。完整原件作为生成参考与剪辑截取范围的区别、历史模型与当前能力的区别、项目入口的草稿—检查—结果交接均已理解，没有未结疑惑。正文同时提供人可理解的判断理由与 AI 可执行的输入和保存入口，不需再堆叠字段或重复检查。保持全文；最后实质改稿已完整复读。该判断只涉及方法理解，不表示本轮实际听过音频，也不把老汉基础说话试声中“不唱”的条件扩展为镜头接唱的限制。",
+      "unresolved": [],
+      "changed_paths": [],
+      "last_material_revision_has_been_read": true,
+      "frozen_sha256": "1de22e768877667514718b3fb3f7ec5359142d616cd452c7d2ad2457f8c083a3",
+      "read_complete_sha256": "fee6c0bb57a96efe4dd13b2ec02ff083fccbf7ca59aecec9673d94558ff01dd5",
+      "revision_decision_sha256": "e2161aa68a3743f56897964542185f86cebb3392c3f44b204615fba90c3968ba",
+      "evidence_directory": ".runtime/skill-cold-reader-fresh/voice-plan/round-05"
     }
   ],
-  "reader_contexts": 42,
-  "native_inferences": 42,
+  "reader_contexts": 53,
+  "native_inferences": 53,
   "candidate_files_sha256": {
     "SKILL.md": "bd6c9e0ee26d401e6102ab7438b6ce8ad35fb2088c17907bff395f06d3cacece"
   },
-  "candidate_source": ".runtime/skill-cold-reader-fresh/voice-plan/round-04/revision-decision.json:next_files",
-  "candidate_decision_sha256": "4003e5068d17e18fb66d9bdae55fee38161c1bcbfc1ac8869529090eae751da8",
+  "candidate_source": ".runtime/skill-cold-reader-fresh/voice-plan/round-05/revision-decision.json:next_files",
+  "candidate_decision_sha256": "e2161aa68a3743f56897964542185f86cebb3392c3f44b204615fba90c3968ba",
   "source_report": ".runtime/skill-cold-reader-fresh/voice-plan/three-round-report.json",
   "source_report_sha256": "17c1efb428f6ec127eb953283c3a882597be5130bc1ff8d76241c49f81b85dad",
   "unresolved_text_issues_at_round_3": [],
   "last_revision_fully_reread": true,
-  "final_sample_executed": false,
+  "final_sample_executed": true,
   "formal_method_publication": false,
   "formal_story_changes": false,
   "media_watched_or_heard": false,
   "new_media_generated": false,
   "human_participant_test": false,
   "pending": [
-    "final full rounds after shared resource stability",
-    "exact final method binding and isolated work sample",
     "managed formal delivery and latest-only cleanup"
   ],
   "before_after": {
@@ -103,8 +117,24 @@
     "new": "生成声音参考明确准确候选及完整原件；试听或后期区间另记用途与起止时间。未有原件时写待试声方向。沿 voice 分类和任务作者目录完成 begin、draft、read、review、finish。",
     "verification": "R2/R3 第 3、4、7、8 单位均准确复述新增边界与保存流程，两个完整结算均无问题。"
   },
-  "outer_description_sync_pending": true,
-  "native_events": 504,
-  "durable_evidence_reverified_at": "2026-10-15T00:40:09.120563+00:00",
-  "all_saved_raw_payload_event_and_chain_hashes_equal": true
+  "outer_description_sync_pending": false,
+  "native_events": 636,
+  "durable_evidence_reverified_at": "2026-10-15T01:22:45.821351+00:00",
+  "all_saved_raw_payload_event_and_chain_hashes_equal": true,
+  "final_method": {
+    "object_id": "method.skill.voice-plan",
+    "revision_id": "688de19d3b09ff83495bd3bf7933d41326933905235df4f8a7c21fbcbc585a48",
+    "version": 14
+  },
+  "final_linkage_receipt": {
+    "path": ".runtime/skill-cold-reader-fresh/voice-plan/final-linkage/receipt.json",
+    "sha256": "0eaa5518848354f7eefa0f4d0d3ebdc2bdfb886e2ee0c9466330f9703778b57b"
+  },
+  "final_sample": {
+    "verification_path": ".runtime/skill-cold-reader-fresh/voice-plan/sample/verification.json",
+    "verification_sha256": "f8c6c38a64484906efadfb6bf45bf9fd4b8f43eb9a4dbdaffe491cf3ea78d543",
+    "public_sample": "samples/voice-plan.md",
+    "public_sample_sha256": "d7b7bd18cc670d818026053d0eeb0a6dc3686a693bcfddd46fa0f132fde3b313",
+    "formal_writes": false
+  }
 }
