@@ -1,7 +1,7 @@
 {
   "task": "task-20261013-0010",
   "item": "text-layer",
-  "status": "FIVE_ROUNDS_AND_TWO_ENTRY_SAMPLE_COMPLETE_LINKED_REVIEW_PENDING",
+  "status": "FIVE_ROUNDS_AND_FULL_SAMPLE_CHAIN_COMPLETE_FORMAL_PENDING",
   "valid_complete_rounds": 5,
   "rounds": [
     {
@@ -110,7 +110,7 @@
     "applied": true,
     "apply_after": "round-04 complete settlement",
     "applied_in_round": 4,
-    "complete_reread_pending": 5
+    "complete_reread_finished": 5
   },
   "last_revision_fully_reread": true,
   "candidate_source": ".runtime/skill-cold-reader-fresh/text-layer/round-05/revision-decision.json:next_files",
@@ -119,7 +119,6 @@
     "SKILL.md": "e93ad71e90fbc1c6ea858132c93cc81f64f99bc66910604397e5567280713697"
   },
   "pending": [
-    "final_result_review_method_sample",
     "formal_incremental_publication",
     "formal_browser",
     "final_empty_restore",
@@ -163,10 +162,15 @@
   },
   "sample_verification": {
     "path": ".runtime/skill-cold-reader-fresh/text-layer/sample/verification.json",
-    "sha256": "145a66048e013e599b1c04fc2e1111a683c57f094fdbff1305e47d5efb6b63bc"
+    "sha256": "9ff68ac76d26525f6f1b14321a2201e80ddbbe7e5e8f17e0e8e8c884644461a8"
   },
   "sample_report": {
     "path": "production/reports/task-20261013-0010/samples/text-layer.md",
-    "sha256": "2ea3fa6aeb1a2639c7c6342ce725caa15b56ccc222b762e263c7e31ddbbe7b04"
+    "sha256": "3f23326331b9ab4054dfe3ec5d21d55a980799569cc89a586d36e09de2ddb6bd"
+  },
+  "result_review_complete": true,
+  "result_review_evidence": {
+    "path": ".runtime/skill-cold-reader-fresh/result-review/sample/verification.json",
+    "sha256": "1d97ffd7522e7e164e53875d2aec58a44dd93d9446e9cd5d1201a44ece64177d"
   }
 }

@@ -1,8 +1,8 @@
 {
   "task": "task-20261013-0010",
   "item": "result-review",
-  "status": "FIVE_ROUNDS_COMPLETE_REVISED_SIXTH_ROUND_PENDING",
-  "valid_complete_rounds": 5,
+  "status": "SIX_ROUNDS_AND_FINAL_SAMPLE_COMPLETE_BROWSER_AND_FORMAL_PENDING",
+  "valid_complete_rounds": 6,
   "rounds": [
     {
       "round": 1,
@@ -84,24 +84,63 @@
       "read_complete_sha256": "fdeb93d0e055167ec007d36574820c6621c0921eb6c5d7d2357f092a5d1ba793",
       "revision_decision_sha256": "9a0584b9a437f124eb92323fe7189962c5718d158a20d5bf0f325a3c43d2cd0a",
       "evidence_directory": ".runtime/skill-cold-reader-fresh/result-review/round-05"
+    },
+    {
+      "round": 6,
+      "body_units": 13,
+      "reader_contexts": 14,
+      "native_inferences": 14,
+      "native_events": 168,
+      "decision": "keep",
+      "rationale": "分离修订者已完整阅读本轮冻结的 SKILL.md、13 个正文单位及全文结算，逐项核对理解、记忆更新和最终空问题集。本轮全读保留了完整正文；标题单独成单位不增加方法轮次。第五轮遗留的“时间负荷”不明已经改为可观察的动作挤在一起、关键阶段来不及看清，并用递物跳过接触的例子说明怎样选择动画与 AI 制作专题。第7单位的新读者准确复述触发条件和核对重点，也明确不能仅凭跳过接触的现象确定原因；第9单位继续区分空间、参考、动作安排和生成问题，未产生固定归因。输入、实际体验、定位、最小返修、完整原件与后期编辑、参考链代数、前后比较和原生保存入口均被准确理解；对未看听范围和用户采用的边界保持清楚。没有需要再改的实质问题，保留全部正文。最后一次实质改稿已在本轮完整复读；结论不代替实际候选样例或尚未执行的正式发布验收。",
+      "unresolved": [],
+      "changed_paths": [],
+      "last_material_revision_has_been_read": true,
+      "frozen_sha256": "9da9f4b73044ad800884e6058ed65d1cc6f72ed13be27db7a37330428b710f31",
+      "read_complete_sha256": "6439318e2d24b4d4ec599d4a479ba03f652c2c9df9ac4dc0906ecf59d0aba294",
+      "revision_decision_sha256": "018f6a7426036736166002e70ce77e790f66b1f4a420dc293ca45e2d7f2d2454",
+      "evidence_directory": ".runtime/skill-cold-reader-fresh/result-review/round-06"
     }
   ],
-  "reader_contexts": 53,
-  "native_inferences": 53,
-  "native_events": 636,
+  "reader_contexts": 67,
+  "native_inferences": 67,
+  "native_events": 804,
   "reader_model": "gpt-6-astra",
   "reader_effort": "max",
   "reviser_model": "gpt-6-astra",
   "reviser_effort": "max",
-  "durable_evidence_reverified_at": "2026-10-15T01:05:02.921314+00:00",
+  "durable_evidence_reverified_at": "2026-10-15T01:22:46.090350+00:00",
   "all_saved_raw_payload_event_and_chain_hashes_equal": true,
   "current_candidate_files": {
     "SKILL.md": "35ea20e18aed4d7fcb11fd76358fb05756a2a384ee7dbaac395de30bb4504826"
   },
-  "final_sample_complete": false,
+  "final_sample_complete": true,
   "formal_publication": false,
   "human_participant_test": false,
-  "last_revision_fully_reread": false,
-  "candidate_source": ".runtime/skill-cold-reader-fresh/result-review/round-05/revision-decision.json:next_files",
-  "candidate_decision_sha256": "9a0584b9a437f124eb92323fe7189962c5718d158a20d5bf0f325a3c43d2cd0a"
+  "last_revision_fully_reread": true,
+  "candidate_source": ".runtime/skill-cold-reader-fresh/result-review/round-06/revision-decision.json:next_files",
+  "candidate_decision_sha256": "018f6a7426036736166002e70ce77e790f66b1f4a420dc293ca45e2d7f2d2454",
+  "candidate_files_sha256": {
+    "SKILL.md": "35ea20e18aed4d7fcb11fd76358fb05756a2a384ee7dbaac395de30bb4504826"
+  },
+  "final_method": {
+    "object_id": "method.skill.result-review",
+    "revision_id": "9528f5c182698fe9b9248f7959e7d529642291bd0649f8e6cc96c40a623ffb04",
+    "version": 18
+  },
+  "final_linkage_receipt": {
+    "path": ".runtime/skill-cold-reader-fresh/result-review/final-linkage/receipt.json",
+    "sha256": "f4a7b31f85fb98d44fa38f4290efbea01a4c6b582adcca9fd7660bad30c64ca1"
+  },
+  "pending": [
+    "final method Chrome readback",
+    "managed formal delivery and latest-only cleanup"
+  ],
+  "final_sample": {
+    "verification_path": ".runtime/skill-cold-reader-fresh/result-review/sample/verification.json",
+    "verification_sha256": "1d97ffd7522e7e164e53875d2aec58a44dd93d9446e9cd5d1201a44ece64177d",
+    "public_sample": "samples/result-review.md",
+    "public_sample_sha256": "3e9663f26d4a6711b7386998b30fda97f75db0d7b02cc794edb70baf7930ede5",
+    "formal_writes": false
+  }
 }
