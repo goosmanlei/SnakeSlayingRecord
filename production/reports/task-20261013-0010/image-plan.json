@@ -1,8 +1,8 @@
 {
   "task": "task-20261013-0010",
   "object_id": "method.skill.image-plan",
-  "status": "FOUR_ROUNDS_COMPLETE_FINAL_REREAD_AND_SAMPLE_PENDING",
-  "valid_complete_rounds": 4,
+  "status": "FIVE_ROUNDS_AND_BOUND_SAMPLE_COMPLETE",
+  "valid_complete_rounds": 5,
   "reader_model": "gpt-6-astra",
   "reader_effort": "max",
   "reviser_model": "gpt-6-astra",
@@ -73,10 +73,26 @@
       "read_complete_sha256": "cc71bdd410ad4e09975145997a5e395cca3f021b6b591aea7f1c3e2ffa9bf490",
       "revision_decision_sha256": "c988633f7a56f43b15b8264ad1756e948923b0be8a0de8b5742e5b784d88d607",
       "evidence_directory": ".runtime/skill-cold-reader-fresh/image-plan/round-04"
+    },
+    {
+      "round": 5,
+      "body_units": 26,
+      "reader_contexts": 27,
+      "native_inferences": 27,
+      "native_events": 324,
+      "decision": "keep",
+      "rationale": "分离修订者已完整阅读五个文件、26个正文单位及全文结算，逐项核对理解、记忆更新和两项疑惑的全部历史。共同正文先回答图像服务什么判断，再给项目入口、准确输入、取得方式、指令、专项目标与输出边界；四个专项分别落到人物结构、道具操作、空间连通和动作起点，保留了有助于人阅读的因果和例子，也给AI清晰的分类值及交接入口。\n第5段“代数”的疑问在第8段由第0代起算、最深输入加1和最多两代的具体算法解释；无须为瞬时疑问在首次出现时复制整段算法。第9段“结果提前”的疑问在第13段通过动作阶段比较获得判断依据，后续第17、21、24段又直接说明后写字、事件结果与收腔反应不能提前。第13段本身举的是动作仍处于较早阶段，读者也明确辨认了这一点，没有把它误当成已经举出提前结果的直接例子。\n道具专项的三根木担是区分形制与实物的示例，不授权把实际剧本中出现几次便断言为几根；其前句要求准确来源和跨镜状态，正文也禁止依名字推定。实际抽取样例按三场没有交接依据保留未知，不补同一根或三根的故事。无需为该样例改写可复用示例。\n没有仍成立的理解障碍或新事实需要写入。保持本轮全部文件；最后实质改稿已经本轮完整复读。该结论只支持方法可理解及方案职责清楚，不声称真人参与试读或未看图的媒体质量通过。",
+      "unresolved": [],
+      "changed_paths": [],
+      "last_material_revision_has_been_read": true,
+      "frozen_sha256": "dbff3b2c25b7b36b42598e63f814a33a2e397e5df4a4b9baab97048ff6844d93",
+      "read_complete_sha256": "2b2c2d941eb6d2faabd5b4139c114cd665fa5fc885fb62b5e22c16f8c0ebc0ad",
+      "revision_decision_sha256": "8de33eec4a54f85e3483a5d0a3c18ba6c1dab33b8f7fae4c0b5b5d2c94e1f5c3",
+      "evidence_directory": ".runtime/skill-cold-reader-fresh/image-plan/round-05"
     }
   ],
-  "reader_contexts": 115,
-  "native_inferences": 117,
+  "reader_contexts": 142,
+  "native_inferences": 144,
   "candidate_files_sha256": {
     "SKILL.md": "afe910835c463c18d6a5bfd54aae494212b45c59f78fc22d699e21dc2420ec91",
     "references/character-image.md": "7bb1cd16dd1e13173cbe286b477c2c8f693dff6586071f9cd70253ed22e2ac90",
@@ -84,24 +100,38 @@
     "references/scene-image.md": "8faaf9ab81315372919b2ebacbd50bfc19f3eef17cb1d31504928a5f1c181ca3",
     "references/shot-image.md": "bfb4c6d220a488d0eb89b64b4f77c2a8773cfe70ed8957d48d2a6a76e5db1bd1"
   },
-  "candidate_source": ".runtime/skill-cold-reader-fresh/image-plan/round-04/revision-decision.json:next_files",
-  "candidate_decision_sha256": "c988633f7a56f43b15b8264ad1756e948923b0be8a0de8b5742e5b784d88d607",
+  "candidate_source": ".runtime/skill-cold-reader-fresh/image-plan/round-05/revision-decision.json:next_files",
+  "candidate_decision_sha256": "8de33eec4a54f85e3483a5d0a3c18ba6c1dab33b8f7fae4c0b5b5d2c94e1f5c3",
   "source_report": ".runtime/skill-cold-reader-fresh/image-plan/three-round-report.json",
   "source_report_sha256": "94f158b22dcb2fc65b6f63c22e7f69fa2cffa808aee1c54495a583f0ca21966b",
   "unresolved_text_issues_at_round_3": [],
   "last_revision_fully_reread": true,
-  "final_sample_executed": false,
+  "final_sample_executed": true,
   "formal_method_publication": false,
   "formal_story_changes": false,
   "media_watched_or_heard": false,
   "new_media_generated": false,
   "human_participant_test": false,
   "pending": [
-    "final full rounds after shared resource stability",
-    "exact final method binding and isolated work sample",
-    "managed formal delivery and latest-only cleanup"
+    "formal_publication_and_cleanup"
   ],
-  "native_events": 1384,
-  "durable_evidence_reverified_at": "2026-10-15T00:40:09.120563+00:00",
-  "all_saved_raw_payload_event_and_chain_hashes_equal": true
+  "native_events": 1708,
+  "durable_evidence_reverified_at": "2026-10-15T01:02:48.063845+00:00",
+  "all_saved_raw_payload_event_and_chain_hashes_equal": true,
+  "final_method": {
+    "object_id": "method.skill.image-plan",
+    "revision_id": "9e4ee3596f4991cd18c5355bfa3b9740a090c9a592c0944ff6abfd8ff5d096e8",
+    "version": 22
+  },
+  "final_linkage_receipt": {
+    "path": ".runtime/skill-cold-reader-fresh/image-plan/final-linkage/receipt.json",
+    "sha256": "1719351815efc6766018cad4a516c5bbefcba5cf95d2579c6b5237575828ec25"
+  },
+  "final_sample": {
+    "verification_path": ".runtime/skill-cold-reader-fresh/image-plan/sample/verification.json",
+    "verification_sha256": "7125fedcdcb239ad722a1343d0e822eb312d32c0d23adfeb3be206c64e3a2e79",
+    "public_sample": "samples/image-plan.md",
+    "public_sample_sha256": "f01706c7e5d2d93e1c02bc3b289624d40dccbae050f96f5566a7b53de45e668b",
+    "formal_writes": false
+  }
 }
