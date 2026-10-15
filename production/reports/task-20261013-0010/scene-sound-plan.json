@@ -1,7 +1,7 @@
 {
   "task": "task-20261013-0010",
   "object_id": "method.skill.scene-sound-plan",
-  "status": "FORMAL_PUBLICATION_PENDING",
+  "status": "LOCAL_FORMAL_DELIVERY_VERIFIED_AWAITING_USER_CONFIRMATION",
   "valid_complete_rounds": 6,
   "reader_model": "gpt-6-astra",
   "reader_effort": "max",
@@ -117,14 +117,12 @@
   "unresolved_text_issues_at_round_3": [],
   "last_revision_fully_reread": true,
   "final_sample_executed": true,
-  "formal_method_publication": false,
+  "formal_method_publication": true,
   "formal_story_changes": false,
   "media_watched_or_heard": false,
   "new_media_generated": false,
   "human_participant_test": false,
   "pending": [
-    "formal method publication",
-    "post-publication verification and task cleanup",
     "user completion confirmation",
     "separately owned independent review"
   ],
@@ -149,10 +147,11 @@
     "sha256": "686d90520021ccca621040562167fa9c3c6f2d675b740aa85aac40f4b5dbb52f"
   },
   "current_delivery": {
-    "status": "FORMAL_PUBLICATION_PENDING",
-    "scope": "Current Prompt-constraint candidate is saved, bound and sampled in the task isolated instance; formal publication and post-publication verification have not occurred.",
+    "status": "LOCAL_FORMAL_DELIVERY_VERIFIED_AWAITING_USER_CONFIRMATION",
     "reference": "delivery.md",
-    "prior_delivery_unchanged": true
+    "formal_release": "formal-release.json",
+    "browser": "formal-browser.json",
+    "complete_recovery": "final-recovery.json"
   },
   "prompt_constraint_revision": {
     "trigger": "用户要求各素材Prompt方法明确格式、必备要素及按内容触发的条件要素，并兼顾人和AI阅读。",

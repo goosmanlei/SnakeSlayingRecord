@@ -5,7 +5,7 @@
   "revision_id": "f81c6302eef5df0045b47fa12579b9ffa265b0976cfa17411d7eab5c904b9281",
   "valid_rounds": 6,
   "required_minimum": 5,
-  "status": "FINAL_REVISED_TEXT_READ_AND_ISOLATED_SAMPLE_COMPLETE_FORMAL_PUBLICATION_PENDING",
+  "status": "LOCAL_FORMAL_DELIVERY_VERIFIED_AWAITING_USER_CONFIRMATION",
   "files": {
     "SKILL.md": "922594b2fa2ec27234be932fbc3ddf50a4f9a36cc285e550852f4a9fa8e1a14a"
   },
@@ -149,7 +149,7 @@
   "last_material_revision_has_been_read": true,
   "unresolved_text_issues": [],
   "human_user_study": false,
-  "formal_publication": false,
+  "formal_publication": true,
   "evidence_directory": ".runtime/skill-cold-reader-fresh/generation-preflight",
   "interrupted_attempts": {
     "count": 1,
@@ -291,7 +291,7 @@
       "new media quality"
     ]
   },
-  "history_cleanup_pending": true,
+  "history_cleanup_pending": false,
   "incremental_process_cleanup": {
     "files_removed": 4,
     "all_absent": true,
@@ -341,13 +341,11 @@
     "historical_report_at_commit": {
       "git_commit": "948788bec240a75dcbfa6a418711b3c2726219be",
       "path": "production/reports/task-20261013-0010/samples/text-layer.md",
-      "sha256": "3f23326331b9ab4054dfe3ec5d21d55a980799569cc89a586d36e09de2ddb6bd"
+      "sha256": "0bcbc67b0b7dc68b82c739690a2840971d3d12d161d086f983519a56d1fa0157"
     },
     "scope": "Previously completed actual local production under its original method; not a new v14 operation"
   },
   "pending": [
-    "formal method publication",
-    "post-publication verification and task cleanup",
     "user completion confirmation",
     "separately owned independent review"
   ],
@@ -357,9 +355,11 @@
     "sha256": "1d97ffd7522e7e164e53875d2aec58a44dd93d9446e9cd5d1201a44ece64177d"
   },
   "current_delivery": {
-    "status": "FORMAL_PUBLICATION_PENDING",
+    "status": "LOCAL_FORMAL_DELIVERY_VERIFIED_AWAITING_USER_CONFIRMATION",
     "reference": "delivery.md",
-    "prior_delivery_unchanged": true
+    "formal_release": "formal-release.json",
+    "browser": "formal-browser.json",
+    "complete_recovery": "final-recovery.json"
   },
   "prompt_constraint_revision": {
     "trigger": "用户要求各素材Prompt方法明确格式、必备要素及按内容触发的条件要素，并兼顾人和AI阅读。",

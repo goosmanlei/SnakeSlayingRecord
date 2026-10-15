@@ -1,12 +1,12 @@
 {
   "task": "task-20261013-0010",
   "status": "FINAL_FORMAL_EXPORT_RECOVERY_PASSED",
-  "checked_at": "2026-10-15T02:05:38.596099+00:00",
-  "source": "current formal data after method cleanup",
+  "checked_at": "2026-10-15T11:13:06.627709+00:00",
+  "source": "current formal data after the final Prompt-constraint method publication and cleanup",
   "system_commit": "103238350b965410d65896f42db3b6cf5bd4de51",
   "schema_version": 14,
-  "manifest_sha256": "d91c83d1d1434b03445aceb16d99d0a81316736122d287380ce75977280a1bd5",
-  "registry_sha256": "25eae4c03aa3ff99184fc7212f44de024df3b2c9c37c44ed4128f13100ff257e",
+  "manifest_sha256": "1177f82e872d98aa0479fd5bca8557824f37678995409180e256153f3a848c76",
+  "registry_sha256": "4f75f4302f91573269732a1b7b9b12ce002b4b3d73aa1068b65dbf867c466fed",
   "table_rows": [
     {
       "table": "audiovisual_cleanup_receipts",
@@ -184,7 +184,7 @@
     },
     {
       "table": "production_current_operations",
-      "rows": 362,
+      "rows": 363,
       "source_only": 0,
       "restored_only": 0
     },
@@ -267,7 +267,7 @@
       "restored_only": 0
     }
   ],
-  "persistent_tables_exact": 43,
+  "persistent_tables_exact": true,
   "schema_differences": [
     {
       "kind": "index",
@@ -1075,15 +1075,12 @@
     }
   ],
   "assets": 882,
-  "asset_bytes": 708354358,
+  "asset_bytes": 727095586,
   "manifest_files_verified": 888,
   "all_restored_asset_hashes_verified": true,
   "latest_method_files": 28,
   "removed_usage_and_comments_absent": true,
-  "integrity_check": [
-    "ok",
-    "ok"
-  ],
+  "integrity_check": "ok",
   "future_history_contract_preserved": true,
   "recovery_result": {
     "recovered": true,
@@ -1092,6 +1089,6 @@
     "revisions": 11124,
     "comments": 404,
     "files_verified": 888,
-    "destination": ".runtime/generation/task0010-final-recovered (verified, then removed as a completed temporary instance)"
+    "destination": "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-task/worktrees/task-20261013-0010/.runtime/generation/prompt-final-recovered"
   }
 }
