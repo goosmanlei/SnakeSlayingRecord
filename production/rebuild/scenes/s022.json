@@ -36,9 +36,15 @@
           "title": "永久禁索范围",
           "purpose": "让任何一户的范围可读，不改成仅本次免祭。",
           "text": "不准再向任何一户索人",
-          "placement": "干板上新文书准确句，阿蘅指停“任何一户”。"
+          "placement": "干板上新文书准确句，阿蘅指停“任何一户”。",
+          "occurrence": "唯一条款字稿，第22场第1镜与第26场第11镜复用；不增加发声次数。"
         }
-      ]
+      ],
+      "material_slots": {
+        "granary": [
+          "layout"
+        ]
+      }
     },
     {
       "range": [
@@ -65,7 +71,12 @@
         "inquiry-record"
       ],
       "states": [],
-      "voices": []
+      "voices": [],
+      "material_slots": {
+        "granary": [
+          "layout"
+        ]
+      }
     },
     {
       "range": [
@@ -97,7 +108,12 @@
       "voices": [
         "aheng",
         "zhao"
-      ]
+      ],
+      "material_slots": {
+        "granary": [
+          "layout"
+        ]
+      }
     },
     {
       "range": [
@@ -121,14 +137,14 @@
       ],
       "states": [],
       "voices": [],
-      "texts": [
-        {
-          "slot": "first-six",
-          "title": "借据先露六",
-          "purpose": "先揭一字再完整条款的时序信息。",
-          "text": "六",
-          "placement": "旧纸被掀一角的露出区，其余旧字仍遮。"
-        }
+      "texts": [],
+      "material_slots": {
+        "granary": [
+          "layout"
+        ]
+      },
+      "shared_text_requirements": [
+        "s022-q05-old-total"
       ]
     },
     {
@@ -160,18 +176,31 @@
         {
           "slot": "old-total",
           "title": "借据原约",
-          "purpose": "清楚读到六斗为本息总额。",
+          "purpose": "同一借据旧字的唯一准确稿，以遮挡区分先露六与完整读到本息共六斗。",
           "text": "本息共六斗",
-          "placement": "左侧原据刚完整露出的旧字。"
+          "placement": "第22场第4镜旧贴纸仍盖着，只有六字可见；第5镜贴纸分开后左侧原据完整露出本息共六斗。",
+          "source_ranges": [
+            [
+              12,
+              17
+            ]
+          ],
+          "occurrence": "两镜同一字稿逐步揭示，只制作一份。"
         },
         {
           "slot": "false-consent",
           "title": "贴纸伪造同意",
           "purpose": "可读新词和旧手印错接，不拟未给出的逾期条款。",
           "text": "愿入庙供奉",
-          "placement": "右侧贴纸边缘小字，其末尾由木条对应左纸原手印。"
+          "placement": "右侧贴纸边缘小字，其末尾由木条对应左纸原手印。",
+          "occurrence": "唯一伪接文字稿，第22场揭纸与第36场堂审复用；纸片同物，位置以当场摆放决定。"
         }
-      ]
+      ],
+      "material_slots": {
+        "granary": [
+          "layout"
+        ]
+      }
     },
     {
       "range": [
@@ -202,7 +231,12 @@
         "aheng",
         "zhao",
         "cheng"
-      ]
+      ],
+      "material_slots": {
+        "granary": [
+          "layout"
+        ]
+      }
     },
     {
       "range": [
@@ -230,7 +264,12 @@
       "voices": [
         "aheng",
         "liang-clerk"
-      ]
+      ],
+      "material_slots": {
+        "granary": [
+          "layout"
+        ]
+      }
     },
     {
       "range": [
@@ -258,7 +297,12 @@
       "voices": [
         "aheng",
         "liang-clerk"
-      ]
+      ],
+      "material_slots": {
+        "granary": [
+          "layout"
+        ]
+      }
     },
     {
       "range": [
@@ -295,7 +339,12 @@
       ],
       "voices": [
         "liji"
-      ]
+      ],
+      "material_slots": {
+        "granary": [
+          "layout"
+        ]
+      }
     }
   ]
 }

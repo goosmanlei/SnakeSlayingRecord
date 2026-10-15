@@ -23,7 +23,8 @@
         "temple-workers",
         "temple-front",
         "back-court",
-        "recruitment-doc"
+        "recruitment-doc",
+        "theatre-box"
       ],
       "states": [
         "liji-head-wrap"
@@ -68,9 +69,9 @@
       "seconds": 18,
       "title": "短道的两道阻隔",
       "purpose": "以一眼可追的空间建立后续全部动作。",
-      "start": "众人入南偏西门，北岩洞接封顶石道，前后门都闭。",
+      "start": "父亲从南偏西院门进入西侧，其他人停南端画外；北岩洞接封顶石道，前后门都闭。",
       "action": "镜头从西南高侧斜看固定拓扑，父亲走到侧面比闸与前门不足迈步距离。",
-      "camera": "略高侧全景，不透视盖石；膝高由父亲腿比例给出。",
+      "camera": "西南高侧只框石道、岩洞与父亲腿比例，其余人在南端画外；不透视盖石。",
       "sound": "院外卸粮远声、父亲脚步，无机制旁白。",
       "end": "父亲在西侧，未打开任何门。",
       "entities": [
@@ -80,7 +81,12 @@
       ],
       "states": [],
       "voices": [],
-      "frame": "北岩洞接闸后短封顶道；木闸落底带木栓，南端厚门横闩牢；中段封顶仅原细缝，院门南偏西，父亲尚在入口将往西侧走。"
+      "frame": "北岩洞接闸后短封顶道；木闸落底带木栓，南端厚门横闩牢；中段封顶仅原细缝，院门南偏西，父亲尚在入口将往西侧走。",
+      "material_slots": {
+        "feeding-lock": [
+          "identity"
+        ]
+      }
     },
     {
       "range": [
@@ -107,7 +113,12 @@
       "voices": [
         "lidan",
         "thin-worker"
-      ]
+      ],
+      "material_slots": {
+        "feeding-lock": [
+          "identity"
+        ]
+      }
     },
     {
       "range": [
@@ -136,7 +147,12 @@
       "voices": [
         "cheng",
         "thin-worker"
-      ]
+      ],
+      "material_slots": {
+        "feeding-lock": [
+          "identity"
+        ]
+      }
     },
     {
       "range": [
@@ -159,10 +175,20 @@
         "lixiao",
         "back-court",
         "feeding-lock",
-        "layout-note"
+        "layout-note",
+        "sunliu",
+        "aheng",
+        "liji"
       ],
-      "states": [],
-      "voices": []
+      "states": [
+        "liji-head-wrap"
+      ],
+      "voices": [],
+      "material_slots": {
+        "feeding-lock": [
+          "identity"
+        ]
+      }
     },
     {
       "range": [
@@ -266,7 +292,12 @@
       "states": [
         "liji-head-wrap"
       ],
-      "voices": []
+      "voices": [],
+      "material_slots": {
+        "snake": [
+          "body-sound"
+        ]
+      }
     },
     {
       "range": [
@@ -322,7 +353,15 @@
       "states": [],
       "voices": [
         "lidan"
-      ]
+      ],
+      "material_slots": {
+        "feeding-lock": [
+          "identity"
+        ],
+        "snake": [
+          "body-sound"
+        ]
+      }
     },
     {
       "range": [
