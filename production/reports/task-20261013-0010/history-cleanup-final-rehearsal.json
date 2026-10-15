@@ -1,0 +1,533 @@
+{
+  "status": "EXACT_CURRENT_FORMAL_COPY_CLEANUP_PASSED",
+  "completed_at": "2026-10-15T01:46:36.756340+00:00",
+  "formal_written": false,
+  "failed_attempts": [
+    {
+      "cause": "Missing isolated original files",
+      "rollback_all_rows_equal": true,
+      "resolution": "Independent full originals and correct instance layout"
+    },
+    {
+      "cause": "Separate archive reader blocked by cleanup transaction",
+      "rollback_all_rows_equal": true,
+      "resolution": "Reuse existing material_archives.read_scope for same transaction",
+      "targeted_tests_passed": 11
+    }
+  ],
+  "install_registry_sha256": "849427ee84a3a8e675d99f9e9ce84faf413ad4189f40b43cd0f5973b469dd832",
+  "latest_registry_sha256": "25eae4c03aa3ff99184fc7212f44de024df3b2c9c37c44ed4128f13100ff257e",
+  "retained_configuration_records": 81,
+  "plan_sha256": "9e22a1d03dcbdaff9aea76ece8a4fa451fac2b8049228c6b81671a0fe9450002",
+  "helper_sha256": "b052f2b1858dbf44676c9a7fc1e1b52667ee9cbd5512edde74fad6371c5ddade",
+  "migration_preservation": {
+    "schema_unchanged": true,
+    "unaffected": {
+      "audiovisual_cleanup_receipts": {
+        "unchanged_rows": 0
+      },
+      "audiovisual_cleanup_runs": {
+        "unchanged_rows": 1
+      },
+      "audiovisual_notes": {
+        "unchanged_rows": 82
+      },
+      "business_codes": {
+        "unchanged_rows": 11296
+      },
+      "business_comments": {
+        "unchanged_rows": 407
+      },
+      "business_relation_aliases": {
+        "unchanged_rows": 5697
+      },
+      "business_relation_runs": {
+        "unchanged_rows": 2
+      },
+      "business_relations": {
+        "unchanged_rows": 5357
+      },
+      "comment_events": {
+        "unchanged_rows": 441
+      },
+      "comments": {
+        "unchanged_rows": 407
+      },
+      "configuration_events": {
+        "unchanged_rows": 18
+      },
+      "configurations": {
+        "unchanged_rows": 2
+      },
+      "consolidation_missing": {
+        "unchanged_rows": 2019
+      },
+      "consolidation_objects": {
+        "unchanged_rows": 7272
+      },
+      "consolidation_revisions": {
+        "unchanged_rows": 7248
+      },
+      "consolidation_runs": {
+        "unchanged_rows": 3
+      },
+      "dependencies": {
+        "unchanged_rows": 56095
+      },
+      "generation_publications": {
+        "unchanged_rows": 21
+      },
+      "material_aliases": {
+        "unchanged_rows": 555
+      },
+      "material_archive_files": {
+        "unchanged_rows": 524
+      },
+      "material_content": {
+        "unchanged_rows": 7512
+      },
+      "method_file_members": {
+        "unchanged_rows": 0
+      },
+      "method_file_packages": {
+        "unchanged_rows": 0
+      },
+      "method_file_versions": {
+        "unchanged_rows": 0
+      },
+      "objects": {
+        "unchanged_rows": 12981
+      },
+      "production_candidate_targets": {
+        "unchanged_rows": 257
+      },
+      "production_candidates": {
+        "unchanged_rows": 257
+      },
+      "production_comment_quotes": {
+        "unchanged_rows": 139
+      },
+      "production_current_baselines": {
+        "unchanged_rows": 8658
+      },
+      "production_current_operations": {
+        "unchanged_rows": 361
+      },
+      "production_current_policy": {
+        "unchanged_rows": 1
+      },
+      "production_current_records": {
+        "unchanged_rows": 10907
+      },
+      "production_legacy_links": {
+        "unchanged_rows": 30914
+      },
+      "production_response_excerpts": {
+        "unchanged_rows": 0
+      },
+      "production_submissions": {
+        "unchanged_rows": 328
+      },
+      "relation_explanation_policy": {
+        "unchanged_rows": 1
+      },
+      "relation_explanation_redactions": {
+        "unchanged_rows": 0
+      },
+      "relation_redacted_comments": {
+        "unchanged_rows": 0
+      },
+      "revisions": {
+        "unchanged_rows": 12990
+      },
+      "sources": {
+        "unchanged_rows": 45
+      },
+      "state_cleanup_comments": {
+        "unchanged_rows": 0
+      },
+      "state_cleanup_preserved": {
+        "unchanged_rows": 0
+      },
+      "state_cleanup_receipts": {
+        "unchanged_rows": 0
+      }
+    },
+    "read_generations": "disposable cache tokens only"
+  },
+  "cleanup_preservation": {
+    "schema_unchanged": true,
+    "unaffected": {
+      "audiovisual_cleanup_receipts": {
+        "unchanged_rows": 0
+      },
+      "audiovisual_cleanup_runs": {
+        "unchanged_rows": 1
+      },
+      "audiovisual_notes": {
+        "unchanged_rows": 82
+      },
+      "business_codes": {
+        "unchanged_rows": 11296
+      },
+      "business_comments": {
+        "unchanged_rows": 404
+      },
+      "business_relation_aliases": {
+        "unchanged_rows": 5697
+      },
+      "business_relation_runs": {
+        "unchanged_rows": 2
+      },
+      "business_relations": {
+        "unchanged_rows": 5357
+      },
+      "comment_events": {
+        "unchanged_rows": 438
+      },
+      "comments": {
+        "unchanged_rows": 404
+      },
+      "configuration_events": {
+        "unchanged_rows": 18
+      },
+      "configurations": {
+        "unchanged_rows": 2
+      },
+      "consolidation_missing": {
+        "unchanged_rows": 2019
+      },
+      "consolidation_objects": {
+        "unchanged_rows": 7272
+      },
+      "consolidation_revisions": {
+        "unchanged_rows": 7248
+      },
+      "consolidation_runs": {
+        "unchanged_rows": 3
+      },
+      "dependencies": {
+        "unchanged_rows": 42452
+      },
+      "generation_publications": {
+        "unchanged_rows": 21
+      },
+      "material_aliases": {
+        "unchanged_rows": 555
+      },
+      "material_archive_files": {
+        "unchanged_rows": 524
+      },
+      "material_content": {
+        "unchanged_rows": 7512
+      },
+      "method_file_members": {
+        "unchanged_rows": 491
+      },
+      "method_file_packages": {
+        "unchanged_rows": 49
+      },
+      "method_file_versions": {
+        "unchanged_rows": 165
+      },
+      "objects": {
+        "unchanged_rows": 10617
+      },
+      "production_candidate_targets": {
+        "unchanged_rows": 257
+      },
+      "production_candidates": {
+        "unchanged_rows": 257
+      },
+      "production_comment_quotes": {
+        "unchanged_rows": 139
+      },
+      "production_current_baselines": {
+        "unchanged_rows": 8206
+      },
+      "production_current_operations": {
+        "unchanged_rows": 80
+      },
+      "production_current_policy": {
+        "unchanged_rows": 1
+      },
+      "production_current_records": {
+        "unchanged_rows": 10453
+      },
+      "production_legacy_links": {
+        "unchanged_rows": 30914
+      },
+      "production_response_excerpts": {
+        "unchanged_rows": 0
+      },
+      "production_submissions": {
+        "unchanged_rows": 328
+      },
+      "read_generations": {
+        "purpose": "disposable cache invalidation tokens"
+      },
+      "relation_explanation_policy": {
+        "unchanged_rows": 1
+      },
+      "relation_explanation_redactions": {
+        "unchanged_rows": 0
+      },
+      "relation_redacted_comments": {
+        "unchanged_rows": 0
+      },
+      "revisions": {
+        "unchanged_rows": 10670
+      },
+      "sources": {
+        "unchanged_rows": 45
+      },
+      "state_cleanup_comments": {
+        "unchanged_rows": 0
+      },
+      "state_cleanup_preserved": {
+        "unchanged_rows": 0
+      },
+      "state_cleanup_receipts": {
+        "unchanged_rows": 0
+      }
+    },
+    "production_payloads_except_method_basis_unchanged": 454,
+    "operation_provenance_only": 281
+  },
+  "retained_files": [
+    {
+      "object_id": "method.resource.creative-system-review-texts",
+      "path": "production/system-vision.md",
+      "n": 1,
+      "first": 1,
+      "last": 1
+    },
+    {
+      "object_id": "method.resource.creative-system-review-texts",
+      "path": "skills/creative-system-review/SKILL.md",
+      "n": 1,
+      "first": 1,
+      "last": 1
+    },
+    {
+      "object_id": "method.resource.creative-system-review-texts",
+      "path": "skills/creative-system-review/references/project-context.md",
+      "n": 1,
+      "first": 1,
+      "last": 1
+    },
+    {
+      "object_id": "method.resource.current-production",
+      "path": "production/current-candidates/README.md",
+      "n": 1,
+      "first": 1,
+      "last": 1
+    },
+    {
+      "object_id": "method.skill.audiovisual-scene",
+      "path": "SKILL.md",
+      "n": 1,
+      "first": 1,
+      "last": 1
+    },
+    {
+      "object_id": "method.skill.audiovisual-scene",
+      "path": "templates/reading.json",
+      "n": 1,
+      "first": 1,
+      "last": 1
+    },
+    {
+      "object_id": "method.skill.comment-polish-clear",
+      "path": "SKILL.md",
+      "n": 1,
+      "first": 1,
+      "last": 1
+    },
+    {
+      "object_id": "method.skill.creative-system-review",
+      "path": "SKILL.md",
+      "n": 1,
+      "first": 1,
+      "last": 1
+    },
+    {
+      "object_id": "method.skill.generation-preflight",
+      "path": "SKILL.md",
+      "n": 1,
+      "first": 1,
+      "last": 1
+    },
+    {
+      "object_id": "method.skill.image-plan",
+      "path": "SKILL.md",
+      "n": 1,
+      "first": 1,
+      "last": 1
+    },
+    {
+      "object_id": "method.skill.image-plan",
+      "path": "references/character-image.md",
+      "n": 1,
+      "first": 1,
+      "last": 1
+    },
+    {
+      "object_id": "method.skill.image-plan",
+      "path": "references/prop-image.md",
+      "n": 1,
+      "first": 1,
+      "last": 1
+    },
+    {
+      "object_id": "method.skill.image-plan",
+      "path": "references/scene-image.md",
+      "n": 1,
+      "first": 1,
+      "last": 1
+    },
+    {
+      "object_id": "method.skill.image-plan",
+      "path": "references/shot-image.md",
+      "n": 1,
+      "first": 1,
+      "last": 1
+    },
+    {
+      "object_id": "method.skill.material-assessment",
+      "path": "SKILL.md",
+      "n": 1,
+      "first": 1,
+      "last": 1
+    },
+    {
+      "object_id": "method.skill.novel-writing",
+      "path": "SKILL.md",
+      "n": 1,
+      "first": 1,
+      "last": 1
+    },
+    {
+      "object_id": "method.skill.novel-writing",
+      "path": "references/prose-choices.md",
+      "n": 1,
+      "first": 1,
+      "last": 1
+    },
+    {
+      "object_id": "method.skill.result-review",
+      "path": "SKILL.md",
+      "n": 1,
+      "first": 1,
+      "last": 1
+    },
+    {
+      "object_id": "method.skill.scene-sound-plan",
+      "path": "SKILL.md",
+      "n": 1,
+      "first": 1,
+      "last": 1
+    },
+    {
+      "object_id": "method.skill.screenplay-scene",
+      "path": "SKILL.md",
+      "n": 1,
+      "first": 1,
+      "last": 1
+    },
+    {
+      "object_id": "method.skill.song-plan",
+      "path": "SKILL.md",
+      "n": 1,
+      "first": 1,
+      "last": 1
+    },
+    {
+      "object_id": "method.skill.story-structure",
+      "path": "SKILL.md",
+      "n": 1,
+      "first": 1,
+      "last": 1
+    },
+    {
+      "object_id": "method.skill.story-structure",
+      "path": "references/structure-choices.md",
+      "n": 1,
+      "first": 1,
+      "last": 1
+    },
+    {
+      "object_id": "method.skill.text-layer",
+      "path": "SKILL.md",
+      "n": 1,
+      "first": 1,
+      "last": 1
+    },
+    {
+      "object_id": "method.skill.video-plan",
+      "path": "SKILL.md",
+      "n": 1,
+      "first": 1,
+      "last": 1
+    },
+    {
+      "object_id": "method.skill.video-plan",
+      "path": "references/prompt-review.md",
+      "n": 1,
+      "first": 1,
+      "last": 1
+    },
+    {
+      "object_id": "method.skill.video-plan",
+      "path": "references/worked-examples.md",
+      "n": 1,
+      "first": 1,
+      "last": 1
+    },
+    {
+      "object_id": "method.skill.voice-plan",
+      "path": "SKILL.md",
+      "n": 1,
+      "first": 1,
+      "last": 1
+    }
+  ],
+  "remaining_comments": 404,
+  "integrity_check": "ok",
+  "counts": {
+    "skill_latest": 15,
+    "execution": 487,
+    "artifact": 1461,
+    "removed_versions": 2309,
+    "comments": 3,
+    "current_method_links": 454,
+    "operation_receipts": 281
+  },
+  "removed_revision_categories": {
+    "managed-method-binding-v1": 152,
+    "managed-method-artifact-v1": 1461,
+    "managed-method-execution-v1": 487,
+    "managed-method-skill-v1": 201,
+    "managed-method-resource-v1": 8
+  },
+  "nested_business_basis_preserved": 215,
+  "preserved_resource_history": [
+    {
+      "object_id": "method.resource.filmcraft-execution",
+      "required_by_outside_definitions": [
+        "method.skill.media-plan",
+        "method.skill.voice-song-plan"
+      ],
+      "protected_system_vision_comments": []
+    },
+    {
+      "object_id": "method.resource.video-handbook",
+      "required_by_outside_definitions": [
+        "method.skill.media-plan",
+        "method.skill.voice-song-plan"
+      ],
+      "protected_system_vision_comments": []
+    }
+  ],
+  "future_history_enabled": true
+}

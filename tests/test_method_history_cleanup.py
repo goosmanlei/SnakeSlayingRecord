@@ -163,6 +163,36 @@ class MethodHistoryCleanupTest(unittest.TestCase):
         self.assertFalse(self.store.db.in_transaction)
         cleanup.apply_plan(self.store, plan)
 
+    def test_archived_original_is_checked_inside_the_cleanup_transaction(self):
+        import hashlib
+        from review_desk import material_archives, production_current_bundle
+        from review_desk.production_media import validate_component
+        raw = b'{"request": "preserve the exact original request"}\n'
+        digest = hashlib.sha256(raw).hexdigest()
+        path = Path(self.tmp.name) / 'export/assets' / (digest + '.json')
+        path.parent.mkdir(parents=True)
+        with self.store.db:
+            document = material_archives.encode(self.store, raw)
+        path.write_text(json.dumps(document))
+        component = {'id': 'metadata', 'role': 'metadata', 'file': path.name,
+                     'sha256': digest, 'bytes': len(raw)}
+        original_validate = production_current_bundle.validate
+
+        def validate_with_original(store):
+            original_validate(store)
+            self.assertTrue(store.db.in_transaction)
+            validate_component(Path(self.tmp.name), component, inspect=False)
+
+        # The real publication reaches this lock state after many dirty pages.
+        # Force it deterministically without constructing a large test database.
+        self.store.db.execute('PRAGMA locking_mode=EXCLUSIVE')
+        plan = cleanup.build_plan(self.store)
+        with patch.object(production_current_bundle, 'validate', validate_with_original):
+            cleanup.apply_plan(self.store, plan)
+        with material_archives.read_scope(self.store):
+            self.assertEqual(material_archives.read_bytes(path), raw)
+        self.assertEqual(json.loads(path.read_text()), document)
+
     def test_preservation_comparison_rejects_unrelated_comment_change(self):
         before = Path(self.tmp.name) / 'before.sqlite3'
         with sqlite3.connect(before) as db:
