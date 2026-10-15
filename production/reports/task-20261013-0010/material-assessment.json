@@ -1,8 +1,8 @@
 {
   "task": "task-20261013-0010",
   "object_id": "method.skill.material-assessment",
-  "status": "THREE_ROUNDS_COMPLETE_FINAL_ROUNDS_AND_SAMPLE_PENDING",
-  "valid_complete_rounds": 3,
+  "status": "FIVE_ROUNDS_COMPLETE_SAMPLE_PENDING",
+  "valid_complete_rounds": 5,
   "reader_model": "gpt-6-astra",
   "reader_effort": "max",
   "reviser_model": "gpt-6-astra",
@@ -10,39 +10,98 @@
   "rounds": [
     {
       "round": 1,
-      "units": 13,
+      "body_units": 13,
+      "reader_contexts": 14,
+      "native_inferences": 14,
+      "native_events": 168,
       "decision": "revise",
       "rationale": "完整读回13个自然单位及FINISH，三项疑问逐一结算。q0005-01独立制作边界、q0006-01消费者承接已经由后文用途判断和逐消费者回查解释，保留专业判断，不把案例写成机械新增门槛。采纳q0009-01：实际核对production/managed-methods.md“单项媒体方案”及系统material_categories.py，补出material_category的中文含义、权威映射入口，避免另造标签。另按人类和AI双读者要求在首次正文解释消费者；补准通用作者脚本、工作类型、隔离实例与read路径。依据已在隔离库核验的当前完整原件规则，移除新参考可裁切/截时段的过时表达，保留关系、具体选择和真实使用的分工。本轮没有观看、听取旧媒体，也不宣称进行了实际抽取或用户研究；操作样例待共享资料稳定与至少五轮完成后执行。",
+      "unresolved": [],
+      "changed_paths": [
+        "SKILL.md"
+      ],
+      "last_material_revision_has_been_read": false,
+      "frozen_sha256": "4739b497284eedfee9f77d673fcecd235e25ee4c08e2d9954429702bc7bfb66e",
       "read_complete_sha256": "eeb795117f840bdc7a917f1e383fb2b0b1d25498315df37f292243aa03a0318b",
-      "decision_sha256": "a05c1217fc0205247c345d433620aef07d5baa6ea103079c8c2e704a2bb67b48",
-      "unresolved": []
+      "revision_decision_sha256": "a05c1217fc0205247c345d433620aef07d5baa6ea103079c8c2e704a2bb67b48",
+      "evidence_directory": ".runtime/skill-cold-reader-fresh/material-assessment/round-01"
     },
     {
       "round": 2,
-      "units": 13,
+      "body_units": 13,
+      "reader_contexts": 14,
+      "native_inferences": 14,
+      "native_events": 168,
       "decision": "revise",
       "rationale": "完整读回13个单位和FINISH，本轮没有COMMENT或WATCH。读者已准确定位material_category权威映射、通用作者脚本和逐阶段read，能够把消费者理解为使用素材的镜头或后续环节；完整原件与关系身份的区分也清楚。协调者进一步对照任务明确要求、只读content/data-model.json以及当前entity_contract.py，发现原句并列实体与镜头仍未明确镜头本身也是实体；读者虽能理解流程，却没有从正文得到这一现行数据模型事实。将定义改为普通实体/镜头实体均属实体，并解释复用既有镜头记录、不另建普通实体副本；唯一制作出处的称谓同步。没有添加镜头的新状态机制、改变数据模型或改动正式作品。原有制作取舍、例子和完整状态规则保留，新定义将在下一完整轮重读。",
+      "unresolved": [],
+      "changed_paths": [
+        "SKILL.md"
+      ],
+      "last_material_revision_has_been_read": false,
+      "frozen_sha256": "29feb0f61fd3499b66cbef758e1193b23dd80957e058fdc720229eee87ab6d66",
       "read_complete_sha256": "0a4ee657755ad336c38f31eeca8d4afc5cabda48e3009492d70f1e94e89b037a",
-      "decision_sha256": "aea694c6f8645ae8b1f0362af199c04fd0cccbd628d88a67cce0750a8adf616f",
-      "unresolved": []
+      "revision_decision_sha256": "aea694c6f8645ae8b1f0362af199c04fd0cccbd628d88a67cce0750a8adf616f",
+      "evidence_directory": ".runtime/skill-cold-reader-fresh/material-assessment/round-02"
     },
     {
       "round": 3,
-      "units": 13,
+      "body_units": 13,
+      "reader_contexts": 14,
+      "native_inferences": 14,
+      "native_events": 168,
       "decision": "keep",
       "rationale": "已逐条读回13个正文单位及全文结算。读者准确理解新增的镜头实体沿用已有视听镜头、不另建普通实体副本；普通实体、必要状态、镜头实体可作为唯一制作出处，消费者另记。木担形制与实物身份、独立声音职责、完整原件、准确类别字段与通用作者入口也能依序理解。本轮没有COMMENT或WATCH，保留全文。影视知识仍在复读，最后两轮及实际抽取样例须待共享依据稳定，不把这轮文本可读性当成实际抽取正确。",
+      "unresolved": [],
+      "changed_paths": [],
+      "last_material_revision_has_been_read": true,
+      "frozen_sha256": "f160f9a2f4b6b491aab00c066c351b5d04565a99a671772a44a2707e7e5b878e",
       "read_complete_sha256": "714689198c086fccd0de9aec453d5f756f20d1fbe00691dcce12f278fd6f34c2",
-      "decision_sha256": "329b495d23411d2c1ae35d9a4a29d7adc00c5e3510c22226e24a2349c29545e2",
-      "unresolved": []
+      "revision_decision_sha256": "329b495d23411d2c1ae35d9a4a29d7adc00c5e3510c22226e24a2349c29545e2",
+      "evidence_directory": ".runtime/skill-cold-reader-fresh/material-assessment/round-03"
+    },
+    {
+      "round": 4,
+      "body_units": 13,
+      "reader_contexts": 14,
+      "native_inferences": 15,
+      "native_events": 170,
+      "decision": "revise",
+      "rationale": "完整读过13段正文、14条观察及q0005-01全部历史。读者直到FINISH仍不能区分同样的伤湿差异何时只记镜头约束、何时另做完整状态，后文只要求真实独立需求而没有具体分界，问题成立。补一段对照：本镜发生的袖口沾水且常态图配动作已足够时复用；若下一环节需独立审定并对照完整伤湿造型、现有基础图不能承担，才建立完整状态和唯一出处需求。明确单镜或多镜均非数量门槛，保留用途、现有素材能力与具体交付物三项依据，和最终视听方法的交接条件一致。人类可理解差异为何需要或不需要独立产物，AI可据消费者与原件作决定，不机械把伤湿或镜头数转为状态。其余身份、九分类、真实原件、准确入口和历史追溯说明保留。新段须在第五轮从头完整复读，本轮不宣称改稿或抽取样例已通过。",
+      "unresolved": [],
+      "changed_paths": [
+        "SKILL.md"
+      ],
+      "last_material_revision_has_been_read": false,
+      "frozen_sha256": "85dd38734336fbbd084110912f0f6baa3ee68906f5ceb35c4e457525368b6245",
+      "read_complete_sha256": "f2827850ff59c64434fd4b04093c02f27a0fc66fcf81c72b2bdf769cf9ac5d47",
+      "revision_decision_sha256": "13f2ee770ced14992635ba0d86707142b5ae473ca946c4a62c7b7a2a22920e0f",
+      "evidence_directory": ".runtime/skill-cold-reader-fresh/material-assessment/round-04"
+    },
+    {
+      "round": 5,
+      "body_units": 14,
+      "reader_contexts": 15,
+      "native_inferences": 15,
+      "native_events": 180,
+      "decision": "keep",
+      "rationale": "已完整读取14段末稿、15条逐段观察与记忆更新、q0003-01全部历史。第五轮读者能够用袖口溅湿与完整湿伤造型的对照，解释独立产物是否必要取决于下一环节的审定与对照用途、已有素材能力，而非镜头数量或干湿标签。此前第四轮发现的判断缺口得到实际复读确认。作者角色的初读疑惑由最后一段通用作者入口解释，全文无遗留语义障碍。稳定身份、必要完整状态、唯一制作出处、消费者承接、九类素材及准确原件选择均被正确区分，示例同时给人类说明理由并给AI明确执行依据。保留本稿，后续用准确木担出处和当前需求做隔离抽取样例，不把全文理解当作实际抽取或感官验收通过。",
+      "unresolved": [],
+      "changed_paths": [],
+      "last_material_revision_has_been_read": true,
+      "frozen_sha256": "4ab81bee979858b868a2c4fb1b5e7adb5f72fd7d3da8c29ed1e243cabe21f6be",
+      "read_complete_sha256": "177b7b55bd6d94f4594949e0d5886cca57d8e3f1653d1f2ef2485218938dac75",
+      "revision_decision_sha256": "8e25d5158f76966d518d23349abf1c4ad306dd62ad23cce6719abaaac2c92547",
+      "evidence_directory": ".runtime/skill-cold-reader-fresh/material-assessment/round-05"
     }
   ],
-  "reader_contexts": 42,
-  "native_inferences": 42,
+  "reader_contexts": 71,
+  "native_inferences": 72,
   "candidate_files_sha256": {
-    "SKILL.md": "6d15a3b40dac8f12bf3afbb3dbfe4e8c422cf2153e82f2ce1acd76ff5376bcd0"
+    "SKILL.md": "9700ab24617ad9360316b8d0751271f88c1fa6fa70d6b4d4fb0e18c1e947373f"
   },
-  "candidate_source": ".runtime/skill-cold-reader-fresh/material-assessment/round-03/revision-decision.json:next_files",
-  "candidate_decision_sha256": "329b495d23411d2c1ae35d9a4a29d7adc00c5e3510c22226e24a2349c29545e2",
+  "candidate_source": ".runtime/skill-cold-reader-fresh/material-assessment/round-05/revision-decision.json:next_files",
+  "candidate_decision_sha256": "8e25d5158f76966d518d23349abf1c4ad306dd62ad23cce6719abaaac2c92547",
   "source_report": ".runtime/skill-cold-reader-fresh/material-assessment/three-round-report.json",
   "source_report_sha256": "56282eab20f73baf9a1d5d9c1d3ecc80647e346f049f42c29820969abe747109",
   "unresolved_text_issues_at_round_3": [],
@@ -54,8 +113,20 @@
   "new_media_generated": false,
   "human_participant_test": false,
   "pending": [
-    "final full rounds after shared resource stability",
-    "exact final method binding and isolated work sample",
-    "managed formal delivery and latest-only cleanup"
-  ]
+    "final_bound_sample",
+    "isolated_browser",
+    "formal_publication_and_cleanup"
+  ],
+  "native_events": 854,
+  "durable_evidence_reverified_at": "2026-10-15T00:40:09.120563+00:00",
+  "all_saved_raw_payload_event_and_chain_hashes_equal": true,
+  "final_method": {
+    "object_id": "method.skill.material-assessment",
+    "revision_id": "3d8f11b6dfa233417f1455417ae5e2d50c844288045f7e042095d0a598d17da4",
+    "version": 20
+  },
+  "final_linkage_receipt": {
+    "path": ".runtime/skill-cold-reader-fresh/material-assessment/final-linkage/receipt.json",
+    "sha256": "dc205c8b619ce7515e35dbb2c18648859428e16e935f7ad43dcad7e8c980407d"
+  }
 }

@@ -1,8 +1,8 @@
 {
   "task": "task-20261013-0010",
   "item": "video-plan",
-  "status": "FOUR_ROUNDS_COMPLETE_FINAL_REREAD_AND_SAMPLE_PENDING",
-  "valid_complete_rounds": 4,
+  "status": "FIVE_ROUNDS_AND_FINAL_BOUND_SAMPLE_COMPLETE_FORMAL_PENDING",
+  "valid_complete_rounds": 5,
   "rounds": [
     {
       "round": 1,
@@ -82,18 +82,34 @@
       "read_complete_sha256": "59c239c564fb574b09603c340e2c6f0953baf65312835f794f5649242e1ebcad",
       "revision_decision_sha256": "c8e2267fea4d13556a0aaa7963eafa5f620ff6745043b43abffd8f8139e95a96",
       "evidence_directory": ".runtime/skill-cold-reader-fresh/video-plan/round-04"
+    },
+    {
+      "round": 5,
+      "body_units": 44,
+      "reader_contexts": 45,
+      "native_inferences": 45,
+      "native_events": 540,
+      "decision": "keep",
+      "rationale": "已完整读取三份自有正文、44段理解及FINISH、全部记忆更新与空问题历史。读者准确理解时间线必须进入实际generation.prompt，从局部0到总时长按事件连续演绎，持续机位和底声可集中说明；声音跨段保持同一次发声，插话与尾腔并行收束，段界不自动切镜，延长以新增段0秒起计。第四轮前置的完整教学稿已被正确读成未提交的14秒预算，后三份历史原文只供局部分析，提袋主语及旧裁切边界也被识别。新增整本入口明确区分页面整本、本地条件章节和同准确资源的读取方法，没有把可查当已读。人可由完整例子与判断依据理解写法，AI可从准确步骤与字段落实保存、全文回读和缺项处理；没有确认成立的实质问题，保留全部文件，不为轮次改写。后续三相邻镜样例须实际应用最终方法；本轮不证明声画生成、节奏、口型、声音效果或真人测试通过。",
+      "unresolved": [],
+      "changed_paths": [],
+      "last_material_revision_has_been_read": true,
+      "frozen_sha256": "874efeef17ec7d9d986eb486231ca4f115e6d23a1ccece9208a74b6ffd79ad57",
+      "read_complete_sha256": "b887ac63cec439b6d0ca34a87e81fabd9cc16e4b7a11c0815838e5cd2b23224d",
+      "revision_decision_sha256": "3b89d42999d0add61b26d3dac641d2da950e09ac3eb4cb42c8ff6bc67c4020e0",
+      "evidence_directory": ".runtime/skill-cold-reader-fresh/video-plan/round-05"
     }
   ],
-  "reader_contexts": 178,
-  "native_inferences": 178,
-  "native_events": 2136,
+  "reader_contexts": 223,
+  "native_inferences": 223,
+  "native_events": 2676,
   "reader_model": "gpt-6-astra",
   "reader_effort": "max",
   "reviser_model": "gpt-6-astra",
   "reviser_effort": "max",
-  "durable_evidence_reverified_at": "2026-10-14T23:44:14.261009+00:00",
+  "durable_evidence_reverified_at": "2026-10-15T00:40:09.120563+00:00",
   "all_saved_raw_payload_event_and_chain_hashes_equal": true,
-  "final_sample_complete": false,
+  "final_sample_complete": true,
   "formal_publication": false,
   "human_participant_test": false,
   "queued_coordinator_followups": {
@@ -102,19 +118,39 @@
     "applied": true,
     "apply_after": "round-04 complete settlement",
     "applied_in_round": 4,
-    "complete_reread_pending": 5
+    "complete_reread_pending": false,
+    "complete_reread_round": 5
   },
-  "candidate_source": ".runtime/skill-cold-reader-fresh/video-plan/round-04/revision-decision.json:next_files",
-  "candidate_decision_sha256": "c8e2267fea4d13556a0aaa7963eafa5f620ff6745043b43abffd8f8139e95a96",
+  "candidate_source": ".runtime/skill-cold-reader-fresh/video-plan/round-05/revision-decision.json:next_files",
+  "candidate_decision_sha256": "3b89d42999d0add61b26d3dac641d2da950e09ac3eb4cb42c8ff6bc67c4020e0",
   "candidate_files_sha256": {
     "SKILL.md": "b6bfde989b3f0cdc5938dbf5b7bfc9eb5e511b5f0e8578f07677b6e4fe7e2158",
     "references/prompt-review.md": "257d02931a0912bafcc9419a0e694314cc69b74e8aa8ec8de01294f6470e565c",
     "references/worked-examples.md": "7a19b23f7b6e4c6db91d628b258f3e28f56b88384781a6ee89c3bec2c028e9e1"
   },
-  "last_revision_fully_reread": false,
+  "last_revision_fully_reread": true,
   "pending": [
-    "round-05 full reading and separate semantic decision",
-    "exact final method binding and isolated work sample",
-    "managed formal delivery and latest-only cleanup"
-  ]
+    "formal_incremental_publication",
+    "formal_browser",
+    "final_empty_restore",
+    "scoped_history_cleanup"
+  ],
+  "final_method": {
+    "object_id": "method.skill.video-plan",
+    "revision_id": "59c702ae80880c19227b8ff080c8a0dbf14f4c8a9c6f953106f9e15a20c8248e",
+    "version": 24
+  },
+  "final_linkage_receipt": {
+    "path": ".runtime/skill-cold-reader-fresh/video-plan/final-linkage/receipt.json",
+    "sha256": "58b82cf7fc87808739f7fe0895f9f6f0c02e69f6e432c8be483752c64e34c326"
+  },
+  "isolated_browser_checked": true,
+  "sample_verification": {
+    "path": ".runtime/skill-cold-reader-fresh/video-plan/sample/verification.json",
+    "sha256": "32f45f381fd61ae586d760e975ecbba95e1abacf653df4e6a62ea07e2f9be707"
+  },
+  "sample_report": {
+    "path": "production/reports/task-20261013-0010/samples/video-plan.md",
+    "sha256": "ccf7ed8abaf91ec6cd5de454d9e51e27d4525bb801c04f66fec4042fbe16f55e"
+  }
 }

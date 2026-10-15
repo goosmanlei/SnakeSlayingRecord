@@ -3,7 +3,7 @@
   "source_path": "production/seedance-video-handbook.md",
   "source_sha256": "3a8c0b4c8a8433636b82cb2ecd2e46f5996510879d1a3c41c71146a486989e6d",
   "source_characters": 31419,
-  "status": "TEXT_STABLE_PENDING_CALLER_FINAL_ROUNDS_AND_SAMPLES",
+  "status": "TEXT_STABLE_AND_FINAL_BOUND_SAMPLE_COMPLETE_FORMAL_PENDING",
   "valid_complete_rounds": 6,
   "last_change_round": 5,
   "unchanged_complete_reread_rounds": [
@@ -157,16 +157,17 @@
   "whole_source_written_back": true,
   "source_projection_routing_check": true,
   "resource_projection_current": true,
-  "final_work_sample_complete": false,
+  "final_work_sample_complete": true,
   "formal_publication": false,
   "old_media_watched_or_heard": false,
   "new_media_generated": false,
   "human_participant_test": false,
   "runtime_evidence": ".runtime/skill-cold-reader-fresh/video-handbook",
   "pending": [
-    "Refresh filmcraft resource and exact caller bindings again when its prose stabilizes; canonical handbook and its embedded copy are already synchronized.",
-    "Complete caller final rounds and save/read adjacent-shot samples under exact final methods.",
-    "Formal latest-only cleanup, managed publication, default Chrome and final empty-instance recovery."
+    "formal_latest_only_cleanup",
+    "managed_publication",
+    "formal_default_chrome",
+    "final_empty_instance_restore"
   ],
   "isolated_resource_projection": {
     "path": ".runtime/skill-cold-reader-fresh/video-handbook/round-06-linkage/receipt.json",
@@ -252,5 +253,13 @@
     "screenshot_limitation": "Mac screen locked; no unlock or alternative profile attempted.",
     "media_playback": false,
     "formal_acceptance": false
+  },
+  "sample_verification": {
+    "path": ".runtime/skill-cold-reader-fresh/video-plan/sample/verification.json",
+    "sha256": "32f45f381fd61ae586d760e975ecbba95e1abacf653df4e6a62ea07e2f9be707"
+  },
+  "sample_report": {
+    "path": "production/reports/task-20261013-0010/samples/video-plan.md",
+    "sha256": "ccf7ed8abaf91ec6cd5de454d9e51e27d4525bb801c04f66fec4042fbe16f55e"
   }
 }
