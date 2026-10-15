@@ -1,7 +1,7 @@
 {
   "task": "task-20261013-0010",
   "object_id": "method.skill.material-assessment",
-  "status": "FIVE_ROUNDS_COMPLETE_SAMPLE_PENDING",
+  "status": "FIVE_ROUNDS_AND_BOUND_SAMPLE_COMPLETE",
   "valid_complete_rounds": 5,
   "reader_model": "gpt-6-astra",
   "reader_effort": "max",
@@ -106,15 +106,13 @@
   "source_report_sha256": "56282eab20f73baf9a1d5d9c1d3ecc80647e346f049f42c29820969abe747109",
   "unresolved_text_issues_at_round_3": [],
   "last_revision_fully_reread": true,
-  "final_sample_executed": false,
+  "final_sample_executed": true,
   "formal_method_publication": false,
   "formal_story_changes": false,
   "media_watched_or_heard": false,
   "new_media_generated": false,
   "human_participant_test": false,
   "pending": [
-    "final_bound_sample",
-    "isolated_browser",
     "formal_publication_and_cleanup"
   ],
   "native_events": 854,
@@ -128,5 +126,12 @@
   "final_linkage_receipt": {
     "path": ".runtime/skill-cold-reader-fresh/material-assessment/final-linkage/receipt.json",
     "sha256": "dc205c8b619ce7515e35dbb2c18648859428e16e935f7ad43dcad7e8c980407d"
+  },
+  "final_sample": {
+    "verification_path": ".runtime/skill-cold-reader-fresh/material-assessment/sample/verification.json",
+    "verification_sha256": "e069473d90b8ab2af0e80aff5b0f07aec5f54324db284227ad9c08ea8ce29a1a",
+    "public_sample": "samples/material-assessment.md",
+    "public_sample_sha256": "f6f0dc2e1cbb15a647dd4431c18fd47bf8075e0a88cc8cc1af0d78f2e18a6427",
+    "formal_writes": false
   }
 }
