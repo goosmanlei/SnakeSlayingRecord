@@ -1,8 +1,8 @@
 {
   "task": "task-20261013-0010",
   "object_id": "method.skill.voice-plan",
-  "status": "FIVE_ROUNDS_AND_FINAL_SAMPLE_COMPLETE",
-  "valid_complete_rounds": 5,
+  "status": "FORMAL_PUBLICATION_PENDING",
+  "valid_complete_rounds": 8,
   "reader_model": "gpt-6-astra",
   "reader_effort": "max",
   "reviser_model": "gpt-6-astra",
@@ -89,15 +89,64 @@
       "read_complete_sha256": "fee6c0bb57a96efe4dd13b2ec02ff083fccbf7ca59aecec9673d94558ff01dd5",
       "revision_decision_sha256": "e2161aa68a3743f56897964542185f86cebb3392c3f44b204615fba90c3968ba",
       "evidence_directory": ".runtime/skill-cold-reader-fresh/voice-plan/round-05"
+    },
+    {
+      "round": 6,
+      "body_units": 22,
+      "reader_contexts": 23,
+      "native_inferences": 23,
+      "native_events": 276,
+      "decision": "revise",
+      "rationale": "已完整阅读本轮22段及FINISH的23项observations、最终facts与issues。读者唯一正式意见q0007-01成立：把本次试读的“克制”写成无条件目标，可能让没有此要求的执行者额外加入表演限制。已改为将本次已确定的表演目标落实为语速、停顿和重音，保留稳定身份与当场表演分开、准确原词、完整原件及真实听审边界。其他逐段理解与全文目标一致，没有新增未解决方法问题。本处仅完成分离于reader的语义修订；改后全文须进入第7轮完整阅读，不把第6轮当末稿已读。",
+      "unresolved": [],
+      "changed_paths": [
+        "SKILL.md"
+      ],
+      "last_material_revision_has_been_read": false,
+      "frozen_sha256": "a8ae5dd9be41b8bbc2fa77132b0b899ed60bf534410f491261f632fb2c6af80f",
+      "read_complete_sha256": "e8a450c8315757e07b05478c16dbf2ea96af6bc1baffa0b82a6d96cade67cf08",
+      "revision_decision_sha256": "33eda2d852f2a582dc11a5d4901b2746226943cb89ba11d22be523f5e03444c9",
+      "evidence_directory": ".runtime/prompt-constraints/audio-author/voice-plan/round-06"
+    },
+    {
+      "round": 7,
+      "body_units": 22,
+      "reader_contexts": 23,
+      "native_inferences": 23,
+      "native_events": 276,
+      "decision": "keep",
+      "rationale": "作为独立于逐段读者的修订者，已全文阅读本轮22段理解、FINISH结算与最终memory，并再次通读准确冻结文本。第7段现在把本次已确定的表演目标落实为语速、停顿和重音，不再擅自要求克制；读者也正确区分稳定声音身份与本次表演。书写顺序、少量声线要素、内容触发条件、缺项保留、完整原词及最终提交文本回读均可直接执行；复用路线不补造生成字段，准确完整原件和实际能力核验边界保留。教学例明确虚构且完整。全轮没有待保留的初读困惑或最终问题，没有进一步实质修订的依据，因此保持当前全部文件。此决定只评价方法正文，未试听或生成媒体，也不代替实际方法绑定后的样例执行。",
+      "unresolved": [],
+      "changed_paths": [],
+      "last_material_revision_has_been_read": true,
+      "frozen_sha256": "f1302815fe048bfd0c9c9becde3eca29373820a385d150ce69723fc5384a7c5e",
+      "read_complete_sha256": "2e0753da022c43e2e2b814046b797856895af5021e577ed407653abdeff2bb72",
+      "revision_decision_sha256": "f8774e655f89607b2ac4546eeffcf1ba5331e79ab5d747fc7b9649653b7d7106",
+      "evidence_directory": ".runtime/prompt-constraints/audio-author/voice-plan/round-07"
+    },
+    {
+      "round": 8,
+      "body_units": 23,
+      "reader_contexts": 24,
+      "native_inferences": 24,
+      "native_events": 288,
+      "decision": "keep",
+      "rationale": "作为分离于逐段读者的修订者，已完整阅读23个正文单位及FINISH的24项observations、全部记忆更新与最终memory，并再次通读准确冻结全文。读者正确理解同轮固定中性原词、句序、读法和录音条件，候选只改变已声明的稳定声线设计；旧样本仅供初筛，不冒充同条件比较。演法测试固定身份并另记，真实剧情原词留给下游应用，统一中文稿不宣称覆盖所有音节。第11、13、16、18、20、22段分别准确理解完整原词及长度缺项、条件触发、语言专项例外、填好的教学Prompt、完整原件和纯复用边界、实际保存文本回读。全轮未出现需保留的疑问或最终问题，正文同时给出人可理解的理由和AI可执行的顺序，没有继续实质改稿的依据，保持全部文件。此决定只评价方法正文；引用的共享正文并非本轮逐段开放材料，不扩大本轮读者结论，也不把已保存的方案、技术检测或未听媒体写成声音质量验收。",
+      "unresolved": [],
+      "changed_paths": [],
+      "last_material_revision_has_been_read": true,
+      "frozen_sha256": "40885e650b3c54be44c75eaf5d2cd4fd42e40748fdbaceb50c1572a76d27ee61",
+      "read_complete_sha256": "56d9c6765e40dbb026ca15523bc01b20398beac41cfbb2c9d333012d4fd9bfcc",
+      "revision_decision_sha256": "9bf0086fc618dbb273e4303c64139fb481d4a73d64a79eea6419d8f2b5de9a09",
+      "evidence_directory": ".runtime/prompt-constraints/audio-author/voice-plan/round-08"
     }
   ],
-  "reader_contexts": 53,
-  "native_inferences": 53,
+  "reader_contexts": 123,
+  "native_inferences": 123,
   "candidate_files_sha256": {
-    "SKILL.md": "bd6c9e0ee26d401e6102ab7438b6ce8ad35fb2088c17907bff395f06d3cacece"
+    "SKILL.md": "13b3a74fd4a981bd5f3b6c82c0517f70b6d978d62dd848047a0565e0b898cb9b"
   },
-  "candidate_source": ".runtime/skill-cold-reader-fresh/voice-plan/round-05/revision-decision.json:next_files",
-  "candidate_decision_sha256": "e2161aa68a3743f56897964542185f86cebb3392c3f44b204615fba90c3968ba",
+  "candidate_source": ".runtime/prompt-constraints/audio-author/voice-plan/round-08/revision-decision.json:next_files",
   "source_report": ".runtime/skill-cold-reader-fresh/voice-plan/three-round-report.json",
   "source_report_sha256": "17c1efb428f6ec127eb953283c3a882597be5130bc1ff8d76241c49f81b85dad",
   "unresolved_text_issues_at_round_3": [],
@@ -109,6 +158,8 @@
   "new_media_generated": false,
   "human_participant_test": false,
   "pending": [
+    "formal method publication",
+    "post-publication verification and task cleanup",
     "user completion confirmation",
     "separately owned independent review"
   ],
@@ -119,29 +170,370 @@
     "verification": "R2/R3 第 3、4、7、8 单位均准确复述新增边界与保存流程，两个完整结算均无问题。"
   },
   "outer_description_sync_pending": false,
-  "native_events": 636,
-  "durable_evidence_reverified_at": "2026-10-15T01:22:45.821351+00:00",
+  "native_events": 1476,
   "all_saved_raw_payload_event_and_chain_hashes_equal": true,
+  "current_delivery": {
+    "status": "FORMAL_PUBLICATION_PENDING",
+    "scope": "Fixed neutral audition method v16 is finalized after round 8 complete native reading and separate keep decision. Its two isolated samples and Chrome text/version comparison are verified; formal publication and post-publication verification have not occurred.",
+    "reference": "delivery.md",
+    "prior_delivery_unchanged": true
+  },
+  "isolated_browser_checked": true,
+  "prompt_constraint_revision": {
+    "trigger": "用户要求各素材Prompt方法明确格式、必备要素及按内容触发的条件要素，并兼顾人和AI阅读。",
+    "rounds": [
+      6,
+      7
+    ],
+    "evidence_directory": ".runtime/prompt-constraints/audio-author/voice-plan",
+    "previous_102_rounds_reused": true,
+    "shared_sources_unchanged": true,
+    "before": "有声音身份和听辨原则，缺少完整Prompt的三段格式；第六轮新稿又被读者指出了无依据的克制默认值。",
+    "after": "按身份与语言、这次试读与录音条件、独立完整原词组织；按需补参考、发音和规格。演法来自本次已定目标，不默认克制。",
+    "sample_report": "samples/voice-plan.md",
+    "isolated_browser": [
+      {
+        "path": ".runtime/prompt-constraints/browser/voice-plan.json",
+        "sha256": "5b9f62cefaecb14636b999588aa1c24c0f54130e5ab43543ceb5a69ae345e3f4",
+        "method_revision_id": "af052ffac5a3f81dfed2942683df54843321897cec5da2efca92ffc2242c322f",
+        "scope": "task isolated Chrome evidence",
+        "evidence_fields": [
+          "read",
+          "comparison"
+        ]
+      }
+    ],
+    "scope": "第6/7轮已完成的Prompt格式修订；当前第8轮固定中性稿追加修订见 additional_user_revision。"
+  },
+  "candidate_package": {
+    "path": ".runtime/prompt-constraints/audio-author/voice-plan/package-r8.json",
+    "sha256": "91f38af8d66428c0350e5e9758e8d64232ade9f83426a27c2f61373f1a16dfdf"
+  },
+  "previous_delivery": {
+    "scope": "Previous formally delivered method only; not evidence that the current Prompt-constraint candidate is formally published.",
+    "valid_complete_rounds": 5,
+    "final_method": {
+      "object_id": "method.skill.voice-plan",
+      "revision_id": "688de19d3b09ff83495bd3bf7933d41326933905235df4f8a7c21fbcbc585a48",
+      "version": 14
+    },
+    "final_linkage_receipt": {
+      "path": ".runtime/skill-cold-reader-fresh/voice-plan/final-linkage/receipt.json",
+      "sha256": "0eaa5518848354f7eefa0f4d0d3ebdc2bdfb886e2ee0c9466330f9703778b57b"
+    },
+    "final_sample": {
+      "verification_path": ".runtime/skill-cold-reader-fresh/voice-plan/sample/verification.json",
+      "verification_sha256": "f8c6c38a64484906efadfb6bf45bf9fd4b8f43eb9a4dbdaffe491cf3ea78d543",
+      "public_sample": "samples/voice-plan.md",
+      "public_sample_sha256": "d7b7bd18cc670d818026053d0eeb0a6dc3686a693bcfddd46fa0f132fde3b313",
+      "formal_writes": false
+    },
+    "candidate_files_sha256": {
+      "SKILL.md": "bd6c9e0ee26d401e6102ab7438b6ce8ad35fb2088c17907bff395f06d3cacece"
+    },
+    "durable_evidence_reverified_at": "2026-10-15T01:22:45.821351+00:00",
+    "current_delivery": {
+      "status": "LOCAL_FORMAL_DELIVERY_VERIFIED_AWAITING_USER_CONFIRMATION",
+      "reference": "delivery.md",
+      "browser": "formal-browser.json",
+      "complete_recovery": "final-recovery.json"
+    }
+  },
+  "added_rounds_evidence_reverified_at": {
+    "round-06": "2026-10-15T08:30:55.184+00:00",
+    "round-07": "2026-10-15T09:07:35.462+00:00",
+    "round-08": "2026-10-15T10:37:20.115570+00:00"
+  },
+  "previous_prompt_constraint_candidate": {
+    "candidate_files_sha256": {
+      "SKILL.md": "a4507d17650bd3cce0ac7b55cc61b802dc605f20ce4212821c982bb6189acda6"
+    },
+    "candidate_source": ".runtime/prompt-constraints/audio-author/voice-plan/round-07/revision-decision.json:next_files",
+    "candidate_decision_sha256": "f8774e655f89607b2ac4546eeffcf1ba5331e79ab5d747fc7b9649653b7d7106",
+    "candidate_package": {
+      "path": ".runtime/prompt-constraints/audio-author/voice-plan/package.json",
+      "sha256": "841558d7aeb476b68b53ca5243d02ad07caeaa4e6b1edcebd5a9dbc1160297e2"
+    },
+    "final_method": {
+      "object_id": "method.skill.voice-plan",
+      "revision_id": "af052ffac5a3f81dfed2942683df54843321897cec5da2efca92ffc2242c322f",
+      "version": 15
+    },
+    "final_linkage_receipt": {
+      "path": ".runtime/prompt-constraints/samples/voice-plan/delivery.json",
+      "sha256": "4de4088ba8482498c16b82e0b7c3ce2a34fd8b6bb722594bec0ce819ba3cbaac"
+    },
+    "final_sample": {
+      "verification_path": ".runtime/prompt-constraints/samples/voice-plan/verification.json",
+      "verification_sha256": "c36d905ab186c414dbc80a7794f8c14b4cbef7889c99fd5c5fa5b9a436266bab",
+      "public_sample": "samples/voice-plan.md",
+      "public_sample_sha256": "5697eaadbdfd6c55e02adee5721c846485ce743a6a922aa15bca1aa5fe85acdb",
+      "formal_writes": false,
+      "sample_count": 1
+    },
+    "final_samples": [
+      {
+        "name": "voice-plan",
+        "method": {
+          "object_id": "method.skill.voice-plan",
+          "revision_id": "af052ffac5a3f81dfed2942683df54843321897cec5da2efca92ffc2242c322f",
+          "version": 15
+        },
+        "binding": {
+          "object_id": "method.binding.media-plan",
+          "revision_id": "fa755b2b0b16c1c1f6b047efb7d081b27f9f8675f352be440830f6b448e67a89"
+        },
+        "resolved_method_package_sha256": "f54d6b5c6462271dcd38cdb6de925ce6d4d647dd46edf76b5f4484ab2cbaae2e",
+        "verification": {
+          "path": ".runtime/prompt-constraints/samples/voice-plan/verification.json",
+          "sha256": "c36d905ab186c414dbc80a7794f8c14b4cbef7889c99fd5c5fa5b9a436266bab"
+        },
+        "delivery": {
+          "path": ".runtime/prompt-constraints/samples/voice-plan/delivery.json",
+          "sha256": "4de4088ba8482498c16b82e0b7c3ce2a34fd8b6bb722594bec0ce819ba3cbaac"
+        },
+        "result_stage": {
+          "path": ".runtime/prompt-constraints/samples/voice-plan/stage-result-value.json",
+          "sha256": "000c844d3c3090073d12a8a6bcb9c8fa255f524c0ecc688491b4175cea986d6c"
+        },
+        "result_import": {
+          "path": ".runtime/prompt-constraints/samples/voice-plan/result-import.json",
+          "sha256": "9f7992855d0e5e135553d63c3626b43ccd0bf4834c7bda3e87b6b05ddd403b86"
+        },
+        "all_three_stages_read_back": true,
+        "production_imported": false,
+        "verification_details": {
+          "method": {
+            "object_id": "method.skill.voice-plan",
+            "revision_id": "af052ffac5a3f81dfed2942683df54843321897cec5da2efca92ffc2242c322f"
+          },
+          "execution": {
+            "object_id": "method.execution.c9b7c46c7a6363af4ef79a762e2479c0f3396ec33f847f37a7934c1bc397d210",
+            "revision_id": "4da9276c564f3180448394b3a60e8debbced06b2c29662da22553c628b38b3ba"
+          },
+          "result": {
+            "object_id": "method.artifact.13d809da828835a9471a920d4cd275d5bf348a04b347080aceb0beef439a7553",
+            "revision_id": "5db788435bdcee5ddb2ece37910151846d8d2b63b23b547fdce2733fc34b98c5"
+          },
+          "result_import_sha256": "9f7992855d0e5e135553d63c3626b43ccd0bf4834c7bda3e87b6b05ddd403b86",
+          "method_url": "http://127.0.0.1:55188",
+          "all_three_stages_read_back": true,
+          "production_imported": false,
+          "new_media_generated": false,
+          "media_watched_or_heard": false,
+          "teaching_prompt_sha256": "37e36da1009b9f91a0ab9ea0a1ea47cf5f6b8a02954134c17adc1504d3f727a6"
+        }
+      }
+    ],
+    "isolated_browser_checked": true,
+    "last_revision_fully_reread": true,
+    "final_sample_executed": true,
+    "scope": "第7轮完成后隔离保存的 v15 候选，仅证明固定中性试读稿追加要求之前的结果；不能作为第8轮新稿已读、已执行或已正式发布的证据。",
+    "valid_complete_rounds": 7,
+    "formal_method_publication": false
+  },
+  "additional_user_revision": {
+    "trigger": "用户要求音色生成采用固定试读台词；基础身份选型统一使用中性稿，真实角色台词另作下游应用或表演验证。",
+    "status": "ROUND_VALID_PENDING_FORMAL_PUBLICATION",
+    "prior_valid_complete_rounds": 7,
+    "draft_file": ".runtime/prompt-constraints/audio-author/voice-plan/draft-r8/SKILL.md",
+    "package": {
+      "path": ".runtime/prompt-constraints/audio-author/voice-plan/package-r8.json",
+      "sha256": "91f38af8d66428c0350e5e9758e8d64232ade9f83426a27c2f61373f1a16dfdf"
+    },
+    "author_full_readback": true,
+    "skill_quick_validate_passed": true,
+    "frozen": true,
+    "native_read_complete": true,
+    "separate_revision_complete": true,
+    "fixed_text": [
+      "桌上放着一本书，旁边有一只白色的杯子。",
+      "窗边的椅子朝着门口，几张纸整齐地叠在一起。"
+    ],
+    "comparison_conditions": "同轮原词字面、句子顺序、读法、语速、停顿、距离与背景一致，回放响度可比；稳定声线设计可变。演法测试与身份比较分别记录。",
+    "coverage_limit": "共同的中文中性比较材料，不是全音素标准，不宣称覆盖所有音节。",
+    "actual_voice_direction_and_reuse_unchanged": true,
+    "new_actual_sample_pending": false,
+    "previous_frozen_and_revision_evidence_unchanged": true,
+    "coordinator_full_review_approved": true,
+    "frozen_path": ".runtime/prompt-constraints/audio-author/voice-plan/round-08/frozen.json",
+    "frozen_sha256": "40885e650b3c54be44c75eaf5d2cd4fd42e40748fdbaceb50c1572a76d27ee61",
+    "body_units": 23,
+    "actual_samples_complete": true,
+    "initial_sample_contract_rejection": {
+      "path": ".runtime/prompt-constraints/samples/voice-fixed-trial/failure.json",
+      "sha256": "867192bd924d138d360aee6b1fe6a2ee9ecdb4c84aa40d0a3acb2814851ddd5f",
+      "reason": "generate 路线缺少 model，被保存契约拒绝；主执行回查未产生草稿 artifact。随后另起准确样例记录拟用型号与能力缺项，未发生模型调用。"
+    },
+    "native_read_started": true,
+    "isolated_browser": {
+      "path": ".runtime/prompt-constraints/browser/voice-plan-r8.json",
+      "sha256": "a521c63f134fe47d495ab4efccea500b20fb170af2d1a17d7337f4b4d5292ca8",
+      "method_revision_id": "71432e8bf08e6be0887c76e2009a545ffd7e221bd4bd0172e3ac418868016ce1",
+      "scope": "主执行操作隔离 Chrome；作者已全文阅读正文和文件第2版至第3版比较回执。",
+      "evidence_fields": [
+        "body",
+        "comparison"
+      ]
+    },
+    "round": 8,
+    "read_complete": {
+      "path": ".runtime/prompt-constraints/audio-author/voice-plan/round-08/read-complete.json",
+      "sha256": "56d9c6765e40dbb026ca15523bc01b20398beac41cfbb2c9d333012d4fd9bfcc"
+    },
+    "revision_decision": {
+      "path": ".runtime/prompt-constraints/audio-author/voice-plan/round-08/revision-decision.json",
+      "sha256": "9bf0086fc618dbb273e4303c64139fb481d4a73d64a79eea6419d8f2b5de9a09"
+    }
+  },
+  "candidate_decision_sha256": "9bf0086fc618dbb273e4303c64139fb481d4a73d64a79eea6419d8f2b5de9a09",
   "final_method": {
     "object_id": "method.skill.voice-plan",
-    "revision_id": "688de19d3b09ff83495bd3bf7933d41326933905235df4f8a7c21fbcbc585a48",
-    "version": 14
+    "revision_id": "71432e8bf08e6be0887c76e2009a545ffd7e221bd4bd0172e3ac418868016ce1",
+    "version": 16
   },
+  "final_isolated_save": {
+    "path": ".runtime/prompt-constraints/isolated-save/voice-plan-r8.json",
+    "sha256": "fb1b0dc82b8d97f4b585b61fa357358b66a094af4ce558285fd46315bd524978",
+    "files_equal_current_package": true
+  },
+  "final_isolated_binding": {
+    "object_id": "method.binding.media-plan",
+    "revision_id": "c96001c1bf3ffb6945601d5fcae864318a4db150c3a6c9ca183c03baf0e17267",
+    "version": 42,
+    "path": ".runtime/prompt-constraints/isolated-save/media-plan-voice-r8-binding.json",
+    "sha256": "74db1a25e3e94e9a580777fb400978175fdd5ad77658cd266bed96018072209e"
+  },
+  "final_samples": [
+    {
+      "name": "voice-reuse-r8",
+      "method": {
+        "object_id": "method.skill.voice-plan",
+        "revision_id": "71432e8bf08e6be0887c76e2009a545ffd7e221bd4bd0172e3ac418868016ce1",
+        "version": 16
+      },
+      "binding": {
+        "object_id": "method.binding.media-plan",
+        "revision_id": "c96001c1bf3ffb6945601d5fcae864318a4db150c3a6c9ca183c03baf0e17267"
+      },
+      "resolved_method_package_sha256": "58514e4a2655b85714ea765cc46037d9f40a9e90a52b781dd5d4648e7b2f8e1f",
+      "verification": {
+        "path": ".runtime/prompt-constraints/samples/voice-reuse-r8/verification.json",
+        "sha256": "ad4122520bfebca80bbc3903b2c91d85fdb8d39c4ac3607dfeb8ca1d7cd4c770"
+      },
+      "delivery": {
+        "path": ".runtime/prompt-constraints/samples/voice-reuse-r8/delivery.json",
+        "sha256": "e4d501b7ed679e062de107ed80d8d5bd0febf90909abb5ccb43e5e256abb9a3c"
+      },
+      "result_stage": {
+        "path": ".runtime/prompt-constraints/samples/voice-reuse-r8/stage-result-value.json",
+        "sha256": "d7689649b4f263786249108f9c48d6b2b43e0fac69f82befb52cceeea11bc1d0"
+      },
+      "result_import": {
+        "path": ".runtime/prompt-constraints/samples/voice-reuse-r8/result-import.json",
+        "sha256": "66d666c7ea74facd2eabf20327df1b791d148e2f68e62e84a54c7c935d5250bd"
+      },
+      "all_three_stages_read_back": true,
+      "production_imported": false,
+      "verification_details": {
+        "method": {
+          "object_id": "method.skill.voice-plan",
+          "revision_id": "71432e8bf08e6be0887c76e2009a545ffd7e221bd4bd0172e3ac418868016ce1"
+        },
+        "binding": {
+          "object_id": "method.binding.media-plan",
+          "revision_id": "c96001c1bf3ffb6945601d5fcae864318a4db150c3a6c9ca183c03baf0e17267"
+        },
+        "execution": {
+          "object_id": "method.execution.c87344cc7cd9929006eb5036dd22b9e02136fecd1899aca8990178deee95c828",
+          "revision_id": "ce0ac89e2e2e1e9c110590cea3439288aed40b3b29fb72d11dd4d9bcfeffaa5a"
+        },
+        "result": {
+          "object_id": "method.artifact.8834798682635b4ed569c5a82c4c3482e50b3883b0f0054d5b8a21ae1a8e5c03",
+          "revision_id": "68943e7cc56cb28f7b92dcd25869ad8e8457ad66674e90f832b9116140bf258f"
+        },
+        "result_import_sha256": "66d666c7ea74facd2eabf20327df1b791d148e2f68e62e84a54c7c935d5250bd",
+        "method_url": "http://127.0.0.1:55188",
+        "all_three_stages_read_back": true,
+        "production_imported": false,
+        "new_media_generated": false,
+        "media_watched_or_heard": false,
+        "review": "已全文读回实际草稿。保留准确候选 original 完整原件、复用路线和原有需求规格；偏高老年男声与轻微气息粗糙感沿准确人物设定，不冒充本轮听辨。已将基础身份比较从剧情原句改为方法固定中性稿，并说明旧原件不同台词和表演条件只供初筛。真实“二道——哎，到了？”仍留给镜头接唱转说话验证，不能因基础试声不唱删掉事件。纯复用不填写 Prompt 或模型，当前缺项保留。未发现需继续改稿之处，保留草稿作为结果；未试听、生成、改变采纳或导入作品。"
+      }
+    },
+    {
+      "name": "voice-fixed-trial-r8",
+      "method": {
+        "object_id": "method.skill.voice-plan",
+        "revision_id": "71432e8bf08e6be0887c76e2009a545ffd7e221bd4bd0172e3ac418868016ce1",
+        "version": 16
+      },
+      "binding": {
+        "object_id": "method.binding.media-plan",
+        "revision_id": "c96001c1bf3ffb6945601d5fcae864318a4db150c3a6c9ca183c03baf0e17267"
+      },
+      "resolved_method_package_sha256": "58514e4a2655b85714ea765cc46037d9f40a9e90a52b781dd5d4648e7b2f8e1f",
+      "verification": {
+        "path": ".runtime/prompt-constraints/samples/voice-fixed-trial-r8/verification.json",
+        "sha256": "77a60bfdfc5b378143b5f1a82f3658138dea5b130531301812e7e6b2ad228318"
+      },
+      "delivery": {
+        "path": ".runtime/prompt-constraints/samples/voice-fixed-trial-r8/delivery.json",
+        "sha256": "c4bf6517887ee3476dac4474d8f281c54bcab9c91e8da10b7524242e61d1a3d9"
+      },
+      "result_stage": {
+        "path": ".runtime/prompt-constraints/samples/voice-fixed-trial-r8/stage-result-value.json",
+        "sha256": "a275ae82c8ac839a50f09e96e0ff37b405d88a7cbeb0e748f49a7b01a88a180b"
+      },
+      "result_import": {
+        "path": ".runtime/prompt-constraints/samples/voice-fixed-trial-r8/result-import.json",
+        "sha256": "4e4b20b6b7ea87b6be4648eaea39513dbdeb8973a68f37566b9bec6c4c707ced"
+      },
+      "all_three_stages_read_back": true,
+      "production_imported": false,
+      "verification_details": {
+        "method": {
+          "object_id": "method.skill.voice-plan",
+          "revision_id": "71432e8bf08e6be0887c76e2009a545ffd7e221bd4bd0172e3ac418868016ce1"
+        },
+        "binding": {
+          "object_id": "method.binding.media-plan",
+          "revision_id": "c96001c1bf3ffb6945601d5fcae864318a4db150c3a6c9ca183c03baf0e17267"
+        },
+        "execution": {
+          "object_id": "method.execution.799267bb816a8c98543c9693545e41e2dcf0ac4dd78158bd7989e18b598aea52",
+          "revision_id": "1c65fee7a1f490082162e822d148a07341ac7d849ea3278e33733fd6a775ce57"
+        },
+        "result": {
+          "object_id": "method.artifact.6c16d8e57d736b8851ed9ab68995f7fe97e4d16c5d3ff6c9fd468cc9e0b1f7e4",
+          "revision_id": "f9c607cc4155a6ed2f616736c47b206aeb5ebb0b044fb94c686e1bb8d5e1c871"
+        },
+        "result_import_sha256": "4e4b20b6b7ea87b6be4648eaea39513dbdeb8973a68f37566b9bec6c4c707ced",
+        "method_url": "http://127.0.0.1:55188",
+        "all_three_stages_read_back": true,
+        "production_imported": false,
+        "new_media_generated": false,
+        "media_watched_or_heard": false,
+        "review": "已全文读回实际 generation.prompt、参数、输入及缺项。Prompt 分出稳定声线、统一中性试读/录音条件与完整两句原词；两句逐字等于方法中的固定试读稿，未使用正式剧情台词。未启用参考所以没有虚构附件；未指定可伪装精确执行的秒点。稳定方向沿人物设定，真实发声效果仍待生成及听审。首个试写因未填模型被契约拒绝，回查确认没有草稿 artifact；本步骤另按项目约定记录拟用 seed-audio-1.0，并保留当前能力未核验的缺项，不把选型写成调用成功。原4秒偏好不约束完整试读的时长，不通过删句挤读满足它。本步骤是隔离的另制方案样例，没有替换正式复用方案；未发现需修改的正文，保留草稿作为结果。",
+        "prompt_sha256": "5f14e57a0cfc581cd94e08e7a3a208a0ab246fca115dd73b4e9dab254607cdb4",
+        "fixed_text": "桌上放着一本书，旁边有一只白色的杯子。\n窗边的椅子朝着门口，几张纸整齐地叠在一起。",
+        "fixed_text_equal_to_method": true
+      },
+      "actual_prompt_sha256": "5f14e57a0cfc581cd94e08e7a3a208a0ab246fca115dd73b4e9dab254607cdb4",
+      "fixed_text_matches_method": true,
+      "public_prompt_equals_actual_saved_prompt": true
+    }
+  ],
   "final_linkage_receipt": {
-    "path": ".runtime/skill-cold-reader-fresh/voice-plan/final-linkage/receipt.json",
-    "sha256": "0eaa5518848354f7eefa0f4d0d3ebdc2bdfb886e2ee0c9466330f9703778b57b"
+    "path": ".runtime/prompt-constraints/samples/voice-reuse-r8/delivery.json",
+    "sha256": "e4d501b7ed679e062de107ed80d8d5bd0febf90909abb5ccb43e5e256abb9a3c"
   },
   "final_sample": {
-    "verification_path": ".runtime/skill-cold-reader-fresh/voice-plan/sample/verification.json",
-    "verification_sha256": "f8c6c38a64484906efadfb6bf45bf9fd4b8f43eb9a4dbdaffe491cf3ea78d543",
+    "verification_path": ".runtime/prompt-constraints/samples/voice-fixed-trial-r8/verification.json",
+    "verification_sha256": "77a60bfdfc5b378143b5f1a82f3658138dea5b130531301812e7e6b2ad228318",
     "public_sample": "samples/voice-plan.md",
-    "public_sample_sha256": "d7b7bd18cc670d818026053d0eeb0a6dc3686a693bcfddd46fa0f132fde3b313",
-    "formal_writes": false
-  },
-  "current_delivery": {
-    "status": "LOCAL_FORMAL_DELIVERY_VERIFIED_AWAITING_USER_CONFIRMATION",
-    "reference": "delivery.md",
-    "browser": "formal-browser.json",
-    "complete_recovery": "final-recovery.json"
+    "public_sample_sha256": "10d7f39e93ef59bbc5d6b2518f54ccc4791d28a8d7115b6cea7f2f885703af20",
+    "formal_writes": false,
+    "sample_count": 2
   }
 }

@@ -1,8 +1,8 @@
 {
   "task": "task-20261013-0010",
   "object_id": "method.skill.scene-sound-plan",
-  "status": "FIVE_ROUNDS_AND_FINAL_BOUND_SAMPLE_COMPLETE",
-  "valid_complete_rounds": 5,
+  "status": "FORMAL_PUBLICATION_PENDING",
+  "valid_complete_rounds": 6,
   "reader_model": "gpt-6-astra",
   "reader_effort": "max",
   "reviser_model": "gpt-6-astra",
@@ -89,15 +89,31 @@
       "read_complete_sha256": "a9d13852b1fbe1aa4e749b827d995e4d35c5c0829a3a085f1308b2b5d2beeb39",
       "revision_decision_sha256": "8c6107160574a0dc2768333788a1a4bc6d86510c191b43b139314cd96b193d3c",
       "evidence_directory": ".runtime/skill-cold-reader-fresh/scene-sound-plan/round-05"
+    },
+    {
+      "round": 6,
+      "body_units": 20,
+      "reader_contexts": 21,
+      "native_inferences": 21,
+      "native_events": 252,
+      "decision": "keep",
+      "rationale": "已完整阅读本轮20个正文单元及FINISH、最终facts与issues。读者准确复述了独立音频门槛、底声/事件/音乐各自职责、按需写法、缺项不放行、实际Prompt回读及听审边界；唯一WATCH“量米声”已在第19段结合米铺语境自行DISMISSED，未留下执行障碍。核对原文后同意该处为具体可听动作的举例，不新增普遍要求。教学例有完整时间发展、空间、一次事件和尾部，不把分层描述当分轨能力。准确shared目标与原包一致，作者已读取适用资源；没有依靠冷读声称外部资源或媒体效果已验证。无需要实质修改的发现，保持本轮完整末稿。",
+      "unresolved": [],
+      "changed_paths": [],
+      "last_material_revision_has_been_read": true,
+      "frozen_sha256": "29af0e48ccf7ef4425b23aee9680b9d0926a5e61af0cb617948969853b7f5c78",
+      "read_complete_sha256": "271c61236dd71d5c8915762373bc061a114590579d1d27d69bb7ff0681f25e72",
+      "revision_decision_sha256": "f81232a70198b96392b3ec64558f6fbbb470d08c72411bbd0068c2fefd50deff",
+      "evidence_directory": ".runtime/prompt-constraints/audio-author/scene-sound-plan/round-06"
     }
   ],
-  "reader_contexts": 44,
-  "native_inferences": 44,
+  "reader_contexts": 65,
+  "native_inferences": 65,
   "candidate_files_sha256": {
-    "SKILL.md": "910ddbae080459b630b4b4d867e7f62bfe698215ad11f67a8fd6e62e36a2c379"
+    "SKILL.md": "eea0ac1cc85b72f0036d836cfae8c08f8679a6c305206ffabdfa4b52f3f67a72"
   },
-  "candidate_source": ".runtime/skill-cold-reader-fresh/scene-sound-plan/round-05/revision-decision.json:next_files",
-  "candidate_decision_sha256": "8c6107160574a0dc2768333788a1a4bc6d86510c191b43b139314cd96b193d3c",
+  "candidate_source": ".runtime/prompt-constraints/audio-author/scene-sound-plan/round-06/revision-decision.json:next_files",
+  "candidate_decision_sha256": "f81232a70198b96392b3ec64558f6fbbb470d08c72411bbd0068c2fefd50deff",
   "unresolved_text_issues_at_round_3": [],
   "last_revision_fully_reread": true,
   "final_sample_executed": true,
@@ -107,34 +123,170 @@
   "new_media_generated": false,
   "human_participant_test": false,
   "pending": [
+    "formal method publication",
+    "post-publication verification and task cleanup",
     "user completion confirmation",
     "separately owned independent review"
   ],
-  "native_events": 528,
-  "durable_evidence_reverified_at": "2026-10-15T00:06:47.343196+00:00",
+  "native_events": 780,
   "all_saved_raw_payload_event_and_chain_hashes_equal": true,
   "isolated_browser_checked": true,
   "final_method": {
     "object_id": "method.skill.scene-sound-plan",
-    "revision_id": "872b22878e3eacd09674f8ad8f400a2601ba5772d25b93871f2cf4cd986c69b3",
-    "version": 11
+    "revision_id": "6a1a6e6b86b97d4193e92507f1961743a244486d395253611d9255412eaeae3f",
+    "version": 12
   },
   "final_linkage_receipt": {
-    "path": ".runtime/skill-cold-reader-fresh/scene-sound-plan/final-linkage/receipt.json",
-    "sha256": "04479f1e6c502a4dba79deb94f2505349fd932577046cd5834599cacaebba78c"
+    "path": ".runtime/prompt-constraints/samples/scene-sound-plan/delivery.json",
+    "sha256": "af134ce0f890187782a561b9ef7f1f2d84bccd9634870cda773dd250e039bc60"
   },
   "sample_verification": {
-    "path": ".runtime/skill-cold-reader-fresh/scene-sound-plan/sample/verification.json",
-    "sha256": "30b610becf5695f5457da12eba667d9978657d6a3ea14cc8ed0721e4504b5411"
+    "path": ".runtime/prompt-constraints/samples/scene-sound-plan/verification.json",
+    "sha256": "ab07207fb96039378de837b47d5889df0b135aa6cbf2f1ae834ad40bd4e98852"
   },
   "sample_artifact": {
     "path": "production/reports/task-20261013-0010/samples/scene-sound-plan.md",
-    "sha256": "ae3d09f9ab23e369a352e17f7f237d015c7f35f4b4b41e8266750bd6e8ff518f"
+    "sha256": "686d90520021ccca621040562167fa9c3c6f2d675b740aa85aac40f4b5dbb52f"
   },
   "current_delivery": {
-    "status": "LOCAL_FORMAL_DELIVERY_VERIFIED_AWAITING_USER_CONFIRMATION",
+    "status": "FORMAL_PUBLICATION_PENDING",
+    "scope": "Current Prompt-constraint candidate is saved, bound and sampled in the task isolated instance; formal publication and post-publication verification have not occurred.",
     "reference": "delivery.md",
-    "browser": "formal-browser.json",
-    "complete_recovery": "final-recovery.json"
+    "prior_delivery_unchanged": true
+  },
+  "prompt_constraint_revision": {
+    "trigger": "用户要求各素材Prompt方法明确格式、必备要素及按内容触发的条件要素，并兼顾人和AI阅读。",
+    "rounds": [
+      6
+    ],
+    "evidence_directory": ".runtime/prompt-constraints/audio-author/scene-sound-plan",
+    "previous_102_rounds_reused": true,
+    "shared_sources_unchanged": true,
+    "before": "有声音关系和听审判断，缺少实际Prompt格式及条件要素写法。",
+    "after": "按整体声音和听觉位置、实际所需底声、离散事件、音乐及结尾组织；必写可听内容、空间、交付与结束，按用途补同步、循环、避让和分轨。",
+    "sample_report": "samples/scene-sound-plan.md",
+    "isolated_browser": [
+      {
+        "path": ".runtime/prompt-constraints/browser/scene-sound-plan.json",
+        "sha256": "26ddad1584a8afbf504558cf09dbc8be7232484bc193c2e72dc7394f00ae0761",
+        "method_revision_id": "6a1a6e6b86b97d4193e92507f1961743a244486d395253611d9255412eaeae3f",
+        "scope": "task isolated Chrome evidence",
+        "evidence_fields": [
+          "read",
+          "comparison",
+          "observed_at"
+        ]
+      },
+      {
+        "path": ".runtime/prompt-constraints/browser/scene-sound-resource.json",
+        "sha256": "c54c1065d60962d639780237ac3572c70b589a3b2f2ba4a79a8c34593b917c55",
+        "method_revision_id": "6a1a6e6b86b97d4193e92507f1961743a244486d395253611d9255412eaeae3f",
+        "scope": "task isolated Chrome evidence",
+        "evidence_fields": [
+          "state",
+          "observed_at"
+        ]
+      }
+    ]
+  },
+  "candidate_package": {
+    "path": ".runtime/prompt-constraints/audio-author/scene-sound-plan/package.json",
+    "sha256": "08b302b7620943d69497ce6e1677148e4540db54d690762edfde9e74249750c0"
+  },
+  "previous_delivery": {
+    "scope": "Previous formally delivered method only; not evidence that the current Prompt-constraint candidate is formally published.",
+    "valid_complete_rounds": 5,
+    "final_method": {
+      "object_id": "method.skill.scene-sound-plan",
+      "revision_id": "872b22878e3eacd09674f8ad8f400a2601ba5772d25b93871f2cf4cd986c69b3",
+      "version": 11
+    },
+    "final_linkage_receipt": {
+      "path": ".runtime/skill-cold-reader-fresh/scene-sound-plan/final-linkage/receipt.json",
+      "sha256": "04479f1e6c502a4dba79deb94f2505349fd932577046cd5834599cacaebba78c"
+    },
+    "sample_verification": {
+      "path": ".runtime/skill-cold-reader-fresh/scene-sound-plan/sample/verification.json",
+      "sha256": "30b610becf5695f5457da12eba667d9978657d6a3ea14cc8ed0721e4504b5411"
+    },
+    "sample_artifact": {
+      "path": "production/reports/task-20261013-0010/samples/scene-sound-plan.md",
+      "sha256": "ae3d09f9ab23e369a352e17f7f237d015c7f35f4b4b41e8266750bd6e8ff518f"
+    },
+    "candidate_files_sha256": {
+      "SKILL.md": "910ddbae080459b630b4b4d867e7f62bfe698215ad11f67a8fd6e62e36a2c379"
+    },
+    "durable_evidence_reverified_at": "2026-10-15T00:06:47.343196+00:00",
+    "current_delivery": {
+      "status": "LOCAL_FORMAL_DELIVERY_VERIFIED_AWAITING_USER_CONFIRMATION",
+      "reference": "delivery.md",
+      "browser": "formal-browser.json",
+      "complete_recovery": "final-recovery.json"
+    }
+  },
+  "added_rounds_evidence_reverified_at": {
+    "round-06": "2026-10-15T08:49:42.399+00:00"
+  },
+  "final_samples": [
+    {
+      "name": "scene-sound-plan",
+      "method": {
+        "object_id": "method.skill.scene-sound-plan",
+        "revision_id": "6a1a6e6b86b97d4193e92507f1961743a244486d395253611d9255412eaeae3f",
+        "version": 12
+      },
+      "binding": {
+        "object_id": "method.binding.media-plan",
+        "revision_id": "ae7b7150f12107279fbd0fa29bde03577f8dc47a79c8e554832b409dd5e70896"
+      },
+      "resolved_method_package_sha256": "7de0e47a7fd3f10f2cabbe60581b46fa18bde5115f66bfa30f355eb27d3d49c4",
+      "verification": {
+        "path": ".runtime/prompt-constraints/samples/scene-sound-plan/verification.json",
+        "sha256": "ab07207fb96039378de837b47d5889df0b135aa6cbf2f1ae834ad40bd4e98852"
+      },
+      "delivery": {
+        "path": ".runtime/prompt-constraints/samples/scene-sound-plan/delivery.json",
+        "sha256": "af134ce0f890187782a561b9ef7f1f2d84bccd9634870cda773dd250e039bc60"
+      },
+      "result_stage": {
+        "path": ".runtime/prompt-constraints/samples/scene-sound-plan/stage-result-value.json",
+        "sha256": "9c7dee1d25fc265fe32de4e063949edceba4aec3d7f9930397b19315822f7d3b"
+      },
+      "result_import": {
+        "path": ".runtime/prompt-constraints/samples/scene-sound-plan/result-import.json",
+        "sha256": "8ad8b021ec1f268628b261ee042af331bfe1c7aab5b5a73932921b0e66fcf058"
+      },
+      "all_three_stages_read_back": true,
+      "production_imported": false,
+      "verification_details": {
+        "method": {
+          "object_id": "method.skill.scene-sound-plan",
+          "revision_id": "6a1a6e6b86b97d4193e92507f1961743a244486d395253611d9255412eaeae3f"
+        },
+        "execution": {
+          "object_id": "method.execution.223e317f14ecd538d00e042a7bca2571e589b0b7b384c267c5279dfd69a04721",
+          "revision_id": "2324a038c1745e55c4c818c9ca9c39f24f1bdac55d5fe3cc9d96f68c7e7e741d"
+        },
+        "result": {
+          "object_id": "method.artifact.3a57b3012c196b099f4ae2176c5ba08f3a599f7f5e9f880bcd1dc0824c8463c6",
+          "revision_id": "edef7c095eb2aa7986a50bb05f2cfba40de16e66e72a35b9faf5c0ace544af5b"
+        },
+        "result_import_sha256": "8ad8b021ec1f268628b261ee042af331bfe1c7aab5b5a73932921b0e66fcf058",
+        "method_url": "http://127.0.0.1:55188",
+        "all_three_stages_read_back": true,
+        "production_imported": false,
+        "new_media_generated": false,
+        "media_watched_or_heard": false,
+        "teaching_prompt_sha256": "b93b41e93ecb435f8689c3b8ac4d9d7235ab8022d6bf566fbcd29d30e0ba1239"
+      }
+    }
+  ],
+  "final_sample": {
+    "verification_path": ".runtime/prompt-constraints/samples/scene-sound-plan/verification.json",
+    "verification_sha256": "ab07207fb96039378de837b47d5889df0b135aa6cbf2f1ae834ad40bd4e98852",
+    "public_sample": "samples/scene-sound-plan.md",
+    "public_sample_sha256": "686d90520021ccca621040562167fa9c3c6f2d675b740aa85aac40f4b5dbb52f",
+    "formal_writes": false,
+    "sample_count": 1
   }
 }
