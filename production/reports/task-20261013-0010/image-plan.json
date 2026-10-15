@@ -1,8 +1,8 @@
 {
   "task": "task-20261013-0010",
   "object_id": "method.skill.image-plan",
-  "status": "FIVE_ROUNDS_AND_BOUND_SAMPLE_COMPLETE",
-  "valid_complete_rounds": 5,
+  "status": "FORMAL_PUBLICATION_PENDING",
+  "valid_complete_rounds": 8,
   "reader_model": "gpt-6-astra",
   "reader_effort": "max",
   "reviser_model": "gpt-6-astra",
@@ -89,19 +89,71 @@
       "read_complete_sha256": "2b2c2d941eb6d2faabd5b4139c114cd665fa5fc885fb62b5e22c16f8c0ebc0ad",
       "revision_decision_sha256": "8de33eec4a54f85e3483a5d0a3c18ba6c1dab33b8f7fae4c0b5b5d2c94e1f5c3",
       "evidence_directory": ".runtime/skill-cold-reader-fresh/image-plan/round-05"
+    },
+    {
+      "round": 6,
+      "body_units": 49,
+      "reader_contexts": 50,
+      "native_inferences": 51,
+      "native_events": 602,
+      "decision": "revise",
+      "rationale": "已完整通读49个正文单位、逐段理解与记忆更新、FINISH及全部问题历史。读者能按共同格式与四专项写出用途、可见结构、状态和条件要素，教学例与上下游边界清楚；代数WATCH已由第14段自行解释。采纳唯一仍成立的COMMENT：第6段“新制才准备真实模型与Prompt”与第10段模型改图也需Prompt矛盾。将该句明确为调用模型生成或改图均准备实际模型与Prompt，直接复用及确定性裁切不填模型生成字段。其它四专项和示例保持原稿，避免改变已清楚内容。该修改影响路线选择，必须在第7轮对完整五文件包重新逐段阅读，未以局部复核计完成。",
+      "unresolved": [],
+      "changed_paths": [
+        "SKILL.md"
+      ],
+      "last_material_revision_has_been_read": false,
+      "read_complete_sha256": "cffd505da1f41eabb6120dd5ff7248da3853d5d752d8c9382dcb6ecf3b43cdc0",
+      "frozen_sha256": "7c28cee3275caadfc95c23b6839b765ed679bd87a879bf369e39861e9d63f0e4",
+      "revision_decision_sha256": "cb5d24077b1349a5dc867302ccb7b7e4ec52b3b313f83fa5bf20d5f14cae6c33",
+      "evidence_directory": ".runtime/prompt-constraints/image-plan/round-06"
+    },
+    {
+      "round": 7,
+      "body_units": 49,
+      "reader_contexts": 50,
+      "native_inferences": 50,
+      "native_events": 600,
+      "decision": "revise",
+      "rationale": "完整审阅本轮49个正文单位、FINISH、最终记忆和五份全文。共同格式、六类条件要素、四专项的具体范例及木盒视角修正均被准确理解；唯一保留意见 q0007-01 是确定性裁切是否增加以图生图代数。核对项目 AGENTS.md 的 I2I 两代规则，它约束模型改图累积，确定性裁切不会增加一次模型生成，但不能抹去已有谱系。接受这一局部执行疑问，在共同正文同段明确模型改图加一、裁切继承，以及第1代与第2代裁切后的例子；其余四专项原字节保留。修订解决原文范围歧义，不增加模型次数或允许旧代数清零。新稿须再完整复读后才能作为最终通过稿。",
+      "unresolved": [],
+      "changed_paths": [
+        "SKILL.md"
+      ],
+      "last_material_revision_has_been_read": false,
+      "read_complete_sha256": "f96780c892215c422d3c0c89b56266eb671d3ce6aba8f55078ccf6e5042b4fc7",
+      "frozen_sha256": "031038494d22156f45ed58a979f60fc1beb6c667b5fb55b28d70846b1acb48cd",
+      "revision_decision_sha256": "74e234e7d64ae3302c73da97241964f5214482425b884cef4541a6a8be441a01",
+      "evidence_directory": ".runtime/prompt-constraints/image-plan/round-07"
+    },
+    {
+      "round": 8,
+      "body_units": 49,
+      "reader_contexts": 50,
+      "native_inferences": 50,
+      "native_events": 600,
+      "decision": "keep",
+      "rationale": "作为分离于逐段读者的修订者，已完整阅读本轮49个正文单位及FINISH的50项观察、全部memory_updates、最终facts及唯一问题的完整历史，并通读共同正文和四份专项全文。读者在第7段暂挂的代数疑问，于第14段依据明确计代规则和两项裁切例子得到解释：无图像输入的根图为第0代，模型改图按所有输入的最深代数加1；确定性裁切不增加代数，但继承谱系与既有上限。因此第1代裁切后仍只剩一次模型改图余量，第2代裁切后仍不能继续改图，不存在裁切清零或加入母版抵消深度的漏洞。全文结算未留未决问题。第6、10至13、16段对模型改图同样需要实际Prompt、五部分格式、少量重点、六类条件触发、缺项与保存后回读的要求衔接清楚；四专项教学例均填入具体主体、状态、视角、可见结构和排除条件，木盒背面视角不再要求显露前侧扣环，首帧也没有提前完成动作。角色、空间、物件与镜头画面职责，以及准确原件、原词、复用和确定性编辑不虚构生成字段的边界保持一致。没有继续实质修订的依据，保留五份准确文件，最后改稿已在本轮完整复读。本判断限于已读方法的理解与执行表达，不替代未打开的共享资源核验、实际图像或视频效果验收，也不声称已经正式发布。",
+      "unresolved": [],
+      "changed_paths": [],
+      "last_material_revision_has_been_read": true,
+      "frozen_sha256": "3e10ad3f39f150bf92ddba73e8ab7d08503f2168d4844dec0a21d3e4e7e444cf",
+      "read_complete_sha256": "615616c309fc16324a42265e8854392cd1da8d41e3c65fbbed01f1a15233904e",
+      "revision_decision_sha256": "b6b7fbab058a3883716ce2b48fb6244646101cc070a9720960771dee296e270c",
+      "evidence_directory": ".runtime/prompt-constraints/image-plan/round-08"
     }
   ],
-  "reader_contexts": 142,
-  "native_inferences": 144,
+  "reader_contexts": 292,
+  "native_inferences": 295,
   "candidate_files_sha256": {
-    "SKILL.md": "afe910835c463c18d6a5bfd54aae494212b45c59f78fc22d699e21dc2420ec91",
-    "references/character-image.md": "7bb1cd16dd1e13173cbe286b477c2c8f693dff6586071f9cd70253ed22e2ac90",
-    "references/prop-image.md": "20e52a6f0fe42f268786a676eaab45c21c1e074a01af283a9e6213e209380d93",
-    "references/scene-image.md": "8faaf9ab81315372919b2ebacbd50bfc19f3eef17cb1d31504928a5f1c181ca3",
-    "references/shot-image.md": "bfb4c6d220a488d0eb89b64b4f77c2a8773cfe70ed8957d48d2a6a76e5db1bd1"
+    "SKILL.md": "de7b149482e3477068be6840b8ead59412f880287e5f7df2af76b4cfb3feded5",
+    "references/character-image.md": "15b15ebc4110c439aeb4395a4bb50a768fa69f049aa2193de25e299a5db77ef0",
+    "references/prop-image.md": "1e60eec2fa035e92eb32bba343549664f1d9813b4573c70c3a4028c98cdeb1e0",
+    "references/scene-image.md": "96eb2da545f7b7a2fba2a923f5cfb719315167facd139c9c1daf637c3974ed6b",
+    "references/shot-image.md": "d9494fef36767d74cbc4258138136783ee86c6b3475b69a2b685b5d253db6b46"
   },
-  "candidate_source": ".runtime/skill-cold-reader-fresh/image-plan/round-05/revision-decision.json:next_files",
-  "candidate_decision_sha256": "8de33eec4a54f85e3483a5d0a3c18ba6c1dab33b8f7fae4c0b5b5d2c94e1f5c3",
+  "candidate_source": ".runtime/prompt-constraints/image-plan/round-08/revision-decision.json:next_files",
+  "candidate_decision_sha256": "b6b7fbab058a3883716ce2b48fb6244646101cc070a9720960771dee296e270c",
   "source_report": ".runtime/skill-cold-reader-fresh/image-plan/three-round-report.json",
   "source_report_sha256": "94f158b22dcb2fc65b6f63c22e7f69fa2cffa808aee1c54495a583f0ca21966b",
   "unresolved_text_issues_at_round_3": [],
@@ -113,32 +165,237 @@
   "new_media_generated": false,
   "human_participant_test": false,
   "pending": [
+    "incremental formal publication and latest-only cleanup",
+    "post-publication verification",
     "user completion confirmation",
     "separately owned independent review"
   ],
-  "native_events": 1708,
+  "native_events": 3510,
   "durable_evidence_reverified_at": "2026-10-15T01:02:48.063845+00:00",
   "all_saved_raw_payload_event_and_chain_hashes_equal": true,
+  "current_delivery": {
+    "status": "FORMAL_PUBLICATION_PENDING",
+    "reference": "delivery.md",
+    "prior_delivery_unchanged": true
+  },
+  "prompt_constraint_samples": {
+    "image-character-r8": {
+      "status": "ISOLATED_TEXT_SAMPLE_READ_BACK",
+      "method_reader_status": "image-plan round-08 pending; formal publication gated",
+      "method": {
+        "object_id": "method.skill.image-plan",
+        "revision_id": "817587501303facab88e265b500cdbe8390b3508c40703bd3b6383095624af00",
+        "version": 24
+      },
+      "execution": {
+        "object_id": "method.execution.25616636c94adf1d13f3309ce29744ac00a93a17ed7cad4f703677b76834cec0",
+        "revision_id": "b1dd5e9b3ae9f9bceda8ebd6ce144dde85976eed63f97ed2cde1d0e77e8c56f0"
+      },
+      "result": {
+        "object_id": "method.artifact.0b43c0efc566df4e8fee8f95269a0b72a45156dcfa96df015e5d353dc0d06477",
+        "revision_id": "1e71e36f1de6d8a206c92c06d506fda063476720f4aea701a75b2ebef856ff62"
+      },
+      "result_import_sha256": "9367aefd8275b7dbf14576799527ae378014d889e4aab8789c38d298f94976da",
+      "prompt_sha256": "32bc45966a55b4bc0dfaef271735e02429935218585ea560be9d7f79ed830ea3",
+      "new_generation": false,
+      "production_import": false,
+      "review": "实际回读确认：阿禾单幅全身四分之三视角、头手脚完整、黑发辫与灰紫衣、低饱和二维画风均写进模型正文；镜头剧情和多格图已排除。身份外观来自当前实体制作方向，不冒充小说逐字设定。3:4及历史模型参数留在参数栏，没有将内部编号写入Prompt。保留本稿；实际像素、身份稳定和参考谱系仍待原件与真实调用，不宣称图像已验。 本次沿第24版重新取得准确方法与同一业务输入，逐字回读草稿，四专项及静止机位的实际Prompt仍满足格式、必备内容和按内容触发约束，保留原稿。新补充的谱系规则以制作选择推演核对：第1代确定性裁切后仍为第1代，下次模型改图为第2代；第2代裁切仍为第2代，不能再送模型改图；含第2代与第0代的混合输入仍不得继续。这五个方案未实施裁切，原件未查看、处理或生成。",
+      "prior_prompt_bytes_equal": true
+    },
+    "image-scene-r8": {
+      "status": "ISOLATED_TEXT_SAMPLE_READ_BACK",
+      "method_reader_status": "image-plan round-08 pending; formal publication gated",
+      "method": {
+        "object_id": "method.skill.image-plan",
+        "revision_id": "817587501303facab88e265b500cdbe8390b3508c40703bd3b6383095624af00",
+        "version": 24
+      },
+      "execution": {
+        "object_id": "method.execution.b6670c59763e421e35a6a5918926eb7dec60217dfcc7582d34da0e9db1b058c4",
+        "revision_id": "ce5493446cfcd6b2e6ba849bddd6775bb187c469298f53b5aab6070b8becf181"
+      },
+      "result": {
+        "object_id": "method.artifact.eae245fbdddb264ef2543a285d06527698be4cf121a64f393be35f42665fe6d5",
+        "revision_id": "acfc84c6b0ec81a039cb9f0789547ce09694b223e2979cce9f40b7ef84606479"
+      },
+      "result_import_sha256": "4d2add7a13cfbaeceb1ab9859fb891b80f8bc01602b3e26b39212ceb66f7c6f1",
+      "prompt_sha256": "ea7875a0dec6232e819ab924c77467c60e66191fb20754489dc550a6b63d8ff6",
+      "new_generation": false,
+      "production_import": false,
+      "review": "实际回读发现：原实体写空小凳在陶伯自身左侧，初稿误简化成未定义的低座左侧，并拟为画面左侧。这会把人物相对方向误当成画面方向。结果稿明确本样例新设的座位朝向：陶伯日后在低座面向米铺，空凳在其自身左侧，因此从米铺看来的画面右侧；本图仍无人。该朝向是待核准的方案选择，须与反打一并核对，不能冒充源文已定。其余两座位、后架、通路、接地与尺度约束保留。 本次沿第24版重新取得准确方法与同一业务输入，逐字回读草稿，四专项及静止机位的实际Prompt仍满足格式、必备内容和按内容触发约束，保留原稿。新补充的谱系规则以制作选择推演核对：第1代确定性裁切后仍为第1代，下次模型改图为第2代；第2代裁切仍为第2代，不能再送模型改图；含第2代与第0代的混合输入仍不得继续。这五个方案未实施裁切，原件未查看、处理或生成。",
+      "prior_prompt_bytes_equal": true
+    },
+    "image-prop-r8": {
+      "status": "ISOLATED_TEXT_SAMPLE_READ_BACK",
+      "method_reader_status": "image-plan round-08 pending; formal publication gated",
+      "method": {
+        "object_id": "method.skill.image-plan",
+        "revision_id": "817587501303facab88e265b500cdbe8390b3508c40703bd3b6383095624af00",
+        "version": 24
+      },
+      "execution": {
+        "object_id": "method.execution.02551cbe7b48f9f4b46c27d1a2acd6eab88ed0424767c26ce18b79350e1bc698",
+        "revision_id": "cf980951fe9c0052625a4d1dedb0eeb27427ec812691518c994d5b770e6a8b24"
+      },
+      "result": {
+        "object_id": "method.artifact.03a9da5f4a610c424fbdfd6b65ba4a624bc5afcafae4f9af08d0bbd64a2c28c3",
+        "revision_id": "2131d24efe6b4ada9a3856cfc2601bdddd19e2dd0da616d87f470261cf96d348"
+      },
+      "result_import_sha256": "892b4a8af61a86db4fa307c62fa01b683d0cea46197c23e2e3d795f9d19f53f4",
+      "prompt_sha256": "d74efa56d1ebe011d9b1a946dbd95be36e4fb447f445d0b3fc34d91659404799",
+      "new_generation": false,
+      "production_import": false,
+      "review": "实际回读确认：一根完整扁担、材质轮廓、肩部扁平和两头钝圆、轻俯斜视与无截断均进入Prompt；没有凭用途增加柴草或人物动作。它是道具类型母版，不将跨场景同类道具误当成同一件原物。保留本稿；4:3和请求规格不等于实际原件尺寸，未调用生成。 本次沿第24版重新取得准确方法与同一业务输入，逐字回读草稿，四专项及静止机位的实际Prompt仍满足格式、必备内容和按内容触发约束，保留原稿。新补充的谱系规则以制作选择推演核对：第1代确定性裁切后仍为第1代，下次模型改图为第2代；第2代裁切仍为第2代，不能再送模型改图；含第2代与第0代的混合输入仍不得继续。这五个方案未实施裁切，原件未查看、处理或生成。",
+      "prior_prompt_bytes_equal": true
+    },
+    "image-shot-r8": {
+      "status": "ISOLATED_TEXT_SAMPLE_READ_BACK",
+      "method_reader_status": "image-plan round-08 pending; formal publication gated",
+      "method": {
+        "object_id": "method.skill.image-plan",
+        "revision_id": "817587501303facab88e265b500cdbe8390b3508c40703bd3b6383095624af00",
+        "version": 24
+      },
+      "execution": {
+        "object_id": "method.execution.f3ab1d2cdf27efd0a3472919446d3000fbd67a32b98b1e38bea307824f0d2038",
+        "revision_id": "b2edd3c43810069aa575dfdf02977e992042aa5dcf8fdfbd58b48964bd0fec61"
+      },
+      "result": {
+        "object_id": "method.artifact.1f554f52715cc118af747eee24226d0dc3922e289d53990ff8644f1a8b05ed3e",
+        "revision_id": "523b3700c16ef7c6ab662a445cdfad1d36a8990e8c493c146813a77d0c90b25a"
+      },
+      "result_import_sha256": "7d447b44ea65bb1b737d9a220cd49054629ede3d0ad004691568ad393395e561",
+      "prompt_sha256": "4ca500d1c62e8ac51c1a5218cb68039eaee240ed4515e04d2d9f7f89423eac98",
+      "new_generation": false,
+      "production_import": false,
+      "review": "实际回读发现：起点已翻好页、手已释放、歌本与篮石接触成立，但两人相对站位和扁担由哪只手扶住未明确，难与相邻视频衔接。结果稿补入本样例拟定站位：阿蘅在篮后，老汉靠街一侧，右手扶扁担、左手自然垂下；其余内容保留。它们是当前样例方案，待七项图像输入选定后核对，不能据此宣称原件一致。首帧只定单一状态，后续笑答与收腔不提前画入。 本次沿第24版重新取得准确方法与同一业务输入，逐字回读草稿，四专项及静止机位的实际Prompt仍满足格式、必备内容和按内容触发约束，保留原稿。新补充的谱系规则以制作选择推演核对：第1代确定性裁切后仍为第1代，下次模型改图为第2代；第2代裁切仍为第2代，不能再送模型改图；含第2代与第0代的混合输入仍不得继续。这五个方案未实施裁切，原件未查看、处理或生成。",
+      "prior_prompt_bytes_equal": true
+    },
+    "image-camera-r8": {
+      "status": "ISOLATED_TEXT_SAMPLE_READ_BACK",
+      "method_reader_status": "image-plan round-08 pending; formal publication gated",
+      "method": {
+        "object_id": "method.skill.image-plan",
+        "revision_id": "817587501303facab88e265b500cdbe8390b3508c40703bd3b6383095624af00",
+        "version": 24
+      },
+      "execution": {
+        "object_id": "method.execution.de5d958a5bf2fd4fb104aee1d20bad7a6dca5746414b9ac17c119d34ef7521a6",
+        "revision_id": "af8455fb46315031064b2e874f28a1e96f4b3073c63c4bf7deca791f73165458"
+      },
+      "result": {
+        "object_id": "method.artifact.bab64e6004c2b37874d8d40c7c5391ab2cb3ea44f784cbc8d897b6e25ec6500c",
+        "revision_id": "a13c2b8507dc548938d9354355ac4243b8082298a085be09e50e6e634a18990b"
+      },
+      "result_import_sha256": "2525aeec037bb646d6581175deea88b392d89fb243f9fb72f97bf0641d13a2ea",
+      "prompt_sha256": "ece17ec6a68e7c92f75d1340a35120ccb06e3bf56ae4893e7f0cfb4d444f2a6e",
+      "new_generation": false,
+      "production_import": false,
+      "review": "实际回读确认：ASH001环境机位图只画米铺、街道与出入口的静态关系，街侧入口留在画面左边，原运镜只转为空间余量；不画运动箭头或一图多时刻。两项输入中米铺仍未选、河街有既定候选，保留原准确关系，没有将已选河街错误清空。文本可提交准备不等于已核原件、接地和轴线；这些仍按阻碍项保留。 本次沿第24版重新取得准确方法与同一业务输入，逐字回读草稿，四专项及静止机位的实际Prompt仍满足格式、必备内容和按内容触发约束，保留原稿。新补充的谱系规则以制作选择推演核对：第1代确定性裁切后仍为第1代，下次模型改图为第2代；第2代裁切仍为第2代，不能再送模型改图；含第2代与第0代的混合输入仍不得继续。这五个方案未实施裁切，原件未查看、处理或生成。",
+      "prior_prompt_bytes_equal": true
+    }
+  },
+  "prompt_constraint_sample_report": {
+    "path": "production/reports/task-20261013-0010/samples/image-plan.md",
+    "sha256": "b26f68b8071063fa2610dbecf45e328db653d826df10262328f3e1044ad48939"
+  },
+  "prompt_constraint_browser": {
+    "image-plan": {
+      "path": ".runtime/prompt-constraints/browser/image-plan.json",
+      "sha256": "f1b72b1b430f5d635ac0b8f883b4a15f148c6f6261d7b0773050e5d0af972f4a"
+    },
+    "image-character": {
+      "path": ".runtime/prompt-constraints/browser/image-character.json",
+      "sha256": "d35167f93fcf8e7693dafe90057ead748aef4072843f5df930c863013712e264"
+    },
+    "image-scene": {
+      "path": ".runtime/prompt-constraints/browser/image-scene.json",
+      "sha256": "8ed5f90ed55f5661e6bc5e6da189d4b45dea049504d7e467fb27231c5c0956d4"
+    },
+    "image-prop": {
+      "path": ".runtime/prompt-constraints/browser/image-prop.json",
+      "sha256": "6a9c12fcf7779aa6cd436d9869214de04cc691f82773184e024329d787beb16b"
+    },
+    "image-shot": {
+      "path": ".runtime/prompt-constraints/browser/image-shot.json",
+      "sha256": "621db2492b6f1a594f3e33f9eeb1ab6e96a28fd56b46af5322cb7b69700d6f94"
+    },
+    "image-plan-r8": {
+      "path": ".runtime/prompt-constraints/browser/image-plan-r8.json",
+      "sha256": "19ce56b95c5c9b48d229f22ded97f198298af3983c9076157a010db85ea14221"
+    }
+  },
+  "previous_delivery": {
+    "scope": "Previously delivered five-round image method; does not establish publication of the new candidate.",
+    "valid_complete_rounds": 5,
+    "final_method": {
+      "object_id": "method.skill.image-plan",
+      "revision_id": "9e4ee3596f4991cd18c5355bfa3b9740a090c9a592c0944ff6abfd8ff5d096e8",
+      "version": 22
+    },
+    "final_linkage_receipt": {
+      "path": ".runtime/skill-cold-reader-fresh/image-plan/final-linkage/receipt.json",
+      "sha256": "1719351815efc6766018cad4a516c5bbefcba5cf95d2579c6b5237575828ec25"
+    },
+    "final_sample": {
+      "verification_path": ".runtime/skill-cold-reader-fresh/image-plan/sample/verification.json",
+      "verification_sha256": "7125fedcdcb239ad722a1343d0e822eb312d32c0d23adfeb3be206c64e3a2e79",
+      "public_sample": "samples/image-plan.md",
+      "public_sample_sha256": "f01706c7e5d2d93e1c02bc3b289624d40dccbae050f96f5566a7b53de45e668b",
+      "formal_writes": false
+    },
+    "candidate_files_sha256": {
+      "SKILL.md": "afe910835c463c18d6a5bfd54aae494212b45c59f78fc22d699e21dc2420ec91",
+      "references/character-image.md": "7bb1cd16dd1e13173cbe286b477c2c8f693dff6586071f9cd70253ed22e2ac90",
+      "references/prop-image.md": "20e52a6f0fe42f268786a676eaab45c21c1e074a01af283a9e6213e209380d93",
+      "references/scene-image.md": "8faaf9ab81315372919b2ebacbd50bfc19f3eef17cb1d31504928a5f1c181ca3",
+      "references/shot-image.md": "bfb4c6d220a488d0eb89b64b4f77c2a8773cfe70ed8957d48d2a6a76e5db1bd1"
+    },
+    "candidate_source": ".runtime/skill-cold-reader-fresh/image-plan/round-05/revision-decision.json:next_files",
+    "candidate_decision_sha256": "8de33eec4a54f85e3483a5d0a3c18ba6c1dab33b8f7fae4c0b5b5d2c94e1f5c3",
+    "durable_evidence_reverified_at": "2026-10-15T01:02:48.063845+00:00"
+  },
+  "final_samples": [
+    {
+      "name": "image-character-r8",
+      "verification": {
+        "path": ".runtime/prompt-constraints/samples/image-character-r8/verification.json",
+        "sha256": "220d9ca36944bc7132525b1d61de003b3b5caac10a8174ff5f8df2986fa02bc3"
+      }
+    },
+    {
+      "name": "image-scene-r8",
+      "verification": {
+        "path": ".runtime/prompt-constraints/samples/image-scene-r8/verification.json",
+        "sha256": "a0ca7f17c4f397e9ba79f3c4d4e95b0ba2bb0233991e05ec6d995703994a27f7"
+      }
+    },
+    {
+      "name": "image-prop-r8",
+      "verification": {
+        "path": ".runtime/prompt-constraints/samples/image-prop-r8/verification.json",
+        "sha256": "3eb6d592faee9ae8fcac8094abb61cb469d91db4325466d79d1de35f9dc50565"
+      }
+    },
+    {
+      "name": "image-shot-r8",
+      "verification": {
+        "path": ".runtime/prompt-constraints/samples/image-shot-r8/verification.json",
+        "sha256": "4209000ca22c51ff318778f6f1b6183820ca71e59ad4eba95709f414b2a8ca89"
+      }
+    },
+    {
+      "name": "image-camera-r8",
+      "verification": {
+        "path": ".runtime/prompt-constraints/samples/image-camera-r8/verification.json",
+        "sha256": "1dd3d05fa4c20c60bed0bd53ac792c347c372a4a1141bd0b6cbfb4fc93c96e4f"
+      }
+    }
+  ],
   "final_method": {
     "object_id": "method.skill.image-plan",
-    "revision_id": "9e4ee3596f4991cd18c5355bfa3b9740a090c9a592c0944ff6abfd8ff5d096e8",
-    "version": 22
+    "revision_id": "817587501303facab88e265b500cdbe8390b3508c40703bd3b6383095624af00",
+    "version": 24
   },
-  "final_linkage_receipt": {
-    "path": ".runtime/skill-cold-reader-fresh/image-plan/final-linkage/receipt.json",
-    "sha256": "1719351815efc6766018cad4a516c5bbefcba5cf95d2579c6b5237575828ec25"
-  },
-  "final_sample": {
-    "verification_path": ".runtime/skill-cold-reader-fresh/image-plan/sample/verification.json",
-    "verification_sha256": "7125fedcdcb239ad722a1343d0e822eb312d32c0d23adfeb3be206c64e3a2e79",
-    "public_sample": "samples/image-plan.md",
-    "public_sample_sha256": "f01706c7e5d2d93e1c02bc3b289624d40dccbae050f96f5566a7b53de45e668b",
-    "formal_writes": false
-  },
-  "current_delivery": {
-    "status": "LOCAL_FORMAL_DELIVERY_VERIFIED_AWAITING_USER_CONFIRMATION",
-    "reference": "delivery.md",
-    "browser": "formal-browser.json",
-    "complete_recovery": "final-recovery.json"
-  }
+  "added_final_round_evidence_reverified_at": "2026-10-15T11:05:07.186564+00:00"
 }

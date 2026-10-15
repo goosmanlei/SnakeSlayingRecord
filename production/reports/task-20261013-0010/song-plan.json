@@ -1,8 +1,8 @@
 {
   "task": "task-20261013-0010",
   "object_id": "method.skill.song-plan",
-  "status": "FIVE_ROUNDS_AND_FINAL_SAMPLE_COMPLETE",
-  "valid_complete_rounds": 5,
+  "status": "FORMAL_PUBLICATION_PENDING",
+  "valid_complete_rounds": 6,
   "reader_model": "gpt-6-astra",
   "reader_effort": "max",
   "reviser_model": "gpt-6-astra",
@@ -89,15 +89,31 @@
       "read_complete_sha256": "edcac5c60ad569e00874fe2be898a842c52f3889ee4093555593225f68bc75bd",
       "revision_decision_sha256": "c08d7f5af402edfdc123b875e7928824cb7d1c6b0262a6ec219054ce06aa9c40",
       "evidence_directory": ".runtime/skill-cold-reader-fresh/song-plan/round-05"
+    },
+    {
+      "round": 6,
+      "body_units": 27,
+      "reader_contexts": 28,
+      "native_inferences": 28,
+      "native_events": 336,
+      "decision": "keep",
+      "rationale": "作为独立于逐段读者的修订者，已全文阅读本轮27段理解、FINISH结算和最终memory，并核对当前SKILL及实际完整词稿小样。全部逐段记录均无待保留的理解问题，全文结算也没有未解决项。正文先说明歌曲或唱段职责，再按作品与演唱者、乐句发展、织体与完整性组织说明；完整歌词独立保存，按实际入口映射或组合而不虚构字段。重复展开、短唱段写全、纯哼唱不编词，多声部、固定旋律、字音和视频交接均有真实触发条件，缺项仍保留草稿。四行教学例的词句、情绪推进、换气与尾音彼此对应，且明确没有正式生成或采纳。完整原件、复用与后期不造生成字段、能力执行前核验以及实际Prompt回读的边界都清楚。因此保持全部文件，无进一步实质修订依据。此决定不宣称媒体已经生成、试听或通过听审；受管方法样例由主执行按最终方法另行保存核对。",
+      "unresolved": [],
+      "changed_paths": [],
+      "last_material_revision_has_been_read": true,
+      "frozen_sha256": "82b7fee992b16ccd82f611ff18ffe33b6bb608961d316a68d3913488b56fca38",
+      "read_complete_sha256": "77e431606866f20077b71d38baf79364a0597620b13ea725812e868e0e416ded",
+      "revision_decision_sha256": "b9f890f0b407131a16d42bd711141ab9a57e8695c512809605f05eb4b1776b60",
+      "evidence_directory": ".runtime/prompt-constraints/audio-author/song-plan/round-06"
     }
   ],
-  "reader_contexts": 54,
-  "native_inferences": 54,
+  "reader_contexts": 82,
+  "native_inferences": 82,
   "candidate_files_sha256": {
-    "SKILL.md": "c56fb147e7a85f129311bd84ee2d7a17ffe21480fe107229214bd38f94a1dd85"
+    "SKILL.md": "db5320055531da4a591f4fed766448b41b354adb88f06c263229a224ee55355e"
   },
-  "candidate_source": ".runtime/skill-cold-reader-fresh/song-plan/round-05/revision-decision.json:next_files",
-  "candidate_decision_sha256": "c08d7f5af402edfdc123b875e7928824cb7d1c6b0262a6ec219054ce06aa9c40",
+  "candidate_source": ".runtime/prompt-constraints/audio-author/song-plan/round-06/revision-decision.json:next_files",
+  "candidate_decision_sha256": "b9f890f0b407131a16d42bd711141ab9a57e8695c512809605f05eb4b1776b60",
   "source_report": ".runtime/skill-cold-reader-fresh/song-plan/three-round-report.json",
   "source_report_sha256": "10a1859788a3e17ea97809cdf5089b04f5410948cd43fb5a8fa4a59f83dc4781",
   "unresolved_text_issues_at_round_3": [],
@@ -109,33 +125,226 @@
   "new_media_generated": false,
   "human_participant_test": false,
   "pending": [
+    "formal method publication",
+    "post-publication verification and task cleanup",
     "user completion confirmation",
     "separately owned independent review"
   ],
-  "native_events": 648,
-  "durable_evidence_reverified_at": "2026-10-15T01:22:45.973848+00:00",
+  "native_events": 984,
   "all_saved_raw_payload_event_and_chain_hashes_equal": true,
   "final_method": {
     "object_id": "method.skill.song-plan",
-    "revision_id": "301bcf3f9f8d8d0db5bfabac9d7080d460e6f69e99272bb193d47c92013d5b5c",
-    "version": 15
+    "revision_id": "ef58717d64a81dddce0aea5e5bcbc782f4b88dc93085b2ddfe6d93e3046961ad",
+    "version": 16
   },
   "final_linkage_receipt": {
-    "path": ".runtime/skill-cold-reader-fresh/song-plan/final-linkage/receipt.json",
-    "sha256": "21b29fa4ec77e896e9892b1880541db302dbebf9373ee1cdad9c109e16e41c8b"
+    "path": ".runtime/prompt-constraints/samples/song-whole/delivery.json",
+    "sha256": "fd53e24626ca3d77c71bb557f9d3a72684dc71837bb8e8ac62682480fa168a0d"
   },
   "final_sample": {
-    "verification_path": ".runtime/skill-cold-reader-fresh/song-plan/sample/verification.json",
-    "verification_sha256": "13f79f481b8b3d431916aa43006cc18a88ba572a0ebc2153e06cc52feff41fcc",
+    "verification_path": ".runtime/prompt-constraints/samples/song-whole/verification.json",
+    "verification_sha256": "0a18427f5adeb017997530bf598dc3abeffe080c7dc4c7bc52c1b6a97f83a054",
     "public_sample": "samples/song-plan.md",
-    "public_sample_sha256": "f38d3d24b46ada3da380e95f2172670dc92c5e2a1f18be4175323c92a4dcfa7a",
-    "formal_writes": false
+    "public_sample_sha256": "56f7074269156a1c4e36d218ff680c0cfdd4d1a4d5a8759b24663c11532485e5",
+    "formal_writes": false,
+    "sample_count": 2
   },
   "outer_description_sync_pending": false,
   "current_delivery": {
-    "status": "LOCAL_FORMAL_DELIVERY_VERIFIED_AWAITING_USER_CONFIRMATION",
+    "status": "FORMAL_PUBLICATION_PENDING",
+    "scope": "Current Prompt-constraint candidate is saved, bound and sampled in the task isolated instance; formal publication and post-publication verification have not occurred.",
     "reference": "delivery.md",
-    "browser": "formal-browser.json",
-    "complete_recovery": "final-recovery.json"
+    "prior_delivery_unchanged": true
+  },
+  "candidate_package": {
+    "path": ".runtime/prompt-constraints/audio-author/song-plan/package.json",
+    "sha256": "af16e57d18f07753ef171df8995fc8724e52ca8e288a92240bc9b497a65ee548"
+  },
+  "isolated_browser_checked": true,
+  "previous_delivery": {
+    "scope": "Previous formally delivered method only; not evidence that the current Prompt-constraint candidate is formally published.",
+    "valid_complete_rounds": 5,
+    "final_method": {
+      "object_id": "method.skill.song-plan",
+      "revision_id": "301bcf3f9f8d8d0db5bfabac9d7080d460e6f69e99272bb193d47c92013d5b5c",
+      "version": 15
+    },
+    "final_linkage_receipt": {
+      "path": ".runtime/skill-cold-reader-fresh/song-plan/final-linkage/receipt.json",
+      "sha256": "21b29fa4ec77e896e9892b1880541db302dbebf9373ee1cdad9c109e16e41c8b"
+    },
+    "final_sample": {
+      "verification_path": ".runtime/skill-cold-reader-fresh/song-plan/sample/verification.json",
+      "verification_sha256": "13f79f481b8b3d431916aa43006cc18a88ba572a0ebc2153e06cc52feff41fcc",
+      "public_sample": "samples/song-plan.md",
+      "public_sample_sha256": "f38d3d24b46ada3da380e95f2172670dc92c5e2a1f18be4175323c92a4dcfa7a",
+      "formal_writes": false
+    },
+    "candidate_files_sha256": {
+      "SKILL.md": "c56fb147e7a85f129311bd84ee2d7a17ffe21480fe107229214bd38f94a1dd85"
+    },
+    "durable_evidence_reverified_at": "2026-10-15T01:22:45.973848+00:00",
+    "current_delivery": {
+      "status": "LOCAL_FORMAL_DELIVERY_VERIFIED_AWAITING_USER_CONFIRMATION",
+      "reference": "delivery.md",
+      "browser": "formal-browser.json",
+      "complete_recovery": "final-recovery.json"
+    }
+  },
+  "added_rounds_evidence_reverified_at": {
+    "round-06": "2026-10-15T09:32:20.586+00:00"
+  },
+  "final_samples": [
+    {
+      "name": "song-whole",
+      "method": {
+        "object_id": "method.skill.song-plan",
+        "revision_id": "ef58717d64a81dddce0aea5e5bcbc782f4b88dc93085b2ddfe6d93e3046961ad",
+        "version": 16
+      },
+      "binding": {
+        "object_id": "method.binding.media-plan",
+        "revision_id": "172c5c067d76e4f44d23975d2b36e9a301dac7dd21d6c4bb87323ba3440530f4"
+      },
+      "resolved_method_package_sha256": "3f8aba463248d154040a1136272831d4986d99ad6c1d3c73b1c82c38fc90a3b5",
+      "verification": {
+        "path": ".runtime/prompt-constraints/samples/song-whole/verification.json",
+        "sha256": "0a18427f5adeb017997530bf598dc3abeffe080c7dc4c7bc52c1b6a97f83a054"
+      },
+      "delivery": {
+        "path": ".runtime/prompt-constraints/samples/song-whole/delivery.json",
+        "sha256": "fd53e24626ca3d77c71bb557f9d3a72684dc71837bb8e8ac62682480fa168a0d"
+      },
+      "result_stage": {
+        "path": ".runtime/prompt-constraints/samples/song-whole/stage-result-value.json",
+        "sha256": "5b8902b6fa00a4f3566c09be6ac6130281b25076fa4760ac952ab4d61e17aa37"
+      },
+      "result_import": {
+        "path": ".runtime/prompt-constraints/samples/song-whole/result-import.json",
+        "sha256": "df0c3114e9a09b147595324b192d1ae18d9277638ae4d00782f0c47b268cc529"
+      },
+      "all_three_stages_read_back": true,
+      "production_imported": false,
+      "verification_details": {
+        "method": {
+          "object_id": "method.skill.song-plan",
+          "revision_id": "ef58717d64a81dddce0aea5e5bcbc782f4b88dc93085b2ddfe6d93e3046961ad"
+        },
+        "execution": {
+          "object_id": "method.execution.19cd92c28221801f367605c8c449896d4825749db048ee622f85dd355208132a",
+          "revision_id": "f6b508a4a26cf5360b328a6cedf605fcabe2e61acabfdaa560d4d2acda899b5e"
+        },
+        "result": {
+          "object_id": "method.artifact.3533fca79d5d911dc49fd14aaebeeb80f6509aaa24eae010fb92dc132f5c928a",
+          "revision_id": "8137667495bc2b60f79e7d2642d4af8694ee7987135a13817ad09b50d4bab976"
+        },
+        "result_import_sha256": "df0c3114e9a09b147595324b192d1ae18d9277638ae4d00782f0c47b268cc529",
+        "method_url": "http://127.0.0.1:55188",
+        "all_three_stages_read_back": true,
+        "production_imported": false,
+        "new_media_generated": false,
+        "media_watched_or_heard": false,
+        "need_video": false,
+        "prompt_sha256": "d3c4c784cc0047f001c86b2e936144fd01ec9d9da901c231e71136432fca0fae",
+        "lyric_lines": 16,
+        "lyrics_match_exact_source": true
+      }
+    },
+    {
+      "name": "song-short",
+      "method": {
+        "object_id": "method.skill.song-plan",
+        "revision_id": "ef58717d64a81dddce0aea5e5bcbc782f4b88dc93085b2ddfe6d93e3046961ad",
+        "version": 16
+      },
+      "binding": {
+        "object_id": "method.binding.media-plan",
+        "revision_id": "172c5c067d76e4f44d23975d2b36e9a301dac7dd21d6c4bb87323ba3440530f4"
+      },
+      "resolved_method_package_sha256": "ba192ad4ea5e22f1f47b064abaf29f302c6d6e61c98037058c2b5081496ad279",
+      "verification": {
+        "path": ".runtime/prompt-constraints/samples/song-short/verification.json",
+        "sha256": "937c34866a0e7fbd860ac04b59f5f404be60950c77f0d22192d7bc6d995a7894"
+      },
+      "delivery": {
+        "path": ".runtime/prompt-constraints/samples/song-short/delivery.json",
+        "sha256": "d9e625a7ddb60c62ab1b9c27ad0e07ea06a214f08f98b459b9bfaa39be9f2747"
+      },
+      "result_stage": {
+        "path": ".runtime/prompt-constraints/samples/song-short/stage-result-value.json",
+        "sha256": "53e7d73993ec5ca4eb8cfaaaab26ebf0ca7aca30c38d87615c1489586065d4c2"
+      },
+      "result_import": {
+        "path": ".runtime/prompt-constraints/samples/song-short/result-import.json",
+        "sha256": "81dac098698fb4b51e904bf12f96c38f4bd6d1feee117446aa7d31b5a4f5d0cf"
+      },
+      "all_three_stages_read_back": true,
+      "production_imported": false,
+      "verification_details": {
+        "method": {
+          "object_id": "method.skill.song-plan",
+          "revision_id": "ef58717d64a81dddce0aea5e5bcbc782f4b88dc93085b2ddfe6d93e3046961ad"
+        },
+        "execution": {
+          "object_id": "method.execution.dd643391263a14e20218754d18a870a1bee063012630032e57660530604f0e80",
+          "revision_id": "17001be2cf5fa6c1bf6e5d21e8c54f9520a1cbc2e1199e7e94a909c1fe6e6b0a"
+        },
+        "result": {
+          "object_id": "method.artifact.e472c5abff6e4aad42d2a94e4a69e2986acb46968cd30b018f5c6138011b0627",
+          "revision_id": "1f2b0348ac71cac2551214b610735cb29e0583fda12351be723a87b2c6f945a9"
+        },
+        "result_import_sha256": "81dac098698fb4b51e904bf12f96c38f4bd6d1feee117446aa7d31b5a4f5d0cf",
+        "method_url": "http://127.0.0.1:55188",
+        "all_three_stages_read_back": true,
+        "production_imported": false,
+        "new_media_generated": false,
+        "media_watched_or_heard": false,
+        "need_video": true
+      }
+    }
+  ],
+  "prompt_constraint_revision": {
+    "trigger": "用户要求各素材Prompt方法明确格式、必备要素及按内容触发的条件要素，并兼顾人和AI阅读。",
+    "rounds": [
+      6
+    ],
+    "evidence_directory": ".runtime/prompt-constraints/audio-author/song-plan",
+    "previous_102_rounds_reused": true,
+    "shared_sources_unchanged": true,
+    "sample_report": "samples/song-plan.md",
+    "isolated_browser": [
+      {
+        "path": ".runtime/prompt-constraints/browser/song-plan.json",
+        "sha256": "42da7dc427ef676de630ab2096c019d180cfc1eb10cf3dd3e96d5e3a31b92291",
+        "method_revision_id": "ef58717d64a81dddce0aea5e5bcbc782f4b88dc93085b2ddfe6d93e3046961ad",
+        "scope": "task isolated Chrome evidence",
+        "evidence_fields": [
+          "body",
+          "comparison"
+        ]
+      }
+    ],
+    "before": "要求检查全部歌词、重复与尾声，但未规定完整词稿与音乐、发音及导演说明怎样分离。",
+    "after": "独立完成风格与演唱说明、完整歌词，再按真实接口分填或组合；重复展开、纯哼唱不编词，按内容补旋律、声部、字音和视频条件。",
+    "native_prefix_recovery": {
+      "path": ".runtime/prompt-constraints/native-prefix-14f3-review.json",
+      "sha256": "0802de9854bbd304b2c04ea3bc0465cbcff0ba2d3354bed7100269df0a877867",
+      "unit": 11,
+      "existing_result_audited_without_reinvocation": true
+    }
+  },
+  "lyric_verification": {
+    "source_entity": {
+      "object_id": "entity-boat-song",
+      "revision_id": "e487bbae6c8b0e3144bd2b1a66049f65b928e8ddb15840bc977eb215e2711b3a"
+    },
+    "source_path": ".runtime/prompt-constraints/samples/song-whole/delivery.json:request.inputs.records[0].payload.song_work.lines",
+    "line_count": 16,
+    "actual_prompt_matches_exact_source": true,
+    "result_record": {
+      "path": ".runtime/prompt-constraints/sample-records/song-whole-result.json",
+      "sha256": "1487323752253c4370d7b484283726d3144d2e6a2feb2e3928cdae432cea21bf"
+    },
+    "prompt_sha256": "d3c4c784cc0047f001c86b2e936144fd01ec9d9da901c231e71136432fca0fae"
   }
 }

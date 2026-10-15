@@ -1,8 +1,8 @@
 {
   "task": "task-20261013-0010",
   "item": "video-plan",
-  "status": "FIVE_ROUNDS_AND_FINAL_BOUND_SAMPLE_COMPLETE",
-  "valid_complete_rounds": 5,
+  "status": "FORMAL_PUBLICATION_PENDING",
+  "valid_complete_rounds": 6,
   "rounds": [
     {
       "round": 1,
@@ -98,11 +98,27 @@
       "read_complete_sha256": "b887ac63cec439b6d0ca34a87e81fabd9cc16e4b7a11c0815838e5cd2b23224d",
       "revision_decision_sha256": "3b89d42999d0add61b26d3dac641d2da950e09ac3eb4cb42c8ff6bc67c4020e0",
       "evidence_directory": ".runtime/skill-cold-reader-fresh/video-plan/round-05"
+    },
+    {
+      "round": 6,
+      "body_units": 61,
+      "reader_contexts": 62,
+      "native_inferences": 62,
+      "native_events": 744,
+      "decision": "keep",
+      "rationale": "完整审阅本轮 61 个正文单位及全文结算的真实理解、记忆更新和问题，并回读最终记忆与三份冻结全文。读者准确区分实际提交 Prompt 的五部分格式、按内容触发的六类要素、局部 0—T 连续声画时间线、参数/输入/后期交付的分工，以及历史案例仅作局部分析的边界。原词真实重复与同次尾腔延续未被混淆；固定机位跨时间段继续成立；完整原件与待补附件的边界明确。结合已完成的相邻三镜隔离实际样例，未发现需继续实质改稿的问题，保留本轮全部准确字节。结论限于文字理解和方案执行，不是新视频效果验收。",
+      "unresolved": [],
+      "changed_paths": [],
+      "last_material_revision_has_been_read": true,
+      "frozen_sha256": "7935557162cb095ba3efdaa0e6ce56070df40856f15169b25af981ef941038bd",
+      "read_complete_sha256": "dabcc0230620127e47294def91214f126a1b814075f1b69c4923e05fd219281a",
+      "revision_decision_sha256": "581bc18ad676b56560372a219aa7c7fe4f7baf6705181eed1b29d6e224846277",
+      "evidence_directory": ".runtime/prompt-constraints/video-plan/round-06"
     }
   ],
-  "reader_contexts": 223,
-  "native_inferences": 223,
-  "native_events": 2676,
+  "reader_contexts": 285,
+  "native_inferences": 285,
+  "native_events": 3420,
   "reader_model": "gpt-6-astra",
   "reader_effort": "max",
   "reviser_model": "gpt-6-astra",
@@ -110,7 +126,7 @@
   "durable_evidence_reverified_at": "2026-10-15T00:40:09.120563+00:00",
   "all_saved_raw_payload_event_and_chain_hashes_equal": true,
   "final_sample_complete": true,
-  "formal_publication": true,
+  "formal_publication": false,
   "human_participant_test": false,
   "queued_coordinator_followups": {
     "path": ".runtime/skill-cold-reader-fresh/video-plan/coordinator-followups.json",
@@ -121,40 +137,175 @@
     "complete_reread_pending": false,
     "complete_reread_round": 5
   },
-  "candidate_source": ".runtime/skill-cold-reader-fresh/video-plan/round-05/revision-decision.json:next_files",
-  "candidate_decision_sha256": "3b89d42999d0add61b26d3dac641d2da950e09ac3eb4cb42c8ff6bc67c4020e0",
+  "candidate_source": ".runtime/prompt-constraints/video-plan/round-06/revision-decision.json:next_files",
+  "candidate_decision_sha256": "581bc18ad676b56560372a219aa7c7fe4f7baf6705181eed1b29d6e224846277",
   "candidate_files_sha256": {
-    "SKILL.md": "b6bfde989b3f0cdc5938dbf5b7bfc9eb5e511b5f0e8578f07677b6e4fe7e2158",
-    "references/prompt-review.md": "257d02931a0912bafcc9419a0e694314cc69b74e8aa8ec8de01294f6470e565c",
+    "SKILL.md": "05e1a4add082efbdf67ab1d35565903aa72650e596d1b39eb7a7dc3455bab437",
+    "references/prompt-review.md": "06487ec1e817e96d8c4132cbc4fd27c7cce2ee914e1c2f899d1a58e62cd724b9",
     "references/worked-examples.md": "7a19b23f7b6e4c6db91d628b258f3e28f56b88384781a6ee89c3bec2c028e9e1"
   },
   "last_revision_fully_reread": true,
   "pending": [
+    "incremental formal publication and latest-only cleanup",
+    "post-publication verification",
     "user completion confirmation",
     "separately owned independent review"
   ],
   "final_method": {
     "object_id": "method.skill.video-plan",
-    "revision_id": "59c702ae80880c19227b8ff080c8a0dbf14f4c8a9c6f953106f9e15a20c8248e",
-    "version": 24
+    "revision_id": "2e17938c1b89316bc9d02a3cc0441e0310c964f453b3f82e65a756b7c5b42603",
+    "version": 25
   },
   "final_linkage_receipt": {
-    "path": ".runtime/skill-cold-reader-fresh/video-plan/final-linkage/receipt.json",
-    "sha256": "58b82cf7fc87808739f7fe0895f9f6f0c02e69f6e432c8be483752c64e34c326"
+    "path": ".runtime/prompt-constraints/samples/video-ash001/delivery.json",
+    "sha256": "5b751ac0cde29b4da05ff5a4da7f09fe05e10b54fa5b8001ff3da3f404da7fb1"
   },
   "isolated_browser_checked": true,
-  "sample_verification": {
-    "path": ".runtime/skill-cold-reader-fresh/video-plan/sample/verification.json",
-    "sha256": "32f45f381fd61ae586d760e975ecbba95e1abacf653df4e6a62ea07e2f9be707"
-  },
   "sample_report": {
     "path": "production/reports/task-20261013-0010/samples/video-plan.md",
-    "sha256": "ccf7ed8abaf91ec6cd5de454d9e51e27d4525bb801c04f66fec4042fbe16f55e"
+    "sha256": "e5858400862d09c5d0d2ed8d66789a288445cac259c435d37395cc52dd4a81a0"
   },
   "current_delivery": {
-    "status": "LOCAL_FORMAL_DELIVERY_VERIFIED_AWAITING_USER_CONFIRMATION",
+    "status": "FORMAL_PUBLICATION_PENDING",
     "reference": "delivery.md",
-    "browser": "formal-browser.json",
-    "complete_recovery": "final-recovery.json"
+    "prior_delivery_unchanged": true
+  },
+  "prompt_constraint_samples": {
+    "video-ash001": {
+      "status": "ISOLATED_TEXT_SAMPLE_READ_BACK",
+      "method_reader_status": "round-06 complete with separate keep; formal publication pending",
+      "execution": {
+        "object_id": "method.execution.9a176a315ad39865fbe6e8ebe8342b53662e3bc124d1e74cef4ae74782c9c4df",
+        "revision_id": "4a794c2c66f3ea7f2ebfaf6123136eed7e489d8cbaaa18dd2dc90b86d4da4a38"
+      },
+      "result": {
+        "object_id": "method.artifact.64579cb56d66cdea952b254c0ed593d3c5cc177bdf0c649aa58faf5d9b725d25",
+        "revision_id": "087d9931e87e27a0b8f76cfbdc86231c1247679d2f194c2efd9b747517857675"
+      },
+      "result_import_sha256": "0c2b9462a41d72b225e7e4b45334d4955508de81f0e3b3d82a543142fe705927",
+      "prompt_sha256": "dd36613c5efa5720d354f3839628715f2cd55e16fd306b249e28a7562ae4a65c",
+      "new_generation": false,
+      "production_import": false,
+      "review": "按实际草稿和相邻两镜回读：0–14秒连续覆盖，依次摊本压石、完整唱句、老汉竖担、阿蘅提石翻两页再压回。原草稿还没有交代老汉竖担之前扁担在哪里，结果稿补为右手扶着斜靠右肩的扁担，随后移到腿边竖稳；这是样例调度选择，未当成原件事实。机位缓慢靠近后收稳，结束的新页、松开的手与腿边扁担可交给ASH002；台词原文保持。5项输入未选，3秒摊本压石和末4秒动作仍须真实预演，当前只通过文本方案与方法执行核验。"
+    },
+    "video-ash002": {
+      "status": "ISOLATED_TEXT_SAMPLE_READ_BACK",
+      "method_reader_status": "round-06 complete with separate keep; formal publication pending",
+      "execution": {
+        "object_id": "method.execution.a111b20b5312a6b76d21c26bd48988d541df31f1beca708e68f70f34b74ab57e",
+        "revision_id": "f8ef4347dce9c96480a4f28c01abbba4991ef70b6666619bdc65e0c7f6d0e508"
+      },
+      "result": {
+        "object_id": "method.artifact.eee34a813d2403458a722baca55825edb1d0ba88f5079197a65826772e80d7d3",
+        "revision_id": "0b7fd6a3e51058bed116600c065b0e3fadbe3992b2669351fa2d6d9e824725e6"
+      },
+      "result_import_sha256": "4e2357db0f61431ed8a76be5e71063ad7500f890d0f92bab5eadff3e13b8c33e",
+      "prompt_sha256": "e92a20c1337874b3f250b9f5e307e61909e1ea9cae94b3099c43ba2da5fbf4b1",
+      "new_generation": false,
+      "production_import": false,
+      "review": "按当前准确剧本及相邻镜回读：0–8、8–12、12–14秒覆盖全镜；接唱转问与同一声尾腔交叠，随后自然收声，不出现尾腔先停又重新起唱。相机固定，人物手位、歌本、河石和扁担连贯。ASH002两条随手选择仅在本隔离方案撤销为待选，保留原业务关系，其他镜头已选音频不动。4项输入未选，音色、旋律和真实重叠时长尚未看听验证，不能提交生成。"
+    },
+    "video-ash003": {
+      "status": "ISOLATED_TEXT_SAMPLE_READ_BACK",
+      "method_reader_status": "round-06 complete with separate keep; formal publication pending",
+      "execution": {
+        "object_id": "method.execution.7b3f7799a3f36bca50f7f0c0433f480377aa294d2973c466203a6db2724cf270",
+        "revision_id": "a9d5b69d317b6aa84ea7fb748be2f63bf0cb1e3a1b1c3c8bbca8473b7080e821"
+      },
+      "result": {
+        "object_id": "method.artifact.19a7a9b4a69cebe93ee5dc1050cfc5cf004f1f9aa3a8bc869e7905d006cd575e",
+        "revision_id": "7c5006c39801eefb7499554dbc3bcc14d24dded33760a2449455232db1339e0d"
+      },
+      "result_import_sha256": "b4a89aabd35a1a15016159aacb7ec97c61944547721dbac26bfcc14a963dfb92",
+      "prompt_sha256": "77d873c8121e455d002c68a019a01e310973335232f7046ab36df8cd49ca352f",
+      "new_generation": false,
+      "production_import": false,
+      "review": "按草稿全文和剧本回读：0–20秒以固定机位依次完成老汉问话、阿蘅回答、听客邀约、欠身应答及散开入店；原词没有缩写，镜尾门口空隙、歌本和扁担清楚，未提前演下一镜风掀页。16–18秒口头应答只有语意而没有准确词句，因此保留阻碍项，结果是尚不能调用的方案；不能让模型自由补词后假称符合原文。现行视听方案16秒而本制作预算20秒，这个差异需后续正式方案核准，不在本任务改正式视听内容。其余2项输入缺失、读演时长、真实输入组合与已选音频均未复验。"
+    }
+  },
+  "prompt_constraint_sample_report": {
+    "path": "production/reports/task-20261013-0010/samples/video-plan.md",
+    "sha256": "e5858400862d09c5d0d2ed8d66789a288445cac259c435d37395cc52dd4a81a0"
+  },
+  "prompt_constraint_browser": {
+    "video-plan": {
+      "path": ".runtime/prompt-constraints/browser/video-plan.json",
+      "sha256": "8e4a69b79cc37de956f26249efbedc54810812cb611f0d47ee6ecc9c277e0c6c"
+    },
+    "video-prompt-review": {
+      "path": ".runtime/prompt-constraints/browser/video-prompt-review.json",
+      "sha256": "f0b95988db84bea8f3c932565f27d89c2208893d3dc10af25ab2be515d4adf7e"
+    },
+    "video-handbook-prompt": {
+      "path": ".runtime/prompt-constraints/browser/video-handbook-prompt.json",
+      "sha256": "66406489147ed10ad2f88ed65377a9f552637122761203df4097b0bce07de1ea"
+    }
+  },
+  "previous_delivery": {
+    "scope": "Previously delivered five-round method; retained references do not establish the new candidate publication.",
+    "valid_complete_rounds": 5,
+    "final_method": {
+      "object_id": "method.skill.video-plan",
+      "revision_id": "59c702ae80880c19227b8ff080c8a0dbf14f4c8a9c6f953106f9e15a20c8248e",
+      "version": 24
+    },
+    "final_linkage_receipt": {
+      "path": ".runtime/skill-cold-reader-fresh/video-plan/final-linkage/receipt.json",
+      "sha256": "58b82cf7fc87808739f7fe0895f9f6f0c02e69f6e432c8be483752c64e34c326"
+    },
+    "sample_verification": {
+      "path": ".runtime/skill-cold-reader-fresh/video-plan/sample/verification.json",
+      "sha256": "32f45f381fd61ae586d760e975ecbba95e1abacf653df4e6a62ea07e2f9be707"
+    },
+    "sample_report": {
+      "path": "production/reports/task-20261013-0010/samples/video-plan.md",
+      "sha256": "ccf7ed8abaf91ec6cd5de454d9e51e27d4525bb801c04f66fec4042fbe16f55e"
+    },
+    "candidate_files_sha256": {
+      "SKILL.md": "b6bfde989b3f0cdc5938dbf5b7bfc9eb5e511b5f0e8578f07677b6e4fe7e2158",
+      "references/prompt-review.md": "257d02931a0912bafcc9419a0e694314cc69b74e8aa8ec8de01294f6470e565c",
+      "references/worked-examples.md": "7a19b23f7b6e4c6db91d628b258f3e28f56b88384781a6ee89c3bec2c028e9e1"
+    },
+    "durable_evidence_reverified_at": "2026-10-15T00:40:09.120563+00:00",
+    "current_delivery": {
+      "status": "PROMPT_CONSTRAINT_REVISION_IN_PROGRESS",
+      "reference": "delivery.md",
+      "prior_delivery_unchanged": true
+    }
+  },
+  "final_samples": [
+    {
+      "name": "video-ash001",
+      "verification": {
+        "path": ".runtime/prompt-constraints/samples/video-ash001/verification.json",
+        "sha256": "f67d411e768e9b6d6654a1179ae094028ffcd2ef36821e3a8fa0c92841066501"
+      }
+    },
+    {
+      "name": "video-ash002",
+      "verification": {
+        "path": ".runtime/prompt-constraints/samples/video-ash002/verification.json",
+        "sha256": "977e9a11919aafabfb87c35e86f56f1bd8582ae35b9a77a7f6432d6003d309fe"
+      }
+    },
+    {
+      "name": "video-ash003",
+      "verification": {
+        "path": ".runtime/prompt-constraints/samples/video-ash003/verification.json",
+        "sha256": "b1b71d0882f20bfd97be42392285262741e1b5a92c580314bb160629e6653c76"
+      }
+    }
+  ],
+  "prompt_constraint_revision": {
+    "trigger": "用户要求实际 Prompt 的格式、必备要素及内容触发要素明确，并重点要求镜内时间线故事板。",
+    "rounds": [
+      6
+    ],
+    "evidence_directory": ".runtime/prompt-constraints/video-plan",
+    "previous_102_rounds_reused": true,
+    "shared_sources_unchanged": true,
+    "before": "时间线已有要求，但成稿必备部分与内容触发的要素仍须更明确。",
+    "after": "五部分成稿格式和六类内容条件直接约束实际 Prompt，局部 0—T 连续演绎并交出可接下镜的状态。",
+    "sample_report": "samples/video-plan.md"
   }
 }

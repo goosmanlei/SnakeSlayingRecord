@@ -1,4 +1,4 @@
-"""One-time cleanup with real method tables and exact comment anchors."""
+"""Explicit cleanup passes with real method tables and exact comment anchors."""
 import copy
 import importlib.util
 import json
@@ -112,6 +112,38 @@ class MethodHistoryCleanupTest(unittest.TestCase):
             cleanup.apply_plan(self.store, plan)
         self.assertEqual(self.dump(), before)
         self.assertFalse(self.store.db.in_transaction)
+
+    def test_later_authorized_plan_preserves_legacy_receipt_and_retries_only_itself(self):
+        legacy = cleanup.build_plan(self.store, legacy=True)
+        first_receipt = cleanup.apply_plan(self.store, legacy)
+        first_row = dict(self.store.db.execute('SELECT * FROM production_current_operations WHERE id=?',
+                         (cleanup.plan_operation_id(legacy),)).fetchone())
+        new = self.prepare('before-second-cleanup')
+        second = cleanup.build_plan(self.store)
+        self.assertNotEqual(cleanup.plan_operation_id(legacy), cleanup.plan_operation_id(second))
+        before = Path(self.tmp.name) / 'second-before.sqlite3'
+        cleanup.snapshot(self.store.db_path, before)
+        second_receipt = cleanup.apply_plan(self.store, second)
+        self.assertEqual(second_receipt['counts']['execution'], 1)
+        self.assertIsNone(self.store.db.execute('SELECT id FROM objects WHERE id=?', (new['object_id'],)).fetchone())
+        cleanup.compare(before, self.store.db_path, second)
+        future = self.prepare('after-second-cleanup')
+        before_replay = self.dump()
+        self.assertEqual(cleanup.apply_plan(self.store, legacy), first_receipt)
+        self.assertEqual(cleanup.apply_plan(self.store, second), second_receipt)
+        self.assertEqual(self.dump(), before_replay)
+        self.assertEqual(self.methods.read(self.store, future['object_id']), future)
+        self.assertEqual(dict(self.store.db.execute('SELECT * FROM production_current_operations WHERE id=?',
+                         (cleanup.plan_operation_id(legacy),)).fetchone()), first_row)
+
+    def test_plan_identity_cannot_reuse_a_different_cleanup_receipt(self):
+        plan = cleanup.build_plan(self.store)
+        plan['operation_id'] = cleanup.TASK + '-method-history-cleanup'
+        plan['sha256'] = self.methods.checksum({key: value for key, value in plan.items() if key != 'sha256'})
+        before = self.dump()
+        with self.assertRaisesRegex(ValueError, '操作身份'):
+            cleanup.apply_plan(self.store, plan)
+        self.assertEqual(self.dump(), before)
 
     def test_current_vision_comment_survives_while_old_review_files_are_removed(self):
         from scripts import method_migration
@@ -239,17 +271,18 @@ class MethodHistoryCleanupTest(unittest.TestCase):
         candidate = self.store
         if advance:
             from review_desk.store import Store
-            path = Path(self.tmp.name)/'candidate/.runtime/review.sqlite3'
+            old = self.methods.read(self.store, 'method.skill.story-structure')
+            path = Path(self.tmp.name)/('candidate-' + str(old['version']))/'.runtime/review.sqlite3'
             cleanup.snapshot(self.store.db_path, path)
             candidate = Store.open_existing(path)
             self.addCleanup(candidate.close)
-            old = self.heads['method.skill.story-structure']
             payload = copy.deepcopy(old['payload'])
             payload['files']['SKILL.md'] += 'A separately reviewed final improvement.\n'
             new = self.methods.save(candidate, {'category':'skill', 'name':'story-structure',
                 'expected_version':old['version'], 'payload':payload})
             self.methods.save(candidate, {'category':'binding', 'name':'example-story-structure',
-                'expected_version':2, 'payload':{'work_type':'example-story-structure',
+                'expected_version':self.methods.read(candidate, 'method.binding.example-story-structure')['version'],
+                'payload':{'work_type':'example-story-structure',
                     'rules':[{**self.methods.reference(new), 'when':{}}]}})
         registry = method_migration.configuration_registry(candidate)
         plan = cleanup.build_plan(candidate)
@@ -273,6 +306,25 @@ class MethodHistoryCleanupTest(unittest.TestCase):
         self.assertEqual(self.store.db.execute('SELECT count(*) FROM revisions WHERE object_id=?',
                                              ('method.skill.story-structure',)).fetchone()[0], 1)
         self.assertEqual(self.methods.read(self.store, 'method.skill.story-structure')['version'], 3)
+
+    def test_second_publication_cleans_new_history_and_rejects_old_package_replay(self):
+        first, first_latest = self.release_package(advance=True)
+        first_dir = Path(self.tmp.name) / 'first-release'
+        cleanup.apply_release(self.store.db_path, first, first_latest, first_dir)
+        self.prepare('between-publications')
+        second, second_latest = self.release_package(advance=True)
+        second_dir = Path(self.tmp.name) / 'second-release'
+        result = cleanup.apply_release(self.store.db_path, second, second_latest, second_dir)
+        self.assertEqual(result['cleanup']['counts']['execution'], 1)
+        self.assertEqual(self.methods.read(self.store, 'method.skill.story-structure')['version'], 4)
+        for oid in cleanup.SKILLS:
+            self.assertEqual(self.store.db.execute('SELECT count(*) FROM revisions WHERE object_id=?', (oid,)).fetchone()[0], 1)
+        before_replay = self.dump()
+        with self.assertRaisesRegex(ValueError, '版本已前进'):
+            cleanup.apply_release(self.store.db_path, first, first_latest, first_dir)
+        self.assertEqual(self.dump(), before_replay)
+        self.assertEqual(cleanup.apply_release(self.store.db_path, second, second_latest, second_dir), result)
+        self.assertEqual(self.dump(), before_replay)
 
     def test_publication_resumes_committed_cleanup_before_receipt_snapshot(self):
         package, latest = self.release_package()

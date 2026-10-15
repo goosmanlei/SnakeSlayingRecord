@@ -1,4 +1,4 @@
-"""Task 0010's reviewed, one-time method history consolidation.
+"""Task 0010's explicitly reviewed method history consolidation.
 
 The publisher owns the stopped formal write window and recovery snapshot.
 Nothing runs on import. Plans are exact, rechecked inside one transaction, and
@@ -62,7 +62,22 @@ def clean_receipt(value, removed):
     return result
 
 
-def build_plan(store):
+def plan_operation_id(plan):
+    """Keep legacy receipts readable; give each new exact plan its own receipt."""
+    from review_desk import methods
+    require(plan.get('format') == FORMAT and plan.get('task') == TASK, '不是本任务的准确清理方案')
+    require(methods.checksum({key: value for key, value in plan.items() if key != 'sha256'}) == plan.get('sha256'),
+            '清理方案摘要不匹配')
+    prefix = TASK + '-method-history-cleanup'
+    if 'operation_id' not in plan:
+        return prefix
+    expected = prefix + '-' + methods.checksum({key: value for key, value in plan.items()
+                                               if key not in ('sha256', 'operation_id')})
+    require(plan['operation_id'] == expected, '清理操作身份与准确方案不匹配')
+    return expected
+
+
+def build_plan(store, *, legacy=False):
     from review_desk import methods
     catalog = methods.catalog(store)
     skills = {row['object_id']: row for row in catalog['skill'] if row['object_id'] in SKILLS}
@@ -166,6 +181,8 @@ def build_plan(store):
               'counts': {'skill_latest': len(skills), 'execution': len(executions), 'artifact': len(artifacts),
                          'removed_versions': len(removed_revisions), 'comments': len(comments),
                          'current_method_links': len(changes), 'operation_receipts': len(operations)}}
+    if not legacy:
+        result['operation_id'] = TASK + '-method-history-cleanup-' + methods.checksum(result)
     result['sha256'] = methods.checksum(result)
     return result
 
@@ -175,21 +192,19 @@ def apply_plan(store, plan):
     from review_desk import methods, method_files, material_archives, production_current as current
     from review_desk.store import canonical
     from review_desk.production_current_methods import verify
-    require(plan.get('format') == FORMAT and plan.get('task') == TASK, '不是本任务的准确清理方案')
-    require(methods.checksum({key: value for key, value in plan.items() if key != 'sha256'}) == plan.get('sha256'),
-            '清理方案摘要不匹配')
+    operation_id = plan_operation_id(plan)
     require(not store.db.in_transaction, '清理入口必须拥有独立完整事务')
     # Original metadata may be a lossless archive reference. Its validation
     # must use this transaction, not open a second reader while deletion holds
     # an exclusive SQLite lock. The existing scope clears each file's cache.
     with store.db, material_archives.read_scope(store):
         store.db.execute('BEGIN IMMEDIATE')
-        operation_id = TASK + '-method-history-cleanup'
         saved = store.db.execute('SELECT * FROM production_current_operations WHERE id=?', (operation_id,)).fetchone()
         if saved:
-            require(saved['request_sha256'] == plan['sha256'], '本任务已执行另一份清理方案，不能重复删除')
+            require(saved['request_sha256'] == plan['sha256'], '该清理操作已执行另一份方案，不能重复删除')
             return json.loads(saved['result'])
-        require(build_plan(store) == plan, '清理对象或引用已变化，保留现场并重核方案')
+        require(build_plan(store, legacy='operation_id' not in plan) == plan,
+                '清理对象或引用已变化，保留现场并重核方案')
         removed = set(plan['remove_revisions'])
         for item in plan['current_changes']:
             oid = item['object_id']
@@ -237,7 +252,8 @@ def apply_plan(store, plan):
         require(not store.db.execute('PRAGMA foreign_key_check').fetchone(), '清理留下外键缺口')
         from review_desk.production_current_bundle import validate
         validate(store)
-        receipt = {'format': FORMAT, 'task': TASK, 'plan_sha256': plan['sha256'], 'counts': plan['counts'],
+        receipt = {'format': FORMAT, 'task': TASK, 'operation_id': operation_id,
+                   'plan_sha256': plan['sha256'], 'counts': plan['counts'],
                    'heads': plan['heads'], 'business_content_changed': False,
                    'method_provenance_cleared': True, 'future_history_enabled': True}
         store.db.execute('INSERT INTO production_current_operations VALUES (?,?,?)',
@@ -253,7 +269,7 @@ def compare(before, after, plan):
     """
     from review_desk import methods
     from review_desk.store import Store
-    operation_id = TASK + '-method-history-cleanup'
+    operation_id = plan_operation_id(plan)
     with sqlite3.connect(Path(before).resolve().as_uri() + '?mode=ro', uri=True) as db:
         db.execute('PRAGMA cache_size=-4096')
         db.execute('PRAGMA temp_store=FILE')
@@ -302,7 +318,7 @@ def compare(before, after, plan):
             evidence[table] = {'unchanged_rows': db.execute('SELECT count(*) FROM (' + queries[0] + ')').fetchone()[0]}
     old, new = Store.open_readonly(Path(before)), Store.open_readonly(Path(after))
     try:
-        require(build_plan(old) == plan, '比较基线不是清理时的准确内容')
+        require(build_plan(old, legacy='operation_id' not in plan) == plan, '比较基线不是清理时的准确内容')
         removed = set(plan['remove_revisions'])
         for item in plan['current_changes']:
             oid, rid = item['object_id'], item['revision_id']
@@ -360,6 +376,7 @@ def verify_release_package(package, latest):
     require(plan.get('format') == FORMAT and plan.get('task') == TASK
             and methods.checksum({k: v for k, v in plan.items() if k != 'sha256'}) == plan.get('sha256'),
             '发布包的准确清理方案不匹配')
+    plan_operation_id(plan)
     method_migration.check_registry(package['install_registry'])
     require(methods.checksum({k: v for k, v in package['install_registry'].items() if k != 'sha256'})
             == package['install_registry'].get('sha256'), '安装配置摘要不匹配')
@@ -411,6 +428,7 @@ def apply_release(database, package, latest, receipt_directory):
     the publisher subsequently compares the cleaned copy with the live result.
     These copies are temporary verification resources, never recovery inputs.
     """
+    from review_desk import methods
     from review_desk.store import Store
     verify_release_package(package, latest)
     directory = Path(receipt_directory)
@@ -440,9 +458,12 @@ def apply_release(database, package, latest, receipt_directory):
     store = Store.open_readonly(Path(database))
     try:
         old = store.db.execute('SELECT * FROM production_current_operations WHERE id=?',
-                               (TASK + '-method-history-cleanup',)).fetchone()
+                               (plan_operation_id(plan),)).fetchone()
         if old:
             require(old['request_sha256'] == plan['sha256'], '已执行的清理方案不同')
+            require(all(methods.reference(methods.read(store, oid)) == ref
+                        for oid, ref in plan['heads'].items()),
+                    '该清理发布后方法版本已前进，旧包不能作为当前发布重放')
             cleanup_receipt = json.loads(old['result'])
     finally:
         store.close()

@@ -1,13 +1,13 @@
 {
   "task": "task-20261013-0010",
   "object_id": "method.skill.generation-preflight",
-  "version": 13,
-  "revision_id": "20b9aefbe15be58da5e9f5eb968965282deb297f6b11e2ed43f2e2e2e0b7d079",
-  "valid_rounds": 5,
+  "version": 14,
+  "revision_id": "f81c6302eef5df0045b47fa12579b9ffa265b0976cfa17411d7eab5c904b9281",
+  "valid_rounds": 6,
   "required_minimum": 5,
-  "status": "FIVE_ROUNDS_AND_SIMULATED_AND_LOCAL_PRODUCTION_SAMPLES_COMPLETE",
+  "status": "FINAL_REVISED_TEXT_READ_AND_ISOLATED_SAMPLE_COMPLETE_FORMAL_PUBLICATION_PENDING",
   "files": {
-    "SKILL.md": "1d4c2b0b4a284bd322b3bba0f9d28f181c43497f25dbcbdb1617b54fb28b3b0b"
+    "SKILL.md": "922594b2fa2ec27234be932fbc3ddf50a4f9a36cc285e550852f4a9fa8e1a14a"
   },
   "rounds": [
     {
@@ -121,6 +121,20 @@
       "revision_decision_sha256": "281b3657ca87c039f2d0c967c6d4e277a2482ac9c979635ecea153931b56cfb5",
       "final_issues": [],
       "last_material_revision_has_been_read": true
+    },
+    {
+      "round": 6,
+      "body_units": 17,
+      "accepted_contexts": 18,
+      "native_inferences": 18,
+      "native_events": 216,
+      "decision": "keep",
+      "rationale": "完整通读本轮17个正文单位及FINISH，逐项核对实际理解和原文。读者明确理解新增约束必须落实到实际提交的Prompt，能分别指出视频0—T声画时间线及终态、原词与风格分离、图像专项结构及字层显露；缺项回原方案修订，提交时不暗改、不为复用或本地制作伪造字段。全文无遗留问题。唯一操作协议和六类素材方法各自维护详细格式，本方法只验证交接，不复制模板；人类可按具体检查对象判断，AI可沿准确作者与提交入口执行。保留完整已读稿；这项结论不等于当前素材就绪或生成效果通过。",
+      "frozen_sha256": "12546884c762195337e1168d4db7ef8bbd1c6a21c65385e9d131bbef277a3e31",
+      "read_complete_sha256": "30c0788a570b8fbab7af6f1eb02ce0eb20b92850a931dfd592fa1f6c21397741",
+      "revision_decision_sha256": "f27d8451d8125f98c51b6050a5c909485722e90c365e330193e360d28907dad7",
+      "final_issues": [],
+      "last_material_revision_has_been_read": true
     }
   ],
   "reader_model": "gpt-6-astra",
@@ -128,14 +142,14 @@
   "reviser_model": "gpt-6-astra",
   "reviser_effort": "max",
   "reviser_session": "01a1346f-7915-7a40-b676-864edb334ecc",
-  "native_contexts": 63,
-  "native_inferences": 64,
-  "native_events": 758,
+  "native_contexts": 81,
+  "native_inferences": 82,
+  "native_events": 974,
   "removed_empty_directories": 63,
   "last_material_revision_has_been_read": true,
   "unresolved_text_issues": [],
   "human_user_study": false,
-  "formal_publication": true,
+  "formal_publication": false,
   "evidence_directory": ".runtime/skill-cold-reader-fresh/generation-preflight",
   "interrupted_attempts": {
     "count": 1,
@@ -148,7 +162,7 @@
   "dual_audience": {
     "human": "先讲当前方案到真实候选的目的，用完整歌曲与裁切片段等例子解释材料区别，说明术语和异常后该找什么。",
     "ai": "提供准确对象、完整原件、条件、动作顺序、真实产出与回读入口；明确方法登记不发送生成请求。",
-    "evidence": "第五轮逐段理解与结算、分离修订判断；不是人类参与者实测。"
+    "evidence": "第六轮全文理解、分离修订判断及实际三类方案检查；没有真人参与者测试。"
   },
   "before_after_examples": [
     {
@@ -173,16 +187,16 @@
   "binding_and_readback": {
     "binding": {
       "object_id": "method.binding.generation-preflight",
-      "revision_id": "15b15a5c4aca0b6af5518db2e99b4262bf6564c4f9aebc3f39887ab6ddde1e2e",
-      "version": 11
+      "revision_id": "852d4d166131282f29ba69d030dbcde97034b8dfc9d42775772c36d801b157bc",
+      "version": 13
     },
-    "response_sha256": "93f718cacc9871bb8aeba1c2d41de0ce1e0a3ced34efb7e0b6fece903f6c761a",
-    "resolve_sha256": "6ea617b6a79a471bbd31bf7ef931356b2f955fb9b532e450b46b1087a3b29727",
+    "response_sha256": "c50c29082015344cc3cfc200147119a6224dcf545e3e1368a71079f475eb91e4",
+    "resolve_sha256": "83558eba730e117952dd522f8ef822fe3603cb5cc688d04caa0f207fc9ac037f",
     "unapplied_scopes": [],
     "formal_writes": false
   },
   "work_sample": {
-    "status": "SUBMISSION_SIMULATION_COMPLETE_LOCAL_TEXT_PRODUCTION_PENDING",
+    "status": "PRIOR_SUBMISSION_SIMULATION_COMPLETE_EVIDENCE_REUSED",
     "execution": {
       "object_id": "method.execution.d501eed75194f1724b7f6322fed7dcd2608d52e0ea3b060f5cc79eaec6002cc1",
       "revision_id": "33ad6ef8ee214d093e9618d600d220e3f3a9395eede200d9a4d7c66af7ead935"
@@ -274,44 +288,10 @@
     "unverified": [
       "external platform capability",
       "current quota",
-      "new media quality",
-      "final local text handoff pending text-layer method"
+      "new media quality"
     ]
   },
-  "history_cleanup_pending": false,
-  "isolated_browser": {
-    "verified_at": "2026-10-13T17:36:32.517910+00:00",
-    "browser": "Google Chrome",
-    "channel": "macOS Accessibility AX actions and rendered page text; direct Chrome window capture",
-    "window_title_contains": "任务预览",
-    "window_capture_id": 103,
-    "method_revision": "64a8e63f343f54958a1cf7e25a56ed782505d08189cb990d618dd77f712547ef",
-    "file_version": 6,
-    "resource_revision": "4cc34c388a53477286824a0c2dd98a8d1f5681633eea6ceb2a93b349c4f50919",
-    "resource_file_version": 3,
-    "actions": [
-      "open generation method from foundation flow",
-      "read rendered complete method text",
-      "open version comparison 5 to 6 and read actual changes",
-      "close comparison",
-      "follow shared protocol link and read exact current-production text",
-      "return to generation method",
-      "reload and verify same exact method and selected file version"
-    ],
-    "evidence": {
-      "comparison-visible.txt": "51baba89cfeef4c450d0996ffa7c5c0e9cc228c5c747c6b6f9953f6ebf52f079",
-      "shared-link-visible.txt": "8b4955b94e3ad02dd31fc69b1029f89ee42370ed33c5882023f699ac95a4ee11",
-      "reload-visible.txt": "3d10767c7636c2af2e6accbe02945a4822e73a595c4925da436666d4e1f2a9c3"
-    },
-    "stage": "isolated before latest-only history cleanup",
-    "formal_writes": false,
-    "javascript_permission_changed": false,
-    "accessibility_tree_temporarily_enabled": true,
-    "accessibility_tree_restored_to_initial_false": true,
-    "direct_window_capture_viewed": true,
-    "direct_window_capture_sha256": "26858be0467ab1ef6a038b996dbc22b6cf2785b2d4c8f6b993032d52df6f0e47",
-    "direct_window_capture_retained": false
-  },
+  "history_cleanup_pending": true,
   "incremental_process_cleanup": {
     "files_removed": 4,
     "all_absent": true,
@@ -346,23 +326,28 @@
         }
       ]
     },
-    "existing_sample_basis_retained": "prior exact method; final text handoff pipeline still pending"
+    "existing_sample_basis_retained": "Prior exact method retained in its original audit; local production and result review complete. New text-only submission-format sample separately uses v14.",
+    "scope": "Previously completed unchanged shared protocol linkage; current v14 own-file change is recorded separately"
   },
   "local_production_sample": {
     "verification": {
       "path": ".runtime/skill-cold-reader-fresh/text-layer/sample/verification.json",
       "sha256": "9ff68ac76d26525f6f1b14321a2201e80ddbbe7e5e8f17e0e8e8c884644461a8"
     },
-    "report": {
-      "path": "production/reports/task-20261013-0010/samples/text-layer.md",
-      "sha256": "3f23326331b9ab4054dfe3ec5d21d55a980799569cc89a586d36e09de2ddb6bd"
-    },
     "method_revision": "20b9aefbe15be58da5e9f5eb968965282deb297f6b11e2ed43f2e2e2e0b7d079",
     "new_local_candidate": true,
     "new_model_calls": 0,
-    "same_operation_recovery": true
+    "same_operation_recovery": true,
+    "historical_report_at_commit": {
+      "git_commit": "948788bec240a75dcbfa6a418711b3c2726219be",
+      "path": "production/reports/task-20261013-0010/samples/text-layer.md",
+      "sha256": "3f23326331b9ab4054dfe3ec5d21d55a980799569cc89a586d36e09de2ddb6bd"
+    },
+    "scope": "Previously completed actual local production under its original method; not a new v14 operation"
   },
   "pending": [
+    "formal method publication",
+    "post-publication verification and task cleanup",
     "user completion confirmation",
     "separately owned independent review"
   ],
@@ -372,9 +357,98 @@
     "sha256": "1d97ffd7522e7e164e53875d2aec58a44dd93d9446e9cd5d1201a44ece64177d"
   },
   "current_delivery": {
-    "status": "LOCAL_FORMAL_DELIVERY_VERIFIED_AWAITING_USER_CONFIRMATION",
+    "status": "FORMAL_PUBLICATION_PENDING",
     "reference": "delivery.md",
-    "browser": "formal-browser.json",
-    "complete_recovery": "final-recovery.json"
+    "prior_delivery_unchanged": true
+  },
+  "prompt_constraint_revision": {
+    "trigger": "用户要求各素材Prompt方法明确格式、必备要素及按内容触发的条件要素，并兼顾人和AI阅读。",
+    "rounds": [
+      6
+    ],
+    "evidence_directory": ".runtime/prompt-constraints/generation-preflight/round-06",
+    "previous_102_rounds_reused": true,
+    "shared_sources_unchanged": true,
+    "before": "原生成承接核参数、原件和原词，未明确逐类检查实际Prompt的格式及条件要素。",
+    "after": "实际Prompt须满足所属素材方法，视频时间线、音色或歌词分离、图像结构、字层显露分别核对；缺项回原方案。",
+    "sample_report": "samples/generation-preflight.md"
+  },
+  "prompt_constraint_sample": {
+    "execution": {
+      "object_id": "method.execution.5ad185d2ac17003480f27e17e986e49c6287a423f6ddc5ff81040ef94e7d5e66",
+      "revision_id": "ed9e0ef493e9a371dd2cbc59eeb69e7fc2ac2d14175eb501876519dc68cfca08"
+    },
+    "stage_readbacks": {
+      "draft": {
+        "path": ".runtime/prompt-constraints/samples/generation-preflight/stage-draft-value.json",
+        "sha256": "a27e0846b57b5a932999a07566962d7397dfee3739fef1d2f65685cea1c7b3a1"
+      },
+      "review": {
+        "path": ".runtime/prompt-constraints/samples/generation-preflight/stage-review-value.json",
+        "sha256": "b126e594dfe4ac55c8cb4588d3407224bfc160be18c5096fb4dc7d604afff963"
+      },
+      "result": {
+        "path": ".runtime/prompt-constraints/samples/generation-preflight/stage-result-value.json",
+        "sha256": "8206634bb0d0d12a1e03124e25bfcef572513ca45135995cc37a30ef0a118fa1"
+      }
+    },
+    "result_sha256": "2804f38d3407a28d272b3e0aa604646462498cdf6a467677808de91c75c7c75f",
+    "new_model_calls": 0,
+    "new_media_candidates": 0,
+    "formal_production_writes": false,
+    "checks": [
+      "ASH002 actual Prompt missing timeline and user-invalidated audio selection",
+      "image Prompt requires visible composition and removal of internal preparation notes",
+      "local text production requires exact layout without fabricated model fields"
+    ],
+    "report": {
+      "path": "production/reports/task-20261013-0010/samples/generation-preflight.md",
+      "sha256": "5c7ef10f6aa2f387900d169992557b590277cc2a7a51f51c0a4b777220c8e8dc"
+    }
+  },
+  "previous_isolated_browser": {
+    "verified_at": "2026-10-13T17:36:32.517910+00:00",
+    "browser": "Google Chrome",
+    "channel": "macOS Accessibility AX actions and rendered page text; direct Chrome window capture",
+    "window_title_contains": "任务预览",
+    "window_capture_id": 103,
+    "method_revision": "64a8e63f343f54958a1cf7e25a56ed782505d08189cb990d618dd77f712547ef",
+    "file_version": 6,
+    "resource_revision": "4cc34c388a53477286824a0c2dd98a8d1f5681633eea6ceb2a93b349c4f50919",
+    "resource_file_version": 3,
+    "actions": [
+      "open generation method from foundation flow",
+      "read rendered complete method text",
+      "open version comparison 5 to 6 and read actual changes",
+      "close comparison",
+      "follow shared protocol link and read exact current-production text",
+      "return to generation method",
+      "reload and verify same exact method and selected file version"
+    ],
+    "evidence": {
+      "comparison-visible.txt": "51baba89cfeef4c450d0996ffa7c5c0e9cc228c5c747c6b6f9953f6ebf52f079",
+      "shared-link-visible.txt": "8b4955b94e3ad02dd31fc69b1029f89ee42370ed33c5882023f699ac95a4ee11",
+      "reload-visible.txt": "3d10767c7636c2af2e6accbe02945a4822e73a595c4925da436666d4e1f2a9c3"
+    },
+    "stage": "isolated before latest-only history cleanup",
+    "formal_writes": false,
+    "javascript_permission_changed": false,
+    "accessibility_tree_temporarily_enabled": true,
+    "accessibility_tree_restored_to_initial_false": true,
+    "direct_window_capture_viewed": true,
+    "direct_window_capture_sha256": "26858be0467ab1ef6a038b996dbc22b6cf2785b2d4c8f6b993032d52df6f0e47",
+    "direct_window_capture_retained": false
+  },
+  "isolated_browser": {
+    "path": ".runtime/prompt-constraints/browser/generation-preflight.json",
+    "sha256": "bac43097df668b8ddad3eddfef69908a12f8ac0b89ec09c96f71618836c5e130",
+    "method_revision": "f81c6302eef5df0045b47fa12579b9ffa265b0976cfa17411d7eab5c904b9281",
+    "actual_comparison": {
+      "old_file_version": 1,
+      "new_file_version": 2,
+      "visible_change": "实际Prompt按格式、必备要素和内容条件核对；缺项回方案；复用及本地制作不补造生成字段"
+    },
+    "comment_saved_and_reloaded": true,
+    "formal_writes": false
   }
 }

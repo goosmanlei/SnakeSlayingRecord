@@ -1,8 +1,8 @@
 {
   "task": "task-20261013-0010",
   "item": "text-layer",
-  "status": "FIVE_ROUNDS_AND_FULL_SAMPLE_CHAIN_COMPLETE",
-  "valid_complete_rounds": 5,
+  "status": "FORMAL_PUBLICATION_PENDING",
+  "valid_complete_rounds": 6,
   "rounds": [
     {
       "round": 1,
@@ -87,22 +87,35 @@
       "read_complete_sha256": "654a1ed864ca313bc47f3f47e9700a87095a832ba0dc291b5a6620aa82147ace",
       "revision_decision_sha256": "7f75bbb4a8b00003590e7f9c9ce09d2fe630ed041fb44be67a2094d6e3ae19ba",
       "evidence_directory": ".runtime/skill-cold-reader-fresh/text-layer/round-05"
+    },
+    {
+      "round": 6,
+      "body_units": 24,
+      "reader_contexts": 25,
+      "native_inferences": 25,
+      "native_events": 300,
+      "decision": "keep",
+      "rationale": "已逐条通读24个正文单位的实际理解、memory_updates与疑问，以及第25步全文结算、最终读者记忆和冻结完整正文。新增交付结构区分准确字稿、版面、出现交接和检查目标；按翻页、运动遮挡、字幕同步、特殊字形和多尺寸等内容触发补足约束；静态页不硬造时间线，本地制作不虚构模型Prompt。已填便笺示例的600×800坐标与底图百分比一致，示例、正式原词和未完成条件明确分开。q0014-01对blocks/specification的初读疑问由第22段说明归属与职责，全文结算确认解释成立，不为局部首次出现重复改写全文。既有准确素材的小型执行和源SVG核对支持当前协议衔接，未以文字检查声称完成媒体、动态跟踪或成片可读性。保留本稿，最后实质改稿已完整复读。",
+      "unresolved": [],
+      "changed_paths": [],
+      "last_material_revision_has_been_read": true,
+      "read_complete_sha256": "1c05458c4e645de09359a116fdc554466f4aa20881bfc5c3577fa6f8dfe972d2",
+      "frozen_sha256": "07bf0d98db2ae1b70045ca9a0a41d1a7d9083c60736f0940c61a99b85e22ef7c",
+      "revision_decision_sha256": "8604db93844f63a4686ab40fee89f8b6c04fc65dd647ba71072be134e396f783",
+      "evidence_directory": ".runtime/prompt-constraints/text-layer/round-06"
     }
   ],
-  "reader_contexts": 60,
-  "native_inferences": 61,
-  "native_events": 722,
+  "reader_contexts": 85,
+  "native_inferences": 86,
+  "native_events": 1022,
   "reader_model": "gpt-6-astra",
   "reader_effort": "max",
   "reviser_model": "gpt-6-astra",
   "reviser_effort": "max",
   "durable_evidence_reverified_at": "2026-10-15T00:40:09.120563+00:00",
   "all_saved_raw_payload_event_and_chain_hashes_equal": true,
-  "current_candidate_files": {
-    "SKILL.md": "e93ad71e90fbc1c6ea858132c93cc81f64f99bc66910604397e5567280713697"
-  },
   "final_sample_complete": true,
-  "formal_publication": true,
+  "formal_publication": false,
   "human_participant_test": false,
   "queued_coordinator_followups": {
     "path": ".runtime/skill-cold-reader-fresh/text-layer/coordinator-followups.json",
@@ -113,68 +126,144 @@
     "complete_reread_finished": 5
   },
   "last_revision_fully_reread": true,
-  "candidate_source": ".runtime/skill-cold-reader-fresh/text-layer/round-05/revision-decision.json:next_files",
-  "candidate_decision_sha256": "7f75bbb4a8b00003590e7f9c9ce09d2fe630ed041fb44be67a2094d6e3ae19ba",
+  "candidate_source": ".runtime/prompt-constraints/text-layer/round-06/revision-decision.json:next_files",
+  "candidate_decision_sha256": "8604db93844f63a4686ab40fee89f8b6c04fc65dd647ba71072be134e396f783",
   "candidate_files_sha256": {
-    "SKILL.md": "e93ad71e90fbc1c6ea858132c93cc81f64f99bc66910604397e5567280713697"
+    "SKILL.md": "cf0f5536e15af71aaae8476c47d559e19f2ee2ea1ee8b780906ed9abf959fe31"
   },
   "pending": [
+    "incremental formal publication and latest-only cleanup",
+    "post-publication verification",
     "user completion confirmation",
     "separately owned independent review"
   ],
   "final_method": {
     "object_id": "method.skill.text-layer",
-    "revision_id": "52be9381a4d4e473e20f5eb7de6c1d1d25747769bf6eedf8e4f74639e3d146e3",
-    "version": 20
+    "revision_id": "d634b6df7aa9eea6a58a27876dec63a198a4b844abc5344c30f65948738ebe4f",
+    "version": 21
   },
   "final_linkage_receipt": {
-    "path": ".runtime/skill-cold-reader-fresh/text-layer/final-linkage/receipt.json",
-    "sha256": "382166dad9f1441e231c0e91f70b69ed868e79c5f642ab82919c2b26a3aa2df8"
+    "path": ".runtime/prompt-constraints/samples/text-layer/delivery.json",
+    "sha256": "b5f3c38cf01d5dc602a242cce3eb4ccf2439b550976bca5874364fb7b67dae6d"
   },
   "isolated_browser_checked": true,
-  "sample_evidence": {
-    "media-import-receipt.json": {
-      "path": ".runtime/skill-cold-reader-fresh/text-layer/sample/media-import-receipt.json",
-      "sha256": "e7c14a89b5fb60361ff4cf5fc3b38b38dad8c76b6ec069a3837128890363a3d0"
-    },
-    "candidate-readback.json": {
-      "path": ".runtime/skill-cold-reader-fresh/text-layer/sample/candidate-readback.json",
-      "sha256": "19d0f4e20018cde30bed86a509314a60b25d679090fc83c9ee6e76d786a41a3e"
-    },
-    "archive-verification.json": {
-      "path": ".runtime/skill-cold-reader-fresh/text-layer/sample/archive-verification.json",
-      "sha256": "0dcf01e99821ffd5bbcf73e9dd880986084f4f391219f9493d6e95b13c9b7300"
-    },
-    "generation-registration.json": {
-      "path": ".runtime/skill-cold-reader-fresh/text-layer/sample/generation-registration.json",
-      "sha256": "8e18f29cd688264916635f324ea28fa5c42f090ee832b73f4c21ac98552fd1b5"
-    },
-    "generation-registration-resume.json": {
-      "path": ".runtime/skill-cold-reader-fresh/text-layer/sample/generation-registration-resume.json",
-      "sha256": "49ba78e01c3c501fd225396deddd55fad7d1bac5c4f73e51aae9df5f6d5bba5a"
-    },
-    "generation-result-read.json": {
-      "path": ".runtime/skill-cold-reader-fresh/text-layer/sample/generation-result-read.json",
-      "sha256": "4312a43c404e91e7327f11395877d720c67361504195ac86fa7179c443ea444e"
-    }
-  },
-  "sample_verification": {
-    "path": ".runtime/skill-cold-reader-fresh/text-layer/sample/verification.json",
-    "sha256": "9ff68ac76d26525f6f1b14321a2201e80ddbbe7e5e8f17e0e8e8c884644461a8"
-  },
   "sample_report": {
     "path": "production/reports/task-20261013-0010/samples/text-layer.md",
-    "sha256": "3f23326331b9ab4054dfe3ec5d21d55a980799569cc89a586d36e09de2ddb6bd"
+    "sha256": "0bcbc67b0b7dc68b82c739690a2840971d3d12d161d086f983519a56d1fa0157"
   },
   "result_review_complete": true,
-  "result_review_evidence": {
-    "path": ".runtime/skill-cold-reader-fresh/result-review/sample/verification.json",
-    "sha256": "1d97ffd7522e7e164e53875d2aec58a44dd93d9446e9cd5d1201a44ece64177d"
-  },
   "current_delivery": {
-    "status": "LOCAL_FORMAL_DELIVERY_VERIFIED_AWAITING_USER_CONFIRMATION",
+    "status": "FORMAL_PUBLICATION_PENDING",
     "reference": "delivery.md",
-    "browser": "formal-browser.json",
-    "complete_recovery": "final-recovery.json"
+    "prior_delivery_unchanged": true
+  },
+  "prompt_constraint_samples": {
+    "text-layer": {
+      "status": "ISOLATED_TEXT_SAMPLE_READ_BACK",
+      "method_reader_status": "round-06 complete with separate keep; formal publication pending",
+      "execution": {
+        "object_id": "method.execution.dbc7836cd2b76a61672c5c6c61f460985405bf085671b20902bb7c64ea62444f",
+        "revision_id": "adf519e7c7679538148ba82c101e2cdac56b11aa502f5131c58290cb865327a9"
+      },
+      "result": {
+        "object_id": "method.artifact.e69be294479ae16ad1bc699b095eadef709d74db986a22b41b464caf3155c99e",
+        "revision_id": "581d38304350662492d8b9cd46b8c1f327d20c45804eae23865f9d025ca9c494"
+      },
+      "result_import_sha256": "82a29aaf3501afb3453a8c64f95648ff0c437277d21457c546e763fc3eca79bf",
+      "new_generation": false,
+      "new_render": false,
+      "production_import": false,
+      "review": "实际回读六块正文与版面规格：准确原词、600×800源坐标、字号字距、三阶段出现、透明可编辑交付、遮挡和读清条件均可找到。工价标题和两笔实际收入分层，圈线仅圈两笔；未定日期不编造，口头“一天”不替代纸面“一日”。原方案只列交接结果，现在合成者能按准确位置、阶段与字体回退执行；源文件五项哈希与已读字节一致。保留草稿，不新增模型Prompt；当前是确定性字层方案，实际字体、底图透视、手笔遮挡和正常速度可读性尚未重新渲染或观看，明确留待真实合成验收。"
+    }
+  },
+  "prompt_constraint_sample_report": {
+    "path": "production/reports/task-20261013-0010/samples/text-layer.md",
+    "sha256": "0bcbc67b0b7dc68b82c739690a2840971d3d12d161d086f983519a56d1fa0157"
+  },
+  "prompt_constraint_browser": {
+    "text-layer": {
+      "path": ".runtime/prompt-constraints/browser/text-layer.json",
+      "sha256": "f9b36ad6c5dbcced26a6d9be00dc6231a1758638c8e21804284f3a2dd6f0bc52"
+    }
+  },
+  "previous_delivery": {
+    "scope": "Previously delivered five-round method and complete editable SVG chain; unchanged engineering evidence is retained here.",
+    "valid_complete_rounds": 5,
+    "final_method": {
+      "object_id": "method.skill.text-layer",
+      "revision_id": "52be9381a4d4e473e20f5eb7de6c1d1d25747769bf6eedf8e4f74639e3d146e3",
+      "version": 20
+    },
+    "final_linkage_receipt": {
+      "path": ".runtime/skill-cold-reader-fresh/text-layer/final-linkage/receipt.json",
+      "sha256": "382166dad9f1441e231c0e91f70b69ed868e79c5f642ab82919c2b26a3aa2df8"
+    },
+    "sample_verification": {
+      "path": ".runtime/skill-cold-reader-fresh/text-layer/sample/verification.json",
+      "sha256": "9ff68ac76d26525f6f1b14321a2201e80ddbbe7e5e8f17e0e8e8c884644461a8"
+    },
+    "sample_report": {
+      "path": "production/reports/task-20261013-0010/samples/text-layer.md",
+      "sha256": "3f23326331b9ab4054dfe3ec5d21d55a980799569cc89a586d36e09de2ddb6bd"
+    },
+    "candidate_files_sha256": {
+      "SKILL.md": "e93ad71e90fbc1c6ea858132c93cc81f64f99bc66910604397e5567280713697"
+    },
+    "durable_evidence_reverified_at": "2026-10-15T00:40:09.120563+00:00",
+    "current_delivery": {
+      "status": "PROMPT_CONSTRAINT_REVISION_IN_PROGRESS",
+      "reference": "delivery.md",
+      "prior_delivery_unchanged": true
+    },
+    "sample_evidence": {
+      "media-import-receipt.json": {
+        "path": ".runtime/skill-cold-reader-fresh/text-layer/sample/media-import-receipt.json",
+        "sha256": "e7c14a89b5fb60361ff4cf5fc3b38b38dad8c76b6ec069a3837128890363a3d0"
+      },
+      "candidate-readback.json": {
+        "path": ".runtime/skill-cold-reader-fresh/text-layer/sample/candidate-readback.json",
+        "sha256": "19d0f4e20018cde30bed86a509314a60b25d679090fc83c9ee6e76d786a41a3e"
+      },
+      "archive-verification.json": {
+        "path": ".runtime/skill-cold-reader-fresh/text-layer/sample/archive-verification.json",
+        "sha256": "0dcf01e99821ffd5bbcf73e9dd880986084f4f391219f9493d6e95b13c9b7300"
+      },
+      "generation-registration.json": {
+        "path": ".runtime/skill-cold-reader-fresh/text-layer/sample/generation-registration.json",
+        "sha256": "8e18f29cd688264916635f324ea28fa5c42f090ee832b73f4c21ac98552fd1b5"
+      },
+      "generation-registration-resume.json": {
+        "path": ".runtime/skill-cold-reader-fresh/text-layer/sample/generation-registration-resume.json",
+        "sha256": "49ba78e01c3c501fd225396deddd55fad7d1bac5c4f73e51aae9df5f6d5bba5a"
+      },
+      "generation-result-read.json": {
+        "path": ".runtime/skill-cold-reader-fresh/text-layer/sample/generation-result-read.json",
+        "sha256": "4312a43c404e91e7327f11395877d720c67361504195ac86fa7179c443ea444e"
+      }
+    },
+    "result_review_evidence": {
+      "path": ".runtime/skill-cold-reader-fresh/result-review/sample/verification.json",
+      "sha256": "1d97ffd7522e7e164e53875d2aec58a44dd93d9446e9cd5d1201a44ece64177d"
+    }
+  },
+  "final_samples": [
+    {
+      "name": "text-layer",
+      "verification": {
+        "path": ".runtime/prompt-constraints/samples/text-layer/verification.json",
+        "sha256": "d894ae845e6ac7626387b13c5947474da9bd8483d28a16ae821f227ece58d93f"
+      }
+    }
+  ],
+  "prompt_constraint_revision": {
+    "trigger": "用户要求Prompt格式、必备要素和内容触发要素明确，并兼顾人和AI阅读。",
+    "rounds": [
+      6
+    ],
+    "evidence_directory": ".runtime/prompt-constraints/text-layer",
+    "shared_sources_unchanged": true,
+    "before": "叙事字稿要求已有说明，但缺完整可执行制作指令格式及已填示例。",
+    "after": "准确字稿、版面、出现交接和检查目标形成交付顺序；五类用途补相应约束，字稿与底图Prompt分开。",
+    "sample_report": "samples/text-layer.md"
   }
 }

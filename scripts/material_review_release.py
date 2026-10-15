@@ -770,7 +770,7 @@ def main():
     q.add_argument('--method-file-history',action='store_true',help='derive exact independent file histories without changing existing records')
     q.add_argument('--remove-material-versions',action='store_true',help='physically remove retired material versions without retaining a backup')
     q.add_argument('--method-registry',type=Path);q.add_argument('--method-audit',type=Path)
-    q.add_argument('--method-history-package',type=Path,help='task 0010 reviewed one-time cleanup package; committed registry contains only retained configuration')
+    q.add_argument('--method-history-package',type=Path,help='task 0010 explicitly reviewed cleanup pass; committed registry contains only retained configuration')
     for name in ('story-candidate','system-candidate','story-target','system-target'):q.add_argument('--'+name,required=True)
     for cmd in ('build','preflight','apply','recover','publish-system'):
         q=sub.add_parser(cmd);q.add_argument('--bundle',type=Path,required=True)
