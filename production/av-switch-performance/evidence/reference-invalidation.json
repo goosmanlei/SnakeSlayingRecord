@@ -59,65 +59,12 @@
           "object_id": "av-perf-isolated-candidate",
           "version": 1,
           "payload": {
-            "blocks": [
-              {
-                "id": "description",
-                "text": "文字生成候选，实际 2016×2688；请求 high/4K，但未达到原生 4K 要求。未经用户选为母版。"
-              },
-              {
-                "id": "state-association",
-                "text": "所属实体：李寄。\n李寄·劳作后未擦手：全身造型候选：散发、肩侧红印、双手干白浆糊及日常衣裤对应劳作后未擦手。原图已回看；指缝羊毛未清晰表达，肩印位置与颜色、造型及原生 4K 仍待审。不能用于已擦净、湿衣、包布或伤后形态。\n本次只明确候选归属与审阅范围，未生成新文件、未记录用户采纳或镜头采用。原件及历史版本保留，未补画状态中缺失的细节。"
-              }
-            ],
-            "candidate_identity": "candidate-fde84a37a2a6ea06c6a7e701b5335f59df1db288882931fd30a78f1c15e95cd8",
-            "candidate_requirements": [
-              {
-                "object_id": "material-av-e17-a04-s09-camera-main",
-                "revision_id": "5fa53759a1282dba8e1f5d26c6c8a6aa1e4722a14f83051ed2cf41bb44c08956"
-              }
-            ],
-            "components": [
-              {
-                "bytes": 3493361,
-                "file": "cd50ecc53c05dd06c2f592adf164b12f2711ef44538479cd3b55a711590dae33.png",
-                "height": 2688,
-                "id": "original",
-                "mime": "image/png",
-                "role": "original",
-                "sha256": "cd50ecc53c05dd06c2f592adf164b12f2711ef44538479cd3b55a711590dae33",
-                "width": 2016
-              },
-              {
-                "bytes": 1318,
-                "file": "41ab8c99769e9b300bb40e4176a501e373323cbe3a462d4a83233e7d28249935.json",
-                "id": "receipt",
-                "mime": "application/json",
-                "role": "metadata",
-                "sha256": "41ab8c99769e9b300bb40e4176a501e373323cbe3a462d4a83233e7d28249935"
-              }
-            ],
-            "external_source": {
-              "description": "仅隔离验收，未发布",
-              "kind": "external"
-            },
-            "format": "production-asset-v1",
-            "lineage": {
-              "i2i_depth": 0,
-              "references": []
-            },
-            "media_type": "image",
-            "placeholder": false,
-            "state_coverage": [],
-            "states": [],
-            "subjects": [],
-            "title": "隔离验收候选 · 复用已有图像原件",
-            "verification": {
-              "file_inspected": true,
-              "listened": false,
-              "native_4k_passed": false,
-              "user_accepted": false,
-              "visually_inspected": true
-            }
+            "format": "redacted-production-evidence-v1",
+            "production_content_deleted": true,
+            "object_id": null,
+            "original_kind": null,
+            "original_sha256": "ace30a798d9dbdddeaf7218302676c126b7c5bd7885bfc80cb44df916cd01e1b",
+            "replay_disabled": true
           },
           "created_at": "2026-10-11T14:00:15+00:00",
           "kind": "ASSET",
@@ -136,10 +83,14 @@
                   "reason": "external original; no model call"
                 }
               ],
-              "input_contents": [],
+              "input_contents_deleted": {
+                "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+              },
               "operation_id": "source:av-perf-isolated-candidate",
               "request": {},
-              "requirements": [],
+              "requirements_deleted": {
+                "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+              },
               "source": {
                 "description": "仅隔离验收，未发布",
                 "kind": "external"
@@ -200,107 +151,12 @@
           "object_id": "material-entity-family-meal-identity",
           "version": 3,
           "payload": {
-            "blocks": [
-              {
-                "id": "purpose",
-                "text": "为全剧固定归家饭食与桌凳的身份、轮廓、配色和可复查结构；实际候选仍须逐项选择。"
-              }
-            ],
-            "entities": [
-              {
-                "object_id": "entity-family-meal",
-                "revision_id": "347595e6b45b65d747dd6ca66c50de6f9e4ec43bfa495d0b8c00469d08670203"
-              }
-            ],
-            "format": "production-requirement-v1",
-            "generation": {
-              "blockers": [],
-              "conditions": {},
-              "format": "generation-plan-v1",
-              "inputs": [],
-              "method": "generate",
-              "model": "gpt-image-2-5-sunburst",
-              "output": {
-                "description": "按对象定义呈现单件或实际物件组，全形与接触结构清楚，保留真实材质与轮廓，中性背景，不加入使用者或现场动作。",
-                "name": "归家饭食与桌凳 · 结构母版",
-                "review_criteria": [
-                  "画面中实际需要的身份、结构与状态和准确用途一致",
-                  "构图、接触点、空间出入口与轴线可核对",
-                  "核实际原件尺寸与原生回执，不以请求4K或放大冒充原生",
-                  "最深输入图像谱系不超过两代；失真时回干净母版"
-                ]
-              },
-              "parameters": {
-                "aspect_ratio": "4:3",
-                "n": 1,
-                "project_id": "8K6WcbrPLghSBJXBtWAE",
-                "quality": "high",
-                "resolution": "4K"
-              },
-              "prompt": "二维人物与轻手绘背景，正常人物比例，干净轮廓与清楚色块，背景轻而可读；不新增粗纸纹、颗粒、过锐边缘或写实皮肤。\n对象：归家饭食与桌凳。饼、炖肉、炒蛋和汤，板桌与借来的凳子容纳帮忙乡亲；最后留温饭和净碗。\n按对象定义呈现单件或实际物件组，全形与接触结构清楚，保留真实材质与轮廓，中性背景，不加入使用者或现场动作。\n这是从文字创建的干净根母版；当前没有选中图像输入，不假称参考现有候选。无装饰边框、水印或额外文字。",
-              "randomization": {
-                "mode": "random"
-              },
-              "relation_model": "context-v1",
-              "selected_routes": {},
-              "tool": "openart cli"
-            },
-            "media_type": "image",
-            "purpose": "为全剧固定归家饭食与桌凳的身份、轮廓、配色和可复查结构；实际候选仍须逐项选择。",
-            "required": true,
-            "scope": {
-              "object_id": "entity-family-meal",
-              "revision_id": "347595e6b45b65d747dd6ca66c50de6f9e4ec43bfa495d0b8c00469d08670203"
-            },
-            "slot": "identity-master",
-            "sources": [
-              {
-                "block_ids": [
-                  "screenplay-04-lantern-home-s027-b005",
-                  "screenplay-04-lantern-home-s027-b007",
-                  "screenplay-04-lantern-home-s027-b008"
-                ],
-                "object_id": "screenplay-04-lantern-home-e11",
-                "revision_id": "95475950c78fb133139df9d7b783089c9547c887334ad44982ed4e4f788bbcb5",
-                "scene_id": "s027"
-              },
-              {
-                "block_ids": [
-                  "screenplay-04-lantern-home-s034-b001",
-                  "screenplay-04-lantern-home-s034-b005",
-                  "screenplay-04-lantern-home-s034-b010",
-                  "screenplay-04-lantern-home-s034-b011",
-                  "screenplay-04-lantern-home-s034-b012",
-                  "screenplay-04-lantern-home-s034-b016",
-                  "screenplay-04-lantern-home-s034-b017",
-                  "screenplay-04-lantern-home-s034-b019",
-                  "screenplay-04-lantern-home-s034-b021",
-                  "screenplay-04-lantern-home-s034-b026",
-                  "screenplay-04-lantern-home-s034-b028",
-                  "screenplay-04-lantern-home-s034-b029",
-                  "screenplay-04-lantern-home-s034-b030"
-                ],
-                "object_id": "screenplay-04-lantern-home-e15",
-                "revision_id": "66dff731e9cea40ce22d89931790e69006d19db2d04fb724ba7e2d3a9ae7bc23",
-                "scene_id": "s034"
-              },
-              {
-                "block_ids": [
-                  "screenplay-04-lantern-home-s042-b020"
-                ],
-                "object_id": "screenplay-04-lantern-home-e17",
-                "revision_id": "86472299d571ceb960315b77be5e782e2153575aa4bfe44dead0c3fcc1818fd8",
-                "scene_id": "s042"
-              }
-            ],
-            "specification": {
-              "lineage_role": "clean_master",
-              "native_resolution_policy": "highest_provider_native",
-              "planned_i2i_depth": 0
-            },
-            "states": [],
-            "title": "归家饭食与桌凳 · 结构母版",
-            "usage": "generation_input"
+            "format": "redacted-production-evidence-v1",
+            "production_content_deleted": true,
+            "object_id": null,
+            "original_kind": null,
+            "original_sha256": "1994ef4001d72c213032ffa5109fbf867be2c7d58278da4e927ffc6fa9c3cc56",
+            "replay_disabled": true
           },
           "created_at": "2026-10-09T07:50:06+00:00",
           "kind": "REQUIREMENT",
@@ -349,183 +205,12 @@
           "object_id": "material-form-li-ji-scar-overall",
           "version": 4,
           "payload": {
-            "blocks": [
-              {
-                "id": "purpose",
-                "text": "左掌拆布留新疤、额为浅褐短印，扶袋、写字与下集订书皆有近景接触；准确持续外观必须区别血布和净包布，保留输入，不把疤印夸大为新伤。"
-              }
-            ],
-            "entities": [
-              {
-                "object_id": "entity-li-ji",
-                "revision_id": "55680f0c4847d806cdc302001450b5e0cd67b14c827ddb5bf20cf7b622ead92e"
-              }
-            ],
-            "format": "production-requirement-v1",
-            "generation": {
-              "blockers": [],
-              "conditions": {},
-              "format": "generation-plan-v1",
-              "inputs": [
-                {
-                  "necessity": "required",
-                  "reference": {
-                    "object_id": "material-entity-li-ji-identity",
-                    "revision_id": "cedf5bfdc1ba1d8562071e8b944bb6442c88c2c05932fd9a2df666fb58a42677"
-                  },
-                  "relation": {
-                    "object_id": "relation-db579375dfd85cfdd80a0a21519fd589",
-                    "revision_id": "b21b777114c72cf08a9685de9a226b001f5311d465514f98d507ebb5d477fc8f"
-                  },
-                  "selection_state": "unselected",
-                  "semantics": "variant",
-                  "use": "固定身份与结构，按此版状态表现差异"
-                }
-              ],
-              "method": "generate",
-              "model": "gpt-image-2-5-sunburst",
-              "output": {
-                "description": "身形结实轻巧的女孩，圆中带直的面颊，眉略平，深褐眼；黑发低束，颊边留两撮松发。赭红短上衣、米白内领、深灰蓝直裤、灰布鞋；袖口束窄，腰系素布带，无首饰。站姿重心靠前，伸手快，转头先于转身；不画成大头幼童。\n左掌已拆布，掌根浅粉新疤用力时绷紧，右额留浅褐短印；同款日常衣、正常站姿，不保留战后膝软。新疤和额印只作少量清楚线色。",
-                "name": "李寄·掌心新疤 · 整体参考",
-                "review_criteria": [
-                  "同一人物、动物或已定义群组的身份、数量与比例一致；适用的衣着、伤侧和持物按本阶段，不给动物套衣饰或把群组缩成一人",
-                  "核实际原件尺寸与原生回执，不以请求4K或放大冒充原生",
-                  "最深输入图像谱系不超过两代；失真时回干净母版"
-                ]
-              },
-              "parameters": {
-                "aspect_ratio": "3:4",
-                "n": 1,
-                "project_id": "8K6WcbrPLghSBJXBtWAE",
-                "quality": "high",
-                "resolution": "4K"
-              },
-              "prompt": "二维人物与轻手绘背景，正常人物比例，干净轮廓与清楚色块，背景轻而可读；不新增粗纸纹、颗粒、过锐边缘或写实皮肤。\n图片1只固定干净母版的身份与结构；身形结实轻巧的女孩，圆中带直的面颊，眉略平，深褐眼；黑发低束，颊边留两撮松发。赭红短上衣、米白内领、深灰蓝直裤、灰布鞋；袖口束窄，腰系素布带，无首饰。站姿重心靠前，伸手快，转头先于转身；不画成大头幼童。\n左掌已拆布，掌根浅粉新疤用力时绷紧，右额留浅褐短印；同款日常衣、正常站姿，不保留战后膝软。新疤和额印只作少量清楚线色。\n本次准备的实际用途与限制：左掌拆布留新疤、额为浅褐短印，扶袋、写字与下集订书皆有近景接触；准确持续外观必须区别血布和净包布，保留输入，不把疤印夸大为新伤。\n按实体定义呈现同一人物、动物或可辨群组的全形与本阶段可见细节；不复制成员，不给动物套人类衣饰，不添加别场伤势、湿痕或持物。",
-              "randomization": {
-                "mode": "random"
-              },
-              "relation_model": "context-v1",
-              "selected_routes": {},
-              "tool": "openart cli"
-            },
-            "media_type": "image",
-            "method_adjustment": {
-              "operation": "relation-contract",
-              "parent": {
-                "object_id": "material-form-li-ji-scar-overall",
-                "revision_id": "09ea25a4cadfdcdfc8ee1102c3ad470831cafbf1ff520ed044a7d60111214d58"
-              }
-            },
-            "purpose": "左掌拆布留新疤、额为浅褐短印，扶袋、写字与下集订书皆有近景接触；准确持续外观必须区别血布和净包布，保留输入，不把疤印夸大为新伤。",
-            "required": true,
-            "scope": {
-              "object_id": "form-li-ji-scar",
-              "revision_id": "7cd1bd2bebc809065a841a959075e422ee12d6b98753ec76c6c53821eb57b4f1"
-            },
-            "slot": "overall",
-            "sources": [
-              {
-                "block_ids": [
-                  "screenplay-04-lantern-home-s040-b002",
-                  "screenplay-04-lantern-home-s040-b017"
-                ],
-                "object_id": "screenplay-04-lantern-home-e17",
-                "revision_id": "86472299d571ceb960315b77be5e782e2153575aa4bfe44dead0c3fcc1818fd8",
-                "scene_id": "s040"
-              },
-              {
-                "block_ids": [
-                  "screenplay-04-lantern-home-s037-b011",
-                  "screenplay-04-lantern-home-s037-b013",
-                  "screenplay-04-lantern-home-s037-b019",
-                  "screenplay-04-lantern-home-s037-b021",
-                  "screenplay-04-lantern-home-s037-b023",
-                  "screenplay-04-lantern-home-s037-b024",
-                  "screenplay-04-lantern-home-s037-b026"
-                ],
-                "object_id": "screenplay-04-lantern-home-e16",
-                "revision_id": "94ca5b3b1fa8e9acc7a25d7918904c8a8147cdd572c879b6c894ad4f517412d2",
-                "scene_id": "s037"
-              },
-              {
-                "block_ids": [
-                  "screenplay-04-lantern-home-s038-b003",
-                  "screenplay-04-lantern-home-s038-b004",
-                  "screenplay-04-lantern-home-s038-b005",
-                  "screenplay-04-lantern-home-s038-b007",
-                  "screenplay-04-lantern-home-s038-b012"
-                ],
-                "object_id": "screenplay-04-lantern-home-e16",
-                "revision_id": "94ca5b3b1fa8e9acc7a25d7918904c8a8147cdd572c879b6c894ad4f517412d2",
-                "scene_id": "s038"
-              },
-              {
-                "block_ids": [
-                  "screenplay-04-lantern-home-s039-b008",
-                  "screenplay-04-lantern-home-s039-b009",
-                  "screenplay-04-lantern-home-s039-b012",
-                  "screenplay-04-lantern-home-s039-b020"
-                ],
-                "object_id": "screenplay-04-lantern-home-e16",
-                "revision_id": "94ca5b3b1fa8e9acc7a25d7918904c8a8147cdd572c879b6c894ad4f517412d2",
-                "scene_id": "s039"
-              },
-              {
-                "block_ids": [
-                  "screenplay-04-lantern-home-s040-b001",
-                  "screenplay-04-lantern-home-s040-b002",
-                  "screenplay-04-lantern-home-s040-b005",
-                  "screenplay-04-lantern-home-s040-b006",
-                  "screenplay-04-lantern-home-s040-b008",
-                  "screenplay-04-lantern-home-s040-b010",
-                  "screenplay-04-lantern-home-s040-b015",
-                  "screenplay-04-lantern-home-s040-b017"
-                ],
-                "object_id": "screenplay-04-lantern-home-e17",
-                "revision_id": "86472299d571ceb960315b77be5e782e2153575aa4bfe44dead0c3fcc1818fd8",
-                "scene_id": "s040"
-              },
-              {
-                "block_ids": [
-                  "screenplay-04-lantern-home-s041-b008",
-                  "screenplay-04-lantern-home-s041-b012",
-                  "screenplay-04-lantern-home-s041-b015",
-                  "screenplay-04-lantern-home-s041-b019",
-                  "screenplay-04-lantern-home-s041-b020",
-                  "screenplay-04-lantern-home-s041-b021"
-                ],
-                "object_id": "screenplay-04-lantern-home-e17",
-                "revision_id": "86472299d571ceb960315b77be5e782e2153575aa4bfe44dead0c3fcc1818fd8",
-                "scene_id": "s041"
-              },
-              {
-                "block_ids": [
-                  "screenplay-04-lantern-home-s042-b003",
-                  "screenplay-04-lantern-home-s042-b005",
-                  "screenplay-04-lantern-home-s042-b006",
-                  "screenplay-04-lantern-home-s042-b010",
-                  "screenplay-04-lantern-home-s042-b013",
-                  "screenplay-04-lantern-home-s042-b018",
-                  "screenplay-04-lantern-home-s042-b021"
-                ],
-                "object_id": "screenplay-04-lantern-home-e17",
-                "revision_id": "86472299d571ceb960315b77be5e782e2153575aa4bfe44dead0c3fcc1818fd8",
-                "scene_id": "s042"
-              }
-            ],
-            "specification": {
-              "native_resolution_policy": "highest_provider_native",
-              "planned_i2i_depth": 1,
-              "reference_role": "overall"
-            },
-            "states": [
-              {
-                "object_id": "form-li-ji-scar",
-                "revision_id": "7cd1bd2bebc809065a841a959075e422ee12d6b98753ec76c6c53821eb57b4f1"
-              }
-            ],
-            "title": "李寄·掌心新疤 · 整体参考",
-            "usage": "generation_input"
+            "format": "redacted-production-evidence-v1",
+            "production_content_deleted": true,
+            "object_id": null,
+            "original_kind": null,
+            "original_sha256": "4d05f8fc463b821e30452cb90750da5583ce426de6eadd23000d12175fe74045",
+            "replay_disabled": true
           },
           "created_at": "2026-10-10T13:19:20+00:00",
           "kind": "REQUIREMENT",
@@ -574,127 +259,12 @@
           "object_id": "material-form-old-lantern-lit-overall",
           "version": 4,
           "payload": {
-            "blocks": [
-              {
-                "id": "purpose",
-                "text": "A01磨石旁的灯罩补缝与暖光第一次明确可见，之后贯穿持灯和回家；完整灯与补纸位置需要可核参考，实际亮度按夜间手与脸可读，不作神异光源。"
-              }
-            ],
-            "entities": [
-              {
-                "object_id": "entity-old-lantern",
-                "revision_id": "d5cf9f0615d207f54b1818f637f31fc85b0ac7511c94b7d284108ec270312587"
-              }
-            ],
-            "format": "production-requirement-v1",
-            "generation": {
-              "blockers": [],
-              "conditions": {},
-              "format": "generation-plan-v1",
-              "inputs": [
-                {
-                  "necessity": "required",
-                  "reference": {
-                    "object_id": "material-entity-old-lantern-identity",
-                    "revision_id": "8fdff8f172b9dfca2479ed5c2a86aa00dea36ecd7e2360df4b1857aaccfbb79a"
-                  },
-                  "relation": {
-                    "object_id": "relation-ac4bddedfdf671aecdd808839e8f1509",
-                    "revision_id": "7e0941e437485dfff8ccb74582261819d8ed54384c39fbc6caddb60c7f41f15d"
-                  },
-                  "selection_state": "unselected",
-                  "semantics": "variant",
-                  "use": "固定身份与结构，按此版状态表现差异"
-                }
-              ],
-              "method": "generate",
-              "model": "gpt-image-2-5-sunburst",
-              "output": {
-                "description": "完整形态如上；材质、颜色及未写磨损细节待审。\n组成与内容以上述描述及引用正文为准；未写内容不补造。\n持有者与位置依本场引用和动作起止；普通转手不另拆状态。\n同一旧灯，罩裂缝补窄纸，灯芯点亮，补纸透微黄光；色温与亮度待审。",
-                "name": "李家旧灯·裂缝补纸透暖光 · 整体参考",
-                "review_criteria": [
-                  "全形、材质、接触部位与内容一致；缺损、开合、装入或取出按动作先后发生",
-                  "检查持有者与去向；局部细节不冒充物件完整结构",
-                  "核实际原件尺寸与原生回执，不以请求4K或放大冒充原生",
-                  "最深输入图像谱系不超过两代；失真时回干净母版"
-                ]
-              },
-              "parameters": {
-                "aspect_ratio": "16:9",
-                "n": 1,
-                "project_id": "8K6WcbrPLghSBJXBtWAE",
-                "quality": "high",
-                "resolution": "4K"
-              },
-              "prompt": "二维人物与轻手绘背景，正常人物比例，干净轮廓与清楚色块，背景轻而可读；不新增粗纸纹、颗粒、过锐边缘或写实皮肤。\n图片1只固定干净母版的身份与结构；完整形态如上；材质、颜色及未写磨损细节待审。\n组成与内容以上述描述及引用正文为准；未写内容不补造。\n持有者与位置依本场引用和动作起止；普通转手不另拆状态。\n同一旧灯，罩裂缝补窄纸，灯芯点亮，补纸透微黄光；色温与亮度待审。\n本次准备的实际用途与限制：A01磨石旁的灯罩补缝与暖光第一次明确可见，之后贯穿持灯和回家；完整灯与补纸位置需要可核参考，实际亮度按夜间手与脸可读，不作神异光源。\n按实体定义呈现同一道具或物件组的全形和指定接触细节；不添加使用者，不提前展示后续缺损或内容。",
-              "randomization": {
-                "mode": "random"
-              },
-              "relation_model": "context-v1",
-              "selected_routes": {},
-              "tool": "openart cli"
-            },
-            "media_type": "image",
-            "method_adjustment": {
-              "operation": "relation-contract",
-              "parent": {
-                "object_id": "material-form-old-lantern-lit-overall",
-                "revision_id": "b27d32c536d5d7caa72e2d9690fe38322d05c7190672841ee2db143b22338f7a"
-              }
-            },
-            "purpose": "A01磨石旁的灯罩补缝与暖光第一次明确可见，之后贯穿持灯和回家；完整灯与补纸位置需要可核参考，实际亮度按夜间手与脸可读，不作神异光源。",
-            "required": true,
-            "scope": {
-              "object_id": "form-old-lantern-lit",
-              "revision_id": "c3306cb2f2b23ab9cb7843abd9d2f0ce42c159673906fdcbf784a7966d889968"
-            },
-            "slot": "overall",
-            "sources": [
-              {
-                "block_ids": [
-                  "screenplay-04-lantern-home-s016-b003"
-                ],
-                "object_id": "screenplay-04-lantern-home-e07",
-                "revision_id": "b57f260623beb1ffdcb32e77afdd9c65f831e297ccd82b91ad176e49b599aa19",
-                "scene_id": "s016"
-              },
-              {
-                "block_ids": [
-                  "screenplay-04-lantern-home-s041-b013",
-                  "screenplay-04-lantern-home-s041-b019"
-                ],
-                "object_id": "screenplay-04-lantern-home-e17",
-                "revision_id": "86472299d571ceb960315b77be5e782e2153575aa4bfe44dead0c3fcc1818fd8",
-                "scene_id": "s041"
-              },
-              {
-                "block_ids": [
-                  "screenplay-04-lantern-home-s042-b003",
-                  "screenplay-04-lantern-home-s042-b004",
-                  "screenplay-04-lantern-home-s042-b012",
-                  "screenplay-04-lantern-home-s042-b013",
-                  "screenplay-04-lantern-home-s042-b019",
-                  "screenplay-04-lantern-home-s042-b021",
-                  "screenplay-04-lantern-home-s042-b022"
-                ],
-                "object_id": "screenplay-04-lantern-home-e17",
-                "revision_id": "86472299d571ceb960315b77be5e782e2153575aa4bfe44dead0c3fcc1818fd8",
-                "scene_id": "s042"
-              }
-            ],
-            "specification": {
-              "native_resolution_policy": "highest_provider_native",
-              "planned_i2i_depth": 1,
-              "reference_role": "overall"
-            },
-            "states": [
-              {
-                "object_id": "form-old-lantern-lit",
-                "revision_id": "c3306cb2f2b23ab9cb7843abd9d2f0ce42c159673906fdcbf784a7966d889968"
-              }
-            ],
-            "title": "李家旧灯·裂缝补纸透暖光 · 整体参考",
-            "usage": "generation_input"
+            "format": "redacted-production-evidence-v1",
+            "production_content_deleted": true,
+            "object_id": null,
+            "original_kind": null,
+            "original_sha256": "9ebe0b7a402e1e77e98567feda43371f659f495db764bb65e3426e416e0ca8ac",
+            "replay_disabled": true
           },
           "created_at": "2026-10-10T13:19:21+00:00",
           "kind": "REQUIREMENT",
