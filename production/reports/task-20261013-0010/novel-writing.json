@@ -104,7 +104,7 @@
   "removed_empty_directories": 115,
   "last_material_revision_has_been_read": true,
   "human_user_study": false,
-  "formal_publication": false,
+  "formal_publication": true,
   "work_sample": {
     "source": ".runtime/skill-cold-reader-fresh/novel-writing/sample/seed.json",
     "source_sha256": "2829e500cc6cb5bb77895e686af551d0180f84b1b5b85354ef9243df6c4b4bd6",
@@ -150,7 +150,7 @@
     "output_sha256": "2414d52323a86d4a18cea60e21489f8954e765d6e3c2dd1b261222a272bcdc65"
   },
   "binding_and_readback": ".runtime/skill-cold-reader-fresh/novel-writing/isolated-edit/verification.json",
-  "history_cleanup_pending": true,
+  "history_cleanup_pending": false,
   "isolated_browser": {
     "browser": "Chrome",
     "browser_id": "2",
@@ -210,5 +210,11 @@
       "formal_writes": false,
       "screenshot": "reboot-chrome-novel-compare-detail.png"
     }
+  },
+  "current_delivery": {
+    "status": "LOCAL_FORMAL_DELIVERY_VERIFIED_AWAITING_USER_CONFIRMATION",
+    "reference": "delivery.md",
+    "browser": "formal-browser.json",
+    "complete_recovery": "final-recovery.json"
   }
 }

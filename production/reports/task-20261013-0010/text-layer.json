@@ -1,7 +1,7 @@
 {
   "task": "task-20261013-0010",
   "item": "text-layer",
-  "status": "FIVE_ROUNDS_AND_FULL_SAMPLE_CHAIN_COMPLETE_FORMAL_PENDING",
+  "status": "FIVE_ROUNDS_AND_FULL_SAMPLE_CHAIN_COMPLETE",
   "valid_complete_rounds": 5,
   "rounds": [
     {
@@ -102,7 +102,7 @@
     "SKILL.md": "e93ad71e90fbc1c6ea858132c93cc81f64f99bc66910604397e5567280713697"
   },
   "final_sample_complete": true,
-  "formal_publication": false,
+  "formal_publication": true,
   "human_participant_test": false,
   "queued_coordinator_followups": {
     "path": ".runtime/skill-cold-reader-fresh/text-layer/coordinator-followups.json",
@@ -119,10 +119,8 @@
     "SKILL.md": "e93ad71e90fbc1c6ea858132c93cc81f64f99bc66910604397e5567280713697"
   },
   "pending": [
-    "formal_incremental_publication",
-    "formal_browser",
-    "final_empty_restore",
-    "scoped_history_cleanup"
+    "user completion confirmation",
+    "separately owned independent review"
   ],
   "final_method": {
     "object_id": "method.skill.text-layer",
@@ -172,5 +170,11 @@
   "result_review_evidence": {
     "path": ".runtime/skill-cold-reader-fresh/result-review/sample/verification.json",
     "sha256": "1d97ffd7522e7e164e53875d2aec58a44dd93d9446e9cd5d1201a44ece64177d"
+  },
+  "current_delivery": {
+    "status": "LOCAL_FORMAL_DELIVERY_VERIFIED_AWAITING_USER_CONFIRMATION",
+    "reference": "delivery.md",
+    "browser": "formal-browser.json",
+    "complete_recovery": "final-recovery.json"
   }
 }
