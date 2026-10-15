@@ -68,20 +68,21 @@
       "entities": [
         "aheng",
         "aheng-home",
-        "songbook"
+        "songbook",
+        "writing-kit"
       ],
       "states": [
         "book-dry-sheets"
       ],
       "voices": [],
-      "texts": [
-        {
-          "slot": "first-wage",
-          "title": "首夜账字",
-          "purpose": "区分日率与首笔实际收入。",
-          "text": "一日两升\n两升",
-          "placement": "上一行为约定；下一行为第一笔；日期不可辨，不添数字。"
-        }
+      "texts": [],
+      "material_slots": {
+        "aheng-home": [
+          "layout"
+        ]
+      },
+      "shared_text_requirements": [
+        "s007-q05-two-wages"
       ]
     },
     {
@@ -124,7 +125,8 @@
       "entities": [
         "aheng",
         "aheng-home",
-        "songbook"
+        "songbook",
+        "writing-kit"
       ],
       "states": [
         "book-dry-sheets"
@@ -134,11 +136,29 @@
         {
           "slot": "two-wages",
           "title": "两夜记工",
-          "purpose": "可见两笔合计四升，无第三笔。",
+          "purpose": "同一记工背页的唯一准确字稿，按约定、首夜和次夜的真实进度分层显现；两笔实际工钱被圈，日率不圈。",
           "text": "一日两升\n两升\n两升",
-          "placement": "约定在上且不圈；只圈下两笔；日期落笔但不可辨。"
+          "placement": "第6场第7镜只露上方约定的两升；第7场第3镜在旁补一日并另行第一笔两升；第7场第5镜才写第二笔并圈下两行。日期依原镜遮挡不可辨，不添数字。",
+          "source_refs": [
+            [
+              6,
+              28,
+              30
+            ],
+            [
+              7,
+              3,
+              5
+            ]
+          ],
+          "occurrence": "唯一稿按三个写入阶段控制字形与圈线显隐；后续抽出、呈证和收单沿同一页复用。"
         }
-      ]
+      ],
+      "material_slots": {
+        "aheng-home": [
+          "layout"
+        ]
+      }
     },
     {
       "range": [
@@ -164,7 +184,12 @@
       ],
       "voices": [
         "aheng-mother"
-      ]
+      ],
+      "material_slots": {
+        "aheng-home": [
+          "layout"
+        ]
+      }
     },
     {
       "range": [
@@ -191,7 +216,12 @@
       "voices": [
         "aheng",
         "lixiao"
-      ]
+      ],
+      "material_slots": {
+        "aheng-home": [
+          "layout"
+        ]
+      }
     },
     {
       "range": [
@@ -211,7 +241,8 @@
         "aheng-mother",
         "lixiao",
         "neighbor-woman",
-        "aheng-home"
+        "aheng-home",
+        "stage-drum"
       ],
       "states": [
         "mother-oldstage"
@@ -219,7 +250,15 @@
       "voices": [
         "aheng",
         "aheng-mother"
-      ]
+      ],
+      "material_slots": {
+        "stage-drum": [
+          "sound"
+        ],
+        "aheng-home": [
+          "layout"
+        ]
+      }
     }
   ]
 }

@@ -1,6 +1,6 @@
 # 李寄斩蛇 · 故事采编实例
 
-本仓库是公开故事实例，不包含审阅台系统代码。系统代码及后续迭代在 [story-review-desk](https://github.com/goosmanlei/story-review-desk)；所需系统版本固定于 [config/instance.json](config/instance.json)；本实例的集场阅读、评论与正式运行状态分别见 [验证记录](VERIFICATION.md) 和 [当前状态](STATE.md)。已选方向三《把灯带回家》，当前作品包括[故事结构第十稿](http://127.0.0.1:3000/?workspace=story.outline)、[故事精修九 · 定稿候选](http://127.0.0.1:3000/?workspace=story.sources&source=refinement-09-lantern-home-v9)和[剧本版本四](http://127.0.0.1:3000/?workspace=story.script&script=screenplay-04-lantern-home&episode=screenplay-04-lantern-home-e01)。旧版本及评论保留；用户已确认版本四为本次制作终稿，精确输入与两轮制作审阅边界见 [当前状态](STATE.md)。
+本仓库是公开故事实例，不包含审阅台系统代码。系统代码及后续迭代在 [story-review-desk](https://github.com/goosmanlei/story-review-desk)；所需系统版本固定于 [config/instance.json](config/instance.json)；本实例的集场阅读、评论与正式运行状态分别见 [验证记录](VERIFICATION.md) 和 [当前状态](STATE.md)。已选方向三《把灯带回家》，当前作品包括[故事结构第十稿](http://127.0.0.1:3000/?workspace=story.outline)、[故事精修九 · 定稿候选](http://127.0.0.1:3000/?workspace=story.sources&source=refinement-09-lantern-home-v9)和[剧本版本四](http://127.0.0.1:3000/?workspace=story.script&script=screenplay-04-lantern-home&episode=screenplay-04-lantern-home-e01)。旧版本及评论保留；用户已确认版本四为本次制作终稿，准确输入与当前制作边界见 [当前状态](STATE.md)。
 
 ## 故事创作导航与评论数
 
@@ -18,7 +18,7 @@
 
 ## 制作与审阅
 
-[生产制作](production/README.md)统一组织视听制作、实体管理和素材管理。当前[全剧视听设计](production/audiovisual/README.md)覆盖版本四的 17 集、42 故事场，重编为 65 个视听场、344 镜；1,534 项新需求与四项保留歌曲需求共用准确素材关系。6021 秒是为表演和动作预留的保守方案估计，约 100 分钟，不是成片实测。用户允许适度加长，以动作和表演读得清楚为先。
+[生产制作](production/README.md)统一组织视听制作、实体管理和素材管理。当前[全剧新视听设计](production/rebuild/README.md)覆盖版本四17集、42个故事场及全部1114正文块，新建42个视听场、416镜、122个普通实体、21个完整状态和650项有效素材需求。完成1轮作者自验，完整素材方案由0005从零编制；没有新候选或生成。7574秒（126分14秒）为作者预算，尚未实读唱或生成验证。正式发布与恢复结果见[任务验收](production/reports/task-20261015-0002/VERIFICATION.md)。
 
 “制作思路”按系统构想、数据模型、基础流程、故事创作、生产制作排列。基础流程以紧凑阶段框连接动作与纸张形产出，承接真实 SKILL、准确文件阅读、版本比较和评论；数据模型保留编号查询。两个创作概览只表达关系。专业资料沿对应 SKILL 文件树读取，[视频生成手册](production/seedance-video-handbook.md)及[影视专业知识](production/filmcraft/README.md)仍是唯一专业正文，旧章节和准确文件链接转入对应阅读位置。导航与源映射由 [content/production-approach.json](content/production-approach.json)及同步工具维护；实际执行由既有写作及媒体入口取得准确方法和资料；[工作交接表](production/professional-methods.md)说明输入、输出和负责阶段。
 
