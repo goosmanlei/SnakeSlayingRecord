@@ -59,7 +59,7 @@ def main():
     root = a.root.resolve(strict=True)
     output = a.output.resolve()
     sys.path.insert(0, str(a.system.resolve(strict=True)))
-    from production_history_cleanup import clean, framework, content_index, redact_database, stream_redact, text_records
+    from production_history_cleanup import clean, configure, framework, content_index, redact_database, stream_redact, text_records
     if a.action != 'prepare':
         result = collections.Counter()
         with (output/'files.jsonl').open() as source:
@@ -116,6 +116,7 @@ def main():
     output.mkdir(parents=True, exist_ok=True)
     known = set(json.loads((a.inventory/'media-catalogue.json').read_text()))
     plan = json.loads(a.reset_plan.read_text())
+    configure(plan)
     known.update(v['physical_sha256'] for v in plan['erased_files'].values() if v.get('physical_sha256'))
     known.update(v['sha256'] for v in plan['erased_files'].values())
     for name in ('engineering-derived-hashes.json',):
