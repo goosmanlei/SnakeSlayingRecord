@@ -1,0 +1,538 @@
+{
+  "scene": 37,
+  "title": "名字销去，粮要自己核清",
+  "principles": "二十多天后；告示书吏为非梁的普通书吏甲。巫赵待决不拍处刑，旧批文只贴抄件；退粮总量未知。阿蘅自核末行和印记，歌本/米袋逐次交接，李寄右掌已愈留细疤，左额已拆布。",
+  "shots": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "seconds": 13,
+      "title": "新告示贴平",
+      "purpose": "明确公开复查已经过一段时间。",
+      "start": "书吏甲站墙前等，另一书吏乙刷浆，告示一角未压平，人群渐聚。",
+      "action": "浆糊刷压平纸角，甲朝人群准备宣读。",
+      "camera": "庙墙中全景，纸角动作先于开口，二十多天后短显。",
+      "sound": "刷纸声、聚人脚步；本镜不提前读处罚段。",
+      "end": "告示平贴，人群开始听。",
+      "entities": [
+        "office-clerks",
+        "verdict-notice",
+        "grain-queue",
+        "temple-front"
+      ],
+      "states": [],
+      "voices": [],
+      "texts": [
+        {
+          "slot": "twenty-days",
+          "title": "复查耗时",
+          "text": "二十多天后",
+          "purpose": "与数日后审问拉开时间，明确结果不是当天公布。",
+          "placement": "开场留白区一次短显。",
+          "source_ranges": [
+            [
+              1,
+              1
+            ]
+          ]
+        },
+        {
+          "slot": "notice-copy",
+          "title": "复查告示准确正文",
+          "text": "巫祝、赵执事，强迫献祭，害死阿禾、小满，篡改凭据，判死罪，押赴郡狱待决。参与押人入道、关门献祭的庙工，各判苦役十年。\n本县县丞，未核自愿与否，未察洞口实情，两次准祭，革职，不得复用。此次停祭、助民除蛇之事记明，不抵前责。梁书吏虚记自愿入祀，革退，不得再充吏役。\n阿禾、小满，皆非自愿入祀。阿蘅祭名销除。永废以人祭蛇，接济之粮照发，不得借粮索人。",
+          "purpose": "准备同一张告示正文，后面正名/销名镜只复用对应段，不新编官名年号或判决。",
+          "placement": "贴墙告示的三段正文，关键下半文字须可读，其余随镜景别。",
+          "source_ranges": [
+            [
+              3,
+              3
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "occurrence": "字稿在此唯一制作，按引用镜头复用；发声次数以各镜声音决定为准。"
+        }
+      ]
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "seconds": 26,
+      "title": "待决的判处",
+      "purpose": "完整读出罪责及待决，不能直接剪成执行。",
+      "start": "甲面对人群，告示已贴好，巫赵在旁阶等待押送。",
+      "action": "甲读巫祝赵执事强迫献祭、两女孩、篡据、死罪押郡待决全句。",
+      "camera": "书吏中近景只见本人和墙，巫赵与守卫在画外，不提前演押送。",
+      "sound": "准确读“巫祝、赵执事，强迫献祭，害死阿禾、小满，篡改凭据，判死罪，押赴郡狱待决。”一次，句内自然换气。",
+      "end": "读完待决句，再转庙工条款。",
+      "entities": [
+        "office-clerks",
+        "verdict-notice",
+        "temple-front"
+      ],
+      "states": [],
+      "voices": [
+        "office-clerks"
+      ],
+      "excerpt": "书吏：巫祝、赵执事，强迫献祭，害死阿禾、小满，篡改凭据，判死罪，押赴郡狱待决。",
+      "shared_text_requirements": [
+        "s037-q01-notice-copy"
+      ]
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "seconds": 15,
+      "title": "押人关门的人也负责",
+      "purpose": "不是只问罪两个主事。",
+      "start": "书吏甲仍站墙前，旁听者静。",
+      "action": "甲接读参与押人入道关门献祭庙工，各判苦役十年。",
+      "camera": "书吏侧中景带静听人群，不另拍新编苦役现场。",
+      "sound": "准确读“参与押人入道、关门献祭的庙工，各判苦役十年。”一次。",
+      "end": "庙工条款读完，声音短停。",
+      "entities": [
+        "office-clerks",
+        "grain-queue",
+        "verdict-notice",
+        "temple-front"
+      ],
+      "states": [],
+      "voices": [
+        "office-clerks"
+      ],
+      "excerpt": "参与押人入道、关门献祭的庙工，各判苦役十年。",
+      "shared_text_requirements": [
+        "s037-q01-notice-copy"
+      ],
+      "material_slots": {
+        "grain-queue": [
+          "identity"
+        ]
+      }
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "seconds": 12,
+      "title": "腰侧没有钥匙了",
+      "purpose": "权力从可见物上退出。",
+      "start": "石阶巫赵由守卫看住，赵腰边无钥匙。",
+      "action": "差役带两人沿阶下山，赵走动时空腰侧清楚。",
+      "camera": "阶侧中景，镜框含赵腰而非手持新钥匙；只押送。",
+      "sound": "下阶脚步、衣声，无刑场声和新咒骂。",
+      "end": "押者走远，钥匙未随赵带走。",
+      "entities": [
+        "guard",
+        "zhao",
+        "priest",
+        "temple-front",
+        "mountain-road"
+      ],
+      "states": [],
+      "voices": []
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "seconds": 25,
+      "title": "旧准祭的责任",
+      "purpose": "官署签押也进入公开结果。",
+      "start": "回告示甲继续，人群中父亲在女孩身后。",
+      "action": "书吏读县丞未核自愿、未察洞情、两次准祭、革职不得复用。",
+      "camera": "书吏中景带告示，不给已革官另一次自辩。",
+      "sound": "准确原第一句一次，读到不得复用停句。",
+      "end": "前责已读，下一句区分本次补救。",
+      "entities": [
+        "office-clerks",
+        "verdict-notice",
+        "temple-front"
+      ],
+      "states": [],
+      "voices": [
+        "office-clerks"
+      ],
+      "excerpt": "书吏：本县县丞，未核自愿与否，未察洞口实情，两次准祭，革职，不得复用。",
+      "shared_text_requirements": [
+        "s037-q01-notice-copy"
+      ]
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "seconds": 27,
+      "title": "这次记明，不抵前责",
+      "purpose": "保留对补救和责任的两面判断。",
+      "start": "李诞在两女孩身后听，程持两份旧批文抄件尚未贴。",
+      "action": "书吏读本次停祭助民不抵前责及梁革退；镜头留在父亲与女孩听完，程持抄件候旁。",
+      "camera": "人群侧中景留在父亲与女孩听完，程持纸不贴；书吏甲只在画外发声。",
+      "sound": "“此次停祭、助民除蛇之事记明，不抵前责。梁书吏虚记自愿入祀，革退，不得再充吏役。”各句一次连续。",
+      "end": "两段责任已听全，父亲即将抬头。",
+      "entities": [
+        "office-clerks",
+        "lidan",
+        "liji",
+        "aheng",
+        "cheng",
+        "approval-paper",
+        "verdict-notice",
+        "temple-front"
+      ],
+      "states": [
+        "liji-healed"
+      ],
+      "voices": [
+        "office-clerks"
+      ],
+      "excerpt": "此次停祭、助民除蛇之事记明，不抵前责。梁书吏虚记自愿入祀，革退，不得再充吏役。",
+      "material_slots": {
+        "office-clerks": []
+      }
+    },
+    {
+      "range": [
+        6,
+        6
+      ],
+      "seconds": 12,
+      "title": "把旧批文贴在旁边",
+      "purpose": "同署名的旧决定有公开出处。",
+      "start": "父亲女孩身后，程持两份抄件尚未贴。",
+      "action": "父亲抬头，程把两份同署名旧批文抄件贴告示旁。",
+      "camera": "人群侧中景看抬头与贴纸，原卷不在场。",
+      "sound": "贴纸声、脚步，无重复宣读上一段。",
+      "end": "两抄件贴墙，原件仍在郡卷。",
+      "entities": [
+        "lidan",
+        "liji",
+        "aheng",
+        "cheng",
+        "approval-paper",
+        "verdict-notice",
+        "temple-front"
+      ],
+      "states": [
+        "liji-healed"
+      ],
+      "voices": []
+    },
+    {
+      "range": [
+        7,
+        8
+      ],
+      "seconds": 24,
+      "title": "把名字和新的话连起来",
+      "purpose": "正名是女孩们自己的结果。",
+      "start": "告示下半两名字并排，阿蘅名另行，读者指向下段。",
+      "action": "书吏逐条读两旧女孩非自愿、阿蘅销祭名、永废人祭照发粮不得借粮索人。",
+      "camera": "告示下半近景带指读手，字清楚完整，人声主导不再强制观众读全小字。",
+      "sound": "第8块准确全文仅一次，三句各停，不压缩末句。",
+      "end": "正名和永废条款已公开。",
+      "entities": [
+        "office-clerks",
+        "verdict-notice",
+        "temple-front"
+      ],
+      "states": [],
+      "voices": [
+        "office-clerks"
+      ],
+      "shared_text_requirements": [
+        "s037-q01-notice-copy"
+      ]
+    },
+    {
+      "range": [
+        9,
+        9
+      ],
+      "seconds": 17,
+      "title": "给听不清的人再说清",
+      "purpose": "结果须到每个人耳里。",
+      "start": "抱孩子妇人在老妇旁，老妇捏皱票。",
+      "action": "妇人面向老妇完整重复末句；老妇听清展开粮票。",
+      "camera": "两人中近，幼儿仍同母怀，老妇手里票不同于妇人自己的票。",
+      "sound": "妇人“永废以人祭蛇，接济之粮照发，不得借粮索人。”一次，非只复最后六字；老妇不补台词。",
+      "end": "粮票展开，两人明白仍可领粮。",
+      "entities": [
+        "poor-mother",
+        "old-woman",
+        "grain-ticket",
+        "temple-front"
+      ],
+      "states": [],
+      "voices": [
+        "poor-mother"
+      ]
+    },
+    {
+      "range": [
+        10,
+        12
+      ],
+      "seconds": 22,
+      "title": "找到自己的名字",
+      "purpose": "不看押走的人，先把女儿的名读完。",
+      "start": "陶未近墙、两女孩稍后等，告示下半清楚。",
+      "action": "陶忽略押走方向，近读阿禾名下新字停再退；阿蘅再找自己名字，李寄等不催，阿蘅说去领米。",
+      "camera": "墙侧中景有先后上前位置，不让两人同时挡同一行。",
+      "sound": "陶默读；阿蘅原句一次，日常脚步重新入。",
+      "end": "阿蘅离墙往仓院，李寄同行。",
+      "entities": [
+        "tao",
+        "aheng",
+        "liji",
+        "verdict-notice",
+        "temple-front"
+      ],
+      "states": [
+        "liji-healed"
+      ],
+      "voices": [
+        "aheng"
+      ],
+      "shared_text_requirements": [
+        "s037-q01-notice-copy"
+      ]
+    },
+    {
+      "range": [
+        13,
+        15
+      ],
+      "seconds": 29,
+      "title": "四升也要算进去",
+      "purpose": "让她问完才能算清。",
+      "start": "新管事仓桌摊复核账到亮处，阿蘅在前，李寄持空袋。",
+      "action": "管事手沿各行低读不可辨前部；阿蘅问两天四升，新管事完整答全部算、六斗旧约、既还加四升超出、清债退多收。",
+      "camera": "仓桌三人中景，阿蘅听与看都在场，不让父亲代问。",
+      "sound": "阿蘅第14块与管事第15块各一次；前部未给原词只低不可辨读声，不拟额外数字。",
+      "end": "账已解释，阿蘅仍要核最后一行。",
+      "entities": [
+        "grain-manager",
+        "aheng",
+        "liji",
+        "ledger-box",
+        "rice-bag",
+        "granary"
+      ],
+      "states": [
+        "liji-healed"
+      ],
+      "voices": [
+        "aheng",
+        "grain-manager"
+      ],
+      "material_slots": {
+        "granary": [
+          "layout"
+        ]
+      }
+    },
+    {
+      "range": [
+        16,
+        17
+      ],
+      "seconds": 15,
+      "title": "后面有人等，也要读完",
+      "purpose": "她可以占用把账核清的时间。",
+      "start": "阿蘅低看账首，后队暂稳，管事等。",
+      "action": "她从头看到末行；后队挪一步有人轻咳，她仍请求最后一行再念。",
+      "camera": "阿蘅侧中近带队伍一步，不用压迫性的群骂。",
+      "sound": "一声队中轻咳后阿蘅原问句一次，语气清楚。",
+      "end": "她指向末行等管事。",
+      "entities": [
+        "aheng",
+        "grain-manager",
+        "grain-queue",
+        "ledger-box",
+        "granary"
+      ],
+      "states": [],
+      "voices": [
+        "aheng"
+      ],
+      "material_slots": {
+        "granary": [
+          "layout"
+        ],
+        "grain-queue": [
+          "identity"
+        ]
+      }
+    },
+    {
+      "range": [
+        18,
+        18
+      ],
+      "seconds": 24,
+      "title": "我们留着凭据",
+      "purpose": "复念、核印、收纸三个动作都要有。",
+      "start": "管事掌旁凭据未给，歌本阿蘅夹臂，父亲在身后空手。",
+      "action": "管事准确复念末行并递清退凭据；她核印，折入歌本，再把本交身后父亲拿。",
+      "camera": "仓桌侧中景清楚纸→本→父亲，不用同一手同时扶袋。",
+      "sound": "管事“旧债销清，多收的粮退你们。”一次；纸折、本合，无虚构退额。",
+      "end": "凭据夹本内，父亲持本，两女孩能用双手接粮。",
+      "entities": [
+        "grain-manager",
+        "aheng",
+        "lidan",
+        "songbook",
+        "clearance-receipt",
+        "granary"
+      ],
+      "states": [
+        "book-dry-sheets"
+      ],
+      "voices": [
+        "grain-manager"
+      ],
+      "texts": [
+        {
+          "slot": "clear-last-line",
+          "title": "可复核的清账末行",
+          "text": "旧债销清，多收的粮退你们。",
+          "purpose": "让二次读回及凭据核对有准确同一原句，不填写未知的退粮数量。",
+          "placement": "账末行和新清退凭据的对应结论位置，具体版式待后续素材方案。",
+          "source_ranges": [
+            [
+              15,
+              18
+            ]
+          ],
+          "occurrence": "同一原句在账与凭据对应位置使用；发声为管事先说明，阿蘅要求再念，管事复念，阿蘅没有再念整句。"
+        }
+      ],
+      "material_slots": {
+        "granary": [
+          "layout"
+        ]
+      }
+    },
+    {
+      "range": [
+        19,
+        21
+      ],
+      "seconds": 20,
+      "title": "两人稳稳接住",
+      "purpose": "把从前被夺走的袋口重新托稳。",
+      "start": "李寄持空袋，阿蘅双手已空，管事木斗在近旁。",
+      "action": "阿蘅转身请求扶袋口；李寄撑两边，阿蘅托底，木斗倾下米响，袋沉两人同放低稳接。",
+      "camera": "仓桌旁中景含两人四手、木斗和袋底，倾米只一个连续动作不暗定总斗数。",
+      "sound": "阿蘅原句一次后连续落米，声密不盖字。",
+      "end": "袋接稳有粮，斗回上方，尚未系绳。",
+      "entities": [
+        "aheng",
+        "liji",
+        "grain-manager",
+        "rice-bag",
+        "rice-measure",
+        "granary"
+      ],
+      "states": [
+        "liji-healed"
+      ],
+      "voices": [
+        "aheng"
+      ],
+      "material_slots": {
+        "granary": [
+          "layout"
+        ]
+      }
+    },
+    {
+      "range": [
+        22,
+        22
+      ],
+      "seconds": 21,
+      "title": "书和袋各有一双手",
+      "purpose": "交接完成后才下山。",
+      "start": "袋在两人之间，父亲手持歌本旁候。",
+      "action": "阿蘅系绳，两女孩各提一侧下阶到平地；父亲把本暂夹臂下接稳袋，腾手还本给阿蘅。",
+      "camera": "仓阶侧中全景随一步步到平地，袋从双女孩到成人手、书反向交回，不瞬移。",
+      "sound": "系绳、阶步、布袋声，无新对白。",
+      "end": "父亲提粮袋，阿蘅抱歌本，李寄两手空。",
+      "entities": [
+        "aheng",
+        "liji",
+        "lidan",
+        "rice-bag",
+        "songbook",
+        "granary"
+      ],
+      "states": [
+        "liji-healed",
+        "book-dry-sheets"
+      ],
+      "voices": [],
+      "material_slots": {
+        "granary": [
+          "layout"
+        ]
+      }
+    },
+    {
+      "range": [
+        23,
+        26
+      ],
+      "seconds": 22,
+      "title": "这回自己也留一份",
+      "purpose": "与开篇被动等米形成具体变化。",
+      "start": "父亲提袋走前，两女孩跟过告示墙，阿蘅怀本。",
+      "action": "李寄看本问回去给娘看账纸；阿蘅答从头念并自留一份，女孩笑抱好跟父亲下山。",
+      "camera": "告示墙侧中景跟三人离开，远仓刮斗声仍可听。",
+      "sound": "李寄、阿蘅两句各一次；末仓院刮平木斗声留后，不加“已还多少”的新报数。",
+      "end": "一家带粮与凭据离庙，歌曲尚未补齐。",
+      "entities": [
+        "liji",
+        "aheng",
+        "lidan",
+        "rice-bag",
+        "songbook",
+        "verdict-notice",
+        "temple-front",
+        "mountain-road",
+        "granary",
+        "rice-measure"
+      ],
+      "states": [
+        "liji-healed",
+        "book-dry-sheets"
+      ],
+      "voices": [
+        "liji",
+        "aheng"
+      ],
+      "material_slots": {
+        "granary": [],
+        "rice-measure": [
+          "rice-sound"
+        ]
+      }
+    }
+  ]
+}

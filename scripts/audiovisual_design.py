@@ -213,8 +213,14 @@ def canonical(value):
     return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(',', ':'))
 
 
-def bind_sources(store, screenplay, p):
-    lock = p.record(store, 'production-input-screenplay04')
+def bind_sources(store, screenplay, p, input_lock_id=None):
+    if input_lock_id:
+        lock = p.record(store, input_lock_id)
+    else:
+        locks = [r for r in p.current_records(store, {'INPUT_LOCK'}) if r['payload'].get('status') != 'withdrawn']
+        if len(locks) != 1:
+            raise ValueError('须从保留的锁定剧本以新身份建立制作输入；有多份有效输入时用 --input-lock 指定，不恢复旧制作锁')
+        lock = locks[0]
     if lock['kind'] != 'INPUT_LOCK':
         raise ValueError('wrong production input')
     by_number = {}
@@ -291,6 +297,7 @@ def main():
     parser.add_argument('--output', type=Path)
     parser.add_argument('--system', type=Path)
     parser.add_argument('--db', type=Path)
+    parser.add_argument('--input-lock')
     args = parser.parse_args()
     score = read_score()
     screenplay = json.loads((ROOT / 'imports/screenplay-04.json').read_text())
@@ -307,7 +314,7 @@ def main():
         from audiovisual_reading import prepare
         store = Store.open_readonly(args.db)
         try:
-            bind_sources(store, screenplay, p)
+            bind_sources(store, screenplay, p, args.input_lock)
             report['migration'] = prepare(store, [ROOT/e['file'] for e in score])
             report['preserve_exact_requirements'] = [product['requirement'] for e in score for scene in e['scenes'] for shot in scene['shots'] for product in shot['products']]
         finally:
