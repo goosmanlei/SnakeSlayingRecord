@@ -172,14 +172,17 @@ def build_plan(store):
 
 def apply_plan(store, plan):
     """Only call inside the publisher-owned stopped write/recovery window."""
-    from review_desk import methods, method_files, production_current as current
+    from review_desk import methods, method_files, material_archives, production_current as current
     from review_desk.store import canonical
     from review_desk.production_current_methods import verify
     require(plan.get('format') == FORMAT and plan.get('task') == TASK, '不是本任务的准确清理方案')
     require(methods.checksum({key: value for key, value in plan.items() if key != 'sha256'}) == plan.get('sha256'),
             '清理方案摘要不匹配')
     require(not store.db.in_transaction, '清理入口必须拥有独立完整事务')
-    with store.db:
+    # Original metadata may be a lossless archive reference. Its validation
+    # must use this transaction, not open a second reader while deletion holds
+    # an exclusive SQLite lock. The existing scope clears each file's cache.
+    with store.db, material_archives.read_scope(store):
         store.db.execute('BEGIN IMMEDIATE')
         operation_id = TASK + '-method-history-cleanup'
         saved = store.db.execute('SELECT * FROM production_current_operations WHERE id=?', (operation_id,)).fetchone()
