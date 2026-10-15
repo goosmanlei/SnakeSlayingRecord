@@ -24,25 +24,35 @@ def main():
     p.add_argument('--refresh-text', action='store_true')
     p.add_argument('--remove-author-sources', action='store_true')
     p.add_argument('--refresh-databases', action='store_true')
+    p.add_argument('--remove-media-hashes', type=Path)
     a = p.parse_args()
     root = a.root.resolve(strict=True)
     sys.path.insert(0, str(a.system.resolve(strict=True)))
-    from production_history_cleanup import clean, framework, content_index, redact_database, stream_redact, text_records, embedded_records, redact_embedded_database, obsolete_author_source
+    from production_history_cleanup import clean, configure, framework, content_index, redact_database, stream_redact, text_records, embedded_records, redact_embedded_database, obsolete_author_source
+    configure(json.loads(a.reset_plan.read_text()))
     output = a.output.resolve()
     output.mkdir(parents=True, exist_ok=True)
-    if a.refresh_text or a.remove_author_sources or a.refresh_databases:
+    if a.refresh_text or a.remove_author_sources or a.refresh_databases or a.remove_media_hashes:
         previous = [json.loads(line) for line in (output/'files.jsonl').open()]
         def author_source(name):
             return (any(name.endswith('/production/audiovisual/'+n) for n in ('appearances.txt','frame-subjects.txt','state-ranges.txt','state-transitions.txt'))
                     or '/production/extraction/episodes/' in '/'+name and Path(name).suffix=='.json')
         affected = set()
+        media_members = {}
+        if a.remove_media_hashes:
+            media_hashes = set(json.loads(a.remove_media_hashes.read_text()))
+            for line in (a.inventory/'archive-members.jsonl').open():
+                entry = json.loads(line)
+                if entry.get('sha256') in media_hashes and not protected(entry['member']):
+                    affected.add(entry['archive'])
+                    media_members.setdefault(entry['archive'], {})[entry['member']] = entry['sha256']
         if a.remove_author_sources:
             for line in (a.inventory/'archive-members.jsonl').open():
                 item = json.loads(line)
                 if author_source(item['member']) and not protected(item['member']): affected.add(item['archive'])
         updated = []
         for item in previous:
-            if a.remove_author_sources and item['path'] not in affected:
+            if (a.remove_author_sources or a.remove_media_hashes) and item['path'] not in affected:
                 updated.append(item); continue
             src = output/item['staged']
             assert sha(src) == item['after']
@@ -69,6 +79,20 @@ def main():
                             databases[member.name] = db
                 with tarfile.open(src, 'r|*') as source, tarfile.open(staged, mode) as target:
                     for member in source:
+                        if a.remove_media_hashes:
+                            expected = media_members.get(item['path'], {}).get(member.name)
+                            if expected:
+                                import hashlib
+                                h = hashlib.sha256()
+                                with source.extractfile(member) as data:
+                                    for block in iter(lambda: data.read(1024*1024), b''): h.update(block)
+                                if h.hexdigest() != expected:
+                                    raise ValueError('derived media member changed: '+member.name)
+                                changed += 1
+                            elif member.isfile():
+                                with source.extractfile(member) as data: target.addfile(member, data)
+                            else: target.addfile(member)
+                            continue
                         if a.refresh_databases:
                             replacement = databases.get(member.name)
                             if replacement:
@@ -91,7 +115,7 @@ def main():
                         embedded = story_author(member.name) and Path(member.name).suffix in ('.json', '.sqlite3', '.db')
                         framework_file = Path(member.name).name == 'objects.json' and Path(member.name).parent.name == 'export'
                         if (not member.isfile() or protected(member.name) and not embedded
-                                or Path(member.name).suffix not in ('.jsonl', '.log', '.stdout', '.txt', '.sqlite3', '.db') and not embedded and not framework_file):
+                                or Path(member.name).suffix not in ('.json', '.jsonl', '.log', '.stdout', '.txt', '.sqlite3', '.db') and not embedded and not framework_file):
                             if member.isfile():
                                 with source.extractfile(member) as data: target.addfile(member, data)
                             else: target.addfile(member)
@@ -114,6 +138,15 @@ def main():
                             altered = old != new
                             if altered: cleaned.write_text(json.dumps(new,ensure_ascii=False,indent=2)+'\n')
                             chosen = cleaned if altered else raw
+                        elif Path(member.name).suffix == '.json':
+                            if raw.stat().st_size > 64*1024*1024:
+                                altered = bool(stream_redact(raw, cleaned))
+                            else:
+                                try: old = json.loads(raw.read_text()); new = clean(old)
+                                except (ValueError, UnicodeDecodeError): old = new = None
+                                altered = old != new
+                                if altered: cleaned.write_text(json.dumps(new,ensure_ascii=False,indent=2)+'\n')
+                            chosen = cleaned if altered else raw
                         else:
                             try: altered = text_records(raw, cleaned)
                             except UnicodeDecodeError: altered = 0
@@ -125,7 +158,7 @@ def main():
             if changed:
                 after = sha(staged); destination = output/(after+'.redacted'); staged.rename(destination)
                 item = {**item, 'after': after, 'staged': destination.name,
-                        'details': {**item['details'], ('refreshed_original_databases' if a.refresh_databases else 'author_sources_removed' if a.remove_author_sources else 'additional_redacted_text'): changed}}
+                        'details': {**item['details'], ('derived_media_removed' if a.remove_media_hashes else 'refreshed_original_databases' if a.refresh_databases else 'author_sources_removed' if a.remove_author_sources else 'additional_redacted_text'): changed}}
             else: staged.unlink()
             updated.append(item)
             print(json.dumps({'text_refreshed': item['path'], 'changed_members': changed}), flush=True)

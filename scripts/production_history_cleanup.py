@@ -25,7 +25,7 @@ EMPTY_PREFIXES = ('material_definition', 'material_plan', 'material_candidate',
     'material_round', 'material_member', 'material_feedback', 'material_comment_scope',
     'business_candidate', 'consolidation_definition', 'consolidation_version',
     'audiovisual_cleanup', 'state_cleanup', 'relation_explanation_redaction')
-CONTENT_FIELDS = {'prompt', 'generation_prompt', 'input_contents', 'basis_contents',
+CONTENT_FIELDS = {'prompt', 'production_description', 'generation_prompt', 'input_contents', 'basis_contents',
     'reference_contents', 'requirements', 'entities', 'states', 'shots',
     'material_plans', 'material_definitions', 'current_records', 'before_records',
     'after_records', 'prepared_plan', 'request_body', 'raw_response', 'response_body',
@@ -33,6 +33,39 @@ CONTENT_FIELDS = {'prompt', 'generation_prompt', 'input_contents', 'basis_conten
     'lighting_plan', 'sound_plan', 'material_content', 'input', 'download_url',
     'audio_url', 'image_url', 'video_url', 'output_url'}
 RECORD_FORMATS = {'production-'+k.lower().replace('_', '-')+'-v1' for k in PRODUCTION_KINDS} | {'production-retirement-v1'}
+ERASED_IDENTITIES = set()
+
+
+def configure(plan):
+    global ERASED_IDENTITIES
+    ERASED_IDENTITIES = set(plan.get('deleted_identities', plan['deleted_objects']))
+
+
+def remaining_fields(value):
+    """Remove only untyped old description/state fields in audited evidence."""
+    if isinstance(value, list):
+        return [remaining_fields(v) for v in value]
+    if isinstance(value, dict):
+        if value.get('format') in ('managed-method-skill-v1', 'managed-method-resource-v1', 'managed-method-binding-v1', 'managed-method-activation-v1'):
+            return value
+        if {'target_object_id', 'body', 'anchor'} <= value.keys():
+            return value
+        old = any(value.get(k) in ERASED_IDENTITIES for k in ('object_id', 'id', 'entity_id', 'material_id') if isinstance(value.get(k), str))
+        result = {}
+        for k, v in value.items():
+            if k in ('comments', 'comment_events', 'anchor', 'excerpt'):
+                result[k] = v
+            elif k == 'production_description' or k == 'dimensions' and old:
+                result[k+'_deleted'] = {'sha256': hashlib.sha256(canonical(v).encode()).hexdigest()}
+            else:
+                result[k] = remaining_fields(v)
+        return result
+    if isinstance(value, str) and value.lstrip().startswith(('{', '[')):
+        try: old = json.loads(value)
+        except ValueError: return value
+        new = remaining_fields(old)
+        return canonical(new) if old != new else value
+    return value
 
 
 def obsolete_author_source(name):
@@ -99,10 +132,11 @@ def clean(value):
     if fmt in RECORD_FORMATS | {'state-cleanup-receipt-v1'}:
         return deleted(value)
     result = {}
+    old_identity = any(value.get(k) in ERASED_IDENTITIES for k in ('object_id', 'id', 'entity_id', 'material_id') if isinstance(value.get(k), str))
     for k, v in value.items():
         if k in ('comments', 'comment_events', 'anchor', 'excerpt'):
             result[k] = v
-        elif k in CONTENT_FIELDS:
+        elif k in CONTENT_FIELDS or k == 'dimensions' and old_identity:
             result[k+'_deleted'] = {'sha256': hashlib.sha256(canonical(v).encode()).hexdigest()}
         else:
             result[k] = clean(v)
