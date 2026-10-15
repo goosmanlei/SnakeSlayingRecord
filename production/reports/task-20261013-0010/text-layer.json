@@ -1,8 +1,8 @@
 {
   "task": "task-20261013-0010",
   "item": "text-layer",
-  "status": "FOUR_ROUNDS_COMPLETE_FINAL_REREAD_AND_SAMPLE_PENDING",
-  "valid_complete_rounds": 4,
+  "status": "FIVE_ROUNDS_AND_TWO_ENTRY_SAMPLE_COMPLETE_LINKED_REVIEW_PENDING",
+  "valid_complete_rounds": 5,
   "rounds": [
     {
       "round": 1,
@@ -71,21 +71,37 @@
       "read_complete_sha256": "c4da29a059ba0c60da41f618a4c1e951ed70452c1aaea186ca9f99f4238959b0",
       "revision_decision_sha256": "50adbba062010fb7846183dbe358e9b645d61cbb0c7f9dcdc195a0f0c9680b6c",
       "evidence_directory": ".runtime/skill-cold-reader-fresh/text-layer/round-04"
+    },
+    {
+      "round": 5,
+      "body_units": 13,
+      "reader_contexts": 14,
+      "native_inferences": 14,
+      "native_events": 168,
+      "decision": "keep",
+      "rationale": "已完整读取13段末稿、14条观察与记忆更新，以及唯一q0008-01的全过程。读者在第8段暂未找到通用创作入口，第9段即从具体脚本、请求字段和阶段操作得到解释，全文没有遗留障碍。读者正确区分一般文字设计与已有具体素材方案，两者使用同一方法并承接字稿；同时分清方案保存、实际工程产出、静态字稿版面检查与动态成片可读性。原有账册只露一行、文字不能替代表演和按问题返修的判断仍完整，人可理解其叙事理由，AI能按准确步骤保存并读回。第四轮两类入口补充已经完整复读，无须再改；保留最后稿，不制造轮次问题。后续将用实际字稿和可编辑工程完成两种入口及生成制作、结果检查联动，本轮不声称工程、成片或真人验证通过。",
+      "unresolved": [],
+      "changed_paths": [],
+      "last_material_revision_has_been_read": true,
+      "frozen_sha256": "129f1ec4c46e2fb45372bdc9b7f5401aed9f35f6ab710ab7599552e83999a18a",
+      "read_complete_sha256": "654a1ed864ca313bc47f3f47e9700a87095a832ba0dc291b5a6620aa82147ace",
+      "revision_decision_sha256": "7f75bbb4a8b00003590e7f9c9ce09d2fe630ed041fb44be67a2094d6e3ae19ba",
+      "evidence_directory": ".runtime/skill-cold-reader-fresh/text-layer/round-05"
     }
   ],
-  "reader_contexts": 46,
-  "native_inferences": 47,
-  "native_events": 554,
+  "reader_contexts": 60,
+  "native_inferences": 61,
+  "native_events": 722,
   "reader_model": "gpt-6-astra",
   "reader_effort": "max",
   "reviser_model": "gpt-6-astra",
   "reviser_effort": "max",
-  "durable_evidence_reverified_at": "2026-10-15T00:06:47.343196+00:00",
+  "durable_evidence_reverified_at": "2026-10-15T00:40:09.120563+00:00",
   "all_saved_raw_payload_event_and_chain_hashes_equal": true,
   "current_candidate_files": {
     "SKILL.md": "e93ad71e90fbc1c6ea858132c93cc81f64f99bc66910604397e5567280713697"
   },
-  "final_sample_complete": false,
+  "final_sample_complete": true,
   "formal_publication": false,
   "human_participant_test": false,
   "queued_coordinator_followups": {
@@ -96,16 +112,61 @@
     "applied_in_round": 4,
     "complete_reread_pending": 5
   },
-  "last_revision_fully_reread": false,
-  "candidate_source": ".runtime/skill-cold-reader-fresh/text-layer/round-04/revision-decision.json:next_files",
-  "candidate_decision_sha256": "50adbba062010fb7846183dbe358e9b645d61cbb0c7f9dcdc195a0f0c9680b6c",
+  "last_revision_fully_reread": true,
+  "candidate_source": ".runtime/skill-cold-reader-fresh/text-layer/round-05/revision-decision.json:next_files",
+  "candidate_decision_sha256": "7f75bbb4a8b00003590e7f9c9ce09d2fe630ed041fb44be67a2094d6e3ae19ba",
   "candidate_files_sha256": {
     "SKILL.md": "e93ad71e90fbc1c6ea858132c93cc81f64f99bc66910604397e5567280713697"
   },
   "pending": [
-    "round-05 full reading and separate semantic decision",
-    "final exact method and both text-layer entry points",
-    "editable engineering and new candidate registration",
-    "managed formal delivery and latest-only cleanup"
-  ]
+    "final_result_review_method_sample",
+    "formal_incremental_publication",
+    "formal_browser",
+    "final_empty_restore",
+    "scoped_history_cleanup"
+  ],
+  "final_method": {
+    "object_id": "method.skill.text-layer",
+    "revision_id": "52be9381a4d4e473e20f5eb7de6c1d1d25747769bf6eedf8e4f74639e3d146e3",
+    "version": 20
+  },
+  "final_linkage_receipt": {
+    "path": ".runtime/skill-cold-reader-fresh/text-layer/final-linkage/receipt.json",
+    "sha256": "382166dad9f1441e231c0e91f70b69ed868e79c5f642ab82919c2b26a3aa2df8"
+  },
+  "isolated_browser_checked": true,
+  "sample_evidence": {
+    "media-import-receipt.json": {
+      "path": ".runtime/skill-cold-reader-fresh/text-layer/sample/media-import-receipt.json",
+      "sha256": "e7c14a89b5fb60361ff4cf5fc3b38b38dad8c76b6ec069a3837128890363a3d0"
+    },
+    "candidate-readback.json": {
+      "path": ".runtime/skill-cold-reader-fresh/text-layer/sample/candidate-readback.json",
+      "sha256": "19d0f4e20018cde30bed86a509314a60b25d679090fc83c9ee6e76d786a41a3e"
+    },
+    "archive-verification.json": {
+      "path": ".runtime/skill-cold-reader-fresh/text-layer/sample/archive-verification.json",
+      "sha256": "0dcf01e99821ffd5bbcf73e9dd880986084f4f391219f9493d6e95b13c9b7300"
+    },
+    "generation-registration.json": {
+      "path": ".runtime/skill-cold-reader-fresh/text-layer/sample/generation-registration.json",
+      "sha256": "8e18f29cd688264916635f324ea28fa5c42f090ee832b73f4c21ac98552fd1b5"
+    },
+    "generation-registration-resume.json": {
+      "path": ".runtime/skill-cold-reader-fresh/text-layer/sample/generation-registration-resume.json",
+      "sha256": "49ba78e01c3c501fd225396deddd55fad7d1bac5c4f73e51aae9df5f6d5bba5a"
+    },
+    "generation-result-read.json": {
+      "path": ".runtime/skill-cold-reader-fresh/text-layer/sample/generation-result-read.json",
+      "sha256": "4312a43c404e91e7327f11395877d720c67361504195ac86fa7179c443ea444e"
+    }
+  },
+  "sample_verification": {
+    "path": ".runtime/skill-cold-reader-fresh/text-layer/sample/verification.json",
+    "sha256": "145a66048e013e599b1c04fc2e1111a683c57f094fdbff1305e47d5efb6b63bc"
+  },
+  "sample_report": {
+    "path": "production/reports/task-20261013-0010/samples/text-layer.md",
+    "sha256": "2ea3fa6aeb1a2639c7c6342ce725caa15b56ccc222b762e263c7e31ddbbe7b04"
+  }
 }

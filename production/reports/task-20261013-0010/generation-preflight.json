@@ -5,7 +5,7 @@
   "revision_id": "20b9aefbe15be58da5e9f5eb968965282deb297f6b11e2ed43f2e2e2e0b7d079",
   "valid_rounds": 5,
   "required_minimum": 5,
-  "status": "FIVE_ROUNDS_VALID_ISOLATED_METHOD_SAVED_SAMPLE_PENDING",
+  "status": "FIVE_ROUNDS_AND_SIMULATED_AND_LOCAL_PRODUCTION_SAMPLES_COMPLETE_FORMAL_PENDING",
   "files": {
     "SKILL.md": "1d4c2b0b4a284bd322b3bba0f9d28f181c43497f25dbcbdb1617b54fb28b3b0b"
   },
@@ -347,5 +347,26 @@
       ]
     },
     "existing_sample_basis_retained": "prior exact method; final text handoff pipeline still pending"
-  }
+  },
+  "local_production_sample": {
+    "verification": {
+      "path": ".runtime/skill-cold-reader-fresh/text-layer/sample/verification.json",
+      "sha256": "145a66048e013e599b1c04fc2e1111a683c57f094fdbff1305e47d5efb6b63bc"
+    },
+    "report": {
+      "path": "production/reports/task-20261013-0010/samples/text-layer.md",
+      "sha256": "2ea3fa6aeb1a2639c7c6342ce725caa15b56ccc222b762e263c7e31ddbbe7b04"
+    },
+    "method_revision": "20b9aefbe15be58da5e9f5eb968965282deb297f6b11e2ed43f2e2e2e0b7d079",
+    "new_local_candidate": true,
+    "new_model_calls": 0,
+    "same_operation_recovery": true
+  },
+  "pending": [
+    "final_result_review_method_sample",
+    "formal_publication",
+    "formal_browser",
+    "final_empty_restore",
+    "scoped_history_cleanup"
+  ]
 }
