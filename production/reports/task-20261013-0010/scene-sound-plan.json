@@ -1,8 +1,8 @@
 {
   "task": "task-20261013-0010",
   "object_id": "method.skill.scene-sound-plan",
-  "status": "FOUR_ROUNDS_COMPLETE_FINAL_REREAD_AND_SAMPLE_PENDING",
-  "valid_complete_rounds": 4,
+  "status": "FIVE_ROUNDS_AND_FINAL_BOUND_SAMPLE_COMPLETE_FORMAL_PENDING",
+  "valid_complete_rounds": 5,
   "reader_model": "gpt-6-astra",
   "reader_effort": "max",
   "reviser_model": "gpt-6-astra",
@@ -73,29 +73,62 @@
       "read_complete_sha256": "d295b05240c2433f750430caf9216937e084087d1342dc4c15e69f32a6f36116",
       "revision_decision_sha256": "1565945c0ed98fb71e696d4e0e294c568cab47e23a0c1b9503f1e48ffe839864",
       "evidence_directory": ".runtime/skill-cold-reader-fresh/scene-sound-plan/round-04"
+    },
+    {
+      "round": 5,
+      "body_units": 8,
+      "reader_contexts": 9,
+      "native_inferences": 9,
+      "native_events": 108,
+      "decision": "keep",
+      "rationale": "第五轮全稿与第四轮已读正文逐字一致，已完整核对8个正文单位的理解、记忆更新及全文结算，问题历史为空。读者能解释何时才需要独立音轨、如何按叙事注意力和空间关系设计、完整参考与后期剪辑的区别，以及保存回读和单件到整场试听的顺序。具体例子帮助人作判断，准确分类和作者入口足以让AI取得当前需求。正文与定稿共享资料一致，保留现稿；五轮及实质修改后完整复读已满足，隔离方案样例和未听的声音效果分别验证、分别报告。",
+      "unresolved": [],
+      "changed_paths": [],
+      "last_material_revision_has_been_read": true,
+      "frozen_sha256": "c146d2e7c3c4bca7c5ac2bd79a9792876a9ec9e54079849dddff33db55da0882",
+      "read_complete_sha256": "a9d13852b1fbe1aa4e749b827d995e4d35c5c0829a3a085f1308b2b5d2beeb39",
+      "revision_decision_sha256": "8c6107160574a0dc2768333788a1a4bc6d86510c191b43b139314cd96b193d3c",
+      "evidence_directory": ".runtime/skill-cold-reader-fresh/scene-sound-plan/round-05"
     }
   ],
-  "reader_contexts": 35,
-  "native_inferences": 35,
+  "reader_contexts": 44,
+  "native_inferences": 44,
   "candidate_files_sha256": {
     "SKILL.md": "910ddbae080459b630b4b4d867e7f62bfe698215ad11f67a8fd6e62e36a2c379"
   },
-  "candidate_source": ".runtime/skill-cold-reader-fresh/scene-sound-plan/round-04/revision-decision.json:next_files",
-  "candidate_decision_sha256": "1565945c0ed98fb71e696d4e0e294c568cab47e23a0c1b9503f1e48ffe839864",
+  "candidate_source": ".runtime/skill-cold-reader-fresh/scene-sound-plan/round-05/revision-decision.json:next_files",
+  "candidate_decision_sha256": "8c6107160574a0dc2768333788a1a4bc6d86510c191b43b139314cd96b193d3c",
   "unresolved_text_issues_at_round_3": [],
   "last_revision_fully_reread": true,
-  "final_sample_executed": false,
+  "final_sample_executed": true,
   "formal_method_publication": false,
   "formal_story_changes": false,
   "media_watched_or_heard": false,
   "new_media_generated": false,
   "human_participant_test": false,
   "pending": [
-    "round-05 full reading and separate semantic decision",
-    "exact final method binding and isolated work sample",
-    "managed formal delivery and latest-only cleanup"
+    "managed formal delivery and latest-only cleanup",
+    "formal Chrome and final complete empty-instance recovery"
   ],
-  "native_events": 420,
-  "durable_evidence_reverified_at": "2026-10-14T23:44:15.004495+00:00",
-  "all_saved_raw_payload_event_and_chain_hashes_equal": true
+  "native_events": 528,
+  "durable_evidence_reverified_at": "2026-10-15T00:06:47.343196+00:00",
+  "all_saved_raw_payload_event_and_chain_hashes_equal": true,
+  "isolated_browser_checked": true,
+  "final_method": {
+    "object_id": "method.skill.scene-sound-plan",
+    "revision_id": "872b22878e3eacd09674f8ad8f400a2601ba5772d25b93871f2cf4cd986c69b3",
+    "version": 11
+  },
+  "final_linkage_receipt": {
+    "path": ".runtime/skill-cold-reader-fresh/scene-sound-plan/final-linkage/receipt.json",
+    "sha256": "04479f1e6c502a4dba79deb94f2505349fd932577046cd5834599cacaebba78c"
+  },
+  "sample_verification": {
+    "path": ".runtime/skill-cold-reader-fresh/scene-sound-plan/sample/verification.json",
+    "sha256": "30b610becf5695f5457da12eba667d9978657d6a3ea14cc8ed0721e4504b5411"
+  },
+  "sample_artifact": {
+    "path": "production/reports/task-20261013-0010/samples/scene-sound-plan.md",
+    "sha256": "ae3d09f9ab23e369a352e17f7f237d015c7f35f4b4b41e8266750bd6e8ff518f"
+  }
 }

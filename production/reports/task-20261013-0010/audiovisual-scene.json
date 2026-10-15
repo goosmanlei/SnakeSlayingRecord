@@ -1,8 +1,8 @@
 {
   "task": "task-20261013-0010",
   "object_id": "method.skill.audiovisual-scene",
-  "status": "FOUR_ROUNDS_COMPLETE_FINAL_REREAD_AND_SAMPLE_PENDING",
-  "valid_complete_rounds": 4,
+  "status": "FIVE_ROUNDS_AND_FINAL_BOUND_SAMPLE_COMPLETE_FORMAL_PENDING",
+  "valid_complete_rounds": 5,
   "reader_model": "gpt-6-astra",
   "reader_effort": "max",
   "reviser_model": "gpt-6-astra",
@@ -74,28 +74,43 @@
       "read_complete_sha256": "9bd980d041c6bb7d3790b8579d5eda1aca6344d87ed1c24225b83193e429fc12",
       "revision_decision_sha256": "f64cd849fa56c0be64cb34368e514a0d311511311a857d8ea8edfc94b712a85e",
       "evidence_directory": ".runtime/skill-cold-reader-fresh/audiovisual-scene/round-04"
+    },
+    {
+      "round": 5,
+      "body_units": 14,
+      "reader_contexts": 15,
+      "native_inferences": 16,
+      "native_events": 182,
+      "decision": "keep",
+      "rationale": "已完整读取最终两份自有文件、14个正文单位和全文结算，逐条核对理解、记忆更新及三条问题历史。后台步骤的疑问由实际保存段落解释；独占需求和模板字段的两项WATCH在读者依据本环节职责、完整阶段原文及辅助模板定位回看后撤销。协调者复核认为，现稿已使首次使用者能按交付内容、用途和基础素材缺口判断是否需要独立素材，能区分镜内关键画面与实体状态，也能找到五阶段真实保存与读回入口。模板不承担另建完整镜头模型的职责，无需为填表扩张正文。保留现稿及必要例子，五轮与末次实质修订后的完整复读已满足；下一步按准确方法完成实际隔离视听样例，文稿结论不等于动态、声音或真人使用验收。",
+      "unresolved": [],
+      "changed_paths": [],
+      "last_material_revision_has_been_read": true,
+      "frozen_sha256": "a9d92e25e9cb9b702f7182e4d9d21c2321af765004637203cb5066e6d3fdf8f7",
+      "read_complete_sha256": "09359b81e2220dd2662ddf22fcc3863b05f93480a5c101a3d7cc3f1258d06262",
+      "revision_decision_sha256": "03b9b5d1e660698c1e342facc784dfe84ddb032c9cd818e3134dab5519402c33",
+      "evidence_directory": ".runtime/skill-cold-reader-fresh/audiovisual-scene/round-05"
     }
   ],
-  "reader_contexts": 52,
-  "native_inferences": 53,
+  "reader_contexts": 67,
+  "native_inferences": 69,
   "candidate_files_sha256": {
     "SKILL.md": "e61b19527c9a0fd305a6fdd78fe712b44961f9b0557a93015d4d180f4c0b3352",
     "templates/reading.json": "5a3127469af1461503f569c68da6684a8da3d0218f02de7553383190743a7178"
   },
-  "candidate_source": ".runtime/skill-cold-reader-fresh/audiovisual-scene/round-04/revision-decision.json:next_files",
-  "candidate_decision_sha256": "f64cd849fa56c0be64cb34368e514a0d311511311a857d8ea8edfc94b712a85e",
+  "candidate_source": ".runtime/skill-cold-reader-fresh/audiovisual-scene/round-05/revision-decision.json:next_files",
+  "candidate_decision_sha256": "03b9b5d1e660698c1e342facc784dfe84ddb032c9cd818e3134dab5519402c33",
   "unresolved_text_issues_at_round_3": [],
-  "last_revision_fully_reread": false,
-  "final_sample_executed": false,
+  "last_revision_fully_reread": true,
+  "final_sample_executed": true,
   "formal_method_publication": false,
   "formal_story_changes": false,
   "media_watched_or_heard": false,
   "new_media_generated": false,
   "human_participant_test": false,
   "pending": [
-    "round-05 full reading and separate semantic decision",
-    "exact final method binding and isolated work sample",
-    "managed formal delivery and latest-only cleanup"
+    "managed formal delivery and latest-only cleanup",
+    "formal Chrome and final complete empty-instance recovery"
   ],
   "queued_coordinator_findings": {
     "path": ".runtime/skill-cold-reader-fresh/audiovisual-scene/coordinator-followups.json",
@@ -105,9 +120,28 @@
     "required_complete_reread_round": 5,
     "applied": true,
     "applied_in_round": 4,
-    "complete_reread_pending": 5
+    "complete_reread_pending": false,
+    "complete_reread_round": 5
   },
-  "native_events": 626,
-  "durable_evidence_reverified_at": "2026-10-14T23:44:10.349893+00:00",
-  "all_saved_raw_payload_event_and_chain_hashes_equal": true
+  "native_events": 808,
+  "durable_evidence_reverified_at": "2026-10-15T00:06:47.343196+00:00",
+  "all_saved_raw_payload_event_and_chain_hashes_equal": true,
+  "isolated_browser_checked": true,
+  "final_method": {
+    "object_id": "method.skill.audiovisual-scene",
+    "revision_id": "fb6cdf867e99e12d53ee1f61a709ae47b6184c25763c78f1f150875be5b6cb60",
+    "version": 22
+  },
+  "final_linkage_receipt": {
+    "path": ".runtime/skill-cold-reader-fresh/audiovisual-scene/final-linkage/receipt.json",
+    "sha256": "41c164cc14b34ee764d860cdc893ee89bcb9100aa4e5a0d60d429939caf9defa"
+  },
+  "sample_verification": {
+    "path": ".runtime/skill-cold-reader-fresh/audiovisual-scene/sample/verification.json",
+    "sha256": "dd5db03bca1a630b2d095d28956ff7f8746224569d8c75d985ed1a887988be77"
+  },
+  "sample_artifact": {
+    "path": "production/reports/task-20261013-0010/samples/audiovisual-scene.md",
+    "sha256": "87a4d15c332a44c5bcc026e0ee4d941b4377693b83003e4748b45d9ce37391ca"
+  }
 }
