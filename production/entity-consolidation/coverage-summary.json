@@ -37,18 +37,8 @@
         "ASSET": 168
       }
     },
-    "shots": {
-      "file": "audit-shots.json",
-      "explicit_record_path": "first_pass.objects",
-      "record_count": 1563,
-      "counts_by_kind": {
-        "AV_EPISODE": 17,
-        "AV_SCENE": 65,
-        "AV_SHOT": 344,
-        "REQUIREMENT": 1115,
-        "ASSET": 11,
-        "CALL": 11
-      }
+    "shots_deleted": {
+      "sha256": "e25d24005173cc613784ddf5cf4e4d23ff968125f77ce1396dad749f98117bfb"
     }
   },
   "baseline_coverage": {
@@ -136,7 +126,9 @@
   "global_continuity_review_boundaries": {
     "characters": "audit-characters.json/global_review（E01—E06）",
     "objects": "audit-objects.json/global_e07_e12（E07—E12）",
-    "shots": "audit-shots.json/global_second_pass（E13—E17）",
+    "shots_deleted": {
+      "sha256": "12aff89201ccd1e86efd5e3455c18720d582babc8855cc0649b84ef75b8e4c24"
+    },
     "note": "分镜首轮全部344镜已有独立判断；按集连续复审及媒体实际观看边界沿各审计正文，覆盖完成不等于全部媒体已播放认可。"
   },
   "deleted_states": {

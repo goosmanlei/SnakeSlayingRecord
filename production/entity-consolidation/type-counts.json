@@ -4,7 +4,9 @@
   "created_at": "2026-10-11T15:25:42.570234+00:00",
   "method": {
     "scope": "character/prop/space/song按ENTITY.entity_type；AV_SHOT沿原镜头类型，无新增镜头ENTITY。每组根对象总数与有效数单列。",
-    "states": "实体组只统计STATE.entity实际拥有的状态；AV_SHOT本身拥有0个STATE，另统计其states准确引用并集。90 DELETED_STATE不混入STATE。",
+    "states_deleted": {
+      "sha256": "4561a2d1212d736f200e74d10dd2aa7f80f27c14478848daaa5e96cfcfc132dc"
+    },
     "owned_requirements": "有效需求按scope准确归属、ENTITY/STATE作用域的显式states及现行稳定关系scope_links汇集；与generation.requirements_for及entity_contract.direct_materials口径一致。",
     "necessary_requirements": "从归属需求中required=true项出发，按material_relations.active_inputs选定的reference/reuse/variant、路线、条件、可选开关递归合并REQUIREMENT。尚未选中的候选不伪称已上传。",
     "real_candidates": "生产候选注册中，原件准确states/state_coverage/entities/subjects/scope归属本类的候选，或目标属于必要需求并集、或是已选执行ASSET输入，按candidate_id取并集。旧unavailable状态只用于候选历史归属，不恢复为当前状态；因此不会把旧虚拟target导致的候选漏算。",
@@ -168,11 +170,8 @@
   },
   "cross_group_unions": {
     "before": {
-      "states": {
-        "union_count": 280,
-        "sum_of_group_counts": 548,
-        "shared_between_groups_count": 268,
-        "additional_memberships_from_sharing": 268
+      "states_deleted": {
+        "sha256": "188c11549d6650ba856b0aba821b3bba944100016ceb41dbadec09f66d08e266"
       },
       "owned_requirements": {
         "union_count": 1486,
@@ -213,11 +212,8 @@
       }
     },
     "after": {
-      "states": {
-        "union_count": 280,
-        "sum_of_group_counts": 548,
-        "shared_between_groups_count": 268,
-        "additional_memberships_from_sharing": 268
+      "states_deleted": {
+        "sha256": "188c11549d6650ba856b0aba821b3bba944100016ceb41dbadec09f66d08e266"
       },
       "owned_requirements": {
         "union_count": 1291,
