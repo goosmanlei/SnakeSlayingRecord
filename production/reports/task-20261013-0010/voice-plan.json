@@ -1,7 +1,7 @@
 {
   "task": "task-20261013-0010",
   "object_id": "method.skill.voice-plan",
-  "status": "FIVE_ROUNDS_AND_FINAL_SAMPLE_COMPLETE_FORMAL_DELIVERY_PENDING",
+  "status": "FIVE_ROUNDS_AND_FINAL_SAMPLE_COMPLETE",
   "valid_complete_rounds": 5,
   "reader_model": "gpt-6-astra",
   "reader_effort": "max",
@@ -109,7 +109,8 @@
   "new_media_generated": false,
   "human_participant_test": false,
   "pending": [
-    "managed formal delivery and latest-only cleanup"
+    "user completion confirmation",
+    "separately owned independent review"
   ],
   "before_after": {
     "old": "参考有多人或背景遮盖时先另选干净片段；复用明确原件、候选、组成与起止时间。",
@@ -136,5 +137,11 @@
     "public_sample": "samples/voice-plan.md",
     "public_sample_sha256": "d7b7bd18cc670d818026053d0eeb0a6dc3686a693bcfddd46fa0f132fde3b313",
     "formal_writes": false
+  },
+  "current_delivery": {
+    "status": "LOCAL_FORMAL_DELIVERY_VERIFIED_AWAITING_USER_CONFIRMATION",
+    "reference": "delivery.md",
+    "browser": "formal-browser.json",
+    "complete_recovery": "final-recovery.json"
   }
 }

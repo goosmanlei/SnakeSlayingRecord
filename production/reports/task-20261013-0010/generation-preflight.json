@@ -5,7 +5,7 @@
   "revision_id": "20b9aefbe15be58da5e9f5eb968965282deb297f6b11e2ed43f2e2e2e0b7d079",
   "valid_rounds": 5,
   "required_minimum": 5,
-  "status": "FIVE_ROUNDS_AND_SIMULATED_AND_LOCAL_PRODUCTION_SAMPLES_COMPLETE_FORMAL_PENDING",
+  "status": "FIVE_ROUNDS_AND_SIMULATED_AND_LOCAL_PRODUCTION_SAMPLES_COMPLETE",
   "files": {
     "SKILL.md": "1d4c2b0b4a284bd322b3bba0f9d28f181c43497f25dbcbdb1617b54fb28b3b0b"
   },
@@ -135,7 +135,7 @@
   "last_material_revision_has_been_read": true,
   "unresolved_text_issues": [],
   "human_user_study": false,
-  "formal_publication": false,
+  "formal_publication": true,
   "evidence_directory": ".runtime/skill-cold-reader-fresh/generation-preflight",
   "interrupted_attempts": {
     "count": 1,
@@ -278,7 +278,7 @@
       "final local text handoff pending text-layer method"
     ]
   },
-  "history_cleanup_pending": true,
+  "history_cleanup_pending": false,
   "isolated_browser": {
     "verified_at": "2026-10-13T17:36:32.517910+00:00",
     "browser": "Google Chrome",
@@ -363,14 +363,18 @@
     "same_operation_recovery": true
   },
   "pending": [
-    "formal_publication",
-    "formal_browser",
-    "final_empty_restore",
-    "scoped_history_cleanup"
+    "user completion confirmation",
+    "separately owned independent review"
   ],
   "result_review_complete": true,
   "result_review_evidence": {
     "path": ".runtime/skill-cold-reader-fresh/result-review/sample/verification.json",
     "sha256": "1d97ffd7522e7e164e53875d2aec58a44dd93d9446e9cd5d1201a44ece64177d"
+  },
+  "current_delivery": {
+    "status": "LOCAL_FORMAL_DELIVERY_VERIFIED_AWAITING_USER_CONFIRMATION",
+    "reference": "delivery.md",
+    "browser": "formal-browser.json",
+    "complete_recovery": "final-recovery.json"
   }
 }

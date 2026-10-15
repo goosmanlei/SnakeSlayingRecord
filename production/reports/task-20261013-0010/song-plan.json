@@ -1,7 +1,7 @@
 {
   "task": "task-20261013-0010",
   "object_id": "method.skill.song-plan",
-  "status": "FIVE_ROUNDS_AND_FINAL_SAMPLE_COMPLETE_FORMAL_DELIVERY_PENDING",
+  "status": "FIVE_ROUNDS_AND_FINAL_SAMPLE_COMPLETE",
   "valid_complete_rounds": 5,
   "reader_model": "gpt-6-astra",
   "reader_effort": "max",
@@ -109,7 +109,8 @@
   "new_media_generated": false,
   "human_participant_test": false,
   "pending": [
-    "managed formal delivery and latest-only cleanup"
+    "user completion confirmation",
+    "separately owned independent review"
   ],
   "native_events": 648,
   "durable_evidence_reverified_at": "2026-10-15T01:22:45.973848+00:00",
@@ -130,5 +131,11 @@
     "public_sample_sha256": "f38d3d24b46ada3da380e95f2172670dc92c5e2a1f18be4175323c92a4dcfa7a",
     "formal_writes": false
   },
-  "outer_description_sync_pending": false
+  "outer_description_sync_pending": false,
+  "current_delivery": {
+    "status": "LOCAL_FORMAL_DELIVERY_VERIFIED_AWAITING_USER_CONFIRMATION",
+    "reference": "delivery.md",
+    "browser": "formal-browser.json",
+    "complete_recovery": "final-recovery.json"
+  }
 }

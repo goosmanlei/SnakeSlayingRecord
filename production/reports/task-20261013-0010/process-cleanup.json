@@ -1,0 +1,67 @@
+{
+  "task": "task-20261013-0010",
+  "status": "INVALID_PROCESS_RESOURCES_REMOVED_REQUIRED_AUDIT_ARCHIVED",
+  "temporary_preview_processes_stopped": 3,
+  "preview_ports_closed": [
+    57149,
+    54703,
+    58120
+  ],
+  "cleanup_batches": [
+    {
+      "scope": "earlier completed complete-recovery rehearsals",
+      "files": 1772,
+      "directories": 8,
+      "database_files": 2,
+      "asset_copies": 1764
+    },
+    {
+      "scope": "earlier completed baseline and sample databases",
+      "files": 5,
+      "directories": 4,
+      "database_files": 5
+    },
+    {
+      "scope": "earlier one-time scripts and unused screenshots",
+      "files": 4
+    },
+    {
+      "scope": "final rehearsal, publication validation, preview, export and recovery copies",
+      "files": 5482,
+      "directories": 79,
+      "database_files": 22,
+      "asset_copies": 4420,
+      "logical_bytes": 9427782757
+    },
+    {
+      "scope": "obsolete full installation registries and history plans",
+      "files": 13,
+      "logical_bytes": 95282964
+    },
+    {
+      "scope": "completed final browser, audit and cleanup scripts",
+      "files": 7
+    }
+  ],
+  "invalid_files_deleted": 7283,
+  "invalid_database_files_deleted": 29,
+  "all_exact_deleted_paths_absent": true,
+  "archive": {
+    "files": 115795,
+    "verified_files": 115795,
+    "sha256": "df917d31e891e1a7acb139f0fe0f6d8df4529cf737b7969667e6da697563e7c2",
+    "bytes": 1291616833,
+    "location": "main project .runtime/task-20261013-0010/reading-and-delivery-audit.tar.gz",
+    "unfolded_files_removed": 115795,
+    "unfolded_directories_removed": 22165,
+    "rebase_receipts_moved": 3,
+    "purpose": "Minimum retained complete input/response/audit chains for 102 accepted full readings, final actual samples, source/decision evidence and delivery/browser/recovery receipts. No old-history database, temporary full install registry or preview runtime.",
+    "owner": "task-20261013-0010 execution owner",
+    "retention_until": "Retain through user acceptance and independent review; after both, assess retention of raw calls separately. No automatic reimport into formal method history."
+  },
+  "temporary_containers_created": 0,
+  "temporary_images_created": 0,
+  "formal_containers_and_reused_images_retained": true,
+  "worktree": "Still used by this task session; managed retirement after explicit completion and TUI exit releases the lock.",
+  "audit_is_formal_method_use_history": false
+}

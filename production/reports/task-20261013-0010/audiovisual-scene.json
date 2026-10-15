@@ -1,7 +1,7 @@
 {
   "task": "task-20261013-0010",
   "object_id": "method.skill.audiovisual-scene",
-  "status": "FIVE_ROUNDS_AND_FINAL_BOUND_SAMPLE_COMPLETE_FORMAL_PENDING",
+  "status": "FIVE_ROUNDS_AND_FINAL_BOUND_SAMPLE_COMPLETE",
   "valid_complete_rounds": 5,
   "reader_model": "gpt-6-astra",
   "reader_effort": "max",
@@ -109,8 +109,8 @@
   "new_media_generated": false,
   "human_participant_test": false,
   "pending": [
-    "managed formal delivery and latest-only cleanup",
-    "formal Chrome and final complete empty-instance recovery"
+    "user completion confirmation",
+    "separately owned independent review"
   ],
   "queued_coordinator_findings": {
     "path": ".runtime/skill-cold-reader-fresh/audiovisual-scene/coordinator-followups.json",
@@ -143,5 +143,11 @@
   "sample_artifact": {
     "path": "production/reports/task-20261013-0010/samples/audiovisual-scene.md",
     "sha256": "87a4d15c332a44c5bcc026e0ee4d941b4377693b83003e4748b45d9ce37391ca"
+  },
+  "current_delivery": {
+    "status": "LOCAL_FORMAL_DELIVERY_VERIFIED_AWAITING_USER_CONFIRMATION",
+    "reference": "delivery.md",
+    "browser": "formal-browser.json",
+    "complete_recovery": "final-recovery.json"
   }
 }

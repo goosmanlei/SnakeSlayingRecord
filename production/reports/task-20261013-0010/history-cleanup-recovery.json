@@ -342,7 +342,7 @@
   "formal_writes": false,
   "source": ".runtime/skill-cold-reader-fresh/history-cleanup/schema14-rehearsal/source/.runtime/review.sqlite3",
   "restored": ".runtime/skill-cold-reader-fresh/history-cleanup/schema14-rehearsal/empty/.runtime/review.sqlite3",
-  "final_candidate_restore_pending": true,
+  "final_candidate_restore_pending": false,
   "source_only_nonunique_indexes": [
     "production_scope_revision",
     "production_episode"
@@ -356,5 +356,7 @@
     "all_paths_absent": true,
     "scope": "Three completed reference-rebase snapshots, accepted novel sample database and obsolete empty-configuration recovery database. Active methods and formal database retained.",
     "formal_skill_history_deleted": false
-  }
+  },
+  "final_candidate_restore_evidence": "final-recovery.json",
+  "boundary": "This record is the earlier rehearsal; final cleanup and current formal export recovery are recorded separately."
 }

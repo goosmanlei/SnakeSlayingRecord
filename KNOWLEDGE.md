@@ -25,6 +25,10 @@
 
 - 方法的共用章节加载条件与工作环节选择条件使用同一无损编辑契约：保留 JSON 类型、顺序和准确引用，布尔与同名字面文本分开，非法或重复字段整次拒绝。修改方法只追加版本，绑定显式更新，旧执行保持原全文快照。操作与验证见 [受管方法](production/managed-methods.md) 和 [条件回写验收](production/method-condition-roundtrip/VERIFICATION.md)；正式方法是否需修正以当次数据证据判断，不从隔离复现推定正式数据损坏。
 
+- 用户在 task-20261013-0010 明确授权对本次十五个现行 SKILL 作一次性历史收敛；已删除其旧定义、旧绑定、使用记录和获准清理的旧版评论，仅保留准确最新版。该次清理不改变以后新增版本和记录执行的机制，也不把旧作品归因于新方法；范围外准确引用仍需保留的资料沿原身份读取。准确边界见[历史清理](production/reports/task-20261013-0010/history-cleanup.md)，后续恢复使用最终清理后的受管导出，不能回灌临时安装配置。
+
+- ASH002 原先点选的音频已被用户明确否定，不能作为有效采用、音频组合或时长判断的依据；后续制作须重新确定准确输入。本次方法样例按这一决定处理，没有修改正式镜头方案，也不否定这些音频在其他镜头中的用途。来源：本任务用户说明及[相邻镜样例](production/reports/task-20261013-0010/samples/video-plan.md)。
+
 - 六类摘要化制作工作由作者工具在本机任务目录保存阶段原值与确认回执；服务保持摘要，回读按原执行、阶段、前置依赖和规范 JSON 摘要取得原值。媒体 draft/review/result 及待导入包沿同一步恢复；缺全文须有准确原文件或旧完整服务值才可核验接入。准确方法 record/stage 接口不添加界面编号，旧完整执行恢复沿其原输入格式；不通过新绑定重建旧包。操作见 [受管方法](production/managed-methods.md)，边界及原文对照见 [阶段回读验收](production/method-stage-recovery/VERIFICATION.md)。
 
 - 创作协作与系统 Review 的可移植方法只在 [skills/creative-system-review/](skills/creative-system-review/SKILL.md) 维护；项目适配说明本剧入口，迁移时替换适配。系统专用工作类型 `creative-system-review` 经既有 `method-source` 取得完整正文、适配和系统构想的准确只读投影，独立于生成绑定；新步骤交付保留源目录，旧执行保持原文及旧入口限制；安装、版本更新和空实例恢复见 [受管方法](production/managed-methods.md#创作协作-review)。[系统构想](production/system-vision.md) 是制作思路首子页的唯一正文，`scripts/sync_system_vision.py` 确定性派生。按用户2026-10-11确认的关系，整页只展示两层图：上层人与 AI 双向协作完成影视创作；下层审阅台以数据模型和基础流程提供共同约束，支撑协作效率与质量。页面用原生文字与矢量图标，复用系统浅色纸面和柔和绿色，突出共同基础、适度减弱上层；不显示旧四块或五阶段链。其他子页保留，URL 的 vision 标识和原四个锚点继续进入当前图示。通用显示与拒错契约见系统 `docs/production-approach.md`；唯一正文、派生和当前 Review 投影一致。实际发布与验收见 [协作图示验收](production/vision-collaboration/VERIFICATION.md)，旧版沿 Git 和准确回执追溯。
