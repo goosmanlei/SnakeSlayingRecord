@@ -116,11 +116,21 @@ def validate(value, delivered=False, require_push=False):
     for key, candidate in value['repositories'].items():
         entry = record.get('repositories', {}).get(key, {})
         stage = entry.get('integration') or {}
-        if stage.get('candidate_commit') != candidate or (frozen.get(key, {}).get('integration') or {}).get('candidate_commit') != candidate:
+        git_delivery = entry.get('git_delivery')
+        # The task CLI uses its single-worktree preparation for primary-only
+        # tasks. There is no multi-repository frozen map in that protocol.
+        # Check both actual primary receipts; never relax the group contract.
+        primary_only = (value.get('read_only_system') and not frozen
+                        and record.get('repository_management') == 'native'
+                        and key == 'primary' and entry.get('backend') == 'native'
+                        and stage.get('phase') in ('prepared', 'approved', 'applied')
+                        and (git_delivery or {}).get('candidate_commit') == candidate
+                        and (git_delivery or {}).get('phase') in ('prepared', 'approved', 'committed', 'pushed'))
+        frozen_matches = (frozen.get(key, {}).get('integration') or {}).get('candidate_commit') == candidate
+        if stage.get('candidate_commit') != candidate or not (frozen_matches or primary_only):
             raise ValueError('task candidate changed; prepare the publication bundle again')
         if delivered and stage.get('phase') != 'applied':
             raise ValueError('repository Git integration is incomplete')
-        git_delivery = entry.get('git_delivery')
         if delivered and ((git_delivery and git_delivery.get('phase') != 'pushed') or
                           (require_push and not git_delivery)):
             raise ValueError('repository push is incomplete or was not prepared')
