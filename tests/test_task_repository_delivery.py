@@ -35,7 +35,7 @@ class TaskDeliveryTests(unittest.TestCase):
             commit = git('rev-parse','HEAD')
             record = self.record()
             del record['repositories']['desk']
-            del record['repository_preparation']['desk']
+            del record['repository_preparation']
             record['repository_management'] = 'native'
             record['repositories']['primary']['worktree']['path'] = str(story.relative_to(owner))
             with patch.object(adapter,'command',return_value=['task']), patch.object(adapter,'query',return_value=record):
@@ -67,6 +67,35 @@ class TaskDeliveryTests(unittest.TestCase):
                 record['repositories']['desk']={'mode':'write'}
                 with self.assertRaisesRegex(ValueError,'scope changed'):
                     adapter.validate(value)
+
+    def test_primary_only_preparation_requires_matching_actual_receipts(self):
+        value = self.value()
+        value.update(repositories={'primary': 'a'*40}, system_repository=None,
+                     read_only_system={'commit': 'b'*40})
+        record = self.record()
+        record.update(repository_management='native')
+        del record['repository_preparation']
+        del record['repositories']['desk']
+        primary = record['repositories']['primary']
+        with patch.object(adapter, 'query', return_value=record), \
+                patch.object(adapter, 'check_read_only_system'):
+            adapter.validate(value)
+            primary['git_delivery']['candidate_commit'] = 'c'*40
+            with self.assertRaisesRegex(ValueError, 'candidate changed'):
+                adapter.validate(value)
+            primary['git_delivery']['candidate_commit'] = 'a'*40
+            primary['integration']['phase'] = 'preparing'
+            with self.assertRaisesRegex(ValueError, 'candidate changed'):
+                adapter.validate(value)
+            primary['integration']['phase'] = 'prepared'
+            record['repository_preparation'] = {'primary': {'integration': {'candidate_commit': 'c'*40}}}
+            with self.assertRaisesRegex(ValueError, 'candidate changed'):
+                adapter.validate(value)
+        group = self.record()
+        del group['repository_preparation']
+        with patch.object(adapter, 'query', return_value=group):
+            with self.assertRaisesRegex(ValueError, 'candidate changed'):
+                adapter.validate(self.value())
 
     def record(self):
         entries = {}
