@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-complaint-scroll-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-complaint-scroll-identity-01",
+    "submission_sha256": "041b5e616fd5be9bb73634b518526c554420dc8683ba6a35e89705fd5b066024",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-complaint-scroll-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "d9e679823ec57a4df5ead18d57875345bfa1a2f92bdd49ae0e96a0b956a12890.jpg",
+    "sha256": "d9e679823ec57a4df5ead18d57875345bfa1a2f92bdd49ae0e96a0b956a12890",
+    "bytes": 6793415,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-complaint-scroll-identity-01",
+    "candidate_id": "candidate-8a096d980917fe5e5289ab04410526b4a2bd43979b8a960d90f0fc4eda20fcd3",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "实际查看原件：同一偏宽米白状纸有折收、展开正面和素背面三视，完整纸边、柔折和轻卷角可辨；展开面显示沿长边两次折收对应的两道横向折线，另一道中纵折，组成六个折区。无卷轴、印记、名单或伪字。形制可与窄借据及官府印纸区分，静态折收用途通过；真实取出展开动作与显示尺度在镜头另验。",
+    "decision": "选用第0代原件；保持陶伯独立状纸身份，不与口供、原单或批文合并。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 3,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/complaint-scroll-identity-01-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 6451,
+    "total_input_tokens": 346,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 346
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4752,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1353
+  },
+  "actual_request_body_sha256": "cc6bb1244e4b316857d08273702dd91c9774327c03a703fd1df754a40826cd19",
+  "submitted_inputs": []
+}

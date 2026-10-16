@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-grain-ticket-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-grain-ticket-identity-01",
+    "submission_sha256": "9e5c6fd54529a4025a001dcc5fa08eefbb7431395f85a1272893a2d7ef1e7514",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-grain-ticket-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "d874dab306dd27794ff328af7a71234952b970e0e2713406bfb03ba37a9adeb1.jpg",
+    "sha256": "d874dab306dd27794ff328af7a71234952b970e0e2713406bfb03ba37a9adeb1",
+    "bytes": 8228409,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-grain-ticket-identity-01",
+    "candidate_id": "candidate-0dc86c460c6203e73e3c566282895a94790e656970222b06d44593c60e7f65d2",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "实际查看原件：小纸票的正背全貌和折角细节可辨，正面右上斜剪角翻背后在左上，左下暗褐点线记号不是可读姓名、日期或大官印。中部短行区留空，纸边与朴素纸色清楚。近图仅放大折角，不把其出框处当完整主物缺失；两个主视均完整。通过形制与翻面身份检查，绝对手持尺度仍在镜头核对。",
+    "decision": "选用第0代原件；同形票可以属于不同人，不把多人持票解释成同一纸件瞬间转移。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 10,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/grain-ticket-identity-01-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 5363,
+    "total_input_tokens": 339,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 339
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4241,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 783
+  },
+  "actual_request_body_sha256": "c2e03f62a7bbacfd1c24a43a1c5de85e332500149d164bf83c122491701d882b",
+  "submitted_inputs": []
+}

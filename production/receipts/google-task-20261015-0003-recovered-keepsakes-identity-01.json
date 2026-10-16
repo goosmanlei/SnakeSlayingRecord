@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-recovered-keepsakes-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-recovered-keepsakes-identity-01",
+    "submission_sha256": "265f0d94c721d6e7d63924af4c1d887c56df5c6aa6fa304b4318c1b889546090",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-recovered-keepsakes-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "75b09e87fdd0d5266e6fc571c595865fa6ff6d0f038e08120085f3487ea4d233.jpg",
+    "sha256": "75b09e87fdd0d5266e6fc571c595865fa6ff6d0f038e08120085f3487ea4d233",
+    "bytes": 7546002,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-recovered-keepsakes-identity-01",
+    "candidate_id": "candidate-3134f504f6490f656633bc092fef027e79462e580ad8e1c2bc048950021bcbff",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "实际查看原件：两件物各放一块净布、无血污，断齿近图清楚。竹簪识别刻纹却画在尖端附近，主图和近图都不在应被陶伯辨认的簪尾；木梳主要呈近完整弧背、右端小段断裂，半把断梳的整体缺失形态也不够明确。关键识物线索不合方案。",
+    "decision": "不选下游。返修从根图明确圆钝尾端一条歪浅纹、尖端无刻纹，半梳从中部明显断开；不沿失败图继续图生图。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  },
+  "usage": {
+    "total_tokens": 6154,
+    "total_input_tokens": 315,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 315
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4679,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1160
+  },
+  "actual_request_body_sha256": "1d2a5985d2bb7f42df68958da7f5291c1fe39a01e1c7d83307e579f204dcfdfe",
+  "submitted_inputs": []
+}

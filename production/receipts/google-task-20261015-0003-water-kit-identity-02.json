@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-water-kit-identity-02",
+  "submission": {
+    "call_id": "task-20261015-0003-water-kit-identity-02",
+    "submission_sha256": "ea9368adfee50e4f1146c902fe39346518587c4cb868da09ffab05da062746aa",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-water-kit-identity-02.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "9cb909f330b313efbca7cc4dc98da32f29ea2374a0b27f19bcd26cc88006da0c.jpg",
+    "sha256": "9cb909f330b313efbca7cc4dc98da32f29ea2374a0b27f19bcd26cc88006da0c",
+    "bytes": 7683905,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-water-kit-identity-02",
+    "candidate_id": "candidate-8b1d2d9bf4a1d97495f0dc1fd557c71c93038cda3d94b38c3a6ad206c3fddd94",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "实际查看原件：单一完整浅竹弧担杆，两端各两根细绳接同形小木桶的两只相对木耳，总计一杆两桶四耳四吊绳，连接清楚。桶体各两道暗箍，左右形制一致，中央肩承段平滑，未加入重复近图、第三桶或文字。透视下两桶底与落影构成同一地面，静态挑水担具身份和连接结构通过；绝对持握尺度及行走受力仍需镜头验证。",
+    "decision": "选用第0代返修原件，替代未通过的首候选用于全部当前消费者；不将母版选择记作实际负重动作通过。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 2,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/water-kit-identity-02-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 6354,
+    "total_input_tokens": 377,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 377
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4313,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1664
+  },
+  "actual_request_body_sha256": "31cf6e4e998c5c75bb5c8fa69d9879e96ea2bb6009228db0a8e3586779bc8987",
+  "submitted_inputs": []
+}

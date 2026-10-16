@@ -1,0 +1,96 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-expense-ledger-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-expense-ledger-identity-01",
+    "submission_sha256": "ca031856d70f8304c42d24c0f9a117c05f0ff614fa8ae14d49764910a1360409",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-expense-ledger-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "1a3c699d62daba184f0520d00287d8fbce8dcc5d4b4d73cf8c3add661cd99613.jpg",
+    "sha256": "1a3c699d62daba184f0520d00287d8fbce8dcc5d4b4d73cf8c3add661cd99613",
+    "bytes": 6889282,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-expense-ledger-identity-01",
+    "candidate_id": "candidate-7e5f96398e6e4d7f0fed08f64340823468c11a8e289acc3c239a8fe492c52e05",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "实际查看原件并与本轮笔墨母版对照：新账页为独立浅米宽纸，纸面稀疏浅灰栏目无数额人名，右下翻角可见素净背面，无歌本线孔、残缺或炭圈。毛笔竹节、软尖及黑墨碟轮廓与准确参考相合，未带入木板干布；碟内较浅，作为器形参考，不据此宣称已有可书写墨液。左边表现为窄卷折，未出现卷轴木杆；不改变独立纸页身份。通过账页及附件形制用途，写字和加墨状态在镜头另核。",
+    "decision": "选用第1代原件；本需求新身份为共同开支纸页，文具来自已选笔墨母版，不制造第二套文具实体或未给债款。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-task-20261015-0003-writing-kit-identity-01",
+        "revision_id": "379fb8bb3d8a9308fa6f16af96c0db4d0ca4dce5806e7ba06713ddfb9197bef5"
+      }
+    ]
+  },
+  "current_consumer_selection": {
+    "slots": 3,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/expense-ledger-identity-01-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 6347,
+    "total_input_tokens": 1505,
+    "input_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 1120
+      },
+      {
+        "modality": "text",
+        "tokens": 385
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4237,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 605
+  },
+  "actual_request_body_sha256": "051e292a62630bd2997d24022cd51fcd6c0c1fa0eecae5811d6dba65d1e95169",
+  "submitted_inputs": [
+    {
+      "image_number": 1,
+      "submitted_sha256": "944e97a6959d7f04abd3c3715dcf792db704b158124c296b25389dce9457c432",
+      "original_sha256": "944e97a6959d7f04abd3c3715dcf792db704b158124c296b25389dce9457c432",
+      "crop": null
+    }
+  ]
+}

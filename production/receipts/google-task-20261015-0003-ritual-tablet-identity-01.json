@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-ritual-tablet-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-ritual-tablet-identity-01",
+    "submission_sha256": "af7c2d37a14a158eb7bb2ed84022773d5de39d7724bdc1b87e9da06488bbec1b",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-ritual-tablet-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "2ff7e04d0dea86dd6cf5d0ca6c3ff20027a97f878dbbf3aca5c8b32f11555db7.jpg",
+    "sha256": "2ff7e04d0dea86dd6cf5d0ca6c3ff20027a97f878dbbf3aca5c8b32f11555db7",
+    "bytes": 7664544,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-ritual-tablet-identity-01",
+    "candidate_id": "candidate-e26584941afa57125b8b4ded183ef7feee7855455578b6c750a5eaee370445aa",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "实际查看原件：细长旧褐木牌的背面、正面、空穿绳孔与新刮边细部一致。背面新白边在画面左、正面在画面右，翻面关系正确；正面中央姓名区域留白，未生成姓名或红绳。灰布包独立，轮廓和木面破旧程度可辨。通过静态形制与翻面方向用途；姓名排字、穿绳及实际包裹动作需各自准确输入，不从本图推断已完成。",
+    "decision": "选用第0代原件；保持姓名字层与红绳需求独立，翻牌前只引用无字背面。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 12,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/ritual-tablet-identity-01-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 6628,
+    "total_input_tokens": 349,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 349
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 5290,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 989
+  },
+  "actual_request_body_sha256": "88500d7555f50178d9593fbb528ac604a40720ccf98ba1d8123a324156ccb5f8",
+  "submitted_inputs": []
+}

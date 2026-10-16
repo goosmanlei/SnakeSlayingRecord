@@ -1,22 +1,25 @@
 {
   "format": "stage-verification-v1",
   "task_id": "task-20261015-0003",
-  "stage": "stage-05",
-  "checked_at": "2026-10-16T16:15:38.219263+00:00",
+  "stage": "stage-06",
+  "checked_at": "2026-10-16T17:16:50.466938+00:00",
   "requirements": 651,
   "ordinary_state": 191,
-  "unique_dependency_edges": 3396,
+  "unique_dependency_edges": 3397,
   "acyclic": true,
-  "candidates": 159,
-  "covered_requirements": 123,
-  "production_files_verified": 162,
-  "selected_input_slots": 1870,
+  "candidates": 188,
+  "covered_requirements": 149,
+  "production_files_verified": 191,
+  "selected_input_slots": 2008,
   "selected_by_material": {
     "new26-aheng-identity": 210,
+    "new26-exemption-doc-identity": 9,
     "new26-songbook-identity": 26,
     "new26-binding-kit-identity": 4,
     "new26-poor-mother-identity": 8,
+    "new26-writing-kit-identity": 24,
     "new26-liji-identity": 34,
+    "new26-loan-paper-identity": 12,
     "new26-preparation-tools-identity": 32,
     "new26-tao-rope-identity": 35,
     "new26-layout-note-identity": 13,
@@ -30,6 +33,7 @@
     "new26-moer-identity": 18,
     "new26-zhao-identity": 49,
     "new26-passer-identity": 1,
+    "new26-hymn-paper-identity": 6,
     "new26-tao-identity": 19,
     "new26-lixiao-identity": 101,
     "new26-troupe-identity": 7,
@@ -37,19 +41,25 @@
     "new26-household-cleaver-identity": 5,
     "new26-liji-palm-overall": 18,
     "new26-book-dry-sheets-overall": 70,
+    "new26-water-kit-identity": 2,
     "new26-charcoal-identity": 2,
     "new26-singers-identity": 2,
     "new26-mother-oldstage-overall": 6,
     "new26-neighbor-woman-identity": 7,
     "new26-temple-front-layout": 55,
+    "new26-children-identity": 7,
     "new26-festival-crowd-identity": 15,
     "new26-sunliu-identity": 85,
+    "new26-grain-ticket-identity": 10,
     "new26-thin-worker-identity": 17,
+    "new26-ritual-tablet-identity": 12,
+    "new26-troupe-scissors-identity": 1,
     "new26-priest-identity": 30,
     "new26-liji-forehead-fresh-overall": 22,
     "new26-temple-workers-identity": 19,
     "new26-bait-identity": 10,
     "new26-boatman-identity": 4,
+    "new26-ledger-box-identity": 10,
     "new26-old-woman-identity": 3,
     "new26-registry-clerk-identity": 3,
     "new26-liji-head-wrap-overall": 95,
@@ -60,6 +70,7 @@
     "new26-chipped-bowl-identity": 9,
     "new26-bedding-identity": 10,
     "new26-carrying-strap-identity": 7,
+    "new26-waist-drum-identity": 7,
     "new26-neighbors-identity": 3,
     "new26-patched-lantern-identity": 37,
     "new26-liang-clerk-identity": 30,
@@ -67,11 +78,15 @@
     "new26-office-clerks-identity": 10,
     "new26-cheng-identity": 79,
     "new26-snake-identity": 8,
+    "new26-approval-paper-identity": 6,
+    "new26-loan-uncovered-overall": 12,
     "new26-helpers-identity": 33,
     "new26-mason-identity": 5,
     "new26-heavy-knife-identity": 52,
+    "new26-masonry-kit-identity": 2,
     "new26-wet-grass-identity": 6,
     "new26-map-cut-overall": 7,
+    "new26-expense-ledger-identity": 3,
     "new26-elders-identity": 18,
     "new26-incense-burner-identity": 1,
     "new26-snake-first-cut-overall": 2,
@@ -81,88 +96,92 @@
     "new26-liji-clean-wrap-overall": 4,
     "new26-xiaoman-mother-identity": 9,
     "new26-document-handler-identity": 1,
+    "new26-complaint-scroll-identity": 3,
+    "new26-verdict-notice-identity": 8,
     "new26-liji-healed-overall": 46,
     "new26-grain-manager-identity": 4,
-    "new26-song-teacher-identity": 9
+    "new26-clearance-receipt-identity": 2,
+    "new26-song-teacher-identity": 9,
+    "new26-performance-laundry-identity": 2
   },
   "status_counts": {
-    "executor_checked": 71,
+    "executor_checked": 90,
     "executor_checked_partial": 1,
     "hearing_unverified": 34,
     "user_audition_passed": 1,
-    "quality_failed": 16,
-    "not_produced": 68
+    "quality_failed": 23,
+    "not_produced": 42
   },
   "call_counts": {
-    "completed": 158,
+    "completed": 187,
     "unknown": 5,
     "failed": 3
   },
   "protected_baseline_records": {
     "comments": {
       "rows": 404,
-      "sha256": "53706c8b8d515605d7b00d07368214415226a6ff2a4bd189775f3f3451bc72ef",
+      "sha256": "ebab3edb27f7dc456ac87f16b85288faf2d6a0a796890e5257f8782d76433da3",
       "unchanged": true
     },
     "comment_events": {
       "rows": 438,
-      "sha256": "2d1be4573ed5dd9c0570de1ebcc6423139ddc8df18d2318be5af05dc377e8b12",
+      "sha256": "c66cc8f03da39a8ef7f955d3f8014e591195071047f1db85f7e6bcbb28c2e16a",
       "unchanged": true
     },
     "business_comments": {
       "rows": 404,
-      "sha256": "9b60e58986262d974edbc00653e2b324f959514648f11a378bc77d795b7c4089",
+      "sha256": "c81f0bdb121d97daa5ca3505396c0eea9575868a3a12ffea1f4b32630266df72",
       "unchanged": true
     }
   },
   "locked_story_unchanged": true,
   "sanitized_private_objects": {
-    "managed-method-artifact-v1": 1006,
-    "managed-method-execution-v1": 338
+    "managed-method-artifact-v1": 1183,
+    "managed-method-execution-v1": 397
   },
   "empty_instance_recovery": {
-    "schema_version": 14,
     "recovered": true,
-    "objects": 18117,
-    "production_objects": 2002,
-    "revisions": 18170,
+    "objects": 18303,
+    "production_objects": 2060,
+    "revisions": 18356,
     "comments": 404,
-    "files_verified": 220,
-    "destination": ".runtime/generation/recovered-stage-0003-05",
+    "files_verified": 249,
+    "destination": ".runtime/generation/recovered-stage-0003-06",
+    "schema_version": 14,
     "exact_table_comparisons": {
       "production_current_records": {
-        "rows": 2002,
-        "sha256": "cec693b448e07bfc09e070dbb504c8ab62f3e1000ce273c53661c5d9f765a43c",
+        "rows": 2060,
+        "sha256": "a97fb36e076aa947fe12ad61d30a0d9c16a414fade0f7b04e662297e489653e5",
         "equal": true
       },
       "production_candidates": {
-        "rows": 159,
-        "sha256": "f826f7364ecdc78930132c4adbef10cc2f5efa7243ef0a6de85dee4e2ba1ef39",
+        "rows": 188,
+        "sha256": "df8d9e4dc00f32c1952830a743a4f1d51eeb2926b6db28e3b921e993f412adda",
         "equal": true
       },
       "production_candidate_targets": {
-        "rows": 159,
-        "sha256": "d16f5bc27f92e713ee23cd79e74ff66d12b788deff78292b28e796347951c6f9",
+        "rows": 188,
+        "sha256": "bb75b914fe9474acc3ac69e06705dbc23d90b97d14836107fe9fca3ec2a6b024",
         "equal": true
       },
       "production_submissions": {
-        "rows": 167,
-        "sha256": "d137bbf50da36c0af016f45033e7ead16afd004161cd18be4e9aaee0729001d5",
+        "rows": 196,
+        "sha256": "c6931f81968affc99a867b6c0b6f1b3b8a161fac0bf6a1a68e0eb1388fce0493",
         "equal": true
       },
       "comments": {
         "rows": 404,
-        "sha256": "53706c8b8d515605d7b00d07368214415226a6ff2a4bd189775f3f3451bc72ef",
+        "sha256": "ebab3edb27f7dc456ac87f16b85288faf2d6a0a796890e5257f8782d76433da3",
         "equal": true
       },
       "comment_events": {
         "rows": 438,
-        "sha256": "2d1be4573ed5dd9c0570de1ebcc6423139ddc8df18d2318be5af05dc377e8b12",
+        "sha256": "c66cc8f03da39a8ef7f955d3f8014e591195071047f1db85f7e6bcbb28c2e16a",
         "equal": true
       },
       "business_comments": {
         "rows": 404,
-        "sha256": "9b60e58986262d974edbc00653e2b324f959514648f11a378bc77d795b7c4089",
+        "sha256": "c81f0bdb121d97daa5ca3505396c0eea9575868a3a12ffea1f4b32630266df72",
         "equal": true
       }
     },
@@ -170,33 +189,34 @@
     "test_copy_removed_after_verification": true
   },
   "previous_publication_packages_unchanged": {
+    "production/publications/task-20261015-0003-stage-05.json": "e0a17f266d89c609cf50828dd5f74eef80cb548d0a6ba5055883451276d288b9",
     "production/publications/task-20261015-0003-stage-04.json": "f88431faecf423c5ae23804858b7aff19f9ae5e7d333a0dd18cf16c2c3420bf8",
     "production/publications/task-20261015-0003-stage-03.json": "9ace5fa15adb0c191d415744d2fe8f100e47634740d088985a708c151c290da8",
     "production/publications/task-20261015-0003-stage-02.json": "5aee3280872431dfd151f837cd02eaa2508be42f479e02bda691dc822e72a415",
     "production/publications/task-20261015-0003-stage-01.json": "e94b851776274b102b890437fcb657631a11a75339a4e2c71f3b3533c85e836a"
   },
   "publication_package": {
-    "path": "production/publications/task-20261015-0003-stage-05.json",
-    "sha256": "e0a17f266d89c609cf50828dd5f74eef80cb548d0a6ba5055883451276d288b9",
-    "publication_id": "a54277bde70518d606dbe82e1917c2a2265134cfd77392d0acb41191c91c6b2d",
-    "objects": 1694,
-    "media_files": 162,
+    "path": "production/publications/task-20261015-0003-stage-06.json",
+    "sha256": "e04b1d646d07679283881e6be32b72d62da7aab8a9215c7df19af45d00bddd37",
+    "publication_id": "04d8e37618e98141e85a3c0350a1935bd49068c5208e2a3b88087b748ec10047",
+    "objects": 1901,
+    "media_files": 191,
     "applied_to_formal": false,
     "preflight": {
       "passed": true,
       "target": "isolated clone of formal database",
-      "receipt": ".runtime/generation/publications/task-20261015-0003-stage-check-05/preflight.json",
+      "receipt": ".runtime/generation/publications/task-20261015-0003-stage-check-06/preflight.json",
       "result": {
         "applied": false,
         "already_published": false,
-        "publication_id": "a54277bde70518d606dbe82e1917c2a2265134cfd77392d0acb41191c91c6b2d",
+        "publication_id": "04d8e37618e98141e85a3c0350a1935bd49068c5208e2a3b88087b748ec10047",
         "source_commit": null,
         "scope": {
           "contract": "production-current-publication-v1",
           "changed_rows": {
-            "objects": 1694,
-            "revisions": 1694,
-            "dependencies": 8170,
+            "objects": 1901,
+            "revisions": 1901,
+            "dependencies": 9020,
             "comments": 0,
             "material_content": 0,
             "material_archive_files": 0,
@@ -206,16 +226,16 @@
             "business_relations": 0,
             "business_relation_aliases": 0,
             "audiovisual_notes": 0,
-            "production_current_records": 879,
-            "production_submissions": 167,
-            "production_candidates": 159,
-            "production_candidate_targets": 159,
+            "production_current_records": 958,
+            "production_submissions": 196,
+            "production_candidates": 188,
+            "production_candidate_targets": 188,
             "production_comment_quotes": 0,
-            "production_current_operations": 4076,
+            "production_current_operations": 4409,
             "production_response_excerpts": 0
           },
           "comment_events": [],
-          "publication_id": "a54277bde70518d606dbe82e1917c2a2265134cfd77392d0acb41191c91c6b2d",
+          "publication_id": "04d8e37618e98141e85a3c0350a1935bd49068c5208e2a3b88087b748ec10047",
           "already_published": false
         }
       }
@@ -224,25 +244,28 @@
   "formal_publication": false,
   "system_commit": "096b6bb0d7c13a20d61c54a2211b48b245f8abc7",
   "stage_freeze": {
-    "frozen_at": "2026-10-16T16:09:43.350156+00:00",
-    "source_snapshot": ".runtime/task-20261015-0003/source-stage05.sqlite3",
+    "frozen_at": "2026-10-16T17:11:12.114612+00:00",
+    "source_snapshot": ".runtime/task-20261015-0003/source-stage06.sqlite3",
     "active_database": ".runtime/generation/review/.runtime/review.sqlite3",
     "summary": {
-      "checked_at": "2026-10-16T16:09:41.570700+00:00",
+      "checked_at": "2026-10-16T17:11:10.334461+00:00",
       "requirements": 651,
       "ordinary_state": 191,
-      "unique_dependency_edges": 3396,
+      "unique_dependency_edges": 3397,
       "acyclic": true,
-      "candidates": 159,
-      "covered_requirements": 123,
-      "production_files_verified": 162,
-      "selected_input_slots": 1870,
+      "candidates": 188,
+      "covered_requirements": 149,
+      "production_files_verified": 191,
+      "selected_input_slots": 2008,
       "selected_by_material": {
         "new26-aheng-identity": 210,
+        "new26-exemption-doc-identity": 9,
         "new26-songbook-identity": 26,
         "new26-binding-kit-identity": 4,
         "new26-poor-mother-identity": 8,
+        "new26-writing-kit-identity": 24,
         "new26-liji-identity": 34,
+        "new26-loan-paper-identity": 12,
         "new26-preparation-tools-identity": 32,
         "new26-tao-rope-identity": 35,
         "new26-layout-note-identity": 13,
@@ -256,6 +279,7 @@
         "new26-moer-identity": 18,
         "new26-zhao-identity": 49,
         "new26-passer-identity": 1,
+        "new26-hymn-paper-identity": 6,
         "new26-tao-identity": 19,
         "new26-lixiao-identity": 101,
         "new26-troupe-identity": 7,
@@ -263,19 +287,25 @@
         "new26-household-cleaver-identity": 5,
         "new26-liji-palm-overall": 18,
         "new26-book-dry-sheets-overall": 70,
+        "new26-water-kit-identity": 2,
         "new26-charcoal-identity": 2,
         "new26-singers-identity": 2,
         "new26-mother-oldstage-overall": 6,
         "new26-neighbor-woman-identity": 7,
         "new26-temple-front-layout": 55,
+        "new26-children-identity": 7,
         "new26-festival-crowd-identity": 15,
         "new26-sunliu-identity": 85,
+        "new26-grain-ticket-identity": 10,
         "new26-thin-worker-identity": 17,
+        "new26-ritual-tablet-identity": 12,
+        "new26-troupe-scissors-identity": 1,
         "new26-priest-identity": 30,
         "new26-liji-forehead-fresh-overall": 22,
         "new26-temple-workers-identity": 19,
         "new26-bait-identity": 10,
         "new26-boatman-identity": 4,
+        "new26-ledger-box-identity": 10,
         "new26-old-woman-identity": 3,
         "new26-registry-clerk-identity": 3,
         "new26-liji-head-wrap-overall": 95,
@@ -286,6 +316,7 @@
         "new26-chipped-bowl-identity": 9,
         "new26-bedding-identity": 10,
         "new26-carrying-strap-identity": 7,
+        "new26-waist-drum-identity": 7,
         "new26-neighbors-identity": 3,
         "new26-patched-lantern-identity": 37,
         "new26-liang-clerk-identity": 30,
@@ -293,11 +324,15 @@
         "new26-office-clerks-identity": 10,
         "new26-cheng-identity": 79,
         "new26-snake-identity": 8,
+        "new26-approval-paper-identity": 6,
+        "new26-loan-uncovered-overall": 12,
         "new26-helpers-identity": 33,
         "new26-mason-identity": 5,
         "new26-heavy-knife-identity": 52,
+        "new26-masonry-kit-identity": 2,
         "new26-wet-grass-identity": 6,
         "new26-map-cut-overall": 7,
+        "new26-expense-ledger-identity": 3,
         "new26-elders-identity": 18,
         "new26-incense-burner-identity": 1,
         "new26-snake-first-cut-overall": 2,
@@ -307,25 +342,407 @@
         "new26-liji-clean-wrap-overall": 4,
         "new26-xiaoman-mother-identity": 9,
         "new26-document-handler-identity": 1,
+        "new26-complaint-scroll-identity": 3,
+        "new26-verdict-notice-identity": 8,
         "new26-liji-healed-overall": 46,
         "new26-grain-manager-identity": 4,
-        "new26-song-teacher-identity": 9
+        "new26-clearance-receipt-identity": 2,
+        "new26-song-teacher-identity": 9,
+        "new26-performance-laundry-identity": 2
       },
       "status_counts": {
-        "executor_checked": 71,
+        "executor_checked": 90,
         "executor_checked_partial": 1,
         "hearing_unverified": 34,
         "user_audition_passed": 1,
-        "quality_failed": 16,
-        "not_produced": 68
+        "quality_failed": 23,
+        "not_produced": 42
       },
       "call_counts": {
-        "completed": 158,
+        "completed": 187,
         "unknown": 5,
         "failed": 3
       }
     },
-    "source_snapshot_removed_after_verification": true
+    "checked_material_binding_coverage": {
+      "checked_materials": 91,
+      "expected_slots": 2008,
+      "selected_slots": 2008,
+      "pending_slots": [],
+      "by_material": {
+        "new26-ahe-identity": {
+          "expected": 2,
+          "selected": 2
+        },
+        "new26-aheng-identity": {
+          "expected": 210,
+          "selected": 210
+        },
+        "new26-aheng-mother-identity": {
+          "expected": 29,
+          "selected": 29
+        },
+        "new26-aheng-voice": {
+          "expected": 87,
+          "selected": 87
+        },
+        "new26-approval-paper-identity": {
+          "expected": 6,
+          "selected": 6
+        },
+        "new26-bait-identity": {
+          "expected": 10,
+          "selected": 10
+        },
+        "new26-bedding-identity": {
+          "expected": 10,
+          "selected": 10
+        },
+        "new26-binding-kit-identity": {
+          "expected": 4,
+          "selected": 4
+        },
+        "new26-boatman-identity": {
+          "expected": 4,
+          "selected": 4
+        },
+        "new26-book-dry-sheets-overall": {
+          "expected": 70,
+          "selected": 70
+        },
+        "new26-carrying-strap-identity": {
+          "expected": 7,
+          "selected": 7
+        },
+        "new26-charcoal-identity": {
+          "expected": 2,
+          "selected": 2
+        },
+        "new26-cheng-identity": {
+          "expected": 79,
+          "selected": 79
+        },
+        "new26-children-identity": {
+          "expected": 7,
+          "selected": 7
+        },
+        "new26-chipped-bowl-identity": {
+          "expected": 9,
+          "selected": 9
+        },
+        "new26-clearance-receipt-identity": {
+          "expected": 2,
+          "selected": 2
+        },
+        "new26-complaint-scroll-identity": {
+          "expected": 3,
+          "selected": 3
+        },
+        "new26-county-deputy-identity": {
+          "expected": 24,
+          "selected": 24
+        },
+        "new26-curtain-identity": {
+          "expected": 24,
+          "selected": 24
+        },
+        "new26-dock-pole-identity": {
+          "expected": 5,
+          "selected": 5
+        },
+        "new26-document-handler-identity": {
+          "expected": 1,
+          "selected": 1
+        },
+        "new26-elders-identity": {
+          "expected": 18,
+          "selected": 18
+        },
+        "new26-exemption-doc-identity": {
+          "expected": 9,
+          "selected": 9
+        },
+        "new26-expense-ledger-identity": {
+          "expected": 3,
+          "selected": 3
+        },
+        "new26-festival-crowd-identity": {
+          "expected": 15,
+          "selected": 15
+        },
+        "new26-grain-manager-identity": {
+          "expected": 4,
+          "selected": 4
+        },
+        "new26-grain-ticket-identity": {
+          "expected": 10,
+          "selected": 10
+        },
+        "new26-heavy-knife-identity": {
+          "expected": 52,
+          "selected": 52
+        },
+        "new26-helpers-identity": {
+          "expected": 33,
+          "selected": 33
+        },
+        "new26-household-cleaver-identity": {
+          "expected": 5,
+          "selected": 5
+        },
+        "new26-hymn-paper-identity": {
+          "expected": 6,
+          "selected": 6
+        },
+        "new26-incense-burner-identity": {
+          "expected": 1,
+          "selected": 1
+        },
+        "new26-layout-note-identity": {
+          "expected": 13,
+          "selected": 13
+        },
+        "new26-ledger-box-identity": {
+          "expected": 10,
+          "selected": 10
+        },
+        "new26-liang-clerk-identity": {
+          "expected": 30,
+          "selected": 30
+        },
+        "new26-lidan-identity": {
+          "expected": 145,
+          "selected": 145
+        },
+        "new26-liji-clean-wrap-overall": {
+          "expected": 4,
+          "selected": 4
+        },
+        "new26-liji-first-blood-overall": {
+          "expected": 22,
+          "selected": 22
+        },
+        "new26-liji-forehead-fresh-overall": {
+          "expected": 22,
+          "selected": 22
+        },
+        "new26-liji-head-wrap-overall": {
+          "expected": 95,
+          "selected": 95
+        },
+        "new26-liji-healed-overall": {
+          "expected": 46,
+          "selected": 46
+        },
+        "new26-liji-identity": {
+          "expected": 34,
+          "selected": 34
+        },
+        "new26-liji-mother-identity": {
+          "expected": 28,
+          "selected": 28
+        },
+        "new26-liji-palm-overall": {
+          "expected": 18,
+          "selected": 18
+        },
+        "new26-listeners-identity": {
+          "expected": 2,
+          "selected": 2
+        },
+        "new26-lixiao-identity": {
+          "expected": 101,
+          "selected": 101
+        },
+        "new26-loan-paper-identity": {
+          "expected": 12,
+          "selected": 12
+        },
+        "new26-loan-uncovered-overall": {
+          "expected": 12,
+          "selected": 12
+        },
+        "new26-map-cut-overall": {
+          "expected": 7,
+          "selected": 7
+        },
+        "new26-mason-identity": {
+          "expected": 5,
+          "selected": 5
+        },
+        "new26-masonry-kit-identity": {
+          "expected": 2,
+          "selected": 2
+        },
+        "new26-moer-identity": {
+          "expected": 18,
+          "selected": 18
+        },
+        "new26-mother-oldstage-overall": {
+          "expected": 6,
+          "selected": 6
+        },
+        "new26-neighbor-woman-identity": {
+          "expected": 7,
+          "selected": 7
+        },
+        "new26-neighbors-identity": {
+          "expected": 3,
+          "selected": 3
+        },
+        "new26-office-clerks-identity": {
+          "expected": 10,
+          "selected": 10
+        },
+        "new26-old-registers-identity": {
+          "expected": 19,
+          "selected": 19
+        },
+        "new26-old-woman-identity": {
+          "expected": 3,
+          "selected": 3
+        },
+        "new26-paper-snake-identity": {
+          "expected": 12,
+          "selected": 12
+        },
+        "new26-passer-identity": {
+          "expected": 1,
+          "selected": 1
+        },
+        "new26-patched-lantern-identity": {
+          "expected": 37,
+          "selected": 37
+        },
+        "new26-performance-laundry-identity": {
+          "expected": 2,
+          "selected": 2
+        },
+        "new26-poor-mother-identity": {
+          "expected": 8,
+          "selected": 8
+        },
+        "new26-preparation-tools-identity": {
+          "expected": 32,
+          "selected": 32
+        },
+        "new26-priest-identity": {
+          "expected": 30,
+          "selected": 30
+        },
+        "new26-registry-clerk-identity": {
+          "expected": 3,
+          "selected": 3
+        },
+        "new26-rice-bag-identity": {
+          "expected": 27,
+          "selected": 27
+        },
+        "new26-ritual-tablet-identity": {
+          "expected": 12,
+          "selected": 12
+        },
+        "new26-singers-identity": {
+          "expected": 2,
+          "selected": 2
+        },
+        "new26-snake-deep-cut-overall": {
+          "expected": 4,
+          "selected": 4
+        },
+        "new26-snake-first-cut-overall": {
+          "expected": 2,
+          "selected": 2
+        },
+        "new26-snake-identity": {
+          "expected": 8,
+          "selected": 8
+        },
+        "new26-snake-separated-overall": {
+          "expected": 3,
+          "selected": 3
+        },
+        "new26-song-teacher-identity": {
+          "expected": 9,
+          "selected": 9
+        },
+        "new26-songbook-identity": {
+          "expected": 26,
+          "selected": 26
+        },
+        "new26-sunliu-identity": {
+          "expected": 85,
+          "selected": 85
+        },
+        "new26-tao-identity": {
+          "expected": 19,
+          "selected": 19
+        },
+        "new26-tao-rope-identity": {
+          "expected": 35,
+          "selected": 35
+        },
+        "new26-temple-front-layout": {
+          "expected": 55,
+          "selected": 55
+        },
+        "new26-temple-workers-identity": {
+          "expected": 19,
+          "selected": 19
+        },
+        "new26-thin-worker-identity": {
+          "expected": 17,
+          "selected": 17
+        },
+        "new26-troupe-identity": {
+          "expected": 7,
+          "selected": 7
+        },
+        "new26-troupe-scissors-identity": {
+          "expected": 1,
+          "selected": 1
+        },
+        "new26-verdict-notice-identity": {
+          "expected": 8,
+          "selected": 8
+        },
+        "new26-waist-drum-identity": {
+          "expected": 7,
+          "selected": 7
+        },
+        "new26-water-kit-identity": {
+          "expected": 2,
+          "selected": 2
+        },
+        "new26-wet-grass-identity": {
+          "expected": 6,
+          "selected": 6
+        },
+        "new26-writing-kit-identity": {
+          "expected": 24,
+          "selected": 24
+        },
+        "new26-xiaoman-mother-identity": {
+          "expected": 9,
+          "selected": 9
+        },
+        "new26-zhao-identity": {
+          "expected": 49,
+          "selected": 49
+        },
+        "new26-zhou-identity": {
+          "expected": 22,
+          "selected": 22
+        }
+      }
+    },
+    "previous_packages": {
+      "production/publications/task-20261015-0003-stage-05.json": "e0a17f266d89c609cf50828dd5f74eef80cb548d0a6ba5055883451276d288b9",
+      "production/publications/task-20261015-0003-stage-04.json": "f88431faecf423c5ae23804858b7aff19f9ae5e7d333a0dd18cf16c2c3420bf8",
+      "production/publications/task-20261015-0003-stage-03.json": "9ace5fa15adb0c191d415744d2fe8f100e47634740d088985a708c151c290da8",
+      "production/publications/task-20261015-0003-stage-02.json": "5aee3280872431dfd151f837cd02eaa2508be42f479e02bda691dc822e72a415",
+      "production/publications/task-20261015-0003-stage-01.json": "e94b851776274b102b890437fcb657631a11a75339a4e2c71f3b3533c85e836a"
+    }
   },
   "external_unregistered_output": {
     "attempt": "task-20261015-0003-aheng-wet-01",
@@ -346,140 +763,284 @@
     "actual_listening": false
   },
   "checked_material_binding_coverage": {
-    "checked_materials": 72,
-    "expected_slots": 1870,
-    "selected_slots": 1870,
+    "checked_materials": 91,
+    "expected_slots": 2008,
+    "selected_slots": 2008,
     "pending_slots": [],
     "by_material": {
-      "new26-binding-kit-identity": {
-        "expected": 4,
-        "selected": 4
-      },
-      "new26-bedding-identity": {
-        "expected": 10,
-        "selected": 10
-      },
-      "new26-bait-identity": {
-        "expected": 10,
-        "selected": 10
-      },
-      "new26-lidan-identity": {
-        "expected": 145,
-        "selected": 145
-      },
-      "new26-moer-identity": {
-        "expected": 18,
-        "selected": 18
-      },
       "new26-ahe-identity": {
         "expected": 2,
         "selected": 2
       },
-      "new26-snake-identity": {
-        "expected": 8,
-        "selected": 8
+      "new26-aheng-identity": {
+        "expected": 210,
+        "selected": 210
       },
-      "new26-mother-oldstage-overall": {
-        "expected": 6,
-        "selected": 6
-      },
-      "new26-temple-front-layout": {
-        "expected": 55,
-        "selected": 55
-      },
-      "new26-old-registers-identity": {
-        "expected": 19,
-        "selected": 19
-      },
-      "new26-thin-worker-identity": {
-        "expected": 17,
-        "selected": 17
-      },
-      "new26-layout-note-identity": {
-        "expected": 13,
-        "selected": 13
-      },
-      "new26-document-handler-identity": {
-        "expected": 1,
-        "selected": 1
-      },
-      "new26-book-dry-sheets-overall": {
-        "expected": 70,
-        "selected": 70
-      },
-      "new26-heavy-knife-identity": {
-        "expected": 52,
-        "selected": 52
-      },
-      "new26-songbook-identity": {
-        "expected": 26,
-        "selected": 26
-      },
-      "new26-temple-workers-identity": {
-        "expected": 19,
-        "selected": 19
-      },
-      "new26-liji-forehead-fresh-overall": {
-        "expected": 22,
-        "selected": 22
-      },
-      "new26-carrying-strap-identity": {
-        "expected": 7,
-        "selected": 7
-      },
-      "new26-paper-snake-identity": {
-        "expected": 12,
-        "selected": 12
-      },
-      "new26-office-clerks-identity": {
-        "expected": 10,
-        "selected": 10
-      },
-      "new26-helpers-identity": {
-        "expected": 33,
-        "selected": 33
-      },
-      "new26-elders-identity": {
-        "expected": 18,
-        "selected": 18
-      },
-      "new26-singers-identity": {
-        "expected": 2,
-        "selected": 2
+      "new26-aheng-mother-identity": {
+        "expected": 29,
+        "selected": 29
       },
       "new26-aheng-voice": {
         "expected": 87,
         "selected": 87
       },
-      "new26-song-teacher-identity": {
+      "new26-approval-paper-identity": {
+        "expected": 6,
+        "selected": 6
+      },
+      "new26-bait-identity": {
+        "expected": 10,
+        "selected": 10
+      },
+      "new26-bedding-identity": {
+        "expected": 10,
+        "selected": 10
+      },
+      "new26-binding-kit-identity": {
+        "expected": 4,
+        "selected": 4
+      },
+      "new26-boatman-identity": {
+        "expected": 4,
+        "selected": 4
+      },
+      "new26-book-dry-sheets-overall": {
+        "expected": 70,
+        "selected": 70
+      },
+      "new26-carrying-strap-identity": {
+        "expected": 7,
+        "selected": 7
+      },
+      "new26-charcoal-identity": {
+        "expected": 2,
+        "selected": 2
+      },
+      "new26-cheng-identity": {
+        "expected": 79,
+        "selected": 79
+      },
+      "new26-children-identity": {
+        "expected": 7,
+        "selected": 7
+      },
+      "new26-chipped-bowl-identity": {
         "expected": 9,
         "selected": 9
       },
-      "new26-priest-identity": {
-        "expected": 30,
-        "selected": 30
+      "new26-clearance-receipt-identity": {
+        "expected": 2,
+        "selected": 2
       },
-      "new26-festival-crowd-identity": {
-        "expected": 15,
-        "selected": 15
+      "new26-complaint-scroll-identity": {
+        "expected": 3,
+        "selected": 3
+      },
+      "new26-county-deputy-identity": {
+        "expected": 24,
+        "selected": 24
+      },
+      "new26-curtain-identity": {
+        "expected": 24,
+        "selected": 24
       },
       "new26-dock-pole-identity": {
         "expected": 5,
         "selected": 5
       },
-      "new26-zhou-identity": {
-        "expected": 22,
-        "selected": 22
+      "new26-document-handler-identity": {
+        "expected": 1,
+        "selected": 1
       },
-      "new26-xiaoman-mother-identity": {
+      "new26-elders-identity": {
+        "expected": 18,
+        "selected": 18
+      },
+      "new26-exemption-doc-identity": {
         "expected": 9,
         "selected": 9
       },
-      "new26-tao-identity": {
+      "new26-expense-ledger-identity": {
+        "expected": 3,
+        "selected": 3
+      },
+      "new26-festival-crowd-identity": {
+        "expected": 15,
+        "selected": 15
+      },
+      "new26-grain-manager-identity": {
+        "expected": 4,
+        "selected": 4
+      },
+      "new26-grain-ticket-identity": {
+        "expected": 10,
+        "selected": 10
+      },
+      "new26-heavy-knife-identity": {
+        "expected": 52,
+        "selected": 52
+      },
+      "new26-helpers-identity": {
+        "expected": 33,
+        "selected": 33
+      },
+      "new26-household-cleaver-identity": {
+        "expected": 5,
+        "selected": 5
+      },
+      "new26-hymn-paper-identity": {
+        "expected": 6,
+        "selected": 6
+      },
+      "new26-incense-burner-identity": {
+        "expected": 1,
+        "selected": 1
+      },
+      "new26-layout-note-identity": {
+        "expected": 13,
+        "selected": 13
+      },
+      "new26-ledger-box-identity": {
+        "expected": 10,
+        "selected": 10
+      },
+      "new26-liang-clerk-identity": {
+        "expected": 30,
+        "selected": 30
+      },
+      "new26-lidan-identity": {
+        "expected": 145,
+        "selected": 145
+      },
+      "new26-liji-clean-wrap-overall": {
+        "expected": 4,
+        "selected": 4
+      },
+      "new26-liji-first-blood-overall": {
+        "expected": 22,
+        "selected": 22
+      },
+      "new26-liji-forehead-fresh-overall": {
+        "expected": 22,
+        "selected": 22
+      },
+      "new26-liji-head-wrap-overall": {
+        "expected": 95,
+        "selected": 95
+      },
+      "new26-liji-healed-overall": {
+        "expected": 46,
+        "selected": 46
+      },
+      "new26-liji-identity": {
+        "expected": 34,
+        "selected": 34
+      },
+      "new26-liji-mother-identity": {
+        "expected": 28,
+        "selected": 28
+      },
+      "new26-liji-palm-overall": {
+        "expected": 18,
+        "selected": 18
+      },
+      "new26-listeners-identity": {
+        "expected": 2,
+        "selected": 2
+      },
+      "new26-lixiao-identity": {
+        "expected": 101,
+        "selected": 101
+      },
+      "new26-loan-paper-identity": {
+        "expected": 12,
+        "selected": 12
+      },
+      "new26-loan-uncovered-overall": {
+        "expected": 12,
+        "selected": 12
+      },
+      "new26-map-cut-overall": {
+        "expected": 7,
+        "selected": 7
+      },
+      "new26-mason-identity": {
+        "expected": 5,
+        "selected": 5
+      },
+      "new26-masonry-kit-identity": {
+        "expected": 2,
+        "selected": 2
+      },
+      "new26-moer-identity": {
+        "expected": 18,
+        "selected": 18
+      },
+      "new26-mother-oldstage-overall": {
+        "expected": 6,
+        "selected": 6
+      },
+      "new26-neighbor-woman-identity": {
+        "expected": 7,
+        "selected": 7
+      },
+      "new26-neighbors-identity": {
+        "expected": 3,
+        "selected": 3
+      },
+      "new26-office-clerks-identity": {
+        "expected": 10,
+        "selected": 10
+      },
+      "new26-old-registers-identity": {
         "expected": 19,
         "selected": 19
       },
-      "new26-snake-first-cut-overall": {
+      "new26-old-woman-identity": {
+        "expected": 3,
+        "selected": 3
+      },
+      "new26-paper-snake-identity": {
+        "expected": 12,
+        "selected": 12
+      },
+      "new26-passer-identity": {
+        "expected": 1,
+        "selected": 1
+      },
+      "new26-patched-lantern-identity": {
+        "expected": 37,
+        "selected": 37
+      },
+      "new26-performance-laundry-identity": {
+        "expected": 2,
+        "selected": 2
+      },
+      "new26-poor-mother-identity": {
+        "expected": 8,
+        "selected": 8
+      },
+      "new26-preparation-tools-identity": {
+        "expected": 32,
+        "selected": 32
+      },
+      "new26-priest-identity": {
+        "expected": 30,
+        "selected": 30
+      },
+      "new26-registry-clerk-identity": {
+        "expected": 3,
+        "selected": 3
+      },
+      "new26-rice-bag-identity": {
+        "expected": 27,
+        "selected": 27
+      },
+      "new26-ritual-tablet-identity": {
+        "expected": 12,
+        "selected": 12
+      },
+      "new26-singers-identity": {
         "expected": 2,
         "selected": 2
       },
@@ -487,157 +1048,89 @@
         "expected": 4,
         "selected": 4
       },
-      "new26-county-deputy-identity": {
-        "expected": 24,
-        "selected": 24
+      "new26-snake-first-cut-overall": {
+        "expected": 2,
+        "selected": 2
       },
-      "new26-neighbor-woman-identity": {
-        "expected": 7,
-        "selected": 7
+      "new26-snake-identity": {
+        "expected": 8,
+        "selected": 8
       },
-      "new26-incense-burner-identity": {
-        "expected": 1,
-        "selected": 1
-      },
-      "new26-boatman-identity": {
-        "expected": 4,
-        "selected": 4
-      },
-      "new26-lixiao-identity": {
-        "expected": 101,
-        "selected": 101
-      },
-      "new26-aheng-identity": {
-        "expected": 210,
-        "selected": 210
-      },
-      "new26-patched-lantern-identity": {
-        "expected": 37,
-        "selected": 37
-      },
-      "new26-liji-identity": {
-        "expected": 34,
-        "selected": 34
-      },
-      "new26-registry-clerk-identity": {
+      "new26-snake-separated-overall": {
         "expected": 3,
         "selected": 3
       },
-      "new26-liji-first-blood-overall": {
-        "expected": 22,
-        "selected": 22
+      "new26-song-teacher-identity": {
+        "expected": 9,
+        "selected": 9
       },
-      "new26-cheng-identity": {
-        "expected": 79,
-        "selected": 79
-      },
-      "new26-old-woman-identity": {
-        "expected": 3,
-        "selected": 3
-      },
-      "new26-liang-clerk-identity": {
-        "expected": 30,
-        "selected": 30
-      },
-      "new26-neighbors-identity": {
-        "expected": 3,
-        "selected": 3
-      },
-      "new26-liji-head-wrap-overall": {
-        "expected": 95,
-        "selected": 95
-      },
-      "new26-household-cleaver-identity": {
-        "expected": 5,
-        "selected": 5
+      "new26-songbook-identity": {
+        "expected": 26,
+        "selected": 26
       },
       "new26-sunliu-identity": {
         "expected": 85,
         "selected": 85
       },
+      "new26-tao-identity": {
+        "expected": 19,
+        "selected": 19
+      },
       "new26-tao-rope-identity": {
         "expected": 35,
         "selected": 35
       },
-      "new26-liji-clean-wrap-overall": {
-        "expected": 4,
-        "selected": 4
+      "new26-temple-front-layout": {
+        "expected": 55,
+        "selected": 55
       },
-      "new26-passer-identity": {
-        "expected": 1,
-        "selected": 1
+      "new26-temple-workers-identity": {
+        "expected": 19,
+        "selected": 19
       },
-      "new26-rice-bag-identity": {
-        "expected": 27,
-        "selected": 27
-      },
-      "new26-aheng-mother-identity": {
-        "expected": 29,
-        "selected": 29
-      },
-      "new26-wet-grass-identity": {
-        "expected": 6,
-        "selected": 6
-      },
-      "new26-liji-healed-overall": {
-        "expected": 46,
-        "selected": 46
-      },
-      "new26-mason-identity": {
-        "expected": 5,
-        "selected": 5
-      },
-      "new26-charcoal-identity": {
-        "expected": 2,
-        "selected": 2
+      "new26-thin-worker-identity": {
+        "expected": 17,
+        "selected": 17
       },
       "new26-troupe-identity": {
         "expected": 7,
         "selected": 7
       },
-      "new26-map-cut-overall": {
-        "expected": 7,
-        "selected": 7
+      "new26-troupe-scissors-identity": {
+        "expected": 1,
+        "selected": 1
       },
-      "new26-poor-mother-identity": {
+      "new26-verdict-notice-identity": {
         "expected": 8,
         "selected": 8
       },
-      "new26-curtain-identity": {
+      "new26-waist-drum-identity": {
+        "expected": 7,
+        "selected": 7
+      },
+      "new26-water-kit-identity": {
+        "expected": 2,
+        "selected": 2
+      },
+      "new26-wet-grass-identity": {
+        "expected": 6,
+        "selected": 6
+      },
+      "new26-writing-kit-identity": {
         "expected": 24,
         "selected": 24
       },
-      "new26-chipped-bowl-identity": {
+      "new26-xiaoman-mother-identity": {
         "expected": 9,
         "selected": 9
-      },
-      "new26-grain-manager-identity": {
-        "expected": 4,
-        "selected": 4
-      },
-      "new26-liji-palm-overall": {
-        "expected": 18,
-        "selected": 18
-      },
-      "new26-preparation-tools-identity": {
-        "expected": 32,
-        "selected": 32
-      },
-      "new26-listeners-identity": {
-        "expected": 2,
-        "selected": 2
       },
       "new26-zhao-identity": {
         "expected": 49,
         "selected": 49
       },
-      "new26-liji-mother-identity": {
-        "expected": 28,
-        "selected": 28
-      },
-      "new26-snake-separated-overall": {
-        "expected": 3,
-        "selected": 3
+      "new26-zhou-identity": {
+        "expected": 22,
+        "selected": 22
       }
     }
   },

@@ -1,0 +1,96 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-ritual-case-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-ritual-case-identity-01",
+    "submission_sha256": "436cc0d00a42788c4c16a4f6dc7056b23707014bb7e08cb738875cca8dc80997",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-ritual-case-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "0b500210cd1b164b7d943c0569a60b9ba86685542c84ce4c5667267ef662b4ba.jpg",
+    "sha256": "0b500210cd1b164b7d943c0569a60b9ba86685542c84ce4c5667267ef662b4ba",
+    "bytes": 5778358,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-ritual-case-identity-01",
+    "candidate_id": "candidate-be4a5f2cbc4bc48a9db73bf6bdb19ff1ec9aebaec5737c8c7b1549ee27c4acb4",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "实际查看原件：左开盖箱和中间闭箱为浅灰棕色，但右侧装册示意把三本书竖直插入仅及册高约三分之一的浅箱，盖无法合上；该箱侧壁还有前两视图没有的阶梯缺口，后翻盖也不见。三册数量可数不等于装齐后可封箱，容量及结构一致性未通过。",
+    "decision": "不选下游；下一次以三册平叠或平躺并排和同一箱口为唯一组装主图，保证册顶低于盖口；不引用本次失败图继续加深谱系。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-task-20261015-0003-old-registers-identity-01",
+        "revision_id": "200e47276d98eaf3d3424fa2879b14365e681cf500ff5224534dcecd906a0ea2"
+      }
+    ]
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  },
+  "usage": {
+    "total_tokens": 6048,
+    "total_input_tokens": 1421,
+    "input_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 1120
+      },
+      {
+        "modality": "text",
+        "tokens": 301
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4234,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 393
+  },
+  "actual_request_body_sha256": "d8d7e85192b6bd35c1844e64c91cf020ea45cd260a9a792e18a69ff95a4f0b14",
+  "submitted_inputs": [
+    {
+      "image_number": 1,
+      "submitted_sha256": "a3a8d3953583e310f92b65a9eb1c6c5e77e4b80153da43176ce6310448cca8a0",
+      "original_sha256": "a3a8d3953583e310f92b65a9eb1c6c5e77e4b80153da43176ce6310448cca8a0",
+      "crop": null
+    }
+  ]
+}
