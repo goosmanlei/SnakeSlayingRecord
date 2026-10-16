@@ -1,0 +1,101 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-ferry-landing-layout-01",
+  "submission": {
+    "call_id": "task-20261015-0003-ferry-landing-layout-01",
+    "submission_sha256": "668d8da71677b83f7c07f24aa58fd3ad85027e06a31b9d146f301d944d6a022a",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-ferry-landing-layout-01.json",
+  "provider_history_id": null,
+  "provider_job_id": "d42ec1e0-de69-4555-bc65-5396de458061",
+  "provider_resource_id": null,
+  "model": "marketing-studio/image/flare",
+  "project_id": null,
+  "provider": "Higgsfield OpenAPI",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "b9d465285abd5f232570b0d0411705c96ed4bb38ee4282f52ff2921182241af5.png",
+    "sha256": "b9d465285abd5f232570b0d0411705c96ed4bb38ee4282f52ff2921182241af5",
+    "bytes": 7021651,
+    "mime": "image/png",
+    "width": 3840,
+    "height": 2160
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-ferry-landing-layout-01",
+    "candidate_id": "candidate-083920375ca9b9be8983672129b7a55f37a0538ce696437cff0662a26a8822b0",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "actual": "UNKNOWN",
+    "planning_reserve": 0.5,
+    "account": "Higgsfield OpenAPI prepaid balance; no recharge",
+    "budget_snapshot": {
+      "created_at": "2026-10-16T18:30:07.402083+00:00",
+      "user_reported_prepaid_usd": 8.65,
+      "actual_balance_verified": true,
+      "max_dispatches": 12,
+      "reserve_per_unknown_usd": 0.5,
+      "generation_model": "marketing-studio/image/flare",
+      "no_recharge": true,
+      "source": "User said Higgsfield OpenAPI remaining8.65 USD; later corrected only Nano Banana availability, not the balance.",
+      "actual_charge": "UNKNOWN",
+      "verified_balance_usd": 7.87,
+      "balance_verified_at": "2026-10-16T19:06:43.333203+00:00",
+      "balance_source": "Daily Chrome https://open.higgsfield.ai/billing visible balance and Auto top-up dialog; read-only, no settings saved.",
+      "balance_anchor_dispatch_count": 9,
+      "auto_top_up_enabled": true,
+      "auto_top_up_threshold_usd": 3.13,
+      "auto_top_up_amount_usd": 25.0,
+      "threshold_buffer_usd": 0.5,
+      "next_batch_limit": 2,
+      "planning_note": "After frontal county gate passed actual viewing, make two previously missing roots with explicit screen-coordinate geometry: ferry and granary. At most12 total; anchor9 at7.87USD minus three0.50USD reserves leaves6.37USD, above3.13+0.50USD threshold. Charges remain UNKNOWN; no auto top-up settings changes."
+    },
+    "note": "Authenticated estimate returns token rates, not a fixed charge. Dispatch cap and observed auto-top-up threshold checked before submission."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "实际查看原生3840×2160 PNG：一船沿岸停泊、东向尖船头、两端支承的单窄板、三筐、独立系船绳和东石桩均可辨；但近岸北舷与货舱之间没有形成可供船家站立并抬板的连续窄道，近侧货筐几乎贴到船舷，只有薄舷缘。未满足关键人物站位，不按其他几何通过放行。",
+    "decision": "保留真实候选，未选择下游；下一次明确画出货舱与北舷之间有宽度的木质踏板通道，先核站位再推进。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  },
+  "actual_request_body_sha256": "2b9c8f30f1c5088660f36e350b7dd0236d1129dec76ea79462b63b4555767c84",
+  "idempotency_key": "183b2e56-b582-49af-bac7-1e3df0418d3c",
+  "budget_snapshot": {
+    "created_at": "2026-10-16T18:30:07.402083+00:00",
+    "user_reported_prepaid_usd": 8.65,
+    "actual_balance_verified": true,
+    "max_dispatches": 12,
+    "reserve_per_unknown_usd": 0.5,
+    "generation_model": "marketing-studio/image/flare",
+    "no_recharge": true,
+    "source": "User said Higgsfield OpenAPI remaining8.65 USD; later corrected only Nano Banana availability, not the balance.",
+    "actual_charge": "UNKNOWN",
+    "verified_balance_usd": 7.87,
+    "balance_verified_at": "2026-10-16T19:06:43.333203+00:00",
+    "balance_source": "Daily Chrome https://open.higgsfield.ai/billing visible balance and Auto top-up dialog; read-only, no settings saved.",
+    "balance_anchor_dispatch_count": 9,
+    "auto_top_up_enabled": true,
+    "auto_top_up_threshold_usd": 3.13,
+    "auto_top_up_amount_usd": 25.0,
+    "threshold_buffer_usd": 0.5,
+    "next_batch_limit": 2,
+    "planning_note": "After frontal county gate passed actual viewing, make two previously missing roots with explicit screen-coordinate geometry: ferry and granary. At most12 total; anchor9 at7.87USD minus three0.50USD reserves leaves6.37USD, above3.13+0.50USD threshold. Charges remain UNKNOWN; no auto top-up settings changes."
+  }
+}

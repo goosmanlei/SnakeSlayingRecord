@@ -1,0 +1,125 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-aheng-wet-flare-01",
+  "submission": {
+    "call_id": "task-20261015-0003-aheng-wet-flare-01",
+    "submission_sha256": "483233b61968191c4d58eed433a08c4dff52638ea2c7c1e86566d260b08528cb",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-aheng-wet-flare-01.json",
+  "provider_history_id": null,
+  "provider_job_id": "17512501-1f15-45f1-983a-521e20f92de2",
+  "provider_resource_id": null,
+  "model": "marketing-studio/image/flare",
+  "project_id": null,
+  "provider": "Higgsfield OpenAPI",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "1b8d38a52d480c2c5aa5a3ec232173ecd83ac908592edf781bea91f616fa98a4.png",
+    "sha256": "1b8d38a52d480c2c5aa5a3ec232173ecd83ac908592edf781bea91f616fa98a4",
+    "bytes": 6265230,
+    "mime": "image/png",
+    "width": 3840,
+    "height": 2160
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-aheng-wet-flare-01",
+    "candidate_id": "candidate-7e4532531dece1622ad128e853ee9d06597b3112bcda97aded96e50d1018242d",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "actual": "UNKNOWN",
+    "planning_reserve": 1.0,
+    "account": "Higgsfield OpenAPI prepaid balance; no recharge",
+    "budget_snapshot": {
+      "created_at": "2026-10-16T18:30:07.402083+00:00",
+      "user_reported_prepaid_usd": 8.65,
+      "actual_balance_verified": true,
+      "max_dispatches": 15,
+      "reserve_per_unknown_usd": 1.0,
+      "generation_model": "marketing-studio/image/flare",
+      "no_recharge": true,
+      "source": "User said Higgsfield OpenAPI remaining8.65 USD; later corrected only Nano Banana availability, not the balance.",
+      "actual_charge": "UNKNOWN",
+      "verified_balance_usd": 7.43,
+      "balance_verified_at": "2026-10-16T19:58:14.966920+00:00",
+      "balance_source": "Daily Chrome https://open.higgsfield.ai/billing visible balance and Auto top-up dialog; read-only, no settings saved.",
+      "balance_anchor_dispatch_count": 14,
+      "auto_top_up_enabled": true,
+      "auto_top_up_threshold_usd": 3.13,
+      "auto_top_up_amount_usd": 25.0,
+      "threshold_buffer_usd": 0.5,
+      "next_batch_limit": 1,
+      "planning_note": "Fresh daily Chrome billing after14 completed calls shows7.43USD. One exact-image-reference trial only,1USD planning reserve because image input costs differ; projected6.43USD remains above3.13+0.50USD automatic-top-up stop. No recharge or setting changes; per-call fee UNKNOWN."
+    },
+    "note": "Authenticated estimate returns token rates, not a fixed charge. Dispatch cap and observed auto-top-up threshold checked before submission."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "已实际并排查看3840×2160原件与阿蘅基础候选2母版：脸型、年轻比例、低发髻、灰绿上衣、蓝灰长裙和鞋形一致。湿色限定在两袖肘下至卷口、裙前两膝与下摆一掌宽，手端有少量水滴，胸肩和腰部保持原干布色。全身完整，一人单视向，裙料不透明，无书、伤口、包扎或其他道具；线条及灰底纹理未明显加重。未呈现的背面不作独立图像验收。",
+    "decision": "通过作为阿蘅湿衣状态整体参考，谱系为准确干净母版的一代；后续镜头按状态全部描述核对背面，不把单视图当成多面证据。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-task-20261015-0003-aheng-identity-02",
+        "revision_id": "ee6e0f97e99928fd786b1e3e323e519ce0d69cc3f719291946b18c4d79a1c3fc"
+      }
+    ]
+  },
+  "current_consumer_selection": {
+    "slots": 18,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/aheng-wet-flare-01-consumer-selections.json"
+  },
+  "actual_request_body_sha256": "7692649906e3d04ae5dedfa9a4330b2bc2b64ca274f31f5693eb8cb72b44cde7",
+  "idempotency_key": "4f48bdef-bb8e-443a-b76b-d3e1f5cab0bd",
+  "budget_snapshot": {
+    "created_at": "2026-10-16T18:30:07.402083+00:00",
+    "user_reported_prepaid_usd": 8.65,
+    "actual_balance_verified": true,
+    "max_dispatches": 15,
+    "reserve_per_unknown_usd": 1.0,
+    "generation_model": "marketing-studio/image/flare",
+    "no_recharge": true,
+    "source": "User said Higgsfield OpenAPI remaining8.65 USD; later corrected only Nano Banana availability, not the balance.",
+    "actual_charge": "UNKNOWN",
+    "verified_balance_usd": 7.43,
+    "balance_verified_at": "2026-10-16T19:58:14.966920+00:00",
+    "balance_source": "Daily Chrome https://open.higgsfield.ai/billing visible balance and Auto top-up dialog; read-only, no settings saved.",
+    "balance_anchor_dispatch_count": 14,
+    "auto_top_up_enabled": true,
+    "auto_top_up_threshold_usd": 3.13,
+    "auto_top_up_amount_usd": 25.0,
+    "threshold_buffer_usd": 0.5,
+    "next_batch_limit": 1,
+    "planning_note": "Fresh daily Chrome billing after14 completed calls shows7.43USD. One exact-image-reference trial only,1USD planning reserve because image input costs differ; projected6.43USD remains above3.13+0.50USD automatic-top-up stop. No recharge or setting changes; per-call fee UNKNOWN."
+  },
+  "submitted_inputs": [
+    {
+      "image_number": 1,
+      "asset": {
+        "object_id": "asset-task-20261015-0003-aheng-identity-02",
+        "revision_id": "ee6e0f97e99928fd786b1e3e323e519ce0d69cc3f719291946b18c4d79a1c3fc"
+      },
+      "candidate": {
+        "candidate_id": "candidate-e9a98aba7feffbae5f3b9e2308755d47fbd366f8f42200a3a1c04c38d39f114c",
+        "material_id": "new26-aheng-identity"
+      },
+      "component_id": "original",
+      "submitted_sha256": "a4dec09a9ac0e4b320079e846bc0f513d78bf82e409add0553e0a90a989be28f",
+      "original_sha256": "a4dec09a9ac0e4b320079e846bc0f513d78bf82e409add0553e0a90a989be28f",
+      "bytes": 6228928,
+      "upload_readback_verified_at": "2026-10-16T19:59:30.009975+00:00",
+      "transform": null
+    }
+  ]
+}

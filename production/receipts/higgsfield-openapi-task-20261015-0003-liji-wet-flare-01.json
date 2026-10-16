@@ -1,0 +1,125 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-liji-wet-flare-01",
+  "submission": {
+    "call_id": "task-20261015-0003-liji-wet-flare-01",
+    "submission_sha256": "fe6aeedb5870889de2a71d113d61a2e51e95be19f36f7d034f911fe3d6a5a8fd",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-liji-wet-flare-01.json",
+  "provider_history_id": null,
+  "provider_job_id": "97b1e024-32a4-4615-a329-5195823cda9d",
+  "provider_resource_id": null,
+  "model": "marketing-studio/image/flare",
+  "project_id": null,
+  "provider": "Higgsfield OpenAPI",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "00cafe312c9aedae6d899049613048441038c04f52c5e53ad1ba66e2395190aa.png",
+    "sha256": "00cafe312c9aedae6d899049613048441038c04f52c5e53ad1ba66e2395190aa",
+    "bytes": 6391575,
+    "mime": "image/png",
+    "width": 3840,
+    "height": 2160
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-liji-wet-flare-01",
+    "candidate_id": "candidate-e4662b01847b3d5d4f855f62ef79c3681dd415cd40f07c229009005cb318ef54",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "actual": "UNKNOWN",
+    "planning_reserve": 1.0,
+    "account": "Higgsfield OpenAPI prepaid balance; no recharge",
+    "budget_snapshot": {
+      "created_at": "2026-10-16T18:30:07.402083+00:00",
+      "user_reported_prepaid_usd": 8.65,
+      "actual_balance_verified": true,
+      "max_dispatches": 18,
+      "reserve_per_unknown_usd": 1.0,
+      "generation_model": "marketing-studio/image/flare",
+      "no_recharge": true,
+      "source": "User said Higgsfield OpenAPI remaining8.65 USD; later corrected only Nano Banana availability, not the balance.",
+      "actual_charge": "UNKNOWN",
+      "verified_balance_usd": 7.33,
+      "balance_verified_at": "2026-10-16T20:06:23.784137+00:00",
+      "balance_source": "Daily Chrome https://open.higgsfield.ai/billing visible balance and Auto top-up dialog; read-only, no settings saved.",
+      "balance_anchor_dispatch_count": 15,
+      "auto_top_up_enabled": true,
+      "auto_top_up_threshold_usd": 3.13,
+      "auto_top_up_amount_usd": 25.0,
+      "threshold_buffer_usd": 0.5,
+      "next_batch_limit": 3,
+      "planning_note": "After15 completed calls daily Chrome shows7.33USD and Auto top-up On; exact-reference trial completed native4K. Three further calls maximum,1USD reserve each =>4.33USD above3.13+0.50 stop. No recharge or settings changed; individual cost UNKNOWN."
+    },
+    "note": "Authenticated estimate returns token rates, not a fixed charge. Dispatch cap and observed auto-top-up threshold checked before submission."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "已实际看3840×2160原件并核对干净母版：同一儿童脸、发髻、灰褐上衣、深裤和低布鞋。单一全身的双裤口均为两层外翻卷边，下半小腿裸露；膝下至卷口深湿、卷边滴水，鞋面湿，上衣和上半裤保持干色。右侧领口露出的窄条皮肤有很淡粉色压力印，领外衣面无红斑；额头、双手与手腕无伤无包扎，指端少量水滴。未另画局部腿图，故不再出现全身束口与近图卷边的冲突；线条、背景与母版一致。",
+    "decision": "通过为完整湿裤状态整体参考，直接来自第0代准确母版的一代。取下裹腿与卷裤属于本阶段服装调度；未显示背面不冒充背面独立验收。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-task-20261015-0003-liji-identity-01",
+        "revision_id": "77908eeddf225d05468c60366401d16f721cceb62cb297dcd110c25132f302e4"
+      }
+    ]
+  },
+  "current_consumer_selection": {
+    "slots": 16,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/liji-wet-flare-01-consumer-selections.json"
+  },
+  "actual_request_body_sha256": "8b8cc482c5c66bdaa88861a29fbc0ac3e66b361248bac77127ae5b81f7539041",
+  "idempotency_key": "f637e910-f2bc-442d-9f37-99a405451826",
+  "budget_snapshot": {
+    "created_at": "2026-10-16T18:30:07.402083+00:00",
+    "user_reported_prepaid_usd": 8.65,
+    "actual_balance_verified": true,
+    "max_dispatches": 18,
+    "reserve_per_unknown_usd": 1.0,
+    "generation_model": "marketing-studio/image/flare",
+    "no_recharge": true,
+    "source": "User said Higgsfield OpenAPI remaining8.65 USD; later corrected only Nano Banana availability, not the balance.",
+    "actual_charge": "UNKNOWN",
+    "verified_balance_usd": 7.33,
+    "balance_verified_at": "2026-10-16T20:06:23.784137+00:00",
+    "balance_source": "Daily Chrome https://open.higgsfield.ai/billing visible balance and Auto top-up dialog; read-only, no settings saved.",
+    "balance_anchor_dispatch_count": 15,
+    "auto_top_up_enabled": true,
+    "auto_top_up_threshold_usd": 3.13,
+    "auto_top_up_amount_usd": 25.0,
+    "threshold_buffer_usd": 0.5,
+    "next_batch_limit": 3,
+    "planning_note": "After15 completed calls daily Chrome shows7.33USD and Auto top-up On; exact-reference trial completed native4K. Three further calls maximum,1USD reserve each =>4.33USD above3.13+0.50 stop. No recharge or settings changed; individual cost UNKNOWN."
+  },
+  "submitted_inputs": [
+    {
+      "image_number": 1,
+      "asset": {
+        "object_id": "asset-task-20261015-0003-liji-identity-01",
+        "revision_id": "77908eeddf225d05468c60366401d16f721cceb62cb297dcd110c25132f302e4"
+      },
+      "candidate": {
+        "candidate_id": "candidate-09e99d300bf294e745a3560ce908d0ad7d59436fa817309a94c988973b101493",
+        "material_id": "new26-liji-identity"
+      },
+      "component_id": "original",
+      "submitted_sha256": "05ac4d70dbed022cbaabd37b9da071031056d325653ccbee9b1a2aac5046e0ce",
+      "original_sha256": "05ac4d70dbed022cbaabd37b9da071031056d325653ccbee9b1a2aac5046e0ce",
+      "bytes": 6237996,
+      "upload_readback_verified_at": "2026-10-16T20:09:14.934059+00:00",
+      "transform": null
+    }
+  ]
+}
