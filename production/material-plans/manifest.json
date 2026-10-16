@@ -387,7 +387,7 @@
     "code": "M001",
     "object_id": "new26-aheng-identity",
     "revision_id": "0ea568f155bbd4595a8f5b55cd66349cebc50bf64311d39565f579c64fb8d461",
-    "content_sha256": "fad7f3c59f1abc7536f23ef091fc32b69aa82d2f5666672e02eaf0b5d8ff6ea7",
+    "content_sha256": "8c8783c2554465cff9a23580cca805ab61fa330450ee2985c97e0fc6e07f1302",
     "title": "阿蘅 · 基础形象",
     "category": "character-image",
     "scope_kind": "ENTITY",
@@ -415,7 +415,7 @@
         "customHeight": 2160,
         "customWidth": 3840,
         "imageCount": 1,
-        "lockAspectRatio": true,
+        "lockAspectRatio": false,
         "outputFormat": "png",
         "quality": "high",
         "resolutionTier": "4k",
@@ -432,15 +432,15 @@
     "waiting_for_new_originals": [],
     "method_basis": {
       "artifact": {
-        "object_id": "method.artifact.91d6a88deb298ff7ef1fa89706e13e5574fff18661316bcc65debf8d178f255d",
-        "revision_id": "fa2984c2bd5254a6b24d827e1f0b0f8beea07b172fded21d0ab876420ca092a8"
+        "object_id": "method.artifact.1048fed4ae36e7f77f70131548830575111c1a1565a316c85f0a1430e063e40c",
+        "revision_id": "cf6281a84929404545be644a0661eddfabfb009719cdbd2adc1ec629ffdeb4be"
       },
       "execution": {
-        "object_id": "method.execution.5d38fae971e7e2355a8ca988d7b18e96da85ae2ca955c66eb620b6df425ba853",
-        "revision_id": "d058454c22117ad6d08ec8d86d80f4f339cb237fa12d75dce2d77973d85315be"
+        "object_id": "method.execution.acd2fb44b549dcfbf0a19d317092f6d634025a97f3c13ad028e69d679ece04a2",
+        "revision_id": "79dfa2d62a3311b7b39ff396975cb7114bf8ffbe8c57aea1d29cd31919f84de1"
       },
-      "run_id": "task-20261015-0005",
-      "step_id": "plan-v2-new26-aheng-identity/name-fix"
+      "run_id": "task-20261015-0003",
+      "step_id": "custom-size-aheng-identity-02"
     }
   },
   {
@@ -679,7 +679,7 @@
     "code": "M055",
     "object_id": "new26-aheng-wet-overall",
     "revision_id": "9a3c77ff5d735d5a4d48b8923f7a574d58d15242582c2de09ee7c09107542a66",
-    "content_sha256": "e3bcdeb3f45c145b7b98474ab285452d8147e2cd677bd3fd487b1ebef3205a54",
+    "content_sha256": "fd3e6700bf79b50b28da974caeb9ddf0211b48409fb0acf1ed1840d857405dd9",
     "title": "阿蘅 · 浅滩捞书后的湿衣 · 完整形态",
     "category": "character-image",
     "scope_kind": "STATE",
@@ -723,9 +723,7 @@
       "实际原件须为16:9原生4K，长边至少3840像素；探测记录准确宽高和原格式，不将请求档位或后期放大当达标。",
       "沿最深参考谱系计为第1代；实际全图与局部回看面容、比例、线条和纹理后才通过，不能因新状态重置代数。"
     ],
-    "waiting_for_new_originals": [
-      "new26-aheng-identity"
-    ],
+    "waiting_for_new_originals": [],
     "method_basis": {
       "artifact": {
         "object_id": "method.artifact.0cefa1b3ddadac6a675e4e232e7f7744988a45f903a69c2dade1dc0eca9dffaa",
@@ -1333,7 +1331,7 @@
     "code": "M015",
     "object_id": "new26-boat-song-singing",
     "revision_id": "f11d4f9ee02db7cdb95a3447019e8ed609861049f3d53237127cdd456605e33d",
-    "content_sha256": "d5591fd16757bf9e5a04b5f8cf5d3c3a5e984e4ad1577ca819925cd0f051b61d",
+    "content_sha256": "657d45d1432a4da385b7b250c28c13d0f3ecf11a23506645ad4f7cf7e8cd1c65",
     "title": "三道滩 · 完整原曲",
     "category": "song",
     "scope_kind": "ENTITY",
@@ -1370,9 +1368,6 @@
       "method": "generate",
       "model": "lyria-3.5",
       "parameters": {
-        "response_format": {
-          "type": "audio"
-        },
         "store": false
       }
     },
@@ -1383,7 +1378,7 @@
       "三道滩依次展开，第二、第三道滩有独立发展，末行靠岸自然收束；原曲没有剧中翻页静默和老汉插话。",
       "两句剧本原词逐字保持；首句与末句可被省段演法连用，但整曲仍完整。",
       "完整从头到尾实际听审，逐行核歌词、发音、旋律发展、段间呼吸、编配和尾音；生成文本、ASR及音轨存在不能代替听辨。",
-      "保存实际原生编码、采样率、声道、时长和SHA-256；完整原曲检查服务原生无损WAV，不以扩展名或升采样证明无损。剧中派生件与母版分开登记。",
+      "保存实际原生编码、采样率、声道、时长和SHA-256；完整原曲按用户本轮授权检查服务原生MP3，不以转码冒充原生或无损。剧中派生件与母版分开登记。",
       "独立原曲歌手与角色演法分开；派生件须标准确原曲候选及原件、使用段落、角色声线和真实制作操作，未经听审不供镜头生成。"
     ],
     "waiting_for_new_originals": [
@@ -1391,15 +1386,15 @@
     ],
     "method_basis": {
       "artifact": {
-        "object_id": "method.artifact.1505947027b8ba4fc617df79093c26167a0df658c3a14b85ea5deb2c14bc3b19",
-        "revision_id": "ef195619c902fcfb72da5f0a496316ca290a50eb296ed4e6cb9b010988c495be"
+        "object_id": "method.artifact.8e4e93d71a6e9273036be7760add00710fd27de3b4183a3cdee4acba9c12e0c0",
+        "revision_id": "59f3148e4fc08da3f0a3b5086e7bcde28631342d8a85124f9e3b32b9e66e3d07"
       },
       "execution": {
-        "object_id": "method.execution.8df8944ebafd41f5bed34159db8b8bd36193297c520d8703c782ef526b50556b",
-        "revision_id": "98c29d077b9598e97086ab9877674761553a55484c14f3a8a2334f162a8595f8"
+        "object_id": "method.execution.7b9a0c609854ce5d463fb53873e1cc734be92f2c186971162d8f8299088f52b7",
+        "revision_id": "770f98cbb96e57222efae1d0e4867cb10a401a749b6ef3d5c83b35d9e37fa364"
       },
       "run_id": "task-20261015-0003",
-      "step_id": "funded-complete-boat-song-01"
+      "step_id": "mp3-complete-boat-song-02"
     }
   },
   {
@@ -6589,7 +6584,6 @@
     ],
     "route": {
       "method": "external-edit",
-      "model": null,
       "parameters": {
         "canvas": [
           3840,
@@ -8781,7 +8775,6 @@
     ],
     "route": {
       "method": "external-edit",
-      "model": null,
       "parameters": {
         "canvas": [
           3840,
@@ -10880,7 +10873,7 @@
     "code": "M054",
     "object_id": "new26-qingpeng-singing",
     "revision_id": "529078239eb900ca89fa901b6125e511475b90f29437c3b334c94a25553e6e57",
-    "content_sha256": "2da972351683c9d7738b3f0e433647483414219504f28b81757066c32351cca6",
+    "content_sha256": "893adcdcc0d4820b71b09e86ee8f2268f941727b16972cbc193e0523f4e6bafe",
     "title": "送青篷 · 完整原曲",
     "category": "song",
     "scope_kind": "ENTITY",
@@ -11063,9 +11056,6 @@
       "method": "generate",
       "model": "lyria-3.5",
       "parameters": {
-        "response_format": {
-          "type": "audio"
-        },
         "store": false
       }
     },
@@ -11078,7 +11068,7 @@
       "第一段六行、第二段三行两遍，全部唱完；第二段仍是最后一段，没有新增后续故事段。",
       "两遍第二段旋律可辨同源，最后唱归来认旧桥，认字准确；剧中五乐句选段不冒充整曲。",
       "完整从头到尾实际听审，逐行核歌词、发音、旋律发展、段间呼吸、编配和尾音；生成文本、ASR及音轨存在不能代替听辨。",
-      "保存实际原生编码、采样率、声道、时长和SHA-256；完整原曲检查服务原生无损WAV，不以扩展名或升采样证明无损。剧中派生件与母版分开登记。",
+      "保存实际原生编码、采样率、声道、时长和SHA-256；完整原曲按用户本轮授权检查服务原生MP3，不以转码冒充原生或无损。剧中派生件与母版分开登记。",
       "独立原曲歌手与角色演法分开；派生件须标准确原曲候选及原件、使用段落、角色声线和真实制作操作，未经听审不供镜头生成。"
     ],
     "waiting_for_new_originals": [
@@ -11088,15 +11078,15 @@
     ],
     "method_basis": {
       "artifact": {
-        "object_id": "method.artifact.b97d3b8b3dc3324b71ae6f1d3938676d7c633cad58a3f6d7d2496b07553b00ad",
-        "revision_id": "4a97fb8b249930e422659f807a11fad742fce7963692a2055b86db020001eddf"
+        "object_id": "method.artifact.69e0b5776b709f3e7b0a19c393cb68c9c923b7b6613c74b0d742ee7c90505162",
+        "revision_id": "79ef9bf654c60f2b34a568b9cff959bc7007acdf1d1cfc375895bcf1d07f4838"
       },
       "execution": {
-        "object_id": "method.execution.97cce4a9109f677766cfd3f4450949c2c77e4ae1d555ac5a5c5e0592d4c3ec48",
-        "revision_id": "c4bc18641e64e8f8d9b7aadef44769a5b9fd94282ec6974fbe794e30dd8a9a75"
+        "object_id": "method.execution.ea2920a769eedc55853f80af8210fee84b9e87178ad89d9f59d41e4b40b17290",
+        "revision_id": "69d5f9001c5d5931755d649d05478f82a8b0228cfbe4fde839ce801f86f90837"
       },
       "run_id": "task-20261015-0003",
-      "step_id": "reconcile-qingpeng-full-01"
+      "step_id": "mp3-complete-qingpeng-02"
     }
   },
   {
@@ -12133,7 +12123,7 @@
     "code": "M175",
     "object_id": "new26-ritual-song-singing",
     "revision_id": "36a77805b3990e32c06d99a969724e8f4459f25a88cfe3f7ee626e907d58a0b3",
-    "content_sha256": "8cea480fc25a045f0fac8630ee951dc0c0c5ff2b6a06472538ad5c9f309528fa",
+    "content_sha256": "97f7c1203661b3a60788259aba30d10ad3bcc0c1a2ed0fd3d9d2b7d339217312",
     "title": "明月还乡 · 完整原曲",
     "category": "song",
     "scope_kind": "ENTITY",
@@ -12203,9 +12193,6 @@
       "method": "generate",
       "model": "lyria-3.5",
       "parameters": {
-        "response_format": {
-          "type": "audio"
-        },
         "store": false
       }
     },
@@ -12214,21 +12201,21 @@
       "十五行按失月、求还、月归发展，核心八字在月归段两次完整出现；还月后自然收尾。",
       "米饵献上，明月还乡逐字准确，唱作吉语但不加入现实人物对白与喝彩。",
       "完整从头到尾实际听审，逐行核歌词、发音、旋律发展、段间呼吸、编配和尾音；生成文本、ASR及音轨存在不能代替听辨。",
-      "保存实际原生编码、采样率、声道、时长和SHA-256；完整原曲检查服务原生无损WAV，不以扩展名或升采样证明无损。剧中派生件与母版分开登记。",
+      "保存实际原生编码、采样率、声道、时长和SHA-256；完整原曲按用户本轮授权检查服务原生MP3，不以转码冒充原生或无损。剧中派生件与母版分开登记。",
       "独立原曲歌手与角色演法分开；派生件须标准确原曲候选及原件、使用段落、角色声线和真实制作操作，未经听审不供镜头生成。"
     ],
     "waiting_for_new_originals": [],
     "method_basis": {
       "artifact": {
-        "object_id": "method.artifact.00cffd53778e1ffe60163acf6f977e6996b6a7203f245fbe81f7588462ba91ec",
-        "revision_id": "5c59b76fba68a9b467aba1247a29213f841bad3e6e9292aa0dfa3e043db8f7db"
+        "object_id": "method.artifact.fbdce9ee38eb3e5d47194a4af60c54e10dc0dd741ef7326b4903687976e2e07c",
+        "revision_id": "cc54b4e56d3770635af2f30aef1f22762e92853ad2b67a96039411b78c4dc901"
       },
       "execution": {
-        "object_id": "method.execution.34d0c5b12db16b00329673e29ee5d0065fe8f1ad7ae131b2ac9f7ac7e7f92442",
-        "revision_id": "25cc0a5fdb2406baef2283a13c9605c74d5694782d9fb7e948f9724cf96368b7"
+        "object_id": "method.execution.5777157ebbefa57aa53bc722df0d0191ad887fea54e022bafe55eb384b7d53d2",
+        "revision_id": "61450ee5611e2c68f4c60886948e22fe492355abb03b4ad2e9d7092ea3e880b4"
       },
       "run_id": "task-20261015-0003",
-      "step_id": "funded-complete-ritual-song-01"
+      "step_id": "mp3-complete-ritual-song-02"
     }
   },
   {
@@ -12389,7 +12376,7 @@
     "code": "M016",
     "object_id": "new26-s001-q01-video",
     "revision_id": "1976f58db6588613902539a1cdf97a79f1dc2d790a9fc02d3299c7c2aebd3c5d",
-    "content_sha256": "38ae96902efe0416573d27f3994f0485ca8b97806bce16b6f0469d66f32100a5",
+    "content_sha256": "669b95af8925a636859bcad60eeaf1ab792ce18023a64e8f7f04cbd3cb9fe386",
     "title": "唱曲挣米 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -12437,7 +12424,6 @@
       "将剧中实唱/哼调逐句与已选完整原曲比较，同时核角色声线、该场已知歌词和跨镜同一次尾音；完整作品的其他段落不自动进入影片。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-boat-song-singing",
       "new26-listeners-identity",
       "new26-porter-identity",
@@ -12462,7 +12448,7 @@
     "code": "M017",
     "object_id": "new26-s001-q02-video",
     "revision_id": "781fee86439de18557e68107f103a05407cc60b7819a74c741b3a7f68dcfe9b3",
-    "content_sha256": "a9bb4ae34ead9dee4af12bce8b524e42755c547e8c0ecc281525af2a9ddbeee1",
+    "content_sha256": "bfd9cc999d204e2821e80d32137cb7244af870e2c4df03e79d07daeaa8f3cd10",
     "title": "一句唱到家 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -12509,7 +12495,6 @@
       "将剧中实唱/哼调逐句与已选完整原曲比较，同时核角色声线、该场已知歌词和跨镜同一次尾音；完整作品的其他段落不自动进入影片。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-boat-song-singing",
       "new26-porter-identity",
       "new26-porter-voice",
@@ -12533,7 +12518,7 @@
     "code": "M018",
     "object_id": "new26-s001-q03-video",
     "revision_id": "ab104decddb25daa954ec5e716d96158c11b0e1c7aa4f850389a7c3da724bff1",
-    "content_sha256": "6df8f6a4be74e9b5a8b44f2e14453fd077e8083194bd887bcf1c34c628204020",
+    "content_sha256": "b7d37e47afae520bdb34de47c72c28fb3b0e749383478cab44979f99161bc691",
     "title": "熟客的玩笑 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -12581,7 +12566,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：篮前通路空出，河风将吹开无人按的页边。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-listeners-identity",
       "new26-listeners-voice",
@@ -12607,7 +12591,7 @@
     "code": "M019",
     "object_id": "new26-s001-q04-first-frame",
     "revision_id": "4fc522f8d627ea30f39077572c91cea55f4e9d22e590a839c40240b01b6e617a",
-    "content_sha256": "4c4693a6a44c9e101fa1934acb8149e3b8747acacf8d266524039cc5124e8dd7",
+    "content_sha256": "c4f2ad414f7800930f6a8d30ae83d14bd214d554d07c02a25754a1ba7b6f00a3",
     "title": "浆糊手按住书页 · 起点画面",
     "category": "shot-image",
     "scope_kind": "AV_SHOT",
@@ -12653,7 +12637,6 @@
       "沿最深参考谱系计算本图代数，不因新名称重置；生成后实际看全貌与关键部位，不将设计通过当媒体验收。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-rice-shop-layout",
       "new26-songbook-identity"
     ],
@@ -12674,7 +12657,7 @@
     "code": "M020",
     "object_id": "new26-s001-q04-video",
     "revision_id": "5c687a145b09d090e97e238aaf75ddee4a9dfffc77aa6b2c134289377e19f4f8",
-    "content_sha256": "0350fe200fa76caf8f4708a83fbdd1a0e45f810dce1f540383a5645b6f1d194c",
+    "content_sha256": "6efd4ee9e2484bb0abf2b5f2ced4f55525ed8564c9a4694b3ec7ff669c77d412",
     "title": "浆糊手按住书页 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -12717,7 +12700,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：她指向刚跳过的两页，阿蘅在另一侧看她。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-liji-identity",
       "new26-rice-shop-layout",
       "new26-s001-q04-first-frame"
@@ -12739,7 +12721,7 @@
     "code": "M021",
     "object_id": "new26-s001-q05-video",
     "revision_id": "c0c2be393995ff6726d40b33d2696b9c75850a9b3b4e0a41ed9982d32f6a326b",
-    "content_sha256": "6d131c9e08b047af91bc11c96250f7a1e079b5bab32915075692557797279eff",
+    "content_sha256": "060b3b9134626456a62f456176ece1755caade58e7f435fe8c5d996ceb5aebb7",
     "title": "不给米也得听全 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -12787,7 +12769,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：书重新摊在篮面，两人转向从铺里出来的掌柜。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-liji-identity",
       "new26-liji-voice",
@@ -12811,7 +12792,7 @@
     "code": "M022",
     "object_id": "new26-s001-q06-video",
     "revision_id": "68976d0188bd1dd9bdedb8fbe1c9fd2b81676e9bed3c3a3a8c1c68702521760d",
-    "content_sha256": "9f58c4858fb04981e748fc73adc42227a7dc664e9bc58a610027c6b6acdedd9a",
+    "content_sha256": "6b93194e024167ab3e75dafb4b15d6c4541c1e593dd9b9d9417df327e89d4e73",
     "title": "今天的工钱 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -12859,7 +12840,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：斗空、米入袋，袋口尚未系牢；下一镜说明新一桩活。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-liji-identity",
       "new26-rice-bag-identity",
       "new26-rice-measure-identity",
@@ -12885,7 +12865,7 @@
     "code": "M023",
     "object_id": "new26-s001-q07-video",
     "revision_id": "99f298122f0ad419334443549d2de7e54aad0947e67d5896d49f29cab7a9ec6d",
-    "content_sha256": "e6f78ccfa766f42e951564998f9c7f72343df2d87a61a91c611b1970dac2224c",
+    "content_sha256": "b0b274c84dbb633cb3e9ff4c54d605f00bda779e985855d45105d0ab5d08fe11",
     "title": "末页还得看词 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -12934,7 +12914,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：阿蘅压住页，李寄停翻；掌柜转身回柜边取米。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-liji-identity",
       "new26-rice-bag-identity",
@@ -12961,7 +12940,7 @@
     "code": "M024",
     "object_id": "new26-s001-q08-video",
     "revision_id": "2655c59e38f00b591a619fd5795190dacd27adc417ccdc6f7ec31f55d52c0b84",
-    "content_sha256": "f544bc7390a30517acd1a3f2f81f43a4b3664207d6f8aafb5d8072e70ce77b1f",
+    "content_sha256": "2e6660aa0789e72c680ee372b86e620d789191829a96cd7943ab2121d3240b28",
     "title": "另一小把预付 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -13009,7 +12988,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：两份米在同一袋，阿蘅开始扎口，掌柜留在铺边。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-liji-identity",
       "new26-rice-bag-identity",
@@ -13035,7 +13013,7 @@
     "code": "M025",
     "object_id": "new26-s001-q09-video",
     "revision_id": "a5fd82b5e9c9a8fa497ec589eecb01ebb1e1782e26ef5b6b5ff6482e9f7aafd3",
-    "content_sha256": "303f2554c79186d16612e2158ad8879b630e171b84730f4aadc3dbcb59e56f65",
+    "content_sha256": "d5f4a2dacbefbaeff0b37a51f38b6219f245339929f37f2259d089074dec1447",
     "title": "约好一起练 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -13083,7 +13061,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：阿蘅一手书一手米袋，李寄双手空着，将伸手提袋。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-liji-identity",
       "new26-liji-voice",
@@ -13108,7 +13085,7 @@
     "code": "M026",
     "object_id": "new26-s001-q10-video",
     "revision_id": "3e0dc146c1cd2c1c09f78d1883fefc70a8811ff1fcbed2ae9dfa898218578e5a",
-    "content_sha256": "25ff9ff2cabdd5e30901ead375f9c0b8673f3b77b562c882c623a2bedf1af666",
+    "content_sha256": "26821d38b0387581ef78f999f3da91623b165e99603263400e1edcc1383449a2",
     "title": "先把手给我看 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -13154,7 +13131,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：袋和书都在阿蘅处，李寄双手仍脏，下一场再洗净后真正接书。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-liji-identity",
       "new26-rice-bag-identity",
@@ -13178,7 +13154,7 @@
     "code": "M037",
     "object_id": "new26-s002-q01-video",
     "revision_id": "9438ec5bc611f782f6ee11c422e0840c3280499ed3ced81c1c36092efe6d4c76",
-    "content_sha256": "2225669af54893433880b1c371ca13edf31a6bc2ec991c1405108c485e139ffa",
+    "content_sha256": "9983366fefe7f44887dc416add3141162d3cadfe03e90f4b2cf7c87fda595ab9",
     "title": "擦去浆糊 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -13227,7 +13203,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：湿巾在李寄手，书袋在阿蘅身旁干处，尚未交书。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-liji-identity",
       "new26-liji-voice",
@@ -13252,7 +13227,7 @@
     "code": "M038",
     "object_id": "new26-s002-q02-video",
     "revision_id": "a0b6ed18f381ee3dadee2c7e8d97b3997296053b1fae7e0f1d114e7c559d5b8c",
-    "content_sha256": "b51b2e83373979a5d9c73127920eafe0552a30b443ab3f66288396fd23bf1d1e",
+    "content_sha256": "680acd818f396c059b516720702b1e47786b99fef65f03e3b4c1912a004fc557",
     "title": "给墨耳留的饼 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -13303,7 +13278,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：书在李寄臂弯，米袋仍属阿蘅；两人尚未与赵交谈。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-liji-identity",
       "new26-liji-voice",
@@ -13398,7 +13372,7 @@
     "code": "M040",
     "object_id": "new26-s002-q04-video",
     "revision_id": "6a59730edb852d0b51b3e68ed6db53c4e86d52bb62718a886872486ad68e2bb5",
-    "content_sha256": "af18c8e3b8d70cde5a3b3704972a7730af0dc2e83f224742d5b66162937a6531",
+    "content_sha256": "bd4c7d0f1202b350aa6d8355407fa817779c0a89a25862d7fad121648e72c87c",
     "title": "让阿蘅自己回答 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -13453,7 +13427,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：纸在阿蘅书面，赵转身，李寄手空。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-hymn-paper-identity",
       "new26-keys-identity",
@@ -13481,7 +13454,7 @@
     "code": "M041",
     "object_id": "new26-s002-q05-video",
     "revision_id": "f4c6540c7853f85a008dbd4a7d7c5b39dd47724b3cbef76a84d95e6c0b8277f5",
-    "content_sha256": "3d433be1ef903372dc6ddd5f396219498b34d74a185fcc02260c498d3fd68a7d",
+    "content_sha256": "d3445b3baed5fe4fefc9b330b6ef2005fd003779b4f0f1c35f05b7779cbeb87c",
     "title": "合上歌本 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -13527,7 +13500,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：两人望向对街，书已合在阿蘅怀里。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-hymn-paper-identity",
       "new26-liji-identity",
       "new26-liji-voice",
@@ -13612,7 +13584,7 @@
     "code": "M043",
     "object_id": "new26-s002-q07-video",
     "revision_id": "308cbeede1f6ff213225033b2362bba97023af8602f3910f41d4f388722b1d8a",
-    "content_sha256": "adc78962efd22cd2318ff3cc65e46c9eccd689cb4ea1435b7cf0c1da285f5e71",
+    "content_sha256": "bcf6587b6211d7d6891a3a4c7338ceb33db15771cb7b8f6ed06866d8db88d337",
     "title": "两个没回来的人 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -13658,7 +13630,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：阿蘅视线落向自己的米袋。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-liji-identity",
       "new26-liji-voice",
@@ -13683,7 +13654,7 @@
     "code": "M044",
     "object_id": "new26-s002-q08-video",
     "revision_id": "39d96b2805a29d85712ca3c873396215ce2ce4de2f461f850d1db9176e464cb4",
-    "content_sha256": "7839a1a59c2898cc5a85919f24f8f6d91ecbcd82c7ba49b77312c968ac3f184c",
+    "content_sha256": "7a5f9047e63b13e8bca6d01817ab01c2d4bd679b6abf7e2d5cfa094a7ad25b62",
     "title": "几天以后还要吃饭 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -13732,7 +13703,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：阿蘅抱书提袋转向道具屋，李寄尚未跟。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-hymn-paper-identity",
       "new26-liji-identity",
@@ -13758,7 +13728,7 @@
     "code": "M045",
     "object_id": "new26-s002-q09-video",
     "revision_id": "000b2b80d2d501202a6d814bba31cc7f3492912c7666a9059ade43dc204964dd",
-    "content_sha256": "cf6dbff9d2aea47a49c215d8a2414294c9e41a5af39ea15702eedb086a4ffcd3",
+    "content_sha256": "505a55cf88d04d23fab5f38624cf95ea3d57192cce4e83ca51a34f51dc54f432",
     "title": "先走的人 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -13803,7 +13773,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：书夹旧纸和米袋由阿蘅带到道具屋，李寄牵狗在后。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-liji-identity",
       "new26-moer-identity",
       "new26-rice-bag-identity",
@@ -13888,7 +13857,7 @@
     "code": "M068",
     "object_id": "new26-s003-q01-video",
     "revision_id": "bd9f29fb566c14a4bffe7309c9f80c85d2b02c018f578735fcb95ad79d093c40",
-    "content_sha256": "99a8223aa5feaf31a0009a42dc59c66ce18a60aa1bab3a637f749538ef9bb30b",
+    "content_sha256": "a068354857ed281838624c711955935ea5987707bd228d02f09d2226d3fd4601",
     "title": "把书与米放好 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -13931,7 +13900,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：书压碗且袋在门内，注意转向门槛上的纸蛇。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-prop-house-layout",
       "new26-rice-bag-identity",
       "new26-songbook-identity",
@@ -14097,7 +14065,7 @@
     "code": "M071",
     "object_id": "new26-s003-q04-video",
     "revision_id": "7d32e17e39f6ae5677d88765541461fbbea9cc98465fef0f21bc1b74d2a62657",
-    "content_sha256": "25dad59885492a858c26deeeb119f9d937e748e6d00c790fe3ab17f196f9cb68",
+    "content_sha256": "b071f9c877278cede31b7c223e4a830500d52a6ff5fcdf96cfb0e7f72929d429",
     "title": "先问她怎么想 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -14148,7 +14116,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：两姐妹还在门前；阿蘅在浅滩开始洗幕布。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-curtain-identity",
       "new26-liji-identity",
       "new26-liji-voice",
@@ -14229,7 +14196,7 @@
     "code": "M073",
     "object_id": "new26-s003-q05-video",
     "revision_id": "39d6df4e3597ef598eb88f9a4bdf6b1e7fef6a743b9f41a1fac72d3918390b0c",
-    "content_sha256": "eaae1eb3216ecb41848ea0236f7e8caea0d261370c09ab14d16b80fccae304da",
+    "content_sha256": "e79de47fc42d4d3a9bebec395093c40486021ef7b90d107aec8f7e1e3128280e",
     "title": "纸上承诺与河边的人 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -14280,7 +14247,6 @@
       "将剧中实唱/哼调逐句与已选完整原曲比较，同时核角色声线、该场已知歌词和跨镜同一次尾音；完整作品的其他段落不自动进入影片。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-curtain-identity",
       "new26-hymn-paper-identity",
       "new26-liji-identity",
@@ -14446,7 +14412,7 @@
     "code": "M076",
     "object_id": "new26-s003-q07-first-frame",
     "revision_id": "8f5d8948d97a51589ff686fefcf00ae5ff9b10ffbac39f853c70524a86768e57",
-    "content_sha256": "3849095fc7fc41011e3aa4944b02bbc6e906729bf592ba98c3f93a6f447b016c",
+    "content_sha256": "e6474750d13f178f5aae47d161824300dad41933ed2d63884a6a773db5b9da2b",
     "title": "阿蘅抢救歌本 · 起点画面",
     "category": "shot-image",
     "scope_kind": "AV_SHOT",
@@ -14495,7 +14461,6 @@
       "沿最深参考谱系计算本图代数，不因新名称重置；生成后实际看全貌与关键部位，不将设计通过当媒体验收。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-curtain-identity",
       "new26-liji-identity",
       "new26-prop-house-layout",
@@ -14518,7 +14483,7 @@
     "code": "M077",
     "object_id": "new26-s003-q07-video",
     "revision_id": "c639a7aff0779280d7a3ac9e0f672e96ac61802344436f1cf3b369d87b2df2a6",
-    "content_sha256": "a53e91c0c5bd55e872b3664f42a54e4df4a6f2c6385b42dca280815fd5e39fd5",
+    "content_sha256": "bc1b2d234fa2f8f910470f64c5593f990123c8c1e8921af3f5d6258324065a94",
     "title": "阿蘅抢救歌本 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -14565,7 +14530,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：阿蘅双手已湿、下摆跪湿，持散裂书脊，李寄将跑来。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-aheng-wet-overall",
       "new26-book-torn-overall",
@@ -16188,7 +16152,7 @@
     "code": "M097",
     "object_id": "new26-s005-q06-video",
     "revision_id": "c55545a4fb2ec74267b978bd2ad0dfb619eb4ff83c819701836a542b9e9f9661",
-    "content_sha256": "ec3562fdf3d5e52773af806c18710917b36a1441dbb5d61cdc1143b4be9d05c6",
+    "content_sha256": "652c60250d5f0c17c202d3d079cec55e24719870c76fd9990223f48dfab729d5",
     "title": "把不确定交还她 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -16239,7 +16203,6 @@
       "将剧中实唱/哼调逐句与已选完整原曲比较，同时核角色声线、该场已知歌词和跨镜同一次尾音；完整作品的其他段落不自动进入影片。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-book-dry-sheets-overall",
       "new26-curtain-identity",
@@ -16265,7 +16228,7 @@
     "code": "M098",
     "object_id": "new26-s005-q07-video",
     "revision_id": "2f9d69262c3e09212c23ad9fcee7b51ab4b3dd9cda8f6e3628692e1c2d20308a",
-    "content_sha256": "b12ad1d25c5b46733b7ba4a07bca2e433b7ae0e7ef1921edebed02c3566f511b",
+    "content_sha256": "e93efff088ff81a1ef66e8f85c8ea8f1381f305e5ce49a93eb677326710946dd",
     "title": "先问明天还有没有活 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -16314,7 +16277,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：阿蘅抱一端，另一端着地，李寄将起身。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-book-dry-sheets-overall",
       "new26-curtain-identity",
@@ -16340,7 +16302,7 @@
     "code": "M099",
     "object_id": "new26-s005-q08-video",
     "revision_id": "5e0de5118b00f30a1e8bbe0ce7c4fd6ba5edc3a0e45977839176055ce7dc506e",
-    "content_sha256": "796ec3bb967ff5fe8a74c5e5de090e529174eb985f363ff3342741ebe06a039e",
+    "content_sha256": "491f8b5b3dc5c0ea999ec82bb486c207fc4e013e40c563f6245998d76500a84d",
     "title": "只撑她交来的布边 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -16388,7 +16350,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：湿布挂稳，两人手各有位置，下一场以字幕跨十来天。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-curtain-identity",
       "new26-liji-palm-overall",
@@ -16469,7 +16430,7 @@
     "code": "M101",
     "object_id": "new26-s006-q01-video",
     "revision_id": "4a5c57bab11cfc2407b8eb9be2ad986181829dfaec9cc2bfed0d07cab3764105",
-    "content_sha256": "12a956da50f35b6f2fb386b4658dbae573094796f9be9f71de001723326e8772",
+    "content_sha256": "47a1821ca523cc7b3887a9b55f5f9bb37e364f30f54505bd7a99753b562673a5",
     "title": "只剩她面对借据 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -16519,7 +16480,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：窄纸在赵手前，阿蘅手仍湿尚未碰。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-curtain-identity",
       "new26-liji-palm-overall",
       "new26-lixiao-identity",
@@ -16547,7 +16507,7 @@
     "code": "M102",
     "object_id": "new26-s006-q02-video",
     "revision_id": "0bf4f4f7ee72cd03e58e753809bf79c432eb6ccee7120833aac4eb7d056f594f",
-    "content_sha256": "b73120c732989dfd985a7173beccda9cdfae38479e5125033eb0c43d0b024760",
+    "content_sha256": "6036f2c8d4a35a79beb6a29b9567d85f70c8a6edc242bb0cd2b2dc5e22061d75",
     "title": "五斗六斗七斗 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -16597,7 +16557,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：纸背还款墨记朝阿蘅，赵仍持另一端。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-curtain-identity",
       "new26-loan-paper-identity",
@@ -16622,7 +16581,7 @@
     "code": "M103",
     "object_id": "new26-s006-q03-first-frame",
     "revision_id": "e9e0aa6c91dc02e3ba9dd4f6f6083a5fb289114f818054338ce5a63979454973",
-    "content_sha256": "24c49894d97104387ba703d12be220816678dd11a48f7b39cdcfaebe4af3a32e",
+    "content_sha256": "a48c8da9283464f67ed1826eb399d178c1cad6ad4dd890b8c96be5d264e6050d",
     "title": "贴纸被压回去 · 起点画面",
     "category": "shot-image",
     "scope_kind": "AV_SHOT",
@@ -16672,7 +16631,6 @@
       "沿最深参考谱系计算本图代数，不因新名称重置；生成后实际看全貌与关键部位，不将设计通过当媒体验收。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-loan-paper-identity",
       "new26-prop-house-layout",
       "new26-zhao-identity"
@@ -16694,7 +16652,7 @@
     "code": "M104",
     "object_id": "new26-s006-q03-video",
     "revision_id": "0641c72893d5a168cc9d982088f1a8ec02fb62b429d35d57b6dd775e006b3db6",
-    "content_sha256": "95dd16bb09a5751a5eacb97f7be5897b373e0b0f503a3604a0babcf2abe9cd19",
+    "content_sha256": "a45be2b801c61d333dfbb216ec200303808d7576fa438202affb92bbf0cb48a7",
     "title": "贴纸被压回去 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -16743,7 +16701,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：借据回赵手，贴角压平，阿蘅手空。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-loan-paper-identity",
       "new26-prop-house-layout",
@@ -16768,7 +16725,7 @@
     "code": "M105",
     "object_id": "new26-s006-q04-video",
     "revision_id": "fb7a942532bdf154133e22b87de516378ea3e38e96f0be5825a4fcec855d5a47",
-    "content_sha256": "526b5c6b35fc9feab06016677a8a1db024428094ac17c2dc7a215dd68c8efc73",
+    "content_sha256": "5cde619f602ec51b98c036c14f4b475a0ab68e5fdd3b69d6d933d806c119c89b",
     "title": "免账换住庙 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -16817,7 +16774,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：她收回视线，决定追问先前白天唱的约定。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-liji-palm-overall",
       "new26-loan-paper-identity",
@@ -16843,7 +16799,7 @@
     "code": "M106",
     "object_id": "new26-s006-q05-video",
     "revision_id": "5c496d77e34b30f0351fe309450b7121db5f97129841cfab245a6c6115ca12e0",
-    "content_sha256": "7e6f2a87665b2380eb580a89a80568d4d37e6944083b358e6785387f504b3c31",
+    "content_sha256": "106cd8aa23c75d14df069e6e4e225035c179f122551a0c0e6ab3eb4c5af6b9d1",
     "title": "夜里谁端水 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -16890,7 +16846,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：借据折起，赵欲收，阿蘅还要立条件。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-loan-paper-identity",
       "new26-prop-house-layout",
@@ -16914,7 +16869,7 @@
     "code": "M107",
     "object_id": "new26-s006-q06-video",
     "revision_id": "105c87de5211548a655653e47d861c85cdbe0bb52ac9a840bd2588a3a2fe33fa",
-    "content_sha256": "a45341b109e359893ca76ba2f6e289eccf4b71eca1bd8b88d5f7b3b6c239c067",
+    "content_sha256": "7f2e8ee14b66be167e0bcadf15e141b2fd3c6234316595772806191a7188650c",
     "title": "先说清一天抵多少 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -16962,7 +16917,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：借据还在赵手，阿蘅转向晾架拿炭。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-loan-paper-identity",
       "new26-prop-house-layout",
@@ -16986,7 +16940,7 @@
     "code": "M108",
     "object_id": "new26-s006-q07-video",
     "revision_id": "098943d3eaf65708bb340a836787546f34de2492d84d7fdfeb05f9288c8db1b0",
-    "content_sha256": "0f17527bf7c84350a782b1177101e457ca190c8f9d9eb952c53f6e1056059980",
+    "content_sha256": "2803ce4950938d383632261a97ec1604a6c40a902b19007684da9a8337413ab8",
     "title": "记下的是日工约定 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -17034,7 +16988,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：歌本背页只有当前约定，两夜实际收入尚不存在；炭仍在阿蘅手。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-book-dry-sheets-overall",
       "new26-charcoal-identity",
@@ -17060,7 +17013,7 @@
     "code": "M109",
     "object_id": "new26-s006-q08-video",
     "revision_id": "0cb3af7311583db14e9d4143117193dc4889d3ad742b2689805190d1f66f1113",
-    "content_sha256": "cda83ecedabc0e38915555c1836ce1061973add8e3c82a23ad046863771033ef",
+    "content_sha256": "e44cb48792ff1ac235d2615ff5851114ceebda7594182a037ad5172e571a07cb",
     "title": "傍晚我在山脚等 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -17112,7 +17065,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：书在架旁干处，炭已放回；阿蘅保留白日工作/夜归决定。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-book-dry-sheets-overall",
       "new26-charcoal-identity",
@@ -17139,7 +17091,7 @@
     "code": "M135",
     "object_id": "new26-s007-q01-video",
     "revision_id": "415803806b7e124e7b2d8b790673aefe901f90a8b5c57ba2a2b271fd58f75d3f",
-    "content_sha256": "fc2b5a337269dc4d8e2ff6882c97682e9e304a3b780b26f157214aa842510e80",
+    "content_sha256": "22e0e3898c72f60554feb04be6dac63d2b9441206459b343f94122e3faad105d",
     "title": "白日唱工 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -17183,7 +17135,6 @@
       "将剧中实唱/哼调逐句与已选完整原曲比较，同时核角色声线、该场已知歌词和跨镜同一次尾音；完整作品的其他段落不自动进入影片。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-singers-identity",
       "new26-temple-hall-layout",
@@ -17206,7 +17157,7 @@
     "code": "M136",
     "object_id": "new26-s007-q02-video",
     "revision_id": "2e74737d537a554e46a8d87957a18fb0a775bcecbbb3dc222197d04c1ac20e8b",
-    "content_sha256": "b431b8bfb57230e39a47f9a380eb3bbf73a56cf30681b92a8705a46a0084e449",
+    "content_sha256": "b5e1e2ce8fbb906514c2ee45040e4b54625f39d5ebfca5bd39c4d5b3e8563000",
     "title": "第一天等到她 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -17249,7 +17200,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：阿蘅已喝水，切当夜。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-liji-palm-overall",
       "new26-moer-identity",
       "new26-mountain-road-layout",
@@ -17272,7 +17222,7 @@
     "code": "M137",
     "object_id": "new26-s007-q03-video",
     "revision_id": "c2c12638d6d2dfad9b9ddfbfcd737f585ac37cbd94f72bf64824d6d2fa2c54b7",
-    "content_sha256": "8aa2b1db8a5284b4ee565916063cd64878b04ad3c3e473749311db2628080996",
+    "content_sha256": "4a9d3065ff25833c743c2ab5db6ec80922615e2dcd8781a8568dd4ff2a231e07",
     "title": "第一笔入账 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -17316,7 +17266,6 @@
     ],
     "waiting_for_new_originals": [
       "new26-aheng-home-layout",
-      "new26-aheng-identity",
       "new26-book-dry-sheets-overall",
       "new26-s007-q05-two-wages",
       "new26-writing-kit-identity"
@@ -17338,7 +17287,7 @@
     "code": "M138",
     "object_id": "new26-s007-q04-video",
     "revision_id": "4624cedeefbb129d027975176cedad4335d6afa7305b502ad18b9d7b6563527e",
-    "content_sha256": "0532c48033b9c9835c8b82730e0a4c980f72ace593d18f504414a48f26202967",
+    "content_sha256": "633c0d46a20c75c50f61dae875795ef70945b98acc357d0c97788e62b0cf36b9",
     "title": "第二天不追问 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -17380,7 +17329,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：二人带狗同向回家，切第二夜。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-liji-palm-overall",
       "new26-moer-identity",
       "new26-mountain-road-layout"
@@ -17471,7 +17419,7 @@
     "code": "M140",
     "object_id": "new26-s007-q05-video",
     "revision_id": "cb9730479839979e73933b4e63560c92da40528a839dfe0733c646727b58e3df",
-    "content_sha256": "2ae65e176a9dd5c00985a139269e6396f6a5c86a36737d5838a5b1b3d2f01bc0",
+    "content_sha256": "ad4553465fc2897d93765c3a68628c874f1ad0609bd582c9ecf93792deb6363e",
     "title": "第二笔才圈起来 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -17515,7 +17463,6 @@
     ],
     "waiting_for_new_originals": [
       "new26-aheng-home-layout",
-      "new26-aheng-identity",
       "new26-book-dry-sheets-overall",
       "new26-s007-q05-two-wages",
       "new26-writing-kit-identity"
@@ -17537,7 +17484,7 @@
     "code": "M141",
     "object_id": "new26-s007-q06-video",
     "revision_id": "25f256e03b8fc22fe637c22cb5c1df64513ec512cdad68f59bb21d7665e2f260",
-    "content_sha256": "5bfb3bf7d19ac19eefdd05a3af43a05392c1e5428f1ccb5becbc217547f87229",
+    "content_sha256": "2f5afbcbd048f5b6347d2fc7c4483fdddbb156c986ea2c7e64fcf52afbaebc9e",
     "title": "碗碰到牙 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -17584,7 +17531,6 @@
     ],
     "waiting_for_new_originals": [
       "new26-aheng-home-layout",
-      "new26-aheng-identity",
       "new26-lixiao-identity",
       "new26-mother-oldstage-overall",
       "new26-qingpeng-singing"
@@ -17606,7 +17552,7 @@
     "code": "M142",
     "object_id": "new26-s007-q07-video",
     "revision_id": "d6535e81c77a03eccfbba6af6fb73a7c29c311f567049901714d08ad9f5ddc63",
-    "content_sha256": "64b65af911a2542b087327aa184a4df04c3fdd0f7a7c4b476436c4a4a34cf0dc",
+    "content_sha256": "0e27bd2cd97925f1f5ac4429ba7d234f64ecf1af34276df558b2a6ce48116659",
     "title": "十来夜谁陪她 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -17653,7 +17599,6 @@
     ],
     "waiting_for_new_originals": [
       "new26-aheng-home-layout",
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-lixiao-identity",
       "new26-lixiao-voice",
@@ -17676,7 +17621,7 @@
     "code": "M143",
     "object_id": "new26-s007-q08-video",
     "revision_id": "f473c264fbb8497c711d8d6605dc39a8dbe34056d0217c07f33b9aecc5581cad",
-    "content_sha256": "6e6e2bc21debd2a246ae95f54af6d75c578518c637d6b6d3a09e2f094bba873c",
+    "content_sha256": "00123041bcc143072c6973c7191bdc4ea40b2952cbc140b29f04298347091a68",
     "title": "白天托邻妇，傍晚回来 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -17729,7 +17674,6 @@
     ],
     "waiting_for_new_originals": [
       "new26-aheng-home-layout",
-      "new26-aheng-identity",
       "new26-aheng-mother-voice",
       "new26-aheng-voice",
       "new26-lixiao-identity",
@@ -17754,7 +17698,7 @@
     "code": "M144",
     "object_id": "new26-s008-q01-first-frame",
     "revision_id": "b6e7bfe3b6b2f3fb10283f4d5d58c39dd7b2ba3062618b87ed34d556ffef0fb5",
-    "content_sha256": "ccf703336be815085d7c6cfc032acdce1fa808274547eeb3bc63df388b92affa",
+    "content_sha256": "7aa70a26ffc9018c4616b4d49235a91e0e16a0241bbb1c73c7da9eebd2a3dd0e",
     "title": "戏台与领粮的人 · 起点画面",
     "category": "shot-image",
     "scope_kind": "AV_SHOT",
@@ -17805,7 +17749,6 @@
       "沿最深参考谱系计算本图代数，不因新名称重置；生成后实际看全貌与关键部位，不将设计通过当媒体验收。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-children-identity",
       "new26-festival-crowd-identity",
       "new26-moon-identity",
@@ -17831,7 +17774,7 @@
     "code": "M145",
     "object_id": "new26-s008-q01-video",
     "revision_id": "1cb47a92f15a957d91eebe36650fe84a4da4304298ce86e991884d8a7919200d",
-    "content_sha256": "6091ba8d420d2b428d650bf53cccf9909079e966eb6fb3136b65f09f09bfdf98",
+    "content_sha256": "04f14805ce52a394ec485381f4ec0325e5864ff1df3a4014ff45d32552cee326",
     "title": "戏台与领粮的人 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -17880,7 +17823,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：阿蘅到后台边，箱子尚未挪。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-children-identity",
       "new26-festival-crowd-identity",
       "new26-moon-identity",
@@ -17908,7 +17850,7 @@
     "code": "M146",
     "object_id": "new26-s008-q02-video",
     "revision_id": "842890ea19823a7d124ab670730c4b207921cd3164b0de07602c06505a1bd674",
-    "content_sha256": "57f5777518f80ef52014d0edd2232009fda3ff85783c60dcd5a8b4882a092482",
+    "content_sha256": "1f6848c9bd8e2ea035056db782346c6e444d9c0ffd0e55271515b01519fe65f7",
     "title": "把通道腾出来 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -17957,7 +17899,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：桶落稳，月线暂收，孙六坐鼓边。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-liji-palm-overall",
       "new26-lixiao-identity",
       "new26-lixiao-voice",
@@ -17984,7 +17925,7 @@
     "code": "M147",
     "object_id": "new26-s008-q03-video",
     "revision_id": "a998acf3e3baf9637828be3ec8c86475d031530e0750da3525a9866cbcaf332e",
-    "content_sha256": "e726d1d5f6b729400785d4cf3c2f734547693d821a7ebd09b637442242fbd4dc",
+    "content_sha256": "0877c809bdc3894c3334e2be4cf9a3063084a63a4766a7bfbdb937a4a3e104f5",
     "title": "第三拍落空 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -18035,7 +17976,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：鼓槌收稳，阿蘅抬手将重起拍。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-children-identity",
       "new26-stage-drum-identity",
@@ -18131,7 +18071,7 @@
     "code": "M149",
     "object_id": "new26-s008-q05-video",
     "revision_id": "8e8b4075078fedf4bc63511c60e5aa67e2bacf68ba646a5a534b5efe4c0e61a2",
-    "content_sha256": "d3d206fe193af5f0d37add107edc9f360e164f9df22e3fd9a21895efff30fb08",
+    "content_sha256": "3c7cf955dc4f778eabb27a30515e7714587321693d9c2286cb4c4ccca5140426",
     "title": "粮票今天换不了米 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -18181,7 +18121,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：票还给妇人，孩子将踢鞋。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-children-identity",
       "new26-grain-ticket-identity",
@@ -18206,7 +18145,7 @@
     "code": "M150",
     "object_id": "new26-s008-q06-video",
     "revision_id": "3d6cdd30547d46298d974f3b518d99df0bb914ec4692bcda2378b3cbb19686f7",
-    "content_sha256": "3964bb3bbb0f5cd5f1bd1a80a6e670da6a57990d9263fe4e019d10c000542ba8",
+    "content_sha256": "24acc0852550ad35b00e2de44216c9188a0b4ba9b73f7d9cd75d3d3c9f23c038",
     "title": "把空袋追送回去 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -18250,7 +18189,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：李寄回原牵线点，妇人带袋离场。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-grain-ticket-identity",
       "new26-liji-palm-overall",
       "new26-moon-identity",
@@ -18274,7 +18212,7 @@
     "code": "M151",
     "object_id": "new26-s008-q07-video",
     "revision_id": "588885901957d5a498803d7de04dfbce4af6b88f9017998db797039dedebaf37",
-    "content_sha256": "1b83cf3d11598216e0d240c813c99f39a9debd21efd0574dd30acea4cf7b1d38",
+    "content_sha256": "2c7c35b200fe037ed3c1c060669c4399d5ed8a9c88afcfd675270060a06cec24",
     "title": "剪下双回结 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -18325,7 +18263,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：绳结在李绡伸出手中，庙工伸手接。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-lixiao-identity",
       "new26-red-cord-identity",
@@ -18353,7 +18290,7 @@
     "code": "M152",
     "object_id": "new26-s008-q08-video",
     "revision_id": "0259c002cd1d845a2dd0a8c1afd2f04aef09cb0e02c166f90ce6b820d72a5c15",
-    "content_sha256": "848997502e0ebc3b33af9371573ab6e9f89a0b534cafab7ee6593d9efef7a736",
+    "content_sha256": "66f3adc1fddb8e0b69ab3b53dfa65ac3c12d98ad0c91c9be70d4837a3b8c299a",
     "title": "刮白的一角 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -18402,7 +18339,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：她回鼓边，庙工到石阶方向。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-lixiao-identity",
       "new26-red-cord-identity",
       "new26-ritual-tablet-identity",
@@ -18577,7 +18513,7 @@
     "code": "M155",
     "object_id": "new26-s008-q11-video",
     "revision_id": "d707510e53d9d6ca16483e050956b34cd68d0b7623af65b5741cab0e5b70bf2c",
-    "content_sha256": "54c13ac7791d7daeebda66287dcd1e835aec8bc7d5e09efa59f1df7c3bbecaf3",
+    "content_sha256": "afb8e053983bea3fca50dc5e75c5a71bd9ac85f3eefe757cc5d6cb8dc1700950",
     "title": "认出新系红绳 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -18621,7 +18557,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：她还站桶边，下一镜转牌。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-curtain-identity",
       "new26-priest-identity",
       "new26-red-cord-identity",
@@ -18766,7 +18701,7 @@
     "code": "M158",
     "object_id": "new26-s008-q13-first-frame",
     "revision_id": "4f06ac6e6227cf25fb016561eb520f86d173eb28ddb509ef8c5f08ba0a595eaa",
-    "content_sha256": "f206d97e74a46b5083854bd8ed44c629360f41908596c5631349a85a46457820",
+    "content_sha256": "f5d332007ff016083d0ddd46addba4badd6a1be19eca8a7ecac4a35c6dafda6a",
     "title": "水漫脚，月亮未动 · 起点画面",
     "category": "shot-image",
     "scope_kind": "AV_SHOT",
@@ -18817,7 +18752,6 @@
       "沿最深参考谱系计算本图代数，不因新名称重置；生成后实际看全貌与关键部位，不将设计通过当媒体验收。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-curtain-identity",
       "new26-festival-crowd-identity",
       "new26-liji-palm-overall",
@@ -18842,7 +18776,7 @@
     "code": "M159",
     "object_id": "new26-s008-q13-video",
     "revision_id": "f813941c3b69cfa504972aa7b2eb1681808455e164522baefede384d7308a4f2",
-    "content_sha256": "ff5c2d5f18f4a4ec231ad6f307fb54a4c898cfd66b3c365b652744a4ab773e97",
+    "content_sha256": "cf7f4e5f46d13d6054299b6ef6acb96ba3f501ef699a2207e57bf2999193b4ba",
     "title": "水漫脚，月亮未动 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -18890,7 +18824,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：阿蘅鞋湿，李寄线未松，接第5集院内威胁。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-curtain-identity",
       "new26-festival-crowd-identity",
       "new26-liji-palm-overall",
@@ -18916,7 +18849,7 @@
     "code": "M178",
     "object_id": "new26-s009-q01-video",
     "revision_id": "b613a9d2711d058a7ccc3304d2ebaa3925ffc5f44d0d9a99693c0af44bb684a0",
-    "content_sha256": "ca3b8f3761b371978397d3013d7170616e329fb51e61759d22b1423d566b1a62",
+    "content_sha256": "815da9f8fc3eb18d81ec3b2b7053e47a8fc12cbe983e778b694da82a3d35a0ea",
     "title": "替她安排一切 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -18964,7 +18897,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：赵站近阿蘅，李寄将松线。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-liji-palm-overall",
       "new26-moon-identity",
@@ -19470,7 +19402,7 @@
     "code": "M185",
     "object_id": "new26-s009-q07-video",
     "revision_id": "953210447620d0f6eeaf2ca9135ea0855d97acfbe60190ba5ceb0234ea081925",
-    "content_sha256": "59ec559acacc1fd17deadfe0cfaf5d21bcbf915e461c14b7fc3dd0b8d22b6d3a",
+    "content_sha256": "dc0e55472c4eaa5b822d3175cc98eb3159d032c92db3ce50fddb0d312a062adb",
     "title": "她要离开这里 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -19527,7 +19459,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：红绳归牌，竹杆隔庙工，两人往出口。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-curtain-poles-identity",
       "new26-liji-forehead-fresh-overall",
@@ -19559,7 +19490,7 @@
     "code": "M186",
     "object_id": "new26-s009-q08-video",
     "revision_id": "95d48ef26a4ab4f5e9d2fe18e22ed42782ed2f7b995884e45b72f75e386fdd73",
-    "content_sha256": "f2c0bfa596a71d61d6f4df0f4fe75db6b1e0df88e635acb4373bd11f64c59379",
+    "content_sha256": "0120d87e03feda987771f741b09142cc28c0308e27dc159397d26da3884392cf",
     "title": "耳边的庆幸 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -19606,7 +19537,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：女孩离开院落，切下山石桥。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-curtain-poles-identity",
       "new26-festival-crowd-identity",
       "new26-festival-crowd-voice",
@@ -19632,7 +19562,7 @@
     "code": "M187",
     "object_id": "new26-s009-q09-video",
     "revision_id": "41fab361ac770c9c730edb0db89934936772f7b2c20f17323cdf79fc9ed24070",
-    "content_sha256": "683a150f9cdd6f78b60f8882ece2758aef7e37dbdc69815e55c9675502f0e592",
+    "content_sha256": "3597204892821764dcce5893b03685a3b2d1a60c90ad909c570cc897b77058a4",
     "title": "船我去问 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -19681,7 +19611,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：布由阿蘅按左额，姐姐准备分路。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-liji-forehead-fresh-overall",
       "new26-liji-voice",
@@ -19706,7 +19635,7 @@
     "code": "M188",
     "object_id": "new26-s009-q10-video",
     "revision_id": "de73463be2ae7ed95a86ad71820d30181cc5985f3801264d0fb8f8213b2c3402",
-    "content_sha256": "6fc1887fe984e539a4e83c2940e68c66c1d6a2042474f3f336fb0a8a97c970b7",
+    "content_sha256": "4188a7dfd0c5b4854c23696d85503c9241408ed1e31a153eb78ffbbc1b7216ab",
     "title": "只记亲眼见的 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -19755,7 +19684,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：李寄自己按额布，阿蘅护书，两人回家。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-book-dry-sheets-overall",
       "new26-liji-forehead-fresh-overall",
@@ -19780,7 +19708,7 @@
     "code": "M189",
     "object_id": "new26-s010-q01-video",
     "revision_id": "fe862caca83d0b279adae812e87a2b7573c1f53a975620e8accd176df61e1034",
-    "content_sha256": "5f35e492461d35511e53dd1853e808f24d61e62b30f6192749e33ac683a68394",
+    "content_sha256": "23541f320adcdb721ef5e927133455c0da2239e73f33af9a44138d23c2e372dc",
     "title": "膝前说出害怕 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -19826,7 +19754,6 @@
     ],
     "waiting_for_new_originals": [
       "new26-aheng-home-layout",
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-mother-oldstage-overall"
     ],
@@ -19847,7 +19774,7 @@
     "code": "M190",
     "object_id": "new26-s010-q02-video",
     "revision_id": "0d9f3646915a78d88e4ce086e0f33c0edd627fc4f6c33e6d6ec6f4f3e2328e3f",
-    "content_sha256": "1774c7944b735c4ecec672cf395367bfaaaad0a9eeff19c81cf283420539ed69",
+    "content_sha256": "445b355d7c99f138df4692e3b1fb37700006fa40b19ec49534d74e05bccdf8bc",
     "title": "我不去，她也不送 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -19894,7 +19821,6 @@
     ],
     "waiting_for_new_originals": [
       "new26-aheng-home-layout",
-      "new26-aheng-identity",
       "new26-aheng-mother-voice",
       "new26-aheng-voice",
       "new26-mother-oldstage-overall"
@@ -19916,7 +19842,7 @@
     "code": "M191",
     "object_id": "new26-s010-q03-video",
     "revision_id": "b63f68bbcc97131ef30d05d94e0d04efd80c56933792f3777af69e080cc43aa1",
-    "content_sha256": "629a26d6c9e70a65081238a0fb235c2a767f8ecb2a7397ebc6ab61212513c153",
+    "content_sha256": "5b2caecf3d59455802eba7518349b9d9e583f96dd4a7ea2d84554f7e1a5e514d",
     "title": "门外听到还乡 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -19963,7 +19889,6 @@
     ],
     "waiting_for_new_originals": [
       "new26-aheng-home-layout",
-      "new26-aheng-identity",
       "new26-liji-forehead-fresh-overall",
       "new26-mother-oldstage-overall",
       "new26-ritual-song-singing"
@@ -19985,7 +19910,7 @@
     "code": "M192",
     "object_id": "new26-s010-q04-video",
     "revision_id": "dde13b1b7f1f1891b563dd554b22dfbc17ff6e4eb3114b72afe1d28c55535311",
-    "content_sha256": "4a35ef5f611347fe14d3940d52405b9c3433ef73f1fb985f95cfae53922feaf0",
+    "content_sha256": "d2dc34f8c8e8372521f587d65d0d0b8d0b2f9c15fa843e73ed1c9d1a31de0402",
     "title": "问到就回来 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -20032,7 +19957,6 @@
     ],
     "waiting_for_new_originals": [
       "new26-aheng-home-layout",
-      "new26-aheng-identity",
       "new26-aheng-mother-identity",
       "new26-liji-forehead-fresh-overall",
       "new26-liji-voice"
@@ -20054,7 +19978,7 @@
     "code": "M193",
     "object_id": "new26-s010-q05-video",
     "revision_id": "f1ac418ce5a98405f0f1f4e55cc54879e4fbaf6af3d30aa6323b4fd755d9a101",
-    "content_sha256": "30b2d8ee8ab16df24a92a123c53e01d74209255e00d4e5fe0dbc63b0631f6456",
+    "content_sha256": "995e16dc844b1237b5cfce069a553d1b439fcd6e5b2e99fe28e87df169d71c17",
     "title": "守在门外的人 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -20098,7 +20022,6 @@
     ],
     "waiting_for_new_originals": [
       "new26-aheng-home-layout",
-      "new26-aheng-identity",
       "new26-aheng-mother-identity",
       "new26-temple-workers-identity"
     ],
@@ -22019,7 +21942,7 @@
     "code": "M236",
     "object_id": "new26-s015-q02-video",
     "revision_id": "c0ad29490c695764d4407fdc32e0d2a281b0ba03bc87cee450bf2528941ce792",
-    "content_sha256": "04e139ff0804c1147af1fcce7314472fcadd8da56cbedd9775872ca60cae0329",
+    "content_sha256": "baf18cd91cad2ef99773b8093aae78a40a2ad0c533fb0f0761feec6bd0418e0e",
     "title": "先去我家 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -22070,7 +21993,6 @@
     ],
     "waiting_for_new_originals": [
       "new26-aheng-home-layout",
-      "new26-aheng-identity",
       "new26-aheng-mother-identity",
       "new26-aheng-mother-voice",
       "new26-carrying-strap-identity",
@@ -22097,7 +22019,7 @@
     "code": "M237",
     "object_id": "new26-s015-q03-first-frame",
     "revision_id": "0fbdb389a566cb60de1253c518d251499324412f6ca20698a11de1abc1cc67f2",
-    "content_sha256": "c904068f788a645fd68b187bbf1163e5211d968fceb1951d0f8afcb29252aede",
+    "content_sha256": "ea9270e3c2c4469d089a983cd403c044acdb37dbcd54d28ea4987c7ed2177bbe",
     "title": "先兜稳再起身 · 起点画面",
     "category": "shot-image",
     "scope_kind": "AV_SHOT",
@@ -22150,7 +22072,6 @@
     ],
     "waiting_for_new_originals": [
       "new26-aheng-home-layout",
-      "new26-aheng-identity",
       "new26-aheng-mother-identity",
       "new26-carrying-strap-identity",
       "new26-lidan-identity",
@@ -22175,7 +22096,7 @@
     "code": "M238",
     "object_id": "new26-s015-q03-video",
     "revision_id": "7c1100dc4195e11edbb9e933d0592ac8aa242c502ea9c71ff8fcd4bb84d39f6b",
-    "content_sha256": "3c3e99136e3860586a03631dee549951e416723611b6dc7707819091b91ee159",
+    "content_sha256": "ca223ed20ea9a7bc11421238d1ed43a6353f8ee35ed3ab967ef3482fbc56a7f3",
     "title": "先兜稳再起身 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -22226,7 +22147,6 @@
     ],
     "waiting_for_new_originals": [
       "new26-aheng-home-layout",
-      "new26-aheng-identity",
       "new26-aheng-mother-identity",
       "new26-carrying-strap-identity",
       "new26-lidan-identity",
@@ -22415,7 +22335,7 @@
     "code": "M241",
     "object_id": "new26-s015-q06-video",
     "revision_id": "7b09961f3f491caa56138af2eaa966845a866c41715846190d1275e8b9d3b14d",
-    "content_sha256": "93d60b2c2978a128128a13fa07f481cb76d95c45ec50d1af085bc344fdca60ec",
+    "content_sha256": "1f89d679439e7427b88439293ea1b79f523f1d456381f2baae9d2434ceb6dc31",
     "title": "凳子让开 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -22470,7 +22390,6 @@
     ],
     "waiting_for_new_originals": [
       "new26-aheng-home-layout",
-      "new26-aheng-identity",
       "new26-aheng-mother-identity",
       "new26-aheng-mother-voice",
       "new26-bedding-identity",
@@ -22501,7 +22420,7 @@
     "code": "M242",
     "object_id": "new26-s015-q07-video",
     "revision_id": "5574d7bc13ed1dd3898679abb235b0c2eb9d0af67d3ff7f111182c150c460f65",
-    "content_sha256": "4a9ecb5a2b577cee3c062a0356f9f32ba84307c6240a99d142befe7bf3938156",
+    "content_sha256": "603687d913adc939eb1fc95f329aa9e34c6e2aa4f0e12df01c819150d74ca17e",
     "title": "托住罐底 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -22554,7 +22473,6 @@
     ],
     "waiting_for_new_originals": [
       "new26-aheng-home-layout",
-      "new26-aheng-identity",
       "new26-aheng-mother-identity",
       "new26-bedding-identity",
       "new26-carrying-strap-identity",
@@ -22582,7 +22500,7 @@
     "code": "M258",
     "object_id": "new26-s016-q01-video",
     "revision_id": "a7cbc713e7de8f48794ff4adc472a41e57251aff5d4895d6341f736fd967f42a",
-    "content_sha256": "79f153d2a8f3f4f421eb6dc9d3de620b2d3dd173a0042755c81a8191567ff884",
+    "content_sha256": "81947f4776eab19307f37952e178c44c24c2a5df6cc0d468e2305050ed0a8d03",
     "title": "咳完再喂水 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -22628,7 +22546,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：阿蘅收空碗，切外间父亲。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-mother-identity",
       "new26-aheng-mother-voice",
       "new26-bedding-identity",
@@ -22946,7 +22863,7 @@
     "code": "M263",
     "object_id": "new26-s016-q06-video",
     "revision_id": "0da88bf25e0acb65db26671f61c4c39f7e9934bb8d411f324fa65f0e76378f92",
-    "content_sha256": "aae16c9c01ed7d349156b9dd145e1460b479ee9dd5d474f69fe9304c7b33186e",
+    "content_sha256": "221c475888d3ee9193ea3645d417aa23fd1627f89f14e585fd414b808829fb80",
     "title": "她要亲耳听 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -22994,7 +22911,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：账页在阿蘅手，药罐待交。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-book-dry-sheets-overall",
       "new26-li-home-layout",
@@ -23020,7 +22936,7 @@
     "code": "M264",
     "object_id": "new26-s016-q07-video",
     "revision_id": "426fd953f6790c99999eceb33a79e0f3dee417d0bfe0dadf57978c6bd3a75ed7",
-    "content_sha256": "d47d942ce64ac8157e09f645372bbe122e8f6951bfec121c8cf71f44fe4e0458",
+    "content_sha256": "283081e2bd852941b0d988795c1731927164c921a9e565521854e159d269c95f",
     "title": "病床有人，门能打开 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -23075,7 +22991,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：李母留床边，五人出门，狗留家。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-mother-identity",
       "new26-book-dry-sheets-overall",
       "new26-home-meal-kit-identity",
@@ -23716,7 +23631,7 @@
     "code": "M273",
     "object_id": "new26-s017-q06-video",
     "revision_id": "bfd03cbdee61efe192adfb196837f240348b14b985cab40decc8163efca1a29d",
-    "content_sha256": "4f13302e10f8c38b23eae5471592e166cbc9f8b8d4b9db0a191689a147db74fe",
+    "content_sha256": "ec9969c0f71eedb06fc27774e5f50d2f771a3d466d36facb93b91ea57a52641d",
     "title": "我答应的是唱曲 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -23766,7 +23681,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：工钱纸桌上，县丞要换纸。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-book-dry-sheets-overall",
       "new26-county-corridor-layout",
@@ -23874,7 +23788,7 @@
     "code": "M275",
     "object_id": "new26-s017-q08-video",
     "revision_id": "1bb0c416aa674e0e62f27c0ef638b123d61810d6df6ed6ef09c83c6c668adbe1",
-    "content_sha256": "065ab31d6a2e3f337bc0244f09e95bd87039ac4ce616bdbad652a240ed5d3cef",
+    "content_sha256": "2120561b8ee47d9460a441d10407cb8d8722333a0146dc5d5c6a7e8f1874c82b",
     "title": "母女能否留家 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -23922,7 +23836,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：周到桌旁，切等候后的日影。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-book-dry-sheets-overall",
       "new26-county-corridor-layout",
       "new26-county-deputy-identity",
@@ -23949,7 +23862,7 @@
     "code": "M276",
     "object_id": "new26-s017-q09-video",
     "revision_id": "73f3bcadcdfb2a8e74885f1142ca5c7bbd76de4d86f8ba4c9546454f2959860f",
-    "content_sha256": "ab249d993e37819b66de7323b620722cda4ce3d29193c3628a1120ed0aa64e00",
+    "content_sha256": "d3b1cfb91a69a572c25d851b8b4ffabaebeb3b5ee2f6082b04c87bc6b72a2752",
     "title": "他仍然不看她 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -24001,7 +23914,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：县丞手落旧祭册，沉默。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-book-dry-sheets-overall",
       "new26-county-corridor-layout",
@@ -24029,7 +23941,7 @@
     "code": "M277",
     "object_id": "new26-s017-q10-video",
     "revision_id": "f328533bfef6e885b2a917e94ffa0d2d16a8d5eea4f0916e80153bdf62ba094b",
-    "content_sha256": "6b63a2a2ab6680b8d18eab54df3376e3e7af6167edc0a29c89c5a547100ad5b9",
+    "content_sha256": "dcda0a7ed2c65d36498acdc79845aca6661a291d2eb232b0ff0f1bc99cf48afa",
     "title": "此次免祭，不抓别人补数 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -24077,7 +23989,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：笔开始记，阿蘅准备追问以后。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-book-dry-sheets-overall",
       "new26-county-corridor-layout",
       "new26-county-deputy-identity",
@@ -24104,7 +24015,7 @@
     "code": "M278",
     "object_id": "new26-s017-q11-video",
     "revision_id": "d082590b4958ff386cb3d3bc4f4116d2fa5c4acfc29f97b47935e05ecf695ba3",
-    "content_sha256": "67d7f12bc1b5b5a84fd1e45d897a49f77c7480d95a7ac7056f0833b17d4f728c",
+    "content_sha256": "fc727eea15adffea760ae7d012b2eca95b369d3e132c493ff188177c3672f432",
     "title": "以后还未解决 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -24154,7 +24065,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：她还在桌前，手未收。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-book-dry-sheets-overall",
       "new26-county-corridor-layout",
@@ -24229,7 +24139,7 @@
     "code": "M280",
     "object_id": "new26-s017-q12-video",
     "revision_id": "10dc014a419285cdbb189baa5ce731c376cb0b1edd87678bb57319b5bf28bd50",
-    "content_sha256": "257d0b05786bb5f6a3933294df222ee6470441be9e58066301194112ccbca9c5",
+    "content_sha256": "c533362b444b486bc40b84db64a40a797613e16eac5ee7ea2ab873411b3c7365",
     "title": "请写不是自愿 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -24276,7 +24186,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：末行已成，父亲将要求公开念。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-book-dry-sheets-overall",
       "new26-county-corridor-layout",
@@ -24302,7 +24211,7 @@
     "code": "M281",
     "object_id": "new26-s017-q13-video",
     "revision_id": "ae74e69d4dee7e6a7113baa9febdeda1fa524dc2cc90b5eddcfa9cc10bb2243c",
-    "content_sha256": "222a1812fd1cb1d89bfe7496f4e13344023319a32ab1a3492443b4ac69b50b48",
+    "content_sha256": "8ccc11199ff5f729bb12a6394f840f50d858bbbfbef292858f4cbe86df988653",
     "title": "当众念 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -24349,7 +24258,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：公开宣读仍在进行，切其末段。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-book-dry-sheets-overall",
       "new26-county-corridor-layout",
       "new26-exemption-doc-identity",
@@ -24376,7 +24284,7 @@
     "code": "M282",
     "object_id": "new26-s017-q14-video",
     "revision_id": "a33f2638fd50669601bc3409d03ac4a1ad2bde1009e5c1c3df26ea994ae49f88",
-    "content_sha256": "ed46b284b30d1eb84d8560b28d6ce305b59dd32e3d52640b194aa3d7264de20f",
+    "content_sha256": "f41c4ed228617a06a7bb1d95a24f573dd1fa95f812ffd3d3ec17042474eaa0f3",
     "title": "按下各自手印 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -24426,7 +24334,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：四人持应募文书，阿蘅还未收自己的免祭纸。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-book-dry-sheets-overall",
       "new26-county-corridor-layout",
       "new26-exemption-doc-identity",
@@ -24456,7 +24363,7 @@
     "code": "M283",
     "object_id": "new26-s017-q15-video",
     "revision_id": "33d846eebb1a4f7f1ea84d1b892114c6369226f64899d1117159a6de09ecb65f",
-    "content_sha256": "55485d1a122723385f3f7f62bedb34b2785bd85fc2fb77a64fa5ff7ac9b2755f",
+    "content_sha256": "f1e5a0ee131bd3f27037681542a12198916b1ef04be1cd80975d81c1716c6671",
     "title": "她自己核对收好 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -24501,7 +24408,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：免祭纸在衣襟，工钱纸仍桌上。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-book-dry-sheets-overall",
       "new26-county-corridor-layout",
       "new26-exemption-doc-identity",
@@ -24679,7 +24585,7 @@
     "code": "M286",
     "object_id": "new26-s017-q18-video",
     "revision_id": "769ab15143c38982591c469d187879f75b2daf6496e2d48da5e6070a037c8f0d",
-    "content_sha256": "88f86c19c65456b6d8a77e7d1048ea986abbe84cbb103f673f2af88a34bfcfc6",
+    "content_sha256": "cc540b8d4a67156b637a88ae114c432e55df56af2a5aaa7394286e5b6d07061a",
     "title": "还要查原借据 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -24728,7 +24634,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：原借据仍不在阿蘅手，程记录已落。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-book-dry-sheets-overall",
       "new26-cheng-identity",
@@ -24755,7 +24660,7 @@
     "code": "M287",
     "object_id": "new26-s017-q19-video",
     "revision_id": "0b8f7f1525780e6da1748100fb0ef3facc136e222307485f93e10afdc6e11ba2",
-    "content_sha256": "c705dbb57593a869bf15353af2cda05fc45c66499031173758ccfa5c40148662",
+    "content_sha256": "62afe469d022b7ee55f90deaba323db181c6432b6a72128b13059ce2646fcbbf",
     "title": "午后一起当面问 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -24806,7 +24711,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：歌本与工钱页收好，免祭纸在衣襟，转午后山庙。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-book-dry-sheets-overall",
       "new26-cheng-identity",
       "new26-cheng-voice",
@@ -25119,7 +25023,7 @@
     "code": "M300",
     "object_id": "new26-s018-q04-video",
     "revision_id": "2892194f8499915a3d32d6eb96dfba96d09944ccac0f5989e73471a377b3950d",
-    "content_sha256": "3ec9ee372f218897712deb1ef7b4f18c3ebc606a4974781aadf584f5d5da592a",
+    "content_sha256": "0110e1ba8d4a7adaf6bdd20214ce525047d45a1045efeb278f2434e6b089b265",
     "title": "成人进不去 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -25169,7 +25073,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：父亲蹲在侧，程继续问出口。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-back-court-layout",
       "new26-book-dry-sheets-overall",
       "new26-cheng-identity",
@@ -25274,7 +25177,7 @@
     "code": "M302",
     "object_id": "new26-s018-q06-video",
     "revision_id": "b18391e1f5b0badf87345f18af3248718b3eafa93f0cc32e8da3a3a78c3508cb",
-    "content_sha256": "7bb31a88c50e75b61b2b3ac94d27057aae0e77a01653f9e2d32f94271528b1c5",
+    "content_sha256": "88b30042b5b8f782505e375d6b5f6eb79e13125e9e28b38debadbab4abd9ad9e",
     "title": "再沿岩根查一遍 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -25325,7 +25228,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：回到石道侧，图在姐姐手，前后门仍闭。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-back-court-layout",
       "new26-book-dry-sheets-overall",
       "new26-cheng-identity",
@@ -25570,7 +25472,7 @@
     "code": "M306",
     "object_id": "new26-s018-q09-video",
     "revision_id": "98d58300128122f4fa889cf9837aa6779bb37f9c8a0a1a13579d28825c8e478f",
-    "content_sha256": "17b63eb5ad7ef8c64ba716f0b3d47abf0494f753fcf656690a8337ff8a5c52e3",
+    "content_sha256": "83fd3b08b949bfe92ef932f931feaa27269113b0243a04f496411b4a8569859d",
     "title": "前关后才能开 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -25619,7 +25521,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：后闸提起，两人各握一边不松；前门牢。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-back-court-layout",
       "new26-book-dry-sheets-overall",
@@ -25646,7 +25547,7 @@
     "code": "M307",
     "object_id": "new26-s018-q10-video",
     "revision_id": "41d0d2f3c9bc116be1d6a585593b3c92ab2ecdc0d08afb2f523a6ac5d1c3958d",
-    "content_sha256": "e2290e0c7aa7282dccd7e5377a1f79028c6ece7a581949387b66d4b473c2b0e3",
+    "content_sha256": "699d1fab00f2843eb7ee60cf2fbd44c1e2e29b3948c609d8c7ad8ceec1e3e307",
     "title": "撞的是前门 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -25699,7 +25600,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：前门闭，后闸仍撑，两女孩握手。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-back-court-ambience",
       "new26-back-court-layout",
       "new26-book-dry-sheets-overall",
@@ -25730,7 +25630,7 @@
     "code": "M308",
     "object_id": "new26-s018-q11-video",
     "revision_id": "6ed7f172429b618a8cf15316026012fc535b074ca6b70c241ccb8e6b80beb592",
-    "content_sha256": "7d44cbb105a286e7ca0ee7e84142ac336fa53bfa614a0b1531d80754aa60f65b",
+    "content_sha256": "60f0d56bf0bf0c3046f8c1ee5cb92e92da2cc8d3d59901fd5aed08cf63b8e580",
     "title": "只有成人看细缝 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -25782,7 +25682,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：父亲回孙六旁，女孩仍被挡。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-back-court-layout",
       "new26-book-dry-sheets-overall",
       "new26-cheng-identity",
@@ -26031,7 +25930,7 @@
     "code": "M312",
     "object_id": "new26-s018-q15-video",
     "revision_id": "883dda97667466157571f8b2d3354ae387c919752797c6c95963fa76e30f42d0",
-    "content_sha256": "55116b685decd249c693b0253b7c4b6090fee53131d8559015ec991ca00c0dcb",
+    "content_sha256": "30e20a21da864457c2b78adc01124e35c2b8a07eb72c1b46ee1a1fa5a983e4a1",
     "title": "挡蛇的是木门 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -26084,7 +25983,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：门闸仍关闭，阿蘅握李寄手看矮门。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-back-court-layout",
       "new26-book-dry-sheets-overall",
       "new26-feeding-lock-identity",
@@ -26112,7 +26010,7 @@
     "code": "M313",
     "object_id": "new26-s019-q01-video",
     "revision_id": "f4a84954a0e7da146718d16077a44172a9c71fd6795d5f8a39492d2a4bc635ee",
-    "content_sha256": "dba9d58bb44aabe0f36a71b2328cf5d8f152911de509e0da744efc09eb3e80ab",
+    "content_sha256": "c3ca05419457da83a2bac4773e0548ec7c066e1f422f20eaaaafa949dddaad07",
     "title": "把旧事说出来 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -26167,7 +26065,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：厚门闩住，阿蘅仍站原地。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-back-court-layout",
       "new26-book-dry-sheets-overall",
@@ -26196,7 +26093,7 @@
     "code": "M314",
     "object_id": "new26-s019-q02-video",
     "revision_id": "339b8726117a85fa80bdc227dd72fed560a0f5574b4979c62beb590ae0e99563",
-    "content_sha256": "386aa542870b9045d29a80a99d29bd17e3fb02e5e7adeb69cbb2c88a3ed73b84",
+    "content_sha256": "f30c20ae6e5c81a2a0582abda8d10f929db42894a89c3ec78cc5f8516258165b",
     "title": "关得住，为什么还送人 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -26242,7 +26139,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：女孩坐院门内，成人留石道边。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-back-court-layout",
       "new26-book-dry-sheets-overall",
@@ -26477,7 +26373,7 @@
     "code": "M318",
     "object_id": "new26-s019-q06-video",
     "revision_id": "02f6b078cef22e6b0d99c9d9936ad99312d82ed13e7de7e16add7c32f359cae8",
-    "content_sha256": "20da3b52c76e1e76dbd6a4d63e96ce71be63a085746026855d8c48365c0a0948",
+    "content_sha256": "f6d90b112d9e86b28fbec9041ba11d4436969d5780b5ba08c3024f0836e5d587",
     "title": "锁与钥匙接管 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -26530,7 +26426,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：院门锁牢，整串钥匙已由程收在腰侧，赵腰侧空了。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-back-court-layout",
       "new26-book-dry-sheets-overall",
       "new26-cheng-identity",
@@ -26562,7 +26457,7 @@
     "code": "M319",
     "object_id": "new26-s019-q07-video",
     "revision_id": "db52ee48a597d246d999652f443b793710a20c82de81f5ccc0616758daf56d75",
-    "content_sha256": "94601c46cb5b63669d0e15cba6eda8f9fa0cd89807f334967dd2409c364f34b6",
+    "content_sha256": "01f35b87d71471776e90485c7a002993e219298e4550b5cbb5011a5a163987db",
     "title": "再封原据和仓账 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -26614,7 +26509,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：院门锁，钥匙在程，女孩下山。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-back-court-layout",
       "new26-book-dry-sheets-overall",
       "new26-cheng-identity",
@@ -26644,7 +26538,7 @@
     "code": "M320",
     "object_id": "new26-s019-q08-video",
     "revision_id": "253495f291dfb0c01cbf3f76407b30d5980898d03ce15917c3449b2d60fc8b4a",
-    "content_sha256": "4865f3eb52e04919e52bee453b2f038de36378a4dcecfcee20476402daef963a",
+    "content_sha256": "2d332d84911ea724f3ce5ff5fdf7b1537985995333e4cad107d06a24ff2be0d4",
     "title": "走慢些等一等 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -26690,7 +26584,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：手重新握住，父亲等到她们，不用欢欣收尾。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-book-dry-sheets-overall",
       "new26-lidan-identity",
       "new26-liji-head-wrap-overall",
@@ -26714,7 +26607,7 @@
     "code": "M328",
     "object_id": "new26-s020-q01-video",
     "revision_id": "94f06ffa79fe5bc6a3948fe341a125f91b88e181ebc71fe645721176522af78b",
-    "content_sha256": "3143eedd6dae66c709d04794a0aa6cf6f9349d24431198907778e1a9cb0a0ceb",
+    "content_sha256": "6a093009dc1ef5ad5166f409a79d348c4df621e3ab2744e17b12ba3d17692228",
     "title": "不肯坐下的人 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -26761,7 +26654,6 @@
       "连读下镜：原单平摊干桌、姐姐手按纸边，阿蘅可看到日期行；周始终站着。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-book-dry-sheets-overall",
       "new26-grain-order-identity",
       "new26-home-meal-kit-identity",
@@ -26786,7 +26678,7 @@
     "code": "M329",
     "object_id": "new26-s020-q02-video",
     "revision_id": "bf6ff66a06b65de38144bac469da7af7c4c6798acdade3d271e77e5841e41e2f",
-    "content_sha256": "289816595f6c4b2af674445cc0c22c7d7c48b84f25cfbca1168b913599a7e15e",
+    "content_sha256": "5a8d98e1df0507e4f7d422c1381a7cf2420df7f5345e531370120e9b4e9e5606",
     "title": "比梦早一天 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -26839,7 +26731,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：原单仍干桌，李寄近前。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-book-dry-sheets-overall",
       "new26-grain-order-identity",
@@ -26868,7 +26759,7 @@
     "code": "M330",
     "object_id": "new26-s020-q03-video",
     "revision_id": "0aede5ea70a2db99454a7e3777379575f49f55876abba0e1f126d9305012323c",
-    "content_sha256": "e19ac3d659d559e3254fb43acb7044cd0e166bcdb5567798ba9271ba6b1b1110",
+    "content_sha256": "c220c49f2c9f508ac80d0e1a624102bade0e16ece30f95556fc95321f0d97dd7",
     "title": "晚交出来的原因 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -26918,7 +26809,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：碗远离纸，周仍站着。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-book-dry-sheets-overall",
       "new26-grain-order-identity",
       "new26-home-meal-kit-identity",
@@ -26945,7 +26835,7 @@
     "code": "M331",
     "object_id": "new26-s020-q04-video",
     "revision_id": "6df6376e7d1c7bb8bb7e75ca9c9f868317f887f1a75413857f40b20cdbec06d4",
-    "content_sha256": "18aa95b44f9ab274390ec9d932a69ba1e78d22e87ec8c93f25187d7ed543f70e",
+    "content_sha256": "039731554f0bb0a6ef6266233c0763b1908fb7187198dcde18b288977018e488",
     "title": "留下原单，也留下答应 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -26995,7 +26885,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：周已可离开，原单留桌。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-book-dry-sheets-overall",
       "new26-grain-order-identity",
@@ -27023,7 +26912,7 @@
     "code": "M332",
     "object_id": "new26-s020-q05-video",
     "revision_id": "87aee8fe7c56e6d2dfb6b79d25efe08c2b2e00c9bad27d0e1c5ecb7be0031aa3",
-    "content_sha256": "1694b8185ee06a211662b73492c24d8346b181b14fab3e6580c8b521de1362fa",
+    "content_sha256": "80c9cd8b475225549f38f6bb2d2b7d1fb02894fff32d3ac309f45b173a1eb981",
     "title": "送客后抄下原单 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -27071,7 +26960,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：周已离门，父亲正在抄，原单仍在桌面。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-book-dry-sheets-overall",
       "new26-grain-order-identity",
       "new26-home-meal-kit-identity",
@@ -27231,7 +27119,7 @@
     "code": "M335",
     "object_id": "new26-s020-q08-video",
     "revision_id": "fbf2c6c11ee7f8a4844a9e048ab2f93bc5b2c9ea8f1db37246be07344f20cf19",
-    "content_sha256": "26e57027ad50cdcca68af43079bcef0d4a7e8fc4c66e7e9073ddfe3f61fbe6fb",
+    "content_sha256": "b14fafa7c4cb0fc4741aa55f8f4e927929414ed6b5bb5c60a64ba94f482c7ee3",
     "title": "名字早已写下 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -27278,7 +27166,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：二人坐在同侧，不替她宽慰。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-book-dry-sheets-overall",
       "new26-grain-order-identity",
@@ -27806,7 +27693,7 @@
     "code": "M343",
     "object_id": "new26-s022-q01-video",
     "revision_id": "d2b2fdb11faae7d1c57f8df777b33dc18402400da84be5b81a4859d41364ce31",
-    "content_sha256": "521f19a4ed0080335c4d7b3aed727c35af204e8386c79ee3bd870a7d3a057b8e",
+    "content_sha256": "9dcbf4301fe84d9dc3a58a384ac195a0e2b82c50fdc2265f7798ff920719d782",
     "title": "任何一户 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -27856,7 +27743,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：文书留干板上，阿蘅退到侧面。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-book-dry-sheets-overall",
       "new26-granary-layout",
@@ -27958,7 +27844,7 @@
     "code": "M345",
     "object_id": "new26-s022-q03-video",
     "revision_id": "f043d712bb00b491930dce078af289094ee207b70484ef93c361abeef1ed2846",
-    "content_sha256": "d892a353147f99195f60607d03c2eb34adcabb39be903a8bd8d3867c7b028bd5",
+    "content_sha256": "376fc9a7e2d4919d5059bf3fa141544f81bf6c50149af9158163f8fe984c2d24",
     "title": "认的是母亲手印 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -28011,7 +27897,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：贴纸尚完整覆盖，梁拿湿布。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-book-dry-sheets-overall",
       "new26-cheng-identity",
@@ -28042,7 +27927,7 @@
     "code": "M346",
     "object_id": "new26-s022-q04-video",
     "revision_id": "64b671556b75d873acd6e00960f6c447e092c2e4528134b35299f9a7032b3ca7",
-    "content_sha256": "f61a02757f8f6091ea66eab0adbc560d45669617dd7ea3193d975a60b66088d8",
+    "content_sha256": "dd07a96dbc243c96033898ba6b65f4002e9913ffa30955b547a3960f496c014f",
     "title": "先只见六 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -28087,7 +27972,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：只揭角，六字已露，其余仍覆。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-granary-layout",
       "new26-inquiry-record-identity",
       "new26-liang-clerk-identity",
@@ -28218,7 +28102,7 @@
     "code": "M349",
     "object_id": "new26-s022-q05-video",
     "revision_id": "1106143a23be95bc349b6732ff6305eac3135e2cc688227f79da0e63a6c24152",
-    "content_sha256": "482b1165b182f75bab5f590b0607a3094b17df3c32aac88c6558bde8ffb702c2",
+    "content_sha256": "2f539f3748c67b28c5f6b5f7d8909274f2f8248016a9d91bd033c482d4a57e64",
     "title": "新字接上旧手印 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -28266,7 +28150,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：两纸分开并排，母亲手印仍在旧纸。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-granary-layout",
       "new26-inquiry-record-identity",
       "new26-liang-clerk-identity",
@@ -28292,7 +28175,7 @@
     "code": "M350",
     "object_id": "new26-s022-q06-video",
     "revision_id": "b7376949bd6f355dccb6adeeebc1eba6a0bfba33a6af19fcc2af71129674fdb1",
-    "content_sha256": "4241128e2b526fd78b3db508da89e4dadd8979813a7640af456061ad3d1de156",
+    "content_sha256": "47795dfda6e1efeb7c31f433265ce5883f45dd34cc46bcb0d63546780d1016a7",
     "title": "谁添的字 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -28346,7 +28229,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：赵沉默，梁继续登记。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-cheng-identity",
       "new26-cheng-voice",
@@ -28377,7 +28259,7 @@
     "code": "M351",
     "object_id": "new26-s022-q07-video",
     "revision_id": "3b624a7254ef0da5300847515d9e305b26708c8efa50269ef7b4cb3658d8e729",
-    "content_sha256": "85252cc4b9aedfd86f17b8706cb487a13d0d0e074c530a92ed69e42cec0829d4",
+    "content_sha256": "92ed09a4794cff1795c61f987e383aaed7baf2b1f7eba80425d0d173c9d813ea",
     "title": "带去让母亲认 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -28426,7 +28308,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：梁准备分夹，阿蘅未碰纸。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-granary-layout",
       "new26-inquiry-record-identity",
@@ -28453,7 +28334,7 @@
     "code": "M352",
     "object_id": "new26-s022-q08-video",
     "revision_id": "8ba8e98d273ba0b2f3266b4c4f941fbf9a1069d3994fb4205d4b574f902159ff",
-    "content_sha256": "f9c2b4be0b9669c2e9e93e150c655ad3525634636044cf52372eb0182f3b6d65",
+    "content_sha256": "bf17ade295ac71a1ef13aaa4acf9ae060af0fc13d15be88cc2f2178f4018b45e",
     "title": "不是再还给他 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -28502,7 +28383,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：两纸分别固定，登记簿有出处。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-granary-layout",
       "new26-inquiry-record-identity",
@@ -28529,7 +28409,7 @@
     "code": "M353",
     "object_id": "new26-s022-q09-video",
     "revision_id": "0abbe4c028cb07116ab16d6e325b184771d358793befde2101cd07e2353ded15",
-    "content_sha256": "75586305ed6a9117f28d7df85be74d523a842396e488198d0772e215795d934a",
+    "content_sha256": "0be58239b19170be8bd18f827552e27d45395ed05ccc60dca9df456293b7dd38",
     "title": "各去做一件事 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -28587,7 +28467,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：歌本阿蘅持；借据两纸梁持；箱由守卫看；父女跟程。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-book-dry-sheets-overall",
       "new26-cheng-identity",
       "new26-grain-order-identity",
@@ -30481,7 +30360,7 @@
     "code": "M399",
     "object_id": "new26-s026-q01-video",
     "revision_id": "3e590d0d6c00559cc894472cabe0235f8127487896bf52ac3e73c673db9be463",
-    "content_sha256": "09b01387957e6c11e5236f715cea6f78e5a711480b08e8409752d811cbe91209",
+    "content_sha256": "aa769de4dc4e7fdb42281a92bd2371583fb8c6eda072d02f1080eadbf08417b8",
     "title": "手印是她的，话也由她说 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -30530,7 +30409,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：母亲话完，阿蘅准备扶胳膊，梁笔未收。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-mother-identity",
       "new26-aheng-mother-voice",
       "new26-grain-order-identity",
@@ -30558,7 +30436,7 @@
     "code": "M400",
     "object_id": "new26-s026-q02-video",
     "revision_id": "a9c0a6bc2f3538bdc854e5c6d1a668ee5ee08597905625510439a654321e2012",
-    "content_sha256": "cdbd9e079e06690cb4493c27cb0a94b024e22465767f4286e9fde9548b06be06",
+    "content_sha256": "b1f0897eddf93057b7f14fc979e2c410c4b408ae2ea0f9aae639b5652a5b6be6",
     "title": "把她说的话读回 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -30606,7 +30484,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：母亲点头确认，纸仍分开。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-mother-identity",
       "new26-grain-order-identity",
       "new26-inquiry-record-identity",
@@ -30634,7 +30511,7 @@
     "code": "M401",
     "object_id": "new26-s026-q03-video",
     "revision_id": "232c593c7ea9659db2fa1fcfc8af37f5239c8f2a6dc1a4bc7670775d881a053c",
-    "content_sha256": "889b4f32050f1f2305764701ddc40cadaf97a8f22a9457121b61f8c99aee143f",
+    "content_sha256": "aa1e31ca50e5016ad1036eaa83f9100486f900649de360774575acc6be605d2f",
     "title": "交记录，领凭记 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -30683,7 +30560,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：借据/贴纸/唱工页归梁，凭记阿蘅收好。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-grain-order-identity",
       "new26-inquiry-record-identity",
       "new26-ledger-box-identity",
@@ -30712,7 +30588,7 @@
     "code": "M402",
     "object_id": "new26-s026-q04-video",
     "revision_id": "eb5a184c62f2903fe92ea41eb7eaab174240c84ac274ed5b9e325e128950e9fc",
-    "content_sha256": "cc649fedb47da16cba9e406d8a21f70dce558adca96ba4f81706898baff36e9a",
+    "content_sha256": "48fe8aeccf30e30c73cce4b454de01b8526cd69c5a757e4ed78b044b5ed4f592",
     "title": "刀进屋，狗还在玩 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -30758,7 +30634,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：女孩抱狗，阿蘅在院旁持药罐。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-heavy-knife-identity",
       "new26-home-meal-kit-identity",
       "new26-li-home-layout",
@@ -30783,7 +30658,7 @@
     "code": "M403",
     "object_id": "new26-s026-q05-video",
     "revision_id": "f43d5a4ef3be719af6989d0ceda8d1fffffac52367ea9ea56eb022b4e61311ae",
-    "content_sha256": "644f1e67088d106e834c0aedc1d9f9d81848fb73c32614af9f5282505d5b4456",
+    "content_sha256": "55a6faaa85785151c23feb3b9d0d931b99d3dbe0c1b38e6125094e884179b5ea",
     "title": "狗留在家里 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -30831,7 +30706,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：门关狗在篱内，女孩持空药罐刚向堂屋返。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-home-meal-kit-identity",
       "new26-li-home-layout",
@@ -30856,7 +30730,7 @@
     "code": "M404",
     "object_id": "new26-s026-q06-video",
     "revision_id": "47a8ca9470f4918e3961c2ac9253be5a5f95edbcdf0fcf6782d5fdeba7326dee",
-    "content_sha256": "44e7e701eb0b3f81c2b39165c0fddfbb2cbbf0e1201b33cf98383051978961df",
+    "content_sha256": "dea4701e9479c182d748897c262221d5c788aa38df5f2fa0382e9bd9db2c6e41",
     "title": "在图上补刀缝 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -30908,7 +30782,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：图已补缝，父亲准备指西侧。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-expense-ledger-identity",
       "new26-home-meal-kit-identity",
@@ -30936,7 +30809,7 @@
     "code": "M405",
     "object_id": "new26-s026-q07-video",
     "revision_id": "5657dedc157bab9150a7b5a26f3813309dd06c4efa956026f3c384c7ab7570d9",
-    "content_sha256": "e5b7d3f3f4a39235cfde9d5f3731cc76e843f211d1193f9967e8430a6eb1d5b2",
+    "content_sha256": "76773dce99e4e256c19271103e9eb4a2f91200872a2af8fc31b45e420067cff3",
     "title": "父亲在西，众人不停压 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -30987,7 +30860,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：父亲仍计划下刀，孙六筷子横在图上。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-home-meal-kit-identity",
       "new26-home-oil-lamps-identity",
       "new26-li-home-layout",
@@ -31234,7 +31106,7 @@
     "code": "M409",
     "object_id": "new26-s026-q11-video",
     "revision_id": "d22128013941ce3036070741daf7d901419ab626f449f1781c28b612916cd356",
-    "content_sha256": "40bfe55209686d44dc62e635f7e198d08fd265528dfc47d7b643a41f32ac9b38",
+    "content_sha256": "c5f47b5e73ad64733cf9eb9f9472d3c6ad991495b6cd483688d567bbe7c2c69b",
     "title": "怕，才要自己说 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -31284,7 +31156,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：文书被照亮，图留桌，阿蘅仍持纸。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-home-oil-lamps-identity",
       "new26-li-home-layout",
@@ -31310,7 +31181,7 @@
     "code": "M410",
     "object_id": "new26-s026-q12-video",
     "revision_id": "35ed0f65318028b81be8e6f0fd3353de0cc16763a9e71149a015a6fafa18be6c",
-    "content_sha256": "595e7f65d0cfce564353ea26087a32820ed92dc09fbf78599976dba5e54419c9",
+    "content_sha256": "85ad1f078a49a98550e87586ef48d391e06ec4d46d43a063461fe75b74ac5278",
     "title": "这些是大家的事 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -31360,7 +31231,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：共同费用记录在姐姐这，绳添布尚未带上山。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-expense-ledger-identity",
       "new26-home-oil-lamps-identity",
@@ -31388,7 +31258,7 @@
     "code": "M411",
     "object_id": "new26-s026-q13-video",
     "revision_id": "eec52cd59cdd527f9dac7dfd25d0e3d09f656696139aae7de9229381116a66bd",
-    "content_sha256": "a5d70fd2436b14af2cd46d137d04d0235dcddef0eaf9b552a942bc5072daf314",
+    "content_sha256": "c0dba96663d3f6671d4cd21f2bffbe9159cad4453461317544196fbc913fdfb3",
     "title": "先一起解一个结 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -31442,7 +31312,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：结松，图折压明日工具，三人不再只盯费用。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-expense-ledger-identity",
       "new26-home-meal-kit-identity",
       "new26-home-oil-lamps-identity",
@@ -31609,7 +31478,7 @@
     "code": "M414",
     "object_id": "new26-s027-q03-video",
     "revision_id": "c2a090a603e2699d26cb83987dccfc9919e5ccd3f3e98f8d3683e9aa7fd3830f",
-    "content_sha256": "8d79efe1e0d8bc7446101d874e43b3723de9281c3e173494e4de03c82a0aa262",
+    "content_sha256": "7cdfae718928fe85c15e60335838f0f2c3214ca21521db8155bd07b3707874be",
     "title": "数到一半，又添两只 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -31653,7 +31522,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：两女孩都仰着醒，碗留灶边。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-home-meal-kit-identity",
       "new26-li-home-layout",
       "new26-liji-head-wrap-overall",
@@ -31676,7 +31544,7 @@
     "code": "M415",
     "object_id": "new26-s027-q04-video",
     "revision_id": "8b07d4a733fbfa1c37558388d3c29965e8a1b8c0f4c4cea6aec39a2b28c921f1",
-    "content_sha256": "8774c7b3f9e3fff27bf59c7bc7efa9668e74a5ce9323af5286bcaead9b75b221",
+    "content_sha256": "df006df1cc3262d2511a7c89437b9273a6d3c1022f652fd67a32f762cb52f5fd",
     "title": "怕，但还是要说 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -31723,7 +31591,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：手还轻碰，目光落门边。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-li-home-layout",
       "new26-liji-head-wrap-overall",
@@ -31959,7 +31826,7 @@
     "code": "M419",
     "object_id": "new26-s027-q07-video",
     "revision_id": "383a085326ca0c3c1dcb422b71210cfb8fb92d2c1ca56136b62a9472e8393517",
-    "content_sha256": "5d6315284d856495d3a6129973b185628181314acac37012a86c41773a4c1ac2",
+    "content_sha256": "4da22b3b45b5195a910e32a6db5fd54b52486446c2a3c365d8d038248f91c335",
     "title": "狗留下，人回头 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -32006,7 +31873,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：队伍出巷，母亲与狗留门内，灯仍未点。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-li-home-layout",
       "new26-liji-head-wrap-overall",
       "new26-liji-mother-identity",
@@ -32031,7 +31897,7 @@
     "code": "M428",
     "object_id": "new26-s028-q01-video",
     "revision_id": "5b7eb5d58b1aeee734ff0926b7f34eb4b2276d934693f1ce3199db5c46a7cd0a",
-    "content_sha256": "5c6bcb5dd6c29ffc89169b0281fe0a7264dec34ff0903e680020f3cfea055b41",
+    "content_sha256": "ef7d10c53e90e31aa3840b0efb38448bf64250429c7913d2d6fafe83a2af5422",
     "title": "还怕明年的水旱 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -32080,7 +31946,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：程持展开新文书，父女在人群里靠近。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-cheng-identity",
       "new26-grain-queue-identity",
       "new26-priest-identity",
@@ -32106,7 +31971,7 @@
     "code": "M429",
     "object_id": "new26-s028-q02-video",
     "revision_id": "4916d8f485dd77156d435c3c76d9874d5923b5a2ad5c15fc474b119776b37fb8",
-    "content_sha256": "5beaf5558749d87d0da427f69b86519eb6ede19a741c242a17c003b28c72ad6c",
+    "content_sha256": "f851ab2140635bbb9d0a19fdbebd31823bc426ddbc14b255021c00779113feeb",
     "title": "天亮了，就交册 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -32168,7 +32033,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：两乡老在柜前验封，李寄提未点灯与阿蘅站阶下。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-cheng-identity",
       "new26-cheng-voice",
       "new26-elders-identity",
@@ -32206,7 +32070,7 @@
     "code": "M430",
     "object_id": "new26-s028-q03-video",
     "revision_id": "10e1568448010f802e90ff85b24c37af4b338c46a13a6ff196d5b6459ada0757",
-    "content_sha256": "eb063f61ad4f1ad1c6637262db29395bf641f29b2820abc135d3826c74984bb7",
+    "content_sha256": "fba2095ec831b9fb2ee3afe4c4f14295a9fb15127dfd01aa76fe5ac7acd91b33",
     "title": "这次先让她开口 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -32254,7 +32118,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：阿蘅独站阶前，凭记还在衣内，灯留李寄手。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-inquiry-record-identity",
       "new26-liji-head-wrap-overall",
       "new26-patched-lantern-identity",
@@ -32279,7 +32142,7 @@
     "code": "M431",
     "object_id": "new26-s028-q04-video",
     "revision_id": "d1332c35c7fabf7a5f428f697746483430391d91f38bf5809da1462556c90647",
-    "content_sha256": "49e65978a56046e8c30537244ffe846221be9fb2e83de83e18e444ba1b331bb4",
+    "content_sha256": "f41dd2cc3d100606e57050155f50b63844c824ea90e5cf0dfd2c376716215ae1",
     "title": "五斗、六斗、四升 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -32321,7 +32184,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：她说完，赵准备插话。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-temple-front-layout",
       "new26-zhao-identity"
@@ -32343,7 +32205,7 @@
     "code": "M432",
     "object_id": "new26-s028-q05-video",
     "revision_id": "2147315b575d2ebbf98f9c4b01be41628b76265d0446baffbf64363a1cecb46b",
-    "content_sha256": "7ac062814b01b081a01e99d596eeedc65f4c56b0606fa3c4798ebd810849d521",
+    "content_sha256": "5162fafb55b6f1829d7c63ee29512ca38c7b3b771e52fbb93d859146ebe4e0b3",
     "title": "这张凭记指向原纸 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -32392,7 +32254,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：凭记仍阿蘅手，赵未接，她重新吸气。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-inquiry-record-identity",
       "new26-priest-identity",
@@ -32417,7 +32278,7 @@
     "code": "M433",
     "object_id": "new26-s028-q06-video",
     "revision_id": "24ee26107ee7674ccd6253f2bf87180ec04992ac3ba38e9c5e09aabf26fec44c",
-    "content_sha256": "632bd747c5af55682c0afbaa66696cacf2ab3b95a93b3abe586620ed65e7e87b",
+    "content_sha256": "5130c0b10ac78db4488734e9a563472a57a1411997f9829f37098c33abb8d98f",
     "title": "没有答应就是没有 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -32462,7 +32323,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：凭记回衣内，灯仍未点，李寄未插话。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-inquiry-record-identity",
       "new26-liji-head-wrap-overall",
@@ -32634,7 +32494,7 @@
     "code": "M436",
     "object_id": "new26-s028-q09-video",
     "revision_id": "97d3d4c0d0939e42832c6149a61a146714fab1732d500d57552b6ac317a76467",
-    "content_sha256": "4ddbcce6f8862415b0e35634dc893c831a6f17dbb25bbea228b5d478f4cadf90",
+    "content_sha256": "7b1e0af2294e7d31f27b32fcb958e27e5844bce86f8a44c64bfe633e7ebac297",
     "title": "掌柜这次走出来 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -32690,7 +32550,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：底账打开朝众人，仍周持。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-cheng-identity",
       "new26-elders-identity",
       "new26-grain-ledger-identity",
@@ -32950,7 +32809,7 @@
     "code": "M440",
     "object_id": "new26-s028-q13-video",
     "revision_id": "c510aabce9a2f51c0c63897cbb8f4728591194c3e97ed6983d6a58da4006950b",
-    "content_sha256": "7c4cda9c7f0c7decdf0e3dea4917bfe9936044455f3ea4e0a65ca80f2631f3f9",
+    "content_sha256": "266a7851974012b6da48e81b63ed71613d7ff38e2aa97f1cc2112af886ce3540",
     "title": "最后一道封纸贴平 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -33003,7 +32862,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：三册封存由守卫看，阿蘅站回李寄旁。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-cheng-identity",
       "new26-elders-identity",
       "new26-grain-ledger-identity",
@@ -33035,7 +32893,7 @@
     "code": "M441",
     "object_id": "new26-s028-q14-video",
     "revision_id": "60e5618c780440940e7f8147b96e76da062818c0e73d62822b87ec730380b2b1",
-    "content_sha256": "340080b9708f64f11a803f85608aa20276ab37190ed3e7b69c32622cdda0eafc",
+    "content_sha256": "9ee87952204c311a2f1fb5d49e502007d6c9bd52b263a69f77e7c8861fd35b56",
     "title": "绕井去后院 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -33084,7 +32942,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：女孩随父亲进入门道，妇人带粮离开。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-heavy-knife-identity",
       "new26-lidan-identity",
       "new26-liji-head-wrap-overall",
@@ -33530,7 +33387,7 @@
     "code": "M448",
     "object_id": "new26-s029-q07-video",
     "revision_id": "1ab6b3a764c65ff6b70a6d4671bca1a0ce172486429b751376533f053ffe23c9",
-    "content_sha256": "bb2d2f02b13e12ef1b695db8765787e3614b89fa60f61d86c546d99cae746c27",
+    "content_sha256": "63ff6d0dd70bcbed2a20ca11fab128db76835b99e5af9a231d49d9aaa36e0185",
     "title": "灯在墙边，人守门内 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -33575,7 +33432,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：灯未点在西墙根，阿蘅靠门，李寄旁边。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-back-court-layout",
       "new26-liji-head-wrap-overall",
@@ -33598,7 +33454,7 @@
     "code": "M449",
     "object_id": "new26-s029-q08-first-frame",
     "revision_id": "04ff29f35a6dda5fd4c914f148b18938d388b397020c0ffe74b300adb5a29cda",
-    "content_sha256": "320ce75a9fecf305e008e5445525964657c2984ebce352f49f150b2bf29adf14",
+    "content_sha256": "b2d5e2c33e361babfff02fd94c55680ce3580dfe82952c84a0ed9bb5aa92de51",
     "title": "西四东三 · 起点画面",
     "category": "shot-image",
     "scope_kind": "AV_SHOT",
@@ -33656,7 +33512,6 @@
       "沿最深参考谱系计算本图代数，不因新名称重置；生成后实际看全貌与关键部位，不将设计通过当媒体验收。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-back-court-layout",
       "new26-cheng-identity",
       "new26-heavy-knife-identity",
@@ -33687,7 +33542,7 @@
     "code": "M450",
     "object_id": "new26-s029-q08-video",
     "revision_id": "ff73bc3e21178a5d22a4d19fc40020db681545ff60390d5c59a2dbd2ddfeb6dd",
-    "content_sha256": "b1cf3f3c42aafe9c3f5958c0f383ff9f4f0a2e4832c7913dcc15c74e410116c5",
+    "content_sha256": "5f1e28992fd49532a0b0791c60e93aaebdc9bf8f52500bc5ac1c3f4f9293d78c",
     "title": "西四东三 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -33741,7 +33596,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：七人握稳，孙六准备抽栓，父亲仍未加入。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-back-court-layout",
       "new26-cheng-identity",
       "new26-cheng-voice",
@@ -33848,7 +33702,7 @@
     "code": "M452",
     "object_id": "new26-s029-q10-video",
     "revision_id": "4fe35873c491c26509432972eeed74863857ed0d67b6a09b0242b7eed2aff6bc",
-    "content_sha256": "fb52348698242b5657af0c0c4e68d413120c6143cfc6c7c2c1a49d4e0fc09a62",
+    "content_sha256": "f136a760e191f9c45738e0eebb80f96a82012c7e47aae074cc492f1d1758bb08",
     "title": "等的时候也在受力 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -33899,7 +33753,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：七人仍抬，女孩回门边，没有擅自靠缝。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-back-court-layout",
       "new26-cheng-identity",
       "new26-granary-distribution-sound",
@@ -34595,7 +34448,7 @@
     "code": "M466",
     "object_id": "new26-s030-q08-video",
     "revision_id": "c4c41c721f13d96bacf7f329ddb3c0773ba9428295944ef5eb7ea0328212c5ac",
-    "content_sha256": "80cc459753429e1d5b3ecdf0b18b9bfd779872d75b9333fa2679da6d68fd256c",
+    "content_sha256": "3130c5f4da913490610ad1d582f31bd9e29798525425082643ca48e4c1b5d385",
     "title": "吸进气，才喊得出去 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -34638,7 +34491,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：两乡老听清，阿蘅仍扶框。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-back-court-layout",
       "new26-liji-head-wrap-overall"
@@ -34995,7 +34847,7 @@
     "code": "M472",
     "object_id": "new26-s030-q14-video",
     "revision_id": "b25b8da851ab137c4ef350799316ea3502f4cd3dec3d3581c1164fa451f06659",
-    "content_sha256": "a1d4d27a64c093c80a2fb13ec121a003a684627d75db4ad0ebcd87e5be685f03",
+    "content_sha256": "b7f3c5753b96dc416a9fa83cf5f087a604dfa7bf177301ad2d3d892409bf3862",
     "title": "只回来一个老人 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -35041,7 +34893,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：求援失败两女孩已知，八人仍在院里压。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-back-court-layout",
       "new26-elders-identity",
       "new26-elders-voice",
@@ -35131,7 +34982,7 @@
     "code": "M474",
     "object_id": "new26-s031-q01-video",
     "revision_id": "cb3d523c121ef1f98a7b0f0b594ec430ee32ddeab617c936913da3d7554aeabc",
-    "content_sha256": "023a57b4997e7bc8fb7621f995f5fac8179451784075a0e44fb44817569acc89",
+    "content_sha256": "d19774a8931e025aa282f671026d680f7e518b8a7ba0edec9e7c66e1c7c02e34",
     "title": "退半步以后再走 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -35179,7 +35030,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：李寄走到西石旁，手还空，阿蘅仍门边。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-back-court-layout",
       "new26-feeding-lock-mechanical-sound",
       "new26-heavy-knife-identity",
@@ -36275,7 +36125,7 @@
     "code": "M492",
     "object_id": "new26-s032-q06-video",
     "revision_id": "28a375bd3a9ce40b06d46856fb87184b91c13a39a3e9dc525ef735db5a5e30a8",
-    "content_sha256": "8e095318b5ede8e195dedaf69216161a7f8f71343a412eebcb9f1b05d151769c",
+    "content_sha256": "d014b0abfc306402e83c650555927da24a0a90d646df60a30334268e37585580",
     "title": "把手指重新扣住 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -36320,7 +36170,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：刀重新握好，阿蘅仍未离门。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-back-court-layout",
       "new26-elders-identity",
       "new26-heavy-knife-identity",
@@ -36698,7 +36547,7 @@
     "code": "M498",
     "object_id": "new26-s032-q12-video",
     "revision_id": "1485d036c91a1846556edf5752203e24cf373ce96d9b0c316e7cf2322e5103bf",
-    "content_sha256": "e4ff6c38d30574e39442dfeac95af044899010050ac5f5d8c0dae8d5f807b6bd",
+    "content_sha256": "e5ed0ea35f1de95df8fcf626f2135141c23137c623a79e29b05f8c65ab74642c",
     "title": "好字没有说完 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -36745,7 +36594,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：两人靠近但未离院，都转耳听。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-back-court-layout",
       "new26-feeding-lock-mechanical-sound",
@@ -36770,7 +36618,7 @@
     "code": "M499",
     "object_id": "new26-s032-q13-video",
     "revision_id": "45c9efcd50543073eb8c6a18d2871d598d29599a6a3792037d270f1eadd91077",
-    "content_sha256": "234a3bc837828d73dde11b3bc83d628fabd8015405cf55162df3b76431d0086a",
+    "content_sha256": "ebe04b9cc5762799ca4452ac0eb287b7a056f63a883a2abd97d4c55ffecc93b5",
     "title": "门别动 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -36821,7 +36669,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：八人压住，女孩准备退到灯旁，门不动。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-back-court-layout",
       "new26-cheng-identity",
       "new26-cheng-voice",
@@ -36923,7 +36770,7 @@
     "code": "M501",
     "object_id": "new26-s033-q02-video",
     "revision_id": "758eec832a81f74b0335798a6c82bec14c3bd80189daa098b28ed9f55213ec2e",
-    "content_sha256": "b0baeb596af59a071df9812631f10dcd163661df3fdf75caf448d16be7915de0",
+    "content_sha256": "5bc2f681faa18b78e6e9be5422dc4c216e5c9f93109570c9b2ebb84bd83cee73",
     "title": "托在伤口下面 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -36966,7 +36813,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：两人靠墙，伤手由腕下托住，灯仍地上。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-back-court-layout",
       "new26-liji-first-blood-overall",
       "new26-patched-lantern-identity"
@@ -36988,7 +36834,7 @@
     "code": "M502",
     "object_id": "new26-s033-q03-video",
     "revision_id": "7cd182a0f19ed8c281ccdaf167f1d9138791932f2a69af6c1744f0f04a7d1a27",
-    "content_sha256": "bc00130c97c3a5080c4060171659fea289e635daef8919c266770238bf9e3819",
+    "content_sha256": "41c11869e08ce03ba7d41d331ef39d3eaf0c83beabfa3746cce35a2f25e38e2f",
     "title": "风叶停了以后 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -37041,7 +36887,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：所有人还等，没有谁先起身。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-back-court-layout",
       "new26-cheng-identity",
       "new26-heavy-knife-identity",
@@ -37443,7 +37288,7 @@
     "code": "M508",
     "object_id": "new26-s033-q08-video",
     "revision_id": "9064cd5cc7ead699e9dd61b7ebaa4f261f5f583d0c351433ce26d65ea1fcadb8",
-    "content_sha256": "be9ecfbb4581c7e6e618ebc3aaa48db5ab281894b05c83755432bf5aadda8abc",
+    "content_sha256": "87f66727cd1e8ab7ccbda8dc92feefd812c662d3a3b23a54da26c247e24ae99e",
     "title": "笑还出不来 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -37490,7 +37335,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：李绡关注阿蘅，后者仍紧盯门。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-back-court-layout",
       "new26-liji-first-blood-overall",
       "new26-lixiao-identity",
@@ -37515,7 +37359,7 @@
     "code": "M509",
     "object_id": "new26-s033-q09-video",
     "revision_id": "570392a0595d281d9dc0ba5342b3dc26c439820d3c9129a761f93c92c8553e07",
-    "content_sha256": "c03beac913091c547facc55f6093ed961c017324dd4a3cbd8c972ddab5623888",
+    "content_sha256": "30b14e89ecce73005b10ed560bae061adca4c525b902fae5b54ec24a51bda937",
     "title": "真的不用了么 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -37561,7 +37405,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：阿蘅等答案，李寄可站住。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-back-court-layout",
       "new26-liji-first-blood-overall",
@@ -37585,7 +37428,7 @@
     "code": "M510",
     "object_id": "new26-s033-q10-video",
     "revision_id": "ae9e5e341243cc4bfec1193551c9d84c414a990d26e0aaa46d0bcf8e16676089",
-    "content_sha256": "423f92291968c5926454b05ae5bb828eec829d5520f8786e7ef14f17f764d970",
+    "content_sha256": "af74a76d4f79b2eb5d0d92349b5094a6eba09e332721edb867e4c7a95e8736af",
     "title": "先流泪，才哭出来 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -37631,7 +37474,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：阿蘅靠姐姐肩、牵李寄左手，女孩右伤手不受挤。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-back-court-layout",
       "new26-liji-first-blood-overall",
@@ -37725,7 +37567,7 @@
     "code": "M512",
     "object_id": "new26-s033-q12-video",
     "revision_id": "702cca00ed66c88e2b533cecd4758e28edb448e34b8be5624f943d13a30984bb",
-    "content_sha256": "acdb35d3b0ab6bea0d493764ea49f249dcf9ae03b63a1ed3ade04ad10f9dcaa3",
+    "content_sha256": "e24895eddde35486eda264c9e96d3c1e007f3fd1b153275db7fcf788b4d91fae",
     "title": "终于靠回父亲身上 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -37771,7 +37613,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：父女短相依，女孩右掌仍少血布、左额原伤不碰。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-back-court-layout",
       "new26-lidan-identity",
       "new26-liji-first-blood-overall",
@@ -37795,7 +37636,7 @@
     "code": "M513",
     "object_id": "new26-s033-q13-video",
     "revision_id": "65ce827dfb6453fc94705afc98bd75baf72a42a81fff0f9eba14114eb2d3a7e4",
-    "content_sha256": "7b14b7a8e3a9f1afee3e00f89b436e386e95facc3b894c2aeea36e522416e7d2",
+    "content_sha256": "ede8c7d2686607b7e9ac43ad2a9b81d6afac73a5bf6f6e4fecb6547a89b3c58c",
     "title": "把未点的灯带出去 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -37845,7 +37686,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：李绡带两女孩离院，灯由阿蘅持着且未点，程与石匠留后院处置。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-back-court-layout",
       "new26-cheng-identity",
       "new26-elders-identity",
@@ -37874,7 +37714,7 @@
     "code": "M522",
     "object_id": "new26-s034-q01-video",
     "revision_id": "e82e355e1d2d458750b0dd4371c55f8f553aa760fa954368420c1d2bb9560e4d",
-    "content_sha256": "0331717acee4dc0a932cfa489c22265238ca11e03a42a096ed67c01a20bd7479",
+    "content_sha256": "78e103baf0b384e4cac57c3a89be5de649e1326f5e9dd44ac8cf9f88950c0cd3",
     "title": "挨个看过才放心 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -37926,7 +37766,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：众人进院，灯李母持未点，李寄由姐姐扶稳。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-home-meal-kit-identity",
       "new26-li-home-layout",
       "new26-lidan-identity",
@@ -38017,7 +37856,7 @@
     "code": "M524",
     "object_id": "new26-s034-q03-video",
     "revision_id": "2a8b314e3f82637d00fab99876c76b8593cb67621a2e1f2b8b4ae7c336fc9ede",
-    "content_sha256": "0e8ee0ad4206c561d63c780b80dec152f647bba5bd7cac487def1068056ef077",
+    "content_sha256": "92219c501a4a2219563f25537136935cbea6b0108f839659466a9d6498e2e2d3",
     "title": "我们都回来了 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -38063,7 +37902,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：母女相拥，病母仍虚弱。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-mother-identity",
       "new26-aheng-voice",
       "new26-bedding-identity",
@@ -38086,7 +37924,7 @@
     "code": "M525",
     "object_id": "new26-s034-q04-video",
     "revision_id": "77cf744377b3aaa37e8b0333ac286ffdbfcb30044283142d2ad31118c19b568f",
-    "content_sha256": "3d72c6cd7417407fec56023aea2f01f6591f1f357cbab3230ba53a14735c4be5",
+    "content_sha256": "74162d02b453f4129baa17f7ee89bb19951e676c7f10b6bb2698397794183876",
     "title": "门留一道缝 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -38130,7 +37968,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：里屋可吃，门缝仍通院声。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-mother-identity",
       "new26-bedding-identity",
       "new26-home-meal-kit-identity",
@@ -38625,7 +38462,7 @@
     "code": "M533",
     "object_id": "new26-s034-q12-video",
     "revision_id": "bf0b2169abe84ee798db6467ad1606eddf012b366330c791e8f7b07bf778ae39",
-    "content_sha256": "3411b307bafb6baf9a88cacb441f73a9b45e98fcc98ccef28dbefa379c6d4c86",
+    "content_sha256": "44949eea743712d0b4fbe576cb2bd0c3c1336bd5516f7a46e557534c4b80fd1d",
     "title": "吃完这口再说 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -38676,7 +38513,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：汤未翻，热菜放稳，阿蘅尚未吃第一口。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-helpers-identity",
       "new26-home-meal-kit-identity",
       "new26-li-home-layout",
@@ -38705,7 +38541,7 @@
     "code": "M534",
     "object_id": "new26-s034-q13-video",
     "revision_id": "30586986170b83665114d778c78b648a888cba871ad9539bd748033069e3382b",
-    "content_sha256": "7e3bc2af3e5dc0c4a20d00c02e65275f053186bcd2fcf749d6700a580fb77b26",
+    "content_sha256": "637d5834263c0cd3c7b0763554958498b136ffae2752336407eccb67ac4a1a83",
     "title": "听见里屋也笑了 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -38748,7 +38584,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：阿蘅开始吃，家中各人在安稳声中。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-mother-voice",
       "new26-home-meal-kit-identity",
       "new26-li-home-layout"
@@ -39093,7 +38928,7 @@
     "code": "M540",
     "object_id": "new26-s036-q01-first-frame",
     "revision_id": "5b7ed6212f1fda89eaf5daa3c658302feaf9b4a4500fb1875a523af7e4439b4e",
-    "content_sha256": "ce2863b7b166a00b9e864b6f2082ce4ba5b8edea6eabe637cf177bb051c237fa",
+    "content_sha256": "a64774fee4f684b62bc08ce03e1f864b8e9ffa731e4638d9188268e769b5205f",
     "title": "先指给自己开脱的两个字 · 起点画面",
     "category": "shot-image",
     "scope_kind": "AV_SHOT",
@@ -39148,7 +38983,6 @@
       "沿最深参考谱系计算本图代数，不因新名称重置；生成后实际看全貌与关键部位，不将设计通过当媒体验收。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-cheng-identity",
       "new26-county-deputy-identity",
       "new26-county-room-layout",
@@ -39176,7 +39010,7 @@
     "code": "M541",
     "object_id": "new26-s036-q01-video",
     "revision_id": "0d5824f2299d644f6d80d02915c9b03f85a9f8972f0c54f219928fa583058cbc",
-    "content_sha256": "7022e604a07a6570ca5da63292dd77221735ae21c4e1dfa8cd0d28e0e09d3d14",
+    "content_sha256": "0f8f890873214085bda156fa7a96bdda079646264f9a8cc344d8fe9180e7ec16",
     "title": "先指给自己开脱的两个字 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -39230,7 +39064,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：赵手仍指贴纸，阿蘅将转今年册。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-cheng-identity",
       "new26-county-deputy-identity",
       "new26-county-room-layout",
@@ -39262,7 +39095,7 @@
     "code": "M542",
     "object_id": "new26-s036-q02-video",
     "revision_id": "cc9e46c4c7dc8d70dd65a4aa0f4e3d73278f6758a7935af8a37f00f27671ddc8",
-    "content_sha256": "86ad1553599daac42fc51fa9989818129040ce304fdc15a8c1fb81b772ef93f6",
+    "content_sha256": "5bd6da1531b68a1abb65567fe6d55e0d37674664c042eccf1d88c161b060246f",
     "title": "名字和日子都已经写了 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -39313,7 +39146,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：今年册被程按住，赵指向巫祝。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-cheng-identity",
       "new26-cheng-voice",
@@ -40171,7 +40003,7 @@
     "code": "M554",
     "object_id": "new26-s036-q14-video",
     "revision_id": "f1081ce9603f10d435b536fd714d1a418bca6a00c7c5c994dc9dd0af54435618",
-    "content_sha256": "37e18724f8c75f4471832eef89c5fc7426c5d4f9c531ffc012b655b5b4279712",
+    "content_sha256": "0a32903411c50c29e31795360cf1055f14d70c650dc1f4061f6b5342e6f34a93",
     "title": "等到收妥才走 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -40223,7 +40055,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：女孩相牵离堂，陶与母亲仍候封卷，没有被赶走。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-county-corridor-layout",
       "new26-county-room-layout",
       "new26-elders-identity",
@@ -40697,7 +40528,7 @@
     "code": "M576",
     "object_id": "new26-s037-q06-video",
     "revision_id": "eba1fe288b572ee1a4f3ae2a49fba7fae389305ce95df397778db0d5825b7b50",
-    "content_sha256": "f8d50883645e77b2d908e558380e43d7318f5ea48ef56fc9ce2629d4a21a46f0",
+    "content_sha256": "f0db622038d91d0c82aa3e62bb0c6f119afbc3e6adcda753637416eede0d61ae",
     "title": "这次记明，不抵前责 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -40744,7 +40575,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：两段责任已听全，父亲即将抬头。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-approval-paper-identity",
       "new26-book-dry-sheets-overall",
       "new26-cheng-identity",
@@ -40771,7 +40601,7 @@
     "code": "M577",
     "object_id": "new26-s037-q07-video",
     "revision_id": "d85b2bfcab84db267bdfa37149564cc9e2b87bcdc74fac3cabd5f2ec8d214681",
-    "content_sha256": "2a03921d8c820f95afa8a467bb332d10fb373bc9a4b9ff3978f4de0a3050b3f5",
+    "content_sha256": "7595062ff523f3d8042c3c95b7ef4a517fe69c103101fde267dbc33dfca6a509",
     "title": "把旧批文贴在旁边 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -40819,7 +40649,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：两抄件贴墙，原件仍在郡卷。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-approval-paper-identity",
       "new26-book-dry-sheets-overall",
       "new26-cheng-identity",
@@ -40980,7 +40809,7 @@
     "code": "M580",
     "object_id": "new26-s037-q10-video",
     "revision_id": "0b2bb3f65867ff5043ea0ec5a0235c8ac207541d611d3a34d69ee934de3bb433",
-    "content_sha256": "efbcbf6a32432ea821eff59fd06031c1c35b1b6d55df655ce1120f50354361ac",
+    "content_sha256": "b223a82b77dc0f420a83917c3569376805747508f1d98c8eed66695907e52e40",
     "title": "找到自己的名字 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -41029,7 +40858,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：阿蘅离墙往仓院，李寄同行。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-book-dry-sheets-overall",
       "new26-liji-healed-overall",
@@ -41056,7 +40884,7 @@
     "code": "M581",
     "object_id": "new26-s037-q11-video",
     "revision_id": "f6060d51162eca2d677f1b950c541b0ac78321f51894b3e259194a2caee23ba6",
-    "content_sha256": "d1f7e8173bee87bd0aa282f92fc343dc6951bb15dffaa64862df40b0ffe625ef",
+    "content_sha256": "a9ac290b255d088ce01c3441a7713e8bc994e1ecd7dd2c62b9b1e150300b8be8",
     "title": "四升也要算进去 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -41106,7 +40934,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：账已解释，阿蘅仍要核最后一行。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-book-dry-sheets-overall",
       "new26-grain-manager-identity",
@@ -41134,7 +40961,7 @@
     "code": "M582",
     "object_id": "new26-s037-q12-video",
     "revision_id": "51a9d383c93b5ce995d3bfc118bd743843a102c59a110ae319c0d9641550e91c",
-    "content_sha256": "4f2a4a93580d985bf963d6426de128696f6574b9d37e51d81eb08e5b165eb79c",
+    "content_sha256": "1554b24e24764b5b8257131bdc4355ed66d112ada34768862ca9e2af4532619d",
     "title": "后面有人等，也要读完 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -41182,7 +41009,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：她指向末行等管事。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-book-dry-sheets-overall",
       "new26-grain-manager-identity",
@@ -41258,7 +41084,7 @@
     "code": "M584",
     "object_id": "new26-s037-q13-video",
     "revision_id": "134607fd69d1ede9eeb3d0c345e306d49d60c64d23bba20b3381abfce3dff7f0",
-    "content_sha256": "37e97940c1ba0294fa224763637dbe422dbca2a57e837951244729dd258153ab",
+    "content_sha256": "3acf476f67719987cb5f3ab2746116555a702b2b8b0a7cce3b99ca0dd50c401c",
     "title": "我们留着凭据 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -41305,7 +41131,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：凭据夹本内，父亲持本，两女孩能用双手接粮。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-book-dry-sheets-overall",
       "new26-clearance-receipt-identity",
       "new26-grain-manager-identity",
@@ -41332,7 +41157,7 @@
     "code": "M585",
     "object_id": "new26-s037-q14-video",
     "revision_id": "1134ad4e1cda756e8478c97d044693a10e6478a660645dd2e2a454c99bf108d6",
-    "content_sha256": "caa83e59ca83dea9e5c1d88aeefb787ffb9b9a80dcc8640341b5488b0fbfb1ed",
+    "content_sha256": "91af44741b4e0418633e45c35c19628c6c46aec3b8dc8bfda48121649ea47a37",
     "title": "两人稳稳接住 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -41379,7 +41204,6 @@
       "连读落点：有粮袋放稳近门台面、空斗回桌，下一镜才能空手系绳。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-grain-manager-identity",
       "new26-granary-layout",
@@ -41404,7 +41228,7 @@
     "code": "M586",
     "object_id": "new26-s037-q15-video",
     "revision_id": "3a3f77de9756e6358d829ff25e080ce2569bd02f5465a8463678d0eb1885fe70",
-    "content_sha256": "6e1b814a8091ccf638b8617a75327620e120f5f060c2309511bbbfa3c8e37258",
+    "content_sha256": "326c099af75c9b5c09a88ad3ccb303bb9c66e5d72e3393b2bc88b400825f0c01",
     "title": "书和袋各有一双手 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -41448,7 +41272,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：父亲提粮袋，阿蘅抱歌本，李寄两手空。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-book-dry-sheets-overall",
       "new26-granary-layout",
       "new26-lidan-identity",
@@ -41472,7 +41295,7 @@
     "code": "M587",
     "object_id": "new26-s037-q16-video",
     "revision_id": "1a424a729632afd9d24c9fe986e2980aaebf3e6e279cbfe455b8284d400a81ae",
-    "content_sha256": "49b0678613f5c0d0b0492990a36feab00df44e25305fe29c603a208110e7cb11",
+    "content_sha256": "f54833cb29e40acb853490816985ac81ec7d33773b7740075c601a071261c834",
     "title": "这回自己也留一份 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -41525,7 +41348,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：一家带粮与凭据离庙，歌曲尚未补齐。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-book-dry-sheets-overall",
       "new26-lidan-identity",
@@ -41555,7 +41377,7 @@
     "code": "M588",
     "object_id": "new26-s038-q01-video",
     "revision_id": "6ac2923c633d6716df309105976bd841f018f82772c863d6a03545e12dcdeb4e",
-    "content_sha256": "c136e9a1ae5929cdeedcf013a849dc120dc440207214fee12aaba82dbbdb8e4e",
+    "content_sha256": "6ba6839683506cb1a319c43ff6b3061f4106e2f111018799b375bd1541436e5e",
     "title": "回家还要慢慢来 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -41604,7 +41426,6 @@
     "waiting_for_new_originals": [
       "new26-aheng-home-layout",
       "new26-aheng-home-river-ambience",
-      "new26-aheng-identity",
       "new26-aheng-mother-identity",
       "new26-aheng-mother-voice",
       "new26-bedding-identity",
@@ -41628,7 +41449,7 @@
     "code": "M589",
     "object_id": "new26-s038-q02-video",
     "revision_id": "c86ceecb3ae43efc9f5bebc8e4fe5a27c47553a4bd14db35cd81c25cb1e52f20",
-    "content_sha256": "71bf03229d74e3f0ac4e56121f31b07f78fff1bf9dedf736ba301998a9ef8af9",
+    "content_sha256": "118850cdd75310fd0e87aebed8572549020e17507854fb8cc665fa38f7e0f4b4",
     "title": "先问想怎么补 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -41679,7 +41500,6 @@
     "waiting_for_new_originals": [
       "new26-aheng-home-layout",
       "new26-aheng-home-river-ambience",
-      "new26-aheng-identity",
       "new26-book-dry-sheets-overall",
       "new26-home-meal-kit-identity",
       "new26-liji-healed-overall",
@@ -41704,7 +41524,7 @@
     "code": "M590",
     "object_id": "new26-s038-q03-video",
     "revision_id": "8064dfa6abdf9741b6632e144a57f9dd2db39b037c87368b7ab8b2cefa6c26c6",
-    "content_sha256": "c70277cdeab6f9f70f00aa5a4435c2220331d069ffa500882cde15630476d17a",
+    "content_sha256": "7f7799aed1e1b8a941508c39bb474401b3dc6ccbf4020f6cc84407c1d530e2da",
     "title": "先去问，带这一页 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -41755,7 +41575,6 @@
     "waiting_for_new_originals": [
       "new26-aheng-home-layout",
       "new26-aheng-home-river-ambience",
-      "new26-aheng-identity",
       "new26-aheng-mother-identity",
       "new26-aheng-voice",
       "new26-book-dry-sheets-overall",
@@ -41780,7 +41599,7 @@
     "code": "M591",
     "object_id": "new26-s038-q04-video",
     "revision_id": "eb502347210c30b37092a28d98fa5bec6e2601a47f80f643dc38303d79cbe7d2",
-    "content_sha256": "ebbaffc603998c86c7863e06fb025ab661f216bfd40e14378de7caee0568a6e5",
+    "content_sha256": "f5febc9921a4aae60c08e6a5ab9394c9b17ec90da3ed7d75d1f2c973f4e06f44",
     "title": "停在同一个地方 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -41831,7 +41650,6 @@
     "waiting_for_new_originals": [
       "new26-aheng-home-layout",
       "new26-aheng-home-river-ambience",
-      "new26-aheng-identity",
       "new26-aheng-mother-identity",
       "new26-aheng-mother-voice",
       "new26-book-dry-sheets-overall",
@@ -41855,7 +41673,7 @@
     "code": "M592",
     "object_id": "new26-s038-q05-video",
     "revision_id": "9293715ef767386f93022e85059a6bd5c7eb61e486eb93b14a0ac1a0ad3330e5",
-    "content_sha256": "2c3c3cfffb4553408c18faeda8808c55a6fb128da434ae56a41ce4e63c70f88e",
+    "content_sha256": "a20274581d774b4d99ce7cfe00ee15f6cf418c4f97a46a76bc1ec6da010395dd",
     "title": "等她包好再收碗 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -41904,7 +41722,6 @@
     "waiting_for_new_originals": [
       "new26-aheng-home-layout",
       "new26-aheng-home-river-ambience",
-      "new26-aheng-identity",
       "new26-book-dry-sheets-overall",
       "new26-home-meal-kit-identity",
       "new26-liji-healed-overall",
@@ -41928,7 +41745,7 @@
     "code": "M593",
     "object_id": "new26-s039-q01-video",
     "revision_id": "bb8858b201e745b9b2401254085fda05b01029a5ecb9795a08c33fda98c1da17",
-    "content_sha256": "c98cbd16abe961191dfe5fe65c0a09cd312809d8de7b882532c661d7dc23bd25",
+    "content_sha256": "fa4251eea748bb39a2456d14717c979def66a6cc46c9e0c7e7c0b2c8817d63bb",
     "title": "先唱给我听 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -41974,7 +41791,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：两女孩坐定，两纸在夹板，歌娘将看。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-book-dry-sheets-overall",
       "new26-liji-healed-overall",
       "new26-performance-laundry-identity",
@@ -42000,7 +41816,7 @@
     "code": "M594",
     "object_id": "new26-s039-q02-video",
     "revision_id": "6df45277609d4426cb2e62973393843dbc8e1162f01ae707ac24443d72db9298",
-    "content_sha256": "ba61dcc918202c468e96ee4954c546259d804334bf41d19db65d6c5ed6353ce4",
+    "content_sha256": "d2a90100f5b510c45b22473cd9f8dcc98a2b3cc68e5ccee8dc6f907ba58df270",
     "title": "先听她已有的部分 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -42047,7 +41863,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：阿蘅准备随拍起唱，李寄持笔待。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-book-dry-sheets-overall",
       "new26-liji-healed-overall",
       "new26-s039-q06-full-verse",
@@ -42073,7 +41888,7 @@
     "code": "M595",
     "object_id": "new26-s039-q03-video",
     "revision_id": "ca97420c9ea41bd8d0a89e483039c2dbfc3165c95104906091f06de0eb3fd306",
-    "content_sha256": "eaf063531efd91b66395ee5015337a53cf336a612a711eb669758a5b56b58b4b",
+    "content_sha256": "342c1c995c5aebb555493caad99b63718ee934b249e1526d50210b9345811585",
     "title": "唱到缺词处 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -42122,7 +41937,6 @@
       "将剧中实唱/哼调逐句与已选完整原曲比较，同时核角色声线、该场已知歌词和跨镜同一次尾音；完整作品的其他段落不自动进入影片。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-book-dry-sheets-overall",
       "new26-liji-healed-overall",
       "new26-qingpeng-singing",
@@ -42148,7 +41962,7 @@
     "code": "M596",
     "object_id": "new26-s039-q04-video",
     "revision_id": "14918755d7c3da29064ba4300f68c2b29cd430f5a23843780f4c45bd8352d7bd",
-    "content_sha256": "da3de6f49827443e0ec614db76b1c6e7b0c6ebcc0ddde784832052c0d4fbd573",
+    "content_sha256": "331e74d4242a49b8f2e50e5389cd412279193e24d1cf5cd5eeb16fca9b683809",
     "title": "失去的四句回来了 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -42196,7 +42010,6 @@
       "将剧中实唱/哼调逐句与已选完整原曲比较，同时核角色声线、该场已知歌词和跨镜同一次尾音；完整作品的其他段落不自动进入影片。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-book-dry-sheets-overall",
       "new26-liji-healed-overall",
       "new26-qingpeng-singing",
@@ -42223,7 +42036,7 @@
     "code": "M597",
     "object_id": "new26-s039-q05-video",
     "revision_id": "10bac6990f705ded80a463277214b14dba80aa80eb2858d818a88bd947a5729d",
-    "content_sha256": "761474fc74b6558f080157b54474eb89fbb2406489dd2e921ffd715b1f047fc2",
+    "content_sha256": "dcccbe69240c214a47b4a81a34486c8f90c990e9a7722c853e7827a320c13b39",
     "title": "是过，还是认 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -42272,7 +42085,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：歌娘准备慢唱，李寄笔仍待末字。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-book-dry-sheets-overall",
       "new26-liji-healed-overall",
       "new26-liji-voice",
@@ -42363,7 +42175,7 @@
     "code": "M599",
     "object_id": "new26-s039-q06-video",
     "revision_id": "9770f3a0439f51affe270b5747193595966b7ac18dabb2cf0299e9bba09606d3",
-    "content_sha256": "f5fef54ced9ab4831bd24d1b1c4c774cbf6209e338f79872f0f9be60787ca776",
+    "content_sha256": "dbc4e238b90699c4aad24db0f5da80cebd5a32efa1bb470ad53e7a70699bc898",
     "title": "归来之后，三个字听清 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -42412,7 +42224,6 @@
       "将剧中实唱/哼调逐句与已选完整原曲比较，同时核角色声线、该场已知歌词和跨镜同一次尾音；完整作品的其他段落不自动进入影片。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-book-dry-sheets-overall",
       "new26-liji-healed-overall",
       "new26-qingpeng-singing",
@@ -42439,7 +42250,7 @@
     "code": "M600",
     "object_id": "new26-s039-q07-video",
     "revision_id": "c4d83dc3dad2767d4a904cc17d72d1cd24f49398d38eac6d58d64c9189dd66d4",
-    "content_sha256": "7c0a397ef27eb64411a240ec29b7a62a2065f2d99636b3a4f3ad3e7c0fbe5b18",
+    "content_sha256": "c7bb6984dc847362f2262dec3a6b44b80b52eeb6b4d3b22678c08742842d7c46",
     "title": "这一次自己往下唱 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -42488,7 +42299,6 @@
       "将剧中实唱/哼调逐句与已选完整原曲比较，同时核角色声线、该场已知歌词和跨镜同一次尾音；完整作品的其他段落不自动进入影片。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-book-dry-sheets-overall",
       "new26-liji-healed-overall",
@@ -42515,7 +42325,7 @@
     "code": "M601",
     "object_id": "new26-s039-q08-video",
     "revision_id": "899b1b4e1e13424760be94f3a6303814cdd4dcae7baaaa7d8647b92aaaa7e4db",
-    "content_sha256": "7ba181f7aa918fe67064ba3ee4a44c82e9ee86f48dbe9942ef0aa70c32ffd353",
+    "content_sha256": "7ce212a8a42a7888b4dfb29f6ab5b8823363d3ad3f3c0c2be898edcd7d541c25",
     "title": "换气之后，认旧桥 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -42561,7 +42371,6 @@
       "将剧中实唱/哼调逐句与已选完整原曲比较，同时核角色声线、该场已知歌词和跨镜同一次尾音；完整作品的其他段落不自动进入影片。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-qingpeng-singing",
       "new26-s039-q06-full-verse",
@@ -42585,7 +42394,7 @@
     "code": "M602",
     "object_id": "new26-s039-q09-video",
     "revision_id": "01aec712652e77cff37237e6d089843926791b00a3632eaecc8cdb91af12c7a9",
-    "content_sha256": "b6ea6d3f0d1469b238f6c380ecb9c852108b23e60c0460018ff0ed4a4192fe31",
+    "content_sha256": "4771d4ccf45b678d3de341291f90c4ea29fbe2138e2a96f2e6c8996e512546ba",
     "title": "连上了 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -42631,7 +42440,6 @@
       "将剧中实唱/哼调逐句与已选完整原曲比较，同时核角色声线、该场已知歌词和跨镜同一次尾音；完整作品的其他段落不自动进入影片。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-qingpeng-singing",
       "new26-s039-q06-full-verse",
       "new26-song-teacher-identity",
@@ -42655,7 +42463,7 @@
     "code": "M603",
     "object_id": "new26-s039-q10-video",
     "revision_id": "76cc2a9a9d085963fe4888b4e2fe9d8eade94e55d4577112109b7ebf7ba47096",
-    "content_sha256": "909cb8e695f2073201037d00cd60727a3491352e4cc6a0deb6ad109e2edc7035",
+    "content_sha256": "d773e7ac9984e8039c11380e9a884f8f9dfb512c1fee88e5f9ee29b8d6a0ea27",
     "title": "这回只听，不赶着记 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -42703,7 +42511,6 @@
       "将剧中实唱/哼调逐句与已选完整原曲比较，同时核角色声线、该场已知歌词和跨镜同一次尾音；完整作品的其他段落不自动进入影片。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-book-dry-sheets-overall",
       "new26-liji-healed-overall",
       "new26-performance-laundry-identity",
@@ -42729,7 +42536,7 @@
     "code": "M608",
     "object_id": "new26-s040-q01-first-frame",
     "revision_id": "c3f99c53bdd845d95899663af3eaec81414a6b97432ebf3f32694c9f8cf09707",
-    "content_sha256": "5b7d29dc6c2e73390f882226b973fa21c842d4b1a6f2c011f7ee724746f27a06",
+    "content_sha256": "01782ac07bc43f4a570f103ca68c3f6daa57a01570136d6d9e70a7747f42e76a",
     "title": "灯下慢念 · 起点画面",
     "category": "shot-image",
     "scope_kind": "AV_SHOT",
@@ -42781,7 +42588,6 @@
     ],
     "waiting_for_new_originals": [
       "new26-aheng-home-layout",
-      "new26-aheng-identity",
       "new26-aheng-mother-identity",
       "new26-book-dry-sheets-overall",
       "new26-home-oil-lamps-identity",
@@ -42806,7 +42612,7 @@
     "code": "M609",
     "object_id": "new26-s040-q01-video",
     "revision_id": "04bd0a4ff6e156b8adfbcc2f07590c5e6a50a5d98ff254e6354e13c483df65c9",
-    "content_sha256": "e4faf63fe67e1e091b127746b85065fdeb699dd097fef0b5a79962633dd8ba30",
+    "content_sha256": "d457acf864e1e9f7bcadfbec844b4e8b3bf88d0c3bc47cad41a665ec03eddc40",
     "title": "灯下慢念 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -42853,7 +42659,6 @@
       "将剧中实唱/哼调逐句与已选完整原曲比较，同时核角色声线、该场已知歌词和跨镜同一次尾音；完整作品的其他段落不自动进入影片。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-mother-identity",
       "new26-aheng-voice",
       "new26-liji-healed-overall",
@@ -42879,7 +42684,7 @@
     "code": "M610",
     "object_id": "new26-s040-q02-video",
     "revision_id": "12ab7825e1c53a9480d21e340bd1377a173f3e08dcf4f6f6116174a8feaa7dd0",
-    "content_sha256": "3c085c8fb0c351d4d8b7cc8e98e00e005ff1954acbe2af20172cf4b3c1cf7a54",
+    "content_sha256": "44e1bbfeb22c6db82d4b3247e803906b9858a3c8410d776fcd7ba4a4e7d6432e",
     "title": "先停下，再交笔 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -42929,7 +42734,6 @@
     ],
     "waiting_for_new_originals": [
       "new26-aheng-home-layout",
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-book-dry-sheets-overall",
       "new26-home-oil-lamps-identity",
@@ -42954,7 +42758,7 @@
     "code": "M611",
     "object_id": "new26-s040-q03-video",
     "revision_id": "fb24733a0bb415f0388985b5a8d09c0dec1659300fb57035dc52821f74edc95e",
-    "content_sha256": "c5a69094d13ff4e6f6a86d79faf73a18f4d35fe69fd9dd4bf98b51f8194b64c9",
+    "content_sha256": "2e7f950325de81ecdcae57a00dd39ba917b8f47d1f3100a0a57f83f54936caca",
     "title": "等她一字字写 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -43003,7 +42807,6 @@
     ],
     "waiting_for_new_originals": [
       "new26-aheng-home-layout",
-      "new26-aheng-identity",
       "new26-book-dry-sheets-overall",
       "new26-home-oil-lamps-identity",
       "new26-liji-healed-overall",
@@ -43028,7 +42831,7 @@
     "code": "M612",
     "object_id": "new26-s040-q04-video",
     "revision_id": "cd8d09b1ed6e6fb9c2f39823459c1d0a653d04d35aeafbfa2f8a1014a049d472",
-    "content_sha256": "1b606af570f83a954801dd4c0ddd1d578c7d097b0f589cd0b91d9242dfae4190",
+    "content_sha256": "275621e12d3b6d7841be0e343e8f56ee169a624f22a09b0c287d9b4ae785940a",
     "title": "最后一行，自己看着抄 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -43074,7 +42877,6 @@
     ],
     "waiting_for_new_originals": [
       "new26-aheng-home-layout",
-      "new26-aheng-identity",
       "new26-book-dry-sheets-overall",
       "new26-home-oil-lamps-identity",
       "new26-liji-healed-overall",
@@ -43098,7 +42900,7 @@
     "code": "M613",
     "object_id": "new26-s040-q05-video",
     "revision_id": "d9b1bd5e0e8b017f9afafc1f288ad3f76b18cc74199afa02c82f01a5359dfb58",
-    "content_sha256": "6a15ea0817b9b20a3f92e0b25d2af5f83d35ae0a986ca7f4610734df27cbde8c",
+    "content_sha256": "774dd07275af8aca7b8a9cd44208ef6e22775ef63db1c352ce9f096663d8e947",
     "title": "越过熟悉的两句 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -43145,7 +42947,6 @@
     ],
     "waiting_for_new_originals": [
       "new26-aheng-home-layout",
-      "new26-aheng-identity",
       "new26-book-dry-sheets-overall",
       "new26-home-oil-lamps-identity",
       "new26-liji-healed-overall",
@@ -43169,7 +42970,7 @@
     "code": "M614",
     "object_id": "new26-s040-q06-video",
     "revision_id": "e3f86cd581b1d723942230085ebe5b9e3985850e64da459bfdd536937b68580f",
-    "content_sha256": "84b60d0484fc6184e8b1caef4b5e04c768622f9f1953e6e2a3a47031308215a1",
+    "content_sha256": "ec654894d6119f81c11f423c3c4cb1f205912041924a0a90cf118c470fde5618",
     "title": "空白处没有停住 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -43221,7 +43022,6 @@
     ],
     "waiting_for_new_originals": [
       "new26-aheng-home-layout",
-      "new26-aheng-identity",
       "new26-aheng-mother-identity",
       "new26-aheng-mother-voice",
       "new26-aheng-voice",
@@ -43248,7 +43048,7 @@
     "code": "M615",
     "object_id": "new26-s040-q07-video",
     "revision_id": "2b2cda24ec9313045b1ff015d407387d8e4ff312cdd2f6e8b483338025d48fc3",
-    "content_sha256": "a35b4081f1103ba39db44a329c11e18b7479dea1cff41cf4aba12911a7e18f41",
+    "content_sha256": "de16c15421ede7f9a3cb317b59ac3cfc2278f28c443c5e0ef20fa5923c021387",
     "title": "旧页留在本后 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -43294,7 +43094,6 @@
     ],
     "waiting_for_new_originals": [
       "new26-aheng-home-layout",
-      "new26-aheng-identity",
       "new26-binding-kit-identity",
       "new26-book-dry-sheets-overall",
       "new26-home-oil-lamps-identity",
@@ -43318,7 +43117,7 @@
     "code": "M616",
     "object_id": "new26-s040-q08-first-frame",
     "revision_id": "99863859acc1c11434eadae7bd804ada04b40050e2a2dabf02f7180918c780dc",
-    "content_sha256": "0fb15e04191ae3704474242a1d26317f52d86fa93b0c1d456870d16b5466b776",
+    "content_sha256": "6a8958349e6ae8c9bf7b6069f161c39ed0d151e22246b0e13b04e7aa0a1eece5",
     "title": "最后一针，还要翻一遍 · 起点画面",
     "category": "shot-image",
     "scope_kind": "AV_SHOT",
@@ -43370,7 +43169,6 @@
     ],
     "waiting_for_new_originals": [
       "new26-aheng-home-layout",
-      "new26-aheng-identity",
       "new26-binding-kit-identity",
       "new26-book-dry-sheets-overall",
       "new26-home-oil-lamps-identity",
@@ -43394,7 +43192,7 @@
     "code": "M617",
     "object_id": "new26-s040-q08-video",
     "revision_id": "b052d1203c807b786fafaf80f11741e7d5b03384ad51de8c0cdd49e8b988797e",
-    "content_sha256": "c3a83be2b5eb8f74b3a231b319ae43ce854d70f32fc893b6ad7a95cf38e2888c",
+    "content_sha256": "2765b40d0d8babd842ddc4a80c5fed2d0dac5293f8076c5c5c965d76edffadc2",
     "title": "最后一针，还要翻一遍 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -43439,7 +43237,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：新旧纸已同本订牢，新页平展，旧皱页夹后。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-binding-kit-identity",
       "new26-home-oil-lamps-identity",
       "new26-liji-healed-overall",
@@ -43463,7 +43260,7 @@
     "code": "M618",
     "object_id": "new26-s040-q09-video",
     "revision_id": "8f5cc63fe9334e50d05b6a9b6237a0382880680ca5ab762d6a1e2fde7f4a91a0",
-    "content_sha256": "28c724dd4f646b7352dfecc1af9acd72fca59031074f6f99fff29c732258b027",
+    "content_sha256": "425c2a91b6b1a110a59dbdf125add2dc432f3e2c718477486100f98da0886442",
     "title": "用没有受伤的手指摸摸 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -43508,7 +43305,6 @@
     ],
     "waiting_for_new_originals": [
       "new26-aheng-home-layout",
-      "new26-aheng-identity",
       "new26-book-rebound-overall",
       "new26-home-oil-lamps-identity",
       "new26-liji-healed-overall",
@@ -43531,7 +43327,7 @@
     "code": "M619",
     "object_id": "new26-s040-q10-video",
     "revision_id": "824a58bdce16630ed3d5ae17a2024b5bd6368dac5199c1fb0c4c7ec961c07308",
-    "content_sha256": "d59f56274bcc35b3447e5727fcbf863cd0d2831f966966fb40405ca13af3d934",
+    "content_sha256": "d4e557551c3b5eafb506468ca2c8e889922ad434e01b64448208640b272e02e0",
     "title": "书留给她，自己回家 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -43578,7 +43374,6 @@
     ],
     "waiting_for_new_originals": [
       "new26-aheng-home-layout",
-      "new26-aheng-identity",
       "new26-book-rebound-overall",
       "new26-home-oil-lamps-identity",
       "new26-liji-healed-overall",
@@ -43931,7 +43726,7 @@
     "code": "M625",
     "object_id": "new26-s041-q04-first-frame",
     "revision_id": "b87ad7cee10802b34d157143ba11a4bc313f0e2c13575c484eb91962565581ad",
-    "content_sha256": "14f4237bdeda815383683dd375744c4970dfca76123d3fcaeb287ee2092deb44",
+    "content_sha256": "2a29681b8547784becf3e49df6dcdaab051d1690d35a5278a6fe1264715582ca",
     "title": "暮色里最后一首 · 起点画面",
     "category": "shot-image",
     "scope_kind": "AV_SHOT",
@@ -43981,7 +43776,6 @@
       "沿最深参考谱系计算本图代数，不因新名称重置；生成后实际看全貌与关键部位，不将设计通过当媒体验收。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-mother-identity",
       "new26-book-rebound-overall",
       "new26-curtain-identity",
@@ -44006,7 +43800,7 @@
     "code": "M626",
     "object_id": "new26-s041-q04-video",
     "revision_id": "f9d3df789e5b53ac0e240d96a954764c4c269fe062d03c55805fa195043765f3",
-    "content_sha256": "a21e0759cd64f0b697cb7f81e8a1c1cb1d36a8a561dc2e1e1aa3958dcc79c8df",
+    "content_sha256": "c3746e9026c0788758c365ce3e2b78f4cd31d6da174cce158cb35dbe7d23d190",
     "title": "暮色里最后一首 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -44051,7 +43845,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：歌本翻好，阿蘅准备起首段。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-mother-identity",
       "new26-book-rebound-overall",
       "new26-liji-healed-overall",
@@ -44075,7 +43868,7 @@
     "code": "M627",
     "object_id": "new26-s041-q05-video",
     "revision_id": "330eb6562de3e66304cbb49db1ef8515af228f67ae9797692b6ca063678bdeb9",
-    "content_sha256": "78ce51428426531349df5e1c4b64268eb1938a8d2065254b17c0c397755e8625",
+    "content_sha256": "0a99ca4e1c975bad3488717fc74ad35bc61e3e19451f279a8ce6e5150704dfd4",
     "title": "青篷起，水轻摇 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -44118,7 +43911,6 @@
       "将剧中实唱/哼调逐句与已选完整原曲比较，同时核角色声线、该场已知歌词和跨镜同一次尾音；完整作品的其他段落不自动进入影片。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-curtain-identity",
       "new26-drying-ground-layout",
       "new26-qingpeng-singing"
@@ -44140,7 +43932,7 @@
     "code": "M628",
     "object_id": "new26-s041-q06-video",
     "revision_id": "e4e88f330337f92b96e9a61cda28407248e40420b66c4d9408a71ef4ef09a99f",
-    "content_sha256": "8575abf270f8826143c9b0e1b34a0a31be919a50d3533de9f0745d3e091fd786",
+    "content_sha256": "2b1c697ec0e01ca53f4e802b386a6aa141e6a048bd61f08298397d5d69974042",
     "title": "叮咛还未了 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -44183,7 +43975,6 @@
       "将剧中实唱/哼调逐句与已选完整原曲比较，同时核角色声线、该场已知歌词和跨镜同一次尾音；完整作品的其他段落不自动进入影片。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-curtain-identity",
       "new26-drying-ground-layout",
       "new26-qingpeng-singing"
@@ -44205,7 +43996,7 @@
     "code": "M629",
     "object_id": "new26-s041-q07-video",
     "revision_id": "48f8ddf5c698b1b2765cb5337f3e7c59e73c100408e6a9eb0d8d03635e59b19b",
-    "content_sha256": "078552e7b6661fd0eba4a18d2706a42d701c18f9de6183613d9fb3b6ce7090d5",
+    "content_sha256": "bc773a7221c534811a2fc9c57c622d904f56ae0e36e37c1fd9e7feac60c03887",
     "title": "换一口气，再到河湾 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -44250,7 +44041,6 @@
       "将剧中实唱/哼调逐句与已选完整原曲比较，同时核角色声线、该场已知歌词和跨镜同一次尾音；完整作品的其他段落不自动进入影片。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-mother-identity",
       "new26-curtain-identity",
       "new26-drying-ground-layout",
@@ -44342,7 +44132,7 @@
     "code": "M631",
     "object_id": "new26-s041-q09-video",
     "revision_id": "b1183ef12fd0a8dd4eeb3f1bd61174ee4035e0ec0981d6e35259120790cfe80e",
-    "content_sha256": "4cd27c05d45b68a2f67d520d4eb1dfd36189ff2d4870f13d887b7a8ca399b22c",
+    "content_sha256": "79393921f2caad78641a78c70adc8ba9b703e0cb0d762650178bc2edea318375",
     "title": "隔水灯相照 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -44385,7 +44175,6 @@
       "将剧中实唱/哼调逐句与已选完整原曲比较，同时核角色声线、该场已知歌词和跨镜同一次尾音；完整作品的其他段落不自动进入影片。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-curtain-identity",
       "new26-drying-ground-layout",
       "new26-qingpeng-singing"
@@ -44407,7 +44196,7 @@
     "code": "M632",
     "object_id": "new26-s041-q10-video",
     "revision_id": "13976991865b7d334f5311516cee5b74a709a069b5aedf48b858add6a0ccef21",
-    "content_sha256": "fb7c70b9f7b2a6d3a54cfe9894b14c6c1a4e28fc6adb75dea8e8c1f7967f1891",
+    "content_sha256": "8e6fb2a76c8129748aee2634adc4f6d1d2f81005d2c09db64431e8031abab6a2",
     "title": "归来认旧桥 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -44450,7 +44239,6 @@
       "将剧中实唱/哼调逐句与已选完整原曲比较，同时核角色声线、该场已知歌词和跨镜同一次尾音；完整作品的其他段落不自动进入影片。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-curtain-identity",
       "new26-drying-ground-layout",
       "new26-qingpeng-singing"
@@ -44472,7 +44260,7 @@
     "code": "M633",
     "object_id": "new26-s041-q11-video",
     "revision_id": "7f1e06f0418502c01d2b8c6c62d4e19479dd976a6ef7311cdec724cf56272c6a",
-    "content_sha256": "5130994d1e189a47e4bc84c5aceef3f5c8360553e4ca667d26ecad1aee0fbcf0",
+    "content_sha256": "e0906889e337feb5b58dd62698b87509fd5d2e0dcaa50dbc24a025804d72d219",
     "title": "先收住最后的音 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -44519,7 +44307,6 @@
       "将剧中实唱/哼调逐句与已选完整原曲比较，同时核角色声线、该场已知歌词和跨镜同一次尾音；完整作品的其他段落不自动进入影片。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-book-rebound-overall",
       "new26-curtain-identity",
       "new26-drying-ground-layout",
@@ -44606,7 +44393,7 @@
     "code": "M635",
     "object_id": "new26-s041-q13-video",
     "revision_id": "4ce6c8ec77f5b9ef8589f39be0c743d2927ae7dc383282c0f3f563fc98df6a38",
-    "content_sha256": "bb07d23747a96676df99dfa5cd30799288d0c9084f7698b7c9a785d29c752b5b",
+    "content_sha256": "a1cde035d9ad67913e1ac81a429764397eae18d7bcc8bd1a5722b99ca629eb6a",
     "title": "让母亲先回家 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -44650,7 +44437,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：母亲邻妇到路口，阿蘅仍在幕边，薄衣已在母亲身。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-aheng-mother-identity",
       "new26-curtain-identity",
       "new26-drying-ground-layout",
@@ -44742,7 +44528,7 @@
     "code": "M637",
     "object_id": "new26-s041-q15-video",
     "revision_id": "8db0e65be43485da7d59ef3f009f180ea8f45ec7c004e3af99abfb064dfa7787",
-    "content_sha256": "fe4e0e270deb43d3092e0cdcd523f586e1509a890395ebda8d80faa7ea213a49",
+    "content_sha256": "59015157e62c1fab2390c3ec36e0a37ef51e1e73e7a6912ce0afa6c28be9450e",
     "title": "灯先交到她手里 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -44792,7 +44578,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：阿蘅右手提亮灯，李寄抱本，两人跟杆走向河街。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-book-rebound-overall",
       "new26-drying-ground-layout",
       "new26-home-oil-lamps-identity",
@@ -44819,7 +44604,7 @@
     "code": "M638",
     "object_id": "new26-s042-q01-first-frame",
     "revision_id": "e32f503d872d0878d4858c1110bb2284b7e49b1d59554e458f86c84d788f700b",
-    "content_sha256": "d68cb406ee300d2d5ca9e15cd7c4a8028d90ddb63b202450e7964cf387a1da4c",
+    "content_sha256": "1dcdaec54d0e6a3b77a018d8909741043c122a66e0685a488708a2511d67f453",
     "title": "走慢些，光就跟得上 · 起点画面",
     "category": "shot-image",
     "scope_kind": "AV_SHOT",
@@ -44873,7 +44658,6 @@
       "沿最深参考谱系计算本图代数，不因新名称重置；生成后实际看全貌与关键部位，不将设计通过当媒体验收。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-book-rebound-overall",
       "new26-curtain-poles-identity",
       "new26-liji-healed-overall",
@@ -44900,7 +44684,7 @@
     "code": "M639",
     "object_id": "new26-s042-q01-video",
     "revision_id": "5fc84a8e5616da454cb9628238179a3f9bb05a86adc1256874b5da6e2353e9b0",
-    "content_sha256": "f27101a89b0b30cbf05b0dd0d2ef1d3dd9a9621cd6f46f924c3ace8e3df8a283",
+    "content_sha256": "5204a62021755acd2270c6a65cdad9d36aacc08a996c119a4a84fec568e88482",
     "title": "走慢些，光就跟得上 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -44949,7 +44733,6 @@
       "连读前镜落点与本镜起点，再接下镜；重点回查：杆与狗渐前，两女孩到阿蘅家近处，灯本归属未变。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-identity",
       "new26-curtain-poles-identity",
       "new26-liji-healed-overall",
       "new26-lixiao-identity",
@@ -44976,7 +44759,7 @@
     "code": "M640",
     "object_id": "new26-s042-q02-video",
     "revision_id": "868f396b166592145bda8a4abf879a2c38dcdd4bd6a5290830df8425e05e3279",
-    "content_sha256": "8145ef48a51d2bd6d2aae68eda0c4d37b8a1a796cafd416af811cbd0c34cb51a",
+    "content_sha256": "3adbce5e941e1dc85ee9194ee0ce90dfd1f4a39aac3afdc7c08b7ea74171b511",
     "title": "照清这一阶 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -45025,7 +44808,6 @@
     ],
     "waiting_for_new_originals": [
       "new26-aheng-home-layout",
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-book-rebound-overall",
       "new26-liji-healed-overall",
@@ -45049,7 +44831,7 @@
     "code": "M641",
     "object_id": "new26-s042-q03-video",
     "revision_id": "e6df15c0c0e27201c1e297937f0bab28ebb03faa9307736145335fb2b6070dd3",
-    "content_sha256": "b4825533b82b8010f9d8258d716413d88aada061d1ab21beacbafb70adaf414a",
+    "content_sha256": "66963a6864e806321d010852264d0202046f4df961e27a589535c29b163e7bec",
     "title": "等太阳到窗台 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -45098,7 +44880,6 @@
     ],
     "waiting_for_new_originals": [
       "new26-aheng-home-layout",
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-book-rebound-overall",
       "new26-liji-healed-overall",
@@ -45122,7 +44903,7 @@
     "code": "M642",
     "object_id": "new26-s042-q04-video",
     "revision_id": "3e2a9d7c1cea95ffa008448d11b5400b11968d16d740dcd0208abe67e6b6e084",
-    "content_sha256": "46cd0e6b9f4eec2df61a737edfac7dcafb68d434a4068578726f549fe5f82ea0",
+    "content_sha256": "c203ba766b3cd1ce5a75dfced85c269267ee42c3802486a184d74e06162c3a98",
     "title": "灯还在这里 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -45169,7 +44950,6 @@
     ],
     "waiting_for_new_originals": [
       "new26-aheng-home-layout",
-      "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-book-rebound-overall",
       "new26-liji-healed-overall",
@@ -45193,7 +44973,7 @@
     "code": "M643",
     "object_id": "new26-s042-q05-video",
     "revision_id": "c4dca28142c1e0708bc842752f9f95ae5a542ed92e143455e37b2d4ab85b82a1",
-    "content_sha256": "c0477712d1b55b6e173e3248c6912edc8920528d04d0375bf8cf7fa9ff9d8178",
+    "content_sha256": "13eefaaf13c148b1edf3ba4927d19a87b40f293661d3be9333cebf2a700a058a",
     "title": "把补好的页给娘看 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -45245,7 +45025,6 @@
     ],
     "waiting_for_new_originals": [
       "new26-aheng-home-layout",
-      "new26-aheng-identity",
       "new26-aheng-mother-identity",
       "new26-aheng-mother-voice",
       "new26-aheng-voice",
@@ -45272,7 +45051,7 @@
     "code": "M644",
     "object_id": "new26-s042-q06-video",
     "revision_id": "9bff2c2530e76ffd98ed4cb37b891df3ae74461ca02ebdca2e4f5432f6e5706c",
-    "content_sha256": "9aafd3be64c44f9227edd92f55c344226e72b178073f71cab0a7757527f73748",
+    "content_sha256": "d8d25b961ad7cad86cfec93fdcfc3d174af974a0aebaaa08978cdb8da9827870",
     "title": "看一眼，就去追姐姐 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -45318,7 +45097,6 @@
     ],
     "waiting_for_new_originals": [
       "new26-aheng-home-layout",
-      "new26-aheng-identity",
       "new26-aheng-mother-identity",
       "new26-book-rebound-overall",
       "new26-liji-healed-overall",
@@ -47444,7 +47222,7 @@
     "code": "M651",
     "object_id": "new26-temple-song-singing",
     "revision_id": "547784d33fc918d29bf1feaa44b8ffa093d6bf3ebd68870947deecbac52e8405",
-    "content_sha256": "6a30ebc1d5db30830106cb0a84f97ce8ca3e054d5c90240fbf704e879f7423a7",
+    "content_sha256": "9b07d4f86f40843d94e5763dc643361b358bd4118a766680e4566b955abe33c7",
     "title": "四邻安 · 完整原曲",
     "category": "song",
     "scope_kind": "ENTITY",
@@ -47489,9 +47267,6 @@
       "method": "generate",
       "model": "lyria-3.5",
       "parameters": {
-        "response_format": {
-          "type": "audio"
-        },
         "store": false
       }
     },
@@ -47503,7 +47278,7 @@
       "迎请、祈愿、收仪各六行，六次应句全部按词稿演唱；领唱与齐唱职责清楚。",
       "原句米饵奉蛇神，四邻得安宁逐字准确；没有新增人祭、神谕或角色身份。",
       "完整从头到尾实际听审，逐行核歌词、发音、旋律发展、段间呼吸、编配和尾音；生成文本、ASR及音轨存在不能代替听辨。",
-      "保存实际原生编码、采样率、声道、时长和SHA-256；完整原曲检查服务原生无损WAV，不以扩展名或升采样证明无损。剧中派生件与母版分开登记。",
+      "保存实际原生编码、采样率、声道、时长和SHA-256；完整原曲按用户本轮授权检查服务原生MP3，不以转码冒充原生或无损。剧中派生件与母版分开登记。",
       "独立原曲歌手与角色演法分开；派生件须标准确原曲候选及原件、使用段落、角色声线和真实制作操作，未经听审不供镜头生成。"
     ],
     "waiting_for_new_originals": [
@@ -47512,15 +47287,15 @@
     ],
     "method_basis": {
       "artifact": {
-        "object_id": "method.artifact.c1fdfb8f00f82b8df93d817e7be2bed67e811ad8149da2e1800daac46becc02f",
-        "revision_id": "cef02430e35dae7608c88a2fb28a5faa275496835e5b2230a126e8b8fa73d5eb"
+        "object_id": "method.artifact.5f071735383ebb9e352e16ea1ac4870738bf31e0a6fa098134b0265003a9408c",
+        "revision_id": "a3d79a186fe023f8741039b8f4d62057297157a38c435295174e9da33d32ef3b"
       },
       "execution": {
-        "object_id": "method.execution.24e605e14219ec65d8077b67708197a4cc8557b27b812a7b2d1c69f35c08ac11",
-        "revision_id": "4f107ba27c86ab4e90f15e4ec0ecbdb8d3dd8088fa015eae420ffd7981c24731"
+        "object_id": "method.execution.a8a646aa341977eb8390487812d0f6dc8cf48463fb2cc2bca74b9c26f3f5625c",
+        "revision_id": "6816fb2cca9c4c057cf5f0bdbf1d977aa7d45a7bcaac72e9517a9c4a6017a218"
       },
       "run_id": "task-20261015-0003",
-      "step_id": "funded-complete-temple-song-01"
+      "step_id": "mp3-complete-temple-song-02"
     }
   },
   {

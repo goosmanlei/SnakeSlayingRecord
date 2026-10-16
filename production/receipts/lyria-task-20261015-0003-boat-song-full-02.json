@@ -1,0 +1,80 @@
+{
+  "attempt_id": "task-20261015-0003-boat-song-full-02",
+  "song_entity_id": "new26-boat-song",
+  "spec_sha256": "eb4cfe9b043171191803a3ca919b57a09e4b02c20854d947d31214228feaf073",
+  "sources": {
+    "lyrics": {
+      "path": "production/rebuild/songs/boat-song/lyrics.txt",
+      "sha256": "0d838cf3b0a5630c19bb0605091e26037e437c8e786312654c1ac859ac8cab94"
+    },
+    "directions": {
+      "path": "production/rebuild/songs/boat-song/music.md",
+      "sha256": "7e7e88e05f57bfc2d2e95cce90d36f959f1556b092a8fd89201c9f6f35ef0da8"
+    }
+  },
+  "requested_format": "mp3",
+  "estimated_cost_usd": "0.08",
+  "price_checked": "2026-10-03",
+  "audio_accepted": false,
+  "production": {
+    "url": "http://127.0.0.1:62845",
+    "requirement_id": "new26-boat-song-singing",
+    "operation_id": "task-20261015-0003-boat-song-full-02-submit",
+    "call_id": "task-20261015-0003-boat-song-full-02"
+  },
+  "status": "completed",
+  "created_at": "2026-10-16T08:06:52.050743+00:00",
+  "max_cost_usd": "0.08",
+  "endpoint": "https://generativelanguage.googleapis.com/v1beta/interactions",
+  "proxy": "system/environment proxy settings",
+  "production_submission": {
+    "call_id": "task-20261015-0003-boat-song-full-02",
+    "submission_sha256": "7f65870b4ab708d7da348ee64229a333c98970e4c62395f8d8217c5408b844a1",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "submitted_at": "2026-10-16T08:06:52.653690+00:00",
+  "interaction_id": null,
+  "finished_at": "2026-10-16T08:07:27.789669+00:00",
+  "provider_model": "lyria-3.5",
+  "files": [
+    {
+      "file": "audio-01.mp3",
+      "sha256": "5462ff4c9e367fc7a191e0df80cdc2ce6af36ee992b50d1f50091e7649d9c5d1",
+      "bytes": 4263037,
+      "reported_mime_type": "audio/mpeg",
+      "container": "mp3",
+      "codec": "mp3",
+      "sample_rate": "44100",
+      "channels": 2,
+      "duration_seconds": 177.371375,
+      "native_pcm_wav": false
+    }
+  ],
+  "usage": {
+    "total_tokens": 4252,
+    "total_input_tokens": 947,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 947
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 3305,
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 0
+  },
+  "lyric_check": "pending",
+  "listening_review": "unverified",
+  "candidate": {
+    "call_id": "task-20261015-0003-boat-song-full-02",
+    "candidate_id": "candidate-aaa3fca1c8eacf021377b80115a2bd5062cb9b5cf35223f5ad5e00c99f1e2914",
+    "status": "completed",
+    "already_applied": false
+  },
+  "actual_charge_usd": "UNKNOWN",
+  "format_authorization": "用户明确允许原生MP3并继续制作全部歌曲；不等于作品听审通过。",
+  "budget_evidence": "production/receipts/google-budget-task-20261015-0003-songs-mp3.json",
+  "format_check_after_authorization": "passed_native_mp3"
+}

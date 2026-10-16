@@ -5,14 +5,13 @@
   "source_manifest": "../../material-plans/manifest.json",
   "total": 191,
   "status_counts": {
-    "not_produced": 186,
-    "specification_failed": 1,
-    "hearing_unverified": 1,
-    "executor_checked": 2,
-    "request_unknown": 1
+    "not_produced": 182,
+    "executor_checked": 3,
+    "hearing_unverified": 5,
+    "registration_blocked_and_quality_failed": 1
   },
   "call_counts": {
-    "completed": 2,
+    "completed": 8,
     "unknown": 1
   },
   "calls": [
@@ -44,6 +43,65 @@
         "currency": "USD",
         "estimated": 0.08,
         "reserved_pending_reconciliation": 0.08
+      }
+    },
+    {
+      "call_id": "task-20261015-0003-aheng-identity-02",
+      "status": "completed",
+      "cost": {
+        "currency": "OpenArt credits",
+        "quoted": 350,
+        "actual": "UNKNOWN",
+        "note": "4k/high/16:9单图，自定义3840×2160且lockAspectRatio=false；实际扣费按平台字段，未返回即UNKNOWN。"
+      }
+    },
+    {
+      "call_id": "task-20261015-0003-aheng-wet-01",
+      "status": "completed",
+      "locally_registered": false,
+      "cost": {
+        "currency": "OpenArt credits",
+        "quoted": 80,
+        "actual": "UNKNOWN",
+        "observed_balance_before": 11335,
+        "observed_balance_after": 11255,
+        "observation_is_charge_receipt": false
+      }
+    },
+    {
+      "call_id": "task-20261015-0003-qingpeng-full-02",
+      "status": "completed",
+      "cost": {
+        "currency": "USD",
+        "estimated": 0.08,
+        "actual": "UNKNOWN"
+      }
+    },
+    {
+      "call_id": "task-20261015-0003-boat-song-full-02",
+      "status": "completed",
+      "cost": {
+        "currency": "USD",
+        "estimated": 0.08,
+        "actual": "UNKNOWN"
+      }
+    },
+    {
+      "call_id": "task-20261015-0003-temple-song-full-02",
+      "status": "completed",
+      "cost": {
+        "currency": "USD",
+        "estimated": 0.08,
+        "actual": "UNKNOWN"
+      }
+    },
+    {
+      "call_id": "task-20261015-0003-ritual-song-full-02",
+      "status": "completed",
+      "cost": {
+        "currency": "USD",
+        "estimated": 0.08,
+        "actual": "UNKNOWN"
       }
     }
   ],
@@ -80,10 +138,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M112",
@@ -117,10 +174,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M567",
@@ -153,15 +209,14 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "待代表声音的可靠完整听审；不能只凭字幕或波形批量通过。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M001",
       "requirement_id": "new26-aheng-identity",
-      "content_sha256": "fad7f3c59f1abc7536f23ef091fc32b69aa82d2f5666672e02eaf0b5d8ff6ea7",
+      "content_sha256": "8c8783c2554465cff9a23580cca805ab61fa330450ee2985c97e0fc6e07f1302",
       "title": "阿蘅 · 基础形象",
       "category": "character-image",
       "scope_kind": "ENTITY",
@@ -178,29 +233,62 @@
           "customHeight": 2160,
           "customWidth": 3840,
           "imageCount": 1,
-          "lockAspectRatio": true,
+          "lockAspectRatio": false,
           "outputFormat": "png",
           "quality": "high",
           "resolutionTier": "4k",
           "variant": "sunburst"
         }
       },
-      "status": "specification_failed",
+      "status": "executor_checked",
       "candidates": [
         {
-          "material_id": "new26-aheng-identity",
-          "id": "candidate-3e6e80bc3bc2668153402565045152eaf36c1791d616e0c29b284033cf267ade",
-          "asset_object_id": "asset-task-20261015-0003-aheng-identity-01",
-          "operation_id": "task-20261015-0003-aheng-identity-01"
+          "candidate_id": "candidate-3e6e80bc3bc2668153402565045152eaf36c1791d616e0c29b284033cf267ade",
+          "number": 1,
+          "asset": {
+            "object_id": "asset-task-20261015-0003-aheng-identity-01",
+            "revision_id": "c82bc12390d53660c589ec66176514cca263993f3a1e38dba76708cfa904e15b"
+          },
+          "call_id": "task-20261015-0003-aheng-identity-01",
+          "components": [
+            {
+              "bytes": 7654818,
+              "file": "24342a9021403aa8c32324595560cb59a4cba24bc6948c5317b493902aade5af.png",
+              "height": 2016,
+              "id": "original",
+              "mime": "image/png",
+              "role": "original",
+              "sha256": "24342a9021403aa8c32324595560cb59a4cba24bc6948c5317b493902aade5af",
+              "width": 3584
+            }
+          ]
+        },
+        {
+          "candidate_id": "candidate-e9a98aba7feffbae5f3b9e2308755d47fbd366f8f42200a3a1c04c38d39f114c",
+          "number": 2,
+          "asset": {
+            "object_id": "asset-task-20261015-0003-aheng-identity-02",
+            "revision_id": "ee6e0f97e99928fd786b1e3e323e519ce0d69cc3f719291946b18c4d79a1c3fc"
+          },
+          "call_id": "task-20261015-0003-aheng-identity-02",
+          "components": [
+            {
+              "bytes": 6228928,
+              "file": "a4dec09a9ac0e4b320079e846bc0f513d78bf82e409add0553e0a90a989be28f.png",
+              "height": 2160,
+              "id": "original",
+              "mime": "image/png",
+              "role": "original",
+              "sha256": "a4dec09a9ac0e4b320079e846bc0f513d78bf82e409add0553e0a90a989be28f",
+              "width": 3840
+            }
+          ]
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "原件3584×2016，低于当前3840×2160要求。",
-        "实际纹理和明暗不符干净色块及两级阴影。"
-      ],
-      "resume_when": "先核可满足原生像素的通道与干净画风，再以当前母版要求有限返修；不放大冒充、不用失败原件派生状态。"
+      "gaps": [],
+      "resume_when": "候选2已通过身份用途看图并绑定210处输入；候选1规格失败，不用于下游。"
     },
     {
       "code": "M115",
@@ -234,10 +322,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M116",
@@ -270,10 +357,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "待代表声音的可靠完整听审；不能只凭字幕或波形批量通过。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M002",
@@ -304,10 +390,27 @@
       "status": "hearing_unverified",
       "candidates": [
         {
-          "material_id": "new26-aheng-voice",
-          "id": "candidate-bd480f0badc3170177b375b827603f1abf5bf19da865a98a91f9ce6ef72f5179",
-          "asset_object_id": "asset-task-20261015-0003-aheng-voice-01",
-          "operation_id": "task-20261015-0003-aheng-voice-01"
+          "candidate_id": "candidate-bd480f0badc3170177b375b827603f1abf5bf19da865a98a91f9ce6ef72f5179",
+          "number": 1,
+          "asset": {
+            "object_id": "asset-task-20261015-0003-aheng-voice-01",
+            "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+          },
+          "call_id": "task-20261015-0003-aheng-voice-01",
+          "components": [
+            {
+              "bytes": 2242604,
+              "channels": 2,
+              "duration_seconds": 11.68,
+              "file": "cb9568d517393bbb365105efeb2297763d6cf8b92cba86b6c212f6f0bb361059.wav",
+              "has_audio": true,
+              "id": "original",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "cb9568d517393bbb365105efeb2297763d6cf8b92cba86b6c212f6f0bb361059"
+            }
+          ]
         }
       ],
       "selected_upstream": [],
@@ -321,7 +424,7 @@
     {
       "code": "M055",
       "requirement_id": "new26-aheng-wet-overall",
-      "content_sha256": "e3bcdeb3f45c145b7b98474ab285452d8147e2cd677bd3fd487b1ebef3205a54",
+      "content_sha256": "fd3e6700bf79b50b28da974caeb9ddf0211b48409fb0acf1ed1840d857405dd9",
       "title": "阿蘅 · 浅滩捞书后的湿衣 · 完整形态",
       "category": "character-image",
       "scope_kind": "STATE",
@@ -339,18 +442,18 @@
           "resolution": "4K"
         }
       },
-      "status": "not_produced",
+      "status": "registration_blocked_and_quality_failed",
       "candidates": [],
       "selected_upstream": [
         "new26-aheng-identity"
       ],
-      "waiting_for_new_originals": [
-        "new26-aheng-identity"
-      ],
+      "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。"
+        "真实平台图已回收，本地提交登记未成功，未建候选。",
+        "已看图：湿区扩大至胸肩，鞋形偏移，不能选下游。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "先受管补齐Nano模型契约并按真实时序恢复登记；返修从干净母版出发，不重复回收请求。",
+      "external_result_receipt": "../../receipts/openart-task-20261015-0003-aheng-wet-01.json"
     },
     {
       "code": "M257",
@@ -384,10 +487,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M322",
@@ -426,9 +528,9 @@
       ],
       "gaps": [
         "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "所选上游尚待新原件。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M290",
@@ -461,10 +563,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "待代表声音的可靠完整听审；不能只凭字幕或波形批量通过。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M291",
@@ -498,10 +599,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M289",
@@ -540,9 +640,9 @@
       ],
       "gaps": [
         "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "所选上游尚待新原件。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M162",
@@ -576,10 +676,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M361",
@@ -613,10 +712,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M216",
@@ -650,10 +748,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M606",
@@ -687,15 +784,14 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M015",
       "requirement_id": "new26-boat-song-singing",
-      "content_sha256": "d5591fd16757bf9e5a04b5f8cf5d3c3a5e984e4ad1577ca819925cd0f051b61d",
+      "content_sha256": "657d45d1432a4da385b7b250c28c13d0f3ecf11a23506645ad4f7cf7e8cd1c65",
       "title": "三道滩 · 完整原曲",
       "category": "song",
       "scope_kind": "ENTITY",
@@ -707,14 +803,35 @@
         "method": "generate",
         "model": "lyria-3.5",
         "parameters": {
-          "response_format": {
-            "type": "audio"
-          },
           "store": false
         }
       },
-      "status": "not_produced",
-      "candidates": [],
+      "status": "hearing_unverified",
+      "candidates": [
+        {
+          "candidate_id": "candidate-aaa3fca1c8eacf021377b80115a2bd5062cb9b5cf35223f5ad5e00c99f1e2914",
+          "number": 1,
+          "asset": {
+            "object_id": "asset-task-20261015-0003-boat-song-full-02",
+            "revision_id": "313d65234fa6bc01da8b57a8b2afde44e9c70b7635bfe365b77e45cff78e7ce9"
+          },
+          "call_id": "task-20261015-0003-boat-song-full-02",
+          "components": [
+            {
+              "bytes": 4263037,
+              "channels": 2,
+              "duration_seconds": 177.371375,
+              "file": "5462ff4c9e367fc7a191e0df80cdc2ce6af36ee992b50d1f50091e7649d9c5d1.mp3",
+              "has_audio": true,
+              "id": "original",
+              "mime": "audio/mpeg",
+              "role": "original",
+              "sample_rate": 44100,
+              "sha256": "5462ff4c9e367fc7a191e0df80cdc2ce6af36ee992b50d1f50091e7649d9c5d1"
+            }
+          ]
+        }
+      ],
       "selected_upstream": [
         "new26-aheng-voice"
       ],
@@ -722,10 +839,9 @@
         "new26-aheng-voice"
       ],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "待代表完整原曲的请求核清、真实格式及可靠完整听审。"
+        "原生MP3已获格式许可；完整唱词、发音、旋律发展与自然收尾仍缺可靠实听。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "完成可靠逐段听审后才作作者选择；不因已有歌词回显而通过。"
     },
     {
       "code": "M165",
@@ -759,10 +875,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M166",
@@ -795,10 +910,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "待代表声音的可靠完整听审；不能只凭字幕或波形批量通过。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M012",
@@ -832,10 +946,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M090",
@@ -867,9 +980,10 @@
         "new26-songbook-identity"
       ],
       "gaps": [
-        "尚无本轮原件及质量检查。"
+        "尚无本轮原件及质量检查。",
+        "所选上游尚待新原件。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M607",
@@ -903,9 +1017,10 @@
         "new26-songbook-identity"
       ],
       "gaps": [
-        "尚无本轮原件及质量检查。"
+        "尚无本轮原件及质量检查。",
+        "所选上游尚待新原件。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M057",
@@ -937,9 +1052,10 @@
         "new26-songbook-identity"
       ],
       "gaps": [
-        "尚无本轮原件及质量检查。"
+        "尚无本轮原件及质量检查。",
+        "所选上游尚待新原件。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M217",
@@ -973,10 +1089,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M088",
@@ -1010,10 +1125,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M250",
@@ -1047,10 +1161,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M251",
@@ -1083,10 +1196,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "待代表声音的可靠完整听审；不能只凭字幕或波形批量通过。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M122",
@@ -1120,10 +1232,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M118",
@@ -1162,9 +1273,9 @@
       ],
       "gaps": [
         "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "所选上游尚待新原件。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M215",
@@ -1198,10 +1309,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M558",
@@ -1235,10 +1345,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M518",
@@ -1272,10 +1381,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M245",
@@ -1309,10 +1417,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M248",
@@ -1346,10 +1453,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M249",
@@ -1382,10 +1488,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "待代表声音的可靠完整听审；不能只凭字幕或波形批量通过。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M171",
@@ -1419,10 +1524,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M520",
@@ -1455,10 +1559,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "待代表声音的可靠完整听审；不能只凭字幕或波形批量通过。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M519",
@@ -1492,10 +1595,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M053",
@@ -1529,10 +1631,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M052",
@@ -1566,10 +1667,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M214",
@@ -1603,10 +1703,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M517",
@@ -1640,10 +1739,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M604",
@@ -1677,10 +1775,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M420",
@@ -1714,10 +1811,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M454",
@@ -1750,10 +1846,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "待代表声音的可靠完整听审；不能只凭字幕或波形批量通过。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M396",
@@ -1787,10 +1882,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M292",
@@ -1823,10 +1917,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "待代表声音的可靠完整听审；不能只凭字幕或波形批量通过。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M164",
@@ -1860,10 +1953,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M119",
@@ -1897,10 +1989,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M160",
@@ -1933,10 +2024,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "待代表声音的可靠完整听审；不能只凭字幕或波形批量通过。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M423",
@@ -1970,10 +2060,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M556",
@@ -2007,10 +2096,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M557",
@@ -2043,10 +2131,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "待代表声音的可靠完整听审；不能只凭字幕或波形批量通过。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M321",
@@ -2080,10 +2167,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M421",
@@ -2117,10 +2203,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M422",
@@ -2153,10 +2238,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "待代表声音的可靠完整听审；不能只凭字幕或波形批量通过。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M455",
@@ -2189,10 +2273,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "待代表声音的可靠完整听审；不能只凭字幕或波形批量通过。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M133",
@@ -2226,10 +2309,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M426",
@@ -2262,10 +2344,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "待代表声音的可靠完整听审；不能只凭字幕或波形批量通过。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M167",
@@ -2299,10 +2380,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M325",
@@ -2336,10 +2416,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M366",
@@ -2372,10 +2451,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "待代表声音的可靠完整听审；不能只凭字幕或波形批量通过。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M358",
@@ -2408,10 +2486,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "待代表声音的可靠完整听审；不能只凭字幕或波形批量通过。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M357",
@@ -2445,10 +2522,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M354",
@@ -2482,10 +2558,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M355",
@@ -2518,10 +2593,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "待代表声音的可靠完整听审；不能只凭字幕或波形批量通过。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M395",
@@ -2555,10 +2629,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M397",
@@ -2592,10 +2665,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M085",
@@ -2629,10 +2701,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M036",
@@ -2666,10 +2737,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M425",
@@ -2703,10 +2773,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M323",
@@ -2740,10 +2809,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M035",
@@ -2777,10 +2845,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M295",
@@ -2795,7 +2862,6 @@
       },
       "route": {
         "method": "external-edit",
-        "model": null,
         "parameters": {
           "canvas": [
             3840,
@@ -2809,10 +2875,33 @@
       "status": "executor_checked",
       "candidates": [
         {
-          "material_id": "new26-layout-note-identity",
-          "id": "candidate-e0d4415b94edb963c96497de017c996562e95ccc48dec07726621828e639eb92",
-          "asset_object_id": "asset-task-20261015-0003-layout-note-01",
-          "operation_id": "source:asset-task-20261015-0003-layout-note-01"
+          "candidate_id": "candidate-e0d4415b94edb963c96497de017c996562e95ccc48dec07726621828e639eb92",
+          "number": 1,
+          "asset": {
+            "object_id": "asset-task-20261015-0003-layout-note-01",
+            "revision_id": "67ffc1cef2590e5d89681e5e367a2034251c8084f50bc7fbdfca7670aa23028f"
+          },
+          "call_id": "source:asset-task-20261015-0003-layout-note-01",
+          "components": [
+            {
+              "bytes": 361601,
+              "file": "cddac84a55d12e6ba8de6c457b2b9e81a26dff760fd9f3450e596b12145c3d98.png",
+              "height": 2160,
+              "id": "original",
+              "mime": "image/png",
+              "role": "original",
+              "sha256": "cddac84a55d12e6ba8de6c457b2b9e81a26dff760fd9f3450e596b12145c3d98",
+              "width": 3840
+            },
+            {
+              "bytes": 1073,
+              "file": "775e534e617ac1a1d71b428726823a4d4a3e58fe8952071328963cb9a988de30.zip",
+              "id": "project",
+              "mime": "application/zip",
+              "role": "project",
+              "sha256": "775e534e617ac1a1d71b428726823a4d4a3e58fe8952071328963cb9a988de30"
+            }
+          ]
         }
       ],
       "selected_upstream": [],
@@ -2852,10 +2941,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M212",
@@ -2889,10 +2977,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M246",
@@ -2926,10 +3013,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M247",
@@ -2962,10 +3048,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "待代表声音的可靠完整听审；不能只凭字幕或波形批量通过。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M208",
@@ -2999,10 +3084,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M209",
@@ -3035,10 +3119,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "待代表声音的可靠完整听审；不能只凭字幕或波形批量通过。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M003",
@@ -3072,10 +3155,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M521",
@@ -3107,9 +3189,10 @@
         "new26-liji-identity"
       ],
       "gaps": [
-        "尚无本轮原件及质量检查。"
+        "尚无本轮原件及质量检查。",
+        "所选上游尚待新原件。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M456",
@@ -3141,9 +3224,10 @@
         "new26-liji-identity"
       ],
       "gaps": [
-        "尚无本轮原件及质量检查。"
+        "尚无本轮原件及质量检查。",
+        "所选上游尚待新原件。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M176",
@@ -3175,9 +3259,10 @@
         "new26-liji-identity"
       ],
       "gaps": [
-        "尚无本轮原件及质量检查。"
+        "尚无本轮原件及质量检查。",
+        "所选上游尚待新原件。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M177",
@@ -3209,9 +3294,10 @@
         "new26-liji-identity"
       ],
       "gaps": [
-        "尚无本轮原件及质量检查。"
+        "尚无本轮原件及质量检查。",
+        "所选上游尚待新原件。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M568",
@@ -3243,9 +3329,10 @@
         "new26-liji-identity"
       ],
       "gaps": [
-        "尚无本轮原件及质量检查。"
+        "尚无本轮原件及质量检查。",
+        "所选上游尚待新原件。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M210",
@@ -3279,10 +3366,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M211",
@@ -3315,10 +3401,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "待代表声音的可靠完整听审；不能只凭字幕或波形批量通过。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M089",
@@ -3350,9 +3435,10 @@
         "new26-liji-identity"
       ],
       "gaps": [
-        "尚无本轮原件及质量检查。"
+        "尚无本轮原件及质量检查。",
+        "所选上游尚待新原件。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M004",
@@ -3385,10 +3471,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "待代表声音的可靠完整听审；不能只凭字幕或波形批量通过。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M056",
@@ -3420,9 +3505,10 @@
         "new26-liji-identity"
       ],
       "gaps": [
-        "尚无本轮原件及质量检查。"
+        "尚无本轮原件及质量检查。",
+        "所选上游尚待新原件。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M009",
@@ -3456,10 +3542,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M010",
@@ -3492,10 +3577,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "待代表声音的可靠完整听审；不能只凭字幕或波形批量通过。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M047",
@@ -3529,10 +3613,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M048",
@@ -3565,10 +3648,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "待代表声音的可靠完整听审；不能只凭字幕或波形批量通过。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M087",
@@ -3602,10 +3684,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M327",
@@ -3637,9 +3718,10 @@
         "new26-loan-paper-identity"
       ],
       "gaps": [
-        "尚无本轮原件及质量检查。"
+        "尚无本轮原件及质量检查。",
+        "所选上游尚待新原件。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M253",
@@ -3673,10 +3755,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M368",
@@ -3712,9 +3793,10 @@
         "new26-preparation-tools-identity"
       ],
       "gaps": [
-        "尚无本轮原件及质量检查。"
+        "尚无本轮原件及质量检查。",
+        "所选上游尚待新原件。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M367",
@@ -3746,9 +3828,10 @@
         "new26-feeding-lock-identity"
       ],
       "gaps": [
-        "尚无本轮原件及质量检查。"
+        "尚无本轮原件及质量检查。",
+        "所选上游尚待新原件。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M365",
@@ -3782,10 +3865,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M427",
@@ -3823,9 +3905,10 @@
         "new26-tao-rope-identity"
       ],
       "gaps": [
-        "尚无本轮原件及质量检查。"
+        "尚无本轮原件及质量检查。",
+        "所选上游尚待新原件。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M398",
@@ -3840,7 +3923,6 @@
       },
       "route": {
         "method": "external-edit",
-        "model": null,
         "parameters": {
           "canvas": [
             3840,
@@ -3854,10 +3936,33 @@
       "status": "executor_checked",
       "candidates": [
         {
-          "material_id": "new26-map-cut-overall",
-          "id": "candidate-1357a1e6ba8ee61d0988f9a141c1a062724eadb93fde283b150d742edf560324",
-          "asset_object_id": "asset-task-20261015-0003-map-cut-01",
-          "operation_id": "source:asset-task-20261015-0003-map-cut-01"
+          "candidate_id": "candidate-1357a1e6ba8ee61d0988f9a141c1a062724eadb93fde283b150d742edf560324",
+          "number": 1,
+          "asset": {
+            "object_id": "asset-task-20261015-0003-map-cut-01",
+            "revision_id": "bbdedf0e49007db6ab516e901312eecc21047944ea060238292e88abb5ea9294"
+          },
+          "call_id": "source:asset-task-20261015-0003-map-cut-01",
+          "components": [
+            {
+              "bytes": 361403,
+              "file": "7871d393601beda3f2b16fed0999c39b0f8f9d3ca662488fb2cba5d4c56d2dff.png",
+              "height": 2160,
+              "id": "original",
+              "mime": "image/png",
+              "role": "original",
+              "sha256": "7871d393601beda3f2b16fed0999c39b0f8f9d3ca662488fb2cba5d4c56d2dff",
+              "width": 3840
+            },
+            {
+              "bytes": 1320,
+              "file": "d5d4b37438d7cc258abd853a8fa30e897b14314e31e2bbaaa42b0163491df0a4.zip",
+              "id": "project",
+              "mime": "application/zip",
+              "role": "project",
+              "sha256": "d5d4b37438d7cc258abd853a8fa30e897b14314e31e2bbaaa42b0163491df0a4"
+            }
+          ]
         }
       ],
       "selected_upstream": [
@@ -3899,10 +4004,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M359",
@@ -3936,10 +4040,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M028",
@@ -3973,10 +4076,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M051",
@@ -4010,10 +4112,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M127",
@@ -4052,9 +4153,9 @@
       ],
       "gaps": [
         "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "所选上游尚待新原件。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M134",
@@ -4086,9 +4187,10 @@
         "new26-aheng-mother-identity"
       ],
       "gaps": [
-        "尚无本轮原件及质量检查。"
+        "尚无本轮原件及质量检查。",
+        "所选上游尚待新原件。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M111",
@@ -4122,10 +4224,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M117",
@@ -4159,10 +4260,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M207",
@@ -4195,10 +4295,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "待代表声音的可靠完整听审；不能只凭字幕或波形批量通过。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M220",
@@ -4232,10 +4331,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M252",
@@ -4269,10 +4367,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M565",
@@ -4305,10 +4402,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "待代表声音的可靠完整听审；不能只凭字幕或波形批量通过。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M254",
@@ -4342,10 +4438,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M255",
@@ -4379,10 +4474,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M168",
@@ -4416,10 +4510,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M169",
@@ -4452,10 +4545,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "待代表声音的可靠完整听审；不能只凭字幕或波形批量通过。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M031",
@@ -4489,10 +4581,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M032",
@@ -4525,10 +4616,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "待代表声音的可靠完整听审；不能只凭字幕或波形批量通过。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M243",
@@ -4562,10 +4652,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M563",
@@ -4599,10 +4688,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M123",
@@ -4635,10 +4723,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "待代表声音的可靠完整听审；不能只凭字幕或波形批量通过。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M007",
@@ -4672,10 +4759,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M008",
@@ -4708,10 +4794,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "待代表声音的可靠完整听审；不能只凭字幕或波形批量通过。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M125",
@@ -4745,10 +4830,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M126",
@@ -4781,10 +4865,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "待代表声音的可靠完整听审；不能只凭字幕或波形批量通过。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M050",
@@ -4818,10 +4901,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M560",
@@ -4854,15 +4936,14 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "待代表声音的可靠完整听审；不能只凭字幕或波形批量通过。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M054",
       "requirement_id": "new26-qingpeng-singing",
-      "content_sha256": "2da972351683c9d7738b3f0e433647483414219504f28b81757066c32351cca6",
+      "content_sha256": "893adcdcc0d4820b71b09e86ee8f2268f941727b16972cbc193e0523f4e6bafe",
       "title": "送青篷 · 完整原曲",
       "category": "song",
       "scope_kind": "ENTITY",
@@ -4874,14 +4955,35 @@
         "method": "generate",
         "model": "lyria-3.5",
         "parameters": {
-          "response_format": {
-            "type": "audio"
-          },
           "store": false
         }
       },
-      "status": "request_unknown",
-      "candidates": [],
+      "status": "hearing_unverified",
+      "candidates": [
+        {
+          "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+          "number": 1,
+          "asset": {
+            "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+            "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+          },
+          "call_id": "task-20261015-0003-qingpeng-full-02",
+          "components": [
+            {
+              "bytes": 4297519,
+              "channels": 2,
+              "duration_seconds": 178.808125,
+              "file": "e3eb4b657a47d8ee9d1dee173be88a322cb02b0aafedad9cb5c18a63a03ac36b.mp3",
+              "has_audio": true,
+              "id": "original",
+              "mime": "audio/mpeg",
+              "role": "original",
+              "sample_rate": 44100,
+              "sha256": "e3eb4b657a47d8ee9d1dee173be88a322cb02b0aafedad9cb5c18a63a03ac36b"
+            }
+          ]
+        }
+      ],
       "selected_upstream": [
         "new26-aheng-mother-voice",
         "new26-aheng-voice",
@@ -4893,10 +4995,9 @@
         "new26-song-teacher-voice"
       ],
       "gaps": [
-        "请求发送后URLError，缺服务端ID、响应与音频；结果及实际扣费UNKNOWN。",
-        "可靠完整听审路径未解决。"
+        "原生MP3已获格式许可；完整唱词、发音、旋律发展与自然收尾仍缺可靠实听。"
       ],
-      "resume_when": "先核原请求平台记录及账单；无响应不能离线恢复，未核清不得换ID重发。"
+      "resume_when": "完成可靠逐段听审后才作作者选择；不因已有歌词回显而通过。"
     },
     {
       "code": "M516",
@@ -4930,10 +5031,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M256",
@@ -4967,10 +5067,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M326",
@@ -5002,9 +5101,10 @@
         "new26-recruitment-doc-identity"
       ],
       "gaps": [
-        "尚无本轮原件及质量检查。"
+        "尚无本轮原件及质量检查。",
+        "所选上游尚待新原件。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M174",
@@ -5038,10 +5138,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M131",
@@ -5075,10 +5174,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M172",
@@ -5112,10 +5210,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M173",
@@ -5148,10 +5245,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "待代表声音的可靠完整听审；不能只凭字幕或波形批量通过。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M013",
@@ -5185,10 +5281,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M014",
@@ -5222,10 +5317,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M566",
@@ -5258,10 +5352,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "待代表声音的可靠完整听审；不能只凭字幕或波形批量通过。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M011",
@@ -5295,10 +5388,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M364",
@@ -5332,10 +5424,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M424",
@@ -5374,9 +5465,9 @@
       ],
       "gaps": [
         "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "所选上游尚待新原件。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M130",
@@ -5409,15 +5500,14 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "待代表声音的可靠完整听审；不能只凭字幕或波形批量通过。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M175",
       "requirement_id": "new26-ritual-song-singing",
-      "content_sha256": "8cea480fc25a045f0fac8630ee951dc0c0c5ff2b6a06472538ad5c9f309528fa",
+      "content_sha256": "97f7c1203661b3a60788259aba30d10ad3bcc0c1a2ed0fd3d9d2b7d339217312",
       "title": "明月还乡 · 完整原曲",
       "category": "song",
       "scope_kind": "ENTITY",
@@ -5429,21 +5519,41 @@
         "method": "generate",
         "model": "lyria-3.5",
         "parameters": {
-          "response_format": {
-            "type": "audio"
-          },
           "store": false
         }
       },
-      "status": "not_produced",
-      "candidates": [],
+      "status": "hearing_unverified",
+      "candidates": [
+        {
+          "candidate_id": "candidate-39aff0dbbad65c16e7c2c1d8dfbb732ca0b993220c114a3ae7ceb56e07fbaf97",
+          "number": 1,
+          "asset": {
+            "object_id": "asset-task-20261015-0003-ritual-song-full-02",
+            "revision_id": "c603afa1b1ff699fa609a3f42ab132298ee0f4a8236ed9ac916f949de33f1558"
+          },
+          "call_id": "task-20261015-0003-ritual-song-full-02",
+          "components": [
+            {
+              "bytes": 4345793,
+              "channels": 2,
+              "duration_seconds": 180.819542,
+              "file": "3903014c7428b8269c8e277b9171c1fc1eed273074a86418522dd7706197e339.mp3",
+              "has_audio": true,
+              "id": "original",
+              "mime": "audio/mpeg",
+              "role": "original",
+              "sample_rate": 44100,
+              "sha256": "3903014c7428b8269c8e277b9171c1fc1eed273074a86418522dd7706197e339"
+            }
+          ]
+        }
+      ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "待代表完整原曲的请求核清、真实格式及可靠完整听审。"
+        "原生MP3已获格式许可；完整唱词、发音、旋律发展与自然收尾仍缺可靠实听。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "完成可靠逐段听审后才作作者选择；不因已有歌词回显而通过。"
     },
     {
       "code": "M132",
@@ -5477,10 +5587,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M027",
@@ -5514,10 +5623,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M005",
@@ -5551,10 +5659,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M006",
@@ -5587,10 +5694,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "待代表声音的可靠完整听审；不能只凭字幕或波形批量通过。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M029",
@@ -5624,10 +5730,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M030",
@@ -5660,10 +5765,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "待代表声音的可靠完整听审；不能只凭字幕或波形批量通过。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M033",
@@ -5697,10 +5801,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M129",
@@ -5733,10 +5836,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "待代表声音的可靠完整听审；不能只凭字幕或波形批量通过。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M605",
@@ -5770,10 +5872,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M049",
@@ -5807,10 +5908,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M564",
@@ -5844,10 +5944,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M086",
@@ -5881,10 +5980,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M113",
@@ -5918,10 +6016,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M362",
@@ -5955,10 +6052,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M114",
@@ -5991,15 +6087,14 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "待代表声音的可靠完整听审；不能只凭字幕或波形批量通过。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M651",
       "requirement_id": "new26-temple-song-singing",
-      "content_sha256": "6a30ebc1d5db30830106cb0a84f97ce8ca3e054d5c90240fbf704e879f7423a7",
+      "content_sha256": "9b07d4f86f40843d94e5763dc643361b358bd4118a766680e4566b955abe33c7",
       "title": "四邻安 · 完整原曲",
       "category": "song",
       "scope_kind": "ENTITY",
@@ -6011,14 +6106,35 @@
         "method": "generate",
         "model": "lyria-3.5",
         "parameters": {
-          "response_format": {
-            "type": "audio"
-          },
           "store": false
         }
       },
-      "status": "not_produced",
-      "candidates": [],
+      "status": "hearing_unverified",
+      "candidates": [
+        {
+          "candidate_id": "candidate-0039c58ba917c9ad0e09c117aa586187bb413e85ed0e8fa21739703af3d4d0a1",
+          "number": 1,
+          "asset": {
+            "object_id": "asset-task-20261015-0003-temple-song-full-02",
+            "revision_id": "ae58a970f738e92a4fa045d11369a7ba7a4d79ed32b29ba3cc35a72bb552e587"
+          },
+          "call_id": "task-20261015-0003-temple-song-full-02",
+          "components": [
+            {
+              "bytes": 4308176,
+              "channels": 2,
+              "duration_seconds": 179.252167,
+              "file": "e26038207b4d61e0bee7a9778bbad099ca7a04365f44262cff2d93543467c736.mp3",
+              "has_audio": true,
+              "id": "original",
+              "mime": "audio/mpeg",
+              "role": "original",
+              "sample_rate": 44100,
+              "sha256": "e26038207b4d61e0bee7a9778bbad099ca7a04365f44262cff2d93543467c736"
+            }
+          ]
+        }
+      ],
       "selected_upstream": [
         "new26-aheng-voice",
         "new26-singers-voice"
@@ -6028,10 +6144,9 @@
         "new26-singers-voice"
       ],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "待代表完整原曲的请求核清、真实格式及可靠完整听审。"
+        "原生MP3已获格式许可；完整唱词、发音、旋律发展与自然收尾仍缺可靠实听。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "完成可靠逐段听审后才作作者选择；不因已有歌词回显而通过。"
     },
     {
       "code": "M110",
@@ -6065,10 +6180,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M120",
@@ -6102,10 +6216,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M128",
@@ -6139,10 +6252,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M121",
@@ -6175,10 +6287,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "待代表声音的可靠完整听审；不能只凭字幕或波形批量通过。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M124",
@@ -6212,10 +6323,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M650",
@@ -6249,10 +6359,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M161",
@@ -6286,10 +6395,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M163",
@@ -6323,10 +6431,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M170",
@@ -6360,10 +6467,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M218",
@@ -6397,10 +6503,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M206",
@@ -6433,10 +6538,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "待代表声音的可靠完整听审；不能只凭字幕或波形批量通过。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M219",
@@ -6469,10 +6573,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "待代表声音的可靠完整听审；不能只凭字幕或波形批量通过。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M244",
@@ -6511,9 +6614,9 @@
       ],
       "gaps": [
         "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "所选上游尚待新原件。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M288",
@@ -6546,10 +6649,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "待代表声音的可靠完整听审；不能只凭字幕或波形批量通过。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M294",
@@ -6582,10 +6684,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "待代表声音的可靠完整听审；不能只凭字幕或波形批量通过。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M293",
@@ -6619,10 +6720,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M360",
@@ -6656,10 +6756,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M034",
@@ -6692,10 +6791,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "待代表声音的可靠完整听审；不能只凭字幕或波形批量通过。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M457",
@@ -6727,9 +6825,10 @@
         "new26-snake-identity"
       ],
       "gaps": [
-        "尚无本轮原件及质量检查。"
+        "尚无本轮原件及质量检查。",
+        "所选上游尚待新原件。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M485",
@@ -6761,9 +6860,10 @@
         "new26-snake-identity"
       ],
       "gaps": [
-        "尚无本轮原件及质量检查。"
+        "尚无本轮原件及质量检查。",
+        "所选上游尚待新原件。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M486",
@@ -6795,9 +6895,10 @@
         "new26-snake-identity"
       ],
       "gaps": [
-        "尚无本轮原件及质量检查。"
+        "尚无本轮原件及质量检查。",
+        "所选上游尚待新原件。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M514",
@@ -6831,10 +6932,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M515",
@@ -6867,10 +6967,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "待代表声音的可靠完整听审；不能只凭字幕或波形批量通过。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M555",
@@ -6904,10 +7003,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M559",
@@ -6941,10 +7039,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M561",
@@ -6978,10 +7075,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "图像批次尚未在当前原生4K与画风要求下走通；本项未尝试不等于模型失败。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M562",
@@ -7014,10 +7110,9 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "待代表声音的可靠完整听审；不能只凭字幕或波形批量通过。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     },
     {
       "code": "M363",
@@ -7050,10 +7145,10 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "待代表声音的可靠完整听审；不能只凭字幕或波形批量通过。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "代表样本通过相应规格和看听检查后，沿准确方案制作；所需上游先完成并选入当前输入。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
     }
-  ]
+  ],
+  "updated_at": "2026-10-16T08:34:28.618662+00:00"
 }

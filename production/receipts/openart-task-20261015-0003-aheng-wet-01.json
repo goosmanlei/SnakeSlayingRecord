@@ -1,0 +1,55 @@
+{
+  "task_id": "task-20261015-0003",
+  "attempt_id": "task-20261015-0003-aheng-wet-01",
+  "recorded_at": "2026-10-16T08:22:50.585174+00:00",
+  "request": "production/requests/task-20261015-0003-aheng-wet-01.json",
+  "provider_history_id": "rJ6xm9iUJrCyGQSq9NGx",
+  "provider_resource_id": "pv4an4eFVYefzUvZ9F8h",
+  "model": "nano-banana-2-1",
+  "project_id": "8K6WcbrPLghSBJXBtWAE",
+  "external_status": "completed",
+  "local_submission": {
+    "status": "not_registered",
+    "error": "参考输入的模型契约尚未核实，不能登记新执行调用",
+    "incident": "执行者未检查本地提交登记进程的非零退出码，随后仍发送了真实平台请求；没有提交前成功保存的CALL快照，不能补写为事前登记。",
+    "recovery": "原平台请求已完成并下载；保留准确原始请求和结果，不重复生成。受管补齐模型契约后按真实时间恢复登记。"
+  },
+  "candidate": null,
+  "original": {
+    "file": ".runtime/task-20261015-0003/aheng-wet-01-original.png",
+    "sha256": "f8547d0defc3571d3c25b991a10cc199562f6edaac54c51c06d63217ac2b98bc",
+    "bytes": 18184156,
+    "mime": "image/png",
+    "width": 5504,
+    "height": 3072,
+    "native": true,
+    "resized": false
+  },
+  "cost": {
+    "currency": "OpenArt credits",
+    "quoted": 80,
+    "actual": "UNKNOWN",
+    "observed_balance_before": 11335,
+    "observed_balance_after": 11255,
+    "observation_is_charge_receipt": false
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_original_image",
+    "accepted_for": null,
+    "result": "rejected",
+    "findings": "实际打开完整原件。脸形与低束发基本保持，手和衣摆可见水滴；但胸前、肩部新增大块湿斑，与浅滩捞书后仅双袖、手、膝和裙下摆湿的范围不符；鞋形和脚踝包裹也较母版改变。不能用作下游完整状态。原生5504×3072的比例为1.7917，与精确16:9相差约0.78%，没有裁剪或放大掩盖。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "asset_id": "asset-task-20261015-0003-aheng-identity-02",
+        "revision_id": "ee6e0f97e99928fd786b1e3e323e519ce0d69cc3f719291946b18c4d79a1c3fc",
+        "component_id": "original",
+        "sha256": "a4dec09a9ac0e4b320079e846bc0f513d78bf82e409add0553e0a90a989be28f"
+      }
+    ]
+  }
+}

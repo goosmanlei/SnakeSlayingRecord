@@ -1,0 +1,80 @@
+{
+  "attempt_id": "task-20261015-0003-ritual-song-full-02",
+  "song_entity_id": "new26-ritual-song",
+  "spec_sha256": "d04ea2f44a7f6d99438ddaf770b01920f98a7aaacbfb98f9bde54a05af4ab026",
+  "sources": {
+    "lyrics": {
+      "path": "production/rebuild/songs/ritual-song/lyrics.txt",
+      "sha256": "3acb2f1ea019152112806a174280896266fad748a2d4f4e1b1128382b7ad8c7d"
+    },
+    "directions": {
+      "path": "production/rebuild/songs/ritual-song/music.md",
+      "sha256": "f3b4c7684f80a5e739b6d251068dd6fcc29c3d97cd582b34eb775ffb0f367b16"
+    }
+  },
+  "requested_format": "mp3",
+  "estimated_cost_usd": "0.08",
+  "price_checked": "2026-10-03",
+  "audio_accepted": false,
+  "production": {
+    "url": "http://127.0.0.1:62845",
+    "requirement_id": "new26-ritual-song-singing",
+    "operation_id": "task-20261015-0003-ritual-song-full-02-submit",
+    "call_id": "task-20261015-0003-ritual-song-full-02"
+  },
+  "status": "completed",
+  "created_at": "2026-10-16T08:09:07.641932+00:00",
+  "max_cost_usd": "0.08",
+  "endpoint": "https://generativelanguage.googleapis.com/v1beta/interactions",
+  "proxy": "system/environment proxy settings",
+  "production_submission": {
+    "call_id": "task-20261015-0003-ritual-song-full-02",
+    "submission_sha256": "6409697d18bf04f951b4db147d654e147876d8b939e9961adcb003dadd255c9d",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "submitted_at": "2026-10-16T08:09:08.229416+00:00",
+  "interaction_id": null,
+  "finished_at": "2026-10-16T08:09:55.477656+00:00",
+  "provider_model": "lyria-3.5",
+  "files": [
+    {
+      "file": "audio-01.mp3",
+      "sha256": "3903014c7428b8269c8e277b9171c1fc1eed273074a86418522dd7706197e339",
+      "bytes": 4345793,
+      "reported_mime_type": "audio/mpeg",
+      "container": "mp3",
+      "codec": "mp3",
+      "sample_rate": "44100",
+      "channels": 2,
+      "duration_seconds": 180.819542,
+      "native_pcm_wav": false
+    }
+  ],
+  "usage": {
+    "total_tokens": 3216,
+    "total_input_tokens": 946,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 946
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 2270,
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 0
+  },
+  "lyric_check": "pending",
+  "listening_review": "unverified",
+  "candidate": {
+    "call_id": "task-20261015-0003-ritual-song-full-02",
+    "candidate_id": "candidate-39aff0dbbad65c16e7c2c1d8dfbb732ca0b993220c114a3ae7ceb56e07fbaf97",
+    "status": "completed",
+    "already_applied": false
+  },
+  "actual_charge_usd": "UNKNOWN",
+  "format_authorization": "用户明确允许原生MP3并继续制作全部歌曲；不等于作品听审通过。",
+  "budget_evidence": "production/receipts/google-budget-task-20261015-0003-songs-mp3.json",
+  "format_check_after_authorization": "passed_native_mp3"
+}
