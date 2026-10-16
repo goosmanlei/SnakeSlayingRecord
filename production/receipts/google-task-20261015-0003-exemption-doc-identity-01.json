@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-exemption-doc-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-exemption-doc-identity-01",
+    "submission_sha256": "8affcfa444634891f133f2ddd24aee0c1156a0c0c2fd620c4941f1c7f98b660b",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-exemption-doc-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "d179900ca7afc2b806769e3f26a0daf06922b3aac5d090767e80b878117ac3af.jpg",
+    "sha256": "d179900ca7afc2b806769e3f26a0daf06922b3aac5d090767e80b878117ac3af",
+    "bytes": 7289071,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-exemption-doc-identity-01",
+    "candidate_id": "candidate-c5a43eb82bb4041b0a7201f722fea9280959bc241d69127fe3b9200a504d0d97",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "实际查看原件：两份独立米白竖纸均有相同正文大留白、下方补写区域、小红方印和同形不可读签押墨形；右份上端竖折可区分官府留本，另有素净折起背面。三组连笔墨形相同，可作为后续旧批文署名的视觉比对，不解释为实际官名或可读文字。未填永久禁索条款，未把两份合为一张。通过纸件身份和版位用途，实际文本及持有动作仍沿准确剧情执行。",
+    "decision": "选用第0代原件；官府留本与阿蘅持有份分开，后续批准旧纸只取准确签押和尺度参考。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 9,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/exemption-doc-identity-01-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 6061,
+    "total_input_tokens": 377,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 377
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4174,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1510
+  },
+  "actual_request_body_sha256": "851585799dac1101a979a0d552c56980c0a9792bf71ec458cc31b6f4a52362ce",
+  "submitted_inputs": []
+}

@@ -1,0 +1,96 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-moon-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-moon-identity-01",
+    "submission_sha256": "ccc35e03bce099cf63dc3881244320df2f88b091043244f8b7b9670c1b1b9c60",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-moon-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "38cc25f8aa105624dd7f5e691a143fb215134501e9f41e60fe2d4af33b91b2f0.jpg",
+    "sha256": "38cc25f8aa105624dd7f5e691a143fb215134501e9f41e60fe2d4af33b91b2f0",
+    "bytes": 6161719,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-moon-identity-01",
+    "candidate_id": "candidate-f368b81b8ecfb83046d1e646129b87d9d744072e0a3a9a7561e9af5861042a5f",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "实际查看月盘原件并与准确纸蛇母版对照：米白平盘、背面竹撑、顶端布环及单根牵线可辨，背视完整线尾，正视牵线伸出画框。关键口径小图中盘面显示得比蛇嘴口明显大，且两个不同朝向不能证明当前方案盘径约为口宽三分之二、能够含放的余隙；底部轮廓简化也不足以量核同一嘴口。不能据此通过整体道具与纸蛇的配合用途。",
+    "decision": "不选作下游；后续回到干净纸蛇母版，使用同朝向、同尺度的嘴口与月盘配合示意，保留纸盘而非球体、真实顶环牵线。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-task-20261015-0003-paper-snake-identity-01",
+        "revision_id": "483137e569c55064568141d94bbc705516504e67cae1109d66085593652eb976"
+      }
+    ]
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  },
+  "usage": {
+    "total_tokens": 6975,
+    "total_input_tokens": 1424,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 304
+      },
+      {
+        "modality": "image",
+        "tokens": 1120
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4408,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1143
+  },
+  "actual_request_body_sha256": "510adc68c8554db2d1c39d75c13d7fd9c763b285b7c8c08d5ba8657a8318b327",
+  "submitted_inputs": [
+    {
+      "image_number": 1,
+      "submitted_sha256": "303a004977432c0dce6078babafbfe01e26649fa643e287542fc288e3bb6b91f",
+      "original_sha256": "303a004977432c0dce6078babafbfe01e26649fa643e287542fc288e3bb6b91f",
+      "crop": null
+    }
+  ]
+}

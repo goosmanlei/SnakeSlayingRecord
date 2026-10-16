@@ -1,0 +1,96 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-approval-paper-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-approval-paper-identity-01",
+    "submission_sha256": "92cc03879b9e93f55f98207948b30dd2864cb301fb289da39b12464ae57a0ff9",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-approval-paper-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "8ce3e52f5061d0f6d78e116a6aa15903f6bbd837205979dc38b2e86fe3288e10.jpg",
+    "sha256": "8ce3e52f5061d0f6d78e116a6aa15903f6bbd837205979dc38b2e86fe3288e10",
+    "bytes": 6283582,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-approval-paper-identity-01",
+    "candidate_id": "candidate-6e80df43eb77bb01ff809768e67608321e4bfd6757224f3c3bd54ca4d1e7bb94",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "实际查看原件并对照免役文书参考：四张完整竖纸，左二为旧批文、右二为较新抄件。旧件横折及第一张右下缺口、第二张左上磨损可辨，抄件纸边完整；四张均为同组三组抽象签押笔形与左下朱红印块，不填官名、日期或正文。没有增第五张背面。通过旧件与抄件区别及相同署押线索检查。",
+    "decision": "选用第1代原件；参考只锁定印、押外形，准确正文另排，不把抽象笔形读成姓名。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-task-20261015-0003-exemption-doc-identity-01",
+        "revision_id": "df12cf3785d3093226ba491e9c4f85b339ea67365463af87240429dd7e7ecca3"
+      }
+    ]
+  },
+  "current_consumer_selection": {
+    "slots": 6,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/approval-paper-identity-01-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 6581,
+    "total_input_tokens": 1528,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 408
+      },
+      {
+        "modality": "image",
+        "tokens": 1120
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4259,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 794
+  },
+  "actual_request_body_sha256": "b7273424cd71324bffde0f5cc245e3fdafbe4e3511c52a185e0ffd6e6a79bafb",
+  "submitted_inputs": [
+    {
+      "image_number": 1,
+      "submitted_sha256": "d179900ca7afc2b806769e3f26a0daf06922b3aac5d090767e80b878117ac3af",
+      "original_sha256": "d179900ca7afc2b806769e3f26a0daf06922b3aac5d090767e80b878117ac3af",
+      "crop": null
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-verdict-notice-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-verdict-notice-identity-01",
+    "submission_sha256": "72bfeeab868a6c6becc6e34af59c0879768db6cde8bdbe50d790c04f9b0b3fc6",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-verdict-notice-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "a5fa0a2307a10e7c32fe7f771543b166aa5cab5d555526b5a770366e605acb3a.jpg",
+    "sha256": "a5fa0a2307a10e7c32fe7f771543b166aa5cab5d555526b5a770366e605acb3a",
+    "bytes": 6992998,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-verdict-notice-identity-01",
+    "candidate_id": "candidate-6eea3b8bc989e36c07c73b5868bcde7c466a3d8459c74ae5aff5b79d4077ec46",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "实际查看原件：一张宽长新纸的正面与素背并列，正面完整上下纸边，背面一角轻卷；右下灰色浆糊碗、短宽软刷完整分开。上部浅色留白、中段宽留白、下部浅色留白均在同一连续纸面内，足以排三段原文，没有拆成三张或加入文字、数字、官名和日期。两处较浅色块是原件实际表现，未冒充已经排入正文；通过纸形、连续版位和张贴附件用途。",
+    "decision": "选用第0代原件；实际三段准确文字另排，两旧批文抄件仍为另两张独立纸。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 8,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/verdict-notice-identity-01-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 5649,
+    "total_input_tokens": 368,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 368
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4235,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1046
+  },
+  "actual_request_body_sha256": "7386238593b034774e4b02edbd02d81254ca0a0461da16bd2bc23b42aed16b31",
+  "submitted_inputs": []
+}

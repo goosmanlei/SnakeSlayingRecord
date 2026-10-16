@@ -1,0 +1,96 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-loan-uncovered-overall-01",
+  "submission": {
+    "call_id": "task-20261015-0003-loan-uncovered-overall-01",
+    "submission_sha256": "87919d5a985f7b39b9e04cecb6616ad5e692535abcba0faf6ca878f881cda753",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-loan-uncovered-overall-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "0b2628540e9352ef90168cb589cc387e2c22daffddc18fce71eaa9d5ad0ebd36.jpg",
+    "sha256": "0b2628540e9352ef90168cb589cc387e2c22daffddc18fce71eaa9d5ad0ebd36",
+    "bytes": 5734316,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-loan-uncovered-overall-01",
+    "candidate_id": "candidate-55b3199c41dc65472116fe9c92bb1906ba337744f9272bc522193ea25f96e1b8",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "实际查看原件并对照本轮借据母版：原纸正背三道横折对应，正面右下缺口翻背位于左下；原来被贴片边压住的红手印拇指现已显露，原贴位留淡胶痕和空白。中央上下为同一揭下贴片的正背，卷角翻面相反，两纸件均独立完整；没有贴回、另造红印或提前写入条款。排布由两行改为左右原纸加中央贴片，不改变两件纸的身份与揭贴线索。通过完整状态用途。",
+    "decision": "选用第1代原件；沿已明确选择的三道横折母版，借据正文与贴片文字各用准确字层。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-task-20261015-0003-loan-paper-identity-01",
+        "revision_id": "984d3df7a54b5394fc0991aa544981f64ddc06a37d428bb8a81e9d10f1fc341a"
+      }
+    ]
+  },
+  "current_consumer_selection": {
+    "slots": 12,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/loan-uncovered-overall-01-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 8073,
+    "total_input_tokens": 1551,
+    "input_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 1120
+      },
+      {
+        "modality": "text",
+        "tokens": 431
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4827,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1695
+  },
+  "actual_request_body_sha256": "020a5971c24b7048124fd1eb79ea2c0676cadbaafbe39acf70869dde14ff0d7a",
+  "submitted_inputs": [
+    {
+      "image_number": 1,
+      "submitted_sha256": "3237f293343ed4d459e0788e748eaab6e94e1cc126e08b9e6eb25703b40ac364",
+      "original_sha256": "3237f293343ed4d459e0788e748eaab6e94e1cc126e08b9e6eb25703b40ac364",
+      "crop": null
+    }
+  ]
+}

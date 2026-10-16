@@ -1,0 +1,96 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-children-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-children-identity-01",
+    "submission_sha256": "73a9c382c1d27268a4096f8d467cb6bf54f1cd554ade8fdc2cb6cadb15fcb309",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-children-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "0f328de6148316fd50f95c64965408589f53f173d5f2a19e4040b2ce8eff44f4.jpg",
+    "sha256": "0f328de6148316fd50f95c64965408589f53f173d5f2a19e4040b2ce8eff44f4",
+    "bytes": 6599138,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-children-identity-01",
+    "candidate_id": "candidate-0b894ca42d8905cb5da54675b53de7177f704c5a3221ccc92cb8a2fbf220e679",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "实际查看新图并与问粮妇人母版对照：三站一坐共四个孩子，身高顺序、灰蓝男孩、浅茶衣灰裙双髻女孩、灰绿圆脸矮男孩均可区分。右侧幼儿保留母版圆脸、短发、米衣灰绿裤和双浅褐鞋，坐姿臀脚着地；未复制母亲，没有掉鞋或哭喊。脸形与年龄比例有区分，不等同阿蘅或李寄。通过群体身份与比例用途，幼儿在真实场景仍由母亲抱持。",
+    "decision": "选用第1代原件；本图四人为身份锚点，不规定剧情现场只有四个孩子。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-task-20261015-0003-poor-mother-identity-01",
+        "revision_id": "4724ef40748d79a75cdf90df9c012a9372209bcff02d4548c90ef375010fe12b"
+      }
+    ]
+  },
+  "current_consumer_selection": {
+    "slots": 7,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/children-identity-01-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 6681,
+    "total_input_tokens": 1380,
+    "input_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 1120
+      },
+      {
+        "modality": "text",
+        "tokens": 260
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4403,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 898
+  },
+  "actual_request_body_sha256": "68887cdcaf41716b096b7dad7b67ebf68e7b4d1df6c4b1d52abbf2c4f63936c3",
+  "submitted_inputs": [
+    {
+      "image_number": 1,
+      "submitted_sha256": "510dc8ae7d785ddfd06c0ae54a0b0adf19dfbd614a909f612dbac63b138c0043",
+      "original_sha256": "510dc8ae7d785ddfd06c0ae54a0b0adf19dfbd614a909f612dbac63b138c0043",
+      "crop": null
+    }
+  ]
+}

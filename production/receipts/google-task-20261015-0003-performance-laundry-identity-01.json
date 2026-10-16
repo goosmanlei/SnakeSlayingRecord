@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-performance-laundry-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-performance-laundry-identity-01",
+    "submission_sha256": "abb8145ecc25bdfd3f485f85cdfb0570b1e1230a1c1fee49f4d113c05e336b18",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-performance-laundry-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "7ba14a91fee7a182140b46b6697a6915d776bcfa6a298eca5435fc75092ae7d7.jpg",
+    "sha256": "7ba14a91fee7a182140b46b6697a6915d776bcfa6a298eca5435fc75092ae7d7",
+    "bytes": 7509844,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-performance-laundry-identity-01",
+    "candidate_id": "candidate-15342a307b29b7ed31d9651ffbee498ca3a549255a5a81043bbef19e0654ec9e",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "实际查看原件：浅茶短衣、灰蓝宽袖衣和暗红长袖衣各一件，完整衣廓清楚、无纹章或字样；红衣以背面展开右袖，浅褐补缝和退色袖缘在主图、近图可辨，没有人物或漂浮断袖。实际采用悬垂衣廓而非平铺，仍足以锁定衣组、材质与右袖特征，故按制作职责接受这一展示差异。湿布抖动和近女孩拂过仍须在镜头核对。",
+    "decision": "选用第0代衣组形制；与阿蘅母亲砖红旧衣分开，不把本图作为已完成晾晒剧情。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 2,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/performance-laundry-identity-01-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 5979,
+    "total_input_tokens": 317,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 317
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4266,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1396
+  },
+  "actual_request_body_sha256": "86b8996ef6fedb1957dbc26119dd40c839eb33ce4fbf76dd4408193b2884e230",
+  "submitted_inputs": []
+}

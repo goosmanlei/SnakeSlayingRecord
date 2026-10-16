@@ -1,0 +1,106 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-book-rebound-overall-01",
+  "submission": {
+    "call_id": "task-20261015-0003-book-rebound-overall-01",
+    "submission_sha256": "f7791e8d948ca0b97deca893ba5c4535c4b39f2458aa7c5084676469e61c32e6",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-book-rebound-overall-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "5ac7e824ec3c9a09cb4ead436f66b0ff825f645038d001e4bf0b02ac86354426.jpg",
+    "sha256": "5ac7e824ec3c9a09cb4ead436f66b0ff825f645038d001e4bf0b02ac86354426",
+    "bytes": 6237821,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-book-rebound-overall-01",
+    "candidate_id": "candidate-bc8bcd68a299a4c123a9a5726a6f68927f970b277bd58094c17cf02e6e973cec",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "实际查看原件：新白页、旧书纸色、左脊三孔和局部短线结可辨，三个炭圈及针没有出现。但旧末段残页约保留全页的三分之二，撕口明显低于中线，两团墨洇偏在残页右下近撕口处；未清楚满足下半页已失、墨洇位于所留上半页中部的连续性要求。另带入母版纸镇。主图与近图不能据此认定残页状态通过。",
+    "decision": "保留真实返回和失败原因，不选入任何下游消费者；后续回到干净歌本母版修正撕口与墨洇，不能串接本次失败图。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-task-20261015-0003-songbook-identity-02",
+        "revision_id": "e741030b764d7d41431a96629647f5edf14f1016564216872f69a72f9bc45081"
+      },
+      {
+        "object_id": "asset-task-20261015-0003-binding-kit-identity-01",
+        "revision_id": "4ad7abf7c25b60d5fbe6a0897d4d9990294505c6b0776d82e8e82b1e6db116e4"
+      }
+    ]
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  },
+  "usage": {
+    "total_tokens": 8530,
+    "total_input_tokens": 2810,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 570
+      },
+      {
+        "modality": "image",
+        "tokens": 2240
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4324,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1396
+  },
+  "actual_request_body_sha256": "b12c630bf1277a94668e3771cd04d335479c9824fa373c13dc23af52c210ff18",
+  "submitted_inputs": [
+    {
+      "image_number": 1,
+      "submitted_sha256": "d6f71f27ee9d2e86bbdb21c8d52a426a3ce6e1417d87e3b91c161b1fcb87236c",
+      "original_sha256": "d6f71f27ee9d2e86bbdb21c8d52a426a3ce6e1417d87e3b91c161b1fcb87236c",
+      "crop": null
+    },
+    {
+      "image_number": 2,
+      "submitted_sha256": "1900c9692683aa4b96bfdaec15fece9127ab56c5b0a9c3ffa0622f57a6b3444c",
+      "original_sha256": "1900c9692683aa4b96bfdaec15fece9127ab56c5b0a9c3ffa0622f57a6b3444c",
+      "crop": null
+    }
+  ]
+}

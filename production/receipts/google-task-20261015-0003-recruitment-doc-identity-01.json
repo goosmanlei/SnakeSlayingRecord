@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-recruitment-doc-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-recruitment-doc-identity-01",
+    "submission_sha256": "6ca001de248c600fa5aaecd59f05bb7889af5cb4f13c20085c5f308174ca7749",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-recruitment-doc-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "717e19ef6c743ee79d3d8148ef1bd019553e179af97fe65b606526854ad1160f.jpg",
+    "sha256": "717e19ef6c743ee79d3d8148ef1bd019553e179af97fe65b606526854ad1160f",
+    "bytes": 7057738,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-recruitment-doc-identity-01",
+    "candidate_id": "candidate-b0a0d3267975e93bb2cbe9d7e4a497151dc52d41190283f5020289e879393969",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "实际查看原件：主文书与四张领取纸共五张，主纸四个浅红手印、各领取纸一个手印，数量正确；但右上组中左上领取纸缺少其余三张都有的下方承诺栏，四份文本版位并不相同。右侧四纸均未见与主纸对应的小方印。领取份需要承载同文本，不能仅因总数正确而通过完整职责。",
+    "decision": "不选下游；未来根图把四份领取纸指定为同一版式的四件独立实物，并使各自承诺区和需盖印位置完整。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  },
+  "usage": {
+    "total_tokens": 5534,
+    "total_input_tokens": 399,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 399
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4180,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 955
+  },
+  "actual_request_body_sha256": "a376253413c1f91e7a4305ae594274bcdbc6ecfacebf7a720a0609a24dea8494",
+  "submitted_inputs": []
+}
