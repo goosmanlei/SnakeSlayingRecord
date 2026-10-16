@@ -1,16 +1,16 @@
 {
   "format": "stage-verification-v1",
   "task_id": "task-20261015-0003",
-  "stage": "stage-06",
-  "checked_at": "2026-10-16T17:16:50.466938+00:00",
+  "stage": "stage-07",
+  "checked_at": "2026-10-16T18:08:46.207722+00:00",
   "requirements": 651,
   "ordinary_state": 191,
   "unique_dependency_edges": 3397,
   "acyclic": true,
-  "candidates": 188,
-  "covered_requirements": 149,
-  "production_files_verified": 191,
-  "selected_input_slots": 2008,
+  "candidates": 210,
+  "covered_requirements": 170,
+  "production_files_verified": 236,
+  "selected_input_slots": 2169,
   "selected_by_material": {
     "new26-aheng-identity": 210,
     "new26-exemption-doc-identity": 9,
@@ -28,6 +28,7 @@
     "new26-old-registers-identity": 19,
     "new26-listeners-identity": 2,
     "new26-aheng-voice": 87,
+    "new26-liji-voice": 68,
     "new26-zhou-identity": 22,
     "new26-rice-bag-identity": 27,
     "new26-moer-identity": 18,
@@ -46,6 +47,7 @@
     "new26-singers-identity": 2,
     "new26-mother-oldstage-overall": 6,
     "new26-neighbor-woman-identity": 7,
+    "new26-aheng-mother-voice": 14,
     "new26-temple-front-layout": 55,
     "new26-children-identity": 7,
     "new26-festival-crowd-identity": 15,
@@ -62,12 +64,15 @@
     "new26-ledger-box-identity": 10,
     "new26-old-woman-identity": 3,
     "new26-registry-clerk-identity": 3,
+    "new26-recruitment-board-identity": 3,
     "new26-liji-head-wrap-overall": 95,
     "new26-lidan-identity": 145,
     "new26-liji-mother-identity": 28,
+    "new26-lidan-voice": 44,
     "new26-ahe-identity": 2,
     "new26-dock-pole-identity": 5,
     "new26-chipped-bowl-identity": 9,
+    "new26-liji-mother-voice": 12,
     "new26-bedding-identity": 10,
     "new26-carrying-strap-identity": 7,
     "new26-waist-drum-identity": 7,
@@ -81,6 +86,7 @@
     "new26-approval-paper-identity": 6,
     "new26-loan-uncovered-overall": 12,
     "new26-helpers-identity": 33,
+    "new26-helpers-voice": 2,
     "new26-mason-identity": 5,
     "new26-heavy-knife-identity": 52,
     "new26-masonry-kit-identity": 2,
@@ -89,12 +95,15 @@
     "new26-expense-ledger-identity": 3,
     "new26-elders-identity": 18,
     "new26-incense-burner-identity": 1,
+    "new26-grain-ledger-identity": 9,
+    "new26-elders-voice": 3,
     "new26-snake-first-cut-overall": 2,
     "new26-liji-first-blood-overall": 22,
     "new26-snake-deep-cut-overall": 4,
     "new26-snake-separated-overall": 3,
     "new26-liji-clean-wrap-overall": 4,
     "new26-xiaoman-mother-identity": 9,
+    "new26-office-clerks-voice": 6,
     "new26-document-handler-identity": 1,
     "new26-complaint-scroll-identity": 3,
     "new26-verdict-notice-identity": 8,
@@ -105,15 +114,16 @@
     "new26-performance-laundry-identity": 2
   },
   "status_counts": {
-    "executor_checked": 90,
+    "executor_checked": 92,
     "executor_checked_partial": 1,
-    "hearing_unverified": 34,
-    "user_audition_passed": 1,
-    "quality_failed": 23,
-    "not_produced": 42
+    "user_audition_passed": 10,
+    "quality_failed": 27,
+    "reference_pending": 3,
+    "not_produced": 21,
+    "hearing_unverified": 37
   },
   "call_counts": {
-    "completed": 187,
+    "completed": 209,
     "unknown": 5,
     "failed": 3
   },
@@ -136,37 +146,37 @@
   },
   "locked_story_unchanged": true,
   "sanitized_private_objects": {
-    "managed-method-artifact-v1": 1183,
-    "managed-method-execution-v1": 397
+    "managed-method-artifact-v1": 1411,
+    "managed-method-execution-v1": 473
   },
   "empty_instance_recovery": {
     "recovered": true,
-    "objects": 18303,
-    "production_objects": 2060,
-    "revisions": 18356,
+    "objects": 18371,
+    "production_objects": 2104,
+    "revisions": 18424,
     "comments": 404,
-    "files_verified": 249,
-    "destination": ".runtime/generation/recovered-stage-0003-06",
+    "files_verified": 294,
+    "destination": ".runtime/generation/recovered-stage-0003-07",
     "schema_version": 14,
     "exact_table_comparisons": {
       "production_current_records": {
-        "rows": 2060,
-        "sha256": "a97fb36e076aa947fe12ad61d30a0d9c16a414fade0f7b04e662297e489653e5",
+        "rows": 2104,
+        "sha256": "3881efadc82bc35f0a6b23a85ee69e99d141b310f0c5639b6c89e626ae9f27b4",
         "equal": true
       },
       "production_candidates": {
-        "rows": 188,
-        "sha256": "df8d9e4dc00f32c1952830a743a4f1d51eeb2926b6db28e3b921e993f412adda",
+        "rows": 210,
+        "sha256": "b2f50ef39cf5f94a59d95f07ccfe5306e500a8b9fd86c82b8c579698a7751dbe",
         "equal": true
       },
       "production_candidate_targets": {
-        "rows": 188,
-        "sha256": "bb75b914fe9474acc3ac69e06705dbc23d90b97d14836107fe9fca3ec2a6b024",
+        "rows": 210,
+        "sha256": "cb6b7eb3af443a6ba102a8cbdda29badb243a57df6cc35f9a1824c1c77b4521c",
         "equal": true
       },
       "production_submissions": {
-        "rows": 196,
-        "sha256": "c6931f81968affc99a867b6c0b6f1b3b8a161fac0bf6a1a68e0eb1388fce0493",
+        "rows": 218,
+        "sha256": "beca0e359945cce91cb0735c1411b986d47e7f13e43cf250c37e7bcdbe7deb7e",
         "equal": true
       },
       "comments": {
@@ -193,30 +203,31 @@
     "production/publications/task-20261015-0003-stage-04.json": "f88431faecf423c5ae23804858b7aff19f9ae5e7d333a0dd18cf16c2c3420bf8",
     "production/publications/task-20261015-0003-stage-03.json": "9ace5fa15adb0c191d415744d2fe8f100e47634740d088985a708c151c290da8",
     "production/publications/task-20261015-0003-stage-02.json": "5aee3280872431dfd151f837cd02eaa2508be42f479e02bda691dc822e72a415",
-    "production/publications/task-20261015-0003-stage-01.json": "e94b851776274b102b890437fcb657631a11a75339a4e2c71f3b3533c85e836a"
+    "production/publications/task-20261015-0003-stage-01.json": "e94b851776274b102b890437fcb657631a11a75339a4e2c71f3b3533c85e836a",
+    "production/publications/task-20261015-0003-stage-06.json": "e04b1d646d07679283881e6be32b72d62da7aab8a9215c7df19af45d00bddd37"
   },
   "publication_package": {
-    "path": "production/publications/task-20261015-0003-stage-06.json",
-    "sha256": "e04b1d646d07679283881e6be32b72d62da7aab8a9215c7df19af45d00bddd37",
-    "publication_id": "04d8e37618e98141e85a3c0350a1935bd49068c5208e2a3b88087b748ec10047",
-    "objects": 1901,
-    "media_files": 191,
+    "path": "production/publications/task-20261015-0003-stage-07.json",
+    "sha256": "01a1b36feb5d7161028d166d7cd9fc09c5e71a1bac20e3b2e167d0e3f488c7d2",
+    "publication_id": "1e97c469e4dd9dd178ff5cb9250866199255cc7fd7a9fcfe60649cf41a994563",
+    "objects": 1973,
+    "media_files": 236,
     "applied_to_formal": false,
     "preflight": {
       "passed": true,
       "target": "isolated clone of formal database",
-      "receipt": ".runtime/generation/publications/task-20261015-0003-stage-check-06/preflight.json",
+      "receipt": ".runtime/generation/publications/task-20261015-0003-stage-check-07/preflight.json",
       "result": {
         "applied": false,
         "already_published": false,
-        "publication_id": "04d8e37618e98141e85a3c0350a1935bd49068c5208e2a3b88087b748ec10047",
+        "publication_id": "1e97c469e4dd9dd178ff5cb9250866199255cc7fd7a9fcfe60649cf41a994563",
         "source_commit": null,
         "scope": {
           "contract": "production-current-publication-v1",
           "changed_rows": {
-            "objects": 1901,
-            "revisions": 1901,
-            "dependencies": 9020,
+            "objects": 1973,
+            "revisions": 1973,
+            "dependencies": 9565,
             "comments": 0,
             "material_content": 0,
             "material_archive_files": 0,
@@ -226,16 +237,16 @@
             "business_relations": 0,
             "business_relation_aliases": 0,
             "audiovisual_notes": 0,
-            "production_current_records": 958,
-            "production_submissions": 196,
-            "production_candidates": 188,
-            "production_candidate_targets": 188,
+            "production_current_records": 1006,
+            "production_submissions": 218,
+            "production_candidates": 210,
+            "production_candidate_targets": 210,
             "production_comment_quotes": 0,
-            "production_current_operations": 4409,
+            "production_current_operations": 4807,
             "production_response_excerpts": 0
           },
           "comment_events": [],
-          "publication_id": "04d8e37618e98141e85a3c0350a1935bd49068c5208e2a3b88087b748ec10047",
+          "publication_id": "1e97c469e4dd9dd178ff5cb9250866199255cc7fd7a9fcfe60649cf41a994563",
           "already_published": false
         }
       }
@@ -244,19 +255,19 @@
   "formal_publication": false,
   "system_commit": "096b6bb0d7c13a20d61c54a2211b48b245f8abc7",
   "stage_freeze": {
-    "frozen_at": "2026-10-16T17:11:12.114612+00:00",
-    "source_snapshot": ".runtime/task-20261015-0003/source-stage06.sqlite3",
+    "frozen_at": "2026-10-16T18:02:35.180665+00:00",
+    "source_snapshot": ".runtime/task-20261015-0003/source-stage07.sqlite3",
     "active_database": ".runtime/generation/review/.runtime/review.sqlite3",
     "summary": {
-      "checked_at": "2026-10-16T17:11:10.334461+00:00",
+      "checked_at": "2026-10-16T18:02:32.843010+00:00",
       "requirements": 651,
       "ordinary_state": 191,
       "unique_dependency_edges": 3397,
       "acyclic": true,
-      "candidates": 188,
-      "covered_requirements": 149,
-      "production_files_verified": 191,
-      "selected_input_slots": 2008,
+      "candidates": 210,
+      "covered_requirements": 170,
+      "production_files_verified": 236,
+      "selected_input_slots": 2169,
       "selected_by_material": {
         "new26-aheng-identity": 210,
         "new26-exemption-doc-identity": 9,
@@ -274,6 +285,7 @@
         "new26-old-registers-identity": 19,
         "new26-listeners-identity": 2,
         "new26-aheng-voice": 87,
+        "new26-liji-voice": 68,
         "new26-zhou-identity": 22,
         "new26-rice-bag-identity": 27,
         "new26-moer-identity": 18,
@@ -292,6 +304,7 @@
         "new26-singers-identity": 2,
         "new26-mother-oldstage-overall": 6,
         "new26-neighbor-woman-identity": 7,
+        "new26-aheng-mother-voice": 14,
         "new26-temple-front-layout": 55,
         "new26-children-identity": 7,
         "new26-festival-crowd-identity": 15,
@@ -308,12 +321,15 @@
         "new26-ledger-box-identity": 10,
         "new26-old-woman-identity": 3,
         "new26-registry-clerk-identity": 3,
+        "new26-recruitment-board-identity": 3,
         "new26-liji-head-wrap-overall": 95,
         "new26-lidan-identity": 145,
         "new26-liji-mother-identity": 28,
+        "new26-lidan-voice": 44,
         "new26-ahe-identity": 2,
         "new26-dock-pole-identity": 5,
         "new26-chipped-bowl-identity": 9,
+        "new26-liji-mother-voice": 12,
         "new26-bedding-identity": 10,
         "new26-carrying-strap-identity": 7,
         "new26-waist-drum-identity": 7,
@@ -327,6 +343,7 @@
         "new26-approval-paper-identity": 6,
         "new26-loan-uncovered-overall": 12,
         "new26-helpers-identity": 33,
+        "new26-helpers-voice": 2,
         "new26-mason-identity": 5,
         "new26-heavy-knife-identity": 52,
         "new26-masonry-kit-identity": 2,
@@ -335,12 +352,15 @@
         "new26-expense-ledger-identity": 3,
         "new26-elders-identity": 18,
         "new26-incense-burner-identity": 1,
+        "new26-grain-ledger-identity": 9,
+        "new26-elders-voice": 3,
         "new26-snake-first-cut-overall": 2,
         "new26-liji-first-blood-overall": 22,
         "new26-snake-deep-cut-overall": 4,
         "new26-snake-separated-overall": 3,
         "new26-liji-clean-wrap-overall": 4,
         "new26-xiaoman-mother-identity": 9,
+        "new26-office-clerks-voice": 6,
         "new26-document-handler-identity": 1,
         "new26-complaint-scroll-identity": 3,
         "new26-verdict-notice-identity": 8,
@@ -351,28 +371,33 @@
         "new26-performance-laundry-identity": 2
       },
       "status_counts": {
-        "executor_checked": 90,
+        "executor_checked": 92,
         "executor_checked_partial": 1,
-        "hearing_unverified": 34,
-        "user_audition_passed": 1,
-        "quality_failed": 23,
-        "not_produced": 42
+        "user_audition_passed": 10,
+        "quality_failed": 27,
+        "reference_pending": 3,
+        "not_produced": 21,
+        "hearing_unverified": 37
       },
       "call_counts": {
-        "completed": 187,
+        "completed": 209,
         "unknown": 5,
         "failed": 3
       }
     },
     "checked_material_binding_coverage": {
-      "checked_materials": 91,
-      "expected_slots": 2008,
-      "selected_slots": 2008,
+      "checked_materials": 102,
+      "expected_slots": 2169,
+      "selected_slots": 2169,
       "pending_slots": [],
       "by_material": {
         "new26-ahe-identity": {
           "expected": 2,
           "selected": 2
+        },
+        "new26-aheng-home-river-ambience": {
+          "expected": 0,
+          "selected": 0
         },
         "new26-aheng-identity": {
           "expected": 210,
@@ -381,6 +406,10 @@
         "new26-aheng-mother-identity": {
           "expected": 29,
           "selected": 29
+        },
+        "new26-aheng-mother-voice": {
+          "expected": 14,
+          "selected": 14
         },
         "new26-aheng-voice": {
           "expected": 87,
@@ -458,6 +487,10 @@
           "expected": 18,
           "selected": 18
         },
+        "new26-elders-voice": {
+          "expected": 3,
+          "selected": 3
+        },
         "new26-exemption-doc-identity": {
           "expected": 9,
           "selected": 9
@@ -469,6 +502,10 @@
         "new26-festival-crowd-identity": {
           "expected": 15,
           "selected": 15
+        },
+        "new26-grain-ledger-identity": {
+          "expected": 9,
+          "selected": 9
         },
         "new26-grain-manager-identity": {
           "expected": 4,
@@ -485,6 +522,10 @@
         "new26-helpers-identity": {
           "expected": 33,
           "selected": 33
+        },
+        "new26-helpers-voice": {
+          "expected": 2,
+          "selected": 2
         },
         "new26-household-cleaver-identity": {
           "expected": 5,
@@ -514,6 +555,10 @@
           "expected": 145,
           "selected": 145
         },
+        "new26-lidan-voice": {
+          "expected": 44,
+          "selected": 44
+        },
         "new26-liji-clean-wrap-overall": {
           "expected": 4,
           "selected": 4
@@ -542,9 +587,17 @@
           "expected": 28,
           "selected": 28
         },
+        "new26-liji-mother-voice": {
+          "expected": 12,
+          "selected": 12
+        },
         "new26-liji-palm-overall": {
           "expected": 18,
           "selected": 18
+        },
+        "new26-liji-voice": {
+          "expected": 68,
+          "selected": 68
         },
         "new26-listeners-identity": {
           "expected": 2,
@@ -594,6 +647,10 @@
           "expected": 10,
           "selected": 10
         },
+        "new26-office-clerks-voice": {
+          "expected": 6,
+          "selected": 6
+        },
         "new26-old-registers-identity": {
           "expected": 19,
           "selected": 19
@@ -630,6 +687,10 @@
           "expected": 30,
           "selected": 30
         },
+        "new26-recruitment-board-identity": {
+          "expected": 3,
+          "selected": 3
+        },
         "new26-registry-clerk-identity": {
           "expected": 3,
           "selected": 3
@@ -645,6 +706,10 @@
         "new26-singers-identity": {
           "expected": 2,
           "selected": 2
+        },
+        "new26-singers-voice": {
+          "expected": 0,
+          "selected": 0
         },
         "new26-snake-deep-cut-overall": {
           "expected": 4,
@@ -741,7 +806,8 @@
       "production/publications/task-20261015-0003-stage-04.json": "f88431faecf423c5ae23804858b7aff19f9ae5e7d333a0dd18cf16c2c3420bf8",
       "production/publications/task-20261015-0003-stage-03.json": "9ace5fa15adb0c191d415744d2fe8f100e47634740d088985a708c151c290da8",
       "production/publications/task-20261015-0003-stage-02.json": "5aee3280872431dfd151f837cd02eaa2508be42f479e02bda691dc822e72a415",
-      "production/publications/task-20261015-0003-stage-01.json": "e94b851776274b102b890437fcb657631a11a75339a4e2c71f3b3533c85e836a"
+      "production/publications/task-20261015-0003-stage-01.json": "e94b851776274b102b890437fcb657631a11a75339a4e2c71f3b3533c85e836a",
+      "production/publications/task-20261015-0003-stage-06.json": "e04b1d646d07679283881e6be32b72d62da7aab8a9215c7df19af45d00bddd37"
     }
   },
   "external_unregistered_output": {
@@ -763,14 +829,18 @@
     "actual_listening": false
   },
   "checked_material_binding_coverage": {
-    "checked_materials": 91,
-    "expected_slots": 2008,
-    "selected_slots": 2008,
+    "checked_materials": 102,
+    "expected_slots": 2169,
+    "selected_slots": 2169,
     "pending_slots": [],
     "by_material": {
       "new26-ahe-identity": {
         "expected": 2,
         "selected": 2
+      },
+      "new26-aheng-home-river-ambience": {
+        "expected": 0,
+        "selected": 0
       },
       "new26-aheng-identity": {
         "expected": 210,
@@ -779,6 +849,10 @@
       "new26-aheng-mother-identity": {
         "expected": 29,
         "selected": 29
+      },
+      "new26-aheng-mother-voice": {
+        "expected": 14,
+        "selected": 14
       },
       "new26-aheng-voice": {
         "expected": 87,
@@ -856,6 +930,10 @@
         "expected": 18,
         "selected": 18
       },
+      "new26-elders-voice": {
+        "expected": 3,
+        "selected": 3
+      },
       "new26-exemption-doc-identity": {
         "expected": 9,
         "selected": 9
@@ -867,6 +945,10 @@
       "new26-festival-crowd-identity": {
         "expected": 15,
         "selected": 15
+      },
+      "new26-grain-ledger-identity": {
+        "expected": 9,
+        "selected": 9
       },
       "new26-grain-manager-identity": {
         "expected": 4,
@@ -883,6 +965,10 @@
       "new26-helpers-identity": {
         "expected": 33,
         "selected": 33
+      },
+      "new26-helpers-voice": {
+        "expected": 2,
+        "selected": 2
       },
       "new26-household-cleaver-identity": {
         "expected": 5,
@@ -912,6 +998,10 @@
         "expected": 145,
         "selected": 145
       },
+      "new26-lidan-voice": {
+        "expected": 44,
+        "selected": 44
+      },
       "new26-liji-clean-wrap-overall": {
         "expected": 4,
         "selected": 4
@@ -940,9 +1030,17 @@
         "expected": 28,
         "selected": 28
       },
+      "new26-liji-mother-voice": {
+        "expected": 12,
+        "selected": 12
+      },
       "new26-liji-palm-overall": {
         "expected": 18,
         "selected": 18
+      },
+      "new26-liji-voice": {
+        "expected": 68,
+        "selected": 68
       },
       "new26-listeners-identity": {
         "expected": 2,
@@ -992,6 +1090,10 @@
         "expected": 10,
         "selected": 10
       },
+      "new26-office-clerks-voice": {
+        "expected": 6,
+        "selected": 6
+      },
       "new26-old-registers-identity": {
         "expected": 19,
         "selected": 19
@@ -1028,6 +1130,10 @@
         "expected": 30,
         "selected": 30
       },
+      "new26-recruitment-board-identity": {
+        "expected": 3,
+        "selected": 3
+      },
       "new26-registry-clerk-identity": {
         "expected": 3,
         "selected": 3
@@ -1043,6 +1149,10 @@
       "new26-singers-identity": {
         "expected": 2,
         "selected": 2
+      },
+      "new26-singers-voice": {
+        "expected": 0,
+        "selected": 0
       },
       "new26-snake-deep-cut-overall": {
         "expected": 4,
@@ -1157,16 +1267,41 @@
   },
   "audio_audition": {
     "executor_actual_listening": false,
-    "user_passed_requirement": "new26-aheng-voice",
-    "full_and_short_originals_passed": true,
-    "selected_consumer_slots": 87,
-    "four_requested_revisions_generated": true,
-    "revisions_pending_user_audition": [
-      "new26-liji-voice",
-      "new26-lidan-voice",
-      "new26-liji-mother-voice",
-      "new26-aheng-mother-voice"
+    "user_passed_candidates": [
+      "aheng-voice-01",
+      "elders-voice-01",
+      "aheng-home-river-ambience-01",
+      "lidan-voice-02",
+      "liji-mother-voice-02",
+      "aheng-mother-voice-02",
+      "liji-voice-03",
+      "helpers-voice-01",
+      "office-clerks-voice-01",
+      "singers-voice-01"
     ],
-    "source": "production/receipts/audio-checks-task-20261015-0003-stage05.json"
+    "full_original_only_passed": [
+      "back-court-ambience-01",
+      "teacher-court-ambience-01",
+      "temple-hall-ambience-01"
+    ],
+    "source": "production/receipts/audio-auditions-task-20261015-0003-stage07.json",
+    "scope": "Exact user hearing and deterministic editing evidence; no claim of executor listening."
+  },
+  "pause": {
+    "task_id": "task-20261015-0003",
+    "user_request": "下一个checkpoint请先暂停任务，我要临时退出下当前会话",
+    "recorded_at": "2026-10-16T18:01:44.546630+00:00",
+    "pause_after": "stage-07 verified checkpoint",
+    "new_paid_requests_allowed_before_resume": false,
+    "resume_entry": "通过原任务入口恢复；先完整读取届时的新launch文件并完成bind_session认证，不直接codex resume绕过任务领取。",
+    "do_not_mark_complete": true,
+    "known_active_local_provider_requests_at_pause_request": [],
+    "historical_unknown_requests": [
+      "task-20261015-0003-qingpeng-full-01",
+      "task-20261015-0003-guard-identity-01",
+      "task-20261015-0003-porter-identity-01",
+      "task-20261015-0003-stage-drum-identity-01",
+      "task-20261015-0003-guard-voice-01"
+    ]
   }
 }
