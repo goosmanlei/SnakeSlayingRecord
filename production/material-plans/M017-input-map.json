@@ -1,0 +1,84 @@
+{
+  "object_id": "new26-s001-q02-video",
+  "code": "M017",
+  "historical_code": "M4464",
+  "revision_id": "781fee86439de18557e68107f103a05407cc60b7819a74c741b3a7f68dcfe9b3",
+  "prompt_sha256": "3bcae90cc0e9c663f78347961d367015691d67ec3ea8528fa79dfb64b8a22e21",
+  "model": "Seedance_2.5",
+  "parameters": {
+    "aspect_ratio": "16:9",
+    "duration": 18,
+    "generate_type": 0,
+    "resolution": "720p",
+    "task_type": "reference"
+  },
+  "inputs": [
+    {
+      "model_slot": "@图片1",
+      "page_code": "M001",
+      "title": "阿蘅 · 基础形象",
+      "reference": {
+        "object_id": "new26-aheng-identity",
+        "revision_id": "0ea568f155bbd4595a8f5b55cd66349cebc50bf64311d39565f579c64fb8d461"
+      },
+      "use": "@图片1：锁定阿蘅 · 基础形象的可见外形与色彩，不复制分视图或边框",
+      "file_status": "awaiting_new_original"
+    },
+    {
+      "model_slot": "@图片2",
+      "page_code": "M007",
+      "title": "挑柴老汉 · 基础形象",
+      "reference": {
+        "object_id": "new26-porter-identity",
+        "revision_id": "59f27e2ab587489a162a4c74a6ca20959d205809421b4ebef07e188ed4a22fcf"
+      },
+      "use": "@图片2：锁定挑柴老汉 · 基础形象的可见外形与色彩，不复制分视图或边框",
+      "file_status": "awaiting_new_original"
+    },
+    {
+      "model_slot": "@图片3",
+      "page_code": "M011",
+      "title": "河街米铺 · 空间依据",
+      "reference": {
+        "object_id": "new26-rice-shop-layout",
+        "revision_id": "f20d3c1be0c93252c1cb07012d7088d7647b17d4495653d8e8a2be335c912ecc"
+      },
+      "use": "@图片3：锁定河街米铺 · 空间依据的可见外形与色彩，不复制分视图或边框",
+      "file_status": "awaiting_new_original"
+    },
+    {
+      "model_slot": "@图片4",
+      "page_code": "M012",
+      "title": "阿蘅的歌本 · 基础形象",
+      "reference": {
+        "object_id": "new26-songbook-identity",
+        "revision_id": "b6fc83ef99fc149a342c227a5327d437f55a613defea39fecaaea61c882397a9"
+      },
+      "use": "@图片4：锁定阿蘅的歌本 · 基础形象的可见外形与色彩，不复制分视图或边框",
+      "file_status": "awaiting_new_original"
+    },
+    {
+      "model_slot": "@音频1",
+      "page_code": "M015",
+      "title": "开篇行船唱段 · 准确演唱",
+      "reference": {
+        "object_id": "new26-boat-song-singing",
+        "revision_id": "f11d4f9ee02db7cdb95a3447019e8ed609861049f3d53237127cdd456605e33d"
+      },
+      "use": "@音频1：第二唱句完整新文件，含一次“今”的延音，不能重复首句；须选完整独立文件，预算≤14秒",
+      "file_status": "awaiting_new_original"
+    },
+    {
+      "model_slot": "@音频2",
+      "page_code": "M008",
+      "title": "挑柴老汉 · 音色",
+      "reference": {
+        "object_id": "new26-porter-voice",
+        "revision_id": "d4294dfeb66a55fdf47e7ea7a07a1a571cfed46bcb5db1c0e91ea56bcd9c5841"
+      },
+      "use": "@音频2：只约束挑柴老汉，老年男性说话声；不复述中性试读字，剧情原词以时间线为准；须选完整独立文件，预算≤4秒",
+      "file_status": "awaiting_new_original"
+    }
+  ],
+  "submitted": false
+}

@@ -1,8 +1,8 @@
 # 从故事输入重新制作
 
-task-20261015-0001 已清空旧制作层；task-20261015-0002 从保留的锁定剧本完成首轮全剧重建。当前制作是新视听设计、新实体与完整状态、新素材需求；旧编号不复用，旧正文、候选和认可不进入新设计。作品结构、小说、17集边界、准确原词、方法及历史意见保持。
+task-20261015-0001 已清空旧制作层；task-20261015-0002 从保留的锁定剧本完成首轮全剧重建。当前制作是新视听设计、新实体与完整状态、新素材需求；当前编号按[单次迁移](numbering-restart/README.md)从001重新起号；旧正文、候选和认可不进入新设计。作品结构、小说、17集边界、准确原词、方法及历史意见保持。
 
-完整作者稿、数量口径、首轮复审和0005的素材方案输入集中在[本轮重建](rebuild/README.md)。正式生效与验收以[任务交付](reports/task-20261015-0002/VERIFICATION.md)和账本回执为准。
+视听设计与首轮复审见[本轮重建](rebuild/README.md)；650项[完整素材方案](material-plans/README.md)提供所选路线、准确依赖和下游集合。正式生效与验收以[方案交付](material-plans/VERIFICATION.md)和账本回执为准。
 
 | 工作 | 入口 |
 | --- | --- |
@@ -10,6 +10,7 @@ task-20261015-0001 已清空旧制作层；task-20261015-0002 从保留的锁定
 | 新实体、完整状态和真实需求 | [抽取](extraction/README.md) |
 | 准确方法及教学资料 | [创作制作方法](professional-methods.md)、[方法操作](managed-methods.md)、基础流程的当前绑定 |
 | 摄影、调度、美术、表演、声音原理 | [影视知识](filmcraft/README.md)、[制作速查](filmcraft/quick-reference.md) |
+| 全剧素材方案与下游闭包 | [完整方案](material-plans/README.md) |
 | 视频方案与参考 | [视频生成手册](seedance-video-handbook.md) |
 | 单份当前稿、真实候选及准确意见 | [当前制作约定](current-candidates/README.md) |
 | 隔离工作区、增量发布与收尾 | [工作区流程](generation-workspaces.md) |
