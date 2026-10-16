@@ -6,4 +6,4 @@
 
 继续编制先核[作品源锁](../source-lock.json)，取得当前绑定的准确视听方法，沿[影视知识](../filmcraft/README.md)和[视频生成手册](../seedance-video-handbook.md)审查真实问题。拆镜与提取联动；起点图只放第一个动作之前的可见条件，镜内到达的完整状态作为视频目标。
 
-正式库是运行权威。`index.json`与`recovery.json`绑定完整导出；发布、真实Chrome和新空实例恢复结果见[任务验收](../reports/task-20261015-0002/VERIFICATION.md)。完整素材方案仍由0005从零创建，650项有效需求没有候选、选择或生成提交。
+正式库是运行权威。`index.json`与`recovery.json`绑定完整导出；最新[完整素材方案](../material-plans/README.md)由0005逐项从零创建，77镜预算及逐镜说明已与最终方案同步；650项有效需求没有候选、选择或生成提交。正式发布、真实Chrome和新空实例恢复结果见[方案验收](../material-plans/VERIFICATION.md)。
