@@ -1,19 +1,20 @@
 {
   "format": "stage-verification-v1",
   "task_id": "task-20261015-0003",
-  "stage": "stage-09",
-  "checked_at": "2026-10-16T20:45:44.508760+00:00",
+  "stage": "stage-10",
+  "checked_at": "2026-10-16T21:50:23.326680+00:00",
   "requirements": 651,
   "ordinary_state": 191,
   "unique_dependency_edges": 3397,
   "acyclic": true,
-  "candidates": 243,
-  "covered_requirements": 182,
-  "production_files_verified": 285,
-  "selected_input_slots": 2366,
+  "candidates": 257,
+  "covered_requirements": 187,
+  "production_files_verified": 309,
+  "selected_input_slots": 2535,
   "selected_by_material": {
     "new26-aheng-identity": 210,
     "new26-exemption-doc-identity": 9,
+    "new26-feeding-lock-identity": 28,
     "new26-songbook-identity": 26,
     "new26-binding-kit-identity": 4,
     "new26-poor-mother-identity": 8,
@@ -29,6 +30,7 @@
     "new26-recruitment-doc-identity": 10,
     "new26-old-registers-identity": 19,
     "new26-listeners-identity": 2,
+    "new26-rice-shop-layout": 20,
     "new26-rice-measure-identity": 6,
     "new26-aheng-voice": 87,
     "new26-liji-voice": 68,
@@ -43,6 +45,7 @@
     "new26-theatre-box-identity": 9,
     "new26-lixiao-identity": 101,
     "new26-troupe-identity": 7,
+    "new26-curtain-poles-identity": 19,
     "new26-curtain-identity": 24,
     "new26-aheng-wet-overall": 18,
     "new26-liji-wet-overall": 16,
@@ -60,6 +63,7 @@
     "new26-moon-identity": 11,
     "new26-festival-crowd-identity": 15,
     "new26-sunliu-identity": 85,
+    "new26-stage-drum-identity": 8,
     "new26-grain-ticket-identity": 10,
     "new26-thin-worker-identity": 17,
     "new26-ritual-tablet-identity": 12,
@@ -70,6 +74,7 @@
     "new26-bait-identity": 10,
     "new26-boatman-identity": 4,
     "new26-ferry-landing-layout": 4,
+    "new26-granary-layout": 19,
     "new26-ledger-box-identity": 10,
     "new26-old-woman-identity": 3,
     "new26-thin-girl-identity": 2,
@@ -98,19 +103,23 @@
     "new26-grain-order-identity": 21,
     "new26-inquiry-record-identity": 25,
     "new26-approval-paper-identity": 6,
+    "new26-recruitment-all-overall": 9,
     "new26-loan-uncovered-overall": 12,
     "new26-helpers-identity": 33,
     "new26-helpers-voice": 2,
     "new26-mason-identity": 5,
     "new26-heavy-knife-identity": 52,
     "new26-masonry-kit-identity": 2,
+    "new26-lock-cut-overall": 13,
     "new26-wet-grass-identity": 6,
+    "new26-lock-beamed-overall": 4,
     "new26-map-cut-overall": 7,
     "new26-home-oil-lamps-identity": 25,
     "new26-expense-ledger-identity": 3,
     "new26-elders-identity": 18,
     "new26-incense-burner-identity": 1,
     "new26-grain-ledger-identity": 9,
+    "new26-lock-ready-overall": 49,
     "new26-elders-voice": 3,
     "new26-snake-first-cut-overall": 2,
     "new26-liji-first-blood-overall": 22,
@@ -131,16 +140,16 @@
     "new26-performance-laundry-identity": 2
   },
   "status_counts": {
-    "executor_checked": 109,
+    "executor_checked": 118,
     "executor_checked_partial": 1,
     "user_audition_passed": 10,
     "reference_pending": 3,
-    "quality_failed": 21,
-    "not_produced": 9,
-    "hearing_unverified": 38
+    "not_produced": 4,
+    "hearing_unverified": 38,
+    "quality_failed": 17
   },
   "call_counts": {
-    "completed": 233,
+    "completed": 237,
     "unknown": 5,
     "failed": 3
   },
@@ -163,37 +172,37 @@
   },
   "locked_story_unchanged": true,
   "sanitized_private_objects": {
-    "managed-method-artifact-v1": 1619,
-    "managed-method-execution-v1": 543
+    "managed-method-artifact-v1": 1708,
+    "managed-method-execution-v1": 573
   },
   "empty_instance_recovery": {
     "recovered": true,
-    "objects": 18572,
-    "production_objects": 2161,
-    "revisions": 18625,
+    "objects": 18650,
+    "production_objects": 2179,
+    "revisions": 18703,
     "comments": 404,
-    "files_verified": 343,
-    "destination": ".runtime/generation/recovered-stage-0003-09",
+    "files_verified": 367,
+    "destination": ".runtime/generation/recovered-stage-0003-10",
     "schema_version": 14,
     "exact_table_comparisons": {
       "production_current_records": {
-        "rows": 2161,
-        "sha256": "5344eadbdce3fc0a683417f11fc879551d40e87b5bfb744ad1e1471762e532e3",
+        "rows": 2179,
+        "sha256": "3a1704864676c41022ed8a4e1e0ce6b20b30194471fbbd967237ecd7d98a2408",
         "equal": true
       },
       "production_candidates": {
-        "rows": 243,
-        "sha256": "342ce00eceb23379051bd49cd0b4ce2e925699f0aa9b6584fc4fb54e5e44e6da",
+        "rows": 257,
+        "sha256": "22749cf615a9e0fc9beb64847cc15fe9616c68269e538affdb7337e984789245",
         "equal": true
       },
       "production_candidate_targets": {
-        "rows": 243,
-        "sha256": "c79b5e522e18b1689ddc8bee16b1c88fbfbd0fe7394ba39a82ec35dbce94231a",
+        "rows": 257,
+        "sha256": "7d1db65a4e542c34e67401eeaa1e856a43effc4ede2921454cb90ee32e0c285d",
         "equal": true
       },
       "production_submissions": {
-        "rows": 251,
-        "sha256": "18ac9ea8eee1faeb66ef990edddb5f74e8a80bfe74f1263e53ae1ffe81935dd2",
+        "rows": 265,
+        "sha256": "709cd4af1466e55cacf5c847a5267d9ccf66ddc56ff886b58bebaeb642f93766",
         "equal": true
       },
       "comments": {
@@ -217,6 +226,7 @@
   },
   "previous_publication_packages_unchanged": {
     "production/publications/task-20261015-0003-stage-05.json": "e0a17f266d89c609cf50828dd5f74eef80cb548d0a6ba5055883451276d288b9",
+    "production/publications/task-20261015-0003-stage-09.json": "f9db6571808e4438527a0104f74e0554fcaa0dae3016ad12178725f3f7092ca7",
     "production/publications/task-20261015-0003-stage-08.json": "1ba6bb6deae2791f9aa91258405d2baf854a6731186555166530840a6b1d5926",
     "production/publications/task-20261015-0003-stage-04.json": "f88431faecf423c5ae23804858b7aff19f9ae5e7d333a0dd18cf16c2c3420bf8",
     "production/publications/task-20261015-0003-stage-03.json": "9ace5fa15adb0c191d415744d2fe8f100e47634740d088985a708c151c290da8",
@@ -226,27 +236,27 @@
     "production/publications/task-20261015-0003-stage-06.json": "e04b1d646d07679283881e6be32b72d62da7aab8a9215c7df19af45d00bddd37"
   },
   "publication_package": {
-    "path": "production/publications/task-20261015-0003-stage-09.json",
-    "sha256": "f9db6571808e4438527a0104f74e0554fcaa0dae3016ad12178725f3f7092ca7",
-    "publication_id": "6b1bc17dff7d4aaa8248ecac67e1c5494d9d67d70e2ae6b2f9c6be243289584a",
-    "objects": 2191,
-    "media_files": 285,
+    "path": "production/publications/task-20261015-0003-stage-10.json",
+    "sha256": "5b05fd6d36f8548d5002c24b4a3738fd2e34a7da9e23a91526f0d0f3534d37f5",
+    "publication_id": "ed5f15c8db1ea4d9135213e9d88cf86a50fac1721a2b3554002c7c362577868f",
+    "objects": 2270,
+    "media_files": 309,
     "applied_to_formal": false,
     "preflight": {
       "passed": true,
       "target": "isolated clone of formal database",
-      "receipt": ".runtime/generation/publications/task-20261015-0003-stage-check-09/preflight.json",
+      "receipt": ".runtime/generation/publications/task-20261015-0003-stage-check-10/preflight.json",
       "result": {
         "applied": false,
         "already_published": false,
-        "publication_id": "6b1bc17dff7d4aaa8248ecac67e1c5494d9d67d70e2ae6b2f9c6be243289584a",
+        "publication_id": "ed5f15c8db1ea4d9135213e9d88cf86a50fac1721a2b3554002c7c362577868f",
         "source_commit": null,
         "scope": {
           "contract": "production-current-publication-v1",
           "changed_rows": {
-            "objects": 2191,
-            "revisions": 2191,
-            "dependencies": 10582,
+            "objects": 2270,
+            "revisions": 2270,
+            "dependencies": 11208,
             "comments": 0,
             "material_content": 0,
             "material_archive_files": 0,
@@ -256,16 +266,16 @@
             "business_relations": 0,
             "business_relation_aliases": 0,
             "audiovisual_notes": 0,
-            "production_current_records": 1080,
-            "production_submissions": 251,
-            "production_candidates": 243,
-            "production_candidate_targets": 243,
+            "production_current_records": 1099,
+            "production_submissions": 265,
+            "production_candidates": 257,
+            "production_candidate_targets": 257,
             "production_comment_quotes": 0,
-            "production_current_operations": 5251,
+            "production_current_operations": 5653,
             "production_response_excerpts": 0
           },
           "comment_events": [],
-          "publication_id": "6b1bc17dff7d4aaa8248ecac67e1c5494d9d67d70e2ae6b2f9c6be243289584a",
+          "publication_id": "ed5f15c8db1ea4d9135213e9d88cf86a50fac1721a2b3554002c7c362577868f",
           "already_published": false
         }
       }
@@ -274,22 +284,23 @@
   "formal_publication": false,
   "system_commit": "4bb849b3fca331f7d46a8eee299cc7a6c6324aa6",
   "stage_freeze": {
-    "frozen_at": "2026-10-16T20:39:02.316812+00:00",
-    "source_snapshot": ".runtime/task-20261015-0003/source-stage09.sqlite3",
+    "frozen_at": "2026-10-16T21:42:03.566791+00:00",
+    "source_snapshot": ".runtime/task-20261015-0003/source-stage10.sqlite3",
     "active_database": ".runtime/generation/review/.runtime/review.sqlite3",
     "summary": {
-      "checked_at": "2026-10-16T20:38:59.983266+00:00",
+      "checked_at": "2026-10-16T21:42:01.286020+00:00",
       "requirements": 651,
       "ordinary_state": 191,
       "unique_dependency_edges": 3397,
       "acyclic": true,
-      "candidates": 243,
-      "covered_requirements": 182,
-      "production_files_verified": 285,
-      "selected_input_slots": 2366,
+      "candidates": 257,
+      "covered_requirements": 187,
+      "production_files_verified": 309,
+      "selected_input_slots": 2535,
       "selected_by_material": {
         "new26-aheng-identity": 210,
         "new26-exemption-doc-identity": 9,
+        "new26-feeding-lock-identity": 28,
         "new26-songbook-identity": 26,
         "new26-binding-kit-identity": 4,
         "new26-poor-mother-identity": 8,
@@ -305,6 +316,7 @@
         "new26-recruitment-doc-identity": 10,
         "new26-old-registers-identity": 19,
         "new26-listeners-identity": 2,
+        "new26-rice-shop-layout": 20,
         "new26-rice-measure-identity": 6,
         "new26-aheng-voice": 87,
         "new26-liji-voice": 68,
@@ -319,6 +331,7 @@
         "new26-theatre-box-identity": 9,
         "new26-lixiao-identity": 101,
         "new26-troupe-identity": 7,
+        "new26-curtain-poles-identity": 19,
         "new26-curtain-identity": 24,
         "new26-aheng-wet-overall": 18,
         "new26-liji-wet-overall": 16,
@@ -336,6 +349,7 @@
         "new26-moon-identity": 11,
         "new26-festival-crowd-identity": 15,
         "new26-sunliu-identity": 85,
+        "new26-stage-drum-identity": 8,
         "new26-grain-ticket-identity": 10,
         "new26-thin-worker-identity": 17,
         "new26-ritual-tablet-identity": 12,
@@ -346,6 +360,7 @@
         "new26-bait-identity": 10,
         "new26-boatman-identity": 4,
         "new26-ferry-landing-layout": 4,
+        "new26-granary-layout": 19,
         "new26-ledger-box-identity": 10,
         "new26-old-woman-identity": 3,
         "new26-thin-girl-identity": 2,
@@ -374,19 +389,23 @@
         "new26-grain-order-identity": 21,
         "new26-inquiry-record-identity": 25,
         "new26-approval-paper-identity": 6,
+        "new26-recruitment-all-overall": 9,
         "new26-loan-uncovered-overall": 12,
         "new26-helpers-identity": 33,
         "new26-helpers-voice": 2,
         "new26-mason-identity": 5,
         "new26-heavy-knife-identity": 52,
         "new26-masonry-kit-identity": 2,
+        "new26-lock-cut-overall": 13,
         "new26-wet-grass-identity": 6,
+        "new26-lock-beamed-overall": 4,
         "new26-map-cut-overall": 7,
         "new26-home-oil-lamps-identity": 25,
         "new26-expense-ledger-identity": 3,
         "new26-elders-identity": 18,
         "new26-incense-burner-identity": 1,
         "new26-grain-ledger-identity": 9,
+        "new26-lock-ready-overall": 49,
         "new26-elders-voice": 3,
         "new26-snake-first-cut-overall": 2,
         "new26-liji-first-blood-overall": 22,
@@ -407,24 +426,24 @@
         "new26-performance-laundry-identity": 2
       },
       "status_counts": {
-        "executor_checked": 109,
+        "executor_checked": 118,
         "executor_checked_partial": 1,
         "user_audition_passed": 10,
         "reference_pending": 3,
-        "quality_failed": 21,
-        "not_produced": 9,
-        "hearing_unverified": 38
+        "not_produced": 4,
+        "hearing_unverified": 38,
+        "quality_failed": 17
       },
       "call_counts": {
-        "completed": 233,
+        "completed": 237,
         "unknown": 5,
         "failed": 3
       }
     },
     "checked_material_binding_coverage": {
-      "checked_materials": 119,
-      "expected_slots": 2366,
-      "selected_slots": 2366,
+      "checked_materials": 128,
+      "expected_slots": 2535,
+      "selected_slots": 2535,
       "pending_slots": [],
       "by_material": {
         "new26-ahe-identity": {
@@ -527,6 +546,10 @@
           "expected": 24,
           "selected": 24
         },
+        "new26-curtain-poles-identity": {
+          "expected": 19,
+          "selected": 19
+        },
         "new26-dock-pole-identity": {
           "expected": 5,
           "selected": 5
@@ -551,6 +574,10 @@
           "expected": 3,
           "selected": 3
         },
+        "new26-feeding-lock-identity": {
+          "expected": 28,
+          "selected": 28
+        },
         "new26-ferry-landing-layout": {
           "expected": 4,
           "selected": 4
@@ -574,6 +601,10 @@
         "new26-grain-ticket-identity": {
           "expected": 10,
           "selected": 10
+        },
+        "new26-granary-layout": {
+          "expected": 19,
+          "selected": 19
         },
         "new26-heavy-knife-identity": {
           "expected": 52,
@@ -691,6 +722,18 @@
           "expected": 12,
           "selected": 12
         },
+        "new26-lock-beamed-overall": {
+          "expected": 4,
+          "selected": 4
+        },
+        "new26-lock-cut-overall": {
+          "expected": 13,
+          "selected": 13
+        },
+        "new26-lock-ready-overall": {
+          "expected": 49,
+          "selected": 49
+        },
         "new26-map-cut-overall": {
           "expected": 7,
           "selected": 7
@@ -771,6 +814,10 @@
           "expected": 30,
           "selected": 30
         },
+        "new26-recruitment-all-overall": {
+          "expected": 9,
+          "selected": 9
+        },
         "new26-recruitment-board-identity": {
           "expected": 3,
           "selected": 3
@@ -790,6 +837,10 @@
         "new26-rice-measure-identity": {
           "expected": 6,
           "selected": 6
+        },
+        "new26-rice-shop-layout": {
+          "expected": 20,
+          "selected": 20
         },
         "new26-ritual-tablet-identity": {
           "expected": 12,
@@ -826,6 +877,10 @@
         "new26-songbook-identity": {
           "expected": 26,
           "selected": 26
+        },
+        "new26-stage-drum-identity": {
+          "expected": 8,
+          "selected": 8
         },
         "new26-sunliu-identity": {
           "expected": 85,
@@ -907,6 +962,7 @@
     },
     "previous_packages": {
       "production/publications/task-20261015-0003-stage-05.json": "e0a17f266d89c609cf50828dd5f74eef80cb548d0a6ba5055883451276d288b9",
+      "production/publications/task-20261015-0003-stage-09.json": "f9db6571808e4438527a0104f74e0554fcaa0dae3016ad12178725f3f7092ca7",
       "production/publications/task-20261015-0003-stage-08.json": "1ba6bb6deae2791f9aa91258405d2baf854a6731186555166530840a6b1d5926",
       "production/publications/task-20261015-0003-stage-04.json": "f88431faecf423c5ae23804858b7aff19f9ae5e7d333a0dd18cf16c2c3420bf8",
       "production/publications/task-20261015-0003-stage-03.json": "9ace5fa15adb0c191d415744d2fe8f100e47634740d088985a708c151c290da8",
@@ -943,9 +999,9 @@
     "actual_listening": false
   },
   "checked_material_binding_coverage": {
-    "checked_materials": 119,
-    "expected_slots": 2366,
-    "selected_slots": 2366,
+    "checked_materials": 128,
+    "expected_slots": 2535,
+    "selected_slots": 2535,
     "pending_slots": [],
     "by_material": {
       "new26-ahe-identity": {
@@ -1048,6 +1104,10 @@
         "expected": 24,
         "selected": 24
       },
+      "new26-curtain-poles-identity": {
+        "expected": 19,
+        "selected": 19
+      },
       "new26-dock-pole-identity": {
         "expected": 5,
         "selected": 5
@@ -1072,6 +1132,10 @@
         "expected": 3,
         "selected": 3
       },
+      "new26-feeding-lock-identity": {
+        "expected": 28,
+        "selected": 28
+      },
       "new26-ferry-landing-layout": {
         "expected": 4,
         "selected": 4
@@ -1095,6 +1159,10 @@
       "new26-grain-ticket-identity": {
         "expected": 10,
         "selected": 10
+      },
+      "new26-granary-layout": {
+        "expected": 19,
+        "selected": 19
       },
       "new26-heavy-knife-identity": {
         "expected": 52,
@@ -1212,6 +1280,18 @@
         "expected": 12,
         "selected": 12
       },
+      "new26-lock-beamed-overall": {
+        "expected": 4,
+        "selected": 4
+      },
+      "new26-lock-cut-overall": {
+        "expected": 13,
+        "selected": 13
+      },
+      "new26-lock-ready-overall": {
+        "expected": 49,
+        "selected": 49
+      },
       "new26-map-cut-overall": {
         "expected": 7,
         "selected": 7
@@ -1292,6 +1372,10 @@
         "expected": 30,
         "selected": 30
       },
+      "new26-recruitment-all-overall": {
+        "expected": 9,
+        "selected": 9
+      },
       "new26-recruitment-board-identity": {
         "expected": 3,
         "selected": 3
@@ -1311,6 +1395,10 @@
       "new26-rice-measure-identity": {
         "expected": 6,
         "selected": 6
+      },
+      "new26-rice-shop-layout": {
+        "expected": 20,
+        "selected": 20
       },
       "new26-ritual-tablet-identity": {
         "expected": 12,
@@ -1347,6 +1435,10 @@
       "new26-songbook-identity": {
         "expected": 26,
         "selected": 26
+      },
+      "new26-stage-drum-identity": {
+        "expected": 8,
+        "selected": 8
       },
       "new26-sunliu-identity": {
         "expected": 85,
@@ -1428,9 +1520,9 @@
   },
   "chrome": {
     "status": "daily_chrome_task_preview_verified",
-    "latest_receipt": "production/receipts/chrome-task-20261015-0003-stage09.json",
+    "latest_receipt": "production/receipts/chrome-task-20261015-0003-stage10.json",
     "earlier_functional_receipt": "production/receipts/chrome-task-20261015-0003-stage08.json",
-    "scope": "M055 exact whole-image input and candidate3;M127 authored engineering candidate3;earlier candidate switch and category coverage retained as earlier evidence",
+    "scope": "EN082 complete phase navigation; M427 candidate1 and four exact inputs; M367 candidate1/2 switch and comparison with original dimensions",
     "formal_publication_verified": false,
     "audio_quality_verified_by_playback": false
   },
@@ -1460,6 +1552,7 @@
   },
   "pause": {
     "paused": false,
-    "reason": "Resumed by authenticated run-cfy6gv6t; checkpoint09 is an intermediate archive, not a new pause."
-  }
+    "reason": "Authenticated run-cfy6gv6t resumed the task. Stage10 is an intermediate checkpoint; work remains active."
+  },
+  "current_budget_receipt": "production/receipts/remaining-budget-task-20261015-0003-stage10.json"
 }

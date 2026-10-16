@@ -62,7 +62,7 @@
       "status": "fallback_in_use",
       "evidence": "OpenArt观察余额65，低于4K根图350或Nano80积分报价；内置工具返回1672×941不足4K；Higgsfield网页／MCP通道明确拒绝并要求Basic或更高套餐。未开新订阅或充值。 该结果不推定OpenAPI账户或模型权限。 用户随后明确更正：Higgsfield OpenAPI没有Nano Banana；不再作为本任务Nano备用。只读估价model_disabled，无该渠道生成调用。 本轮已另行核实Higgsfield OpenAPI提供GPT Image2.5 Flare，marketing-studio/image/flare，支持4K/16:9；9次真实调用均返回3840×2160 PNG，不是Nano通道。",
       "action": "Google备用沿既有预算执行；Flare先做单张再有界扩展，实际原件逐张看图。县衙与歌娘小院通过，其余结构缺陷未放行。连续空间失败后停止同类批量，改进构图或工程约束再决定下一次调用。平面道具按准确新方案用本地SVG工程制作。",
-      "verification": "Higgsfield余额最近在日常Chrome刷新为7.87美元；账户已有自动充值设置保持未改，调用须高于3.13美元触发线加0.50美元缓冲。无充值、订阅或透支。个别API费用仍UNKNOWN。"
+      "verification": "Higgsfield OpenAPI完成25次调用后，日常Chrome刷新余额6.44美元；既有3.13美元自动充值线和0.50美元缓冲保持，未改设置或充值，单次费用仍UNKNOWN。"
     },
     {
       "id": "liji-precise-reference-region",
@@ -109,14 +109,14 @@
         "stage-drum-identity-01"
       ],
       "evidence": "守庙差役连接中断；挑柴老汉响应截断；戏鼓响应保留13129723字节但图像base64未完整。都没有可用原件或可查询的平台ID。",
-      "action": "准确本机提交及未知结果已登记，继续保留每次0.25美元规划预留，不重复提交；以后仅沿平台实际查询能力恢复。"
+      "action": "三个旧调用及各自0.25美元规划预留继续保留UNKNOWN。戏鼓需求另以零外部调用的本轮本地SVG工程补齐；两张角色图的一次性Flare补做方案已准备并请求用户决定，尚未执行。"
     },
     {
       "id": "seed-guard-unknown",
       "status": "unknown",
       "request_id": "555f10be-2760-45c6-baf8-c8177fad42b7",
       "evidence": "守庙差役试声请求在长时间中断后仍未收到响应；仅终止核明归属的本次请求进程，未收到音频或平台Logid。",
-      "action": "保留120秒额度预留及准确请求，不重复调用。官方同步接口文档未给出按该客户端ID查结果的入口；待平台日志或控制台可用时核查。",
+      "action": "旧请求与120秒预留保持UNKNOWN。一次性新试声方案已准备并请求用户决定；收到允许且复核当前额度后才执行，不自动重试。",
       "receipt": "../../receipts/seed-task-20261015-0003-guard-voice-01.json"
     },
     {
@@ -141,7 +141,7 @@
       "id": "user-requested-stage07-pause",
       "status": "resumed",
       "user_request": "下一个checkpoint请先暂停任务，我要临时退出下当前会话",
-      "resolution": "用户已通过run-cfy6gv6t.md重新启动原任务；当前会话执行认证成功，从阶段07恢复，暂停条件解除。阶段07归档保持原字节，新的制作和验证保存至阶段08。",
+      "resolution": "用户通过run-cfy6gv6t.md重新启动原任务且认证成功；阶段07原字节保持。当前阶段10是持续制作中的归档，不是再次暂停。",
       "remaining": "逐项现状以progress.json为准；不重发历史未知请求。"
     },
     {
@@ -151,6 +151,12 @@
       "verification": "Aheng and LiJi wet states plus moon retry used exact image refs; Aheng/LiJi actual native4K passed, moon failed proportion independently. Upload destination and returned public original hash checked; mutated candidate/revision/SHA reject before network.",
       "evidence_runtime": ".runtime/task-20261015-0003/hf-input-exactness-negative-checks.json",
       "candidate_commit": "4bb849b3fca331f7d46a8eee299cc7a6c6324aa6"
+    },
+    {
+      "id": "stage10-geometry-and-recovery",
+      "status": "verified",
+      "verification": "M291候选5及三个直接依赖状态已通过实际工程看图并准确选择；开缝第一候选复核未通过，未选用。2179条制作记录、257候选、265提交与三评论表在新空实例和冻结原库逐表相同。隔离增量预演applied=false，恢复副本已清理。",
+      "receipt": "verification.json"
     }
   ],
   "resume_requirement": "当前run已认证并持有双仓任务锁。按本轮准确候选、原件和当前方案续做；真实Chrome已恢复，待最终正式发布后再复验。",
@@ -160,6 +166,14 @@
     "evidence_runtime": ".runtime/task-20261015-0003/chrome-stage08-candidate-fixes.json",
     "formal_publication_verified": false,
     "audio_quality_verified_by_playback": false,
-    "latest_evidence": "production/receipts/chrome-task-20261015-0003-stage09.json"
+    "latest_evidence": "production/receipts/chrome-task-20261015-0003-stage10.json"
+  },
+  "unknown_replacement_proposal": {
+    "status": "awaiting_user_decision",
+    "runtime_proposal": ".runtime/task-20261015-0003/unknown-replacement-proposal43.json",
+    "operations": 3,
+    "hf_new_reserve_usd": 2,
+    "seed_new_reserve_seconds": 120,
+    "old_unknown_records_and_reservations_retained": true
   }
 }
