@@ -1,0 +1,61 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-liji-palm-02",
+  "submission": {
+    "call_id": "task-20261015-0003-liji-palm-02",
+    "submission_sha256": "12fdbfd3b8b6c43f60c37e07879bff9f0b94da0385deda1397b9b85268d04d05",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-liji-palm-02.json",
+  "provider_history_id": "VzHFickFHTw7AWshKc6d",
+  "provider_job_id": null,
+  "provider_resource_id": "XQHxxgEu65KwuLHppYhI",
+  "model": "nano-banana-2-1",
+  "project_id": "8K6WcbrPLghSBJXBtWAE",
+  "provider": "OpenArt",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "3f171c55ffafd4dc772b68eeb806cc0d2eeb8c468617abd3beb9323c6a87852f.png",
+    "sha256": "3f171c55ffafd4dc772b68eeb806cc0d2eeb8c468617abd3beb9323c6a87852f",
+    "bytes": 17638995,
+    "mime": "image/png",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-liji-palm-02",
+    "candidate_id": "candidate-9281dc350633a1034e8770dacc9e721f7979db5a5df2df2a5cca323a8d0be68e",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "OpenArt credits",
+    "quoted": 80,
+    "actual": "UNKNOWN",
+    "note": "报价对应单图；实际扣费字段未返回时保留UNKNOWN。"
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "已实际看图，正面右手包布、左手裸露，两个手部近图也已分别给出右掌和右手背，指向关系修正。但全身侧图仍保持脸向画面左的本人左侧，并给近侧左手包布；明确要求改为右侧视图未执行。身份、干衣和无额伤保持，不能抵消侧图左右错误。",
+    "decision": "不绑定消费者。下一次改变图面结构，只保留一个正面全身和右手正反局部，不再要求模型翻转既有侧身人物；仍直接用第0代干净身份母版。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-task-20261015-0003-liji-identity-01",
+        "revision_id": "77908eeddf225d05468c60366401d16f721cceb62cb297dcd110c25132f302e4"
+      }
+    ]
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  }
+}

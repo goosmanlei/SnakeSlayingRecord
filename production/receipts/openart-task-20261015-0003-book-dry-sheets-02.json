@@ -1,0 +1,61 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-book-dry-sheets-02",
+  "submission": {
+    "call_id": "task-20261015-0003-book-dry-sheets-02",
+    "submission_sha256": "4d8178ac13d8beb99d5b902d802d15709034f7be0a9cda31ef4a3bf4cf6794b1",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-book-dry-sheets-02.json",
+  "provider_history_id": "HZNrIB6lIkK8jmQ9G6et",
+  "provider_job_id": null,
+  "provider_resource_id": "4oIsntDKMFZPczOnGqEp",
+  "model": "nano-banana-2-1",
+  "project_id": "8K6WcbrPLghSBJXBtWAE",
+  "provider": "OpenArt",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "85267c3fde0865cbd0653acb5a6c2989412c83bb04fc4015b2b089ced33fbcba.png",
+    "sha256": "85267c3fde0865cbd0653acb5a6c2989412c83bb04fc4015b2b089ced33fbcba",
+    "bytes": 17485758,
+    "mime": "image/png",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-book-dry-sheets-02",
+    "candidate_id": "candidate-2d304de562f0b5b94f83684a3911d522b9047aef868b4236393a6c0147ca2ff2",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "OpenArt credits",
+    "quoted": 80,
+    "actual": "UNKNOWN",
+    "note": "报价对应单图；实际扣费字段未返回时保留UNKNOWN。"
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "已实际看图：旧本保留大片下部撕失、不规则撕线和两处干墨洇，装订松线可辨；三张空白新纸单独叠放，与旧本间有灰色空隙，尚无孔或线。右侧原记工背页完整独立，三处松裂脊孔、三个空心圈与唯一右下圆缺口可核。未把新纸装订进旧本，未把背页误作丢失下半页，纸张干燥且身份保持。",
+    "decision": "选择此原件用于晒干残本与补抄新纸的当前消费者；准确唱词、记工内容以及背页交出后的镜头移除继续由各自字层和镜头方案控制。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-task-20261015-0003-songbook-identity-02",
+        "revision_id": "e741030b764d7d41431a96629647f5edf14f1016564216872f69a72f9bc45081"
+      }
+    ]
+  },
+  "current_consumer_selection": {
+    "slots": 70,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/book-dry-sheets-02-consumer-selections.json"
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-tao-identity-02",
+  "submission": {
+    "call_id": "task-20261015-0003-tao-identity-02",
+    "submission_sha256": "598d5ca8f7a38a9cdc270ca99a5b85397601e4ba69cb86f96162b6dac2007657",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-tao-identity-02.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "3b5f1ba3e8a17e96181d8fe1d0a8a06bf0e5919310d579847e28d1361abebe13.jpg",
+    "sha256": "3b5f1ba3e8a17e96181d8fe1d0a8a06bf0e5919310d579847e28d1361abebe13",
+    "bytes": 7909949,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-tao-identity-02",
+    "candidate_id": "candidate-7f30239f629681baf2d65f786fe47205665cb183261924d5ad0c1db7cfbd63f6",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "已实际看原生5504×3072 JPEG：长瘦脸、细灰白须、低束灰发、略含胸与骨节手背保持，衣领为交领叠合且纯布系带，浅褐围裙无金属铆点；正侧及面部同人，手脚空全。必要的旧衣边和围裙磨痕未扩成满图噪点。",
+    "decision": "选择第0代老竹匠母版，和圆颧短须的挑柴老汉分人；不预装女儿遗物或固定愤怒表情。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 19,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/tao-identity-02-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 5985,
+    "total_input_tokens": 381,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 381
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4255,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1349
+  },
+  "actual_request_body_sha256": "fb67f44159d570c996da7de513eb330b57288d81a5fbb901da501b62bf6b87dd",
+  "submitted_inputs": []
+}

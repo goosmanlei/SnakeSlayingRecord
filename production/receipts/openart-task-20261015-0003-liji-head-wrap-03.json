@@ -1,0 +1,61 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-liji-head-wrap-03",
+  "submission": {
+    "call_id": "task-20261015-0003-liji-head-wrap-03",
+    "submission_sha256": "59d900e9d175b23b2aef885eb318875a3553a8e0e2f8a073668febbc6c3f06e6",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-liji-head-wrap-03.json",
+  "provider_history_id": "IPAxplWLu1UhszH5JzY7",
+  "provider_job_id": null,
+  "provider_resource_id": "Uh0UPOjKrN5RoveGkOkX",
+  "model": "nano-banana-2-1",
+  "project_id": "8K6WcbrPLghSBJXBtWAE",
+  "provider": "OpenArt",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "97a514402b0b9f5657990fb9144da2202ae73b9feb7ca21a39eef9aa66b74cd0.png",
+    "sha256": "97a514402b0b9f5657990fb9144da2202ae73b9feb7ca21a39eef9aa66b74cd0",
+    "bytes": 17288119,
+    "mime": "image/png",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-liji-head-wrap-03",
+    "candidate_id": "candidate-747030070a539cd632ec8cd06b20bbfe9c28b016eff46d4cd334407d912cf1e4",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "OpenArt credits",
+    "quoted": 80,
+    "actual": "UNKNOWN",
+    "note": "报价对应单图；实际扣费字段未返回时保留UNKNOWN。"
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "已实际看图：唯一全身人物、右掌包布和裸左手正确，后脑结与右手背细节齐全；额布仍画成多层较宽斜带，靠近眼角，未保持一指宽、眼眉和发际清楚的窄额带设计。",
+    "decision": "不选择为完整状态；保留部分已改正与窄额带未达标的差异，停止第三次之后的同类重复。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-task-20261015-0003-liji-identity-01",
+        "revision_id": "77908eeddf225d05468c60366401d16f721cceb62cb297dcd110c25132f302e4"
+      }
+    ]
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  }
+}

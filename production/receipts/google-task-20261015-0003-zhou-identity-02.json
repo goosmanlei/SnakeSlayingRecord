@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-zhou-identity-02",
+  "submission": {
+    "call_id": "task-20261015-0003-zhou-identity-02",
+    "submission_sha256": "a1965840ede75eb500c19f9c7a4d6d1dfa1f14670ea53e5ac19da5ab90be4da5",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-zhou-identity-02.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "08516761807f4d60f35a402dee81a44a2e95727fd29ea1adc89a083fe2680e3f.jpg",
+    "sha256": "08516761807f4d60f35a402dee81a44a2e95727fd29ea1adc89a083fe2680e3f",
+    "bytes": 8168820,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-zhou-identity-02",
+    "candidate_id": "candidate-6c6ffff276508d0aa4a5b2b6c29879c561fa9406e9cfab4dfa4a8c0b8c0c7891",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "已实际看原生5504×3072 JPEG：发髻、交领右衽已取代短平头与立领盘扣；宽面、低平眉、宽鼻翼和浅胡茬一致，米灰短衣、灰褐裤及可拆围裙三处对应。手脚完整、空手，围裙有米粉与轻微细格纹，未扩散到脸部和衣服，不妨碍轮廓或用途辨认。",
+    "decision": "选择本轮新第0代母版；接受围裙局部轻微纹理，后续生成保持大色块，不进一步强化织纹。夜访时按镜头拆下围裙。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 22,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/zhou-identity-02-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 6013,
+    "total_input_tokens": 356,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 356
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4362,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1295
+  },
+  "actual_request_body_sha256": "f32531449ada6512cf530b411137768a15cdf26d728e62141dd0698b0bd57dee",
+  "submitted_inputs": []
+}

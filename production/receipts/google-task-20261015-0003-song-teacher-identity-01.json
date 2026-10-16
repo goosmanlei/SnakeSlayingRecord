@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-song-teacher-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-song-teacher-identity-01",
+    "submission_sha256": "995ab118d1846467674b071cc8c4135f735179091752fa0656fa70de1b6d0b42",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-song-teacher-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "de1c521371249f737937cc119d327cd25039114a7f3fe0192caa3acee41df0ac.jpg",
+    "sha256": "de1c521371249f737937cc119d327cd25039114a7f3fe0192caa3acee41df0ac",
+    "bytes": 7521135,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-song-teacher-identity-01",
+    "candidate_id": "candidate-d862a83bd8f647faaea5dcf10d5646c769b53c5626429245f0d454369e41f5c2",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "已实际看原生5504×3072 JPEG：成年歌娘鹅蛋脸、浓弧眉、低盘黑髻，灰绿交领上衣、深蓝裙和灰鞋在正侧及脸部一致。神态平和、肩臂舒展，未穿红戏袖或加职业头饰，与病中母亲形貌分开；完整手脚、空手姿态及低饱和平涂符合方案。",
+    "decision": "选择日常教唱者身份母版；声音职能仍须独立音色制作和听审，不由此图宣称完成。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 9,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/song-teacher-identity-01-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 5832,
+    "total_input_tokens": 293,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 293
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4289,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1250
+  },
+  "actual_request_body_sha256": "739058f3a7613832d4c05a7cfb0b5dbb6bdfd1f736de25e0dcf2df14082810ac",
+  "submitted_inputs": []
+}

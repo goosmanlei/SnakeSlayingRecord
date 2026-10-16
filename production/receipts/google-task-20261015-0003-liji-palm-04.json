@@ -1,0 +1,103 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-liji-palm-04",
+  "submission": {
+    "call_id": "task-20261015-0003-liji-palm-04",
+    "submission_sha256": "a8e41cb03d3e44f0c75185e8892138a33405aab93929b7f9c255fba162686deb",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-liji-palm-04.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "0cdafd2040ebdcc5e18103a60eae5f3d6b1b58b9faee9d2d14dd4efc7d928a91.jpg",
+    "sha256": "0cdafd2040ebdcc5e18103a60eae5f3d6b1b58b9faee9d2d14dd4efc7d928a91",
+    "bytes": 6423404,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-liji-palm-04",
+    "candidate_id": "candidate-aeefd9f491e87162d7d9e1bccde0a53f962034751e4ce39c717c867e3e438135",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "已实际看原生5504×3072 JPEG及干净母版正面裁切：只有一位全身李寄，身份、发髻、灰褐衣裤和裹脚保持；自身右掌薄布交叉包扎、五指自由，左手及腕部裸露。局部右掌拇指在图右，右手背拇指在图左且指甲可见，包布与小指侧短结对应。头部无伤无额带，干衣无血，未带入多视向未包扎人物。",
+    "decision": "选择作为右掌包扎、尚无额伤的完整状态；准确正面参考裁切解决此前整张多视图干扰，可供相近状态方案采用，仍须逐张看图。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-task-20261015-0003-liji-identity-01",
+        "revision_id": "77908eeddf225d05468c60366401d16f721cceb62cb297dcd110c25132f302e4"
+      }
+    ]
+  },
+  "current_consumer_selection": {
+    "slots": 18,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/liji-palm-04-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 6865,
+    "total_input_tokens": 1372,
+    "input_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 1120
+      },
+      {
+        "modality": "text",
+        "tokens": 252
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4971,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 522
+  },
+  "actual_request_body_sha256": "57699c3bcdeeb2ca3461d9231bbc5193f748975607c422064bc0261929cf6cdb",
+  "submitted_inputs": [
+    {
+      "image_number": 1,
+      "submitted_sha256": "37a00a139241862d54044b8e50b2c4b02a545b4a8678b11bb1de2ee2402f56ca",
+      "original_sha256": "05ac4d70dbed022cbaabd37b9da071031056d325653ccbee9b1a2aac5046e0ce",
+      "crop": {
+        "height": 1,
+        "width": 0.3,
+        "x": 0.05,
+        "y": 0
+      },
+      "submitted_input_file": "production/requests/inputs/37a00a139241862d54044b8e50b2c4b02a545b4a8678b11bb1de2ee2402f56ca.png",
+      "purpose": "Exact reference region only; not a generated candidate or a 4K deliverable."
+    }
+  ]
+}

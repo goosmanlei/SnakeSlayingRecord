@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-keys-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-keys-identity-01",
+    "submission_sha256": "ce36db6c33c6d2a4315cc4c5d4b7d21e2430711f6f46ce72f4921afff97df340",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-keys-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "3e19202166f8c5e53cf7ff9348e14f13fdcf92adcff478d5b605cde7f9fb146a.jpg",
+    "sha256": "3e19202166f8c5e53cf7ff9348e14f13fdcf92adcff478d5b605cde7f9fb146a",
+    "bytes": 7977128,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-keys-identity-01",
+    "candidate_id": "candidate-74fb367770b136eeb1827f1de36a6f58c6c3d7e5ab9907d8dcbd72702cecb2aa",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "已实际看原生5504×3072 JPEG：同环三片与两种摆放可读，但第三片仍是直杆带齿，未形成要求的弯头细片；长片齿口在垂挂、平放和放大图的缺口形状也不完全一致，无法据此固定院门配锁的准确轮廓。",
+    "decision": "不选为钥匙结构母版。返修须先固定三片不同轮廓，再核同一长片齿口的跨视图一致性；不可把通用钥匙外形自动视为锁孔匹配。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  },
+  "usage": {
+    "total_tokens": 5088,
+    "total_input_tokens": 296,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 296
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4299,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 493
+  },
+  "actual_request_body_sha256": "26b739093da4db659330bf69b105faa7c73fd410af00502d7c0fbc347e0983fe",
+  "submitted_inputs": []
+}

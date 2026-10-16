@@ -1,0 +1,96 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-liji-forehead-fresh-01",
+  "submission": {
+    "call_id": "task-20261015-0003-liji-forehead-fresh-01",
+    "submission_sha256": "8afed10b4e6cd25f8cf8de0e8f2c05dfe232b878e88933cd2bd1383e75a51be7",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-liji-forehead-fresh-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "6c19095d83f4678cea67d889704f0f3689fd3a940415700b7b030c31d005b041.jpg",
+    "sha256": "6c19095d83f4678cea67d889704f0f3689fd3a940415700b7b030c31d005b041",
+    "bytes": 6173840,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-liji-forehead-fresh-01",
+    "candidate_id": "candidate-975ef15517a84ac5b49674e40072a479e1de1acd55ea1ee57e3a804cc824521f",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "已实际看原生5504×3072 JPEG：唯一全身的自身右掌包薄布、左手裸露，左额角小擦破与脸部局部对应；头上没有环布，掌布无血，干常服、发式和比例保持。右手背局部四指朝上、拇指在画面左侧且指甲可见，解剖方向一致；小伤未扩为大面积血污。",
+    "decision": "选择用于左额刚擦破、尚未环扎头布阶段；掌布、额伤位置与干衣同存，后续包额状态不能代用。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-task-20261015-0003-liji-identity-01",
+        "revision_id": "77908eeddf225d05468c60366401d16f721cceb62cb297dcd110c25132f302e4"
+      }
+    ]
+  },
+  "current_consumer_selection": {
+    "slots": 22,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/liji-forehead-fresh-01-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 7523,
+    "total_input_tokens": 1533,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 413
+      },
+      {
+        "modality": "image",
+        "tokens": 1120
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4870,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1120
+  },
+  "actual_request_body_sha256": "d6231c0cda1db5d220ec3e3ea16fd973931c8d7cd900f7b57ed6a571572f7c3a",
+  "submitted_inputs": [
+    {
+      "image_number": 1,
+      "submitted_sha256": "05ac4d70dbed022cbaabd37b9da071031056d325653ccbee9b1a2aac5046e0ce",
+      "original_sha256": "05ac4d70dbed022cbaabd37b9da071031056d325653ccbee9b1a2aac5046e0ce",
+      "crop": null
+    }
+  ]
+}

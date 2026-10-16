@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-paper-snake-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-paper-snake-identity-01",
+    "submission_sha256": "74c5b58aea8107ccf8563cf1bc76ba2cbd302ed5c4700cff19a8c9313542f4e1",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-paper-snake-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "303a004977432c0dce6078babafbfe01e26649fa643e287542fc288e3bb6b91f.jpg",
+    "sha256": "303a004977432c0dce6078babafbfe01e26649fa643e287542fc288e3bb6b91f",
+    "bytes": 8166595,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-paper-snake-identity-01",
+    "candidate_id": "candidate-51f4a884fdd28eb8012c36479ee3ea36623c37910514f36edb43daa88e2f178c",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "已实际看原生5504×3072 JPEG：灰绿纸壳、稀疏深绿简纹与竹环软身明显是戏具，头宽扁钝、嘴半张，口内淡赭且无真獠牙。右侧分解能见上下颌弧竹骨、侧面铰接与下颌扶托结构，尾窄收、整件入框；不是大蛇的鳞皮身份。必要竹骨线清晰而无满图细纹。",
+    "decision": "选择纸蛇第0代形制，供同一戏具制作与吞月动作引用；人物扶控、开口幅度与月亮位置仍按镜头动作核对，不把分解图当剧情画面。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 12,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/paper-snake-identity-01-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 6932,
+    "total_input_tokens": 328,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 328
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4897,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1707
+  },
+  "actual_request_body_sha256": "8d234c4d0b98fc3c40fb7b2ab2c9bbf952b93619569a3238fabe1b20f639d3e9",
+  "submitted_inputs": []
+}

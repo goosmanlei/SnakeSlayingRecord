@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-liji-mother-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-liji-mother-identity-01",
+    "submission_sha256": "473ebf0be0cdd5a052b3e797542e3c27db722592b3d09b24be06583c72630268",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-liji-mother-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "35c33bc9c1e7a178b6812f6d44390ea5ada057898225023984559395bcd0aafa.jpg",
+    "sha256": "35c33bc9c1e7a178b6812f6d44390ea5ada057898225023984559395bcd0aafa",
+    "bytes": 7133484,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-liji-mother-identity-01",
+    "candidate_id": "candidate-f6bc95d7347e7d122962ba47a4ce8b118e9e2187faae2995f6af56a785aed749",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "已实际看原生5504×3072 JPEG：宽椭圆脸、稳实肩背和灰紫交领、深围裙符合方向，但满头银白和较深的眼袋、法令纹将母亲显著老化；不合方案仅少量眼尾细纹的形貌，也不利于同李诞及少女李寄组成可读的家庭年龄关系。",
+    "decision": "保留失败候选；把未明确的年龄观感作为制作选择补清为中年、黑发略掺灰、少量细纹，从文字重新生成一次，不改剧本事实。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  },
+  "usage": {
+    "total_tokens": 5972,
+    "total_input_tokens": 330,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 330
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4352,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1290
+  },
+  "actual_request_body_sha256": "b4b54758ed1df08551108155d87ec5ff092fcdd47a8878f0dbc8e42e4889199d",
+  "submitted_inputs": []
+}

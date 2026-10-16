@@ -1,0 +1,56 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-feeding-lock-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-feeding-lock-identity-01",
+    "submission_sha256": "cbba1489b1611832050aa10a883b45b0b1018345f33010875c8046be8f723ba7",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-feeding-lock-identity-01.json",
+  "provider_history_id": "P0LIPuLuzZeCTPnJSA4t",
+  "provider_job_id": null,
+  "provider_resource_id": "3A8L6k4Zn062bRSW9F1c",
+  "model": "gpt-image-2-5-sunburst",
+  "project_id": "8K6WcbrPLghSBJXBtWAE",
+  "provider": "OpenArt",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "5aeb78f1a92deae7132d0702d1c827bee20592ffe084f36f7e6d106d22db02ab.png",
+    "sha256": "5aeb78f1a92deae7132d0702d1c827bee20592ffe084f36f7e6d106d22db02ab",
+    "bytes": 7062758,
+    "mime": "image/png",
+    "width": 3840,
+    "height": 2160
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-feeding-lock-identity-01",
+    "candidate_id": "candidate-a01e7c4439638b61b4c83f9ac1bd63ce7ebb79f39bc97fde1ef65bb6eb1d7144",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "OpenArt credits",
+    "quoted": 350,
+    "actual": "UNKNOWN",
+    "note": "报价对应单图；实际扣费字段未返回时保留UNKNOWN。"
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "已实际看整体、剖示与部件，南门横闩、北竖闸和随板短横木均有，但两门之间被延长成数块长盖石组成的通道，明显超过不足成人一步的设定。北闸前盖石与闸位置还有敞开段，不能满足连续封顶的短石道；近图木栓未清楚穿锁两侧固定结构。",
+    "decision": "不绑定。返修将两门之间限定为长度小于外宽一半的短扁盒，并明确盖石接至北闸、穿柱锁栓与移动握木分别作用；不能用长隧道图支撑后续动作。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  }
+}

@@ -1,7 +1,7 @@
 {
   "format": "task-process-cleanup-v1",
   "task_id": "task-20261015-0003",
-  "completed_at": "2026-10-16T10:09:23.440934+00:00",
+  "completed_at": "2026-10-16T12:22:46.589373+00:00",
   "deleted": [
     {
       "path": ".runtime/task-20261015-0003/svg-renderer-env",
@@ -155,19 +155,100 @@
       "bytes": 474804224,
       "purpose_ended": "Stage-03 exact recovery and delta rehearsal passed; originals, publication package and minimal receipts retained.",
       "absent_on_readback": true
+    },
+    {
+      "path": ".runtime/generation/recovered-stage-0003-04",
+      "files": 172,
+      "symlinks": 0,
+      "directories": 9,
+      "bytes": 2022436498,
+      "purpose_ended": "Stage-04 recovery and exact delta rehearsal passed; managed originals, native request facts, method recovery state and minimal receipts retained. One-time helpers already completed.",
+      "absent_on_readback": true
+    },
+    {
+      "path": ".runtime/generation/prepares/cc5ab7cdee4a4316b4b9d6db7bed4d83",
+      "files": 1,
+      "symlinks": 0,
+      "directories": 1,
+      "bytes": 591036416,
+      "purpose_ended": "Stage-04 recovery and exact delta rehearsal passed; managed originals, native request facts, method recovery state and minimal receipts retained. One-time helpers already completed.",
+      "absent_on_readback": true
+    },
+    {
+      "path": ".runtime/generation/publications/task-20261015-0003-stage-check-04/before.sqlite3",
+      "files": 1,
+      "symlinks": 0,
+      "directories": 0,
+      "bytes": 420659200,
+      "purpose_ended": "Stage-04 recovery and exact delta rehearsal passed; managed originals, native request facts, method recovery state and minimal receipts retained. One-time helpers already completed.",
+      "absent_on_readback": true
+    },
+    {
+      "path": ".runtime/generation/publications/task-20261015-0003-stage-check-04/rehearsal.sqlite3",
+      "files": 1,
+      "symlinks": 0,
+      "directories": 0,
+      "bytes": 583589888,
+      "purpose_ended": "Stage-04 recovery and exact delta rehearsal passed; managed originals, native request facts, method recovery state and minimal receipts retained. One-time helpers already completed.",
+      "absent_on_readback": true
+    },
+    {
+      "path": ".runtime/task-20261015-0003/stage04-protected-change-investigation.json",
+      "files": 1,
+      "symlinks": 0,
+      "directories": 0,
+      "bytes": 5513756,
+      "purpose_ended": "Stage-04 recovery and exact delta rehearsal passed; managed originals, native request facts, method recovery state and minimal receipts retained. One-time helpers already completed.",
+      "absent_on_readback": true
+    },
+    {
+      "path": ".runtime/task-20261015-0003/save_stage04.py",
+      "files": 1,
+      "symlinks": 0,
+      "directories": 0,
+      "bytes": 6910,
+      "purpose_ended": "Stage-04 recovery and exact delta rehearsal passed; managed originals, native request facts, method recovery state and minimal receipts retained. One-time helpers already completed.",
+      "absent_on_readback": true
+    },
+    {
+      "path": ".runtime/task-20261015-0003/resume_stage04.py",
+      "files": 1,
+      "symlinks": 0,
+      "directories": 0,
+      "bytes": 7420,
+      "purpose_ended": "Stage-04 recovery and exact delta rehearsal passed; managed originals, native request facts, method recovery state and minimal receipts retained. One-time helpers already completed.",
+      "absent_on_readback": true
+    },
+    {
+      "path": ".runtime/task-20261015-0003/prepare_google_roots_batch13.py",
+      "files": 1,
+      "symlinks": 0,
+      "directories": 0,
+      "bytes": 3855,
+      "purpose_ended": "Stage-04 recovery and exact delta rehearsal passed; managed originals, native request facts, method recovery state and minimal receipts retained. One-time helpers already completed.",
+      "absent_on_readback": true
+    },
+    {
+      "path": ".runtime/task-20261015-0003/prepare_google_props_batch14.py",
+      "files": 1,
+      "symlinks": 0,
+      "directories": 0,
+      "bytes": 3264,
+      "purpose_ended": "Stage-04 recovery and exact delta rehearsal passed; managed originals, native request facts, method recovery state and minimal receipts retained. One-time helpers already completed.",
+      "absent_on_readback": true
     }
   ],
   "totals": {
-    "files": 1025,
+    "files": 1205,
     "symlinks": 3,
-    "directories": 116,
-    "bytes": 6835629771
+    "directories": 126,
+    "bytes": 10458886978
   },
   "containers_created": 0,
   "task_containers_found": 0,
   "images_created": 0,
   "shared_services_stopped": false,
-  "mount_check": "Stage-03 targets had no task process or direct container mount. Only the previously observed shared Virtualization file cache held descriptors; all three existing shared containers and services were left untouched.",
+  "mount_check": "Stage-04 targets had no task process or direct container mount. The three existing shared containers were read back; only the shared Virtualization file cache had descriptors through the broad project bind. No shared service or mount was changed.",
   "retained": [
     {
       "path": ".runtime/generation/review",
@@ -200,6 +281,10 @@
     {
       "path": ".runtime/generation/publications/task-20261015-0003-stage-check-03/preflight.json",
       "purpose": "Minimal successful stage-03 increment rehearsal receipt."
+    },
+    {
+      "path": ".runtime/generation/publications/task-20261015-0003-stage-check-04/preflight.json",
+      "purpose": "Minimal successful stage-04 exact increment rehearsal receipt."
     }
   ],
   "cleanup_complete_for_task": false,

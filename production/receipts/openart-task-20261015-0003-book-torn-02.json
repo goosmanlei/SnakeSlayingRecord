@@ -1,0 +1,61 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-book-torn-02",
+  "submission": {
+    "call_id": "task-20261015-0003-book-torn-02",
+    "submission_sha256": "4d0cef9fe17dc545b4bbb0b991402a61167379b1845908dc63b3878450e29dd3",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-book-torn-02.json",
+  "provider_history_id": "LqGaDgt8MdH73s7aNLvA",
+  "provider_job_id": null,
+  "provider_resource_id": "gkCm04mOGFj7iXhvR3yb",
+  "model": "nano-banana-2-1",
+  "project_id": "8K6WcbrPLghSBJXBtWAE",
+  "provider": "OpenArt",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "bfc32dbe89efe98592a10e0c507762f7952e4169e62b2fa7996a3873999f5179.png",
+    "sha256": "bfc32dbe89efe98592a10e0c507762f7952e4169e62b2fa7996a3873999f5179",
+    "bytes": 17524396,
+    "mime": "image/png",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-book-torn-02",
+    "candidate_id": "candidate-59f54ab638a8c159fd507bfab929de623b1016505be028202afe8689482b8ef9",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "OpenArt credits",
+    "quoted": 80,
+    "actual": "UNKNOWN",
+    "note": "报价对应单图；实际扣费字段未返回时保留UNKNOWN。"
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "已实际看图，旧本、洇墨页和记工背页已分开，背页三个空圈及唯一右下缺口清楚，未再复制到每层。但洇墨页与完整背页几乎同高、保留全长三孔，只在底边做小幅撕缺，不能证明末段下半已失。湿软墨洇成立而核心缺半仍不成立。",
+    "decision": "保留候选不绑定；继续制作时应把残页外形明确缩为完整页的一半高度、只余上部装订孔，不能只改变边缘形状。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-task-20261015-0003-songbook-identity-02",
+        "revision_id": "e741030b764d7d41431a96629647f5edf14f1016564216872f69a72f9bc45081"
+      }
+    ]
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  }
+}

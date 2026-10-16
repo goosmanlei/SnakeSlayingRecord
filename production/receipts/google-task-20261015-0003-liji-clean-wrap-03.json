@@ -1,0 +1,103 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-liji-clean-wrap-03",
+  "submission": {
+    "call_id": "task-20261015-0003-liji-clean-wrap-03",
+    "submission_sha256": "8e2c6499d7bdedd706bbb7432d15c8c155aadd8773c8c1bec526dcd48bfb5078",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-liji-clean-wrap-03.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "9c559c77d80266a982f6662e50231c339355713e395300defbdd1214625914a0.jpg",
+    "sha256": "9c559c77d80266a982f6662e50231c339355713e395300defbdd1214625914a0",
+    "bytes": 6308827,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-liji-clean-wrap-03",
+    "candidate_id": "candidate-1e97676b01cc3ba0f1e44c64073806bb5d065627f0f489cd7f5b39ab66e06c99",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "已实际看原生5504×3072 JPEG：仅一位完整李寄与一幅右手背近图。全身自身右手包净布、左手裸露；近图指甲朝前、拇指在画面左，确为同一右手背，小指侧短结与整齐叠层可读。额带薄、双眉双眼可见，常服干燥，两处无血，脸形发髻和母版一致。",
+    "decision": "选择为重新包扎净布的完整状态，第1代来自干净母版的准确正面裁切。下游保持右手净布层次与薄额带，不引入被取消的错误掌心对照。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-task-20261015-0003-liji-identity-01",
+        "revision_id": "77908eeddf225d05468c60366401d16f721cceb62cb297dcd110c25132f302e4"
+      }
+    ]
+  },
+  "current_consumer_selection": {
+    "slots": 4,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/liji-clean-wrap-03-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 7901,
+    "total_input_tokens": 1455,
+    "input_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 1120
+      },
+      {
+        "modality": "text",
+        "tokens": 335
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4882,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1564
+  },
+  "actual_request_body_sha256": "2be36ad5db2750597b33c229c1e66686f3656c1ed96e2b2eb78cac53e092f272",
+  "submitted_inputs": [
+    {
+      "image_number": 1,
+      "submitted_sha256": "37a00a139241862d54044b8e50b2c4b02a545b4a8678b11bb1de2ee2402f56ca",
+      "original_sha256": "05ac4d70dbed022cbaabd37b9da071031056d325653ccbee9b1a2aac5046e0ce",
+      "crop": {
+        "height": 1,
+        "width": 0.3,
+        "x": 0.05,
+        "y": 0
+      },
+      "submitted_input_file": "production/requests/inputs/37a00a139241862d54044b8e50b2c4b02a545b4a8678b11bb1de2ee2402f56ca.png",
+      "purpose": "Exact reference region only; not a generated candidate or a 4K deliverable."
+    }
+  ]
+}
