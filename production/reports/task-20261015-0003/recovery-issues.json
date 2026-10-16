@@ -1,7 +1,7 @@
 {
   "format": "task-recovery-issue-v1",
   "task_id": "task-20261015-0003",
-  "system_commit": "b3691193a9d66cf55c4589471daede1f5baaaf74",
+  "system_commit": "096b6bb0d7c13a20d61c54a2211b48b245f8abc7",
   "repository": "review_desk",
   "activation": "active",
   "issues": [
@@ -76,7 +76,7 @@
       "status": "blocked",
       "evidence": "Actual 2242604-byte native WAV was read in full and supplied as audio/wav through the audio tool output. Runtime returned: audio content omitted because you do not support audio input.",
       "original_sha256": "cb9568d517393bbb365105efeb2297763d6cf8b92cba86b6c212f6f0bb361059",
-      "verification": "No audio was heard by the executor; voice and four songs remain hearing_unverified. Full byte reading, playback display, transcript, and waveform do not replace listening.",
+      "verification": "执行者仍未实际听到声音。阿蘅完整试声与1.96秒独立短参考已由用户实际试听通过，87处准确短文件引用已保存；其他音频仍逐项待听，不能继承阿蘅结论。",
       "resume_when": "An audio-capable verification path or actual human listening evidence is available."
     },
     {
@@ -92,6 +92,44 @@
       },
       "action": "Use the standard sanitized export restored into a new empty instance, and verify its exact production/current/candidate/submission/comment tables against the original frozen database before preparing the delta. Private method notes remain in task runtime. The publication guard was not weakened.",
       "verification": "Stage04 delta preflight succeeded against a clone of the formal database; applied=false. Exact publication identity and hashes are in verification.json."
+    },
+    {
+      "id": "semantic-receipt-filter",
+      "status": "runtime_verified",
+      "cause": "选择准确引用时，实体身份解析反复读取并解码全部制作操作回执，包括大量与身份无关的调用快照。",
+      "action": "在SQL中先按真实回执格式筛选身份合并操作，保留原行序与后写生效行为；不改素材或评论。",
+      "verification": "15项相关测试通过。3459条回执的同库只读查询从0.3916秒降到0.0911秒，映射一致；这是局部查询测量，不是整条选择流程提速倍数。"
+    },
+    {
+      "id": "google-three-unknown-images",
+      "status": "unknown",
+      "attempts": [
+        "guard-identity-01",
+        "porter-identity-01",
+        "stage-drum-identity-01"
+      ],
+      "evidence": "守庙差役连接中断；挑柴老汉响应截断；戏鼓响应保留13129723字节但图像base64未完整。都没有可用原件或可查询的平台ID。",
+      "action": "准确本机提交及未知结果已登记，继续保留每次0.25美元规划预留，不重复提交；以后仅沿平台实际查询能力恢复。"
+    },
+    {
+      "id": "seed-guard-unknown",
+      "status": "unknown",
+      "request_id": "555f10be-2760-45c6-baf8-c8177fad42b7",
+      "evidence": "守庙差役试声请求在长时间中断后仍未收到响应；仅终止核明归属的本次请求进程，未收到音频或平台Logid。",
+      "action": "保留120秒额度预留及准确请求，不重复调用。官方同步接口文档未给出按该客户端ID查结果的入口；待平台日志或控制台可用时核查。",
+      "receipt": "../../receipts/seed-task-20261015-0003-guard-voice-01.json"
+    },
+    {
+      "id": "seed-local-submit-contention",
+      "status": "recovered_before_external_dispatch",
+      "cause": "首个船夫调用在本机保存提交时遇到SQLite写入锁，当时阿蘅87处引用正在写入。",
+      "verification": "确认该尝试没有CALL、提交回执或外部派发后，串行化本任务写入并沿同一准确ID恢复；船夫只发生一次真实外部请求且已登记。"
+    },
+    {
+      "id": "stage05-empty-recovery",
+      "status": "verified",
+      "action": "标准脱敏导出排除1344项本机方法记录，恢复新空实例后逐表与冻结原库比对，再从恢复库构建增量包。",
+      "verification": "2002条制作当前记录、159个候选、167份提交和三张原评论表完全一致；增量在正式库隔离副本预演通过，applied=false。"
     }
   ],
   "resume_requirement": "附属仓库已通过当前run启用，当前任务持有双仓执行锁；继续素材与接口验证，真实页面复验待日常Chrome连接可用。",
@@ -99,6 +137,6 @@
     "status": "blocked",
     "error": "Sky Computer Use native pipe startup failed",
     "available_browsers": [],
-    "last_recovery": "用户说明恢复后刷新及一次重置仍同错；停止本轮重复重试，不替换为其他profile。"
+    "last_recovery": "2026-10-16 23:59北京时间重查仍为native pipe startup failed，apps与browsers均空；无新连接条件前不重复重试，不用其他profile。"
   }
 }

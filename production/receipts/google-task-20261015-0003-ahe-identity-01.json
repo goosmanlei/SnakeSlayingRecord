@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-ahe-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-ahe-identity-01",
+    "submission_sha256": "2def033bfc1bd31844486a4ebb78b80351d25d92d728acacdbcf52be9b6d51db",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-ahe-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "1e18afc80c6f4cbe59edf287b6c670418718874d9e783d81f5139c6bdca94305.jpg",
+    "sha256": "1e18afc80c6f4cbe59edf287b6c670418718874d9e783d81f5139c6bdca94305",
+    "bytes": 8069246,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-ahe-identity-01",
+    "candidate_id": "candidate-39135cc41e6d22fa6f1e7922c7b469be806e38e126da441545cfdc827a83b573",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "已实际看原生5504×3072 JPEG：年轻女孩椭圆脸、粗短眉、黑发低挽髻及黑发带在全身、侧面和正脸之间一致；浅茶交领上衣、深灰绿裙与旧布鞋完整，颈肩纤细但没有病弱、伤血或押送姿态。脸和衣色与阿蘅、李寄的现有母版可辨。",
+    "decision": "选择为阿禾生前回忆的第0代身份母版；只支持剧本中的生前女孩形象，不据此增加洞中遇害画面或虚构发言。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 2,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/ahe-identity-01-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 6040,
+    "total_input_tokens": 352,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 352
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4343,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1345
+  },
+  "actual_request_body_sha256": "32ee1c35df7230fffbe7897574430af09cae6cffe82cf4b2f30dab75d10861f1",
+  "submitted_inputs": []
+}

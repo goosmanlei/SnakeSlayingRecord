@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-rice-measure-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-rice-measure-identity-01",
+    "submission_sha256": "116e9dc6a43215e03c14b08ae5333f3229be9cc987364a0f394c9da01df4aeb0",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-rice-measure-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "356b500aed64bd0f81d4f0dfdaf348b094254f3dcc0ca72d373cb1159cb50d84.jpg",
+    "sha256": "356b500aed64bd0f81d4f0dfdaf348b094254f3dcc0ca72d373cb1159cb50d84",
+    "bytes": 7179336,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-rice-measure-identity-01",
+    "candidate_id": "candidate-75b32e03888929bc47e8715752cc5420963e2ecb17c9a444d0aab99f406b9115",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "已实际看原生5504×3072 JPEG：四方斜壁、平口与独立刮片可辨，但主图和底角图画出了突出较长、带凹口的柄，俯视图却只有极短凸边，同一握边的长度和轮廓不一致；不能据三个视向固定同一道具。",
+    "decision": "本候选不选入下游。返修时从新第0代文本方案明确短握边的统一长度和矩形轮廓，减少长柄触发词；保持方斗与独立刮片，不沿失败图进行图生图。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  },
+  "usage": {
+    "total_tokens": 5832,
+    "total_input_tokens": 299,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 299
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4165,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1368
+  },
+  "actual_request_body_sha256": "be244649682a93e43b969efbbd70b64ea122847c5472f2ebb9a9c24ace866018",
+  "submitted_inputs": []
+}

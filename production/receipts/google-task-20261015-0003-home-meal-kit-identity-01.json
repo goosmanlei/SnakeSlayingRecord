@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-home-meal-kit-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-home-meal-kit-identity-01",
+    "submission_sha256": "fe09079b0b040b6c976df5ca63841655fcd41c0149c292f11f1cb63f8778a124",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-home-meal-kit-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "979dd942c3d2cf624fe04718624d5312f875986100c23f9f3d5356fd2a705df2.jpg",
+    "sha256": "979dd942c3d2cf624fe04718624d5312f875986100c23f9f3d5356fd2a705df2",
+    "bytes": 7658539,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-home-meal-kit-identity-01",
+    "candidate_id": "candidate-588cd6995ed50b35653be499150a71f545617bed83c2168051106176ac049e37",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "实际查看原件：饭碗、汤碗、药罐、木勺铁铲、竹盘饼篮与三种食物、锅盖壶面粉、两凳与板席均清楚；药罐另有小嘴侧把，无缺口小碗或油灯。但当前方案要求木筷两双，图中只有一双。整套交付尚未完全符合所列件数，不计完整通过。",
+    "decision": "保留实际原件，下一次修正明确四根筷子分为两双；不以同类可复制代替本次既定完整交付。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  },
+  "usage": {
+    "total_tokens": 5922,
+    "total_input_tokens": 374,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 374
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4232,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1316
+  },
+  "actual_request_body_sha256": "63b83a7f9057dd72de8e3fa9ae4adc0053cb68519a04e132dae16b7a1ef92224",
+  "submitted_inputs": []
+}

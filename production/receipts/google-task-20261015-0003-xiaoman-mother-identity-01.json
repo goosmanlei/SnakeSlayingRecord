@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-xiaoman-mother-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-xiaoman-mother-identity-01",
+    "submission_sha256": "fb7654ad12f6436e0909ec8873a094d219963f5e5a1934121baf654157a7e9e4",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-xiaoman-mother-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "93fbc3f99ac5a66bc292f62fb3a5d77230afc8ecdc380febeb793f3ac46bd11e.jpg",
+    "sha256": "93fbc3f99ac5a66bc292f62fb3a5d77230afc8ecdc380febeb793f3ac46bd11e",
+    "bytes": 7826880,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-xiaoman-mother-identity-01",
+    "candidate_id": "candidate-c5c1c4ce5e5d250a1f9bc4662e4c9e0bc3a33cd31e1af9c00d815c41d1f0a5c6",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "已实际看原生5504×3072 JPEG：小满母亲方圆脸、浓平眉、眼角细纹、黑发紧挽，深灰绿交领上衣、灰褐裙与米灰束腰一致；肩较宽，双手空着可合拢，未预持断梳或固定哭相。正侧和正脸近图身份相符，手脚完整。",
+    "decision": "选择为小满母亲第0代身份母版，后续辨认断梳和情绪反应在镜头中另核。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 9,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/xiaoman-mother-identity-01-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 6560,
+    "total_input_tokens": 348,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 348
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4951,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1261
+  },
+  "actual_request_body_sha256": "117042df5c77482f4ea10f7c49d570f1d1cf7ecd6a379c59dd1ca391f474c9a9",
+  "submitted_inputs": []
+}

@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-dock-pole-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-dock-pole-identity-01",
+    "submission_sha256": "720a76dd05174a8dabc1ecd2bc2da2c4f1f7fb650b154862ee6004a22639f80f",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-dock-pole-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "1fc8fd34c9dcbf62149e0a6a2f86892a41b94ad8b1f87bc797ff3e3b0e3da977.jpg",
+    "sha256": "1fc8fd34c9dcbf62149e0a6a2f86892a41b94ad8b1f87bc797ff3e3b0e3da977",
+    "bytes": 7273844,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-dock-pole-identity-01",
+    "candidate_id": "candidate-47f9b893b4857706f1e7cf4bba56d34de8f362cf8b13cbfe417cefad42764505",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "实际查看原件：土棕木扁担全侧视、俯视和肩承磨亮区对应同一形制；中央向上轻弓、两端浅挂槽与圆钝端头清楚，无货物、桶、尖头或文字。近图只裁取中央细节，两个整物视图完整。通过基础形制；成年张臂长度与单手抓握需在具体人物镜头复核，不当作转交同一件。",
+    "decision": "选用第0代原件作为同类扁担形制；保留各剧情不同件的归属。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 5,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/dock-pole-identity-01-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 5706,
+    "total_input_tokens": 277,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 277
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4241,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1188
+  },
+  "actual_request_body_sha256": "f96799c2cd7b8c34dda1a68b65d7f91876d2a3ac8c5651b93d644ede25fdafa0",
+  "submitted_inputs": []
+}

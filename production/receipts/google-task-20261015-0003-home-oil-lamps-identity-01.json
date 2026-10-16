@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-home-oil-lamps-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-home-oil-lamps-identity-01",
+    "submission_sha256": "032c10e915c08f543663e80094674837a5032372ca6ca2b79b516a74b79b76d6",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-home-oil-lamps-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "056fb823aeaccefb01e2f31c65ea7f21b94c24b4a82eecae03c1d83d1b5c4548.jpg",
+    "sha256": "056fb823aeaccefb01e2f31c65ea7f21b94c24b4a82eecae03c1d83d1b5c4548",
+    "bytes": 6446674,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-home-oil-lamps-identity-01",
+    "candidate_id": "candidate-075003bdf83e3d6ebf2e193eae316732e4c15b2ebe90c7e0d9a3507bdfc54fd4",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "实际查看原件：两盏同形短柄浅盘陶灯和矮底座可辨，一明一灭；但出现标题及点燃/未点燃文字，违背无标签要求；点燃图的火头位于盘内油面上方，盘沿外伸端未燃，灯芯燃烧与浸油端关系不清。不可直接作为可靠点灯/熄灯参考。",
+    "decision": "回到干净根图，明确无任何文字，灯芯一端浸油、另一端从盘沿伸出燃烧；只用整灯视图和单一清楚细节。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  },
+  "usage": {
+    "total_tokens": 5742,
+    "total_input_tokens": 296,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 296
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4815,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 631
+  },
+  "actual_request_body_sha256": "553749c8ec2bb9d6c2bd2327e23e1bdcec315ed0b02f48f58280c707e8b836d7",
+  "submitted_inputs": []
+}

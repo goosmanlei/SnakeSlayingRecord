@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-helpers-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-helpers-identity-01",
+    "submission_sha256": "e797c3e9442b52012fa769c25e26a17eb56c809a61cb99f5f1ece1f5ca1a3eba",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-helpers-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "b988dd7e7b715dc8568940b849c7ad03fcb178ae120eee9d423328c2caf05ff5.jpg",
+    "sha256": "b988dd7e7b715dc8568940b849c7ad03fcb178ae120eee9d423328c2caf05ff5",
+    "bytes": 8241994,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-helpers-identity-01",
+    "candidate_id": "candidate-e0242d6b509de61c50fc9e683c86b5a18735af06f70d3dd32ed68feadcf18254",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "已实际看原生5504×3072 JPEG：从左至右四名男性全身完整，分别为厚胸方脸暗靛衣码头甲、窄脸卷边短发浅灰蓝衣码头乙、灰头带土灰衣石料甲、圆脸短髭灰绿衣较矮壮的石料乙。四张近脸分别对应全身，无人物重叠，均空手且脚落地；白灰只在两名石料工衣裤下部，码头工没有，石料乙下摆另有少量白灰。",
+    "decision": "选择为四位压闸帮手的第0代群体母版。以图中固定次序区分甲乙及劳动分工；画内四人身份不扩大为所有群众的总人数，也不包含另请的石匠。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 33,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/helpers-identity-01-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 7728,
+    "total_input_tokens": 408,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 408
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 5160,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 2160
+  },
+  "actual_request_body_sha256": "fa435691e2c7c8e9c38129851d0ca3fcb49716b6144f672d8ba027781b081768",
+  "submitted_inputs": []
+}

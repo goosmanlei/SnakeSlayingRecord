@@ -1,0 +1,59 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-guard-identity-01",
+  "status": "unknown",
+  "request": "production/requests/task-20261015-0003-guard-identity-01.json",
+  "submission": {
+    "call_id": "task-20261015-0003-guard-identity-01",
+    "submission_sha256": "2960fbf6de43ceddd9fe26f5c9d8c392e565cfe38e466a5aa8a41006472af74d",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "provider_receipt": {
+    "status": "unknown",
+    "dispatched_at": "2026-10-16T12:30:15.573294+00:00",
+    "body_sha256": "636ca6b5e0eb83f1bd0e454b55e6b2af6e8390f515ceae995933266360343443",
+    "body_bytes": 1521,
+    "submission_sha256": "2960fbf6de43ceddd9fe26f5c9d8c392e565cfe38e466a5aa8a41006472af74d",
+    "request_manifest": "guard-identity-01-request.json",
+    "body_serialization": "lyria_music.dump; source_file+sha256 resolved to original base64 data",
+    "cost_evidence": {
+      "currency": "USD",
+      "quoted_image_4k": 0.113,
+      "estimated_call_cap": 0.25,
+      "actual": "UNKNOWN",
+      "account_source": "user-reported prepaid Google balance17.74; no recharge",
+      "note": "Catalog estimate is not billed cost; usage retained when returned."
+    },
+    "error_type": "RemoteDisconnected",
+    "detail": "Remote end closed connection without response",
+    "finished_at": "2026-10-16T12:30:39.080218+00:00"
+  },
+  "recovery": {
+    "checked_at": "2026-10-16T12:34:56.641789+00:00",
+    "status": "unknown",
+    "dispatch_finished": "2026-10-16T12:30:39.080218+00:00",
+    "provider_job_id": null,
+    "response_present": false,
+    "original_present": false,
+    "query_status": "No provider interaction identifier was returned; store=false synchronous request cannot be addressed by the local call_id. No invented provider id or retry.",
+    "next_action": "Preserve unknown request and budget reservation; continue independent requirements only."
+  },
+  "registered_result": {
+    "request": {
+      "id": "task-20261015-0003-guard-identity-01-unknown",
+      "call_id": "task-20261015-0003-guard-identity-01",
+      "submission_sha256": "2960fbf6de43ceddd9fe26f5c9d8c392e565cfe38e466a5aa8a41006472af74d",
+      "status": "unknown"
+    },
+    "result": {
+      "call_id": "task-20261015-0003-guard-identity-01",
+      "candidate_id": null,
+      "status": "unknown",
+      "already_applied": false
+    }
+  },
+  "candidate": null,
+  "original": null,
+  "retry": false
+}
