@@ -1,0 +1,80 @@
+{
+  "attempt_id": "task-20261015-0003-temple-song-full-02",
+  "song_entity_id": "new26-temple-song",
+  "spec_sha256": "a66813b4b9ae7f28870a8a2b9e8bff6f20f140eae5d4370760b8d695ff63def5",
+  "sources": {
+    "lyrics": {
+      "path": "production/rebuild/songs/temple-song/lyrics.txt",
+      "sha256": "d71e453ee0304a4c3d5e3ef6de64b2f3e6e67f2416b75c569629709e86fd6c33"
+    },
+    "directions": {
+      "path": "production/rebuild/songs/temple-song/music.md",
+      "sha256": "2cbcdbf06db4144ccebc504a32efe672a6b1b4b366b05d0ca751ffcc102cf213"
+    }
+  },
+  "requested_format": "mp3",
+  "estimated_cost_usd": "0.08",
+  "price_checked": "2026-10-03",
+  "audio_accepted": false,
+  "production": {
+    "url": "http://127.0.0.1:62845",
+    "requirement_id": "new26-temple-song-singing",
+    "operation_id": "task-20261015-0003-temple-song-full-02-submit",
+    "call_id": "task-20261015-0003-temple-song-full-02"
+  },
+  "status": "completed",
+  "created_at": "2026-10-16T08:08:26.056189+00:00",
+  "max_cost_usd": "0.08",
+  "endpoint": "https://generativelanguage.googleapis.com/v1beta/interactions",
+  "proxy": "system/environment proxy settings",
+  "production_submission": {
+    "call_id": "task-20261015-0003-temple-song-full-02",
+    "submission_sha256": "3d0382240640d80eff358266e0d1a305c115b229033f7453ab2b0c997e46f2cf",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "submitted_at": "2026-10-16T08:08:26.666975+00:00",
+  "interaction_id": null,
+  "finished_at": "2026-10-16T08:09:07.538312+00:00",
+  "provider_model": "lyria-3.5",
+  "files": [
+    {
+      "file": "audio-01.mp3",
+      "sha256": "e26038207b4d61e0bee7a9778bbad099ca7a04365f44262cff2d93543467c736",
+      "bytes": 4308176,
+      "reported_mime_type": "audio/mpeg",
+      "container": "mp3",
+      "codec": "mp3",
+      "sample_rate": "44100",
+      "channels": 2,
+      "duration_seconds": 179.252167,
+      "native_pcm_wav": false
+    }
+  ],
+  "usage": {
+    "total_tokens": 3995,
+    "total_input_tokens": 908,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 908
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 3087,
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 0
+  },
+  "lyric_check": "pending",
+  "listening_review": "unverified",
+  "candidate": {
+    "call_id": "task-20261015-0003-temple-song-full-02",
+    "candidate_id": "candidate-0039c58ba917c9ad0e09c117aa586187bb413e85ed0e8fa21739703af3d4d0a1",
+    "status": "completed",
+    "already_applied": false
+  },
+  "actual_charge_usd": "UNKNOWN",
+  "format_authorization": "用户明确允许原生MP3并继续制作全部歌曲；不等于作品听审通过。",
+  "budget_evidence": "production/receipts/google-budget-task-20261015-0003-songs-mp3.json",
+  "format_check_after_authorization": "passed_native_mp3"
+}

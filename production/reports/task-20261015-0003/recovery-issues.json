@@ -1,0 +1,33 @@
+{
+  "format": "task-recovery-issue-v1",
+  "task_id": "task-20261015-0003",
+  "system_commit": "6fcc97194d884df2665abb26eac1f605da8127de",
+  "repository": "review_desk",
+  "activation": "pending",
+  "issues": [
+    {
+      "id": "nano-reference-contract",
+      "status": "open",
+      "evidence": "input_contracts.py 的有图参考分支未识别 nano-banana-2-1，返回 verified=false。平台表单已核实支持1至14个 visualReferences、4K与16:9。",
+      "action": "在受管附属工作区补齐经核实的图片参考数量、模态和附件用途校验；不得将未知模型通用放行。",
+      "incident_receipt": "../../receipts/openart-task-20261015-0003-aheng-wet-01.json"
+    },
+    {
+      "id": "candidate-number-after-switch",
+      "status": "reproduced",
+      "reproduction": "日常Chrome任务62845，EN001大卡的M001从候选2切到候选1后，两个按钮都显示候选1。",
+      "data_facts": "候选表编号正确为1、2，原件哈希不同。entity-material响应的results有正确candidate_number，但所选完整候选的members条目缺少candidate_number。",
+      "cause": "entity_contract.py加载完整候选时用p.record整体替换摘要，丢失编号；business_codes仅补results编号。retainLoadedMaterialMembers再用旧members记录替换新results摘要，丢号后经排序及index+1退路显示重复1。",
+      "action": "保留准确素材候选编号及身份，回归2到1到2切换、比较和刷新；不改原件、候选、评论或作者选择。",
+      "evidence_runtime": ".runtime/task-20261015-0003/candidate-label-bug/"
+    },
+    {
+      "id": "comparison-dialog-controls",
+      "status": "authorized_pending",
+      "user_requirement": "同需求候选比较弹窗不需要下面的审阅此准确候选按钮等，因为当前系统没有审阅概念。",
+      "action": "仅移除该比较弹窗两侧的审阅此准确候选按钮、问号入口及底部说明；保留候选切换、标题、原图和关闭。",
+      "target": "review_desk/static/material-review.js:materialCompareControl"
+    }
+  ],
+  "resume_requirement": "review_desk已登记为pending；先保存主仓成果，再退出本TUI，从主项目codex.task run --task task-20261015-0003 --auto恢复，取得全组运行锁后才写系统工作区。"
+}

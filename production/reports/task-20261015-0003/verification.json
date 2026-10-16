@@ -1,7 +1,8 @@
 {
   "format": "stage-verification-v1",
   "task_id": "task-20261015-0003",
-  "checked_at": "2026-10-16T07:37:52.395439+00:00",
+  "checked_at": "2026-10-16T08:39:12.539161+00:00",
+  "stage": "stage-02",
   "requirements": 651,
   "ordinary_state": 191,
   "unique_dependency_edges": 3396,
@@ -10,86 +11,96 @@
   "song_shot_mappings": 27,
   "video_count": 416,
   "video_planned_seconds": 7889,
-  "s040_q01_seconds": 24,
-  "selected_input_slots": 20,
-  "candidates": 4,
+  "selected_input_slots": 230,
+  "aheng_identity_02_slots": 210,
+  "candidates": 9,
   "status_counts": {
-    "not_produced": 186,
-    "specification_failed": 1,
-    "hearing_unverified": 1,
-    "executor_checked": 2,
-    "request_unknown": 1
+    "not_produced": 182,
+    "executor_checked": 3,
+    "hearing_unverified": 5,
+    "registration_blocked_and_quality_failed": 1
   },
   "protected_baseline_records": {
     "comments": 404,
     "comment_events": 438,
     "business_comments": 404
   },
-  "chrome": "daily Chrome, task instance 62845; four full song cards, M054 full lyrics and UNKNOWN blocker read back; no audio hearing proof",
   "formal_publication": false,
   "empty_instance_recovery": {
     "schema_version": 14,
-    "fresh_target": ".runtime/generation/recovered-stage-0003",
+    "fresh_target": ".runtime/generation/recovered-stage-0003-02",
     "restored": true,
-    "all_export_files_verified": 64,
-    "new_production_files_verified": 6,
+    "all_export_files_verified": 69,
+    "new_production_files_verified": 11,
     "exact_table_comparisons": {
-      "production_current_records": 1685,
-      "production_candidates": 4,
-      "production_candidate_targets": 4,
-      "production_submissions": 5,
+      "production_current_records": 1695,
+      "production_candidates": 9,
+      "production_candidate_targets": 9,
+      "production_submissions": 10,
       "comments": 404,
       "business_comments": 404
     },
     "unknown_call_preserved": true,
-    "formal_instance_untouched": true
+    "formal_instance_untouched": true,
+    "test_copy_removed_after_verification": true
   },
-  "prepare_first_attempt": {
-    "status": "local_failed_before_package",
-    "error": "ModuleNotFoundError: review_desk",
-    "recovery": "显式PYTHONPATH引用只读配套系统重新准备；无正式写入。"
+  "chrome": {
+    "browser": "daily Chrome",
+    "task_port": 62845,
+    "candidate_number_bug": "reproduced: candidate2 to candidate1 yields duplicate candidate1 labels",
+    "comparison_dialog_removal": "user requested, not implemented",
+    "audio_listening": false
   },
   "publication_package": {
-    "prepared": true,
-    "path": "production/publications/task-20261015-0003-stage-01.json",
-    "sha256": "e94b851776274b102b890437fcb657631a11a75339a4e2c71f3b3533c85e836a",
-    "scope_objects": 261,
-    "media_files": 6,
-    "basis": "同一任务原始初始化基线与本次Schema14公开导出恢复实例；公开导出按既有契约排除45个新增私有方法执行/阶段，原工作库与基线未改。",
+    "path": "production/publications/task-20261015-0003-stage-02.json",
     "applied_to_formal": false,
-    "rehearsal": {
-      "applied": false,
-      "already_published": false,
-      "publication_id": "76eb6ff2b1b9a663a6de0da9bc6a6595310b119763450f56be76196464178ed7",
-      "source_commit": null,
-      "scope": {
-        "contract": "production-current-publication-v1",
-        "changed_rows": {
-          "objects": 261,
-          "revisions": 261,
-          "dependencies": 727,
-          "comments": 0,
-          "material_content": 0,
-          "material_archive_files": 0,
-          "material_aliases": 0,
-          "business_codes": 2,
-          "business_comments": 0,
-          "business_relations": 0,
-          "business_relation_aliases": 0,
-          "audiovisual_notes": 0,
-          "production_current_records": 66,
-          "production_submissions": 5,
-          "production_candidates": 4,
-          "production_candidate_targets": 4,
-          "production_comment_quotes": 0,
-          "production_current_operations": 46,
-          "production_response_excerpts": 0
-        },
-        "comment_events": [],
-        "publication_id": "76eb6ff2b1b9a663a6de0da9bc6a6595310b119763450f56be76196464178ed7",
-        "already_published": false
+    "sha256": "5aee3280872431dfd151f837cd02eaa2508be42f479e02bda691dc822e72a415",
+    "publication_id": "ca8c42895cad8ddc2cfd852f2e0e4f2be745bd67d465bbf3b8927c1449546055",
+    "objects": 478,
+    "media_files": 11,
+    "preflight": {
+      "passed": true,
+      "target": "isolated clone of formal database",
+      "receipt": ".runtime/generation/publications/task-20261015-0003-stage-check-02/preflight.json",
+      "result": {
+        "applied": false,
+        "already_published": false,
+        "publication_id": "ca8c42895cad8ddc2cfd852f2e0e4f2be745bd67d465bbf3b8927c1449546055",
+        "source_commit": null,
+        "scope": {
+          "contract": "production-current-publication-v1",
+          "changed_rows": {
+            "objects": 478,
+            "revisions": 478,
+            "dependencies": 1652,
+            "comments": 0,
+            "material_content": 0,
+            "material_archive_files": 0,
+            "material_aliases": 0,
+            "business_codes": 2,
+            "business_comments": 0,
+            "business_relations": 0,
+            "business_relation_aliases": 0,
+            "audiovisual_notes": 0,
+            "production_current_records": 256,
+            "production_submissions": 10,
+            "production_candidates": 9,
+            "production_candidate_targets": 9,
+            "production_comment_quotes": 0,
+            "production_current_operations": 476,
+            "production_response_excerpts": 0
+          },
+          "comment_events": [],
+          "publication_id": "ca8c42895cad8ddc2cfd852f2e0e4f2be745bd67d465bbf3b8927c1449546055",
+          "already_published": false
+        }
       }
-    },
-    "private_process_records_excluded": 45
-  }
+    }
+  },
+  "external_unregistered_output": {
+    "attempt": "task-20261015-0003-aheng-wet-01",
+    "included_in_export": false,
+    "recovery_receipt": "../../receipts/openart-task-20261015-0003-aheng-wet-01.json"
+  },
+  "pending_system_repository": "review_desk requires managed run activation"
 }

@@ -1,7 +1,7 @@
 {
   "format": "task-process-cleanup-v1",
   "task_id": "task-20261015-0003",
-  "completed_at": "2026-10-16T07:44:46.750897+00:00",
+  "completed_at": "2026-10-16T08:47:04.535314+00:00",
   "deleted": [
     {
       "path": ".runtime/task-20261015-0003/svg-renderer-env",
@@ -92,19 +92,55 @@
       "bytes": 6441,
       "purpose_ended": "Rendering, one-time authoring, restore or rehearsal completed; managed outputs and receipts retained.",
       "absent_on_readback": true
+    },
+    {
+      "path": ".runtime/generation/recovered-stage-0003-02",
+      "files": 94,
+      "symlinks": 0,
+      "directories": 9,
+      "bytes": 1063707438,
+      "purpose_ended": "Stage-02 export recovery and delta preflight completed; managed originals, verification and minimal preflight receipt retained.",
+      "absent_on_readback": true
+    },
+    {
+      "path": ".runtime/generation/publications/task-20261015-0003-stage-check-02/before.sqlite3",
+      "files": 1,
+      "symlinks": 0,
+      "directories": 0,
+      "bytes": 420659200,
+      "purpose_ended": "Stage-02 export recovery and delta preflight completed; managed originals, verification and minimal preflight receipt retained.",
+      "absent_on_readback": true
+    },
+    {
+      "path": ".runtime/generation/publications/task-20261015-0003-stage-check-02/rehearsal.sqlite3",
+      "files": 1,
+      "symlinks": 0,
+      "directories": 0,
+      "bytes": 447111168,
+      "purpose_ended": "Stage-02 export recovery and delta preflight completed; managed originals, verification and minimal preflight receipt retained.",
+      "absent_on_readback": true
+    },
+    {
+      "path": ".runtime/task-20261015-0003/save-stage-02.py",
+      "files": 1,
+      "symlinks": 0,
+      "directories": 0,
+      "bytes": 8867,
+      "purpose_ended": "Stage-02 export recovery and delta preflight completed; managed originals, verification and minimal preflight receipt retained.",
+      "absent_on_readback": true
     }
   ],
   "totals": {
-    "files": 816,
+    "files": 913,
     "symlinks": 3,
-    "directories": 98,
-    "bytes": 2744547748
+    "directories": 107,
+    "bytes": 4676034421
   },
   "containers_created": 0,
   "task_containers_found": 0,
   "images_created": 0,
   "shared_services_stopped": false,
-  "mount_check": "No task container label or direct task mount found. Only shared Virtualization read caches observed by lsof; no task render or test process. Shared VM kept running.",
+  "mount_check": "Stage-02 targets have no task process or direct container mount. Only shared Virtualization read caches were open; three existing shared containers and services were left running.",
   "retained": [
     {
       "path": ".runtime/generation/review",
@@ -129,6 +165,10 @@
     {
       "path": "production/receipts",
       "purpose": "Managed real Seed Audio, OpenArt, Lyria and quota receipts; preserve for accounting and deduplication."
+    },
+    {
+      "path": ".runtime/generation/publications/task-20261015-0003-stage-check-02/preflight.json",
+      "purpose": "Minimal successful stage-02 publication rehearsal receipt."
     }
   ],
   "cleanup_complete_for_task": false,
