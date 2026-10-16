@@ -4,7 +4,7 @@
     "f1835fc7ff9b3829b382c0b712f43b50d1fbf458761e79c94ff0a7021516222a"
   ],
   "edge_direction": "from requires to",
-  "nodes": 650,
+  "nodes": 651,
   "edges": [
     {
       "from": "new26-aheng-wet-overall",
@@ -30,8 +30,8 @@
     {
       "from": "new26-boat-song-singing",
       "to": "new26-aheng-voice",
-      "stage": "generation",
-      "path": "payload.inputs.0.reference",
+      "stage": "preparation",
+      "path": "payload.output.derivative_preparation.inputs.0.reference",
       "revision_id": "ab129f9e9bece3d86b936909980417f0c1be1e08bcee90aa703398b745b94e8b"
     },
     {
@@ -185,8 +185,15 @@
       "from": "new26-map-cut-overall",
       "to": "new26-layout-note-identity",
       "stage": "preparation",
-      "path": "payload.inputs.0.reference",
-      "revision_id": "e0fe50d66443283f37e40289af89e2ba89f947e9f611b16e9b6625d37bb9d2d4"
+      "path": "generation.inputs.0.material_selection.material_id",
+      "revision_id": "e0fe50d66443283f37e40289af89e2ba89f947e9f611b16e9b6625d37bb9d2d4",
+      "selected_original": {
+        "candidate": {
+          "object_id": "asset-task-20261015-0003-layout-note-01",
+          "revision_id": "67ffc1cef2590e5d89681e5e367a2034251c8084f50bc7fbdfca7670aa23028f"
+        },
+        "component_id": "original"
+      }
     },
     {
       "from": "new26-moon-identity",
@@ -205,9 +212,23 @@
     {
       "from": "new26-qingpeng-singing",
       "to": "new26-aheng-voice",
-      "stage": "generation",
-      "path": "payload.inputs.0.reference",
+      "stage": "preparation",
+      "path": "payload.output.derivative_preparation.inputs.0.reference",
       "revision_id": "ab129f9e9bece3d86b936909980417f0c1be1e08bcee90aa703398b745b94e8b"
+    },
+    {
+      "from": "new26-qingpeng-singing",
+      "to": "new26-aheng-mother-voice",
+      "stage": "preparation",
+      "path": "payload.output.derivative_preparation.inputs.1.reference",
+      "revision_id": "744084ddd6a02da2f022f3f8ff6f9468478bef434a4b83d1da29b766ae6fbdd6"
+    },
+    {
+      "from": "new26-qingpeng-singing",
+      "to": "new26-song-teacher-voice",
+      "stage": "preparation",
+      "path": "payload.output.derivative_preparation.inputs.2.reference",
+      "revision_id": "c499d15838bb54db726badf8b13311a62a0ff67822e10b1cb2710176278a25ca"
     },
     {
       "from": "new26-recruitment-all-overall",
@@ -3151,10 +3172,10 @@
     },
     {
       "from": "new26-s007-q01-video",
-      "to": "new26-singers-voice",
+      "to": "new26-temple-song-singing",
       "stage": "generation",
       "path": "payload.inputs.3.reference",
-      "revision_id": "6f7339062c8647b2b63d11497753d6c243cd47f8a7fe920a445d678643b6eb36"
+      "revision_id": "547784d33fc918d29bf1feaa44b8ffa093d6bf3ebd68870947deecbac52e8405"
     },
     {
       "from": "new26-s007-q01-video",
@@ -3326,10 +3347,10 @@
     },
     {
       "from": "new26-s007-q06-video",
-      "to": "new26-aheng-mother-voice",
+      "to": "new26-qingpeng-singing",
       "stage": "generation",
       "path": "payload.inputs.4.reference",
-      "revision_id": "744084ddd6a02da2f022f3f8ff6f9468478bef434a4b83d1da29b766ae6fbdd6"
+      "revision_id": "529078239eb900ca89fa901b6125e511475b90f29437c3b334c94a25553e6e57"
     },
     {
       "from": "new26-s007-q07-video",
@@ -4439,6 +4460,13 @@
     },
     {
       "from": "new26-s009-q03-video",
+      "to": "new26-lixiao-voice",
+      "stage": "generation",
+      "path": "payload.inputs.10.reference",
+      "revision_id": "55b98e9ac91c17e940c68b181c3e02850a3b0dfd9f54291cac085be8f46ea2c7"
+    },
+    {
+      "from": "new26-s009-q03-video",
       "to": "new26-sunliu-identity",
       "stage": "generation",
       "path": "payload.inputs.2.reference",
@@ -4495,13 +4523,6 @@
     },
     {
       "from": "new26-s009-q03-video",
-      "to": "new26-lixiao-voice",
-      "stage": "generation",
-      "path": "payload.inputs.10.reference",
-      "revision_id": "55b98e9ac91c17e940c68b181c3e02850a3b0dfd9f54291cac085be8f46ea2c7"
-    },
-    {
-      "from": "new26-s009-q03-video",
       "to": "new26-s008-q12-name",
       "stage": "postproduction",
       "path": "payload.output.editorial_inputs.0.reference",
@@ -4520,6 +4541,27 @@
       "stage": "generation",
       "path": "payload.inputs.1.reference",
       "revision_id": "eb894ce76ab6570a5a0c4ba905e915386656a0e776493eb4b2e98c20d713ed4d"
+    },
+    {
+      "from": "new26-s009-q04-video",
+      "to": "new26-curtain-poles-identity",
+      "stage": "generation",
+      "path": "payload.inputs.10.reference",
+      "revision_id": "323e956ad889d351483f761fa7dabcd5e6d8b0d0f3ab7b6a1a1dae3148bcb1c6"
+    },
+    {
+      "from": "new26-s009-q04-video",
+      "to": "new26-temple-workers-identity",
+      "stage": "generation",
+      "path": "payload.inputs.11.reference",
+      "revision_id": "8a4ca78c0b58b430802733e86940f6427982df215592cc01ffa79f29b078ab17"
+    },
+    {
+      "from": "new26-s009-q04-video",
+      "to": "new26-priest-voice",
+      "stage": "generation",
+      "path": "payload.inputs.12.reference",
+      "revision_id": "8675f7166730acacd3887977982d673e7a797371d9ccd851634a0f392cbe17eb"
     },
     {
       "from": "new26-s009-q04-video",
@@ -4579,27 +4621,6 @@
     },
     {
       "from": "new26-s009-q04-video",
-      "to": "new26-curtain-poles-identity",
-      "stage": "generation",
-      "path": "payload.inputs.10.reference",
-      "revision_id": "323e956ad889d351483f761fa7dabcd5e6d8b0d0f3ab7b6a1a1dae3148bcb1c6"
-    },
-    {
-      "from": "new26-s009-q04-video",
-      "to": "new26-temple-workers-identity",
-      "stage": "generation",
-      "path": "payload.inputs.11.reference",
-      "revision_id": "8a4ca78c0b58b430802733e86940f6427982df215592cc01ffa79f29b078ab17"
-    },
-    {
-      "from": "new26-s009-q04-video",
-      "to": "new26-priest-voice",
-      "stage": "generation",
-      "path": "payload.inputs.12.reference",
-      "revision_id": "8675f7166730acacd3887977982d673e7a797371d9ccd851634a0f392cbe17eb"
-    },
-    {
-      "from": "new26-s009-q04-video",
       "to": "new26-s008-q12-name",
       "stage": "postproduction",
       "path": "payload.output.editorial_inputs.0.reference",
@@ -4618,6 +4639,27 @@
       "stage": "generation",
       "path": "payload.inputs.1.reference",
       "revision_id": "b5ddf79d6c72c1c1713706ce791c69e79715a83e932126d29eba7425db359ed4"
+    },
+    {
+      "from": "new26-s009-q05-video",
+      "to": "new26-sunliu-voice",
+      "stage": "generation",
+      "path": "payload.inputs.10.reference",
+      "revision_id": "244c7625c17c20ba6603c7c402c218c176d772d5281b5be578324b7bc54c49f7"
+    },
+    {
+      "from": "new26-s009-q05-video",
+      "to": "new26-priest-voice",
+      "stage": "generation",
+      "path": "payload.inputs.11.reference",
+      "revision_id": "8675f7166730acacd3887977982d673e7a797371d9ccd851634a0f392cbe17eb"
+    },
+    {
+      "from": "new26-s009-q05-video",
+      "to": "new26-lixiao-voice",
+      "stage": "generation",
+      "path": "payload.inputs.12.reference",
+      "revision_id": "55b98e9ac91c17e940c68b181c3e02850a3b0dfd9f54291cac085be8f46ea2c7"
     },
     {
       "from": "new26-s009-q05-video",
@@ -4674,27 +4716,6 @@
       "stage": "generation",
       "path": "payload.inputs.9.reference",
       "revision_id": "668692345b8126135a8ce59e05fe6e263e9407153acd5d1bea9a8b9e13475f4f"
-    },
-    {
-      "from": "new26-s009-q05-video",
-      "to": "new26-sunliu-voice",
-      "stage": "generation",
-      "path": "payload.inputs.10.reference",
-      "revision_id": "244c7625c17c20ba6603c7c402c218c176d772d5281b5be578324b7bc54c49f7"
-    },
-    {
-      "from": "new26-s009-q05-video",
-      "to": "new26-priest-voice",
-      "stage": "generation",
-      "path": "payload.inputs.11.reference",
-      "revision_id": "8675f7166730acacd3887977982d673e7a797371d9ccd851634a0f392cbe17eb"
-    },
-    {
-      "from": "new26-s009-q05-video",
-      "to": "new26-lixiao-voice",
-      "stage": "generation",
-      "path": "payload.inputs.12.reference",
-      "revision_id": "55b98e9ac91c17e940c68b181c3e02850a3b0dfd9f54291cac085be8f46ea2c7"
     },
     {
       "from": "new26-s009-q05-video",
@@ -4789,6 +4810,27 @@
     },
     {
       "from": "new26-s009-q07-video",
+      "to": "new26-priest-identity",
+      "stage": "generation",
+      "path": "payload.inputs.10.reference",
+      "revision_id": "b5ddf79d6c72c1c1713706ce791c69e79715a83e932126d29eba7425db359ed4"
+    },
+    {
+      "from": "new26-s009-q07-video",
+      "to": "new26-aheng-voice",
+      "stage": "generation",
+      "path": "payload.inputs.11.reference",
+      "revision_id": "ab129f9e9bece3d86b936909980417f0c1be1e08bcee90aa703398b745b94e8b"
+    },
+    {
+      "from": "new26-s009-q07-video",
+      "to": "new26-liji-voice",
+      "stage": "generation",
+      "path": "payload.inputs.12.reference",
+      "revision_id": "f22ab672429b40e1a8481527fecabdcb331fd2a4247c45d915cb030b3a1bfacb"
+    },
+    {
+      "from": "new26-s009-q07-video",
       "to": "new26-lixiao-identity",
       "stage": "generation",
       "path": "payload.inputs.2.reference",
@@ -4842,27 +4884,6 @@
       "stage": "generation",
       "path": "payload.inputs.9.reference",
       "revision_id": "725e6192a2f34023de72ea6b07c06c4343fb74c5de4a4852fc0cdda428673a6a"
-    },
-    {
-      "from": "new26-s009-q07-video",
-      "to": "new26-priest-identity",
-      "stage": "generation",
-      "path": "payload.inputs.10.reference",
-      "revision_id": "b5ddf79d6c72c1c1713706ce791c69e79715a83e932126d29eba7425db359ed4"
-    },
-    {
-      "from": "new26-s009-q07-video",
-      "to": "new26-aheng-voice",
-      "stage": "generation",
-      "path": "payload.inputs.11.reference",
-      "revision_id": "ab129f9e9bece3d86b936909980417f0c1be1e08bcee90aa703398b745b94e8b"
-    },
-    {
-      "from": "new26-s009-q07-video",
-      "to": "new26-liji-voice",
-      "stage": "generation",
-      "path": "payload.inputs.12.reference",
-      "revision_id": "f22ab672429b40e1a8481527fecabdcb331fd2a4247c45d915cb030b3a1bfacb"
     },
     {
       "from": "new26-s009-q07-video",
@@ -6287,6 +6308,13 @@
     },
     {
       "from": "new26-s015-q01-video",
+      "to": "new26-sunliu-voice",
+      "stage": "generation",
+      "path": "payload.inputs.10.reference",
+      "revision_id": "244c7625c17c20ba6603c7c402c218c176d772d5281b5be578324b7bc54c49f7"
+    },
+    {
+      "from": "new26-s015-q01-video",
       "to": "new26-lixiao-identity",
       "stage": "generation",
       "path": "payload.inputs.2.reference",
@@ -6340,13 +6368,6 @@
       "stage": "generation",
       "path": "payload.inputs.9.reference",
       "revision_id": "48e9259ae423c0ef89025aaa1b5f5b4151e6b30b0f36f23e1b4b8f6db4e62c51"
-    },
-    {
-      "from": "new26-s015-q01-video",
-      "to": "new26-sunliu-voice",
-      "stage": "generation",
-      "path": "payload.inputs.10.reference",
-      "revision_id": "244c7625c17c20ba6603c7c402c218c176d772d5281b5be578324b7bc54c49f7"
     },
     {
       "from": "new26-s015-q02-video",
@@ -6560,6 +6581,13 @@
     },
     {
       "from": "new26-s015-q04-video",
+      "to": "new26-lixiao-voice",
+      "stage": "generation",
+      "path": "payload.inputs.10.reference",
+      "revision_id": "55b98e9ac91c17e940c68b181c3e02850a3b0dfd9f54291cac085be8f46ea2c7"
+    },
+    {
+      "from": "new26-s015-q04-video",
       "to": "new26-lidan-identity",
       "stage": "generation",
       "path": "payload.inputs.2.reference",
@@ -6615,13 +6643,6 @@
       "revision_id": "458954610afc33d0e224d7e1835beb8a17c0c3ce554012c42ee10af1cf367a3f"
     },
     {
-      "from": "new26-s015-q04-video",
-      "to": "new26-lixiao-voice",
-      "stage": "generation",
-      "path": "payload.inputs.10.reference",
-      "revision_id": "55b98e9ac91c17e940c68b181c3e02850a3b0dfd9f54291cac085be8f46ea2c7"
-    },
-    {
       "from": "new26-s015-q05-video",
       "to": "new26-sunliu-identity",
       "stage": "generation",
@@ -6634,6 +6655,13 @@
       "stage": "generation",
       "path": "payload.inputs.1.reference",
       "revision_id": "0ed0dc6feae998156358507ed3d487256475eab55603b947e01a709427317500"
+    },
+    {
+      "from": "new26-s015-q05-video",
+      "to": "new26-waist-drum-sound",
+      "stage": "generation",
+      "path": "payload.inputs.10.reference",
+      "revision_id": "b1154aa8ff6537040be44534527fa8554510ee5c207ca5203c80aff8ecb0734e"
     },
     {
       "from": "new26-s015-q05-video",
@@ -6692,13 +6720,6 @@
       "revision_id": "25f4ef6786744a9612efb6493b1f27769d6f825e29e6595bcc301029d25118fe"
     },
     {
-      "from": "new26-s015-q05-video",
-      "to": "new26-waist-drum-sound",
-      "stage": "generation",
-      "path": "payload.inputs.10.reference",
-      "revision_id": "b1154aa8ff6537040be44534527fa8554510ee5c207ca5203c80aff8ecb0734e"
-    },
-    {
       "from": "new26-s015-q06-video",
       "to": "new26-lidan-identity",
       "stage": "generation",
@@ -6711,6 +6732,34 @@
       "stage": "generation",
       "path": "payload.inputs.1.reference",
       "revision_id": "3683d4e58fc4fce4b4001de34211ac0e4a28e5e2d55f91e17866b2fa306fbd0e"
+    },
+    {
+      "from": "new26-s015-q06-video",
+      "to": "new26-waist-drum-identity",
+      "stage": "generation",
+      "path": "payload.inputs.10.reference",
+      "revision_id": "207922f64955da7dec6d508c196c1aa9be2434edb3b2b9f44dbdbf6232f2acf4"
+    },
+    {
+      "from": "new26-s015-q06-video",
+      "to": "new26-bedding-identity",
+      "stage": "generation",
+      "path": "payload.inputs.11.reference",
+      "revision_id": "0142710dbeac96c37ae06075b94b82386e78e9e98de074ce24e3928a9a389a30"
+    },
+    {
+      "from": "new26-s015-q06-video",
+      "to": "new26-curtain-poles-identity",
+      "stage": "generation",
+      "path": "payload.inputs.12.reference",
+      "revision_id": "323e956ad889d351483f761fa7dabcd5e6d8b0d0f3ab7b6a1a1dae3148bcb1c6"
+    },
+    {
+      "from": "new26-s015-q06-video",
+      "to": "new26-aheng-mother-voice",
+      "stage": "generation",
+      "path": "payload.inputs.13.reference",
+      "revision_id": "744084ddd6a02da2f022f3f8ff6f9468478bef434a4b83d1da29b766ae6fbdd6"
     },
     {
       "from": "new26-s015-q06-video",
@@ -6769,34 +6818,6 @@
       "revision_id": "00901d7b90cb43d4de51e7b5bf3bbd5fb6469cbbfe263354d8770d7808d8c38a"
     },
     {
-      "from": "new26-s015-q06-video",
-      "to": "new26-waist-drum-identity",
-      "stage": "generation",
-      "path": "payload.inputs.10.reference",
-      "revision_id": "207922f64955da7dec6d508c196c1aa9be2434edb3b2b9f44dbdbf6232f2acf4"
-    },
-    {
-      "from": "new26-s015-q06-video",
-      "to": "new26-bedding-identity",
-      "stage": "generation",
-      "path": "payload.inputs.11.reference",
-      "revision_id": "0142710dbeac96c37ae06075b94b82386e78e9e98de074ce24e3928a9a389a30"
-    },
-    {
-      "from": "new26-s015-q06-video",
-      "to": "new26-curtain-poles-identity",
-      "stage": "generation",
-      "path": "payload.inputs.12.reference",
-      "revision_id": "323e956ad889d351483f761fa7dabcd5e6d8b0d0f3ab7b6a1a1dae3148bcb1c6"
-    },
-    {
-      "from": "new26-s015-q06-video",
-      "to": "new26-aheng-mother-voice",
-      "stage": "generation",
-      "path": "payload.inputs.13.reference",
-      "revision_id": "744084ddd6a02da2f022f3f8ff6f9468478bef434a4b83d1da29b766ae6fbdd6"
-    },
-    {
       "from": "new26-s015-q07-video",
       "to": "new26-aheng-identity",
       "stage": "generation",
@@ -6809,6 +6830,13 @@
       "stage": "generation",
       "path": "payload.inputs.1.reference",
       "revision_id": "a0bf8efe15ba596bc69c2884ae4109cb6091ee1410e0de802d98664b72d40519"
+    },
+    {
+      "from": "new26-s015-q07-video",
+      "to": "new26-liji-voice",
+      "stage": "generation",
+      "path": "payload.inputs.10.reference",
+      "revision_id": "f22ab672429b40e1a8481527fecabdcb331fd2a4247c45d915cb030b3a1bfacb"
     },
     {
       "from": "new26-s015-q07-video",
@@ -6865,13 +6893,6 @@
       "stage": "generation",
       "path": "payload.inputs.9.reference",
       "revision_id": "0a3f3fb7400d812a7c4d4288bb758e83c7db00ce8cd81c01e1a1995489a63318"
-    },
-    {
-      "from": "new26-s015-q07-video",
-      "to": "new26-liji-voice",
-      "stage": "generation",
-      "path": "payload.inputs.10.reference",
-      "revision_id": "f22ab672429b40e1a8481527fecabdcb331fd2a4247c45d915cb030b3a1bfacb"
     },
     {
       "from": "new26-s016-q01-video",
@@ -7211,6 +7232,34 @@
     },
     {
       "from": "new26-s016-q07-video",
+      "to": "new26-home-meal-kit-identity",
+      "stage": "generation",
+      "path": "payload.inputs.10.reference",
+      "revision_id": "0a3f3fb7400d812a7c4d4288bb758e83c7db00ce8cd81c01e1a1995489a63318"
+    },
+    {
+      "from": "new26-s016-q07-video",
+      "to": "new26-preparation-tools-identity",
+      "stage": "generation",
+      "path": "payload.inputs.11.reference",
+      "revision_id": "4dce50e936d71fe9668f47b784afae04a983986b29a22f4de28570188c1e5738"
+    },
+    {
+      "from": "new26-s016-q07-video",
+      "to": "new26-moer-identity",
+      "stage": "generation",
+      "path": "payload.inputs.12.reference",
+      "revision_id": "091d8e53cd019c0d5baddea4ec4f137d79b96e60faa7b6b238fa4053770ccd70"
+    },
+    {
+      "from": "new26-s016-q07-video",
+      "to": "new26-liji-mother-voice",
+      "stage": "generation",
+      "path": "payload.inputs.13.reference",
+      "revision_id": "d2d1a88daf6a669fca87c3ecf2cbd5538584b76004527ff47fcd1027f478f99c"
+    },
+    {
+      "from": "new26-s016-q07-video",
       "to": "new26-liji-mother-identity",
       "stage": "generation",
       "path": "payload.inputs.2.reference",
@@ -7267,34 +7316,6 @@
     },
     {
       "from": "new26-s016-q07-video",
-      "to": "new26-home-meal-kit-identity",
-      "stage": "generation",
-      "path": "payload.inputs.10.reference",
-      "revision_id": "0a3f3fb7400d812a7c4d4288bb758e83c7db00ce8cd81c01e1a1995489a63318"
-    },
-    {
-      "from": "new26-s016-q07-video",
-      "to": "new26-preparation-tools-identity",
-      "stage": "generation",
-      "path": "payload.inputs.11.reference",
-      "revision_id": "4dce50e936d71fe9668f47b784afae04a983986b29a22f4de28570188c1e5738"
-    },
-    {
-      "from": "new26-s016-q07-video",
-      "to": "new26-moer-identity",
-      "stage": "generation",
-      "path": "payload.inputs.12.reference",
-      "revision_id": "091d8e53cd019c0d5baddea4ec4f137d79b96e60faa7b6b238fa4053770ccd70"
-    },
-    {
-      "from": "new26-s016-q07-video",
-      "to": "new26-liji-mother-voice",
-      "stage": "generation",
-      "path": "payload.inputs.13.reference",
-      "revision_id": "d2d1a88daf6a669fca87c3ecf2cbd5538584b76004527ff47fcd1027f478f99c"
-    },
-    {
-      "from": "new26-s016-q07-video",
       "to": "new26-s007-q05-two-wages",
       "stage": "postproduction",
       "path": "payload.output.editorial_inputs.0.reference",
@@ -7313,6 +7334,13 @@
       "stage": "generation",
       "path": "payload.inputs.1.reference",
       "revision_id": "20f0cdb1efcb91311e237d76b1709e55b115d9d8331c9491b751abe7c8242f59"
+    },
+    {
+      "from": "new26-s017-q01-video",
+      "to": "new26-liji-voice",
+      "stage": "generation",
+      "path": "payload.inputs.10.reference",
+      "revision_id": "f22ab672429b40e1a8481527fecabdcb331fd2a4247c45d915cb030b3a1bfacb"
     },
     {
       "from": "new26-s017-q01-video",
@@ -7369,13 +7397,6 @@
       "stage": "generation",
       "path": "payload.inputs.9.reference",
       "revision_id": "244c7625c17c20ba6603c7c402c218c176d772d5281b5be578324b7bc54c49f7"
-    },
-    {
-      "from": "new26-s017-q01-video",
-      "to": "new26-liji-voice",
-      "stage": "generation",
-      "path": "payload.inputs.10.reference",
-      "revision_id": "f22ab672429b40e1a8481527fecabdcb331fd2a4247c45d915cb030b3a1bfacb"
     },
     {
       "from": "new26-s017-q02-video",
@@ -7463,6 +7484,13 @@
     },
     {
       "from": "new26-s017-q03-first-frame",
+      "to": "new26-festival-crowd-identity",
+      "stage": "generation",
+      "path": "payload.inputs.10.reference",
+      "revision_id": "175cd0a9158cdcfd701517b2e2e988ba11f9e95321000161b8623e15d5c288aa"
+    },
+    {
+      "from": "new26-s017-q03-first-frame",
       "to": "new26-lidan-identity",
       "stage": "generation",
       "path": "payload.inputs.2.reference",
@@ -7519,13 +7547,6 @@
     },
     {
       "from": "new26-s017-q03-first-frame",
-      "to": "new26-festival-crowd-identity",
-      "stage": "generation",
-      "path": "payload.inputs.10.reference",
-      "revision_id": "175cd0a9158cdcfd701517b2e2e988ba11f9e95321000161b8623e15d5c288aa"
-    },
-    {
-      "from": "new26-s017-q03-first-frame",
       "to": "new26-s017-q02-wrong-form",
       "stage": "postproduction",
       "path": "payload.output.editorial_inputs.0.reference",
@@ -7544,6 +7565,41 @@
       "stage": "generation",
       "path": "payload.inputs.1.reference",
       "revision_id": "1b250174801552b53e97083443f111fdd58b2310a9f1f741614a79ef547b19ce"
+    },
+    {
+      "from": "new26-s017-q03-video",
+      "to": "new26-preparation-tools-identity",
+      "stage": "generation",
+      "path": "payload.inputs.10.reference",
+      "revision_id": "4dce50e936d71fe9668f47b784afae04a983986b29a22f4de28570188c1e5738"
+    },
+    {
+      "from": "new26-s017-q03-video",
+      "to": "new26-county-deputy-voice",
+      "stage": "generation",
+      "path": "payload.inputs.11.reference",
+      "revision_id": "78a643e9fff18d4422c1ab0896254228b76d009120f2e61effcb2469b9941edf"
+    },
+    {
+      "from": "new26-s017-q03-video",
+      "to": "new26-lidan-voice",
+      "stage": "generation",
+      "path": "payload.inputs.12.reference",
+      "revision_id": "48e9259ae423c0ef89025aaa1b5f5b4151e6b30b0f36f23e1b4b8f6db4e62c51"
+    },
+    {
+      "from": "new26-s017-q03-video",
+      "to": "new26-sunliu-voice",
+      "stage": "generation",
+      "path": "payload.inputs.13.reference",
+      "revision_id": "244c7625c17c20ba6603c7c402c218c176d772d5281b5be578324b7bc54c49f7"
+    },
+    {
+      "from": "new26-s017-q03-video",
+      "to": "new26-liji-voice",
+      "stage": "generation",
+      "path": "payload.inputs.14.reference",
+      "revision_id": "f22ab672429b40e1a8481527fecabdcb331fd2a4247c45d915cb030b3a1bfacb"
     },
     {
       "from": "new26-s017-q03-video",
@@ -7600,41 +7656,6 @@
       "stage": "generation",
       "path": "payload.inputs.9.reference",
       "revision_id": "afa987bf58b2dd29382fc13e6f8eb66fb7cfd483de31548165cf05418a089838"
-    },
-    {
-      "from": "new26-s017-q03-video",
-      "to": "new26-preparation-tools-identity",
-      "stage": "generation",
-      "path": "payload.inputs.10.reference",
-      "revision_id": "4dce50e936d71fe9668f47b784afae04a983986b29a22f4de28570188c1e5738"
-    },
-    {
-      "from": "new26-s017-q03-video",
-      "to": "new26-county-deputy-voice",
-      "stage": "generation",
-      "path": "payload.inputs.11.reference",
-      "revision_id": "78a643e9fff18d4422c1ab0896254228b76d009120f2e61effcb2469b9941edf"
-    },
-    {
-      "from": "new26-s017-q03-video",
-      "to": "new26-lidan-voice",
-      "stage": "generation",
-      "path": "payload.inputs.12.reference",
-      "revision_id": "48e9259ae423c0ef89025aaa1b5f5b4151e6b30b0f36f23e1b4b8f6db4e62c51"
-    },
-    {
-      "from": "new26-s017-q03-video",
-      "to": "new26-sunliu-voice",
-      "stage": "generation",
-      "path": "payload.inputs.13.reference",
-      "revision_id": "244c7625c17c20ba6603c7c402c218c176d772d5281b5be578324b7bc54c49f7"
-    },
-    {
-      "from": "new26-s017-q03-video",
-      "to": "new26-liji-voice",
-      "stage": "generation",
-      "path": "payload.inputs.14.reference",
-      "revision_id": "f22ab672429b40e1a8481527fecabdcb331fd2a4247c45d915cb030b3a1bfacb"
     },
     {
       "from": "new26-s017-q03-video",
@@ -8331,6 +8352,13 @@
     },
     {
       "from": "new26-s017-q14-video",
+      "to": "new26-liang-clerk-voice",
+      "stage": "generation",
+      "path": "payload.inputs.10.reference",
+      "revision_id": "6217a89f4f96e6422c55fd7fe1b508c3456d5aa9a2eeb15783fd8ba982d99497"
+    },
+    {
+      "from": "new26-s017-q14-video",
       "to": "new26-lixiao-identity",
       "stage": "generation",
       "path": "payload.inputs.2.reference",
@@ -8384,13 +8412,6 @@
       "stage": "generation",
       "path": "payload.inputs.9.reference",
       "revision_id": "f4bce99fe224ce6a7ecb6125e9aced1455f932b1a500701ce552b632b7028b86"
-    },
-    {
-      "from": "new26-s017-q14-video",
-      "to": "new26-liang-clerk-voice",
-      "stage": "generation",
-      "path": "payload.inputs.10.reference",
-      "revision_id": "6217a89f4f96e6422c55fd7fe1b508c3456d5aa9a2eeb15783fd8ba982d99497"
     },
     {
       "from": "new26-s017-q14-video",
@@ -8513,6 +8534,13 @@
     },
     {
       "from": "new26-s017-q17-video",
+      "to": "new26-county-deputy-voice",
+      "stage": "generation",
+      "path": "payload.inputs.10.reference",
+      "revision_id": "78a643e9fff18d4422c1ab0896254228b76d009120f2e61effcb2469b9941edf"
+    },
+    {
+      "from": "new26-s017-q17-video",
       "to": "new26-zhou-identity",
       "stage": "generation",
       "path": "payload.inputs.2.reference",
@@ -8566,13 +8594,6 @@
       "stage": "generation",
       "path": "payload.inputs.9.reference",
       "revision_id": "2c820522dc2a5f500e91bf2b06ecae756555a6df6ff627768c253fc4b6193dd7"
-    },
-    {
-      "from": "new26-s017-q17-video",
-      "to": "new26-county-deputy-voice",
-      "stage": "generation",
-      "path": "payload.inputs.10.reference",
-      "revision_id": "78a643e9fff18d4422c1ab0896254228b76d009120f2e61effcb2469b9941edf"
     },
     {
       "from": "new26-s017-q18-video",
@@ -8653,6 +8674,13 @@
     },
     {
       "from": "new26-s017-q19-video",
+      "to": "new26-cheng-voice",
+      "stage": "generation",
+      "path": "payload.inputs.10.reference",
+      "revision_id": "7c266a1ca68bd6d8c753c12e59eac4fdb495ef0a3f86d6c057f1f9052753091f"
+    },
+    {
+      "from": "new26-s017-q19-video",
       "to": "new26-liji-head-wrap-overall",
       "stage": "generation",
       "path": "payload.inputs.2.reference",
@@ -8706,13 +8734,6 @@
       "stage": "generation",
       "path": "payload.inputs.9.reference",
       "revision_id": "4dce50e936d71fe9668f47b784afae04a983986b29a22f4de28570188c1e5738"
-    },
-    {
-      "from": "new26-s017-q19-video",
-      "to": "new26-cheng-voice",
-      "stage": "generation",
-      "path": "payload.inputs.10.reference",
-      "revision_id": "7c266a1ca68bd6d8c753c12e59eac4fdb495ef0a3f86d6c057f1f9052753091f"
     },
     {
       "from": "new26-s017-q19-video",
@@ -9005,8 +9026,15 @@
       "from": "new26-s018-q05-video",
       "to": "new26-layout-note-identity",
       "stage": "generation",
-      "path": "payload.inputs.7.reference",
-      "revision_id": "e0fe50d66443283f37e40289af89e2ba89f947e9f611b16e9b6625d37bb9d2d4"
+      "path": "generation.inputs.7.material_selection.material_id",
+      "revision_id": "e0fe50d66443283f37e40289af89e2ba89f947e9f611b16e9b6625d37bb9d2d4",
+      "selected_original": {
+        "candidate": {
+          "object_id": "asset-task-20261015-0003-layout-note-01",
+          "revision_id": "67ffc1cef2590e5d89681e5e367a2034251c8084f50bc7fbdfca7670aa23028f"
+        },
+        "component_id": "original"
+      }
     },
     {
       "from": "new26-s018-q05-video",
@@ -9035,6 +9063,27 @@
       "stage": "generation",
       "path": "payload.inputs.1.reference",
       "revision_id": "2d8de6263470285b917ae7324629d6dfe9c9b2d347d37586487292e8c25c5d8e"
+    },
+    {
+      "from": "new26-s018-q06-video",
+      "to": "new26-preparation-tools-identity",
+      "stage": "generation",
+      "path": "payload.inputs.10.reference",
+      "revision_id": "4dce50e936d71fe9668f47b784afae04a983986b29a22f4de28570188c1e5738"
+    },
+    {
+      "from": "new26-s018-q06-video",
+      "to": "new26-aheng-identity",
+      "stage": "generation",
+      "path": "payload.inputs.11.reference",
+      "revision_id": "0ea568f155bbd4595a8f5b55cd66349cebc50bf64311d39565f579c64fb8d461"
+    },
+    {
+      "from": "new26-s018-q06-video",
+      "to": "new26-book-dry-sheets-overall",
+      "stage": "generation",
+      "path": "payload.inputs.12.reference",
+      "revision_id": "f4bce99fe224ce6a7ecb6125e9aced1455f932b1a500701ce552b632b7028b86"
     },
     {
       "from": "new26-s018-q06-video",
@@ -9089,36 +9138,29 @@
       "from": "new26-s018-q06-video",
       "to": "new26-layout-note-identity",
       "stage": "generation",
-      "path": "payload.inputs.9.reference",
-      "revision_id": "e0fe50d66443283f37e40289af89e2ba89f947e9f611b16e9b6625d37bb9d2d4"
-    },
-    {
-      "from": "new26-s018-q06-video",
-      "to": "new26-preparation-tools-identity",
-      "stage": "generation",
-      "path": "payload.inputs.10.reference",
-      "revision_id": "4dce50e936d71fe9668f47b784afae04a983986b29a22f4de28570188c1e5738"
-    },
-    {
-      "from": "new26-s018-q06-video",
-      "to": "new26-aheng-identity",
-      "stage": "generation",
-      "path": "payload.inputs.11.reference",
-      "revision_id": "0ea568f155bbd4595a8f5b55cd66349cebc50bf64311d39565f579c64fb8d461"
-    },
-    {
-      "from": "new26-s018-q06-video",
-      "to": "new26-book-dry-sheets-overall",
-      "stage": "generation",
-      "path": "payload.inputs.12.reference",
-      "revision_id": "f4bce99fe224ce6a7ecb6125e9aced1455f932b1a500701ce552b632b7028b86"
+      "path": "generation.inputs.9.material_selection.material_id",
+      "revision_id": "e0fe50d66443283f37e40289af89e2ba89f947e9f611b16e9b6625d37bb9d2d4",
+      "selected_original": {
+        "candidate": {
+          "object_id": "asset-task-20261015-0003-layout-note-01",
+          "revision_id": "67ffc1cef2590e5d89681e5e367a2034251c8084f50bc7fbdfca7670aa23028f"
+        },
+        "component_id": "original"
+      }
     },
     {
       "from": "new26-s018-q06-video",
       "to": "new26-layout-note-identity",
       "stage": "postproduction",
-      "path": "payload.output.editorial_inputs.0.reference",
-      "revision_id": "e0fe50d66443283f37e40289af89e2ba89f947e9f611b16e9b6625d37bb9d2d4"
+      "path": "generation.inputs.9.material_selection.material_id",
+      "revision_id": "e0fe50d66443283f37e40289af89e2ba89f947e9f611b16e9b6625d37bb9d2d4",
+      "selected_original": {
+        "candidate": {
+          "object_id": "asset-task-20261015-0003-layout-note-01",
+          "revision_id": "67ffc1cef2590e5d89681e5e367a2034251c8084f50bc7fbdfca7670aa23028f"
+        },
+        "component_id": "original"
+      }
     },
     {
       "from": "new26-s018-q07-first-frame",
@@ -9332,6 +9374,27 @@
     },
     {
       "from": "new26-s018-q10-video",
+      "to": "new26-back-court-ambience",
+      "stage": "generation",
+      "path": "payload.inputs.10.reference",
+      "revision_id": "822dac9f057a69bab08e7222dd8f46d133b702dbb0fa8ceafe4915061bd317f2"
+    },
+    {
+      "from": "new26-s018-q10-video",
+      "to": "new26-snake-body-sound",
+      "stage": "generation",
+      "path": "payload.inputs.11.reference",
+      "revision_id": "c0d79efaa3d2a574fcf055b0b70e68b671118a819b76e6ebf272899de7bf1bb9"
+    },
+    {
+      "from": "new26-s018-q10-video",
+      "to": "new26-feeding-lock-mechanical-sound",
+      "stage": "generation",
+      "path": "payload.inputs.12.reference",
+      "revision_id": "74b3841a55e858da2a04bf7e245c08c3121a5e54353b39536a7118878a6e1c22"
+    },
+    {
+      "from": "new26-s018-q10-video",
       "to": "new26-zhao-identity",
       "stage": "generation",
       "path": "payload.inputs.2.reference",
@@ -9387,27 +9450,6 @@
       "revision_id": "f4bce99fe224ce6a7ecb6125e9aced1455f932b1a500701ce552b632b7028b86"
     },
     {
-      "from": "new26-s018-q10-video",
-      "to": "new26-back-court-ambience",
-      "stage": "generation",
-      "path": "payload.inputs.10.reference",
-      "revision_id": "822dac9f057a69bab08e7222dd8f46d133b702dbb0fa8ceafe4915061bd317f2"
-    },
-    {
-      "from": "new26-s018-q10-video",
-      "to": "new26-snake-body-sound",
-      "stage": "generation",
-      "path": "payload.inputs.11.reference",
-      "revision_id": "c0d79efaa3d2a574fcf055b0b70e68b671118a819b76e6ebf272899de7bf1bb9"
-    },
-    {
-      "from": "new26-s018-q10-video",
-      "to": "new26-feeding-lock-mechanical-sound",
-      "stage": "generation",
-      "path": "payload.inputs.12.reference",
-      "revision_id": "74b3841a55e858da2a04bf7e245c08c3121a5e54353b39536a7118878a6e1c22"
-    },
-    {
       "from": "new26-s018-q11-video",
       "to": "new26-back-court-layout",
       "stage": "generation",
@@ -9420,6 +9462,27 @@
       "stage": "generation",
       "path": "payload.inputs.1.reference",
       "revision_id": "2d8de6263470285b917ae7324629d6dfe9c9b2d347d37586487292e8c25c5d8e"
+    },
+    {
+      "from": "new26-s018-q11-video",
+      "to": "new26-snake-identity",
+      "stage": "generation",
+      "path": "payload.inputs.10.reference",
+      "revision_id": "a7d8683ec01c851eb36b70c33ef3d83f2190d7e44e258bcd281dff700df60062"
+    },
+    {
+      "from": "new26-s018-q11-video",
+      "to": "new26-preparation-tools-identity",
+      "stage": "generation",
+      "path": "payload.inputs.11.reference",
+      "revision_id": "4dce50e936d71fe9668f47b784afae04a983986b29a22f4de28570188c1e5738"
+    },
+    {
+      "from": "new26-s018-q11-video",
+      "to": "new26-snake-body-sound",
+      "stage": "generation",
+      "path": "payload.inputs.12.reference",
+      "revision_id": "c0d79efaa3d2a574fcf055b0b70e68b671118a819b76e6ebf272899de7bf1bb9"
     },
     {
       "from": "new26-s018-q11-video",
@@ -9476,27 +9539,6 @@
       "stage": "generation",
       "path": "payload.inputs.9.reference",
       "revision_id": "1389e86e7cbc6f121f2048b8e2df447a19fe156563a63a7b9fbf38474837729b"
-    },
-    {
-      "from": "new26-s018-q11-video",
-      "to": "new26-snake-identity",
-      "stage": "generation",
-      "path": "payload.inputs.10.reference",
-      "revision_id": "a7d8683ec01c851eb36b70c33ef3d83f2190d7e44e258bcd281dff700df60062"
-    },
-    {
-      "from": "new26-s018-q11-video",
-      "to": "new26-preparation-tools-identity",
-      "stage": "generation",
-      "path": "payload.inputs.11.reference",
-      "revision_id": "4dce50e936d71fe9668f47b784afae04a983986b29a22f4de28570188c1e5738"
-    },
-    {
-      "from": "new26-s018-q11-video",
-      "to": "new26-snake-body-sound",
-      "stage": "generation",
-      "path": "payload.inputs.12.reference",
-      "revision_id": "c0d79efaa3d2a574fcf055b0b70e68b671118a819b76e6ebf272899de7bf1bb9"
     },
     {
       "from": "new26-s018-q12-video",
@@ -9752,6 +9794,13 @@
     },
     {
       "from": "new26-s019-q01-video",
+      "to": "new26-thin-worker-voice",
+      "stage": "generation",
+      "path": "payload.inputs.10.reference",
+      "revision_id": "11089d98dae9345449679e6e447289551871be6a8931132b61b53f5107e0a5db"
+    },
+    {
+      "from": "new26-s019-q01-video",
       "to": "new26-aheng-identity",
       "stage": "generation",
       "path": "payload.inputs.2.reference",
@@ -9805,13 +9854,6 @@
       "stage": "generation",
       "path": "payload.inputs.9.reference",
       "revision_id": "7c266a1ca68bd6d8c753c12e59eac4fdb495ef0a3f86d6c057f1f9052753091f"
-    },
-    {
-      "from": "new26-s019-q01-video",
-      "to": "new26-thin-worker-voice",
-      "stage": "generation",
-      "path": "payload.inputs.10.reference",
-      "revision_id": "11089d98dae9345449679e6e447289551871be6a8931132b61b53f5107e0a5db"
     },
     {
       "from": "new26-s019-q02-video",
@@ -10011,6 +10053,48 @@
     },
     {
       "from": "new26-s019-q06-video",
+      "to": "new26-keys-identity",
+      "stage": "generation",
+      "path": "payload.inputs.10.reference",
+      "revision_id": "3538d3620f82bebc7dfc27a145faef41ee905e4ab9b646e8a2d4e0471ad3ef0e"
+    },
+    {
+      "from": "new26-s019-q06-video",
+      "to": "new26-preparation-tools-identity",
+      "stage": "generation",
+      "path": "payload.inputs.11.reference",
+      "revision_id": "4dce50e936d71fe9668f47b784afae04a983986b29a22f4de28570188c1e5738"
+    },
+    {
+      "from": "new26-s019-q06-video",
+      "to": "new26-layout-note-identity",
+      "stage": "generation",
+      "path": "generation.inputs.12.material_selection.material_id",
+      "revision_id": "e0fe50d66443283f37e40289af89e2ba89f947e9f611b16e9b6625d37bb9d2d4",
+      "selected_original": {
+        "candidate": {
+          "object_id": "asset-task-20261015-0003-layout-note-01",
+          "revision_id": "67ffc1cef2590e5d89681e5e367a2034251c8084f50bc7fbdfca7670aa23028f"
+        },
+        "component_id": "original"
+      }
+    },
+    {
+      "from": "new26-s019-q06-video",
+      "to": "new26-thin-worker-identity",
+      "stage": "generation",
+      "path": "payload.inputs.13.reference",
+      "revision_id": "148b6d318bfaa5ee73380b41187254d58b288b42e5c170007b07cde5ab58ba5f"
+    },
+    {
+      "from": "new26-s019-q06-video",
+      "to": "new26-temple-workers-identity",
+      "stage": "generation",
+      "path": "payload.inputs.14.reference",
+      "revision_id": "8a4ca78c0b58b430802733e86940f6427982df215592cc01ffa79f29b078ab17"
+    },
+    {
+      "from": "new26-s019-q06-video",
       "to": "new26-cheng-identity",
       "stage": "generation",
       "path": "payload.inputs.2.reference",
@@ -10064,41 +10148,6 @@
       "stage": "generation",
       "path": "payload.inputs.9.reference",
       "revision_id": "f4bce99fe224ce6a7ecb6125e9aced1455f932b1a500701ce552b632b7028b86"
-    },
-    {
-      "from": "new26-s019-q06-video",
-      "to": "new26-keys-identity",
-      "stage": "generation",
-      "path": "payload.inputs.10.reference",
-      "revision_id": "3538d3620f82bebc7dfc27a145faef41ee905e4ab9b646e8a2d4e0471ad3ef0e"
-    },
-    {
-      "from": "new26-s019-q06-video",
-      "to": "new26-preparation-tools-identity",
-      "stage": "generation",
-      "path": "payload.inputs.11.reference",
-      "revision_id": "4dce50e936d71fe9668f47b784afae04a983986b29a22f4de28570188c1e5738"
-    },
-    {
-      "from": "new26-s019-q06-video",
-      "to": "new26-layout-note-identity",
-      "stage": "generation",
-      "path": "payload.inputs.12.reference",
-      "revision_id": "e0fe50d66443283f37e40289af89e2ba89f947e9f611b16e9b6625d37bb9d2d4"
-    },
-    {
-      "from": "new26-s019-q06-video",
-      "to": "new26-thin-worker-identity",
-      "stage": "generation",
-      "path": "payload.inputs.13.reference",
-      "revision_id": "148b6d318bfaa5ee73380b41187254d58b288b42e5c170007b07cde5ab58ba5f"
-    },
-    {
-      "from": "new26-s019-q06-video",
-      "to": "new26-temple-workers-identity",
-      "stage": "generation",
-      "path": "payload.inputs.14.reference",
-      "revision_id": "8a4ca78c0b58b430802733e86940f6427982df215592cc01ffa79f29b078ab17"
     },
     {
       "from": "new26-s019-q07-video",
@@ -10116,6 +10165,34 @@
     },
     {
       "from": "new26-s019-q07-video",
+      "to": "new26-preparation-tools-identity",
+      "stage": "generation",
+      "path": "payload.inputs.10.reference",
+      "revision_id": "4dce50e936d71fe9668f47b784afae04a983986b29a22f4de28570188c1e5738"
+    },
+    {
+      "from": "new26-s019-q07-video",
+      "to": "new26-layout-note-identity",
+      "stage": "generation",
+      "path": "generation.inputs.11.material_selection.material_id",
+      "revision_id": "e0fe50d66443283f37e40289af89e2ba89f947e9f611b16e9b6625d37bb9d2d4",
+      "selected_original": {
+        "candidate": {
+          "object_id": "asset-task-20261015-0003-layout-note-01",
+          "revision_id": "67ffc1cef2590e5d89681e5e367a2034251c8084f50bc7fbdfca7670aa23028f"
+        },
+        "component_id": "original"
+      }
+    },
+    {
+      "from": "new26-s019-q07-video",
+      "to": "new26-cheng-voice",
+      "stage": "generation",
+      "path": "payload.inputs.12.reference",
+      "revision_id": "7c266a1ca68bd6d8c753c12e59eac4fdb495ef0a3f86d6c057f1f9052753091f"
+    },
+    {
+      "from": "new26-s019-q07-video",
       "to": "new26-zhao-identity",
       "stage": "generation",
       "path": "payload.inputs.2.reference",
@@ -10169,27 +10246,6 @@
       "stage": "generation",
       "path": "payload.inputs.9.reference",
       "revision_id": "f4bce99fe224ce6a7ecb6125e9aced1455f932b1a500701ce552b632b7028b86"
-    },
-    {
-      "from": "new26-s019-q07-video",
-      "to": "new26-preparation-tools-identity",
-      "stage": "generation",
-      "path": "payload.inputs.10.reference",
-      "revision_id": "4dce50e936d71fe9668f47b784afae04a983986b29a22f4de28570188c1e5738"
-    },
-    {
-      "from": "new26-s019-q07-video",
-      "to": "new26-layout-note-identity",
-      "stage": "generation",
-      "path": "payload.inputs.11.reference",
-      "revision_id": "e0fe50d66443283f37e40289af89e2ba89f947e9f611b16e9b6625d37bb9d2d4"
-    },
-    {
-      "from": "new26-s019-q07-video",
-      "to": "new26-cheng-voice",
-      "stage": "generation",
-      "path": "payload.inputs.12.reference",
-      "revision_id": "7c266a1ca68bd6d8c753c12e59eac4fdb495ef0a3f86d6c057f1f9052753091f"
     },
     {
       "from": "new26-s019-q08-video",
@@ -10298,6 +10354,13 @@
     },
     {
       "from": "new26-s020-q02-video",
+      "to": "new26-lixiao-voice",
+      "stage": "generation",
+      "path": "payload.inputs.10.reference",
+      "revision_id": "55b98e9ac91c17e940c68b181c3e02850a3b0dfd9f54291cac085be8f46ea2c7"
+    },
+    {
+      "from": "new26-s020-q02-video",
       "to": "new26-zhou-identity",
       "stage": "generation",
       "path": "payload.inputs.2.reference",
@@ -10351,13 +10414,6 @@
       "stage": "generation",
       "path": "payload.inputs.9.reference",
       "revision_id": "2c820522dc2a5f500e91bf2b06ecae756555a6df6ff627768c253fc4b6193dd7"
-    },
-    {
-      "from": "new26-s020-q02-video",
-      "to": "new26-lixiao-voice",
-      "stage": "generation",
-      "path": "payload.inputs.10.reference",
-      "revision_id": "55b98e9ac91c17e940c68b181c3e02850a3b0dfd9f54291cac085be8f46ea2c7"
     },
     {
       "from": "new26-s020-q03-video",
@@ -10538,8 +10594,15 @@
       "from": "new26-s020-q05-video",
       "to": "new26-layout-note-identity",
       "stage": "generation",
-      "path": "payload.inputs.6.reference",
-      "revision_id": "e0fe50d66443283f37e40289af89e2ba89f947e9f611b16e9b6625d37bb9d2d4"
+      "path": "generation.inputs.6.material_selection.material_id",
+      "revision_id": "e0fe50d66443283f37e40289af89e2ba89f947e9f611b16e9b6625d37bb9d2d4",
+      "selected_original": {
+        "candidate": {
+          "object_id": "asset-task-20261015-0003-layout-note-01",
+          "revision_id": "67ffc1cef2590e5d89681e5e367a2034251c8084f50bc7fbdfca7670aa23028f"
+        },
+        "component_id": "original"
+      }
     },
     {
       "from": "new26-s020-q05-video",
@@ -10587,8 +10650,15 @@
       "from": "new26-s020-q06-video",
       "to": "new26-layout-note-identity",
       "stage": "generation",
-      "path": "payload.inputs.3.reference",
-      "revision_id": "e0fe50d66443283f37e40289af89e2ba89f947e9f611b16e9b6625d37bb9d2d4"
+      "path": "generation.inputs.3.material_selection.material_id",
+      "revision_id": "e0fe50d66443283f37e40289af89e2ba89f947e9f611b16e9b6625d37bb9d2d4",
+      "selected_original": {
+        "candidate": {
+          "object_id": "asset-task-20261015-0003-layout-note-01",
+          "revision_id": "67ffc1cef2590e5d89681e5e367a2034251c8084f50bc7fbdfca7670aa23028f"
+        },
+        "component_id": "original"
+      }
     },
     {
       "from": "new26-s020-q07-video",
@@ -10629,8 +10699,15 @@
       "from": "new26-s020-q07-video",
       "to": "new26-layout-note-identity",
       "stage": "generation",
-      "path": "payload.inputs.5.reference",
-      "revision_id": "e0fe50d66443283f37e40289af89e2ba89f947e9f611b16e9b6625d37bb9d2d4"
+      "path": "generation.inputs.5.material_selection.material_id",
+      "revision_id": "e0fe50d66443283f37e40289af89e2ba89f947e9f611b16e9b6625d37bb9d2d4",
+      "selected_original": {
+        "candidate": {
+          "object_id": "asset-task-20261015-0003-layout-note-01",
+          "revision_id": "67ffc1cef2590e5d89681e5e367a2034251c8084f50bc7fbdfca7670aa23028f"
+        },
+        "component_id": "original"
+      }
     },
     {
       "from": "new26-s020-q07-video",
@@ -10734,8 +10811,15 @@
       "from": "new26-s021-q01-video",
       "to": "new26-layout-note-identity",
       "stage": "generation",
-      "path": "payload.inputs.6.reference",
-      "revision_id": "e0fe50d66443283f37e40289af89e2ba89f947e9f611b16e9b6625d37bb9d2d4"
+      "path": "generation.inputs.6.material_selection.material_id",
+      "revision_id": "e0fe50d66443283f37e40289af89e2ba89f947e9f611b16e9b6625d37bb9d2d4",
+      "selected_original": {
+        "candidate": {
+          "object_id": "asset-task-20261015-0003-layout-note-01",
+          "revision_id": "67ffc1cef2590e5d89681e5e367a2034251c8084f50bc7fbdfca7670aa23028f"
+        },
+        "component_id": "original"
+      }
     },
     {
       "from": "new26-s021-q01-video",
@@ -10755,8 +10839,15 @@
       "from": "new26-s021-q01-video",
       "to": "new26-layout-note-identity",
       "stage": "postproduction",
-      "path": "payload.output.editorial_inputs.0.reference",
-      "revision_id": "e0fe50d66443283f37e40289af89e2ba89f947e9f611b16e9b6625d37bb9d2d4"
+      "path": "generation.inputs.6.material_selection.material_id",
+      "revision_id": "e0fe50d66443283f37e40289af89e2ba89f947e9f611b16e9b6625d37bb9d2d4",
+      "selected_original": {
+        "candidate": {
+          "object_id": "asset-task-20261015-0003-layout-note-01",
+          "revision_id": "67ffc1cef2590e5d89681e5e367a2034251c8084f50bc7fbdfca7670aa23028f"
+        },
+        "component_id": "original"
+      }
     },
     {
       "from": "new26-s021-q02-video",
@@ -10846,8 +10937,15 @@
       "from": "new26-s021-q03-video",
       "to": "new26-layout-note-identity",
       "stage": "generation",
-      "path": "payload.inputs.5.reference",
-      "revision_id": "e0fe50d66443283f37e40289af89e2ba89f947e9f611b16e9b6625d37bb9d2d4"
+      "path": "generation.inputs.5.material_selection.material_id",
+      "revision_id": "e0fe50d66443283f37e40289af89e2ba89f947e9f611b16e9b6625d37bb9d2d4",
+      "selected_original": {
+        "candidate": {
+          "object_id": "asset-task-20261015-0003-layout-note-01",
+          "revision_id": "67ffc1cef2590e5d89681e5e367a2034251c8084f50bc7fbdfca7670aa23028f"
+        },
+        "component_id": "original"
+      }
     },
     {
       "from": "new26-s021-q03-video",
@@ -10958,8 +11056,15 @@
       "from": "new26-s021-q05-video",
       "to": "new26-layout-note-identity",
       "stage": "generation",
-      "path": "payload.inputs.4.reference",
-      "revision_id": "e0fe50d66443283f37e40289af89e2ba89f947e9f611b16e9b6625d37bb9d2d4"
+      "path": "generation.inputs.4.material_selection.material_id",
+      "revision_id": "e0fe50d66443283f37e40289af89e2ba89f947e9f611b16e9b6625d37bb9d2d4",
+      "selected_original": {
+        "candidate": {
+          "object_id": "asset-task-20261015-0003-layout-note-01",
+          "revision_id": "67ffc1cef2590e5d89681e5e367a2034251c8084f50bc7fbdfca7670aa23028f"
+        },
+        "component_id": "original"
+      }
     },
     {
       "from": "new26-s021-q05-video",
@@ -11194,6 +11299,27 @@
     },
     {
       "from": "new26-s022-q03-video",
+      "to": "new26-grain-order-identity",
+      "stage": "generation",
+      "path": "payload.inputs.10.reference",
+      "revision_id": "981efddaa70fc734f79ab2950cfc28d671f1193d034e704ee37b4aad5ce0b646"
+    },
+    {
+      "from": "new26-s022-q03-video",
+      "to": "new26-aheng-voice",
+      "stage": "generation",
+      "path": "payload.inputs.11.reference",
+      "revision_id": "ab129f9e9bece3d86b936909980417f0c1be1e08bcee90aa703398b745b94e8b"
+    },
+    {
+      "from": "new26-s022-q03-video",
+      "to": "new26-zhao-voice",
+      "stage": "generation",
+      "path": "payload.inputs.12.reference",
+      "revision_id": "2855a747f778c80107b0b7ce04146fe68bbf7c5a9b163fa79e7baf95b76abccc"
+    },
+    {
+      "from": "new26-s022-q03-video",
       "to": "new26-aheng-identity",
       "stage": "generation",
       "path": "payload.inputs.2.reference",
@@ -11247,27 +11373,6 @@
       "stage": "generation",
       "path": "payload.inputs.9.reference",
       "revision_id": "477aa3eebe0a2845191824105e1722f6eb6f9424c1ed48645cab5cde05d7324f"
-    },
-    {
-      "from": "new26-s022-q03-video",
-      "to": "new26-grain-order-identity",
-      "stage": "generation",
-      "path": "payload.inputs.10.reference",
-      "revision_id": "981efddaa70fc734f79ab2950cfc28d671f1193d034e704ee37b4aad5ce0b646"
-    },
-    {
-      "from": "new26-s022-q03-video",
-      "to": "new26-aheng-voice",
-      "stage": "generation",
-      "path": "payload.inputs.11.reference",
-      "revision_id": "ab129f9e9bece3d86b936909980417f0c1be1e08bcee90aa703398b745b94e8b"
-    },
-    {
-      "from": "new26-s022-q03-video",
-      "to": "new26-zhao-voice",
-      "stage": "generation",
-      "path": "payload.inputs.12.reference",
-      "revision_id": "2855a747f778c80107b0b7ce04146fe68bbf7c5a9b163fa79e7baf95b76abccc"
     },
     {
       "from": "new26-s022-q04-video",
@@ -11397,6 +11502,13 @@
     },
     {
       "from": "new26-s022-q06-video",
+      "to": "new26-cheng-voice",
+      "stage": "generation",
+      "path": "payload.inputs.10.reference",
+      "revision_id": "7c266a1ca68bd6d8c753c12e59eac4fdb495ef0a3f86d6c057f1f9052753091f"
+    },
+    {
+      "from": "new26-s022-q06-video",
       "to": "new26-zhao-identity",
       "stage": "generation",
       "path": "payload.inputs.2.reference",
@@ -11450,13 +11562,6 @@
       "stage": "generation",
       "path": "payload.inputs.9.reference",
       "revision_id": "2855a747f778c80107b0b7ce04146fe68bbf7c5a9b163fa79e7baf95b76abccc"
-    },
-    {
-      "from": "new26-s022-q06-video",
-      "to": "new26-cheng-voice",
-      "stage": "generation",
-      "path": "payload.inputs.10.reference",
-      "revision_id": "7c266a1ca68bd6d8c753c12e59eac4fdb495ef0a3f86d6c057f1f9052753091f"
     },
     {
       "from": "new26-s022-q06-video",
@@ -11614,6 +11719,55 @@
     },
     {
       "from": "new26-s022-q09-video",
+      "to": "new26-loan-uncovered-overall",
+      "stage": "generation",
+      "path": "payload.inputs.10.reference",
+      "revision_id": "b083d031ab7416d5e579823c178a7e2676477fd67c85d8a387e044d7e7fc12eb"
+    },
+    {
+      "from": "new26-s022-q09-video",
+      "to": "new26-ledger-box-identity",
+      "stage": "generation",
+      "path": "payload.inputs.11.reference",
+      "revision_id": "becd41ba71b2ea40ec16141cdf2177bc2278ab705b32d0a0ddca25de6d6d8625"
+    },
+    {
+      "from": "new26-s022-q09-video",
+      "to": "new26-preparation-tools-identity",
+      "stage": "generation",
+      "path": "payload.inputs.12.reference",
+      "revision_id": "4dce50e936d71fe9668f47b784afae04a983986b29a22f4de28570188c1e5738"
+    },
+    {
+      "from": "new26-s022-q09-video",
+      "to": "new26-grain-order-identity",
+      "stage": "generation",
+      "path": "payload.inputs.13.reference",
+      "revision_id": "981efddaa70fc734f79ab2950cfc28d671f1193d034e704ee37b4aad5ce0b646"
+    },
+    {
+      "from": "new26-s022-q09-video",
+      "to": "new26-recruitment-all-overall",
+      "stage": "generation",
+      "path": "payload.inputs.14.reference",
+      "revision_id": "5727b94aafb8f86e09d6addecb589011a8a3fdecb0718e1da6b59fbd46ea635e"
+    },
+    {
+      "from": "new26-s022-q09-video",
+      "to": "new26-inquiry-record-identity",
+      "stage": "generation",
+      "path": "payload.inputs.15.reference",
+      "revision_id": "477aa3eebe0a2845191824105e1722f6eb6f9424c1ed48645cab5cde05d7324f"
+    },
+    {
+      "from": "new26-s022-q09-video",
+      "to": "new26-liji-voice",
+      "stage": "generation",
+      "path": "payload.inputs.16.reference",
+      "revision_id": "f22ab672429b40e1a8481527fecabdcb331fd2a4247c45d915cb030b3a1bfacb"
+    },
+    {
+      "from": "new26-s022-q09-video",
       "to": "new26-aheng-identity",
       "stage": "generation",
       "path": "payload.inputs.2.reference",
@@ -11667,55 +11821,6 @@
       "stage": "generation",
       "path": "payload.inputs.9.reference",
       "revision_id": "1389e86e7cbc6f121f2048b8e2df447a19fe156563a63a7b9fbf38474837729b"
-    },
-    {
-      "from": "new26-s022-q09-video",
-      "to": "new26-loan-uncovered-overall",
-      "stage": "generation",
-      "path": "payload.inputs.10.reference",
-      "revision_id": "b083d031ab7416d5e579823c178a7e2676477fd67c85d8a387e044d7e7fc12eb"
-    },
-    {
-      "from": "new26-s022-q09-video",
-      "to": "new26-ledger-box-identity",
-      "stage": "generation",
-      "path": "payload.inputs.11.reference",
-      "revision_id": "becd41ba71b2ea40ec16141cdf2177bc2278ab705b32d0a0ddca25de6d6d8625"
-    },
-    {
-      "from": "new26-s022-q09-video",
-      "to": "new26-preparation-tools-identity",
-      "stage": "generation",
-      "path": "payload.inputs.12.reference",
-      "revision_id": "4dce50e936d71fe9668f47b784afae04a983986b29a22f4de28570188c1e5738"
-    },
-    {
-      "from": "new26-s022-q09-video",
-      "to": "new26-grain-order-identity",
-      "stage": "generation",
-      "path": "payload.inputs.13.reference",
-      "revision_id": "981efddaa70fc734f79ab2950cfc28d671f1193d034e704ee37b4aad5ce0b646"
-    },
-    {
-      "from": "new26-s022-q09-video",
-      "to": "new26-recruitment-all-overall",
-      "stage": "generation",
-      "path": "payload.inputs.14.reference",
-      "revision_id": "5727b94aafb8f86e09d6addecb589011a8a3fdecb0718e1da6b59fbd46ea635e"
-    },
-    {
-      "from": "new26-s022-q09-video",
-      "to": "new26-inquiry-record-identity",
-      "stage": "generation",
-      "path": "payload.inputs.15.reference",
-      "revision_id": "477aa3eebe0a2845191824105e1722f6eb6f9424c1ed48645cab5cde05d7324f"
-    },
-    {
-      "from": "new26-s022-q09-video",
-      "to": "new26-liji-voice",
-      "stage": "generation",
-      "path": "payload.inputs.16.reference",
-      "revision_id": "f22ab672429b40e1a8481527fecabdcb331fd2a4247c45d915cb030b3a1bfacb"
     },
     {
       "from": "new26-s023-q01-video",
@@ -11791,8 +11896,15 @@
       "from": "new26-s023-q02-video",
       "to": "new26-layout-note-identity",
       "stage": "generation",
-      "path": "payload.inputs.4.reference",
-      "revision_id": "e0fe50d66443283f37e40289af89e2ba89f947e9f611b16e9b6625d37bb9d2d4"
+      "path": "generation.inputs.4.material_selection.material_id",
+      "revision_id": "e0fe50d66443283f37e40289af89e2ba89f947e9f611b16e9b6625d37bb9d2d4",
+      "selected_original": {
+        "candidate": {
+          "object_id": "asset-task-20261015-0003-layout-note-01",
+          "revision_id": "67ffc1cef2590e5d89681e5e367a2034251c8084f50bc7fbdfca7670aa23028f"
+        },
+        "component_id": "original"
+      }
     },
     {
       "from": "new26-s023-q02-video",
@@ -13308,6 +13420,20 @@
     },
     {
       "from": "new26-s026-q06-video",
+      "to": "new26-lixiao-voice",
+      "stage": "generation",
+      "path": "payload.inputs.10.reference",
+      "revision_id": "55b98e9ac91c17e940c68b181c3e02850a3b0dfd9f54291cac085be8f46ea2c7"
+    },
+    {
+      "from": "new26-s026-q06-video",
+      "to": "new26-aheng-voice",
+      "stage": "generation",
+      "path": "payload.inputs.11.reference",
+      "revision_id": "ab129f9e9bece3d86b936909980417f0c1be1e08bcee90aa703398b745b94e8b"
+    },
+    {
+      "from": "new26-s026-q06-video",
       "to": "new26-aheng-identity",
       "stage": "generation",
       "path": "payload.inputs.2.reference",
@@ -13324,15 +13450,29 @@
       "from": "new26-s026-q06-video",
       "to": "new26-layout-note-identity",
       "stage": "generation",
-      "path": "payload.inputs.4.reference",
-      "revision_id": "e0fe50d66443283f37e40289af89e2ba89f947e9f611b16e9b6625d37bb9d2d4"
+      "path": "generation.inputs.4.material_selection.material_id",
+      "revision_id": "e0fe50d66443283f37e40289af89e2ba89f947e9f611b16e9b6625d37bb9d2d4",
+      "selected_original": {
+        "candidate": {
+          "object_id": "asset-task-20261015-0003-layout-note-01",
+          "revision_id": "67ffc1cef2590e5d89681e5e367a2034251c8084f50bc7fbdfca7670aa23028f"
+        },
+        "component_id": "original"
+      }
     },
     {
       "from": "new26-s026-q06-video",
       "to": "new26-map-cut-overall",
       "stage": "generation",
-      "path": "payload.inputs.5.reference",
-      "revision_id": "5da518097b08c3e3f0a32e38734d046795543dc2392b55efd1203207f4830e31"
+      "path": "generation.inputs.5.material_selection.material_id",
+      "revision_id": "5da518097b08c3e3f0a32e38734d046795543dc2392b55efd1203207f4830e31",
+      "selected_original": {
+        "candidate": {
+          "object_id": "asset-task-20261015-0003-map-cut-01",
+          "revision_id": "bbdedf0e49007db6ab516e901312eecc21047944ea060238292e88abb5ea9294"
+        },
+        "component_id": "original"
+      }
     },
     {
       "from": "new26-s026-q06-video",
@@ -13364,31 +13504,31 @@
     },
     {
       "from": "new26-s026-q06-video",
-      "to": "new26-lixiao-voice",
-      "stage": "generation",
-      "path": "payload.inputs.10.reference",
-      "revision_id": "55b98e9ac91c17e940c68b181c3e02850a3b0dfd9f54291cac085be8f46ea2c7"
-    },
-    {
-      "from": "new26-s026-q06-video",
-      "to": "new26-aheng-voice",
-      "stage": "generation",
-      "path": "payload.inputs.11.reference",
-      "revision_id": "ab129f9e9bece3d86b936909980417f0c1be1e08bcee90aa703398b745b94e8b"
-    },
-    {
-      "from": "new26-s026-q06-video",
       "to": "new26-layout-note-identity",
       "stage": "postproduction",
-      "path": "payload.output.editorial_inputs.0.reference",
-      "revision_id": "e0fe50d66443283f37e40289af89e2ba89f947e9f611b16e9b6625d37bb9d2d4"
+      "path": "generation.inputs.4.material_selection.material_id",
+      "revision_id": "e0fe50d66443283f37e40289af89e2ba89f947e9f611b16e9b6625d37bb9d2d4",
+      "selected_original": {
+        "candidate": {
+          "object_id": "asset-task-20261015-0003-layout-note-01",
+          "revision_id": "67ffc1cef2590e5d89681e5e367a2034251c8084f50bc7fbdfca7670aa23028f"
+        },
+        "component_id": "original"
+      }
     },
     {
       "from": "new26-s026-q06-video",
       "to": "new26-map-cut-overall",
       "stage": "postproduction",
-      "path": "payload.output.editorial_inputs.1.reference",
-      "revision_id": "5da518097b08c3e3f0a32e38734d046795543dc2392b55efd1203207f4830e31"
+      "path": "generation.inputs.5.material_selection.material_id",
+      "revision_id": "5da518097b08c3e3f0a32e38734d046795543dc2392b55efd1203207f4830e31",
+      "selected_original": {
+        "candidate": {
+          "object_id": "asset-task-20261015-0003-map-cut-01",
+          "revision_id": "bbdedf0e49007db6ab516e901312eecc21047944ea060238292e88abb5ea9294"
+        },
+        "component_id": "original"
+      }
     },
     {
       "from": "new26-s026-q07-video",
@@ -13403,6 +13543,13 @@
       "stage": "generation",
       "path": "payload.inputs.1.reference",
       "revision_id": "20f0cdb1efcb91311e237d76b1709e55b115d9d8331c9491b751abe7c8242f59"
+    },
+    {
+      "from": "new26-s026-q07-video",
+      "to": "new26-sunliu-voice",
+      "stage": "generation",
+      "path": "payload.inputs.10.reference",
+      "revision_id": "244c7625c17c20ba6603c7c402c218c176d772d5281b5be578324b7bc54c49f7"
     },
     {
       "from": "new26-s026-q07-video",
@@ -13436,8 +13583,15 @@
       "from": "new26-s026-q07-video",
       "to": "new26-map-cut-overall",
       "stage": "generation",
-      "path": "payload.inputs.6.reference",
-      "revision_id": "5da518097b08c3e3f0a32e38734d046795543dc2392b55efd1203207f4830e31"
+      "path": "generation.inputs.6.material_selection.material_id",
+      "revision_id": "5da518097b08c3e3f0a32e38734d046795543dc2392b55efd1203207f4830e31",
+      "selected_original": {
+        "candidate": {
+          "object_id": "asset-task-20261015-0003-map-cut-01",
+          "revision_id": "bbdedf0e49007db6ab516e901312eecc21047944ea060238292e88abb5ea9294"
+        },
+        "component_id": "original"
+      }
     },
     {
       "from": "new26-s026-q07-video",
@@ -13459,13 +13613,6 @@
       "stage": "generation",
       "path": "payload.inputs.9.reference",
       "revision_id": "48e9259ae423c0ef89025aaa1b5f5b4151e6b30b0f36f23e1b4b8f6db4e62c51"
-    },
-    {
-      "from": "new26-s026-q07-video",
-      "to": "new26-sunliu-voice",
-      "stage": "generation",
-      "path": "payload.inputs.10.reference",
-      "revision_id": "244c7625c17c20ba6603c7c402c218c176d772d5281b5be578324b7bc54c49f7"
     },
     {
       "from": "new26-s026-q08-video",
@@ -13499,8 +13646,15 @@
       "from": "new26-s026-q08-video",
       "to": "new26-map-cut-overall",
       "stage": "generation",
-      "path": "payload.inputs.4.reference",
-      "revision_id": "5da518097b08c3e3f0a32e38734d046795543dc2392b55efd1203207f4830e31"
+      "path": "generation.inputs.4.material_selection.material_id",
+      "revision_id": "5da518097b08c3e3f0a32e38734d046795543dc2392b55efd1203207f4830e31",
+      "selected_original": {
+        "candidate": {
+          "object_id": "asset-task-20261015-0003-map-cut-01",
+          "revision_id": "bbdedf0e49007db6ab516e901312eecc21047944ea060238292e88abb5ea9294"
+        },
+        "component_id": "original"
+      }
     },
     {
       "from": "new26-s026-q08-video",
@@ -13555,8 +13709,15 @@
       "from": "new26-s026-q09-video",
       "to": "new26-map-cut-overall",
       "stage": "generation",
-      "path": "payload.inputs.3.reference",
-      "revision_id": "5da518097b08c3e3f0a32e38734d046795543dc2392b55efd1203207f4830e31"
+      "path": "generation.inputs.3.material_selection.material_id",
+      "revision_id": "5da518097b08c3e3f0a32e38734d046795543dc2392b55efd1203207f4830e31",
+      "selected_original": {
+        "candidate": {
+          "object_id": "asset-task-20261015-0003-map-cut-01",
+          "revision_id": "bbdedf0e49007db6ab516e901312eecc21047944ea060238292e88abb5ea9294"
+        },
+        "component_id": "original"
+      }
     },
     {
       "from": "new26-s026-q09-video",
@@ -13611,8 +13772,15 @@
       "from": "new26-s026-q10-video",
       "to": "new26-map-cut-overall",
       "stage": "generation",
-      "path": "payload.inputs.3.reference",
-      "revision_id": "5da518097b08c3e3f0a32e38734d046795543dc2392b55efd1203207f4830e31"
+      "path": "generation.inputs.3.material_selection.material_id",
+      "revision_id": "5da518097b08c3e3f0a32e38734d046795543dc2392b55efd1203207f4830e31",
+      "selected_original": {
+        "candidate": {
+          "object_id": "asset-task-20261015-0003-map-cut-01",
+          "revision_id": "bbdedf0e49007db6ab516e901312eecc21047944ea060238292e88abb5ea9294"
+        },
+        "component_id": "original"
+      }
     },
     {
       "from": "new26-s026-q10-video",
@@ -13777,6 +13945,27 @@
     },
     {
       "from": "new26-s026-q13-video",
+      "to": "new26-expense-ledger-identity",
+      "stage": "generation",
+      "path": "payload.inputs.10.reference",
+      "revision_id": "868fe3648fe1f7d635fcb0a082da4c50edd61b422838371001cb850ea91238f7"
+    },
+    {
+      "from": "new26-s026-q13-video",
+      "to": "new26-home-oil-lamps-identity",
+      "stage": "generation",
+      "path": "payload.inputs.11.reference",
+      "revision_id": "fd41fa0c1d8f147e7643f0bba0756914e09ac700cdc7c5aa8d7083c2edff09d6"
+    },
+    {
+      "from": "new26-s026-q13-video",
+      "to": "new26-sunliu-voice",
+      "stage": "generation",
+      "path": "payload.inputs.12.reference",
+      "revision_id": "244c7625c17c20ba6603c7c402c218c176d772d5281b5be578324b7bc54c49f7"
+    },
+    {
+      "from": "new26-s026-q13-video",
       "to": "new26-aheng-identity",
       "stage": "generation",
       "path": "payload.inputs.2.reference",
@@ -13814,8 +14003,15 @@
       "from": "new26-s026-q13-video",
       "to": "new26-map-cut-overall",
       "stage": "generation",
-      "path": "payload.inputs.7.reference",
-      "revision_id": "5da518097b08c3e3f0a32e38734d046795543dc2392b55efd1203207f4830e31"
+      "path": "generation.inputs.7.material_selection.material_id",
+      "revision_id": "5da518097b08c3e3f0a32e38734d046795543dc2392b55efd1203207f4830e31",
+      "selected_original": {
+        "candidate": {
+          "object_id": "asset-task-20261015-0003-map-cut-01",
+          "revision_id": "bbdedf0e49007db6ab516e901312eecc21047944ea060238292e88abb5ea9294"
+        },
+        "component_id": "original"
+      }
     },
     {
       "from": "new26-s026-q13-video",
@@ -13830,27 +14026,6 @@
       "stage": "generation",
       "path": "payload.inputs.9.reference",
       "revision_id": "0a3f3fb7400d812a7c4d4288bb758e83c7db00ce8cd81c01e1a1995489a63318"
-    },
-    {
-      "from": "new26-s026-q13-video",
-      "to": "new26-expense-ledger-identity",
-      "stage": "generation",
-      "path": "payload.inputs.10.reference",
-      "revision_id": "868fe3648fe1f7d635fcb0a082da4c50edd61b422838371001cb850ea91238f7"
-    },
-    {
-      "from": "new26-s026-q13-video",
-      "to": "new26-home-oil-lamps-identity",
-      "stage": "generation",
-      "path": "payload.inputs.11.reference",
-      "revision_id": "fd41fa0c1d8f147e7643f0bba0756914e09ac700cdc7c5aa8d7083c2edff09d6"
-    },
-    {
-      "from": "new26-s026-q13-video",
-      "to": "new26-sunliu-voice",
-      "stage": "generation",
-      "path": "payload.inputs.12.reference",
-      "revision_id": "244c7625c17c20ba6603c7c402c218c176d772d5281b5be578324b7bc54c49f7"
     },
     {
       "from": "new26-s027-q01-video",
@@ -14038,8 +14213,15 @@
       "from": "new26-s027-q05-video",
       "to": "new26-map-cut-overall",
       "stage": "generation",
-      "path": "payload.inputs.6.reference",
-      "revision_id": "5da518097b08c3e3f0a32e38734d046795543dc2392b55efd1203207f4830e31"
+      "path": "generation.inputs.6.material_selection.material_id",
+      "revision_id": "5da518097b08c3e3f0a32e38734d046795543dc2392b55efd1203207f4830e31",
+      "selected_original": {
+        "candidate": {
+          "object_id": "asset-task-20261015-0003-map-cut-01",
+          "revision_id": "bbdedf0e49007db6ab516e901312eecc21047944ea060238292e88abb5ea9294"
+        },
+        "component_id": "original"
+      }
     },
     {
       "from": "new26-s027-q06-first-frame",
@@ -14232,62 +14414,6 @@
     },
     {
       "from": "new26-s028-q02-video",
-      "to": "new26-cheng-identity",
-      "stage": "generation",
-      "path": "payload.inputs.2.reference",
-      "revision_id": "68a1274a83905918757c6198b5d145cbb549d9d8122036417efc9163401d9309"
-    },
-    {
-      "from": "new26-s028-q02-video",
-      "to": "new26-priest-identity",
-      "stage": "generation",
-      "path": "payload.inputs.3.reference",
-      "revision_id": "b5ddf79d6c72c1c1713706ce791c69e79715a83e932126d29eba7425db359ed4"
-    },
-    {
-      "from": "new26-s028-q02-video",
-      "to": "new26-elders-identity",
-      "stage": "generation",
-      "path": "payload.inputs.4.reference",
-      "revision_id": "9f7994c119dbeef5d51c13bad2718d758cfe87b709c08e0e7cf9f51b199d915b"
-    },
-    {
-      "from": "new26-s028-q02-video",
-      "to": "new26-lidan-identity",
-      "stage": "generation",
-      "path": "payload.inputs.5.reference",
-      "revision_id": "20f0cdb1efcb91311e237d76b1709e55b115d9d8331c9491b751abe7c8242f59"
-    },
-    {
-      "from": "new26-s028-q02-video",
-      "to": "new26-lixiao-identity",
-      "stage": "generation",
-      "path": "payload.inputs.6.reference",
-      "revision_id": "54cf646720adc747b9571da7f3ca3ac91770912daeadec31933d22338c172ac7"
-    },
-    {
-      "from": "new26-s028-q02-video",
-      "to": "new26-liji-head-wrap-overall",
-      "stage": "generation",
-      "path": "payload.inputs.7.reference",
-      "revision_id": "a0bf8efe15ba596bc69c2884ae4109cb6091ee1410e0de802d98664b72d40519"
-    },
-    {
-      "from": "new26-s028-q02-video",
-      "to": "new26-aheng-identity",
-      "stage": "generation",
-      "path": "payload.inputs.8.reference",
-      "revision_id": "0ea568f155bbd4595a8f5b55cd66349cebc50bf64311d39565f579c64fb8d461"
-    },
-    {
-      "from": "new26-s028-q02-video",
-      "to": "new26-patched-lantern-identity",
-      "stage": "generation",
-      "path": "payload.inputs.9.reference",
-      "revision_id": "640d61d0122ce47fd708c84c4ab4443daad00ac3804fce313fdc7cb93a4040aa"
-    },
-    {
-      "from": "new26-s028-q02-video",
       "to": "new26-recruitment-all-overall",
       "stage": "generation",
       "path": "payload.inputs.10.reference",
@@ -14348,6 +14474,62 @@
       "stage": "generation",
       "path": "payload.inputs.18.reference",
       "revision_id": "8675f7166730acacd3887977982d673e7a797371d9ccd851634a0f392cbe17eb"
+    },
+    {
+      "from": "new26-s028-q02-video",
+      "to": "new26-cheng-identity",
+      "stage": "generation",
+      "path": "payload.inputs.2.reference",
+      "revision_id": "68a1274a83905918757c6198b5d145cbb549d9d8122036417efc9163401d9309"
+    },
+    {
+      "from": "new26-s028-q02-video",
+      "to": "new26-priest-identity",
+      "stage": "generation",
+      "path": "payload.inputs.3.reference",
+      "revision_id": "b5ddf79d6c72c1c1713706ce791c69e79715a83e932126d29eba7425db359ed4"
+    },
+    {
+      "from": "new26-s028-q02-video",
+      "to": "new26-elders-identity",
+      "stage": "generation",
+      "path": "payload.inputs.4.reference",
+      "revision_id": "9f7994c119dbeef5d51c13bad2718d758cfe87b709c08e0e7cf9f51b199d915b"
+    },
+    {
+      "from": "new26-s028-q02-video",
+      "to": "new26-lidan-identity",
+      "stage": "generation",
+      "path": "payload.inputs.5.reference",
+      "revision_id": "20f0cdb1efcb91311e237d76b1709e55b115d9d8331c9491b751abe7c8242f59"
+    },
+    {
+      "from": "new26-s028-q02-video",
+      "to": "new26-lixiao-identity",
+      "stage": "generation",
+      "path": "payload.inputs.6.reference",
+      "revision_id": "54cf646720adc747b9571da7f3ca3ac91770912daeadec31933d22338c172ac7"
+    },
+    {
+      "from": "new26-s028-q02-video",
+      "to": "new26-liji-head-wrap-overall",
+      "stage": "generation",
+      "path": "payload.inputs.7.reference",
+      "revision_id": "a0bf8efe15ba596bc69c2884ae4109cb6091ee1410e0de802d98664b72d40519"
+    },
+    {
+      "from": "new26-s028-q02-video",
+      "to": "new26-aheng-identity",
+      "stage": "generation",
+      "path": "payload.inputs.8.reference",
+      "revision_id": "0ea568f155bbd4595a8f5b55cd66349cebc50bf64311d39565f579c64fb8d461"
+    },
+    {
+      "from": "new26-s028-q02-video",
+      "to": "new26-patched-lantern-identity",
+      "stage": "generation",
+      "path": "payload.inputs.9.reference",
+      "revision_id": "640d61d0122ce47fd708c84c4ab4443daad00ac3804fce313fdc7cb93a4040aa"
     },
     {
       "from": "new26-s028-q02-video",
@@ -14575,6 +14757,13 @@
     },
     {
       "from": "new26-s028-q08-video",
+      "to": "new26-cheng-voice",
+      "stage": "generation",
+      "path": "payload.inputs.10.reference",
+      "revision_id": "7c266a1ca68bd6d8c753c12e59eac4fdb495ef0a3f86d6c057f1f9052753091f"
+    },
+    {
+      "from": "new26-s028-q08-video",
       "to": "new26-cheng-identity",
       "stage": "generation",
       "path": "payload.inputs.2.reference",
@@ -14630,13 +14819,6 @@
       "revision_id": "477aa3eebe0a2845191824105e1722f6eb6f9424c1ed48645cab5cde05d7324f"
     },
     {
-      "from": "new26-s028-q08-video",
-      "to": "new26-cheng-voice",
-      "stage": "generation",
-      "path": "payload.inputs.10.reference",
-      "revision_id": "7c266a1ca68bd6d8c753c12e59eac4fdb495ef0a3f86d6c057f1f9052753091f"
-    },
-    {
       "from": "new26-s028-q09-video",
       "to": "new26-temple-front-layout",
       "stage": "generation",
@@ -14649,6 +14831,41 @@
       "stage": "generation",
       "path": "payload.inputs.1.reference",
       "revision_id": "4dee5bead9253214092ec3401bcf01abf3a63c81bd8d34890929b0907256fc07"
+    },
+    {
+      "from": "new26-s028-q09-video",
+      "to": "new26-elders-identity",
+      "stage": "generation",
+      "path": "payload.inputs.10.reference",
+      "revision_id": "9f7994c119dbeef5d51c13bad2718d758cfe87b709c08e0e7cf9f51b199d915b"
+    },
+    {
+      "from": "new26-s028-q09-video",
+      "to": "new26-old-registers-identity",
+      "stage": "generation",
+      "path": "payload.inputs.11.reference",
+      "revision_id": "4f80505f125564fa741783dd397dabf4055727a26db178639b96573499a9904d"
+    },
+    {
+      "from": "new26-s028-q09-video",
+      "to": "new26-ritual-case-identity",
+      "stage": "generation",
+      "path": "payload.inputs.12.reference",
+      "revision_id": "eb98aec1438a23aa38115a14d2f01d002f55febc59ec9951a835365314fed46f"
+    },
+    {
+      "from": "new26-s028-q09-video",
+      "to": "new26-tao-rope-identity",
+      "stage": "generation",
+      "path": "payload.inputs.13.reference",
+      "revision_id": "134156ec6bded57403fef6a872b049c50d658001ddb383576b70a9c6bbb29f3a"
+    },
+    {
+      "from": "new26-s028-q09-video",
+      "to": "new26-zhou-voice",
+      "stage": "generation",
+      "path": "payload.inputs.14.reference",
+      "revision_id": "2c820522dc2a5f500e91bf2b06ecae756555a6df6ff627768c253fc4b6193dd7"
     },
     {
       "from": "new26-s028-q09-video",
@@ -14705,41 +14922,6 @@
       "stage": "generation",
       "path": "payload.inputs.9.reference",
       "revision_id": "0cafaf547dd53b4b53479d44f29b267b35cf83469bed956ccf8d6e56b58c67f1"
-    },
-    {
-      "from": "new26-s028-q09-video",
-      "to": "new26-elders-identity",
-      "stage": "generation",
-      "path": "payload.inputs.10.reference",
-      "revision_id": "9f7994c119dbeef5d51c13bad2718d758cfe87b709c08e0e7cf9f51b199d915b"
-    },
-    {
-      "from": "new26-s028-q09-video",
-      "to": "new26-old-registers-identity",
-      "stage": "generation",
-      "path": "payload.inputs.11.reference",
-      "revision_id": "4f80505f125564fa741783dd397dabf4055727a26db178639b96573499a9904d"
-    },
-    {
-      "from": "new26-s028-q09-video",
-      "to": "new26-ritual-case-identity",
-      "stage": "generation",
-      "path": "payload.inputs.12.reference",
-      "revision_id": "eb98aec1438a23aa38115a14d2f01d002f55febc59ec9951a835365314fed46f"
-    },
-    {
-      "from": "new26-s028-q09-video",
-      "to": "new26-tao-rope-identity",
-      "stage": "generation",
-      "path": "payload.inputs.13.reference",
-      "revision_id": "134156ec6bded57403fef6a872b049c50d658001ddb383576b70a9c6bbb29f3a"
-    },
-    {
-      "from": "new26-s028-q09-video",
-      "to": "new26-zhou-voice",
-      "stage": "generation",
-      "path": "payload.inputs.14.reference",
-      "revision_id": "2c820522dc2a5f500e91bf2b06ecae756555a6df6ff627768c253fc4b6193dd7"
     },
     {
       "from": "new26-s028-q10-video",
@@ -14946,6 +15128,34 @@
     },
     {
       "from": "new26-s028-q13-video",
+      "to": "new26-ritual-case-identity",
+      "stage": "generation",
+      "path": "payload.inputs.10.reference",
+      "revision_id": "eb98aec1438a23aa38115a14d2f01d002f55febc59ec9951a835365314fed46f"
+    },
+    {
+      "from": "new26-s028-q13-video",
+      "to": "new26-old-registers-identity",
+      "stage": "generation",
+      "path": "payload.inputs.11.reference",
+      "revision_id": "4f80505f125564fa741783dd397dabf4055727a26db178639b96573499a9904d"
+    },
+    {
+      "from": "new26-s028-q13-video",
+      "to": "new26-grain-ledger-identity",
+      "stage": "generation",
+      "path": "payload.inputs.12.reference",
+      "revision_id": "e686a8a814f44189731d0fcf44a116f50115bd5a12b4295a9ec527cce103f2bc"
+    },
+    {
+      "from": "new26-s028-q13-video",
+      "to": "new26-inquiry-record-identity",
+      "stage": "generation",
+      "path": "payload.inputs.13.reference",
+      "revision_id": "477aa3eebe0a2845191824105e1722f6eb6f9424c1ed48645cab5cde05d7324f"
+    },
+    {
+      "from": "new26-s028-q13-video",
       "to": "new26-guard-identity",
       "stage": "generation",
       "path": "payload.inputs.2.reference",
@@ -14999,34 +15209,6 @@
       "stage": "generation",
       "path": "payload.inputs.9.reference",
       "revision_id": "640d61d0122ce47fd708c84c4ab4443daad00ac3804fce313fdc7cb93a4040aa"
-    },
-    {
-      "from": "new26-s028-q13-video",
-      "to": "new26-ritual-case-identity",
-      "stage": "generation",
-      "path": "payload.inputs.10.reference",
-      "revision_id": "eb98aec1438a23aa38115a14d2f01d002f55febc59ec9951a835365314fed46f"
-    },
-    {
-      "from": "new26-s028-q13-video",
-      "to": "new26-old-registers-identity",
-      "stage": "generation",
-      "path": "payload.inputs.11.reference",
-      "revision_id": "4f80505f125564fa741783dd397dabf4055727a26db178639b96573499a9904d"
-    },
-    {
-      "from": "new26-s028-q13-video",
-      "to": "new26-grain-ledger-identity",
-      "stage": "generation",
-      "path": "payload.inputs.12.reference",
-      "revision_id": "e686a8a814f44189731d0fcf44a116f50115bd5a12b4295a9ec527cce103f2bc"
-    },
-    {
-      "from": "new26-s028-q13-video",
-      "to": "new26-inquiry-record-identity",
-      "stage": "generation",
-      "path": "payload.inputs.13.reference",
-      "revision_id": "477aa3eebe0a2845191824105e1722f6eb6f9424c1ed48645cab5cde05d7324f"
     },
     {
       "from": "new26-s028-q14-video",
@@ -15114,6 +15296,20 @@
     },
     {
       "from": "new26-s029-q01-video",
+      "to": "new26-preparation-tools-identity",
+      "stage": "generation",
+      "path": "payload.inputs.10.reference",
+      "revision_id": "4dce50e936d71fe9668f47b784afae04a983986b29a22f4de28570188c1e5738"
+    },
+    {
+      "from": "new26-s029-q01-video",
+      "to": "new26-heavy-knife-identity",
+      "stage": "generation",
+      "path": "payload.inputs.11.reference",
+      "revision_id": "91129845873d16212ed8a569a078fbbb5a33af79751c9c10ee372f11817f1eb9"
+    },
+    {
+      "from": "new26-s029-q01-video",
       "to": "new26-lock-ready-overall",
       "stage": "generation",
       "path": "payload.inputs.2.reference",
@@ -15167,20 +15363,6 @@
       "stage": "generation",
       "path": "payload.inputs.9.reference",
       "revision_id": "3538d3620f82bebc7dfc27a145faef41ee905e4ab9b646e8a2d4e0471ad3ef0e"
-    },
-    {
-      "from": "new26-s029-q01-video",
-      "to": "new26-preparation-tools-identity",
-      "stage": "generation",
-      "path": "payload.inputs.10.reference",
-      "revision_id": "4dce50e936d71fe9668f47b784afae04a983986b29a22f4de28570188c1e5738"
-    },
-    {
-      "from": "new26-s029-q01-video",
-      "to": "new26-heavy-knife-identity",
-      "stage": "generation",
-      "path": "payload.inputs.11.reference",
-      "revision_id": "91129845873d16212ed8a569a078fbbb5a33af79751c9c10ee372f11817f1eb9"
     },
     {
       "from": "new26-s029-q02-video",
@@ -15422,6 +15604,27 @@
     },
     {
       "from": "new26-s029-q08-first-frame",
+      "to": "new26-patched-lantern-identity",
+      "stage": "generation",
+      "path": "payload.inputs.10.reference",
+      "revision_id": "640d61d0122ce47fd708c84c4ab4443daad00ac3804fce313fdc7cb93a4040aa"
+    },
+    {
+      "from": "new26-s029-q08-first-frame",
+      "to": "new26-preparation-tools-identity",
+      "stage": "generation",
+      "path": "payload.inputs.11.reference",
+      "revision_id": "4dce50e936d71fe9668f47b784afae04a983986b29a22f4de28570188c1e5738"
+    },
+    {
+      "from": "new26-s029-q08-first-frame",
+      "to": "new26-tao-rope-identity",
+      "stage": "generation",
+      "path": "payload.inputs.12.reference",
+      "revision_id": "134156ec6bded57403fef6a872b049c50d658001ddb383576b70a9c6bbb29f3a"
+    },
+    {
+      "from": "new26-s029-q08-first-frame",
       "to": "new26-sunliu-identity",
       "stage": "generation",
       "path": "payload.inputs.2.reference",
@@ -15477,27 +15680,6 @@
       "revision_id": "91129845873d16212ed8a569a078fbbb5a33af79751c9c10ee372f11817f1eb9"
     },
     {
-      "from": "new26-s029-q08-first-frame",
-      "to": "new26-patched-lantern-identity",
-      "stage": "generation",
-      "path": "payload.inputs.10.reference",
-      "revision_id": "640d61d0122ce47fd708c84c4ab4443daad00ac3804fce313fdc7cb93a4040aa"
-    },
-    {
-      "from": "new26-s029-q08-first-frame",
-      "to": "new26-preparation-tools-identity",
-      "stage": "generation",
-      "path": "payload.inputs.11.reference",
-      "revision_id": "4dce50e936d71fe9668f47b784afae04a983986b29a22f4de28570188c1e5738"
-    },
-    {
-      "from": "new26-s029-q08-first-frame",
-      "to": "new26-tao-rope-identity",
-      "stage": "generation",
-      "path": "payload.inputs.12.reference",
-      "revision_id": "134156ec6bded57403fef6a872b049c50d658001ddb383576b70a9c6bbb29f3a"
-    },
-    {
       "from": "new26-s029-q08-video",
       "to": "new26-back-court-layout",
       "stage": "generation",
@@ -15510,62 +15692,6 @@
       "stage": "generation",
       "path": "payload.inputs.1.reference",
       "revision_id": "90a19dd39897eca6dbc36e8b9ac7026300b1e30a2b464a938a59eeb8917aa449"
-    },
-    {
-      "from": "new26-s029-q08-video",
-      "to": "new26-lidan-identity",
-      "stage": "generation",
-      "path": "payload.inputs.2.reference",
-      "revision_id": "20f0cdb1efcb91311e237d76b1709e55b115d9d8331c9491b751abe7c8242f59"
-    },
-    {
-      "from": "new26-s029-q08-video",
-      "to": "new26-sunliu-identity",
-      "stage": "generation",
-      "path": "payload.inputs.3.reference",
-      "revision_id": "eb894ce76ab6570a5a0c4ba905e915386656a0e776493eb4b2e98c20d713ed4d"
-    },
-    {
-      "from": "new26-s029-q08-video",
-      "to": "new26-cheng-identity",
-      "stage": "generation",
-      "path": "payload.inputs.4.reference",
-      "revision_id": "68a1274a83905918757c6198b5d145cbb549d9d8122036417efc9163401d9309"
-    },
-    {
-      "from": "new26-s029-q08-video",
-      "to": "new26-lixiao-identity",
-      "stage": "generation",
-      "path": "payload.inputs.5.reference",
-      "revision_id": "54cf646720adc747b9571da7f3ca3ac91770912daeadec31933d22338c172ac7"
-    },
-    {
-      "from": "new26-s029-q08-video",
-      "to": "new26-helpers-identity",
-      "stage": "generation",
-      "path": "payload.inputs.6.reference",
-      "revision_id": "33ddb8e24f031a4932c936393ce5fe5192d3f6bc0076a046861cae7fd0442b2c"
-    },
-    {
-      "from": "new26-s029-q08-video",
-      "to": "new26-liji-head-wrap-overall",
-      "stage": "generation",
-      "path": "payload.inputs.7.reference",
-      "revision_id": "a0bf8efe15ba596bc69c2884ae4109cb6091ee1410e0de802d98664b72d40519"
-    },
-    {
-      "from": "new26-s029-q08-video",
-      "to": "new26-aheng-identity",
-      "stage": "generation",
-      "path": "payload.inputs.8.reference",
-      "revision_id": "0ea568f155bbd4595a8f5b55cd66349cebc50bf64311d39565f579c64fb8d461"
-    },
-    {
-      "from": "new26-s029-q08-video",
-      "to": "new26-patched-lantern-identity",
-      "stage": "generation",
-      "path": "payload.inputs.9.reference",
-      "revision_id": "640d61d0122ce47fd708c84c4ab4443daad00ac3804fce313fdc7cb93a4040aa"
     },
     {
       "from": "new26-s029-q08-video",
@@ -15594,6 +15720,62 @@
       "stage": "generation",
       "path": "payload.inputs.13.reference",
       "revision_id": "7c266a1ca68bd6d8c753c12e59eac4fdb495ef0a3f86d6c057f1f9052753091f"
+    },
+    {
+      "from": "new26-s029-q08-video",
+      "to": "new26-lidan-identity",
+      "stage": "generation",
+      "path": "payload.inputs.2.reference",
+      "revision_id": "20f0cdb1efcb91311e237d76b1709e55b115d9d8331c9491b751abe7c8242f59"
+    },
+    {
+      "from": "new26-s029-q08-video",
+      "to": "new26-sunliu-identity",
+      "stage": "generation",
+      "path": "payload.inputs.3.reference",
+      "revision_id": "eb894ce76ab6570a5a0c4ba905e915386656a0e776493eb4b2e98c20d713ed4d"
+    },
+    {
+      "from": "new26-s029-q08-video",
+      "to": "new26-cheng-identity",
+      "stage": "generation",
+      "path": "payload.inputs.4.reference",
+      "revision_id": "68a1274a83905918757c6198b5d145cbb549d9d8122036417efc9163401d9309"
+    },
+    {
+      "from": "new26-s029-q08-video",
+      "to": "new26-lixiao-identity",
+      "stage": "generation",
+      "path": "payload.inputs.5.reference",
+      "revision_id": "54cf646720adc747b9571da7f3ca3ac91770912daeadec31933d22338c172ac7"
+    },
+    {
+      "from": "new26-s029-q08-video",
+      "to": "new26-helpers-identity",
+      "stage": "generation",
+      "path": "payload.inputs.6.reference",
+      "revision_id": "33ddb8e24f031a4932c936393ce5fe5192d3f6bc0076a046861cae7fd0442b2c"
+    },
+    {
+      "from": "new26-s029-q08-video",
+      "to": "new26-liji-head-wrap-overall",
+      "stage": "generation",
+      "path": "payload.inputs.7.reference",
+      "revision_id": "a0bf8efe15ba596bc69c2884ae4109cb6091ee1410e0de802d98664b72d40519"
+    },
+    {
+      "from": "new26-s029-q08-video",
+      "to": "new26-aheng-identity",
+      "stage": "generation",
+      "path": "payload.inputs.8.reference",
+      "revision_id": "0ea568f155bbd4595a8f5b55cd66349cebc50bf64311d39565f579c64fb8d461"
+    },
+    {
+      "from": "new26-s029-q08-video",
+      "to": "new26-patched-lantern-identity",
+      "stage": "generation",
+      "path": "payload.inputs.9.reference",
+      "revision_id": "640d61d0122ce47fd708c84c4ab4443daad00ac3804fce313fdc7cb93a4040aa"
     },
     {
       "from": "new26-s029-q09-video",
@@ -15674,6 +15856,13 @@
     },
     {
       "from": "new26-s029-q10-video",
+      "to": "new26-granary-distribution-sound",
+      "stage": "generation",
+      "path": "payload.inputs.10.reference",
+      "revision_id": "4f3626c22cb607cc1f7caad637a72d084c65deacc7d792e1031398b6343e3acf"
+    },
+    {
+      "from": "new26-s029-q10-video",
       "to": "new26-sunliu-identity",
       "stage": "generation",
       "path": "payload.inputs.2.reference",
@@ -15727,13 +15916,6 @@
       "stage": "generation",
       "path": "payload.inputs.9.reference",
       "revision_id": "640d61d0122ce47fd708c84c4ab4443daad00ac3804fce313fdc7cb93a4040aa"
-    },
-    {
-      "from": "new26-s029-q10-video",
-      "to": "new26-granary-distribution-sound",
-      "stage": "generation",
-      "path": "payload.inputs.10.reference",
-      "revision_id": "4f3626c22cb607cc1f7caad637a72d084c65deacc7d792e1031398b6343e3acf"
     },
     {
       "from": "new26-s029-q10-video",
@@ -16605,6 +16787,13 @@
     },
     {
       "from": "new26-s031-q02-video",
+      "to": "new26-feeding-lock-mechanical-sound",
+      "stage": "generation",
+      "path": "payload.inputs.10.reference",
+      "revision_id": "74b3841a55e858da2a04bf7e245c08c3121a5e54353b39536a7118878a6e1c22"
+    },
+    {
+      "from": "new26-s031-q02-video",
       "to": "new26-liji-head-wrap-overall",
       "stage": "generation",
       "path": "payload.inputs.2.reference",
@@ -16658,13 +16847,6 @@
       "stage": "generation",
       "path": "payload.inputs.9.reference",
       "revision_id": "91129845873d16212ed8a569a078fbbb5a33af79751c9c10ee372f11817f1eb9"
-    },
-    {
-      "from": "new26-s031-q02-video",
-      "to": "new26-feeding-lock-mechanical-sound",
-      "stage": "generation",
-      "path": "payload.inputs.10.reference",
-      "revision_id": "74b3841a55e858da2a04bf7e245c08c3121a5e54353b39536a7118878a6e1c22"
     },
     {
       "from": "new26-s031-q03-first-frame",
@@ -16738,6 +16920,27 @@
     },
     {
       "from": "new26-s031-q04-video",
+      "to": "new26-elders-identity",
+      "stage": "generation",
+      "path": "payload.inputs.10.reference",
+      "revision_id": "9f7994c119dbeef5d51c13bad2718d758cfe87b709c08e0e7cf9f51b199d915b"
+    },
+    {
+      "from": "new26-s031-q04-video",
+      "to": "new26-lidan-voice",
+      "stage": "generation",
+      "path": "payload.inputs.11.reference",
+      "revision_id": "48e9259ae423c0ef89025aaa1b5f5b4151e6b30b0f36f23e1b4b8f6db4e62c51"
+    },
+    {
+      "from": "new26-s031-q04-video",
+      "to": "new26-liji-voice",
+      "stage": "generation",
+      "path": "payload.inputs.12.reference",
+      "revision_id": "f22ab672429b40e1a8481527fecabdcb331fd2a4247c45d915cb030b3a1bfacb"
+    },
+    {
+      "from": "new26-s031-q04-video",
       "to": "new26-liji-head-wrap-overall",
       "stage": "generation",
       "path": "payload.inputs.2.reference",
@@ -16791,27 +16994,6 @@
       "stage": "generation",
       "path": "payload.inputs.9.reference",
       "revision_id": "91129845873d16212ed8a569a078fbbb5a33af79751c9c10ee372f11817f1eb9"
-    },
-    {
-      "from": "new26-s031-q04-video",
-      "to": "new26-elders-identity",
-      "stage": "generation",
-      "path": "payload.inputs.10.reference",
-      "revision_id": "9f7994c119dbeef5d51c13bad2718d758cfe87b709c08e0e7cf9f51b199d915b"
-    },
-    {
-      "from": "new26-s031-q04-video",
-      "to": "new26-lidan-voice",
-      "stage": "generation",
-      "path": "payload.inputs.11.reference",
-      "revision_id": "48e9259ae423c0ef89025aaa1b5f5b4151e6b30b0f36f23e1b4b8f6db4e62c51"
-    },
-    {
-      "from": "new26-s031-q04-video",
-      "to": "new26-liji-voice",
-      "stage": "generation",
-      "path": "payload.inputs.12.reference",
-      "revision_id": "f22ab672429b40e1a8481527fecabdcb331fd2a4247c45d915cb030b3a1bfacb"
     },
     {
       "from": "new26-s031-q05-video",
@@ -16962,6 +17144,13 @@
     },
     {
       "from": "new26-s031-q08-video",
+      "to": "new26-sunliu-voice",
+      "stage": "generation",
+      "path": "payload.inputs.10.reference",
+      "revision_id": "244c7625c17c20ba6603c7c402c218c176d772d5281b5be578324b7bc54c49f7"
+    },
+    {
+      "from": "new26-s031-q08-video",
       "to": "new26-liji-head-wrap-overall",
       "stage": "generation",
       "path": "payload.inputs.2.reference",
@@ -17015,13 +17204,6 @@
       "stage": "generation",
       "path": "payload.inputs.9.reference",
       "revision_id": "91129845873d16212ed8a569a078fbbb5a33af79751c9c10ee372f11817f1eb9"
-    },
-    {
-      "from": "new26-s031-q08-video",
-      "to": "new26-sunliu-voice",
-      "stage": "generation",
-      "path": "payload.inputs.10.reference",
-      "revision_id": "244c7625c17c20ba6603c7c402c218c176d772d5281b5be578324b7bc54c49f7"
     },
     {
       "from": "new26-s031-q09-video",
@@ -17445,6 +17627,13 @@
     },
     {
       "from": "new26-s032-q08-video",
+      "to": "new26-feeding-lock-mechanical-sound",
+      "stage": "generation",
+      "path": "payload.inputs.10.reference",
+      "revision_id": "74b3841a55e858da2a04bf7e245c08c3121a5e54353b39536a7118878a6e1c22"
+    },
+    {
+      "from": "new26-s032-q08-video",
       "to": "new26-liji-first-blood-overall",
       "stage": "generation",
       "path": "payload.inputs.2.reference",
@@ -17498,13 +17687,6 @@
       "stage": "generation",
       "path": "payload.inputs.9.reference",
       "revision_id": "134156ec6bded57403fef6a872b049c50d658001ddb383576b70a9c6bbb29f3a"
-    },
-    {
-      "from": "new26-s032-q08-video",
-      "to": "new26-feeding-lock-mechanical-sound",
-      "stage": "generation",
-      "path": "payload.inputs.10.reference",
-      "revision_id": "74b3841a55e858da2a04bf7e245c08c3121a5e54353b39536a7118878a6e1c22"
     },
     {
       "from": "new26-s032-q09-video",
@@ -17676,6 +17858,20 @@
     },
     {
       "from": "new26-s032-q13-video",
+      "to": "new26-cheng-voice",
+      "stage": "generation",
+      "path": "payload.inputs.10.reference",
+      "revision_id": "7c266a1ca68bd6d8c753c12e59eac4fdb495ef0a3f86d6c057f1f9052753091f"
+    },
+    {
+      "from": "new26-s032-q13-video",
+      "to": "new26-snake-body-sound",
+      "stage": "generation",
+      "path": "payload.inputs.11.reference",
+      "revision_id": "c0d79efaa3d2a574fcf055b0b70e68b671118a819b76e6ebf272899de7bf1bb9"
+    },
+    {
+      "from": "new26-s032-q13-video",
       "to": "new26-liji-first-blood-overall",
       "stage": "generation",
       "path": "payload.inputs.2.reference",
@@ -17729,20 +17925,6 @@
       "stage": "generation",
       "path": "payload.inputs.9.reference",
       "revision_id": "134156ec6bded57403fef6a872b049c50d658001ddb383576b70a9c6bbb29f3a"
-    },
-    {
-      "from": "new26-s032-q13-video",
-      "to": "new26-cheng-voice",
-      "stage": "generation",
-      "path": "payload.inputs.10.reference",
-      "revision_id": "7c266a1ca68bd6d8c753c12e59eac4fdb495ef0a3f86d6c057f1f9052753091f"
-    },
-    {
-      "from": "new26-s032-q13-video",
-      "to": "new26-snake-body-sound",
-      "stage": "generation",
-      "path": "payload.inputs.11.reference",
-      "revision_id": "c0d79efaa3d2a574fcf055b0b70e68b671118a819b76e6ebf272899de7bf1bb9"
     },
     {
       "from": "new26-s033-q01-video",
@@ -17841,62 +18023,6 @@
       "stage": "generation",
       "path": "payload.inputs.1.reference",
       "revision_id": "90a19dd39897eca6dbc36e8b9ac7026300b1e30a2b464a938a59eeb8917aa449"
-    },
-    {
-      "from": "new26-s033-q03-video",
-      "to": "new26-lidan-identity",
-      "stage": "generation",
-      "path": "payload.inputs.2.reference",
-      "revision_id": "20f0cdb1efcb91311e237d76b1709e55b115d9d8331c9491b751abe7c8242f59"
-    },
-    {
-      "from": "new26-s033-q03-video",
-      "to": "new26-sunliu-identity",
-      "stage": "generation",
-      "path": "payload.inputs.3.reference",
-      "revision_id": "eb894ce76ab6570a5a0c4ba905e915386656a0e776493eb4b2e98c20d713ed4d"
-    },
-    {
-      "from": "new26-s033-q03-video",
-      "to": "new26-lixiao-identity",
-      "stage": "generation",
-      "path": "payload.inputs.4.reference",
-      "revision_id": "54cf646720adc747b9571da7f3ca3ac91770912daeadec31933d22338c172ac7"
-    },
-    {
-      "from": "new26-s033-q03-video",
-      "to": "new26-cheng-identity",
-      "stage": "generation",
-      "path": "payload.inputs.5.reference",
-      "revision_id": "68a1274a83905918757c6198b5d145cbb549d9d8122036417efc9163401d9309"
-    },
-    {
-      "from": "new26-s033-q03-video",
-      "to": "new26-helpers-identity",
-      "stage": "generation",
-      "path": "payload.inputs.6.reference",
-      "revision_id": "33ddb8e24f031a4932c936393ce5fe5192d3f6bc0076a046861cae7fd0442b2c"
-    },
-    {
-      "from": "new26-s033-q03-video",
-      "to": "new26-tao-rope-identity",
-      "stage": "generation",
-      "path": "payload.inputs.7.reference",
-      "revision_id": "134156ec6bded57403fef6a872b049c50d658001ddb383576b70a9c6bbb29f3a"
-    },
-    {
-      "from": "new26-s033-q03-video",
-      "to": "new26-liji-first-blood-overall",
-      "stage": "generation",
-      "path": "payload.inputs.8.reference",
-      "revision_id": "2df9b9cab26e115a58d77fd4fd6a6eb7562631aa16a92d356bb9b738299b108e"
-    },
-    {
-      "from": "new26-s033-q03-video",
-      "to": "new26-aheng-identity",
-      "stage": "generation",
-      "path": "payload.inputs.9.reference",
-      "revision_id": "0ea568f155bbd4595a8f5b55cd66349cebc50bf64311d39565f579c64fb8d461"
     },
     {
       "from": "new26-s033-q03-video",
@@ -17918,6 +18044,62 @@
       "stage": "generation",
       "path": "payload.inputs.12.reference",
       "revision_id": "c0d79efaa3d2a574fcf055b0b70e68b671118a819b76e6ebf272899de7bf1bb9"
+    },
+    {
+      "from": "new26-s033-q03-video",
+      "to": "new26-lidan-identity",
+      "stage": "generation",
+      "path": "payload.inputs.2.reference",
+      "revision_id": "20f0cdb1efcb91311e237d76b1709e55b115d9d8331c9491b751abe7c8242f59"
+    },
+    {
+      "from": "new26-s033-q03-video",
+      "to": "new26-sunliu-identity",
+      "stage": "generation",
+      "path": "payload.inputs.3.reference",
+      "revision_id": "eb894ce76ab6570a5a0c4ba905e915386656a0e776493eb4b2e98c20d713ed4d"
+    },
+    {
+      "from": "new26-s033-q03-video",
+      "to": "new26-lixiao-identity",
+      "stage": "generation",
+      "path": "payload.inputs.4.reference",
+      "revision_id": "54cf646720adc747b9571da7f3ca3ac91770912daeadec31933d22338c172ac7"
+    },
+    {
+      "from": "new26-s033-q03-video",
+      "to": "new26-cheng-identity",
+      "stage": "generation",
+      "path": "payload.inputs.5.reference",
+      "revision_id": "68a1274a83905918757c6198b5d145cbb549d9d8122036417efc9163401d9309"
+    },
+    {
+      "from": "new26-s033-q03-video",
+      "to": "new26-helpers-identity",
+      "stage": "generation",
+      "path": "payload.inputs.6.reference",
+      "revision_id": "33ddb8e24f031a4932c936393ce5fe5192d3f6bc0076a046861cae7fd0442b2c"
+    },
+    {
+      "from": "new26-s033-q03-video",
+      "to": "new26-tao-rope-identity",
+      "stage": "generation",
+      "path": "payload.inputs.7.reference",
+      "revision_id": "134156ec6bded57403fef6a872b049c50d658001ddb383576b70a9c6bbb29f3a"
+    },
+    {
+      "from": "new26-s033-q03-video",
+      "to": "new26-liji-first-blood-overall",
+      "stage": "generation",
+      "path": "payload.inputs.8.reference",
+      "revision_id": "2df9b9cab26e115a58d77fd4fd6a6eb7562631aa16a92d356bb9b738299b108e"
+    },
+    {
+      "from": "new26-s033-q03-video",
+      "to": "new26-aheng-identity",
+      "stage": "generation",
+      "path": "payload.inputs.9.reference",
+      "revision_id": "0ea568f155bbd4595a8f5b55cd66349cebc50bf64311d39565f579c64fb8d461"
     },
     {
       "from": "new26-s033-q04-video",
@@ -18432,6 +18614,13 @@
     },
     {
       "from": "new26-s033-q13-video",
+      "to": "new26-tao-rope-identity",
+      "stage": "generation",
+      "path": "payload.inputs.10.reference",
+      "revision_id": "134156ec6bded57403fef6a872b049c50d658001ddb383576b70a9c6bbb29f3a"
+    },
+    {
+      "from": "new26-s033-q13-video",
       "to": "new26-liji-first-blood-overall",
       "stage": "generation",
       "path": "payload.inputs.2.reference",
@@ -18487,13 +18676,6 @@
       "revision_id": "640d61d0122ce47fd708c84c4ab4443daad00ac3804fce313fdc7cb93a4040aa"
     },
     {
-      "from": "new26-s033-q13-video",
-      "to": "new26-tao-rope-identity",
-      "stage": "generation",
-      "path": "payload.inputs.10.reference",
-      "revision_id": "134156ec6bded57403fef6a872b049c50d658001ddb383576b70a9c6bbb29f3a"
-    },
-    {
       "from": "new26-s034-q01-video",
       "to": "new26-li-home-layout",
       "stage": "generation",
@@ -18506,6 +18688,13 @@
       "stage": "generation",
       "path": "payload.inputs.1.reference",
       "revision_id": "0a3f3fb7400d812a7c4d4288bb758e83c7db00ce8cd81c01e1a1995489a63318"
+    },
+    {
+      "from": "new26-s034-q01-video",
+      "to": "new26-liji-mother-voice",
+      "stage": "generation",
+      "path": "payload.inputs.10.reference",
+      "revision_id": "d2d1a88daf6a669fca87c3ecf2cbd5538584b76004527ff47fcd1027f478f99c"
     },
     {
       "from": "new26-s034-q01-video",
@@ -18562,13 +18751,6 @@
       "stage": "generation",
       "path": "payload.inputs.9.reference",
       "revision_id": "134156ec6bded57403fef6a872b049c50d658001ddb383576b70a9c6bbb29f3a"
-    },
-    {
-      "from": "new26-s034-q01-video",
-      "to": "new26-liji-mother-voice",
-      "stage": "generation",
-      "path": "payload.inputs.10.reference",
-      "revision_id": "d2d1a88daf6a669fca87c3ecf2cbd5538584b76004527ff47fcd1027f478f99c"
     },
     {
       "from": "new26-s034-q02-video",
@@ -18922,6 +19104,13 @@
     },
     {
       "from": "new26-s034-q12-video",
+      "to": "new26-sunliu-voice",
+      "stage": "generation",
+      "path": "payload.inputs.10.reference",
+      "revision_id": "244c7625c17c20ba6603c7c402c218c176d772d5281b5be578324b7bc54c49f7"
+    },
+    {
+      "from": "new26-s034-q12-video",
       "to": "new26-aheng-identity",
       "stage": "generation",
       "path": "payload.inputs.2.reference",
@@ -18975,13 +19164,6 @@
       "stage": "generation",
       "path": "payload.inputs.9.reference",
       "revision_id": "55b98e9ac91c17e940c68b181c3e02850a3b0dfd9f54291cac085be8f46ea2c7"
-    },
-    {
-      "from": "new26-s034-q12-video",
-      "to": "new26-sunliu-voice",
-      "stage": "generation",
-      "path": "payload.inputs.10.reference",
-      "revision_id": "244c7625c17c20ba6603c7c402c218c176d772d5281b5be578324b7bc54c49f7"
     },
     {
       "from": "new26-s034-q13-video",
@@ -19258,6 +19440,20 @@
     },
     {
       "from": "new26-s036-q01-video",
+      "to": "new26-grain-ledger-identity",
+      "stage": "generation",
+      "path": "payload.inputs.10.reference",
+      "revision_id": "e686a8a814f44189731d0fcf44a116f50115bd5a12b4295a9ec527cce103f2bc"
+    },
+    {
+      "from": "new26-s036-q01-video",
+      "to": "new26-zhao-voice",
+      "stage": "generation",
+      "path": "payload.inputs.11.reference",
+      "revision_id": "2855a747f778c80107b0b7ce04146fe68bbf7c5a9b163fa79e7baf95b76abccc"
+    },
+    {
+      "from": "new26-s036-q01-video",
       "to": "new26-zhao-identity",
       "stage": "generation",
       "path": "payload.inputs.2.reference",
@@ -19311,20 +19507,6 @@
       "stage": "generation",
       "path": "payload.inputs.9.reference",
       "revision_id": "981efddaa70fc734f79ab2950cfc28d671f1193d034e704ee37b4aad5ce0b646"
-    },
-    {
-      "from": "new26-s036-q01-video",
-      "to": "new26-grain-ledger-identity",
-      "stage": "generation",
-      "path": "payload.inputs.10.reference",
-      "revision_id": "e686a8a814f44189731d0fcf44a116f50115bd5a12b4295a9ec527cce103f2bc"
-    },
-    {
-      "from": "new26-s036-q01-video",
-      "to": "new26-zhao-voice",
-      "stage": "generation",
-      "path": "payload.inputs.11.reference",
-      "revision_id": "2855a747f778c80107b0b7ce04146fe68bbf7c5a9b163fa79e7baf95b76abccc"
     },
     {
       "from": "new26-s036-q01-video",
@@ -19832,6 +20014,20 @@
     },
     {
       "from": "new26-s036-q11-video",
+      "to": "new26-writing-kit-identity",
+      "stage": "generation",
+      "path": "payload.inputs.10.reference",
+      "revision_id": "91f60bfe8f88c8336f0cdfc2aba7d85c3ddbfc37ffb303a9051b34140aeb8ab1"
+    },
+    {
+      "from": "new26-s036-q11-video",
+      "to": "new26-recovered-keepsakes-identity",
+      "stage": "generation",
+      "path": "payload.inputs.11.reference",
+      "revision_id": "84666a29ab0988480f481509fe7d56a025c8b9b88cee2b9e66e021ce398e90a4"
+    },
+    {
+      "from": "new26-s036-q11-video",
       "to": "new26-tao-identity",
       "stage": "generation",
       "path": "payload.inputs.2.reference",
@@ -19885,20 +20081,6 @@
       "stage": "generation",
       "path": "payload.inputs.9.reference",
       "revision_id": "477aa3eebe0a2845191824105e1722f6eb6f9424c1ed48645cab5cde05d7324f"
-    },
-    {
-      "from": "new26-s036-q11-video",
-      "to": "new26-writing-kit-identity",
-      "stage": "generation",
-      "path": "payload.inputs.10.reference",
-      "revision_id": "91f60bfe8f88c8336f0cdfc2aba7d85c3ddbfc37ffb303a9051b34140aeb8ab1"
-    },
-    {
-      "from": "new26-s036-q11-video",
-      "to": "new26-recovered-keepsakes-identity",
-      "stage": "generation",
-      "path": "payload.inputs.11.reference",
-      "revision_id": "84666a29ab0988480f481509fe7d56a025c8b9b88cee2b9e66e021ce398e90a4"
     },
     {
       "from": "new26-s036-q11-video",
@@ -19979,6 +20161,34 @@
     },
     {
       "from": "new26-s036-q13-video",
+      "to": "new26-exemption-doc-identity",
+      "stage": "generation",
+      "path": "payload.inputs.10.reference",
+      "revision_id": "beb1d9ba16b9070634ab9cce13f7a4ef871d5235e093b1ccded65eed67a593d0"
+    },
+    {
+      "from": "new26-s036-q13-video",
+      "to": "new26-inquiry-record-identity",
+      "stage": "generation",
+      "path": "payload.inputs.11.reference",
+      "revision_id": "477aa3eebe0a2845191824105e1722f6eb6f9424c1ed48645cab5cde05d7324f"
+    },
+    {
+      "from": "new26-s036-q13-video",
+      "to": "new26-writing-kit-identity",
+      "stage": "generation",
+      "path": "payload.inputs.12.reference",
+      "revision_id": "91f60bfe8f88c8336f0cdfc2aba7d85c3ddbfc37ffb303a9051b34140aeb8ab1"
+    },
+    {
+      "from": "new26-s036-q13-video",
+      "to": "new26-recovered-keepsakes-identity",
+      "stage": "generation",
+      "path": "payload.inputs.13.reference",
+      "revision_id": "84666a29ab0988480f481509fe7d56a025c8b9b88cee2b9e66e021ce398e90a4"
+    },
+    {
+      "from": "new26-s036-q13-video",
       "to": "new26-liang-clerk-identity",
       "stage": "generation",
       "path": "payload.inputs.2.reference",
@@ -20035,34 +20245,6 @@
     },
     {
       "from": "new26-s036-q13-video",
-      "to": "new26-exemption-doc-identity",
-      "stage": "generation",
-      "path": "payload.inputs.10.reference",
-      "revision_id": "beb1d9ba16b9070634ab9cce13f7a4ef871d5235e093b1ccded65eed67a593d0"
-    },
-    {
-      "from": "new26-s036-q13-video",
-      "to": "new26-inquiry-record-identity",
-      "stage": "generation",
-      "path": "payload.inputs.11.reference",
-      "revision_id": "477aa3eebe0a2845191824105e1722f6eb6f9424c1ed48645cab5cde05d7324f"
-    },
-    {
-      "from": "new26-s036-q13-video",
-      "to": "new26-writing-kit-identity",
-      "stage": "generation",
-      "path": "payload.inputs.12.reference",
-      "revision_id": "91f60bfe8f88c8336f0cdfc2aba7d85c3ddbfc37ffb303a9051b34140aeb8ab1"
-    },
-    {
-      "from": "new26-s036-q13-video",
-      "to": "new26-recovered-keepsakes-identity",
-      "stage": "generation",
-      "path": "payload.inputs.13.reference",
-      "revision_id": "84666a29ab0988480f481509fe7d56a025c8b9b88cee2b9e66e021ce398e90a4"
-    },
-    {
-      "from": "new26-s036-q13-video",
       "to": "new26-s017-q04-old-names",
       "stage": "postproduction",
       "path": "payload.output.editorial_inputs.0.reference",
@@ -20102,6 +20284,13 @@
       "stage": "generation",
       "path": "payload.inputs.1.reference",
       "revision_id": "0fd877953ea75c4fbc5c4c3f2646477d579ef41c59860f0e4135b607fc4d0daa"
+    },
+    {
+      "from": "new26-s036-q14-video",
+      "to": "new26-recovered-keepsakes-identity",
+      "stage": "generation",
+      "path": "payload.inputs.10.reference",
+      "revision_id": "84666a29ab0988480f481509fe7d56a025c8b9b88cee2b9e66e021ce398e90a4"
     },
     {
       "from": "new26-s036-q14-video",
@@ -20158,13 +20347,6 @@
       "stage": "generation",
       "path": "payload.inputs.9.reference",
       "revision_id": "477aa3eebe0a2845191824105e1722f6eb6f9424c1ed48645cab5cde05d7324f"
-    },
-    {
-      "from": "new26-s036-q14-video",
-      "to": "new26-recovered-keepsakes-identity",
-      "stage": "generation",
-      "path": "payload.inputs.10.reference",
-      "revision_id": "84666a29ab0988480f481509fe7d56a025c8b9b88cee2b9e66e021ce398e90a4"
     },
     {
       "from": "new26-s036-q14-video",
@@ -20938,6 +21120,13 @@
     },
     {
       "from": "new26-s037-q16-video",
+      "to": "new26-rice-measure-rice-sound",
+      "stage": "generation",
+      "path": "payload.inputs.10.reference",
+      "revision_id": "834c305da32bf9889624975f2d5b6fa896694d39a0519e385a6376a9a9305f66"
+    },
+    {
+      "from": "new26-s037-q16-video",
       "to": "new26-lidan-identity",
       "stage": "generation",
       "path": "payload.inputs.2.reference",
@@ -20991,13 +21180,6 @@
       "stage": "generation",
       "path": "payload.inputs.9.reference",
       "revision_id": "ab129f9e9bece3d86b936909980417f0c1be1e08bcee90aa703398b745b94e8b"
-    },
-    {
-      "from": "new26-s037-q16-video",
-      "to": "new26-rice-measure-rice-sound",
-      "stage": "generation",
-      "path": "payload.inputs.10.reference",
-      "revision_id": "834c305da32bf9889624975f2d5b6fa896694d39a0519e385a6376a9a9305f66"
     },
     {
       "from": "new26-s037-q16-video",
@@ -22002,10 +22184,10 @@
     },
     {
       "from": "new26-s040-q01-video",
-      "to": "new26-aheng-mother-voice",
+      "to": "new26-qingpeng-singing",
       "stage": "generation",
       "path": "payload.inputs.6.reference",
-      "revision_id": "744084ddd6a02da2f022f3f8ff6f9468478bef434a4b83d1da29b766ae6fbdd6"
+      "revision_id": "529078239eb900ca89fa901b6125e511475b90f29437c3b334c94a25553e6e57"
     },
     {
       "from": "new26-s040-q01-video",
@@ -23877,6 +24059,20 @@
       "revision_id": "a7d8683ec01c851eb36b70c33ef3d83f2190d7e44e258bcd281dff700df60062"
     },
     {
+      "from": "new26-temple-song-singing",
+      "to": "new26-singers-voice",
+      "stage": "preparation",
+      "path": "payload.output.derivative_preparation.inputs.0.reference",
+      "revision_id": "6f7339062c8647b2b63d11497753d6c243cd47f8a7fe920a445d678643b6eb36"
+    },
+    {
+      "from": "new26-temple-song-singing",
+      "to": "new26-aheng-voice",
+      "stage": "preparation",
+      "path": "payload.output.derivative_preparation.inputs.1.reference",
+      "revision_id": "ab129f9e9bece3d86b936909980417f0c1be1e08bcee90aa703398b745b94e8b"
+    },
+    {
       "from": "new26-wage-page-identity",
       "to": "new26-songbook-identity",
       "stage": "generation",
@@ -23884,6 +24080,6 @@
       "revision_id": "b6fc83ef99fc149a342c227a5327d437f55a613defea39fecaaea61c882397a9"
     }
   ],
-  "unique_edges": 3392,
+  "unique_edges": 3396,
   "acyclic": true
 }
