@@ -1,0 +1,56 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-li-home-layout-01",
+  "submission": {
+    "call_id": "task-20261015-0003-li-home-layout-01",
+    "submission_sha256": "507e1e309fc516a90038026d7df496120d123586ed6d91f7b8b01b4225d31b11",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-li-home-layout-01.json",
+  "provider_history_id": "ep4jPYetVShxsWB6BF88",
+  "provider_job_id": null,
+  "provider_resource_id": "0Ui1nJNfRGrlWLCcT3TP",
+  "model": "gpt-image-2-5-sunburst",
+  "project_id": "8K6WcbrPLghSBJXBtWAE",
+  "provider": "OpenArt",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "0f5dc95971601dde33e43c55351ef7d3d51c26c11f651483e1ead3bac5f9d6f5.png",
+    "sha256": "0f5dc95971601dde33e43c55351ef7d3d51c26c11f651483e1ead3bac5f9d6f5",
+    "bytes": 7277718,
+    "mime": "image/png",
+    "width": 3840,
+    "height": 2160
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-li-home-layout-01",
+    "candidate_id": "candidate-affa0cd3678b01be1a9e5edd2b9a52e7952c436089b23e8b77c356b650ff5486",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "OpenArt credits",
+    "quoted": 350,
+    "actual": "UNKNOWN",
+    "note": "报价对应单图；实际扣费字段未返回时保留UNKNOWN。"
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "已实际看三视图：南门、北床西柜、西灶和桌东走道基本相合，向南反打也把东壁板放在画面左侧。但灯板上的灯被画成玻璃罩金属风灯，不是本剧已建立的竹木纸罩灯；床几乎贴东墙，所需床东通路未成立，箱子位于床正前而非床西端前。",
+    "decision": "不绑定空间消费者。返修时保持空场景，只画空灯板以免冒出未绑定道具；明确床榻沿北墙东西摆放、东端留通路，箱在床西端前。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  }
+}

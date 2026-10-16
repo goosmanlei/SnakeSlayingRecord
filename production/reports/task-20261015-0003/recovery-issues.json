@@ -1,7 +1,7 @@
 {
   "format": "task-recovery-issue-v1",
   "task_id": "task-20261015-0003",
-  "system_commit": "2b217a440256ea9dd1a1a9b025dc072e2829ea7c",
+  "system_commit": "b3691193a9d66cf55c4589471daede1f5baaaf74",
   "repository": "review_desk",
   "activation": "active",
   "issues": [
@@ -37,6 +37,61 @@
       "cause": "提交器保存参考sha256和material_selection，校验器将扩展元数据与旧精简引用直接比较而误拒绝。",
       "action": "逐项比较原件身份、顺序及范围，并分别校验哈希与候选身份；错误哈希、候选和组成继续拒绝。",
       "verification": "21项相关Python测试通过；湿衣02和03真实提交快照已成功。两项旧test_generation错误在修改前基线同样复现，未冒称全套测试通过。"
+    },
+    {
+      "id": "google-image-input-contract",
+      "status": "runtime_verified",
+      "evidence": "官方模型目录与Interactions文档核对后，gemini-nano-banana-2.1的参考输入契约只允许真实图片，最多14张、有序input图片块；不复用OpenArt请求字段。",
+      "action": "附属仓库明确注册Google模型标识、图片数量和Prompt图片编号校验；未知模型仍拒绝。",
+      "verification": "6项输入契约测试通过；本任务多次真实Google提交已在外部发送前保存当前模型、参数、Prompt、有序原件身份及SHA-256。",
+      "sources": [
+        "https://ai.google.dev/gemini-api/docs/image-generation",
+        "https://ai.google.dev/api/generate-content"
+      ]
+    },
+    {
+      "id": "google-native-jpeg",
+      "status": "runtime_verified",
+      "evidence": "初次请求PNG被HTTP400拒绝，服务说明response_format.mime_type仅支持image/jpeg；没有外部job id或产物。",
+      "action": "更新准确方案请求原生JPEG，保留服务字节、不转码；4K/16:9请求实测仍为5504×3072，沿用户已确认的尺寸例外检查。",
+      "verification": "真实JPEG文件头、实际像素与哈希已探测，并逐图实际看图；返回ID缺失时保留null，不用本机CALL编号冒充平台job id。",
+      "incident_receipt": "../../receipts/google-task-20261015-0003-liji-wet-01.json"
+    },
+    {
+      "id": "root-image-route-capacity",
+      "status": "fallback_in_use",
+      "evidence": "OpenArt观察余额65，低于4K根图350或Nano80积分报价；内置工具返回1672×941不足4K；Higgsfield明确拒绝并要求Basic或更高套餐。未开新订阅或充值。",
+      "action": "按用户委托的整体制作质量判断，Google Nano Banana2.1先做单张第0代根图试制；梁书吏实际看图通过后才分批扩展。模型替代是本任务执行选择，不改写历史GPT结果或全局默认策略。",
+      "verification": "每张真实原件与质量结果单列；时代造型或年龄偏差仍退回有界返修，通道成功不等于该批全部通过。"
+    },
+    {
+      "id": "liji-precise-reference-region",
+      "status": "runtime_verified",
+      "evidence": "整张多视图母版反复使另一侧手或第二人物继承错误包扎，前三张右掌状态均未通过。",
+      "action": "仅上传干净母版正面全身的准确裁切作为参考：原图3840×2160内x192、y0、宽1152、高2160，不缩放；原图SHA、归一化范围、实际上传SHA和字节文件保存。不是新候选，不重置谱系。",
+      "verification": "右掌04及后续额布、首刀一点血状态通过实际看图；重包状态的掌心局部仍出现左右错误则继续判未通过，不将方法试制推广成自动质量结论。"
+    },
+    {
+      "id": "native-audio-input-unavailable",
+      "status": "blocked",
+      "evidence": "Actual 2242604-byte native WAV was read in full and supplied as audio/wav through the audio tool output. Runtime returned: audio content omitted because you do not support audio input.",
+      "original_sha256": "cb9568d517393bbb365105efeb2297763d6cf8b92cba86b6c212f6f0bb361059",
+      "verification": "No audio was heard by the executor; voice and four songs remain hearing_unverified. Full byte reading, playback display, transcript, and waveform do not replace listening.",
+      "resume_when": "An audio-capable verification path or actual human listening evidence is available."
+    },
+    {
+      "id": "stage04-private-method-packaging",
+      "status": "verified",
+      "cause": "The first prepare invocation lacked the auxiliary Python import path. After restoring that path, the publication guard correctly refused 732 task-private method execution/artifact notes.",
+      "scope_checked": {
+        "new_private_execution_notes": 184,
+        "new_private_artifact_notes": 548,
+        "preexisting_changed_protected_objects": 0,
+        "story_source_heads_unchanged": true,
+        "baseline_private_notes": 0
+      },
+      "action": "Use the standard sanitized export restored into a new empty instance, and verify its exact production/current/candidate/submission/comment tables against the original frozen database before preparing the delta. Private method notes remain in task runtime. The publication guard was not weakened.",
+      "verification": "Stage04 delta preflight succeeded against a clone of the formal database; applied=false. Exact publication identity and hashes are in verification.json."
     }
   ],
   "resume_requirement": "附属仓库已通过当前run启用，当前任务持有双仓执行锁；继续素材与接口验证，真实页面复验待日常Chrome连接可用。",

@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-thin-girl-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-thin-girl-identity-01",
+    "submission_sha256": "bcb93d8a734cd94200e4da721e52e33009b1f27425981e09d94a40b13ff2dac0",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-thin-girl-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "7d1fa51e2709ebdd9814a67614407955448c0b41a70fac65dffd11c97fb76816.jpg",
+    "sha256": "7d1fa51e2709ebdd9814a67614407955448c0b41a70fac65dffd11c97fb76816",
+    "bytes": 7841936,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-thin-girl-identity-01",
+    "candidate_id": "candidate-84d33642c005cc3ed034a48b3ee7c1d720d3d81828e1910c1da002b480af4fae",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "已实际看原生5504×3072 JPEG：纤瘦长脸、双低束发和碎纸在两视向一致，但同样生成了立领盘扣短衣，属于本轮已定位的时代衣形偏差；原文字没有明确衣领。",
+    "decision": "不绑定；补清古代交领右衽、纯布系带，从文字第0代重做一次。保留双低束发、灰紫衣色与碎纸，不加入老妇或亲属关系。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  },
+  "usage": {
+    "total_tokens": 5968,
+    "total_input_tokens": 257,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 257
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4316,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1395
+  },
+  "actual_request_body_sha256": "bc21ffd00840801b38fccfd3eea263c7186b8ed08a81fd420528ae766376cb95",
+  "submitted_inputs": []
+}

@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-liji-mother-identity-02",
+  "submission": {
+    "call_id": "task-20261015-0003-liji-mother-identity-02",
+    "submission_sha256": "46a934fff08ad5935def5af67e81460d080806caa8e0cbc04edd76c344678a43",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-liji-mother-identity-02.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "7aa38a5090da11e6d1db3d49d1ac0878afa0c65a238d22d0f2228c1025ebd8a0.jpg",
+    "sha256": "7aa38a5090da11e6d1db3d49d1ac0878afa0c65a238d22d0f2228c1025ebd8a0",
+    "bytes": 7355733,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-liji-mother-identity-02",
+    "candidate_id": "candidate-652131987541ab3af8b43457ed3d09f0302e9e0c19c546dd0e6e40bc24e5cfaf",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "已实际看原生5504×3072 JPEG：母亲黑发仅鬓边少量灰、少量浅细纹和稳实肩背恢复为中年劳动妇人的形貌；宽椭圆脸、低髻、灰紫交领、深褐围裙与灰裙在三视向一致，手脚完整，表情自然。与阿蘅母亲的病弱外貌及老妇明显分开，平涂与细线干净。",
+    "decision": "选择此第0代母版，视觉年龄为制作选择；保持照护者的稳实形貌，具体盛汤、抱褥和忧虑由镜头表现。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 14,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/liji-mother-identity-02-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 5708,
+    "total_input_tokens": 426,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 426
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4334,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 948
+  },
+  "actual_request_body_sha256": "e91ccb130d5508d484ea3729130149013c37b3e133efd96c8d85ef272f116bfb",
+  "submitted_inputs": []
+}

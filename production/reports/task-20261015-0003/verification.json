@@ -1,55 +1,83 @@
 {
   "format": "stage-verification-v1",
   "task_id": "task-20261015-0003",
-  "stage": "stage-03",
-  "checked_at": "2026-10-16T09:57:44.401532+00:00",
+  "stage": "stage-04",
+  "checked_at": "2026-10-16T12:20:28.921997+00:00",
   "requirements": 651,
   "ordinary_state": 191,
   "unique_dependency_edges": 3396,
   "acyclic": true,
-  "candidates": 25,
-  "covered_requirements": 18,
-  "production_files_verified": 27,
-  "selected_input_slots": 503,
+  "candidates": 87,
+  "covered_requirements": 55,
+  "production_files_verified": 89,
+  "selected_input_slots": 1386,
   "selected_by_material": {
     "new26-aheng-identity": 210,
     "new26-songbook-identity": 26,
     "new26-liji-identity": 34,
+    "new26-tao-rope-identity": 35,
     "new26-layout-note-identity": 13,
+    "new26-paper-snake-identity": 12,
     "new26-aheng-mother-identity": 29,
+    "new26-old-registers-identity": 18,
+    "new26-zhou-identity": 22,
     "new26-moer-identity": 18,
+    "new26-zhao-identity": 49,
+    "new26-tao-identity": 19,
+    "new26-lixiao-identity": 101,
     "new26-troupe-identity": 7,
+    "new26-liji-palm-overall": 18,
+    "new26-book-dry-sheets-overall": 70,
     "new26-mother-oldstage-overall": 6,
+    "new26-temple-front-layout": 55,
+    "new26-sunliu-identity": 85,
+    "new26-priest-identity": 30,
+    "new26-liji-forehead-fresh-overall": 22,
+    "new26-old-woman-identity": 3,
+    "new26-liji-head-wrap-overall": 40,
     "new26-lidan-identity": 145,
+    "new26-liji-mother-identity": 14,
+    "new26-patched-lantern-identity": 37,
+    "new26-liang-clerk-identity": 30,
+    "new26-county-deputy-identity": 24,
+    "new26-cheng-identity": 79,
     "new26-snake-identity": 8,
-    "new26-map-cut-overall": 7
+    "new26-heavy-knife-identity": 52,
+    "new26-map-cut-overall": 7,
+    "new26-snake-first-cut-overall": 2,
+    "new26-snake-deep-cut-overall": 4,
+    "new26-snake-separated-overall": 3,
+    "new26-liji-clean-wrap-overall": 4,
+    "new26-liji-healed-overall": 46,
+    "new26-song-teacher-identity": 9
   },
   "status_counts": {
-    "not_produced": 173,
+    "not_produced": 136,
     "executor_checked_partial": 1,
-    "executor_checked": 11,
+    "executor_checked": 40,
     "hearing_unverified": 5,
-    "quality_failed": 1
+    "quality_failed": 9
   },
   "call_counts": {
-    "completed": 24,
-    "unknown": 1
+    "completed": 86,
+    "unknown": 1,
+    "failed": 3
   },
-  "system_commit": "2b217a440256ea9dd1a1a9b025dc072e2829ea7c",
+  "system_commit": "b3691193a9d66cf55c4589471daede1f5baaaf74",
   "protected_baseline_records": {
     "comments": {
       "rows": 404,
-      "sha256": "cbf5ca42097785cab920177bede15a16c4d567769d4b41fa1f86d485e5ed551b",
+      "sha256": "3f0c41487d273b11d876f75720c4b9475268ff2725e7347abdcc69036d9c0760",
       "unchanged": true
     },
     "comment_events": {
       "rows": 438,
-      "sha256": "0983521e5dc5ee0570b562ea85401ad89bad8f85c4c878035b35446d2e8bb07a",
+      "sha256": "271f052eb9bb292f483adc3c8794bafbac85b8a95e8b3b39d1dfeb7873116100",
       "unchanged": true
     },
     "business_comments": {
       "rows": 404,
-      "sha256": "47d3ff34ed0b3c985c722b31aa1ddecf54ee74829c974621441626759c3b70f2",
+      "sha256": "fdea1415d0f6688f55637897684e84fbc91bead635a7c2bae7fb71826cf10f37",
       "unchanged": true
     }
   },
@@ -57,48 +85,48 @@
   "formal_publication": false,
   "empty_instance_recovery": {
     "schema_version": 14,
-    "fresh_target": ".runtime/generation/recovered-stage-0003-03",
+    "fresh_target": ".runtime/generation/recovered-stage-0003-04",
     "recovered": true,
-    "objects": 17404,
-    "production_objects": 1727,
-    "revisions": 17457,
+    "objects": 17789,
+    "production_objects": 1854,
+    "revisions": 17842,
     "comments": 404,
-    "files_verified": 85,
-    "destination": ".runtime/generation/recovered-stage-0003-03",
+    "files_verified": 147,
+    "destination": "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-task/worktrees/task-20261015-0003/.runtime/generation/recovered-stage-0003-04",
     "exact_table_comparisons": {
       "production_current_records": {
-        "rows": 1727,
-        "sha256": "df90567a6a65cb71387fa2419320102db917992db2c73a60c0ac531c0de6b6f2",
+        "rows": 1854,
+        "sha256": "7538c1ff514b8e9b71b73bbcd36e7d0fa96e464f2bfa86de8a22b82330e41b03",
         "equal": true
       },
       "production_candidates": {
-        "rows": 25,
-        "sha256": "3db3208a8718dfa762f293648fc40f15ab475789f9994762b96f5138a28c193c",
+        "rows": 87,
+        "sha256": "53963a107ca3caeb92e83093068dd5f1648bc24b745f961307e020747d7aafac",
         "equal": true
       },
       "production_candidate_targets": {
-        "rows": 25,
-        "sha256": "52c31fe9eebb166cdfb22a7396171f62dfe3acdd94f169e630de231d2dcc3f9c",
+        "rows": 87,
+        "sha256": "ed05b180c6ac03fd4e19023c784644fc09e4aca5de9a77c2b776cba5ca20272b",
         "equal": true
       },
       "production_submissions": {
-        "rows": 26,
-        "sha256": "3a648c521a3de57f11f296c0e8fc81d1a0b8129e18d240a5dc4a13e4ef6336d7",
+        "rows": 91,
+        "sha256": "5e7d0134479cbfbc15f22a8e4a449fa72afa690c9869404944ddd9319d113744",
         "equal": true
       },
       "comments": {
         "rows": 404,
-        "sha256": "cbf5ca42097785cab920177bede15a16c4d567769d4b41fa1f86d485e5ed551b",
+        "sha256": "3f0c41487d273b11d876f75720c4b9475268ff2725e7347abdcc69036d9c0760",
         "equal": true
       },
       "comment_events": {
         "rows": 438,
-        "sha256": "0983521e5dc5ee0570b562ea85401ad89bad8f85c4c878035b35446d2e8bb07a",
+        "sha256": "271f052eb9bb292f483adc3c8794bafbac85b8a95e8b3b39d1dfeb7873116100",
         "equal": true
       },
       "business_comments": {
         "rows": 404,
-        "sha256": "47d3ff34ed0b3c985c722b31aa1ddecf54ee74829c974621441626759c3b70f2",
+        "sha256": "fdea1415d0f6688f55637897684e84fbc91bead635a7c2bae7fb71826cf10f37",
         "equal": true
       }
     },
@@ -115,27 +143,27 @@
     "audio_listening": false
   },
   "publication_package": {
-    "path": "production/publications/task-20261015-0003-stage-03.json",
-    "sha256": "9ace5fa15adb0c191d415744d2fe8f100e47634740d088985a708c151c290da8",
-    "publication_id": "ca3da0a16145d886e550ec703eaddfa4580463838e9b4863f6f4045c4b19d899",
-    "objects": 807,
-    "media_files": 27,
+    "path": "production/publications/task-20261015-0003-stage-04.json",
+    "sha256": "f88431faecf423c5ae23804858b7aff19f9ae5e7d333a0dd18cf16c2c3420bf8",
+    "publication_id": "8915d0cb922eaba7fbfe3244f4b5eb022ffd8d6d146446e6b101bb6ff0eff4ea",
+    "objects": 1310,
+    "media_files": 89,
     "applied_to_formal": false,
     "preflight": {
       "passed": true,
       "target": "isolated clone of formal database",
-      "receipt": ".runtime/generation/publications/task-20261015-0003-stage-check-03/preflight.json",
+      "receipt": ".runtime/generation/publications/task-20261015-0003-stage-check-04/preflight.json",
       "result": {
         "applied": false,
         "already_published": false,
-        "publication_id": "ca3da0a16145d886e550ec703eaddfa4580463838e9b4863f6f4045c4b19d899",
+        "publication_id": "8915d0cb922eaba7fbfe3244f4b5eb022ffd8d6d146446e6b101bb6ff0eff4ea",
         "source_commit": null,
         "scope": {
           "contract": "production-current-publication-v1",
           "changed_rows": {
-            "objects": 807,
-            "revisions": 807,
-            "dependencies": 2996,
+            "objects": 1310,
+            "revisions": 1310,
+            "dependencies": 6122,
             "comments": 0,
             "material_content": 0,
             "material_archive_files": 0,
@@ -145,16 +173,16 @@
             "business_relations": 0,
             "business_relation_aliases": 0,
             "audiovisual_notes": 0,
-            "production_current_records": 430,
-            "production_submissions": 26,
-            "production_candidates": 25,
-            "production_candidate_targets": 25,
+            "production_current_records": 675,
+            "production_submissions": 91,
+            "production_candidates": 87,
+            "production_candidate_targets": 87,
             "production_comment_quotes": 0,
-            "production_current_operations": 1054,
+            "production_current_operations": 2950,
             "production_response_excerpts": 0
           },
           "comment_events": [],
-          "publication_id": "ca3da0a16145d886e550ec703eaddfa4580463838e9b4863f6f4045c4b19d899",
+          "publication_id": "8915d0cb922eaba7fbfe3244f4b5eb022ffd8d6d146446e6b101bb6ff0eff4ea",
           "already_published": false
         }
       }
@@ -168,6 +196,31 @@
   "execution_tests": {
     "python_related_passed": 21,
     "node_related_passed": 64,
-    "baseline_errors": "Two test_generation errors reproduce before the patch; full suite not claimed passed."
+    "baseline_errors": "Two test_generation errors reproduce before the patch; full suite not claimed passed.",
+    "google_input_contract_tests_passed": 6
+  },
+  "stage_freeze": {
+    "checked_at": "2026-10-16T12:14:19.976158+00:00",
+    "source": "standard sanitized export restored to a new empty instance, compared to the existing frozen database",
+    "resume_reason": "prepare first lacked the auxiliary PYTHONPATH, then correctly rejected task-private method notes. The standard export excludes exactly those notes; production rows match the frozen database. No protected definition was changed and no formal write occurred.",
+    "private_method_objects_excluded": 732,
+    "subsequent_local_work": "Author selection may continue in the live task database; this package and export retain the exact earlier freeze."
+  },
+  "checked_material_binding_coverage": {
+    "expected_slots_for_checked_materials": 1510,
+    "selected_slots_in_stage04": 1386,
+    "pending_slots_in_stage04": 124,
+    "pending_by_material": {
+      "new26-preparation-tools-identity": 32,
+      "new26-liji-head-wrap-overall": 55,
+      "new26-liji-mother-identity": 14,
+      "new26-liji-first-blood-overall": 22,
+      "new26-old-registers-identity": 1
+    }
+  },
+  "audio_input_capability": {
+    "attempted_native_wav_sha256": "cb9568d517393bbb365105efeb2297763d6cf8b92cba86b6c212f6f0bb361059",
+    "runtime_response": "audio content omitted because you do not support audio input",
+    "actual_listening": false
   }
 }

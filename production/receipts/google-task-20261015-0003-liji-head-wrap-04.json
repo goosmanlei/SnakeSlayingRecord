@@ -1,0 +1,103 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-liji-head-wrap-04",
+  "submission": {
+    "call_id": "task-20261015-0003-liji-head-wrap-04",
+    "submission_sha256": "969b6bc6f0da86a8da0e0943c3e31768fa5bb91889600031abc8cff05f6c26c7",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-liji-head-wrap-04.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "22ba4f1a9075bbc28be9e038cfbba5f58f987e18ac38a47b7b80bbcc47741c00.jpg",
+    "sha256": "22ba4f1a9075bbc28be9e038cfbba5f58f987e18ac38a47b7b80bbcc47741c00",
+    "bytes": 5603086,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-liji-head-wrap-04",
+    "candidate_id": "candidate-7c63640ee9d899b9b83bac8d1c3d9bd9439984c4a8bcb9560875b8ecbe67e54f",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "已实际看原生5504×3072 JPEG：只有一位全身李寄，自身右手包薄布、左手裸露，右手背局部拇指与指甲方向正确；薄额布位于眉上，左额覆盖、眼眉和脸型清楚，后脑局部能见布结且不占发髻。身份、干常服与比例保持，两处布外无血，线条干净。",
+    "decision": "选择为左额环扎与右掌薄布并存的完整状态；后脑显示布带折回和短结，前额保持窄带，不能改成包头巾。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-task-20261015-0003-liji-identity-01",
+        "revision_id": "77908eeddf225d05468c60366401d16f721cceb62cb297dcd110c25132f302e4"
+      }
+    ]
+  },
+  "current_consumer_selection": {
+    "slots": 40,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/liji-head-wrap-04-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 7618,
+    "total_input_tokens": 1426,
+    "input_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 1120
+      },
+      {
+        "modality": "text",
+        "tokens": 306
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 5173,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1019
+  },
+  "actual_request_body_sha256": "af68a810076dbb60b6b3dee93006b9010622c4afa09eaa3c952546a3f0216886",
+  "submitted_inputs": [
+    {
+      "image_number": 1,
+      "submitted_sha256": "37a00a139241862d54044b8e50b2c4b02a545b4a8678b11bb1de2ee2402f56ca",
+      "original_sha256": "05ac4d70dbed022cbaabd37b9da071031056d325653ccbee9b1a2aac5046e0ce",
+      "crop": {
+        "height": 1,
+        "width": 0.3,
+        "x": 0.05,
+        "y": 0
+      },
+      "submitted_input_file": "production/requests/inputs/37a00a139241862d54044b8e50b2c4b02a545b4a8678b11bb1de2ee2402f56ca.png",
+      "purpose": "Exact reference region only; not a generated candidate or a 4K deliverable."
+    }
+  ]
+}

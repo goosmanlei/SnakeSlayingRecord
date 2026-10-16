@@ -1,0 +1,40 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-liji-wet-01",
+  "provider": "Google",
+  "request": "production/requests/task-20261015-0003-liji-wet-01.json",
+  "submission": {
+    "call_id": "task-20261015-0003-liji-wet-01",
+    "submission_sha256": "cb1c5260389d9d52c1f9c24b4ddfb634724873afe14a4e0114e572333ee72cee",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "result": {
+    "call_id": "task-20261015-0003-liji-wet-01",
+    "candidate_id": null,
+    "status": "failed",
+    "already_applied": false
+  },
+  "response": {
+    "http_status": 400,
+    "body": {
+      "error": {
+        "message": "The value 'image/png' is not supported for 'response_format.mime_type'. Supported values: 'image/jpeg'.",
+        "code": "invalid_request"
+      }
+    },
+    "provider": "Google",
+    "actual_request_body_sha256": "3bed730b939467e5ee6c18212833c26d6df178c54f16711aeddcf23a2486e499"
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "candidate": null,
+  "external_dispatch": true,
+  "recovery": "不重复原请求；先解决明确平台或参数问题，再建立新准确提交。"
+}

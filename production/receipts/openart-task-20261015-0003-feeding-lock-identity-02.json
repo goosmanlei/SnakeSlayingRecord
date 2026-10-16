@@ -1,0 +1,56 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-feeding-lock-identity-02",
+  "submission": {
+    "call_id": "task-20261015-0003-feeding-lock-identity-02",
+    "submission_sha256": "04d85381f3721546ee91cdcf08877fb404862cf2b8ddbb36dc7f056da4e3d7ec",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-feeding-lock-identity-02.json",
+  "provider_history_id": "sZSKavdumL2Flvhd5VtM",
+  "provider_job_id": null,
+  "provider_resource_id": "IqsecBw1cAQuMQMJwJkA",
+  "model": "gpt-image-2-5-sunburst",
+  "project_id": "8K6WcbrPLghSBJXBtWAE",
+  "provider": "OpenArt",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "2c6a154a0785b06f408f6b45ba3849adf8bc384d3488f9c43e6666608240bb67.png",
+    "sha256": "2c6a154a0785b06f408f6b45ba3849adf8bc384d3488f9c43e6666608240bb67",
+    "bytes": 9997255,
+    "mime": "image/png",
+    "width": 3840,
+    "height": 2160
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-feeding-lock-identity-02",
+    "candidate_id": "candidate-92a371273999c85aa162a9bdeffee40441727c2c80a8c1fb50f5709eac0ebdbf",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "OpenArt credits",
+    "quoted": 350,
+    "actual": "UNKNOWN",
+    "note": "报价对应单图；实际扣费字段未返回时保留UNKNOWN。"
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "已实际看图，锁栓与随板握木分开，盖石较首版连续，但主图的南北长度仍明显大于外宽，未实现短扁石道；主图北闸露出盖石之上，侧剖却把北闸顶压至盖石以下，两个视图的门高与盖顶关系不一致。石面也仍有密集颗粒，无法作为准确机构基准。",
+    "decision": "不绑定，也不继续同类文字重抽。后续需先用一致的空间几何约束解决短距、门高和滑槽行程，再决定新制作方式；保留此结构缺口和既有真实调用。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  }
+}

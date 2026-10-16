@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-grain-order-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-grain-order-identity-01",
+    "submission_sha256": "411b6e8334a1d191f8adf1c5c65faccd38f8543287bc8f0ead0bf9db8e0bf59c",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-grain-order-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "d51f7a7c2405ffe0cfc64131c493691147ebfe60f965c3728b1aa05e8cf273fd.jpg",
+    "sha256": "d51f7a7c2405ffe0cfc64131c493691147ebfe60f965c3728b1aa05e8cf273fd",
+    "bytes": 7661014,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-grain-order-identity-01",
+    "candidate_id": "candidate-456239dca3ae0746fce5825b5b10befa80508db4e834b136b705c7435e4b7e64",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "已实际看原生5504×3072 JPEG：原单与抄件、夹板开合可区分，但原单下端直接写出“仓记”二字，替代了要求的双横短竖几何记号，违反留白与无伪字的职责划分。",
+    "decision": "不选为纸件母版；后续从文字重做时去掉会诱导生成文字的记号名称，仅描述线段几何关系，并保留原单缺口、抄件幅面与两片夹板结构。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  },
+  "usage": {
+    "total_tokens": 6448,
+    "total_input_tokens": 421,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 421
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4831,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1196
+  },
+  "actual_request_body_sha256": "d0c52ab1fc16d6088fc82a0c575946978508f6772935162d0f5e8fa2ef9051ea",
+  "submitted_inputs": []
+}

@@ -1,0 +1,56 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-zhao-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-zhao-identity-01",
+    "submission_sha256": "5e66d6951ccfd177178cc955ae33ad1beaeee5c46433efef457c2846aa2d0337",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-zhao-identity-01.json",
+  "provider_history_id": "43BQQqyHQTgwbCIDOb7y",
+  "provider_job_id": null,
+  "provider_resource_id": "gfqmh8eg6vMrfrrYLcnd",
+  "model": "gpt-image-2-5-sunburst",
+  "project_id": "8K6WcbrPLghSBJXBtWAE",
+  "provider": "OpenArt",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "d020e867bb3b42b5dc9ad0c820befad6b9630ab4f19bf138e7ce81ab8c198b44.png",
+    "sha256": "d020e867bb3b42b5dc9ad0c820befad6b9630ab4f19bf138e7ce81ab8c198b44",
+    "bytes": 5982690,
+    "mime": "image/png",
+    "width": 3840,
+    "height": 2160
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-zhao-identity-01",
+    "candidate_id": "candidate-f5b5fdf64908cbe0428dc97b2a3ce185586bd50e2a6c206a39159ff0599d92db",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "OpenArt credits",
+    "quoted": 350,
+    "actual": "UNKNOWN",
+    "note": "报价对应单图；实际扣费字段未返回时保留UNKNOWN。"
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "已实际看图：窄方脸细须、黑髻、褐长衣与深腰带保持三视向一致，空手且未画钥匙。空布挂袢却位于角色本人左腰（正面图的画面右侧，左侧视图也清楚可见），与方案指定右腰不符，会给后续钥串位置及交接造成连续性冲突。",
+    "decision": "登记未通过，不绑定。返修明确人物自身右腰在正面图画面左侧，左腰无挂袢，侧视角改为可检查本人右腰。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  }
+}

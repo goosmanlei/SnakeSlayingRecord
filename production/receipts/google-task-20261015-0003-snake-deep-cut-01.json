@@ -1,0 +1,96 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-snake-deep-cut-01",
+  "submission": {
+    "call_id": "task-20261015-0003-snake-deep-cut-01",
+    "submission_sha256": "383dca95f3a1dcd74c2b1ca846ab54b702673566e9b7761072899d9e61f98682",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-snake-deep-cut-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "028d281ed8da4c4ce76074163b8e5270e738a19a1b5c3ef9e999d63dbd58b3eb.jpg",
+    "sha256": "028d281ed8da4c4ce76074163b8e5270e738a19a1b5c3ef9e999d63dbd58b3eb",
+    "bytes": 6543114,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-snake-deep-cut-01",
+    "candidate_id": "candidate-2f77dfc11976149d5403c943de5fcb75cb43210a6362a79f0430907337bdc35e",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "已实际看原生5504×3072 JPEG并与首刀状态比较：蛇头、眼色、颈粗和低饱和斑块身份保持；主图遮住颈背伤口，局部窄窗显示单道加深暗裂，边缘少量暗红，下侧轮廓仍连续，没有头颈分离、翻肉或血泊。线条与色块保持简洁。",
+    "decision": "选择为重复落刀后的深颈伤状态；与首刀区分伤口深度，镜头须沿准确机关空间限定刀位和遮挡。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-task-20261015-0003-snake-identity-02",
+        "revision_id": "e22f9afb9f3c430c0634150b06c4b2db680b003d55291a2cacfad303fb5f8ae3"
+      }
+    ]
+  },
+  "current_consumer_selection": {
+    "slots": 4,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/snake-deep-cut-01-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 6959,
+    "total_input_tokens": 1423,
+    "input_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 1120
+      },
+      {
+        "modality": "text",
+        "tokens": 303
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4259,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1277
+  },
+  "actual_request_body_sha256": "49044c26a65b926f2f242796a7f325ed33923bb1172f7e58c1b607eb75b5b36a",
+  "submitted_inputs": [
+    {
+      "image_number": 1,
+      "submitted_sha256": "18d079399b23991a4a5404d19abce4229630bee46e8b286e659dad963414f5ff",
+      "original_sha256": "18d079399b23991a4a5404d19abce4229630bee46e8b286e659dad963414f5ff",
+      "crop": null
+    }
+  ]
+}

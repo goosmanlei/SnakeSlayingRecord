@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-thin-girl-identity-02",
+  "submission": {
+    "call_id": "task-20261015-0003-thin-girl-identity-02",
+    "submission_sha256": "4483f44bc6d48a968e4671db7e77e0e46c53249ea86aa1ecd1f1980632f2d482",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-thin-girl-identity-02.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "740ac0951496fce4f65d83a22c31eda44a594a6b7c55d306a6c0eda60dbe36cb.jpg",
+    "sha256": "740ac0951496fce4f65d83a22c31eda44a594a6b7c55d306a6c0eda60dbe36cb",
+    "bytes": 7909465,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-thin-girl-identity-02",
+    "candidate_id": "candidate-26ffee0c04391f468264363b0745743834dc1d682551827bcd4380365c4a74ce",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "已实际看原生5504×3072 JPEG：交领布系带已纠正，窄脸、纤瘦比例和灰紫衣色一致。但两视图仅能读出后脑单束发，无法核实方案的两侧低束身份锚点；手中纸片也接近数张完整长页，碎纸轮廓不充分。",
+    "decision": "本次仍不选择。保留衣形修正成功与剩余缺陷的区别，不把已返回当作可用；后续若继续，针对双低束及明显不规则碎片简化画框，不沿失败图追加编辑。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  },
+  "usage": {
+    "total_tokens": 6177,
+    "total_input_tokens": 343,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 343
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4351,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1483
+  },
+  "actual_request_body_sha256": "5135349885616ce27cefd85691ea9e166caaefbf9689344006cdbf581556bb1c",
+  "submitted_inputs": []
+}

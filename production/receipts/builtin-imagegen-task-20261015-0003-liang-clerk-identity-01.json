@@ -1,0 +1,55 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-liang-clerk-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-liang-clerk-identity-01",
+    "submission_sha256": "fc64611ac5d85e8d55e6238671167c7b755970fa961c61f8647ed7aefcadae98",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-liang-clerk-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "codex-builtin-imagegen-unversioned",
+  "project_id": null,
+  "provider": "Codex builtin imagegen",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "8c7fc2b26dd81227b34dff9d8c7efdcc53faf5e11150d2c6abf19e28469b6254.png",
+    "sha256": "8c7fc2b26dd81227b34dff9d8c7efdcc53faf5e11150d2c6abf19e28469b6254",
+    "bytes": 1574051,
+    "mime": "image/png",
+    "width": 1672,
+    "height": 941
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-liang-clerk-identity-01",
+    "candidate_id": "candidate-6f6c917db7ab4dfa08e282902496f1a45f735b2e483677fa9cb78dd43de2ccdf",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "actual": "UNKNOWN",
+    "account": "Codex builtin imagegen entitlement",
+    "note": "No billing amount or model version returned; not OpenArt credits and not a direct OpenAI API call."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "已实际看内置工具输出：同一成年男子的三视向、灰褐长衣、暗灰腰束、折角软帽、无须及空手站立可辨，面容和清洁平涂风格基本符合。原件像素实测为1672×941，明显未达到本需求原生3840×2160，不能作为合格4K母版或靠放大补足。",
+    "decision": "保留原生候选和工具来源，不绑定任何下游。Codex内置工具的此次尺寸能力未满足任务，按既定顺序核对Higgsfield的同模型4K入口；不宣称内置使用了公开版本号。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  }
+}

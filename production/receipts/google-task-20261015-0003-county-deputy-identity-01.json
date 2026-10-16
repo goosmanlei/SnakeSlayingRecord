@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-county-deputy-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-county-deputy-identity-01",
+    "submission_sha256": "fbb3c730be4fa6b97f5e531c7e1e8a787cdd751d534d534e92d47cef53b06e25",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-county-deputy-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "462e258d3b3c6bc389b0d52f1cd07993c71d456f0e9698033b5227d53604a891.jpg",
+    "sha256": "462e258d3b3c6bc389b0d52f1cd07993c71d456f0e9698033b5227d53604a891",
+    "bytes": 7456936,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-county-deputy-identity-01",
+    "candidate_id": "candidate-f5a21ec547d1509e17022850df009e6165237dfadc025c66a9b52a94eb06ade7",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "已实际看原生5504×3072 JPEG：县丞略圆脸、细眉和短整须，方正黑帽、暗靛紫素袍及黑鞋在三视向保持；成人比例正常、手可露出，没有官阶纹章、印信或夸张高座。平静面容、官服形制区别于文吏和巫祝，细线与平涂保持全剧方向。",
+    "decision": "选择为第0代县丞母版，宽袖与手的实际动作在镜头使用时仍按交互需要核对。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 24,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/county-deputy-identity-01-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 6028,
+    "total_input_tokens": 291,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 291
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4228,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1509
+  },
+  "actual_request_body_sha256": "59104425f8b7773d84900fc8fb862b928a713d0efd7316d7a11ed4bede96b99e",
+  "submitted_inputs": []
+}

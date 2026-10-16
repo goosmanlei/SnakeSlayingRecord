@@ -1,0 +1,56 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-lixiao-identity-02",
+  "submission": {
+    "call_id": "task-20261015-0003-lixiao-identity-02",
+    "submission_sha256": "a44f00e10f6e82272015f9c72cc9314aad26d9f2d69f383e6661aa08e495b1c3",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-lixiao-identity-02.json",
+  "provider_history_id": "IDDGVPW34Sy0cWienIkB",
+  "provider_job_id": null,
+  "provider_resource_id": "lENJ9r4Viym72bBOMTCN",
+  "model": "gpt-image-2-5-sunburst",
+  "project_id": "8K6WcbrPLghSBJXBtWAE",
+  "provider": "OpenArt",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "8986f17b6a62fbb249405976a519b450e6ce2a42e72e0502c80454b578888072.png",
+    "sha256": "8986f17b6a62fbb249405976a519b450e6ce2a42e72e0502c80454b578888072",
+    "bytes": 5986698,
+    "mime": "image/png",
+    "width": 3840,
+    "height": 2160
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-lixiao-identity-02",
+    "candidate_id": "candidate-1f01ea7a8b46bfdd8a0ae8aceb7635e786b24c348b96b4ffe18d39634d6344c7",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "OpenArt credits",
+    "quoted": 350,
+    "actual": "UNKNOWN",
+    "note": "报价对应单图；实际扣费字段未返回时保留UNKNOWN。"
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "已实际与首图对照：两全身的长袖完整覆盖前臂，布带直接压住腕部袖口，袖口和扎带之间不再露皮肤；手掌自由，裤脚无新增绑腿。暗豆绿短衣、灰褐裤、黑髻与年轻成年女性比例在三视向一致，面貌不混李寄，轮廓和大色块干净。布带实际为数圈，功能与原设计的扎袖一致，不把圈数作为身份。",
+    "decision": "替代未通过的首候选，选此干净根图用于李绡全剧当前参考；历史首候选和真实提交保持。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 101,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/lixiao-identity-02-consumer-selections.json"
+  }
+}
