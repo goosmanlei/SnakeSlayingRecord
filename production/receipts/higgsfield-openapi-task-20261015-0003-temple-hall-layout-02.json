@@ -1,0 +1,101 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-temple-hall-layout-02",
+  "submission": {
+    "call_id": "task-20261015-0003-temple-hall-layout-02",
+    "submission_sha256": "fe6cc953b688727e0455c245b05beec960dbf7b18346201c9f0e53906f628e81",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-temple-hall-layout-02.json",
+  "provider_history_id": null,
+  "provider_job_id": "b49e1457-9eca-44a8-8ce7-b57cc9c18b3c",
+  "provider_resource_id": null,
+  "model": "marketing-studio/image/flare",
+  "project_id": null,
+  "provider": "Higgsfield OpenAPI",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "df711e70c1347bb774fd70ed3460315bd19e935e4d7331bf63239d0ec9fa1c49.png",
+    "sha256": "df711e70c1347bb774fd70ed3460315bd19e935e4d7331bf63239d0ec9fa1c49",
+    "bytes": 7398011,
+    "mime": "image/png",
+    "width": 3840,
+    "height": 2160
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-temple-hall-layout-02",
+    "candidate_id": "candidate-f249ecc996a15be1b76eb51267ff1deec3728ef6dbb628c8d3bafe869d4a6e77",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "actual": "UNKNOWN",
+    "planning_reserve": 1.0,
+    "account": "Higgsfield OpenAPI prepaid balance; no recharge",
+    "budget_snapshot": {
+      "created_at": "2026-10-16T18:30:07.402083+00:00",
+      "user_reported_prepaid_usd": 8.65,
+      "actual_balance_verified": true,
+      "max_dispatches": 21,
+      "reserve_per_unknown_usd": 1.0,
+      "generation_model": "marketing-studio/image/flare",
+      "no_recharge": true,
+      "source": "User said Higgsfield OpenAPI remaining8.65 USD; later corrected only Nano Banana availability, not the balance.",
+      "actual_charge": "UNKNOWN",
+      "verified_balance_usd": 7.05,
+      "balance_verified_at": "2026-10-16T20:19:10.762473+00:00",
+      "balance_source": "Daily Chrome https://open.higgsfield.ai/billing visible balance and Auto top-up dialog; read-only, no settings saved.",
+      "balance_anchor_dispatch_count": 18,
+      "auto_top_up_enabled": true,
+      "auto_top_up_threshold_usd": 3.13,
+      "auto_top_up_amount_usd": 25.0,
+      "threshold_buffer_usd": 0.5,
+      "next_batch_limit": 3,
+      "planning_note": "Daily Chrome after18 completed calls:7.05USD,Auto top-up On unchanged. Next3 at1USD planning reserve =>4.05USD, above3.13+0.50 stop. No recharge; individual cost UNKNOWN."
+    },
+    "note": "Authenticated estimate returns token rates, not a fixed charge. Dispatch cap and observed auto-top-up threshold checked before submission."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "Actual native3840x2160 viewed: south threshold/stairs, plain altar, empty shrine and east corridor exist. The shrine sits nearly flush to the north wall; the new west partition makes the intended behind-shrine cabinet area/access unclear. The east corridor can continue straight north, so the required blocking corner before the backyard is not established.",
+    "decision": "Do not select. Next use an explicit shared geometric layout to establish cabinet access and a real dogleg wall; a generic corridor alone does not satisfy the sightline requirement.",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  },
+  "actual_request_body_sha256": "e26897cfc33f575812e3853ed30def3b901456b5cffce37edab9830b8add6efe",
+  "idempotency_key": "7639fce2-b2e8-4f4b-8a24-05cf2be3bf64",
+  "budget_snapshot": {
+    "created_at": "2026-10-16T18:30:07.402083+00:00",
+    "user_reported_prepaid_usd": 8.65,
+    "actual_balance_verified": true,
+    "max_dispatches": 21,
+    "reserve_per_unknown_usd": 1.0,
+    "generation_model": "marketing-studio/image/flare",
+    "no_recharge": true,
+    "source": "User said Higgsfield OpenAPI remaining8.65 USD; later corrected only Nano Banana availability, not the balance.",
+    "actual_charge": "UNKNOWN",
+    "verified_balance_usd": 7.05,
+    "balance_verified_at": "2026-10-16T20:19:10.762473+00:00",
+    "balance_source": "Daily Chrome https://open.higgsfield.ai/billing visible balance and Auto top-up dialog; read-only, no settings saved.",
+    "balance_anchor_dispatch_count": 18,
+    "auto_top_up_enabled": true,
+    "auto_top_up_threshold_usd": 3.13,
+    "auto_top_up_amount_usd": 25.0,
+    "threshold_buffer_usd": 0.5,
+    "next_batch_limit": 3,
+    "planning_note": "Daily Chrome after18 completed calls:7.05USD,Auto top-up On unchanged. Next3 at1USD planning reserve =>4.05USD, above3.13+0.50 stop. No recharge; individual cost UNKNOWN."
+  }
+}

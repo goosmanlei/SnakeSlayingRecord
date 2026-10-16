@@ -1,0 +1,101 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-county-gate-layout-02",
+  "submission": {
+    "call_id": "task-20261015-0003-county-gate-layout-02",
+    "submission_sha256": "61486bd59c1aa8a96a84a1cdb63af3d79d4c65157e9833bb142dcc1323a4f535",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-county-gate-layout-02.json",
+  "provider_history_id": null,
+  "provider_job_id": "f05da1d6-27ec-4c10-9d22-ee03b54147bb",
+  "provider_resource_id": null,
+  "model": "marketing-studio/image/flare",
+  "project_id": null,
+  "provider": "Higgsfield OpenAPI",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "8123a906d268ee18355dc502d3099ef1bca348ac803144a08ed9504f7c03919f.png",
+    "sha256": "8123a906d268ee18355dc502d3099ef1bca348ac803144a08ed9504f7c03919f",
+    "bytes": 7435659,
+    "mime": "image/png",
+    "width": 3840,
+    "height": 2160
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-county-gate-layout-02",
+    "candidate_id": "candidate-8a311f624aa478afd668ca317a832998b532cc47c373a7d57429a3304e7a7edc",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "actual": "UNKNOWN",
+    "planning_reserve": 0.5,
+    "account": "Higgsfield OpenAPI prepaid balance; no recharge",
+    "budget_snapshot": {
+      "created_at": "2026-10-16T18:30:07.402083+00:00",
+      "user_reported_prepaid_usd": 8.65,
+      "actual_balance_verified": true,
+      "max_dispatches": 10,
+      "reserve_per_unknown_usd": 0.5,
+      "generation_model": "marketing-studio/image/flare",
+      "no_recharge": true,
+      "source": "User said Higgsfield OpenAPI remaining8.65 USD; later corrected only Nano Banana availability, not the balance.",
+      "actual_charge": "UNKNOWN",
+      "verified_balance_usd": 7.87,
+      "balance_verified_at": "2026-10-16T19:06:43.333203+00:00",
+      "balance_source": "Daily Chrome https://open.higgsfield.ai/billing visible balance and Auto top-up dialog; read-only, no settings saved.",
+      "balance_anchor_dispatch_count": 9,
+      "auto_top_up_enabled": true,
+      "auto_top_up_threshold_usd": 3.13,
+      "auto_top_up_amount_usd": 25.0,
+      "threshold_buffer_usd": 0.5,
+      "next_batch_limit": 1,
+      "planning_note": "County gate retry only: replace oblique elevated view with frontal due-south view and parallel notice-wall geometry. One call capped; balance anchor9 calls at7.87USD,0.50USD planning reserve leaves7.37USD, above3.13+0.50USD threshold. No recharge or settings changes."
+    },
+    "note": "Authenticated estimate returns token rates, not a fixed charge. Dispatch cap and observed auto-top-up threshold checked before submission."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "实际查看原生3840×2160 PNG：正面构图中门廊与东照壁平行，照壁长边水平、南面直接朝观察者；靠门端只有一块旧板与一张空白纸，余墙留白。两扇木门向内开，门槛内退，门前石地、西侧站位和东墙前通路连续且无障碍；完整低瓦顶入框，无城楼、狮子、文字或人物。暖灰低饱和、轮廓及两级阴影与本轮空间风格一致。",
+    "decision": "通过作为第0代县衙门口空间依据，按准确候选及原件绑定；后续门内空间、机位与动作仍分别按当前镜头核对。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 3,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/county-gate-layout-02-consumer-selections.json"
+  },
+  "actual_request_body_sha256": "6f7cd3fb124670318b116ad85dd5e3d632f1cea72c5adfdfeee3093cdf543d72",
+  "idempotency_key": "a3ab162d-830e-4890-8c6b-c16c0d7120db",
+  "budget_snapshot": {
+    "created_at": "2026-10-16T18:30:07.402083+00:00",
+    "user_reported_prepaid_usd": 8.65,
+    "actual_balance_verified": true,
+    "max_dispatches": 10,
+    "reserve_per_unknown_usd": 0.5,
+    "generation_model": "marketing-studio/image/flare",
+    "no_recharge": true,
+    "source": "User said Higgsfield OpenAPI remaining8.65 USD; later corrected only Nano Banana availability, not the balance.",
+    "actual_charge": "UNKNOWN",
+    "verified_balance_usd": 7.87,
+    "balance_verified_at": "2026-10-16T19:06:43.333203+00:00",
+    "balance_source": "Daily Chrome https://open.higgsfield.ai/billing visible balance and Auto top-up dialog; read-only, no settings saved.",
+    "balance_anchor_dispatch_count": 9,
+    "auto_top_up_enabled": true,
+    "auto_top_up_threshold_usd": 3.13,
+    "auto_top_up_amount_usd": 25.0,
+    "threshold_buffer_usd": 0.5,
+    "next_batch_limit": 1,
+    "planning_note": "County gate retry only: replace oblique elevated view with frontal due-south view and parallel notice-wall geometry. One call capped; balance anchor9 calls at7.87USD,0.50USD planning reserve leaves7.37USD, above3.13+0.50USD threshold. No recharge or settings changes."
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-thin-girl-flare-01",
+  "submission": {
+    "call_id": "task-20261015-0003-thin-girl-flare-01",
+    "submission_sha256": "cfcc8c9c5ca194758b471177301d2d2cf60b87608556d8f53058f73589682133",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-thin-girl-flare-01.json",
+  "provider_history_id": null,
+  "provider_job_id": "e4c5b075-6d38-4494-92d0-3271bd373e71",
+  "provider_resource_id": null,
+  "model": "marketing-studio/image/flare",
+  "project_id": null,
+  "provider": "Higgsfield OpenAPI",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "76d5465bc5a286ec5d1d875dda2b49459409c86169f3a5f632d4dceeb9d34dd4.png",
+    "sha256": "76d5465bc5a286ec5d1d875dda2b49459409c86169f3a5f632d4dceeb9d34dd4",
+    "bytes": 5232728,
+    "mime": "image/png",
+    "width": 3840,
+    "height": 2160
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-thin-girl-flare-01",
+    "candidate_id": "candidate-78a84f2b72cd701c45e558d78a19e78d28db80c9ee16bb3eea0e0ac055039f51",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "actual": "UNKNOWN",
+    "planning_reserve": 1.0,
+    "account": "Higgsfield OpenAPI prepaid balance; no recharge",
+    "budget_snapshot": {
+      "created_at": "2026-10-16T18:30:07.402083+00:00",
+      "user_reported_prepaid_usd": 8.65,
+      "actual_balance_verified": true,
+      "max_dispatches": 18,
+      "reserve_per_unknown_usd": 1.0,
+      "generation_model": "marketing-studio/image/flare",
+      "no_recharge": true,
+      "source": "User said Higgsfield OpenAPI remaining8.65 USD; later corrected only Nano Banana availability, not the balance.",
+      "actual_charge": "UNKNOWN",
+      "verified_balance_usd": 7.33,
+      "balance_verified_at": "2026-10-16T20:06:23.784137+00:00",
+      "balance_source": "Daily Chrome https://open.higgsfield.ai/billing visible balance and Auto top-up dialog; read-only, no settings saved.",
+      "balance_anchor_dispatch_count": 15,
+      "auto_top_up_enabled": true,
+      "auto_top_up_threshold_usd": 3.13,
+      "auto_top_up_amount_usd": 25.0,
+      "threshold_buffer_usd": 0.5,
+      "next_batch_limit": 3,
+      "planning_note": "After15 completed calls daily Chrome shows7.33USD and Auto top-up On; exact-reference trial completed native4K. Three further calls maximum,1USD reserve each =>4.33USD above3.13+0.50 stop. No recharge or settings changed; individual cost UNKNOWN."
+    },
+    "note": "Authenticated estimate returns token rates, not a fixed charge. Dispatch cap and observed auto-top-up threshold checked before submission."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "已实际看原生3840×2160PNG：正面全身和头像均能辨出两侧低束发，长窄少女脸、细眉与纤瘦肢体一致；灰紫交领短衣以布系带固定，没有立领盘扣。双手在腹前轻拢少量明显缺口、不规则的小碎纸，无完整页或歌本；裤鞋和头脚完整，未添加老妇或家庭关系。浅灰底、两级明暗与线条克制。单人图不声称已经实测与李寄同画面的身高，合景仍按锁定的近等高关系摆放。",
+    "decision": "通过为本轮第0代身份母版，补入相关准确参考；与李寄的相对身高须在组图和实际镜头继续核对。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 2,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/thin-girl-flare-01-consumer-selections.json"
+  },
+  "actual_request_body_sha256": "e4d2dd4bbb5996165bce2a54738b4a86a020bcf1d77c2ed6657ee40a8285eccb",
+  "idempotency_key": "47979f1b-26b3-4acc-a9c9-0011f59d2622",
+  "budget_snapshot": {
+    "created_at": "2026-10-16T18:30:07.402083+00:00",
+    "user_reported_prepaid_usd": 8.65,
+    "actual_balance_verified": true,
+    "max_dispatches": 18,
+    "reserve_per_unknown_usd": 1.0,
+    "generation_model": "marketing-studio/image/flare",
+    "no_recharge": true,
+    "source": "User said Higgsfield OpenAPI remaining8.65 USD; later corrected only Nano Banana availability, not the balance.",
+    "actual_charge": "UNKNOWN",
+    "verified_balance_usd": 7.33,
+    "balance_verified_at": "2026-10-16T20:06:23.784137+00:00",
+    "balance_source": "Daily Chrome https://open.higgsfield.ai/billing visible balance and Auto top-up dialog; read-only, no settings saved.",
+    "balance_anchor_dispatch_count": 15,
+    "auto_top_up_enabled": true,
+    "auto_top_up_threshold_usd": 3.13,
+    "auto_top_up_amount_usd": 25.0,
+    "threshold_buffer_usd": 0.5,
+    "next_batch_limit": 3,
+    "planning_note": "After15 completed calls daily Chrome shows7.33USD and Auto top-up On; exact-reference trial completed native4K. Three further calls maximum,1USD reserve each =>4.33USD above3.13+0.50 stop. No recharge or settings changed; individual cost UNKNOWN."
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-prop-house-layout-01",
+  "submission": {
+    "call_id": "task-20261015-0003-prop-house-layout-01",
+    "submission_sha256": "214cf9e9e1c0f52c395296d74c24b1ddd5598fdbb422aa316340b6177c53d285",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-prop-house-layout-01.json",
+  "provider_history_id": null,
+  "provider_job_id": "6d81b76c-8d48-4104-9edd-afebb3175f28",
+  "provider_resource_id": null,
+  "model": "marketing-studio/image/flare",
+  "project_id": null,
+  "provider": "Higgsfield OpenAPI",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "12cff6d49e3b101404b38473d7669b7deaf5c671263dbe3280f9668461007794.png",
+    "sha256": "12cff6d49e3b101404b38473d7669b7deaf5c671263dbe3280f9668461007794",
+    "bytes": 9468196,
+    "mime": "image/png",
+    "width": 3840,
+    "height": 2160
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-prop-house-layout-01",
+    "candidate_id": "candidate-37c8f0da08b8b96e70183740d4d089f5c458be0412a7be7ef548daeca801805f",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "actual": "UNKNOWN",
+    "planning_reserve": 1.0,
+    "account": "Higgsfield OpenAPI prepaid balance; no recharge",
+    "budget_snapshot": {
+      "created_at": "2026-10-16T18:30:07.402083+00:00",
+      "user_reported_prepaid_usd": 8.65,
+      "actual_balance_verified": true,
+      "max_dispatches": 21,
+      "reserve_per_unknown_usd": 1.0,
+      "generation_model": "marketing-studio/image/flare",
+      "no_recharge": true,
+      "source": "User said Higgsfield OpenAPI remaining8.65 USD; later corrected only Nano Banana availability, not the balance.",
+      "actual_charge": "UNKNOWN",
+      "verified_balance_usd": 7.05,
+      "balance_verified_at": "2026-10-16T20:19:10.762473+00:00",
+      "balance_source": "Daily Chrome https://open.higgsfield.ai/billing visible balance and Auto top-up dialog; read-only, no settings saved.",
+      "balance_anchor_dispatch_count": 18,
+      "auto_top_up_enabled": true,
+      "auto_top_up_threshold_usd": 3.13,
+      "auto_top_up_amount_usd": 25.0,
+      "threshold_buffer_usd": 0.5,
+      "next_batch_limit": 3,
+      "planning_note": "Daily Chrome after18 completed calls:7.05USD,Auto top-up On unchanged. Next3 at1USD planning reserve =>4.05USD, above3.13+0.50 stop. No recharge; individual cost UNKNOWN."
+    },
+    "note": "Authenticated estimate returns token rates, not a fixed charge. Dispatch cap and observed auto-top-up threshold checked before submission."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "已实际看3840×2160原件：屋内、南门、门前河岸同图连接，北卷幕、外靠舞台框、门东两杆和下水岸地可辨；东窗仅能清楚看到内侧窗台，供压书的外沿未显露；水中大平石紧邻一块小石，而方案要求下游一臂处两小石夹脚的独立狭缝，当前位置和支撑关系仍含混。",
+    "decision": "不选作完整空间；以该次缺陷为依据重构观察方向和岸石几何，不能把未见窗外沿或一般石缝按文字计为完成。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  },
+  "actual_request_body_sha256": "db89e5a18a73bac0adfa3a78004f5f49329f818786749842cd2fd7a05836c87c",
+  "idempotency_key": "1a473e38-51d2-4e6b-9657-f92a3eb749d7",
+  "budget_snapshot": {
+    "created_at": "2026-10-16T18:30:07.402083+00:00",
+    "user_reported_prepaid_usd": 8.65,
+    "actual_balance_verified": true,
+    "max_dispatches": 21,
+    "reserve_per_unknown_usd": 1.0,
+    "generation_model": "marketing-studio/image/flare",
+    "no_recharge": true,
+    "source": "User said Higgsfield OpenAPI remaining8.65 USD; later corrected only Nano Banana availability, not the balance.",
+    "actual_charge": "UNKNOWN",
+    "verified_balance_usd": 7.05,
+    "balance_verified_at": "2026-10-16T20:19:10.762473+00:00",
+    "balance_source": "Daily Chrome https://open.higgsfield.ai/billing visible balance and Auto top-up dialog; read-only, no settings saved.",
+    "balance_anchor_dispatch_count": 18,
+    "auto_top_up_enabled": true,
+    "auto_top_up_threshold_usd": 3.13,
+    "auto_top_up_amount_usd": 25.0,
+    "threshold_buffer_usd": 0.5,
+    "next_batch_limit": 3,
+    "planning_note": "Daily Chrome after18 completed calls:7.05USD,Auto top-up On unchanged. Next3 at1USD planning reserve =>4.05USD, above3.13+0.50 stop. No recharge; individual cost UNKNOWN."
+  }
+}

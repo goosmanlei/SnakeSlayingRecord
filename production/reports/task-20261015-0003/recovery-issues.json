@@ -1,7 +1,7 @@
 {
   "format": "task-recovery-issue-v1",
   "task_id": "task-20261015-0003",
-  "system_commit": "096b6bb0d7c13a20d61c54a2211b48b245f8abc7",
+  "system_commit": "4bb849b3fca331f7d46a8eee299cc7a6c6324aa6",
   "repository": "review_desk",
   "activation": "active",
   "issues": [
@@ -143,6 +143,14 @@
       "user_request": "下一个checkpoint请先暂停任务，我要临时退出下当前会话",
       "resolution": "用户已通过run-cfy6gv6t.md重新启动原任务；当前会话执行认证成功，从阶段07恢复，暂停条件解除。阶段07归档保持原字节，新的制作和验证保存至阶段08。",
       "remaining": "逐项现状以progress.json为准；不重发历史未知请求。"
+    },
+    {
+      "id": "higgsfield-flare-image-input",
+      "status": "runtime_verified",
+      "action": "Scope the contract to marketing-studio/image/flare, image inputs only up to16, numbered attachments and enhance_prompt=false; preserve exact whole originals.",
+      "verification": "Aheng and LiJi wet states plus moon retry used exact image refs; Aheng/LiJi actual native4K passed, moon failed proportion independently. Upload destination and returned public original hash checked; mutated candidate/revision/SHA reject before network.",
+      "evidence_runtime": ".runtime/task-20261015-0003/hf-input-exactness-negative-checks.json",
+      "candidate_commit": "4bb849b3fca331f7d46a8eee299cc7a6c6324aa6"
     }
   ],
   "resume_requirement": "当前run已认证并持有双仓任务锁。按本轮准确候选、原件和当前方案续做；真实Chrome已恢复，待最终正式发布后再复验。",
@@ -151,6 +159,7 @@
     "browser": "daily Chrome default profile",
     "evidence_runtime": ".runtime/task-20261015-0003/chrome-stage08-candidate-fixes.json",
     "formal_publication_verified": false,
-    "audio_quality_verified_by_playback": false
+    "audio_quality_verified_by_playback": false,
+    "latest_evidence": "production/receipts/chrome-task-20261015-0003-stage09.json"
   }
 }
