@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-singers-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-singers-identity-01",
+    "submission_sha256": "f4e030d5b251553d24d9304d30fe46245ced8da22e7dd233f3920e5b2cccf826",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-singers-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "60a163b3ce65316ddf6befd0beab99d45b4b4c4a257d31e5926bea00cca2e0c4.jpg",
+    "sha256": "60a163b3ce65316ddf6befd0beab99d45b4b4c4a257d31e5926bea00cca2e0c4",
+    "bytes": 7619109,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-singers-identity-01",
+    "candidate_id": "candidate-25668d4105c1f6c745be951931c70308a96fdef5c1516b1e517e1dcff37d2a45",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "已实际看原生5504×3072 JPEG：十二名男女唱工按上下两排各六人呈现，衣色为灰蓝、茶灰、浅赭、米白、灰绿，脸形、发髻、短须和身高有差，手脚均露出。包含外观年少者，未限定全部成人；当前实体事实也未要求全体成年。无祭服或面具。",
+    "decision": "选择为其他唱工的第0代群体母版。按两排固定索引维持身份；阿蘅仍使用独立已选身份，不用本图年少人物替代阿蘅。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 2,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/singers-identity-01-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 7183,
+    "total_input_tokens": 362,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 362
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 5415,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1406
+  },
+  "actual_request_body_sha256": "9265e5e3c1ee5e48ce2739905558f037b5429c98e53b50c247131faf0a4d960b",
+  "submitted_inputs": []
+}

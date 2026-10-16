@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-rice-bag-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-rice-bag-identity-01",
+    "submission_sha256": "d61b55a73d091a8f88aa992e4508d01b3c21d64305432c979bebcc0263a998a6",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-rice-bag-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "1cb0cea7788bd57c7d56e04c810f74760241995960c18f37d3951a7436274021.jpg",
+    "sha256": "1cb0cea7788bd57c7d56e04c810f74760241995960c18f37d3951a7436274021",
+    "bytes": 6700895,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-rice-bag-identity-01",
+    "candidate_id": "candidate-19e2490dddb43f422d650a403404a40b6f8bd96a74cebfbd472092180071237d",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "已实际看原生5504×3072 JPEG：三个形态均为浅灰棕软布小袋，浅米补块固定在主可见面的右下，深灰抽绳、软塌袋身和略圆底相符；中图撑口有暖黄色米粒填充，右图收口系结，没有木框或字纹。空袋与装米后的褶皱改变不形成另一实物，图内不提供法定容量或工资数量。",
+    "decision": "选择为阿蘅同一小米袋的第0代道具母版。以袋形、补块与收口结构固定身份；米粒配色偏暖，镜头的米量和米流仍按各场动作检查，不由设定图推算数量。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 27,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/rice-bag-identity-01-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 5974,
+    "total_input_tokens": 293,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 293
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4324,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1357
+  },
+  "actual_request_body_sha256": "2590a95e70c39bf5393991f5fb3ef6b1d6ba7cad707ecc394e9ad20d2fcbf047",
+  "submitted_inputs": []
+}

@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-elders-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-elders-identity-01",
+    "submission_sha256": "7019847965cb25a5657e87d68d67cb9989cc5c0770384949f4d03d6e8b62f942",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-elders-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "9200caf1d7622b6b62ce81d10700e8cd3fc2aa8739c7edebf9ffb0d616b3f4aa.jpg",
+    "sha256": "9200caf1d7622b6b62ce81d10700e8cd3fc2aa8739c7edebf9ffb0d616b3f4aa",
+    "bytes": 7913738,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-elders-identity-01",
+    "candidate_id": "candidate-9eeddcdc6b6cdc5e8795c0f4469f4ce530af76c1575b69e8727ae83929efbde9",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "已实际看原生5504×3072 JPEG：左甲长瘦脸、白眉山羊须、灰帽、灰绿交领长袍及灰黑裤；右乙宽圆脸、灰短须、低髻不戴帽、米灰上衣、褐色坎肩及蓝灰裤。两位正侧视向各自保持脸形、发式和衣装，空手且双脚完整，未混成同一身份。",
+    "decision": "选择为两位乡老第0代群体身份母版，按左甲右乙固定索引使用；不以同一张脸替代两位人物。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 18,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/elders-identity-01-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 6165,
+    "total_input_tokens": 345,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 345
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4878,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 942
+  },
+  "actual_request_body_sha256": "30338b44ebcdcc571c903f959853c9f72105946d9dcac93e4398622d9047e6ce",
+  "submitted_inputs": []
+}

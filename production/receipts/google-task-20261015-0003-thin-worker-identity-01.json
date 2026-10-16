@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-thin-worker-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-thin-worker-identity-01",
+    "submission_sha256": "3093e4f907c67f9fba16fddee6f9bdc601c538ab9f40cb00c53cf3d82d446b98",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-thin-worker-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "b482aa148a6f5f1768855e4558d666b1b329077af7983f33cfdafb503cfcd8f3.jpg",
+    "sha256": "b482aa148a6f5f1768855e4558d666b1b329077af7983f33cfdafb503cfcd8f3",
+    "bytes": 8027252,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-thin-worker-identity-01",
+    "candidate_id": "candidate-5681b6cc60dfaf1b1119ae3511393cbbc603eec762bdcf025e3f042c5141d9b1",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "已实际看原生5504×3072 JPEG：瘦高庙工长颈、窄颧尖下巴、浓直眉、黑发低束无须，灰褐及膝交领长褂、灰绿长裤和旧布鞋。两全身视向袖口略宽、臂腿细长，手脚完整且空手；无新增缝合木牌或布包。",
+    "decision": "选择为瘦高庙工第0代身份母版；和搬粮群体分开使用，实际同框身高差由后续镜头核验。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 17,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/thin-worker-identity-01-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 5688,
+    "total_input_tokens": 349,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 349
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4239,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1100
+  },
+  "actual_request_body_sha256": "031d8944783eddcbab1e40b5c4dafca9364a4da27e0c9971a334c501de001c3a",
+  "submitted_inputs": []
+}

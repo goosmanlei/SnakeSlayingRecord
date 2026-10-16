@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-charcoal-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-charcoal-identity-01",
+    "submission_sha256": "dd8935f7b1fa931ea033acd1c423e4f6a04a3e23bea655185b47a4bac5af4cec",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-charcoal-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "57b9e8c4a052986025c6025f2360ffbe982640e79d5c965cdd4556a4e24bc9d4.jpg",
+    "sha256": "57b9e8c4a052986025c6025f2360ffbe982640e79d5c965cdd4556a4e24bc9d4",
+    "bytes": 6917157,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-charcoal-identity-01",
+    "candidate_id": "candidate-a483d16294946c3465aeb06c89c05f06d252384973d452531d748cb9fa99b8b5",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "已实际看原生5504×3072 JPEG：短黑灰炭头主图完整，断口近圆方且不规则，另一端有磨斜的写面；两处局部图分别说明断口与写面。表层少量灰斑及散落碎屑，没有浓烟、包纸、刻字或铅笔外壳，主体轮廓清楚。画内没有手作尺度对照，不能由显示大小判断实物绝对尺寸。",
+    "decision": "选择为短木炭头的第0代形制母版。后续手持镜头按既定两指可捏的实物尺度制作，不能把放大的结构局部直接当成大炭块。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 2,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/charcoal-identity-01-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 6656,
+    "total_input_tokens": 281,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 281
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 5023,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1352
+  },
+  "actual_request_body_sha256": "c36cc09d3304cacf5f206e4b2e6cbf3e2d2ec68c1efa9cd1d82bcd3ce3714351",
+  "submitted_inputs": []
+}

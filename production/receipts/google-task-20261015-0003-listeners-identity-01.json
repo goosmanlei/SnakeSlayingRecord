@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-listeners-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-listeners-identity-01",
+    "submission_sha256": "6cec5ba1d19db586525877775452a082bf613b358abc1b6c6b63bc0827d83ed6",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-listeners-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "978506e5103147442eff03d793be8c28379de2b82bb965ef0687bf539bfdf479.jpg",
+    "sha256": "978506e5103147442eff03d793be8c28379de2b82bb965ef0687bf539bfdf479",
+    "bytes": 7705601,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-listeners-identity-01",
+    "candidate_id": "candidate-786862c755420191665dfb195dfb9bbbf06ae55fd9406ac6d94ddbfe534f4692",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "已实际看原生5504×3072 JPEG：五位听客完整入框：左三为灰蓝长脸青年、灰褐圆脸提浅袋男子、豆绿衣灰裙持褐袋妇人；右二米灰衣方脸男子与浅赭衣窄脸妇人独立成组。近图与各自全身对应，袋归各自持有者，衣装古代交领、无文字。",
+    "decision": "选择五位听客第0代群体母版；固定左右索引，青年作为说话者，不将听歌组和进铺组互换。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 2,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/listeners-identity-01-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 5882,
+    "total_input_tokens": 387,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 387
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4275,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1220
+  },
+  "actual_request_body_sha256": "f42091ac3c7fe5b3922015882b6bbf017b605476ad79ea18fa04882968f7ec3e",
+  "submitted_inputs": []
+}

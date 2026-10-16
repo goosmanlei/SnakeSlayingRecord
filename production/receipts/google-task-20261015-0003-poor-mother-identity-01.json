@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-poor-mother-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-poor-mother-identity-01",
+    "submission_sha256": "1427b7240a173519d1aa94589c69ab3c498c40bb5d022a7fae5ea40346a664ac",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-poor-mother-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "510dc8ae7d785ddfd06c0ae54a0b0adf19dfbd614a909f612dbac63b138c0043.jpg",
+    "sha256": "510dc8ae7d785ddfd06c0ae54a0b0adf19dfbd614a909f612dbac63b138c0043",
+    "bytes": 7071141,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-poor-mother-identity-01",
+    "candidate_id": "candidate-97b9ea15d227066c82d80f64d039a279fa702b5b83e16a9fc2855b8823f561f8",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "已实际看原生5504×3072 JPEG：妇人长圆脸、黑发低髻、赭色上衣、浅灰围裙和深灰裙一致。她自身左臂托住幼儿臀腿，自身右手空出；灰布空袋在左肘外，没有穿过幼儿腿。幼儿抱持图与独立坐姿图同为圆脸短黑发、浅米短衣、灰绿裤、两只浅褐小鞋；独立坐姿的臀腿有地面支撑。",
+    "decision": "选择为问粮妇人与同一幼儿的第0代母版；双鞋齐全的初始形象与后续掉鞋动作分开，袋子不作为阿蘅米袋的替代。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 8,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/poor-mother-identity-01-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 5803,
+    "total_input_tokens": 379,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 379
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4229,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1195
+  },
+  "actual_request_body_sha256": "6dc30cf76832411f8feacd2dd558dd2627092f3a7b25cb924af2359610f6959d",
+  "submitted_inputs": []
+}
