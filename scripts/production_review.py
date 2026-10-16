@@ -43,14 +43,25 @@ def complete_export_index(store, production):
     for row in store.db.execute("SELECT object_id,id,json_extract(payload,'$.format') AS format,json_extract(payload,'$.entity_type') AS subtype FROM revisions WHERE json_extract(payload,'$.format') IN ('production-entity-v1','production-av-shot-v1')"):
         if heads.get(row['object_id']) == row['id']:
             entities[row['object_id']] = {'revision_id':row['id'], 'type':'shot' if row['format']=='production-av-shot-v1' else row['subtype']}
+    from review_desk.candidate_reset import receipts
+    resets = [r['id'] for r in receipts(store)]
+    from review_desk.numbering_restart import epoch
     return {'format': 'production-export-index-v1', 'heads': heads,
             'revisions': sorted(revisions), 'files': files,
+            **({'candidate_reset_ids': sorted(resets)} if resets else {}),
+            'production_numbering_epoch': epoch(store.db),
             'entity_contract':'production-entity-v2','entities':entities}
 
 
 def verify_export_index(index, export_dir, formats):
     """Bind the small index to the exact complete bundle, including all history."""
     from review_desk.material_content_stream import members
+    from review_desk.numbering_restart import FORMAT as NUMBERING
+    numbering = sorted(row['id'] for row in members(export_dir/'objects.json', 'production_current_operations')
+                       if json.loads(row['result']).get('format') == NUMBERING)
+    manifest = json.loads((export_dir/'manifest.json').read_text())
+    if numbering != index.get('production_numbering_epoch', []) or numbering != manifest.get('production_numbering_epoch', []):
+        raise ValueError('编号迁移事实与完整导出/恢复索引不一致；请从最新正式数据重新准备完整包')
     wanted = set(index['revisions'])
     found, heads = set(), {}
     versions, entities = {}, {}
@@ -68,6 +79,11 @@ def verify_export_index(index, export_dir, formats):
         raise ValueError('complete export and entity index describe different entities')
     if found != wanted or heads != index['heads']:
         raise ValueError('complete export and production index describe different revisions')
+    if index.get('candidate_reset_ids'):
+        actual = sorted(json.loads(row['result'])['id'] for row in members(export_dir/'objects.json','production_current_operations')
+                        if json.loads(row['result']).get('format') in ('generated-candidates-reset-v1','full-production-reset-v1'))
+        if actual != index['candidate_reset_ids']:
+            raise ValueError('candidate reset facts and recovery index differ')
 
 
 def main():
@@ -96,6 +112,9 @@ def main():
     destination=isolated_instance(root,args.destination)
     if destination.exists():raise ValueError('recovery requires a new destination; no existing database is overwritten')
     data=json.loads(index_path.read_text())
+    reset_plan=root/'production/full-production-reset/plan.json'
+    if reset_plan.exists() and json.loads(reset_plan.read_text())['id'] not in data.get('candidate_reset_ids',[]):
+        raise ValueError('本轮旧候选已删除，拒绝旧恢复包；请使用当前零候选完整导出。')
     if data['base_manifest_sha256']!=sha(root/'export/manifest.json'):raise ValueError('production index and export differ')
     verify_export_index(data,root/'export',production.FORMATS)
     destination.mkdir(parents=True)
