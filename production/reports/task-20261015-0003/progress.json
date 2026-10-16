@@ -5,13 +5,14 @@
   "source_manifest": "../../material-plans/manifest.json",
   "total": 191,
   "status_counts": {
-    "not_produced": 182,
-    "executor_checked": 3,
+    "not_produced": 173,
+    "executor_checked_partial": 1,
+    "executor_checked": 11,
     "hearing_unverified": 5,
-    "registration_blocked_and_quality_failed": 1
+    "quality_failed": 1
   },
   "call_counts": {
-    "completed": 8,
+    "completed": 24,
     "unknown": 1
   },
   "calls": [
@@ -49,10 +50,10 @@
       "call_id": "task-20261015-0003-aheng-identity-02",
       "status": "completed",
       "cost": {
-        "currency": "OpenArt credits",
-        "quoted": 350,
         "actual": "UNKNOWN",
-        "note": "4k/high/16:9单图，自定义3840×2160且lockAspectRatio=false；实际扣费按平台字段，未返回即UNKNOWN。"
+        "currency": "OpenArt credits",
+        "note": "4k/high/16:9单图，自定义3840×2160且lockAspectRatio=false；实际扣费按平台字段，未返回即UNKNOWN。",
+        "quoted": 350
       }
     },
     {
@@ -72,36 +73,197 @@
       "call_id": "task-20261015-0003-qingpeng-full-02",
       "status": "completed",
       "cost": {
+        "actual": "UNKNOWN",
         "currency": "USD",
-        "estimated": 0.08,
-        "actual": "UNKNOWN"
+        "estimated": "0.08",
+        "note": "用户报告余额17.74美元；本次真实账单未核。"
       }
     },
     {
       "call_id": "task-20261015-0003-boat-song-full-02",
       "status": "completed",
       "cost": {
+        "actual": "UNKNOWN",
         "currency": "USD",
-        "estimated": 0.08,
-        "actual": "UNKNOWN"
+        "estimated": "0.08"
       }
     },
     {
       "call_id": "task-20261015-0003-temple-song-full-02",
       "status": "completed",
       "cost": {
+        "actual": "UNKNOWN",
         "currency": "USD",
-        "estimated": 0.08,
-        "actual": "UNKNOWN"
+        "estimated": "0.08"
       }
     },
     {
       "call_id": "task-20261015-0003-ritual-song-full-02",
       "status": "completed",
       "cost": {
+        "actual": "UNKNOWN",
         "currency": "USD",
-        "estimated": 0.08,
-        "actual": "UNKNOWN"
+        "estimated": "0.08"
+      }
+    },
+    {
+      "call_id": "task-20261015-0003-aheng-wet-02",
+      "status": "completed",
+      "cost": {
+        "actual": "UNKNOWN",
+        "currency": "OpenArt credits",
+        "note": "报价对应单图；实际扣费字段未返回时保留UNKNOWN。",
+        "quoted": 80
+      }
+    },
+    {
+      "call_id": "task-20261015-0003-aheng-mother-identity-01",
+      "status": "completed",
+      "cost": {
+        "actual": "UNKNOWN",
+        "currency": "OpenArt credits",
+        "note": "报价对应单图；实际扣费字段未返回时保留UNKNOWN。",
+        "quoted": 350
+      }
+    },
+    {
+      "call_id": "task-20261015-0003-moer-identity-01",
+      "status": "completed",
+      "cost": {
+        "actual": "UNKNOWN",
+        "currency": "OpenArt credits",
+        "note": "报价对应单图；实际扣费字段未返回时保留UNKNOWN。",
+        "quoted": 350
+      }
+    },
+    {
+      "call_id": "task-20261015-0003-aheng-home-layout-01",
+      "status": "completed",
+      "cost": {
+        "actual": "UNKNOWN",
+        "currency": "OpenArt credits",
+        "note": "报价对应单图；实际扣费字段未返回时保留UNKNOWN。",
+        "quoted": 350
+      }
+    },
+    {
+      "call_id": "task-20261015-0003-aheng-wet-03",
+      "status": "completed",
+      "cost": {
+        "actual": "UNKNOWN",
+        "currency": "OpenArt credits",
+        "note": "报价对应单图；实际扣费字段未返回时保留UNKNOWN。",
+        "quoted": 80
+      }
+    },
+    {
+      "call_id": "task-20261015-0003-aheng-mother-identity-02",
+      "status": "completed",
+      "cost": {
+        "actual": "UNKNOWN",
+        "currency": "OpenArt credits",
+        "note": "报价对应单图；实际扣费字段未返回时保留UNKNOWN。",
+        "quoted": 350
+      }
+    },
+    {
+      "call_id": "task-20261015-0003-moer-identity-02",
+      "status": "completed",
+      "cost": {
+        "actual": "UNKNOWN",
+        "currency": "OpenArt credits",
+        "note": "报价对应单图；实际扣费字段未返回时保留UNKNOWN。",
+        "quoted": 350
+      }
+    },
+    {
+      "call_id": "task-20261015-0003-aheng-home-layout-02",
+      "status": "completed",
+      "cost": {
+        "actual": "UNKNOWN",
+        "currency": "OpenArt credits",
+        "note": "报价对应单图；实际扣费字段未返回时保留UNKNOWN。",
+        "quoted": 350
+      }
+    },
+    {
+      "call_id": "task-20261015-0003-liji-identity-01",
+      "status": "completed",
+      "cost": {
+        "actual": "UNKNOWN",
+        "currency": "OpenArt credits",
+        "note": "报价对应单图；实际扣费字段未返回时保留UNKNOWN。",
+        "quoted": 350
+      }
+    },
+    {
+      "call_id": "task-20261015-0003-songbook-identity-01",
+      "status": "completed",
+      "cost": {
+        "actual": "UNKNOWN",
+        "currency": "OpenArt credits",
+        "note": "报价对应单图；实际扣费字段未返回时保留UNKNOWN。",
+        "quoted": 350
+      }
+    },
+    {
+      "call_id": "task-20261015-0003-snake-identity-01",
+      "status": "completed",
+      "cost": {
+        "actual": "UNKNOWN",
+        "currency": "OpenArt credits",
+        "note": "报价对应单图；实际扣费字段未返回时保留UNKNOWN。",
+        "quoted": 350
+      }
+    },
+    {
+      "call_id": "task-20261015-0003-troupe-identity-01",
+      "status": "completed",
+      "cost": {
+        "actual": "UNKNOWN",
+        "currency": "OpenArt credits",
+        "note": "报价对应单图；实际扣费字段未返回时保留UNKNOWN。",
+        "quoted": 350
+      }
+    },
+    {
+      "call_id": "task-20261015-0003-mother-oldstage-01",
+      "status": "completed",
+      "cost": {
+        "actual": "UNKNOWN",
+        "currency": "OpenArt credits",
+        "note": "报价对应单图；实际扣费字段未返回时保留UNKNOWN。",
+        "quoted": 80
+      }
+    },
+    {
+      "call_id": "task-20261015-0003-songbook-identity-02",
+      "status": "completed",
+      "cost": {
+        "actual": "UNKNOWN",
+        "currency": "OpenArt credits",
+        "note": "报价对应单图；实际扣费字段未返回时保留UNKNOWN。",
+        "quoted": 350
+      }
+    },
+    {
+      "call_id": "task-20261015-0003-snake-identity-02",
+      "status": "completed",
+      "cost": {
+        "actual": "UNKNOWN",
+        "currency": "OpenArt credits",
+        "note": "报价对应单图；实际扣费字段未返回时保留UNKNOWN。",
+        "quoted": 350
+      }
+    },
+    {
+      "call_id": "task-20261015-0003-lidan-identity-01",
+      "status": "completed",
+      "cost": {
+        "actual": "UNKNOWN",
+        "currency": "OpenArt credits",
+        "note": "报价对应单图；实际扣费字段未返回时保留UNKNOWN。",
+        "quoted": 350
       }
     }
   ],
@@ -140,12 +302,12 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M112",
       "requirement_id": "new26-aheng-home-layout",
-      "content_sha256": "f31e834ca3eedcf14ac2fe138ab7f02040678cdf816178ccc2b4af43d57555ea",
+      "content_sha256": "1c48dae5927b9ffdea102cde05026f8a5ec73728a43d2746068f4bca37490226",
       "title": "阿蘅与母亲的小屋 · 空间依据",
       "category": "scene-image",
       "scope_kind": "ENTITY",
@@ -162,21 +324,68 @@
           "customHeight": 2160,
           "customWidth": 3840,
           "imageCount": 1,
-          "lockAspectRatio": true,
+          "lockAspectRatio": false,
           "outputFormat": "png",
           "quality": "high",
           "resolutionTier": "4k",
           "variant": "sunburst"
         }
       },
-      "status": "not_produced",
-      "candidates": [],
+      "status": "executor_checked_partial",
+      "candidates": [
+        {
+          "candidate_id": "candidate-652d2f870e124d8837bc02bbcd8734e4433aafc7b17ff62e49d1935eb634db7e",
+          "number": 1,
+          "asset": {
+            "object_id": "asset-task-20261015-0003-aheng-home-layout-01",
+            "revision_id": "f05fcba7d23e173cc9e69d0af32d350e23a8fc8159fc86d29fdafc916016cf05"
+          },
+          "call_id": "task-20261015-0003-aheng-home-layout-01",
+          "components": [
+            {
+              "bytes": 7906466,
+              "file": "e59cb244ac498fe9940832a6a28e7960ce824f5abfcf1b461c847eae46c5639d.png",
+              "height": 2160,
+              "id": "original",
+              "mime": "image/png",
+              "role": "original",
+              "sha256": "e59cb244ac498fe9940832a6a28e7960ce824f5abfcf1b461c847eae46c5639d",
+              "width": 3840
+            }
+          ],
+          "quality_status": "quality_failed",
+          "quality_findings": "已实际打开完整3840×2160原件。主图的床、桌、灶和通路清楚；但床头饮水小几在主图位于西端，俯视图移到东端，外部视图又把窗画在与正门同一南墙。主图桌上灯形也偏近现代玻璃罩提灯，不能作为本故事统一空间母版。"
+        },
+        {
+          "candidate_id": "candidate-32910fa7de7d093e2556dd3c5da3492c8be81171bca2c1fea181c2de23e496bd",
+          "number": 2,
+          "asset": {
+            "object_id": "asset-task-20261015-0003-aheng-home-layout-02",
+            "revision_id": "ef13285cd8653af204fb64f3ed87a8c5a5d021ed3b78517cc9a29ba3aef1abdd"
+          },
+          "call_id": "task-20261015-0003-aheng-home-layout-02",
+          "components": [
+            {
+              "bytes": 9794316,
+              "file": "ae3471c44de7333aeca46c9407679b134e5813e824e8334d7da2a2c904c47374.png",
+              "height": 2160,
+              "id": "original",
+              "mime": "image/png",
+              "role": "original",
+              "sha256": "ae3471c44de7333aeca46c9407679b134e5813e824e8334d7da2a2c904c47374",
+              "width": 3840
+            }
+          ],
+          "quality_status": "executor_checked_partial",
+          "quality_findings": "已实际打开完整3840×2160原件。主透视和俯视中床均沿北墙、床头朝西，水几在西北床头；西侧桌凳、西南灶及半空米容器、唯一东窗、东南门及门到床的通路一致。灯已是朴素陶质油灯。第三幅实际是室内门槛近图而非要求的屋外立面，能说明门与台阶关系，但不作为外立面参考；墙木表面仍有轻手绘纹理，不影响当前空间结构用途。"
+        }
+      ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。"
+        "室内布局可用；门外视向、松翘石阶及外部镜头用途仍待补齐检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿同一需求补核外部用途；当前未批量绑定下游，不计完整空间母版通过。"
     },
     {
       "code": "M567",
@@ -211,7 +420,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M001",
@@ -293,7 +502,7 @@
     {
       "code": "M115",
       "requirement_id": "new26-aheng-mother-identity",
-      "content_sha256": "941a16f55c0962051a9c97a852b27dee448ac0f9c0e02b7c886c6664f7379758",
+      "content_sha256": "a44101801851bca4b3007e34da663946523740ee60452abc3112da0e08f87ba9",
       "title": "阿蘅母亲 · 基础形象",
       "category": "character-image",
       "scope_kind": "ENTITY",
@@ -310,21 +519,66 @@
           "customHeight": 2160,
           "customWidth": 3840,
           "imageCount": 1,
-          "lockAspectRatio": true,
+          "lockAspectRatio": false,
           "outputFormat": "png",
           "quality": "high",
           "resolutionTier": "4k",
           "variant": "sunburst"
         }
       },
-      "status": "not_produced",
-      "candidates": [],
+      "status": "executor_checked",
+      "candidates": [
+        {
+          "candidate_id": "candidate-6cf31b47e21e90379a3f4788808f1704036e16efdeca0100150e9fa9b300bd83",
+          "number": 1,
+          "asset": {
+            "object_id": "asset-task-20261015-0003-aheng-mother-identity-01",
+            "revision_id": "bbe5e2814b7afdea49a5ef827e175265b3475a7b0a2139b21b6b6b6dc112611d"
+          },
+          "call_id": "task-20261015-0003-aheng-mother-identity-01",
+          "components": [
+            {
+              "bytes": 8674819,
+              "file": "cda409f3ceaaa89ac950d21021af754d09b654ce5745b50618e67d7a9e82a80e.png",
+              "height": 2160,
+              "id": "original",
+              "mime": "image/png",
+              "role": "original",
+              "sha256": "cda409f3ceaaa89ac950d21021af754d09b654ce5745b50618e67d7a9e82a80e",
+              "width": 3840
+            }
+          ],
+          "quality_status": "quality_failed",
+          "quality_findings": "已实际打开完整3840×2160原件。三视向为同一清瘦成年女性，米灰上衣、灰蓝裙和布鞋一致；臀部落座、脚落地，低凳承重可读。近脸和衣料有明显细碎揉擦、渐变与纹理，头发线条密度较高，偏半写实，未达到已通过阿蘅母版的干净二维统一画风。"
+        },
+        {
+          "candidate_id": "candidate-80b1f40858892819299219b7585d21a82fc81f124ffc7777c61c43698c02284f",
+          "number": 2,
+          "asset": {
+            "object_id": "asset-task-20261015-0003-aheng-mother-identity-02",
+            "revision_id": "bbf433fbfd6c0ad97589af824f6cdd6ec96af8974989b0fdf8d4252355af46cb"
+          },
+          "call_id": "task-20261015-0003-aheng-mother-identity-02",
+          "components": [
+            {
+              "bytes": 5685325,
+              "file": "8669cf6757bd1851bba60ef9ce6630247769c53b8587bcdb987e0cea808d29ca.png",
+              "height": 2160,
+              "id": "original",
+              "mime": "image/png",
+              "role": "original",
+              "sha256": "8669cf6757bd1851bba60ef9ce6630247769c53b8587bcdb987e0cea808d29ca",
+              "width": 3840
+            }
+          ],
+          "quality_status": "executor_checked",
+          "quality_findings": "已实际打开完整3840×2160原件。三视向保持同一清瘦成年女性、窄脸、低束发、米灰交领上衣、灰蓝裙及灰布鞋；低凳承托臀部、双手放膝、脚落地，手足可见。面部、发束和衣物已经改为较干净的二维色块，没有上一候选的密集布纹和半写实脸部揉擦。背景轻微柔和色调不妨碍身份用途。"
+        }
+      ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "尚无本轮原件及质量检查。"
-      ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "gaps": [],
+      "resume_when": "候选2已通过对应用途实际看图；准确原件已选入29处当前输入。"
     },
     {
       "code": "M116",
@@ -359,7 +613,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M002",
@@ -424,7 +678,7 @@
     {
       "code": "M055",
       "requirement_id": "new26-aheng-wet-overall",
-      "content_sha256": "fd3e6700bf79b50b28da974caeb9ddf0211b48409fb0acf1ed1840d857405dd9",
+      "content_sha256": "d54e0b2277a6923a61881e07ed86acc758164897fc28e5d7060f7fd460cc14ab",
       "title": "阿蘅 · 浅滩捞书后的湿衣 · 完整形态",
       "category": "character-image",
       "scope_kind": "STATE",
@@ -442,17 +696,63 @@
           "resolution": "4K"
         }
       },
-      "status": "registration_blocked_and_quality_failed",
-      "candidates": [],
+      "status": "quality_failed",
+      "candidates": [
+        {
+          "candidate_id": "candidate-820b92b64704ded4361d1806d80ba2f732a4d573dd9a8df9d4eb09acd3f436b9",
+          "number": 1,
+          "asset": {
+            "object_id": "asset-task-20261015-0003-aheng-wet-02",
+            "revision_id": "0faf5bce5a57a6d8835b6f814584398d45783fdcfb35093d6babb64dcd27ccde"
+          },
+          "call_id": "task-20261015-0003-aheng-wet-02",
+          "components": [
+            {
+              "bytes": 17944228,
+              "file": "ce173f8612a3d7bc6b5fd1ca19dbb60a62f4e33e39b9988070d685c2fd1b4ede.png",
+              "height": 3072,
+              "id": "original",
+              "mime": "image/png",
+              "role": "original",
+              "sha256": "ce173f8612a3d7bc6b5fd1ca19dbb60a62f4e33e39b9988070d685c2fd1b4ede",
+              "width": 5504
+            }
+          ],
+          "quality_status": "quality_failed",
+          "quality_findings": "已实际打开完整原件。脸型、低束发、常服和低帮鞋与干净母版相符；胸肩已无上一张的大湿斑，湿痕集中在袖口及裙膝、下缘。但双手指端被画成明显深灰斑，容易读成沾泥或污手；右侧仍是正脸，未提供方案要求的袖膝细节。原生5504×3072按用户本次决定保留并记录，不因约0.8%的比例偏差重做。"
+        },
+        {
+          "candidate_id": "candidate-ef07c629c660e7472a77df62ef816cea56a3419d0f999bef733cf1a8a372d086",
+          "number": 2,
+          "asset": {
+            "object_id": "asset-task-20261015-0003-aheng-wet-03",
+            "revision_id": "89fe3fcf10fa19d231941086e5d8260e70ea8b50c32037b08a4501921b019c58"
+          },
+          "call_id": "task-20261015-0003-aheng-wet-03",
+          "components": [
+            {
+              "bytes": 17704544,
+              "file": "071264bbc4b6a4db8d7aaba4e7d24b435052000917f393900f44bd51a0ce501a.png",
+              "height": 3072,
+              "id": "original",
+              "mime": "image/png",
+              "role": "original",
+              "sha256": "071264bbc4b6a4db8d7aaba4e7d24b435052000917f393900f44bd51a0ce501a",
+              "width": 5504
+            }
+          ],
+          "quality_status": "quality_failed",
+          "quality_findings": "已实际打开完整5504×3072原件。双手已恢复正常肤色，右侧已出现袖膝局部，脸型、束发、常服和鞋与第0代母版相符。但正面全身裙摆看似干燥，侧面下缘与局部图又显示明显湿区；同一状态跨视图的膝部及下缘湿痕不一致，不能给下游明确的完整湿衣状态。尺寸按用户2026-10-16决定保留原件，不裁切或缩放。"
+        }
+      ],
       "selected_upstream": [
         "new26-aheng-identity"
       ],
       "waiting_for_new_originals": [],
       "gaps": [
-        "真实平台图已回收，本地提交登记未成功，未建候选。",
-        "已看图：湿区扩大至胸肩，鞋形偏移，不能选下游。"
+        "已实际打开完整5504×3072原件。双手已恢复正常肤色，右侧已出现袖膝局部，脸型、束发、常服和鞋与第0代母版相符。但正面全身裙摆看似干燥，侧面下缘与局部图又显示明显湿区；同一状态跨视图的膝部及下缘湿痕不一致，不能给下游明确的完整湿衣状态。尺寸按用户2026-10-16决定保留原件，不裁切或缩放。"
       ],
-      "resume_when": "先受管补齐Nano模型契约并按真实时序恢复登记；返修从干净母版出发，不重复回收请求。",
+      "resume_when": "依据实际缺陷做有界返修；保留已完成调用，不沿失败原件加深以图生图谱系。",
       "external_result_receipt": "../../receipts/openart-task-20261015-0003-aheng-wet-01.json"
     },
     {
@@ -489,7 +789,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M322",
@@ -528,9 +828,9 @@
       ],
       "gaps": [
         "尚无本轮原件及质量检查。",
-        "所选上游尚待新原件。"
+        "所需上游尚待适用的新原件及实际质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M290",
@@ -565,7 +865,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M291",
@@ -601,7 +901,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M289",
@@ -640,9 +940,9 @@
       ],
       "gaps": [
         "尚无本轮原件及质量检查。",
-        "所选上游尚待新原件。"
+        "所需上游尚待适用的新原件及实际质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M162",
@@ -678,7 +978,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M361",
@@ -714,7 +1014,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M216",
@@ -750,7 +1050,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M606",
@@ -786,7 +1086,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M015",
@@ -877,7 +1177,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M166",
@@ -912,12 +1212,12 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M012",
       "requirement_id": "new26-songbook-identity",
-      "content_sha256": "05ff3c798d870c1ad140bb3bdb142d1074da290c96fbb89cfe6206f46be33532",
+      "content_sha256": "880092bb60711f17c1182546f676ea9d9e16a2b7c0775b0485995626de0f9b6f",
       "title": "阿蘅的歌本 · 基础形象",
       "category": "prop-image",
       "scope_kind": "ENTITY",
@@ -934,26 +1234,71 @@
           "customHeight": 2160,
           "customWidth": 3840,
           "imageCount": 1,
-          "lockAspectRatio": true,
+          "lockAspectRatio": false,
           "outputFormat": "png",
           "quality": "high",
           "resolutionTier": "4k",
           "variant": "sunburst"
         }
       },
-      "status": "not_produced",
-      "candidates": [],
+      "status": "executor_checked",
+      "candidates": [
+        {
+          "candidate_id": "candidate-63095678a147d67d8aaaae82b527c1d59cf3ed7504f71a4b70bb75ee99ed60e4",
+          "number": 1,
+          "asset": {
+            "object_id": "asset-task-20261015-0003-songbook-identity-01",
+            "revision_id": "ccfc4c2233ed0763803f4aff53df92b25f090a9326a6dce46cfcd0f342fec349"
+          },
+          "call_id": "task-20261015-0003-songbook-identity-01",
+          "components": [
+            {
+              "bytes": 7082244,
+              "file": "b583d4073f5f229e1c04ab7f3b1d607cb29ceeb9be7fdbd59d61ce78ba2a8f59.png",
+              "height": 2160,
+              "id": "original",
+              "mime": "image/png",
+              "role": "original",
+              "sha256": "b583d4073f5f229e1c04ab7f3b1d607cb29ceeb9be7fdbd59d61ce78ba2a8f59",
+              "width": 3840
+            }
+          ],
+          "quality_status": "quality_failed",
+          "quality_findings": "已实际打开3840×2160原件。灰褐软封、三孔浅线、空白双页、末页三个空圈及独立河石均可见，没有伪字。但右下的小圆缺口出现在末页及下方多层纸页，细节图更呈多层相同缺口，不能辨认原背页独有的线索；封面磨角与原背页缺口应分开。"
+        },
+        {
+          "candidate_id": "candidate-e1e0d8d223df465bb9b87abce86862424d3125c92678062c3d6321e09e647de2",
+          "number": 2,
+          "asset": {
+            "object_id": "asset-task-20261015-0003-songbook-identity-02",
+            "revision_id": "e741030b764d7d41431a96629647f5edf14f1016564216872f69a72f9bc45081"
+          },
+          "call_id": "task-20261015-0003-songbook-identity-02",
+          "components": [
+            {
+              "bytes": 7117339,
+              "file": "d6f71f27ee9d2e86bbdb21c8d52a426a3ce6e1417d87e3b91c161b1fcb87236c.png",
+              "height": 2160,
+              "id": "original",
+              "mime": "image/png",
+              "role": "original",
+              "sha256": "d6f71f27ee9d2e86bbdb21c8d52a426a3ce6e1417d87e3b91c161b1fcb87236c",
+              "width": 3840
+            }
+          ],
+          "quality_status": "executor_checked",
+          "quality_findings": "已实际打开完整3840×2160原件。闭本灰褐软封、左脊三孔浅线、空白双页、独立灰河石均明确；右侧一张掀起的原背页有三个空圈和右下圆缺口，下方其他纸页边角完整，单层纸角近图不再复制整叠缺口。封面上缘浅凹与圆磨角仍在，没有伪字、水渍或提前撕裂。材质有轻柔色调但没有妨碍线索辨认的密集纹理。"
+        }
+      ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "尚无本轮原件及质量检查。"
-      ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "gaps": [],
+      "resume_when": "候选2已通过对应用途实际看图；准确原件已选入26处当前输入。"
     },
     {
       "code": "M090",
       "requirement_id": "new26-book-dry-sheets-overall",
-      "content_sha256": "1687859a37cfd6384b976d8c193f776d3cf5e7f1f831902ff5f7b6b21cdc6b2c",
+      "content_sha256": "244aa8566be10a1beb4f4c15dc02a22670b8e5de6079b0ccce43993785dd3db2",
       "title": "歌本 · 晒干残本与补抄新纸 · 完整形态",
       "category": "prop-image",
       "scope_kind": "STATE",
@@ -976,19 +1321,16 @@
       "selected_upstream": [
         "new26-songbook-identity"
       ],
-      "waiting_for_new_originals": [
-        "new26-songbook-identity"
-      ],
+      "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "所选上游尚待新原件。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M607",
       "requirement_id": "new26-book-rebound-overall",
-      "content_sha256": "e31574a63e79ad55e687314ad997d952b278ff943f3a8290d019bc035ddeb07e",
+      "content_sha256": "96fc12a1ddd1bf5c06c4b18885803932e4f1d9744f194b11c9d41b5e775a8d7a",
       "title": "歌本 · 新页订牢，旧残页留后 · 完整形态",
       "category": "prop-image",
       "scope_kind": "STATE",
@@ -1013,19 +1355,18 @@
         "new26-songbook-identity"
       ],
       "waiting_for_new_originals": [
-        "new26-binding-kit-identity",
-        "new26-songbook-identity"
+        "new26-binding-kit-identity"
       ],
       "gaps": [
         "尚无本轮原件及质量检查。",
-        "所选上游尚待新原件。"
+        "所需上游尚待适用的新原件及实际质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M057",
       "requirement_id": "new26-book-torn-overall",
-      "content_sha256": "3cd0b73d02bd3686b6b7670ae3ae01cd044d943d69f77a87ec4de2cd1599ce94",
+      "content_sha256": "1e8d2cad2d05d96b28a67d0528324b5de8ddd7706e5803c00f5d2f44ccce2da1",
       "title": "歌本 · 浸裂洇墨的残本 · 完整形态",
       "category": "prop-image",
       "scope_kind": "STATE",
@@ -1048,14 +1389,11 @@
       "selected_upstream": [
         "new26-songbook-identity"
       ],
-      "waiting_for_new_originals": [
-        "new26-songbook-identity"
-      ],
+      "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "所选上游尚待新原件。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M217",
@@ -1091,7 +1429,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M088",
@@ -1127,7 +1465,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M250",
@@ -1163,7 +1501,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M251",
@@ -1198,7 +1536,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M122",
@@ -1234,7 +1572,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M118",
@@ -1273,9 +1611,9 @@
       ],
       "gaps": [
         "尚无本轮原件及质量检查。",
-        "所选上游尚待新原件。"
+        "所需上游尚待适用的新原件及实际质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M215",
@@ -1311,7 +1649,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M558",
@@ -1347,7 +1685,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M518",
@@ -1383,7 +1721,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M245",
@@ -1419,7 +1757,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M248",
@@ -1455,7 +1793,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M249",
@@ -1490,7 +1828,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M171",
@@ -1526,7 +1864,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M520",
@@ -1561,7 +1899,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M519",
@@ -1597,7 +1935,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M053",
@@ -1633,7 +1971,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M052",
@@ -1669,7 +2007,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M214",
@@ -1705,7 +2043,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M517",
@@ -1741,7 +2079,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M604",
@@ -1777,7 +2115,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M420",
@@ -1813,7 +2151,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M454",
@@ -1848,7 +2186,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M396",
@@ -1884,7 +2222,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M292",
@@ -1919,7 +2257,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M164",
@@ -1955,7 +2293,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M119",
@@ -1991,7 +2329,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M160",
@@ -2026,7 +2364,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M423",
@@ -2062,7 +2400,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M556",
@@ -2098,7 +2436,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M557",
@@ -2133,7 +2471,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M321",
@@ -2169,7 +2507,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M421",
@@ -2205,7 +2543,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M422",
@@ -2240,7 +2578,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M455",
@@ -2275,7 +2613,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M133",
@@ -2311,7 +2649,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M426",
@@ -2346,7 +2684,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M167",
@@ -2382,7 +2720,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M325",
@@ -2418,7 +2756,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M366",
@@ -2453,7 +2791,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M358",
@@ -2488,7 +2826,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M357",
@@ -2524,7 +2862,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M354",
@@ -2560,7 +2898,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M355",
@@ -2595,7 +2933,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M395",
@@ -2631,7 +2969,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M397",
@@ -2667,7 +3005,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M085",
@@ -2703,7 +3041,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M036",
@@ -2739,7 +3077,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M425",
@@ -2775,7 +3113,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M323",
@@ -2811,7 +3149,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M035",
@@ -2847,7 +3185,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M295",
@@ -2881,7 +3219,7 @@
             "object_id": "asset-task-20261015-0003-layout-note-01",
             "revision_id": "67ffc1cef2590e5d89681e5e367a2034251c8084f50bc7fbdfca7670aa23028f"
           },
-          "call_id": "source:asset-task-20261015-0003-layout-note-01",
+          "call_id": null,
           "components": [
             {
               "bytes": 361601,
@@ -2943,7 +3281,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M212",
@@ -2979,7 +3317,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M246",
@@ -3015,7 +3353,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M247",
@@ -3050,12 +3388,12 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M208",
       "requirement_id": "new26-lidan-identity",
-      "content_sha256": "0599f3e17b0a1b4c96b90155edae5909ed3a50a5181d3e3cda0087fa18c5fa15",
+      "content_sha256": "09362e28e79def8a2918a47ae5545147fc8d41864386c5bfef513675f6fa1fd9",
       "title": "李诞 · 基础形象",
       "category": "character-image",
       "scope_kind": "ENTITY",
@@ -3072,21 +3410,43 @@
           "customHeight": 2160,
           "customWidth": 3840,
           "imageCount": 1,
-          "lockAspectRatio": true,
+          "lockAspectRatio": false,
           "outputFormat": "png",
           "quality": "high",
           "resolutionTier": "4k",
           "variant": "sunburst"
         }
       },
-      "status": "not_produced",
-      "candidates": [],
+      "status": "executor_checked",
+      "candidates": [
+        {
+          "candidate_id": "candidate-7b012214f7d6777940ac45012570ff42824e06152f97f563967d95ef9c970138",
+          "number": 1,
+          "asset": {
+            "object_id": "asset-task-20261015-0003-lidan-identity-01",
+            "revision_id": "71618b8f529b48def2cddbae9ba8d7249ee8f365006618a91ecade620d47c98c"
+          },
+          "call_id": "task-20261015-0003-lidan-identity-01",
+          "components": [
+            {
+              "bytes": 6816045,
+              "file": "0194eb311ffab6068a6940308d53032d01515745c8052fee13c952909fa13abe.png",
+              "height": 2160,
+              "id": "original",
+              "mime": "image/png",
+              "role": "original",
+              "sha256": "0194eb311ffab6068a6940308d53032d01515745c8052fee13c952909fa13abe",
+              "width": 3840
+            }
+          ],
+          "quality_status": "executor_checked",
+          "quality_findings": "已实际打开完整3840×2160原件。正侧全身与近脸为同一宽肩方脸成年劳动者，浓眉、少灰束发、短胡茬、灰褐短衣深灰裤和磨旧布鞋相符；另有独立可穿深褐外衣，没有第二个人或铠甲。手足完整、肩背与自然腰腹可读，无提前汗伤或垫肩布。衣物用清楚大色块，胡茬必要短线可辨身份，未铺满皮纹或脏噪。"
+        }
+      ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "尚无本轮原件及质量检查。"
-      ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "gaps": [],
+      "resume_when": "候选1已通过对应用途实际看图；准确原件已选入145处当前输入。"
     },
     {
       "code": "M209",
@@ -3121,12 +3481,12 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M003",
       "requirement_id": "new26-liji-identity",
-      "content_sha256": "543a4ce7a56804b7e573c3b66a8155664984c9cd456b455db67580af0780eeef",
+      "content_sha256": "e1e41162af1dec530d5e95191a93e62a74cb8cfb2f984cc860bd07a429b91103",
       "title": "李寄 · 基础形象",
       "category": "character-image",
       "scope_kind": "ENTITY",
@@ -3143,26 +3503,48 @@
           "customHeight": 2160,
           "customWidth": 3840,
           "imageCount": 1,
-          "lockAspectRatio": true,
+          "lockAspectRatio": false,
           "outputFormat": "png",
           "quality": "high",
           "resolutionTier": "4k",
           "variant": "sunburst"
         }
       },
-      "status": "not_produced",
-      "candidates": [],
+      "status": "executor_checked",
+      "candidates": [
+        {
+          "candidate_id": "candidate-09e99d300bf294e745a3560ce908d0ad7d59436fa817309a94c988973b101493",
+          "number": 1,
+          "asset": {
+            "object_id": "asset-task-20261015-0003-liji-identity-01",
+            "revision_id": "77908eeddf225d05468c60366401d16f721cceb62cb297dcd110c25132f302e4"
+          },
+          "call_id": "task-20261015-0003-liji-identity-01",
+          "components": [
+            {
+              "bytes": 6237996,
+              "file": "05ac4d70dbed022cbaabd37b9da071031056d325653ccbee9b1a2aac5046e0ce.png",
+              "height": 2160,
+              "id": "original",
+              "mime": "image/png",
+              "role": "original",
+              "sha256": "05ac4d70dbed022cbaabd37b9da071031056d325653ccbee9b1a2aac5046e0ce",
+              "width": 3840
+            }
+          ],
+          "quality_status": "executor_checked",
+          "quality_findings": "已实际打开3840×2160原件。正面三分之四、左侧全身与正脸近图为同一少女，短下巴、较圆方脸、小髻、赭灰交领短上衣、褐宽裤、浅绑腿与布鞋一致。相比阿蘅裙装与窄脸可清楚辨认，双手空着、手脚完整，未提前增加额伤、掌布或湿衣。轮廓和大色块干净，轻微肤色柔和过渡不妨碍二维人物身份用途。"
+        }
+      ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "尚无本轮原件及质量检查。"
-      ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "gaps": [],
+      "resume_when": "候选1已通过对应用途实际看图；准确原件已选入34处当前输入。"
     },
     {
       "code": "M521",
       "requirement_id": "new26-liji-clean-wrap-overall",
-      "content_sha256": "37c2c90a7f3e5f1a8eb3b57a44b922891284acc308508f1ebbd218c70e6d9fbf",
+      "content_sha256": "d91ceb34293d50a43e03cff816432c967c2a040e2f998d96baa494d95b375605",
       "title": "李寄 · 归家后右掌重新包扎 · 完整形态",
       "category": "character-image",
       "scope_kind": "STATE",
@@ -3185,19 +3567,16 @@
       "selected_upstream": [
         "new26-liji-identity"
       ],
-      "waiting_for_new_originals": [
-        "new26-liji-identity"
-      ],
+      "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "所选上游尚待新原件。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M456",
       "requirement_id": "new26-liji-first-blood-overall",
-      "content_sha256": "3d368d5de7363c5206d454322221f46491a73e1b89bff29da10e6e8394fd2088",
+      "content_sha256": "0942a7f0896fff467f5848553a63df3fa1b70fb97cb61f8762655b015c6e9a90",
       "title": "李寄 · 首刀后掌布少量见血 · 完整形态",
       "category": "character-image",
       "scope_kind": "STATE",
@@ -3220,19 +3599,16 @@
       "selected_upstream": [
         "new26-liji-identity"
       ],
-      "waiting_for_new_originals": [
-        "new26-liji-identity"
-      ],
+      "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "所选上游尚待新原件。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M176",
       "requirement_id": "new26-liji-forehead-fresh-overall",
-      "content_sha256": "37988fd84e5d408c3be5cefdd6676dbcb267c9056d1682118bb507aa4accc40f",
+      "content_sha256": "038a3e33a657b250437ca1a0bd3b7c7926f48738f198a7cf8d45e342cf310ae9",
       "title": "李寄 · 左额新破与右掌包布 · 完整形态",
       "category": "character-image",
       "scope_kind": "STATE",
@@ -3255,19 +3631,16 @@
       "selected_upstream": [
         "new26-liji-identity"
       ],
-      "waiting_for_new_originals": [
-        "new26-liji-identity"
-      ],
+      "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "所选上游尚待新原件。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M177",
       "requirement_id": "new26-liji-head-wrap-overall",
-      "content_sha256": "54716568c822d6d80be8e88c0eb63b4758ef9f50199c0297d1b36c0e18fb39f2",
+      "content_sha256": "4f3744b687175d3d8420c627a02d963ce2e3ea8b0be4635a8f9ff96f66b50ee0",
       "title": "李寄 · 左额包扎与右掌包布 · 完整形态",
       "category": "character-image",
       "scope_kind": "STATE",
@@ -3290,19 +3663,16 @@
       "selected_upstream": [
         "new26-liji-identity"
       ],
-      "waiting_for_new_originals": [
-        "new26-liji-identity"
-      ],
+      "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "所选上游尚待新原件。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M568",
       "requirement_id": "new26-liji-healed-overall",
-      "content_sha256": "005494b1654fbbbdb05e92aff242f5bc67d0e0d3fe15bd1067677c16950c22d6",
+      "content_sha256": "cdc062a0b80da20234376dfb93976f97b7e00885248adde06c28d2f63c4c6b73",
       "title": "李寄 · 伤愈后右掌细疤 · 完整形态",
       "category": "character-image",
       "scope_kind": "STATE",
@@ -3325,14 +3695,11 @@
       "selected_upstream": [
         "new26-liji-identity"
       ],
-      "waiting_for_new_originals": [
-        "new26-liji-identity"
-      ],
+      "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "所选上游尚待新原件。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M210",
@@ -3368,7 +3735,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M211",
@@ -3403,12 +3770,12 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M089",
       "requirement_id": "new26-liji-palm-overall",
-      "content_sha256": "99f923582f6582504ada11661bd6cc457f481945fb0dfa1c3ce5c8d0411ab53c",
+      "content_sha256": "f7e09b9a1ec105cefb50f0b0f2ca3a820ffe94f94b73bdb00914762b98b7a433",
       "title": "李寄 · 右掌包布的干衣形态 · 完整形态",
       "category": "character-image",
       "scope_kind": "STATE",
@@ -3431,14 +3798,11 @@
       "selected_upstream": [
         "new26-liji-identity"
       ],
-      "waiting_for_new_originals": [
-        "new26-liji-identity"
-      ],
+      "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "所选上游尚待新原件。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M004",
@@ -3473,12 +3837,12 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M056",
       "requirement_id": "new26-liji-wet-overall",
-      "content_sha256": "7d208fd3cf16e99d5854e08b45e617947de5e6a901ac55fa4152f1368c35feb3",
+      "content_sha256": "392951739d1c30edaa74f83b2d7e7ab21b97d28257d76714242ad15c0c4dbc02",
       "title": "李寄 · 下水捞纸后的湿裤 · 完整形态",
       "category": "character-image",
       "scope_kind": "STATE",
@@ -3501,14 +3865,11 @@
       "selected_upstream": [
         "new26-liji-identity"
       ],
-      "waiting_for_new_originals": [
-        "new26-liji-identity"
-      ],
+      "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "所选上游尚待新原件。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M009",
@@ -3544,7 +3905,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M010",
@@ -3579,7 +3940,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M047",
@@ -3615,7 +3976,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M048",
@@ -3650,7 +4011,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M087",
@@ -3686,12 +4047,12 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M327",
       "requirement_id": "new26-loan-uncovered-overall",
-      "content_sha256": "ab9515d60410f9ad440fef552511fe253fc873eae8c24c224eeb49453d40749f",
+      "content_sha256": "74b17e4f6195f49fec1eac5c57b8a9476f3c91d99906775083eceacbd87fdd8f",
       "title": "贴纸已揭开并分存的借据 · 完整形态",
       "category": "prop-image",
       "scope_kind": "STATE",
@@ -3719,9 +4080,9 @@
       ],
       "gaps": [
         "尚无本轮原件及质量检查。",
-        "所选上游尚待新原件。"
+        "所需上游尚待适用的新原件及实际质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M253",
@@ -3757,12 +4118,12 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M368",
       "requirement_id": "new26-lock-beamed-overall",
-      "content_sha256": "f60fc034703a6b34b8b976860b90b89bdcda740d998d0b4702241a4009e6faf0",
+      "content_sha256": "8f1c81359389a2c9f0ca1b5ac0dd4f699b977adec31689f5c922a14b249c3d61",
       "title": "刀缝与横杠已装好的双门机构 · 完整形态",
       "category": "prop-image",
       "scope_kind": "STATE",
@@ -3794,14 +4155,14 @@
       ],
       "gaps": [
         "尚无本轮原件及质量检查。",
-        "所选上游尚待新原件。"
+        "所需上游尚待适用的新原件及实际质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M367",
       "requirement_id": "new26-lock-cut-overall",
-      "content_sha256": "71a7ba0a22f9e8c307ad2a8cd2e59fc95b6a7335c325ec6c15ce10339f046d3c",
+      "content_sha256": "a4185e22e19347cd979925ee1d0c5ce90d9dab75ad499fb37961e0446bddda62",
       "title": "仅开刀缝、尚未装横杠的机构 · 完整形态",
       "category": "prop-image",
       "scope_kind": "STATE",
@@ -3829,9 +4190,9 @@
       ],
       "gaps": [
         "尚无本轮原件及质量检查。",
-        "所选上游尚待新原件。"
+        "所需上游尚待适用的新原件及实际质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M365",
@@ -3867,12 +4228,12 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M427",
       "requirement_id": "new26-lock-ready-overall",
-      "content_sha256": "24ef6c55e43130cc50a1cc1d16da0baa0903bb7b1bda5ae9881ba419e8f9993a",
+      "content_sha256": "f3ee712f300476da998193ed03c9fa6fec7e0b380331c32d88fc786a3bd4483e",
       "title": "加固并垫好防磨布的双门闸 · 完整形态",
       "category": "prop-image",
       "scope_kind": "STATE",
@@ -3906,9 +4267,9 @@
       ],
       "gaps": [
         "尚无本轮原件及质量检查。",
-        "所选上游尚待新原件。"
+        "所需上游尚待适用的新原件及实际质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M398",
@@ -3942,7 +4303,7 @@
             "object_id": "asset-task-20261015-0003-map-cut-01",
             "revision_id": "bbdedf0e49007db6ab516e901312eecc21047944ea060238292e88abb5ea9294"
           },
-          "call_id": "source:asset-task-20261015-0003-map-cut-01",
+          "call_id": null,
           "components": [
             {
               "bytes": 361403,
@@ -4006,7 +4367,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M359",
@@ -4042,12 +4403,12 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M028",
       "requirement_id": "new26-moer-identity",
-      "content_sha256": "75926c98ccce7bb4f21745b38d967401f21003f6da7e1ea89f2677f2589c5675",
+      "content_sha256": "57a2d22ebb50f1dbc8636a5d317ab67a602da1d6184bcd1e42cee7798de1badb",
       "title": "墨耳 · 基础形象",
       "category": "character-image",
       "scope_kind": "ENTITY",
@@ -4064,21 +4425,66 @@
           "customHeight": 2160,
           "customWidth": 3840,
           "imageCount": 1,
-          "lockAspectRatio": true,
+          "lockAspectRatio": false,
           "outputFormat": "png",
           "quality": "high",
           "resolutionTier": "4k",
           "variant": "sunburst"
         }
       },
-      "status": "not_produced",
-      "candidates": [],
+      "status": "executor_checked",
+      "candidates": [
+        {
+          "candidate_id": "candidate-acf97fbf33d4d9358609d3493967e5189f344b26b5e6a4f85f64369dc739b04b",
+          "number": 1,
+          "asset": {
+            "object_id": "asset-task-20261015-0003-moer-identity-01",
+            "revision_id": "d80bb35af5f0d139ff56da5105ef9c9887954b8b8ed6f9abdefcdedb16923b6d"
+          },
+          "call_id": "task-20261015-0003-moer-identity-01",
+          "components": [
+            {
+              "bytes": 8100608,
+              "file": "4e232a3be660131a504258a453363e1ba199ec76e8137f324cce371d01d732ca.png",
+              "height": 2160,
+              "id": "original",
+              "mime": "image/png",
+              "role": "original",
+              "sha256": "4e232a3be660131a504258a453363e1ba199ec76e8137f324cce371d01d732ca",
+              "width": 3840
+            }
+          ],
+          "quality_status": "quality_failed",
+          "quality_findings": "已实际打开完整3840×2160原件。短黄毛成年瘦狗，主图及左耳近图的犬自身左耳均缺角，四足尾巴完整，无项圈和胸白块。身体与耳内密集短毛排线、细碎色阶明显，整体更像写实动物插画，未满足稀疏毛向和干净二维色块的方案。"
+        },
+        {
+          "candidate_id": "candidate-e66740a205106452396efb51435a5f9101379ba6c674805c6a6a1a752907d2c3",
+          "number": 2,
+          "asset": {
+            "object_id": "asset-task-20261015-0003-moer-identity-02",
+            "revision_id": "d924e58aacd9ca27131b925e09a6d7958c2306b78910b7175b18854388688471"
+          },
+          "call_id": "task-20261015-0003-moer-identity-02",
+          "components": [
+            {
+              "bytes": 5852641,
+              "file": "a03f1ead275d096dfc79b46dd0048e900a173634df2be31982cbca323d5a8c49.png",
+              "height": 2160,
+              "id": "original",
+              "mime": "image/png",
+              "role": "original",
+              "sha256": "a03f1ead275d096dfc79b46dd0048e900a173634df2be31982cbca323d5a8c49",
+              "width": 3840
+            }
+          ],
+          "quality_status": "executor_checked",
+          "quality_findings": "已实际打开完整3840×2160原件。成年瘦黄狗，腰线、四足、尾巴完整；前方主图和左耳近图显示犬自身左耳缺角，右侧视图近侧右耳完整。身体改为干净黄褐底色及大阴影，没有密集毛发排线，无胸白块、项圈和牵绳。"
+        }
+      ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "尚无本轮原件及质量检查。"
-      ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "gaps": [],
+      "resume_when": "候选2已通过对应用途实际看图；准确原件已选入18处当前输入。"
     },
     {
       "code": "M051",
@@ -4114,7 +4520,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M127",
@@ -4153,14 +4559,14 @@
       ],
       "gaps": [
         "尚无本轮原件及质量检查。",
-        "所选上游尚待新原件。"
+        "所需上游尚待适用的新原件及实际质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M134",
       "requirement_id": "new26-mother-oldstage-overall",
-      "content_sha256": "8e088155f1875d0d3d94dff838a7bbeb5e9c17eb48afc0e648ff740f9c7200ce",
+      "content_sha256": "09da0b4814c88efaf96e15fd152a53d470af4fd354f3d54e675785543baccab8",
       "title": "阿蘅母亲 · 披旧演出衣 · 完整形态",
       "category": "character-image",
       "scope_kind": "STATE",
@@ -4178,19 +4584,38 @@
           "resolution": "4K"
         }
       },
-      "status": "not_produced",
-      "candidates": [],
+      "status": "executor_checked",
+      "candidates": [
+        {
+          "candidate_id": "candidate-5505f8c55107b2db930c28bcd7cc96f70c94cca4be102057bd11100c05fc0567",
+          "number": 1,
+          "asset": {
+            "object_id": "asset-task-20261015-0003-mother-oldstage-01",
+            "revision_id": "ba998d2d6d4c5b91b3c057468a09763c36928cb4d59f998ab96a854517716a05"
+          },
+          "call_id": "task-20261015-0003-mother-oldstage-01",
+          "components": [
+            {
+              "bytes": 17493312,
+              "file": "2fad7c9e61fdff8789cd60696909a31ffe70ac617464f1db10255948aca8ff8c.png",
+              "height": 3072,
+              "id": "original",
+              "mime": "image/png",
+              "role": "original",
+              "sha256": "2fad7c9e61fdff8789cd60696909a31ffe70ac617464f1db10255948aca8ff8c",
+              "width": 5504
+            }
+          ],
+          "quality_status": "executor_checked",
+          "quality_findings": "已实际打开完整5504×3072原件并对照第0代母亲原件。窄脸、病弱肩背、低束发、米灰常衣、灰蓝裙和鞋保持，外加褪砖红长衣与暗蓝灰领袖边，前襟敞开、双臂穿袖，凳面承托与手脚完整。领袖和下摆磨旧但没有堆叠破洞，未变成浓妆健康上台。右侧实际仍为脸与衣领近图，袖口从两侧全身图可辨，足以检查本状态衣装；未声称单独袖口特写。原生尺寸按2026-10-16用户决定保留，不裁切或缩放。"
+        }
+      ],
       "selected_upstream": [
         "new26-aheng-mother-identity"
       ],
-      "waiting_for_new_originals": [
-        "new26-aheng-mother-identity"
-      ],
-      "gaps": [
-        "尚无本轮原件及质量检查。",
-        "所选上游尚待新原件。"
-      ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "waiting_for_new_originals": [],
+      "gaps": [],
+      "resume_when": "候选1已通过对应用途实际看图；准确原件已选入6处当前输入。"
     },
     {
       "code": "M111",
@@ -4226,7 +4651,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M117",
@@ -4262,7 +4687,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M207",
@@ -4297,7 +4722,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M220",
@@ -4333,7 +4758,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M252",
@@ -4369,7 +4794,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M565",
@@ -4404,7 +4829,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M254",
@@ -4440,7 +4865,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M255",
@@ -4476,7 +4901,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M168",
@@ -4512,7 +4937,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M169",
@@ -4547,7 +4972,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M031",
@@ -4583,7 +5008,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M032",
@@ -4618,7 +5043,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M243",
@@ -4654,7 +5079,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M563",
@@ -4690,7 +5115,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M123",
@@ -4725,7 +5150,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M007",
@@ -4761,7 +5186,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M008",
@@ -4796,7 +5221,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M125",
@@ -4832,7 +5257,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M126",
@@ -4867,7 +5292,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M050",
@@ -4903,7 +5328,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M560",
@@ -4938,7 +5363,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M054",
@@ -5033,7 +5458,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M256",
@@ -5069,12 +5494,12 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M326",
       "requirement_id": "new26-recruitment-all-overall",
-      "content_sha256": "4807186e0b9517221cc33aeacdd604493ac637094223a07f7fb26e41c826f6f1",
+      "content_sha256": "b1b6a41c20d460fb68e310313f5d74b85043db404238277c539b0951e300ffa8",
       "title": "增补全户禁索条款的文书 · 完整形态",
       "category": "prop-image",
       "scope_kind": "STATE",
@@ -5102,9 +5527,9 @@
       ],
       "gaps": [
         "尚无本轮原件及质量检查。",
-        "所选上游尚待新原件。"
+        "所需上游尚待适用的新原件及实际质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M174",
@@ -5140,7 +5565,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M131",
@@ -5176,7 +5601,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M172",
@@ -5212,7 +5637,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M173",
@@ -5247,7 +5672,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M013",
@@ -5283,7 +5708,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M014",
@@ -5319,7 +5744,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M566",
@@ -5354,7 +5779,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M011",
@@ -5390,7 +5815,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M364",
@@ -5426,7 +5851,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M424",
@@ -5465,9 +5890,9 @@
       ],
       "gaps": [
         "尚无本轮原件及质量检查。",
-        "所选上游尚待新原件。"
+        "所需上游尚待适用的新原件及实际质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M130",
@@ -5502,7 +5927,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M175",
@@ -5589,7 +6014,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M027",
@@ -5625,7 +6050,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M005",
@@ -5661,7 +6086,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M006",
@@ -5696,7 +6121,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M029",
@@ -5732,7 +6157,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M030",
@@ -5767,7 +6192,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M033",
@@ -5803,7 +6228,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M129",
@@ -5838,7 +6263,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M605",
@@ -5874,12 +6299,12 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M049",
       "requirement_id": "new26-troupe-identity",
-      "content_sha256": "6f9e1d31d6e60802b4f3f5a2a114af44345f9b87019666ff5be0178376b3a0d2",
+      "content_sha256": "9d9abe2501edab857ebb7402382163d70fe54fa5c072c8199e3307b71999cb6e",
       "title": "戏班杂工 · 基础形象",
       "category": "character-image",
       "scope_kind": "ENTITY",
@@ -5896,21 +6321,43 @@
           "customHeight": 2160,
           "customWidth": 3840,
           "imageCount": 1,
-          "lockAspectRatio": true,
+          "lockAspectRatio": false,
           "outputFormat": "png",
           "quality": "high",
           "resolutionTier": "4k",
           "variant": "sunburst"
         }
       },
-      "status": "not_produced",
-      "candidates": [],
+      "status": "executor_checked",
+      "candidates": [
+        {
+          "candidate_id": "candidate-8ba62572d5b166bcc36413f7a7a380fc11d7d47f3ecac33156a8c8fedf10281c",
+          "number": 1,
+          "asset": {
+            "object_id": "asset-task-20261015-0003-troupe-identity-01",
+            "revision_id": "6110f7f181e0455031a0ecd3a5d3a88845847cad61c555d8bb089a3e3240f246"
+          },
+          "call_id": "task-20261015-0003-troupe-identity-01",
+          "components": [
+            {
+              "bytes": 5679326,
+              "file": "992635fcf7da0492bcebbd205e87da2809bb621134b031487d87251e48af922c.png",
+              "height": 2160,
+              "id": "original",
+              "mime": "image/png",
+              "role": "original",
+              "sha256": "992635fcf7da0492bcebbd205e87da2809bb621134b031487d87251e48af922c",
+              "width": 3840
+            }
+          ],
+          "quality_status": "executor_checked",
+          "quality_findings": "已实际打开3840×2160原件。三名成年男子完整入框，方脸短髭深灰衣、窄长无须脸茶衣蓝灰裤、圆脸低束发灰绿衣褐裤区分清楚；右侧近脸与各自全身对应，手脚完整、空手，未添加幕杆或戏头饰。轮廓和硬边色块干净，衣色保持低饱和，适合作为功能角色锚点；三人是本图身份选择，不等于剧本已定戏班总人数。"
+        }
+      ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "尚无本轮原件及质量检查。"
-      ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "gaps": [],
+      "resume_when": "候选1已通过对应用途实际看图；准确原件已选入7处当前输入。"
     },
     {
       "code": "M564",
@@ -5946,7 +6393,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M086",
@@ -5982,7 +6429,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M113",
@@ -6018,7 +6465,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M362",
@@ -6054,7 +6501,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M114",
@@ -6089,7 +6536,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M651",
@@ -6182,7 +6629,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M120",
@@ -6218,7 +6665,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M128",
@@ -6254,7 +6701,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M121",
@@ -6289,7 +6736,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M124",
@@ -6325,7 +6772,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M650",
@@ -6361,7 +6808,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M161",
@@ -6397,7 +6844,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M163",
@@ -6433,7 +6880,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M170",
@@ -6469,7 +6916,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M218",
@@ -6505,7 +6952,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M206",
@@ -6540,7 +6987,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M219",
@@ -6575,12 +7022,12 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M244",
       "requirement_id": "new26-wage-page-identity",
-      "content_sha256": "a37a7526e8fab820f1d9813ca47798438a54053a2c8837c359faa0b0e926a447",
+      "content_sha256": "05628af3463d887848eeff34cc509f0ddcdd5b81777ccebe67d53174e510fdb0",
       "title": "歌本内的两夜记工背页 · 基础形象",
       "category": "prop-image",
       "scope_kind": "ENTITY",
@@ -6609,14 +7056,11 @@
       "selected_upstream": [
         "new26-songbook-identity"
       ],
-      "waiting_for_new_originals": [
-        "new26-songbook-identity"
-      ],
+      "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "所选上游尚待新原件。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M288",
@@ -6651,7 +7095,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M294",
@@ -6686,12 +7130,12 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M293",
       "requirement_id": "new26-snake-identity",
-      "content_sha256": "f9da0435300e50f221af2e8d6e82ea540f8a4ce694fb1be88da64eaa3bc28217",
+      "content_sha256": "23873b9931b9a424076bfae8af5fa40d26cd83bd696bd0f1ad495a99819fed18",
       "title": "洞中的大蛇 · 基础形象",
       "category": "character-image",
       "scope_kind": "ENTITY",
@@ -6708,21 +7152,66 @@
           "customHeight": 2160,
           "customWidth": 3840,
           "imageCount": 1,
-          "lockAspectRatio": true,
+          "lockAspectRatio": false,
           "outputFormat": "png",
           "quality": "high",
           "resolutionTier": "4k",
           "variant": "sunburst"
         }
       },
-      "status": "not_produced",
-      "candidates": [],
+      "status": "executor_checked",
+      "candidates": [
+        {
+          "candidate_id": "candidate-e87d727cebe5b11dc34741eb94e05b1cfb2981e8f5dade4bea1523fd7b6dfca0",
+          "number": 1,
+          "asset": {
+            "object_id": "asset-task-20261015-0003-snake-identity-01",
+            "revision_id": "d01f6d67153cfb77d3d1ba0ff3adac53336e98f8afb4b5799785a095378e7577"
+          },
+          "call_id": "task-20261015-0003-snake-identity-01",
+          "components": [
+            {
+              "bytes": 6476366,
+              "file": "df7b068d2e48022674c6da73fead7a6b40bf5a1fbb797774841be20ffc1d14bb.png",
+              "height": 2160,
+              "id": "original",
+              "mime": "image/png",
+              "role": "original",
+              "sha256": "df7b068d2e48022674c6da73fead7a6b40bf5a1fbb797774841be20ffc1d14bb",
+              "width": 3840
+            }
+          ],
+          "quality_status": "quality_failed",
+          "quality_findings": "已实际打开3840×2160原件。自然蛇形、楔形头、暗金棕圆瞳、橄榄棕背与灰米腹、闭嘴贴地和连续体干成立，无神化器官或伤口。主图、侧图和细节却逐片铺满鳞线与细碎斑纹，明显超过方案要求的少量分组短线，未达到全剧干净二维母版的纹理密度。"
+        },
+        {
+          "candidate_id": "candidate-8082296798809b43530fb3ecefc9aa4eeaebcb0c02e1865e75e78a7e5a15d1d1",
+          "number": 2,
+          "asset": {
+            "object_id": "asset-task-20261015-0003-snake-identity-02",
+            "revision_id": "e22f9afb9f3c430c0634150b06c4b2db680b003d55291a2cacfad303fb5f8ae3"
+          },
+          "call_id": "task-20261015-0003-snake-identity-02",
+          "components": [
+            {
+              "bytes": 5668218,
+              "file": "18d079399b23991a4a5404d19abce4229630bee46e8b286e659dad963414f5ff.png",
+              "height": 2160,
+              "id": "original",
+              "mime": "image/png",
+              "role": "original",
+              "sha256": "18d079399b23991a4a5404d19abce4229630bee46e8b286e659dad963414f5ff",
+              "width": 3840
+            }
+          ],
+          "quality_status": "executor_checked",
+          "quality_findings": "已实际打开完整3840×2160原件。低位主图与侧图保持同一楔头、粗颈、暗金棕圆瞳、橄榄棕背和灰米腹，体干连续伸出画外、没有虚构尾端。大色块、宽腹鳞与少数线组取代逐片鳞格，斑纹疏而可辨，轮廓与支撑清楚，无神化器官或伤势。主图、侧图与配色细节保持一致，可作干净二维身份依据。"
+        }
+      ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "尚无本轮原件及质量检查。"
-      ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "gaps": [],
+      "resume_when": "候选2已通过对应用途实际看图；准确原件已选入8处当前输入。"
     },
     {
       "code": "M360",
@@ -6758,7 +7247,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M034",
@@ -6793,12 +7282,12 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M457",
       "requirement_id": "new26-snake-first-cut-overall",
-      "content_sha256": "7a539d9e066d3ecab7bd40ede8b01dff991c8d84ce4b8132610b18e26e34e2da",
+      "content_sha256": "a0b6653a9734ab6ae5aea8a3a08816451551481bdd1c48acfed51da8e84dde68",
       "title": "大蛇 · 首刀的浅颈伤 · 完整形态",
       "category": "character-image",
       "scope_kind": "STATE",
@@ -6821,19 +7310,16 @@
       "selected_upstream": [
         "new26-snake-identity"
       ],
-      "waiting_for_new_originals": [
-        "new26-snake-identity"
-      ],
+      "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "所选上游尚待新原件。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M485",
       "requirement_id": "new26-snake-deep-cut-overall",
-      "content_sha256": "a41ee287cb08a533ca50f9bd3b4dbd17056c0b96a272d5cf24932b1490b0301f",
+      "content_sha256": "a0e28c77132517d04bf5e8d296031a6610b080b8f3f95af355b1334e961b6daf",
       "title": "大蛇 · 连砍中的深颈伤 · 完整形态",
       "category": "character-image",
       "scope_kind": "STATE",
@@ -6856,19 +7342,16 @@
       "selected_upstream": [
         "new26-snake-identity"
       ],
-      "waiting_for_new_originals": [
-        "new26-snake-identity"
-      ],
+      "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "所选上游尚待新原件。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M486",
       "requirement_id": "new26-snake-separated-overall",
-      "content_sha256": "72118f9503a9c75d87b6ef6fbaa526d34abfede33adf412ea7459c0716294c75",
+      "content_sha256": "bb801fe4bf3ece4439f81a9ff143fabc461e2f152950a01fc9a831650ee398b6",
       "title": "大蛇 · 刀缝处颈断两端错开 · 完整形态",
       "category": "character-image",
       "scope_kind": "STATE",
@@ -6891,14 +7374,11 @@
       "selected_upstream": [
         "new26-snake-identity"
       ],
-      "waiting_for_new_originals": [
-        "new26-snake-identity"
-      ],
+      "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。",
-        "所选上游尚待新原件。"
+        "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M514",
@@ -6934,7 +7414,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M515",
@@ -6969,7 +7449,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M555",
@@ -7005,7 +7485,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M559",
@@ -7041,7 +7521,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M561",
@@ -7077,7 +7557,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M562",
@@ -7112,7 +7592,7 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     },
     {
       "code": "M363",
@@ -7147,8 +7627,8 @@
       "gaps": [
         "尚无本轮原件及质量检查。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择新原件。Nano状态路线还需先修复模型契约。"
+      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
     }
   ],
-  "updated_at": "2026-10-16T08:34:28.618662+00:00"
+  "updated_at": "2026-10-16T09:57:44.401532+00:00"
 }

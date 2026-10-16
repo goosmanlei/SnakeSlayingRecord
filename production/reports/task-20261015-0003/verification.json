@@ -1,44 +1,106 @@
 {
   "format": "stage-verification-v1",
   "task_id": "task-20261015-0003",
-  "checked_at": "2026-10-16T08:39:12.539161+00:00",
-  "stage": "stage-02",
+  "stage": "stage-03",
+  "checked_at": "2026-10-16T09:57:44.401532+00:00",
   "requirements": 651,
   "ordinary_state": 191,
   "unique_dependency_edges": 3396,
   "acyclic": true,
-  "full_song_prompt_matches": 4,
-  "song_shot_mappings": 27,
-  "video_count": 416,
-  "video_planned_seconds": 7889,
-  "selected_input_slots": 230,
-  "aheng_identity_02_slots": 210,
-  "candidates": 9,
+  "candidates": 25,
+  "covered_requirements": 18,
+  "production_files_verified": 27,
+  "selected_input_slots": 503,
+  "selected_by_material": {
+    "new26-aheng-identity": 210,
+    "new26-songbook-identity": 26,
+    "new26-liji-identity": 34,
+    "new26-layout-note-identity": 13,
+    "new26-aheng-mother-identity": 29,
+    "new26-moer-identity": 18,
+    "new26-troupe-identity": 7,
+    "new26-mother-oldstage-overall": 6,
+    "new26-lidan-identity": 145,
+    "new26-snake-identity": 8,
+    "new26-map-cut-overall": 7
+  },
   "status_counts": {
-    "not_produced": 182,
-    "executor_checked": 3,
+    "not_produced": 173,
+    "executor_checked_partial": 1,
+    "executor_checked": 11,
     "hearing_unverified": 5,
-    "registration_blocked_and_quality_failed": 1
+    "quality_failed": 1
   },
+  "call_counts": {
+    "completed": 24,
+    "unknown": 1
+  },
+  "system_commit": "2b217a440256ea9dd1a1a9b025dc072e2829ea7c",
   "protected_baseline_records": {
-    "comments": 404,
-    "comment_events": 438,
-    "business_comments": 404
+    "comments": {
+      "rows": 404,
+      "sha256": "cbf5ca42097785cab920177bede15a16c4d567769d4b41fa1f86d485e5ed551b",
+      "unchanged": true
+    },
+    "comment_events": {
+      "rows": 438,
+      "sha256": "0983521e5dc5ee0570b562ea85401ad89bad8f85c4c878035b35446d2e8bb07a",
+      "unchanged": true
+    },
+    "business_comments": {
+      "rows": 404,
+      "sha256": "47d3ff34ed0b3c985c722b31aa1ddecf54ee74829c974621441626759c3b70f2",
+      "unchanged": true
+    }
   },
+  "locked_story_unchanged": true,
   "formal_publication": false,
   "empty_instance_recovery": {
     "schema_version": 14,
-    "fresh_target": ".runtime/generation/recovered-stage-0003-02",
-    "restored": true,
-    "all_export_files_verified": 69,
-    "new_production_files_verified": 11,
+    "fresh_target": ".runtime/generation/recovered-stage-0003-03",
+    "recovered": true,
+    "objects": 17404,
+    "production_objects": 1727,
+    "revisions": 17457,
+    "comments": 404,
+    "files_verified": 85,
+    "destination": ".runtime/generation/recovered-stage-0003-03",
     "exact_table_comparisons": {
-      "production_current_records": 1695,
-      "production_candidates": 9,
-      "production_candidate_targets": 9,
-      "production_submissions": 10,
-      "comments": 404,
-      "business_comments": 404
+      "production_current_records": {
+        "rows": 1727,
+        "sha256": "df90567a6a65cb71387fa2419320102db917992db2c73a60c0ac531c0de6b6f2",
+        "equal": true
+      },
+      "production_candidates": {
+        "rows": 25,
+        "sha256": "3db3208a8718dfa762f293648fc40f15ab475789f9994762b96f5138a28c193c",
+        "equal": true
+      },
+      "production_candidate_targets": {
+        "rows": 25,
+        "sha256": "52c31fe9eebb166cdfb22a7396171f62dfe3acdd94f169e630de231d2dcc3f9c",
+        "equal": true
+      },
+      "production_submissions": {
+        "rows": 26,
+        "sha256": "3a648c521a3de57f11f296c0e8fc81d1a0b8129e18d240a5dc4a13e4ef6336d7",
+        "equal": true
+      },
+      "comments": {
+        "rows": 404,
+        "sha256": "cbf5ca42097785cab920177bede15a16c4d567769d4b41fa1f86d485e5ed551b",
+        "equal": true
+      },
+      "comment_events": {
+        "rows": 438,
+        "sha256": "0983521e5dc5ee0570b562ea85401ad89bad8f85c4c878035b35446d2e8bb07a",
+        "equal": true
+      },
+      "business_comments": {
+        "rows": 404,
+        "sha256": "47d3ff34ed0b3c985c722b31aa1ddecf54ee74829c974621441626759c3b70f2",
+        "equal": true
+      }
     },
     "unknown_call_preserved": true,
     "formal_instance_untouched": true,
@@ -47,32 +109,33 @@
   "chrome": {
     "browser": "daily Chrome",
     "task_port": 62845,
-    "candidate_number_bug": "reproduced: candidate2 to candidate1 yields duplicate candidate1 labels",
-    "comparison_dialog_removal": "user requested, not implemented",
+    "candidate_number_bug": "implemented; unit tests passed; actual browser verification pending",
+    "comparison_dialog_removal": "implemented; actual browser verification pending",
+    "blocking_error": "Sky Computer Use native pipe startup failed",
     "audio_listening": false
   },
   "publication_package": {
-    "path": "production/publications/task-20261015-0003-stage-02.json",
+    "path": "production/publications/task-20261015-0003-stage-03.json",
+    "sha256": "9ace5fa15adb0c191d415744d2fe8f100e47634740d088985a708c151c290da8",
+    "publication_id": "ca3da0a16145d886e550ec703eaddfa4580463838e9b4863f6f4045c4b19d899",
+    "objects": 807,
+    "media_files": 27,
     "applied_to_formal": false,
-    "sha256": "5aee3280872431dfd151f837cd02eaa2508be42f479e02bda691dc822e72a415",
-    "publication_id": "ca8c42895cad8ddc2cfd852f2e0e4f2be745bd67d465bbf3b8927c1449546055",
-    "objects": 478,
-    "media_files": 11,
     "preflight": {
       "passed": true,
       "target": "isolated clone of formal database",
-      "receipt": ".runtime/generation/publications/task-20261015-0003-stage-check-02/preflight.json",
+      "receipt": ".runtime/generation/publications/task-20261015-0003-stage-check-03/preflight.json",
       "result": {
         "applied": false,
         "already_published": false,
-        "publication_id": "ca8c42895cad8ddc2cfd852f2e0e4f2be745bd67d465bbf3b8927c1449546055",
+        "publication_id": "ca3da0a16145d886e550ec703eaddfa4580463838e9b4863f6f4045c4b19d899",
         "source_commit": null,
         "scope": {
           "contract": "production-current-publication-v1",
           "changed_rows": {
-            "objects": 478,
-            "revisions": 478,
-            "dependencies": 1652,
+            "objects": 807,
+            "revisions": 807,
+            "dependencies": 2996,
             "comments": 0,
             "material_content": 0,
             "material_archive_files": 0,
@@ -82,16 +145,16 @@
             "business_relations": 0,
             "business_relation_aliases": 0,
             "audiovisual_notes": 0,
-            "production_current_records": 256,
-            "production_submissions": 10,
-            "production_candidates": 9,
-            "production_candidate_targets": 9,
+            "production_current_records": 430,
+            "production_submissions": 26,
+            "production_candidates": 25,
+            "production_candidate_targets": 25,
             "production_comment_quotes": 0,
-            "production_current_operations": 476,
+            "production_current_operations": 1054,
             "production_response_excerpts": 0
           },
           "comment_events": [],
-          "publication_id": "ca8c42895cad8ddc2cfd852f2e0e4f2be745bd67d465bbf3b8927c1449546055",
+          "publication_id": "ca3da0a16145d886e550ec703eaddfa4580463838e9b4863f6f4045c4b19d899",
           "already_published": false
         }
       }
@@ -102,5 +165,9 @@
     "included_in_export": false,
     "recovery_receipt": "../../receipts/openart-task-20261015-0003-aheng-wet-01.json"
   },
-  "pending_system_repository": "review_desk requires managed run activation"
+  "execution_tests": {
+    "python_related_passed": 21,
+    "node_related_passed": 64,
+    "baseline_errors": "Two test_generation errors reproduce before the patch; full suite not claimed passed."
+  }
 }
