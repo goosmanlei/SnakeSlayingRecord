@@ -1,0 +1,101 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-stone-bridge-layout-01",
+  "submission": {
+    "call_id": "task-20261015-0003-stone-bridge-layout-01",
+    "submission_sha256": "baec5b97ee73e95ab113c1cfd806c643a396917bed7d317fc8f69b20d3906894",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-stone-bridge-layout-01.json",
+  "provider_history_id": null,
+  "provider_job_id": "df744f92-7d1c-41d0-9ebe-49d3eede750b",
+  "provider_resource_id": null,
+  "model": "marketing-studio/image/flare",
+  "project_id": null,
+  "provider": "Higgsfield OpenAPI",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "6474bd6cd194751b4898cb6a16abb19ccf3ef7f3a0ed9eb2e053547832fe277c.png",
+    "sha256": "6474bd6cd194751b4898cb6a16abb19ccf3ef7f3a0ed9eb2e053547832fe277c",
+    "bytes": 9159728,
+    "mime": "image/png",
+    "width": 3840,
+    "height": 2160
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-stone-bridge-layout-01",
+    "candidate_id": "candidate-59c94077b340cde4620aef7012e209136c81e51caa5ce638768fe83500d2e318",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "actual": "UNKNOWN",
+    "planning_reserve": 0.5,
+    "account": "Higgsfield OpenAPI prepaid balance; no recharge",
+    "budget_snapshot": {
+      "created_at": "2026-10-16T18:30:07.402083+00:00",
+      "user_reported_prepaid_usd": 8.65,
+      "actual_balance_verified": true,
+      "max_dispatches": 9,
+      "reserve_per_unknown_usd": 0.5,
+      "generation_model": "marketing-studio/image/flare",
+      "no_recharge": true,
+      "source": "User said Higgsfield OpenAPI remaining8.65 USD; later corrected only Nano Banana availability, not the balance.",
+      "actual_charge": "UNKNOWN",
+      "verified_balance_usd": 8.21,
+      "balance_verified_at": "2026-10-16T18:51:18.715585+00:00",
+      "balance_source": "Daily Chrome https://open.higgsfield.ai/billing visible balance and Auto top-up dialog; read-only, no settings saved.",
+      "balance_anchor_dispatch_count": 5,
+      "auto_top_up_enabled": true,
+      "auto_top_up_threshold_usd": 3.13,
+      "auto_top_up_amount_usd": 25.0,
+      "threshold_buffer_usd": 0.5,
+      "next_batch_limit": 4,
+      "planning_note": "After fresh billing reload, all5 calls completed, balance8.21USD. Two prior2-call windows changed account balance by0.17 and0.18USD, individual fee remainsUNKNOWN. Same single-image4K/high parameters now reserve0.50USD per call, more than2.7x the largest observed two-call window; cap nextbatch at4, projected6.21USD above3.13+0.50 threshold. No unresolved HF calls."
+    },
+    "note": "Authenticated estimate returns token rates, not a fixed charge. Dispatch cap and observed auto-top-up threshold checked before submission."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "已实际打开3840×2160原生PNG。南北桥、低栏、东西溪流和南桥头谈话地可辨；南端除东西岔路外仍向画框下方延出宽石路，形成第三分支，未满足仅向家及渡口分路的地理约束。",
+    "decision": "桥与停步空间可读，但完整分路关系仍不通过，不选择当前原件。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  },
+  "actual_request_body_sha256": "6ee14b048db484c5900c0384ec1ec1e1691b4ab9294c7149576b722ce3aa7efd",
+  "idempotency_key": "d86f0fda-2741-4396-ab17-565bd6dc426c",
+  "budget_snapshot": {
+    "created_at": "2026-10-16T18:30:07.402083+00:00",
+    "user_reported_prepaid_usd": 8.65,
+    "actual_balance_verified": true,
+    "max_dispatches": 9,
+    "reserve_per_unknown_usd": 0.5,
+    "generation_model": "marketing-studio/image/flare",
+    "no_recharge": true,
+    "source": "User said Higgsfield OpenAPI remaining8.65 USD; later corrected only Nano Banana availability, not the balance.",
+    "actual_charge": "UNKNOWN",
+    "verified_balance_usd": 8.21,
+    "balance_verified_at": "2026-10-16T18:51:18.715585+00:00",
+    "balance_source": "Daily Chrome https://open.higgsfield.ai/billing visible balance and Auto top-up dialog; read-only, no settings saved.",
+    "balance_anchor_dispatch_count": 5,
+    "auto_top_up_enabled": true,
+    "auto_top_up_threshold_usd": 3.13,
+    "auto_top_up_amount_usd": 25.0,
+    "threshold_buffer_usd": 0.5,
+    "next_batch_limit": 4,
+    "planning_note": "After fresh billing reload, all5 calls completed, balance8.21USD. Two prior2-call windows changed account balance by0.17 and0.18USD, individual fee remainsUNKNOWN. Same single-image4K/high parameters now reserve0.50USD per call, more than2.7x the largest observed two-call window; cap nextbatch at4, projected6.21USD above3.13+0.50 threshold. No unresolved HF calls."
+  }
+}

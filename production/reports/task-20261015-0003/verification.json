@@ -1,16 +1,16 @@
 {
   "format": "stage-verification-v1",
   "task_id": "task-20261015-0003",
-  "stage": "stage-07",
-  "checked_at": "2026-10-16T18:08:46.207722+00:00",
+  "stage": "stage-08",
+  "checked_at": "2026-10-16T19:22:56.148749+00:00",
   "requirements": 651,
   "ordinary_state": 191,
   "unique_dependency_edges": 3397,
   "acyclic": true,
-  "candidates": 210,
-  "covered_requirements": 170,
-  "production_files_verified": 236,
-  "selected_input_slots": 2169,
+  "candidates": 225,
+  "covered_requirements": 178,
+  "production_files_verified": 261,
+  "selected_input_slots": 2246,
   "selected_by_material": {
     "new26-aheng-identity": 210,
     "new26-exemption-doc-identity": 9,
@@ -79,10 +79,13 @@
     "new26-neighbors-identity": 3,
     "new26-patched-lantern-identity": 37,
     "new26-liang-clerk-identity": 30,
+    "new26-old-form-identity": 6,
     "new26-county-deputy-identity": 24,
     "new26-office-clerks-identity": 10,
     "new26-cheng-identity": 79,
     "new26-snake-identity": 8,
+    "new26-grain-order-identity": 21,
+    "new26-inquiry-record-identity": 25,
     "new26-approval-paper-identity": 6,
     "new26-loan-uncovered-overall": 12,
     "new26-helpers-identity": 33,
@@ -104,26 +107,28 @@
     "new26-liji-clean-wrap-overall": 4,
     "new26-xiaoman-mother-identity": 9,
     "new26-office-clerks-voice": 6,
+    "new26-county-room-layout": 15,
     "new26-document-handler-identity": 1,
     "new26-complaint-scroll-identity": 3,
     "new26-verdict-notice-identity": 8,
     "new26-liji-healed-overall": 46,
     "new26-grain-manager-identity": 4,
     "new26-clearance-receipt-identity": 2,
+    "new26-teacher-court-layout": 10,
     "new26-song-teacher-identity": 9,
     "new26-performance-laundry-identity": 2
   },
   "status_counts": {
-    "executor_checked": 92,
+    "executor_checked": 97,
     "executor_checked_partial": 1,
     "user_audition_passed": 10,
-    "quality_failed": 27,
+    "quality_failed": 29,
     "reference_pending": 3,
-    "not_produced": 21,
-    "hearing_unverified": 37
+    "not_produced": 13,
+    "hearing_unverified": 38
   },
   "call_counts": {
-    "completed": 209,
+    "completed": 221,
     "unknown": 5,
     "failed": 3
   },
@@ -146,37 +151,37 @@
   },
   "locked_story_unchanged": true,
   "sanitized_private_objects": {
-    "managed-method-artifact-v1": 1411,
-    "managed-method-execution-v1": 473
+    "managed-method-artifact-v1": 1509,
+    "managed-method-execution-v1": 506
   },
   "empty_instance_recovery": {
     "recovered": true,
-    "objects": 18371,
-    "production_objects": 2104,
-    "revisions": 18424,
+    "objects": 18470,
+    "production_objects": 2131,
+    "revisions": 18523,
     "comments": 404,
-    "files_verified": 294,
-    "destination": ".runtime/generation/recovered-stage-0003-07",
+    "files_verified": 319,
+    "destination": ".runtime/generation/recovered-stage-0003-08",
     "schema_version": 14,
     "exact_table_comparisons": {
       "production_current_records": {
-        "rows": 2104,
-        "sha256": "3881efadc82bc35f0a6b23a85ee69e99d141b310f0c5639b6c89e626ae9f27b4",
+        "rows": 2131,
+        "sha256": "e2e2af8c5fbb6a04c870c5d741dfe6b8b0b40c79de14efc8b0078d5ccf65d911",
         "equal": true
       },
       "production_candidates": {
-        "rows": 210,
-        "sha256": "b2f50ef39cf5f94a59d95f07ccfe5306e500a8b9fd86c82b8c579698a7751dbe",
+        "rows": 225,
+        "sha256": "32b839b793d588025ac6b5e66c7b2a6287a9585d74872a1472bc928f93c0b68b",
         "equal": true
       },
       "production_candidate_targets": {
-        "rows": 210,
-        "sha256": "cb6b7eb3af443a6ba102a8cbdda29badb243a57df6cc35f9a1824c1c77b4521c",
+        "rows": 225,
+        "sha256": "546d20fa41b3437d40852cfc41a6deb2c29fed2047ffebcd2f84956dfe39d863",
         "equal": true
       },
       "production_submissions": {
-        "rows": 218,
-        "sha256": "beca0e359945cce91cb0735c1411b986d47e7f13e43cf250c37e7bcdbe7deb7e",
+        "rows": 233,
+        "sha256": "db66e3ded6aafa21cadc3b6ad707865f70b60f21e829a782bd7844e04fb3e336",
         "equal": true
       },
       "comments": {
@@ -204,30 +209,31 @@
     "production/publications/task-20261015-0003-stage-03.json": "9ace5fa15adb0c191d415744d2fe8f100e47634740d088985a708c151c290da8",
     "production/publications/task-20261015-0003-stage-02.json": "5aee3280872431dfd151f837cd02eaa2508be42f479e02bda691dc822e72a415",
     "production/publications/task-20261015-0003-stage-01.json": "e94b851776274b102b890437fcb657631a11a75339a4e2c71f3b3533c85e836a",
+    "production/publications/task-20261015-0003-stage-07.json": "01a1b36feb5d7161028d166d7cd9fc09c5e71a1bac20e3b2e167d0e3f488c7d2",
     "production/publications/task-20261015-0003-stage-06.json": "e04b1d646d07679283881e6be32b72d62da7aab8a9215c7df19af45d00bddd37"
   },
   "publication_package": {
-    "path": "production/publications/task-20261015-0003-stage-07.json",
-    "sha256": "01a1b36feb5d7161028d166d7cd9fc09c5e71a1bac20e3b2e167d0e3f488c7d2",
-    "publication_id": "1e97c469e4dd9dd178ff5cb9250866199255cc7fd7a9fcfe60649cf41a994563",
-    "objects": 1973,
-    "media_files": 236,
+    "path": "production/publications/task-20261015-0003-stage-08.json",
+    "sha256": "1ba6bb6deae2791f9aa91258405d2baf854a6731186555166530840a6b1d5926",
+    "publication_id": "3fef2888536c13ec8523114e6c480349e40ee811e4b6e276a1475907544aa5a1",
+    "objects": 2081,
+    "media_files": 261,
     "applied_to_formal": false,
     "preflight": {
       "passed": true,
       "target": "isolated clone of formal database",
-      "receipt": ".runtime/generation/publications/task-20261015-0003-stage-check-07/preflight.json",
+      "receipt": ".runtime/generation/publications/task-20261015-0003-stage-check-08/preflight.json",
       "result": {
         "applied": false,
         "already_published": false,
-        "publication_id": "1e97c469e4dd9dd178ff5cb9250866199255cc7fd7a9fcfe60649cf41a994563",
+        "publication_id": "3fef2888536c13ec8523114e6c480349e40ee811e4b6e276a1475907544aa5a1",
         "source_commit": null,
         "scope": {
           "contract": "production-current-publication-v1",
           "changed_rows": {
-            "objects": 1973,
-            "revisions": 1973,
-            "dependencies": 9565,
+            "objects": 2081,
+            "revisions": 2081,
+            "dependencies": 10013,
             "comments": 0,
             "material_content": 0,
             "material_archive_files": 0,
@@ -237,16 +243,16 @@
             "business_relations": 0,
             "business_relation_aliases": 0,
             "audiovisual_notes": 0,
-            "production_current_records": 1006,
-            "production_submissions": 218,
-            "production_candidates": 210,
-            "production_candidate_targets": 210,
+            "production_current_records": 1042,
+            "production_submissions": 233,
+            "production_candidates": 225,
+            "production_candidate_targets": 225,
             "production_comment_quotes": 0,
-            "production_current_operations": 4807,
+            "production_current_operations": 4987,
             "production_response_excerpts": 0
           },
           "comment_events": [],
-          "publication_id": "1e97c469e4dd9dd178ff5cb9250866199255cc7fd7a9fcfe60649cf41a994563",
+          "publication_id": "3fef2888536c13ec8523114e6c480349e40ee811e4b6e276a1475907544aa5a1",
           "already_published": false
         }
       }
@@ -255,19 +261,19 @@
   "formal_publication": false,
   "system_commit": "096b6bb0d7c13a20d61c54a2211b48b245f8abc7",
   "stage_freeze": {
-    "frozen_at": "2026-10-16T18:02:35.180665+00:00",
-    "source_snapshot": ".runtime/task-20261015-0003/source-stage07.sqlite3",
+    "frozen_at": "2026-10-16T19:17:28.601973+00:00",
+    "source_snapshot": ".runtime/task-20261015-0003/source-stage08.sqlite3",
     "active_database": ".runtime/generation/review/.runtime/review.sqlite3",
     "summary": {
-      "checked_at": "2026-10-16T18:02:32.843010+00:00",
+      "checked_at": "2026-10-16T19:17:26.541330+00:00",
       "requirements": 651,
       "ordinary_state": 191,
       "unique_dependency_edges": 3397,
       "acyclic": true,
-      "candidates": 210,
-      "covered_requirements": 170,
-      "production_files_verified": 236,
-      "selected_input_slots": 2169,
+      "candidates": 225,
+      "covered_requirements": 178,
+      "production_files_verified": 261,
+      "selected_input_slots": 2246,
       "selected_by_material": {
         "new26-aheng-identity": 210,
         "new26-exemption-doc-identity": 9,
@@ -336,10 +342,13 @@
         "new26-neighbors-identity": 3,
         "new26-patched-lantern-identity": 37,
         "new26-liang-clerk-identity": 30,
+        "new26-old-form-identity": 6,
         "new26-county-deputy-identity": 24,
         "new26-office-clerks-identity": 10,
         "new26-cheng-identity": 79,
         "new26-snake-identity": 8,
+        "new26-grain-order-identity": 21,
+        "new26-inquiry-record-identity": 25,
         "new26-approval-paper-identity": 6,
         "new26-loan-uncovered-overall": 12,
         "new26-helpers-identity": 33,
@@ -361,34 +370,36 @@
         "new26-liji-clean-wrap-overall": 4,
         "new26-xiaoman-mother-identity": 9,
         "new26-office-clerks-voice": 6,
+        "new26-county-room-layout": 15,
         "new26-document-handler-identity": 1,
         "new26-complaint-scroll-identity": 3,
         "new26-verdict-notice-identity": 8,
         "new26-liji-healed-overall": 46,
         "new26-grain-manager-identity": 4,
         "new26-clearance-receipt-identity": 2,
+        "new26-teacher-court-layout": 10,
         "new26-song-teacher-identity": 9,
         "new26-performance-laundry-identity": 2
       },
       "status_counts": {
-        "executor_checked": 92,
+        "executor_checked": 97,
         "executor_checked_partial": 1,
         "user_audition_passed": 10,
-        "quality_failed": 27,
+        "quality_failed": 29,
         "reference_pending": 3,
-        "not_produced": 21,
-        "hearing_unverified": 37
+        "not_produced": 13,
+        "hearing_unverified": 38
       },
       "call_counts": {
-        "completed": 209,
+        "completed": 221,
         "unknown": 5,
         "failed": 3
       }
     },
     "checked_material_binding_coverage": {
-      "checked_materials": 102,
-      "expected_slots": 2169,
-      "selected_slots": 2169,
+      "checked_materials": 107,
+      "expected_slots": 2246,
+      "selected_slots": 2246,
       "pending_slots": [],
       "by_material": {
         "new26-ahe-identity": {
@@ -471,6 +482,10 @@
           "expected": 24,
           "selected": 24
         },
+        "new26-county-room-layout": {
+          "expected": 15,
+          "selected": 15
+        },
         "new26-curtain-identity": {
           "expected": 24,
           "selected": 24
@@ -511,6 +526,10 @@
           "expected": 4,
           "selected": 4
         },
+        "new26-grain-order-identity": {
+          "expected": 21,
+          "selected": 21
+        },
         "new26-grain-ticket-identity": {
           "expected": 10,
           "selected": 10
@@ -538,6 +557,10 @@
         "new26-incense-burner-identity": {
           "expected": 1,
           "selected": 1
+        },
+        "new26-inquiry-record-identity": {
+          "expected": 25,
+          "selected": 25
         },
         "new26-layout-note-identity": {
           "expected": 13,
@@ -651,6 +674,10 @@
           "expected": 6,
           "selected": 6
         },
+        "new26-old-form-identity": {
+          "expected": 6,
+          "selected": 6
+        },
         "new26-old-registers-identity": {
           "expected": 19,
           "selected": 19
@@ -747,6 +774,10 @@
           "expected": 35,
           "selected": 35
         },
+        "new26-teacher-court-layout": {
+          "expected": 10,
+          "selected": 10
+        },
         "new26-temple-front-layout": {
           "expected": 55,
           "selected": 55
@@ -807,6 +838,7 @@
       "production/publications/task-20261015-0003-stage-03.json": "9ace5fa15adb0c191d415744d2fe8f100e47634740d088985a708c151c290da8",
       "production/publications/task-20261015-0003-stage-02.json": "5aee3280872431dfd151f837cd02eaa2508be42f479e02bda691dc822e72a415",
       "production/publications/task-20261015-0003-stage-01.json": "e94b851776274b102b890437fcb657631a11a75339a4e2c71f3b3533c85e836a",
+      "production/publications/task-20261015-0003-stage-07.json": "01a1b36feb5d7161028d166d7cd9fc09c5e71a1bac20e3b2e167d0e3f488c7d2",
       "production/publications/task-20261015-0003-stage-06.json": "e04b1d646d07679283881e6be32b72d62da7aab8a9215c7df19af45d00bddd37"
     }
   },
@@ -829,9 +861,9 @@
     "actual_listening": false
   },
   "checked_material_binding_coverage": {
-    "checked_materials": 102,
-    "expected_slots": 2169,
-    "selected_slots": 2169,
+    "checked_materials": 107,
+    "expected_slots": 2246,
+    "selected_slots": 2246,
     "pending_slots": [],
     "by_material": {
       "new26-ahe-identity": {
@@ -914,6 +946,10 @@
         "expected": 24,
         "selected": 24
       },
+      "new26-county-room-layout": {
+        "expected": 15,
+        "selected": 15
+      },
       "new26-curtain-identity": {
         "expected": 24,
         "selected": 24
@@ -954,6 +990,10 @@
         "expected": 4,
         "selected": 4
       },
+      "new26-grain-order-identity": {
+        "expected": 21,
+        "selected": 21
+      },
       "new26-grain-ticket-identity": {
         "expected": 10,
         "selected": 10
@@ -981,6 +1021,10 @@
       "new26-incense-burner-identity": {
         "expected": 1,
         "selected": 1
+      },
+      "new26-inquiry-record-identity": {
+        "expected": 25,
+        "selected": 25
       },
       "new26-layout-note-identity": {
         "expected": 13,
@@ -1094,6 +1138,10 @@
         "expected": 6,
         "selected": 6
       },
+      "new26-old-form-identity": {
+        "expected": 6,
+        "selected": 6
+      },
       "new26-old-registers-identity": {
         "expected": 19,
         "selected": 19
@@ -1190,6 +1238,10 @@
         "expected": 35,
         "selected": 35
       },
+      "new26-teacher-court-layout": {
+        "expected": 10,
+        "selected": 10
+      },
       "new26-temple-front-layout": {
         "expected": 55,
         "selected": 55
@@ -1245,25 +1297,25 @@
     }
   },
   "chrome": {
-    "browser": "daily Chrome",
+    "browser": "daily Chrome default profile",
     "task_port": 62845,
-    "candidate_number_bug": "implemented; unit tests passed; actual browser verification pending",
-    "comparison_dialog_removal": "implemented; actual browser verification pending",
-    "blocking_error": "Sky Computer Use native pipe startup failed",
+    "candidate_number_bug": "actual task-preview candidate2 to candidate1 labels remained1,2",
+    "comparison_dialog_removal": "actual task-preview comparison has no review action, help or explanatory footer",
+    "available": true,
+    "representative_categories_verified": [
+      "character",
+      "animal",
+      "group",
+      "space",
+      "prop",
+      "voice",
+      "complete_song",
+      "state"
+    ],
     "audio_listening": false,
-    "last_recheck": {
-      "checked_at": "2026-10-16T15:59:54.806044+00:00",
-      "reason": "Refresh after more than two hours of interruption and continuing user playback feedback",
-      "result": {
-        "apps": [],
-        "browsers": [],
-        "errors": [
-          "Native apps: Error: Sky Computer Use native pipe startup failed"
-        ]
-      },
-      "actual_browser_verification": false,
-      "next": "Do not repeat without a new connection state; no alternate profile."
-    }
+    "complete_song_playback_to_end": true,
+    "receipt": "production/receipts/chrome-task-20261015-0003-stage08.json",
+    "formal_page_verified": false
   },
   "audio_audition": {
     "executor_actual_listening": false,
@@ -1285,23 +1337,14 @@
       "temple-hall-ambience-01"
     ],
     "source": "production/receipts/audio-auditions-task-20261015-0003-stage07.json",
-    "scope": "Exact user hearing and deterministic editing evidence; no claim of executor listening."
+    "scope": "Exact user hearing and deterministic editing evidence; no claim of executor listening.",
+    "pending_derivative_receipt": "production/receipts/audio-derived-task-20261015-0003-batch29.json",
+    "new_unheard_original": "county-room-ambience-02"
   },
   "pause": {
-    "task_id": "task-20261015-0003",
-    "user_request": "下一个checkpoint请先暂停任务，我要临时退出下当前会话",
-    "recorded_at": "2026-10-16T18:01:44.546630+00:00",
-    "pause_after": "stage-07 verified checkpoint",
-    "new_paid_requests_allowed_before_resume": false,
-    "resume_entry": "通过原任务入口恢复；先完整读取届时的新launch文件并完成bind_session认证，不直接codex resume绕过任务领取。",
-    "do_not_mark_complete": true,
-    "known_active_local_provider_requests_at_pause_request": [],
-    "historical_unknown_requests": [
-      "task-20261015-0003-qingpeng-full-01",
-      "task-20261015-0003-guard-identity-01",
-      "task-20261015-0003-porter-identity-01",
-      "task-20261015-0003-stage-drum-identity-01",
-      "task-20261015-0003-guard-voice-01"
-    ]
+    "previous_checkpoint": "stage-07",
+    "status": "resumed",
+    "authorization": "Latest user run-cfy6gv6t.md; task session authentication succeeded",
+    "task_complete": false
   }
 }
