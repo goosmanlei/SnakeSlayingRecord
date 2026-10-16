@@ -135,6 +135,7 @@
 - 基础流程以素材方案、生成与制作、候选及结果检查衔接；内部准备接口保留。当前方法按创作职责取准确资料，结构与小说无影视／视频固定依赖，旧连续性不再是统一必读。职责、作者入口、条件与历史边界统一见 [创作制作方法](production/professional-methods.md)。
 
 - 用户于 2026-10-12 说明，本机已安装 Higgsfield client，授权 key 使用其标准命名 `HF_CREDENTIAL`／`HF_KEY`。此为用户提供的本机现状，项目不记录凭据值，也不据此推断鉴权或调用已验证。来源：用户 2026-10-12 说明。
+- Higgsfield OpenAPI与网页／MCP套餐分开核对。task-20261015-0003于2026-10-17核实并实际调用`marketing-studio/image/flare`（GPT Image2.5 Flare），4K、16:9请求返回原生3840×2160 PNG；这不证明其他模型或图像参考模式可用。用户已更正该OpenAPI并无Nano Banana。后续仍按当次官方接口、余额及自动充值触发条件核对，默认OpenArt顺序不变；真实通道与原件证据见[制作检查点](production/reports/task-20261015-0003/README.md)。
 - 后续视频方案与 Prompt 编写的统一入口为 [视频生成手册](production/seedance-video-handbook.md)，按任务要求先读并应用，再核对当次接口和准确输入；正文及能力表只在手册维护。准确只读来源投影由后台 `method-source` 追加；`scripts/approach_foundation.py` 维护旧资料章节到方法阅读的源映射，两个原同步入口委托该映射检查。原创教学 Demo、研究观察与本故事的镜头采用分别判断；准确交付和正式运行以主任务账本及发布回执为准。来源：`task-20261008-0002` 的用户交付要求、原件研究，以及 `task-20261012-0017` 的入口统一。
 - 画面方向为二维人物＋轻手绘背景、16:9 横屏，仅用已确认平台及可用额度，不自行充值、购买或另开收费 API。原制作要求为原生 4K；全剧首轮 `task-20261002-0003` 经用户 2026-10-02 调整，接受指定模型实际最高原生尺寸，保留未放大原件，该例外不改旧图规格。OpenArt 固定项目、CLI 优先、母版与最多两代图生图规则见 [AGENTS.md](AGENTS.md)、`config/openart.json`。
 - 图像首选约定为 OpenArt 的 GPT IMG 2.5，Credit 用完后全剧首轮获准切到 Codex 内置 GPT Image。CLI 0.1.1 曾拒绝 `--quality`，当时改用同账号／项目连接器；内置工具当时未暴露可选型号、质量、像素尺寸、服务端调用 ID 或用量，最多接收五张参考。以上是历史能力，执行前重查，只记录实际暴露字段和实际像素，不将文件 ID 当调用 ID。来源：`production/full-generation/README.md`、请求与回执。

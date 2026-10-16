@@ -15,21 +15,21 @@
     },
     {
       "id": "candidate-number-after-switch",
-      "status": "implemented_browser_unverified",
+      "status": "browser_verified_task_preview",
       "reproduction": "日常Chrome任务62845，EN001大卡的M001从候选2切到候选1后，两个按钮都显示候选1。",
       "data_facts": "候选表编号正确为1、2，原件哈希不同。entity-material响应的results有正确candidate_number，但所选完整候选的members条目缺少candidate_number。",
       "cause": "entity_contract.py加载完整候选时用p.record整体替换摘要，丢失编号；business_codes仅补results编号。retainLoadedMaterialMembers再用旧members记录替换新results摘要，丢号后经排序及index+1退路显示重复1。",
       "action": "保留准确素材候选编号及身份，回归2到1到2切换、比较和刷新；不改原件、候选、评论或作者选择。",
       "evidence_runtime": ".runtime/task-20261015-0003/candidate-label-bug/",
-      "verification": "加载准确候选时保留candidate_id与candidate_number。回归用两个真实测试候选验证2到1到2切换，results和members编号均正确；真实Chrome仍待连接恢复。"
+      "verification": "日常Chrome的任务62845已实测M001候选2切到候选1，编号稳定为1、2；比较弹窗显示两份准确原图。接口和2到1到2回归证据沿既有测试，正式发布后的复验仍未完成。"
     },
     {
       "id": "comparison-dialog-controls",
-      "status": "implemented_browser_unverified",
+      "status": "browser_verified_task_preview",
       "user_requirement": "同需求候选比较弹窗不需要下面的审阅此准确候选按钮等，因为当前系统没有审阅概念。",
       "action": "仅移除该比较弹窗两侧的审阅此准确候选按钮、问号入口及底部说明；保留候选切换、标题、原图和关闭。",
       "target": "review_desk/static/material-review.js:materialCompareControl",
-      "verification": "比较弹窗已移除两侧审阅按钮、帮助和底部说明，保留候选选择与媒体。相关Node测试64项通过；真实Chrome仍待连接恢复。"
+      "verification": "日常Chrome已打开比较弹窗，候选1、2和两张原图正常显示，原审阅按钮、问号和说明不存在；保留关闭和切换。正式页尚未发布。"
     },
     {
       "id": "selected-reference-submission",
@@ -60,9 +60,9 @@
     {
       "id": "root-image-route-capacity",
       "status": "fallback_in_use",
-      "evidence": "OpenArt观察余额65，低于4K根图350或Nano80积分报价；内置工具返回1672×941不足4K；Higgsfield网页／MCP通道明确拒绝并要求Basic或更高套餐。未开新订阅或充值。 该结果不推定OpenAPI账户或模型权限。 用户随后明确更正：Higgsfield OpenAPI没有Nano Banana；不再作为本任务Nano备用。只读估价model_disabled，无该渠道生成调用。",
-      "action": "按用户委托的整体制作质量判断，Google Nano Banana2.1先做单张第0代根图试制；梁书吏实际看图通过后才分批扩展。模型替代是本任务执行选择，不改写历史GPT结果或全局默认策略。",
-      "verification": "每张真实原件与质量结果单列；时代造型或年龄偏差仍退回有界返修，通道成功不等于该批全部通过。"
+      "evidence": "OpenArt观察余额65，低于4K根图350或Nano80积分报价；内置工具返回1672×941不足4K；Higgsfield网页／MCP通道明确拒绝并要求Basic或更高套餐。未开新订阅或充值。 该结果不推定OpenAPI账户或模型权限。 用户随后明确更正：Higgsfield OpenAPI没有Nano Banana；不再作为本任务Nano备用。只读估价model_disabled，无该渠道生成调用。 本轮已另行核实Higgsfield OpenAPI提供GPT Image2.5 Flare，marketing-studio/image/flare，支持4K/16:9；9次真实调用均返回3840×2160 PNG，不是Nano通道。",
+      "action": "Google备用沿既有预算执行；Flare先做单张再有界扩展，实际原件逐张看图。县衙与歌娘小院通过，其余结构缺陷未放行。连续空间失败后停止同类批量，改进构图或工程约束再决定下一次调用。平面道具按准确新方案用本地SVG工程制作。",
+      "verification": "Higgsfield余额最近在日常Chrome刷新为7.87美元；账户已有自动充值设置保持未改，调用须高于3.13美元触发线加0.50美元缓冲。无充值、订阅或透支。个别API费用仍UNKNOWN。"
     },
     {
       "id": "liji-precise-reference-region",
@@ -76,7 +76,7 @@
       "status": "blocked",
       "evidence": "Actual 2242604-byte native WAV was read in full and supplied as audio/wav through the audio tool output. Runtime returned: audio content omitted because you do not support audio input.",
       "original_sha256": "cb9568d517393bbb365105efeb2297763d6cf8b92cba86b6c212f6f0bb361059",
-      "verification": "执行者仍未实际听到声音。用户逐项试听证据与准确短参考见audio-auditions-task-20261015-0003-stage07.json：阿蘅、李寄、李诞、两位母亲、乡老、帮工、差吏与领唱组以及河水已完成对应听审；后院、小院、殿内完整母版已通过，事件派生仍待。其他原件不继承通过结论。",
+      "verification": "执行者仍未实际听到声音，既有逐项用户试听结论保持。后院与歌娘小院共7份事件、底声及循环派生已登记，等待用户检查；庙殿派生尚待事件时点。县衙24秒候选2已返回并完成技术检查，未听审。页面播放成功不替代声音质量。",
       "resume_when": "An audio-capable verification path or actual human listening evidence is available."
     },
     {
@@ -139,25 +139,18 @@
     },
     {
       "id": "user-requested-stage07-pause",
-      "status": "paused_by_user",
+      "status": "resumed",
       "user_request": "下一个checkpoint请先暂停任务，我要临时退出下当前会话",
-      "action": "收拢已返回原件、用户试听与准确绑定，保存阶段07完整导出、空实例恢复和隔离增量验证后暂停；没有新付费生成。",
-      "resume_when": "用户通过原任务入口恢复并完成最新launch认证。先读本阶段逐项进度及真实未知请求；不要重发已返回或未知请求。",
-      "pending": "继续剩余原件、已知失败返修、未试听声音与四首完整歌曲；三份新环境母版的事件切分和循环检查；真实Chrome；受管集成及本机正式增量发布。",
-      "unsubmitted_author_plans": [
-        "li-home-layout-03",
-        "teacher-court-layout-01",
-        "temple-hall-layout-01"
-      ],
-      "county_room_image": "候选1证据桌长轴错误，已标未通过；尚未提交候选2。",
-      "county_room_sound": "候选1仅2.356104秒，当前24秒时间线技术规格不满足；未试听、未重试。"
+      "resolution": "用户已通过run-cfy6gv6t.md重新启动原任务；当前会话执行认证成功，从阶段07恢复，暂停条件解除。阶段07归档保持原字节，新的制作和验证保存至阶段08。",
+      "remaining": "逐项现状以progress.json为准；不重发历史未知请求。"
     }
   ],
-  "resume_requirement": "附属仓库已通过当前run启用，当前任务持有双仓执行锁；继续素材与接口验证，真实页面复验待日常Chrome连接可用。",
+  "resume_requirement": "当前run已认证并持有双仓任务锁。按本轮准确候选、原件和当前方案续做；真实Chrome已恢复，待最终正式发布后再复验。",
   "browser_verification": {
-    "status": "blocked",
-    "error": "Sky Computer Use native pipe startup failed",
-    "available_browsers": [],
-    "last_recovery": "2026-10-16 23:59北京时间重查仍为native pipe startup failed，apps与browsers均空；无新连接条件前不重复重试，不用其他profile。"
+    "status": "available_and_task_preview_sampled",
+    "browser": "daily Chrome default profile",
+    "evidence_runtime": ".runtime/task-20261015-0003/chrome-stage08-candidate-fixes.json",
+    "formal_publication_verified": false,
+    "audio_quality_verified_by_playback": false
   }
 }

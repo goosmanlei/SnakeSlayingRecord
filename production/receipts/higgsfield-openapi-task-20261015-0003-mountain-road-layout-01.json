@@ -1,0 +1,101 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-mountain-road-layout-01",
+  "submission": {
+    "call_id": "task-20261015-0003-mountain-road-layout-01",
+    "submission_sha256": "70a45a0bc0922c27f53f6ee8dd5783b1549e9931eaadab9f65d66eff611b6499",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-mountain-road-layout-01.json",
+  "provider_history_id": null,
+  "provider_job_id": "9eb2ae9f-4684-4067-9639-a65f5985276c",
+  "provider_resource_id": null,
+  "model": "marketing-studio/image/flare",
+  "project_id": null,
+  "provider": "Higgsfield OpenAPI",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "bce5429d51aa0b928a28f49400d76a2922f58af19a5192b965ba6b09018d8888.png",
+    "sha256": "bce5429d51aa0b928a28f49400d76a2922f58af19a5192b965ba6b09018d8888",
+    "bytes": 8263100,
+    "mime": "image/png",
+    "width": 3840,
+    "height": 2160
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-mountain-road-layout-01",
+    "candidate_id": "candidate-9290f6f5b75f45046f20de78919623a695976c67ed08bcceda556a8124fdeee7",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "actual": "UNKNOWN",
+    "planning_reserve": 0.5,
+    "account": "Higgsfield OpenAPI prepaid balance; no recharge",
+    "budget_snapshot": {
+      "created_at": "2026-10-16T18:30:07.402083+00:00",
+      "user_reported_prepaid_usd": 8.65,
+      "actual_balance_verified": true,
+      "max_dispatches": 9,
+      "reserve_per_unknown_usd": 0.5,
+      "generation_model": "marketing-studio/image/flare",
+      "no_recharge": true,
+      "source": "User said Higgsfield OpenAPI remaining8.65 USD; later corrected only Nano Banana availability, not the balance.",
+      "actual_charge": "UNKNOWN",
+      "verified_balance_usd": 8.21,
+      "balance_verified_at": "2026-10-16T18:51:18.715585+00:00",
+      "balance_source": "Daily Chrome https://open.higgsfield.ai/billing visible balance and Auto top-up dialog; read-only, no settings saved.",
+      "balance_anchor_dispatch_count": 5,
+      "auto_top_up_enabled": true,
+      "auto_top_up_threshold_usd": 3.13,
+      "auto_top_up_amount_usd": 25.0,
+      "threshold_buffer_usd": 0.5,
+      "next_batch_limit": 4,
+      "planning_note": "After fresh billing reload, all5 calls completed, balance8.21USD. Two prior2-call windows changed account balance by0.17 and0.18USD, individual fee remainsUNKNOWN. Same single-image4K/high parameters now reserve0.50USD per call, more than2.7x the largest observed two-call window; cap nextbatch at4, projected6.21USD above3.13+0.50 threshold. No unresolved HF calls."
+    },
+    "note": "Authenticated estimate returns token rates, not a fixed charge. Dispatch cap and observed auto-top-up threshold checked before submission."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "已实际打开3840×2160原生PNG。两块西侧等候石和干路可辨；路面却形成暴露崖边的反向弯，远段向西延展可见，没有落实东转后被北侧岩坡遮挡的条件。",
+    "decision": "不能据此固定两晚等候镜头的出入视线；保留返修，不沿原结果扩深。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  },
+  "actual_request_body_sha256": "26a11fde515391aa3672766d5440fa82495a9e0364c399f08041a19c191c9aa1",
+  "idempotency_key": "c32bc32f-a434-458a-a780-758d9982c316",
+  "budget_snapshot": {
+    "created_at": "2026-10-16T18:30:07.402083+00:00",
+    "user_reported_prepaid_usd": 8.65,
+    "actual_balance_verified": true,
+    "max_dispatches": 9,
+    "reserve_per_unknown_usd": 0.5,
+    "generation_model": "marketing-studio/image/flare",
+    "no_recharge": true,
+    "source": "User said Higgsfield OpenAPI remaining8.65 USD; later corrected only Nano Banana availability, not the balance.",
+    "actual_charge": "UNKNOWN",
+    "verified_balance_usd": 8.21,
+    "balance_verified_at": "2026-10-16T18:51:18.715585+00:00",
+    "balance_source": "Daily Chrome https://open.higgsfield.ai/billing visible balance and Auto top-up dialog; read-only, no settings saved.",
+    "balance_anchor_dispatch_count": 5,
+    "auto_top_up_enabled": true,
+    "auto_top_up_threshold_usd": 3.13,
+    "auto_top_up_amount_usd": 25.0,
+    "threshold_buffer_usd": 0.5,
+    "next_batch_limit": 4,
+    "planning_note": "After fresh billing reload, all5 calls completed, balance8.21USD. Two prior2-call windows changed account balance by0.17 and0.18USD, individual fee remainsUNKNOWN. Same single-image4K/high parameters now reserve0.50USD per call, more than2.7x the largest observed two-call window; cap nextbatch at4, projected6.21USD above3.13+0.50 threshold. No unresolved HF calls."
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-rice-shop-layout-01",
+  "submission": {
+    "call_id": "task-20261015-0003-rice-shop-layout-01",
+    "submission_sha256": "51d0779612f66b45d9e1c67c34783897712789fece6b1867398f340cab99a604",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-rice-shop-layout-01.json",
+  "provider_history_id": null,
+  "provider_job_id": "b0a39d11-a7a3-4c9b-a0c6-fed4e8f62f1c",
+  "provider_resource_id": null,
+  "model": "marketing-studio/image/flare",
+  "project_id": null,
+  "provider": "Higgsfield OpenAPI",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "2e5bdc819004c7dfc274e3ff80c6ded9cca24ee7788214507cfa71b6ebf95ef6.png",
+    "sha256": "2e5bdc819004c7dfc274e3ff80c6ded9cca24ee7788214507cfa71b6ebf95ef6",
+    "bytes": 6700690,
+    "mime": "image/png",
+    "width": 3840,
+    "height": 2160
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-rice-shop-layout-01",
+    "candidate_id": "candidate-d6f1d3f5899b285b758e28ef8db14659a9f7aa051df204f465c8ba2867674563",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "actual": "UNKNOWN",
+    "planning_reserve": 0.5,
+    "account": "Higgsfield OpenAPI prepaid balance; no recharge",
+    "budget_snapshot": {
+      "created_at": "2026-10-16T18:30:07.402083+00:00",
+      "user_reported_prepaid_usd": 8.65,
+      "actual_balance_verified": true,
+      "max_dispatches": 9,
+      "reserve_per_unknown_usd": 0.5,
+      "generation_model": "marketing-studio/image/flare",
+      "no_recharge": true,
+      "source": "User said Higgsfield OpenAPI remaining8.65 USD; later corrected only Nano Banana availability, not the balance.",
+      "actual_charge": "UNKNOWN",
+      "verified_balance_usd": 8.21,
+      "balance_verified_at": "2026-10-16T18:51:18.715585+00:00",
+      "balance_source": "Daily Chrome https://open.higgsfield.ai/billing visible balance and Auto top-up dialog; read-only, no settings saved.",
+      "balance_anchor_dispatch_count": 5,
+      "auto_top_up_enabled": true,
+      "auto_top_up_threshold_usd": 3.13,
+      "auto_top_up_amount_usd": 25.0,
+      "threshold_buffer_usd": 0.5,
+      "next_batch_limit": 4,
+      "planning_note": "After fresh billing reload, all5 calls completed, balance8.21USD. Two prior2-call windows changed account balance by0.17 and0.18USD, individual fee remainsUNKNOWN. Same single-image4K/high parameters now reserve0.50USD per call, more than2.7x the largest observed two-call window; cap nextbatch at4, projected6.21USD above3.13+0.50 threshold. No unresolved HF calls."
+    },
+    "note": "Authenticated estimate returns token rates, not a fixed charge. Dispatch cap and observed auto-top-up threshold checked before submission."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "已实际打开3840×2160原生PNG。南门、北横柜、西侧米袋和门外东倒扣竹篮清楚；但柜上新增近现代玻璃罩提灯，与本故事油灯形制及空景不预放灯具要求冲突。檐下还新增两条长凳，挤占原本听客站位。",
+    "decision": "不把错误灯具和多余固定陈设带入下游；保留原件，后续从准确空间几何与干净陈设路线解决。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  },
+  "actual_request_body_sha256": "e6602d2bd0d0fa5f2f61bac47d33b0e0b4c7cabdb56f8e187e3f0a13f2ddfabf",
+  "idempotency_key": "88cdcdac-cb28-455b-bb1c-8a541607032f",
+  "budget_snapshot": {
+    "created_at": "2026-10-16T18:30:07.402083+00:00",
+    "user_reported_prepaid_usd": 8.65,
+    "actual_balance_verified": true,
+    "max_dispatches": 9,
+    "reserve_per_unknown_usd": 0.5,
+    "generation_model": "marketing-studio/image/flare",
+    "no_recharge": true,
+    "source": "User said Higgsfield OpenAPI remaining8.65 USD; later corrected only Nano Banana availability, not the balance.",
+    "actual_charge": "UNKNOWN",
+    "verified_balance_usd": 8.21,
+    "balance_verified_at": "2026-10-16T18:51:18.715585+00:00",
+    "balance_source": "Daily Chrome https://open.higgsfield.ai/billing visible balance and Auto top-up dialog; read-only, no settings saved.",
+    "balance_anchor_dispatch_count": 5,
+    "auto_top_up_enabled": true,
+    "auto_top_up_threshold_usd": 3.13,
+    "auto_top_up_amount_usd": 25.0,
+    "threshold_buffer_usd": 0.5,
+    "next_batch_limit": 4,
+    "planning_note": "After fresh billing reload, all5 calls completed, balance8.21USD. Two prior2-call windows changed account balance by0.17 and0.18USD, individual fee remainsUNKNOWN. Same single-image4K/high parameters now reserve0.50USD per call, more than2.7x the largest observed two-call window; cap nextbatch at4, projected6.21USD above3.13+0.50 threshold. No unresolved HF calls."
+  }
+}

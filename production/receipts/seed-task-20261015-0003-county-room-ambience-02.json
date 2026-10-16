@@ -1,0 +1,41 @@
+{
+  "id": "task-20261015-0003-county-room-ambience-02",
+  "status": "completed",
+  "request_id": "90a878ca-32a7-4b8a-a789-55ea52d96a7e",
+  "quota_id": "seed-quota-task-20261015-0003",
+  "production_submission": {
+    "call_id": "task-20261015-0003-county-room-ambience-02",
+    "submission_sha256": "71c85b2cfbbce55723fd29c0e1ade7aec93a2994fe962ea7a30f6a4ad10cb190",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "submitted_at": "2026-10-16T18:39:59.404256+00:00",
+  "endpoint": "https://openspeech.bytedance.com/api/v3/tts/create",
+  "input": {
+    "model": "seed-audio-1.0",
+    "text_prompt": "制作一段完整24秒、从头到尾持续可听的古代县衙室内环境录音。听者站在堂内中央朝北，木屋内低而连续的空气底、从左侧西廊传入的远风始终存在。底声轻但确实可听，不能把安静理解为数字静音，不能省略前后持续环境而只输出一个短音效。\n前8秒只有稳定室内空气与远风。随后从右侧东案听到毛笔在纸上连续写三四笔，持续约2秒；回到原来空气底约2秒。接着正前方北案有一张纸在木桌上轻挪一次，持续约2秒；继续稳定空气底约3秒。然后左侧西廊传来一人两步走近，停在门外；最后保持相同空间空气底至少4秒，自然结束完整24秒录音。\n声源真实、近远清楚，保留轻微短木屋反射和每次接触的自然尾音，事件之间可分离。不要人声、对白、念词、音乐、铃声、鸟鸣或其他额外事件。不要读出时间、指令或标题；不要骤停、骤变或用长淡出掩盖尾部。",
+    "audio_config": {
+      "format": "wav",
+      "sample_rate": 48000,
+      "pitch_rate": 0,
+      "speech_rate": 0,
+      "loudness_rate": 0,
+      "enable_subtitle": true
+    },
+    "watermark": {},
+    "references": []
+  },
+  "input_sha256": "d3e9d8fbee0cc58b7cb02576c71f7032f0bbdb0e84f5524cd7571ddb7010b42b",
+  "remaining_before_seconds": 770.8436249999999,
+  "reserved_seconds": 120,
+  "log_id": "2026101702395999A22768DE7E1B374E24",
+  "original_duration": 24,
+  "duration": 24,
+  "subtitle": {
+    "sentences": [],
+    "text": ""
+  },
+  "file": "export/assets/4b27c3da2a20d8934bad494f89d4161bf1a193e63f1339ec6534d7544a9288f5.wav",
+  "sha256": "4b27c3da2a20d8934bad494f89d4161bf1a193e63f1339ec6534d7544a9288f5",
+  "bytes": 4608044
+}
