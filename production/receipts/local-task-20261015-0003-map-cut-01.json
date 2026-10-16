@@ -1,0 +1,61 @@
+{
+  "operation_id": "task-20261015-0003-map-cut-01",
+  "requirement": {
+    "object_id": "new26-map-cut-overall",
+    "revision_id": "5da518097b08c3e3f0a32e38734d046795543dc2392b55efd1203207f4830e31"
+  },
+  "asset": {
+    "object_id": "asset-task-20261015-0003-map-cut-01",
+    "revision_id": "bbdedf0e49007db6ab516e901312eecc21047944ea060238292e88abb5ea9294"
+  },
+  "candidate_id": "candidate-1357a1e6ba8ee61d0988f9a141c1a062724eadb93fde283b150d742edf560324",
+  "components": [
+    {
+      "id": "original",
+      "role": "original",
+      "file": "7871d393601beda3f2b16fed0999c39b0f8f9d3ca662488fb2cba5d4c56d2dff.png",
+      "sha256": "7871d393601beda3f2b16fed0999c39b0f8f9d3ca662488fb2cba5d4c56d2dff",
+      "bytes": 361403,
+      "mime": "image/png",
+      "width": 3840,
+      "height": 2160
+    },
+    {
+      "id": "project",
+      "role": "project",
+      "file": "d5d4b37438d7cc258abd853a8fa30e897b14314e31e2bbaaa42b0163491df0a4.zip",
+      "sha256": "d5d4b37438d7cc258abd853a8fa30e897b14314e31e2bbaaa42b0163491df0a4",
+      "bytes": 1320,
+      "mime": "application/zip"
+    }
+  ],
+  "actual_cost": 0,
+  "source_svg_sha256": "c525ac4d6f921bfc643fb8f01520e57e2c09c126069bfb691d1e90864d92fc50",
+  "pixel_comparison": {
+    "bounds": [
+      1576,
+      961,
+      1824,
+      969
+    ],
+    "outside_change_identical": true
+  },
+  "input_source": {
+    "candidate": {
+      "object_id": "asset-task-20261015-0003-layout-note-01",
+      "revision_id": "67ffc1cef2590e5d89681e5e367a2034251c8084f50bc7fbdfca7670aa23028f"
+    },
+    "component_id": "project",
+    "file": "775e534e617ac1a1d71b428726823a4d4a3e58fe8952071328963cb9a988de30.zip",
+    "member": "source.svg",
+    "member_sha256": "032677dac9ac771c01619e65a7cf74490f4f646a7ca7c33ffd973187e14abd96",
+    "operation": "从完整工程中读取同一SVG，只加刀缝；PNG原件只用于前后看图比较。",
+    "sha256": "775e534e617ac1a1d71b428726823a4d4a3e58fe8952071328963cb9a988de30"
+  },
+  "task_id": "task-20261015-0003",
+  "quality_review": {
+    "executor_visual_inspection": "passed",
+    "user_adopted": false,
+    "method": "实际打开完整原件看图，状态与母版做源文件和像素比较；不涉及模型生成。"
+  }
+}

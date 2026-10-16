@@ -1333,8 +1333,8 @@
     "code": "M015",
     "object_id": "new26-boat-song-singing",
     "revision_id": "f11d4f9ee02db7cdb95a3447019e8ed609861049f3d53237127cdd456605e33d",
-    "content_sha256": "8c1d4f78752b8c4cc1f7556e21b919145f8f556beff550ae3b93bac5705cd347",
-    "title": "开篇行船唱段 · 准确演唱",
+    "content_sha256": "d5591fd16757bf9e5a04b5f8cf5d3c3a5e984e4ad1577ca819925cd0f051b61d",
+    "title": "三道滩 · 完整原曲",
     "category": "song",
     "scope_kind": "ENTITY",
     "scope": {
@@ -1344,11 +1344,22 @@
     "sources": [
       {
         "block_ids": [
+          "screenplay-04-lantern-home-s001-b001",
           "screenplay-04-lantern-home-s001-b002",
           "screenplay-04-lantern-home-s001-b003",
           "screenplay-04-lantern-home-s001-b004",
           "screenplay-04-lantern-home-s001-b005",
-          "screenplay-04-lantern-home-s001-b006"
+          "screenplay-04-lantern-home-s001-b006",
+          "screenplay-04-lantern-home-s001-b007",
+          "screenplay-04-lantern-home-s001-b008",
+          "screenplay-04-lantern-home-s001-b009",
+          "screenplay-04-lantern-home-s001-b010",
+          "screenplay-04-lantern-home-s001-b011",
+          "screenplay-04-lantern-home-s001-b012",
+          "screenplay-04-lantern-home-s001-b013",
+          "screenplay-04-lantern-home-s001-b014",
+          "screenplay-04-lantern-home-s001-b015",
+          "screenplay-04-lantern-home-s001-b016"
         ],
         "object_id": "screenplay-04-lantern-home-e01",
         "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
@@ -1357,43 +1368,38 @@
     ],
     "route": {
       "method": "generate",
-      "model": "seed-audio-1.0",
+      "model": "lyria-3.5",
       "parameters": {
-        "audio_config": {
-          "enable_subtitle": true,
-          "format": "wav",
-          "loudness_rate": 0,
-          "pitch_rate": 0,
-          "sample_rate": 48000,
-          "speech_rate": 0
+        "response_format": {
+          "type": "audio"
         },
-        "watermark": {}
+        "store": false
       }
     },
     "selected_upstream": [
       "new26-aheng-voice"
     ],
     "check_targets": [
-      "只两句一次，不创作剧本缺失中段；第二句尾腔留老汉误接“二道”的叠入空间，主唱不重新起唱。",
-      "首句与第二句分开落点，但旋律属于同一行船唱段，不混成《送青篷》。",
-      "从头到尾实听逐字核对；听音节，不以生成字幕或ASR替代。",
-      "原生48kHz WAV、完整收尾；探测真实编码声道时长，若非原生无损不转码冒充。",
-      "所有时段是设计预算，真实演唱不按秒机械切字；必要时在相邻镜头容许时长内调整镜头，不能省词、抢唱或填词。"
+      "三道滩依次展开，第二、第三道滩有独立发展，末行靠岸自然收束；原曲没有剧中翻页静默和老汉插话。",
+      "两句剧本原词逐字保持；首句与末句可被省段演法连用，但整曲仍完整。",
+      "完整从头到尾实际听审，逐行核歌词、发音、旋律发展、段间呼吸、编配和尾音；生成文本、ASR及音轨存在不能代替听辨。",
+      "保存实际原生编码、采样率、声道、时长和SHA-256；完整原曲检查服务原生无损WAV，不以扩展名或升采样证明无损。剧中派生件与母版分开登记。",
+      "独立原曲歌手与角色演法分开；派生件须标准确原曲候选及原件、使用段落、角色声线和真实制作操作，未经听审不供镜头生成。"
     ],
     "waiting_for_new_originals": [
       "new26-aheng-voice"
     ],
     "method_basis": {
       "artifact": {
-        "object_id": "method.artifact.97be7c0922dbb2e751d5f14f33e37b707db6243af671047eaabefaae3535bdc7",
-        "revision_id": "ed433ec388b05abaebb499ae37976259e0f7d4c4dae90ff43617ad583e5dc95c"
+        "object_id": "method.artifact.1505947027b8ba4fc617df79093c26167a0df658c3a14b85ea5deb2c14bc3b19",
+        "revision_id": "ef195619c902fcfb72da5f0a496316ca290a50eb296ed4e6cb9b010988c495be"
       },
       "execution": {
-        "object_id": "method.execution.245a5580e8871b542bf0120ab104ba4e20873026e967cef3c5fb7d013b6b0810",
-        "revision_id": "51612686af5d773a183bb31d6aec6607d4eaa79bf51a54bea5ed974266611a72"
+        "object_id": "method.execution.8df8944ebafd41f5bed34159db8b8bd36193297c520d8703c782ef526b50556b",
+        "revision_id": "98c29d077b9598e97086ab9877674761553a55484c14f3a8a2334f162a8595f8"
       },
-      "run_id": "task-20261015-0005",
-      "step_id": "plan-v2-new26-boat-song-singing"
+      "run_id": "task-20261015-0003",
+      "step_id": "funded-complete-boat-song-01"
     }
   },
   {
@@ -6518,7 +6524,7 @@
     "code": "M295",
     "object_id": "new26-layout-note-identity",
     "revision_id": "e0fe50d66443283f37e40289af89e2ba89f947e9f611b16e9b6625d37bb9d2d4",
-    "content_sha256": "f35c29162d56a4e496101e3f46c8bf0cec23c1bf96350eda52deae353d3e0316",
+    "content_sha256": "c37accb9421d16a1a6b9cf36a8c47265b6b4b7958d4412523e96c5c045fd9d0e",
     "title": "李绡的门闸洞勘画纸 · 基础形象",
     "category": "prop-image",
     "scope_kind": "ENTITY",
@@ -6603,15 +6609,15 @@
     "waiting_for_new_originals": [],
     "method_basis": {
       "artifact": {
-        "object_id": "method.artifact.50487d4c93e90fcf7c37e1f0600861970d88330d17ae1b12b899466df450b997",
-        "revision_id": "5b46ceb0bd049bfadcd45ba97bdfb17cfb1f4df1fd140fb5e7e8488452630160"
+        "object_id": "method.artifact.bb075a4f72d76432a730f3086225c7902e3562104e38827a1f04648afb2f0d91",
+        "revision_id": "e3399d83034a454fc2562524f7b061fb27683be3f8c8b3ac0b72355f8ba36ea3"
       },
       "execution": {
-        "object_id": "method.execution.8bf175544dc9f4a35184b25a253067edf0a90550e9ab785dda8843b59c99cca6",
-        "revision_id": "56bc05953a49d026b1710686de5dad7228c6b659e6ee34b1a24129549d7955ad"
+        "object_id": "method.execution.93a035582e1aa046d7ce751ce76289f169309f5b13181f8b6669a9cf2d4a0b16",
+        "revision_id": "521744d6f1cfda78be86b7a44dad12ce1d6ebd9d100cba692bca0f5930b6ff84"
       },
-      "run_id": "task-20261015-0005",
-      "step_id": "plan-v2-new26-layout-note-identity"
+      "run_id": "task-20261015-0003",
+      "step_id": "layout-source-package-01"
     }
   },
   {
@@ -8733,7 +8739,7 @@
     "code": "M398",
     "object_id": "new26-map-cut-overall",
     "revision_id": "5da518097b08c3e3f0a32e38734d046795543dc2392b55efd1203207f4830e31",
-    "content_sha256": "b3715a4cf8ef4e8240b02cb7cc3b4aa9d392251afc3de60f6987601b0340bd82",
+    "content_sha256": "d054cdfae24e49533ad68a7c8006d37a38f6d355ce81d2c7e5208ea036a058b7",
     "title": "已补刀缝位置的通道图 · 完整形态",
     "category": "prop-image",
     "scope_kind": "STATE",
@@ -8793,20 +8799,18 @@
       "仅补同一刀缝，原折痕/门闸洞与院门位置保持不变；不另造新图纸。",
       "动作中的转图和木片移动不烘焙进状态；输出仍可读、完整且原生4K。"
     ],
-    "waiting_for_new_originals": [
-      "new26-layout-note-identity"
-    ],
+    "waiting_for_new_originals": [],
     "method_basis": {
       "artifact": {
-        "object_id": "method.artifact.c3a317096f6d23b15e4704f0fb1c38cc33ff12ab133ec67f153df4d02b029642",
-        "revision_id": "2fb9221c9407cfc366d14ad0c56030abad1435a232671d90b54d2c22a1d8cad9"
+        "object_id": "method.artifact.8988d643b6b414eb095fe0a4c3105c67d8da3b10195f989f2719b6716b1134eb",
+        "revision_id": "edf37db7c6b5ec85bb5e1880c2b08b9647760d457fe38b6934e9d7246f697eee"
       },
       "execution": {
-        "object_id": "method.execution.15d15254984ee9efa307426032e4a61c89adfa201a61c30eafbafca0556c14bc",
-        "revision_id": "718537ba654e73474f9d4e1cd10d76c64a6a68bfdf20e64e3f6092d3a88c274c"
+        "object_id": "method.execution.28ddf011e5ee618096a118edd111d8ab45bcd701bcc69e7695786d6866107e41",
+        "revision_id": "bcf1e8d6e93daa0350f0f16f50f374f1be4931ff867c0a40553b928464a37bfd"
       },
-      "run_id": "task-20261015-0005",
-      "step_id": "plan-v2-new26-map-cut-overall"
+      "run_id": "task-20261015-0003",
+      "step_id": "map-cut-source-package-03"
     }
   },
   {
@@ -10876,8 +10880,8 @@
     "code": "M054",
     "object_id": "new26-qingpeng-singing",
     "revision_id": "529078239eb900ca89fa901b6125e511475b90f29437c3b334c94a25553e6e57",
-    "content_sha256": "d9c4ddcf91f40143cd42c690427cefecbade7917f9dc51bcccf9b6cd8cfea6a2",
-    "title": "送青篷 · 准确演唱",
+    "content_sha256": "2da972351683c9d7738b3f0e433647483414219504f28b81757066c32351cca6",
+    "title": "送青篷 · 完整原曲",
     "category": "song",
     "scope_kind": "ENTITY",
     "scope": {
@@ -10889,7 +10893,13 @@
         "block_ids": [
           "screenplay-04-lantern-home-s001-b020",
           "screenplay-04-lantern-home-s001-b021",
-          "screenplay-04-lantern-home-s001-b022"
+          "screenplay-04-lantern-home-s001-b022",
+          "screenplay-04-lantern-home-s001-b023",
+          "screenplay-04-lantern-home-s001-b024",
+          "screenplay-04-lantern-home-s001-b025",
+          "screenplay-04-lantern-home-s001-b026",
+          "screenplay-04-lantern-home-s001-b027",
+          "screenplay-04-lantern-home-s001-b028"
         ],
         "object_id": "screenplay-04-lantern-home-e01",
         "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
@@ -10897,14 +10907,86 @@
       },
       {
         "block_ids": [
+          "screenplay-04-lantern-home-s003-b014",
+          "screenplay-04-lantern-home-s003-b015",
+          "screenplay-04-lantern-home-s003-b016",
+          "screenplay-04-lantern-home-s003-b017",
+          "screenplay-04-lantern-home-s003-b018",
+          "screenplay-04-lantern-home-s003-b019",
+          "screenplay-04-lantern-home-s003-b020",
+          "screenplay-04-lantern-home-s003-b021",
+          "screenplay-04-lantern-home-s003-b022",
+          "screenplay-04-lantern-home-s003-b023",
+          "screenplay-04-lantern-home-s003-b024",
+          "screenplay-04-lantern-home-s003-b025",
+          "screenplay-04-lantern-home-s003-b026",
+          "screenplay-04-lantern-home-s003-b027",
+          "screenplay-04-lantern-home-s003-b028",
+          "screenplay-04-lantern-home-s003-b029",
+          "screenplay-04-lantern-home-s003-b030",
+          "screenplay-04-lantern-home-s003-b031",
+          "screenplay-04-lantern-home-s003-b032"
+        ],
+        "object_id": "screenplay-04-lantern-home-e02",
+        "revision_id": "3d68c31be1c91938d71734a60d7486dd9c17eed67ae88d51a23772a7ba61245d",
+        "scene_id": "s003"
+      },
+      {
+        "block_ids": [
+          "screenplay-04-lantern-home-s004-b001",
+          "screenplay-04-lantern-home-s004-b002",
+          "screenplay-04-lantern-home-s004-b003",
           "screenplay-04-lantern-home-s004-b004",
           "screenplay-04-lantern-home-s004-b005",
           "screenplay-04-lantern-home-s004-b006",
-          "screenplay-04-lantern-home-s004-b007"
+          "screenplay-04-lantern-home-s004-b007",
+          "screenplay-04-lantern-home-s004-b008",
+          "screenplay-04-lantern-home-s004-b009",
+          "screenplay-04-lantern-home-s004-b010",
+          "screenplay-04-lantern-home-s004-b011",
+          "screenplay-04-lantern-home-s004-b012",
+          "screenplay-04-lantern-home-s004-b013",
+          "screenplay-04-lantern-home-s004-b014",
+          "screenplay-04-lantern-home-s004-b015",
+          "screenplay-04-lantern-home-s004-b016",
+          "screenplay-04-lantern-home-s004-b017"
         ],
         "object_id": "screenplay-04-lantern-home-e02",
         "revision_id": "3d68c31be1c91938d71734a60d7486dd9c17eed67ae88d51a23772a7ba61245d",
         "scene_id": "s004"
+      },
+      {
+        "block_ids": [
+          "screenplay-04-lantern-home-s005-b014",
+          "screenplay-04-lantern-home-s005-b015",
+          "screenplay-04-lantern-home-s005-b016",
+          "screenplay-04-lantern-home-s005-b017",
+          "screenplay-04-lantern-home-s005-b018",
+          "screenplay-04-lantern-home-s005-b019"
+        ],
+        "object_id": "screenplay-04-lantern-home-e03",
+        "revision_id": "561c690a2040b7ffb25ceaa18b3246902d33d57614caa63ff47678cabc0156bd",
+        "scene_id": "s005"
+      },
+      {
+        "block_ids": [
+          "screenplay-04-lantern-home-s038-b001",
+          "screenplay-04-lantern-home-s038-b002",
+          "screenplay-04-lantern-home-s038-b003",
+          "screenplay-04-lantern-home-s038-b004",
+          "screenplay-04-lantern-home-s038-b005",
+          "screenplay-04-lantern-home-s038-b006",
+          "screenplay-04-lantern-home-s038-b007",
+          "screenplay-04-lantern-home-s038-b008",
+          "screenplay-04-lantern-home-s038-b009",
+          "screenplay-04-lantern-home-s038-b010",
+          "screenplay-04-lantern-home-s038-b011",
+          "screenplay-04-lantern-home-s038-b012",
+          "screenplay-04-lantern-home-s038-b013"
+        ],
+        "object_id": "screenplay-04-lantern-home-e16",
+        "revision_id": "94ca5b3b1fa8e9acc7a25d7918904c8a8147cdd572c879b6c894ad4f517412d2",
+        "scene_id": "s038"
       },
       {
         "block_ids": [
@@ -10935,41 +11017,6 @@
       },
       {
         "block_ids": [
-          "screenplay-04-lantern-home-s041-b005",
-          "screenplay-04-lantern-home-s041-b006",
-          "screenplay-04-lantern-home-s041-b007",
-          "screenplay-04-lantern-home-s041-b008",
-          "screenplay-04-lantern-home-s041-b009",
-          "screenplay-04-lantern-home-s041-b010",
-          "screenplay-04-lantern-home-s041-b011",
-          "screenplay-04-lantern-home-s041-b012",
-          "screenplay-04-lantern-home-s041-b013",
-          "screenplay-04-lantern-home-s041-b014",
-          "screenplay-04-lantern-home-s041-b015",
-          "screenplay-04-lantern-home-s041-b016",
-          "screenplay-04-lantern-home-s041-b017",
-          "screenplay-04-lantern-home-s041-b018",
-          "screenplay-04-lantern-home-s041-b019",
-          "screenplay-04-lantern-home-s041-b020",
-          "screenplay-04-lantern-home-s041-b021",
-          "screenplay-04-lantern-home-s041-b022"
-        ],
-        "object_id": "screenplay-04-lantern-home-e17",
-        "revision_id": "86472299d571ceb960315b77be5e782e2153575aa4bfe44dead0c3fcc1818fd8",
-        "scene_id": "s041"
-      },
-      {
-        "block_ids": [
-          "screenplay-04-lantern-home-s038-b009",
-          "screenplay-04-lantern-home-s038-b010",
-          "screenplay-04-lantern-home-s038-b011"
-        ],
-        "object_id": "screenplay-04-lantern-home-e16",
-        "revision_id": "94ca5b3b1fa8e9acc7a25d7918904c8a8147cdd572c879b6c894ad4f517412d2",
-        "scene_id": "s038"
-      },
-      {
-        "block_ids": [
           "screenplay-04-lantern-home-s040-b001",
           "screenplay-04-lantern-home-s040-b002",
           "screenplay-04-lantern-home-s040-b003",
@@ -10982,53 +11029,74 @@
           "screenplay-04-lantern-home-s040-b010",
           "screenplay-04-lantern-home-s040-b011",
           "screenplay-04-lantern-home-s040-b012",
-          "screenplay-04-lantern-home-s040-b013"
+          "screenplay-04-lantern-home-s040-b013",
+          "screenplay-04-lantern-home-s040-b014",
+          "screenplay-04-lantern-home-s040-b015",
+          "screenplay-04-lantern-home-s040-b016",
+          "screenplay-04-lantern-home-s040-b017",
+          "screenplay-04-lantern-home-s040-b018",
+          "screenplay-04-lantern-home-s040-b019"
         ],
         "object_id": "screenplay-04-lantern-home-e17",
         "revision_id": "86472299d571ceb960315b77be5e782e2153575aa4bfe44dead0c3fcc1818fd8",
         "scene_id": "s040"
+      },
+      {
+        "block_ids": [
+          "screenplay-04-lantern-home-s041-b007",
+          "screenplay-04-lantern-home-s041-b008",
+          "screenplay-04-lantern-home-s041-b009",
+          "screenplay-04-lantern-home-s041-b010",
+          "screenplay-04-lantern-home-s041-b011",
+          "screenplay-04-lantern-home-s041-b012",
+          "screenplay-04-lantern-home-s041-b013",
+          "screenplay-04-lantern-home-s041-b014",
+          "screenplay-04-lantern-home-s041-b015",
+          "screenplay-04-lantern-home-s041-b016"
+        ],
+        "object_id": "screenplay-04-lantern-home-e17",
+        "revision_id": "86472299d571ceb960315b77be5e782e2153575aa4bfe44dead0c3fcc1818fd8",
+        "scene_id": "s041"
       }
     ],
     "route": {
       "method": "generate",
-      "model": "seed-audio-1.0",
+      "model": "lyria-3.5",
       "parameters": {
-        "audio_config": {
-          "enable_subtitle": true,
-          "format": "wav",
-          "loudness_rate": 0,
-          "pitch_rate": 0,
-          "sample_rate": 48000,
-          "speech_rate": 0
+        "response_format": {
+          "type": "audio"
         },
-        "watermark": {}
+        "store": false
       }
     },
     "selected_upstream": [
-      "new26-aheng-voice"
+      "new26-aheng-mother-voice",
+      "new26-aheng-voice",
+      "new26-song-teacher-voice"
     ],
     "check_targets": [
-      "首段两行和第二段三行全部唱全，各一次；前三行与补回后两行的音乐关系一致。",
-      "补词之前只允许第二段前两句或其无词哼调，不能提前唱“莫怕”起后四句。",
-      "歌娘示范沿新选曲调另在对应镜头用歌娘声线；母亲第40场只哼末句旋律，不能继承阿蘅有词轨。",
-      "从头到尾实听逐字核对，特别核“认”而非“人”；听音节，不以生成字幕或ASR替代。",
-      "原生48kHz WAV、完整收尾；探测真实编码声道时长，若非原生无损不转码冒充。",
-      "所有时段是设计预算，真实演唱不按秒机械切字；必要时在相邻镜头容许时长内调整镜头，不能省词、抢唱或填词。"
+      "第一段六行、第二段三行两遍，全部唱完；第二段仍是最后一段，没有新增后续故事段。",
+      "两遍第二段旋律可辨同源，最后唱归来认旧桥，认字准确；剧中五乐句选段不冒充整曲。",
+      "完整从头到尾实际听审，逐行核歌词、发音、旋律发展、段间呼吸、编配和尾音；生成文本、ASR及音轨存在不能代替听辨。",
+      "保存实际原生编码、采样率、声道、时长和SHA-256；完整原曲检查服务原生无损WAV，不以扩展名或升采样证明无损。剧中派生件与母版分开登记。",
+      "独立原曲歌手与角色演法分开；派生件须标准确原曲候选及原件、使用段落、角色声线和真实制作操作，未经听审不供镜头生成。"
     ],
     "waiting_for_new_originals": [
-      "new26-aheng-voice"
+      "new26-aheng-mother-voice",
+      "new26-aheng-voice",
+      "new26-song-teacher-voice"
     ],
     "method_basis": {
       "artifact": {
-        "object_id": "method.artifact.e2d91c9f118f054c193a34921a5dd49ad83e0886edf275bee73cf9109210690b",
-        "revision_id": "3af9a9d6ea0da6b31dba7a04a40b3ab770c2b2454e9f91fafcd8aa18b3279374"
+        "object_id": "method.artifact.b97d3b8b3dc3324b71ae6f1d3938676d7c633cad58a3f6d7d2496b07553b00ad",
+        "revision_id": "4a97fb8b249930e422659f807a11fad742fce7963692a2055b86db020001eddf"
       },
       "execution": {
-        "object_id": "method.execution.b6d32763f3dcb99a0a456219031cb3b84118b56d58a4638a033eacc1381f59fb",
-        "revision_id": "102d24b2e195de65899ec010dce98db41ca42540c93a6310264c47be090ca8c2"
+        "object_id": "method.execution.97cce4a9109f677766cfd3f4450949c2c77e4ae1d555ac5a5c5e0592d4c3ec48",
+        "revision_id": "c4bc18641e64e8f8d9b7aadef44769a5b9fd94282ec6974fbe794e30dd8a9a75"
       },
-      "run_id": "task-20261015-0005",
-      "step_id": "plan-v2-new26-qingpeng-singing/rehearsal-phrase"
+      "run_id": "task-20261015-0003",
+      "step_id": "reconcile-qingpeng-full-01"
     }
   },
   {
@@ -12065,8 +12133,8 @@
     "code": "M175",
     "object_id": "new26-ritual-song-singing",
     "revision_id": "36a77805b3990e32c06d99a969724e8f4459f25a88cfe3f7ee626e907d58a0b3",
-    "content_sha256": "934590f936e713eb6822816766bd46055a7c68340477c89bd1a47b872e64549e",
-    "title": "远处祈福戏的还乡唱句 · 准确演唱",
+    "content_sha256": "8cea480fc25a045f0fac8630ee951dc0c0c5ff2b6a06472538ad5c9f309528fa",
+    "title": "明月还乡 · 完整原曲",
     "category": "song",
     "scope_kind": "ENTITY",
     "scope": {
@@ -12076,6 +12144,53 @@
     "sources": [
       {
         "block_ids": [
+          "screenplay-04-lantern-home-s008-b001",
+          "screenplay-04-lantern-home-s008-b002",
+          "screenplay-04-lantern-home-s008-b003",
+          "screenplay-04-lantern-home-s008-b004",
+          "screenplay-04-lantern-home-s008-b005",
+          "screenplay-04-lantern-home-s008-b006",
+          "screenplay-04-lantern-home-s008-b007",
+          "screenplay-04-lantern-home-s008-b008",
+          "screenplay-04-lantern-home-s008-b009",
+          "screenplay-04-lantern-home-s008-b010",
+          "screenplay-04-lantern-home-s008-b011",
+          "screenplay-04-lantern-home-s008-b012"
+        ],
+        "object_id": "screenplay-04-lantern-home-e04",
+        "revision_id": "e720c535cacff062ee5bacc9b6cd9bba6664afd9155f15b6ad1475eeed2c66f2",
+        "scene_id": "s008"
+      },
+      {
+        "block_ids": [
+          "screenplay-04-lantern-home-s008-b026",
+          "screenplay-04-lantern-home-s008-b027",
+          "screenplay-04-lantern-home-s008-b028",
+          "screenplay-04-lantern-home-s008-b029",
+          "screenplay-04-lantern-home-s008-b030",
+          "screenplay-04-lantern-home-s008-b031",
+          "screenplay-04-lantern-home-s008-b032",
+          "screenplay-04-lantern-home-s008-b033",
+          "screenplay-04-lantern-home-s008-b034",
+          "screenplay-04-lantern-home-s008-b035",
+          "screenplay-04-lantern-home-s008-b036",
+          "screenplay-04-lantern-home-s008-b037"
+        ],
+        "object_id": "screenplay-04-lantern-home-e04",
+        "revision_id": "e720c535cacff062ee5bacc9b6cd9bba6664afd9155f15b6ad1475eeed2c66f2",
+        "scene_id": "s008"
+      },
+      {
+        "block_ids": [
+          "screenplay-04-lantern-home-s010-b001",
+          "screenplay-04-lantern-home-s010-b002",
+          "screenplay-04-lantern-home-s010-b003",
+          "screenplay-04-lantern-home-s010-b004",
+          "screenplay-04-lantern-home-s010-b005",
+          "screenplay-04-lantern-home-s010-b006",
+          "screenplay-04-lantern-home-s010-b007",
+          "screenplay-04-lantern-home-s010-b008",
+          "screenplay-04-lantern-home-s010-b009",
           "screenplay-04-lantern-home-s010-b010",
           "screenplay-04-lantern-home-s010-b011"
         ],
@@ -12086,39 +12201,34 @@
     ],
     "route": {
       "method": "generate",
-      "model": "seed-audio-1.0",
+      "model": "lyria-3.5",
       "parameters": {
-        "audio_config": {
-          "enable_subtitle": true,
-          "format": "wav",
-          "loudness_rate": 0,
-          "pitch_rate": 0,
-          "sample_rate": 48000,
-          "speech_rate": 0
+        "response_format": {
+          "type": "audio"
         },
-        "watermark": {}
+        "store": false
       }
     },
     "selected_upstream": [],
     "check_targets": [
-      "八字准确一次，唱尾落后才允许画面另接远处喝彩；不加入新曲名或整曲词稿。",
-      "独立男声戏班音色不是巫祝、孙六或阿蘅的既有音色，不让画外人物凭空被指认。",
-      "从头到尾实听逐字核对；听音节，不以生成字幕或ASR替代。",
-      "原生48kHz WAV、完整收尾；探测真实编码声道时长，若非原生无损不转码冒充。",
-      "所有时段是设计预算，真实演唱不按秒机械切字；必要时在相邻镜头容许时长内调整镜头，不能省词、抢唱或填词。"
+      "十五行按失月、求还、月归发展，核心八字在月归段两次完整出现；还月后自然收尾。",
+      "米饵献上，明月还乡逐字准确，唱作吉语但不加入现实人物对白与喝彩。",
+      "完整从头到尾实际听审，逐行核歌词、发音、旋律发展、段间呼吸、编配和尾音；生成文本、ASR及音轨存在不能代替听辨。",
+      "保存实际原生编码、采样率、声道、时长和SHA-256；完整原曲检查服务原生无损WAV，不以扩展名或升采样证明无损。剧中派生件与母版分开登记。",
+      "独立原曲歌手与角色演法分开；派生件须标准确原曲候选及原件、使用段落、角色声线和真实制作操作，未经听审不供镜头生成。"
     ],
     "waiting_for_new_originals": [],
     "method_basis": {
       "artifact": {
-        "object_id": "method.artifact.b1a37d798e48c2dc8203c869237a9abd4a94c06efa0ec5a66060befcd81615df",
-        "revision_id": "c5173bfbcbeb6c05c744825aee0f9aeaf71a287060f7276bd23b691a6067f841"
+        "object_id": "method.artifact.00cffd53778e1ffe60163acf6f977e6996b6a7203f245fbe81f7588462ba91ec",
+        "revision_id": "5c59b76fba68a9b467aba1247a29213f841bad3e6e9292aa0dfa3e043db8f7db"
       },
       "execution": {
-        "object_id": "method.execution.9eca35fb409715f3615bfe2218a64a103db411ffdc6d93d58b03d05dad86de3e",
-        "revision_id": "7269027d822d0512be591ac028d64f113dcb46269d677454148160db90f6570a"
+        "object_id": "method.execution.34d0c5b12db16b00329673e29ee5d0065fe8f1ad7ae131b2ac9f7ac7e7f92442",
+        "revision_id": "25cc0a5fdb2406baef2283a13c9605c74d5694782d9fb7e948f9724cf96368b7"
       },
-      "run_id": "task-20261015-0005",
-      "step_id": "plan-v2-new26-ritual-song-singing"
+      "run_id": "task-20261015-0003",
+      "step_id": "funded-complete-ritual-song-01"
     }
   },
   {
@@ -12279,7 +12389,7 @@
     "code": "M016",
     "object_id": "new26-s001-q01-video",
     "revision_id": "1976f58db6588613902539a1cdf97a79f1dc2d790a9fc02d3299c7c2aebd3c5d",
-    "content_sha256": "574dc65a1f816203cf85598174f197e54bea219b6eb74194e0eba088c671ad33",
+    "content_sha256": "38ae96902efe0416573d27f3994f0485ca8b97806bce16b6f0469d66f32100a5",
     "title": "唱曲挣米 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -12323,7 +12433,8 @@
       "翻页足两页且在首句后；老汉担子由肩到腿边有过程，书从开镜即在篮上。",
       "逐段看听0—18秒覆盖、接触先后与完整原词，不以时长参数代替表演检查。",
       "实际返回须16:9、720p并有正确音轨，记录原编码帧率和实际时长；24fps为剪辑工程目标，不虚构生成API帧率字段。",
-      "连读前镜落点与本镜起点，再接下镜；重点回查：两页已翻，阿蘅换调将起；老汉仍以为在唱险滩。"
+      "连读前镜落点与本镜起点，再接下镜；重点回查：两页已翻，阿蘅换调将起；老汉仍以为在唱险滩。",
+      "将剧中实唱/哼调逐句与已选完整原曲比较，同时核角色声线、该场已知歌词和跨镜同一次尾音；完整作品的其他段落不自动进入影片。"
     ],
     "waiting_for_new_originals": [
       "new26-aheng-identity",
@@ -12336,22 +12447,22 @@
     ],
     "method_basis": {
       "artifact": {
-        "object_id": "method.artifact.80f1fd0742c6a5b73ca11c6f27c7c3c0de08d3171776594a0a1519afb36dbfb8",
-        "revision_id": "c20953e49c53581750968827cae688f2b872e07b7379aad07d6e4738873f3616"
+        "object_id": "method.artifact.348f4f374f26c26339f9dad308b5dc74cff0465ac521f1ff9d8b1485c6ec56f8",
+        "revision_id": "dba50bc830fe07e14dc9c2ff6a38ac5c17f81b077ec0db45ef3962abb0d122ad"
       },
       "execution": {
-        "object_id": "method.execution.24b2e9f575ad1793dd4c5dded9e02fcb0ed3d9fd0db2d15538aaaf129770bb35",
-        "revision_id": "c43649927b8d78a6c6869db0e750c0079b6e54b13a17afc670fed52ceccceb9b"
+        "object_id": "method.execution.3f4e91bfefdfda7871f928d703a110995bb582f74e55bb56a0429bc3bbf12512",
+        "revision_id": "a40cd3fe0e334c5558f6b386510dcbe137cb31357e8413f302fed82a4b4dfacb"
       },
-      "run_id": "task-20261015-0005",
-      "step_id": "final-design-sync-new26-s001-q01-video"
+      "run_id": "task-20261015-0003",
+      "step_id": "song-use-s001-q01-video-01"
     }
   },
   {
     "code": "M017",
     "object_id": "new26-s001-q02-video",
     "revision_id": "781fee86439de18557e68107f103a05407cc60b7819a74c741b3a7f68dcfe9b3",
-    "content_sha256": "e02ab2e007b54211b8b3f07f20248b263a90dcd983403afc2972ec8ff017454f",
+    "content_sha256": "a9bb4ae34ead9dee4af12bce8b524e42755c547e8c0ecc281525af2a9ddbeee1",
     "title": "一句唱到家 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -12394,7 +12505,8 @@
       "插话与同一次延音重叠，第二句歌词绝不重起；末镜歌已停。",
       "逐段看听0—18秒覆盖、接触先后与完整原词，不以时长参数代替表演检查。",
       "实际返回须16:9、720p并有正确音轨，记录原编码帧率和实际时长；24fps为剪辑工程目标，不虚构生成API帧率字段。",
-      "连读前镜落点与本镜起点，再接下镜；重点回查：尾腔落净，两人留一次对视，下一镜开始说笑。"
+      "连读前镜落点与本镜起点，再接下镜；重点回查：尾腔落净，两人留一次对视，下一镜开始说笑。",
+      "将剧中实唱/哼调逐句与已选完整原曲比较，同时核角色声线、该场已知歌词和跨镜同一次尾音；完整作品的其他段落不自动进入影片。"
     ],
     "waiting_for_new_originals": [
       "new26-aheng-identity",
@@ -12406,15 +12518,15 @@
     ],
     "method_basis": {
       "artifact": {
-        "object_id": "method.artifact.47611d8e41887ead699c9c71a3d237961b108a7b804aa5534f488fc9a91a6588",
-        "revision_id": "00248a1eb05065d5ab7f2cc8308845a9f9a1349016311e7f6c4142354f70de2e"
+        "object_id": "method.artifact.ba4cbe0a683242fec81fb349c8e6d2f73ed801df1afe3d7484cb0657bd5a7b96",
+        "revision_id": "bb9050cf7c445caff0f52b62a50d735717d820d22f988fb141608c783ec8192f"
       },
       "execution": {
-        "object_id": "method.execution.e66bfba50ba7f5f23106df0e4df701da6e3e550aa83869eb1029d229fcd9dff9",
-        "revision_id": "aa68ad19d64dd440d910c6551d5527e18f5fdf3c63a294a911653a1e6729d613"
+        "object_id": "method.execution.4cfafb7d5aba5785bdd66951a35580226cd6d0dccbaa4bcce5f1ead61440336e",
+        "revision_id": "1a9ac081e15d0b6651fc3a6d5476a61d57fd721f9d9596c077c2361e336b8307"
       },
-      "run_id": "task-20261015-0005",
-      "step_id": "final-design-sync-new26-s001-q02-video"
+      "run_id": "task-20261015-0003",
+      "step_id": "song-use-s001-q02-video-01"
     }
   },
   {
@@ -14117,7 +14229,7 @@
     "code": "M073",
     "object_id": "new26-s003-q05-video",
     "revision_id": "39d6df4e3597ef598eb88f9a4bdf6b1e7fef6a743b9f41a1fac72d3918390b0c",
-    "content_sha256": "b9f018e05f4a0648dfc58ac20e2c231aa471a060ac7fb3d2c947a584fb4932d6",
+    "content_sha256": "eaae1eb3216ecb41848ea0236f7e8caea0d261370c09ab14d16b80fccae304da",
     "title": "纸上承诺与河边的人 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -14164,7 +14276,8 @@
       "李寄误判来自旧纸原句，未触碗；只哼不唱，姐姐离去方向与歪台架相符。",
       "逐段看听0—14秒覆盖、接触先后与完整原词，不以时长参数代替表演检查。",
       "实际返回须16:9、720p并有正确音轨，记录原编码帧率和实际时长；24fps为剪辑工程目标，不虚构生成API帧率字段。",
-      "连读前镜落点与本镜起点，再接下镜；重点回查：李寄手未碰碗，目光回纸；阿蘅仍在上游。"
+      "连读前镜落点与本镜起点，再接下镜；重点回查：李寄手未碰碗，目光回纸；阿蘅仍在上游。",
+      "将剧中实唱/哼调逐句与已选完整原曲比较，同时核角色声线、该场已知歌词和跨镜同一次尾音；完整作品的其他段落不自动进入影片。"
     ],
     "waiting_for_new_originals": [
       "new26-aheng-identity",
@@ -14180,15 +14293,15 @@
     ],
     "method_basis": {
       "artifact": {
-        "object_id": "method.artifact.4a0aaccf96992887a1912898ef83e58f6db85aa38a915991d40888754465a759",
-        "revision_id": "ad30645ee5930666580872651eccf6843ac77cf37b513d791132ecd065132856"
+        "object_id": "method.artifact.a7a092a3c26d5666ea4f0ee34f4be95d3fdf280764665b5cc4b66e351fc7211e",
+        "revision_id": "161edad07221edd6f850491998ed24e79658c9eb43be9ab0c5b2d14e25dba5c3"
       },
       "execution": {
-        "object_id": "method.execution.4fdf9ceae44cdbc654fa545edbb6e75ba48114a04e1850adb30a183be9bfa677",
-        "revision_id": "757826497ed5a8e21b8accee507dc3e6435a45066a3fc2e80d92f31b745bffe3"
+        "object_id": "method.execution.bbf4a61283d8ee1dec384dfcf37e83cca41f1e7c9c8ea1a9c29bab943b1ad786",
+        "revision_id": "aef449c8c7efb653a2d2b7d759af32fffb2e78dab9d8155d0a59550a28918483"
       },
-      "run_id": "task-20261015-0005",
-      "step_id": "final-design-sync-new26-s003-q05-video"
+      "run_id": "task-20261015-0003",
+      "step_id": "song-use-s003-q05-video-01"
     }
   },
   {
@@ -15023,7 +15136,7 @@
     "code": "M059",
     "object_id": "new26-s004-q02-video",
     "revision_id": "b9605f75c35893abb481e25115168a87819cb6b244f7c1343493d1adf95bb32f",
-    "content_sha256": "df825880571c22933ecb98e4cab73fb0194b6ec4668cd7f6636c18c5aaeb57d4",
+    "content_sha256": "8903e21819d99619c5edff57abe961f8ef84a7df228ed451ac3cf1535d5b90d7",
     "title": "第一次断在船边 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -15067,7 +15180,8 @@
       "同一句完整一次，边收后只多两拍，然后说再来；无缺失词补全。",
       "逐段看听0—15秒覆盖、接触先后与完整原词，不以时长参数代替表演检查。",
       "实际返回须16:9、720p并有正确音轨，记录原编码帧率和实际时长；24fps为剪辑工程目标，不虚构生成API帧率字段。",
-      "连读前镜落点与本镜起点，再接下镜；重点回查：阿蘅再吸气，周手静，李寄将挪近。"
+      "连读前镜落点与本镜起点，再接下镜；重点回查：阿蘅再吸气，周手静，李寄将挪近。",
+      "将剧中实唱/哼调逐句与已选完整原曲比较，同时核角色声线、该场已知歌词和跨镜同一次尾音；完整作品的其他段落不自动进入影片。"
     ],
     "waiting_for_new_originals": [
       "new26-aheng-voice",
@@ -15080,22 +15194,22 @@
     ],
     "method_basis": {
       "artifact": {
-        "object_id": "method.artifact.9d90fe0f5422d76b7de739e5730723288aacf78c3bc02738853c46f3d2ad5936",
-        "revision_id": "af1b42ca5cadb8c2a7998d75fd968a16433e6bc5ea212b47d245ddd402cc5019"
+        "object_id": "method.artifact.4d9a0aa602ece38142657a498b1c6c17c2418f4492b11c69ddd6e8c6750b79cf",
+        "revision_id": "71d16b07edfa530e0567b8e54951c13189e659a72d52a565379ee02bbdd6af43"
       },
       "execution": {
-        "object_id": "method.execution.a6dde47a2121bd51d923d9b3703f962aa8bed5cfcbbb670e8bcf943cdba059b5",
-        "revision_id": "d1e8ea4774abe0b5315a45ba68349794a06a3a4efa990c1499b95e3b0ffc7d42"
+        "object_id": "method.execution.0d906a935327b2a43b1b8ccbfa75a3ca0091f5fae5cd4818969141c70db12f67",
+        "revision_id": "1d384b696757395cb9618552d62ea991e94aa9020c71c4e51ccdce68918fae61"
       },
-      "run_id": "task-20261015-0005",
-      "step_id": "final-design-sync-new26-s004-q02-video"
+      "run_id": "task-20261015-0003",
+      "step_id": "song-use-s004-q02-video-01"
     }
   },
   {
     "code": "M060",
     "object_id": "new26-s004-q03-video",
     "revision_id": "e68cab1ddcf2f8725b1b5816b100a5d19f1f1986b299ee1b7442de9b737476f4",
-    "content_sha256": "87ac4a4dd979786b616baf80b082b45c8651b2bc80d70c8f9c5d064f24d7cfe0",
+    "content_sha256": "99f589ca59583c1eeaef4aaa369760aa180ad8e107a76e921e0a57a23150933a",
     "title": "第二次同样缺失 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -15136,7 +15250,8 @@
       "这是第二次尝试，只唱该句一遍；两次合读刚好两遍，不连续循环。",
       "逐段看听0—14秒覆盖、接触先后与完整原词，不以时长参数代替表演检查。",
       "实际返回须16:9、720p并有正确音轨，记录原编码帧率和实际时长；24fps为剪辑工程目标，不虚构生成API帧率字段。",
-      "连读前镜落点与本镜起点，再接下镜；重点回查：所有人静在缺口，李寄随后提出问她娘。"
+      "连读前镜落点与本镜起点，再接下镜；重点回查：所有人静在缺口，李寄随后提出问她娘。",
+      "将剧中实唱/哼调逐句与已选完整原曲比较，同时核角色声线、该场已知歌词和跨镜同一次尾音；完整作品的其他段落不自动进入影片。"
     ],
     "waiting_for_new_originals": [
       "new26-aheng-wet-overall",
@@ -15148,15 +15263,15 @@
     ],
     "method_basis": {
       "artifact": {
-        "object_id": "method.artifact.7373cc1eb9ddbf871fbf4eed87053704e8bb125428552e04fae5c1bbc9262f65",
-        "revision_id": "8471d39c99c187978061c7a46dff4068dd0eb1f768a322d41d038c98db64ea4d"
+        "object_id": "method.artifact.c4cb71f8de7d81f2468919e596172f41e5766abefe5be752044e4fa72285ca89",
+        "revision_id": "de09557a1b1fc32dc99413411faed700d25aafcd70722531e6362bb4d99457aa"
       },
       "execution": {
-        "object_id": "method.execution.6cddfaef0b240f3ea657e9c3229cf8d4cbb9493d1d93f87942bb31a39b00fbe0",
-        "revision_id": "746fd0adc64de197727409dd4b8b336dbff6905cdd1c4d82583b6bae97c7229a"
+        "object_id": "method.execution.e7e07c55d001ef1ac53d095f4b78b2c95f59e0a509be2fe5b639c01d4ace95ce",
+        "revision_id": "fb1ca4458e65473f6321dc1b3deb33f1bf6f1479fe46aad105c1daf9f1615026"
       },
-      "run_id": "task-20261015-0005",
-      "step_id": "final-design-sync-new26-s004-q03-video"
+      "run_id": "task-20261015-0003",
+      "step_id": "song-use-s004-q03-video-01"
     }
   },
   {
@@ -16073,7 +16188,7 @@
     "code": "M097",
     "object_id": "new26-s005-q06-video",
     "revision_id": "c55545a4fb2ec74267b978bd2ad0dfb619eb4ff83c819701836a542b9e9f9661",
-    "content_sha256": "c6ddf37a2ff4e99150d1a8f599e67e69c8484e64138862763dc103ebc0368f4c",
+    "content_sha256": "ec3562fdf3d5e52773af806c18710917b36a1441dbb5d61cdc1143b4be9d05c6",
     "title": "把不确定交还她 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -16120,7 +16235,8 @@
       "幕布先有放处，双方接纸稳才离手；残本仍阿蘅所有，李寄不擅填空白。",
       "逐段看听0—18秒覆盖、接触先后与完整原词，不以时长参数代替表演检查。",
       "实际返回须16:9、720p并有正确音轨，记录原编码帧率和实际时长；24fps为剪辑工程目标，不虚构生成API帧率字段。",
-      "连读前镜落点与本镜起点，再接下镜；重点回查：残本夹新纸属阿蘅，李寄坐下；姐姐准备数洗布钱。"
+      "连读前镜落点与本镜起点，再接下镜；重点回查：残本夹新纸属阿蘅，李寄坐下；姐姐准备数洗布钱。",
+      "将剧中实唱/哼调逐句与已选完整原曲比较，同时核角色声线、该场已知歌词和跨镜同一次尾音；完整作品的其他段落不自动进入影片。"
     ],
     "waiting_for_new_originals": [
       "new26-aheng-identity",
@@ -16134,15 +16250,15 @@
     ],
     "method_basis": {
       "artifact": {
-        "object_id": "method.artifact.410a7d462bf1066d47978f4e161b5d59d46b76ee096bee3476f1e613768037c4",
-        "revision_id": "54296c91ba9b644c5abb4916d83ad6462e833edc2ddfe9ab7c7aaf27ca7a9d6d"
+        "object_id": "method.artifact.480f65cd56cc028d6b721082320afee6077e1e81d4d0558e05ccaa0bf2277628",
+        "revision_id": "a25357af9d161579e734d341d305e3aefd3486166cbb1824fe4ce18ba87a1938"
       },
       "execution": {
-        "object_id": "method.execution.df83d3e1e145e4608bb41790634afc85ac8a9ed1aab3b1aa50c6a9e54b509841",
-        "revision_id": "7020c990b1597f9ac590fe890e9f15654aa79cb710879090a221044505e16db5"
+        "object_id": "method.execution.38b94b1c114e6b8cf289c5d5c95ff94032beae8695ddd1dbfac5efa740ea56d5",
+        "revision_id": "de004fe4f22a3ab831c32c40387331ffb6269ac2f9cd49d0a6a881e1b905a768"
       },
-      "run_id": "task-20261015-0005",
-      "step_id": "final-design-sync-new26-s005-q06-video"
+      "run_id": "task-20261015-0003",
+      "step_id": "song-use-s005-q06-video-01"
     }
   },
   {
@@ -17023,7 +17139,7 @@
     "code": "M135",
     "object_id": "new26-s007-q01-video",
     "revision_id": "415803806b7e124e7b2d8b790673aefe901f90a8b5c57ba2a2b271fd58f75d3f",
-    "content_sha256": "302caec9e97d87f001e886ae004b287acfa758d3a3be577147a0e0994d65fb05",
+    "content_sha256": "fc2b5a337269dc4d8e2ff6882c97682e9e304a3b780b26f157214aa842510e80",
     "title": "白日唱工 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -17056,33 +17172,34 @@
       "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-singers-identity",
-      "new26-singers-voice",
-      "new26-temple-hall-layout"
+      "new26-temple-hall-layout",
+      "new26-temple-song-singing"
     ],
     "check_targets": [
       "白日可见、不在庙内过夜；群唱和阿蘅同一尾音，不生成新歌词或完整歌曲。",
       "逐段看听0—6秒覆盖、接触先后与完整原词，不以时长参数代替表演检查。",
       "实际返回须16:9、720p并有正确音轨，记录原编码帧率和实际时长；24fps为剪辑工程目标，不虚构生成API帧率字段。",
-      "连读前镜落点与本镜起点，再接下镜；重点回查：唱毕仍是白天，切黄昏下山。"
+      "连读前镜落点与本镜起点，再接下镜；重点回查：唱毕仍是白天，切黄昏下山。",
+      "将剧中实唱/哼调逐句与已选完整原曲比较，同时核角色声线、该场已知歌词和跨镜同一次尾音；完整作品的其他段落不自动进入影片。"
     ],
     "waiting_for_new_originals": [
       "new26-aheng-identity",
       "new26-aheng-voice",
       "new26-singers-identity",
-      "new26-singers-voice",
-      "new26-temple-hall-layout"
+      "new26-temple-hall-layout",
+      "new26-temple-song-singing"
     ],
     "method_basis": {
       "artifact": {
-        "object_id": "method.artifact.c0b4d9600e9325b1a63fbc6f6487e57f0b3a08da7778e8c9c3e5cef3456d4a0b",
-        "revision_id": "564fb9306bca8d91b6592e2fbee72362e6d989a65ccb03651031c2f7341251eb"
+        "object_id": "method.artifact.9f82d40ff94a50e1db9e92e1926e58a8b8b90ce97abd03144b1ff93154fafc19",
+        "revision_id": "b684a2b9836b0096c040f13f6f71c12a8f4b4021291987d1c6723c6ebd93d5b8"
       },
       "execution": {
-        "object_id": "method.execution.cdd7b09c57ba492c69fc599ca2e931c01cbd081f7ec9b423ac04c3f17320c320",
-        "revision_id": "5abcf01b2fed2135aa594dbda58b23b6a66591656e29d37df1095b99e2146f8c"
+        "object_id": "method.execution.9c50954e783244b8c57961833f37d595c4952d0cb072cf817ce5a54ab0ca8e3d",
+        "revision_id": "b675cd80e1463fb442b627424d7fcf91ee52b45e670152dfddc7e091e0c17dff"
       },
-      "run_id": "task-20261015-0005",
-      "step_id": "final-design-sync-new26-s007-q01-video"
+      "run_id": "task-20261015-0003",
+      "step_id": "song-use-s007-q01-video-02"
     }
   },
   {
@@ -17420,7 +17537,7 @@
     "code": "M141",
     "object_id": "new26-s007-q06-video",
     "revision_id": "25f256e03b8fc22fe637c22cb5c1df64513ec512cdad68f59bb21d7665e2f260",
-    "content_sha256": "031e9d8f890867e1e5039a42e3ecb911637dd96bcd86440235340b315ff3c2bc",
+    "content_sha256": "5bfb3bf7d19ac19eefdd05a3af43a05392c1e5428f1ccb5becbc217547f87229",
     "title": "碗碰到牙 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -17454,34 +17571,35 @@
     "selected_upstream": [
       "new26-aheng-home-layout",
       "new26-aheng-identity",
-      "new26-aheng-mother-voice",
       "new26-lixiao-identity",
-      "new26-mother-oldstage-overall"
+      "new26-mother-oldstage-overall",
+      "new26-qingpeng-singing"
     ],
     "check_targets": [
       "母亲披旧演出衣、李绡门外等待、包先放后扶水；咳嗽先于递碗，碰牙只有一次。",
       "逐段看听0—15秒覆盖、接触先后与完整原词，不以时长参数代替表演检查。",
       "实际返回须16:9、720p并有正确音轨，记录原编码帧率和实际时长；24fps为剪辑工程目标，不虚构生成API帧率字段。",
-      "连读前镜落点与本镜起点，再接下镜；重点回查：碗稳在母亲手前，李绡已进。"
+      "连读前镜落点与本镜起点，再接下镜；重点回查：碗稳在母亲手前，李绡已进。",
+      "将剧中实唱/哼调逐句与已选完整原曲比较，同时核角色声线、该场已知歌词和跨镜同一次尾音；完整作品的其他段落不自动进入影片。"
     ],
     "waiting_for_new_originals": [
       "new26-aheng-home-layout",
       "new26-aheng-identity",
-      "new26-aheng-mother-voice",
       "new26-lixiao-identity",
-      "new26-mother-oldstage-overall"
+      "new26-mother-oldstage-overall",
+      "new26-qingpeng-singing"
     ],
     "method_basis": {
       "artifact": {
-        "object_id": "method.artifact.867f8c4409c7f5077677bbee0bb470c9e98152feeb9fddc5a3e946a9b4bcd973",
-        "revision_id": "bc694ffd5c5a3f27aebf24cce64392e1b08945007f61f30ed78f498b61482b39"
+        "object_id": "method.artifact.becea36ca15e1acf7a7b7803d0b748b3e6580fb7692aff4c7c14686ffdff5085",
+        "revision_id": "069c871c9b950ecd37912facf704b1da3c96cca377137f62038bd87a7bff7dcd"
       },
       "execution": {
-        "object_id": "method.execution.d583ed706e8bd065100e69e00c9b6db49ef402348036831bb98e44b57687ac28",
-        "revision_id": "5bbb82e28caeefc2110e1fe26e346e669d55a5975be833ece22530a03b66fc0f"
+        "object_id": "method.execution.6967843658a6b3e1e1c93a943c785bb78ee5285d5e631b64ec99edae5388a118",
+        "revision_id": "fadd235cc91fd0fd0b9ad9073ddc0ff86405712fd51408e94c297301a22e71c4"
       },
-      "run_id": "task-20261015-0005",
-      "step_id": "final-design-sync-new26-s007-q06-video"
+      "run_id": "task-20261015-0003",
+      "step_id": "song-use-s007-q06-video-02"
     }
   },
   {
@@ -19798,7 +19916,7 @@
     "code": "M191",
     "object_id": "new26-s010-q03-video",
     "revision_id": "b63f68bbcc97131ef30d05d94e0d04efd80c56933792f3777af69e080cc43aa1",
-    "content_sha256": "5afe3a3c536e735e073f7e511071e5c1c948f20411be7225e901bee113cc3010",
+    "content_sha256": "629a26d6c9e70a65081238a0fb235c2a767f8ecb2a7397ebc6ab61212513c153",
     "title": "门外听到还乡 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -19840,7 +19958,8 @@
       "门外半进又退不离开，额布仍手按；完整一次唱句之后才喝彩，母女不被热闹引得抬头。",
       "逐段看听0—16秒覆盖、接触先后与完整原词，不以时长参数代替表演检查。",
       "实际返回须16:9、720p并有正确音轨，记录原编码帧率和实际时长；24fps为剪辑工程目标，不虚构生成API帧率字段。",
-      "连读前镜落点与本镜起点，再接下镜；重点回查：母女仍抱，切稍后取水。"
+      "连读前镜落点与本镜起点，再接下镜；重点回查：母女仍抱，切稍后取水。",
+      "将剧中实唱/哼调逐句与已选完整原曲比较，同时核角色声线、该场已知歌词和跨镜同一次尾音；完整作品的其他段落不自动进入影片。"
     ],
     "waiting_for_new_originals": [
       "new26-aheng-home-layout",
@@ -19851,15 +19970,15 @@
     ],
     "method_basis": {
       "artifact": {
-        "object_id": "method.artifact.3e521c26d6e8f1e7175ca236f2d1c8ddb50f59cc44f4d1a1a8029751fc87fc1d",
-        "revision_id": "172d208f86550e24ea53917b9d8ce8617a985f043857579dea254fab37292d9d"
+        "object_id": "method.artifact.2e4f1710a3c8cb986b92d6c0ae80d49369a9920a6b0e19ddd6cc0ee65d395ec1",
+        "revision_id": "2a63fadd14810eb0dfa99e82186d856698ed93cd98e495e67ab377a6f1baa461"
       },
       "execution": {
-        "object_id": "method.execution.d6c00b9409adf95141c14825abe5a99e293e28cbdb1777337483a784b7faa7fb",
-        "revision_id": "df1100b493293b8debe49bb192c7bf46daf062f466c45c4563c353fab0f0cca5"
+        "object_id": "method.execution.6210599cf8e620c434e76deebf5bce84e1ddb7bc6538f7becdbaaad98de3179e",
+        "revision_id": "8f296c77eacadadbc2f1a6205d48334ec4021afe78341f3f0fadabf39972b8c6"
       },
-      "run_id": "task-20261015-0005",
-      "step_id": "final-design-sync-new26-s010-q03-video"
+      "run_id": "task-20261015-0003",
+      "step_id": "song-use-s010-q03-video-01"
     }
   },
   {
@@ -25077,7 +25196,7 @@
     "code": "M301",
     "object_id": "new26-s018-q05-video",
     "revision_id": "e056b8f02f876e111bc6b23c0e60ba708c0e97c1ac01c83681f11a4d874b7b42",
-    "content_sha256": "0217eca0825d7c54fd30df9159bfb9442e5404a479dde20214afd05dbe075fc3",
+    "content_sha256": "02f049ec066d0c97ab70e89e9d2249c0b0b042a10ec75cb8423f6a82f55ea749",
     "title": "两人各自确认 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -25132,7 +25251,6 @@
       "new26-cheng-identity",
       "new26-cheng-voice",
       "new26-feeding-lock-identity",
-      "new26-layout-note-identity",
       "new26-lidan-identity",
       "new26-lixiao-identity",
       "new26-thin-worker-identity",
@@ -25156,7 +25274,7 @@
     "code": "M302",
     "object_id": "new26-s018-q06-video",
     "revision_id": "b18391e1f5b0badf87345f18af3248718b3eafa93f0cc32e8da3a3a78c3508cb",
-    "content_sha256": "5f827f8b3babd5cb9950f2054cb109d768451d240412984d0c2c366d85c8043f",
+    "content_sha256": "7bb31a88c50e75b61b2b3ac94d27057aae0e77a01653f9e2d32f94271528b1c5",
     "title": "再沿岩根查一遍 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -25212,7 +25330,6 @@
       "new26-book-dry-sheets-overall",
       "new26-cheng-identity",
       "new26-feeding-lock-identity",
-      "new26-layout-note-identity",
       "new26-lidan-identity",
       "new26-liji-head-wrap-overall",
       "new26-lixiao-identity",
@@ -26360,7 +26477,7 @@
     "code": "M318",
     "object_id": "new26-s019-q06-video",
     "revision_id": "02f6b078cef22e6b0d99c9d9936ad99312d82ed13e7de7e16add7c32f359cae8",
-    "content_sha256": "901e34adb6360386deb85078eaf8e4fe7581a9db354d2fc662b4d69aef7933a0",
+    "content_sha256": "20da3b52c76e1e76dbd6a4d63e96ce71be63a085746026855d8c48365c0a0948",
     "title": "锁与钥匙接管 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -26419,7 +26536,6 @@
       "new26-cheng-identity",
       "new26-feeding-lock-identity",
       "new26-keys-identity",
-      "new26-layout-note-identity",
       "new26-lidan-identity",
       "new26-liji-head-wrap-overall",
       "new26-lixiao-identity",
@@ -26446,7 +26562,7 @@
     "code": "M319",
     "object_id": "new26-s019-q07-video",
     "revision_id": "db52ee48a597d246d999652f443b793710a20c82de81f5ccc0616758daf56d75",
-    "content_sha256": "e067cc7b2991252bb296161c993290bf4dec18c7bb9637bd79f3d1f3d190287f",
+    "content_sha256": "94601c46cb5b63669d0e15cba6eda8f9fa0cd89807f334967dd2409c364f34b6",
     "title": "再封原据和仓账 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -26504,7 +26620,6 @@
       "new26-cheng-identity",
       "new26-cheng-voice",
       "new26-keys-identity",
-      "new26-layout-note-identity",
       "new26-lidan-identity",
       "new26-liji-head-wrap-overall",
       "new26-lixiao-identity",
@@ -26908,7 +27023,7 @@
     "code": "M332",
     "object_id": "new26-s020-q05-video",
     "revision_id": "87aee8fe7c56e6d2dfb6b79d25efe08c2b2e00c9bad27d0e1c5ecb7be0031aa3",
-    "content_sha256": "a2d8c7f5542ec4218e809d2fe138c12a367fd19e7bfc07579e46548808840df8",
+    "content_sha256": "1694b8185ee06a211662b73492c24d8346b181b14fab3e6580c8b521de1362fa",
     "title": "送客后抄下原单 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -26960,7 +27075,6 @@
       "new26-book-dry-sheets-overall",
       "new26-grain-order-identity",
       "new26-home-meal-kit-identity",
-      "new26-layout-note-identity",
       "new26-li-home-layout",
       "new26-lidan-identity",
       "new26-lixiao-identity",
@@ -26984,7 +27098,7 @@
     "code": "M333",
     "object_id": "new26-s020-q06-video",
     "revision_id": "052ed636ae30df0690f4a1b3859884bf8315c17e8c67fd9d959994200af23937",
-    "content_sha256": "618c2f2ba26e853b897ae7058d4c65d5325e0f96e726874479cd02b894c385b7",
+    "content_sha256": "de60563ead9e47eb706210a9eb41b479f274075b6f36954f517fb0f9c52b2843",
     "title": "抄件卷进图 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -27027,7 +27141,6 @@
     ],
     "waiting_for_new_originals": [
       "new26-grain-order-identity",
-      "new26-layout-note-identity",
       "new26-li-home-layout",
       "new26-lidan-identity"
     ],
@@ -27048,7 +27161,7 @@
     "code": "M334",
     "object_id": "new26-s020-q07-video",
     "revision_id": "79ed5cac244bd5e7f5f90cb78e8d0be3149f1fe112de058bf6bb0b910b0ea2c0",
-    "content_sha256": "7d83496e56da260b95f9a8aa216a942f1c8129531240d6548f949c78e63f9a60",
+    "content_sha256": "f6833c014c02789dd0ffd2da8b135cfca644ea0b760849394bb6976572f9b433",
     "title": "原件交姐姐 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -27095,7 +27208,6 @@
     ],
     "waiting_for_new_originals": [
       "new26-grain-order-identity",
-      "new26-layout-note-identity",
       "new26-li-home-layout",
       "new26-lidan-identity",
       "new26-lidan-voice",
@@ -27191,7 +27303,7 @@
     "code": "M336",
     "object_id": "new26-s021-q01-video",
     "revision_id": "6fb47358a5e2eeff386163ff1a50b24ce7b20a11d23f58225648a6f66ba88709",
-    "content_sha256": "33894b2f1b99da7a7fc669ebd7f66f7066c94168630956f427e3b95c1d3f6064",
+    "content_sha256": "bbbf46fdc7fc12d2e33a923f7b1c76eef0496e8acba3789b80b744ba1dea61fa",
     "title": "木片示的是门序 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -27246,7 +27358,6 @@
       "new26-county-corridor-layout",
       "new26-county-deputy-identity",
       "new26-inquiry-record-identity",
-      "new26-layout-note-identity",
       "new26-liang-clerk-identity",
       "new26-lidan-identity",
       "new26-zhao-identity"
@@ -27342,7 +27453,7 @@
     "code": "M338",
     "object_id": "new26-s021-q03-video",
     "revision_id": "d26245a878870030b540980f87ea8e3cd8cb3aedce7ea68043e0ca477baa9fff",
-    "content_sha256": "0c3eccc063079fcf91de6ecf80a54058cea70b7f94b7351f47344d51b978d35d",
+    "content_sha256": "7aea8b020b0c5e5fefed6b51cb220061d9dc442f9fc7657cc15b12d4ff2da50a",
     "title": "先验原单和底账 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -27395,7 +27506,6 @@
       "new26-county-deputy-identity",
       "new26-county-deputy-voice",
       "new26-grain-order-identity",
-      "new26-layout-note-identity",
       "new26-liang-clerk-identity",
       "new26-lidan-identity",
       "new26-lidan-voice"
@@ -27494,7 +27604,7 @@
     "code": "M340",
     "object_id": "new26-s021-q05-video",
     "revision_id": "4433b23d7c69cfa5dc800203732e7ca4c88f3e8a6798daff7025382ad8683d68",
-    "content_sha256": "a91f3e1fa01681e284045157e43dafe74331642f1ac9b5ccbb7d3443f9242781",
+    "content_sha256": "ee65e3f2af94b79116790152575d818019630a1599358f325e4f428cf6468f78",
     "title": "只能改盖，从外下刀 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -27549,7 +27659,6 @@
       "new26-county-corridor-layout",
       "new26-county-deputy-identity",
       "new26-county-deputy-voice",
-      "new26-layout-note-identity",
       "new26-lidan-identity",
       "new26-lidan-voice",
       "new26-recruitment-all-overall",
@@ -28584,7 +28693,7 @@
     "code": "M370",
     "object_id": "new26-s023-q02-video",
     "revision_id": "1a30ea1df2e1361aa5861e8e20ab0175b47f217eff624538a9a3b07c4b996da6",
-    "content_sha256": "5e67e8281ba0bde419e804764bee6e3a856458e6b06ca0fa6f81edfe5aad411c",
+    "content_sha256": "803a1ffcf1e0ce5473453e1ef1f0c1e5ad175050a5fb82a2b24096354aa0204c",
     "title": "把名字加上 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -28640,7 +28749,6 @@
       "new26-feeding-lock-identity",
       "new26-helpers-identity",
       "new26-helpers-voice",
-      "new26-layout-note-identity",
       "new26-sunliu-identity",
       "new26-sunliu-voice"
     ],
@@ -30748,7 +30856,7 @@
     "code": "M404",
     "object_id": "new26-s026-q06-video",
     "revision_id": "47a8ca9470f4918e3961c2ac9253be5a5f95edbcdf0fcf6782d5fdeba7326dee",
-    "content_sha256": "32fdc703d4160f4d45291999d9ab023ac69de15bd3edc6b99e4d44afb27c30e1",
+    "content_sha256": "44e7e701eb0b3f81c2b39165c0fddfbb2cbbf0e1201b33cf98383051978961df",
     "title": "在图上补刀缝 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -30805,12 +30913,10 @@
       "new26-expense-ledger-identity",
       "new26-home-meal-kit-identity",
       "new26-home-oil-lamps-identity",
-      "new26-layout-note-identity",
       "new26-li-home-layout",
       "new26-lidan-identity",
       "new26-lixiao-identity",
       "new26-lixiao-voice",
-      "new26-map-cut-overall",
       "new26-recruitment-all-overall"
     ],
     "method_basis": {
@@ -30830,7 +30936,7 @@
     "code": "M405",
     "object_id": "new26-s026-q07-video",
     "revision_id": "5657dedc157bab9150a7b5a26f3813309dd06c4efa956026f3c384c7ab7570d9",
-    "content_sha256": "cbe9307b54834e86988526ca119495504b107b268091e5e004fb47ab69c5b036",
+    "content_sha256": "e5b7d3f3f4a39235cfde9d5f3731cc76e843f211d1193f9967e8430a6eb1d5b2",
     "title": "父亲在西，众人不停压 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -30889,7 +30995,6 @@
       "new26-lidan-voice",
       "new26-liji-head-wrap-overall",
       "new26-lixiao-identity",
-      "new26-map-cut-overall",
       "new26-sunliu-identity",
       "new26-sunliu-voice"
     ],
@@ -30910,7 +31015,7 @@
     "code": "M406",
     "object_id": "new26-s026-q08-video",
     "revision_id": "67aaf7f37469bd878c2eaffaec64bb6a20468b0308346bccba73169c9de43dc2",
-    "content_sha256": "0b2368600ae891fe3c5b006627f9c8cc8b00e045f0668ecf2dab8c761bdfa9e0",
+    "content_sha256": "71468156aea4445c8ccf47d9c4674232c23584b6903fdf7128cd7e50b84f85ed",
     "title": "压不住时怎样退 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -30967,7 +31072,6 @@
       "new26-lidan-voice",
       "new26-liji-mother-identity",
       "new26-liji-mother-voice",
-      "new26-map-cut-overall",
       "new26-sunliu-identity"
     ],
     "method_basis": {
@@ -30987,7 +31091,7 @@
     "code": "M407",
     "object_id": "new26-s026-q09-video",
     "revision_id": "0dde382eed78ce6813b0d23a9d311bcf2628974190d985030912f2a8dd65c5ca",
-    "content_sha256": "e8eb781cafef05181246252b7547eee13cb883a46e5d73cece36ae9190767ef1",
+    "content_sha256": "dad90e36e0fe588d1203ee9d74518d1a339edbf81a1faf1501632c6229a05559",
     "title": "不能自己撒手 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -31040,7 +31144,6 @@
       "new26-li-home-layout",
       "new26-liji-mother-identity",
       "new26-liji-mother-voice",
-      "new26-map-cut-overall",
       "new26-sunliu-identity",
       "new26-sunliu-voice"
     ],
@@ -31061,7 +31164,7 @@
     "code": "M408",
     "object_id": "new26-s026-q10-video",
     "revision_id": "955052fe7efbdbf065b1367ae586eb9c3fd66e59eee99095b91ae5baec108aa7",
-    "content_sha256": "09f2a19b9f58eebf9685ec9e29884557bc6eeb149947a31ca21d3a1f64b08d17",
+    "content_sha256": "96e848159b5f37666c976b9e578a71dfc0614cb21b819227809f11c86adb97ad",
     "title": "门外留着路 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -31112,8 +31215,7 @@
       "new26-liji-head-wrap-overall",
       "new26-liji-voice",
       "new26-lixiao-identity",
-      "new26-lixiao-voice",
-      "new26-map-cut-overall"
+      "new26-lixiao-voice"
     ],
     "method_basis": {
       "artifact": {
@@ -31286,7 +31388,7 @@
     "code": "M411",
     "object_id": "new26-s026-q13-video",
     "revision_id": "eec52cd59cdd527f9dac7dfd25d0e3d09f656696139aae7de9229381116a66bd",
-    "content_sha256": "c8d0aa1f2f99edc1741240f2057498d755c712451d7e233fb5a0b6b5303b71f2",
+    "content_sha256": "a5d70fd2436b14af2cd46d137d04d0235dcddef0eaf9b552a942bc5072daf314",
     "title": "先一起解一个结 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -31348,7 +31450,6 @@
       "new26-liji-head-wrap-overall",
       "new26-liji-mother-identity",
       "new26-lixiao-identity",
-      "new26-map-cut-overall",
       "new26-preparation-tools-identity",
       "new26-sunliu-identity",
       "new26-sunliu-voice",
@@ -31645,7 +31746,7 @@
     "code": "M416",
     "object_id": "new26-s027-q05-video",
     "revision_id": "4091abb2b3801c7f99776169bba4bde99fc230cff5ffa3f4e80fa196b47c753c",
-    "content_sha256": "5c5f2824a27252ac238fb95ebbcb57a1ceb5134f4516d379bc9a8d15121a6cf6",
+    "content_sha256": "225e9f404dbec4aa27df26022452441380b8ac27463a05080f583ac7e030b70a",
     "title": "天亮开始收工具 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -31695,7 +31796,6 @@
       "new26-li-home-layout",
       "new26-lidan-identity",
       "new26-lixiao-identity",
-      "new26-map-cut-overall",
       "new26-preparation-tools-identity",
       "new26-tao-rope-identity"
     ],
@@ -41680,7 +41780,7 @@
     "code": "M591",
     "object_id": "new26-s038-q04-video",
     "revision_id": "eb502347210c30b37092a28d98fa5bec6e2601a47f80f643dc38303d79cbe7d2",
-    "content_sha256": "4c4df050e29ece8598fd9d83e6a8aa5c054ec87aaf885351804283a89caaffcc",
+    "content_sha256": "ebbaffc603998c86c7863e06fb025ab661f216bfd40e14378de7caee0568a6e5",
     "title": "停在同一个地方 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -41725,7 +41825,8 @@
       "母先哼阿蘅后接，已知两句各一次，14秒同停后留白不补莫怕；非变速舞台轨。",
       "逐段看听0—23秒覆盖、接触先后与完整原词，不以时长参数代替表演检查。",
       "实际返回须16:9、720p并有正确音轨，记录原编码帧率和实际时长；24fps为剪辑工程目标，不虚构生成API帧率字段。",
-      "连读前镜落点与本镜起点，再接下镜；重点回查：两人停止，空白仍在，气氛不责备。"
+      "连读前镜落点与本镜起点，再接下镜；重点回查：两人停止，空白仍在，气氛不责备。",
+      "将剧中实唱/哼调逐句与已选完整原曲比较，同时核角色声线、该场已知歌词和跨镜同一次尾音；完整作品的其他段落不自动进入影片。"
     ],
     "waiting_for_new_originals": [
       "new26-aheng-home-layout",
@@ -41739,15 +41840,15 @@
     ],
     "method_basis": {
       "artifact": {
-        "object_id": "method.artifact.de12a84ce3a7a93434f0ec8587540b7e35558219414b75a8f56884835e055212",
-        "revision_id": "1954828a71b63b1052cc94507f4b5130bcb863d807d0d34ac84b0c93e6c60e5e"
+        "object_id": "method.artifact.e8d1fdd40cfda53b4a0f9a82d3dd775719c05612f6b4e1727916890b82bd67c7",
+        "revision_id": "ab787e6832edfd57bfc59bc762b25082255d7fbddb34396cb091c34f50cdd7a1"
       },
       "execution": {
-        "object_id": "method.execution.bb0106ef516a7f9b9be19988c8f52e3be0704ea4cf425f6fbc0c59f50570b8b3",
-        "revision_id": "2799e8876dd84371a1a2e3b90d08c1b6cd9e4a0f42320c3f1ec614755b025f42"
+        "object_id": "method.execution.972904f8d78710a3457102d8b566a881b3822f1fb80512a568151a99c40a50c5",
+        "revision_id": "a23e7856633498dfff99f92ec0848dd2f880507d1b03f8faf75d27bbd984caf3"
       },
-      "run_id": "task-20261015-0005",
-      "step_id": "final-design-sync-new26-s038-q04-video"
+      "run_id": "task-20261015-0003",
+      "step_id": "song-use-s038-q04-video-01"
     }
   },
   {
@@ -41972,7 +42073,7 @@
     "code": "M595",
     "object_id": "new26-s039-q03-video",
     "revision_id": "ca97420c9ea41bd8d0a89e483039c2dbfc3165c95104906091f06de0eb3fd306",
-    "content_sha256": "92027ff296d12729c4bc9394ecb9c6f420f6fcfc0d204f5ab570699a19ae926e",
+    "content_sha256": "eaf063531efd91b66395ee5015337a53cf336a612a711eb669758a5b56b58b4b",
     "title": "唱到缺词处 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -42017,7 +42118,8 @@
       "只已知两句一次，李寄未写，歌娘不提前对后词口型；下一镜承接而非新起一曲。",
       "逐段看听0—15秒覆盖、接触先后与完整原词，不以时长参数代替表演检查。",
       "实际返回须16:9、720p并有正确音轨，记录原编码帧率和实际时长；24fps为剪辑工程目标，不虚构生成API帧率字段。",
-      "连读前镜落点与本镜起点，再接下镜；重点回查：缺处留给歌娘接唱，李寄尚未写新词。"
+      "连读前镜落点与本镜起点，再接下镜；重点回查：缺处留给歌娘接唱，李寄尚未写新词。",
+      "将剧中实唱/哼调逐句与已选完整原曲比较，同时核角色声线、该场已知歌词和跨镜同一次尾音；完整作品的其他段落不自动进入影片。"
     ],
     "waiting_for_new_originals": [
       "new26-aheng-identity",
@@ -42031,22 +42133,22 @@
     ],
     "method_basis": {
       "artifact": {
-        "object_id": "method.artifact.6c7a09e2e83fad5046e8d983fe0233d3a55d71dd045eb43e4663f63070bf89c2",
-        "revision_id": "1659f938251e276ffba897c9bf68728077bfa347f250411f2719a65b8af7d9a9"
+        "object_id": "method.artifact.d4db6529468bb58048812f0d7dafe91bf3c59d347bfa2500a74ed114bd6ee2da",
+        "revision_id": "c4824eb0b27465cb80ff929840c1bd741c34a9a0546cab36efc167cb71716b41"
       },
       "execution": {
-        "object_id": "method.execution.cf9b36a3056660e6280704e9ba89ca97f372371c1017349b7bbc4b3ccc463620",
-        "revision_id": "b6f9558e9e66064083b2cbaa2ca14fbf6610561f04502e04a93597d23fffcadd"
+        "object_id": "method.execution.4b541f570fbe5a81f51982785d942e3b4029af304424b073b0480754bab8e414",
+        "revision_id": "412711cd6b2982d1074523261de442b00e7a822c062f7a01178aa1bd71f6c3b9"
       },
-      "run_id": "task-20261015-0005",
-      "step_id": "final-design-sync-new26-s039-q03-video"
+      "run_id": "task-20261015-0003",
+      "step_id": "song-use-s039-q03-video-01"
     }
   },
   {
     "code": "M596",
     "object_id": "new26-s039-q04-video",
     "revision_id": "14918755d7c3da29064ba4300f68c2b29cd430f5a23843780f4c45bd8352d7bd",
-    "content_sha256": "247105b4b814526aa5cdfca4418c6d5326ea07c0f194e599b19b3ab428f58ad3",
+    "content_sha256": "da3de6f49827443e0ec614db76b1c6e7b0c6ebcc0ddde784832052c0d4fbd573",
     "title": "失去的四句回来了 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -42090,7 +42192,8 @@
       "歌娘四句全文一次，30秒内保留26秒唱；李寄只写到归来，问过/认前不造错误字。",
       "逐段看听0—30秒覆盖、接触先后与完整原词，不以时长参数代替表演检查。",
       "实际返回须16:9、720p并有正确音轨，记录原编码帧率和实际时长；24fps为剪辑工程目标，不虚构生成API帧率字段。",
-      "连读前镜落点与本镜起点，再接下镜；重点回查：四句首次完整听到，末词李寄仍不确定。"
+      "连读前镜落点与本镜起点，再接下镜；重点回查：四句首次完整听到，末词李寄仍不确定。",
+      "将剧中实唱/哼调逐句与已选完整原曲比较，同时核角色声线、该场已知歌词和跨镜同一次尾音；完整作品的其他段落不自动进入影片。"
     ],
     "waiting_for_new_originals": [
       "new26-aheng-identity",
@@ -42105,15 +42208,15 @@
     ],
     "method_basis": {
       "artifact": {
-        "object_id": "method.artifact.3279e0462b5b765412deac5843472fdb5ea13b3be20b43fab69ae2bf3944dc3a",
-        "revision_id": "57335347ee51df32a1b18b9ea8431f4b258caddb1f5c5f528d5d97438533815e"
+        "object_id": "method.artifact.0094dc158bac00ec080147faa6349416371da75ede59ce063d23822ddc711a12",
+        "revision_id": "9ab18887be1d3e2ff457dc9d2e9886b64f8027afcc1e77c9c8929282f485453b"
       },
       "execution": {
-        "object_id": "method.execution.1f999a465e03c3e55815ad5848e9cf885ad55880fb466fa6ec5545a8820edf28",
-        "revision_id": "c702f7373d88aa14ff0fd5ad63767f94b800383deab930b68f3a9e24fa9c0c7f"
+        "object_id": "method.execution.ba0d5773a069018ae38f45c0bf60e49fd081b5a837156c93dfd556af62c28a48",
+        "revision_id": "30b8013f4bd0a104def8a64311471f6d6880bba93219b4c59ed7538abf9059e8"
       },
-      "run_id": "task-20261015-0005",
-      "step_id": "final-design-sync-new26-s039-q04-video"
+      "run_id": "task-20261015-0003",
+      "step_id": "song-use-s039-q04-video-01"
     }
   },
   {
@@ -42260,7 +42363,7 @@
     "code": "M599",
     "object_id": "new26-s039-q06-video",
     "revision_id": "9770f3a0439f51affe270b5747193595966b7ac18dabb2cf0299e9bba09606d3",
-    "content_sha256": "d9cda49ec077332f956fec4036fe0d625e73603d51b288e941c91a298c1b3ccc",
+    "content_sha256": "f5fef54ced9ab4831bd24d1b1c4c774cbf6209e338f79872f0f9be60787ca776",
     "title": "归来之后，三个字听清 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -42305,7 +42408,8 @@
       "只末五字慢唱一次；接笔、板落膝、逐行、补照、点头顺序完整，27秒不是22秒硬塞。",
       "逐段看听0—27秒覆盖、接触先后与完整原词，不以时长参数代替表演检查。",
       "实际返回须16:9、720p并有正确音轨，记录原编码帧率和实际时长；24fps为剪辑工程目标，不虚构生成API帧率字段。",
-      "连读前镜落点与本镜起点，再接下镜；重点回查：新纸六句已补齐、仍未缝；笔和夹板均在歌娘手，待交回李寄。"
+      "连读前镜落点与本镜起点，再接下镜；重点回查：新纸六句已补齐、仍未缝；笔和夹板均在歌娘手，待交回李寄。",
+      "将剧中实唱/哼调逐句与已选完整原曲比较，同时核角色声线、该场已知歌词和跨镜同一次尾音；完整作品的其他段落不自动进入影片。"
     ],
     "waiting_for_new_originals": [
       "new26-aheng-identity",
@@ -42320,22 +42424,22 @@
     ],
     "method_basis": {
       "artifact": {
-        "object_id": "method.artifact.4be106bc5bab5a687cd5c9548b8a9ffe5f78ce11065796953a6be8bd92d00b23",
-        "revision_id": "91634e20fe7fd25c3dac1f315bd44bfebcbb317b6885131b1ce7f392d91f1565"
+        "object_id": "method.artifact.88f3667e55d97a0a63bfa055a47d76f0e03b3c565ee88e6e0bc233acf95c216f",
+        "revision_id": "5e592e9fafce63dfc8d1036289154db368d504c5e20c21f622995fb938eaba65"
       },
       "execution": {
-        "object_id": "method.execution.1b5576b0e523f2a955b45185ad25623f74e9dd1fecb68ee400ad203a82e81fe7",
-        "revision_id": "bc8cd2cd699a4e59eefc79ca1e4954d883fb0993d91d2e33359bcc2e6e4779c1"
+        "object_id": "method.execution.c23146fd77d8d391dc53542da6f0fcca1948c10e96e1348a99b342794bb8330d",
+        "revision_id": "f5b3757e5bf44719be372be5f14df5d8c467387605e4fe0f6397b2aebc0ce095"
       },
-      "run_id": "task-20261015-0005",
-      "step_id": "final-design-sync-new26-s039-q06-video"
+      "run_id": "task-20261015-0003",
+      "step_id": "song-use-s039-q06-video-01"
     }
   },
   {
     "code": "M600",
     "object_id": "new26-s039-q07-video",
     "revision_id": "c4d83dc3dad2767d4a904cc17d72d1cd24f49398d38eac6d58d64c9189dd66d4",
-    "content_sha256": "ca169c9b40518da454b0f9dfcbb38375d2ff1efb5bbe534c0d4a6559c0923041",
+    "content_sha256": "7c0a397ef27eb64411a240ec29b7a62a2065f2d99636b3a4f3ad3e7c0fbe5b18",
     "title": "这一次自己往下唱 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -42380,7 +42484,8 @@
       "交回板笔后才起唱，四句各一次，26秒与22秒声音及4秒交接一致。",
       "逐段看听0—26秒覆盖、接触先后与完整原词，不以时长参数代替表演检查。",
       "实际返回须16:9、720p并有正确音轨，记录原编码帧率和实际时长；24fps为剪辑工程目标，不虚构生成API帧率字段。",
-      "连读前镜落点与本镜起点，再接下镜；重点回查：唱至相照尾音，下一镜接最后两句同一次演唱。"
+      "连读前镜落点与本镜起点，再接下镜；重点回查：唱至相照尾音，下一镜接最后两句同一次演唱。",
+      "将剧中实唱/哼调逐句与已选完整原曲比较，同时核角色声线、该场已知歌词和跨镜同一次尾音；完整作品的其他段落不自动进入影片。"
     ],
     "waiting_for_new_originals": [
       "new26-aheng-identity",
@@ -42395,22 +42500,22 @@
     ],
     "method_basis": {
       "artifact": {
-        "object_id": "method.artifact.c8502865e0dd182aed769773f36a2381348d5aa7a38de9ff0d49969a2ea606ba",
-        "revision_id": "db9d7c5a4ba98a52e81e4aee381c8c7843b495858faa820f942c264e707f0ad8"
+        "object_id": "method.artifact.572946a69c33ea8db2eda044432e7f8103515b208b31f3a2fb6022d9f44251ab",
+        "revision_id": "e490ee33b82d52ef0078a93b0c59ffc6a447321e763ba5d3baf54c2183e14843"
       },
       "execution": {
-        "object_id": "method.execution.e8ef91fd8c3b4177659d23bd62697aa4247229c7486e4a4175bd85ddc0502195",
-        "revision_id": "fe021fa6367f5c700c62862d45b39437be0e4d5b024dd8ec6d25294f71528f98"
+        "object_id": "method.execution.fcebaa588bacff838bbbb86a64973718f8fe4984cbfe92486089980640e2aa77",
+        "revision_id": "cb6d0238c8683dd5aafc89f6c95c59840511c8dbf98d8b792ab34413c551cdf4"
       },
-      "run_id": "task-20261015-0005",
-      "step_id": "final-design-sync-new26-s039-q07-video"
+      "run_id": "task-20261015-0003",
+      "step_id": "song-use-s039-q07-video-01"
     }
   },
   {
     "code": "M601",
     "object_id": "new26-s039-q08-video",
     "revision_id": "899b1b4e1e13424760be94f3a6303814cdd4dcae7baaaa7d8647b92aaaa7e4db",
-    "content_sha256": "fb57e3158374ea01c819ee23e9c3627dee966e880e4b06f66bf0245a82ca0a80",
+    "content_sha256": "7ba181f7aa918fe67064ba3ee4a44c82e9ee86f48dbe9942ef0aa70c32ffd353",
     "title": "换气之后，认旧桥 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -42452,7 +42557,8 @@
       "只一个拍膝；同一唱次最后两句，切口位于桥尾而非截认字。",
       "逐段看听0—13秒覆盖、接触先后与完整原词，不以时长参数代替表演检查。",
       "实际返回须16:9、720p并有正确音轨，记录原编码帧率和实际时长；24fps为剪辑工程目标，不虚构生成API帧率字段。",
-      "连读前镜落点与本镜起点，再接下镜；重点回查：尾音将落，两句完成。"
+      "连读前镜落点与本镜起点，再接下镜；重点回查：尾音将落，两句完成。",
+      "将剧中实唱/哼调逐句与已选完整原曲比较，同时核角色声线、该场已知歌词和跨镜同一次尾音；完整作品的其他段落不自动进入影片。"
     ],
     "waiting_for_new_originals": [
       "new26-aheng-identity",
@@ -42464,22 +42570,22 @@
     ],
     "method_basis": {
       "artifact": {
-        "object_id": "method.artifact.46eb3320be8c97342e993ff69a89ddf8900e40572968d84e1a5961281a5b5739",
-        "revision_id": "ca71512b8708f2292fbf142c1f77da28faa0d4c36703814113f186c233f1a9b7"
+        "object_id": "method.artifact.5fe940da6702399ea1ccb456f8c9e11826714d70ac54d61ac7da5547f4f8012d",
+        "revision_id": "ffb08765bacd06c436e7ec879595535c84e275d91f7687a4f1d0023b60b32e98"
       },
       "execution": {
-        "object_id": "method.execution.65e08c5b16a4d5741932329532b5f1329ff1b0fda68483d9e3abcd6f27a52923",
-        "revision_id": "0a08d1c8dedfe2b5dc12273e66946ee5b2be48ebbdbef9dde3c9648d6d9be7de"
+        "object_id": "method.execution.99c67656038ad0c4d91989a6f637f7682331716b6f809173aec6188ec6a5faa9",
+        "revision_id": "3d7e52c028a86fe27a811304dccb7fc402b1e74319848c9165525409402fb48d"
       },
-      "run_id": "task-20261015-0005",
-      "step_id": "final-design-sync-new26-s039-q08-video"
+      "run_id": "task-20261015-0003",
+      "step_id": "song-use-s039-q08-video-01"
     }
   },
   {
     "code": "M602",
     "object_id": "new26-s039-q09-video",
     "revision_id": "01aec712652e77cff37237e6d089843926791b00a3632eaecc8cdb91af12c7a9",
-    "content_sha256": "6bf5b385a6279f62c70fb7ba48c58d25cbb880fa5a5c9df5b5e380a04be208e5",
+    "content_sha256": "b6ea6d3f0d1469b238f6c380ecb9c852108b23e60c0460018ff0ed4a4192fe31",
     "title": "连上了 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -42521,7 +42627,8 @@
       "桥尾只承接不重唱，尾后四秒再连上了，歌娘不拍第二下。",
       "逐段看听0—12秒覆盖、接触先后与完整原词，不以时长参数代替表演检查。",
       "实际返回须16:9、720p并有正确音轨，记录原编码帧率和实际时长；24fps为剪辑工程目标，不虚构生成API帧率字段。",
-      "连读前镜落点与本镜起点，再接下镜；重点回查：阿蘅听到，准备笑出来。"
+      "连读前镜落点与本镜起点，再接下镜；重点回查：阿蘅听到，准备笑出来。",
+      "将剧中实唱/哼调逐句与已选完整原曲比较，同时核角色声线、该场已知歌词和跨镜同一次尾音；完整作品的其他段落不自动进入影片。"
     ],
     "waiting_for_new_originals": [
       "new26-aheng-identity",
@@ -42533,22 +42640,22 @@
     ],
     "method_basis": {
       "artifact": {
-        "object_id": "method.artifact.ba50db4a3d05bb8f96a0dda77c4c8fa64eac8d3574729317eb8c0678eda05c1b",
-        "revision_id": "c34b00eb84728641eacc5729c2c0339b082a746d7d3436cea35d4ebcbbda9d8f"
+        "object_id": "method.artifact.547a089c403affe2882e055bbaaec8dd8d7983639f54ac6632668ca2bcef310f",
+        "revision_id": "9f7547846af8d2678a93a67641896334eb4bea5348fdb22068dd680cc9e0c552"
       },
       "execution": {
-        "object_id": "method.execution.310f09c1b261161126c9926276d37aadd00808900732c63afd1ccd6ea6aaaf0a",
-        "revision_id": "25609a8f199184b53e30de09e554fcd891f966075f31769858b4a71763ecfed8"
+        "object_id": "method.execution.d0a7f566f53dbd13454619b4ea69f85b3ed421fff411714e1d5f3f8778f5542f",
+        "revision_id": "ccb25791c442ff6f3f656cd442e46f2a7736f18ff394ea039fad661f85f24141"
       },
-      "run_id": "task-20261015-0005",
-      "step_id": "final-design-sync-new26-s039-q09-video"
+      "run_id": "task-20261015-0003",
+      "step_id": "song-use-s039-q09-video-01"
     }
   },
   {
     "code": "M603",
     "object_id": "new26-s039-q10-video",
     "revision_id": "76cc2a9a9d085963fe4888b4e2fe9d8eade94e55d4577112109b7ebf7ba47096",
-    "content_sha256": "fc3e9fc80ea72b09552a73870868394d487e651a8e5f826a1da73daf7dd8b215",
+    "content_sha256": "909cb8e695f2073201037d00cd60727a3491352e4cc6a0deb6ad109e2edc7035",
     "title": "这回只听，不赶着记 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -42592,7 +42699,8 @@
       "再唱有明确两句和一次上限，19秒收在衣声与平静，不无界重复。",
       "逐段看听0—19秒覆盖、接触先后与完整原词，不以时长参数代替表演检查。",
       "实际返回须16:9、720p并有正确音轨，记录原编码帧率和实际时长；24fps为剪辑工程目标，不虚构生成API帧率字段。",
-      "连读前镜落点与本镜起点，再接下镜；重点回查：这句唱完，词已记牢，纸还未装订。"
+      "连读前镜落点与本镜起点，再接下镜；重点回查：这句唱完，词已记牢，纸还未装订。",
+      "将剧中实唱/哼调逐句与已选完整原曲比较，同时核角色声线、该场已知歌词和跨镜同一次尾音；完整作品的其他段落不自动进入影片。"
     ],
     "waiting_for_new_originals": [
       "new26-aheng-identity",
@@ -42606,15 +42714,15 @@
     ],
     "method_basis": {
       "artifact": {
-        "object_id": "method.artifact.fb1eac06b6d38fe33f0d9b42ff465c21aee45928b5068309259f98d3d30b93f9",
-        "revision_id": "5db44fa9a1577a83ace08f9fa59cb02830b98ab92162a6deb5b2c236480b6f5c"
+        "object_id": "method.artifact.f4fccb7307a8aa01b3c01bc4d513d0584b80c78597494886b3ea6da754fa3790",
+        "revision_id": "3201aa106745f7adb11b2aa6870e6512083c481191afac5383f6e101aeb9e711"
       },
       "execution": {
-        "object_id": "method.execution.f9ac15f8ef17390f64a8d0f1a1fa66dd561ae4b544a6e0c4203091eb09ea7861",
-        "revision_id": "124341d8b7c593458934b3160f70ccab002dfb95aba3c3f3c8ca9eda17236b5b"
+        "object_id": "method.execution.c5700137347eb16c1f1c4191b6e3db71ac801ce202b457a6df323d4b176ae4ee",
+        "revision_id": "9aa6ebeb3d375f75ad3eeb00e7a5c59a9ee271d789cb577bf90a5c37ef92fdcb"
       },
-      "run_id": "task-20261015-0005",
-      "step_id": "final-design-sync-new26-s039-q10-video"
+      "run_id": "task-20261015-0003",
+      "step_id": "song-use-s039-q10-video-01"
     }
   },
   {
@@ -42698,7 +42806,7 @@
     "code": "M609",
     "object_id": "new26-s040-q01-video",
     "revision_id": "04bd0a4ff6e156b8adfbcc2f07590c5e6a50a5d98ff254e6354e13c483df65c9",
-    "content_sha256": "1656d6ee037d2153152396e6f4360033d62bf07b89284db2f411fc37d319aaa6",
+    "content_sha256": "e4faf63fe67e1e091b127746b85065fdeb699dd097fef0b5a79962633dd8ba30",
     "title": "灯下慢念 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -42730,9 +42838,9 @@
     "selected_upstream": [
       "new26-aheng-identity",
       "new26-aheng-mother-identity",
-      "new26-aheng-mother-voice",
       "new26-aheng-voice",
       "new26-liji-healed-overall",
+      "new26-qingpeng-singing",
       "new26-s039-q06-full-verse",
       "new26-s040-q01-first-frame",
       "new26-writing-kit-identity"
@@ -42741,29 +42849,30 @@
       "阿蘅说十字各一次；只新写柳影五字，22秒写而非一镜整页。",
       "逐段看听0—24秒覆盖、接触先后与完整原词，不以时长参数代替表演检查。",
       "实际返回须16:9、720p并有正确音轨，记录原编码帧率和实际时长；24fps为剪辑工程目标，不虚构生成API帧率字段。",
-      "连读前镜落点与本镜起点，再接下镜；重点回查：李寄写到近半页，手尚能握笔。"
+      "连读前镜落点与本镜起点，再接下镜；重点回查：李寄写到近半页，手尚能握笔。",
+      "将剧中实唱/哼调逐句与已选完整原曲比较，同时核角色声线、该场已知歌词和跨镜同一次尾音；完整作品的其他段落不自动进入影片。"
     ],
     "waiting_for_new_originals": [
       "new26-aheng-identity",
       "new26-aheng-mother-identity",
-      "new26-aheng-mother-voice",
       "new26-aheng-voice",
       "new26-liji-healed-overall",
+      "new26-qingpeng-singing",
       "new26-s039-q06-full-verse",
       "new26-s040-q01-first-frame",
       "new26-writing-kit-identity"
     ],
     "method_basis": {
       "artifact": {
-        "object_id": "method.artifact.c30e7d0daff83488340fbbf1944a70ca22b0f0c5d30e81e4c7f6c92903cf9b4b",
-        "revision_id": "951e0a38a2d593ba01867bf8c6c6f2c2b0b2292a68ee15de5a6f4b5b3b2dd2ac"
+        "object_id": "method.artifact.02c2b6e45b6223a1dbbdbe0a6a1d31ff0d10ac6bdeb10aa1f2846e7c03822375",
+        "revision_id": "5bae2e1136ac86fb89c43f4967d9947b8a80b09a69c1a20a703dea9503904308"
       },
       "execution": {
-        "object_id": "method.execution.bb9256e403d74db546bd5b93575745ea2e2b1a3d1a8a048683cf7bacfb01371c",
-        "revision_id": "f92dd08428a2ab408fb41e16f9f34195ddef6a0a92263bc7b24ca013a39f99d5"
+        "object_id": "method.execution.2b853926b504592b216eb836fd1f12c94bf9566a17006759d2e972390bc20ce6",
+        "revision_id": "ae05240bc93250ee761708e45ada605e843a73f4e00073b83b1d710e9518afdf"
       },
-      "run_id": "task-20261015-0005",
-      "step_id": "final-design-sync-new26-s040-q01-video"
+      "run_id": "task-20261015-0003",
+      "step_id": "song-use-s040-q01-video-02"
     }
   },
   {
@@ -42989,7 +43098,7 @@
     "code": "M613",
     "object_id": "new26-s040-q05-video",
     "revision_id": "d9b1bd5e0e8b017f9afafc1f288ad3f76b18cc74199afa02c82f01a5359dfb58",
-    "content_sha256": "d5df769431a363f8da5284b360bc1ed1486a4624be0f70245beb0264cf7d6396",
+    "content_sha256": "6a15ea0817b9b20a3f92e0b25d2af5f83d35ae0a986ca7f4610734df27cbde8c",
     "title": "越过熟悉的两句 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -43031,7 +43140,8 @@
       "原本前页与新页是并置的两物，翻前页不能把新页变成已缝；不用前页可读新后词。",
       "逐段看听0—17秒覆盖、接触先后与完整原词，不以时长参数代替表演检查。",
       "实际返回须16:9、720p并有正确音轨，记录原编码帧率和实际时长；24fps为剪辑工程目标，不虚构生成API帧率字段。",
-      "连读前镜落点与本镜起点，再接下镜；重点回查：阿蘅仍有气继续，李寄望着她。"
+      "连读前镜落点与本镜起点，再接下镜；重点回查：阿蘅仍有气继续，李寄望着她。",
+      "将剧中实唱/哼调逐句与已选完整原曲比较，同时核角色声线、该场已知歌词和跨镜同一次尾音；完整作品的其他段落不自动进入影片。"
     ],
     "waiting_for_new_originals": [
       "new26-aheng-home-layout",
@@ -43044,22 +43154,22 @@
     ],
     "method_basis": {
       "artifact": {
-        "object_id": "method.artifact.71b9f2fdfb00618577b5790d349c35b322a36e797b0dee207cc07bd7d64416fa",
-        "revision_id": "07b8ec0bf63158112103532016c63121278ff1606e400665e62b721d984248ad"
+        "object_id": "method.artifact.7615f169df2c16149c11d69f17092a66c9ad62e53f984e70719f7cccf7d8e292",
+        "revision_id": "0b20f17f8a1874d9458b5c1a17b20e80b1cd0f0034ca0d42be24dddd66b1e832"
       },
       "execution": {
-        "object_id": "method.execution.ed1ff0350fd1291f06c67ea70b24d35d63b01b3ef5f6325c2d84137dbd236b32",
-        "revision_id": "1727c3dd5fc435482e002b8210c42e97484166d69224a9460f0a8313116698db"
+        "object_id": "method.execution.4c815d50bca1bd13b9f3b244f97731ca4d44251ed785779ec76b072e33f12312",
+        "revision_id": "0c29d60a19df797b6af002dd06affa222035c26b41cc67e6a07f6a4910f85133"
       },
-      "run_id": "task-20261015-0005",
-      "step_id": "final-design-sync-new26-s040-q05-video"
+      "run_id": "task-20261015-0003",
+      "step_id": "song-use-s040-q05-video-01"
     }
   },
   {
     "code": "M614",
     "object_id": "new26-s040-q06-video",
     "revision_id": "e3f86cd581b1d723942230085ebe5b9e3985850e64da459bfdd536937b68580f",
-    "content_sha256": "b4da13e8f88585989c4f7a4c4b748a51e2ef9248c6c9b65fb132a6ee27b01d1e",
+    "content_sha256": "84b60d0484fc6184e8b1caef4b5e04c768622f9f1953e6e2a3a47031308215a1",
     "title": "空白处没有停住 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -43106,7 +43216,8 @@
       "只唱指定两句各一次，母亲没有歌词；唱已止才进入针线动作。",
       "逐段看听0—20秒覆盖、接触先后与完整原词，不以时长参数代替表演检查。",
       "实际返回须16:9、720p并有正确音轨，记录原编码帧率和实际时长；24fps为剪辑工程目标，不虚构生成API帧率字段。",
-      "连读前镜落点与本镜起点，再接下镜；重点回查：本次短唱完整收住，随后才动手订本。"
+      "连读前镜落点与本镜起点，再接下镜；重点回查：本次短唱完整收住，随后才动手订本。",
+      "将剧中实唱/哼调逐句与已选完整原曲比较，同时核角色声线、该场已知歌词和跨镜同一次尾音；完整作品的其他段落不自动进入影片。"
     ],
     "waiting_for_new_originals": [
       "new26-aheng-home-layout",
@@ -43122,15 +43233,15 @@
     ],
     "method_basis": {
       "artifact": {
-        "object_id": "method.artifact.7b077670f220ac9db592d839521c2b1c6f81b0cc95063f11394a3c1cf9d822d8",
-        "revision_id": "c81d2585679ed5db24efe9f436730cef3af33abf6f751715a6872e1bc69538a4"
+        "object_id": "method.artifact.b6042a735515381ce61b296989c23b632d6de6162bd1faa95bed30f199ad190f",
+        "revision_id": "874aaa3f921d5609e856851bb023a8948a7c0dff965081891366fc700c3a4913"
       },
       "execution": {
-        "object_id": "method.execution.0c9c79857a20e9f38209f2998a729b7c2b6655501087ebf014b11f33aa591734",
-        "revision_id": "366cc294389d8c6bb41cb2c9b90fc45fa35a7324894a16b953773ed83b9a3fd9"
+        "object_id": "method.execution.fcd34579cb75e8c59456454e0e4bad2ae5ca3c35f717f2490759c6a908ca7d41",
+        "revision_id": "2ab1da20378e4a642daf85abbdfc7223e8a48cdb91a5d68abfe7e40182d978b1"
       },
-      "run_id": "task-20261015-0005",
-      "step_id": "final-design-sync-new26-s040-q06-video"
+      "run_id": "task-20261015-0003",
+      "step_id": "song-use-s040-q06-video-01"
     }
   },
   {
@@ -43964,7 +44075,7 @@
     "code": "M627",
     "object_id": "new26-s041-q05-video",
     "revision_id": "330eb6562de3e66304cbb49db1ef8515af228f67ae9797692b6ca063678bdeb9",
-    "content_sha256": "257a19caa26dc3ef6cc7db674dd8494f5d0eebdd3a0bb78b6d35204bb99ee370",
+    "content_sha256": "78ce51428426531349df5e1c4b64268eb1938a8d2065254b17c0c397755e8625",
     "title": "青篷起，水轻摇 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -44003,7 +44114,8 @@
       "整句13字及三个分句完整，只阿蘅一声，不截掉桥字。",
       "逐段看听0—20秒覆盖、接触先后与完整原词，不以时长参数代替表演检查。",
       "实际返回须16:9、720p并有正确音轨，记录原编码帧率和实际时长；24fps为剪辑工程目标，不虚构生成API帧率字段。",
-      "连读前镜落点与本镜起点，再接下镜；重点回查：石板桥尾句接下句，不插入掌声。"
+      "连读前镜落点与本镜起点，再接下镜；重点回查：石板桥尾句接下句，不插入掌声。",
+      "将剧中实唱/哼调逐句与已选完整原曲比较，同时核角色声线、该场已知歌词和跨镜同一次尾音；完整作品的其他段落不自动进入影片。"
     ],
     "waiting_for_new_originals": [
       "new26-aheng-identity",
@@ -44013,22 +44125,22 @@
     ],
     "method_basis": {
       "artifact": {
-        "object_id": "method.artifact.54e9aeeb387aef7fddd5c6dce8b59a28912832030b1f6414b1e332d8b1bb0bc8",
-        "revision_id": "02bc5f2242ab2ca37acc0fbc9bddda7985d58dd9ee67c32e2376f23dbcbd87bc"
+        "object_id": "method.artifact.07c607a06c6b650cacf15590bd378c24e52d784e6ff53467cd4aeb46eb5b1bef",
+        "revision_id": "58bb17784f4a3338eda3bd4f560ad2578f7a2b6d03c5bc5eeb7a6e4e51641229"
       },
       "execution": {
-        "object_id": "method.execution.75827903fc929b845dccc2dfc89f30d885c527d939ed5bfe467b23b86de7bb82",
-        "revision_id": "933586fe5dd3d1fef4fd126c1b35e4ebdb186d6419671b290ecc58b19c0097c4"
+        "object_id": "method.execution.f794e477d583125b9dc5eec62aeafca60dbaed07c623a19de8b3594814eca065",
+        "revision_id": "f68ff8d807543c1cacacdf0d7fcb08da4b0abcd2fd8a1ea9c26404db74cd64a3"
       },
-      "run_id": "task-20261015-0005",
-      "step_id": "final-design-sync-new26-s041-q05-video"
+      "run_id": "task-20261015-0003",
+      "step_id": "song-use-s041-q05-video-01"
     }
   },
   {
     "code": "M628",
     "object_id": "new26-s041-q06-video",
     "revision_id": "e4e88f330337f92b96e9a61cda28407248e40420b66c4d9408a71ef4ef09a99f",
-    "content_sha256": "fd7123a79ca8ac394723830cd20047780f4aba9138ad19779e585fa03d6fe58b",
+    "content_sha256": "8575abf270f8826143c9b0e1b34a0a31be919a50d3533de9f0745d3e091fd786",
     "title": "叮咛还未了 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -44067,7 +44179,8 @@
       "完整词句在22秒内发声，末2秒同一元音延续，不换调重启。",
       "逐段看听0—22秒覆盖、接触先后与完整原词，不以时长参数代替表演检查。",
       "实际返回须16:9、720p并有正确音轨，记录原编码帧率和实际时长；24fps为剪辑工程目标，不虚构生成API帧率字段。",
-      "连读前镜落点与本镜起点，再接下镜；重点回查：未了尾音尚在，母亲下一镜接轻拍。"
+      "连读前镜落点与本镜起点，再接下镜；重点回查：未了尾音尚在，母亲下一镜接轻拍。",
+      "将剧中实唱/哼调逐句与已选完整原曲比较，同时核角色声线、该场已知歌词和跨镜同一次尾音；完整作品的其他段落不自动进入影片。"
     ],
     "waiting_for_new_originals": [
       "new26-aheng-identity",
@@ -44077,22 +44190,22 @@
     ],
     "method_basis": {
       "artifact": {
-        "object_id": "method.artifact.9adc8c6fc4ff8035f18406d862a5be36d02ddce4e5af3097220667312c2d38ba",
-        "revision_id": "0721f357ce11675d036441ea51914e488b8ad0b352a09a85040dd2d326512a1d"
+        "object_id": "method.artifact.2beb895ac3ad09bd587f1a588a0f0bd0249e6807328fc7ca218fdfbf62046d0b",
+        "revision_id": "77b39ff49868b26006d3dbdc811fba669bbe9a1c7fe32d1a1f24bd0c4a899e13"
       },
       "execution": {
-        "object_id": "method.execution.127329dfacf08c4264b9ebcd586661916f2308d5e0274d206ac15d411ea544eb",
-        "revision_id": "4615501dde82db92f80eeadb857d4fd7651b291ff656bd9be1b0ce87d211eee1"
+        "object_id": "method.execution.9869088312088711a345a9452289ff4ff8e95f1de1d6e105f4d7ef3d23184f43",
+        "revision_id": "a09d15d62bb237c51dd9665f616e4910af060c31dfda95634107effb32d5d61a"
       },
-      "run_id": "task-20261015-0005",
-      "step_id": "final-design-sync-new26-s041-q06-video"
+      "run_id": "task-20261015-0003",
+      "step_id": "song-use-s041-q06-video-01"
     }
   },
   {
     "code": "M629",
     "object_id": "new26-s041-q07-video",
     "revision_id": "48f8ddf5c698b1b2765cb5337f3e7c59e73c100408e6a9eb0d8d03635e59b19b",
-    "content_sha256": "df130ce94dc9e7f0df84aaad0f23b79074056d97c5cbf22a32da8a9507e5584c",
+    "content_sha256": "078552e7b6661fd0eba4a18d2706a42d701c18f9de6183613d9fb3b6ce7090d5",
     "title": "换一口气，再到河湾 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -44133,7 +44246,8 @@
       "第二乐句尾2秒加1秒气后才第三，24秒镜只用第三前21秒，后6秒续下镜不重唱。",
       "逐段看听0—24秒覆盖、接触先后与完整原词，不以时长参数代替表演检查。",
       "实际返回须16:9、720p并有正确音轨，记录原编码帧率和实际时长；24fps为剪辑工程目标，不虚构生成API帧率字段。",
-      "连读前镜落点与本镜起点，再接下镜；重点回查：船边已唱出而末6秒仍延，随后进入从前空白，李寄将抬眼。"
+      "连读前镜落点与本镜起点，再接下镜；重点回查：船边已唱出而末6秒仍延，随后进入从前空白，李寄将抬眼。",
+      "将剧中实唱/哼调逐句与已选完整原曲比较，同时核角色声线、该场已知歌词和跨镜同一次尾音；完整作品的其他段落不自动进入影片。"
     ],
     "waiting_for_new_originals": [
       "new26-aheng-identity",
@@ -44144,22 +44258,22 @@
     ],
     "method_basis": {
       "artifact": {
-        "object_id": "method.artifact.b0177c9086ee63b9869a7ec1929e0cfc66affa1f1890d9a809db2ae6f8b825bb",
-        "revision_id": "20c825cab9239b1051a28d0a3c97b6424725ab03292723b0677c86fd8155fcd1"
+        "object_id": "method.artifact.7ec6dd7b2f79e1d0cf319af2d5fb5a11c42acc4d88b84467679c84cdc1b3b568",
+        "revision_id": "df8bf5afc4120c92a18ac71cb009e18413757bc73d5760b662b76464a2ad663a"
       },
       "execution": {
-        "object_id": "method.execution.5c504b44f7bb1f3e2470a5abc7d8b50642c62b180c6527948501521c2ec74a6c",
-        "revision_id": "4eda728789ba3836bcdbded91cb289f9d3c3e564e1934346b8ebe86384dd3760"
+        "object_id": "method.execution.0024d4e026b09224f52a81dee2eeff42b28b608a43c8658e80047cb26621063e",
+        "revision_id": "08c48fd583dc0e03170ce6825c590ab4e3754f4ef05c3d63033fa72118d58790"
       },
-      "run_id": "task-20261015-0005",
-      "step_id": "final-design-sync-new26-s041-q07-video"
+      "run_id": "task-20261015-0003",
+      "step_id": "song-use-s041-q07-video-01"
     }
   },
   {
     "code": "M630",
     "object_id": "new26-s041-q08-video",
     "revision_id": "383ddc27a8b8bbb164e50f0f46793734250abf27ecbe23ef7927c9fcb9939657",
-    "content_sha256": "bb20173d43bbbb8460c5f0deddc3e97ff58f53061c6db2bf57756e478ab6ff4a",
+    "content_sha256": "f57858ad69eb8cb0363eaa1a2117f5cc32b07aa362f9d548e15056fff81078a8",
     "title": "手停在新旧页间 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -44200,7 +44314,8 @@
       "6秒镜仍用2.5以容完整27秒音频；只同一边字延尾，不新翻一页。",
       "逐段看听0—6秒覆盖、接触先后与完整原词，不以时长参数代替表演检查。",
       "实际返回须16:9、720p并有正确音轨，记录原编码帧率和实际时长；24fps为剪辑工程目标，不虚构生成API帧率字段。",
-      "连读前镜落点与本镜起点，再接下镜；重点回查：李寄望向台前，手还压页。"
+      "连读前镜落点与本镜起点，再接下镜；重点回查：李寄望向台前，手还压页。",
+      "将剧中实唱/哼调逐句与已选完整原曲比较，同时核角色声线、该场已知歌词和跨镜同一次尾音；完整作品的其他段落不自动进入影片。"
     ],
     "waiting_for_new_originals": [
       "new26-book-rebound-overall",
@@ -44212,22 +44327,22 @@
     ],
     "method_basis": {
       "artifact": {
-        "object_id": "method.artifact.5e4ca5b886cbea398ebd036287ec8603bc28b710f091dd51ded2cc370f5e7753",
-        "revision_id": "3c675c70b425f2533ea19f75b13b4d7e98d945b24ec46873ba5e3680fdb828f4"
+        "object_id": "method.artifact.6b9d36b38fcbd25f71a6433c904c6f4d90c5069cd8a1d1e84d23a65bd97c1751",
+        "revision_id": "543e0285f8f3a4cc1dbd754e4b071791ee9875242f33e59cfbe8dde31f6bb405"
       },
       "execution": {
-        "object_id": "method.execution.4e1a8f3ea90929cabf4d8e2d10a29781b94bc7abd276c4b8f8fe88f42d84e8d6",
-        "revision_id": "0aa4de01a47f05fb87813b32e4521643804e11c468191ee3dbf69b8d9f87a30b"
+        "object_id": "method.execution.5ee7f11beb8ec33f8abbaf419e155ea90816ebee4cac083a3e4714e49a4fee45",
+        "revision_id": "e5c2b00c1608d2e3888505706d4a1a404f18ecf2455f1d8c070ce7a53a9299da"
       },
-      "run_id": "task-20261015-0005",
-      "step_id": "final-design-sync-new26-s041-q08-video"
+      "run_id": "task-20261015-0003",
+      "step_id": "song-use-s041-q08-video-01"
     }
   },
   {
     "code": "M631",
     "object_id": "new26-s041-q09-video",
     "revision_id": "b1183ef12fd0a8dd4eeb3f1bd61174ee4035e0ec0981d6e35259120790cfe80e",
-    "content_sha256": "64cb7b4288fda3f02819aacb677d414810422d13bbc4c167924ebfd7b2a12874",
+    "content_sha256": "4cd27c05d45b68a2f67d520d4eb1dfd36189ff2d4870f13d887b7a8ca399b22c",
     "title": "隔水灯相照 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -44266,7 +44381,8 @@
       "新得两句向观众完整唱出，音轨与口型对应。",
       "逐段看听0—16秒覆盖、接触先后与完整原词，不以时长参数代替表演检查。",
       "实际返回须16:9、720p并有正确音轨，记录原编码帧率和实际时长；24fps为剪辑工程目标，不虚构生成API帧率字段。",
-      "连读前镜落点与本镜起点，再接下镜；重点回查：相照句收，准备最后两句。"
+      "连读前镜落点与本镜起点，再接下镜；重点回查：相照句收，准备最后两句。",
+      "将剧中实唱/哼调逐句与已选完整原曲比较，同时核角色声线、该场已知歌词和跨镜同一次尾音；完整作品的其他段落不自动进入影片。"
     ],
     "waiting_for_new_originals": [
       "new26-aheng-identity",
@@ -44276,22 +44392,22 @@
     ],
     "method_basis": {
       "artifact": {
-        "object_id": "method.artifact.c2eef7ab39deb00355e7acb90c1e976542ae3c379226b9fa3565a72a8f321a28",
-        "revision_id": "cfe9b449fea486964099f3ed96406a86935f3c35cc4f7a822070ff0269e85245"
+        "object_id": "method.artifact.54397b0c175db6cd23034c65f7c829f21951efff3a45cef37d7af081021a2c22",
+        "revision_id": "c8c8a8c71377416725b502efcb1c102b49d4cd636e461a27c2a96a5fe4598b40"
       },
       "execution": {
-        "object_id": "method.execution.3f8f3630c8e088581a291f3f1abc9386e188a9a64116571e8b355eb3762141c5",
-        "revision_id": "9700424e7a2805da7811b1cc24557675f28dd6b4145c28df8e5842cb2503caa3"
+        "object_id": "method.execution.ac386fff44c87b590e573024846cb13caf794fe0b887323bf13d41ec5c5e8545",
+        "revision_id": "8b2502975a154a3b7ab1f22178c3233f813d7c723d8ab4afae3f5c1a75dd9b4d"
       },
-      "run_id": "task-20261015-0005",
-      "step_id": "final-design-sync-new26-s041-q09-video"
+      "run_id": "task-20261015-0003",
+      "step_id": "song-use-s041-q09-video-01"
     }
   },
   {
     "code": "M632",
     "object_id": "new26-s041-q10-video",
     "revision_id": "13976991865b7d334f5311516cee5b74a709a069b5aedf48b858add6a0ccef21",
-    "content_sha256": "5fa99173622f260758ff51f23d332ff6818c5013557c2e2a330d46df2746a086",
+    "content_sha256": "fb7c70b9f7b2a6d3a54cfe9894b14c6c1a4e28fc6adb75dea8e8c1f7967f1891",
     "title": "归来认旧桥 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -44330,7 +44446,8 @@
       "母版尾4秒加1秒静默进入下镜；不能18秒截断或在下镜重唱后三字。",
       "逐段看听0—18秒覆盖、接触先后与完整原词，不以时长参数代替表演检查。",
       "实际返回须16:9、720p并有正确音轨，记录原编码帧率和实际时长；24fps为剪辑工程目标，不虚构生成API帧率字段。",
-      "连读前镜落点与本镜起点，再接下镜；重点回查：旧桥末音仍延展，未到掌声。"
+      "连读前镜落点与本镜起点，再接下镜；重点回查：旧桥末音仍延展，未到掌声。",
+      "将剧中实唱/哼调逐句与已选完整原曲比较，同时核角色声线、该场已知歌词和跨镜同一次尾音；完整作品的其他段落不自动进入影片。"
     ],
     "waiting_for_new_originals": [
       "new26-aheng-identity",
@@ -44340,22 +44457,22 @@
     ],
     "method_basis": {
       "artifact": {
-        "object_id": "method.artifact.ada1a82de0f351ad18b2c5237d9d216a4f431f06985511626a1271d99ec8302f",
-        "revision_id": "db1ce61649108cd492298944d7d55366f681f216e857685d936a8089b5e56863"
+        "object_id": "method.artifact.c2a986d6fd3ddbfe29455ed20a1a4cfaf406d3ec6996992f8020ad2cb5556781",
+        "revision_id": "0b3f5ed0884d44836d0973067e7b502dba663b01f201e5da5c16ebe48e407797"
       },
       "execution": {
-        "object_id": "method.execution.e4f526a703059f8a5f76065479fe0cf89bb69fd3520ad415ca1a7bbd75e17d66",
-        "revision_id": "32eaabf4610e4760fc41b905ea1936c259cc99d58b744c0adc214ec15e0e4d55"
+        "object_id": "method.execution.8610c533e1f6195b509cda318bb5a22d10142c67002732fe6956925fc193a8cf",
+        "revision_id": "017ee0905dda3dad3fc9d01250907d09cf061e7fca60b46fa7e096e2753a5d8c"
       },
-      "run_id": "task-20261015-0005",
-      "step_id": "final-design-sync-new26-s041-q10-video"
+      "run_id": "task-20261015-0003",
+      "step_id": "song-use-s041-q10-video-01"
     }
   },
   {
     "code": "M633",
     "object_id": "new26-s041-q11-video",
     "revision_id": "7f1e06f0418502c01d2b8c6c62d4e19479dd976a6ef7311cdec724cf56272c6a",
-    "content_sha256": "c8e720de858d53ad24eb83f4843b50f2663ab6e469d409b2931bd218b3a0f97c",
+    "content_sha256": "5130994d1e189a47e4bc84c5aceef3f5c8360553e4ca667d26ecad1aee0fbcf0",
     "title": "先收住最后的音 · 有声镜头",
     "category": "video",
     "scope_kind": "AV_SHOT",
@@ -44398,7 +44515,8 @@
       "桥尾先收、指再松、相笑再到掌声顺序，不把接尾压成一秒。",
       "逐段看听0—13秒覆盖、接触先后与完整原词，不以时长参数代替表演检查。",
       "实际返回须16:9、720p并有正确音轨，记录原编码帧率和实际时长；24fps为剪辑工程目标，不虚构生成API帧率字段。",
-      "连读前镜落点与本镜起点，再接下镜；重点回查：两人已笑，歌唱结束，手松页但本仍抱稳。"
+      "连读前镜落点与本镜起点，再接下镜；重点回查：两人已笑，歌唱结束，手松页但本仍抱稳。",
+      "将剧中实唱/哼调逐句与已选完整原曲比较，同时核角色声线、该场已知歌词和跨镜同一次尾音；完整作品的其他段落不自动进入影片。"
     ],
     "waiting_for_new_originals": [
       "new26-aheng-identity",
@@ -44411,15 +44529,15 @@
     ],
     "method_basis": {
       "artifact": {
-        "object_id": "method.artifact.13675b28578ce3b483c5541a84e1f3b38c6d6785f611d306aa58ce02fbf63ca3",
-        "revision_id": "b344799d497ab6e279470790bc1450973d3e638a6a8599e1e2a7cb2726081b57"
+        "object_id": "method.artifact.c1bf18d522b392b0c7e9482095fd927a35f0ad3e0f8ec4200bbdee17cd64fb9e",
+        "revision_id": "e4a67d77148e15746c78a4099eb3610f0127fc65ea2fc03a1f01db7681ee1bf1"
       },
       "execution": {
-        "object_id": "method.execution.e341ed533f0439a70162cd60f8828076311e87da155894b5c20deaa875947c4c",
-        "revision_id": "1694fbfea288bb4ddf8aa7bc361678601d68e0d5f8697e389fd64be1ab707e58"
+        "object_id": "method.execution.0cf3b9af7f5fc9f3952a9ccddc181a2c3778fda2d54ca4e3cc862505493cfb0a",
+        "revision_id": "81542527db1d9bee857c8c525fdb2eda18a10cdc4b8228be092ede3fb61adca3"
       },
-      "run_id": "task-20261015-0005",
-      "step_id": "final-design-sync-new26-s041-q11-video"
+      "run_id": "task-20261015-0003",
+      "step_id": "song-use-s041-q11-video-01"
     }
   },
   {
@@ -45630,7 +45748,7 @@
     "code": "M114",
     "object_id": "new26-singers-voice",
     "revision_id": "6f7339062c8647b2b63d11497753d6c243cd47f8a7fe920a445d678643b6eb36",
-    "content_sha256": "fce8edcc839e06d5c7980f4532b5e2b9e2a41e48fab9407f665242b626a498eb",
+    "content_sha256": "04052a2272ca232011f81ccff929bf4cdc59e02bdb18c745ae2ceb8d62319a33",
     "title": "前殿做工的领唱群体 · 音色",
     "category": "voice",
     "scope_kind": "ENTITY",
@@ -45673,15 +45791,15 @@
     "waiting_for_new_originals": [],
     "method_basis": {
       "artifact": {
-        "object_id": "method.artifact.c08ac3d63528389dd47f87ecc885cdbd10201990501cd08eba94ca227e361327",
-        "revision_id": "433695ea0325c67fd275bf963c3cc20883e436f13e1369be5bdca1b88e38f0e1"
+        "object_id": "method.artifact.e0aca4953b048b03259da4bf3c6fc55bf60294a96b55acc467ad52aeea26bae5",
+        "revision_id": "12cc70b5b2501a153293a69ab83ce2dfd620e7f49ccfc5a4cfb471ff1597cef6"
       },
       "execution": {
-        "object_id": "method.execution.8f3c537dd81b059c529c80eb7bcced66a1bf77b36fd01283a93e5bd8c56869aa",
-        "revision_id": "00bc947bcea9846a2298a2219294bbe8df0030807e49e302d0fd3dab14db4168"
+        "object_id": "method.execution.6cbf9e4080fb1cd6fb8b22e5b01c9899e3f3ae06bed0480aad7a5ca5a800db11",
+        "revision_id": "62db57817bb73390e4afad9795f667ee6338248c1ca7a9b024d459709765c15b"
       },
-      "run_id": "task-20261015-0005",
-      "step_id": "plan-v2-new26-singers-voice"
+      "run_id": "task-20261015-0003",
+      "step_id": "song-use-singers-voice-01"
     }
   },
   {
@@ -47320,6 +47438,89 @@
       },
       "run_id": "task-20261015-0005",
       "step_id": "plan-v2-new26-temple-hall-layout"
+    }
+  },
+  {
+    "code": "M651",
+    "object_id": "new26-temple-song-singing",
+    "revision_id": "547784d33fc918d29bf1feaa44b8ffa093d6bf3ebd68870947deecbac52e8405",
+    "content_sha256": "6a30ebc1d5db30830106cb0a84f97ce8ca3e054d5c90240fbf704e879f7423a7",
+    "title": "四邻安 · 完整原曲",
+    "category": "song",
+    "scope_kind": "ENTITY",
+    "scope": {
+      "object_id": "new26-temple-song",
+      "revision_id": "47e8f3a93ffc8a5a51da8aef1ee3d5eead229d3838928a35fc28167403a340bc"
+    },
+    "sources": [
+      {
+        "block_ids": [
+          "screenplay-04-lantern-home-s002-b016",
+          "screenplay-04-lantern-home-s002-b017",
+          "screenplay-04-lantern-home-s002-b018",
+          "screenplay-04-lantern-home-s002-b019",
+          "screenplay-04-lantern-home-s002-b020",
+          "screenplay-04-lantern-home-s002-b021"
+        ],
+        "object_id": "screenplay-04-lantern-home-e01",
+        "revision_id": "8148732c492764da35ae228d6ba7613ae8108fb121aa30802088165721e3013e",
+        "scene_id": "s002"
+      },
+      {
+        "block_ids": [
+          "screenplay-04-lantern-home-s003-b014",
+          "screenplay-04-lantern-home-s003-b015"
+        ],
+        "object_id": "screenplay-04-lantern-home-e02",
+        "revision_id": "3d68c31be1c91938d71734a60d7486dd9c17eed67ae88d51a23772a7ba61245d",
+        "scene_id": "s003"
+      },
+      {
+        "block_ids": [
+          "screenplay-04-lantern-home-s007-b001",
+          "screenplay-04-lantern-home-s007-b002"
+        ],
+        "object_id": "screenplay-04-lantern-home-e04",
+        "revision_id": "e720c535cacff062ee5bacc9b6cd9bba6664afd9155f15b6ad1475eeed2c66f2",
+        "scene_id": "s007"
+      }
+    ],
+    "route": {
+      "method": "generate",
+      "model": "lyria-3.5",
+      "parameters": {
+        "response_format": {
+          "type": "audio"
+        },
+        "store": false
+      }
+    },
+    "selected_upstream": [
+      "new26-aheng-voice",
+      "new26-singers-voice"
+    ],
+    "check_targets": [
+      "迎请、祈愿、收仪各六行，六次应句全部按词稿演唱；领唱与齐唱职责清楚。",
+      "原句米饵奉蛇神，四邻得安宁逐字准确；没有新增人祭、神谕或角色身份。",
+      "完整从头到尾实际听审，逐行核歌词、发音、旋律发展、段间呼吸、编配和尾音；生成文本、ASR及音轨存在不能代替听辨。",
+      "保存实际原生编码、采样率、声道、时长和SHA-256；完整原曲检查服务原生无损WAV，不以扩展名或升采样证明无损。剧中派生件与母版分开登记。",
+      "独立原曲歌手与角色演法分开；派生件须标准确原曲候选及原件、使用段落、角色声线和真实制作操作，未经听审不供镜头生成。"
+    ],
+    "waiting_for_new_originals": [
+      "new26-aheng-voice",
+      "new26-singers-voice"
+    ],
+    "method_basis": {
+      "artifact": {
+        "object_id": "method.artifact.c1fdfb8f00f82b8df93d817e7be2bed67e811ad8149da2e1800daac46becc02f",
+        "revision_id": "cef02430e35dae7608c88a2fb28a5faa275496835e5b2230a126e8b8fa73d5eb"
+      },
+      "execution": {
+        "object_id": "method.execution.24e605e14219ec65d8077b67708197a4cc8557b27b812a7b2d1c69f35c08ac11",
+        "revision_id": "4f107ba27c86ab4e90f15e4ec0ecbdb8d3dd8088fa015eae420ffd7981c24731"
+      },
+      "run_id": "task-20261015-0003",
+      "step_id": "funded-complete-temple-song-01"
     }
   },
   {
