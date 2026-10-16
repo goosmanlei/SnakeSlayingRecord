@@ -1,0 +1,898 @@
+{
+  "id": "task-20261015-0003-helpers-voice-01",
+  "status": "completed",
+  "request_id": "a289b7ff-c98b-46b2-ae2d-1bca95cb0ede",
+  "quota_id": "seed-quota-task-20261015-0003",
+  "production_submission": {
+    "call_id": "task-20261015-0003-helpers-voice-01",
+    "submission_sha256": "900e43d42b8504aded45a643368318eb5b9a40f8a18479981e0b32f4b4bfb36e",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "submitted_at": "2026-10-16T17:18:36.953720+00:00",
+  "endpoint": "https://openspeech.bytedance.com/api/v3/tts/create",
+  "input": {
+    "model": "seed-audio-1.0",
+    "text_prompt": "制作一份多人音色比较的连续录音，各人依次单独试读，不同时说话，不扮演对话。以下身份和段号是控制说明，不得朗读。\n统一试读条件：平稳、中性的说话读法，中等语速，逗号处短停，句号处自然停顿；不设置人物关系或情绪转折，不演唱，不临时加强某个词。近距离干声，只保留自然换气，不加入房间回声、环境声、配乐或其他人声。\n相邻试读之间保留1.5秒静默，不另加提示音；各人均使用同样的中等语速与录音距离。\n第1段，码头甲，成年男性，中低声区，厚实开口共鸣，轻粗颗粒，字头清楚。只朗读以下两句一次：\n桌上放着一本书，旁边有一只白色的杯子。\n窗边的椅子朝着门口，几张纸整齐地叠在一起。\n第2段，码头乙，成年男性，中声区，窄而亮的口腔共鸣，少颗粒、尾音短收。只朗读以下两句一次：\n桌上放着一本书，旁边有一只白色的杯子。\n窗边的椅子朝着门口，几张纸整齐地叠在一起。\n第3段，石料甲，成年男性，中低声区，干而平的音质，口腔共鸣靠前、辅音轻。只朗读以下两句一次：\n桌上放着一本书，旁边有一只白色的杯子。\n窗边的椅子朝着门口，几张纸整齐地叠在一起。\n第4段，石料乙，成年男性，中声区偏高，圆润声底、较少气声，元音清楚。只朗读以下两句一次：\n桌上放着一本书，旁边有一只白色的杯子。\n窗边的椅子朝着门口，几张纸整齐地叠在一起。\n最后一人读完保留自然尾音和短静默结束，不添加总结、对白或歌声。",
+    "audio_config": {
+      "format": "wav",
+      "sample_rate": 48000,
+      "pitch_rate": 0,
+      "speech_rate": 0,
+      "loudness_rate": 0,
+      "enable_subtitle": true
+    },
+    "watermark": {},
+    "references": []
+  },
+  "input_sha256": "80afb387fb0794cad8d63e0dc9b84e25977854f2ed462cd98ba954c767260672",
+  "remaining_before_seconds": 1109.98,
+  "reserved_seconds": 120,
+  "log_id": "20261017011837CADE9F932D4A7C7A1E21",
+  "original_duration": 41.08,
+  "duration": 41.08,
+  "subtitle": {
+    "sentences": [
+      {
+        "end_time": 4120,
+        "start_time": 560,
+        "text": "桌上放着一本书，旁边有一只白色的杯子。",
+        "words": [
+          {
+            "end_time": 800,
+            "start_time": 560,
+            "text": "桌"
+          },
+          {
+            "end_time": 1000,
+            "start_time": 800,
+            "text": "上"
+          },
+          {
+            "end_time": 1160,
+            "start_time": 1000,
+            "text": "放"
+          },
+          {
+            "end_time": 1280,
+            "start_time": 1160,
+            "text": "着"
+          },
+          {
+            "end_time": 1400,
+            "start_time": 1280,
+            "text": "一"
+          },
+          {
+            "end_time": 1560,
+            "start_time": 1400,
+            "text": "本"
+          },
+          {
+            "end_time": 1800,
+            "start_time": 1560,
+            "text": "书"
+          },
+          {
+            "end_time": 1800,
+            "start_time": 1800,
+            "text": "，"
+          },
+          {
+            "end_time": 2600,
+            "start_time": 2320,
+            "text": "旁"
+          },
+          {
+            "end_time": 2760,
+            "start_time": 2600,
+            "text": "边"
+          },
+          {
+            "end_time": 2960,
+            "start_time": 2760,
+            "text": "有"
+          },
+          {
+            "end_time": 3120,
+            "start_time": 2960,
+            "text": "一"
+          },
+          {
+            "end_time": 3240,
+            "start_time": 3120,
+            "text": "只"
+          },
+          {
+            "end_time": 3480,
+            "start_time": 3280,
+            "text": "白"
+          },
+          {
+            "end_time": 3600,
+            "start_time": 3480,
+            "text": "色"
+          },
+          {
+            "end_time": 3800,
+            "start_time": 3600,
+            "text": "的"
+          },
+          {
+            "end_time": 3960,
+            "start_time": 3800,
+            "text": "杯"
+          },
+          {
+            "end_time": 4120,
+            "start_time": 3960,
+            "text": "子"
+          },
+          {
+            "end_time": 4120,
+            "start_time": 4120,
+            "text": "。"
+          }
+        ]
+      },
+      {
+        "end_time": 8920,
+        "start_time": 4880,
+        "text": "窗边的椅子朝着门口，几张纸整齐地叠在一起。",
+        "words": [
+          {
+            "end_time": 5040,
+            "start_time": 4880,
+            "text": "窗"
+          },
+          {
+            "end_time": 5200,
+            "start_time": 5040,
+            "text": "边"
+          },
+          {
+            "end_time": 5360,
+            "start_time": 5200,
+            "text": "的"
+          },
+          {
+            "end_time": 5520,
+            "start_time": 5360,
+            "text": "椅"
+          },
+          {
+            "end_time": 5720,
+            "start_time": 5520,
+            "text": "子"
+          },
+          {
+            "end_time": 5920,
+            "start_time": 5760,
+            "text": "朝"
+          },
+          {
+            "end_time": 6080,
+            "start_time": 5920,
+            "text": "着"
+          },
+          {
+            "end_time": 6240,
+            "start_time": 6080,
+            "text": "门"
+          },
+          {
+            "end_time": 6480,
+            "start_time": 6240,
+            "text": "口"
+          },
+          {
+            "end_time": 6480,
+            "start_time": 6480,
+            "text": "，"
+          },
+          {
+            "end_time": 6960,
+            "start_time": 6760,
+            "text": "几"
+          },
+          {
+            "end_time": 7160,
+            "start_time": 6960,
+            "text": "张"
+          },
+          {
+            "end_time": 7320,
+            "start_time": 7200,
+            "text": "纸"
+          },
+          {
+            "end_time": 7720,
+            "start_time": 7480,
+            "text": "整"
+          },
+          {
+            "end_time": 7880,
+            "start_time": 7720,
+            "text": "齐"
+          },
+          {
+            "end_time": 8200,
+            "start_time": 7880,
+            "text": "地"
+          },
+          {
+            "end_time": 8280,
+            "start_time": 8200,
+            "text": "叠"
+          },
+          {
+            "end_time": 8560,
+            "start_time": 8400,
+            "text": "在"
+          },
+          {
+            "end_time": 8720,
+            "start_time": 8560,
+            "text": "一"
+          },
+          {
+            "end_time": 8920,
+            "start_time": 8720,
+            "text": "起"
+          },
+          {
+            "end_time": 8920,
+            "start_time": 8920,
+            "text": "。"
+          }
+        ]
+      },
+      {
+        "end_time": 14040,
+        "start_time": 10400,
+        "text": "桌上放着一本书，旁边有一只白色的杯子。",
+        "words": [
+          {
+            "end_time": 10640,
+            "start_time": 10400,
+            "text": "桌"
+          },
+          {
+            "end_time": 10880,
+            "start_time": 10640,
+            "text": "上"
+          },
+          {
+            "end_time": 11040,
+            "start_time": 10880,
+            "text": "放"
+          },
+          {
+            "end_time": 11160,
+            "start_time": 11040,
+            "text": "着"
+          },
+          {
+            "end_time": 11320,
+            "start_time": 11160,
+            "text": "一"
+          },
+          {
+            "end_time": 11480,
+            "start_time": 11320,
+            "text": "本"
+          },
+          {
+            "end_time": 11760,
+            "start_time": 11480,
+            "text": "书"
+          },
+          {
+            "end_time": 11760,
+            "start_time": 11760,
+            "text": "，"
+          },
+          {
+            "end_time": 12440,
+            "start_time": 12200,
+            "text": "旁"
+          },
+          {
+            "end_time": 12600,
+            "start_time": 12440,
+            "text": "边"
+          },
+          {
+            "end_time": 12760,
+            "start_time": 12600,
+            "text": "有"
+          },
+          {
+            "end_time": 12920,
+            "start_time": 12760,
+            "text": "一"
+          },
+          {
+            "end_time": 13080,
+            "start_time": 12920,
+            "text": "只"
+          },
+          {
+            "end_time": 13320,
+            "start_time": 13120,
+            "text": "白"
+          },
+          {
+            "end_time": 13400,
+            "start_time": 13320,
+            "text": "色"
+          },
+          {
+            "end_time": 13600,
+            "start_time": 13400,
+            "text": "的"
+          },
+          {
+            "end_time": 13800,
+            "start_time": 13600,
+            "text": "杯"
+          },
+          {
+            "end_time": 14040,
+            "start_time": 13800,
+            "text": "子"
+          },
+          {
+            "end_time": 14040,
+            "start_time": 14040,
+            "text": "。"
+          }
+        ]
+      },
+      {
+        "end_time": 18520,
+        "start_time": 14520,
+        "text": "窗边的椅子朝着门口，几张纸整齐地叠在一起。",
+        "words": [
+          {
+            "end_time": 14720,
+            "start_time": 14520,
+            "text": "窗"
+          },
+          {
+            "end_time": 14880,
+            "start_time": 14760,
+            "text": "边"
+          },
+          {
+            "end_time": 15080,
+            "start_time": 14880,
+            "text": "的"
+          },
+          {
+            "end_time": 15280,
+            "start_time": 15080,
+            "text": "椅"
+          },
+          {
+            "end_time": 15440,
+            "start_time": 15280,
+            "text": "子"
+          },
+          {
+            "end_time": 15720,
+            "start_time": 15480,
+            "text": "朝"
+          },
+          {
+            "end_time": 15880,
+            "start_time": 15720,
+            "text": "着"
+          },
+          {
+            "end_time": 16040,
+            "start_time": 15880,
+            "text": "门"
+          },
+          {
+            "end_time": 16280,
+            "start_time": 16040,
+            "text": "口"
+          },
+          {
+            "end_time": 16280,
+            "start_time": 16280,
+            "text": "，"
+          },
+          {
+            "end_time": 16760,
+            "start_time": 16560,
+            "text": "几"
+          },
+          {
+            "end_time": 16920,
+            "start_time": 16760,
+            "text": "张"
+          },
+          {
+            "end_time": 17080,
+            "start_time": 17000,
+            "text": "纸"
+          },
+          {
+            "end_time": 17440,
+            "start_time": 17240,
+            "text": "整"
+          },
+          {
+            "end_time": 17560,
+            "start_time": 17440,
+            "text": "齐"
+          },
+          {
+            "end_time": 17880,
+            "start_time": 17560,
+            "text": "地"
+          },
+          {
+            "end_time": 17920,
+            "start_time": 17880,
+            "text": "叠"
+          },
+          {
+            "end_time": 18200,
+            "start_time": 18040,
+            "text": "在"
+          },
+          {
+            "end_time": 18320,
+            "start_time": 18200,
+            "text": "一"
+          },
+          {
+            "end_time": 18520,
+            "start_time": 18320,
+            "text": "起"
+          },
+          {
+            "end_time": 18520,
+            "start_time": 18520,
+            "text": "。"
+          }
+        ]
+      },
+      {
+        "end_time": 23760,
+        "start_time": 20280,
+        "text": "桌上放着一本书，旁边有一只白色的杯子。",
+        "words": [
+          {
+            "end_time": 20480,
+            "start_time": 20280,
+            "text": "桌"
+          },
+          {
+            "end_time": 20680,
+            "start_time": 20480,
+            "text": "上"
+          },
+          {
+            "end_time": 20880,
+            "start_time": 20680,
+            "text": "放"
+          },
+          {
+            "end_time": 21000,
+            "start_time": 20880,
+            "text": "着"
+          },
+          {
+            "end_time": 21160,
+            "start_time": 21000,
+            "text": "一"
+          },
+          {
+            "end_time": 21280,
+            "start_time": 21160,
+            "text": "本"
+          },
+          {
+            "end_time": 21520,
+            "start_time": 21280,
+            "text": "书"
+          },
+          {
+            "end_time": 21520,
+            "start_time": 21520,
+            "text": "，"
+          },
+          {
+            "end_time": 22160,
+            "start_time": 21920,
+            "text": "旁"
+          },
+          {
+            "end_time": 22360,
+            "start_time": 22160,
+            "text": "边"
+          },
+          {
+            "end_time": 22560,
+            "start_time": 22360,
+            "text": "有"
+          },
+          {
+            "end_time": 22680,
+            "start_time": 22560,
+            "text": "一"
+          },
+          {
+            "end_time": 22880,
+            "start_time": 22680,
+            "text": "只"
+          },
+          {
+            "end_time": 23080,
+            "start_time": 22920,
+            "text": "白"
+          },
+          {
+            "end_time": 23240,
+            "start_time": 23080,
+            "text": "色"
+          },
+          {
+            "end_time": 23400,
+            "start_time": 23240,
+            "text": "的"
+          },
+          {
+            "end_time": 23560,
+            "start_time": 23400,
+            "text": "杯"
+          },
+          {
+            "end_time": 23760,
+            "start_time": 23600,
+            "text": "子"
+          },
+          {
+            "end_time": 23760,
+            "start_time": 23760,
+            "text": "。"
+          }
+        ]
+      },
+      {
+        "end_time": 28920,
+        "start_time": 24600,
+        "text": "窗边的椅子朝着门口，几张纸整齐地叠在一起。",
+        "words": [
+          {
+            "end_time": 24760,
+            "start_time": 24600,
+            "text": "窗"
+          },
+          {
+            "end_time": 24920,
+            "start_time": 24760,
+            "text": "边"
+          },
+          {
+            "end_time": 25080,
+            "start_time": 24920,
+            "text": "的"
+          },
+          {
+            "end_time": 25280,
+            "start_time": 25120,
+            "text": "椅"
+          },
+          {
+            "end_time": 25480,
+            "start_time": 25280,
+            "text": "子"
+          },
+          {
+            "end_time": 25760,
+            "start_time": 25560,
+            "text": "朝"
+          },
+          {
+            "end_time": 25920,
+            "start_time": 25760,
+            "text": "着"
+          },
+          {
+            "end_time": 26120,
+            "start_time": 25920,
+            "text": "门"
+          },
+          {
+            "end_time": 26360,
+            "start_time": 26120,
+            "text": "口"
+          },
+          {
+            "end_time": 26360,
+            "start_time": 26360,
+            "text": "，"
+          },
+          {
+            "end_time": 27080,
+            "start_time": 26880,
+            "text": "几"
+          },
+          {
+            "end_time": 27240,
+            "start_time": 27080,
+            "text": "张"
+          },
+          {
+            "end_time": 27400,
+            "start_time": 27320,
+            "text": "纸"
+          },
+          {
+            "end_time": 27760,
+            "start_time": 27600,
+            "text": "整"
+          },
+          {
+            "end_time": 27920,
+            "start_time": 27800,
+            "text": "齐"
+          },
+          {
+            "end_time": 28280,
+            "start_time": 27920,
+            "text": "地"
+          },
+          {
+            "end_time": 28320,
+            "start_time": 28280,
+            "text": "叠"
+          },
+          {
+            "end_time": 28600,
+            "start_time": 28440,
+            "text": "在"
+          },
+          {
+            "end_time": 28720,
+            "start_time": 28600,
+            "text": "一"
+          },
+          {
+            "end_time": 28920,
+            "start_time": 28720,
+            "text": "起"
+          },
+          {
+            "end_time": 28920,
+            "start_time": 28920,
+            "text": "。"
+          }
+        ]
+      },
+      {
+        "end_time": 34280,
+        "start_time": 30600,
+        "text": "桌上放着一本书，旁边有一只白色的杯子。",
+        "words": [
+          {
+            "end_time": 30840,
+            "start_time": 30600,
+            "text": "桌"
+          },
+          {
+            "end_time": 31080,
+            "start_time": 30840,
+            "text": "上"
+          },
+          {
+            "end_time": 31240,
+            "start_time": 31080,
+            "text": "放"
+          },
+          {
+            "end_time": 31360,
+            "start_time": 31240,
+            "text": "着"
+          },
+          {
+            "end_time": 31520,
+            "start_time": 31360,
+            "text": "一"
+          },
+          {
+            "end_time": 31680,
+            "start_time": 31520,
+            "text": "本"
+          },
+          {
+            "end_time": 31920,
+            "start_time": 31680,
+            "text": "书"
+          },
+          {
+            "end_time": 31920,
+            "start_time": 31920,
+            "text": "，"
+          },
+          {
+            "end_time": 32720,
+            "start_time": 32480,
+            "text": "旁"
+          },
+          {
+            "end_time": 32880,
+            "start_time": 32720,
+            "text": "边"
+          },
+          {
+            "end_time": 33120,
+            "start_time": 32880,
+            "text": "有"
+          },
+          {
+            "end_time": 33240,
+            "start_time": 33120,
+            "text": "一"
+          },
+          {
+            "end_time": 33400,
+            "start_time": 33240,
+            "text": "只"
+          },
+          {
+            "end_time": 33640,
+            "start_time": 33440,
+            "text": "白"
+          },
+          {
+            "end_time": 33760,
+            "start_time": 33640,
+            "text": "色"
+          },
+          {
+            "end_time": 33960,
+            "start_time": 33760,
+            "text": "的"
+          },
+          {
+            "end_time": 34120,
+            "start_time": 33960,
+            "text": "杯"
+          },
+          {
+            "end_time": 34280,
+            "start_time": 34120,
+            "text": "子"
+          },
+          {
+            "end_time": 34280,
+            "start_time": 34280,
+            "text": "。"
+          }
+        ]
+      },
+      {
+        "end_time": 39400,
+        "start_time": 35040,
+        "text": "窗边的椅子朝着门口，几张纸整齐地叠在一起。",
+        "words": [
+          {
+            "end_time": 35200,
+            "start_time": 35040,
+            "text": "窗"
+          },
+          {
+            "end_time": 35360,
+            "start_time": 35240,
+            "text": "边"
+          },
+          {
+            "end_time": 35520,
+            "start_time": 35360,
+            "text": "的"
+          },
+          {
+            "end_time": 35720,
+            "start_time": 35560,
+            "text": "椅"
+          },
+          {
+            "end_time": 35880,
+            "start_time": 35720,
+            "text": "子"
+          },
+          {
+            "end_time": 36160,
+            "start_time": 35960,
+            "text": "朝"
+          },
+          {
+            "end_time": 36320,
+            "start_time": 36160,
+            "text": "着"
+          },
+          {
+            "end_time": 36480,
+            "start_time": 36320,
+            "text": "门"
+          },
+          {
+            "end_time": 36760,
+            "start_time": 36480,
+            "text": "口"
+          },
+          {
+            "end_time": 36760,
+            "start_time": 36760,
+            "text": "，"
+          },
+          {
+            "end_time": 37520,
+            "start_time": 37280,
+            "text": "几"
+          },
+          {
+            "end_time": 37680,
+            "start_time": 37520,
+            "text": "张"
+          },
+          {
+            "end_time": 37840,
+            "start_time": 37760,
+            "text": "纸"
+          },
+          {
+            "end_time": 38240,
+            "start_time": 38080,
+            "text": "整"
+          },
+          {
+            "end_time": 38400,
+            "start_time": 38320,
+            "text": "齐"
+          },
+          {
+            "end_time": 38760,
+            "start_time": 38400,
+            "text": "地"
+          },
+          {
+            "end_time": 38800,
+            "start_time": 38760,
+            "text": "叠"
+          },
+          {
+            "end_time": 39080,
+            "start_time": 38960,
+            "text": "在"
+          },
+          {
+            "end_time": 39200,
+            "start_time": 39080,
+            "text": "一"
+          },
+          {
+            "end_time": 39400,
+            "start_time": 39200,
+            "text": "起"
+          },
+          {
+            "end_time": 39400,
+            "start_time": 39400,
+            "text": "。"
+          }
+        ]
+      }
+    ],
+    "text": "桌上放着一本书，旁边有一只白色的杯子。窗边的椅子朝着门口，几张纸整齐地叠在一起。桌上放着一本书，旁边有一只白色的杯子。窗边的椅子朝着门口，几张纸整齐地叠在一起。桌上放着一本书，旁边有一只白色的杯子。窗边的椅子朝着门口，几张纸整齐地叠在一起。桌上放着一本书，旁边有一只白色的杯子。窗边的椅子朝着门口，几张纸整齐地叠在一起。"
+  },
+  "file": "export/assets/0d954de3d23a5b072463bd9431c8513562eff98e0575ec4124c0fd69bd4b1947.wav",
+  "sha256": "0d954de3d23a5b072463bd9431c8513562eff98e0575ec4124c0fd69bd4b1947",
+  "bytes": 7887404
+}
