@@ -5,16 +5,14 @@
   "source_manifest": "../../material-plans/manifest.json",
   "total": 191,
   "status_counts": {
-    "executor_checked": 118,
-    "executor_checked_partial": 1,
+    "executor_checked": 137,
     "user_audition_passed": 10,
     "reference_pending": 3,
-    "not_produced": 4,
     "hearing_unverified": 38,
-    "quality_failed": 17
+    "not_produced": 3
   },
   "call_counts": {
-    "completed": 237,
+    "completed": 240,
     "unknown": 5,
     "failed": 3
   },
@@ -3210,6 +3208,48 @@
         "note": "Authenticated estimate returns token rates, not a fixed charge. Dispatch cap and observed auto-top-up threshold checked before submission.",
         "planning_reserve": 1.0
       }
+    },
+    {
+      "call_id": "task-20261015-0003-grain-queue-identity-02",
+      "status": "completed",
+      "cost": {
+        "account_source": "user-reported prepaid Google remaining balance at the recorded budget checkpoint; no recharge",
+        "actual": "UNKNOWN",
+        "balance_checkpoint_dispatches": 106,
+        "currency": "USD",
+        "estimated_call_cap": 0.25,
+        "note": "Catalog estimate is not billed cost; usage retained when returned.",
+        "quoted_image_4k": 0.113,
+        "reported_balance_usd": 3.86
+      }
+    },
+    {
+      "call_id": "task-20261015-0003-grain-queue-identity-03",
+      "status": "completed",
+      "cost": {
+        "account_source": "user-reported prepaid Google remaining balance at the recorded budget checkpoint; no recharge",
+        "actual": "UNKNOWN",
+        "balance_checkpoint_dispatches": 106,
+        "currency": "USD",
+        "estimated_call_cap": 0.25,
+        "note": "Catalog estimate is not billed cost; usage retained when returned.",
+        "quoted_image_4k": 0.113,
+        "reported_balance_usd": 3.86
+      }
+    },
+    {
+      "call_id": "task-20261015-0003-grain-queue-identity-04",
+      "status": "completed",
+      "cost": {
+        "account_source": "user-reported prepaid Google remaining balance at the recorded budget checkpoint; no recharge",
+        "actual": "UNKNOWN",
+        "balance_checkpoint_dispatches": 106,
+        "currency": "USD",
+        "estimated_call_cap": 0.25,
+        "note": "Catalog estimate is not billed cost; usage retained when returned.",
+        "quoted_image_4k": 0.113,
+        "reported_balance_usd": 3.86
+      }
     }
   ],
   "items": [
@@ -3268,7 +3308,7 @@
     {
       "code": "M112",
       "requirement_id": "new26-aheng-home-layout",
-      "content_sha256": "1c48dae5927b9ffdea102cde05026f8a5ec73728a43d2746068f4bca37490226",
+      "content_sha256": "39fb26e849e891a1e6295244f65a1bc957afd502b4d74e8e5db1351c4b94f13d",
       "title": "阿蘅与母亲的小屋 · 空间依据",
       "category": "scene-image",
       "scope_kind": "ENTITY",
@@ -3277,22 +3317,18 @@
         "revision_id": "b48645c4fdd85e665feab006cd41ea3bc5b0d2fb0c94af9383c1d88cd93396fb"
       },
       "route": {
-        "method": "generate",
-        "model": "gpt-image-2-5-sunburst",
+        "method": "external-edit",
         "parameters": {
-          "aspectRatio": "16:9",
-          "autoEnhancePrompt": false,
-          "customHeight": 2160,
-          "customWidth": 3840,
-          "imageCount": 1,
-          "lockAspectRatio": false,
-          "outputFormat": "png",
-          "quality": "high",
-          "resolutionTier": "4k",
-          "variant": "sunburst"
+          "canvas": [
+            3840,
+            2160
+          ],
+          "color_space": "sRGB",
+          "delivery_format": "PNG",
+          "source_format": "SVG"
         }
       },
-      "status": "executor_checked_partial",
+      "status": "executor_checked",
       "candidates": [
         {
           "candidate_id": "candidate-652d2f870e124d8837bc02bbcd8734e4433aafc7b17ff62e49d1935eb634db7e",
@@ -3339,14 +3375,47 @@
           ],
           "quality_status": "executor_checked_partial",
           "quality_findings": "已实际打开完整3840×2160原件。主透视和俯视中床均沿北墙、床头朝西，水几在西北床头；西侧桌凳、西南灶及半空米容器、唯一东窗、东南门及门到床的通路一致。灯已是朴素陶质油灯。第三幅实际是室内门槛近图而非要求的屋外立面，能说明门与台阶关系，但不作为外立面参考；墙木表面仍有轻手绘纹理，不影响当前空间结构用途。"
+        },
+        {
+          "candidate_id": "candidate-19fb30534588e27fdf10cfbe59137f33963d74d9f6c9db069d65dba11284835d",
+          "number": 3,
+          "asset": {
+            "object_id": "asset-task-20261015-0003-aheng-home-local-01",
+            "revision_id": "8b7a0f1eaba75cbc4a5d014b792fed3ead036557a0c6a7b507157c7bf5a580a6"
+          },
+          "call_id": null,
+          "components": [
+            {
+              "bytes": 624212,
+              "file": "477446020f7a8c13d9330d8b3c689f30e8a152127a41ffb8790d4d8d04f3feba.png",
+              "height": 2160,
+              "id": "original",
+              "mime": "image/png",
+              "role": "original",
+              "sha256": "477446020f7a8c13d9330d8b3c689f30e8a152127a41ffb8790d4d8d04f3feba",
+              "width": 3840
+            },
+            {
+              "bytes": 18820,
+              "file": "e928c3fe10363ac46928e543cf821a194787f3b71efa4170abb76ff9fe15c81a.zip",
+              "id": "project",
+              "mime": "application/zip",
+              "role": "project",
+              "sha256": "e928c3fe10363ac46928e543cf821a194787f3b71efa4170abb76ff9fe15c81a"
+            }
+          ],
+          "quality_status": "executor_checked",
+          "quality_findings": "实际打开最终3840×2160 PNG：主透视与右上平面共用小屋坐标，北床西枕，饮水小几紧贴西床头；西桌低凳、浅陶灯和带盖褐药罐、南西冷灶及米缸、东窗书纸台一致。灯无罩无火，药罐左嘴右柄，歌本灰褐三孔浅线且只放两张空纸；少米在俯视可辨，主透视受高缸沿遮住。床前经桌东到南偏东门有连续走道，门叶向内贴东墙，不扫窗台。东墙仅一个窗，西小烟口不是生活窗。右下仅南墙门口近景、打开的门叶和门槛，外沿东西窄巷右脚石角微翘，无额外窗、屋角、院落、人物或文字。"
         }
       ],
-      "selected_upstream": [],
-      "waiting_for_new_originals": [],
-      "gaps": [
-        "室内布局可用；门外视向、松翘石阶及外部镜头用途仍待补齐检查。"
+      "selected_upstream": [
+        "new26-home-meal-kit-identity",
+        "new26-home-oil-lamps-identity",
+        "new26-songbook-identity"
       ],
-      "resume_when": "沿同一需求补核外部用途；当前未批量绑定下游，不计完整空间母版通过。"
+      "waiting_for_new_originals": [],
+      "gaps": [],
+      "resume_when": "候选3已通过对应用途实际看图；准确原件已选入37处当前输入。"
     },
     {
       "code": "M567",
@@ -4250,7 +4319,7 @@
     {
       "code": "M289",
       "requirement_id": "new26-back-court-layout",
-      "content_sha256": "24bed98dde11196c0114fd4991fb85e9de105e5512a7d29cec758ef71b010683",
+      "content_sha256": "8b08c2e3ec96721d0a0fb50fd94c7828809f78e47a62a2ed245e19764971e3f0",
       "title": "山庙封闭后院与岩根 · 空间依据",
       "category": "scene-image",
       "scope_kind": "ENTITY",
@@ -4259,31 +4328,57 @@
         "revision_id": "6e5d21d722b21256311050e25e34459a3bd0b0a164611d05d6ecf368d36d550e"
       },
       "route": {
-        "method": "generate",
-        "model": "gpt-image-2-5-sunburst",
+        "method": "external-edit",
         "parameters": {
-          "aspectRatio": "16:9",
-          "autoEnhancePrompt": false,
-          "customHeight": 2160,
-          "customWidth": 3840,
-          "imageCount": 1,
-          "lockAspectRatio": true,
-          "outputFormat": "png",
-          "quality": "high",
-          "resolutionTier": "4k",
-          "variant": "sunburst"
+          "canvas": [
+            3840,
+            2160
+          ],
+          "color_space": "sRGB",
+          "delivery_format": "PNG",
+          "source_format": "SVG"
         }
       },
-      "status": "not_produced",
-      "candidates": [],
+      "status": "executor_checked",
+      "candidates": [
+        {
+          "candidate_id": "candidate-dc0dc6d8a82ed6cf208e1721dd88df9490c9f82977bae7ab330cd0345bfe6814",
+          "number": 1,
+          "asset": {
+            "object_id": "asset-task-20261015-0003-back-court-local-01",
+            "revision_id": "e5054552b9a9d845ffd183ef89a140a752a407cd44002ca6c5a951d97ed93d71"
+          },
+          "call_id": null,
+          "components": [
+            {
+              "bytes": 609037,
+              "file": "9f12b2235cb3c897d6cc267e1619d5b1ace1e42dc82022dedd01b6f957cc9dfb.png",
+              "height": 2160,
+              "id": "original",
+              "mime": "image/png",
+              "role": "original",
+              "sha256": "9f12b2235cb3c897d6cc267e1619d5b1ace1e42dc82022dedd01b6f957cc9dfb",
+              "width": 3840
+            },
+            {
+              "bytes": 8644,
+              "file": "5635ef638a7192d2f14ad0737c8b337e31b723350ba9d81c5c048626cf6fdda0.zip",
+              "id": "project",
+              "mime": "application/zip",
+              "role": "project",
+              "sha256": "5635ef638a7192d2f14ad0737c8b337e31b723350ba9d81c5c048626cf6fdda0"
+            }
+          ],
+          "quality_status": "executor_checked",
+          "quality_findings": "已实际查看原生3840×2160全幅，三视向均以原始封顶机构接北面岩根；未出现新刀缝、长杠或布。平面完整保留16×13肩宽院墙、南偏西唯一向外开的门及西墙内平石；东西净地和南绕行地无障碍，14肩长杠的预留长度两端各余1肩。左主视的南、西近墙有意技术剖低，低视向和平面保留完整墙体与连续岩檐，此工程不得直接当无墙成片背景。平石在主图被开门叶自然遮挡一部分，平面和低视图可见落地位置；各视向没有新增后出口。几何与准确源ZIP已核，但未做现场施工、物理承载或真人站位试验。"
+        }
+      ],
       "selected_upstream": [
         "new26-feeding-lock-identity"
       ],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "尚无本轮原件及质量检查。"
-      ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
+      "gaps": [],
+      "resume_when": "候选1已通过对应用途实际看图；准确原件已选入111处当前输入。"
     },
     {
       "code": "M162",
@@ -4773,7 +4868,7 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [],
-      "resume_when": "候选2已通过对应用途实际看图；准确原件已选入26处当前输入。"
+      "resume_when": "候选2已通过对应用途实际看图；准确原件已选入27处当前输入。"
     },
     {
       "code": "M090",
@@ -4855,7 +4950,7 @@
     {
       "code": "M607",
       "requirement_id": "new26-book-rebound-overall",
-      "content_sha256": "0d4b109e0da6f8e7a91448a098ef05fb50cbd1f9ce9edc1c6d0224e2ef51252c",
+      "content_sha256": "ef8d1d37a657d4f9e4eed1f8fc14785cc8a9326e7b5b29d3def67458d3a844dd",
       "title": "歌本 · 新页订牢，旧残页留后 · 完整形态",
       "category": "prop-image",
       "scope_kind": "STATE",
@@ -4864,16 +4959,18 @@
         "revision_id": "e681a1ca7b1bc1096f9b595c97bbdc2e93ce85e2f323d7a009f4fd4bdff7b6d1"
       },
       "route": {
-        "method": "generate",
-        "model": "gemini-nano-banana-2.1",
+        "method": "external-edit",
         "parameters": {
-          "aspect_ratio": "16:9",
-          "image_size": "4K",
-          "mime_type": "image/jpeg",
-          "type": "image"
+          "canvas": [
+            3840,
+            2160
+          ],
+          "color_space": "sRGB",
+          "delivery_format": "PNG",
+          "source_format": "SVG"
         }
       },
-      "status": "quality_failed",
+      "status": "executor_checked",
       "candidates": [
         {
           "candidate_id": "candidate-bc8bcd68a299a4c123a9a5726a6f68927f970b277bd58094c17cf02e6e973cec",
@@ -4897,6 +4994,37 @@
           ],
           "quality_status": "quality_failed",
           "quality_findings": "实际查看原件：新白页、旧书纸色、左脊三孔和局部短线结可辨，三个炭圈及针没有出现。但旧末段残页约保留全页的三分之二，撕口明显低于中线，两团墨洇偏在残页右下近撕口处；未清楚满足下半页已失、墨洇位于所留上半页中部的连续性要求。另带入母版纸镇。主图与近图不能据此认定残页状态通过。"
+        },
+        {
+          "candidate_id": "candidate-e24668407f432274bc7fda8c0a2650326e3d1dae2e39e6de5d2ac863b07a2e5c",
+          "number": 2,
+          "asset": {
+            "object_id": "asset-task-20261015-0003-book-rebound-local-01",
+            "revision_id": "8d8a3028ee9a51b023f3dbdd941cfe2a2b09258aa923f8847cd5479df903d559"
+          },
+          "call_id": null,
+          "components": [
+            {
+              "bytes": 480662,
+              "file": "50e16e5494a544c24e1f8abe430b4c970efd9b99591504294ef43c3abea008f9.png",
+              "height": 2160,
+              "id": "original",
+              "mime": "image/png",
+              "role": "original",
+              "sha256": "50e16e5494a544c24e1f8abe430b4c970efd9b99591504294ef43c3abea008f9",
+              "width": 3840
+            },
+            {
+              "bytes": 2590,
+              "file": "58bb092600ddb49c59a006b2adb38a7649bfe2d43adf73a28bb3034252733ac1.zip",
+              "id": "project",
+              "mime": "application/zip",
+              "role": "project",
+              "sha256": "58bb092600ddb49c59a006b2adb38a7649bfe2d43adf73a28bb3034252733ac1"
+            }
+          ],
+          "quality_status": "executor_checked",
+          "quality_findings": "实际查看原生3840×2160全幅和同源书脊近图：新的米白完整页在前并翻向左，旧唱词残上半留在后部右侧，两团干墨洇及淡外圈位于上半中部，撕边以下直接露灰褐后封皮，没有再画成保留三分之二。三孔沿同一书脊，浅米灰细线与末孔压平短结可辨，近图同源无第四孔。完整记工背页已去除，全图没有三圈、圆缺口页、针、散线团、纸镇或清账凭据。源工程锁形制与叠序，未进行实际装订牢度试验。"
         }
       ],
       "selected_upstream": [
@@ -4904,15 +5032,13 @@
         "new26-songbook-identity"
       ],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "实际查看原件：新白页、旧书纸色、左脊三孔和局部短线结可辨，三个炭圈及针没有出现。但旧末段残页约保留全页的三分之二，撕口明显低于中线，两团墨洇偏在残页右下近撕口处；未清楚满足下半页已失、墨洇位于所留上半页中部的连续性要求。另带入母版纸镇。主图与近图不能据此认定残页状态通过。"
-      ],
-      "resume_when": "依据实际缺陷做有界返修；保留已完成调用，不沿失败原件加深以图生图谱系。"
+      "gaps": [],
+      "resume_when": "候选2已通过对应用途实际看图；准确原件已选入13处当前输入。"
     },
     {
       "code": "M057",
       "requirement_id": "new26-book-torn-overall",
-      "content_sha256": "5fa7579d3b89bcd0e3f3fc93bd65f132eda890b31f6de69529ecd8e7a6491667",
+      "content_sha256": "96f09e04c67425616f86e369705659cb24f1ae020bb05fdf924a345fce52b954",
       "title": "歌本 · 浸裂洇墨的残本 · 完整形态",
       "category": "prop-image",
       "scope_kind": "STATE",
@@ -4921,16 +5047,18 @@
         "revision_id": "6285981444bf413d4a03eea282e28fe277de3bd5a076426e3707ef3de719f310"
       },
       "route": {
-        "method": "generate",
-        "model": "gemini-nano-banana-2.1",
+        "method": "external-edit",
         "parameters": {
-          "aspect_ratio": "16:9",
-          "image_size": "4K",
-          "mime_type": "image/jpeg",
-          "type": "image"
+          "canvas": [
+            3840,
+            2160
+          ],
+          "color_space": "sRGB",
+          "delivery_format": "PNG",
+          "source_format": "SVG"
         }
       },
-      "status": "quality_failed",
+      "status": "executor_checked",
       "candidates": [
         {
           "candidate_id": "candidate-827aeacc50bfe60f1b12d55b8541055c8500f56ebe8cace52905da5923317d5d",
@@ -5000,16 +5128,45 @@
           ],
           "quality_status": "quality_failed",
           "quality_findings": "已实际看原生5504×3072 JPEG：三孔装订、三圆记号和右下圆缺口可辨，但中间残页与右侧全页上缘对齐后仍保留约三分之二高度，没有只剩上半页；与锁定的下半页缺失不符。"
+        },
+        {
+          "candidate_id": "candidate-0ddf0ff608e583ce628dd84f6af9b2523b455dbbd54ce9c35635b9c6d4faa2b5",
+          "number": 4,
+          "asset": {
+            "object_id": "asset-task-20261015-0003-book-torn-local-01",
+            "revision_id": "85c96ffe4e5b7145fdc7912922fe909f9222231356e8878e4c968fd127fb0f95"
+          },
+          "call_id": null,
+          "components": [
+            {
+              "bytes": 429437,
+              "file": "246e90b0be1cc8e272df2f277273098aae0025bfe3bd2a3e603438ca41abbb5a.png",
+              "height": 2160,
+              "id": "original",
+              "mime": "image/png",
+              "role": "original",
+              "sha256": "246e90b0be1cc8e272df2f277273098aae0025bfe3bd2a3e603438ca41abbb5a",
+              "width": 3840
+            },
+            {
+              "bytes": 2386,
+              "file": "cc85b3b73326929e317e0f446a10c1c1e6440e5610b835e83be981c46412cb01.zip",
+              "id": "project",
+              "mime": "application/zip",
+              "role": "project",
+              "sha256": "cc85b3b73326929e317e0f446a10c1c1e6440e5610b835e83be981c46412cb01"
+            }
+          ],
+          "quality_status": "executor_checked",
+          "quality_findings": "实际查看原生3840×2160全貌，并与母版和完整页同尺度比较：左为湿软原薄本与打开封皮，中央唱词残页只剩上半，锯齿状撕边在整页中线，下面直至全页底线露出大段承托布；中部两团墨洇带淡外圈，残页仅保留位于上半的首孔。右完整记工背页有三孔、三空圈和唯一右下圆磨缺口。没有在其他旧页复制圆缺口，没有补抄白纸、纸镇或可读歌词。前封皮上缘浅凹随打开镜像，未新添到后封皮。湿皱为克制局部形制，无全图纸纹。"
         }
       ],
       "selected_upstream": [
         "new26-songbook-identity"
       ],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "已实际看原生5504×3072 JPEG：三孔装订、三圆记号和右下圆缺口可辨，但中间残页与右侧全页上缘对齐后仍保留约三分之二高度，没有只剩上半页；与锁定的下半页缺失不符。"
-      ],
-      "resume_when": "依据实际缺陷做有界返修；保留已完成调用，不沿失败原件加深以图生图谱系。"
+      "gaps": [],
+      "resume_when": "候选4已通过对应用途实际看图；准确原件已选入18处当前输入。"
     },
     {
       "code": "M217",
@@ -5500,7 +5657,7 @@
     {
       "code": "M245",
       "requirement_id": "new26-county-corridor-layout",
-      "content_sha256": "cc5b727217aa1ea0a966f7321fdde7141a6cb116f4be1463ddede208ef9edb65",
+      "content_sha256": "f691ee7dbe001fe3e7bea1acee8790d0751172a26a42651ec559ca76d3581b50",
       "title": "县衙登记廊与内堂入口 · 空间依据",
       "category": "scene-image",
       "scope_kind": "ENTITY",
@@ -5509,17 +5666,18 @@
         "revision_id": "55034bfd55c09e65db315ac82449309a3c41d37f111f2f780168a2cbc3b7f231"
       },
       "route": {
-        "method": "generate",
-        "model": "marketing-studio/image/flare",
+        "method": "external-edit",
         "parameters": {
-          "aspect_ratio": "16:9",
-          "enhance_prompt": false,
-          "moderation": "auto",
-          "quality": "high",
-          "resolution": "4k"
+          "canvas": [
+            3840,
+            2160
+          ],
+          "color_space": "sRGB",
+          "delivery_format": "PNG",
+          "source_format": "SVG"
         }
       },
-      "status": "quality_failed",
+      "status": "executor_checked",
       "candidates": [
         {
           "candidate_id": "candidate-6ad084fb08d1e471644b4f4bcc18092849fc4e85d669fd964483027741a26318",
@@ -5543,14 +5701,43 @@
           ],
           "quality_status": "quality_failed",
           "quality_findings": "已实际打开3840×2160原生PNG。北端遗物小桌、东墙长凳和西廊柱可辨，通道有余量；但登记桌被转成南北向，书吏椅在东侧而非北侧，内堂入口也未显示向东转入的连接。"
+        },
+        {
+          "candidate_id": "candidate-b4534741837f419b78ce2c0638f3e9ee68abf8813ab735f80cbe8c4f382825b4",
+          "number": 2,
+          "asset": {
+            "object_id": "asset-task-20261015-0003-county-corridor-local-01",
+            "revision_id": "033e4963b9ad9636eb8af4d3127ecc36e1a019b86b08b96933d84afbc3d961e4"
+          },
+          "call_id": null,
+          "components": [
+            {
+              "bytes": 728590,
+              "file": "7f5dde99cd7401f89268eba9d08594c5893acf7cab63bf3bed5344042b4a7fdb.png",
+              "height": 2160,
+              "id": "original",
+              "mime": "image/png",
+              "role": "original",
+              "sha256": "7f5dde99cd7401f89268eba9d08594c5893acf7cab63bf3bed5344042b4a7fdb",
+              "width": 3840
+            },
+            {
+              "bytes": 3642,
+              "file": "0ad5f12b289aaa98b2d249c28541871e09c20cc3a2a2720bb94b5c1a738cd28d.zip",
+              "id": "project",
+              "mime": "application/zip",
+              "role": "project",
+              "sha256": "0ad5f12b289aaa98b2d249c28541871e09c20cc3a2a2720bb94b5c1a738cd28d"
+            }
+          ],
+          "quality_status": "executor_checked",
+          "quality_findings": "实际查看原生3840×2160最终全图：一个南北连续木廊，西列柱朝院，东实墙在北端留清楚的转东内堂入口，门楣及门外地面可辨。中段登记桌长边沿东西向，椅在北、南侧留来人站位，桌西至柱列连续3.3肩净道。沿东墙向北依次空长凳和小遗物桌，小桌至内堂门留半肩。没有第二套桌、文件、印章或人物，所有桌凳只出现一次。屋顶仅工程省去；未做实际搭景或真人通行验证。"
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "已实际打开3840×2160原生PNG。北端遗物小桌、东墙长凳和西廊柱可辨，通道有余量；但登记桌被转成南北向，书吏椅在东侧而非北侧，内堂入口也未显示向东转入的连接。"
-      ],
-      "resume_when": "依据实际缺陷做有界返修；保留已完成调用，不沿失败原件加深以图生图谱系。"
+      "gaps": [],
+      "resume_when": "候选2已通过对应用途实际看图；准确原件已选入31处当前输入。"
     },
     {
       "code": "M248",
@@ -6186,7 +6373,7 @@
     {
       "code": "M604",
       "requirement_id": "new26-drying-ground-layout",
-      "content_sha256": "b75573dd98fc6a7934332bdb97de6682b6d47038c5f5ee1848a2dec2d0c74378",
+      "content_sha256": "e07680510f92690da58f3a7d41e575920d48978fb994ebb18e4abdf6fba73259",
       "title": "终场演出的晒场 · 空间依据",
       "category": "scene-image",
       "scope_kind": "ENTITY",
@@ -6195,17 +6382,18 @@
         "revision_id": "58e248d83af7e61e9835db0699924209459e67d45113ddb7cc21ec440a00fac6"
       },
       "route": {
-        "method": "generate",
-        "model": "marketing-studio/image/flare",
+        "method": "external-edit",
         "parameters": {
-          "aspect_ratio": "16:9",
-          "enhance_prompt": false,
-          "moderation": "auto",
-          "quality": "high",
-          "resolution": "4k"
+          "canvas": [
+            3840,
+            2160
+          ],
+          "color_space": "sRGB",
+          "delivery_format": "PNG",
+          "source_format": "SVG"
         }
       },
-      "status": "quality_failed",
+      "status": "executor_checked",
       "candidates": [
         {
           "candidate_id": "candidate-c50067a10c2990bf6b9c9bf07a2f19067ba16647eb406abfb443c6e3548d8a9e",
@@ -6229,14 +6417,43 @@
           ],
           "quality_status": "quality_failed",
           "quality_findings": "已实际打开3840×2160原生PNG。北侧低台、两个幕杆套孔、东侧空凳位、西侧空地及南观众区可辨，没有预放幕和叙事道具。但西南出口只形成很窄的墙缝，与台及墙体比例比较不足以供两人通行，不能承担全场散场路线。"
+        },
+        {
+          "candidate_id": "candidate-069e555b790fb763ad479c5d239fc09d8320ebc6ed89c4aa147d3a0e154f11f7",
+          "number": 2,
+          "asset": {
+            "object_id": "asset-task-20261015-0003-drying-ground-local-01",
+            "revision_id": "7e47f9eb63c39f66040437522530fb166d2c627b7da1321f7516dfee16f87af0"
+          },
+          "call_id": null,
+          "components": [
+            {
+              "bytes": 326425,
+              "file": "6936e9ebcf0270980daee7409bd3ea6d83f5e384a0afbbb40215aa7ca47eec7d.png",
+              "height": 2160,
+              "id": "original",
+              "mime": "image/png",
+              "role": "original",
+              "sha256": "6936e9ebcf0270980daee7409bd3ea6d83f5e384a0afbbb40215aa7ca47eec7d",
+              "width": 3840
+            },
+            {
+              "bytes": 1740,
+              "file": "a34db990113b1efe100e28dc0b12ad5299211f92978317056a6d288caadae4f3.zip",
+              "id": "project",
+              "mime": "application/zip",
+              "role": "project",
+              "sha256": "a34db990113b1efe100e28dc0b12ad5299211f92978317056a6d288caadae4f3"
+            }
+          ],
+          "quality_status": "executor_checked",
+          "quality_findings": "已实际查看原生3840×2160最终全幅：完整北侧低木台朝南，两后角的小圆空套孔可数，无幕杆、幕布和叙事道具。南面观众地为空，台东西空地均能绕向台前。西南出路净宽2.5肩，连续转向短街路，完整在画框内，不再是窄墙缝。台后只见低土墙及少量树影，没有庙、仓或蛇洞。源坐标约束4米台宽与40厘米台高，未做真实场地容量或施工验收。"
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "已实际打开3840×2160原生PNG。北侧低台、两个幕杆套孔、东侧空凳位、西侧空地及南观众区可辨，没有预放幕和叙事道具。但西南出口只形成很窄的墙缝，与台及墙体比例比较不足以供两人通行，不能承担全场散场路线。"
-      ],
-      "resume_when": "依据实际缺陷做有界返修；保留已完成调用，不沿失败原件加深以图生图谱系。"
+      "gaps": [],
+      "resume_when": "候选2已通过对应用途实际看图；准确原件已选入15处当前输入。"
     },
     {
       "code": "M420",
@@ -6957,7 +7174,7 @@
     {
       "code": "M421",
       "requirement_id": "new26-grain-queue-identity",
-      "content_sha256": "4989521ebf431ac9c94542d4390e633cd4d8d5c7b3729e32509c5edaa10272a8",
+      "content_sha256": "78109fd690dcbbc625c2e91ac1d90209b8afec2cecb57554b4653fb9ffabbd48",
       "title": "领粮的人家与门道旁观者 · 基础形象",
       "category": "character-image",
       "scope_kind": "ENTITY",
@@ -6975,7 +7192,7 @@
           "type": "image"
         }
       },
-      "status": "quality_failed",
+      "status": "executor_checked",
       "candidates": [
         {
           "candidate_id": "candidate-8e78dfb74b8032bebab39abcf90a04c207b2697bc0ae21398a0e23a83f6ba1ec",
@@ -6999,14 +7216,81 @@
           ],
           "quality_status": "quality_failed",
           "quality_findings": "已实际看原生5504×3072 JPEG：七名人物齐全，但女孩高度接近父亲腰部而非胸口；要求空手的瘦长脸挑担汉子已持扁担，独身妇人双手各有一张票，增加了不应有的物件。"
+        },
+        {
+          "candidate_id": "candidate-237bfc631827a1edf54aaab0037ce7117ce519be6d06e08c22fe41a313bd9c39",
+          "number": 2,
+          "asset": {
+            "object_id": "asset-task-20261015-0003-grain-queue-identity-02",
+            "revision_id": "e22f8f7bbc01822dccd6d60a275a7abc6a8194960e5414698353c63729608f44"
+          },
+          "call_id": "task-20261015-0003-grain-queue-identity-02",
+          "components": [
+            {
+              "bytes": 8287378,
+              "file": "3c120fee1631148b0bc4941f77c691578f1705f89d701ba9a4bf1c3b3b390e35.jpg",
+              "height": 3072,
+              "id": "original",
+              "mime": "image/jpeg",
+              "role": "original",
+              "sha256": "3c120fee1631148b0bc4941f77c691578f1705f89d701ba9a4bf1c3b3b390e35",
+              "width": 5504
+            }
+          ],
+          "quality_status": "quality_failed",
+          "quality_findings": "实际查看原生5504×3072 JPEG：七人及七个匹配正脸完整，灰绿父亲、双髻女孩、灰紫母亲与短发男童、抱单袋方脸汉子、空手瘦长脸男子、只持一张票的妇人均可分。多余扁担与第二张票已消除。但共同脚线下女孩高度仍约父亲的65%，头顶只到下胸与上腹交界，未达到本次明确约74%的胸口尺度，不能据其余修正完成而判整项通过。比例例外按用户决定保留原件，未裁切、缩放或转码。"
+        },
+        {
+          "candidate_id": "candidate-dfe57f90a48ce7c7e4e887aff69e858e132fce7dd0d2bf66f9df96cdb8f6a4a5",
+          "number": 3,
+          "asset": {
+            "object_id": "asset-task-20261015-0003-grain-queue-identity-03",
+            "revision_id": "95b5bf0ca417bd435b7795073dec590d3ff6a19a35be341e3770f723660aa46e"
+          },
+          "call_id": "task-20261015-0003-grain-queue-identity-03",
+          "components": [
+            {
+              "bytes": 6454603,
+              "file": "e4ca7d9bb8c8909fb23d82160c14dfaba33198785b088a6bbf109ba112abc56a.jpg",
+              "height": 3072,
+              "id": "original",
+              "mime": "image/jpeg",
+              "role": "original",
+              "sha256": "e4ca7d9bb8c8909fb23d82160c14dfaba33198785b088a6bbf109ba112abc56a",
+              "width": 5504
+            }
+          ],
+          "quality_status": "quality_failed",
+          "quality_findings": "实际打开原生5504×3072 JPEG：七人全身与七张对应面部均齐，女孩两髻且高度约父亲四分之三、男童较矮，双手空的瘦长脸男子没有扁担，一名壮汉抱唯一米袋。右端独身妇人却两只手各拿一张纸票，违反全图一票要求。"
+        },
+        {
+          "candidate_id": "candidate-e6d3aceee5a32161462c857323d0b140d6624f991806de99363b73f7a867d9c7",
+          "number": 4,
+          "asset": {
+            "object_id": "asset-task-20261015-0003-grain-queue-identity-04",
+            "revision_id": "cdb77d7c555222a4826726fe0b49e07519137fbdf12b32f4e0a8b30cbe822e28"
+          },
+          "call_id": "task-20261015-0003-grain-queue-identity-04",
+          "components": [
+            {
+              "bytes": 7215068,
+              "file": "110684efbed7ed3ccedb8d86e6a14623ee11ff73ad666326409b40462dd55e5a.jpg",
+              "height": 3072,
+              "id": "original",
+              "mime": "image/jpeg",
+              "role": "original",
+              "sha256": "110684efbed7ed3ccedb8d86e6a14623ee11ff73ad666326409b40462dd55e5a",
+              "width": 5504
+            }
+          ],
+          "quality_status": "executor_checked",
+          "quality_findings": "实际打开原生5504×3072 JPEG：七名完整人物共用脚底线，下排七张对应头部。父女为左组，女孩两侧发髻、浅褐衣，头顶到父亲上胸约四分之三至五分之四全高，较男童明显高；母子、抱袋方脸壮汉、无物瘦长脸汉子和独身妇人身份可分。只有一只米袋；独身妇人右手捏唯一空白票，左臂收背后没有第二票。瘦长脸男子双手和身旁为空，没有扁担。各人头脚齐全不重叠，衣服布结交领、无文字或现代器件，色块及轮廓干净。"
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "已实际看原生5504×3072 JPEG：七名人物齐全，但女孩高度接近父亲腰部而非胸口；要求空手的瘦长脸挑担汉子已持扁担，独身妇人双手各有一张票，增加了不应有的物件。"
-      ],
-      "resume_when": "依据实际缺陷做有界返修；保留已完成调用，不沿失败原件加深以图生图谱系。"
+      "gaps": [],
+      "resume_when": "候选4已通过对应用途实际看图；准确原件已选入14处当前输入。"
     },
     {
       "code": "M422",
@@ -7772,7 +8056,7 @@
     {
       "code": "M395",
       "requirement_id": "new26-home-meal-kit-identity",
-      "content_sha256": "7e2735b09cb3380d95e0354a1d8f37843686c161b1bc9f0aaeb9efad5272f630",
+      "content_sha256": "ea52d32643285717a8a12dbc37355449d6244df5974ce8c4a1fecbc58280146e",
       "title": "李家日用碗筷、炊具与小药罐 · 基础形象",
       "category": "prop-image",
       "scope_kind": "ENTITY",
@@ -7781,16 +8065,18 @@
         "revision_id": "f1b6b5803a881a8c8ebaf9cde9e9e1892b1309659ddb93eb9e9f8912782c9fd9"
       },
       "route": {
-        "method": "generate",
-        "model": "gemini-nano-banana-2.1",
+        "method": "external-edit",
         "parameters": {
-          "aspect_ratio": "16:9",
-          "image_size": "4K",
-          "mime_type": "image/jpeg",
-          "type": "image"
+          "canvas": [
+            3840,
+            2160
+          ],
+          "color_space": "sRGB",
+          "delivery_format": "PNG",
+          "source_format": "SVG"
         }
       },
-      "status": "quality_failed",
+      "status": "executor_checked",
       "candidates": [
         {
           "candidate_id": "candidate-588cd6995ed50b35653be499150a71f545617bed83c2168051106176ac049e37",
@@ -7837,14 +8123,43 @@
           ],
           "quality_status": "quality_failed",
           "quality_findings": "实际查看原件：碗、药罐、勺铲、竹盘饼篮、食物、锅盖水壶面粉与凳板都可辨，但明确要求两双四根的木筷仍只画两根，且新增多处1至5编号文字。返修未解决原数量缺口并引入文字，不能作为本需求完整干净母版。"
+        },
+        {
+          "candidate_id": "candidate-56186cd322a45b0f946035949ee95757fd0e02634069cb6d97e5b3e694b174ea",
+          "number": 3,
+          "asset": {
+            "object_id": "asset-task-20261015-0003-home-meal-kit-local-01",
+            "revision_id": "2eb88a5ca241133f7ed66702508df80137217702b69d9846c4fdce78ed3d1097"
+          },
+          "call_id": null,
+          "components": [
+            {
+              "bytes": 704554,
+              "file": "ac6429a3be0b48ab8a59b33b973cd5fd68d0b145c7cdebfcdc47afe9ac3e421f.png",
+              "height": 2160,
+              "id": "original",
+              "mime": "image/png",
+              "role": "original",
+              "sha256": "ac6429a3be0b48ab8a59b33b973cd5fd68d0b145c7cdebfcdc47afe9ac3e421f",
+              "width": 3840
+            },
+            {
+              "bytes": 4405,
+              "file": "f54236aabb612bd30707f3327fd9c055254fcfbfacb3808b762ba092c86dfbbd.zip",
+              "id": "project",
+              "mime": "application/zip",
+              "role": "project",
+              "sha256": "f54236aabb612bd30707f3327fd9c055254fcfbfacb3808b762ba092c86dfbbd"
+            }
+          ],
+          "quality_status": "executor_checked",
+          "quality_findings": "实际查看原生3840×2160最终全图：木筷清楚四根，分成两对且均与木勺、铁铲分开；无数字或名称。米灰饭碗、大汤碗与带小嘴侧把的深褐药罐完整，黑铁锅与分开木盖、陶水壶、折下袋口的半袋面粉可辨。热饼在篮内、少量褐肉与黄炒蛋在浅竹盘内；两低凳与狭长木板席均完整入框，腿与横撑相接。没有缺口小碗或油灯，未把物件固定成剧情桌面。简洁平涂形制工程，未声称实物尺寸或功能试验。"
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "实际查看原件：碗、药罐、勺铲、竹盘饼篮、食物、锅盖水壶面粉与凳板都可辨，但明确要求两双四根的木筷仍只画两根，且新增多处1至5编号文字。返修未解决原数量缺口并引入文字，不能作为本需求完整干净母版。"
-      ],
-      "resume_when": "依据实际缺陷做有界返修；保留已完成调用，不沿失败原件加深以图生图谱系。"
+      "gaps": [],
+      "resume_when": "候选3已通过对应用途实际看图；准确原件已选入35处当前输入。"
     },
     {
       "code": "M397",
@@ -7929,7 +8244,7 @@
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [],
-      "resume_when": "候选2已通过对应用途实际看图；准确原件已选入25处当前输入。"
+      "resume_when": "候选2已通过对应用途实际看图；准确原件已选入26处当前输入。"
     },
     {
       "code": "M085",
@@ -8351,7 +8666,7 @@
     {
       "code": "M212",
       "requirement_id": "new26-li-home-layout",
-      "content_sha256": "c8b9422472306db2abfd0308678f16ff6cdebc7fe337bc64e67e2f14da2757c4",
+      "content_sha256": "8c90c6d298f9501b1a4efe205800da3dc9f427fe6c4b22fdf7f00a3785ae997f",
       "title": "李家堂屋、灶与院门 · 空间依据",
       "category": "scene-image",
       "scope_kind": "ENTITY",
@@ -8360,22 +8675,18 @@
         "revision_id": "68d650223f5df05007d475bced45f44b82b9e3066f4be0ef2d71f9e4f4972cd6"
       },
       "route": {
-        "method": "generate",
-        "model": "gpt-image-2-5-sunburst",
+        "method": "external-edit",
         "parameters": {
-          "aspectRatio": "16:9",
-          "autoEnhancePrompt": false,
-          "customHeight": 2160,
-          "customWidth": 3840,
-          "imageCount": 1,
-          "lockAspectRatio": false,
-          "outputFormat": "png",
-          "quality": "high",
-          "resolutionTier": "4k",
-          "variant": "sunburst"
+          "canvas": [
+            3840,
+            2160
+          ],
+          "color_space": "sRGB",
+          "delivery_format": "PNG",
+          "source_format": "SVG"
         }
       },
-      "status": "quality_failed",
+      "status": "executor_checked",
       "candidates": [
         {
           "candidate_id": "candidate-affa0cd3678b01be1a9e5edd2b9a52e7952c436089b23e8b77c356b650ff5486",
@@ -8422,14 +8733,43 @@
           ],
           "quality_status": "quality_failed",
           "quality_findings": "已实际看三视图，床沿北墙横置、东端通路和床西箱位置改善，现代灯也已删除。但所需肩高承灯平台画成低位竖向壁板，向南视图中顶面窄且高度不足，未能确认可稳定承放已生成的纸灯。空间主要家具可辨，最终放灯这一核心用途仍有缺口。"
+        },
+        {
+          "candidate_id": "candidate-31e0aaa4c0468fa6591e4825d0a47efca5044fe7be5c6640a3588350ecb503e7",
+          "number": 3,
+          "asset": {
+            "object_id": "asset-task-20261015-0003-li-home-local-01",
+            "revision_id": "f0666db86a6e7bada46a79b4300ed35881a60dd2227e52e97928131ea571e1fa"
+          },
+          "call_id": null,
+          "components": [
+            {
+              "bytes": 582078,
+              "file": "c9bd8ffe6cf1d09309e5b9c7465271352ca587e451c47705fe870cdfa768572a.png",
+              "height": 2160,
+              "id": "original",
+              "mime": "image/png",
+              "role": "original",
+              "sha256": "c9bd8ffe6cf1d09309e5b9c7465271352ca587e451c47705fe870cdfa768572a",
+              "width": 3840
+            },
+            {
+              "bytes": 5760,
+              "file": "0ee89cac6385f9ac9ec6d29b2037abca4ea3d7c169e630d17813ea2b0b88a036.zip",
+              "id": "project",
+              "mime": "application/zip",
+              "role": "project",
+              "sha256": "0ee89cac6385f9ac9ec6d29b2037abca4ea3d7c169e630d17813ea2b0b88a036"
+            }
+          ],
+          "quality_status": "executor_checked",
+          "quality_findings": "实际打开原生3840×2160 PNG：三视向为同一房间。北床东西横放且东端有通道，西北柜、床西前箱、西灶、中偏西桌一致。东墙有清楚的空水平木平台，顶面高3肩、向内1.35肩、沿墙1.8肩，下有三角托，与门扇扫掠分离；未出现灯具。主图南近墙及门叶仅为室内工程阅读省去，平面和反向图完整保留双门170度向内打开与收在门叶上的门闩，不能把技术省去视为实际无门。反向图家具与窄前院、南院门均入框，无额外房间、饭菜、火、戏箱或文字。"
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "已实际看三视图，床沿北墙横置、东端通路和床西箱位置改善，现代灯也已删除。但所需肩高承灯平台画成低位竖向壁板，向南视图中顶面窄且高度不足，未能确认可稳定承放已生成的纸灯。空间主要家具可辨，最终放灯这一核心用途仍有缺口。"
-      ],
-      "resume_when": "依据实际缺陷做有界返修；保留已完成调用，不沿失败原件加深以图生图谱系。"
+      "gaps": [],
+      "resume_when": "候选3已通过对应用途实际看图；准确原件已选入64处当前输入。"
     },
     {
       "code": "M246",
@@ -10919,7 +11259,7 @@
     {
       "code": "M111",
       "requirement_id": "new26-mountain-road-layout",
-      "content_sha256": "e2c853e55f2d7227b5d14d11ebfef929c829d788713f0ece58250662cbff38bd",
+      "content_sha256": "1b48565aaf9fd14f70079abbfad7831063f4f2775092864af41681ff49ddbe43",
       "title": "山庙下的路口与山路 · 空间依据",
       "category": "scene-image",
       "scope_kind": "ENTITY",
@@ -10928,17 +11268,18 @@
         "revision_id": "f10c4dfd2e54dc5f126837ff95db742a7c0caf958d1e12e73cb94b5a5609bc7e"
       },
       "route": {
-        "method": "generate",
-        "model": "marketing-studio/image/flare",
+        "method": "external-edit",
         "parameters": {
-          "aspect_ratio": "16:9",
-          "enhance_prompt": false,
-          "moderation": "auto",
-          "quality": "high",
-          "resolution": "4k"
+          "canvas": [
+            3840,
+            2160
+          ],
+          "color_space": "sRGB",
+          "delivery_format": "PNG",
+          "source_format": "SVG"
         }
       },
-      "status": "quality_failed",
+      "status": "executor_checked",
       "candidates": [
         {
           "candidate_id": "candidate-9290f6f5b75f45046f20de78919623a695976c67ed08bcceda556a8124fdeee7",
@@ -10985,14 +11326,43 @@
           ],
           "quality_status": "quality_failed",
           "quality_findings": "实际打开3840×2160原生PNG。两块西侧坐石、南侧干路、东侧草岩坡和反向坐石位置比前版清楚；但左侧主图仍显示多段向山上延续的发卡弯，右上平面却只画向东立即隐入岩后的单弯。主视没有落实东转后立即遮挡，三视向远段拓扑不一致。"
+        },
+        {
+          "candidate_id": "candidate-d072e5ebf7f76b61565b0edfbe4cb3db5f0118f5e5cd39da3a42c7f0416c8628",
+          "number": 3,
+          "asset": {
+            "object_id": "asset-task-20261015-0003-mountain-road-local-01",
+            "revision_id": "583d19436f3c3fceb7af7b26deb6446b47aad1a40ec73317d4dc0db3ec5395e0"
+          },
+          "call_id": null,
+          "components": [
+            {
+              "bytes": 385977,
+              "file": "fe147236848b44ec275c71af8ae6b98a1f8186f623d61775fd1e5acb85d6761a.png",
+              "height": 2160,
+              "id": "original",
+              "mime": "image/png",
+              "role": "original",
+              "sha256": "fe147236848b44ec275c71af8ae6b98a1f8186f623d61775fd1e5acb85d6761a",
+              "width": 3840
+            },
+            {
+              "bytes": 3289,
+              "file": "efeeda20e9728ffb65b29c3ffa5c9aa93aa8de85faed223659a49244de130f66.zip",
+              "id": "project",
+              "mime": "application/zip",
+              "role": "project",
+              "sha256": "efeeda20e9728ffb65b29c3ffa5c9aa93aa8de85faed223659a49244de130f66"
+            }
+          ],
+          "quality_status": "executor_checked",
+          "quality_findings": "实际查看最终原生3840×2160 PNG：南来缓坡单路仅向东转一次，主视刚转后即被实心岩肩遮挡，没有远段发卡弯或第二路。平面与反向视图来自同一地形和短岩挑，未另画远山路径。两块膝高平顶石固定在西侧，南望北在左、北望南在右，旁边空地无容器。岩与石改为不规则轮廓，地面草记号由岩体正确遮住，无悬崖、门洞、庙、人物或字。该图锁定空间关系，未把远段未知地理补成事实。"
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "实际打开3840×2160原生PNG。两块西侧坐石、南侧干路、东侧草岩坡和反向坐石位置比前版清楚；但左侧主图仍显示多段向山上延续的发卡弯，右上平面却只画向东立即隐入岩后的单弯。主视没有落实东转后立即遮挡，三视向远段拓扑不一致。"
-      ],
-      "resume_when": "依据实际缺陷做有界返修；保留已完成调用，不沿失败原件加深以图生图谱系。"
+      "gaps": [],
+      "resume_when": "候选3已通过对应用途实际看图；准确原件已选入6处当前输入。"
     },
     {
       "code": "M117",
@@ -12065,7 +12435,7 @@
     {
       "code": "M050",
       "requirement_id": "new26-prop-house-layout",
-      "content_sha256": "8848b249b331915f4a60482c82d16328c5d15cffc908d039948f8b241ed69bdd",
+      "content_sha256": "a1fb9d50d5c281cc8ae579c04bfed818308523fe0e503a08264ceb3959948fe7",
       "title": "戏班道具屋与门前浅滩 · 空间依据",
       "category": "scene-image",
       "scope_kind": "ENTITY",
@@ -12074,17 +12444,18 @@
         "revision_id": "1ef0a7dd7b4b2d5d729fe13e0318b04c3f8c789f642c8e46861aae791173f02d"
       },
       "route": {
-        "method": "generate",
-        "model": "marketing-studio/image/flare",
+        "method": "external-edit",
         "parameters": {
-          "aspect_ratio": "16:9",
-          "enhance_prompt": false,
-          "moderation": "auto",
-          "quality": "high",
-          "resolution": "4k"
+          "canvas": [
+            3840,
+            2160
+          ],
+          "color_space": "sRGB",
+          "delivery_format": "PNG",
+          "source_format": "SVG"
         }
       },
-      "status": "quality_failed",
+      "status": "executor_checked",
       "candidates": [
         {
           "candidate_id": "candidate-37c8f0da08b8b96e70183740d4d089f5c458be0412a7be7ef548daeca801805f",
@@ -12108,14 +12479,43 @@
           ],
           "quality_status": "quality_failed",
           "quality_findings": "已实际看3840×2160原件：屋内、南门、门前河岸同图连接，北卷幕、外靠舞台框、门东两杆和下水岸地可辨；东窗仅能清楚看到内侧窗台，供压书的外沿未显露；水中大平石紧邻一块小石，而方案要求下游一臂处两小石夹脚的独立狭缝，当前位置和支撑关系仍含混。"
+        },
+        {
+          "candidate_id": "candidate-8bb45d3cefb9ca106168cddf2a2d59eb5cc27d11c12f760c758240218f57f8d2",
+          "number": 2,
+          "asset": {
+            "object_id": "asset-task-20261015-0003-prop-house-local-01",
+            "revision_id": "c966743d8d703ec0f87a9c2dadebf0c78ae4fafb9d9c4dd81d29e678f8971880"
+          },
+          "call_id": null,
+          "components": [
+            {
+              "bytes": 547529,
+              "file": "3fa2169deb4e6e0388c92ba9694d4402ec0829787c67412c8b8ef4954e640caa.png",
+              "height": 2160,
+              "id": "original",
+              "mime": "image/png",
+              "role": "original",
+              "sha256": "3fa2169deb4e6e0388c92ba9694d4402ec0829787c67412c8b8ef4954e640caa",
+              "width": 3840
+            },
+            {
+              "bytes": 4633,
+              "file": "8693d45a96d34a1d0730f57aaaf6053fe25956fce520e124b9bb9dfb51bb1a9c.zip",
+              "id": "project",
+              "mime": "application/zip",
+              "role": "project",
+              "sha256": "8693d45a96d34a1d0730f57aaaf6053fe25956fce520e124b9bb9dfb51bb1a9c"
+            }
+          ],
+          "quality_status": "executor_checked",
+          "quality_findings": "实际打开最终3840×2160原生PNG：屋内、唯一南门、南岸干地与浅水在一幅连续空间中，岸坡已封合，没有白缝把水面割成第二张图。东窗完整框与横向窗台保留，窗台明确伸出东墙外0.9肩，外沿空着。大平石东侧约一臂处是两块独立小石，夹0.22肩的细缝，水底可见，不是深洞；门到平石的岸地未被框杆占住。北侧短街局部在远墙后可见，西干路绕到南门，北低架与两叠软边布、西侧空箱位、门内西矮板、外西靠框及外东两细杆可辨。所有固定物入框，无书纸钱碗、人或字。近墙剖低是工程显示，不代表新开门窗。"
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "已实际看3840×2160原件：屋内、南门、门前河岸同图连接，北卷幕、外靠舞台框、门东两杆和下水岸地可辨；东窗仅能清楚看到内侧窗台，供压书的外沿未显露；水中大平石紧邻一块小石，而方案要求下游一臂处两小石夹脚的独立狭缝，当前位置和支撑关系仍含混。"
-      ],
-      "resume_when": "依据实际缺陷做有界返修；保留已完成调用，不沿失败原件加深以图生图谱系。"
+      "gaps": [],
+      "resume_when": "候选2已通过对应用途实际看图；准确原件已选入36处当前输入。"
     },
     {
       "code": "M560",
@@ -12240,7 +12640,7 @@
     {
       "code": "M516",
       "requirement_id": "new26-recovered-keepsakes-identity",
-      "content_sha256": "fcdf2fb68e4bba2ec1fc7e762e35d380b97d9b8d8b256e9888e46f51a41cadb1",
+      "content_sha256": "610cd703321f57dcd3ae8f64f825a9443dbffbc5615baf67f08ab7744aa4893e",
       "title": "阿禾竹簪与小满半把断梳 · 基础形象",
       "category": "prop-image",
       "scope_kind": "ENTITY",
@@ -12249,16 +12649,18 @@
         "revision_id": "d299991b4feb5f25b4a96c5f4a5480491ffac007668353a455d48fd1ba2e27c4"
       },
       "route": {
-        "method": "generate",
-        "model": "gemini-nano-banana-2.1",
+        "method": "external-edit",
         "parameters": {
-          "aspect_ratio": "16:9",
-          "image_size": "4K",
-          "mime_type": "image/jpeg",
-          "type": "image"
+          "canvas": [
+            3840,
+            2160
+          ],
+          "color_space": "sRGB",
+          "delivery_format": "PNG",
+          "source_format": "SVG"
         }
       },
-      "status": "quality_failed",
+      "status": "executor_checked",
       "candidates": [
         {
           "candidate_id": "candidate-3134f504f6490f656633bc092fef027e79462e580ad8e1c2bc048950021bcbff",
@@ -12282,14 +12684,43 @@
           ],
           "quality_status": "quality_failed",
           "quality_findings": "实际查看原件：两件物各放一块净布、无血污，断齿近图清楚。竹簪识别刻纹却画在尖端附近，主图和近图都不在应被陶伯辨认的簪尾；木梳主要呈近完整弧背、右端小段断裂，半把断梳的整体缺失形态也不够明确。关键识物线索不合方案。"
+        },
+        {
+          "candidate_id": "candidate-7e2a506ac484501d468d8e5903e4d42ce6f208f7986610aab3966665e48dcd6c",
+          "number": 2,
+          "asset": {
+            "object_id": "asset-task-20261015-0003-recovered-keepsakes-local-01",
+            "revision_id": "d2417247756eacbd02d3ac60315305cea8cee5ba742f4fd7f6a2fa68ace0c452"
+          },
+          "call_id": null,
+          "components": [
+            {
+              "bytes": 433049,
+              "file": "664762f39ffc9ff15ccde50a85076cfbbf4f1b5bd906fa3d26aa8e36256435cd.png",
+              "height": 2160,
+              "id": "original",
+              "mime": "image/png",
+              "role": "original",
+              "sha256": "664762f39ffc9ff15ccde50a85076cfbbf4f1b5bd906fa3d26aa8e36256435cd",
+              "width": 3840
+            },
+            {
+              "bytes": 1763,
+              "file": "4352a2b1f53da879a2d61bf3cdb896e52a583bb06bc80bcb89d7fb0b79504326.zip",
+              "id": "project",
+              "mime": "application/zip",
+              "role": "project",
+              "sha256": "4352a2b1f53da879a2d61bf3cdb896e52a583bb06bc80bcb89d7fb0b79504326"
+            }
+          ],
+          "quality_status": "executor_checked",
+          "quality_findings": "实际打开原生3840×2160 PNG：上排一簪与半梳分别完整置于两块干净米白布上，余布可包覆。竹簪左钝尾、右细尖，唯一浅斜纹在尾端附近；下排直接引用同一尾部。暗褐木梳右半完整缺失，梳背右断面不齐，剩余八齿位中第五位缺齿，其余七齿完整；下排同源近图同时显示断背和缺齿。无文字、血污、骨或其他遗物。PNG与源SVG为本轮确定性工程零模型调用，不将结构图当作剧情镜头。"
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "实际查看原件：两件物各放一块净布、无血污，断齿近图清楚。竹簪识别刻纹却画在尖端附近，主图和近图都不在应被陶伯辨认的簪尾；木梳主要呈近完整弧背、右端小段断裂，半把断梳的整体缺失形态也不够明确。关键识物线索不合方案。"
-      ],
-      "resume_when": "依据实际缺陷做有界返修；保留已完成调用，不沿失败原件加深以图生图谱系。"
+      "gaps": [],
+      "resume_when": "候选2已通过对应用途实际看图；准确原件已选入11处当前输入。"
     },
     {
       "code": "M256",
@@ -12495,7 +12926,7 @@
     {
       "code": "M131",
       "requirement_id": "new26-red-cord-identity",
-      "content_sha256": "00d39c08bcb6cada9888c5c80af83f59e6f85f9ea6232ee0dcf9809c71d602cc",
+      "content_sha256": "bedd69e14257d5a4030794611eb26b2d4dd8a756626f3ffbdba3800a341ff72f",
       "title": "带双回结的戏箱红绳 · 基础形象",
       "category": "prop-image",
       "scope_kind": "ENTITY",
@@ -12504,17 +12935,18 @@
         "revision_id": "e8a0af3ca28c1513916461c5e599c156cce4737c5e426b5376b57190af285930"
       },
       "route": {
-        "method": "generate",
-        "model": "marketing-studio/image/flare",
+        "method": "external-edit",
         "parameters": {
-          "aspect_ratio": "16:9",
-          "enhance_prompt": false,
-          "moderation": "auto",
-          "quality": "high",
-          "resolution": "4k"
+          "canvas": [
+            3840,
+            2160
+          ],
+          "color_space": "sRGB",
+          "delivery_format": "PNG",
+          "source_format": "SVG"
         }
       },
-      "status": "quality_failed",
+      "status": "executor_checked",
       "candidates": [
         {
           "candidate_id": "candidate-af2cbb0ffb12599c3ca4c70e3824740928d831fe4e8a21f37b561cedd6bb6cff",
@@ -12561,14 +12993,43 @@
           ],
           "quality_status": "quality_failed",
           "quality_findings": "实际查看原生3840×2160：整根绳和剪下短段都完整入框、均只有两自由端，无旧英文标签；但中心结画成两个厚扁圆环套在直绳上的串珠形，无法从左端连续追踪为同一细棉绳的两圈回穿，断口也像平滑实心胶绳。虽然两个视向轮廓近似，结的拓扑与材质未通过。"
+        },
+        {
+          "candidate_id": "candidate-5193cbecbddc7a236016b2c9dd066e25fc46fcaba3205642ccc3df00db31830d",
+          "number": 3,
+          "asset": {
+            "object_id": "asset-task-20261015-0003-red-cord-local-01",
+            "revision_id": "6515c679cdaea1465c26a962dcd6ae4ac10f4ebea8646eb8b4c9e23e9e091d7e"
+          },
+          "call_id": null,
+          "components": [
+            {
+              "bytes": 252206,
+              "file": "76e88e5c722f3be712dfcc89a2fa6f38254b20b94a8f5b845d3824ac8c1a2df7.png",
+              "height": 2160,
+              "id": "original",
+              "mime": "image/png",
+              "role": "original",
+              "sha256": "76e88e5c722f3be712dfcc89a2fa6f38254b20b94a8f5b845d3824ac8c1a2df7",
+              "width": 3840
+            },
+            {
+              "bytes": 29631,
+              "file": "2398ac3aab70b332481fd19d2c40f162b1ddb940951ee5148449e0244fb80432.zip",
+              "id": "project",
+              "mime": "application/zip",
+              "role": "project",
+              "sha256": "2398ac3aab70b332481fd19d2c40f162b1ddb940951ee5148449e0244fb80432"
+            }
+          ],
+          "quality_status": "executor_checked",
+          "quality_findings": "实际查看最终原生3840×2160 PNG并沿源中心线复核：整根与剪下短段各仅两自由端，中央两圈为同一连续绳线，末端由圈心返回穿出，不是两个独立环套在直线外。两图引用同一结体，过穿顺序与姿向完全相同；下段左短残头有同色细纤维，右尾更长，无漂浮断片、英文或塑料高光。第一次工程草图发现回穿层次错误，已在登记前纠正；最终辅助计算的闭合结多项式与双套结对应结果一致，仅作结构支持，不作为完整结分类证明或真实拉紧测试。实际质量判断包括连续形制和两图一致性，不把计算替代看图。"
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "实际查看原生3840×2160：整根绳和剪下短段都完整入框、均只有两自由端，无旧英文标签；但中心结画成两个厚扁圆环套在直绳上的串珠形，无法从左端连续追踪为同一细棉绳的两圈回穿，断口也像平滑实心胶绳。虽然两个视向轮廓近似，结的拓扑与材质未通过。"
-      ],
-      "resume_when": "依据实际缺陷做有界返修；保留已完成调用，不沿失败原件加深以图生图谱系。"
+      "gaps": [],
+      "resume_when": "候选3已通过对应用途实际看图；准确原件已选入12处当前输入。"
     },
     {
       "code": "M172",
@@ -12962,7 +13423,7 @@
     {
       "code": "M364",
       "requirement_id": "new26-ritual-cabinet-identity",
-      "content_sha256": "1278f58fa7979369bcea93b503ce20103a10376bfac3cf782beab7cc7da11a48",
+      "content_sha256": "ea652e4b58b5d8e974c496618a191de24843b3f64c95d460f9ef8afc2b21e394",
       "title": "神龛后藏三年原祭册的柜 · 基础形象",
       "category": "prop-image",
       "scope_kind": "ENTITY",
@@ -12971,16 +13432,18 @@
         "revision_id": "8425a74a49caf969db8ca4154fe174a94d3719571c728805a50a54fceb6e8316"
       },
       "route": {
-        "method": "generate",
-        "model": "gemini-nano-banana-2.1",
+        "method": "external-edit",
         "parameters": {
-          "aspect_ratio": "16:9",
-          "image_size": "4K",
-          "mime_type": "image/jpeg",
-          "type": "image"
+          "canvas": [
+            3840,
+            2160
+          ],
+          "color_space": "sRGB",
+          "delivery_format": "PNG",
+          "source_format": "SVG"
         }
       },
-      "status": "quality_failed",
+      "status": "executor_checked",
       "candidates": [
         {
           "candidate_id": "candidate-03b50607911011660748c7340f6f05121a7b72d39148ded395c9f49ac055429d",
@@ -13004,19 +13467,48 @@
           ],
           "quality_status": "quality_failed",
           "quality_findings": "实际查看原件：暗红褐双门柜与木拉手可辨，但开门视图擅自塞入至少五本未绑定书册，出现三层储物空间，违背本次空层板形制与三原册的准确职责。旋扣在开门视图仍向左下斜伸，没有按计划向上转开。两视图展示不足以作为验封、开柜的完整动作依据。"
+        },
+        {
+          "candidate_id": "candidate-8de226f7fd7ad308cdf23e18b8607c01f44b6b01cebbee1fbd6d35b90cd75b3b",
+          "number": 2,
+          "asset": {
+            "object_id": "asset-task-20261015-0003-ritual-cabinet-local-01",
+            "revision_id": "9928aeef5fdb12b5f4308a929a86a6582093d4f92c6e8c88dfd39c6e879562d9"
+          },
+          "call_id": null,
+          "components": [
+            {
+              "bytes": 667916,
+              "file": "2f3df65db87f622f87afb83fc5c52659b6b6bac1c06a74ea506da7dc3dbeaa78.png",
+              "height": 2160,
+              "id": "original",
+              "mime": "image/png",
+              "role": "original",
+              "sha256": "2f3df65db87f622f87afb83fc5c52659b6b6bac1c06a74ea506da7dc3dbeaa78",
+              "width": 3840
+            },
+            {
+              "bytes": 3609,
+              "file": "5d480a8adbab1b5e8862a8ecf97c2842eeaeb0acbf3b6d7d261549b39c4347c2.zip",
+              "id": "project",
+              "mime": "application/zip",
+              "role": "project",
+              "sha256": "5d480a8adbab1b5e8862a8ecf97c2842eeaeb0acbf3b6d7d261549b39c4347c2"
+            }
+          ],
+          "quality_status": "executor_checked",
+          "quality_findings": "实际查看原生3840×2160最终全图：闭柜与左门打开的同柜比例一致，右门保持关闭，右侧实壁和前框闭合没有透空。内部只有一块中层板，形成上下两层空腔，无书册。两门各有木拉手；同一铜扣在闭柜横跨中缝，在开柜向上旋开，均无锁孔。米白封纸独立放旁，柜上中缝上方宽平区未贴纸，铜扣位于其下。原生SVG工程，无新增钥匙、图中文字或情节损坏。未做实物使用试验。"
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "实际查看原件：暗红褐双门柜与木拉手可辨，但开门视图擅自塞入至少五本未绑定书册，出现三层储物空间，违背本次空层板形制与三原册的准确职责。旋扣在开门视图仍向左下斜伸，没有按计划向上转开。两视图展示不足以作为验封、开柜的完整动作依据。"
-      ],
-      "resume_when": "依据实际缺陷做有界返修；保留已完成调用，不沿失败原件加深以图生图谱系。"
+      "gaps": [],
+      "resume_when": "候选2已通过对应用途实际看图；准确原件已选入4处当前输入。"
     },
     {
       "code": "M424",
       "requirement_id": "new26-ritual-case-identity",
-      "content_sha256": "f21f77b6f0815426deee5386bb34ac342c4098ab6977445a08a00475a1d326ce",
+      "content_sha256": "e3d4db37fc8fffb7d3a7fb7183e8951a9affa200781a63f2a1d140cd2628bf2c",
       "title": "当面收存三本原祭册的箱 · 基础形象",
       "category": "prop-image",
       "scope_kind": "ENTITY",
@@ -13025,16 +13517,18 @@
         "revision_id": "dead09618e5cf2db118bedcf36678bde372d5d012d0c51bde7636bcba044f9ab"
       },
       "route": {
-        "method": "generate",
-        "model": "gemini-nano-banana-2.1",
+        "method": "external-edit",
         "parameters": {
-          "aspect_ratio": "16:9",
-          "image_size": "4K",
-          "mime_type": "image/jpeg",
-          "type": "image"
+          "canvas": [
+            3840,
+            2160
+          ],
+          "color_space": "sRGB",
+          "delivery_format": "PNG",
+          "source_format": "SVG"
         }
       },
-      "status": "quality_failed",
+      "status": "executor_checked",
       "candidates": [
         {
           "candidate_id": "candidate-be4a5f2cbc4bc48a9db73bf6bdb19ff1ec9aebaec5737c8c7b1549ee27c4acb4",
@@ -13058,16 +13552,45 @@
           ],
           "quality_status": "quality_failed",
           "quality_findings": "实际查看原件：左开盖箱和中间闭箱为浅灰棕色，但右侧装册示意把三本书竖直插入仅及册高约三分之一的浅箱，盖无法合上；该箱侧壁还有前两视图没有的阶梯缺口，后翻盖也不见。三册数量可数不等于装齐后可封箱，容量及结构一致性未通过。"
+        },
+        {
+          "candidate_id": "candidate-c3610dbe7b166cd778335f91ac43cb1de91c4283ce781069da76697a1e50808f",
+          "number": 2,
+          "asset": {
+            "object_id": "asset-task-20261015-0003-ritual-case-local-01",
+            "revision_id": "28887da59959826159bf8872082624181e8a081d833cde9f24ccc6b2d739b48d"
+          },
+          "call_id": null,
+          "components": [
+            {
+              "bytes": 469311,
+              "file": "1f32f4cf86edaf3adafea222a2508fc02c4e785d8106c877b21a60c1e93849ac.png",
+              "height": 2160,
+              "id": "original",
+              "mime": "image/png",
+              "role": "original",
+              "sha256": "1f32f4cf86edaf3adafea222a2508fc02c4e785d8106c877b21a60c1e93849ac",
+              "width": 3840
+            },
+            {
+              "bytes": 4542,
+              "file": "5aa90182de8d659d8cac5f74c1476a4b4a70607d2477bd8ad9cc278b4e22944a.zip",
+              "id": "project",
+              "mime": "application/zip",
+              "role": "project",
+              "sha256": "5aa90182de8d659d8cac5f74c1476a4b4a70607d2477bd8ad9cc278b4e22944a"
+            }
+          ],
+          "quality_status": "executor_checked",
+          "quality_findings": "实际查看原生3840×2160最终全图并对照准确三原册整图：空开、闭合、装册三视向为同一浅灰棕扁木箱，后翻盖与两铰接处、短绳提手和完整箱壁一致。深赭厚册、灰绿中册和米灰薄册共三本，均平放在箱口下，左侧空白签位、右侧线订方向可辨；没有三县册。内腔与三册位置核对有合盖净空，图中没有竖册、缺壁或消失的盖。空白纸封单列，未加文字。几何合盖检查不等于实物装箱试验。"
         }
       ],
       "selected_upstream": [
         "new26-old-registers-identity"
       ],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "实际查看原件：左开盖箱和中间闭箱为浅灰棕色，但右侧装册示意把三本书竖直插入仅及册高约三分之一的浅箱，盖无法合上；该箱侧壁还有前两视图没有的阶梯缺口，后翻盖也不见。三册数量可数不等于装齐后可封箱，容量及结构一致性未通过。"
-      ],
-      "resume_when": "依据实际缺陷做有界返修；保留已完成调用，不沿失败原件加深以图生图谱系。"
+      "gaps": [],
+      "resume_when": "候选2已通过对应用途实际看图；准确原件已选入4处当前输入。"
     },
     {
       "code": "M130",
@@ -13238,7 +13761,7 @@
     {
       "code": "M027",
       "requirement_id": "new26-river-street-layout",
-      "content_sha256": "5e1b43c66b4056ccc8ea03c147f32e5dc0ec5341bfa0fce04e150755904d898c",
+      "content_sha256": "9688329c1701da669d4e63c754484fa77a61536f6201e978d22ea9417f1914f5",
       "title": "河街与陶伯竹器摊 · 空间依据",
       "category": "scene-image",
       "scope_kind": "ENTITY",
@@ -13247,16 +13770,18 @@
         "revision_id": "5b39375af94085dfa0fe1c8e53eafcec601ee15afc6b24057a507eda62dbafc7"
       },
       "route": {
-        "method": "generate",
-        "model": "gemini-nano-banana-2.1",
+        "method": "external-edit",
         "parameters": {
-          "aspect_ratio": "16:9",
-          "image_size": "4K",
-          "mime_type": "image/jpeg",
-          "type": "image"
+          "canvas": [
+            3840,
+            2160
+          ],
+          "color_space": "sRGB",
+          "delivery_format": "PNG",
+          "source_format": "SVG"
         }
       },
-      "status": "quality_failed",
+      "status": "executor_checked",
       "candidates": [
         {
           "candidate_id": "candidate-4326acad4ec0fe13eeaf21eff1ca31598c826ca33a5b01f6e05d0a6d123bc641",
@@ -13303,14 +13828,45 @@
           ],
           "quality_status": "quality_failed",
           "quality_findings": "实际查看原件：北铺南河及东南侧道具屋南向门比首候选更清楚，西侧绕屋干路可辨；但图中仍生成河街、阿蘅家的窄巷、李家土巷三处文字，李家路口实际朝东北而非从屋东向东南转出，竹摊位于米铺对街稍偏东而非偏西。屋顶及部分建筑在边界切出，不能作为当前完整地理母图通过。"
+        },
+        {
+          "candidate_id": "candidate-93570f4a7c962c05c0d84f8bf83be39ab3f471ffca5c7e7279007a1ca4d81286",
+          "number": 3,
+          "asset": {
+            "object_id": "asset-task-20261015-0003-river-street-local-01",
+            "revision_id": "a2ac549d3e4beda16c30e1fe7bc216aa4a06628e05eefd2ea5b4b218c41fa7ee"
+          },
+          "call_id": null,
+          "components": [
+            {
+              "bytes": 509489,
+              "file": "98246eb5668098a09dbf10879bd7d434738e53d81667620387fe52e97952d873.png",
+              "height": 2160,
+              "id": "original",
+              "mime": "image/png",
+              "role": "original",
+              "sha256": "98246eb5668098a09dbf10879bd7d434738e53d81667620387fe52e97952d873",
+              "width": 3840
+            },
+            {
+              "bytes": 8344,
+              "file": "5495f1c0a73ce3f491ac23c975314c794ddff714d8a2b3e49aad5b3bc9208d3c.zip",
+              "id": "project",
+              "mime": "application/zip",
+              "role": "project",
+              "sha256": "5495f1c0a73ce3f491ac23c975314c794ddff714d8a2b3e49aad5b3bc9208d3c"
+            }
+          ],
+          "quality_status": "executor_checked",
+          "quality_findings": "实际打开最终3840×2160 PNG：四间北侧低铺南向开门、米袋标示的宽米铺门和对街偏西的竹篮摊均完整，摊南连续干岸至河；东西街没有被摊凳堵住。东端道具屋按已通过的完整准确原件平移，北街、西绕干路和南门一致，东窗现在落在东墙而非屋顶。西窄巷只留入口，屋东土路转向东南且始终在河岸北侧干地上。房体与屋顶全入框，唯一连贯地图无文字箭头、人、船或桥。"
         }
       ],
-      "selected_upstream": [],
-      "waiting_for_new_originals": [],
-      "gaps": [
-        "实际查看原件：北铺南河及东南侧道具屋南向门比首候选更清楚，西侧绕屋干路可辨；但图中仍生成河街、阿蘅家的窄巷、李家土巷三处文字，李家路口实际朝东北而非从屋东向东南转出，竹摊位于米铺对街稍偏东而非偏西。屋顶及部分建筑在边界切出，不能作为当前完整地理母图通过。"
+      "selected_upstream": [
+        "new26-prop-house-layout"
       ],
-      "resume_when": "依据实际缺陷做有界返修；保留已完成调用，不沿失败原件加深以图生图谱系。"
+      "waiting_for_new_originals": [],
+      "gaps": [],
+      "resume_when": "候选3已通过对应用途实际看图；准确原件已选入19处当前输入。"
     },
     {
       "code": "M005",
@@ -14045,7 +14601,7 @@
     {
       "code": "M362",
       "requirement_id": "new26-temple-hall-layout",
-      "content_sha256": "35f93e2988adc5b432bbac6fbeb52715c534fb70c496b842f5fe8ef1b622b5b8",
+      "content_sha256": "ec38360751b0a0d5b09ed78cb0cc24448f98aeebc7ccc2ce614970830f5d2f1a",
       "title": "山庙前殿与廊下 · 空间依据",
       "category": "scene-image",
       "scope_kind": "ENTITY",
@@ -14054,17 +14610,18 @@
         "revision_id": "e2574494805d04f50464bf2be74ad94627d87dd409b6fde13b3a48c0eda42116"
       },
       "route": {
-        "method": "generate",
-        "model": "marketing-studio/image/flare",
+        "method": "external-edit",
         "parameters": {
-          "aspect_ratio": "16:9",
-          "enhance_prompt": false,
-          "moderation": "auto",
-          "quality": "high",
-          "resolution": "4k"
+          "canvas": [
+            3840,
+            2160
+          ],
+          "color_space": "sRGB",
+          "delivery_format": "PNG",
+          "source_format": "SVG"
         }
       },
-      "status": "quality_failed",
+      "status": "executor_checked",
       "candidates": [
         {
           "candidate_id": "candidate-f249ecc996a15be1b76eb51267ff1deec3728ef6dbb628c8d3bafe869d4a6e77",
@@ -14088,14 +14645,43 @@
           ],
           "quality_status": "quality_failed",
           "quality_findings": "Actual native3840x2160 viewed: south threshold/stairs, plain altar, empty shrine and east corridor exist. The shrine sits nearly flush to the north wall; the new west partition makes the intended behind-shrine cabinet area/access unclear. The east corridor can continue straight north, so the required blocking corner before the backyard is not established."
+        },
+        {
+          "candidate_id": "candidate-3258adf9669bf62b86b9e4c69f0a90ce2f74e5798e3aa79869da32668451b5ff",
+          "number": 2,
+          "asset": {
+            "object_id": "asset-task-20261015-0003-temple-hall-local-01",
+            "revision_id": "21b2a056d3c881d1fe8e313be6125a8a1de0d68b613703bd91092ce5a0957237"
+          },
+          "call_id": null,
+          "components": [
+            {
+              "bytes": 575406,
+              "file": "f785caf442ec43dd525429932c8397ff0564ef4ff473df7af74e867bf1d60fe0.png",
+              "height": 2160,
+              "id": "original",
+              "mime": "image/png",
+              "role": "original",
+              "sha256": "f785caf442ec43dd525429932c8397ff0564ef4ff473df7af74e867bf1d60fe0",
+              "width": 3840
+            },
+            {
+              "bytes": 3920,
+              "file": "729f86891f5637f8e415e76c115b3b61357e2d5edbcfa8feb362b39a092a9211.zip",
+              "id": "project",
+              "mime": "application/zip",
+              "role": "project",
+              "sha256": "729f86891f5637f8e415e76c115b3b61357e2d5edbcfa8feb362b39a092a9211"
+            }
+          ],
+          "quality_status": "executor_checked",
+          "quality_findings": "实际打开最终3840×2160 PNG：完整殿堂、南门低阶、北向出口墙顶均已留边入框。北空案、再北空木龛以及龛后1.88肩通路可辨，西北柜位空着且可由龛西绕达。殿东门外先向北，遇完整高实墙后必须向东绕过墙端，再接北后院口和东粮仓短出口；高墙没有被技术剖低，正常眼高下挡住从侧门直望北出口的视线。画面是一幅连续揭顶空间，无后院、粮仓内部、神像、仪柜、蛇洞、机构或文字。"
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "Actual native3840x2160 viewed: south threshold/stairs, plain altar, empty shrine and east corridor exist. The shrine sits nearly flush to the north wall; the new west partition makes the intended behind-shrine cabinet area/access unclear. The east corridor can continue straight north, so the required blocking corner before the backyard is not established."
-      ],
-      "resume_when": "依据实际缺陷做有界返修；保留已完成调用，不沿失败原件加深以图生图谱系。"
+      "gaps": [],
+      "resume_when": "候选2已通过对应用途实际看图；准确原件已选入11处当前输入。"
     },
     {
       "code": "M114",
@@ -14622,7 +15208,7 @@
     {
       "code": "M163",
       "requirement_id": "new26-stone-bridge-layout",
-      "content_sha256": "9f39e99aba74153bfc3c2b706797972ae82ba35df217852eccb7fcd57fc9bf47",
+      "content_sha256": "0ed0741b7166c35504b01f7dca55786168b9e36a1a087a32c221fde0dc46ce31",
       "title": "下山石桥与分路 · 空间依据",
       "category": "scene-image",
       "scope_kind": "ENTITY",
@@ -14631,17 +15217,18 @@
         "revision_id": "915d158ee02ed7aa1bb8c2f49ea8e8ba5f0c5b2f1a74332c9b62ffe45d73ab71"
       },
       "route": {
-        "method": "generate",
-        "model": "marketing-studio/image/flare",
+        "method": "external-edit",
         "parameters": {
-          "aspect_ratio": "16:9",
-          "enhance_prompt": false,
-          "moderation": "auto",
-          "quality": "high",
-          "resolution": "4k"
+          "canvas": [
+            3840,
+            2160
+          ],
+          "color_space": "sRGB",
+          "delivery_format": "PNG",
+          "source_format": "SVG"
         }
       },
-      "status": "quality_failed",
+      "status": "executor_checked",
       "candidates": [
         {
           "candidate_id": "candidate-59c94077b340cde4620aef7012e209136c81e51caa5ce638768fe83500d2e318",
@@ -14665,14 +15252,43 @@
           ],
           "quality_status": "quality_failed",
           "quality_findings": "已实际打开3840×2160原生PNG。南北桥、低栏、东西溪流和南桥头谈话地可辨；南端除东西岔路外仍向画框下方延出宽石路，形成第三分支，未满足仅向家及渡口分路的地理约束。"
+        },
+        {
+          "candidate_id": "candidate-3630d2d32465684cd3bdd3f856fc37af4e998b3f370025b0f542cd0cdb7fee96",
+          "number": 2,
+          "asset": {
+            "object_id": "asset-task-20261015-0003-stone-bridge-local-01",
+            "revision_id": "461192070c2366f509871b33316b6b72e9bd173daa503528ac7c214a9b4eb27d"
+          },
+          "call_id": null,
+          "components": [
+            {
+              "bytes": 416151,
+              "file": "304096ea01fa2cdf7550102ef8da5cfdf9be1060226f5b3ca2cede985a046c76.png",
+              "height": 2160,
+              "id": "original",
+              "mime": "image/png",
+              "role": "original",
+              "sha256": "304096ea01fa2cdf7550102ef8da5cfdf9be1060226f5b3ca2cede985a046c76",
+              "width": 3840
+            },
+            {
+              "bytes": 4714,
+              "file": "c90f982ac0d6ac804904cc71cbcc19835d53562e272b2c2eda030a7b0a9a503a.zip",
+              "id": "project",
+              "mime": "application/zip",
+              "role": "project",
+              "sha256": "c90f982ac0d6ac804904cc71cbcc19835d53562e272b2c2eda030a7b0a9a503a"
+            }
+          ],
+          "quality_status": "executor_checked",
+          "quality_findings": "实际查看最终原生3840×2160 PNG：一座南北低栏石拱桥跨东西浅溪，北端只接一条路，南端是可容三人并肩的谈话地并只接东西两岔；南边连续草地，无第三条出路。西南视向下桥拱、桥面缓坡和两端接岸完整可见，修正了先前投影方向与桥墩穿出岸地的问题。全图无涉水石、其他桥、建筑、人物或文字。该图为同一坐标的布景空间工程，不代替实物承载验算或成片背景。"
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "已实际打开3840×2160原生PNG。南北桥、低栏、东西溪流和南桥头谈话地可辨；南端除东西岔路外仍向画框下方延出宽石路，形成第三分支，未满足仅向家及渡口分路的地理约束。"
-      ],
-      "resume_when": "依据实际缺陷做有界返修；保留已完成调用，不沿失败原件加深以图生图谱系。"
+      "gaps": [],
+      "resume_when": "候选2已通过对应用途实际看图；准确原件已选入2处当前输入。"
     },
     {
       "code": "M170",
@@ -14952,7 +15568,7 @@
     {
       "code": "M244",
       "requirement_id": "new26-wage-page-identity",
-      "content_sha256": "d99777724bf6fffe0044a8da136a20d0b236b9491686d568b2d8f643ea4e62ca",
+      "content_sha256": "03e4b3a0d3643519de8ceb6344a089aa375fe56122a02e63dce7b10d83f2427e",
       "title": "歌本内的两夜记工背页 · 基础形象",
       "category": "prop-image",
       "scope_kind": "ENTITY",
@@ -14961,16 +15577,18 @@
         "revision_id": "442d3afb563fdbc0fd29f969c02f55f4d773727c0d2c6867d9437667c9b1380c"
       },
       "route": {
-        "method": "generate",
-        "model": "gemini-nano-banana-2.1",
+        "method": "external-edit",
         "parameters": {
-          "aspect_ratio": "16:9",
-          "image_size": "4K",
-          "mime_type": "image/jpeg",
-          "type": "image"
+          "canvas": [
+            3840,
+            2160
+          ],
+          "color_space": "sRGB",
+          "delivery_format": "PNG",
+          "source_format": "SVG"
         }
       },
-      "status": "quality_failed",
+      "status": "executor_checked",
       "candidates": [
         {
           "candidate_id": "candidate-4ff9fa7ff519a8c0d29c2a779b5501e3033d9f69831559d7eed616f34597e19f",
@@ -14994,16 +15612,45 @@
           ],
           "quality_status": "quality_failed",
           "quality_findings": "实际看原件并对照母版：正面四孔、背面三孔，与同一页左侧三个旧孔的要求不一致；还直接写入“两升”，未保持交字层的空白。圆缺口、一个大圈和背透影虽可辨，仍不能通过同一纸张的准确结构。"
+        },
+        {
+          "candidate_id": "candidate-8782ba874b9dd650068cb77fbc97d28a46b9f991eed099558080d5f01a9ec9a0",
+          "number": 2,
+          "asset": {
+            "object_id": "asset-task-20261015-0003-wage-page-local-01",
+            "revision_id": "5a4f45155ff062a5bf9822c32bebe487df805dcd37b0fc19963d7c4bb0b73951"
+          },
+          "call_id": null,
+          "components": [
+            {
+              "bytes": 346829,
+              "file": "29f5be27ab51f782683420c25cc1f91e223c6a2ea4e7498b203a6df4ad165bab.png",
+              "height": 2160,
+              "id": "original",
+              "mime": "image/png",
+              "role": "original",
+              "sha256": "29f5be27ab51f782683420c25cc1f91e223c6a2ea4e7498b203a6df4ad165bab",
+              "width": 3840
+            },
+            {
+              "bytes": 1928,
+              "file": "7d9f2f3745066951c618da8808aca760065dc90abf3dc75bcfa50668fa5b7154.zip",
+              "id": "project",
+              "mime": "application/zip",
+              "role": "project",
+              "sha256": "7d9f2f3745066951c618da8808aca760065dc90abf3dc75bcfa50668fa5b7154"
+            }
+          ],
+          "quality_status": "executor_checked",
+          "quality_findings": "实际看原生3840×2160与准确干净歌本：同一完整记工背页正面三个旧孔、一处孔边旧裂、右下圆磨缺口与一个细炭大圈清楚。反面为同一轮廓真实翻面，三孔到右、缺口到左下，透影变淡；没有正反孔数不一。底部两处局部直接来自同一向量页。上方日率与圈内两笔位置留白，没有两升字样、三小圈、订线、纸镇或整本封皮。"
         }
       ],
       "selected_upstream": [
         "new26-songbook-identity"
       ],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "实际看原件并对照母版：正面四孔、背面三孔，与同一页左侧三个旧孔的要求不一致；还直接写入“两升”，未保持交字层的空白。圆缺口、一个大圈和背透影虽可辨，仍不能通过同一纸张的准确结构。"
-      ],
-      "resume_when": "依据实际缺陷做有界返修；保留已完成调用，不沿失败原件加深以图生图谱系。"
+      "gaps": [],
+      "resume_when": "候选2已通过对应用途实际看图；准确原件已选入8处当前输入。"
     },
     {
       "code": "M288",
@@ -15939,5 +16586,5 @@
       "resume_when": "沿通过的完整母版制作所需派生文件；不继承母版的剪辑头尾或接缝认可。"
     }
   ],
-  "updated_at": "2026-10-16T21:42:01.286020+00:00"
+  "updated_at": "2026-10-16T23:23:41.109109+00:00"
 }
