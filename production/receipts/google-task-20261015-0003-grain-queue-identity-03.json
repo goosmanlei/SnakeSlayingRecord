@@ -1,0 +1,82 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-grain-queue-identity-03",
+  "submission": {
+    "call_id": "task-20261015-0003-grain-queue-identity-03",
+    "submission_sha256": "a767d90cf1947f31fd2eba23e44ee2640b75b8b7d5c6e6088e2f88667c957ecc",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-grain-queue-identity-03.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "e4ca7d9bb8c8909fb23d82160c14dfaba33198785b088a6bbf109ba112abc56a.jpg",
+    "sha256": "e4ca7d9bb8c8909fb23d82160c14dfaba33198785b088a6bbf109ba112abc56a",
+    "bytes": 6454603,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-grain-queue-identity-03",
+    "candidate_id": "candidate-dfe57f90a48ce7c7e4e887aff69e858e132fce7dd0d2bf66f9df96cdb8f6a4a5",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google remaining balance at the recorded budget checkpoint; no recharge",
+    "reported_balance_usd": 3.86,
+    "balance_checkpoint_dispatches": 106,
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "实际打开原生5504×3072 JPEG：七人全身与七张对应面部均齐，女孩两髻且高度约父亲四分之三、男童较矮，双手空的瘦长脸男子没有扁担，一名壮汉抱唯一米袋。右端独身妇人却两只手各拿一张纸票，违反全图一票要求。",
+    "decision": "保留已完成真实调用和候选，纸票数量未通过，不选入下游，也不以失败图作母版。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  },
+  "usage": {
+    "total_tokens": 6605,
+    "total_input_tokens": 628,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 628
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4477,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1500
+  },
+  "actual_request_body_sha256": "18432746d94257d1a531dba7c42978e2948b6bc3af422b9b32cc146745ca50d8",
+  "submitted_inputs": []
+}

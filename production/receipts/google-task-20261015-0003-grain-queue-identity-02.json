@@ -1,0 +1,82 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-grain-queue-identity-02",
+  "submission": {
+    "call_id": "task-20261015-0003-grain-queue-identity-02",
+    "submission_sha256": "67eeb2b2aef32a1c04e550e04a9bd43769414ff79e43ab8b062cf33d29db4a9f",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-grain-queue-identity-02.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "3c120fee1631148b0bc4941f77c691578f1705f89d701ba9a4bf1c3b3b390e35.jpg",
+    "sha256": "3c120fee1631148b0bc4941f77c691578f1705f89d701ba9a4bf1c3b3b390e35",
+    "bytes": 8287378,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-grain-queue-identity-02",
+    "candidate_id": "candidate-237bfc631827a1edf54aaab0037ce7117ce519be6d06e08c22fe41a313bd9c39",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google remaining balance at the recorded budget checkpoint; no recharge",
+    "reported_balance_usd": 3.86,
+    "balance_checkpoint_dispatches": 106,
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "实际查看原生5504×3072 JPEG：七人及七个匹配正脸完整，灰绿父亲、双髻女孩、灰紫母亲与短发男童、抱单袋方脸汉子、空手瘦长脸男子、只持一张票的妇人均可分。多余扁担与第二张票已消除。但共同脚线下女孩高度仍约父亲的65%，头顶只到下胸与上腹交界，未达到本次明确约74%的胸口尺度，不能据其余修正完成而判整项通过。比例例外按用户决定保留原件，未裁切、缩放或转码。",
+    "decision": "保留原生候选及真实调用；女孩高度仍未符合当前明确尺度，本轮不选入下游，不沿失败图加深参考。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  },
+  "usage": {
+    "total_tokens": 6659,
+    "total_input_tokens": 535,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 535
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4626,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1498
+  },
+  "actual_request_body_sha256": "b351aa2b157cd53352274da95a2ca3eae88c2a0025ddca186c3133dca3a957a4",
+  "submitted_inputs": []
+}

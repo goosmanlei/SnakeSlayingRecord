@@ -141,7 +141,7 @@
       "id": "user-requested-stage07-pause",
       "status": "resumed",
       "user_request": "下一个checkpoint请先暂停任务，我要临时退出下当前会话",
-      "resolution": "用户通过run-cfy6gv6t.md重新启动原任务且认证成功；阶段07原字节保持。当前阶段10是持续制作中的归档，不是再次暂停。",
+      "resolution": "用户通过run-cfy6gv6t.md重新启动原任务且认证成功；阶段07原字节保持。当前阶段11是中间归档，不是再次暂停。",
       "remaining": "逐项现状以progress.json为准；不重发历史未知请求。"
     },
     {
@@ -156,6 +156,12 @@
       "id": "stage10-geometry-and-recovery",
       "status": "verified",
       "verification": "M291候选5及三个直接依赖状态已通过实际工程看图并准确选择；开缝第一候选复核未通过，未选用。2179条制作记录、257候选、265提交与三评论表在新空实例和冻结原库逐表相同。隔离增量预演applied=false，恢复副本已清理。",
+      "receipt": "../../publications/task-20261015-0003-stage-10.json"
+    },
+    {
+      "id": "stage11-geometry-and-recovery",
+      "status": "verified",
+      "verification": "18项本地工程和领粮人群候选4通过，137项图像／工程与10项已听声音的2988处准确引用回读通过。2203条制作记录、278候选、286提交及三张评论表在新空实例和冻结原库逐表相同。隔离增量预演applied=false；恢复副本已清理。3项无原件、38项未听审及3项环境派生保持开放。",
       "receipt": "verification.json"
     }
   ],
@@ -166,7 +172,7 @@
     "evidence_runtime": ".runtime/task-20261015-0003/chrome-stage08-candidate-fixes.json",
     "formal_publication_verified": false,
     "audio_quality_verified_by_playback": false,
-    "latest_evidence": "production/receipts/chrome-task-20261015-0003-stage10.json"
+    "latest_evidence": "production/receipts/chrome-task-20261015-0003-stage11.json"
   },
   "unknown_replacement_proposal": {
     "status": "awaiting_user_decision",
@@ -175,5 +181,19 @@
     "hf_new_reserve_usd": 2,
     "seed_new_reserve_seconds": 120,
     "old_unknown_records_and_reservations_retained": true
+  },
+  "current_checkpoint": {
+    "stage": 11,
+    "status_counts": {
+      "executor_checked": 137,
+      "user_audition_passed": 10,
+      "reference_pending": 3,
+      "hearing_unverified": 38,
+      "not_produced": 3
+    },
+    "google_dispatch_cap": 116,
+    "google_remaining_dispatch_slots": 0,
+    "formal_publication": false,
+    "paused": false
   }
 }
