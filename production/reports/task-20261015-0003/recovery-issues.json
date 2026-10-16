@@ -1,33 +1,49 @@
 {
   "format": "task-recovery-issue-v1",
   "task_id": "task-20261015-0003",
-  "system_commit": "6fcc97194d884df2665abb26eac1f605da8127de",
+  "system_commit": "2b217a440256ea9dd1a1a9b025dc072e2829ea7c",
   "repository": "review_desk",
-  "activation": "pending",
+  "activation": "active",
   "issues": [
     {
       "id": "nano-reference-contract",
-      "status": "open",
+      "status": "runtime_verified",
       "evidence": "input_contracts.py 的有图参考分支未识别 nano-banana-2-1，返回 verified=false。平台表单已核实支持1至14个 visualReferences、4K与16:9。",
       "action": "在受管附属工作区补齐经核实的图片参考数量、模态和附件用途校验；不得将未知模型通用放行。",
-      "incident_receipt": "../../receipts/openart-task-20261015-0003-aheng-wet-01.json"
+      "incident_receipt": "../../receipts/openart-task-20261015-0003-aheng-wet-01.json",
+      "verification": "已核平台表单并补齐最多14张图片、真实编号与模态检查；真实湿衣02和03在外部提交前成功保存本机快照。未知模型仍拒绝。"
     },
     {
       "id": "candidate-number-after-switch",
-      "status": "reproduced",
+      "status": "implemented_browser_unverified",
       "reproduction": "日常Chrome任务62845，EN001大卡的M001从候选2切到候选1后，两个按钮都显示候选1。",
       "data_facts": "候选表编号正确为1、2，原件哈希不同。entity-material响应的results有正确candidate_number，但所选完整候选的members条目缺少candidate_number。",
       "cause": "entity_contract.py加载完整候选时用p.record整体替换摘要，丢失编号；business_codes仅补results编号。retainLoadedMaterialMembers再用旧members记录替换新results摘要，丢号后经排序及index+1退路显示重复1。",
       "action": "保留准确素材候选编号及身份，回归2到1到2切换、比较和刷新；不改原件、候选、评论或作者选择。",
-      "evidence_runtime": ".runtime/task-20261015-0003/candidate-label-bug/"
+      "evidence_runtime": ".runtime/task-20261015-0003/candidate-label-bug/",
+      "verification": "加载准确候选时保留candidate_id与candidate_number。回归用两个真实测试候选验证2到1到2切换，results和members编号均正确；真实Chrome仍待连接恢复。"
     },
     {
       "id": "comparison-dialog-controls",
-      "status": "authorized_pending",
+      "status": "implemented_browser_unverified",
       "user_requirement": "同需求候选比较弹窗不需要下面的审阅此准确候选按钮等，因为当前系统没有审阅概念。",
       "action": "仅移除该比较弹窗两侧的审阅此准确候选按钮、问号入口及底部说明；保留候选切换、标题、原图和关闭。",
-      "target": "review_desk/static/material-review.js:materialCompareControl"
+      "target": "review_desk/static/material-review.js:materialCompareControl",
+      "verification": "比较弹窗已移除两侧审阅按钮、帮助和底部说明，保留候选选择与媒体。相关Node测试64项通过；真实Chrome仍待连接恢复。"
+    },
+    {
+      "id": "selected-reference-submission",
+      "status": "runtime_verified",
+      "cause": "提交器保存参考sha256和material_selection，校验器将扩展元数据与旧精简引用直接比较而误拒绝。",
+      "action": "逐项比较原件身份、顺序及范围，并分别校验哈希与候选身份；错误哈希、候选和组成继续拒绝。",
+      "verification": "21项相关Python测试通过；湿衣02和03真实提交快照已成功。两项旧test_generation错误在修改前基线同样复现，未冒称全套测试通过。"
     }
   ],
-  "resume_requirement": "review_desk已登记为pending；先保存主仓成果，再退出本TUI，从主项目codex.task run --task task-20261015-0003 --auto恢复，取得全组运行锁后才写系统工作区。"
+  "resume_requirement": "附属仓库已通过当前run启用，当前任务持有双仓执行锁；继续素材与接口验证，真实页面复验待日常Chrome连接可用。",
+  "browser_verification": {
+    "status": "blocked",
+    "error": "Sky Computer Use native pipe startup failed",
+    "available_browsers": [],
+    "last_recovery": "用户说明恢复后刷新及一次重置仍同错；停止本轮重复重试，不替换为其他profile。"
+  }
 }

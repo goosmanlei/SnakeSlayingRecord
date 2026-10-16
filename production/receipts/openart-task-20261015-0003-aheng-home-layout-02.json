@@ -1,0 +1,54 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-aheng-home-layout-02",
+  "submission": {
+    "call_id": "task-20261015-0003-aheng-home-layout-02",
+    "submission_sha256": "651355cb41f96793218e185108762b563ebcfb35f225fea5f56e5642c2f93ab8",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-aheng-home-layout-02.json",
+  "provider_history_id": "paUV97zOzrCA2dAYjlA1",
+  "provider_resource_id": "TSTqJPGldM97Vtj338K0",
+  "model": "gpt-image-2-5-sunburst",
+  "project_id": "8K6WcbrPLghSBJXBtWAE",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "ae3471c44de7333aeca46c9407679b134e5813e824e8334d7da2a2c904c47374.png",
+    "sha256": "ae3471c44de7333aeca46c9407679b134e5813e824e8334d7da2a2c904c47374",
+    "bytes": 9794316,
+    "mime": "image/png",
+    "width": 3840,
+    "height": 2160
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-aheng-home-layout-02",
+    "candidate_id": "candidate-32910fa7de7d093e2556dd3c5da3492c8be81171bca2c1fea181c2de23e496bd",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "OpenArt credits",
+    "quoted": 350,
+    "actual": "UNKNOWN",
+    "note": "报价对应单图；实际扣费字段未返回时保留UNKNOWN。"
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked_partial",
+    "findings": "已实际打开完整3840×2160原件。主透视和俯视中床均沿北墙、床头朝西，水几在西北床头；西侧桌凳、西南灶及半空米容器、唯一东窗、东南门及门到床的通路一致。灯已是朴素陶质油灯。第三幅实际是室内门槛近图而非要求的屋外立面，能说明门与台阶关系，但不作为外立面参考；墙木表面仍有轻手绘纹理，不影响当前空间结构用途。",
+    "decision": "室内布局和门槛局部已实际核对；尚缺要求的屋外立面，不作为完整空间母版，也暂不批量绑定下游。后续补齐同一需求的外立面再核全部消费者。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  }
+}

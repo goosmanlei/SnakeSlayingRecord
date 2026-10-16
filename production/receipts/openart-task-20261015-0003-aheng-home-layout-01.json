@@ -1,0 +1,54 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-aheng-home-layout-01",
+  "submission": {
+    "call_id": "task-20261015-0003-aheng-home-layout-01",
+    "submission_sha256": "85b8ff55aef3568ea574ce019d1846cd66b36a1e0556292f5401d78f0421b388",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-aheng-home-layout-01.json",
+  "provider_history_id": "iU2Pdytj0NNeMtK6af4E",
+  "provider_resource_id": "EMx9ArQvpVRhzpFECni3",
+  "model": "gpt-image-2-5-sunburst",
+  "project_id": "8K6WcbrPLghSBJXBtWAE",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "e59cb244ac498fe9940832a6a28e7960ce824f5abfcf1b461c847eae46c5639d.png",
+    "sha256": "e59cb244ac498fe9940832a6a28e7960ce824f5abfcf1b461c847eae46c5639d",
+    "bytes": 7906466,
+    "mime": "image/png",
+    "width": 3840,
+    "height": 2160
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-aheng-home-layout-01",
+    "candidate_id": "candidate-652d2f870e124d8837bc02bbcd8734e4433aafc7b17ff62e49d1935eb634db7e",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "OpenArt credits",
+    "quoted": 350,
+    "actual": "UNKNOWN",
+    "note": "报价对应单图；实际扣费字段未返回时保留UNKNOWN。"
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "已实际打开完整3840×2160原件。主图的床、桌、灶和通路清楚；但床头饮水小几在主图位于西端，俯视图移到东端，外部视图又把窗画在与正门同一南墙。主图桌上灯形也偏近现代玻璃罩提灯，不能作为本故事统一空间母版。",
+    "decision": "保持单间拓扑，明确唯一东窗、南墙仅门且无窗，床头水几始终西北角；桌灯为朴素陶质油灯，不用玻璃罩煤油灯。强调三视图相同家具归位。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  }
+}
