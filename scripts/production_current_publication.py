@@ -80,6 +80,12 @@ def supported(obj,revision):
 def build(before,after):
     from review_desk.semantic_consolidation import allows_publication_change
     receipts = [json.loads(r['result']) for r in after.get('production_current_operations', [])]
+    from review_desk.numbering_restart import FORMAT as NUMBERING
+    def numbering(rows):
+        return sorted(r['id'] for r in rows.get('production_current_operations', []) if json.loads(r['result']).get('format') == NUMBERING)
+    numbering_baseline = numbering(before)
+    if numbering_baseline != numbering(after):
+        raise ValueError('编号迁移不能作为普通内容增量发布；请使用明确授权的受限迁移入口')
     if set(before)!=set(after) or before['production_current_policy']!=after['production_current_policy']:
         raise ValueError('current publication requires the same migrated schema and baseline')
     changes={table:[] for table in KEYS if table in before}
@@ -113,6 +119,7 @@ def build(before,after):
     try:from .generation_publication import revision_media
     except ImportError:from generation_publication import revision_media
     return {'format':FORMAT,'baseline':before['production_current_policy'],'scope':sorted(scope),
+            'numbering_baseline': numbering_baseline,
             'changes':changes,'expected_references':expected,
             'comment_events':[r for i,r in sorted(new_events.items()) if i not in old_events],
             'media':publication_media(changes)}
@@ -124,6 +131,8 @@ def apply(db,plan,*,identity=None,media_root=None):
     from review_desk.store import Store
     from review_desk.production_current_bundle import validate
     from review_desk.semantic_consolidation import allows_publication_change, is_retired
+    from review_desk.numbering_restart import guard_epoch
+    guard_epoch(db, plan.get('numbering_baseline', []))
     if plan.get('format')!=FORMAT or set(plan.get('changes',{}))!=set(KEYS):raise ValueError('invalid current publication')
     if plan['media']!=publication_media(plan['changes']):raise ValueError('current media manifest differs')
     original_factory=db.row_factory
@@ -132,6 +141,7 @@ def apply(db,plan,*,identity=None,media_root=None):
         return dict(row) if row else None
     def mutate():
         db.row_factory=sqlite3.Row
+        guard_epoch(db, plan.get('numbering_baseline', []))
         receipts = [json.loads(r['result']) for r in db.execute('SELECT result FROM production_current_operations')]
         receipts += [json.loads(c['after']['result']) for c in plan['changes']['production_current_operations'] if c['after']]
         if [dict(r) for r in db.execute('SELECT * FROM production_current_policy')]!=plan['baseline']:
@@ -177,6 +187,16 @@ def apply(db,plan,*,identity=None,media_root=None):
                             if any(components.get(c['id'])!=c for c in before['components']):raise ValueError('candidate original changed')
                 if old and table=='objects' and any(old[f]!=new[f] for f in ('id','kind','created_at','current_revision')):raise ValueError('current object identity changed')
                 if old and table=='comments' and any(old[f]!=new[f] for f in ('id','source_id','target_object_id','target_revision_id','anchor','created_at')):raise ValueError('original opinion changed')
+        # A late worktree must not reintroduce old high counters in a new epoch.
+        # New allocations are append-only and contiguous within each prefix.
+        from review_desk.numbering_restart import epoch
+        if epoch(db):
+            maxima = dict(db.execute('SELECT prefix,max(number) FROM business_codes GROUP BY prefix'))
+            added = [c['after'] for c in plan['changes']['business_codes'] if c['before_sha256'] is None]
+            for row in sorted(added, key=lambda r: (r['prefix'], r['number'])):
+                if row['number'] != maxima.get(row['prefix'], 0)+1:
+                    raise ValueError('旧编号分配与当前迁移不符；从最新正式基线重新准备新对象编号')
+                maxima[row['prefix']] = row['number']
         store=Store.__new__(Store);store.db=db
         dbfile=next(r[2] for r in db.execute('PRAGMA database_list') if r[1]=='main')
         store.db_path=(Path(media_root)/'.runtime/review.sqlite3') if media_root else Path(dbfile)
