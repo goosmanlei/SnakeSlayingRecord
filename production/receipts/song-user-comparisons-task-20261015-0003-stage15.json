@@ -1,0 +1,348 @@
+{
+  "format": "exact-user-song-comparisons-v1",
+  "task_id": "task-20261015-0003",
+  "user_response": "没问题",
+  "items": [
+    {
+      "checked_at": "2026-10-17T13:06:20.536596+00:00",
+      "asset_id": "asset-task-20261015-0003-boat-aheng-opening-01",
+      "asset_revision_id": "9a7a64e4bd5b21603958d5fba67bdbc20ad9f78e0d971975cfd3a132a0330383",
+      "candidate_id": "candidate-9e2c58ff0be1404d1b5198636693eff917335f70fa4a970a9cb68eb2912a2963",
+      "judgment": {
+        "status": "role_audition_passed",
+        "actual_listening_by_user": true,
+        "actual_listening_by_executor": false,
+        "user_response": "没问题",
+        "response_source": {
+          "kind": "direct_conversation_reply",
+          "context": "直接回复上一条结尾同时列出的两份待试听比较；未使用异步问题ID。",
+          "pages": [
+            "http://127.0.0.1:63510/song-role-pilot13.html",
+            "http://127.0.0.1:63510/ritual-distance13.html"
+          ]
+        },
+        "heard_file": {
+          "bytes": 1920044,
+          "channels": 2,
+          "duration_seconds": 10.0,
+          "file": "119fb55a13baa602c5b54ef8cce2d491c0e67063ef98bcc6995d9a8b0c391947.wav",
+          "has_audio": true,
+          "id": "boat-aheng-opening",
+          "mime": "audio/wav",
+          "role": "original",
+          "sample_rate": 48000,
+          "sha256": "119fb55a13baa602c5b54ef8cce2d491c0e67063ef98bcc6995d9a8b0c391947"
+        },
+        "comparison_page": "song-role-pilot13.html",
+        "comparison_playlist": [
+          [
+            "原曲首句（5.7 秒）",
+            {
+              "bytes": 1094478,
+              "channels": 2,
+              "duration_seconds": 5.7,
+              "file": "6f562043f09a4c31707e95d062f0f236e0ac68984af41649799e180487677ab0.wav",
+              "has_audio": true,
+              "id": "melody-boat-opening",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "6f562043f09a4c31707e95d062f0f236e0ac68984af41649799e180487677ab0"
+            }
+          ],
+          [
+            "阿蘅已通过的音色短句（2.05 秒）",
+            {
+              "bytes": 393644,
+              "channels": 2,
+              "duration_seconds": 2.05,
+              "file": "487bba0fc91a340bf53ce54660d90d142466f2b85ca111555a42fdef482852ce.wav",
+              "has_audio": true,
+              "id": "voice-reference-channel",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "487bba0fc91a340bf53ce54660d90d142466f2b85ca111555a42fdef482852ce"
+            }
+          ],
+          [
+            "阿蘅新演唱（10 秒）",
+            {
+              "id": "boat-aheng-opening",
+              "role": "original",
+              "file": "119fb55a13baa602c5b54ef8cce2d491c0e67063ef98bcc6995d9a8b0c391947.wav",
+              "sha256": "119fb55a13baa602c5b54ef8cce2d491c0e67063ef98bcc6995d9a8b0c391947",
+              "bytes": 1920044,
+              "mime": "audio/wav",
+              "duration_seconds": 10.0,
+              "has_audio": true,
+              "sample_rate": 48000,
+              "channels": 2
+            }
+          ]
+        ],
+        "playlist_sha256": "26e81d7969c24ee5b7ffa754607e225256a96ae575521e64af2c8e2a3f53d188",
+        "observation": "用户对原曲首句、本人音色及新唱段的比较页反馈“没问题”；此准确角色唱段通过，继续其余角色演唱制作，其他新件仍须各自听审。执行者未实际听到音频。",
+        "decision": "保留准确原件，并完成角色/用途接续和消费者选择；不据此宣称整首歌曲交付完成。"
+      },
+      "request": {
+        "id": "task-20261015-0003-boat-aheng-opening-01-user-song-pair15",
+        "call_id": "task-20261015-0003-boat-aheng-opening-01",
+        "submission_sha256": "908ab52728c2513da21a9177dc22343232be6a1a44a85cebe2767e0ca9cfb206",
+        "status": "completed",
+        "asset": {
+          "assembly_sources": [
+            {
+              "component_ids": [
+                "original",
+                "melody-boat-opening",
+                "melody-boat-home"
+              ],
+              "operation": "reuse unchanged checked complete original and located melody files",
+              "reference": {
+                "object_id": "asset-task-20261015-0003-boat-song-full-02",
+                "revision_id": "313d65234fa6bc01da8b57a8b2afde44e9c70b7635bfe365b77e45cff78e7ce9"
+              }
+            }
+          ],
+          "blocks": [
+            {
+              "id": "production-boundary",
+              "text": "本次Seed Audio只生成指定角色唱段；候选同时复用已通过的完整原曲与旋律引用件，二者不是本次重新生成。新唱段已核原生WAV、实际时长和哈希，仍待用户比较旋律、声线、原词及头尾。"
+            },
+            {
+              "id": "user-song-pair15",
+              "text": "用户对原曲首句、本人音色及新唱段的比较页反馈“没问题”；此准确角色唱段通过，继续其余角色演唱制作，其他新件仍须各自听审。执行者未实际听到音频。"
+            }
+          ],
+          "candidate_identity": "candidate-9e2c58ff0be1404d1b5198636693eff917335f70fa4a970a9cb68eb2912a2963",
+          "candidate_requirements": [
+            {
+              "object_id": "new26-boat-song-singing",
+              "revision_id": "f11d4f9ee02db7cdb95a3447019e8ed609861049f3d53237127cdd456605e33d"
+            }
+          ],
+          "components": [
+            {
+              "bytes": 4263037,
+              "channels": 2,
+              "duration_seconds": 177.371375,
+              "file": "5462ff4c9e367fc7a191e0df80cdc2ce6af36ee992b50d1f50091e7649d9c5d1.mp3",
+              "has_audio": true,
+              "id": "original",
+              "mime": "audio/mpeg",
+              "role": "original",
+              "sample_rate": 44100,
+              "sha256": "5462ff4c9e367fc7a191e0df80cdc2ce6af36ee992b50d1f50091e7649d9c5d1"
+            },
+            {
+              "bytes": 1094478,
+              "channels": 2,
+              "duration_seconds": 5.7,
+              "file": "6f562043f09a4c31707e95d062f0f236e0ac68984af41649799e180487677ab0.wav",
+              "has_audio": true,
+              "id": "melody-boat-opening",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "6f562043f09a4c31707e95d062f0f236e0ac68984af41649799e180487677ab0"
+            },
+            {
+              "bytes": 2841678,
+              "channels": 2,
+              "duration_seconds": 14.8,
+              "file": "525d76a4f67358ddfe448a45c03c445d3f70ef7225a22549b96595ef4422b06e.wav",
+              "has_audio": true,
+              "id": "melody-boat-home",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "525d76a4f67358ddfe448a45c03c445d3f70ef7225a22549b96595ef4422b06e"
+            },
+            {
+              "bytes": 1920044,
+              "channels": 2,
+              "duration_seconds": 10.0,
+              "file": "119fb55a13baa602c5b54ef8cce2d491c0e67063ef98bcc6995d9a8b0c391947.wav",
+              "has_audio": true,
+              "id": "boat-aheng-opening",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "119fb55a13baa602c5b54ef8cce2d491c0e67063ef98bcc6995d9a8b0c391947"
+            }
+          ],
+          "format": "production-asset-v1",
+          "media_type": "audio",
+          "production": {
+            "object_id": "task-20261015-0003-boat-aheng-opening-01",
+            "revision_id": "56caac2f05b4713ad20650b7f39ab72e6a9a2c9ef2fccc8e7ac77e3c5ca3ac1c"
+          },
+          "states": [],
+          "subjects": [
+            {
+              "object_id": "new26-boat-song",
+              "revision_id": "652b19a8f0fe221d249e0a42d52c2980e6194f014a4bf74cba1f41c4dcaac7cd"
+            }
+          ],
+          "title": "三道滩 · 完整原曲及阿蘅首句补制"
+        }
+      },
+      "result": {
+        "call_id": "task-20261015-0003-boat-aheng-opening-01",
+        "candidate_id": "candidate-9e2c58ff0be1404d1b5198636693eff917335f70fa4a970a9cb68eb2912a2963",
+        "status": "completed",
+        "already_applied": false
+      }
+    },
+    {
+      "checked_at": "2026-10-17T13:06:24.461839+00:00",
+      "asset_id": "asset-task-20261015-0003-ritual-song-full-02",
+      "asset_revision_id": "c603afa1b1ff699fa609a3f42ab132298ee0f4a8236ed9ac916f949de33f1558",
+      "candidate_id": "candidate-39aff0dbbad65c16e7c2c1d8dfbb732ca0b993220c114a3ae7ceb56e07fbaf97",
+      "judgment": {
+        "status": "derived_audition_passed",
+        "actual_listening_by_user": true,
+        "actual_listening_by_executor": false,
+        "user_response": "没问题",
+        "response_source": {
+          "kind": "direct_conversation_reply",
+          "context": "直接回复上一条结尾同时列出的两份待试听比较；未使用异步问题ID。",
+          "pages": [
+            "http://127.0.0.1:63510/song-role-pilot13.html",
+            "http://127.0.0.1:63510/ritual-distance13.html"
+          ]
+        },
+        "heard_file": {
+          "bytes": 2415438,
+          "channels": 2,
+          "duration_seconds": 12.58,
+          "file": "f40e1ccb12939615daaf41b85d4439731b813e08e3412ea790f8517ea4d105eb.wav",
+          "has_audio": true,
+          "id": "ritual-core-distant",
+          "mime": "audio/wav",
+          "role": "original",
+          "sample_rate": 48000,
+          "sha256": "f40e1ccb12939615daaf41b85d4439731b813e08e3412ea790f8517ea4d105eb"
+        },
+        "comparison_page": "ritual-distance13.html",
+        "comparison_playlist": [
+          {
+            "label": "原曲中的完整近声唱句",
+            "seconds": 12.5,
+            "sha256": "faeb682737c6463c029c736a499a0c2059f39bea31b9a74630bcef3b05b4c8ed",
+            "url": "http://127.0.0.1:62845/api/production/files/faeb682737c6463c029c736a499a0c2059f39bea31b9a74630bcef3b05b4c8ed.wav"
+          },
+          {
+            "label": "河对岸远声候选",
+            "seconds": 12.58,
+            "sha256": "f40e1ccb12939615daaf41b85d4439731b813e08e3412ea790f8517ea4d105eb",
+            "url": "http://127.0.0.1:62845/api/production/files/f40e1ccb12939615daaf41b85d4439731b813e08e3412ea790f8517ea4d105eb.wav"
+          }
+        ],
+        "playlist_sha256": "182e545bf3051d995a32d43c547782436dd26226418b12b561cf809e31277f61",
+        "observation": "用户对同句近声与河对岸远声的比较页反馈“没问题”；此准确远声派生件的字句、距离及自然尾响通过，按实测12.58秒安排用途。执行者未实际听到音频。",
+        "decision": "保留准确原件，并完成角色/用途接续和消费者选择；不据此宣称整首歌曲交付完成。"
+      },
+      "request": {
+        "id": "task-20261015-0003-ritual-song-full-02-user-song-pair15",
+        "call_id": "task-20261015-0003-ritual-song-full-02",
+        "submission_sha256": "6409697d18bf04f951b4db147d654e147876d8b939e9961adcb003dadd255c9d",
+        "status": "completed",
+        "asset": {
+          "blocks": [
+            {
+              "id": "description",
+              "text": "本轮完整词稿与音乐方案新生成的原生MP3，按用户本轮授权保存未经转码文件；实测180.819542秒、44.1kHz双声道。完整听审及逐句实唱核验待完成，未选供下游。"
+            },
+            {
+              "id": "user-audition13",
+              "text": "用户已实际试听此页列出的准确文件并反馈“我已经完成视听，没有问题，请你继续吧”。本次确认完整母版；尚未制作或列入此次试听的独立派生文件不继承听审结论。执行者未实际听到音频。"
+            },
+            {
+              "id": "human-melody-locations13",
+              "text": "完整原曲已获用户试听通过；用户实际定位并试听9段歌词范围后确认完成。此候选保留原生MP3，另存对应范围的48kHz PCM完整旋律引用件；只做解码、采样率转换和准确截取，未变速或改调，也未把派生WAV称作原生无损原曲。角色另唱仍须另制、实际试听。"
+            },
+            {
+              "id": "ritual-distance13",
+              "text": "保留完整原生MP3与用户定位的12.5秒近声唱句，另制12.58秒河对岸远声候选；只做削高频、低增益和轻短反射，保留新增80毫秒尾响。新派生件尚未实际试听，不先选供镜头；技术峰值不代替字句、距离及尾音听辨。"
+            },
+            {
+              "id": "user-song-pair15",
+              "text": "用户对同句近声与河对岸远声的比较页反馈“没问题”；此准确远声派生件的字句、距离及自然尾响通过，按实测12.58秒安排用途。执行者未实际听到音频。"
+            }
+          ],
+          "candidate_identity": "candidate-39aff0dbbad65c16e7c2c1d8dfbb732ca0b993220c114a3ae7ceb56e07fbaf97",
+          "candidate_requirements": [
+            {
+              "object_id": "new26-ritual-song-singing",
+              "revision_id": "36a77805b3990e32c06d99a969724e8f4459f25a88cfe3f7ee626e907d58a0b3"
+            }
+          ],
+          "components": [
+            {
+              "bytes": 4345793,
+              "channels": 2,
+              "duration_seconds": 180.819542,
+              "file": "3903014c7428b8269c8e277b9171c1fc1eed273074a86418522dd7706197e339.mp3",
+              "has_audio": true,
+              "id": "original",
+              "mime": "audio/mpeg",
+              "role": "original",
+              "sample_rate": 44100,
+              "sha256": "3903014c7428b8269c8e277b9171c1fc1eed273074a86418522dd7706197e339"
+            },
+            {
+              "bytes": 2400078,
+              "channels": 2,
+              "duration_seconds": 12.5,
+              "file": "faeb682737c6463c029c736a499a0c2059f39bea31b9a74630bcef3b05b4c8ed.wav",
+              "has_audio": true,
+              "id": "melody-ritual-core",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "faeb682737c6463c029c736a499a0c2059f39bea31b9a74630bcef3b05b4c8ed"
+            },
+            {
+              "bytes": 2415438,
+              "channels": 2,
+              "duration_seconds": 12.58,
+              "file": "f40e1ccb12939615daaf41b85d4439731b813e08e3412ea790f8517ea4d105eb.wav",
+              "has_audio": true,
+              "id": "ritual-core-distant",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "f40e1ccb12939615daaf41b85d4439731b813e08e3412ea790f8517ea4d105eb"
+            }
+          ],
+          "format": "production-asset-v1",
+          "lineage": {
+            "i2i_depth": 0,
+            "references": []
+          },
+          "media_type": "audio",
+          "production": {
+            "object_id": "task-20261015-0003-ritual-song-full-02",
+            "revision_id": "ede6d9ba0ef86615cf210f0809e047708d7f204d5f7472722648263a1006b1e5"
+          },
+          "states": [],
+          "subjects": [
+            {
+              "object_id": "new26-ritual-song",
+              "revision_id": "0670013c72a59081839383724fcf55da8922b6d77bca87d62d84d66417d55e83"
+            }
+          ],
+          "title": "明月还乡 · 完整原曲 · 候选1"
+        }
+      },
+      "result": {
+        "call_id": "task-20261015-0003-ritual-song-full-02",
+        "candidate_id": "candidate-39aff0dbbad65c16e7c2c1d8dfbb732ca0b993220c114a3ae7ceb56e07fbaf97",
+        "status": "completed",
+        "already_applied": false
+      }
+    }
+  ]
+}

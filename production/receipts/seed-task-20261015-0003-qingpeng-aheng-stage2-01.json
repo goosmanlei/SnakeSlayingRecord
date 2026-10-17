@@ -1,0 +1,147 @@
+{
+  "id": "task-20261015-0003-qingpeng-aheng-stage2-01",
+  "status": "completed",
+  "request_id": "e761f48d-3f13-4f77-934c-4391c1ded173",
+  "quota_id": "seed-quota-task-20261015-0003-stage13",
+  "production_submission": {
+    "call_id": "task-20261015-0003-qingpeng-aheng-stage2-01",
+    "submission_sha256": "59b5da8ae14b5df443df478712e01aa7aea639e5c01d6bf1caebaa7339c46116",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "submitted_at": "2026-10-17T13:08:39.856848+00:00",
+  "endpoint": "https://openspeech.bytedance.com/api/v3/tts/create",
+  "input": {
+    "model": "seed-audio-1.0",
+    "text_prompt": "风格与演唱说明：\n制作一条完整、近收、无伴奏的角色演唱参考。阿蘅本人，清亮自然的少女声，保留儿童声腔。普通话。\n@音频1是用户准确定位的完整原曲乐句，只约束实际骨干旋律、歌词重音和落音；沿它的旋律重新表演，不另写无关旋律，不复制原曲歌手声线或器乐。@音频2只约束本人已通过的声线，不复述音色参考里的试读稿。\n这是第41场完整舞台选段的第2乐句，沿同一原曲逐句演唱，声线、距离、响度与朴素行腔保持一致。情绪从安稳送行走向相信归来，不做流行歌爆发或哭腔。只唱本句；用自然舒展的长腔承接原曲骨干，不随意增加新音型。末字了保留同一次较长尾腔，可在后续画面中延续，最后自然收声。\n目标约24秒，保留自然换气和完整尾音。时长通过自然演法安排，不机器变速、不抢字、不为了凑秒重复旋律。只演唱歌词区的原词一次，不增衬词或重复。无器乐、节拍敲击、环境声、对白或额外人声。不念标题、音频编号、说明或标点。\n\n完整歌词：\n桨莫急，缆慢抛，岸上叮咛还未了——",
+    "audio_config": {
+      "format": "wav",
+      "sample_rate": 48000,
+      "pitch_rate": 0,
+      "speech_rate": 0,
+      "loudness_rate": 0,
+      "enable_subtitle": true
+    },
+    "watermark": {},
+    "references": [
+      {
+        "file": "export/assets/0d46838a41edf3ded52ac7be7b2fa6aa18845a20f8f40078905e866bd4c022c1.wav",
+        "sha256": "0d46838a41edf3ded52ac7be7b2fa6aa18845a20f8f40078905e866bd4c022c1",
+        "duration_seconds": 6.0,
+        "reference_number": 1
+      },
+      {
+        "file": "export/assets/487bba0fc91a340bf53ce54660d90d142466f2b85ca111555a42fdef482852ce.wav",
+        "sha256": "487bba0fc91a340bf53ce54660d90d142466f2b85ca111555a42fdef482852ce",
+        "duration_seconds": 2.05,
+        "reference_number": 2
+      }
+    ]
+  },
+  "input_sha256": "9d78be26af120712d81e15b646133ca0800c89f4bcab7b8bbf3f1254b10e7632",
+  "remaining_before_seconds": 691.9346,
+  "reserved_seconds": 120,
+  "log_id": "202610172108404F5FBB4114FE2356954C",
+  "original_duration": 24,
+  "duration": 24,
+  "subtitle": {
+    "sentences": [
+      {
+        "end_time": 23960,
+        "start_time": 0,
+        "text": "桨莫急，缆慢抛，岸上叮咛还未了——",
+        "words": [
+          {
+            "end_time": 1560,
+            "start_time": 0,
+            "text": "桨"
+          },
+          {
+            "end_time": 2120,
+            "start_time": 1560,
+            "text": "莫"
+          },
+          {
+            "end_time": 3120,
+            "start_time": 2120,
+            "text": "急"
+          },
+          {
+            "end_time": 3120,
+            "start_time": 3120,
+            "text": "，"
+          },
+          {
+            "end_time": 5320,
+            "start_time": 4400,
+            "text": "缆"
+          },
+          {
+            "end_time": 5720,
+            "start_time": 5320,
+            "text": "慢"
+          },
+          {
+            "end_time": 5800,
+            "start_time": 5760,
+            "text": "抛"
+          },
+          {
+            "end_time": 5800,
+            "start_time": 5800,
+            "text": "，"
+          },
+          {
+            "end_time": 5840,
+            "start_time": 5800,
+            "text": "岸"
+          },
+          {
+            "end_time": 6040,
+            "start_time": 5840,
+            "text": "上"
+          },
+          {
+            "end_time": 6080,
+            "start_time": 6040,
+            "text": "叮"
+          },
+          {
+            "end_time": 6200,
+            "start_time": 6080,
+            "text": "咛"
+          },
+          {
+            "end_time": 23880,
+            "start_time": 6200,
+            "text": "还"
+          },
+          {
+            "end_time": 23920,
+            "start_time": 23880,
+            "text": "未"
+          },
+          {
+            "end_time": 23960,
+            "start_time": 23920,
+            "text": "了"
+          },
+          {
+            "end_time": 23960,
+            "start_time": 23960,
+            "text": "—"
+          },
+          {
+            "end_time": 23960,
+            "start_time": 23960,
+            "text": "—"
+          }
+        ]
+      }
+    ],
+    "text": "桨莫急，缆慢抛，岸上叮咛还未了——"
+  },
+  "file": "export/assets/a6b6c2e69bafc53a0a70764c53ca724fdf58bdf9f698683d728a1336ea5b6105.wav",
+  "sha256": "a6b6c2e69bafc53a0a70764c53ca724fdf58bdf9f698683d728a1336ea5b6105",
+  "bytes": 4608044
+}

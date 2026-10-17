@@ -1589,10 +1589,10 @@
     }
   ],
   "totals": {
-    "files": 5201,
+    "files": 5204,
     "symlinks": 3,
     "directories": 216,
-    "bytes": 64835286531
+    "bytes": 64844506245
   },
   "containers_created": 0,
   "task_containers_found": 0,
@@ -1646,11 +1646,11 @@
     },
     {
       "path": ".runtime/task-20261015-0003/audition12",
-      "purpose": "Local continuous audition page for42 unfinished audio needs; server identity in audition12-server.json. Task owner retains it until actual audio verification finishes, then stops the exact server and removes this page."
+      "purpose": "Current17clip role audition and5tail locations; active helper identity in song-role15-server.json (port65289). Prior audition63510 and locator60366 were stopped after their feedback and positions were saved. Retire current helper after remaining actual listening and handoff."
     }
   ],
   "cleanup_complete_for_task": false,
-  "remaining_owner": "task-20261015-0003 executor on task resume",
+  "remaining_owner": "task-20261015-0003",
   "stage05_deleted": {
     "files": 322,
     "symlinks": 0,
@@ -22802,5 +22802,53 @@
       }
     ],
     "shared_services_stopped": false
-  }
+  },
+  "stage15_deleted": {
+    "files": 3,
+    "directories": 0,
+    "symlinks": 0,
+    "bytes": 9219714,
+    "items": [
+      {
+        "path": ".runtime/task-20261015-0003/ritual-core-distant13.wav",
+        "bytes": 2415438,
+        "sha256": "f40e1ccb12939615daaf41b85d4439731b813e08e3412ea790f8517ea4d105eb",
+        "kept_original": "export/assets/f40e1ccb12939615daaf41b85d4439731b813e08e3412ea790f8517ea4d105eb.wav",
+        "reason": "verified temporary duplicate after successful registration"
+      },
+      {
+        "path": ".runtime/task-20261015-0003/qingpeng-teacher-combined15.wav",
+        "bytes": 3312240,
+        "sha256": "1dfabb5532baf05ec4adb7c00a12abb815b03bef285c0db0eef7387e2064c70d",
+        "kept_original": "export/assets/1dfabb5532baf05ec4adb7c00a12abb815b03bef285c0db0eef7387e2064c70d.wav",
+        "reason": "verified temporary duplicate after successful registration"
+      },
+      {
+        "path": ".runtime/task-20261015-0003/qingpeng-aheng-teaching-combined15.wav",
+        "bytes": 3492036,
+        "sha256": "eea5330d9b8177a424ac483d6c01bfc7aa73b745c749fb1710545e27f64b869f",
+        "kept_original": "export/assets/eea5330d9b8177a424ac483d6c01bfc7aa73b745c749fb1710545e27f64b869f.wav",
+        "reason": "verified temporary duplicate after successful registration"
+      }
+    ]
+  },
+  "stage15_stopped_processes": [
+    {
+      "pid": 12615,
+      "port": 63510,
+      "purpose": "Pending full audio audition for task-20261015-0003",
+      "command": "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python -u -",
+      "readback": "process absent",
+      "successor": "http://127.0.0.1:65289/role-songs15.html"
+    },
+    {
+      "pid": 60649,
+      "port": 60366,
+      "purpose": "Unfinished task: user locates nine exact phrases in approved full songs",
+      "command": "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python .runtime/task-20261015-0003/song_cues13_server.py",
+      "readback": "process absent",
+      "successor": "http://127.0.0.1:65289/role-songs15.html"
+    }
+  ],
+  "stage15_retained": "Active worktrees, preview62845, audition65289 and exact originals/receipts remain for unfinished role hearing, selection, formal delivery and recovery. No shared service stopped."
 }

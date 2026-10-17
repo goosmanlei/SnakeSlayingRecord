@@ -1,0 +1,54 @@
+{
+  "id": "task-20261015-0003-qingpeng-mother-willow-hum-01",
+  "status": "completed",
+  "request_id": "96cd6d6e-4c88-4ac1-be10-b66ab2eb533d",
+  "quota_id": "seed-quota-task-20261015-0003-stage13",
+  "production_submission": {
+    "call_id": "task-20261015-0003-qingpeng-mother-willow-hum-01",
+    "submission_sha256": "9f194278b61e217f7fd30f7e765f73c56dba4e52677fb4bfd160f310b64104a0",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "submitted_at": "2026-10-17T13:18:32.176348+00:00",
+  "endpoint": "https://openspeech.bytedance.com/api/v3/tts/create",
+  "input": {
+    "model": "seed-audio-1.0",
+    "text_prompt": "风格与演唱说明：\n制作一条完整、近收、无伴奏的角色演唱参考。阿蘅母亲本人，低弱、气息不足的成年女声，病中克制，不是年轻阿蘅。普通话。\n@音频1是用户准确定位的完整原曲乐句，只约束实际骨干旋律、歌词重音和落音；沿它的旋律重新表演，不另写无关旋律，不复制原曲歌手声线或器乐。@音频2只约束本人已通过的声线，不复述音色参考里的试读稿。\n低弱地哼出青篷过河湾、柳影到船边这一完整乐句的骨干旋律，不唱歌词。气息虚弱但音高仍能辨认，不刻意颤抖或喘成另一种音色；结尾完整自然，不继续到后续失词。\n目标约10秒，保留自然换气和完整尾音。时长通过自然演法安排，不机器变速、不抢字、不为了凑秒重复旋律。这是无词哼唱，只发自然闭口哼音或指定尾元音，不唱参考歌词，不念任何文字。无器乐、节拍敲击、环境声、对白或额外人声。不念标题、音频编号、说明或标点。\n\n完整歌词：\n无词；本栏说明也不得发声。",
+    "audio_config": {
+      "format": "wav",
+      "sample_rate": 48000,
+      "pitch_rate": 0,
+      "speech_rate": 0,
+      "loudness_rate": 0,
+      "enable_subtitle": true
+    },
+    "watermark": {},
+    "references": [
+      {
+        "file": "export/assets/d3a3050e50b4a62c35be21d6ea526290d52ac9df63c39c9b0973f24043fecb07.wav",
+        "sha256": "d3a3050e50b4a62c35be21d6ea526290d52ac9df63c39c9b0973f24043fecb07",
+        "duration_seconds": 6.0,
+        "reference_number": 1
+      },
+      {
+        "file": "export/assets/2445e310a810abcb0fa0c65a03b726fd605372fae9ca9da7abfa6d94bd005e16.wav",
+        "sha256": "2445e310a810abcb0fa0c65a03b726fd605372fae9ca9da7abfa6d94bd005e16",
+        "duration_seconds": 2.2,
+        "reference_number": 2
+      }
+    ]
+  },
+  "input_sha256": "32636f1bcd4e1ab9d045520d61131e58da92e5f8cb2af155d8099cb38322486e",
+  "remaining_before_seconds": 559.7783,
+  "reserved_seconds": 120,
+  "log_id": "2026101721183282829D32DF0DB6F2FFD4",
+  "original_duration": 10,
+  "duration": 10,
+  "subtitle": {
+    "sentences": [],
+    "text": ""
+  },
+  "file": "export/assets/5384c046af98225079dd61f2e2f320dbb2a50c3bfaf369ca1053c6723c93c341.wav",
+  "sha256": "5384c046af98225079dd61f2e2f320dbb2a50c3bfaf369ca1053c6723c93c341",
+  "bytes": 1920044
+}

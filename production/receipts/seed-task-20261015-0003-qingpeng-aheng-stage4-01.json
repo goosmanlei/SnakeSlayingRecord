@@ -1,0 +1,122 @@
+{
+  "id": "task-20261015-0003-qingpeng-aheng-stage4-01",
+  "status": "completed",
+  "request_id": "42a14f31-02d3-4f84-a25a-4ebeb6df0ff6",
+  "quota_id": "seed-quota-task-20261015-0003-stage13",
+  "production_submission": {
+    "call_id": "task-20261015-0003-qingpeng-aheng-stage4-01",
+    "submission_sha256": "5cb05c2f5f303f8917b6350ad626c656f1440b343b06ad9a8346f30b41064872",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "submitted_at": "2026-10-17T13:10:52.076371+00:00",
+  "endpoint": "https://openspeech.bytedance.com/api/v3/tts/create",
+  "input": {
+    "model": "seed-audio-1.0",
+    "text_prompt": "风格与演唱说明：\n制作一条完整、近收、无伴奏的角色演唱参考。阿蘅本人，清亮自然的少女声，保留儿童声腔。普通话。\n@音频1是用户准确定位的完整原曲乐句，只约束实际骨干旋律、歌词重音和落音；沿它的旋律重新表演，不另写无关旋律，不复制原曲歌手声线或器乐。@音频2只约束本人已通过的声线，不复述音色参考里的试读稿。\n这是第41场完整舞台选段的第4乐句，沿同一原曲逐句演唱，声线、距离、响度与朴素行腔保持一致。情绪从安稳送行走向相信归来，不做流行歌爆发或哭腔。只唱本句；用自然舒展的长腔承接原曲骨干，不随意增加新音型。末字照完整收束。\n目标约16秒，保留自然换气和完整尾音。时长通过自然演法安排，不机器变速、不抢字、不为了凑秒重复旋律。只演唱歌词区的原词一次，不增衬词或重复。无器乐、节拍敲击、环境声、对白或额外人声。不念标题、音频编号、说明或标点。\n\n完整歌词：\n莫怕远山高，隔水灯相照。",
+    "audio_config": {
+      "format": "wav",
+      "sample_rate": 48000,
+      "pitch_rate": 0,
+      "speech_rate": 0,
+      "loudness_rate": 0,
+      "enable_subtitle": true
+    },
+    "watermark": {},
+    "references": [
+      {
+        "file": "export/assets/4601117f53af0300efdfada4750ee6941a5e43ad0c1c9f0b1b4e62301acc3117.wav",
+        "sha256": "4601117f53af0300efdfada4750ee6941a5e43ad0c1c9f0b1b4e62301acc3117",
+        "duration_seconds": 8.0,
+        "reference_number": 1
+      },
+      {
+        "file": "export/assets/487bba0fc91a340bf53ce54660d90d142466f2b85ca111555a42fdef482852ce.wav",
+        "sha256": "487bba0fc91a340bf53ce54660d90d142466f2b85ca111555a42fdef482852ce",
+        "duration_seconds": 2.05,
+        "reference_number": 2
+      }
+    ]
+  },
+  "input_sha256": "b34a91b3e1aeb7e2bad376d4f95a3d9b3895093e5c964b86881ac2a5391f1256",
+  "remaining_before_seconds": 640.9346,
+  "reserved_seconds": 120,
+  "log_id": "20261017211052FC442E10C711CD1F067E",
+  "original_duration": 6.8489,
+  "duration": 6.8489,
+  "subtitle": {
+    "sentences": [
+      {
+        "end_time": 5840,
+        "start_time": 160,
+        "text": "莫怕远山高，隔水灯相照。",
+        "words": [
+          {
+            "end_time": 440,
+            "start_time": 160,
+            "text": "莫"
+          },
+          {
+            "end_time": 760,
+            "start_time": 520,
+            "text": "怕"
+          },
+          {
+            "end_time": 1320,
+            "start_time": 1200,
+            "text": "远"
+          },
+          {
+            "end_time": 1680,
+            "start_time": 1600,
+            "text": "山"
+          },
+          {
+            "end_time": 3000,
+            "start_time": 2960,
+            "text": "高"
+          },
+          {
+            "end_time": 3000,
+            "start_time": 3000,
+            "text": "，"
+          },
+          {
+            "end_time": 3360,
+            "start_time": 3000,
+            "text": "隔"
+          },
+          {
+            "end_time": 4440,
+            "start_time": 4040,
+            "text": "水"
+          },
+          {
+            "end_time": 4680,
+            "start_time": 4560,
+            "text": "灯"
+          },
+          {
+            "end_time": 5160,
+            "start_time": 4920,
+            "text": "相"
+          },
+          {
+            "end_time": 5840,
+            "start_time": 5720,
+            "text": "照"
+          },
+          {
+            "end_time": 5840,
+            "start_time": 5840,
+            "text": "。"
+          }
+        ]
+      }
+    ],
+    "text": "莫怕远山高，隔水灯相照。"
+  },
+  "file": "export/assets/ac756b729eec457702e9a5de79168c5dbe16376e9374bf38b423e23bab84c30f.wav",
+  "sha256": "ac756b729eec457702e9a5de79168c5dbe16376e9374bf38b423e23bab84c30f",
+  "bytes": 1315036
+}

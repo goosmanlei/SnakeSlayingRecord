@@ -1,0 +1,127 @@
+{
+  "id": "task-20261015-0003-qingpeng-aheng-stage3-01",
+  "status": "completed",
+  "request_id": "3b27ffbd-6a8e-45ad-8324-553a47f2d827",
+  "quota_id": "seed-quota-task-20261015-0003-stage13",
+  "production_submission": {
+    "call_id": "task-20261015-0003-qingpeng-aheng-stage3-01",
+    "submission_sha256": "9ee89baac7b2d9b1c9538c484032416711498acc11610e4b449d579c36ca679d",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "submitted_at": "2026-10-17T13:09:58.333721+00:00",
+  "endpoint": "https://openspeech.bytedance.com/api/v3/tts/create",
+  "input": {
+    "model": "seed-audio-1.0",
+    "text_prompt": "风格与演唱说明：\n制作一条完整、近收、无伴奏的角色演唱参考。阿蘅本人，清亮自然的少女声，保留儿童声腔。普通话。\n@音频1是用户准确定位的完整原曲乐句，只约束实际骨干旋律、歌词重音和落音；沿它的旋律重新表演，不另写无关旋律，不复制原曲歌手声线或器乐。@音频2只约束本人已通过的声线，不复述音色参考里的试读稿。\n这是第41场完整舞台选段的第3乐句，沿同一原曲逐句演唱，声线、距离、响度与朴素行腔保持一致。情绪从安稳送行走向相信归来，不做流行歌爆发或哭腔。只唱本句；用自然舒展的长腔承接原曲骨干，不随意增加新音型。末字边保留同一次较长尾腔，结尾自然收声，不重新唱起。\n目标约27秒，保留自然换气和完整尾音。时长通过自然演法安排，不机器变速、不抢字、不为了凑秒重复旋律。只演唱歌词区的原词一次，不增衬词或重复。无器乐、节拍敲击、环境声、对白或额外人声。不念标题、音频编号、说明或标点。\n\n完整歌词：\n青篷过河湾，柳影到船边——",
+    "audio_config": {
+      "format": "wav",
+      "sample_rate": 48000,
+      "pitch_rate": 0,
+      "speech_rate": 0,
+      "loudness_rate": 0,
+      "enable_subtitle": true
+    },
+    "watermark": {},
+    "references": [
+      {
+        "file": "export/assets/d3a3050e50b4a62c35be21d6ea526290d52ac9df63c39c9b0973f24043fecb07.wav",
+        "sha256": "d3a3050e50b4a62c35be21d6ea526290d52ac9df63c39c9b0973f24043fecb07",
+        "duration_seconds": 6.0,
+        "reference_number": 1
+      },
+      {
+        "file": "export/assets/487bba0fc91a340bf53ce54660d90d142466f2b85ca111555a42fdef482852ce.wav",
+        "sha256": "487bba0fc91a340bf53ce54660d90d142466f2b85ca111555a42fdef482852ce",
+        "duration_seconds": 2.05,
+        "reference_number": 2
+      }
+    ]
+  },
+  "input_sha256": "4c4047d8dd7f963292792f1c9c33976de621bbe1e746003b8922b44f827ff606",
+  "remaining_before_seconds": 667.9346,
+  "reserved_seconds": 120,
+  "log_id": "2026101721095842E2298AE37234ECDC55",
+  "original_duration": 27,
+  "duration": 27,
+  "subtitle": {
+    "sentences": [
+      {
+        "end_time": 5560,
+        "start_time": 640,
+        "text": "青篷过河湾，柳影到船边——",
+        "words": [
+          {
+            "end_time": 840,
+            "start_time": 640,
+            "text": "青"
+          },
+          {
+            "end_time": 1280,
+            "start_time": 1040,
+            "text": "篷"
+          },
+          {
+            "end_time": 1760,
+            "start_time": 1440,
+            "text": "过"
+          },
+          {
+            "end_time": 2200,
+            "start_time": 2080,
+            "text": "河"
+          },
+          {
+            "end_time": 2800,
+            "start_time": 2360,
+            "text": "湾"
+          },
+          {
+            "end_time": 2800,
+            "start_time": 2800,
+            "text": "，"
+          },
+          {
+            "end_time": 3760,
+            "start_time": 3560,
+            "text": "柳"
+          },
+          {
+            "end_time": 4040,
+            "start_time": 3960,
+            "text": "影"
+          },
+          {
+            "end_time": 4600,
+            "start_time": 4280,
+            "text": "到"
+          },
+          {
+            "end_time": 5040,
+            "start_time": 4920,
+            "text": "船"
+          },
+          {
+            "end_time": 5560,
+            "start_time": 5320,
+            "text": "边"
+          },
+          {
+            "end_time": 5560,
+            "start_time": 5560,
+            "text": "—"
+          },
+          {
+            "end_time": 5560,
+            "start_time": 5560,
+            "text": "—"
+          }
+        ]
+      }
+    ],
+    "text": "青篷过河湾，柳影到船边——"
+  },
+  "file": "export/assets/98bca747be4117f9fc429e14cb31f8d930c7b979dda5c3caad0696f5097d72ea.wav",
+  "sha256": "98bca747be4117f9fc429e14cb31f8d930c7b979dda5c3caad0696f5097d72ea",
+  "bytes": 5184044
+}
