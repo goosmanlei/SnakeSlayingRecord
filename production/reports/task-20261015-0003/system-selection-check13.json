@@ -1,0 +1,53 @@
+{
+  "current_contract": {
+    "tests": 17,
+    "failures": [],
+    "errors": []
+  },
+  "legacy_suite_changed": {
+    "tests": 13,
+    "failures": [
+      "test_shot_references.ShotReferenceTest.test_catalog_comment_identities_match_complete_versions_after_reference_write",
+      "test_shot_references.ShotReferenceTest.test_exact_candidate_version_component_and_ranges_are_required",
+      "test_shot_references.ShotReferenceTest.test_http_endpoints_reject_incomplete_inputs_and_replay_selection_once"
+    ],
+    "errors": [
+      "test_shot_references.ShotReferenceTest.test_another_connection_conflicts_without_partial_changes",
+      "test_shot_references.ShotReferenceTest.test_clearing_range_on_frozen_plan_does_not_restore_old_bounds",
+      "test_shot_references.ShotReferenceTest.test_draft_save_is_atomic_per_slot_idempotent_and_keeps_other_inputs",
+      "test_shot_references.ShotReferenceTest.test_export_restore_keeps_selection_receipt_and_exact_history",
+      "test_shot_references.ShotReferenceTest.test_readiness_package_and_new_call_share_guard_without_generating",
+      "test_shot_references.ShotReferenceTest.test_same_exact_input_on_locked_plan_still_creates_a_new_version",
+      "test_shot_references.ShotReferenceTest.test_scene_selected_result_uses_owning_material_identity_and_counts",
+      "test_shot_references.ShotReferenceTest.test_submitted_failed_unknown_are_locked_and_change_creates_new_plan (status='submitted')",
+      "test_shot_references.ShotReferenceTest.test_submitted_failed_unknown_are_locked_and_change_creates_new_plan (status='failed')",
+      "test_shot_references.ShotReferenceTest.test_submitted_failed_unknown_are_locked_and_change_creates_new_plan (status='unknown')"
+    ]
+  },
+  "legacy_suite_HEAD_baseline": {
+    "tests": 13,
+    "failures": [
+      "test_shot_references.ShotReferenceTest.test_catalog_comment_identities_match_complete_versions_after_reference_write",
+      "test_shot_references.ShotReferenceTest.test_exact_candidate_version_component_and_ranges_are_required",
+      "test_shot_references.ShotReferenceTest.test_http_endpoints_reject_incomplete_inputs_and_replay_selection_once"
+    ],
+    "errors": [
+      "test_shot_references.ShotReferenceTest.test_another_connection_conflicts_without_partial_changes",
+      "test_shot_references.ShotReferenceTest.test_clearing_range_on_frozen_plan_does_not_restore_old_bounds",
+      "test_shot_references.ShotReferenceTest.test_draft_save_is_atomic_per_slot_idempotent_and_keeps_other_inputs",
+      "test_shot_references.ShotReferenceTest.test_export_restore_keeps_selection_receipt_and_exact_history",
+      "test_shot_references.ShotReferenceTest.test_readiness_package_and_new_call_share_guard_without_generating",
+      "test_shot_references.ShotReferenceTest.test_same_exact_input_on_locked_plan_still_creates_a_new_version",
+      "test_shot_references.ShotReferenceTest.test_scene_selected_result_uses_owning_material_identity_and_counts",
+      "test_shot_references.ShotReferenceTest.test_submitted_failed_unknown_are_locked_and_change_creates_new_plan (status='submitted')",
+      "test_shot_references.ShotReferenceTest.test_submitted_failed_unknown_are_locked_and_change_creates_new_plan (status='failed')",
+      "test_shot_references.ShotReferenceTest.test_submitted_failed_unknown_are_locked_and_change_creates_new_plan (status='unknown')"
+    ]
+  },
+  "legacy_failures_preexist": true,
+  "system_commit": "6a6293bb905823a5e0ba72b16e345182f0cc524a",
+  "change": "Reuse evidence within the response after a reference-selection write; never cache before the write or across operations.",
+  "current_contract_result": "17 tests passed",
+  "legacy_suite_result": "The same 3 failures and 10 errors occur on the unchanged HEAD baseline; no new legacy failure introduced.",
+  "formal_runtime_published": false
+}
