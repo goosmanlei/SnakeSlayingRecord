@@ -1,0 +1,147 @@
+{
+  "id": "task-20261015-0003-boat-aheng-home-01",
+  "status": "completed",
+  "request_id": "f529e30e-a8ae-4456-99d6-37176c41d020",
+  "quota_id": "seed-quota-task-20261015-0003-stage13",
+  "production_submission": {
+    "call_id": "task-20261015-0003-boat-aheng-home-01",
+    "submission_sha256": "41d39b8f468fcf3a353657f08ed2df5f4a759f4f801dbabcbfa6705fd25db1c2",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "submitted_at": "2026-10-17T13:06:50.166647+00:00",
+  "endpoint": "https://openspeech.bytedance.com/api/v3/tts/create",
+  "input": {
+    "model": "seed-audio-1.0",
+    "text_prompt": "风格与演唱说明：\n制作一条完整、近收、无伴奏的角色演唱参考。阿蘅本人，清亮自然的少女声，保留儿童声腔。普通话。\n@音频1是用户准确定位的完整原曲乐句，只约束实际骨干旋律、歌词重音和落音；沿它的旋律重新表演，不另写无关旋律，不复制原曲歌手声线或器乐。@音频2只约束本人已通过的声线，不复述音色参考里的试读稿。\n清唱靠岸的完整一句，语气亲切、带一点故意逗观众的轻巧。最后“今”保持同一次连续延音后自然收声；不把它重唱，不补前面几道滩的歌词。\n目标约13秒，保留自然换气和完整尾音。时长通过自然演法安排，不机器变速、不抢字、不为了凑秒重复旋律。只演唱歌词区的原词一次，不增衬词或重复。无器乐、节拍敲击、环境声、对白或额外人声。不念标题、音频编号、说明或标点。\n\n完整歌词：\n船靠岸，灯来迎，家里人等到如今——",
+    "audio_config": {
+      "format": "wav",
+      "sample_rate": 48000,
+      "pitch_rate": 0,
+      "speech_rate": 0,
+      "loudness_rate": 0,
+      "enable_subtitle": true
+    },
+    "watermark": {},
+    "references": [
+      {
+        "file": "export/assets/525d76a4f67358ddfe448a45c03c445d3f70ef7225a22549b96595ef4422b06e.wav",
+        "sha256": "525d76a4f67358ddfe448a45c03c445d3f70ef7225a22549b96595ef4422b06e",
+        "duration_seconds": 14.8,
+        "reference_number": 1
+      },
+      {
+        "file": "export/assets/487bba0fc91a340bf53ce54660d90d142466f2b85ca111555a42fdef482852ce.wav",
+        "sha256": "487bba0fc91a340bf53ce54660d90d142466f2b85ca111555a42fdef482852ce",
+        "duration_seconds": 2.05,
+        "reference_number": 2
+      }
+    ]
+  },
+  "input_sha256": "0a1e9b3a9999f32685cfe3baad97a4e7cfbdc1992990f5c1d3aa0d234795578e",
+  "remaining_before_seconds": 713.6,
+  "reserved_seconds": 120,
+  "log_id": "2026101721065063A781C1B87BA25C981D",
+  "original_duration": 13,
+  "duration": 13,
+  "subtitle": {
+    "sentences": [
+      {
+        "end_time": 8360,
+        "start_time": 520,
+        "text": "船靠岸，灯来迎，家里人等到如今——",
+        "words": [
+          {
+            "end_time": 640,
+            "start_time": 520,
+            "text": "船"
+          },
+          {
+            "end_time": 1080,
+            "start_time": 840,
+            "text": "靠"
+          },
+          {
+            "end_time": 1440,
+            "start_time": 1240,
+            "text": "岸"
+          },
+          {
+            "end_time": 1440,
+            "start_time": 1440,
+            "text": "，"
+          },
+          {
+            "end_time": 3120,
+            "start_time": 3000,
+            "text": "灯"
+          },
+          {
+            "end_time": 3480,
+            "start_time": 3280,
+            "text": "来"
+          },
+          {
+            "end_time": 3880,
+            "start_time": 3640,
+            "text": "迎"
+          },
+          {
+            "end_time": 3880,
+            "start_time": 3880,
+            "text": "，"
+          },
+          {
+            "end_time": 5880,
+            "start_time": 5640,
+            "text": "家"
+          },
+          {
+            "end_time": 6120,
+            "start_time": 6000,
+            "text": "里"
+          },
+          {
+            "end_time": 6800,
+            "start_time": 6240,
+            "text": "人"
+          },
+          {
+            "end_time": 7200,
+            "start_time": 6880,
+            "text": "等"
+          },
+          {
+            "end_time": 7600,
+            "start_time": 7200,
+            "text": "到"
+          },
+          {
+            "end_time": 7920,
+            "start_time": 7600,
+            "text": "如"
+          },
+          {
+            "end_time": 8360,
+            "start_time": 7920,
+            "text": "今"
+          },
+          {
+            "end_time": 8360,
+            "start_time": 8360,
+            "text": "—"
+          },
+          {
+            "end_time": 8360,
+            "start_time": 8360,
+            "text": "—"
+          }
+        ]
+      }
+    ],
+    "text": "船靠岸，灯来迎，家里人等到如今——"
+  },
+  "file": "export/assets/f748cf33ae71c45a25608e1f55a87e8797a30923c17997e7a98686897da61d4a.wav",
+  "sha256": "f748cf33ae71c45a25608e1f55a87e8797a30923c17997e7a98686897da61d4a",
+  "bytes": 2496044
+}

@@ -186,10 +186,18 @@
     },
     {
       "id": "stage14-distance-and-melody-basis",
-      "status": "technical_and_recovery_verified_hearing_pending",
+      "status": "verified_and_user_heard",
       "action": "按用户定位的完整唱句制作12.58秒远声短件；8处镜头方案取消未经实测的固定音高拍速断言，歌词、动作、时段和已选附件保留。",
       "verification": "完整导出恢复500份文件，7张关键表与冻结源一致，增量预检applied=false；新声音没有推定听审通过。",
-      "receipt": "verification.json"
+      "receipt": "verification.json",
+      "followup": "用户直接回复两份比较“没问题”；祭唱远声与近声准确引用已保存，见song-use-task-20261015-0003-ritual15.json。"
+    },
+    {
+      "id": "stage15-role-recordings",
+      "status": "files_saved_hearing_pending",
+      "action": "15次Seed实际调用全部返回；2份原速教唱合件逐帧等于完整源件拼接。4首当前完整原曲方案恢复，真实角色调用和快照保留。",
+      "verification": "459份制作文件哈希、3214处当前输入与27处歌曲待选文件预算通过；完整导出已更新，新增数据未做新空实例恢复或正式发布。",
+      "receipt": "production-save15.json"
     }
   ],
   "resume_requirement": "当前run已认证并持有双仓任务锁。按本轮准确候选、原件和当前方案续做；真实Chrome已恢复，待最终正式发布后再复验。",
@@ -199,7 +207,7 @@
     "evidence_runtime": ".runtime/task-20261015-0003/chrome-stage08-candidate-fixes.json",
     "formal_publication_verified": false,
     "audio_quality_verified_by_playback": false,
-    "latest_evidence": "production/receipts/chrome-task-20261015-0003-stage14.json"
+    "latest_evidence": "production/receipts/chrome-task-20261015-0003-stage15.json"
   },
   "unknown_replacement_proposal": {
     "status": "executed_as_three_bounded_new_candidates",
@@ -208,11 +216,11 @@
     "old_unknown_records_and_reservations_retained": true
   },
   "current_checkpoint": {
-    "stage": 14,
+    "stage": 15,
     "status_counts": {
       "executor_checked": 139,
-      "user_audition_passed": 48,
-      "reference_pending": 4
+      "user_audition_passed": 49,
+      "reference_pending": 3
     },
     "google_dispatch_cap": 116,
     "google_remaining_dispatch_slots": 0,
@@ -222,12 +230,10 @@
   "audio_verification_decision": {
     "status": "actual_user_hearing_in_progress",
     "current_rule": "实际试听；模型分析和技术检查仅辅助",
-    "completed": "用户已听完 checkpoint12 的47份文件、25个人物短参考和32个环境动作短件；9段原曲位置由用户定位并保存。",
-    "remaining": "4首歌曲的角色唱段与27处用途衔接；阿蘅10秒首条演唱及《明月还乡》12.58秒远声短件均已生成，等待各自准确试听结论。",
-    "audition_url": "http://127.0.0.1:63510/song-role-pilot13.html",
+    "completed": "此前47份声音、25个人物短句、32个环境动作短件及9段原曲定位已完成；阿蘅首条角色演唱和祭唱远声又获用户直接反馈“没问题”。",
+    "remaining": "新增15个角色唱段、2个原速合件实际试听，5处尾音定位，以及剩余26处歌曲输入选择；随后正式交付与最终恢复。",
+    "audition_url": "http://127.0.0.1:65289/role-songs15.html",
     "role_files_planned": 16,
-    "role_files_generated": 1,
-    "pending_pilot_sha256": "119fb55a13baa602c5b54ef8cce2d491c0e67063ef98bcc6995d9a8b0c391947",
-    "additional_audition_url": "http://127.0.0.1:63510/ritual-distance13.html"
+    "role_files_generated": 16
   }
 }

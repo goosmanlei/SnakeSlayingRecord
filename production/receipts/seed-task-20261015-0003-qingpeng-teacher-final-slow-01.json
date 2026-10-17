@@ -1,0 +1,87 @@
+{
+  "id": "task-20261015-0003-qingpeng-teacher-final-slow-01",
+  "status": "completed",
+  "request_id": "e7d12916-1a1b-45a1-a261-9cfd512eb01a",
+  "quota_id": "seed-quota-task-20261015-0003-stage13",
+  "production_submission": {
+    "call_id": "task-20261015-0003-qingpeng-teacher-final-slow-01",
+    "submission_sha256": "beb2416cc4463658c33cf32d451422f97120f200b4447c096f4c24559f91c2b7",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "submitted_at": "2026-10-17T13:14:59.276887+00:00",
+  "endpoint": "https://openspeech.bytedance.com/api/v3/tts/create",
+  "input": {
+    "model": "seed-audio-1.0",
+    "text_prompt": "风格与演唱说明：\n制作一条完整、近收、无伴奏的角色演唱参考。邻村歌娘本人，成熟朴素的成年女声，教唱清楚但不说教。普通话。\n@音频1是用户准确定位的完整原曲乐句，只约束实际骨干旋律、歌词重音和落音；沿它的旋律重新表演，不另写无关旋律，不复制原曲歌手声线或器乐。@音频2只约束本人已通过的声线，不复述音色参考里的试读稿。\n只教最后五个字。参照原曲该乐句后半的实际旋律，归来后自然换气，认、旧、桥逐字唱清，认读ren四声；不唱明年春水暖，不念读音提示。\n目标约9秒，保留自然换气和完整尾音。时长通过自然演法安排，不机器变速、不抢字、不为了凑秒重复旋律。只演唱歌词区的原词一次，不增衬词或重复。无器乐、节拍敲击、环境声、对白或额外人声。不念标题、音频编号、说明或标点。\n\n完整歌词：\n归来认旧桥——",
+    "audio_config": {
+      "format": "wav",
+      "sample_rate": 48000,
+      "pitch_rate": 0,
+      "speech_rate": 0,
+      "loudness_rate": 0,
+      "enable_subtitle": true
+    },
+    "watermark": {},
+    "references": [
+      {
+        "file": "export/assets/24f65d8ade174649e0d156669be326c33328451b6929f4a2e4d2f9a8f36586a8.wav",
+        "sha256": "24f65d8ade174649e0d156669be326c33328451b6929f4a2e4d2f9a8f36586a8",
+        "duration_seconds": 14.0,
+        "reference_number": 1
+      },
+      {
+        "file": "export/assets/88e3d88989d37141224ba69cdc041e83ea5a74c71bc9211fdf4e80c8f38b825e.wav",
+        "sha256": "88e3d88989d37141224ba69cdc041e83ea5a74c71bc9211fdf4e80c8f38b825e",
+        "duration_seconds": 2.020896,
+        "reference_number": 2
+      }
+    ]
+  },
+  "input_sha256": "2741c79a36d1be67df7b99d4cd6b7b61437452a6e5621a64306bd2b7b0bfc417",
+  "remaining_before_seconds": 589.7158,
+  "reserved_seconds": 120,
+  "log_id": "20261017211459752B5589A87679C6ED98",
+  "original_duration": 4.95005,
+  "duration": 4.95005,
+  "subtitle": {
+    "sentences": [
+      {
+        "end_time": 4920,
+        "start_time": 0,
+        "text": "归来认旧桥",
+        "words": [
+          {
+            "end_time": 0,
+            "start_time": 0,
+            "text": "归"
+          },
+          {
+            "end_time": 40,
+            "start_time": 0,
+            "text": "来"
+          },
+          {
+            "end_time": 4840,
+            "start_time": 40,
+            "text": "认"
+          },
+          {
+            "end_time": 4880,
+            "start_time": 4840,
+            "text": "旧"
+          },
+          {
+            "end_time": 4920,
+            "start_time": 4880,
+            "text": "桥"
+          }
+        ]
+      }
+    ],
+    "text": "归来认旧桥"
+  },
+  "file": "export/assets/8980f97a8acfac0905d96dfaa65632af58cbd4b07e5c54f5d2b0fd3dd6342e36.wav",
+  "sha256": "8980f97a8acfac0905d96dfaa65632af58cbd4b07e5c54f5d2b0fd3dd6342e36",
+  "bytes": 950456
+}
