@@ -5,14 +5,13 @@
   "source_manifest": "../../material-plans/manifest.json",
   "total": 191,
   "status_counts": {
-    "executor_checked": 137,
+    "executor_checked": 139,
     "user_audition_passed": 10,
     "reference_pending": 3,
-    "hearing_unverified": 38,
-    "not_produced": 3
+    "hearing_unverified": 39
   },
   "call_counts": {
-    "completed": 240,
+    "completed": 243,
     "unknown": 5,
     "failed": 3
   },
@@ -3249,6 +3248,82 @@
         "note": "Catalog estimate is not billed cost; usage retained when returned.",
         "quoted_image_4k": 0.113,
         "reported_balance_usd": 3.86
+      }
+    },
+    {
+      "call_id": "task-20261015-0003-guard-identity-flare-01",
+      "status": "completed",
+      "cost": {
+        "account": "Higgsfield OpenAPI prepaid balance; no recharge",
+        "actual": "UNKNOWN",
+        "budget_snapshot": {
+          "actual_balance_verified": true,
+          "actual_charge": "UNKNOWN",
+          "authorization": "unknown-replacement-authorization12.json",
+          "auto_top_up_amount_usd": 25.0,
+          "auto_top_up_enabled": true,
+          "auto_top_up_threshold_usd": 3.13,
+          "balance_anchor_dispatch_count": 25,
+          "balance_source": "Daily Chrome https://open.higgsfield.ai/billing visible balance and Auto top-up dialog; read-only, no settings saved.",
+          "balance_verified_at": "2026-10-17T02:32:00.868147+00:00",
+          "created_at": "2026-10-16T18:30:07.402083+00:00",
+          "generation_model": "marketing-studio/image/flare",
+          "max_dispatches": 27,
+          "next_batch_limit": 2,
+          "no_recharge": true,
+          "planning_note": "Current-turn daily Chrome shows6.44USD; auto top-up remains On at3.13USD, read-only. One new guard and one porter candidate; each1USD reserved, projected4.44USD above3.63 stop line. Old UNKNOWN retained; no recharge or settings changes.",
+          "reserve_per_unknown_usd": 1.0,
+          "source": "User said Higgsfield OpenAPI remaining8.65 USD; later corrected only Nano Banana availability, not the balance.",
+          "threshold_buffer_usd": 0.5,
+          "user_reported_prepaid_usd": 8.65,
+          "verified_balance_usd": 6.44
+        },
+        "currency": "USD",
+        "note": "Authenticated estimate returns token rates, not a fixed charge. Dispatch cap and observed auto-top-up threshold checked before submission.",
+        "planning_reserve": 1.0
+      }
+    },
+    {
+      "call_id": "task-20261015-0003-guard-voice-02",
+      "status": "completed",
+      "cost": {
+        "actual_seconds": 11.3,
+        "quota_id": "seed-quota-task-20261015-0003-stage12",
+        "source": "provider original_duration; monetary charge UNKNOWN",
+        "unit": "seconds"
+      }
+    },
+    {
+      "call_id": "task-20261015-0003-porter-identity-flare-01",
+      "status": "completed",
+      "cost": {
+        "account": "Higgsfield OpenAPI prepaid balance; no recharge",
+        "actual": "UNKNOWN",
+        "budget_snapshot": {
+          "actual_balance_verified": true,
+          "actual_charge": "UNKNOWN",
+          "authorization": "unknown-replacement-authorization12.json",
+          "auto_top_up_amount_usd": 25.0,
+          "auto_top_up_enabled": true,
+          "auto_top_up_threshold_usd": 3.13,
+          "balance_anchor_dispatch_count": 25,
+          "balance_source": "Daily Chrome https://open.higgsfield.ai/billing visible balance and Auto top-up dialog; read-only, no settings saved.",
+          "balance_verified_at": "2026-10-17T02:32:00.868147+00:00",
+          "created_at": "2026-10-16T18:30:07.402083+00:00",
+          "generation_model": "marketing-studio/image/flare",
+          "max_dispatches": 27,
+          "next_batch_limit": 2,
+          "no_recharge": true,
+          "planning_note": "Current-turn daily Chrome shows6.44USD; auto top-up remains On at3.13USD, read-only. One new guard and one porter candidate; each1USD reserved, projected4.44USD above3.63 stop line. Old UNKNOWN retained; no recharge or settings changes.",
+          "reserve_per_unknown_usd": 1.0,
+          "source": "User said Higgsfield OpenAPI remaining8.65 USD; later corrected only Nano Banana availability, not the balance.",
+          "threshold_buffer_usd": 0.5,
+          "user_reported_prepaid_usd": 8.65,
+          "verified_balance_usd": 6.44
+        },
+        "currency": "USD",
+        "note": "Authenticated estimate returns token rates, not a fixed charge. Dispatch cap and observed auto-top-up threshold checked before submission.",
+        "planning_reserve": 1.0
       }
     }
   ],
@@ -7641,7 +7716,7 @@
     {
       "code": "M325",
       "requirement_id": "new26-guard-identity",
-      "content_sha256": "a3f37d3711ff6bee0b79e114d892335483ebcaa40ad960b29a401f294e021969",
+      "content_sha256": "be1a4046864740955f70339d13c0286c98ee2c870c61d228f908bd1c4174b745",
       "title": "增调守庙差役 · 基础形象",
       "category": "character-image",
       "scope_kind": "ENTITY",
@@ -7651,22 +7726,45 @@
       },
       "route": {
         "method": "generate",
-        "model": "gemini-nano-banana-2.1",
+        "model": "marketing-studio/image/flare",
         "parameters": {
           "aspect_ratio": "16:9",
-          "image_size": "4K",
-          "mime_type": "image/jpeg",
-          "type": "image"
+          "enhance_prompt": false,
+          "moderation": "auto",
+          "quality": "high",
+          "resolution": "4k"
         }
       },
-      "status": "not_produced",
-      "candidates": [],
+      "status": "executor_checked",
+      "candidates": [
+        {
+          "candidate_id": "candidate-7223a97c6362876bc03c5fa67944a2c6b5ba460a80d036bef836e5edee96c713",
+          "number": 1,
+          "asset": {
+            "object_id": "asset-task-20261015-0003-guard-identity-flare-01",
+            "revision_id": "74f53cb7ab45ca4199e46b9e1162687fa6e5c3850a81694d7ed247be1e154292"
+          },
+          "call_id": "task-20261015-0003-guard-identity-flare-01",
+          "components": [
+            {
+              "bytes": 7867865,
+              "file": "44b0d592bda7cb13469c9a4331ab64f2c532a6c52327de6834f64eb12e717618.png",
+              "height": 2160,
+              "id": "original",
+              "mime": "image/png",
+              "role": "original",
+              "sha256": "44b0d592bda7cb13469c9a4331ab64f2c532a6c52327de6834f64eb12e717618",
+              "width": 3840
+            }
+          ],
+          "quality_status": "executor_checked",
+          "quality_findings": "已实际查看原生3840×2160 PNG：正面、侧面与头部近图的宽颧、圆下巴、浓眉、无须黑发和低黑软帽保持同一身份；蓝灰交领窄袖衣、黑腰束、灰裤黑靴一致。体型结实，空手，双手与鞋尖完整，未增钥串或后院姿态；简洁二维线条与灰暖底色可作本轮身份母版。"
+        }
+      ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "尚无本轮原件及质量检查。"
-      ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
+      "gaps": [],
+      "resume_when": "候选1已通过对应用途实际看图；准确原件已选入11处当前输入。"
     },
     {
       "code": "M366",
@@ -7694,14 +7792,41 @@
           "watermark": {}
         }
       },
-      "status": "not_produced",
-      "candidates": [],
+      "status": "hearing_unverified",
+      "candidates": [
+        {
+          "candidate_id": "candidate-d25a1d16b781f84791985e65094bb1aa427e253e0117c81bb08b24c65045e45a",
+          "number": 1,
+          "asset": {
+            "object_id": "asset-task-20261015-0003-guard-voice-02",
+            "revision_id": "7ef876c9a0520aaefd646c160ca40fd693f8b8a98593bcdb31b4cda9743d8852"
+          },
+          "call_id": "task-20261015-0003-guard-voice-02",
+          "components": [
+            {
+              "bytes": 2169644,
+              "channels": 2,
+              "duration_seconds": 11.3,
+              "file": "5b504c32d8719c4e9f5ebb10bd3cd23b5e0e4e26bb5f3c6fd1d949dc21e34986.wav",
+              "has_audio": true,
+              "id": "original",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "5b504c32d8719c4e9f5ebb10bd3cd23b5e0e4e26bb5f3c6fd1d949dc21e34986"
+            }
+          ],
+          "quality_status": "hearing_unverified",
+          "quality_findings": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。技术探测和字幕不替代声音判断。"
+        }
+      ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "尚无本轮原件及质量检查。"
+        "最新候选已有本轮原生音频和技术检查，尚未实际完整听审。",
+        "旧候选的失败或返修结论仍保留；新候选不继承其通过或失败。"
       ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
+      "resume_when": "完成最新准确候选的实际听审，再按方案制作、检查和选择派生文件。"
     },
     {
       "code": "M358",
@@ -12229,7 +12354,7 @@
     {
       "code": "M007",
       "requirement_id": "new26-porter-identity",
-      "content_sha256": "4003f42b49932394eaa9fee36d04d7f0431589805c6c224597605407362ab52a",
+      "content_sha256": "b40cc379969bd7effd506397a6d661bd343b5cfe0056c50632dd180fd74e6116",
       "title": "挑柴老汉 · 基础形象",
       "category": "character-image",
       "scope_kind": "ENTITY",
@@ -12239,22 +12364,45 @@
       },
       "route": {
         "method": "generate",
-        "model": "gemini-nano-banana-2.1",
+        "model": "marketing-studio/image/flare",
         "parameters": {
           "aspect_ratio": "16:9",
-          "image_size": "4K",
-          "mime_type": "image/jpeg",
-          "type": "image"
+          "enhance_prompt": false,
+          "moderation": "auto",
+          "quality": "high",
+          "resolution": "4k"
         }
       },
-      "status": "not_produced",
-      "candidates": [],
+      "status": "executor_checked",
+      "candidates": [
+        {
+          "candidate_id": "candidate-590145abeae28264a940e42c9f5d37416f3e85e289fff63cfcea993202fe3e35",
+          "number": 1,
+          "asset": {
+            "object_id": "asset-task-20261015-0003-porter-identity-flare-01",
+            "revision_id": "df1de71243efbd9e62ead605243985b04255f201cb6799d7aa7149f428473335"
+          },
+          "call_id": "task-20261015-0003-porter-identity-flare-01",
+          "components": [
+            {
+              "bytes": 8615349,
+              "file": "f79df51b3e057ecc7f4a88f484ac11143958880761acec8c73d498d8181e8556.png",
+              "height": 2160,
+              "id": "original",
+              "mime": "image/png",
+              "role": "original",
+              "sha256": "f79df51b3e057ecc7f4a88f484ac11143958880761acec8c73d498d8181e8556",
+              "width": 3840
+            }
+          ],
+          "quality_status": "executor_checked",
+          "quality_findings": "已实际查看原生3840×2160 PNG：老汉的粗眉、稀疏灰发小髻、白灰短须、圆颧在正侧背视与头部近图之间一致；土黄交领短褂、灰褐裤、草鞋及略弯腰背保持稳定。细长扁担独立竖列，两束柴落地，各有清楚绳套；人物手脚和杆两端完整，没有悬浮柴束或现代服饰。可用于本轮角色身份与装束参考，分列物件不冒充负重动作演示。"
+        }
+      ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "尚无本轮原件及质量检查。"
-      ],
-      "resume_when": "沿当前准确方案执行；有依赖时先完成并选择适用的新原件。"
+      "gaps": [],
+      "resume_when": "候选1已通过对应用途实际看图；准确原件已选入3处当前输入。"
     },
     {
       "code": "M008",
@@ -16586,5 +16734,5 @@
       "resume_when": "沿通过的完整母版制作所需派生文件；不继承母版的剪辑头尾或接缝认可。"
     }
   ],
-  "updated_at": "2026-10-16T23:23:41.109109+00:00"
+  "updated_at": "2026-10-17T02:53:23.806359+00:00"
 }
