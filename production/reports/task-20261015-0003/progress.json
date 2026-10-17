@@ -6,12 +6,11 @@
   "total": 191,
   "status_counts": {
     "executor_checked": 139,
-    "user_audition_passed": 10,
-    "reference_pending": 3,
-    "hearing_unverified": 39
+    "user_audition_passed": 48,
+    "reference_pending": 4
   },
   "call_counts": {
-    "completed": 243,
+    "completed": 244,
     "unknown": 5,
     "failed": 3
   },
@@ -3325,6 +3324,16 @@
         "note": "Authenticated estimate returns token rates, not a fixed charge. Dispatch cap and observed auto-top-up threshold checked before submission.",
         "planning_reserve": 1.0
       }
+    },
+    {
+      "call_id": "task-20261015-0003-boat-aheng-opening-01",
+      "status": "completed",
+      "cost": {
+        "actual_seconds": 10,
+        "quota_id": "seed-quota-task-20261015-0003-stage13",
+        "source": "provider original_duration; monetary charge UNKNOWN",
+        "unit": "seconds"
+      }
     }
   ],
   "items": [
@@ -3893,6 +3902,18 @@
               "role": "original",
               "sample_rate": 48000,
               "sha256": "1601cc67b732a6104ae085cabde85c1ffe1480900b23a91a51adfaadbb3e450c"
+            },
+            {
+              "bytes": 393644,
+              "channels": 2,
+              "duration_seconds": 2.05,
+              "file": "487bba0fc91a340bf53ce54660d90d142466f2b85ca111555a42fdef482852ce.wav",
+              "has_audio": true,
+              "id": "voice-reference-channel",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "487bba0fc91a340bf53ce54660d90d142466f2b85ca111555a42fdef482852ce"
             }
           ],
           "quality_status": "user_audition_passed",
@@ -4138,7 +4159,7 @@
           "watermark": {}
         }
       },
-      "status": "reference_pending",
+      "status": "user_audition_passed",
       "candidates": [
         {
           "candidate_id": "candidate-ce11629f9ecec96e6e66a0dba19d555edd5624679b0d27d0ff0cb1eacf580fe7",
@@ -4210,16 +4231,14 @@
               "sha256": "6deef70a35d4d5021b4cac8eb728df42a53d832e3169d5a01cf6c797553be5ab"
             }
           ],
-          "quality_status": "full_audition_passed",
-          "quality_findings": "用户实际试听完整母版并反馈：都符合，完整自然。本条仅确认该完整原件；独立短参考或接续文件尚待制作与检查。执行者没有听到音频。"
+          "quality_status": "user_audition_passed",
+          "quality_findings": "用户已实际试听此页列出的准确文件并反馈“我已经完成视听，没有问题，请你继续吧”。完整母版此前已通过，本次另确认列出的独立短件及循环试听文件。执行者未实际听到音频。"
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "用户已实际试听完整母版并通过；独立短参考或接续文件仍需制作、检查和准确选择。"
-      ],
-      "resume_when": "沿通过的完整母版制作所需派生文件；不继承母版的剪辑头尾或接缝认可。"
+      "gaps": [],
+      "resume_when": "用户实际试听通过完整环境母版与循环接续；执行者未听到声音。准确文件已选入1处当前生成输入；没有当前输入的文件保留供对应后期用途。"
     },
     {
       "code": "M291",
@@ -4699,7 +4718,7 @@
     {
       "code": "M015",
       "requirement_id": "new26-boat-song-singing",
-      "content_sha256": "657d45d1432a4da385b7b250c28c13d0f3ecf11a23506645ad4f7cf7e8cd1c65",
+      "content_sha256": "13cc2244419dda823d4184890d47d991763b7366e9576174a1619cf843c6d012",
       "title": "三道滩 · 完整原曲",
       "category": "song",
       "scope_kind": "ENTITY",
@@ -4714,7 +4733,7 @@
           "store": false
         }
       },
-      "status": "hearing_unverified",
+      "status": "reference_pending",
       "candidates": [
         {
           "candidate_id": "candidate-aaa3fca1c8eacf021377b80115a2bd5062cb9b5cf35223f5ad5e00c99f1e2914",
@@ -4736,8 +4755,95 @@
               "role": "original",
               "sample_rate": 44100,
               "sha256": "5462ff4c9e367fc7a191e0df80cdc2ce6af36ee992b50d1f50091e7649d9c5d1"
+            },
+            {
+              "bytes": 1094478,
+              "channels": 2,
+              "duration_seconds": 5.7,
+              "file": "6f562043f09a4c31707e95d062f0f236e0ac68984af41649799e180487677ab0.wav",
+              "has_audio": true,
+              "id": "melody-boat-opening",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "6f562043f09a4c31707e95d062f0f236e0ac68984af41649799e180487677ab0"
+            },
+            {
+              "bytes": 2841678,
+              "channels": 2,
+              "duration_seconds": 14.8,
+              "file": "525d76a4f67358ddfe448a45c03c445d3f70ef7225a22549b96595ef4422b06e.wav",
+              "has_audio": true,
+              "id": "melody-boat-home",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "525d76a4f67358ddfe448a45c03c445d3f70ef7225a22549b96595ef4422b06e"
             }
-          ]
+          ],
+          "quality_status": "full_audition_passed",
+          "quality_findings": "用户已实际试听此页列出的准确文件并反馈“我已经完成视听，没有问题，请你继续吧”。本次确认完整母版；尚未制作或列入此次试听的独立派生文件不继承听审结论。执行者未实际听到音频。"
+        },
+        {
+          "candidate_id": "candidate-9e2c58ff0be1404d1b5198636693eff917335f70fa4a970a9cb68eb2912a2963",
+          "number": 2,
+          "asset": {
+            "object_id": "asset-task-20261015-0003-boat-aheng-opening-01",
+            "revision_id": "9a7a64e4bd5b21603958d5fba67bdbc20ad9f78e0d971975cfd3a132a0330383"
+          },
+          "call_id": "task-20261015-0003-boat-aheng-opening-01",
+          "components": [
+            {
+              "bytes": 4263037,
+              "channels": 2,
+              "duration_seconds": 177.371375,
+              "file": "5462ff4c9e367fc7a191e0df80cdc2ce6af36ee992b50d1f50091e7649d9c5d1.mp3",
+              "has_audio": true,
+              "id": "original",
+              "mime": "audio/mpeg",
+              "role": "original",
+              "sample_rate": 44100,
+              "sha256": "5462ff4c9e367fc7a191e0df80cdc2ce6af36ee992b50d1f50091e7649d9c5d1"
+            },
+            {
+              "bytes": 1094478,
+              "channels": 2,
+              "duration_seconds": 5.7,
+              "file": "6f562043f09a4c31707e95d062f0f236e0ac68984af41649799e180487677ab0.wav",
+              "has_audio": true,
+              "id": "melody-boat-opening",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "6f562043f09a4c31707e95d062f0f236e0ac68984af41649799e180487677ab0"
+            },
+            {
+              "bytes": 2841678,
+              "channels": 2,
+              "duration_seconds": 14.8,
+              "file": "525d76a4f67358ddfe448a45c03c445d3f70ef7225a22549b96595ef4422b06e.wav",
+              "has_audio": true,
+              "id": "melody-boat-home",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "525d76a4f67358ddfe448a45c03c445d3f70ef7225a22549b96595ef4422b06e"
+            },
+            {
+              "bytes": 1920044,
+              "channels": 2,
+              "duration_seconds": 10.0,
+              "file": "119fb55a13baa602c5b54ef8cce2d491c0e67063ef98bcc6995d9a8b0c391947.wav",
+              "has_audio": true,
+              "id": "boat-aheng-opening",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "119fb55a13baa602c5b54ef8cce2d491c0e67063ef98bcc6995d9a8b0c391947"
+            }
+          ],
+          "quality_status": "derived_hearing_unverified",
+          "quality_findings": "本次Seed Audio只生成指定角色唱段；候选同时复用已通过的完整原曲与旋律引用件，二者不是本次重新生成。新唱段已核原生WAV、实际时长和哈希，仍待用户比较旋律、声线、原词及头尾。"
         }
       ],
       "selected_upstream": [
@@ -4745,10 +4851,9 @@
       ],
       "waiting_for_new_originals": [],
       "gaps": [
-        "已有本轮原生音频和技术检查，尚未实际完整听审。",
-        "所需短参考或接续文件尚待完整母版听审后制作和验证。"
+        "用户已实际试听完整母版并通过；独立短参考或接续文件仍需制作、检查和准确选择。"
       ],
-      "resume_when": "完成实际听审并记录检查者及适用范围，再制作、检查和选择准确完整派生文件。"
+      "resume_when": "沿通过的完整母版制作所需派生文件；不继承母版的剪辑头尾或接缝认可。"
     },
     {
       "code": "M165",
@@ -4828,7 +4933,7 @@
           "watermark": {}
         }
       },
-      "status": "hearing_unverified",
+      "status": "user_audition_passed",
       "candidates": [
         {
           "candidate_id": "candidate-051812e075ccb8791a1d41d4fecc958d3cb4656b114f20ba322b13e22bd96841",
@@ -4850,19 +4955,40 @@
               "role": "original",
               "sample_rate": 48000,
               "sha256": "6e99e4d1692f9b657adb315e9ddd95ed2c5df7a18db739d0d9ddd9fe26012e6b"
+            },
+            {
+              "bytes": 328364,
+              "channels": 2,
+              "duration_seconds": 1.71,
+              "file": "cc1031238eab824ce0e25543e87437b840818a8a53cefb7fc71f10644f9fe712.wav",
+              "has_audio": true,
+              "id": "voice-reference",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "cc1031238eab824ce0e25543e87437b840818a8a53cefb7fc71f10644f9fe712"
+            },
+            {
+              "bytes": 393644,
+              "channels": 2,
+              "duration_seconds": 2.05,
+              "file": "dc83e4ec8852a8a57cf323bd8290a3c598b9b0cd43b20db2a4c7759a3dd1b879.wav",
+              "has_audio": true,
+              "id": "voice-reference-channel",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "dc83e4ec8852a8a57cf323bd8290a3c598b9b0cd43b20db2a4c7759a3dd1b879"
             }
           ],
-          "quality_status": "hearing_unverified",
-          "quality_findings": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。字幕只用于辅助核词，不替代声音判断。"
+          "quality_status": "user_audition_passed",
+          "quality_findings": "完整母版此前已获用户试听确认；用户又实际试听本页的25个准确独立短句，并反馈“都完整，头尾自然”。本候选只继承列出的准确文件结论。执行者未实际听到音频。"
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "最新候选已有本轮原生音频和技术检查，尚未实际完整听审。",
-        "旧候选的失败或返修结论仍保留；新候选不继承其通过或失败。"
-      ],
-      "resume_when": "完成最新准确候选的实际听审，再按方案制作、检查和选择派生文件。"
+      "gaps": [],
+      "resume_when": "用户实际试听通过完整试读及独立短参考；执行者未听到声音。准确文件已选入2处当前生成输入；没有当前输入的文件保留供对应后期用途。"
     },
     {
       "code": "M012",
@@ -5431,7 +5557,7 @@
           "watermark": {}
         }
       },
-      "status": "hearing_unverified",
+      "status": "user_audition_passed",
       "candidates": [
         {
           "candidate_id": "candidate-4cafaddf5e291d8f6ba537edf8e9c0fce2922d4f6b595ee5be1b4dd20726096e",
@@ -5453,19 +5579,40 @@
               "role": "original",
               "sample_rate": 48000,
               "sha256": "d276c43c35cbe26fe776c285d0a748d99a4ba5b10309b9b54cf939458f23ca22"
+            },
+            {
+              "bytes": 351404,
+              "channels": 2,
+              "duration_seconds": 1.83,
+              "file": "57a4ec1fd60914c97fd1534ed7a8c9373413e321c6e39533c0c06954fbfa4436.wav",
+              "has_audio": true,
+              "id": "voice-reference",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "57a4ec1fd60914c97fd1534ed7a8c9373413e321c6e39533c0c06954fbfa4436"
+            },
+            {
+              "bytes": 393644,
+              "channels": 2,
+              "duration_seconds": 2.05,
+              "file": "d1509ccd4acfb2ac583ad27f31748dc17106ceb532e8a3a4a57ec785c87a0a6e.wav",
+              "has_audio": true,
+              "id": "voice-reference-channel",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "d1509ccd4acfb2ac583ad27f31748dc17106ceb532e8a3a4a57ec785c87a0a6e"
             }
           ],
-          "quality_status": "hearing_unverified",
-          "quality_findings": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。字幕只用于辅助核词，不替代声音判断。"
+          "quality_status": "user_audition_passed",
+          "quality_findings": "完整母版此前已获用户试听确认；用户又实际试听本页的25个准确独立短句，并反馈“都完整，头尾自然”。本候选只继承列出的准确文件结论。执行者未实际听到音频。"
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "最新候选已有本轮原生音频和技术检查，尚未实际完整听审。",
-        "旧候选的失败或返修结论仍保留；新候选不继承其通过或失败。"
-      ],
-      "resume_when": "完成最新准确候选的实际听审，再按方案制作、检查和选择派生文件。"
+      "gaps": [],
+      "resume_when": "用户实际试听通过完整试读及独立短参考；执行者未听到声音。准确文件已选入22处当前生成输入；没有当前输入的文件保留供对应后期用途。"
     },
     {
       "code": "M122",
@@ -5892,7 +6039,7 @@
           "watermark": {}
         }
       },
-      "status": "hearing_unverified",
+      "status": "user_audition_passed",
       "candidates": [
         {
           "candidate_id": "candidate-9b1e96cf67584b07b6dfbf9269ba4d92cf97110c143e1c108b1c1e31c91d6c3d",
@@ -5914,19 +6061,40 @@
               "role": "original",
               "sample_rate": 48000,
               "sha256": "c85f3018e9a02932fbef5c4fdc5ced28c8a00fdd517d4c47360847ec9710d541"
+            },
+            {
+              "bytes": 359084,
+              "channels": 2,
+              "duration_seconds": 1.87,
+              "file": "940e37c5e405e53d5b2d6daea75765098cf6e119a426992d457b4640d16cf221.wav",
+              "has_audio": true,
+              "id": "voice-reference",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "940e37c5e405e53d5b2d6daea75765098cf6e119a426992d457b4640d16cf221"
+            },
+            {
+              "bytes": 393644,
+              "channels": 2,
+              "duration_seconds": 2.05,
+              "file": "19b8777311382eda9f25c35ee8b588939cb983fc75152448ade1c08fee237560.wav",
+              "has_audio": true,
+              "id": "voice-reference-channel",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "19b8777311382eda9f25c35ee8b588939cb983fc75152448ade1c08fee237560"
             }
           ],
-          "quality_status": "hearing_unverified",
-          "quality_findings": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。字幕只用于辅助核词，不替代声音判断。"
+          "quality_status": "user_audition_passed",
+          "quality_findings": "完整母版此前已获用户试听确认；用户又实际试听本页的25个准确独立短句，并反馈“都完整，头尾自然”。本候选只继承列出的准确文件结论。执行者未实际听到音频。"
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "最新候选已有本轮原生音频和技术检查，尚未实际完整听审。",
-        "旧候选的失败或返修结论仍保留；新候选不继承其通过或失败。"
-      ],
-      "resume_when": "完成最新准确候选的实际听审，再按方案制作、检查和选择派生文件。"
+      "gaps": [],
+      "resume_when": "用户实际试听通过完整试读及独立短参考；执行者未听到声音。准确文件已选入15处当前生成输入；没有当前输入的文件保留供对应后期用途。"
     },
     {
       "code": "M171",
@@ -6030,7 +6198,7 @@
           "watermark": {}
         }
       },
-      "status": "hearing_unverified",
+      "status": "user_audition_passed",
       "candidates": [
         {
           "candidate_id": "candidate-84becaee7ff446376d81e8a71d2ef1bccbb06b129dbef80b2e08d8b67d1f4ce9",
@@ -6077,19 +6245,76 @@
               "role": "original",
               "sample_rate": 48000,
               "sha256": "4b27c3da2a20d8934bad494f89d4161bf1a193e63f1339ec6534d7544a9288f5"
+            },
+            {
+              "bytes": 1152044,
+              "channels": 2,
+              "duration_seconds": 6.0,
+              "file": "7f3ad9b900ed0914999a14ec00b0d635d950090c63ec3bf5612e4a1d7a37cda2.wav",
+              "has_audio": true,
+              "id": "ambience-bed",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "7f3ad9b900ed0914999a14ec00b0d635d950090c63ec3bf5612e4a1d7a37cda2"
+            },
+            {
+              "bytes": 2256044,
+              "channels": 2,
+              "duration_seconds": 11.75,
+              "file": "598988e6baa22a94c25b03238eace88458c228150ad05248e17629746e8abc01.wav",
+              "has_audio": true,
+              "id": "ambience-loop-check",
+              "mime": "audio/wav",
+              "role": "preview",
+              "sample_rate": 48000,
+              "sha256": "598988e6baa22a94c25b03238eace88458c228150ad05248e17629746e8abc01"
+            },
+            {
+              "bytes": 652844,
+              "channels": 2,
+              "duration_seconds": 3.4,
+              "file": "8c5b62f1532cea143e7133c68dbd32f95851fc35cc52bda935383d60bc4bb2a4.wav",
+              "has_audio": true,
+              "id": "brush-event",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "8c5b62f1532cea143e7133c68dbd32f95851fc35cc52bda935383d60bc4bb2a4"
+            },
+            {
+              "bytes": 998444,
+              "channels": 2,
+              "duration_seconds": 5.2,
+              "file": "7ea6d8f70c96c9f33d0b5bb696c3cb9fb896b457aadf7beefe7f2c373e258645.wav",
+              "has_audio": true,
+              "id": "paper-event",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "7ea6d8f70c96c9f33d0b5bb696c3cb9fb896b457aadf7beefe7f2c373e258645"
+            },
+            {
+              "bytes": 1056044,
+              "channels": 2,
+              "duration_seconds": 5.5,
+              "file": "5814f9f795026e6b458e2cd6e3ee5e168217004052008bac024ac1f510582da5.wav",
+              "has_audio": true,
+              "id": "corridor-steps-event",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "5814f9f795026e6b458e2cd6e3ee5e168217004052008bac024ac1f510582da5"
             }
           ],
-          "quality_status": "hearing_unverified",
-          "quality_findings": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。技术探测和字幕不替代声音判断。"
+          "quality_status": "user_audition_passed",
+          "quality_findings": "完整母版此前已获用户试听确认；用户又实际试听本页的32个准确环境与动作短件，并反馈“都对应，完整自然”。本候选只继承列出的准确文件结论。执行者未实际听到音频。"
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "最新候选已有本轮原生音频和技术检查，尚未实际完整听审。",
-        "旧候选的失败或返修结论仍保留；新候选不继承其通过或失败。"
-      ],
-      "resume_when": "完成最新准确候选的实际听审，再按方案制作、检查和选择派生文件。"
+      "gaps": [],
+      "resume_when": "用户实际试听通过完整环境母版与循环接续；执行者未听到声音。准确文件已选入0处当前生成输入；没有当前输入的文件保留供对应后期用途。"
     },
     {
       "code": "M519",
@@ -6769,7 +6994,7 @@
           "watermark": {}
         }
       },
-      "status": "hearing_unverified",
+      "status": "user_audition_passed",
       "candidates": [
         {
           "candidate_id": "candidate-10fa9ae91d44853a33dcfd1b690345ac219fd6b63f183fed37dafbdf0d9c89ca",
@@ -6791,19 +7016,76 @@
               "role": "original",
               "sample_rate": 48000,
               "sha256": "2241d0c3af362cbd5789ece0c98436c4c4ff43429af92f8bac1d78593806d849"
+            },
+            {
+              "bytes": 969644,
+              "channels": 2,
+              "duration_seconds": 5.05,
+              "file": "21531f19d29a041142720ffb15539f09b534e1e460d5b0b370d2503855d07d2f.wav",
+              "has_audio": true,
+              "id": "gate-lift-event",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "21531f19d29a041142720ffb15539f09b534e1e460d5b0b370d2503855d07d2f"
+            },
+            {
+              "bytes": 412844,
+              "channels": 2,
+              "duration_seconds": 2.15,
+              "file": "a8420d815922bae986c363ccbf50eb34cd2be5eeaddab5ff1123f3d9ff7b2bcf.wav",
+              "has_audio": true,
+              "id": "peg-event",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "a8420d815922bae986c363ccbf50eb34cd2be5eeaddab5ff1123f3d9ff7b2bcf"
+            },
+            {
+              "bytes": 489644,
+              "channels": 2,
+              "duration_seconds": 2.55,
+              "file": "f32a9350c7bb083f9efc7c38f3785da5072cd7ecbbd13fc1820b45809a5fc3ad.wav",
+              "has_audio": true,
+              "id": "bar-withdraw-event",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "f32a9350c7bb083f9efc7c38f3785da5072cd7ecbbd13fc1820b45809a5fc3ad"
+            },
+            {
+              "bytes": 614444,
+              "channels": 2,
+              "duration_seconds": 3.2,
+              "file": "e60b00b80b52b4a2099507044818e33396d58b9e045cfc628adceb0b071dba11.wav",
+              "has_audio": true,
+              "id": "door-knock-event",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "e60b00b80b52b4a2099507044818e33396d58b9e045cfc628adceb0b071dba11"
+            },
+            {
+              "bytes": 1315244,
+              "channels": 2,
+              "duration_seconds": 6.85,
+              "file": "248d69e4900b7ef81b418085e01d57540ae6b7a8e49e47d3cbf014fac1c95374.wav",
+              "has_audio": true,
+              "id": "gate-fall-event",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "248d69e4900b7ef81b418085e01d57540ae6b7a8e49e47d3cbf014fac1c95374"
             }
           ],
-          "quality_status": "hearing_unverified",
-          "quality_findings": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。技术探测和字幕不替代声音判断。"
+          "quality_status": "user_audition_passed",
+          "quality_findings": "完整母版此前已获用户试听确认；用户又实际试听本页的32个准确环境与动作短件，并反馈“都对应，完整自然”。本候选只继承列出的准确文件结论。执行者未实际听到音频。"
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "最新候选已有本轮原生音频和技术检查，尚未实际完整听审。",
-        "旧候选的失败或返修结论仍保留；新候选不继承其通过或失败。"
-      ],
-      "resume_when": "完成最新准确候选的实际听审，再按方案制作、检查和选择派生文件。"
+      "gaps": [],
+      "resume_when": "用户实际试听通过完整环境母版与循环接续；执行者未听到声音。准确文件已选入15处当前生成输入；没有当前输入的文件保留供对应后期用途。"
     },
     {
       "code": "M164",
@@ -6959,7 +7241,7 @@
           "watermark": {}
         }
       },
-      "status": "hearing_unverified",
+      "status": "user_audition_passed",
       "candidates": [
         {
           "candidate_id": "candidate-6219ef04ae51562ea0061c54b0e906785833c563a3f0ff5b4f013a68254c98ae",
@@ -6981,19 +7263,40 @@
               "role": "original",
               "sample_rate": 48000,
               "sha256": "9ecedeb345d2b11debf618a31fe7d1a9aa1bbbf0ffcd5a9fec1a31672ba12af4"
+            },
+            {
+              "bytes": 336044,
+              "channels": 2,
+              "duration_seconds": 1.75,
+              "file": "d8d150dc41462bde7da34285e618038989322b7c40c6aa9de29d0b4b49d9d02b.wav",
+              "has_audio": true,
+              "id": "voice-reference",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "d8d150dc41462bde7da34285e618038989322b7c40c6aa9de29d0b4b49d9d02b"
+            },
+            {
+              "bytes": 393644,
+              "channels": 2,
+              "duration_seconds": 2.05,
+              "file": "8e684fbef5dfe18520783d67277d18b2b0affa9a5690a3397fd08ce8cf951baa.wav",
+              "has_audio": true,
+              "id": "voice-reference-channel",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "8e684fbef5dfe18520783d67277d18b2b0affa9a5690a3397fd08ce8cf951baa"
             }
           ],
-          "quality_status": "hearing_unverified",
-          "quality_findings": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。字幕只用于辅助核词，不替代声音判断。"
+          "quality_status": "user_audition_passed",
+          "quality_findings": "完整母版此前已获用户试听确认；用户又实际试听本页的25个准确独立短句，并反馈“都完整，头尾自然”。本候选只继承列出的准确文件结论。执行者未实际听到音频。"
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "最新候选已有本轮原生音频和技术检查，尚未实际完整听审。",
-        "旧候选的失败或返修结论仍保留；新候选不继承其通过或失败。"
-      ],
-      "resume_when": "完成最新准确候选的实际听审，再按方案制作、检查和选择派生文件。"
+      "gaps": [],
+      "resume_when": "用户实际试听通过完整试读及独立短参考；执行者未听到声音。准确文件已选入1处当前生成输入；没有当前输入的文件保留供对应后期用途。"
     },
     {
       "code": "M423",
@@ -7125,7 +7428,7 @@
           "watermark": {}
         }
       },
-      "status": "hearing_unverified",
+      "status": "user_audition_passed",
       "candidates": [
         {
           "candidate_id": "candidate-bfbe4ecfe4ba93fc4ec92afba444912dfee2ce65103c5894e01fdeece0239666",
@@ -7147,19 +7450,40 @@
               "role": "original",
               "sample_rate": 48000,
               "sha256": "8cb04ca372d171625e24d94f4d20169f2c2811f78be00d40178e8ab50c58e003"
+            },
+            {
+              "bytes": 343724,
+              "channels": 2,
+              "duration_seconds": 1.79,
+              "file": "a22b2d62bc1829be4c25518a0063105a1a66f62a212e58f0c331e9b4c6f94ee6.wav",
+              "has_audio": true,
+              "id": "voice-reference",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "a22b2d62bc1829be4c25518a0063105a1a66f62a212e58f0c331e9b4c6f94ee6"
+            },
+            {
+              "bytes": 393644,
+              "channels": 2,
+              "duration_seconds": 2.05,
+              "file": "30b6dbf3e9ddecd572366681e9b839fd1a603a69b336bd5cb665cdef172ab4f3.wav",
+              "has_audio": true,
+              "id": "voice-reference-channel",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "30b6dbf3e9ddecd572366681e9b839fd1a603a69b336bd5cb665cdef172ab4f3"
             }
           ],
-          "quality_status": "hearing_unverified",
-          "quality_findings": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。字幕只用于辅助核词，不替代声音判断。"
+          "quality_status": "user_audition_passed",
+          "quality_findings": "完整母版此前已获用户试听确认；用户又实际试听本页的25个准确独立短句，并反馈“都完整，头尾自然”。本候选只继承列出的准确文件结论。执行者未实际听到音频。"
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "最新候选已有本轮原生音频和技术检查，尚未实际完整听审。",
-        "旧候选的失败或返修结论仍保留；新候选不继承其通过或失败。"
-      ],
-      "resume_when": "完成最新准确候选的实际听审，再按方案制作、检查和选择派生文件。"
+      "gaps": [],
+      "resume_when": "用户实际试听通过完整试读及独立短参考；执行者未听到声音。准确文件已选入2处当前生成输入；没有当前输入的文件保留供对应后期用途。"
     },
     {
       "code": "M321",
@@ -7393,7 +7717,7 @@
           "watermark": {}
         }
       },
-      "status": "hearing_unverified",
+      "status": "user_audition_passed",
       "candidates": [
         {
           "candidate_id": "candidate-cd09f3bf9ea01653d4c687e1bc5f1c3a23b791213583fbb5b9ba25c5b0456faa",
@@ -7415,19 +7739,40 @@
               "role": "original",
               "sample_rate": 48000,
               "sha256": "a855242a50f2fe17446e1e6ab2e318e5a148b962d8665bf7af5b686494f2a15d"
+            },
+            {
+              "bytes": 1536044,
+              "channels": 2,
+              "duration_seconds": 8.0,
+              "file": "674777257974e508e5b67273a878043b5c8d845e243e1cab08c2e2e4dfb15d08.wav",
+              "has_audio": true,
+              "id": "ambience-bed",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "674777257974e508e5b67273a878043b5c8d845e243e1cab08c2e2e4dfb15d08"
+            },
+            {
+              "bytes": 3024044,
+              "channels": 2,
+              "duration_seconds": 15.75,
+              "file": "951e55d731dd33a210e8dd2dbe5123f4fe48d4c4086fda46b32382253b4e754b.wav",
+              "has_audio": true,
+              "id": "ambience-loop-check",
+              "mime": "audio/wav",
+              "role": "preview",
+              "sample_rate": 48000,
+              "sha256": "951e55d731dd33a210e8dd2dbe5123f4fe48d4c4086fda46b32382253b4e754b"
             }
           ],
-          "quality_status": "hearing_unverified",
-          "quality_findings": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。技术探测和字幕不替代声音判断。"
+          "quality_status": "user_audition_passed",
+          "quality_findings": "完整母版此前已获用户试听确认；用户又实际试听本页的32个准确环境与动作短件，并反馈“都对应，完整自然”。本候选只继承列出的准确文件结论。执行者未实际听到音频。"
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "最新候选已有本轮原生音频和技术检查，尚未实际完整听审。",
-        "旧候选的失败或返修结论仍保留；新候选不继承其通过或失败。"
-      ],
-      "resume_when": "完成最新准确候选的实际听审，再按方案制作、检查和选择派生文件。"
+      "gaps": [],
+      "resume_when": "用户实际试听通过完整环境母版与循环接续；执行者未听到声音。准确文件已选入0处当前生成输入；没有当前输入的文件保留供对应后期用途。"
     },
     {
       "code": "M455",
@@ -7455,7 +7800,7 @@
           "watermark": {}
         }
       },
-      "status": "hearing_unverified",
+      "status": "user_audition_passed",
       "candidates": [
         {
           "candidate_id": "candidate-646e9de2f7d7e50c0fca301976532b5674b4a3294d2b73382fbef9722b06316a",
@@ -7477,19 +7822,40 @@
               "role": "original",
               "sample_rate": 48000,
               "sha256": "ec7edf7659d42b2ddddfd1c5af308cd89409f04444c4b17ffb38dc5de91fc690"
+            },
+            {
+              "bytes": 336044,
+              "channels": 2,
+              "duration_seconds": 1.75,
+              "file": "c3ce0959e13610cac989d27d19251bf919cbbf7ba08ac55fd3d9a163f6ba3bf9.wav",
+              "has_audio": true,
+              "id": "voice-reference",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "c3ce0959e13610cac989d27d19251bf919cbbf7ba08ac55fd3d9a163f6ba3bf9"
+            },
+            {
+              "bytes": 393644,
+              "channels": 2,
+              "duration_seconds": 2.05,
+              "file": "f9ce9d427d495f0221e6dce7c0ef1d3b045ef355ad84f8600558dedbb14895d0.wav",
+              "has_audio": true,
+              "id": "voice-reference-channel",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "f9ce9d427d495f0221e6dce7c0ef1d3b045ef355ad84f8600558dedbb14895d0"
             }
           ],
-          "quality_status": "hearing_unverified",
-          "quality_findings": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。技术探测和字幕不替代声音判断。"
+          "quality_status": "user_audition_passed",
+          "quality_findings": "完整母版此前已获用户试听确认；用户又实际试听本页的25个准确独立短句，并反馈“都完整，头尾自然”。本候选只继承列出的准确文件结论。执行者未实际听到音频。"
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "最新候选已有本轮原生音频和技术检查，尚未实际完整听审。",
-        "旧候选的失败或返修结论仍保留；新候选不继承其通过或失败。"
-      ],
-      "resume_when": "完成最新准确候选的实际听审，再按方案制作、检查和选择派生文件。"
+      "gaps": [],
+      "resume_when": "用户实际试听通过完整试读及独立短参考；执行者未听到声音。准确文件已选入2处当前生成输入；没有当前输入的文件保留供对应后期用途。"
     },
     {
       "code": "M133",
@@ -7569,7 +7935,7 @@
           "watermark": {}
         }
       },
-      "status": "hearing_unverified",
+      "status": "user_audition_passed",
       "candidates": [
         {
           "candidate_id": "candidate-8d6b5490b707bd4089722cec20819024296f088170d9fbebc9c3d7e07e2c4847",
@@ -7591,19 +7957,40 @@
               "role": "original",
               "sample_rate": 48000,
               "sha256": "60e234ae371bbf6ca0ffcc4c179e23c1d139e9b161be5942b1e0e5c5d2f85de6"
+            },
+            {
+              "bytes": 1286444,
+              "channels": 2,
+              "duration_seconds": 6.7,
+              "file": "353ecd09b7460c5a9c83b8b9a43b6d40813730c58940920f52b5348a107ba995.wav",
+              "has_audio": true,
+              "id": "distant-call-a-event",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "353ecd09b7460c5a9c83b8b9a43b6d40813730c58940920f52b5348a107ba995"
+            },
+            {
+              "bytes": 746456,
+              "channels": 2,
+              "duration_seconds": 3.887563,
+              "file": "cacb03c2dde514b591d33a89d0653bcc7b4d58f2a23447b660fe45106c2edf03.wav",
+              "has_audio": true,
+              "id": "distant-call-b-event",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "cacb03c2dde514b591d33a89d0653bcc7b4d58f2a23447b660fe45106c2edf03"
             }
           ],
-          "quality_status": "hearing_unverified",
-          "quality_findings": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。技术探测和字幕不替代声音判断。"
+          "quality_status": "user_audition_passed",
+          "quality_findings": "完整母版此前已获用户试听确认；用户又实际试听本页的32个准确环境与动作短件，并反馈“都对应，完整自然”。本候选只继承列出的准确文件结论。执行者未实际听到音频。"
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "最新候选已有本轮原生音频和技术检查，尚未实际完整听审。",
-        "旧候选的失败或返修结论仍保留；新候选不继承其通过或失败。"
-      ],
-      "resume_when": "完成最新准确候选的实际听审，再按方案制作、检查和选择派生文件。"
+      "gaps": [],
+      "resume_when": "用户实际试听通过完整环境母版与循环接续；执行者未听到声音。准确文件已选入1处当前生成输入；没有当前输入的文件保留供对应后期用途。"
     },
     {
       "code": "M167",
@@ -7792,7 +8179,7 @@
           "watermark": {}
         }
       },
-      "status": "hearing_unverified",
+      "status": "user_audition_passed",
       "candidates": [
         {
           "candidate_id": "candidate-d25a1d16b781f84791985e65094bb1aa427e253e0117c81bb08b24c65045e45a",
@@ -7814,19 +8201,40 @@
               "role": "original",
               "sample_rate": 48000,
               "sha256": "5b504c32d8719c4e9f5ebb10bd3cd23b5e0e4e26bb5f3c6fd1d949dc21e34986"
+            },
+            {
+              "bytes": 371296,
+              "channels": 2,
+              "duration_seconds": 1.933604,
+              "file": "741bae35dc23aec3630a36547f4da134fe916f8da0cce148f3f90378fd3a3d63.wav",
+              "has_audio": true,
+              "id": "voice-reference",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "741bae35dc23aec3630a36547f4da134fe916f8da0cce148f3f90378fd3a3d63"
+            },
+            {
+              "bytes": 393644,
+              "channels": 2,
+              "duration_seconds": 2.05,
+              "file": "afaa65525a0ad2f728cc7cc6e3f378fcdb5b5d5143aa43f33a1e3a01828a968a.wav",
+              "has_audio": true,
+              "id": "voice-reference-channel",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "afaa65525a0ad2f728cc7cc6e3f378fcdb5b5d5143aa43f33a1e3a01828a968a"
             }
           ],
-          "quality_status": "hearing_unverified",
-          "quality_findings": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。技术探测和字幕不替代声音判断。"
+          "quality_status": "user_audition_passed",
+          "quality_findings": "完整母版此前已获用户试听确认；用户又实际试听本页的25个准确独立短句，并反馈“都完整，头尾自然”。本候选只继承列出的准确文件结论。执行者未实际听到音频。"
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "最新候选已有本轮原生音频和技术检查，尚未实际完整听审。",
-        "旧候选的失败或返修结论仍保留；新候选不继承其通过或失败。"
-      ],
-      "resume_when": "完成最新准确候选的实际听审，再按方案制作、检查和选择派生文件。"
+      "gaps": [],
+      "resume_when": "用户实际试听通过完整试读及独立短参考；执行者未听到声音。准确文件已选入1处当前生成输入；没有当前输入的文件保留供对应后期用途。"
     },
     {
       "code": "M358",
@@ -7854,7 +8262,7 @@
           "watermark": {}
         }
       },
-      "status": "hearing_unverified",
+      "status": "user_audition_passed",
       "candidates": [
         {
           "candidate_id": "candidate-5b8f4236ff548418c85c56fd0c3b955b17ec25f198a8b30162733bba0d3e2e24",
@@ -7876,19 +8284,76 @@
               "role": "original",
               "sample_rate": 48000,
               "sha256": "01ecf92e8f0d2c96ec018c5a64c4991fc132c82e8ebb1b00c8f20b48a921475b"
+            },
+            {
+              "bytes": 307244,
+              "channels": 2,
+              "duration_seconds": 1.6,
+              "file": "47ac741cc8426f11d2f96b78ea0a850d97f2e55a5ef31b5b5653ab038ce8a3c9.wav",
+              "has_audio": true,
+              "id": "test-slot-event",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "47ac741cc8426f11d2f96b78ea0a850d97f2e55a5ef31b5b5653ab038ce8a3c9"
+            },
+            {
+              "bytes": 1094444,
+              "channels": 2,
+              "duration_seconds": 5.7,
+              "file": "7918bb68ba578e961d70c08ca643dba97b529ac326f6ba568a4409d915db7c60.wav",
+              "has_audio": true,
+              "id": "cut-grass-event",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "7918bb68ba578e961d70c08ca643dba97b529ac326f6ba568a4409d915db7c60"
+            },
+            {
+              "bytes": 364844,
+              "channels": 2,
+              "duration_seconds": 1.9,
+              "file": "dbd132fb965f94523005a4078b64ecb9a163bf837d53f6901a12ccd497ae6464.wav",
+              "has_audio": true,
+              "id": "muffled-cut-event",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "dbd132fb965f94523005a4078b64ecb9a163bf837d53f6901a12ccd497ae6464"
+            },
+            {
+              "bytes": 403244,
+              "channels": 2,
+              "duration_seconds": 2.1,
+              "file": "ebf62fda03fa114eabd0e7e0d791d31c0924a56a1939a6ffebe90b9cb63b19a1.wav",
+              "has_audio": true,
+              "id": "edge-scrape-event",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "ebf62fda03fa114eabd0e7e0d791d31c0924a56a1939a6ffebe90b9cb63b19a1"
+            },
+            {
+              "bytes": 576044,
+              "channels": 2,
+              "duration_seconds": 3.0,
+              "file": "98938a2d048673d5292ecccc681c0042dcb9b08afce554eaade55c0d508cec4e.wav",
+              "has_audio": true,
+              "id": "bottom-stone-event",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "98938a2d048673d5292ecccc681c0042dcb9b08afce554eaade55c0d508cec4e"
             }
           ],
-          "quality_status": "hearing_unverified",
-          "quality_findings": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。技术探测和字幕不替代声音判断。"
+          "quality_status": "user_audition_passed",
+          "quality_findings": "完整母版此前已获用户试听确认；用户又实际试听本页的32个准确环境与动作短件，并反馈“都对应，完整自然”。本候选只继承列出的准确文件结论。执行者未实际听到音频。"
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "最新候选已有本轮原生音频和技术检查，尚未实际完整听审。",
-        "旧候选的失败或返修结论仍保留；新候选不继承其通过或失败。"
-      ],
-      "resume_when": "完成最新准确候选的实际听审，再按方案制作、检查和选择派生文件。"
+      "gaps": [],
+      "resume_when": "用户实际试听通过完整环境母版与循环接续；执行者未听到声音。准确文件已选入0处当前生成输入；没有当前输入的文件保留供对应后期用途。"
     },
     {
       "code": "M357",
@@ -8997,7 +9462,7 @@
           "watermark": {}
         }
       },
-      "status": "hearing_unverified",
+      "status": "user_audition_passed",
       "candidates": [
         {
           "candidate_id": "candidate-9db13adaca838e16e3ad632db1dbb7afa8c2d88ff91d98c884eb1b90bd7d7612",
@@ -9019,19 +9484,40 @@
               "role": "original",
               "sample_rate": 48000,
               "sha256": "6a05a46ae7d9f115ad66dc6dd59408d475bb30b12efb0289434e7b383d09864d"
+            },
+            {
+              "bytes": 337964,
+              "channels": 2,
+              "duration_seconds": 1.76,
+              "file": "d770d544440e0ea2086b964fdeb458669e06455e595d3be8deb41b28f92aef4e.wav",
+              "has_audio": true,
+              "id": "voice-reference",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "d770d544440e0ea2086b964fdeb458669e06455e595d3be8deb41b28f92aef4e"
+            },
+            {
+              "bytes": 393644,
+              "channels": 2,
+              "duration_seconds": 2.05,
+              "file": "52612c478931935f5957882a322ed3c594854cd9121140f72d3bf1688b237b29.wav",
+              "has_audio": true,
+              "id": "voice-reference-channel",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "52612c478931935f5957882a322ed3c594854cd9121140f72d3bf1688b237b29"
             }
           ],
-          "quality_status": "hearing_unverified",
-          "quality_findings": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。技术探测和字幕不替代声音判断。"
+          "quality_status": "user_audition_passed",
+          "quality_findings": "完整母版此前已获用户试听确认；用户又实际试听本页的25个准确独立短句，并反馈“都完整，头尾自然”。本候选只继承列出的准确文件结论。执行者未实际听到音频。"
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "最新候选已有本轮原生音频和技术检查，尚未实际完整听审。",
-        "旧候选的失败或返修结论仍保留；新候选不继承其通过或失败。"
-      ],
-      "resume_when": "完成最新准确候选的实际听审，再按方案制作、检查和选择派生文件。"
+      "gaps": [],
+      "resume_when": "用户实际试听通过完整试读及独立短参考；执行者未听到声音。准确文件已选入7处当前生成输入；没有当前输入的文件保留供对应后期用途。"
     },
     {
       "code": "M208",
@@ -9176,6 +9662,18 @@
               "role": "original",
               "sample_rate": 48000,
               "sha256": "446711183d24beee5d10f5e7ac831412c374ebc6a279fa963519df98be566723"
+            },
+            {
+              "bytes": 393644,
+              "channels": 2,
+              "duration_seconds": 2.05,
+              "file": "f784fd0b57c9126f24ab6f05dec280f1c40bae8e76917bf6ac3c57c04a7f592d.wav",
+              "has_audio": true,
+              "id": "voice-reference-channel",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "f784fd0b57c9126f24ab6f05dec280f1c40bae8e76917bf6ac3c57c04a7f592d"
             }
           ],
           "quality_status": "user_audition_passed",
@@ -9813,6 +10311,18 @@
               "role": "original",
               "sample_rate": 48000,
               "sha256": "bc4aa533163f2a4b931d0b4517d658015b060e2ebf0658dd64816def2bc79ce5"
+            },
+            {
+              "bytes": 393644,
+              "channels": 2,
+              "duration_seconds": 2.05,
+              "file": "453f5b42b17c5cf55f08d850faadb52940910274a57a352828a2093b611263d2.wav",
+              "has_audio": true,
+              "id": "voice-reference-channel",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "453f5b42b17c5cf55f08d850faadb52940910274a57a352828a2093b611263d2"
             }
           ],
           "quality_status": "user_audition_passed",
@@ -10057,6 +10567,18 @@
               "role": "original",
               "sample_rate": 48000,
               "sha256": "e7d31d3d94a03211cd8abccf8babc1123eebabc83cd2bfe9e6295a7152dc5479"
+            },
+            {
+              "bytes": 393644,
+              "channels": 2,
+              "duration_seconds": 2.05,
+              "file": "c4d5dd0aaa587dbfa9938d7123542b174b286d4956fc051b2f8f7c9582a14a73.wav",
+              "has_audio": true,
+              "id": "voice-reference-channel",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "c4d5dd0aaa587dbfa9938d7123542b174b286d4956fc051b2f8f7c9582a14a73"
             }
           ],
           "quality_status": "user_audition_passed",
@@ -10270,7 +10792,7 @@
           "watermark": {}
         }
       },
-      "status": "hearing_unverified",
+      "status": "user_audition_passed",
       "candidates": [
         {
           "candidate_id": "candidate-0025cdd86427fa8e462c10d0ff099a58bf32307865d3edbe1c70c043aab015bb",
@@ -10292,19 +10814,28 @@
               "role": "original",
               "sample_rate": 48000,
               "sha256": "2655092b93978de22590bf79b75fcff25c0dd0d7d92bb361e76c75a769cfe5d6"
+            },
+            {
+              "bytes": 397624,
+              "channels": 2,
+              "duration_seconds": 2.070729,
+              "file": "c50067139be75e027aeafdfa491ae31827608e948c2c55515b1283d37fd0b42a.wav",
+              "has_audio": true,
+              "id": "voice-reference",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "c50067139be75e027aeafdfa491ae31827608e948c2c55515b1283d37fd0b42a"
             }
           ],
-          "quality_status": "hearing_unverified",
-          "quality_findings": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。技术探测和字幕不替代声音判断。"
+          "quality_status": "user_audition_passed",
+          "quality_findings": "完整母版此前已获用户试听确认；用户又实际试听本页的25个准确独立短句，并反馈“都完整，头尾自然”。本候选只继承列出的准确文件结论。执行者未实际听到音频。"
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "最新候选已有本轮原生音频和技术检查，尚未实际完整听审。",
-        "旧候选的失败或返修结论仍保留；新候选不继承其通过或失败。"
-      ],
-      "resume_when": "完成最新准确候选的实际听审，再按方案制作、检查和选择派生文件。"
+      "gaps": [],
+      "resume_when": "用户实际试听通过完整试读及独立短参考；执行者未听到声音。准确文件已选入1处当前生成输入；没有当前输入的文件保留供对应后期用途。"
     },
     {
       "code": "M047",
@@ -10413,7 +10944,7 @@
           "watermark": {}
         }
       },
-      "status": "hearing_unverified",
+      "status": "user_audition_passed",
       "candidates": [
         {
           "candidate_id": "candidate-2b9ff037894bab887bef0fd71fa3d8d286616afcca21167bff0a5e41cc66afd9",
@@ -10435,19 +10966,40 @@
               "role": "original",
               "sample_rate": 48000,
               "sha256": "91818acf153790ba7893f6d4ab4f0a2e0de0e9815e066c8b9fce5c6fd96f0c45"
+            },
+            {
+              "bytes": 351404,
+              "channels": 2,
+              "duration_seconds": 1.83,
+              "file": "f4e91a23b18cf5e2e827f577d19f4e0ad75608bba1f3eb345275c6b7753107c3.wav",
+              "has_audio": true,
+              "id": "voice-reference",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "f4e91a23b18cf5e2e827f577d19f4e0ad75608bba1f3eb345275c6b7753107c3"
+            },
+            {
+              "bytes": 393644,
+              "channels": 2,
+              "duration_seconds": 2.05,
+              "file": "a09c2ff86df62b744ec9590e42baefd12c193e14e8b4a11213b1f26ad4a14e5e.wav",
+              "has_audio": true,
+              "id": "voice-reference-channel",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "a09c2ff86df62b744ec9590e42baefd12c193e14e8b4a11213b1f26ad4a14e5e"
             }
           ],
-          "quality_status": "hearing_unverified",
-          "quality_findings": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。字幕只用于辅助核词，不替代声音判断。"
+          "quality_status": "user_audition_passed",
+          "quality_findings": "完整母版此前已获用户试听确认；用户又实际试听本页的25个准确独立短句，并反馈“都完整，头尾自然”。本候选只继承列出的准确文件结论。执行者未实际听到音频。"
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "最新候选已有本轮原生音频和技术检查，尚未实际完整听审。",
-        "旧候选的失败或返修结论仍保留；新候选不继承其通过或失败。"
-      ],
-      "resume_when": "完成最新准确候选的实际听审，再按方案制作、检查和选择派生文件。"
+      "gaps": [],
+      "resume_when": "用户实际试听通过完整试读及独立短参考；执行者未听到声音。准确文件已选入28处当前生成输入；没有当前输入的文件保留供对应后期用途。"
     },
     {
       "code": "M087",
@@ -11567,7 +12119,7 @@
           "watermark": {}
         }
       },
-      "status": "hearing_unverified",
+      "status": "user_audition_passed",
       "candidates": [
         {
           "candidate_id": "candidate-dfc338546044e9f437f2f2ef869cd30445dbb01715605e739ddb932172f60029",
@@ -11589,19 +12141,40 @@
               "role": "original",
               "sample_rate": 48000,
               "sha256": "552db8920e3d4e7c93c3323ad8920d3f3470e55cbb52dfc8014b19ae492d53a4"
+            },
+            {
+              "bytes": 336044,
+              "channels": 2,
+              "duration_seconds": 1.75,
+              "file": "e4cc45350be96d80166a68b5216560f7bc908557b2da46b2ba46be96edc1ef45.wav",
+              "has_audio": true,
+              "id": "voice-reference",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "e4cc45350be96d80166a68b5216560f7bc908557b2da46b2ba46be96edc1ef45"
+            },
+            {
+              "bytes": 393644,
+              "channels": 2,
+              "duration_seconds": 2.05,
+              "file": "e66d86d4254156c2a194398824ff4aef7ff10c03ff8ae39fff4028d64aafc86b.wav",
+              "has_audio": true,
+              "id": "voice-reference-channel",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "e66d86d4254156c2a194398824ff4aef7ff10c03ff8ae39fff4028d64aafc86b"
             }
           ],
-          "quality_status": "hearing_unverified",
-          "quality_findings": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。技术探测和字幕不替代声音判断。"
+          "quality_status": "user_audition_passed",
+          "quality_findings": "完整母版此前已获用户试听确认；用户又实际试听本页的25个准确独立短句，并反馈“都完整，头尾自然”。本候选只继承列出的准确文件结论。执行者未实际听到音频。"
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "最新候选已有本轮原生音频和技术检查，尚未实际完整听审。",
-        "旧候选的失败或返修结论仍保留；新候选不继承其通过或失败。"
-      ],
-      "resume_when": "完成最新准确候选的实际听审，再按方案制作、检查和选择派生文件。"
+      "gaps": [],
+      "resume_when": "用户实际试听通过完整试读及独立短参考；执行者未听到声音。准确文件已选入1处当前生成输入；没有当前输入的文件保留供对应后期用途。"
     },
     {
       "code": "M220",
@@ -12029,7 +12602,7 @@
           "watermark": {}
         }
       },
-      "status": "hearing_unverified",
+      "status": "user_audition_passed",
       "candidates": [
         {
           "candidate_id": "candidate-2509246bab918d66246fe7cb091e9509a5fbafb49eeaa0d482b716c43d185b37",
@@ -12051,19 +12624,40 @@
               "role": "original",
               "sample_rate": 48000,
               "sha256": "cffe1e13a0cc66b1cd9b9b27849e58a4d8a179bddc41afd41ce9cdbb56f01103"
+            },
+            {
+              "bytes": 359084,
+              "channels": 2,
+              "duration_seconds": 1.87,
+              "file": "627319bc681aab6cf5fa020e4c39042e9397c87d06020682ef072936fb571ffd.wav",
+              "has_audio": true,
+              "id": "voice-reference",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "627319bc681aab6cf5fa020e4c39042e9397c87d06020682ef072936fb571ffd"
+            },
+            {
+              "bytes": 393644,
+              "channels": 2,
+              "duration_seconds": 2.05,
+              "file": "79d3d8e85a2a3085783e4b1804c7e452b4e4028523b10afed37a19f952f3e53e.wav",
+              "has_audio": true,
+              "id": "voice-reference-channel",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "79d3d8e85a2a3085783e4b1804c7e452b4e4028523b10afed37a19f952f3e53e"
             }
           ],
-          "quality_status": "hearing_unverified",
-          "quality_findings": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。技术探测和字幕不替代声音判断。"
+          "quality_status": "user_audition_passed",
+          "quality_findings": "完整母版此前已获用户试听确认；用户又实际试听本页的25个准确独立短句，并反馈“都完整，头尾自然”。本候选只继承列出的准确文件结论。执行者未实际听到音频。"
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "最新候选已有本轮原生音频和技术检查，尚未实际完整听审。",
-        "旧候选的失败或返修结论仍保留；新候选不继承其通过或失败。"
-      ],
-      "resume_when": "完成最新准确候选的实际听审，再按方案制作、检查和选择派生文件。"
+      "gaps": [],
+      "resume_when": "用户实际试听通过完整试读及独立短参考；执行者未听到声音。准确文件已选入1处当前生成输入；没有当前输入的文件保留供对应后期用途。"
     },
     {
       "code": "M031",
@@ -12143,7 +12737,7 @@
           "watermark": {}
         }
       },
-      "status": "hearing_unverified",
+      "status": "user_audition_passed",
       "candidates": [
         {
           "candidate_id": "candidate-6c4e4805fce2a4c2ecd7554cc99d48f4d9d5b3b5f17a7773e43ab05b5d8cef7c",
@@ -12165,19 +12759,40 @@
               "role": "original",
               "sample_rate": 48000,
               "sha256": "7eeefb9ded074023b859e15ec43ecbf861bb428a4b8559624578b74ade2f1875"
+            },
+            {
+              "bytes": 336044,
+              "channels": 2,
+              "duration_seconds": 1.75,
+              "file": "daed30e5aa5431bb72e237b8942b9fe3f50441ff74b8538c2ea9eb927bd0a92b.wav",
+              "has_audio": true,
+              "id": "voice-reference",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "daed30e5aa5431bb72e237b8942b9fe3f50441ff74b8538c2ea9eb927bd0a92b"
+            },
+            {
+              "bytes": 393644,
+              "channels": 2,
+              "duration_seconds": 2.05,
+              "file": "2e41b6ae7a5e1c2ad4ffcf00172c136ba564f2f4d4ae538218bb1b59a02ecf66.wav",
+              "has_audio": true,
+              "id": "voice-reference-channel",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "2e41b6ae7a5e1c2ad4ffcf00172c136ba564f2f4d4ae538218bb1b59a02ecf66"
             }
           ],
-          "quality_status": "hearing_unverified",
-          "quality_findings": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。技术探测和字幕不替代声音判断。"
+          "quality_status": "user_audition_passed",
+          "quality_findings": "完整母版此前已获用户试听确认；用户又实际试听本页的25个准确独立短句，并反馈“都完整，头尾自然”。本候选只继承列出的准确文件结论。执行者未实际听到音频。"
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "最新候选已有本轮原生音频和技术检查，尚未实际完整听审。",
-        "旧候选的失败或返修结论仍保留；新候选不继承其通过或失败。"
-      ],
-      "resume_when": "完成最新准确候选的实际听审，再按方案制作、检查和选择派生文件。"
+      "gaps": [],
+      "resume_when": "用户实际试听通过完整试读及独立短参考；执行者未听到声音。准确文件已选入1处当前生成输入；没有当前输入的文件保留供对应后期用途。"
     },
     {
       "code": "M243",
@@ -12315,7 +12930,7 @@
           "watermark": {}
         }
       },
-      "status": "hearing_unverified",
+      "status": "user_audition_passed",
       "candidates": [
         {
           "candidate_id": "candidate-6960b59b15e0e7f291bd532e792a3572735409a5f016c81eaeec041df5a3f1b3",
@@ -12337,19 +12952,40 @@
               "role": "original",
               "sample_rate": 48000,
               "sha256": "216f5343f69cd69414ef1c2c666f94775edf4724cae41da6e38f57f6b8be772d"
+            },
+            {
+              "bytes": 351404,
+              "channels": 2,
+              "duration_seconds": 1.83,
+              "file": "e369df3726ce3e1ebfb4070e168d9f896be4f9f3783b35b11b102cd33cc2a446.wav",
+              "has_audio": true,
+              "id": "voice-reference",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "e369df3726ce3e1ebfb4070e168d9f896be4f9f3783b35b11b102cd33cc2a446"
+            },
+            {
+              "bytes": 393644,
+              "channels": 2,
+              "duration_seconds": 2.05,
+              "file": "1df659711684ecd592f42c29a86869a6bc099a1989f524bcf0b3cd0ba0234b64.wav",
+              "has_audio": true,
+              "id": "voice-reference-channel",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "1df659711684ecd592f42c29a86869a6bc099a1989f524bcf0b3cd0ba0234b64"
             }
           ],
-          "quality_status": "hearing_unverified",
-          "quality_findings": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。技术探测和字幕不替代声音判断。"
+          "quality_status": "user_audition_passed",
+          "quality_findings": "完整母版此前已获用户试听确认；用户又实际试听本页的25个准确独立短句，并反馈“都完整，头尾自然”。本候选只继承列出的准确文件结论。执行者未实际听到音频。"
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "最新候选已有本轮原生音频和技术检查，尚未实际完整听审。",
-        "旧候选的失败或返修结论仍保留；新候选不继承其通过或失败。"
-      ],
-      "resume_when": "完成最新准确候选的实际听审，再按方案制作、检查和选择派生文件。"
+      "gaps": [],
+      "resume_when": "用户实际试听通过完整试读及独立短参考；执行者未听到声音。准确文件已选入4处当前生成输入；没有当前输入的文件保留供对应后期用途。"
     },
     {
       "code": "M007",
@@ -12430,7 +13066,7 @@
           "watermark": {}
         }
       },
-      "status": "hearing_unverified",
+      "status": "user_audition_passed",
       "candidates": [
         {
           "candidate_id": "candidate-2e8444a388a0640a6ad38b63cc74d6e242d59897a6cf477a61753804be90a7c6",
@@ -12452,19 +13088,40 @@
               "role": "original",
               "sample_rate": 48000,
               "sha256": "8d3a625bbb8358fcae96d1a7a0e243634b7eed63d930c96d16e6e187621683b0"
+            },
+            {
+              "bytes": 343724,
+              "channels": 2,
+              "duration_seconds": 1.79,
+              "file": "4edc22ab2f12a60d355701e0db9efc1cd2c17f9fb3bb9a9930db669648125d76.wav",
+              "has_audio": true,
+              "id": "voice-reference",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "4edc22ab2f12a60d355701e0db9efc1cd2c17f9fb3bb9a9930db669648125d76"
+            },
+            {
+              "bytes": 393644,
+              "channels": 2,
+              "duration_seconds": 2.05,
+              "file": "f6365e0d401c8aef3990e16cb6f4c9963c2abca96cbc10b6ad05047c5a3a712b.wav",
+              "has_audio": true,
+              "id": "voice-reference-channel",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "f6365e0d401c8aef3990e16cb6f4c9963c2abca96cbc10b6ad05047c5a3a712b"
             }
           ],
-          "quality_status": "hearing_unverified",
-          "quality_findings": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。技术探测和字幕不替代声音判断。"
+          "quality_status": "user_audition_passed",
+          "quality_findings": "完整母版此前已获用户试听确认；用户又实际试听本页的25个准确独立短句，并反馈“都完整，头尾自然”。本候选只继承列出的准确文件结论。执行者未实际听到音频。"
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "最新候选已有本轮原生音频和技术检查，尚未实际完整听审。",
-        "旧候选的失败或返修结论仍保留；新候选不继承其通过或失败。"
-      ],
-      "resume_when": "完成最新准确候选的实际听审，再按方案制作、检查和选择派生文件。"
+      "gaps": [],
+      "resume_when": "用户实际试听通过完整试读及独立短参考；执行者未听到声音。准确文件已选入2处当前生成输入；没有当前输入的文件保留供对应后期用途。"
     },
     {
       "code": "M125",
@@ -12544,7 +13201,7 @@
           "watermark": {}
         }
       },
-      "status": "hearing_unverified",
+      "status": "user_audition_passed",
       "candidates": [
         {
           "candidate_id": "candidate-17bb16caf543ef4a65242ab9ee64da6fe9369eda4ceb0caca63ef0a69ad0e874",
@@ -12566,19 +13223,28 @@
               "role": "original",
               "sample_rate": 48000,
               "sha256": "0171ebd5015d83f182fb40075d4c608958e2454b22a957066241ebd1a7c51821"
+            },
+            {
+              "bytes": 385368,
+              "channels": 2,
+              "duration_seconds": 2.006896,
+              "file": "6fe00400ac0ba922c8f13b9f30125ad2cb5ae8ee5490c78cdb6ae82a164eba88.wav",
+              "has_audio": true,
+              "id": "voice-reference",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "6fe00400ac0ba922c8f13b9f30125ad2cb5ae8ee5490c78cdb6ae82a164eba88"
             }
           ],
-          "quality_status": "hearing_unverified",
-          "quality_findings": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。技术探测和字幕不替代声音判断。"
+          "quality_status": "user_audition_passed",
+          "quality_findings": "完整母版此前已获用户试听确认；用户又实际试听本页的25个准确独立短句，并反馈“都完整，头尾自然”。本候选只继承列出的准确文件结论。执行者未实际听到音频。"
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "最新候选已有本轮原生音频和技术检查，尚未实际完整听审。",
-        "旧候选的失败或返修结论仍保留；新候选不继承其通过或失败。"
-      ],
-      "resume_when": "完成最新准确候选的实际听审，再按方案制作、检查和选择派生文件。"
+      "gaps": [],
+      "resume_when": "用户实际试听通过完整试读及独立短参考；执行者未听到声音。准确文件已选入11处当前生成输入；没有当前输入的文件保留供对应后期用途。"
     },
     {
       "code": "M050",
@@ -12691,7 +13357,7 @@
           "watermark": {}
         }
       },
-      "status": "hearing_unverified",
+      "status": "user_audition_passed",
       "candidates": [
         {
           "candidate_id": "candidate-412f1daefc8d7bad2e34e3f8cce53e9c7f55a9228d4aaa33a0cd66c508fcde8f",
@@ -12713,24 +13379,33 @@
               "role": "original",
               "sample_rate": 48000,
               "sha256": "4d5fffccccbb9c62c36029d511d535be2b8e195164a92e09ca3561725b66440f"
+            },
+            {
+              "bytes": 388056,
+              "channels": 2,
+              "duration_seconds": 2.020896,
+              "file": "88e3d88989d37141224ba69cdc041e83ea5a74c71bc9211fdf4e80c8f38b825e.wav",
+              "has_audio": true,
+              "id": "voice-reference",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "88e3d88989d37141224ba69cdc041e83ea5a74c71bc9211fdf4e80c8f38b825e"
             }
           ],
-          "quality_status": "hearing_unverified",
-          "quality_findings": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。技术探测和字幕不替代声音判断。"
+          "quality_status": "user_audition_passed",
+          "quality_findings": "完整母版此前已获用户试听确认；用户又实际试听本页的25个准确独立短句，并反馈“都完整，头尾自然”。本候选只继承列出的准确文件结论。执行者未实际听到音频。"
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "最新候选已有本轮原生音频和技术检查，尚未实际完整听审。",
-        "旧候选的失败或返修结论仍保留；新候选不继承其通过或失败。"
-      ],
-      "resume_when": "完成最新准确候选的实际听审，再按方案制作、检查和选择派生文件。"
+      "gaps": [],
+      "resume_when": "用户实际试听通过完整试读及独立短参考；执行者未听到声音。准确文件已选入3处当前生成输入；没有当前输入的文件保留供对应后期用途。"
     },
     {
       "code": "M054",
       "requirement_id": "new26-qingpeng-singing",
-      "content_sha256": "893adcdcc0d4820b71b09e86ee8f2268f941727b16972cbc193e0523f4e6bafe",
+      "content_sha256": "47dd75d4eaa231c4c3b530a3007e0ccc7f60aef8d094acc8d8471fa5b524ccf0",
       "title": "送青篷 · 完整原曲",
       "category": "song",
       "scope_kind": "ENTITY",
@@ -12745,7 +13420,7 @@
           "store": false
         }
       },
-      "status": "hearing_unverified",
+      "status": "reference_pending",
       "candidates": [
         {
           "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
@@ -12767,8 +13442,70 @@
               "role": "original",
               "sample_rate": 44100,
               "sha256": "e3eb4b657a47d8ee9d1dee173be88a322cb02b0aafedad9cb5c18a63a03ac36b"
+            },
+            {
+              "bytes": 1344078,
+              "channels": 2,
+              "duration_seconds": 7.0,
+              "file": "0e540758babf720ac740c950845dec8bef34f2c31d58463850c4e066c0f18afc.wav",
+              "has_audio": true,
+              "id": "melody-qingpeng-first",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "0e540758babf720ac740c950845dec8bef34f2c31d58463850c4e066c0f18afc"
+            },
+            {
+              "bytes": 1152078,
+              "channels": 2,
+              "duration_seconds": 6.0,
+              "file": "0d46838a41edf3ded52ac7be7b2fa6aa18845a20f8f40078905e866bd4c022c1.wav",
+              "has_audio": true,
+              "id": "melody-qingpeng-second",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "0d46838a41edf3ded52ac7be7b2fa6aa18845a20f8f40078905e866bd4c022c1"
+            },
+            {
+              "bytes": 1152078,
+              "channels": 2,
+              "duration_seconds": 6.0,
+              "file": "d3a3050e50b4a62c35be21d6ea526290d52ac9df63c39c9b0973f24043fecb07.wav",
+              "has_audio": true,
+              "id": "melody-qingpeng-willow",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "d3a3050e50b4a62c35be21d6ea526290d52ac9df63c39c9b0973f24043fecb07"
+            },
+            {
+              "bytes": 1536078,
+              "channels": 2,
+              "duration_seconds": 8.0,
+              "file": "4601117f53af0300efdfada4750ee6941a5e43ad0c1c9f0b1b4e62301acc3117.wav",
+              "has_audio": true,
+              "id": "melody-qingpeng-lights",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "4601117f53af0300efdfada4750ee6941a5e43ad0c1c9f0b1b4e62301acc3117"
+            },
+            {
+              "bytes": 2688078,
+              "channels": 2,
+              "duration_seconds": 14.0,
+              "file": "24f65d8ade174649e0d156669be326c33328451b6929f4a2e4d2f9a8f36586a8.wav",
+              "has_audio": true,
+              "id": "melody-qingpeng-return",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "24f65d8ade174649e0d156669be326c33328451b6929f4a2e4d2f9a8f36586a8"
             }
-          ]
+          ],
+          "quality_status": "full_audition_passed",
+          "quality_findings": "用户已实际试听此页列出的准确文件并反馈“我已经完成视听，没有问题，请你继续吧”。本次确认完整母版；尚未制作或列入此次试听的独立派生文件不继承听审结论。执行者未实际听到音频。"
         }
       ],
       "selected_upstream": [
@@ -12776,14 +13513,11 @@
         "new26-aheng-voice",
         "new26-song-teacher-voice"
       ],
-      "waiting_for_new_originals": [
-        "new26-song-teacher-voice"
-      ],
+      "waiting_for_new_originals": [],
       "gaps": [
-        "已有本轮原生音频和技术检查，尚未实际完整听审。",
-        "所需短参考或接续文件尚待完整母版听审后制作和验证。"
+        "用户已实际试听完整母版并通过；独立短参考或接续文件仍需制作、检查和准确选择。"
       ],
-      "resume_when": "完成实际听审并记录检查者及适用范围，再制作、检查和选择准确完整派生文件。"
+      "resume_when": "沿通过的完整母版制作所需派生文件；不继承母版的剪辑头尾或接缝认可。"
     },
     {
       "code": "M516",
@@ -13257,7 +13991,7 @@
           "watermark": {}
         }
       },
-      "status": "hearing_unverified",
+      "status": "user_audition_passed",
       "candidates": [
         {
           "candidate_id": "candidate-b3f79758e128c22b9e928385d6d79a8dbc64d2019cae2fbeac0391e8ce791a9b",
@@ -13279,19 +14013,40 @@
               "role": "original",
               "sample_rate": 48000,
               "sha256": "8794183949c68e746c382e2c1ca727c49f14c145f59599e79e1cc5a9336caab3"
+            },
+            {
+              "bytes": 360096,
+              "channels": 2,
+              "duration_seconds": 1.875271,
+              "file": "ab5044dfe5b2614256339fe17fe11129a2db6e305a1d125024672f75f27fb32b.wav",
+              "has_audio": true,
+              "id": "voice-reference",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "ab5044dfe5b2614256339fe17fe11129a2db6e305a1d125024672f75f27fb32b"
+            },
+            {
+              "bytes": 393644,
+              "channels": 2,
+              "duration_seconds": 2.05,
+              "file": "08536c94f66327ee5da92acc0fbd4a6170e39fec8a032832176acbd28a7c6715.wav",
+              "has_audio": true,
+              "id": "voice-reference-channel",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "08536c94f66327ee5da92acc0fbd4a6170e39fec8a032832176acbd28a7c6715"
             }
           ],
-          "quality_status": "hearing_unverified",
-          "quality_findings": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。技术探测和字幕不替代声音判断。"
+          "quality_status": "user_audition_passed",
+          "quality_findings": "完整母版此前已获用户试听确认；用户又实际试听本页的25个准确独立短句，并反馈“都完整，头尾自然”。本候选只继承列出的准确文件结论。执行者未实际听到音频。"
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "最新候选已有本轮原生音频和技术检查，尚未实际完整听审。",
-        "旧候选的失败或返修结论仍保留；新候选不继承其通过或失败。"
-      ],
-      "resume_when": "完成最新准确候选的实际听审，再按方案制作、检查和选择派生文件。"
+      "gaps": [],
+      "resume_when": "用户实际试听通过完整试读及独立短参考；执行者未听到声音。准确文件已选入2处当前生成输入；没有当前输入的文件保留供对应后期用途。"
     },
     {
       "code": "M013",
@@ -13456,7 +14211,7 @@
           "watermark": {}
         }
       },
-      "status": "hearing_unverified",
+      "status": "user_audition_passed",
       "candidates": [
         {
           "candidate_id": "candidate-305528ef760b29468c080ab3e5d95d2c82a94365c93cab25a524b4187e3ee3e6",
@@ -13478,19 +14233,52 @@
               "role": "original",
               "sample_rate": 48000,
               "sha256": "64456c7a7ab7696d5f24eda872d1e350c9b8a26fe3609778136bdb3ed05363f7"
+            },
+            {
+              "bytes": 451244,
+              "channels": 2,
+              "duration_seconds": 2.35,
+              "file": "7544a3512cb6c84283a36416f8e816acfc57a93acd3cfd00a8853640b072bbcc.wav",
+              "has_audio": true,
+              "id": "level-rice-event",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "7544a3512cb6c84283a36416f8e816acfc57a93acd3cfd00a8853640b072bbcc"
+            },
+            {
+              "bytes": 1593644,
+              "channels": 2,
+              "duration_seconds": 8.3,
+              "file": "676c8058fb7b92603b3d3e38bd502929960caa8ec6d57292b7df3ef7fa2f5d79.wav",
+              "has_audio": true,
+              "id": "pour-rice-event",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "676c8058fb7b92603b3d3e38bd502929960caa8ec6d57292b7df3ef7fa2f5d79"
+            },
+            {
+              "bytes": 470444,
+              "channels": 2,
+              "duration_seconds": 2.45,
+              "file": "2ce21f606ec6fed93d193b3701e1b76bfed8e5fe627e0395a4c2f132dbe2bdba.wav",
+              "has_audio": true,
+              "id": "rest-measure-event",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "2ce21f606ec6fed93d193b3701e1b76bfed8e5fe627e0395a4c2f132dbe2bdba"
             }
           ],
-          "quality_status": "hearing_unverified",
-          "quality_findings": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。技术探测和字幕不替代声音判断。"
+          "quality_status": "user_audition_passed",
+          "quality_findings": "完整母版此前已获用户试听确认；用户又实际试听本页的32个准确环境与动作短件，并反馈“都对应，完整自然”。本候选只继承列出的准确文件结论。执行者未实际听到音频。"
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "最新候选已有本轮原生音频和技术检查，尚未实际完整听审。",
-        "旧候选的失败或返修结论仍保留；新候选不继承其通过或失败。"
-      ],
-      "resume_when": "完成最新准确候选的实际听审，再按方案制作、检查和选择派生文件。"
+      "gaps": [],
+      "resume_when": "用户实际试听通过完整环境母版与循环接续；执行者未听到声音。准确文件已选入1处当前生成输入；没有当前输入的文件保留供对应后期用途。"
     },
     {
       "code": "M011",
@@ -13766,7 +14554,7 @@
           "watermark": {}
         }
       },
-      "status": "hearing_unverified",
+      "status": "user_audition_passed",
       "candidates": [
         {
           "candidate_id": "candidate-76bc7bfa261b1ae9e4981b14fa97fc647ae7f29e8b29e0e6689f2291fb619819",
@@ -13790,22 +14578,19 @@
               "sha256": "04311e33830751480a8eee0dc631345f8f98e5af4b0c7406da1723b20b9aae6d"
             }
           ],
-          "quality_status": "hearing_unverified",
-          "quality_findings": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。技术探测和字幕不替代声音判断。"
+          "quality_status": "user_audition_passed",
+          "quality_findings": "用户已完整试听准确母版并确认无问题。该母版本身就是完整独立事件，含自然尾响，直接作为整件引用，不另剪或另作听审声明。实际长度为10.0秒；请求时长只是预算。"
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "最新候选已有本轮原生音频和技术检查，尚未实际完整听审。",
-        "旧候选的失败或返修结论仍保留；新候选不继承其通过或失败。"
-      ],
-      "resume_when": "完成最新准确候选的实际听审，再按方案制作、检查和选择派生文件。"
+      "gaps": [],
+      "resume_when": "用户实际试听通过完整环境母版与循环接续；执行者未听到声音。准确文件已选入2处当前生成输入；没有当前输入的文件保留供对应后期用途。"
     },
     {
       "code": "M175",
       "requirement_id": "new26-ritual-song-singing",
-      "content_sha256": "97f7c1203661b3a60788259aba30d10ad3bcc0c1a2ed0fd3d9d2b7d339217312",
+      "content_sha256": "c690584bd35d83fc55e8f04c34daeb61db3d3d688d1a73e5ef8ea93940b6c417",
       "title": "明月还乡 · 完整原曲",
       "category": "song",
       "scope_kind": "ENTITY",
@@ -13820,7 +14605,7 @@
           "store": false
         }
       },
-      "status": "hearing_unverified",
+      "status": "reference_pending",
       "candidates": [
         {
           "candidate_id": "candidate-39aff0dbbad65c16e7c2c1d8dfbb732ca0b993220c114a3ae7ceb56e07fbaf97",
@@ -13842,17 +14627,30 @@
               "role": "original",
               "sample_rate": 44100,
               "sha256": "3903014c7428b8269c8e277b9171c1fc1eed273074a86418522dd7706197e339"
+            },
+            {
+              "bytes": 2400078,
+              "channels": 2,
+              "duration_seconds": 12.5,
+              "file": "faeb682737c6463c029c736a499a0c2059f39bea31b9a74630bcef3b05b4c8ed.wav",
+              "has_audio": true,
+              "id": "melody-ritual-core",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "faeb682737c6463c029c736a499a0c2059f39bea31b9a74630bcef3b05b4c8ed"
             }
-          ]
+          ],
+          "quality_status": "full_audition_passed",
+          "quality_findings": "用户已实际试听此页列出的准确文件并反馈“我已经完成视听，没有问题，请你继续吧”。本次确认完整母版；尚未制作或列入此次试听的独立派生文件不继承听审结论。执行者未实际听到音频。"
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
       "gaps": [
-        "已有本轮原生音频和技术检查，尚未实际完整听审。",
-        "所需短参考或接续文件尚待完整母版听审后制作和验证。"
+        "用户已实际试听完整母版并通过；独立短参考或接续文件仍需制作、检查和准确选择。"
       ],
-      "resume_when": "完成实际听审并记录检查者及适用范围，再制作、检查和选择准确完整派生文件。"
+      "resume_when": "沿通过的完整母版制作所需派生文件；不继承母版的剪辑头尾或接缝认可。"
     },
     {
       "code": "M132",
@@ -14117,7 +14915,7 @@
           "watermark": {}
         }
       },
-      "status": "hearing_unverified",
+      "status": "user_audition_passed",
       "candidates": [
         {
           "candidate_id": "candidate-683f77f766c75e3930e67b16078e6a2eb0faeacf4be21adc65edbe91e9a54829",
@@ -14139,19 +14937,40 @@
               "role": "original",
               "sample_rate": 48000,
               "sha256": "a0038869ea2d6e97c6dfe9e8fb2651fa62f56aaa5c4bf3dc65fa6abeae2cebce"
+            },
+            {
+              "bytes": 343724,
+              "channels": 2,
+              "duration_seconds": 1.79,
+              "file": "5ea85285cd33093b8093f9dfe0e66f520bc6fea65d98bab29b2dc9f9e1bf245f.wav",
+              "has_audio": true,
+              "id": "voice-reference",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "5ea85285cd33093b8093f9dfe0e66f520bc6fea65d98bab29b2dc9f9e1bf245f"
+            },
+            {
+              "bytes": 393644,
+              "channels": 2,
+              "duration_seconds": 2.05,
+              "file": "47018adecad4bcd63629c1411ed833a771191085c279c0fdb34afce90c4d077d.wav",
+              "has_audio": true,
+              "id": "voice-reference-channel",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "47018adecad4bcd63629c1411ed833a771191085c279c0fdb34afce90c4d077d"
             }
           ],
-          "quality_status": "hearing_unverified",
-          "quality_findings": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。字幕只用于辅助核词，不替代声音判断。"
+          "quality_status": "user_audition_passed",
+          "quality_findings": "完整母版此前已获用户试听确认；用户又实际试听本页的25个准确独立短句，并反馈“都完整，头尾自然”。本候选只继承列出的准确文件结论。执行者未实际听到音频。"
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "最新候选已有本轮原生音频和技术检查，尚未实际完整听审。",
-        "旧候选的失败或返修结论仍保留；新候选不继承其通过或失败。"
-      ],
-      "resume_when": "完成最新准确候选的实际听审，再按方案制作、检查和选择派生文件。"
+      "gaps": [],
+      "resume_when": "用户实际试听通过完整试读及独立短参考；执行者未听到声音。准确文件已选入14处当前生成输入；没有当前输入的文件保留供对应后期用途。"
     },
     {
       "code": "M029",
@@ -14260,7 +15079,7 @@
           "watermark": {}
         }
       },
-      "status": "hearing_unverified",
+      "status": "user_audition_passed",
       "candidates": [
         {
           "candidate_id": "candidate-78ee1e475f908cb034fc275aab316433d2fac6aecf7e1e331f938f577c552577",
@@ -14282,19 +15101,40 @@
               "role": "original",
               "sample_rate": 48000,
               "sha256": "dac89dabf7d3122bf9486f8a9222b2435e54f81d59ed32560ec01b9724dc80c9"
+            },
+            {
+              "bytes": 369984,
+              "channels": 2,
+              "duration_seconds": 1.926771,
+              "file": "54859039c6c161d1af7e89a1ccc7dd2eacbe9d184b56279ae1efb922a36c7fb8.wav",
+              "has_audio": true,
+              "id": "voice-reference",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "54859039c6c161d1af7e89a1ccc7dd2eacbe9d184b56279ae1efb922a36c7fb8"
+            },
+            {
+              "bytes": 393644,
+              "channels": 2,
+              "duration_seconds": 2.05,
+              "file": "f38467e5c789bcc3034a69cfcf7e00dcf889e2eae128c4990d35347283440920.wav",
+              "has_audio": true,
+              "id": "voice-reference-channel",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "f38467e5c789bcc3034a69cfcf7e00dcf889e2eae128c4990d35347283440920"
             }
           ],
-          "quality_status": "hearing_unverified",
-          "quality_findings": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。技术探测和字幕不替代声音判断。"
+          "quality_status": "user_audition_passed",
+          "quality_findings": "完整母版此前已获用户试听确认；用户又实际试听本页的25个准确独立短句，并反馈“都完整，头尾自然”。本候选只继承列出的准确文件结论。执行者未实际听到音频。"
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "最新候选已有本轮原生音频和技术检查，尚未实际完整听审。",
-        "旧候选的失败或返修结论仍保留；新候选不继承其通过或失败。"
-      ],
-      "resume_when": "完成最新准确候选的实际听审，再按方案制作、检查和选择派生文件。"
+      "gaps": [],
+      "resume_when": "用户实际试听通过完整试读及独立短参考；执行者未听到声音。准确文件已选入19处当前生成输入；没有当前输入的文件保留供对应后期用途。"
     },
     {
       "code": "M033",
@@ -14397,7 +15237,7 @@
           "watermark": {}
         }
       },
-      "status": "hearing_unverified",
+      "status": "user_audition_passed",
       "candidates": [
         {
           "candidate_id": "candidate-7a171109b05972f29738f042d1109dbb0481306cb15a353c06d78220f9f50c51",
@@ -14419,19 +15259,52 @@
               "role": "original",
               "sample_rate": 48000,
               "sha256": "200d870d2790a6fb7ca3060bb3434303d124872813f5fe42b40fd26cafc0c5b8"
+            },
+            {
+              "bytes": 1420844,
+              "channels": 2,
+              "duration_seconds": 7.4,
+              "file": "03fe17971b2812a29f8153a1ef3c8857ca856312b5d614b50796ccef6b095714.wav",
+              "has_audio": true,
+              "id": "drum-beats-event",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "03fe17971b2812a29f8153a1ef3c8857ca856312b5d614b50796ccef6b095714"
+            },
+            {
+              "bytes": 1776044,
+              "channels": 2,
+              "duration_seconds": 9.25,
+              "file": "63bb0538b3ec1e8121411dace29ede73f530ba9ab958b5998d8c90fafa148aee.wav",
+              "has_audio": true,
+              "id": "rim-beats-event",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "63bb0538b3ec1e8121411dace29ede73f530ba9ab958b5998d8c90fafa148aee"
+            },
+            {
+              "bytes": 431156,
+              "channels": 2,
+              "duration_seconds": 2.245375,
+              "file": "f6a72dbbb38ac7ac32b16c0b031d49a27cf80bbdd665296d435feedd77548344.wav",
+              "has_audio": true,
+              "id": "accidental-drum-event",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "f6a72dbbb38ac7ac32b16c0b031d49a27cf80bbdd665296d435feedd77548344"
             }
           ],
-          "quality_status": "hearing_unverified",
-          "quality_findings": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。技术探测和字幕不替代声音判断。"
+          "quality_status": "user_audition_passed",
+          "quality_findings": "完整母版此前已获用户试听确认；用户又实际试听本页的32个准确环境与动作短件，并反馈“都对应，完整自然”。本候选只继承列出的准确文件结论。执行者未实际听到音频。"
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "最新候选已有本轮原生音频和技术检查，尚未实际完整听审。",
-        "旧候选的失败或返修结论仍保留；新候选不继承其通过或失败。"
-      ],
-      "resume_when": "完成最新准确候选的实际听审，再按方案制作、检查和选择派生文件。"
+      "gaps": [],
+      "resume_when": "用户实际试听通过完整环境母版与循环接续；执行者未听到声音。准确文件已选入7处当前生成输入；没有当前输入的文件保留供对应后期用途。"
     },
     {
       "code": "M605",
@@ -14905,7 +15778,7 @@
     {
       "code": "M651",
       "requirement_id": "new26-temple-song-singing",
-      "content_sha256": "9b07d4f86f40843d94e5763dc643361b358bd4118a766680e4566b955abe33c7",
+      "content_sha256": "e7b5f99061333cc0555fd90ac2fac9abb01e2c813810d759cf11868494a736a6",
       "title": "四邻安 · 完整原曲",
       "category": "song",
       "scope_kind": "ENTITY",
@@ -14920,7 +15793,7 @@
           "store": false
         }
       },
-      "status": "hearing_unverified",
+      "status": "reference_pending",
       "candidates": [
         {
           "candidate_id": "candidate-0039c58ba917c9ad0e09c117aa586187bb413e85ed0e8fa21739703af3d4d0a1",
@@ -14942,8 +15815,22 @@
               "role": "original",
               "sample_rate": 44100,
               "sha256": "e26038207b4d61e0bee7a9778bbad099ca7a04365f44262cff2d93543467c736"
+            },
+            {
+              "bytes": 883278,
+              "channels": 2,
+              "duration_seconds": 4.6,
+              "file": "9d52f08ab7e1050e10ab24fcf1c12e829947186af970ed7487d8e683d5de3ecc.wav",
+              "has_audio": true,
+              "id": "melody-temple-last-tail",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "9d52f08ab7e1050e10ab24fcf1c12e829947186af970ed7487d8e683d5de3ecc"
             }
-          ]
+          ],
+          "quality_status": "full_audition_passed",
+          "quality_findings": "用户已实际试听此页列出的准确文件并反馈“我已经完成视听，没有问题，请你继续吧”。本次确认完整母版；尚未制作或列入此次试听的独立派生文件不继承听审结论。执行者未实际听到音频。"
         }
       ],
       "selected_upstream": [
@@ -14952,10 +15839,9 @@
       ],
       "waiting_for_new_originals": [],
       "gaps": [
-        "已有本轮原生音频和技术检查，尚未实际完整听审。",
-        "所需短参考或接续文件尚待完整母版听审后制作和验证。"
+        "用户已实际试听完整母版并通过；独立短参考或接续文件仍需制作、检查和准确选择。"
       ],
-      "resume_when": "完成实际听审并记录检查者及适用范围，再制作、检查和选择准确完整派生文件。"
+      "resume_when": "沿通过的完整母版制作所需派生文件；不继承母版的剪辑头尾或接缝认可。"
     },
     {
       "code": "M110",
@@ -15161,7 +16047,7 @@
           "watermark": {}
         }
       },
-      "status": "hearing_unverified",
+      "status": "user_audition_passed",
       "candidates": [
         {
           "candidate_id": "candidate-40d14ec9099bbdf6a6d7751cfff6368ac86e781c7fcdd20dcc4185ba67bcb57d",
@@ -15183,19 +16069,40 @@
               "role": "original",
               "sample_rate": 48000,
               "sha256": "a4f3e14dbdbb05dcc6cc2491f52539074e24f1510137dc66440354116907061d"
+            },
+            {
+              "bytes": 359084,
+              "channels": 2,
+              "duration_seconds": 1.87,
+              "file": "1138fe06e69530703a47ff86a508337dd7c8e3a7c1ce7d36ef4a1a70b01c32ad.wav",
+              "has_audio": true,
+              "id": "voice-reference",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "1138fe06e69530703a47ff86a508337dd7c8e3a7c1ce7d36ef4a1a70b01c32ad"
+            },
+            {
+              "bytes": 393644,
+              "channels": 2,
+              "duration_seconds": 2.05,
+              "file": "ddcd2aa3a309db9de6e614711bc759e5d87c8010024f6b16c16db06d4d2c52e0.wav",
+              "has_audio": true,
+              "id": "voice-reference-channel",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "ddcd2aa3a309db9de6e614711bc759e5d87c8010024f6b16c16db06d4d2c52e0"
             }
           ],
-          "quality_status": "hearing_unverified",
-          "quality_findings": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。字幕只用于辅助核词，不替代声音判断。"
+          "quality_status": "user_audition_passed",
+          "quality_findings": "完整母版此前已获用户试听确认；用户又实际试听本页的25个准确独立短句，并反馈“都完整，头尾自然”。本候选只继承列出的准确文件结论。执行者未实际听到音频。"
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "最新候选已有本轮原生音频和技术检查，尚未实际完整听审。",
-        "旧候选的失败或返修结论仍保留；新候选不继承其通过或失败。"
-      ],
-      "resume_when": "完成最新准确候选的实际听审，再按方案制作、检查和选择派生文件。"
+      "gaps": [],
+      "resume_when": "用户实际试听通过完整试读及独立短参考；执行者未听到声音。准确文件已选入18处当前生成输入；没有当前输入的文件保留供对应后期用途。"
     },
     {
       "code": "M124",
@@ -15615,7 +16522,7 @@
           "watermark": {}
         }
       },
-      "status": "hearing_unverified",
+      "status": "user_audition_passed",
       "candidates": [
         {
           "candidate_id": "candidate-bf462bd72ad362bece639327d40c05c1cd0ea3f6a00b10e10ddee7c90965995d",
@@ -15637,19 +16544,40 @@
               "role": "original",
               "sample_rate": 48000,
               "sha256": "b80c2ecf211a8935a22777fbd1f87e8bd47b93b3ebe9035984c0ba78661ee345"
+            },
+            {
+              "bytes": 351404,
+              "channels": 2,
+              "duration_seconds": 1.83,
+              "file": "c4f1ba43826b559baac7f260f9ad03dbe884d1808d7f926a3ce76009cafc35aa.wav",
+              "has_audio": true,
+              "id": "voice-reference",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "c4f1ba43826b559baac7f260f9ad03dbe884d1808d7f926a3ce76009cafc35aa"
+            },
+            {
+              "bytes": 393644,
+              "channels": 2,
+              "duration_seconds": 2.05,
+              "file": "257e581e4793cde1cd48ac51dd0c8ab5cb07053763f50bf9ffaed22f2f43f538.wav",
+              "has_audio": true,
+              "id": "voice-reference-channel",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "257e581e4793cde1cd48ac51dd0c8ab5cb07053763f50bf9ffaed22f2f43f538"
             }
           ],
-          "quality_status": "hearing_unverified",
-          "quality_findings": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。技术探测和字幕不替代声音判断。"
+          "quality_status": "user_audition_passed",
+          "quality_findings": "完整母版此前已获用户试听确认；用户又实际试听本页的25个准确独立短句，并反馈“都完整，头尾自然”。本候选只继承列出的准确文件结论。执行者未实际听到音频。"
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "最新候选已有本轮原生音频和技术检查，尚未实际完整听审。",
-        "旧候选的失败或返修结论仍保留；新候选不继承其通过或失败。"
-      ],
-      "resume_when": "完成最新准确候选的实际听审，再按方案制作、检查和选择派生文件。"
+      "gaps": [],
+      "resume_when": "用户实际试听通过完整试读及独立短参考；执行者未听到声音。准确文件已选入1处当前生成输入；没有当前输入的文件保留供对应后期用途。"
     },
     {
       "code": "M219",
@@ -15677,7 +16605,7 @@
           "watermark": {}
         }
       },
-      "status": "hearing_unverified",
+      "status": "user_audition_passed",
       "candidates": [
         {
           "candidate_id": "candidate-5a4831cabe1c933d5ef4a87910b54043ac6c4bf3795fef213d4fe9c43e022141",
@@ -15701,17 +16629,14 @@
               "sha256": "b3ba411b6e91ecb93ef54e78c43c0f1ddc0c585df294297d9affcbf7eb50cba2"
             }
           ],
-          "quality_status": "hearing_unverified",
-          "quality_findings": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。技术探测和字幕不替代声音判断。"
+          "quality_status": "user_audition_passed",
+          "quality_findings": "用户已完整试听准确母版并确认无问题。该母版本身就是完整独立事件，含自然尾响，直接作为整件引用，不另剪或另作听审声明。实际长度为3.970375秒；请求时长只是预算。"
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "最新候选已有本轮原生音频和技术检查，尚未实际完整听审。",
-        "旧候选的失败或返修结论仍保留；新候选不继承其通过或失败。"
-      ],
-      "resume_when": "完成最新准确候选的实际听审，再按方案制作、检查和选择派生文件。"
+      "gaps": [],
+      "resume_when": "用户实际试听通过完整环境母版与循环接续；执行者未听到声音。准确文件已选入1处当前生成输入；没有当前输入的文件保留供对应后期用途。"
     },
     {
       "code": "M244",
@@ -15826,7 +16751,7 @@
           "watermark": {}
         }
       },
-      "status": "hearing_unverified",
+      "status": "user_audition_passed",
       "candidates": [
         {
           "candidate_id": "candidate-4c01058740a804926dc7fd1f5185d2092fdf58933661af51a74f7861cafd62b0",
@@ -15848,19 +16773,28 @@
               "role": "original",
               "sample_rate": 48000,
               "sha256": "c613f8c7a8d470cc55c886d6d55f25dd5ee4d255053b4c638e197ff0b4228eb0"
+            },
+            {
+              "bytes": 390724,
+              "channels": 2,
+              "duration_seconds": 2.034792,
+              "file": "3c5dc7ad6367628c68806c5a2e4303045262ac82707753e98ba2139ec054042c.wav",
+              "has_audio": true,
+              "id": "voice-reference",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "3c5dc7ad6367628c68806c5a2e4303045262ac82707753e98ba2139ec054042c"
             }
           ],
-          "quality_status": "hearing_unverified",
-          "quality_findings": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。技术探测和字幕不替代声音判断。"
+          "quality_status": "user_audition_passed",
+          "quality_findings": "完整母版此前已获用户试听确认；用户又实际试听本页的25个准确独立短句，并反馈“都完整，头尾自然”。本候选只继承列出的准确文件结论。执行者未实际听到音频。"
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "最新候选已有本轮原生音频和技术检查，尚未实际完整听审。",
-        "旧候选的失败或返修结论仍保留；新候选不继承其通过或失败。"
-      ],
-      "resume_when": "完成最新准确候选的实际听审，再按方案制作、检查和选择派生文件。"
+      "gaps": [],
+      "resume_when": "用户实际试听通过完整试读及独立短参考；执行者未听到声音。准确文件已选入5处当前生成输入；没有当前输入的文件保留供对应后期用途。"
     },
     {
       "code": "M294",
@@ -15888,7 +16822,7 @@
           "watermark": {}
         }
       },
-      "status": "hearing_unverified",
+      "status": "user_audition_passed",
       "candidates": [
         {
           "candidate_id": "candidate-dc3071fc0dcd2f751a3fd648a27e77b8dc194a7618820bcbc18b6ea99047612b",
@@ -15910,19 +16844,52 @@
               "role": "original",
               "sample_rate": 48000,
               "sha256": "d42c66044cf413f476a4fe3c008e71940472660a3d3e5a40d9bcafe141301f41"
+            },
+            {
+              "bytes": 1036844,
+              "channels": 2,
+              "duration_seconds": 5.4,
+              "file": "3a70deeffc1dae566962e3089f85fd60b5fe7fc0cac5c5678e2365a7c67579af.wav",
+              "has_audio": true,
+              "id": "snake-forward-event",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "3a70deeffc1dae566962e3089f85fd60b5fe7fc0cac5c5678e2365a7c67579af"
+            },
+            {
+              "bytes": 1200044,
+              "channels": 2,
+              "duration_seconds": 6.25,
+              "file": "9313d4a77f026090b5e66bd4eee5856196a545db8b3c4c61706fe9b94b56347f.wav",
+              "has_audio": true,
+              "id": "snake-feeding-event",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "9313d4a77f026090b5e66bd4eee5856196a545db8b3c4c61706fe9b94b56347f"
+            },
+            {
+              "bytes": 807236,
+              "channels": 2,
+              "duration_seconds": 4.204125,
+              "file": "29a031829e1c5ec3ca5636bebcab4b496bd80a4a10891124cbb299703fffbb65.wav",
+              "has_audio": true,
+              "id": "snake-withdraw-event",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "29a031829e1c5ec3ca5636bebcab4b496bd80a4a10891124cbb299703fffbb65"
             }
           ],
-          "quality_status": "hearing_unverified",
-          "quality_findings": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。技术探测和字幕不替代声音判断。"
+          "quality_status": "user_audition_passed",
+          "quality_findings": "完整母版此前已获用户试听确认；用户又实际试听本页的32个准确环境与动作短件，并反馈“都对应，完整自然”。本候选只继承列出的准确文件结论。执行者未实际听到音频。"
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "最新候选已有本轮原生音频和技术检查，尚未实际完整听审。",
-        "旧候选的失败或返修结论仍保留；新候选不继承其通过或失败。"
-      ],
-      "resume_when": "完成最新准确候选的实际听审，再按方案制作、检查和选择派生文件。"
+      "gaps": [],
+      "resume_when": "用户实际试听通过完整环境母版与循环接续；执行者未听到声音。准确文件已选入10处当前生成输入；没有当前输入的文件保留供对应后期用途。"
     },
     {
       "code": "M293",
@@ -16083,7 +17050,7 @@
           "watermark": {}
         }
       },
-      "status": "hearing_unverified",
+      "status": "user_audition_passed",
       "candidates": [
         {
           "candidate_id": "candidate-466fb521ec4cf4b1d8e3ae46d37900b758e953a70577e64fc59769c6d82f9ad2",
@@ -16105,19 +17072,28 @@
               "role": "original",
               "sample_rate": 48000,
               "sha256": "10c62c051bbb66b702df3d084ae0dedabc86a9d1e82a363b354f8f4efdc52761"
+            },
+            {
+              "bytes": 422444,
+              "channels": 2,
+              "duration_seconds": 2.2,
+              "file": "d269222225dc9b3c7ed812e944864cbb7f14c1eea9a7731c6dbdb43345d87d0d.wav",
+              "has_audio": true,
+              "id": "voice-reference",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "d269222225dc9b3c7ed812e944864cbb7f14c1eea9a7731c6dbdb43345d87d0d"
             }
           ],
-          "quality_status": "hearing_unverified",
-          "quality_findings": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。字幕只用于辅助核词，不替代声音判断。"
+          "quality_status": "user_audition_passed",
+          "quality_findings": "完整母版此前已获用户试听确认；用户又实际试听本页的25个准确独立短句，并反馈“都完整，头尾自然”。本候选只继承列出的准确文件结论。执行者未实际听到音频。"
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "最新候选已有本轮原生音频和技术检查，尚未实际完整听审。",
-        "旧候选的失败或返修结论仍保留；新候选不继承其通过或失败。"
-      ],
-      "resume_when": "完成最新准确候选的实际听审，再按方案制作、检查和选择派生文件。"
+      "gaps": [],
+      "resume_when": "用户实际试听通过完整试读及独立短参考；执行者未听到声音。准确文件已选入6处当前生成输入；没有当前输入的文件保留供对应后期用途。"
     },
     {
       "code": "M457",
@@ -16359,7 +17335,7 @@
           "watermark": {}
         }
       },
-      "status": "hearing_unverified",
+      "status": "user_audition_passed",
       "candidates": [
         {
           "candidate_id": "candidate-7d73a075b8631520193c4ed4a1db0f933c6e94c8e3586bf4c28de4a560da93f9",
@@ -16381,19 +17357,28 @@
               "role": "original",
               "sample_rate": 48000,
               "sha256": "2acd2ec6fb4e5986b8f8bd13d3ccd161cb3617156d9ad3493e631fc79610bae1"
+            },
+            {
+              "bytes": 402172,
+              "channels": 2,
+              "duration_seconds": 2.094417,
+              "file": "dec55ddb5161e9c53853edeb22b67dfc646b9768538cde4a4481a39e603ee26c.wav",
+              "has_audio": true,
+              "id": "voice-reference",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "dec55ddb5161e9c53853edeb22b67dfc646b9768538cde4a4481a39e603ee26c"
             }
           ],
-          "quality_status": "hearing_unverified",
-          "quality_findings": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。技术探测和字幕不替代声音判断。"
+          "quality_status": "user_audition_passed",
+          "quality_findings": "完整母版此前已获用户试听确认；用户又实际试听本页的25个准确独立短句，并反馈“都完整，头尾自然”。本候选只继承列出的准确文件结论。执行者未实际听到音频。"
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "最新候选已有本轮原生音频和技术检查，尚未实际完整听审。",
-        "旧候选的失败或返修结论仍保留；新候选不继承其通过或失败。"
-      ],
-      "resume_when": "完成最新准确候选的实际听审，再按方案制作、检查和选择派生文件。"
+      "gaps": [],
+      "resume_when": "用户实际试听通过完整试读及独立短参考；执行者未听到声音。准确文件已选入4处当前生成输入；没有当前输入的文件保留供对应后期用途。"
     },
     {
       "code": "M555",
@@ -16601,7 +17586,7 @@
           "watermark": {}
         }
       },
-      "status": "reference_pending",
+      "status": "user_audition_passed",
       "candidates": [
         {
           "candidate_id": "candidate-081a0971d1bdc69e6f9a094ebfa8e6ebd22bc4190f7c8c98b84ed81283942413",
@@ -16661,16 +17646,14 @@
               "sha256": "c26da047b084a96afcf9b7279e4dfa56ab2af9f3c9f764238fb1963988fb7b6b"
             }
           ],
-          "quality_status": "full_audition_passed",
-          "quality_findings": "用户实际试听完整母版并反馈：都符合，完整自然。本条仅确认该完整原件；独立短参考或接续文件尚待制作与检查。执行者没有听到音频。"
+          "quality_status": "user_audition_passed",
+          "quality_findings": "用户已实际试听此页列出的准确文件并反馈“我已经完成视听，没有问题，请你继续吧”。完整母版此前已通过，本次另确认列出的独立短件及循环试听文件。执行者未实际听到音频。"
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "用户已实际试听完整母版并通过；独立短参考或接续文件仍需制作、检查和准确选择。"
-      ],
-      "resume_when": "沿通过的完整母版制作所需派生文件；不继承母版的剪辑头尾或接缝认可。"
+      "gaps": [],
+      "resume_when": "用户实际试听通过完整环境母版与循环接续；执行者未听到声音。准确文件已选入0处当前生成输入；没有当前输入的文件保留供对应后期用途。"
     },
     {
       "code": "M363",
@@ -16698,7 +17681,7 @@
           "watermark": {}
         }
       },
-      "status": "reference_pending",
+      "status": "user_audition_passed",
       "candidates": [
         {
           "candidate_id": "candidate-509fe0b1d672d2172ee93b5359fc8e5ed47d0aa4ae00ea40cd70c250b9e85d6a",
@@ -16720,19 +17703,65 @@
               "role": "original",
               "sample_rate": 48000,
               "sha256": "6a26d9c72e6687160088093f56b4faf4a97f34950b71202094943c6acf05085c"
+            },
+            {
+              "bytes": 1536044,
+              "channels": 2,
+              "duration_seconds": 8.0,
+              "file": "9eb2d9f74265b20a2f207b6b27749edc236c960f681afd617e2bd964ddcc704f.wav",
+              "has_audio": true,
+              "id": "ambience-bed",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "9eb2d9f74265b20a2f207b6b27749edc236c960f681afd617e2bd964ddcc704f"
+            },
+            {
+              "bytes": 3024044,
+              "channels": 2,
+              "duration_seconds": 15.75,
+              "file": "513c78e36909639340c01dc17019dc7d4b39a38ff6d2b6b130704598acc9c586.wav",
+              "has_audio": true,
+              "id": "ambience-loop-check",
+              "mime": "audio/wav",
+              "role": "preview",
+              "sample_rate": 48000,
+              "sha256": "513c78e36909639340c01dc17019dc7d4b39a38ff6d2b6b130704598acc9c586"
+            },
+            {
+              "bytes": 748844,
+              "channels": 2,
+              "duration_seconds": 3.9,
+              "file": "eb4e5c375db2ba09cce4046246cd066c284a6295e07021947dcba79c38b56cdd.wav",
+              "has_audio": true,
+              "id": "corridor-steps-event",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "eb4e5c375db2ba09cce4046246cd066c284a6295e07021947dcba79c38b56cdd"
+            },
+            {
+              "bytes": 364844,
+              "channels": 2,
+              "duration_seconds": 1.9,
+              "file": "e0bb01ad7bbf9eae15e8fc784973975821056244d6dbc8aa712ef252ccda2731.wav",
+              "has_audio": true,
+              "id": "cabinet-event",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "e0bb01ad7bbf9eae15e8fc784973975821056244d6dbc8aa712ef252ccda2731"
             }
           ],
-          "quality_status": "full_audition_passed",
-          "quality_findings": "用户实际试听完整母版并反馈：都符合，完整自然。本条仅确认该完整原件；独立短参考或接续文件尚待制作与检查。执行者没有听到音频。"
+          "quality_status": "user_audition_passed",
+          "quality_findings": "完整母版此前已获用户试听确认；用户又实际试听本页的32个准确环境与动作短件，并反馈“都对应，完整自然”。本候选只继承列出的准确文件结论。执行者未实际听到音频。"
         }
       ],
       "selected_upstream": [],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "用户已实际试听完整母版并通过；独立短参考或接续文件仍需制作、检查和准确选择。"
-      ],
-      "resume_when": "沿通过的完整母版制作所需派生文件；不继承母版的剪辑头尾或接缝认可。"
+      "gaps": [],
+      "resume_when": "用户实际试听通过完整环境母版与循环接续；执行者未听到声音。准确文件已选入0处当前生成输入；没有当前输入的文件保留供对应后期用途。"
     }
   ],
-  "updated_at": "2026-10-17T02:53:23.806359+00:00"
+  "updated_at": "2026-10-17T06:29:40.513041+00:00"
 }

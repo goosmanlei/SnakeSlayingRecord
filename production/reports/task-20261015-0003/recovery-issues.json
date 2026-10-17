@@ -1,7 +1,7 @@
 {
   "format": "task-recovery-issue-v1",
   "task_id": "task-20261015-0003",
-  "system_commit": "4bb849b3fca331f7d46a8eee299cc7a6c6324aa6",
+  "system_commit": "6a6293bb905823a5e0ba72b16e345182f0cc524a",
   "repository": "review_desk",
   "activation": "active",
   "issues": [
@@ -73,12 +73,12 @@
     },
     {
       "id": "native-audio-input-unavailable",
-      "status": "blocked",
+      "status": "user_hearing_workaround_active",
       "evidence": "Actual 2242604-byte native WAV was read in full and supplied as audio/wav through the audio tool output. Runtime returned: audio content omitted because you do not support audio input.",
       "original_sha256": "cb9568d517393bbb365105efeb2297763d6cf8b92cba86b6c212f6f0bb361059",
-      "verification": "本轮再次向会话输入用户已通过的1.96秒WAV，仍返回不支持音频输入。日常Chrome播放正常；Seed2.0Lite完成45次辅助分析（25份待听音色、18份环境文件、2份已通过样本的能力核对），不改变原听审要求及任何质量通过状态。部分时间戳和事件描述有疑点，不能代替实际听音。42项声音仍开放，连续试听页已准备。",
+      "verification": "当前会话仍不接收实际音频。用户已确认全部音色、环境母版及短件、完整歌曲，并亲自定位9段原曲；准确文件的反馈独立记录。首条新角色唱段仍待用户试听，未推定通过。",
       "resume_when": "取得准确文件的实际试听结论；若用户明确调整本任务验收标准，再按新标准执行，不能由无回复推定同意。",
-      "latest_evidence": "../../receipts/audio-analysis-task-20261015-0003-stage12.json"
+      "latest_evidence": "../../receipts/audio-user-short-audition-task-20261015-0003-scenes13.json"
     },
     {
       "id": "stage04-private-method-packaging",
@@ -117,7 +117,7 @@
       "status": "unknown",
       "request_id": "555f10be-2760-45c6-baf8-c8177fad42b7",
       "evidence": "守庙差役试声请求在长时间中断后仍未收到响应；仅终止核明归属的本次请求进程，未收到音频或平台Logid。",
-      "action": "旧请求与120秒预留保持UNKNOWN。恢复后依据用户继续执行及可重试授权，核日常Chrome14.25分钟余量后，新增独立guard-voice-02请求；已生成11.3秒并登记为实际候选1，尚未听审，未选作下游参考。",
+      "action": "旧请求与120秒预留保持UNKNOWN。恢复后新增的guard-voice-02及独立短参考已由用户试听通过，准确文件已绑定当前消费者；不把新作品通过改写为旧请求成功。",
       "receipt": "../../receipts/seed-task-20261015-0003-guard-voice-01.json"
     },
     {
@@ -170,6 +170,19 @@
       "status": "verified",
       "verification": "191项都有本轮原件；139项图像／工程与10项声音的3002处已选输入通过回读。2209条制作记录、281候选、289份提交与三张评论表在新空实例和冻结原库逐表相同。隔离增量预演applied=false；恢复副本已清理。42项声音验收及最终发布仍开放。",
       "receipt": "verification.json"
+    },
+    {
+      "id": "stage13-voices-scenes-and-recovery",
+      "status": "verified",
+      "verification": "34项音色和14项环境声音完成准确用户试听及用途检查；409处音色、38处环境模型输入和5处河水剪辑输入已绑定。499份文件的完整导出恢复通过，7张关键表逐表一致；增量预演applied=false。测试副本已删除并回读。",
+      "receipt": "verification.json"
+    },
+    {
+      "id": "reference-selection-response-scope",
+      "status": "runtime_and_browser_verified_task_preview",
+      "action": "在选择写入完成后，仅在同一响应内复用只读证据；不跨写入或请求缓存。",
+      "verification": "当前契约17项测试通过；旧套件3失败10错误与未改基线完全一致。Chrome候选切换及比较弹窗复验通过；尚未发布正式服务。",
+      "receipt": "system-selection-check13.json"
     }
   ],
   "resume_requirement": "当前run已认证并持有双仓任务锁。按本轮准确候选、原件和当前方案续做；真实Chrome已恢复，待最终正式发布后再复验。",
@@ -179,7 +192,7 @@
     "evidence_runtime": ".runtime/task-20261015-0003/chrome-stage08-candidate-fixes.json",
     "formal_publication_verified": false,
     "audio_quality_verified_by_playback": false,
-    "latest_evidence": "production/receipts/chrome-task-20261015-0003-stage12.json"
+    "latest_evidence": "production/receipts/chrome-task-20261015-0003-stage13.json"
   },
   "unknown_replacement_proposal": {
     "status": "executed_as_three_bounded_new_candidates",
@@ -188,12 +201,11 @@
     "old_unknown_records_and_reservations_retained": true
   },
   "current_checkpoint": {
-    "stage": 12,
+    "stage": 13,
     "status_counts": {
       "executor_checked": 139,
-      "user_audition_passed": 10,
-      "reference_pending": 3,
-      "hearing_unverified": 39
+      "user_audition_passed": 48,
+      "reference_pending": 4
     },
     "google_dispatch_cap": 116,
     "google_remaining_dispatch_slots": 0,
@@ -201,12 +213,13 @@
     "paused": false
   },
   "audio_verification_decision": {
-    "status": "awaiting_user_response",
+    "status": "actual_user_hearing_in_progress",
     "current_rule": "实际试听；模型分析和技术检查仅辅助",
-    "question_sent": "本轮已询问保留实际试听流程，或明确改为独立音频模型结合技术检查且疑点仍交用户试听。尚未收到答复，原规则保持。",
-    "audition_url": "http://127.0.0.1:63510/",
-    "requirements": 42,
-    "clips": 47,
-    "minutes_approx": 21.4
+    "completed": "用户已听完 checkpoint12 的47份文件、25个人物短参考和32个环境动作短件；9段原曲位置由用户定位并保存。",
+    "remaining": "4首歌曲的角色唱段与27处用途衔接；首条阿蘅10秒演唱已生成，等待准确试听结论。",
+    "audition_url": "http://127.0.0.1:63510/song-role-pilot13.html",
+    "role_files_planned": 16,
+    "role_files_generated": 1,
+    "pending_pilot_sha256": "119fb55a13baa602c5b54ef8cce2d491c0e67063ef98bcc6995d9a8b0c391947"
   }
 }
