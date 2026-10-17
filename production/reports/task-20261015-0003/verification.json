@@ -1,15 +1,15 @@
 {
   "format": "stage-verification-v1",
   "task_id": "task-20261015-0003",
-  "stage": "stage-13",
-  "checked_at": "2026-10-17T06:40:28.453375+00:00",
+  "stage": "stage-14",
+  "checked_at": "2026-10-17T07:10:05.466705+00:00",
   "requirements": 651,
   "ordinary_state": 191,
   "unique_dependency_edges": 3401,
   "acyclic": true,
   "candidates": 282,
   "covered_requirements": 191,
-  "production_files_verified": 441,
+  "production_files_verified": 442,
   "selected_input_slots": 3213,
   "selected_by_material": {
     "new26-songbook-identity": 27,
@@ -222,22 +222,22 @@
   },
   "locked_story_unchanged": true,
   "sanitized_private_objects": {
-    "managed-method-artifact-v1": 2272,
-    "managed-method-execution-v1": 761
+    "managed-method-artifact-v1": 2275,
+    "managed-method-execution-v1": 762
   },
   "empty_instance_recovery": {
     "recovered": true,
-    "objects": 18876,
+    "objects": 18908,
     "production_objects": 2211,
-    "revisions": 18929,
+    "revisions": 18961,
     "comments": 404,
-    "files_verified": 499,
-    "destination": ".runtime/generation/recovered-stage-0003-13",
+    "files_verified": 500,
+    "destination": ".runtime/generation/recovered-stage-0003-14",
     "schema_version": 14,
     "exact_table_comparisons": {
       "production_current_records": {
         "rows": 2211,
-        "sha256": "a91a45120de8b6f3c313c5f0660ed386dc3e301506459278e223175ad6134338",
+        "sha256": "a3113334cdaafcda54c4fd8a4b5cc02307989e605b57c15b90a11a007cbf00ad",
         "equal": true
       },
       "production_candidates": {
@@ -276,6 +276,7 @@
   },
   "previous_publication_packages_unchanged": {
     "production/publications/task-20261015-0003-stage-05.json": "e0a17f266d89c609cf50828dd5f74eef80cb548d0a6ba5055883451276d288b9",
+    "production/publications/task-20261015-0003-stage-13.json": "3a03d58d62a34830d5fd4a5bf356040e15ec7e5e00e5a8dc76e1846c93c01272",
     "production/publications/task-20261015-0003-stage-09.json": "f9db6571808e4438527a0104f74e0554fcaa0dae3016ad12178725f3f7092ca7",
     "production/publications/task-20261015-0003-stage-08.json": "1ba6bb6deae2791f9aa91258405d2baf854a6731186555166530840a6b1d5926",
     "production/publications/task-20261015-0003-stage-12.json": "7d6f7d08da4fff3ec6809c16e485b0c6812fdf8bec6a964250ded296817f7914",
@@ -289,27 +290,27 @@
     "production/publications/task-20261015-0003-stage-10.json": "5b05fd6d36f8548d5002c24b4a3738fd2e34a7da9e23a91526f0d0f3534d37f5"
   },
   "publication_package": {
-    "path": "production/publications/task-20261015-0003-stage-13.json",
-    "sha256": "3a03d58d62a34830d5fd4a5bf356040e15ec7e5e00e5a8dc76e1846c93c01272",
-    "publication_id": "f3332929b82d1adfba3471dc16814eb09bbd6b09873233fbbb3eb3204f5c8d7c",
-    "objects": 2496,
-    "media_files": 441,
+    "path": "production/publications/task-20261015-0003-stage-14.json",
+    "sha256": "84f0e4c75f42603eaf52e43ee1e49283656f2f5ddab2e3be02dc52967d6de774",
+    "publication_id": "cf3abb816bbe4cec50e7960a597b4f0ee8aa6fe1b759a1de934cb7ec3c87125d",
+    "objects": 2528,
+    "media_files": 442,
     "applied_to_formal": false,
     "preflight": {
       "passed": true,
       "target": "isolated clone of formal database",
-      "receipt": ".runtime/generation/publications/task-20261015-0003-stage-check-13/preflight.json",
+      "receipt": ".runtime/generation/publications/task-20261015-0003-stage-check-14/preflight.json",
       "result": {
         "applied": false,
         "already_published": false,
-        "publication_id": "f3332929b82d1adfba3471dc16814eb09bbd6b09873233fbbb3eb3204f5c8d7c",
+        "publication_id": "cf3abb816bbe4cec50e7960a597b4f0ee8aa6fe1b759a1de934cb7ec3c87125d",
         "source_commit": null,
         "scope": {
           "contract": "production-current-publication-v1",
           "changed_rows": {
-            "objects": 2496,
-            "revisions": 2496,
-            "dependencies": 13253,
+            "objects": 2528,
+            "revisions": 2528,
+            "dependencies": 13307,
             "comments": 0,
             "material_content": 0,
             "material_archive_files": 0,
@@ -324,11 +325,11 @@
             "production_candidates": 282,
             "production_candidate_targets": 282,
             "production_comment_quotes": 0,
-            "production_current_operations": 7576,
+            "production_current_operations": 7577,
             "production_response_excerpts": 0
           },
           "comment_events": [],
-          "publication_id": "f3332929b82d1adfba3471dc16814eb09bbd6b09873233fbbb3eb3204f5c8d7c",
+          "publication_id": "cf3abb816bbe4cec50e7960a597b4f0ee8aa6fe1b759a1de934cb7ec3c87125d",
           "already_published": false
         }
       }
@@ -337,18 +338,18 @@
   "formal_publication": false,
   "system_commit": "6a6293bb905823a5e0ba72b16e345182f0cc524a",
   "stage_freeze": {
-    "frozen_at": "2026-10-17T06:29:43.396400+00:00",
-    "source_snapshot": ".runtime/task-20261015-0003/source-stage13.sqlite3",
+    "frozen_at": "2026-10-17T07:00:06.043639+00:00",
+    "source_snapshot": ".runtime/task-20261015-0003/source-stage14.sqlite3",
     "active_database": ".runtime/generation/review/.runtime/review.sqlite3",
     "summary": {
-      "checked_at": "2026-10-17T06:29:40.513041+00:00",
+      "checked_at": "2026-10-17T07:00:03.188598+00:00",
       "requirements": 651,
       "ordinary_state": 191,
       "unique_dependency_edges": 3401,
       "acyclic": true,
       "candidates": 282,
       "covered_requirements": 191,
-      "production_files_verified": 441,
+      "production_files_verified": 442,
       "selected_input_slots": 3213,
       "selected_by_material": {
         "new26-songbook-identity": 27,
@@ -1301,6 +1302,7 @@
     },
     "previous_packages": {
       "production/publications/task-20261015-0003-stage-05.json": "e0a17f266d89c609cf50828dd5f74eef80cb548d0a6ba5055883451276d288b9",
+      "production/publications/task-20261015-0003-stage-13.json": "3a03d58d62a34830d5fd4a5bf356040e15ec7e5e00e5a8dc76e1846c93c01272",
       "production/publications/task-20261015-0003-stage-09.json": "f9db6571808e4438527a0104f74e0554fcaa0dae3016ad12178725f3f7092ca7",
       "production/publications/task-20261015-0003-stage-08.json": "1ba6bb6deae2791f9aa91258405d2baf854a6731186555166530840a6b1d5926",
       "production/publications/task-20261015-0003-stage-12.json": "7d6f7d08da4fff3ec6809c16e485b0c6812fdf8bec6a964250ded296817f7914",
@@ -2103,11 +2105,12 @@
   },
   "chrome": {
     "status": "daily_chrome_task_preview_verified",
-    "latest_receipt": "production/receipts/chrome-task-20261015-0003-stage13.json",
+    "latest_receipt": "production/receipts/chrome-task-20261015-0003-stage14.json",
     "earlier_functional_receipt": "production/receipts/chrome-task-20261015-0003-stage08.json",
-    "scope": "EN001/M001 candidate 2 to 1 labels and comparison controls; M002 channel-compatible original 3; role-pilot exact media loading.",
+    "scope": "Latest:ritual near12.5s and distant12.58s exact media on daily Chrome audition page. Candidate switch/comparison and channel-short display reuse unchanged stage13 functional evidence.",
     "formal_publication_verified": false,
-    "audio_quality_verified_by_playback": false
+    "audio_quality_verified_by_playback": false,
+    "previous_functional_receipt": "production/receipts/chrome-task-20261015-0003-stage13.json"
   },
   "audio_audition": {
     "executor_actual_listening": false,
@@ -2127,7 +2130,14 @@
       "actual_seconds": 10,
       "user_hearing": "pending"
     },
-    "scope": "User approvals apply only to exact heard files and boundaries. They do not approve new singing derivatives."
+    "scope": "User approvals apply only to exact heard files and boundaries. They do not approve new singing derivatives.",
+    "ritual_distance": {
+      "component_id": "ritual-core-distant",
+      "sha256": "f40e1ccb12939615daaf41b85d4439731b813e08e3412ea790f8517ea4d105eb",
+      "actual_seconds": 12.58,
+      "user_hearing": "pending",
+      "receipt": "production/receipts/song-distance-task-20261015-0003-stage13.json"
+    }
   },
   "pause": {
     "paused": false,
@@ -2140,5 +2150,6 @@
     "actual_listening": false,
     "acceptance_unchanged": true
   },
-  "audio_reference_budget_receipt": "production/receipts/audio-reference-budget-task-20261015-0003-stage13.json"
+  "audio_reference_budget_receipt": "production/receipts/audio-reference-budget-task-20261015-0003-stage13.json",
+  "song_melody_basis_receipt": "production/receipts/song-melody-basis-task-20261015-0003-stage13.json"
 }
