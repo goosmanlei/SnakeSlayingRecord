@@ -1,7 +1,7 @@
 {
   "format": "task-process-cleanup-v1",
   "task_id": "task-20261015-0003",
-  "completed_at": "2026-10-16T23:34:08.899203+00:00",
+  "completed_at": "2026-10-17T03:02:16.151120+00:00",
   "deleted": [
     {
       "path": ".runtime/task-20261015-0003/svg-renderer-env",
@@ -1478,13 +1478,49 @@
       "bytes": 835919872,
       "purpose_ended": "Stage11 exact recovery and isolated preflight passed; original media, immutable calls, active task database and unfinished recovery inputs retained.",
       "absent_on_readback": true
+    },
+    {
+      "path": ".runtime/generation/recovered-stage-0003-12",
+      "files": 434,
+      "symlinks": 0,
+      "directories": 9,
+      "bytes": 3521748243,
+      "purpose_ended": "Stage12 exact recovery and isolated preflight passed; original media, immutable calls, active task database and unfinished recovery inputs retained.",
+      "absent_on_readback": true
+    },
+    {
+      "path": ".runtime/task-20261015-0003/source-stage12.sqlite3",
+      "files": 1,
+      "symlinks": 0,
+      "directories": 0,
+      "bytes": 861933568,
+      "purpose_ended": "Stage12 exact recovery and isolated preflight passed; original media, immutable calls, active task database and unfinished recovery inputs retained.",
+      "absent_on_readback": true
+    },
+    {
+      "path": ".runtime/generation/publications/task-20261015-0003-stage-check-12/before.sqlite3",
+      "files": 1,
+      "symlinks": 0,
+      "directories": 0,
+      "bytes": 420659200,
+      "purpose_ended": "Stage12 exact recovery and isolated preflight passed; original media, immutable calls, active task database and unfinished recovery inputs retained.",
+      "absent_on_readback": true
+    },
+    {
+      "path": ".runtime/generation/publications/task-20261015-0003-stage-check-12/rehearsal.sqlite3",
+      "files": 1,
+      "symlinks": 0,
+      "directories": 0,
+      "bytes": 838676480,
+      "purpose_ended": "Stage12 exact recovery and isolated preflight passed; original media, immutable calls, active task database and unfinished recovery inputs retained.",
+      "absent_on_readback": true
     }
   ],
   "totals": {
-    "files": 3709,
+    "files": 4146,
     "symlinks": 3,
-    "directories": 189,
-    "bytes": 47142912949
+    "directories": 198,
+    "bytes": 52785930440
   },
   "containers_created": 0,
   "task_containers_found": 0,
@@ -1535,6 +1571,10 @@
     {
       "path": ".runtime/generation/publications/task-20261015-0003-stage-check-06/preflight.json",
       "purpose": "Minimal exact stage06 publication preflight proof; keep for final recovery."
+    },
+    {
+      "path": ".runtime/task-20261015-0003/audition12",
+      "purpose": "Local continuous audition page for42 unfinished audio needs; server identity in audition12-server.json. Task owner retains it until actual audio verification finishes, then stops the exact server and removes this page."
     }
   ],
   "cleanup_complete_for_task": false,
@@ -15089,5 +15129,43 @@
       }
     ],
     "shared_services_stopped": false
+  },
+  "stage12_deleted": {
+    "files": 437,
+    "symlinks": 0,
+    "directories": 9,
+    "bytes": 5643017491
+  },
+  "stage12_open_file_check": {
+    "container_mounts_checked": [
+      {
+        "id": "c33ae8503f18cf94d87cd2a9aa793c2b1ed8ca45f83c4daaafaf0f226c94bbe6",
+        "name": "/snakeslayingrecord-app-1",
+        "source": "/Users/bytedance/codex-path/creative/SnakeSlayingRecord",
+        "destination": "/instance"
+      }
+    ],
+    "matching_application_fds": [
+      {
+        "id": "c33ae8503f18cf94d87cd2a9aa793c2b1ed8ca45f83c4daaafaf0f226c94bbe6",
+        "matching_fds": []
+      }
+    ],
+    "shared_services_stopped": false,
+    "host_readonly_proxy_summary": [
+      {
+        "pid": 20525,
+        "command": "com.apple.Virtualization.Virtua",
+        "access": "r",
+        "identity": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine",
+        "open_files": 446
+      }
+    ],
+    "host_open_file_evidence": {
+      "path": ".runtime/task-20261015-0003/stage12-host-open-files.json",
+      "sha256": "eddabe1ca2e7eb009e958287d16d0d0d18aa738c180dd1228db27a9e1ddc4c1c",
+      "count": 446,
+      "meaning": "Only read-only Apple Virtualization proxy descriptors; no application handles in tested containers. Deleted exact temporary paths are listed once in deleted."
+    }
   }
 }

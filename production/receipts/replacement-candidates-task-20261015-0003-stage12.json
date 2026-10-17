@@ -1,0 +1,96 @@
+{
+  "authorization": {
+    "prepared_at": "2026-10-16T21:33:01.157828+00:00",
+    "status": "authorized_bounded_new_candidates",
+    "reason": "Three original requests have no recoverable native result. No old ID resubmission or status relabeling; all UNKNOWN and cost reservations remain. Bound each new candidate to one request and a fresh real submission snapshot.",
+    "items": [
+      {
+        "requirement": {
+          "object_id": "new26-guard-identity",
+          "revision_id": "0cafaf547dd53b4b53479d44f29b267b35cf83469bed956ccf8d6e56b58c67f1"
+        },
+        "proposed_operation": "guard-identity-flare-01",
+        "provider": "Higgsfield OpenAPI",
+        "model": "marketing-studio/image/flare",
+        "parameters": {
+          "quality": "high",
+          "moderation": "auto",
+          "resolution": "4k",
+          "aspect_ratio": "16:9",
+          "enhance_prompt": false
+        },
+        "prompt": "Native 4K landscape 16:9 character identity sheet, native PNG, no upscaling.\n产物与主体：角色身份与衣装设定。增调守庙差役，成年男子，宽颧、圆下巴、黑发无白鬓、无须；蓝灰窄袖衣、黑腰束、灰裤黑靴、低圆黑软帽，身形比程略矮结实。\n画框与结构：左45%为全身三分之四正面，中30%同人左侧全身，右25%正脸近图；同一人三个视向，不是三个人。手空着，袖口和腿部便于站坐转身；不佩机关钥串，不作后院压杠姿势。 手、脚、头部均完整入框，多视向保持同一脸形、比例和衣色。\n光色与画风：浅暖灰空背景，左前方柔和中性光，脸与衣褶分两层明暗。二维人物与轻手绘背景；轮廓清楚，色块简洁，阴影只分两级，人物与背景保持相同线条密度。不增加写实皮纹、纸纹、颗粒、锐边或塑料高光。\n保留和排除：不添加文字标签、无依据标志或背景剧情；不把自然站姿画成夸张表情海报。\n衣装统一为故事古代布衣形制：有领上衣为交领布系结构，不画现代立领盘扣、拉链、金属铆钉或制服标志。保持上述角色各自发式与帽形，不能统一换成同一张脸。",
+        "inputs": [],
+        "max_new_requests": 1,
+        "conservative_reserve_usd": 1,
+        "old_call_retained": "task-20261015-0003-guard-identity-01",
+        "old_call_status": "unknown"
+      },
+      {
+        "requirement": {
+          "object_id": "new26-porter-identity",
+          "revision_id": "59f27e2ab587489a162a4c74a6ca20959d205809421b4ebef07e188ed4a22fcf"
+        },
+        "proposed_operation": "porter-identity-flare-01",
+        "provider": "Higgsfield OpenAPI",
+        "model": "marketing-studio/image/flare",
+        "parameters": {
+          "quality": "high",
+          "moderation": "auto",
+          "resolution": "4k",
+          "aspect_ratio": "16:9",
+          "enhance_prompt": false
+        },
+        "prompt": "Native 4K landscape 16:9 character identity sheet, native PNG, no upscaling.\n产物与主体：角色身份与衣装设定。挑柴老汉，白灰短须、圆颧、粗眉、发顶稀疏束小髻；洗旧土黄短褂、灰褐裤、草鞋，腰背微弯。身旁一根细长挑柴扁担竖立，担头和柴束绳路分开可认。\n画框与结构：左边同人全身三分之四自然站姿，右边侧全身与头近图，扁担单列在中间空白；柴束系在短绳两端并落地，不悬浮在人头旁。 手、脚、头部均完整入框，多视向保持同一脸形、比例和衣色。\n光色与画风：浅暖灰空背景，左前方柔和中性光，脸与衣褶分两层明暗。二维人物与轻手绘背景；轮廓清楚，色块简洁，阴影只分两级，人物与背景保持相同线条密度。不增加写实皮纹、纸纹、颗粒、锐边或塑料高光。\n保留和排除：不添加文字标签、无依据标志或背景剧情；不把自然站姿画成夸张表情海报。\n衣装统一为故事古代布衣形制：有领上衣为交领布系结构，不画现代立领盘扣、拉链、金属铆钉或制服标志。保持上述角色各自发式与帽形，不能统一换成同一张脸。",
+        "inputs": [],
+        "max_new_requests": 1,
+        "conservative_reserve_usd": 1,
+        "old_call_retained": "task-20261015-0003-porter-identity-01",
+        "old_call_status": "unknown"
+      },
+      {
+        "requirement_id": "new26-guard-voice",
+        "provider": "Seed Audio",
+        "model": "seed-audio-1.0",
+        "spec": {
+          "id": "task-20261015-0003-guard-voice-02",
+          "text_prompt": "生成一名单人普通话说话声。说话身份：守庙差役，成年男性说话声，身份说明不朗读。稳定声线：中声区偏低，声音结实干净，口腔共鸣靠前，少颗粒、辅音短明。\n统一试读条件：平稳、中性的说话读法，中等语速，逗号处短停，句号处自然停顿；不设置人物关系或情绪转折，不演唱，不临时加强某个词。近距离干声，只保留自然换气，不加入房间回声、环境声、配乐或其他人声。\n只把下面两句固定原词按原顺序朗读一次，不增删、改写或重复，不念标题和说明，不加语气词或临场发挥；保留完整尾字和自然收声：\n桌上放着一本书，旁边有一只白色的杯子。\n窗边的椅子朝着门口，几张纸整齐地叠在一起。",
+          "references": [],
+          "production": {
+            "url": "http://127.0.0.1:62845",
+            "requirement_id": "new26-guard-voice",
+            "operation_id": "task-20261015-0003-guard-voice-02-submit",
+            "call_id": "task-20261015-0003-guard-voice-02"
+          }
+        },
+        "max_new_requests": 1,
+        "conservative_new_quota_reserve_seconds": 120,
+        "old_unknown_120s_reserve_retained": true,
+        "old_request_id": "555f10be-2760-45c6-baf8-c8177fad42b7"
+      }
+    ],
+    "hf_balance": 6.44,
+    "hf_projected_after_reserves": 4.44,
+    "hf_stop_line": 3.63,
+    "no_recharge_or_auto_top_up": true,
+    "seed_remaining_planning_seconds": 746.843625,
+    "seed_quota_must_recheck_before_dispatch": true,
+    "authorized_at": "2026-10-17T02:32:00.868147+00:00",
+    "authorization_source": "User resumed task and instructed: 继续，现在已经是重新启动的任务，请继续执行直到完成本任务; follows checkpoint11 report and already-authorized retries. One new independent candidate per listed need; never replay prior unknown calls.",
+    "original_proposal": "unknown-replacement-proposal43.json"
+  },
+  "outcome": {
+    "new_calls": 3,
+    "completed": 3,
+    "old_unknown_states_changed": false,
+    "image_requirements_checked": 2,
+    "voice_hearing_unverified": 1,
+    "new_image_consumer_slots": 14
+  },
+  "receipts": [
+    "higgsfield-openapi-task-20261015-0003-guard-identity-flare-01.json",
+    "higgsfield-openapi-task-20261015-0003-porter-identity-flare-01.json",
+    "seed-task-20261015-0003-guard-voice-02.json"
+  ],
+  "quota": "seed-quota-task-20261015-0003-stage12.json"
+}
