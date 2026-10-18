@@ -1,0 +1,61 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-liji-palm-01",
+  "submission": {
+    "call_id": "task-20261015-0003-liji-palm-01",
+    "submission_sha256": "64ca9ef8a05b0fb6a7361d480ad85ff3d02fe725f9ff4bc4b50f8edf3d2f314b",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-liji-palm-01.json",
+  "provider_history_id": "7H7Q1XPshHHVqwy0jTHi",
+  "provider_job_id": null,
+  "provider_resource_id": "OaO7OjWIyViQOkQGGroo",
+  "model": "nano-banana-2-1",
+  "project_id": "8K6WcbrPLghSBJXBtWAE",
+  "provider": "OpenArt",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "461d55a6444ab103352f5709144e74cc8cf84d4c5270e1701875a7078da25080.png",
+    "sha256": "461d55a6444ab103352f5709144e74cc8cf84d4c5270e1701875a7078da25080",
+    "bytes": 17679789,
+    "mime": "image/png",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-liji-palm-01",
+    "candidate_id": "candidate-c0b63eac126451195801a9b70dd12259a26c149cae7959627093e064760de3c1",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "OpenArt credits",
+    "quoted": 80,
+    "actual": "UNKNOWN",
+    "note": "报价对应单图；实际扣费字段未返回时保留UNKNOWN。"
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "已实际并排查看干净母版与结果。脸、髻、干常服和体型保持；正面图包右手而左手裸，但面朝画面左的本人左侧全身又包了近侧左手。右下掌心和手背近图拇指都在画面左侧，实际不能是同一右手的正反两面；包布左右关系不一致。无血、无额伤符合此时点，但不能抵消解剖左右错误。",
+    "decision": "不绑定消费者。回到同一干净第0代母版，明确第二全身是本人右侧、脸朝画面右；掌心近图拇指在画面右、手背近图拇指在画面左，左手始终裸露。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-task-20261015-0003-liji-identity-01",
+        "revision_id": "77908eeddf225d05468c60366401d16f721cceb62cb297dcd110c25132f302e4"
+      }
+    ]
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  }
+}

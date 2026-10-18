@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-river-street-layout-01",
+  "submission": {
+    "call_id": "task-20261015-0003-river-street-layout-01",
+    "submission_sha256": "6011389572187cade7b3c0211beed648219c8a4b2351f053c9a15c5fdded0e19",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-river-street-layout-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "2cc885a7000ae1ffdd6ffc5acbccdd3aa92b931c9d08badaa1bb5fb33130e72b.jpg",
+    "sha256": "2cc885a7000ae1ffdd6ffc5acbccdd3aa92b931c9d08badaa1bb5fb33130e72b",
+    "bytes": 9155617,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-river-street-layout-01",
+    "candidate_id": "candidate-4326acad4ec0fe13eeaf21eff1ca31598c826ca33a5b01f6e05d0a6d123bc641",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "已实际看原生5504×3072 JPEG：主图北铺南河总体方向成立，但两处添加“浅滩”文字；东端未清楚形成道具屋北墙、绕西到南门的出口关系，反向图又把竹摊分成两侧陈列，不能准确确认与主图/平面是同一摊位及通路。",
+    "decision": "不作为全剧空间母版选择。下一次先以本轮故事事实制作确定性方位平面，再约束一个透视；避免在一张生成图中同时臆造三套空间，不沿此失败图继续图生图。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  },
+  "usage": {
+    "total_tokens": 7249,
+    "total_input_tokens": 493,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 493
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 5056,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1700
+  },
+  "actual_request_body_sha256": "f0680e63c8b8f9d19cd474c05fb638ed367d540076bfe8db3c916e908c482dcf",
+  "submitted_inputs": []
+}

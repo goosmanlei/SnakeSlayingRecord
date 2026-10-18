@@ -1,0 +1,56 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-aheng-mother-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-aheng-mother-identity-01",
+    "submission_sha256": "a92ff6815d9a8c36226fc60a5e214f7e1d83bdaa3107286b86cb1ce520a58b29",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-aheng-mother-identity-01.json",
+  "provider_history_id": "QuKDixmGTY6ZNKNtiz17",
+  "provider_job_id": null,
+  "provider_resource_id": "3oj0nPWT3WQH8VxURX8r",
+  "model": "gpt-image-2-5-sunburst",
+  "project_id": "8K6WcbrPLghSBJXBtWAE",
+  "provider": "OpenArt",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "cda409f3ceaaa89ac950d21021af754d09b654ce5745b50618e67d7a9e82a80e.png",
+    "sha256": "cda409f3ceaaa89ac950d21021af754d09b654ce5745b50618e67d7a9e82a80e",
+    "bytes": 8674819,
+    "mime": "image/png",
+    "width": 3840,
+    "height": 2160
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-aheng-mother-identity-01",
+    "candidate_id": "candidate-6cf31b47e21e90379a3f4788808f1704036e16efdeca0100150e9fa9b300bd83",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "OpenArt credits",
+    "quoted": 350,
+    "actual": "UNKNOWN",
+    "note": "报价对应单图；实际扣费字段未返回时保留UNKNOWN。"
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "已实际打开完整3840×2160原件。三视向为同一清瘦成年女性，米灰上衣、灰蓝裙和布鞋一致；臀部落座、脚落地，低凳承重可读。近脸和衣料有明显细碎揉擦、渐变与纹理，头发线条密度较高，偏半写实，未达到已通过阿蘅母版的干净二维统一画风。",
+    "decision": "保留身份与坐姿设计，回到无图输入的新根图；沿已验证阿蘅母版的平涂和硬边两级阴影描述，明确禁止面部揉擦、布纹与细碎发丝。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  }
+}

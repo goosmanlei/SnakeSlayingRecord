@@ -1,0 +1,1325 @@
+{
+  "format": "complete-song-uses-v1",
+  "line_numbering": "各lyrics.txt内非空唱词行，从1开始；包含显式重唱。不是音频时间戳。",
+  "uses": [
+    {
+      "requirement_id": "new26-s001-q01-video",
+      "shot_id": "new26-s001-q01",
+      "title": "唱曲挣米 · 有声镜头",
+      "original_song": {
+        "object_id": "new26-boat-song-singing",
+        "revision_id": "f11d4f9ee02db7cdb95a3447019e8ed609861049f3d53237127cdd456605e33d"
+      },
+      "lyrics_file": "production/rebuild/songs/boat-song/lyrics.txt",
+      "nonempty_line_numbers": [
+        1
+      ],
+      "performance": "阿蘅清唱首句，原曲中段尚未进入。",
+      "status": "准确角色文件及接续文件均由用户试听通过；本镜歌曲完整文件引用和实际时长安排已保存。视频未生成。",
+      "handoff": "只选本镜所需的完整独立短文件，保留原曲候选与文件哈希、歌词行和真实剪辑/另唱记录；不上传整首长曲或用range指代未制作文件。",
+      "actual_selection": {
+        "reference": {
+          "object_id": "asset-task-20261015-0003-boat-song-full-02",
+          "revision_id": "313d65234fa6bc01da8b57a8b2afde44e9c70b7635bfe365b77e45cff78e7ce9"
+        },
+        "candidate_id": "candidate-aaa3fca1c8eacf021377b80115a2bd5062cb9b5cf35223f5ad5e00c99f1e2914",
+        "model_component_id": "boat-aheng-opening",
+        "model_sha256": "119fb55a13baa602c5b54ef8cce2d491c0e67063ef98bcc6995d9a8b0c391947",
+        "timeline": {
+          "component_id": "boat-aheng-opening",
+          "end_seconds": 11.0,
+          "full_file_seconds": 10.0,
+          "model_reference": "complete_file",
+          "reference_only": false,
+          "sha256": "119fb55a13baa602c5b54ef8cce2d491c0e67063ef98bcc6995d9a8b0c391947",
+          "shot_end_seconds": 18,
+          "start_seconds": 1
+        },
+        "requirement_revision": "1976f58db6588613902539a1cdf97a79f1dc2d790a9fc02d3299c7c2aebd3c5d",
+        "current_version": 13,
+        "current_content_sha256": "3598a765f49475afea100376425962ba74e0c46a5b7853d2a2b2e91acc180f3d",
+        "receipt": "production/receipts/song-uses-task-20261015-0003-stage16.json"
+      }
+    },
+    {
+      "requirement_id": "new26-s001-q02-video",
+      "shot_id": "new26-s001-q02",
+      "title": "一句唱到家 · 有声镜头",
+      "original_song": {
+        "object_id": "new26-boat-song-singing",
+        "revision_id": "f11d4f9ee02db7cdb95a3447019e8ed609861049f3d53237127cdd456605e33d"
+      },
+      "lyrics_file": "production/rebuild/songs/boat-song/lyrics.txt",
+      "nonempty_line_numbers": [
+        16
+      ],
+      "performance": "阿蘅有意跳过第二、第三道滩到靠岸句；今字同一次尾腔与老汉插话重叠。",
+      "status": "准确原曲及角色文件由用户试听通过，尾音位置已实际保存；本镜完整文件引用和同次录音跨镜连续安排已保存。视频未生成。",
+      "handoff": "只选本镜所需的完整独立短文件，保留原曲候选与文件哈希、歌词行和真实剪辑/另唱记录；不上传整首长曲或用range指代未制作文件。",
+      "actual_selection": {
+        "reference": {
+          "object_id": "asset-task-20261015-0003-boat-song-full-02",
+          "revision_id": "313d65234fa6bc01da8b57a8b2afde44e9c70b7635bfe365b77e45cff78e7ce9"
+        },
+        "candidate_id": "candidate-aaa3fca1c8eacf021377b80115a2bd5062cb9b5cf35223f5ad5e00c99f1e2914",
+        "model_component_id": "boat-aheng-home",
+        "model_sha256": "f748cf33ae71c45a25608e1f55a87e8797a30923c17997e7a98686897da61d4a",
+        "timeline": {
+          "component_id": "boat-aheng-home",
+          "editorial_segments": [
+            {
+              "component_id": "boat-aheng-home",
+              "material_selection": {
+                "candidate_id": "candidate-aaa3fca1c8eacf021377b80115a2bd5062cb9b5cf35223f5ad5e00c99f1e2914",
+                "material_id": "new26-boat-song-singing"
+              },
+              "reference": {
+                "object_id": "asset-task-20261015-0003-boat-song-full-02",
+                "revision_id": "313d65234fa6bc01da8b57a8b2afde44e9c70b7635bfe365b77e45cff78e7ce9"
+              },
+              "sha256": "f748cf33ae71c45a25608e1f55a87e8797a30923c17997e7a98686897da61d4a",
+              "timeline": {
+                "continuous_original": true,
+                "rate": 1,
+                "shot_end_seconds": 14,
+                "shot_start_seconds": 1,
+                "source_end_seconds": 13,
+                "source_start_seconds": 0
+              },
+              "use": "使用完整13秒角色录音；本镜后期播放原轨0—13秒，置于镜内1—14.000000秒。用户定位末字今的延音为原轨8.2—13秒。后期把同一完整录音原速连续铺在相邻镜头下，只切画面；不得重播尾字、变速、拉伸、复制尾音或叠成双声。下述时间范围是后期时间安排，模型始终引用完整文件。实际视频口型、动作和最终混音另验。老汉插话置镜内11—14秒，完全位于同一次今字尾音内。"
+            }
+          ],
+          "full_file_seconds": 13.0,
+          "model_reference": "complete_file",
+          "reference_only": false,
+          "sha256": "f748cf33ae71c45a25608e1f55a87e8797a30923c17997e7a98686897da61d4a",
+          "shot_end_seconds": 18,
+          "tail_location": {
+            "end_seconds": 13,
+            "id": "boat-aheng-home-01",
+            "marked_by": "user",
+            "saved_at": "2026-10-18T14:27:22.473366+00:00",
+            "source_sha256": "f748cf33ae71c45a25608e1f55a87e8797a30923c17997e7a98686897da61d4a",
+            "start_seconds": 8.2,
+            "tail_word": "今"
+          },
+          "tail_location_receipt": "production/receipts/song-tail-locations-task-20261015-0003-stage17.json"
+        },
+        "requirement_revision": "781fee86439de18557e68107f103a05407cc60b7819a74c741b3a7f68dcfe9b3",
+        "current_version": 12,
+        "current_content_sha256": "5efe979c1e72a33542ba16453fd7147144cb61b0ce6a522f65830ff5961b862a",
+        "receipt": "production/receipts/song-uses-task-20261015-0003-stage17.json"
+      }
+    },
+    {
+      "requirement_id": "new26-s003-q05-video",
+      "shot_id": "new26-s003-q05",
+      "title": "纸上承诺与河边的人 · 有声镜头",
+      "original_song": {
+        "object_id": "new26-qingpeng-singing",
+        "revision_id": "529078239eb900ca89fa901b6125e511475b90f29437c3b334c94a25553e6e57"
+      },
+      "lyrics_file": "production/rebuild/songs/qingpeng/lyrics.txt",
+      "nonempty_line_numbers": [
+        1
+      ],
+      "performance": "阿蘅仅低哼第一段起句骨干旋律，不唱词。",
+      "status": "准确角色文件及接续文件均由用户试听通过；本镜歌曲完整文件引用和实际时长安排已保存。视频未生成。",
+      "handoff": "只选本镜所需的完整独立短文件，保留原曲候选与文件哈希、歌词行和真实剪辑/另唱记录；不上传整首长曲或用range指代未制作文件。",
+      "actual_selection": {
+        "reference": {
+          "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+          "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+        },
+        "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+        "model_component_id": "qingpeng-aheng-stage1",
+        "model_sha256": "994cbf206c1700cf4ce891931b11e974f710b029f84853f2b1c76fc151a6d437",
+        "timeline": {
+          "component_id": "qingpeng-aheng-stage1",
+          "full_file_seconds": 8.665417,
+          "model_reference": "complete_file",
+          "reference_only": true,
+          "sha256": "994cbf206c1700cf4ce891931b11e974f710b029f84853f2b1c76fc151a6d437"
+        },
+        "requirement_revision": "39d6df4e3597ef598eb88f9a4bdf6b1e7fef6a743b9f41a1fac72d3918390b0c",
+        "current_version": 15,
+        "current_content_sha256": "7103958926578ff6f7d647537b1a978916472d155926e699ba0f268fd8402e62",
+        "receipt": "production/receipts/song-uses-task-20261015-0003-stage16.json"
+      }
+    },
+    {
+      "requirement_id": "new26-s004-q02-video",
+      "shot_id": "new26-s004-q02",
+      "title": "第一次断在船边 · 有声镜头",
+      "original_song": {
+        "object_id": "new26-qingpeng-singing",
+        "revision_id": "529078239eb900ca89fa901b6125e511475b90f29437c3b334c94a25553e6e57"
+      },
+      "lyrics_file": "production/rebuild/songs/qingpeng/lyrics.txt",
+      "nonempty_line_numbers": [
+        7
+      ],
+      "performance": "阿蘅短试唱第二段开头，止于船边。",
+      "status": "准确角色文件及接续文件均由用户试听通过；本镜歌曲完整文件引用和实际时长安排已保存。视频未生成。",
+      "handoff": "只选本镜所需的完整独立短文件，保留原曲候选与文件哈希、歌词行和真实剪辑/另唱记录；不上传整首长曲或用range指代未制作文件。",
+      "actual_selection": {
+        "reference": {
+          "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+          "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+        },
+        "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+        "model_component_id": "qingpeng-aheng-short",
+        "model_sha256": "bc0df00c512473fa82aab1aa8faefab9f8a2543cd96e5b871568320475b9b499",
+        "timeline": {
+          "component_id": "qingpeng-aheng-short",
+          "end_seconds": 10.0,
+          "full_file_seconds": 10.0,
+          "model_reference": "complete_file",
+          "reference_only": false,
+          "sha256": "bc0df00c512473fa82aab1aa8faefab9f8a2543cd96e5b871568320475b9b499",
+          "shot_end_seconds": 15,
+          "start_seconds": 0
+        },
+        "requirement_revision": "b9605f75c35893abb481e25115168a87819cb6b244f7c1343493d1adf95bb32f",
+        "current_version": 15,
+        "current_content_sha256": "7ac63ee0fd11a543d9a87f75863a7d63ba5556ea7c9c8ec261b57225b777946b",
+        "receipt": "production/receipts/song-uses-task-20261015-0003-stage16.json"
+      }
+    },
+    {
+      "requirement_id": "new26-s004-q03-video",
+      "shot_id": "new26-s004-q03",
+      "title": "第二次同样缺失 · 有声镜头",
+      "original_song": {
+        "object_id": "new26-qingpeng-singing",
+        "revision_id": "529078239eb900ca89fa901b6125e511475b90f29437c3b334c94a25553e6e57"
+      },
+      "lyrics_file": "production/rebuild/songs/qingpeng/lyrics.txt",
+      "nonempty_line_numbers": [
+        7
+      ],
+      "performance": "阿蘅第二次短试唱同句，末字更轻，仍接不出失词。",
+      "status": "准确角色文件及接续文件均由用户试听通过；本镜歌曲完整文件引用和实际时长安排已保存。视频未生成。",
+      "handoff": "只选本镜所需的完整独立短文件，保留原曲候选与文件哈希、歌词行和真实剪辑/另唱记录；不上传整首长曲或用range指代未制作文件。",
+      "actual_selection": {
+        "reference": {
+          "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+          "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+        },
+        "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+        "model_component_id": "qingpeng-aheng-short",
+        "model_sha256": "bc0df00c512473fa82aab1aa8faefab9f8a2543cd96e5b871568320475b9b499",
+        "timeline": {
+          "component_id": "qingpeng-aheng-short",
+          "end_seconds": 11.0,
+          "full_file_seconds": 10.0,
+          "model_reference": "complete_file",
+          "reference_only": false,
+          "sha256": "bc0df00c512473fa82aab1aa8faefab9f8a2543cd96e5b871568320475b9b499",
+          "shot_end_seconds": 14,
+          "start_seconds": 1
+        },
+        "requirement_revision": "e68cab1ddcf2f8725b1b5816b100a5d19f1f1986b299ee1b7442de9b737476f4",
+        "current_version": 13,
+        "current_content_sha256": "056dc877e17a2d9e695af91be6821dd2cedf61efddd0781a4503b6948ed215ed",
+        "receipt": "production/receipts/song-uses-task-20261015-0003-stage16.json"
+      }
+    },
+    {
+      "requirement_id": "new26-s005-q06-video",
+      "shot_id": "new26-s005-q06",
+      "title": "把不确定交还她 · 有声镜头",
+      "original_song": {
+        "object_id": "new26-qingpeng-singing",
+        "revision_id": "529078239eb900ca89fa901b6125e511475b90f29437c3b334c94a25553e6e57"
+      },
+      "lyrics_file": "production/rebuild/songs/qingpeng/lyrics.txt",
+      "nonempty_line_numbers": [
+        7
+      ],
+      "performance": "阿蘅只哼柳影到船边的骨干旋律，到断处停。",
+      "status": "准确角色文件及接续文件均由用户试听通过；本镜歌曲完整文件引用和实际时长安排已保存。视频未生成。",
+      "handoff": "只选本镜所需的完整独立短文件，保留原曲候选与文件哈希、歌词行和真实剪辑/另唱记录；不上传整首长曲或用range指代未制作文件。",
+      "actual_selection": {
+        "reference": {
+          "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+          "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+        },
+        "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+        "model_component_id": "qingpeng-aheng-short",
+        "model_sha256": "bc0df00c512473fa82aab1aa8faefab9f8a2543cd96e5b871568320475b9b499",
+        "timeline": {
+          "component_id": "qingpeng-aheng-short",
+          "full_file_seconds": 10.0,
+          "model_reference": "complete_file",
+          "reference_only": true,
+          "sha256": "bc0df00c512473fa82aab1aa8faefab9f8a2543cd96e5b871568320475b9b499"
+        },
+        "requirement_revision": "c55545a4fb2ec74267b978bd2ad0dfb619eb4ff83c819701836a542b9e9f9661",
+        "current_version": 16,
+        "current_content_sha256": "c64ecb6b793362ae5576db40a4462ca61651a6a87eba2db0c316900af6f55075",
+        "receipt": "production/receipts/song-uses-task-20261015-0003-stage16.json"
+      }
+    },
+    {
+      "requirement_id": "new26-s007-q01-video",
+      "shot_id": "new26-s007-q01",
+      "title": "白日唱工 · 有声镜头",
+      "original_song": {
+        "object_id": "new26-temple-song-singing",
+        "revision_id": "547784d33fc918d29bf1feaa44b8ffa093d6bf3ebd68870947deecbac52e8405"
+      },
+      "lyrics_file": "production/rebuild/songs/temple-song/lyrics.txt",
+      "nonempty_line_numbers": [
+        18
+      ],
+      "performance": "群体延续最后应句宁字已经起声后的尾元音，收气即结束，不重唱十字应句。",
+      "status": "准确角色文件及接续文件均由用户试听通过；本镜歌曲完整文件引用和实际时长安排已保存。视频未生成。",
+      "handoff": "只选本镜所需的完整独立短文件，保留原曲候选与文件哈希、歌词行和真实剪辑/另唱记录；不上传整首长曲或用range指代未制作文件。",
+      "actual_selection": {
+        "reference": {
+          "object_id": "asset-task-20261015-0003-temple-song-full-02",
+          "revision_id": "ae58a970f738e92a4fa045d11369a7ba7a4d79ed32b29ba3cc35a72bb552e587"
+        },
+        "candidate_id": "candidate-0039c58ba917c9ad0e09c117aa586187bb413e85ed0e8fa21739703af3d4d0a1",
+        "model_component_id": "temple-singers-tail",
+        "model_sha256": "2f16db8a3fbc9fa67b9cd5b5a87c674efda92e288c192adc3007d7f0a775aa8a",
+        "timeline": {
+          "component_id": "temple-singers-tail",
+          "end_seconds": 4.0,
+          "full_file_seconds": 4.0,
+          "model_reference": "complete_file",
+          "reference_only": false,
+          "sha256": "2f16db8a3fbc9fa67b9cd5b5a87c674efda92e288c192adc3007d7f0a775aa8a",
+          "shot_end_seconds": 6,
+          "start_seconds": 0
+        },
+        "requirement_revision": "415803806b7e124e7b2d8b790673aefe901f90a8b5c57ba2a2b271fd58f75d3f",
+        "current_version": 12,
+        "current_content_sha256": "197e9d8ea043535b09180e029badc755e73c2d988b37b005cdfba445e9b15b84",
+        "receipt": "production/receipts/song-uses-task-20261015-0003-stage16.json"
+      }
+    },
+    {
+      "requirement_id": "new26-s010-q03-video",
+      "shot_id": "new26-s010-q03",
+      "title": "门外听到还乡 · 有声镜头",
+      "original_song": {
+        "object_id": "new26-ritual-song-singing",
+        "revision_id": "36a77805b3990e32c06d99a969724e8f4459f25a88cfe3f7ee626e907d58a0b3"
+      },
+      "lyrics_file": "production/rebuild/songs/ritual-song/lyrics.txt",
+      "nonempty_line_numbers": [
+        11
+      ],
+      "performance": "独立男戏班歌者唱一次还月核心句，后期置河对岸；收尾后才喝彩。",
+      "status": "完整原曲、近声乐句及远声派生均由用户实际试听通过，准确模型和后期文件已选择；视频未生成。",
+      "handoff": "只选本镜所需的完整独立短文件，保留原曲候选与文件哈希、歌词行和真实剪辑/另唱记录；不上传整首长曲或用range指代未制作文件。",
+      "actual_selection": {
+        "reference": {
+          "object_id": "asset-task-20261015-0003-ritual-song-full-02",
+          "revision_id": "c603afa1b1ff699fa609a3f42ab132298ee0f4a8236ed9ac916f949de33f1558"
+        },
+        "candidate_id": "candidate-39aff0dbbad65c16e7c2c1d8dfbb732ca0b993220c114a3ae7ceb56e07fbaf97",
+        "model_component_id": "melody-ritual-core",
+        "model_sha256": "faeb682737c6463c029c736a499a0c2059f39bea31b9a74630bcef3b05b4c8ed",
+        "editorial_component_id": "ritual-core-distant",
+        "editorial_sha256": "f40e1ccb12939615daaf41b85d4439731b813e08e3412ea790f8517ea4d105eb",
+        "timeline": {
+          "near_reference_seconds": 12.5,
+          "editorial_component_id": "ritual-core-distant",
+          "editorial_sha256": "f40e1ccb12939615daaf41b85d4439731b813e08e3412ea790f8517ea4d105eb",
+          "start_seconds": 2,
+          "end_seconds": 14.58,
+          "cheers_not_before_seconds": 14.58,
+          "shot_end_seconds": 16
+        },
+        "receipt": "production/receipts/song-use-task-20261015-0003-ritual15.json"
+      }
+    },
+    {
+      "requirement_id": "new26-s038-q04-video",
+      "shot_id": "new26-s038-q04",
+      "title": "停在同一个地方 · 有声镜头",
+      "original_song": {
+        "object_id": "new26-qingpeng-singing",
+        "revision_id": "529078239eb900ca89fa901b6125e511475b90f29437c3b334c94a25553e6e57"
+      },
+      "lyrics_file": "production/rebuild/songs/qingpeng/lyrics.txt",
+      "nonempty_line_numbers": [
+        7
+      ],
+      "performance": "母亲无词哼起，阿蘅接第二段已知两句，母女同在船边收住。",
+      "status": "准确角色文件及接续文件均由用户试听通过；本镜歌曲完整文件引用和实际时长安排已保存。视频未生成。",
+      "handoff": "只选本镜所需的完整独立短文件，保留原曲候选与文件哈希、歌词行和真实剪辑/另唱记录；不上传整首长曲或用range指代未制作文件。",
+      "actual_selection": {
+        "reference": {
+          "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+          "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+        },
+        "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+        "model_component_id": "qingpeng-aheng-short",
+        "model_sha256": "bc0df00c512473fa82aab1aa8faefab9f8a2543cd96e5b871568320475b9b499",
+        "timeline": {
+          "component_id": "qingpeng-aheng-short",
+          "end_seconds": 14.0,
+          "full_file_seconds": 10.0,
+          "model_reference": "complete_file",
+          "reference_only": false,
+          "sha256": "bc0df00c512473fa82aab1aa8faefab9f8a2543cd96e5b871568320475b9b499",
+          "shot_end_seconds": 23,
+          "start_seconds": 4
+        },
+        "requirement_revision": "eb502347210c30b37092a28d98fa5bec6e2601a47f80f643dc38303d79cbe7d2",
+        "current_version": 14,
+        "current_content_sha256": "0a3f118845778a1f88c7b9ee95409c44d6e1b0995591a8110e4a0588c76ea97d",
+        "receipt": "production/receipts/song-uses-task-20261015-0003-stage16.json"
+      }
+    },
+    {
+      "requirement_id": "new26-s039-q03-video",
+      "shot_id": "new26-s039-q03",
+      "title": "唱到缺词处 · 有声镜头",
+      "original_song": {
+        "object_id": "new26-qingpeng-singing",
+        "revision_id": "529078239eb900ca89fa901b6125e511475b90f29437c3b334c94a25553e6e57"
+      },
+      "lyrics_file": "production/rebuild/songs/qingpeng/lyrics.txt",
+      "nonempty_line_numbers": [
+        7
+      ],
+      "performance": "阿蘅唱第二段已知两句给歌娘听，止于缺词。",
+      "status": "准确角色文件及接续文件均由用户试听通过；本镜歌曲完整文件引用和实际时长安排已保存。视频未生成。",
+      "handoff": "只选本镜所需的完整独立短文件，保留原曲候选与文件哈希、歌词行和真实剪辑/另唱记录；不上传整首长曲或用range指代未制作文件。",
+      "actual_selection": {
+        "reference": {
+          "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+          "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+        },
+        "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+        "model_component_id": "qingpeng-aheng-short",
+        "model_sha256": "bc0df00c512473fa82aab1aa8faefab9f8a2543cd96e5b871568320475b9b499",
+        "timeline": {
+          "component_id": "qingpeng-aheng-short",
+          "end_seconds": 13.0,
+          "full_file_seconds": 10.0,
+          "model_reference": "complete_file",
+          "reference_only": false,
+          "sha256": "bc0df00c512473fa82aab1aa8faefab9f8a2543cd96e5b871568320475b9b499",
+          "shot_end_seconds": 15,
+          "start_seconds": 3
+        },
+        "requirement_revision": "ca97420c9ea41bd8d0a89e483039c2dbfc3165c95104906091f06de0eb3fd306",
+        "current_version": 13,
+        "current_content_sha256": "47f10f51fda5463e2b18ac780d324bdcd0ef3578ffd0226c8b2095038d460418",
+        "receipt": "production/receipts/song-uses-task-20261015-0003-stage16.json"
+      }
+    },
+    {
+      "requirement_id": "new26-s039-q04-video",
+      "shot_id": "new26-s039-q04",
+      "title": "失去的四句回来了 · 有声镜头",
+      "original_song": {
+        "object_id": "new26-qingpeng-singing",
+        "revision_id": "529078239eb900ca89fa901b6125e511475b90f29437c3b334c94a25553e6e57"
+      },
+      "lyrics_file": "production/rebuild/songs/qingpeng/lyrics.txt",
+      "nonempty_line_numbers": [
+        8,
+        9
+      ],
+      "performance": "歌娘用本人声线接出失去的四句；听审核与原曲同源，不能用原曲独立歌手或阿蘅代唱。",
+      "status": "准确角色文件及接续文件均由用户试听通过；本镜歌曲完整文件引用和实际时长安排已保存。视频未生成。",
+      "handoff": "只选本镜所需的完整独立短文件，保留原曲候选与文件哈希、歌词行和真实剪辑/另唱记录；不上传整首长曲或用range指代未制作文件。",
+      "actual_selection": {
+        "reference": {
+          "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+          "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+        },
+        "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+        "model_component_id": "qingpeng-teacher-combined",
+        "model_sha256": "1dfabb5532baf05ec4adb7c00a12abb815b03bef285c0db0eef7387e2064c70d",
+        "timeline": {
+          "assembly_boundary_seconds": 10.247792,
+          "component_id": "qingpeng-teacher-combined",
+          "end_seconds": 19.251021,
+          "full_file_seconds": 17.251021,
+          "model_reference": "complete_file",
+          "reference_only": false,
+          "sha256": "1dfabb5532baf05ec4adb7c00a12abb815b03bef285c0db0eef7387e2064c70d",
+          "shot_end_seconds": 30,
+          "start_seconds": 2
+        },
+        "requirement_revision": "14918755d7c3da29064ba4300f68c2b29cd430f5a23843780f4c45bd8352d7bd",
+        "current_version": 14,
+        "current_content_sha256": "e0c9b8e3ce7aed0dbf54ccf5fb473998ad1b95bec507e313e0e1ff24b1622017",
+        "receipt": "production/receipts/song-uses-task-20261015-0003-stage16.json"
+      }
+    },
+    {
+      "requirement_id": "new26-s039-q06-video",
+      "shot_id": "new26-s039-q06",
+      "title": "归来之后，三个字听清 · 有声镜头",
+      "original_song": {
+        "object_id": "new26-qingpeng-singing",
+        "revision_id": "529078239eb900ca89fa901b6125e511475b90f29437c3b334c94a25553e6e57"
+      },
+      "lyrics_file": "production/rebuild/songs/qingpeng/lyrics.txt",
+      "nonempty_line_numbers": [
+        9
+      ],
+      "performance": "歌娘只慢唱归来认旧桥，归来后换气，认旧桥逐字清楚。",
+      "status": "准确角色文件及接续文件均由用户试听通过；本镜歌曲完整文件引用和实际时长安排已保存。视频未生成。",
+      "handoff": "只选本镜所需的完整独立短文件，保留原曲候选与文件哈希、歌词行和真实剪辑/另唱记录；不上传整首长曲或用range指代未制作文件。",
+      "actual_selection": {
+        "reference": {
+          "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+          "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+        },
+        "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+        "model_component_id": "qingpeng-teacher-final-slow",
+        "model_sha256": "8980f97a8acfac0905d96dfaa65632af58cbd4b07e5c54f5d2b0fd3dd6342e36",
+        "timeline": {
+          "component_id": "qingpeng-teacher-final-slow",
+          "end_seconds": 4.950063,
+          "full_file_seconds": 4.950063,
+          "model_reference": "complete_file",
+          "reference_only": false,
+          "sha256": "8980f97a8acfac0905d96dfaa65632af58cbd4b07e5c54f5d2b0fd3dd6342e36",
+          "shot_end_seconds": 27,
+          "start_seconds": 0
+        },
+        "requirement_revision": "9770f3a0439f51affe270b5747193595966b7ac18dabb2cf0299e9bba09606d3",
+        "current_version": 14,
+        "current_content_sha256": "825ed5ac8c41e5490a44defeb6bcf3084c6be882f2ad669a15603ef8bdf05cfa",
+        "receipt": "production/receipts/song-uses-task-20261015-0003-stage16.json"
+      }
+    },
+    {
+      "requirement_id": "new26-s039-q07-video",
+      "shot_id": "new26-s039-q07",
+      "title": "这一次自己往下唱 · 有声镜头",
+      "original_song": {
+        "object_id": "new26-qingpeng-singing",
+        "revision_id": "529078239eb900ca89fa901b6125e511475b90f29437c3b334c94a25553e6e57"
+      },
+      "lyrics_file": "production/rebuild/songs/qingpeng/lyrics.txt",
+      "nonempty_line_numbers": [
+        7,
+        8
+      ],
+      "performance": "阿蘅自己接唱第二段前四句，后接下一镜末两句。",
+      "status": "准确角色文件及接续文件均由用户试听通过；本镜歌曲完整文件引用和实际时长安排已保存。视频未生成。",
+      "handoff": "只选本镜所需的完整独立短文件，保留原曲候选与文件哈希、歌词行和真实剪辑/另唱记录；不上传整首长曲或用range指代未制作文件。",
+      "actual_selection": {
+        "reference": {
+          "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+          "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+        },
+        "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+        "model_component_id": "qingpeng-aheng-teaching-combined",
+        "model_sha256": "eea5330d9b8177a424ac483d6c01bfc7aa73b745c749fb1710545e27f64b869f",
+        "timeline": {
+          "assembly_boundary_seconds": 14,
+          "component_id": "qingpeng-aheng-teaching-combined",
+          "end_seconds": 22.187458,
+          "full_file_seconds": 18.187458,
+          "model_reference": "complete_file",
+          "reference_only": false,
+          "sha256": "eea5330d9b8177a424ac483d6c01bfc7aa73b745c749fb1710545e27f64b869f",
+          "shot_end_seconds": 23,
+          "start_seconds": 4
+        },
+        "requirement_revision": "c4d83dc3dad2767d4a904cc17d72d1cd24f49398d38eac6d58d64c9189dd66d4",
+        "current_version": 15,
+        "current_content_sha256": "762607bcb437af262f0b5619677065b5427e19bd6a1384dc768e302e4476f984",
+        "receipt": "production/receipts/song-uses-task-20261015-0003-stage16.json"
+      }
+    },
+    {
+      "requirement_id": "new26-s039-q08-video",
+      "shot_id": "new26-s039-q08",
+      "title": "换气之后，认旧桥 · 有声镜头",
+      "original_song": {
+        "object_id": "new26-qingpeng-singing",
+        "revision_id": "529078239eb900ca89fa901b6125e511475b90f29437c3b334c94a25553e6e57"
+      },
+      "lyrics_file": "production/rebuild/songs/qingpeng/lyrics.txt",
+      "nonempty_line_numbers": [
+        9
+      ],
+      "performance": "阿蘅连续唱末两句，尾音跨下一镜。",
+      "status": "准确原曲及角色文件由用户试听通过，尾音位置已实际保存；本镜完整文件引用和同次录音跨镜连续安排已保存。视频未生成。",
+      "handoff": "只选本镜所需的完整独立短文件，保留原曲候选与文件哈希、歌词行和真实剪辑/另唱记录；不上传整首长曲或用range指代未制作文件。",
+      "actual_selection": {
+        "reference": {
+          "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+          "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+        },
+        "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+        "model_component_id": "qingpeng-aheng-teaching-fifth",
+        "model_sha256": "8a7360f49b9d8eca4d2095a28324477d679e523151da4fc36909a3c315caab24",
+        "timeline": {
+          "component_id": "qingpeng-aheng-teaching-fifth",
+          "editorial_segments": [
+            {
+              "component_id": "qingpeng-aheng-teaching-fifth",
+              "material_selection": {
+                "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+                "material_id": "new26-qingpeng-singing"
+              },
+              "reference": {
+                "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+                "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+              },
+              "sha256": "8a7360f49b9d8eca4d2095a28324477d679e523151da4fc36909a3c315caab24",
+              "timeline": {
+                "continuous_original": true,
+                "rate": 1,
+                "shot_end_seconds": 13,
+                "shot_start_seconds": 1,
+                "source_end_seconds": 12,
+                "source_start_seconds": 0
+              },
+              "use": "使用完整14.3秒角色录音；本镜后期播放原轨0—12秒，置于镜内1—13.000000秒。用户定位末字桥的延音为原轨10—14秒。后期把同一完整录音原速连续铺在相邻镜头下，只切画面；不得重播尾字、变速、拉伸、复制尾音或叠成双声。下述时间范围是后期时间安排，模型始终引用完整文件。实际视频口型、动作和最终混音另验。"
+            }
+          ],
+          "full_file_seconds": 14.3,
+          "model_reference": "complete_file",
+          "reference_only": false,
+          "sha256": "8a7360f49b9d8eca4d2095a28324477d679e523151da4fc36909a3c315caab24",
+          "shot_end_seconds": 13,
+          "tail_location": {
+            "end_seconds": 14,
+            "id": "qingpeng-aheng-teaching-fifth-01",
+            "marked_by": "user",
+            "saved_at": "2026-10-18T14:29:14.268170+00:00",
+            "source_sha256": "8a7360f49b9d8eca4d2095a28324477d679e523151da4fc36909a3c315caab24",
+            "start_seconds": 10,
+            "tail_word": "桥"
+          },
+          "tail_location_receipt": "production/receipts/song-tail-locations-task-20261015-0003-stage17.json"
+        },
+        "requirement_revision": "899b1b4e1e13424760be94f3a6303814cdd4dcae7baaaa7d8647b92aaaa7e4db",
+        "current_version": 10,
+        "current_content_sha256": "d96c81e75e3ec99605b44b2d01d84d43b00cde2a4f69746fd8a56e5c262d12af",
+        "receipt": "production/receipts/song-uses-task-20261015-0003-stage17.json"
+      }
+    },
+    {
+      "requirement_id": "new26-s039-q09-video",
+      "shot_id": "new26-s039-q09",
+      "title": "连上了 · 有声镜头",
+      "original_song": {
+        "object_id": "new26-qingpeng-singing",
+        "revision_id": "529078239eb900ca89fa901b6125e511475b90f29437c3b334c94a25553e6e57"
+      },
+      "lyrics_file": "production/rebuild/songs/qingpeng/lyrics.txt",
+      "nonempty_line_numbers": [
+        9
+      ],
+      "performance": "只延续上镜同一次桥字尾音，不重新起唱。",
+      "status": "准确原曲及角色文件由用户试听通过，尾音位置已实际保存；本镜完整文件引用和同次录音跨镜连续安排已保存。视频未生成。",
+      "handoff": "只选本镜所需的完整独立短文件，保留原曲候选与文件哈希、歌词行和真实剪辑/另唱记录；不上传整首长曲或用range指代未制作文件。",
+      "actual_selection": {
+        "reference": {
+          "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+          "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+        },
+        "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+        "model_component_id": "qingpeng-aheng-teaching-fifth",
+        "model_sha256": "8a7360f49b9d8eca4d2095a28324477d679e523151da4fc36909a3c315caab24",
+        "timeline": {
+          "component_id": "qingpeng-aheng-teaching-fifth",
+          "editorial_segments": [
+            {
+              "component_id": "qingpeng-aheng-teaching-fifth",
+              "material_selection": {
+                "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+                "material_id": "new26-qingpeng-singing"
+              },
+              "reference": {
+                "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+                "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+              },
+              "sha256": "8a7360f49b9d8eca4d2095a28324477d679e523151da4fc36909a3c315caab24",
+              "timeline": {
+                "continuous_original": true,
+                "rate": 1,
+                "shot_end_seconds": 2.3,
+                "shot_start_seconds": 0,
+                "source_end_seconds": 14.3,
+                "source_start_seconds": 12
+              },
+              "use": "使用完整14.3秒角色录音；本镜后期播放原轨12—14.3秒，置于镜内0—2.300000秒。用户定位末字桥的延音为原轨10—14秒。后期把同一完整录音原速连续铺在相邻镜头下，只切画面；不得重播尾字、变速、拉伸、复制尾音或叠成双声。下述时间范围是后期时间安排，模型始终引用完整文件。实际视频口型、动作和最终混音另验。声尾在镜内2秒结束，原文件自然尾部保留至2.3秒，6秒才说连上了。"
+            }
+          ],
+          "full_file_seconds": 14.3,
+          "model_reference": "complete_file",
+          "reference_only": false,
+          "sha256": "8a7360f49b9d8eca4d2095a28324477d679e523151da4fc36909a3c315caab24",
+          "shot_end_seconds": 12,
+          "tail_location": {
+            "end_seconds": 14,
+            "id": "qingpeng-aheng-teaching-fifth-01",
+            "marked_by": "user",
+            "saved_at": "2026-10-18T14:29:14.268170+00:00",
+            "source_sha256": "8a7360f49b9d8eca4d2095a28324477d679e523151da4fc36909a3c315caab24",
+            "start_seconds": 10,
+            "tail_word": "桥"
+          },
+          "tail_location_receipt": "production/receipts/song-tail-locations-task-20261015-0003-stage17.json"
+        },
+        "requirement_revision": "01aec712652e77cff37237e6d089843926791b00a3632eaecc8cdb91af12c7a9",
+        "current_version": 11,
+        "current_content_sha256": "db130a1f357459f854afdadde0e0dec46afdc4023b2d55744e3646318756895d",
+        "receipt": "production/receipts/song-uses-task-20261015-0003-stage17.json"
+      }
+    },
+    {
+      "requirement_id": "new26-s039-q10-video",
+      "shot_id": "new26-s039-q10",
+      "title": "这回只听，不赶着记 · 有声镜头",
+      "original_song": {
+        "object_id": "new26-qingpeng-singing",
+        "revision_id": "529078239eb900ca89fa901b6125e511475b90f29437c3b334c94a25553e6e57"
+      },
+      "lyrics_file": "production/rebuild/songs/qingpeng/lyrics.txt",
+      "nonempty_line_numbers": [
+        8
+      ],
+      "performance": "阿蘅复唱曾缺失的莫怕远山高、隔水灯相照；不加明年两句。",
+      "status": "准确角色文件及接续文件均由用户试听通过；本镜歌曲完整文件引用和实际时长安排已保存。视频未生成。",
+      "handoff": "只选本镜所需的完整独立短文件，保留原曲候选与文件哈希、歌词行和真实剪辑/另唱记录；不上传整首长曲或用range指代未制作文件。",
+      "actual_selection": {
+        "reference": {
+          "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+          "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+        },
+        "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+        "model_component_id": "qingpeng-aheng-teaching-fourth",
+        "model_sha256": "8ab8c056d6f6a8623f3bb8b3b8ac35db3576b65d0874a9062f9f2d9eb0e39a90",
+        "timeline": {
+          "component_id": "qingpeng-aheng-teaching-fourth",
+          "end_seconds": 11.187458,
+          "full_file_seconds": 8.187458,
+          "model_reference": "complete_file",
+          "reference_only": false,
+          "sha256": "8ab8c056d6f6a8623f3bb8b3b8ac35db3576b65d0874a9062f9f2d9eb0e39a90",
+          "shot_end_seconds": 15,
+          "start_seconds": 3
+        },
+        "requirement_revision": "76cc2a9a9d085963fe4888b4e2fe9d8eade94e55d4577112109b7ebf7ba47096",
+        "current_version": 13,
+        "current_content_sha256": "4be7a00d97eecb4eaa53ba782543d1a90465a916c551bea854697cf4d72fd1d3",
+        "receipt": "production/receipts/song-uses-task-20261015-0003-stage16.json"
+      }
+    },
+    {
+      "requirement_id": "new26-s040-q05-video",
+      "shot_id": "new26-s040-q05",
+      "title": "越过熟悉的两句 · 有声镜头",
+      "original_song": {
+        "object_id": "new26-qingpeng-singing",
+        "revision_id": "529078239eb900ca89fa901b6125e511475b90f29437c3b334c94a25553e6e57"
+      },
+      "lyrics_file": "production/rebuild/songs/qingpeng/lyrics.txt",
+      "nonempty_line_numbers": [
+        7
+      ],
+      "performance": "阿蘅低唱第二段熟悉的两句，向下一镜接过空白。",
+      "status": "准确角色文件及接续文件均由用户试听通过；本镜歌曲完整文件引用和实际时长安排已保存。视频未生成。",
+      "handoff": "只选本镜所需的完整独立短文件，保留原曲候选与文件哈希、歌词行和真实剪辑/另唱记录；不上传整首长曲或用range指代未制作文件。",
+      "actual_selection": {
+        "reference": {
+          "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+          "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+        },
+        "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+        "model_component_id": "qingpeng-aheng-short",
+        "model_sha256": "bc0df00c512473fa82aab1aa8faefab9f8a2543cd96e5b871568320475b9b499",
+        "timeline": {
+          "component_id": "qingpeng-aheng-short",
+          "end_seconds": 14.0,
+          "full_file_seconds": 10.0,
+          "model_reference": "complete_file",
+          "reference_only": false,
+          "sha256": "bc0df00c512473fa82aab1aa8faefab9f8a2543cd96e5b871568320475b9b499",
+          "shot_end_seconds": 17,
+          "start_seconds": 4
+        },
+        "requirement_revision": "d9b1bd5e0e8b017f9afafc1f288ad3f76b18cc74199afa02c82f01a5359dfb58",
+        "current_version": 12,
+        "current_content_sha256": "53aea0fd86fbbdb8ac8a3c2e9ef08e6d3fcd45544837085e955b874d9e4a8597",
+        "receipt": "production/receipts/song-uses-task-20261015-0003-stage16.json"
+      }
+    },
+    {
+      "requirement_id": "new26-s040-q06-video",
+      "shot_id": "new26-s040-q06",
+      "title": "空白处没有停住 · 有声镜头",
+      "original_song": {
+        "object_id": "new26-qingpeng-singing",
+        "revision_id": "529078239eb900ca89fa901b6125e511475b90f29437c3b334c94a25553e6e57"
+      },
+      "lyrics_file": "production/rebuild/songs/qingpeng/lyrics.txt",
+      "nonempty_line_numbers": [
+        8
+      ],
+      "performance": "阿蘅接莫怕与隔水两句；母亲只无词哼隔水灯相照的末句旋律。",
+      "status": "准确角色文件及接续文件均由用户试听通过；本镜歌曲完整文件引用和实际时长安排已保存。视频未生成。",
+      "handoff": "只选本镜所需的完整独立短文件，保留原曲候选与文件哈希、歌词行和真实剪辑/另唱记录；不上传整首长曲或用range指代未制作文件。",
+      "actual_selection": {
+        "reference": {
+          "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+          "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+        },
+        "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+        "model_component_id": "qingpeng-aheng-teaching-fourth",
+        "model_sha256": "8ab8c056d6f6a8623f3bb8b3b8ac35db3576b65d0874a9062f9f2d9eb0e39a90",
+        "timeline": {
+          "component_id": "qingpeng-aheng-teaching-fourth",
+          "end_seconds": 11.187458,
+          "full_file_seconds": 8.187458,
+          "model_reference": "complete_file",
+          "reference_only": false,
+          "sha256": "8ab8c056d6f6a8623f3bb8b3b8ac35db3576b65d0874a9062f9f2d9eb0e39a90",
+          "shot_end_seconds": 17,
+          "start_seconds": 3
+        },
+        "requirement_revision": "e3f86cd581b1d723942230085ebe5b9e3985850e64da459bfdd536937b68580f",
+        "current_version": 14,
+        "current_content_sha256": "55ff419e70b8ca9324b2c9aa156dd0323d312439e2813e85983d4b6334821eb7",
+        "receipt": "production/receipts/song-uses-task-20261015-0003-stage16.json"
+      }
+    },
+    {
+      "requirement_id": "new26-s041-q05-video",
+      "shot_id": "new26-s041-q05",
+      "title": "青篷起，水轻摇 · 有声镜头",
+      "original_song": {
+        "object_id": "new26-qingpeng-singing",
+        "revision_id": "529078239eb900ca89fa901b6125e511475b90f29437c3b334c94a25553e6e57"
+      },
+      "lyrics_file": "production/rebuild/songs/qingpeng/lyrics.txt",
+      "nonempty_line_numbers": [
+        1
+      ],
+      "performance": "阿蘅舞台选段第一乐句。",
+      "status": "准确角色文件及接续文件均由用户试听通过；本镜歌曲完整文件引用和实际时长安排已保存。视频未生成。",
+      "handoff": "只选本镜所需的完整独立短文件，保留原曲候选与文件哈希、歌词行和真实剪辑/另唱记录；不上传整首长曲或用range指代未制作文件。",
+      "actual_selection": {
+        "reference": {
+          "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+          "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+        },
+        "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+        "model_component_id": "qingpeng-aheng-stage1",
+        "model_sha256": "994cbf206c1700cf4ce891931b11e974f710b029f84853f2b1c76fc151a6d437",
+        "timeline": {
+          "component_id": "qingpeng-aheng-stage1",
+          "end_seconds": 8.665417,
+          "full_file_seconds": 8.665417,
+          "model_reference": "complete_file",
+          "reference_only": false,
+          "sha256": "994cbf206c1700cf4ce891931b11e974f710b029f84853f2b1c76fc151a6d437",
+          "shot_end_seconds": 9,
+          "start_seconds": 0
+        },
+        "requirement_revision": "330eb6562de3e66304cbb49db1ef8515af228f67ae9797692b6ca063678bdeb9",
+        "current_version": 9,
+        "current_content_sha256": "e71458b4aaa9f6814f6f0e13ec146837434dd6f0c774db485d4057823b64771a",
+        "receipt": "production/receipts/song-uses-task-20261015-0003-stage16.json"
+      }
+    },
+    {
+      "requirement_id": "new26-s041-q06-video",
+      "shot_id": "new26-s041-q06",
+      "title": "叮咛还未了 · 有声镜头",
+      "original_song": {
+        "object_id": "new26-qingpeng-singing",
+        "revision_id": "529078239eb900ca89fa901b6125e511475b90f29437c3b334c94a25553e6e57"
+      },
+      "lyrics_file": "production/rebuild/songs/qingpeng/lyrics.txt",
+      "nonempty_line_numbers": [
+        2
+      ],
+      "performance": "阿蘅舞台选段第二乐句，了字尾音跨下一镜。",
+      "status": "准确原曲及角色文件由用户试听通过，尾音位置已实际保存；本镜完整文件引用和同次录音跨镜连续安排已保存。视频未生成。",
+      "handoff": "只选本镜所需的完整独立短文件，保留原曲候选与文件哈希、歌词行和真实剪辑/另唱记录；不上传整首长曲或用range指代未制作文件。",
+      "actual_selection": {
+        "reference": {
+          "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+          "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+        },
+        "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+        "model_component_id": "qingpeng-aheng-stage2",
+        "model_sha256": "a6b6c2e69bafc53a0a70764c53ca724fdf58bdf9f698683d728a1336ea5b6105",
+        "timeline": {
+          "component_id": "qingpeng-aheng-stage2",
+          "editorial_segments": [
+            {
+              "component_id": "qingpeng-aheng-stage2",
+              "material_selection": {
+                "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+                "material_id": "new26-qingpeng-singing"
+              },
+              "reference": {
+                "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+                "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+              },
+              "sha256": "a6b6c2e69bafc53a0a70764c53ca724fdf58bdf9f698683d728a1336ea5b6105",
+              "timeline": {
+                "continuous_original": true,
+                "rate": 1,
+                "shot_end_seconds": 22,
+                "shot_start_seconds": 0,
+                "source_end_seconds": 22,
+                "source_start_seconds": 0
+              },
+              "use": "使用完整24秒角色录音；本镜后期播放原轨0—22秒，置于镜内0—22.000000秒。用户定位末字了的延音为原轨19.2—24秒。后期把同一完整录音原速连续铺在相邻镜头下，只切画面；不得重播尾字、变速、拉伸、复制尾音或叠成双声。下述时间范围是后期时间安排，模型始终引用完整文件。实际视频口型、动作和最终混音另验。"
+            }
+          ],
+          "full_file_seconds": 24.0,
+          "model_reference": "complete_file",
+          "reference_only": false,
+          "sha256": "a6b6c2e69bafc53a0a70764c53ca724fdf58bdf9f698683d728a1336ea5b6105",
+          "shot_end_seconds": 22,
+          "tail_location": {
+            "end_seconds": 24,
+            "id": "qingpeng-aheng-stage2-01",
+            "marked_by": "user",
+            "saved_at": "2026-10-18T14:27:46.730663+00:00",
+            "source_sha256": "a6b6c2e69bafc53a0a70764c53ca724fdf58bdf9f698683d728a1336ea5b6105",
+            "start_seconds": 19.2,
+            "tail_word": "了"
+          },
+          "tail_location_receipt": "production/receipts/song-tail-locations-task-20261015-0003-stage17.json"
+        },
+        "requirement_revision": "e4e88f330337f92b96e9a61cda28407248e40420b66c4d9408a71ef4ef09a99f",
+        "current_version": 9,
+        "current_content_sha256": "fff1184a3282eca60198d290fe04a2187d3302e4d65984f1d8ceeeb42e8a2139",
+        "receipt": "production/receipts/song-uses-task-20261015-0003-stage17.json"
+      }
+    },
+    {
+      "requirement_id": "new26-s041-q07-video",
+      "shot_id": "new26-s041-q07",
+      "title": "换一口气，再到河湾 · 有声镜头",
+      "original_song": {
+        "object_id": "new26-qingpeng-singing",
+        "revision_id": "529078239eb900ca89fa901b6125e511475b90f29437c3b334c94a25553e6e57"
+      },
+      "lyrics_file": "production/rebuild/songs/qingpeng/lyrics.txt",
+      "nonempty_line_numbers": [
+        2,
+        7
+      ],
+      "performance": "先续了字同一次余尾，再唱第二段开头；第一段新增四行在影片选段中省去。",
+      "status": "准确原曲及角色文件由用户试听通过，尾音位置已实际保存；本镜完整文件引用和同次录音跨镜连续安排已保存。视频未生成。",
+      "handoff": "只选本镜所需的完整独立短文件，保留原曲候选与文件哈希、歌词行和真实剪辑/另唱记录；不上传整首长曲或用range指代未制作文件。",
+      "actual_selection": {
+        "reference": {
+          "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+          "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+        },
+        "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+        "model_component_id": "qingpeng-aheng-stage3",
+        "model_sha256": "98bca747be4117f9fc429e14cb31f8d930c7b979dda5c3caad0696f5097d72ea",
+        "timeline": {
+          "component_id": "qingpeng-aheng-stage3",
+          "editorial_segments": [
+            {
+              "component_id": "qingpeng-aheng-stage2",
+              "material_selection": {
+                "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+                "material_id": "new26-qingpeng-singing"
+              },
+              "reference": {
+                "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+                "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+              },
+              "sha256": "a6b6c2e69bafc53a0a70764c53ca724fdf58bdf9f698683d728a1336ea5b6105",
+              "timeline": {
+                "continuous_original": true,
+                "rate": 1,
+                "shot_end_seconds": 2,
+                "shot_start_seconds": 0,
+                "source_end_seconds": 24,
+                "source_start_seconds": 22
+              },
+              "use": "承接上镜同一了字余尾，只在后期连续铺，不作为第二个模型音频附件。"
+            },
+            {
+              "component_id": "qingpeng-aheng-stage3",
+              "material_selection": {
+                "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+                "material_id": "new26-qingpeng-singing"
+              },
+              "reference": {
+                "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+                "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+              },
+              "sha256": "98bca747be4117f9fc429e14cb31f8d930c7b979dda5c3caad0696f5097d72ea",
+              "timeline": {
+                "continuous_original": true,
+                "rate": 1,
+                "shot_end_seconds": 29,
+                "shot_start_seconds": 3,
+                "source_end_seconds": 26,
+                "source_start_seconds": 0
+              },
+              "use": "使用完整27秒角色录音；本镜后期播放原轨0—26秒，置于镜内3—29.000000秒。用户定位末字边的延音为原轨24.5—27秒。后期把同一完整录音原速连续铺在相邻镜头下，只切画面；不得重播尾字、变速、拉伸、复制尾音或叠成双声。下述时间范围是后期时间安排，模型始终引用完整文件。实际视频口型、动作和最终混音另验。镜内0—2秒先连续接第二乐句原轨22—24秒，2—3秒换气；该第二乐句只作准确后期引用，不另上传而突破音频总时长。"
+            }
+          ],
+          "full_file_seconds": 27.0,
+          "model_reference": "complete_file",
+          "reference_only": false,
+          "sha256": "98bca747be4117f9fc429e14cb31f8d930c7b979dda5c3caad0696f5097d72ea",
+          "shot_end_seconds": 29,
+          "tail_location": {
+            "end_seconds": 27,
+            "id": "qingpeng-aheng-stage3-01",
+            "marked_by": "user",
+            "saved_at": "2026-10-18T14:28:23.812467+00:00",
+            "source_sha256": "98bca747be4117f9fc429e14cb31f8d930c7b979dda5c3caad0696f5097d72ea",
+            "start_seconds": 24.5,
+            "tail_word": "边"
+          },
+          "tail_location_receipt": "production/receipts/song-tail-locations-task-20261015-0003-stage17.json"
+        },
+        "requirement_revision": "48f8ddf5c698b1b2765cb5337f3e7c59e73c100408e6a9eb0d8d03635e59b19b",
+        "current_version": 10,
+        "current_content_sha256": "ecb425334b04cf19f7704769608eec665b4a17d771f40934a11d3b795008c603",
+        "receipt": "production/receipts/song-uses-task-20261015-0003-stage17.json"
+      }
+    },
+    {
+      "requirement_id": "new26-s041-q08-video",
+      "shot_id": "new26-s041-q08",
+      "title": "手停在新旧页间 · 有声镜头",
+      "original_song": {
+        "object_id": "new26-qingpeng-singing",
+        "revision_id": "529078239eb900ca89fa901b6125e511475b90f29437c3b334c94a25553e6e57"
+      },
+      "lyrics_file": "production/rebuild/songs/qingpeng/lyrics.txt",
+      "nonempty_line_numbers": [
+        7
+      ],
+      "performance": "只续船边同一次尾音，画面切而声音不断。",
+      "status": "准确原曲及角色文件由用户试听通过，尾音位置已实际保存；本镜完整文件引用和同次录音跨镜连续安排已保存。视频未生成。",
+      "handoff": "只选本镜所需的完整独立短文件，保留原曲候选与文件哈希、歌词行和真实剪辑/另唱记录；不上传整首长曲或用range指代未制作文件。",
+      "actual_selection": {
+        "reference": {
+          "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+          "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+        },
+        "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+        "model_component_id": "qingpeng-aheng-stage3",
+        "model_sha256": "98bca747be4117f9fc429e14cb31f8d930c7b979dda5c3caad0696f5097d72ea",
+        "timeline": {
+          "component_id": "qingpeng-aheng-stage3",
+          "editorial_segments": [
+            {
+              "component_id": "qingpeng-aheng-stage3",
+              "material_selection": {
+                "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+                "material_id": "new26-qingpeng-singing"
+              },
+              "reference": {
+                "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+                "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+              },
+              "sha256": "98bca747be4117f9fc429e14cb31f8d930c7b979dda5c3caad0696f5097d72ea",
+              "timeline": {
+                "continuous_original": true,
+                "rate": 1,
+                "shot_end_seconds": 1,
+                "shot_start_seconds": 0,
+                "source_end_seconds": 27,
+                "source_start_seconds": 26
+              },
+              "use": "使用完整27秒角色录音；本镜后期播放原轨26—27秒，置于镜内0—1.000000秒。用户定位末字边的延音为原轨24.5—27秒。后期把同一完整录音原速连续铺在相邻镜头下，只切画面；不得重播尾字、变速、拉伸、复制尾音或叠成双声。下述时间范围是后期时间安排，模型始终引用完整文件。实际视频口型、动作和最终混音另验。"
+            }
+          ],
+          "full_file_seconds": 27.0,
+          "model_reference": "complete_file",
+          "reference_only": false,
+          "sha256": "98bca747be4117f9fc429e14cb31f8d930c7b979dda5c3caad0696f5097d72ea",
+          "shot_end_seconds": 4,
+          "tail_location": {
+            "end_seconds": 27,
+            "id": "qingpeng-aheng-stage3-01",
+            "marked_by": "user",
+            "saved_at": "2026-10-18T14:28:23.812467+00:00",
+            "source_sha256": "98bca747be4117f9fc429e14cb31f8d930c7b979dda5c3caad0696f5097d72ea",
+            "start_seconds": 24.5,
+            "tail_word": "边"
+          },
+          "tail_location_receipt": "production/receipts/song-tail-locations-task-20261015-0003-stage17.json"
+        },
+        "requirement_revision": "383ddc27a8b8bbb164e50f0f46793734250abf27ecbe23ef7927c9fcb9939657",
+        "current_version": 10,
+        "current_content_sha256": "ffff49befbf268526fb0f97279ded1e08ab1d3b1b1a5b21bba7f31c3a766c3e1",
+        "receipt": "production/receipts/song-uses-task-20261015-0003-stage17.json"
+      }
+    },
+    {
+      "requirement_id": "new26-s041-q09-video",
+      "shot_id": "new26-s041-q09",
+      "title": "隔水灯相照 · 有声镜头",
+      "original_song": {
+        "object_id": "new26-qingpeng-singing",
+        "revision_id": "529078239eb900ca89fa901b6125e511475b90f29437c3b334c94a25553e6e57"
+      },
+      "lyrics_file": "production/rebuild/songs/qingpeng/lyrics.txt",
+      "nonempty_line_numbers": [
+        8
+      ],
+      "performance": "阿蘅舞台选段莫怕远山高、隔水灯相照。",
+      "status": "准确角色文件及接续文件均由用户试听通过；本镜歌曲完整文件引用和实际时长安排已保存。视频未生成。",
+      "handoff": "只选本镜所需的完整独立短文件，保留原曲候选与文件哈希、歌词行和真实剪辑/另唱记录；不上传整首长曲或用range指代未制作文件。",
+      "actual_selection": {
+        "reference": {
+          "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+          "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+        },
+        "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+        "model_component_id": "qingpeng-aheng-stage4",
+        "model_sha256": "ac756b729eec457702e9a5de79168c5dbe16376e9374bf38b423e23bab84c30f",
+        "timeline": {
+          "component_id": "qingpeng-aheng-stage4",
+          "end_seconds": 6.848917,
+          "full_file_seconds": 6.848917,
+          "model_reference": "complete_file",
+          "reference_only": false,
+          "sha256": "ac756b729eec457702e9a5de79168c5dbe16376e9374bf38b423e23bab84c30f",
+          "shot_end_seconds": 7,
+          "start_seconds": 0
+        },
+        "requirement_revision": "b1183ef12fd0a8dd4eeb3f1bd61174ee4035e0ec0981d6e35259120790cfe80e",
+        "current_version": 9,
+        "current_content_sha256": "02e17d810510d2c28843d8cb2e44579731e1f01b8a63258a53952daecd2a3cd3",
+        "receipt": "production/receipts/song-uses-task-20261015-0003-stage16.json"
+      }
+    },
+    {
+      "requirement_id": "new26-s041-q10-video",
+      "shot_id": "new26-s041-q10",
+      "title": "归来认旧桥 · 有声镜头",
+      "original_song": {
+        "object_id": "new26-qingpeng-singing",
+        "revision_id": "529078239eb900ca89fa901b6125e511475b90f29437c3b334c94a25553e6e57"
+      },
+      "lyrics_file": "production/rebuild/songs/qingpeng/lyrics.txt",
+      "nonempty_line_numbers": [
+        9
+      ],
+      "performance": "阿蘅舞台选段末句归来认旧桥，尾音跨下一镜。",
+      "status": "准确原曲及角色文件由用户试听通过，尾音位置已实际保存；本镜完整文件引用和同次录音跨镜连续安排已保存。视频未生成。",
+      "handoff": "只选本镜所需的完整独立短文件，保留原曲候选与文件哈希、歌词行和真实剪辑/另唱记录；不上传整首长曲或用range指代未制作文件。",
+      "actual_selection": {
+        "reference": {
+          "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+          "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+        },
+        "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+        "model_component_id": "qingpeng-aheng-stage5",
+        "model_sha256": "3e2bd6c498589a532150d9182b6d6a8d3747acf7ebfc4344d0c6e456185aa081",
+        "timeline": {
+          "component_id": "qingpeng-aheng-stage5",
+          "editorial_segments": [
+            {
+              "component_id": "qingpeng-aheng-stage5",
+              "material_selection": {
+                "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+                "material_id": "new26-qingpeng-singing"
+              },
+              "reference": {
+                "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+                "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+              },
+              "sha256": "3e2bd6c498589a532150d9182b6d6a8d3747acf7ebfc4344d0c6e456185aa081",
+              "timeline": {
+                "continuous_original": true,
+                "rate": 1,
+                "shot_end_seconds": 12,
+                "shot_start_seconds": 0,
+                "source_end_seconds": 12,
+                "source_start_seconds": 0
+              },
+              "use": "使用完整17.1189秒角色录音；本镜后期播放原轨0—12秒，置于镜内0—12.000000秒。用户定位末字桥的延音为原轨11—15秒。后期把同一完整录音原速连续铺在相邻镜头下，只切画面；不得重播尾字、变速、拉伸、复制尾音或叠成双声。下述时间范围是后期时间安排，模型始终引用完整文件。实际视频口型、动作和最终混音另验。"
+            }
+          ],
+          "full_file_seconds": 17.118917,
+          "model_reference": "complete_file",
+          "reference_only": false,
+          "sha256": "3e2bd6c498589a532150d9182b6d6a8d3747acf7ebfc4344d0c6e456185aa081",
+          "shot_end_seconds": 12,
+          "tail_location": {
+            "end_seconds": 15,
+            "id": "qingpeng-aheng-stage5-01",
+            "marked_by": "user",
+            "saved_at": "2026-10-18T14:29:00.468911+00:00",
+            "source_sha256": "3e2bd6c498589a532150d9182b6d6a8d3747acf7ebfc4344d0c6e456185aa081",
+            "start_seconds": 11,
+            "tail_word": "桥"
+          },
+          "tail_location_receipt": "production/receipts/song-tail-locations-task-20261015-0003-stage17.json"
+        },
+        "requirement_revision": "13976991865b7d334f5311516cee5b74a709a069b5aedf48b858add6a0ccef21",
+        "current_version": 9,
+        "current_content_sha256": "0b3269821dfb28549a18259dece19a4fa27951cd3f636e420e8ffdd0731650e2",
+        "receipt": "production/receipts/song-uses-task-20261015-0003-stage17.json"
+      }
+    },
+    {
+      "requirement_id": "new26-s041-q11-video",
+      "shot_id": "new26-s041-q11",
+      "title": "先收住最后的音 · 有声镜头",
+      "original_song": {
+        "object_id": "new26-qingpeng-singing",
+        "revision_id": "529078239eb900ca89fa901b6125e511475b90f29437c3b334c94a25553e6e57"
+      },
+      "lyrics_file": "production/rebuild/songs/qingpeng/lyrics.txt",
+      "nonempty_line_numbers": [
+        9
+      ],
+      "performance": "只续桥字同一次尾音并自然收净；原曲第二段重唱不进入本场。",
+      "status": "准确原曲及角色文件由用户试听通过，尾音位置已实际保存；本镜完整文件引用和同次录音跨镜连续安排已保存。视频未生成。",
+      "handoff": "只选本镜所需的完整独立短文件，保留原曲候选与文件哈希、歌词行和真实剪辑/另唱记录；不上传整首长曲或用range指代未制作文件。",
+      "actual_selection": {
+        "reference": {
+          "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+          "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+        },
+        "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+        "model_component_id": "qingpeng-aheng-stage5",
+        "model_sha256": "3e2bd6c498589a532150d9182b6d6a8d3747acf7ebfc4344d0c6e456185aa081",
+        "timeline": {
+          "component_id": "qingpeng-aheng-stage5",
+          "editorial_segments": [
+            {
+              "component_id": "qingpeng-aheng-stage5",
+              "material_selection": {
+                "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+                "material_id": "new26-qingpeng-singing"
+              },
+              "reference": {
+                "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+                "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+              },
+              "sha256": "3e2bd6c498589a532150d9182b6d6a8d3747acf7ebfc4344d0c6e456185aa081",
+              "timeline": {
+                "continuous_original": true,
+                "rate": 1,
+                "shot_end_seconds": 5.118917,
+                "shot_start_seconds": 0,
+                "source_end_seconds": 17.118917,
+                "source_start_seconds": 12
+              },
+              "use": "使用完整17.1189秒角色录音；本镜后期播放原轨12—17.1189秒，置于镜内0—5.118917秒。用户定位末字桥的延音为原轨11—15秒。后期把同一完整录音原速连续铺在相邻镜头下，只切画面；不得重播尾字、变速、拉伸、复制尾音或叠成双声。下述时间范围是后期时间安排，模型始终引用完整文件。实际视频口型、动作和最终混音另验。有声桥尾在镜内3秒收净，完整文件尾部保留至5.118917秒，6秒才松页。"
+            }
+          ],
+          "full_file_seconds": 17.118917,
+          "model_reference": "complete_file",
+          "reference_only": false,
+          "sha256": "3e2bd6c498589a532150d9182b6d6a8d3747acf7ebfc4344d0c6e456185aa081",
+          "shot_end_seconds": 13,
+          "tail_location": {
+            "end_seconds": 15,
+            "id": "qingpeng-aheng-stage5-01",
+            "marked_by": "user",
+            "saved_at": "2026-10-18T14:29:00.468911+00:00",
+            "source_sha256": "3e2bd6c498589a532150d9182b6d6a8d3747acf7ebfc4344d0c6e456185aa081",
+            "start_seconds": 11,
+            "tail_word": "桥"
+          },
+          "tail_location_receipt": "production/receipts/song-tail-locations-task-20261015-0003-stage17.json"
+        },
+        "requirement_revision": "7f1e06f0418502c01d2b8c6c62d4e19479dd976a6ef7311cdec724cf56272c6a",
+        "current_version": 11,
+        "current_content_sha256": "f855214d153e5325d054ec1011d6f9592d4d02e3cb0f8e73ad08f84fbd434980",
+        "receipt": "production/receipts/song-uses-task-20261015-0003-stage17.json"
+      }
+    },
+    {
+      "requirement_id": "new26-s007-q06-video",
+      "shot_id": "new26-s007-q06",
+      "title": "碗碰到牙 · 有声镜头",
+      "original_song": {
+        "object_id": "new26-qingpeng-singing",
+        "revision_id": "529078239eb900ca89fa901b6125e511475b90f29437c3b334c94a25553e6e57"
+      },
+      "lyrics_file": "production/rebuild/songs/qingpeng/lyrics.txt",
+      "nonempty_line_numbers": [
+        1
+      ],
+      "performance": "母亲以本人声线试哼第一段起句最初三个音，刚起声即咳停；这是曲目未指定处的制作选择，不增加歌词。",
+      "status": "准确角色文件及接续文件均由用户试听通过；本镜歌曲完整文件引用和实际时长安排已保存。视频未生成。",
+      "handoff": "只选本镜所需的完整独立短文件，保留原曲候选与文件哈希、歌词行和真实剪辑/另唱记录；不上传整首长曲或用range指代未制作文件。",
+      "actual_selection": {
+        "reference": {
+          "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+          "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+        },
+        "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+        "model_component_id": "qingpeng-mother-first-hum",
+        "model_sha256": "293555dbc9dd4471152c0204831d9e6c83272ccac35426e77fd0ccd2864f6b9d",
+        "timeline": {
+          "component_id": "qingpeng-mother-first-hum",
+          "end_seconds": 2.5,
+          "full_file_seconds": 2.5,
+          "model_reference": "complete_file",
+          "reference_only": false,
+          "sha256": "293555dbc9dd4471152c0204831d9e6c83272ccac35426e77fd0ccd2864f6b9d",
+          "shot_end_seconds": 15,
+          "start_seconds": 0
+        },
+        "requirement_revision": "25f256e03b8fc22fe637c22cb5c1df64513ec512cdad68f59bb21d7665e2f260",
+        "current_version": 11,
+        "current_content_sha256": "507d15352661db6773dbbabaf4b279ded3ae7201c9dc21fe226d2fca647f0f4b",
+        "receipt": "production/receipts/song-uses-task-20261015-0003-stage16.json"
+      }
+    },
+    {
+      "requirement_id": "new26-s040-q01-video",
+      "shot_id": "new26-s040-q01",
+      "title": "灯下慢念 · 有声镜头",
+      "original_song": {
+        "object_id": "new26-qingpeng-singing",
+        "revision_id": "529078239eb900ca89fa901b6125e511475b90f29437c3b334c94a25553e6e57"
+      },
+      "lyrics_file": "production/rebuild/songs/qingpeng/lyrics.txt",
+      "nonempty_line_numbers": [
+        7
+      ],
+      "performance": "阿蘅读词，母亲低弱无词哼同一句曲调；念词与演唱分开。",
+      "status": "准确角色文件及接续文件均由用户试听通过；本镜歌曲完整文件引用和实际时长安排已保存。视频未生成。",
+      "handoff": "只选本镜所需的完整独立短文件，保留原曲候选与文件哈希、歌词行和真实剪辑/另唱记录；不上传整首长曲或用range指代未制作文件。",
+      "actual_selection": {
+        "reference": {
+          "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+          "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+        },
+        "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+        "model_component_id": "qingpeng-mother-willow-hum",
+        "model_sha256": "5384c046af98225079dd61f2e2f320dbb2a50c3bfaf369ca1053c6723c93c341",
+        "timeline": {
+          "component_id": "qingpeng-mother-willow-hum",
+          "end_seconds": 10.0,
+          "full_file_seconds": 10.0,
+          "model_reference": "complete_file",
+          "reference_only": false,
+          "sha256": "5384c046af98225079dd61f2e2f320dbb2a50c3bfaf369ca1053c6723c93c341",
+          "shot_end_seconds": 24,
+          "start_seconds": 0
+        },
+        "requirement_revision": "04bd0a4ff6e156b8adfbcc2f07590c5e6a50a5d98ff254e6354e13c483df65c9",
+        "current_version": 14,
+        "current_content_sha256": "2fba56da527f680746bf96220c6f080d7f59787f6e04eef5e1d30c8d328bfee9",
+        "receipt": "production/receipts/song-uses-task-20261015-0003-stage16.json"
+      }
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-chipped-bowl-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-chipped-bowl-identity-01",
+    "submission_sha256": "38692b18f008f0a73cf5fc42e7d41f9b87a6a06287cab6b2a040c976b34b8a07",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-chipped-bowl-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "004ac1f7390bbdfe6801d912eee5a7f6e56c627375aa5d0865988e27c2faba69.jpg",
+    "sha256": "004ac1f7390bbdfe6801d912eee5a7f6e56c627375aa5d0865988e27c2faba69",
+    "bytes": 7508053,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-chipped-bowl-identity-01",
+    "candidate_id": "candidate-c7b94ea8f9c62810d75650fc11f87f6ebff0a1909f57564178ff6c87814445c4",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "已实际看原生5504×3072 JPEG：灰褐外壁、米白内壁的小陶碗在主图和俯视保持同一低圈足轮廓，唯一的小缺口都在主可见口沿左上；局部图为同一缺口，边缘磨钝，没有额外裂缝或第二处破损。碗底有平稳落地影，未混入大水碗、食物或装饰文字。",
+    "decision": "选择为李家缺口小碗的第0代形制母版，准确缺口供父亲摸碗沿动作定位；镜头按既定一掌内的小碗尺度使用。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 9,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/chipped-bowl-identity-01-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 6155,
+    "total_input_tokens": 287,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 287
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4598,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1270
+  },
+  "actual_request_body_sha256": "41686413a820be4a2ffc7cea8a2ccbb36150f5b256d16c41152b466092d6cd88",
+  "submitted_inputs": []
+}

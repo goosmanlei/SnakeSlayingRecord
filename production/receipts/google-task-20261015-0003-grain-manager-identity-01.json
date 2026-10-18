@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-grain-manager-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-grain-manager-identity-01",
+    "submission_sha256": "03c6a97224f0626bc6c4844c9f07627cc997b8f3e85d07d0462c86c5bee6f77c",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-grain-manager-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "eeff48fe86d7bbf085e126ba5eae3e18806859f11a57ab15b083d7d9c136e15a.jpg",
+    "sha256": "eeff48fe86d7bbf085e126ba5eae3e18806859f11a57ab15b083d7d9c136e15a",
+    "bytes": 8153712,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-grain-manager-identity-01",
+    "candidate_id": "candidate-eb85832e684da7cf273600fe22099f6ac501c410812b86ffe1378ca144eb60d5",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "已实际看原生5504×3072 JPEG：圆阔额头、短直眉、无须和整束发髻在全身、侧身、近脸一致；浅石灰交领上衣、深蓝腰束、灰褐束脚裤和布鞋完整。手指露出，没有赵的钥串、官帽或姓名标牌；浅衣与脸形可区分旧管事和其他人物。",
+    "decision": "选择为复查后新管事的第0代身份母版，绑定当前所有消费者；身份图不预演递纸量米。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 4,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/grain-manager-identity-01-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 6197,
+    "total_input_tokens": 347,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 347
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4331,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1519
+  },
+  "actual_request_body_sha256": "d6348030d774a4b095f2e2112af6e7d3fa1518d07bb6c9fda4bea97ccb03162f",
+  "submitted_inputs": []
+}

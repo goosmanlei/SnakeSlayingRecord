@@ -1,0 +1,96 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-snake-first-cut-01",
+  "submission": {
+    "call_id": "task-20261015-0003-snake-first-cut-01",
+    "submission_sha256": "ce24d4b6b85e3e5b98116c6a2c6e5dae7eaa9f9385375f8e10483d0e8ce592e3",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-snake-first-cut-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "725b579304dca51c001d9aa1cb7b7bdb7d6b36553b491c7f776278695d81d798.jpg",
+    "sha256": "725b579304dca51c001d9aa1cb7b7bdb7d6b36553b491c7f776278695d81d798",
+    "bytes": 6050727,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-snake-first-cut-01",
+    "candidate_id": "candidate-159d1cdea51b2d0c52fada9173b49ff640e7cdb71c2226e6e5dbf66bc52199d0",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "已实际看原生5504×3072 JPEG：同一粗钝蛇头与颈背粗细、暗金棕眼、橄榄棕大色块及稀疏深斑保持；头贴地、头颈连贯。灰色遮条挡住主图刀位，右侧狭窗只见一条浅暗红细裂，无翻肉、断口或血泊。",
+    "decision": "选择首刀浅颈伤参考；灰色是设定图遮挡，镜头仍按石盖窄缝，不将此图当空间或机关母版。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-task-20261015-0003-snake-identity-02",
+        "revision_id": "e22f9afb9f3c430c0634150b06c4b2db680b003d55291a2cacfad303fb5f8ae3"
+      }
+    ]
+  },
+  "current_consumer_selection": {
+    "slots": 2,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/snake-first-cut-01-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 6547,
+    "total_input_tokens": 1414,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 294
+      },
+      {
+        "modality": "image",
+        "tokens": 1120
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4223,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 910
+  },
+  "actual_request_body_sha256": "e12b75b87475ff54bb5dd6e95a072c3e39c951f9978a371c3b9e0fcd79c85aaa",
+  "submitted_inputs": [
+    {
+      "image_number": 1,
+      "submitted_sha256": "18d079399b23991a4a5404d19abce4229630bee46e8b286e659dad963414f5ff",
+      "original_sha256": "18d079399b23991a4a5404d19abce4229630bee46e8b286e659dad963414f5ff",
+      "crop": null
+    }
+  ]
+}

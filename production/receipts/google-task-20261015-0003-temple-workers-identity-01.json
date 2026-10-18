@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-temple-workers-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-temple-workers-identity-01",
+    "submission_sha256": "11a281c620dd50da35530f3dc59fd13e5ad34ef7ebb483f5e34f132e4c52ef3a",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-temple-workers-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "90a1f7f3353b676a7657adeb934a9e38db6f58a9b53b3b243866181958840485.jpg",
+    "sha256": "90a1f7f3353b676a7657adeb934a9e38db6f58a9b53b3b243866181958840485",
+    "bytes": 8729570,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-temple-workers-identity-01",
+    "candidate_id": "candidate-aa8e059b5225f8a9eedbdc220a99f9066a0ea2aafc732b2ab1bae9c1efaefab4",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "已实际看原生5504×3072 JPEG：四位庙工左侧为深灰褐粗眉短髭壮实守门甲、灰绿无须瘦长脸守门乙；右侧为土黄高髻阔脸搬粮甲、浅灰衣暗蓝裤方下巴搬粮乙。各自近图对应全身，空手、无兵器，衣装与身份可区分。",
+    "decision": "选择为庙工群体第0代母版；右端搬粮乙沿当前实体设定兼送单者，瘦高借绳庙工仍用独立母版。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 19,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/temple-workers-identity-01-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 7159,
+    "total_input_tokens": 375,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 375
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 5042,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1742
+  },
+  "actual_request_body_sha256": "ed9fbe8d53e503901e2c0b54bcaa3041134fc1fca60b3a8b2b902ad17124e6d5",
+  "submitted_inputs": []
+}

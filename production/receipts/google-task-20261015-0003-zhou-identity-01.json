@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-zhou-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-zhou-identity-01",
+    "submission_sha256": "7c9475209f2d9f5b20fde1b6e5fd42feed95ae59e7f41dd916aba23d685d83b0",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-zhou-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "cf7fb9867759eaa1bfabfb110dfa5b6a0e11ff74375a259d6503ed6220652988.jpg",
+    "sha256": "cf7fb9867759eaa1bfabfb110dfa5b6a0e11ff74375a259d6503ed6220652988",
+    "bytes": 6068861,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-zhou-identity-01",
+    "candidate_id": "candidate-dafc1e6e1a6ee57f545f63e50555466b1418fa1f4ff658fe8f7b408f6a038247",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "已实际看原生5504×3072 JPEG：宽圆脸、胡茬、围裙和同人视向可辨，但生成了现代短平头和立领盘扣短衣，缺少本剧古代劳动者的束发与衣领依据，和已通过的其他角色时代造型不相容。",
+    "decision": "不选入下游；原文字方案没有明确发式和衣领，本次补清古代小髻与交领，从文字重新生成干净母版一次，不沿失败图编辑。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  },
+  "usage": {
+    "total_tokens": 6280,
+    "total_input_tokens": 271,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 271
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4387,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1622
+  },
+  "actual_request_body_sha256": "a2d81e50351ba94fd68befcdc971ba1a196986a78ee02425bebc74585b09a40e",
+  "submitted_inputs": []
+}

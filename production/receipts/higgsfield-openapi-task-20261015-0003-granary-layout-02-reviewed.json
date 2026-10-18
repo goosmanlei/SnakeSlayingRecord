@@ -1,0 +1,101 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-granary-layout-02-reviewed",
+  "submission": {
+    "call_id": "task-20261015-0003-granary-layout-02-reviewed",
+    "submission_sha256": "bb1ec2f34f04867defe5bd215fcb3537afffbb27c835c7b2887048ed8edca0a4",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-granary-layout-02-reviewed.json",
+  "provider_history_id": null,
+  "provider_job_id": "fa515b58-feec-4961-aa35-5f0662959db2",
+  "provider_resource_id": null,
+  "model": "marketing-studio/image/flare",
+  "project_id": null,
+  "provider": "Higgsfield OpenAPI",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "d70bf77467710507f2adf78445c52642b9a54caee3ca61fbdc489ac1047d4fd0.png",
+    "sha256": "d70bf77467710507f2adf78445c52642b9a54caee3ca61fbdc489ac1047d4fd0",
+    "bytes": 7707675,
+    "mime": "image/png",
+    "width": 3840,
+    "height": 2160
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-granary-layout-02-reviewed",
+    "candidate_id": "candidate-572c115ab3feb07426817a76977e18b809ea4ef5ec6dc698b60bcb4d70177d1c",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "actual": "UNKNOWN",
+    "planning_reserve": 1.0,
+    "account": "Higgsfield OpenAPI prepaid balance; no recharge",
+    "budget_snapshot": {
+      "created_at": "2026-10-16T18:30:07.402083+00:00",
+      "user_reported_prepaid_usd": 8.65,
+      "actual_balance_verified": true,
+      "max_dispatches": 21,
+      "reserve_per_unknown_usd": 1.0,
+      "generation_model": "marketing-studio/image/flare",
+      "no_recharge": true,
+      "source": "User said Higgsfield OpenAPI remaining8.65 USD; later corrected only Nano Banana availability, not the balance.",
+      "actual_charge": "UNKNOWN",
+      "verified_balance_usd": 7.05,
+      "balance_verified_at": "2026-10-16T20:19:10.762473+00:00",
+      "balance_source": "Daily Chrome https://open.higgsfield.ai/billing visible balance and Auto top-up dialog; read-only, no settings saved.",
+      "balance_anchor_dispatch_count": 18,
+      "auto_top_up_enabled": true,
+      "auto_top_up_threshold_usd": 3.13,
+      "auto_top_up_amount_usd": 25.0,
+      "threshold_buffer_usd": 0.5,
+      "next_batch_limit": 3,
+      "planning_note": "Daily Chrome after18 completed calls:7.05USD,Auto top-up On unchanged. Next3 at1USD planning reserve =>4.05USD, above3.13+0.50 stop. No recharge; individual cost UNKNOWN."
+    },
+    "note": "Authenticated estimate returns token rates, not a fixed charge. Dispatch cap and observed auto-top-up threshold checked before submission."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "已实际看3840×2160原件：桌已离开北墙，桌后与西侧都有站位，南北两列袋堆、中间运输路、门外南队路和东实墙后路清楚；但西门两门扇被画成同柱相连的V形折扇，斜压入开口，正确双门铰接与可供抱袋人通过的净门洞不明确。",
+    "decision": "不选作完整空间；下一次只改真实门扇铰接和全开位置，已解决的桌后、袋堆和隔墙条件继续保留。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  },
+  "actual_request_body_sha256": "abd31fb0e26c7327bf43c7672ec9868b8aadf4e2f9b4418fbe075d6d307ddbd6",
+  "idempotency_key": "7f7a0f4d-c81d-4c6a-b4f7-b3e498fc9ab4",
+  "budget_snapshot": {
+    "created_at": "2026-10-16T18:30:07.402083+00:00",
+    "user_reported_prepaid_usd": 8.65,
+    "actual_balance_verified": true,
+    "max_dispatches": 21,
+    "reserve_per_unknown_usd": 1.0,
+    "generation_model": "marketing-studio/image/flare",
+    "no_recharge": true,
+    "source": "User said Higgsfield OpenAPI remaining8.65 USD; later corrected only Nano Banana availability, not the balance.",
+    "actual_charge": "UNKNOWN",
+    "verified_balance_usd": 7.05,
+    "balance_verified_at": "2026-10-16T20:19:10.762473+00:00",
+    "balance_source": "Daily Chrome https://open.higgsfield.ai/billing visible balance and Auto top-up dialog; read-only, no settings saved.",
+    "balance_anchor_dispatch_count": 18,
+    "auto_top_up_enabled": true,
+    "auto_top_up_threshold_usd": 3.13,
+    "auto_top_up_amount_usd": 25.0,
+    "threshold_buffer_usd": 0.5,
+    "next_batch_limit": 3,
+    "planning_note": "Daily Chrome after18 completed calls:7.05USD,Auto top-up On unchanged. Next3 at1USD planning reserve =>4.05USD, above3.13+0.50 stop. No recharge; individual cost UNKNOWN."
+  }
+}

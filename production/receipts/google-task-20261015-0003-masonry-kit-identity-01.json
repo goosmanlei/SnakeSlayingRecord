@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-masonry-kit-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-masonry-kit-identity-01",
+    "submission_sha256": "7e14472b13a11f540e45061eb55c28979157be70dce1b17a3de59bea1109572c",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-masonry-kit-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "f1d14362dbe3fd69201e551e3aa955bf8f3f9bb15db12fc8362586b15c950fff.jpg",
+    "sha256": "f1d14362dbe3fd69201e551e3aa955bf8f3f9bb15db12fc8362586b15c950fff",
+    "bytes": 8072286,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-masonry-kit-identity-01",
+    "candidate_id": "candidate-379d177be35b7e9641d8ceaecf63e2d6cebaf973650a927703508251bcfa72a4",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "实际查看原件：浅黄竹簸箕前缘平薄、后侧浅立边连续；褐绳缠把的细枝清扫束完整、刷端散开。少量灰白石屑与绿灰草屑分列，不含凿槌、字样或人物。竹编线条较密但结构可读、轮廓清楚，符合简洁道具设定。通过独立形制与清理用途；双手端持尺度和停锤接屑的同步动作未由本图验证。",
+    "decision": "选用第0代新原件，分别用于簸箕接石屑和清扫束扫草屑；不重复孙六凿槌职责。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 2,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/masonry-kit-identity-01-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 5896,
+    "total_input_tokens": 301,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 301
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4345,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1250
+  },
+  "actual_request_body_sha256": "4976f82612efba9f982cc915641f65f26a57d483d682bca508ed7d6cf940c6be",
+  "submitted_inputs": []
+}

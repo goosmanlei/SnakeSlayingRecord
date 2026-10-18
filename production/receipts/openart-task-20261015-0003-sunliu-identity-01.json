@@ -1,0 +1,56 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-sunliu-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-sunliu-identity-01",
+    "submission_sha256": "b4857dd59738deb02d0e7e5f615db8f30a9f5696db1ad806e6ca03835172aa5d",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-sunliu-identity-01.json",
+  "provider_history_id": "BVldlSxWogcUpAsHu40j",
+  "provider_job_id": null,
+  "provider_resource_id": "UI9grP75gR6JZ8xGzNuz",
+  "model": "gpt-image-2-5-sunburst",
+  "project_id": "8K6WcbrPLghSBJXBtWAE",
+  "provider": "OpenArt",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "16e98440555f6b7dbee555249506ff2a84370a13bb9d1291b1a49c9cdd234edf.png",
+    "sha256": "16e98440555f6b7dbee555249506ff2a84370a13bb9d1291b1a49c9cdd234edf",
+    "bytes": 6254350,
+    "mime": "image/png",
+    "width": 3840,
+    "height": 2160
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-sunliu-identity-01",
+    "candidate_id": "candidate-253ff4ba6aa5db273927b4be7e6aa06865b8d75208c4eb0c5c4153e2cece3bdb",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "OpenArt credits",
+    "quoted": 350,
+    "actual": "UNKNOWN",
+    "note": "报价对应单图；实际扣费字段未返回时保留UNKNOWN。"
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "已实际看图：同一宽脸圆鼻、浓眉短须的成年鼓手，肩臂粗壮但人体比例正常。灰蓝无袖短褂、暗褐裤、布鞋在正侧全身与近脸一致；空手，无鼓槌、肩布、杠、腰鼓或伤口。轮廓与大色块清楚，局部短须不扩散成全身纹理，满足身份和劳动衣装用途。",
+    "decision": "作为孙六干净身份母版供本轮全剧当前消费者使用；准确绑定此候选及original，未代替用户采纳。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 85,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/sunliu-identity-01-consumer-selections.json"
+  }
+}

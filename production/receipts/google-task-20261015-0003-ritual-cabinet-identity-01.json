@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-ritual-cabinet-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-ritual-cabinet-identity-01",
+    "submission_sha256": "8037a1d619f6dae1c66dccb255d1502b9ec7e604ef10f7e60331b5b1bba5839f",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-ritual-cabinet-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "9e1d44ca5a2117233a583abfa69ad4afff20987d80350e8bb7a827bcaeb1f49c.jpg",
+    "sha256": "9e1d44ca5a2117233a583abfa69ad4afff20987d80350e8bb7a827bcaeb1f49c",
+    "bytes": 7391861,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-ritual-cabinet-identity-01",
+    "candidate_id": "candidate-03b50607911011660748c7340f6f05121a7b72d39148ded395c9f49ac055429d",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "实际查看原件：暗红褐双门柜与木拉手可辨，但开门视图擅自塞入至少五本未绑定书册，出现三层储物空间，违背本次空层板形制与三原册的准确职责。旋扣在开门视图仍向左下斜伸，没有按计划向上转开。两视图展示不足以作为验封、开柜的完整动作依据。",
+    "decision": "不选下游；从根图去除全部书册，固定内部两层与向上旋开的同一铜扣，必要时只先做准确闭柜形制再独立核开门。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  },
+  "usage": {
+    "total_tokens": 6822,
+    "total_input_tokens": 426,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 426
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4808,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1588
+  },
+  "actual_request_body_sha256": "5bce8e0bf382333194b8bb15cf60f79a80ddbbe43da9e9c2915bc86d1c203635",
+  "submitted_inputs": []
+}

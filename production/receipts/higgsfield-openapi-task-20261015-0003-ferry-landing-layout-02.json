@@ -1,0 +1,101 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-ferry-landing-layout-02",
+  "submission": {
+    "call_id": "task-20261015-0003-ferry-landing-layout-02",
+    "submission_sha256": "abeb801bc282267e4986b4a19f970248700756c0c50170af50a4ea8864a32f93",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-ferry-landing-layout-02.json",
+  "provider_history_id": null,
+  "provider_job_id": "6a2ba939-653e-4c51-a4e9-72f96e9de886",
+  "provider_resource_id": null,
+  "model": "marketing-studio/image/flare",
+  "project_id": null,
+  "provider": "Higgsfield OpenAPI",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "c0db21e9ce2f98d63c02839c91646362075f28e6a225a5732a7b6ea09eb3db20.png",
+    "sha256": "c0db21e9ce2f98d63c02839c91646362075f28e6a225a5732a7b6ea09eb3db20",
+    "bytes": 7066972,
+    "mime": "image/png",
+    "width": 3840,
+    "height": 2160
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-ferry-landing-layout-02",
+    "candidate_id": "candidate-91d5036c80a79cff9a40d846236b20ff0c6835e6abb077f7d9df3cbd39a70dde",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "actual": "UNKNOWN",
+    "planning_reserve": 0.5,
+    "account": "Higgsfield OpenAPI prepaid balance; no recharge",
+    "budget_snapshot": {
+      "created_at": "2026-10-16T18:30:07.402083+00:00",
+      "user_reported_prepaid_usd": 8.65,
+      "actual_balance_verified": true,
+      "max_dispatches": 14,
+      "reserve_per_unknown_usd": 0.5,
+      "generation_model": "marketing-studio/image/flare",
+      "no_recharge": true,
+      "source": "User said Higgsfield OpenAPI remaining8.65 USD; later corrected only Nano Banana availability, not the balance.",
+      "actual_charge": "UNKNOWN",
+      "verified_balance_usd": 7.61,
+      "balance_verified_at": "2026-10-16T19:44:37.870138+00:00",
+      "balance_source": "Daily Chrome https://open.higgsfield.ai/billing visible balance and Auto top-up dialog; read-only, no settings saved.",
+      "balance_anchor_dispatch_count": 12,
+      "auto_top_up_enabled": true,
+      "auto_top_up_threshold_usd": 3.13,
+      "auto_top_up_amount_usd": 25.0,
+      "threshold_buffer_usd": 0.5,
+      "next_batch_limit": 2,
+      "planning_note": "Fresh daily Chrome billing after12 completed calls shows7.61USD, Auto top-up On unchanged. One ferry retry adds an explicit raised north-side deck walkway; one theatre-box retry removes extraneous attachment. Two calls capped at0.50USD each reserve leave6.61USD, above3.13+0.50USD threshold. No recharge, no individual-call fee inferred from balance."
+    },
+    "note": "Authenticated estimate returns token rates, not a fixed charge. Dispatch cap and observed auto-top-up threshold checked before submission."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "实际查看原生3840×2160 PNG：北岸、南河和沿岸东西向木船明确，船头在东侧画面左；一块窄板两端分别支在石岸与船上，中段下方水隙可见。北舷内侧现有连续宽木甲板，板旁可站人收板；三筐均在下凹货舱远侧，舱内空隙可再推入一筐。左侧系船绳独立连东石桩，未系船板。两级低石沿、完整船身、低舱缘和板端可同时定位，无人钱或事件终态。",
+    "decision": "通过作为第0代渡口空间依据，准确选择给下游；收板时只断人路，船仍由独立系缆固定，实际镜头另核人物站位。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 4,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/ferry-landing-layout-02-consumer-selections.json"
+  },
+  "actual_request_body_sha256": "076a6abd5cb08ebc7a5ee6ffc5b2114d7b962261c03e30496f8a5f1f6cfc5ff6",
+  "idempotency_key": "6608ec0e-2f3a-463c-b768-c57893bdd9ba",
+  "budget_snapshot": {
+    "created_at": "2026-10-16T18:30:07.402083+00:00",
+    "user_reported_prepaid_usd": 8.65,
+    "actual_balance_verified": true,
+    "max_dispatches": 14,
+    "reserve_per_unknown_usd": 0.5,
+    "generation_model": "marketing-studio/image/flare",
+    "no_recharge": true,
+    "source": "User said Higgsfield OpenAPI remaining8.65 USD; later corrected only Nano Banana availability, not the balance.",
+    "actual_charge": "UNKNOWN",
+    "verified_balance_usd": 7.61,
+    "balance_verified_at": "2026-10-16T19:44:37.870138+00:00",
+    "balance_source": "Daily Chrome https://open.higgsfield.ai/billing visible balance and Auto top-up dialog; read-only, no settings saved.",
+    "balance_anchor_dispatch_count": 12,
+    "auto_top_up_enabled": true,
+    "auto_top_up_threshold_usd": 3.13,
+    "auto_top_up_amount_usd": 25.0,
+    "threshold_buffer_usd": 0.5,
+    "next_batch_limit": 2,
+    "planning_note": "Fresh daily Chrome billing after12 completed calls shows7.61USD, Auto top-up On unchanged. One ferry retry adds an explicit raised north-side deck walkway; one theatre-box retry removes extraneous attachment. Two calls capped at0.50USD each reserve leave6.61USD, above3.13+0.50USD threshold. No recharge, no individual-call fee inferred from balance."
+  }
+}

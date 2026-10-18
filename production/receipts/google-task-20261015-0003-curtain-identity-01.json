@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-curtain-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-curtain-identity-01",
+    "submission_sha256": "fa523da5e79b63719cd806715ed27cc22aceb147e3f2e2759ea8587ab714b340",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-curtain-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "416a217dea8746fe3c560aafc942214a6ff7240d15c11ba57007da9dca8143dc.jpg",
+    "sha256": "416a217dea8746fe3c560aafc942214a6ff7240d15c11ba57007da9dca8143dc",
+    "bytes": 7663721,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-curtain-identity-01",
+    "candidate_id": "candidate-4bc837df97fbc72a49d20f90d9c4a9bc52fa8ec841738983fd9d8123deb7027c",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "实际查看原件：主视为完整灰豆绿方幅，四角布袢、暗灰包边和四边均可辨；右上同材质软折，右下湿边加深并下垂、不透明。没有花纹、文字或干面水滴，结构与色块清楚。软折局部被遮的布袢不据此认定数量改变。通过形制与干湿材质用途；两人抓握宽度、盆中及撑布动作仍须在镜头核对。",
+    "decision": "选用本轮第0代原件，干湿局部是同布材质说明，不自动当作剧情状态已完成。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 24,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/curtain-identity-01-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 5266,
+    "total_input_tokens": 284,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 284
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4163,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 819
+  },
+  "actual_request_body_sha256": "4d0c6cad619b17ea81b264b1b039289ad5e2f319db10157457427a42c132160e",
+  "submitted_inputs": []
+}

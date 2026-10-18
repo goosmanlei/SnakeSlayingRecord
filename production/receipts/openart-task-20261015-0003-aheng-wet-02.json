@@ -1,0 +1,61 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-aheng-wet-02",
+  "submission": {
+    "call_id": "task-20261015-0003-aheng-wet-02",
+    "submission_sha256": "07f197d4aa33093471b5755444147b925c36b325e3c61aff3bf586f58b477cf9",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-aheng-wet-02.json",
+  "provider_history_id": "Ws9KD1XUxEq6mCS79E2m",
+  "provider_job_id": null,
+  "provider_resource_id": "OXsAbgj0K44Z6N5IZX4T",
+  "model": "nano-banana-2-1",
+  "project_id": "8K6WcbrPLghSBJXBtWAE",
+  "provider": "OpenArt",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "ce173f8612a3d7bc6b5fd1ca19dbb60a62f4e33e39b9988070d685c2fd1b4ede.png",
+    "sha256": "ce173f8612a3d7bc6b5fd1ca19dbb60a62f4e33e39b9988070d685c2fd1b4ede",
+    "bytes": 17944228,
+    "mime": "image/png",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-aheng-wet-02",
+    "candidate_id": "candidate-820b92b64704ded4361d1806d80ba2f732a4d573dd9a8df9d4eb09acd3f436b9",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "OpenArt credits",
+    "quoted": 80,
+    "actual": "UNKNOWN",
+    "note": "报价对应单图；实际扣费字段未返回时保留UNKNOWN。"
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "已实际打开完整原件。脸型、低束发、常服和低帮鞋与干净母版相符；胸肩已无上一张的大湿斑，湿痕集中在袖口及裙膝、下缘。但双手指端被画成明显深灰斑，容易读成沾泥或污手；右侧仍是正脸，未提供方案要求的袖膝细节。原生5504×3072按用户本次决定保留并记录，不因约0.8%的比例偏差重做。",
+    "decision": "从第0代干净母版重新做状态，双手保持原肤色，仅用少量透明水珠表达湿；把右侧限定为袖口及裙膝细节，不增加正脸大图。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-task-20261015-0003-aheng-identity-02",
+        "revision_id": "ee6e0f97e99928fd786b1e3e323e519ce0d69cc3f719291946b18c4d79a1c3fc"
+      }
+    ]
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  }
+}

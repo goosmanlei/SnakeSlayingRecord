@@ -1,0 +1,26 @@
+{
+  "checked_at": "2026-10-16T16:11:40.192696+00:00",
+  "quota_observation": {
+    "id": "seed-quota-task-20261015-0003",
+    "model": "seed-audio-1.0",
+    "service_status": "已开通",
+    "remaining_seconds": 1660.2,
+    "remaining_display": "27.67分钟",
+    "observed_at": "2026-10-16T06:12:40.075057+00:00",
+    "source": "https://console.volcengine.com/speech/new/experience/audio?projectName=default",
+    "service_status_source": "https://console.volcengine.com/speech/new/setting/activate?projectName=default",
+    "observation": "日常Chrome登录后实读：Doubao - 音频生成1.0余量27.67分钟；开通管理音频生成1.0已开通。只读核对，未购买或变更服务。",
+    "shared_resource_control": "沿scripts/seed_audio.py使用主项目seed-audio.lock及全工作区调用回执，串行每次最多预留120秒；任何未知请求先查，不重复提交。"
+  },
+  "remaining_after_recorded_calls_and_unknown_reservations_seconds": 1117.98,
+  "live_console_balance": false,
+  "actual_monetary_charge": "UNKNOWN",
+  "unknown_guard_request": {
+    "checked_at": "2026-10-16T15:53:33.880269+00:00",
+    "request_id": "555f10be-2760-45c6-baf8-c8177fad42b7",
+    "submitted_at": "2026-10-16T13:38:44.392815+00:00",
+    "status": "unknown",
+    "reason": "Own synchronous external process remained pending for over two hours despite 300s socket timeout. Sent SIGTERM only to confirmed task PID24113, preserve full 120s quota reservation. No resubmit.",
+    "command": "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python scripts/seed_audio.py .runtime/task-20261015-0003/guard-voice-01-spec.json --submit --quota production/receipts/seed-quota-task-20261015-0003.json --workspace /Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-task/worktrees/task-20261015-0003"
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-grain-ledger-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-grain-ledger-identity-01",
+    "submission_sha256": "a63b80fd5c00aca36bb61326e589f1abe5f8f2172ad4885eb2487f4f2b2db2f9",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-grain-ledger-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "e2e759e015b810ffbd2d94581cd3523a11d29ef0848dd68cfe177d65d879e9ef.jpg",
+    "sha256": "e2e759e015b810ffbd2d94581cd3523a11d29ef0848dd68cfe177d65d879e9ef",
+    "bytes": 6409421,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-grain-ledger-identity-01",
+    "candidate_id": "candidate-b8b23a3c2b06bdf034031a122040429cab7fc61e7c92b8c32436004aa22d2381",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google remaining balance at the recorded budget checkpoint; no recharge",
+    "reported_balance_usd": 3.86,
+    "balance_checkpoint_dispatches": 106,
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "实际查看原生5504×3072：深灰蓝软封、浅褐脊线、封本与打开页可对应，浅黄定位条位于中段，淡列线无日期数字。右下边缘略露纸层的磨损清楚，纸条与线脊细节可读；不混为原备粮单或庙仓账。画面完整、轮廓清楚，无多余文字。",
+    "decision": "选为第0代米铺底账母版；锁定这册封皮磨损与定位条，供开页及转递用途。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 9,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/grain-ledger-identity-01-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 6373,
+    "total_input_tokens": 306,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 306
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4622,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1445
+  },
+  "actual_request_body_sha256": "85248e958e7756109dd9b0a6e4f7779c88c23ff98870a65917f8fd984458854e",
+  "submitted_inputs": []
+}

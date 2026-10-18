@@ -1,0 +1,17 @@
+{
+  "id": "seed-quota-task-20261015-0003-stage13",
+  "model": "seed-audio-1.0",
+  "service_status": "已开通",
+  "remaining_seconds": 723.6,
+  "remaining_display": "14.06分钟",
+  "observed_at": "2026-10-17T05:46:47.480917+00:00",
+  "source": "Daily Chrome visible Doubao 音频生成1.0 page at https://console.volcengine.com/speech/new/experience/audio?projectName=default",
+  "service_status_source": "https://console.volcengine.com/speech/new/setting/activate?projectName=default",
+  "observation": "本轮日常Chrome实读：Doubao - 音频生成1.0余量14.06分钟，即843.6秒。开通状态沿此前已核验记录；本轮未购买、重开或变更服务。新预算723.6秒已另扣旧未知请求120秒，旧已完成请求已反映在实时显示中。",
+  "shared_resource_control": "沿scripts/seed_audio.py使用主项目seed-audio.lock及全工作区调用回执，串行每次最多预留120秒；任何未知请求先查，不重复提交。",
+  "observed_remaining_minutes": 14.06,
+  "observed_remaining_seconds": 843.6,
+  "prior_unknown_reserve_seconds": 120,
+  "prior_unknown_request_id": "555f10be-2760-45c6-baf8-c8177fad42b7",
+  "note": "Fresh UI843.6s minus prior unresolved120s reserve =723.6s effective allowance. Completed older calls not subtracted twice. No new generation has been dispatched in stage13."
+}

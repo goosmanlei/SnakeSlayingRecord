@@ -376,6 +376,12 @@ def main(argv=None):
                 fcntl.flock(lock.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
                 receipt = json.loads((run / "receipt.json").read_text())
                 response = json.loads((run / "response.json").read_text())
+                def erased(value):
+                    if isinstance(value,dict):
+                        return value.get('media_deleted') is True or any(erased(v) for v in value.values())
+                    return isinstance(value,list) and any(erased(v) for v in value)
+                if erased(response):
+                    raise ValueError('本轮已删除该候选媒体；原调用仅供核账，禁止恢复旧音频。')
                 matches = finish(run, response, receipt)
             print(dump({"run_directory": str(run), "receipt": receipt}), end="")
             return 0 if matches else 2

@@ -1,0 +1,117 @@
+{
+  "id": "task-20261015-0003-qingpeng-aheng-stage5-01",
+  "status": "completed",
+  "request_id": "8161b8e1-c796-4b71-9cfc-74a67e5e63a7",
+  "quota_id": "seed-quota-task-20261015-0003-stage13",
+  "production_submission": {
+    "call_id": "task-20261015-0003-qingpeng-aheng-stage5-01",
+    "submission_sha256": "4193186e360a6454114f3356db30fa3d996a2033bd07fb3b27b820b3a3184e5c",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "submitted_at": "2026-10-17T13:11:38.588319+00:00",
+  "endpoint": "https://openspeech.bytedance.com/api/v3/tts/create",
+  "input": {
+    "model": "seed-audio-1.0",
+    "text_prompt": "风格与演唱说明：\n制作一条完整、近收、无伴奏的角色演唱参考。阿蘅本人，清亮自然的少女声，保留儿童声腔。普通话。\n@音频1是用户准确定位的完整原曲乐句，只约束实际骨干旋律、歌词重音和落音；沿它的旋律重新表演，不另写无关旋律，不复制原曲歌手声线或器乐。@音频2只约束本人已通过的声线，不复述音色参考里的试读稿。\n这是第41场完整舞台选段的第5乐句，沿同一原曲逐句演唱，声线、距离、响度与朴素行腔保持一致。情绪从安稳送行走向相信归来，不做流行歌爆发或哭腔。只唱本句；用自然舒展的长腔承接原曲骨干，不随意增加新音型。末字桥保留同一次较长尾腔并自然收净，最后留短静默。\n目标约23秒，保留自然换气和完整尾音。时长通过自然演法安排，不机器变速、不抢字、不为了凑秒重复旋律。只演唱歌词区的原词一次，不增衬词或重复。无器乐、节拍敲击、环境声、对白或额外人声。不念标题、音频编号、说明或标点。\n\n完整歌词：\n明年春水暖，归来认旧桥——",
+    "audio_config": {
+      "format": "wav",
+      "sample_rate": 48000,
+      "pitch_rate": 0,
+      "speech_rate": 0,
+      "loudness_rate": 0,
+      "enable_subtitle": true
+    },
+    "watermark": {},
+    "references": [
+      {
+        "file": "export/assets/24f65d8ade174649e0d156669be326c33328451b6929f4a2e4d2f9a8f36586a8.wav",
+        "sha256": "24f65d8ade174649e0d156669be326c33328451b6929f4a2e4d2f9a8f36586a8",
+        "duration_seconds": 14.0,
+        "reference_number": 1
+      },
+      {
+        "file": "export/assets/487bba0fc91a340bf53ce54660d90d142466f2b85ca111555a42fdef482852ce.wav",
+        "sha256": "487bba0fc91a340bf53ce54660d90d142466f2b85ca111555a42fdef482852ce",
+        "duration_seconds": 2.05,
+        "reference_number": 2
+      }
+    ]
+  },
+  "input_sha256": "09904c1a49e94264d6172d133578aa46f46945d9fbe136a9bbf6dcd5a37389cf",
+  "remaining_before_seconds": 634.0857000000001,
+  "reserved_seconds": 120,
+  "log_id": "2026101721113897AA3AC0A29459B4005F",
+  "original_duration": 17.1189,
+  "duration": 17.1189,
+  "subtitle": {
+    "sentences": [
+      {
+        "end_time": 11160,
+        "start_time": 1400,
+        "text": "明年春水暖，归来认旧桥",
+        "words": [
+          {
+            "end_time": 1720,
+            "start_time": 1400,
+            "text": "明"
+          },
+          {
+            "end_time": 2000,
+            "start_time": 1720,
+            "text": "年"
+          },
+          {
+            "end_time": 3000,
+            "start_time": 2960,
+            "text": "春"
+          },
+          {
+            "end_time": 4960,
+            "start_time": 3000,
+            "text": "水"
+          },
+          {
+            "end_time": 6200,
+            "start_time": 5920,
+            "text": "暖"
+          },
+          {
+            "end_time": 6200,
+            "start_time": 6200,
+            "text": "，"
+          },
+          {
+            "end_time": 8360,
+            "start_time": 8160,
+            "text": "归"
+          },
+          {
+            "end_time": 9320,
+            "start_time": 8680,
+            "text": "来"
+          },
+          {
+            "end_time": 9920,
+            "start_time": 9320,
+            "text": "认"
+          },
+          {
+            "end_time": 10200,
+            "start_time": 10160,
+            "text": "旧"
+          },
+          {
+            "end_time": 11160,
+            "start_time": 10200,
+            "text": "桥"
+          }
+        ]
+      }
+    ],
+    "text": "明年春水暖，归来认旧桥"
+  },
+  "file": "export/assets/3e2bd6c498589a532150d9182b6d6a8d3747acf7ebfc4344d0c6e456185aa081.wav",
+  "sha256": "3e2bd6c498589a532150d9182b6d6a8d3747acf7ebfc4344d0c6e456185aa081",
+  "bytes": 3286876
+}

@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-binding-kit-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-binding-kit-identity-01",
+    "submission_sha256": "2674abe04b1c8137b6d57c49b5237409228ddcacd251604a157d640e500b3c9e",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-binding-kit-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "1900c9692683aa4b96bfdaec15fece9127ab56c5b0a9c3ffa0622f57a6b3444c.jpg",
+    "sha256": "1900c9692683aa4b96bfdaec15fece9127ab56c5b0a9c3ffa0622f57a6b3444c",
+    "bytes": 7343802,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-binding-kit-identity-01",
+    "candidate_id": "candidate-8f8faac0e5f475561b2b5f1991be2c7ae82bc4ae88fee29ea8ab1e2200e6e8a9",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "已实际看原生5504×3072 JPEG：一枚细长金属针、清楚的长针眼、柔软浅米灰细线及小线团分件呈现；右侧两处近图均显示线穿针眼，线尾可辨，没有粘成硬杆。未增加装订机或已订好的歌本，金属只用有限高光和轮廓表达。",
+    "decision": "选择为装订针线的第0代形制母版，准确原件供后续穿纸与压线结动作使用；近图为同一针线的穿眼说明，不作为多出几枚针。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 4,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/binding-kit-identity-01-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 5322,
+    "total_input_tokens": 282,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 282
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4148,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 892
+  },
+  "actual_request_body_sha256": "00893b7cfb1cb92376f3883f1f73b3ebbffaf33184aaa56685d4f8e09e9199a2",
+  "submitted_inputs": []
+}

@@ -1,0 +1,101 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-teacher-court-layout-02",
+  "submission": {
+    "call_id": "task-20261015-0003-teacher-court-layout-02",
+    "submission_sha256": "54d3e6bdb035241115a750700787073799ad17d964e08f55c132a2cef278994f",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-teacher-court-layout-02.json",
+  "provider_history_id": null,
+  "provider_job_id": "e35dc9ed-fb69-43e0-a194-90e3eb035710",
+  "provider_resource_id": null,
+  "model": "marketing-studio/image/flare",
+  "project_id": null,
+  "provider": "Higgsfield OpenAPI",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "b958479da749cc29abe5e3448a0b581cc6531eee83caf30c6b457341381a17ba.png",
+    "sha256": "b958479da749cc29abe5e3448a0b581cc6531eee83caf30c6b457341381a17ba",
+    "bytes": 9486077,
+    "mime": "image/png",
+    "width": 3840,
+    "height": 2160
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-teacher-court-layout-02",
+    "candidate_id": "candidate-7bedc87ae9b9a0ff963c90d226b894afe7d6b91db5d99ddafe3e73db662fd4d9",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "actual": "UNKNOWN",
+    "planning_reserve": 2.0,
+    "account": "Higgsfield OpenAPI prepaid balance; no recharge",
+    "budget_snapshot": {
+      "created_at": "2026-10-16T18:30:07.402083+00:00",
+      "user_reported_prepaid_usd": 8.65,
+      "actual_balance_verified": true,
+      "max_dispatches": 3,
+      "reserve_per_unknown_usd": 2.0,
+      "generation_model": "marketing-studio/image/flare",
+      "no_recharge": true,
+      "source": "User said Higgsfield OpenAPI remaining8.65 USD; later corrected only Nano Banana availability, not the balance.",
+      "actual_charge": "UNKNOWN",
+      "verified_balance_usd": 8.56,
+      "balance_verified_at": "2026-10-16T18:37:38.010145+00:00",
+      "balance_source": "Daily Chrome https://open.higgsfield.ai/billing visible balance and Auto top-up dialog; read-only, no settings saved.",
+      "balance_anchor_dispatch_count": 1,
+      "auto_top_up_enabled": true,
+      "auto_top_up_threshold_usd": 3.13,
+      "auto_top_up_amount_usd": 25.0,
+      "threshold_buffer_usd": 0.5,
+      "next_batch_limit": 2,
+      "planning_note": "Two further calls at2USD reserve each leave4.56USD, above3.13USD threshold plus0.50 buffer. No recharge or setting changes authorized or performed."
+    },
+    "note": "Authenticated estimate returns token rates, not a fixed charge. Dispatch cap and observed auto-top-up threshold checked before submission."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "已实际打开3840×2160原生PNG。三张单人方凳一北二南紧凑排布，间距可直接递纸；南门至北屋的通路和凳组四周余量清楚，东坐区在连续日光中。西侧南北晾衣绳与两片布和东坐区分离，主要观看方向没有遮脸手。衣摆并未抬高过坐者脸，本次按原始不挡脸用途采用横向分区方式，当前方案已有明确取舍，旧提交保留。北屋檐、门窗和院墙连续，无戏台、演员或叙事纸物；低密度手绘背景。",
+    "decision": "作为本轮小院空间依据通过并选择准确原件。后续调度保持东坐区与西晾衣错开，逐镜复核脸手视线；不声称衣摆高于脸，也不把单幅图当成多视角一致性证明。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 10,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/teacher-court-layout-02-consumer-selections.json"
+  },
+  "actual_request_body_sha256": "c63e206dd68b19b157ce8a4979c0cda8fa6257c841486a63dda5d6edc76961da",
+  "idempotency_key": "ebcf3db6-1a3d-40da-9dc8-71d06c10e50e",
+  "budget_snapshot": {
+    "created_at": "2026-10-16T18:30:07.402083+00:00",
+    "user_reported_prepaid_usd": 8.65,
+    "actual_balance_verified": true,
+    "max_dispatches": 3,
+    "reserve_per_unknown_usd": 2.0,
+    "generation_model": "marketing-studio/image/flare",
+    "no_recharge": true,
+    "source": "User said Higgsfield OpenAPI remaining8.65 USD; later corrected only Nano Banana availability, not the balance.",
+    "actual_charge": "UNKNOWN",
+    "verified_balance_usd": 8.56,
+    "balance_verified_at": "2026-10-16T18:37:38.010145+00:00",
+    "balance_source": "Daily Chrome https://open.higgsfield.ai/billing visible balance and Auto top-up dialog; read-only, no settings saved.",
+    "balance_anchor_dispatch_count": 1,
+    "auto_top_up_enabled": true,
+    "auto_top_up_threshold_usd": 3.13,
+    "auto_top_up_amount_usd": 25.0,
+    "threshold_buffer_usd": 0.5,
+    "next_batch_limit": 2,
+    "planning_note": "Two further calls at2USD reserve each leave4.56USD, above3.13USD threshold plus0.50 buffer. No recharge or setting changes authorized or performed."
+  }
+}

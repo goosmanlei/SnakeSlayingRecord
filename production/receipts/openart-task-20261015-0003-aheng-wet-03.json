@@ -1,0 +1,61 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-aheng-wet-03",
+  "submission": {
+    "call_id": "task-20261015-0003-aheng-wet-03",
+    "submission_sha256": "071d44cf66b0a9a7b3dedc27ca59979617104cc9b846793f202b57aa7dd26982",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-aheng-wet-03.json",
+  "provider_history_id": "IPlKFW0DrD3sRINmRNZU",
+  "provider_job_id": null,
+  "provider_resource_id": "s6LzinsWf93fqWHEwRCC",
+  "model": "nano-banana-2-1",
+  "project_id": "8K6WcbrPLghSBJXBtWAE",
+  "provider": "OpenArt",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "071264bbc4b6a4db8d7aaba4e7d24b435052000917f393900f44bd51a0ce501a.png",
+    "sha256": "071264bbc4b6a4db8d7aaba4e7d24b435052000917f393900f44bd51a0ce501a",
+    "bytes": 17704544,
+    "mime": "image/png",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-aheng-wet-03",
+    "candidate_id": "candidate-ef07c629c660e7472a77df62ef816cea56a3419d0f999bef733cf1a8a372d086",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "OpenArt credits",
+    "quoted": 80,
+    "actual": "UNKNOWN",
+    "note": "报价对应单图；实际扣费字段未返回时保留UNKNOWN。"
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "已实际打开完整5504×3072原件。双手已恢复正常肤色，右侧已出现袖膝局部，脸型、束发、常服和鞋与第0代母版相符。但正面全身裙摆看似干燥，侧面下缘与局部图又显示明显湿区；同一状态跨视图的膝部及下缘湿痕不一致，不能给下游明确的完整湿衣状态。尺寸按用户2026-10-16决定保留原件，不裁切或缩放。",
+    "decision": "不选择；保留真实调用和原件。先推进其他母版，后续若返修从第0代干净母版重新设计单一可读湿区，禁止沿失败图加深谱系。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-task-20261015-0003-aheng-identity-02",
+        "revision_id": "ee6e0f97e99928fd786b1e3e323e519ce0d69cc3f719291946b18c4d79a1c3fc"
+      }
+    ]
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  }
+}

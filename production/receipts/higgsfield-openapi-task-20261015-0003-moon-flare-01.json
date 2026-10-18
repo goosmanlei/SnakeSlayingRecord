@@ -1,0 +1,125 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-moon-flare-01",
+  "submission": {
+    "call_id": "task-20261015-0003-moon-flare-01",
+    "submission_sha256": "341ad821b8ed1f279d97ee00e9b61a88d9d6b7e70796318fe7af3e3c7f05bfcd",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-moon-flare-01.json",
+  "provider_history_id": null,
+  "provider_job_id": "4278dd44-b28f-4e81-8490-a8206e5c4bbb",
+  "provider_resource_id": null,
+  "model": "marketing-studio/image/flare",
+  "project_id": null,
+  "provider": "Higgsfield OpenAPI",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "9107e7e1c092dc433d9f5731fa49a25ee8389868698da283d9373a31fe442c4d.png",
+    "sha256": "9107e7e1c092dc433d9f5731fa49a25ee8389868698da283d9373a31fe442c4d",
+    "bytes": 7074284,
+    "mime": "image/png",
+    "width": 3840,
+    "height": 2160
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-moon-flare-01",
+    "candidate_id": "candidate-c35dedf97b8275c0990fe3cf3d574887c484cad9bc0247d0ccbb25c3240eb70f",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "actual": "UNKNOWN",
+    "planning_reserve": 1.0,
+    "account": "Higgsfield OpenAPI prepaid balance; no recharge",
+    "budget_snapshot": {
+      "created_at": "2026-10-16T18:30:07.402083+00:00",
+      "user_reported_prepaid_usd": 8.65,
+      "actual_balance_verified": true,
+      "max_dispatches": 18,
+      "reserve_per_unknown_usd": 1.0,
+      "generation_model": "marketing-studio/image/flare",
+      "no_recharge": true,
+      "source": "User said Higgsfield OpenAPI remaining8.65 USD; later corrected only Nano Banana availability, not the balance.",
+      "actual_charge": "UNKNOWN",
+      "verified_balance_usd": 7.33,
+      "balance_verified_at": "2026-10-16T20:06:23.784137+00:00",
+      "balance_source": "Daily Chrome https://open.higgsfield.ai/billing visible balance and Auto top-up dialog; read-only, no settings saved.",
+      "balance_anchor_dispatch_count": 15,
+      "auto_top_up_enabled": true,
+      "auto_top_up_threshold_usd": 3.13,
+      "auto_top_up_amount_usd": 25.0,
+      "threshold_buffer_usd": 0.5,
+      "next_batch_limit": 3,
+      "planning_note": "After15 completed calls daily Chrome shows7.33USD and Auto top-up On; exact-reference trial completed native4K. Three further calls maximum,1USD reserve each =>4.33USD above3.13+0.50 stop. No recharge or settings changed; individual cost UNKNOWN."
+    },
+    "note": "Authenticated estimate returns token rates, not a fixed charge. Dispatch cap and observed auto-top-up threshold checked before submission."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "实际查看3840×2160原件并与纸蛇母版核对：正背月盘、竹圈撑条、顶端布环和完整单根牵线均清楚，配合小图已把盘倾斜、放到嘴外；但其盘横向仍接近甚至超过嘴内可用横向宽度，未达到约三分之二口宽的余隙。配合用途未通过，不能以文字中的比例当成图上比例。",
+    "decision": "不绑定下游。停止当前仅靠文字要求比例的重试；下一次改为受控几何配合工程，保留准确纸蛇输入和原件溯源。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-task-20261015-0003-paper-snake-identity-01",
+        "revision_id": "483137e569c55064568141d94bbc705516504e67cae1109d66085593652eb976"
+      }
+    ]
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  },
+  "actual_request_body_sha256": "fda43d914c465145ffb72bf2a53fd06fb0d6a322f1e57bd6e52092b9008e1df3",
+  "idempotency_key": "f81e5d2e-5a03-47c6-9c6a-477358b5d2a6",
+  "budget_snapshot": {
+    "created_at": "2026-10-16T18:30:07.402083+00:00",
+    "user_reported_prepaid_usd": 8.65,
+    "actual_balance_verified": true,
+    "max_dispatches": 18,
+    "reserve_per_unknown_usd": 1.0,
+    "generation_model": "marketing-studio/image/flare",
+    "no_recharge": true,
+    "source": "User said Higgsfield OpenAPI remaining8.65 USD; later corrected only Nano Banana availability, not the balance.",
+    "actual_charge": "UNKNOWN",
+    "verified_balance_usd": 7.33,
+    "balance_verified_at": "2026-10-16T20:06:23.784137+00:00",
+    "balance_source": "Daily Chrome https://open.higgsfield.ai/billing visible balance and Auto top-up dialog; read-only, no settings saved.",
+    "balance_anchor_dispatch_count": 15,
+    "auto_top_up_enabled": true,
+    "auto_top_up_threshold_usd": 3.13,
+    "auto_top_up_amount_usd": 25.0,
+    "threshold_buffer_usd": 0.5,
+    "next_batch_limit": 3,
+    "planning_note": "After15 completed calls daily Chrome shows7.33USD and Auto top-up On; exact-reference trial completed native4K. Three further calls maximum,1USD reserve each =>4.33USD above3.13+0.50 stop. No recharge or settings changed; individual cost UNKNOWN."
+  },
+  "submitted_inputs": [
+    {
+      "image_number": 1,
+      "asset": {
+        "object_id": "asset-task-20261015-0003-paper-snake-identity-01",
+        "revision_id": "483137e569c55064568141d94bbc705516504e67cae1109d66085593652eb976"
+      },
+      "candidate": {
+        "candidate_id": "candidate-51f4a884fdd28eb8012c36479ee3ea36623c37910514f36edb43daa88e2f178c",
+        "material_id": "new26-paper-snake-identity"
+      },
+      "component_id": "original",
+      "submitted_sha256": "303a004977432c0dce6078babafbfe01e26649fa643e287542fc288e3bb6b91f",
+      "original_sha256": "303a004977432c0dce6078babafbfe01e26649fa643e287542fc288e3bb6b91f",
+      "bytes": 8166595,
+      "upload_readback_verified_at": "2026-10-16T20:09:22.940579+00:00",
+      "transform": null
+    }
+  ]
+}

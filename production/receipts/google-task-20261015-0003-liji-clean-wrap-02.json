@@ -1,0 +1,103 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-liji-clean-wrap-02",
+  "submission": {
+    "call_id": "task-20261015-0003-liji-clean-wrap-02",
+    "submission_sha256": "937f83405ab3298f52a765ea4f43b9c346e637e57d8c56479c160862872804c2",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-liji-clean-wrap-02.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "ce2bb0746cbae6693b539955275a5ddfd64ed1c8aa420a2c0b963d5538109aa4.jpg",
+    "sha256": "ce2bb0746cbae6693b539955275a5ddfd64ed1c8aa420a2c0b963d5538109aa4",
+    "bytes": 6134326,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-liji-clean-wrap-02",
+    "candidate_id": "candidate-d963bc594b7445434c8f56b27f5bfee3a157aa1c9337fe431c0bdef5ec5620b6",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "已实际看原生5504×3072 JPEG：全身右手包扎、左手裸露已正确，但中间掌心近图的拇指在画面左侧，变成左掌；右侧则是右手背，两幅局部不属于同一右手。布面干净且较厚仍不足以抵消解剖冲突。",
+    "decision": "不选择；下一次仅保留一个右手背近图核净布叠层，去掉易混淆的掌心对照，仍从干净正面裁切生成，不沿失败图编辑。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-task-20261015-0003-liji-identity-01",
+        "revision_id": "77908eeddf225d05468c60366401d16f721cceb62cb297dcd110c25132f302e4"
+      }
+    ]
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  },
+  "usage": {
+    "total_tokens": 6866,
+    "total_input_tokens": 1428,
+    "input_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 1120
+      },
+      {
+        "modality": "text",
+        "tokens": 308
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4887,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 551
+  },
+  "actual_request_body_sha256": "7c772fb779abc4a638a51853ac153c0054b9d375c9ac524954c9969473ac68d7",
+  "submitted_inputs": [
+    {
+      "image_number": 1,
+      "submitted_sha256": "37a00a139241862d54044b8e50b2c4b02a545b4a8678b11bb1de2ee2402f56ca",
+      "original_sha256": "05ac4d70dbed022cbaabd37b9da071031056d325653ccbee9b1a2aac5046e0ce",
+      "crop": {
+        "height": 1,
+        "width": 0.3,
+        "x": 0.05,
+        "y": 0
+      },
+      "submitted_input_file": "production/requests/inputs/37a00a139241862d54044b8e50b2c4b02a545b4a8678b11bb1de2ee2402f56ca.png",
+      "purpose": "Exact reference region only; not a generated candidate or a 4K deliverable."
+    }
+  ]
+}

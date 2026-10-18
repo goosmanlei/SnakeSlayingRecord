@@ -1,0 +1,82 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-old-form-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-old-form-identity-01",
+    "submission_sha256": "960d0a74007d2d7c7f44fa904241cf32777485f4cca913f08380e702b05510ac",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-old-form-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "c06b77e01488e3f6174969898a32326721c43a23d352963b73deaec54be1591f.jpg",
+    "sha256": "c06b77e01488e3f6174969898a32326721c43a23d352963b73deaec54be1591f",
+    "bytes": 7260063,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-old-form-identity-01",
+    "candidate_id": "candidate-9f7c31026fd4768c1b3c5af3dbc6953ea60b3f2be99408e8a4aa84cf23f392b1",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google remaining balance at the recorded budget checkpoint; no recharge",
+    "reported_balance_usd": 3.86,
+    "balance_checkpoint_dispatches": 106,
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "实际看原件：有空白正背面与折角细节，但中下两条应为平行横向导线却生成竖向长线，并新增右上窄矩形栏。正面未见与背面对应的右下翘折，无法按现行姓名与自愿行的相对版位使用。",
+    "decision": "保留真实返回，不选下游。返修须以简明版式限定三条水平导线、去除矩形框与竖线，并保持正背纸角对应。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  },
+  "usage": {
+    "total_tokens": 5054,
+    "total_input_tokens": 293,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 293
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4190,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 571
+  },
+  "actual_request_body_sha256": "6649dd97ff811a0934fb45e2d853542e821bbbdbb8adec01e724f92c6572140b",
+  "submitted_inputs": []
+}

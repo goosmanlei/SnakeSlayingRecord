@@ -1,0 +1,96 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-liji-clean-wrap-01",
+  "submission": {
+    "call_id": "task-20261015-0003-liji-clean-wrap-01",
+    "submission_sha256": "65ffd4ef9c23dcdfb84ca52be58861225b693bd6bfbacf1f98fb385aba7e8b0f",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-liji-clean-wrap-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "1a3a16b75ab247abe2e20fb2379456e3afb53f7b733908bf6fa616cf4cd0d508.jpg",
+    "sha256": "1a3a16b75ab247abe2e20fb2379456e3afb53f7b733908bf6fa616cf4cd0d508",
+    "bytes": 6167938,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-liji-clean-wrap-01",
+    "candidate_id": "candidate-d0eebba22b08b43172234d290519a2f99259e246cc0ce2eaae0769b5d1f6780f",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "已实际看图：正面右掌包干净布、左手裸露，但朝画面左的侧身近侧左手也被包布，与自身右手位置不一致；额带也宽于一指。净布较整齐且无血，但不足以抵消完整状态左右错误。",
+    "decision": "不绑定下游；先改变参考图面中重复侧身对编辑的影响，再处理此类状态。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-task-20261015-0003-liji-identity-01",
+        "revision_id": "77908eeddf225d05468c60366401d16f721cceb62cb297dcd110c25132f302e4"
+      }
+    ]
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  },
+  "usage": {
+    "total_tokens": 8172,
+    "total_input_tokens": 1547,
+    "input_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 1120
+      },
+      {
+        "modality": "text",
+        "tokens": 427
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4516,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 2109
+  },
+  "actual_request_body_sha256": "6a11602671b18a1e78b5f242a1999124b28dff41538968deee306fb034060a22",
+  "submitted_inputs": [
+    {
+      "image_number": 1,
+      "submitted_sha256": "05ac4d70dbed022cbaabd37b9da071031056d325653ccbee9b1a2aac5046e0ce",
+      "original_sha256": "05ac4d70dbed022cbaabd37b9da071031056d325653ccbee9b1a2aac5046e0ce",
+      "crop": null
+    }
+  ]
+}

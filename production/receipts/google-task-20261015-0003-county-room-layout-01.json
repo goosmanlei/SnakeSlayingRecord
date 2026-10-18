@@ -1,0 +1,82 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-county-room-layout-01",
+  "submission": {
+    "call_id": "task-20261015-0003-county-room-layout-01",
+    "submission_sha256": "672c0bf1de2fd0332bb97d8a9246e074ecfc79f31ac5f4d4ef9a4db780383b92",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-county-room-layout-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "8855065c76fc61b0bb8582f2a286a5e3fedea99b8faf0d3f0391ca9b7997e459.jpg",
+    "sha256": "8855065c76fc61b0bb8582f2a286a5e3fedea99b8faf0d3f0391ca9b7997e459",
+    "bytes": 7867447,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-county-room-layout-01",
+    "candidate_id": "candidate-bbd8c9e6fa4cb80275d30d8f29d74a673e7be6300e823bf5326c4a29ad40f49b",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google remaining balance at the recorded budget checkpoint; no recharge",
+    "reported_balance_usd": 3.86,
+    "balance_checkpoint_dispatches": 106,
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "实际查看完整5504×3072原件：单幅揭顶图清楚交代北县丞案、东记录小案与西门至中部空地，画风干净、桌面留白。但证据长桌的长轴画成南北向，未按当前方案东西向延伸；后续西段、中段、东段的纸册分区与镜头关系不能据此统一。",
+    "decision": "保留真实候选，不绑定下游。下次从干净根图重做，明确证据桌长边与北墙和县丞案平行；当前按用户要求在检查点暂停，未发起返修。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  },
+  "usage": {
+    "total_tokens": 6443,
+    "total_input_tokens": 448,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 448
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4909,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1086
+  },
+  "actual_request_body_sha256": "0b2a3968930200acb44b6aa11381c713adf1a67c388189e6c730f9c893adb32c",
+  "submitted_inputs": []
+}

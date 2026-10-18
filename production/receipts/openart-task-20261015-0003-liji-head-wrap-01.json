@@ -1,0 +1,61 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-liji-head-wrap-01",
+  "submission": {
+    "call_id": "task-20261015-0003-liji-head-wrap-01",
+    "submission_sha256": "e722bf31da71030461aa25db4f25b63992cc05d78a8d93d377e74806ba5bd46f",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-liji-head-wrap-01.json",
+  "provider_history_id": "h5L5BOScCxoauc92EyiI",
+  "provider_job_id": null,
+  "provider_resource_id": "u50DBB01juQQG5bPs1e1",
+  "model": "nano-banana-2-1",
+  "project_id": "8K6WcbrPLghSBJXBtWAE",
+  "provider": "OpenArt",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "a3d71989b36b80a22bd397d9ed48a80caa520d0badd5ef3ddaac9773c9b92f30.png",
+    "sha256": "a3d71989b36b80a22bd397d9ed48a80caa520d0badd5ef3ddaac9773c9b92f30",
+    "bytes": 18179007,
+    "mime": "image/png",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-liji-head-wrap-01",
+    "candidate_id": "candidate-931175dfdf7ade6fa51de32ad83c3853601ffaececdfee9254980f098b065fdf",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "OpenArt credits",
+    "quoted": 80,
+    "actual": "UNKNOWN",
+    "note": "报价对应单图；实际扣费字段未返回时保留UNKNOWN。"
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "已实际与干净母版比较，身份与干常服保持，额带和后结已出现、布外无血。正面包右手，面朝左的本人左侧图却包近侧左手，左右冲突；还把指令“右下手背小图”生成了画面文字，右上仍是大正脸而未交后结局部。",
+    "decision": "不选下游。回干净母版明确右侧全身及左右手映射，独立后脑结局部替代母版大脸版式，画面不含任何标注或指令文字。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-task-20261015-0003-liji-identity-01",
+        "revision_id": "77908eeddf225d05468c60366401d16f721cceb62cb297dcd110c25132f302e4"
+      }
+    ]
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  }
+}

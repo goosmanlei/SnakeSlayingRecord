@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-bait-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-bait-identity-01",
+    "submission_sha256": "9c03a675e9f40fd25d6a5f443cd7cb434aec745dfc3b4dcaed593304ebb8714d",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-bait-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "2822271c0ec89c880817036285b6dcd13f84c37c6c02daa876def2c42d186da8.jpg",
+    "sha256": "2822271c0ec89c880817036285b6dcd13f84c37c6c02daa876def2c42d186da8",
+    "bytes": 6125717,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-bait-identity-01",
+    "candidate_id": "candidate-f13b4f68306a6929279b485446ec8cda3371b7ead576c24ff3ae2b420c1d5437",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "已实际看原生5504×3072 JPEG：左侧宽口浅竹箩覆灰布并揭角，右侧低圆沿浅灰盆，中间少量浅黄米团拌褐色肉末；两容器分开，食物形态一致，未变成肉块堆或嵌套容器。",
+    "decision": "选择为米饵与盛具第0代母版；后续核盆宽小于石道和双手托持，单独道具图不证明空间尺寸或支撑动作。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 10,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/bait-identity-01-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 5759,
+    "total_input_tokens": 301,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 301
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4597,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 861
+  },
+  "actual_request_body_sha256": "5c2849fd4f0bb46842587076e3c66c106c35c6e6877b07212578e2e01aad34bf",
+  "submitted_inputs": []
+}

@@ -1,0 +1,56 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-songbook-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-songbook-identity-01",
+    "submission_sha256": "b4b4f4c9356a68c1703422944f48a109289f6c64019be627b09a9e68ff5e0421",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-songbook-identity-01.json",
+  "provider_history_id": "OOqf5ZFrytnHyxavrQ3W",
+  "provider_job_id": null,
+  "provider_resource_id": "3XybL7YXBJADONkz7qdz",
+  "model": "gpt-image-2-5-sunburst",
+  "project_id": "8K6WcbrPLghSBJXBtWAE",
+  "provider": "OpenArt",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "b583d4073f5f229e1c04ab7f3b1d607cb29ceeb9be7fdbd59d61ce78ba2a8f59.png",
+    "sha256": "b583d4073f5f229e1c04ab7f3b1d607cb29ceeb9be7fdbd59d61ce78ba2a8f59",
+    "bytes": 7082244,
+    "mime": "image/png",
+    "width": 3840,
+    "height": 2160
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-songbook-identity-01",
+    "candidate_id": "candidate-63095678a147d67d8aaaae82b527c1d59cf3ed7504f71a4b70bb75ee99ed60e4",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "OpenArt credits",
+    "quoted": 350,
+    "actual": "UNKNOWN",
+    "note": "报价对应单图；实际扣费字段未返回时保留UNKNOWN。"
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "已实际打开3840×2160原件。灰褐软封、三孔浅线、空白双页、末页三个空圈及独立河石均可见，没有伪字。但右下的小圆缺口出现在末页及下方多层纸页，细节图更呈多层相同缺口，不能辨认原背页独有的线索；封面磨角与原背页缺口应分开。",
+    "decision": "不选下游。返修保留书本结构，明确只有原背页一张纸有小圆缺口，其余纸页完整；原背页单独翻起展示，避免重叠层误读。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  }
+}

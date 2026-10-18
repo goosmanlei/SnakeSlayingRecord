@@ -1,0 +1,82 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-recruitment-board-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-recruitment-board-identity-01",
+    "submission_sha256": "bb94d023eb16ff9c53b3828b915d1f76308d8acd532442da742d09655dae449e",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-recruitment-board-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "183f1ed5c7d5293dd97b1e9046054e1f61c915266d63fc9ef989850891d97d7e.jpg",
+    "sha256": "183f1ed5c7d5293dd97b1e9046054e1f61c915266d63fc9ef989850891d97d7e",
+    "bytes": 7017853,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-recruitment-board-identity-01",
+    "candidate_id": "candidate-425f1bf03fa334cca77f871b45b51661501e0e889c50cf6d49c8947fb51308e3",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google remaining balance at the recorded budget checkpoint; no recharge",
+    "reported_balance_usd": 3.86,
+    "balance_checkpoint_dispatches": 106,
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "实际看原件：旧灰棕竖板与较新浅褐下窄片区分，窄片两端各一钉，背面两条横木与侧背相符；主形完整，题目区、两列说明区及下片字区清楚留白，没有现代海报内容、可读字或编号。白色无字承载面可供后期准确排字，木板和裂角身份清楚。",
+    "decision": "选为第0代告牌母版；准确旧标题与后钉片文字由字层承担，不补赏额。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 3,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/recruitment-board-identity-01-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 6752,
+    "total_input_tokens": 315,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 315
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4851,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1586
+  },
+  "actual_request_body_sha256": "3f3ef368256ddae412df2ad2f807a1e75a72df97f54cf1b2b8e4277e8526c676",
+  "submitted_inputs": []
+}

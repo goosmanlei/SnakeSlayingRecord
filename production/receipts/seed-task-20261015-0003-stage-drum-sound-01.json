@@ -1,0 +1,41 @@
+{
+  "id": "task-20261015-0003-stage-drum-sound-01",
+  "status": "completed",
+  "request_id": "a61a9e48-d2fd-41cc-b70c-a5c0959a2b40",
+  "quota_id": "seed-quota-task-20261015-0003",
+  "production_submission": {
+    "call_id": "task-20261015-0003-stage-drum-sound-01",
+    "submission_sha256": "e7ebfe16e169f68dee209118611e1b6df3d338904f837308c88dd88213979905",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "submitted_at": "2026-10-16T17:36:44.084809+00:00",
+  "endpoint": "https://openspeech.bytedance.com/api/v3/tts/create",
+  "input": {
+    "model": "seed-audio-1.0",
+    "text_prompt": "制作28秒木腔中型戏鼓与鼓槌的音色样本，近处侧收半臂，户外短反射。0—2秒静；2—7秒鼓面轻稳四击，间距均匀、最后一击自然尾响；7—10秒静；10—14秒同一槌轻点木桶沿两下，空木脆声与鼓皮不同；14—17秒静；17秒槌不慎碰鼓面一下短闷响，不跟后续节拍；17—28秒尾响消失并留静。不要锣、掌声、唱词或连续配乐。\n这是一份完整单轨声音母版，不要求接口分轨。不要念时间、说明或标题；不加配乐和未写明的人声。保留自然尾响，不用突兀淡出截断接触声。",
+    "audio_config": {
+      "format": "wav",
+      "sample_rate": 48000,
+      "pitch_rate": 0,
+      "speech_rate": 0,
+      "loudness_rate": 0,
+      "enable_subtitle": true
+    },
+    "watermark": {},
+    "references": []
+  },
+  "input_sha256": "d1cac3b31c2dcdf9a8d37139c15711d4937ecacca15c038f67a260f20b9d60d8",
+  "remaining_before_seconds": 841.9593749999999,
+  "reserved_seconds": 120,
+  "log_id": "20261017013644C98CB8AB2CEC6C7F4532",
+  "original_duration": 19.145375,
+  "duration": 19.145375,
+  "subtitle": {
+    "sentences": [],
+    "text": ""
+  },
+  "file": "export/assets/200d870d2790a6fb7ca3060bb3434303d124872813f5fe42b40fd26cafc0c5b8.wav",
+  "sha256": "200d870d2790a6fb7ca3060bb3434303d124872813f5fe42b40fd26cafc0c5b8",
+  "bytes": 3675956
+}

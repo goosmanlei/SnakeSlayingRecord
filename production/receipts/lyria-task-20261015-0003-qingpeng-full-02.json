@@ -1,0 +1,81 @@
+{
+  "attempt_id": "task-20261015-0003-qingpeng-full-02",
+  "song_entity_id": "new26-qingpeng",
+  "spec_sha256": "79ed941dce78e0f50980722768d814bfa0e00c6fc839795014b319cf45aa9ad2",
+  "sources": {
+    "lyrics": {
+      "path": "production/rebuild/songs/qingpeng/lyrics.txt",
+      "sha256": "233e10873f29e71ea2f08e16df8c43617051ae76d1896ffb39da6dafcdd20de0"
+    },
+    "directions": {
+      "path": "production/rebuild/songs/qingpeng/music.md",
+      "sha256": "46d477325bb2d7efbb317a33844fdcecd775a16ecfa9ecce3cd4b29d4c61b098"
+    }
+  },
+  "requested_format": "wav",
+  "estimated_cost_usd": "0.08",
+  "price_checked": "2026-10-03",
+  "audio_accepted": false,
+  "production": {
+    "url": "http://127.0.0.1:62845",
+    "requirement_id": "new26-qingpeng-singing",
+    "operation_id": "task-20261015-0003-qingpeng-full-02-submit",
+    "call_id": "task-20261015-0003-qingpeng-full-02"
+  },
+  "status": "completed_format_mismatch",
+  "created_at": "2026-10-16T08:01:21.392368+00:00",
+  "max_cost_usd": "0.08",
+  "endpoint": "https://generativelanguage.googleapis.com/v1beta/interactions",
+  "proxy": "system/environment proxy settings",
+  "production_submission": {
+    "call_id": "task-20261015-0003-qingpeng-full-02",
+    "submission_sha256": "e0d3b423f8c9374a6853bceca589d03e53939efc44d997139d76068a3e5ee8ba",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "submitted_at": "2026-10-16T08:01:22.024740+00:00",
+  "interaction_id": null,
+  "finished_at": "2026-10-16T08:02:09.370306+00:00",
+  "provider_model": "lyria-3.5",
+  "files": [
+    {
+      "file": "audio-01.mp3",
+      "sha256": "e3eb4b657a47d8ee9d1dee173be88a322cb02b0aafedad9cb5c18a63a03ac36b",
+      "bytes": 4297519,
+      "reported_mime_type": "audio/mpeg",
+      "container": "mp3",
+      "codec": "mp3",
+      "sample_rate": "44100",
+      "channels": 2,
+      "duration_seconds": 178.808125,
+      "native_pcm_wav": false
+    }
+  ],
+  "usage": {
+    "total_tokens": 2855,
+    "total_input_tokens": 962,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 962
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 1893,
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 0
+  },
+  "lyric_check": "pending",
+  "listening_review": "unverified",
+  "budget_evidence": "production/receipts/google-budget-task-20261015-0003-retry-02.json",
+  "candidate": {
+    "call_id": "task-20261015-0003-qingpeng-full-02",
+    "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+    "status": "completed",
+    "already_applied": false
+  },
+  "actual_charge_usd": "UNKNOWN",
+  "authorization": "用户本轮明确允许失败提交重试；前次UNKNOWN保留。",
+  "format_authorization": "用户明确允许原生MP3并继续制作全部歌曲；不等于作品听审通过。",
+  "format_check_after_authorization": "passed_native_mp3"
+}
