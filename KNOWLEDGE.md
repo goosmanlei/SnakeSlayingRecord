@@ -72,7 +72,7 @@
 
 - 正式库是运行权威，`export/` 是受管快照。当前 Schema 14保存故事与方法历史、制作当前稿、候选准确提交、评论原摘录与回应及必要发布事实；旧制作全文链和专属版本索引不进入常规恢复。恢复只能到新空实例，沿 `scripts/production_review.py recover`、`production/audiovisual/index.json`、`production/audiovisual/recovery.json` 和完整 `export/manifest.json`。
 - 正式写入须按 [工作区流程](production/generation-workspaces.md#合并与正式发布) 的实际锁、容器身份和停服顺序执行，不能只依赖宿主与 Docker Desktop 之间的SQLite文件锁。发布幂等记录与其他任务新评论必须保全，旧基线拒绝重放；完整导出从发布后最新正式数据产生。
-- `export/material-content.json`、`export/objects.json` 使用 Git LFS，实际内容、指针、哈希和所需远端原件分别核验。旧素材归档配方退役前须保留真实逻辑字节或相同保留组成；操作沿工作区流程。
+- `export/material-content.json`、`export/objects.json`、`export/assets/*`及`.gitattributes`列明的发布包使用Git LFS，实际内容、指针、哈希和所需远端原件分别核验。旧素材归档配方退役前须保留真实逻辑字节或相同保留组成；操作沿工作区流程。
 - 正式镜像仅用 `story-review-desk:current`、`:previous`、`:base`，Compose和候选固定准确ID；任务可建可识别临时镜像。镜像/容器的清理、挂载守卫与历史路径处理见 [结项清理](production/generation-workspaces.md#结项清理)。清单记录构建来源不要求原工作区永存；服务回退不等于数据回退。
 - VPS是独立可写完整体验版，显式发布可维护停机并按本机准确完整快照干净部署，普通重启保留操作，不回写本机。部署控制目录 `~/lijizhanshe/`，体验实例 `~/www/lijizhanshe/`；共用调用计数跨发布保留，每天按北京时间最多100次。公网、代理、HTTPS、密钥及重置边界见 [体验部署约定](planning/vps-experience-deployment-task.md)、[部署操作](production/vps-experience.md)。入口为 `https://leiguoguo.me/lijizhanshe/`，当前版本取远端 `state.json`，不从本机Git推定。
 - 站点图标为用户认可的屋檐护灯，源文件和维护见 [图标设计](design/favicon/README.md)。上传、配置、实际生效分别核验。

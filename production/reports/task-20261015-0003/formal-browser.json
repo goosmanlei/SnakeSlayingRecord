@@ -1,0 +1,137 @@
+{
+  "task_id": "task-20261015-0003",
+  "recorded_at": "2026-10-18T16:49:18.822132+00:00",
+  "source_commit": "215a8711ddaf1e8026966011efc83ce05170cfae",
+  "review_desk_commit": "6a6293bb905823a5e0ba72b16e345182f0cc524a",
+  "url": "http://127.0.0.1:3000/",
+  "browser": "Daily Chrome, existing default profile",
+  "tab_id": "2044190965",
+  "checks": [
+    {
+      "kind": "person",
+      "entity": "EN001",
+      "material": "M001",
+      "candidate_sequence": [
+        2,
+        1,
+        2
+      ],
+      "candidate_labels_stable": [
+        1,
+        2
+      ],
+      "dimensions": [
+        3840,
+        2160
+      ],
+      "sha256": "a4dec09a9ac0e4b320079e846bc0f513d78bf82e409add0553e0a90a989be28f",
+      "comparison_distinct_images": true,
+      "removed_review_controls_absent": true
+    },
+    {
+      "kind": "state",
+      "entity": "ST001",
+      "material": "M055",
+      "candidate": 3,
+      "dimensions": [
+        3840,
+        2160
+      ],
+      "sha256": "1b8d38a52d480c2c5aa5a3ec232173ecd83ac908592edf781bea91f616fa98a4",
+      "plan_and_actual_submission_reference": "M001 candidate 2"
+    },
+    {
+      "kind": "voice",
+      "material": "M002",
+      "candidate": 1,
+      "components": 3,
+      "master_player_reached_seconds": 11.68,
+      "master_duration_seconds": 11.68,
+      "short_duration_seconds": 1.96
+    },
+    {
+      "kind": "complete_song",
+      "entity": "EN010",
+      "material": "M015",
+      "candidate": 1,
+      "components": 5,
+      "master_duration_seconds": 177.37,
+      "player_advanced_to_seconds": 22.53,
+      "role_component_duration_seconds": 13.0
+    },
+    {
+      "kind": "space",
+      "entity": "EN006",
+      "material": "M011",
+      "candidate": 2,
+      "dimensions": [
+        3840,
+        2160
+      ],
+      "actual_image_viewed": true
+    },
+    {
+      "kind": "group",
+      "entity": "EN005",
+      "material": "M009",
+      "candidate": 1,
+      "dimensions": [
+        5504,
+        3072
+      ],
+      "actual_image_viewed": true
+    },
+    {
+      "kind": "prop",
+      "entity": "EN007",
+      "material": "M012",
+      "candidate": 2,
+      "dimensions": [
+        3840,
+        2160
+      ],
+      "image_complete": true
+    },
+    {
+      "kind": "animal",
+      "entity": "EN083",
+      "material": "M293",
+      "candidate": 2,
+      "dimensions": [
+        3840,
+        2160
+      ],
+      "image_complete": true,
+      "state_entries_visible": [
+        "ST016 / M457",
+        "ST017 / M485",
+        "ST018 / M486"
+      ]
+    },
+    {
+      "kind": "old_text_comments",
+      "source": "refinement-07-lantern-home-v7",
+      "chapter": 1,
+      "comments": [
+        "C092",
+        "C093",
+        "C094",
+        "C095"
+      ],
+      "original_date": "2026-09-28",
+      "quotes_and_bodies_read": true,
+      "unchanged": true
+    },
+    {
+      "kind": "delivery_entry",
+      "location": "生产制作 / 素材管理 / 有结果",
+      "visible_summary": "191 项素材；191 项有结果，0 项无结果。"
+    }
+  ],
+  "passed": true,
+  "scope": "Representative real UI acceptance; full file verification is in formal-verification.json",
+  "actual_hearing_by_executor": false,
+  "audio_quality_basis": "User listening evidence in audio-listening.md",
+  "screenshots": "Actual screenshots viewed through Computer Use in this session; no screenshot files claimed",
+  "business_data_changed_by_ui": false
+}

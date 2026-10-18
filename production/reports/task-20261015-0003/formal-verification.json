@@ -1,0 +1,294 @@
+{
+  "format": "formal-publication-recovery-verification-v1",
+  "task_id": "task-20261015-0003",
+  "snapshot_at": "2026-10-18T16:36:17.259421+00:00",
+  "verified_at": "2026-10-18T16:43:44.112492+00:00",
+  "publication_id": "9d42d2f067f635392f2636dceafbef405530f4c2a326bc119680723b19efc815",
+  "source_commit": "215a8711ddaf1e8026966011efc83ce05170cfae",
+  "snapshot": ".runtime/generation/published-snapshot17",
+  "restored": ".runtime/generation/published-recovery17",
+  "recovery": {
+    "recovered": true,
+    "objects": 19142,
+    "production_objects": 2241,
+    "revisions": 19195,
+    "comments": 404,
+    "files_verified": 517,
+    "destination": "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-task/worktrees/task-20261015-0003/.runtime/generation/published-recovery17"
+  },
+  "exact_tables": {
+    "production_current_records": {
+      "rows": 2241,
+      "sha256": "183d9b2d7fc5e38498c551526ef846a93a525485fc4b94c568c49cce7e742001",
+      "equal": true
+    },
+    "production_candidates": {
+      "rows": 297,
+      "sha256": "6c3078a859739fef3c8b2098fd3fae9ec14ddc45418c5f107ff6ccd442e38d20",
+      "equal": true
+    },
+    "production_candidate_targets": {
+      "rows": 297,
+      "sha256": "dab046e4256836505e9665a8923f11c9c381ab2992199d0e10555b75e4370466",
+      "equal": true
+    },
+    "production_submissions": {
+      "rows": 305,
+      "sha256": "d18edb474446e2a34ca60c1a3732b6a43074d059172d04b2d6cc63471c55cd88",
+      "equal": true
+    },
+    "comments": {
+      "rows": 404,
+      "sha256": "ebab3edb27f7dc456ac87f16b85288faf2d6a0a796890e5257f8782d76433da3",
+      "equal": true
+    },
+    "comment_events": {
+      "rows": 438,
+      "sha256": "c66cc8f03da39a8ef7f955d3f8014e591195071047f1db85f7e6bcbb28c2e16a",
+      "equal": true
+    },
+    "business_comments": {
+      "rows": 404,
+      "sha256": "c81f0bdb121d97daa5ca3505396c0eea9575868a3a12ffea1f4b32630266df72",
+      "equal": true
+    }
+  },
+  "publication_readback": {
+    "integrity": "ok",
+    "transaction_receipt": true,
+    "exact_changed_rows": {
+      "objects": 2762,
+      "revisions": 2762,
+      "dependencies": 14074,
+      "comments": 0,
+      "material_content": 0,
+      "material_archive_files": 0,
+      "material_aliases": 0,
+      "business_codes": 2,
+      "business_comments": 0,
+      "business_relations": 0,
+      "business_relation_aliases": 0,
+      "audiovisual_notes": 0,
+      "production_current_records": 1161,
+      "production_submissions": 305,
+      "production_candidates": 297,
+      "production_candidate_targets": 297,
+      "production_comment_quotes": 0,
+      "production_current_operations": 7683,
+      "production_response_excerpts": 0
+    }
+  },
+  "protected_comments": {
+    "comments": {
+      "rows": 404,
+      "sha256": "ebab3edb27f7dc456ac87f16b85288faf2d6a0a796890e5257f8782d76433da3",
+      "unchanged": true
+    },
+    "comment_events": {
+      "rows": 438,
+      "sha256": "c66cc8f03da39a8ef7f955d3f8014e591195071047f1db85f7e6bcbb28c2e16a",
+      "unchanged": true
+    },
+    "business_comments": {
+      "rows": 404,
+      "sha256": "c81f0bdb121d97daa5ca3505396c0eea9575868a3a12ffea1f4b32630266df72",
+      "unchanged": true
+    }
+  },
+  "formal_materials": {
+    "ordinary_state": 191,
+    "candidates": 297,
+    "covered_requirements": 191,
+    "production_files_verified": 459,
+    "selected_input_slots": 3240,
+    "status_counts": {
+      "executor_checked": 139,
+      "user_audition_passed": 52
+    },
+    "call_counts": {
+      "completed": 259,
+      "unknown": 5,
+      "failed": 3
+    }
+  },
+  "test_copies_removed": false,
+  "actual_hearing_by_executor": false,
+  "representative_restored_dependency_checks": {
+    "checked_at": "2026-10-18T16:49:18.822132+00:00",
+    "passed": true,
+    "environment": "New empty restored instance; read-only database and original file hashes",
+    "chains": [
+      {
+        "consumer": "new26-aheng-wet-overall",
+        "revision_id": "9a3c77ff5d735d5a4d48b8923f7a574d58d15242582c2de09ee7c09107542a66",
+        "selected_inputs": [
+          {
+            "material_id": "new26-aheng-identity",
+            "candidate_id": "candidate-e9a98aba7feffbae5f3b9e2308755d47fbd366f8f42200a3a1c04c38d39f114c",
+            "candidate_number": 2,
+            "asset": {
+              "object_id": "asset-task-20261015-0003-aheng-identity-02",
+              "revision_id": "ee6e0f97e99928fd786b1e3e323e519ce0d69cc3f719291946b18c4d79a1c3fc"
+            },
+            "component_id": "original",
+            "file": "a4dec09a9ac0e4b320079e846bc0f513d78bf82e409add0553e0a90a989be28f.png",
+            "sha256": "a4dec09a9ac0e4b320079e846bc0f513d78bf82e409add0553e0a90a989be28f",
+            "bytes": 6228928,
+            "file_verified": true
+          }
+        ]
+      },
+      {
+        "consumer": "new26-s001-q02-video",
+        "revision_id": "781fee86439de18557e68107f103a05407cc60b7819a74c741b3a7f68dcfe9b3",
+        "selected_inputs": [
+          {
+            "material_id": "new26-aheng-identity",
+            "candidate_id": "candidate-e9a98aba7feffbae5f3b9e2308755d47fbd366f8f42200a3a1c04c38d39f114c",
+            "candidate_number": 2,
+            "asset": {
+              "object_id": "asset-task-20261015-0003-aheng-identity-02",
+              "revision_id": "ee6e0f97e99928fd786b1e3e323e519ce0d69cc3f719291946b18c4d79a1c3fc"
+            },
+            "component_id": "original",
+            "file": "a4dec09a9ac0e4b320079e846bc0f513d78bf82e409add0553e0a90a989be28f.png",
+            "sha256": "a4dec09a9ac0e4b320079e846bc0f513d78bf82e409add0553e0a90a989be28f",
+            "bytes": 6228928,
+            "file_verified": true
+          },
+          {
+            "material_id": "new26-porter-identity",
+            "candidate_id": "candidate-590145abeae28264a940e42c9f5d37416f3e85e289fff63cfcea993202fe3e35",
+            "candidate_number": 1,
+            "asset": {
+              "object_id": "asset-task-20261015-0003-porter-identity-flare-01",
+              "revision_id": "df1de71243efbd9e62ead605243985b04255f201cb6799d7aa7149f428473335"
+            },
+            "component_id": "original",
+            "file": "f79df51b3e057ecc7f4a88f484ac11143958880761acec8c73d498d8181e8556.png",
+            "sha256": "f79df51b3e057ecc7f4a88f484ac11143958880761acec8c73d498d8181e8556",
+            "bytes": 8615349,
+            "file_verified": true
+          },
+          {
+            "material_id": "new26-rice-shop-layout",
+            "candidate_id": "candidate-bd1d0fac902bbac84bb29b0cd9894dcb53763e7ba3548cd200f3c5104f7b0694",
+            "candidate_number": 2,
+            "asset": {
+              "object_id": "asset-task-20261015-0003-rice-shop-flare-01",
+              "revision_id": "d9aa2d9c60027a8afd786f760b49a5927fcba2d453e923afd8390dd8a03c3ab7"
+            },
+            "component_id": "original",
+            "file": "e44e1e1d8f1d2be237a0104e08d48e8c71579e13302ba558d60b4214a21d710e.png",
+            "sha256": "e44e1e1d8f1d2be237a0104e08d48e8c71579e13302ba558d60b4214a21d710e",
+            "bytes": 8964792,
+            "file_verified": true
+          },
+          {
+            "material_id": "new26-songbook-identity",
+            "candidate_id": "candidate-e1e0d8d223df465bb9b87abce86862424d3125c92678062c3d6321e09e647de2",
+            "candidate_number": 2,
+            "asset": {
+              "object_id": "asset-task-20261015-0003-songbook-identity-02",
+              "revision_id": "e741030b764d7d41431a96629647f5edf14f1016564216872f69a72f9bc45081"
+            },
+            "component_id": "original",
+            "file": "d6f71f27ee9d2e86bbdb21c8d52a426a3ce6e1417d87e3b91c161b1fcb87236c.png",
+            "sha256": "d6f71f27ee9d2e86bbdb21c8d52a426a3ce6e1417d87e3b91c161b1fcb87236c",
+            "bytes": 7117339,
+            "file_verified": true
+          },
+          {
+            "material_id": "new26-boat-song-singing",
+            "candidate_id": "candidate-aaa3fca1c8eacf021377b80115a2bd5062cb9b5cf35223f5ad5e00c99f1e2914",
+            "candidate_number": 1,
+            "asset": {
+              "object_id": "asset-task-20261015-0003-boat-song-full-02",
+              "revision_id": "313d65234fa6bc01da8b57a8b2afde44e9c70b7635bfe365b77e45cff78e7ce9"
+            },
+            "component_id": "boat-aheng-home",
+            "file": "f748cf33ae71c45a25608e1f55a87e8797a30923c17997e7a98686897da61d4a.wav",
+            "sha256": "f748cf33ae71c45a25608e1f55a87e8797a30923c17997e7a98686897da61d4a",
+            "bytes": 2496044,
+            "file_verified": true
+          },
+          {
+            "material_id": "new26-porter-voice",
+            "candidate_id": "candidate-2e8444a388a0640a6ad38b63cc74d6e242d59897a6cf477a61753804be90a7c6",
+            "candidate_number": 1,
+            "asset": {
+              "object_id": "asset-task-20261015-0003-porter-voice-01",
+              "revision_id": "2f504f4cb325b4d70c5a7f077280636f895d1051c25294584983b090207fe132"
+            },
+            "component_id": "voice-reference-channel",
+            "file": "f6365e0d401c8aef3990e16cb6f4c9963c2abca96cbc10b6ad05047c5a3a712b.wav",
+            "sha256": "f6365e0d401c8aef3990e16cb6f4c9963c2abca96cbc10b6ad05047c5a3a712b",
+            "bytes": 393644,
+            "file_verified": true
+          }
+        ]
+      }
+    ],
+    "state_lineage": {
+      "state_candidate": {
+        "asset": {
+          "object_id": "asset-task-20261015-0003-aheng-wet-flare-01",
+          "revision_id": "31125e2539262f1d61c38ffc9ab53dab4e2ddd1d24f4f40b781f7c29540dba94"
+        },
+        "component_id": "original",
+        "file": "1b8d38a52d480c2c5aa5a3ec232173ecd83ac908592edf781bea91f616fa98a4.png",
+        "sha256": "1b8d38a52d480c2c5aa5a3ec232173ecd83ac908592edf781bea91f616fa98a4",
+        "bytes": 6265230,
+        "file_verified": true
+      },
+      "i2i_depth": 1,
+      "clean_parent": {
+        "asset": {
+          "object_id": "asset-task-20261015-0003-aheng-identity-02",
+          "revision_id": "ee6e0f97e99928fd786b1e3e323e519ce0d69cc3f719291946b18c4d79a1c3fc"
+        },
+        "component_id": "original",
+        "file": "a4dec09a9ac0e4b320079e846bc0f513d78bf82e409add0553e0a90a989be28f.png",
+        "sha256": "a4dec09a9ac0e4b320079e846bc0f513d78bf82e409add0553e0a90a989be28f",
+        "bytes": 6228928,
+        "file_verified": true
+      }
+    },
+    "song_components": {
+      "selected_role_component": {
+        "asset": {
+          "object_id": "asset-task-20261015-0003-boat-song-full-02",
+          "revision_id": "313d65234fa6bc01da8b57a8b2afde44e9c70b7635bfe365b77e45cff78e7ce9"
+        },
+        "component_id": "boat-aheng-home",
+        "file": "f748cf33ae71c45a25608e1f55a87e8797a30923c17997e7a98686897da61d4a.wav",
+        "sha256": "f748cf33ae71c45a25608e1f55a87e8797a30923c17997e7a98686897da61d4a",
+        "bytes": 2496044,
+        "file_verified": true
+      },
+      "original_complete_song": {
+        "asset": {
+          "object_id": "asset-task-20261015-0003-boat-song-full-02",
+          "revision_id": "313d65234fa6bc01da8b57a8b2afde44e9c70b7635bfe365b77e45cff78e7ce9"
+        },
+        "component_id": "original",
+        "file": "5462ff4c9e367fc7a191e0df80cdc2ce6af36ee992b50d1f50091e7649d9c5d1.mp3",
+        "sha256": "5462ff4c9e367fc7a191e0df80cdc2ce6af36ee992b50d1f50091e7649d9c5d1",
+        "bytes": 4263037,
+        "file_verified": true
+      },
+      "exact_melody_component": {
+        "asset": {
+          "object_id": "asset-task-20261015-0003-boat-song-full-02",
+          "revision_id": "313d65234fa6bc01da8b57a8b2afde44e9c70b7635bfe365b77e45cff78e7ce9"
+        },
+        "component_id": "melody-boat-home",
+        "file": "525d76a4f67358ddfe448a45c03c445d3f70ef7225a22549b96595ef4422b06e.wav",
+        "sha256": "525d76a4f67358ddfe448a45c03c445d3f70ef7225a22549b96595ef4422b06e",
+        "bytes": 2841678,
+        "file_verified": true
+      }
+    },
+    "video_generated": false
+  }
+}

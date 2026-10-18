@@ -15,21 +15,23 @@
     },
     {
       "id": "candidate-number-after-switch",
-      "status": "browser_verified_task_preview",
+      "status": "formal_browser_verified",
       "reproduction": "日常Chrome任务62845，EN001大卡的M001从候选2切到候选1后，两个按钮都显示候选1。",
       "data_facts": "候选表编号正确为1、2，原件哈希不同。entity-material响应的results有正确candidate_number，但所选完整候选的members条目缺少candidate_number。",
       "cause": "entity_contract.py加载完整候选时用p.record整体替换摘要，丢失编号；business_codes仅补results编号。retainLoadedMaterialMembers再用旧members记录替换新results摘要，丢号后经排序及index+1退路显示重复1。",
       "action": "保留准确素材候选编号及身份，回归2到1到2切换、比较和刷新；不改原件、候选、评论或作者选择。",
       "evidence_runtime": ".runtime/task-20261015-0003/candidate-label-bug/",
-      "verification": "日常Chrome的任务62845已实测M001候选2切到候选1，编号稳定为1、2；比较弹窗显示两份准确原图。接口和2到1到2回归证据沿既有测试，正式发布后的复验仍未完成。"
+      "verification": "日常Chrome的任务62845已实测M001候选2切到候选1，编号稳定为1、2；比较弹窗显示两份准确原图。接口和2到1到2回归证据沿既有测试，正式发布后的日常Chrome复验已通过。",
+      "formal_verification": "formal-browser.json"
     },
     {
       "id": "comparison-dialog-controls",
-      "status": "browser_verified_task_preview",
+      "status": "formal_browser_verified",
       "user_requirement": "同需求候选比较弹窗不需要下面的审阅此准确候选按钮等，因为当前系统没有审阅概念。",
       "action": "仅移除该比较弹窗两侧的审阅此准确候选按钮、问号入口及底部说明；保留候选切换、标题、原图和关闭。",
       "target": "review_desk/static/material-review.js:materialCompareControl",
-      "verification": "日常Chrome已打开比较弹窗，候选1、2和两张原图正常显示，原审阅按钮、问号和说明不存在；保留关闭和切换。正式页尚未发布。"
+      "verification": "日常Chrome已打开比较弹窗，候选1、2和两张原图正常显示，原审阅按钮、问号和说明不存在；保留关闭和切换。正式页已发布并复验。",
+      "formal_verification": "formal-browser.json"
     },
     {
       "id": "selected-reference-submission",
@@ -179,10 +181,11 @@
     },
     {
       "id": "reference-selection-response-scope",
-      "status": "runtime_and_browser_verified_task_preview",
+      "status": "formal_browser_verified",
       "action": "在选择写入完成后，仅在同一响应内复用只读证据；不跨写入或请求缓存。",
-      "verification": "当前契约17项测试通过；旧套件3失败10错误与未改基线完全一致。Chrome候选切换及比较弹窗复验通过；尚未发布正式服务。",
-      "receipt": "system-selection-check13.json"
+      "verification": "当前契约17项测试通过；旧套件3失败10错误与未改基线完全一致。Chrome候选切换及比较弹窗复验通过；正式服务已发布并复验。",
+      "receipt": "system-selection-check13.json",
+      "formal_verification": "formal-browser.json"
     },
     {
       "id": "stage14-distance-and-melody-basis",
@@ -210,20 +213,27 @@
     },
     {
       "id": "stage17-complete-material-uses",
-      "status": "candidate_complete_final_delivery_pending",
+      "status": "formally_published_and_verified",
       "verification": "191/191项完成制作与用途检查；3240处准确模型输入，27/27处歌曲用途，5处用户实际尾音位置。无新增模型调用或声音文件。",
-      "remaining": "最终完整导出与恢复、受管集成、本机正式发布、真实页面验收及过程资源清理。",
-      "receipt": "../../receipts/song-state-task-20261015-0003-stage17.json"
+      "remaining": "仅TUI退出后的受管工作区退役；未知调用继续对账。",
+      "receipt": "../../receipts/song-state-task-20261015-0003-stage17.json",
+      "formal_verification": "formal-verification.json"
+    },
+    {
+      "id": "unpublished-large-git-blobs",
+      "status": "resolved",
+      "action": "User approved LFS conversion of the 21 unpublished task commits; preserved old refs and all logical file bytes, restored pre-integration main, then used managed integration and ordinary push.",
+      "receipt": "../../receipts/git-lfs-repair-task-20261015-0003.json"
     }
   ],
-  "resume_requirement": "当前run已认证并持有双仓任务锁。按本轮准确候选、原件和当前方案续做；真实Chrome已恢复，待最终正式发布后再复验。",
+  "resume_requirement": "本轮素材、正式发布及验收已完成；当前TUI退出后受管退役双仓，5笔未知调用只沿原回执对账，不盲目重试。",
   "browser_verification": {
-    "status": "available_and_task_preview_sampled",
+    "status": "formal_chrome_verified",
     "browser": "daily Chrome default profile",
     "evidence_runtime": ".runtime/task-20261015-0003/chrome-stage08-candidate-fixes.json",
-    "formal_publication_verified": false,
+    "formal_publication_verified": true,
     "audio_quality_verified_by_playback": false,
-    "latest_evidence": "production/receipts/chrome-task-20261015-0003-stage16.json"
+    "latest_evidence": "production/reports/task-20261015-0003/formal-browser.json"
   },
   "unknown_replacement_proposal": {
     "status": "executed_as_three_bounded_new_candidates",
@@ -239,14 +249,15 @@
     },
     "google_dispatch_cap": 116,
     "google_remaining_dispatch_slots": 0,
-    "formal_publication": false,
-    "paused": false
+    "formal_publication": true,
+    "paused": false,
+    "status": "formally_published_and_verified"
   },
   "audio_verification_decision": {
     "status": "all_required_hearing_and_tail_positions_complete",
     "current_rule": "实际试听；模型分析和技术检查仅辅助",
-    "completed": "34项音色、14项环境声及所需短件、4首完整原曲、16个角色唱段、2份原速合件均已获对应实际试听反馈；9处原曲乐句已定位，19/27处歌曲准确输入已保存。",
-    "remaining": "无声音制作或定位缺口；最终受管集成、本机正式发布、页面与新空实例验证及过程清理仍待完成。",
+    "completed": "34项音色、14项环境声及所需短件、4首完整原曲、16个角色唱段、2份原速合件均已获对应实际试听反馈；9处原曲乐句已定位，27/27处歌曲准确输入已保存。",
+    "remaining": "无声音制作、定位或正式验收缺口；保留未知调用对账及TUI退出后的受管工作区退役。",
     "role_files_planned": 16,
     "role_files_generated": 16,
     "role_files_heard": 16,
