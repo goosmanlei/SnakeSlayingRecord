@@ -1,16 +1,16 @@
 {
   "format": "stage-verification-v1",
   "task_id": "task-20261015-0003",
-  "stage": "stage-14",
-  "checked_at": "2026-10-17T07:10:05.466705+00:00",
+  "stage": "stage-17",
+  "checked_at": "2026-10-18T14:48:35.950260+00:00",
   "requirements": 651,
   "ordinary_state": 191,
   "unique_dependency_edges": 3401,
   "acyclic": true,
-  "candidates": 282,
+  "candidates": 297,
   "covered_requirements": 191,
-  "production_files_verified": 442,
-  "selected_input_slots": 3213,
+  "production_files_verified": 459,
+  "selected_input_slots": 3240,
   "selected_by_material": {
     "new26-songbook-identity": 27,
     "new26-home-oil-lamps-identity": 26,
@@ -36,6 +36,7 @@
     "new26-listeners-identity": 2,
     "new26-rice-shop-layout": 20,
     "new26-rice-measure-identity": 6,
+    "new26-boat-song-singing": 2,
     "new26-porter-voice": 2,
     "new26-aheng-voice": 87,
     "new26-listeners-voice": 1,
@@ -59,6 +60,7 @@
     "new26-curtain-poles-identity": 19,
     "new26-lixiao-voice": 28,
     "new26-curtain-identity": 24,
+    "new26-qingpeng-singing": 23,
     "new26-aheng-wet-overall": 18,
     "new26-book-torn-overall": 18,
     "new26-liji-wet-overall": 16,
@@ -69,6 +71,7 @@
     "new26-charcoal-identity": 2,
     "new26-singers-identity": 2,
     "new26-temple-hall-layout": 11,
+    "new26-temple-song-singing": 1,
     "new26-mountain-road-layout": 6,
     "new26-aheng-home-layout": 37,
     "new26-mother-oldstage-overall": 6,
@@ -95,6 +98,7 @@
     "new26-bait-identity": 10,
     "new26-festival-crowd-voice": 1,
     "new26-stone-bridge-layout": 2,
+    "new26-ritual-song-singing": 1,
     "new26-boatman-identity": 4,
     "new26-ferry-landing-layout": 4,
     "new26-boatman-voice": 2,
@@ -195,11 +199,10 @@
   },
   "status_counts": {
     "executor_checked": 139,
-    "user_audition_passed": 48,
-    "reference_pending": 4
+    "user_audition_passed": 52
   },
   "call_counts": {
-    "completed": 244,
+    "completed": 259,
     "unknown": 5,
     "failed": 3
   },
@@ -222,37 +225,37 @@
   },
   "locked_story_unchanged": true,
   "sanitized_private_objects": {
-    "managed-method-artifact-v1": 2275,
-    "managed-method-execution-v1": 762
+    "managed-method-artifact-v1": 2347,
+    "managed-method-execution-v1": 786
   },
   "empty_instance_recovery": {
     "recovered": true,
-    "objects": 18908,
-    "production_objects": 2211,
-    "revisions": 18961,
+    "objects": 19142,
+    "production_objects": 2241,
+    "revisions": 19195,
     "comments": 404,
-    "files_verified": 500,
-    "destination": ".runtime/generation/recovered-stage-0003-14",
+    "files_verified": 517,
+    "destination": ".runtime/generation/recovered-stage-0003-17",
     "schema_version": 14,
     "exact_table_comparisons": {
       "production_current_records": {
-        "rows": 2211,
-        "sha256": "a3113334cdaafcda54c4fd8a4b5cc02307989e605b57c15b90a11a007cbf00ad",
+        "rows": 2241,
+        "sha256": "183d9b2d7fc5e38498c551526ef846a93a525485fc4b94c568c49cce7e742001",
         "equal": true
       },
       "production_candidates": {
-        "rows": 282,
-        "sha256": "662d7adbbef4c0d46a0957adc7c43958e31796d84b8321eeff9f991e1c58cd08",
+        "rows": 297,
+        "sha256": "6c3078a859739fef3c8b2098fd3fae9ec14ddc45418c5f107ff6ccd442e38d20",
         "equal": true
       },
       "production_candidate_targets": {
-        "rows": 282,
-        "sha256": "62e3ecaf99b4aa5b4ea810016f320e72c63c4d4bc800615313ee6b10e715bb8d",
+        "rows": 297,
+        "sha256": "dab046e4256836505e9665a8923f11c9c381ab2992199d0e10555b75e4370466",
         "equal": true
       },
       "production_submissions": {
-        "rows": 290,
-        "sha256": "59f9c035bb178ba9cf5d60aa5770355f4ebb53a07ae3e141445d5f19c4af74fb",
+        "rows": 305,
+        "sha256": "d18edb474446e2a34ca60c1a3732b6a43074d059172d04b2d6cc63471c55cd88",
         "equal": true
       },
       "comments": {
@@ -282,6 +285,7 @@
     "production/publications/task-20261015-0003-stage-12.json": "7d6f7d08da4fff3ec6809c16e485b0c6812fdf8bec6a964250ded296817f7914",
     "production/publications/task-20261015-0003-stage-04.json": "f88431faecf423c5ae23804858b7aff19f9ae5e7d333a0dd18cf16c2c3420bf8",
     "production/publications/task-20261015-0003-stage-03.json": "9ace5fa15adb0c191d415744d2fe8f100e47634740d088985a708c151c290da8",
+    "production/publications/task-20261015-0003-stage-14.json": "84f0e4c75f42603eaf52e43ee1e49283656f2f5ddab2e3be02dc52967d6de774",
     "production/publications/task-20261015-0003-stage-02.json": "5aee3280872431dfd151f837cd02eaa2508be42f479e02bda691dc822e72a415",
     "production/publications/task-20261015-0003-stage-01.json": "e94b851776274b102b890437fcb657631a11a75339a4e2c71f3b3533c85e836a",
     "production/publications/task-20261015-0003-stage-11.json": "0553cdffd5770916c9e0ca072ed6cceed9555441045585129ecc44b4f45a5c00",
@@ -290,27 +294,27 @@
     "production/publications/task-20261015-0003-stage-10.json": "5b05fd6d36f8548d5002c24b4a3738fd2e34a7da9e23a91526f0d0f3534d37f5"
   },
   "publication_package": {
-    "path": "production/publications/task-20261015-0003-stage-14.json",
-    "sha256": "84f0e4c75f42603eaf52e43ee1e49283656f2f5ddab2e3be02dc52967d6de774",
-    "publication_id": "cf3abb816bbe4cec50e7960a597b4f0ee8aa6fe1b759a1de934cb7ec3c87125d",
-    "objects": 2528,
-    "media_files": 442,
+    "path": "production/publications/task-20261015-0003-stage-17.json",
+    "sha256": "efe412f9b092df81ef545b0936a989371c623dc137ea0fd465bf890a883726a1",
+    "publication_id": "9d42d2f067f635392f2636dceafbef405530f4c2a326bc119680723b19efc815",
+    "objects": 2762,
+    "media_files": 459,
     "applied_to_formal": false,
     "preflight": {
       "passed": true,
       "target": "isolated clone of formal database",
-      "receipt": ".runtime/generation/publications/task-20261015-0003-stage-check-14/preflight.json",
+      "receipt": ".runtime/generation/publications/task-20261015-0003-stage-check-17/preflight.json",
       "result": {
         "applied": false,
         "already_published": false,
-        "publication_id": "cf3abb816bbe4cec50e7960a597b4f0ee8aa6fe1b759a1de934cb7ec3c87125d",
+        "publication_id": "9d42d2f067f635392f2636dceafbef405530f4c2a326bc119680723b19efc815",
         "source_commit": null,
         "scope": {
           "contract": "production-current-publication-v1",
           "changed_rows": {
-            "objects": 2528,
-            "revisions": 2528,
-            "dependencies": 13307,
+            "objects": 2762,
+            "revisions": 2762,
+            "dependencies": 14074,
             "comments": 0,
             "material_content": 0,
             "material_archive_files": 0,
@@ -320,16 +324,16 @@
             "business_relations": 0,
             "business_relation_aliases": 0,
             "audiovisual_notes": 0,
-            "production_current_records": 1131,
-            "production_submissions": 290,
-            "production_candidates": 282,
-            "production_candidate_targets": 282,
+            "production_current_records": 1161,
+            "production_submissions": 305,
+            "production_candidates": 297,
+            "production_candidate_targets": 297,
             "production_comment_quotes": 0,
-            "production_current_operations": 7577,
+            "production_current_operations": 7683,
             "production_response_excerpts": 0
           },
           "comment_events": [],
-          "publication_id": "cf3abb816bbe4cec50e7960a597b4f0ee8aa6fe1b759a1de934cb7ec3c87125d",
+          "publication_id": "9d42d2f067f635392f2636dceafbef405530f4c2a326bc119680723b19efc815",
           "already_published": false
         }
       }
@@ -338,19 +342,19 @@
   "formal_publication": false,
   "system_commit": "6a6293bb905823a5e0ba72b16e345182f0cc524a",
   "stage_freeze": {
-    "frozen_at": "2026-10-17T07:00:06.043639+00:00",
-    "source_snapshot": ".runtime/task-20261015-0003/source-stage14.sqlite3",
+    "frozen_at": "2026-10-18T14:36:12.790486+00:00",
+    "source_snapshot": ".runtime/task-20261015-0003/source-stage17.sqlite3",
     "active_database": ".runtime/generation/review/.runtime/review.sqlite3",
     "summary": {
-      "checked_at": "2026-10-17T07:00:03.188598+00:00",
+      "checked_at": "2026-10-18T14:36:09.427995+00:00",
       "requirements": 651,
       "ordinary_state": 191,
       "unique_dependency_edges": 3401,
       "acyclic": true,
-      "candidates": 282,
+      "candidates": 297,
       "covered_requirements": 191,
-      "production_files_verified": 442,
-      "selected_input_slots": 3213,
+      "production_files_verified": 459,
+      "selected_input_slots": 3240,
       "selected_by_material": {
         "new26-songbook-identity": 27,
         "new26-home-oil-lamps-identity": 26,
@@ -376,6 +380,7 @@
         "new26-listeners-identity": 2,
         "new26-rice-shop-layout": 20,
         "new26-rice-measure-identity": 6,
+        "new26-boat-song-singing": 2,
         "new26-porter-voice": 2,
         "new26-aheng-voice": 87,
         "new26-listeners-voice": 1,
@@ -399,6 +404,7 @@
         "new26-curtain-poles-identity": 19,
         "new26-lixiao-voice": 28,
         "new26-curtain-identity": 24,
+        "new26-qingpeng-singing": 23,
         "new26-aheng-wet-overall": 18,
         "new26-book-torn-overall": 18,
         "new26-liji-wet-overall": 16,
@@ -409,6 +415,7 @@
         "new26-charcoal-identity": 2,
         "new26-singers-identity": 2,
         "new26-temple-hall-layout": 11,
+        "new26-temple-song-singing": 1,
         "new26-mountain-road-layout": 6,
         "new26-aheng-home-layout": 37,
         "new26-mother-oldstage-overall": 6,
@@ -435,6 +442,7 @@
         "new26-bait-identity": 10,
         "new26-festival-crowd-voice": 1,
         "new26-stone-bridge-layout": 2,
+        "new26-ritual-song-singing": 1,
         "new26-boatman-identity": 4,
         "new26-ferry-landing-layout": 4,
         "new26-boatman-voice": 2,
@@ -535,19 +543,18 @@
       },
       "status_counts": {
         "executor_checked": 139,
-        "user_audition_passed": 48,
-        "reference_pending": 4
+        "user_audition_passed": 52
       },
       "call_counts": {
-        "completed": 244,
+        "completed": 259,
         "unknown": 5,
         "failed": 3
       }
     },
     "checked_material_binding_coverage": {
-      "checked_materials": 187,
-      "expected_slots": 3213,
-      "selected_slots": 3213,
+      "checked_materials": 191,
+      "expected_slots": 3240,
+      "selected_slots": 3240,
       "pending_slots": [],
       "by_material": {
         "new26-ahe-identity": {
@@ -609,6 +616,10 @@
         "new26-binding-kit-identity": {
           "expected": 4,
           "selected": 4
+        },
+        "new26-boat-song-singing": {
+          "expected": 2,
+          "selected": 2
         },
         "new26-boatman-identity": {
           "expected": 4,
@@ -1058,6 +1069,10 @@
           "expected": 36,
           "selected": 36
         },
+        "new26-qingpeng-singing": {
+          "expected": 23,
+          "selected": 23
+        },
         "new26-recovered-keepsakes-identity": {
           "expected": 11,
           "selected": 11
@@ -1113,6 +1128,10 @@
         "new26-ritual-gong-sound": {
           "expected": 2,
           "selected": 2
+        },
+        "new26-ritual-song-singing": {
+          "expected": 1,
+          "selected": 1
         },
         "new26-ritual-tablet-identity": {
           "expected": 12,
@@ -1214,6 +1233,10 @@
           "expected": 11,
           "selected": 11
         },
+        "new26-temple-song-singing": {
+          "expected": 1,
+          "selected": 1
+        },
         "new26-temple-workers-identity": {
           "expected": 19,
           "selected": 19
@@ -1308,6 +1331,7 @@
       "production/publications/task-20261015-0003-stage-12.json": "7d6f7d08da4fff3ec6809c16e485b0c6812fdf8bec6a964250ded296817f7914",
       "production/publications/task-20261015-0003-stage-04.json": "f88431faecf423c5ae23804858b7aff19f9ae5e7d333a0dd18cf16c2c3420bf8",
       "production/publications/task-20261015-0003-stage-03.json": "9ace5fa15adb0c191d415744d2fe8f100e47634740d088985a708c151c290da8",
+      "production/publications/task-20261015-0003-stage-14.json": "84f0e4c75f42603eaf52e43ee1e49283656f2f5ddab2e3be02dc52967d6de774",
       "production/publications/task-20261015-0003-stage-02.json": "5aee3280872431dfd151f837cd02eaa2508be42f479e02bda691dc822e72a415",
       "production/publications/task-20261015-0003-stage-01.json": "e94b851776274b102b890437fcb657631a11a75339a4e2c71f3b3533c85e836a",
       "production/publications/task-20261015-0003-stage-11.json": "0553cdffd5770916c9e0ca072ed6cceed9555441045585129ecc44b4f45a5c00",
@@ -1348,9 +1372,9 @@
     "consequence": "ASR or model analysis cannot be represented as actual listening."
   },
   "checked_material_binding_coverage": {
-    "checked_materials": 187,
-    "expected_slots": 3213,
-    "selected_slots": 3213,
+    "checked_materials": 191,
+    "expected_slots": 3240,
+    "selected_slots": 3240,
     "pending_slots": [],
     "by_material": {
       "new26-ahe-identity": {
@@ -1412,6 +1436,10 @@
       "new26-binding-kit-identity": {
         "expected": 4,
         "selected": 4
+      },
+      "new26-boat-song-singing": {
+        "expected": 2,
+        "selected": 2
       },
       "new26-boatman-identity": {
         "expected": 4,
@@ -1861,6 +1889,10 @@
         "expected": 36,
         "selected": 36
       },
+      "new26-qingpeng-singing": {
+        "expected": 23,
+        "selected": 23
+      },
       "new26-recovered-keepsakes-identity": {
         "expected": 11,
         "selected": 11
@@ -1916,6 +1948,10 @@
       "new26-ritual-gong-sound": {
         "expected": 2,
         "selected": 2
+      },
+      "new26-ritual-song-singing": {
+        "expected": 1,
+        "selected": 1
       },
       "new26-ritual-tablet-identity": {
         "expected": 12,
@@ -2016,6 +2052,10 @@
       "new26-temple-hall-layout": {
         "expected": 11,
         "selected": 11
+      },
+      "new26-temple-song-singing": {
+        "expected": 1,
+        "selected": 1
       },
       "new26-temple-workers-identity": {
         "expected": 19,
