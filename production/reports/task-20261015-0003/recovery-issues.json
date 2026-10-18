@@ -230,7 +230,6 @@
   "browser_verification": {
     "status": "formal_chrome_verified",
     "browser": "daily Chrome default profile",
-    "evidence_runtime": ".runtime/task-20261015-0003/chrome-stage08-candidate-fixes.json",
     "formal_publication_verified": true,
     "audio_quality_verified_by_playback": false,
     "latest_evidence": "production/reports/task-20261015-0003/formal-browser.json"
@@ -251,7 +250,9 @@
     "google_remaining_dispatch_slots": 0,
     "formal_publication": true,
     "paused": false,
-    "status": "formally_published_and_verified"
+    "status": "formally_published_and_verified",
+    "runtime_cleanup_complete": true,
+    "managed_worktrees_pending_tui_exit": true
   },
   "audio_verification_decision": {
     "status": "all_required_hearing_and_tail_positions_complete",
@@ -266,5 +267,6 @@
     "remaining_song_uses": 0,
     "tail_positions_required": 5,
     "tail_positions_saved": 5
-  }
+  },
+  "runtime_evidence_archive": "Primary project .runtime/task-evidence/task-20261015-0003/"
 }
