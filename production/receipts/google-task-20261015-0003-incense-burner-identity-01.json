@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-incense-burner-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-incense-burner-identity-01",
+    "submission_sha256": "5b566fc7d137968961e1a9d15aa40288339f3c4a81b304f352ba385d0990fa1f",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-incense-burner-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "8223933de2f768c371d2e8f0e2a96aaaf68f01665db81198cc76285f89584149.jpg",
+    "sha256": "8223933de2f768c371d2e8f0e2a96aaaf68f01665db81198cc76285f89584149",
+    "bytes": 7696232,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-incense-burner-identity-01",
+    "candidate_id": "candidate-f9c0be1aa8c6dfab2d761c03182511ffaec315f96be78e1c67a0050a7dbb7414",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "实际查看原件：灰褐宽口陶炉、三短足、浅灰香灰及三支不同高度未燃尽线香可辨，烟淡而细、稍向同侧上升，无神像纹、人物、字或烟雾图案。主图为偏高三分之四，已能看清香脚插入灰内，另有炉沿近图；没有另列正俯视，但当前结构信息完整，不影响所指未燃尽香的用途。通过物件形制；双手尺度与烟是否遮具体人物留待镜头检查。",
+    "decision": "选择第0代原件，烟只作香燃烧状态，不暗示神迹，不代表整场混合或动态已验。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 1,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/incense-burner-identity-01-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 6163,
+    "total_input_tokens": 296,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 296
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4279,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1588
+  },
+  "actual_request_body_sha256": "7357d66884a708e697dde0403bc99fb7274edec8da374543a90b9f071a135d67",
+  "submitted_inputs": []
+}

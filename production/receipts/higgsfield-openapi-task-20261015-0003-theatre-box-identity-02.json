@@ -1,0 +1,101 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-theatre-box-identity-02",
+  "submission": {
+    "call_id": "task-20261015-0003-theatre-box-identity-02",
+    "submission_sha256": "1a8cc1b62c4d1b1896205420b0508c699d460f3ea81e15ae54c3848df8e56bcd",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-theatre-box-identity-02.json",
+  "provider_history_id": null,
+  "provider_job_id": "459be6ca-caf2-4a40-9808-db14bc3aa5b6",
+  "provider_resource_id": null,
+  "model": "marketing-studio/image/flare",
+  "project_id": null,
+  "provider": "Higgsfield OpenAPI",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "c43c63746af16fb163cce557669f74a79784c74e605fe82363ab6806a1bb4c14.png",
+    "sha256": "c43c63746af16fb163cce557669f74a79784c74e605fe82363ab6806a1bb4c14",
+    "bytes": 5600754,
+    "mime": "image/png",
+    "width": 3840,
+    "height": 2160
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-theatre-box-identity-02",
+    "candidate_id": "candidate-db966b2610b1dc63253350953eece56e63c3d4e9cc46c7d47bba3c2b352cda42",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "actual": "UNKNOWN",
+    "planning_reserve": 0.5,
+    "account": "Higgsfield OpenAPI prepaid balance; no recharge",
+    "budget_snapshot": {
+      "created_at": "2026-10-16T18:30:07.402083+00:00",
+      "user_reported_prepaid_usd": 8.65,
+      "actual_balance_verified": true,
+      "max_dispatches": 14,
+      "reserve_per_unknown_usd": 0.5,
+      "generation_model": "marketing-studio/image/flare",
+      "no_recharge": true,
+      "source": "User said Higgsfield OpenAPI remaining8.65 USD; later corrected only Nano Banana availability, not the balance.",
+      "actual_charge": "UNKNOWN",
+      "verified_balance_usd": 7.61,
+      "balance_verified_at": "2026-10-16T19:44:37.870138+00:00",
+      "balance_source": "Daily Chrome https://open.higgsfield.ai/billing visible balance and Auto top-up dialog; read-only, no settings saved.",
+      "balance_anchor_dispatch_count": 12,
+      "auto_top_up_enabled": true,
+      "auto_top_up_threshold_usd": 3.13,
+      "auto_top_up_amount_usd": 25.0,
+      "threshold_buffer_usd": 0.5,
+      "next_batch_limit": 2,
+      "planning_note": "Fresh daily Chrome billing after12 completed calls shows7.61USD, Auto top-up On unchanged. One ferry retry adds an explicit raised north-side deck walkway; one theatre-box retry removes extraneous attachment. Two calls capped at0.50USD each reserve leave6.61USD, above3.13+0.50USD threshold. No recharge, no individual-call fee inferred from balance."
+    },
+    "note": "Authenticated estimate returns token rates, not a fixed charge. Dispatch cap and observed auto-top-up threshold checked before submission."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "实际查看原生3840×2160 PNG：闭合与开盖均为暗茶棕低长方木箱，同样低脚、平盖和两道主要板缝；左右视向分别露出一端粗布提手，提手近图与全貌一致。盖向后翻仍连接后沿、尺寸可覆住空内腔，前角浅磨损可辨，没有额外红绳、结、文字或内容物。线条和色块简洁，未带入剧情终态。",
+    "decision": "通过为新的第0代同类戏箱形制，准确绑定用途；只统一可搬箱形，不据跨场复用推断同一只箱瞬移。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 9,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/theatre-box-identity-02-consumer-selections.json"
+  },
+  "actual_request_body_sha256": "4fe9c5d9d98b7719dcb38e830dd3ab598e5f5c7725372a9968107dd4057f8b60",
+  "idempotency_key": "3fec47b1-ff3b-4c79-8a6e-b6f4d19a7a94",
+  "budget_snapshot": {
+    "created_at": "2026-10-16T18:30:07.402083+00:00",
+    "user_reported_prepaid_usd": 8.65,
+    "actual_balance_verified": true,
+    "max_dispatches": 14,
+    "reserve_per_unknown_usd": 0.5,
+    "generation_model": "marketing-studio/image/flare",
+    "no_recharge": true,
+    "source": "User said Higgsfield OpenAPI remaining8.65 USD; later corrected only Nano Banana availability, not the balance.",
+    "actual_charge": "UNKNOWN",
+    "verified_balance_usd": 7.61,
+    "balance_verified_at": "2026-10-16T19:44:37.870138+00:00",
+    "balance_source": "Daily Chrome https://open.higgsfield.ai/billing visible balance and Auto top-up dialog; read-only, no settings saved.",
+    "balance_anchor_dispatch_count": 12,
+    "auto_top_up_enabled": true,
+    "auto_top_up_threshold_usd": 3.13,
+    "auto_top_up_amount_usd": 25.0,
+    "threshold_buffer_usd": 0.5,
+    "next_batch_limit": 2,
+    "planning_note": "Fresh daily Chrome billing after12 completed calls shows7.61USD, Auto top-up On unchanged. One ferry retry adds an explicit raised north-side deck walkway; one theatre-box retry removes extraneous attachment. Two calls capped at0.50USD each reserve leave6.61USD, above3.13+0.50USD threshold. No recharge, no individual-call fee inferred from balance."
+  }
+}

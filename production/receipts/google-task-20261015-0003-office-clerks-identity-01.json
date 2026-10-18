@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-office-clerks-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-office-clerks-identity-01",
+    "submission_sha256": "5d9dffd809957f78eb32a8bb46b2c50defd9156e7d3354decfc40164d2986717",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-office-clerks-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "962d9ca34e75175c774a13b08b1586b24a0e54807680ab779f76284de0288b64.jpg",
+    "sha256": "962d9ca34e75175c774a13b08b1586b24a0e54807680ab779f76284de0288b64",
+    "bytes": 7033942,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-office-clerks-identity-01",
+    "candidate_id": "candidate-888db399cfdebc4c11402a8974138528a458c53fdb3df446015c92d2346cda8b",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "已实际看原生5504×3072 JPEG：左甲长脸薄唇无须、灰蓝长衫及较高黑布软帽，右乙短宽脸小八字须、深灰绿长衫及较低黑帽；两人各自近图与全身一致。甲右手空出，乙双手放松，布腰束无官印纹样、黑色布面鞋口近踝，无武器和文字。",
+    "decision": "选择为廊下甲乙书吏的第0代群体身份母版，固定左右索引；不与门口释告书吏或梁共用身份。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 10,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/office-clerks-identity-01-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 6697,
+    "total_input_tokens": 343,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 343
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4331,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 2023
+  },
+  "actual_request_body_sha256": "1e7566d052c6d58f57da4ce4f71deb14833160b13e2fd9ccfe39af6af08fa871",
+  "submitted_inputs": []
+}

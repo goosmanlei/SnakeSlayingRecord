@@ -1,0 +1,101 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-mountain-road-flare-01",
+  "submission": {
+    "call_id": "task-20261015-0003-mountain-road-flare-01",
+    "submission_sha256": "fa48fa47f7fd7a79dded7badad80ab5e24cc756b7be25f23e9bdf17d4f523c47",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-mountain-road-flare-01.json",
+  "provider_history_id": null,
+  "provider_job_id": "04807e64-3729-4c99-8f2e-37671383342c",
+  "provider_resource_id": null,
+  "model": "marketing-studio/image/flare",
+  "project_id": null,
+  "provider": "Higgsfield OpenAPI",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "f96700dad2531ec7e36a7fd9e9c843d392cf94aa3db53e96a52b1bde200ed93d.png",
+    "sha256": "f96700dad2531ec7e36a7fd9e9c843d392cf94aa3db53e96a52b1bde200ed93d",
+    "bytes": 11865622,
+    "mime": "image/png",
+    "width": 3840,
+    "height": 2160
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-mountain-road-flare-01",
+    "candidate_id": "candidate-ea77ea88947cd810befa771052850552e543a01d0f5d9f08f2bf74c4550939d1",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "actual": "UNKNOWN",
+    "planning_reserve": 1.0,
+    "account": "Higgsfield OpenAPI prepaid balance; no recharge",
+    "budget_snapshot": {
+      "created_at": "2026-10-16T18:30:07.402083+00:00",
+      "user_reported_prepaid_usd": 8.65,
+      "actual_balance_verified": true,
+      "max_dispatches": 25,
+      "reserve_per_unknown_usd": 1.0,
+      "generation_model": "marketing-studio/image/flare",
+      "no_recharge": true,
+      "source": "User said Higgsfield OpenAPI remaining8.65 USD; later corrected only Nano Banana availability, not the balance.",
+      "actual_charge": "UNKNOWN",
+      "verified_balance_usd": 6.62,
+      "balance_verified_at": "2026-10-16T21:18:19.992345+00:00",
+      "balance_source": "Daily Chrome https://open.higgsfield.ai/billing visible balance and Auto top-up dialog; read-only, no settings saved.",
+      "balance_anchor_dispatch_count": 23,
+      "auto_top_up_enabled": true,
+      "auto_top_up_threshold_usd": 3.13,
+      "auto_top_up_amount_usd": 25.0,
+      "threshold_buffer_usd": 0.5,
+      "next_batch_limit": 2,
+      "planning_note": "Daily Chrome refreshed after23 completed calls:6.62USD,Auto top-up On. Two new text-only repairs for known failed spatial plans, each conservatively reserved1USD; projected4.62USD stays above3.13+0.50 stop. No unknown-call replay, recharge or settings change."
+    },
+    "note": "Authenticated estimate returns token rates, not a fixed charge. Dispatch cap and observed auto-top-up threshold checked before submission."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "实际打开3840×2160原生PNG。两块西侧坐石、南侧干路、东侧草岩坡和反向坐石位置比前版清楚；但左侧主图仍显示多段向山上延续的发卡弯，右上平面却只画向东立即隐入岩后的单弯。主视没有落实东转后立即遮挡，三视向远段拓扑不一致。",
+    "decision": "不选用；下一步用明确空间几何约束控制遮挡，不重复同类纯文字生成。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  },
+  "actual_request_body_sha256": "994faebe8c446ba3173b25b97ccb1848a8adf4fa1cd097fc92fdfbad86d056e7",
+  "idempotency_key": "5b804ed4-cb85-450d-b101-c33079377b0c",
+  "budget_snapshot": {
+    "created_at": "2026-10-16T18:30:07.402083+00:00",
+    "user_reported_prepaid_usd": 8.65,
+    "actual_balance_verified": true,
+    "max_dispatches": 25,
+    "reserve_per_unknown_usd": 1.0,
+    "generation_model": "marketing-studio/image/flare",
+    "no_recharge": true,
+    "source": "User said Higgsfield OpenAPI remaining8.65 USD; later corrected only Nano Banana availability, not the balance.",
+    "actual_charge": "UNKNOWN",
+    "verified_balance_usd": 6.62,
+    "balance_verified_at": "2026-10-16T21:18:19.992345+00:00",
+    "balance_source": "Daily Chrome https://open.higgsfield.ai/billing visible balance and Auto top-up dialog; read-only, no settings saved.",
+    "balance_anchor_dispatch_count": 23,
+    "auto_top_up_enabled": true,
+    "auto_top_up_threshold_usd": 3.13,
+    "auto_top_up_amount_usd": 25.0,
+    "threshold_buffer_usd": 0.5,
+    "next_batch_limit": 2,
+    "planning_note": "Daily Chrome refreshed after23 completed calls:6.62USD,Auto top-up On. Two new text-only repairs for known failed spatial plans, each conservatively reserved1USD; projected4.62USD stays above3.13+0.50 stop. No unknown-call replay, recharge or settings change."
+  }
+}

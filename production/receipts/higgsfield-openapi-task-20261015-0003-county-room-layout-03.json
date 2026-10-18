@@ -1,0 +1,60 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-county-room-layout-03",
+  "submission": {
+    "call_id": "task-20261015-0003-county-room-layout-03",
+    "submission_sha256": "b61887952a097b71b779530fc628eaebc1e06c7177c94d073ca79497c194e9d7",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-county-room-layout-03.json",
+  "provider_history_id": null,
+  "provider_job_id": "a226f375-cf8b-40ac-8802-59bc01629a1c",
+  "provider_resource_id": null,
+  "model": "marketing-studio/image/flare",
+  "project_id": null,
+  "provider": "Higgsfield OpenAPI",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "71a2f1b6f8d426575c776f10ee02e8481ed6d0ea40f855edf3e0cf2dfac4738e.png",
+    "sha256": "71a2f1b6f8d426575c776f10ee02e8481ed6d0ea40f855edf3e0cf2dfac4738e",
+    "bytes": 8665351,
+    "mime": "image/png",
+    "width": 3840,
+    "height": 2160
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-county-room-layout-03",
+    "candidate_id": "candidate-952b6ee752032fc83dba27161f6fd8ccea91360202e0149e31ac2d9e56d079de",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "actual": "UNKNOWN",
+    "planning_reserve": 2.0,
+    "account": "Higgsfield OpenAPI prepaid balance, user reported8.65 USD; no recharge",
+    "note": "Authenticated estimate returns token rates, not a fixed charge. Initial batch capped at one."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "已实际打开3840×2160原生PNG。北案与证据长桌均为东西向，东侧记录席为南北向，西门至中央通道清楚；三张桌方向与站位关系已成立。但模型在应为空白的证据桌上加了五叠纸，不能作为干净空间母版。",
+    "decision": "保留真实原件与调用回执，不选入下游。下一根图删除容量描述中易被直接画出的文件名词，只保留桌形、方向和空白表面要求；不输入本张失败候选。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  },
+  "actual_request_body_sha256": "0eaab31a79b75d166dbd02a7a5bdd63ecf891fb6e4fc5d9d55b792ea92b10e9b",
+  "idempotency_key": "979403ff-6130-4f38-ba58-5cc9955a5c56",
+  "budget_snapshot": null
+}

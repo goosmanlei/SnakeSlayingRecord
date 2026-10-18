@@ -6,7 +6,7 @@
 
 进入受管澄清会话，完整读取用户给出的指令文件，先按其中的 `_media --draft UUID` 检查会话媒体并绑定草稿。执行阶段则先完整读取执行指令，每轮开始任务工作前通过本次 `_bind_session` 认证；成功核验运行凭据和锁后才允许写入。
 
-依次读取主项目 `AGENTS.md`、`KNOWLEDGE.md`、`STATE.md`，再读取与目标有关的材料。用主项目 `.codex-task/tasks.json`、`codex.task list`、`codex.task drafts` 和 `codex.task show --task TASK_ID` 按需核对在途任务、原草稿、交付及恢复条件。
+沿主项目 `AGENTS.md` 的“跨会话恢复”使用有效规则、知识和状态入口，复用当前会话已读且未变的内容，再取与目标有关的材料。任务查询按需要选择 `.codex-task/tasks.json`、`codex.task list`、`drafts` 或 `show --task TASK_ID`，同一信息不重复用多个入口查询。先定位相关任务，再读其完整目标、结果与恢复条件。
 
 | 用户要做的工作 | 公开入口 | 本次澄清的完成点 |
 | --- | --- | --- |
@@ -14,7 +14,7 @@
 | 修改已发布且从未执行的任务 | `codex.task mod --task TASK_ID '补充要求'` | 执行次数为0；重审完整需求及仓库列表，登记后不执行 |
 | 整理需求并立即执行 | `codex.task do '需求'` | 信息充分时直接登记；成功即结束澄清，启动器衔接同编号、同会话 |
 
-需要执行或恢复已发布任务时使用 `codex.task run --task TASK_ID`；`do --task TASK_ID` 也可恢复。读取当前安装的 `--version` 和相关子命令 `--help` 核对实际接口。启动器参数选择澄清模型，执行使用任务登记的模型与推理强度。
+需要执行或恢复已发布任务时使用 `codex.task run --task TASK_ID`；`do --task TASK_ID` 也可恢复。本次启动指令已给准确回调时直接按其执行；接口缺失、版本变化或报错时才核对 `--version` 及相关子命令 `--help`，不重跑整套CLI兼容性调查。启动器参数选择澄清模型，执行使用任务登记的模型与推理强度。
 
 按目标选择必要依据：
 

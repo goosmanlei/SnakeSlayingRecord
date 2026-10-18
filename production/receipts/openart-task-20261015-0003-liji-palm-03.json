@@ -1,0 +1,61 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-liji-palm-03",
+  "submission": {
+    "call_id": "task-20261015-0003-liji-palm-03",
+    "submission_sha256": "3c74ddeb6b23659ee562ec98145a2f0c01ee98695559697bc1d5765ab6393823",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-liji-palm-03.json",
+  "provider_history_id": "ShPYU6GP6uaOEPQWncPT",
+  "provider_job_id": null,
+  "provider_resource_id": "7Mvqy1YuW9k9VC8Vz7DW",
+  "model": "nano-banana-2-1",
+  "project_id": "8K6WcbrPLghSBJXBtWAE",
+  "provider": "OpenArt",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "03b8ce556cfa940027ecdb1b23306b39a642c66a7fa03156b4e522d4586b83c7.png",
+    "sha256": "03b8ce556cfa940027ecdb1b23306b39a642c66a7fa03156b4e522d4586b83c7",
+    "bytes": 17417658,
+    "mime": "image/png",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-liji-palm-03",
+    "candidate_id": "candidate-53471c156582ae6e6d681cba8640170e4111268e5eaa28cd9b39e09c04889336",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "OpenArt credits",
+    "quoted": 80,
+    "actual": "UNKNOWN",
+    "note": "报价对应单图；实际扣费字段未返回时保留UNKNOWN。"
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "已实际看图：左侧正面人物的自身右掌包布与两个手部局部方向相符，但中部又出现一位双手均未包扎的全身人物，与同张完整状态相冲突；没有按要求去掉第二全身。原生5504×3072，尺寸合格不代表内容通过。",
+    "decision": "不选择为状态参考；本方案第三次仍未一致，停止同类重复，保留准确缺口。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-task-20261015-0003-liji-identity-01",
+        "revision_id": "77908eeddf225d05468c60366401d16f721cceb62cb297dcd110c25132f302e4"
+      }
+    ]
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  }
+}

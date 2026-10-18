@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-grain-queue-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-grain-queue-identity-01",
+    "submission_sha256": "8601df8cdd09231db397de0addf33c3971d4e5e4dd828001951afd2915b736ef",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-grain-queue-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "941ed69e2c79a3d6f48fa9c639aacd1dacdda40853b736cfa482f148e282cab6.jpg",
+    "sha256": "941ed69e2c79a3d6f48fa9c639aacd1dacdda40853b736cfa482f148e282cab6",
+    "bytes": 7600811,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-grain-queue-identity-01",
+    "candidate_id": "candidate-8e78dfb74b8032bebab39abcf90a04c207b2697bc0ae21398a0e23a83f6ba1ec",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "已实际看原生5504×3072 JPEG：七名人物齐全，但女孩高度接近父亲腰部而非胸口；要求空手的瘦长脸挑担汉子已持扁担，独身妇人双手各有一张票，增加了不应有的物件。",
+    "decision": "不选择。下一次从干净根图重做，明确女孩头顶到父亲胸口、瘦长脸者双手空着、一人只有一张票，先核这些结构再看脸形。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  },
+  "usage": {
+    "total_tokens": 6650,
+    "total_input_tokens": 370,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 370
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4447,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1833
+  },
+  "actual_request_body_sha256": "9d279dc239e33079360096c5465a8fa007718de3cb2ee15a3a3ac9b28b8cab8a",
+  "submitted_inputs": []
+}

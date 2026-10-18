@@ -1,0 +1,61 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-book-dry-sheets-01",
+  "submission": {
+    "call_id": "task-20261015-0003-book-dry-sheets-01",
+    "submission_sha256": "493c1e7bf71a79e4ce3b6d156dc58aabfc885db1c45691f6e1e76af3fdb1536f",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-book-dry-sheets-01.json",
+  "provider_history_id": "iJMLVPg2jVxfeyvC6Euc",
+  "provider_job_id": null,
+  "provider_resource_id": "7ChubimNZkXxzn4FujYs",
+  "model": "nano-banana-2-1",
+  "project_id": "8K6WcbrPLghSBJXBtWAE",
+  "provider": "OpenArt",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "ba1a1939aacefc271b6497ce24059fc56521cbda72975bb60bffb3912150d958.png",
+    "sha256": "ba1a1939aacefc271b6497ce24059fc56521cbda72975bb60bffb3912150d958",
+    "bytes": 17148746,
+    "mime": "image/png",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-book-dry-sheets-01",
+    "candidate_id": "candidate-576046e62ca94cfa61211db2b78c17fd0c695bcf8e740ec0f9e1713307d2ea80",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "OpenArt credits",
+    "quoted": 80,
+    "actual": "UNKNOWN",
+    "note": "报价对应单图；实际扣费字段未返回时保留UNKNOWN。"
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "已实际看图。干皱残半页和两团墨洇、独立带三圈的记工背页已有表达，但补抄新纸仍画成书内的齐整右半部，未明确为与旧本并排且尚未订的新纸组；右下近图又复制多层相同圆缺口，与原记工背页唯一缺口冲突。",
+    "decision": "不绑定。回干净母版重排为旧残本、无孔未订的独立新纸叠、原背页单张三组，唯一缺口只在原背页；取消容易复制错误的纸角多层近图。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-task-20261015-0003-songbook-identity-02",
+        "revision_id": "e741030b764d7d41431a96629647f5edf14f1016564216872f69a72f9bc45081"
+      }
+    ]
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  }
+}

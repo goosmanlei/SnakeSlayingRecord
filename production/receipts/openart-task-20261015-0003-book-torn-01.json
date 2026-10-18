@@ -1,0 +1,61 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-book-torn-01",
+  "submission": {
+    "call_id": "task-20261015-0003-book-torn-01",
+    "submission_sha256": "e9485826ca1b0caed9e872c164b05d895373d4c590e196438050904e739342b6",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-book-torn-01.json",
+  "provider_history_id": "25jfRsIhZuAq3lZQqylx",
+  "provider_job_id": null,
+  "provider_resource_id": "AyFqNni9uIXwDzAtgMZx",
+  "model": "nano-banana-2-1",
+  "project_id": "8K6WcbrPLghSBJXBtWAE",
+  "provider": "OpenArt",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "20a94c81e9d90c7d63e2243d8d3fa5fcd982cfa7b4c23bb78b4d35c3c6f3e99d.png",
+    "sha256": "20a94c81e9d90c7d63e2243d8d3fa5fcd982cfa7b4c23bb78b4d35c3c6f3e99d",
+    "bytes": 18194172,
+    "mime": "image/png",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-book-torn-01",
+    "candidate_id": "candidate-827aeacc50bfe60f1b12d55b8541055c8500f56ebe8cace52905da5923317d5d",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "OpenArt credits",
+    "quoted": 80,
+    "actual": "UNKNOWN",
+    "note": "报价对应单图；实际扣费字段未返回时保留UNKNOWN。"
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "已实际比较母版与湿损结果。湿封皮、松线、撕口与两团墨洇可见，但右下缺口扩散到书本多层纸边，违反只有原记工背页一张有小圆缺口；原背页也未以可辨单张展示，三圈身份线索没有保留。残页下半缺失的边界与各页归属仍混淆。",
+    "decision": "保留真实原件，不绑定。回干净母版重排图面：完整旧书、半张末段页、单独记工背页各有清楚归属，唯一圆缺口仅在单张背页，不沿错误纸层继续编辑。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-task-20261015-0003-songbook-identity-02",
+        "revision_id": "e741030b764d7d41431a96629647f5edf14f1016564216872f69a72f9bc45081"
+      }
+    ]
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  }
+}

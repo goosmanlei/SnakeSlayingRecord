@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-beam-stock-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-beam-stock-identity-01",
+    "submission_sha256": "68f578ab6332ba448455229f41e3f0449896d5eff8692f448f42a79ff53bb8cd",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-beam-stock-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "73a8715229fdc23464e0daa7a96df1b74c8e698b867db099ab0d20dbaba04cef.jpg",
+    "sha256": "73a8715229fdc23464e0daa7a96df1b74c8e698b867db099ab0d20dbaba04cef",
+    "bytes": 7628375,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-beam-stock-identity-01",
+    "candidate_id": "candidate-210f88ef1d3e400f91ac4951074b6f65b400ab7df328d1eed66e261fbb177ca0",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "已实际看原生5504×3072 JPEG：整根与截面可见，但额外出现持杠人形，按其肩宽估计仅约六个肩宽，明显不满足方案14肩宽的布局比例；中段又画出似缠布或凸套的包覆段，未保持无绳无布的平整原木。",
+    "decision": "不选为长横杠母版。后续返修须取消持杠人物和中段包覆，只以横杠长厚比例及截面建立同一原木，再与实际八人抓握布局核对；不把生成的尺寸关系当工程承载证明。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  },
+  "usage": {
+    "total_tokens": 6025,
+    "total_input_tokens": 317,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 317
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4142,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1566
+  },
+  "actual_request_body_sha256": "f32beaff1c1f0fde284530fb88c4ecaf27329aa7f07842a2b1a574c7f36ec835",
+  "submitted_inputs": []
+}

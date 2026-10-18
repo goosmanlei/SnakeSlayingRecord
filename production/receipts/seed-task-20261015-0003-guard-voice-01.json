@@ -1,0 +1,36 @@
+{
+  "id": "task-20261015-0003-guard-voice-01",
+  "status": "unknown",
+  "request_id": "555f10be-2760-45c6-baf8-c8177fad42b7",
+  "quota_id": "seed-quota-task-20261015-0003",
+  "production_submission": {
+    "call_id": "task-20261015-0003-guard-voice-01",
+    "submission_sha256": "2a65d52330af48737ee62119e22db70fa70b238c0bd2aab9774410b02d1a1824",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "submitted_at": "2026-10-16T13:38:44.392815+00:00",
+  "endpoint": "https://openspeech.bytedance.com/api/v3/tts/create",
+  "input": {
+    "model": "seed-audio-1.0",
+    "text_prompt": "生成一名单人普通话说话声。说话身份：守庙差役，成年男性说话声，身份说明不朗读。稳定声线：中声区偏低，声音结实干净，口腔共鸣靠前，少颗粒、辅音短明。\n统一试读条件：平稳、中性的说话读法，中等语速，逗号处短停，句号处自然停顿；不设置人物关系或情绪转折，不演唱，不临时加强某个词。近距离干声，只保留自然换气，不加入房间回声、环境声、配乐或其他人声。\n只把下面两句固定原词按原顺序朗读一次，不增删、改写或重复，不念标题和说明，不加语气词或临场发挥；保留完整尾字和自然收声：\n桌上放着一本书，旁边有一只白色的杯子。\n窗边的椅子朝着门口，几张纸整齐地叠在一起。",
+    "audio_config": {
+      "format": "wav",
+      "sample_rate": 48000,
+      "pitch_rate": 0,
+      "speech_rate": 0,
+      "loudness_rate": 0,
+      "enable_subtitle": true
+    },
+    "watermark": {},
+    "references": []
+  },
+  "input_sha256": "9f0181eb1eaed7aaa77eea7fc414f838557ee9c9df95b421aedbf2f9bb95c55d",
+  "remaining_before_seconds": 1489.4,
+  "reserved_seconds": 120,
+  "recovery": {
+    "reason": "Owned synchronous process exceeded two-hour pending interval and was terminated; no response/audio received. Preserve request ID and 120-second quota reservation. No retry.",
+    "evidence": ".runtime/task-20261015-0003/guard-voice-01-interruption.json",
+    "recorded_at": "2026-10-16T15:55:27.279189+00:00"
+  }
+}

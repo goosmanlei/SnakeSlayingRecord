@@ -1,0 +1,96 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-liji-wet-03",
+  "submission": {
+    "call_id": "task-20261015-0003-liji-wet-03",
+    "submission_sha256": "6a2f7bc045810da68733ee80fe0e1e90f369f8058dd7ec7c76b3af36b04f1931",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-liji-wet-03.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "d3df76edda83e7bb78e0cbacb58769b1da1c9808c4bab328e009c91a419a82cc.jpg",
+    "sha256": "d3df76edda83e7bb78e0cbacb58769b1da1c9808c4bab328e009c91a419a82cc",
+    "bytes": 6973772,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-liji-wet-03",
+    "candidate_id": "candidate-2becafe650416303dea726d638134ee79e7cd1f9957c3ed32e6617a6900d1f67",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "已实际看图：上衣红斑从肩部移到领外衣面，仍未变成领内皮肤压印；侧身衣面却没有该红斑，完整形态不一致。全身裤口呈收束形状，局部近图是翻卷口，结构亦不一致。原生JPEG尺寸5504×3072，无转码。",
+    "decision": "不绑定下游；此修改仍未奏效，停止当前整张多视图参考方式的同类重复。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-task-20261015-0003-liji-identity-01",
+        "revision_id": "77908eeddf225d05468c60366401d16f721cceb62cb297dcd110c25132f302e4"
+      }
+    ]
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  },
+  "usage": {
+    "total_tokens": 7839,
+    "total_input_tokens": 1547,
+    "input_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 1120
+      },
+      {
+        "modality": "text",
+        "tokens": 427
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 5167,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1125
+  },
+  "actual_request_body_sha256": "fed3ce29f25121aedff4efac6089ebed8d5b4dd95763ad0d7e15e65c0205dc9e",
+  "submitted_inputs": [
+    {
+      "image_number": 1,
+      "submitted_sha256": "05ac4d70dbed022cbaabd37b9da071031056d325653ccbee9b1a2aac5046e0ce",
+      "original_sha256": "05ac4d70dbed022cbaabd37b9da071031056d325653ccbee9b1a2aac5046e0ce",
+      "crop": null
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-liang-clerk-identity-03",
+  "submission": {
+    "call_id": "task-20261015-0003-liang-clerk-identity-03",
+    "submission_sha256": "77745ab30f8857f5d55b70112d79c029cd262be751fc1a4e809fff9756f8cbf5",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-liang-clerk-identity-03.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "6d8b019e7fdb55918466d820dd42d1047f00cba9cbca6f179ff40ffd69a68405.jpg",
+    "sha256": "6d8b019e7fdb55918466d820dd42d1047f00cba9cbca6f179ff40ffd69a68405",
+    "bytes": 7426854,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-liang-clerk-identity-03",
+    "candidate_id": "candidate-ba08308c1695bff1dd094bb93171d5b599e6dc8b9aa18d9091090c22d07c9d6a",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "已实际看原生5504×3072 JPEG：成年文吏无须、薄唇长鼻，灰褐长衣、暗腰束、折角软帽及紧发髻在三视向一致；全身手脚完整且空手，窄眼眉和克制表情区别于其他人物。细轮廓、低饱和大色块及少量阴影与已通过角色母版相容，未见妨碍使用的压缩失真。",
+    "decision": "选择此新生成第0代梁书吏身份母版；实际模型为Google Nano Banana 2.1，不标成GPT Image。单张替代通道试制通过，允许按同一质量门槛分批扩展。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 30,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/liang-clerk-identity-03-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 5719,
+    "total_input_tokens": 318,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 318
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4299,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1102
+  },
+  "actual_request_body_sha256": "a9a50cfed009efb845945357879b4a2a335d3d76229caea90aea46064cb50419",
+  "submitted_inputs": []
+}

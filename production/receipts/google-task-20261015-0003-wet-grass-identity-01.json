@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-wet-grass-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-wet-grass-identity-01",
+    "submission_sha256": "901739c40dc3fa5ca66169ff79828463b1a44944a677386b9fe7735eb05de8f5",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-wet-grass-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "5846262d967401e0c0ab0f4921855390ff874d5549c6fd9bf8a1722c53bf5179.jpg",
+    "sha256": "5846262d967401e0c0ab0f4921855390ff874d5549c6fd9bf8a1722c53bf5179",
+    "bytes": 7664396,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-wet-grass-identity-01",
+    "candidate_id": "candidate-985a23dde8b1596fead4f2637eaa32b27315016f302e9a1883d57d3e9115ba2c",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "已实际看原生5504×3072 JPEG：两束灰绿长草完整并排，左束叶端偏散、右束较齐，浅麻扎绳、湿叶少量高光和根端纤维可辨；下方仅纤维近图，主束未切开。没有刀、血、蛇头或泥块。",
+    "decision": "选择为两束湿草第0代母版；无人体标尺，成年前臂尺度与试刀接触在实际镜头复核，不将此图当作绝对尺寸证明。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 6,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/wet-grass-identity-01-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 5684,
+    "total_input_tokens": 307,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 307
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4731,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 646
+  },
+  "actual_request_body_sha256": "9ad1e7bdbf3f9021f7bd1edfa00ae1079a1d21c2c2ac85fde6d250f4d7866abf",
+  "submitted_inputs": []
+}

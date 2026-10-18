@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-theatre-box-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-theatre-box-identity-01",
+    "submission_sha256": "3ea5b1c93220325da12380fc5e3b399f70bf548a845e0228782c430c23eaf49b",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-theatre-box-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "125786daa1830b293baf3fc3626fd47927aeaf1b6deab8b56bc63256b608ede3.jpg",
+    "sha256": "125786daa1830b293baf3fc3626fd47927aeaf1b6deab8b56bc63256b608ede3",
+    "bytes": 6740457,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-theatre-box-identity-01",
+    "candidate_id": "candidate-35dbb37ed3321a62f7ae1eb8bc9d1cc2b2bd23e4d8564485b8985c56af1656f7",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "实际查看原件：棕木箱、低脚、后翻空盖和布提手可辨。闭箱和磨角近图却添加了一段已系红绳，开盖图该绳消失；当前方案只留箱角系绳位置，准确双回结另属独立需求且尚未通过，不能让这一额外单结混入全剧箱形。",
+    "decision": "不选下游。下次仅绘无绳的同一箱形开闭视图，红绳由准确独立素材和实际阶段添加。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  },
+  "usage": {
+    "total_tokens": 6531,
+    "total_input_tokens": 308,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 308
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4706,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1517
+  },
+  "actual_request_body_sha256": "c5576be03b9d73242325348b9fb8975fe21e442845d8ba93fb148f187efe373c",
+  "submitted_inputs": []
+}

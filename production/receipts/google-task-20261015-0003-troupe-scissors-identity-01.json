@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-troupe-scissors-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-troupe-scissors-identity-01",
+    "submission_sha256": "363f18810718b3b59d101f04f5c94a6f56f175c3b5ecefb9665a5d72209da976",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-troupe-scissors-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "adfa05486e5a4fbf515c17188f97ebed12f4abcca22a36cf94d1317f81e9125f.jpg",
+    "sha256": "adfa05486e5a4fbf515c17188f97ebed12f4abcca22a36cf94d1317f81e9125f",
+    "bytes": 7516135,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-troupe-scissors-identity-01",
+    "candidate_id": "candidate-bec5d35926bb168da2732243e79a74373918a3a0d6a911da6a6faaef8e33df03",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "实际查看原件：灰暗铁剪的双环、两片弧刃、单铆钉结构在闭合、张开及枢纽近图可追踪，闭合尖端对齐，无塑胶把、手、断绳或文字。实际开角约四十余度而非严格35度，满足展示开合和根部切口用途；有少量旧磨痕。通过形制，具体单手剪绳动作未验。",
+    "decision": "选用第0代剪刀原件，镜头仍须让双刃实际接触红绳并复核握持。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 1,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/troupe-scissors-identity-01-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 5680,
+    "total_input_tokens": 294,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 294
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4295,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1091
+  },
+  "actual_request_body_sha256": "7459c906047e45a0cc91d8f51f31cf2fce1ea5e1b7e1a36f2aa31a26ec1653de",
+  "submitted_inputs": []
+}

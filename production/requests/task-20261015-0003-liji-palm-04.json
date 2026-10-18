@@ -1,0 +1,29 @@
+{
+  "model": "gemini-nano-banana-2.1",
+  "store": false,
+  "input": [
+    {
+      "type": "text",
+      "text": "图片1是干净李寄母版中唯一正面全身的准确裁切区域，保持同一脸、发髻、比例、灰褐常服、深裤、裹脚和布鞋。参考没有包扎，不要改变身份。\n生成一张4K横幅完整状态图：左侧只有一个正面全身人物，头脚完整，两手放松垂下；自身右手在画面左边，以薄米白布交叉包掌和手背，五指及指根自由，短结在小指侧。自身左手在画面右边，手指至手腕全裸。头部无伤无额带，衣服干燥无血无其他变化。\n右侧只有两只手的局部：上方是同一右手掌心，四指向上、拇指在图右；下方是同一右手手背，四指向上、指甲可见、拇指在图左。两图包布路线与全身相应。不要侧身、第二全身、第二人物或无包布对照图。\n浅暖灰底、左前柔光、干净细轮廓与平涂两级阴影；不加织纹、纸纹、颗粒、标签或任何文字。"
+    },
+    {
+      "type": "image",
+      "mime_type": "image/png",
+      "source_file": "liji-identity-01-front-crop.png",
+      "sha256": "37a00a139241862d54044b8e50b2c4b02a545b4a8678b11bb1de2ee2402f56ca",
+      "original_sha256": "05ac4d70dbed022cbaabd37b9da071031056d325653ccbee9b1a2aac5046e0ce",
+      "crop": {
+        "height": 1,
+        "width": 0.3,
+        "x": 0.05,
+        "y": 0
+      }
+    }
+  ],
+  "response_format": {
+    "aspect_ratio": "16:9",
+    "image_size": "4K",
+    "mime_type": "image/jpeg",
+    "type": "image"
+  }
+}

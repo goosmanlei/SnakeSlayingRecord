@@ -1,0 +1,62 @@
+{
+  "checked_at": "2026-10-17T03:00:09.939437+00:00",
+  "google": {
+    "dispatches": 116,
+    "calls_with_usage": 111,
+    "calls_without_usage": 5,
+    "remaining_dispatch_slots": 0,
+    "known_catalog_estimate_with_20pct_margin_usd": 17.212862,
+    "since_balance_checkpoint_known_estimate_with_20pct_margin_usd": 1.563795,
+    "balance_checkpoint_dispatches": 106,
+    "pending_reservation_usd": 1.25,
+    "total_planning_reservation_usd": 3.213795,
+    "actual_charge": "UNKNOWN",
+    "actual_balance_verified": false
+  },
+  "google_source": "No new Google calls since stage11; the prior planning estimate is not a live balance.",
+  "seed_quota_id": "seed-quota-task-20261015-0003-stage12",
+  "seed_observed_remaining_seconds_before_new_call": 855,
+  "seed_unknown_guard_reserved_seconds": 120,
+  "seed_new_generation_seconds": 11.3,
+  "seed_ledger_remaining_seconds": 723.7,
+  "higgsfield": {
+    "created_at": "2026-10-16T18:30:07.402083+00:00",
+    "user_reported_prepaid_usd": 8.65,
+    "actual_balance_verified": true,
+    "max_dispatches": 27,
+    "reserve_per_unknown_usd": 1.0,
+    "generation_model": "marketing-studio/image/flare",
+    "no_recharge": true,
+    "source": "User said Higgsfield OpenAPI remaining8.65 USD; later corrected only Nano Banana availability, not the balance.",
+    "actual_charge": "UNKNOWN",
+    "verified_balance_usd": 6.27,
+    "balance_verified_at": "2026-10-17T03:00:09.939437+00:00",
+    "balance_source": "Daily Chrome https://open.higgsfield.ai/billing visible balance and Auto top-up dialog; read-only, no settings saved.",
+    "balance_anchor_dispatch_count": 27,
+    "auto_top_up_enabled": true,
+    "auto_top_up_threshold_usd": 3.13,
+    "auto_top_up_amount_usd": 25.0,
+    "threshold_buffer_usd": 0.5,
+    "next_batch_limit": 0,
+    "planning_note": "After both bounded image calls, daily Chrome billing refresh shows6.27USD; Auto top-up still On. Current batch cap27 reached; no new batch dispatched. Balance is an account snapshot, not proof of per-call cost. No recharge or setting change.",
+    "authorization": "unknown-replacement-authorization12.json",
+    "prior_balance_observation": {
+      "usd": 6.44,
+      "dispatches": 25,
+      "observed_at": "2026-10-17T02:32:00.868147+00:00"
+    }
+  },
+  "higgsfield_completed_calls": 27,
+  "higgsfield_balance_observed_at_dispatch_count": 27,
+  "higgsfield_new_calls_after_balance": 0,
+  "higgsfield_remaining_dispatch_slots": 0,
+  "ark_audio_analysis": {
+    "completed_calls": 45,
+    "actual_charge_cny": "UNKNOWN",
+    "available_cny_before_batch": 111.02,
+    "reserved_cny_before_batch": 45,
+    "usage_receipt": "audio-analysis-task-20261015-0003-stage12.json"
+  },
+  "new_recharge": false,
+  "actual_monetary_charge": "UNKNOWN"
+}

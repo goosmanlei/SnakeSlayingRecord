@@ -1,0 +1,82 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-grain-queue-identity-04",
+  "submission": {
+    "call_id": "task-20261015-0003-grain-queue-identity-04",
+    "submission_sha256": "a1002c6e347ba6d1fbc5919a4a952c32925bcfef14dd985b08c112e000219e34",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-grain-queue-identity-04.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "110684efbed7ed3ccedb8d86e6a14623ee11ff73ad666326409b40462dd55e5a.jpg",
+    "sha256": "110684efbed7ed3ccedb8d86e6a14623ee11ff73ad666326409b40462dd55e5a",
+    "bytes": 7215068,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-grain-queue-identity-04",
+    "candidate_id": "candidate-e6d3aceee5a32161462c857323d0b140d6624f991806de99363b73f7a867d9c7",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google remaining balance at the recorded budget checkpoint; no recharge",
+    "reported_balance_usd": 3.86,
+    "balance_checkpoint_dispatches": 106,
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "实际打开原生5504×3072 JPEG：七名完整人物共用脚底线，下排七张对应头部。父女为左组，女孩两侧发髻、浅褐衣，头顶到父亲上胸约四分之三至五分之四全高，较男童明显高；母子、抱袋方脸壮汉、无物瘦长脸汉子和独身妇人身份可分。只有一只米袋；独身妇人右手捏唯一空白票，左臂收背后没有第二票。瘦长脸男子双手和身旁为空，没有扁担。各人头脚齐全不重叠，衣服布结交领、无文字或现代器件，色块及轮廓干净。",
+    "decision": "七身份、父女比例与唯一粮票通过，选择候选4准确整图供全剧消费者；早期三份失败候选保留历史且不充当本图输入。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 14,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/grain-queue-identity-04-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 6613,
+    "total_input_tokens": 698,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 698
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4444,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1471
+  },
+  "actual_request_body_sha256": "cfc7c5717c99f3aac0e8fbbadca1ee2d8e73c0f06cd616b3b9efc60083b7f0f1",
+  "submitted_inputs": []
+}

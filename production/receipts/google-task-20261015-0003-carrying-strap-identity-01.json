@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-carrying-strap-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-carrying-strap-identity-01",
+    "submission_sha256": "5c4ff163b8ecca2520799c0c1421c31bde6fd796ba52a6cf89aeee254bbf7439",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-carrying-strap-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "beffa7e1c897b749afff37139ee8b46334af05dbfb68bd546c6e91f061ef2d87.jpg",
+    "sha256": "beffa7e1c897b749afff37139ee8b46334af05dbfb68bd546c6e91f061ef2d87",
+    "bytes": 7072358,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-carrying-strap-identity-01",
+    "candidate_id": "candidate-2bf0a05825011e3fac43d0c5024fc22d89c44f46533659c057bbae93fc5c5c98",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "已实际看原生5504×3072 JPEG：深灰褐宽软布货带完整S形摊开，两端折合为可握软端，中央以一段衬接布连接两侧，两侧各有米白粗线交叉补缝。局部图保持相同接头、底层衬布和交叉线，叠卷图呈柔软布料；没有金属扣、现代背架或弹性件。",
+    "decision": "选择为宽背带的第0代形制母版，沿同一平整接头和双侧补线供后续辨认；图不构成承重安全证明，镜头需按既定掌宽、兜住病人腿部的比例核实际接触。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 7,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/carrying-strap-identity-01-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 5517,
+    "total_input_tokens": 303,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 303
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4702,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 512
+  },
+  "actual_request_body_sha256": "0ce7f3dfe9c2d12676d94e5e879415c7c074054824b23386ecefceabc0e96b9b",
+  "submitted_inputs": []
+}

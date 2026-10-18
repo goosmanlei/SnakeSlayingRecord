@@ -1,0 +1,97 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-liji-wet-02",
+  "submission": {
+    "call_id": "task-20261015-0003-liji-wet-02",
+    "submission_sha256": "a3f1ab3e45d2a460cb07a908526af374da8b68bff304547c9200ecb6095d8984",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-liji-wet-02.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "2a0a68fa1d7c2b0f3f3e7c043c78e1319f1091a7a7b16705b0fdbc7470973302.jpg",
+    "sha256": "2a0a68fa1d7c2b0f3f3e7c043c78e1319f1091a7a7b16705b0fdbc7470973302",
+    "bytes": 6787011,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-liji-wet-02",
+    "candidate_id": "candidate-bfd22f4cd524ac869e47f66d21e7e215bb721d014f790575159a8c2b8c7f48ba",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "已实际看原生5504×3072 JPEG：身份与裤脚卷高、下半裤腿湿重、双手湿、旧布鞋湿在全身和局部一致，头掌无伤；但肩部红印被画成两块明显的衣面红斑，而不是衣领边皮肤压印，改变常服固有颜色，容易被误读为血污。原生文件未转码。",
+    "decision": "不选供下游；允许针对肩红印位置做一次明确修改，继续从干净母版开始，不沿此失败状态累加纹理。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-task-20261015-0003-liji-identity-01",
+        "revision_id": "77908eeddf225d05468c60366401d16f721cceb62cb297dcd110c25132f302e4"
+      }
+    ]
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  },
+  "usage": {
+    "total_tokens": 7737,
+    "total_input_tokens": 1460,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 340
+      },
+      {
+        "modality": "image",
+        "tokens": 1120
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4648,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1629
+  },
+  "actual_request_body_sha256": "1ae747d5040ad296d8dd4703ab0c98dc96500c4ebd6dcc096eff689f5e9e3f03",
+  "local_recovery": "Original response and downloaded file verified; metadata extraction resumed with ffprobe after missing PIL; no provider request repeated.",
+  "submitted_inputs": [
+    {
+      "image_number": 1,
+      "submitted_sha256": "05ac4d70dbed022cbaabd37b9da071031056d325653ccbee9b1a2aac5046e0ce",
+      "original_sha256": "05ac4d70dbed022cbaabd37b9da071031056d325653ccbee9b1a2aac5046e0ce",
+      "crop": null
+    }
+  ]
+}

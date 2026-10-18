@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-bedding-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-bedding-identity-01",
+    "submission_sha256": "a0c4d3e3b03cd439f8741002c2f5ca6d4e10f548d82464299f5019969f52c94e",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-bedding-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "24b7983ac23b022e45297fb22f3855bb2a483a8a984ab05588e69bdd0e111906.jpg",
+    "sha256": "24b7983ac23b022e45297fb22f3855bb2a483a8a984ab05588e69bdd0e111906",
+    "bytes": 7985126,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-bedding-identity-01",
+    "candidate_id": "candidate-0fa639f3253f470b70995839dafee7d7e37dbc2c2388b7a5bc1eea953a036043",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "已实际看原生5504×3072 JPEG：灰米色棉褥分别为三折包、完全展开和半展开，同一细暗边缝在三个视图一致，内层略浅。折边、塌角和褶皱呈柔软布料，未画成木板或硬担架，也没有包裹病人或额外绑带。",
+    "decision": "选择为干净褥子的第0代形制母版；后续保持展开可供成人躺卧、折后由邻妇一臂接抱的既定尺度，动作中再核手臂承托。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 10,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/bedding-identity-01-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 5862,
+    "total_input_tokens": 278,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 278
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4588,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 996
+  },
+  "actual_request_body_sha256": "5ed998c239837e68a2370eda5630fc66871e8f3468f89f206f997123e86716dd",
+  "submitted_inputs": []
+}

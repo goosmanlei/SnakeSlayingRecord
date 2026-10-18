@@ -1,0 +1,101 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-curtain-poles-flare-01",
+  "submission": {
+    "call_id": "task-20261015-0003-curtain-poles-flare-01",
+    "submission_sha256": "a9c8682592baa6bfdd007a5933e26d2916b249c7cb0fb9fe2bddc9fef0c4c857",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-curtain-poles-flare-01.json",
+  "provider_history_id": null,
+  "provider_job_id": "70d755d2-2105-45d7-bbd0-e3baaba93802",
+  "provider_resource_id": null,
+  "model": "marketing-studio/image/flare",
+  "project_id": null,
+  "provider": "Higgsfield OpenAPI",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "8ab1f7e802537772a0f1bd3ed7680e8ddc99bdc9d94c7bd4c4677ba4a8a59bd8.png",
+    "sha256": "8ab1f7e802537772a0f1bd3ed7680e8ddc99bdc9d94c7bd4c4677ba4a8a59bd8",
+    "bytes": 4269125,
+    "mime": "image/png",
+    "width": 3840,
+    "height": 2160
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-curtain-poles-flare-01",
+    "candidate_id": "candidate-e8476557351f8be190c2f708a8cb2b8a387a2a271da88188a321540828c448e0",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "actual": "UNKNOWN",
+    "planning_reserve": 1.0,
+    "account": "Higgsfield OpenAPI prepaid balance; no recharge",
+    "budget_snapshot": {
+      "created_at": "2026-10-16T18:30:07.402083+00:00",
+      "user_reported_prepaid_usd": 8.65,
+      "actual_balance_verified": true,
+      "max_dispatches": 23,
+      "reserve_per_unknown_usd": 1.0,
+      "generation_model": "marketing-studio/image/flare",
+      "no_recharge": true,
+      "source": "User said Higgsfield OpenAPI remaining8.65 USD; later corrected only Nano Banana availability, not the balance.",
+      "actual_charge": "UNKNOWN",
+      "verified_balance_usd": 6.79,
+      "balance_verified_at": "2026-10-16T20:39:36.477408+00:00",
+      "balance_source": "Daily Chrome https://open.higgsfield.ai/billing visible balance and Auto top-up dialog; read-only, no settings saved.",
+      "balance_anchor_dispatch_count": 21,
+      "auto_top_up_enabled": true,
+      "auto_top_up_threshold_usd": 3.13,
+      "auto_top_up_amount_usd": 25.0,
+      "threshold_buffer_usd": 0.5,
+      "next_batch_limit": 2,
+      "planning_note": "After21 completed calls fresh daily Chrome balance6.79USD. Authorize two distinct prop repair requests, each1USD conservative reserve; projected4.79USD stays above3.13+0.50 stop. No old unknown request replay; no recharge or settings changes."
+    },
+    "note": "Authenticated estimate returns token rates, not a fixed charge. Dispatch cap and observed auto-top-up threshold checked before submission."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "实际查看原生3840×2160：长短两根黄灰竹杆完整入框、平端无尖刃，两端均有裸露握位。长杆右端仅一圈细褐绳绕杆，活结下有单个回折可拉解绳环和短尾；短杆未另造结。主图与右下近图的圈、绳环和尾端相同，没有旧图的多圈缠绕或结式变换。未穿竹实体、无字标和整台。只通过器具形制及解绳操作可读性，不据示意图声称实物负载测试。",
+    "decision": "选择用于本轮幕杆形制；后续按各场根数与站位摆放，不把一长一短样例当全场总数。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 19,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/curtain-poles-flare-01-consumer-selections.json"
+  },
+  "actual_request_body_sha256": "009b9c8601bffcc97513ac6c62231b025f17da0c080e067dfe332e827eaa6a04",
+  "idempotency_key": "de7d0064-c490-41cc-9211-15c9a8513d98",
+  "budget_snapshot": {
+    "created_at": "2026-10-16T18:30:07.402083+00:00",
+    "user_reported_prepaid_usd": 8.65,
+    "actual_balance_verified": true,
+    "max_dispatches": 23,
+    "reserve_per_unknown_usd": 1.0,
+    "generation_model": "marketing-studio/image/flare",
+    "no_recharge": true,
+    "source": "User said Higgsfield OpenAPI remaining8.65 USD; later corrected only Nano Banana availability, not the balance.",
+    "actual_charge": "UNKNOWN",
+    "verified_balance_usd": 6.79,
+    "balance_verified_at": "2026-10-16T20:39:36.477408+00:00",
+    "balance_source": "Daily Chrome https://open.higgsfield.ai/billing visible balance and Auto top-up dialog; read-only, no settings saved.",
+    "balance_anchor_dispatch_count": 21,
+    "auto_top_up_enabled": true,
+    "auto_top_up_threshold_usd": 3.13,
+    "auto_top_up_amount_usd": 25.0,
+    "threshold_buffer_usd": 0.5,
+    "next_batch_limit": 2,
+    "planning_note": "After21 completed calls fresh daily Chrome balance6.79USD. Authorize two distinct prop repair requests, each1USD conservative reserve; projected4.79USD stays above3.13+0.50 stop. No old unknown request replay; no recharge or settings changes."
+  }
+}

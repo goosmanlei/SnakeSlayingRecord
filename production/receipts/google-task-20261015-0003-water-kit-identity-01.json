@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-water-kit-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-water-kit-identity-01",
+    "submission_sha256": "df2285d09acb70151f16e26538fba66ad21b9882329b9e6ce3f31befb513e0ae",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-water-kit-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "1d4362fe4002283f6270be833d51f8756087513e4820c69a99cd9e681d8672cd.jpg",
+    "sha256": "1d4362fe4002283f6270be833d51f8756087513e4820c69a99cd9e681d8672cd",
+    "bytes": 7935137,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-water-kit-identity-01",
+    "candidate_id": "candidate-3e5096a0b222890fb85e3e63ed632a63688c8bd152d810d563a387ed88938f2d",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "实际查看原件：主图一杆两桶、等高桶底、两道暗箍和两条吊绳连接双耳可辨。但右侧近图变成四根立耳和四条绳，挂槽也从主图小缺口变为明显U形切口，关键连接结构跨视向不一致。",
+    "decision": "不选下游。返修简化为一个完整整担视向，明确每桶仅两只相对耳、两根绳，不再用会改变结构的另组近图。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  },
+  "usage": {
+    "total_tokens": 6023,
+    "total_input_tokens": 312,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 312
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4262,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1449
+  },
+  "actual_request_body_sha256": "f7a0554d6333e93123edaadb9c60d1a91b682b12726cddff2420f657f9e5b8da",
+  "submitted_inputs": []
+}

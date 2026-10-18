@@ -1,0 +1,96 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-snake-separated-01",
+  "submission": {
+    "call_id": "task-20261015-0003-snake-separated-01",
+    "submission_sha256": "d0ffee2103ddfe6835db9156ef06d5c33bda0b3328abf06ed09dbd8e4a405e78",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-snake-separated-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "539efa7b10c17f52df354339ecf5da1520584da2c7aad9778dc4b2d8dfd8712f.jpg",
+    "sha256": "539efa7b10c17f52df354339ecf5da1520584da2c7aad9778dc4b2d8dfd8712f",
+    "bytes": 6006628,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-snake-separated-01",
+    "candidate_id": "candidate-c2a3f584bf10e9110c1b6ce83eb63d19db1bd74232c1a638601de06b066756ec",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "已实际看原生5504×3072 JPEG：头在画面前下方、身体在后上方，近头处有独立暗色断开间隙；右侧狭窗呈两端轻微错位及黑暗间隔，与仍连续的浅伤、深伤区分。断口大部遮挡，无血泊或裸露组织；蛇头和大色块身份保持。",
+    "decision": "选择为颈部已断状态参考；不把示意遮条当实际闸构件，落到镜头时沿机关母版检查头南身北和断口遮挡。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-task-20261015-0003-snake-identity-02",
+        "revision_id": "e22f9afb9f3c430c0634150b06c4b2db680b003d55291a2cacfad303fb5f8ae3"
+      }
+    ]
+  },
+  "current_consumer_selection": {
+    "slots": 3,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/snake-separated-01-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 6121,
+    "total_input_tokens": 1449,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 329
+      },
+      {
+        "modality": "image",
+        "tokens": 1120
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4295,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 377
+  },
+  "actual_request_body_sha256": "08bf1a3c5fbc3b27474d343cbf9f872136984401b3ede0a011eada09c22b2d3d",
+  "submitted_inputs": [
+    {
+      "image_number": 1,
+      "submitted_sha256": "18d079399b23991a4a5404d19abce4229630bee46e8b286e659dad963414f5ff",
+      "original_sha256": "18d079399b23991a4a5404d19abce4229630bee46e8b286e659dad963414f5ff",
+      "crop": null
+    }
+  ]
+}

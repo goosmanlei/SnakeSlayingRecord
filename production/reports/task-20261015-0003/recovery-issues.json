@@ -1,0 +1,272 @@
+{
+  "format": "task-recovery-issue-v1",
+  "task_id": "task-20261015-0003",
+  "system_commit": "6a6293bb905823a5e0ba72b16e345182f0cc524a",
+  "repository": "review_desk",
+  "activation": "active",
+  "issues": [
+    {
+      "id": "nano-reference-contract",
+      "status": "runtime_verified",
+      "evidence": "input_contracts.py 的有图参考分支未识别 nano-banana-2-1，返回 verified=false。平台表单已核实支持1至14个 visualReferences、4K与16:9。",
+      "action": "在受管附属工作区补齐经核实的图片参考数量、模态和附件用途校验；不得将未知模型通用放行。",
+      "incident_receipt": "../../receipts/openart-task-20261015-0003-aheng-wet-01.json",
+      "verification": "已核平台表单并补齐最多14张图片、真实编号与模态检查；真实湿衣02和03在外部提交前成功保存本机快照。未知模型仍拒绝。"
+    },
+    {
+      "id": "candidate-number-after-switch",
+      "status": "formal_browser_verified",
+      "reproduction": "日常Chrome任务62845，EN001大卡的M001从候选2切到候选1后，两个按钮都显示候选1。",
+      "data_facts": "候选表编号正确为1、2，原件哈希不同。entity-material响应的results有正确candidate_number，但所选完整候选的members条目缺少candidate_number。",
+      "cause": "entity_contract.py加载完整候选时用p.record整体替换摘要，丢失编号；business_codes仅补results编号。retainLoadedMaterialMembers再用旧members记录替换新results摘要，丢号后经排序及index+1退路显示重复1。",
+      "action": "保留准确素材候选编号及身份，回归2到1到2切换、比较和刷新；不改原件、候选、评论或作者选择。",
+      "evidence_runtime": ".runtime/task-20261015-0003/candidate-label-bug/",
+      "verification": "日常Chrome的任务62845已实测M001候选2切到候选1，编号稳定为1、2；比较弹窗显示两份准确原图。接口和2到1到2回归证据沿既有测试，正式发布后的日常Chrome复验已通过。",
+      "formal_verification": "formal-browser.json"
+    },
+    {
+      "id": "comparison-dialog-controls",
+      "status": "formal_browser_verified",
+      "user_requirement": "同需求候选比较弹窗不需要下面的审阅此准确候选按钮等，因为当前系统没有审阅概念。",
+      "action": "仅移除该比较弹窗两侧的审阅此准确候选按钮、问号入口及底部说明；保留候选切换、标题、原图和关闭。",
+      "target": "review_desk/static/material-review.js:materialCompareControl",
+      "verification": "日常Chrome已打开比较弹窗，候选1、2和两张原图正常显示，原审阅按钮、问号和说明不存在；保留关闭和切换。正式页已发布并复验。",
+      "formal_verification": "formal-browser.json"
+    },
+    {
+      "id": "selected-reference-submission",
+      "status": "runtime_verified",
+      "cause": "提交器保存参考sha256和material_selection，校验器将扩展元数据与旧精简引用直接比较而误拒绝。",
+      "action": "逐项比较原件身份、顺序及范围，并分别校验哈希与候选身份；错误哈希、候选和组成继续拒绝。",
+      "verification": "21项相关Python测试通过；湿衣02和03真实提交快照已成功。两项旧test_generation错误在修改前基线同样复现，未冒称全套测试通过。"
+    },
+    {
+      "id": "google-image-input-contract",
+      "status": "runtime_verified",
+      "evidence": "官方模型目录与Interactions文档核对后，gemini-nano-banana-2.1的参考输入契约只允许真实图片，最多14张、有序input图片块；不复用OpenArt请求字段。",
+      "action": "附属仓库明确注册Google模型标识、图片数量和Prompt图片编号校验；未知模型仍拒绝。",
+      "verification": "6项输入契约测试通过；本任务多次真实Google提交已在外部发送前保存当前模型、参数、Prompt、有序原件身份及SHA-256。",
+      "sources": [
+        "https://ai.google.dev/gemini-api/docs/image-generation",
+        "https://ai.google.dev/api/generate-content"
+      ]
+    },
+    {
+      "id": "google-native-jpeg",
+      "status": "runtime_verified",
+      "evidence": "初次请求PNG被HTTP400拒绝，服务说明response_format.mime_type仅支持image/jpeg；没有外部job id或产物。",
+      "action": "更新准确方案请求原生JPEG，保留服务字节、不转码；4K/16:9请求实测仍为5504×3072，沿用户已确认的尺寸例外检查。",
+      "verification": "真实JPEG文件头、实际像素与哈希已探测，并逐图实际看图；返回ID缺失时保留null，不用本机CALL编号冒充平台job id。",
+      "incident_receipt": "../../receipts/google-task-20261015-0003-liji-wet-01.json"
+    },
+    {
+      "id": "root-image-route-capacity",
+      "status": "fallback_in_use",
+      "evidence": "OpenArt观察余额65，低于4K根图350或Nano80积分报价；内置工具返回1672×941不足4K；Higgsfield网页／MCP通道明确拒绝并要求Basic或更高套餐。未开新订阅或充值。 该结果不推定OpenAPI账户或模型权限。 用户随后明确更正：Higgsfield OpenAPI没有Nano Banana；不再作为本任务Nano备用。只读估价model_disabled，无该渠道生成调用。 本轮已另行核实Higgsfield OpenAPI提供GPT Image2.5 Flare，marketing-studio/image/flare，支持4K/16:9；9次真实调用均返回3840×2160 PNG，不是Nano通道。",
+      "action": "Google备用沿既有预算执行；Flare先做单张再有界扩展，实际原件逐张看图。县衙与歌娘小院通过，其余结构缺陷未放行。连续空间失败后停止同类批量，改进构图或工程约束再决定下一次调用。平面道具按准确新方案用本地SVG工程制作。",
+      "verification": "Higgsfield OpenAPI累计27次返回原生3840×2160 PNG。本轮新增两次前日常Chrome实读6.44美元，两次完成后刷新实读6.27美元；旧自动充值线3.13美元加0.50缓冲保持，未改设置或充值，逐次实际费用UNKNOWN。本批上限27次已用完。"
+    },
+    {
+      "id": "liji-precise-reference-region",
+      "status": "runtime_verified",
+      "evidence": "整张多视图母版反复使另一侧手或第二人物继承错误包扎，前三张右掌状态均未通过。",
+      "action": "仅上传干净母版正面全身的准确裁切作为参考：原图3840×2160内x192、y0、宽1152、高2160，不缩放；原图SHA、归一化范围、实际上传SHA和字节文件保存。不是新候选，不重置谱系。",
+      "verification": "右掌04及后续额布、首刀一点血状态通过实际看图；重包状态的掌心局部仍出现左右错误则继续判未通过，不将方法试制推广成自动质量结论。"
+    },
+    {
+      "id": "native-audio-input-unavailable",
+      "status": "required_hearing_completed_by_user",
+      "evidence": "Actual 2242604-byte native WAV was read in full and supplied as audio/wav through the audio tool output. Runtime returned: audio content omitted because you do not support audio input.",
+      "original_sha256": "cb9568d517393bbb365105efeb2297763d6cf8b92cba86b6c212f6f0bb361059",
+      "verification": "用户实际试听覆盖本任务全部需要的声音及派生文件，9处原曲位置与5处角色尾音均由用户实际保存；执行者仍未声称实际听音。",
+      "resume_when": "取得准确文件的实际试听结论；若用户明确调整本任务验收标准，再按新标准执行，不能由无回复推定同意。",
+      "latest_evidence": "../../receipts/song-role-audition-task-20261015-0003-stage16.json"
+    },
+    {
+      "id": "stage04-private-method-packaging",
+      "status": "verified",
+      "cause": "The first prepare invocation lacked the auxiliary Python import path. After restoring that path, the publication guard correctly refused 732 task-private method execution/artifact notes.",
+      "scope_checked": {
+        "new_private_execution_notes": 184,
+        "new_private_artifact_notes": 548,
+        "preexisting_changed_protected_objects": 0,
+        "story_source_heads_unchanged": true,
+        "baseline_private_notes": 0
+      },
+      "action": "Use the standard sanitized export restored into a new empty instance, and verify its exact production/current/candidate/submission/comment tables against the original frozen database before preparing the delta. Private method notes remain in task runtime. The publication guard was not weakened.",
+      "verification": "Stage04 delta preflight succeeded against a clone of the formal database; applied=false. Exact publication identity and hashes are in verification.json."
+    },
+    {
+      "id": "semantic-receipt-filter",
+      "status": "runtime_verified",
+      "cause": "选择准确引用时，实体身份解析反复读取并解码全部制作操作回执，包括大量与身份无关的调用快照。",
+      "action": "在SQL中先按真实回执格式筛选身份合并操作，保留原行序与后写生效行为；不改素材或评论。",
+      "verification": "15项相关测试通过。3459条回执的同库只读查询从0.3916秒降到0.0911秒，映射一致；这是局部查询测量，不是整条选择流程提速倍数。"
+    },
+    {
+      "id": "google-three-unknown-images",
+      "status": "unknown",
+      "attempts": [
+        "guard-identity-01",
+        "porter-identity-01",
+        "stage-drum-identity-01"
+      ],
+      "evidence": "守庙差役连接中断；挑柴老汉响应截断；戏鼓响应保留13129723字节但图像base64未完整。都没有可用原件或可查询的平台ID。",
+      "action": "三个旧调用及各自0.25美元规划预留继续保留UNKNOWN。戏鼓另有本轮本地工程；本次恢复后按用户继续执行及既有可重试授权，为守庙差役和挑柴老汉各新增一次Flare候选，均已生成、实际看图并准确选入当前消费者。没有重放或改写旧未知调用。"
+    },
+    {
+      "id": "seed-guard-unknown",
+      "status": "unknown",
+      "request_id": "555f10be-2760-45c6-baf8-c8177fad42b7",
+      "evidence": "守庙差役试声请求在长时间中断后仍未收到响应；仅终止核明归属的本次请求进程，未收到音频或平台Logid。",
+      "action": "旧请求与120秒预留保持UNKNOWN。恢复后新增的guard-voice-02及独立短参考已由用户试听通过，准确文件已绑定当前消费者；不把新作品通过改写为旧请求成功。",
+      "receipt": "../../receipts/seed-task-20261015-0003-guard-voice-01.json"
+    },
+    {
+      "id": "seed-local-submit-contention",
+      "status": "recovered_before_external_dispatch",
+      "cause": "首个船夫调用在本机保存提交时遇到SQLite写入锁，当时阿蘅87处引用正在写入。",
+      "verification": "确认该尝试没有CALL、提交回执或外部派发后，串行化本任务写入并沿同一准确ID恢复；船夫只发生一次真实外部请求且已登记。"
+    },
+    {
+      "id": "stage05-empty-recovery",
+      "status": "verified",
+      "action": "标准脱敏导出排除1344项本机方法记录，恢复新空实例后逐表与冻结原库比对，再从恢复库构建增量包。",
+      "verification": "2002条制作当前记录、159个候选、167份提交和三张原评论表完全一致；增量在正式库隔离副本预演通过，applied=false。"
+    },
+    {
+      "id": "stage06-empty-recovery",
+      "status": "verified",
+      "action": "标准完整导出排除1580项本机私有方法记录，新空实例与冻结库逐表比较后构建增量。",
+      "verification": "2060条制作当前记录、188个候选、196份提交和三张原评论表相同；正式库隔离副本预演通过，applied=false。测试库及完整响应副本已清理，最小回执保留。"
+    },
+    {
+      "id": "user-requested-stage07-pause",
+      "status": "resumed",
+      "user_request": "下一个checkpoint请先暂停任务，我要临时退出下当前会话",
+      "resolution": "用户通过run-cfy6gv6t.md重新启动原任务且认证成功，并明确继续直到完成。当前阶段12仅保存可恢复成果，不是再次执行旧暂停指令。",
+      "remaining": "逐项现状以progress.json为准；不重发历史未知请求。"
+    },
+    {
+      "id": "higgsfield-flare-image-input",
+      "status": "runtime_verified",
+      "action": "Scope the contract to marketing-studio/image/flare, image inputs only up to16, numbered attachments and enhance_prompt=false; preserve exact whole originals.",
+      "verification": "Aheng and LiJi wet states plus moon retry used exact image refs; Aheng/LiJi actual native4K passed, moon failed proportion independently. Upload destination and returned public original hash checked; mutated candidate/revision/SHA reject before network.",
+      "evidence_runtime": ".runtime/task-20261015-0003/hf-input-exactness-negative-checks.json",
+      "candidate_commit": "4bb849b3fca331f7d46a8eee299cc7a6c6324aa6"
+    },
+    {
+      "id": "stage10-geometry-and-recovery",
+      "status": "verified",
+      "verification": "M291候选5及三个直接依赖状态已通过实际工程看图并准确选择；开缝第一候选复核未通过，未选用。2179条制作记录、257候选、265提交与三评论表在新空实例和冻结原库逐表相同。隔离增量预演applied=false，恢复副本已清理。",
+      "receipt": "../../publications/task-20261015-0003-stage-10.json"
+    },
+    {
+      "id": "stage11-geometry-and-recovery",
+      "status": "verified",
+      "verification": "18项本地工程和领粮人群候选4通过，137项图像／工程与10项已听声音的2988处准确引用回读通过。2203条制作记录、278候选、286提交及三张评论表在新空实例和冻结原库逐表相同。隔离增量预演applied=false；恢复副本已清理。3项无原件、38项未听审及3项环境派生保持开放。",
+      "receipt": "verification.json"
+    },
+    {
+      "id": "stage12-complete-originals-and-recovery",
+      "status": "verified",
+      "verification": "191项都有本轮原件；139项图像／工程与10项声音的3002处已选输入通过回读。2209条制作记录、281候选、289份提交与三张评论表在新空实例和冻结原库逐表相同。隔离增量预演applied=false；恢复副本已清理。42项声音验收及最终发布仍开放。",
+      "receipt": "verification.json"
+    },
+    {
+      "id": "stage13-voices-scenes-and-recovery",
+      "status": "verified",
+      "verification": "34项音色和14项环境声音完成准确用户试听及用途检查；409处音色、38处环境模型输入和5处河水剪辑输入已绑定。499份文件的完整导出恢复通过，7张关键表逐表一致；增量预演applied=false。测试副本已删除并回读。",
+      "receipt": "verification.json"
+    },
+    {
+      "id": "reference-selection-response-scope",
+      "status": "formal_browser_verified",
+      "action": "在选择写入完成后，仅在同一响应内复用只读证据；不跨写入或请求缓存。",
+      "verification": "当前契约17项测试通过；旧套件3失败10错误与未改基线完全一致。Chrome候选切换及比较弹窗复验通过；正式服务已发布并复验。",
+      "receipt": "system-selection-check13.json",
+      "formal_verification": "formal-browser.json"
+    },
+    {
+      "id": "stage14-distance-and-melody-basis",
+      "status": "verified_and_user_heard",
+      "action": "按用户定位的完整唱句制作12.58秒远声短件；8处镜头方案取消未经实测的固定音高拍速断言，歌词、动作、时段和已选附件保留。",
+      "verification": "完整导出恢复500份文件，7张关键表与冻结源一致，增量预检applied=false；新声音没有推定听审通过。",
+      "receipt": "verification.json",
+      "followup": "用户直接回复两份比较“没问题”；祭唱远声与近声准确引用已保存，见song-use-task-20261015-0003-ritual15.json。"
+    },
+    {
+      "id": "stage15-role-recordings",
+      "status": "files_saved_and_user_heard",
+      "action": "15次Seed实际调用全部返回；2份原速教唱合件逐帧等于完整源件拼接。4首当前完整原曲方案恢复，真实角色调用和快照保留。",
+      "verification": "459份制作文件哈希、3214处当前输入与27处歌曲待选文件预算通过；完整导出已更新，新增数据未做新空实例恢复或正式发布。",
+      "receipt": "production-save15.json",
+      "followup": "用户本轮回复“验收通过”，准确17件按stage15试听页清单登记，见song-role-audition-task-20261015-0003-stage16.json。"
+    },
+    {
+      "id": "stage16-heard-song-uses",
+      "status": "completed_with_user_tail_positions",
+      "verification": "18处新歌曲输入完成实际完整文件引用及时间安排，加既有祭唱共19/27处；《四邻安》用途完成，189/191项完成素材与用途检查。459份文件、3232处输入及旧评论、锁定剧本保全检查通过。",
+      "remaining": "正式本机交付、页面与最终恢复验收及清理。",
+      "receipt": "production-save16.json",
+      "followup": "5处尾音已实际保存，剩余8处用途全部完成，见song-uses-task-20261015-0003-stage17.json。"
+    },
+    {
+      "id": "stage17-complete-material-uses",
+      "status": "formally_published_and_verified",
+      "verification": "191/191项完成制作与用途检查；3240处准确模型输入，27/27处歌曲用途，5处用户实际尾音位置。无新增模型调用或声音文件。",
+      "remaining": "仅TUI退出后的受管工作区退役；未知调用继续对账。",
+      "receipt": "../../receipts/song-state-task-20261015-0003-stage17.json",
+      "formal_verification": "formal-verification.json"
+    },
+    {
+      "id": "unpublished-large-git-blobs",
+      "status": "resolved",
+      "action": "User approved LFS conversion of the 21 unpublished task commits; preserved old refs and all logical file bytes, restored pre-integration main, then used managed integration and ordinary push.",
+      "receipt": "../../receipts/git-lfs-repair-task-20261015-0003.json"
+    }
+  ],
+  "resume_requirement": "本轮素材、正式发布及验收已完成；当前TUI退出后受管退役双仓，5笔未知调用只沿原回执对账，不盲目重试。",
+  "browser_verification": {
+    "status": "formal_chrome_verified",
+    "browser": "daily Chrome default profile",
+    "formal_publication_verified": true,
+    "audio_quality_verified_by_playback": false,
+    "latest_evidence": "production/reports/task-20261015-0003/formal-browser.json"
+  },
+  "unknown_replacement_proposal": {
+    "status": "executed_as_three_bounded_new_candidates",
+    "authorization_receipt": "../../receipts/replacement-candidates-task-20261015-0003-stage12.json",
+    "new_calls_completed": 3,
+    "old_unknown_records_and_reservations_retained": true
+  },
+  "current_checkpoint": {
+    "stage": 17,
+    "status_counts": {
+      "executor_checked": 139,
+      "user_audition_passed": 52
+    },
+    "google_dispatch_cap": 116,
+    "google_remaining_dispatch_slots": 0,
+    "formal_publication": true,
+    "paused": false,
+    "status": "formally_published_and_verified",
+    "runtime_cleanup_complete": true,
+    "managed_worktrees_pending_tui_exit": true
+  },
+  "audio_verification_decision": {
+    "status": "all_required_hearing_and_tail_positions_complete",
+    "current_rule": "实际试听；模型分析和技术检查仅辅助",
+    "completed": "34项音色、14项环境声及所需短件、4首完整原曲、16个角色唱段、2份原速合件均已获对应实际试听反馈；9处原曲乐句已定位，27/27处歌曲准确输入已保存。",
+    "remaining": "无声音制作、定位或正式验收缺口；保留未知调用对账及TUI退出后的受管工作区退役。",
+    "role_files_planned": 16,
+    "role_files_generated": 16,
+    "role_files_heard": 16,
+    "assemblies_heard": 2,
+    "selected_song_uses": 27,
+    "remaining_song_uses": 0,
+    "tail_positions_required": 5,
+    "tail_positions_saved": 5
+  },
+  "runtime_evidence_archive": "Primary project .runtime/task-evidence/task-20261015-0003/"
+}

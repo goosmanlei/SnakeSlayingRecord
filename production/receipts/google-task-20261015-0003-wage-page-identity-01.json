@@ -1,0 +1,98 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-wage-page-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-wage-page-identity-01",
+    "submission_sha256": "bc1ff468547df1a72d6890e66b4f91883ea25b9742a1b28796fdde957c347212",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-wage-page-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "77e3f1a538190c3a213c0369c0e459d98d445a277438aef8b3d7ae7e1a1dba57.jpg",
+    "sha256": "77e3f1a538190c3a213c0369c0e459d98d445a277438aef8b3d7ae7e1a1dba57",
+    "bytes": 6130072,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-wage-page-identity-01",
+    "candidate_id": "candidate-4ff9fa7ff519a8c0d29c2a779b5501e3033d9f69831559d7eed616f34597e19f",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google remaining balance at the recorded budget checkpoint; no recharge",
+    "reported_balance_usd": 3.86,
+    "balance_checkpoint_dispatches": 106,
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "实际看原件并对照母版：正面四孔、背面三孔，与同一页左侧三个旧孔的要求不一致；还直接写入“两升”，未保持交字层的空白。圆缺口、一个大圈和背透影虽可辨，仍不能通过同一纸张的准确结构。",
+    "decision": "不选下游。回干净歌本母版有限返修，明确正背都是三孔，移除所有文字，只留圈外与圈内空白版位。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-task-20261015-0003-songbook-identity-02",
+        "revision_id": "e741030b764d7d41431a96629647f5edf14f1016564216872f69a72f9bc45081"
+      }
+    ]
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  },
+  "usage": {
+    "total_tokens": 7737,
+    "total_input_tokens": 1544,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 424
+      },
+      {
+        "modality": "image",
+        "tokens": 1120
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4823,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1370
+  },
+  "actual_request_body_sha256": "75b4a6832834c63348ddb534ce008dfa17c8b281842256fd1507668877eb8800",
+  "submitted_inputs": [
+    {
+      "image_number": 1,
+      "submitted_sha256": "d6f71f27ee9d2e86bbdb21c8d52a426a3ce6e1417d87e3b91c161b1fcb87236c",
+      "original_sha256": "d6f71f27ee9d2e86bbdb21c8d52a426a3ce6e1417d87e3b91c161b1fcb87236c",
+      "crop": null
+    }
+  ]
+}

@@ -1,0 +1,2468 @@
+{
+  "format": "task-audio-inspections-v1",
+  "task_id": "task-20261015-0003",
+  "checked_at": "2026-10-16T16:11:40.144632+00:00",
+  "executor_actual_listening": false,
+  "entries": {
+    "liji-voice-01": {
+      "candidate": {
+        "call_id": "task-20261015-0003-liji-voice-01",
+        "candidate_id": "candidate-443d3f8c6684e1f942228ce7e0bae6f3e7421e7327a9008bedc65a36f35b86cc",
+        "status": "completed",
+        "already_applied": false
+      },
+      "original": {
+        "file": "export/assets/9b1478036677019cfa12f60fea4caeceb04c2be756235abcbb25befdb448d8f8.wav",
+        "sha256": "9b1478036677019cfa12f60fea4caeceb04c2be756235abcbb25befdb448d8f8",
+        "duration": 14.68
+      },
+      "inspection": {
+        "status": "user_revision_requested",
+        "actual_listening": false,
+        "observation": "用户实际试听候选1后要求修改：李寄的声音要更加干练，语速快一点。保留原件和该条意见，未认可为镜头参考。",
+        "technical_check": {
+          "codec": "pcm_s16le",
+          "sample_rate": 48000,
+          "duration_seconds": 14.68,
+          "sha256": "9b1478036677019cfa12f60fea4caeceb04c2be756235abcbb25befdb448d8f8"
+        },
+        "remaining": "完整试听两句、稳定身份、发音及尾部；通过后另存完整短参考并检查。",
+        "actual_listening_by_user": true,
+        "actual_listening_by_executor": false,
+        "decision": "制作候选2并重新试听；旧候选暂不选入下游。",
+        "user_reply_question_id": "call_09bf141fd48543678949f6960a9f00b4"
+      }
+    },
+    "aheng-voice-01": {
+      "candidate": {
+        "call_id": "task-20261015-0003-aheng-voice-01",
+        "candidate_id": "candidate-bd480f0badc3170177b375b827603f1abf5bf19da865a98a91f9ce6ef72f5179",
+        "status": "completed",
+        "already_applied": false
+      },
+      "original": {
+        "file": "export/assets/cb9568d517393bbb365105efeb2297763d6cf8b92cba86b6c212f6f0bb361059.wav",
+        "sha256": "cb9568d517393bbb365105efeb2297763d6cf8b92cba86b6c212f6f0bb361059",
+        "duration": 11.68
+      },
+      "inspection": {
+        "status": "user_audition_passed",
+        "actual_listening_by_executor": false,
+        "actual_listening_by_user": "full original and complete short reference",
+        "observation": "完整11.68秒原件用户确认清晰稳定、适合阿蘅；1.96秒完整短句用户确认小句完整、头尾自然。二者均为48kHz PCM，短参考由准确母版直接按帧拷贝，完整母版保留。",
+        "decision": "选择voice-reference完整短文件供当前87处参考输入使用；不修改历史提交或自动选择未来候选。",
+        "selected_component_id": "voice-reference"
+      }
+    },
+    "lidan-voice-01": {
+      "candidate": {
+        "call_id": "task-20261015-0003-lidan-voice-01",
+        "candidate_id": "candidate-55bb19ea60d6600513856023dd83127999365bf93ed6ddcf68f8f41ff152a24b",
+        "status": "completed",
+        "already_applied": false
+      },
+      "original": {
+        "file": "export/assets/469712661f369d64681a246b5ccdf26f41ff969dc6114b16a76202e3e8c79b6c.wav",
+        "sha256": "469712661f369d64681a246b5ccdf26f41ff969dc6114b16a76202e3e8c79b6c",
+        "duration": 12.18
+      },
+      "inspection": {
+        "status": "user_revision_requested",
+        "actual_listening": false,
+        "observation": "用户实际试听候选1后要求修改：李诞声音要更沧桑一些。保留原件和该条意见，未认可为镜头参考。",
+        "technical_check": {
+          "codec": "pcm_s16le",
+          "sample_rate": 48000,
+          "duration_seconds": 12.18,
+          "sha256": "469712661f369d64681a246b5ccdf26f41ff969dc6114b16a76202e3e8c79b6c"
+        },
+        "remaining": "完整试听两句、稳定身份、发音及尾部；通过后另存完整短参考并检查。",
+        "actual_listening_by_user": true,
+        "actual_listening_by_executor": false,
+        "decision": "制作候选2并重新试听；旧候选暂不选入下游。",
+        "user_reply_question_id": "call_09bf141fd48543678949f6960a9f00b4"
+      }
+    },
+    "liji-mother-voice-01": {
+      "candidate": {
+        "call_id": "task-20261015-0003-liji-mother-voice-01",
+        "candidate_id": "candidate-215154e0751b244d5c98ac686fce746cd74b7fcd632d37743cbc5debb4447d98",
+        "status": "completed",
+        "already_applied": false
+      },
+      "original": {
+        "file": "export/assets/29d0652a5596c90ebaef6dbd71b67a658f8453a517136791e47f20310b18c913.wav",
+        "sha256": "29d0652a5596c90ebaef6dbd71b67a658f8453a517136791e47f20310b18c913",
+        "duration": 10.1
+      },
+      "inspection": {
+        "status": "user_revision_requested",
+        "actual_listening": false,
+        "observation": "用户实际试听候选1后要求修改：李寄母亲更干练一些。保留原件和该条意见，未认可为镜头参考。",
+        "technical_check": {
+          "codec": "pcm_s16le",
+          "sample_rate": 48000,
+          "duration_seconds": 10.1,
+          "sha256": "29d0652a5596c90ebaef6dbd71b67a658f8453a517136791e47f20310b18c913"
+        },
+        "remaining": "完整试听两句、稳定身份、发音及尾部；通过后另存完整短参考并检查。",
+        "actual_listening_by_user": true,
+        "actual_listening_by_executor": false,
+        "decision": "制作候选2并重新试听；旧候选暂不选入下游。",
+        "user_reply_question_id": "call_09bf141fd48543678949f6960a9f00b4"
+      }
+    },
+    "aheng-mother-voice-01": {
+      "candidate": {
+        "call_id": "task-20261015-0003-aheng-mother-voice-01",
+        "candidate_id": "candidate-1ffda2375d638a18e2aa36f5ca81b37ea7d7b69ee6e1fffb6c5ac8d23caf70bf",
+        "status": "completed",
+        "already_applied": false
+      },
+      "original": {
+        "file": "export/assets/943bc60e36ef741f2ae050f4a531d21b035fff2f47655da43add464d2ee9d807.wav",
+        "sha256": "943bc60e36ef741f2ae050f4a531d21b035fff2f47655da43add464d2ee9d807",
+        "duration": 11.5
+      },
+      "inspection": {
+        "status": "user_revision_requested",
+        "actual_listening": false,
+        "observation": "用户实际试听候选1后要求修改：阿蘅母亲要体现的更加虚弱一些。保留原件和该条意见，未认可为镜头参考。",
+        "technical_check": {
+          "codec": "pcm_s16le",
+          "sample_rate": 48000,
+          "duration_seconds": 11.5,
+          "sha256": "943bc60e36ef741f2ae050f4a531d21b035fff2f47655da43add464d2ee9d807"
+        },
+        "remaining": "完整试听两句、稳定身份、发音及尾部；通过后另存完整短参考并检查。",
+        "actual_listening_by_user": true,
+        "actual_listening_by_executor": false,
+        "decision": "制作候选2并重新试听；旧候选暂不选入下游。",
+        "user_reply_question_id": "call_09bf141fd48543678949f6960a9f00b4"
+      }
+    },
+    "lixiao-voice-01": {
+      "candidate": {
+        "call_id": "task-20261015-0003-lixiao-voice-01",
+        "candidate_id": "candidate-2b9ff037894bab887bef0fd71fa3d8d286616afcca21167bff0a5e41cc66afd9",
+        "status": "completed",
+        "already_applied": false
+      },
+      "original": {
+        "file": "export/assets/91818acf153790ba7893f6d4ab4f0a2e0de0e9815e066c8b9fce5c6fd96f0c45.wav",
+        "sha256": "91818acf153790ba7893f6d4ab4f0a2e0de0e9815e066c8b9fce5c6fd96f0c45",
+        "duration": 11.5
+      },
+      "inspection": {
+        "status": "hearing_unverified",
+        "actual_listening": false,
+        "observation": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。字幕只用于辅助核词，不替代声音判断。",
+        "technical_check": {
+          "codec": "pcm_s16le",
+          "sample_rate": 48000,
+          "duration_seconds": 11.5,
+          "sha256": "91818acf153790ba7893f6d4ab4f0a2e0de0e9815e066c8b9fce5c6fd96f0c45"
+        },
+        "remaining": "完整试听两句、稳定身份、发音及尾部；通过后另存完整短参考并检查。"
+      }
+    },
+    "tao-voice-01": {
+      "candidate": {
+        "call_id": "task-20261015-0003-tao-voice-01",
+        "candidate_id": "candidate-466fb521ec4cf4b1d8e3ae46d37900b758e953a70577e64fc59769c6d82f9ad2",
+        "status": "completed",
+        "already_applied": false
+      },
+      "original": {
+        "file": "export/assets/10c62c051bbb66b702df3d084ae0dedabc86a9d1e82a363b354f8f4efdc52761.wav",
+        "sha256": "10c62c051bbb66b702df3d084ae0dedabc86a9d1e82a363b354f8f4efdc52761",
+        "duration": 13.1
+      },
+      "inspection": {
+        "status": "hearing_unverified",
+        "actual_listening": false,
+        "observation": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。字幕只用于辅助核词，不替代声音判断。",
+        "technical_check": {
+          "codec": "pcm_s16le",
+          "sample_rate": 48000,
+          "duration_seconds": 13.1,
+          "sha256": "10c62c051bbb66b702df3d084ae0dedabc86a9d1e82a363b354f8f4efdc52761"
+        },
+        "remaining": "完整试听两句、稳定身份、发音及尾部；通过后另存完整短参考并检查。"
+      }
+    },
+    "sunliu-voice-01": {
+      "candidate": {
+        "call_id": "task-20261015-0003-sunliu-voice-01",
+        "candidate_id": "candidate-40d14ec9099bbdf6a6d7751cfff6368ac86e781c7fcdd20dcc4185ba67bcb57d",
+        "status": "completed",
+        "already_applied": false
+      },
+      "original": {
+        "file": "export/assets/a4f3e14dbdbb05dcc6cc2491f52539074e24f1510137dc66440354116907061d.wav",
+        "sha256": "a4f3e14dbdbb05dcc6cc2491f52539074e24f1510137dc66440354116907061d",
+        "duration": 10.8
+      },
+      "inspection": {
+        "status": "hearing_unverified",
+        "actual_listening": false,
+        "observation": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。字幕只用于辅助核词，不替代声音判断。",
+        "technical_check": {
+          "codec": "pcm_s16le",
+          "sample_rate": 48000,
+          "duration_seconds": 10.8,
+          "sha256": "a4f3e14dbdbb05dcc6cc2491f52539074e24f1510137dc66440354116907061d"
+        },
+        "remaining": "完整试听两句、稳定身份、发音及尾部；通过后另存完整短参考并检查。"
+      }
+    },
+    "zhou-voice-01": {
+      "candidate": {
+        "call_id": "task-20261015-0003-zhou-voice-01",
+        "candidate_id": "candidate-683f77f766c75e3930e67b16078e6a2eb0faeacf4be21adc65edbe91e9a54829",
+        "status": "completed",
+        "already_applied": false
+      },
+      "original": {
+        "file": "export/assets/a0038869ea2d6e97c6dfe9e8fb2651fa62f56aaa5c4bf3dc65fa6abeae2cebce.wav",
+        "sha256": "a0038869ea2d6e97c6dfe9e8fb2651fa62f56aaa5c4bf3dc65fa6abeae2cebce",
+        "duration": 10.1
+      },
+      "inspection": {
+        "status": "hearing_unverified",
+        "actual_listening": false,
+        "observation": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。字幕只用于辅助核词，不替代声音判断。",
+        "technical_check": {
+          "codec": "pcm_s16le",
+          "sample_rate": 48000,
+          "duration_seconds": 10.1,
+          "sha256": "a0038869ea2d6e97c6dfe9e8fb2651fa62f56aaa5c4bf3dc65fa6abeae2cebce"
+        },
+        "remaining": "完整试听两句、稳定身份、发音及尾部；通过后另存完整短参考并检查。"
+      }
+    },
+    "boatman-voice-01": {
+      "candidate": {
+        "call_id": "task-20261015-0003-boatman-voice-01",
+        "candidate_id": "candidate-051812e075ccb8791a1d41d4fecc958d3cb4656b114f20ba322b13e22bd96841",
+        "status": "completed",
+        "already_applied": false
+      },
+      "original": {
+        "file": "export/assets/6e99e4d1692f9b657adb315e9ddd95ed2c5df7a18db739d0d9ddd9fe26012e6b.wav",
+        "sha256": "6e99e4d1692f9b657adb315e9ddd95ed2c5df7a18db739d0d9ddd9fe26012e6b",
+        "duration": 11.1
+      },
+      "inspection": {
+        "status": "hearing_unverified",
+        "actual_listening": false,
+        "observation": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。字幕只用于辅助核词，不替代声音判断。",
+        "technical_check": {
+          "codec": "pcm_s16le",
+          "sample_rate": 48000,
+          "duration_seconds": 11.1,
+          "sha256": "6e99e4d1692f9b657adb315e9ddd95ed2c5df7a18db739d0d9ddd9fe26012e6b"
+        },
+        "remaining": "完整试听两句、稳定身份、发音及尾部；通过后另存完整短参考并检查。"
+      }
+    },
+    "cheng-voice-01": {
+      "candidate": {
+        "call_id": "task-20261015-0003-cheng-voice-01",
+        "candidate_id": "candidate-4cafaddf5e291d8f6ba537edf8e9c0fce2922d4f6b595ee5be1b4dd20726096e",
+        "status": "completed",
+        "already_applied": false
+      },
+      "original": {
+        "file": "export/assets/d276c43c35cbe26fe776c285d0a748d99a4ba5b10309b9b54cf939458f23ca22.wav",
+        "sha256": "d276c43c35cbe26fe776c285d0a748d99a4ba5b10309b9b54cf939458f23ca22",
+        "duration": 10.6
+      },
+      "inspection": {
+        "status": "hearing_unverified",
+        "actual_listening": false,
+        "observation": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。字幕只用于辅助核词，不替代声音判断。",
+        "technical_check": {
+          "codec": "pcm_s16le",
+          "sample_rate": 48000,
+          "duration_seconds": 10.6,
+          "sha256": "d276c43c35cbe26fe776c285d0a748d99a4ba5b10309b9b54cf939458f23ca22"
+        },
+        "remaining": "完整试听两句、稳定身份、发音及尾部；通过后另存完整短参考并检查。"
+      }
+    },
+    "county-deputy-voice-01": {
+      "candidate": {
+        "call_id": "task-20261015-0003-county-deputy-voice-01",
+        "candidate_id": "candidate-9b1e96cf67584b07b6dfbf9269ba4d92cf97110c143e1c108b1c1e31c91d6c3d",
+        "status": "completed",
+        "already_applied": false
+      },
+      "original": {
+        "file": "export/assets/c85f3018e9a02932fbef5c4fdc5ced28c8a00fdd517d4c47360847ec9710d541.wav",
+        "sha256": "c85f3018e9a02932fbef5c4fdc5ced28c8a00fdd517d4c47360847ec9710d541",
+        "duration": 12.18
+      },
+      "inspection": {
+        "status": "hearing_unverified",
+        "actual_listening": false,
+        "observation": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。字幕只用于辅助核词，不替代声音判断。",
+        "technical_check": {
+          "codec": "pcm_s16le",
+          "sample_rate": 48000,
+          "duration_seconds": 12.18,
+          "sha256": "c85f3018e9a02932fbef5c4fdc5ced28c8a00fdd517d4c47360847ec9710d541"
+        },
+        "remaining": "完整试听两句、稳定身份、发音及尾部；通过后另存完整短参考并检查。"
+      }
+    },
+    "festival-crowd-voice-01": {
+      "candidate": {
+        "call_id": "task-20261015-0003-festival-crowd-voice-01",
+        "candidate_id": "candidate-6219ef04ae51562ea0061c54b0e906785833c563a3f0ff5b4f013a68254c98ae",
+        "status": "completed",
+        "already_applied": false
+      },
+      "original": {
+        "file": "export/assets/9ecedeb345d2b11debf618a31fe7d1a9aa1bbbf0ffcd5a9fec1a31672ba12af4.wav",
+        "sha256": "9ecedeb345d2b11debf618a31fe7d1a9aa1bbbf0ffcd5a9fec1a31672ba12af4",
+        "duration": 11.1
+      },
+      "inspection": {
+        "status": "hearing_unverified",
+        "actual_listening": false,
+        "observation": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。字幕只用于辅助核词，不替代声音判断。",
+        "technical_check": {
+          "codec": "pcm_s16le",
+          "sample_rate": 48000,
+          "duration_seconds": 11.1,
+          "sha256": "9ecedeb345d2b11debf618a31fe7d1a9aa1bbbf0ffcd5a9fec1a31672ba12af4"
+        },
+        "remaining": "完整试听两句、稳定身份、发音及尾部；通过后另存完整短参考并检查。"
+      }
+    },
+    "grain-manager-voice-01": {
+      "candidate": {
+        "call_id": "task-20261015-0003-grain-manager-voice-01",
+        "candidate_id": "candidate-bfbe4ecfe4ba93fc4ec92afba444912dfee2ce65103c5894e01fdeece0239666",
+        "status": "completed",
+        "already_applied": false
+      },
+      "original": {
+        "file": "export/assets/8cb04ca372d171625e24d94f4d20169f2c2811f78be00d40178e8ab50c58e003.wav",
+        "sha256": "8cb04ca372d171625e24d94f4d20169f2c2811f78be00d40178e8ab50c58e003",
+        "duration": 10.8
+      },
+      "inspection": {
+        "status": "hearing_unverified",
+        "actual_listening": false,
+        "observation": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。字幕只用于辅助核词，不替代声音判断。",
+        "technical_check": {
+          "codec": "pcm_s16le",
+          "sample_rate": 48000,
+          "duration_seconds": 10.8,
+          "sha256": "8cb04ca372d171625e24d94f4d20169f2c2811f78be00d40178e8ab50c58e003"
+        },
+        "remaining": "完整试听两句、稳定身份、发音及尾部；通过后另存完整短参考并检查。"
+      }
+    },
+    "grain-queue-voice-01": {
+      "candidate": {
+        "call_id": "task-20261015-0003-grain-queue-voice-01",
+        "candidate_id": "candidate-646e9de2f7d7e50c0fca301976532b5674b4a3294d2b73382fbef9722b06316a",
+        "status": "completed",
+        "already_applied": false
+      },
+      "original": {
+        "file": "export/assets/ec7edf7659d42b2ddddfd1c5af308cd89409f04444c4b17ffb38dc5de91fc690.wav",
+        "sha256": "ec7edf7659d42b2ddddfd1c5af308cd89409f04444c4b17ffb38dc5de91fc690",
+        "duration": 9.38
+      },
+      "inspection": {
+        "status": "hearing_unverified",
+        "actual_listening": false,
+        "observation": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。技术探测和字幕不替代声音判断。",
+        "technical_check": {
+          "codec": "pcm_s16le",
+          "sample_rate": 48000,
+          "duration_seconds": 9.38,
+          "sha256": "ec7edf7659d42b2ddddfd1c5af308cd89409f04444c4b17ffb38dc5de91fc690"
+        },
+        "remaining": "完整试听两句、稳定身份、发音及尾部；多人组须逐段核身份与分隔。通过后另存完整短参考并检查。"
+      }
+    },
+    "liang-clerk-voice-01": {
+      "candidate": {
+        "call_id": "task-20261015-0003-liang-clerk-voice-01",
+        "candidate_id": "candidate-9db13adaca838e16e3ad632db1dbb7afa8c2d88ff91d98c884eb1b90bd7d7612",
+        "status": "completed",
+        "already_applied": false
+      },
+      "original": {
+        "file": "export/assets/6a05a46ae7d9f115ad66dc6dd59408d475bb30b12efb0289434e7b383d09864d.wav",
+        "sha256": "6a05a46ae7d9f115ad66dc6dd59408d475bb30b12efb0289434e7b383d09864d",
+        "duration": 10.6
+      },
+      "inspection": {
+        "status": "hearing_unverified",
+        "actual_listening": false,
+        "observation": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。技术探测和字幕不替代声音判断。",
+        "technical_check": {
+          "codec": "pcm_s16le",
+          "sample_rate": 48000,
+          "duration_seconds": 10.6,
+          "sha256": "6a05a46ae7d9f115ad66dc6dd59408d475bb30b12efb0289434e7b383d09864d"
+        },
+        "remaining": "完整试听两句、稳定身份、发音及尾部；多人组须逐段核身份与分隔。通过后另存完整短参考并检查。"
+      }
+    },
+    "listeners-voice-01": {
+      "candidate": {
+        "call_id": "task-20261015-0003-listeners-voice-01",
+        "candidate_id": "candidate-0025cdd86427fa8e462c10d0ff099a58bf32307865d3edbe1c70c043aab015bb",
+        "status": "completed",
+        "already_applied": false
+      },
+      "original": {
+        "file": "export/assets/2655092b93978de22590bf79b75fcff25c0dd0d7d92bb361e76c75a769cfe5d6.wav",
+        "sha256": "2655092b93978de22590bf79b75fcff25c0dd0d7d92bb361e76c75a769cfe5d6",
+        "duration": 11.6
+      },
+      "inspection": {
+        "status": "hearing_unverified",
+        "actual_listening": false,
+        "observation": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。技术探测和字幕不替代声音判断。",
+        "technical_check": {
+          "codec": "pcm_s16le",
+          "sample_rate": 48000,
+          "duration_seconds": 11.6,
+          "sha256": "2655092b93978de22590bf79b75fcff25c0dd0d7d92bb361e76c75a769cfe5d6"
+        },
+        "remaining": "完整试听两句、稳定身份、发音及尾部；多人组须逐段核身份与分隔。通过后另存完整短参考并检查。"
+      }
+    },
+    "neighbor-woman-voice-01": {
+      "candidate": {
+        "call_id": "task-20261015-0003-neighbor-woman-voice-01",
+        "candidate_id": "candidate-dfc338546044e9f437f2f2ef869cd30445dbb01715605e739ddb932172f60029",
+        "status": "completed",
+        "already_applied": false
+      },
+      "original": {
+        "file": "export/assets/552db8920e3d4e7c93c3323ad8920d3f3470e55cbb52dfc8014b19ae492d53a4.wav",
+        "sha256": "552db8920e3d4e7c93c3323ad8920d3f3470e55cbb52dfc8014b19ae492d53a4",
+        "duration": 11.3
+      },
+      "inspection": {
+        "status": "hearing_unverified",
+        "actual_listening": false,
+        "observation": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。技术探测和字幕不替代声音判断。",
+        "technical_check": {
+          "codec": "pcm_s16le",
+          "sample_rate": 48000,
+          "duration_seconds": 11.3,
+          "sha256": "552db8920e3d4e7c93c3323ad8920d3f3470e55cbb52dfc8014b19ae492d53a4"
+        },
+        "remaining": "完整试听两句、稳定身份、发音及尾部；多人组须逐段核身份与分隔。通过后另存完整短参考并检查。"
+      }
+    },
+    "old-woman-voice-01": {
+      "candidate": {
+        "call_id": "task-20261015-0003-old-woman-voice-01",
+        "candidate_id": "candidate-2509246bab918d66246fe7cb091e9509a5fbafb49eeaa0d482b716c43d185b37",
+        "status": "completed",
+        "already_applied": false
+      },
+      "original": {
+        "file": "export/assets/cffe1e13a0cc66b1cd9b9b27849e58a4d8a179bddc41afd41ce9cdbb56f01103.wav",
+        "sha256": "cffe1e13a0cc66b1cd9b9b27849e58a4d8a179bddc41afd41ce9cdbb56f01103",
+        "duration": 11.88
+      },
+      "inspection": {
+        "status": "hearing_unverified",
+        "actual_listening": false,
+        "observation": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。技术探测和字幕不替代声音判断。",
+        "technical_check": {
+          "codec": "pcm_s16le",
+          "sample_rate": 48000,
+          "duration_seconds": 11.88,
+          "sha256": "cffe1e13a0cc66b1cd9b9b27849e58a4d8a179bddc41afd41ce9cdbb56f01103"
+        },
+        "remaining": "完整试听两句、稳定身份、发音及尾部；多人组须逐段核身份与分隔。通过后另存完整短参考并检查。"
+      }
+    },
+    "passer-voice-01": {
+      "candidate": {
+        "call_id": "task-20261015-0003-passer-voice-01",
+        "candidate_id": "candidate-6c4e4805fce2a4c2ecd7554cc99d48f4d9d5b3b5f17a7773e43ab05b5d8cef7c",
+        "status": "completed",
+        "already_applied": false
+      },
+      "original": {
+        "file": "export/assets/7eeefb9ded074023b859e15ec43ecbf861bb428a4b8559624578b74ade2f1875.wav",
+        "sha256": "7eeefb9ded074023b859e15ec43ecbf861bb428a4b8559624578b74ade2f1875",
+        "duration": 9.8
+      },
+      "inspection": {
+        "status": "hearing_unverified",
+        "actual_listening": false,
+        "observation": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。技术探测和字幕不替代声音判断。",
+        "technical_check": {
+          "codec": "pcm_s16le",
+          "sample_rate": 48000,
+          "duration_seconds": 9.8,
+          "sha256": "7eeefb9ded074023b859e15ec43ecbf861bb428a4b8559624578b74ade2f1875"
+        },
+        "remaining": "完整试听两句、稳定身份、发音及尾部；多人组须逐段核身份与分隔。通过后另存完整短参考并检查。"
+      }
+    },
+    "poor-mother-voice-01": {
+      "candidate": {
+        "call_id": "task-20261015-0003-poor-mother-voice-01",
+        "candidate_id": "candidate-6960b59b15e0e7f291bd532e792a3572735409a5f016c81eaeec041df5a3f1b3",
+        "status": "completed",
+        "already_applied": false
+      },
+      "original": {
+        "file": "export/assets/216f5343f69cd69414ef1c2c666f94775edf4724cae41da6e38f57f6b8be772d.wav",
+        "sha256": "216f5343f69cd69414ef1c2c666f94775edf4724cae41da6e38f57f6b8be772d",
+        "duration": 11.1
+      },
+      "inspection": {
+        "status": "hearing_unverified",
+        "actual_listening": false,
+        "observation": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。技术探测和字幕不替代声音判断。",
+        "technical_check": {
+          "codec": "pcm_s16le",
+          "sample_rate": 48000,
+          "duration_seconds": 11.1,
+          "sha256": "216f5343f69cd69414ef1c2c666f94775edf4724cae41da6e38f57f6b8be772d"
+        },
+        "remaining": "完整试听两句、稳定身份、发音及尾部；多人组须逐段核身份与分隔。通过后另存完整短参考并检查。"
+      }
+    },
+    "porter-voice-01": {
+      "candidate": {
+        "call_id": "task-20261015-0003-porter-voice-01",
+        "candidate_id": "candidate-2e8444a388a0640a6ad38b63cc74d6e242d59897a6cf477a61753804be90a7c6",
+        "status": "completed",
+        "already_applied": false
+      },
+      "original": {
+        "file": "export/assets/8d3a625bbb8358fcae96d1a7a0e243634b7eed63d930c96d16e6e187621683b0.wav",
+        "sha256": "8d3a625bbb8358fcae96d1a7a0e243634b7eed63d930c96d16e6e187621683b0",
+        "duration": 10.88
+      },
+      "inspection": {
+        "status": "hearing_unverified",
+        "actual_listening": false,
+        "observation": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。技术探测和字幕不替代声音判断。",
+        "technical_check": {
+          "codec": "pcm_s16le",
+          "sample_rate": 48000,
+          "duration_seconds": 10.88,
+          "sha256": "8d3a625bbb8358fcae96d1a7a0e243634b7eed63d930c96d16e6e187621683b0"
+        },
+        "remaining": "完整试听两句、稳定身份、发音及尾部；多人组须逐段核身份与分隔。通过后另存完整短参考并检查。"
+      }
+    },
+    "priest-voice-01": {
+      "candidate": {
+        "call_id": "task-20261015-0003-priest-voice-01",
+        "candidate_id": "candidate-17bb16caf543ef4a65242ab9ee64da6fe9369eda4ceb0caca63ef0a69ad0e874",
+        "status": "completed",
+        "already_applied": false
+      },
+      "original": {
+        "file": "export/assets/0171ebd5015d83f182fb40075d4c608958e2454b22a957066241ebd1a7c51821.wav",
+        "sha256": "0171ebd5015d83f182fb40075d4c608958e2454b22a957066241ebd1a7c51821",
+        "duration": 11.88
+      },
+      "inspection": {
+        "status": "hearing_unverified",
+        "actual_listening": false,
+        "observation": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。技术探测和字幕不替代声音判断。",
+        "technical_check": {
+          "codec": "pcm_s16le",
+          "sample_rate": 48000,
+          "duration_seconds": 11.88,
+          "sha256": "0171ebd5015d83f182fb40075d4c608958e2454b22a957066241ebd1a7c51821"
+        },
+        "remaining": "完整试听两句、稳定身份、发音及尾部；多人组须逐段核身份与分隔。通过后另存完整短参考并检查。"
+      }
+    },
+    "song-teacher-voice-01": {
+      "candidate": {
+        "call_id": "task-20261015-0003-song-teacher-voice-01",
+        "candidate_id": "candidate-412f1daefc8d7bad2e34e3f8cce53e9c7f55a9228d4aaa33a0cd66c508fcde8f",
+        "status": "completed",
+        "already_applied": false
+      },
+      "original": {
+        "file": "export/assets/4d5fffccccbb9c62c36029d511d535be2b8e195164a92e09ca3561725b66440f.wav",
+        "sha256": "4d5fffccccbb9c62c36029d511d535be2b8e195164a92e09ca3561725b66440f",
+        "duration": 11.8
+      },
+      "inspection": {
+        "status": "hearing_unverified",
+        "actual_listening": false,
+        "observation": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。技术探测和字幕不替代声音判断。",
+        "technical_check": {
+          "codec": "pcm_s16le",
+          "sample_rate": 48000,
+          "duration_seconds": 11.8,
+          "sha256": "4d5fffccccbb9c62c36029d511d535be2b8e195164a92e09ca3561725b66440f"
+        },
+        "remaining": "完整试听两句、稳定身份、发音及尾部；多人组须逐段核身份与分隔。通过后另存完整短参考并检查。"
+      }
+    },
+    "registry-clerk-voice-01": {
+      "candidate": {
+        "call_id": "task-20261015-0003-registry-clerk-voice-01",
+        "candidate_id": "candidate-b3f79758e128c22b9e928385d6d79a8dbc64d2019cae2fbeac0391e8ce791a9b",
+        "status": "completed",
+        "already_applied": false
+      },
+      "original": {
+        "file": "export/assets/8794183949c68e746c382e2c1ca727c49f14c145f59599e79e1cc5a9336caab3.wav",
+        "sha256": "8794183949c68e746c382e2c1ca727c49f14c145f59599e79e1cc5a9336caab3",
+        "duration": 11.68
+      },
+      "inspection": {
+        "status": "hearing_unverified",
+        "actual_listening": false,
+        "observation": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。技术探测和字幕不替代声音判断。",
+        "technical_check": {
+          "codec": "pcm_s16le",
+          "sample_rate": 48000,
+          "duration_seconds": 11.68,
+          "sha256": "8794183949c68e746c382e2c1ca727c49f14c145f59599e79e1cc5a9336caab3"
+        },
+        "remaining": "完整试听两句、稳定身份、发音及尾部；多人组须逐段核身份与分隔。通过后另存完整短参考并检查。"
+      }
+    },
+    "zhao-voice-01": {
+      "candidate": {
+        "call_id": "task-20261015-0003-zhao-voice-01",
+        "candidate_id": "candidate-78ee1e475f908cb034fc275aab316433d2fac6aecf7e1e331f938f577c552577",
+        "status": "completed",
+        "already_applied": false
+      },
+      "original": {
+        "file": "export/assets/dac89dabf7d3122bf9486f8a9222b2435e54f81d59ed32560ec01b9724dc80c9.wav",
+        "sha256": "dac89dabf7d3122bf9486f8a9222b2435e54f81d59ed32560ec01b9724dc80c9",
+        "duration": 11.1
+      },
+      "inspection": {
+        "status": "hearing_unverified",
+        "actual_listening": false,
+        "observation": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。技术探测和字幕不替代声音判断。",
+        "technical_check": {
+          "codec": "pcm_s16le",
+          "sample_rate": 48000,
+          "duration_seconds": 11.1,
+          "sha256": "dac89dabf7d3122bf9486f8a9222b2435e54f81d59ed32560ec01b9724dc80c9"
+        },
+        "remaining": "完整试听两句、稳定身份、发音及尾部；多人组须逐段核身份与分隔。通过后另存完整短参考并检查。"
+      }
+    },
+    "temple-workers-voice-01": {
+      "candidate": {
+        "call_id": "task-20261015-0003-temple-workers-voice-01",
+        "candidate_id": "candidate-bf462bd72ad362bece639327d40c05c1cd0ea3f6a00b10e10ddee7c90965995d",
+        "status": "completed",
+        "already_applied": false
+      },
+      "original": {
+        "file": "export/assets/b80c2ecf211a8935a22777fbd1f87e8bd47b93b3ebe9035984c0ba78661ee345.wav",
+        "sha256": "b80c2ecf211a8935a22777fbd1f87e8bd47b93b3ebe9035984c0ba78661ee345",
+        "duration": 10.18
+      },
+      "inspection": {
+        "status": "hearing_unverified",
+        "actual_listening": false,
+        "observation": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。技术探测和字幕不替代声音判断。",
+        "technical_check": {
+          "codec": "pcm_s16le",
+          "sample_rate": 48000,
+          "duration_seconds": 10.18,
+          "sha256": "b80c2ecf211a8935a22777fbd1f87e8bd47b93b3ebe9035984c0ba78661ee345"
+        },
+        "remaining": "完整试听两句、稳定身份、发音及尾部；多人组须逐段核身份与分隔。通过后另存完整短参考并检查。"
+      }
+    },
+    "thin-worker-voice-01": {
+      "candidate": {
+        "call_id": "task-20261015-0003-thin-worker-voice-01",
+        "candidate_id": "candidate-4c01058740a804926dc7fd1f5185d2092fdf58933661af51a74f7861cafd62b0",
+        "status": "completed",
+        "already_applied": false
+      },
+      "original": {
+        "file": "export/assets/c613f8c7a8d470cc55c886d6d55f25dd5ee4d255053b4c638e197ff0b4228eb0.wav",
+        "sha256": "c613f8c7a8d470cc55c886d6d55f25dd5ee4d255053b4c638e197ff0b4228eb0",
+        "duration": 12.68
+      },
+      "inspection": {
+        "status": "hearing_unverified",
+        "actual_listening": false,
+        "observation": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。技术探测和字幕不替代声音判断。",
+        "technical_check": {
+          "codec": "pcm_s16le",
+          "sample_rate": 48000,
+          "duration_seconds": 12.68,
+          "sha256": "c613f8c7a8d470cc55c886d6d55f25dd5ee4d255053b4c638e197ff0b4228eb0"
+        },
+        "remaining": "完整试听两句、稳定身份、发音及尾部；多人组须逐段核身份与分隔。通过后另存完整短参考并检查。"
+      }
+    },
+    "xiaoman-mother-voice-01": {
+      "candidate": {
+        "call_id": "task-20261015-0003-xiaoman-mother-voice-01",
+        "candidate_id": "candidate-7d73a075b8631520193c4ed4a1db0f933c6e94c8e3586bf4c28de4a560da93f9",
+        "status": "completed",
+        "already_applied": false
+      },
+      "original": {
+        "file": "export/assets/2acd2ec6fb4e5986b8f8bd13d3ccd161cb3617156d9ad3493e631fc79610bae1.wav",
+        "sha256": "2acd2ec6fb4e5986b8f8bd13d3ccd161cb3617156d9ad3493e631fc79610bae1",
+        "duration": 12.18
+      },
+      "inspection": {
+        "status": "hearing_unverified",
+        "actual_listening": false,
+        "observation": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。技术探测和字幕不替代声音判断。",
+        "technical_check": {
+          "codec": "pcm_s16le",
+          "sample_rate": 48000,
+          "duration_seconds": 12.18,
+          "sha256": "2acd2ec6fb4e5986b8f8bd13d3ccd161cb3617156d9ad3493e631fc79610bae1"
+        },
+        "remaining": "完整试听两句、稳定身份、发音及尾部；多人组须逐段核身份与分隔。通过后另存完整短参考并检查。"
+      }
+    },
+    "elders-voice-01": {
+      "candidate": {
+        "call_id": "task-20261015-0003-elders-voice-01",
+        "candidate_id": "candidate-3c4af0a6cc4e25859a68bcab2c0991fee412431011fde5ea71484571a25e3137",
+        "status": "completed",
+        "already_applied": false
+      },
+      "original": {
+        "file": "export/assets/b393d7bb8f847e4122a20d1396f32632f2d431105226002ff2d3f7584b2e418b.wav",
+        "sha256": "b393d7bb8f847e4122a20d1396f32632f2d431105226002ff2d3f7584b2e418b",
+        "duration": 21.88
+      },
+      "inspection": {
+        "status": "hearing_unverified",
+        "actual_listening": false,
+        "observation": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。技术探测和字幕不替代声音判断。",
+        "technical_check": {
+          "codec": "pcm_s16le",
+          "sample_rate": 48000,
+          "duration_seconds": 21.88,
+          "sha256": "b393d7bb8f847e4122a20d1396f32632f2d431105226002ff2d3f7584b2e418b"
+        },
+        "remaining": "完整试听两句、稳定身份、发音及尾部；多人组须逐段核身份与分隔。通过后另存完整短参考并检查。"
+      }
+    },
+    "aheng-home-river-ambience-01": {
+      "candidate": {
+        "call_id": "task-20261015-0003-aheng-home-river-ambience-01",
+        "candidate_id": "candidate-797df98c6ccdb907d0166fe28ffa15ef617be1fedb31475c2a3e4c2f9c273c26",
+        "status": "completed",
+        "already_applied": false
+      },
+      "original": {
+        "file": "export/assets/750d0ce6e26c38e5f941dafdd7444fe65d7798828d2dd8c7d2da747bc209cbaf.wav",
+        "sha256": "750d0ce6e26c38e5f941dafdd7444fe65d7798828d2dd8c7d2da747bc209cbaf",
+        "duration": 24
+      },
+      "inspection": {
+        "status": "hearing_unverified",
+        "actual_listening": false,
+        "observation": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。技术探测和字幕不替代声音判断。",
+        "technical_check": {
+          "codec": "pcm_s16le",
+          "sample_rate": 48000,
+          "duration_seconds": 24.0,
+          "sha256": "750d0ce6e26c38e5f941dafdd7444fe65d7798828d2dd8c7d2da747bc209cbaf"
+        },
+        "remaining": "完整试听远近、声源、时序与尾部；通过后按实际稳定段另存接续底声并听接缝。"
+      }
+    },
+    "liji-voice-02": {
+      "candidate": {
+        "call_id": "task-20261015-0003-liji-voice-02",
+        "candidate_id": "candidate-56d74d5d0881937fd92ee1a3bf23c75d7d8ba75147c2fea0a859a083631a54b1",
+        "status": "completed",
+        "already_applied": false
+      },
+      "original": {
+        "file": "export/assets/4ac671f3d638df1a0368c6cc4349e997979b65f90337690230e6b07b20d39c6e.wav",
+        "sha256": "4ac671f3d638df1a0368c6cc4349e997979b65f90337690230e6b07b20d39c6e",
+        "duration": 9.5
+      },
+      "inspection": {
+        "status": "hearing_unverified",
+        "actual_listening": false,
+        "observation": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。技术探测和字幕不替代声音判断。",
+        "technical_check": {
+          "codec": "pcm_s16le",
+          "sample_rate": 48000,
+          "duration_seconds": 9.5,
+          "sha256": "4ac671f3d638df1a0368c6cc4349e997979b65f90337690230e6b07b20d39c6e"
+        },
+        "remaining": "完整试听两句、稳定身份、发音及尾部；多人组须逐段核身份与分隔。通过后另存完整短参考并检查。"
+      }
+    },
+    "lidan-voice-02": {
+      "candidate": {
+        "call_id": "task-20261015-0003-lidan-voice-02",
+        "candidate_id": "candidate-ee052a92384bd2fed593621cfa0ff33f71b2b133a154883b665ef009bc7aac59",
+        "status": "completed",
+        "already_applied": false
+      },
+      "original": {
+        "file": "export/assets/13a85199c11631f127860583b3df48ac490d7a9701a19cad85ebf68472305030.wav",
+        "sha256": "13a85199c11631f127860583b3df48ac490d7a9701a19cad85ebf68472305030",
+        "duration": 10.3
+      },
+      "inspection": {
+        "status": "hearing_unverified",
+        "actual_listening": false,
+        "observation": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。技术探测和字幕不替代声音判断。",
+        "technical_check": {
+          "codec": "pcm_s16le",
+          "sample_rate": 48000,
+          "duration_seconds": 10.3,
+          "sha256": "13a85199c11631f127860583b3df48ac490d7a9701a19cad85ebf68472305030"
+        },
+        "remaining": "完整试听两句、稳定身份、发音及尾部；多人组须逐段核身份与分隔。通过后另存完整短参考并检查。"
+      }
+    },
+    "liji-mother-voice-02": {
+      "candidate": {
+        "call_id": "task-20261015-0003-liji-mother-voice-02",
+        "candidate_id": "candidate-541837b09aa076acf08ddc354ca62955dc1bba43448ec6a277f3681cb979065c",
+        "status": "completed",
+        "already_applied": false
+      },
+      "original": {
+        "file": "export/assets/db0fd1dfcc4af41afd1ece9cc304d74fc6ac818dd566a47c605e08a036fd9885.wav",
+        "sha256": "db0fd1dfcc4af41afd1ece9cc304d74fc6ac818dd566a47c605e08a036fd9885",
+        "duration": 10.3
+      },
+      "inspection": {
+        "status": "hearing_unverified",
+        "actual_listening": false,
+        "observation": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。技术探测和字幕不替代声音判断。",
+        "technical_check": {
+          "codec": "pcm_s16le",
+          "sample_rate": 48000,
+          "duration_seconds": 10.3,
+          "sha256": "db0fd1dfcc4af41afd1ece9cc304d74fc6ac818dd566a47c605e08a036fd9885"
+        },
+        "remaining": "完整试听两句、稳定身份、发音及尾部；多人组须逐段核身份与分隔。通过后另存完整短参考并检查。"
+      }
+    },
+    "aheng-mother-voice-02": {
+      "candidate": {
+        "call_id": "task-20261015-0003-aheng-mother-voice-02",
+        "candidate_id": "candidate-9921677ff2ea8d87849faed9b4f53a75217a2616562981e1e29ef3a302c401e3",
+        "status": "completed",
+        "already_applied": false
+      },
+      "original": {
+        "file": "export/assets/fe80151bf4cd8da82804886d5559eac55f1a0cbcc9d1d600de5010cb2bb08c3a.wav",
+        "sha256": "fe80151bf4cd8da82804886d5559eac55f1a0cbcc9d1d600de5010cb2bb08c3a",
+        "duration": 16.78
+      },
+      "inspection": {
+        "status": "hearing_unverified",
+        "actual_listening": false,
+        "observation": "原生48kHz PCM WAV已做格式、时长和哈希检查；尚未实际试听，本候选不供下游选择。技术探测和字幕不替代声音判断。",
+        "technical_check": {
+          "codec": "pcm_s16le",
+          "sample_rate": 48000,
+          "duration_seconds": 16.78,
+          "sha256": "fe80151bf4cd8da82804886d5559eac55f1a0cbcc9d1d600de5010cb2bb08c3a"
+        },
+        "remaining": "完整试听两句、稳定身份、发音及尾部；多人组须逐段核身份与分隔。通过后另存完整短参考并检查。"
+      }
+    }
+  },
+  "aheng_user_audition": {
+    "checked_at": "2026-10-16T13:11:28.715573+00:00",
+    "candidate_id": "candidate-bd480f0badc3170177b375b827603f1abf5bf19da865a98a91f9ce6ef72f5179",
+    "requirement_id": "new26-aheng-voice",
+    "component_id": "original",
+    "sha256": "cb9568d517393bbb365105efeb2297763d6cf8b92cba86b6c212f6f0bb361059",
+    "duration_seconds": 11.68,
+    "status": "user_audition_passed",
+    "listener": "user",
+    "user_response": "已听，清晰稳定且适合阿蘅",
+    "question_scope": "完整11.68秒阿蘅样音：是否口齿清晰、声线稳定且适合阿蘅",
+    "evidence_source": "当前任务对话 request_user_input_async 回复 call_fdbda86ef4b14d77b9729c767758390b",
+    "executor_actual_listening": false,
+    "remaining_delivery": "按当前方案另存准确短参考并检查剪辑边界，之后选择适用组件；本条不证明其余音色或歌曲通过。"
+  },
+  "aheng_short_edit": {
+    "format": "deterministic-audio-edit-v1",
+    "created_at": "2026-10-16T13:16:14.979184+00:00",
+    "source_file": "export/assets/cb9568d517393bbb365105efeb2297763d6cf8b92cba86b6c212f6f0bb361059.wav",
+    "source_sha256": "cb9568d517393bbb365105efeb2297763d6cf8b92cba86b6c212f6f0bb361059",
+    "source_component": "original",
+    "source_duration_seconds": 11.68,
+    "start_frame": 13920,
+    "end_frame_exclusive": 108000,
+    "start_seconds": 0.29,
+    "end_seconds": 2.25,
+    "frame_rate": 48000,
+    "channels": 2,
+    "sample_width": 2,
+    "frames": 94080,
+    "duration_seconds": 1.96,
+    "file": "export/assets/1601cc67b732a6104ae085cabde85c1ffe1480900b23a91a51adfaadbb3e450c.wav",
+    "sha256": "1601cc67b732a6104ae085cabde85c1ffe1480900b23a91a51adfaadbb3e450c",
+    "bytes": 376364,
+    "tool": "Python standard wave module, exact PCM frame copy",
+    "transformation": "No resampling, gain, time stretch, encoding conversion or added silence; original retained.",
+    "phrase": "桌上放着一本书",
+    "boundary_evidence": "Provider word timing places first word at0.44s, 书 at1.72-2.00s, next word at2.80s. PCM copy 0.29-2.25s preserves audible tail before quiet region; first/last50ms RMS below-60dBFS. Timing and waveform are technical evidence, not actual listening.",
+    "first_50ms_rms_s16": 1,
+    "last_50ms_rms_s16": 1,
+    "full_original_listening": "User confirms full original clear, stable and suitable for Aheng.",
+    "short_listening": "user_audition_passed; exact user evidence below",
+    "duration_note": "完整小句按自然语速实测1.96秒，未为凑3-4秒变速或加长静默；满足下游不超过4秒。"
+  },
+  "aheng_short_user_audition": {
+    "checked_at": "2026-10-16T13:22:40.359245+00:00",
+    "candidate_id": "candidate-bd480f0badc3170177b375b827603f1abf5bf19da865a98a91f9ce6ef72f5179",
+    "requirement_id": "new26-aheng-voice",
+    "component_id": "voice-reference",
+    "sha256": "1601cc67b732a6104ae085cabde85c1ffe1480900b23a91a51adfaadbb3e450c",
+    "duration_seconds": 1.96,
+    "status": "user_audition_passed",
+    "listener": "user",
+    "user_response": "已听，小句完整、头尾自然",
+    "evidence_source": "当前任务对话 request_user_input_async 回复 call_44bab1ebf06f4566a3f345bb20cef783",
+    "executor_actual_listening": false
+  },
+  "aheng_selected_consumers": [
+    {
+      "requirement_id": "new26-s001-q03-video",
+      "index": 6,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 7,
+        "content_sha256": "5a5ac23d188fa0e4717e7ec5c5c7e3f1af793fd808297b53b4234da211501149"
+      },
+      "result_content": {
+        "edit_token": 8,
+        "content_sha256": "dfecf51f8a8ab3cd25e910163e1ca7d453bddf6cee909b724e56062096a10ce7"
+      }
+    },
+    {
+      "requirement_id": "new26-s001-q05-video",
+      "index": 5,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 7,
+        "content_sha256": "efdfcff7ad7d7eff5719c18dfd4e620b7930ec0266f9c65d45faf9c13d3a50e1"
+      },
+      "result_content": {
+        "edit_token": 8,
+        "content_sha256": "09d9403a06d94046a67cdfa047d6aba216705815225900c02655b8ebbee4c9b3"
+      }
+    },
+    {
+      "requirement_id": "new26-s001-q07-video",
+      "index": 8,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 9,
+        "content_sha256": "eaaed4134b7d3031d0470e813c805fa2ccdfdbfacaea1f828fb429587a50e247"
+      },
+      "result_content": {
+        "edit_token": 10,
+        "content_sha256": "72fc91580fb4ca5abf90edd11225b87be37e26e647aa5238660f28da5516059d"
+      }
+    },
+    {
+      "requirement_id": "new26-s001-q08-video",
+      "index": 7,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 9,
+        "content_sha256": "e486fa72fcfc4854a9e8b896dc6eb2a4207c8c94af3e4489b0356a649b1e8648"
+      },
+      "result_content": {
+        "edit_token": 10,
+        "content_sha256": "bdaa6556f355a0a70c62f06172ace4511af0c23f6b5ffdaac8ab9ace08b0cfdc"
+      }
+    },
+    {
+      "requirement_id": "new26-s001-q09-video",
+      "index": 6,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 8,
+        "content_sha256": "dfdda36425a3d36f8f922213f26d7518fc13e251e07d9a00ea9774b4e95bbdd5"
+      },
+      "result_content": {
+        "edit_token": 9,
+        "content_sha256": "0e6015609d64ce7fff5fd01bfe7b337423bc84309bd3dbcc2693ef92605d63b9"
+      }
+    },
+    {
+      "requirement_id": "new26-s001-q10-video",
+      "index": 5,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 8,
+        "content_sha256": "10c4487c7a5a0da7397640acc4c962245f620df8330619f67dc4e87cac399822"
+      },
+      "result_content": {
+        "edit_token": 9,
+        "content_sha256": "84d0a5d456eab802de08315b029d6b13714fefcc5efa0f34afc8a65ab80481bb"
+      }
+    },
+    {
+      "requirement_id": "new26-s002-q01-video",
+      "index": 5,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 8,
+        "content_sha256": "05609293059a63f24c496b4f85c5d5794993d903b7f74faa69859c8b41905efb"
+      },
+      "result_content": {
+        "edit_token": 9,
+        "content_sha256": "b1a7f50949497c6100bd5c4aae9090e52ed3d8de5019032874eb8850adbce2eb"
+      }
+    },
+    {
+      "requirement_id": "new26-s002-q02-video",
+      "index": 7,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 9,
+        "content_sha256": "649aed809443a0de961f78e865d19f9b42c04cc02e73b5f5b374a23d18885ef6"
+      },
+      "result_content": {
+        "edit_token": 10,
+        "content_sha256": "844dc79ca3281e1323665eb4f38cced71d6cd37c217f6a5adea3f1e47d2a7a50"
+      }
+    },
+    {
+      "requirement_id": "new26-s002-q04-video",
+      "index": 9,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 8,
+        "content_sha256": "b47f7b947f313df4f278d8381e9acaa089ed58be82b13e5c89e347eacfd08cd8"
+      },
+      "result_content": {
+        "edit_token": 9,
+        "content_sha256": "f2ae829719ebdf6a3d46d4d0fb9ec613372d787bfe3ad972ea8ecc060907232e"
+      }
+    },
+    {
+      "requirement_id": "new26-s002-q07-video",
+      "index": 5,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 8,
+        "content_sha256": "0518211f32f4f09d8474bbc69a9e209645b05127bcb90e0a016d978ceb0e6acd"
+      },
+      "result_content": {
+        "edit_token": 9,
+        "content_sha256": "8931587a65b6af63b45f0a1159c257060f9e9e8582a7c2af4954850f7084aebe"
+      }
+    },
+    {
+      "requirement_id": "new26-s002-q08-video",
+      "index": 6,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 8,
+        "content_sha256": "9b464fee514541209a98e0e7c5eb82f6abb0aa6fefd537a4a5797d22fd8063ef"
+      },
+      "result_content": {
+        "edit_token": 9,
+        "content_sha256": "fc4965fe0acaa6710eab6c90d5b81aef1f4574b8ffb040652bb84f047660597f"
+      }
+    },
+    {
+      "requirement_id": "new26-s003-q07-video",
+      "index": 6,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 6,
+        "content_sha256": "6b3339229ae7d2aaf4bcc6c4185c69fd7ca06619d0435041f5ac0ed3d9637082"
+      },
+      "result_content": {
+        "edit_token": 7,
+        "content_sha256": "dda3f0a47fc48e28476603d833a63fe44de2aca738ba1578b5c0ccd8878e2a0f"
+      }
+    },
+    {
+      "requirement_id": "new26-s003-q08-video",
+      "index": 5,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 5,
+        "content_sha256": "6d870f6ba14584a5c07dd45d0da94bded41632f2f6dca78b30490d3a48599752"
+      },
+      "result_content": {
+        "edit_token": 6,
+        "content_sha256": "871f6941021c59a97f6664c6c4a664313682f240cf07d0a002be986019d082b1"
+      }
+    },
+    {
+      "requirement_id": "new26-s003-q09-video",
+      "index": 5,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 5,
+        "content_sha256": "3e478cb2e5cb0bbf5945cacdbd17c45f16262cadca0a9f834355289276cf3277"
+      },
+      "result_content": {
+        "edit_token": 6,
+        "content_sha256": "4454eb50fc8e16bdff8df87d691d820a634e6e0c9d8403ef644d96b3117c230c"
+      }
+    },
+    {
+      "requirement_id": "new26-s004-q02-video",
+      "index": 6,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 6,
+        "content_sha256": "ec889b05ea86d085a9b3bf7da42d7eb93a48529a23ded5566beb294d3f8af239"
+      },
+      "result_content": {
+        "edit_token": 7,
+        "content_sha256": "37e9b10c6dce88c6e134efda59c8ea03a675fc0229a955614c199f36fb7ab3dd"
+      }
+    },
+    {
+      "requirement_id": "new26-s004-q05-video",
+      "index": 8,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 6,
+        "content_sha256": "483300d574291bc0e6c41c38181f7d8b6287df6190c70676180c823b27065bde"
+      },
+      "result_content": {
+        "edit_token": 7,
+        "content_sha256": "9f032340157f01d056ccc91a030b41ad476e0da4e3fb1e3d0539545b2242db0a"
+      }
+    },
+    {
+      "requirement_id": "new26-s004-q06-video",
+      "index": 7,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 6,
+        "content_sha256": "002f24692b6dc5a8a07f632de1a4ba739222d253bc56382aebc26724869935ec"
+      },
+      "result_content": {
+        "edit_token": 7,
+        "content_sha256": "40fedb5e350f2da79ae72c08c5cf38c814a83060c65d9cfd139040187a09f635"
+      }
+    },
+    {
+      "requirement_id": "new26-s004-q07-video",
+      "index": 7,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 5,
+        "content_sha256": "0a7f274544a8f61551fee3486a0eb1f6b80d44ddbb2cf5145bc84edbd7e07513"
+      },
+      "result_content": {
+        "edit_token": 6,
+        "content_sha256": "f321b6e833a1ac85a9fca2cb561de6d940308ea1bc02899d07a31a0bc0a6e3f7"
+      }
+    },
+    {
+      "requirement_id": "new26-s004-q08-video",
+      "index": 5,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 5,
+        "content_sha256": "a65aec618d15e864882758cb067e38c97fd3378062267fb098bbd5b08cbb23e9"
+      },
+      "result_content": {
+        "edit_token": 6,
+        "content_sha256": "1aa1578fccd98c9cda21f922f6f20fdc4df839528212d86d68fc0b0e871cf135"
+      }
+    },
+    {
+      "requirement_id": "new26-s004-q09-video",
+      "index": 5,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 5,
+        "content_sha256": "1e2eb9a781d2aa20f3d1cb67eb963d27ffb5ee367027f1e0491e86a8fc882883"
+      },
+      "result_content": {
+        "edit_token": 6,
+        "content_sha256": "08feb396709e1ed7fd29a9e96964845ccd93ed38070b697965e1cf5c968c3261"
+      }
+    },
+    {
+      "requirement_id": "new26-s004-q10-video",
+      "index": 6,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 5,
+        "content_sha256": "bf9473b1b8a2ee9a2cc1274692f2ef8528b51ebeb08ea2f0960c3cbeaa95d198"
+      },
+      "result_content": {
+        "edit_token": 6,
+        "content_sha256": "b52f43e4d4623a36bf405c506dcf0c54541ede58c0930a04575612ce399fdffa"
+      }
+    },
+    {
+      "requirement_id": "new26-s005-q06-video",
+      "index": 6,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 8,
+        "content_sha256": "e1a4214ed417b83177b1090d1c6623704c86d2110d3d58225330b9f5d05ff540"
+      },
+      "result_content": {
+        "edit_token": 9,
+        "content_sha256": "66b7b471c1b3ffe57622ec90f977fd114652b8e1878c48d00445468587e1049e"
+      }
+    },
+    {
+      "requirement_id": "new26-s005-q07-video",
+      "index": 6,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 8,
+        "content_sha256": "0dfa92a51bb82a3c9490d6b872d8ad63ad8c34118b697a9bcdc6047d342c78a2"
+      },
+      "result_content": {
+        "edit_token": 9,
+        "content_sha256": "6ccaf2fec4dcf70626456c14ea6dee70ef0096dbfdfce28c980aeadeae02f2d9"
+      }
+    },
+    {
+      "requirement_id": "new26-s005-q08-video",
+      "index": 5,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 6,
+        "content_sha256": "e92a74181519ccbffae50d31adadae464d08650a1379a0409c59ab5ef276caeb"
+      },
+      "result_content": {
+        "edit_token": 7,
+        "content_sha256": "be60a685601a81b85d6f0d308bcfe46e34b3f4c16df20c27605d92aaeb21ac89"
+      }
+    },
+    {
+      "requirement_id": "new26-s006-q02-video",
+      "index": 6,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 6,
+        "content_sha256": "b46f3a376c83f1bea1f2107c405c57c1492e92e6c2aeb35da26f500159a48555"
+      },
+      "result_content": {
+        "edit_token": 7,
+        "content_sha256": "1b4e1d7704412cc3a8b5f49c479a60d66142f7022ae35fe595eb9693f5c94dca"
+      }
+    },
+    {
+      "requirement_id": "new26-s006-q03-video",
+      "index": 5,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 6,
+        "content_sha256": "f72a71fcca0cd7b37b24c2f5a2edd4827dffb76eaf87e1cae704935d5cd7e130"
+      },
+      "result_content": {
+        "edit_token": 7,
+        "content_sha256": "b72a67eec292cf23108d8f2ccc4314a6df919b8ab33d1b6be155b8efd041d078"
+      }
+    },
+    {
+      "requirement_id": "new26-s006-q04-video",
+      "index": 7,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 7,
+        "content_sha256": "b634bb917dd7f4064cb5d79fe736c73d1c20cd85e5e94351a9b5ccb9c3f5d88d"
+      },
+      "result_content": {
+        "edit_token": 8,
+        "content_sha256": "22db21522385b53e61ef2b9a4ffd16cb96ac61a42fdc71aab957410b0fcbdb44"
+      }
+    },
+    {
+      "requirement_id": "new26-s006-q05-video",
+      "index": 4,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 6,
+        "content_sha256": "0878d89388a1b54af53dbb7fddc2bab6068ccfc09addb33a7cbcb8e5648c6e47"
+      },
+      "result_content": {
+        "edit_token": 7,
+        "content_sha256": "ca9ac84d4377f6e520c9f50d60f13366dc05f635bcb8e5095245a2dc0d60ee3e"
+      }
+    },
+    {
+      "requirement_id": "new26-s006-q06-video",
+      "index": 4,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 6,
+        "content_sha256": "0caa41b18c3d286e3732786eebe978653b593d62b4b7990531d79c6307ce9610"
+      },
+      "result_content": {
+        "edit_token": 7,
+        "content_sha256": "cec715bea419114984f27cc0bcebaa9a88d74581fb5b933c637e8e833c175238"
+      }
+    },
+    {
+      "requirement_id": "new26-s006-q07-video",
+      "index": 6,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 8,
+        "content_sha256": "41cdeebc1e2b64ff392d190617bc16ce95dc01637321e530cc3a52aa0713ef95"
+      },
+      "result_content": {
+        "edit_token": 9,
+        "content_sha256": "24546f061776a405d9ca4d0af348f409c8e1434ddbe318b01ab613c1934208e6"
+      }
+    },
+    {
+      "requirement_id": "new26-s006-q08-video",
+      "index": 6,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 8,
+        "content_sha256": "2aa1ae9cf16b459f184e341aa250e020253ed0d0383fa5f7c545d1e09166d128"
+      },
+      "result_content": {
+        "edit_token": 9,
+        "content_sha256": "9bd3a7deefe344d954fb1262aea7908a87f9f261160f014de187306a9d631f87"
+      }
+    },
+    {
+      "requirement_id": "new26-s007-q01-video",
+      "index": 4,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 7,
+        "content_sha256": "2be6fa6d999ba27ef84ede920292ae71525ff5af93c7d6681d0d2251367d5f03"
+      },
+      "result_content": {
+        "edit_token": 8,
+        "content_sha256": "c79df30bc3408fb2e3545be2e44e7156399354d025fd771f1eca8781015b9704"
+      }
+    },
+    {
+      "requirement_id": "new26-s007-q07-video",
+      "index": 4,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 7,
+        "content_sha256": "2d3e03a13e2aeb4711e15c508d0032d058eb53cd8d1f82f7a7af9aed73df4bc3"
+      },
+      "result_content": {
+        "edit_token": 8,
+        "content_sha256": "d41a3340d1ee926af3d80a4ac972c5ccb68f2f22c27fb482263618690f4b9b60"
+      }
+    },
+    {
+      "requirement_id": "new26-s007-q08-video",
+      "index": 5,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 8,
+        "content_sha256": "0958bbe047472a90ba86203b0692e456818c621863cdad51739b8d2a460b0c77"
+      },
+      "result_content": {
+        "edit_token": 9,
+        "content_sha256": "c3ca18052e80bc9f67e84daf1d1461378e2afbd0a9e47154ddcfb8305b5f20b0"
+      }
+    },
+    {
+      "requirement_id": "new26-s008-q03-video",
+      "index": 6,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 7,
+        "content_sha256": "4aa392372c3bfbd78a3ae5e0e187e143b20c7d4a7dd529c899f8ba13274fe995"
+      },
+      "result_content": {
+        "edit_token": 8,
+        "content_sha256": "dcc0bd55bb1b6dce74dc888ca9611151d1d98f93b400dcabd242444b5e69050d"
+      }
+    },
+    {
+      "requirement_id": "new26-s008-q05-video",
+      "index": 6,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 7,
+        "content_sha256": "3576d83347ce58de07c8b8b798ef6d1b267adeeb5ea27454b2e4154ae193debd"
+      },
+      "result_content": {
+        "edit_token": 8,
+        "content_sha256": "592d415cb367c0ba5fc382d73c2c3ba2e20f02e2a87a662e80e1ed150739c54a"
+      }
+    },
+    {
+      "requirement_id": "new26-s008-q07-video",
+      "index": 9,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 9,
+        "content_sha256": "cc9b53869e5678676265eed95731036926e5e29cb5a9622b52c961bab092f95f"
+      },
+      "result_content": {
+        "edit_token": 10,
+        "content_sha256": "d99ff90117d639bd1890ec678f7387f667a53a6879394aff892a733b8bfa8ae9"
+      }
+    },
+    {
+      "requirement_id": "new26-s009-q01-video",
+      "index": 6,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 8,
+        "content_sha256": "a8bea7189939c546e53874dbfe090fb4b3bd9ab2deee880584aa4317eb393629"
+      },
+      "result_content": {
+        "edit_token": 9,
+        "content_sha256": "83254eb204d316190066c64c5e007dc218faa42e92b13c2eb71a2b9446d525cf"
+      }
+    },
+    {
+      "requirement_id": "new26-s009-q07-video",
+      "index": 11,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 11,
+        "content_sha256": "7438573c060d6c4b16335e59f85bfcabb4c1a16be22a6ff184c040160d0065d9"
+      },
+      "result_content": {
+        "edit_token": 12,
+        "content_sha256": "67e830fc8ac10bef91e6b05ddd3d64a7174d9d2fa605f36089a36e43a9c23c0a"
+      }
+    },
+    {
+      "requirement_id": "new26-s009-q09-video",
+      "index": 5,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 7,
+        "content_sha256": "638af09e00aafbfede1d314cf8b85c68f15f84db455cdbdc539b3920ca872111"
+      },
+      "result_content": {
+        "edit_token": 8,
+        "content_sha256": "95101f953ad1963665619fd07317e1bf997f9e6387f06f15f17e3f39c98976fd"
+      }
+    },
+    {
+      "requirement_id": "new26-s009-q10-video",
+      "index": 5,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 8,
+        "content_sha256": "c02b24227b36b57b16161fee3f5437baec5b148bd83c4910422155085ba90a51"
+      },
+      "result_content": {
+        "edit_token": 9,
+        "content_sha256": "e696a66ce6e9b7a5e74d0c3c14f98d0b35d82dcbf7dbb3197227d9d3ed31780b"
+      }
+    },
+    {
+      "requirement_id": "new26-s010-q01-video",
+      "index": 3,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 6,
+        "content_sha256": "f33e7601c5f09570668d01fefe6f89e1c5392cf5c21f118b86b137db7a83aa7a"
+      },
+      "result_content": {
+        "edit_token": 7,
+        "content_sha256": "8af756583439031d344290fde0f814ab7f1343e10dacb22a84c2783fa6d16d75"
+      }
+    },
+    {
+      "requirement_id": "new26-s010-q02-video",
+      "index": 3,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 6,
+        "content_sha256": "1398761420e58771dbf60d05859160a51eeb421f3c305c1f8d48ac96a6535079"
+      },
+      "result_content": {
+        "edit_token": 7,
+        "content_sha256": "e589a95c846608bf81ee60ce5f42516e37cceada02e6345e3d1dc6abb85dd12a"
+      }
+    },
+    {
+      "requirement_id": "new26-s016-q06-video",
+      "index": 6,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 7,
+        "content_sha256": "b77967e8b5a05dbf351435ca039d712bf6191ad0779e53d2a4293fb72e9c0a2f"
+      },
+      "result_content": {
+        "edit_token": 8,
+        "content_sha256": "457eb589524fc75519cc2905b2e804c2f9e570aeccdb2881559e8f3a3a4fa25c"
+      }
+    },
+    {
+      "requirement_id": "new26-s017-q06-video",
+      "index": 7,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 8,
+        "content_sha256": "c68d7304763ea36abeaf0ef77fbd8ea16a3cfa2200dcd3092c892916aca72370"
+      },
+      "result_content": {
+        "edit_token": 9,
+        "content_sha256": "73eb59f5cba062de85794d83a88e5c50cf99d0ae3c06d8d4607225caaaa04cb8"
+      }
+    },
+    {
+      "requirement_id": "new26-s017-q09-video",
+      "index": 9,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 9,
+        "content_sha256": "988c083b6c98b51ed23eafa7ce6c7ba7a1a777afba98c0fe5fc61f20b34d3337"
+      },
+      "result_content": {
+        "edit_token": 10,
+        "content_sha256": "8d030fd05adab1edb29949f88e4fcfa1dffdd100fb8aa3379a5bd747194527b1"
+      }
+    },
+    {
+      "requirement_id": "new26-s017-q11-video",
+      "index": 7,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 8,
+        "content_sha256": "479d7c14ba15c210b0d17cbcccdc407a0eca61119b71c126bc3a010e8f72267f"
+      },
+      "result_content": {
+        "edit_token": 9,
+        "content_sha256": "b4ab94e66d5d3c8a0934a7d418833b85a02ac7de178fb737791afb56d9d34fcc"
+      }
+    },
+    {
+      "requirement_id": "new26-s017-q12-video",
+      "index": 6,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 8,
+        "content_sha256": "4b33525ec84763a71d665bc137d1a3ba00782dfd4afe3da1cbd65017a12e5dba"
+      },
+      "result_content": {
+        "edit_token": 9,
+        "content_sha256": "fb5a70cb2915464ca92e987e8e3dfe4df71f2871992a8f56a2b7cec79c3d2e5a"
+      }
+    },
+    {
+      "requirement_id": "new26-s017-q18-video",
+      "index": 6,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 8,
+        "content_sha256": "eefe5ee523a40243f38121e6fc3efc8a561c1f66a5e1f083d6d5145cdcaf1fe7"
+      },
+      "result_content": {
+        "edit_token": 9,
+        "content_sha256": "2df2b17baf9939403b29617c29d7efdbd3339d801a489778b1269b06a3ee6aad"
+      }
+    },
+    {
+      "requirement_id": "new26-s018-q09-video",
+      "index": 6,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 7,
+        "content_sha256": "ce88803cd519d22874f94d618011b86f1121a305e76c29b9f75e41aa9156b5c6"
+      },
+      "result_content": {
+        "edit_token": 8,
+        "content_sha256": "d4c7d1dd2a68fd9c2a3c90efaf8252d00368c24298fcb35eb5d14a72da4c0378"
+      }
+    },
+    {
+      "requirement_id": "new26-s019-q01-video",
+      "index": 8,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 10,
+        "content_sha256": "7370db0b8e1a713f1da2e2001857cf19ccfd9b25e0919c026c897f2b49d9c59c"
+      },
+      "result_content": {
+        "edit_token": 11,
+        "content_sha256": "b0c768cc11aa5c698474d8e7ff08d9a3a667bf9049eb332c308f37c863865560"
+      }
+    },
+    {
+      "requirement_id": "new26-s019-q02-video",
+      "index": 5,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 7,
+        "content_sha256": "aef47dbd64a7e0c212bacc1b1b4abaad8b2dab4bf2dd530667c2eab06851314c"
+      },
+      "result_content": {
+        "edit_token": 8,
+        "content_sha256": "2600d666b9f0e1ce7eae94c3372a06210a43962833a0291c0fbe1681fd222d3d"
+      }
+    },
+    {
+      "requirement_id": "new26-s020-q02-video",
+      "index": 8,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 8,
+        "content_sha256": "1d4b8f82acf786a72c4985ce41fdff60ff46382a694f8691ee6a7655d6409311"
+      },
+      "result_content": {
+        "edit_token": 9,
+        "content_sha256": "ef65d3ab7ef2ecd52497ab405436ac116d9a9a0d23e898c712bbb6f3fb9151ce"
+      }
+    },
+    {
+      "requirement_id": "new26-s020-q04-video",
+      "index": 9,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 7,
+        "content_sha256": "f102dc7dd0967f918c766b36ca21a2bc95ccc7911effd1bf6702dfc92e305f60"
+      },
+      "result_content": {
+        "edit_token": 8,
+        "content_sha256": "35a27d01ad976e21f0ff3afd79e7e6c569145a4ab2115a55a3457ab5017f597b"
+      }
+    },
+    {
+      "requirement_id": "new26-s020-q08-video",
+      "index": 6,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 6,
+        "content_sha256": "306ccefaab4a90fc0cc8079018c34ef8951d852a08ed20b71902c7a28d5b3b80"
+      },
+      "result_content": {
+        "edit_token": 7,
+        "content_sha256": "944a6053bc612f9f77c44ba1e0c4f224845396d90e23f9731ecc6f870bc94b13"
+      }
+    },
+    {
+      "requirement_id": "new26-s022-q01-video",
+      "index": 6,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 8,
+        "content_sha256": "2724a93b2c0e4c9fd6c55fd0b78b50a1018ae44c48110b0006139e2e7549a7b5"
+      },
+      "result_content": {
+        "edit_token": 9,
+        "content_sha256": "6f6d77c89cbc5a848a4f0aaa22f612246eedda56056bf4129d3ca83085969ac2"
+      }
+    },
+    {
+      "requirement_id": "new26-s022-q03-video",
+      "index": 11,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 9,
+        "content_sha256": "b7b1dcf8d4cc077faf942f055d418ea0c4718be1e5ee9ad50f7332177e40ef8c"
+      },
+      "result_content": {
+        "edit_token": 10,
+        "content_sha256": "fb62d967bd68ec2d59c5beb6075972c098ab89dc378354ce52948ac0db08393c"
+      }
+    },
+    {
+      "requirement_id": "new26-s022-q06-video",
+      "index": 8,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 7,
+        "content_sha256": "170ad346843184054caf650e5bfcdbc470800eece793856921870814d03afa6c"
+      },
+      "result_content": {
+        "edit_token": 8,
+        "content_sha256": "4ab1c2d021ffacdfe909a86f8c5264ed06334bc9e2ddc2e06f81018eb374da6c"
+      }
+    },
+    {
+      "requirement_id": "new26-s022-q07-video",
+      "index": 5,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 5,
+        "content_sha256": "6d5209aaa2f53648bc1d500d34e4e18efa2515a81d2bd41b1d331199d0317ff5"
+      },
+      "result_content": {
+        "edit_token": 6,
+        "content_sha256": "b91566e9e8cfe4529a59d745ab5753c949ab5a1c1f982494f977cd4f718e58f2"
+      }
+    },
+    {
+      "requirement_id": "new26-s022-q08-video",
+      "index": 5,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 5,
+        "content_sha256": "e751865c6e750646a7342e630d04473627f5db7b878155a4bfbd0a13513dfa28"
+      },
+      "result_content": {
+        "edit_token": 6,
+        "content_sha256": "93c24b4a81adccbe76d19d2350483d8432436143512c73ec364105687216df1d"
+      }
+    },
+    {
+      "requirement_id": "new26-s026-q05-video",
+      "index": 5,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 6,
+        "content_sha256": "d517ce4243746c88cf3c0ef6362cf392a918f873f4f97cb18819bd17a0f5705f"
+      },
+      "result_content": {
+        "edit_token": 7,
+        "content_sha256": "e294c46535916e455d5dbe44d4f075e36fef511f2428c3faaeaf01fe7dd05ddf"
+      }
+    },
+    {
+      "requirement_id": "new26-s026-q06-video",
+      "index": 11,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 9,
+        "content_sha256": "f0e565bce1cb8cffe52fb904a22bf99b466a68672807e3ea67ea613ded710223"
+      },
+      "result_content": {
+        "edit_token": 10,
+        "content_sha256": "21c970ba36f85de60208230d1c5ed0140729d0f7fb202e116389ba1391989e00"
+      }
+    },
+    {
+      "requirement_id": "new26-s026-q11-video",
+      "index": 5,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 5,
+        "content_sha256": "0884ec43eb3bcb060377449380f81c5c8099c654e241ccfb8bf73e2104d9e219"
+      },
+      "result_content": {
+        "edit_token": 6,
+        "content_sha256": "fcd4c072d2c249f3592a250675cc9c8979832f3bd7afc19703c26cf345d6d35e"
+      }
+    },
+    {
+      "requirement_id": "new26-s026-q12-video",
+      "index": 8,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 7,
+        "content_sha256": "33c7913ac10f826c94037de55954e7d0018ebcc8c245d1e80e0845dd16ba4ab5"
+      },
+      "result_content": {
+        "edit_token": 8,
+        "content_sha256": "7657a09deabc1e9c0e0bf560caaff5f45a7543da9ffedd1d5fa9af395935981c"
+      }
+    },
+    {
+      "requirement_id": "new26-s027-q04-video",
+      "index": 4,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 5,
+        "content_sha256": "3fd011a3a2a5b44556926aa40a381763520fb793c24f7ac1b945787dbe1748f0"
+      },
+      "result_content": {
+        "edit_token": 6,
+        "content_sha256": "24202f6f5db7e38311e8d11ae6a20a3725909af43ad250afe20cf022b2192c98"
+      }
+    },
+    {
+      "requirement_id": "new26-s028-q04-video",
+      "index": 3,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 6,
+        "content_sha256": "71b208271e55c14dcee799a9009913fb8ae82b4f7b5cb8f1f38424e05a6d22c8"
+      },
+      "result_content": {
+        "edit_token": 7,
+        "content_sha256": "e71e548fb892892ae76f9ea081a0e21c4b095e1e9f4012d495067656ae94a318"
+      }
+    },
+    {
+      "requirement_id": "new26-s028-q05-video",
+      "index": 6,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 7,
+        "content_sha256": "55ccd6012ecae4cd2139c4dd73575d52dc03a1f76c985f42021ad2058b683ecb"
+      },
+      "result_content": {
+        "edit_token": 8,
+        "content_sha256": "0f0ca6c67f43cb8c5d5db09a9dcb47311f52ce27ca3b96842a8986f9df0b8504"
+      }
+    },
+    {
+      "requirement_id": "new26-s028-q06-video",
+      "index": 5,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 7,
+        "content_sha256": "2172c995db447ab7d6848da2eb31bab6248aa3e51bbab87a196d2bc484766ac4"
+      },
+      "result_content": {
+        "edit_token": 8,
+        "content_sha256": "df763dda8919359eaeb7922f5f8e38584e0b427b03b40ecc42f5211ba45e4c78"
+      }
+    },
+    {
+      "requirement_id": "new26-s029-q07-video",
+      "index": 4,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 7,
+        "content_sha256": "c8353ba04994dc161b624e9cf0cbe62dc083634f90b9a9ff5643b3e48ba4c9f7"
+      },
+      "result_content": {
+        "edit_token": 8,
+        "content_sha256": "b4275678ad99e9c4f408afb50dad3de907a213790d3c98c6c8fb273e3583c677"
+      }
+    },
+    {
+      "requirement_id": "new26-s030-q08-video",
+      "index": 3,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 6,
+        "content_sha256": "c5b2f73f19048044e6a18d8e31b85f28fd1c305724c1243cb3f4312f00936e28"
+      },
+      "result_content": {
+        "edit_token": 7,
+        "content_sha256": "5a84a0a61b85d521a437e9185538e9e71e3298c137902eb6e18af45a27619378"
+      }
+    },
+    {
+      "requirement_id": "new26-s032-q12-video",
+      "index": 4,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 5,
+        "content_sha256": "266b2146ccf8b63724d742cbc8d5b703ec696bc8268a9789844e1dc062cedc0d"
+      },
+      "result_content": {
+        "edit_token": 6,
+        "content_sha256": "34918ac1eb54fd1a49b16c8141bcc7a9a9029467166753b60e9611c4a94e295e"
+      }
+    },
+    {
+      "requirement_id": "new26-s033-q09-video",
+      "index": 5,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 6,
+        "content_sha256": "3f0bbd0362bdeb9c3ed6a87f8a61695f1b8f9fbd5ec9814a7ff0f8641e39767f"
+      },
+      "result_content": {
+        "edit_token": 7,
+        "content_sha256": "970deb8efd25c5d69754929c09adb5c9b6a3cd1b2f5e4b7c03d82acd76fa9487"
+      }
+    },
+    {
+      "requirement_id": "new26-s033-q10-video",
+      "index": 5,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 6,
+        "content_sha256": "354095c167524d2f4600d1354af6fa5e45b0c4f026478c7865a2865feb61bb4f"
+      },
+      "result_content": {
+        "edit_token": 7,
+        "content_sha256": "13404e862969a162fd872241e89102571d8f3e0a1a90e9b5dbef4a5bb31d521a"
+      }
+    },
+    {
+      "requirement_id": "new26-s034-q03-video",
+      "index": 4,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 6,
+        "content_sha256": "4c6042b15e099c88af3873649f137c10d71e48c5f526ad9045c269c33a229138"
+      },
+      "result_content": {
+        "edit_token": 7,
+        "content_sha256": "d2c47f55c4e6c7ca44bf084833f90c4697aa5d7286c016763756229a81051be9"
+      }
+    },
+    {
+      "requirement_id": "new26-s036-q02-video",
+      "index": 6,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 8,
+        "content_sha256": "bff17e7f3c76d378b252e152c217635e4fbaed606532656775e91ce93000d26e"
+      },
+      "result_content": {
+        "edit_token": 9,
+        "content_sha256": "9c095a002bf06976f73cd55fe1c1ad1057c801d9b04189fbfb62fc18e44f86ab"
+      }
+    },
+    {
+      "requirement_id": "new26-s037-q10-video",
+      "index": 7,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 10,
+        "content_sha256": "5f0192f70f42fe4878971c6a1f755727ed52fa0af8d3a862246d8a6f4e76e2d4"
+      },
+      "result_content": {
+        "edit_token": 11,
+        "content_sha256": "01a0d6b6d9b3bc5670d863435fcf379ef11f78394208ec950f5701003a7c85a9"
+      }
+    },
+    {
+      "requirement_id": "new26-s037-q11-video",
+      "index": 7,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 9,
+        "content_sha256": "cb35be4c5a25a1e46dd5af714f435fcb7f50be8de6ec17bae1c0509b3d5146b6"
+      },
+      "result_content": {
+        "edit_token": 10,
+        "content_sha256": "528e3dba03c1eed781cd663e2dce0e5e34095932f60898bab2a012279d1f4bb4"
+      }
+    },
+    {
+      "requirement_id": "new26-s037-q12-video",
+      "index": 6,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 7,
+        "content_sha256": "08ebd0fa3fa2c9dd03ea38630231b36b4b145ae3a68148ed56af07aa1c2e6a78"
+      },
+      "result_content": {
+        "edit_token": 8,
+        "content_sha256": "8ffdb56d406289535f71ab6eb3c72bc59a8c8c37ba01d44f3c46edc1ad9f1a24"
+      }
+    },
+    {
+      "requirement_id": "new26-s037-q14-video",
+      "index": 6,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 8,
+        "content_sha256": "edca4bd83056eeabbe08e752cd1bc283dd0b12af0fa64e2adb5655f5f0513957"
+      },
+      "result_content": {
+        "edit_token": 9,
+        "content_sha256": "634d3a91d31260bbdfd1fb3ac9710d8f39c8ff6013987942adcf2769d77ca6a8"
+      }
+    },
+    {
+      "requirement_id": "new26-s037-q16-video",
+      "index": 9,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 9,
+        "content_sha256": "7197ad0bfa7cc9f6299a283a59cbe11bfd1997d92540b4f75206b5129cc2f36b"
+      },
+      "result_content": {
+        "edit_token": 10,
+        "content_sha256": "432991c75f44abb01a469014d30eb24e4e25047b4ca1687f01845b4d6996e0c0"
+      }
+    },
+    {
+      "requirement_id": "new26-s038-q03-video",
+      "index": 5,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 8,
+        "content_sha256": "46fa5e558d1e2b80123174d81ee391672161969d44611d46803a11b63a1cfe02"
+      },
+      "result_content": {
+        "edit_token": 9,
+        "content_sha256": "1285f870ab5561b745e1a40954076e80dc4e6369670985c3c42a15bd0e7facd3"
+      }
+    },
+    {
+      "requirement_id": "new26-s040-q01-video",
+      "index": 5,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 8,
+        "content_sha256": "ad2eba95ed1c151d3039e90c8243af91df9401d5716c733dca7a9b1a652b04e9"
+      },
+      "result_content": {
+        "edit_token": 9,
+        "content_sha256": "08445528b408d0d1c31dce73e4f9c807e5774bd56574bc931f1d7a5c0e02c307"
+      }
+    },
+    {
+      "requirement_id": "new26-s040-q02-video",
+      "index": 6,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 6,
+        "content_sha256": "0d924d8911eb0b95c428d77bbd28157f2c0c3b50fa8da7e2dc0fe99039d75261"
+      },
+      "result_content": {
+        "edit_token": 7,
+        "content_sha256": "74ace1324f5599b92cab3fde462a4f99a0ac572049363ea0ee4857878973323e"
+      }
+    },
+    {
+      "requirement_id": "new26-s042-q02-video",
+      "index": 6,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 6,
+        "content_sha256": "836215e66ffe6ba6df09d0be57df84ea59cd441b73f2b201c324817e178ffcfe"
+      },
+      "result_content": {
+        "edit_token": 7,
+        "content_sha256": "cecb684219adcc5dbd2b04ee5d0d38f79570af76844a0f39a2edb5be9b170b21"
+      }
+    },
+    {
+      "requirement_id": "new26-s042-q03-video",
+      "index": 5,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 6,
+        "content_sha256": "2dcce70c145e85625fded341bb4bf3cbca7ab445d3db0b08c7636d6201cbe255"
+      },
+      "result_content": {
+        "edit_token": 7,
+        "content_sha256": "8fc32328266393290867927a7646ddbfb0767df4382077ecd1ac48d634ceaab8"
+      }
+    },
+    {
+      "requirement_id": "new26-s042-q04-video",
+      "index": 5,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 6,
+        "content_sha256": "03892aa4264bb93a5e2b3619a75eb0226bcd0e82430ae2ff30f9771da63be39d"
+      },
+      "result_content": {
+        "edit_token": 7,
+        "content_sha256": "6305eb791cef5d9bef569d5fdcdceaa68e2d081e5cacbf89efb990b6d7a76dc3"
+      }
+    },
+    {
+      "requirement_id": "new26-s042-q05-video",
+      "index": 8,
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-aheng-voice-01",
+        "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f"
+      },
+      "component_id": "voice-reference",
+      "previous_content": {
+        "edit_token": 7,
+        "content_sha256": "567220573e2a3c6a7ce8c133077d7ea422ad298df91cde718c78c848a557567c"
+      },
+      "result_content": {
+        "edit_token": 8,
+        "content_sha256": "146ccc4606b7cc1f35318eae59807de940b5bd3bec238005d0b7db90d854dd7e"
+      }
+    }
+  ],
+  "requested_revisions": {
+    "liji-voice-02": {
+      "requirement_id": "new26-liji-voice",
+      "candidate_number": 2,
+      "source_candidate": "liji-voice-01",
+      "user_feedback": "李寄的声音要更加干练，语速快一点",
+      "prompt": "生成一名单人普通话说话声。说话身份：李寄，少女女声，保留儿童声腔，身份说明不朗读。稳定声线：中高声区，清实、集中、靠前的口腔共鸣；音头短而准，元音不过度延长，句尾干脆，听起来利落而有行动力。保留孩子的轻小声腔，不做尖细卡通嗓或幼嗲撒娇腔。\n统一试读条件：平稳、中性的说话读法，自然稍快于中等的语速，逗号处紧凑短停，句号自然停顿但不拖长，快而不抢词；不设置人物关系或情绪转折，不演唱，不临时加强某个词。近距离干声，只保留自然换气，不加入房间回声、环境声、配乐或其他人声。\n只把下面两句固定原词按原顺序朗读一次，不增删、改写或重复，不念标题和说明，不加语气词或临场发挥；保留完整尾字和自然收声：\n桌上放着一本书，旁边有一只白色的杯子。\n窗边的椅子朝着门口，几张纸整齐地叠在一起。",
+      "assessment": "用户实际试听候选1后明确要求：李寄的声音要更加干练，语速快一点。保留固定两句原词及近距干声，不使用旧候选作为生成参考；按这次明确反馈调整声线/读法。李寄语速、阿蘅母亲虚弱读法按用户要求单独改变，不能再声称这两项与首轮录音条件完全相同。实际结果须重新试听。"
+    },
+    "lidan-voice-02": {
+      "requirement_id": "new26-lidan-voice",
+      "candidate_number": 2,
+      "source_candidate": "lidan-voice-01",
+      "user_feedback": "李诞声音要更沧桑一些",
+      "prompt": "生成一名单人普通话说话声。说话身份：李诞，成年男性说话声，身份说明不朗读。稳定声线：中低声区，沉厚胸腔共鸣，明显而自然的干哑砂质与磨砺感，像长期劳作后仍稳得住的声音；元音带粗颗粒、字头仍清楚，语尾轻沉。不是英雄播音、低吼或刻意发抖的老人腔。\n统一试读条件：平稳、中性的说话读法，中等语速，逗号处短停，句号处自然停顿；不设置人物关系或情绪转折，不演唱，不临时加强某个词。近距离干声，只保留自然换气，不加入房间回声、环境声、配乐或其他人声。\n只把下面两句固定原词按原顺序朗读一次，不增删、改写或重复，不念标题和说明，不加语气词或临场发挥；保留完整尾字和自然收声：\n桌上放着一本书，旁边有一只白色的杯子。\n窗边的椅子朝着门口，几张纸整齐地叠在一起。",
+      "assessment": "用户实际试听候选1后明确要求：李诞声音要更沧桑一些。保留固定两句原词及近距干声，不使用旧候选作为生成参考；按这次明确反馈调整声线/读法。李寄语速、阿蘅母亲虚弱读法按用户要求单独改变，不能再声称这两项与首轮录音条件完全相同。实际结果须重新试听。"
+    },
+    "liji-mother-voice-02": {
+      "requirement_id": "new26-liji-mother-voice",
+      "candidate_number": 2,
+      "source_candidate": "liji-mother-voice-01",
+      "user_feedback": "李寄母亲更干练一些",
+      "prompt": "生成一名单人普通话说话声。说话身份：李寄母亲，成年女性说话声，身份说明不朗读。稳定声线：中声区，结实而集中的口腔共鸣，干净清亮的辅音，起音直接、句尾短收；说话利索、有主见，元音不拖长。保留自然成熟女声，不做温柔哄劝、固定笑意或吼叫命令腔。\n统一试读条件：平稳、中性的说话读法，中等语速，逗号处短停，句号处收得利落，语气干练不拖腔；不设置人物关系或情绪转折，不演唱，不临时加强某个词。近距离干声，只保留自然换气，不加入房间回声、环境声、配乐或其他人声。\n只把下面两句固定原词按原顺序朗读一次，不增删、改写或重复，不念标题和说明，不加语气词或临场发挥；保留完整尾字和自然收声：\n桌上放着一本书，旁边有一只白色的杯子。\n窗边的椅子朝着门口，几张纸整齐地叠在一起。",
+      "assessment": "用户实际试听候选1后明确要求：李寄母亲更干练一些。保留固定两句原词及近距干声，不使用旧候选作为生成参考；按这次明确反馈调整声线/读法。李寄语速、阿蘅母亲虚弱读法按用户要求单独改变，不能再声称这两项与首轮录音条件完全相同。实际结果须重新试听。"
+    },
+    "aheng-mother-voice-02": {
+      "requirement_id": "new26-aheng-mother-voice",
+      "candidate_number": 2,
+      "source_candidate": "aheng-mother-voice-01",
+      "user_feedback": "阿蘅母亲要体现的更加虚弱一些",
+      "prompt": "生成一名单人普通话说话声。说话身份：阿蘅母亲，成年女性说话声，身份说明不朗读。声线与本次读法：中声区偏薄，气息支撑弱、声音轻而带明显细气声，短语后轻轻换气，尾音逐渐变细却完整，体现身体虚弱。每个字仍可听懂，不耳语吞字、不抽泣、不咳嗽，不加入病痛呻吟或额外台词。\n统一试读条件：平稳但气息虚弱的说话读法，中等偏舒缓的自然语速，逗号处短停，句号处自然停顿；不设置人物关系或情绪转折，不演唱，不临时加强某个词。近距离干声，只保留自然换气，不加入房间回声、环境声、配乐或其他人声。\n只把下面两句固定原词按原顺序朗读一次，不增删、改写或重复，不念标题和说明，不加语气词或临场发挥；保留完整尾字和自然收声：\n桌上放着一本书，旁边有一只白色的杯子。\n窗边的椅子朝着门口，几张纸整齐地叠在一起。",
+      "assessment": "用户实际试听候选1后明确要求：阿蘅母亲要体现的更加虚弱一些。保留固定两句原词及近距干声，不使用旧候选作为生成参考；按这次明确反馈调整声线/读法。李寄语速、阿蘅母亲虚弱读法按用户要求单独改变，不能再声称这两项与首轮录音条件完全相同。实际结果须重新试听。"
+    }
+  },
+  "user_feedback_source": "当前任务对话 call_09bf141fd48543678949f6960a9f00b4；旧候选实际试听意见，候选2待重新试听"
+}

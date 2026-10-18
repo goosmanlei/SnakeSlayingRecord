@@ -1,0 +1,254 @@
+{
+  "source": "OpenArt connector model_form_get",
+  "queried_at": "2026-10-16",
+  "model": "nano-banana-2-1",
+  "mode": "image2image",
+  "media": "image",
+  "jsonSchema": {
+    "type": "object",
+    "properties": {
+      "prompt": {
+        "type": "string",
+        "minLength": 1
+      },
+      "imageCount": {
+        "default": 1,
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 8
+      },
+      "aspectRatio": {
+        "type": "string",
+        "enum": [
+          "21:9",
+          "16:9",
+          "3:2",
+          "4:3",
+          "5:4",
+          "1:1",
+          "4:5",
+          "3:4",
+          "2:3",
+          "9:16"
+        ],
+        "default": "1:1"
+      },
+      "resolution": {
+        "default": "1K",
+        "type": "string",
+        "enum": [
+          "1K",
+          "2K",
+          "4K"
+        ]
+      },
+      "autoEnhancePrompt": {
+        "default": false,
+        "type": "boolean"
+      },
+      "visualReferences": {
+        "maxItems": 14,
+        "type": "array",
+        "items": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "const": "image"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "source": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "imageUrl": {
+                  "type": "string"
+                },
+                "thumbnailUrl": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "type",
+                "id",
+                "url",
+                "label"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "imageUrl": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "thumbnailUrl": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string",
+                  "const": "video"
+                }
+              },
+              "required": [
+                "id",
+                "label",
+                "url",
+                "type"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "imageUrl": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "thumbnailUrl": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string",
+                  "const": "element"
+                },
+                "elementId": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "label",
+                "url",
+                "type"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "imageUrl": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "thumbnailUrl": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string",
+                  "const": "text"
+                },
+                "text": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "label",
+                "url",
+                "type",
+                "text"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "imageUrl": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "thumbnailUrl": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string",
+                  "const": "audio"
+                },
+                "audioRole": {
+                  "type": "string",
+                  "enum": [
+                    "voice_reference",
+                    "background",
+                    "sound_effect",
+                    "generic"
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "label",
+                "url",
+                "type"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "minItems": 1
+      }
+    },
+    "required": [
+      "prompt",
+      "visualReferences"
+    ],
+    "additionalProperties": false
+  }
+}

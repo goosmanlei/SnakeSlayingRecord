@@ -1,0 +1,82 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-teacher-court-layout-01",
+  "submission": {
+    "call_id": "task-20261015-0003-teacher-court-layout-01",
+    "submission_sha256": "aee780c56c7b8fae4a8a052fa37fff14a0a661b2033b77cf7c6fd8610b74f5d7",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-teacher-court-layout-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "ea6ad589136c8d24d62c9f46a66a85f694bb238885e6a860abb1b3d64168b6c3.jpg",
+    "sha256": "ea6ad589136c8d24d62c9f46a66a85f694bb238885e6a860abb1b3d64168b6c3",
+    "bytes": 6644824,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-teacher-court-layout-01",
+    "candidate_id": "candidate-def47d5c4ac1a0e57a227b8809ed6a7395255dc3eaee2d700cbd4f15b91b176c",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google remaining balance at the recorded budget checkpoint; no recharge",
+    "reported_balance_usd": 3.86,
+    "balance_checkpoint_dispatches": 106,
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "已实际打开5504×3072原生JPEG。南门、北檐、西晾衣绳与东侧明处可辨，画风干净。但三个座具变成长凳，沿东墙拉开成纵向弧，未形成一北二南的近距离三人坐区；坐着递纸的手部距离不能由此成立。晾衣数量也比请求更多。",
+    "decision": "保留真实原件，不绑定下游。单幅空间路线在必要几何关系上仍不稳定，不扩展批次。后续先明确单人方凳与紧凑三角关系，再以替代模型或准确空间输入验证。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  },
+  "usage": {
+    "total_tokens": 5419,
+    "total_input_tokens": 412,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 412
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4349,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 658
+  },
+  "actual_request_body_sha256": "3698edfda9bb0d00ab2034181e977a2ffb135d636f02241aafc6fa629d9ac2ce",
+  "submitted_inputs": []
+}

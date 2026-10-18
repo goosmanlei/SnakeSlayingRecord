@@ -1,0 +1,58 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-aheng-identity-01",
+  "submission_sha256": "cd915f5e1ab31ca3b90810988932c208e1a0290d23b0681c201be913f2bf3a9d",
+  "request_id": "1goH2b08pxshIppalN6J",
+  "status": "completed",
+  "model": "GPT Image 2.5 Sunburst",
+  "project_id": "8K6WcbrPLghSBJXBtWAE",
+  "resource_ids": [
+    "0fzvppl9JDrsD9amZlWk"
+  ],
+  "components": [
+    {
+      "id": "original",
+      "role": "original",
+      "file": "24342a9021403aa8c32324595560cb59a4cba24bc6948c5317b493902aade5af.png",
+      "sha256": "24342a9021403aa8c32324595560cb59a4cba24bc6948c5317b493902aade5af",
+      "bytes": 7654818,
+      "mime": "image/png",
+      "width": 3584,
+      "height": 2016
+    }
+  ],
+  "cost": {
+    "currency": "OpenArt credits",
+    "quoted": 315,
+    "actual": "UNKNOWN",
+    "note": "平台结果未返回实际扣费字段；报价不等于扣费。"
+  },
+  "credit_observation": {
+    "before": 12000,
+    "after": 11685,
+    "difference": 315,
+    "difference_is_invoice": false
+  },
+  "request_file": "production/requests/task-20261015-0003-aheng-identity-01.json",
+  "result": {
+    "call_id": "task-20261015-0003-aheng-identity-01",
+    "candidate_id": "candidate-3e6e80bc3bc2668153402565045152eaf36c1791d616e0c29b284033cf267ade",
+    "status": "completed",
+    "already_applied": false
+  },
+  "quality_review": {
+    "executor_visual_inspection": "failed_current_specification",
+    "actual_pixels": [
+      3584,
+      2016
+    ],
+    "required_pixels": [
+      3840,
+      2160
+    ],
+    "unscaled": true,
+    "finding": "尺寸不足；人物与衣服的铅笔纹理和软层次不满足两级阴影、干净色块要求。",
+    "selected_for_downstream": false,
+    "user_adopted": false
+  }
+}

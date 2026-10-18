@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-river-street-layout-02",
+  "submission": {
+    "call_id": "task-20261015-0003-river-street-layout-02",
+    "submission_sha256": "454a2f60b5ec735a8b06f0c87a5a88e87387a1a29ecb4b09590f886ba842381d",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-river-street-layout-02.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "9ef8d075adbaf07071d9e49447c6207f09f0a08a88c1a92c6706158c5a6672fb.jpg",
+    "sha256": "9ef8d075adbaf07071d9e49447c6207f09f0a08a88c1a92c6706158c5a6672fb",
+    "bytes": 9337117,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-river-street-layout-02",
+    "candidate_id": "candidate-85c89115b6bdc89155f6d551831f95feac5543d760aa24abddda1b43e17bb2a7",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "实际查看原件：北铺南河及东南侧道具屋南向门比首候选更清楚，西侧绕屋干路可辨；但图中仍生成河街、阿蘅家的窄巷、李家土巷三处文字，李家路口实际朝东北而非从屋东向东南转出，竹摊位于米铺对街稍偏东而非偏西。屋顶及部分建筑在边界切出，不能作为当前完整地理母图通过。",
+    "decision": "不选下游，不扩展依赖本图的空间制作。两次根图均有方位与文字问题；后续须先改用能清晰控制通路的单一布局表达再有限试制，不能仅重复原参数或以局部改善算整图通过。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  },
+  "usage": {
+    "total_tokens": 7233,
+    "total_input_tokens": 627,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 627
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 5084,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1522
+  },
+  "actual_request_body_sha256": "20ecd03ffd63eb167f087f2dbf8ae72ec3bdb740b0acb3eb19a918f1b27d203d",
+  "submitted_inputs": []
+}

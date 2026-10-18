@@ -1,0 +1,103 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-liji-first-blood-02",
+  "submission": {
+    "call_id": "task-20261015-0003-liji-first-blood-02",
+    "submission_sha256": "38614dd5614b9f6952fea36dbf64876b74f0742c0274605957f2829d3587cbd0",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-liji-first-blood-02.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "7876d1e580c77d12ed475f3f270e491c4e2f6f562021c0bf82143cd7a3039aca.jpg",
+    "sha256": "7876d1e580c77d12ed475f3f270e491c4e2f6f562021c0bf82143cd7a3039aca",
+    "bytes": 5118290,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-liji-first-blood-02",
+    "candidate_id": "candidate-f3e498c667cd2d91ff73e839e7284cd8f83643a431c013a3cd99c4934a6f335a",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "已实际看原生5504×3072 JPEG：全身右手薄布、左手裸露与干常服一致；右掌近图拇指在图右，布中央仅一个豆粒般小暗红点，没有滴落、条状流痕或第二血点。额布无血，眉眼、发髻和后脑结可辨，人物身份及比例保持。",
+    "decision": "选择首刀后掌布仅一点见血的完整状态，后续扩大血迹不能由此直接冒充；现有微小圆点在剧情镜头按同一范围保持自然浸染边缘。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-task-20261015-0003-liji-identity-01",
+        "revision_id": "77908eeddf225d05468c60366401d16f721cceb62cb297dcd110c25132f302e4"
+      }
+    ]
+  },
+  "current_consumer_selection": {
+    "slots": 22,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/liji-first-blood-02-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 6983,
+    "total_input_tokens": 1446,
+    "input_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 1120
+      },
+      {
+        "modality": "text",
+        "tokens": 326
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4341,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1196
+  },
+  "actual_request_body_sha256": "aea02c6e8906df5d310b6347b67911c4d99adcd06efa79fcba1e030838efdbc7",
+  "submitted_inputs": [
+    {
+      "image_number": 1,
+      "submitted_sha256": "37a00a139241862d54044b8e50b2c4b02a545b4a8678b11bb1de2ee2402f56ca",
+      "original_sha256": "05ac4d70dbed022cbaabd37b9da071031056d325653ccbee9b1a2aac5046e0ce",
+      "crop": {
+        "height": 1,
+        "width": 0.3,
+        "x": 0.05,
+        "y": 0
+      },
+      "submitted_input_file": "production/requests/inputs/37a00a139241862d54044b8e50b2c4b02a545b4a8678b11bb1de2ee2402f56ca.png",
+      "purpose": "Exact reference region only; not a generated candidate or a 4K deliverable."
+    }
+  ]
+}

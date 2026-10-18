@@ -1,0 +1,56 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-snake-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-snake-identity-01",
+    "submission_sha256": "bd489a19a8c2e324f9e9f0ce81a842f749d8d65757ae32fb58595056aae8c259",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-snake-identity-01.json",
+  "provider_history_id": "kr9kVSwpERiCVURsIH5h",
+  "provider_job_id": null,
+  "provider_resource_id": "IldJvHOxwyE7wKnSq94i",
+  "model": "gpt-image-2-5-sunburst",
+  "project_id": "8K6WcbrPLghSBJXBtWAE",
+  "provider": "OpenArt",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "df7b068d2e48022674c6da73fead7a6b40bf5a1fbb797774841be20ffc1d14bb.png",
+    "sha256": "df7b068d2e48022674c6da73fead7a6b40bf5a1fbb797774841be20ffc1d14bb",
+    "bytes": 6476366,
+    "mime": "image/png",
+    "width": 3840,
+    "height": 2160
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-snake-identity-01",
+    "candidate_id": "candidate-e87d727cebe5b11dc34741eb94e05b1cfb2981e8f5dade4bea1523fd7b6dfca0",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "OpenArt credits",
+    "quoted": 350,
+    "actual": "UNKNOWN",
+    "note": "报价对应单图；实际扣费字段未返回时保留UNKNOWN。"
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "已实际打开3840×2160原件。自然蛇形、楔形头、暗金棕圆瞳、橄榄棕背与灰米腹、闭嘴贴地和连续体干成立，无神化器官或伤口。主图、侧图和细节却逐片铺满鳞线与细碎斑纹，明显超过方案要求的少量分组短线，未达到全剧干净二维母版的纹理密度。",
+    "decision": "不选下游。回到无图输入根图，以头颈轮廓与大色块优先，取消诱导写实纹理的逐鳞细节强调；只用少量局部线组提示鳞向，仍保留腹鳞带和自然蛇形。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-document-handler-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-document-handler-identity-01",
+    "submission_sha256": "3e34492d4b9fce4d992b6bb85726eaf67f0ab5e060ba69cf1b018c2062547ec5",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-document-handler-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "b9d9180dfdba508eb2f130dfcfbd8821c40062aea0621c87d3fa789b58756ec4.jpg",
+    "sha256": "b9d9180dfdba508eb2f130dfcfbd8821c40062aea0621c87d3fa789b58756ec4",
+    "bytes": 7085785,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-document-handler-identity-01",
+    "candidate_id": "candidate-5baf2f48cdfab41d880498ac7debd25b05118c778a070f62495bfbe3ee64f5cd",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "已实际看原生5504×3072 JPEG：长尖下巴、弯眉、无须与偏低发束在三个视向一致，浅灰绿交领袍、褐腰带和土黄布鞋清楚。袍下缘位于小腿，脚踝与鞋完整；两手空出，食指可辨。没有官帽、职名牌、供词或新增笔迹，脸形及浅灰绿色与梁、赵等已有母版可辨。",
+    "decision": "选择为认备粮单笔迹的经手人的第0代身份母版；不由此增加未知官职或故事背景。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 1,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/document-handler-identity-01-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 5823,
+    "total_input_tokens": 350,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 350
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4372,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1101
+  },
+  "actual_request_body_sha256": "ca73d36e2f03395e2c755c4c5aa89cbb1b5de01dc90b85cb2d5ec29f6fe29b06",
+  "submitted_inputs": []
+}

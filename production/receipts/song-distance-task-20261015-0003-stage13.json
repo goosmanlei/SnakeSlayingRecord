@@ -1,0 +1,79 @@
+{
+  "format": "song-distance-derivative-v1",
+  "created_at": "2026-10-17T06:49:12.144982+00:00",
+  "task_id": "task-20261015-0003",
+  "design": {
+    "source_asset": {
+      "object_id": "asset-task-20261015-0003-ritual-song-full-02",
+      "revision_id": "c603afa1b1ff699fa609a3f42ab132298ee0f4a8236ed9ac916f949de33f1558"
+    },
+    "source_component_id": "melody-ritual-core",
+    "source_sha256": "faeb682737c6463c029c736a499a0c2059f39bea31b9a74630bcef3b05b4c8ed",
+    "source_seconds": 12.5,
+    "user_location": {
+      "id": "ritual-core",
+      "source_sha256": "3903014c7428b8269c8e277b9171c1fc1eed273074a86418522dd7706197e339",
+      "start_seconds": 97,
+      "end_seconds": 109.5,
+      "song_id": "new26-ritual-song-singing",
+      "line_numbers": [
+        11
+      ],
+      "phrase": "米饵献上，明月还乡（选第一次唱）",
+      "marked_by": "user",
+      "saved_at": "2026-10-17T05:50:06.401304+00:00"
+    },
+    "lyrics": "米饵献上，明月还乡——",
+    "filter_graph": "lowpass=f=3500:p=2:r=f64,volume=-12dB,aecho=in_gain=1:out_gain=1:delays=35|80:decays=0.08|0.04",
+    "purpose": "第10场门外听见河对岸戏台，热闹留在远处，屋内母女不被拉向喜庆；近声原件与完整歌曲保留。",
+    "decision": "仅降高频、降电平和很轻的35/80毫秒短反射。不变速、不改调、不截尾，不加入喝彩或呼吸；新件须实际试听。",
+    "principle": "production/filmcraft/11-sound.md：声场远近由频率、反射和电平共同建立；参数不能代替实际距离、字句与尾音听辨。",
+    "planned_timeline": "从镜内2秒完整播放；按派生实测尾音结束后再喝彩，整镜仍16秒。",
+    "external_generation_call": false
+  },
+  "technical_and_hearing_status": {
+    "status": "derived_hearing_unverified",
+    "actual_listening_by_executor": false,
+    "actual_listening_by_user": false,
+    "observation": "保留完整原生MP3与用户定位的12.5秒近声唱句，另制12.58秒河对岸远声候选；只做削高频、低增益和轻短反射，保留新增80毫秒尾响。新派生件尚未实际试听，不先选供镜头；技术峰值不代替字句、距离及尾音听辨。",
+    "file": "export/assets/f40e1ccb12939615daaf41b85d4439731b813e08e3412ea790f8517ea4d105eb.wav",
+    "sha256": "f40e1ccb12939615daaf41b85d4439731b813e08e3412ea790f8517ea4d105eb",
+    "duration_seconds": 12.58,
+    "sample_rate": 48000,
+    "channels": 2,
+    "sample_width": 2,
+    "sample_peak_s16": 8656,
+    "clipped_samples": 0,
+    "not_true_peak_or_loudness_measurement": true,
+    "timeline": {
+      "start_in_shot_seconds": 2,
+      "ends_in_shot_seconds": 14.58,
+      "cheers_after_seconds": 14.58,
+      "shot_end_seconds": 16
+    },
+    "decision": "待用户比较近声与远声的准确字句、距离和自然尾响；不将该文件存在计作歌曲用途完成。"
+  },
+  "asset_id": "asset-task-20261015-0003-ritual-song-full-02",
+  "asset_revision_id": "c603afa1b1ff699fa609a3f42ab132298ee0f4a8236ed9ac916f949de33f1558",
+  "candidate_id": "candidate-39aff0dbbad65c16e7c2c1d8dfbb732ca0b993220c114a3ae7ceb56e07fbaf97",
+  "component": {
+    "id": "ritual-core-distant",
+    "role": "original",
+    "file": "f40e1ccb12939615daaf41b85d4439731b813e08e3412ea790f8517ea4d105eb.wav",
+    "sha256": "f40e1ccb12939615daaf41b85d4439731b813e08e3412ea790f8517ea4d105eb",
+    "bytes": 2415438,
+    "mime": "audio/wav",
+    "duration_seconds": 12.58,
+    "has_audio": true,
+    "sample_rate": 48000,
+    "channels": 2
+  },
+  "result": {
+    "call_id": "task-20261015-0003-ritual-song-full-02",
+    "candidate_id": "candidate-39aff0dbbad65c16e7c2c1d8dfbb732ca0b993220c114a3ae7ceb56e07fbaf97",
+    "status": "completed",
+    "already_applied": false
+  },
+  "source_components_unchanged": true,
+  "external_generation_call": false
+}

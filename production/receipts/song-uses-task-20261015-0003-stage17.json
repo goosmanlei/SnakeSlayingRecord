@@ -1,0 +1,837 @@
+{
+  "format": "heard-song-uses-v1",
+  "task_id": "task-20261015-0003",
+  "completed_at": "2026-10-18T14:34:49.656034+00:00",
+  "items": [
+    {
+      "requirement_id": "new26-s001-q02-video",
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-boat-song-full-02",
+        "revision_id": "313d65234fa6bc01da8b57a8b2afde44e9c70b7635bfe365b77e45cff78e7ce9"
+      },
+      "candidate_id": "candidate-aaa3fca1c8eacf021377b80115a2bd5062cb9b5cf35223f5ad5e00c99f1e2914",
+      "component": {
+        "bytes": 2496044,
+        "channels": 2,
+        "duration_seconds": 13.0,
+        "file": "f748cf33ae71c45a25608e1f55a87e8797a30923c17997e7a98686897da61d4a.wav",
+        "has_audio": true,
+        "id": "boat-aheng-home",
+        "mime": "audio/wav",
+        "role": "original",
+        "sample_rate": 48000,
+        "sha256": "f748cf33ae71c45a25608e1f55a87e8797a30923c17997e7a98686897da61d4a"
+      },
+      "actual_audio_timeline": {
+        "component_id": "boat-aheng-home",
+        "editorial_segments": [
+          {
+            "component_id": "boat-aheng-home",
+            "material_selection": {
+              "candidate_id": "candidate-aaa3fca1c8eacf021377b80115a2bd5062cb9b5cf35223f5ad5e00c99f1e2914",
+              "material_id": "new26-boat-song-singing"
+            },
+            "reference": {
+              "object_id": "asset-task-20261015-0003-boat-song-full-02",
+              "revision_id": "313d65234fa6bc01da8b57a8b2afde44e9c70b7635bfe365b77e45cff78e7ce9"
+            },
+            "sha256": "f748cf33ae71c45a25608e1f55a87e8797a30923c17997e7a98686897da61d4a",
+            "timeline": {
+              "continuous_original": true,
+              "rate": 1,
+              "shot_end_seconds": 14,
+              "shot_start_seconds": 1,
+              "source_end_seconds": 13,
+              "source_start_seconds": 0
+            },
+            "use": "使用完整13秒角色录音；本镜后期播放原轨0—13秒，置于镜内1—14.000000秒。用户定位末字今的延音为原轨8.2—13秒。后期把同一完整录音原速连续铺在相邻镜头下，只切画面；不得重播尾字、变速、拉伸、复制尾音或叠成双声。下述时间范围是后期时间安排，模型始终引用完整文件。实际视频口型、动作和最终混音另验。老汉插话置镜内11—14秒，完全位于同一次今字尾音内。"
+          }
+        ],
+        "full_file_seconds": 13.0,
+        "model_reference": "complete_file",
+        "reference_only": false,
+        "sha256": "f748cf33ae71c45a25608e1f55a87e8797a30923c17997e7a98686897da61d4a",
+        "shot_end_seconds": 18,
+        "tail_location": {
+          "end_seconds": 13,
+          "id": "boat-aheng-home-01",
+          "marked_by": "user",
+          "saved_at": "2026-10-18T14:27:22.473366+00:00",
+          "source_sha256": "f748cf33ae71c45a25608e1f55a87e8797a30923c17997e7a98686897da61d4a",
+          "start_seconds": 8.2,
+          "tail_word": "今"
+        },
+        "tail_location_receipt": "production/receipts/song-tail-locations-task-20261015-0003-stage17.json"
+      },
+      "import": {
+        "validated_only": false,
+        "records": [
+          {
+            "id": "new26-s001-q02-video",
+            "kind": "REQUIREMENT",
+            "revision": "781fee86439de18557e68107f103a05407cc60b7819a74c741b3a7f68dcfe9b3",
+            "version": 11,
+            "edit_token": 11,
+            "content_sha256": "7547ea9a7ada50e0ae08ef9b50d695456e14b467485f86f4edaacce69c661ff3"
+          }
+        ],
+        "removed": []
+      },
+      "selection": {
+        "requirement_id": "new26-s001-q02-video",
+        "revision_id": "781fee86439de18557e68107f103a05407cc60b7819a74c741b3a7f68dcfe9b3",
+        "edit_token": 12,
+        "content_sha256": "5efe979c1e72a33542ba16453fd7147144cb61b0ce6a522f65830ff5961b862a",
+        "already_applied": false,
+        "workspace_marker": {
+          "owner_id": "new26-s001-q02",
+          "records": [
+            [
+              "new26-s001-q02",
+              "a81b89e132d0d034dfc6bdf67a7084210eac9af03eaa31cec6d4ee099a20855d",
+              2
+            ],
+            [
+              "new26-s001-q02-video",
+              "781fee86439de18557e68107f103a05407cc60b7819a74c741b3a7f68dcfe9b3",
+              12
+            ]
+          ],
+          "source_signature": "ab7a8dfdd238253061386ef82cca98314ac4355fd3f753aeea6d268f1ba7ad8f"
+        }
+      },
+      "current_version": 12,
+      "current_content_sha256": "5efe979c1e72a33542ba16453fd7147144cb61b0ce6a522f65830ff5961b862a",
+      "review": "用户已实际定位尾字的延音区间；按声音先于画面连续的原则，把切点放在已唱出末字后的延音内。保留同一次完整录音、原速、全部源帧和自然头尾；仅调整必要镜头预算和声音安排。检查相邻镜片段无重复无缺口，唱完后才说连上了、松页或互望。锁定剧本原词、动作因果和其他准确输入不变；本任务没有制作视频，实际口型和混音另验。"
+    },
+    {
+      "requirement_id": "new26-s039-q08-video",
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+        "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+      },
+      "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+      "component": {
+        "bytes": 2745644,
+        "channels": 2,
+        "duration_seconds": 14.3,
+        "file": "8a7360f49b9d8eca4d2095a28324477d679e523151da4fc36909a3c315caab24.wav",
+        "has_audio": true,
+        "id": "qingpeng-aheng-teaching-fifth",
+        "mime": "audio/wav",
+        "role": "original",
+        "sample_rate": 48000,
+        "sha256": "8a7360f49b9d8eca4d2095a28324477d679e523151da4fc36909a3c315caab24"
+      },
+      "actual_audio_timeline": {
+        "component_id": "qingpeng-aheng-teaching-fifth",
+        "editorial_segments": [
+          {
+            "component_id": "qingpeng-aheng-teaching-fifth",
+            "material_selection": {
+              "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+              "material_id": "new26-qingpeng-singing"
+            },
+            "reference": {
+              "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+              "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+            },
+            "sha256": "8a7360f49b9d8eca4d2095a28324477d679e523151da4fc36909a3c315caab24",
+            "timeline": {
+              "continuous_original": true,
+              "rate": 1,
+              "shot_end_seconds": 13,
+              "shot_start_seconds": 1,
+              "source_end_seconds": 12,
+              "source_start_seconds": 0
+            },
+            "use": "使用完整14.3秒角色录音；本镜后期播放原轨0—12秒，置于镜内1—13.000000秒。用户定位末字桥的延音为原轨10—14秒。后期把同一完整录音原速连续铺在相邻镜头下，只切画面；不得重播尾字、变速、拉伸、复制尾音或叠成双声。下述时间范围是后期时间安排，模型始终引用完整文件。实际视频口型、动作和最终混音另验。"
+          }
+        ],
+        "full_file_seconds": 14.3,
+        "model_reference": "complete_file",
+        "reference_only": false,
+        "sha256": "8a7360f49b9d8eca4d2095a28324477d679e523151da4fc36909a3c315caab24",
+        "shot_end_seconds": 13,
+        "tail_location": {
+          "end_seconds": 14,
+          "id": "qingpeng-aheng-teaching-fifth-01",
+          "marked_by": "user",
+          "saved_at": "2026-10-18T14:29:14.268170+00:00",
+          "source_sha256": "8a7360f49b9d8eca4d2095a28324477d679e523151da4fc36909a3c315caab24",
+          "start_seconds": 10,
+          "tail_word": "桥"
+        },
+        "tail_location_receipt": "production/receipts/song-tail-locations-task-20261015-0003-stage17.json"
+      },
+      "import": {
+        "validated_only": false,
+        "records": [
+          {
+            "id": "new26-s039-q08-video",
+            "kind": "REQUIREMENT",
+            "revision": "899b1b4e1e13424760be94f3a6303814cdd4dcae7baaaa7d8647b92aaaa7e4db",
+            "version": 9,
+            "edit_token": 9,
+            "content_sha256": "899ebd091b75618550614bd547c97769725869fad164165f064d002cde468083"
+          }
+        ],
+        "removed": []
+      },
+      "selection": {
+        "requirement_id": "new26-s039-q08-video",
+        "revision_id": "899b1b4e1e13424760be94f3a6303814cdd4dcae7baaaa7d8647b92aaaa7e4db",
+        "edit_token": 10,
+        "content_sha256": "d96c81e75e3ec99605b44b2d01d84d43b00cde2a4f69746fd8a56e5c262d12af",
+        "already_applied": false,
+        "workspace_marker": {
+          "owner_id": "new26-s039-q08",
+          "records": [
+            [
+              "new26-s039-q08",
+              "3e39480ffdbad39d603ac468100bead17c269d325c766c66e520dbb904f083db",
+              3
+            ],
+            [
+              "new26-s039-q08-video",
+              "899b1b4e1e13424760be94f3a6303814cdd4dcae7baaaa7d8647b92aaaa7e4db",
+              10
+            ]
+          ],
+          "source_signature": "7569241a0e0f873fea254c7de998ac72c0fd5da9290731cf6c12d54f16b03ae6"
+        }
+      },
+      "current_version": 10,
+      "current_content_sha256": "d96c81e75e3ec99605b44b2d01d84d43b00cde2a4f69746fd8a56e5c262d12af",
+      "review": "用户已实际定位尾字的延音区间；按声音先于画面连续的原则，把切点放在已唱出末字后的延音内。保留同一次完整录音、原速、全部源帧和自然头尾；仅调整必要镜头预算和声音安排。检查相邻镜片段无重复无缺口，唱完后才说连上了、松页或互望。锁定剧本原词、动作因果和其他准确输入不变；本任务没有制作视频，实际口型和混音另验。"
+    },
+    {
+      "requirement_id": "new26-s039-q09-video",
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+        "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+      },
+      "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+      "component": {
+        "bytes": 2745644,
+        "channels": 2,
+        "duration_seconds": 14.3,
+        "file": "8a7360f49b9d8eca4d2095a28324477d679e523151da4fc36909a3c315caab24.wav",
+        "has_audio": true,
+        "id": "qingpeng-aheng-teaching-fifth",
+        "mime": "audio/wav",
+        "role": "original",
+        "sample_rate": 48000,
+        "sha256": "8a7360f49b9d8eca4d2095a28324477d679e523151da4fc36909a3c315caab24"
+      },
+      "actual_audio_timeline": {
+        "component_id": "qingpeng-aheng-teaching-fifth",
+        "editorial_segments": [
+          {
+            "component_id": "qingpeng-aheng-teaching-fifth",
+            "material_selection": {
+              "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+              "material_id": "new26-qingpeng-singing"
+            },
+            "reference": {
+              "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+              "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+            },
+            "sha256": "8a7360f49b9d8eca4d2095a28324477d679e523151da4fc36909a3c315caab24",
+            "timeline": {
+              "continuous_original": true,
+              "rate": 1,
+              "shot_end_seconds": 2.3,
+              "shot_start_seconds": 0,
+              "source_end_seconds": 14.3,
+              "source_start_seconds": 12
+            },
+            "use": "使用完整14.3秒角色录音；本镜后期播放原轨12—14.3秒，置于镜内0—2.300000秒。用户定位末字桥的延音为原轨10—14秒。后期把同一完整录音原速连续铺在相邻镜头下，只切画面；不得重播尾字、变速、拉伸、复制尾音或叠成双声。下述时间范围是后期时间安排，模型始终引用完整文件。实际视频口型、动作和最终混音另验。声尾在镜内2秒结束，原文件自然尾部保留至2.3秒，6秒才说连上了。"
+          }
+        ],
+        "full_file_seconds": 14.3,
+        "model_reference": "complete_file",
+        "reference_only": false,
+        "sha256": "8a7360f49b9d8eca4d2095a28324477d679e523151da4fc36909a3c315caab24",
+        "shot_end_seconds": 12,
+        "tail_location": {
+          "end_seconds": 14,
+          "id": "qingpeng-aheng-teaching-fifth-01",
+          "marked_by": "user",
+          "saved_at": "2026-10-18T14:29:14.268170+00:00",
+          "source_sha256": "8a7360f49b9d8eca4d2095a28324477d679e523151da4fc36909a3c315caab24",
+          "start_seconds": 10,
+          "tail_word": "桥"
+        },
+        "tail_location_receipt": "production/receipts/song-tail-locations-task-20261015-0003-stage17.json"
+      },
+      "import": {
+        "validated_only": false,
+        "records": [
+          {
+            "id": "new26-s039-q09-video",
+            "kind": "REQUIREMENT",
+            "revision": "01aec712652e77cff37237e6d089843926791b00a3632eaecc8cdb91af12c7a9",
+            "version": 10,
+            "edit_token": 10,
+            "content_sha256": "6aca30cc3e4faf1657a7a320872daa7a6b34eb8e1979fc5d90457c25009686a5"
+          }
+        ],
+        "removed": []
+      },
+      "selection": {
+        "requirement_id": "new26-s039-q09-video",
+        "revision_id": "01aec712652e77cff37237e6d089843926791b00a3632eaecc8cdb91af12c7a9",
+        "edit_token": 11,
+        "content_sha256": "db130a1f357459f854afdadde0e0dec46afdc4023b2d55744e3646318756895d",
+        "already_applied": false,
+        "workspace_marker": {
+          "owner_id": "new26-s039-q09",
+          "records": [
+            [
+              "new26-s039-q09",
+              "efa95b4590ca47cbb1ca7f10c031a03b2fadcbaea1b001de5063db8691d5cca1",
+              3
+            ],
+            [
+              "new26-s039-q09-video",
+              "01aec712652e77cff37237e6d089843926791b00a3632eaecc8cdb91af12c7a9",
+              11
+            ]
+          ],
+          "source_signature": "b205ffe40ccf53557157a4ad58226af1dd2436b7d22d4068ad6f6d167cc666d8"
+        }
+      },
+      "current_version": 11,
+      "current_content_sha256": "db130a1f357459f854afdadde0e0dec46afdc4023b2d55744e3646318756895d",
+      "review": "用户已实际定位尾字的延音区间；按声音先于画面连续的原则，把切点放在已唱出末字后的延音内。保留同一次完整录音、原速、全部源帧和自然头尾；仅调整必要镜头预算和声音安排。检查相邻镜片段无重复无缺口，唱完后才说连上了、松页或互望。锁定剧本原词、动作因果和其他准确输入不变；本任务没有制作视频，实际口型和混音另验。"
+    },
+    {
+      "requirement_id": "new26-s041-q06-video",
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+        "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+      },
+      "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+      "component": {
+        "bytes": 4608044,
+        "channels": 2,
+        "duration_seconds": 24.0,
+        "file": "a6b6c2e69bafc53a0a70764c53ca724fdf58bdf9f698683d728a1336ea5b6105.wav",
+        "has_audio": true,
+        "id": "qingpeng-aheng-stage2",
+        "mime": "audio/wav",
+        "role": "original",
+        "sample_rate": 48000,
+        "sha256": "a6b6c2e69bafc53a0a70764c53ca724fdf58bdf9f698683d728a1336ea5b6105"
+      },
+      "actual_audio_timeline": {
+        "component_id": "qingpeng-aheng-stage2",
+        "editorial_segments": [
+          {
+            "component_id": "qingpeng-aheng-stage2",
+            "material_selection": {
+              "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+              "material_id": "new26-qingpeng-singing"
+            },
+            "reference": {
+              "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+              "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+            },
+            "sha256": "a6b6c2e69bafc53a0a70764c53ca724fdf58bdf9f698683d728a1336ea5b6105",
+            "timeline": {
+              "continuous_original": true,
+              "rate": 1,
+              "shot_end_seconds": 22,
+              "shot_start_seconds": 0,
+              "source_end_seconds": 22,
+              "source_start_seconds": 0
+            },
+            "use": "使用完整24秒角色录音；本镜后期播放原轨0—22秒，置于镜内0—22.000000秒。用户定位末字了的延音为原轨19.2—24秒。后期把同一完整录音原速连续铺在相邻镜头下，只切画面；不得重播尾字、变速、拉伸、复制尾音或叠成双声。下述时间范围是后期时间安排，模型始终引用完整文件。实际视频口型、动作和最终混音另验。"
+          }
+        ],
+        "full_file_seconds": 24.0,
+        "model_reference": "complete_file",
+        "reference_only": false,
+        "sha256": "a6b6c2e69bafc53a0a70764c53ca724fdf58bdf9f698683d728a1336ea5b6105",
+        "shot_end_seconds": 22,
+        "tail_location": {
+          "end_seconds": 24,
+          "id": "qingpeng-aheng-stage2-01",
+          "marked_by": "user",
+          "saved_at": "2026-10-18T14:27:46.730663+00:00",
+          "source_sha256": "a6b6c2e69bafc53a0a70764c53ca724fdf58bdf9f698683d728a1336ea5b6105",
+          "start_seconds": 19.2,
+          "tail_word": "了"
+        },
+        "tail_location_receipt": "production/receipts/song-tail-locations-task-20261015-0003-stage17.json"
+      },
+      "import": {
+        "validated_only": false,
+        "records": [
+          {
+            "id": "new26-s041-q06-video",
+            "kind": "REQUIREMENT",
+            "revision": "e4e88f330337f92b96e9a61cda28407248e40420b66c4d9408a71ef4ef09a99f",
+            "version": 8,
+            "edit_token": 8,
+            "content_sha256": "b42b117309a8fc74bb688bfa71c091c878e41b2abafaf74688571e9d45825dec"
+          }
+        ],
+        "removed": []
+      },
+      "selection": {
+        "requirement_id": "new26-s041-q06-video",
+        "revision_id": "e4e88f330337f92b96e9a61cda28407248e40420b66c4d9408a71ef4ef09a99f",
+        "edit_token": 9,
+        "content_sha256": "fff1184a3282eca60198d290fe04a2187d3302e4d65984f1d8ceeeb42e8a2139",
+        "already_applied": false,
+        "workspace_marker": {
+          "owner_id": "new26-s041-q06",
+          "records": [
+            [
+              "new26-s041-q06",
+              "f772c02b7a33e9fd8b61b4bf76e10303064d40cbf41e29f51b5dc13582f70f9b",
+              2
+            ],
+            [
+              "new26-s041-q06-video",
+              "e4e88f330337f92b96e9a61cda28407248e40420b66c4d9408a71ef4ef09a99f",
+              9
+            ]
+          ],
+          "source_signature": "6c36f26477b4ea9b079d33578323bb63d9f6b5134ae908bea168ab28836f1bb2"
+        }
+      },
+      "current_version": 9,
+      "current_content_sha256": "fff1184a3282eca60198d290fe04a2187d3302e4d65984f1d8ceeeb42e8a2139",
+      "review": "用户已实际定位尾字的延音区间；按声音先于画面连续的原则，把切点放在已唱出末字后的延音内。保留同一次完整录音、原速、全部源帧和自然头尾；仅调整必要镜头预算和声音安排。检查相邻镜片段无重复无缺口，唱完后才说连上了、松页或互望。锁定剧本原词、动作因果和其他准确输入不变；本任务没有制作视频，实际口型和混音另验。"
+    },
+    {
+      "requirement_id": "new26-s041-q07-video",
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+        "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+      },
+      "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+      "component": {
+        "bytes": 5184044,
+        "channels": 2,
+        "duration_seconds": 27.0,
+        "file": "98bca747be4117f9fc429e14cb31f8d930c7b979dda5c3caad0696f5097d72ea.wav",
+        "has_audio": true,
+        "id": "qingpeng-aheng-stage3",
+        "mime": "audio/wav",
+        "role": "original",
+        "sample_rate": 48000,
+        "sha256": "98bca747be4117f9fc429e14cb31f8d930c7b979dda5c3caad0696f5097d72ea"
+      },
+      "actual_audio_timeline": {
+        "component_id": "qingpeng-aheng-stage3",
+        "editorial_segments": [
+          {
+            "component_id": "qingpeng-aheng-stage2",
+            "material_selection": {
+              "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+              "material_id": "new26-qingpeng-singing"
+            },
+            "reference": {
+              "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+              "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+            },
+            "sha256": "a6b6c2e69bafc53a0a70764c53ca724fdf58bdf9f698683d728a1336ea5b6105",
+            "timeline": {
+              "continuous_original": true,
+              "rate": 1,
+              "shot_end_seconds": 2,
+              "shot_start_seconds": 0,
+              "source_end_seconds": 24,
+              "source_start_seconds": 22
+            },
+            "use": "承接上镜同一了字余尾，只在后期连续铺，不作为第二个模型音频附件。"
+          },
+          {
+            "component_id": "qingpeng-aheng-stage3",
+            "material_selection": {
+              "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+              "material_id": "new26-qingpeng-singing"
+            },
+            "reference": {
+              "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+              "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+            },
+            "sha256": "98bca747be4117f9fc429e14cb31f8d930c7b979dda5c3caad0696f5097d72ea",
+            "timeline": {
+              "continuous_original": true,
+              "rate": 1,
+              "shot_end_seconds": 29,
+              "shot_start_seconds": 3,
+              "source_end_seconds": 26,
+              "source_start_seconds": 0
+            },
+            "use": "使用完整27秒角色录音；本镜后期播放原轨0—26秒，置于镜内3—29.000000秒。用户定位末字边的延音为原轨24.5—27秒。后期把同一完整录音原速连续铺在相邻镜头下，只切画面；不得重播尾字、变速、拉伸、复制尾音或叠成双声。下述时间范围是后期时间安排，模型始终引用完整文件。实际视频口型、动作和最终混音另验。镜内0—2秒先连续接第二乐句原轨22—24秒，2—3秒换气；该第二乐句只作准确后期引用，不另上传而突破音频总时长。"
+          }
+        ],
+        "full_file_seconds": 27.0,
+        "model_reference": "complete_file",
+        "reference_only": false,
+        "sha256": "98bca747be4117f9fc429e14cb31f8d930c7b979dda5c3caad0696f5097d72ea",
+        "shot_end_seconds": 29,
+        "tail_location": {
+          "end_seconds": 27,
+          "id": "qingpeng-aheng-stage3-01",
+          "marked_by": "user",
+          "saved_at": "2026-10-18T14:28:23.812467+00:00",
+          "source_sha256": "98bca747be4117f9fc429e14cb31f8d930c7b979dda5c3caad0696f5097d72ea",
+          "start_seconds": 24.5,
+          "tail_word": "边"
+        },
+        "tail_location_receipt": "production/receipts/song-tail-locations-task-20261015-0003-stage17.json"
+      },
+      "import": {
+        "validated_only": false,
+        "records": [
+          {
+            "id": "new26-s041-q07-video",
+            "kind": "REQUIREMENT",
+            "revision": "48f8ddf5c698b1b2765cb5337f3e7c59e73c100408e6a9eb0d8d03635e59b19b",
+            "version": 9,
+            "edit_token": 9,
+            "content_sha256": "ee40c120c48ba9666af123cb5b844a75348b1c29b5537fee0e163e4f40357b83"
+          }
+        ],
+        "removed": []
+      },
+      "selection": {
+        "requirement_id": "new26-s041-q07-video",
+        "revision_id": "48f8ddf5c698b1b2765cb5337f3e7c59e73c100408e6a9eb0d8d03635e59b19b",
+        "edit_token": 10,
+        "content_sha256": "ecb425334b04cf19f7704769608eec665b4a17d771f40934a11d3b795008c603",
+        "already_applied": false,
+        "workspace_marker": {
+          "owner_id": "new26-s041-q07",
+          "records": [
+            [
+              "new26-s041-q07",
+              "62c3c6ebabf4f26d22317cc79e94dc4024fa7a91a90fba0e497db943e931cc8d",
+              3
+            ],
+            [
+              "new26-s041-q07-video",
+              "48f8ddf5c698b1b2765cb5337f3e7c59e73c100408e6a9eb0d8d03635e59b19b",
+              10
+            ]
+          ],
+          "source_signature": "5ebf3f013fd7737a1e7f0aa90dc453bf941a659bc9b4f368f35ac6239be5e8e7"
+        }
+      },
+      "current_version": 10,
+      "current_content_sha256": "ecb425334b04cf19f7704769608eec665b4a17d771f40934a11d3b795008c603",
+      "review": "用户已实际定位尾字的延音区间；按声音先于画面连续的原则，把切点放在已唱出末字后的延音内。保留同一次完整录音、原速、全部源帧和自然头尾；仅调整必要镜头预算和声音安排。检查相邻镜片段无重复无缺口，唱完后才说连上了、松页或互望。锁定剧本原词、动作因果和其他准确输入不变；本任务没有制作视频，实际口型和混音另验。"
+    },
+    {
+      "requirement_id": "new26-s041-q08-video",
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+        "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+      },
+      "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+      "component": {
+        "bytes": 5184044,
+        "channels": 2,
+        "duration_seconds": 27.0,
+        "file": "98bca747be4117f9fc429e14cb31f8d930c7b979dda5c3caad0696f5097d72ea.wav",
+        "has_audio": true,
+        "id": "qingpeng-aheng-stage3",
+        "mime": "audio/wav",
+        "role": "original",
+        "sample_rate": 48000,
+        "sha256": "98bca747be4117f9fc429e14cb31f8d930c7b979dda5c3caad0696f5097d72ea"
+      },
+      "actual_audio_timeline": {
+        "component_id": "qingpeng-aheng-stage3",
+        "editorial_segments": [
+          {
+            "component_id": "qingpeng-aheng-stage3",
+            "material_selection": {
+              "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+              "material_id": "new26-qingpeng-singing"
+            },
+            "reference": {
+              "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+              "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+            },
+            "sha256": "98bca747be4117f9fc429e14cb31f8d930c7b979dda5c3caad0696f5097d72ea",
+            "timeline": {
+              "continuous_original": true,
+              "rate": 1,
+              "shot_end_seconds": 1,
+              "shot_start_seconds": 0,
+              "source_end_seconds": 27,
+              "source_start_seconds": 26
+            },
+            "use": "使用完整27秒角色录音；本镜后期播放原轨26—27秒，置于镜内0—1.000000秒。用户定位末字边的延音为原轨24.5—27秒。后期把同一完整录音原速连续铺在相邻镜头下，只切画面；不得重播尾字、变速、拉伸、复制尾音或叠成双声。下述时间范围是后期时间安排，模型始终引用完整文件。实际视频口型、动作和最终混音另验。"
+          }
+        ],
+        "full_file_seconds": 27.0,
+        "model_reference": "complete_file",
+        "reference_only": false,
+        "sha256": "98bca747be4117f9fc429e14cb31f8d930c7b979dda5c3caad0696f5097d72ea",
+        "shot_end_seconds": 4,
+        "tail_location": {
+          "end_seconds": 27,
+          "id": "qingpeng-aheng-stage3-01",
+          "marked_by": "user",
+          "saved_at": "2026-10-18T14:28:23.812467+00:00",
+          "source_sha256": "98bca747be4117f9fc429e14cb31f8d930c7b979dda5c3caad0696f5097d72ea",
+          "start_seconds": 24.5,
+          "tail_word": "边"
+        },
+        "tail_location_receipt": "production/receipts/song-tail-locations-task-20261015-0003-stage17.json"
+      },
+      "import": {
+        "validated_only": false,
+        "records": [
+          {
+            "id": "new26-s041-q08-video",
+            "kind": "REQUIREMENT",
+            "revision": "383ddc27a8b8bbb164e50f0f46793734250abf27ecbe23ef7927c9fcb9939657",
+            "version": 9,
+            "edit_token": 9,
+            "content_sha256": "0a49644c8318a6807ea05bbc4d820abbda16a461482b185cde0fa36edbbd3ae2"
+          }
+        ],
+        "removed": []
+      },
+      "selection": {
+        "requirement_id": "new26-s041-q08-video",
+        "revision_id": "383ddc27a8b8bbb164e50f0f46793734250abf27ecbe23ef7927c9fcb9939657",
+        "edit_token": 10,
+        "content_sha256": "ffff49befbf268526fb0f97279ded1e08ab1d3b1b1a5b21bba7f31c3a766c3e1",
+        "already_applied": false,
+        "workspace_marker": {
+          "owner_id": "new26-s041-q08",
+          "records": [
+            [
+              "new26-s041-q08",
+              "89f3d314abe4223ab5fd92f2f5904c7f5c6c60ea9fb085a6c9ceb416875a8a8a",
+              2
+            ],
+            [
+              "new26-s041-q08-video",
+              "383ddc27a8b8bbb164e50f0f46793734250abf27ecbe23ef7927c9fcb9939657",
+              10
+            ]
+          ],
+          "source_signature": "8ce1c9ec6b48f3db93ac0623a80fd35bc76d9653e4b5670e07c85f052082d711"
+        }
+      },
+      "current_version": 10,
+      "current_content_sha256": "ffff49befbf268526fb0f97279ded1e08ab1d3b1b1a5b21bba7f31c3a766c3e1",
+      "review": "用户已实际定位尾字的延音区间；按声音先于画面连续的原则，把切点放在已唱出末字后的延音内。保留同一次完整录音、原速、全部源帧和自然头尾；仅调整必要镜头预算和声音安排。检查相邻镜片段无重复无缺口，唱完后才说连上了、松页或互望。锁定剧本原词、动作因果和其他准确输入不变；本任务没有制作视频，实际口型和混音另验。"
+    },
+    {
+      "requirement_id": "new26-s041-q10-video",
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+        "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+      },
+      "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+      "component": {
+        "bytes": 3286876,
+        "channels": 2,
+        "duration_seconds": 17.118917,
+        "file": "3e2bd6c498589a532150d9182b6d6a8d3747acf7ebfc4344d0c6e456185aa081.wav",
+        "has_audio": true,
+        "id": "qingpeng-aheng-stage5",
+        "mime": "audio/wav",
+        "role": "original",
+        "sample_rate": 48000,
+        "sha256": "3e2bd6c498589a532150d9182b6d6a8d3747acf7ebfc4344d0c6e456185aa081"
+      },
+      "actual_audio_timeline": {
+        "component_id": "qingpeng-aheng-stage5",
+        "editorial_segments": [
+          {
+            "component_id": "qingpeng-aheng-stage5",
+            "material_selection": {
+              "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+              "material_id": "new26-qingpeng-singing"
+            },
+            "reference": {
+              "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+              "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+            },
+            "sha256": "3e2bd6c498589a532150d9182b6d6a8d3747acf7ebfc4344d0c6e456185aa081",
+            "timeline": {
+              "continuous_original": true,
+              "rate": 1,
+              "shot_end_seconds": 12,
+              "shot_start_seconds": 0,
+              "source_end_seconds": 12,
+              "source_start_seconds": 0
+            },
+            "use": "使用完整17.1189秒角色录音；本镜后期播放原轨0—12秒，置于镜内0—12.000000秒。用户定位末字桥的延音为原轨11—15秒。后期把同一完整录音原速连续铺在相邻镜头下，只切画面；不得重播尾字、变速、拉伸、复制尾音或叠成双声。下述时间范围是后期时间安排，模型始终引用完整文件。实际视频口型、动作和最终混音另验。"
+          }
+        ],
+        "full_file_seconds": 17.118917,
+        "model_reference": "complete_file",
+        "reference_only": false,
+        "sha256": "3e2bd6c498589a532150d9182b6d6a8d3747acf7ebfc4344d0c6e456185aa081",
+        "shot_end_seconds": 12,
+        "tail_location": {
+          "end_seconds": 15,
+          "id": "qingpeng-aheng-stage5-01",
+          "marked_by": "user",
+          "saved_at": "2026-10-18T14:29:00.468911+00:00",
+          "source_sha256": "3e2bd6c498589a532150d9182b6d6a8d3747acf7ebfc4344d0c6e456185aa081",
+          "start_seconds": 11,
+          "tail_word": "桥"
+        },
+        "tail_location_receipt": "production/receipts/song-tail-locations-task-20261015-0003-stage17.json"
+      },
+      "import": {
+        "validated_only": false,
+        "records": [
+          {
+            "id": "new26-s041-q10-video",
+            "kind": "REQUIREMENT",
+            "revision": "13976991865b7d334f5311516cee5b74a709a069b5aedf48b858add6a0ccef21",
+            "version": 8,
+            "edit_token": 8,
+            "content_sha256": "83c0ed2a4355b7e9727363a45c4d1a06b89ff4829208bb634088e55517fe9cab"
+          }
+        ],
+        "removed": []
+      },
+      "selection": {
+        "requirement_id": "new26-s041-q10-video",
+        "revision_id": "13976991865b7d334f5311516cee5b74a709a069b5aedf48b858add6a0ccef21",
+        "edit_token": 9,
+        "content_sha256": "0b3269821dfb28549a18259dece19a4fa27951cd3f636e420e8ffdd0731650e2",
+        "already_applied": false,
+        "workspace_marker": {
+          "owner_id": "new26-s041-q10",
+          "records": [
+            [
+              "new26-s041-q10",
+              "5dfbf07044d12f27ae9cdb5e805f2e47dadb5b3a710f232d6c28bcc44fffb714",
+              3
+            ],
+            [
+              "new26-s041-q10-video",
+              "13976991865b7d334f5311516cee5b74a709a069b5aedf48b858add6a0ccef21",
+              9
+            ]
+          ],
+          "source_signature": "80c1a48b1b75d9b7511812336d7b5a6051b87f0ca82e2d29ee78176488fcf01c"
+        }
+      },
+      "current_version": 9,
+      "current_content_sha256": "0b3269821dfb28549a18259dece19a4fa27951cd3f636e420e8ffdd0731650e2",
+      "review": "用户已实际定位尾字的延音区间；按声音先于画面连续的原则，把切点放在已唱出末字后的延音内。保留同一次完整录音、原速、全部源帧和自然头尾；仅调整必要镜头预算和声音安排。检查相邻镜片段无重复无缺口，唱完后才说连上了、松页或互望。锁定剧本原词、动作因果和其他准确输入不变；本任务没有制作视频，实际口型和混音另验。"
+    },
+    {
+      "requirement_id": "new26-s041-q11-video",
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+        "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+      },
+      "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+      "component": {
+        "bytes": 3286876,
+        "channels": 2,
+        "duration_seconds": 17.118917,
+        "file": "3e2bd6c498589a532150d9182b6d6a8d3747acf7ebfc4344d0c6e456185aa081.wav",
+        "has_audio": true,
+        "id": "qingpeng-aheng-stage5",
+        "mime": "audio/wav",
+        "role": "original",
+        "sample_rate": 48000,
+        "sha256": "3e2bd6c498589a532150d9182b6d6a8d3747acf7ebfc4344d0c6e456185aa081"
+      },
+      "actual_audio_timeline": {
+        "component_id": "qingpeng-aheng-stage5",
+        "editorial_segments": [
+          {
+            "component_id": "qingpeng-aheng-stage5",
+            "material_selection": {
+              "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+              "material_id": "new26-qingpeng-singing"
+            },
+            "reference": {
+              "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+              "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+            },
+            "sha256": "3e2bd6c498589a532150d9182b6d6a8d3747acf7ebfc4344d0c6e456185aa081",
+            "timeline": {
+              "continuous_original": true,
+              "rate": 1,
+              "shot_end_seconds": 5.118917,
+              "shot_start_seconds": 0,
+              "source_end_seconds": 17.118917,
+              "source_start_seconds": 12
+            },
+            "use": "使用完整17.1189秒角色录音；本镜后期播放原轨12—17.1189秒，置于镜内0—5.118917秒。用户定位末字桥的延音为原轨11—15秒。后期把同一完整录音原速连续铺在相邻镜头下，只切画面；不得重播尾字、变速、拉伸、复制尾音或叠成双声。下述时间范围是后期时间安排，模型始终引用完整文件。实际视频口型、动作和最终混音另验。有声桥尾在镜内3秒收净，完整文件尾部保留至5.118917秒，6秒才松页。"
+          }
+        ],
+        "full_file_seconds": 17.118917,
+        "model_reference": "complete_file",
+        "reference_only": false,
+        "sha256": "3e2bd6c498589a532150d9182b6d6a8d3747acf7ebfc4344d0c6e456185aa081",
+        "shot_end_seconds": 13,
+        "tail_location": {
+          "end_seconds": 15,
+          "id": "qingpeng-aheng-stage5-01",
+          "marked_by": "user",
+          "saved_at": "2026-10-18T14:29:00.468911+00:00",
+          "source_sha256": "3e2bd6c498589a532150d9182b6d6a8d3747acf7ebfc4344d0c6e456185aa081",
+          "start_seconds": 11,
+          "tail_word": "桥"
+        },
+        "tail_location_receipt": "production/receipts/song-tail-locations-task-20261015-0003-stage17.json"
+      },
+      "import": {
+        "validated_only": false,
+        "records": [
+          {
+            "id": "new26-s041-q11-video",
+            "kind": "REQUIREMENT",
+            "revision": "7f1e06f0418502c01d2b8c6c62d4e19479dd976a6ef7311cdec724cf56272c6a",
+            "version": 10,
+            "edit_token": 10,
+            "content_sha256": "db28a924f397b447ab862a2c8e7215296c9f02715a669ba57cf0f5d515c6944c"
+          }
+        ],
+        "removed": []
+      },
+      "selection": {
+        "requirement_id": "new26-s041-q11-video",
+        "revision_id": "7f1e06f0418502c01d2b8c6c62d4e19479dd976a6ef7311cdec724cf56272c6a",
+        "edit_token": 11,
+        "content_sha256": "f855214d153e5325d054ec1011d6f9592d4d02e3cb0f8e73ad08f84fbd434980",
+        "already_applied": false,
+        "workspace_marker": {
+          "owner_id": "new26-s041-q11",
+          "records": [
+            [
+              "new26-s041-q11",
+              "eda9ab16e1218b3787f53835574434ff95d3fd7a3eae68b623b5192412ef7c29",
+              2
+            ],
+            [
+              "new26-s041-q11-video",
+              "7f1e06f0418502c01d2b8c6c62d4e19479dd976a6ef7311cdec724cf56272c6a",
+              11
+            ]
+          ],
+          "source_signature": "4814bb2548d385d00a928f8477611a8017a4de54794a2d4aebd9b6d62fba7986"
+        }
+      },
+      "current_version": 11,
+      "current_content_sha256": "f855214d153e5325d054ec1011d6f9592d4d02e3cb0f8e73ad08f84fbd434980",
+      "review": "用户已实际定位尾字的延音区间；按声音先于画面连续的原则，把切点放在已唱出末字后的延音内。保留同一次完整录音、原速、全部源帧和自然头尾；仅调整必要镜头预算和声音安排。检查相邻镜片段无重复无缺口，唱完后才说连上了、松页或互望。锁定剧本原词、动作因果和其他准确输入不变；本任务没有制作视频，实际口型和混音另验。"
+    }
+  ],
+  "scope": "All eight previously tail-dependent uses now use measured user tail positions and exact complete audio files. No new audio or model calls."
+}

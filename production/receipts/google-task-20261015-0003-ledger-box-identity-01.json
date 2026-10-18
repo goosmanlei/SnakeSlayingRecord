@@ -1,0 +1,80 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-ledger-box-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-ledger-box-identity-01",
+    "submission_sha256": "48ce81262829379bf67c5ac181e6c56f0d034223c923e362c73a694ea1ec549c",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-ledger-box-identity-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "f2a0ad6e7bb1fdefbac5fd7c6ed718ab7b014cf9aecac27fdffdd01fe196212f.jpg",
+    "sha256": "f2a0ad6e7bb1fdefbac5fd7c6ed718ab7b014cf9aecac27fdffdd01fe196212f",
+    "bytes": 7328148,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-ledger-box-identity-01",
+    "candidate_id": "candidate-16c8e6013a2e70c1bb2dd119f5c1f11ed3d72964ca458ccfe036367c9f9c27f1",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "实际查看原件：深棕矩形木箱的闭合与开盖视图形制一致，后翻盖与前铜色搭扣可以对应，开箱内腔空置。右侧深浅灰褐账册各一份，浅册露空白栏目，下面单独一条米白未贴封纸，无伪字。两册与箱体比例可供平放收纳，未重复生成箱内第三册；静态身份和开闭结构通过。装册、验封及动作连续性仍在实际镜头核对。",
+    "decision": "选用第0代原件；与祭册便携箱、神龛柜分开，账册单用的消费者不强行带箱。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 10,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/ledger-box-identity-01-consumer-selections.json"
+  },
+  "usage": {
+    "total_tokens": 5979,
+    "total_input_tokens": 348,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 348
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4205,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1426
+  },
+  "actual_request_body_sha256": "095c9216918a3e1589db350dfa22bfc059adb2199996d9b33d8a88ab86782047",
+  "submitted_inputs": []
+}

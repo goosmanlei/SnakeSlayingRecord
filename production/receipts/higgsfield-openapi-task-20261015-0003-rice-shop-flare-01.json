@@ -1,0 +1,101 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-rice-shop-flare-01",
+  "submission": {
+    "call_id": "task-20261015-0003-rice-shop-flare-01",
+    "submission_sha256": "3325ee08d44485898fb5a207b4e9bd0a69cdc5b9bfc743b31283defffe2acac9",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-rice-shop-flare-01.json",
+  "provider_history_id": null,
+  "provider_job_id": "8e655f9e-3c4f-4b56-b989-2d2b112f9209",
+  "provider_resource_id": null,
+  "model": "marketing-studio/image/flare",
+  "project_id": null,
+  "provider": "Higgsfield OpenAPI",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "e44e1e1d8f1d2be237a0104e08d48e8c71579e13302ba558d60b4214a21d710e.png",
+    "sha256": "e44e1e1d8f1d2be237a0104e08d48e8c71579e13302ba558d60b4214a21d710e",
+    "bytes": 8964792,
+    "mime": "image/png",
+    "width": 3840,
+    "height": 2160
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-rice-shop-flare-01",
+    "candidate_id": "candidate-bd1d0fac902bbac84bb29b0cd9894dcb53763e7ba3548cd200f3c5104f7b0694",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "actual": "UNKNOWN",
+    "planning_reserve": 1.0,
+    "account": "Higgsfield OpenAPI prepaid balance; no recharge",
+    "budget_snapshot": {
+      "created_at": "2026-10-16T18:30:07.402083+00:00",
+      "user_reported_prepaid_usd": 8.65,
+      "actual_balance_verified": true,
+      "max_dispatches": 25,
+      "reserve_per_unknown_usd": 1.0,
+      "generation_model": "marketing-studio/image/flare",
+      "no_recharge": true,
+      "source": "User said Higgsfield OpenAPI remaining8.65 USD; later corrected only Nano Banana availability, not the balance.",
+      "actual_charge": "UNKNOWN",
+      "verified_balance_usd": 6.62,
+      "balance_verified_at": "2026-10-16T21:18:19.992345+00:00",
+      "balance_source": "Daily Chrome https://open.higgsfield.ai/billing visible balance and Auto top-up dialog; read-only, no settings saved.",
+      "balance_anchor_dispatch_count": 23,
+      "auto_top_up_enabled": true,
+      "auto_top_up_threshold_usd": 3.13,
+      "auto_top_up_amount_usd": 25.0,
+      "threshold_buffer_usd": 0.5,
+      "next_batch_limit": 2,
+      "planning_note": "Daily Chrome refreshed after23 completed calls:6.62USD,Auto top-up On. Two new text-only repairs for known failed spatial plans, each conservatively reserved1USD; projected4.62USD stays above3.13+0.50 stop. No unknown-call replay, recharge or settings change."
+    },
+    "note": "Authenticated estimate returns token rates, not a fixed charge. Dispatch cap and observed auto-top-up threshold checked before submission."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "实际打开3840×2160原生PNG：北部东西柜台、南开门、门内西侧米袋及门外东侧倒扣竹篮三视向对应，反向从柜后看时米袋在画面右、竹篮在画面左，没有镜像。柜台到门留宽阔中道，檐下及西侧街路未放凳，竹篮顶部空着，柜台没有灯或现代玻璃罩；屋檐浅，街侧天空和水岸可见。普通日光、木石色低饱和，无人、字标、歌本或预放剧情道具。细节服务空间，不把此空景光线当夜戏成片。",
+    "decision": "全空间母版通过；选择准确新原件供消费者，保留上一失败候选。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 20,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/rice-shop-flare-01-consumer-selections.json"
+  },
+  "actual_request_body_sha256": "2543f72ec3cdbf782d5d925f70c6ad224b2f53ceda0f03bf5f7a09780635092c",
+  "idempotency_key": "42cd52ea-47b8-429e-ab6e-2babb601d457",
+  "budget_snapshot": {
+    "created_at": "2026-10-16T18:30:07.402083+00:00",
+    "user_reported_prepaid_usd": 8.65,
+    "actual_balance_verified": true,
+    "max_dispatches": 25,
+    "reserve_per_unknown_usd": 1.0,
+    "generation_model": "marketing-studio/image/flare",
+    "no_recharge": true,
+    "source": "User said Higgsfield OpenAPI remaining8.65 USD; later corrected only Nano Banana availability, not the balance.",
+    "actual_charge": "UNKNOWN",
+    "verified_balance_usd": 6.62,
+    "balance_verified_at": "2026-10-16T21:18:19.992345+00:00",
+    "balance_source": "Daily Chrome https://open.higgsfield.ai/billing visible balance and Auto top-up dialog; read-only, no settings saved.",
+    "balance_anchor_dispatch_count": 23,
+    "auto_top_up_enabled": true,
+    "auto_top_up_threshold_usd": 3.13,
+    "auto_top_up_amount_usd": 25.0,
+    "threshold_buffer_usd": 0.5,
+    "next_batch_limit": 2,
+    "planning_note": "Daily Chrome refreshed after23 completed calls:6.62USD,Auto top-up On. Two new text-only repairs for known failed spatial plans, each conservatively reserved1USD; projected4.62USD stays above3.13+0.50 stop. No unknown-call replay, recharge or settings change."
+  }
+}

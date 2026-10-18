@@ -1,0 +1,103 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-porter-identity-flare-01",
+  "submission": {
+    "call_id": "task-20261015-0003-porter-identity-flare-01",
+    "submission_sha256": "038653d65bfded06887060377bc430a945aea31ef68b2ad9b09ef8ef22fac9c0",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-porter-identity-flare-01.json",
+  "provider_history_id": null,
+  "provider_job_id": "2a9e31d7-caca-4698-b43c-155185962aa9",
+  "provider_resource_id": null,
+  "model": "marketing-studio/image/flare",
+  "project_id": null,
+  "provider": "Higgsfield OpenAPI",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "f79df51b3e057ecc7f4a88f484ac11143958880761acec8c73d498d8181e8556.png",
+    "sha256": "f79df51b3e057ecc7f4a88f484ac11143958880761acec8c73d498d8181e8556",
+    "bytes": 8615349,
+    "mime": "image/png",
+    "width": 3840,
+    "height": 2160
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-porter-identity-flare-01",
+    "candidate_id": "candidate-590145abeae28264a940e42c9f5d37416f3e85e289fff63cfcea993202fe3e35",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "actual": "UNKNOWN",
+    "planning_reserve": 1.0,
+    "account": "Higgsfield OpenAPI prepaid balance; no recharge",
+    "budget_snapshot": {
+      "created_at": "2026-10-16T18:30:07.402083+00:00",
+      "user_reported_prepaid_usd": 8.65,
+      "actual_balance_verified": true,
+      "max_dispatches": 27,
+      "reserve_per_unknown_usd": 1.0,
+      "generation_model": "marketing-studio/image/flare",
+      "no_recharge": true,
+      "source": "User said Higgsfield OpenAPI remaining8.65 USD; later corrected only Nano Banana availability, not the balance.",
+      "actual_charge": "UNKNOWN",
+      "verified_balance_usd": 6.44,
+      "balance_verified_at": "2026-10-17T02:32:00.868147+00:00",
+      "balance_source": "Daily Chrome https://open.higgsfield.ai/billing visible balance and Auto top-up dialog; read-only, no settings saved.",
+      "balance_anchor_dispatch_count": 25,
+      "auto_top_up_enabled": true,
+      "auto_top_up_threshold_usd": 3.13,
+      "auto_top_up_amount_usd": 25.0,
+      "threshold_buffer_usd": 0.5,
+      "next_batch_limit": 2,
+      "planning_note": "Current-turn daily Chrome shows6.44USD; auto top-up remains On at3.13USD, read-only. One new guard and one porter candidate; each1USD reserved, projected4.44USD above3.63 stop line. Old UNKNOWN retained; no recharge or settings changes.",
+      "authorization": "unknown-replacement-authorization12.json"
+    },
+    "note": "Authenticated estimate returns token rates, not a fixed charge. Dispatch cap and observed auto-top-up threshold checked before submission."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "executor_checked",
+    "findings": "已实际查看原生3840×2160 PNG：老汉的粗眉、稀疏灰发小髻、白灰短须、圆颧在正侧背视与头部近图之间一致；土黄交领短褂、灰褐裤、草鞋及略弯腰背保持稳定。细长扁担独立竖列，两束柴落地，各有清楚绳套；人物手脚和杆两端完整，没有悬浮柴束或现代服饰。可用于本轮角色身份与装束参考，分列物件不冒充负重动作演示。",
+    "decision": "通过基础身份用途并准确绑定全部当前消费者；历史无结果请求保持未知。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 3,
+    "all_read_back": true,
+    "receipt": ".runtime/task-20261015-0003/porter-identity-flare-01-consumer-selections.json"
+  },
+  "actual_request_body_sha256": "335c2b768aba52cde7b4c9fb55deddb6e37bf0dda49f00215f1db6a0a1c68129",
+  "idempotency_key": "1285edbe-305a-4793-a961-110dc05d8d0b",
+  "budget_snapshot": {
+    "created_at": "2026-10-16T18:30:07.402083+00:00",
+    "user_reported_prepaid_usd": 8.65,
+    "actual_balance_verified": true,
+    "max_dispatches": 27,
+    "reserve_per_unknown_usd": 1.0,
+    "generation_model": "marketing-studio/image/flare",
+    "no_recharge": true,
+    "source": "User said Higgsfield OpenAPI remaining8.65 USD; later corrected only Nano Banana availability, not the balance.",
+    "actual_charge": "UNKNOWN",
+    "verified_balance_usd": 6.44,
+    "balance_verified_at": "2026-10-17T02:32:00.868147+00:00",
+    "balance_source": "Daily Chrome https://open.higgsfield.ai/billing visible balance and Auto top-up dialog; read-only, no settings saved.",
+    "balance_anchor_dispatch_count": 25,
+    "auto_top_up_enabled": true,
+    "auto_top_up_threshold_usd": 3.13,
+    "auto_top_up_amount_usd": 25.0,
+    "threshold_buffer_usd": 0.5,
+    "next_batch_limit": 2,
+    "planning_note": "Current-turn daily Chrome shows6.44USD; auto top-up remains On at3.13USD, read-only. One new guard and one porter candidate; each1USD reserved, projected4.44USD above3.63 stop line. Old UNKNOWN retained; no recharge or settings changes.",
+    "authorization": "unknown-replacement-authorization12.json"
+  }
+}

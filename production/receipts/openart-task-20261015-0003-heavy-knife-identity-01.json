@@ -1,0 +1,56 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-heavy-knife-identity-01",
+  "submission": {
+    "call_id": "task-20261015-0003-heavy-knife-identity-01",
+    "submission_sha256": "f2e045d3962afda439ceb02820646e94eb2fffe22e537e9184d9ad5c00234cac",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-heavy-knife-identity-01.json",
+  "provider_history_id": "LZmprWoS5tzc3z19WTu2",
+  "provider_job_id": null,
+  "provider_resource_id": "kiWfQjegZ41Vg7sTS2x4",
+  "model": "gpt-image-2-5-sunburst",
+  "project_id": "8K6WcbrPLghSBJXBtWAE",
+  "provider": "OpenArt",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "28f5ea8648797c0ee78da54868c8fae9d164387dd18152197d6e8bfe306a20ff.png",
+    "sha256": "28f5ea8648797c0ee78da54868c8fae9d164387dd18152197d6e8bfe306a20ff",
+    "bytes": 6691795,
+    "mime": "image/png",
+    "width": 3840,
+    "height": 2160
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-heavy-knife-identity-01",
+    "candidate_id": "candidate-c1d934b638db8b91a1b7b89e2da80f77624f474449bd795463789fd5ad33b998",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "OpenArt credits",
+    "quoted": 350,
+    "actual": "UNKNOWN",
+    "note": "报价对应单图；实际扣费字段未返回时保留UNKNOWN。"
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "已实际看图：短阔单刃铁刀、可双手握的长木柄、短护手、独立硬皮套以及端面和柄部细节都可辨，没有人物或砍击结果。但刀面铺满灰色斑驳颗粒，柄有连续密集木纹、皮套有揉擦质感，与已选人物和道具的简洁平涂画风不一致。刀套展示尺度也比刀刃更长，不能仅据图面声称同尺度套合已经核实。",
+    "decision": "登记真实候选但暂不绑定。下一次只修大色块与同尺度刀套关系，仍从新根图制作；不把强纹理原件当作干净母版。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  }
+}

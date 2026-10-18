@@ -1,0 +1,96 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-liji-first-blood-01",
+  "submission": {
+    "call_id": "task-20261015-0003-liji-first-blood-01",
+    "submission_sha256": "788b4d8a56571c876ef4e5d8dd242865bd3f56ef6c526095d6027982d7896e8a",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-liji-first-blood-01.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "7c93261209f6f2b9c9f08ef847a46324ff9e446024e79ef8741b574705433a8b.jpg",
+    "sha256": "7c93261209f6f2b9c9f08ef847a46324ff9e446024e79ef8741b574705433a8b",
+    "bytes": 6646579,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-liji-first-blood-01",
+    "candidate_id": "candidate-09c94b36eb4260108b77e1056ccd1e7f2e410569c308ca9541b82ef44acfb228",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google balance17.74; no recharge",
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "已实际看图：正面右手包布，但左侧身近侧左手也被包布，左右不一致；右掌近图的血痕呈多滴及延伸红痕，超过米粒至豆粒的一点暗红浸痕，额带较宽。原生JPEG为5504×3072。",
+    "decision": "不绑定；需改用准确正面参考解决侧身干扰，并严格收住小血痕范围。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 1,
+    "references": [
+      {
+        "object_id": "asset-task-20261015-0003-liji-identity-01",
+        "revision_id": "77908eeddf225d05468c60366401d16f721cceb62cb297dcd110c25132f302e4"
+      }
+    ]
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  },
+  "usage": {
+    "total_tokens": 7867,
+    "total_input_tokens": 1559,
+    "input_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 1120
+      },
+      {
+        "modality": "text",
+        "tokens": 439
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 4733,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1575
+  },
+  "actual_request_body_sha256": "f2f405f5e015cb09ef0e8ae2afe7453f9e708ed34edc104d1c5d04d80c6b5f03",
+  "submitted_inputs": [
+    {
+      "image_number": 1,
+      "submitted_sha256": "05ac4d70dbed022cbaabd37b9da071031056d325653ccbee9b1a2aac5046e0ce",
+      "original_sha256": "05ac4d70dbed022cbaabd37b9da071031056d325653ccbee9b1a2aac5046e0ce",
+      "crop": null
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "task_id": "task-20261015-0003",
+  "call_id": "task-20261015-0003-county-room-layout-02",
+  "submission": {
+    "call_id": "task-20261015-0003-county-room-layout-02",
+    "submission_sha256": "d2e49f2085c813fcaee4bf3282031906ef0bf799829714654124dd56e587fc47",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "request": "production/requests/task-20261015-0003-county-room-layout-02.json",
+  "provider_history_id": null,
+  "provider_job_id": null,
+  "provider_resource_id": null,
+  "model": "gemini-nano-banana-2.1",
+  "project_id": null,
+  "provider": "Google",
+  "original": {
+    "id": "original",
+    "role": "original",
+    "file": "69ad5929796d34969988695a8968671424a99e1e682fdcd6ba5ab3aa823e2ab3.jpg",
+    "sha256": "69ad5929796d34969988695a8968671424a99e1e682fdcd6ba5ab3aa823e2ab3",
+    "bytes": 6745264,
+    "mime": "image/jpeg",
+    "width": 5504,
+    "height": 3072
+  },
+  "candidate": {
+    "call_id": "task-20261015-0003-county-room-layout-02",
+    "candidate_id": "candidate-a5622feead53c538e7d0808b69f68c8f41f261d82dab39c969ef6a8fc951f01e",
+    "status": "completed",
+    "already_applied": false
+  },
+  "cost": {
+    "currency": "USD",
+    "quoted_image_4k": 0.113,
+    "estimated_call_cap": 0.25,
+    "actual": "UNKNOWN",
+    "account_source": "user-reported prepaid Google remaining balance at the recorded budget checkpoint; no recharge",
+    "reported_balance_usd": 3.86,
+    "balance_checkpoint_dispatches": 106,
+    "note": "Catalog estimate is not billed cost; usage retained when returned."
+  },
+  "inspection": {
+    "executor_visual": true,
+    "scope": "full_image_and_required_visible_details",
+    "status": "quality_failed",
+    "findings": "已实际打开5504×3072原生JPEG。北案、东记录小案、西廊门、平地及中央陈述区清楚，画风清洁。但证据长桌仍沿南北向，未落实与北墙平行的核心要求。两次文字根图均出现同一偏差。",
+    "decision": "保留原件与真实回执，不选入下游；停止同构Prompt重复调用。后续须先解决准确几何输入或确定性制作路线。",
+    "user_adopted": false
+  },
+  "lineage": {
+    "i2i_depth": 0,
+    "references": []
+  },
+  "current_consumer_selection": {
+    "slots": 0,
+    "all_read_back": false,
+    "receipt": null
+  },
+  "usage": {
+    "total_tokens": 7296,
+    "total_input_tokens": 566,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 566
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 5103,
+    "output_tokens_by_modality": [
+      {
+        "modality": "image",
+        "tokens": 3780
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1627
+  },
+  "actual_request_body_sha256": "45104ec870328a5cd7efd875235b3c19a362aae1a33e40bad2fea61c78c403f9",
+  "submitted_inputs": []
+}
