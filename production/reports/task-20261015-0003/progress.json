@@ -6,8 +6,8 @@
   "total": 191,
   "status_counts": {
     "executor_checked": 139,
-    "user_audition_passed": 49,
-    "reference_pending": 3
+    "user_audition_passed": 50,
+    "reference_pending": 2
   },
   "call_counts": {
     "completed": 259,
@@ -4868,7 +4868,7 @@
     {
       "code": "M015",
       "requirement_id": "new26-boat-song-singing",
-      "content_sha256": "4b59394f14b7f8428f28aec121e19c4815c835a0d60c0ab3ce2e9297124e167c",
+      "content_sha256": "c73ba80e3ade5604d674bded4cf1c0b8c306463586a53807ec34d7235a14e6a4",
       "title": "三道滩 · 完整原曲",
       "category": "song",
       "scope_kind": "ENTITY",
@@ -4929,10 +4929,34 @@
               "role": "original",
               "sample_rate": 48000,
               "sha256": "525d76a4f67358ddfe448a45c03c445d3f70ef7225a22549b96595ef4422b06e"
+            },
+            {
+              "bytes": 1920044,
+              "channels": 2,
+              "duration_seconds": 10.0,
+              "file": "119fb55a13baa602c5b54ef8cce2d491c0e67063ef98bcc6995d9a8b0c391947.wav",
+              "has_audio": true,
+              "id": "boat-aheng-opening",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "119fb55a13baa602c5b54ef8cce2d491c0e67063ef98bcc6995d9a8b0c391947"
+            },
+            {
+              "bytes": 2496044,
+              "channels": 2,
+              "duration_seconds": 13.0,
+              "file": "f748cf33ae71c45a25608e1f55a87e8797a30923c17997e7a98686897da61d4a.wav",
+              "has_audio": true,
+              "id": "boat-aheng-home",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "f748cf33ae71c45a25608e1f55a87e8797a30923c17997e7a98686897da61d4a"
             }
           ],
           "quality_status": "full_audition_passed",
-          "quality_findings": "用户已实际试听此页列出的准确文件并反馈“我已经完成视听，没有问题，请你继续吧”。本次确认完整母版；尚未制作或列入此次试听的独立派生文件不继承听审结论。执行者未实际听到音频。"
+          "quality_findings": "完整原曲与全部角色唱段均已由用户实际试听通过；已保存1/2处准确歌曲输入。其余1处仍需真实尾音位置安排跨镜或插话，不将旧预算秒点当实测。视频与最终混音另验。执行者未实际听到声音。"
         },
         {
           "candidate_id": "candidate-9e2c58ff0be1404d1b5198636693eff917335f70fa4a970a9cb68eb2912a2963",
@@ -5053,8 +5077,8 @@
               "sha256": "f748cf33ae71c45a25608e1f55a87e8797a30923c17997e7a98686897da61d4a"
             }
           ],
-          "quality_status": "derived_hearing_unverified",
-          "quality_findings": "本次Seed Audio只生成指定角色唱段；候选同时复用已通过的完整原曲与旋律引用件，二者不是本次重新生成。新唱段已核原生WAV、实际时长和哈希，仍待用户比较旋律、声线、原词及头尾。"
+          "quality_status": "role_audition_passed",
+          "quality_findings": "用户对本次试听清单明确回复“验收通过”，确认此准确音频的声线、原曲旋律、唱词及自然头尾；接续文件的连续性一并通过。执行者未实际听到声音。"
         }
       ],
       "selected_upstream": [
@@ -5062,9 +5086,9 @@
       ],
       "waiting_for_new_originals": [],
       "gaps": [
-        "用户已实际试听完整母版并通过；独立短参考或接续文件仍需制作、检查和准确选择。"
+        "实际定位尾音，完成1处准确用途；然后正式发布和最终验收。"
       ],
-      "resume_when": "沿通过的完整母版制作所需派生文件；不继承母版的剪辑头尾或接缝认可。"
+      "resume_when": "完整原曲与全部角色唱段均已由用户实际试听通过；已保存1/2处准确歌曲输入。其余1处仍需真实尾音位置安排跨镜或插话，不将旧预算秒点当实测。视频与最终混音另验。执行者未实际听到声音。"
     },
     {
       "code": "M165",
@@ -13616,7 +13640,7 @@
     {
       "code": "M054",
       "requirement_id": "new26-qingpeng-singing",
-      "content_sha256": "232dd920d4d02b39480b47ba8c9d21924b3c89d6557808ec5894816bea56a51e",
+      "content_sha256": "605db7572e55b4906c1639aed4f6bcdeb672f5edd3e01c1e02498283eb0c88af",
       "title": "送青篷 · 完整原曲",
       "category": "song",
       "scope_kind": "ENTITY",
@@ -13737,10 +13761,166 @@
               "role": "original",
               "sample_rate": 48000,
               "sha256": "eea5330d9b8177a424ac483d6c01bfc7aa73b745c749fb1710545e27f64b869f"
+            },
+            {
+              "bytes": 1663804,
+              "channels": 2,
+              "duration_seconds": 8.665417,
+              "file": "994cbf206c1700cf4ce891931b11e974f710b029f84853f2b1c76fc151a6d437.wav",
+              "has_audio": true,
+              "id": "qingpeng-aheng-stage1",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "994cbf206c1700cf4ce891931b11e974f710b029f84853f2b1c76fc151a6d437"
+            },
+            {
+              "bytes": 4608044,
+              "channels": 2,
+              "duration_seconds": 24.0,
+              "file": "a6b6c2e69bafc53a0a70764c53ca724fdf58bdf9f698683d728a1336ea5b6105.wav",
+              "has_audio": true,
+              "id": "qingpeng-aheng-stage2",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "a6b6c2e69bafc53a0a70764c53ca724fdf58bdf9f698683d728a1336ea5b6105"
+            },
+            {
+              "bytes": 5184044,
+              "channels": 2,
+              "duration_seconds": 27.0,
+              "file": "98bca747be4117f9fc429e14cb31f8d930c7b979dda5c3caad0696f5097d72ea.wav",
+              "has_audio": true,
+              "id": "qingpeng-aheng-stage3",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "98bca747be4117f9fc429e14cb31f8d930c7b979dda5c3caad0696f5097d72ea"
+            },
+            {
+              "bytes": 1315036,
+              "channels": 2,
+              "duration_seconds": 6.848917,
+              "file": "ac756b729eec457702e9a5de79168c5dbe16376e9374bf38b423e23bab84c30f.wav",
+              "has_audio": true,
+              "id": "qingpeng-aheng-stage4",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "ac756b729eec457702e9a5de79168c5dbe16376e9374bf38b423e23bab84c30f"
+            },
+            {
+              "bytes": 3286876,
+              "channels": 2,
+              "duration_seconds": 17.118917,
+              "file": "3e2bd6c498589a532150d9182b6d6a8d3747acf7ebfc4344d0c6e456185aa081.wav",
+              "has_audio": true,
+              "id": "qingpeng-aheng-stage5",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "3e2bd6c498589a532150d9182b6d6a8d3747acf7ebfc4344d0c6e456185aa081"
+            },
+            {
+              "bytes": 1920044,
+              "channels": 2,
+              "duration_seconds": 10.0,
+              "file": "bc0df00c512473fa82aab1aa8faefab9f8a2543cd96e5b871568320475b9b499.wav",
+              "has_audio": true,
+              "id": "qingpeng-aheng-short",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "bc0df00c512473fa82aab1aa8faefab9f8a2543cd96e5b871568320475b9b499"
+            },
+            {
+              "bytes": 1583620,
+              "channels": 2,
+              "duration_seconds": 8.247792,
+              "file": "08ffd8ef0ca4e008b530254daa12a2c13db4a3202a7ea050ffce8b603bb68ba9.wav",
+              "has_audio": true,
+              "id": "qingpeng-teacher-fourth",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "08ffd8ef0ca4e008b530254daa12a2c13db4a3202a7ea050ffce8b603bb68ba9"
+            },
+            {
+              "bytes": 1728664,
+              "channels": 2,
+              "duration_seconds": 9.003229,
+              "file": "6cce86a6593f136df349a6edc735ed5466755859b2a9fc6f0e60f62da5fc9cb4.wav",
+              "has_audio": true,
+              "id": "qingpeng-teacher-fifth",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "6cce86a6593f136df349a6edc735ed5466755859b2a9fc6f0e60f62da5fc9cb4"
+            },
+            {
+              "bytes": 950456,
+              "channels": 2,
+              "duration_seconds": 4.950063,
+              "file": "8980f97a8acfac0905d96dfaa65632af58cbd4b07e5c54f5d2b0fd3dd6342e36.wav",
+              "has_audio": true,
+              "id": "qingpeng-teacher-final-slow",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "8980f97a8acfac0905d96dfaa65632af58cbd4b07e5c54f5d2b0fd3dd6342e36"
+            },
+            {
+              "bytes": 1572036,
+              "channels": 2,
+              "duration_seconds": 8.187458,
+              "file": "8ab8c056d6f6a8623f3bb8b3b8ac35db3576b65d0874a9062f9f2d9eb0e39a90.wav",
+              "has_audio": true,
+              "id": "qingpeng-aheng-teaching-fourth",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "8ab8c056d6f6a8623f3bb8b3b8ac35db3576b65d0874a9062f9f2d9eb0e39a90"
+            },
+            {
+              "bytes": 2745644,
+              "channels": 2,
+              "duration_seconds": 14.3,
+              "file": "8a7360f49b9d8eca4d2095a28324477d679e523151da4fc36909a3c315caab24.wav",
+              "has_audio": true,
+              "id": "qingpeng-aheng-teaching-fifth",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "8a7360f49b9d8eca4d2095a28324477d679e523151da4fc36909a3c315caab24"
+            },
+            {
+              "bytes": 480044,
+              "channels": 2,
+              "duration_seconds": 2.5,
+              "file": "293555dbc9dd4471152c0204831d9e6c83272ccac35426e77fd0ccd2864f6b9d.wav",
+              "has_audio": true,
+              "id": "qingpeng-mother-first-hum",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "293555dbc9dd4471152c0204831d9e6c83272ccac35426e77fd0ccd2864f6b9d"
+            },
+            {
+              "bytes": 1920044,
+              "channels": 2,
+              "duration_seconds": 10.0,
+              "file": "5384c046af98225079dd61f2e2f320dbb2a50c3bfaf369ca1053c6723c93c341.wav",
+              "has_audio": true,
+              "id": "qingpeng-mother-willow-hum",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "5384c046af98225079dd61f2e2f320dbb2a50c3bfaf369ca1053c6723c93c341"
             }
           ],
           "quality_status": "full_audition_passed",
-          "quality_findings": "用户已实际试听此页列出的准确文件并反馈“我已经完成视听，没有问题，请你继续吧”。本次确认完整母版；尚未制作或列入此次试听的独立派生文件不继承听审结论。执行者未实际听到音频。"
+          "quality_findings": "完整原曲与全部角色唱段均已由用户实际试听通过；已保存16/23处准确歌曲输入。其余7处仍需真实尾音位置安排跨镜或插话，不将旧预算秒点当实测。视频与最终混音另验。执行者未实际听到声音。"
         },
         {
           "candidate_id": "candidate-4e1c99e62dcfdec7bf317904b0405415f3528b76c6f08829f738a365cb641a5c",
@@ -13836,8 +14016,8 @@
               "sha256": "994cbf206c1700cf4ce891931b11e974f710b029f84853f2b1c76fc151a6d437"
             }
           ],
-          "quality_status": "derived_hearing_unverified",
-          "quality_findings": "本次Seed Audio只生成指定角色唱段；候选同时复用已通过的完整原曲与旋律引用件，二者不是本次重新生成。新唱段已核原生WAV、实际时长和哈希，仍待用户比较旋律、声线、原词及头尾。"
+          "quality_status": "role_audition_passed",
+          "quality_findings": "用户对本次试听清单明确回复“验收通过”，确认此准确音频的声线、原曲旋律、唱词及自然头尾；接续文件的连续性一并通过。执行者未实际听到声音。"
         },
         {
           "candidate_id": "candidate-7e424c23ee752fd9d0528030473f7fbfc07a9eed6db252f5d467072750fee62e",
@@ -13933,8 +14113,8 @@
               "sha256": "a6b6c2e69bafc53a0a70764c53ca724fdf58bdf9f698683d728a1336ea5b6105"
             }
           ],
-          "quality_status": "derived_hearing_unverified",
-          "quality_findings": "本次Seed Audio只生成指定角色唱段；候选同时复用已通过的完整原曲与旋律引用件，二者不是本次重新生成。新唱段已核原生WAV、实际时长和哈希，仍待用户比较旋律、声线、原词及头尾。"
+          "quality_status": "role_audition_passed",
+          "quality_findings": "用户对本次试听清单明确回复“验收通过”，确认此准确音频的声线、原曲旋律、唱词及自然头尾；接续文件的连续性一并通过。执行者未实际听到声音。"
         },
         {
           "candidate_id": "candidate-740024ef0dec071814591f9de5bdf4ad6b7eaa51d3a5fd63dfb1ae010220c940",
@@ -14030,8 +14210,8 @@
               "sha256": "98bca747be4117f9fc429e14cb31f8d930c7b979dda5c3caad0696f5097d72ea"
             }
           ],
-          "quality_status": "derived_hearing_unverified",
-          "quality_findings": "本次Seed Audio只生成指定角色唱段；候选同时复用已通过的完整原曲与旋律引用件，二者不是本次重新生成。新唱段已核原生WAV、实际时长和哈希，仍待用户比较旋律、声线、原词及头尾。"
+          "quality_status": "role_audition_passed",
+          "quality_findings": "用户对本次试听清单明确回复“验收通过”，确认此准确音频的声线、原曲旋律、唱词及自然头尾；接续文件的连续性一并通过。执行者未实际听到声音。"
         },
         {
           "candidate_id": "candidate-4580abf14070f281639b3ede4d78c1629f1f247d0db61320848b6aa69fe1cd1f",
@@ -14127,8 +14307,8 @@
               "sha256": "ac756b729eec457702e9a5de79168c5dbe16376e9374bf38b423e23bab84c30f"
             }
           ],
-          "quality_status": "derived_hearing_unverified",
-          "quality_findings": "本次Seed Audio只生成指定角色唱段；候选同时复用已通过的完整原曲与旋律引用件，二者不是本次重新生成。新唱段已核原生WAV、实际时长和哈希，仍待用户比较旋律、声线、原词及头尾。"
+          "quality_status": "role_audition_passed",
+          "quality_findings": "用户对本次试听清单明确回复“验收通过”，确认此准确音频的声线、原曲旋律、唱词及自然头尾；接续文件的连续性一并通过。执行者未实际听到声音。"
         },
         {
           "candidate_id": "candidate-30830250969d33ca5fb593825339de0387114f77b324e200aaa7e8a4ddbe6299",
@@ -14224,8 +14404,8 @@
               "sha256": "3e2bd6c498589a532150d9182b6d6a8d3747acf7ebfc4344d0c6e456185aa081"
             }
           ],
-          "quality_status": "derived_hearing_unverified",
-          "quality_findings": "本次Seed Audio只生成指定角色唱段；候选同时复用已通过的完整原曲与旋律引用件，二者不是本次重新生成。新唱段已核原生WAV、实际时长和哈希，仍待用户比较旋律、声线、原词及头尾。"
+          "quality_status": "role_audition_passed",
+          "quality_findings": "用户对本次试听清单明确回复“验收通过”，确认此准确音频的声线、原曲旋律、唱词及自然头尾；接续文件的连续性一并通过。执行者未实际听到声音。"
         },
         {
           "candidate_id": "candidate-c1e4d5618a0a086f0afaf3bc0f5efc35bf8369451d92a19a2a5f4eac9ac5a6fd",
@@ -14321,8 +14501,8 @@
               "sha256": "bc0df00c512473fa82aab1aa8faefab9f8a2543cd96e5b871568320475b9b499"
             }
           ],
-          "quality_status": "derived_hearing_unverified",
-          "quality_findings": "本次Seed Audio只生成指定角色唱段；候选同时复用已通过的完整原曲与旋律引用件，二者不是本次重新生成。新唱段已核原生WAV、实际时长和哈希，仍待用户比较旋律、声线、原词及头尾。"
+          "quality_status": "role_audition_passed",
+          "quality_findings": "用户对本次试听清单明确回复“验收通过”，确认此准确音频的声线、原曲旋律、唱词及自然头尾；接续文件的连续性一并通过。执行者未实际听到声音。"
         },
         {
           "candidate_id": "candidate-faa6302aaf17604310e2c5286e16941c9e70d1ee23a0cd4c96fffab277e90d3d",
@@ -14418,8 +14598,8 @@
               "sha256": "08ffd8ef0ca4e008b530254daa12a2c13db4a3202a7ea050ffce8b603bb68ba9"
             }
           ],
-          "quality_status": "derived_hearing_unverified",
-          "quality_findings": "本次Seed Audio只生成指定角色唱段；候选同时复用已通过的完整原曲与旋律引用件，二者不是本次重新生成。新唱段已核原生WAV、实际时长和哈希，仍待用户比较旋律、声线、原词及头尾。"
+          "quality_status": "role_audition_passed",
+          "quality_findings": "用户对本次试听清单明确回复“验收通过”，确认此准确音频的声线、原曲旋律、唱词及自然头尾；接续文件的连续性一并通过。执行者未实际听到声音。"
         },
         {
           "candidate_id": "candidate-64c97ab1089e6c4b8eb132aded6726d5a7977b6f1f9c8cd7761c3883657b1c4d",
@@ -14515,8 +14695,8 @@
               "sha256": "6cce86a6593f136df349a6edc735ed5466755859b2a9fc6f0e60f62da5fc9cb4"
             }
           ],
-          "quality_status": "derived_hearing_unverified",
-          "quality_findings": "本次Seed Audio只生成指定角色唱段；候选同时复用已通过的完整原曲与旋律引用件，二者不是本次重新生成。新唱段已核原生WAV、实际时长和哈希，仍待用户比较旋律、声线、原词及头尾。"
+          "quality_status": "role_audition_passed",
+          "quality_findings": "用户对本次试听清单明确回复“验收通过”，确认此准确音频的声线、原曲旋律、唱词及自然头尾；接续文件的连续性一并通过。执行者未实际听到声音。"
         },
         {
           "candidate_id": "candidate-16c4f8b88da372d5600e495313699ed1ebf0a34f161612d95f120698c09524a1",
@@ -14612,8 +14792,8 @@
               "sha256": "8980f97a8acfac0905d96dfaa65632af58cbd4b07e5c54f5d2b0fd3dd6342e36"
             }
           ],
-          "quality_status": "derived_hearing_unverified",
-          "quality_findings": "本次Seed Audio只生成指定角色唱段；候选同时复用已通过的完整原曲与旋律引用件，二者不是本次重新生成。新唱段已核原生WAV、实际时长和哈希，仍待用户比较旋律、声线、原词及头尾。"
+          "quality_status": "role_audition_passed",
+          "quality_findings": "用户对本次试听清单明确回复“验收通过”，确认此准确音频的声线、原曲旋律、唱词及自然头尾；接续文件的连续性一并通过。执行者未实际听到声音。"
         },
         {
           "candidate_id": "candidate-3ad8189580b0ad3e63d6292b9135ef7c89a3ab029f39866fa4fdcd8252e1465f",
@@ -14709,8 +14889,8 @@
               "sha256": "8ab8c056d6f6a8623f3bb8b3b8ac35db3576b65d0874a9062f9f2d9eb0e39a90"
             }
           ],
-          "quality_status": "derived_hearing_unverified",
-          "quality_findings": "本次Seed Audio只生成指定角色唱段；候选同时复用已通过的完整原曲与旋律引用件，二者不是本次重新生成。新唱段已核原生WAV、实际时长和哈希，仍待用户比较旋律、声线、原词及头尾。"
+          "quality_status": "role_audition_passed",
+          "quality_findings": "用户对本次试听清单明确回复“验收通过”，确认此准确音频的声线、原曲旋律、唱词及自然头尾；接续文件的连续性一并通过。执行者未实际听到声音。"
         },
         {
           "candidate_id": "candidate-851cfa6dfbe09fcaa77ba489bfa1b1470b5767794bc8c68aa54aceeb3647a417",
@@ -14806,8 +14986,8 @@
               "sha256": "8a7360f49b9d8eca4d2095a28324477d679e523151da4fc36909a3c315caab24"
             }
           ],
-          "quality_status": "derived_hearing_unverified",
-          "quality_findings": "本次Seed Audio只生成指定角色唱段；候选同时复用已通过的完整原曲与旋律引用件，二者不是本次重新生成。新唱段已核原生WAV、实际时长和哈希，仍待用户比较旋律、声线、原词及头尾。"
+          "quality_status": "role_audition_passed",
+          "quality_findings": "用户对本次试听清单明确回复“验收通过”，确认此准确音频的声线、原曲旋律、唱词及自然头尾；接续文件的连续性一并通过。执行者未实际听到声音。"
         },
         {
           "candidate_id": "candidate-0934b359ff135b87c7850aa05cedfc55346a9085926159fec2551dfd4450ce17",
@@ -14903,8 +15083,8 @@
               "sha256": "293555dbc9dd4471152c0204831d9e6c83272ccac35426e77fd0ccd2864f6b9d"
             }
           ],
-          "quality_status": "derived_hearing_unverified",
-          "quality_findings": "本次Seed Audio只生成指定角色唱段；候选同时复用已通过的完整原曲与旋律引用件，二者不是本次重新生成。新唱段已核原生WAV、实际时长和哈希，仍待用户比较旋律、声线、原词及头尾。"
+          "quality_status": "role_audition_passed",
+          "quality_findings": "用户对本次试听清单明确回复“验收通过”，确认此准确音频的声线、原曲旋律、唱词及自然头尾；接续文件的连续性一并通过。执行者未实际听到声音。"
         },
         {
           "candidate_id": "candidate-71c8b863a2f3d31a49c808caa03905e3c95d0d1e8cad8139cabe7682500e0204",
@@ -15000,8 +15180,8 @@
               "sha256": "5384c046af98225079dd61f2e2f320dbb2a50c3bfaf369ca1053c6723c93c341"
             }
           ],
-          "quality_status": "derived_hearing_unverified",
-          "quality_findings": "本次Seed Audio只生成指定角色唱段；候选同时复用已通过的完整原曲与旋律引用件，二者不是本次重新生成。新唱段已核原生WAV、实际时长和哈希，仍待用户比较旋律、声线、原词及头尾。"
+          "quality_status": "role_audition_passed",
+          "quality_findings": "用户对本次试听清单明确回复“验收通过”，确认此准确音频的声线、原曲旋律、唱词及自然头尾；接续文件的连续性一并通过。执行者未实际听到声音。"
         }
       ],
       "selected_upstream": [
@@ -15011,9 +15191,9 @@
       ],
       "waiting_for_new_originals": [],
       "gaps": [
-        "用户已实际试听完整母版并通过；独立短参考或接续文件仍需制作、检查和准确选择。"
+        "实际定位尾音，完成7处准确用途；然后正式发布和最终验收。"
       ],
-      "resume_when": "沿通过的完整母版制作所需派生文件；不继承母版的剪辑头尾或接缝认可。"
+      "resume_when": "完整原曲与全部角色唱段均已由用户实际试听通过；已保存16/23处准确歌曲输入。其余7处仍需真实尾音位置安排跨镜或插话，不将旧预算秒点当实测。视频与最终混音另验。执行者未实际听到声音。"
     },
     {
       "code": "M516",
@@ -17284,7 +17464,7 @@
     {
       "code": "M651",
       "requirement_id": "new26-temple-song-singing",
-      "content_sha256": "a60aac9cdf978609cf43876c0b70e1158ffe50f6e8b85b60af403576be07fe71",
+      "content_sha256": "ccfbdc6d1eba9df04ef682feca94e097ee96f6039521efb471cd3993dac966de",
       "title": "四邻安 · 完整原曲",
       "category": "song",
       "scope_kind": "ENTITY",
@@ -17299,7 +17479,7 @@
           "store": false
         }
       },
-      "status": "reference_pending",
+      "status": "user_audition_passed",
       "candidates": [
         {
           "candidate_id": "candidate-0039c58ba917c9ad0e09c117aa586187bb413e85ed0e8fa21739703af3d4d0a1",
@@ -17333,10 +17513,22 @@
               "role": "original",
               "sample_rate": 48000,
               "sha256": "9d52f08ab7e1050e10ab24fcf1c12e829947186af970ed7487d8e683d5de3ecc"
+            },
+            {
+              "bytes": 768044,
+              "channels": 2,
+              "duration_seconds": 4.0,
+              "file": "2f16db8a3fbc9fa67b9cd5b5a87c674efda92e288c192adc3007d7f0a775aa8a.wav",
+              "has_audio": true,
+              "id": "temple-singers-tail",
+              "mime": "audio/wav",
+              "role": "original",
+              "sample_rate": 48000,
+              "sha256": "2f16db8a3fbc9fa67b9cd5b5a87c674efda92e288c192adc3007d7f0a775aa8a"
             }
           ],
-          "quality_status": "full_audition_passed",
-          "quality_findings": "用户已实际试听此页列出的准确文件并反馈“我已经完成视听，没有问题，请你继续吧”。本次确认完整母版；尚未制作或列入此次试听的独立派生文件不继承听审结论。执行者未实际听到音频。"
+          "quality_status": "user_audition_passed",
+          "quality_findings": "完整原曲及本组唱工的收尾录音均由用户实际试听通过；唯一镜头已选4秒完整收尾文件，0—4秒原速演唱，4—6秒静默。视频、口型及最终混音另验。执行者未实际听到声音。"
         },
         {
           "candidate_id": "candidate-1ac406b8dcd9a14eb687075309c0741ab07480437085712473e71495c3496091",
@@ -17384,8 +17576,8 @@
               "sha256": "2f16db8a3fbc9fa67b9cd5b5a87c674efda92e288c192adc3007d7f0a775aa8a"
             }
           ],
-          "quality_status": "derived_hearing_unverified",
-          "quality_findings": "本次Seed Audio只生成指定角色唱段；候选同时复用已通过的完整原曲与旋律引用件，二者不是本次重新生成。新唱段已核原生WAV、实际时长和哈希，仍待用户比较旋律、声线、原词及头尾。"
+          "quality_status": "role_audition_passed",
+          "quality_findings": "用户对本次试听清单明确回复“验收通过”，确认此准确音频的声线、原曲旋律、唱词及自然头尾；接续文件的连续性一并通过。执行者未实际听到声音。"
         }
       ],
       "selected_upstream": [
@@ -17393,10 +17585,8 @@
         "new26-singers-voice"
       ],
       "waiting_for_new_originals": [],
-      "gaps": [
-        "用户已实际试听完整母版并通过；独立短参考或接续文件仍需制作、检查和准确选择。"
-      ],
-      "resume_when": "沿通过的完整母版制作所需派生文件；不继承母版的剪辑头尾或接缝认可。"
+      "gaps": [],
+      "resume_when": "用户实际试听通过完整歌曲及所需派生文件；执行者未听到声音。准确文件已选入1处当前生成输入；没有当前输入的文件保留供对应后期用途。"
     },
     {
       "code": "M110",
@@ -19318,5 +19508,5 @@
       "resume_when": "用户实际试听通过完整环境母版与所需动作/循环短件；执行者未听到声音。准确文件已选入0处当前生成输入；没有当前输入的文件保留供对应后期用途。"
     }
   ],
-  "updated_at": "2026-10-17T13:24:54.108968+00:00"
+  "updated_at": "2026-10-18T06:00:42.228510+00:00"
 }

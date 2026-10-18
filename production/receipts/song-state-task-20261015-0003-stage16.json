@@ -1,0 +1,1691 @@
+{
+  "format": "song-state-v1",
+  "task_id": "task-20261015-0003",
+  "recorded_at": "2026-10-18T05:59:24.071150+00:00",
+  "items": [
+    {
+      "requirement_id": "new26-boat-song-singing",
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-boat-song-full-02",
+        "revision_id": "313d65234fa6bc01da8b57a8b2afde44e9c70b7635bfe365b77e45cff78e7ce9"
+      },
+      "role_files": [
+        {
+          "reference": {
+            "object_id": "asset-task-20261015-0003-boat-song-full-02",
+            "revision_id": "313d65234fa6bc01da8b57a8b2afde44e9c70b7635bfe365b77e45cff78e7ce9"
+          },
+          "component_id": "boat-aheng-opening",
+          "sha256": "119fb55a13baa602c5b54ef8cce2d491c0e67063ef98bcc6995d9a8b0c391947",
+          "duration_seconds": 10.0,
+          "source_recording": {
+            "reference": {
+              "object_id": "asset-task-20261015-0003-boat-aheng-opening-01",
+              "revision_id": "9a7a64e4bd5b21603958d5fba67bdbc20ad9f78e0d971975cfd3a132a0330383"
+            },
+            "component_ids": [
+              "boat-aheng-opening"
+            ],
+            "operation": "复用本轮已由用户试听通过的完整角色录音；未剪辑、变速或重新生成。"
+          },
+          "quality_status": "role_audition_passed"
+        },
+        {
+          "reference": {
+            "object_id": "asset-task-20261015-0003-boat-song-full-02",
+            "revision_id": "313d65234fa6bc01da8b57a8b2afde44e9c70b7635bfe365b77e45cff78e7ce9"
+          },
+          "component_id": "boat-aheng-home",
+          "sha256": "f748cf33ae71c45a25608e1f55a87e8797a30923c17997e7a98686897da61d4a",
+          "duration_seconds": 13.0,
+          "source_recording": {
+            "reference": {
+              "object_id": "asset-task-20261015-0003-boat-aheng-home-01",
+              "revision_id": "d5592938238fd90d6b92b513e7a4b245f22f91a4b0a8d8645566329ab9dd1c69"
+            },
+            "component_ids": [
+              "boat-aheng-home"
+            ],
+            "operation": "复用本轮已由用户试听通过的完整角色录音；未剪辑、变速或重新生成。"
+          },
+          "quality_status": "role_audition_passed"
+        }
+      ],
+      "selected_uses": [
+        {
+          "requirement_id": "new26-s001-q01-video",
+          "candidate": {
+            "object_id": "asset-task-20261015-0003-boat-song-full-02",
+            "revision_id": "313d65234fa6bc01da8b57a8b2afde44e9c70b7635bfe365b77e45cff78e7ce9"
+          },
+          "candidate_id": "candidate-aaa3fca1c8eacf021377b80115a2bd5062cb9b5cf35223f5ad5e00c99f1e2914",
+          "component": {
+            "bytes": 1920044,
+            "channels": 2,
+            "duration_seconds": 10.0,
+            "file": "119fb55a13baa602c5b54ef8cce2d491c0e67063ef98bcc6995d9a8b0c391947.wav",
+            "has_audio": true,
+            "id": "boat-aheng-opening",
+            "mime": "audio/wav",
+            "role": "original",
+            "sample_rate": 48000,
+            "sha256": "119fb55a13baa602c5b54ef8cce2d491c0e67063ef98bcc6995d9a8b0c391947"
+          },
+          "actual_audio_timeline": {
+            "component_id": "boat-aheng-opening",
+            "end_seconds": 11.0,
+            "full_file_seconds": 10.0,
+            "model_reference": "complete_file",
+            "reference_only": false,
+            "sha256": "119fb55a13baa602c5b54ef8cce2d491c0e67063ef98bcc6995d9a8b0c391947",
+            "shot_end_seconds": 18,
+            "start_seconds": 1
+          },
+          "import": {
+            "validated_only": false,
+            "records": [
+              {
+                "id": "new26-s001-q01-video",
+                "kind": "REQUIREMENT",
+                "revision": "1976f58db6588613902539a1cdf97a79f1dc2d790a9fc02d3299c7c2aebd3c5d",
+                "version": 12,
+                "edit_token": 12,
+                "content_sha256": "2f825a09766009e68de2eddf46003aa752b1cfb4e8fa756dc6cbba545548f06b"
+              }
+            ],
+            "removed": []
+          },
+          "selection": {
+            "requirement_id": "new26-s001-q01-video",
+            "revision_id": "1976f58db6588613902539a1cdf97a79f1dc2d790a9fc02d3299c7c2aebd3c5d",
+            "edit_token": 13,
+            "content_sha256": "3598a765f49475afea100376425962ba74e0c46a5b7853d2a2b2e91acc180f3d",
+            "already_applied": false,
+            "workspace_marker": {
+              "owner_id": "new26-s001-q01",
+              "records": [
+                [
+                  "new26-s001-q01",
+                  "f1914a1c177e1167b80282e6a1e0a862955fb9b6db816f0e0ff0d248dd61fbce",
+                  2
+                ],
+                [
+                  "new26-s001-q01-video",
+                  "1976f58db6588613902539a1cdf97a79f1dc2d790a9fc02d3299c7c2aebd3c5d",
+                  13
+                ]
+              ],
+              "source_signature": "111827b2bfc2b43add2b6a58f6adfaf718f2b9ed201168fe5aa40af669011117"
+            }
+          },
+          "current_version": 13,
+          "current_content_sha256": "3598a765f49475afea100376425962ba74e0c46a5b7853d2a2b2e91acc180f3d",
+          "review": "按实际完整角色文件重排演唱与静默；保留锁定歌词、动作因果和信息显露次序。唱得较短时给写字、听者反应和换气留时，不拉伸录音。依声音与剪辑章节，实际录音承担音乐时基，图像和动作服从歌曲完整性；保留完整原曲及所有历史调用。用户验收只覆盖准确音频，尚未生成视频。已连读相邻镜起落点，守住词稿揭示、人物声源与物件交接。"
+        }
+      ],
+      "remaining_requirements": [
+        "new26-s001-q02-video"
+      ],
+      "import": {
+        "validated_only": false,
+        "records": [
+          {
+            "id": "new26-boat-song-singing",
+            "kind": "REQUIREMENT",
+            "revision": "f11d4f9ee02db7cdb95a3447019e8ed609861049f3d53237127cdd456605e33d",
+            "version": 12,
+            "edit_token": 12,
+            "content_sha256": "c73ba80e3ade5604d674bded4cf1c0b8c306463586a53807ec34d7235a14e6a4"
+          }
+        ],
+        "removed": []
+      },
+      "readiness": "完整原曲与全部角色唱段均已由用户实际试听通过；已保存1/2处准确歌曲输入。其余1处仍需真实尾音位置安排跨镜或插话，不将旧预算秒点当实测。视频与最终混音另验。"
+    },
+    {
+      "requirement_id": "new26-qingpeng-singing",
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+        "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+      },
+      "role_files": [
+        {
+          "reference": {
+            "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+            "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+          },
+          "component_id": "qingpeng-aheng-stage1",
+          "sha256": "994cbf206c1700cf4ce891931b11e974f710b029f84853f2b1c76fc151a6d437",
+          "duration_seconds": 8.665417,
+          "source_recording": {
+            "reference": {
+              "object_id": "asset-task-20261015-0003-qingpeng-aheng-stage1-01",
+              "revision_id": "c8ca08e359d2549cc7e169596e0d3bcc2eaa09f80abe00d13775510f046725ce"
+            },
+            "component_ids": [
+              "qingpeng-aheng-stage1"
+            ],
+            "operation": "复用本轮已由用户试听通过的完整角色录音；未剪辑、变速或重新生成。"
+          },
+          "quality_status": "role_audition_passed"
+        },
+        {
+          "reference": {
+            "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+            "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+          },
+          "component_id": "qingpeng-aheng-stage2",
+          "sha256": "a6b6c2e69bafc53a0a70764c53ca724fdf58bdf9f698683d728a1336ea5b6105",
+          "duration_seconds": 24.0,
+          "source_recording": {
+            "reference": {
+              "object_id": "asset-task-20261015-0003-qingpeng-aheng-stage2-01",
+              "revision_id": "80a4d72a9f6006a5ffa8d20d8136749080be0eb6afb1d195f9711aaa84c8dc86"
+            },
+            "component_ids": [
+              "qingpeng-aheng-stage2"
+            ],
+            "operation": "复用本轮已由用户试听通过的完整角色录音；未剪辑、变速或重新生成。"
+          },
+          "quality_status": "role_audition_passed"
+        },
+        {
+          "reference": {
+            "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+            "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+          },
+          "component_id": "qingpeng-aheng-stage3",
+          "sha256": "98bca747be4117f9fc429e14cb31f8d930c7b979dda5c3caad0696f5097d72ea",
+          "duration_seconds": 27.0,
+          "source_recording": {
+            "reference": {
+              "object_id": "asset-task-20261015-0003-qingpeng-aheng-stage3-01",
+              "revision_id": "f7cb43e19ee86fd6c69311b3a0b3575b8c3ac5b6a6e8ba91fbc6ef98e6a50c77"
+            },
+            "component_ids": [
+              "qingpeng-aheng-stage3"
+            ],
+            "operation": "复用本轮已由用户试听通过的完整角色录音；未剪辑、变速或重新生成。"
+          },
+          "quality_status": "role_audition_passed"
+        },
+        {
+          "reference": {
+            "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+            "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+          },
+          "component_id": "qingpeng-aheng-stage4",
+          "sha256": "ac756b729eec457702e9a5de79168c5dbe16376e9374bf38b423e23bab84c30f",
+          "duration_seconds": 6.848917,
+          "source_recording": {
+            "reference": {
+              "object_id": "asset-task-20261015-0003-qingpeng-aheng-stage4-01",
+              "revision_id": "0b1f1a48f7a130715613613eb75aceb8fd83cb7f2512522e7b42dcc5247a3f8e"
+            },
+            "component_ids": [
+              "qingpeng-aheng-stage4"
+            ],
+            "operation": "复用本轮已由用户试听通过的完整角色录音；未剪辑、变速或重新生成。"
+          },
+          "quality_status": "role_audition_passed"
+        },
+        {
+          "reference": {
+            "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+            "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+          },
+          "component_id": "qingpeng-aheng-stage5",
+          "sha256": "3e2bd6c498589a532150d9182b6d6a8d3747acf7ebfc4344d0c6e456185aa081",
+          "duration_seconds": 17.118917,
+          "source_recording": {
+            "reference": {
+              "object_id": "asset-task-20261015-0003-qingpeng-aheng-stage5-01",
+              "revision_id": "f129dcf16013281c4e1ee56f1e956f00635475aa8fc4095a7cfef8f112519436"
+            },
+            "component_ids": [
+              "qingpeng-aheng-stage5"
+            ],
+            "operation": "复用本轮已由用户试听通过的完整角色录音；未剪辑、变速或重新生成。"
+          },
+          "quality_status": "role_audition_passed"
+        },
+        {
+          "reference": {
+            "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+            "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+          },
+          "component_id": "qingpeng-aheng-short",
+          "sha256": "bc0df00c512473fa82aab1aa8faefab9f8a2543cd96e5b871568320475b9b499",
+          "duration_seconds": 10.0,
+          "source_recording": {
+            "reference": {
+              "object_id": "asset-task-20261015-0003-qingpeng-aheng-short-01",
+              "revision_id": "7e8d92fbf97c79b3e897c7a4057c3ab3fc9a7daca05977a4d97454b04a8234e0"
+            },
+            "component_ids": [
+              "qingpeng-aheng-short"
+            ],
+            "operation": "复用本轮已由用户试听通过的完整角色录音；未剪辑、变速或重新生成。"
+          },
+          "quality_status": "role_audition_passed"
+        },
+        {
+          "reference": {
+            "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+            "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+          },
+          "component_id": "qingpeng-teacher-fourth",
+          "sha256": "08ffd8ef0ca4e008b530254daa12a2c13db4a3202a7ea050ffce8b603bb68ba9",
+          "duration_seconds": 8.247792,
+          "source_recording": {
+            "reference": {
+              "object_id": "asset-task-20261015-0003-qingpeng-teacher-fourth-01",
+              "revision_id": "64bc5cec97f1f2ef4cab1e3dda488605c46a98a14541bd57e3e7e989b2f83873"
+            },
+            "component_ids": [
+              "qingpeng-teacher-fourth"
+            ],
+            "operation": "复用本轮已由用户试听通过的完整角色录音；未剪辑、变速或重新生成。"
+          },
+          "quality_status": "role_audition_passed"
+        },
+        {
+          "reference": {
+            "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+            "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+          },
+          "component_id": "qingpeng-teacher-fifth",
+          "sha256": "6cce86a6593f136df349a6edc735ed5466755859b2a9fc6f0e60f62da5fc9cb4",
+          "duration_seconds": 9.003229,
+          "source_recording": {
+            "reference": {
+              "object_id": "asset-task-20261015-0003-qingpeng-teacher-fifth-01",
+              "revision_id": "5952d710c0b05c4e2d91de9892d75ab920c4d400c2ec33c494beed36517df5fa"
+            },
+            "component_ids": [
+              "qingpeng-teacher-fifth"
+            ],
+            "operation": "复用本轮已由用户试听通过的完整角色录音；未剪辑、变速或重新生成。"
+          },
+          "quality_status": "role_audition_passed"
+        },
+        {
+          "reference": {
+            "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+            "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+          },
+          "component_id": "qingpeng-teacher-final-slow",
+          "sha256": "8980f97a8acfac0905d96dfaa65632af58cbd4b07e5c54f5d2b0fd3dd6342e36",
+          "duration_seconds": 4.950063,
+          "source_recording": {
+            "reference": {
+              "object_id": "asset-task-20261015-0003-qingpeng-teacher-final-slow-01",
+              "revision_id": "7046af5863cca67e7ce8235ca96ef06a6e12a38eb37742e764e9d1a593822ba6"
+            },
+            "component_ids": [
+              "qingpeng-teacher-final-slow"
+            ],
+            "operation": "复用本轮已由用户试听通过的完整角色录音；未剪辑、变速或重新生成。"
+          },
+          "quality_status": "role_audition_passed"
+        },
+        {
+          "reference": {
+            "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+            "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+          },
+          "component_id": "qingpeng-aheng-teaching-fourth",
+          "sha256": "8ab8c056d6f6a8623f3bb8b3b8ac35db3576b65d0874a9062f9f2d9eb0e39a90",
+          "duration_seconds": 8.187458,
+          "source_recording": {
+            "reference": {
+              "object_id": "asset-task-20261015-0003-qingpeng-aheng-teaching-fourth-01",
+              "revision_id": "8f27639edbcc630e8c9f73ac2435f63741053c0114567bfd34db3329e20be78f"
+            },
+            "component_ids": [
+              "qingpeng-aheng-teaching-fourth"
+            ],
+            "operation": "复用本轮已由用户试听通过的完整角色录音；未剪辑、变速或重新生成。"
+          },
+          "quality_status": "role_audition_passed"
+        },
+        {
+          "reference": {
+            "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+            "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+          },
+          "component_id": "qingpeng-aheng-teaching-fifth",
+          "sha256": "8a7360f49b9d8eca4d2095a28324477d679e523151da4fc36909a3c315caab24",
+          "duration_seconds": 14.3,
+          "source_recording": {
+            "reference": {
+              "object_id": "asset-task-20261015-0003-qingpeng-aheng-teaching-fifth-01",
+              "revision_id": "636bd8578baaa27a3e612b7c821a50a316a3690b1739894cc6ac0c0560f02f16"
+            },
+            "component_ids": [
+              "qingpeng-aheng-teaching-fifth"
+            ],
+            "operation": "复用本轮已由用户试听通过的完整角色录音；未剪辑、变速或重新生成。"
+          },
+          "quality_status": "role_audition_passed"
+        },
+        {
+          "reference": {
+            "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+            "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+          },
+          "component_id": "qingpeng-mother-first-hum",
+          "sha256": "293555dbc9dd4471152c0204831d9e6c83272ccac35426e77fd0ccd2864f6b9d",
+          "duration_seconds": 2.5,
+          "source_recording": {
+            "reference": {
+              "object_id": "asset-task-20261015-0003-qingpeng-mother-first-hum-01",
+              "revision_id": "1e83ad2d54475c7595bb45e7323791611ac41e131a9e9003d2dcaf8a7ce8698f"
+            },
+            "component_ids": [
+              "qingpeng-mother-first-hum"
+            ],
+            "operation": "复用本轮已由用户试听通过的完整角色录音；未剪辑、变速或重新生成。"
+          },
+          "quality_status": "role_audition_passed"
+        },
+        {
+          "reference": {
+            "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+            "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+          },
+          "component_id": "qingpeng-mother-willow-hum",
+          "sha256": "5384c046af98225079dd61f2e2f320dbb2a50c3bfaf369ca1053c6723c93c341",
+          "duration_seconds": 10.0,
+          "source_recording": {
+            "reference": {
+              "object_id": "asset-task-20261015-0003-qingpeng-mother-willow-hum-01",
+              "revision_id": "c0a9479743e785ee04d72ca26929dc832e84202905e48f469083b9cf16b0c743"
+            },
+            "component_ids": [
+              "qingpeng-mother-willow-hum"
+            ],
+            "operation": "复用本轮已由用户试听通过的完整角色录音；未剪辑、变速或重新生成。"
+          },
+          "quality_status": "role_audition_passed"
+        }
+      ],
+      "selected_uses": [
+        {
+          "requirement_id": "new26-s003-q05-video",
+          "candidate": {
+            "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+            "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+          },
+          "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+          "component": {
+            "bytes": 1663804,
+            "channels": 2,
+            "duration_seconds": 8.665417,
+            "file": "994cbf206c1700cf4ce891931b11e974f710b029f84853f2b1c76fc151a6d437.wav",
+            "has_audio": true,
+            "id": "qingpeng-aheng-stage1",
+            "mime": "audio/wav",
+            "role": "original",
+            "sample_rate": 48000,
+            "sha256": "994cbf206c1700cf4ce891931b11e974f710b029f84853f2b1c76fc151a6d437"
+          },
+          "actual_audio_timeline": {
+            "component_id": "qingpeng-aheng-stage1",
+            "full_file_seconds": 8.665417,
+            "model_reference": "complete_file",
+            "reference_only": true,
+            "sha256": "994cbf206c1700cf4ce891931b11e974f710b029f84853f2b1c76fc151a6d437"
+          },
+          "import": {
+            "validated_only": false,
+            "records": [
+              {
+                "id": "new26-s003-q05-video",
+                "kind": "REQUIREMENT",
+                "revision": "39d6df4e3597ef598eb88f9a4bdf6b1e7fef6a743b9f41a1fac72d3918390b0c",
+                "version": 14,
+                "edit_token": 14,
+                "content_sha256": "6863f0c7a78b5fe8e448548155e92b5a9c69951238d444fa2938421a998ed6d4"
+              }
+            ],
+            "removed": []
+          },
+          "selection": {
+            "requirement_id": "new26-s003-q05-video",
+            "revision_id": "39d6df4e3597ef598eb88f9a4bdf6b1e7fef6a743b9f41a1fac72d3918390b0c",
+            "edit_token": 15,
+            "content_sha256": "7103958926578ff6f7d647537b1a978916472d155926e699ba0f268fd8402e62",
+            "already_applied": false,
+            "workspace_marker": {
+              "owner_id": "new26-s003-q05",
+              "records": [
+                [
+                  "new26-s003-q05",
+                  "4722e28ab77b2a96e43d8931bf8726b063bc32e03e093c310085ebe48f314779",
+                  2
+                ],
+                [
+                  "new26-s003-q05-hymn-line",
+                  "a1ad49075f1c7dd63a051550dcb26f8f1bf828a00ccce9eb7205efa2b0cb5bc5",
+                  2
+                ],
+                [
+                  "new26-s003-q05-video",
+                  "39d6df4e3597ef598eb88f9a4bdf6b1e7fef6a743b9f41a1fac72d3918390b0c",
+                  15
+                ]
+              ],
+              "source_signature": "ea3d1cc45ff77e64f7f2a6d975c703c5c5b11a37c545296989c17d8dff0c9f92"
+            }
+          },
+          "current_version": 15,
+          "current_content_sha256": "7103958926578ff6f7d647537b1a978916472d155926e699ba0f268fd8402e62",
+          "review": "按实际完整角色文件重排演唱与静默；保留锁定歌词、动作因果和信息显露次序。唱得较短时给写字、听者反应和换气留时，不拉伸录音。依声音与剪辑章节，实际录音承担音乐时基，图像和动作服从歌曲完整性；保留完整原曲及所有历史调用。用户验收只覆盖准确音频，尚未生成视频。已连读相邻镜起落点，守住词稿揭示、人物声源与物件交接。"
+        },
+        {
+          "requirement_id": "new26-s004-q02-video",
+          "candidate": {
+            "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+            "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+          },
+          "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+          "component": {
+            "bytes": 1920044,
+            "channels": 2,
+            "duration_seconds": 10.0,
+            "file": "bc0df00c512473fa82aab1aa8faefab9f8a2543cd96e5b871568320475b9b499.wav",
+            "has_audio": true,
+            "id": "qingpeng-aheng-short",
+            "mime": "audio/wav",
+            "role": "original",
+            "sample_rate": 48000,
+            "sha256": "bc0df00c512473fa82aab1aa8faefab9f8a2543cd96e5b871568320475b9b499"
+          },
+          "actual_audio_timeline": {
+            "component_id": "qingpeng-aheng-short",
+            "end_seconds": 10.0,
+            "full_file_seconds": 10.0,
+            "model_reference": "complete_file",
+            "reference_only": false,
+            "sha256": "bc0df00c512473fa82aab1aa8faefab9f8a2543cd96e5b871568320475b9b499",
+            "shot_end_seconds": 15,
+            "start_seconds": 0
+          },
+          "import": {
+            "validated_only": false,
+            "records": [
+              {
+                "id": "new26-s004-q02-video",
+                "kind": "REQUIREMENT",
+                "revision": "b9605f75c35893abb481e25115168a87819cb6b244f7c1343493d1adf95bb32f",
+                "version": 14,
+                "edit_token": 14,
+                "content_sha256": "87af4d0986991faeb82f3a5f78062e2278b9d51fc3f8ef6b55a392f390cd3de7"
+              }
+            ],
+            "removed": []
+          },
+          "selection": {
+            "requirement_id": "new26-s004-q02-video",
+            "revision_id": "b9605f75c35893abb481e25115168a87819cb6b244f7c1343493d1adf95bb32f",
+            "edit_token": 15,
+            "content_sha256": "7ac63ee0fd11a543d9a87f75863a7d63ba5556ea7c9c8ec261b57225b777946b",
+            "already_applied": false,
+            "workspace_marker": {
+              "owner_id": "new26-s004-q02",
+              "records": [
+                [
+                  "new26-s004-q02",
+                  "1341711b593a8d53e2491bf73679917cc85ddb0e0b81cf84062dc0dfa21ffb3d",
+                  2
+                ],
+                [
+                  "new26-s004-q02-video",
+                  "b9605f75c35893abb481e25115168a87819cb6b244f7c1343493d1adf95bb32f",
+                  15
+                ]
+              ],
+              "source_signature": "727a51c99550656f028b7d2c3b6c70072f11576e87203e4224bce1bdb5e5f35d"
+            }
+          },
+          "current_version": 15,
+          "current_content_sha256": "7ac63ee0fd11a543d9a87f75863a7d63ba5556ea7c9c8ec261b57225b777946b",
+          "review": "按实际完整角色文件重排演唱与静默；保留锁定歌词、动作因果和信息显露次序。唱得较短时给写字、听者反应和换气留时，不拉伸录音。依声音与剪辑章节，实际录音承担音乐时基，图像和动作服从歌曲完整性；保留完整原曲及所有历史调用。用户验收只覆盖准确音频，尚未生成视频。已连读相邻镜起落点，守住词稿揭示、人物声源与物件交接。"
+        },
+        {
+          "requirement_id": "new26-s004-q03-video",
+          "candidate": {
+            "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+            "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+          },
+          "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+          "component": {
+            "bytes": 1920044,
+            "channels": 2,
+            "duration_seconds": 10.0,
+            "file": "bc0df00c512473fa82aab1aa8faefab9f8a2543cd96e5b871568320475b9b499.wav",
+            "has_audio": true,
+            "id": "qingpeng-aheng-short",
+            "mime": "audio/wav",
+            "role": "original",
+            "sample_rate": 48000,
+            "sha256": "bc0df00c512473fa82aab1aa8faefab9f8a2543cd96e5b871568320475b9b499"
+          },
+          "actual_audio_timeline": {
+            "component_id": "qingpeng-aheng-short",
+            "end_seconds": 11.0,
+            "full_file_seconds": 10.0,
+            "model_reference": "complete_file",
+            "reference_only": false,
+            "sha256": "bc0df00c512473fa82aab1aa8faefab9f8a2543cd96e5b871568320475b9b499",
+            "shot_end_seconds": 14,
+            "start_seconds": 1
+          },
+          "import": {
+            "validated_only": false,
+            "records": [
+              {
+                "id": "new26-s004-q03-video",
+                "kind": "REQUIREMENT",
+                "revision": "e68cab1ddcf2f8725b1b5816b100a5d19f1f1986b299ee1b7442de9b737476f4",
+                "version": 12,
+                "edit_token": 12,
+                "content_sha256": "e62d8ab1b605301ffaaf3ac21e16d75034a1ab5b3d786b020f228e066e538b5c"
+              }
+            ],
+            "removed": []
+          },
+          "selection": {
+            "requirement_id": "new26-s004-q03-video",
+            "revision_id": "e68cab1ddcf2f8725b1b5816b100a5d19f1f1986b299ee1b7442de9b737476f4",
+            "edit_token": 13,
+            "content_sha256": "056dc877e17a2d9e695af91be6821dd2cedf61efddd0781a4503b6948ed215ed",
+            "already_applied": false,
+            "workspace_marker": {
+              "owner_id": "new26-s004-q03",
+              "records": [
+                [
+                  "new26-s004-q03",
+                  "82224a9fce4dc7f82b6e8aaff35525b22208a128bf3a3ac7e1e5ed01a623ab70",
+                  2
+                ],
+                [
+                  "new26-s004-q03-video",
+                  "e68cab1ddcf2f8725b1b5816b100a5d19f1f1986b299ee1b7442de9b737476f4",
+                  13
+                ]
+              ],
+              "source_signature": "bd06b550bef7f99947867b4503fbb5216e74063ed4e9da244a8ed9141161fb6e"
+            }
+          },
+          "current_version": 13,
+          "current_content_sha256": "056dc877e17a2d9e695af91be6821dd2cedf61efddd0781a4503b6948ed215ed",
+          "review": "按实际完整角色文件重排演唱与静默；保留锁定歌词、动作因果和信息显露次序。唱得较短时给写字、听者反应和换气留时，不拉伸录音。依声音与剪辑章节，实际录音承担音乐时基，图像和动作服从歌曲完整性；保留完整原曲及所有历史调用。用户验收只覆盖准确音频，尚未生成视频。已连读相邻镜起落点，守住词稿揭示、人物声源与物件交接。"
+        },
+        {
+          "requirement_id": "new26-s005-q06-video",
+          "candidate": {
+            "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+            "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+          },
+          "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+          "component": {
+            "bytes": 1920044,
+            "channels": 2,
+            "duration_seconds": 10.0,
+            "file": "bc0df00c512473fa82aab1aa8faefab9f8a2543cd96e5b871568320475b9b499.wav",
+            "has_audio": true,
+            "id": "qingpeng-aheng-short",
+            "mime": "audio/wav",
+            "role": "original",
+            "sample_rate": 48000,
+            "sha256": "bc0df00c512473fa82aab1aa8faefab9f8a2543cd96e5b871568320475b9b499"
+          },
+          "actual_audio_timeline": {
+            "component_id": "qingpeng-aheng-short",
+            "full_file_seconds": 10.0,
+            "model_reference": "complete_file",
+            "reference_only": true,
+            "sha256": "bc0df00c512473fa82aab1aa8faefab9f8a2543cd96e5b871568320475b9b499"
+          },
+          "import": {
+            "validated_only": false,
+            "records": [
+              {
+                "id": "new26-s005-q06-video",
+                "kind": "REQUIREMENT",
+                "revision": "c55545a4fb2ec74267b978bd2ad0dfb619eb4ff83c819701836a542b9e9f9661",
+                "version": 15,
+                "edit_token": 15,
+                "content_sha256": "5cb40d3cf773df81670ee8dba0fc5086d5b2abd0c10f64ebea68b2fc2b1fc42c"
+              }
+            ],
+            "removed": []
+          },
+          "selection": {
+            "requirement_id": "new26-s005-q06-video",
+            "revision_id": "c55545a4fb2ec74267b978bd2ad0dfb619eb4ff83c819701836a542b9e9f9661",
+            "edit_token": 16,
+            "content_sha256": "c64ecb6b793362ae5576db40a4462ca61651a6a87eba2db0c316900af6f55075",
+            "already_applied": false,
+            "workspace_marker": {
+              "owner_id": "new26-s005-q06",
+              "records": [
+                [
+                  "new26-s005-q06",
+                  "09d4bb496a432f7a319223215c3012229146df8454d1a0bfd37630791f456226",
+                  2
+                ],
+                [
+                  "new26-s005-q06-video",
+                  "c55545a4fb2ec74267b978bd2ad0dfb619eb4ff83c819701836a542b9e9f9661",
+                  16
+                ]
+              ],
+              "source_signature": "6a6a1555a6d3d6aad12afd828ba1e380410596ed09b79c4a59bd255dbae5ad7f"
+            }
+          },
+          "current_version": 16,
+          "current_content_sha256": "c64ecb6b793362ae5576db40a4462ca61651a6a87eba2db0c316900af6f55075",
+          "review": "按实际完整角色文件重排演唱与静默；保留锁定歌词、动作因果和信息显露次序。唱得较短时给写字、听者反应和换气留时，不拉伸录音。依声音与剪辑章节，实际录音承担音乐时基，图像和动作服从歌曲完整性；保留完整原曲及所有历史调用。用户验收只覆盖准确音频，尚未生成视频。已连读相邻镜起落点，守住词稿揭示、人物声源与物件交接。"
+        },
+        {
+          "requirement_id": "new26-s038-q04-video",
+          "candidate": {
+            "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+            "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+          },
+          "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+          "component": {
+            "bytes": 1920044,
+            "channels": 2,
+            "duration_seconds": 10.0,
+            "file": "bc0df00c512473fa82aab1aa8faefab9f8a2543cd96e5b871568320475b9b499.wav",
+            "has_audio": true,
+            "id": "qingpeng-aheng-short",
+            "mime": "audio/wav",
+            "role": "original",
+            "sample_rate": 48000,
+            "sha256": "bc0df00c512473fa82aab1aa8faefab9f8a2543cd96e5b871568320475b9b499"
+          },
+          "actual_audio_timeline": {
+            "component_id": "qingpeng-aheng-short",
+            "end_seconds": 14.0,
+            "full_file_seconds": 10.0,
+            "model_reference": "complete_file",
+            "reference_only": false,
+            "sha256": "bc0df00c512473fa82aab1aa8faefab9f8a2543cd96e5b871568320475b9b499",
+            "shot_end_seconds": 23,
+            "start_seconds": 4
+          },
+          "import": {
+            "validated_only": false,
+            "records": [
+              {
+                "id": "new26-s038-q04-video",
+                "kind": "REQUIREMENT",
+                "revision": "eb502347210c30b37092a28d98fa5bec6e2601a47f80f643dc38303d79cbe7d2",
+                "version": 13,
+                "edit_token": 13,
+                "content_sha256": "66407b7d2337f898223096c8e7691f7f22eade6f48ec43053c1eac7d9ba0a035"
+              }
+            ],
+            "removed": []
+          },
+          "selection": {
+            "requirement_id": "new26-s038-q04-video",
+            "revision_id": "eb502347210c30b37092a28d98fa5bec6e2601a47f80f643dc38303d79cbe7d2",
+            "edit_token": 14,
+            "content_sha256": "0a3f118845778a1f88c7b9ee95409c44d6e1b0995591a8110e4a0588c76ea97d",
+            "already_applied": false,
+            "workspace_marker": {
+              "owner_id": "new26-s038-q04",
+              "records": [
+                [
+                  "new26-s038-q04",
+                  "ef96d9e25ad36986d9d87bbc5ecd81fcc291f8e390f31f66d73b04a8b46b67c3",
+                  2
+                ],
+                [
+                  "new26-s038-q04-video",
+                  "eb502347210c30b37092a28d98fa5bec6e2601a47f80f643dc38303d79cbe7d2",
+                  14
+                ]
+              ],
+              "source_signature": "28a063721738d5c6d7c59934cb61925e4fb5863b00a6e57c3c436ec7ce6d7d68"
+            }
+          },
+          "current_version": 14,
+          "current_content_sha256": "0a3f118845778a1f88c7b9ee95409c44d6e1b0995591a8110e4a0588c76ea97d",
+          "review": "按实际完整角色文件重排演唱与静默；保留锁定歌词、动作因果和信息显露次序。唱得较短时给写字、听者反应和换气留时，不拉伸录音。依声音与剪辑章节，实际录音承担音乐时基，图像和动作服从歌曲完整性；保留完整原曲及所有历史调用。用户验收只覆盖准确音频，尚未生成视频。已连读相邻镜起落点，守住词稿揭示、人物声源与物件交接。"
+        },
+        {
+          "requirement_id": "new26-s039-q03-video",
+          "candidate": {
+            "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+            "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+          },
+          "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+          "component": {
+            "bytes": 1920044,
+            "channels": 2,
+            "duration_seconds": 10.0,
+            "file": "bc0df00c512473fa82aab1aa8faefab9f8a2543cd96e5b871568320475b9b499.wav",
+            "has_audio": true,
+            "id": "qingpeng-aheng-short",
+            "mime": "audio/wav",
+            "role": "original",
+            "sample_rate": 48000,
+            "sha256": "bc0df00c512473fa82aab1aa8faefab9f8a2543cd96e5b871568320475b9b499"
+          },
+          "actual_audio_timeline": {
+            "component_id": "qingpeng-aheng-short",
+            "end_seconds": 13.0,
+            "full_file_seconds": 10.0,
+            "model_reference": "complete_file",
+            "reference_only": false,
+            "sha256": "bc0df00c512473fa82aab1aa8faefab9f8a2543cd96e5b871568320475b9b499",
+            "shot_end_seconds": 15,
+            "start_seconds": 3
+          },
+          "import": {
+            "validated_only": false,
+            "records": [
+              {
+                "id": "new26-s039-q03-video",
+                "kind": "REQUIREMENT",
+                "revision": "ca97420c9ea41bd8d0a89e483039c2dbfc3165c95104906091f06de0eb3fd306",
+                "version": 12,
+                "edit_token": 12,
+                "content_sha256": "98377a0a54f0c57e6a1090cba1c366c3da4d206490c0e53dfa6c34d0fd4323d9"
+              }
+            ],
+            "removed": []
+          },
+          "selection": {
+            "requirement_id": "new26-s039-q03-video",
+            "revision_id": "ca97420c9ea41bd8d0a89e483039c2dbfc3165c95104906091f06de0eb3fd306",
+            "edit_token": 13,
+            "content_sha256": "47f10f51fda5463e2b18ac780d324bdcd0ef3578ffd0226c8b2095038d460418",
+            "already_applied": false,
+            "workspace_marker": {
+              "owner_id": "new26-s039-q03",
+              "records": [
+                [
+                  "new26-s039-q03",
+                  "edf2bce7841722b91b44cc3bacb1f0a7cc113cf58ba78da60ae9c1c15bafb3b5",
+                  3
+                ],
+                [
+                  "new26-s039-q03-video",
+                  "ca97420c9ea41bd8d0a89e483039c2dbfc3165c95104906091f06de0eb3fd306",
+                  13
+                ]
+              ],
+              "source_signature": "1560c04dfe6775dd2a379ada819660a17290990ffad7d64fb3753e23ca433fe0"
+            }
+          },
+          "current_version": 13,
+          "current_content_sha256": "47f10f51fda5463e2b18ac780d324bdcd0ef3578ffd0226c8b2095038d460418",
+          "review": "按实际完整角色文件重排演唱与静默；保留锁定歌词、动作因果和信息显露次序。唱得较短时给写字、听者反应和换气留时，不拉伸录音。依声音与剪辑章节，实际录音承担音乐时基，图像和动作服从歌曲完整性；保留完整原曲及所有历史调用。用户验收只覆盖准确音频，尚未生成视频。已连读相邻镜起落点，守住词稿揭示、人物声源与物件交接。"
+        },
+        {
+          "requirement_id": "new26-s039-q04-video",
+          "candidate": {
+            "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+            "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+          },
+          "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+          "component": {
+            "bytes": 3312240,
+            "channels": 2,
+            "duration_seconds": 17.251021,
+            "file": "1dfabb5532baf05ec4adb7c00a12abb815b03bef285c0db0eef7387e2064c70d.wav",
+            "has_audio": true,
+            "id": "qingpeng-teacher-combined",
+            "mime": "audio/wav",
+            "role": "original",
+            "sample_rate": 48000,
+            "sha256": "1dfabb5532baf05ec4adb7c00a12abb815b03bef285c0db0eef7387e2064c70d"
+          },
+          "actual_audio_timeline": {
+            "assembly_boundary_seconds": 10.247792,
+            "component_id": "qingpeng-teacher-combined",
+            "end_seconds": 19.251021,
+            "full_file_seconds": 17.251021,
+            "model_reference": "complete_file",
+            "reference_only": false,
+            "sha256": "1dfabb5532baf05ec4adb7c00a12abb815b03bef285c0db0eef7387e2064c70d",
+            "shot_end_seconds": 30,
+            "start_seconds": 2
+          },
+          "import": {
+            "validated_only": false,
+            "records": [
+              {
+                "id": "new26-s039-q04-video",
+                "kind": "REQUIREMENT",
+                "revision": "14918755d7c3da29064ba4300f68c2b29cd430f5a23843780f4c45bd8352d7bd",
+                "version": 13,
+                "edit_token": 13,
+                "content_sha256": "0561be4291fc9a06f2ee2277737c032f9a54457f9dbe598d4700b89362bd2161"
+              }
+            ],
+            "removed": []
+          },
+          "selection": {
+            "requirement_id": "new26-s039-q04-video",
+            "revision_id": "14918755d7c3da29064ba4300f68c2b29cd430f5a23843780f4c45bd8352d7bd",
+            "edit_token": 14,
+            "content_sha256": "e0c9b8e3ce7aed0dbf54ccf5fb473998ad1b95bec507e313e0e1ff24b1622017",
+            "already_applied": false,
+            "workspace_marker": {
+              "owner_id": "new26-s039-q04",
+              "records": [
+                [
+                  "new26-s039-q04",
+                  "f0c6ff8bcff8bc4be500172ce980c2e7fc3660e666f8755d1fcb8ba563898e27",
+                  3
+                ],
+                [
+                  "new26-s039-q04-video",
+                  "14918755d7c3da29064ba4300f68c2b29cd430f5a23843780f4c45bd8352d7bd",
+                  14
+                ]
+              ],
+              "source_signature": "c2b51a7d43c91c88223659c491648a56929ddd9aada73a302e18a9ae39af6327"
+            }
+          },
+          "current_version": 14,
+          "current_content_sha256": "e0c9b8e3ce7aed0dbf54ccf5fb473998ad1b95bec507e313e0e1ff24b1622017",
+          "review": "按实际完整角色文件重排演唱与静默；保留锁定歌词、动作因果和信息显露次序。唱得较短时给写字、听者反应和换气留时，不拉伸录音。依声音与剪辑章节，实际录音承担音乐时基，图像和动作服从歌曲完整性；保留完整原曲及所有历史调用。用户验收只覆盖准确音频，尚未生成视频。已连读相邻镜起落点，守住词稿揭示、人物声源与物件交接。"
+        },
+        {
+          "requirement_id": "new26-s039-q06-video",
+          "candidate": {
+            "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+            "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+          },
+          "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+          "component": {
+            "bytes": 950456,
+            "channels": 2,
+            "duration_seconds": 4.950063,
+            "file": "8980f97a8acfac0905d96dfaa65632af58cbd4b07e5c54f5d2b0fd3dd6342e36.wav",
+            "has_audio": true,
+            "id": "qingpeng-teacher-final-slow",
+            "mime": "audio/wav",
+            "role": "original",
+            "sample_rate": 48000,
+            "sha256": "8980f97a8acfac0905d96dfaa65632af58cbd4b07e5c54f5d2b0fd3dd6342e36"
+          },
+          "actual_audio_timeline": {
+            "component_id": "qingpeng-teacher-final-slow",
+            "end_seconds": 4.950063,
+            "full_file_seconds": 4.950063,
+            "model_reference": "complete_file",
+            "reference_only": false,
+            "sha256": "8980f97a8acfac0905d96dfaa65632af58cbd4b07e5c54f5d2b0fd3dd6342e36",
+            "shot_end_seconds": 27,
+            "start_seconds": 0
+          },
+          "import": {
+            "validated_only": false,
+            "records": [
+              {
+                "id": "new26-s039-q06-video",
+                "kind": "REQUIREMENT",
+                "revision": "9770f3a0439f51affe270b5747193595966b7ac18dabb2cf0299e9bba09606d3",
+                "version": 13,
+                "edit_token": 13,
+                "content_sha256": "9656baa551845a49e6f98484fdb89934d781510a67fbd9d8bf4c7499fc7d1e89"
+              }
+            ],
+            "removed": []
+          },
+          "selection": {
+            "requirement_id": "new26-s039-q06-video",
+            "revision_id": "9770f3a0439f51affe270b5747193595966b7ac18dabb2cf0299e9bba09606d3",
+            "edit_token": 14,
+            "content_sha256": "825ed5ac8c41e5490a44defeb6bcf3084c6be882f2ad669a15603ef8bdf05cfa",
+            "already_applied": false,
+            "workspace_marker": {
+              "owner_id": "new26-s039-q06",
+              "records": [
+                [
+                  "new26-s039-q06",
+                  "e4af55980e9f9c5c3df82c9f5ff58553196ef3637a86c2c3f257aaf088d328f6",
+                  3
+                ],
+                [
+                  "new26-s039-q06-full-verse",
+                  "e6811baf627293ed7d1943ff6ca4cf6d74a875ce4d0392ea6b44b4e51c131a44",
+                  3
+                ],
+                [
+                  "new26-s039-q06-video",
+                  "9770f3a0439f51affe270b5747193595966b7ac18dabb2cf0299e9bba09606d3",
+                  14
+                ]
+              ],
+              "source_signature": "2ce192fff3b5db8d1ea345a37cd578e77da13a1742c995b0f69a080f3333056e"
+            }
+          },
+          "current_version": 14,
+          "current_content_sha256": "825ed5ac8c41e5490a44defeb6bcf3084c6be882f2ad669a15603ef8bdf05cfa",
+          "review": "按实际完整角色文件重排演唱与静默；保留锁定歌词、动作因果和信息显露次序。唱得较短时给写字、听者反应和换气留时，不拉伸录音。依声音与剪辑章节，实际录音承担音乐时基，图像和动作服从歌曲完整性；保留完整原曲及所有历史调用。用户验收只覆盖准确音频，尚未生成视频。已连读相邻镜起落点，守住词稿揭示、人物声源与物件交接。"
+        },
+        {
+          "requirement_id": "new26-s039-q07-video",
+          "candidate": {
+            "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+            "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+          },
+          "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+          "component": {
+            "bytes": 3492036,
+            "channels": 2,
+            "duration_seconds": 18.187458,
+            "file": "eea5330d9b8177a424ac483d6c01bfc7aa73b745c749fb1710545e27f64b869f.wav",
+            "has_audio": true,
+            "id": "qingpeng-aheng-teaching-combined",
+            "mime": "audio/wav",
+            "role": "original",
+            "sample_rate": 48000,
+            "sha256": "eea5330d9b8177a424ac483d6c01bfc7aa73b745c749fb1710545e27f64b869f"
+          },
+          "actual_audio_timeline": {
+            "assembly_boundary_seconds": 14,
+            "component_id": "qingpeng-aheng-teaching-combined",
+            "end_seconds": 22.187458,
+            "full_file_seconds": 18.187458,
+            "model_reference": "complete_file",
+            "reference_only": false,
+            "sha256": "eea5330d9b8177a424ac483d6c01bfc7aa73b745c749fb1710545e27f64b869f",
+            "shot_end_seconds": 23,
+            "start_seconds": 4
+          },
+          "import": {
+            "validated_only": false,
+            "records": [
+              {
+                "id": "new26-s039-q07-video",
+                "kind": "REQUIREMENT",
+                "revision": "c4d83dc3dad2767d4a904cc17d72d1cd24f49398d38eac6d58d64c9189dd66d4",
+                "version": 14,
+                "edit_token": 14,
+                "content_sha256": "bfaa6df15786106d6a4996089194da6404e4336c49a8cc5d57c0f23882f798d6"
+              }
+            ],
+            "removed": []
+          },
+          "selection": {
+            "requirement_id": "new26-s039-q07-video",
+            "revision_id": "c4d83dc3dad2767d4a904cc17d72d1cd24f49398d38eac6d58d64c9189dd66d4",
+            "edit_token": 15,
+            "content_sha256": "762607bcb437af262f0b5619677065b5427e19bd6a1384dc768e302e4476f984",
+            "already_applied": false,
+            "workspace_marker": {
+              "owner_id": "new26-s039-q07",
+              "records": [
+                [
+                  "new26-s039-q07",
+                  "91626f65bf4b7443d1f20f6bffa91c303830cd48ba27df044cf186e07ffc5026",
+                  4
+                ],
+                [
+                  "new26-s039-q07-video",
+                  "c4d83dc3dad2767d4a904cc17d72d1cd24f49398d38eac6d58d64c9189dd66d4",
+                  15
+                ]
+              ],
+              "source_signature": "2be307f6d2284483dadc0f51bcdc7f40349ee213b4c84f854f6a597c6dd3c295"
+            }
+          },
+          "current_version": 15,
+          "current_content_sha256": "762607bcb437af262f0b5619677065b5427e19bd6a1384dc768e302e4476f984",
+          "review": "按实际完整角色文件重排演唱与静默；保留锁定歌词、动作因果和信息显露次序。唱得较短时给写字、听者反应和换气留时，不拉伸录音。依声音与剪辑章节，实际录音承担音乐时基，图像和动作服从歌曲完整性；保留完整原曲及所有历史调用。用户验收只覆盖准确音频，尚未生成视频。已连读相邻镜起落点，守住词稿揭示、人物声源与物件交接。"
+        },
+        {
+          "requirement_id": "new26-s039-q10-video",
+          "candidate": {
+            "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+            "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+          },
+          "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+          "component": {
+            "bytes": 1572036,
+            "channels": 2,
+            "duration_seconds": 8.187458,
+            "file": "8ab8c056d6f6a8623f3bb8b3b8ac35db3576b65d0874a9062f9f2d9eb0e39a90.wav",
+            "has_audio": true,
+            "id": "qingpeng-aheng-teaching-fourth",
+            "mime": "audio/wav",
+            "role": "original",
+            "sample_rate": 48000,
+            "sha256": "8ab8c056d6f6a8623f3bb8b3b8ac35db3576b65d0874a9062f9f2d9eb0e39a90"
+          },
+          "actual_audio_timeline": {
+            "component_id": "qingpeng-aheng-teaching-fourth",
+            "end_seconds": 11.187458,
+            "full_file_seconds": 8.187458,
+            "model_reference": "complete_file",
+            "reference_only": false,
+            "sha256": "8ab8c056d6f6a8623f3bb8b3b8ac35db3576b65d0874a9062f9f2d9eb0e39a90",
+            "shot_end_seconds": 15,
+            "start_seconds": 3
+          },
+          "import": {
+            "validated_only": false,
+            "records": [
+              {
+                "id": "new26-s039-q10-video",
+                "kind": "REQUIREMENT",
+                "revision": "76cc2a9a9d085963fe4888b4e2fe9d8eade94e55d4577112109b7ebf7ba47096",
+                "version": 12,
+                "edit_token": 12,
+                "content_sha256": "20fdf10cc2fd0ae2967ca2513635e29ff1094d01b0c8cc378e0a55479dbd4a1f"
+              }
+            ],
+            "removed": []
+          },
+          "selection": {
+            "requirement_id": "new26-s039-q10-video",
+            "revision_id": "76cc2a9a9d085963fe4888b4e2fe9d8eade94e55d4577112109b7ebf7ba47096",
+            "edit_token": 13,
+            "content_sha256": "4be7a00d97eecb4eaa53ba782543d1a90465a916c551bea854697cf4d72fd1d3",
+            "already_applied": false,
+            "workspace_marker": {
+              "owner_id": "new26-s039-q10",
+              "records": [
+                [
+                  "new26-s039-q10",
+                  "6613711afcaee4056d081eb680599640bfed06755296079ba2301a91675515cb",
+                  2
+                ],
+                [
+                  "new26-s039-q10-video",
+                  "76cc2a9a9d085963fe4888b4e2fe9d8eade94e55d4577112109b7ebf7ba47096",
+                  13
+                ]
+              ],
+              "source_signature": "3e5cd759fc8ed82e31747b1626da458d0a1c8f9d2d4129269ded0cd9effc7520"
+            }
+          },
+          "current_version": 13,
+          "current_content_sha256": "4be7a00d97eecb4eaa53ba782543d1a90465a916c551bea854697cf4d72fd1d3",
+          "review": "按实际完整角色文件重排演唱与静默；保留锁定歌词、动作因果和信息显露次序。唱得较短时给写字、听者反应和换气留时，不拉伸录音。依声音与剪辑章节，实际录音承担音乐时基，图像和动作服从歌曲完整性；保留完整原曲及所有历史调用。用户验收只覆盖准确音频，尚未生成视频。已连读相邻镜起落点，守住词稿揭示、人物声源与物件交接。"
+        },
+        {
+          "requirement_id": "new26-s040-q05-video",
+          "candidate": {
+            "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+            "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+          },
+          "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+          "component": {
+            "bytes": 1920044,
+            "channels": 2,
+            "duration_seconds": 10.0,
+            "file": "bc0df00c512473fa82aab1aa8faefab9f8a2543cd96e5b871568320475b9b499.wav",
+            "has_audio": true,
+            "id": "qingpeng-aheng-short",
+            "mime": "audio/wav",
+            "role": "original",
+            "sample_rate": 48000,
+            "sha256": "bc0df00c512473fa82aab1aa8faefab9f8a2543cd96e5b871568320475b9b499"
+          },
+          "actual_audio_timeline": {
+            "component_id": "qingpeng-aheng-short",
+            "end_seconds": 14.0,
+            "full_file_seconds": 10.0,
+            "model_reference": "complete_file",
+            "reference_only": false,
+            "sha256": "bc0df00c512473fa82aab1aa8faefab9f8a2543cd96e5b871568320475b9b499",
+            "shot_end_seconds": 17,
+            "start_seconds": 4
+          },
+          "import": {
+            "validated_only": false,
+            "records": [
+              {
+                "id": "new26-s040-q05-video",
+                "kind": "REQUIREMENT",
+                "revision": "d9b1bd5e0e8b017f9afafc1f288ad3f76b18cc74199afa02c82f01a5359dfb58",
+                "version": 11,
+                "edit_token": 11,
+                "content_sha256": "c1f6826ffc5f1287e1d133c23e5289729c8fc6f385b806fe7aa68808e74e204f"
+              }
+            ],
+            "removed": []
+          },
+          "selection": {
+            "requirement_id": "new26-s040-q05-video",
+            "revision_id": "d9b1bd5e0e8b017f9afafc1f288ad3f76b18cc74199afa02c82f01a5359dfb58",
+            "edit_token": 12,
+            "content_sha256": "53aea0fd86fbbdb8ac8a3c2e9ef08e6d3fcd45544837085e955b874d9e4a8597",
+            "already_applied": false,
+            "workspace_marker": {
+              "owner_id": "new26-s040-q05",
+              "records": [
+                [
+                  "new26-s040-q05",
+                  "5a3e84736c5e14702dd42391a63e46eb13e62f3441a1c612d1aba0534ba6aaff",
+                  2
+                ],
+                [
+                  "new26-s040-q05-video",
+                  "d9b1bd5e0e8b017f9afafc1f288ad3f76b18cc74199afa02c82f01a5359dfb58",
+                  12
+                ]
+              ],
+              "source_signature": "be1a525a1322d8076465653b5d4adb85ec342bd14bd7d13d6d269379e92bac75"
+            }
+          },
+          "current_version": 12,
+          "current_content_sha256": "53aea0fd86fbbdb8ac8a3c2e9ef08e6d3fcd45544837085e955b874d9e4a8597",
+          "review": "按实际完整角色文件重排演唱与静默；保留锁定歌词、动作因果和信息显露次序。唱得较短时给写字、听者反应和换气留时，不拉伸录音。依声音与剪辑章节，实际录音承担音乐时基，图像和动作服从歌曲完整性；保留完整原曲及所有历史调用。用户验收只覆盖准确音频，尚未生成视频。已连读相邻镜起落点，守住词稿揭示、人物声源与物件交接。"
+        },
+        {
+          "requirement_id": "new26-s040-q06-video",
+          "candidate": {
+            "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+            "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+          },
+          "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+          "component": {
+            "bytes": 1572036,
+            "channels": 2,
+            "duration_seconds": 8.187458,
+            "file": "8ab8c056d6f6a8623f3bb8b3b8ac35db3576b65d0874a9062f9f2d9eb0e39a90.wav",
+            "has_audio": true,
+            "id": "qingpeng-aheng-teaching-fourth",
+            "mime": "audio/wav",
+            "role": "original",
+            "sample_rate": 48000,
+            "sha256": "8ab8c056d6f6a8623f3bb8b3b8ac35db3576b65d0874a9062f9f2d9eb0e39a90"
+          },
+          "actual_audio_timeline": {
+            "component_id": "qingpeng-aheng-teaching-fourth",
+            "end_seconds": 11.187458,
+            "full_file_seconds": 8.187458,
+            "model_reference": "complete_file",
+            "reference_only": false,
+            "sha256": "8ab8c056d6f6a8623f3bb8b3b8ac35db3576b65d0874a9062f9f2d9eb0e39a90",
+            "shot_end_seconds": 17,
+            "start_seconds": 3
+          },
+          "import": {
+            "validated_only": false,
+            "records": [
+              {
+                "id": "new26-s040-q06-video",
+                "kind": "REQUIREMENT",
+                "revision": "e3f86cd581b1d723942230085ebe5b9e3985850e64da459bfdd536937b68580f",
+                "version": 13,
+                "edit_token": 13,
+                "content_sha256": "012cc4f5cd23449b2a93c64d0d51846b00b1fd668bd5e84c64ae80d03353cc6a"
+              }
+            ],
+            "removed": []
+          },
+          "selection": {
+            "requirement_id": "new26-s040-q06-video",
+            "revision_id": "e3f86cd581b1d723942230085ebe5b9e3985850e64da459bfdd536937b68580f",
+            "edit_token": 14,
+            "content_sha256": "55ff419e70b8ca9324b2c9aa156dd0323d312439e2813e85983d4b6334821eb7",
+            "already_applied": false,
+            "workspace_marker": {
+              "owner_id": "new26-s040-q06",
+              "records": [
+                [
+                  "new26-s040-q06",
+                  "0cc562d9618ee421f8213ef627351f71a63c65149f6ca7fb5fa715b41a390539",
+                  2
+                ],
+                [
+                  "new26-s040-q06-video",
+                  "e3f86cd581b1d723942230085ebe5b9e3985850e64da459bfdd536937b68580f",
+                  14
+                ]
+              ],
+              "source_signature": "c3578eed710481771ada9410276a7705f09869aef920e5132af8a66fc01bd2b8"
+            }
+          },
+          "current_version": 14,
+          "current_content_sha256": "55ff419e70b8ca9324b2c9aa156dd0323d312439e2813e85983d4b6334821eb7",
+          "review": "按实际完整角色文件重排演唱与静默；保留锁定歌词、动作因果和信息显露次序。唱得较短时给写字、听者反应和换气留时，不拉伸录音。依声音与剪辑章节，实际录音承担音乐时基，图像和动作服从歌曲完整性；保留完整原曲及所有历史调用。用户验收只覆盖准确音频，尚未生成视频。已连读相邻镜起落点，守住词稿揭示、人物声源与物件交接。"
+        },
+        {
+          "requirement_id": "new26-s041-q05-video",
+          "candidate": {
+            "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+            "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+          },
+          "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+          "component": {
+            "bytes": 1663804,
+            "channels": 2,
+            "duration_seconds": 8.665417,
+            "file": "994cbf206c1700cf4ce891931b11e974f710b029f84853f2b1c76fc151a6d437.wav",
+            "has_audio": true,
+            "id": "qingpeng-aheng-stage1",
+            "mime": "audio/wav",
+            "role": "original",
+            "sample_rate": 48000,
+            "sha256": "994cbf206c1700cf4ce891931b11e974f710b029f84853f2b1c76fc151a6d437"
+          },
+          "actual_audio_timeline": {
+            "component_id": "qingpeng-aheng-stage1",
+            "end_seconds": 8.665417,
+            "full_file_seconds": 8.665417,
+            "model_reference": "complete_file",
+            "reference_only": false,
+            "sha256": "994cbf206c1700cf4ce891931b11e974f710b029f84853f2b1c76fc151a6d437",
+            "shot_end_seconds": 9,
+            "start_seconds": 0
+          },
+          "import": {
+            "validated_only": false,
+            "records": [
+              {
+                "id": "new26-s041-q05-video",
+                "kind": "REQUIREMENT",
+                "revision": "330eb6562de3e66304cbb49db1ef8515af228f67ae9797692b6ca063678bdeb9",
+                "version": 8,
+                "edit_token": 8,
+                "content_sha256": "46c622d8cb5a221e766a375ee482d475fd0d94a9ea9009310ea2e78cee02723a"
+              }
+            ],
+            "removed": []
+          },
+          "selection": {
+            "requirement_id": "new26-s041-q05-video",
+            "revision_id": "330eb6562de3e66304cbb49db1ef8515af228f67ae9797692b6ca063678bdeb9",
+            "edit_token": 9,
+            "content_sha256": "e71458b4aaa9f6814f6f0e13ec146837434dd6f0c774db485d4057823b64771a",
+            "already_applied": false,
+            "workspace_marker": {
+              "owner_id": "new26-s041-q05",
+              "records": [
+                [
+                  "new26-s041-q05",
+                  "45db4dd654e65a4674929e8e28f558232968ab59535e26d0d6e0b2c13a3b257c",
+                  2
+                ],
+                [
+                  "new26-s041-q05-video",
+                  "330eb6562de3e66304cbb49db1ef8515af228f67ae9797692b6ca063678bdeb9",
+                  9
+                ]
+              ],
+              "source_signature": "82a655d4abfebd2d182662026cee22335c97516105c01c23e196280ec5fb8611"
+            }
+          },
+          "current_version": 9,
+          "current_content_sha256": "e71458b4aaa9f6814f6f0e13ec146837434dd6f0c774db485d4057823b64771a",
+          "review": "按实际完整角色文件重排演唱与静默；保留锁定歌词、动作因果和信息显露次序。唱得较短时给写字、听者反应和换气留时，不拉伸录音。依声音与剪辑章节，实际录音承担音乐时基，图像和动作服从歌曲完整性；保留完整原曲及所有历史调用。用户验收只覆盖准确音频，尚未生成视频。已连读相邻镜起落点，守住词稿揭示、人物声源与物件交接。"
+        },
+        {
+          "requirement_id": "new26-s041-q09-video",
+          "candidate": {
+            "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+            "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+          },
+          "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+          "component": {
+            "bytes": 1315036,
+            "channels": 2,
+            "duration_seconds": 6.848917,
+            "file": "ac756b729eec457702e9a5de79168c5dbe16376e9374bf38b423e23bab84c30f.wav",
+            "has_audio": true,
+            "id": "qingpeng-aheng-stage4",
+            "mime": "audio/wav",
+            "role": "original",
+            "sample_rate": 48000,
+            "sha256": "ac756b729eec457702e9a5de79168c5dbe16376e9374bf38b423e23bab84c30f"
+          },
+          "actual_audio_timeline": {
+            "component_id": "qingpeng-aheng-stage4",
+            "end_seconds": 6.848917,
+            "full_file_seconds": 6.848917,
+            "model_reference": "complete_file",
+            "reference_only": false,
+            "sha256": "ac756b729eec457702e9a5de79168c5dbe16376e9374bf38b423e23bab84c30f",
+            "shot_end_seconds": 7,
+            "start_seconds": 0
+          },
+          "import": {
+            "validated_only": false,
+            "records": [
+              {
+                "id": "new26-s041-q09-video",
+                "kind": "REQUIREMENT",
+                "revision": "b1183ef12fd0a8dd4eeb3f1bd61174ee4035e0ec0981d6e35259120790cfe80e",
+                "version": 8,
+                "edit_token": 8,
+                "content_sha256": "58b6f8399ffbb639fa6e828a7cf4b512b5f64df70b9d71a71fa0f2ac14e7bbeb"
+              }
+            ],
+            "removed": []
+          },
+          "selection": {
+            "requirement_id": "new26-s041-q09-video",
+            "revision_id": "b1183ef12fd0a8dd4eeb3f1bd61174ee4035e0ec0981d6e35259120790cfe80e",
+            "edit_token": 9,
+            "content_sha256": "02e17d810510d2c28843d8cb2e44579731e1f01b8a63258a53952daecd2a3cd3",
+            "already_applied": false,
+            "workspace_marker": {
+              "owner_id": "new26-s041-q09",
+              "records": [
+                [
+                  "new26-s041-q09",
+                  "cf104171389d299b7444a065c2dffeadf95e007fa82a615bdd7537b02e3e17fb",
+                  2
+                ],
+                [
+                  "new26-s041-q09-video",
+                  "b1183ef12fd0a8dd4eeb3f1bd61174ee4035e0ec0981d6e35259120790cfe80e",
+                  9
+                ]
+              ],
+              "source_signature": "42ca2f2d96b5bfd2fa3a03d5fbb0d2faf6c865b3c566b68016fea8ee01625128"
+            }
+          },
+          "current_version": 9,
+          "current_content_sha256": "02e17d810510d2c28843d8cb2e44579731e1f01b8a63258a53952daecd2a3cd3",
+          "review": "按实际完整角色文件重排演唱与静默；保留锁定歌词、动作因果和信息显露次序。唱得较短时给写字、听者反应和换气留时，不拉伸录音。依声音与剪辑章节，实际录音承担音乐时基，图像和动作服从歌曲完整性；保留完整原曲及所有历史调用。用户验收只覆盖准确音频，尚未生成视频。已连读相邻镜起落点，守住词稿揭示、人物声源与物件交接。"
+        },
+        {
+          "requirement_id": "new26-s007-q06-video",
+          "candidate": {
+            "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+            "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+          },
+          "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+          "component": {
+            "bytes": 480044,
+            "channels": 2,
+            "duration_seconds": 2.5,
+            "file": "293555dbc9dd4471152c0204831d9e6c83272ccac35426e77fd0ccd2864f6b9d.wav",
+            "has_audio": true,
+            "id": "qingpeng-mother-first-hum",
+            "mime": "audio/wav",
+            "role": "original",
+            "sample_rate": 48000,
+            "sha256": "293555dbc9dd4471152c0204831d9e6c83272ccac35426e77fd0ccd2864f6b9d"
+          },
+          "actual_audio_timeline": {
+            "component_id": "qingpeng-mother-first-hum",
+            "end_seconds": 2.5,
+            "full_file_seconds": 2.5,
+            "model_reference": "complete_file",
+            "reference_only": false,
+            "sha256": "293555dbc9dd4471152c0204831d9e6c83272ccac35426e77fd0ccd2864f6b9d",
+            "shot_end_seconds": 15,
+            "start_seconds": 0
+          },
+          "import": {
+            "validated_only": false,
+            "records": [
+              {
+                "id": "new26-s007-q06-video",
+                "kind": "REQUIREMENT",
+                "revision": "25f256e03b8fc22fe637c22cb5c1df64513ec512cdad68f59bb21d7665e2f260",
+                "version": 10,
+                "edit_token": 10,
+                "content_sha256": "f261304894bb9d1056b4916f87aab1af1f1681769c6d403815f02987a15fef60"
+              }
+            ],
+            "removed": []
+          },
+          "selection": {
+            "requirement_id": "new26-s007-q06-video",
+            "revision_id": "25f256e03b8fc22fe637c22cb5c1df64513ec512cdad68f59bb21d7665e2f260",
+            "edit_token": 11,
+            "content_sha256": "507d15352661db6773dbbabaf4b279ded3ae7201c9dc21fe226d2fca647f0f4b",
+            "already_applied": false,
+            "workspace_marker": {
+              "owner_id": "new26-s007-q06",
+              "records": [
+                [
+                  "new26-s007-q06",
+                  "d37b9f681fab0406cd161ec0ea8ef39460986bce086e0989effab5bd9dffb418",
+                  3
+                ],
+                [
+                  "new26-s007-q06-video",
+                  "25f256e03b8fc22fe637c22cb5c1df64513ec512cdad68f59bb21d7665e2f260",
+                  11
+                ]
+              ],
+              "source_signature": "33751433acb0ed4f943115c55f0917ee6c8d9bde2d3af73306e57e8d73fdfe95"
+            }
+          },
+          "current_version": 11,
+          "current_content_sha256": "507d15352661db6773dbbabaf4b279ded3ae7201c9dc21fe226d2fca647f0f4b",
+          "review": "按实际完整角色文件重排演唱与静默；保留锁定歌词、动作因果和信息显露次序。唱得较短时给写字、听者反应和换气留时，不拉伸录音。依声音与剪辑章节，实际录音承担音乐时基，图像和动作服从歌曲完整性；保留完整原曲及所有历史调用。用户验收只覆盖准确音频，尚未生成视频。已连读相邻镜起落点，守住词稿揭示、人物声源与物件交接。"
+        },
+        {
+          "requirement_id": "new26-s040-q01-video",
+          "candidate": {
+            "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+            "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df"
+          },
+          "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+          "component": {
+            "bytes": 1920044,
+            "channels": 2,
+            "duration_seconds": 10.0,
+            "file": "5384c046af98225079dd61f2e2f320dbb2a50c3bfaf369ca1053c6723c93c341.wav",
+            "has_audio": true,
+            "id": "qingpeng-mother-willow-hum",
+            "mime": "audio/wav",
+            "role": "original",
+            "sample_rate": 48000,
+            "sha256": "5384c046af98225079dd61f2e2f320dbb2a50c3bfaf369ca1053c6723c93c341"
+          },
+          "actual_audio_timeline": {
+            "component_id": "qingpeng-mother-willow-hum",
+            "end_seconds": 10.0,
+            "full_file_seconds": 10.0,
+            "model_reference": "complete_file",
+            "reference_only": false,
+            "sha256": "5384c046af98225079dd61f2e2f320dbb2a50c3bfaf369ca1053c6723c93c341",
+            "shot_end_seconds": 24,
+            "start_seconds": 0
+          },
+          "import": {
+            "validated_only": false,
+            "records": [
+              {
+                "id": "new26-s040-q01-video",
+                "kind": "REQUIREMENT",
+                "revision": "04bd0a4ff6e156b8adfbcc2f07590c5e6a50a5d98ff254e6354e13c483df65c9",
+                "version": 13,
+                "edit_token": 13,
+                "content_sha256": "8c76d4b71bc3c06655fb184c29ae8b1d1bb3d77d57cd3bb2bf73b2002644de7e"
+              }
+            ],
+            "removed": []
+          },
+          "selection": {
+            "requirement_id": "new26-s040-q01-video",
+            "revision_id": "04bd0a4ff6e156b8adfbcc2f07590c5e6a50a5d98ff254e6354e13c483df65c9",
+            "edit_token": 14,
+            "content_sha256": "2fba56da527f680746bf96220c6f080d7f59787f6e04eef5e1d30c8d328bfee9",
+            "already_applied": false,
+            "workspace_marker": {
+              "owner_id": "new26-s040-q01",
+              "records": [
+                [
+                  "new26-s040-q01",
+                  "a341f18f83d5bd54933882d1d08eb8a833748061ecff0e93969c77f55551c58b",
+                  2
+                ],
+                [
+                  "new26-s040-q01-first-frame",
+                  "c3f99c53bdd845d95899663af3eaec81414a6b97432ebf3f32694c9f8cf09707",
+                  9
+                ],
+                [
+                  "new26-s040-q01-video",
+                  "04bd0a4ff6e156b8adfbcc2f07590c5e6a50a5d98ff254e6354e13c483df65c9",
+                  14
+                ]
+              ],
+              "source_signature": "63bcd33c051bb4f1ff43ce10d80962ef45e4e5e0fc81310fe301410bc9b947e7"
+            }
+          },
+          "current_version": 14,
+          "current_content_sha256": "2fba56da527f680746bf96220c6f080d7f59787f6e04eef5e1d30c8d328bfee9",
+          "review": "按实际完整角色文件重排演唱与静默；保留锁定歌词、动作因果和信息显露次序。唱得较短时给写字、听者反应和换气留时，不拉伸录音。依声音与剪辑章节，实际录音承担音乐时基，图像和动作服从歌曲完整性；保留完整原曲及所有历史调用。用户验收只覆盖准确音频，尚未生成视频。已连读相邻镜起落点，守住词稿揭示、人物声源与物件交接。"
+        }
+      ],
+      "remaining_requirements": [
+        "new26-s039-q08-video",
+        "new26-s039-q09-video",
+        "new26-s041-q06-video",
+        "new26-s041-q07-video",
+        "new26-s041-q08-video",
+        "new26-s041-q10-video",
+        "new26-s041-q11-video"
+      ],
+      "import": {
+        "validated_only": false,
+        "records": [
+          {
+            "id": "new26-qingpeng-singing",
+            "kind": "REQUIREMENT",
+            "revision": "529078239eb900ca89fa901b6125e511475b90f29437c3b334c94a25553e6e57",
+            "version": 28,
+            "edit_token": 28,
+            "content_sha256": "605db7572e55b4906c1639aed4f6bcdeb672f5edd3e01c1e02498283eb0c88af"
+          }
+        ],
+        "removed": []
+      },
+      "readiness": "完整原曲与全部角色唱段均已由用户实际试听通过；已保存16/23处准确歌曲输入。其余7处仍需真实尾音位置安排跨镜或插话，不将旧预算秒点当实测。视频与最终混音另验。"
+    },
+    {
+      "requirement_id": "new26-temple-song-singing",
+      "candidate": {
+        "object_id": "asset-task-20261015-0003-temple-song-full-02",
+        "revision_id": "ae58a970f738e92a4fa045d11369a7ba7a4d79ed32b29ba3cc35a72bb552e587"
+      },
+      "role_files": [
+        {
+          "reference": {
+            "object_id": "asset-task-20261015-0003-temple-song-full-02",
+            "revision_id": "ae58a970f738e92a4fa045d11369a7ba7a4d79ed32b29ba3cc35a72bb552e587"
+          },
+          "component_id": "temple-singers-tail",
+          "sha256": "2f16db8a3fbc9fa67b9cd5b5a87c674efda92e288c192adc3007d7f0a775aa8a",
+          "duration_seconds": 4.0,
+          "source_recording": {
+            "reference": {
+              "object_id": "asset-task-20261015-0003-temple-singers-tail-01",
+              "revision_id": "4abddc318a647ac8d82fa21e237217c3e0947d70a35fbd1e8d0a744a1ed79b53"
+            },
+            "component_ids": [
+              "temple-singers-tail"
+            ],
+            "operation": "复用本轮已由用户试听通过的完整角色录音；未剪辑、变速或重新生成。"
+          },
+          "quality_status": "role_audition_passed"
+        }
+      ],
+      "selected_uses": [
+        {
+          "requirement_id": "new26-s007-q01-video",
+          "candidate": {
+            "object_id": "asset-task-20261015-0003-temple-song-full-02",
+            "revision_id": "ae58a970f738e92a4fa045d11369a7ba7a4d79ed32b29ba3cc35a72bb552e587"
+          },
+          "candidate_id": "candidate-0039c58ba917c9ad0e09c117aa586187bb413e85ed0e8fa21739703af3d4d0a1",
+          "component": {
+            "bytes": 768044,
+            "channels": 2,
+            "duration_seconds": 4.0,
+            "file": "2f16db8a3fbc9fa67b9cd5b5a87c674efda92e288c192adc3007d7f0a775aa8a.wav",
+            "has_audio": true,
+            "id": "temple-singers-tail",
+            "mime": "audio/wav",
+            "role": "original",
+            "sample_rate": 48000,
+            "sha256": "2f16db8a3fbc9fa67b9cd5b5a87c674efda92e288c192adc3007d7f0a775aa8a"
+          },
+          "actual_audio_timeline": {
+            "component_id": "temple-singers-tail",
+            "end_seconds": 4.0,
+            "full_file_seconds": 4.0,
+            "model_reference": "complete_file",
+            "reference_only": false,
+            "sha256": "2f16db8a3fbc9fa67b9cd5b5a87c674efda92e288c192adc3007d7f0a775aa8a",
+            "shot_end_seconds": 6,
+            "start_seconds": 0
+          },
+          "import": {
+            "validated_only": false,
+            "records": [
+              {
+                "id": "new26-s007-q01-video",
+                "kind": "REQUIREMENT",
+                "revision": "415803806b7e124e7b2d8b790673aefe901f90a8b5c57ba2a2b271fd58f75d3f",
+                "version": 11,
+                "edit_token": 11,
+                "content_sha256": "6b6d5054a23f6944ff739c23dd0fe4c2291473cd7e19f01faf8cff77e19d0207"
+              }
+            ],
+            "removed": []
+          },
+          "selection": {
+            "requirement_id": "new26-s007-q01-video",
+            "revision_id": "415803806b7e124e7b2d8b790673aefe901f90a8b5c57ba2a2b271fd58f75d3f",
+            "edit_token": 12,
+            "content_sha256": "197e9d8ea043535b09180e029badc755e73c2d988b37b005cdfba445e9b15b84",
+            "already_applied": false,
+            "workspace_marker": {
+              "owner_id": "new26-s007-q01",
+              "records": [
+                [
+                  "new26-s007-q01",
+                  "283b44694bdde13648cdb410634f831669e3c50368e68f6a7492208d15b83112",
+                  3
+                ],
+                [
+                  "new26-s007-q01-video",
+                  "415803806b7e124e7b2d8b790673aefe901f90a8b5c57ba2a2b271fd58f75d3f",
+                  12
+                ]
+              ],
+              "source_signature": "fe1f6395af74776e45cefcb8aaeb6f1e9f6b0c9dfb368e22d7044c40a8dd5d64"
+            }
+          },
+          "current_version": 12,
+          "current_content_sha256": "197e9d8ea043535b09180e029badc755e73c2d988b37b005cdfba445e9b15b84",
+          "review": "按实际完整角色文件重排演唱与静默；保留锁定歌词、动作因果和信息显露次序。唱得较短时给写字、听者反应和换气留时，不拉伸录音。依声音与剪辑章节，实际录音承担音乐时基，图像和动作服从歌曲完整性；保留完整原曲及所有历史调用。用户验收只覆盖准确音频，尚未生成视频。已连读相邻镜起落点，守住词稿揭示、人物声源与物件交接。"
+        }
+      ],
+      "remaining_requirements": [],
+      "import": {
+        "validated_only": false,
+        "records": [
+          {
+            "id": "new26-temple-song-singing",
+            "kind": "REQUIREMENT",
+            "revision": "547784d33fc918d29bf1feaa44b8ffa093d6bf3ebd68870947deecbac52e8405",
+            "version": 9,
+            "edit_token": 9,
+            "content_sha256": "ccfbdc6d1eba9df04ef682feca94e097ee96f6039521efb471cd3993dac966de"
+          }
+        ],
+        "removed": []
+      },
+      "readiness": "完整原曲及本组唱工的收尾录音均由用户实际试听通过；唯一镜头已选4秒完整收尾文件，0—4秒原速演唱，4—6秒静默。视频、口型及最终混音另验。"
+    }
+  ],
+  "no_new_generation_calls": true,
+  "selection_evidence": "Exact final candidate/component, edit token, content hash and timeline are retained per use. Full current model inputs are in export; detailed operation responses remain in task runtime."
+}

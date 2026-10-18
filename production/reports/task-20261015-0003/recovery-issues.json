@@ -76,9 +76,9 @@
       "status": "user_hearing_workaround_active",
       "evidence": "Actual 2242604-byte native WAV was read in full and supplied as audio/wav through the audio tool output. Runtime returned: audio content omitted because you do not support audio input.",
       "original_sha256": "cb9568d517393bbb365105efeb2297763d6cf8b92cba86b6c212f6f0bb361059",
-      "verification": "当前会话仍不接收实际音频。用户已确认全部音色、环境母版及短件、完整歌曲，并亲自定位9段原曲；准确文件的反馈独立记录。首条新角色唱段仍待用户试听，未推定通过。",
+      "verification": "当前会话不接收实际音频。用户已确认全部音色、环境声及所需短件、4首完整原曲、16个角色唱段及2份原速合件，并亲自定位9段原曲；执行者未声称实际听音。5处角色尾音位置仍需实际保存。",
       "resume_when": "取得准确文件的实际试听结论；若用户明确调整本任务验收标准，再按新标准执行，不能由无回复推定同意。",
-      "latest_evidence": "../../receipts/audio-user-short-audition-task-20261015-0003-scenes13.json"
+      "latest_evidence": "../../receipts/song-role-audition-task-20261015-0003-stage16.json"
     },
     {
       "id": "stage04-private-method-packaging",
@@ -194,10 +194,18 @@
     },
     {
       "id": "stage15-role-recordings",
-      "status": "files_saved_hearing_pending",
+      "status": "files_saved_and_user_heard",
       "action": "15次Seed实际调用全部返回；2份原速教唱合件逐帧等于完整源件拼接。4首当前完整原曲方案恢复，真实角色调用和快照保留。",
       "verification": "459份制作文件哈希、3214处当前输入与27处歌曲待选文件预算通过；完整导出已更新，新增数据未做新空实例恢复或正式发布。",
-      "receipt": "production-save15.json"
+      "receipt": "production-save15.json",
+      "followup": "用户本轮回复“验收通过”，准确17件按stage15试听页清单登记，见song-role-audition-task-20261015-0003-stage16.json。"
+    },
+    {
+      "id": "stage16-heard-song-uses",
+      "status": "nineteen_uses_saved_eight_tail_dependent",
+      "verification": "18处新歌曲输入完成实际完整文件引用及时间安排，加既有祭唱共19/27处；《四邻安》用途完成，189/191项完成素材与用途检查。459份文件、3232处输入及旧评论、锁定剧本保全检查通过。",
+      "remaining": "5处尾音实际时间及8处用途；最终数据尚未新空实例恢复、受管集成或正式发布。",
+      "receipt": "production-save16.json"
     }
   ],
   "resume_requirement": "当前run已认证并持有双仓任务锁。按本轮准确候选、原件和当前方案续做；真实Chrome已恢复，待最终正式发布后再复验。",
@@ -207,7 +215,7 @@
     "evidence_runtime": ".runtime/task-20261015-0003/chrome-stage08-candidate-fixes.json",
     "formal_publication_verified": false,
     "audio_quality_verified_by_playback": false,
-    "latest_evidence": "production/receipts/chrome-task-20261015-0003-stage15.json"
+    "latest_evidence": "production/receipts/chrome-task-20261015-0003-stage16.json"
   },
   "unknown_replacement_proposal": {
     "status": "executed_as_three_bounded_new_candidates",
@@ -216,11 +224,11 @@
     "old_unknown_records_and_reservations_retained": true
   },
   "current_checkpoint": {
-    "stage": 15,
+    "stage": 16,
     "status_counts": {
       "executor_checked": 139,
-      "user_audition_passed": 49,
-      "reference_pending": 3
+      "user_audition_passed": 50,
+      "reference_pending": 2
     },
     "google_dispatch_cap": 116,
     "google_remaining_dispatch_slots": 0,
@@ -228,12 +236,17 @@
     "paused": false
   },
   "audio_verification_decision": {
-    "status": "actual_user_hearing_in_progress",
+    "status": "hearing_passed_tail_positions_pending",
     "current_rule": "实际试听；模型分析和技术检查仅辅助",
-    "completed": "此前47份声音、25个人物短句、32个环境动作短件及9段原曲定位已完成；阿蘅首条角色演唱和祭唱远声又获用户直接反馈“没问题”。",
-    "remaining": "新增15个角色唱段、2个原速合件实际试听，5处尾音定位，以及剩余26处歌曲输入选择；随后正式交付与最终恢复。",
+    "completed": "34项音色、14项环境声及所需短件、4首完整原曲、16个角色唱段、2份原速合件均已获对应实际试听反馈；9处原曲乐句已定位，19/27处歌曲准确输入已保存。",
+    "remaining": "5处实际尾音起止尚未保存，影响8处跨镜或插话安排；随后仍需最终受管集成、正式本机发布、页面与空实例验证及过程清理。",
     "audition_url": "http://127.0.0.1:65289/role-songs15.html",
     "role_files_planned": 16,
-    "role_files_generated": 16
+    "role_files_generated": 16,
+    "role_files_heard": 16,
+    "assemblies_heard": 2,
+    "selected_song_uses": 19,
+    "remaining_song_uses": 8,
+    "tail_positions_required": 5
   }
 }
