@@ -1,47 +1,54 @@
 {
-  "output_revision": "f41c04998be6e5e955f64904211cca7f611dd8de7bab9a979f72b70f512fba52",
+  "output": {
+    "object_id": "episode-film-9eb0b8284335ffb40b666f84da473bef34db4be7a656f46f48bb627c652de954",
+    "revision_id": "bd121a1fefdcd4f8f1fdd5f1db50f2bf0b10be827452db34927434d1fb105853"
+  },
+  "prior_output_revision": "f41c04998be6e5e955f64904211cca7f611dd8de7bab9a979f72b70f512fba52",
+  "unchanged_components": {
+    "mix": true,
+    "subtitles": true,
+    "source-map": true
+  },
   "files": [
     {
-      "component": "clean",
-      "file": "1cca991e65a2cd592c4a594d6b4ab50094fd59de15c67f19e838cf58d5b4c74a.mp4",
+      "component": "subtitled",
+      "file": "34baa83bdf493342e2f934d32ba52d6ea4a88017b49a349fc88881747611ed07.mp4",
       "decode_exit": 0,
       "decoded_frames": 6838,
-      "low_motion_windows": 27,
-      "blackdetect_events": 0,
-      "loudness": {
-        "integrated_lufs": -18.0,
-        "range_lu": 17.9,
-        "true_peak_dbfs": -1.5
-      }
+      "longest_exact_duplicate_run_frames": 1,
+      "blackdetect_events": [
+        "[blackdetect @ 0x7fffe00047c0] black_start:0 black_end:0.0833333 black_duration:0.0833333"
+      ],
+      "aac_unchanged": true,
+      "aac_sha256": "ddb26b622ba059231a40851c6e5df8359a34c06cc86fa01bdbc6672720538ade"
     },
     {
-      "component": "subtitled",
-      "file": "f5f23a0ed7753cb1972025c3a21b91ff6c1979e2cf8c2d9b9999729f2fb75b3d.mp4",
+      "component": "clean",
+      "file": "55da3dd89b830fc0dbbe84aeb2e51c1a53939b9454a70c1af61518d9e9969719.mp4",
       "decode_exit": 0,
       "decoded_frames": 6838,
-      "low_motion_windows": 24,
-      "blackdetect_events": 0,
-      "loudness": {
-        "integrated_lufs": -18.0,
-        "range_lu": 17.9,
-        "true_peak_dbfs": -1.5
-      }
+      "longest_exact_duplicate_run_frames": 1,
+      "blackdetect_events": [
+        "[blackdetect @ 0x7fffe00047c0] black_start:0 black_end:0.0833333 black_duration:0.0833333"
+      ],
+      "aac_unchanged": true,
+      "aac_sha256": "ddb26b622ba059231a40851c6e5df8359a34c06cc86fa01bdbc6672720538ade"
     }
   ],
-  "exact_frame_comparison": {
-    "file": "1cca991e65a2cd592c4a594d6b4ab50094fd59de15c67f19e838cf58d5b4c74a.mp4",
-    "decoded_frames": 6838,
-    "longest_exact_duplicate_run_frames": 1,
-    "duplicate_runs": [],
-    "interpretation": "Exact decoded-frame equality is separate from low-motion threshold detection."
+  "loudness": {
+    "integrated_lufs": -18.0,
+    "range_lu": 17.9,
+    "true_peak_dbfs": -1.5,
+    "basis": "MP4 AAC 字节与既有精剪完全一致，复用此前实测响度；PCM 混音哈希亦一致。"
   },
-  "interpretation": "低运动阈值不是冻结判定。6838帧无连续完全相同帧；独立更严静止阈值未触发。独立黑帧阈值识别了开场2帧已有淡入，正文无黑场。",
   "subtitle_boundaries": {
     "cues": 59,
     "distinct_frames": 235,
     "unexpected_ink_pixels": 0,
     "minimum_expected_ink_pixels": 385,
-    "review": "independent-film-review.md"
+    "review": "independent-film-review.md",
+    "basis": "对白字幕工程、SRT、底部排版和原速时序未改；235个边界帧的既有结果见独立报告。新增人名条另检查实际输出。"
   },
-  "limits": "工程和技术校验不替代真人听感、连续动态观看及用户接受。"
+  "interpretation": "两版各完整解码6838帧，均无相邻完全相同帧；仅开场0至0.083333秒的原有淡入触发黑帧阈值。",
+  "limits": "技术及实际看帧不代替人耳、连续动态审美或用户接受。"
 }

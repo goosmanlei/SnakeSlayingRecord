@@ -98,6 +98,30 @@
       ]
     },
     {
+      "object_id": "method.binding.episode-editing",
+      "kind": "GUIDANCE",
+      "version": 2,
+      "revision_id": "7e608ae641f62cbf4f56c57d73e78ef67b77acf76c2714dde893b1ed9ced9f6c",
+      "payload": {
+        "format": "managed-method-binding-v1",
+        "rules": [
+          {
+            "object_id": "method.skill.episode-editing",
+            "revision_id": "9c1027aecf87fb8c14418d1ac52829d11736721e55ebd886fc7577015a59a1e0",
+            "when": {}
+          }
+        ],
+        "work_type": "episode-editing"
+      },
+      "created_at": "2026-10-19T11:14:23+00:00",
+      "dependencies": [
+        {
+          "revision_id": "9c1027aecf87fb8c14418d1ac52829d11736721e55ebd886fc7577015a59a1e0",
+          "role": "selected-method"
+        }
+      ]
+    },
+    {
       "object_id": "method.binding.generation-preflight",
       "kind": "GUIDANCE",
       "version": 13,
@@ -4704,6 +4728,55 @@
       ]
     },
     {
+      "object_id": "method.skill.episode-editing",
+      "kind": "GUIDANCE",
+      "version": 2,
+      "revision_id": "9c1027aecf87fb8c14418d1ac52829d11736721e55ebd886fc7577015a59a1e0",
+      "payload": {
+        "applies": "镜头原件与作品输入已齐备，按本次授权进行样片、全片剪辑和交付。",
+        "checks": "保护叙事与原音；技术、实际体验、独立意见和用户接受分开记录。",
+        "files": {
+          "SKILL.md": "---\nname: episode-editing\ndescription: 把已选定的准确素材剪辑为可继续编辑、审阅和重建的集级成片。\n---\n\n# 成片剪辑与交付\n\n先读[剪辑与时间](shared/0/production/filmcraft/10-editing.md)和[声音与声画关系](shared/1/production/filmcraft/11-sound.md)。专业原理沿这两份准确资料使用，本方法规定如何把原件、编辑决定和真实成片衔接起来。输入必须明确本集作品锁、准确场镜、已选择供本集使用的候选与组件、物理哈希及本次授权。\n\n## 原件与样片\n\n逐件打开原片，核实际画面、对白、演唱、动作、声底和流规格；生成参考完整范围与后期片段入出点分开。先验证本集最难的连续段，或回读已存在的准确样片并修正它。样片阶段记实际使用的文件、剪辑点、真实输出和发现，不把方法登记前的操作改称已沿本执行完成。\n\n## 全片工程\n\n按因果和揭示顺序粗剪，再检查动作落点、视线、道具归属、呼吸、尾音和声底。删冗余不等于统一加速；不为目标时长截断对白、冻结画面遮缺镜或重复叠歌。每段画面和声音各自记录原件入出点、时间线位置、音量及淡变；有意声画异步时说明叙事作用。混合原音如实称混合音轨，不能冒充对白、音乐和环境的独立分轨。\n\n字幕按实际发声对照锁定词句，只出现实际唱过的词；同音识别结果不能自动改写人名、称谓或剧情。模型转写和波形只作定位证据，越界或相互矛盾须回到原件。片头片尾克制、署名真实，必要画内文字保留；只为已定位问题做补音、局部遮字或重新构图，记录原件和修复范围并复验相邻内容。技术规范化不宣称提高原生画质或恢复源编码已丢失的信息。\n\n## 人名与必要信息\n\n在重点人物首次可识别出场时用简短人名条介绍姓名与身份；之后只在有必要信息时补充已被作品确认、且此刻允许观众知道的关系或事实，不提前揭示后续命运。人物已经可识别才出现，优先选稳定构图，给足阅读时间；避免与片名、对白字幕争抢注意力。\n\n每条分别记录准确人物依据、起止帧和画面位置。对照整段运动，避开脸、表演中的手、歌本、米斗等关键道具；同框人物不能因摆放位置被误认。人名条使用独立时间线轨道编辑，在有对白字幕和无对白字幕的两版中都保留。实际检查淡入后、期间、淡出及相邻切点；已有正确混音和对白字幕未变时复用原证据，再核新输出哈希确认边界。\n\n## 审阅与交付\n\n真实渲染后按场和全片检查连续性、字幕、解码、黑帧与冻结、声画同步、重复声、响度和峰值。分别记录实际动态观看、人耳听感、模型分析、技术验证和独立复核；缺哪项就明确哪项。未完成的关键质量修复不能改称待用户审美确认。\n\n每次提交冻结工程；输出对应准确快照，不覆盖旧成片。播放器、时间线和范围评论使用同一准确合成文件，草稿修改后说明预览尚未更新。交付两版 MP4、48 kHz PCM 混音、SRT、可编辑工程和原件映射，核实际文件与快照一致；按本任务授权完成增量发布、真实页面和空实例恢复后继续编辑、重新渲染。保留旧评论与真实历史，不回灌任务快照覆盖共享活库。\n\n执行依次登记 sample、draft、review、result，内容分别是样片检查、实际全片工程、真实自检及独立意见、准确交付与未验边界。只有真实完成的阶段才能登记。后台方法保存沿故事项目 production/managed-methods.md 的通用作者接口；修改启用后的正文用 method-save 追加准确版本及绑定，初始化文件不覆盖已维护活库。\n"
+        },
+        "format": "managed-method-skill-v1",
+        "inputs": "作品锁、准确场镜、候选组件与原件哈希、授权及已有样片证据。",
+        "outputs": "可编辑工程、准确成片版本、混音字幕与来源映射、实际审阅和恢复证据。",
+        "purpose": "把准确素材制作成连续、可审阅和重建的集级作品。",
+        "required_inputs": [
+          "context"
+        ],
+        "resources": [
+          {
+            "object_id": "method.resource.filmcraft-execution",
+            "revision_id": "d5b39a1fa1011c2ea2909f45bcc5a74ba88ab19ee34077e31e5f32b0b6caeb9e",
+            "section": "editing"
+          },
+          {
+            "object_id": "method.resource.filmcraft-execution",
+            "revision_id": "d5b39a1fa1011c2ea2909f45bcc5a74ba88ab19ee34077e31e5f32b0b6caeb9e",
+            "section": "sound"
+          }
+        ],
+        "steps": [
+          "sample",
+          "draft",
+          "review",
+          "result"
+        ],
+        "title": "成片剪辑与交付",
+        "work_types": [
+          "episode-editing"
+        ]
+      },
+      "created_at": "2026-10-19T11:14:23+00:00",
+      "dependencies": [
+        {
+          "revision_id": "d5b39a1fa1011c2ea2909f45bcc5a74ba88ab19ee34077e31e5f32b0b6caeb9e",
+          "role": "method-resource"
+        }
+      ]
+    },
+    {
       "object_id": "method.skill.generation-preflight",
       "kind": "GUIDANCE",
       "version": 14,
@@ -8433,5 +8506,5 @@
       "revision_id": "71432e8bf08e6be0887c76e2009a545ffd7e221bd4bd0172e3ac418868016ce1"
     }
   },
-  "sha256": "4c86fa3643454d0d92aaa653e61ae42e0460bc61ecb1ea0716d0f0dbb02ddb2e"
+  "sha256": "04770756152b07e3caa2b552d6810b94cd1620c04e6acef4667077b1847fff4e"
 }

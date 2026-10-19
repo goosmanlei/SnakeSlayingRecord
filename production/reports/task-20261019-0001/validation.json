@@ -1,5 +1,5 @@
 {
-  "system_candidate": "8c4ce63d3c4f6c2fa120aedbb601e696016d4b8d",
+  "system_candidate": "5118674c62aa51efa19302caa18e6401125c7fd6",
   "environment": "Docker Linux amd64, FFmpeg 7.1.5/libass/Noto CJK; host Node + actual connected Chrome",
   "targeted": {
     "editing_worker_cache_recovery": {
@@ -185,5 +185,52 @@
     "resumed_playback_scroll_left": 11571,
     "independent_vm_groups": 10,
     "independent_report": "independent-system-review.md"
+  },
+  "nameplate_and_toolbar": {
+    "environment": "private Docker FFmpeg/libass and actual connected Chrome",
+    "targeted_editing_tests": {
+      "passed": 9,
+      "seconds": 41.916
+    },
+    "navigation_tests": {
+      "passed": 14
+    },
+    "actual_chrome": {
+      "toolbar_order": [
+        "zoom",
+        "read_only_play_start",
+        "range"
+      ],
+      "old_controls": 0,
+      "precise_frame": 6310,
+      "player_and_playhead_match": true,
+      "horizontal_scroll_pixels": 9842,
+      "track_label_left": 1239,
+      "viewport_left": 1232,
+      "narrow_width": 640,
+      "narrow_page_overflow": false
+    },
+    "independent_review": "independent-system-review.md",
+    "real_new_film": {
+      "output": "bd121a1fefdcd4f8f1fdd5f1db50f2bf0b10be827452db34927434d1fb105853",
+      "files_decode_frames": {
+        "subtitled": 6838,
+        "clean": 6838
+      },
+      "unchanged_components": [
+        "mix",
+        "subtitles",
+        "source-map"
+      ],
+      "aac_unchanged": true
+    },
+    "actual_nameplate_ui": {
+      "items": 5,
+      "selected": "李寄",
+      "start_frame": 1392,
+      "end_frame": 1488,
+      "text_edit_and_undo": true,
+      "immutable_preview_preserved": true
+    }
   }
 }
