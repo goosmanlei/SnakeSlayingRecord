@@ -38,7 +38,7 @@
 | 准确原件与选择 | 输入固定真实候选和完整原件组成，浏览或第一份结果不代表选择、认可或采用。当前取消只清对应输入选择；新候选不漂移旧提交。已有合格原件按准确身份和用途复用，不因同需求编号误判循环。见 [参考选择](production/reference-selection/VERIFICATION.md)、[完整原件与取消](production/reference-card-compact/VERIFICATION.md) |
 | 视频起点与跨镜连续性 | 起点容纳首个必要动作，地点／人物／持物／阶段变化须结束旧条件；首图祖先不自动上传，音色不代替视觉身份，后入场、画外声与结束形态各有职责。见 [本轮复审](production/rebuild/REVIEW.md)、[视频编写](production/video-prompt-rewrite/VERIFICATION.md)；实际执行再取最新准确方案 |
 | 可读字层与声音 | 字层先定准确字稿和显露阶段，同页进度优先复用可编辑源；静图正确不等于运动可读。人物音色按统一中性稿比较，角色实际表演另验；完整歌曲、哼唱、省段和短参考各自判断。具体方法在当前准确方法包，曲目交接见 [歌曲](production/songs-review.md) |
-| 集级剪辑与成片 | 每集一个可编辑工程、多个不可变成片，片段入出点与时间线位置分开，准确原件不覆盖。唯一方法正文为 `content/episode-editing-method.json`，通用工程／worker／页面契约见系统仓 `docs/episode-editing.md`；首集剪辑和感官边界见 [成片交付](production/reports/task-20261019-0001/README.md) |
+| 集级剪辑与成片 | 每集一个可编辑工程、多个不可变成片，片段入出点与时间线位置分开，准确原件不覆盖。唯一方法正文为 `content/episode-editing-method.json`，通用工程／worker／页面契约见系统仓 `docs/episode-editing.md`。页面仅播放和评论，工程编辑留后台；准确素材开现有大卡，跨轨评论固定不可变成片与追加关联。真实字层登记及使用关系见 [片段审阅](production/reports/task-20261019-0002/README.md)，首集剪辑和感官边界见 [成片交付](production/reports/task-20261019-0001/README.md) |
 
 ## 生成工具与规格
 
