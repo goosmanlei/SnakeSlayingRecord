@@ -32,7 +32,7 @@
 | 创作协作 Review | 唯一方法包在 `skills/creative-system-review/`，系统构想在 `production/system-vision.md`。系统方法只保留简短引用入口，全文沿 `method-source` 追加为只读资源；操作见下节。 |
 | 视频手册与影视知识 | 项目 Markdown 是唯一正文。`method-source` 把选定章节及来源摘要追加为只读资源投影；完整资料与必要图示／媒体在适用 SKILL 内嵌阅读。影视知识包含 applications 六类本剧应用及其准确输入锁。不能反向改一份正文。 |
 | `content/managed-methods.json`、`managed-media-method.json` | 初始化定义，安装到空实例；不覆盖已编辑的活库。媒体初始化同时读取本项目 Markdown。 |
-| `content/managed-method-registry.json` | 本次候选的准确配置历史，用于增量迁移与空实例恢复；不是启用后的编辑副本。后续导出必须来自当时有效实例。 |
+| `content/managed-method-registry.json` | 旧安装包的准确配置历史，现为 OSS 目录中的不可变逻辑路径。后续从当时有效实例导出到新的内容地址，操作见本页正式切换段落；不能覆盖旧包。 |
 | `production/method-reading-application/registry.json` | 方法阅读应用的准确配置包，追加视听条款、完整手册及明确所选绑定；既有基础历史包保留。当前选择仍以有效实例与发布回执为准。 |
 | 执行包、阶段产物 | 本步骤已取得的不可改写快照；方法升级不改过去。私有写作和读者记录留本机，公开作品导出不携带这些候选。 |
 
@@ -159,21 +159,25 @@ python3 scripts/media_method.py --method-url http://127.0.0.1:PORT --directory .
 ```bash
 python3 scripts/method_migration.py --system PATH_TO_DESK export \
   --database .runtime/generation/review/.runtime/review.sqlite3 \
-  --output content/managed-method-registry.json
+  --output .runtime/generation/method-registry.json
+PYTHONPATH=PATH_TO_DESK python3 -m review_desk --instance . \
+  resource-put .runtime/generation/method-registry.json --prefix content/method-registries
 ```
 
-明确清理旧 SKILL 历史后，配置包用 `configuration_history_baselines` 记录每个对象首次保留的准确版号和修订。最新方法整包仍保留原身份，例如整包第 8 版不改称第 1 版；以后改稿继续追加下一版。独立文件历史则按保留的整包重新生成，清理后的文件序号从 1 开始，准确正文与所属整包不变。空实例恢复这类配置包使用项目入口：
+以上命令只在任务隔离实例执行。第二步完整上传并回读校验，返回 `content/method-registries/<SHA256>.json` 准确逻辑路径，同时冻结资源目录。将该路径传给发布器的 `--method-registry`；提交轻量目录，不能再提交包内字节，也不能用新内容覆盖历史固定路径 `content/managed-method-registry.json`。后者只保留旧安装包身份。
+
+明确清理旧 SKILL 历史后，配置包用 `configuration_history_baselines` 记录每个对象首次保留的准确版号和修订。最新方法整包仍保留原身份，例如整包第 8 版不改称第 1 版；以后改稿继续追加下一版。独立文件历史则按保留的整包重新生成，清理后的文件序号从 1 开始，准确正文与所属整包不变。空实例恢复这类配置包使用项目入口，`EXACT_REGISTRY_PATH` 为上述回执中的逻辑路径：
 
 ```bash
 python3 scripts/method_migration.py --system PATH_TO_DESK apply \
   --database EMPTY_INSTANCE/.runtime/review.sqlite3 \
-  --registry content/managed-method-registry.json
+  --registry "$EXACT_REGISTRY_PATH"
 ```
 
-目标数据库须先由现有实例入口初始化。此命令只恢复配置，不删除目标已有历史，也不启用额外约束；旧包不能覆盖已更新的方法头。若还需恢复之后显式导出的私有执行，先恢复与该执行包同次导出的配置包，再用既有 `method-restore` 恢复其 `registry.json`。完整公开作品恢复仍沿下文 Schema 14 入口。一次性历史清理的范围与验证另见[本任务演练](reports/task-20261013-0010/history-cleanup.md)，不作为日常保存规则。
+目标数据库须先由现有实例入口初始化。此命令只恢复配置，不删除目标已有历史，也不启用额外约束；旧包不能覆盖已更新的方法头。若还需恢复之后显式导出的私有执行，先恢复与该执行包同次导出的配置包，再用既有 `method-restore` 恢复其 `registry.json`。完整公开作品恢复沿 [Schema 16 资源恢复](resource-storage.md#在线与离线恢复)，旧完整本地包保留兼容读取。一次性历史清理的范围与验证另见[本任务演练](reports/task-20261013-0010/history-cleanup.md)，不作为日常保存规则。
 
 1. 方法定义包可在空实例恢复同样的正文、版本和引用；目标已经更新时不能覆盖。
-2. 完整 Schema 14 导出恢复当前制作、提交快照、故事版本、评论、准确选择、原件索引和公开方法／制作关联；实际原件按哈希保全。私有执行另按原运行范围显式导出，公开作品包不恢复本机阶段全文。
+2. 完整 Schema 16 导出恢复当前制作、提交快照、故事版本、评论、准确选择、原件目录和公开方法／制作关联；实际原件按准确 OSS 版本及哈希保全。私有执行另按原运行范围显式导出，公开作品包不恢复本机阶段全文。
 3. 方法约束启用后，本次发布的 `recover` 会拒绝切回启用前镜像：旧代码不能执行新方法约束。运行故障先用本次发布的 `restart` 重启已验证的兼容版本，代码故障则准备兼容修复版本；修复期间需要停写就保持维护窗口。不能改用旧发布包绕过此边界。这些运行操作**不恢复数据库**；如需要数据修正，应在保全新写入的前提下作新的准确变更，不能回灌旧快照。
 
 执行记录证明读取入口交付了具体内容与阶段结果，不能证明模型内部理解。受控请求、独立会话实践、真实页面与付费外部调用分别验收，不互相代替。

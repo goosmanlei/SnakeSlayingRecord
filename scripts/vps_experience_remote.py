@@ -513,6 +513,8 @@ def main():
     with (CONTROL/'publish.lock').open('a') as lock:
         fcntl.flock(lock, fcntl.LOCK_EX|fcntl.LOCK_NB)
         s = state()
+        if s.get('storage_upgrade') and args.command!='status':
+            raise ValueError('OSS runtime preserves the live database; use oss_runtime_release.py, not this legacy full-reset publisher')
         try:
             if args.command == 'status':
                 s = {**s, 'instance': counts(TARGET), 'containers': run('docker','ps','-a','--filter','label='+LABEL,'--format','{{.ID}} {{.Names}} {{.Status}}').splitlines(), 'maintenance': (CONTROL/'maintenance').read_text().strip() if (CONTROL/'maintenance').exists() else 'unconfigured'}

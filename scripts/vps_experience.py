@@ -32,6 +32,8 @@ def valid_identity(value):
 
 
 def prepare(args):
+    if (ROOT/'config/resource-storage.json').is_file():
+        raise ValueError('OSS instances use oss_runtime_release.py for a database-preserving storage/code upgrade; this legacy full-reset publisher cannot replace their live data')
     identity = valid_identity(args.publication)
     system = Path(args.desk).resolve(strict=True)
     formal = Path(args.formal).resolve(strict=True)

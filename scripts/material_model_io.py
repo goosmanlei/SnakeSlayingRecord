@@ -21,10 +21,27 @@ def backend(name):
         raise RuntimeError('读取引用化素材需指定兼容系统：使用 --system，或设置 REVIEW_DESK_SYSTEM / PYTHONPATH。') from exc
 
 
+def resource_path(path):
+    path=Path(path).absolute()
+    for root in path.parents:
+        if (root/'config/instance.json').is_file():
+            if not (root/'config/resource-storage.json').is_file():
+                break
+            resources=backend('resources')
+            relative=path.relative_to(root).as_posix()
+            try:
+                resources.descriptor(root,relative)
+            except FileNotFoundError:
+                break
+            return resources.materialize(root,relative)
+    return path
+
+
 def read_bytes(path):
-    path=Path(path)
+    is_json=Path(path).suffix.lower()=='.json'
+    path=resource_path(path)
     raw=path.read_bytes()
-    if path.suffix.lower()=='.json' and b'material-archive-reference-v1' in raw[:160]:
+    if is_json and b'material-archive-reference-v1' in raw[:160]:
         return backend('material_archives').read_bytes(path)
     return raw
 
@@ -55,7 +72,7 @@ def sqlite_compatibility(db,hydrate=False):
 
 def open_bytes(path):
     import io
-    path=Path(path)
+    path=resource_path(path)
     if path.suffix.lower()=='.json':
         with path.open('rb') as stream:head=stream.read(160)
         if b'material-archive-reference-v1' in head:return io.BytesIO(read_bytes(path))
@@ -71,7 +88,7 @@ def logical_file_hash(path):
 
 
 def logical_size(path):
-    path=Path(path)
+    path=resource_path(path)
     if path.suffix.lower()=='.json':
         with path.open('rb') as source:head=source.read(160)
         if b'material-archive-reference-v1' in head:return len(read_bytes(path))
@@ -85,6 +102,27 @@ def read_framework(path, *, current_only=False, revision_ids=None, kinds=None):
     other export tables are omitted and unselected revision bodies are not hydrated.
     """
     path=Path(path)
+    manifest=path.parent/'manifest.json'
+    if path.name=='objects.json' and manifest.is_file() and json.loads(manifest.read_text()).get('schema_version')==16:
+        import sqlite3
+        root=path.parent.parent;document=json.loads(manifest.read_text())
+        resources=backend('resources')
+        snapshot=resources.materialize(root,'database.sqlite3',spec=document['snapshot'])
+        db=sqlite3.connect(snapshot.resolve().as_uri()+'?mode=ro',uri=True);db.row_factory=sqlite3.Row
+        try:
+            objects=[dict(row) for row in db.execute('SELECT * FROM objects ORDER BY id') if kinds is None or row['kind'] in kinds]
+            wanted=set(revision_ids or ())
+            if current_only:wanted.update(row['current_revision'] for row in objects)
+            if current_only or revision_ids is not None:
+                revisions=[dict(row) for rid in sorted(wanted) for row in db.execute('SELECT * FROM revisions WHERE id=?',(rid,))]
+                return {'objects':objects,'revisions':revisions}
+            excluded={'sources','comments','comment_events','configurations','configuration_events','read_generations','material_content'}
+            result={table:[dict(row) for row in db.execute('SELECT * FROM "'+table+'" ORDER BY 1')]
+                    for (table,) in db.execute("SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%'").fetchall() if table not in excluded}
+            result['objects']=objects
+            return result
+        finally:db.close()
+    path=resource_path(path)
     if current_only or revision_ids is not None:
         members=backend('material_content_stream').members
         objects=[o for o in members(path,'objects') if kinds is None or o['kind'] in kinds]
@@ -102,3 +140,21 @@ def read_framework(path, *, current_only=False, revision_ids=None, kinds=None):
             resolve.clear()
         return value
     finally:resolve.close()
+
+
+def framework_members(path, table):
+    """Stream one table from the disk snapshot or a legacy JSON bundle."""
+    path=Path(path);manifest=path.parent/'manifest.json'
+    value=json.loads(manifest.read_text()) if manifest.is_file() else {}
+    if value.get('schema_version')!=16:
+        yield from backend('material_content_stream').members(resource_path(path),table)
+        return
+    import sqlite3
+    snapshot=backend('resources').materialize(path.parent.parent,'database.sqlite3',spec=value['snapshot'])
+    db=sqlite3.connect(snapshot.resolve().as_uri()+'?mode=ro',uri=True);db.row_factory=sqlite3.Row
+    try:
+        if not db.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name=?",(table,)).fetchone():
+            return
+        for row in db.execute('SELECT * FROM "'+table.replace('"','""')+'" ORDER BY 1'):
+            yield dict(row)
+    finally:db.close()
