@@ -475,6 +475,9 @@ def verify_history(before_file, after_file, expected_body, expected_version, eve
 
 def compose_definition(m, image, release):
     ca = next(x['Source'] for x in m['previous_app']['mounts'] if x['Destination'] == '/run/local-ca/cacert.pem')
+    oss = next((x for x in m['previous_app']['mounts'] if x['Destination'] == '/run/project-oss.json'), None)
+    if 'REVIEW_OSS_CREDENTIALS_FILE' in m['previous_app']['environment_names']:
+        require(oss and not oss['RW'], 'OSS runtime requires its protected credential mount')
     environment = {key: '${AO_RELEASE_ENV_' + str(i) + '?required}' for i, key in enumerate(m['previous_app']['environment_names'])}
     def volume(source, target, readonly):
         return {'type': 'bind', 'source': str(source), 'target': target, 'read_only': readonly}
@@ -483,7 +486,8 @@ def compose_definition(m, image, release):
         'app': {'image': image['image'], 'restart': 'unless-stopped', 'environment': environment,
                 'volumes': [volume(m['story_main'], '/instance', False), volume(ca, '/run/local-ca/cacert.pem', True),
                             *[volume(release / 'instance' / name, '/instance/' + name, True) for name in (*INSTANCE_FILES, *m.get('instance_overlays', []))],
-                            *([volume(release / 'instance/content/production-approach-assets', '/instance/content/production-approach-assets', True)] if m.get('method_media') else [])],
+                            *([volume(release / 'instance/content/production-approach-assets', '/instance/content/production-approach-assets', True)] if m.get('method_media') else []),
+                            *([volume(oss['Source'], '/run/project-oss.json', True)] if oss else [])],
                 'expose': ['8765'], 'healthcheck': {'test': ['CMD', 'python', '-c', "import urllib.request;urllib.request.build_opener(urllib.request.ProxyHandler({})).open('http://127.0.0.1:8765/api/instance',timeout=3)"], 'interval': '15s', 'timeout': '5s', 'retries': 3}},
         'nginx': {'image': m['previous_nginx']['image'], 'restart': 'unless-stopped',
                   'depends_on': {'app': {'condition': 'service_healthy'}},

@@ -108,12 +108,13 @@ def media_entries(entries):
 def verify_media(root, entries):
     entries = list(entries)
     for name, digest in media_entries(entries).items():
-        path = contained(root, Path('export/assets') / name)
+        from review_desk.production_media import export_asset_path
+        path = export_asset_path(root, name)
         if not path.is_file() or logical_file_hash(path) != digest:
             raise ValueError('missing or changed original: ' + name)
     for entry in entries:
         if (type(entry.get('bytes')) is not int or entry['bytes'] < 0
-                or logical_size(root / 'export/assets' / entry['file']) != entry['bytes']):
+                or logical_size(export_asset_path(root, entry['file'])) != entry['bytes']):
             raise ValueError('original byte count differs: ' + entry['file'])
 
 
@@ -152,7 +153,29 @@ def verify_integrated(root, target, commit, package, entries):
     if result.returncode:
         raise ValueError('source commit has not been integrated into main')
     relative = contained(root, package).relative_to(root).as_posix()
-    paths = [relative, *('export/assets/' + name for name in media_entries(entries))]
+    from review_desk import resources
+    cloud = resources.settings(root)
+    if cloud:
+        try:from .check_resource_git import check
+        except ImportError:from check_resource_git import check
+        check(root, revision=commit)
+        # Exact metadata/code must be integrated. Cloud bytes are verified by
+        # version and SHA during preflight, never by presence in a Git tree.
+        paths = ['config/resource-storage.json', 'config/resource-catalog.json']
+        for logical in [relative, *('export/assets/'+name for name in media_entries(entries))]:
+            try:
+                spec = resources.descriptor(root, logical)
+            except FileNotFoundError:
+                if logical != relative: raise
+                paths.append(logical)
+                continue
+            other = resources.descriptor(target, logical)
+            if any(spec[k] != other[k] for k in ('sha256','bytes','key','version_id')):
+                raise ValueError('integrated resource identity differs: '+logical)
+            resources.verify_remote(target, other)
+            resources.materialize(target, logical)
+    else:
+        paths = [relative, *('export/assets/' + name for name in media_entries(entries))]
     for name in paths:
         expected = git(root, 'show', commit + ':' + name)
         source = contained(root, name)
@@ -170,6 +193,20 @@ def write_json(root, path, value, *, replace=False):
     target = contained(root, path)
     target.parent.mkdir(parents=True, exist_ok=True)
     data = json.dumps(value, ensure_ascii=False, indent=2) + '\n'
+    relative=target.relative_to(root).as_posix()
+    if not relative.startswith('.runtime/') and len(data.encode())>1024*1024 and (root/'config/resource-storage.json').is_file():
+        import tempfile
+        try:
+            from .material_model_io import backend
+        except ImportError:
+            from material_model_io import backend
+        resources=backend('resources')
+        with tempfile.TemporaryDirectory(prefix='publication-',dir=root/'.runtime') as folder:
+            source=Path(folder)/'package.json';source.write_text(data)
+            spec=resources.publish_file(root,relative,source)
+        resources.freeze_catalog(root,root/'config/resource-catalog.json')
+        data=json.dumps({'format':'project-resource-reference-v1','path':relative,
+                         'sha256':spec['sha256'],'bytes':spec['bytes']},ensure_ascii=False,indent=2)+'\n'
     if not replace:
         with target.open('x') as stream:
             stream.write(data)

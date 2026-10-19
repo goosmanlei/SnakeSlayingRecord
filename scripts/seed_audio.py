@@ -63,6 +63,11 @@ def payload_for(spec):
         if (path.is_symlink() or path.parent.is_symlink() or path.parent.parent.is_symlink()
                 or path.resolve().parent != (ROOT / 'export/assets').resolve()):
             raise ValueError('reference cannot escape managed originals')
+        try:
+            from .material_model_io import resource_path
+        except ImportError:
+            from material_model_io import resource_path
+        path=resource_path(path)
         if not path.is_file() or path.stat().st_size > 10 * 1024 * 1024:
             raise ValueError("missing or oversized reference")
         data = path.read_bytes()
@@ -117,6 +122,17 @@ def quota_receipts(workspace):
 
 def save_original(audio):
     sha = hashlib.sha256(audio).hexdigest()
+    if (ROOT/'config/resource-storage.json').is_file():
+        try:
+            from .material_model_io import backend
+        except ImportError:
+            from material_model_io import backend
+        resources=backend('resources')
+        with tempfile.TemporaryDirectory(prefix='seed-result-',dir=ROOT/'.runtime') as temporary:
+            source=Path(temporary)/'original.wav';source.write_bytes(audio)
+            resources.publish_file(ROOT,'export/assets/'+sha+'.wav',source,expected_sha=sha)
+        resources.freeze_catalog(ROOT,ROOT/'config/resource-catalog.json')
+        return ROOT/'export/assets'/(sha+'.wav'),sha
     folder = contained(generation_root(ROOT), 'export/assets')
     if folder.is_symlink() or folder.parent.is_symlink():
         raise ValueError('managed originals directory cannot be a symlink')

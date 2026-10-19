@@ -71,9 +71,9 @@
 
 ## 数据权威、发布与恢复
 
-- 正式库是运行权威，`export/` 是受管快照。Schema 15在故事与方法历史、制作当前稿、候选准确提交、评论及必要发布事实之外，保存集级工程、不可变渲染快照、成片和准确来源；私有渲染队列及进程状态不导出。不含剪辑对象的 Schema 14旧完整包仍兼容。旧制作全文链和专属版本索引不进入常规恢复。恢复只能到新空实例，沿 `scripts/production_review.py recover`、`production/audiovisual/index.json`、`production/audiovisual/recovery.json` 和完整 `export/manifest.json`。
+- 正式库是运行权威，`export/` 是受管快照。Schema 16以准确 OSS SQLite 快照和轻量资源目录保存完整业务表，在故事与方法历史、制作当前稿、候选准确提交、评论及必要发布事实之外，保存集级工程、不可变渲染快照、成片和准确来源；私有渲染队列及进程状态不导出。旧 Schema 14／15完整本地包仍兼容。旧制作全文链和专属版本索引不进入常规恢复。恢复只能到新空实例，沿 `scripts/production_review.py recover`、`production/audiovisual/index.json`、`production/audiovisual/recovery.json` 和完整 `export/manifest.json`。
 - 正式写入须按 [工作区流程](production/generation-workspaces.md#合并与正式发布) 的实际锁、容器身份和停服顺序执行，不能只依赖宿主与 Docker Desktop 之间的SQLite文件锁。发布幂等记录与其他任务新评论必须保全，旧基线拒绝重放；完整导出从发布后最新正式数据产生。
-- `export/material-content.json`、`export/objects.json`、`export/assets/*`及`.gitattributes`列明的发布包使用Git LFS，实际内容、指针、哈希和所需远端原件分别核验。旧素材归档配方退役前须保留真实逻辑字节或相同保留组成；操作沿工作区流程。
+- 当前 Git 只保存代码、业务文字和轻量准确目录；业务原件、派生与大包在私有 OSS，读取绑定明确 VersionId、SHA256、大小和 MIME。新 clone 不依赖媒体 LFS pull；历史 Git/LFS 未重写。原件缓存、项目级凭据、线上／离线恢复和旧归档兼容统一见 [资源存储](production/resource-storage.md)。
 - 正式镜像仅用 `story-review-desk:current`、`:previous`、`:base`，Compose和候选固定准确ID；任务可建可识别临时镜像。镜像/容器的清理、挂载守卫与历史路径处理见 [结项清理](production/generation-workspaces.md#结项清理)。清单记录构建来源不要求原工作区永存；服务回退不等于数据回退。
-- VPS是独立可写完整体验版，显式发布可维护停机并按本机准确完整快照干净部署，普通重启保留操作，不回写本机。部署控制目录 `~/lijizhanshe/`，体验实例 `~/www/lijizhanshe/`；共用调用计数跨发布保留，每天按北京时间最多100次。公网、代理、HTTPS、密钥及重置边界见 [体验部署约定](planning/vps-experience-deployment-task.md)、[部署操作](production/vps-experience.md)。入口为 `https://leiguoguo.me/lijizhanshe/`，当前版本取远端 `state.json`，不从本机Git推定。
+- VPS是独立可写完整体验版，代码／存储升级保留其自己的业务库、发布身份与新增修改，不能用本机快照覆盖；普通重启保留操作，不回写本机。部署控制目录 `~/lijizhanshe/`，体验实例 `~/www/lijizhanshe/`；共用调用计数跨发布保留，每天按北京时间最多100次。公网、代理、HTTPS、密钥及重置边界见 [体验部署约定](planning/vps-experience-deployment-task.md)、[部署操作](production/vps-experience.md)。入口为 `https://leiguoguo.me/lijizhanshe/`，当前版本取远端 `state.json`，不从本机Git推定。
 - 站点图标为用户认可的屋檐护灯，源文件和维护见 [图标设计](design/favicon/README.md)。上传、配置、实际生效分别核验。
