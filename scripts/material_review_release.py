@@ -41,7 +41,7 @@ RELEASE_PREFIXES={TASK:'materials-20261004-0004', 'task-20261004-0005':'asset-cl
                   'entity-acceptance-20261004':'entity-acceptance-20261004'}
 require,sha,read,save,run,git,inspect=base.require,base.sha,base.read,base.save,base.run,base.git,base.inspect
 METHOD_MEDIA_DIRECTORY='content/production-approach-assets'
-MODEL_OVERLAYS=('content/skill-flow.json','content/data-model.json')
+MODEL_OVERLAYS=('content/skill-flow.json','content/data-model.json','config/resource-storage.json','config/resource-catalog.json')
 METHOD_FILE_TABLES={'method_file_versions','method_file_packages','method_file_members'}
 
 
@@ -122,6 +122,30 @@ def registry_media_files(archive):
     return files
 
 
+def candidate_resource_bytes(story, system, candidate, instance, relative):
+    """Read only committed text or the committed catalog's exact cloud version."""
+    require(not Path(relative).is_absolute() and '..' not in Path(relative).parts,
+            'candidate resource path escaped')
+    catalog = instance / 'config/resource-catalog.json'
+    if catalog.is_file() and relative in read(catalog)['entries']:
+        require(not (instance/'.runtime/resources/catalog.json').exists(),
+                'candidate reader cannot use unpublished runtime resources')
+        for name in ('config/instance.json','config/resource-storage.json','config/resource-catalog.json'):
+            require((instance/name).read_bytes()==base.git_file(story,candidate,name),
+                    'candidate resource configuration changed')
+        sys.path.insert(0,str(system))
+        from review_desk import resources
+        require(Path(resources.__file__).resolve().parent.parent==system.resolve(),
+                'candidate resource reader loaded a different system')
+        spec=resources.descriptor(instance,relative)
+        resources.verify_remote(instance,spec)
+        with resources.lease_scope():
+            return resources.materialize(instance,relative).read_bytes()
+    raw=base.git_file(story,candidate,relative)
+    require(raw==(story/relative).read_bytes(),'input differs from committed candidate: '+relative)
+    return raw
+
+
 def release_name(task, story_candidate, system_candidate):
     require(task in RELEASE_PREFIXES or re.fullmatch(r'task-[0-9]{8}-[0-9]{4}', task), 'unsupported release task')
     return RELEASE_PREFIXES.get(task, task)+'-'+story_candidate[:12]+'-'+system_candidate[:12]
@@ -153,6 +177,8 @@ def prepare(a):
             native=task_repository_delivery.freeze(sm,task,story,system,a.story_candidate,a.system_candidate)
     base.repo_check(story,sm,a.story_candidate,a.story_target)
     base.repo_check(system,gm,a.system_candidate,a.system_target,system=True)
+    from check_resource_git import check as check_resource_git
+    check_resource_git(story,revision=a.story_candidate)
     upstream=system_upstream(system,a.system_target,a.system_candidate) if getattr(a,'push_system',False) and not native else None
     root=a.bundle.resolve();require((story/'.runtime').resolve() in root.parents and not root.exists(),'new task runtime bundle required')
     app,nginx=inspect(base.APP),inspect(base.NGINX)
@@ -165,6 +191,13 @@ def prepare(a):
     media_mount=mounts.get('/instance/'+METHOD_MEDIA_DIRECTORY)
     if media_mount:expected_mounts.add('/instance/'+METHOD_MEDIA_DIRECTORY)
     expected_mounts.update('/instance/'+name for name in MODEL_OVERLAYS if '/instance/'+name in mounts)
+    if 'REVIEW_OSS_CREDENTIALS_FILE' in old['environment_names']:
+        credential=mounts.get('/run/project-oss.json')
+        require(credential and not credential['RW'], 'OSS credential mount is required')
+        protected=Path(credential['Source'])
+        require(protected.is_file() and not protected.is_symlink() and not protected.stat().st_mode&0o077
+                and not protected.resolve().is_relative_to(sm), 'OSS credentials must stay private and outside the instance')
+        expected_mounts.add('/run/project-oss.json')
     require(set(mounts)==expected_mounts,'review unknown formal mounts')
     require(mounts['/instance']['Source']==str(sm) and mounts['/instance']['RW'],'normal live instance mount differs')
     require(all(not mounts[n]['RW'] for n in mounts if n!='/instance'),'overlay and CA must be read-only')
@@ -182,6 +215,8 @@ def prepare(a):
     for name in MODEL_OVERLAYS:
         if name in git(story,'ls-tree','--name-only',a.story_candidate,'--',name).splitlines():
             put('instance/'+name,base.git_file(story,a.story_candidate,name));overlays.append(name)
+    def candidate_read(relative):
+        return candidate_resource_bytes(story,system,a.story_candidate,root/'instance',relative)
     managed_methods = None
     if getattr(a, 'method_registry', None):
         require(getattr(a, 'method_audit', None), 'method cutover requires an in-flight delivery audit')
@@ -189,8 +224,7 @@ def prepare(a):
         for key, path in (('registry', a.method_registry), ('audit', a.method_audit)):
             relative = Path(path).as_posix()
             require(not Path(relative).is_absolute() and '..' not in Path(relative).parts, 'method cutover paths must be project-relative')
-            raw = base.git_file(story, a.story_candidate, relative)
-            require(raw == (story / relative).read_bytes(), 'method cutover input differs from candidate')
+            raw = candidate_read(relative)
             if key == 'registry':
                 import method_migration
                 method_migration.check_registry(json.loads(raw))
@@ -215,29 +249,27 @@ def prepare(a):
         for key, path in (('package', a.audiovisual_package), ('registry', a.latest_registry)):
             relative = Path(path).as_posix()
             require(not Path(relative).is_absolute() and '..' not in Path(relative).parts, 'migration must be project relative')
-            raw = base.git_file(story, a.story_candidate, relative)
-            require(raw == (story / relative).read_bytes(), 'migration input differs from candidate')
+            raw = candidate_read(relative)
             if key == 'package':
                 for filename, digest in json.loads(raw)['authored_sha256'].items():
                     require(not Path(filename).is_absolute() and '..' not in Path(filename).parts, 'unsafe authored source path')
-                    source_raw = base.git_file(story, a.story_candidate, filename)
-                    require(sha(source_raw) == digest and source_raw == (story/filename).read_bytes(), 'authored migration source drifted: '+filename)
+                    source_raw = candidate_read(filename)
+                    require(sha(source_raw) == digest, 'authored migration source drifted: '+filename)
             latest[key] = 'latest/' + key + '.json'; put(latest[key], raw)
     relations = None
     if getattr(a, 'relations_package', None):
         require(not managed_methods and not latest, 'unified relationship release owns its exact method/data transaction')
         relative = Path(a.relations_package).as_posix()
         require(not Path(relative).is_absolute() and '..' not in Path(relative).parts, 'relationship package must be project relative')
-        raw = base.git_file(story, a.story_candidate, relative)
-        require(raw == (story / relative).read_bytes(), 'relationship package differs from candidate')
+        raw = candidate_read(relative)
         document = json.loads(raw)
         require(document.get('format') == 'unified-relation-release-v1', 'wrong relationship package')
         put('relations/' + relative, raw)
         for item in document['files'].values():
             name = item['file']
             require(not Path(name).is_absolute() and '..' not in Path(name).parts, 'relationship input path escaped')
-            value = base.git_file(story, a.story_candidate, name)
-            require(sha(value) == item['sha256'] and value == (story/name).read_bytes(), 'relationship input differs: ' + name)
+            value = candidate_read(name)
+            require(sha(value) == item['sha256'], 'relationship input differs: ' + name)
             put('relations/' + name, value)
         relations = {'root':'relations', 'package':'relations/' + relative}
     retirement = None
@@ -245,16 +277,15 @@ def prepare(a):
         require(not managed_methods and not latest and not relations, 'review retirement owns its exact method/data transaction')
         relative = Path(a.review_retirement_package).as_posix()
         require(not Path(relative).is_absolute() and '..' not in Path(relative).parts, 'retirement package must be project relative')
-        raw = base.git_file(story, a.story_candidate, relative)
-        require(raw == (story/relative).read_bytes(), 'retirement package differs from candidate')
+        raw = candidate_read(relative)
         document = json.loads(raw)
         require(document.get('format') == 'comment-review-release-v1', 'wrong retirement package')
         put('retirement/'+relative, raw)
         for item in document['files'].values():
             name = item['file']
             require(not Path(name).is_absolute() and '..' not in Path(name).parts, 'retirement input escaped')
-            value = base.git_file(story, a.story_candidate, name)
-            require(sha(value) == item['sha256'] and value == (story/name).read_bytes(), 'retirement input differs: '+name)
+            value = candidate_read(name)
+            require(sha(value) == item['sha256'], 'retirement input differs: '+name)
             put('retirement/'+name, value)
         retirement = {'root':'retirement', 'package':'retirement/'+relative}
     current_production = None
@@ -262,16 +293,15 @@ def prepare(a):
         require(not managed_methods and not latest and not relations and not retirement, 'current production owns its exact migration transaction')
         relative = Path(a.production_current_package).as_posix()
         require(not Path(relative).is_absolute() and '..' not in Path(relative).parts, 'unsafe current production package')
-        raw = base.git_file(story, a.story_candidate, relative)
-        require(raw == (story/relative).read_bytes(), 'current production package differs from candidate')
+        raw = candidate_read(relative)
         document = json.loads(raw)
         require(document.get('format') == 'production-current-release-v1', 'wrong current production package')
         put('current/'+relative, raw)
         for item in document['files'].values():
             name = item['file']
             require(not Path(name).is_absolute() and '..' not in Path(name).parts, 'current production input escaped')
-            value = base.git_file(story, a.story_candidate, name)
-            require(sha(value) == item['sha256'] and value == (story/name).read_bytes(), 'current production input differs: '+name)
+            value = candidate_read(name)
+            require(sha(value) == item['sha256'], 'current production input differs: '+name)
             put('current/'+name, value)
         current_production = {'root':'current', 'package':'current/'+relative}
     require(not getattr(a,'method_file_history',False) or not (managed_methods or latest or relations or retirement or current_production),'file history uses its own preservation-only write window')
@@ -281,16 +311,19 @@ def prepare(a):
     # Retired standalone pages no longer declare originals. A later code-only
     # release still freezes the exact candidate's managed resource originals.
     registry_path = 'content/managed-method-registry.json'
-    if media_registry is None and registry_path in git(story,'ls-tree','--name-only',a.story_candidate,'--',registry_path).splitlines():
-        media_registry = json.loads(base.git_file(story,a.story_candidate,registry_path))
+    cloud_catalog = read(root/'instance/config/resource-catalog.json')['entries'] if 'config/resource-catalog.json' in overlays else {}
+    if media_registry is None and (registry_path in cloud_catalog or registry_path in git(story,'ls-tree','--name-only',a.story_candidate,'--',registry_path).splitlines()):
+        media_registry = json.loads(candidate_read(registry_path))
     if media_registry:
         for name,digest in registry_media_files(media_registry).items():
             require(name not in method_media or method_media[name]==digest,'page and method originals disagree')
             method_media[name]=digest
     for name,digest in method_media.items():
-        raw=base.git_file(story,a.story_candidate,name)
+        raw=candidate_read(name)
         require(sha(raw)==digest,'method media differs from declared version: '+name)
-        put('instance/'+name,raw)
+        if name not in cloud_catalog:put('instance/'+name,raw)
+    cloud_method_media={name:digest for name,digest in method_media.items() if name in cloud_catalog}
+    method_media={name:digest for name,digest in method_media.items() if name not in cloud_catalog}
     cfg=read(root/'instance/config/instance.json');require(cfg['review_desk_commit']==a.system_candidate,'candidate instance pin differs')
     current_files={name:sha(Path(mounts['/instance/'+name]['Source']).read_bytes()) for name in (*base.INSTANCE_FILES, *(name for name in MODEL_OVERLAYS if '/instance/'+name in mounts))}
     if task in {'task-20261010-0001', 'task-20261010-0022', 'task-20261010-0023'}:
@@ -341,7 +374,7 @@ def prepare(a):
     tag=policy['base_image_tag']
     build_tag=policy.get('runtime_upgrade',{}).get('tag',tag)
     put('build/Dockerfile',('FROM '+build_tag+'\nRUN rm -rf /app/review_desk\nCOPY review_desk /app/review_desk\nLABEL org.opencontainers.image.revision='+a.system_candidate+'\n').encode())
-    helpers=['material_review_release.py','autonomous_optimization_release.py','integrate_generation_review_system.py']
+    helpers=['material_review_release.py','autonomous_optimization_release.py','integrate_generation_review_system.py','check_resource_git.py']
     if policy.get('runtime_upgrade'):helpers.append('episode_render_runtime.py')
     if managed_methods:helpers.append('method_migration.py')
     if history_cleanup:helpers.append('method_history_cleanup.py')
@@ -352,18 +385,29 @@ def prepare(a):
     if relations:helpers.extend(['unified_relation_migration.py','method_migration.py'])
     if retirement:helpers.extend(['review_retirement_release.py','unified_relation_migration.py','method_migration.py'])
     if current_production:helpers.extend(['production_current_release.py','unified_relation_migration.py','method_migration.py'])
+    if 'method_migration.py' in helpers:helpers.append('material_model_io.py')
     for helper in helpers:
         raw=base.git_file(story,a.story_candidate,'scripts/'+helper);require(raw==(story/'scripts'/helper).read_bytes(),'helper differs from committed candidate');put('helpers/'+helper,raw)
-    files=old['config_files'].split(',');require(files==proxy['config_files'].split(','),'compose sets differ')
+    files=old['config_files'].split(',')
+    proxy_files=proxy['config_files'].split(',')
+    if files!=proxy_files:
+        require(app['Config'].get('Labels',{}).get('org.leiguoguo.oss-release') and len(files)==1,
+                'separate compose origins require an exact OSS cutover')
+        definition=json.loads(Path(files[0]).read_text())
+        require(definition['services']['nginx']['image']==proxy['image'] and
+                definition['services']['nginx']['ports']==['127.0.0.1:3000:3000','127.0.0.1:64401:3000'],
+                'permanent compose does not preserve the existing proxy')
     plan={'format':'generation-system-delivery-v1','task':task,'push':bool(upstream),'system_main_from_story_main':os.path.relpath(gm,sm),'system_worktree':os.path.relpath(system,story),'expected_target':a.system_target,'candidate':a.system_candidate}
     if native:plan['task_delivery']=native
     put('system-delivery.json',json.dumps(plan,ensure_ascii=False,indent=2).encode()+b'\n')
     m={**policy,'format':'material-review-release-v1','task':task,'push':False,'story_worktree':str(story),'system_worktree':str(system),'story_main':str(sm),'system_main':str(gm),'story_candidate':a.story_candidate,'story_target':a.story_target,'system_candidate':a.system_candidate,'system_target':a.system_target,'system_upstream':upstream,'release_name':release_id,'hashes':hashes,'source_hashes':source,'base_image_tag':tag,'previous_app':old,'previous_nginx':proxy,'previous_compose_hashes':{f:sha(Path(f).read_bytes()) for f in files},'previous_instance_hashes':current_files,'ca_sha256':sha(Path(mounts['/run/local-ca/cacert.pem']['Source']).read_bytes()),'prepared_at':datetime.now(timezone.utc).isoformat()}
     m['delivery_backend']='codex.task' if native else 'legacy'
+    m['previous_proxy_compose_hashes']={f:sha(Path(f).read_bytes()) for f in proxy_files}
     if overlays:m['instance_overlays']=overlays
     if getattr(a,'method_file_history',False):m['method_file_history']={'format':'method-file-history-v1','existing_rows':'preserve','restore':'derive and validate exact legacy package membership'}
     if getattr(a,'remove_material_versions',False):m['material_version_removal']={'format':'material-version-removal-v1','backup_created':False,'recovery':'forward-only schema 14'}
     if method_media:m['method_media']=method_media
+    if cloud_method_media:m['cloud_method_media']=cloud_method_media
     if media_mount:m['previous_method_media']=method_directory_hashes(media_mount['Source'])
     if native:m['task_delivery']=native
     if managed_methods:m['managed_methods']=managed_methods
@@ -414,7 +458,10 @@ def checks(root,m,live=True):
     # code first, data/service next, task completion after formal page acceptance.
     base.repo_check(m['story_worktree'],m['story_main'],m['story_candidate'],m['story_target'],system=bool(m.get('task_delivery')) or m['task'] in ('task-20261004-0007','task-20261005-0003','task-20261005-0004','task-20261005-0005','task-20261005-0006','task-20261005-0007','task-20261006-0001','task-20261006-0002','task-20261006-0003'))
     base.repo_check(m['system_worktree'],m['system_main'],m['system_candidate'],m['system_target'],system=True)
+    from check_resource_git import check as check_resource_git
+    check_resource_git(Path(m['story_worktree']),revision=m['story_candidate'])
     for path,value in m['previous_compose_hashes'].items():require(sha(Path(path).read_bytes())==value,'compose input drifted')
+    for path,value in m.get('previous_proxy_compose_hashes',{}).items():require(sha(Path(path).read_bytes())==value,'proxy compose input drifted')
     ca=next(x['Source'] for x in m['previous_app']['mounts'] if x['Destination']=='/run/local-ca/cacert.pem');require(sha(Path(ca).read_bytes())==m['ca_sha256'],'CA drifted')
     image=read(root/'image.json');require(image['manifest_sha256']==sha((root/'manifest.json').read_bytes()),'image manifest differs');base.source_check(image['image'],m['source_hashes'])
     if live:

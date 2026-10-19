@@ -7,6 +7,10 @@ from pathlib import Path
 import re
 from urllib.parse import quote, unquote, urlsplit
 import xml.etree.ElementTree as ET
+try:
+    from .material_model_io import read_bytes, resource_path
+except ImportError:
+    from material_model_io import read_bytes, resource_path
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = Path('production/filmcraft')
@@ -139,8 +143,8 @@ def derive(root=ROOT):
                 i += 1; blocks.append({'type': 'code', 'language': language, 'text': '\n'.join(code)})
             elif match := re.fullmatch(r'!\[([^\]]+)\]\((diagrams/[a-z0-9_-]+\.svg)\)', line):
                 caption, path = match.groups(); image = root / BASE / path
-                if image.is_symlink() or not image.is_file(): raise ValueError('missing diagram: ' + path)
-                image_raw = image.read_bytes(); svg = ET.fromstring(image_raw)
+                if image.is_symlink() or not resource_path(image).is_file(): raise ValueError('missing diagram: ' + path)
+                image_raw = read_bytes(image); svg = ET.fromstring(image_raw)
                 filename = 'filmcraft-' + image.name
                 dimensions = {k: int(svg.attrib[k]) for k in ('width', 'height')}
                 media[filename] = image_raw
@@ -199,7 +203,7 @@ def synchronize(root=ROOT, check=False):
     if check:
         if original != updated: raise ValueError('filmcraft reading copy is stale')
         for target, raw in expected.items():
-            if not target.is_file() or target.read_bytes() != raw: raise ValueError('missing or stale derived file: ' + str(target))
+            if not resource_path(target).is_file() or read_bytes(target) != raw: raise ValueError('missing or stale derived file: ' + str(target))
     else:
         for target, raw in expected.items(): target.parent.mkdir(parents=True, exist_ok=True); target.write_bytes(raw)
         path.write_text(json.dumps(updated, ensure_ascii=False, indent=2) + '\n')

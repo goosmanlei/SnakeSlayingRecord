@@ -15,12 +15,12 @@ from review_desk.store import Store
 
 def prepare(candidate, target, document_path='imports/screenplay-01.json'):
     document = json.loads((candidate / document_path).read_text())
-    bundle = json.loads((candidate / 'export/objects.json').read_text())
+    from material_model_io import framework_members
     ids = {document['id'], *(e['id'] for e in document['episodes'])}
-    records = {table: [row for row in bundle[table] if row['id' if table == 'objects' else 'object_id'] in ids]
+    records = {table: [row for row in framework_members(candidate/'export/objects.json',table) if row['id' if table == 'objects' else 'object_id'] in ids]
                for table in ('objects', 'revisions')}
     revision_ids = {row['id'] for row in records['revisions']}
-    records['dependencies'] = [d for d in bundle['dependencies'] if d['from_revision'] in revision_ids]
+    records['dependencies'] = [d for d in framework_members(candidate/'export/objects.json','dependencies') if d['from_revision'] in revision_ids]
     sandbox = Store(':memory:')
     with sqlite3.connect(f"file:{target / '.runtime/review.sqlite3'}?mode=ro", uri=True) as live:
         live.backup(sandbox.db)

@@ -45,6 +45,15 @@ def formal_application_stopped(target, inspector=None):
 def copy_media(root, target, entries):
     """Used only for an isolated review/rehearsal target."""
     verify_media(root, entries)
+    from review_desk import resources
+    if resources.settings(root):
+        if resources.settings(root) != resources.settings(target):
+            raise ValueError('review target resource configuration differs')
+        for entry in entries:
+            relative = 'export/assets/'+entry['file']
+            resources.register(target, relative, resources.descriptor(root, relative))
+        resources.freeze_catalog(target, Path(target)/'config/resource-catalog.json')
+        return
     for entry in entries:
         path = contained(target, Path('export/assets') / entry['file'])
         path.parent.mkdir(parents=True, exist_ok=True)
