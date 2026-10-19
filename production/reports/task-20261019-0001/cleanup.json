@@ -1,0 +1,105 @@
+{
+  "task": "task-20261019-0001",
+  "scope": "Task private environments, owned process candidate image, temporary databases/render caches/tests, and exact native subtitle download; shared formal service and unrelated resources retained.",
+  "containers_removed": [
+    {
+      "id": "132a1e3c92c62c6c7eb9075561e10f7c97a1d9387b4dd045dd0cea66a835852a",
+      "name": "task-20261019-0001-edit-preview",
+      "instance": ".runtime/generation/review",
+      "idle_before_stop": true,
+      "removed_verified": true
+    },
+    {
+      "id": "937c27d6b20511fcf545505110685f664ae9f4cba33ebad8efa1025a5d59840a",
+      "name": "task-20261019-0001-published-recovery",
+      "instance": ".runtime/generation/published-recovery",
+      "idle_before_stop": true,
+      "removed_verified": true
+    }
+  ],
+  "images_removed": [
+    {
+      "id": "sha256:75b6d76c6a4c18973dda1fc02c94222665c0465eb0a7b2f628f75a217551800f",
+      "purpose": "obsolete task candidate never used by formal runtime",
+      "removed_verified": true
+    }
+  ],
+  "directories_removed": [
+    {
+      "path": ".runtime/editing",
+      "files": 1599,
+      "bytes": 11688725249,
+      "removed_verified": true
+    },
+    {
+      "path": ".runtime/generation",
+      "files": 1842,
+      "bytes": 24717555239,
+      "removed_verified": true
+    }
+  ],
+  "earlier_candidate_recovery_removed": {
+    "path": ".runtime/generation/candidate-recovery",
+    "files": 597,
+    "bytes": 4771878520,
+    "purpose": "Full candidate recovery rehearsal completed; 43 business tables identical, 571 bundle files verified. Latest formal recovery will use a new instance.",
+    "deleted": true
+  },
+  "external_download_removed": {
+    "path": "/Users/bytedance/Downloads/new26-e01-subtitles.srt",
+    "files": 1,
+    "bytes": 3428,
+    "sha256": "dab6aaaff4849e65bc7c7e73b9644e85be6bdc20aeac73657f4bd73181daa9c9",
+    "master_retained": "export/assets/dab6aaaff4849e65bc7c7e73b9644e85be6bdc20aeac73657f4bd73181daa9c9.srt"
+  },
+  "removed_files_total": 4039,
+  "removed_logical_bytes_total": 41178162436,
+  "size_definition": "Sum of logical file lengths, including the earlier candidate-recovery cleanup; not a measurement of physical free disk space or image layer reclamation.",
+  "retained": [
+    {
+      "resource": "formal main database, export/assets originals and outputs, complete Schema 15 export, accurate methods/comments/history, production receipts and reports",
+      "owner": "project maintainer",
+      "purpose": "active service, continued editing, authoritative recovery and audit",
+      "release_condition": "normal project lifecycle; not disposable task scratch"
+    },
+    {
+      "resource": "Docker current, previous and base",
+      "ids": {
+        "current": "sha256:0891e76c42d898d9d96424586093f19995f1b4acf5f00d9f8a475115babf4734",
+        "previous": "sha256:5c6861ff04df21083e0a7e2f34692dbfc8bf95e81ae38b2f4c18aff6f05f0ce0",
+        "base": "sha256:a7afd98144ad91a27402a402b5fdc8740531485114b16201904c331acae52edc"
+      },
+      "owner": "project maintainer",
+      "purpose": "current runtime, verified rollback runtime and build base",
+      "release_condition": "superseded and proven unused by all formal/recovery references"
+    },
+    {
+      "resource": "main .runtime/task-evidence/task-20261019-0001",
+      "original_receipts": {
+        "files": 220,
+        "bytes": 4115265,
+        "hashes_verified": true
+      },
+      "owner": "task maintainer",
+      "purpose": "minimal true call, exact publication/render/recovery/browser/test evidence plus cleanup receipts",
+      "release_condition": "preserve with task history; verified equivalent archive may replace"
+    },
+    {
+      "resource": "formal successful render attempt receipt (2001 bytes) and private worker queue in main .runtime",
+      "owner": "formal service",
+      "purpose": "runtime job identity and successful rendering reconciliation; scratch files already removed by worker",
+      "release_condition": "normal service retention policy"
+    },
+    {
+      "resource": "managed primary/desk worktrees, branches and conversation",
+      "owner": "current task session",
+      "purpose": "active TUI and task history",
+      "release_condition": "exit TUI and release session lock, then codex.project task cleanup for the whole registered group; retain branch/commit/session history"
+    }
+  ],
+  "workspace_runtime_dependencies": {
+    "blockers": []
+  },
+  "unresolved_disposable_process_resources": [],
+  "external_temp_scope": "No other task-created external temporary directory or lingering subprocess reported by the execution/review paths; not a whole-machine cleanup claim."
+}

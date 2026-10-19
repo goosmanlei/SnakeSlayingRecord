@@ -1,5 +1,5 @@
 {
-  "system_candidate": "5118674c62aa51efa19302caa18e6401125c7fd6",
+  "system_candidate": "3936e50e16d45c915a7136619ea929f6a9e08f5e",
   "environment": "Docker Linux amd64, FFmpeg 7.1.5/libass/Noto CJK; host Node + actual connected Chrome",
   "targeted": {
     "editing_worker_cache_recovery": {
@@ -25,6 +25,11 @@
     },
     "production_navigation": {
       "passed": 14
+    },
+    "editing_draft": {
+      "passed": 7,
+      "independent_callback_checks": 24,
+      "scope": "persistence across refresh/basis changes, recovery undo/redo, stale callbacks"
     }
   },
   "full_python": {
@@ -39,7 +44,8 @@
       "baseline_unique": 219,
       "introduced": [],
       "removed": []
-    }
+    },
+    "scope": "Historical complete suite on implementation candidate compared with original main under same environment; not rerun after UI-only fixes."
   },
   "full_javascript": {
     "tests": 892,
@@ -48,7 +54,8 @@
     "baseline_same_failures": [
       "tests/grouped-cards.test.cjs:28",
       "tests/ui_material_independent.test.cjs:278"
-    ]
+    ],
+    "scope": "Historical 892-test complete suite before seven new draft tests; final targeted draft 7 + production-navigation 14 passed, not a new 899-test full run."
   },
   "precise_timeline": {
     "actual_chrome": {
@@ -70,7 +77,11 @@
     },
     "independent_vm": "independent-system-review.md"
   },
-  "formal_and_blank_instance": "To be recorded from actual post-delivery runtime, not inferred from candidate tests.",
+  "formal_and_blank_instance": {
+    "status": "passed",
+    "evidence": "publication-and-recovery.json",
+    "sensory_acceptance": "human ear and continuous aesthetics remain explicitly unclaimed"
+  },
   "responsive_timeline": {
     "overview_width_px": 1406,
     "zoom_widths_px": [
