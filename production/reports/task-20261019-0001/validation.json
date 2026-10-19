@@ -1,5 +1,5 @@
 {
-  "system_candidate": "6cdefec28ecf3330c3aa23968a92bbf988de6126",
+  "system_candidate": "8c4ce63d3c4f6c2fa120aedbb601e696016d4b8d",
   "environment": "Docker Linux amd64, FFmpeg 7.1.5/libass/Noto CJK; host Node + actual connected Chrome",
   "targeted": {
     "editing_worker_cache_recovery": {
@@ -22,6 +22,9 @@
     },
     "navigation": {
       "passed": 12
+    },
+    "production_navigation": {
+      "passed": 14
     }
   },
   "full_python": {
@@ -150,5 +153,37 @@
     "production_objects": 2324,
     "production_revisions": 2326,
     "production_files": 513
+  },
+  "timeline_click_and_follow": {
+    "browser": "actual connected default Chrome",
+    "native_clicks": {
+      "picture": "画面 · 熟客的玩笑",
+      "audio": "声音 · 熟客的玩笑 · 原片混合声音",
+      "subtitle_focus": "您昨天都陪他走了一路啦",
+      "subtitle_keyboard_start_frame": 998,
+      "red_line_hit_target": "underlying BUTTON in all three tracks"
+    },
+    "frame_view_drag": {
+      "from_frame": 1000,
+      "to_frame": 1025,
+      "delta_pixels": 100,
+      "selection_unchanged": true
+    },
+    "playback_follow": {
+      "from_frame": 2721,
+      "to_frame": 3172,
+      "from_scroll_left": 9759,
+      "to_scroll_left": 11563,
+      "viewport_width": 1406,
+      "playhead_viewport_offset": 1126
+    },
+    "paused_manual_scroll": {
+      "frame": 3174,
+      "scroll_left": 7455,
+      "remained_paused": true
+    },
+    "resumed_playback_scroll_left": 11571,
+    "independent_vm_groups": 10,
+    "independent_report": "independent-system-review.md"
   }
 }
