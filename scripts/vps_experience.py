@@ -117,7 +117,7 @@ def upload(args):
         raise ValueError('local package changed')
     run('ssh','-o','BatchMode=yes','vps', 'umask 077; mkdir -p lijizhanshe/incoming/'+identity)
     run('scp',str(ROOT/'scripts/vps_experience_remote.py'),'vps:lijizhanshe/deploy.py')
-    run('scp',str(output/'bundle.tar'),'vps:lijizhanshe/incoming/'+identity+'/bundle.tar.part')
+    run('scp','-C',str(output/'bundle.tar'),'vps:lijizhanshe/incoming/'+identity+'/bundle.tar.part')
     run('ssh','-o','BatchMode=yes','vps','mv lijizhanshe/incoming/'+identity+'/bundle.tar.part lijizhanshe/incoming/'+identity+'/bundle.tar')
     remote('stage','--publication',identity,'--sha256',receipt['package_sha256'])
 
