@@ -256,7 +256,11 @@ def main():
         args.output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n')
         print(json.dumps({'sha256': result['sha256'], 'revisions': len(result['records']), 'output': str(args.output)}))
         return
-    registry = json.loads(args.registry.read_text())
+    try:
+        from .material_model_io import read_json
+    except ImportError:
+        from material_model_io import read_json
+    registry = read_json(args.registry)
     result = apply(args.database, registry, activate_media=args.activate_media) if args.action == 'apply' else compare(args.before, args.after, registry)
     print(json.dumps(result, ensure_ascii=False))
 

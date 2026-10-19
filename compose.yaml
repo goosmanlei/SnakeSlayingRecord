@@ -7,8 +7,14 @@ services:
     environment:
       OPENAI_API_KEY: ${OPENAI_API_KEY:-}
       REVIEW_PUBLIC_ENTRY: http://127.0.0.1:3000/
+      REVIEW_OSS_CREDENTIALS_FILE: /run/project-oss.json
+      REVIEW_RESOURCE_INSTANCE: local
     volumes:
       - ./:/instance
+      - type: bind
+        source: ${REVIEW_OSS_CREDENTIALS_FILE:?Set the private project OSS credential file path}
+        target: /run/project-oss.json
+        read_only: true
     expose:
       - "8765"
     healthcheck:

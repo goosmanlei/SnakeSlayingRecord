@@ -23,7 +23,7 @@ def release_dependencies(path, manifest, root, targets):
     blockers = []
     # story_worktree/system_worktree and task IDs are provenance. Only paths
     # consumed by restart/recovery can keep their source workspace alive.
-    for name in ('previous_app', 'previous_nginx'):
+    for name in ('previous_app', 'previous_nginx', 'before'):
         runtime = manifest.get(name, {})
         if not isinstance(runtime, dict) or not isinstance(runtime.get('mounts', []), list):
             raise RuntimeError(f'Invalid recovery runtime: {path}')
@@ -91,7 +91,13 @@ def check(paths, owner=None):
                                  and Path(mount.get('Source', '/')).resolve() == root)
                 if mount.get('Source') and not formal_parent and overlaps(mount['Source'], targets):
                     blockers.append(f"container {row['Id'][:12]} {row.get('Name', '')}: {mount['Source']}")
-    for path in (root / '.runtime/service-releases').glob('*/manifest.json'):
+    release_files = list((root / '.runtime/service-releases').glob('*/manifest.json'))
+    storage = root / '.runtime/storage-releases'
+    folders = {p.parent for name in ('manifest.json', 'receipt.json', 'compose.release.json')
+               for p in storage.glob('*/' + name)}
+    for folder in sorted(folders):
+        release_files.append(folder / ('receipt.json' if (folder / 'receipt.json').is_file() else 'manifest.json'))
+    for path in release_files:
         manifest = json.loads(path.read_text())
         if not isinstance(manifest, dict):
             raise RuntimeError(f'Invalid retained release manifest: {path}')

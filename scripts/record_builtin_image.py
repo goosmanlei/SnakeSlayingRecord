@@ -42,6 +42,9 @@ def main():
     source = Path(match.group(1))
     managed = Path.home() / '.codex/generated_images'
     assert source.is_file() and not source.is_symlink() and managed.resolve() in source.resolve().parents
+    probe = json.loads(subprocess.check_output(['ffprobe', '-v', 'error', '-show_streams', '-of', 'json', str(source)]))
+    stream = probe['streams'][0]
+    assert stream['codec_name'] == 'png' and stream['width'] > 0 and stream['height'] > 0
     sha = hashlib.sha256(source.read_bytes()).hexdigest()
     destination = contained(ROOT, ROOT / 'export/assets' / (sha + '.png'))
     destination.parent.mkdir(parents=True, exist_ok=True)
@@ -49,13 +52,18 @@ def main():
     receipt_path = contained(ROOT, ROOT / 'production/receipts' / (args.id + '-builtin-complete.json'))
     receipt_path.parent.mkdir(parents=True, exist_ok=True)
     assert not receipt_path.exists(), 'do not overwrite a real tool receipt'
-    if destination.exists():
+    if (ROOT/'config/resource-storage.json').is_file():
+        try:
+            from .material_model_io import backend
+        except ImportError:
+            from material_model_io import backend
+        resources=backend('resources')
+        resources.publish_file(ROOT,destination.relative_to(ROOT).as_posix(),source,expected_sha=sha)
+        resources.freeze_catalog(ROOT,ROOT/'config/resource-catalog.json')
+    elif destination.exists():
         assert hashlib.sha256(destination.read_bytes()).hexdigest() == sha
     else:
         shutil.copyfile(source, destination)
-    probe = json.loads(subprocess.check_output(['ffprobe', '-v', 'error', '-show_streams', '-of', 'json', str(destination)]))
-    stream = probe['streams'][0]
-    assert stream['codec_name'] == 'png' and stream['width'] > 0 and stream['height'] > 0
     receipt = {'id': args.id, 'status': 'COMPLETED', 'tool': 'image_gen.imagegen',
         'completion_evidence': 'tool returned an image and the exact saved original passed decoding and SHA verification',
         'tool_surface_model': 'GPT Image', 'underlying_model_id': None, 'provider_call_id': None,

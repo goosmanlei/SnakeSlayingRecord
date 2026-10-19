@@ -1,0 +1,10 @@
+name: Resource boundary
+on: [push, pull_request]
+jobs:
+  resources:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: false
+      - run: python3 scripts/check_resource_git.py

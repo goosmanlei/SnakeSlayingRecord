@@ -6,6 +6,10 @@ import json
 from pathlib import Path
 import re
 import mimetypes
+try:
+    from .material_model_io import open_bytes, resource_path
+except ImportError:
+    from material_model_io import open_bytes, resource_path
 
 MEDIA_DIRECTORY = Path('content/production-approach-assets')
 MEDIA_MANIFEST = Path('production/seedance-handbook/demos/manifest.json')
@@ -58,10 +62,10 @@ def derive(raw, root=ROOT):
             kind = mime.split('/')[0]
             if kind not in ('image', 'audio', 'video') or path.suffix.lower() not in ('.png', '.jpg', '.jpeg', '.webp', '.mp4', '.webm', '.mp3', '.wav'):
                 raise ValueError('unsupported handbook media')
-            if bool(media[1]) != (kind == 'image') or path.parent.resolve() != root.resolve() / MEDIA_DIRECTORY or path.is_symlink() or path.parent.is_symlink() or not path.is_file():
+            if bool(media[1]) != (kind == 'image') or path.parent.resolve() != root.resolve() / MEDIA_DIRECTORY or path.is_symlink() or path.parent.is_symlink() or not resource_path(path).is_file():
                 raise ValueError('missing or invalid handbook media')
             digest = hashlib.sha256()
-            with path.open('rb') as stream:
+            with open_bytes(path) as stream:
                 for chunk in iter(lambda: stream.read(1024 * 1024), b''): digest.update(chunk)
             block = {'type': 'media', 'kind': kind, 'file': filename, 'caption': media[2], 'sha256': digest.hexdigest()}
             if kind in ('image', 'video'):
