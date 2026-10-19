@@ -306,8 +306,9 @@ def apply(args):
             else:shutil.copyfile(bundle/logical,target)
         shutil.copyfile(bundle/'manifest.json',release/'manifest.json')
         for helper in HELPERS:shutil.copyfile(bundle/helper,release/helper)
-        previous_name=name+'-before-oss-'+manifest['commits']['desk'][:10]
-        keeper='oss-write-window-'+kind+'-'+manifest['commits']['desk'][:10]
+        release_suffix=manifest['commits']['story'][:10]+'-'+manifest['commits']['desk'][:10]
+        previous_name=name+'-before-oss-'+release_suffix
+        keeper='oss-write-window-'+kind+'-'+release_suffix
         receipt={'format':'oss-runtime-cutover-v1','task':TASK,'environment':kind,'phase':'prepared',
                  'before':current_identity(before),'previous_name':previous_name,'write_window':keeper,
                  'instance':str(instance),'manifest_sha256':sha(bundle/'manifest.json'),'commits':manifest['commits'],
@@ -342,13 +343,24 @@ def apply(args):
             receipt['database_backup_sha256']=sha(release/'before.sqlite3')
             usage=control/'usage/attempts.json'
             receipt['usage_before']=sha(usage) if usage.is_file() else None
-            # Verify the current live reference closure against the candidate catalog.
+            # Freeze locally registered resources while all instance writers are
+            # stopped, preserving their exact descriptors for closure checks.
+            overlay=safe(instance/'.runtime/resources/catalog.json')
+            receipt['resource_overlay_sha256']=None
+            if overlay.exists():
+                if not overlay.is_file():raise ValueError('runtime resource catalog is not a file')
+                target=release/'.runtime/resources/catalog.json'
+                target.parent.mkdir(parents=True,exist_ok=True)
+                shutil.copyfile(overlay,target)
+                receipt['resource_overlay_sha256']=sha(target)
+                if sha(overlay)!=receipt['resource_overlay_sha256']:raise ValueError('runtime resource catalog changed during cutover')
+            # Keep the candidate separate: old instances need not have the new
+            # files, and Docker cannot create mountpoints inside a read-only bind.
             run(['docker','run','--rm','--pull','never','--network','none','--memory','256m',
                  '--mount','type=bind,source='+str(instance)+',target=/instance,readonly',
-                 '--mount','type=bind,source='+str(release/'config/resource-storage.json')+',target=/instance/config/resource-storage.json,readonly',
-                 '--mount','type=bind,source='+str(release/'config/resource-catalog.json')+',target=/instance/config/resource-catalog.json,readonly',
+                 '--mount','type=bind,source='+str(release)+',target=/candidate,readonly',
                  '--entrypoint','python',image['Id'],'-c',
-                 "from review_desk.store import Store;from review_desk.resource_bundle import closure;s=Store.open_readonly('/instance/.runtime/review.sqlite3');closure(s,'/instance');s.close()"])
+                 "from review_desk.store import Store;from review_desk.resource_bundle import closure;s=Store.open_readonly('/instance/.runtime/review.sqlite3');closure(s,'/candidate');s.close()"])
             receipt['phase']='stopped';save(release/'receipt.json',receipt)
             run(['docker','rename',before['Id'],previous_name])
             command=['docker','create','--pull','never','--name',name,'--restart',host['RestartPolicy']['Name'],'--network',host['NetworkMode']]
