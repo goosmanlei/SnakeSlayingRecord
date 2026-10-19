@@ -60,18 +60,19 @@
 
 新发布使用 `story-review-desk:current`、`:previous`、`:base` 三个固定镜像标签；准确版本和恢复继续以发布包中的镜像 ID 为准。现有标签收敛与构建规则见 [镜像发布流程](production/generation-workspaces.md#审阅台镜像的固定名称)。
 
-需要 Docker Compose、Python 3.9+ 和 FFmpeg／ffprobe。两个仓库放在同级目录；系统目录的提交必须与 [config/instance.json](config/instance.json) 一致，准确版本以该配置为准；最近正式发布依据见 [当前状态](STATE.md)。正式运行版本需同时核对镜像源码与实例挂载，不能只由配置文件推断。
+需要 Docker Compose；宿主机 CLI 使用 Python 3.12+、系统仓的 `requirements.txt` 依赖和 FFmpeg／ffprobe。两个仓库放在同级目录；系统目录的提交必须与 [config/instance.json](config/instance.json) 一致，准确版本以该配置为准；最近正式发布依据见 [当前状态](STATE.md)。正式运行版本需同时核对镜像源码与实例挂载，不能只由配置文件推断。
 
 完成本地集成后，以故事根目录为工作目录，核对同级系统版本。以下启动命令只适用于已有数据库且未使用独立发布挂载的普通实例；已有正式服务按 `STATE.md` 的发布入口恢复／重启。空实例须先按下方生产恢复入口完成恢复：
 
 ```bash
 production_system=../story-review-desk
+export REVIEW_OSS_CREDENTIALS_FILE="$HOME/.config/story-review/lijizhanshe/local.json"
 required_system=$(python3 -c 'import json; print(json.load(open("config/instance.json"))["review_desk_commit"])')
 test "$(git -C "$production_system" rev-parse HEAD)" = "$required_system"
 REVIEW_DESK_BUILD_CONTEXT="$production_system" docker compose up -d --build
 ```
 
-已有运行数据库时跳过恢复，不能用快照覆盖活库。当前 Schema 14 完整导出及发布凭据只能通过 [生产恢复入口](production/README.md#恢复) 恢复到新的空实例；旧歌曲、旧编排与旧格式重放已经退役。迁移同时保留 `config/`、`content/`、`export/` 和准确恢复索引。正式服务使用对应冻结发布包，不能用普通构建覆盖准确挂载。
+先按 [资源存储](production/resource-storage.md) 准备权限 600 的外置项目凭据；Compose 只读挂载该文件，不能把密钥值写入仓库。已有运行数据库时跳过恢复，不能用快照覆盖活库。当前 Schema 16 完整导出及发布凭据只能通过 [生产恢复入口](production/resource-storage.md#在线与离线恢复) 恢复到新的空实例；旧歌曲、旧编排与旧格式重放已经退役。迁移同时保留轻量 `config/`、`content/`、`export/`、准确恢复索引和 Git 外完整离线介质。正式服务使用对应冻结发布包，不能用普通构建覆盖准确挂载。
 
 打开 [本机审阅台](http://127.0.0.1:3000/)：Nginx 长期运行在 Docker 容器 3000 端口并代理容器内 Python 服务；Nginx 镜像与通用代理规则由审阅台仓库维护，故事仓库只保留实例 Compose 配置。主机仅绑定 `127.0.0.1:3000`。`docker compose ps` 检查状态，`docker compose restart` 重启；`restart: unless-stopped` 保证 Docker 恢复时服务随之恢复。已有 `.runtime/review.sqlite3` 时跳过 `restore`。本机与公开克隆的系统目录名统一为 `story-review-desk`，同级放置时使用 Compose 默认构建路径；系统位于其他位置时设置 `REVIEW_DESK_BUILD_CONTEXT`。不要把 3000 端口转发到公网，本服务没有公网鉴权。
 
@@ -79,7 +80,7 @@ REVIEW_DESK_BUILD_CONTEXT="$production_system" docker compose up -d --build
 
 ## 站点图标
 
-“系统管理 → 系统与 AI”可上传、选择和替换图标；点“恢复默认图标”并保存可恢复书页图标。当前图标与待保存预览分开，上传成功只登记文件，保存配置后才应用。当前设计为屋檐护着灯火，源 SVG、ICO 和 PNG 在 `export/assets/`，16／32 像素深浅背景预览在[图标设计](design/favicon/README.md)。配置与当前源 SVG 随清单校验和空库恢复；Git 另保留派生文件与渲染脚本。图样已于 2026-09-30 获用户认可。设计交付见[原交付记录](planning/favicon-delivery.md)。
+“系统管理 → 系统与 AI”可上传、选择和替换图标；点“恢复默认图标”并保存可恢复书页图标。当前图标与待保存预览分开，上传成功只登记文件，保存配置后才应用。当前设计为屋檐护着灯火，源 SVG、ICO 和 PNG 以 `export/assets/` 逻辑路径登记于私有 OSS，16／32 像素深浅背景预览在[图标设计](design/favicon/README.md)。配置与当前源 SVG 随清单校验和空库恢复；Git 保留准确资源目录与渲染脚本。图样已于 2026-09-30 获用户认可。设计交付见[原交付记录](planning/favicon-delivery.md)。
 
 ## Codex 读取与公开同步
 
@@ -92,13 +93,13 @@ PYTHONPATH=. python3 -m review_desk --instance ../SnakeSlayingRecord comments
 添加资料时准备 JSON 数组并运行 `import-sources /path/to/sources.json`；字段与 API 契约见[系统说明](https://github.com/goosmanlei/story-review-desk#数据访问与公开同步)。故事结构是“故事创作”下的子页：未选方向时提供初始方向选择；已有结构的阅读页保留版本、章节、图文圈选与浮动评论入口，移除方向回看／重选、顶部重复评论按钮和底部版本确认控件。Codex 通过 `structure-get`、`structure-review` 读取方向与意见，以 `structure-import complete.json --expected-version N` 导入完整图文稿；历史确认及 `script-input` 接口保留兼容，页面精简不自动创建确认。格式见[故事结构接口说明](https://github.com/goosmanlei/story-review-desk/blob/main/docs/story-structure.md)。每次资料、评论、配置或创作稿变化后，从系统仓库执行 `PYTHONPATH=. python3 -m review_desk --instance ../SnakeSlayingRecord export`。公开同步须按用户授权审阅全部变更后执行，例如：
 
 ```bash
-git add config/instance.json compose.yaml content export imports
-git commit -m "Sync story review data"
-git push origin main
+python3 scripts/check_resource_git.py
 ```
 
-公开推送前须审阅评论内容；推送意味着评论也会公开。`export/` 含资料、素材、评论及事件、对象修订/依赖、公开配置及事件，运行凭据与 SQLite 本机库不入仓。评论已锚定稳定对象与精确修订，资料评论仍可用 `source_id` 访问；后续创作稿沿同一账本和导出/校验/同步/恢复协议，不能仅留在本地运行库。
+然后按 [受管交付](production/generation-workspaces.md#一项任务管理两个仓库) 提交准确轻量变更、准备整组候选和交付；不要在主目录手工合并、推送或批量暂存媒体。资源读取与新 clone 恢复见 [资源存储](production/resource-storage.md)。
+
+公开推送前须审阅评论内容；推送意味着评论也会公开。`export/` 的 Schema 16 轻量清单引用准确云快照，完整保存资料、素材、评论及事件、对象修订／依赖、公开配置及事件；数据库字节、原件与运行凭据不入 Git。评论已锚定稳定对象与精确修订，资料评论仍可用 `source_id` 访问；后续创作稿沿同一账本和导出/校验/同步/恢复协议，不能仅留在本地运行库。
 
 验收记录见 [VERIFICATION.md](VERIFICATION.md)。
 
-VPS 完整体验版的包准备、全量重置、维护与失败重建入口见 [体验版发布](production/vps-experience.md)。
+VPS 完整体验版保留自身数据的代码／存储升级、维护与失败恢复入口见 [体验版发布](production/vps-experience.md)。
