@@ -51,7 +51,7 @@ python3 scripts/vps_experience.py publish --publication lijizhanshe-YYYYMMDD-rou
 python3 scripts/vps_experience.py status
 ```
 
-顺序为上传、完整校验、维护、清除、重建、内部验证、开放、清理。远端 `publish.lock` 串行保护阶段操作，`state.json` 记录准确包、提交、发布身份和实际阶段；不同身份不能越过未完成发布。上传先使用 `.part` 文件，校验失败不进入维护或删除旧版。需要真实维护页验收时，以 `upload`、`maintain`、`replace`、`verify`、`open`、`cleanup` 按上述顺序分步执行。
+顺序为上传、完整校验、维护、清除、重建、内部验证、开放、清理。远端 `publish.lock` 串行保护阶段操作，`state.json` 记录准确包、提交、发布身份和实际阶段；不同身份不能越过未完成发布。上传启用 SSH 传输压缩，原始完整包字节和摘要不变；先使用 `.part` 文件，校验失败不进入维护或删除旧版。需要真实维护页验收时，以 `upload`、`maintain`、`replace`、`verify`、`open`、`cleanup` 按上述顺序分步执行。
 
 维护页由共享 Nginx 独立提供，位于稳定的 `~/www/.lijizhanshe-control/`；所有业务入口公开返回 503，带 `Retry-After` 和禁止缓存策略。维护配置持久保存，应用、数据库不存在或机器普通重启时仍能保护前缀。Nginx 配置保持绑定文件的 inode，校验通过后平滑重载；随后有界等待旧工作进程自然退出，确认过渡结束才允许清除实例。超时保留现场和完整包，不强杀共享工作进程或其他站点的连接；恢复先查实际维护状态。平滑切换与旧请求结束的机制见 [Nginx 官方说明](https://nginx.org/en/docs/control.html)。
 

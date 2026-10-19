@@ -21,7 +21,7 @@
 
 - 本机正式服务为 `http://127.0.0.1:3000/`，正式库在主目录 `.runtime/review.sqlite3`；服务、数据库、Git和导出分别核版本。制作页、方法文件树和当前模型的维护入口集中在 [KNOWLEDGE.md](KNOWLEDGE.md)，本页不重复各旧任务的功能及测试清单。
 - 现行方法已由 task-20261013-0006／0010 完成职责调整、独立阅读、样例和正式交付；含七类Prompt约束、固定中性试声及镜内时间线，准确范围见 [方法交付](production/reports/task-20261013-0010/README.md)。这是旧任务的验证边界，不抵扣后续修改后的复验。
-- VPS最近一次已记录交付为 task-20261014-0001，完成用户要求的部署成功核验，入口 `https://leiguoguo.me/lijizhanshe/`。范围见 [部署记录](production/vps-20261014/VERIFICATION.md)，运行身份以远端 `~/lijizhanshe/state.json` 为准；本机后续制作不会自动同步到VPS。
+- VPS最近一次已记录交付为 task-20261019-0003，已将本轮素材、首集视频和成片剪辑的正式快照部署到 `https://leiguoguo.me/lijizhanshe/`，完成部署成功核验与过程资源清理；不代表业务或作品感官验收。见 [部署记录](production/reports/task-20261019-0003/README.md)，实际运行身份仍取远端 `~/lijizhanshe/state.json`；本机后续制作不会自动同步到VPS。
 - [DSH架构报告](production/reports/dsh-integration-cost-architecture.md) 与 [Higgsfield对比](production/reports/higgsfield-creation-comparison.md) 为研究成果，建议未实施，不是当前运行架构。
 
 ## 仍需独立处理的残留
