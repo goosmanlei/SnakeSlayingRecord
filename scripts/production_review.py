@@ -7,9 +7,9 @@ import shutil
 import sys
 
 try:
-    from .generation_workspace import generation_root, isolated_instance
+    from .generation_workspace import generation_root, contained, git
 except ImportError:
-    from generation_workspace import generation_root, isolated_instance
+    from generation_workspace import generation_root, contained, git
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -56,12 +56,12 @@ def complete_export_index(store, production):
 
 def verify_export_index(index, export_dir, formats):
     """Bind the small index to the exact complete bundle, including all history."""
-    from review_desk.material_content_stream import members
+    from material_model_io import framework_members as members
     from review_desk.numbering_restart import FORMAT as NUMBERING
     numbering = sorted(row['id'] for row in members(export_dir/'objects.json', 'production_current_operations')
                        if json.loads(row['result']).get('format') == NUMBERING)
     manifest = json.loads((export_dir/'manifest.json').read_text())
-    if numbering != index.get('production_numbering_epoch', []) or numbering != manifest.get('production_numbering_epoch', []):
+    if numbering != index.get('production_numbering_epoch', []) or (manifest['schema_version']!=16 and numbering != manifest.get('production_numbering_epoch', [])):
         raise ValueError('编号迁移事实与完整导出/恢复索引不一致；请从最新正式数据重新准备完整包')
     wanted = set(index['revisions'])
     found, heads = set(), {}
@@ -93,13 +93,22 @@ def main():
     commands=parser.add_subparsers(dest='command',required=True)
     q=commands.add_parser('snapshot');q.add_argument('--instance',type=Path,required=True)
     q=commands.add_parser('recover');q.add_argument('--destination',type=Path,required=True)
-    args=parser.parse_args();root=generation_root(args.workspace);sys.path.insert(0,str(args.system.resolve()))
+    args=parser.parse_args()
+    if args.command == 'snapshot':
+        root=generation_root(args.workspace)
+    else:
+        # A new ordinary clone is a valid read-only recovery source. Keep the
+        # generation/main write restriction for snapshot and production tools.
+        root=args.workspace.resolve(strict=True)
+        actual=Path(git(root,'rev-parse','--show-toplevel').decode().strip()).resolve()
+        if actual != root:raise ValueError('recovery source must be the selected repository root')
+    sys.path.insert(0,str(args.system.resolve()))
     from review_desk import production
     from review_desk.store import Store
     from review_desk.bundle import restore
     from publication_receipts import RECOVERY,restore_publication_receipts,sha,save
     manifest=json.loads((root/'export/manifest.json').read_text())
-    if manifest.get('schema_version') not in (14,15):raise ValueError('use the current production export (schema 14 or 15)')
+    if manifest.get('schema_version') not in (14,15,16):raise ValueError('use a current complete production export (schema 14, 15 or 16)')
     from review_desk.editing import FORMATS as EDITING_FORMATS
     formats=(*production.FORMATS,*EDITING_FORMATS.values())
     index_path=root/'production/audiovisual/index.json'
@@ -112,16 +121,26 @@ def main():
             print(json.dumps({'objects':len(data['heads']),'revisions':len(data['revisions']),'files':len(data['files'])}))
         finally:store.close()
         return
-    destination=isolated_instance(root,args.destination)
+    destination=contained(root,args.destination)
+    runtime=root/'.runtime'
+    if destination == runtime or not destination.is_relative_to(runtime):
+        raise ValueError('recovery destination must be a new private instance below .runtime')
     if destination.exists():raise ValueError('recovery requires a new destination; no existing database is overwritten')
     data=json.loads(index_path.read_text())
     reset_plan=root/'production/full-production-reset/plan.json'
-    if reset_plan.exists() and json.loads(reset_plan.read_text())['id'] not in data.get('candidate_reset_ids',[]):
+    from material_model_io import resource_path, read_json
+    if resource_path(reset_plan).is_file() and read_json(reset_plan)['id'] not in data.get('candidate_reset_ids',[]):
         raise ValueError('本轮旧候选已删除，拒绝旧恢复包；请使用当前零候选完整导出。')
     if data['base_manifest_sha256']!=sha(root/'export/manifest.json'):raise ValueError('production index and export differ')
     verify_export_index(data,root/'export',formats)
     destination.mkdir(parents=True)
-    for folder in ('config','content','export'):shutil.copytree(root/folder,destination/folder)
+    if manifest['schema_version']==16:
+        from review_desk.resource_bundle import copy_instance_metadata
+        copy_instance_metadata(root,destination)
+        (destination/'export').mkdir()
+        for name in ('manifest.json',*manifest['files']):shutil.copyfile(root/'export'/name,destination/'export'/name)
+    else:
+        for folder in ('config','content','export'):shutil.copytree(root/folder,destination/folder)
     (destination/RECOVERY).parent.mkdir(parents=True,exist_ok=True);shutil.copy2(root/RECOVERY,destination/RECOVERY)
     store=Store(destination/'.runtime/review.sqlite3')
     try:

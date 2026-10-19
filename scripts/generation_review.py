@@ -50,7 +50,9 @@ def initialize(root, instance):
     backup(baseline, instance / '.runtime/review.sqlite3')
     # Export validates references from this consistent snapshot. Files are copied,
     # not linked to the mutable formal instance.
-    shutil.copytree(primary / 'export/assets', instance / 'export/assets')
+    from review_desk import resources
+    if not resources.settings(root):
+        shutil.copytree(primary / 'export/assets', instance / 'export/assets')
     write_json(root, instance / '.runtime/generation-base.json', {
         'format': 'generation-review-base-v1', 'instance_id': uuid.uuid4().hex,
         'main_commit': git(primary, 'rev-parse', 'HEAD').decode().strip(),
@@ -126,7 +128,7 @@ def main():
     args = parser.parse_args()
     root = generation_root(args.workspace)
     instance = isolated_instance(root, args.instance)
-    if args.command in ('init', 'export', 'serve', 'initialize-legacy-plans'):
+    if args.command in ('init', 'export', 'serve', 'prepare', 'initialize-legacy-plans'):
         if args.system is None:
             parser.error('--system is required for the review interface')
         sys.path.insert(0, str(args.system.resolve(strict=True)))

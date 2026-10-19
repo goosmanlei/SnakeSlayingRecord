@@ -2,7 +2,14 @@
 from pathlib import Path
 from PIL import Image, ImageDraw
 import cairosvg, io, struct
-root=Path(__file__).resolve().parents[1]; source=root/'export/assets/lantern-home-favicon.svg'
+from material_model_io import resource_path
+import tempfile
+project=Path(__file__).resolve().parents[1]
+source=resource_path(project/'export/assets/lantern-home-favicon.svg')
+(project/'.runtime/favicon').mkdir(parents=True,exist_ok=True)
+root=Path(tempfile.mkdtemp(prefix='candidate-',dir=project/'.runtime/favicon'))
+(root/'design/favicon').mkdir(parents=True)
+(root/'export/assets').mkdir(parents=True)
 for size in (16,32,48,64,256):
     cairosvg.svg2png(url=str(source),write_to=str(root/f'design/favicon/favicon-{size}.png'),output_width=size,output_height=size)
 imgs=[(s,(root/f'design/favicon/favicon-{s}.png').read_bytes()) for s in (16,32,48,64,256)]
@@ -23,3 +30,5 @@ for j,bg in enumerate(('#fbfaf7','#151d24')):
         enlarged=icon.resize((128,128),Image.Resampling.NEAREST)
         canvas.paste(enlarged,(x,160),enlarged);d.text((x,306),'pixel inspection',fill=fg)
 canvas.save(root/'design/favicon/preview.png')
+
+print("Private favicon candidate: "+str(root))
