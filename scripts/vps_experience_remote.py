@@ -202,12 +202,13 @@ def check_runtime_target(target):
             info = json.loads(run('docker', 'inspect', CONTAINER))[0]
             if (info['Config'].get('Labels', {}).get('org.leiguoguo.instance') != 'lijizhanshe'
                     or not info['State']['Running'] or info['HostConfig']['NetworkMode'] != 'host'
-                    or info['Config']['Cmd'] != runtime_command(target)):
+                    or info['Config']['Cmd'] not in (runtime_command(target),
+                        [arg for arg in runtime_command(target) if arg != '--render-worker'])):
                 raise ValueError('private application port is not available for this instance') from None
 
 
 def runtime_command(target):
-    return ['python', '-m', 'review_desk', '--instance', '/instance', 'serve',
+    return ['python', '-m', 'review_desk', '--instance', '/instance', 'serve', '--render-worker',
             '--host', target['bind_host'], '--port', '8765']
 
 
