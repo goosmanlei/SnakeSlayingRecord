@@ -1,0 +1,17 @@
+{
+  "id": "seed-quota-task-20261019-0001-dialogue",
+  "model": "seed-audio-1.0",
+  "service_status": "已开通",
+  "remaining_seconds": 545.4,
+  "observed_at": "2026-10-19T08:18:04.259510+00:00",
+  "source": "Chrome https://console.volcengine.com/speech/new/experience/audio?projectName=default",
+  "observed_remaining_minutes": 11.09,
+  "observed_remaining_seconds": 665.4,
+  "prior_unknown_reserve_seconds": 120,
+  "prior_unknown_request_id": "555f10be-2760-45c6-baf8-c8177fad42b7",
+  "observation": "本轮真实页面显示11.09分钟；仍保留历史未知请求120秒预留。已有额度内最多两次补录，每次先预留120秒；不自动重试、不新增充值、订阅或透支。",
+  "additional_bounded_call": {
+    "maximum": 1,
+    "reason": "阿蘅补录01尾字在文件结束仍有较强声音，变更收声Prompt后补一次。此前2次真实用量3.28秒；沿同一额度观测和120秒预留，不重复已生效请求。"
+  }
+}

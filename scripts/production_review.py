@@ -20,7 +20,8 @@ def complete_export_index(store, production):
     Schema 6+ bundles already contain every revision. A second import replay is
     redundant and can multiply memory use by retaining all hydrated histories.
     """
-    formats = tuple(production.FORMATS)
+    from review_desk.editing import FORMATS as EDITING_FORMATS
+    formats = (*production.FORMATS, *EDITING_FORMATS.values())
     placeholders = ','.join('?' for _ in formats)
     rows = store.db.execute(
         'SELECT id,object_id,version FROM revisions WHERE '
@@ -98,13 +99,15 @@ def main():
     from review_desk.bundle import restore
     from publication_receipts import RECOVERY,restore_publication_receipts,sha,save
     manifest=json.loads((root/'export/manifest.json').read_text())
-    if manifest.get('schema_version')!=14:raise ValueError('use the current production export (schema 14)')
+    if manifest.get('schema_version') not in (14,15):raise ValueError('use the current production export (schema 14 or 15)')
+    from review_desk.editing import FORMATS as EDITING_FORMATS
+    formats=(*production.FORMATS,*EDITING_FORMATS.values())
     index_path=root/'production/audiovisual/index.json'
     if args.command=='snapshot':
         instance=args.instance if args.instance.is_absolute() else root/args.instance
         store=Store.open_readonly(instance/'.runtime/review.sqlite3')
         try:
-            data=complete_export_index(store,production);verify_export_index(data,root/'export',production.FORMATS)
+            data=complete_export_index(store,production);verify_export_index(data,root/'export',formats)
             data['base_manifest_sha256']=sha(root/'export/manifest.json');save(index_path,data)
             print(json.dumps({'objects':len(data['heads']),'revisions':len(data['revisions']),'files':len(data['files'])}))
         finally:store.close()
@@ -116,7 +119,7 @@ def main():
     if reset_plan.exists() and json.loads(reset_plan.read_text())['id'] not in data.get('candidate_reset_ids',[]):
         raise ValueError('本轮旧候选已删除，拒绝旧恢复包；请使用当前零候选完整导出。')
     if data['base_manifest_sha256']!=sha(root/'export/manifest.json'):raise ValueError('production index and export differ')
-    verify_export_index(data,root/'export',production.FORMATS)
+    verify_export_index(data,root/'export',formats)
     destination.mkdir(parents=True)
     for folder in ('config','content','export'):shutil.copytree(root/folder,destination/folder)
     (destination/RECOVERY).parent.mkdir(parents=True,exist_ok=True);shutil.copy2(root/RECOVERY,destination/RECOVERY)

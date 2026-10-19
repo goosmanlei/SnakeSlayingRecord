@@ -1,0 +1,110 @@
+{
+  "format": "episode-editing-delivery-v1",
+  "task": "task-20261019-0001",
+  "output": {
+    "object_id": "episode-film-45be567b262b13982fbf9cbb52d1f25aa8926cd4a876f66211473c5b35087557",
+    "revision_id": "f41c04998be6e5e955f64904211cca7f611dd8de7bab9a979f72b70f512fba52"
+  },
+  "project": {
+    "object_id": "edit-new26-e01",
+    "id": "1224f4faea7f74209f81597ce8a4538b03d3887afe44c9c04f3b179607b4a87d",
+    "version": 3
+  },
+  "spec": {
+    "duration_frames": 6838,
+    "fps": {
+      "den": 1,
+      "num": 24
+    },
+    "height": 720,
+    "sample_rate": 48000,
+    "width": 1280
+  },
+  "duration_seconds": 284.9166666666667,
+  "method_execution": {
+    "object_id": "method.execution.f4e9ca17563ad0035adc6b558ed9da7f7f15decf11c0a37c5747ea9c4161799a",
+    "revision_id": "7c6f70cf9f506a7efa6482e0accdd3b4610233f90adfd14ed53b4538c5e9f603"
+  },
+  "components": [
+    {
+      "bytes": 82056102,
+      "channels": 2,
+      "duration_seconds": 284.916667,
+      "file": "947257140487ccda01e4e2cf066609f07a476379a97fa3c4f48c0ec8ee1fa6fb.wav",
+      "has_audio": true,
+      "id": "mix",
+      "mime": "audio/wav",
+      "role": "original",
+      "sample_rate": 48000,
+      "sha256": "947257140487ccda01e4e2cf066609f07a476379a97fa3c4f48c0ec8ee1fa6fb"
+    },
+    {
+      "bytes": 78881906,
+      "channels": 2,
+      "duration_seconds": 284.916667,
+      "file": "1cca991e65a2cd592c4a594d6b4ab50094fd59de15c67f19e838cf58d5b4c74a.mp4",
+      "has_audio": true,
+      "height": 720,
+      "id": "clean",
+      "mime": "video/mp4",
+      "role": "original",
+      "sample_rate": 48000,
+      "sha256": "1cca991e65a2cd592c4a594d6b4ab50094fd59de15c67f19e838cf58d5b4c74a",
+      "width": 1280
+    },
+    {
+      "bytes": 79029168,
+      "channels": 2,
+      "duration_seconds": 284.916667,
+      "file": "f5f23a0ed7753cb1972025c3a21b91ff6c1979e2cf8c2d9b9999729f2fb75b3d.mp4",
+      "has_audio": true,
+      "height": 720,
+      "id": "subtitled",
+      "mime": "video/mp4",
+      "role": "original",
+      "sample_rate": 48000,
+      "sha256": "f5f23a0ed7753cb1972025c3a21b91ff6c1979e2cf8c2d9b9999729f2fb75b3d",
+      "width": 1280
+    },
+    {
+      "bytes": 57825,
+      "file": "ed8306a4842b77741bea3cad80988288647ac86e17909344fa2543db5f47bd7b.json",
+      "id": "project",
+      "mime": "application/json",
+      "role": "original",
+      "sha256": "ed8306a4842b77741bea3cad80988288647ac86e17909344fa2543db5f47bd7b"
+    },
+    {
+      "bytes": 3428,
+      "file": "dab6aaaff4849e65bc7c7e73b9644e85be6bdc20aeac73657f4bd73181daa9c9.srt",
+      "id": "subtitles",
+      "mime": "application/x-subrip",
+      "role": "original",
+      "sha256": "dab6aaaff4849e65bc7c7e73b9644e85be6bdc20aeac73657f4bd73181daa9c9"
+    },
+    {
+      "bytes": 47628,
+      "file": "f6c20ef7af02314794e3a4fd137db7df89bc62c2b46f4e824f81c39f0e453dbe.json",
+      "id": "source-map",
+      "mime": "application/json",
+      "role": "original",
+      "sha256": "f6c20ef7af02314794e3a4fd137db7df89bc62c2b46f4e824f81c39f0e453dbe"
+    }
+  ],
+  "prior_outputs": [
+    {
+      "stage": "演唱和打断样片",
+      "object_id": "episode-film-be4f66449d136b3ebc8e4343c45ac3be5680fe556ed7d74a17de525560bdea73",
+      "revision_id": "3f295f3c84cee554836e75437d82515ba5af3a2e1b036dcb51ff72d9030f7717",
+      "duration_frames": 3381
+    },
+    {
+      "stage": "全片粗剪",
+      "object_id": "episode-film-f18a89b7a6e7d3c135250f8d86752bef6cbf27c8fa163cd6095c065bf62adaa0",
+      "revision_id": "349f9ea5031e85aa4c3ea417a4d28e61cfed5e4af3d0ee2e330fc048c2d5902c",
+      "duration_frames": 6789
+    }
+  ],
+  "sensory_boundary": "实际看帧、完整解码、字幕边界、波形和响度检查；无执行者人耳或连续动态感官验收。",
+  "publication_evidence": "正式发布、最新正式导出恢复与资源清理以任务账本及本机运行回执为准。"
+}

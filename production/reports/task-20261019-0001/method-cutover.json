@@ -1,0 +1,44 @@
+{
+  "format": "managed-method-cutover-v1",
+  "task": "task-20261019-0001",
+  "wait_for_delivery": [
+    "task-20261015-0004"
+  ],
+  "reviewed_work": [
+    {
+      "task": "task-20261015-0003",
+      "status": "completed",
+      "completed_at": "2026-10-19T01:06:23.475131+08:00",
+      "work_type": "upstream-production",
+      "boundary": "本次只新增成片剪辑方法；已有冻结方法、原件、认可及评论保持准确身份。",
+      "observed_at": "2026-10-19T09:44:54.020263+00:00"
+    },
+    {
+      "task": "task-20261015-0004",
+      "status": "completed",
+      "completed_at": "2026-10-19T15:17:39.229919+08:00",
+      "work_type": "upstream-production",
+      "boundary": "本次只新增成片剪辑方法；已有冻结方法、原件、认可及评论保持准确身份。",
+      "observed_at": "2026-10-19T09:44:54.020263+00:00"
+    },
+    {
+      "task": "task-20261019-0001",
+      "status": "running",
+      "completed_at": null,
+      "work_type": "episode-editing",
+      "boundary": "本次只新增成片剪辑方法；已有冻结方法、原件、认可及评论保持准确身份。",
+      "observed_at": "2026-10-19T09:44:54.020263+00:00"
+    }
+  ],
+  "active_work_audit": {
+    "observed_at": "2026-10-19T09:44:54.020263+00:00",
+    "running_tasks": [
+      "task-20261019-0001"
+    ],
+    "boundary": "正式方法追加与服务切换沿准确冻结包，在发布锁和HTTP/worker停写窗口串行；旧执行保持原方法快照。"
+  },
+  "write_window": {
+    "preservation": "仅追加准确方法定义及绑定；比较无关行，不覆盖活库。",
+    "recovery": "保留准确旧镜像与已审核新运行环境；业务库前向恢复，不回灌旧快照。"
+  }
+}

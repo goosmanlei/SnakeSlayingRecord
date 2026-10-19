@@ -1,0 +1,47 @@
+{
+  "output_revision": "f41c04998be6e5e955f64904211cca7f611dd8de7bab9a979f72b70f512fba52",
+  "files": [
+    {
+      "component": "clean",
+      "file": "1cca991e65a2cd592c4a594d6b4ab50094fd59de15c67f19e838cf58d5b4c74a.mp4",
+      "decode_exit": 0,
+      "decoded_frames": 6838,
+      "low_motion_windows": 27,
+      "blackdetect_events": 0,
+      "loudness": {
+        "integrated_lufs": -18.0,
+        "range_lu": 17.9,
+        "true_peak_dbfs": -1.5
+      }
+    },
+    {
+      "component": "subtitled",
+      "file": "f5f23a0ed7753cb1972025c3a21b91ff6c1979e2cf8c2d9b9999729f2fb75b3d.mp4",
+      "decode_exit": 0,
+      "decoded_frames": 6838,
+      "low_motion_windows": 24,
+      "blackdetect_events": 0,
+      "loudness": {
+        "integrated_lufs": -18.0,
+        "range_lu": 17.9,
+        "true_peak_dbfs": -1.5
+      }
+    }
+  ],
+  "exact_frame_comparison": {
+    "file": "1cca991e65a2cd592c4a594d6b4ab50094fd59de15c67f19e838cf58d5b4c74a.mp4",
+    "decoded_frames": 6838,
+    "longest_exact_duplicate_run_frames": 1,
+    "duplicate_runs": [],
+    "interpretation": "Exact decoded-frame equality is separate from low-motion threshold detection."
+  },
+  "interpretation": "低运动阈值不是冻结判定。6838帧无连续完全相同帧；独立更严静止阈值未触发。独立黑帧阈值识别了开场2帧已有淡入，正文无黑场。",
+  "subtitle_boundaries": {
+    "cues": 59,
+    "distinct_frames": 235,
+    "unexpected_ink_pixels": 0,
+    "minimum_expected_ink_pixels": 385,
+    "review": "independent-film-review.md"
+  },
+  "limits": "工程和技术校验不替代真人听感、连续动态观看及用户接受。"
+}
