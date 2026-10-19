@@ -55,7 +55,12 @@ def tables(path):
 def revision_media(changes):
     media = {}
     for change in changes:
-        for component in json.loads(change['after']['payload']).get('components', []):
+        payload=json.loads(change['after']['payload'])
+        components=list(payload.get('components', []))
+        if payload.get('format') in ('episode-edit-v1','edit-snapshot-v1','episode-film-v1'):
+            project=payload if payload['format']=='episode-edit-v1' else payload['project']
+            components.extend(source['component'] for source in project['sources'])
+        for component in components:
             name = component['file']
             entry = {k: component[k] for k in ('file', 'sha256', 'bytes')}
             if name in media and media[name] != entry:

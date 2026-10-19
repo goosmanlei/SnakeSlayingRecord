@@ -226,14 +226,24 @@ def build_stable_image(root, m):
     iidfile = root / 'build-image-id'
     require(not iidfile.is_symlink(), 'build image ID must not be symlink')
     with image_tag_lock(m['story_main']):
-        pin_stable_base(m['build_base_image'])
+        if m.get('runtime_upgrade'):
+            import episode_render_runtime
+            episode_render_runtime.check_build_base(m)
+        else:
+            pin_stable_base(m['build_base_image'])
         if not iidfile.exists():
             run([DOCKER, 'build', '--pull=false', '--network=none', '--iidfile', iidfile, root / 'build'])
-        require(inspect(IMAGE_BASE, image=True)['Id'] == m['build_base_image'], 'runtime base changed during build')
+        if m.get('runtime_upgrade'):
+            episode_render_runtime.check_build_base(m)
+        else:
+            require(inspect(IMAGE_BASE, image=True)['Id'] == m['build_base_image'], 'runtime base changed during build')
         result = iidfile.read_text().strip()
         require(re.fullmatch(r'sha256:[0-9a-f]{64}', result) is not None, 'invalid build image ID; inspect interrupted build')
         image_id = inspect(result, image=True)['Id']
     source_check(image_id, m['source_hashes'])
+    if m.get('runtime_upgrade'):
+        require(episode_render_runtime.probe(image_id) == m['runtime_upgrade']['probe'],
+                'built rendering runtime differs from the frozen probe')
     return image_id
 
 
@@ -249,11 +259,17 @@ def update_image_aliases(m, image, *, recovered=False):
                 'only the verified active service may move image aliases')
         for image_id in (current_id, previous_id):
             require(inspect(image_id, image=True)['Id'] == image_id, 'release image unavailable')
+        aliases = [(IMAGE_PREVIOUS, previous_id), (IMAGE_CURRENT, current_id)]
+        if m.get('runtime_upgrade'):
+            import episode_render_runtime
+            target = episode_render_runtime.alias_target(m, recovered)
+            require(inspect(target, image=True)['Id'] == target, 'rendering base unavailable')
+            aliases.append((IMAGE_BASE, target))
         # Protect rollback first. A retry after either tag operation is safe.
-        for tag, image_id in ((IMAGE_PREVIOUS, previous_id), (IMAGE_CURRENT, current_id)):
+        for tag, image_id in aliases:
             run([DOCKER, 'tag', image_id, tag])
             require(inspect(tag, image=True)['Id'] == image_id, 'release image alias differs')
-    return {IMAGE_CURRENT: current_id, IMAGE_PREVIOUS: previous_id}
+    return dict(aliases)
 
 
 def prepare(args):

@@ -73,6 +73,10 @@ def supported(obj,revision):
     from review_desk.production_current import RECORD_KINDS
     if obj['kind'] in RECORD_KINDS:return True
     payload=json.loads(revision['payload'])
+    from review_desk.editing import FORMATS
+    if obj['kind'] in FORMATS:
+        return (payload.get('format')==FORMATS[obj['kind']] and
+                (obj['kind']=='EPISODE_EDIT' or obj['version']==revision['version']==1))
     return (obj['version']==revision['version']==1 and
             (obj['kind']=='NOTE' and payload.get('format') in ('managed-method-execution-v1','managed-method-artifact-v1') and payload.get('private') is False
              or obj['kind']=='GUIDANCE' and payload.get('format')=='comment-handling-v1'))
@@ -125,20 +129,60 @@ def build(before,after):
             'media':publication_media(changes)}
 
 def apply(db,plan,*,identity=None,media_root=None):
+    from review_desk.production_media import physical_hash_scope
+    original_factory=db.row_factory
+    try:
+        with physical_hash_scope():
+            return _apply(db,plan,identity=identity,media_root=media_root)
+    finally:
+        db.row_factory=original_factory
+        try:from .material_model_io import sqlite_compatibility
+        except ImportError:from material_model_io import sqlite_compatibility
+        sqlite_compatibility(db)
+
+
+def _apply(db,plan,*,identity=None,media_root=None):
     try:from .generation_publication import journal,publication_id,revision_media,validate_numbered_row
     except ImportError:from generation_publication import journal,publication_id,revision_media,validate_numbered_row
     from review_desk import production_current as current, production as p
     from review_desk.store import Store
-    from review_desk.production_current_bundle import validate
+    from review_desk.production_current_bundle import validate,required_assets
     from review_desk.semantic_consolidation import allows_publication_change, is_retired
     from review_desk.numbering_restart import guard_epoch
     guard_epoch(db, plan.get('numbering_baseline', []))
     if plan.get('format')!=FORMAT or set(plan.get('changes',{}))!=set(KEYS):raise ValueError('invalid current publication')
     if plan['media']!=publication_media(plan['changes']):raise ValueError('current media manifest differs')
+    # Read physical bytes before taking the publication write transaction.
+    # Inside it only stable file identities and business dependencies are checked.
+    from review_desk import editing
+    from review_desk.production_media import export_asset_path,physical_file_hash,frozen_physical_hashes
+    if media_root:
+        root=Path(media_root)
+    else:
+        root=Path(next(r[2] for r in db.execute('PRAGMA database_list') if r[1]=='main')).parent.parent
     original_factory=db.row_factory
+    preflight=Store.__new__(Store);preflight.db=db;preflight.db_path=root/'.runtime/review.sqlite3'
+    from review_desk.material_storage import row_factory
+    try:
+        preflight._material_functions();current.read_adapters(preflight)
+        db.row_factory=row_factory(preflight)
+        names=required_assets(preflight)|{c['file'] for c in plan['media']}
+        for name in names:
+            path=export_asset_path(root,name)
+            # A semantic retirement can remove a former file. The post-change
+            # validator still rejects every missing file that remains required.
+            if path.is_file():physical_file_hash(path)
+    finally:
+        db.row_factory=original_factory
+    kinds={c['after']['id']:c['after']['kind'] for c in plan['changes']['objects'] if c['after']}
+    for change in plan['changes']['revisions']:
+        row=change['after']
+        if row and kinds.get(row['object_id']) in editing.KINDS:
+            editing.verify_payload_media(root,kinds[row['object_id']],json.loads(row['payload']))
     def lookup(table,keys):
         row=db.execute('SELECT * FROM '+table+' WHERE '+' AND '.join(k+'=?' for k in KEYS[table]),keys).fetchone()
         return dict(row) if row else None
+    @frozen_physical_hashes()
     def mutate():
         db.row_factory=sqlite3.Row
         guard_epoch(db, plan.get('numbering_baseline', []))
@@ -185,7 +229,10 @@ def apply(db,plan,*,identity=None,media_root=None):
                         else:
                             components={c['id']:c for c in after['components']}
                             if any(components.get(c['id'])!=c for c in before['components']):raise ValueError('candidate original changed')
-                if old and table=='objects' and any(old[f]!=new[f] for f in ('id','kind','created_at','current_revision')):raise ValueError('current object identity changed')
+                if old and table=='objects':
+                    fixed=('id','kind','created_at') if old['kind']=='EPISODE_EDIT' else ('id','kind','created_at','current_revision')
+                    if any(old[f]!=new[f] for f in fixed):raise ValueError('current object identity changed')
+                    if old['kind']=='EPISODE_EDIT' and new['version']<=old['version']:raise ValueError('editing project head must advance')
                 if old and table=='comments' and any(old[f]!=new[f] for f in ('id','source_id','target_object_id','target_revision_id','anchor','created_at')):raise ValueError('original opinion changed')
         # A late worktree must not reintroduce old high counters in a new epoch.
         # New allocations are append-only and contiguous within each prefix.
@@ -229,7 +276,7 @@ def apply(db,plan,*,identity=None,media_root=None):
         # archived metadata from this transaction instead of rebuilding an
         # exported content index for each original being validated.
         with read_scope(store):
-            validate(store)
+            validate(store,inspect_editing=False)
         for table in ('business_codes','business_comments'):
             for change in plan['changes'][table]:validate_numbered_row(db,table,change['after'],scope,{})
         return {'contract':FORMAT,'changed_rows':{t:len(v) for t,v in plan['changes'].items()},'comment_events':events}

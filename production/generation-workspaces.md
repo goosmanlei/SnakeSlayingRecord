@@ -146,6 +146,8 @@ PYTHONPATH="$generation_system" python3 scripts/publish_generation.py --instance
 
 首次构建可从当时正式镜像初始化 `base`；已有实例也可使用下方入口从当前镜像的本机祖先初始化。以后各版均从同一基底替换审阅台源码，不再沿着上一版逐次追加历史层。初始化不会压平既有历史层；需要升级 Python、FFmpeg 或运行配置时，另行准备和核验新基底，不能直接移动标签绕过冻结包的 ID 校验。
 
+需要升级剪辑运行环境时，先按系统候选 Dockerfile 构建本任务临时镜像，再向 `material_review_release.py prepare` 显式传入 `--render-runtime 临时镜像标签`。准备阶段冻结候选镜像 ID、旧 `base` ID、Dockerfile 摘要，并实际验证 FFmpeg、中文字体、中文字幕帧边界、tini 和 worker 启动命令；构建仍使用冻结 ID，不提前移动共享标签。应用或恢复入口先核对旧基底未漂移；服务及源码核验成功后才把 `base` 更新为已准备的运行环境，保留旧 ID 用于追溯。正式发布后还须验证 worker 锁和真实渲染，不能用健康检查代替。
+
 从故事主目录执行以下入口，默认只展示计划；`--apply` 将当前及回退镜像加上固定标签，并移除指向同一镜像的旧 `ao-task-…-base`、`materials-…`、`autonomous-…` 标签。它先核验正式容器和发布包，在发布锁内操作，不删除镜像、不重启服务、不修改数据库：
 
 ```bash
@@ -172,7 +174,7 @@ python3 scripts/production_review.py --system "$generation_system" recover \
   --destination .runtime/generation/published-recovery
 ```
 
-`export` 和 `snapshot` 只改当前 worktree 的受管交付文件；核对恢复后的准确版本、历史评论和文件哈希，再提交导出并合入主干。Schema 14 完整导出保存故事与方法历史、制作当前内容及候选提交快照，`snapshot` 写出 `production-export-index-v1` 索引，绑定准确历史身份、原件和导出清单，不再生成重复的正文重放批次；退役素材版本的旧恢复包明确拒绝。索引与清单或历史不一致时拒绝恢复。
+`export` 和 `snapshot` 只改当前 worktree 的受管交付文件；核对恢复后的准确版本、历史评论和文件哈希，再提交导出并合入主干。Schema 15 完整导出保存故事与方法历史、制作当前内容及候选提交快照，以及集级工程、不可变剪辑快照、成片和准确范围评论；不含剪辑对象的 Schema 14 包仍可兼容恢复，`snapshot` 写出 `production-export-index-v1` 索引，绑定准确历史身份、原件和导出清单，不再生成重复的正文重放批次；退役素材版本的旧恢复包明确拒绝。索引与清单或历史不一致时拒绝恢复。
 
 `export/material-content.json`、`export/objects.json`、`export/assets/*`及`.gitattributes`列明的发布包使用Git LFS保存实际文件。新克隆先执行 `git lfs pull`，取得当前提交需要的全部LFS对象，再核验清单和恢复；不能把Git中的LFS指针当作媒体、发布包、内容图或完整对象历史。交付时核对实际文件与指针的 SHA256、大小及远端原件回读。受控 Git 交付与 LFS 原件上传均须成功，不能只确认分支指针。
 

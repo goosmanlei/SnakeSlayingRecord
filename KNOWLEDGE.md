@@ -38,6 +38,7 @@
 | 准确原件与选择 | 输入固定真实候选和完整原件组成，浏览或第一份结果不代表选择、认可或采用。当前取消只清对应输入选择；新候选不漂移旧提交。已有合格原件按准确身份和用途复用，不因同需求编号误判循环。见 [参考选择](production/reference-selection/VERIFICATION.md)、[完整原件与取消](production/reference-card-compact/VERIFICATION.md) |
 | 视频起点与跨镜连续性 | 起点容纳首个必要动作，地点／人物／持物／阶段变化须结束旧条件；首图祖先不自动上传，音色不代替视觉身份，后入场、画外声与结束形态各有职责。见 [本轮复审](production/rebuild/REVIEW.md)、[视频编写](production/video-prompt-rewrite/VERIFICATION.md)；实际执行再取最新准确方案 |
 | 可读字层与声音 | 字层先定准确字稿和显露阶段，同页进度优先复用可编辑源；静图正确不等于运动可读。人物音色按统一中性稿比较，角色实际表演另验；完整歌曲、哼唱、省段和短参考各自判断。具体方法在当前准确方法包，曲目交接见 [歌曲](production/songs-review.md) |
+| 集级剪辑与成片 | 每集一个可编辑工程、多个不可变成片，片段入出点与时间线位置分开，准确原件不覆盖。唯一方法正文为 `content/episode-editing-method.json`，通用工程／worker／页面契约见系统仓 `docs/episode-editing.md`；首集剪辑和感官边界见 [成片交付](production/reports/task-20261019-0001/README.md) |
 
 ## 生成工具与规格
 
@@ -55,7 +56,7 @@
 
 ## 审阅与系统开发入口
 
-前台承担阅读、评论、明确采纳和准确选择，后台承担编制、导入、登记与生成；内部日志不进入创作正文。当前主导航为制作思路、故事创作、生产制作、系统管理。生产制作含视听、实体和素材三页，故事剧本保留准确来源回查。
+前台承担阅读、评论、明确采纳和准确选择，后台承担编制、导入、登记与生成；内部日志不进入创作正文。当前主导航为制作思路、故事创作、生产制作、系统管理。生产制作含视听、实体、素材和成片剪辑四页，沿用共用平铺筛选与配色，故事剧本保留准确来源回查。
 
 | 修改对象 | 先核对的契约与实例证据 |
 | --- | --- |
@@ -70,7 +71,7 @@
 
 ## 数据权威、发布与恢复
 
-- 正式库是运行权威，`export/` 是受管快照。当前 Schema 14保存故事与方法历史、制作当前稿、候选准确提交、评论原摘录与回应及必要发布事实；旧制作全文链和专属版本索引不进入常规恢复。恢复只能到新空实例，沿 `scripts/production_review.py recover`、`production/audiovisual/index.json`、`production/audiovisual/recovery.json` 和完整 `export/manifest.json`。
+- 正式库是运行权威，`export/` 是受管快照。Schema 15在故事与方法历史、制作当前稿、候选准确提交、评论及必要发布事实之外，保存集级工程、不可变渲染快照、成片和准确来源；私有渲染队列及进程状态不导出。不含剪辑对象的 Schema 14旧完整包仍兼容。旧制作全文链和专属版本索引不进入常规恢复。恢复只能到新空实例，沿 `scripts/production_review.py recover`、`production/audiovisual/index.json`、`production/audiovisual/recovery.json` 和完整 `export/manifest.json`。
 - 正式写入须按 [工作区流程](production/generation-workspaces.md#合并与正式发布) 的实际锁、容器身份和停服顺序执行，不能只依赖宿主与 Docker Desktop 之间的SQLite文件锁。发布幂等记录与其他任务新评论必须保全，旧基线拒绝重放；完整导出从发布后最新正式数据产生。
 - `export/material-content.json`、`export/objects.json`、`export/assets/*`及`.gitattributes`列明的发布包使用Git LFS，实际内容、指针、哈希和所需远端原件分别核验。旧素材归档配方退役前须保留真实逻辑字节或相同保留组成；操作沿工作区流程。
 - 正式镜像仅用 `story-review-desk:current`、`:previous`、`:base`，Compose和候选固定准确ID；任务可建可识别临时镜像。镜像/容器的清理、挂载守卫与历史路径处理见 [结项清理](production/generation-workspaces.md#结项清理)。清单记录构建来源不要求原工作区永存；服务回退不等于数据回退。

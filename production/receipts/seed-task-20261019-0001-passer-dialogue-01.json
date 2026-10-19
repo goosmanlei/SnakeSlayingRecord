@@ -1,0 +1,76 @@
+{
+  "id": "task-20261019-0001-passer-dialogue-01",
+  "status": "completed",
+  "request_id": "6dd3bbd3-1947-4e9d-a1f6-00601a4b8825",
+  "quota_id": "seed-quota-task-20261019-0001-dialogue",
+  "production_submission": {
+    "call_id": "call-task-20261019-0001-passer-dialogue-01",
+    "submission_sha256": "a1e704532c3c3b8a74c26f1e971f2f47a643985acf5e2276993b1d36ba8054ad",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "submitted_at": "2026-10-19T08:21:42.557995+00:00",
+  "endpoint": "https://openspeech.bytedance.com/api/v3/tts/create",
+  "input": {
+    "model": "seed-audio-1.0",
+    "text_prompt": "参考@音频1的成年男性音色。路人在明亮普通的河街经过檐下，低声、简短而礼貌地招呼一声，不恐惧、不宣讲。在[0.2s:1.0s]只说一次：“赵执事。”其中执读 zhí，事读 shì，不能说管事、取事、祭师。保留短句完整尾音和自然收声。\n独立单人普通话近声干录音，不加入水声、街声、脚步、音乐、回声或其他说话声，不念说明，不增删、重复或改写台词。无需演唱。",
+    "audio_config": {
+      "format": "wav",
+      "sample_rate": 48000,
+      "pitch_rate": 0,
+      "speech_rate": 0,
+      "loudness_rate": 0,
+      "enable_subtitle": true
+    },
+    "watermark": {},
+    "references": [
+      {
+        "file": "export/assets/7eeefb9ded074023b859e15ec43ecbf861bb428a4b8559624578b74ade2f1875.wav",
+        "sha256": "7eeefb9ded074023b859e15ec43ecbf861bb428a4b8559624578b74ade2f1875",
+        "duration_seconds": 9.8,
+        "reference_number": 1
+      }
+    ]
+  },
+  "input_sha256": "1faec15884f64266daed1d74da6155e2335c0c27c47d24d6cdf8faa5ca5056a4",
+  "remaining_before_seconds": 545.4,
+  "reserved_seconds": 120,
+  "log_id": "20261019162142931B0663201EF86E6091",
+  "original_duration": 1,
+  "duration": 1,
+  "subtitle": {
+    "sentences": [
+      {
+        "end_time": 960,
+        "start_time": 400,
+        "text": "赵执事。",
+        "words": [
+          {
+            "end_time": 480,
+            "start_time": 400,
+            "text": "赵"
+          },
+          {
+            "end_time": 760,
+            "start_time": 720,
+            "text": "执"
+          },
+          {
+            "end_time": 960,
+            "start_time": 880,
+            "text": "事"
+          },
+          {
+            "end_time": 960,
+            "start_time": 960,
+            "text": "。"
+          }
+        ]
+      }
+    ],
+    "text": "赵执事。"
+  },
+  "file": "export/assets/b3f9d1143061736f2be71f15daec7eab4f1078a75b327e336f0fa4b122628dff.wav",
+  "sha256": "b3f9d1143061736f2be71f15daec7eab4f1078a75b327e336f0fa4b122628dff",
+  "bytes": 192044
+}

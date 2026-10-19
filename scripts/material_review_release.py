@@ -331,10 +331,18 @@ def prepare(a):
     for line in git(system,'ls-tree','-r',a.system_candidate,'--','review_desk').splitlines():
         header,name=line.split('\t',1);require(header.split()[0] in ('100644','100755'),'special source file')
         raw=base.git_file(system,a.system_candidate,name);put('build/'+name,raw);source[name]=sha(raw)
-    policy=base.stable_image_policy(app['Image'])
+    if getattr(a, 'render_runtime', None):
+        import episode_render_runtime
+        raw=base.git_file(system,a.system_candidate,'Dockerfile')
+        put('runtime/Dockerfile',raw)
+        policy=episode_render_runtime.prepare(app['Image'],a.render_runtime,sha(raw))
+    else:
+        policy=base.stable_image_policy(app['Image'])
     tag=policy['base_image_tag']
-    put('build/Dockerfile',('FROM '+tag+'\nRUN rm -rf /app/review_desk\nCOPY review_desk /app/review_desk\nLABEL org.opencontainers.image.revision='+a.system_candidate+'\n').encode())
+    build_tag=policy.get('runtime_upgrade',{}).get('tag',tag)
+    put('build/Dockerfile',('FROM '+build_tag+'\nRUN rm -rf /app/review_desk\nCOPY review_desk /app/review_desk\nLABEL org.opencontainers.image.revision='+a.system_candidate+'\n').encode())
     helpers=['material_review_release.py','autonomous_optimization_release.py','integrate_generation_review_system.py']
+    if policy.get('runtime_upgrade'):helpers.append('episode_render_runtime.py')
     if managed_methods:helpers.append('method_migration.py')
     if history_cleanup:helpers.append('method_history_cleanup.py')
     if native:helpers.append('task_repository_delivery.py')
@@ -378,6 +386,9 @@ def load_bundle(path):
         require(not Path(rel).is_absolute() and '..' not in Path(rel).parts,'invalid package path');require(sha((root/rel).read_bytes())==value,'bundle changed: '+rel)
     require(sha(Path(__file__).read_bytes())==m['hashes']['helpers/material_review_release.py'],'wrapper changed')
     require(sha(Path(base.__file__).read_bytes())==m['hashes']['helpers/autonomous_optimization_release.py'],'runtime helper changed')
+    if m.get('runtime_upgrade'):
+        import episode_render_runtime
+        require(sha(Path(episode_render_runtime.__file__).read_bytes())==m['hashes']['helpers/episode_render_runtime.py'],'render runtime helper changed')
     if m.get('task_delivery'):
         import task_repository_delivery
         require(sha(Path(task_repository_delivery.__file__).read_bytes())==m['hashes']['helpers/task_repository_delivery.py'],'task adapter changed')
@@ -522,6 +533,8 @@ def install(root,m,image):
     for name in (*base.INSTANCE_FILES,*m.get('instance_overlays',[]),*m.get('method_media',{})):base.write_once(release/'instance'/name,(root/'instance'/name).read_bytes())
     for name in ('manifest.json','image.json'):base.write_once(release/name,(root/name).read_bytes())
     for name in ('material_review_release.py','autonomous_optimization_release.py'):base.write_once(release/name,(root/'helpers'/name).read_bytes())
+    if m.get('runtime_upgrade'):
+        base.write_once(release/'episode_render_runtime.py',(root/'helpers/episode_render_runtime.py').read_bytes())
     save(release/'compose.release.json',base.compose_definition(m,image,release))
     save(release/'README.json',{'purpose':'Permanent immutable config and approach mounts; live DB/assets stay on /instance. Never restore the before database.','restart':['python3','material_review_release.py','restart','--release','.','--apply']})
     return release
@@ -536,6 +549,9 @@ def authorized(a):
 def apply(a):
     root,m=authorized(a)
     with base.publication_locks(m):
+        if m.get('runtime_upgrade'):
+            import episode_render_runtime
+            episode_render_runtime.alias_target(m, False)
         image=checks(root,m,live=False);receipt=root/'run';receipt.mkdir(exist_ok=True)
         release=Path(m['story_main'])/'.runtime/service-releases'/m['release_name']
         current=inspect(base.APP);candidate_mounts={v['target']:(v['source'],not v['read_only']) for v in base.compose_definition(m,image,release)['services']['app']['volumes']}
@@ -690,6 +706,9 @@ def apply(a):
 def recover(a):
     root,m=authorized(a);image=read(root/'image.json');release=Path(m['story_main'])/'.runtime/service-releases'/m['release_name']
     with base.publication_locks(m):
+        if m.get('runtime_upgrade'):
+            import episode_render_runtime
+            episode_render_runtime.alias_target(m, True)
         require(not m.get('method_history_cleanup'), 'method history was explicitly cleared: recover forward; never restore old method data')
         require(not m.get('material_version_removal'), 'material versions were physically removed: recover forward with schema 14; do not restore removed data')
         require(not m.get('production_current'), 'current production: recover forward with the exact compatible package; never restart a version-chain writer or restore the retired database')
@@ -762,6 +781,7 @@ def main():
     p=argparse.ArgumentParser(description=__doc__);sub=p.add_subparsers(dest='command',required=True)
     q=sub.add_parser('prepare');q.add_argument('--story-worktree',type=Path,default=Path(__file__).resolve().parents[1]);q.add_argument('--system-worktree',type=Path,required=True);q.add_argument('--bundle',type=Path,required=True)
     q.add_argument('--task',default=TASK);q.add_argument('--push-system',action='store_true')
+    q.add_argument('--render-runtime',help='explicit prebuilt local runtime candidate; freeze FFmpeg/font/worker probe and upgrade the base only after verified publication')
     q.add_argument('--read-only-system',action='store_true',help='task 0010: integrate only the primary story repository and reuse unchanged system main')
     q.add_argument('--audiovisual-package',type=Path);q.add_argument('--latest-registry',type=Path)
     q.add_argument('--relations-package',type=Path)
