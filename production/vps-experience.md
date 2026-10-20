@@ -40,6 +40,39 @@ AI 出网按用户 2026-10-09 的明确要求使用 VPS 自身 Xray 回环 HTTP 
 
 已接入 OSS 的实例使用 `oss_runtime_release.py`。旧 `vps_experience.py` 全量重置入口只适用于历史未迁移实例；它不能用于更新当前体验库。原全量发布的回执仍保留原义，不作为本次存储升级步骤。
 
+### 明确授权同步本机完整状态
+
+仅在用户明确允许替换 VPS 体验数据及其独立修改时，使用 `scripts/oss_snapshot_release.py`。它与保留数据的代码升级分开：本机正式应用不停服，在同一 Docker 文件系统的发布锁和 HTTP 写入锁内取得一致快照及实际生效的配置、方法和准确资源目录；远端先向独立空库恢复全部业务表，验证准确云资源和生产语义，再进入维护窗口切换。它复用 Schema 16 的语义验证及空库事务安装器，传输包为 `oss-experience-snapshot-v1`，不冒充已有导出清单。
+
+从已提交、已准备的任务候选执行，`PUBLICATION` 必须是本次唯一的 `lijizhanshe-...` 身份，`SNAPSHOT_OUTPUT` 是当前任务 `.runtime/` 下的新目录：
+
+```bash
+python3 scripts/oss_snapshot_release.py prepare \
+  --story "$STORY_WORKTREE" --desk "$READONLY_DESK_SOURCE" \
+  --formal "$FORMAL_STORY_ROOT" --publication "$PUBLICATION" \
+  --output "$SNAPSHOT_OUTPUT"
+```
+
+准备器复用已核验源码的正式镜像；当前版本要求 VPS 已有镜像与冻结镜像的配置和有序层身份相同，若系统版本不一致则在旧实例仍运行时拒绝，先沿代码升级流程完成所需镜像准备。包内不含凭据、调用计数或私有渲染队列。将输出的 `.tar.gz` 和三份已提交 helper 沿既有 SSH `vps` 传到 `~/lijizhanshe/incoming/$PUBLICATION/`；压缩包先用 `.part` 名接收，完成后核对准备回执 SHA256 才改为 `bundle.tar.gz`。运行脚本置于本次 incoming 目录，不覆盖永久发布入口。
+
+在 VPS 使用该目录的 `oss_snapshot_release.py` 依次执行以下命令；`SNAPSHOT_RELEASE` 取 stage 的真实输出。stage 检查压缩包摘要、成员路径、数量和解压大小，以及新旧实例、缓存和恢复的磁盘预算。restore 的实际日志在 release 的 `restore.log`，资源校验和恢复可能耗时，但旧服务保持可用。
+
+```bash
+python3 "$SNAPSHOT_SCRIPT" stage --publication "$PUBLICATION" \
+  --archive "$HOME/lijizhanshe/incoming/$PUBLICATION/bundle.tar.gz" \
+  --sha256 "$SNAPSHOT_SHA256"
+python3 "$SNAPSHOT_SCRIPT" restore --release "$SNAPSHOT_RELEASE"
+# 主项目受管 _deliver 完成后才实际切换。
+python3 "$SNAPSHOT_SCRIPT" apply --release "$SNAPSHOT_RELEASE" --replace-experience-data
+python3 "$SNAPSHOT_SCRIPT" finalize --release "$SNAPSHOT_RELEASE"
+```
+
+所有远端命令持 `publish.lock`。切换保留原实例目录、原容器及控制记录，保护共享服务、外置凭据和 `usage/attempts.json`，赋予新业务发布身份并核对旧标签写入保护。维护覆盖整个业务前缀，开放前核对完整业务表及运行身份。`status --release ...` 查询准确阶段；restoring 或 restore-failed 时先查真实进程／容器及日志，确认已结束才能对同一 release 重新 restore，非空且非准确已完成的目标仍拒绝。未开放切换失败可 `rollback --release ...` 回原实例；`opening` 或 `open` 可能已有新写入，仅可 `resume --release ...` 核对并继续开放，再 finalize，不自动倒灌旧数据。
+
+`state.json` 和 `storage-runtime.json` 继续承担永久运行身份，记录新完整发布及准确提交；旧全量工具的 OSS 保护保持有效。用户接受及回退用途解除前保留 release 内的 `previous-instance`、旧容器和 `before-control`；完成后按准确归属清理，禁止全局删除。具体保留责任、数量及解除条件由原任务回执维护。task-20261020-0004 的范围见 [本次完整部署](../planning/vps-latest-deployment-20261020-task.md)。
+
+### 保留数据的发布命令
+
 双仓受管集成前先提交候选、固定系统 pin，构建 `linux/amd64` 镜像，并在镜像标签 `org.opencontainers.image.revision` 写系统准确提交。以下变量均指本次已核验的任务路径与镜像，不包含凭据值：
 
 ```bash
