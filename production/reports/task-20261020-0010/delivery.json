@@ -1,0 +1,166 @@
+{
+  "format": "continuity-film-delivery-v1",
+  "task": "task-20261020-0010",
+  "baseline": {
+    "object_id": "episode-film-772dde74be0ec9803315b25aa301766c0fc4e6ab0349bafca173fee9f4a021b7",
+    "revision_id": "940f53c6463d722f1adf548331b629bc44d9690a6613b2d880346f4f6c37eedc"
+  },
+  "output": {
+    "object_id": "episode-film-6628bfc3e4d7747df9c290a6f6fbe7491cfc14ccd9dabd2fe908f2d498c44a3d",
+    "revision_id": "aec9f8a181da76fdc922c40ea1e99371a55eaed5e6990884dbcc22480b99911f"
+  },
+  "display_version": 7,
+  "project": {
+    "object_id": "edit-new26-e01",
+    "revision_id": "45ababe404ae01d243f45e8322620b5610f778efb4b3d1d2412328ada148dd8a",
+    "version": 10
+  },
+  "snapshot": {
+    "object_id": "edit-snapshot-6628bfc3e4d7747df9c290a6f6fbe7491cfc14ccd9dabd2fe908f2d498c44a3d",
+    "revision_id": "fadc196fb387b80cb13b07b90a5b018449edc5258c7568700ada5175a086dd14"
+  },
+  "spec": {
+    "duration_frames": 6946,
+    "fps": {
+      "den": 1,
+      "num": 24
+    },
+    "height": 720,
+    "sample_rate": 48000,
+    "width": 1280
+  },
+  "components": [
+    {
+      "bytes": 83352102,
+      "channels": 2,
+      "duration_seconds": 289.416667,
+      "file": "8f06a3278a449d40cb5e53d111d9cf4f7d3933e45f5e5ff67199329b070436e7.wav",
+      "has_audio": true,
+      "id": "mix",
+      "mime": "audio/wav",
+      "role": "original",
+      "sample_rate": 48000,
+      "sha256": "8f06a3278a449d40cb5e53d111d9cf4f7d3933e45f5e5ff67199329b070436e7"
+    },
+    {
+      "bytes": 81275310,
+      "channels": 2,
+      "duration_seconds": 289.416667,
+      "file": "a8ff3f8ca4ab0276238417773424fac3a0eece63792038783f1ffedcf660bc75.mp4",
+      "has_audio": true,
+      "height": 720,
+      "id": "clean",
+      "mime": "video/mp4",
+      "role": "original",
+      "sample_rate": 48000,
+      "sha256": "a8ff3f8ca4ab0276238417773424fac3a0eece63792038783f1ffedcf660bc75",
+      "width": 1280
+    },
+    {
+      "bytes": 81417595,
+      "channels": 2,
+      "duration_seconds": 289.416667,
+      "file": "22ed3889c80036ad6fb82fdbee0fc0c663537b00508614db4fa6dbefae01bfe1.mp4",
+      "has_audio": true,
+      "height": 720,
+      "id": "subtitled",
+      "mime": "video/mp4",
+      "role": "original",
+      "sample_rate": 48000,
+      "sha256": "22ed3889c80036ad6fb82fdbee0fc0c663537b00508614db4fa6dbefae01bfe1",
+      "width": 1280
+    },
+    {
+      "bytes": 128948,
+      "file": "d7addb5fe1351596d187b9b17fd24423852f1a6e7f93c22c6f008f126ac2cba9.json",
+      "id": "project",
+      "mime": "application/json",
+      "role": "original",
+      "sha256": "d7addb5fe1351596d187b9b17fd24423852f1a6e7f93c22c6f008f126ac2cba9"
+    },
+    {
+      "bytes": 3428,
+      "file": "c1cf94c8fd927b44858728fed528e51536f4e07cd184b4d5af9bbd4789040193.srt",
+      "id": "subtitles",
+      "mime": "application/x-subrip",
+      "role": "original",
+      "sha256": "c1cf94c8fd927b44858728fed528e51536f4e07cd184b4d5af9bbd4789040193"
+    },
+    {
+      "bytes": 47046,
+      "file": "cdf1cb1a4eaea3cd8d6039198968e35cff7f23408ffbd89a704be9e9e98f1fdf.json",
+      "id": "source-map",
+      "mime": "application/json",
+      "role": "original",
+      "sha256": "cdf1cb1a4eaea3cd8d6039198968e35cff7f23408ffbd89a704be9e9e98f1fdf"
+    }
+  ],
+  "component_parity": {
+    "mix": {
+      "new_sha256": "8f06a3278a449d40cb5e53d111d9cf4f7d3933e45f5e5ff67199329b070436e7",
+      "baseline_sha256": "8f06a3278a449d40cb5e53d111d9cf4f7d3933e45f5e5ff67199329b070436e7",
+      "byte_identical": true,
+      "bytes": 83352102
+    },
+    "subtitles": {
+      "new_sha256": "c1cf94c8fd927b44858728fed528e51536f4e07cd184b4d5af9bbd4789040193",
+      "baseline_sha256": "c1cf94c8fd927b44858728fed528e51536f4e07cd184b4d5af9bbd4789040193",
+      "byte_identical": true,
+      "bytes": 3428
+    },
+    "clean": {
+      "new_sha256": "a8ff3f8ca4ab0276238417773424fac3a0eece63792038783f1ffedcf660bc75",
+      "baseline_sha256": "c0f4efdbccc4c12956975348f1b9dcc0299c98712517f7dbecce11e2a11f631d",
+      "byte_identical": false,
+      "bytes": 81275310
+    },
+    "subtitled": {
+      "new_sha256": "22ed3889c80036ad6fb82fdbee0fc0c663537b00508614db4fa6dbefae01bfe1",
+      "baseline_sha256": "150db8ea43da0ae37ba15c64b4ffbd3c5ca5ed1764d56bc157bd83b56818038c",
+      "byte_identical": false,
+      "bytes": 81417595
+    }
+  },
+  "comparison": {
+    "record": {
+      "object_id": "asset-task-20261020-0010-q07-continuity-review",
+      "revision_id": "e1ae1521a0d4ce3cf273c8d18e663e875f84d477812bde114f2fd6101ec90269"
+    },
+    "component_sha256": {
+      "before": "8209d0c34985d1e3d8b46930c3b1c2294759855e6942b94cff4a85bbf5693d5f",
+      "after": "a7d28c98bd8a52e5e4dd708c6935e5f3eecaea4c0de527cd28f6f5fc91455398"
+    },
+    "frames": 938,
+    "duration_seconds": 39.083333333333336,
+    "remote": "both exact versions fully streamed and SHA256 verified",
+    "scope": "technical readback; browser playback and visual judgment recorded separately"
+  },
+  "change": {
+    "clip_id": "s002-q07-1",
+    "source_frames": [
+      0,
+      288
+    ],
+    "timeline_frames": [
+      5815,
+      6103
+    ],
+    "crop": {
+      "x": 320,
+      "y": 0,
+      "width": 960,
+      "height": 540
+    },
+    "output_width": 1280,
+    "output_height": 720
+  },
+  "verification": {
+    "source_frame_review": "20 full-source contact sheets at 2 fps; q07 crop inspected through all 24 frames",
+    "join_visual_review": 21,
+    "whole_scenes": 2,
+    "browser": "isolated Chrome, both film variants and both comparison videos played at rate 1 to ended",
+    "direct_hearing": "not completed by executor; unreliable auxiliary transcripts rejected",
+    "user_acceptance": "version6 accepted in task0007; version7 not yet accepted",
+    "publication": "separate managed task results; this file is not a formal publication receipt"
+  }
+}

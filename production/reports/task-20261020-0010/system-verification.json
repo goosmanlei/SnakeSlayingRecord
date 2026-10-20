@@ -1,0 +1,226 @@
+{
+  "task": "task-20261020-0010",
+  "phase": "candidate verification; formal and recovery recorded separately",
+  "desk_candidate": "ea18c148636486cd897a71d7045183f5c14fc3d8",
+  "tests": {
+    "desk_related": {
+      "run": 51,
+      "result": "passed",
+      "includes_new_method_check_tests": 11
+    },
+    "primary_stage_recovery": {
+      "run": 12,
+      "result": "passed"
+    },
+    "full_related_suite": {
+      "run": 63,
+      "result": "failed",
+      "errors": 11,
+      "known_baseline_failure_parity": true,
+      "baseline": "4eb4a9ddee541aad0b64d315f023c0021613220a",
+      "scope": "test_method_media retired fixtures violate existing content and method gates"
+    },
+    "publication_preparation": {
+      "result": "passed",
+      "ordinary_builder_exact_parity": true,
+      "existing_current_publication_tests": 6,
+      "final_rehearsal_publication_id": "ee37aa314ffedb69afc936faa021853266d851bb6d80e28102067e9e3d26bd4f",
+      "exact_changed_rows": {
+        "objects": 996,
+        "revisions": 996,
+        "dependencies": 2947,
+        "comments": 0,
+        "material_content": 0,
+        "material_archive_files": 0,
+        "material_aliases": 0,
+        "business_codes": 1,
+        "business_comments": 0,
+        "business_relations": 0,
+        "business_relation_aliases": 0,
+        "audiovisual_notes": 0,
+        "production_current_records": 112,
+        "production_submissions": 1,
+        "production_candidates": 1,
+        "production_candidate_targets": 1,
+        "production_comment_quotes": 0,
+        "production_current_operations": 0,
+        "production_response_excerpts": 0
+      },
+      "all_unrelated_tables_exact": true,
+      "formal_database_written": false
+    }
+  },
+  "real_isolated_cases": [
+    {
+      "name": "missing-neighbor-and-exact-restore",
+      "restored_source_verified": true,
+      "old_blocked_artifact_remains_blocked": true,
+      "missing": [
+        "asset-task-20261015-0004-s002-q08-02@e8df4d26e5f24fff5d7de8c1e26c3ac658b6c02063b40bd42d44698947f4292b sha256=4592737c7d2fe8830cf924e28f2bc5adbec32eba12c9013cba440f802d481861"
+      ]
+    },
+    {
+      "name": "replace-exact-M017-candidate-in-isolation",
+      "local_stale": [
+        "join-01",
+        "join-02"
+      ],
+      "final_mix_stale": [
+        "join-01",
+        "join-02",
+        "join-03",
+        "join-04",
+        "join-05",
+        "join-06",
+        "join-07",
+        "join-08",
+        "join-09",
+        "join-10",
+        "join-11",
+        "join-12",
+        "join-13",
+        "join-14",
+        "join-15",
+        "join-16",
+        "join-17",
+        "join-18",
+        "join-19",
+        "join-20",
+        "join-21"
+      ],
+      "write_guard": "stale write rejected"
+    },
+    {
+      "name": "shift-q08-first-segment-in-and-out-one-frame",
+      "local_stale": [
+        "join-17",
+        "join-18"
+      ],
+      "final_mix_stale": [
+        "join-17",
+        "join-18"
+      ],
+      "write_guard": "stale write rejected"
+    },
+    {
+      "name": "swap-adjacent-picture-clips-in-isolation",
+      "local_stale": [
+        "join-15",
+        "join-16",
+        "join-17"
+      ],
+      "final_mix_stale": [
+        "join-15",
+        "join-16",
+        "join-17"
+      ],
+      "write_guard": "stale write rejected"
+    },
+    {
+      "name": "change-actual-ADR-gain",
+      "local_stale": [
+        "join-18",
+        "join-19"
+      ],
+      "final_mix_stale": [
+        "join-01",
+        "join-02",
+        "join-03",
+        "join-04",
+        "join-05",
+        "join-06",
+        "join-07",
+        "join-08",
+        "join-09",
+        "join-10",
+        "join-11",
+        "join-12",
+        "join-13",
+        "join-14",
+        "join-15",
+        "join-16",
+        "join-17",
+        "join-18",
+        "join-19",
+        "join-20",
+        "join-21"
+      ],
+      "write_guard": "stale write rejected"
+    },
+    {
+      "name": "unrelated-editorial-note",
+      "local_stale": [],
+      "final_mix_stale": [],
+      "write_guard": "valid"
+    }
+  ],
+  "current_content_contract": {
+    "environment": ".runtime/continuity/isolated-scenarios",
+    "reference": {
+      "object_id": "new26-s017-q01",
+      "revision_id": "ccc402014358359821523635f1fd0373ea393a11d46c0e38b04f8f1575a0e70b"
+    },
+    "initial_guard": {
+      "edit_token": 2,
+      "content_sha256": "0689154fa9407349f1553baa1d18ab1b4b48d6122e07b74db290fbf784fb9e5d"
+    },
+    "artifact": {
+      "object_id": "method.artifact.f1083fb396c0dd87d62b5deb35f71052e49da93f25ea73c98657bcfdbecb09a0",
+      "revision_id": "d4554362a36ce19afcff9515ba1cf0ef029c185acd8859607a34dade31da0e55"
+    },
+    "stale_readin_rejected": "当前制作正文已变化；回读准确内容后建立新检查步骤",
+    "mutable_exact_rejected": "当前制作正文不能用 exact 冒充历史稿；原观察保存在冻结方法产物中",
+    "same_address_through_changes": true,
+    "selected_field_changes_detected": true,
+    "unrelated_field_keeps_prior_observation": true,
+    "frozen_original_observation_preserved": true,
+    "final_guard": {
+      "edit_token": 5,
+      "content_sha256": "0689154fa9407349f1553baa1d18ab1b4b48d6122e07b74db290fbf784fb9e5d"
+    },
+    "formal_database_written": false
+  },
+  "evidence": {
+    "method-related-excluding-baseline.log": {
+      "sha256": "88f228936e75d7b3967d382f7e454dc37f32afb4f3bd472f0e16ba6e44a4add0",
+      "bytes": 17415
+    },
+    "method-related-latest.log": {
+      "sha256": "44d0b153c3c9b880df44d89877146f412e075ee37d710ce57aa5a1e0c978a6a2",
+      "bytes": 33351
+    },
+    "method-stage-final.log": {
+      "sha256": "06b0317d7c6fbd373f309aeffb3b3843496b609ad10b4a58d910dfa6e3f22d70",
+      "bytes": 2461
+    },
+    "method-media-baseline-parity.json": {
+      "sha256": "1c78e41a2ea7b0f1b408b9658ad4d86b7359ce59c93a54398867d5c9d89c9a37",
+      "bytes": 6017
+    },
+    "isolated-scenarios/verification.json": {
+      "sha256": "6c4145d8c967898b04b866d7c6bcb59104548e9ad1789b4e30fcfb91972a6297",
+      "bytes": 9878
+    },
+    "isolated-scenarios/current-content-verification.json": {
+      "sha256": "b381a823892f40270177b47086b259b2d92fd9262fc68155697bd004060b431c",
+      "bytes": 1128
+    },
+    "publication/scoped-delta-verification.log": {
+      "sha256": "400f26677757aeb7fc812fbe3277ca85b099affca3ab3cc95711bbfbc19ab1d8",
+      "bytes": 1234
+    },
+    "publication/scoped-delta-head-parity.log": {
+      "sha256": "fccf3e876eea883200243a03e39ea8916cd4170693bde5ea8a3fcd89ade9bb42",
+      "bytes": 186
+    },
+    "publication/attempt3/business-preflight.json": {
+      "sha256": "fdb54d6ecd6f5ae6e175dccd15a7dd45d110583dadf48546588d7c55efc8b191",
+      "bytes": 8717
+    }
+  },
+  "limits": [
+    "Input freshness is not a quality judgment.",
+    "Model review, page playback, direct hearing and user acceptance are separate.",
+    "This record claims neither formal publication nor task closure."
+  ]
+}

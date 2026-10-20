@@ -16,6 +16,7 @@
 | 图像、声音、视频和字层方案 | 当前表达、准确状态、可读原件、词句状态、实际渠道 | 给制作者的路线与检查，以及单独发给模型的 Prompt、参数、参考 | 未定原词交给负责创作阶段形成候选；未选原件和未验能力保持未就绪 |
 | 生成与制作 | 当前准确方案、所选完整原件、必要后期编辑区间、输入锁、本次授权与额度 | 实际候选、不可变提交快照和原件；明确的缺项或未知结果 | 核输入、提交、回收和恢复在同一环节完成；本地制作不伪造调用，超时先查询 |
 | 结果检查与返修 | 实际原件、准确目标与输入、必要相邻镜 | 问题位置、原因判断、有限修订与复验范围 | 看不到／听不到就保留未验；不能用技术规格代替作品判断 |
+| 整集剪辑 | 准确候选原件、工程出入点、声音处理与各镜检查结果 | 全部实际接缝、整场及整集检查；两版成片、混音、字幕、可编辑工程和来源映射 | 原片末态不等于工程出点；旧原片接受不自动覆盖新的剪接关系 |
 | 独立读者、评论措辞润色 | 分别为截至当前位置的正文；或准确对象、圈选及原意见 | 有依据的读者发现；或保留原意的清楚措辞 | 读者不取后文和作者设定；润色不增加创作要求、不自动保存评论 |
 
 本剧已确认结构与小说保持。隔离方法试用不能作为全剧重做、媒体效果或用户质量认可的证明。AI的`review`阶段保存实际回读与返修判断，继续是创作步骤；人的关闭评论只是整理讨论，不成为执行闸门。
@@ -52,6 +53,7 @@
 | `text-layer` | `scripts/creative_method.py begin` | 同一字层方法的通用作者入口；制作需求的保存仍通过媒体作者入口取得准确基线与导入包 |
 | `generation-preflight` | `scripts/creative_method.py begin` + [单项媒体准备](managed-methods.md#单项媒体方案)的既有入口 | 稳定标识仍为 `generation-preflight`，当前正文是生成与制作；同一工作完成准备、提交、回收和恢复，不要求先完成另一份旧准备方法 |
 | `result-review` | `scripts/creative_method.py begin` | `result-review`；实际看、听、连看后检查与返修；按问题取调度、动画、声音及剪辑 |
+| `episode-editing` | `scripts/creative_method.py begin`；审阅台“制作 → 剪辑” | `episode-editing`；准确工程与不可变渲染快照，按真实顺序核接缝及整场整集；操作沿审阅台剪辑入口 |
 | `reader-review` | [scripts/reader_review.py](../scripts/reader_review.py) | `reader-review`；full/summary-reader/summary/recall-reader/grounding按阅读进度取资料，不泄露后文 |
 | `comment-polish` | 评论输入中的“AI润色修改意见” | 当前`comment-polish-clear`；准确原文帮助消歧，不增加要求；建议明确使用后另行保存 |
 | `creative-system-review` | `scripts/creative_method.py begin`；项目会话沿[Review入口](../skills/creative-system-review/SKILL.md) | `creative-system-review`；唯一正文、项目适配与系统构想的准确只读投影；加载不启动持续运行 |
@@ -62,6 +64,6 @@
 
 影视知识、视频手册、独立读者契约及Review适配是共用资料；旧连续性只保留历史。资料不各自冒充创作步骤。项目的[任务定义与发布](../skills/task-definition-publish/SKILL.md)服务任务交接，继续从AGENTS进入，没有注册成作品创作执行类型。
 
-初期采编与方向比较、尚无实际作品镜头视频的剪辑成片流程不在本表的已验证执行覆盖内。本轮没有查明需要新造方法的具体缺陷，不用空方法或目录项承诺能力。后续实际目标与输入明确后再判断独立方法的必要性。
+初期采编与方向比较尚不在本表的已验证执行覆盖内。整集剪辑已有实际工程与成片；其方法沿当前正式绑定取得，历史记录中的早期覆盖边界不再代表当前能力。跨镜声画连续性的专业正文见[剪辑章节](filmcraft/10-editing.md#跨镜声画连续性从计划落点到实际出点)，不恢复所有阶段共用的旧连续性资源。
 
 执行者必须实际读包和原件。程序能证明交付身份、输入及阶段先后，不能证明方法被正确理解。职责重构后的文本前后例、真实试用和页面操作见[基础流程验收](foundation-refactor/VERIFICATION.md)；早期试用保留[历史记录](professional-methods/VERIFICATION.md)。

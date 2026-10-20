@@ -180,6 +180,44 @@ class StageRecoveryTest(unittest.TestCase):
         self.assertEqual(self.begin(), delivery)
         self.assertTrue((self.folder / 'SKILL.md').exists())
 
+    def test_scoped_checks_survive_client_readback_and_loss_of_local_value(self):
+        self.begin()
+        output = {'assessment': '缺少准确邻镜，保留计划结论和媒体缺项。',
+                  'checks': {'format': 'method-checks-v1', 'coverage': ['join-one'], 'items': [{
+                      'id': 'join-one', 'level': 'source', 'verdict': 'blocked',
+                      'observer': 'creator', 'modality': 'source preflight',
+                      'observation': 'No exact right original available', 'basis': [],
+                      'missing': ['right original'], 'next_action': 'Restore the exact original, then review'}]}}
+        artifact = creative.record(self.client, self.folder, 'understanding', output)
+        self.assertEqual(artifact['payload']['output']['checks'], output['checks'])
+        self.assertEqual(creative.read_stage(self.client, self.folder, 'understanding'), output)
+        (self.folder / 'stage-understanding-value.json').unlink()
+        self.assertEqual(creative.read_stage(self.client, self.folder, 'understanding'), output)
+
+    def test_artifact_transport_reuses_verified_inputs_and_rejects_changed_readin(self):
+        delivery = self.begin()
+        transport = runtime.MethodClient('http://127.0.0.1:55652')
+        sent = []
+        def dispatch(path, body):
+            self.assertEqual(path, '/api/methods/artifact')
+            sent.append(body)
+            return methods.artifact(self.store, body)
+        with patch.object(transport, 'call', side_effect=dispatch):
+            artifact = transport.artifact(delivery['execution'], self.request, 'understanding',
+                                          {'assessment': '真实审阅'})
+            self.assertEqual(sent[0]['inputs'], delivery['execution']['payload']['inputs'])
+            self.assertEqual(artifact['payload']['output']['assessment'], '真实审阅')
+            self.assertEqual(self.request['inputs'], {'context': {'text': '原输入🧵'}})
+            with self.assertRaisesRegex(ValueError, '准确工作输入'):
+                transport.artifact(delivery['execution'], {**self.request, 'inputs': {'context': 'changed'}},
+                                   'principles', {'assessment': '不能替换输入'})
+            self.assertEqual(len(sent), 1)
+            self.seed('novel-writing', ['result'])
+            legacy_request = {**self.request, 'work_type': 'novel-writing'}
+            legacy = creative.begin(self.client, self.root / 'legacy-transport', legacy_request)
+            transport.artifact(legacy['execution'], legacy_request, 'result', '旧完整正文')
+            self.assertEqual(sent[-1]['inputs'], legacy_request['inputs'])
+
     def test_path_symlink_escape_and_output_collision_are_rejected(self):
         self.begin(); outside = self.root / 'outside'; outside.mkdir()
         (self.folder / 'stage-understanding-value.json').symlink_to(outside / 'file')
