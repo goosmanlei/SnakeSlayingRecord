@@ -75,5 +75,5 @@
 - 正式写入须按 [工作区流程](production/generation-workspaces.md#合并与正式发布) 的实际锁、容器身份和停服顺序执行，不能只依赖宿主与 Docker Desktop 之间的SQLite文件锁。发布幂等记录与其他任务新评论必须保全，旧基线拒绝重放；完整导出从发布后最新正式数据产生。
 - 当前 Git 只保存代码、业务文字和轻量准确目录；业务原件、派生与大包在私有 OSS，读取绑定明确 VersionId、SHA256、大小和 MIME。新 clone 不依赖媒体 LFS pull；历史 Git/LFS 未重写。原件缓存、项目级凭据、线上／离线恢复和旧归档兼容统一见 [资源存储](production/resource-storage.md)。
 - 正式镜像仅用 `story-review-desk:current`、`:previous`、`:base`，Compose和候选固定准确ID；任务可建可识别临时镜像。镜像/容器的清理、挂载守卫与历史路径处理见 [结项清理](production/generation-workspaces.md#结项清理)。清单记录构建来源不要求原工作区永存；服务回退不等于数据回退。
-- VPS是独立可写完整体验版，代码／存储升级保留其自己的业务库、发布身份与新增修改，不能用本机快照覆盖；普通重启保留操作，不回写本机。部署控制目录 `~/lijizhanshe/`，体验实例 `~/www/lijizhanshe/`；共用调用计数跨发布保留，每天按北京时间最多100次。公网、代理、HTTPS、密钥及重置边界见 [体验部署约定](planning/vps-experience-deployment-task.md)、[部署操作](production/vps-experience.md)。入口为 `https://leiguoguo.me/lijizhanshe/`，当前版本取远端 `state.json`，不从本机Git推定。
+- VPS是独立可写完整体验版，代码／存储升级保留其自己的业务库、发布身份与新增修改；普通重启保留操作，不回写本机。只有用户明确允许替换远端体验数据及独立修改时，才沿 `oss_snapshot_release.py` 的独立完整恢复、维护切换和阶段恢复流程同步本机完整快照；不绕过旧全量入口的 OSS 保护。部署控制目录 `~/lijizhanshe/`，体验实例 `~/www/lijizhanshe/`；共用调用计数跨发布保留，每天按北京时间最多100次。公网、代理、HTTPS、密钥及重置边界见 [体验部署约定](planning/vps-experience-deployment-task.md)、[部署操作](production/vps-experience.md)。入口为 `https://leiguoguo.me/lijizhanshe/`，当前版本取远端 `state.json`，不从本机Git推定。
 - 站点图标为用户认可的屋檐护灯，源文件和维护见 [图标设计](design/favicon/README.md)。上传、配置、实际生效分别核验。
