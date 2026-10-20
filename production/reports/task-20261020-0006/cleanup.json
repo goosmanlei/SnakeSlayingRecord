@@ -1,0 +1,366 @@
+{
+  "task": "task-20261020-0006",
+  "started_at": "2026-10-20T19:49:48.953778+08:00",
+  "removed_containers": [
+    "315bd66d691af34af558908e8effc577d7f6368cc969b49e7f77b4b83be2dfb4"
+  ],
+  "removed_images": [
+    {
+      "tag": "story-review-desk:oss-task-20261019-0004-cache-wave",
+      "id": "sha256:4d27ef62a7aa92211bdef0f434813e4c0cf37df53c93a8d01db3f662766f88e3"
+    },
+    {
+      "tag": "story-review-desk:oss-task-20261019-0004-release",
+      "id": "sha256:1a814ae4b08cc6b56b385c0ea09a2ab361631d0f772a6e9a0fea870df46511e4"
+    },
+    {
+      "tag": "story-review-desk:task-20261019-0001",
+      "id": "sha256:a7afd98144ad91a27402a402b5fdc8740531485114b16201904c331acae52edc"
+    }
+  ],
+  "commands": [
+    {
+      "operation": "container rm",
+      "id": "315bd66d691af34af558908e8effc577d7f6368cc969b49e7f77b4b83be2dfb4",
+      "output": "315bd66d691af34af558908e8effc577d7f6368cc969b49e7f77b4b83be2dfb4"
+    },
+    {
+      "operation": "image rm --no-prune",
+      "id": "sha256:4d27ef62a7aa92211bdef0f434813e4c0cf37df53c93a8d01db3f662766f88e3",
+      "output": "Untagged: story-review-desk:oss-task-20261019-0004-cache-wave\nDeleted: sha256:4d27ef62a7aa92211bdef0f434813e4c0cf37df53c93a8d01db3f662766f88e3"
+    },
+    {
+      "operation": "image rm --no-prune",
+      "id": "sha256:1a814ae4b08cc6b56b385c0ea09a2ab361631d0f772a6e9a0fea870df46511e4",
+      "output": "Untagged: story-review-desk:oss-task-20261019-0004-release\nDeleted: sha256:1a814ae4b08cc6b56b385c0ea09a2ab361631d0f772a6e9a0fea870df46511e4"
+    },
+    {
+      "operation": "image rm --no-prune",
+      "id": "sha256:a7afd98144ad91a27402a402b5fdc8740531485114b16201904c331acae52edc",
+      "output": "Untagged: story-review-desk:task-20261019-0001\nDeleted: sha256:a7afd98144ad91a27402a402b5fdc8740531485114b16201904c331acae52edc"
+    }
+  ],
+  "archive": {
+    "bytes": 310266284,
+    "mtime_ns": 1792444207156430777,
+    "sha256": "460c5350c3f1ade4877a01c08d245730c14a62a0863ebcd13b3a065af3e3fcb2"
+  },
+  "locks": [
+    "publication.lock",
+    "docker-image-tags.lock"
+  ],
+  "http_before": {
+    "status": 200,
+    "bytes": 6319,
+    "sha256": "54f34f44dd82a5bb400be923390813aa5382ded41b3b775b70c8723b8529a3c4"
+  },
+  "protected_tags": {
+    "story-review-desk:current": "sha256:48e5c15f8a105346ae571afdece46605109b7776c0b724bca4cae80e3ba589e0",
+    "story-review-desk:previous": "sha256:c48a4a29ecc4c9f7ab3d1191a2151950c30072fbe7b18dfab15eccf0bab7e515",
+    "story-review-desk:base": "sha256:48e5c15f8a105346ae571afdece46605109b7776c0b724bca4cae80e3ba589e0"
+  },
+  "active_release": {
+    "task": "task-20261020-0005",
+    "phase": "open",
+    "image": "sha256:48e5c15f8a105346ae571afdece46605109b7776c0b724bca4cae80e3ba589e0",
+    "previous": "sha256:c48a4a29ecc4c9f7ab3d1191a2151950c30072fbe7b18dfab15eccf0bab7e515"
+  },
+  "http_after": {
+    "status": 200,
+    "bytes": 6319,
+    "sha256": "54f34f44dd82a5bb400be923390813aa5382ded41b3b775b70c8723b8529a3c4"
+  },
+  "checks": {
+    "target_container_absent": true,
+    "all_three_image_ids_absent": true,
+    "other_containers_exactly_unchanged": true,
+    "other_images_and_tags_exactly_unchanged": true,
+    "archive_hash_verified_before_and_metadata_unchanged": true,
+    "formal_http_200": true,
+    "formal_container_identity_start_time_health_unchanged": true,
+    "force_prune_service_restart_database_writes_used": false
+  },
+  "finished_at": "2026-10-20T19:49:50.937299+08:00",
+  "before": {
+    "containers": {
+      "294c5ceebb515fefa83d60fe77de5ba5b2b409f5021b2bed6678c5b2fcc10e5c": {
+        "name": "snakeslayingrecord-app-1",
+        "image": "sha256:48e5c15f8a105346ae571afdece46605109b7776c0b724bca4cae80e3ba589e0",
+        "status": "running",
+        "running": true,
+        "started_at": "2026-10-20T10:13:26.471644803Z",
+        "health": "healthy"
+      },
+      "47432d8e750649fcb5d7d374f53a2170040cc0cd571190766785ad151d896ffe": {
+        "name": "snakeslayingrecord-nginx-1",
+        "image": "sha256:009d73a160564cce886ee8a8538c4d18f0ea9b961f03db9df410e45b0fdf29b2",
+        "status": "running",
+        "running": true,
+        "started_at": "2026-10-19T23:16:31.200000172Z",
+        "health": null
+      },
+      "315bd66d691af34af558908e8effc577d7f6368cc969b49e7f77b4b83be2dfb4": {
+        "name": "task-20261020-0001-previous-app",
+        "image": "sha256:4d27ef62a7aa92211bdef0f434813e4c0cf37df53c93a8d01db3f662766f88e3",
+        "status": "exited",
+        "running": false,
+        "started_at": "2026-10-19T23:06:13.485527595Z",
+        "health": "unhealthy"
+      },
+      "1fb25b719c76f96a6fe80a9b32d46a848cbb04f2b83188ac66f5fe41440e4f93": {
+        "name": "riskeval-prompt-risk-eval-1",
+        "image": "sha256:01fba420f4b1dd503544da5fd629127dc255fae44f108a9f3dee0efb7c96b0eb",
+        "status": "running",
+        "running": true,
+        "started_at": "2026-10-14T04:07:31.415349167Z",
+        "health": "healthy"
+      }
+    },
+    "images": {
+      "sha256:009d73a160564cce886ee8a8538c4d18f0ea9b961f03db9df410e45b0fdf29b2": {
+        "tags": [
+          "snakeslayingrecord-nginx:latest"
+        ],
+        "size": 75914087,
+        "parent": ""
+      },
+      "sha256:01fba420f4b1dd503544da5fd629127dc255fae44f108a9f3dee0efb7c96b0eb": {
+        "tags": [
+          "riskeval-prompt-risk-eval:latest"
+        ],
+        "size": 234715902,
+        "parent": ""
+      },
+      "sha256:0891e76c42d898d9d96424586093f19995f1b4acf5f00d9f8a475115babf4734": {
+        "tags": [],
+        "size": 1064734348,
+        "parent": ""
+      },
+      "sha256:122109027d18c5df58f256b5bcb3c4072d7cccf18ec5189441a10367b7070df4": {
+        "tags": [],
+        "size": 1138571675,
+        "parent": ""
+      },
+      "sha256:1a814ae4b08cc6b56b385c0ea09a2ab361631d0f772a6e9a0fea870df46511e4": {
+        "tags": [
+          "story-review-desk:oss-task-20261019-0004-release"
+        ],
+        "size": 1133833799,
+        "parent": ""
+      },
+      "sha256:2b223ad02f09c7a4c8ea661e9f5e039502427091e1981908bafb3a4db22e6e7e": {
+        "tags": [
+          "python:3.12-slim"
+        ],
+        "size": 257556386,
+        "parent": ""
+      },
+      "sha256:48e5c15f8a105346ae571afdece46605109b7776c0b724bca4cae80e3ba589e0": {
+        "tags": [
+          "story-review-desk:base",
+          "story-review-desk:current"
+        ],
+        "size": 1133856779,
+        "parent": ""
+      },
+      "sha256:4d27ef62a7aa92211bdef0f434813e4c0cf37df53c93a8d01db3f662766f88e3": {
+        "tags": [
+          "story-review-desk:oss-task-20261019-0004-cache-wave"
+        ],
+        "size": 1133834348,
+        "parent": ""
+      },
+      "sha256:555b3e2541470e9da853354069e693b9975bc79234a420c5d15df07b0811f5b6": {
+        "tags": [],
+        "size": 829047501,
+        "parent": ""
+      },
+      "sha256:5c6861ff04df21083e0a7e2f34692dbfc8bf95e81ae38b2f4c18aff6f05f0ce0": {
+        "tags": [],
+        "size": 1064729727,
+        "parent": ""
+      },
+      "sha256:65645c7bb6a0661892a8b03b89d0743208a18dd2f3f17a54ef4b76fb8e2f2a10": {
+        "tags": [
+          "nginx:1.27-alpine"
+        ],
+        "size": 75893204,
+        "parent": ""
+      },
+      "sha256:732b74167201e427b46caae278cc5d2a9695005cfc4c2b29782824bc34ebaf30": {
+        "tags": [],
+        "size": 1064760475,
+        "parent": ""
+      },
+      "sha256:94152aa4fddab208cfdbb59f9803aaf001898da8888d483cb8e580b9c757303a": {
+        "tags": [],
+        "size": 1138571843,
+        "parent": ""
+      },
+      "sha256:a7afd98144ad91a27402a402b5fdc8740531485114b16201904c331acae52edc": {
+        "tags": [
+          "story-review-desk:task-20261019-0001"
+        ],
+        "size": 1060129205,
+        "parent": ""
+      },
+      "sha256:c48a4a29ecc4c9f7ab3d1191a2151950c30072fbe7b18dfab15eccf0bab7e515": {
+        "tags": [
+          "story-review-desk:previous"
+        ],
+        "size": 1143322963,
+        "parent": ""
+      },
+      "sha256:cc35315383d9cfe11db949d9949af4134d1b4bdffac05fad7f528700aeeeda80": {
+        "tags": [],
+        "size": 824576077,
+        "parent": ""
+      },
+      "sha256:ee28912039281879809f58adc2a94f3c60786e51e587c3fa3c05494b3c1bb23d": {
+        "tags": [],
+        "size": 829043885,
+        "parent": ""
+      },
+      "sha256:fa0b81de4603a19d3d85e6d266e04a751b8c91ceafdf62eccc0a9b26ddf7208d": {
+        "tags": [],
+        "size": 1064760493,
+        "parent": ""
+      }
+    }
+  },
+  "after": {
+    "containers": {
+      "294c5ceebb515fefa83d60fe77de5ba5b2b409f5021b2bed6678c5b2fcc10e5c": {
+        "name": "snakeslayingrecord-app-1",
+        "image": "sha256:48e5c15f8a105346ae571afdece46605109b7776c0b724bca4cae80e3ba589e0",
+        "status": "running",
+        "running": true,
+        "started_at": "2026-10-20T10:13:26.471644803Z",
+        "health": "healthy"
+      },
+      "47432d8e750649fcb5d7d374f53a2170040cc0cd571190766785ad151d896ffe": {
+        "name": "snakeslayingrecord-nginx-1",
+        "image": "sha256:009d73a160564cce886ee8a8538c4d18f0ea9b961f03db9df410e45b0fdf29b2",
+        "status": "running",
+        "running": true,
+        "started_at": "2026-10-19T23:16:31.200000172Z",
+        "health": null
+      },
+      "1fb25b719c76f96a6fe80a9b32d46a848cbb04f2b83188ac66f5fe41440e4f93": {
+        "name": "riskeval-prompt-risk-eval-1",
+        "image": "sha256:01fba420f4b1dd503544da5fd629127dc255fae44f108a9f3dee0efb7c96b0eb",
+        "status": "running",
+        "running": true,
+        "started_at": "2026-10-14T04:07:31.415349167Z",
+        "health": "healthy"
+      }
+    },
+    "images": {
+      "sha256:009d73a160564cce886ee8a8538c4d18f0ea9b961f03db9df410e45b0fdf29b2": {
+        "tags": [
+          "snakeslayingrecord-nginx:latest"
+        ],
+        "size": 75914087,
+        "parent": ""
+      },
+      "sha256:01fba420f4b1dd503544da5fd629127dc255fae44f108a9f3dee0efb7c96b0eb": {
+        "tags": [
+          "riskeval-prompt-risk-eval:latest"
+        ],
+        "size": 234715902,
+        "parent": ""
+      },
+      "sha256:0891e76c42d898d9d96424586093f19995f1b4acf5f00d9f8a475115babf4734": {
+        "tags": [],
+        "size": 1064734348,
+        "parent": ""
+      },
+      "sha256:122109027d18c5df58f256b5bcb3c4072d7cccf18ec5189441a10367b7070df4": {
+        "tags": [],
+        "size": 1138571675,
+        "parent": ""
+      },
+      "sha256:2b223ad02f09c7a4c8ea661e9f5e039502427091e1981908bafb3a4db22e6e7e": {
+        "tags": [
+          "python:3.12-slim"
+        ],
+        "size": 257556386,
+        "parent": ""
+      },
+      "sha256:48e5c15f8a105346ae571afdece46605109b7776c0b724bca4cae80e3ba589e0": {
+        "tags": [
+          "story-review-desk:base",
+          "story-review-desk:current"
+        ],
+        "size": 1133856779,
+        "parent": ""
+      },
+      "sha256:555b3e2541470e9da853354069e693b9975bc79234a420c5d15df07b0811f5b6": {
+        "tags": [],
+        "size": 829047501,
+        "parent": ""
+      },
+      "sha256:5c6861ff04df21083e0a7e2f34692dbfc8bf95e81ae38b2f4c18aff6f05f0ce0": {
+        "tags": [],
+        "size": 1064729727,
+        "parent": ""
+      },
+      "sha256:65645c7bb6a0661892a8b03b89d0743208a18dd2f3f17a54ef4b76fb8e2f2a10": {
+        "tags": [
+          "nginx:1.27-alpine"
+        ],
+        "size": 75893204,
+        "parent": ""
+      },
+      "sha256:732b74167201e427b46caae278cc5d2a9695005cfc4c2b29782824bc34ebaf30": {
+        "tags": [],
+        "size": 1064760475,
+        "parent": ""
+      },
+      "sha256:94152aa4fddab208cfdbb59f9803aaf001898da8888d483cb8e580b9c757303a": {
+        "tags": [],
+        "size": 1138571843,
+        "parent": ""
+      },
+      "sha256:c48a4a29ecc4c9f7ab3d1191a2151950c30072fbe7b18dfab15eccf0bab7e515": {
+        "tags": [
+          "story-review-desk:previous"
+        ],
+        "size": 1143322963,
+        "parent": ""
+      },
+      "sha256:cc35315383d9cfe11db949d9949af4134d1b4bdffac05fad7f528700aeeeda80": {
+        "tags": [],
+        "size": 824576077,
+        "parent": ""
+      },
+      "sha256:ee28912039281879809f58adc2a94f3c60786e51e587c3fa3c05494b3c1bb23d": {
+        "tags": [],
+        "size": 829043885,
+        "parent": ""
+      },
+      "sha256:fa0b81de4603a19d3d85e6d266e04a751b8c91ceafdf62eccc0a9b26ddf7208d": {
+        "tags": [],
+        "size": 1064760493,
+        "parent": ""
+      }
+    }
+  },
+  "retained_untagged_images": [
+    "sha256:0891e76c42d898d9d96424586093f19995f1b4acf5f00d9f8a475115babf4734",
+    "sha256:122109027d18c5df58f256b5bcb3c4072d7cccf18ec5189441a10367b7070df4",
+    "sha256:555b3e2541470e9da853354069e693b9975bc79234a420c5d15df07b0811f5b6",
+    "sha256:5c6861ff04df21083e0a7e2f34692dbfc8bf95e81ae38b2f4c18aff6f05f0ce0",
+    "sha256:732b74167201e427b46caae278cc5d2a9695005cfc4c2b29782824bc34ebaf30",
+    "sha256:94152aa4fddab208cfdbb59f9803aaf001898da8888d483cb8e580b9c757303a",
+    "sha256:cc35315383d9cfe11db949d9949af4134d1b4bdffac05fad7f528700aeeeda80",
+    "sha256:ee28912039281879809f58adc2a94f3c60786e51e587c3fa3c05494b3c1bb23d",
+    "sha256:fa0b81de4603a19d3d85e6d266e04a751b8c91ceafdf62eccc0a9b26ddf7208d"
+  ],
+  "evidence_retention": {
+    "tracked_receipt": "production/reports/task-20261020-0006/cleanup.json",
+    "private_runtime": ".runtime/task-evidence/task-20261020-0006",
+    "private_runtime_purpose": "Source snapshots with mount checks; retained with active task worktree until session exits, then managed retirement. Tracked sanitized receipt preserves durable result.",
+    "created_containers_images_volumes": 0
+  }
+}
