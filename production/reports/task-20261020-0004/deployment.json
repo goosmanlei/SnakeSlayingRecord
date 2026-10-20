@@ -1,6 +1,6 @@
 {
   "task": "task-20261020-0004",
-  "status": "deployed-awaiting-user-acceptance",
+  "status": "deployed-user-accepted",
   "entry": "https://leiguoguo.me/lijizhanshe/",
   "publication_id": "lijizhanshe-20261020-0004-r1",
   "phase": "complete",
@@ -168,29 +168,19 @@
         "snapshot-installer-check-task-20261020-0004",
         "snapshot-nonempty-check-task-20261020-0004"
       ],
-      "retained": [
-        {
-          "path": "remote snapshot release bundle",
-          "purpose": "exact frozen source for trace and preacceptance recovery",
-          "release_condition": "user acceptance and no remaining source recovery need"
-        },
-        {
-          "path": "remote previous-instance and stopped previous container",
-          "purpose": "original VPS independent business data and recovery descriptor",
-          "release_condition": "user acceptance and rollback need ended"
-        },
-        {
-          "path": "runtime receipts, hashes and focused test evidence",
-          "purpose": "deployment trace and task acceptance",
-          "release_condition": "keep minimal records while current publication remains authoritative"
-        }
-      ],
       "removed_bytecode_files": [],
       "removed_external_task_cache": {
         "path": "/Users/bytedance/Library/Caches/com.apple.python/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-task/worktrees/task-20261020-0004",
         "files": 9,
         "bytes": 114422
-      }
+      },
+      "retained": [
+        {
+          "path": "runtime receipts, hashes and focused test evidence",
+          "purpose": "deployment trace and task acceptance",
+          "release_condition": "keep minimal records while current publication remains authoritative"
+        }
+      ]
     },
     "vps": {
       "removed_incoming": {
@@ -200,7 +190,7 @@
       },
       "restore_container_absent": true,
       "active_container": "50c91de62d00d234f32d101cbe1896f7c5fdcd800cd9107862e036881e657d98",
-      "retained": {
+      "preacceptance_retention_resolved": {
         "previous_container_id": "c5b8bc2734891e3768bab24e2c3cedc139599a4eedcd70463b51fa0a609550b7",
         "previous_instance": "/home/work/lijizhanshe/snapshot-releases/lijizhanshe-20261020-0004-r1/previous-instance",
         "previous_instance_size": {
@@ -214,11 +204,78 @@
         },
         "owner": "task-20261020-0004 executor",
         "condition": "user acceptance and rollback/source-recovery need ended"
+      },
+      "acceptance_cleanup": {
+        "task": "task-20261020-0004",
+        "publication_id": "lijizhanshe-20261020-0004-r1",
+        "authorization": {
+          "user_message": "确认结项",
+          "received_date": "2026-10-20"
+        },
+        "phase": "complete",
+        "active_container": "50c91de62d00d234f32d101cbe1896f7c5fdcd800cd9107862e036881e657d98",
+        "old_container": "c5b8bc2734891e3768bab24e2c3cedc139599a4eedcd70463b51fa0a609550b7",
+        "preserved_provenance": [
+          {
+            "path": "/home/work/lijizhanshe/snapshot-releases/lijizhanshe-20261020-0004-r1/provenance/manifest.json",
+            "bytes": 10153,
+            "sha256": "e61e252d808d8b142938e5111f6bea31d8cd4690d4198ee267d2ed776ac3cd89"
+          },
+          {
+            "path": "/home/work/lijizhanshe/snapshot-releases/lijizhanshe-20261020-0004-r1/provenance/code-image-manifest.json",
+            "bytes": 14873,
+            "sha256": "9d27b20e6170f51fb94a7d6c53e11d44da24f733d5bfdb64d7284878fcf15a32"
+          },
+          {
+            "path": "/home/work/lijizhanshe/snapshot-releases/lijizhanshe-20261020-0004-r1/provenance/source-snapshot.json",
+            "bytes": 5122,
+            "sha256": "a054a466c1bf3fefeba66af99c140eea16270fc3752b0cff352063feb184f1d4"
+          }
+        ],
+        "recovery_retention_condition": "user accepted; verified current release complete; old rollback/source staging no longer needed",
+        "started_at": "2026-10-20T09:36:55.621108+00:00",
+        "removed_directories": [
+          {
+            "name": "previous-instance",
+            "files": 819,
+            "bytes": 4310306286
+          },
+          {
+            "name": "bundle",
+            "files": 25,
+            "bytes": 953150608
+          }
+        ],
+        "old_container_absent": true,
+        "helper_container_absent": true,
+        "usage_unchanged": true,
+        "public_instance_status": 200,
+        "public_instance": {
+          "id": "snake-slaying-record",
+          "title": "李寄斩蛇 · 故事采编",
+          "deployment": {
+            "base_path": "/lijizhanshe",
+            "publication_id": "lijizhanshe-20261020-0004-r1",
+            "experience": true
+          }
+        },
+        "controls_and_active_mounts_unchanged": true,
+        "completed_at": "2026-10-20T09:37:35.547886+00:00",
+        "final_probe_corrections": [
+          "Use nested deployment.publication_id",
+          "Compare mounts by destination, independent of Docker list order"
+        ],
+        "deletion_repeated": false
       }
     },
     "task_workspace_dependencies": [],
-    "workspace_retirement": "after user acceptance, normal TUI exit and managed cleanup"
+    "workspace_retirement": "normal TUI exit and lock release, then managed cleanup; preserve branch and session history"
   },
   "private_evidence": "primary project .runtime/task-evidence/task-20261020-0004/",
-  "quality_and_user_acceptance": "not signed off"
+  "acceptance": {
+    "deployment_task": "accepted by user",
+    "user_message": "确认结项",
+    "date": "2026-10-20",
+    "sensory_and_prior_independent_reviews": "unchanged; outside this deployment task"
+  }
 }

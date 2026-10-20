@@ -71,7 +71,7 @@ python3 "$SNAPSHOT_SCRIPT" finalize --release "$SNAPSHOT_RELEASE"
 
 若切换前失败已经回到原实例，且完整恢复的 candidate 尚未切换、原容器和控制身份未变，在确认旧进程结束并修复原因后，可用已受管交付的修订控制器执行 `retry --release "$SNAPSHOT_RELEASE" --controller-commit "$DELIVERED_CONTROLLER_COMMIT" --replace-experience-data`。它保留原失败回执、冻结包和完整恢复结果，在同一发布身份下继续；修订控制器原件及提交另行记录，不改写原快照的来源版本。已开放、原运行身份变化或目录已经切换后遗留的情况拒绝此快捷重试，沿准确阶段调查恢复。
 
-`state.json` 和 `storage-runtime.json` 继续承担永久运行身份，记录新完整发布及准确提交；旧全量工具的 OSS 保护保持有效。用户接受及回退用途解除前保留 release 内的 `previous-instance`、旧容器和 `before-control`；完成后按准确归属清理，禁止全局删除。具体保留责任、数量及解除条件由原任务回执维护。task-20261020-0004 的范围见 [本次完整部署](../planning/vps-latest-deployment-20261020-task.md)。
+`state.json` 和 `storage-runtime.json` 继续承担永久运行身份，记录新完整发布及准确提交；旧全量工具的 OSS 保护保持有效。用户接受及回退用途解除前保留 release 内的 `previous-instance`、旧容器和 `before-control`；完成后按准确归属清理，禁止全局删除。清理重复 `bundle` 前，将原发布清单、代码镜像清单及源快照指纹原样校验保存到 `provenance/`，保留修订控制器和最小阶段回执；清理后该 release 仅供追溯，不再用于重放原快照。具体保留责任、数量及解除条件由原任务回执维护。task-20261020-0004 的范围及实际清理见 [本次完整部署](../planning/vps-latest-deployment-20261020-task.md)和[交付报告](reports/task-20261020-0004/README.md)。
 
 ### 保留数据的发布命令
 
