@@ -1,0 +1,179 @@
+{
+  "date": "2026-10-20",
+  "site": "http://127.0.0.1:3000/",
+  "story_commit": "08c0b83e00d2ecac87b0875e6aee628174c6d9d3",
+  "desk_commit": "254d509cbe644f75e90344bc1ae40b7279aa418f",
+  "environment": {
+    "browser": "connected Chrome, new diagnostic tab",
+    "viewport": [
+      2192,
+      1415
+    ],
+    "host": "Mac17,8, macOS 26.6.2, 18 CPUs, 48 GiB",
+    "server": "existing formal Docker service; selected source files SHA256 matched"
+  },
+  "method": "UI navigation; CDP Network and Performance metrics. One scouting sample per page, existing browser/server caches unchanged. Observation windows include tool and inspection delay and are NOT page-load times. Renderer TaskDuration is main-thread work, not total host CPU. Network TTFB and finish timings are per request. No media autoplay or production writes.",
+  "samples": [
+    {
+      "page": "视听制作",
+      "scope": "E01 / AS001, first two shot material details",
+      "window_seconds": 19.189468,
+      "main_thread_ms": 361.938,
+      "script_ms": 28.083,
+      "layout_ms": 26.29,
+      "style_ms": 24.786,
+      "api_ttfb_ms": {
+        "breakdown": 15.836,
+        "scene": 9.864,
+        "shot_materials_1": 4.15,
+        "shot_materials_2": 10.197,
+        "comment_review": 24.946
+      },
+      "oss_responses": 10,
+      "oss_wire_bytes": 294076,
+      "oss_ttfb_ms": {
+        "min": 2.953,
+        "median": 892.569,
+        "max": 1191.915
+      }
+    },
+    {
+      "page": "实体管理",
+      "scope": "E01 / AS001 / ASH001, 8 entities, 2 edges",
+      "window_seconds": 18.678164,
+      "main_thread_ms": 51.461,
+      "script_ms": 7.93,
+      "layout_ms": 1.819,
+      "style_ms": 2.059,
+      "api_ttfb_ms": {
+        "index": 838.734
+      },
+      "index_wire_bytes": 48872,
+      "local_redirect_ms": {
+        "count": 2,
+        "min": 391.601,
+        "median": 391.914,
+        "max": 391.914
+      },
+      "oss_responses": 2,
+      "oss_wire_bytes": 29601
+    },
+    {
+      "page": "实体管理静止",
+      "scope": "same 8-entity graph",
+      "window_seconds": 7.56458,
+      "main_thread_ms": 1.528,
+      "script_ms": 0.322,
+      "layout_ms": 0,
+      "style_ms": 0,
+      "process_time_ms": 2.933,
+      "new_layouts": 0,
+      "new_style_recalculations": 0
+    },
+    {
+      "page": "素材管理",
+      "scope": "all materials; 673 total, 50 card images mounted, 1055 DOM elements",
+      "window_seconds": 53.041646,
+      "main_thread_ms": 185.458,
+      "script_ms": 10.503,
+      "layout_ms": 13.711,
+      "style_ms": 2.739,
+      "api_ttfb_ms": {
+        "materials": 13.259
+      },
+      "materials_wire_bytes": 136480,
+      "local_redirect_ms": {
+        "count": 47,
+        "min": 362.751,
+        "median": 475.952,
+        "max": 1381.164
+      },
+      "oss_responses": 47,
+      "oss_wire_bytes": 547835,
+      "oss_ttfb_ms": {
+        "min": 309.532,
+        "median": 323.176,
+        "max": 639.298
+      },
+      "first_request_to_last_finish_ms": 6676.732
+    },
+    {
+      "page": "成片剪辑",
+      "scope": "E01, version 5, subtitled, 116 timeline elements; video paused",
+      "window_seconds": 20.731117,
+      "main_thread_ms": 138.756,
+      "script_ms": 15.373,
+      "layout_ms": 3.796,
+      "style_ms": 6.707,
+      "api_ttfb_ms": {
+        "catalog": 49.121,
+        "review": 2778.767,
+        "comment_review": 28
+      },
+      "api_wire_bytes": {
+        "catalog": 78593,
+        "review": 24071,
+        "comment_review": 609
+      },
+      "local_redirect_ms": {
+        "count": 2,
+        "min": 411.104,
+        "median": 417.93,
+        "max": 417.93
+      },
+      "dom_elements": 453,
+      "video_seconds": 284.916667
+    },
+    {
+      "page": "时间线打开镜头大卡",
+      "scope": "ASH002，一句唱到家，准确候选1",
+      "window_seconds": 11.530281,
+      "main_thread_ms": 260.445,
+      "script_ms": 12.975,
+      "layout_ms": 6.197,
+      "style_ms": 21.711,
+      "api_ttfb_ms": {
+        "card": 1938.434,
+        "shot_materials": 7.568,
+        "candidate_comments": 37.237,
+        "film_comments": 35.969
+      }
+    },
+    {
+      "page": "镜头大卡播放",
+      "scope": "18.042秒1280x720视频，采样后暂停",
+      "window_seconds": 11.538743,
+      "main_thread_ms": 290.278,
+      "script_ms": 27.6,
+      "layout_ms": 15.082,
+      "style_ms": 14.088,
+      "process_time_ms": 760.775
+    },
+    {
+      "page": "镜头大卡暂停静止",
+      "scope": "大卡和成片视频均暂停",
+      "window_seconds": 55.745545,
+      "main_thread_ms": 32.805,
+      "script_ms": 2.153,
+      "layout_ms": 0,
+      "style_ms": 0,
+      "process_time_ms": 123.22,
+      "new_layouts": 0,
+      "new_style_recalculations": 0
+    }
+  ],
+  "media_head_samples": {
+    "description": "same small image, local HEAD, no redirect following or original download",
+    "seconds": [
+      0.375,
+      0.341,
+      0.336
+    ]
+  },
+  "limits": [
+    "These are scouting observations, not P95 benchmarks or cold-cache measurements.",
+    "CDP Profiler.enable unsupported by connection; no browser JS stack CPU profile collected.",
+    "Worker and GPU/decoder costs not isolated by main-thread metrics.",
+    "External signed URLs and credentials excluded."
+  ]
+}

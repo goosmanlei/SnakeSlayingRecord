@@ -1,0 +1,238 @@
+{
+  "read_at": "2026-10-20T10:58:59.227415+08:00",
+  "source": ".codex-task/tasks.json (primary project only)",
+  "source_sha256": "d34627e496085b812d5f5ebcfc13e4f2c9f2498608df0f948cafa5200eb49037",
+  "purpose": "Historical evidence only. No old authorizations, withdrawn scope, time limits, or performance gates replace this task definition. Completion notes and task-relevant latest results are retained; repeated result ids use the last ledger entry.",
+  "task_status_counts": {
+    "completed": 151,
+    "abandoned": 4
+  },
+  "draft_status_counts": {
+    "published": 8,
+    "draft": 1
+  },
+  "selected_tasks": [
+    {
+      "id": "task-20261005-0001",
+      "summary": "以 Astra ultra 自主优化审阅台体验与性能，监督运行6至10小时并交付完整报告",
+      "status": "completed",
+      "completed_at": "2026-10-05T21:25:57.803445+08:00",
+      "completion_note": "用户明确确认最终双仓候选并授权完成、集成、合并与推送；主目录空task.md阻断已由用户删除后重试。故事候选2741cee624297f9d1e25b87a304473abf5013b33；系统24e926d446a9424a8cbc3c8b9910aaa322ff9632已受控集成并推送origin/main，远端完整SHA回读一致。正式代码发布成功，54源码及实例挂载一致，23业务表原有记录保留、业务增量0；Chrome一次正式只读验收通过实体往返/关系卡、准确历史原图/当前未生成、逐镜、评论定位与大图返回，29份证据及正式验收回执在.runtime/autonomous-optimization/delivery/。预览62608已停止，B清理13文件855830字节，两项VM占用目录保留。报告及3060项归档、14项收尾证据已提交；58项代表性通过、1部分、2探索未验与定位约850ms成本已披露。用户重置后7小时37分47.590秒正常收敛，9后代inactive。发布manifest d893b7f2582f954c7294689e8d9fe7c2e6e559156b34c5870ea2a535861b6dde；正式验收SHA704e2882ff9c5536a18d4ac93dd53e0b709bfa380093665045066029af62474e。两仓目标main/origin/refs/heads/main，保留工作区与分支。",
+      "completion_result": null,
+      "latest_results": []
+    },
+    {
+      "id": "task-20261006-0005",
+      "summary": "优化四个制作页面及实体大卡的响应性能，优先按需加载、列表读取与请求调度，按实测设计必要缓存",
+      "status": "completed",
+      "completed_at": "2026-10-08T00:54:23.271696+08:00",
+      "completion_note": "已实际完成八项验收。依赖 task-20261006-0002/0003/0004 均 completed 并纳入准确基线 bc31d7d；五组十二类操作、54 个主路径条件及影响范围补验共 144 个比较、2880 个有效页面样本，固定两轮交替及 type 7 四分位算法，96 个主矩阵慢路径比较均超过较大 IQR 门槛，其他关键路径无回退，常用路径候选 P75 最大 254.75ms。空缓存重建约 0.4—1.9s，未声称全冷300ms；一条 Chrome ERR_NETWORK_IO_SUSPENDED 和准备探针异常完整保留并解释，没有筛除慢样本。读取、列表、调度、压缩、事务失效缓存及六方向取舍、全量正确性、跨进程/容量/恢复见 production/system-performance/README.md、results.md 和104份证据。363后端、671前端、14发布、42正式同版容器检查通过；隔离真实浏览器完成桌面/窄屏、评论/采纳/参考、历史/版本/候选、关系图、快速切换与迟到响应。无真实视频候选，未声称真实视频播放通过。双仓 main 已经受控交付并远端回读：primary=732f647438cd82904f9d6138ccf9b0d6636d483c，desk=e05f1d812ea92988a6d7ea0cd8b587855bc979b1，均 pushed/applied，工作区干净、准确引用一致。冻结发布包已串行 apply，正式3000/64401运行镜像 sha256:5c13df76323d244b2998f17fe61e1f82a4dd5255f2bf5fc659b1d490cebaba6c，容器f951ecea99356f2d98bce535e25b40a1616eaa249a29df3a3f69640fcf1928ca健康；源码/配置相等，32张业务表保全、业务增量0，1398份原件逐文件哈希相等，285评论和314事件不变。DELETE模式保留，仅新增事务代号表及96触发器，停用/清空/重建/旧代码恢复已隔离演练。正式Chrome29项只读回归及最终完整图片画面通过，音频实际播放，正式测试写入0。清理79个路径/23561个文件、6个临时容器、1个预览镜像；另2个历史预览镜像已不存在，准确ID和路径缺失回读通过，逻辑文件大小24665944532字节不等于APFS回收空间。保留冻结快照/发布恢复包/原始证据/正式当前与回退镜像及双仓worktree、分支、会话，用途和移除条件已记录，不退出TUI不领取新任务。KNOWLEDGE/STATE及恢复说明已随候选交付。最终运行验收为 .runtime/system-performance/release/run/acceptance-final.json，SHA256=e45896a911348fc989547f456bf54f01d13671d2bab07d49e64e019493292984；同目录formal-browser.json、formal-verification.json、formal-image-render.json、formal-final-painted.png、cleanup-final.json及service-1791391448280491000.json为实际发布/浏览器/清理依据。按本会话--auto授权由Agent验收，不伪造用户逐项确认。",
+      "completion_result": null,
+      "latest_results": []
+    },
+    {
+      "id": "task-20261011-0007",
+      "summary": "视听制作切集切场性能优化：压缩首次读取与重复聚合",
+      "status": "completed",
+      "completed_at": "2026-10-11T22:30:17.551826+08:00",
+      "completion_note": "四主路径基线/候选各80次同机同数据实测，冷/写失效/重复P75全部达标；同场21.1ms无目录/场API，受控慢响应最终选择达标。522项Python、841项JS通过，真实Chrome准确方案/候选样例/参考/原评论草稿/非首镜刷新/窄屏/故障重试/缓存关闭损坏通过；原行和1016原件保全，Schema13空实例恢复通过。受管双仓集成推送及准确引用完成；本机9db1a16a8de0准确镜像/配置/挂载健康，45张表保全，正式Chrome四路径与关键保护实操、音色片段播放范围通过，正式无测试写入或缓存清空。删除3637文件5476443149字节、停止2个预览进程，过程目录和端口回读不存在，正式运行/恢复无工作区依赖；当前/回退/基底镜像保留，2 worktree按规则待TUI退出受管退役。执行验证/正式发布已记结果，负责人独立复验另列open。本机回执 .runtime/task-20261011-0007/，受管实测 production/av-switch-performance/VERIFICATION.md。",
+      "completion_result": "formal-publication",
+      "latest_results": [
+        {
+          "id": "execution-verification",
+          "kind": "verification",
+          "status": "succeeded",
+          "recorded_at": "2026-10-11T22:28:23.663381+08:00",
+          "scope": "四条冷热和写后路径、准确方案和候选、快速切换、评论草稿、非首镜与窄屏、失效和故障恢复、原数据保护、完整恢复、正式只读及清理",
+          "summary": "基线和候选各80次主路径样本，冷/写后各5、重复各10，候选四条冷P75 796.9/321.5/371.5/195.3ms，写后662.7/304.6/335.3/201.5ms，热53.6/45.8/45.5/45.7ms，均达标。同场各10次对照，候选P75 21.1ms且无目录/场API；受控慢响应最终选择达标。Python522、JS841通过。Chrome实操机位/首帧/视频、准确M1134/C285、草稿回返、准确非首镜刷新、窄屏、故障/重试及缓存停用/损坏。现有数据无直属镜头候选，准确候选路径以标记隔离样例补验。原始行和1016原件保全；空实例Schema13恢复9517对象/9643修订/403评论/1020文件。正式四路径只读通过，音色0–5.6秒实际播放并按范围停止。停止2个预览进程、删除3637文件共5476443149字节，运行依赖检查无阻断；2个worktree留待TUI退出受管退役。",
+          "reference": "production/av-switch-performance/VERIFICATION.md; production/av-switch-performance/evidence/statistics.json; .runtime/task-20261011-0007/formal-browser.json; .runtime/task-20261011-0007/formal-media.json; .runtime/task-20261011-0007/cleanup.json",
+          "candidates": {
+            "desk": "4ec278dfff70e187b01f0c1f349e8d379717e4da",
+            "primary": "65c5769696d4cf6b559fb696710ffd61fb8ba128"
+          },
+          "owner": "task-20261011-0007-executor"
+        },
+        {
+          "id": "owner-independent-review",
+          "kind": "independent_review",
+          "status": "open",
+          "recorded_at": "2026-10-11T22:28:23.991218+08:00",
+          "scope": "负责人独立复验本次视听读取改善与正式入口",
+          "summary": "执行者验收及正式发布已交接，未标记为负责人独立通过。",
+          "reference": "production/av-switch-performance/VERIFICATION.md; .runtime/task-20261011-0007/README.md",
+          "candidates": {
+            "desk": "4ec278dfff70e187b01f0c1f349e8d379717e4da",
+            "primary": "65c5769696d4cf6b559fb696710ffd61fb8ba128"
+          },
+          "owner": "project-owner",
+          "condition": "由负责人另行只读独立复验；执行者证据不代替该判断。"
+        }
+      ]
+    },
+    {
+      "id": "task-20261012-0006",
+      "summary": "素材管理首次检索与切换筛选快速响应，消除重复全量投影",
+      "status": "completed",
+      "completed_at": "2026-10-12T06:35:22.807440+08:00",
+      "completion_note": "最终双仓0f7e4b5/bec0104已受管集成推送；本机3000镜像30202e健康，源码/配置准确，45表逐行保全且业务增量0。最终真实Chrome完整进入2.5336秒、素材请求1.307秒、连续筛选1.0926秒，三例新词约0.38秒，重复就绪约0.19秒；五类各3次、准确性/跨进程提交回滚/故障退化/恢复及Python566检查通过，全部失败阶段保留。累计清理5718文件、1预览容器、4无用镜像，guard无阻断；必要回执见主项目.runtime/task-20261012-0006/completion.md。独立Review与TUI退出释锁后双仓受管退役保持非必需open，保留正式当前/回退/基底和必要证据。",
+      "completion_result": "material-search-final-formal",
+      "latest_results": []
+    },
+    {
+      "id": "task-20261013-0004",
+      "summary": "参考素材小卡直接预览并选定生产候选",
+      "status": "completed",
+      "completed_at": "2026-10-13T13:58:10.022215+08:00",
+      "completion_note": "按本次--auto授权自行验收完成。参考小卡就地预览、准确候选/多原件选择、同选择无写入并保留范围、各输入及消费者独立、失败/409/幂等重发/迟到保护、只读历史均通过隔离实操。相关前端93/93、后端12/12；全量Node886项884通过，2项原主干既有失败保留。最终准确系统77b52908f2e7157fa8bfd042499708af153035ca、故事0b3c4276e18758bc0740670776478077e50108f2受管集成推送，镜像43663b84384611346b2ae1de67648515823731d15b66e296ccc6d6780e52ceea本机正式3000生效；44表发布前后保全，业务增量0，正式桌面/窄屏Chrome只读复验。最终正式完整导出12981对象/13213修订/407评论/888文件，恢复新空实例43业务表逐行一致；同版Chrome再选M2974候选1/M2714候选2、刷新、重开、历史往返通过，只改两个目标槽位。6临时端口已释放、8测试实例目录与2构建包移除，guard无挂载/恢复依赖；两任务镜像现为正式当前/回退，最小证据与冻结恢复包保留。具体回执归主项目.runtime/task-receipts/task-20261013-0004/。负责人独立Review、2项既有测试残留及当前TUI退出后的双仓受管退役单独open；执行者不冒称完成独立复验。不含付费生成或VPS发布。",
+      "completion_result": "formal-local-publication",
+      "latest_results": []
+    },
+    {
+      "id": "task-20261019-0002",
+      "summary": "完善成片剪辑的片段大卡评论与跨轨框选，移除工程草稿界面",
+      "status": "completed",
+      "completed_at": "2026-10-20T00:14:01.164285+08:00",
+      "completion_note": "按本次 --auto 完成全部范围内验收：准确素材大卡与片段/源评论、跨轨框选及四字段同步、移除工程草稿界面、后台实际编辑渲染均通过。59字幕和7字层真实登记，19素材/21关系/81原件/5追加关联；历史媒体、405旧评论与440事件保全。primary=24d975a868caad9210c3b8a0ca2d01a40cc202ce，desk=17d2677e56ac49250a8f237b95e55440452462d6，双仓集成推送和远端LFS回读完成；本机正式3000数据/服务及真实Chrome验收完成。44 Node、5 Python、21 Docker检查及私有1秒渲染通过。正式包恢复空A，再由A的三条隔离样本完整导出恢复空B，408评论/443事件与准确来源保全；独立代码/交互/全表复核通过。已清理6实例、3服务、6临时标签、1无用镜像和4436过程文件；正式运行、回退和最小证据保留，工作区待TUI退出释锁后受管退役。旧夹具测试失败与基线一致，原听感/审美及用户逐项接受未代签。四类结果已登记succeeded/current。最终报告 /Users/bytedance/codex-path/creative/SnakeSlayingRecord/.runtime/task-evidence/task-20261019-0002/README.md，清理及哈希索引为同目录cleanup.json、evidence-manifest.json。",
+      "completion_result": "formal-local",
+      "latest_results": []
+    },
+    {
+      "id": "task-20261019-0004",
+      "summary": "将李寄斩蛇项目资源迁入阿里云 OSS，完成访问优化与 Git 退出资源保存",
+      "status": "completed",
+      "completed_at": "2026-10-20T06:50:07.688497+08:00",
+      "completion_note": "按本次认证启动指令的 --auto 授权完成技术验收与结项。两仓 main 及 origin/main 已受管交付：primary a21308561feb93ee6c93dd2947565bc180c592e9，desk 816f728329453cf3c15c234920f879bdb67aa991，准确 pin 一致。本机和现有 VPS 已正式切换私有香港 OSS，各自 43 张业务表、113921/112297 行及发布身份、计数前后保全；实际 Chrome、准确资源全字节、未来登记上传发布渲染导出、故障恢复、完整在线与无网络离线空实例恢复及继续编辑均通过。在线首次语义读取失败后受控续跑的准确阶段复用及完整校验边界已记录，未冒充首次成功。独立存储、数据、交互复核及最终清理回读完成，无迁移阻断。8 项必需账本结果 succeeded/current；原 VPS 历史59字幕+7标题未绑定及原有广泛回归失败如实保留，不代签作品接受。249 个准确测试/替代云版本与归属明确的本机、VPS测试资源已清理；最后两根删除前536证据来源与目标摘要一致，最终572文件完整索引回读通过，两端准确镜像及HTTP200复核。完整离线介质、最终镜像、正式检查点与脱敏证据按责任和替代条件保留；当前TUI及受管工作区待退出释锁后纳管退役。完整交付报告与最终索引：.runtime/task-evidence/task-20261019-0004/README.md、evidence-index.json；独立报告 independent-review/final-review.md。历史Git/LFS未重写，未新增充值/CDN/付费生成，实际扣费仍UNKNOWN。",
+      "completion_result": "formal-publication",
+      "latest_results": [
+        {
+          "id": "formal-publication",
+          "kind": "external_publication",
+          "status": "succeeded",
+          "recorded_at": "2026-10-20T06:17:23.726316+08:00",
+          "scope": "Formal storage cutover, runtime identity and independent business/usage preservation on local and existing VPS",
+          "summary": "Both formal endpoints cut over and passed actual Chrome checks. Local 43 tables/113921 rows and VPS 43 tables/112297 rows match before/after fingerprints. VPS publication identity and usage hash preserved. Containers/images match final candidates. Existing unbound VPS historical text layers remain unchanged and will be separately recorded as a residual.",
+          "reference": ".runtime/task-evidence/task-20261019-0004/local-cutover-final-receipt.json; .runtime/task-evidence/task-20261019-0004/vps-cutover-final-receipt.json; .runtime/task-evidence/task-20261019-0004/independent-review/local-formal-evidence-independent.json; .runtime/task-evidence/task-20261019-0004/independent-review/vps-formal-review.md",
+          "candidates": {
+            "desk": "816f728329453cf3c15c234920f879bdb67aa991",
+            "primary": "a21308561feb93ee6c93dd2947565bc180c592e9"
+          },
+          "owner": "task-20261019-0004 executor"
+        },
+        {
+          "id": "full-online-recovery",
+          "kind": "verification",
+          "status": "succeeded",
+          "recorded_at": "2026-10-20T06:37:37.574607+08:00",
+          "scope": "Full online empty-instance recovery; exact table and production-index preservation; continued edit/render/upload and actual historical/new playback, precise text card/download, comment location and structure",
+          "summary": "Online recovery preserves all 43 tables and 113921 historical rows before editing, with the exact production index and all 66 text bindings. The first normal CLI completed full catalog/snapshot reads but failed during a subsequent exact-reference read with no HTTP status; the same version then passed full reread. A reviewed bounded resume reused the completed 1673 exact-version full-byte verification stage, freshly HEAD-checked all 1673 versions and ran unchanged materialization, semantic validation and public restore; it passed in 1640 seconds. Final image continued a two-second deterministic render in 44 seconds; all seven new cloud versions (706808 bytes) passed independent full GET/SHA/size/MIME. Actual Chrome played the new two-second film and historical v5, opened/downloaded accurate M655 text source, located old C002 and displayed nine structure images. No formal business test writes.",
+          "reference": ".runtime/task-evidence/task-20261019-0004/full-online-recovery.json; .runtime/task-evidence/task-20261019-0004/online-resume-preflight.json; .runtime/task-evidence/task-20261019-0004/online-continued-render.json; .runtime/task-evidence/task-20261019-0004/independent-review/full-online-recovery-independent.json; .runtime/task-evidence/task-20261019-0004/independent-review/online-new-objects-cloud-read.json; .runtime/task-evidence/task-20261019-0004/independent-review/online-chrome-independent.json",
+          "candidates": {
+            "desk": "816f728329453cf3c15c234920f879bdb67aa991",
+            "primary": "a21308561feb93ee6c93dd2947565bc180c592e9"
+          },
+          "owner": "task-20261019-0004 executor"
+        },
+        {
+          "id": "vps-historical-text-bindings",
+          "kind": "residual",
+          "status": "open",
+          "recorded_at": "2026-10-20T06:19:16.259924+08:00",
+          "scope": "Historical v5 subtitle/title source-card bindings already absent before OSS migration",
+          "summary": "VPS historical v5 contains the same 59 subtitle and 7 title texts as before, but their precise material bindings were absent before cutover. Actual text-source click still reports no registered accurate material. Pre/post film and edit-snapshot hashes are unchanged. Local and complete offline recovery preserve the 66 bindings. Migration preserves VPS independent data and does not overwrite it with local state.",
+          "reference": ".runtime/task-evidence/task-20261019-0004/independent-review/vps-historical-text-boundary.json; .runtime/task-evidence/task-20261019-0004/independent-review/vps-formal-review.md",
+          "candidates": {
+            "desk": "816f728329453cf3c15c234920f879bdb67aa991",
+            "primary": "a21308561feb93ee6c93dd2947565bc180c592e9"
+          },
+          "owner": "task-20261019-0003 VPS publication owner / project maintainer",
+          "condition": "Resolve through the original VPS publication/review owner under a separately authorized content synchronization decision; this migration does not close or rewrite the historical boundary."
+        }
+      ]
+    },
+    {
+      "id": "task-20261020-0001",
+      "summary": "成片剪辑移除筛选下载与场镜侧栏，以全宽多轨时间线为主体",
+      "status": "completed",
+      "completed_at": "2026-10-20T07:12:37.923644+08:00",
+      "completion_note": "All six acceptance criteria passed. Removed filter downloads and scene sidebar; retained full-width timeline, bounded player and editing/comment behavior. Managed desk9088d68 and primaryca33d573 pushed and remote verified. Exact local image122109027d18 source and mounts verified; formal default Chrome desktop2192/narrow700, E01v1/v5, subtitles, E02empty/refresh/return, actual loop, ASH002 M017 close retention, frame/time fields, 100-frame drag, single/cross-track selection, scrolling, old C417 locate and final refresh passed. Isolated failure/recovery and private range-comment save/locate passed; Node3 and Docker13 passed.44 tables and405 comments preserved;5 films/30components unchanged; zero formal test comments; no business migration, rendering, paid generation or VPS publication. Preview container and4 temporary directories removed. Exact prior stopped app315bd66d691a, current/previous images and permanent release configs retained for rollback, retire old app after next verified release replaces baseline. Both worktrees retained by current TUI for later managed cleanup after exit. Permanent evidence .runtime/task-evidence/task-20261020-0001/; required external_publication local-publication and verification receipts succeeded. Execution acceptance does not claim user aesthetic acceptance or resolve unrelated independent residuals.",
+      "completion_result": "local-publication",
+      "latest_results": [
+        {
+          "id": "formal-browser",
+          "kind": "verification",
+          "status": "succeeded",
+          "recorded_at": "2026-10-20T07:12:17.198328+08:00",
+          "scope": "formal layout, empty episode, versions, subtitle, refresh, selection, preview, exact card and old comment",
+          "summary": "Formal desktop/narrow removal and full-width timeline passed. E01v1/v5, subtitle variants, E02 empty/refresh/return, actual loop, C417 old locate, ASH002 M017 and close retention, four fields, 100-frame drag, cross-track20-70, horizontal scrolling and final refresh passed. Five films/30 components unchanged; zero formal test comments.",
+          "reference": ".runtime/task-evidence/task-20261020-0001/formal-verification.json",
+          "candidates": {
+            "desk": "9088d68af4611250ee6a147d1da85643c73c0b01",
+            "primary": "ca33d5732a603e3f3a593b388f84c365d1c5d139"
+          },
+          "owner": "task-20261020-0001"
+        }
+      ]
+    },
+    {
+      "id": "task-20261020-0002",
+      "summary": "实体大卡按入口默认展示参考已选候选或最新候选，无候选显示当前方案",
+      "status": "completed",
+      "completed_at": "2026-10-20T07:21:23.632369+08:00",
+      "completion_note": "按本次--auto授权完成并自行验收。普通新进入默认权威候选号最新真实候选，无候选当前方案；参考按消费方/槽位已确认选择及准确组件进入，未选只查看最新；明确目标优先且缺失/错归属拒绝回退；同卡选择、草稿、嵌套、刷新及新增候选重新进入已验。200项Node（新增7项）及21项Python通过，旧test_entity_read_scope一项评论夹具错误单列。隔离Chrome完成零/单/多候选、乱序检查配套自动测试、方案晚更新、双槽位双消费者、换选取消、503/409/延迟保存及重试、原件失败恢复、准确错误、键盘、草稿和成片来源检查；真实预览库与基线全文件哈希相同。primary=08c0b83e00d2ecac87b0875e6aee628174c6d9d3、desk=254d509cbe644f75e90344bc1ae40b7279aa418f均受管集成推送并回读，准确引用已锁定。正式3000镜像94152aa4fddab208cfdbb59f9803aaf001898da8888d483cb8e580b9c757303a健康且源码/配置一致，业务增量0、44表保全，正式Chrome普通/参考/明确当前方案刷新/ASH002画面声音字幕准确组件与subtitle-line-3回验通过；无VPS或付费生成。最小证据主项目.runtime/task-evidence/task-20261020-0002，正式恢复包service-releases/task-20261020-0002-08c0b83e00d2-254d509cbe64。已停止3次本任务样例服务、删除1个预览容器及私有快照缓存虚拟环境、2份发布数据库副本和临时文件；正式current/previous/base、最小回执及Git历史保留。工作区待当前TUI退出且task-20261020-0001解除其previous-app主目录挂载后受管退役；未删除他任务资源。独立复验、用户接受及旧任务残留未代签或关闭。",
+      "completion_result": "local-publication",
+      "latest_results": [
+        {
+          "id": "local-publication",
+          "kind": "external_publication",
+          "status": "succeeded",
+          "recorded_at": "2026-10-20T07:20:57.082585+08:00",
+          "scope": "本机正式镜像与只读Chrome回验；不发布VPS，不改业务数据",
+          "summary": "共享锁内正式切换成功，健康、源码及实例配置准确；业务增量0，44张业务表保全；正式Chrome回验普通最新、已选参考、明确当前方案刷新、ASH002画面/声音/字幕准确组件及subtitle-line-3通过。",
+          "reference": ".runtime/task-evidence/task-20261020-0002/publication.json",
+          "candidates": {
+            "desk": "254d509cbe644f75e90344bc1ae40b7279aa418f",
+            "primary": "08c0b83e00d2ecac87b0875e6aee628174c6d9d3"
+          },
+          "owner": "task-20261020-0002 executor"
+        },
+        {
+          "id": "independent-followup",
+          "kind": "independent_review",
+          "status": "open",
+          "recorded_at": "2026-10-20T07:20:57.791491+08:00",
+          "scope": "交付后的独立复验及用户接受",
+          "summary": "执行验收已通过；独立复验与用户接受未代签，不关闭其他任务残留。",
+          "reference": "production/reports/task-20261020-0002/README.md",
+          "candidates": {
+            "desk": "254d509cbe644f75e90344bc1ae40b7279aa418f",
+            "primary": "08c0b83e00d2ecac87b0875e6aee628174c6d9d3"
+          },
+          "owner": "独立复验负责人 / 用户",
+          "condition": "等待独立负责人按准确交付版本复验；本次执行者自动验收不代签用户接受。"
+        }
+      ]
+    }
+  ],
+  "abandoned_evidence_only": [
+    {
+      "id": "task-20261013-0008",
+      "summary": "用独立读者逐段迭代全部现行 SKILL 与制作知识",
+      "status": "abandoned"
+    },
+    {
+      "id": "task-20261013-0011",
+      "summary": "全剧实体与素材需求逐项收敛并保留单一候选",
+      "status": "abandoned"
+    },
+    {
+      "id": "task-20261013-0012",
+      "summary": "按最新SKILL逐项重写全剧素材当前生成方案",
+      "status": "abandoned"
+    },
+    {
+      "id": "task-20261013-0013",
+      "summary": "复用合格素材并完成第一集全部镜头视听生成",
+      "status": "abandoned"
+    }
+  ]
+}
