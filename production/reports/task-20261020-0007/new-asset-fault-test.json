@@ -1,0 +1,113 @@
+{
+  "baseline_version": 8,
+  "tests": [
+    {
+      "case": "missing-exact-new-asset-descriptor",
+      "rejected": true,
+      "error": "resource is not registered: export/assets/632e4bb3a02273a4fd6ef3d09661576c8781fc6b030639cbdfca5916f4f41790.mp4",
+      "project_version_unchanged": 8
+    },
+    {
+      "case": "cloud-bytes-do-not-match-required-hash",
+      "rejected": true,
+      "error": "cloud resource full-byte verification failed",
+      "project_version_unchanged": 8
+    },
+    {
+      "case": "stale-project-edit-token",
+      "rejected": true,
+      "error": "工程已被其他编辑更新；保留草稿并重新读取",
+      "project_version_unchanged": 9
+    }
+  ],
+  "restored_project": {
+    "object_id": "edit-new26-e01",
+    "id": "29c6909705f14d24ba72e7d9ce77b4eb2142ddafbe5b0bf5fc083de78bf37d6c",
+    "version": 9
+  },
+  "restore_validated": true,
+  "restored_render": {
+    "id": "5d1ff0b79a6908121429b9ae25b985db5fce7c8c48db86f5c146cb3c4fab47ad",
+    "status": "queued",
+    "attempts": 0,
+    "progress": 0.0,
+    "error": "",
+    "updated_at": "2026-10-20T13:43:20+00:00"
+  },
+  "restored_render_result": {
+    "id": "5d1ff0b79a6908121429b9ae25b985db5fce7c8c48db86f5c146cb3c4fab47ad",
+    "status": "succeeded",
+    "progress": 1,
+    "output": {
+      "object_id": "episode-film-5d1ff0b79a6908121429b9ae25b985db5fce7c8c48db86f5c146cb3c4fab47ad",
+      "revision_id": "42c14e49d6cc355b3d06ae30e1fc8ce7c3767bfe18bcd9ad893d4ffd14a1a671"
+    },
+    "components": [
+      {
+        "bytes": 288102,
+        "channels": 2,
+        "duration_seconds": 1.0,
+        "file": "53bfaf0b0d92d0bd4e912661f8ae615ca7eb077de70ca9de45e625edb38b590e.wav",
+        "has_audio": true,
+        "id": "mix",
+        "mime": "audio/wav",
+        "role": "original",
+        "sample_rate": 48000,
+        "sha256": "53bfaf0b0d92d0bd4e912661f8ae615ca7eb077de70ca9de45e625edb38b590e"
+      },
+      {
+        "bytes": 308359,
+        "channels": 2,
+        "duration_seconds": 1.0,
+        "file": "1b46133fa20afbb911ecf0143b0e64b4d916ca7f21ead5968281475fe43437a2.mp4",
+        "has_audio": true,
+        "height": 720,
+        "id": "clean",
+        "mime": "video/mp4",
+        "role": "original",
+        "sample_rate": 48000,
+        "sha256": "1b46133fa20afbb911ecf0143b0e64b4d916ca7f21ead5968281475fe43437a2",
+        "width": 1280
+      },
+      {
+        "bytes": 308359,
+        "channels": 2,
+        "duration_seconds": 1.0,
+        "file": "1b46133fa20afbb911ecf0143b0e64b4d916ca7f21ead5968281475fe43437a2.mp4",
+        "has_audio": true,
+        "height": 720,
+        "id": "subtitled",
+        "mime": "video/mp4",
+        "role": "original",
+        "sample_rate": 48000,
+        "sha256": "1b46133fa20afbb911ecf0143b0e64b4d916ca7f21ead5968281475fe43437a2",
+        "width": 1280
+      },
+      {
+        "bytes": 5337,
+        "file": "35e3b7148a126a1b9ddb36241c693a705bc7128068eb7bdc1e9cd7ef921bba4f.json",
+        "id": "project",
+        "mime": "application/json",
+        "role": "original",
+        "sha256": "35e3b7148a126a1b9ddb36241c693a705bc7128068eb7bdc1e9cd7ef921bba4f"
+      },
+      {
+        "bytes": 1,
+        "file": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b.srt",
+        "id": "subtitles",
+        "mime": "application/x-subrip",
+        "role": "original",
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "bytes": 2053,
+        "file": "bb98107993e82e02396ae1b486de561a6adfc2f6755258cd631d2f0e7aa094e0.json",
+        "id": "source-map",
+        "mime": "application/json",
+        "role": "original",
+        "sha256": "bb98107993e82e02396ae1b486de561a6adfc2f6755258cd631d2f0e7aa094e0"
+      }
+    ],
+    "scope": "One-second exact new-M017 test in an isolated copied database; never published"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "task": "task-20261020-0007",
+  "removed_containers_after_success": [
+    {
+      "id": "6e5b6b8d7699660429cd5793f34413d6144f36c812554b34e4e4d197713be4ae",
+      "name": "ssr-task-20261020-0007-vps-preflight"
+    },
+    {
+      "id": "4071511ea8945a74b891e54180ee613f222d18d0955caccf5345a6916ee1b36e",
+      "name": "ssr-task-20261020-0007-vps-apply"
+    }
+  ],
+  "earlier_failed_container_already_removed": {
+    "id": "32b061f40da03547c3cbce538ca6b4ac943f7a315d4431ac36d588b7ec03e408",
+    "name": "ssr-task-20261020-0007-vps-preflight",
+    "state_before_removal": "exited1; no DB snapshot or mutation"
+  },
+  "removed_paths": [
+    {
+      "path": "/home/work/lijizhanshe/incoming/task-20261020-0007-increment-r1",
+      "files": 13,
+      "logical_bytes": 4717987
+    },
+    {
+      "path": "/home/work/lijizhanshe/incoming/task-20261020-0007-increment-r2",
+      "files": 16,
+      "logical_bytes": 4719590
+    },
+    {
+      "path": "/home/work/lijizhanshe/incoming/task-20261020-0007-increment-r3/work/before.sqlite3",
+      "files": 1,
+      "logical_bytes": 945242112
+    },
+    {
+      "path": "/home/work/lijizhanshe/incoming/task-20261020-0007-increment-r3/work/preflight-before.sqlite3",
+      "files": 1,
+      "logical_bytes": 945242112
+    },
+    {
+      "path": "/home/work/lijizhanshe/incoming/task-20261020-0007-increment-r3/work/rehearsal.sqlite3",
+      "files": 1,
+      "logical_bytes": 947056640
+    },
+    {
+      "path": "/home/work/lijizhanshe/incoming/task-20261020-0007-increment-r3/work/after.sqlite3",
+      "files": 1,
+      "logical_bytes": 947056640
+    },
+    {
+      "path": "/home/work/lijizhanshe/incoming/task-20261020-0007-increment-r3/source",
+      "files": 8,
+      "logical_bytes": 3988751
+    },
+    {
+      "path": "/home/work/lijizhanshe/incoming/task-20261020-0007-increment-r3/bundle.tar.gz",
+      "files": 1,
+      "logical_bytes": 715870
+    }
+  ],
+  "files_removed": 42,
+  "logical_bytes_removed": 3798739702,
+  "physical_space_savings_not_claimed": true,
+  "images_removed": 0,
+  "current_reader_retained": "8e502aff0fab530fb7a45fa46221daad9e4bed5aa7d197bbb1b22e7c06c238ad",
+  "normal_active_resource_cache_retained": true,
+  "retained": {
+    "path": "/home/work/lijizhanshe/incoming/task-20261020-0007-increment-r3",
+    "purpose": "Actual incremental publication/protection/failure receipts and immutable controller/engine/manifest provenance; state.json content_increment points to work/applied.json",
+    "owner": "task-20261020-0007 executor",
+    "release_condition": "Project retention after accepted deployment and any independent review; cleaned bundle cannot be replayed, exact upstream package remains in private OSS/Git source612a36d4"
+  },
+  "previous_snapshot_release_0009_and_shared_resources_untouched": true,
+  "all_task_vps_containers_removed": 3,
+  "temporary_cleanup_script_removed": true
+}
