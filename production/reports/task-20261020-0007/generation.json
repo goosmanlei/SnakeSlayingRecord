@@ -1,0 +1,120 @@
+{
+  "format": "m017-generation-delivery-v1",
+  "task": "task-20261020-0007",
+  "call_id": "task-20261020-0007-m017-01",
+  "submission_sha256": "532a27ec619b32a3c938fd7b7aad4bf8e69a5e7405120af30e853851cb2318aa",
+  "provider_run": "skill_6a686b42-08d3-45cc-a144-b5b01f83fa5a",
+  "provider_thread": "skill_dc497a68-5ca2-4356-80e8-fa90fa9ec1a4",
+  "platform": "小云雀; existing browser credential scope",
+  "model": "Seedance 2.5",
+  "actual_mode": "extend",
+  "requested_duration_seconds": 18,
+  "actual_video_frames": 432,
+  "native_video_seconds": "18.000144",
+  "native_audio_seconds": "17.920000",
+  "native_audio_encoding": "AAC,32000Hz,2channels",
+  "resolution": [
+    1280,
+    720
+  ],
+  "ratio": "adaptive with two16:9 picture/video inputs; actual16:9",
+  "submission_count": 1,
+  "regeneration_count": 0,
+  "input_m016": {
+    "asset": "asset-task-20261015-0004-s001-q01-04",
+    "revision": "2dbd2e85cb166f8a49ee4d1c1f69fb2e32a81dbac14f4f050b05b3e6ff9faf03",
+    "sha256": "605c83a2205d4c7a3dc95d8865e6473a85c9fefb2d9feadc88600e8a6fd3cf35",
+    "range": "complete original22.042seconds,529video frames"
+  },
+  "tail_image": {
+    "source_frame_0_based": 527,
+    "sha256": "6678fde43af92ec5461b47ea39cfe1947cc28699312eff134d08fcdb393b36ee",
+    "mode": "reference_image; no false claim of a locked first-frame API",
+    "extract": "ffmpeg select exact source frame527; matches last frame used by episode at cut492"
+  },
+  "audio_inputs": [
+    {
+      "input": {
+        "component_id": "boat-aheng-home",
+        "material_selection": {
+          "candidate_id": "candidate-aaa3fca1c8eacf021377b80115a2bd5062cb9b5cf35223f5ad5e00c99f1e2914",
+          "material_id": "new26-boat-song-singing"
+        },
+        "reference": {
+          "object_id": "asset-task-20261015-0003-boat-song-full-02",
+          "revision_id": "313d65234fa6bc01da8b57a8b2afde44e9c70b7635bfe365b77e45cff78e7ce9"
+        },
+        "role": "reference_audio",
+        "use": "@音频1：完整13秒阿蘅归家唱句，约束声线、旋律、原速与呼吸，镜内1—14秒唱完一次；今字原轨8.2—13秒的同一次尾腔与老汉镜内11—14秒插话重叠。"
+      },
+      "component": {
+        "bytes": 2496044,
+        "channels": 2,
+        "duration_seconds": 13.0,
+        "file": "f748cf33ae71c45a25608e1f55a87e8797a30923c17997e7a98686897da61d4a.wav",
+        "has_audio": true,
+        "id": "boat-aheng-home",
+        "mime": "audio/wav",
+        "role": "original",
+        "sample_rate": 48000,
+        "sha256": "f748cf33ae71c45a25608e1f55a87e8797a30923c17997e7a98686897da61d4a"
+      }
+    },
+    {
+      "input": {
+        "component_id": "voice-reference-channel",
+        "material_selection": {
+          "candidate_id": "candidate-2e8444a388a0640a6ad38b63cc74d6e242d59897a6cf477a61753804be90a7c6",
+          "material_id": "new26-porter-voice"
+        },
+        "reference": {
+          "object_id": "asset-task-20261015-0003-porter-voice-01",
+          "revision_id": "2f504f4cb325b4d70c5a7f077280636f895d1051c25294584983b090207fe132"
+        },
+        "role": "reference_audio",
+        "use": "@音频2：只约束挑柴老汉，老年男性说话声；不复述中性试读字，剧情原词以时间线为准；须选完整独立文件，预算≤4秒"
+      },
+      "component": {
+        "bytes": 393644,
+        "channels": 2,
+        "duration_seconds": 2.05,
+        "file": "f6365e0d401c8aef3990e16cb6f4c9963c2abca96cbc10b6ad05047c5a3a712b.wav",
+        "has_audio": true,
+        "id": "voice-reference-channel",
+        "mime": "audio/wav",
+        "role": "original",
+        "sample_rate": 48000,
+        "sha256": "f6365e0d401c8aef3990e16cb6f4c9963c2abca96cbc10b6ad05047c5a3a712b"
+      }
+    }
+  ],
+  "output_asset": {
+    "object_id": "asset-task-20261020-0007-m017-01",
+    "revision_id": "466b5c2e88bcb7c2b99df06b740b4ef3cb67a7bb3eaad7e953350bf5aa4431b9",
+    "sha256": "632e4bb3a02273a4fd6ef3d09661576c8781fc6b030639cbdfca5916f4f41790",
+    "bytes": 16800101
+  },
+  "observed_platform_credits": {
+    "before": 27862,
+    "after": 27222,
+    "difference": 640,
+    "attribution": "one actual submission in held account window; credits are not monetary fee"
+  },
+  "asr_auxiliary": {
+    "model": "doubao-seed-2-0-lite-260428",
+    "responses": [
+      "resp_0217925033534518f32d4667543c5e47ac6ffa77f14f9c5993b5e",
+      "resp_0217925034171586bb921e917cca4cc83d13d8a67f06f411a1280"
+    ],
+    "total_tokens": 2534,
+    "scope": "two native-audio alignment aids; divergent tail and male start estimates; not sensory acceptance"
+  },
+  "monetary_cost": "UNKNOWN",
+  "user_acceptance": {
+    "message": "当前这个可以，继续推进成片剪辑中的应用吧",
+    "accepted_asset": "asset-task-20261020-0007-m017-01@466b5c2e88bcb7c2b99df06b740b4ef3cb67a7bb3eaad7e953350bf5aa4431b9",
+    "sha256": "632e4bb3a02273a4fd6ef3d09661576c8781fc6b030639cbdfca5916f4f41790",
+    "scope": "current candidate accepted; apply to episode 1"
+  },
+  "prompt": "在@视频1结尾之后向后延长18秒，只生成接下来的新镜头。延续同一日上午河街米铺门口的二维手绘动画：阿蘅跳过险滩唱到归家，挑柴老汉在她同一次尾腔里才反应过来。\n参考分工：@视频1是完整前镜，提供人物身份、衣着、身高体态、七人站位、米铺空间、道具和片尾动作状态；从其末端继续，不重演片中已唱完的首句和翻页。@图片1是前镜剪辑出点最后可见的完整画面，作为本镜起点构图、全体人物和道具位置的直接图像依据。保留图中阿蘅、挑柴老汉以及左侧两名、右侧三名听客，共七个人。@音频1是阿蘅完整13秒归家唱句，约束少女声线、旋律、原速、呼吸和同一次尾腔；@音频2只约束挑柴老汉的老年男性音色，不念试读内容。\n起点：第一画面延续@图片1的街侧全景和同一观察高度。阿蘅画中偏右、老汉偏左，二人仍近旁相对；老汉不退到米铺后方。他的脸型、灰发发髻、灰须、赭黄衣服、衣摆和灰褐裤腿长度、草鞋以及清瘦身形均与图中同一个人一致，不换成矮壮短裤老人。其余五名听客仍在图中的原位置、原衣着，没人离场。阿蘅两手已经离开书页，自然垂下；歌本已摊开，河石已压稳，不再摸书、翻页或重新压石。倒扣竹篮、竖担和两捆落地柴均保持前镜末态；老汉以原来的手和握持高度扶着腿边竖担。\n全镜约定：一个连续镜头，无剪切、跳切或瞬间变焦。先让观众清楚看到原班七人，再沿原视线轴向阿蘅与老汉缓慢、平稳地推近，逐渐收成较近的双人构图；不横移绕轴，不改变两人的实际距离或前后位置。五名听客始终在原地，推近时可以随画框边缘逐渐被裁出，不能在画内溶解、凭空消失或换人；画框边缘仍保留邻近听客的部分身体，显示他们仍在场。老汉和阿蘅两张脸、嘴部及篮上歌本保持可辨。日光方向、木门柱与柜台方位、河沿和色彩延续前镜，保持二维轮廓、简洁色块和轻手绘背景。低河声和米铺内极轻的量米声连续，不加配乐。\n镜内时间线，以下0秒为新增段起点：\n0—1秒：保持前镜末态和七人全景一个短气口。阿蘅双手仍在身侧，轻吸一次气；老汉保持扶担姿势，五名听客安静看她。只出现自然呼吸与细小衣料动作，摄影机尚不突进。\n1—9.2秒：阿蘅沿@音频1原速唱“船靠岸，灯来迎，家里人等到如今——”一次，表情随旋律渐明亮，双手不碰歌本。摄影机从全景连续缓慢推近，到约8秒时收成阿蘅与老汉的较近双人构图后平顺停住；他们及书篮、门柱之间的相对空间保持连贯，听客只因画框收窄而逐渐出画。老汉先轻点头，仍以为接下来要唱第二道滩；五名听客没有提前说笑或离场。\n9.2—11秒：摄影机在同一侧停稳。只延续刚才同一次“今”字拖腔，不重新起词、吸气或再唱归家句。阿蘅保持唱尾口型；老汉这才眉眼一动，意识到已经唱到家。\n11—14秒：阿蘅原来那一次尾音连续收束，同时老汉顺口说“二道——哎，到了？”，先数滩、再停顿醒悟。他在同一次尾腔内开口，说完时阿蘅才收净歌尾。阿蘅只在眼角忍笑，不加新词；@音频1从本镜1秒连续推进到14秒，不重复、变速或复制尾音。其余听客只作安静的听者反应。\n14—18秒：歌声已经结束，阿蘅闭口抿笑，转眼看老汉；老汉朝她扬一下下巴再自然落下，两人对视停一拍。摄影机保持已停稳的双人构图，邻近听客仍可在边缘辨认；没有人挪位、换形或突然消失。歌本、河石、倒扣竹篮、扁担与落地柴不动，只留连续环境声、轻微呼吸和衣物声，下一镜才开始老汉的说笑。\n关键限制：全片七人身份与场内位置延续，只有相机在镜内渐进改变景别；围观听客不凭空消失，老汉不换脸、换体态、换衣裤或后退。唱词与插话各发生一次，二人声线分别对应指定音频，插话和同一次尾腔重叠。不得重唱前镜首句、重做翻页、漏词、加新答话、旁白、合唱、背景乐或主动添加对白字幕。保留渠道正常生成标识。\n"
+}
