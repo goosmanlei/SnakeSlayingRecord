@@ -1,0 +1,360 @@
+{
+  "python": "3.12.15 (main, Oct  6 2026, 02:02:22) [GCC 14.2.0]",
+  "wall_seconds": 0.27863412495935336,
+  "process_cpu_seconds": 0.27842004099999995,
+  "profiling_runs": 1,
+  "metadata": {
+    "rows": 7796,
+    "total_result_characters": 334098751,
+    "max_result_characters": 4467763,
+    "matching": {
+      "rows": 1,
+      "total_result_characters": 4467763,
+      "max_result_characters": 4467763
+    },
+    "query_plan": [
+      {
+        "id": 2,
+        "parent": 0,
+        "notused": 0,
+        "detail": "SCAN production_current_operations"
+      }
+    ]
+  },
+  "erased_file_count": 962,
+  "top_self": [
+    {
+      "file": "/app/review_desk/candidate_reset.py",
+      "line": 18,
+      "function": "receipts",
+      "primitive_calls": 1,
+      "total_calls": 1,
+      "self_seconds": 0.259887582,
+      "cumulative_seconds": 0.277450666,
+      "cumulative_share": 0.9957526417141979,
+      "self_share": 0.9327198599163399
+    },
+    {
+      "file": "/usr/local/lib/python3.12/json/decoder.py",
+      "line": 344,
+      "function": "raw_decode",
+      "primitive_calls": 1,
+      "total_calls": 1,
+      "self_seconds": 0.013976666,
+      "cumulative_seconds": 0.013976666,
+      "cumulative_share": 0.050161357665859815,
+      "self_share": 0.050161357665859815
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'execute' of 'sqlite3.Connection' objects>",
+      "primitive_calls": 3,
+      "total_calls": 3,
+      "self_seconds": 0.0034772490000000004,
+      "cumulative_seconds": 0.0034772490000000004,
+      "cumulative_share": 0.012479623594228651,
+      "self_share": 0.012479623594228651
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'disable' of '_lsprof.Profiler' objects>",
+      "primitive_calls": 1,
+      "total_calls": 1,
+      "self_seconds": 3.2917000000000003e-05,
+      "cumulative_seconds": 3.2917000000000003e-05,
+      "cumulative_share": 0.00011813700136263595,
+      "self_share": 0.00011813700136263595
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'fetchone' of 'sqlite3.Cursor' objects>",
+      "primitive_calls": 2,
+      "total_calls": 2,
+      "self_seconds": 2.6708000000000002e-05,
+      "cumulative_seconds": 3.1875e-05,
+      "cumulative_share": 0.00011439733020730992,
+      "self_share": 9.585329867221438e-05
+    },
+    {
+      "file": "/usr/local/lib/python3.12/json/decoder.py",
+      "line": 333,
+      "function": "decode",
+      "primitive_calls": 1,
+      "total_calls": 1,
+      "self_seconds": 1.8168e-05,
+      "cumulative_seconds": 0.014006958000000002,
+      "cumulative_share": 0.05027007371061715,
+      "self_share": 6.520378651627942e-05
+    },
+    {
+      "file": "/app/review_desk/material_storage.py",
+      "line": 179,
+      "function": "factory",
+      "primitive_calls": 3,
+      "total_calls": 3,
+      "self_seconds": 1.6792e-05,
+      "cumulative_seconds": 1.6792e-05,
+      "cumulative_share": 6.026541078717328e-05,
+      "self_share": 6.026541078717328e-05
+    },
+    {
+      "file": "/app/review_desk/production_current.py",
+      "line": 68,
+      "function": "enabled",
+      "primitive_calls": 1,
+      "total_calls": 1,
+      "self_seconds": 1.6709000000000002e-05,
+      "cumulative_seconds": 0.000328125,
+      "cumulative_share": 0.0011776195756634845,
+      "self_share": 5.996752911165307e-05
+    },
+    {
+      "file": "/usr/local/lib/python3.12/json/__init__.py",
+      "line": 299,
+      "function": "loads",
+      "primitive_calls": 1,
+      "total_calls": 1,
+      "self_seconds": 1.5042000000000001e-05,
+      "cumulative_seconds": 0.014025042000000001,
+      "cumulative_share": 0.05033497602652205,
+      "self_share": 5.398477305030136e-05
+    },
+    {
+      "file": "/app/review_desk/candidate_reset.py",
+      "line": 31,
+      "function": "erased_files",
+      "primitive_calls": 1,
+      "total_calls": 1,
+      "self_seconds": 9.043000000000001e-06,
+      "cumulative_seconds": 0.27746625,
+      "cumulative_share": 0.9958085716904786,
+      "self_share": 3.245474688830443e-05
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'match' of 're.Pattern' objects>",
+      "primitive_calls": 2,
+      "total_calls": 2,
+      "self_seconds": 9e-06,
+      "cumulative_seconds": 9e-06,
+      "cumulative_share": 3.230042264676986e-05,
+      "self_share": 3.230042264676986e-05
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'update' of 'dict' objects>",
+      "primitive_calls": 1,
+      "total_calls": 1,
+      "self_seconds": 6.5410000000000006e-06,
+      "cumulative_seconds": 6.5410000000000006e-06,
+      "cumulative_share": 2.3475229392502407e-05,
+      "self_share": 2.3475229392502407e-05
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'startswith' of 'str' objects>",
+      "primitive_calls": 1,
+      "total_calls": 1,
+      "self_seconds": 2.4170000000000003e-06,
+      "cumulative_seconds": 2.4170000000000003e-06,
+      "cumulative_share": 8.674457948582528e-06,
+      "self_share": 8.674457948582528e-06
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'end' of 're.Match' objects>",
+      "primitive_calls": 2,
+      "total_calls": 2,
+      "self_seconds": 1.958e-06,
+      "cumulative_seconds": 1.958e-06,
+      "cumulative_share": 7.027136393597265e-06,
+      "self_share": 7.027136393597265e-06
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method builtins.len>",
+      "primitive_calls": 1,
+      "total_calls": 1,
+      "self_seconds": 1.1660000000000001e-06,
+      "cumulative_seconds": 1.1660000000000001e-06,
+      "cumulative_share": 4.184699200681518e-06,
+      "self_share": 4.184699200681518e-06
+    }
+  ],
+  "top_cumulative": [
+    {
+      "file": "/app/review_desk/candidate_reset.py",
+      "line": 31,
+      "function": "erased_files",
+      "primitive_calls": 1,
+      "total_calls": 1,
+      "self_seconds": 9.043000000000001e-06,
+      "cumulative_seconds": 0.27746625,
+      "cumulative_share": 0.9958085716904786,
+      "self_share": 3.245474688830443e-05
+    },
+    {
+      "file": "/app/review_desk/candidate_reset.py",
+      "line": 18,
+      "function": "receipts",
+      "primitive_calls": 1,
+      "total_calls": 1,
+      "self_seconds": 0.259887582,
+      "cumulative_seconds": 0.277450666,
+      "cumulative_share": 0.9957526417141979,
+      "self_share": 0.9327198599163399
+    },
+    {
+      "file": "/usr/local/lib/python3.12/json/__init__.py",
+      "line": 299,
+      "function": "loads",
+      "primitive_calls": 1,
+      "total_calls": 1,
+      "self_seconds": 1.5042000000000001e-05,
+      "cumulative_seconds": 0.014025042000000001,
+      "cumulative_share": 0.05033497602652205,
+      "self_share": 5.398477305030136e-05
+    },
+    {
+      "file": "/usr/local/lib/python3.12/json/decoder.py",
+      "line": 333,
+      "function": "decode",
+      "primitive_calls": 1,
+      "total_calls": 1,
+      "self_seconds": 1.8168e-05,
+      "cumulative_seconds": 0.014006958000000002,
+      "cumulative_share": 0.05027007371061715,
+      "self_share": 6.520378651627942e-05
+    },
+    {
+      "file": "/usr/local/lib/python3.12/json/decoder.py",
+      "line": 344,
+      "function": "raw_decode",
+      "primitive_calls": 1,
+      "total_calls": 1,
+      "self_seconds": 0.013976666,
+      "cumulative_seconds": 0.013976666,
+      "cumulative_share": 0.050161357665859815,
+      "self_share": 0.050161357665859815
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'execute' of 'sqlite3.Connection' objects>",
+      "primitive_calls": 3,
+      "total_calls": 3,
+      "self_seconds": 0.0034772490000000004,
+      "cumulative_seconds": 0.0034772490000000004,
+      "cumulative_share": 0.012479623594228651,
+      "self_share": 0.012479623594228651
+    },
+    {
+      "file": "/app/review_desk/production_current.py",
+      "line": 68,
+      "function": "enabled",
+      "primitive_calls": 1,
+      "total_calls": 1,
+      "self_seconds": 1.6709000000000002e-05,
+      "cumulative_seconds": 0.000328125,
+      "cumulative_share": 0.0011776195756634845,
+      "self_share": 5.996752911165307e-05
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'disable' of '_lsprof.Profiler' objects>",
+      "primitive_calls": 1,
+      "total_calls": 1,
+      "self_seconds": 3.2917000000000003e-05,
+      "cumulative_seconds": 3.2917000000000003e-05,
+      "cumulative_share": 0.00011813700136263595,
+      "self_share": 0.00011813700136263595
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'fetchone' of 'sqlite3.Cursor' objects>",
+      "primitive_calls": 2,
+      "total_calls": 2,
+      "self_seconds": 2.6708000000000002e-05,
+      "cumulative_seconds": 3.1875e-05,
+      "cumulative_share": 0.00011439733020730992,
+      "self_share": 9.585329867221438e-05
+    },
+    {
+      "file": "/app/review_desk/material_storage.py",
+      "line": 179,
+      "function": "factory",
+      "primitive_calls": 3,
+      "total_calls": 3,
+      "self_seconds": 1.6792e-05,
+      "cumulative_seconds": 1.6792e-05,
+      "cumulative_share": 6.026541078717328e-05,
+      "self_share": 6.026541078717328e-05
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'match' of 're.Pattern' objects>",
+      "primitive_calls": 2,
+      "total_calls": 2,
+      "self_seconds": 9e-06,
+      "cumulative_seconds": 9e-06,
+      "cumulative_share": 3.230042264676986e-05,
+      "self_share": 3.230042264676986e-05
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'update' of 'dict' objects>",
+      "primitive_calls": 1,
+      "total_calls": 1,
+      "self_seconds": 6.5410000000000006e-06,
+      "cumulative_seconds": 6.5410000000000006e-06,
+      "cumulative_share": 2.3475229392502407e-05,
+      "self_share": 2.3475229392502407e-05
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'startswith' of 'str' objects>",
+      "primitive_calls": 1,
+      "total_calls": 1,
+      "self_seconds": 2.4170000000000003e-06,
+      "cumulative_seconds": 2.4170000000000003e-06,
+      "cumulative_share": 8.674457948582528e-06,
+      "self_share": 8.674457948582528e-06
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'end' of 're.Match' objects>",
+      "primitive_calls": 2,
+      "total_calls": 2,
+      "self_seconds": 1.958e-06,
+      "cumulative_seconds": 1.958e-06,
+      "cumulative_share": 7.027136393597265e-06,
+      "self_share": 7.027136393597265e-06
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method builtins.len>",
+      "primitive_calls": 1,
+      "total_calls": 1,
+      "self_seconds": 1.1660000000000001e-06,
+      "cumulative_seconds": 1.1660000000000001e-06,
+      "cumulative_share": 4.184699200681518e-06,
+      "self_share": 4.184699200681518e-06
+    }
+  ],
+  "boundary": "Direct erased_files call in the same isolated backup; metadata queries preceded it; no HTTP, resource lookup, OSS or Store initialization included."
+}
