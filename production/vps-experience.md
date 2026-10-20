@@ -94,7 +94,7 @@ python3 "$RELEASE_BUNDLE/oss_runtime_release.py" apply \
 python3 "$RELEASE_BUNDLE/oss_runtime_release.py" finalize --release "$EXACT_RELEASE"
 ```
 
-`EXACT_RELEASE` 取 apply 的真实回执。apply 持 `~/lijizhanshe/publish.lock`、实例发布锁和容器内 HTTP 写入锁，核验本实例标签、真实挂载、网络与限制，正常停止应用，并拒绝存在排队／运行中渲染的切换。它保存该 VPS 自己的一致性数据库备份，核对全部业务表、资源闭包、独立发布身份及 `usage/attempts.json`，随后替换镜像和资源配置。它不安装本机数据库、不清空实例、不重启共享 Nginx／Xray／VPS，也不修改 TLS 和其他站点。
+`EXACT_RELEASE` 取 apply 的真实回执。apply 持 `~/lijizhanshe/publish.lock`、实例发布锁和容器内 HTTP 写入锁，核验本实例标签、真实挂载、网络与限制，正常停止应用，并拒绝存在排队／运行中渲染的切换。它保存该 VPS 自己的一致性数据库备份，核对全部业务表、资源闭包、独立发布身份及 `usage/attempts.json`，随后替换镜像和资源配置，并同步已提交的 `repository`／`review_desk_repository` 公开源码入口；其余实例业务配置继续取远端自身原值。它不安装本机数据库、不清空实例、不重启共享 Nginx／Xray／VPS，也不修改 TLS 和其他站点。
 
 正常运行沿用 1 CPU、1 GiB 内存、1.5 GiB 内存与 swap 总限额、64 进程及三份 10 MiB 日志限制。原渲染 worker 与代理环境继续启用。媒体原件转到 OSS，数据库和正常有界缓存保留在 VPS；资源的 8 GiB 上传、范围读取及缓存规则见 [资源存储](resource-storage.md)。
 

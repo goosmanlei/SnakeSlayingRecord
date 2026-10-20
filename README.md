@@ -2,6 +2,14 @@
 
 本仓库是公开故事实例，不包含审阅台系统代码。系统代码及后续迭代在 [story-review-desk](https://github.com/goosmanlei/story-review-desk)；所需系统版本固定于 [config/instance.json](config/instance.json)；本实例的集场阅读、评论与正式运行状态分别见 [验证记录](VERIFICATION.md) 和 [当前状态](STATE.md)。已选方向三《把灯带回家》，当前作品包括[故事结构第十稿](http://127.0.0.1:3000/?workspace=story.outline)、[故事精修九 · 定稿候选](http://127.0.0.1:3000/?workspace=story.sources&source=refinement-09-lantern-home-v9)和[剧本版本四](http://127.0.0.1:3000/?workspace=story.script&script=screenplay-04-lantern-home&episode=screenplay-04-lantern-home-e01)。旧版本及评论保留；用户已确认版本四为本次制作终稿，准确输入与当前制作边界见 [当前状态](STATE.md)。
 
+## 示例项目：人与 AI 一起把故事做成漫剧
+
+《把灯带回家》以《搜神记·李寄斩蛇》为原型，探索从民间故事到漫剧的完整创作与审阅过程：整理资料、选择扩写方向、推敲故事结构与小说、编写分集剧本，再进入视听设计、实体与素材制作，最后剪辑成片。人在审阅台阅读、试听、观看并提出意见，决定表达与取舍；AI 在这些约束下创作、制作和修订；系统保存内容、准确版本、来源与评论，让下一步能够接着已有判断继续。
+
+可以直接打开[在线体验](https://leiguoguo.me/lijizhanshe/)，从“制作思路”了解协作方法，从“故事创作”阅读作品与意见，或在“生产制作 → 成片剪辑”观看第一集《两份米》。当前已有全剧剧本、视听与素材方案，以及首集成片和可继续编辑的工程；全剧成片尚未完成，工程交付也不代表所有作品质量已获认可。体验实例可写，后续体验修改与本机创作状态各自保存，不会自动互相同步。
+
+两个仓库共同构成这个示例：[SnakeSlayingRecord](https://github.com/goosmanlei/SnakeSlayingRecord) 保存故事、实例配置、创作方法与故事专用工具；[story-review-desk](https://github.com/goosmanlei/story-review-desk) 提供可复用的阅读、评论、素材审阅、成片展示及数据管理系统。源码公开，媒体原件与完整恢复快照存于私有 OSS；克隆源码不等于已取得全部媒体，部署与恢复条件见下文。
+
 ## 故事创作导航与评论数
 
 故事采编、故事结构和故事剧本均选中一级“故事创作”，顶部 Tab 区分当前子页。采编不再提供右上搜索框、资料总数及正文重复“审阅意见”按钮；浮动“查看评论”、正文高亮和圈选入口继续使用共用评论面板。
