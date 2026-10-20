@@ -29,6 +29,14 @@ M016 切点保留在第 492 帧，即 20.5 秒。M017 完整延续至第 924 帧
 
 发布后从最新正式完整导出取得 Schema 16 快照 `aaf89efbb412366e26e9ad29b7d86ece5143622fdb70925d12b94f2aaa7888ab`，准确私有 OSS 原件已上传并完整校验。用该快照和全部 1,707 个准确资源版本建立临时完整介质，在禁网、无凭据的新空实例实际执行标准恢复。全部业务表、制作索引、三镜、工程、新旧成片、原件绑定与旧评论一致。恢复实例的最新字幕版已从0秒正常速度、有声播放至289.416667秒结束；继续制作验证也已实际保存短段工程并成功渲染，然后恢复完整工程。这些试验未写正式库。详细证据见 [empty-restoration-verification.json](empty-restoration-verification.json)、[recovery-continued-render-verification.json](recovery-continued-render-verification.json)。
 
-用户已经接受的是新 M017 候选及其应用授权，尚未单独确认本次更新后的完整首集；任务保持待用户最终验收，不代签结项。执行者无法直接完成的人耳听感、完整运动审美仍如实保留，模型定位和浏览器技术播放不抵扣该边界。
+用户在看到更新后的首集后明确表示“效果不错，也发布到vps吧”，已接受本次首集版本6，并新增授权将该修订发布到既有 VPS。准确记录见 [user-final-acceptance.json](user-final-acceptance.json)。执行者未冒称自己完成人耳听感或完整运动审美判断；用户接受、模型定位和浏览器技术播放分别记录。
 
-未向 VPS 发布，未修改通用审阅系统代码，未重新设计包装或重制无关镜头。正式原件、调用事实、准确版本和必要验收证据保留；本次过程资源的实际清理和保留条件见 [cleanup.json](cleanup.json)。
+## VPS 后续发布
+
+用户接受本机新版后新增授权，现已将同一个准确增量发布至[公网首集版本6](https://leiguoguo.me/lijizhanshe/?workspace=settings.workspace&production_tab=editing&edit_episode=new26-e01&edit_output=episode-film-772dde74be0ec9803315b25aa301766c0fc4e6ab0349bafca173fee9f4a021b7)。来源提交为 `612a36d49c92929489785961bcc47f5b9eb6be1b`，沿用系统 `4eb4a9ddee541aad0b64d315f023c0021613220a`、同一应用容器和镜像。先在 VPS 自身一致快照预演，再在共享发布／写入锁和维护窗口中提交，没有用本机快照覆盖体验库。
+
+准确增量 `7ff3784ce18a0a1580891ae93a7238e2a65078c65a1a665aac7cce1b223e57ff` 已入事务日志。43张表的范围外记录逐表比较一致，405条原评论保留；新版成片、可编辑工程和114个审阅元素与本机准确对应。公网六种媒体入口的1024字节范围请求返回206并匹配准确OSS版本，工程、字幕和来源映射完整下载的SHA256一致。正式域名两版实际播放、准确M017大卡与旧评论定位沿浏览器回执分别记录。详见 [vps-publication.json](vps-publication.json)。
+
+原完整基线仍是 task-20261020-0009，本次内容增量另记于远端 `state.json` 和 `storage-runtime.json` 的 `content_increment`，不能把旧基线提交误作当前成片版本。网站已恢复开放，凭据、既有配置、调用计数、共享Nginx标记外配置与Xray保持，没有新模型调用。两次运行器启动问题在业务写入前被拦住，修正锁文件创建和Python模块路径后沿同一原件增量完成，失败日志和实际回执保留。
+
+未修改通用审阅系统代码，未重新设计包装或重制无关镜头。正式原件、调用事实、准确版本和必要验收证据保留；本次过程资源的实际清理和保留条件见 [cleanup.json](cleanup.json)。
