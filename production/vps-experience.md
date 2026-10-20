@@ -67,7 +67,9 @@ python3 "$SNAPSHOT_SCRIPT" apply --release "$SNAPSHOT_RELEASE" --replace-experie
 python3 "$SNAPSHOT_SCRIPT" finalize --release "$SNAPSHOT_RELEASE"
 ```
 
-所有远端命令持 `publish.lock`。切换保留原实例目录、原容器及控制记录，保护共享服务、外置凭据和 `usage/attempts.json`，赋予新业务发布身份并核对旧标签写入保护。维护覆盖整个业务前缀，开放前核对完整业务表及运行身份。`status --release ...` 查询准确阶段；restoring 或 restore-failed 时先查真实进程／容器及日志，确认已结束才能对同一 release 重新 restore，非空且非准确已完成的目标仍拒绝。未开放切换失败可 `rollback --release ...` 回原实例；`opening` 或 `open` 可能已有新写入，仅可 `resume --release ...` 核对并继续开放，再 finalize，不自动倒灌旧数据。
+所有远端命令持 `publish.lock`。切换保留原实例目录、原容器及控制记录，保护共享服务、外置凭据和 `usage/attempts.json`，赋予新业务发布身份并核对旧标签写入保护。既有容器创建的锁文件以只读文件描述符取得 Linux 本地文件系统排他锁，不改变文件权限。维护覆盖整个业务前缀，开放前核对完整业务表及运行身份。`status --release ...` 查询准确阶段；restoring 或 restore-failed 时先查真实进程／容器及日志，确认已结束才能对同一 release 重新 restore，非空且非准确已完成的目标仍拒绝。未开放切换失败可 `rollback --release ...` 回原实例；`opening` 或 `open` 可能已有新写入，仅可 `resume --release ...` 核对并继续开放，再 finalize，不自动倒灌旧数据。
+
+若切换前失败已经回到原实例，且完整恢复的 candidate 尚未切换、原容器和控制身份未变，在确认旧进程结束并修复原因后，可用已受管交付的修订控制器执行 `retry --release "$SNAPSHOT_RELEASE" --controller-commit "$DELIVERED_CONTROLLER_COMMIT" --replace-experience-data`。它保留原失败回执、冻结包和完整恢复结果，在同一发布身份下继续；修订控制器原件及提交另行记录，不改写原快照的来源版本。已开放、原运行身份变化或目录已经切换后遗留的情况拒绝此快捷重试，沿准确阶段调查恢复。
 
 `state.json` 和 `storage-runtime.json` 继续承担永久运行身份，记录新完整发布及准确提交；旧全量工具的 OSS 保护保持有效。用户接受及回退用途解除前保留 release 内的 `previous-instance`、旧容器和 `before-control`；完成后按准确归属清理，禁止全局删除。具体保留责任、数量及解除条件由原任务回执维护。task-20261020-0004 的范围见 [本次完整部署](../planning/vps-latest-deployment-20261020-task.md)。
 

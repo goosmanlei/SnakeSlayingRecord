@@ -152,5 +152,29 @@ class SnapshotPublicationSafetyTests(unittest.TestCase):
         self.assertEqual((self.target/'.runtime/review.sqlite3').read_text(),'old-vps-comments')
         self.assertTrue(self.containers['old-id']['State']['Running'])
 
+    def test_existing_readonly_lock_can_be_locked_without_changing_permissions(self):
+        import fcntl
+        path=self.root/'http-write.lock';path.write_text('');path.chmod(0o444)
+        with release.write_window(path) as first:
+            self.assertFalse(first.writable())
+            fcntl.flock(first,fcntl.LOCK_EX|fcntl.LOCK_NB)
+            with release.write_window(path) as second:
+                with self.assertRaises(BlockingIOError):fcntl.flock(second,fcntl.LOCK_EX|fcntl.LOCK_NB)
+        self.assertEqual(path.stat().st_mode&0o777,0o444)
+
+    def test_retry_preserves_first_failure_and_reuses_the_same_frozen_candidate(self):
+        clone=self.setup_cutover()
+        import fcntl
+        with (self.target/'.runtime/http-write.lock').open('a') as lock:
+            fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
+            with self.assertRaises(BlockingIOError):
+                release.apply(argparse.Namespace(release=self.path,replace_experience_data=True))
+        with patch.object(release,'clone_runtime',side_effect=clone):
+            release.retry(argparse.Namespace(release=self.path,replace_experience_data=True,controller_commit='a'*40))
+        self.assertEqual(release.receipt(self.path)['phase'],'open')
+        self.assertEqual(json.loads((self.path/'attempt-1.json').read_text())['phase'],'rolled-back')
+        self.assertEqual(release.receipt(self.path)['controller']['commit'],'a'*40)
+        self.assertEqual((self.target/'.runtime/review.sqlite3').read_text(),'new-business-data')
+
 
 if __name__=='__main__':unittest.main()
