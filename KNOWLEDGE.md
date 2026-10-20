@@ -7,6 +7,7 @@
 - 作品以《搜神记·李寄斩蛇》为原型，扩写方向三《把灯带回家》，最终载体为漫剧。资料、结构、小说、剧本和制作逐步迭代，用户通过审阅台阅读、评论与判断。已确认输入见下节。
 - 本仓为 `goosmanlei/SnakeSlayingRecord`；通用 Python 审阅台为 `goosmanlei/story-review-desk`，真实源目录在主项目同级 `../story-review-desk`，交付目标均为 `main`。`config/instance.json.review_desk_commit` 固定实例所需系统提交。历史 `story-review-desk-python` 路径已改名，恢复旧包时核验当前 Git 身份并显式指定系统目录，不改冻结包。
 - 任务数据统一在主项目 `.codex-task/`。历史 `.codex-project/` 路径按当前目录和原任务身份核对；不另建账本。定义／发布沿 [项目任务 SKILL](skills/task-definition-publish/SKILL.md)，执行沿本次启动指令；多仓、发布和恢复沿 [工作区流程](production/generation-workspaces.md)。方法不注册为系统工作类型。
+- 全局侧栏下方提供故事实例与通用系统的GitHub入口，在新标签打开；公开仓库地址沿实例 `config/instance.json` 的 `repository`／`review_desk_repository`，其他实例不默认指向本故事。缺失、非法配置及窄屏交互沿系统仓 `docs/interface.md`，实例交付见[源码入口记录](production/reports/task-20261020-0005/README.md)。
 - 本机正式入口为 `http://127.0.0.1:3000/`，Docker 中的 Nginx 代理 Python 服务；正式 SQLite 为主目录 `.runtime/review.sqlite3`。凭据与运行库不公开。通用展示与数据管理归系统仓，故事创作工具归本仓。
 - 《九头案》仅作已确认范围内的框架和交互参考，不继承业务设定或数据。历史入口 `../2026.08.06.九头案/review-software` 使用前核可用性，不与当前通用系统混淆。
 
