@@ -1,0 +1,735 @@
+{
+  "workload": "film_review",
+  "wall_seconds": 3.88125316798687,
+  "cpu_seconds": 3.154277349,
+  "calls": 2081862,
+  "top_self": [
+    {
+      "file": "decoder.py",
+      "line": 344,
+      "function": "raw_decode",
+      "calls": 4344,
+      "self_seconds": 0.936486675,
+      "cumulative_seconds": 0.936486675
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'execute' of 'sqlite3.Connection' objects>",
+      "calls": 11215,
+      "self_seconds": 0.738589943,
+      "cumulative_seconds": 0.738589943
+    },
+    {
+      "file": "encoder.py",
+      "line": 205,
+      "function": "iterencode",
+      "calls": 21286,
+      "self_seconds": 0.35001360000000004,
+      "cumulative_seconds": 0.350181308
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'read' of '_io.TextIOWrapper' objects>",
+      "calls": 595,
+      "self_seconds": 0.257900736,
+      "cumulative_seconds": 0.288054044
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method _io.open>",
+      "calls": 1057,
+      "self_seconds": 0.15582994900000002,
+      "cumulative_seconds": 0.159253573
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method _hashlib.openssl_sha256>",
+      "calls": 19369,
+      "self_seconds": 0.13427976900000002,
+      "cumulative_seconds": 0.13427976900000002
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'encode' of 'str' objects>",
+      "calls": 20030,
+      "self_seconds": 0.111951122,
+      "cumulative_seconds": 0.111951122
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'fetchone' of 'sqlite3.Cursor' objects>",
+      "calls": 11098,
+      "self_seconds": 0.069404451,
+      "cumulative_seconds": 0.08729953700000001
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'read' of '_io.BufferedReader' objects>",
+      "calls": 530,
+      "self_seconds": 0.048732406000000006,
+      "cumulative_seconds": 0.048732406000000006
+    },
+    {
+      "file": "fractions.py",
+      "line": 186,
+      "function": "__new__",
+      "calls": 59850,
+      "self_seconds": 0.046155638000000006,
+      "cumulative_seconds": 0.069923389
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method posix.stat>",
+      "calls": 6812,
+      "self_seconds": 0.04535293,
+      "cumulative_seconds": 0.09568599400000001
+    },
+    {
+      "file": "editing_review.py",
+      "line": 128,
+      "function": "text_layer_document",
+      "calls": 66,
+      "self_seconds": 0.040166098000000004,
+      "cumulative_seconds": 3.5490037090000004
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method '__exit__' of '_io._IOBase' objects>",
+      "calls": 929,
+      "self_seconds": 0.040051262000000004,
+      "cumulative_seconds": 0.040051262000000004
+    },
+    {
+      "file": "editing_review.py",
+      "line": 29,
+      "function": "elements",
+      "calls": 133,
+      "self_seconds": 0.039103819000000005,
+      "cumulative_seconds": 0.383922331
+    },
+    {
+      "file": "pathlib.py",
+      "line": 387,
+      "function": "_parse_path",
+      "calls": 18416,
+      "self_seconds": 0.030202053000000003,
+      "cumulative_seconds": 0.062007692
+    },
+    {
+      "file": "resources.py",
+      "line": 339,
+      "function": "materialize",
+      "calls": 132,
+      "self_seconds": 0.029797403000000004,
+      "cumulative_seconds": 1.7200867210000002
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method _codecs.utf_8_decode>",
+      "calls": 595,
+      "self_seconds": 0.028986499000000002,
+      "cumulative_seconds": 0.028986499000000002
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method builtins.isinstance>",
+      "calls": 220524,
+      "self_seconds": 0.028823222000000003,
+      "cumulative_seconds": 0.034614111
+    },
+    {
+      "file": "resources.py",
+      "line": 162,
+      "function": "descriptor",
+      "calls": 132,
+      "self_seconds": 0.028020464000000002,
+      "cumulative_seconds": 0.8407183800000001
+    },
+    {
+      "file": "__init__.py",
+      "line": 183,
+      "function": "dumps",
+      "calls": 21286,
+      "self_seconds": 0.021917511,
+      "cumulative_seconds": 0.406924493
+    },
+    {
+      "file": "pathlib.py",
+      "line": 358,
+      "function": "__init__",
+      "calls": 25743,
+      "self_seconds": 0.019849065000000003,
+      "cumulative_seconds": 0.033108338
+    },
+    {
+      "file": "fractions.py",
+      "line": 613,
+      "function": "forward",
+      "calls": 43092,
+      "self_seconds": 0.019523814,
+      "cumulative_seconds": 0.09188253
+    },
+    {
+      "file": "encoder.py",
+      "line": 183,
+      "function": "encode",
+      "calls": 21286,
+      "self_seconds": 0.019046393000000002,
+      "cumulative_seconds": 0.37993481500000004
+    },
+    {
+      "file": "pathlib.py",
+      "line": 437,
+      "function": "__str__",
+      "calls": 18160,
+      "self_seconds": 0.018851643,
+      "cumulative_seconds": 0.10388833
+    },
+    {
+      "file": "material_storage.py",
+      "line": 179,
+      "function": "factory",
+      "calls": 9474,
+      "self_seconds": 0.017067283000000003,
+      "cumulative_seconds": 0.018099377
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method __new__ of type object at 0x7fffff7489c0>",
+      "calls": 128687,
+      "self_seconds": 0.016889247,
+      "cumulative_seconds": 0.016889247
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method math.gcd>",
+      "calls": 132202,
+      "self_seconds": 0.015322898000000001,
+      "cumulative_seconds": 0.015322898000000001
+    },
+    {
+      "file": "editing.py",
+      "line": 65,
+      "function": "duration",
+      "calls": 6650,
+      "self_seconds": 0.014241974000000001,
+      "cumulative_seconds": 0.09955435400000001
+    },
+    {
+      "file": "pathlib.py",
+      "line": 407,
+      "function": "_load_parts",
+      "calls": 18416,
+      "self_seconds": 0.014225400000000001,
+      "cumulative_seconds": 0.08954103000000001
+    },
+    {
+      "file": "pathlib.py",
+      "line": 551,
+      "function": "drive",
+      "calls": 19011,
+      "self_seconds": 0.013860782,
+      "cumulative_seconds": 0.10051731700000001
+    }
+  ],
+  "top_cumulative": [
+    {
+      "file": "profile_read.py",
+      "line": 22,
+      "function": "<lambda>",
+      "calls": 1,
+      "self_seconds": 3.0791000000000004e-05,
+      "cumulative_seconds": 3.880599751
+    },
+    {
+      "file": "editing_api.py",
+      "line": 6,
+      "function": "dispatch",
+      "calls": 1,
+      "self_seconds": 0.00010512500000000001,
+      "cumulative_seconds": 3.88056896
+    },
+    {
+      "file": "editing_review.py",
+      "line": 283,
+      "function": "review",
+      "calls": 1,
+      "self_seconds": 0.004369538,
+      "cumulative_seconds": 3.8764841260000003
+    },
+    {
+      "file": "editing_review.py",
+      "line": 94,
+      "function": "verify_binding",
+      "calls": 116,
+      "self_seconds": 0.006080996,
+      "cumulative_seconds": 3.844485709
+    },
+    {
+      "file": "editing_review.py",
+      "line": 128,
+      "function": "text_layer_document",
+      "calls": 66,
+      "self_seconds": 0.040166098000000004,
+      "cumulative_seconds": 3.5490037090000004
+    },
+    {
+      "file": "production_media.py",
+      "line": 99,
+      "function": "asset_path",
+      "calls": 132,
+      "self_seconds": 0.00021483600000000001,
+      "cumulative_seconds": 1.7477123790000002
+    },
+    {
+      "file": "production_media.py",
+      "line": 105,
+      "function": "export_asset_path",
+      "calls": 132,
+      "self_seconds": 0.001473827,
+      "cumulative_seconds": 1.746895333
+    },
+    {
+      "file": "resources.py",
+      "line": 339,
+      "function": "materialize",
+      "calls": 132,
+      "self_seconds": 0.029797403000000004,
+      "cumulative_seconds": 1.7200867210000002
+    },
+    {
+      "file": "resources.py",
+      "line": 91,
+      "function": "settings",
+      "calls": 264,
+      "self_seconds": 0.002371751,
+      "cumulative_seconds": 1.336136884
+    },
+    {
+      "file": "production_media.py",
+      "line": 247,
+      "function": "validate_component",
+      "calls": 66,
+      "self_seconds": 0.000911006,
+      "cumulative_seconds": 0.998208838
+    },
+    {
+      "file": "__init__.py",
+      "line": 299,
+      "function": "loads",
+      "calls": 4344,
+      "self_seconds": 0.004869412,
+      "cumulative_seconds": 0.958558381
+    },
+    {
+      "file": "decoder.py",
+      "line": 333,
+      "function": "decode",
+      "calls": 4344,
+      "self_seconds": 0.007686307000000001,
+      "cumulative_seconds": 0.9517822520000001
+    },
+    {
+      "file": "decoder.py",
+      "line": 344,
+      "function": "raw_decode",
+      "calls": 4344,
+      "self_seconds": 0.936486675,
+      "cumulative_seconds": 0.936486675
+    },
+    {
+      "file": "resources.py",
+      "line": 162,
+      "function": "descriptor",
+      "calls": 132,
+      "self_seconds": 0.028020464000000002,
+      "cumulative_seconds": 0.8407183800000001
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'execute' of 'sqlite3.Connection' objects>",
+      "calls": 11215,
+      "self_seconds": 0.738589943,
+      "cumulative_seconds": 0.738589943
+    },
+    {
+      "file": "production_current.py",
+      "line": 116,
+      "function": "submission",
+      "calls": 1750,
+      "self_seconds": 0.007097076000000001,
+      "cumulative_seconds": 0.725422608
+    },
+    {
+      "file": "production.py",
+      "line": 78,
+      "function": "record",
+      "calls": 1927,
+      "self_seconds": 0.006926594,
+      "cumulative_seconds": 0.7234888700000001
+    },
+    {
+      "file": "profile_read.py",
+      "line": 27,
+      "function": "counted_read_text",
+      "calls": 595,
+      "self_seconds": 0.005141952,
+      "cumulative_seconds": 0.5787199110000001
+    },
+    {
+      "file": "production_current.py",
+      "line": 102,
+      "function": "annotate",
+      "calls": 1927,
+      "self_seconds": 0.0056432140000000006,
+      "cumulative_seconds": 0.501236089
+    },
+    {
+      "file": "production_current.py",
+      "line": 77,
+      "function": "checksum",
+      "calls": 3677,
+      "self_seconds": 0.00316395,
+      "cumulative_seconds": 0.459999243
+    },
+    {
+      "file": "store.py",
+      "line": 12,
+      "function": "canonical",
+      "calls": 21236,
+      "self_seconds": 0.008522762,
+      "cumulative_seconds": 0.41371650200000004
+    },
+    {
+      "file": "__init__.py",
+      "line": 183,
+      "function": "dumps",
+      "calls": 21286,
+      "self_seconds": 0.021917511,
+      "cumulative_seconds": 0.406924493
+    },
+    {
+      "file": "pathlib.py",
+      "line": 1022,
+      "function": "read_text",
+      "calls": 595,
+      "self_seconds": 0.0019371870000000002,
+      "cumulative_seconds": 0.40127949100000004
+    },
+    {
+      "file": "editing_review.py",
+      "line": 29,
+      "function": "elements",
+      "calls": 133,
+      "self_seconds": 0.039103819000000005,
+      "cumulative_seconds": 0.383922331
+    },
+    {
+      "file": "encoder.py",
+      "line": 183,
+      "function": "encode",
+      "calls": 21286,
+      "self_seconds": 0.019046393000000002,
+      "cumulative_seconds": 0.37993481500000004
+    },
+    {
+      "file": "encoder.py",
+      "line": 205,
+      "function": "iterencode",
+      "calls": 21286,
+      "self_seconds": 0.35001360000000004,
+      "cumulative_seconds": 0.350181308
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'read' of '_io.TextIOWrapper' objects>",
+      "calls": 595,
+      "self_seconds": 0.257900736,
+      "cumulative_seconds": 0.288054044
+    },
+    {
+      "file": "production_current.py",
+      "line": 68,
+      "function": "enabled",
+      "calls": 1927,
+      "self_seconds": 0.004017278,
+      "cumulative_seconds": 0.270014081
+    },
+    {
+      "file": "pathlib.py",
+      "line": 1005,
+      "function": "open",
+      "calls": 1057,
+      "self_seconds": 0.000834076,
+      "cumulative_seconds": 0.160217318
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method _io.open>",
+      "calls": 1057,
+      "self_seconds": 0.15582994900000002,
+      "cumulative_seconds": 0.159253573
+    },
+    {
+      "file": "store.py",
+      "line": 16,
+      "function": "digest",
+      "calls": 19171,
+      "self_seconds": 0.008773347,
+      "cumulative_seconds": 0.15305849000000002
+    },
+    {
+      "file": "resources.py",
+      "line": 59,
+      "function": "contained",
+      "calls": 1188,
+      "self_seconds": 0.004831678000000001,
+      "cumulative_seconds": 0.148912134
+    },
+    {
+      "file": "editing_review.py",
+      "line": 17,
+      "function": "checksum",
+      "calls": 15494,
+      "self_seconds": 0.009019327,
+      "cumulative_seconds": 0.14466030800000002
+    },
+    {
+      "file": "resources.py",
+      "line": 131,
+      "function": "_catalog",
+      "calls": 132,
+      "self_seconds": 0.002978952,
+      "cumulative_seconds": 0.139699042
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method _hashlib.openssl_sha256>",
+      "calls": 19369,
+      "self_seconds": 0.13427976900000002,
+      "cumulative_seconds": 0.13427976900000002
+    },
+    {
+      "file": "editing_review.py",
+      "line": 52,
+      "function": "material_origin",
+      "calls": 116,
+      "self_seconds": 0.0029257650000000003,
+      "cumulative_seconds": 0.12033466200000001
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'encode' of 'str' objects>",
+      "calls": 20030,
+      "self_seconds": 0.111951122,
+      "cumulative_seconds": 0.111951122
+    },
+    {
+      "file": "pathlib.py",
+      "line": 437,
+      "function": "__str__",
+      "calls": 18160,
+      "self_seconds": 0.018851643,
+      "cumulative_seconds": 0.10388833
+    },
+    {
+      "file": "pathlib.py",
+      "line": 551,
+      "function": "drive",
+      "calls": 19011,
+      "self_seconds": 0.013860782,
+      "cumulative_seconds": 0.10051731700000001
+    },
+    {
+      "file": "editing.py",
+      "line": 65,
+      "function": "duration",
+      "calls": 6650,
+      "self_seconds": 0.014241974000000001,
+      "cumulative_seconds": 0.09955435400000001
+    }
+  ],
+  "selected": [
+    {
+      "file": "production.py",
+      "line": 78,
+      "function": "record",
+      "calls": 1927,
+      "self_seconds": 0.006926594,
+      "cumulative_seconds": 0.7234888700000001
+    },
+    {
+      "file": "resources.py",
+      "line": 339,
+      "function": "materialize",
+      "calls": 132,
+      "self_seconds": 0.029797403000000004,
+      "cumulative_seconds": 1.7200867210000002
+    },
+    {
+      "file": "resources.py",
+      "line": 91,
+      "function": "settings",
+      "calls": 264,
+      "self_seconds": 0.002371751,
+      "cumulative_seconds": 1.336136884
+    },
+    {
+      "file": "editing_review.py",
+      "line": 128,
+      "function": "text_layer_document",
+      "calls": 66,
+      "self_seconds": 0.040166098000000004,
+      "cumulative_seconds": 3.5490037090000004
+    },
+    {
+      "file": "production_current.py",
+      "line": 77,
+      "function": "checksum",
+      "calls": 3677,
+      "self_seconds": 0.00316395,
+      "cumulative_seconds": 0.459999243
+    },
+    {
+      "file": "editing_review.py",
+      "line": 17,
+      "function": "checksum",
+      "calls": 15494,
+      "self_seconds": 0.009019327,
+      "cumulative_seconds": 0.14466030800000002
+    },
+    {
+      "file": "resources.py",
+      "line": 68,
+      "function": "hash_file",
+      "calls": 132,
+      "self_seconds": 0.001182506,
+      "cumulative_seconds": 0.07962258
+    },
+    {
+      "file": "production_current.py",
+      "line": 116,
+      "function": "submission",
+      "calls": 1750,
+      "self_seconds": 0.007097076000000001,
+      "cumulative_seconds": 0.725422608
+    },
+    {
+      "file": "pathlib.py",
+      "line": 741,
+      "function": "parents",
+      "calls": 1190,
+      "self_seconds": 0.000619794,
+      "cumulative_seconds": 0.004146032
+    }
+  ],
+  "text_file_reads": {
+    "config/resource-storage.json": {
+      "calls": 264,
+      "logical_bytes": 109032
+    },
+    "config/instance.json": {
+      "calls": 264,
+      "logical_bytes": 196042968
+    },
+    "config/resource-catalog.json": {
+      "calls": 1,
+      "logical_bytes": 1161619
+    },
+    ".runtime/resource-cache/d058c394ada60eb1bb4669de5078eb0b34d3bc98ebe18435140e2bddd2eb4443.json": {
+      "calls": 4,
+      "logical_bytes": 11124
+    },
+    ".runtime/resource-cache/98c7560e9de1f3cb9e95c6ed5daec5166e8166194322432208acbd7a2cfca6eb.json": {
+      "calls": 4,
+      "logical_bytes": 11124
+    },
+    ".runtime/resource-cache/7e271d2b48a81ed9a067f5fc91aef09d5e5c4521c1cca40ab2153abc71d10afe.json": {
+      "calls": 7,
+      "logical_bytes": 27566
+    },
+    ".runtime/resource-cache/670ca4db2b8845ecb8ff4d87a9ed3254ba1d92d147f586a5caf9740a155d3cb3.json": {
+      "calls": 4,
+      "logical_bytes": 10812
+    },
+    ".runtime/resource-cache/b6374f4f400633117815d93bcd223e60d1ca38ff470c7682a48e3fc855d5aa1c.json": {
+      "calls": 2,
+      "logical_bytes": 3888
+    },
+    ".runtime/resource-cache/56feea30276b0d7370bc913602459cf53d8c10bbb0ff885f530ea3f9e2fc635d.json": {
+      "calls": 5,
+      "logical_bytes": 15730
+    },
+    ".runtime/resource-cache/4adec4977c4f5700e7718def76ff5d1ebcd4451a174d9733ae7349122117f3ef.json": {
+      "calls": 3,
+      "logical_bytes": 6852
+    },
+    ".runtime/resource-cache/d0f560221a20efe813fbeb01becc79023404b3562e78b586b02dcbb702890f41.json": {
+      "calls": 3,
+      "logical_bytes": 6774
+    },
+    ".runtime/resource-cache/14a8605f86097c03d3405f05c68808470413e5186384dfb6549bdfa2139079c2.json": {
+      "calls": 1,
+      "logical_bytes": 1417
+    },
+    ".runtime/resource-cache/e388652ef5ed05a4f18602600c3b83719b2bdc59060fa493f48f069adedccdd5.json": {
+      "calls": 3,
+      "logical_bytes": 6870
+    },
+    ".runtime/resource-cache/dcc44cabc55198dd8df3551b8ddb53e6be8d36bf0ce3baf5947201c54b2ea5f2.json": {
+      "calls": 4,
+      "logical_bytes": 10720
+    },
+    ".runtime/resource-cache/3486094f317591feb87e1fa1bbc245bb5b71ebabb5c45adf4045161e2fbab5f3.json": {
+      "calls": 3,
+      "logical_bytes": 7008
+    },
+    ".runtime/resource-cache/53d2652f84af2fac5c232998e5c8bd51c9d90e0823362bedf86e3925092ee19d.json": {
+      "calls": 6,
+      "logical_bytes": 21384
+    },
+    ".runtime/resource-cache/fe15612483c4bea3d87c47c360a1ad37f07d6d07495ebcc30aec3fc4835fdf22.json": {
+      "calls": 2,
+      "logical_bytes": 3712
+    },
+    ".runtime/resource-cache/4810854e21e5393d3fb613b5a7484cafad562bde9b65562198078106b570f92b.json": {
+      "calls": 5,
+      "logical_bytes": 15525
+    },
+    ".runtime/resource-cache/b1e324d86bf7d2754e9b2909d0f6ce8c34f570730b84bcd67978e62c8408c67f.json": {
+      "calls": 7,
+      "logical_bytes": 27601
+    },
+    ".runtime/resource-cache/6414ac5214c3b7e84f57b5716b2106e40c73fd12c22b4b3864eb84f26c5fb948.json": {
+      "calls": 1,
+      "logical_bytes": 1445
+    },
+    ".runtime/resource-cache/430e2e97a3dcdc41a181ac388f52d60c1576a782bd3869ebdb3da29ec3c7c519.json": {
+      "calls": 1,
+      "logical_bytes": 1651
+    },
+    ".runtime/resource-cache/0c2b4044c32bd35696e64cf547fdbada6031d80b6eb4d3970c14f2532d16ff09.json": {
+      "calls": 1,
+      "logical_bytes": 1532
+    }
+  },
+  "boundary": "One instrumented uncached projection; excludes HTTP encoding and transport. Cumulative times overlap."
+}

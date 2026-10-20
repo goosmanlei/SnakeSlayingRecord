@@ -1,0 +1,31 @@
+{
+  "real_comment_creation": {
+    "changed_tables": [
+      "business_comments",
+      "comment_events",
+      "comments",
+      "production_comment_quotes"
+    ],
+    "http_content_routes": {
+      "/api/production/index?view=settings": "hit",
+      "/api/production/materials": "hit",
+      "/api/production/materials?scope=av&episode=av-episode&grouped=1&compact=1&cards=1": "hit",
+      "/api/business-codes": "hit"
+    },
+    "content_payloads_unchanged": true,
+    "breakdown_created_and_closed_fresh": true,
+    "workspace_structure_builds": 1,
+    "workspace_comment_target_reads": 2,
+    "new_relation_target_added_after_cache_hit": true,
+    "comment_code": "C001",
+    "exact_quote_and_content_hash_preserved": true
+  },
+  "source_change_and_exactness": {
+    "content_token_changed": true,
+    "old_excerpt_retained": true,
+    "matches_current": false,
+    "stale_edit_rejected": true,
+    "mismatched_revision_rejected": true,
+    "no_rejected_comment_inserted": true
+  }
+}

@@ -1,0 +1,125 @@
+✔ integer frames survive millisecond round trips, including the real end and fractional frame rates (24.337042ms)
+✔ half-open intersections keep track and element type identity, and reject empty/invalid selections (0.636875ms)
+✔ review reload never reads, applies, removes or overwrites legacy engineering drafts (0.704ms)
+✔ a failed single route preserves the complete same-scope DOM, bounds, selection and viewport until retry succeeds (64.596292ms)
+✔ initial route failure is explicit and does not present a partial successful graph (0.976042ms)
+✔ an older successful layout cannot overwrite a newer measured layout (29.497667ms)
+✔ a detached graph discards its late result without committing a partial layer (14.359125ms)
+✔ component disposal and coalesced media and graph requests preserve independent consumers (4.795792ms)
+✔ focus deduplicates identical gestures without hiding hydrated records (1.795917ms)
+✔ departed directory success cannot replace the entity page or its exact review target (6.781417ms)
+✔ departed directory failure cannot replace the entity page or its exact review target (0.651459ms)
+✔ departed scene success cannot commit or restore a review after A to B to A (0.718375ms)
+✔ departed scene failure cannot commit or restore a review after A to B to A (0.667833ms)
+✔ A to B to A rejects an older directory even after the new A directory commits (0.940708ms)
+✔ current directory failure remains visible and a new navigation can recover (0.744667ms)
+✔ a current scene still commits its exact route and review context (0.903417ms)
+✔ late entity failure cannot replace a newer entity directory (0.791542ms)
+✔ a completed workspace load cannot restore position after a newer scene load (3.999ms)
+✔ an exact entity relation is readable in settings without admitting adoption relations (12.108875ms)
+✔ shared candidates use the chosen material round number in both small and large cards (1.747417ms)
+✔ complete cards on every story page own exact comments and drafts until parent restoration (5.911375ms)
+✔ story-hosted complete cards locate production comments and select only their exact text surface (1.686708ms)
+✔ current version defaults to its latest candidate without changing adoption or selected components (6.133458ms)
+✔ without adoption the newest result wins independently of object ID or array order (1.271208ms)
+✔ adoption from another state with the same slot does not select this requirement candidate (1.11625ms)
+✔ the entity material renderer uses the candidate original and preserves adopted alternate-file metadata (3.074583ms)
+✖ a preparing current version never borrows its historical adopted result (1.745083ms)
+✔ an explicit invalid version 999 is rejected without changing the URL (1.259541ms)
+✔ an explicit invalid version not-a-version is rejected without changing the URL (1.465208ms)
+✔ an explicit invalid version 0 is rejected without changing the URL (1.147375ms)
+✔ an explicit unknown material identity is rejected even without a numeric version (1.501958ms)
+✔ an explicit candidate must belong to the named material version (1.124208ms)
+✔ a material requirement URL restores its requested older candidate inside the owning entity card (2.193ms)
+✖ ordinary legacy asset entry chooses the current plan while exact candidate entry stays exact (1.386333ms)
+✔ same-entity version responses cannot replace a newer choice when they arrive out of order (4.880708ms)
+✔ a response to a detached entity version control cannot restore its obsolete selection (1.969ms)
+✔ refreshed exact card success keeps its target but closes to the scoped list (2.156208ms)
+✔ refreshed exact card failure keeps its target but closes to the scoped list (1.271292ms)
+✔ a pending modal read cannot reactivate its card after browser navigation changes workspace (1.13175ms)
+✔ closing an obsolete modal cannot restore its saved reader or URL over newer navigation (1.681542ms)
+✔ closing during a second reference save waits for that response instead of refreshing the earlier receipt (2.97175ms)
+✔ saving the restored outer draft cannot overwrite a closed modal draft (1.738084ms)
+✔ an exact historical shot link preserves its requested revision in the all-shot scene reader (2.103417ms)
+✔ an exact earlier preparation revision keeps its own requirements, prompt and comment targets without editing the latest plan (2.486292ms)
+✔ ordinary preparation entry still shows the editable current plan (1.627542ms)
+✔ exact current preparation entry still shows the editable current plan (1.446667ms)
+✔ an earlier demand reads its original definition separately without rewriting a frozen material version (1.68225ms)
+✔ a frozen definition source outside the member list remains a requirement without creating an editable recipe (1.3925ms)
+✔ locating an older demand in a frozen empty version reads its own requirements and recipe without saving controls (1.227541ms)
+✔ a non-entity demand defaults to the latest candidate original without copying adoption range (1.170083ms)
+✔ selecting a non-entity candidate focuses its exact revision without changing the material comment version (1.834458ms)
+✔ an explicit non-entity file choice can replace the adopted default without reverting on repaint (2.668625ms)
+✔ media comments require the exact candidate and file component (1.533667ms)
+✔ entity reload inside a shared dialog preserves its history marker until button closes it (1.567417ms)
+✔ entity reload inside a shared dialog preserves its history marker until Escape closes it (1.180166ms)
+✔ shared image gesture captures the exact old image target after real production focus changes from a newer revision (3.291834ms)
+✔ late image pointerup cannot replace the newer revision comment draft after a real focus change (1.092875ms)
+✔ actual unified dialog close restores the outer revision and draft before a late inner image pointerup (1.36275ms)
+✔ an exact withdrawn entity material remains readable outside the active entity list (1.07375ms)
+✔ a withdrawn entity without an exact revision cannot repopulate an empty active filter (1.303583ms)
+✔ an exact withdrawn entity response still loses to a newer filter request epoch (1.112084ms)
+✔ UX010 entity selection synchronizes both markers while exact historical targets retain their owner (1.806042ms)
+✔ UX010 failed record read preserves completed reader and selection (1.197875ms)
+✔ UX010 failed aggregate read preserves completed reader and selection (1.093375ms)
+✔ UX010 stale record success cannot replace newer reader or either marker (3.091292ms)
+✔ UX010 stale aggregate success cannot replace newer reader or either marker (1.492875ms)
+✔ UX010 modal entity refresh does not alter the outer list and closing restores its reader (1.812083ms)
+✔ UX010 modal refresh completing after close cannot overwrite the restored outer context (2.231625ms)
+✔ UX010 outer refresh completing after a modal opens cannot overwrite the inner context (1.354125ms)
+✔ shared requirement cards prefer their actual identity over an earlier legacy alias (1.037791ms)
+✔ an exact shared alias retains its own round and members inside the unified card (1.264375ms)
+ℹ tests 71
+ℹ suites 0
+ℹ pass 69
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 192.194667
+
+✖ failing tests:
+
+test at tests/ui_unification_compatibility.test.cjs:110:1
+✖ a preparing current version never borrows its historical adopted result (1.745083ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  'current' !== null
+  
+      at TestContext.<anonymous> (/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-task/linked-worktrees/task-20261020-0003/desk/tests/ui_unification_compatibility.test.cjs:116:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'current',
+    expected: null,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/ui_unification_compatibility.test.cjs:139:1
+✖ ordinary legacy asset entry chooses the current plan while exact candidate entry stays exact (1.386333ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'z-old-1'
+  - 'current'
+  
+      at TestContext.<anonymous> (/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-task/linked-worktrees/task-20261020-0003/desk/tests/ui_unification_compatibility.test.cjs:144:12)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'z-old-1',
+    expected: 'current',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

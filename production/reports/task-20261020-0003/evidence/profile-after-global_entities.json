@@ -1,0 +1,614 @@
+{
+  "workload": "global_entities",
+  "wall_seconds": 1.2808345420053229,
+  "cpu_seconds": 0.9501543859999999,
+  "calls": 797450,
+  "top_self": [
+    {
+      "file": "list_reading.py",
+      "line": 112,
+      "function": "rows",
+      "calls": 4,
+      "self_seconds": 0.331225274,
+      "cumulative_seconds": 0.481359751
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'execute' of 'sqlite3.Connection' objects>",
+      "calls": 7263,
+      "self_seconds": 0.178736852,
+      "cumulative_seconds": 0.178736852
+    },
+    {
+      "file": "decoder.py",
+      "line": 344,
+      "function": "raw_decode",
+      "calls": 4063,
+      "self_seconds": 0.155191178,
+      "cumulative_seconds": 0.155191178
+    },
+    {
+      "file": "production_breakdown.py",
+      "line": 33,
+      "function": "rows",
+      "calls": 6,
+      "self_seconds": 0.063732657,
+      "cumulative_seconds": 0.118074124
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method unicodedata.normalize>",
+      "calls": 6919,
+      "self_seconds": 0.045020147,
+      "cumulative_seconds": 0.045020147
+    },
+    {
+      "file": "material_storage.py",
+      "line": 179,
+      "function": "factory",
+      "calls": 46020,
+      "self_seconds": 0.031562387000000004,
+      "cumulative_seconds": 0.032454505
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'get' of 'dict' objects>",
+      "calls": 188614,
+      "self_seconds": 0.031399915,
+      "cumulative_seconds": 0.031399915
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'fetchone' of 'sqlite3.Cursor' objects>",
+      "calls": 6549,
+      "self_seconds": 0.026402929000000002,
+      "cumulative_seconds": 0.030838156000000002
+    },
+    {
+      "file": "list_reading.py",
+      "line": 34,
+      "function": "project",
+      "calls": 3133,
+      "self_seconds": 0.025630502000000003,
+      "cumulative_seconds": 0.16460505
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method builtins.compile>",
+      "calls": 13,
+      "self_seconds": 0.0238785,
+      "cumulative_seconds": 0.0238785
+    },
+    {
+      "file": "production_breakdown.py",
+      "line": 253,
+      "function": "locations",
+      "calls": 4726,
+      "self_seconds": 0.023247209,
+      "cumulative_seconds": 0.049748214000000006
+    },
+    {
+      "file": "business_codes.py",
+      "line": 91,
+      "function": "dump",
+      "calls": 2,
+      "self_seconds": 0.017860425000000003,
+      "cumulative_seconds": 0.023898291000000002
+    },
+    {
+      "file": "material_storage.py",
+      "line": 236,
+      "function": "identity",
+      "calls": 673,
+      "self_seconds": 0.015656044,
+      "cumulative_seconds": 0.038931738
+    },
+    {
+      "file": "ui_projection.py",
+      "line": 14,
+      "function": "_material_entries",
+      "calls": 1,
+      "self_seconds": 0.014505344000000002,
+      "cumulative_seconds": 0.9844422920000001
+    },
+    {
+      "file": "list_reading.py",
+      "line": 90,
+      "function": "ref_record",
+      "calls": 15368,
+      "self_seconds": 0.01371576,
+      "cumulative_seconds": 0.06532283600000001
+    },
+    {
+      "file": "list_reading.py",
+      "line": 70,
+      "function": "record",
+      "calls": 17198,
+      "self_seconds": 0.013608164,
+      "cumulative_seconds": 0.117934588
+    },
+    {
+      "file": "encoder.py",
+      "line": 205,
+      "function": "iterencode",
+      "calls": 830,
+      "self_seconds": 0.011544553,
+      "cumulative_seconds": 0.011544553
+    },
+    {
+      "file": "decoder.py",
+      "line": 333,
+      "function": "decode",
+      "calls": 4063,
+      "self_seconds": 0.009778016,
+      "cumulative_seconds": 0.17539877
+    },
+    {
+      "file": "entity_review.py",
+      "line": 7,
+      "function": "full_states",
+      "calls": 123,
+      "self_seconds": 0.009686264,
+      "cumulative_seconds": 0.017766461
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'fetchall' of 'sqlite3.Cursor' objects>",
+      "calls": 2,
+      "self_seconds": 0.009410955,
+      "cumulative_seconds": 0.010758917000000002
+    },
+    {
+      "file": "production.py",
+      "line": 35,
+      "function": "record_view",
+      "calls": 1913,
+      "self_seconds": 0.008989082,
+      "cumulative_seconds": 0.062317423000000004
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'match' of 're.Pattern' objects>",
+      "calls": 8126,
+      "self_seconds": 0.007451462000000001,
+      "cumulative_seconds": 0.007451462000000001
+    },
+    {
+      "file": "production_states.py",
+      "line": 16,
+      "function": "complete",
+      "calls": 85731,
+      "self_seconds": 0.007447043,
+      "cumulative_seconds": 0.007767727
+    },
+    {
+      "file": "list_associations.py",
+      "line": 65,
+      "function": "add",
+      "calls": 3593,
+      "self_seconds": 0.007352342,
+      "cumulative_seconds": 0.049742365000000004
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method builtins.isinstance>",
+      "calls": 67599,
+      "self_seconds": 0.006646137000000001,
+      "cumulative_seconds": 0.006646137000000001
+    },
+    {
+      "file": "entity_contract.py",
+      "line": 39,
+      "function": "direct_materials_many",
+      "calls": 1,
+      "self_seconds": 0.006624813,
+      "cumulative_seconds": 0.031418584
+    },
+    {
+      "file": "<frozen importlib._bootstrap>",
+      "line": 645,
+      "function": "parent",
+      "calls": 21417,
+      "self_seconds": 0.005804595,
+      "cumulative_seconds": 0.010701894
+    },
+    {
+      "file": "material_storage.py",
+      "line": 225,
+      "function": "canonical_id",
+      "calls": 5291,
+      "self_seconds": 0.00576557,
+      "cumulative_seconds": 0.019132473
+    },
+    {
+      "file": "navigation_search.py",
+      "line": 15,
+      "function": "fields",
+      "calls": 1233,
+      "self_seconds": 0.005705872000000001,
+      "cumulative_seconds": 0.013011846
+    },
+    {
+      "file": "list_associations.py",
+      "line": 56,
+      "function": "material_uses",
+      "calls": 1,
+      "self_seconds": 0.005505768,
+      "cumulative_seconds": 0.171414209
+    }
+  ],
+  "top_cumulative": [
+    {
+      "file": "profile_read.py",
+      "line": 18,
+      "function": "<lambda>",
+      "calls": 1,
+      "self_seconds": 0.002040292,
+      "cumulative_seconds": 1.273219459
+    },
+    {
+      "file": "production_breakdown.py",
+      "line": 40,
+      "function": "index",
+      "calls": 1,
+      "self_seconds": 0.0015719920000000001,
+      "cumulative_seconds": 1.271179167
+    },
+    {
+      "file": "read_cache.py",
+      "line": 269,
+      "function": "read_json",
+      "calls": 3,
+      "self_seconds": 1.25e-05,
+      "cumulative_seconds": 1.001599667
+    },
+    {
+      "file": "ui_projection.py",
+      "line": 8,
+      "function": "material_entries",
+      "calls": 1,
+      "self_seconds": 1.1666000000000001e-05,
+      "cumulative_seconds": 0.9901362920000001
+    },
+    {
+      "file": "ui_projection.py",
+      "line": 11,
+      "function": "<lambda>",
+      "calls": 1,
+      "self_seconds": 0.0009552510000000001,
+      "cumulative_seconds": 0.985397543
+    },
+    {
+      "file": "ui_projection.py",
+      "line": 14,
+      "function": "_material_entries",
+      "calls": 1,
+      "self_seconds": 0.014505344000000002,
+      "cumulative_seconds": 0.9844422920000001
+    },
+    {
+      "file": "list_reading.py",
+      "line": 112,
+      "function": "rows",
+      "calls": 4,
+      "self_seconds": 0.331225274,
+      "cumulative_seconds": 0.481359751
+    },
+    {
+      "file": "__init__.py",
+      "line": 299,
+      "function": "loads",
+      "calls": 4063,
+      "self_seconds": 0.004498538000000001,
+      "cumulative_seconds": 0.18239196200000002
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'execute' of 'sqlite3.Connection' objects>",
+      "calls": 7263,
+      "self_seconds": 0.178736852,
+      "cumulative_seconds": 0.178736852
+    },
+    {
+      "file": "decoder.py",
+      "line": 333,
+      "function": "decode",
+      "calls": 4063,
+      "self_seconds": 0.009778016,
+      "cumulative_seconds": 0.17539877
+    },
+    {
+      "file": "ui_projection.py",
+      "line": 118,
+      "function": "entity_summaries",
+      "calls": 1,
+      "self_seconds": 0.0020197540000000003,
+      "cumulative_seconds": 0.17238562500000001
+    },
+    {
+      "file": "list_associations.py",
+      "line": 56,
+      "function": "material_uses",
+      "calls": 1,
+      "self_seconds": 0.005505768,
+      "cumulative_seconds": 0.171414209
+    },
+    {
+      "file": "list_reading.py",
+      "line": 34,
+      "function": "project",
+      "calls": 3133,
+      "self_seconds": 0.025630502000000003,
+      "cumulative_seconds": 0.16460505
+    },
+    {
+      "file": "decoder.py",
+      "line": 344,
+      "function": "raw_decode",
+      "calls": 4063,
+      "self_seconds": 0.155191178,
+      "cumulative_seconds": 0.155191178
+    },
+    {
+      "file": "production_breakdown.py",
+      "line": 33,
+      "function": "rows",
+      "calls": 6,
+      "self_seconds": 0.063732657,
+      "cumulative_seconds": 0.118074124
+    },
+    {
+      "file": "list_reading.py",
+      "line": 70,
+      "function": "record",
+      "calls": 17198,
+      "self_seconds": 0.013608164,
+      "cumulative_seconds": 0.117934588
+    },
+    {
+      "file": "navigation_search.py",
+      "line": 30,
+      "function": "material_fields",
+      "calls": 673,
+      "self_seconds": 0.00368658,
+      "cumulative_seconds": 0.087756521
+    },
+    {
+      "file": "list_reading.py",
+      "line": 146,
+      "function": "material_calls",
+      "calls": 659,
+      "self_seconds": 0.001648778,
+      "cumulative_seconds": 0.069248372
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method fromkeys>",
+      "calls": 1213,
+      "self_seconds": 0.001769904,
+      "cumulative_seconds": 0.06686209400000001
+    },
+    {
+      "file": "list_reading.py",
+      "line": 90,
+      "function": "ref_record",
+      "calls": 15368,
+      "self_seconds": 0.01371576,
+      "cumulative_seconds": 0.06532283600000001
+    },
+    {
+      "file": "production.py",
+      "line": 35,
+      "function": "record_view",
+      "calls": 1913,
+      "self_seconds": 0.008989082,
+      "cumulative_seconds": 0.062317423000000004
+    },
+    {
+      "file": "production.py",
+      "line": 561,
+      "function": "current_records",
+      "calls": 2,
+      "self_seconds": 0.001441608,
+      "cumulative_seconds": 0.059800041000000005
+    },
+    {
+      "file": "ui_projection.py",
+      "line": 32,
+      "function": "add_scope",
+      "calls": 715,
+      "self_seconds": 0.0027162460000000003,
+      "cumulative_seconds": 0.058033551
+    },
+    {
+      "file": "navigation_search.py",
+      "line": 11,
+      "function": "normalize",
+      "calls": 6919,
+      "self_seconds": 0.004390786000000001,
+      "cumulative_seconds": 0.057512862000000005
+    },
+    {
+      "file": "navigation_search.py",
+      "line": 45,
+      "function": "<genexpr>",
+      "calls": 5480,
+      "self_seconds": 0.001243205,
+      "cumulative_seconds": 0.052614532000000006
+    },
+    {
+      "file": "production_breakdown.py",
+      "line": 253,
+      "function": "locations",
+      "calls": 4726,
+      "self_seconds": 0.023247209,
+      "cumulative_seconds": 0.049748214000000006
+    },
+    {
+      "file": "list_associations.py",
+      "line": 65,
+      "function": "add",
+      "calls": 3593,
+      "self_seconds": 0.007352342,
+      "cumulative_seconds": 0.049742365000000004
+    },
+    {
+      "file": "navigation_search.py",
+      "line": 26,
+      "function": "codes",
+      "calls": 2,
+      "self_seconds": 0.0033199730000000004,
+      "cumulative_seconds": 0.047746124
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method unicodedata.normalize>",
+      "calls": 6919,
+      "self_seconds": 0.045020147,
+      "cumulative_seconds": 0.045020147
+    },
+    {
+      "file": "<frozen importlib._bootstrap>",
+      "line": 1349,
+      "function": "_find_and_load",
+      "calls": 18,
+      "self_seconds": 0.000165916,
+      "cumulative_seconds": 0.039266043
+    },
+    {
+      "file": "production_current.py",
+      "line": 68,
+      "function": "enabled",
+      "calls": 2140,
+      "self_seconds": 0.002599198,
+      "cumulative_seconds": 0.039219537000000006
+    },
+    {
+      "file": "material_storage.py",
+      "line": 236,
+      "function": "identity",
+      "calls": 673,
+      "self_seconds": 0.015656044,
+      "cumulative_seconds": 0.038931738
+    },
+    {
+      "file": "production_current.py",
+      "line": 102,
+      "function": "annotate",
+      "calls": 811,
+      "self_seconds": 0.001150731,
+      "cumulative_seconds": 0.038507001
+    },
+    {
+      "file": "<frozen importlib._bootstrap>",
+      "line": 1304,
+      "function": "_find_and_load_unlocked",
+      "calls": 18,
+      "self_seconds": 0.000104741,
+      "cumulative_seconds": 0.037999457
+    },
+    {
+      "file": "business_codes.py",
+      "line": 161,
+      "function": "visible_codes",
+      "calls": 2,
+      "self_seconds": 1.3333000000000001e-05,
+      "cumulative_seconds": 0.037223666
+    },
+    {
+      "file": "business_codes.py",
+      "line": 164,
+      "function": "<lambda>",
+      "calls": 2,
+      "self_seconds": 0.0009611260000000001,
+      "cumulative_seconds": 0.03719775
+    },
+    {
+      "file": "<frozen importlib._bootstrap>",
+      "line": 911,
+      "function": "_load_unlocked",
+      "calls": 17,
+      "self_seconds": 7.1586e-05,
+      "cumulative_seconds": 0.036357545000000005
+    },
+    {
+      "file": "<frozen importlib._bootstrap_external>",
+      "line": 993,
+      "function": "exec_module",
+      "calls": 15,
+      "self_seconds": 3.9166000000000004e-05,
+      "cumulative_seconds": 0.035843626
+    },
+    {
+      "file": "<frozen importlib._bootstrap_external>",
+      "line": 1066,
+      "function": "get_code",
+      "calls": 15,
+      "self_seconds": 0.00022512600000000003,
+      "cumulative_seconds": 0.033650626
+    },
+    {
+      "file": "material_storage.py",
+      "line": 179,
+      "function": "factory",
+      "calls": 46020,
+      "self_seconds": 0.031562387000000004,
+      "cumulative_seconds": 0.032454505
+    }
+  ],
+  "selected": [
+    {
+      "file": "production.py",
+      "line": 78,
+      "function": "record",
+      "calls": 19,
+      "self_seconds": 7.045900000000001e-05,
+      "cumulative_seconds": 0.010807793000000001
+    },
+    {
+      "file": "production_current.py",
+      "line": 116,
+      "function": "submission",
+      "calls": 19,
+      "self_seconds": 9.408000000000001e-05,
+      "cumulative_seconds": 0.002625164
+    },
+    {
+      "file": "entity_contract.py",
+      "line": 270,
+      "function": "graph",
+      "calls": 1,
+      "self_seconds": 0.00036440500000000005,
+      "cumulative_seconds": 0.012544375
+    },
+    {
+      "file": "list_reading.py",
+      "line": 70,
+      "function": "record",
+      "calls": 17198,
+      "self_seconds": 0.013608164,
+      "cumulative_seconds": 0.117934588
+    },
+    {
+      "file": "production_current.py",
+      "line": 77,
+      "function": "checksum",
+      "calls": 830,
+      "self_seconds": 0.0005741780000000001,
+      "cumulative_seconds": 0.020526614000000002
+    }
+  ],
+  "text_file_reads": {},
+  "boundary": "One instrumented uncached projection; excludes HTTP encoding and transport. Cumulative times overlap."
+}

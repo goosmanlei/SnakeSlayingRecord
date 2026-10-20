@@ -1,0 +1,10 @@
+const fs=require('node:fs'),vm=require('node:vm'),path=require('node:path');
+const source=fs.readFileSync(process.argv[2],'utf8');
+const c={URL,state:{workspace:'settings.workspace'},location:{href:'http://fixture/?workspace=settings.workspace'},document:{querySelectorAll:()=>[]},restoreProductionDraft(){},rememberProductionDraft(){},paintProductionReview(){},renderComments(){}};
+c.history={state:null,replaceState(_state,_title,url){c.location.href=String(url)}};
+vm.createContext(c);vm.runInContext(source,c);
+const light={id:'requirement-exact',object_id:'material',kind:'REQUIREMENT',edit_token:1,payload:{title:'轻记录'}};
+const full={...light,payload:{title:'完整记录',generation:{prompt:'用于圈选的准确正文'}}};
+c.focusProductionReview({record:light},false);
+c.focusProductionReview({record:full},false);
+console.log(JSON.stringify({selectedIsHydrated:c.state.productionSelected===full,detailIsHydrated:c.state.productionDetail.record===full,selectedPrompt:c.state.productionSelected.payload.generation?.prompt||null},null,2));

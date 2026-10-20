@@ -1,0 +1,17 @@
+WARNING: The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested
+test_comment_close_invalidates_comment_domain_but_source_change_invalidates_both (test_read_cancellation_contract.CrossGroupProbe.test_comment_close_invalidates_comment_domain_but_source_change_invalidates_both) ... ok
+test_dispatch_write_actions_do_not_take_read_cancellation_scope (test_read_cancellation_contract.CrossGroupProbe.test_dispatch_write_actions_do_not_take_read_cancellation_scope) ... ok
+test_http_summary_and_post_get_preserve_exact_output (test_read_cancellation_contract.CrossGroupProbe.test_http_summary_and_post_get_preserve_exact_output) ... 127.0.0.1 - - [20/Oct/2026 04:03:07] "GET /api/editing/catalog?summary=1 HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2026 04:03:07] "POST /api/editing/get HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2026 04:03:07] "POST /api/editing/get HTTP/1.1" 400 -
+ok
+test_real_http_disconnect_cancels_read_actions_and_releases_scopes (test_read_cancellation_contract.CrossGroupProbe.test_real_http_disconnect_cancels_read_actions_and_releases_scopes) ... ok
+test_catalog_summary_get_and_legacy_contract (test_projection_performance_contract.TextAndCatalogProbe.test_catalog_summary_get_and_legacy_contract) ... ok
+test_text_cache_preserves_each_entry_live_owner_and_physical_identity (test_projection_performance_contract.TextAndCatalogProbe.test_text_cache_preserves_each_entry_live_owner_and_physical_identity) ... ok
+test_cloud_candidate_summary_never_materializes_originals (test_projection_performance_contract.WorkspaceProbe.test_cloud_candidate_summary_never_materializes_originals) ... ok
+test_deleted_selected_original_is_rechecked_and_selection_rejects (test_projection_performance_contract.WorkspaceProbe.test_deleted_selected_original_is_rechecked_and_selection_rejects) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 4.268s
+
+OK

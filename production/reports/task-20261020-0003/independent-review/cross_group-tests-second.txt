@@ -1,0 +1,50 @@
+test_comment_close_invalidates_comment_domain_but_source_change_invalidates_both (__main__.CrossGroupProbe) ... ERROR
+test_dispatch_write_actions_do_not_take_read_cancellation_scope (__main__.CrossGroupProbe) ... ok
+test_http_summary_and_post_get_preserve_exact_output (__main__.CrossGroupProbe) ... 127.0.0.1 - - [20/Oct/2026 11:47:20] "GET /api/editing/catalog?summary=1 HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2026 11:47:20] "POST /api/editing/get HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2026 11:47:20] "POST /api/editing/get HTTP/1.1" 400 -
+ok
+test_real_http_disconnect_cancels_read_actions_and_releases_scopes (__main__.CrossGroupProbe) ... 
+======================================================================
+ERROR: test_comment_close_invalidates_comment_domain_but_source_change_invalidates_both (__main__.CrossGroupProbe)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-task/linked-worktrees/task-20261020-0003/desk/review_desk/store.py", line 591, in _validate_blocks
+    end_index = ids.index(anchor["end_block_id"])
+KeyError: 'end_block_id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-task/worktrees/task-20261020-0003/.runtime/performance/independent-review/group/cross_group_probe.py", line 116, in test_comment_close_invalidates_comment_domain_but_source_change_invalidates_both
+    comment = self.store.create_comment({'target_object_id': 'episode', 'target_revision_id': row['revision'],
+  File "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-task/linked-worktrees/task-20261020-0003/desk/review_desk/store.py", line 713, in create_comment
+    return self._create_comment(value)
+  File "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-task/linked-worktrees/task-20261020-0003/desk/review_desk/store.py", line 732, in _create_comment
+    target = self.validate_target(object_id, revision_id, anchor)
+  File "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-task/linked-worktrees/task-20261020-0003/desk/review_desk/store.py", line 650, in validate_target
+    self._validate_blocks(blocks, anchor)
+  File "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-task/linked-worktrees/task-20261020-0003/desk/review_desk/store.py", line 594, in _validate_blocks
+    raise ValueError("invalid anchor")
+ValueError: invalid anchor
+
+======================================================================
+FAIL: test_real_http_disconnect_cancels_read_actions_and_releases_scopes (__main__.CrossGroupProbe) (method='POST', action='status')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-task/worktrees/task-20261020-0003/.runtime/performance/independent-review/group/cross_group_probe.py", line 93, in test_real_http_disconnect_cancels_read_actions_and_releases_scopes
+    self.assertTrue(sample.get('cancelled'))
+AssertionError: None is not true
+
+======================================================================
+FAIL: test_real_http_disconnect_cancels_read_actions_and_releases_scopes (__main__.CrossGroupProbe) (method='POST', action='review')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-task/worktrees/task-20261020-0003/.runtime/performance/independent-review/group/cross_group_probe.py", line 93, in test_real_http_disconnect_cancels_read_actions_and_releases_scopes
+    self.assertTrue(sample.get('cancelled'))
+AssertionError: None is not true
+
+----------------------------------------------------------------------
+Ran 4 tests in 1.345s
+
+FAILED (failures=2, errors=1)
