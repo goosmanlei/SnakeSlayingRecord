@@ -299,6 +299,14 @@ def database(path):
     return vps.database(path)
 
 
+def write_window(path):
+    # VPS Docker shares the host Linux flock namespace. Existing root-created
+    # 0644 locks are readable by the maintainer; flock does not require a
+    # writable descriptor on this local filesystem. Do not chmod shared locks.
+    path=code.safe(path)
+    return os.fdopen(os.open(path,os.O_RDONLY|os.O_CREAT|os.O_NOFOLLOW,0o600),'rb')
+
+
 def probe(publication):
     target = vps.runtime_target()
     program = "import json,urllib.request;u='http://"+target['probe_host']+":8765/lijizhanshe/api/instance';print(json.dumps(json.load(urllib.request.build_opener(urllib.request.ProxyHandler({})).open(u,timeout=10))))"
@@ -383,14 +391,21 @@ def apply(args):
     if not candidate.is_dir() or candidate.stat().st_dev != vps.TARGET.stat().st_dev:
         raise ValueError('candidate and target need an atomic same-filesystem switch')
     usage = vps.CONTROL/'usage/attempts.json'
-    before_control = release/'before-control'; before_control.mkdir()
-    for name in ('state.json','storage-runtime.json'):shutil.copyfile(vps.CONTROL/name,before_control/name)
+    before_control = release/'before-control'
+    if before_control.exists():
+        if not value.get('retry_count'):raise ValueError('existing control backup requires explicit retry')
+        for name in ('state.json','storage-runtime.json'):
+            if json.loads((vps.CONTROL/name).read_text())!=json.loads((before_control/name).read_text()):
+                raise ValueError('previous control identity changed; retain recovery state')
+    else:
+        before_control.mkdir()
+        for name in ('state.json','storage-runtime.json'):shutil.copyfile(vps.CONTROL/name,before_control/name)
     value.update(before=code.current_identity(old), previous_name=vps.CONTAINER+'-before-'+value['publication_id'], usage_sha256=code.sha(usage))
     phase(release,value,'switching')
     try:
         with ExitStack() as locks:
             for path in (vps.TARGET/'.runtime/publication.lock',vps.TARGET/'.runtime/http-write.lock',candidate/'.runtime/http-write.lock'):
-                stream=locks.enter_context(path.open('a'));fcntl.flock(stream,fcntl.LOCK_EX|fcntl.LOCK_NB)
+                stream=locks.enter_context(write_window(path));fcntl.flock(stream,fcntl.LOCK_EX|fcntl.LOCK_NB)
             vps.configure(True)
             run(['docker','stop','--time','30',old['Id']])
             queue=vps.TARGET/'.runtime/edit-render.sqlite3'
@@ -423,12 +438,40 @@ def apply(args):
     print(json.dumps({'opened':True,'release':str(release),'container_id':value['after']['id'],'publication_id':value['publication_id']}))
 
 
+def retry(args):
+    if not args.replace_experience_data or not re.fullmatch(r'[0-9a-f]{40}',args.controller_commit):
+        raise ValueError('retry needs the delivered controller commit and explicit data replacement')
+    release=code.safe(args.release);value=receipt(release)
+    if value['phase']!='rolled-back' or not (release/'candidate').is_dir() or (release/'previous-instance').exists() or (release/'failed-instance').exists():
+        raise ValueError('retry only an unopened, restored candidate whose original instance remains active')
+    current=code.inspect(vps.CONTAINER)
+    if current['Id']!=value['before']['id'] or not current['State']['Running']:
+        raise ValueError('the original runtime changed; inspect before recovering')
+    checked_bundle(release/'bundle')
+    attempt=value.get('retry_count',0)+1
+    audit=release/f'attempt-{attempt}.json'
+    if audit.exists():
+        if json.loads(audit.read_text())!=value:raise ValueError('attempt audit differs')
+    else:save(audit,value)
+    controller=release/('controller-'+args.controller_commit[:12]);controller.mkdir(exist_ok=True)
+    hashes={}
+    for name in HELPERS:
+        data=(Path(__file__).parent/name).read_bytes();target=controller/name
+        if target.exists() and target.read_bytes()!=data:raise ValueError('delivered controller bytes changed')
+        if not target.exists():target.write_bytes(data)
+        hashes[name]=code.sha(target)
+    value['controller']={'commit':args.controller_commit,'directory':str(controller),'files':hashes}
+    phase(release,value,'prepared',retry_count=attempt)
+    apply(args)
+
+
 def finalize_controls(release, value):
     current=code.inspect(vps.CONTAINER)
     if (current['Image']!=value['image_id'] or not current['State']['Running'] or
             current['Config'].get('Labels',{}).get('org.leiguoguo.snapshot-release')!=value['manifest_sha256']):
         raise ValueError('active full publication identity differs')
     marker={'task':TASK,'release':str(release),'manifest_sha256':value['manifest_sha256']}
+    if value.get('controller'):marker['controller']=value['controller']
     state={'phase':'complete','publication_id':value['publication_id'],'story_commit':value['commits']['story'],
         'desk_commit':value['commits']['desk'],'image_id':current['Image'],'container_id':current['Id'],
         'storage_upgrade':marker,'snapshot_release':marker}
@@ -460,9 +503,10 @@ def main():
     for name in ('story','desk','formal','output'):p.add_argument('--'+name,type=Path,required=True)
     p.add_argument('--container',default='snakeslayingrecord-app-1');p.add_argument('--publication',required=True)
     p=commands.add_parser('stage');p.add_argument('--publication',required=True);p.add_argument('--archive',type=Path,required=True);p.add_argument('--sha256',required=True)
-    for name in ('restore','apply','resume','finalize','rollback','status'):
+    for name in ('restore','apply','retry','resume','finalize','rollback','status'):
         p=commands.add_parser(name);p.add_argument('--release',type=Path,required=True)
-        if name=='apply':p.add_argument('--replace-experience-data',action='store_true')
+        if name in ('apply','retry'):p.add_argument('--replace-experience-data',action='store_true')
+        if name=='retry':p.add_argument('--controller-commit',required=True)
     args=parser.parse_args()
     if args.command=='prepare':prepare(args);return
     vps.CONTROL.mkdir(parents=True,exist_ok=True,mode=0o700)
