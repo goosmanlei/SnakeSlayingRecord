@@ -53,6 +53,8 @@ python3 scripts/oss_snapshot_release.py prepare \
   --output "$SNAPSHOT_OUTPUT"
 ```
 
+后续任务须在子命令前传 `--task "$TASK_ID"`，准备、远端 stage／restore／apply／resume／finalize 及状态查询使用同一任务身份；它同步约束嵌套代码包、恢复实例和发布回执，跨任务回执会拒绝。省略时仅兼容最初的 task-20261020-0004。下方示例沿原任务身份展示阶段顺序。
+
 准备器复用已核验源码的正式镜像；当前版本要求 VPS 已有镜像与冻结镜像的配置和有序层身份相同，若系统版本不一致则在旧实例仍运行时拒绝，先沿代码升级流程完成所需镜像准备。包内不含凭据、调用计数或私有渲染队列。将输出的 `.tar.gz` 和三份已提交 helper 沿既有 SSH `vps` 传到 `~/lijizhanshe/incoming/$PUBLICATION/`；压缩包先用 `.part` 名接收，完成后核对准备回执 SHA256 才改为 `bundle.tar.gz`。运行脚本置于本次 incoming 目录，不覆盖永久发布入口。
 
 在 VPS 使用该目录的 `oss_snapshot_release.py` 依次执行以下命令；`SNAPSHOT_RELEASE` 取 stage 的真实输出。stage 检查压缩包摘要、成员路径、数量和解压大小，以及新旧实例、缓存和恢复的磁盘预算。restore 的实际日志在 release 的 `restore.log`，资源校验和恢复可能耗时，但旧服务保持可用。

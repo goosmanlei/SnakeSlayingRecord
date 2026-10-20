@@ -497,7 +497,9 @@ def finalize(args):
 
 
 def main():
+    global TASK
     parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--task', default=TASK, help='exact managed task owning this release')
     commands=parser.add_subparsers(dest='command',required=True)
     p=commands.add_parser('prepare')
     for name in ('story','desk','formal','output'):p.add_argument('--'+name,type=Path,required=True)
@@ -508,6 +510,10 @@ def main():
         if name in ('apply','retry'):p.add_argument('--replace-experience-data',action='store_true')
         if name=='retry':p.add_argument('--controller-commit',required=True)
     args=parser.parse_args()
+    if not re.fullmatch(r'task-[0-9]{8}-[0-9]{4}', args.task):
+        parser.error('invalid managed task identity')
+    TASK=args.task
+    code.TASK=TASK
     if args.command=='prepare':prepare(args);return
     vps.CONTROL.mkdir(parents=True,exist_ok=True,mode=0o700)
     with (vps.CONTROL/'publish.lock').open('a') as lock:
