@@ -86,7 +86,19 @@ def check(paths, owner=None):
             for mount in row.get('Mounts', []):
                 # The formal /instance mount contains the metadata directory,
                 # but does not itself establish a dependency on each task tree.
-                formal_parent = (row.get('Name', '').lstrip('/') == 'snakeslayingrecord-app-1'
+                config = row.get('Config', {})
+                labels = config.get('Labels') or {}
+                retained_formal = (row.get('State', {}).get('Running') is False
+                                   and labels.get('com.docker.compose.project') == 'snakeslayingrecord'
+                                   and labels.get('com.docker.compose.service') == 'app'
+                                   and labels.get('com.docker.compose.project.working_dir') == str(root)
+                                   and config.get('Cmd', [])[:6] ==
+                                   ['python', '-m', 'review_desk', '--instance', '/instance', 'serve'])
+                # A stopped formal predecessor has the same broad root bind.
+                # Its explicit child mounts and retained release references
+                # still pass through the ordinary dependency checks below.
+                formal_parent = ((row.get('Name', '').lstrip('/') == 'snakeslayingrecord-app-1'
+                                  or retained_formal)
                                  and mount.get('Destination') == '/instance'
                                  and Path(mount.get('Source', '/')).resolve() == root)
                 if mount.get('Source') and not formal_parent and overlaps(mount['Source'], targets):

@@ -1,0 +1,224 @@
+{
+  "task": "task-20261020-0004",
+  "status": "deployed-awaiting-user-acceptance",
+  "entry": "https://leiguoguo.me/lijizhanshe/",
+  "publication_id": "lijizhanshe-20261020-0004-r1",
+  "phase": "complete",
+  "snapshot_source_commit": "c92de5d8301a63d66c77d4725634008338fef251",
+  "desk_commit": "8741f4d696fc196f463422c684b1b9ed363d39ac",
+  "controller_commit": "42dc455c6faaa61ae185057b1ba3b02fd3091e2f",
+  "controller_sha256": "57f6dee5348cc2868a072706c037d4653e57c3a57f2024c7854ad3dfa2ee5953",
+  "manifest_sha256": "e61e252d808d8b142938e5111f6bea31d8cd4690d4198ee267d2ed776ac3cd89",
+  "archive_sha256": "8c08e299a91e6530ba8b44d33b9df95d80ad54fd1de2a7c1306e042e7e2ec372",
+  "container_id": "50c91de62d00d234f32d101cbe1896f7c5fdcd800cd9107862e036881e657d98",
+  "image_id": "sha256:63a6889c35a6c54a423bcbddc1810b393365c5125b6160d5ede1b7688dbcc9d5",
+  "business_tables": 43,
+  "rows": 113921,
+  "comments": 405,
+  "previous_vps_rows": 112298,
+  "all_table_fingerprints_match": true,
+  "local_business_data_unchanged": true,
+  "resources": {
+    "logical_paths": 817,
+    "unique_versions": 1672,
+    "bytes": 9380644955,
+    "verification": "exact cloud versions fully read and hashed; semantic closure and empty-database transactional install passed"
+  },
+  "film_review": {
+    "elements": 116,
+    "subtitle_elements": 59,
+    "title_elements": 7,
+    "bound_text_elements": 66,
+    "unavailable_text_elements": 0,
+    "association": {
+      "object_id": "edit-association-ff6bfb66ea3d1ecd5770331ab5a916abddecf3070d41f90f86f4fb89aca3c791",
+      "revision_id": "013018329a7c4e750307481f2fd655ceb3978811ed495e489b424df1e50186b1",
+      "version": 1,
+      "digest": "ff6bfb66ea3d1ecd5770331ab5a916abddecf3070d41f90f86f4fb89aca3c791"
+    }
+  },
+  "http": {
+    "home": {
+      "status": 200,
+      "bytes": 6017,
+      "content_type": "text/html; charset=utf-8",
+      "content_range": null,
+      "content_disposition": null
+    },
+    "instance": {
+      "status": 200,
+      "bytes": 176,
+      "content_type": "application/json; charset=utf-8",
+      "content_range": null,
+      "content_disposition": null
+    },
+    "stylesheet": {
+      "status": 200,
+      "bytes": 186728,
+      "content_type": "text/css; charset=utf-8",
+      "content_range": null,
+      "content_disposition": null
+    },
+    "review": {
+      "status": 200,
+      "bytes": 124385,
+      "content_type": "application/json; charset=utf-8",
+      "content_range": null,
+      "content_disposition": null
+    },
+    "video_range": {
+      "status": 206,
+      "bytes": 1024,
+      "content_type": "video/mp4",
+      "content_range": "bytes 0-1023/78999249",
+      "content_disposition": null
+    },
+    "video_poster": {
+      "status": 200,
+      "bytes": 294,
+      "content_type": "image/webp",
+      "content_range": null,
+      "content_disposition": null
+    },
+    "audio_range": {
+      "status": 206,
+      "bytes": 1024,
+      "content_type": "audio/wav",
+      "content_range": "bytes 0-1023/82056102",
+      "content_disposition": null
+    },
+    "text_download": {
+      "status": 200,
+      "bytes": 2781,
+      "content_type": "application/json",
+      "content_range": null,
+      "content_disposition": "attachment; filename*=UTF-8''subtitle-source.json"
+    },
+    "stale_publication_write": {
+      "status": 409,
+      "rejected_before_business_write": true
+    },
+    "shared_home": {
+      "status": 200
+    },
+    "actual_ui_download_endpoint": {
+      "status": 200,
+      "bytes": 2781,
+      "content_type": "application/json",
+      "content_disposition": "attachment; filename*=UTF-8''d058c394ada60eb1bb4669de5078eb0b34d3bc98ebe18435140e2bddd2eb4443.json",
+      "matches_exact_sha256": true
+    }
+  },
+  "usage": {
+    "total_attempts": 6,
+    "file_unchanged": true,
+    "model_requests_by_task": 0
+  },
+  "protection": {
+    "credentials_and_scoped_oss_credentials_unchanged": true,
+    "shared_nginx_container_and_outside_configuration_unchanged": true,
+    "xray_unchanged": true,
+    "normal_cpu_memory_process_log_limits_preserved": true
+  },
+  "checks": {
+    "snapshot_publisher_tests": 9,
+    "existing_vps_boundary_tests": 11,
+    "existing_oss_code_upgrade_tests": 4,
+    "workspace_guard_tests": 3,
+    "actual_image_installer_scenarios": [
+      "empty destination success",
+      "concurrent arriving data rejected without replacement",
+      "nonempty configuration rejected without replacement"
+    ],
+    "chrome": [
+      "latest V5 loaded",
+      "subtitle exact material card",
+      "nameplate exact material card and EN001 identity source"
+    ],
+    "independent_agent_review": false
+  },
+  "recovery_events": [
+    {
+      "event": "existing root-owned write lock denied append access",
+      "phase": "before stop or directory switch",
+      "resolution": "same source retained; readonly exclusive flock verified on VPS; delivered controller 42dc455c6faaa61ae185057b1ba3b02fd3091e2f; same publication retry"
+    },
+    {
+      "event": "shared nginx previous workers were still draining after opening reload",
+      "phase": "opening; new instance preserved",
+      "resolution": "queried live publication and worker state; old workers exited; normal resume and finalize succeeded; no database rewind"
+    }
+  ],
+  "cleanup": {
+    "local": {
+      "removed_local": [
+        {
+          "path": "bundle",
+          "files": 25,
+          "bytes": 953150608
+        },
+        {
+          "path": "bundle.tar.gz",
+          "files": 1,
+          "bytes": 311170878
+        }
+      ],
+      "named_containers_absent": [
+        "snapshot-freeze-lijizhanshe-20261020-0004-r1",
+        "snapshot-installer-check-task-20261020-0004",
+        "snapshot-nonempty-check-task-20261020-0004"
+      ],
+      "retained": [
+        {
+          "path": "remote snapshot release bundle",
+          "purpose": "exact frozen source for trace and preacceptance recovery",
+          "release_condition": "user acceptance and no remaining source recovery need"
+        },
+        {
+          "path": "remote previous-instance and stopped previous container",
+          "purpose": "original VPS independent business data and recovery descriptor",
+          "release_condition": "user acceptance and rollback need ended"
+        },
+        {
+          "path": "runtime receipts, hashes and focused test evidence",
+          "purpose": "deployment trace and task acceptance",
+          "release_condition": "keep minimal records while current publication remains authoritative"
+        }
+      ],
+      "removed_bytecode_files": [],
+      "removed_external_task_cache": {
+        "path": "/Users/bytedance/Library/Caches/com.apple.python/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-task/worktrees/task-20261020-0004",
+        "files": 9,
+        "bytes": 114422
+      }
+    },
+    "vps": {
+      "removed_incoming": {
+        "path": "/home/work/lijizhanshe/incoming/lijizhanshe-20261020-0004-r1",
+        "files": 6,
+        "bytes": 311310554
+      },
+      "restore_container_absent": true,
+      "active_container": "50c91de62d00d234f32d101cbe1896f7c5fdcd800cd9107862e036881e657d98",
+      "retained": {
+        "previous_container_id": "c5b8bc2734891e3768bab24e2c3cedc139599a4eedcd70463b51fa0a609550b7",
+        "previous_instance": "/home/work/lijizhanshe/snapshot-releases/lijizhanshe-20261020-0004-r1/previous-instance",
+        "previous_instance_size": {
+          "files": 819,
+          "bytes": 4310306286
+        },
+        "frozen_bundle": "/home/work/lijizhanshe/snapshot-releases/lijizhanshe-20261020-0004-r1/bundle",
+        "frozen_bundle_size": {
+          "files": 25,
+          "bytes": 953150608
+        },
+        "owner": "task-20261020-0004 executor",
+        "condition": "user acceptance and rollback/source-recovery need ended"
+      }
+    },
+    "task_workspace_dependencies": [],
+    "workspace_retirement": "after user acceptance, normal TUI exit and managed cleanup"
+  },
+  "private_evidence": "primary project .runtime/task-evidence/task-20261020-0004/",
+  "quality_and_user_acceptance": "not signed off"
+}

@@ -14,7 +14,7 @@
 
 Agent 在执行会话内登记提交引用约束：主仓 `config/instance.json` 的 JSON 字段 `/review_desk_commit` 必须等于系统仓库候选。内部回调接收的对象为 `{"commit_references":[{"repository":"primary","file":"config/instance.json","pointer":"/review_desk_commit","equals_repository":"desk"}]}`，其中 `desk` 替换为本任务实际别名，文件路径相对故事 Git 根目录。先提交系统成果，再更新故事配置并提交，最后准备整组候选；上游集成使系统提交变化时须重新更新引用及准备。
 
-同时登记清理检查器 `scripts/task_workspace_guard.py` 和其实际 SHA-256；路径相对故事主目录。检查器只读核对包括已停止容器在内的挂载，以及 `.runtime/service-releases/` 中发布 Compose 和恢复配置实际使用的目录；冻结发布包中的任务编号和来源路径保留原始字节，仅作追溯，不要求原工作区继续存在。Docker 查询失败、配置无法核验、脚本摘要变化或实际依赖未解除时保留现场；正式容器对整个故事根目录的普通 `/instance` 挂载不单独认定为每个任务的依赖，直接指向任务目录的其他挂载仍阻断。
+同时登记清理检查器 `scripts/task_workspace_guard.py` 和其实际 SHA-256；路径相对故事主目录。检查器只读核对包括已停止容器在内的挂载，以及 `.runtime/service-releases/` 中发布 Compose 和恢复配置实际使用的目录；冻结发布包中的任务编号和来源路径保留原始字节，仅作追溯，不要求原工作区继续存在。Docker 查询失败、配置无法核验、脚本摘要变化或实际依赖未解除时保留现场；正式容器对整个故事根目录的普通 `/instance` 挂载不单独认定为每个任务的依赖。同主项目的已停止正式回退容器经 Compose 归属、工作目录及标准服务命令核实后沿同一规则处理；直接指向任务目录的其他挂载和恢复引用仍阻断，不因此删除或启动回退容器。
 
 新原生任务先 `_prepare_integration`（需要推送时加 `--push`）冻结全部候选，再准备现有项目发布包。`integrate_generation_review_system.py` 从包内的原生标记调用任务 `_deliver`，任务按依赖顺序完成系统和故事的集成与必要推送；项目脚本读取回执，不再自行重复合并或推送。正式库／服务发布、真实页面验收和资源收尾完成后再 `_complete`。中途失败使用同一冻结包和任务恢复；候选变化则重新准备和验证。
 
