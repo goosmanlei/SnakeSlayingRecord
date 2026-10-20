@@ -15,6 +15,7 @@ import os
 from pathlib import Path
 import re
 import shutil
+import stat
 import shlex
 import subprocess
 import time
@@ -127,7 +128,8 @@ def current_identity(container):
 def optional_container(name):
     result=subprocess.run(['docker','inspect',name],capture_output=True,text=True,timeout=30)
     if result.returncode:
-        if 'No such object' in result.stderr or 'No such container' in result.stderr:return None
+        error=result.stderr.lower()
+        if 'no such object' in error or 'no such container' in error:return None
         raise RuntimeError('cannot determine container state; retain recovery window')
     return json.loads(result.stdout)[0]
 
@@ -139,6 +141,21 @@ def owned_runtime(container,kind,instance):
                   'com.docker.compose.project.working_dir':str(instance)}
     else:expected={'org.leiguoguo.instance':'lijizhanshe'}
     if any(labels.get(k)!=v for k,v in expected.items()):raise ValueError('runtime ownership differs')
+
+
+def verify_mount_sources(container):
+    """Reject vanished/replaced host binds while the old runtime is still live."""
+    mounts=container['Mounts']
+    destinations=[mount['Destination'] for mount in mounts]
+    actual=json.loads(run(['docker','exec',container['Id'],'python','-c',
+        "import json,os,stat,sys;print(json.dumps({p:stat.S_IFMT(os.stat(p).st_mode) for p in sys.argv[1:]}))",
+        *destinations]))
+    for mount in mounts:
+        source=Path(mount['Source'])
+        try:kind=stat.S_IFMT(source.stat().st_mode)
+        except FileNotFoundError:kind=None
+        if kind not in (stat.S_IFREG,stat.S_IFDIR) or kind!=actual.get(mount['Destination']):
+            raise ValueError('live bind source is missing or changed type: '+mount['Destination'])
 
 
 def rollback_runtime(release,receipt):
@@ -288,6 +305,7 @@ def apply(args):
         if not before['State']['Running'] or host.get('Privileged') or host.get('PortBindings') or host.get('Devices') or host.get('CapAdd'):
             raise ValueError('unexpected live runtime boundary')
         if any(m['Type']!='bind' for m in before['Mounts']):raise ValueError('unreviewed non-bind mount')
+        verify_mount_sources(before)
         if kind=='local':
             if run(['git','-C',instance,'rev-parse','HEAD'])!=manifest['commits']['story']:raise ValueError('managed story delivery is not integrated')
         else:
