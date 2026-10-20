@@ -1,0 +1,25 @@
+{
+  "format": "managed-method-cutover-v1",
+  "task": "task-20261020-0010",
+  "wait_for_delivery": ["task-20261020-0007"],
+  "reviewed_work": [
+    {
+      "scope": "task-20261020-0007",
+      "decision": "前置修复已完成，采用其正式 M017 原件与首集成片六作为基线，不重写其输出、评论或采纳。",
+      "evidence": "production/reports/task-20261020-0007/"
+    },
+    {
+      "scope": "audiovisual-scene,image-plan,video-plan,generation-preflight,result-review,episode-editing",
+      "decision": "仅更新六个当前方法绑定。历史方法、文件修订、执行快照及评论保留；新步骤才读取新组合。",
+      "evidence": "production/continuity-review/task-20261020-0010-method-registry.json"
+    },
+    {
+      "scope": "task-20261020-0010",
+      "decision": "本任务在私有实例完成新方法使用和方案、原片、成片检查；方法配置切换先于作品增量发布。不得用私有数据库覆盖正式库。",
+      "evidence": "planning/cross-shot-continuity-review-task.md"
+    }
+  ],
+  "execution_gate": "发布脚本重新核对任务账本、准确候选、正式容器和共享发布锁；以停下准确应用后的活库为切换与保留校验基线。",
+  "history_policy": "保留全部旧方法执行与精确文件评论；未修改的检查继续有效。新检查要求当前内容标记与选定字段快照，未来媒体仍须另行看听。",
+  "excluded": ["VPS", "公网发布", "任务结项", "旧任务验收代签"]
+}

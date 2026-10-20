@@ -41,6 +41,13 @@ class MethodClient:
         return self.call('/api/methods/record?' + urlencode(ref))
 
     def artifact(self, execution, request, stage, output):
+        frozen = execution['payload']['inputs']
+        if frozen.get('format') == 'production-method-inputs-v1':
+            # The service already holds these exact inputs. Repeating the whole
+            # scene together with its review can exceed the bounded API body.
+            if request['inputs'] != frozen and checksum(request['inputs']) != frozen['sha256']:
+                raise ValueError('准确工作输入与方法依据不一致')
+            request = {**request, 'inputs': frozen}
         return self.call('/api/methods/artifact', {**request, 'execution': reference(execution), 'stage': stage, 'output': output})
 
     def stage(self, execution, stage):
@@ -188,6 +195,8 @@ def check_artifact(delivery, stage, artifact, output):
                 expected['text_layer_sha256'] = checksum(output['text_layer'])
         elif isinstance(output, dict) and isinstance(output.get('assessment'), str):
             expected['assessment'] = output['assessment']
+        if isinstance(output, dict) and 'checks' in output:
+            expected['checks'] = output['checks']
         if checksum(saved) != checksum(expected):
             raise ValueError('本机阶段全文与服务原值摘要不符：' + stage)
     elif checksum(saved) != checksum(output):
@@ -219,8 +228,10 @@ def read_stage_value(client, directory, stage, *, source=None, resume=False, rec
         stored = remote['artifact']['payload']['output']
         if not (isinstance(stored, dict) and stored.get('format') == 'production-method-output-v1'):
             output = stored
-        elif 'assessment' in stored and checksum({'assessment': stored['assessment']}) == stored['sha256']:
-            output = {'assessment': stored['assessment']}
+        else:
+            retained = {key: stored[key] for key in ('assessment', 'checks') if key in stored}
+            if retained and checksum(retained) == stored['sha256']:
+                output = retained
     if output is None:
         raise ValueError('本机阶段全文缺失：' + stage + '；服务只有摘要时无法补造，请提供准确原文件')
     if remote['artifact'] is not None:
