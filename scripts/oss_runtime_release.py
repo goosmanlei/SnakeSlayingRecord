@@ -317,6 +317,10 @@ def apply(args):
         # Keep the VPS's own business configuration and only advance the code pin.
         old_config=Path(mounts.get('/instance/config/instance.json',{}).get('Source',str(instance/'config/instance.json')))
         actual=json.loads(old_config.read_text());actual['review_desk_commit']=manifest['commits']['desk']
+        # Public source navigation is code configuration; retain every business field.
+        candidate_config=json.loads((bundle/'config/instance.json').read_text())
+        for key in ('repository','review_desk_repository'):
+            if key in candidate_config:actual[key]=candidate_config[key]
         if actual['id']!=resource['instance_id']:raise ValueError('live business instance identity differs')
         for logical in FILES:
             target=release/logical;target.parent.mkdir(parents=True,exist_ok=True)
