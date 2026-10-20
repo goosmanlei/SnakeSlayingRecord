@@ -35,6 +35,27 @@ class SnapshotPublicationSafetyTests(unittest.TestCase):
                 tar.addfile(member,io.BytesIO(data) if kind==tarfile.REGTYPE else None)
         return path
 
+    def test_selected_task_is_recorded_and_cannot_read_another_tasks_receipt(self):
+        task='task-20261020-0009'
+        self.path.mkdir(parents=True)
+        release.save(self.path/'receipt.json',{'task':task,'publication_id':self.publication,'phase':'staged'})
+        with patch.object(release,'TASK',release.TASK),patch.object(release.code,'TASK',release.code.TASK):
+            with patch.object(sys,'argv',['publisher','--task',task,'status','--release',str(self.path)]):
+                release.main()
+            self.assertEqual(release.code.TASK,task)
+            self.assertEqual(release.receipt(self.path)['task'],task)
+            release.save(self.path/'receipt.json',{'task':'task-20261020-0004','publication_id':self.publication})
+            with self.assertRaisesRegex(ValueError,'wrong release receipt'):
+                release.receipt(self.path)
+
+    def test_invalid_task_rejects_before_freezing_or_creating_control_directory(self):
+        with patch.object(sys,'argv',['publisher','--task','../other','prepare','--story',str(self.root),
+            '--desk',str(self.root),'--formal',str(self.root),'--output',str(self.root/'out'),
+            '--publication',self.publication]),patch.object(release,'prepare') as prepare:
+            with self.assertRaises(SystemExit):release.main()
+            prepare.assert_not_called()
+        self.assertFalse((self.root/'out').exists())
+
     def test_incomplete_or_changed_archive_keeps_old_service_untouched(self):
         path=self.archive([('file',b'complete',tarfile.REGTYPE)])
         for selected,digest in [(path.with_suffix('.part'),release.code.sha(path)),(path,'0'*64)]:
