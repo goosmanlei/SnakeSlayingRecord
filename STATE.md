@@ -24,6 +24,7 @@
 - 本机正式服务为 `http://127.0.0.1:3000/`，正式库在主目录 `.runtime/review.sqlite3`；服务、数据库、Git和导出分别核版本。制作页、方法文件树和当前模型的维护入口集中在 [KNOWLEDGE.md](KNOWLEDGE.md)，本页不重复各旧任务的功能及测试清单。
 - 现行方法已由 task-20261013-0006／0010 完成职责调整、独立阅读、样例和正式交付；含七类Prompt约束、固定中性试声及镜内时间线，准确范围见 [方法交付](production/reports/task-20261013-0010/README.md)。这是旧任务的验证边界，不抵扣后续修改后的复验。
 - VPS 内容已由 task-20261020-0004 按用户明确授权同步本机最新完整正式状态，原体验数据及独立修改被替换。43 张业务表及全部准确资源验证通过，原缺失的 66 条字层素材绑定已补齐，Chrome 已实际打开字幕与人名条的准确来源大卡。用户已确认本次部署结项，旧回退数据和重复快照已清理；作品感官与独立复验仍沿原任务边界。见 [完整同步交付](production/reports/task-20261020-0004/README.md)。实际运行身份取远端 `~/lijizhanshe/state.json` 和 `storage-runtime.json`；本机后续制作仍不会自动同步到 VPS。
+- **task-20261020-0005：两仓源码入口与示例介绍已交付，等待用户接受。** 本机与VPS的侧栏下方均有故事实例和通用系统GitHub入口，两个README已补示例流程与体验地址；两端保留各自业务数据的代码发布及真实Chrome点击验证通过，原VPS完整同步身份保留。旧容器和此次一致备份供验收前必要恢复，具体保留和解除条件见[交付记录](production/reports/task-20261020-0005/README.md)。
 - 四页与实体大卡的读取、媒体缓存、评论失效和组件生命周期契约已收敛，双端同条件性能及恢复证据见 [性能优化](production/reports/task-20261020-0003/README.md)。正式发布、实际页面补验及清理状态以该任务账本引用的运行回执为准；性能代码升级与上述完整内容同步分别记录。
 - [DSH架构报告](production/reports/dsh-integration-cost-architecture.md) 与 [Higgsfield对比](production/reports/higgsfield-creation-comparison.md) 为研究成果，建议未实施，不是当前运行架构。
 

@@ -26,11 +26,11 @@
 
 ## 制作与审阅
 
-[生产制作](production/README.md)统一组织视听制作、实体管理和素材管理。当前[全剧新视听设计](production/rebuild/README.md)覆盖版本四17集、42个故事场及全部1114正文块，新建42个视听场、416镜、122个普通实体、21个完整状态和650项有效素材需求。首轮重建后，0005已逐项完成[650项完整素材方案](production/material-plans/README.md)，提供全部普通实体／状态素材与第一集镜头闭包。当前方案预算7889秒（131分29秒），尚未实读唱或生成验证；没有新候选或生成。正式发布、页面和恢复结果见[方案验收](production/material-plans/VERIFICATION.md)。
+[生产制作](production/README.md)统一组织视听制作、实体管理、素材管理和成片剪辑。[首轮全剧视听设计](production/rebuild/README.md)覆盖版本四17集、42个故事场及全部1114正文块，新建42个视听场、416镜、122个普通实体、21个完整状态和650项有效素材需求。首轮重建后，0005已逐项完成[650项完整素材方案](production/material-plans/README.md)，提供全部普通实体／状态素材与第一集镜头闭包。该轮方案预算7889秒（131分29秒），属于设计估时，不是成片实测。此后已有素材制作与首集剪辑交付，最新进度见 [STATE.md](STATE.md)；该轮方案发布、页面和恢复结果见[方案验收](production/material-plans/VERIFICATION.md)。
 
 “制作思路”按系统构想、数据模型、基础流程、故事创作、生产制作排列。基础流程以紧凑阶段框连接动作与纸张形产出，承接真实 SKILL、准确文件阅读、版本比较和评论；数据模型保留编号查询。两个创作概览只表达关系。专业资料沿对应 SKILL 文件树读取，[视频生成手册](production/seedance-video-handbook.md)及[影视专业知识](production/filmcraft/README.md)仍是唯一专业正文，旧章节和准确文件链接转入对应阅读位置。导航与源映射由 [content/production-approach.json](content/production-approach.json)及同步工具维护；实际执行由既有写作及媒体入口取得准确方法和资料；[工作交接表](production/professional-methods.md)说明输入、输出和负责阶段。
 
-每镜支持多个需求、每需一份当前方案和多个实际候选；实体状态、准确来源、关系、候选比较、评论和采纳共用详情。素材管理按五列基准行分页，窄屏只重排当前集合；实体管理以集／场／镜聚焦关系图，单击突出直连关系，双击或 Enter 打开准确大卡，见 [范围说明](production/entity-graph-focus/VERIFICATION.md)和[关系交互验收](production/relation-interaction/VERIFICATION.md)。技术验收不代表用户接受新设计，已有图像与音频不代表镜头视频已生成。本任务没有媒体生成调用。
+每镜支持多个需求、每需一份当前方案和多个实际候选；实体状态、准确来源、关系、候选比较、评论和采纳共用详情。素材管理按五列基准行分页，窄屏只重排当前集合；实体管理以集／场／镜聚焦关系图，单击突出直连关系，双击或 Enter 打开准确大卡，见 [范围说明](production/entity-graph-focus/VERIFICATION.md)和[关系交互验收](production/relation-interaction/VERIFICATION.md)。各集素材、镜头视频与成片的实际进度分别记录于 [STATE.md](STATE.md)，工程验证与作品质量接受分别判断。
 
 生成、登记、预览、增量发布和恢复均按 [受管工作区流程](production/generation-workspaces.md) 执行。当前发布状态只认主项目任务账本与实际运行回执；候选文件与正式服务分别核对。
 
