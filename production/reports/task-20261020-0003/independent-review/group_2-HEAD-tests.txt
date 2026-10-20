@@ -1,0 +1,156 @@
+127.0.0.1 - - [20/Oct/2026 11:35:35] "GET /api/production/reference-candidates?material_id=need-full-overall&media_type=audio HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2026 11:35:35] "GET /api/production/shot-reference?requirement_id=need-wet-overall HTTP/1.1" 200 -
+======================================================================
+ERROR: test_exact_old_episode_keeps_old_children_after_new_design_and_scope (test_production_scope.ProductionScopeTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261020-0003-review-ydx3onys/tests/test_production_scope.py", line 62, in test_exact_old_episode_keeps_old_children_after_new_design_and_scope
+    _,historical=graph(self.store,old['object_id'],old['revision_id'],'other-scene')
+  File "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261020-0003-review-ydx3onys/review_desk/production_scope.py", line 43, in graph
+    raise ValueError('视听场不属于本版视听集，请重新选择制作范围')
+ValueError: 视听场不属于本版视听集，请重新选择制作范围
+
+======================================================================
+ERROR: test_revised_shot_follows_its_exact_product_not_old_scope_or_latest_plan (test_production_scope.ProductionScopeTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261020-0003-review-ydx3onys/tests/test_production_scope.py", line 78, in test_revised_shot_follows_its_exact_product_not_old_scope_or_latest_plan
+    need=self.need(oid);need['payload']['scope']=self.ref('story');self.put(need)
+  File "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261020-0003-review-ydx3onys/tests/test_production.py", line 39, in put
+    return p.import_records(self.store, {'format': 'production-import-v1', 'records': list(records)}, validate)['records']
+  File "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261020-0003-review-ydx3onys/review_desk/production.py", line 593, in import_records
+    return _import_records(store, document, validate_only)
+  File "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261020-0003-review-ydx3onys/review_desk/production.py", line 742, in _import_records
+    validate_payload(store, object_id, kind, p, check_current=check_current)
+  File "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261020-0003-review-ydx3onys/review_desk/production.py", line 442, in validate_payload
+    validate_origin(store, p)
+  File "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261020-0003-review-ydx3onys/review_desk/material_origin.py", line 25, in validate
+    row = origin(store, payload)
+  File "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261020-0003-review-ydx3onys/review_desk/material_origin.py", line 20, in origin
+    raise ValueError('素材必须有一个实体、实体状态或镜头制作出处')
+ValueError: 素材必须有一个实体、实体状态或镜头制作出处
+
+======================================================================
+ERROR: test_shared_concrete_input_keeps_identity_global_alternative_stays_unassigned (test_production_scope.ProductionScopeTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261020-0003-review-ydx3onys/tests/test_production_scope.py", line 34, in test_shared_concrete_input_keeps_identity_global_alternative_stays_unassigned
+    spec=self.need(oid);spec['payload']['scope']=self.ref('story');self.put(spec)
+  File "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261020-0003-review-ydx3onys/tests/test_production.py", line 39, in put
+    return p.import_records(self.store, {'format': 'production-import-v1', 'records': list(records)}, validate)['records']
+  File "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261020-0003-review-ydx3onys/review_desk/production.py", line 593, in import_records
+    return _import_records(store, document, validate_only)
+  File "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261020-0003-review-ydx3onys/review_desk/production.py", line 742, in _import_records
+    validate_payload(store, object_id, kind, p, check_current=check_current)
+  File "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261020-0003-review-ydx3onys/review_desk/production.py", line 442, in validate_payload
+    validate_origin(store, p)
+  File "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261020-0003-review-ydx3onys/review_desk/material_origin.py", line 25, in validate
+    row = origin(store, payload)
+  File "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261020-0003-review-ydx3onys/review_desk/material_origin.py", line 20, in origin
+    raise ValueError('素材必须有一个实体、实体状态或镜头制作出处')
+ValueError: 素材必须有一个实体、实体状态或镜头制作出处
+
+======================================================================
+ERROR: test_directory_includes_current_plans_and_exact_external_candidates_without_upstream (test_av_reader.AvReaderTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261020-0003-review-ydx3onys/tests/test_av_reader.py", line 42, in test_directory_includes_current_plans_and_exact_external_candidates_without_upstream
+    self.setup_reader()
+  File "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261020-0003-review-ydx3onys/tests/test_av_reader.py", line 21, in setup_reader
+    self.put(item)
+  File "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261020-0003-review-ydx3onys/tests/test_production.py", line 39, in put
+    return p.import_records(self.store, {'format': 'production-import-v1', 'records': list(records)}, validate)['records']
+  File "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261020-0003-review-ydx3onys/review_desk/production.py", line 593, in import_records
+    return _import_records(store, document, validate_only)
+  File "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261020-0003-review-ydx3onys/review_desk/production.py", line 742, in _import_records
+    validate_payload(store, object_id, kind, p, check_current=check_current)
+  File "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261020-0003-review-ydx3onys/review_desk/production.py", line 455, in validate_payload
+    validate_output_name(store, object_id, p)
+  File "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261020-0003-review-ydx3onys/review_desk/material_origin.py", line 81, in validate_output_name
+    raise ValueError('当前素材标题与生成输出名称必须一致')
+ValueError: 当前素材标题与生成输出名称必须一致
+
+======================================================================
+ERROR: test_disconnect_stops_before_other_shot_details_are_assembled (test_av_reader.AvReaderTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261020-0003-review-ydx3onys/tests/test_av_reader.py", line 67, in test_disconnect_stops_before_other_shot_details_are_assembled
+    self.setup_reader()
+  File "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261020-0003-review-ydx3onys/tests/test_av_reader.py", line 21, in setup_reader
+    self.put(item)
+  File "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261020-0003-review-ydx3onys/tests/test_production.py", line 39, in put
+    return p.import_records(self.store, {'format': 'production-import-v1', 'records': list(records)}, validate)['records']
+  File "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261020-0003-review-ydx3onys/review_desk/production.py", line 593, in import_records
+    return _import_records(store, document, validate_only)
+  File "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261020-0003-review-ydx3onys/review_desk/production.py", line 742, in _import_records
+    validate_payload(store, object_id, kind, p, check_current=check_current)
+  File "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261020-0003-review-ydx3onys/review_desk/production.py", line 455, in validate_payload
+    validate_output_name(store, object_id, p)
+  File "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261020-0003-review-ydx3onys/review_desk/material_origin.py", line 81, in validate_output_name
+    raise ValueError('当前素材标题与生成输出名称必须一致')
+ValueError: 当前素材标题与生成输出名称必须一致
+
+======================================================================
+ERROR: test_reader_prepares_only_selection_keeps_all_direct_needs_and_exact_inputs (test_av_reader.AvReaderTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261020-0003-review-ydx3onys/tests/test_av_reader.py", line 25, in test_reader_prepares_only_selection_keeps_all_direct_needs_and_exact_inputs
+    self.setup_reader()
+  File "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261020-0003-review-ydx3onys/tests/test_av_reader.py", line 21, in setup_reader
+    self.put(item)
+  File "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261020-0003-review-ydx3onys/tests/test_production.py", line 39, in put
+    return p.import_records(self.store, {'format': 'production-import-v1', 'records': list(records)}, validate)['records']
+  File "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261020-0003-review-ydx3onys/review_desk/production.py", line 593, in import_records
+    return _import_records(store, document, validate_only)
+  File "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261020-0003-review-ydx3onys/review_desk/production.py", line 742, in _import_records
+    validate_payload(store, object_id, kind, p, check_current=check_current)
+  File "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261020-0003-review-ydx3onys/review_desk/production.py", line 455, in validate_payload
+    validate_output_name(store, object_id, p)
+  File "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261020-0003-review-ydx3onys/review_desk/material_origin.py", line 81, in validate_output_name
+    raise ValueError('当前素材标题与生成输出名称必须一致')
+ValueError: 当前素材标题与生成输出名称必须一致
+
+======================================================================
+ERROR: test_shared_camera_keeps_one_owner_after_semantic_merge (test_av_reader.AvReaderTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261020-0003-review-ydx3onys/tests/test_av_reader.py", line 75, in test_shared_camera_keeps_one_owner_after_semantic_merge
+    self.setup_reader()
+  File "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261020-0003-review-ydx3onys/tests/test_av_reader.py", line 21, in setup_reader
+    self.put(item)
+  File "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261020-0003-review-ydx3onys/tests/test_production.py", line 39, in put
+    return p.import_records(self.store, {'format': 'production-import-v1', 'records': list(records)}, validate)['records']
+  File "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261020-0003-review-ydx3onys/review_desk/production.py", line 593, in import_records
+    return _import_records(store, document, validate_only)
+  File "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261020-0003-review-ydx3onys/review_desk/production.py", line 742, in _import_records
+    validate_payload(store, object_id, kind, p, check_current=check_current)
+  File "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261020-0003-review-ydx3onys/review_desk/production.py", line 455, in validate_payload
+    validate_output_name(store, object_id, p)
+  File "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261020-0003-review-ydx3onys/review_desk/material_origin.py", line 81, in validate_output_name
+    raise ValueError('当前素材标题与生成输出名称必须一致')
+ValueError: 当前素材标题与生成输出名称必须一致
+
+======================================================================
+ERROR: test_summary_does_not_expand_unselected_submission_during_transport_decoration (test_av_reader.AvReaderTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261020-0003-review-ydx3onys/tests/test_av_reader.py", line 52, in test_summary_does_not_expand_unselected_submission_during_transport_decoration
+    self.setup_reader()
+  File "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261020-0003-review-ydx3onys/tests/test_av_reader.py", line 21, in setup_reader
+    self.put(item)
+  File "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261020-0003-review-ydx3onys/tests/test_production.py", line 39, in put
+    return p.import_records(self.store, {'format': 'production-import-v1', 'records': list(records)}, validate)['records']
+  File "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261020-0003-review-ydx3onys/review_desk/production.py", line 593, in import_records
+    return _import_records(store, document, validate_only)
+  File "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261020-0003-review-ydx3onys/review_desk/production.py", line 742, in _import_records
+    validate_payload(store, object_id, kind, p, check_current=check_current)
+  File "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261020-0003-review-ydx3onys/review_desk/production.py", line 455, in validate_payload
+    validate_output_name(store, object_id, p)
+  File "/private/var/folders/28/k60pcx7n5vv0vqpzp4_vtyxm0000gn/T/task-20261020-0003-review-ydx3onys/review_desk/material_origin.py", line 81, in validate_output_name
+    raise ValueError('当前素材标题与生成输出名称必须一致')
+ValueError: 当前素材标题与生成输出名称必须一致
+
+----------------------------------------------------------------------
+Ran 32 tests in 4.984s
+
+FAILED (errors=8)

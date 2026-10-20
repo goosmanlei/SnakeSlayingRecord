@@ -1,0 +1,57 @@
+WARNING: The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested
+======================================================================
+ERROR: test_adoption_does_not_select_a_plan_input_and_changes_require_acceptance (test_read_cache.CachedGenerationTest.test_adoption_does_not_select_a_plan_input_and_changes_require_acceptance)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/cases/test_generation.py", line 60, in test_adoption_does_not_select_a_plan_input_and_changes_require_acceptance
+    sr.select(self.store,{'id':'explicit-reference','requirement_id':need['object_id'],'expected_revision':need['id'],
+  File "/app/review_desk/shot_references.py", line 112, in select
+    return select_current(store, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/review_desk/production_operations.py", line 256, in select
+    return run(store, request, action, preflight=preflight)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/review_desk/production_operations.py", line 36, in run
+    return _run_preflighted(store, operation, fingerprint, action)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/review_desk/production_operations.py", line 44, in _run_preflighted
+    result = action()
+             ^^^^^^^^
+  File "/app/review_desk/production_operations.py", line 203, in action
+    current.guard(store, need['object_id'], request.get('expected_content'))
+  File "/app/review_desk/production_current.py", line 84, in guard
+    raise Conflict('当前制作内容已改变；请回读后保留草稿并重新准备：' + object_id)
+review_desk.store.Conflict: 当前制作内容已改变；请回读后保留草稿并重新准备：need-wet-overall
+
+======================================================================
+ERROR: test_exact_plan_comments_cli_and_recovery (test_read_cache.CachedGenerationTest.test_exact_plan_comments_cli_and_recovery)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/cases/test_generation.py", line 89, in test_exact_plan_comments_cli_and_recovery
+    comment=self.store.create_comment({'target_object_id':need['object_id'],'target_revision_id':need['id'],'anchor':anchor,'body':'核对实际提示词'})
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/review_desk/store.py", line 713, in create_comment
+    return self._create_comment(value)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/review_desk/store.py", line 762, in _create_comment
+    raise Conflict('制作内容已变化；请核对原意见摘录后重新提交，草稿未保存到新内容')
+review_desk.store.Conflict: 制作内容已变化；请核对原意见摘录后重新提交，草稿未保存到新内容
+
+======================================================================
+ERROR: test_entity_state_plan_asset_relation_comment_decision_import_and_history_are_fresh (test_read_cache.CachedEntityReadScopeTest.test_entity_state_plan_asset_relation_comment_decision_import_and_history_are_fresh)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/cases/test_entity_read_scope.py", line 52, in test_entity_state_plan_asset_relation_comment_decision_import_and_history_are_fresh
+    comment=self.store.create_comment({'target_object_id':'voice','target_revision_id':self.ref('voice')['revision_id'],'anchor':{'type':'global'},'body':'新增评论'})
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/review_desk/store.py", line 713, in create_comment
+    return self._create_comment(value)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/review_desk/store.py", line 762, in _create_comment
+    raise Conflict('制作内容已变化；请核对原意见摘录后重新提交，草稿未保存到新内容')
+review_desk.store.Conflict: 制作内容已变化；请核对原意见摘录后重新提交，草稿未保存到新内容
+
+----------------------------------------------------------------------
+Ran 6 tests in 3.330s
+
+FAILED (errors=3)

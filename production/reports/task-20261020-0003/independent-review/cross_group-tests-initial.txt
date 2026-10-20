@@ -1,0 +1,26 @@
+test_comment_close_invalidates_comment_domain_but_source_change_invalidates_both (__main__.CrossGroupProbe) ... ERROR
+test_dispatch_write_actions_do_not_take_read_cancellation_scope (__main__.CrossGroupProbe) ... ok
+test_http_summary_and_post_get_preserve_exact_output (__main__.CrossGroupProbe) ... 127.0.0.1 - - [20/Oct/2026 11:46:23] "GET /api/editing/catalog?summary=1 HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2026 11:46:23] "POST /api/editing/get HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2026 11:46:23] "POST /api/editing/get HTTP/1.1" 400 -
+ok
+test_real_http_disconnect_cancels_read_actions_and_releases_scopes (__main__.CrossGroupProbe) ... ok
+
+======================================================================
+ERROR: test_comment_close_invalidates_comment_domain_but_source_change_invalidates_both (__main__.CrossGroupProbe)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-task/worktrees/task-20261020-0003/.runtime/performance/independent-review/group/cross_group_probe.py", line 116, in test_comment_close_invalidates_comment_domain_but_source_change_invalidates_both
+    comment = self.store.create_comment({'target_object_id': 'episode', 'target_revision_id': row['revision'],
+  File "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-task/linked-worktrees/task-20261020-0003/desk/review_desk/store.py", line 713, in create_comment
+    return self._create_comment(value)
+  File "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-task/linked-worktrees/task-20261020-0003/desk/review_desk/store.py", line 732, in _create_comment
+    target = self.validate_target(object_id, revision_id, anchor)
+  File "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.codex-task/linked-worktrees/task-20261020-0003/desk/review_desk/store.py", line 654, in validate_target
+    raise ValueError("invalid global anchor")
+ValueError: invalid global anchor
+
+----------------------------------------------------------------------
+Ran 4 tests in 1.667s
+
+FAILED (errors=1)

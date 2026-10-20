@@ -1,0 +1,167 @@
+{
+  "source": "Actual Chrome CDP Performance.getMetrics during private instance UI actions; counters transcribed from tool output",
+  "viewport": {
+    "width": 3408,
+    "height": 1891,
+    "dpr": 1
+  },
+  "metrics": {
+    "drag_start": {
+      "Timestamp": 481273.262561,
+      "TaskDuration": 1.796215,
+      "ScriptDuration": 0.144257,
+      "LayoutDuration": 0.02797,
+      "RecalcStyleDuration": 0.068995,
+      "DevToolsCommandDuration": 0.693959,
+      "ThreadTime": 1.801428,
+      "ProcessTime": 16.377232,
+      "JSHeapUsedSize": 17773332,
+      "Nodes": 1849,
+      "JSEventListeners": 783,
+      "ContextLifecycleStateObservers": 31,
+      "WorkerGlobalScopes": 0
+    },
+    "drag_end": {
+      "Timestamp": 481273.604012,
+      "TaskDuration": 1.823411,
+      "ScriptDuration": 0.147164,
+      "LayoutDuration": 0.029493,
+      "RecalcStyleDuration": 0.070867,
+      "DevToolsCommandDuration": 0.702572,
+      "ThreadTime": 1.828998,
+      "ProcessTime": 16.411675,
+      "JSHeapUsedSize": 17455304,
+      "Nodes": 1875,
+      "JSEventListeners": 783,
+      "ContextLifecycleStateObservers": 31,
+      "WorkerGlobalScopes": 0
+    },
+    "play_start": {
+      "Timestamp": 481290.018809,
+      "TaskDuration": 1.861766,
+      "ScriptDuration": 0.148783,
+      "LayoutDuration": 0.030045,
+      "RecalcStyleDuration": 0.07345,
+      "DevToolsCommandDuration": 0.715817,
+      "ThreadTime": 1.8697,
+      "ProcessTime": 16.485166,
+      "JSHeapUsedSize": 17958252,
+      "Nodes": 1887,
+      "JSEventListeners": 783,
+      "ContextLifecycleStateObservers": 33,
+      "WorkerGlobalScopes": 0
+    },
+    "play_end": {
+      "Timestamp": 481317.755204,
+      "TaskDuration": 2.290783,
+      "ScriptDuration": 0.184026,
+      "LayoutDuration": 0.05569,
+      "RecalcStyleDuration": 0.103158,
+      "DevToolsCommandDuration": 0.716148,
+      "ThreadTime": 2.347769,
+      "ProcessTime": 17.72889,
+      "JSHeapUsedSize": 14690528,
+      "Nodes": 1528,
+      "JSEventListeners": 701,
+      "ContextLifecycleStateObservers": 24,
+      "WorkerGlobalScopes": 0
+    },
+    "idle_start": {
+      "Timestamp": 481425.728899,
+      "TaskDuration": 2.789778,
+      "ScriptDuration": 0.221159,
+      "LayoutDuration": 0.06793,
+      "RecalcStyleDuration": 0.117339,
+      "DevToolsCommandDuration": 0.764784,
+      "ThreadTime": 2.669035,
+      "ProcessTime": 18.417108,
+      "JSHeapUsedSize": 16243116,
+      "Nodes": 2535,
+      "JSEventListeners": 990,
+      "ContextLifecycleStateObservers": 28,
+      "WorkerGlobalScopes": 1
+    },
+    "idle_end": {
+      "Timestamp": 481467.281227,
+      "TaskDuration": 2.807115,
+      "ScriptDuration": 0.22335,
+      "LayoutDuration": 0.068114,
+      "RecalcStyleDuration": 0.117339,
+      "DevToolsCommandDuration": 0.764883,
+      "ThreadTime": 2.690536,
+      "ProcessTime": 18.45033,
+      "JSHeapUsedSize": 16379056,
+      "Nodes": 2535,
+      "JSEventListeners": 990,
+      "ContextLifecycleStateObservers": 28,
+      "WorkerGlobalScopes": 1
+    }
+  },
+  "drag": {
+    "from": [
+      1200,
+      1344
+    ],
+    "to": [
+      1400,
+      1580
+    ],
+    "selected_frames": [
+      216,
+      1137
+    ],
+    "selected_seconds": [
+      9,
+      47.375
+    ],
+    "tracks": [
+      "picture",
+      "mix",
+      "local_bed",
+      "dubbing",
+      "subtitle"
+    ]
+  },
+  "playback": {
+    "before": {
+      "time": 9,
+      "totalVideoFrames": 273,
+      "droppedVideoFrames": 0,
+      "corruptedVideoFrames": 0
+    },
+    "after": {
+      "time": 35.149368,
+      "totalVideoFrames": 961,
+      "droppedVideoFrames": 0,
+      "corruptedVideoFrames": 0
+    },
+    "pause_confirmed": {
+      "paused": true,
+      "time": 35.167859
+    }
+  },
+  "idle": {
+    "entity_graph": "ASH242",
+    "nodes": 5,
+    "edges": 2,
+    "new_requests": 0,
+    "network_event_truncated": false
+  },
+  "largest_graph": {
+    "population": 416,
+    "shot": "ASH245",
+    "nodes": 18,
+    "edges": 12,
+    "fit_percent": 92,
+    "actual_zoom_and_fit": true,
+    "selected_entity": "EN001",
+    "highlighted_nodes": 5,
+    "selected_edges": 4
+  },
+  "boundaries": [
+    "Performance durations are cumulative and the differences cover tool-observation intervals; TaskDuration includes DevTools work.",
+    "ProcessTime is renderer process time, not decoder-only CPU. Video quality counts quantify decoder output, not decoder CPU.",
+    "Chrome Profiler/HeapProfiler/Target.setAutoAttach unavailable through this connection; browser Worker CPU is not measured. Separate exact algorithm worker-thread replay is in frontend-replay.json.",
+    "Natural GC observed across 20 cycles; no forced GC was available."
+  ]
+}

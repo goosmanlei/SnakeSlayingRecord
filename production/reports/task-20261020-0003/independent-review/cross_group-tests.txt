@@ -1,0 +1,12 @@
+test_comment_close_invalidates_comment_domain_but_source_change_invalidates_both (__main__.CrossGroupProbe) ... ok
+test_dispatch_write_actions_do_not_take_read_cancellation_scope (__main__.CrossGroupProbe) ... ok
+test_http_summary_and_post_get_preserve_exact_output (__main__.CrossGroupProbe) ... 127.0.0.1 - - [20/Oct/2026 11:48:39] "GET /api/editing/catalog?summary=1 HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2026 11:48:39] "POST /api/editing/get HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2026 11:48:39] "POST /api/editing/get HTTP/1.1" 400 -
+ok
+test_real_http_disconnect_cancels_read_actions_and_releases_scopes (__main__.CrossGroupProbe) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 1.389s
+
+OK

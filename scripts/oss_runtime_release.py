@@ -438,7 +438,10 @@ def apply(args):
 
 
 def main():
-    parser=argparse.ArgumentParser(description=__doc__);commands=parser.add_subparsers(dest='command',required=True)
+    global TASK
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--task', default=TASK, help='exact managed task owning this release')
+    commands=parser.add_subparsers(dest='command',required=True)
     p=commands.add_parser('prepare')
     for name in ('story','desk','output'):p.add_argument('--'+name,type=Path,required=True)
     p.add_argument('--image',required=True)
@@ -448,7 +451,11 @@ def main():
     p=commands.add_parser('rollback');p.add_argument('--release',type=Path,required=True)
     p=commands.add_parser('finalize');p.add_argument('--release',type=Path,required=True)
     p=commands.add_parser('resume');p.add_argument('--release',type=Path,required=True)
-    args=parser.parse_args();globals()[args.command](args)
+    args=parser.parse_args()
+    if not re.fullmatch(r'task-[0-9]{8}-[0-9]{4}', args.task):
+        parser.error('invalid managed task identity')
+    TASK=args.task
+    globals()[args.command](args)
 
 
 if __name__=='__main__':main()

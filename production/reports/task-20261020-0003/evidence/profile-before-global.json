@@ -1,0 +1,613 @@
+{
+  "workload": "global_entities",
+  "wall_seconds": 8.747007170983125,
+  "cpu_seconds": 8.646308343,
+  "calls": 1588821,
+  "top_self": [
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'execute' of 'sqlite3.Connection' objects>",
+      "calls": 11684,
+      "self_seconds": 5.427603287,
+      "cumulative_seconds": 5.427603287
+    },
+    {
+      "file": "list_reading.py",
+      "line": 112,
+      "function": "rows",
+      "calls": 836,
+      "self_seconds": 2.343381274,
+      "cumulative_seconds": 7.359569216000001
+    },
+    {
+      "file": "decoder.py",
+      "line": 344,
+      "function": "raw_decode",
+      "calls": 4564,
+      "self_seconds": 0.12741781500000002,
+      "cumulative_seconds": 0.12741781500000002
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'get' of 'dict' objects>",
+      "calls": 547992,
+      "self_seconds": 0.071847225,
+      "cumulative_seconds": 0.071847225
+    },
+    {
+      "file": "ui_projection.py",
+      "line": 140,
+      "function": "<lambda>",
+      "calls": 362747,
+      "self_seconds": 0.059129045000000005,
+      "cumulative_seconds": 0.10023794700000001
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'fetchone' of 'sqlite3.Cursor' objects>",
+      "calls": 9308,
+      "self_seconds": 0.05162448,
+      "cumulative_seconds": 0.063695797
+    },
+    {
+      "file": "encoder.py",
+      "line": 205,
+      "function": "iterencode",
+      "calls": 1776,
+      "self_seconds": 0.049587479000000004,
+      "cumulative_seconds": 0.051845032000000006
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method unicodedata.normalize>",
+      "calls": 6919,
+      "self_seconds": 0.048075517000000005,
+      "cumulative_seconds": 0.048075517000000005
+    },
+    {
+      "file": "material_storage.py",
+      "line": 179,
+      "function": "factory",
+      "calls": 48312,
+      "self_seconds": 0.037941967,
+      "cumulative_seconds": 0.039323241
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method builtins.sorted>",
+      "calls": 2336,
+      "self_seconds": 0.037224649000000005,
+      "cumulative_seconds": 0.13746259600000002
+    },
+    {
+      "file": "production_breakdown.py",
+      "line": 33,
+      "function": "rows",
+      "calls": 6,
+      "self_seconds": 0.036509608,
+      "cumulative_seconds": 0.08311529200000001
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method builtins.compile>",
+      "calls": 13,
+      "self_seconds": 0.021433543000000003,
+      "cumulative_seconds": 0.021433543000000003
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method _hashlib.openssl_sha256>",
+      "calls": 1331,
+      "self_seconds": 0.020128469,
+      "cumulative_seconds": 0.020128469
+    },
+    {
+      "file": "business_codes.py",
+      "line": 91,
+      "function": "dump",
+      "calls": 2,
+      "self_seconds": 0.01740322,
+      "cumulative_seconds": 0.023549001
+    },
+    {
+      "file": "production_breakdown.py",
+      "line": 253,
+      "function": "locations",
+      "calls": 4726,
+      "self_seconds": 0.015651822,
+      "cumulative_seconds": 0.040848496000000005
+    },
+    {
+      "file": "material_storage.py",
+      "line": 236,
+      "function": "identity",
+      "calls": 673,
+      "self_seconds": 0.015176944000000001,
+      "cumulative_seconds": 0.038292321000000004
+    },
+    {
+      "file": "production.py",
+      "line": 35,
+      "function": "record_view",
+      "calls": 2395,
+      "self_seconds": 0.014982614000000002,
+      "cumulative_seconds": 0.11885018300000001
+    },
+    {
+      "file": "list_reading.py",
+      "line": 90,
+      "function": "ref_record",
+      "calls": 15368,
+      "self_seconds": 0.013706297000000001,
+      "cumulative_seconds": 0.051407662
+    },
+    {
+      "file": "ui_projection.py",
+      "line": 140,
+      "function": "<genexpr>",
+      "calls": 659,
+      "self_seconds": 0.013151956000000001,
+      "cumulative_seconds": 0.01327241
+    },
+    {
+      "file": "list_reading.py",
+      "line": 70,
+      "function": "record",
+      "calls": 17198,
+      "self_seconds": 0.012944323,
+      "cumulative_seconds": 0.067363174
+    },
+    {
+      "file": "list_reading.py",
+      "line": 34,
+      "function": "project",
+      "calls": 3129,
+      "self_seconds": 0.011544969,
+      "cumulative_seconds": 0.094304275
+    },
+    {
+      "file": "ui_projection.py",
+      "line": 118,
+      "function": "entity_summaries",
+      "calls": 1,
+      "self_seconds": 0.011516284,
+      "cumulative_seconds": 7.731999211000001
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'fetchall' of 'sqlite3.Cursor' objects>",
+      "calls": 2,
+      "self_seconds": 0.010057950000000001,
+      "cumulative_seconds": 0.011494917
+    },
+    {
+      "file": "entity_review.py",
+      "line": 7,
+      "function": "full_states",
+      "calls": 123,
+      "self_seconds": 0.009850824000000001,
+      "cumulative_seconds": 0.01746483
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method builtins.isinstance>",
+      "calls": 79183,
+      "self_seconds": 0.008627313000000001,
+      "cumulative_seconds": 0.008627313000000001
+    },
+    {
+      "file": "decoder.py",
+      "line": 333,
+      "function": "decode",
+      "calls": 4564,
+      "self_seconds": 0.008043766,
+      "cumulative_seconds": 0.14369968900000002
+    },
+    {
+      "file": "list_associations.py",
+      "line": 65,
+      "function": "add",
+      "calls": 3593,
+      "self_seconds": 0.007995884,
+      "cumulative_seconds": 0.053677759000000005
+    },
+    {
+      "file": "ui_projection.py",
+      "line": 14,
+      "function": "_material_entries",
+      "calls": 1,
+      "self_seconds": 0.0073199960000000005,
+      "cumulative_seconds": 0.9205097510000001
+    },
+    {
+      "file": "entity_contract.py",
+      "line": 33,
+      "function": "direct_materials",
+      "calls": 416,
+      "self_seconds": 0.007011304,
+      "cumulative_seconds": 7.413583624
+    },
+    {
+      "file": "production_states.py",
+      "line": 16,
+      "function": "complete",
+      "calls": 85731,
+      "self_seconds": 0.006982559,
+      "cumulative_seconds": 0.007306819000000001
+    }
+  ],
+  "top_cumulative": [
+    {
+      "file": "profile_read.py",
+      "line": 17,
+      "function": "<lambda>",
+      "calls": 1,
+      "self_seconds": 0.002156917,
+      "cumulative_seconds": 8.738589421
+    },
+    {
+      "file": "production_breakdown.py",
+      "line": 40,
+      "function": "index",
+      "calls": 1,
+      "self_seconds": 0.0011997820000000001,
+      "cumulative_seconds": 8.736432504
+    },
+    {
+      "file": "ui_projection.py",
+      "line": 118,
+      "function": "entity_summaries",
+      "calls": 1,
+      "self_seconds": 0.011516284,
+      "cumulative_seconds": 7.731999211000001
+    },
+    {
+      "file": "entity_contract.py",
+      "line": 33,
+      "function": "direct_materials",
+      "calls": 416,
+      "self_seconds": 0.007011304,
+      "cumulative_seconds": 7.413583624
+    },
+    {
+      "file": "list_reading.py",
+      "line": 112,
+      "function": "rows",
+      "calls": 836,
+      "self_seconds": 2.343381274,
+      "cumulative_seconds": 7.359569216000001
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'execute' of 'sqlite3.Connection' objects>",
+      "calls": 11684,
+      "self_seconds": 5.427603287,
+      "cumulative_seconds": 5.427603287
+    },
+    {
+      "file": "read_cache.py",
+      "line": 266,
+      "function": "read_json",
+      "calls": 3,
+      "self_seconds": 1.3751000000000001e-05,
+      "cumulative_seconds": 0.9380212510000001
+    },
+    {
+      "file": "ui_projection.py",
+      "line": 8,
+      "function": "material_entries",
+      "calls": 1,
+      "self_seconds": 1.0041000000000001e-05,
+      "cumulative_seconds": 0.9255962090000001
+    },
+    {
+      "file": "ui_projection.py",
+      "line": 11,
+      "function": "<lambda>",
+      "calls": 1,
+      "self_seconds": 0.000965958,
+      "cumulative_seconds": 0.9214757090000001
+    },
+    {
+      "file": "ui_projection.py",
+      "line": 14,
+      "function": "_material_entries",
+      "calls": 1,
+      "self_seconds": 0.0073199960000000005,
+      "cumulative_seconds": 0.9205097510000001
+    },
+    {
+      "file": "material_storage.py",
+      "line": 225,
+      "function": "canonical_id",
+      "calls": 5291,
+      "self_seconds": 0.005856941,
+      "cumulative_seconds": 0.402798949
+    },
+    {
+      "file": "semantic_consolidation.py",
+      "line": 35,
+      "function": "resolve",
+      "calls": 5291,
+      "self_seconds": 0.002039159,
+      "cumulative_seconds": 0.38748823400000004
+    },
+    {
+      "file": "semantic_consolidation.py",
+      "line": 22,
+      "function": "decisions",
+      "calls": 1,
+      "self_seconds": 1.075e-05,
+      "cumulative_seconds": 0.384956458
+    },
+    {
+      "file": "production.py",
+      "line": 78,
+      "function": "record",
+      "calls": 501,
+      "self_seconds": 0.005151523000000001,
+      "cumulative_seconds": 0.206043564
+    },
+    {
+      "file": "__init__.py",
+      "line": 299,
+      "function": "loads",
+      "calls": 4564,
+      "self_seconds": 0.0044268250000000006,
+      "cumulative_seconds": 0.150535508
+    },
+    {
+      "file": "list_associations.py",
+      "line": 56,
+      "function": "material_uses",
+      "calls": 1,
+      "self_seconds": 0.005807721,
+      "cumulative_seconds": 0.14511279200000002
+    },
+    {
+      "file": "decoder.py",
+      "line": 333,
+      "function": "decode",
+      "calls": 4564,
+      "self_seconds": 0.008043766,
+      "cumulative_seconds": 0.14369968900000002
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method builtins.sorted>",
+      "calls": 2336,
+      "self_seconds": 0.037224649000000005,
+      "cumulative_seconds": 0.13746259600000002
+    },
+    {
+      "file": "decoder.py",
+      "line": 344,
+      "function": "raw_decode",
+      "calls": 4564,
+      "self_seconds": 0.12741781500000002,
+      "cumulative_seconds": 0.12741781500000002
+    },
+    {
+      "file": "production_current.py",
+      "line": 102,
+      "function": "annotate",
+      "calls": 1293,
+      "self_seconds": 0.0033236480000000002,
+      "cumulative_seconds": 0.12719433900000002
+    },
+    {
+      "file": "production.py",
+      "line": 35,
+      "function": "record_view",
+      "calls": 2395,
+      "self_seconds": 0.014982614000000002,
+      "cumulative_seconds": 0.11885018300000001
+    },
+    {
+      "file": "ui_projection.py",
+      "line": 140,
+      "function": "<lambda>",
+      "calls": 362747,
+      "self_seconds": 0.059129045000000005,
+      "cumulative_seconds": 0.10023794700000001
+    },
+    {
+      "file": "navigation_search.py",
+      "line": 30,
+      "function": "material_fields",
+      "calls": 673,
+      "self_seconds": 0.004597248,
+      "cumulative_seconds": 0.09880557400000001
+    },
+    {
+      "file": "list_reading.py",
+      "line": 34,
+      "function": "project",
+      "calls": 3129,
+      "self_seconds": 0.011544969,
+      "cumulative_seconds": 0.094304275
+    },
+    {
+      "file": "production_current.py",
+      "line": 77,
+      "function": "checksum",
+      "calls": 1331,
+      "self_seconds": 0.0013638650000000001,
+      "cumulative_seconds": 0.084043859
+    },
+    {
+      "file": "production_breakdown.py",
+      "line": 33,
+      "function": "rows",
+      "calls": 6,
+      "self_seconds": 0.036509608,
+      "cumulative_seconds": 0.08311529200000001
+    },
+    {
+      "file": "__init__.py",
+      "line": 183,
+      "function": "dumps",
+      "calls": 1776,
+      "self_seconds": 0.0045425710000000005,
+      "cumulative_seconds": 0.07804311300000001
+    },
+    {
+      "file": "encoder.py",
+      "line": 183,
+      "function": "encode",
+      "calls": 1776,
+      "self_seconds": 0.005209892000000001,
+      "cumulative_seconds": 0.07234171
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'get' of 'dict' objects>",
+      "calls": 547992,
+      "self_seconds": 0.071847225,
+      "cumulative_seconds": 0.071847225
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method fromkeys>",
+      "calls": 1212,
+      "self_seconds": 0.001953143,
+      "cumulative_seconds": 0.071839161
+    },
+    {
+      "file": "list_reading.py",
+      "line": 70,
+      "function": "record",
+      "calls": 17198,
+      "self_seconds": 0.012944323,
+      "cumulative_seconds": 0.067363174
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'fetchone' of 'sqlite3.Cursor' objects>",
+      "calls": 9308,
+      "self_seconds": 0.05162448,
+      "cumulative_seconds": 0.063695797
+    },
+    {
+      "file": "production.py",
+      "line": 561,
+      "function": "current_records",
+      "calls": 2,
+      "self_seconds": 0.001534437,
+      "cumulative_seconds": 0.06266300100000001
+    },
+    {
+      "file": "navigation_search.py",
+      "line": 11,
+      "function": "normalize",
+      "calls": 6919,
+      "self_seconds": 0.004887138,
+      "cumulative_seconds": 0.06197339
+    },
+    {
+      "file": "navigation_search.py",
+      "line": 45,
+      "function": "<genexpr>",
+      "calls": 5480,
+      "self_seconds": 0.001444111,
+      "cumulative_seconds": 0.057050791000000003
+    },
+    {
+      "file": "production_current.py",
+      "line": 68,
+      "function": "enabled",
+      "calls": 2622,
+      "self_seconds": 0.003336795,
+      "cumulative_seconds": 0.054122388
+    },
+    {
+      "file": "list_associations.py",
+      "line": 65,
+      "function": "add",
+      "calls": 3593,
+      "self_seconds": 0.007995884,
+      "cumulative_seconds": 0.053677759000000005
+    },
+    {
+      "file": "store.py",
+      "line": 12,
+      "function": "canonical",
+      "calls": 1331,
+      "self_seconds": 0.000904341,
+      "cumulative_seconds": 0.053227827000000005
+    },
+    {
+      "file": "encoder.py",
+      "line": 205,
+      "function": "iterencode",
+      "calls": 1776,
+      "self_seconds": 0.049587479000000004,
+      "cumulative_seconds": 0.051845032000000006
+    },
+    {
+      "file": "list_reading.py",
+      "line": 90,
+      "function": "ref_record",
+      "calls": 15368,
+      "self_seconds": 0.013706297000000001,
+      "cumulative_seconds": 0.051407662
+    }
+  ],
+  "selected": [
+    {
+      "file": "list_reading.py",
+      "line": 70,
+      "function": "record",
+      "calls": 17198,
+      "self_seconds": 0.012944323,
+      "cumulative_seconds": 0.067363174
+    },
+    {
+      "file": "production.py",
+      "line": 78,
+      "function": "record",
+      "calls": 501,
+      "self_seconds": 0.005151523000000001,
+      "cumulative_seconds": 0.206043564
+    },
+    {
+      "file": "entity_contract.py",
+      "line": 222,
+      "function": "graph",
+      "calls": 1,
+      "self_seconds": 0.000460176,
+      "cumulative_seconds": 0.012772292000000001
+    },
+    {
+      "file": "production_current.py",
+      "line": 77,
+      "function": "checksum",
+      "calls": 1331,
+      "self_seconds": 0.0013638650000000001,
+      "cumulative_seconds": 0.084043859
+    },
+    {
+      "file": "production_current.py",
+      "line": 116,
+      "function": "submission",
+      "calls": 38,
+      "self_seconds": 0.00017320900000000001,
+      "cumulative_seconds": 0.004422749
+    }
+  ],
+  "boundary": "One instrumented uncached projection; excludes HTTP encoding and transport. Cumulative times overlap."
+}

@@ -1,0 +1,43 @@
+{
+  "mock_cloud": {
+    "validation_in_transaction": [
+      false,
+      true
+    ],
+    "text_downloads": 1,
+    "all_cloud_bodies_closed": true,
+    "comments": 1,
+    "scope_cleanup": true,
+    "reproduced_existing_failure": false
+  },
+  "offline": {
+    "validation_in_transaction": [
+      false,
+      true
+    ],
+    "text_downloads": 0,
+    "all_cloud_bodies_closed": true,
+    "comments": 1,
+    "scope_cleanup": true,
+    "reproduced_existing_failure": false
+  },
+  "missing_original": {
+    "rejected_before_begin": true,
+    "comments": 0
+  },
+  "concurrent_association": {
+    "other_connection_committed": true,
+    "transaction_rejected": true,
+    "comments": 0
+  },
+  "saved_replay": {
+    "same_comment": true,
+    "comment_events": 1,
+    "new_anchor_check_skipped": true
+  },
+  "changed_original": {
+    "transaction_rejected": true,
+    "comments": 0,
+    "scope_cleanup": true
+  }
+}
