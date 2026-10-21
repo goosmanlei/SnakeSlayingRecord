@@ -268,13 +268,67 @@
           "revision_id": "996af93d7b4f8998bfa0e5e8562e23518b073ee872a667fe1f425a60a846a2b6"
         }
       ]
+    },
+    {
+      "id": "task-20261021-0002-m044-adr-03",
+      "status": "completed",
+      "tool": "seed-audio",
+      "model": "seed-audio-1.0",
+      "request_id": "a29fb80d-79bb-44cc-9307-d750603c0ff3",
+      "outputs": [
+        {
+          "object_id": "asset-task-20261021-0002-m044-adr-03",
+          "revision_id": "a8bb8ba21597867e7eac72321b354e27332f6cc72cc43c691bf2192c6975a7e3"
+        }
+      ]
+    },
+    {
+      "id": "task-20261021-0002-m044whole-01",
+      "status": "completed",
+      "tool": "pippit-tool-cli",
+      "model": "Seedance_2.5",
+      "request_id": "skill_3b2010ab-7c9e-4d4e-965d-145acdc28ea8",
+      "outputs": [
+        {
+          "object_id": "asset-task-20261021-0002-m044whole-01",
+          "revision_id": "b35bc507da613faaf5e84c45b65431f20fac3cf62a1efb6de23b2d2ec20355b3"
+        }
+      ]
     }
   ],
   "counts": {
-    "registered_calls": 21,
-    "completed": 20,
+    "registered_calls": 23,
+    "completed": 22,
     "failed": 1
   },
   "currency_cost": "UNKNOWN; no recharge, subscription or new payment was made.",
-  "boundary": "这里只计有真实CALL登记的生成请求；预检拒绝、上传重试、辅助转写和首轮渲染上传失败不冒充新视频生成。Seed历史未知请求的额度预留沿本机真实请求记录保持，不抵销为0。"
+  "boundary": "这里只计有真实CALL登记的生成请求；预检拒绝、上传重试、辅助转写和首轮渲染上传失败不冒充新视频生成。Seed历史未知请求的额度预留沿本机真实请求记录保持，不抵销为0。",
+  "m044_audio_generation": {
+    "attempts": 3,
+    "limit": 3,
+    "take01": "pronunciation rejected by user",
+    "take02": "pronunciation accepted; voice identity rejected by user",
+    "take03": "pronunciation rejected by user",
+    "further_generation": false,
+    "next": "Both local splices rejected; route closed. Whole-shot take01 audio accepted by user."
+  },
+  "m044_whole_shot_generation": {
+    "attempts": 1,
+    "limit": 3,
+    "status": "take01 audio accepted; no additional generation needed",
+    "balance_before": 17062,
+    "balance_after": 16326,
+    "credit_change": 736,
+    "currency_cost": "UNKNOWN",
+    "registration": {
+      "call_id": "task-20261021-0002-m044whole-01",
+      "candidate_id": "candidate-29cc23c4889b78bc99f91bdb73568fcc7d722c2081e25fabc6249cebebb36d02",
+      "status": "completed",
+      "already_applied": false,
+      "asset": {
+        "object_id": "asset-task-20261021-0002-m044whole-01",
+        "revision_id": "b35bc507da613faaf5e84c45b65431f20fac3cf62a1efb6de23b2d2ec20355b3"
+      }
+    }
+  }
 }

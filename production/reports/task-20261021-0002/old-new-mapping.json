@@ -1,6 +1,6 @@
 {
   "baseline_duration_frames": 6946,
-  "candidate_duration_frames": 7554,
+  "candidate_duration_frames": 7602,
   "fps": 24,
   "shots": [
     {
@@ -356,25 +356,15 @@
       ],
       "new_frames": [
         6711,
-        7216
+        7264
       ],
-      "code": null,
-      "changed": false,
+      "code": "m044whole",
+      "changed": true,
       "source_intervals": [
         {
-          "source_in": 24,
-          "source_out": 178,
+          "source_in": 0,
+          "source_out": 553,
           "timeline_start": 6711
-        },
-        {
-          "source_in": 178,
-          "source_out": 208,
-          "timeline_start": 6865
-        },
-        {
-          "source_in": 208,
-          "source_out": 529,
-          "timeline_start": 6895
         }
       ]
     },
@@ -385,8 +375,8 @@
         6801
       ],
       "new_frames": [
-        7216,
-        7409
+        7264,
+        7457
       ],
       "code": null,
       "changed": false,
@@ -394,7 +384,7 @@
         {
           "source_in": 0,
           "source_out": 193,
-          "timeline_start": 7216
+          "timeline_start": 7264
         }
       ]
     },
@@ -405,8 +395,8 @@
         6946
       ],
       "new_frames": [
-        7409,
-        7554
+        7457,
+        7602
       ],
       "code": null,
       "changed": false,
@@ -414,22 +404,9 @@
         {
           "source_in": 0,
           "source_out": 145,
-          "timeline_start": 7409
+          "timeline_start": 7457
         }
       ]
     }
-  ],
-  "semantics": {
-    "intervals": "24fps工程帧，左闭右开；source_intervals为画面源帧区间。",
-    "changed": "该镜画面是否替换，不能解释为声音未改；M044原画面保留但目标对白已替换。",
-    "full_audio_and_text_mapping": "准确成片的source-map组成记录全部声音、字幕和人名条；音轨时间采用48kHz采样。"
-  },
-  "audio_changes": {
-    "s001-q05": "画面源0至16.25秒；原声保留至17.25秒跨镜，末尾淡出0.15秒。",
-    "s001-q06": "开头原声淡入0.5秒，承接M021声桥。",
-    "s001-q08": "新画面M024e，声音明确来自版本7所用原M024源0至15秒。",
-    "s002-q02": "声画均从原件0.5秒切入。",
-    "s002-q05": "画面源0至9秒，声音保留至9.5秒跨入M042。",
-    "s002-q08": "移除M654；补录02源0.08至3.0秒、增益4.45dB，放在本镜4.3秒，仍为待听候选。"
-  }
+  ]
 }
