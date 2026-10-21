@@ -14,14 +14,23 @@ from review_desk.screenplay import import_screenplay
 from review_desk.store import Store
 
 
-def prepare(candidate, target, document_path='imports/screenplay-01.json'):
+def prepare(candidate, target, document_path='imports/screenplay-01.json', records_path=None):
     document = json.loads((candidate / document_path).read_text())
     from material_model_io import framework_members
     ids = {document['id'], *(e['id'] for e in document['episodes'])}
-    records = {table: [row for row in framework_members(candidate/'export/objects.json',table) if row['id' if table == 'objects' else 'object_id'] in ids]
+    supplied = None
+    if records_path:
+        from material_model_io import read_json
+        from generation_workspace import contained
+        supplied = read_json(contained(candidate, records_path))
+        if supplied.get('format') != 'screenplay-publication-records-v1':
+            raise ValueError('invalid exact screenplay records package')
+    def members(table):
+        return supplied[table] if supplied is not None else framework_members(candidate/'export/objects.json',table)
+    records = {table: [row for row in members(table) if row['id' if table == 'objects' else 'object_id'] in ids]
                for table in ('objects', 'revisions')}
     revision_ids = {row['id'] for row in records['revisions']}
-    records['dependencies'] = [d for d in framework_members(candidate/'export/objects.json','dependencies') if d['from_revision'] in revision_ids]
+    records['dependencies'] = [d for d in members('dependencies') if d['from_revision'] in revision_ids]
     temporary = TemporaryDirectory(prefix='screenplay-preflight-')
     sandbox = Store(Path(temporary.name) / 'review.sqlite3')
     try:
@@ -66,8 +75,8 @@ def assert_current_basis(store, document):
         raise ValueError('a newer published story exists; review before publication')
 
 
-def publish(candidate, target, apply=False, document_path='imports/screenplay-01.json'):
-    document, records, receipt, exists = prepare(candidate, target, document_path)
+def publish(candidate, target, apply=False, document_path='imports/screenplay-01.json', records_path=None):
+    document, records, receipt, exists = prepare(candidate, target, document_path, records_path)
     result = {'dry_run': not apply, 'screenplay_id': document['id'], 'revision': receipt['revision'],
               'already_present': exists, 'objects': len(records['objects']),
               'revisions': len(records['revisions']), 'dependencies': len(records['dependencies'])}
@@ -99,5 +108,6 @@ if __name__ == '__main__':
     parser.add_argument('--target', type=Path, required=True)
     parser.add_argument('--apply', action='store_true')
     parser.add_argument('--document', default='imports/screenplay-01.json', help='Path relative to candidate root')
+    parser.add_argument('--records', type=Path, help='Exact immutable screenplay rows when the full production export is not yet publishable')
     args = parser.parse_args()
-    print(json.dumps(publish(args.candidate.resolve(), args.target.resolve(), args.apply, args.document), ensure_ascii=False, indent=2))
+    print(json.dumps(publish(args.candidate.resolve(), args.target.resolve(), args.apply, args.document, args.records), ensure_ascii=False, indent=2))
