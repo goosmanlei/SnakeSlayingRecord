@@ -43,10 +43,20 @@ RESPONSIBILITIES = {
 """,
 }
 
+# Keep the detailed procedure in the handbook; each stage owns its handoff.
+TAIL_FRAME_HANDOFFS = {
+    'audiovisual-scene': '同场连续动作要延续站位、持物或伤污时，在 handoff 指定由谁核前镜实际尾部、何时交给下镜方案；前镜尚未产出时保留计划与实态复核的区别。反打或合理时空省略不机械继承同一构图。',
+    'image-plan': '镜头画面需要衔接实际状态时，按视频手册“前镜尾帧如何成为下镜参考”优先检查并使用合适的前镜尾部画面；它承担状态，干净母版承担身份与风格。新视角另设计起点，派生图保留准确来源与谱系。',
+    'video-plan': '连续画面按视频手册“前镜尾帧如何成为下镜参考”选择实际出点与参考角色：前镜尾帧用于下镜开头时是首帧职责，普通参考不冒充硬性首帧。draft 说明下一动作与允许改变的构图，review 核派生出处、接口组合和动作方向，result 留后镜实际接缝待验。',
+    'generation-preflight': '尾帧派生输入按视频手册核准确候选、画面出点、取帧位置、派生图哈希及实际提交角色；前镜或切点改变后重新核对，不把音轨末端当画面末端。清楚但动作阶段错误的帧不能放行，首帧与音色等输入组合以真实接口能力为准。',
+    'result-review': '使用尾帧参考的候选仍须按视频手册比较实际前镜出点与新镜入点，核动作是否重做、跳过或停滞；同一参考图或相似姿态不证明运动与声音连续。先区分端点选择错误、参考职责不足和生成偏离，再决定最小返修范围。',
+    'episode-editing': '工程若为后镜制作提供尾帧，按视频手册分别交出实际画面出点、原件映射与跨镜声音；前镜候选、裁切或出点变更后，沿已有参考和检查记录定向复核下游派生图及接缝，不把旧尾帧自动沿用，也不无条件重生成全部后镜。',
+}
+
 SHOT_HANDOFF = """
 ## 相邻镜的起点与参考交接
 
-把本镜第一动作的前提和计划落点分别写清：谁在画内或画外、持物手与落位、姿态及伤湿等持续状态。已生成邻镜时回查准确候选的实际可用范围；只有计划时标为计划，不凭文字发明已发生的末态。身份母版、场景空间、动作姿态与拟用边界各有参考职责，不要求一张图同时承担全部约束，也不为每个反打机械新增所有人物参考。把不可能的起点先修正，再提交视频；真实候选及成片切点仍须各自检查。专业原则沿本步骤按需取得的剪辑章节。
+把本镜第一动作的前提和计划落点分别写清：谁在画内或画外、持物手与落位、姿态及伤湿等持续状态。已生成邻镜时回查准确候选的实际可用范围；只有计划时标为计划，不凭文字发明已发生的末态。连续画面优先检查前镜实际出点附近能读清关键状态的画面，按本步骤取得的视频手册“前镜尾帧如何成为下镜参考”选择直接承接或重新设计新视角起点，保留取帧来源。身份母版、场景空间、动作姿态与拟用边界各有参考职责，不要求一张图同时承担全部约束，也不为每个反打机械新增所有人物参考。把不可能的起点先修正，再提交视频；真实候选及成片切点仍须各自检查。专业原则沿本步骤按需取得的剪辑章节。
 """
 
 
@@ -96,7 +106,8 @@ def migrate(store, root, revise=False):
                 old = methods.read(stage, 'method.skill.' + name)
                 p = copy.deepcopy(old['payload'])
                 update = replace_section if revise else append_section
-                p['files']['SKILL.md'] = update(p['files']['SKILL.md'], HEADING, prose + CONTRACT)
+                p['files']['SKILL.md'] = update(p['files']['SKILL.md'], HEADING,
+                    prose + '\n' + TAIL_FRAME_HANDOFFS[name] + '\n' + CONTRACT)
                 if name == 'image-plan':
                     title, text = SHOT_HANDOFF.strip().split('\n', 1)
                     p['files']['references/shot-image.md'] = update(
@@ -110,8 +121,11 @@ def migrate(store, root, revise=False):
                 if name == 'generation-preflight':
                     additions += [('filmcraft-execution', 'staging', {'need_staging': True}),
                                   ('filmcraft-execution', 'sound', {'need_sound': True})]
-                if name == 'video-plan':
-                    additions.append(('video-handbook', 'continuity', {'need_editing': True}))
+                if name in ('image-plan', 'video-plan', 'generation-preflight', 'result-review', 'episode-editing'):
+                    when = {'need_editing': True}
+                    if name == 'image-plan':
+                        when['material_category'] = 'shot-image'
+                    additions.append(('video-handbook', 'continuity', when))
                 for resource, section, when in additions:
                     ref = {**methods.reference(resources['method.resource.' + resource]),
                            'section': section, 'when': when}

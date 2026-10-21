@@ -38,7 +38,7 @@
 | 分类与方案 | 需求只有一个 `material_category`：图像四类、声音三类、视频、字层；动物不套人物衣饰，确定性制作不补造模型调用。格式、必备与条件要素须进入真正提交的 Prompt／指令。全剧方案与下游领取沿 [素材方案](production/material-plans/README.md)，分类契约沿 [素材分类](production/material-categories/VERIFICATION.md) |
 | 关系与依赖 | 同一对稳定对象维护一条当前关系，阶段差异合并到连贯正文。业务关联、方案直接输入、已选路线和候选真实提交分别表达；仅选中路线参与执行依赖与循环校验。见 [统一关系](production/unified-relations/README.md)、[参考合理性](production/material-reference-rationality/README.md) |
 | 准确原件与选择 | 输入固定真实候选和完整原件组成，浏览或第一份结果不代表选择、认可或采用。当前取消只清对应输入选择；新候选不漂移旧提交。已有合格原件按准确身份和用途复用，不因同需求编号误判循环。见 [参考选择](production/reference-selection/VERIFICATION.md)、[完整原件与取消](production/reference-card-compact/VERIFICATION.md) |
-| 视频起点与跨镜连续性 | 起点容纳首个必要动作；区分计划落点、实际候选末态与工程出点，身份／空间／动作／声音参考各有职责。方法唯一正文见 [视频生成手册](production/seedance-video-handbook.md)，专业原则见 [剪辑](production/filmcraft/10-editing.md)。检查覆盖与冻结依据沿既有方法产物记录；换候选、顺序、切点或声音后定向复核，依据仍适用不等于质量自动通过。实际全剧与首集应用见 [跨镜Review](production/reports/task-20261020-0010/README.md) |
+| 视频起点与跨镜连续性 | 起点容纳首个必要动作；区分计划落点、实际候选末态与工程出点，身份／空间／动作／声音参考各有职责。连续画面优先检查并使用合适的前镜实际尾部，取帧、首帧或普通参考的选择及失效复核见 [尾帧参考方法](production/seedance-video-handbook.md#前镜尾帧如何成为下镜参考)；专业原则见 [剪辑](production/filmcraft/10-editing.md)。检查覆盖与冻结依据沿既有方法产物记录；换候选、顺序、切点或声音后定向复核，依据仍适用不等于质量自动通过。实际全剧与首集应用见 [跨镜Review](production/reports/task-20261020-0010/README.md) |
 | 可读字层与声音 | 字层先定准确字稿和显露阶段，同页进度优先复用可编辑源；静图正确不等于运动可读。人物音色按统一中性稿比较，角色实际表演另验；完整歌曲、哼唱、省段和短参考各自判断。具体方法在当前准确方法包，曲目交接见 [歌曲](production/songs-review.md) |
 | 集级剪辑与成片 | 每集一个可编辑工程、多个不可变成片，片段入出点与时间线位置分开，准确原件不覆盖。唯一方法正文为 `content/episode-editing-method.json`，通用工程／worker／页面契约见系统仓 `docs/episode-editing.md`。页面仅播放和评论，工程编辑留后台；准确素材开现有大卡，跨轨评论固定不可变成片与追加关联。真实字层登记及使用关系见 [片段审阅](production/reports/task-20261019-0002/README.md)，首集剪辑和感官边界见 [成片交付](production/reports/task-20261019-0001/README.md) |
 
@@ -76,6 +76,7 @@
 - 正式库是运行权威，`export/` 是受管快照。Schema 16以准确 OSS SQLite 快照和轻量资源目录保存完整业务表，在故事与方法历史、制作当前稿、候选准确提交、评论及必要发布事实之外，保存集级工程、不可变渲染快照、成片和准确来源；私有渲染队列及进程状态不导出。旧 Schema 14／15完整本地包仍兼容。旧制作全文链和专属版本索引不进入常规恢复。恢复只能到新空实例，沿 `scripts/production_review.py recover`、`production/audiovisual/index.json`、`production/audiovisual/recovery.json` 和完整 `export/manifest.json`。
 - 正式写入须按 [工作区流程](production/generation-workspaces.md#合并与正式发布) 的实际锁、容器身份和停服顺序执行，不能只依赖宿主与 Docker Desktop 之间的SQLite文件锁。发布幂等记录与其他任务新评论必须保全，旧基线拒绝重放；完整导出从发布后最新正式数据产生。
 - 当前 Git 只保存代码、业务文字和轻量准确目录；业务原件、派生与大包在私有 OSS，读取绑定明确 VersionId、SHA256、大小和 MIME。新 clone 不依赖媒体 LFS pull；历史 Git/LFS 未重写。原件缓存、项目级凭据、线上／离线恢复和旧归档兼容统一见 [资源存储](production/resource-storage.md)。
+- OSS 成本应结合账单与 Bucket 小时计量，区分存储、正常访问及制作／发布／恢复的读取活动；当前准确费率、取证窗口与预算见 [费用归因研究](production/reports/task-20261022-0002/README.md)。完整云校验会绕过普通物化缓存读取准确云版本，不能凭本地已有缓存假定没有下行。报告中的内网分路及重复校验优化属于尚未实施的建议。
 - 正式镜像仅用 `story-review-desk:current`、`:previous`、`:base`，Compose和候选固定准确ID；任务可建可识别临时镜像。镜像/容器的清理、挂载守卫与历史路径处理见 [结项清理](production/generation-workspaces.md#结项清理)。清单记录构建来源不要求原工作区永存；服务回退不等于数据回退。
 - VPS是独立可写完整体验版，代码／存储升级保留其自己的业务库、发布身份与新增修改；普通重启保留操作，不回写本机。只有用户明确允许替换远端体验数据及独立修改时，才沿 `oss_snapshot_release.py` 的独立完整恢复、维护切换和阶段恢复流程同步本机完整快照；不绕过旧全量入口的 OSS 保护。部署控制目录 `~/lijizhanshe/`，体验实例 `~/www/lijizhanshe/`；共用调用计数跨发布保留，每天按北京时间最多100次。公网、代理、HTTPS、密钥及重置边界见 [体验部署约定](planning/vps-experience-deployment-task.md)、[部署操作](production/vps-experience.md)。入口为 `https://leiguoguo.me/lijizhanshe/`，当前版本取远端 `state.json`，不从本机Git推定。
 - 站点图标为用户认可的屋檐护灯，源文件和维护见 [图标设计](design/favicon/README.md)。上传、配置、实际生效分别核验。
