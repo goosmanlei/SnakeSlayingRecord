@@ -1,0 +1,104 @@
+{
+  "job": {
+    "id": "a6406146e0c37c66dfe82e7494c8d2d67bed3cc04fae52f2cc774dcfad2dcdf6",
+    "snapshot_id": "edit-snapshot-a6406146e0c37c66dfe82e7494c8d2d67bed3cc04fae52f2cc774dcfad2dcdf6",
+    "snapshot_revision": "6aa81e6007766c34b5b0d5996bc4e9e689ff8f57db95988cbe10224c95405ca9",
+    "status": "succeeded",
+    "attempts": 1,
+    "cancel": 0,
+    "progress": 1.0,
+    "error": "",
+    "updated_at": "2026-10-21T16:34:24+00:00"
+  },
+  "output": {
+    "object_id": "episode-film-a6406146e0c37c66dfe82e7494c8d2d67bed3cc04fae52f2cc774dcfad2dcdf6",
+    "revision_id": "75d4a41df9d0e6df9203f045aae497d89194959cca9b3f3d06d3e1444423dc8f"
+  },
+  "components": [
+    {
+      "bytes": 288102,
+      "channels": 2,
+      "duration_seconds": 1.0,
+      "file": "cda511ea8f90317929660ed5fe333b257bf6d6d61f15eb9ddd3289442c79dfc0.wav",
+      "has_audio": true,
+      "id": "mix",
+      "mime": "audio/wav",
+      "role": "original",
+      "sample_rate": 48000,
+      "sha256": "cda511ea8f90317929660ed5fe333b257bf6d6d61f15eb9ddd3289442c79dfc0"
+    },
+    {
+      "bytes": 208609,
+      "channels": 2,
+      "duration_seconds": 1.0,
+      "file": "ab349e851033e799016f1a2009c268b028b77c95cf64c574901c8abb33f3293f.mp4",
+      "has_audio": true,
+      "height": 720,
+      "id": "clean",
+      "mime": "video/mp4",
+      "role": "original",
+      "sample_rate": 48000,
+      "sha256": "ab349e851033e799016f1a2009c268b028b77c95cf64c574901c8abb33f3293f",
+      "width": 1280
+    },
+    {
+      "bytes": 208609,
+      "channels": 2,
+      "duration_seconds": 1.0,
+      "file": "ab349e851033e799016f1a2009c268b028b77c95cf64c574901c8abb33f3293f.mp4",
+      "has_audio": true,
+      "height": 720,
+      "id": "subtitled",
+      "mime": "video/mp4",
+      "role": "original",
+      "sample_rate": 48000,
+      "sha256": "ab349e851033e799016f1a2009c268b028b77c95cf64c574901c8abb33f3293f",
+      "width": 1280
+    },
+    {
+      "bytes": 3214,
+      "file": "8a7fff749cd8bd7444f5385c57fa3f106449293573df8f9ea50895bad5c2399f.json",
+      "id": "project",
+      "mime": "application/json",
+      "role": "original",
+      "sha256": "8a7fff749cd8bd7444f5385c57fa3f106449293573df8f9ea50895bad5c2399f"
+    },
+    {
+      "bytes": 1,
+      "file": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b.srt",
+      "id": "subtitles",
+      "mime": "application/x-subrip",
+      "role": "original",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "bytes": 2455,
+      "file": "0c7e61b425dc7e295d3e3c890330d9aaa41748c1c693169a5ee42491cd3e0912.json",
+      "id": "source-map",
+      "mime": "application/json",
+      "role": "original",
+      "sha256": "0c7e61b425dc7e295d3e3c890330d9aaa41748c1c693169a5ee42491cd3e0912"
+    }
+  ],
+  "all_six_components_hash_verified": true,
+  "full_project_restored": true,
+  "formal_database_modified": false,
+  "elapsed_seconds": 400.68802347406745,
+  "container_evidence": {
+    "container_id": "99f727b35723892bdf779ff44a146c8ad985e0ec67562868bde8adbbc36ae770",
+    "image": "sha256:c26786d54068413e9867f9b45129cc0efbdb6c0fefa87a0c43fad3e399c94271",
+    "network": "none",
+    "memory_bytes": 4294967296,
+    "credentials_present": false,
+    "destination": ".runtime/generation/v9-empty-recovery",
+    "medium": "/Users/bytedance/.local/share/story-review-recovery/lijizhanshe/task-20261021-0002-v9",
+    "pre_restore_retry": {
+      "error": "ModuleNotFoundError before destination database creation",
+      "fix": "Include pinned image working directory in script module path; task scripts remain separate readonly mount",
+      "destination_still_empty": true
+    },
+    "exit_code": 0,
+    "oom_killed": false,
+    "procedure_sha256": "5ca72763820658b99768f3cbb93418137cbc7cd0bc6d2098edd2bb2d3226d6bd"
+  }
+}

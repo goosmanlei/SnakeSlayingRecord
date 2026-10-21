@@ -1,0 +1,61 @@
+{
+  "format": "task-technical-evidence-archive-v1",
+  "resource": "production/reports/task-20261021-0002/technical-procedures.zip",
+  "sha256": "de0c0a639f3ed367e80abdf6328cfbf5fd9b2fdc6c43d99c4420daba81bbbdff",
+  "bytes": 24319,
+  "files": {
+    "publish_formal_v2.py": {
+      "bytes": 4134,
+      "sha256": "ea5787409d4adee54fb055978d19b38e6b4f34e61579bf3e315eda75ee9362f6"
+    },
+    "resume_formal_v2.py": {
+      "bytes": 7918,
+      "sha256": "b196607b902d7d750112bd678ee7e577f63559866ad29ed17301dcd7b11a4395"
+    },
+    "rehearse_publication_v2.py": {
+      "bytes": 5488,
+      "sha256": "805405a8d99e4867640473dc46647608884846d7d2a615b2fb009ed7ac2f45f8"
+    },
+    "export_latest_formal.py": {
+      "bytes": 1375,
+      "sha256": "b0bee7d6b9612f0e7f63800d33b5a7ea4544f6ae9d434a56aa5f530a9a459ef7"
+    },
+    "resume_latest_export.py": {
+      "bytes": 1958,
+      "sha256": "3531c165b494c4ce86a2197c654d3d6bf3a98b74c0dc2b05a9e28a4ff765d2c1"
+    },
+    "prepare_recovery_media.py": {
+      "bytes": 3383,
+      "sha256": "3e9517373702aa8eb4a2fce45ebdea55a2323f8a52b43ea943b4cd100fc69a6e"
+    },
+    "seed_snapshot_cache.py": {
+      "bytes": 3145,
+      "sha256": "aa5ba08f98f15ffcd9bf3de24fde2c3b693e8be2be6a3d0b2461a8a430c472b6"
+    },
+    "restore_and_continue_v9.py": {
+      "bytes": 4401,
+      "sha256": "5ca72763820658b99768f3cbb93418137cbc7cd0bc6d2098edd2bb2d3226d6bd"
+    },
+    "curl_oss_transport.py": {
+      "bytes": 6749,
+      "sha256": "fb9acc34a92dcf9c71de880c359660c4d6ef7dd225aca31171cefb14494ee83a"
+    },
+    "curl_oss_transport_resilient.py": {
+      "bytes": 6751,
+      "sha256": "6183536e614c8baeaca83c2cf8d92b594048ea3bc1c5b11044251e42fe3603f0"
+    },
+    "curl_oss_transport_direct.py": {
+      "bytes": 7076,
+      "sha256": "93c762fbbe4bc7c9ee14d2f354ff38f558cc1ee5d992418a89fde4b0853a6b6f"
+    },
+    "reconcile_snapshot_upload.py": {
+      "bytes": 2354,
+      "sha256": "f4b7e76d77bc037a5b944b36543a2c9259107d6f54a91dc098b1a87ba996a186"
+    },
+    "inspect_complete_request.py": {
+      "bytes": 1626,
+      "sha256": "6b9477a70f549e041294b9608cfe142aabb0260ee36b99aac164d855a81c6ed4"
+    }
+  },
+  "scope": "Exact task-only publication, network recovery, export and empty-instance validation procedures. Original failed transport and corrected direct transport are both preserved. No credential files or signed URLs are included. Shared native libraries are identified by the committed story/system revisions."
+}

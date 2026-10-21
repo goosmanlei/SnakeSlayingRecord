@@ -298,9 +298,167 @@
   ],
   "verification": "All three exact task render jobs stopped; exclusive native worker lock held; each exact path absent after unlink. No shared resources or originals removed.",
   "retained": [
-    "Encoded outputs, inspection and human-audition evidence until final acceptance",
-    "Task review, publication rehearsal, future restore instances until delivery validation",
-    "Native OSS originals, exact revisions, model calls, comments and Git history"
+    {
+      "resource": ".runtime/generation/review and selected .runtime/v7-revision evidence",
+      "purpose": "Current task candidate/call state, accepted and rejected listening context, original formal before-image for pending user review",
+      "owner": "task-20261021-0002",
+      "release_condition": "After explicit final acceptance and any follow-up correction; next edits must reconcile with latest formal head and must not replay old publication packages."
+    },
+    {
+      "resource": "/Users/bytedance/.local/share/story-review-recovery/lijizhanshe/task-20261021-0002-v9",
+      "purpose": "Verified independent offline recovery medium, 1840 resources and exact current formal snapshot",
+      "owner": "SnakeSlayingRecord local recovery",
+      "release_condition": "After a newer independent full recovery medium has been verified and retention reviewed."
+    },
+    {
+      "resource": "formal runtime e4756ff11fbc226dc983ffceeb33c00ee0cfa3f8bbd6be2e88f3ef42deba5dee and prior runtime 1221e6d445b59874ae360039dd8753097b35057db542e6a0b8bebb31a9ce06f8",
+      "purpose": "Current formal service and native one-generation runtime rollback; shared current/base/previous image retained",
+      "owner": "local formal runtime",
+      "release_condition": "Standard successor runtime release and rollback retention check."
+    }
   ],
-  "remaining": "Post-publication temporary recovery instances and duplicate downloads will be reviewed after successful fresh restore."
+  "remaining": "Post-publication temporary recovery instances and duplicate downloads will be reviewed after successful fresh restore.",
+  "additional_cleanup": [
+    {
+      "reason": "Formal incremental publication and complete out-of-scope preservation checks succeeded; exact original formal-window-before.sqlite3 retained. No host consumer except Virtualization read handles; formal container /proc scan found no open target descriptors, no dedicated active mounts.",
+      "removed_files": 12,
+      "removed_logical_bytes": 12557926400,
+      "files": [
+        {
+          "path": ".runtime/v7-revision/pre-publication-formal.sqlite3",
+          "bytes": 1037004800,
+          "category": "superseded rehearsal database"
+        },
+        {
+          "path": ".runtime/v7-revision/pre-publication-formal-v2.sqlite3",
+          "bytes": 1037004800,
+          "category": "superseded rehearsal database"
+        },
+        {
+          "path": ".runtime/generation/v7-final-rehearsal/.runtime/review.sqlite3",
+          "bytes": 1052844032,
+          "category": "superseded rehearsal database"
+        },
+        {
+          "path": ".runtime/generation/v7-final-rehearsal-v2/.runtime/review.sqlite3",
+          "bytes": 1055350784,
+          "category": "superseded rehearsal database"
+        },
+        {
+          "path": ".runtime/generation/publications/task-20261021-0002-rehearsal-v1/before.sqlite3",
+          "bytes": 1039818752,
+          "category": "superseded rehearsal database"
+        },
+        {
+          "path": ".runtime/generation/publications/task-20261021-0002-rehearsal-v1/rehearsal.sqlite3",
+          "bytes": 1052844032,
+          "category": "superseded rehearsal database"
+        },
+        {
+          "path": ".runtime/generation/publications/task-20261021-0002-rehearsal-v1/after.sqlite3",
+          "bytes": 1052844032,
+          "category": "superseded rehearsal database"
+        },
+        {
+          "path": ".runtime/generation/publications/task-20261021-0002-rehearsal-v2/before.sqlite3",
+          "bytes": 1039847424,
+          "category": "superseded rehearsal database"
+        },
+        {
+          "path": ".runtime/generation/publications/task-20261021-0002-rehearsal-v2/rehearsal.sqlite3",
+          "bytes": 1055350784,
+          "category": "superseded rehearsal database"
+        },
+        {
+          "path": ".runtime/generation/publications/task-20261021-0002-rehearsal-v2/after.sqlite3",
+          "bytes": 1055350784,
+          "category": "superseded rehearsal database"
+        },
+        {
+          "path": ".runtime/generation/prepares/87ab62214322410e8ab9f242150b108f/basis/.runtime/review.sqlite3",
+          "bytes": 1039818752,
+          "category": "superseded rehearsal database"
+        },
+        {
+          "path": ".runtime/generation/prepares/d9cd1cd13cbb49af9f6624b23340bddd/basis/.runtime/review.sqlite3",
+          "bytes": 1039847424,
+          "category": "superseded rehearsal database"
+        }
+      ],
+      "absence_verified": true
+    },
+    {
+      "reason": "Formal release, independent full restoration and continued native rendering all passed; temporary copies are superseded by exact OSS snapshot, independent medium, committed receipts and retained original formal before-image.",
+      "removed_files": 9292,
+      "removed_logical_bytes": 44491071812,
+      "paths": [
+        {
+          "path": ".runtime/generation/v9-empty-recovery",
+          "files": 5584,
+          "logical_bytes": 25799652847
+        },
+        {
+          "path": ".runtime/generation/v9-published-snapshot",
+          "files": 3704,
+          "logical_bytes": 14485519189
+        },
+        {
+          "path": ".runtime/v7-revision/formal-window-after.sqlite3",
+          "files": 1,
+          "logical_bytes": 1055350784
+        },
+        {
+          "path": ".runtime/generation/publications/task-20261021-0002-formal-v2-resume/before.sqlite3",
+          "files": 1,
+          "logical_bytes": 1039847424
+        },
+        {
+          "path": ".runtime/generation/publications/task-20261021-0002-formal-v2-resume/after.sqlite3",
+          "files": 1,
+          "logical_bytes": 1055350784
+        },
+        {
+          "path": ".runtime/generation/publications/task-20261021-0002-formal-v2-resume/rehearsal.sqlite3",
+          "files": 1,
+          "logical_bytes": 1055350784
+        }
+      ],
+      "absence_verified": true
+    }
+  ],
+  "removed_containers": [
+    {
+      "id": "194f73490a881ee3a02fb597db2d813a1b4cd41999c12664c0840f60f3668ea4",
+      "name": "/task-20261021-0002-render-01",
+      "absence_verified": true,
+      "image_retained": "same image is the current formal runtime; external credential file was not changed"
+    },
+    {
+      "id": "99f727b35723892bdf779ff44a146c8ad985e0ec67562868bde8adbbc36ae770",
+      "name": "/task-20261021-0002-v9-empty-recovery",
+      "absence_verified": true,
+      "image_retained": "same pinned image is current formal runtime"
+    }
+  ],
+  "stopped_previews": [
+    {
+      "pid": 74235,
+      "port": 54461,
+      "instance": ".runtime/generation/review",
+      "stopped_and_port_released": true,
+      "reason": "Formal version 9 and both video formats are available; task database retained for any user follow-up."
+    },
+    {
+      "pid": 77638,
+      "port": 63869,
+      "instance": ".runtime/generation/v9-empty-recovery",
+      "stopped_and_port_released": true
+    }
+  ],
+  "totals": {
+    "removed_files": 9377,
+    "removed_logical_bytes": 71419862388,
+    "removed_containers": 2,
+    "stopped_previews": 2
+  }
 }

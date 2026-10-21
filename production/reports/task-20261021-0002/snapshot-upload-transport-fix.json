@@ -1,0 +1,21 @@
+{
+  "scope": "task-only curl OSS HTTP adapter; no shared source or credentials changed",
+  "cause": "SDK completion request omits Content-Type; curl --data-binary adds application/x-www-form-urlencoded unless explicitly suppressed. Server rejected multipart completion with SignatureDoesNotMatch while all 32 exact parts were already present.",
+  "dry_inspection": {
+    "request_sent": false,
+    "sdk_content_type_present": false,
+    "content_md5_matches_body": true,
+    "body_bytes": 2826
+  },
+  "change": "Suppress curl default Content-Type when SDK POST body does not supply one. SDK signing, CRC, source digest, exact object version and final full remote SHA checks remain native.",
+  "adapter_sha256": "93c762fbbe4bc7c9ee14d2f354ff38f558cc1ee5d992418a89fde4b0853a6b6f",
+  "bounded_recovery": "one completion retry after correcting the evidenced signing mismatch, reusing the same 32 verified parts and multipart ID; initial HEAD and list-parts reconciliation remain native",
+  "actual_result": {
+    "native_multipart_completion_succeeded": true,
+    "full_exact_remote_sha256_verified": true,
+    "snapshot_sha256": "1aafd5311a5810e5f626e57e204fa5e4ef9c8af07c6285ae562fec2af00cede0",
+    "snapshot_bytes": 1055350784,
+    "manifest": "export/manifest.json",
+    "all_business_table_count": 43
+  }
+}
