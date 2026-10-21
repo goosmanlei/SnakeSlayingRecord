@@ -5,9 +5,58 @@ private method executions are excluded from this production-only comparison.
 Their exact definitions are delivered by method_migration, not by this package.
 """
 import argparse
+import hashlib
 import json
 from pathlib import Path
 import sys
+import uuid
+
+
+def file_sha256(path):
+    digest = hashlib.sha256()
+    with Path(path).open('rb') as stream:
+        for chunk in iter(lambda: stream.read(1024 * 1024), b''):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def comparison_basis(root, instance, screenplay=None, method_registry=None):
+    """Rehearse separately published prerequisites on a copy of the old basis.
+
+    This does not publish to the formal instance or alter the initialization
+    snapshot. The content increment still checks exact prerequisite revisions.
+    """
+    from generation_publication import backup
+    from generation_workspace import contained
+    original = instance / '.runtime/generation-base.sqlite3'
+    if not screenplay and not method_registry:
+        return original, None
+    before_hash = file_sha256(original)
+    directory = contained(root, Path('.runtime/generation/prepares') / uuid.uuid4().hex / 'basis')
+    (directory / '.runtime').mkdir(parents=True)
+    derived = directory / '.runtime/review.sqlite3'
+    backup(original, derived)
+    prerequisites = {'initialization_sha256': before_hash}
+    if screenplay:
+        from publish_screenplay import publish
+        source = contained(root, screenplay)
+        receipt = publish(root, directory, apply=True, document_path=source.relative_to(root).as_posix())
+        prerequisites['screenplay'] = {
+            'document': source.relative_to(root).as_posix(), 'sha256': file_sha256(source),
+            'receipt': receipt,
+        }
+    if method_registry:
+        from method_migration import apply
+        source = contained(root, method_registry)
+        registry = json.loads(source.read_text())
+        result = apply(derived, registry)
+        prerequisites['methods'] = {
+            'registry': source.relative_to(root).as_posix(), 'sha256': file_sha256(source),
+            'registry_sha256': registry['sha256'], 'receipt': result,
+        }
+    if file_sha256(original) != before_hash:
+        raise ValueError('initialization snapshot changed during prerequisite rehearsal')
+    return derived, {**prerequisites, 'rehearsal': directory.relative_to(root).as_posix()}
 
 
 def production_tables(before, after):
@@ -51,6 +100,10 @@ def main():
     parser.add_argument('--instance', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--report', type=Path, required=True)
+    parser.add_argument('--screenplay', type=Path,
+                        help='Reviewed screenplay appended separately before the production increment')
+    parser.add_argument('--method-registry', type=Path,
+                        help='Exact method registry delivered separately before the production increment')
     args = parser.parse_args()
     sys.path.insert(0, str(args.system.resolve()))
     from generation_publication import tables, publication_id
@@ -62,16 +115,21 @@ def main():
     output = contained(root, args.output)
     if output.exists():
         raise ValueError('use a new reviewed publication filename')
+    basis, prerequisites = comparison_basis(root, instance, args.screenplay, args.method_registry)
     before, after, ignored = production_tables(
-        tables(instance/'.runtime/generation-base.sqlite3'),
+        tables(basis),
         tables(instance/'.runtime/review.sqlite3'))
     plan = build(before, after)
     plan['review_origin'] = json.loads((instance/'.runtime/generation-base.json').read_text())
+    if prerequisites:
+        plan['prerequisites'] = {k: v for k, v in prerequisites.items() if k != 'rehearsal'}
     copy_media(instance, root, plan['media'])
     write_json(root, output, plan)
     result = {'publication_id': publication_id(plan), 'scope': len(plan['scope']),
               'media': len(plan['media']), 'excluded_method_objects': ignored,
               'changes': {k: len(v) for k, v in plan['changes'].items()}}
+    if prerequisites:
+        result['prerequisites'] = prerequisites
     write_json(root, args.report, result)
     print(json.dumps({k: v for k, v in result.items() if k != 'excluded_method_objects'}))
 
