@@ -1,0 +1,45 @@
+{
+  "removed": [
+    {
+      "path": ".runtime/v7-revision/tail-frame/stage.sqlite3",
+      "bytes": 12394496,
+      "device": 16777229,
+      "inode": 87079531
+    },
+    {
+      "path": ".runtime/v7-revision/tail-frame/empty-method-recovery.sqlite3",
+      "bytes": 12406784,
+      "device": 16777229,
+      "inode": 87079732
+    },
+    {
+      "path": ".runtime/v7-revision/tail-frame/rehearsal-before.sqlite3",
+      "bytes": 1055350784,
+      "device": 16777229,
+      "inode": 87085284
+    },
+    {
+      "path": ".runtime/v7-revision/tail-frame/rehearsal-after.sqlite3",
+      "bytes": 1056559104,
+      "device": 16777229,
+      "inode": 87085296
+    },
+    {
+      "path": ".runtime/v7-revision/tail-frame/formal-before.sqlite3",
+      "bytes": 1055350784,
+      "device": 16777229,
+      "inode": 87088278
+    }
+  ],
+  "removed_files": 5,
+  "removed_logical_bytes": 3192061952,
+  "scope": "Only the five task-created method staging, rehearsal, recovery and completed publication before-image databases. No active task review or formal database, runtime, container or old independent medium removed.",
+  "basis": "All native processes closed; no WAL/journal; formal exact readback and preservation comparison passed. Native OS read handles are not changed or killed.",
+  "retained": {
+    "path": ".runtime/v7-revision/tail-frame",
+    "purpose": "Small method registries, six extraction frames, source metadata and task publication procedures for the still-open review; exact registry and frame archive also verified in private OSS.",
+    "owner": "task-20261021-0002",
+    "release_condition": "After whole-task acceptance and evidence review, keep only the required recovery and provenance artifacts."
+  },
+  "old_cleanup": "cleanup.json"
+}
