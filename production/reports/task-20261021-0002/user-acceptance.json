@@ -1,0 +1,54 @@
+{
+  "task": "task-20261021-0002",
+  "recorded_at": "2026-10-22T02:28:48+08:00",
+  "source": "User message in current task session",
+  "session": "01a15cf7-4ac2-7c10-bd49-b74864fa6321",
+  "quote": "结项吧，我Review过了",
+  "decision": "accepted_and_closeout_authorized",
+  "reviewed_candidate": "22375905f24ea230c4774a746364716d10d8e084",
+  "film": {
+    "version": 9,
+    "id": "episode-film-776ad303328f542ec257bcea8eaf2af7e95750fb5c054495ffb82cef48a57829",
+    "revision": "538eb4054a464b2d4307e0a71a78faa8725269bad51c9f80d8411bc0ad4f7426"
+  },
+  "methods_registry_sha256": "69bc4d4342997742f49c2f689f851ecf0ff3f36191bee2fa2a01d9a30caa20dc",
+  "scope": "用户已Review当前首集版本9交付并授权本任务结项，关闭待整集审阅项。尾帧方法补充纳入本任务交付。",
+  "verification_boundary": "记录用户最终接受；不把该确认改写成执行者完整动态、口型或全片直接听觉验证，也不补造用户逐项打分。已有正式发布与恢复证据复用，结项不重生成或重发布作品。",
+  "known_observations": "M044蓝色与M045灰色歌本封面差异、早先试听MP4无声的具体播放器原因仍沿原记录；用户接受当前交付，不宣称两项已技术修复。",
+  "closeout_cleanup": {
+    "recorded_at": "2026-10-22T02:28:48+08:00",
+    "removed_files": 1,
+    "removed_logical_bytes": 1037004800,
+    "removed": [
+      {
+        "path": ".runtime/v7-revision/formal-window-before.sqlite3",
+        "bytes": 1037004800,
+        "device": 16777229,
+        "inode": 87000693
+      }
+    ],
+    "basis": "原发布前备份已完成用途；正式发布、独立完整恢复及用户接受已具备。删除前无打开文件、无事务旁文件，删除后核验不存在。",
+    "retained": [
+      {
+        "resource": ".runtime/generation/review and remaining .runtime/v7-revision files",
+        "purpose": "当前会话使用的任务工作区及待受管退役的本地副本，不作为以后任务基线",
+        "owner": "task-20261021-0002",
+        "release_condition": "本TUI退出并释放运行锁后，沿codex.project task cleanup检查归属、最小证据归档与实际引用，再退役工作区。generation-base.sqlite3另有虚拟机文件句柄，本轮未强删。"
+      },
+      {
+        "resource": "independent offline recovery medium, formal runtime and native rollback",
+        "purpose": "准确版本恢复、当前运行与一代回退",
+        "owner": "SnakeSlayingRecord local runtime",
+        "release_condition": "后续准确替代恢复介质或正式运行版本验证后按保留策略处理。"
+      }
+    ]
+  },
+  "evidence": [
+    "README.md",
+    "validation.json",
+    "formal-publication.json",
+    "tail-frame-publication.json",
+    "cleanup.json",
+    "tail-frame-cleanup.json"
+  ]
+}
