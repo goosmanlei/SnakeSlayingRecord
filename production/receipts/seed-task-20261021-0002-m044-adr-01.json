@@ -1,0 +1,117 @@
+{
+  "id": "task-20261021-0002-m044-adr-01",
+  "status": "completed",
+  "request_id": "15351587-6252-4d32-b760-824cf15f6ba5",
+  "quota_id": "seed-quota-task-20261021-0002-dialogue",
+  "production_submission": {
+    "call_id": "task-20261021-0002-m044-adr-01",
+    "submission_sha256": "1df5a68b6061d718acbea43bc08ef4ff9c3342e986980c3f30fde42b3ced1321",
+    "already_applied": false,
+    "recovery": "query-existing-operation-before-any-resubmit"
+  },
+  "submitted_at": "2026-10-21T09:42:09.469761+00:00",
+  "endpoint": "https://openspeech.bytedance.com/api/v3/tts/create",
+  "input": {
+    "model": "seed-audio-1.0",
+    "text_prompt": "生成同一名少女阿蘅的一句普通话对白补录。@音频1是阿蘅已确认的完整中性音色母版，只锚定单人声音身份，不复述试读内容。@音频2是完整原片的场内上下文，含两个人：先提问的是李寄，随后说“我也怕”“得跟赵执事问清楚再唱”“许家的活够吃几天，以后呢”的才是阿蘅。只贴合后者在本场的声音质地、轻声认真和自然说话距离；不要采用李寄的声音，不复制原片称谓的错误发音。母版与原片指向同一个女孩，不合成两个人轮流说。\n\n阿蘅刚对好友承认自己也害怕，但要问清楚再作决定。这不是宣告、朗诵或卖萌；用原片那种平实、轻而有主意的口吻，不哭、不唱，不刻意气声，不突然换成成熟播音声。语句一口自然说完，重心轻落在“问清楚”，不要逐字用力校音。\n\n在[0.45s:3.1s]只说一次准确原词：“得跟赵执事问清楚再唱。”得读děi；赵执事读zhào zhí shì，执是卷舌zh加整体认读音节zhi的第二声，不能读ji、祭、取或其他称谓。拼音和说明不朗读。原词不增删、不重复、不添加“嗯”“啊”。完整说完“唱”字后自然收声，留下至少0.8秒安静尾部，整件约4.2秒。\n\n只输出这一人的近距离干声与必要自然气息；参考中的河声、另一人声、音乐、脚步、房间混响全部不生成。不要复制参考录音里的整句或把错误称谓原样贴过来。输出48kHz WAV，不在尾字中间截止，也不要在静默尾部加提示音。\n",
+    "audio_config": {
+      "format": "wav",
+      "sample_rate": 48000,
+      "pitch_rate": 0,
+      "speech_rate": 0,
+      "loudness_rate": 0,
+      "enable_subtitle": true
+    },
+    "watermark": {},
+    "references": [
+      {
+        "file": "export/assets/cb9568d517393bbb365105efeb2297763d6cf8b92cba86b6c212f6f0bb361059.wav",
+        "sha256": "cb9568d517393bbb365105efeb2297763d6cf8b92cba86b6c212f6f0bb361059",
+        "duration_seconds": 11.68,
+        "reference_number": 1
+      },
+      {
+        "file": "export/assets/5937b5f6a0a03f111a36a68654ba1f92f509b2195af53e2f656fdf70cd1beba2.wav",
+        "sha256": "5937b5f6a0a03f111a36a68654ba1f92f509b2195af53e2f656fdf70cd1beba2",
+        "duration_seconds": 23.05,
+        "reference_number": 2
+      }
+    ]
+  },
+  "input_sha256": "e48be2090de754dcef09ea98afae5be61d954cd6718ceb02b7dcde3fb39cde47",
+  "remaining_before_seconds": 539.4,
+  "reserved_seconds": 120,
+  "log_id": "20261021174209939C252AABACC14F4A47",
+  "original_duration": 4.18,
+  "duration": 4.18,
+  "subtitle": {
+    "sentences": [
+      {
+        "end_time": 2560,
+        "start_time": 480,
+        "text": "得跟赵执事问清楚再唱。",
+        "words": [
+          {
+            "end_time": 720,
+            "start_time": 480,
+            "text": "得"
+          },
+          {
+            "end_time": 920,
+            "start_time": 720,
+            "text": "跟"
+          },
+          {
+            "end_time": 1080,
+            "start_time": 1000,
+            "text": "赵"
+          },
+          {
+            "end_time": 1280,
+            "start_time": 1200,
+            "text": "执"
+          },
+          {
+            "end_time": 1520,
+            "start_time": 1480,
+            "text": "事"
+          },
+          {
+            "end_time": 1840,
+            "start_time": 1640,
+            "text": "问"
+          },
+          {
+            "end_time": 1960,
+            "start_time": 1840,
+            "text": "清"
+          },
+          {
+            "end_time": 2120,
+            "start_time": 1960,
+            "text": "楚"
+          },
+          {
+            "end_time": 2360,
+            "start_time": 2160,
+            "text": "再"
+          },
+          {
+            "end_time": 2560,
+            "start_time": 2400,
+            "text": "唱"
+          },
+          {
+            "end_time": 2560,
+            "start_time": 2560,
+            "text": "。"
+          }
+        ]
+      }
+    ],
+    "text": "得跟赵执事问清楚再唱。"
+  },
+  "file": "export/assets/627d48d29062ccc30f92f34e9c4f128dd428d5c3f634efa47715b3290ef82be1.wav",
+  "sha256": "627d48d29062ccc30f92f34e9c4f128dd428d5c3f634efa47715b3290ef82be1",
+  "bytes": 802604
+}
