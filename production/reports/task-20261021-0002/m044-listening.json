@@ -1,0 +1,312 @@
+{
+  "original": {
+    "source": "user direct listening in active conversation",
+    "quote": "现在对“赵执事”的读音更接近“zhao ji shi”，发音是存在问题的",
+    "file": "audio-review/M044-original-context-matched.wav",
+    "finding": "原片称谓发音错误；原声优先以可用为前提，不据此恢复错误原句。",
+    "next_action": "保留原片上下文，对称谓所在句做必要补录，用户直接听觉对比候选；不以转写代签。"
+  },
+  "take01": {
+    "source": "user direct listening of same-context loudness-matched take01",
+    "file": "audio-review/M044-new-adr-context-matched.wav",
+    "sha256": "0738dbef97ced2725635d4200113cd5a486b1067da70a2e01daf17edd24577eb",
+    "answer": "读音仍有问题",
+    "decision": "Reject take01 for final use; bounded second attempt with only approved M002 reference."
+  },
+  "take02": {
+    "source": "user direct listening in active conversation",
+    "asset": {
+      "object_id": "asset-task-20261021-0002-m044-adr-02",
+      "revision_id": "996af93d7b4f8998bfa0e5e8562e23518b073ee872a667fe1f425a60a846a2b6"
+    },
+    "file": ".runtime/v7-revision/audio-review/M044-new-adr2-context-matched.wav",
+    "sha256": "e6fb7d4e1a02cc7e828e3071b05a382b53e5a24586c55693a4d24cb6f191b364",
+    "replies": [
+      {
+        "question_id": "call_c596e059fd294c1bad4b5d9184aae469",
+        "quote": "读音正确，音色仍不合适"
+      },
+      {
+        "question_id": "call_6c755095c3684593b77ab1b4231d0cc4",
+        "quote": "听起来像另外一个人，和阿蘅的音色有明显的差异"
+      }
+    ],
+    "pronunciation": "accepted",
+    "voice_identity": "rejected",
+    "overall_acceptance": false,
+    "next_action": "保留02发音指导；第三次补录恢复完整原片上下文参考，检验能否接回当场阿蘅声音身份。不同参考的效用仍是假设，待人耳比较。",
+    "formal_publication": "blocked pending suitable voice; version8 remains a historical review candidate"
+  },
+  "direct_listening_by_executor": false,
+  "take03": {
+    "status": "pronunciation rejected",
+    "registration": {
+      "call_id": "task-20261021-0002-m044-adr-03",
+      "candidate_id": "candidate-335d37ed5dc994c55d09c750e9389070bd364f19247b309fab5ffbb764b94031",
+      "status": "completed",
+      "already_applied": false,
+      "asset": {
+        "object_id": "asset-task-20261021-0002-m044-adr-03",
+        "revision_id": "a8bb8ba21597867e7eac72321b354e27332f6cc72cc43c691bf2192c6975a7e3"
+      }
+    },
+    "comparison": {
+      "adr_asset": {
+        "object_id": "asset-task-20261021-0002-m044-adr-03",
+        "revision_id": "a8bb8ba21597867e7eac72321b354e27332f6cc72cc43c691bf2192c6975a7e3"
+      },
+      "source_range_seconds": [
+        0.24,
+        2.85
+      ],
+      "source_timeline_seconds": 5.3,
+      "original_removed_seconds": [
+        5.5,
+        8.55
+      ],
+      "bed_source_seconds": [
+        0.5,
+        3.55
+      ],
+      "gain_db": 3.3,
+      "comparison_target_lufs": -23,
+      "original_line_measurement": {
+        "input_i": "-17.24",
+        "input_tp": "-5.41",
+        "input_lra": "0.20",
+        "input_thresh": "-28.70",
+        "output_i": "-21.24",
+        "output_tp": "-9.40",
+        "output_lra": "0.00",
+        "output_thresh": "-32.54",
+        "normalization_type": "dynamic",
+        "target_offset": "-1.76"
+      },
+      "new_line_measurement": {
+        "input_i": "-20.54",
+        "input_tp": "-7.77",
+        "input_lra": "0.00",
+        "input_thresh": "-31.36",
+        "output_i": "-23.02",
+        "output_tp": "-10.23",
+        "output_lra": "0.00",
+        "output_thresh": "-33.84",
+        "normalization_type": "linear",
+        "target_offset": "0.02"
+      },
+      "context_measurement": {
+        "input_i": "-18.42",
+        "input_tp": "-4.39",
+        "input_lra": "3.40",
+        "input_thresh": "-30.34",
+        "output_i": "-22.77",
+        "output_tp": "-8.55",
+        "output_lra": "4.50",
+        "output_thresh": "-34.99",
+        "normalization_type": "dynamic",
+        "target_offset": "-0.23"
+      },
+      "file": ".runtime/v7-revision/audio-review/M044-new-adr3-context-matched.wav",
+      "sha256": "1000783f8b7c5bd70b4e3eff8176ff3bc8e3ffc58029f64d97ea1cf3d22ad11a",
+      "scope": "同一8秒上下文的试听候选；技术响度和时间戳不代表音色、发音或接缝已经听验。",
+      "direct_listening": "pending"
+    },
+    "call_count": 3,
+    "maximum_calls": 3,
+    "user_feedback": {
+      "source": "user direct listening in active conversation",
+      "question_id": "call_957c0e272006492b9ce8f0eacf2a9bcd",
+      "quote": "读音仍有问题",
+      "asset": {
+        "object_id": "asset-task-20261021-0002-m044-adr-03",
+        "revision_id": "a8bb8ba21597867e7eac72321b354e27332f6cc72cc43c691bf2192c6975a7e3"
+      },
+      "file": ".runtime/v7-revision/audio-review/M044-new-adr3-context-matched.wav",
+      "sha256": "1000783f8b7c5bd70b4e3eff8176ff3bc8e3ffc58029f64d97ea1cf3d22ad11a",
+      "pronunciation": "rejected",
+      "voice_identity": "not assessed by user reply",
+      "overall_acceptance": false,
+      "next_action": "本轮三次补录到上限；不继续模型补录，尝试以02已确认正确的发音局部拼接原片，仍需直接听觉。"
+    }
+  },
+  "next_action": "采用整镜第一条完整声画，移除旧M044与M654补录；更新全片时码、字幕及准确来源，复验实际接缝并完成已授权交付。",
+  "local_splice": {
+    "status": "both rejected by user",
+    "variants": [
+      {
+        "id": "single-zhi",
+        "label": "只替换执字",
+        "file": ".runtime/v7-revision/audio-review/M044-local-single-zhi-context-matched.wav",
+        "sha256": "29fc5abfcd7a1846bb85cf584f3712d6a645f48b02389df6e3ab7ca699fbaf4a",
+        "original_seconds": [
+          6.325,
+          6.45
+        ],
+        "correct_source_seconds": [
+          1.05,
+          1.195
+        ],
+        "gain_db": 8.9,
+        "tempo": 1.1600000000000001,
+        "pitch_change": 0
+      },
+      {
+        "id": "full-title",
+        "label": "替换赵执事三字",
+        "file": ".runtime/v7-revision/audio-review/M044-local-full-title-context-matched.wav",
+        "sha256": "a29918532f7134f7d9d454d974bc06635b9d1d118233e66092a98fb2b6fb6a4a",
+        "original_seconds": [
+          6.14,
+          6.625
+        ],
+        "correct_source_seconds": [
+          0.805,
+          1.46
+        ],
+        "gain_db": 4.8,
+        "tempo": 1.3505154639175247,
+        "pitch_change": 0
+      }
+    ],
+    "user_feedback": {
+      "source": "user direct listening in active conversation",
+      "question_id": "call_51710e9cbefa42868f55fa8f1de1d691",
+      "quote": "两条都不行，可以这段整体重新生成吗？我觉得一直尝试打补丁的成本，可能已经高于重新生成抽卡的成本了",
+      "overall_acceptance": false,
+      "decision": "两条局部拼接均弃用。用户明确授权M044整镜声画重新生成，保留原台词、人物关系和前后镜承接；停止补录与局部拼接路线。",
+      "cost_boundary": "用户对累计修补成本的判断，不是已核算的货币成本对比。"
+    }
+  },
+  "whole_shot_regeneration": {
+    "authorization": {
+      "source": "user direct listening in active conversation",
+      "question_id": "call_51710e9cbefa42868f55fa8f1de1d691",
+      "quote": "两条都不行，可以这段整体重新生成吗？我觉得一直尝试打补丁的成本，可能已经高于重新生成抽卡的成本了",
+      "overall_acceptance": false,
+      "decision": "两条局部拼接均弃用。用户明确授权M044整镜声画重新生成，保留原台词、人物关系和前后镜承接；停止补录与局部拼接路线。",
+      "cost_boundary": "用户对累计修补成本的判断，不是已核算的货币成本对比。"
+    },
+    "status": "take01 audio accepted by user; full-film integration in progress",
+    "first_attempt": 1,
+    "maximum_attempts": 3,
+    "payment": "existing prepaid credits only",
+    "acceptance": "完整声画及上下文直接看听；新镜头未验收前不得据生成成功宣称修复完成。",
+    "attempts_used": 1,
+    "take01": {
+      "registration": {
+        "call_id": "task-20261021-0002-m044whole-01",
+        "candidate_id": "candidate-29cc23c4889b78bc99f91bdb73568fcc7d722c2081e25fabc6249cebebb36d02",
+        "status": "completed",
+        "already_applied": false,
+        "asset": {
+          "object_id": "asset-task-20261021-0002-m044whole-01",
+          "revision_id": "b35bc507da613faaf5e84c45b65431f20fac3cf62a1efb6de23b2d2ec20355b3"
+        }
+      },
+      "component": {
+        "id": "original",
+        "role": "original",
+        "file": "32a9f5c88e023a689db67f747ab7797bc1576ad56ffa823652efdc46efcd5511.mp4",
+        "sha256": "32a9f5c88e023a689db67f747ab7797bc1576ad56ffa823652efdc46efcd5511",
+        "bytes": 12086592,
+        "mime": "video/mp4",
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 23.042,
+        "has_audio": true,
+        "sample_rate": 32000,
+        "channels": 2
+      },
+      "review_clip": {
+        "output": ".runtime/v7-revision/audio-review/M044-whole-take01-with-neighbors.mp4",
+        "sha256": "97a8b3acf2315d3ec00e33a290804712189c2d1a1e0448be930ea3309fca36e9",
+        "frames": 1034,
+        "fps": 24,
+        "duration_seconds": 43.083333333333336,
+        "new_source": {
+          "call_id": "task-20261021-0002-m044whole-01",
+          "candidate_id": "candidate-29cc23c4889b78bc99f91bdb73568fcc7d722c2081e25fabc6249cebebb36d02",
+          "status": "completed",
+          "already_applied": false,
+          "asset": {
+            "object_id": "asset-task-20261021-0002-m044whole-01",
+            "revision_id": "b35bc507da613faaf5e84c45b65431f20fac3cf62a1efb6de23b2d2ec20355b3"
+          }
+        },
+        "component": {
+          "id": "original",
+          "role": "original",
+          "file": "32a9f5c88e023a689db67f747ab7797bc1576ad56ffa823652efdc46efcd5511.mp4",
+          "sha256": "32a9f5c88e023a689db67f747ab7797bc1576ad56ffa823652efdc46efcd5511",
+          "bytes": 12086592,
+          "mime": "video/mp4",
+          "width": 1280,
+          "height": 720,
+          "duration_seconds": 23.042,
+          "has_audio": true,
+          "sample_rate": 32000,
+          "channels": 2
+        },
+        "M044_full_source_frames": [
+          0,
+          553
+        ],
+        "M044_review_seconds": [
+          12,
+          35.04166666666667
+        ],
+        "neighbor_source_film_sha256": "39be3b30f80e713f7d4db1015e1ea7230da7cd1a76ed43bb668901c0853553da",
+        "neighbor_source_frames": [
+          [
+            6423,
+            6711
+          ],
+          [
+            7216,
+            7409
+          ]
+        ],
+        "new_audio_gain_db": -2.74,
+        "new_audio_original_integrated_lufs": -16.9,
+        "reference_v8_m044_integrated_lufs": -19.64,
+        "audio_processing": "Original complete new take, constant gain only plus 20ms edge fades, resampled to 48kHz; no ADR, splicing, time stretch, denoising or voice conversion. Neighbor clips preserve v8 film mix.",
+        "scope": "Audition only, no selection or user acceptance implied."
+      },
+      "playback_feedback": {
+        "question_id": "call_a79f80cbc1844f56bc21d847a9446e8e",
+        "quote": "这段没有音频",
+        "scope": "MP4 playback feedback, not a voice-quality rejection",
+        "technical_check": "AAC-LC 48kHz stereo exists and all three intervals decode to non-silent samples; exact user-player cause unknown."
+      },
+      "audio_acceptance": {
+        "question_id": "call_ce815904e14d4199869c4e4fc82d40e2",
+        "question_scope": "WAV new shot at12–35s: pronunciation and Aheng voice identity",
+        "quote": "可以",
+        "source": "user listening reply in active conversation",
+        "file": ".runtime/v7-revision/audio-review/M044-whole-take01-with-neighbors.wav",
+        "sha256": "eff049387af1d5244b29299f2c8702f86de38f0da9073389a6490ec62663e6bd",
+        "pronunciation": "accepted",
+        "voice_identity": "accepted",
+        "boundary": "This accepts the requested audio audition, not the whole episode or final new film."
+      },
+      "account_window": {
+        "started_at": "2026-10-21T13:12:47.754415+00:00",
+        "lock": "/Users/bytedance/codex-path/creative/SnakeSlayingRecord/.runtime/production/pippit-account.lock",
+        "credential_source": "browser; XYQ_ACCESS_KEY removed only for these child commands",
+        "balance_before": {
+          "total_remain_amount": "17062"
+        },
+        "maximum_new_calls": 1,
+        "whole_shot_route_limit": 3,
+        "scope": "M044 whole shot only; no ADR retry",
+        "status": "released after exact query; result registration separate",
+        "finished_at": "2026-10-21T13:21:42.378909+00:00",
+        "balance_after": {
+          "total_remain_amount": "16326"
+        },
+        "balance_change": 736,
+        "generation_completed": true
+      }
+    }
+  }
+}
