@@ -1,0 +1,147 @@
+{
+  "task": "task-20261022-0002",
+  "checked_at_utc": "2026-10-21T18:28:26.341733+00:00",
+  "acceptance": {
+    "actual_bills_and_settlement_acquired": true,
+    "bucket_hourly_attribution_acquired": true,
+    "cloudmonitor_independent_channel_matches": true,
+    "fixed_and_activity_costs_separated": true,
+    "current_endpoint_and_internal_head_verified": true,
+    "scenario_assumptions_explicit": true,
+    "provisional_and_missing_data_not_treated_as_zero": true,
+    "offline_arithmetic_recomputation": "reconcile.py exits 0; calculations.json checks all true",
+    "no_implementation_or_cloud_policy_change": true,
+    "actual_report_readback": true,
+    "new_relative_links_resolve": true,
+    "private_identity_and_credential_scan_passed": true,
+    "repeat_recomputation_byte_identical": true
+  },
+  "fault_and_recovery": {
+    "empty_daily_rows": "18/19 precede bucket creation; 22 has hourly usage despite no day bill",
+    "empty_split_bill": "not used as zero; bucket attribution uses OMS plus regional bill",
+    "vps_manifest_read": "First attempt found cleaned manifest missing; read retained provenance/snapshot-manifest.json successfully; no service/deployment mutation",
+    "pagination": "all requested billing pages terminated; returned row counts checked; OMS marker and CMS cursor absent",
+    "offline_output_check": "A redirected temporary stdout had an extra final newline; JSON contents were equal. Output now equals calculations.json byte for byte; duplicate temporary files removed."
+  },
+  "source_allocation_limit": {
+    "status": "unknown",
+    "scope": "Exact historical byte split between local, VPS and browser; no object/IP logs in evidence",
+    "effect": "No precise client saving percentage or measured quiet-day baseline claimed; principal billed item and supported scenarios remain established"
+  },
+  "scope": {
+    "repositories": [
+      "primary"
+    ],
+    "business_object_body_download_bytes": 0,
+    "internal_head_count": 1,
+    "new_containers": 0,
+    "new_images": 0,
+    "new_services": 0,
+    "formal_db_operations": 0,
+    "cloud_configuration_writes": 0
+  },
+  "cleanup": {
+    "removed_empty_task_files": [
+      {
+        "path": "bucket-stat.stderr.txt",
+        "bytes": 0
+      },
+      {
+        "path": "oss-month-page-001.stderr.txt",
+        "bytes": 0
+      },
+      {
+        "path": "oms-page-001.stderr.txt",
+        "bytes": 0
+      },
+      {
+        "path": "oss-day-2026-10-20.stderr.txt",
+        "bytes": 0
+      },
+      {
+        "path": "bucket-versioning.stderr.txt",
+        "bytes": 0
+      },
+      {
+        "path": "cms-metric-meta.stderr.txt",
+        "bytes": 0
+      },
+      {
+        "path": "oss-day-2026-10-22.stderr.txt",
+        "bytes": 0
+      },
+      {
+        "path": "oss-split-month.stderr.txt",
+        "bytes": 0
+      },
+      {
+        "path": "cms-metering-tx.stderr.txt",
+        "bytes": 0
+      },
+      {
+        "path": "oss-day-2026-10-18.stderr.txt",
+        "bytes": 0
+      },
+      {
+        "path": "vps-default-endpoint.stderr.txt",
+        "bytes": 0
+      },
+      {
+        "path": "oss-day-2026-10-21.stderr.txt",
+        "bytes": 0
+      },
+      {
+        "path": "bucket-logging.stderr.txt",
+        "bytes": 0
+      },
+      {
+        "path": "vps-readonly-summary-v2.stderr.txt",
+        "bytes": 0
+      },
+      {
+        "path": "overview-month.stderr.txt",
+        "bytes": 0
+      },
+      {
+        "path": "oss-day-2026-10-19.stderr.txt",
+        "bytes": 0
+      },
+      {
+        "path": "vps-internal-head.stderr.txt",
+        "bytes": 0
+      },
+      {
+        "path": "local-default-endpoint.stderr.txt",
+        "bytes": 0
+      },
+      {
+        "path": "vps-readonly-summary.json",
+        "bytes": 0
+      }
+    ],
+    "duplicate_query_metadata_bytes_removed": 10575,
+    "retained_private_files": 37,
+    "retained_private_bytes": 502230,
+    "retained_purpose": "Reconcile frozen bills, source lineage and source-path recovery; no credentials copied",
+    "owner": "task-20261022-0002 / project maintainer",
+    "release_condition": "After acceptance and no remaining reconciliation need, retire by exact task ownership; active worktree kept until session exits",
+    "removed_duplicate_runtime_files": [
+      {
+        "path": "recomputation.json",
+        "bytes": 5173
+      },
+      {
+        "path": "cleanup-summary.json",
+        "bytes": 1916
+      }
+    ]
+  },
+  "delivery_boundary": "Research artifacts and context only; managed Git integration/push follows candidate validation; no service deployment required",
+  "authorization": "Current run explicitly grants --auto self-acceptance and completion; generic ordinary-do confirmation wording does not add another approval",
+  "artifact_sha256": {
+    "README.md": "472527056ee208e8343b4eb003a5216be4bbbf5152525318fd9c7b6e0b846e84",
+    "inputs.json": "ee1b613db39b23edb06906d4a4668c7ff427519c778e21b596b5493b2e826712",
+    "reconcile.py": "dc8430ee04c47d2e675cd02451225bcc6e15ef8c61180fb4900afd3644fdb976",
+    "calculations.json": "d9cc0c80bfced91ba7763ec2cf1592ba2c048536fd8b0bb9bc8805b0f785a910"
+  }
+}
