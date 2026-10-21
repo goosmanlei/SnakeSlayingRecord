@@ -8,6 +8,7 @@ import argparse
 import json
 import sqlite3
 from pathlib import Path
+from tempfile import TemporaryDirectory
 
 from review_desk.screenplay import import_screenplay
 from review_desk.store import Store
@@ -21,16 +22,23 @@ def prepare(candidate, target, document_path='imports/screenplay-01.json'):
                for table in ('objects', 'revisions')}
     revision_ids = {row['id'] for row in records['revisions']}
     records['dependencies'] = [d for d in framework_members(candidate/'export/objects.json','dependencies') if d['from_revision'] in revision_ids]
-    sandbox = Store(':memory:')
-    with sqlite3.connect(f"file:{target / '.runtime/review.sqlite3'}?mode=ro", uri=True) as live:
-        live.backup(sandbox.db)
+    temporary = TemporaryDirectory(prefix='screenplay-preflight-')
+    sandbox = Store(Path(temporary.name) / 'review.sqlite3')
     try:
+        with sqlite3.connect(f"file:{target / '.runtime/review.sqlite3'}?mode=ro", uri=True) as live:
+            live.backup(sandbox.db)
         # Do not silently adapt or publish against newer upstream work.
         assert_current_basis(sandbox, document)
-        before = {o['id'] for o in sandbox.objects()}
+        placeholders = ','.join('?' for _ in ids)
+        before = {r['id'] for r in sandbox.db.execute(
+            'SELECT id FROM objects WHERE id IN (' + placeholders + ')', tuple(ids))}
         receipt = import_screenplay(sandbox, document)
         for table in ('objects', 'revisions', 'dependencies'):
-            actual = getattr(sandbox, table)()
+            field = {'objects': 'id', 'revisions': 'object_id', 'dependencies': 'from_revision'}[table]
+            selected = revision_ids if table == 'dependencies' else ids
+            actual = [dict(r) for r in sandbox.db.execute(
+                'SELECT * FROM ' + table + ' WHERE ' + field + ' IN (' +
+                ','.join('?' for _ in selected) + ')', tuple(selected))]
             if table == 'objects':
                 expected = [{k: v for k, v in r.items() if k not in ('created_at', 'updated_at')} for r in records[table]]
                 actual = [{k: v for k, v in r.items() if k not in ('created_at', 'updated_at')} for r in actual if r['id'] in ids]
@@ -45,6 +53,7 @@ def prepare(candidate, target, document_path='imports/screenplay-01.json'):
         return document, records, receipt, bool(ids & before)
     finally:
         sandbox.close()
+        temporary.cleanup()
 
 
 def assert_current_basis(store, document):

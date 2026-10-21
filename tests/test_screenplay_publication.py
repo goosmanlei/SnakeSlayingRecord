@@ -8,7 +8,7 @@ from review_desk.bundle import export, restore
 from review_desk.screenplay import import_screenplay
 from review_desk.store import Conflict, Store
 from scripts.publish_screenplay import publish
-from review_desk.material_content_stream import members
+from scripts.material_model_io import framework_members as members, resource_path
 
 
 def seed_basis(store, root, document, destination):
@@ -37,7 +37,9 @@ def seed_basis(store, root, document, destination):
         for row in dependencies:
             if row['from_revision'] in revision_ids:store.db.execute('INSERT INTO dependencies VALUES (?,?,?)',tuple(row[k] for k in ('from_revision','to_revision','role')))
     asset_names=set()
-    for source in json.loads((root/'export/materials.json').read_text()):
+    manifest=json.loads((root/'export/manifest.json').read_text())
+    sources = (json.loads(row['document']) for row in members(path,'sources')) if manifest.get('schema_version')==16 else json.loads((root/'export/materials.json').read_text())
+    for source in sources:
         if source['id'] not in wanted:continue
         store.put_source(source)
         asset_names.update(a['file'] for a in source.get('assets',[]))
@@ -49,7 +51,7 @@ def seed_basis(store, root, document, destination):
             if (payload.get('media') or {}).get('file'):asset_names.add(payload['media']['file'])
         else:asset_names.update(v['file'] for s in payload.get('sections',[]) for v in s.get('visuals',[]))
     (destination/'export/assets').mkdir()
-    for name in asset_names:shutil.copyfile(root/'export/assets'/name,destination/'export/assets'/name)
+    for name in asset_names:shutil.copyfile(resource_path(root/'export/assets'/name),destination/'export/assets'/name)
     source=store.source(document['basis']['story']['object_id']);block=source['blocks'][0]
     store.create_comment({'id':'existing-basis-comment','source_id':source['id'],'body':'Existing review preserved in the publication fixture',
                           'anchor':{'block_id':block['id'],'end_block_id':block['id'],'start':0,'end':5,'quote':block['text'][:5]}})
