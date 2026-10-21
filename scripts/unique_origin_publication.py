@@ -39,12 +39,21 @@ def comparison_basis(root, instance, screenplay=None, method_registry=None):
     prerequisites = {'initialization_sha256': before_hash}
     if screenplay:
         from publish_screenplay import publish
-        source = contained(root, screenplay)
-        receipt = publish(root, directory, apply=True, document_path=source.relative_to(root).as_posix())
-        prerequisites['screenplay'] = {
-            'document': source.relative_to(root).as_posix(), 'sha256': file_sha256(source),
-            'receipt': receipt,
-        }
+        documents = screenplay if isinstance(screenplay, (list, tuple)) else [screenplay]
+        editions = []
+        for document in documents:
+            source = contained(root, document)
+            receipt = publish(root, directory, apply=True, document_path=source.relative_to(root).as_posix())
+            editions.append({
+                'document': source.relative_to(root).as_posix(), 'sha256': file_sha256(source),
+                'receipt': receipt,
+            })
+        # Preserve the existing single-edition receipt shape. Multiple immutable
+        # editions must all be rehearsed, including earlier generation inputs.
+        if len(editions) == 1:
+            prerequisites['screenplay'] = editions[0]
+        else:
+            prerequisites['screenplays'] = editions
     if method_registry:
         from method_migration import apply
         source = contained(root, method_registry)
@@ -100,8 +109,8 @@ def main():
     parser.add_argument('--instance', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--report', type=Path, required=True)
-    parser.add_argument('--screenplay', type=Path,
-                        help='Reviewed screenplay appended separately before the production increment')
+    parser.add_argument('--screenplay', type=Path, action='append',
+                        help='Reviewed screenplay appended separately before the production increment; repeat in publication order')
     parser.add_argument('--method-registry', type=Path,
                         help='Exact method registry delivered separately before the production increment')
     args = parser.parse_args()

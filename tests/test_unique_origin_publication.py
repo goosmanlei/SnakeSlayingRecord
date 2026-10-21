@@ -1,6 +1,8 @@
 import copy
 import json
+import tempfile
 import unittest
+from pathlib import Path
 
 from scripts.unique_origin_publication import production_tables
 
@@ -39,3 +41,59 @@ class MethodPrerequisiteTest(unittest.TestCase):
         self.assertEqual(filtered['method_file_packages'],before['method_file_packages'])
         self.assertEqual(filtered['method_file_members'],before['method_file_members'])
         self.assertIn({'object_id':'unrelated','id':'must-remain-visible'},filtered['method_file_versions'])
+
+
+class ScreenplayBasisTest(unittest.TestCase):
+    def test_all_immutable_input_editions_are_rehearsed_without_changing_origin(self):
+        from review_desk.bundle import export
+        from review_desk.screenplay import import_screenplay
+        from review_desk.store import Store
+        from scripts.generation_publication import backup
+        from scripts.unique_origin_publication import comparison_basis, file_sha256
+        with tempfile.TemporaryDirectory(prefix='screenplay-basis-test-') as temp:
+            root = Path(temp).resolve()
+            instance = root / '.runtime/generation/review'
+            (root / 'imports').mkdir()
+            prepared = Store(root / '.runtime/candidate.sqlite3')
+            try:
+                prepared.put_source({'id': 'story-source', 'title': 'Story', 'version_type': 'test',
+                    'origin': 'synthetic fixture', 'source_url': 'https://example.invalid/story',
+                    'collected_at': '2026-01-01', 'blocks': [{'id': 'source-b1', 'text': 'Story'}],
+                    'notes': 'Fixture', 'assets': []})
+                story = {'revision': prepared.db.execute(
+                    'SELECT current_revision FROM objects WHERE id=?', ('story-source',)).fetchone()[0]}
+                structure = prepared.put_object('story-structure', 'STORY', {'title': 'Structure', 'sections': []})
+                origin = instance / '.runtime/generation-base.sqlite3'
+                origin.parent.mkdir(parents=True)
+                backup(prepared.db_path, origin)
+                before = file_sha256(origin)
+                paths = []
+                for number in (5, 6):
+                    edition = 'screenplay-' + str(number)
+                    document = {'format': 'screenplay-edition-v1', 'id': edition,
+                        'title': edition, 'notes': 'Exact input history',
+                        'review_status': 'pending', 'duration_kind': 'estimate',
+                        'basis': {'story': {'object_id': 'story-source', 'revision_id': story['revision']},
+                                  'structure': {'object_id': 'story-structure', 'revision_id': structure['revision']}},
+                        'episodes': [{'id': edition + '-e01', 'number': 1, 'title': 'One',
+                            'estimated_seconds': 2,
+                            'blocks': [{'id': 'b1', 'text': 'Placement ' + str(number)}],
+                            'scenes': [{'id': 's1', 'heading': 'Scene', 'location': 'Shop',
+                                'time': 'Day', 'estimated_seconds': 2, 'block_ids': ['b1']}]}]}
+                    path = Path('imports') / (edition + '.json')
+                    (root / path).write_text(json.dumps(document))
+                    paths.append(path)
+                    import_screenplay(prepared, document)
+                export(prepared, root / 'export')
+                derived, receipt = comparison_basis(root, instance, paths)
+                self.assertEqual(file_sha256(origin), before)
+                self.assertEqual([x['document'] for x in receipt['screenplays']], [str(p) for p in paths])
+                check = Store.open_existing(derived)
+                try:
+                    for number in (5, 6):
+                        self.assertIsNotNone(check.db.execute('SELECT id FROM objects WHERE id=?',
+                            ('screenplay-' + str(number),)).fetchone())
+                finally:
+                    check.close()
+            finally:
+                prepared.close()
