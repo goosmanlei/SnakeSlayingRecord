@@ -13,6 +13,17 @@
 - M041保留两姑娘转向河对岸的实际落点，末句原音延续0.5秒到下一镜。M042只用源3—8秒横摇，弃用开头错误重开歌本的部分；陶伯与空凳保持中远景，人名条在人物可辨后出现。
 - 剧本五记录用户新台词及动作，剧本六进一步同步实际刮板落位。已有真实调用保留当时准确输入历史；当前首集视听及受影响方案同步，后16集正文未改、未制作。
 
+## 播放入口
+
+[打开正式首集版本9](http://127.0.0.1:3000/?workspace=settings.workspace&production_tab=editing&edit_episode=new26-e01&edit_output=episode-film-776ad303328f542ec257bcea8eaf2af7e95750fb5c054495ffb82cef48a57829)，在现有字幕控件切换两种版型。M044位于4:39.625—5:02.667；可先看四组带前后文的对比，再连看全片。
+
+| 对比内容 | 版本7 | 版本9 |
+| --- | --- | --- |
+| 米铺对白、倒米和道具 | [播放](http://127.0.0.1:3000/api/production/files/de09f63fdf9216a2c4617d885e52e051ad9b7ea312379031046dd3835e862ffc.mp4) | [播放](http://127.0.0.1:3000/api/production/files/77b079bb5c12ea8ec35659d1ea9e79b8abf6f6b2ebae82b2bffec2b93b3ccc64.mp4) |
+| 主动拿袋、两次收回与擦手 | [播放](http://127.0.0.1:3000/api/production/files/34dc25c9c73f1d5273769e4db4f6b203a05a9aa9c9ad426cf7cf15a01c52da30.mp4) | [播放](http://127.0.0.1:3000/api/production/files/4674db4e4fae73d7cd96f60748411fcaac4e8dbd03adcb7e6ee517beb94fd5ea.mp4) |
+| 招狗停顿与赵执事来路 | [播放](http://127.0.0.1:3000/api/production/files/5f380527e6d9fb3c54e12527e86bdaf56fb73d1ff75a64ff07cf3beecedb7fff.mp4) | [播放](http://127.0.0.1:3000/api/production/files/4b33e7c6e0c109e88539e43b8e802f3484a804c5b8d7b0d061538b213e4f4cce.mp4) |
+| 目光引到陶伯与M044声音 | [播放](http://127.0.0.1:3000/api/production/files/65bdaf2941f15ea6dbaf69b48d30e4a918a6ef33cd5eec99796152706901d71a.mp4) | [播放](http://127.0.0.1:3000/api/production/files/043dff6a2364ebb202a790e494d75500923a6f3989c15e6d8564672d9bcebfda.mp4) |
+
 ## 前后定位
 
 下表时间均为各自完整成片时间；区间右端不包含最后一帧。原版本7和新候选的画面、声音、字幕及人名条各自绑定准确工程，不能把旧绝对帧号直接套到新片。
@@ -50,6 +61,8 @@ M044前三次补录及两条局部拼接均被用户否定后，改为整镜声�
 
 两版完整视频、48 kHz混音、字幕、可编辑工程及来源映射已完成编码、私有OSS全字节校验和原生登记。四组新旧对比保留各两秒前后文，随版本9更新。准确文件与工程版本见[交付清单](delivery.json)，调用与失败历史见[生成记录](generation.json)。原13图、前13镜和早期试听沿[原证据包](evidence.json)保存，M044后续试听、整镜与新版成片见[追加证据](evidence-v2.json)及[清单](evidence-v2-manifest.json)。
 
-旧版本8候选曾受管集成并推送，提交为 `61e8cb6bf132f3bb18df66f15989e721a495b86e`；本次继续原任务交付版本9。新正式副本的[增量预演](rehearsal-v2.json)已通过，405条旧评论、440条评论事件及范围外数据保持；[任务Chrome](browser-v9.json)两种版型已正常速度播至片尾。本机正式增量、正式Chrome及最新导出的空实例恢复继续执行，没有VPS发布。最终状态以对应真实回执为准。
+版本9的作品与方法提交 `b72436f846af80c44c05744dfa70eef6315ab08d` 已受管集成、推送并[正式增量发布](formal-publication.json)。405条旧评论、440条评论事件及范围外数据逐表比较一致；[正式服务](runtime-v9.json)已刷新准确资源目录，[正式Chrome](browser-formal-v9.json)两种版型均按正常速度播放到片尾，旧版本7可用。[最新正式完整导出](latest-formal-export.json)已完成准确OSS版本及全文件SHA-256校验；独立介质中的1840份资源在禁网、无凭据的[新空实例](empty-restoration.json)恢复成功，43张业务表、制作索引及评论历史一致。[继续编辑渲染](continued-render.json)生成了六种输出组件，[恢复页面](browser-recovery-v9.json)也实际播放了版本9和隔离测试输出。测试输出未发布到正式库，没有VPS发布。
 
-任务仍开放，用户最终接受独立保留。已按准确任务归属清理73个渲染中间文件、14,370,864,176逻辑字节，见[清理记录](cleanup.json)。其余过程资源在发布和恢复后继续收敛；准确原件、调用、旧评论和失败原因保留。
+任务仍开放，用户最终接受独立保留。已清理9377个过程文件、71,419,862,388逻辑字节，移除2个过程容器并关闭2个预览服务，均回查准确身份与不存在／端口释放状态，见[清理记录](cleanup.json)。保留正式服务及原生回退入口、独立恢复介质和本任务待审阅资料；用途、责任及解除条件已列明。
+
+发布中一次重复原件读取超时，沿已完成的不可变版本全字节证据、183个准确版本的重新可访问性检查及原生本地哈希／事务校验继续，见[发布核验复用](formal-remote-evidence-reuse.json)。快照分块上传的网络超时与合并请求签名问题分别核对后恢复；复用同一32分块上传，修正临时curl适配层默认Content-Type，最终完成原生整文件回读，见[传输修复与验证](snapshot-upload-transport-fix.json)。任务专用发布及验证脚本以准确哈希保存于[技术过程包](technical-evidence.json)。传输验证与作品感官验收分别记录。
