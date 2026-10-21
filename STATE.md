@@ -37,6 +37,7 @@
 - **两仓源码入口与示例介绍已正式生效并获用户接受。** 本机与VPS侧栏下方均有故事实例和通用系统GitHub入口，两个README包含示例流程与体验地址；两端保留数据的发布及真实Chrome验证通过，原VPS完整同步身份保留。task-20261020-0005的2个旧容器及2份专属备份已在用户确认后清理，当前会话仍使用双仓worktree，退出释锁后受管退役；见[交付与清理](production/reports/task-20261020-0005/README.md)。
 - 四页与实体大卡的读取、媒体缓存、评论失效和组件生命周期契约已收敛，双端同条件性能及恢复证据见 [性能优化](production/reports/task-20261020-0003/README.md)。正式发布、实际页面补验及清理状态以该任务账本引用的运行回执为准；性能代码升级与上述完整内容同步分别记录。
 - [DSH架构报告](production/reports/dsh-integration-cost-architecture.md) 与 [Higgsfield对比](production/reports/higgsfield-creation-comparison.md) 为研究成果，建议未实施，不是当前运行架构。
+- [OSS费用归因与持续成本](production/reports/task-20261022-0002/README.md) 已按当期实际账单、Bucket小时计量及两端读取路径取证。内网端点分路和重复全量回读优化尚未实施；本报告不改变当前存储、发布或恢复门禁。
 
 ## 仍需独立处理的残留
 
