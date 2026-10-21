@@ -95,5 +95,30 @@ class ScreenplayBasisTest(unittest.TestCase):
                             ('screenplay-' + str(number),)).fetchone())
                 finally:
                     check.close()
+                # A narrow, reviewed record package permits publication while
+                # the private working DB still contains non-public method work.
+                exact = {'format':'screenplay-publication-records-v1'}
+                ids = {f'screenplay-{n}{suffix}' for n in (5,6) for suffix in ('','-e01')}
+                exact['objects'] = [dict(row) for row in prepared.db.execute('SELECT * FROM objects') if row['id'] in ids]
+                exact['revisions'] = [dict(row) for row in prepared.db.execute('SELECT * FROM revisions') if row['object_id'] in ids]
+                rids = {row['id'] for row in exact['revisions']}
+                exact['dependencies'] = [dict(row) for row in prepared.db.execute('SELECT * FROM dependencies') if row['from_revision'] in rids]
+                package = Path('screenplay-records.json')
+                (root/package).write_text(json.dumps(exact))
+                derived, receipt = comparison_basis(root, instance, paths, screenplay_records=package)
+                self.assertEqual(receipt['screenplay_records']['sha256'], file_sha256(root/package))
+                self.assertEqual(file_sha256(origin), before)
+                check = Store.open_existing(derived)
+                try:
+                    for row in exact['revisions']:
+                        self.assertEqual(dict(check.db.execute('SELECT * FROM revisions WHERE id=?',(row['id'],)).fetchone()),row)
+                finally:
+                    check.close()
+                damaged = copy.deepcopy(exact)
+                damaged['revisions'].pop()
+                (root/package).write_text(json.dumps(damaged))
+                with self.assertRaisesRegex(ValueError, 'does not match reviewed edition'):
+                    comparison_basis(root, instance, paths, screenplay_records=package)
+                self.assertEqual(file_sha256(origin), before)
             finally:
                 prepared.close()

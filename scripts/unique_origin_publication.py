@@ -20,7 +20,7 @@ def file_sha256(path):
     return digest.hexdigest()
 
 
-def comparison_basis(root, instance, screenplay=None, method_registry=None):
+def comparison_basis(root, instance, screenplay=None, method_registry=None, screenplay_records=None):
     """Rehearse separately published prerequisites on a copy of the old basis.
 
     This does not publish to the formal instance or alter the initialization
@@ -43,7 +43,7 @@ def comparison_basis(root, instance, screenplay=None, method_registry=None):
         editions = []
         for document in documents:
             source = contained(root, document)
-            receipt = publish(root, directory, apply=True, document_path=source.relative_to(root).as_posix())
+            receipt = publish(root, directory, apply=True, document_path=source.relative_to(root).as_posix(), records_path=screenplay_records)
             editions.append({
                 'document': source.relative_to(root).as_posix(), 'sha256': file_sha256(source),
                 'receipt': receipt,
@@ -54,10 +54,14 @@ def comparison_basis(root, instance, screenplay=None, method_registry=None):
             prerequisites['screenplay'] = editions[0]
         else:
             prerequisites['screenplays'] = editions
+        if screenplay_records:
+            source = contained(root, screenplay_records)
+            prerequisites['screenplay_records'] = {'path':source.relative_to(root).as_posix(), 'sha256':file_sha256(source)}
     if method_registry:
         from method_migration import apply
+        from material_model_io import read_json
         source = contained(root, method_registry)
-        registry = json.loads(source.read_text())
+        registry = read_json(source)
         result = apply(derived, registry)
         prerequisites['methods'] = {
             'registry': source.relative_to(root).as_posix(), 'sha256': file_sha256(source),
@@ -113,6 +117,8 @@ def main():
                         help='Reviewed screenplay appended separately before the production increment; repeat in publication order')
     parser.add_argument('--method-registry', type=Path,
                         help='Exact method registry delivered separately before the production increment')
+    parser.add_argument('--screenplay-records', type=Path,
+                        help='Reviewed immutable screenplay rows, avoiding export of private creative steps')
     args = parser.parse_args()
     sys.path.insert(0, str(args.system.resolve()))
     from generation_publication import tables, publication_id
@@ -124,7 +130,7 @@ def main():
     output = contained(root, args.output)
     if output.exists():
         raise ValueError('use a new reviewed publication filename')
-    basis, prerequisites = comparison_basis(root, instance, args.screenplay, args.method_registry)
+    basis, prerequisites = comparison_basis(root, instance, args.screenplay, args.method_registry, args.screenplay_records)
     before, after, ignored = production_tables(
         tables(basis),
         tables(instance/'.runtime/review.sqlite3'))
