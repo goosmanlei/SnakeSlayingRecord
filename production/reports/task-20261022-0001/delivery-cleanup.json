@@ -1,0 +1,83 @@
+{
+  "format": "e02-redundant-database-cleanup-v1",
+  "files_removed": 4,
+  "bytes_removed": 4301828096,
+  "items": [
+    {
+      "path": ".runtime/generation/publications/e02-apply-01/rehearsal.sqlite3",
+      "bytes": 1075421184,
+      "reason": "Superseded rehearsal or rejected prepare copy; native receipts, formal before/after and original private work DB retained"
+    },
+    {
+      "path": ".runtime/generation/publications/e02-preflight-01/before.sqlite3",
+      "bytes": 1056559104,
+      "reason": "Superseded rehearsal or rejected prepare copy; native receipts, formal before/after and original private work DB retained"
+    },
+    {
+      "path": ".runtime/generation/publications/e02-preflight-01/rehearsal.sqlite3",
+      "bytes": 1075421184,
+      "reason": "Superseded rehearsal or rejected prepare copy; native receipts, formal before/after and original private work DB retained"
+    },
+    {
+      "path": ".runtime/generation/prepares/dacf06c4bbe54ae28a0ab2fbbfbc8f34/candidate.sqlite3",
+      "bytes": 1094426624,
+      "reason": "Superseded rehearsal or rejected prepare copy; native receipts, formal before/after and original private work DB retained"
+    }
+  ],
+  "open_handle_check": "Only host Virtualization read handles; all running ancestor mounts inspected, sole matching formal app has no guest process descriptors to these files. No service stopped.",
+  "previews": {
+    "format": "task-preview-stop-v1",
+    "processes": [
+      {
+        "pid": 3898,
+        "command": ".runtime/venv/bin/python scripts/generation_review.py --system /Users/bytedance/codex-path/creative/story-review-desk --instance .runtime/generation/review serve --port 3918",
+        "cwd": ".",
+        "action": "SIGTERM"
+      },
+      {
+        "pid": 10838,
+        "command": "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python -m http.server 3919 --bind 127.0.0.1 --directory .runtime/episode-two",
+        "cwd": ".",
+        "action": "SIGTERM"
+      }
+    ],
+    "confirmed_exited": true,
+    "ports": [
+      3918,
+      3919
+    ]
+  },
+  "formal_before_after_retained": true,
+  "offline_test_copy": {
+    "path": "/Users/bytedance/.local/share/story-review/recovery/task-20261022-0001-e02-v1",
+    "files_removed": 3665,
+    "logical_bytes_removed": 21772559961,
+    "removed": true,
+    "container_mounts_rechecked_absent": true,
+    "medium_retained": "/Users/bytedance/.local/share/story-review/offline/task-20261022-0001-e02-v1",
+    "evidence": "recovery.json plus .runtime/episode-two/delivery native logs"
+  },
+  "offline_containers_removed": [
+    {
+      "id": "07297fc0bdfcfc60fce5f03b934dc7709a3cb1f70781f141c10802afc07255f4",
+      "name": "task-20261022-0001-e02-offline-restore-01",
+      "exit_code": 0
+    },
+    {
+      "id": "0a41ed2d74d586c8d9e9241b4481196744dee82c1323960efc9c79be2ea5e45b",
+      "name": "task-20261022-0001-e02-offline-edit-01",
+      "exit_code": 1
+    },
+    {
+      "id": "919ea5be2b2d9290c67f135fa080b8d4ccb78b69a73e0da465a59fe019323142",
+      "name": "task-20261022-0001-e02-offline-edit-02",
+      "exit_code": 0
+    }
+  ],
+  "recovery_preview_stopped": {
+    "pid": 10216,
+    "port": 3920,
+    "confirmed_exited": true
+  },
+  "byte_metric": "Logical file sizes; not a measurement of filesystem space reclaimed."
+}
