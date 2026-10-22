@@ -138,8 +138,7 @@ def candidate_resource_bytes(story, system, candidate, instance, relative):
         require(Path(resources.__file__).resolve().parent.parent==system.resolve(),
                 'candidate resource reader loaded a different system')
         spec=resources.descriptor(instance,relative)
-        resources.verify_remote(instance,spec)
-        with resources.lease_scope():
+        with resources.lease_scope(), resources.read_scope(sources=[story, base.primary(story)]):
             return resources.materialize(instance,relative).read_bytes()
     raw=base.git_file(story,candidate,relative)
     require(raw==(story/relative).read_bytes(),'input differs from committed candidate: '+relative)

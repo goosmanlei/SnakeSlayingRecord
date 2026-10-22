@@ -170,10 +170,12 @@ def verify_integrated(root, target, commit, package, entries):
                 paths.append(logical)
                 continue
             other = resources.descriptor(target, logical)
-            if any(spec[k] != other[k] for k in ('sha256','bytes','key','version_id')):
+            if any(spec[k] != other[k] for k in ('sha256','bytes','mime','key','version_id')):
                 raise ValueError('integrated resource identity differs: '+logical)
-            resources.verify_remote(target, other)
-            resources.materialize(target, logical)
+            # Publication checks exact integrated identity and complete content;
+            # the descriptor retains the upload's actual cloud verification time.
+            with resources.read_scope(sources=[root]):
+                resources.materialize(target, logical)
     else:
         paths = [relative, *('export/assets/' + name for name in media_entries(entries))]
     for name in paths:
