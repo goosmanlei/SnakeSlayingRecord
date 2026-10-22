@@ -26,7 +26,7 @@ def register(root, instance, output_id):
         bindings = {key:review.binding(store, source) for key,source in sources.items()}
         _, items = review.elements(project)
         pictures = [e for e in items if e['element_type']=='clip' and e['track_key']=='track:picture']
-        names = {'name-aheng':'new26-aheng', 'name-liji':'new26-liji', 'name-zhou':'new26-zhou',
+        names = {'name-aheng':'new26-aheng', 'name-liji':'new26-liji', 'name-lixiao':'new26-lixiao', 'name-zhou':'new26-zhou',
                  'name-zhao':'new26-zhao', 'name-tao':'new26-tao'}
         groups = {}
         for item in items:
@@ -130,6 +130,7 @@ if __name__=='__main__':
     parser.add_argument('--instance',type=Path,required=True)
     parser.add_argument('--output',required=True)
     parser.add_argument('--include-history',action='store_true')
+    parser.add_argument('--report',type=Path,help='Task-scoped registration receipt; relative to the story worktree')
     args=parser.parse_args()
     root=generation_root(Path(__file__).resolve().parents[1])
     instance=isolated_instance(root,args.instance)
@@ -142,7 +143,7 @@ if __name__=='__main__':
         try: others=[o['object_id'] for o in edit.records(s,'EPISODE_FILM') if o['object_id']!=args.output and o['payload']['project']['episode']['object_id']=='new26-e01']
         finally:s.close()
         result['history']=[register(root,instance,oid) for oid in others]
-    report=root/'production/reports/task-20261019-0002/text-layer-registration.json'
+    report=root/(args.report or Path('production/reports/task-20261019-0002/text-layer-registration.json'))
     report.parent.mkdir(parents=True,exist_ok=True)
     report.write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
     print(json.dumps({k:v for k,v in result.items() if k!='materials'},ensure_ascii=False))
