@@ -106,6 +106,10 @@ def main():
     from review_desk import production
     from review_desk.store import Store
     from review_desk.bundle import restore
+    from review_desk import resources
+    if resources.settings(root):
+        from generation_workspace import primary_root
+        resources.set_local_sources(root, [primary_root(root)], append=True)
     from publication_receipts import RECOVERY,restore_publication_receipts,sha,save
     manifest=json.loads((root/'export/manifest.json').read_text())
     if manifest.get('schema_version') not in (14,15,16):raise ValueError('use a current complete production export (schema 14, 15 or 16)')
@@ -137,6 +141,7 @@ def main():
     if manifest['schema_version']==16:
         from review_desk.resource_bundle import copy_instance_metadata
         copy_instance_metadata(root,destination)
+        resources.set_local_sources(destination, [root, primary_root(root)])
         (destination/'export').mkdir()
         for name in ('manifest.json',*manifest['files']):shutil.copyfile(root/'export'/name,destination/'export'/name)
     else:

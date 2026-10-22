@@ -51,7 +51,10 @@ def initialize(root, instance):
     # Export validates references from this consistent snapshot. Files are copied,
     # not linked to the mutable formal instance.
     from review_desk import resources
-    if not resources.settings(root):
+    if resources.settings(root):
+        resources.set_local_sources(root, [primary], append=True)
+        resources.set_local_sources(instance, [root, primary])
+    else:
         shutil.copytree(primary / 'export/assets', instance / 'export/assets')
     write_json(root, instance / '.runtime/generation-base.json', {
         'format': 'generation-review-base-v1', 'instance_id': uuid.uuid4().hex,

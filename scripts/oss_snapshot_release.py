@@ -233,7 +233,7 @@ try:
     assert not any(v['version'] for v in store.configurations().values()),'restore requires empty configurations'
     catalog=json.loads((root/'config/resource-catalog.json').read_text())
     print(json.dumps({'phase':'verifying-resources','objects':sum(1+len(x.get('variants',{})) for x in catalog['entries'].values())}),flush=True)
-    verify_catalog(root,catalog)
+    verify_catalog(root,catalog,mode='remote')
     assert database_identity(snapshot)==expected,'snapshot business table identity differs'
     check=Store.open_readonly(snapshot);check.db_path=root/'.runtime/review.sqlite3'
     try:

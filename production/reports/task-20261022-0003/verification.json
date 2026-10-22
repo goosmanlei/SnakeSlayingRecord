@@ -1,0 +1,159 @@
+{
+  "boundary": "candidate execution verification; managed delivery and formal runtime results are separate task-ledger receipts",
+  "catalog": {
+    "bytes": 11328898793,
+    "cloud_versions": 1842,
+    "entries": 948
+  },
+  "format": "local-validation-delivery-v1",
+  "medium": {
+    "bytes": 12385457897,
+    "format": "offline-resource-medium-v1",
+    "manifest_sha256": "49b4e495a4c0b092fe99473c57321624e5a5500c4ecd80aff0ddc74e4c113aa5",
+    "objects": 1843,
+    "snapshot_sha256": "3cdd229486759eb38b9d4225ca8fbbad89094934d57f87b3ee833b023e0ce080"
+  },
+  "network": {
+    "fresh_complete_check": {
+      "client_calls": 0,
+      "cloud_verification": "not-performed",
+      "elapsed_seconds": 136.041,
+      "initial_cache_empty": true,
+      "materialized_bytes": 5423520525,
+      "materialized_files": 721,
+      "mode": "local-only",
+      "objects": 1842,
+      "reads": {
+        "cache_hits": 10002,
+        "fetched_objects": 0,
+        "local_bytes": 52280290497,
+        "oss_bytes": 0,
+        "oss_gets": 0,
+        "remote_verifications": 0,
+        "source_copies": 721,
+        "source_hits": 1842
+      },
+      "snapshot_sha256": "3cdd229486759eb38b9d4225ca8fbbad89094934d57f87b3ee833b023e0ce080",
+      "socket_connects": 0
+    },
+    "missing_fill": {
+      "objects": 1842,
+      "reads": {
+        "cache_hits": 1715,
+        "fetched_objects": 3,
+        "local_bytes": 11315908748,
+        "oss_bytes": 12990045,
+        "oss_gets": 3,
+        "remote_verifications": 0,
+        "source_copies": 124
+      }
+    },
+    "new_snapshot": {
+      "elapsed_seconds": 615.431,
+      "reads": {
+        "cache_hits": 10722,
+        "fetched_objects": 1,
+        "local_bytes": 51223731393,
+        "oss_bytes": 1056559104,
+        "oss_gets": 1,
+        "remote_verifications": 1,
+        "source_copies": 1842
+      }
+    },
+    "real_remote_sample": {
+      "name": "export/assets/150db8ea43da0ae37ba15c64b4ffbd3c5ca5ed1764d56bc157bd83b56818038c.mp4",
+      "reads": {
+        "cache_hits": 1,
+        "fetched_objects": 1,
+        "local_bytes": 294,
+        "oss_bytes": 294,
+        "oss_gets": 1,
+        "remote_verifications": 1,
+        "source_copies": 0
+      },
+      "receipt": {
+        "bucket": "lijizhanshe",
+        "bytes": 294,
+        "key": "lijizhanshe/derivatives/50/502b340f1c0f51f955e97b6989d838e5673f6a5a6fbd064968cc682760d44831",
+        "mime": "image/webp",
+        "sha256": "502b340f1c0f51f955e97b6989d838e5673f6a5a6fbd064968cc682760d44831",
+        "verification": "full-remote-sha256",
+        "verified_at": 1792639248,
+        "version_id": "CAEQ6gEYgYDAt_OT1YoaIiBhYzFiYjkxMzlmN2I0MjhkOWNmOTI2ZGFiYWU5MjZhMg--"
+      },
+      "subsequent_materialize": "same retained verified bytes"
+    },
+    "unchanged_export": {
+      "client_calls": 0,
+      "elapsed_seconds": 111.861,
+      "identical_manifest": true,
+      "original_verified_at": 1792640033,
+      "reads": {
+        "cache_hits": 12565,
+        "fetched_objects": 0,
+        "local_bytes": 52280290497,
+        "oss_bytes": 0,
+        "oss_gets": 0,
+        "remote_verifications": 0,
+        "source_copies": 0,
+        "source_hits": 0
+      },
+      "snapshot_sha256": "3cdd229486759eb38b9d4225ca8fbbad89094934d57f87b3ee833b023e0ce080",
+      "socket_connects": 0
+    }
+  },
+  "resource_tests": {
+    "new_tests": 9,
+    "passed": 110,
+    "total": 110
+  },
+  "restoration": {
+    "comments": 405,
+    "container": {
+      "exit_code": 0,
+      "id": "0e5ced6b32bb074d5672d358fd391ce137f2e2f473d9f43bbed62e1d200a27cf",
+      "image": "sha256:a8ca06db40c92ecb1584e5c2c6a02c50da43c3e0c3eaa46c01bc02f9da92b17c",
+      "memory_bytes": 4294967296,
+      "network": "none",
+      "oom_killed": false
+    },
+    "credentials_present": false,
+    "initial_cache_empty": true,
+    "negative_medium_checks": [
+      {
+        "category": "original",
+        "sha256": "7d00e8352767ac28916338702262201e014ff8831ea4584a49b53854e93f0313",
+        "warm_cache_rejected": true
+      },
+      {
+        "category": "derivative",
+        "sha256": "678d561b5227cf5ab02ece789fb76b9accb419e9f1b7b3129e557f5872004d85",
+        "warm_cache_rejected": true
+      },
+      {
+        "category": "snapshot",
+        "sha256": "3cdd229486759eb38b9d4225ca8fbbad89094934d57f87b3ee833b023e0ce080",
+        "warm_cache_rejected": true
+      }
+    ],
+    "reads": {
+      "cache_hits": 20,
+      "fetched_objects": 0,
+      "local_bytes": 1213857422,
+      "oss_bytes": 0,
+      "oss_gets": 0,
+      "remote_verifications": 0,
+      "source_copies": 5,
+      "source_hits": 0
+    },
+    "restored": true,
+    "tables": 43
+  },
+  "story_tests": {
+    "baseline_fixture_error": "test_prepare_bundle_keeps_task_name_and_loads_for_old_and_new_tasks",
+    "passed": 35,
+    "total": 36
+  },
+  "system_commit": "124654bd06fdab8512e63d375d699e20dc847da5",
+  "task": "task-20261022-0003"
+}
