@@ -1,0 +1,4040 @@
+{
+  "format": "episode-two-actual-calls-v1",
+  "task": "task-20261022-0001",
+  "recorded_at": "2026-10-22T09:23:33.044298+08:00",
+  "scope": "Actual dispatches and saved provider usage; not a financial invoice or quality acceptance",
+  "video_dispatch_attempts": 25,
+  "video_completed": 24,
+  "video_failed": 1,
+  "image_provider_attempts": 1,
+  "image_outputs": 0,
+  "builtin_image_local_blocks": 1,
+  "video_balance_snapshots": [
+    {
+      "file": "call-plan.json",
+      "remaining": 16386
+    },
+    {
+      "file": "balance-checkpoint-02.json",
+      "remaining": 14749
+    },
+    {
+      "file": "balance-checkpoint-03.json",
+      "remaining": 10167
+    },
+    {
+      "file": "balance-checkpoint-04.json",
+      "remaining": 8046
+    },
+    {
+      "file": "balance-checkpoint-05.json",
+      "remaining": 7087
+    }
+  ],
+  "account_balance_delta": 9299,
+  "account_delta_attribution": "Account snapshot difference only. No per-call attribution or RMB conversion.",
+  "video_dispatch_cap": 40,
+  "same_defect_route_stop": "No further paid M062 whole edit or M063 grain retry without a new cause and bounded plan.",
+  "understanding_calls_with_saved_usage": 26,
+  "understanding_usage_total": {
+    "prompt_tokens": 26056,
+    "completion_tokens": 3517,
+    "total_tokens": 29573
+  },
+  "understanding_billing": "UNKNOWN; provider usage is token evidence, not monetary settlement",
+  "calls": [
+    {
+      "attempt": "m058-01",
+      "call": {
+        "object_id": "call-task-20261022-0001-m058-01",
+        "revision_id": "11a7067b08263cb3b59030f0172c5fe6bdd84569f38be7ac51e946f245e905cb"
+      },
+      "status": "completed",
+      "model": "Seedance_2.5",
+      "tool": "pippit-tool-cli",
+      "parameters": {
+        "aspect_ratio": "16:9",
+        "duration": 15,
+        "generate_type": 0,
+        "resolution": "720p",
+        "task_type": "reference"
+      },
+      "requirement": {
+        "object_id": "new26-s004-q01-video",
+        "revision_id": "20fc9ba5f232097c57accc8e92459b18759663f2b0b0eed30fff815eda7b1168"
+      },
+      "prompt_sha256": "5ada12b58ff83c2862f84841e9ac3208967e948e7b4222f9922f1ac235ac4b55",
+      "submission_sha256": "1007f14bd4a5e736f748517ba1e468669a9b8ecf93345ffc48011c4d7f709f78",
+      "inputs": [
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-7e4532531dece1622ad128e853ee9d06597b3112bcda97aded96e50d1018242d",
+            "material_id": "new26-aheng-wet-overall"
+          },
+          "object_id": "asset-task-20261015-0003-aheng-wet-flare-01",
+          "revision_id": "31125e2539262f1d61c38ffc9ab53dab4e2ddd1d24f4f40b781f7c29540dba94",
+          "role": "reference_image",
+          "sha256": "1b8d38a52d480c2c5aa5a3ec232173ecd83ac908592edf781bea91f616fa98a4"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-e4662b01847b3d5d4f855f62ef79c3681dd415cd40f07c229009005cb318ef54",
+            "material_id": "new26-liji-wet-overall"
+          },
+          "object_id": "asset-task-20261015-0003-liji-wet-flare-01",
+          "revision_id": "254fe1fe77e05d4d0f597503a26d9991d1212df38759c437cb685449c853dc7c",
+          "role": "reference_image",
+          "sha256": "00cafe312c9aedae6d899049613048441038c04f52c5e53ad1ba66e2395190aa"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-6c6ffff276508d0aa4a5b2b6c29879c561fa9406e9cfab4dfa4a8c0b8c0c7891",
+            "material_id": "new26-zhou-identity"
+          },
+          "object_id": "asset-task-20261015-0003-zhou-identity-02",
+          "revision_id": "1e94b83f88dc304d82939785040a1fac6e7b06926a5a3f1e84e68325a3a41331",
+          "role": "reference_image",
+          "sha256": "08516761807f4d60f35a402dee81a44a2e95727fd29ea1adc89a083fe2680e3f"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-bd1d0fac902bbac84bb29b0cd9894dcb53763e7ba3548cd200f3c5104f7b0694",
+            "material_id": "new26-rice-shop-layout"
+          },
+          "object_id": "asset-task-20261015-0003-rice-shop-flare-01",
+          "revision_id": "d9aa2d9c60027a8afd786f760b49a5927fcba2d453e923afd8390dd8a03c3ab7",
+          "role": "reference_image",
+          "sha256": "e44e1e1d8f1d2be237a0104e08d48e8c71579e13302ba558d60b4214a21d710e"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-0ddf0ff608e583ce628dd84f6af9b2523b455dbbd54ce9c35635b9c6d4faa2b5",
+            "material_id": "new26-book-torn-overall"
+          },
+          "object_id": "asset-task-20261015-0003-book-torn-local-01",
+          "revision_id": "85c96ffe4e5b7145fdc7912922fe909f9222231356e8878e4c968fd127fb0f95",
+          "role": "reference_image",
+          "sha256": "246e90b0be1cc8e272df2f277273098aae0025bfe3bd2a3e603438ca41abbb5a"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-19e2490dddb43f422d650a403404a40b6f8bd96a74cebfbd472092180071237d",
+            "material_id": "new26-rice-bag-identity"
+          },
+          "object_id": "asset-task-20261015-0003-rice-bag-identity-01",
+          "revision_id": "942e719bd334282f81409cbb210938c1893de2f79c4c012ed25126254b2779bb",
+          "role": "reference_image",
+          "sha256": "1cb0cea7788bd57c7d56e04c810f74760241995960c18f37d3951a7436274021"
+        },
+        {
+          "component_id": "original",
+          "object_id": "asset-call-task-20261022-0001-m059-01",
+          "revision_id": "ac8f875c56a1048b7e7e47143af514e7c4e0e472337d49263c4b95fb412e7436",
+          "role": "reference_video",
+          "sha256": "7052495dfae74cd87d641d754ee931fc27f259fa67c2b8262b9579f92a71c372"
+        },
+        {
+          "component_id": "voice-reference-channel",
+          "material_selection": {
+            "candidate_id": "candidate-683f77f766c75e3930e67b16078e6a2eb0faeacf4be21adc65edbe91e9a54829",
+            "material_id": "new26-zhou-voice"
+          },
+          "object_id": "asset-task-20261015-0003-zhou-voice-01",
+          "revision_id": "4ddbfc86b3e23761bd9632d33f6c1b4ab18147775cc6cd06ae20eecb83b8fc36",
+          "role": "reference_audio",
+          "sha256": "47018adecad4bcd63629c1411ed833a771191085c279c0fdb34afce90c4d077d"
+        },
+        {
+          "component_id": "qingpeng-aheng-short",
+          "material_selection": {
+            "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+            "material_id": "new26-qingpeng-singing"
+          },
+          "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+          "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df",
+          "role": "reference_audio",
+          "sha256": "bc0df00c512473fa82aab1aa8faefab9f8a2543cd96e5b871568320475b9b499"
+        }
+      ],
+      "outputs": [
+        {
+          "object_id": "asset-call-task-20261022-0001-m058-01",
+          "revision_id": "2fe9330748d78a7ac96982644ead0eeb1a935550d5bc91f9afb4b0797a9ba4b3"
+        }
+      ],
+      "fee": {
+        "amount": null,
+        "currency": null,
+        "status": "UNKNOWN - no per-call bill"
+      },
+      "thread_id": "skill_2943a933-04c3-4574-b34e-fcb88411fa51",
+      "run_id": "skill_e0d2667f-10f5-4fe1-94e3-164d80006484",
+      "original": {
+        "id": "original",
+        "role": "original",
+        "file": "e76a19929140635867a456384e06e00f9862cfb3f36235a559b599c76f0fb27b.mp4",
+        "sha256": "e76a19929140635867a456384e06e00f9862cfb3f36235a559b599c76f0fb27b",
+        "bytes": 13117757,
+        "mime": "video/mp4",
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 15.042,
+        "has_audio": true,
+        "sample_rate": 32000,
+        "channels": 2
+      },
+      "streams": [
+        {
+          "codec_type": "video",
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 720,
+          "r_frame_rate": "1000000/41667",
+          "nb_frames": "361",
+          "duration": "15.041787"
+        },
+        {
+          "codec_type": "audio",
+          "codec_name": "aac",
+          "r_frame_rate": "0/0",
+          "nb_frames": "472",
+          "duration": "15.042000",
+          "sample_rate": "32000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "attempt": "m059-01",
+      "call": {
+        "object_id": "call-task-20261022-0001-m059-01",
+        "revision_id": "9e065346bbbe36f8a962df8aa0e5d15cd30850636ebe79f499b3b8b26e78dde6"
+      },
+      "status": "completed",
+      "model": "seedance2.0_fast_vision",
+      "tool": "pippit-tool-cli",
+      "parameters": {
+        "aspect_ratio": "16:9",
+        "duration": 15,
+        "generate_type": 0,
+        "resolution": "720p",
+        "task_type": "reference"
+      },
+      "requirement": {
+        "object_id": "new26-s004-q02-video",
+        "revision_id": "b9605f75c35893abb481e25115168a87819cb6b244f7c1343493d1adf95bb32f"
+      },
+      "prompt_sha256": "87b6b2814f2fd242368572b1b57f24452a6a73b68827503025c9155bc4ab40f4",
+      "submission_sha256": "578686536c0b45d18e2df8d372d28408753643e4f9c366ed635128f1dc88168b",
+      "inputs": [
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-7e4532531dece1622ad128e853ee9d06597b3112bcda97aded96e50d1018242d",
+            "material_id": "new26-aheng-wet-overall"
+          },
+          "object_id": "asset-task-20261015-0003-aheng-wet-flare-01",
+          "revision_id": "31125e2539262f1d61c38ffc9ab53dab4e2ddd1d24f4f40b781f7c29540dba94",
+          "role": "reference_image",
+          "sha256": "1b8d38a52d480c2c5aa5a3ec232173ecd83ac908592edf781bea91f616fa98a4"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-e4662b01847b3d5d4f855f62ef79c3681dd415cd40f07c229009005cb318ef54",
+            "material_id": "new26-liji-wet-overall"
+          },
+          "object_id": "asset-task-20261015-0003-liji-wet-flare-01",
+          "revision_id": "254fe1fe77e05d4d0f597503a26d9991d1212df38759c437cb685449c853dc7c",
+          "role": "reference_image",
+          "sha256": "00cafe312c9aedae6d899049613048441038c04f52c5e53ad1ba66e2395190aa"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-6c6ffff276508d0aa4a5b2b6c29879c561fa9406e9cfab4dfa4a8c0b8c0c7891",
+            "material_id": "new26-zhou-identity"
+          },
+          "object_id": "asset-task-20261015-0003-zhou-identity-02",
+          "revision_id": "1e94b83f88dc304d82939785040a1fac6e7b06926a5a3f1e84e68325a3a41331",
+          "role": "reference_image",
+          "sha256": "08516761807f4d60f35a402dee81a44a2e95727fd29ea1adc89a083fe2680e3f"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-bd1d0fac902bbac84bb29b0cd9894dcb53763e7ba3548cd200f3c5104f7b0694",
+            "material_id": "new26-rice-shop-layout"
+          },
+          "object_id": "asset-task-20261015-0003-rice-shop-flare-01",
+          "revision_id": "d9aa2d9c60027a8afd786f760b49a5927fcba2d453e923afd8390dd8a03c3ab7",
+          "role": "reference_image",
+          "sha256": "e44e1e1d8f1d2be237a0104e08d48e8c71579e13302ba558d60b4214a21d710e"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-0ddf0ff608e583ce628dd84f6af9b2523b455dbbd54ce9c35635b9c6d4faa2b5",
+            "material_id": "new26-book-torn-overall"
+          },
+          "object_id": "asset-task-20261015-0003-book-torn-local-01",
+          "revision_id": "85c96ffe4e5b7145fdc7912922fe909f9222231356e8878e4c968fd127fb0f95",
+          "role": "reference_image",
+          "sha256": "246e90b0be1cc8e272df2f277273098aae0025bfe3bd2a3e603438ca41abbb5a"
+        },
+        {
+          "component_id": "qingpeng-aheng-short",
+          "material_selection": {
+            "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+            "material_id": "new26-qingpeng-singing"
+          },
+          "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+          "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df",
+          "role": "reference_audio",
+          "sha256": "bc0df00c512473fa82aab1aa8faefab9f8a2543cd96e5b871568320475b9b499"
+        },
+        {
+          "component_id": "voice-reference-channel",
+          "material_selection": {
+            "candidate_id": "candidate-bd480f0badc3170177b375b827603f1abf5bf19da865a98a91f9ce6ef72f5179",
+            "material_id": "new26-aheng-voice"
+          },
+          "object_id": "asset-task-20261015-0003-aheng-voice-01",
+          "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f",
+          "role": "reference_audio",
+          "sha256": "487bba0fc91a340bf53ce54660d90d142466f2b85ca111555a42fdef482852ce"
+        }
+      ],
+      "outputs": [
+        {
+          "object_id": "asset-call-task-20261022-0001-m059-01",
+          "revision_id": "ac8f875c56a1048b7e7e47143af514e7c4e0e472337d49263c4b95fb412e7436"
+        }
+      ],
+      "fee": {
+        "amount": null,
+        "currency": null,
+        "status": "UNKNOWN - no per-call bill"
+      },
+      "thread_id": "skill_068fb716-4fb3-49b5-9c4c-1b47e5e917ac",
+      "run_id": "skill_a46a0feb-a298-4e32-8e5b-2ffd7f288b15",
+      "original": {
+        "id": "original",
+        "role": "original",
+        "file": "7052495dfae74cd87d641d754ee931fc27f259fa67c2b8262b9579f92a71c372.mp4",
+        "sha256": "7052495dfae74cd87d641d754ee931fc27f259fa67c2b8262b9579f92a71c372",
+        "bytes": 4704884,
+        "mime": "video/mp4",
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 15.104,
+        "has_audio": true,
+        "sample_rate": 32000,
+        "channels": 2
+      },
+      "streams": [
+        {
+          "codec_type": "video",
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 720,
+          "r_frame_rate": "1000000/41667",
+          "nb_frames": "361",
+          "duration": "15.041787"
+        },
+        {
+          "codec_type": "audio",
+          "codec_name": "aac",
+          "r_frame_rate": "0/0",
+          "nb_frames": "473",
+          "duration": "15.104000",
+          "sample_rate": "32000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "attempt": "m060-01",
+      "call": {
+        "object_id": "call-task-20261022-0001-m060-01",
+        "revision_id": "298ffc6a770c42a9d2dc02c49b97e9055997df22100b430b27816b7b8d8ad62d"
+      },
+      "status": "failed",
+      "model": "seedance2.0_fast_vision",
+      "tool": "pippit-tool-cli",
+      "parameters": {
+        "aspect_ratio": "16:9",
+        "duration": 14,
+        "generate_type": 0,
+        "resolution": "720p",
+        "task_type": "reference"
+      },
+      "requirement": {
+        "object_id": "new26-s004-q03-video",
+        "revision_id": "e68cab1ddcf2f8725b1b5816b100a5d19f1f1986b299ee1b7442de9b737476f4"
+      },
+      "prompt_sha256": "55b55803ae3b35e211c8225bf06dbb267fa546b2418b53774ff9a88840492829",
+      "submission_sha256": "e817a3f4b0606c3f327faac593e121eba3489035fc7736d62aa187b897bb7926",
+      "inputs": [
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-7e4532531dece1622ad128e853ee9d06597b3112bcda97aded96e50d1018242d",
+            "material_id": "new26-aheng-wet-overall"
+          },
+          "object_id": "asset-task-20261015-0003-aheng-wet-flare-01",
+          "revision_id": "31125e2539262f1d61c38ffc9ab53dab4e2ddd1d24f4f40b781f7c29540dba94",
+          "role": "reference_image",
+          "sha256": "1b8d38a52d480c2c5aa5a3ec232173ecd83ac908592edf781bea91f616fa98a4"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-e4662b01847b3d5d4f855f62ef79c3681dd415cd40f07c229009005cb318ef54",
+            "material_id": "new26-liji-wet-overall"
+          },
+          "object_id": "asset-task-20261015-0003-liji-wet-flare-01",
+          "revision_id": "254fe1fe77e05d4d0f597503a26d9991d1212df38759c437cb685449c853dc7c",
+          "role": "reference_image",
+          "sha256": "00cafe312c9aedae6d899049613048441038c04f52c5e53ad1ba66e2395190aa"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-6c6ffff276508d0aa4a5b2b6c29879c561fa9406e9cfab4dfa4a8c0b8c0c7891",
+            "material_id": "new26-zhou-identity"
+          },
+          "object_id": "asset-task-20261015-0003-zhou-identity-02",
+          "revision_id": "1e94b83f88dc304d82939785040a1fac6e7b06926a5a3f1e84e68325a3a41331",
+          "role": "reference_image",
+          "sha256": "08516761807f4d60f35a402dee81a44a2e95727fd29ea1adc89a083fe2680e3f"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-bd1d0fac902bbac84bb29b0cd9894dcb53763e7ba3548cd200f3c5104f7b0694",
+            "material_id": "new26-rice-shop-layout"
+          },
+          "object_id": "asset-task-20261015-0003-rice-shop-flare-01",
+          "revision_id": "d9aa2d9c60027a8afd786f760b49a5927fcba2d453e923afd8390dd8a03c3ab7",
+          "role": "reference_image",
+          "sha256": "e44e1e1d8f1d2be237a0104e08d48e8c71579e13302ba558d60b4214a21d710e"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-0ddf0ff608e583ce628dd84f6af9b2523b455dbbd54ce9c35635b9c6d4faa2b5",
+            "material_id": "new26-book-torn-overall"
+          },
+          "object_id": "asset-task-20261015-0003-book-torn-local-01",
+          "revision_id": "85c96ffe4e5b7145fdc7912922fe909f9222231356e8878e4c968fd127fb0f95",
+          "role": "reference_image",
+          "sha256": "246e90b0be1cc8e272df2f277273098aae0025bfe3bd2a3e603438ca41abbb5a"
+        },
+        {
+          "component_id": "original",
+          "object_id": "asset-call-task-20261022-0001-m059-01",
+          "revision_id": "ac8f875c56a1048b7e7e47143af514e7c4e0e472337d49263c4b95fb412e7436",
+          "role": "reference_video",
+          "sha256": "7052495dfae74cd87d641d754ee931fc27f259fa67c2b8262b9579f92a71c372"
+        },
+        {
+          "component_id": "qingpeng-aheng-short",
+          "material_selection": {
+            "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+            "material_id": "new26-qingpeng-singing"
+          },
+          "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+          "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df",
+          "role": "reference_audio",
+          "sha256": "bc0df00c512473fa82aab1aa8faefab9f8a2543cd96e5b871568320475b9b499"
+        }
+      ],
+      "outputs": [],
+      "fee": {
+        "amount": null,
+        "currency": null,
+        "status": "UNKNOWN - no per-call bill"
+      },
+      "provider_result": "rejected; no accepted job identity"
+    },
+    {
+      "attempt": "m060-02",
+      "call": {
+        "object_id": "call-task-20261022-0001-m060-02",
+        "revision_id": "6fcbe0082dded8144378fffe7882d2e8c86b87cba31a937687aed9d4b0873019"
+      },
+      "status": "completed",
+      "model": "Seedance_2.5",
+      "tool": "pippit-tool-cli",
+      "parameters": {
+        "aspect_ratio": "16:9",
+        "duration": 14,
+        "generate_type": 0,
+        "resolution": "720p",
+        "task_type": "reference"
+      },
+      "requirement": {
+        "object_id": "new26-s004-q03-video",
+        "revision_id": "e68cab1ddcf2f8725b1b5816b100a5d19f1f1986b299ee1b7442de9b737476f4"
+      },
+      "prompt_sha256": "55b55803ae3b35e211c8225bf06dbb267fa546b2418b53774ff9a88840492829",
+      "submission_sha256": "44bf95fd330be783c7627b529d6327a2ef8bc7f573b0903c895ed6228ac16aef",
+      "inputs": [
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-7e4532531dece1622ad128e853ee9d06597b3112bcda97aded96e50d1018242d",
+            "material_id": "new26-aheng-wet-overall"
+          },
+          "object_id": "asset-task-20261015-0003-aheng-wet-flare-01",
+          "revision_id": "31125e2539262f1d61c38ffc9ab53dab4e2ddd1d24f4f40b781f7c29540dba94",
+          "role": "reference_image",
+          "sha256": "1b8d38a52d480c2c5aa5a3ec232173ecd83ac908592edf781bea91f616fa98a4"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-e4662b01847b3d5d4f855f62ef79c3681dd415cd40f07c229009005cb318ef54",
+            "material_id": "new26-liji-wet-overall"
+          },
+          "object_id": "asset-task-20261015-0003-liji-wet-flare-01",
+          "revision_id": "254fe1fe77e05d4d0f597503a26d9991d1212df38759c437cb685449c853dc7c",
+          "role": "reference_image",
+          "sha256": "00cafe312c9aedae6d899049613048441038c04f52c5e53ad1ba66e2395190aa"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-6c6ffff276508d0aa4a5b2b6c29879c561fa9406e9cfab4dfa4a8c0b8c0c7891",
+            "material_id": "new26-zhou-identity"
+          },
+          "object_id": "asset-task-20261015-0003-zhou-identity-02",
+          "revision_id": "1e94b83f88dc304d82939785040a1fac6e7b06926a5a3f1e84e68325a3a41331",
+          "role": "reference_image",
+          "sha256": "08516761807f4d60f35a402dee81a44a2e95727fd29ea1adc89a083fe2680e3f"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-bd1d0fac902bbac84bb29b0cd9894dcb53763e7ba3548cd200f3c5104f7b0694",
+            "material_id": "new26-rice-shop-layout"
+          },
+          "object_id": "asset-task-20261015-0003-rice-shop-flare-01",
+          "revision_id": "d9aa2d9c60027a8afd786f760b49a5927fcba2d453e923afd8390dd8a03c3ab7",
+          "role": "reference_image",
+          "sha256": "e44e1e1d8f1d2be237a0104e08d48e8c71579e13302ba558d60b4214a21d710e"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-0ddf0ff608e583ce628dd84f6af9b2523b455dbbd54ce9c35635b9c6d4faa2b5",
+            "material_id": "new26-book-torn-overall"
+          },
+          "object_id": "asset-task-20261015-0003-book-torn-local-01",
+          "revision_id": "85c96ffe4e5b7145fdc7912922fe909f9222231356e8878e4c968fd127fb0f95",
+          "role": "reference_image",
+          "sha256": "246e90b0be1cc8e272df2f277273098aae0025bfe3bd2a3e603438ca41abbb5a"
+        },
+        {
+          "component_id": "original",
+          "object_id": "asset-call-task-20261022-0001-m059-01",
+          "revision_id": "ac8f875c56a1048b7e7e47143af514e7c4e0e472337d49263c4b95fb412e7436",
+          "role": "reference_video",
+          "sha256": "7052495dfae74cd87d641d754ee931fc27f259fa67c2b8262b9579f92a71c372"
+        },
+        {
+          "component_id": "qingpeng-aheng-short",
+          "material_selection": {
+            "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+            "material_id": "new26-qingpeng-singing"
+          },
+          "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+          "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df",
+          "role": "reference_audio",
+          "sha256": "bc0df00c512473fa82aab1aa8faefab9f8a2543cd96e5b871568320475b9b499"
+        }
+      ],
+      "outputs": [
+        {
+          "object_id": "asset-call-task-20261022-0001-m060-02",
+          "revision_id": "6cce9c07c2fa97597c935462a548c83729d8164b505935b52e46dc436d67ab46"
+        }
+      ],
+      "fee": {
+        "amount": null,
+        "currency": null,
+        "status": "UNKNOWN - no per-call bill"
+      },
+      "thread_id": "skill_851efc12-5199-45f6-8e11-1a37d503f3c4",
+      "run_id": "skill_0bfd532e-5afb-4054-95ee-aae949770ceb",
+      "original": {
+        "id": "original",
+        "role": "original",
+        "file": "d3ad710a611c2e33dcc5ce18734325b744ff4f28ec6b64be174c8102c292a0c3.mp4",
+        "sha256": "d3ad710a611c2e33dcc5ce18734325b744ff4f28ec6b64be174c8102c292a0c3",
+        "bytes": 11649840,
+        "mime": "video/mp4",
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 14.05,
+        "has_audio": true,
+        "sample_rate": 32000,
+        "channels": 2
+      },
+      "streams": [
+        {
+          "codec_type": "video",
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 720,
+          "r_frame_rate": "1000000/41667",
+          "nb_frames": "337",
+          "duration": "14.041779"
+        },
+        {
+          "codec_type": "audio",
+          "codec_name": "aac",
+          "r_frame_rate": "0/0",
+          "nb_frames": "441",
+          "duration": "14.050000",
+          "sample_rate": "32000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "attempt": "m061-01",
+      "call": {
+        "object_id": "call-task-20261022-0001-m061-01",
+        "revision_id": "9e380d4c2261e14d0c0844af1d182bdba59959b8ed632e6a9564f02eac898048"
+      },
+      "status": "completed",
+      "model": "Seedance_2.5",
+      "tool": "pippit-tool-cli",
+      "parameters": {
+        "aspect_ratio": "16:9",
+        "duration": 18,
+        "generate_type": 0,
+        "resolution": "720p",
+        "task_type": "reference"
+      },
+      "requirement": {
+        "object_id": "new26-s004-q04-video",
+        "revision_id": "c3dffc42ff213f3a67f58ab6c0c9a2d3a979950bfa9cc340a91f9083fe146b86"
+      },
+      "prompt_sha256": "e980c52a052b7ad3c2a77bc2c88f5cc471157f67c0f06834fa079c6dbc648d67",
+      "submission_sha256": "a0e0aff6afe6d563671f216ec581b95ae24a0e1b25270d570955792f82e82947",
+      "inputs": [
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-7e4532531dece1622ad128e853ee9d06597b3112bcda97aded96e50d1018242d",
+            "material_id": "new26-aheng-wet-overall"
+          },
+          "object_id": "asset-task-20261015-0003-aheng-wet-flare-01",
+          "revision_id": "31125e2539262f1d61c38ffc9ab53dab4e2ddd1d24f4f40b781f7c29540dba94",
+          "role": "reference_image",
+          "sha256": "1b8d38a52d480c2c5aa5a3ec232173ecd83ac908592edf781bea91f616fa98a4"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-e4662b01847b3d5d4f855f62ef79c3681dd415cd40f07c229009005cb318ef54",
+            "material_id": "new26-liji-wet-overall"
+          },
+          "object_id": "asset-task-20261015-0003-liji-wet-flare-01",
+          "revision_id": "254fe1fe77e05d4d0f597503a26d9991d1212df38759c437cb685449c853dc7c",
+          "role": "reference_image",
+          "sha256": "00cafe312c9aedae6d899049613048441038c04f52c5e53ad1ba66e2395190aa"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-6c6ffff276508d0aa4a5b2b6c29879c561fa9406e9cfab4dfa4a8c0b8c0c7891",
+            "material_id": "new26-zhou-identity"
+          },
+          "object_id": "asset-task-20261015-0003-zhou-identity-02",
+          "revision_id": "1e94b83f88dc304d82939785040a1fac6e7b06926a5a3f1e84e68325a3a41331",
+          "role": "reference_image",
+          "sha256": "08516761807f4d60f35a402dee81a44a2e95727fd29ea1adc89a083fe2680e3f"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-bd1d0fac902bbac84bb29b0cd9894dcb53763e7ba3548cd200f3c5104f7b0694",
+            "material_id": "new26-rice-shop-layout"
+          },
+          "object_id": "asset-task-20261015-0003-rice-shop-flare-01",
+          "revision_id": "d9aa2d9c60027a8afd786f760b49a5927fcba2d453e923afd8390dd8a03c3ab7",
+          "role": "reference_image",
+          "sha256": "e44e1e1d8f1d2be237a0104e08d48e8c71579e13302ba558d60b4214a21d710e"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-0ddf0ff608e583ce628dd84f6af9b2523b455dbbd54ce9c35635b9c6d4faa2b5",
+            "material_id": "new26-book-torn-overall"
+          },
+          "object_id": "asset-task-20261015-0003-book-torn-local-01",
+          "revision_id": "85c96ffe4e5b7145fdc7912922fe909f9222231356e8878e4c968fd127fb0f95",
+          "role": "reference_image",
+          "sha256": "246e90b0be1cc8e272df2f277273098aae0025bfe3bd2a3e603438ca41abbb5a"
+        },
+        {
+          "component_id": "original",
+          "object_id": "asset-call-task-20261022-0001-m059-01",
+          "revision_id": "ac8f875c56a1048b7e7e47143af514e7c4e0e472337d49263c4b95fb412e7436",
+          "role": "reference_video",
+          "sha256": "7052495dfae74cd87d641d754ee931fc27f259fa67c2b8262b9579f92a71c372"
+        },
+        {
+          "component_id": "voice-reference-channel",
+          "material_selection": {
+            "candidate_id": "candidate-acb25dee1133a431f7c7bbc60c526dc102d8d4defaa6c687988c17b27fa86209",
+            "material_id": "new26-liji-voice"
+          },
+          "object_id": "asset-task-20261015-0003-liji-voice-03",
+          "revision_id": "cda0e1a6b057a4a7fe0eaa63418602ada7da037e0f838c789cc53e5ede5ac035",
+          "role": "reference_audio",
+          "sha256": "c4d5dd0aaa587dbfa9938d7123542b174b286d4956fc051b2f8f7c9582a14a73"
+        },
+        {
+          "component_id": "voice-reference-channel",
+          "material_selection": {
+            "candidate_id": "candidate-683f77f766c75e3930e67b16078e6a2eb0faeacf4be21adc65edbe91e9a54829",
+            "material_id": "new26-zhou-voice"
+          },
+          "object_id": "asset-task-20261015-0003-zhou-voice-01",
+          "revision_id": "4ddbfc86b3e23761bd9632d33f6c1b4ab18147775cc6cd06ae20eecb83b8fc36",
+          "role": "reference_audio",
+          "sha256": "47018adecad4bcd63629c1411ed833a771191085c279c0fdb34afce90c4d077d"
+        }
+      ],
+      "outputs": [
+        {
+          "object_id": "asset-call-task-20261022-0001-m061-01",
+          "revision_id": "8b04f8ebb4197f5526464d963d20819d244751cc129d0ca999d950673b620a18"
+        }
+      ],
+      "fee": {
+        "amount": null,
+        "currency": null,
+        "status": "UNKNOWN - no per-call bill"
+      },
+      "thread_id": "skill_1ece2373-5460-4799-9bb5-d9ad40de3239",
+      "run_id": "skill_c1bce5e9-b938-45ae-b25d-35d600c188b8",
+      "original": {
+        "id": "original",
+        "role": "original",
+        "file": "7c9b8b8ce5628717104910bb57b69a67344cb4d697cbf34c1064607e2d65038c.mp4",
+        "sha256": "7c9b8b8ce5628717104910bb57b69a67344cb4d697cbf34c1064607e2d65038c",
+        "bytes": 12504241,
+        "mime": "video/mp4",
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 18.042,
+        "has_audio": true,
+        "sample_rate": 32000,
+        "channels": 2
+      },
+      "streams": [
+        {
+          "codec_type": "video",
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 720,
+          "r_frame_rate": "1000000/41667",
+          "nb_frames": "433",
+          "duration": "18.041811"
+        },
+        {
+          "codec_type": "audio",
+          "codec_name": "aac",
+          "r_frame_rate": "0/0",
+          "nb_frames": "565",
+          "duration": "18.042000",
+          "sample_rate": "32000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "attempt": "m061-02",
+      "call": {
+        "object_id": "call-task-20261022-0001-m061-02",
+        "revision_id": "3e5d86a550e6ef37e1fa0d552a897db01719efe8800b1d371253b205ea734566"
+      },
+      "status": "completed",
+      "model": "seedance2.0_fast_vision",
+      "tool": "pippit-tool-cli",
+      "parameters": {
+        "aspect_ratio": "16:9",
+        "duration": 15,
+        "generate_type": 0,
+        "resolution": "720p",
+        "task_type": "reference"
+      },
+      "requirement": {
+        "object_id": "new26-s004-q04-video",
+        "revision_id": "c3dffc42ff213f3a67f58ab6c0c9a2d3a979950bfa9cc340a91f9083fe146b86"
+      },
+      "prompt_sha256": "af6fddc8837acd8c4877c160237f428b86eca8a13df8217fc51ae905e82ef2a9",
+      "submission_sha256": "1b80e70a40297b2501a322f066a3e7e5cac2400ec9b7e2d1682e789e1de36570",
+      "inputs": [
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-7e4532531dece1622ad128e853ee9d06597b3112bcda97aded96e50d1018242d",
+            "material_id": "new26-aheng-wet-overall"
+          },
+          "object_id": "asset-task-20261015-0003-aheng-wet-flare-01",
+          "revision_id": "31125e2539262f1d61c38ffc9ab53dab4e2ddd1d24f4f40b781f7c29540dba94",
+          "role": "reference_image",
+          "sha256": "1b8d38a52d480c2c5aa5a3ec232173ecd83ac908592edf781bea91f616fa98a4"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-bd1d0fac902bbac84bb29b0cd9894dcb53763e7ba3548cd200f3c5104f7b0694",
+            "material_id": "new26-rice-shop-layout"
+          },
+          "object_id": "asset-task-20261015-0003-rice-shop-flare-01",
+          "revision_id": "d9aa2d9c60027a8afd786f760b49a5927fcba2d453e923afd8390dd8a03c3ab7",
+          "role": "reference_image",
+          "sha256": "e44e1e1d8f1d2be237a0104e08d48e8c71579e13302ba558d60b4214a21d710e"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-0ddf0ff608e583ce628dd84f6af9b2523b455dbbd54ce9c35635b9c6d4faa2b5",
+            "material_id": "new26-book-torn-overall"
+          },
+          "object_id": "asset-task-20261015-0003-book-torn-local-01",
+          "revision_id": "85c96ffe4e5b7145fdc7912922fe909f9222231356e8878e4c968fd127fb0f95",
+          "role": "reference_image",
+          "sha256": "246e90b0be1cc8e272df2f277273098aae0025bfe3bd2a3e603438ca41abbb5a"
+        }
+      ],
+      "outputs": [
+        {
+          "object_id": "asset-call-task-20261022-0001-m061-02",
+          "revision_id": "377ca381cfbdfc9a9d5ce566d2745000f7fc30a896c52ec86e82959d5ee57179"
+        }
+      ],
+      "fee": {
+        "amount": null,
+        "currency": null,
+        "status": "UNKNOWN - no per-call bill"
+      },
+      "thread_id": "skill_69498a4e-2572-440c-b3a8-21eb6f1772f3",
+      "run_id": "skill_89b93b72-e434-45bb-9c5a-3ea7be0d134e",
+      "original": {
+        "id": "original",
+        "role": "original",
+        "file": "0ab6c3c9eed10a9644f6ad98698101af42bfef00f1ac39c32c507011d2e156c7.mp4",
+        "sha256": "0ab6c3c9eed10a9644f6ad98698101af42bfef00f1ac39c32c507011d2e156c7",
+        "bytes": 4805222,
+        "mime": "video/mp4",
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 15.104,
+        "has_audio": true,
+        "sample_rate": 32000,
+        "channels": 2
+      },
+      "streams": [
+        {
+          "codec_type": "video",
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 720,
+          "r_frame_rate": "1000000/41667",
+          "nb_frames": "361",
+          "duration": "15.041787"
+        },
+        {
+          "codec_type": "audio",
+          "codec_name": "aac",
+          "r_frame_rate": "0/0",
+          "nb_frames": "473",
+          "duration": "15.104000",
+          "sample_rate": "32000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "attempt": "m062-01",
+      "call": {
+        "object_id": "call-task-20261022-0001-m062-01",
+        "revision_id": "e2b4e0b90484a6da74b672b130b502b9aa0dc526fc35cae2e8a3c5b3eac0d95f"
+      },
+      "status": "completed",
+      "model": "Seedance_2.5",
+      "tool": "pippit-tool-cli",
+      "parameters": {
+        "aspect_ratio": "16:9",
+        "duration": 26,
+        "generate_type": 0,
+        "resolution": "720p",
+        "task_type": "reference"
+      },
+      "requirement": {
+        "object_id": "new26-s004-q05-video",
+        "revision_id": "5404d87691f593e01d8cf39138934b12973e97b3221e70ea2ae2b8db70009b6a"
+      },
+      "prompt_sha256": "3cf3d803f762d8e4640cfba7a8ddd6365c6a64c72c6440bd5edc9cfae5b68410",
+      "submission_sha256": "cd64713ffa21676b575f4cbafba48018d230da4e4a48be28601e81d453294581",
+      "inputs": [
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-7e4532531dece1622ad128e853ee9d06597b3112bcda97aded96e50d1018242d",
+            "material_id": "new26-aheng-wet-overall"
+          },
+          "object_id": "asset-task-20261015-0003-aheng-wet-flare-01",
+          "revision_id": "31125e2539262f1d61c38ffc9ab53dab4e2ddd1d24f4f40b781f7c29540dba94",
+          "role": "reference_image",
+          "sha256": "1b8d38a52d480c2c5aa5a3ec232173ecd83ac908592edf781bea91f616fa98a4"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-e4662b01847b3d5d4f855f62ef79c3681dd415cd40f07c229009005cb318ef54",
+            "material_id": "new26-liji-wet-overall"
+          },
+          "object_id": "asset-task-20261015-0003-liji-wet-flare-01",
+          "revision_id": "254fe1fe77e05d4d0f597503a26d9991d1212df38759c437cb685449c853dc7c",
+          "role": "reference_image",
+          "sha256": "00cafe312c9aedae6d899049613048441038c04f52c5e53ad1ba66e2395190aa"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-6c6ffff276508d0aa4a5b2b6c29879c561fa9406e9cfab4dfa4a8c0b8c0c7891",
+            "material_id": "new26-zhou-identity"
+          },
+          "object_id": "asset-task-20261015-0003-zhou-identity-02",
+          "revision_id": "1e94b83f88dc304d82939785040a1fac6e7b06926a5a3f1e84e68325a3a41331",
+          "role": "reference_image",
+          "sha256": "08516761807f4d60f35a402dee81a44a2e95727fd29ea1adc89a083fe2680e3f"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-bd1d0fac902bbac84bb29b0cd9894dcb53763e7ba3548cd200f3c5104f7b0694",
+            "material_id": "new26-rice-shop-layout"
+          },
+          "object_id": "asset-task-20261015-0003-rice-shop-flare-01",
+          "revision_id": "d9aa2d9c60027a8afd786f760b49a5927fcba2d453e923afd8390dd8a03c3ab7",
+          "role": "reference_image",
+          "sha256": "e44e1e1d8f1d2be237a0104e08d48e8c71579e13302ba558d60b4214a21d710e"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-0ddf0ff608e583ce628dd84f6af9b2523b455dbbd54ce9c35635b9c6d4faa2b5",
+            "material_id": "new26-book-torn-overall"
+          },
+          "object_id": "asset-task-20261015-0003-book-torn-local-01",
+          "revision_id": "85c96ffe4e5b7145fdc7912922fe909f9222231356e8878e4c968fd127fb0f95",
+          "role": "reference_image",
+          "sha256": "246e90b0be1cc8e272df2f277273098aae0025bfe3bd2a3e603438ca41abbb5a"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-19e2490dddb43f422d650a403404a40b6f8bd96a74cebfbd472092180071237d",
+            "material_id": "new26-rice-bag-identity"
+          },
+          "object_id": "asset-task-20261015-0003-rice-bag-identity-01",
+          "revision_id": "942e719bd334282f81409cbb210938c1893de2f79c4c012ed25126254b2779bb",
+          "role": "reference_image",
+          "sha256": "1cb0cea7788bd57c7d56e04c810f74760241995960c18f37d3951a7436274021"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-6a7abbf4410c9048e601d9fb0e6ec8ba5715bf80eb16dec7ee5d66ce3f32a784",
+            "material_id": "new26-rice-measure-identity"
+          },
+          "object_id": "asset-task-20261015-0003-rice-measure-local-01",
+          "revision_id": "ca8561e81f3f0c4c96bbf569a86b852eda5a30e01a0d066e3d7e25561a242318",
+          "role": "reference_image",
+          "sha256": "9433ee258af27aa9eda534ced41ac43a71df98a9d8ee0baa7d31e0058accbf2f"
+        },
+        {
+          "component_id": "original",
+          "object_id": "asset-call-task-20261022-0001-m061-01",
+          "revision_id": "8b04f8ebb4197f5526464d963d20819d244751cc129d0ca999d950673b620a18",
+          "role": "reference_video",
+          "sha256": "7c9b8b8ce5628717104910bb57b69a67344cb4d697cbf34c1064607e2d65038c"
+        },
+        {
+          "component_id": "voice-reference-channel",
+          "material_selection": {
+            "candidate_id": "candidate-683f77f766c75e3930e67b16078e6a2eb0faeacf4be21adc65edbe91e9a54829",
+            "material_id": "new26-zhou-voice"
+          },
+          "object_id": "asset-task-20261015-0003-zhou-voice-01",
+          "revision_id": "4ddbfc86b3e23761bd9632d33f6c1b4ab18147775cc6cd06ae20eecb83b8fc36",
+          "role": "reference_audio",
+          "sha256": "47018adecad4bcd63629c1411ed833a771191085c279c0fdb34afce90c4d077d"
+        },
+        {
+          "component_id": "voice-reference-channel",
+          "material_selection": {
+            "candidate_id": "candidate-bd480f0badc3170177b375b827603f1abf5bf19da865a98a91f9ce6ef72f5179",
+            "material_id": "new26-aheng-voice"
+          },
+          "object_id": "asset-task-20261015-0003-aheng-voice-01",
+          "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f",
+          "role": "reference_audio",
+          "sha256": "487bba0fc91a340bf53ce54660d90d142466f2b85ca111555a42fdef482852ce"
+        }
+      ],
+      "outputs": [
+        {
+          "object_id": "asset-call-task-20261022-0001-m062-01",
+          "revision_id": "bd2bc4bbaf9cab4a8a30d9647b16d0c446c8c02b627b3173c690a80bd00402fb"
+        }
+      ],
+      "fee": {
+        "amount": null,
+        "currency": null,
+        "status": "UNKNOWN - no per-call bill"
+      },
+      "thread_id": "skill_e243c46b-21a6-49df-a96c-64917ea0424a",
+      "run_id": "skill_233913e7-5a78-4842-a60c-2d4d19a33837",
+      "original": {
+        "id": "original",
+        "role": "original",
+        "file": "7e49b2710bcf7f28ccba32010b15dc811cecbebfd37cdbd69cad43282ea191d8.mp4",
+        "sha256": "7e49b2710bcf7f28ccba32010b15dc811cecbebfd37cdbd69cad43282ea191d8",
+        "bytes": 18294427,
+        "mime": "video/mp4",
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 26.042,
+        "has_audio": true,
+        "sample_rate": 32000,
+        "channels": 2
+      },
+      "streams": [
+        {
+          "codec_type": "video",
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 720,
+          "r_frame_rate": "1000000/41667",
+          "nb_frames": "625",
+          "duration": "26.041875"
+        },
+        {
+          "codec_type": "audio",
+          "codec_name": "aac",
+          "r_frame_rate": "0/0",
+          "nb_frames": "815",
+          "duration": "26.042000",
+          "sample_rate": "32000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "attempt": "m062-02",
+      "call": {
+        "object_id": "call-task-20261022-0001-m062-02",
+        "revision_id": "cf4431f7b28d7f4ae33b27cf57af119f346192e3afec7cc6e2e82e4d52dcbb0e"
+      },
+      "status": "completed",
+      "model": "Seedance_2.5",
+      "tool": "pippit-tool-cli",
+      "parameters": {
+        "aspect_ratio": "adaptive",
+        "generate_type": 0,
+        "resolution": "720p",
+        "task_type": "edit"
+      },
+      "requirement": {
+        "object_id": "new26-s004-q05-video",
+        "revision_id": "5404d87691f593e01d8cf39138934b12973e97b3221e70ea2ae2b8db70009b6a"
+      },
+      "prompt_sha256": "1b6993b2c40ce6c7b30e27c274a49c6f933f346a560a5291483e62dd0ec6721f",
+      "submission_sha256": "943c4dc63a31ee1334ceb0cb00709649bc492ff29c7338f5a1993917768be947",
+      "inputs": [
+        {
+          "component_id": "original",
+          "object_id": "asset-call-task-20261022-0001-m062-01",
+          "revision_id": "bd2bc4bbaf9cab4a8a30d9647b16d0c446c8c02b627b3173c690a80bd00402fb",
+          "role": "source_video",
+          "sha256": "7e49b2710bcf7f28ccba32010b15dc811cecbebfd37cdbd69cad43282ea191d8"
+        }
+      ],
+      "outputs": [
+        {
+          "object_id": "asset-call-task-20261022-0001-m062-02",
+          "revision_id": "e08306b08c09b1691ade86a8678531c180d096504062f6168686613c4bc9f3d2"
+        }
+      ],
+      "fee": {
+        "amount": null,
+        "currency": null,
+        "status": "UNKNOWN - no per-call bill"
+      },
+      "thread_id": "skill_1b70510a-bcbb-4f5c-af9e-255d25917442",
+      "run_id": "skill_04ee46ec-fd6d-4585-b5c9-c2bd0153e467",
+      "original": {
+        "id": "original",
+        "role": "original",
+        "file": "3722d2f44e4539188d6f57afce2ee5a87d4dcaeaa0644cf895923c59c5362131.mp4",
+        "sha256": "3722d2f44e4539188d6f57afce2ee5a87d4dcaeaa0644cf895923c59c5362131",
+        "bytes": 22240586,
+        "mime": "video/mp4",
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 26.042,
+        "has_audio": true,
+        "sample_rate": 32000,
+        "channels": 2
+      },
+      "streams": [
+        {
+          "codec_type": "video",
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 720,
+          "r_frame_rate": "1000000/41667",
+          "nb_frames": "625",
+          "duration": "26.041875"
+        },
+        {
+          "codec_type": "audio",
+          "codec_name": "aac",
+          "r_frame_rate": "0/0",
+          "nb_frames": "815",
+          "duration": "26.042000",
+          "sample_rate": "32000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "attempt": "m063-01",
+      "call": {
+        "object_id": "call-task-20261022-0001-m063-01",
+        "revision_id": "57d0f720c35eb00c0fbeab99ed681434b6686b243071c16cfafe17c0459af289"
+      },
+      "status": "completed",
+      "model": "Seedance_2.5",
+      "tool": "pippit-tool-cli",
+      "parameters": {
+        "aspect_ratio": "16:9",
+        "duration": 20,
+        "generate_type": 0,
+        "resolution": "720p",
+        "task_type": "reference"
+      },
+      "requirement": {
+        "object_id": "new26-s004-q06-video",
+        "revision_id": "c070375ddc508103633c1f6ff264e59c700429e87ea99ad486f5ba6838ec3905"
+      },
+      "prompt_sha256": "cb8328bb72f4153436134a149586116d9d8d51a7ea4d5923200359209406f5eb",
+      "submission_sha256": "20c1730f7300a1b3ae44faaae14b985b4209369c7f5b11c59b27715742130d80",
+      "inputs": [
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-7e4532531dece1622ad128e853ee9d06597b3112bcda97aded96e50d1018242d",
+            "material_id": "new26-aheng-wet-overall"
+          },
+          "object_id": "asset-task-20261015-0003-aheng-wet-flare-01",
+          "revision_id": "31125e2539262f1d61c38ffc9ab53dab4e2ddd1d24f4f40b781f7c29540dba94",
+          "role": "reference_image",
+          "sha256": "1b8d38a52d480c2c5aa5a3ec232173ecd83ac908592edf781bea91f616fa98a4"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-e4662b01847b3d5d4f855f62ef79c3681dd415cd40f07c229009005cb318ef54",
+            "material_id": "new26-liji-wet-overall"
+          },
+          "object_id": "asset-task-20261015-0003-liji-wet-flare-01",
+          "revision_id": "254fe1fe77e05d4d0f597503a26d9991d1212df38759c437cb685449c853dc7c",
+          "role": "reference_image",
+          "sha256": "00cafe312c9aedae6d899049613048441038c04f52c5e53ad1ba66e2395190aa"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-6c6ffff276508d0aa4a5b2b6c29879c561fa9406e9cfab4dfa4a8c0b8c0c7891",
+            "material_id": "new26-zhou-identity"
+          },
+          "object_id": "asset-task-20261015-0003-zhou-identity-02",
+          "revision_id": "1e94b83f88dc304d82939785040a1fac6e7b06926a5a3f1e84e68325a3a41331",
+          "role": "reference_image",
+          "sha256": "08516761807f4d60f35a402dee81a44a2e95727fd29ea1adc89a083fe2680e3f"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-bd1d0fac902bbac84bb29b0cd9894dcb53763e7ba3548cd200f3c5104f7b0694",
+            "material_id": "new26-rice-shop-layout"
+          },
+          "object_id": "asset-task-20261015-0003-rice-shop-flare-01",
+          "revision_id": "d9aa2d9c60027a8afd786f760b49a5927fcba2d453e923afd8390dd8a03c3ab7",
+          "role": "reference_image",
+          "sha256": "e44e1e1d8f1d2be237a0104e08d48e8c71579e13302ba558d60b4214a21d710e"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-0ddf0ff608e583ce628dd84f6af9b2523b455dbbd54ce9c35635b9c6d4faa2b5",
+            "material_id": "new26-book-torn-overall"
+          },
+          "object_id": "asset-task-20261015-0003-book-torn-local-01",
+          "revision_id": "85c96ffe4e5b7145fdc7912922fe909f9222231356e8878e4c968fd127fb0f95",
+          "role": "reference_image",
+          "sha256": "246e90b0be1cc8e272df2f277273098aae0025bfe3bd2a3e603438ca41abbb5a"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-19e2490dddb43f422d650a403404a40b6f8bd96a74cebfbd472092180071237d",
+            "material_id": "new26-rice-bag-identity"
+          },
+          "object_id": "asset-task-20261015-0003-rice-bag-identity-01",
+          "revision_id": "942e719bd334282f81409cbb210938c1893de2f79c4c012ed25126254b2779bb",
+          "role": "reference_image",
+          "sha256": "1cb0cea7788bd57c7d56e04c810f74760241995960c18f37d3951a7436274021"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-6a7abbf4410c9048e601d9fb0e6ec8ba5715bf80eb16dec7ee5d66ce3f32a784",
+            "material_id": "new26-rice-measure-identity"
+          },
+          "object_id": "asset-task-20261015-0003-rice-measure-local-01",
+          "revision_id": "ca8561e81f3f0c4c96bbf569a86b852eda5a30e01a0d066e3d7e25561a242318",
+          "role": "reference_image",
+          "sha256": "9433ee258af27aa9eda534ced41ac43a71df98a9d8ee0baa7d31e0058accbf2f"
+        },
+        {
+          "component_id": "original",
+          "object_id": "asset-call-task-20261022-0001-m062-01",
+          "revision_id": "bd2bc4bbaf9cab4a8a30d9647b16d0c446c8c02b627b3173c690a80bd00402fb",
+          "role": "reference_video",
+          "sha256": "7e49b2710bcf7f28ccba32010b15dc811cecbebfd37cdbd69cad43282ea191d8"
+        },
+        {
+          "component_id": "voice-reference-channel",
+          "material_selection": {
+            "candidate_id": "candidate-bd480f0badc3170177b375b827603f1abf5bf19da865a98a91f9ce6ef72f5179",
+            "material_id": "new26-aheng-voice"
+          },
+          "object_id": "asset-task-20261015-0003-aheng-voice-01",
+          "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f",
+          "role": "reference_audio",
+          "sha256": "487bba0fc91a340bf53ce54660d90d142466f2b85ca111555a42fdef482852ce"
+        }
+      ],
+      "outputs": [
+        {
+          "object_id": "asset-call-task-20261022-0001-m063-01",
+          "revision_id": "8c3d6f72c54d229f6fe3b2f6dbeea9fa1664f6e01a933c85c1fd3696f2074871"
+        }
+      ],
+      "fee": {
+        "amount": null,
+        "currency": null,
+        "status": "UNKNOWN - no per-call bill"
+      },
+      "thread_id": "skill_93129288-cd16-4d8c-a7cd-d902e82ca502",
+      "run_id": "skill_894427b0-253c-4d2d-aa1b-195003768f70",
+      "original": {
+        "id": "original",
+        "role": "original",
+        "file": "fd6a0a1bc60dfb7c0dcbc2ed6fb0fcae3db8e4753bb8d4be5eddc8f1e03a5268.mp4",
+        "sha256": "fd6a0a1bc60dfb7c0dcbc2ed6fb0fcae3db8e4753bb8d4be5eddc8f1e03a5268",
+        "bytes": 16077851,
+        "mime": "video/mp4",
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 20.042,
+        "has_audio": true,
+        "sample_rate": 32000,
+        "channels": 2
+      },
+      "streams": [
+        {
+          "codec_type": "video",
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 720,
+          "r_frame_rate": "1000000/41667",
+          "nb_frames": "481",
+          "duration": "20.041827"
+        },
+        {
+          "codec_type": "audio",
+          "codec_name": "aac",
+          "r_frame_rate": "0/0",
+          "nb_frames": "628",
+          "duration": "20.042000",
+          "sample_rate": "32000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "attempt": "m063-02",
+      "call": {
+        "object_id": "call-task-20261022-0001-m063-02",
+        "revision_id": "041ea6329b869afcb6b7686cb378c3ef79e277e161ca1c18a1f99a4954df7125"
+      },
+      "status": "completed",
+      "model": "Seedance_2.5",
+      "tool": "pippit-tool-cli",
+      "parameters": {
+        "aspect_ratio": "adaptive",
+        "generate_type": 0,
+        "resolution": "720p",
+        "task_type": "edit"
+      },
+      "requirement": {
+        "object_id": "new26-s004-q06-video",
+        "revision_id": "c070375ddc508103633c1f6ff264e59c700429e87ea99ad486f5ba6838ec3905"
+      },
+      "prompt_sha256": "5d5d9d2d1f43c6409bb5a75e44f29971592cd02b4e53f61472d5a93b4c037631",
+      "submission_sha256": "c8e54d486a43149195ae24ede41bf9a0e5f387b2e93683c6b105f6543e10fe5d",
+      "inputs": [
+        {
+          "component_id": "original",
+          "object_id": "asset-call-task-20261022-0001-m063-01",
+          "revision_id": "8c3d6f72c54d229f6fe3b2f6dbeea9fa1664f6e01a933c85c1fd3696f2074871",
+          "role": "source_video",
+          "sha256": "fd6a0a1bc60dfb7c0dcbc2ed6fb0fcae3db8e4753bb8d4be5eddc8f1e03a5268"
+        }
+      ],
+      "outputs": [
+        {
+          "object_id": "asset-call-task-20261022-0001-m063-02",
+          "revision_id": "389344ff465c7c8325ae309ec682e2680ec2d2416c06ca31920f16a740454e58"
+        }
+      ],
+      "fee": {
+        "amount": null,
+        "currency": null,
+        "status": "UNKNOWN - no per-call bill"
+      },
+      "thread_id": "skill_e95d24fb-1c25-4a5b-bdbe-e79aeb6838f7",
+      "run_id": "skill_50ace99b-097c-4499-911a-39e53b1ff19c",
+      "original": {
+        "id": "original",
+        "role": "original",
+        "file": "56268c236987c37e37ff981582872d63fc5ae6848bedab59822a6de03b30b486.mp4",
+        "sha256": "56268c236987c37e37ff981582872d63fc5ae6848bedab59822a6de03b30b486",
+        "bytes": 15799712,
+        "mime": "video/mp4",
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 20.042,
+        "has_audio": true,
+        "sample_rate": 32000,
+        "channels": 2
+      },
+      "streams": [
+        {
+          "codec_type": "video",
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 720,
+          "r_frame_rate": "1000000/41667",
+          "nb_frames": "481",
+          "duration": "20.041827"
+        },
+        {
+          "codec_type": "audio",
+          "codec_name": "aac",
+          "r_frame_rate": "0/0",
+          "nb_frames": "628",
+          "duration": "20.042000",
+          "sample_rate": "32000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "attempt": "m063-03",
+      "call": {
+        "object_id": "call-task-20261022-0001-m063-03",
+        "revision_id": "621757956ad626a5bceedb3e31eb186c9984363001a940ce0ddcd7590a719824"
+      },
+      "status": "completed",
+      "model": "seedance2.0_fast_vision",
+      "tool": "pippit-tool-cli",
+      "parameters": {
+        "aspect_ratio": "16:9",
+        "duration": 6,
+        "generate_type": 0,
+        "resolution": "720p",
+        "task_type": "reference"
+      },
+      "requirement": {
+        "object_id": "new26-s004-q06-video",
+        "revision_id": "c070375ddc508103633c1f6ff264e59c700429e87ea99ad486f5ba6838ec3905"
+      },
+      "prompt_sha256": "7ae9b5b4b7716178991da25780045769e8f0b046c3c09cbf369a65f3d0293c5a",
+      "submission_sha256": "af63aba40f9a0ab50e710969062367f30339c18974ae78006b893ae31ae6b3de",
+      "inputs": [
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-7e4532531dece1622ad128e853ee9d06597b3112bcda97aded96e50d1018242d",
+            "material_id": "new26-aheng-wet-overall"
+          },
+          "object_id": "asset-task-20261015-0003-aheng-wet-flare-01",
+          "revision_id": "31125e2539262f1d61c38ffc9ab53dab4e2ddd1d24f4f40b781f7c29540dba94",
+          "role": "reference_image",
+          "sha256": "1b8d38a52d480c2c5aa5a3ec232173ecd83ac908592edf781bea91f616fa98a4"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-e4662b01847b3d5d4f855f62ef79c3681dd415cd40f07c229009005cb318ef54",
+            "material_id": "new26-liji-wet-overall"
+          },
+          "object_id": "asset-task-20261015-0003-liji-wet-flare-01",
+          "revision_id": "254fe1fe77e05d4d0f597503a26d9991d1212df38759c437cb685449c853dc7c",
+          "role": "reference_image",
+          "sha256": "00cafe312c9aedae6d899049613048441038c04f52c5e53ad1ba66e2395190aa"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-6c6ffff276508d0aa4a5b2b6c29879c561fa9406e9cfab4dfa4a8c0b8c0c7891",
+            "material_id": "new26-zhou-identity"
+          },
+          "object_id": "asset-task-20261015-0003-zhou-identity-02",
+          "revision_id": "1e94b83f88dc304d82939785040a1fac6e7b06926a5a3f1e84e68325a3a41331",
+          "role": "reference_image",
+          "sha256": "08516761807f4d60f35a402dee81a44a2e95727fd29ea1adc89a083fe2680e3f"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-bd1d0fac902bbac84bb29b0cd9894dcb53763e7ba3548cd200f3c5104f7b0694",
+            "material_id": "new26-rice-shop-layout"
+          },
+          "object_id": "asset-task-20261015-0003-rice-shop-flare-01",
+          "revision_id": "d9aa2d9c60027a8afd786f760b49a5927fcba2d453e923afd8390dd8a03c3ab7",
+          "role": "reference_image",
+          "sha256": "e44e1e1d8f1d2be237a0104e08d48e8c71579e13302ba558d60b4214a21d710e"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-6a7abbf4410c9048e601d9fb0e6ec8ba5715bf80eb16dec7ee5d66ce3f32a784",
+            "material_id": "new26-rice-measure-identity"
+          },
+          "object_id": "asset-task-20261015-0003-rice-measure-local-01",
+          "revision_id": "ca8561e81f3f0c4c96bbf569a86b852eda5a30e01a0d066e3d7e25561a242318",
+          "role": "reference_image",
+          "sha256": "9433ee258af27aa9eda534ced41ac43a71df98a9d8ee0baa7d31e0058accbf2f"
+        }
+      ],
+      "outputs": [
+        {
+          "object_id": "asset-call-task-20261022-0001-m063-03",
+          "revision_id": "cff7989245058ca740a7d150ea896cb90bcd2bbeb0b87dc69757f8a87c16f344"
+        }
+      ],
+      "fee": {
+        "amount": null,
+        "currency": null,
+        "status": "UNKNOWN - no per-call bill"
+      },
+      "thread_id": "skill_a5e4f349-59a2-4838-9c38-8b793ad1a111",
+      "run_id": "skill_16ce9acb-a241-43c5-a28f-ee6d2939441c",
+      "original": {
+        "id": "original",
+        "role": "original",
+        "file": "12cb97bfaacb7dca529dbacf456a460484c2f763eeb8627b33e67df5749bba43.mp4",
+        "sha256": "12cb97bfaacb7dca529dbacf456a460484c2f763eeb8627b33e67df5749bba43",
+        "bytes": 1771498,
+        "mime": "video/mp4",
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 6.08,
+        "has_audio": true,
+        "sample_rate": 32000,
+        "channels": 2
+      },
+      "streams": [
+        {
+          "codec_type": "video",
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 720,
+          "r_frame_rate": "1000000/41667",
+          "nb_frames": "145",
+          "duration": "6.041715"
+        },
+        {
+          "codec_type": "audio",
+          "codec_name": "aac",
+          "r_frame_rate": "0/0",
+          "nb_frames": "191",
+          "duration": "6.080000",
+          "sample_rate": "32000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "attempt": "m064-01",
+      "call": {
+        "object_id": "call-task-20261022-0001-m064-01",
+        "revision_id": "ed414dc7a0fdea980932f04f8b047e76d5b229c65c344c7eef494d2d9c286d82"
+      },
+      "status": "completed",
+      "model": "Seedance_2.5",
+      "tool": "pippit-tool-cli",
+      "parameters": {
+        "aspect_ratio": "16:9",
+        "duration": 18,
+        "generate_type": 0,
+        "resolution": "720p",
+        "task_type": "reference"
+      },
+      "requirement": {
+        "object_id": "new26-s004-q07-video",
+        "revision_id": "1b6a297d4f76dcac84b4e5348d3f7e903a0579f7a9f4e5f689ad236755bb2502"
+      },
+      "prompt_sha256": "e400b9f293b479c786f371ccc73a61db531b20c2b2bc6440c429a847ca580914",
+      "submission_sha256": "4bd5c9b9349db0dbeab7020ceaf246bc13ad22d1d93e153627a2df7a71336a6a",
+      "inputs": [
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-7e4532531dece1622ad128e853ee9d06597b3112bcda97aded96e50d1018242d",
+            "material_id": "new26-aheng-wet-overall"
+          },
+          "object_id": "asset-task-20261015-0003-aheng-wet-flare-01",
+          "revision_id": "31125e2539262f1d61c38ffc9ab53dab4e2ddd1d24f4f40b781f7c29540dba94",
+          "role": "reference_image",
+          "sha256": "1b8d38a52d480c2c5aa5a3ec232173ecd83ac908592edf781bea91f616fa98a4"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-e4662b01847b3d5d4f855f62ef79c3681dd415cd40f07c229009005cb318ef54",
+            "material_id": "new26-liji-wet-overall"
+          },
+          "object_id": "asset-task-20261015-0003-liji-wet-flare-01",
+          "revision_id": "254fe1fe77e05d4d0f597503a26d9991d1212df38759c437cb685449c853dc7c",
+          "role": "reference_image",
+          "sha256": "00cafe312c9aedae6d899049613048441038c04f52c5e53ad1ba66e2395190aa"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-93570f4a7c962c05c0d84f8bf83be39ab3f471ffca5c7e7279007a1ca4d81286",
+            "material_id": "new26-river-street-layout"
+          },
+          "object_id": "asset-task-20261015-0003-river-street-local-01",
+          "revision_id": "a2ac549d3e4beda16c30e1fe7bc216aa4a06628e05eefd2ea5b4b218c41fa7ee",
+          "role": "reference_image",
+          "sha256": "98246eb5668098a09dbf10879bd7d434738e53d81667620387fe52e97952d873"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-0ddf0ff608e583ce628dd84f6af9b2523b455dbbd54ce9c35635b9c6d4faa2b5",
+            "material_id": "new26-book-torn-overall"
+          },
+          "object_id": "asset-task-20261015-0003-book-torn-local-01",
+          "revision_id": "85c96ffe4e5b7145fdc7912922fe909f9222231356e8878e4c968fd127fb0f95",
+          "role": "reference_image",
+          "sha256": "246e90b0be1cc8e272df2f277273098aae0025bfe3bd2a3e603438ca41abbb5a"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-19e2490dddb43f422d650a403404a40b6f8bd96a74cebfbd472092180071237d",
+            "material_id": "new26-rice-bag-identity"
+          },
+          "object_id": "asset-task-20261015-0003-rice-bag-identity-01",
+          "revision_id": "942e719bd334282f81409cbb210938c1893de2f79c4c012ed25126254b2779bb",
+          "role": "reference_image",
+          "sha256": "1cb0cea7788bd57c7d56e04c810f74760241995960c18f37d3951a7436274021"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-bd1d0fac902bbac84bb29b0cd9894dcb53763e7ba3548cd200f3c5104f7b0694",
+            "material_id": "new26-rice-shop-layout"
+          },
+          "object_id": "asset-task-20261015-0003-rice-shop-flare-01",
+          "revision_id": "d9aa2d9c60027a8afd786f760b49a5927fcba2d453e923afd8390dd8a03c3ab7",
+          "role": "reference_image",
+          "sha256": "e44e1e1d8f1d2be237a0104e08d48e8c71579e13302ba558d60b4214a21d710e"
+        },
+        {
+          "component_id": "original",
+          "object_id": "asset-call-task-20261022-0001-m063-01",
+          "revision_id": "8c3d6f72c54d229f6fe3b2f6dbeea9fa1664f6e01a933c85c1fd3696f2074871",
+          "role": "reference_video",
+          "sha256": "fd6a0a1bc60dfb7c0dcbc2ed6fb0fcae3db8e4753bb8d4be5eddc8f1e03a5268"
+        },
+        {
+          "component_id": "voice-reference-channel",
+          "material_selection": {
+            "candidate_id": "candidate-acb25dee1133a431f7c7bbc60c526dc102d8d4defaa6c687988c17b27fa86209",
+            "material_id": "new26-liji-voice"
+          },
+          "object_id": "asset-task-20261015-0003-liji-voice-03",
+          "revision_id": "cda0e1a6b057a4a7fe0eaa63418602ada7da037e0f838c789cc53e5ede5ac035",
+          "role": "reference_audio",
+          "sha256": "c4d5dd0aaa587dbfa9938d7123542b174b286d4956fc051b2f8f7c9582a14a73"
+        },
+        {
+          "component_id": "voice-reference-channel",
+          "material_selection": {
+            "candidate_id": "candidate-bd480f0badc3170177b375b827603f1abf5bf19da865a98a91f9ce6ef72f5179",
+            "material_id": "new26-aheng-voice"
+          },
+          "object_id": "asset-task-20261015-0003-aheng-voice-01",
+          "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f",
+          "role": "reference_audio",
+          "sha256": "487bba0fc91a340bf53ce54660d90d142466f2b85ca111555a42fdef482852ce"
+        }
+      ],
+      "outputs": [
+        {
+          "object_id": "asset-call-task-20261022-0001-m064-01",
+          "revision_id": "7d23ae42fa0f02cdb739a87cfe5af3e7d731ae10f008d33899d2b081e9c7855d"
+        }
+      ],
+      "fee": {
+        "amount": null,
+        "currency": null,
+        "status": "UNKNOWN - no per-call bill"
+      },
+      "thread_id": "skill_b86bfebf-d452-4230-9ebc-91553f5f03f0",
+      "run_id": "skill_851702a8-6595-413f-8fd1-f5983b011750",
+      "original": {
+        "id": "original",
+        "role": "original",
+        "file": "21731294175b3d3174e07908158f168e9ead2799b1e00c434d38f8f1548cf2d3.mp4",
+        "sha256": "21731294175b3d3174e07908158f168e9ead2799b1e00c434d38f8f1548cf2d3",
+        "bytes": 20768537,
+        "mime": "video/mp4",
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 18.05,
+        "has_audio": true,
+        "sample_rate": 32000,
+        "channels": 2
+      },
+      "streams": [
+        {
+          "codec_type": "video",
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 720,
+          "r_frame_rate": "1000000/41667",
+          "nb_frames": "433",
+          "duration": "18.041811"
+        },
+        {
+          "codec_type": "audio",
+          "codec_name": "aac",
+          "r_frame_rate": "0/0",
+          "nb_frames": "566",
+          "duration": "18.050000",
+          "sample_rate": "32000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "attempt": "m065-01",
+      "call": {
+        "object_id": "call-task-20261022-0001-m065-01",
+        "revision_id": "5db8d60cbb54e03813a156764bad40c8eb338255a64cec5e4dc158f31c454145"
+      },
+      "status": "completed",
+      "model": "Seedance_2.5",
+      "tool": "pippit-tool-cli",
+      "parameters": {
+        "aspect_ratio": "16:9",
+        "duration": 24,
+        "generate_type": 0,
+        "resolution": "720p",
+        "task_type": "reference"
+      },
+      "requirement": {
+        "object_id": "new26-s004-q08-video",
+        "revision_id": "572cfb7f2ccf7f0cd5b979244aa5e68eec9fd4257283ece25c1db3ad3d5b4d67"
+      },
+      "prompt_sha256": "cfa80d3a6295bf7317e6d3e249053a2ab097e77efc966fefe86ebb1b81ffd2da",
+      "submission_sha256": "b9135e7c7874d4153c373d43fc99377a5bc7cff39a3f1ac36b841a5a59fc4a76",
+      "inputs": [
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-7e4532531dece1622ad128e853ee9d06597b3112bcda97aded96e50d1018242d",
+            "material_id": "new26-aheng-wet-overall"
+          },
+          "object_id": "asset-task-20261015-0003-aheng-wet-flare-01",
+          "revision_id": "31125e2539262f1d61c38ffc9ab53dab4e2ddd1d24f4f40b781f7c29540dba94",
+          "role": "reference_image",
+          "sha256": "1b8d38a52d480c2c5aa5a3ec232173ecd83ac908592edf781bea91f616fa98a4"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-e4662b01847b3d5d4f855f62ef79c3681dd415cd40f07c229009005cb318ef54",
+            "material_id": "new26-liji-wet-overall"
+          },
+          "object_id": "asset-task-20261015-0003-liji-wet-flare-01",
+          "revision_id": "254fe1fe77e05d4d0f597503a26d9991d1212df38759c437cb685449c853dc7c",
+          "role": "reference_image",
+          "sha256": "00cafe312c9aedae6d899049613048441038c04f52c5e53ad1ba66e2395190aa"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-93570f4a7c962c05c0d84f8bf83be39ab3f471ffca5c7e7279007a1ca4d81286",
+            "material_id": "new26-river-street-layout"
+          },
+          "object_id": "asset-task-20261015-0003-river-street-local-01",
+          "revision_id": "a2ac549d3e4beda16c30e1fe7bc216aa4a06628e05eefd2ea5b4b218c41fa7ee",
+          "role": "reference_image",
+          "sha256": "98246eb5668098a09dbf10879bd7d434738e53d81667620387fe52e97952d873"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-0ddf0ff608e583ce628dd84f6af9b2523b455dbbd54ce9c35635b9c6d4faa2b5",
+            "material_id": "new26-book-torn-overall"
+          },
+          "object_id": "asset-task-20261015-0003-book-torn-local-01",
+          "revision_id": "85c96ffe4e5b7145fdc7912922fe909f9222231356e8878e4c968fd127fb0f95",
+          "role": "reference_image",
+          "sha256": "246e90b0be1cc8e272df2f277273098aae0025bfe3bd2a3e603438ca41abbb5a"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-19e2490dddb43f422d650a403404a40b6f8bd96a74cebfbd472092180071237d",
+            "material_id": "new26-rice-bag-identity"
+          },
+          "object_id": "asset-task-20261015-0003-rice-bag-identity-01",
+          "revision_id": "942e719bd334282f81409cbb210938c1893de2f79c4c012ed25126254b2779bb",
+          "role": "reference_image",
+          "sha256": "1cb0cea7788bd57c7d56e04c810f74760241995960c18f37d3951a7436274021"
+        },
+        {
+          "component_id": "original",
+          "object_id": "asset-call-task-20261022-0001-m064-01",
+          "revision_id": "7d23ae42fa0f02cdb739a87cfe5af3e7d731ae10f008d33899d2b081e9c7855d",
+          "role": "reference_video",
+          "sha256": "21731294175b3d3174e07908158f168e9ead2799b1e00c434d38f8f1548cf2d3"
+        },
+        {
+          "component_id": "voice-reference-channel",
+          "material_selection": {
+            "candidate_id": "candidate-bd480f0badc3170177b375b827603f1abf5bf19da865a98a91f9ce6ef72f5179",
+            "material_id": "new26-aheng-voice"
+          },
+          "object_id": "asset-task-20261015-0003-aheng-voice-01",
+          "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f",
+          "role": "reference_audio",
+          "sha256": "487bba0fc91a340bf53ce54660d90d142466f2b85ca111555a42fdef482852ce"
+        },
+        {
+          "component_id": "voice-reference-channel",
+          "material_selection": {
+            "candidate_id": "candidate-acb25dee1133a431f7c7bbc60c526dc102d8d4defaa6c687988c17b27fa86209",
+            "material_id": "new26-liji-voice"
+          },
+          "object_id": "asset-task-20261015-0003-liji-voice-03",
+          "revision_id": "cda0e1a6b057a4a7fe0eaa63418602ada7da037e0f838c789cc53e5ede5ac035",
+          "role": "reference_audio",
+          "sha256": "c4d5dd0aaa587dbfa9938d7123542b174b286d4956fc051b2f8f7c9582a14a73"
+        }
+      ],
+      "outputs": [
+        {
+          "object_id": "asset-call-task-20261022-0001-m065-01",
+          "revision_id": "a9ccfdcd9242a0ed6ec06c30bc6e79313b2c971760b3f041b8167f8483cbce0b"
+        }
+      ],
+      "fee": {
+        "amount": null,
+        "currency": null,
+        "status": "UNKNOWN - no per-call bill"
+      },
+      "thread_id": "skill_5d735da4-c85f-4608-bb21-1d05a86d2cfa",
+      "run_id": "skill_a7ce6c12-37ba-49d1-8cc0-b6b7015e2249",
+      "original": {
+        "id": "original",
+        "role": "original",
+        "file": "0ff1f3b4ada34e42ed05a1199a75313fa7425748adc126e971f3f62d25fd1c4b.mp4",
+        "sha256": "0ff1f3b4ada34e42ed05a1199a75313fa7425748adc126e971f3f62d25fd1c4b",
+        "bytes": 20123815,
+        "mime": "video/mp4",
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 24.042,
+        "has_audio": true,
+        "sample_rate": 32000,
+        "channels": 2
+      },
+      "streams": [
+        {
+          "codec_type": "video",
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 720,
+          "r_frame_rate": "1000000/41667",
+          "nb_frames": "577",
+          "duration": "24.041859"
+        },
+        {
+          "codec_type": "audio",
+          "codec_name": "aac",
+          "r_frame_rate": "0/0",
+          "nb_frames": "753",
+          "duration": "24.042000",
+          "sample_rate": "32000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "attempt": "m066-01",
+      "call": {
+        "object_id": "call-task-20261022-0001-m066-01",
+        "revision_id": "fd77fd7f25987e67c631f27d348d36c372fe84b046888376a3b7ab7c1d0a48e0"
+      },
+      "status": "completed",
+      "model": "Seedance_2.5",
+      "tool": "pippit-tool-cli",
+      "parameters": {
+        "aspect_ratio": "16:9",
+        "duration": 23,
+        "generate_type": 0,
+        "resolution": "720p",
+        "task_type": "reference"
+      },
+      "requirement": {
+        "object_id": "new26-s004-q09-video",
+        "revision_id": "731ebd57d0c82ee91c72e9a77e119d57abe0660468d21824fa13c5b72884cc18"
+      },
+      "prompt_sha256": "56a2642e65db99aadda596356e62f8113cc8c806174f414cbf75aa650de4c8c6",
+      "submission_sha256": "e619fa11f6a60f4c6141655c2af7bedb3f5941172b4a40a3d3023744402f889f",
+      "inputs": [
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-7e4532531dece1622ad128e853ee9d06597b3112bcda97aded96e50d1018242d",
+            "material_id": "new26-aheng-wet-overall"
+          },
+          "object_id": "asset-task-20261015-0003-aheng-wet-flare-01",
+          "revision_id": "31125e2539262f1d61c38ffc9ab53dab4e2ddd1d24f4f40b781f7c29540dba94",
+          "role": "reference_image",
+          "sha256": "1b8d38a52d480c2c5aa5a3ec232173ecd83ac908592edf781bea91f616fa98a4"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-e4662b01847b3d5d4f855f62ef79c3681dd415cd40f07c229009005cb318ef54",
+            "material_id": "new26-liji-wet-overall"
+          },
+          "object_id": "asset-task-20261015-0003-liji-wet-flare-01",
+          "revision_id": "254fe1fe77e05d4d0f597503a26d9991d1212df38759c437cb685449c853dc7c",
+          "role": "reference_image",
+          "sha256": "00cafe312c9aedae6d899049613048441038c04f52c5e53ad1ba66e2395190aa"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-93570f4a7c962c05c0d84f8bf83be39ab3f471ffca5c7e7279007a1ca4d81286",
+            "material_id": "new26-river-street-layout"
+          },
+          "object_id": "asset-task-20261015-0003-river-street-local-01",
+          "revision_id": "a2ac549d3e4beda16c30e1fe7bc216aa4a06628e05eefd2ea5b4b218c41fa7ee",
+          "role": "reference_image",
+          "sha256": "98246eb5668098a09dbf10879bd7d434738e53d81667620387fe52e97952d873"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-0ddf0ff608e583ce628dd84f6af9b2523b455dbbd54ce9c35635b9c6d4faa2b5",
+            "material_id": "new26-book-torn-overall"
+          },
+          "object_id": "asset-task-20261015-0003-book-torn-local-01",
+          "revision_id": "85c96ffe4e5b7145fdc7912922fe909f9222231356e8878e4c968fd127fb0f95",
+          "role": "reference_image",
+          "sha256": "246e90b0be1cc8e272df2f277273098aae0025bfe3bd2a3e603438ca41abbb5a"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-19e2490dddb43f422d650a403404a40b6f8bd96a74cebfbd472092180071237d",
+            "material_id": "new26-rice-bag-identity"
+          },
+          "object_id": "asset-task-20261015-0003-rice-bag-identity-01",
+          "revision_id": "942e719bd334282f81409cbb210938c1893de2f79c4c012ed25126254b2779bb",
+          "role": "reference_image",
+          "sha256": "1cb0cea7788bd57c7d56e04c810f74760241995960c18f37d3951a7436274021"
+        },
+        {
+          "component_id": "original",
+          "object_id": "asset-call-task-20261022-0001-m065-01",
+          "revision_id": "a9ccfdcd9242a0ed6ec06c30bc6e79313b2c971760b3f041b8167f8483cbce0b",
+          "role": "reference_video",
+          "sha256": "0ff1f3b4ada34e42ed05a1199a75313fa7425748adc126e971f3f62d25fd1c4b"
+        },
+        {
+          "component_id": "voice-reference-channel",
+          "material_selection": {
+            "candidate_id": "candidate-bd480f0badc3170177b375b827603f1abf5bf19da865a98a91f9ce6ef72f5179",
+            "material_id": "new26-aheng-voice"
+          },
+          "object_id": "asset-task-20261015-0003-aheng-voice-01",
+          "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f",
+          "role": "reference_audio",
+          "sha256": "487bba0fc91a340bf53ce54660d90d142466f2b85ca111555a42fdef482852ce"
+        }
+      ],
+      "outputs": [
+        {
+          "object_id": "asset-call-task-20261022-0001-m066-01",
+          "revision_id": "744746e3fcf1d300b5b45db17c4d9b56e893371ce82a29ddcce808a73a19ad37"
+        }
+      ],
+      "fee": {
+        "amount": null,
+        "currency": null,
+        "status": "UNKNOWN - no per-call bill"
+      },
+      "thread_id": "skill_9a1dd451-f451-4de8-bd38-53274f31a49c",
+      "run_id": "skill_7df9a841-888f-4a2a-9e06-d89058c6f956",
+      "original": {
+        "id": "original",
+        "role": "original",
+        "file": "8710df2a34ff33043fc2c282c14279b1bd6b5338966fe3cc0ef0b7633e36f03d.mp4",
+        "sha256": "8710df2a34ff33043fc2c282c14279b1bd6b5338966fe3cc0ef0b7633e36f03d",
+        "bytes": 15507258,
+        "mime": "video/mp4",
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 23.042,
+        "has_audio": true,
+        "sample_rate": 32000,
+        "channels": 2
+      },
+      "streams": [
+        {
+          "codec_type": "video",
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 720,
+          "r_frame_rate": "1000000/41667",
+          "nb_frames": "553",
+          "duration": "23.041851"
+        },
+        {
+          "codec_type": "audio",
+          "codec_name": "aac",
+          "r_frame_rate": "0/0",
+          "nb_frames": "722",
+          "duration": "23.042000",
+          "sample_rate": "32000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "attempt": "m067-01",
+      "call": {
+        "object_id": "call-task-20261022-0001-m067-01",
+        "revision_id": "69aa0363038f42cb0c583492a9d58eae32d94aba68eb2895d586a055420563fc"
+      },
+      "status": "completed",
+      "model": "Seedance_2.5",
+      "tool": "pippit-tool-cli",
+      "parameters": {
+        "aspect_ratio": "16:9",
+        "duration": 15,
+        "generate_type": 0,
+        "resolution": "720p",
+        "task_type": "reference"
+      },
+      "requirement": {
+        "object_id": "new26-s004-q10-video",
+        "revision_id": "0fcee1586bf3bbde9b5933ce998f19dfd23f414c960fb2a1b669a941cec29b9c"
+      },
+      "prompt_sha256": "f32cf3d9f821c200df667b4cd32fdc5a4d5e17047d961296b1d207c4beca310c",
+      "submission_sha256": "18f22ca696018b4d68612160ddf4817b4f7191972cab9c590c8513180973f8c9",
+      "inputs": [
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-7e4532531dece1622ad128e853ee9d06597b3112bcda97aded96e50d1018242d",
+            "material_id": "new26-aheng-wet-overall"
+          },
+          "object_id": "asset-task-20261015-0003-aheng-wet-flare-01",
+          "revision_id": "31125e2539262f1d61c38ffc9ab53dab4e2ddd1d24f4f40b781f7c29540dba94",
+          "role": "reference_image",
+          "sha256": "1b8d38a52d480c2c5aa5a3ec232173ecd83ac908592edf781bea91f616fa98a4"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-e4662b01847b3d5d4f855f62ef79c3681dd415cd40f07c229009005cb318ef54",
+            "material_id": "new26-liji-wet-overall"
+          },
+          "object_id": "asset-task-20261015-0003-liji-wet-flare-01",
+          "revision_id": "254fe1fe77e05d4d0f597503a26d9991d1212df38759c437cb685449c853dc7c",
+          "role": "reference_image",
+          "sha256": "00cafe312c9aedae6d899049613048441038c04f52c5e53ad1ba66e2395190aa"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-93570f4a7c962c05c0d84f8bf83be39ab3f471ffca5c7e7279007a1ca4d81286",
+            "material_id": "new26-river-street-layout"
+          },
+          "object_id": "asset-task-20261015-0003-river-street-local-01",
+          "revision_id": "a2ac549d3e4beda16c30e1fe7bc216aa4a06628e05eefd2ea5b4b218c41fa7ee",
+          "role": "reference_image",
+          "sha256": "98246eb5668098a09dbf10879bd7d434738e53d81667620387fe52e97952d873"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-0ddf0ff608e583ce628dd84f6af9b2523b455dbbd54ce9c35635b9c6d4faa2b5",
+            "material_id": "new26-book-torn-overall"
+          },
+          "object_id": "asset-task-20261015-0003-book-torn-local-01",
+          "revision_id": "85c96ffe4e5b7145fdc7912922fe909f9222231356e8878e4c968fd127fb0f95",
+          "role": "reference_image",
+          "sha256": "246e90b0be1cc8e272df2f277273098aae0025bfe3bd2a3e603438ca41abbb5a"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-19e2490dddb43f422d650a403404a40b6f8bd96a74cebfbd472092180071237d",
+            "material_id": "new26-rice-bag-identity"
+          },
+          "object_id": "asset-task-20261015-0003-rice-bag-identity-01",
+          "revision_id": "942e719bd334282f81409cbb210938c1893de2f79c4c012ed25126254b2779bb",
+          "role": "reference_image",
+          "sha256": "1cb0cea7788bd57c7d56e04c810f74760241995960c18f37d3951a7436274021"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-bd1d0fac902bbac84bb29b0cd9894dcb53763e7ba3548cd200f3c5104f7b0694",
+            "material_id": "new26-rice-shop-layout"
+          },
+          "object_id": "asset-task-20261015-0003-rice-shop-flare-01",
+          "revision_id": "d9aa2d9c60027a8afd786f760b49a5927fcba2d453e923afd8390dd8a03c3ab7",
+          "role": "reference_image",
+          "sha256": "e44e1e1d8f1d2be237a0104e08d48e8c71579e13302ba558d60b4214a21d710e"
+        },
+        {
+          "component_id": "original",
+          "object_id": "asset-call-task-20261022-0001-m066-01",
+          "revision_id": "744746e3fcf1d300b5b45db17c4d9b56e893371ce82a29ddcce808a73a19ad37",
+          "role": "reference_video",
+          "sha256": "8710df2a34ff33043fc2c282c14279b1bd6b5338966fe3cc0ef0b7633e36f03d"
+        },
+        {
+          "component_id": "voice-reference-channel",
+          "material_selection": {
+            "candidate_id": "candidate-bd480f0badc3170177b375b827603f1abf5bf19da865a98a91f9ce6ef72f5179",
+            "material_id": "new26-aheng-voice"
+          },
+          "object_id": "asset-task-20261015-0003-aheng-voice-01",
+          "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f",
+          "role": "reference_audio",
+          "sha256": "487bba0fc91a340bf53ce54660d90d142466f2b85ca111555a42fdef482852ce"
+        },
+        {
+          "component_id": "voice-reference-channel",
+          "material_selection": {
+            "candidate_id": "candidate-acb25dee1133a431f7c7bbc60c526dc102d8d4defaa6c687988c17b27fa86209",
+            "material_id": "new26-liji-voice"
+          },
+          "object_id": "asset-task-20261015-0003-liji-voice-03",
+          "revision_id": "cda0e1a6b057a4a7fe0eaa63418602ada7da037e0f838c789cc53e5ede5ac035",
+          "role": "reference_audio",
+          "sha256": "c4d5dd0aaa587dbfa9938d7123542b174b286d4956fc051b2f8f7c9582a14a73"
+        }
+      ],
+      "outputs": [
+        {
+          "object_id": "asset-call-task-20261022-0001-m067-01",
+          "revision_id": "1f7916c8c1cee9146d7f6c11666c952f6242d5a8282594c3c814a353ec625998"
+        }
+      ],
+      "fee": {
+        "amount": null,
+        "currency": null,
+        "status": "UNKNOWN - no per-call bill"
+      },
+      "thread_id": "skill_c0e5ad25-6020-492b-b93d-b8ec93c71b61",
+      "run_id": "skill_01d33ff0-21a3-4f4b-abee-91c242a9c2e8",
+      "original": {
+        "id": "original",
+        "role": "original",
+        "file": "9614eda584241cbc79e6e0cf77f8f3dc3c39d5cc8db7a1c93fb0dfe3b2217f1a.mp4",
+        "sha256": "9614eda584241cbc79e6e0cf77f8f3dc3c39d5cc8db7a1c93fb0dfe3b2217f1a",
+        "bytes": 9647293,
+        "mime": "video/mp4",
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 15.042,
+        "has_audio": true,
+        "sample_rate": 32000,
+        "channels": 2
+      },
+      "streams": [
+        {
+          "codec_type": "video",
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 720,
+          "r_frame_rate": "1000000/41667",
+          "nb_frames": "361",
+          "duration": "15.041787"
+        },
+        {
+          "codec_type": "audio",
+          "codec_name": "aac",
+          "r_frame_rate": "0/0",
+          "nb_frames": "472",
+          "duration": "15.042000",
+          "sample_rate": "32000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "attempt": "m067-02",
+      "call": {
+        "object_id": "call-task-20261022-0001-m067-02",
+        "revision_id": "008c4cc7fa6e4ddf7459537edc8197939f8b9d2f2172af4a1b1997d08709e424"
+      },
+      "status": "completed",
+      "model": "seedance2.0_fast_vision",
+      "tool": "pippit-tool-cli",
+      "parameters": {
+        "aspect_ratio": "16:9",
+        "duration": 15,
+        "generate_type": 0,
+        "resolution": "720p",
+        "task_type": "reference"
+      },
+      "requirement": {
+        "object_id": "new26-s004-q10-video",
+        "revision_id": "0fcee1586bf3bbde9b5933ce998f19dfd23f414c960fb2a1b669a941cec29b9c"
+      },
+      "prompt_sha256": "93d8c2dacad6f3c56e6a951a9c1d97cf7e9ff6d0bb4edebb3520a47636ff4085",
+      "submission_sha256": "819806b0d08995b9c8aa265f1c31243b59dc2a19ff13534ef8a60acea02e5f51",
+      "inputs": [
+        {
+          "component_id": "original",
+          "object_id": "asset-task-20261022-0001-m066-tail-000551",
+          "revision_id": "14647f38c1c102f0670bc95cce2a7ca72328e0033fdac58ce4e31d9469704879",
+          "role": "reference_image",
+          "sha256": "1844f5e3a291c73105aef2ec5d1086cc87882d561e18f2c08cd0531d9afe1059"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-7e4532531dece1622ad128e853ee9d06597b3112bcda97aded96e50d1018242d",
+            "material_id": "new26-aheng-wet-overall"
+          },
+          "object_id": "asset-task-20261015-0003-aheng-wet-flare-01",
+          "revision_id": "31125e2539262f1d61c38ffc9ab53dab4e2ddd1d24f4f40b781f7c29540dba94",
+          "role": "reference_image",
+          "sha256": "1b8d38a52d480c2c5aa5a3ec232173ecd83ac908592edf781bea91f616fa98a4"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-e4662b01847b3d5d4f855f62ef79c3681dd415cd40f07c229009005cb318ef54",
+            "material_id": "new26-liji-wet-overall"
+          },
+          "object_id": "asset-task-20261015-0003-liji-wet-flare-01",
+          "revision_id": "254fe1fe77e05d4d0f597503a26d9991d1212df38759c437cb685449c853dc7c",
+          "role": "reference_image",
+          "sha256": "00cafe312c9aedae6d899049613048441038c04f52c5e53ad1ba66e2395190aa"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-19e2490dddb43f422d650a403404a40b6f8bd96a74cebfbd472092180071237d",
+            "material_id": "new26-rice-bag-identity"
+          },
+          "object_id": "asset-task-20261015-0003-rice-bag-identity-01",
+          "revision_id": "942e719bd334282f81409cbb210938c1893de2f79c4c012ed25126254b2779bb",
+          "role": "reference_image",
+          "sha256": "1cb0cea7788bd57c7d56e04c810f74760241995960c18f37d3951a7436274021"
+        },
+        {
+          "component_id": "voice-reference-channel",
+          "material_selection": {
+            "candidate_id": "candidate-bd480f0badc3170177b375b827603f1abf5bf19da865a98a91f9ce6ef72f5179",
+            "material_id": "new26-aheng-voice"
+          },
+          "object_id": "asset-task-20261015-0003-aheng-voice-01",
+          "revision_id": "ede6fa1f0c58150ba9af899bd85ff5c38da77e96d68fbec1f44bd2ba1833039f",
+          "role": "reference_audio",
+          "sha256": "487bba0fc91a340bf53ce54660d90d142466f2b85ca111555a42fdef482852ce"
+        },
+        {
+          "component_id": "voice-reference-channel",
+          "material_selection": {
+            "candidate_id": "candidate-acb25dee1133a431f7c7bbc60c526dc102d8d4defaa6c687988c17b27fa86209",
+            "material_id": "new26-liji-voice"
+          },
+          "object_id": "asset-task-20261015-0003-liji-voice-03",
+          "revision_id": "cda0e1a6b057a4a7fe0eaa63418602ada7da037e0f838c789cc53e5ede5ac035",
+          "role": "reference_audio",
+          "sha256": "c4d5dd0aaa587dbfa9938d7123542b174b286d4956fc051b2f8f7c9582a14a73"
+        }
+      ],
+      "outputs": [
+        {
+          "object_id": "asset-call-task-20261022-0001-m067-02",
+          "revision_id": "743f873faf37358e280de42967d763aa5c264353859d67259ec5085aca8ff299"
+        }
+      ],
+      "fee": {
+        "amount": null,
+        "currency": null,
+        "status": "UNKNOWN - no per-call bill"
+      },
+      "thread_id": "skill_d63b26ad-ab99-4825-aca6-6499c9cd374f",
+      "run_id": "skill_6b2af767-0f26-4758-b3f3-5673f2bdce5e",
+      "original": {
+        "id": "original",
+        "role": "original",
+        "file": "b526adf95d81ed4210e816841b330ea11e1a66be0c550139276dbc9d53083ee2.mp4",
+        "sha256": "b526adf95d81ed4210e816841b330ea11e1a66be0c550139276dbc9d53083ee2",
+        "bytes": 5891882,
+        "mime": "video/mp4",
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 15.104,
+        "has_audio": true,
+        "sample_rate": 32000,
+        "channels": 2
+      },
+      "streams": [
+        {
+          "codec_type": "video",
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 720,
+          "r_frame_rate": "1000000/41667",
+          "nb_frames": "361",
+          "duration": "15.041787"
+        },
+        {
+          "codec_type": "audio",
+          "codec_name": "aac",
+          "r_frame_rate": "0/0",
+          "nb_frames": "473",
+          "duration": "15.104000",
+          "sample_rate": "32000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "attempt": "m068-01",
+      "call": {
+        "object_id": "call-task-20261022-0001-m068-01",
+        "revision_id": "b4a673c2c9771c3d388ac1067f6d938035319b0499df881af85ac878787a40d2"
+      },
+      "status": "completed",
+      "model": "seedance2.0_fast_vision",
+      "tool": "pippit-tool-cli",
+      "parameters": {
+        "aspect_ratio": "16:9",
+        "duration": 8,
+        "generate_type": 0,
+        "resolution": "720p",
+        "task_type": "reference"
+      },
+      "requirement": {
+        "object_id": "new26-s003-q01-video",
+        "revision_id": "bd9f29fb566c14a4bffe7309c9f80c85d2b02c018f578735fcb95ad79d093c40"
+      },
+      "prompt_sha256": "0d6c482e60bc4e591b3da2b3d590bacafd70358ddca851155442fe938b3cf76b",
+      "submission_sha256": "e3a0dee77f1240b0be021e21979421f0fca866c5e2e874777aace7553c5b9f7f",
+      "inputs": [
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-e9a98aba7feffbae5f3b9e2308755d47fbd366f8f42200a3a1c04c38d39f114c",
+            "material_id": "new26-aheng-identity"
+          },
+          "object_id": "asset-task-20261015-0003-aheng-identity-02",
+          "revision_id": "ee6e0f97e99928fd786b1e3e323e519ce0d69cc3f719291946b18c4d79a1c3fc",
+          "role": "reference_image",
+          "sha256": "a4dec09a9ac0e4b320079e846bc0f513d78bf82e409add0553e0a90a989be28f"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-8bb45d3cefb9ca106168cddf2a2d59eb5cc27d11c12f760c758240218f57f8d2",
+            "material_id": "new26-prop-house-layout"
+          },
+          "object_id": "asset-task-20261015-0003-prop-house-local-01",
+          "revision_id": "c966743d8d703ec0f87a9c2dadebf0c78ae4fafb9d9c4dd81d29e678f8971880",
+          "role": "reference_image",
+          "sha256": "3fa2169deb4e6e0388c92ba9694d4402ec0829787c67412c8b8ef4954e640caa"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-e1e0d8d223df465bb9b87abce86862424d3125c92678062c3d6321e09e647de2",
+            "material_id": "new26-songbook-identity"
+          },
+          "object_id": "asset-task-20261015-0003-songbook-identity-02",
+          "revision_id": "e741030b764d7d41431a96629647f5edf14f1016564216872f69a72f9bc45081",
+          "role": "reference_image",
+          "sha256": "d6f71f27ee9d2e86bbdb21c8d52a426a3ce6e1417d87e3b91c161b1fcb87236c"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-19e2490dddb43f422d650a403404a40b6f8bd96a74cebfbd472092180071237d",
+            "material_id": "new26-rice-bag-identity"
+          },
+          "object_id": "asset-task-20261015-0003-rice-bag-identity-01",
+          "revision_id": "942e719bd334282f81409cbb210938c1893de2f79c4c012ed25126254b2779bb",
+          "role": "reference_image",
+          "sha256": "1cb0cea7788bd57c7d56e04c810f74760241995960c18f37d3951a7436274021"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-db966b2610b1dc63253350953eece56e63c3d4e9cc46c7d47bba3c2b352cda42",
+            "material_id": "new26-theatre-box-identity"
+          },
+          "object_id": "asset-task-20261015-0003-theatre-box-identity-02",
+          "revision_id": "c09375f02b8faea8c68720b1143385b852b5c57a252eb6096f10284bc921a2e9",
+          "role": "reference_image",
+          "sha256": "c43c63746af16fb163cce557669f74a79784c74e605fe82363ab6806a1bb4c14"
+        }
+      ],
+      "outputs": [
+        {
+          "object_id": "asset-call-task-20261022-0001-m068-01",
+          "revision_id": "2d307fc0032d10bd46b33a1ead9e415fb01800138a7397f81077fe733ba1d78b"
+        }
+      ],
+      "fee": {
+        "amount": null,
+        "currency": null,
+        "status": "UNKNOWN - no per-call bill"
+      },
+      "thread_id": "skill_964a73a4-ad26-4240-b5f2-e1b50a1bfe6a",
+      "run_id": "skill_6ac69ab6-3608-478a-b5bc-c40a6fbc1aae",
+      "original": {
+        "id": "original",
+        "role": "original",
+        "file": "3f50f4edd1086dcf5025ea2a3029aa9a5f01307589e642c333b20d1fd9fc204c.mp4",
+        "sha256": "3f50f4edd1086dcf5025ea2a3029aa9a5f01307589e642c333b20d1fd9fc204c",
+        "bytes": 3567008,
+        "mime": "video/mp4",
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 8.096,
+        "has_audio": true,
+        "sample_rate": 32000,
+        "channels": 2
+      },
+      "streams": [
+        {
+          "codec_type": "video",
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 720,
+          "r_frame_rate": "1000000/41667",
+          "nb_frames": "193",
+          "duration": "8.041731"
+        },
+        {
+          "codec_type": "audio",
+          "codec_name": "aac",
+          "r_frame_rate": "0/0",
+          "nb_frames": "254",
+          "duration": "8.096000",
+          "sample_rate": "32000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "attempt": "m068-02",
+      "call": {
+        "object_id": "call-task-20261022-0001-m068-02",
+        "revision_id": "170c39c8716ca9180bfb80cdc95b7b83139972031ef64f859eb484f419f6fa24"
+      },
+      "status": "completed",
+      "model": "seedance2.0_fast_vision",
+      "tool": "pippit-tool-cli",
+      "parameters": {
+        "aspect_ratio": "16:9",
+        "duration": 8,
+        "generate_type": 0,
+        "resolution": "720p",
+        "task_type": "reference"
+      },
+      "requirement": {
+        "object_id": "new26-s003-q01-video",
+        "revision_id": "bd9f29fb566c14a4bffe7309c9f80c85d2b02c018f578735fcb95ad79d093c40"
+      },
+      "prompt_sha256": "1b8e38516ae3343a8f19a07328dff088bfc4fa6323bac3a35de358965c91feb3",
+      "submission_sha256": "2497292b03ee6976d70bdcc324fec8197291280499d83eb4a7f98cb7bb0302b5",
+      "inputs": [
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-e9a98aba7feffbae5f3b9e2308755d47fbd366f8f42200a3a1c04c38d39f114c",
+            "material_id": "new26-aheng-identity"
+          },
+          "object_id": "asset-task-20261015-0003-aheng-identity-02",
+          "revision_id": "ee6e0f97e99928fd786b1e3e323e519ce0d69cc3f719291946b18c4d79a1c3fc",
+          "role": "reference_image",
+          "sha256": "a4dec09a9ac0e4b320079e846bc0f513d78bf82e409add0553e0a90a989be28f"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-8bb45d3cefb9ca106168cddf2a2d59eb5cc27d11c12f760c758240218f57f8d2",
+            "material_id": "new26-prop-house-layout"
+          },
+          "object_id": "asset-task-20261015-0003-prop-house-local-01",
+          "revision_id": "c966743d8d703ec0f87a9c2dadebf0c78ae4fafb9d9c4dd81d29e678f8971880",
+          "role": "reference_image",
+          "sha256": "3fa2169deb4e6e0388c92ba9694d4402ec0829787c67412c8b8ef4954e640caa"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-e1e0d8d223df465bb9b87abce86862424d3125c92678062c3d6321e09e647de2",
+            "material_id": "new26-songbook-identity"
+          },
+          "object_id": "asset-task-20261015-0003-songbook-identity-02",
+          "revision_id": "e741030b764d7d41431a96629647f5edf14f1016564216872f69a72f9bc45081",
+          "role": "reference_image",
+          "sha256": "d6f71f27ee9d2e86bbdb21c8d52a426a3ce6e1417d87e3b91c161b1fcb87236c"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-19e2490dddb43f422d650a403404a40b6f8bd96a74cebfbd472092180071237d",
+            "material_id": "new26-rice-bag-identity"
+          },
+          "object_id": "asset-task-20261015-0003-rice-bag-identity-01",
+          "revision_id": "942e719bd334282f81409cbb210938c1893de2f79c4c012ed25126254b2779bb",
+          "role": "reference_image",
+          "sha256": "1cb0cea7788bd57c7d56e04c810f74760241995960c18f37d3951a7436274021"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-db966b2610b1dc63253350953eece56e63c3d4e9cc46c7d47bba3c2b352cda42",
+            "material_id": "new26-theatre-box-identity"
+          },
+          "object_id": "asset-task-20261015-0003-theatre-box-identity-02",
+          "revision_id": "c09375f02b8faea8c68720b1143385b852b5c57a252eb6096f10284bc921a2e9",
+          "role": "reference_image",
+          "sha256": "c43c63746af16fb163cce557669f74a79784c74e605fe82363ab6806a1bb4c14"
+        }
+      ],
+      "outputs": [
+        {
+          "object_id": "asset-call-task-20261022-0001-m068-02",
+          "revision_id": "35551e7e20cc753bc7ff14612c44e84304026995507f96b9873fd37da16333a9"
+        }
+      ],
+      "fee": {
+        "amount": null,
+        "currency": null,
+        "status": "UNKNOWN - no per-call bill"
+      },
+      "thread_id": "skill_ffde5760-a0df-4a67-9196-42c559b17064",
+      "run_id": "skill_59fde4b1-455b-436a-b4f0-3e0ed00098e1",
+      "original": {
+        "id": "original",
+        "role": "original",
+        "file": "df7aae46bd2d20d7b7956506b9062332d58e544907da2a0463448271c5eeba23.mp4",
+        "sha256": "df7aae46bd2d20d7b7956506b9062332d58e544907da2a0463448271c5eeba23",
+        "bytes": 3514136,
+        "mime": "video/mp4",
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 8.096,
+        "has_audio": true,
+        "sample_rate": 32000,
+        "channels": 2
+      },
+      "streams": [
+        {
+          "codec_type": "video",
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 720,
+          "r_frame_rate": "1000000/41667",
+          "nb_frames": "193",
+          "duration": "8.041731"
+        },
+        {
+          "codec_type": "audio",
+          "codec_name": "aac",
+          "r_frame_rate": "0/0",
+          "nb_frames": "254",
+          "duration": "8.096000",
+          "sample_rate": "32000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "attempt": "m069-01",
+      "call": {
+        "object_id": "call-task-20261022-0001-m069-01",
+        "revision_id": "5b7d20c9efa029b692d0802e03161ba3a294ea8d0f0c0f2fe054c8e0c99f24f4"
+      },
+      "status": "completed",
+      "model": "seedance2.0_fast_vision",
+      "tool": "pippit-tool-cli",
+      "parameters": {
+        "aspect_ratio": "16:9",
+        "duration": 12,
+        "generate_type": 0,
+        "resolution": "720p",
+        "task_type": "reference"
+      },
+      "requirement": {
+        "object_id": "new26-s003-q02-video",
+        "revision_id": "6def3bda0c36709a1dc0df8dc3da78d97240062e03b27ae9b8c4ce97d736aa2f"
+      },
+      "prompt_sha256": "8b34f5d03aeb19140560ebbdbcd306a796d61b1aabdfbc2314548d2dc307b047",
+      "submission_sha256": "50365ef6c911207907a1ab545a8fb03646f9c5c6efd62c6f95dd3b827464df8b",
+      "inputs": [
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-1f01ea7a8b46bfdd8a0ae8aceb7635e786b24c348b96b4ffe18d39634d6344c7",
+            "material_id": "new26-lixiao-identity"
+          },
+          "object_id": "asset-task-20261015-0003-lixiao-identity-02",
+          "revision_id": "7de3a559d6d726402afc336c8d8ce8d799b921de823ca20e5750aae1b2f053d6",
+          "role": "reference_image",
+          "sha256": "8986f17b6a62fbb249405976a519b450e6ce2a42e72e0502c80454b578888072"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-8ba62572d5b166bcc36413f7a7a380fc11d7d47f3ecac33156a8c8fedf10281c",
+            "material_id": "new26-troupe-identity"
+          },
+          "object_id": "asset-task-20261015-0003-troupe-identity-01",
+          "revision_id": "6110f7f181e0455031a0ecd3a5d3a88845847cad61c555d8bb089a3e3240f246",
+          "role": "reference_image",
+          "sha256": "992635fcf7da0492bcebbd205e87da2809bb621134b031487d87251e48af922c"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-e66740a205106452396efb51435a5f9101379ba6c674805c6a6a1a752907d2c3",
+            "material_id": "new26-moer-identity"
+          },
+          "object_id": "asset-task-20261015-0003-moer-identity-02",
+          "revision_id": "d924e58aacd9ca27131b925e09a6d7958c2306b78910b7175b18854388688471",
+          "role": "reference_image",
+          "sha256": "a03f1ead275d096dfc79b46dd0048e900a173634df2be31982cbca323d5a8c49"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-8bb45d3cefb9ca106168cddf2a2d59eb5cc27d11c12f760c758240218f57f8d2",
+            "material_id": "new26-prop-house-layout"
+          },
+          "object_id": "asset-task-20261015-0003-prop-house-local-01",
+          "revision_id": "c966743d8d703ec0f87a9c2dadebf0c78ae4fafb9d9c4dd81d29e678f8971880",
+          "role": "reference_image",
+          "sha256": "3fa2169deb4e6e0388c92ba9694d4402ec0829787c67412c8b8ef4954e640caa"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-51f4a884fdd28eb8012c36479ee3ea36623c37910514f36edb43daa88e2f178c",
+            "material_id": "new26-paper-snake-identity"
+          },
+          "object_id": "asset-task-20261015-0003-paper-snake-identity-01",
+          "revision_id": "483137e569c55064568141d94bbc705516504e67cae1109d66085593652eb976",
+          "role": "reference_image",
+          "sha256": "303a004977432c0dce6078babafbfe01e26649fa643e287542fc288e3bb6b91f"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-e8476557351f8be190c2f708a8cb2b8a387a2a271da88188a321540828c448e0",
+            "material_id": "new26-curtain-poles-identity"
+          },
+          "object_id": "asset-task-20261015-0003-curtain-poles-flare-01",
+          "revision_id": "a1aacab7c6447fc0e1b6e907c9bfd3b83dc742a60b26f4dd7a64686f3e12b8e2",
+          "role": "reference_image",
+          "sha256": "8ab1f7e802537772a0f1bd3ed7680e8ddc99bdc9d94c7bd4c4677ba4a8a59bd8"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-19e2490dddb43f422d650a403404a40b6f8bd96a74cebfbd472092180071237d",
+            "material_id": "new26-rice-bag-identity"
+          },
+          "object_id": "asset-task-20261015-0003-rice-bag-identity-01",
+          "revision_id": "942e719bd334282f81409cbb210938c1893de2f79c4c012ed25126254b2779bb",
+          "role": "reference_image",
+          "sha256": "1cb0cea7788bd57c7d56e04c810f74760241995960c18f37d3951a7436274021"
+        },
+        {
+          "component_id": "voice-reference-channel",
+          "material_selection": {
+            "candidate_id": "candidate-2b9ff037894bab887bef0fd71fa3d8d286616afcca21167bff0a5e41cc66afd9",
+            "material_id": "new26-lixiao-voice"
+          },
+          "object_id": "asset-task-20261015-0003-lixiao-voice-01",
+          "revision_id": "448a99663454cff3f0ee59f316b81adaaa034efe10c4b5570fad93d34d71fe7f",
+          "role": "reference_audio",
+          "sha256": "a09c2ff86df62b744ec9590e42baefd12c193e14e8b4a11213b1f26ad4a14e5e"
+        }
+      ],
+      "outputs": [
+        {
+          "object_id": "asset-call-task-20261022-0001-m069-01",
+          "revision_id": "9161545d20db1fbf97c85dc3cddd160c05580d48e43642cff92a9762c5535769"
+        }
+      ],
+      "fee": {
+        "amount": null,
+        "currency": null,
+        "status": "UNKNOWN - no per-call bill"
+      },
+      "thread_id": "skill_7f0b1be9-9872-4422-91fd-723459a789b5",
+      "run_id": "skill_121481a8-840a-4a7e-9a30-3a1b4ec8e53c",
+      "original": {
+        "id": "original",
+        "role": "original",
+        "file": "b29022a5f10eddc4c3e9013742fcf1181ac43e2a6005ec6f4094968e1e0e8122.mp4",
+        "sha256": "b29022a5f10eddc4c3e9013742fcf1181ac43e2a6005ec6f4094968e1e0e8122",
+        "bytes": 6158242,
+        "mime": "video/mp4",
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 12.096,
+        "has_audio": true,
+        "sample_rate": 32000,
+        "channels": 2
+      },
+      "streams": [
+        {
+          "codec_type": "video",
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 720,
+          "r_frame_rate": "1000000/41667",
+          "nb_frames": "289",
+          "duration": "12.041763"
+        },
+        {
+          "codec_type": "audio",
+          "codec_name": "aac",
+          "r_frame_rate": "0/0",
+          "nb_frames": "379",
+          "duration": "12.096000",
+          "sample_rate": "32000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "attempt": "m069-02",
+      "call": {
+        "object_id": "call-task-20261022-0001-m069-02",
+        "revision_id": "e7d3cb4f48141010f6a9bd2b850b1aa2c2d985bf589e45bafea9151846e8329d"
+      },
+      "status": "completed",
+      "model": "seedance2.0_fast_vision",
+      "tool": "pippit-tool-cli",
+      "parameters": {
+        "aspect_ratio": "16:9",
+        "duration": 12,
+        "generate_type": 0,
+        "resolution": "720p",
+        "task_type": "reference"
+      },
+      "requirement": {
+        "object_id": "new26-s003-q02-video",
+        "revision_id": "6def3bda0c36709a1dc0df8dc3da78d97240062e03b27ae9b8c4ce97d736aa2f"
+      },
+      "prompt_sha256": "36616ef66b89512d47f38a79016e5e057785618f80236118dd5e9313563eb35d",
+      "submission_sha256": "9ffb4d630b938f2b33d38f467bdf420df70b748da463f86a2dbbaa486be1891f",
+      "inputs": [
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-1f01ea7a8b46bfdd8a0ae8aceb7635e786b24c348b96b4ffe18d39634d6344c7",
+            "material_id": "new26-lixiao-identity"
+          },
+          "object_id": "asset-task-20261015-0003-lixiao-identity-02",
+          "revision_id": "7de3a559d6d726402afc336c8d8ce8d799b921de823ca20e5750aae1b2f053d6",
+          "role": "reference_image",
+          "sha256": "8986f17b6a62fbb249405976a519b450e6ce2a42e72e0502c80454b578888072"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-8ba62572d5b166bcc36413f7a7a380fc11d7d47f3ecac33156a8c8fedf10281c",
+            "material_id": "new26-troupe-identity"
+          },
+          "object_id": "asset-task-20261015-0003-troupe-identity-01",
+          "revision_id": "6110f7f181e0455031a0ecd3a5d3a88845847cad61c555d8bb089a3e3240f246",
+          "role": "reference_image",
+          "sha256": "992635fcf7da0492bcebbd205e87da2809bb621134b031487d87251e48af922c"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-e66740a205106452396efb51435a5f9101379ba6c674805c6a6a1a752907d2c3",
+            "material_id": "new26-moer-identity"
+          },
+          "object_id": "asset-task-20261015-0003-moer-identity-02",
+          "revision_id": "d924e58aacd9ca27131b925e09a6d7958c2306b78910b7175b18854388688471",
+          "role": "reference_image",
+          "sha256": "a03f1ead275d096dfc79b46dd0048e900a173634df2be31982cbca323d5a8c49"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-8bb45d3cefb9ca106168cddf2a2d59eb5cc27d11c12f760c758240218f57f8d2",
+            "material_id": "new26-prop-house-layout"
+          },
+          "object_id": "asset-task-20261015-0003-prop-house-local-01",
+          "revision_id": "c966743d8d703ec0f87a9c2dadebf0c78ae4fafb9d9c4dd81d29e678f8971880",
+          "role": "reference_image",
+          "sha256": "3fa2169deb4e6e0388c92ba9694d4402ec0829787c67412c8b8ef4954e640caa"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-51f4a884fdd28eb8012c36479ee3ea36623c37910514f36edb43daa88e2f178c",
+            "material_id": "new26-paper-snake-identity"
+          },
+          "object_id": "asset-task-20261015-0003-paper-snake-identity-01",
+          "revision_id": "483137e569c55064568141d94bbc705516504e67cae1109d66085593652eb976",
+          "role": "reference_image",
+          "sha256": "303a004977432c0dce6078babafbfe01e26649fa643e287542fc288e3bb6b91f"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-e8476557351f8be190c2f708a8cb2b8a387a2a271da88188a321540828c448e0",
+            "material_id": "new26-curtain-poles-identity"
+          },
+          "object_id": "asset-task-20261015-0003-curtain-poles-flare-01",
+          "revision_id": "a1aacab7c6447fc0e1b6e907c9bfd3b83dc742a60b26f4dd7a64686f3e12b8e2",
+          "role": "reference_image",
+          "sha256": "8ab1f7e802537772a0f1bd3ed7680e8ddc99bdc9d94c7bd4c4677ba4a8a59bd8"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-19e2490dddb43f422d650a403404a40b6f8bd96a74cebfbd472092180071237d",
+            "material_id": "new26-rice-bag-identity"
+          },
+          "object_id": "asset-task-20261015-0003-rice-bag-identity-01",
+          "revision_id": "942e719bd334282f81409cbb210938c1893de2f79c4c012ed25126254b2779bb",
+          "role": "reference_image",
+          "sha256": "1cb0cea7788bd57c7d56e04c810f74760241995960c18f37d3951a7436274021"
+        },
+        {
+          "component_id": "voice-reference-channel",
+          "material_selection": {
+            "candidate_id": "candidate-2b9ff037894bab887bef0fd71fa3d8d286616afcca21167bff0a5e41cc66afd9",
+            "material_id": "new26-lixiao-voice"
+          },
+          "object_id": "asset-task-20261015-0003-lixiao-voice-01",
+          "revision_id": "448a99663454cff3f0ee59f316b81adaaa034efe10c4b5570fad93d34d71fe7f",
+          "role": "reference_audio",
+          "sha256": "a09c2ff86df62b744ec9590e42baefd12c193e14e8b4a11213b1f26ad4a14e5e"
+        }
+      ],
+      "outputs": [
+        {
+          "object_id": "asset-call-task-20261022-0001-m069-02",
+          "revision_id": "68a38149eed13fb9a6160e7740961485918d3f0f05f9af063b77430b36b4a07b"
+        }
+      ],
+      "fee": {
+        "amount": null,
+        "currency": null,
+        "status": "UNKNOWN - no per-call bill"
+      },
+      "thread_id": "skill_0ca86f4f-d44d-45d9-8e64-a94984b0cd1b",
+      "run_id": "skill_90c80d66-da09-4650-baae-228362f07b3e",
+      "original": {
+        "id": "original",
+        "role": "original",
+        "file": "2c40b43ab2bb1ad57f3e9659bb06c398b75885a9cb969442924977629bc8ba05.mp4",
+        "sha256": "2c40b43ab2bb1ad57f3e9659bb06c398b75885a9cb969442924977629bc8ba05",
+        "bytes": 6239852,
+        "mime": "video/mp4",
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 12.096,
+        "has_audio": true,
+        "sample_rate": 32000,
+        "channels": 2
+      },
+      "streams": [
+        {
+          "codec_type": "video",
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 720,
+          "r_frame_rate": "1000000/41667",
+          "nb_frames": "289",
+          "duration": "12.041763"
+        },
+        {
+          "codec_type": "audio",
+          "codec_name": "aac",
+          "r_frame_rate": "0/0",
+          "nb_frames": "379",
+          "duration": "12.096000",
+          "sample_rate": "32000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "attempt": "m069-03",
+      "call": {
+        "object_id": "call-task-20261022-0001-m069-03",
+        "revision_id": "95789e9261d4cc3411ba56fe2482340918267a1fb60819a3d802582b59dd72e5"
+      },
+      "status": "completed",
+      "model": "Seedance_2.5",
+      "tool": "pippit-tool-cli",
+      "parameters": {
+        "aspect_ratio": "adaptive",
+        "generate_type": 0,
+        "resolution": "720p",
+        "task_type": "edit"
+      },
+      "requirement": {
+        "object_id": "new26-s003-q02-video",
+        "revision_id": "6def3bda0c36709a1dc0df8dc3da78d97240062e03b27ae9b8c4ce97d736aa2f"
+      },
+      "prompt_sha256": "871161f24d9c42c35b8b931e92d781a1d45318799c182c768c554909829e8caf",
+      "submission_sha256": "692d33e43e541328ce08babf519656fab8ed7a5f11e556a01f6f89880d171ec8",
+      "inputs": [
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-00090ea6971d62f88f233be95319c6ee1ec9d4d250bd41a0591ab7fbdf116824",
+            "material_id": "new26-s003-q02-video"
+          },
+          "object_id": "asset-call-task-20261022-0001-m069-02",
+          "revision_id": "68a38149eed13fb9a6160e7740961485918d3f0f05f9af063b77430b36b4a07b",
+          "role": "source_video",
+          "sha256": "2c40b43ab2bb1ad57f3e9659bb06c398b75885a9cb969442924977629bc8ba05"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-db966b2610b1dc63253350953eece56e63c3d4e9cc46c7d47bba3c2b352cda42",
+            "material_id": "new26-theatre-box-identity"
+          },
+          "object_id": "asset-task-20261015-0003-theatre-box-identity-02",
+          "revision_id": "c09375f02b8faea8c68720b1143385b852b5c57a252eb6096f10284bc921a2e9",
+          "role": "reference_image",
+          "sha256": "c43c63746af16fb163cce557669f74a79784c74e605fe82363ab6806a1bb4c14"
+        }
+      ],
+      "outputs": [
+        {
+          "object_id": "asset-call-task-20261022-0001-m069-03",
+          "revision_id": "cc0a9038cce1db79e9734b18066b1944947ba81cc551d79f60e1f9dd11c6e5ce"
+        }
+      ],
+      "fee": {
+        "amount": null,
+        "currency": null,
+        "status": "UNKNOWN - no per-call bill"
+      },
+      "thread_id": "skill_510083d1-aad9-409a-9627-2b757cdbbaf9",
+      "run_id": "skill_833e1196-71c3-442a-91bd-cc3e920a6856",
+      "original": {
+        "id": "original",
+        "role": "original",
+        "file": "94c22aeb7a32b71e8e792160c05a946d841038859aa06b8fa6b85079aa170f17.mp4",
+        "sha256": "94c22aeb7a32b71e8e792160c05a946d841038859aa06b8fa6b85079aa170f17",
+        "bytes": 11456012,
+        "mime": "video/mp4",
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 12.042,
+        "has_audio": true,
+        "sample_rate": 32000,
+        "channels": 2
+      },
+      "streams": [
+        {
+          "codec_type": "video",
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 720,
+          "r_frame_rate": "1000000/41667",
+          "nb_frames": "289",
+          "duration": "12.041763"
+        },
+        {
+          "codec_type": "audio",
+          "codec_name": "aac",
+          "r_frame_rate": "0/0",
+          "nb_frames": "378",
+          "duration": "12.042000",
+          "sample_rate": "32000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "attempt": "m070-01",
+      "call": {
+        "object_id": "call-task-20261022-0001-m070-01",
+        "revision_id": "3b85f8c11ed7f89321eaeb59d78f5483ca870883cc3cd45b3a85d712afd1cf4d"
+      },
+      "status": "completed",
+      "model": "seedance2.0_fast_vision",
+      "tool": "pippit-tool-cli",
+      "parameters": {
+        "aspect_ratio": "16:9",
+        "duration": 10,
+        "generate_type": 0,
+        "resolution": "720p",
+        "task_type": "reference"
+      },
+      "requirement": {
+        "object_id": "new26-s003-q03-video",
+        "revision_id": "d8baba0009a4fd62781783e258d389d2a2123ff3be7457b70dbe897627be5a37"
+      },
+      "prompt_sha256": "59c6d19da80fdd9ea2cf63e5f3b97290ba28a64c7ea8f04acc7d01ad67f491e5",
+      "submission_sha256": "e7a8cdd87e67abc9314d9f61d9413927f7506ceee2bed82d7984f4ad93319775",
+      "inputs": [
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-09e99d300bf294e745a3560ce908d0ad7d59436fa817309a94c988973b101493",
+            "material_id": "new26-liji-identity"
+          },
+          "object_id": "asset-task-20261015-0003-liji-identity-01",
+          "revision_id": "77908eeddf225d05468c60366401d16f721cceb62cb297dcd110c25132f302e4",
+          "role": "reference_image",
+          "sha256": "05ac4d70dbed022cbaabd37b9da071031056d325653ccbee9b1a2aac5046e0ce"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-1f01ea7a8b46bfdd8a0ae8aceb7635e786b24c348b96b4ffe18d39634d6344c7",
+            "material_id": "new26-lixiao-identity"
+          },
+          "object_id": "asset-task-20261015-0003-lixiao-identity-02",
+          "revision_id": "7de3a559d6d726402afc336c8d8ce8d799b921de823ca20e5750aae1b2f053d6",
+          "role": "reference_image",
+          "sha256": "8986f17b6a62fbb249405976a519b450e6ce2a42e72e0502c80454b578888072"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-8bb45d3cefb9ca106168cddf2a2d59eb5cc27d11c12f760c758240218f57f8d2",
+            "material_id": "new26-prop-house-layout"
+          },
+          "object_id": "asset-task-20261015-0003-prop-house-local-01",
+          "revision_id": "c966743d8d703ec0f87a9c2dadebf0c78ae4fafb9d9c4dd81d29e678f8971880",
+          "role": "reference_image",
+          "sha256": "3fa2169deb4e6e0388c92ba9694d4402ec0829787c67412c8b8ef4954e640caa"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-51f4a884fdd28eb8012c36479ee3ea36623c37910514f36edb43daa88e2f178c",
+            "material_id": "new26-paper-snake-identity"
+          },
+          "object_id": "asset-task-20261015-0003-paper-snake-identity-01",
+          "revision_id": "483137e569c55064568141d94bbc705516504e67cae1109d66085593652eb976",
+          "role": "reference_image",
+          "sha256": "303a004977432c0dce6078babafbfe01e26649fa643e287542fc288e3bb6b91f"
+        },
+        {
+          "component_id": "voice-reference-channel",
+          "material_selection": {
+            "candidate_id": "candidate-2b9ff037894bab887bef0fd71fa3d8d286616afcca21167bff0a5e41cc66afd9",
+            "material_id": "new26-lixiao-voice"
+          },
+          "object_id": "asset-task-20261015-0003-lixiao-voice-01",
+          "revision_id": "448a99663454cff3f0ee59f316b81adaaa034efe10c4b5570fad93d34d71fe7f",
+          "role": "reference_audio",
+          "sha256": "a09c2ff86df62b744ec9590e42baefd12c193e14e8b4a11213b1f26ad4a14e5e"
+        },
+        {
+          "component_id": "voice-reference-channel",
+          "material_selection": {
+            "candidate_id": "candidate-acb25dee1133a431f7c7bbc60c526dc102d8d4defaa6c687988c17b27fa86209",
+            "material_id": "new26-liji-voice"
+          },
+          "object_id": "asset-task-20261015-0003-liji-voice-03",
+          "revision_id": "cda0e1a6b057a4a7fe0eaa63418602ada7da037e0f838c789cc53e5ede5ac035",
+          "role": "reference_audio",
+          "sha256": "c4d5dd0aaa587dbfa9938d7123542b174b286d4956fc051b2f8f7c9582a14a73"
+        }
+      ],
+      "outputs": [
+        {
+          "object_id": "asset-call-task-20261022-0001-m070-01",
+          "revision_id": "29091fff6f1275d4513961a2a338a8ce7e3ffc43b9e591cef6a7da50233d41d8"
+        }
+      ],
+      "fee": {
+        "amount": null,
+        "currency": null,
+        "status": "UNKNOWN - no per-call bill"
+      },
+      "thread_id": "skill_0c7dbbb5-4d80-42af-bf0c-fef422672290",
+      "run_id": "skill_a642d841-9db1-4b10-9bff-e07e3c8de3e3",
+      "original": {
+        "id": "original",
+        "role": "original",
+        "file": "00035d1a929e6ef3d8d659a234e2e93176e608ff7e87104083a4864a6ab7c334.mp4",
+        "sha256": "00035d1a929e6ef3d8d659a234e2e93176e608ff7e87104083a4864a6ab7c334",
+        "bytes": 4284276,
+        "mime": "video/mp4",
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 10.08,
+        "has_audio": true,
+        "sample_rate": 32000,
+        "channels": 2
+      },
+      "streams": [
+        {
+          "codec_type": "video",
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 720,
+          "r_frame_rate": "1000000/41667",
+          "nb_frames": "241",
+          "duration": "10.041747"
+        },
+        {
+          "codec_type": "audio",
+          "codec_name": "aac",
+          "r_frame_rate": "0/0",
+          "nb_frames": "316",
+          "duration": "10.080000",
+          "sample_rate": "32000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "attempt": "m071-01",
+      "call": {
+        "object_id": "call-task-20261022-0001-m071-01",
+        "revision_id": "8d84fb93dbce3c58566e6d48670ae99ba8dec64a673320237b5f205fcda7cbab"
+      },
+      "status": "completed",
+      "model": "Seedance_2.5",
+      "tool": "pippit-tool-cli",
+      "parameters": {
+        "aspect_ratio": "16:9",
+        "duration": 25,
+        "generate_type": 0,
+        "resolution": "720p",
+        "task_type": "reference"
+      },
+      "requirement": {
+        "object_id": "new26-s003-q04-video",
+        "revision_id": "7d32e17e39f6ae5677d88765541461fbbea9cc98465fef0f21bc1b74d2a62657"
+      },
+      "prompt_sha256": "77ca7b883e481a3819eb1d39b1632b9c6fea8de6731ce0ed8a8de285d249c635",
+      "submission_sha256": "f61a11f8ca9f84f7d336e51187d165003600a244f1db4fd240f31352274fe1fb",
+      "inputs": [
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-e9a98aba7feffbae5f3b9e2308755d47fbd366f8f42200a3a1c04c38d39f114c",
+            "material_id": "new26-aheng-identity"
+          },
+          "object_id": "asset-task-20261015-0003-aheng-identity-02",
+          "revision_id": "ee6e0f97e99928fd786b1e3e323e519ce0d69cc3f719291946b18c4d79a1c3fc",
+          "role": "reference_image",
+          "sha256": "a4dec09a9ac0e4b320079e846bc0f513d78bf82e409add0553e0a90a989be28f"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-09e99d300bf294e745a3560ce908d0ad7d59436fa817309a94c988973b101493",
+            "material_id": "new26-liji-identity"
+          },
+          "object_id": "asset-task-20261015-0003-liji-identity-01",
+          "revision_id": "77908eeddf225d05468c60366401d16f721cceb62cb297dcd110c25132f302e4",
+          "role": "reference_image",
+          "sha256": "05ac4d70dbed022cbaabd37b9da071031056d325653ccbee9b1a2aac5046e0ce"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-1f01ea7a8b46bfdd8a0ae8aceb7635e786b24c348b96b4ffe18d39634d6344c7",
+            "material_id": "new26-lixiao-identity"
+          },
+          "object_id": "asset-task-20261015-0003-lixiao-identity-02",
+          "revision_id": "7de3a559d6d726402afc336c8d8ce8d799b921de823ca20e5750aae1b2f053d6",
+          "role": "reference_image",
+          "sha256": "8986f17b6a62fbb249405976a519b450e6ce2a42e72e0502c80454b578888072"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-8bb45d3cefb9ca106168cddf2a2d59eb5cc27d11c12f760c758240218f57f8d2",
+            "material_id": "new26-prop-house-layout"
+          },
+          "object_id": "asset-task-20261015-0003-prop-house-local-01",
+          "revision_id": "c966743d8d703ec0f87a9c2dadebf0c78ae4fafb9d9c4dd81d29e678f8971880",
+          "role": "reference_image",
+          "sha256": "3fa2169deb4e6e0388c92ba9694d4402ec0829787c67412c8b8ef4954e640caa"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-51f4a884fdd28eb8012c36479ee3ea36623c37910514f36edb43daa88e2f178c",
+            "material_id": "new26-paper-snake-identity"
+          },
+          "object_id": "asset-task-20261015-0003-paper-snake-identity-01",
+          "revision_id": "483137e569c55064568141d94bbc705516504e67cae1109d66085593652eb976",
+          "role": "reference_image",
+          "sha256": "303a004977432c0dce6078babafbfe01e26649fa643e287542fc288e3bb6b91f"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-4bc837df97fbc72a49d20f90d9c4a9bc52fa8ec841738983fd9d8123deb7027c",
+            "material_id": "new26-curtain-identity"
+          },
+          "object_id": "asset-task-20261015-0003-curtain-identity-01",
+          "revision_id": "68e78713aaff614db7f0fea73dc000c2694ac2b580ac5c4678e654e510aa8039",
+          "role": "reference_image",
+          "sha256": "416a217dea8746fe3c560aafc942214a6ff7240d15c11ba57007da9dca8143dc"
+        },
+        {
+          "component_id": "voice-reference-channel",
+          "material_selection": {
+            "candidate_id": "candidate-acb25dee1133a431f7c7bbc60c526dc102d8d4defaa6c687988c17b27fa86209",
+            "material_id": "new26-liji-voice"
+          },
+          "object_id": "asset-task-20261015-0003-liji-voice-03",
+          "revision_id": "cda0e1a6b057a4a7fe0eaa63418602ada7da037e0f838c789cc53e5ede5ac035",
+          "role": "reference_audio",
+          "sha256": "c4d5dd0aaa587dbfa9938d7123542b174b286d4956fc051b2f8f7c9582a14a73"
+        },
+        {
+          "component_id": "voice-reference-channel",
+          "material_selection": {
+            "candidate_id": "candidate-2b9ff037894bab887bef0fd71fa3d8d286616afcca21167bff0a5e41cc66afd9",
+            "material_id": "new26-lixiao-voice"
+          },
+          "object_id": "asset-task-20261015-0003-lixiao-voice-01",
+          "revision_id": "448a99663454cff3f0ee59f316b81adaaa034efe10c4b5570fad93d34d71fe7f",
+          "role": "reference_audio",
+          "sha256": "a09c2ff86df62b744ec9590e42baefd12c193e14e8b4a11213b1f26ad4a14e5e"
+        }
+      ],
+      "outputs": [
+        {
+          "object_id": "asset-call-task-20261022-0001-m071-01",
+          "revision_id": "e964f5bb7da5e5176aacaee96853f009c6ea925e2ecb2a2d6042176d4fb5db30"
+        }
+      ],
+      "fee": {
+        "amount": null,
+        "currency": null,
+        "status": "UNKNOWN - no per-call bill"
+      },
+      "thread_id": "skill_cc207ee0-2809-482d-815e-7a60aa08c29f",
+      "run_id": "skill_c8f7a30f-735c-4e12-a0a4-e91e55dcc2fe",
+      "original": {
+        "id": "original",
+        "role": "original",
+        "file": "5baeeef1a248bcbb6e7973f7ccbee44022a21b329d665b3dccd54a0c8e1fd498.mp4",
+        "sha256": "5baeeef1a248bcbb6e7973f7ccbee44022a21b329d665b3dccd54a0c8e1fd498",
+        "bytes": 15990042,
+        "mime": "video/mp4",
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 25.05,
+        "has_audio": true,
+        "sample_rate": 32000,
+        "channels": 2
+      },
+      "streams": [
+        {
+          "codec_type": "video",
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 720,
+          "r_frame_rate": "1000000/41667",
+          "nb_frames": "601",
+          "duration": "25.041867"
+        },
+        {
+          "codec_type": "audio",
+          "codec_name": "aac",
+          "r_frame_rate": "0/0",
+          "nb_frames": "784",
+          "duration": "25.050000",
+          "sample_rate": "32000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "attempt": "m073-01",
+      "call": {
+        "object_id": "call-task-20261022-0001-m073-01",
+        "revision_id": "632859f5f7ae230f46f8f4ff98a42abf5e5a48bf1b608ad751082fe695268c54"
+      },
+      "status": "completed",
+      "model": "Seedance_2.5",
+      "tool": "pippit-tool-cli",
+      "parameters": {
+        "aspect_ratio": "16:9",
+        "duration": 18,
+        "generate_type": 0,
+        "resolution": "720p",
+        "task_type": "reference"
+      },
+      "requirement": {
+        "object_id": "new26-s003-q05-video",
+        "revision_id": "39d6df4e3597ef598eb88f9a4bdf6b1e7fef6a743b9f41a1fac72d3918390b0c"
+      },
+      "prompt_sha256": "e5bfbaab4050c5fe46e2b84c3ef427f147631d75f703f82c92a2ff29c22a41ed",
+      "submission_sha256": "55e36dde690e10a2b866435819894b94f3fb88dbb3ac29f039dc88833b24bef4",
+      "inputs": [
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-e9a98aba7feffbae5f3b9e2308755d47fbd366f8f42200a3a1c04c38d39f114c",
+            "material_id": "new26-aheng-identity"
+          },
+          "object_id": "asset-task-20261015-0003-aheng-identity-02",
+          "revision_id": "ee6e0f97e99928fd786b1e3e323e519ce0d69cc3f719291946b18c4d79a1c3fc",
+          "role": "reference_image",
+          "sha256": "a4dec09a9ac0e4b320079e846bc0f513d78bf82e409add0553e0a90a989be28f"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-09e99d300bf294e745a3560ce908d0ad7d59436fa817309a94c988973b101493",
+            "material_id": "new26-liji-identity"
+          },
+          "object_id": "asset-task-20261015-0003-liji-identity-01",
+          "revision_id": "77908eeddf225d05468c60366401d16f721cceb62cb297dcd110c25132f302e4",
+          "role": "reference_image",
+          "sha256": "05ac4d70dbed022cbaabd37b9da071031056d325653ccbee9b1a2aac5046e0ce"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-1f01ea7a8b46bfdd8a0ae8aceb7635e786b24c348b96b4ffe18d39634d6344c7",
+            "material_id": "new26-lixiao-identity"
+          },
+          "object_id": "asset-task-20261015-0003-lixiao-identity-02",
+          "revision_id": "7de3a559d6d726402afc336c8d8ce8d799b921de823ca20e5750aae1b2f053d6",
+          "role": "reference_image",
+          "sha256": "8986f17b6a62fbb249405976a519b450e6ce2a42e72e0502c80454b578888072"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-8bb45d3cefb9ca106168cddf2a2d59eb5cc27d11c12f760c758240218f57f8d2",
+            "material_id": "new26-prop-house-layout"
+          },
+          "object_id": "asset-task-20261015-0003-prop-house-local-01",
+          "revision_id": "c966743d8d703ec0f87a9c2dadebf0c78ae4fafb9d9c4dd81d29e678f8971880",
+          "role": "reference_image",
+          "sha256": "3fa2169deb4e6e0388c92ba9694d4402ec0829787c67412c8b8ef4954e640caa"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-51f4a884fdd28eb8012c36479ee3ea36623c37910514f36edb43daa88e2f178c",
+            "material_id": "new26-paper-snake-identity"
+          },
+          "object_id": "asset-task-20261015-0003-paper-snake-identity-01",
+          "revision_id": "483137e569c55064568141d94bbc705516504e67cae1109d66085593652eb976",
+          "role": "reference_image",
+          "sha256": "303a004977432c0dce6078babafbfe01e26649fa643e287542fc288e3bb6b91f"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-e1e0d8d223df465bb9b87abce86862424d3125c92678062c3d6321e09e647de2",
+            "material_id": "new26-songbook-identity"
+          },
+          "object_id": "asset-task-20261015-0003-songbook-identity-02",
+          "revision_id": "e741030b764d7d41431a96629647f5edf14f1016564216872f69a72f9bc45081",
+          "role": "reference_image",
+          "sha256": "d6f71f27ee9d2e86bbdb21c8d52a426a3ce6e1417d87e3b91c161b1fcb87236c"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-7c96837f82790edc8cbcd97bb9a06a87e54c0c34de580959c2658ca5acc4945e",
+            "material_id": "new26-hymn-paper-identity"
+          },
+          "object_id": "asset-task-20261015-0003-hymn-paper-identity-01",
+          "revision_id": "1d1fe0a97fbbd62ca493efa944bcd8ee11b8f483204d942951de777742415508",
+          "role": "reference_image",
+          "sha256": "6bf98f741271fd5ed83162c1af8f271cc590d7ca69e0b110b86b3336890da280"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-4bc837df97fbc72a49d20f90d9c4a9bc52fa8ec841738983fd9d8123deb7027c",
+            "material_id": "new26-curtain-identity"
+          },
+          "object_id": "asset-task-20261015-0003-curtain-identity-01",
+          "revision_id": "68e78713aaff614db7f0fea73dc000c2694ac2b580ac5c4678e654e510aa8039",
+          "role": "reference_image",
+          "sha256": "416a217dea8746fe3c560aafc942214a6ff7240d15c11ba57007da9dca8143dc"
+        },
+        {
+          "component_id": "qingpeng-aheng-stage1",
+          "material_selection": {
+            "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+            "material_id": "new26-qingpeng-singing"
+          },
+          "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+          "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df",
+          "role": "reference_audio",
+          "sha256": "994cbf206c1700cf4ce891931b11e974f710b029f84853f2b1c76fc151a6d437"
+        }
+      ],
+      "outputs": [
+        {
+          "object_id": "asset-call-task-20261022-0001-m073-01",
+          "revision_id": "c2d49a5819499427f721a9292851ae0b03f1451b1466dd99f0d5549d2882f3a1"
+        }
+      ],
+      "fee": {
+        "amount": null,
+        "currency": null,
+        "status": "UNKNOWN - no per-call bill"
+      },
+      "thread_id": "skill_31345fe7-61c8-45dd-bfcd-0605b77d8459",
+      "run_id": "skill_ba48a69a-998a-485b-850e-670122967c83",
+      "original": {
+        "id": "original",
+        "role": "original",
+        "file": "9fd3baa6d8a84cc68a9d45e676a6f3984e8cd9764f5655a2b531206dc9d1a30b.mp4",
+        "sha256": "9fd3baa6d8a84cc68a9d45e676a6f3984e8cd9764f5655a2b531206dc9d1a30b",
+        "bytes": 11746587,
+        "mime": "video/mp4",
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 18.042,
+        "has_audio": true,
+        "sample_rate": 32000,
+        "channels": 2
+      },
+      "streams": [
+        {
+          "codec_type": "video",
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 720,
+          "r_frame_rate": "1000000/41667",
+          "nb_frames": "433",
+          "duration": "18.041811"
+        },
+        {
+          "codec_type": "audio",
+          "codec_name": "aac",
+          "r_frame_rate": "0/0",
+          "nb_frames": "565",
+          "duration": "18.042000",
+          "sample_rate": "32000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "attempt": "m073-02",
+      "call": {
+        "object_id": "call-task-20261022-0001-m073-02",
+        "revision_id": "959f024007edd34d34bbec24a1afdfff8483974b62c824c4e08a7f7e77000ba7"
+      },
+      "status": "completed",
+      "model": "Seedance_2.5",
+      "tool": "pippit-tool-cli",
+      "parameters": {
+        "aspect_ratio": "16:9",
+        "duration": 18,
+        "generate_type": 0,
+        "resolution": "720p",
+        "task_type": "reference"
+      },
+      "requirement": {
+        "object_id": "new26-s003-q05-video",
+        "revision_id": "39d6df4e3597ef598eb88f9a4bdf6b1e7fef6a743b9f41a1fac72d3918390b0c"
+      },
+      "prompt_sha256": "6f0c8d11331cf2a13c772c6b663cc7421db083254bea57fa16d821673cc12e5a",
+      "submission_sha256": "1dbb57935193b0f13b38d30f8f447bf5d93eae5fd95eba74cd6f02b760d1f34e",
+      "inputs": [
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-e9a98aba7feffbae5f3b9e2308755d47fbd366f8f42200a3a1c04c38d39f114c",
+            "material_id": "new26-aheng-identity"
+          },
+          "object_id": "asset-task-20261015-0003-aheng-identity-02",
+          "revision_id": "ee6e0f97e99928fd786b1e3e323e519ce0d69cc3f719291946b18c4d79a1c3fc",
+          "role": "reference_image",
+          "sha256": "a4dec09a9ac0e4b320079e846bc0f513d78bf82e409add0553e0a90a989be28f"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-09e99d300bf294e745a3560ce908d0ad7d59436fa817309a94c988973b101493",
+            "material_id": "new26-liji-identity"
+          },
+          "object_id": "asset-task-20261015-0003-liji-identity-01",
+          "revision_id": "77908eeddf225d05468c60366401d16f721cceb62cb297dcd110c25132f302e4",
+          "role": "reference_image",
+          "sha256": "05ac4d70dbed022cbaabd37b9da071031056d325653ccbee9b1a2aac5046e0ce"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-1f01ea7a8b46bfdd8a0ae8aceb7635e786b24c348b96b4ffe18d39634d6344c7",
+            "material_id": "new26-lixiao-identity"
+          },
+          "object_id": "asset-task-20261015-0003-lixiao-identity-02",
+          "revision_id": "7de3a559d6d726402afc336c8d8ce8d799b921de823ca20e5750aae1b2f053d6",
+          "role": "reference_image",
+          "sha256": "8986f17b6a62fbb249405976a519b450e6ce2a42e72e0502c80454b578888072"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-8bb45d3cefb9ca106168cddf2a2d59eb5cc27d11c12f760c758240218f57f8d2",
+            "material_id": "new26-prop-house-layout"
+          },
+          "object_id": "asset-task-20261015-0003-prop-house-local-01",
+          "revision_id": "c966743d8d703ec0f87a9c2dadebf0c78ae4fafb9d9c4dd81d29e678f8971880",
+          "role": "reference_image",
+          "sha256": "3fa2169deb4e6e0388c92ba9694d4402ec0829787c67412c8b8ef4954e640caa"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-51f4a884fdd28eb8012c36479ee3ea36623c37910514f36edb43daa88e2f178c",
+            "material_id": "new26-paper-snake-identity"
+          },
+          "object_id": "asset-task-20261015-0003-paper-snake-identity-01",
+          "revision_id": "483137e569c55064568141d94bbc705516504e67cae1109d66085593652eb976",
+          "role": "reference_image",
+          "sha256": "303a004977432c0dce6078babafbfe01e26649fa643e287542fc288e3bb6b91f"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-e1e0d8d223df465bb9b87abce86862424d3125c92678062c3d6321e09e647de2",
+            "material_id": "new26-songbook-identity"
+          },
+          "object_id": "asset-task-20261015-0003-songbook-identity-02",
+          "revision_id": "e741030b764d7d41431a96629647f5edf14f1016564216872f69a72f9bc45081",
+          "role": "reference_image",
+          "sha256": "d6f71f27ee9d2e86bbdb21c8d52a426a3ce6e1417d87e3b91c161b1fcb87236c"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-7c96837f82790edc8cbcd97bb9a06a87e54c0c34de580959c2658ca5acc4945e",
+            "material_id": "new26-hymn-paper-identity"
+          },
+          "object_id": "asset-task-20261015-0003-hymn-paper-identity-01",
+          "revision_id": "1d1fe0a97fbbd62ca493efa944bcd8ee11b8f483204d942951de777742415508",
+          "role": "reference_image",
+          "sha256": "6bf98f741271fd5ed83162c1af8f271cc590d7ca69e0b110b86b3336890da280"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-4bc837df97fbc72a49d20f90d9c4a9bc52fa8ec841738983fd9d8123deb7027c",
+            "material_id": "new26-curtain-identity"
+          },
+          "object_id": "asset-task-20261015-0003-curtain-identity-01",
+          "revision_id": "68e78713aaff614db7f0fea73dc000c2694ac2b580ac5c4678e654e510aa8039",
+          "role": "reference_image",
+          "sha256": "416a217dea8746fe3c560aafc942214a6ff7240d15c11ba57007da9dca8143dc"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-de84859c6057627046dc6767c5d4cba973606d783c8eb3a2b91364abd9f050cf",
+            "material_id": "new26-s003-q01-video"
+          },
+          "object_id": "asset-call-task-20261022-0001-m068-02",
+          "revision_id": "35551e7e20cc753bc7ff14612c44e84304026995507f96b9873fd37da16333a9",
+          "role": "reference_video",
+          "sha256": "df7aae46bd2d20d7b7956506b9062332d58e544907da2a0463448271c5eeba23"
+        },
+        {
+          "component_id": "qingpeng-aheng-stage1",
+          "material_selection": {
+            "candidate_id": "candidate-64721144cc09c380dfdebd894b0b25bb4ec46c16ab341792869f7807b4160917",
+            "material_id": "new26-qingpeng-singing"
+          },
+          "object_id": "asset-task-20261015-0003-qingpeng-full-02",
+          "revision_id": "217f02bab82a63a962e969b7277fd483842c37bd2cb21ebc7c47b7175855a5df",
+          "role": "reference_audio",
+          "sha256": "994cbf206c1700cf4ce891931b11e974f710b029f84853f2b1c76fc151a6d437"
+        }
+      ],
+      "outputs": [
+        {
+          "object_id": "asset-call-task-20261022-0001-m073-02",
+          "revision_id": "10c2cfee69c74defbea8be651a9cf2d651c78b986705484a75cfbd7c341b59fb"
+        }
+      ],
+      "fee": {
+        "amount": null,
+        "currency": null,
+        "status": "UNKNOWN - no per-call bill"
+      },
+      "thread_id": "skill_46ce7c01-0236-4e64-89c3-fafd27f69898",
+      "run_id": "skill_241eb7a4-7eea-44bc-9749-4e50c110d524",
+      "original": {
+        "id": "original",
+        "role": "original",
+        "file": "1e67d60195c965e05fba9006283729bd1ad1742fc013679e8b535e1a42da09a6.mp4",
+        "sha256": "1e67d60195c965e05fba9006283729bd1ad1742fc013679e8b535e1a42da09a6",
+        "bytes": 14748937,
+        "mime": "video/mp4",
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 18.042,
+        "has_audio": true,
+        "sample_rate": 32000,
+        "channels": 2
+      },
+      "streams": [
+        {
+          "codec_type": "video",
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 720,
+          "r_frame_rate": "1000000/41667",
+          "nb_frames": "433",
+          "duration": "18.041811"
+        },
+        {
+          "codec_type": "audio",
+          "codec_name": "aac",
+          "r_frame_rate": "0/0",
+          "nb_frames": "565",
+          "duration": "18.042000",
+          "sample_rate": "32000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "attempt": "m074-02",
+      "call": {
+        "object_id": "call-task-20261022-0001-m074-02",
+        "revision_id": "451dfa996c0facabfd019194f5551e0f262f71801d69ba37f78ef7b61d4b9adb"
+      },
+      "status": "failed",
+      "model": "gpt-image-2-5-sunburst",
+      "tool": "Higgsfield MCP generate_image",
+      "parameters": {
+        "aspect_ratio": "16:9",
+        "background": "opaque",
+        "count": 1,
+        "quality": "high",
+        "resolution": "4k",
+        "use_unlim": false,
+        "variant": "sunburst"
+      },
+      "requirement": {
+        "object_id": "new26-s003-q06-first-frame",
+        "revision_id": "ee6d5aac3071aa798745aef1da810d2db65eb4bbab190029fa1f6bfc7ceb7e82"
+      },
+      "prompt_sha256": "74093f133c4826fd6616c30cfeaecdde54a017ac387be93a59bbc0ea6946e4cd",
+      "submission_sha256": "a90c88daf598e0b1a96e1e87629f3ab1c65a0e0576e397886ff373c7b84af32e",
+      "inputs": [
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-09e99d300bf294e745a3560ce908d0ad7d59436fa817309a94c988973b101493",
+            "material_id": "new26-liji-identity"
+          },
+          "object_id": "asset-task-20261015-0003-liji-identity-01",
+          "revision_id": "77908eeddf225d05468c60366401d16f721cceb62cb297dcd110c25132f302e4",
+          "role": "reference_image",
+          "sha256": "05ac4d70dbed022cbaabd37b9da071031056d325653ccbee9b1a2aac5046e0ce"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-8bb45d3cefb9ca106168cddf2a2d59eb5cc27d11c12f760c758240218f57f8d2",
+            "material_id": "new26-prop-house-layout"
+          },
+          "object_id": "asset-task-20261015-0003-prop-house-local-01",
+          "revision_id": "c966743d8d703ec0f87a9c2dadebf0c78ae4fafb9d9c4dd81d29e678f8971880",
+          "role": "reference_image",
+          "sha256": "3fa2169deb4e6e0388c92ba9694d4402ec0829787c67412c8b8ef4954e640caa"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-e1e0d8d223df465bb9b87abce86862424d3125c92678062c3d6321e09e647de2",
+            "material_id": "new26-songbook-identity"
+          },
+          "object_id": "asset-task-20261015-0003-songbook-identity-02",
+          "revision_id": "e741030b764d7d41431a96629647f5edf14f1016564216872f69a72f9bc45081",
+          "role": "reference_image",
+          "sha256": "d6f71f27ee9d2e86bbdb21c8d52a426a3ce6e1417d87e3b91c161b1fcb87236c"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-7c96837f82790edc8cbcd97bb9a06a87e54c0c34de580959c2658ca5acc4945e",
+            "material_id": "new26-hymn-paper-identity"
+          },
+          "object_id": "asset-task-20261015-0003-hymn-paper-identity-01",
+          "revision_id": "1d1fe0a97fbbd62ca493efa944bcd8ee11b8f483204d942951de777742415508",
+          "role": "reference_image",
+          "sha256": "6bf98f741271fd5ed83162c1af8f271cc590d7ca69e0b110b86b3336890da280"
+        },
+        {
+          "component_id": "original",
+          "material_selection": {
+            "candidate_id": "candidate-51f4a884fdd28eb8012c36479ee3ea36623c37910514f36edb43daa88e2f178c",
+            "material_id": "new26-paper-snake-identity"
+          },
+          "object_id": "asset-task-20261015-0003-paper-snake-identity-01",
+          "revision_id": "483137e569c55064568141d94bbc705516504e67cae1109d66085593652eb976",
+          "role": "reference_image",
+          "sha256": "303a004977432c0dce6078babafbfe01e26649fa643e287542fc288e3bb6b91f"
+        }
+      ],
+      "outputs": [],
+      "fee": {
+        "amount": null,
+        "currency": null,
+        "status": "UNKNOWN - no per-call bill"
+      }
+    }
+  ],
+  "understanding": [
+    {
+      "file": ".runtime/episode-two/calls/m058-01/audio-asr.json",
+      "response_id": "resp_02179261600946172ef85a6275c3d23ad0e45d46a442cf74faa54",
+      "model": "doubao-seed-2-0-lite-260428",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 273,
+        "completion_tokens": 4,
+        "total_tokens": 277
+      },
+      "response_sha256": "221e12ffc4ede1ccb532f6b06d65370d0555535184066ed1b81d96e386d21cd7",
+      "financial_amount": "UNKNOWN"
+    },
+    {
+      "file": ".runtime/episode-two/calls/m059-01/audio-asr.json",
+      "response_id": "resp_0217926138083786cfe2b229f965c4fa1752fa8f08fea79a41af5",
+      "model": "doubao-seed-2-0-lite-260428",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 273,
+        "completion_tokens": 13,
+        "total_tokens": 286
+      },
+      "response_sha256": "6d20ce43ea3b211398bc8c6fda6f91b109fa240f95546a1a9b3a85b535bdbbbf",
+      "financial_amount": "UNKNOWN"
+    },
+    {
+      "file": ".runtime/episode-two/calls/m059-01/audio-direct-analysis.json",
+      "response_id": "resp_021792614465369383bb4c6a1b19ad3ebc8164afdd107cd2ab9c1",
+      "model": "doubao-seed-2-0-lite-260428",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 221,
+        "completion_tokens": 65,
+        "total_tokens": 286
+      },
+      "response_sha256": "0d9c21613e72d21d0b9cedd0bfa5c638a5b6e520d5ec32903137d17f2afb301f",
+      "financial_amount": "UNKNOWN"
+    },
+    {
+      "file": ".runtime/episode-two/calls/m059-01/audio-visual-check.json",
+      "response_id": "resp_021792614186274a633002a7421b089fd65550b3782d551bb9095",
+      "model": "doubao-seed-2-0-lite-260428",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 4939,
+        "completion_tokens": 48,
+        "total_tokens": 4987
+      },
+      "response_sha256": "2896e94f1e0ac8f9b02396aa3097bfc24a49058d5d1dd5400533101128ae7a63",
+      "financial_amount": "UNKNOWN"
+    },
+    {
+      "file": ".runtime/episode-two/calls/m059-01/song-comparison.json",
+      "response_id": "resp_021792623905353eaad90e368bae3f187447d9def39b90763152d",
+      "model": "doubao-seed-2-0-lite-260428",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 370,
+        "completion_tokens": 149,
+        "total_tokens": 519
+      },
+      "response_sha256": "6148d348a6dc391d0b1c69cf65f9f70252bcb8f1965e79f01d04fba10446aed3",
+      "financial_amount": "UNKNOWN"
+    },
+    {
+      "file": ".runtime/episode-two/calls/m060-02/audio-asr.json",
+      "response_id": "resp_021792616500853bf9418e041ccb1b29ccbd159c75f6f53af2e4f",
+      "model": "doubao-seed-2-0-lite-260428",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 265,
+        "completion_tokens": 9,
+        "total_tokens": 274
+      },
+      "response_sha256": "3b3ebb7a48e7161e7a3e3ea69b37134943caebf27e680bd4011090f8726df2ca",
+      "financial_amount": "UNKNOWN"
+    },
+    {
+      "file": ".runtime/episode-two/calls/m061-01/audio-asr.json",
+      "response_id": "resp_021792616499924bf9418e041ccb1b29ccbd159c75f6f53a61c0b",
+      "model": "doubao-seed-2-0-lite-260428",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 291,
+        "completion_tokens": 30,
+        "total_tokens": 321
+      },
+      "response_sha256": "3204935bf867f63589a718e2068bbeb8eec3005330047e68736982f67946fd02",
+      "financial_amount": "UNKNOWN"
+    },
+    {
+      "file": ".runtime/episode-two/calls/m061-02/audio-analysis.json",
+      "response_id": "resp_021792627664250b0569a3163ef1c14e46181870ffec9973b8760",
+      "model": "doubao-seed-2-0-lite-260428",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 182,
+        "completion_tokens": 66,
+        "total_tokens": 248
+      },
+      "response_sha256": "7892c608629afd0172b9775ddb647b3eafc89a01197ba82294cc10b3782869df",
+      "financial_amount": "UNKNOWN"
+    },
+    {
+      "file": ".runtime/episode-two/calls/m062-01/audio-analysis.json",
+      "response_id": "resp_021792618532122b71a54db2718758900f1b5b7cc45ea658a0c20",
+      "model": "doubao-seed-2-0-lite-260428",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 254,
+        "completion_tokens": 51,
+        "total_tokens": 305
+      },
+      "response_sha256": "47aa8e14fd3a50f811dcd9f9e401c664b753c475a72f2ad3ee45db68c63f1553",
+      "financial_amount": "UNKNOWN"
+    },
+    {
+      "file": ".runtime/episode-two/calls/m063-01/audio-analysis.json",
+      "response_id": "resp_0217926198152876b0a1eddf4bd1f76946157a932bdcd17364a53",
+      "model": "doubao-seed-2-0-lite-260428",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 195,
+        "completion_tokens": 13,
+        "total_tokens": 208
+      },
+      "response_sha256": "8be09d85314110dd17ee8313067cf5f50dccae08dc89e3e18a9d7537c1e65821",
+      "financial_amount": "UNKNOWN"
+    },
+    {
+      "file": ".runtime/episode-two/calls/m064-01/audio-analysis.json",
+      "response_id": "resp_0217926214898438d3e4b01d6ad52cd92e5ce15c476246031c92e",
+      "model": "doubao-seed-2-0-lite-260428",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 190,
+        "completion_tokens": 52,
+        "total_tokens": 242
+      },
+      "response_sha256": "8d7c20116fb1cb52ae838287bf5512f8163eb9736036b476db8d5465afffd52d",
+      "financial_amount": "UNKNOWN"
+    },
+    {
+      "file": ".runtime/episode-two/calls/m065-01/audio-analysis.json",
+      "response_id": "resp_0217926229280031dd291674643982da436c46312b5f1c94d799c",
+      "model": "doubao-seed-2-0-lite-260428",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 235,
+        "completion_tokens": 545,
+        "total_tokens": 780
+      },
+      "response_sha256": "a8019da69f8ef90762fdaa8ca8bedda88997a8d1a47587c2d03b7200661a1430",
+      "financial_amount": "UNKNOWN"
+    },
+    {
+      "file": ".runtime/episode-two/calls/m066-01/audio-analysis.json",
+      "response_id": "resp_021792624715046afc51c7847b25ba05aee7737b2a1fca387bac4",
+      "model": "doubao-seed-2-0-lite-260428",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 238,
+        "completion_tokens": 59,
+        "total_tokens": 297
+      },
+      "response_sha256": "a66d74dab3d80b931a0c093d69f43cb0736eb3104b7bc0cf960e64a2dcde736a",
+      "financial_amount": "UNKNOWN"
+    },
+    {
+      "file": ".runtime/episode-two/calls/m067-01/audio-analysis.json",
+      "response_id": "resp_021792625613267600632cde03e2cf85ca25a1fd03fe18a754b27",
+      "model": "doubao-seed-2-0-lite-260428",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 186,
+        "completion_tokens": 59,
+        "total_tokens": 245
+      },
+      "response_sha256": "8a181d74d5fc525c9d9309a7ab7b17d1278c8d49b0aa8302954e3215ffa37748",
+      "financial_amount": "UNKNOWN"
+    },
+    {
+      "file": ".runtime/episode-two/calls/m067-02/audio-analysis.json",
+      "response_id": "resp_0217926282690165c037dcb8e3ed606fc7cba25b86789dbca2af0",
+      "model": "doubao-seed-2-0-lite-260428",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 185,
+        "completion_tokens": 81,
+        "total_tokens": 266
+      },
+      "response_sha256": "67a54158c4290cebc45c9e549b5c319a824f5e1e6fcf320aecf8e4b3bc847122",
+      "financial_amount": "UNKNOWN"
+    },
+    {
+      "file": ".runtime/episode-two/calls/m068-01/model-review.json",
+      "response_id": "resp_021792609250569b71a54db2718758900f1b5b7cc45ea656fbf43",
+      "model": "doubao-seed-2-0-lite-260428",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 4919,
+        "completion_tokens": 239,
+        "total_tokens": 5158
+      },
+      "response_sha256": "29d87132f4eb439522ff6f90c5f24185f41fde2dda12c26ec04fd8adcd11a4ec",
+      "financial_amount": "UNKNOWN"
+    },
+    {
+      "file": ".runtime/episode-two/calls/m069-01/audio-asr-confirm.json",
+      "response_id": "resp_02179261030355176f8256debb8f03d2da9dea6cc2a650d8a130d",
+      "model": "doubao-seed-2-0-lite-260428",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 262,
+        "completion_tokens": 313,
+        "total_tokens": 575
+      },
+      "response_sha256": "5bb194a1014ce279382015ac7f4b7c8ae2a4bec0cdaeab536accd3f3265c3854",
+      "financial_amount": "UNKNOWN"
+    },
+    {
+      "file": ".runtime/episode-two/calls/m069-01/audio-asr.json",
+      "response_id": "resp_0217926098986790a5720dfd57fd83aed3bdbca02adba84a88a86",
+      "model": "doubao-seed-2-0-lite-260428",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 198,
+        "completion_tokens": 27,
+        "total_tokens": 225
+      },
+      "response_sha256": "df73480a1b54e10144a69fd7d1def4019dee45a0f2ed412bab623b1d752e4ae1",
+      "financial_amount": "UNKNOWN"
+    },
+    {
+      "file": ".runtime/episode-two/calls/m069-01/model-review.json",
+      "response_id": "resp_021792609780591a71fb5caa63bcd7df8c9e328d4d305c2eefec6",
+      "model": "doubao-seed-2-0-lite-260428",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 4945,
+        "completion_tokens": 348,
+        "total_tokens": 5293
+      },
+      "response_sha256": "59bcf7a51d6cc9e4afea77307b836868c11c7130d493fc447a351a89d852f260",
+      "financial_amount": "UNKNOWN"
+    },
+    {
+      "file": ".runtime/episode-two/calls/m069-02/audio-asr.json",
+      "response_id": "resp_021792611364847e998c48e47a8fdf8c126b44b0e0bc2a1263afa",
+      "model": "doubao-seed-2-0-lite-260428",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 239,
+        "completion_tokens": 279,
+        "total_tokens": 518
+      },
+      "response_sha256": "eaeaa888991840e6fee5ffdf2121a531869f223385e8dd81cc678026bd00ab5c",
+      "financial_amount": "UNKNOWN"
+    },
+    {
+      "file": ".runtime/episode-two/calls/m070-01/audio-asr.json",
+      "response_id": "resp_021792611364704cb4471f0f910e4739f2e6b993dd0a5357c6872",
+      "model": "doubao-seed-2-0-lite-260428",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 227,
+        "completion_tokens": 28,
+        "total_tokens": 255
+      },
+      "response_sha256": "91cd1a62bc7e499dcbad4a49a927ef182e33d7c0d634942a4490ddedd15d0654",
+      "financial_amount": "UNKNOWN"
+    },
+    {
+      "file": ".runtime/episode-two/calls/m070-01/audio-content-confirm.json",
+      "response_id": "resp_021792611719313650a0d96b6fbb24f32d06e91e8669805c3d441",
+      "model": "doubao-seed-2-0-lite-260428",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 286,
+        "completion_tokens": 13,
+        "total_tokens": 299
+      },
+      "response_sha256": "2beb8e427e4c629a8b181625f161df9803e8e0f137b862bbc794d0013060c0a3",
+      "financial_amount": "UNKNOWN"
+    },
+    {
+      "file": ".runtime/episode-two/calls/m071-01/audio-asr.json",
+      "response_id": "resp_0217926126293892d60f60bba313662d1f7bb8a224af9f4a1ea5f",
+      "model": "doubao-seed-2-0-lite-260428",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 317,
+        "completion_tokens": 906,
+        "total_tokens": 1223
+      },
+      "response_sha256": "cf497cabea8c55cd2c4a9ec36fed3cc685a9f0042463929a5bd66fdac0a564f0",
+      "financial_amount": "UNKNOWN"
+    },
+    {
+      "file": ".runtime/episode-two/calls/m073-01/audio-asr.json",
+      "response_id": "resp_021792612630132f1037d74890b775cc53d3d2459e14d19c14db9",
+      "model": "doubao-seed-2-0-lite-260428",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 319,
+        "completion_tokens": 2,
+        "total_tokens": 321
+      },
+      "response_sha256": "3f3a42b3a97f0b05cf67f42258559ef2e84f13b5b4993542e4628dc33447bc4b",
+      "financial_amount": "UNKNOWN"
+    },
+    {
+      "file": ".runtime/episode-two/calls/m073-02/audio-direct-analysis.json",
+      "response_id": "resp_021792614465505764cb85af6e95477278739ec97beec4b2b7e1f",
+      "model": "doubao-seed-2-0-lite-260428",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 239,
+        "completion_tokens": 79,
+        "total_tokens": 318
+      },
+      "response_sha256": "a144146bd2e5031a3f816440dc0a370e47c03b774e8f62d99a61bb92e587abfa",
+      "financial_amount": "UNKNOWN"
+    },
+    {
+      "file": ".runtime/episode-two/calls/m073-02/audio-visual-check.json",
+      "response_id": "resp_021792614189766bb2261858b80157748884c1e1786c924585340",
+      "model": "doubao-seed-2-0-lite-260428",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 5808,
+        "completion_tokens": 39,
+        "total_tokens": 5847
+      },
+      "response_sha256": "121530b971b47522fd4367fd55ee138f6f4dae19a159b2a176e9f0f36e1fdbe5",
+      "financial_amount": "UNKNOWN"
+    }
+  ],
+  "image_blockers": [
+    {
+      "route": "OpenArt Sunburst 4K high",
+      "available_credits": 65,
+      "one_image_quote": 317,
+      "state": "insufficient existing credits; no new call"
+    },
+    {
+      "route": "Built-in imagegen",
+      "state": "locally blocked before provider; exact model version unexposed and native system contract rejects unknown model",
+      "provider_call": false
+    },
+    {
+      "route": "Higgsfield MCP Sunburst",
+      "state": "Requires Basic plan or higher; failed before job creation"
+    },
+    {
+      "route": "Higgsfield developer API Sunburst",
+      "state": "No generation submitted; balance5.80 USD, auto top-up ON below3.13 by25 USD. Total quote absent. Settings switch currently disabled.",
+      "user_confirmation": "pending, no approval received",
+      "account_setting_changed": false
+    }
+  ]
+}
