@@ -1,0 +1,190 @@
+{
+  "format": "e02-offline-continue-edit-v1",
+  "job_id": "a5d4bcf69aaccd219d982ead00f03620337a607980f228deb0bb5105818b5a17",
+  "status": "succeeded",
+  "project_version": 5,
+  "sample_frames": 48,
+  "sample_seconds": 2,
+  "formal_film_preserved": true,
+  "native_full_deliverable_validation": true,
+  "film": {
+    "object_id": "episode-film-a5d4bcf69aaccd219d982ead00f03620337a607980f228deb0bb5105818b5a17",
+    "revision_id": "0f912a0a97e91441da522a8109dc70d533bdc998d79f4a04080dc212488fe5ff"
+  },
+  "components": [
+    {
+      "bytes": 576102,
+      "channels": 2,
+      "duration_seconds": 2.0,
+      "file": "3566744022ef349c66ba0aea13d77e792f9d28c0589c1c71bff20800ffa58bd9.wav",
+      "has_audio": true,
+      "id": "mix",
+      "mime": "audio/wav",
+      "role": "original",
+      "sample_rate": 48000,
+      "sha256": "3566744022ef349c66ba0aea13d77e792f9d28c0589c1c71bff20800ffa58bd9"
+    },
+    {
+      "bytes": 756632,
+      "channels": 2,
+      "duration_seconds": 2.0,
+      "file": "609a785c156101b4a0a573d512eff77c1794051249923879c4dd1d7cb5e5aff5.mp4",
+      "has_audio": true,
+      "height": 720,
+      "id": "clean",
+      "mime": "video/mp4",
+      "role": "original",
+      "sample_rate": 48000,
+      "sha256": "609a785c156101b4a0a573d512eff77c1794051249923879c4dd1d7cb5e5aff5",
+      "width": 1280
+    },
+    {
+      "bytes": 756632,
+      "channels": 2,
+      "duration_seconds": 2.0,
+      "file": "609a785c156101b4a0a573d512eff77c1794051249923879c4dd1d7cb5e5aff5.mp4",
+      "has_audio": true,
+      "height": 720,
+      "id": "subtitled",
+      "mime": "video/mp4",
+      "role": "original",
+      "sample_rate": 48000,
+      "sha256": "609a785c156101b4a0a573d512eff77c1794051249923879c4dd1d7cb5e5aff5",
+      "width": 1280
+    },
+    {
+      "bytes": 2757,
+      "file": "04ff4c6eb6966f9e8654960c90a808dff4709955f51f285bb39409bdba6dfcf2.json",
+      "id": "project",
+      "mime": "application/json",
+      "role": "original",
+      "sha256": "04ff4c6eb6966f9e8654960c90a808dff4709955f51f285bb39409bdba6dfcf2"
+    },
+    {
+      "bytes": 1,
+      "file": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b.srt",
+      "id": "subtitles",
+      "mime": "application/x-subrip",
+      "role": "original",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "bytes": 2044,
+      "file": "ac66d9f55ef3cc8034a4bb4633f4153b9be4d85bd708b4ffd4b0cd75083a24ab.json",
+      "id": "source-map",
+      "mime": "application/json",
+      "role": "original",
+      "sha256": "ac66d9f55ef3cc8034a4bb4633f4153b9be4d85bd708b4ffd4b0cd75083a24ab"
+    }
+  ],
+  "resources": {
+    "mix": {
+      "bytes": 576102,
+      "category": "originals",
+      "mime": "audio/wav",
+      "sha256": "3566744022ef349c66ba0aea13d77e792f9d28c0589c1c71bff20800ffa58bd9",
+      "source": "offline-candidate",
+      "variants": {
+        "waveform": {
+          "bytes": 12677,
+          "category": "derivatives",
+          "mime": "application/json",
+          "recipe": "display-v1/waveform",
+          "sha256": "6f77e63761fd22f7b359e9c9f4ae2eb35b42d607bd4ce5d2920985dc032dc43f",
+          "source": "offline-candidate",
+          "source_sha256": "3566744022ef349c66ba0aea13d77e792f9d28c0589c1c71bff20800ffa58bd9",
+          "verification": "full-local-sha256",
+          "verified_at": 1792935841,
+          "verified_sha256": "6f77e63761fd22f7b359e9c9f4ae2eb35b42d607bd4ce5d2920985dc032dc43f"
+        }
+      },
+      "verification": "full-local-sha256",
+      "verified_at": 1792935840,
+      "verified_sha256": "3566744022ef349c66ba0aea13d77e792f9d28c0589c1c71bff20800ffa58bd9"
+    },
+    "clean": {
+      "bytes": 756632,
+      "category": "originals",
+      "mime": "video/mp4",
+      "sha256": "609a785c156101b4a0a573d512eff77c1794051249923879c4dd1d7cb5e5aff5",
+      "source": "offline-candidate",
+      "variants": {
+        "poster": {
+          "bytes": 10062,
+          "category": "derivatives",
+          "mime": "image/webp",
+          "recipe": "display-v1/poster",
+          "sha256": "c52630e1538f043c99695b93cdb84d086c1e3ece0f8b154b14ec3a1c5d172720",
+          "source": "offline-candidate",
+          "source_sha256": "609a785c156101b4a0a573d512eff77c1794051249923879c4dd1d7cb5e5aff5",
+          "verification": "full-local-sha256",
+          "verified_at": 1792935841,
+          "verified_sha256": "c52630e1538f043c99695b93cdb84d086c1e3ece0f8b154b14ec3a1c5d172720"
+        }
+      },
+      "verification": "full-local-sha256",
+      "verified_at": 1792935841,
+      "verified_sha256": "609a785c156101b4a0a573d512eff77c1794051249923879c4dd1d7cb5e5aff5"
+    },
+    "subtitled": {
+      "bytes": 756632,
+      "category": "originals",
+      "mime": "video/mp4",
+      "sha256": "609a785c156101b4a0a573d512eff77c1794051249923879c4dd1d7cb5e5aff5",
+      "source": "offline-candidate",
+      "variants": {
+        "poster": {
+          "bytes": 10062,
+          "category": "derivatives",
+          "mime": "image/webp",
+          "recipe": "display-v1/poster",
+          "sha256": "c52630e1538f043c99695b93cdb84d086c1e3ece0f8b154b14ec3a1c5d172720",
+          "source": "offline-candidate",
+          "source_sha256": "609a785c156101b4a0a573d512eff77c1794051249923879c4dd1d7cb5e5aff5",
+          "verification": "full-local-sha256",
+          "verified_at": 1792935841,
+          "verified_sha256": "c52630e1538f043c99695b93cdb84d086c1e3ece0f8b154b14ec3a1c5d172720"
+        }
+      },
+      "verification": "full-local-sha256",
+      "verified_at": 1792935841,
+      "verified_sha256": "609a785c156101b4a0a573d512eff77c1794051249923879c4dd1d7cb5e5aff5"
+    },
+    "project": {
+      "bytes": 2757,
+      "category": "originals",
+      "mime": "application/json",
+      "sha256": "04ff4c6eb6966f9e8654960c90a808dff4709955f51f285bb39409bdba6dfcf2",
+      "source": "offline-candidate",
+      "variants": {},
+      "verification": "full-local-sha256",
+      "verified_at": 1792935841,
+      "verified_sha256": "04ff4c6eb6966f9e8654960c90a808dff4709955f51f285bb39409bdba6dfcf2"
+    },
+    "subtitles": {
+      "bytes": 1,
+      "category": "originals",
+      "mime": "application/x-subrip",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "source": "offline-candidate",
+      "variants": {},
+      "verification": "full-local-sha256",
+      "verified_at": 1792935841,
+      "verified_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    "source-map": {
+      "bytes": 2044,
+      "category": "originals",
+      "mime": "application/json",
+      "sha256": "ac66d9f55ef3cc8034a4bb4633f4153b9be4d85bd708b4ffd4b0cd75083a24ab",
+      "source": "offline-candidate",
+      "variants": {},
+      "verification": "full-local-sha256",
+      "verified_at": 1792935841,
+      "verified_sha256": "ac66d9f55ef3cc8034a4bb4633f4153b9be4d85bd708b4ffd4b0cd75083a24ab"
+    }
+  },
+  "network": "none",
+  "new_cloud_uploads": 0,
+  "new_model_calls": 0
+}
