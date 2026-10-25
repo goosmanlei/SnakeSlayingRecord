@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
-"""Render a published screenplay's clean Markdown without rewriting its content.
+"""Render a complete screenplay or novel without rewriting its content.
 
 Requires reportlab. Run from the project root; pass a Chinese TrueType font
-available on the host. Temporary output is replaced only after a valid build.
+available on the host. Accepts clean Markdown or an exact source JSON. The
+caller selects the edition; this exporter does not decide publication status.
+Temporary output is replaced only after a valid build.
 """
 import argparse
 import hashlib
@@ -37,7 +39,7 @@ class ScriptDocument(BaseDocTemplate):
                 self.notify('TOCEntry', (0, title, self.page, key))
 
 
-def paragraph_text(text, size, width=A4[0] - 110):
+def paragraph_text(text, size, width=A4[0] - 110, first_indent=0):
     """Preserve text and avoid Chinese closing punctuation at line starts."""
     lines = []
     for original in text.splitlines():
@@ -46,7 +48,8 @@ def paragraph_text(text, size, width=A4[0] - 110):
             end, used = 0, 0
             for character in remaining:
                 advance = pdfmetrics.stringWidth(character, 'ScriptChinese', size)
-                if used + advance > width - 1:
+                available = width - (first_indent if not lines else 0)
+                if used + advance > available - 1:
                     break
                 used += advance
                 end += 1
@@ -61,9 +64,51 @@ def paragraph_text(text, size, width=A4[0] - 110):
     return '<br/>'.join(lines)
 
 
-def build(source, output, font_path, export_date):
+def source_markdown(source, kind):
     raw = source.read_text(encoding='utf-8')
-    font = TTFont('ScriptChinese', str(font_path), subfontIndex=0)
+    if source.suffix.lower() != '.json':
+        return raw
+    value = json.loads(raw)
+    if kind == 'novel':
+        if not isinstance(value, list) or len(value) != 1:
+            raise ValueError('Novel source must contain exactly one complete edition')
+        novel = value[0]
+        version = novel['title'].split('：', 1)[0].removeprefix('故事')
+        parts = ['# 《把灯带回家》', '完整小说 · ' + version]
+        for chapter in novel['blocks']:
+            heading, body = chapter['text'].split('\n\n', 1)
+            parts.extend(['## ' + heading, body])
+    else:
+        if value.get('format') != 'screenplay-edition-v1':
+            raise ValueError('Unsupported screenplay source')
+        episodes = value['episodes']
+        scene_count = sum(len(episode['scenes']) for episode in episodes)
+        title = re.search(r'《.*?》', value['title']).group(0)
+        version = value['title'].split('《', 1)[0]
+        parts = ['# ' + title, '完整剧本 · ' + version,
+                 f'{len(episodes)} 集，{scene_count} 场。各集、各场时长为创作估时，非成片实测。']
+        for episode in episodes:
+            parts.extend(['## ' + episode['title'],
+                          '预计正片 ' + duration(episode['estimated_seconds'])])
+            blocks = {block['id']: block['text'] for block in episode['blocks']}
+            ordered_ids = [block_id for scene in episode['scenes'] for block_id in scene['block_ids']]
+            if ordered_ids != [block['id'] for block in episode['blocks']] or len(blocks) != len(ordered_ids):
+                raise ValueError('Scene coverage/order differs from the complete episode: ' + episode['id'])
+            for scene in episode['scenes']:
+                parts.extend(['### ' + scene['heading'],
+                              scene['location'] + '｜' + scene['time'] +
+                              '｜预计 ' + duration(scene['estimated_seconds'])])
+                parts.extend(blocks[block_id] for block_id in scene['block_ids'])
+    return '\n\n'.join(parts) + '\n'
+
+
+def duration(seconds):
+    return f'{seconds // 60}:{seconds % 60:02d}'
+
+
+def build(source, output, font_path, export_date, kind='screenplay', font_index=0):
+    raw = source_markdown(source, kind)
+    font = TTFont('ScriptChinese', str(font_path), subfontIndex=font_index)
     pdfmetrics.registerFont(font)
     missing = sorted({c for c in raw if not c.isspace() and ord(c) not in font.face.charToGlyph})
     if missing:
@@ -71,6 +116,7 @@ def build(source, output, font_path, export_date):
     common = dict(fontName='ScriptChinese', wordWrap='CJK', textColor=colors.HexColor('#222222'))
     styles = {
         'body': ParagraphStyle('Body', fontSize=11, leading=18, spaceAfter=8,
+                               firstLineIndent=22 if kind == 'novel' else 0,
                                allowWidows=0, allowOrphans=0, **common),
         'meta': ParagraphStyle('Metadata', fontSize=9.5, leading=16, spaceAfter=12,
                                keepWithNext=True, **common),
@@ -96,7 +142,7 @@ def build(source, output, font_path, export_date):
              Paragraph('导出日期：' + export_date, styles['center']), Spacer(1, 42)]
     for block in blocks[2:first_episode]:
         story.append(Paragraph(paragraph_text(block, 11), styles['body']))
-    story += [PageBreak(), Paragraph('分集目录', styles['contents'])]
+    story += [PageBreak(), Paragraph('章节目录' if kind == 'novel' else '分集目录', styles['contents'])]
     toc = TableOfContents()
     toc.levelStyles = [styles['toc']]
     story += [toc]
@@ -106,8 +152,9 @@ def build(source, output, font_path, export_date):
         elif block.startswith('### '):
             story.append(Paragraph(escape(block[4:]), styles['scene']))
         else:
-            is_meta = block.startswith('预计正片') or '｜' in block
-            story.append(Paragraph(paragraph_text(block, 9.5 if is_meta else 11),
+            is_meta = kind == 'screenplay' and (block.startswith('预计正片') or '｜' in block)
+            story.append(Paragraph(paragraph_text(block, 9.5 if is_meta else 11,
+                                                   first_indent=22 if kind == 'novel' else 0),
                                    styles['meta' if is_meta else 'body']))
     output.parent.mkdir(parents=True, exist_ok=True)
     temporary = output.with_suffix('.partial.pdf')
@@ -140,5 +187,7 @@ if __name__ == '__main__':
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--font', type=Path, required=True)
     parser.add_argument('--date', default=date.today().isoformat())
+    parser.add_argument('--kind', choices=('screenplay', 'novel'), default='screenplay')
+    parser.add_argument('--font-index', type=int, default=0, help='TrueType collection subfont index')
     args = parser.parse_args()
-    build(args.source, args.output, args.font, args.date)
+    build(args.source, args.output, args.font, args.date, args.kind, args.font_index)
