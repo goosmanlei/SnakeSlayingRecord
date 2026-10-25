@@ -2,6 +2,8 @@
 
 Git 保存代码、业务文字、轻量目录和准确版本引用。图像、声音、视频、图标、字幕、工程附件、历史大包及数据库快照保存到香港地域的私有 OSS Bucket `lijizhanshe`。业务实例仍为 `snake-slaying-record`；历史对象、修订、评论、采纳和来源身份不因存储位置变化而改写。
 
+实际写入遵循[项目存储边界](../AGENTS.md#项目存储边界)：默认只使用本项目真实目录，OSS、VPS、容器存储及其他项目外位置须有对应的明确授权。本页记录的已有架构和路径不自动授予新的外部存储权限。
+
 `config/resource-storage.json` 声明项目与缓存边界，`config/resource-catalog.json` 将原逻辑路径映射到准确云对象。每条原件和派生记录都有 key、显式 version_id、SHA256、字节数、MIME 和完整读取校验记录。旧路径是逻辑地址，不表示 Git 中仍有该文件；读取历史附件应经系统 `resources.materialize()` 或故事工具 `material_model_io.resource_path()`，不得自行拼接 latest、公开链接或旧本机目录。历史 Git/LFS 没有重写，也未因此回收历史仓库容量。
 
 ## 运行身份与读取
@@ -41,16 +43,18 @@ python3 scripts/production_review.py --system "$REVIEW_DESK_SYSTEM" recover \
   --destination .runtime/recovered
 ```
 
-独立离线介质在 Git 外创建，包含轻量配置、准确快照及每个原件／派生的真实字节，不是一组临时链接：
+独立离线介质的默认目标为主项目 `.runtime/recovery-media/<准确版本>/`，不纳入 Git 跟踪，与活库、缓存及任务工作区分开保存。介质包含轻量配置、准确快照及每个原件／派生的真实字节。
+
+当前系统 `review_desk/resource_bundle.py::offline_bundle` 强制目标位于源实例及所有 Git 仓库之外，尚不支持上述项目内目标。创建新介质前须先完成符合边界的项目内输出适配，或取得用户对准确外部位置、用途、容量及清理方式的明确授权；不能因现有工具限制自动使用 `~/.local` 或其他外部目录。仅在已有上述外部授权时，现有命令使用获授权的 `OFFLINE_MEDIUM`：
 
 ```bash
 PYTHONPATH="$REVIEW_DESK_SYSTEM" python3 -m review_desk \
   --instance "$SNAPSHOT_INSTANCE" offline-bundle --destination "$OFFLINE_MEDIUM"
 ```
 
-在另一个空实例使用该介质恢复时设置 `REVIEW_RESOURCES_OFFLINE=1`，并禁用 OSS 网络。资源必须来自介质内 `resource-bundle/<SHA256>`，缺失或损坏直接拒绝，不借用旧媒体目录。实际介质位置、全量检查、保留责任与解除条件由本次任务交付回执给出；维护者在更新有效介质前不得删除唯一完整副本。OSS 版本控制不能替代独立介质。
+在另一个空实例使用该介质恢复时设置 `REVIEW_RESOURCES_OFFLINE=1`，并禁用 OSS 网络。资源必须来自介质内 `resource-bundle/<SHA256>`，缺失或损坏直接拒绝，不借用旧媒体目录。实际介质位置、全量检查、保留责任与解除条件由本次任务交付回执给出；除用户明确授权删除外，维护者在更新有效介质前不得删除唯一完整副本。OSS 版本控制不能替代独立介质；需要防范整个项目目录或磁盘丢失时，先取得外部备份位置及范围的授权。
 
-离线继续编辑与渲染在另一个 Git 外可写实例完成，保留原恢复介质。新输出以 `offline-candidate` 保存真实字节，不伪造云端身份；恢复网络后经系统 `resource-promote` 完整上传与回读，再重新导出，才能沿受管流程发布。完整契约与命令见系统 `docs/resources.md`。
+离线恢复验证、继续编辑与渲染默认在主项目 `.runtime/recovery-work/<准确版本>/` 的另一个空可写实例完成，不纳入 Git 跟踪，保留原恢复介质。临时文件、依赖和缓存也须在项目内；使用容器前另核镜像、卷及日志的真实存储位置和授权。新输出以 `offline-candidate` 保存真实字节，不伪造云端身份；恢复网络并取得对应外部写入授权后，经系统 `resource-promote` 完整上传与回读，再重新导出，才能沿受管流程发布。完整契约与命令见系统 `docs/resources.md`。
 
 ## 已运行实例的代码与存储升级
 
