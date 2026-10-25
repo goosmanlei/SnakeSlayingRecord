@@ -1,0 +1,123 @@
+{
+  "scope": "local Docker context desktop-linux",
+  "verification": {
+    "deleted_containers": 2,
+    "deleted_images": 6,
+    "deleted_cache_records": 439,
+    "remaining_containers": 3,
+    "remaining_images": 4,
+    "remaining_cache_records": 0,
+    "volume_count": 0,
+    "network_count": 5,
+    "http_status": {
+      "http://127.0.0.1:3000/": 200,
+      "http://127.0.0.1:3000/api/instance": 200,
+      "http://127.0.0.1:8010/api/health": 200
+    },
+    "protected_file_hashes_unchanged": 13,
+    "protected_container_identity_image_start_mounts_networks_unchanged": true,
+    "protected_image_tags_layers_unchanged": true,
+    "usage_before": {
+      "ImageUsage": {
+        "ActiveCount": 4,
+        "Reclaimable": 15194659,
+        "TotalCount": 10,
+        "TotalSize": 2355195793
+      },
+      "ContainerUsage": {
+        "ActiveCount": 3,
+        "Reclaimable": 3358720,
+        "TotalCount": 5,
+        "TotalSize": 5398528
+      },
+      "BuildCacheUsage": {
+        "Reclaimable": 21938690602,
+        "TotalCount": 439,
+        "TotalSize": 23357672971
+      }
+    },
+    "usage_after": {
+      "ImageUsage": {
+        "ActiveCount": 3,
+        "Reclaimable": 12247,
+        "TotalCount": 4,
+        "TotalSize": 1449360108
+      },
+      "ContainerUsage": {
+        "ActiveCount": 3,
+        "TotalCount": 3,
+        "TotalSize": 2039808
+      },
+      "BuildCacheUsage": {}
+    },
+    "initial_probe_note": "Post-cleanup equality probe exited before producing a field difference. Immediate field-by-field readback showed no difference; final verification normalizes mount ordering and verifies all protected identities, contents, health and start times. No mutation was retried.",
+    "finished_at": "2026-10-25T15:45:19.530981+00:00"
+  },
+  "deleted_containers": [
+    {
+      "id": "e4756ff11fbc226dc983ffceeb33c00ee0cfa3f8bbd6be2e88f3ef42deba5dee",
+      "name": "snakeslayingrecord-app-1-before-oss-15f2ab272e-124654bd06",
+      "image": "sha256:c26786d54068413e9867f9b45129cc0efbdb6c0fefa87a0c43fad3e399c94271"
+    },
+    {
+      "id": "1221e6d445b59874ae360039dd8753097b35057db542e6a0b8bebb31a9ce06f8",
+      "name": "snakeslayingrecord-app-1-before-oss-b72436f846-a9c6d5fc46",
+      "image": "sha256:c26786d54068413e9867f9b45129cc0efbdb6c0fefa87a0c43fad3e399c94271"
+    }
+  ],
+  "deleted_images": [
+    "sha256:48e5c15f8a105346ae571afdece46605109b7776c0b724bca4cae80e3ba589e0",
+    "sha256:65645c7bb6a0661892a8b03b89d0743208a18dd2f3f17a54ef4b76fb8e2f2a10",
+    "sha256:c26786d54068413e9867f9b45129cc0efbdb6c0fefa87a0c43fad3e399c94271",
+    "sha256:c48a4a29ecc4c9f7ab3d1191a2151950c30072fbe7b18dfab15eccf0bab7e515",
+    "sha256:f674ac9b1f27a7e907dcd834b149879e3d6320b0e29ca41011bba0a143819706",
+    "sha256:fa0b0dedd147e48ddf6d33b808b69ec5a2a88a0908edd2e8d28373cdd2ff0a1e"
+  ],
+  "retained_images": [
+    {
+      "id": "sha256:009d73a160564cce886ee8a8538c4d18f0ea9b961f03db9df410e45b0fdf29b2",
+      "tags": [
+        "snakeslayingrecord-nginx:latest"
+      ]
+    },
+    {
+      "id": "sha256:01fba420f4b1dd503544da5fd629127dc255fae44f108a9f3dee0efb7c96b0eb",
+      "tags": [
+        "riskeval-prompt-risk-eval:latest"
+      ]
+    },
+    {
+      "id": "sha256:ab0afa2518e38f985b3347d86ca2e6a759ceabb141f8c9521deb50b23ad52351",
+      "tags": [
+        "story-review-desk:base",
+        "story-review-desk:previous"
+      ]
+    },
+    {
+      "id": "sha256:d27c1665bf410a9be645e6902ec4e6d9dd9fa694cd7c41b81196568fddf8d955",
+      "tags": [
+        "story-review-desk:current"
+      ]
+    }
+  ],
+  "removed_by_other_operation_before_this_cleanup": [
+    {
+      "id": "sha256:e342e91e3d54f9b8d81f29cc58b41fedbdaeee0543514eab02515bf74151cfd3",
+      "tag": "ma-research-worker:20261021"
+    },
+    {
+      "id": "sha256:faa8e0a1475f137c910be6025f43c8e4092fdd35461b31e19fd1390657a1ff39",
+      "tag": "cloudflare/cloudflared:latest"
+    },
+    {
+      "id": "sha256:2b223ad02f09c7a4c8ea661e9f5e039502427091e1981908bafb3a4db22e6e7e",
+      "tag": "python:3.12-slim"
+    }
+  ],
+  "receipt_directory": ".runtime/task-receipts/docker-cleanup-20261025",
+  "temporary_configuration_removed": [
+    "buildx",
+    "tmp",
+    "cache"
+  ]
+}
