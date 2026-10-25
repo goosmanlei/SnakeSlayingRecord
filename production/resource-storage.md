@@ -45,7 +45,7 @@ python3 scripts/production_review.py --system "$REVIEW_DESK_SYSTEM" recover \
 
 独立离线介质的默认目标为主项目 `.runtime/recovery-media/<准确版本>/`，不纳入 Git 跟踪，与活库、缓存及任务工作区分开保存。介质包含轻量配置、准确快照及每个原件／派生的真实字节。
 
-当前系统 `review_desk/resource_bundle.py::offline_bundle` 强制目标位于源实例及所有 Git 仓库之外，尚不支持上述项目内目标。创建新介质前须先完成符合边界的项目内输出适配，或取得用户对准确外部位置、用途、容量及清理方式的明确授权；不能因现有工具限制自动使用 `~/.local` 或其他外部目录。仅在已有上述外部授权时，现有命令使用获授权的 `OFFLINE_MEDIUM`：
+当前系统 `review_desk/resource_bundle.py::offline_bundle` 在宿主直接调用时要求目标位于源实例及所有 Git 仓库之外。项目内输出已验证可使用准确运行镜像：将实际项目内介质父目录独立绑定到容器 `/medium-output`，临时目录也绑定项目内位置，保持原生打包器及完整校验不变；实际字节仍在项目内。Docker自身存储须有授权，恢复验证须另用独立副本、禁用网络且不挂载凭据或外部素材。准确案例及恢复结果见[第二集交付](reports/task-20261022-0001/revision-02.md#完整导出与独立恢复)。若直接使用宿主外部目标，仍须先取得准确位置、用途、容量及清理授权，不能自动使用 `~/.local`。以下原生命令的 `OFFLINE_MEDIUM` 必须解析到上述容器挂载目标或已获授权的外部位置：
 
 ```bash
 PYTHONPATH="$REVIEW_DESK_SYSTEM" python3 -m review_desk \
