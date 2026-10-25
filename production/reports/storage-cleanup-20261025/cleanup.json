@@ -1,0 +1,209 @@
+{
+  "format": "project-disk-cleanup-verification-v1",
+  "verified_at": "2026-10-25T23:28:44.427223+08:00",
+  "deleted": {
+    "service_payload": {
+      "files": 2526,
+      "logical_bytes": 5434794677,
+      "allocated_bytes_before": 5440339968
+    },
+    "old_database_backup": {
+      "files": 5,
+      "logical_bytes": 5046583296,
+      "allocated_bytes_before": 5096185856
+    },
+    "resource_cache": {
+      "files": 485,
+      "logical_bytes": 3908881360,
+      "allocated_bytes_before": 3977781248
+    }
+  },
+  "removed_payload_roots": 145,
+  "file_absence_confirmed": 3016,
+  "protected_content_sha256_unchanged": 36,
+  "protected_medium_file_identity_unchanged": 2155,
+  "frozen_release_metadata_sha256_unchanged": 924,
+  "excluded_lfs_and_archives_identity_unchanged": true,
+  "containers_and_mounts_unchanged": true,
+  "formal_app_healthy": true,
+  "http_status": 200,
+  "cache_replacements_complete_sha256_verified": 485,
+  "skipped": [],
+  "before_project_bytes": 93029539840,
+  "after_project_bytes": 78518571008,
+  "project_allocated_bytes_reduced": 14510968832,
+  "volume_available_bytes_increase": 14441136128,
+  "volume_available_bytes_after": 388596682752,
+  "remaining_allocated_bytes": {
+    ".runtime/service-releases": 30887936,
+    ".runtime/storage-releases": 2176589824,
+    ".runtime/resource-cache": 0,
+    ".runtime/recovery-media": 15985385472,
+    ".git/lfs": 21872267264,
+    ".codex-task/cleanup-archives": 28292096000
+  },
+  "network_oss_requests": 0,
+  "services_stopped": false,
+  "plan_sha256": "98176da65edcd336107d1d78d450478016a319f5a7afb2ed75a443011a981fed",
+  "scope": "仅清理用户确认的旧服务发布副本、较早数据库切换备份和重复资源缓存",
+  "private_audit_directory": ".runtime/task-receipts/disk-cleanup-20261025",
+  "retained_service_release": ".runtime/service-releases/task-20261021-0001-934bd0f6b4a9-a9c6d5fc46fd",
+  "retained_storage_releases": [
+    ".runtime/storage-releases/oss-2455f21910ba-3d7585133864",
+    ".runtime/storage-releases/oss-8ed437ced149-124654bd06fd"
+  ],
+  "retained_recovery_medium": ".runtime/recovery-media/task-20261022-0001-e02-r02",
+  "deleted_database_backups": [
+    ".runtime/storage-releases/oss-15f2ab272e81-124654bd06fd/before.sqlite3",
+    ".runtime/storage-releases/oss-a21308561feb-816f72832945/before.sqlite3",
+    ".runtime/storage-releases/oss-b72436f846af-a9c6d5fc46fd/before.sqlite3",
+    ".runtime/storage-releases/oss-c652548b3f2d-ea18c1486364/before.sqlite3",
+    ".runtime/storage-releases/oss-e0ac8a068313-8741f4d696fc/before.sqlite3"
+  ],
+  "protected_content_checksums": [
+    {
+      "path": ".runtime/service-releases/task-20261021-0001-934bd0f6b4a9-a9c6d5fc46fd/material_review_release.py",
+      "sha256": "aa884a7762dbece508d0f5e1f886cc42e389616054268b8466e5220db6942ffb"
+    },
+    {
+      "path": ".runtime/service-releases/task-20261021-0001-934bd0f6b4a9-a9c6d5fc46fd/compose.release.json",
+      "sha256": "73b3e3ca3cbb27fb98efcba27fbbad69198754a49f2ce2a08e7f8e9646c8b047"
+    },
+    {
+      "path": ".runtime/service-releases/task-20261021-0001-934bd0f6b4a9-a9c6d5fc46fd/README.json",
+      "sha256": "525055382223a45ebd1363b938e66007d8ba1d28a127451fd4b4fbc18fee2bf3"
+    },
+    {
+      "path": ".runtime/service-releases/task-20261021-0001-934bd0f6b4a9-a9c6d5fc46fd/manifest.json",
+      "sha256": "5528ad8750b9bb5e3b4585c6557fa2292cf4b0faea2e5569d9d8a3acfbf97453"
+    },
+    {
+      "path": ".runtime/service-releases/task-20261021-0001-934bd0f6b4a9-a9c6d5fc46fd/autonomous_optimization_release.py",
+      "sha256": "a8a383c20f34e01c6b52d555de6e7fd177f4f5fe0df5d2870396a91b0551ac95"
+    },
+    {
+      "path": ".runtime/service-releases/task-20261021-0001-934bd0f6b4a9-a9c6d5fc46fd/image.json",
+      "sha256": "914b324fd8d039ad729ca0e65af1c4b5a6ffc2bcb10fecc9e6eafcb355ce5583"
+    },
+    {
+      "path": ".runtime/service-releases/task-20261021-0001-934bd0f6b4a9-a9c6d5fc46fd/instance/config/instance.json",
+      "sha256": "5b7a262f1605e0f9914eeb92a75ffe842ef53f9acf09cdeb0905f1caff3dcf87"
+    },
+    {
+      "path": ".runtime/service-releases/task-20261021-0001-934bd0f6b4a9-a9c6d5fc46fd/instance/config/resource-catalog.json",
+      "sha256": "d2427381349df0c9165bb7b32ab74c4d0d79c5bc7e3d2220a1ad3442223ebd14"
+    },
+    {
+      "path": ".runtime/service-releases/task-20261021-0001-934bd0f6b4a9-a9c6d5fc46fd/instance/config/resource-storage.json",
+      "sha256": "c4cf173c34fa942837f5a19f6245ada7894abd9841a5bfecccdbb28ad2944683"
+    },
+    {
+      "path": ".runtime/service-releases/task-20261021-0001-934bd0f6b4a9-a9c6d5fc46fd/instance/content/data-model.json",
+      "sha256": "5a7ebcfb0192b9b14c5fd71e1af411176439f54e9090f5c7681836b865d184e3"
+    },
+    {
+      "path": ".runtime/service-releases/task-20261021-0001-934bd0f6b4a9-a9c6d5fc46fd/instance/content/production-approach.json",
+      "sha256": "fbcc39e9a91884b9300975f7dd3aacfa441fc48ae9c54ca41b3d66960caf3566"
+    },
+    {
+      "path": ".runtime/service-releases/task-20261021-0001-934bd0f6b4a9-a9c6d5fc46fd/instance/content/skill-flow.json",
+      "sha256": "3e8c281b1a0fd5634b4cd7edd65f4d1ba4daeed473e1ac0846995606ce5242e1"
+    },
+    {
+      "path": ".runtime/storage-releases/oss-2455f21910ba-3d7585133864/oss_runtime_release.py",
+      "sha256": "6ad513380110ea13431ff39a7ebab5521c6a118d7cc041dc729ccd6c40bd8ae4"
+    },
+    {
+      "path": ".runtime/storage-releases/oss-2455f21910ba-3d7585133864/compose.release.json",
+      "sha256": "d73c46c951c9edb1ee206fb339a9574445aeb33fe50c2180912d7346b7ceb2eb"
+    },
+    {
+      "path": ".runtime/storage-releases/oss-2455f21910ba-3d7585133864/before.sqlite3",
+      "sha256": "caceb586262f11dce5790fcf160d88a5d31de11e505f574dbb68d5135c3b1fbc"
+    },
+    {
+      "path": ".runtime/storage-releases/oss-2455f21910ba-3d7585133864/manifest.json",
+      "sha256": "d7d3086b52223b79fc3b3cb46e33d2a3ad3538b25657b36994e3b6bf15cb9225"
+    },
+    {
+      "path": ".runtime/storage-releases/oss-2455f21910ba-3d7585133864/receipt.json",
+      "sha256": "8af18d336ee4ee725cff90e277214dd1e1c0b4cc055b15e5ba92828c1961e5cb"
+    },
+    {
+      "path": ".runtime/storage-releases/oss-2455f21910ba-3d7585133864/vps_experience_remote.py",
+      "sha256": "8fea3fcb10417830e8f773a2e445f223a3173f37acceb3eb97596754a3c19118"
+    },
+    {
+      "path": ".runtime/storage-releases/oss-2455f21910ba-3d7585133864/config/instance.json",
+      "sha256": "4741d627e877f5cceae639a8dbd3b7fe207e46ff49546ccce021b15049d389e4"
+    },
+    {
+      "path": ".runtime/storage-releases/oss-2455f21910ba-3d7585133864/config/resource-catalog.json",
+      "sha256": "fb1212d57060f4f45374c787e5b04261d3bed583c799c2a5578c50040eb179b6"
+    },
+    {
+      "path": ".runtime/storage-releases/oss-2455f21910ba-3d7585133864/config/resource-storage.json",
+      "sha256": "c4cf173c34fa942837f5a19f6245ada7894abd9841a5bfecccdbb28ad2944683"
+    },
+    {
+      "path": ".runtime/storage-releases/oss-2455f21910ba-3d7585133864/.runtime/resources/catalog.json",
+      "sha256": "8d30c3a8c98d109355d2cce6af068010738e22e8c0cd4c717919d08a930375b0"
+    },
+    {
+      "path": ".runtime/storage-releases/oss-8ed437ced149-124654bd06fd/oss_runtime_release.py",
+      "sha256": "6ad513380110ea13431ff39a7ebab5521c6a118d7cc041dc729ccd6c40bd8ae4"
+    },
+    {
+      "path": ".runtime/storage-releases/oss-8ed437ced149-124654bd06fd/compose.release.json",
+      "sha256": "3e1240f0a5851b878e0c12b789dc7b5293811eeda5ea5d598b3e86bd14b87a60"
+    },
+    {
+      "path": ".runtime/storage-releases/oss-8ed437ced149-124654bd06fd/before.sqlite3",
+      "sha256": "f5dbd36a91e7c69b529d0ae796fecf4a4d3d6a68760a25936cc63319ea5e67bc"
+    },
+    {
+      "path": ".runtime/storage-releases/oss-8ed437ced149-124654bd06fd/manifest.json",
+      "sha256": "455928a28b886951fcd79d2a938af7f8dc4b658a78ab6b657d17256ec3fb47ba"
+    },
+    {
+      "path": ".runtime/storage-releases/oss-8ed437ced149-124654bd06fd/receipt.json",
+      "sha256": "57e75514b93b33f2a0714b1ab2e09413724525b162e99e072c26652f6bafc538"
+    },
+    {
+      "path": ".runtime/storage-releases/oss-8ed437ced149-124654bd06fd/vps_experience_remote.py",
+      "sha256": "8fea3fcb10417830e8f773a2e445f223a3173f37acceb3eb97596754a3c19118"
+    },
+    {
+      "path": ".runtime/storage-releases/oss-8ed437ced149-124654bd06fd/config/instance.json",
+      "sha256": "3f7c05397b5d6dc3c1aea9a2adc8f415ce1fe31b8986e4a562feac0f60e3a8e3"
+    },
+    {
+      "path": ".runtime/storage-releases/oss-8ed437ced149-124654bd06fd/config/resource-catalog.json",
+      "sha256": "4aca63b59d361bad10d41505b571ee0d2b8515870656b67ff45d2476d2f28212"
+    },
+    {
+      "path": ".runtime/storage-releases/oss-8ed437ced149-124654bd06fd/config/resource-storage.json",
+      "sha256": "c4cf173c34fa942837f5a19f6245ada7894abd9841a5bfecccdbb28ad2944683"
+    },
+    {
+      "path": ".runtime/storage-releases/oss-8ed437ced149-124654bd06fd/.runtime/resources/catalog.json",
+      "sha256": "8d30c3a8c98d109355d2cce6af068010738e22e8c0cd4c717919d08a930375b0"
+    },
+    {
+      "path": ".runtime/review.sqlite3",
+      "sha256": "d100ab883d6e5a2d0f39f424aebf85e23c7c754dfc25169b1375f055beaa0734"
+    },
+    {
+      "path": ".runtime/resources/local-sources.json",
+      "sha256": "5d83dfda12d075cef97aeb8bfaadb944b607b3a3392aff209fe31a2d7c3d29d2"
+    },
+    {
+      "path": "export/manifest.json",
+      "sha256": "67304accd31bbc5444963168df1770276e6df84ba742804245f1bf290e6730fa"
+    },
+    {
+      "path": ".runtime/storage-runtime.json",
+      "sha256": "2f9b055bbc42ba59d4e0495aea87cbb15e30be3cf04fb9922aae034b3fb3089b"
+    }
+  ]
+}
