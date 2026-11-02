@@ -6,7 +6,7 @@ import sys
 from collections import Counter, defaultdict
 from pathlib import Path
 
-HISTORY = {'commit': 'b84f7bc8c2aa3ac62dd19c33912ad5d20fba4d34',
+HISTORY = {'commit': '31f70c570c6e8cf8cad16dd484fd9e2389f5ce8c',
            'file': 'export/objects.json',
            'sha256': '314e7962531248c4e18ab1769810896bb622931aca7f2e74c5ffefeb32ee3c7d'}
 
